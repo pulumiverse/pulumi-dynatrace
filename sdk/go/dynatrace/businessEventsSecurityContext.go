@@ -12,6 +12,22 @@ import (
 	"github.com/pulumiverse/pulumi-dynatrace/sdk/go/dynatrace/internal"
 )
 
+// > **Warning** This resource has been deprecated in favor of OpenPipeline.
+// Please migrate your OpenPipeline configurations and use `dynatrace_openpipeline_v2_*` instead.
+//
+// > This resource requires the API token scopes **Read settings** (`settings.read`) and **Write settings** (`settings.write`)
+//
+// ## Dynatrace Documentation
+//
+// - Business Analytics - https://www.dynatrace.com/support/help/platform-modules/business-analytics
+//
+// - Settings API - https://www.dynatrace.com/support/help/dynatrace-api/environment-api/settings (schemaId: `builtin:bizevents-security-context-rules`)
+//
+// ## Export Example Usage
+//
+// - `terraform-provider-dynatrace -export BusinessEventsSecurityContext` downloads all existing business event security context configuration
+//
+// The full documentation of the export feature is available [here](https://dt-url.net/h203qmc).
 type BusinessEventsSecurityContext struct {
 	pulumi.CustomResourceState
 

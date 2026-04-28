@@ -12,6 +12,21 @@ import (
 	"github.com/pulumiverse/pulumi-dynatrace/sdk/go/dynatrace/internal"
 )
 
+// !> This resource is utilizing an older API endpoint, please use DiskAnomalyRules instead.
+//
+// > This resource requires the API token scopes **Read configuration** (`ReadConfig`) and **Write configuration** (`WriteConfig`)
+//
+// ## Dynatrace Documentation
+//
+// - Adjust the sensitivity of anomaly detection for infrastructure - https://www.dynatrace.com/support/help/how-to-use-dynatrace/problem-detection-and-analysis/problem-detection/adjust-sensitivity-anomaly-detection/adjust-sensitivity-infastructure
+//
+// - Anomaly detection API - Disk events - https://www.dynatrace.com/support/help/dynatrace-api/configuration-api/anomaly-detection-api/anomaly-detection-api-disk-events
+//
+// ## Export Example Usage
+//
+// - `terraform-provider-dynatrace -export DiskAnomalies` downloads all existing disk anomaly detection configuration
+//
+// The full documentation of the export feature is available [here](https://dt-url.net/h203qmc).
 type DiskAnomalies struct {
 	pulumi.CustomResourceState
 

@@ -10,6 +10,23 @@ using Pulumi;
 
 namespace Pulumiverse.Dynatrace
 {
+    /// <summary>
+    /// &gt; Configuration of the mobile/custom application scope overlaps with dynatrace_mobile_application, but this resource in addition provides an option for a key user action scope.
+    /// 
+    /// &gt; This resource requires the API token scopes **Read settings** (`settings.read`) and **Write settings** (`settings.write`)
+    /// 
+    /// ## Dynatrace Documentation
+    /// 
+    /// - Adjust Apdex settings for mobile applications - https://www.dynatrace.com/support/help/platform-modules/digital-experience/mobile-applications/additional-configuration/configure-apdex-mobile
+    /// 
+    /// - Settings API - https://www.dynatrace.com/support/help/dynatrace-api/environment-api/settings (schemaId: `builtin:rum.mobile.key-performance-metrics`)
+    /// 
+    /// ## Export Example Usage
+    /// 
+    /// - `terraform-provider-dynatrace -export dynatrace.MobileAppKeyPerformance` downloads all existing apdex threshold configuration for mobile/custom applications
+    /// 
+    /// The full documentation of the export feature is available [here](https://dt-url.net/h203qmc).
+    /// </summary>
     [DynatraceResourceType("dynatrace:index/mobileAppKeyPerformance:MobileAppKeyPerformance")]
     public partial class MobileAppKeyPerformance : global::Pulumi.CustomResource
     {

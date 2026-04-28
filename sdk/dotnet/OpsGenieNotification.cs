@@ -10,23 +10,40 @@ using Pulumi;
 
 namespace Pulumiverse.Dynatrace
 {
+    /// <summary>
+    /// &gt; This resource requires the API token scopes **Read settings** (`settings.read`) and **Write settings** (`settings.write`)
+    /// 
+    /// ## Dynatrace Documentation
+    /// 
+    /// - OpsGenie notifications - https://www.dynatrace.com/support/help/setup-and-configuration/integrations/problem-notifications/opsgenie-integration
+    /// 
+    /// - Settings API - https://www.dynatrace.com/support/help/dynatrace-api/environment-api/settings (schemaId: `builtin:problem.notifications`)
+    /// 
+    /// ## Export Example Usage
+    /// 
+    /// - `terraform-provider-dynatrace -export dynatrace.OpsGenieNotification` downloads the existing problem notifications for OpsGenie
+    /// 
+    /// The full documentation of the export feature is available [here](https://dt-url.net/h203qmc).
+    /// </summary>
     [DynatraceResourceType("dynatrace:index/opsGenieNotification:OpsGenieNotification")]
     public partial class OpsGenieNotification : global::Pulumi.CustomResource
     {
         /// <summary>
-        /// The configuration is enabled (`True`) or disabled (`False`)
+        /// This setting is enabled (`True`) or disabled (`False`)
         /// </summary>
         [Output("active")]
         public Output<bool> Active { get; private set; } = null!;
 
         /// <summary>
-        /// The API key to access OpsGenie
+        /// The API key to access OpsGenie.
+        /// 
+        /// Go to OpsGenie-Integrations and create a new Dynatrace integration. Copy the newly created API key.
         /// </summary>
         [Output("apiKey")]
         public Output<string?> ApiKey { get; private set; } = null!;
 
         /// <summary>
-        /// The region domain of the OpsGenie
+        /// The region domain of the OpsGenie.
         /// </summary>
         [Output("domain")]
         public Output<string> Domain { get; private set; } = null!;
@@ -38,7 +55,16 @@ namespace Pulumiverse.Dynatrace
         public Output<string> LegacyId { get; private set; } = null!;
 
         /// <summary>
-        /// The content of the message.  You can use the following placeholders:  * `{ProblemID}`: The display number of the reported problem.  * `{ProblemImpact}`: The [impact level](https://www.dynatrace.com/support/help/shortlink/impact-analysis) of the problem. Possible values are `APPLICATION`, `SERVICE`, and `INFRASTRUCTURE`.  * `{ProblemSeverity}`: The [severity level](https://www.dynatrace.com/support/help/shortlink/event-types) of the problem. Possible values are `AVAILABILITY`, `ERROR`, `PERFORMANCE`, `RESOURCE_CONTENTION`, and `CUSTOM_ALERT`.  * `{ProblemTitle}`: A short description of the problem
+        /// The content of the message. Type '{' for placeholder suggestions.. #### Available placeholders
+        /// **{ProblemID}**: Display number of the reported problem.
+        /// 
+        /// **{ProblemImpact}**: Impact level of the problem. Possible values are APPLICATION, SERVICE, or INFRASTRUCTURE.
+        /// 
+        /// **{ProblemSeverity}**: Severity level of the problem. Possible values are AVAILABILITY, ERROR, PERFORMANCE, RESOURCE_CONTENTION, or CUSTOM_ALERT.
+        /// 
+        /// **{ProblemTitle}**: Short description of the problem.
+        /// 
+        /// **{ImpactedEntityNames}**: The entity impacted by the problem (or multiple impacted entities).
         /// </summary>
         [Output("message")]
         public Output<string> Message { get; private set; } = null!;
@@ -107,7 +133,7 @@ namespace Pulumiverse.Dynatrace
     public sealed class OpsGenieNotificationArgs : global::Pulumi.ResourceArgs
     {
         /// <summary>
-        /// The configuration is enabled (`True`) or disabled (`False`)
+        /// This setting is enabled (`True`) or disabled (`False`)
         /// </summary>
         [Input("active", required: true)]
         public Input<bool> Active { get; set; } = null!;
@@ -116,7 +142,9 @@ namespace Pulumiverse.Dynatrace
         private Input<string>? _apiKey;
 
         /// <summary>
-        /// The API key to access OpsGenie
+        /// The API key to access OpsGenie.
+        /// 
+        /// Go to OpsGenie-Integrations and create a new Dynatrace integration. Copy the newly created API key.
         /// </summary>
         public Input<string>? ApiKey
         {
@@ -129,7 +157,7 @@ namespace Pulumiverse.Dynatrace
         }
 
         /// <summary>
-        /// The region domain of the OpsGenie
+        /// The region domain of the OpsGenie.
         /// </summary>
         [Input("domain", required: true)]
         public Input<string> Domain { get; set; } = null!;
@@ -141,7 +169,16 @@ namespace Pulumiverse.Dynatrace
         public Input<string>? LegacyId { get; set; }
 
         /// <summary>
-        /// The content of the message.  You can use the following placeholders:  * `{ProblemID}`: The display number of the reported problem.  * `{ProblemImpact}`: The [impact level](https://www.dynatrace.com/support/help/shortlink/impact-analysis) of the problem. Possible values are `APPLICATION`, `SERVICE`, and `INFRASTRUCTURE`.  * `{ProblemSeverity}`: The [severity level](https://www.dynatrace.com/support/help/shortlink/event-types) of the problem. Possible values are `AVAILABILITY`, `ERROR`, `PERFORMANCE`, `RESOURCE_CONTENTION`, and `CUSTOM_ALERT`.  * `{ProblemTitle}`: A short description of the problem
+        /// The content of the message. Type '{' for placeholder suggestions.. #### Available placeholders
+        /// **{ProblemID}**: Display number of the reported problem.
+        /// 
+        /// **{ProblemImpact}**: Impact level of the problem. Possible values are APPLICATION, SERVICE, or INFRASTRUCTURE.
+        /// 
+        /// **{ProblemSeverity}**: Severity level of the problem. Possible values are AVAILABILITY, ERROR, PERFORMANCE, RESOURCE_CONTENTION, or CUSTOM_ALERT.
+        /// 
+        /// **{ProblemTitle}**: Short description of the problem.
+        /// 
+        /// **{ImpactedEntityNames}**: The entity impacted by the problem (or multiple impacted entities).
         /// </summary>
         [Input("message", required: true)]
         public Input<string> Message { get; set; } = null!;
@@ -167,7 +204,7 @@ namespace Pulumiverse.Dynatrace
     public sealed class OpsGenieNotificationState : global::Pulumi.ResourceArgs
     {
         /// <summary>
-        /// The configuration is enabled (`True`) or disabled (`False`)
+        /// This setting is enabled (`True`) or disabled (`False`)
         /// </summary>
         [Input("active")]
         public Input<bool>? Active { get; set; }
@@ -176,7 +213,9 @@ namespace Pulumiverse.Dynatrace
         private Input<string>? _apiKey;
 
         /// <summary>
-        /// The API key to access OpsGenie
+        /// The API key to access OpsGenie.
+        /// 
+        /// Go to OpsGenie-Integrations and create a new Dynatrace integration. Copy the newly created API key.
         /// </summary>
         public Input<string>? ApiKey
         {
@@ -189,7 +228,7 @@ namespace Pulumiverse.Dynatrace
         }
 
         /// <summary>
-        /// The region domain of the OpsGenie
+        /// The region domain of the OpsGenie.
         /// </summary>
         [Input("domain")]
         public Input<string>? Domain { get; set; }
@@ -201,7 +240,16 @@ namespace Pulumiverse.Dynatrace
         public Input<string>? LegacyId { get; set; }
 
         /// <summary>
-        /// The content of the message.  You can use the following placeholders:  * `{ProblemID}`: The display number of the reported problem.  * `{ProblemImpact}`: The [impact level](https://www.dynatrace.com/support/help/shortlink/impact-analysis) of the problem. Possible values are `APPLICATION`, `SERVICE`, and `INFRASTRUCTURE`.  * `{ProblemSeverity}`: The [severity level](https://www.dynatrace.com/support/help/shortlink/event-types) of the problem. Possible values are `AVAILABILITY`, `ERROR`, `PERFORMANCE`, `RESOURCE_CONTENTION`, and `CUSTOM_ALERT`.  * `{ProblemTitle}`: A short description of the problem
+        /// The content of the message. Type '{' for placeholder suggestions.. #### Available placeholders
+        /// **{ProblemID}**: Display number of the reported problem.
+        /// 
+        /// **{ProblemImpact}**: Impact level of the problem. Possible values are APPLICATION, SERVICE, or INFRASTRUCTURE.
+        /// 
+        /// **{ProblemSeverity}**: Severity level of the problem. Possible values are AVAILABILITY, ERROR, PERFORMANCE, RESOURCE_CONTENTION, or CUSTOM_ALERT.
+        /// 
+        /// **{ProblemTitle}**: Short description of the problem.
+        /// 
+        /// **{ImpactedEntityNames}**: The entity impacted by the problem (or multiple impacted entities).
         /// </summary>
         [Input("message")]
         public Input<string>? Message { get; set; }

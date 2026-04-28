@@ -10,6 +10,104 @@ using Pulumi;
 
 namespace Pulumiverse.Dynatrace
 {
+    /// <summary>
+    /// &gt; This resource requires the API token scopes `extensions.write`, `extension.read` and `hub.read`.
+    /// 
+    /// This resource configures a monitoring configuration for the given extension with the specified version. In case the extension has not yet gotten installed for the specified version the installation happens automatically.
+    /// 
+    /// The `Name` attribute needs to refer to the fully qualified name of the extension. For a list of eligible names you can utilize the data source `dynatrace.getHubItems` like in this example:
+    /// 
+    /// ```csharp
+    /// using System.Collections.Generic;
+    /// using System.Linq;
+    /// using Pulumi;
+    /// using Dynatrace = Pulumiverse.Dynatrace;
+    /// 
+    /// return await Deployment.RunAsync(() =&gt; 
+    /// {
+    ///     var extension_20_items = Dynatrace.GetHubItems.Invoke(new()
+    ///     {
+    ///         Type = "EXTENSION2",
+    ///     });
+    /// 
+    /// });
+    /// ```
+    /// 
+    /// You can optionally specify a scope for the extension using either one of the attributes `Host`, `HostGroup`, `ManagementZone` or `ActiveGateGroup`.
+    /// For `Host` and `HostGroup` you're expected to specify the IDs of these entities. You can query for these IDs using the data source `dynatrace.getEntity` or `dynatrace.getEntities` like in this example:
+    /// 
+    /// ```csharp
+    /// using System.Collections.Generic;
+    /// using System.Linq;
+    /// using Pulumi;
+    /// using Dynatrace = Pulumiverse.Dynatrace;
+    /// 
+    /// return await Deployment.RunAsync(() =&gt; 
+    /// {
+    ///     var my_host = Dynatrace.GetEntity.Invoke(new()
+    ///     {
+    ///         Type = "HOST",
+    ///         Name = "&lt;your-host-name&gt;",
+    ///     });
+    /// 
+    ///     return new Dictionary&lt;string, object?&gt;
+    ///     {
+    ///         ["my-host"] = my_host.Apply(my_host =&gt; my_host.Apply(getEntityResult =&gt; getEntityResult.Id)),
+    ///     };
+    /// });
+    /// ```
+    /// for `ManagementZone` and `ActiveGateGroup` you are required to specify the **name** and not the ID.
+    /// 
+    /// The `Value` attribute differs depending on the Extension you want to configure. The expected format is JSON. We recommend to navigate via WebUI to the Dynatrace Hub and configure such an Extension there - the WebUI provides you with the correct JSON code to use.
+    /// 
+    /// For defining which version of a specific Extension should currently be active you can use the resource `dynatrace.HubExtensionActiveVersion`.
+    /// 
+    /// ## Dynatrace Documentation
+    /// 
+    /// - Extensions API - https://docs.dynatrace.com/docs/dynatrace-api/environment-api/extensions-20
+    /// 
+    /// ## Export Example Usage
+    /// 
+    /// - `terraform-provider-dynatrace -export dynatrace.HubExtensionConfig` downloads the settings for all configured Extensions 2.0
+    /// 
+    /// The full documentation of the export feature is available [here](https://dt-url.net/h203qmc).
+    /// 
+    /// ## Resource Example Usage
+    /// 
+    /// ```csharp
+    /// using System.Collections.Generic;
+    /// using System.Linq;
+    /// using System.Text.Json;
+    /// using Pulumi;
+    /// using Dynatrace = Pulumiverse.Dynatrace;
+    /// 
+    /// return await Deployment.RunAsync(() =&gt; 
+    /// {
+    ///     var comDynatraceExtensionJmx_weblogic_cp = new Dynatrace.HubExtensionConfig("com_dynatrace_extension_jmx-weblogic-cp", new()
+    ///     {
+    ///         Name = "com.dynatrace.extension.jmx-weblogic-cp",
+    ///         Scope = "environment",
+    ///         Value = JsonSerializer.Serialize(new Dictionary&lt;string, object?&gt;
+    ///         {
+    ///             ["activationContext"] = "LOCAL",
+    ///             ["activationTags"] = new[]
+    ///             {
+    ///             },
+    ///             ["enabled"] = true,
+    ///             ["description"] = "jj",
+    ///             ["version"] = "2.0.4",
+    ///             ["featureSets"] = new[]
+    ///             {
+    ///                 "cache",
+    ///                 "connections",
+    ///                 "capacity",
+    ///             },
+    ///         }),
+    ///     });
+    /// 
+    /// });
+    /// ```
+    /// </summary>
     [DynatraceResourceType("dynatrace:index/hubExtensionConfig:HubExtensionConfig")]
     public partial class HubExtensionConfig : global::Pulumi.CustomResource
     {
@@ -42,6 +140,12 @@ namespace Pulumiverse.Dynatrace
         /// </summary>
         [Output("name")]
         public Output<string> Name { get; private set; } = null!;
+
+        /// <summary>
+        /// The scope this monitoring configuration will be defined for
+        /// </summary>
+        [Output("scope")]
+        public Output<string> Scope { get; private set; } = null!;
 
         /// <summary>
         /// The JSON encoded value for this monitoring configuration
@@ -127,6 +231,12 @@ namespace Pulumiverse.Dynatrace
         public Input<string>? Name { get; set; }
 
         /// <summary>
+        /// The scope this monitoring configuration will be defined for
+        /// </summary>
+        [Input("scope")]
+        public Input<string>? Scope { get; set; }
+
+        /// <summary>
         /// The JSON encoded value for this monitoring configuration
         /// </summary>
         [Input("value", required: true)]
@@ -169,6 +279,12 @@ namespace Pulumiverse.Dynatrace
         /// </summary>
         [Input("name")]
         public Input<string>? Name { get; set; }
+
+        /// <summary>
+        /// The scope this monitoring configuration will be defined for
+        /// </summary>
+        [Input("scope")]
+        public Input<string>? Scope { get; set; }
 
         /// <summary>
         /// The JSON encoded value for this monitoring configuration

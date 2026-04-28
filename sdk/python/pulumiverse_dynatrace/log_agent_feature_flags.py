@@ -25,6 +25,7 @@ class LogAgentFeatureFlagsArgs:
                  user_and_event_data: Optional[pulumi.Input[_builtins.bool]] = None):
         """
         The set of arguments for constructing a LogAgentFeatureFlags resource.
+
         :param pulumi.Input[_builtins.bool] new_container_log_detector: Enable OneAgent to collect all container logs in Kubernetes environments. 
                This setting enables:
                * Detection and collection of logs from short-lived containers and processes in Kubernetes.
@@ -114,6 +115,7 @@ class _LogAgentFeatureFlagsState:
                  user_and_event_data: Optional[pulumi.Input[_builtins.bool]] = None):
         """
         Input properties used for looking up and filtering LogAgentFeatureFlags resources.
+
         :param pulumi.Input[_builtins.bool] journald_log_detector: Enable OneAgent to collect logs from Journald on Linux systems. 
                This setting enables:
                * Detection and to have logs ingested matching ingest rule is required.
@@ -207,7 +209,21 @@ class LogAgentFeatureFlags(pulumi.CustomResource):
                  user_and_event_data: Optional[pulumi.Input[_builtins.bool]] = None,
                  __props__=None):
         """
-        Create a LogAgentFeatureFlags resource with the given unique name, props, and options.
+        > This resource requires the API token scopes **Read settings** (`settings.read`) and **Write settings** (`settings.write`)
+
+        ## Dynatrace Documentation
+
+        - Log Management and Analytics - https://www.dynatrace.com/support/help/observe-and-explore/logs/log-management-and-analytics
+
+        - Settings API - https://www.dynatrace.com/support/help/dynatrace-api/environment-api/settings (schemaId: `builtin:logmonitoring.log-agent-feature-flags`)
+
+        ## Export Example Usage
+
+        - `terraform-provider-dynatrace -export LogAgentFeatureFlags` downloads all existing log agent feature flags
+
+        The full documentation of the export feature is available [here](https://dt-url.net/h203qmc).
+
+
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[_builtins.bool] journald_log_detector: Enable OneAgent to collect logs from Journald on Linux systems. 
@@ -231,7 +247,21 @@ class LogAgentFeatureFlags(pulumi.CustomResource):
                  args: LogAgentFeatureFlagsArgs,
                  opts: Optional[pulumi.ResourceOptions] = None):
         """
-        Create a LogAgentFeatureFlags resource with the given unique name, props, and options.
+        > This resource requires the API token scopes **Read settings** (`settings.read`) and **Write settings** (`settings.write`)
+
+        ## Dynatrace Documentation
+
+        - Log Management and Analytics - https://www.dynatrace.com/support/help/observe-and-explore/logs/log-management-and-analytics
+
+        - Settings API - https://www.dynatrace.com/support/help/dynatrace-api/environment-api/settings (schemaId: `builtin:logmonitoring.log-agent-feature-flags`)
+
+        ## Export Example Usage
+
+        - `terraform-provider-dynatrace -export LogAgentFeatureFlags` downloads all existing log agent feature flags
+
+        The full documentation of the export feature is available [here](https://dt-url.net/h203qmc).
+
+
         :param str resource_name: The name of the resource.
         :param LogAgentFeatureFlagsArgs args: The arguments to use to populate this resource's properties.
         :param pulumi.ResourceOptions opts: Options for the resource.

@@ -4,6 +4,21 @@
 import * as pulumi from "@pulumi/pulumi";
 import * as utilities from "./utilities";
 
+/**
+ * > This resource requires the API token scopes **Read settings** (`settings.read`) and **Write settings** (`settings.write`)
+ *
+ * ## Dynatrace Documentation
+ *
+ * - Slack integration - https://www.dynatrace.com/support/help/setup-and-configuration/integrations/problem-notifications/slack-integration
+ *
+ * - Settings API - https://www.dynatrace.com/support/help/dynatrace-api/environment-api/settings (schemaId: `builtin:problem.notifications`)
+ *
+ * ## Export Example Usage
+ *
+ * - `terraform-provider-dynatrace -export dynatrace.SlackNotification` downloads the existing problem notifications for Slack
+ *
+ * The full documentation of the export feature is available [here](https://dt-url.net/h203qmc).
+ */
 export class SlackNotification extends pulumi.CustomResource {
     /**
      * Get an existing SlackNotification resource's state with the given name, ID, and optional extra
@@ -33,11 +48,11 @@ export class SlackNotification extends pulumi.CustomResource {
     }
 
     /**
-     * The configuration is enabled (`true`) or disabled (`false`)
+     * This setting is enabled (`true`) or disabled (`false`)
      */
     declare public readonly active: pulumi.Output<boolean>;
     /**
-     * The channel (for example, `#general`) or the user (for example, `@john.smith`) to send the message to
+     * The channel (for example, `#general`) or the user (for example, `@john.smith`) to send the message to.
      */
     declare public readonly channel: pulumi.Output<string>;
     /**
@@ -45,11 +60,12 @@ export class SlackNotification extends pulumi.CustomResource {
      */
     declare public readonly legacyId: pulumi.Output<string>;
     /**
-     * The content of the message.  You can use the following placeholders:  * `{ImpactedEntity}`: The entity impacted by the problem or *X* impacted entities.  * `{PID}`: The ID of the reported problem.  * `{ProblemDetailsText}`: All problem event details, including root cause, as a text-formatted string.  * `{ProblemID}`: The display number of the reported problem.  * `{ProblemImpact}`: The [impact level](https://www.dynatrace.com/support/help/shortlink/impact-analysis) of the problem. Possible values are `APPLICATION`, `SERVICE`, and `INFRASTRUCTURE`.  * `{ProblemSeverity}`: The [severity level](https://www.dynatrace.com/support/help/shortlink/event-types) of the problem. Possible values are `AVAILABILITY`, `ERROR`, `PERFORMANCE`, `RESOURCE_CONTENTION`, and `CUSTOM_ALERT`.  * `{ProblemTitle}`: A short description of the problem.  * `{ProblemURL}`: The URL of the problem within Dynatrace.  * `{State}`: The state of the problem. Possible values are `OPEN` and `RESOLVED`.  * `{Tags}`: The list of tags that are defined for all impacted entities, separated by commas
+     * The content of the message. Type '{' for placeholder suggestions.. #### Available placeholders
+     * **{ImpactedEntity}**: A short description of the problem and impacted entity (or multiple impacted entities).
      */
     declare public readonly message: pulumi.Output<string>;
     /**
-     * The name of the notification configuration
+     * The name of the notification configuration.
      */
     declare public readonly name: pulumi.Output<string>;
     /**
@@ -57,7 +73,7 @@ export class SlackNotification extends pulumi.CustomResource {
      */
     declare public readonly profile: pulumi.Output<string>;
     /**
-     * The URL of the Slack WebHook. This is confidential information, therefore GET requests return this field with the `null` value, and it is optional for PUT requests
+     * Set up an incoming WebHook integration within your Slack account. Copy and paste the generated WebHook URL into the field above.
      */
     declare public readonly url: pulumi.Output<string>;
 
@@ -118,11 +134,11 @@ export class SlackNotification extends pulumi.CustomResource {
  */
 export interface SlackNotificationState {
     /**
-     * The configuration is enabled (`true`) or disabled (`false`)
+     * This setting is enabled (`true`) or disabled (`false`)
      */
     active?: pulumi.Input<boolean>;
     /**
-     * The channel (for example, `#general`) or the user (for example, `@john.smith`) to send the message to
+     * The channel (for example, `#general`) or the user (for example, `@john.smith`) to send the message to.
      */
     channel?: pulumi.Input<string>;
     /**
@@ -130,11 +146,12 @@ export interface SlackNotificationState {
      */
     legacyId?: pulumi.Input<string>;
     /**
-     * The content of the message.  You can use the following placeholders:  * `{ImpactedEntity}`: The entity impacted by the problem or *X* impacted entities.  * `{PID}`: The ID of the reported problem.  * `{ProblemDetailsText}`: All problem event details, including root cause, as a text-formatted string.  * `{ProblemID}`: The display number of the reported problem.  * `{ProblemImpact}`: The [impact level](https://www.dynatrace.com/support/help/shortlink/impact-analysis) of the problem. Possible values are `APPLICATION`, `SERVICE`, and `INFRASTRUCTURE`.  * `{ProblemSeverity}`: The [severity level](https://www.dynatrace.com/support/help/shortlink/event-types) of the problem. Possible values are `AVAILABILITY`, `ERROR`, `PERFORMANCE`, `RESOURCE_CONTENTION`, and `CUSTOM_ALERT`.  * `{ProblemTitle}`: A short description of the problem.  * `{ProblemURL}`: The URL of the problem within Dynatrace.  * `{State}`: The state of the problem. Possible values are `OPEN` and `RESOLVED`.  * `{Tags}`: The list of tags that are defined for all impacted entities, separated by commas
+     * The content of the message. Type '{' for placeholder suggestions.. #### Available placeholders
+     * **{ImpactedEntity}**: A short description of the problem and impacted entity (or multiple impacted entities).
      */
     message?: pulumi.Input<string>;
     /**
-     * The name of the notification configuration
+     * The name of the notification configuration.
      */
     name?: pulumi.Input<string>;
     /**
@@ -142,7 +159,7 @@ export interface SlackNotificationState {
      */
     profile?: pulumi.Input<string>;
     /**
-     * The URL of the Slack WebHook. This is confidential information, therefore GET requests return this field with the `null` value, and it is optional for PUT requests
+     * Set up an incoming WebHook integration within your Slack account. Copy and paste the generated WebHook URL into the field above.
      */
     url?: pulumi.Input<string>;
 }
@@ -152,11 +169,11 @@ export interface SlackNotificationState {
  */
 export interface SlackNotificationArgs {
     /**
-     * The configuration is enabled (`true`) or disabled (`false`)
+     * This setting is enabled (`true`) or disabled (`false`)
      */
     active: pulumi.Input<boolean>;
     /**
-     * The channel (for example, `#general`) or the user (for example, `@john.smith`) to send the message to
+     * The channel (for example, `#general`) or the user (for example, `@john.smith`) to send the message to.
      */
     channel: pulumi.Input<string>;
     /**
@@ -164,11 +181,12 @@ export interface SlackNotificationArgs {
      */
     legacyId?: pulumi.Input<string>;
     /**
-     * The content of the message.  You can use the following placeholders:  * `{ImpactedEntity}`: The entity impacted by the problem or *X* impacted entities.  * `{PID}`: The ID of the reported problem.  * `{ProblemDetailsText}`: All problem event details, including root cause, as a text-formatted string.  * `{ProblemID}`: The display number of the reported problem.  * `{ProblemImpact}`: The [impact level](https://www.dynatrace.com/support/help/shortlink/impact-analysis) of the problem. Possible values are `APPLICATION`, `SERVICE`, and `INFRASTRUCTURE`.  * `{ProblemSeverity}`: The [severity level](https://www.dynatrace.com/support/help/shortlink/event-types) of the problem. Possible values are `AVAILABILITY`, `ERROR`, `PERFORMANCE`, `RESOURCE_CONTENTION`, and `CUSTOM_ALERT`.  * `{ProblemTitle}`: A short description of the problem.  * `{ProblemURL}`: The URL of the problem within Dynatrace.  * `{State}`: The state of the problem. Possible values are `OPEN` and `RESOLVED`.  * `{Tags}`: The list of tags that are defined for all impacted entities, separated by commas
+     * The content of the message. Type '{' for placeholder suggestions.. #### Available placeholders
+     * **{ImpactedEntity}**: A short description of the problem and impacted entity (or multiple impacted entities).
      */
     message: pulumi.Input<string>;
     /**
-     * The name of the notification configuration
+     * The name of the notification configuration.
      */
     name?: pulumi.Input<string>;
     /**
@@ -176,7 +194,7 @@ export interface SlackNotificationArgs {
      */
     profile: pulumi.Input<string>;
     /**
-     * The URL of the Slack WebHook. This is confidential information, therefore GET requests return this field with the `null` value, and it is optional for PUT requests
+     * Set up an incoming WebHook integration within your Slack account. Copy and paste the generated WebHook URL into the field above.
      */
     url: pulumi.Input<string>;
 }

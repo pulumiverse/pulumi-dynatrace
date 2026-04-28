@@ -12,6 +12,49 @@ import (
 	"github.com/pulumiverse/pulumi-dynatrace/sdk/go/dynatrace/internal"
 )
 
+// !> **HTTP DELETE method not available** Terraform will no longer manage this resource on `destroy` but the configuration will still be present on the Dynatrace cluster.
+//
+// > This resource requires the cluster API token scope **Service Provider API** (`ServiceProviderAPI`)
+//
+// ## Dynatrace Documentation
+//
+// - Back up and restore a cluster - https://www.dynatrace.com/support/help/managed-cluster/operation/back-up-and-restore-a-cluster
+//
+// - Cluster API v1 - https://www.dynatrace.com/support/help/managed-cluster/cluster-api/cluster-api-v1
+//
+// ## Resource Example Usage
+//
+// ```go
+// package main
+//
+// import (
+//
+//	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//	"github.com/pulumiverse/pulumi-dynatrace/sdk/go/dynatrace"
+//
+// )
+//
+//	func main() {
+//		pulumi.Run(func(ctx *pulumi.Context) error {
+//			_, err := dynatrace.NewManagedBackup(ctx, "Test", &dynatrace.ManagedBackupArgs{
+//				Enabled:                pulumi.Bool(true),
+//				Datacenter:             pulumi.String(""),
+//				IncludeRumData:         pulumi.Bool(true),
+//				IncludeLm20Data:        pulumi.Bool(true),
+//				IncludeTsMetricData:    pulumi.Bool(true),
+//				BandwidthLimitMbits:    pulumi.Int(240),
+//				MaxEsSnapshotsToClean:  pulumi.Int(25),
+//				CassandraScheduledTime: pulumi.Int(22),
+//				PauseBackups:           pulumi.Bool(false),
+//			})
+//			if err != nil {
+//				return err
+//			}
+//			return nil
+//		})
+//	}
+//
+// ```
 type ManagedBackup struct {
 	pulumi.CustomResourceState
 

@@ -131,8 +131,8 @@ def get_iam_policies(accounts: Optional[Sequence[_builtins.str]] = None,
     import pulumi
     import pulumi_dynatrace as dynatrace
 
-    all = dynatrace.get_iam_policies(accounts=["*"],
-        environments=["*"],
+    all = dynatrace.get_iam_policies(environments=["*"],
+        accounts=["*"],
         global_=True)
     ```
     The following example queries for policies that are defined for the environment with the id `abce234`. No account specific or global policies will be included.
@@ -201,8 +201,8 @@ def get_iam_policies_output(accounts: Optional[pulumi.Input[Optional[Sequence[_b
     import pulumi
     import pulumi_dynatrace as dynatrace
 
-    all = dynatrace.get_iam_policies(accounts=["*"],
-        environments=["*"],
+    all = dynatrace.get_iam_policies(environments=["*"],
+        accounts=["*"],
         global_=True)
     ```
     The following example queries for policies that are defined for the environment with the id `abce234`. No account specific or global policies will be included.

@@ -28,11 +28,12 @@ class PagerDutyNotificationArgs:
                  name: Optional[pulumi.Input[_builtins.str]] = None):
         """
         The set of arguments for constructing a PagerDutyNotification resource.
-        :param pulumi.Input[_builtins.str] account: The name of the PagerDuty account
-        :param pulumi.Input[_builtins.bool] active: The configuration is enabled (`true`) or disabled (`false`)
+
+        :param pulumi.Input[_builtins.str] account: The name of the PagerDuty account.
+        :param pulumi.Input[_builtins.bool] active: This setting is enabled (`true`) or disabled (`false`)
         :param pulumi.Input[_builtins.str] profile: The ID of the associated alerting profile
-        :param pulumi.Input[_builtins.str] service: The name of the PagerDuty Service
-        :param pulumi.Input[_builtins.str] api_key: The API key to access PagerDuty
+        :param pulumi.Input[_builtins.str] service: The name of the service.
+        :param pulumi.Input[_builtins.str] api_key: The Events API key to access PagerDuty.
         :param pulumi.Input[_builtins.str] legacy_id: The ID of these settings when referred to from resources requiring the REST API V1 keys
         :param pulumi.Input[_builtins.str] name: The name of the notification configuration
         """
@@ -51,7 +52,7 @@ class PagerDutyNotificationArgs:
     @pulumi.getter
     def account(self) -> pulumi.Input[_builtins.str]:
         """
-        The name of the PagerDuty account
+        The name of the PagerDuty account.
         """
         return pulumi.get(self, "account")
 
@@ -63,7 +64,7 @@ class PagerDutyNotificationArgs:
     @pulumi.getter
     def active(self) -> pulumi.Input[_builtins.bool]:
         """
-        The configuration is enabled (`true`) or disabled (`false`)
+        This setting is enabled (`true`) or disabled (`false`)
         """
         return pulumi.get(self, "active")
 
@@ -87,7 +88,7 @@ class PagerDutyNotificationArgs:
     @pulumi.getter
     def service(self) -> pulumi.Input[_builtins.str]:
         """
-        The name of the PagerDuty Service
+        The name of the service.
         """
         return pulumi.get(self, "service")
 
@@ -99,7 +100,7 @@ class PagerDutyNotificationArgs:
     @pulumi.getter(name="apiKey")
     def api_key(self) -> Optional[pulumi.Input[_builtins.str]]:
         """
-        The API key to access PagerDuty
+        The Events API key to access PagerDuty.
         """
         return pulumi.get(self, "api_key")
 
@@ -144,13 +145,14 @@ class _PagerDutyNotificationState:
                  service: Optional[pulumi.Input[_builtins.str]] = None):
         """
         Input properties used for looking up and filtering PagerDutyNotification resources.
-        :param pulumi.Input[_builtins.str] account: The name of the PagerDuty account
-        :param pulumi.Input[_builtins.bool] active: The configuration is enabled (`true`) or disabled (`false`)
-        :param pulumi.Input[_builtins.str] api_key: The API key to access PagerDuty
+
+        :param pulumi.Input[_builtins.str] account: The name of the PagerDuty account.
+        :param pulumi.Input[_builtins.bool] active: This setting is enabled (`true`) or disabled (`false`)
+        :param pulumi.Input[_builtins.str] api_key: The Events API key to access PagerDuty.
         :param pulumi.Input[_builtins.str] legacy_id: The ID of these settings when referred to from resources requiring the REST API V1 keys
         :param pulumi.Input[_builtins.str] name: The name of the notification configuration
         :param pulumi.Input[_builtins.str] profile: The ID of the associated alerting profile
-        :param pulumi.Input[_builtins.str] service: The name of the PagerDuty Service
+        :param pulumi.Input[_builtins.str] service: The name of the service.
         """
         if account is not None:
             pulumi.set(__self__, "account", account)
@@ -171,7 +173,7 @@ class _PagerDutyNotificationState:
     @pulumi.getter
     def account(self) -> Optional[pulumi.Input[_builtins.str]]:
         """
-        The name of the PagerDuty account
+        The name of the PagerDuty account.
         """
         return pulumi.get(self, "account")
 
@@ -183,7 +185,7 @@ class _PagerDutyNotificationState:
     @pulumi.getter
     def active(self) -> Optional[pulumi.Input[_builtins.bool]]:
         """
-        The configuration is enabled (`true`) or disabled (`false`)
+        This setting is enabled (`true`) or disabled (`false`)
         """
         return pulumi.get(self, "active")
 
@@ -195,7 +197,7 @@ class _PagerDutyNotificationState:
     @pulumi.getter(name="apiKey")
     def api_key(self) -> Optional[pulumi.Input[_builtins.str]]:
         """
-        The API key to access PagerDuty
+        The Events API key to access PagerDuty.
         """
         return pulumi.get(self, "api_key")
 
@@ -243,7 +245,7 @@ class _PagerDutyNotificationState:
     @pulumi.getter
     def service(self) -> Optional[pulumi.Input[_builtins.str]]:
         """
-        The name of the PagerDuty Service
+        The name of the service.
         """
         return pulumi.get(self, "service")
 
@@ -267,16 +269,30 @@ class PagerDutyNotification(pulumi.CustomResource):
                  service: Optional[pulumi.Input[_builtins.str]] = None,
                  __props__=None):
         """
-        Create a PagerDutyNotification resource with the given unique name, props, and options.
+        > This resource requires the API token scopes **Read settings** (`settings.read`) and **Write settings** (`settings.write`)
+
+        ## Dynatrace Documentation
+
+        - Pager Duty notifications - https://www.dynatrace.com/support/help/setup-and-configuration/integrations/problem-notifications/pagerduty-integration
+
+        - Settings API - https://www.dynatrace.com/support/help/dynatrace-api/environment-api/settings (schemaId: `builtin:problem.notifications`)
+
+        ## Export Example Usage
+
+        - `terraform-provider-dynatrace -export PagerDutyNotification` downloads the existing problem notifications for Pager Duty
+
+        The full documentation of the export feature is available [here](https://dt-url.net/h203qmc).
+
+
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
-        :param pulumi.Input[_builtins.str] account: The name of the PagerDuty account
-        :param pulumi.Input[_builtins.bool] active: The configuration is enabled (`true`) or disabled (`false`)
-        :param pulumi.Input[_builtins.str] api_key: The API key to access PagerDuty
+        :param pulumi.Input[_builtins.str] account: The name of the PagerDuty account.
+        :param pulumi.Input[_builtins.bool] active: This setting is enabled (`true`) or disabled (`false`)
+        :param pulumi.Input[_builtins.str] api_key: The Events API key to access PagerDuty.
         :param pulumi.Input[_builtins.str] legacy_id: The ID of these settings when referred to from resources requiring the REST API V1 keys
         :param pulumi.Input[_builtins.str] name: The name of the notification configuration
         :param pulumi.Input[_builtins.str] profile: The ID of the associated alerting profile
-        :param pulumi.Input[_builtins.str] service: The name of the PagerDuty Service
+        :param pulumi.Input[_builtins.str] service: The name of the service.
         """
         ...
     @overload
@@ -285,7 +301,21 @@ class PagerDutyNotification(pulumi.CustomResource):
                  args: PagerDutyNotificationArgs,
                  opts: Optional[pulumi.ResourceOptions] = None):
         """
-        Create a PagerDutyNotification resource with the given unique name, props, and options.
+        > This resource requires the API token scopes **Read settings** (`settings.read`) and **Write settings** (`settings.write`)
+
+        ## Dynatrace Documentation
+
+        - Pager Duty notifications - https://www.dynatrace.com/support/help/setup-and-configuration/integrations/problem-notifications/pagerduty-integration
+
+        - Settings API - https://www.dynatrace.com/support/help/dynatrace-api/environment-api/settings (schemaId: `builtin:problem.notifications`)
+
+        ## Export Example Usage
+
+        - `terraform-provider-dynatrace -export PagerDutyNotification` downloads the existing problem notifications for Pager Duty
+
+        The full documentation of the export feature is available [here](https://dt-url.net/h203qmc).
+
+
         :param str resource_name: The name of the resource.
         :param PagerDutyNotificationArgs args: The arguments to use to populate this resource's properties.
         :param pulumi.ResourceOptions opts: Options for the resource.
@@ -358,13 +388,13 @@ class PagerDutyNotification(pulumi.CustomResource):
         :param str resource_name: The unique name of the resulting resource.
         :param pulumi.Input[str] id: The unique provider ID of the resource to lookup.
         :param pulumi.ResourceOptions opts: Options for the resource.
-        :param pulumi.Input[_builtins.str] account: The name of the PagerDuty account
-        :param pulumi.Input[_builtins.bool] active: The configuration is enabled (`true`) or disabled (`false`)
-        :param pulumi.Input[_builtins.str] api_key: The API key to access PagerDuty
+        :param pulumi.Input[_builtins.str] account: The name of the PagerDuty account.
+        :param pulumi.Input[_builtins.bool] active: This setting is enabled (`true`) or disabled (`false`)
+        :param pulumi.Input[_builtins.str] api_key: The Events API key to access PagerDuty.
         :param pulumi.Input[_builtins.str] legacy_id: The ID of these settings when referred to from resources requiring the REST API V1 keys
         :param pulumi.Input[_builtins.str] name: The name of the notification configuration
         :param pulumi.Input[_builtins.str] profile: The ID of the associated alerting profile
-        :param pulumi.Input[_builtins.str] service: The name of the PagerDuty Service
+        :param pulumi.Input[_builtins.str] service: The name of the service.
         """
         opts = pulumi.ResourceOptions.merge(opts, pulumi.ResourceOptions(id=id))
 
@@ -383,7 +413,7 @@ class PagerDutyNotification(pulumi.CustomResource):
     @pulumi.getter
     def account(self) -> pulumi.Output[_builtins.str]:
         """
-        The name of the PagerDuty account
+        The name of the PagerDuty account.
         """
         return pulumi.get(self, "account")
 
@@ -391,7 +421,7 @@ class PagerDutyNotification(pulumi.CustomResource):
     @pulumi.getter
     def active(self) -> pulumi.Output[_builtins.bool]:
         """
-        The configuration is enabled (`true`) or disabled (`false`)
+        This setting is enabled (`true`) or disabled (`false`)
         """
         return pulumi.get(self, "active")
 
@@ -399,7 +429,7 @@ class PagerDutyNotification(pulumi.CustomResource):
     @pulumi.getter(name="apiKey")
     def api_key(self) -> pulumi.Output[Optional[_builtins.str]]:
         """
-        The API key to access PagerDuty
+        The Events API key to access PagerDuty.
         """
         return pulumi.get(self, "api_key")
 
@@ -431,7 +461,7 @@ class PagerDutyNotification(pulumi.CustomResource):
     @pulumi.getter
     def service(self) -> pulumi.Output[_builtins.str]:
         """
-        The name of the PagerDuty Service
+        The name of the service.
         """
         return pulumi.get(self, "service")
 

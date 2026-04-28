@@ -23,6 +23,7 @@ class MonitoredTechnologiesApacheArgs:
                  host_id: Optional[pulumi.Input[_builtins.str]] = None):
         """
         The set of arguments for constructing a MonitoredTechnologiesApache resource.
+
         :param pulumi.Input[_builtins.bool] enabled: This setting is enabled (`true`) or disabled (`false`)
         :param pulumi.Input[_builtins.str] host_id: The scope of this settings. If the settings should cover the whole environment, just don't specify any scope.
         """
@@ -62,6 +63,7 @@ class _MonitoredTechnologiesApacheState:
                  host_id: Optional[pulumi.Input[_builtins.str]] = None):
         """
         Input properties used for looking up and filtering MonitoredTechnologiesApache resources.
+
         :param pulumi.Input[_builtins.bool] enabled: This setting is enabled (`true`) or disabled (`false`)
         :param pulumi.Input[_builtins.str] host_id: The scope of this settings. If the settings should cover the whole environment, just don't specify any scope.
         """
@@ -105,7 +107,21 @@ class MonitoredTechnologiesApache(pulumi.CustomResource):
                  host_id: Optional[pulumi.Input[_builtins.str]] = None,
                  __props__=None):
         """
-        Create a MonitoredTechnologiesApache resource with the given unique name, props, and options.
+        > This resource requires the API token scopes **Read settings** (`settings.read`) and **Write settings** (`settings.write`)
+
+        ## Dynatrace Documentation
+
+        - Hosts - https://www.dynatrace.com/support/help/platform-modules/infrastructure-monitoring/hosts
+
+        - Settings API - https://www.dynatrace.com/support/help/dynatrace-api/environment-api/settings (schemaId: `builtin:monitored-technologies.apache`)
+
+        ## Export Example Usage
+
+        - `terraform-provider-dynatrace -export MonitoredTechnologiesApache` downloads all existing Apache HTTP Server monitoring configuration
+
+        The full documentation of the export feature is available [here](https://dt-url.net/h203qmc).
+
+
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[_builtins.bool] enabled: This setting is enabled (`true`) or disabled (`false`)
@@ -118,7 +134,21 @@ class MonitoredTechnologiesApache(pulumi.CustomResource):
                  args: MonitoredTechnologiesApacheArgs,
                  opts: Optional[pulumi.ResourceOptions] = None):
         """
-        Create a MonitoredTechnologiesApache resource with the given unique name, props, and options.
+        > This resource requires the API token scopes **Read settings** (`settings.read`) and **Write settings** (`settings.write`)
+
+        ## Dynatrace Documentation
+
+        - Hosts - https://www.dynatrace.com/support/help/platform-modules/infrastructure-monitoring/hosts
+
+        - Settings API - https://www.dynatrace.com/support/help/dynatrace-api/environment-api/settings (schemaId: `builtin:monitored-technologies.apache`)
+
+        ## Export Example Usage
+
+        - `terraform-provider-dynatrace -export MonitoredTechnologiesApache` downloads all existing Apache HTTP Server monitoring configuration
+
+        The full documentation of the export feature is available [here](https://dt-url.net/h203qmc).
+
+
         :param str resource_name: The name of the resource.
         :param MonitoredTechnologiesApacheArgs args: The arguments to use to populate this resource's properties.
         :param pulumi.ResourceOptions opts: Options for the resource.

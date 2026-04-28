@@ -12,6 +12,19 @@ import (
 	"github.com/pulumiverse/pulumi-dynatrace/sdk/go/dynatrace/internal"
 )
 
+// > This resource requires the API token scope **Create and read synthetic monitors, locations, and nodes** (`ExternalSyntheticIntegration`)
+//
+// ## Dynatrace Documentation
+//
+// - Synthetic Monitoring - Browser monitors - https://www.dynatrace.com/support/help/shortlink/synthetic-hub#browser-monitors
+//
+// - Synthetic Monitors API - https://www.dynatrace.com/support/help/dynatrace-api/environment-api/synthetic/synthetic-monitors
+//
+// ## Export Example Usage
+//
+// - `terraform-provider-dynatrace -export BrowserMonitor` downloads all existing browser monitor configuration
+//
+// The full documentation of the export feature is available [here](https://dt-url.net/h203qmc).
 type BrowserMonitor struct {
 	pulumi.CustomResourceState
 

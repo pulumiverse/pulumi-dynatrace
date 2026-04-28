@@ -24,15 +24,18 @@ class HubExtensionConfigArgs:
                  host: Optional[pulumi.Input[_builtins.str]] = None,
                  host_group: Optional[pulumi.Input[_builtins.str]] = None,
                  management_zone: Optional[pulumi.Input[_builtins.str]] = None,
-                 name: Optional[pulumi.Input[_builtins.str]] = None):
+                 name: Optional[pulumi.Input[_builtins.str]] = None,
+                 scope: Optional[pulumi.Input[_builtins.str]] = None):
         """
         The set of arguments for constructing a HubExtensionConfig resource.
+
         :param pulumi.Input[_builtins.str] value: The JSON encoded value for this monitoring configuration
         :param pulumi.Input[_builtins.str] active_gate_group: The name of the Active Gate Group this monitoring configuration will be defined for
         :param pulumi.Input[_builtins.str] host: The ID of the host this monitoring configuration will be defined for
         :param pulumi.Input[_builtins.str] host_group: The ID of the host group this monitoring configuration will be defined for
         :param pulumi.Input[_builtins.str] management_zone: The name of the Management Zone this monitoring configuration will be defined for
         :param pulumi.Input[_builtins.str] name: The fully qualified name of the extension, such as `com.dynatrace.extension.jmx-liberty-cp`. You can query for these names using the data source `get_hub_items`
+        :param pulumi.Input[_builtins.str] scope: The scope this monitoring configuration will be defined for
         """
         pulumi.set(__self__, "value", value)
         if active_gate_group is not None:
@@ -45,6 +48,8 @@ class HubExtensionConfigArgs:
             pulumi.set(__self__, "management_zone", management_zone)
         if name is not None:
             pulumi.set(__self__, "name", name)
+        if scope is not None:
+            pulumi.set(__self__, "scope", scope)
 
     @_builtins.property
     @pulumi.getter
@@ -118,6 +123,18 @@ class HubExtensionConfigArgs:
     def name(self, value: Optional[pulumi.Input[_builtins.str]]):
         pulumi.set(self, "name", value)
 
+    @_builtins.property
+    @pulumi.getter
+    def scope(self) -> Optional[pulumi.Input[_builtins.str]]:
+        """
+        The scope this monitoring configuration will be defined for
+        """
+        return pulumi.get(self, "scope")
+
+    @scope.setter
+    def scope(self, value: Optional[pulumi.Input[_builtins.str]]):
+        pulumi.set(self, "scope", value)
+
 
 @pulumi.input_type
 class _HubExtensionConfigState:
@@ -127,14 +144,17 @@ class _HubExtensionConfigState:
                  host_group: Optional[pulumi.Input[_builtins.str]] = None,
                  management_zone: Optional[pulumi.Input[_builtins.str]] = None,
                  name: Optional[pulumi.Input[_builtins.str]] = None,
+                 scope: Optional[pulumi.Input[_builtins.str]] = None,
                  value: Optional[pulumi.Input[_builtins.str]] = None):
         """
         Input properties used for looking up and filtering HubExtensionConfig resources.
+
         :param pulumi.Input[_builtins.str] active_gate_group: The name of the Active Gate Group this monitoring configuration will be defined for
         :param pulumi.Input[_builtins.str] host: The ID of the host this monitoring configuration will be defined for
         :param pulumi.Input[_builtins.str] host_group: The ID of the host group this monitoring configuration will be defined for
         :param pulumi.Input[_builtins.str] management_zone: The name of the Management Zone this monitoring configuration will be defined for
         :param pulumi.Input[_builtins.str] name: The fully qualified name of the extension, such as `com.dynatrace.extension.jmx-liberty-cp`. You can query for these names using the data source `get_hub_items`
+        :param pulumi.Input[_builtins.str] scope: The scope this monitoring configuration will be defined for
         :param pulumi.Input[_builtins.str] value: The JSON encoded value for this monitoring configuration
         """
         if active_gate_group is not None:
@@ -147,6 +167,8 @@ class _HubExtensionConfigState:
             pulumi.set(__self__, "management_zone", management_zone)
         if name is not None:
             pulumi.set(__self__, "name", name)
+        if scope is not None:
+            pulumi.set(__self__, "scope", scope)
         if value is not None:
             pulumi.set(__self__, "value", value)
 
@@ -212,6 +234,18 @@ class _HubExtensionConfigState:
 
     @_builtins.property
     @pulumi.getter
+    def scope(self) -> Optional[pulumi.Input[_builtins.str]]:
+        """
+        The scope this monitoring configuration will be defined for
+        """
+        return pulumi.get(self, "scope")
+
+    @scope.setter
+    def scope(self, value: Optional[pulumi.Input[_builtins.str]]):
+        pulumi.set(self, "scope", value)
+
+    @_builtins.property
+    @pulumi.getter
     def value(self) -> Optional[pulumi.Input[_builtins.str]]:
         """
         The JSON encoded value for this monitoring configuration
@@ -234,10 +268,75 @@ class HubExtensionConfig(pulumi.CustomResource):
                  host_group: Optional[pulumi.Input[_builtins.str]] = None,
                  management_zone: Optional[pulumi.Input[_builtins.str]] = None,
                  name: Optional[pulumi.Input[_builtins.str]] = None,
+                 scope: Optional[pulumi.Input[_builtins.str]] = None,
                  value: Optional[pulumi.Input[_builtins.str]] = None,
                  __props__=None):
         """
-        Create a HubExtensionConfig resource with the given unique name, props, and options.
+        > This resource requires the API token scopes `extensions.write`, `extension.read` and `hub.read`.
+
+        This resource configures a monitoring configuration for the given extension with the specified version. In case the extension has not yet gotten installed for the specified version the installation happens automatically.
+
+        The `name` attribute needs to refer to the fully qualified name of the extension. For a list of eligible names you can utilize the data source `get_hub_items` like in this example:
+
+        ```python
+        import pulumi
+        import pulumi_dynatrace as dynatrace
+
+        extension_20_items = dynatrace.get_hub_items(type="EXTENSION2")
+        ```
+
+        You can optionally specify a scope for the extension using either one of the attributes `host`, `host_group`, `management_zone` or `active_gate_group`.
+        For `host` and `host_group` you're expected to specify the IDs of these entities. You can query for these IDs using the data source `get_entity` or `get_entities` like in this example:
+
+        ```python
+        import pulumi
+        import pulumi_dynatrace as dynatrace
+
+        my_host = dynatrace.get_entity(type="HOST",
+            name="<your-host-name>")
+        pulumi.export("my-host", my_host.id)
+        ```
+        for `management_zone` and `active_gate_group` you are required to specify the **name** and not the ID.
+
+        The `value` attribute differs depending on the Extension you want to configure. The expected format is JSON. We recommend to navigate via WebUI to the Dynatrace Hub and configure such an Extension there - the WebUI provides you with the correct JSON code to use.
+
+        For defining which version of a specific Extension should currently be active you can use the resource `HubExtensionActiveVersion`.
+
+        ## Dynatrace Documentation
+
+        - Extensions API - https://docs.dynatrace.com/docs/dynatrace-api/environment-api/extensions-20
+
+        ## Export Example Usage
+
+        - `terraform-provider-dynatrace -export HubExtensionConfig` downloads the settings for all configured Extensions 2.0
+
+        The full documentation of the export feature is available [here](https://dt-url.net/h203qmc).
+
+        ## Resource Example Usage
+
+        ```python
+        import pulumi
+        import json
+        import pulumiverse_dynatrace as dynatrace
+
+        com_dynatrace_extension_jmx_weblogic_cp = dynatrace.HubExtensionConfig("com_dynatrace_extension_jmx-weblogic-cp",
+            name="com.dynatrace.extension.jmx-weblogic-cp",
+            scope="environment",
+            value=json.dumps({
+                "activationContext": "LOCAL",
+                "activationTags": [],
+                "enabled": True,
+                "description": "jj",
+                "version": "2.0.4",
+                "featureSets": [
+                    "cache",
+                    "connections",
+                    "capacity",
+                ],
+            }))
+        ```
+
+
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[_builtins.str] active_gate_group: The name of the Active Gate Group this monitoring configuration will be defined for
@@ -245,6 +344,7 @@ class HubExtensionConfig(pulumi.CustomResource):
         :param pulumi.Input[_builtins.str] host_group: The ID of the host group this monitoring configuration will be defined for
         :param pulumi.Input[_builtins.str] management_zone: The name of the Management Zone this monitoring configuration will be defined for
         :param pulumi.Input[_builtins.str] name: The fully qualified name of the extension, such as `com.dynatrace.extension.jmx-liberty-cp`. You can query for these names using the data source `get_hub_items`
+        :param pulumi.Input[_builtins.str] scope: The scope this monitoring configuration will be defined for
         :param pulumi.Input[_builtins.str] value: The JSON encoded value for this monitoring configuration
         """
         ...
@@ -254,7 +354,71 @@ class HubExtensionConfig(pulumi.CustomResource):
                  args: HubExtensionConfigArgs,
                  opts: Optional[pulumi.ResourceOptions] = None):
         """
-        Create a HubExtensionConfig resource with the given unique name, props, and options.
+        > This resource requires the API token scopes `extensions.write`, `extension.read` and `hub.read`.
+
+        This resource configures a monitoring configuration for the given extension with the specified version. In case the extension has not yet gotten installed for the specified version the installation happens automatically.
+
+        The `name` attribute needs to refer to the fully qualified name of the extension. For a list of eligible names you can utilize the data source `get_hub_items` like in this example:
+
+        ```python
+        import pulumi
+        import pulumi_dynatrace as dynatrace
+
+        extension_20_items = dynatrace.get_hub_items(type="EXTENSION2")
+        ```
+
+        You can optionally specify a scope for the extension using either one of the attributes `host`, `host_group`, `management_zone` or `active_gate_group`.
+        For `host` and `host_group` you're expected to specify the IDs of these entities. You can query for these IDs using the data source `get_entity` or `get_entities` like in this example:
+
+        ```python
+        import pulumi
+        import pulumi_dynatrace as dynatrace
+
+        my_host = dynatrace.get_entity(type="HOST",
+            name="<your-host-name>")
+        pulumi.export("my-host", my_host.id)
+        ```
+        for `management_zone` and `active_gate_group` you are required to specify the **name** and not the ID.
+
+        The `value` attribute differs depending on the Extension you want to configure. The expected format is JSON. We recommend to navigate via WebUI to the Dynatrace Hub and configure such an Extension there - the WebUI provides you with the correct JSON code to use.
+
+        For defining which version of a specific Extension should currently be active you can use the resource `HubExtensionActiveVersion`.
+
+        ## Dynatrace Documentation
+
+        - Extensions API - https://docs.dynatrace.com/docs/dynatrace-api/environment-api/extensions-20
+
+        ## Export Example Usage
+
+        - `terraform-provider-dynatrace -export HubExtensionConfig` downloads the settings for all configured Extensions 2.0
+
+        The full documentation of the export feature is available [here](https://dt-url.net/h203qmc).
+
+        ## Resource Example Usage
+
+        ```python
+        import pulumi
+        import json
+        import pulumiverse_dynatrace as dynatrace
+
+        com_dynatrace_extension_jmx_weblogic_cp = dynatrace.HubExtensionConfig("com_dynatrace_extension_jmx-weblogic-cp",
+            name="com.dynatrace.extension.jmx-weblogic-cp",
+            scope="environment",
+            value=json.dumps({
+                "activationContext": "LOCAL",
+                "activationTags": [],
+                "enabled": True,
+                "description": "jj",
+                "version": "2.0.4",
+                "featureSets": [
+                    "cache",
+                    "connections",
+                    "capacity",
+                ],
+            }))
+        ```
+
+
         :param str resource_name: The name of the resource.
         :param HubExtensionConfigArgs args: The arguments to use to populate this resource's properties.
         :param pulumi.ResourceOptions opts: Options for the resource.
@@ -275,6 +439,7 @@ class HubExtensionConfig(pulumi.CustomResource):
                  host_group: Optional[pulumi.Input[_builtins.str]] = None,
                  management_zone: Optional[pulumi.Input[_builtins.str]] = None,
                  name: Optional[pulumi.Input[_builtins.str]] = None,
+                 scope: Optional[pulumi.Input[_builtins.str]] = None,
                  value: Optional[pulumi.Input[_builtins.str]] = None,
                  __props__=None):
         opts = pulumi.ResourceOptions.merge(_utilities.get_resource_opts_defaults(), opts)
@@ -290,6 +455,7 @@ class HubExtensionConfig(pulumi.CustomResource):
             __props__.__dict__["host_group"] = host_group
             __props__.__dict__["management_zone"] = management_zone
             __props__.__dict__["name"] = name
+            __props__.__dict__["scope"] = scope
             if value is None and not opts.urn:
                 raise TypeError("Missing required property 'value'")
             __props__.__dict__["value"] = value
@@ -308,6 +474,7 @@ class HubExtensionConfig(pulumi.CustomResource):
             host_group: Optional[pulumi.Input[_builtins.str]] = None,
             management_zone: Optional[pulumi.Input[_builtins.str]] = None,
             name: Optional[pulumi.Input[_builtins.str]] = None,
+            scope: Optional[pulumi.Input[_builtins.str]] = None,
             value: Optional[pulumi.Input[_builtins.str]] = None) -> 'HubExtensionConfig':
         """
         Get an existing HubExtensionConfig resource's state with the given name, id, and optional extra
@@ -321,6 +488,7 @@ class HubExtensionConfig(pulumi.CustomResource):
         :param pulumi.Input[_builtins.str] host_group: The ID of the host group this monitoring configuration will be defined for
         :param pulumi.Input[_builtins.str] management_zone: The name of the Management Zone this monitoring configuration will be defined for
         :param pulumi.Input[_builtins.str] name: The fully qualified name of the extension, such as `com.dynatrace.extension.jmx-liberty-cp`. You can query for these names using the data source `get_hub_items`
+        :param pulumi.Input[_builtins.str] scope: The scope this monitoring configuration will be defined for
         :param pulumi.Input[_builtins.str] value: The JSON encoded value for this monitoring configuration
         """
         opts = pulumi.ResourceOptions.merge(opts, pulumi.ResourceOptions(id=id))
@@ -332,6 +500,7 @@ class HubExtensionConfig(pulumi.CustomResource):
         __props__.__dict__["host_group"] = host_group
         __props__.__dict__["management_zone"] = management_zone
         __props__.__dict__["name"] = name
+        __props__.__dict__["scope"] = scope
         __props__.__dict__["value"] = value
         return HubExtensionConfig(resource_name, opts=opts, __props__=__props__)
 
@@ -374,6 +543,14 @@ class HubExtensionConfig(pulumi.CustomResource):
         The fully qualified name of the extension, such as `com.dynatrace.extension.jmx-liberty-cp`. You can query for these names using the data source `get_hub_items`
         """
         return pulumi.get(self, "name")
+
+    @_builtins.property
+    @pulumi.getter
+    def scope(self) -> pulumi.Output[_builtins.str]:
+        """
+        The scope this monitoring configuration will be defined for
+        """
+        return pulumi.get(self, "scope")
 
     @_builtins.property
     @pulumi.getter

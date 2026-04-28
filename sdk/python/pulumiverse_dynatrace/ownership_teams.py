@@ -32,6 +32,7 @@ class OwnershipTeamsArgs:
                  supplementary_identifiers: Optional[pulumi.Input['OwnershipTeamsSupplementaryIdentifiersArgs']] = None):
         """
         The set of arguments for constructing a OwnershipTeams resource.
+
         :param pulumi.Input[_builtins.str] identifier: The team identifier is used to reference the team from any entity in Dynatrace. If you are using Kubernetes labels, keep in mind the 63 character limit that they enforce.
         :param pulumi.Input['OwnershipTeamsResponsibilitiesArgs'] responsibilities: Turn on all responsibility assignments that apply to this team.
         :param pulumi.Input['OwnershipTeamsAdditionalInformationArgs'] additional_information: Define key/value pairs that further describe this team — for example, cost center, solution type, or business unit assignments.
@@ -182,6 +183,7 @@ class _OwnershipTeamsState:
                  supplementary_identifiers: Optional[pulumi.Input['OwnershipTeamsSupplementaryIdentifiersArgs']] = None):
         """
         Input properties used for looking up and filtering OwnershipTeams resources.
+
         :param pulumi.Input['OwnershipTeamsAdditionalInformationArgs'] additional_information: Define key/value pairs that further describe this team — for example, cost center, solution type, or business unit assignments.
         :param pulumi.Input['OwnershipTeamsContactDetailsArgs'] contact_details: Define options for messaging integration or other means of contacting this team.
         :param pulumi.Input[_builtins.str] description: Description
@@ -337,7 +339,21 @@ class OwnershipTeams(pulumi.CustomResource):
                  supplementary_identifiers: Optional[pulumi.Input[Union['OwnershipTeamsSupplementaryIdentifiersArgs', 'OwnershipTeamsSupplementaryIdentifiersArgsDict']]] = None,
                  __props__=None):
         """
-        Create a OwnershipTeams resource with the given unique name, props, and options.
+        > This resource requires the API token scopes **Read settings** (`settings.read`) and **Write settings** (`settings.write`)
+
+        ## Dynatrace Documentation
+
+        - Ownership - https://www.dynatrace.com/support/help/manage/ownership
+
+        - Settings API - https://www.dynatrace.com/support/help/dynatrace-api/environment-api/settings (schemaId: `builtin:ownership.teams`)
+
+        ## Export Example Usage
+
+        - `terraform-provider-dynatrace -export OwnershipTeams` downloads all existing ownership team configuration
+
+        The full documentation of the export feature is available [here](https://dt-url.net/h203qmc).
+
+
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[Union['OwnershipTeamsAdditionalInformationArgs', 'OwnershipTeamsAdditionalInformationArgsDict']] additional_information: Define key/value pairs that further describe this team — for example, cost center, solution type, or business unit assignments.
@@ -357,7 +373,21 @@ class OwnershipTeams(pulumi.CustomResource):
                  args: OwnershipTeamsArgs,
                  opts: Optional[pulumi.ResourceOptions] = None):
         """
-        Create a OwnershipTeams resource with the given unique name, props, and options.
+        > This resource requires the API token scopes **Read settings** (`settings.read`) and **Write settings** (`settings.write`)
+
+        ## Dynatrace Documentation
+
+        - Ownership - https://www.dynatrace.com/support/help/manage/ownership
+
+        - Settings API - https://www.dynatrace.com/support/help/dynatrace-api/environment-api/settings (schemaId: `builtin:ownership.teams`)
+
+        ## Export Example Usage
+
+        - `terraform-provider-dynatrace -export OwnershipTeams` downloads all existing ownership team configuration
+
+        The full documentation of the export feature is available [here](https://dt-url.net/h203qmc).
+
+
         :param str resource_name: The name of the resource.
         :param OwnershipTeamsArgs args: The arguments to use to populate this resource's properties.
         :param pulumi.ResourceOptions opts: Options for the resource.

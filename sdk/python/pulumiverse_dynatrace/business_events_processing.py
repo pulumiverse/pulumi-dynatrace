@@ -30,6 +30,7 @@ class BusinessEventsProcessingArgs:
                  transformation_fields: Optional[pulumi.Input['BusinessEventsProcessingTransformationFieldsArgs']] = None):
         """
         The set of arguments for constructing a BusinessEventsProcessing resource.
+
         :param pulumi.Input[_builtins.bool] enabled: This setting is enabled (`true`) or disabled (`false`)
         :param pulumi.Input[_builtins.str] matcher: [See our documentation](https://dt-url.net/bp234rv)
         :param pulumi.Input[_builtins.str] rule_name: Rule name
@@ -147,6 +148,7 @@ class _BusinessEventsProcessingState:
                  transformation_fields: Optional[pulumi.Input['BusinessEventsProcessingTransformationFieldsArgs']] = None):
         """
         Input properties used for looking up and filtering BusinessEventsProcessing resources.
+
         :param pulumi.Input[_builtins.bool] enabled: This setting is enabled (`true`) or disabled (`false`)
         :param pulumi.Input[_builtins.str] insert_after: Because this resource allows for ordering you may specify the ID of the resource instance that comes before this instance regarding order. If not specified when creating the setting will be added to the end of the list. If not specified during update the order will remain untouched
         :param pulumi.Input[_builtins.str] matcher: [See our documentation](https://dt-url.net/bp234rv)
@@ -272,7 +274,24 @@ class BusinessEventsProcessing(pulumi.CustomResource):
                  transformation_fields: Optional[pulumi.Input[Union['BusinessEventsProcessingTransformationFieldsArgs', 'BusinessEventsProcessingTransformationFieldsArgsDict']]] = None,
                  __props__=None):
         """
-        Create a BusinessEventsProcessing resource with the given unique name, props, and options.
+        > **Warning** This resource has been deprecated in favor of OpenPipeline.
+        Please migrate your OpenPipeline configurations and use `dynatrace_openpipeline_v2_*` instead.
+
+        > This resource requires the API token scopes **Read settings** (`settings.read`) and **Write settings** (`settings.write`)
+
+        ## Dynatrace Documentation
+
+        - Business event processing - https://www.dynatrace.com/support/help/platform-modules/business-analytics/ba-metric-extraction
+
+        - Settings API - https://www.dynatrace.com/support/help/dynatrace-api/environment-api/settings (schemaId: `builtin:bizevents-processing-pipelines.rule`)
+
+        ## Export Example Usage
+
+        - `terraform-provider-dynatrace -export BusinessEventsProcessing` downloads all existing business event processing configuration
+
+        The full documentation of the export feature is available [here](https://dt-url.net/h203qmc).
+
+
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[_builtins.bool] enabled: This setting is enabled (`true`) or disabled (`false`)
@@ -291,7 +310,24 @@ class BusinessEventsProcessing(pulumi.CustomResource):
                  args: BusinessEventsProcessingArgs,
                  opts: Optional[pulumi.ResourceOptions] = None):
         """
-        Create a BusinessEventsProcessing resource with the given unique name, props, and options.
+        > **Warning** This resource has been deprecated in favor of OpenPipeline.
+        Please migrate your OpenPipeline configurations and use `dynatrace_openpipeline_v2_*` instead.
+
+        > This resource requires the API token scopes **Read settings** (`settings.read`) and **Write settings** (`settings.write`)
+
+        ## Dynatrace Documentation
+
+        - Business event processing - https://www.dynatrace.com/support/help/platform-modules/business-analytics/ba-metric-extraction
+
+        - Settings API - https://www.dynatrace.com/support/help/dynatrace-api/environment-api/settings (schemaId: `builtin:bizevents-processing-pipelines.rule`)
+
+        ## Export Example Usage
+
+        - `terraform-provider-dynatrace -export BusinessEventsProcessing` downloads all existing business event processing configuration
+
+        The full documentation of the export feature is available [here](https://dt-url.net/h203qmc).
+
+
         :param str resource_name: The name of the resource.
         :param BusinessEventsProcessingArgs args: The arguments to use to populate this resource's properties.
         :param pulumi.ResourceOptions opts: Options for the resource.

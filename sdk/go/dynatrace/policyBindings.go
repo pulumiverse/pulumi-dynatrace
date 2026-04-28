@@ -12,6 +12,111 @@ import (
 	"github.com/pulumiverse/pulumi-dynatrace/sdk/go/dynatrace/internal"
 )
 
+// > **Dynatrace Managed only**
+//
+// > To utilize this resource, please define the environment variables `DT_CLUSTER_URL` and `DT_CLUSTER_API_TOKEN` with the cluster API token scope **Service Provider API** (`ServiceProviderAPI`).
+//
+// ## Dynatrace Documentation
+//
+// - Dynatrace IAM Policy Management - https://docs.dynatrace.com/managed/manage/identity-access-management/permission-management/manage-user-permissions-policies
+//
+// ## Export Example Usage
+//
+// - `terraform-provider-dynatrace -export PolicyBindings` downloads all existing policy bindings
+//
+// The full documentation of the export feature is available [here](https://dt-url.net/h203qmc).
+//
+// ## Resource Example Usage
+//
+// ```go
+// package main
+//
+// import (
+//
+//	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//	"github.com/pulumiverse/pulumi-dynatrace/sdk/go/dynatrace"
+//
+// )
+//
+//	func main() {
+//		pulumi.Run(func(ctx *pulumi.Context) error {
+//			myGroup, err := dynatrace.NewUserGroup(ctx, "my_group", &dynatrace.UserGroupArgs{
+//				Name: pulumi.String("my_group"),
+//			})
+//			if err != nil {
+//				return err
+//			}
+//			envPolicy, err := dynatrace.NewPolicy(ctx, "env_policy", &dynatrace.PolicyArgs{
+//				Name:           pulumi.String("my_policy_valid_for_environment_########-####-####-####-############"),
+//				Environment:    pulumi.String("########-####-####-####-############"),
+//				StatementQuery: pulumi.String("ALLOW settings:objects:read, settings:schemas:read WHERE settings:schemaId = \"string\";"),
+//			})
+//			if err != nil {
+//				return err
+//			}
+//			_, err = dynatrace.NewPolicyBindings(ctx, "env_bindings", &dynatrace.PolicyBindingsArgs{
+//				Group:       myGroup.ID(),
+//				Environment: pulumi.String("########-####-####-####-############"),
+//				Policies: pulumi.StringArray{
+//					envPolicy.ID(),
+//				},
+//			})
+//			if err != nil {
+//				return err
+//			}
+//			clusterPolicy, err := dynatrace.NewPolicy(ctx, "cluster_policy", &dynatrace.PolicyArgs{
+//				Name:           pulumi.String("my_policy_valid_for_all_environments_in_this_cluster"),
+//				Cluster:        pulumi.String("########-####-####-####-############"),
+//				StatementQuery: pulumi.String("ALLOW settings:objects:read, settings:schemas:read WHERE settings:schemaId = \"string\";"),
+//			})
+//			if err != nil {
+//				return err
+//			}
+//			_, err = dynatrace.NewPolicyBindings(ctx, "cluster_bindings", &dynatrace.PolicyBindingsArgs{
+//				Group:   myGroup.ID(),
+//				Cluster: pulumi.String("########-####-####-####-############"),
+//				Policies: pulumi.StringArray{
+//					clusterPolicy.ID(),
+//				},
+//			})
+//			if err != nil {
+//				return err
+//			}
+//			return nil
+//		})
+//	}
+//
+// ```
+//
+// # Policy Bindings to Groups on different levels are required to be specified within separate resources.
+// # The following example would be invalid, because policies the policies to be bound to the group are defined for different levels.
+//
+// # ```terraform
+// # resource "dynatrace_user_group" "my_group" {
+// # name = "my_group"
+//
+// # permissions {
+// # ...
+// # }
+// # }
+//
+// # resource "dynatrace_policy" "env_policy" {
+// # name            = "my_policy_valid_for_environment_########-####-####-####-############"
+// # environment     = "########-####-####-####-############"
+// # statement_query = "ALLOW settings:objects:read, settings:schemas:read WHERE settings:schemaId = \"string\";"
+// # }
+//
+// # resource "dynatrace_policy" "cluster_policy" {
+// # name            = "my_policy_valid_for_all_environments_in_this_cluster"
+// # cluster         = "########-####-####-####-############"
+// # statement_query = "ALLOW settings:objects:read, settings:schemas:read WHERE settings:schemaId = \"string\";"
+// # }
+//
+// # resource "dynatrace_policy_bindings" "bindings" {
+// # group    = dynatrace_user_group.my_group.id
+// # cluster  = "########-####-####-####-############"
+// # policies = [dynatrace_policy.cluster_policy.id, dynatrace_policy.env_policy.id] # INVALID, because `dynatrace_policy.env_policy` is not defined for the cluster level
+// # }
 type PolicyBindings struct {
 	pulumi.CustomResourceState
 

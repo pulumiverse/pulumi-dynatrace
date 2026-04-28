@@ -12,6 +12,19 @@ import (
 	"github.com/pulumiverse/pulumi-dynatrace/sdk/go/dynatrace/internal"
 )
 
+// > This resource requires the API token scopes **Read settings** (`settings.read`) and **Write settings** (`settings.write`)
+//
+// ## Dynatrace Documentation
+//
+// - OneAgent update: Configure maintenance windows - https://www.dynatrace.com/support/help/shortlink/oneagent-update#maintenance-windows
+//
+// - Settings API - https://www.dynatrace.com/support/help/dynatrace-api/environment-api/settings (schemaId: `builtin:deployment.management.update-windows`)
+//
+// ## Export Example Usage
+//
+// - `terraform-provider-dynatrace -export UpdateWindows` downloads all existing maintenance windows for OneAgent updates
+//
+// The full documentation of the export feature is available [here](https://dt-url.net/h203qmc).
 type UpdateWindows struct {
 	pulumi.CustomResourceState
 

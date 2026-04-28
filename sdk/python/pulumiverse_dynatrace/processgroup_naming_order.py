@@ -22,6 +22,7 @@ class ProcessgroupNamingOrderArgs:
                  naming_rule_ids: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None):
         """
         The set of arguments for constructing a ProcessgroupNamingOrder resource.
+
         :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] naming_rule_ids: The IDs of the naming rules to define the order for
         """
         if naming_rule_ids is not None:
@@ -46,6 +47,7 @@ class _ProcessgroupNamingOrderState:
                  naming_rule_ids: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None):
         """
         Input properties used for looking up and filtering ProcessgroupNamingOrder resources.
+
         :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] naming_rule_ids: The IDs of the naming rules to define the order for
         """
         if naming_rule_ids is not None:
@@ -73,7 +75,21 @@ class ProcessgroupNamingOrder(pulumi.CustomResource):
                  naming_rule_ids: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
                  __props__=None):
         """
-        Create a ProcessgroupNamingOrder resource with the given unique name, props, and options.
+        > This resource requires the API token scopes **Read configuration** (`ReadConfig`) and **Write configuration** (`WriteConfig`)
+
+        ## Dynatrace Documentation
+
+        - Process group naming - https://www.dynatrace.com/support/help/how-to-use-dynatrace/process-groups/configuration/pg-naming
+
+        - Conditional naming API - https://www.dynatrace.com/support/help/dynatrace-api/configuration-api/conditional-naming
+
+        ## Export Example Usage
+
+        - `terraform-provider-dynatrace -export ProcessgroupNamingOrder` downloads an ordered list of process group naming rule IDs
+
+        The full documentation of the export feature is available [here](https://dt-url.net/h203qmc).
+
+
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] naming_rule_ids: The IDs of the naming rules to define the order for
@@ -85,7 +101,21 @@ class ProcessgroupNamingOrder(pulumi.CustomResource):
                  args: Optional[ProcessgroupNamingOrderArgs] = None,
                  opts: Optional[pulumi.ResourceOptions] = None):
         """
-        Create a ProcessgroupNamingOrder resource with the given unique name, props, and options.
+        > This resource requires the API token scopes **Read configuration** (`ReadConfig`) and **Write configuration** (`WriteConfig`)
+
+        ## Dynatrace Documentation
+
+        - Process group naming - https://www.dynatrace.com/support/help/how-to-use-dynatrace/process-groups/configuration/pg-naming
+
+        - Conditional naming API - https://www.dynatrace.com/support/help/dynatrace-api/configuration-api/conditional-naming
+
+        ## Export Example Usage
+
+        - `terraform-provider-dynatrace -export ProcessgroupNamingOrder` downloads an ordered list of process group naming rule IDs
+
+        The full documentation of the export feature is available [here](https://dt-url.net/h203qmc).
+
+
         :param str resource_name: The name of the resource.
         :param ProcessgroupNamingOrderArgs args: The arguments to use to populate this resource's properties.
         :param pulumi.ResourceOptions opts: Options for the resource.

@@ -11,6 +11,108 @@ import (
 	"github.com/pulumiverse/pulumi-dynatrace/sdk/go/dynatrace/internal"
 )
 
+// > **Dynatrace Managed only**
+//
+// > To utilize this resource, please define the environment variables `DT_CLUSTER_URL` and `DT_CLUSTER_API_TOKEN` with the cluster API token scope **Service Provider API** (`ServiceProviderAPI`).
+//
+// ## Dynatrace Documentation
+//
+// - User and group management - https://docs.dynatrace.com/managed/manage/identity-access-management/user-and-group-management
+//
+// - User management API - https://www.dynatrace.com/support/help/dynatrace-api/account-management-api/user-management-api
+//
+// ## Export Example Usage
+//
+// - `terraform-provider-dynatrace -export UserGroup` downloads all existing user groups
+//
+// The full documentation of the export feature is available [here](https://dt-url.net/h203qmc).
+//
+// ## Resource Example Usage
+//
+// ```go
+// package main
+//
+// import (
+//
+//	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//	"github.com/pulumi/pulumi/sdk/v3/go/pulumi/config"
+//	"github.com/pulumiverse/pulumi-dynatrace/sdk/go/dynatrace"
+//
+// )
+//
+//	func main() {
+//		pulumi.Run(func(ctx *pulumi.Context) error {
+//			cfg := config.New(ctx, "")
+//			cluster := "<the-id-of-your-dynatrace-cluster>"
+//			if param := cfg.Get("cluster"); param != "" {
+//				cluster = param
+//			}
+//			environment := "<the-id-of-an-environment-within-your-cluster"
+//			if param := cfg.Get("environment"); param != "" {
+//				environment = param
+//			}
+//			terraform, err := dynatrace.NewUserGroup(ctx, "terraform", &dynatrace.UserGroupArgs{
+//				Name: pulumi.String("Anonymous"),
+//				LdapGroups: pulumi.StringArray{
+//					pulumi.String("Anonymous"),
+//				},
+//			})
+//			if err != nil {
+//				return err
+//			}
+//			_, err = dynatrace.NewUser(ctx, "terraform", &dynatrace.UserArgs{
+//				Email:     pulumi.String("me@example.com"),
+//				FirstName: pulumi.String("John"),
+//				Groups: pulumi.StringArray{
+//					terraform.ID(),
+//				},
+//				LastName: pulumi.String("Doe"),
+//				UserName: pulumi.String("me@example.com"),
+//			})
+//			if err != nil {
+//				return err
+//			}
+//			terraformCluster, err := dynatrace.NewPolicy(ctx, "terraform_cluster", &dynatrace.PolicyArgs{
+//				Name:           pulumi.String("terraform_cluster"),
+//				Cluster:        pulumi.String(cluster),
+//				StatementQuery: pulumi.String("ALLOW settings:objects:read, settings:schemas:read WHERE settings:schemaId = \"terraform-cluster\";"),
+//			})
+//			if err != nil {
+//				return err
+//			}
+//			terraformEnv, err := dynatrace.NewPolicy(ctx, "terraform_env", &dynatrace.PolicyArgs{
+//				Name:           pulumi.String("terraform_env"),
+//				Environment:    pulumi.String(environment),
+//				StatementQuery: pulumi.String("ALLOW environment:roles:viewer;"),
+//			})
+//			if err != nil {
+//				return err
+//			}
+//			_, err = dynatrace.NewPolicyBindings(ctx, "terraform_cluster_binding", &dynatrace.PolicyBindingsArgs{
+//				Cluster: pulumi.String(cluster),
+//				Group:   terraform.ID(),
+//				Policies: pulumi.StringArray{
+//					terraformCluster.ID(),
+//				},
+//			})
+//			if err != nil {
+//				return err
+//			}
+//			_, err = dynatrace.NewPolicyBindings(ctx, "terraform_env_binding", &dynatrace.PolicyBindingsArgs{
+//				Environment: pulumi.String(environment),
+//				Group:       terraform.ID(),
+//				Policies: pulumi.StringArray{
+//					terraformEnv.ID(),
+//				},
+//			})
+//			if err != nil {
+//				return err
+//			}
+//			return nil
+//		})
+//	}
+//
+// ```
 type UserGroup struct {
 	pulumi.CustomResourceState
 

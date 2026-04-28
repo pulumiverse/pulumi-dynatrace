@@ -10,6 +10,56 @@ using Pulumi;
 
 namespace Pulumiverse.Dynatrace
 {
+    /// <summary>
+    /// &gt; This resource requires the API token scopes **Read settings** (`settings.read`) and **Write settings** (`settings.write`)
+    /// 
+    /// ## Dynatrace Documentation
+    /// 
+    /// - Customize CICS and IMS monitoring - https://www.dynatrace.com/support/help/setup-and-configuration/dynatrace-oneagent/installation-and-operation/zos/operation/cics-ims-monitoring#transaction-start-filters
+    /// 
+    /// - Settings API - https://www.dynatrace.com/support/help/dynatrace-api/environment-api/settings (schemaId: `builtin:mainframe.txstartfilters`)
+    /// 
+    /// ## Export Example Usage
+    /// 
+    /// - `terraform-provider-dynatrace -export dynatrace.TransactionStartFilters` downloads the current configuration for Transaction Start Filters
+    /// 
+    /// The full documentation of the export feature is available [here](https://dt-url.net/h203qmc).
+    /// 
+    /// ## Resource Example Usage
+    /// 
+    /// ```csharp
+    /// using System.Collections.Generic;
+    /// using System.Linq;
+    /// using Pulumi;
+    /// using Dynatrace = Pulumiverse.Dynatrace;
+    /// 
+    /// return await Deployment.RunAsync(() =&gt; 
+    /// {
+    ///     var transactionStartFilters = new Dynatrace.TransactionStartFilters("transaction_start_filters", new()
+    ///     {
+    ///         CicsTerminalTransactionIds = new[]
+    ///         {
+    ///             "DTAX",
+    ///             "ATAX",
+    ///         },
+    ///         CicsTransactionIds = new[]
+    ///         {
+    ///             "TIPU",
+    ///         },
+    ///         ImsTransactionIds = new[]
+    ///         {
+    ///             "FAKE",
+    ///         },
+    ///         ImsTerminalTransactionIds = new[]
+    ///         {
+    ///             "DTAX",
+    ///             "ATAX",
+    ///         },
+    ///     });
+    /// 
+    /// });
+    /// ```
+    /// </summary>
     [DynatraceResourceType("dynatrace:index/transactionStartFilters:TransactionStartFilters")]
     public partial class TransactionStartFilters : global::Pulumi.CustomResource
     {

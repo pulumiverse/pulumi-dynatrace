@@ -22,6 +22,7 @@ class HistogramMetricsArgs:
                  enable_histogram_bucket_ingest: pulumi.Input[_builtins.bool]):
         """
         The set of arguments for constructing a HistogramMetrics resource.
+
         :param pulumi.Input[_builtins.bool] enable_histogram_bucket_ingest: When enabled, you can ingest the `le` dimension, representing explicit histogram buckets.\\
                Enable this if you are using OpenTelemetry histograms or Prometheus histogram metrics.\\
                When disabled, only your histograms' sum and count metrics will be ingested.
@@ -49,6 +50,7 @@ class _HistogramMetricsState:
                  enable_histogram_bucket_ingest: Optional[pulumi.Input[_builtins.bool]] = None):
         """
         Input properties used for looking up and filtering HistogramMetrics resources.
+
         :param pulumi.Input[_builtins.bool] enable_histogram_bucket_ingest: When enabled, you can ingest the `le` dimension, representing explicit histogram buckets.\\
                Enable this if you are using OpenTelemetry histograms or Prometheus histogram metrics.\\
                When disabled, only your histograms' sum and count metrics will be ingested.
@@ -80,7 +82,19 @@ class HistogramMetrics(pulumi.CustomResource):
                  enable_histogram_bucket_ingest: Optional[pulumi.Input[_builtins.bool]] = None,
                  __props__=None):
         """
-        Create a HistogramMetrics resource with the given unique name, props, and options.
+        > This resource requires the API token scopes **Read settings** (`settings.read`) and **Write settings** (`settings.write`)
+
+        ## Dynatrace Documentation
+
+        - Settings API - https://www.dynatrace.com/support/help/dynatrace-api/environment-api/settings (schemaId: `builtin:histogram-metrics`)
+
+        ## Export Example Usage
+
+        - `terraform-provider-dynatrace -export HistogramMetrics` downloads existing histogram data ingestion configuration
+
+        The full documentation of the export feature is available [here](https://dt-url.net/h203qmc).
+
+
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[_builtins.bool] enable_histogram_bucket_ingest: When enabled, you can ingest the `le` dimension, representing explicit histogram buckets.\\
@@ -94,7 +108,19 @@ class HistogramMetrics(pulumi.CustomResource):
                  args: HistogramMetricsArgs,
                  opts: Optional[pulumi.ResourceOptions] = None):
         """
-        Create a HistogramMetrics resource with the given unique name, props, and options.
+        > This resource requires the API token scopes **Read settings** (`settings.read`) and **Write settings** (`settings.write`)
+
+        ## Dynatrace Documentation
+
+        - Settings API - https://www.dynatrace.com/support/help/dynatrace-api/environment-api/settings (schemaId: `builtin:histogram-metrics`)
+
+        ## Export Example Usage
+
+        - `terraform-provider-dynatrace -export HistogramMetrics` downloads existing histogram data ingestion configuration
+
+        The full documentation of the export feature is available [here](https://dt-url.net/h203qmc).
+
+
         :param str resource_name: The name of the resource.
         :param HistogramMetricsArgs args: The arguments to use to populate this resource's properties.
         :param pulumi.ResourceOptions opts: Options for the resource.

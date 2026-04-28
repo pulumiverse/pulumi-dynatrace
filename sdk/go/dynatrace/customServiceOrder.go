@@ -11,6 +11,19 @@ import (
 	"github.com/pulumiverse/pulumi-dynatrace/sdk/go/dynatrace/internal"
 )
 
+// > This resource requires the API token scopes **Read configuration** (`ReadConfig`) and **Write configuration** (`WriteConfig`)
+//
+// ## Dynatrace Documentation
+//
+// - Define custom services - https://www.dynatrace.com/support/help/how-to-use-dynatrace/services/custom-services
+//
+// - Custom services API - https://www.dynatrace.com/support/help/dynatrace-api/configuration-api/service-api/custom-services-api
+//
+// ## Export Example Usage
+//
+// - `terraform-provider-dynatrace -export CustomServiceOrder` downloads a resource containing the current order for Custom Services defined in the Dynatrace Environment.
+//
+// The full documentation of the export feature is available [here](https://dt-url.net/h203qmc).
 type CustomServiceOrder struct {
 	pulumi.CustomResourceState
 

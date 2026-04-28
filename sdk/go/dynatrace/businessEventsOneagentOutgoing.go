@@ -12,6 +12,19 @@ import (
 	"github.com/pulumiverse/pulumi-dynatrace/sdk/go/dynatrace/internal"
 )
 
+// > This resource requires the API token scopes **Read settings** (`settings.read`) and **Write settings** (`settings.write`)
+//
+// ## Dynatrace Documentation
+//
+// - Business event capture - https://www.dynatrace.com/support/help/platform-modules/business-analytics/ba-events-capturing#report-business-event-oneagent
+//
+// - Settings API - https://www.dynatrace.com/support/help/dynatrace-api/environment-api/settings (schemaId: `builtin:bizevents.http.outgoing`)
+//
+// ## Export Example Usage
+//
+// - `terraform-provider-dynatrace -export BusinessEventsOneagentOutgoing` downloads all existing OneAgent business events based on outgoing HTTP requests
+//
+// The full documentation of the export feature is available [here](https://dt-url.net/h203qmc).
 type BusinessEventsOneagentOutgoing struct {
 	pulumi.CustomResourceState
 
@@ -25,7 +38,7 @@ type BusinessEventsOneagentOutgoing struct {
 	RuleName pulumi.StringOutput `pulumi:"ruleName"`
 	// The scope of this setting (HOST, HOST_GROUP). Omit this property if you want to cover the whole environment.
 	Scope pulumi.StringPtrOutput `pulumi:"scope"`
-	// Define conditions to trigger business events from incoming web requests. Triggers are connected by AND logic per capture rule. If you set multiple trigger rules, all of them need to be fulfilled to capture a business event.
+	// Define conditions to trigger business events from outgoing web requests. Triggers are connected by AND logic per capture rule. If you set multiple trigger rules, all of them need to be fulfilled to capture a business event.
 	Triggers BusinessEventsOneagentOutgoingTriggersOutput `pulumi:"triggers"`
 }
 
@@ -81,7 +94,7 @@ type businessEventsOneagentOutgoingState struct {
 	RuleName *string `pulumi:"ruleName"`
 	// The scope of this setting (HOST, HOST_GROUP). Omit this property if you want to cover the whole environment.
 	Scope *string `pulumi:"scope"`
-	// Define conditions to trigger business events from incoming web requests. Triggers are connected by AND logic per capture rule. If you set multiple trigger rules, all of them need to be fulfilled to capture a business event.
+	// Define conditions to trigger business events from outgoing web requests. Triggers are connected by AND logic per capture rule. If you set multiple trigger rules, all of them need to be fulfilled to capture a business event.
 	Triggers *BusinessEventsOneagentOutgoingTriggers `pulumi:"triggers"`
 }
 
@@ -96,7 +109,7 @@ type BusinessEventsOneagentOutgoingState struct {
 	RuleName pulumi.StringPtrInput
 	// The scope of this setting (HOST, HOST_GROUP). Omit this property if you want to cover the whole environment.
 	Scope pulumi.StringPtrInput
-	// Define conditions to trigger business events from incoming web requests. Triggers are connected by AND logic per capture rule. If you set multiple trigger rules, all of them need to be fulfilled to capture a business event.
+	// Define conditions to trigger business events from outgoing web requests. Triggers are connected by AND logic per capture rule. If you set multiple trigger rules, all of them need to be fulfilled to capture a business event.
 	Triggers BusinessEventsOneagentOutgoingTriggersPtrInput
 }
 
@@ -115,7 +128,7 @@ type businessEventsOneagentOutgoingArgs struct {
 	RuleName string `pulumi:"ruleName"`
 	// The scope of this setting (HOST, HOST_GROUP). Omit this property if you want to cover the whole environment.
 	Scope *string `pulumi:"scope"`
-	// Define conditions to trigger business events from incoming web requests. Triggers are connected by AND logic per capture rule. If you set multiple trigger rules, all of them need to be fulfilled to capture a business event.
+	// Define conditions to trigger business events from outgoing web requests. Triggers are connected by AND logic per capture rule. If you set multiple trigger rules, all of them need to be fulfilled to capture a business event.
 	Triggers BusinessEventsOneagentOutgoingTriggers `pulumi:"triggers"`
 }
 
@@ -131,7 +144,7 @@ type BusinessEventsOneagentOutgoingArgs struct {
 	RuleName pulumi.StringInput
 	// The scope of this setting (HOST, HOST_GROUP). Omit this property if you want to cover the whole environment.
 	Scope pulumi.StringPtrInput
-	// Define conditions to trigger business events from incoming web requests. Triggers are connected by AND logic per capture rule. If you set multiple trigger rules, all of them need to be fulfilled to capture a business event.
+	// Define conditions to trigger business events from outgoing web requests. Triggers are connected by AND logic per capture rule. If you set multiple trigger rules, all of them need to be fulfilled to capture a business event.
 	Triggers BusinessEventsOneagentOutgoingTriggersInput
 }
 
@@ -247,7 +260,7 @@ func (o BusinessEventsOneagentOutgoingOutput) Scope() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v *BusinessEventsOneagentOutgoing) pulumi.StringPtrOutput { return v.Scope }).(pulumi.StringPtrOutput)
 }
 
-// Define conditions to trigger business events from incoming web requests. Triggers are connected by AND logic per capture rule. If you set multiple trigger rules, all of them need to be fulfilled to capture a business event.
+// Define conditions to trigger business events from outgoing web requests. Triggers are connected by AND logic per capture rule. If you set multiple trigger rules, all of them need to be fulfilled to capture a business event.
 func (o BusinessEventsOneagentOutgoingOutput) Triggers() BusinessEventsOneagentOutgoingTriggersOutput {
 	return o.ApplyT(func(v *BusinessEventsOneagentOutgoing) BusinessEventsOneagentOutgoingTriggersOutput {
 		return v.Triggers

@@ -25,6 +25,7 @@ class CustomUnitsArgs:
                  name: Optional[pulumi.Input[_builtins.str]] = None):
         """
         The set of arguments for constructing a CustomUnits resource.
+
         :param pulumi.Input[_builtins.str] description: Unit description should provide additional information about the new unit
         :param pulumi.Input[_builtins.str] plural_name: Unit plural name represent the plural form of the unit name.
         :param pulumi.Input[_builtins.str] symbol: Unit symbol has to be unique.
@@ -94,6 +95,7 @@ class _CustomUnitsState:
                  symbol: Optional[pulumi.Input[_builtins.str]] = None):
         """
         Input properties used for looking up and filtering CustomUnits resources.
+
         :param pulumi.Input[_builtins.str] description: Unit description should provide additional information about the new unit
         :param pulumi.Input[_builtins.str] name: Unit name has to be unique and is used as identifier.
         :param pulumi.Input[_builtins.str] plural_name: Unit plural name represent the plural form of the unit name.
@@ -169,7 +171,19 @@ class CustomUnits(pulumi.CustomResource):
                  symbol: Optional[pulumi.Input[_builtins.str]] = None,
                  __props__=None):
         """
-        Create a CustomUnits resource with the given unique name, props, and options.
+        > This resource requires the API token scopes **Read settings** (`settings.read`) and **Write settings** (`settings.write`)
+
+        ## Dynatrace Documentation
+
+        - Settings API - https://www.dynatrace.com/support/help/dynatrace-api/environment-api/settings (schemaId: `builtin:custom-unit`)
+
+        ## Export Example Usage
+
+        - `terraform-provider-dynatrace -export CustomUnits` downloads all existing custom unit configuration
+
+        The full documentation of the export feature is available [here](https://dt-url.net/h203qmc).
+
+
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[_builtins.str] description: Unit description should provide additional information about the new unit
@@ -184,7 +198,19 @@ class CustomUnits(pulumi.CustomResource):
                  args: CustomUnitsArgs,
                  opts: Optional[pulumi.ResourceOptions] = None):
         """
-        Create a CustomUnits resource with the given unique name, props, and options.
+        > This resource requires the API token scopes **Read settings** (`settings.read`) and **Write settings** (`settings.write`)
+
+        ## Dynatrace Documentation
+
+        - Settings API - https://www.dynatrace.com/support/help/dynatrace-api/environment-api/settings (schemaId: `builtin:custom-unit`)
+
+        ## Export Example Usage
+
+        - `terraform-provider-dynatrace -export CustomUnits` downloads all existing custom unit configuration
+
+        The full documentation of the export feature is available [here](https://dt-url.net/h203qmc).
+
+
         :param str resource_name: The name of the resource.
         :param CustomUnitsArgs args: The arguments to use to populate this resource's properties.
         :param pulumi.ResourceOptions opts: Options for the resource.

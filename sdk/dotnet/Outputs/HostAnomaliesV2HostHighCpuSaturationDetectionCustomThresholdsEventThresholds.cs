@@ -19,7 +19,7 @@ namespace Pulumiverse.Dynatrace.Outputs
         /// </summary>
         public readonly int DealertingEvaluationWindow;
         /// <summary>
-        /// The number of **10-second samples** within the evaluation window that must be lower the threshold to close an event
+        /// The number of **10-second samples** within the evaluation window that must be lower than the threshold to close an event
         /// </summary>
         public readonly int DealertingSamples;
         /// <summary>

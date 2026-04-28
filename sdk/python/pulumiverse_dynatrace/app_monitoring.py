@@ -26,6 +26,7 @@ class AppMonitoringArgs:
                  default_trace_level: Optional[pulumi.Input[_builtins.str]] = None):
         """
         The set of arguments for constructing a AppMonitoring resource.
+
         :param pulumi.Input[_builtins.str] default_log_level: Possible Values: `debug`, `error`, `info`, `off`, `warn`
         :param pulumi.Input['AppMonitoringAppMonitoringArgs'] app_monitoring: You can override the default monitoring setting for each app separately
         :param pulumi.Input[_builtins.str] default_trace_level: Possible Values: `off`, `on`
@@ -81,6 +82,7 @@ class _AppMonitoringState:
                  default_trace_level: Optional[pulumi.Input[_builtins.str]] = None):
         """
         Input properties used for looking up and filtering AppMonitoring resources.
+
         :param pulumi.Input['AppMonitoringAppMonitoringArgs'] app_monitoring: You can override the default monitoring setting for each app separately
         :param pulumi.Input[_builtins.str] default_log_level: Possible Values: `debug`, `error`, `info`, `off`, `warn`
         :param pulumi.Input[_builtins.str] default_trace_level: Possible Values: `off`, `on`
@@ -140,7 +142,21 @@ class AppMonitoring(pulumi.CustomResource):
                  default_trace_level: Optional[pulumi.Input[_builtins.str]] = None,
                  __props__=None):
         """
-        Create a AppMonitoring resource with the given unique name, props, and options.
+        > This resource requires the API token scopes **Read settings** (`settings.read`) and **Write settings** (`settings.write`)
+
+        ## Dynatrace Documentation
+
+        - Dynatrace app monitoring - https://developer.dynatrace.com/develop/troubleshooting/self-monitoring/#accessing-app-function-logs
+
+        - Settings API - https://www.dynatrace.com/support/help/dynatrace-api/environment-api/settings (schemaId: `builtin:dt-javascript-runtime.app-monitoring`)
+
+        ## Export Example Usage
+
+        - `terraform-provider-dynatrace -export AppMonitoring` downloads existing configuration for Dynatrace app monitoring
+
+        The full documentation of the export feature is available [here](https://dt-url.net/h203qmc).
+
+
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[Union['AppMonitoringAppMonitoringArgs', 'AppMonitoringAppMonitoringArgsDict']] app_monitoring: You can override the default monitoring setting for each app separately
@@ -154,7 +170,21 @@ class AppMonitoring(pulumi.CustomResource):
                  args: AppMonitoringArgs,
                  opts: Optional[pulumi.ResourceOptions] = None):
         """
-        Create a AppMonitoring resource with the given unique name, props, and options.
+        > This resource requires the API token scopes **Read settings** (`settings.read`) and **Write settings** (`settings.write`)
+
+        ## Dynatrace Documentation
+
+        - Dynatrace app monitoring - https://developer.dynatrace.com/develop/troubleshooting/self-monitoring/#accessing-app-function-logs
+
+        - Settings API - https://www.dynatrace.com/support/help/dynatrace-api/environment-api/settings (schemaId: `builtin:dt-javascript-runtime.app-monitoring`)
+
+        ## Export Example Usage
+
+        - `terraform-provider-dynatrace -export AppMonitoring` downloads existing configuration for Dynatrace app monitoring
+
+        The full documentation of the export feature is available [here](https://dt-url.net/h203qmc).
+
+
         :param str resource_name: The name of the resource.
         :param AppMonitoringArgs args: The arguments to use to populate this resource's properties.
         :param pulumi.ResourceOptions opts: Options for the resource.

@@ -28,6 +28,7 @@ class OneagentUpdatesArgs:
                  target_version: Optional[pulumi.Input[_builtins.str]] = None):
         """
         The set of arguments for constructing a OneagentUpdates resource.
+
         :param pulumi.Input[_builtins.str] update_mode: Possible Values: `AUTOMATIC`, `AUTOMATIC_DURING_MW`, `MANUAL`
         :param pulumi.Input['OneagentUpdatesMaintenanceWindowsArgs'] maintenance_windows: Maintenance windows
         :param pulumi.Input[_builtins.str] revision: Revision
@@ -115,6 +116,7 @@ class _OneagentUpdatesState:
                  update_mode: Optional[pulumi.Input[_builtins.str]] = None):
         """
         Input properties used for looking up and filtering OneagentUpdates resources.
+
         :param pulumi.Input['OneagentUpdatesMaintenanceWindowsArgs'] maintenance_windows: Maintenance windows
         :param pulumi.Input[_builtins.str] revision: Revision
         :param pulumi.Input[_builtins.str] scope: The scope of this setting (HOST, HOST_GROUP). Omit this property if you want to cover the whole environment.
@@ -206,7 +208,21 @@ class OneagentUpdates(pulumi.CustomResource):
                  update_mode: Optional[pulumi.Input[_builtins.str]] = None,
                  __props__=None):
         """
-        Create a OneagentUpdates resource with the given unique name, props, and options.
+        > This resource requires the API token scopes **Read settings** (`settings.read`) and **Write settings** (`settings.write`)
+
+        ## Dynatrace Documentation
+
+        - OneAgent update - https://www.dynatrace.com/support/help/setup-and-configuration/dynatrace-oneagent/oneagent-update
+
+        - Settings API - https://www.dynatrace.com/support/help/dynatrace-api/environment-api/settings (schemaId: `builtin:deployment.oneagent.updates`)
+
+        ## Export Example Usage
+
+        - `terraform-provider-dynatrace -export OneagentUpdates` downloads existing OneAgent update configuration
+
+        The full documentation of the export feature is available [here](https://dt-url.net/h203qmc).
+
+
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[Union['OneagentUpdatesMaintenanceWindowsArgs', 'OneagentUpdatesMaintenanceWindowsArgsDict']] maintenance_windows: Maintenance windows
@@ -222,7 +238,21 @@ class OneagentUpdates(pulumi.CustomResource):
                  args: OneagentUpdatesArgs,
                  opts: Optional[pulumi.ResourceOptions] = None):
         """
-        Create a OneagentUpdates resource with the given unique name, props, and options.
+        > This resource requires the API token scopes **Read settings** (`settings.read`) and **Write settings** (`settings.write`)
+
+        ## Dynatrace Documentation
+
+        - OneAgent update - https://www.dynatrace.com/support/help/setup-and-configuration/dynatrace-oneagent/oneagent-update
+
+        - Settings API - https://www.dynatrace.com/support/help/dynatrace-api/environment-api/settings (schemaId: `builtin:deployment.oneagent.updates`)
+
+        ## Export Example Usage
+
+        - `terraform-provider-dynatrace -export OneagentUpdates` downloads existing OneAgent update configuration
+
+        The full documentation of the export feature is available [here](https://dt-url.net/h203qmc).
+
+
         :param str resource_name: The name of the resource.
         :param OneagentUpdatesArgs args: The arguments to use to populate this resource's properties.
         :param pulumi.ResourceOptions opts: Options for the resource.

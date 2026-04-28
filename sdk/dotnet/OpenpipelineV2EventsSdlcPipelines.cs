@@ -10,6 +10,360 @@ using Pulumi;
 
 namespace Pulumiverse.Dynatrace
 {
+    /// <summary>
+    /// &gt; This resource requires the API token scopes **Read settings** (`settings.read`) and **Write settings** (`settings.write`)
+    /// 
+    /// &gt; This resource requires the OAuth scopes **Read settings** (`settings:objects:read`) and **Write settings** (`settings:objects:write`)
+    /// 
+    /// ## Limitations
+    /// 
+    /// &gt; **Warning** If a resource is created using an API token or without setting `DYNATRACE_HTTP_OAUTH_PREFERENCE=true` (when both are used), the settings object's owner will remain empty.
+    /// 
+    /// An empty owner implies:
+    /// - The settings object becomes public, allowing other users with settings permissions to read and modify it.
+    /// - Changing the settings object's permissions will have no effect, meaning the `dynatrace.SettingsPermissions` resource can't alter its access.
+    /// 
+    /// When a settings object is created using platform credentials:
+    /// - The owner is set to the owner of the OAuth client or platform token.
+    /// - By default, the settings object is private; only the owner can read and modify it.
+    /// - Access modifiers can be managed using the `dynatrace.SettingsPermissions` resource.
+    /// 
+    /// We recommend using platform credentials to ensure a correct setup.
+    /// In case an API token is needed, we recommend setting `DYNATRACE_HTTP_OAUTH_PREFERENCE=true`.
+    /// 
+    /// ## Dynatrace Documentation
+    /// 
+    /// - OpenPipeline - https://docs.dynatrace.com/docs/platform/openpipeline
+    /// 
+    /// ## Export Example Usage
+    /// 
+    /// - `terraform-provider-dynatrace -export dynatrace.OpenpipelineV2EventsSdlcPipelines` downloads all existing OpenPipeline definitions for events sdlc pipelines
+    /// 
+    /// The full documentation of the export feature is available [here](https://dt-url.net/h203qmc).
+    /// 
+    /// ## Resource Example Usage
+    /// 
+    /// ```csharp
+    /// using System.Collections.Generic;
+    /// using System.Linq;
+    /// using Pulumi;
+    /// using Dynatrace = Pulumiverse.Dynatrace;
+    /// 
+    /// return await Deployment.RunAsync(() =&gt; 
+    /// {
+    ///     var max_pipeline = new Dynatrace.OpenpipelineV2EventsSdlcPipelines("max-pipeline", new()
+    ///     {
+    ///         DisplayName = "Warning pipeline",
+    ///         CustomId = "pipeline_Warning_pipeline_2773_tf_#name#",
+    ///         MetadataList = new Dynatrace.Inputs.OpenpipelineV2EventsSdlcPipelinesMetadataListArgs
+    ///         {
+    ///             Metadatas = new[]
+    ///             {
+    ///                 new Dynatrace.Inputs.OpenpipelineV2EventsSdlcPipelinesMetadataListMetadataArgs
+    ///                 {
+    ///                     EntryKey = "environment",
+    ///                     EntryValue = "production",
+    ///                 },
+    ///             },
+    ///         },
+    ///         Processing = new Dynatrace.Inputs.OpenpipelineV2EventsSdlcPipelinesProcessingArgs
+    ///         {
+    ///             Processors = new Dynatrace.Inputs.OpenpipelineV2EventsSdlcPipelinesProcessingProcessorsArgs
+    ///             {
+    ///                 Processors = new[]
+    ///                 {
+    ///                     new Dynatrace.Inputs.OpenpipelineV2EventsSdlcPipelinesProcessingProcessorsProcessorArgs
+    ///                     {
+    ///                         Type = "drop",
+    ///                         Id = "processor_Drop_unnecessary_records_3802",
+    ///                         Description = "Drop unnecessary records",
+    ///                         Matcher = "not matchesPhrase(record.name, \"Warning\")",
+    ///                         Enabled = true,
+    ///                     },
+    ///                     new Dynatrace.Inputs.OpenpipelineV2EventsSdlcPipelinesProcessingProcessorsProcessorArgs
+    ///                     {
+    ///                         Type = "fieldsAdd",
+    ///                         Id = "processor_Add_warning_flag_5434",
+    ///                         Description = "Add warning flag",
+    ///                         Matcher = "matchesPhrase(record.name, \"Warning\")",
+    ///                         SampleData = @"{
+    ///   ""record.name"": ""Warning record"" 
+    /// }",
+    ///                         FieldsAdd = new Dynatrace.Inputs.OpenpipelineV2EventsSdlcPipelinesProcessingProcessorsProcessorFieldsAddArgs
+    ///                         {
+    ///                             Fields = new Dynatrace.Inputs.OpenpipelineV2EventsSdlcPipelinesProcessingProcessorsProcessorFieldsAddFieldsArgs
+    ///                             {
+    ///                                 Fields = new[]
+    ///                                 {
+    ///                                     new Dynatrace.Inputs.OpenpipelineV2EventsSdlcPipelinesProcessingProcessorsProcessorFieldsAddFieldsFieldArgs
+    ///                                     {
+    ///                                         Name = "is_warning",
+    ///                                         Value = "true",
+    ///                                     },
+    ///                                 },
+    ///                             },
+    ///                         },
+    ///                         Enabled = true,
+    ///                     },
+    ///                     new Dynatrace.Inputs.OpenpipelineV2EventsSdlcPipelinesProcessingProcessorsProcessorArgs
+    ///                     {
+    ///                         Type = "fieldsRemove",
+    ///                         Id = "processor_Remove_details_field_8539",
+    ///                         Description = "Remove details field",
+    ///                         SampleData = @"{
+    ///   ""record.name"": ""Warning"",
+    ///   ""record.details"": ""some record details""
+    /// }",
+    ///                         Matcher = "isNotNull(record.details)",
+    ///                         FieldsRemove = new Dynatrace.Inputs.OpenpipelineV2EventsSdlcPipelinesProcessingProcessorsProcessorFieldsRemoveArgs
+    ///                         {
+    ///                             Fields = new[]
+    ///                             {
+    ///                                 "record.details",
+    ///                             },
+    ///                         },
+    ///                         Enabled = true,
+    ///                     },
+    ///                     new Dynatrace.Inputs.OpenpipelineV2EventsSdlcPipelinesProcessingProcessorsProcessorArgs
+    ///                     {
+    ///                         Type = "fieldsRename",
+    ///                         Id = "processor_Rename_name_to_title_8530",
+    ///                         Description = "Rename name to title",
+    ///                         SampleData = @"{
+    ///   ""record.name"": ""Warning""
+    /// }",
+    ///                         Matcher = "true",
+    ///                         FieldsRename = new Dynatrace.Inputs.OpenpipelineV2EventsSdlcPipelinesProcessingProcessorsProcessorFieldsRenameArgs
+    ///                         {
+    ///                             Fields = new Dynatrace.Inputs.OpenpipelineV2EventsSdlcPipelinesProcessingProcessorsProcessorFieldsRenameFieldsArgs
+    ///                             {
+    ///                                 Fields = new[]
+    ///                                 {
+    ///                                     new Dynatrace.Inputs.OpenpipelineV2EventsSdlcPipelinesProcessingProcessorsProcessorFieldsRenameFieldsFieldArgs
+    ///                                     {
+    ///                                         FromName = "record.name",
+    ///                                         ToName = "record.title",
+    ///                                     },
+    ///                                 },
+    ///                             },
+    ///                         },
+    ///                         Enabled = true,
+    ///                     },
+    ///                     new Dynatrace.Inputs.OpenpipelineV2EventsSdlcPipelinesProcessingProcessorsProcessorArgs
+    ///                     {
+    ///                         Type = "dql",
+    ///                         Id = "processor_Combine_title_and_summary_to_name_8808",
+    ///                         Description = "Combine title and summary to name",
+    ///                         SampleData = @"{
+    ///   ""record.title"": ""Warning"",
+    ///   ""record.summary"": ""Request failed""
+    /// }",
+    ///                         Matcher = "true",
+    ///                         Dql = new Dynatrace.Inputs.OpenpipelineV2EventsSdlcPipelinesProcessingProcessorsProcessorDqlArgs
+    ///                         {
+    ///                             Script = "fieldsAdd record.name = concat(record.title, \" - \", record.summary)",
+    ///                         },
+    ///                         Enabled = true,
+    ///                     },
+    ///                 },
+    ///             },
+    ///         },
+    ///         Davis = new Dynatrace.Inputs.OpenpipelineV2EventsSdlcPipelinesDavisArgs
+    ///         {
+    ///             Processors = new Dynatrace.Inputs.OpenpipelineV2EventsSdlcPipelinesDavisProcessorsArgs
+    ///             {
+    ///                 Processors = new[]
+    ///                 {
+    ///                     new Dynatrace.Inputs.OpenpipelineV2EventsSdlcPipelinesDavisProcessorsProcessorArgs
+    ///                     {
+    ///                         Type = "davis",
+    ///                         Id = "processor_Create_warning_event_8226",
+    ///                         Description = "Create warning event",
+    ///                         Matcher = "true",
+    ///                         Davis = new Dynatrace.Inputs.OpenpipelineV2EventsSdlcPipelinesDavisProcessorsProcessorDavisArgs
+    ///                         {
+    ///                             Properties = new Dynatrace.Inputs.OpenpipelineV2EventsSdlcPipelinesDavisProcessorsProcessorDavisPropertiesArgs
+    ///                             {
+    ///                                 Properties = new[]
+    ///                                 {
+    ///                                     new Dynatrace.Inputs.OpenpipelineV2EventsSdlcPipelinesDavisProcessorsProcessorDavisPropertiesPropertyArgs
+    ///                                     {
+    ///                                         Key = "event.type",
+    ///                                         Value = "CUSTOM_ALERT",
+    ///                                     },
+    ///                                     new Dynatrace.Inputs.OpenpipelineV2EventsSdlcPipelinesDavisProcessorsProcessorDavisPropertiesPropertyArgs
+    ///                                     {
+    ///                                         Key = "event.name",
+    ///                                         Value = "Warning detected",
+    ///                                     },
+    ///                                     new Dynatrace.Inputs.OpenpipelineV2EventsSdlcPipelinesDavisProcessorsProcessorDavisPropertiesPropertyArgs
+    ///                                     {
+    ///                                         Key = "event.description",
+    ///                                         Value = "Warning: {dims:record.summary}",
+    ///                                     },
+    ///                                 },
+    ///                             },
+    ///                         },
+    ///                         Enabled = true,
+    ///                     },
+    ///                 },
+    ///             },
+    ///         },
+    ///         MetricExtraction = new Dynatrace.Inputs.OpenpipelineV2EventsSdlcPipelinesMetricExtractionArgs
+    ///         {
+    ///             Processors = new Dynatrace.Inputs.OpenpipelineV2EventsSdlcPipelinesMetricExtractionProcessorsArgs
+    ///             {
+    ///                 Processors = new[]
+    ///                 {
+    ///                     new Dynatrace.Inputs.OpenpipelineV2EventsSdlcPipelinesMetricExtractionProcessorsProcessorArgs
+    ///                     {
+    ///                         Type = "counterMetric",
+    ///                         Id = "processor_Count_warning_events_6392",
+    ///                         Description = "Count warnings",
+    ///                         Matcher = "true",
+    ///                         CounterMetric = new Dynatrace.Inputs.OpenpipelineV2EventsSdlcPipelinesMetricExtractionProcessorsProcessorCounterMetricArgs
+    ///                         {
+    ///                             MetricKey = "warning.count",
+    ///                             Dimensions = new Dynatrace.Inputs.OpenpipelineV2EventsSdlcPipelinesMetricExtractionProcessorsProcessorCounterMetricDimensionsArgs
+    ///                             {
+    ///                                 Dimensions = new[]
+    ///                                 {
+    ///                                     new Dynatrace.Inputs.OpenpipelineV2EventsSdlcPipelinesMetricExtractionProcessorsProcessorCounterMetricDimensionsDimensionArgs
+    ///                                     {
+    ///                                         SourceFieldName = "dt.cost.costcenter",
+    ///                                     },
+    ///                                     new Dynatrace.Inputs.OpenpipelineV2EventsSdlcPipelinesMetricExtractionProcessorsProcessorCounterMetricDimensionsDimensionArgs
+    ///                                     {
+    ///                                         SourceFieldName = "dt.cost.product",
+    ///                                     },
+    ///                                     new Dynatrace.Inputs.OpenpipelineV2EventsSdlcPipelinesMetricExtractionProcessorsProcessorCounterMetricDimensionsDimensionArgs
+    ///                                     {
+    ///                                         SourceFieldName = "dt.security_context",
+    ///                                     },
+    ///                                     new Dynatrace.Inputs.OpenpipelineV2EventsSdlcPipelinesMetricExtractionProcessorsProcessorCounterMetricDimensionsDimensionArgs
+    ///                                     {
+    ///                                         SourceFieldName = "record.category",
+    ///                                         DestinationFieldName = "warning_category",
+    ///                                     },
+    ///                                 },
+    ///                             },
+    ///                         },
+    ///                         Enabled = true,
+    ///                     },
+    ///                     new Dynatrace.Inputs.OpenpipelineV2EventsSdlcPipelinesMetricExtractionProcessorsProcessorArgs
+    ///                     {
+    ///                         Type = "valueMetric",
+    ///                         Id = "processor_Warning_timeout_1990",
+    ///                         Description = "Warning timeout",
+    ///                         Matcher = "true",
+    ///                         ValueMetric = new Dynatrace.Inputs.OpenpipelineV2EventsSdlcPipelinesMetricExtractionProcessorsProcessorValueMetricArgs
+    ///                         {
+    ///                             MetricKey = "warning.timeout",
+    ///                             Field = "recording.timeout_in_min",
+    ///                             DefaultValue = "60",
+    ///                             Dimensions = new Dynatrace.Inputs.OpenpipelineV2EventsSdlcPipelinesMetricExtractionProcessorsProcessorValueMetricDimensionsArgs
+    ///                             {
+    ///                                 Dimensions = new[]
+    ///                                 {
+    ///                                     new Dynatrace.Inputs.OpenpipelineV2EventsSdlcPipelinesMetricExtractionProcessorsProcessorValueMetricDimensionsDimensionArgs
+    ///                                     {
+    ///                                         SourceFieldName = "dt.cost.costcenter",
+    ///                                     },
+    ///                                     new Dynatrace.Inputs.OpenpipelineV2EventsSdlcPipelinesMetricExtractionProcessorsProcessorValueMetricDimensionsDimensionArgs
+    ///                                     {
+    ///                                         SourceFieldName = "dt.cost.product",
+    ///                                     },
+    ///                                     new Dynatrace.Inputs.OpenpipelineV2EventsSdlcPipelinesMetricExtractionProcessorsProcessorValueMetricDimensionsDimensionArgs
+    ///                                     {
+    ///                                         SourceFieldName = "dt.security_context",
+    ///                                     },
+    ///                                     new Dynatrace.Inputs.OpenpipelineV2EventsSdlcPipelinesMetricExtractionProcessorsProcessorValueMetricDimensionsDimensionArgs
+    ///                                     {
+    ///                                         SourceFieldName = "record.category",
+    ///                                         DestinationFieldName = "warning_category",
+    ///                                     },
+    ///                                 },
+    ///                             },
+    ///                         },
+    ///                         Enabled = true,
+    ///                     },
+    ///                 },
+    ///             },
+    ///         },
+    ///         SecurityContext = new Dynatrace.Inputs.OpenpipelineV2EventsSdlcPipelinesSecurityContextArgs
+    ///         {
+    ///             Processors = new Dynatrace.Inputs.OpenpipelineV2EventsSdlcPipelinesSecurityContextProcessorsArgs
+    ///             {
+    ///                 Processors = new[]
+    ///                 {
+    ///                     new Dynatrace.Inputs.OpenpipelineV2EventsSdlcPipelinesSecurityContextProcessorsProcessorArgs
+    ///                     {
+    ///                         Type = "securityContext",
+    ///                         Id = "processor_Use_dt.security_context_if_set_1080",
+    ///                         Description = "Use dt.security_context if set",
+    ///                         Matcher = "isNotNull(dt.security_context)",
+    ///                         SecurityContext = new Dynatrace.Inputs.OpenpipelineV2EventsSdlcPipelinesSecurityContextProcessorsProcessorSecurityContextArgs
+    ///                         {
+    ///                             Value = new Dynatrace.Inputs.OpenpipelineV2EventsSdlcPipelinesSecurityContextProcessorsProcessorSecurityContextValueArgs
+    ///                             {
+    ///                                 Type = "field",
+    ///                                 Field = new Dynatrace.Inputs.OpenpipelineV2EventsSdlcPipelinesSecurityContextProcessorsProcessorSecurityContextValueFieldArgs
+    ///                                 {
+    ///                                     SourceFieldName = "dt.security_context",
+    ///                                 },
+    ///                             },
+    ///                         },
+    ///                         Enabled = true,
+    ///                     },
+    ///                     new Dynatrace.Inputs.OpenpipelineV2EventsSdlcPipelinesSecurityContextProcessorsProcessorArgs
+    ///                     {
+    ///                         Type = "securityContext",
+    ///                         Id = "processor_Assign_warnings_to_ACME_teams_if_no_context_set_5465",
+    ///                         Description = "Assign warnings to ACME teams if no context set",
+    ///                         Matcher = "isNull(dt.security_context)",
+    ///                         SecurityContext = new Dynatrace.Inputs.OpenpipelineV2EventsSdlcPipelinesSecurityContextProcessorsProcessorSecurityContextArgs
+    ///                         {
+    ///                             Value = new Dynatrace.Inputs.OpenpipelineV2EventsSdlcPipelinesSecurityContextProcessorsProcessorSecurityContextValueArgs
+    ///                             {
+    ///                                 Type = "multiValueConstant",
+    ///                                 MultiValueConstants = new[]
+    ///                                 {
+    ///                                     "ACME1",
+    ///                                     "ACME2",
+    ///                                 },
+    ///                             },
+    ///                         },
+    ///                         Enabled = true,
+    ///                     },
+    ///                 },
+    ///             },
+    ///         },
+    ///         Storage = new Dynatrace.Inputs.OpenpipelineV2EventsSdlcPipelinesStorageArgs
+    ///         {
+    ///             Processors = new Dynatrace.Inputs.OpenpipelineV2EventsSdlcPipelinesStorageProcessorsArgs
+    ///             {
+    ///                 Processors = new[]
+    ///                 {
+    ///                     new Dynatrace.Inputs.OpenpipelineV2EventsSdlcPipelinesStorageProcessorsProcessorArgs
+    ///                     {
+    ///                         Type = "bucketAssignment",
+    ///                         Id = "processor_Add_to_default_bucket_5010",
+    ///                         Description = "Add to default bucket",
+    ///                         Matcher = "true",
+    ///                         BucketAssignment = new Dynatrace.Inputs.OpenpipelineV2EventsSdlcPipelinesStorageProcessorsProcessorBucketAssignmentArgs
+    ///                         {
+    ///                             BucketName = "default_events",
+    ///                         },
+    ///                         Enabled = true,
+    ///                     },
+    ///                 },
+    ///             },
+    ///         },
+    ///     });
+    /// 
+    /// });
+    /// ```
+    /// </summary>
     [DynatraceResourceType("dynatrace:index/openpipelineV2EventsSdlcPipelines:OpenpipelineV2EventsSdlcPipelines")]
     public partial class OpenpipelineV2EventsSdlcPipelines : global::Pulumi.CustomResource
     {
@@ -17,7 +371,7 @@ namespace Pulumiverse.Dynatrace
         /// Cost allocation stage
         /// </summary>
         [Output("costAllocation")]
-        public Output<Outputs.OpenpipelineV2EventsSdlcPipelinesCostAllocation> CostAllocation { get; private set; } = null!;
+        public Output<Outputs.OpenpipelineV2EventsSdlcPipelinesCostAllocation?> CostAllocation { get; private set; } = null!;
 
         /// <summary>
         /// Custom pipeline id
@@ -29,13 +383,13 @@ namespace Pulumiverse.Dynatrace
         /// Data extraction stage
         /// </summary>
         [Output("dataExtraction")]
-        public Output<Outputs.OpenpipelineV2EventsSdlcPipelinesDataExtraction> DataExtraction { get; private set; } = null!;
+        public Output<Outputs.OpenpipelineV2EventsSdlcPipelinesDataExtraction?> DataExtraction { get; private set; } = null!;
 
         /// <summary>
         /// Davis event extraction stage
         /// </summary>
         [Output("davis")]
-        public Output<Outputs.OpenpipelineV2EventsSdlcPipelinesDavis> Davis { get; private set; } = null!;
+        public Output<Outputs.OpenpipelineV2EventsSdlcPipelinesDavis?> Davis { get; private set; } = null!;
 
         /// <summary>
         /// Display name
@@ -44,34 +398,52 @@ namespace Pulumiverse.Dynatrace
         public Output<string> DisplayName { get; private set; } = null!;
 
         /// <summary>
+        /// Pipeline metadata list
+        /// </summary>
+        [Output("metadataList")]
+        public Output<Outputs.OpenpipelineV2EventsSdlcPipelinesMetadataList?> MetadataList { get; private set; } = null!;
+
+        /// <summary>
         /// Metrics extraction stage
         /// </summary>
         [Output("metricExtraction")]
-        public Output<Outputs.OpenpipelineV2EventsSdlcPipelinesMetricExtraction> MetricExtraction { get; private set; } = null!;
+        public Output<Outputs.OpenpipelineV2EventsSdlcPipelinesMetricExtraction?> MetricExtraction { get; private set; } = null!;
 
         /// <summary>
         /// Processing stage
         /// </summary>
         [Output("processing")]
-        public Output<Outputs.OpenpipelineV2EventsSdlcPipelinesProcessing> Processing { get; private set; } = null!;
+        public Output<Outputs.OpenpipelineV2EventsSdlcPipelinesProcessing?> Processing { get; private set; } = null!;
 
         /// <summary>
         /// Product allocation stage
         /// </summary>
         [Output("productAllocation")]
-        public Output<Outputs.OpenpipelineV2EventsSdlcPipelinesProductAllocation> ProductAllocation { get; private set; } = null!;
+        public Output<Outputs.OpenpipelineV2EventsSdlcPipelinesProductAllocation?> ProductAllocation { get; private set; } = null!;
 
         /// <summary>
         /// Security context stage
         /// </summary>
         [Output("securityContext")]
-        public Output<Outputs.OpenpipelineV2EventsSdlcPipelinesSecurityContext> SecurityContext { get; private set; } = null!;
+        public Output<Outputs.OpenpipelineV2EventsSdlcPipelinesSecurityContext?> SecurityContext { get; private set; } = null!;
+
+        /// <summary>
+        /// Smartscape edge extraction stage
+        /// </summary>
+        [Output("smartscapeEdgeExtraction")]
+        public Output<Outputs.OpenpipelineV2EventsSdlcPipelinesSmartscapeEdgeExtraction?> SmartscapeEdgeExtraction { get; private set; } = null!;
+
+        /// <summary>
+        /// Smartscape node extraction stage
+        /// </summary>
+        [Output("smartscapeNodeExtraction")]
+        public Output<Outputs.OpenpipelineV2EventsSdlcPipelinesSmartscapeNodeExtraction?> SmartscapeNodeExtraction { get; private set; } = null!;
 
         /// <summary>
         /// Storage stage
         /// </summary>
         [Output("storage")]
-        public Output<Outputs.OpenpipelineV2EventsSdlcPipelinesStorage> Storage { get; private set; } = null!;
+        public Output<Outputs.OpenpipelineV2EventsSdlcPipelinesStorage?> Storage { get; private set; } = null!;
 
 
         /// <summary>
@@ -123,8 +495,8 @@ namespace Pulumiverse.Dynatrace
         /// <summary>
         /// Cost allocation stage
         /// </summary>
-        [Input("costAllocation", required: true)]
-        public Input<Inputs.OpenpipelineV2EventsSdlcPipelinesCostAllocationArgs> CostAllocation { get; set; } = null!;
+        [Input("costAllocation")]
+        public Input<Inputs.OpenpipelineV2EventsSdlcPipelinesCostAllocationArgs>? CostAllocation { get; set; }
 
         /// <summary>
         /// Custom pipeline id
@@ -135,14 +507,14 @@ namespace Pulumiverse.Dynatrace
         /// <summary>
         /// Data extraction stage
         /// </summary>
-        [Input("dataExtraction", required: true)]
-        public Input<Inputs.OpenpipelineV2EventsSdlcPipelinesDataExtractionArgs> DataExtraction { get; set; } = null!;
+        [Input("dataExtraction")]
+        public Input<Inputs.OpenpipelineV2EventsSdlcPipelinesDataExtractionArgs>? DataExtraction { get; set; }
 
         /// <summary>
         /// Davis event extraction stage
         /// </summary>
-        [Input("davis", required: true)]
-        public Input<Inputs.OpenpipelineV2EventsSdlcPipelinesDavisArgs> Davis { get; set; } = null!;
+        [Input("davis")]
+        public Input<Inputs.OpenpipelineV2EventsSdlcPipelinesDavisArgs>? Davis { get; set; }
 
         /// <summary>
         /// Display name
@@ -151,34 +523,52 @@ namespace Pulumiverse.Dynatrace
         public Input<string> DisplayName { get; set; } = null!;
 
         /// <summary>
+        /// Pipeline metadata list
+        /// </summary>
+        [Input("metadataList")]
+        public Input<Inputs.OpenpipelineV2EventsSdlcPipelinesMetadataListArgs>? MetadataList { get; set; }
+
+        /// <summary>
         /// Metrics extraction stage
         /// </summary>
-        [Input("metricExtraction", required: true)]
-        public Input<Inputs.OpenpipelineV2EventsSdlcPipelinesMetricExtractionArgs> MetricExtraction { get; set; } = null!;
+        [Input("metricExtraction")]
+        public Input<Inputs.OpenpipelineV2EventsSdlcPipelinesMetricExtractionArgs>? MetricExtraction { get; set; }
 
         /// <summary>
         /// Processing stage
         /// </summary>
-        [Input("processing", required: true)]
-        public Input<Inputs.OpenpipelineV2EventsSdlcPipelinesProcessingArgs> Processing { get; set; } = null!;
+        [Input("processing")]
+        public Input<Inputs.OpenpipelineV2EventsSdlcPipelinesProcessingArgs>? Processing { get; set; }
 
         /// <summary>
         /// Product allocation stage
         /// </summary>
-        [Input("productAllocation", required: true)]
-        public Input<Inputs.OpenpipelineV2EventsSdlcPipelinesProductAllocationArgs> ProductAllocation { get; set; } = null!;
+        [Input("productAllocation")]
+        public Input<Inputs.OpenpipelineV2EventsSdlcPipelinesProductAllocationArgs>? ProductAllocation { get; set; }
 
         /// <summary>
         /// Security context stage
         /// </summary>
-        [Input("securityContext", required: true)]
-        public Input<Inputs.OpenpipelineV2EventsSdlcPipelinesSecurityContextArgs> SecurityContext { get; set; } = null!;
+        [Input("securityContext")]
+        public Input<Inputs.OpenpipelineV2EventsSdlcPipelinesSecurityContextArgs>? SecurityContext { get; set; }
+
+        /// <summary>
+        /// Smartscape edge extraction stage
+        /// </summary>
+        [Input("smartscapeEdgeExtraction")]
+        public Input<Inputs.OpenpipelineV2EventsSdlcPipelinesSmartscapeEdgeExtractionArgs>? SmartscapeEdgeExtraction { get; set; }
+
+        /// <summary>
+        /// Smartscape node extraction stage
+        /// </summary>
+        [Input("smartscapeNodeExtraction")]
+        public Input<Inputs.OpenpipelineV2EventsSdlcPipelinesSmartscapeNodeExtractionArgs>? SmartscapeNodeExtraction { get; set; }
 
         /// <summary>
         /// Storage stage
         /// </summary>
-        [Input("storage", required: true)]
-        public Input<Inputs.OpenpipelineV2EventsSdlcPipelinesStorageArgs> Storage { get; set; } = null!;
+        [Input("storage")]
+        public Input<Inputs.OpenpipelineV2EventsSdlcPipelinesStorageArgs>? Storage { get; set; }
 
         public OpenpipelineV2EventsSdlcPipelinesArgs()
         {
@@ -219,6 +609,12 @@ namespace Pulumiverse.Dynatrace
         public Input<string>? DisplayName { get; set; }
 
         /// <summary>
+        /// Pipeline metadata list
+        /// </summary>
+        [Input("metadataList")]
+        public Input<Inputs.OpenpipelineV2EventsSdlcPipelinesMetadataListGetArgs>? MetadataList { get; set; }
+
+        /// <summary>
         /// Metrics extraction stage
         /// </summary>
         [Input("metricExtraction")]
@@ -241,6 +637,18 @@ namespace Pulumiverse.Dynatrace
         /// </summary>
         [Input("securityContext")]
         public Input<Inputs.OpenpipelineV2EventsSdlcPipelinesSecurityContextGetArgs>? SecurityContext { get; set; }
+
+        /// <summary>
+        /// Smartscape edge extraction stage
+        /// </summary>
+        [Input("smartscapeEdgeExtraction")]
+        public Input<Inputs.OpenpipelineV2EventsSdlcPipelinesSmartscapeEdgeExtractionGetArgs>? SmartscapeEdgeExtraction { get; set; }
+
+        /// <summary>
+        /// Smartscape node extraction stage
+        /// </summary>
+        [Input("smartscapeNodeExtraction")]
+        public Input<Inputs.OpenpipelineV2EventsSdlcPipelinesSmartscapeNodeExtractionGetArgs>? SmartscapeNodeExtraction { get; set; }
 
         /// <summary>
         /// Storage stage

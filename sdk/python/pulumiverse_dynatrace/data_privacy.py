@@ -28,6 +28,7 @@ class DataPrivacyArgs:
                  application_id: Optional[pulumi.Input[_builtins.str]] = None):
         """
         The set of arguments for constructing a DataPrivacy resource.
+
         :param pulumi.Input['DataPrivacyDataCollectionArgs'] data_collection: To provide your end users with the ability to decide for themselves if their activities should be tracked to measure application performance and usage, enable opt-in mode.
         :param pulumi.Input['DataPrivacyDoNotTrackArgs'] do_not_track: Most modern web browsers have a privacy feature called ["Do Not Track"](https://dt-url.net/sb3n0pnl) that individual users may have enabled on their devices. Customize how Dynatrace should behave when it encounters this setting.
         :param pulumi.Input['DataPrivacyMaskingArgs'] masking: no documentation available
@@ -112,6 +113,7 @@ class _DataPrivacyState:
                  user_tracking: Optional[pulumi.Input['DataPrivacyUserTrackingArgs']] = None):
         """
         Input properties used for looking up and filtering DataPrivacy resources.
+
         :param pulumi.Input[_builtins.str] application_id: The scope of this settings. If the settings should cover the whole environment, just don't specify any scope.
         :param pulumi.Input['DataPrivacyDataCollectionArgs'] data_collection: To provide your end users with the ability to decide for themselves if their activities should be tracked to measure application performance and usage, enable opt-in mode.
         :param pulumi.Input['DataPrivacyDoNotTrackArgs'] do_not_track: Most modern web browsers have a privacy feature called ["Do Not Track"](https://dt-url.net/sb3n0pnl) that individual users may have enabled on their devices. Customize how Dynatrace should behave when it encounters this setting.
@@ -203,7 +205,21 @@ class DataPrivacy(pulumi.CustomResource):
                  user_tracking: Optional[pulumi.Input[Union['DataPrivacyUserTrackingArgs', 'DataPrivacyUserTrackingArgsDict']]] = None,
                  __props__=None):
         """
-        Create a DataPrivacy resource with the given unique name, props, and options.
+        > This resource requires the API token scopes **Read settings** (`settings.read`) and **Write settings** (`settings.write`)
+
+        ## Dynatrace Documentation
+
+        - Data privacy and security - https://www.dynatrace.com/support/help/manage/data-privacy-and-security
+
+        - Settings API - https://www.dynatrace.com/support/help/dynatrace-api/environment-api/settings (schemaId: `builtin:preferences.privacy`)
+
+        ## Export Example Usage
+
+        - `terraform-provider-dynatrace -export DataPrivacy` downloads all existing end users' data privacy configuration
+
+        The full documentation of the export feature is available [here](https://dt-url.net/h203qmc).
+
+
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[_builtins.str] application_id: The scope of this settings. If the settings should cover the whole environment, just don't specify any scope.
@@ -219,7 +235,21 @@ class DataPrivacy(pulumi.CustomResource):
                  args: DataPrivacyArgs,
                  opts: Optional[pulumi.ResourceOptions] = None):
         """
-        Create a DataPrivacy resource with the given unique name, props, and options.
+        > This resource requires the API token scopes **Read settings** (`settings.read`) and **Write settings** (`settings.write`)
+
+        ## Dynatrace Documentation
+
+        - Data privacy and security - https://www.dynatrace.com/support/help/manage/data-privacy-and-security
+
+        - Settings API - https://www.dynatrace.com/support/help/dynatrace-api/environment-api/settings (schemaId: `builtin:preferences.privacy`)
+
+        ## Export Example Usage
+
+        - `terraform-provider-dynatrace -export DataPrivacy` downloads all existing end users' data privacy configuration
+
+        The full documentation of the export feature is available [here](https://dt-url.net/h203qmc).
+
+
         :param str resource_name: The name of the resource.
         :param DataPrivacyArgs args: The arguments to use to populate this resource's properties.
         :param pulumi.ResourceOptions opts: Options for the resource.

@@ -10,6 +10,23 @@ using Pulumi;
 
 namespace Pulumiverse.Dynatrace
 {
+    /// <summary>
+    /// !&gt; This resource API endpoint has been deprecated, please use dynatrace.AttributeAllowList and dynatrace.AttributeMasking instead.
+    /// 
+    /// &gt; This resource requires the API token scopes **Read settings** (`settings.read`) and **Write settings** (`settings.write`)
+    /// 
+    /// ## Dynatrace Documentation
+    /// 
+    /// - OpenTelemetry traces - https://www.dynatrace.com/support/help/extend-dynatrace/opentelemetry/opentelemetry-traces
+    /// 
+    /// - Settings API - https://www.dynatrace.com/support/help/dynatrace-api/environment-api/settings (schemaId: `builtin:resource-attribute`)
+    /// 
+    /// ## Export Example Usage
+    /// 
+    /// - `terraform-provider-dynatrace -export dynatrace.ResourceAttributes` downloads all existing resource attribute configuration
+    /// 
+    /// The full documentation of the export feature is available [here](https://dt-url.net/h203qmc).
+    /// </summary>
     [DynatraceResourceType("dynatrace:index/resourceAttributes:ResourceAttributes")]
     public partial class ResourceAttributes : global::Pulumi.CustomResource
     {

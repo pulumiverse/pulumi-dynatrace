@@ -23,15 +23,15 @@ namespace Pulumiverse.Dynatrace
         /// using System.Collections.Generic;
         /// using System.Linq;
         /// using Pulumi;
-        /// using Dynatrace = Pulumi.Dynatrace;
+        /// using Dynatrace = Pulumiverse.Dynatrace;
         /// 
         /// return await Deployment.RunAsync(() =&gt; 
         /// {
-        ///     var testPlatformSloTemplates = Dynatrace.GetPlatformSloTemplates.Invoke();
+        ///     var test = Dynatrace.GetPlatformSloTemplates.Invoke();
         /// 
         ///     return new Dictionary&lt;string, object?&gt;
         ///     {
-        ///         ["test"] = testPlatformSloTemplates,
+        ///         ["test"] = test,
         ///     };
         /// });
         /// ```
@@ -50,15 +50,15 @@ namespace Pulumiverse.Dynatrace
         /// using System.Collections.Generic;
         /// using System.Linq;
         /// using Pulumi;
-        /// using Dynatrace = Pulumi.Dynatrace;
+        /// using Dynatrace = Pulumiverse.Dynatrace;
         /// 
         /// return await Deployment.RunAsync(() =&gt; 
         /// {
-        ///     var testPlatformSloTemplates = Dynatrace.GetPlatformSloTemplates.Invoke();
+        ///     var test = Dynatrace.GetPlatformSloTemplates.Invoke();
         /// 
         ///     return new Dictionary&lt;string, object?&gt;
         ///     {
-        ///         ["test"] = testPlatformSloTemplates,
+        ///         ["test"] = test,
         ///     };
         /// });
         /// ```
@@ -77,15 +77,15 @@ namespace Pulumiverse.Dynatrace
         /// using System.Collections.Generic;
         /// using System.Linq;
         /// using Pulumi;
-        /// using Dynatrace = Pulumi.Dynatrace;
+        /// using Dynatrace = Pulumiverse.Dynatrace;
         /// 
         /// return await Deployment.RunAsync(() =&gt; 
         /// {
-        ///     var testPlatformSloTemplates = Dynatrace.GetPlatformSloTemplates.Invoke();
+        ///     var test = Dynatrace.GetPlatformSloTemplates.Invoke();
         /// 
         ///     return new Dictionary&lt;string, object?&gt;
         ///     {
-        ///         ["test"] = testPlatformSloTemplates,
+        ///         ["test"] = test,
         ///     };
         /// });
         /// ```

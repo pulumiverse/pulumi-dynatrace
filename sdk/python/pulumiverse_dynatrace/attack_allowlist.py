@@ -31,6 +31,7 @@ class AttackAllowlistArgs:
                  rule_name: Optional[pulumi.Input[_builtins.str]] = None):
         """
         The set of arguments for constructing a AttackAllowlist resource.
+
         :param pulumi.Input['AttackAllowlistAttackHandlingArgs'] attack_handling: Step 1: Define attack control for chosen criteria
         :param pulumi.Input[_builtins.bool] enabled: This setting is enabled (`true`) or disabled (`false`)
         :param pulumi.Input['AttackAllowlistMetadataArgs'] metadata: Step 4: Leave comment (optional)
@@ -167,6 +168,7 @@ class _AttackAllowlistState:
                  rules: Optional[pulumi.Input['AttackAllowlistRulesArgs']] = None):
         """
         Input properties used for looking up and filtering AttackAllowlist resources.
+
         :param pulumi.Input['AttackAllowlistAttackHandlingArgs'] attack_handling: Step 1: Define attack control for chosen criteria
         :param pulumi.Input['AttackAllowlistCriteriaArgs'] criteria: Step 1: Define criteria. Please specify at least one of source IP or attack pattern.
         :param pulumi.Input[_builtins.bool] enabled: This setting is enabled (`true`) or disabled (`false`)
@@ -310,7 +312,23 @@ class AttackAllowlist(pulumi.CustomResource):
                  rules: Optional[pulumi.Input[Union['AttackAllowlistRulesArgs', 'AttackAllowlistRulesArgsDict']]] = None,
                  __props__=None):
         """
-        Create a AttackAllowlist resource with the given unique name, props, and options.
+        > This resource is excluded by default in the export utility since it requires the feature to be activated, please explicitly specify the resource to retrieve existing configuration.
+
+        > This resource requires the API token scopes **Read attacks** (`attacks.read`) and **Write attacks** (`attacks.write`)
+
+        ## Dynatrace Documentation
+
+        - Runtime Application Protection - https://www.dynatrace.com/support/help/platform-modules/application-security/application-protection
+
+        - Settings API - https://www.dynatrace.com/support/help/dynatrace-api/environment-api/settings (schemaId: `builtin:appsec.attack-protection-allowlist-config`)
+
+        ## Export Example Usage
+
+        - `terraform-provider-dynatrace -export AttackAllowlist` downloads all existing application protection: allowlist configuration
+
+        The full documentation of the export feature is available [here](https://dt-url.net/h203qmc).
+
+
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[Union['AttackAllowlistAttackHandlingArgs', 'AttackAllowlistAttackHandlingArgsDict']] attack_handling: Step 1: Define attack control for chosen criteria
@@ -329,7 +347,23 @@ class AttackAllowlist(pulumi.CustomResource):
                  args: AttackAllowlistArgs,
                  opts: Optional[pulumi.ResourceOptions] = None):
         """
-        Create a AttackAllowlist resource with the given unique name, props, and options.
+        > This resource is excluded by default in the export utility since it requires the feature to be activated, please explicitly specify the resource to retrieve existing configuration.
+
+        > This resource requires the API token scopes **Read attacks** (`attacks.read`) and **Write attacks** (`attacks.write`)
+
+        ## Dynatrace Documentation
+
+        - Runtime Application Protection - https://www.dynatrace.com/support/help/platform-modules/application-security/application-protection
+
+        - Settings API - https://www.dynatrace.com/support/help/dynatrace-api/environment-api/settings (schemaId: `builtin:appsec.attack-protection-allowlist-config`)
+
+        ## Export Example Usage
+
+        - `terraform-provider-dynatrace -export AttackAllowlist` downloads all existing application protection: allowlist configuration
+
+        The full documentation of the export feature is available [here](https://dt-url.net/h203qmc).
+
+
         :param str resource_name: The name of the resource.
         :param AttackAllowlistArgs args: The arguments to use to populate this resource's properties.
         :param pulumi.ResourceOptions opts: Options for the resource.

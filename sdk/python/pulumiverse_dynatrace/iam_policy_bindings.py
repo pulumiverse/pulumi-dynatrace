@@ -25,7 +25,8 @@ class IamPolicyBindingsArgs:
                  environment: Optional[pulumi.Input[_builtins.str]] = None):
         """
         The set of arguments for constructing a IamPolicyBindings resource.
-        :param pulumi.Input[_builtins.str] group: The name of the policy
+
+        :param pulumi.Input[_builtins.str] group: The UUID of the group to which the policy applies
         :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] policies: A list of IDs referring to policies bound to that group. It's not possible to mix policies here that are defined for different scopes (different accounts or environments) than specified via attributes `account` or `environment`.
         :param pulumi.Input[_builtins.str] account: The UUID of the account (`urn:dtaccount:<account-uuid>`). The attribute `policies` must contain ONLY policies defined for that account. The prefix `urn:dtaccount:` MUST be omitted here.
         :param pulumi.Input[_builtins.str] environment: The ID of the environment (https://\\n\\n.live.dynatrace.com). The attribute `policies` must contain ONLY policies defined for that environment.
@@ -41,7 +42,7 @@ class IamPolicyBindingsArgs:
     @pulumi.getter
     def group(self) -> pulumi.Input[_builtins.str]:
         """
-        The name of the policy
+        The UUID of the group to which the policy applies
         """
         return pulumi.get(self, "group")
 
@@ -95,9 +96,10 @@ class _IamPolicyBindingsState:
                  policies: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None):
         """
         Input properties used for looking up and filtering IamPolicyBindings resources.
+
         :param pulumi.Input[_builtins.str] account: The UUID of the account (`urn:dtaccount:<account-uuid>`). The attribute `policies` must contain ONLY policies defined for that account. The prefix `urn:dtaccount:` MUST be omitted here.
         :param pulumi.Input[_builtins.str] environment: The ID of the environment (https://\\n\\n.live.dynatrace.com). The attribute `policies` must contain ONLY policies defined for that environment.
-        :param pulumi.Input[_builtins.str] group: The name of the policy
+        :param pulumi.Input[_builtins.str] group: The UUID of the group to which the policy applies
         :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] policies: A list of IDs referring to policies bound to that group. It's not possible to mix policies here that are defined for different scopes (different accounts or environments) than specified via attributes `account` or `environment`.
         """
         if account is not None:
@@ -137,7 +139,7 @@ class _IamPolicyBindingsState:
     @pulumi.getter
     def group(self) -> Optional[pulumi.Input[_builtins.str]]:
         """
-        The name of the policy
+        The UUID of the group to which the policy applies
         """
         return pulumi.get(self, "group")
 
@@ -182,11 +184,12 @@ class IamPolicyBindings(pulumi.CustomResource):
 
         - Settings API - https://www.dynatrace.com/support/help/how-to-use-dynatrace/user-management-and-sso/manage-groups-and-permissions/iam/iam-getting-started
 
+
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[_builtins.str] account: The UUID of the account (`urn:dtaccount:<account-uuid>`). The attribute `policies` must contain ONLY policies defined for that account. The prefix `urn:dtaccount:` MUST be omitted here.
         :param pulumi.Input[_builtins.str] environment: The ID of the environment (https://\\n\\n.live.dynatrace.com). The attribute `policies` must contain ONLY policies defined for that environment.
-        :param pulumi.Input[_builtins.str] group: The name of the policy
+        :param pulumi.Input[_builtins.str] group: The UUID of the group to which the policy applies
         :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] policies: A list of IDs referring to policies bound to that group. It's not possible to mix policies here that are defined for different scopes (different accounts or environments) than specified via attributes `account` or `environment`.
         """
         ...
@@ -207,6 +210,7 @@ class IamPolicyBindings(pulumi.CustomResource):
         - Dynatrace IAM Group Permissions - https://docs.dynatrace.com/docs/manage/identity-access-management/permission-management/manage-user-permissions-policies
 
         - Settings API - https://www.dynatrace.com/support/help/how-to-use-dynatrace/user-management-and-sso/manage-groups-and-permissions/iam/iam-getting-started
+
 
         :param str resource_name: The name of the resource.
         :param IamPolicyBindingsArgs args: The arguments to use to populate this resource's properties.
@@ -267,7 +271,7 @@ class IamPolicyBindings(pulumi.CustomResource):
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[_builtins.str] account: The UUID of the account (`urn:dtaccount:<account-uuid>`). The attribute `policies` must contain ONLY policies defined for that account. The prefix `urn:dtaccount:` MUST be omitted here.
         :param pulumi.Input[_builtins.str] environment: The ID of the environment (https://\\n\\n.live.dynatrace.com). The attribute `policies` must contain ONLY policies defined for that environment.
-        :param pulumi.Input[_builtins.str] group: The name of the policy
+        :param pulumi.Input[_builtins.str] group: The UUID of the group to which the policy applies
         :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] policies: A list of IDs referring to policies bound to that group. It's not possible to mix policies here that are defined for different scopes (different accounts or environments) than specified via attributes `account` or `environment`.
         """
         opts = pulumi.ResourceOptions.merge(opts, pulumi.ResourceOptions(id=id))
@@ -300,7 +304,7 @@ class IamPolicyBindings(pulumi.CustomResource):
     @pulumi.getter
     def group(self) -> pulumi.Output[_builtins.str]:
         """
-        The name of the policy
+        The UUID of the group to which the policy applies
         """
         return pulumi.get(self, "group")
 

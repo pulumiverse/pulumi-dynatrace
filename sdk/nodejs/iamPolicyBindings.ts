@@ -54,7 +54,7 @@ export class IamPolicyBindings extends pulumi.CustomResource {
      */
     declare public readonly environment: pulumi.Output<string | undefined>;
     /**
-     * The name of the policy
+     * The UUID of the group to which the policy applies
      */
     declare public readonly group: pulumi.Output<string>;
     /**
@@ -110,7 +110,7 @@ export interface IamPolicyBindingsState {
      */
     environment?: pulumi.Input<string>;
     /**
-     * The name of the policy
+     * The UUID of the group to which the policy applies
      */
     group?: pulumi.Input<string>;
     /**
@@ -132,7 +132,7 @@ export interface IamPolicyBindingsArgs {
      */
     environment?: pulumi.Input<string>;
     /**
-     * The name of the policy
+     * The UUID of the group to which the policy applies
      */
     group: pulumi.Input<string>;
     /**

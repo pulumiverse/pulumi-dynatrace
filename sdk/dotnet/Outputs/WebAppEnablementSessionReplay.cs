@@ -15,7 +15,7 @@ namespace Pulumiverse.Dynatrace.Outputs
     public sealed class WebAppEnablementSessionReplay
     {
         /// <summary>
-        /// (Field has overlap with `dynatrace.WebApplication`) [Percentage of user sessions recorded with Session Replay](https://dt-url.net/sr-cost-traffic-control). For example, if you have 50% for RUM and 50% for Session Replay, it results in 25% of sessions recorded with Session Replay.
+        /// (Field has overlap with `dynatrace.WebApplication`) [Percentage of user sessions recorded with Session Replay Classic](https://dt-url.net/sr-cost-traffic-control). For example, if you have 50% for RUM and 50% for Session Replay Classic, it results in 25% of sessions recorded with Session Replay Classic.
         /// </summary>
         public readonly int CostAndTrafficControl;
         /// <summary>

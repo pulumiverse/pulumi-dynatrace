@@ -10,6 +10,17 @@ using Pulumi;
 
 namespace Pulumiverse.Dynatrace
 {
+    /// <summary>
+    /// !&gt; **HTTP DELETE method not available** Terraform will no longer manage this resource on `Destroy` but the configuration will still be present on the Dynatrace cluster.
+    /// 
+    /// &gt; This resource requires the cluster API token scope **Service Provider API** (`ServiceProviderAPI`)
+    /// 
+    /// ## Dynatrace Documentation
+    /// 
+    /// - Cluster preferences settings - https://www.dynatrace.com/support/help/managed-cluster/configuration/configure-cluster-preferences
+    /// 
+    /// - Cluster API v1 - https://www.dynatrace.com/support/help/managed-cluster/cluster-api/cluster-api-v1
+    /// </summary>
     [DynatraceResourceType("dynatrace:index/managedPreferences:ManagedPreferences")]
     public partial class ManagedPreferences : global::Pulumi.CustomResource
     {

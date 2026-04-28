@@ -4,6 +4,23 @@
 import * as pulumi from "@pulumi/pulumi";
 import * as utilities from "./utilities";
 
+/**
+ * > Configuration of the synthetic test scope overlaps with dynatrace_browser_monitor, but this resource in addition provides an option for an environment scope.
+ *
+ * > This resource requires the API token scopes **Read settings** (`settings.read`) and **Write settings** (`settings.write`)
+ *
+ * ## Dynatrace Documentation
+ *
+ * - Synthetic alerting overview - https://www.dynatrace.com/support/help/platform-modules/digital-experience/synthetic-monitoring/analysis-and-alerting/synthetic-alerting-overview
+ *
+ * - Settings API - https://www.dynatrace.com/support/help/dynatrace-api/environment-api/settings (schemaId: `builtin:synthetic.browser.outage-handling`)
+ *
+ * ## Export Example Usage
+ *
+ * - `terraform-provider-dynatrace -export dynatrace.BrowserMonitorOutage` downloads all existing browser monitor outage handling configuration
+ *
+ * The full documentation of the export feature is available [here](https://dt-url.net/h203qmc).
+ */
 export class BrowserMonitorOutage extends pulumi.CustomResource {
     /**
      * Get an existing BrowserMonitorOutage resource's state with the given name, ID, and optional extra

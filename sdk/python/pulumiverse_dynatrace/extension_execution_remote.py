@@ -23,6 +23,7 @@ class ExtensionExecutionRemoteArgs:
                  scope: pulumi.Input[_builtins.str]):
         """
         The set of arguments for constructing a ExtensionExecutionRemote resource.
+
         :param pulumi.Input[_builtins.str] performance_profile: Select performance profile for Extension Execution Controller [Documentation](https://www.dynatrace.com/support/help/shortlink/extensions-concepts#resource-consumption)
         :param pulumi.Input[_builtins.str] scope: The scope of this setting (ENVIRONMENT*ACTIVE*GATE)
         """
@@ -61,6 +62,7 @@ class _ExtensionExecutionRemoteState:
                  scope: Optional[pulumi.Input[_builtins.str]] = None):
         """
         Input properties used for looking up and filtering ExtensionExecutionRemote resources.
+
         :param pulumi.Input[_builtins.str] performance_profile: Select performance profile for Extension Execution Controller [Documentation](https://www.dynatrace.com/support/help/shortlink/extensions-concepts#resource-consumption)
         :param pulumi.Input[_builtins.str] scope: The scope of this setting (ENVIRONMENT*ACTIVE*GATE)
         """
@@ -104,7 +106,21 @@ class ExtensionExecutionRemote(pulumi.CustomResource):
                  scope: Optional[pulumi.Input[_builtins.str]] = None,
                  __props__=None):
         """
-        Create a ExtensionExecutionRemote resource with the given unique name, props, and options.
+        > This resource requires the API token scopes **Read settings** (`settings.read`) and **Write settings** (`settings.write`)
+
+        ## Dynatrace Documentation
+
+        - Extension Execution Controller - https://www.dynatrace.com/support/help/extend-dynatrace/extensions20/extensions-concepts#eec
+
+        - Settings API - https://www.dynatrace.com/support/help/dynatrace-api/environment-api/settings (schemaId: `builtin:eec.remote`)
+
+        ## Export Example Usage
+
+        - `terraform-provider-dynatrace -export ExtensionExecutionRemote` downloads all existing Extension Execution Controller configuration
+
+        The full documentation of the export feature is available [here](https://dt-url.net/h203qmc).
+
+
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[_builtins.str] performance_profile: Select performance profile for Extension Execution Controller [Documentation](https://www.dynatrace.com/support/help/shortlink/extensions-concepts#resource-consumption)
@@ -117,7 +133,21 @@ class ExtensionExecutionRemote(pulumi.CustomResource):
                  args: ExtensionExecutionRemoteArgs,
                  opts: Optional[pulumi.ResourceOptions] = None):
         """
-        Create a ExtensionExecutionRemote resource with the given unique name, props, and options.
+        > This resource requires the API token scopes **Read settings** (`settings.read`) and **Write settings** (`settings.write`)
+
+        ## Dynatrace Documentation
+
+        - Extension Execution Controller - https://www.dynatrace.com/support/help/extend-dynatrace/extensions20/extensions-concepts#eec
+
+        - Settings API - https://www.dynatrace.com/support/help/dynatrace-api/environment-api/settings (schemaId: `builtin:eec.remote`)
+
+        ## Export Example Usage
+
+        - `terraform-provider-dynatrace -export ExtensionExecutionRemote` downloads all existing Extension Execution Controller configuration
+
+        The full documentation of the export feature is available [here](https://dt-url.net/h203qmc).
+
+
         :param str resource_name: The name of the resource.
         :param ExtensionExecutionRemoteArgs args: The arguments to use to populate this resource's properties.
         :param pulumi.ResourceOptions opts: Options for the resource.

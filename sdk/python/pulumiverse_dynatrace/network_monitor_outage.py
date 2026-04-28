@@ -27,6 +27,7 @@ class NetworkMonitorOutageArgs:
                  scope: Optional[pulumi.Input[_builtins.str]] = None):
         """
         The set of arguments for constructing a NetworkMonitorOutage resource.
+
         :param pulumi.Input[_builtins.bool] global_outages: Generate a problem and send an alert when the monitor is unavailable at all configured locations.
         :param pulumi.Input[_builtins.bool] local_outages: Generate a problem and send an alert when the monitor is unavailable for one or more consecutive runs at any location.
         :param pulumi.Input[_builtins.int] global_consecutive_outage_count_threshold: Alert if all locations are unable to access my target address
@@ -129,6 +130,7 @@ class _NetworkMonitorOutageState:
                  scope: Optional[pulumi.Input[_builtins.str]] = None):
         """
         Input properties used for looking up and filtering NetworkMonitorOutage resources.
+
         :param pulumi.Input[_builtins.int] global_consecutive_outage_count_threshold: Alert if all locations are unable to access my target address
         :param pulumi.Input[_builtins.bool] global_outages: Generate a problem and send an alert when the monitor is unavailable at all configured locations.
         :param pulumi.Input[_builtins.int] local_consecutive_outage_count_threshold: are unable to access my target address
@@ -236,7 +238,23 @@ class NetworkMonitorOutage(pulumi.CustomResource):
                  scope: Optional[pulumi.Input[_builtins.str]] = None,
                  __props__=None):
         """
-        Create a NetworkMonitorOutage resource with the given unique name, props, and options.
+        > Configuration of the synthetic test scope overlaps with dynatrace_network_monitor, but this resource in addition provides an option for an environment scope.
+
+        > This resource requires the API token scopes **Read settings** (`settings.read`) and **Write settings** (`settings.write`)
+
+        ## Dynatrace Documentation
+
+        - Network availability monitors - https://docs.dynatrace.com/docs/platform-modules/digital-experience/synthetic-monitoring/general-information/network-availability-monitors
+
+        - Settings API - https://www.dynatrace.com/support/help/dynatrace-api/environment-api/settings (schemaId: `builtin:synthetic.multiprotocol.outage-handling`)
+
+        ## Export Example Usage
+
+        - `terraform-provider-dynatrace -export NetworkMonitorOutage` downloads all existing network availability monitor outage handling configuration
+
+        The full documentation of the export feature is available [here](https://dt-url.net/h203qmc).
+
+
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[_builtins.int] global_consecutive_outage_count_threshold: Alert if all locations are unable to access my target address
@@ -253,7 +271,23 @@ class NetworkMonitorOutage(pulumi.CustomResource):
                  args: NetworkMonitorOutageArgs,
                  opts: Optional[pulumi.ResourceOptions] = None):
         """
-        Create a NetworkMonitorOutage resource with the given unique name, props, and options.
+        > Configuration of the synthetic test scope overlaps with dynatrace_network_monitor, but this resource in addition provides an option for an environment scope.
+
+        > This resource requires the API token scopes **Read settings** (`settings.read`) and **Write settings** (`settings.write`)
+
+        ## Dynatrace Documentation
+
+        - Network availability monitors - https://docs.dynatrace.com/docs/platform-modules/digital-experience/synthetic-monitoring/general-information/network-availability-monitors
+
+        - Settings API - https://www.dynatrace.com/support/help/dynatrace-api/environment-api/settings (schemaId: `builtin:synthetic.multiprotocol.outage-handling`)
+
+        ## Export Example Usage
+
+        - `terraform-provider-dynatrace -export NetworkMonitorOutage` downloads all existing network availability monitor outage handling configuration
+
+        The full documentation of the export feature is available [here](https://dt-url.net/h203qmc).
+
+
         :param str resource_name: The name of the resource.
         :param NetworkMonitorOutageArgs args: The arguments to use to populate this resource's properties.
         :param pulumi.ResourceOptions opts: Options for the resource.

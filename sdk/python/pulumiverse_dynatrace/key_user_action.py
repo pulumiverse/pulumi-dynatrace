@@ -25,6 +25,7 @@ class KeyUserActionArgs:
                  name: Optional[pulumi.Input[_builtins.str]] = None):
         """
         The set of arguments for constructing a KeyUserAction resource.
+
         :param pulumi.Input[_builtins.str] application_id: The ID of the WebApplication
         :param pulumi.Input[_builtins.str] type: The type of the action. Possible values are `Custom`, `Load` and `Xhr`
         :param pulumi.Input[_builtins.str] domain: The domain where the action is performed
@@ -95,6 +96,7 @@ class _KeyUserActionState:
                  type: Optional[pulumi.Input[_builtins.str]] = None):
         """
         Input properties used for looking up and filtering KeyUserAction resources.
+
         :param pulumi.Input[_builtins.str] application_id: The ID of the WebApplication
         :param pulumi.Input[_builtins.str] domain: The domain where the action is performed
         :param pulumi.Input[_builtins.str] name: The name of the action
@@ -170,7 +172,21 @@ class KeyUserAction(pulumi.CustomResource):
                  type: Optional[pulumi.Input[_builtins.str]] = None,
                  __props__=None):
         """
-        Create a KeyUserAction resource with the given unique name, props, and options.
+        > This resource requires the API token scopes **Read configuration** (`ReadConfig`), **Write configuration** (`WriteConfig`) and **Read Entities** (`entities.read`)
+
+        ## Dynatrace Documentation
+
+        - RUM setup and configuration for web applications - https://www.dynatrace.com/support/help/how-to-use-dynatrace/real-user-monitoring/setup-and-configuration/web-applications
+
+        - Web application configuration API for Key User Actions - https://www.dynatrace.com/support/help/dynatrace-api/configuration-api/rum/web-application-configuration-api#edit-key-user-actions-list
+
+        ## Export Example Usage
+
+        - `terraform-provider-dynatrace -export KeyUserAction` downloads all existing Key User Actions
+
+        The full documentation of the export feature is available [here](https://dt-url.net/h203qmc).
+
+
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[_builtins.str] application_id: The ID of the WebApplication
@@ -185,7 +201,21 @@ class KeyUserAction(pulumi.CustomResource):
                  args: KeyUserActionArgs,
                  opts: Optional[pulumi.ResourceOptions] = None):
         """
-        Create a KeyUserAction resource with the given unique name, props, and options.
+        > This resource requires the API token scopes **Read configuration** (`ReadConfig`), **Write configuration** (`WriteConfig`) and **Read Entities** (`entities.read`)
+
+        ## Dynatrace Documentation
+
+        - RUM setup and configuration for web applications - https://www.dynatrace.com/support/help/how-to-use-dynatrace/real-user-monitoring/setup-and-configuration/web-applications
+
+        - Web application configuration API for Key User Actions - https://www.dynatrace.com/support/help/dynatrace-api/configuration-api/rum/web-application-configuration-api#edit-key-user-actions-list
+
+        ## Export Example Usage
+
+        - `terraform-provider-dynatrace -export KeyUserAction` downloads all existing Key User Actions
+
+        The full documentation of the export feature is available [here](https://dt-url.net/h203qmc).
+
+
         :param str resource_name: The name of the resource.
         :param KeyUserActionArgs args: The arguments to use to populate this resource's properties.
         :param pulumi.ResourceOptions opts: Options for the resource.

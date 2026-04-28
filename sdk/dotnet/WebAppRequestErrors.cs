@@ -10,6 +10,23 @@ using Pulumi;
 
 namespace Pulumiverse.Dynatrace
 {
+    /// <summary>
+    /// !&gt; This resource may not have full coverage of the required fields, please use dynatrace.ApplicationErrorRules instead.
+    /// 
+    /// &gt; This resource requires the API token scopes **Read settings** (`settings.read`) and **Write settings** (`settings.write`)
+    /// 
+    /// ## Dynatrace Documentation
+    /// 
+    /// - Configure request errors - https://www.dynatrace.com/support/help/platform-modules/digital-experience/web-applications/additional-configuration/configure-errors#configure-request-errors
+    /// 
+    /// - Settings API - https://www.dynatrace.com/support/help/dynatrace-api/environment-api/settings (schemaId: `builtin:rum.web.request-errors`)
+    /// 
+    /// ## Export Example Usage
+    /// 
+    /// - `terraform-provider-dynatrace -export dynatrace.WebAppRequestErrors` downloads all existing request error configuration
+    /// 
+    /// The full documentation of the export feature is available [here](https://dt-url.net/h203qmc).
+    /// </summary>
     [DynatraceResourceType("dynatrace:index/webAppRequestErrors:WebAppRequestErrors")]
     public partial class WebAppRequestErrors : global::Pulumi.CustomResource
     {

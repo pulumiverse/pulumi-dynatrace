@@ -22,6 +22,7 @@ class RumOverloadPreventionArgs:
                  overload_prevention_limit: pulumi.Input[_builtins.int]):
         """
         The set of arguments for constructing a RumOverloadPrevention resource.
+
         :param pulumi.Input[_builtins.int] overload_prevention_limit: Once this limit is reached, Dynatrace [throttles the number of captured user sessions](https://dt-url.net/fm3v0p7g).
         """
         pulumi.set(__self__, "overload_prevention_limit", overload_prevention_limit)
@@ -45,6 +46,7 @@ class _RumOverloadPreventionState:
                  overload_prevention_limit: Optional[pulumi.Input[_builtins.int]] = None):
         """
         Input properties used for looking up and filtering RumOverloadPrevention resources.
+
         :param pulumi.Input[_builtins.int] overload_prevention_limit: Once this limit is reached, Dynatrace [throttles the number of captured user sessions](https://dt-url.net/fm3v0p7g).
         """
         if overload_prevention_limit is not None:
@@ -72,7 +74,21 @@ class RumOverloadPrevention(pulumi.CustomResource):
                  overload_prevention_limit: Optional[pulumi.Input[_builtins.int]] = None,
                  __props__=None):
         """
-        Create a RumOverloadPrevention resource with the given unique name, props, and options.
+        > This resource requires the API token scopes **Read settings** (`settings.read`) and **Write settings** (`settings.write`)
+
+        ## Dynatrace Documentation
+
+        - What does a 'Max. user actions per minute exceeded' message mean? - https://www.dynatrace.com/support/help/shortlink/max-user-actions-per-minute-exceeded#can-my-environment-limit-be-changed
+
+        - Settings API - https://www.dynatrace.com/support/help/dynatrace-api/environment-api/settings (schemaId: `builtin:rum.overload-prevention`)
+
+        ## Export Example Usage
+
+        - `terraform-provider-dynatrace -export RumOverloadPrevention` downloads all existing real user monitoring overload prevention configuration
+
+        The full documentation of the export feature is available [here](https://dt-url.net/h203qmc).
+
+
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[_builtins.int] overload_prevention_limit: Once this limit is reached, Dynatrace [throttles the number of captured user sessions](https://dt-url.net/fm3v0p7g).
@@ -84,7 +100,21 @@ class RumOverloadPrevention(pulumi.CustomResource):
                  args: RumOverloadPreventionArgs,
                  opts: Optional[pulumi.ResourceOptions] = None):
         """
-        Create a RumOverloadPrevention resource with the given unique name, props, and options.
+        > This resource requires the API token scopes **Read settings** (`settings.read`) and **Write settings** (`settings.write`)
+
+        ## Dynatrace Documentation
+
+        - What does a 'Max. user actions per minute exceeded' message mean? - https://www.dynatrace.com/support/help/shortlink/max-user-actions-per-minute-exceeded#can-my-environment-limit-be-changed
+
+        - Settings API - https://www.dynatrace.com/support/help/dynatrace-api/environment-api/settings (schemaId: `builtin:rum.overload-prevention`)
+
+        ## Export Example Usage
+
+        - `terraform-provider-dynatrace -export RumOverloadPrevention` downloads all existing real user monitoring overload prevention configuration
+
+        The full documentation of the export feature is available [here](https://dt-url.net/h203qmc).
+
+
         :param str resource_name: The name of the resource.
         :param RumOverloadPreventionArgs args: The arguments to use to populate this resource's properties.
         :param pulumi.ResourceOptions opts: Options for the resource.

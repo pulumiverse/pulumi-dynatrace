@@ -27,6 +27,7 @@ class CloudappWorkloaddetectionArgs:
                  serverless: Optional[pulumi.Input['CloudappWorkloaddetectionServerlessArgs']] = None):
         """
         The set of arguments for constructing a CloudappWorkloaddetection resource.
+
         :param pulumi.Input['CloudappWorkloaddetectionCloudFoundryArgs'] cloud_foundry: Enable this setting to get 
                 * Processes of Cloud Foundry application instances merged into process groups by Cloud Foundry application. 
                 *  Container resource metrics (Container group instance entities) and [related screens](https://www.dynatrace.com/support/help/shortlink/container-groups).
@@ -118,6 +119,7 @@ class _CloudappWorkloaddetectionState:
                  serverless: Optional[pulumi.Input['CloudappWorkloaddetectionServerlessArgs']] = None):
         """
         Input properties used for looking up and filtering CloudappWorkloaddetection resources.
+
         :param pulumi.Input['CloudappWorkloaddetectionCloudFoundryArgs'] cloud_foundry: Enable this setting to get 
                 * Processes of Cloud Foundry application instances merged into process groups by Cloud Foundry application. 
                 *  Container resource metrics (Container group instance entities) and [related screens](https://www.dynatrace.com/support/help/shortlink/container-groups).
@@ -215,7 +217,55 @@ class CloudappWorkloaddetection(pulumi.CustomResource):
                  serverless: Optional[pulumi.Input[Union['CloudappWorkloaddetectionServerlessArgs', 'CloudappWorkloaddetectionServerlessArgsDict']]] = None,
                  __props__=None):
         """
-        Create a CloudappWorkloaddetection resource with the given unique name, props, and options.
+        > This resource requires the API token scopes **Read settings** (`settings.read`) and **Write settings** (`settings.write`)
+
+        ## Dynatrace Documentation
+
+        - Cloud application and workload detection - https://www.dynatrace.com/support/help/platform-modules/infrastructure-monitoring/process-groups/configuration/cloud-app-and-workload-detection
+
+        - Settings API - https://www.dynatrace.com/support/help/dynatrace-api/environment-api/settings (schemaId: `builtin:process-group.cloud-application-workload-detection`)
+
+        ## Export Example Usage
+
+        - `terraform-provider-dynatrace -export CloudappWorkloaddetection` downloads all existing workload detection configuration
+
+        The full documentation of the export feature is available [here](https://dt-url.net/h203qmc).
+
+        ## Resource Example Usage
+
+        ```python
+        import pulumi
+        import pulumiverse_dynatrace as dynatrace
+
+        # ID vu9U3hXa3q0AAAABADpidWlsdGluOnByb2Nlc3MtZ3JvdXAuY2xvdWQtYXBwbGljYXRpb24td29ya2xvYWQtZGV0ZWN0aW9uAAZ0ZW5hbnQABnRlbmFudAAkYjcwNmY4NWYtNWFkNC0zY2ZmLWJhYzMtZDg4YzFmNTkzMjgwvu9U3hXa3q0
+        cloud_app_workload_detection = dynatrace.CloudappWorkloaddetection("cloud_app_workload_detection",
+            cloud_foundry={
+                "enabled": False,
+            },
+            docker={
+                "enabled": True,
+            },
+            kubernetes={
+                "enabled": True,
+                "filters": {
+                    "filters": [{
+                        "enabled": False,
+                        "inclusion_toggles": {
+                            "inc_basepod": False,
+                            "inc_container": True,
+                            "inc_namespace": True,
+                            "inc_product": True,
+                            "inc_stage": True,
+                        },
+                        "match_filter": {
+                            "match_operator": "EXISTS",
+                        },
+                    }],
+                },
+            })
+        ```
+
+
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[Union['CloudappWorkloaddetectionCloudFoundryArgs', 'CloudappWorkloaddetectionCloudFoundryArgsDict']] cloud_foundry: Enable this setting to get 
@@ -241,7 +291,55 @@ class CloudappWorkloaddetection(pulumi.CustomResource):
                  args: CloudappWorkloaddetectionArgs,
                  opts: Optional[pulumi.ResourceOptions] = None):
         """
-        Create a CloudappWorkloaddetection resource with the given unique name, props, and options.
+        > This resource requires the API token scopes **Read settings** (`settings.read`) and **Write settings** (`settings.write`)
+
+        ## Dynatrace Documentation
+
+        - Cloud application and workload detection - https://www.dynatrace.com/support/help/platform-modules/infrastructure-monitoring/process-groups/configuration/cloud-app-and-workload-detection
+
+        - Settings API - https://www.dynatrace.com/support/help/dynatrace-api/environment-api/settings (schemaId: `builtin:process-group.cloud-application-workload-detection`)
+
+        ## Export Example Usage
+
+        - `terraform-provider-dynatrace -export CloudappWorkloaddetection` downloads all existing workload detection configuration
+
+        The full documentation of the export feature is available [here](https://dt-url.net/h203qmc).
+
+        ## Resource Example Usage
+
+        ```python
+        import pulumi
+        import pulumiverse_dynatrace as dynatrace
+
+        # ID vu9U3hXa3q0AAAABADpidWlsdGluOnByb2Nlc3MtZ3JvdXAuY2xvdWQtYXBwbGljYXRpb24td29ya2xvYWQtZGV0ZWN0aW9uAAZ0ZW5hbnQABnRlbmFudAAkYjcwNmY4NWYtNWFkNC0zY2ZmLWJhYzMtZDg4YzFmNTkzMjgwvu9U3hXa3q0
+        cloud_app_workload_detection = dynatrace.CloudappWorkloaddetection("cloud_app_workload_detection",
+            cloud_foundry={
+                "enabled": False,
+            },
+            docker={
+                "enabled": True,
+            },
+            kubernetes={
+                "enabled": True,
+                "filters": {
+                    "filters": [{
+                        "enabled": False,
+                        "inclusion_toggles": {
+                            "inc_basepod": False,
+                            "inc_container": True,
+                            "inc_namespace": True,
+                            "inc_product": True,
+                            "inc_stage": True,
+                        },
+                        "match_filter": {
+                            "match_operator": "EXISTS",
+                        },
+                    }],
+                },
+            })
+        ```
+
+
         :param str resource_name: The name of the resource.
         :param CloudappWorkloaddetectionArgs args: The arguments to use to populate this resource's properties.
         :param pulumi.ResourceOptions opts: Options for the resource.

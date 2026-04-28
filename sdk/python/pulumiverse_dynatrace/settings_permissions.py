@@ -27,6 +27,7 @@ class SettingsPermissionsArgs:
                  users: Optional[pulumi.Input['SettingsPermissionsUsersArgs']] = None):
         """
         The set of arguments for constructing a SettingsPermissions resource.
+
         :param pulumi.Input[_builtins.str] settings_object_id: The ID of the settings object for which access is to be granted. Here, you can use the `id` attribute of the respective settings object resource
         :param pulumi.Input[_builtins.str] all_users: Defines the default access level granted to all users in this environment. Allowed values are `read`, `write`, or `none`
         """
@@ -90,6 +91,7 @@ class _SettingsPermissionsState:
                  users: Optional[pulumi.Input['SettingsPermissionsUsersArgs']] = None):
         """
         Input properties used for looking up and filtering SettingsPermissions resources.
+
         :param pulumi.Input[_builtins.str] all_users: Defines the default access level granted to all users in this environment. Allowed values are `read`, `write`, or `none`
         :param pulumi.Input[_builtins.str] settings_object_id: The ID of the settings object for which access is to be granted. Here, you can use the `id` attribute of the respective settings object resource
         """
@@ -157,7 +159,80 @@ class SettingsPermissions(pulumi.CustomResource):
                  users: Optional[pulumi.Input[Union['SettingsPermissionsUsersArgs', 'SettingsPermissionsUsersArgsDict']]] = None,
                  __props__=None):
         """
-        Create a SettingsPermissions resource with the given unique name, props, and options.
+        > **Dynatrace SaaS only**
+
+        > This resource requires the OAuth scopes **Read settings** (`settings:objects:read`) and **Write settings** (`settings:objects:write`)
+
+        > This resource can alter Settings 2.0 objects of different owners if the OAuth scope `settings:objects:admin` is provided
+
+        ## Limitations
+
+        > Access modifiers can only be altered if the provided Settings 2.0 object allows such modifications, as indicated by its schema having `ownerBasedAccessControl` set to `true`
+
+        The following resources allow for altering access modifiers (please note that this list may be incomplete):
+        - `AutomationControllerConnections`
+        - `AutomationWorkflowAwsConnections`
+        - `AutomationWorkflowJira`
+        - `AutomationWorkflowK8sConnections`
+        - `AutomationWorkflowSlack`
+        - `EventDrivenAnsibleConnections`
+        - `GithubConnection`
+        - `GitlabConnection`
+        - `JenkinsConnection`
+        - `Ms365EmailConnection`
+        - `MsentraidConnection`
+        - `MsteamsConnection`
+        - `PagerdutyConnection`
+        - `ServicenowConnection`
+        - `GenericSetting` if the provided schema supports it
+
+        ## Documentation
+
+        - Access Control for Connectors - https://docs.dynatrace.com/docs/shortlink/access-control-for-connectors
+
+        - Settings API - https://www.dynatrace.com/support/help/dynatrace-api/environment-api/settings
+
+        ## Export Example Usage
+
+        - `terraform-provider-dynatrace -export SettingsPermissions` downloads all existing settings permissions.
+
+        The full documentation of the export feature is available [here](https://dt-url.net/h203qmc).
+
+        ## Resource Example Usage
+
+        ```python
+        import pulumi
+        import pulumi_dynatrace as dynatrace
+        import pulumiverse_dynatrace as dynatrace
+
+        group = dynatrace.IamGroup("group", name="#name#")
+        user_iam_user = dynatrace.IamUser("user",
+            email="#name#@example.com",
+            groups=[group.id])
+        # because the UID is not returned for the resource, we need data
+        user = dynatrace.get_iam_user_output(email=user_iam_user.id)
+        connection = dynatrace.GithubConnection("connection",
+            name="#name#",
+            type="pat",
+            token="azAZ09")
+        permission = dynatrace.SettingsPermissions("permission",
+            settings_object_id=connection.id,
+            all_users="none",
+            users={
+                "users": [{
+                    "uid": user.uid,
+                    "access": "write",
+                }],
+            },
+            groups={
+                "groups": [{
+                    "id": group.id,
+                    "access": "read",
+                }],
+            })
+        ```
+
+
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[_builtins.str] all_users: Defines the default access level granted to all users in this environment. Allowed values are `read`, `write`, or `none`
@@ -170,7 +245,80 @@ class SettingsPermissions(pulumi.CustomResource):
                  args: SettingsPermissionsArgs,
                  opts: Optional[pulumi.ResourceOptions] = None):
         """
-        Create a SettingsPermissions resource with the given unique name, props, and options.
+        > **Dynatrace SaaS only**
+
+        > This resource requires the OAuth scopes **Read settings** (`settings:objects:read`) and **Write settings** (`settings:objects:write`)
+
+        > This resource can alter Settings 2.0 objects of different owners if the OAuth scope `settings:objects:admin` is provided
+
+        ## Limitations
+
+        > Access modifiers can only be altered if the provided Settings 2.0 object allows such modifications, as indicated by its schema having `ownerBasedAccessControl` set to `true`
+
+        The following resources allow for altering access modifiers (please note that this list may be incomplete):
+        - `AutomationControllerConnections`
+        - `AutomationWorkflowAwsConnections`
+        - `AutomationWorkflowJira`
+        - `AutomationWorkflowK8sConnections`
+        - `AutomationWorkflowSlack`
+        - `EventDrivenAnsibleConnections`
+        - `GithubConnection`
+        - `GitlabConnection`
+        - `JenkinsConnection`
+        - `Ms365EmailConnection`
+        - `MsentraidConnection`
+        - `MsteamsConnection`
+        - `PagerdutyConnection`
+        - `ServicenowConnection`
+        - `GenericSetting` if the provided schema supports it
+
+        ## Documentation
+
+        - Access Control for Connectors - https://docs.dynatrace.com/docs/shortlink/access-control-for-connectors
+
+        - Settings API - https://www.dynatrace.com/support/help/dynatrace-api/environment-api/settings
+
+        ## Export Example Usage
+
+        - `terraform-provider-dynatrace -export SettingsPermissions` downloads all existing settings permissions.
+
+        The full documentation of the export feature is available [here](https://dt-url.net/h203qmc).
+
+        ## Resource Example Usage
+
+        ```python
+        import pulumi
+        import pulumi_dynatrace as dynatrace
+        import pulumiverse_dynatrace as dynatrace
+
+        group = dynatrace.IamGroup("group", name="#name#")
+        user_iam_user = dynatrace.IamUser("user",
+            email="#name#@example.com",
+            groups=[group.id])
+        # because the UID is not returned for the resource, we need data
+        user = dynatrace.get_iam_user_output(email=user_iam_user.id)
+        connection = dynatrace.GithubConnection("connection",
+            name="#name#",
+            type="pat",
+            token="azAZ09")
+        permission = dynatrace.SettingsPermissions("permission",
+            settings_object_id=connection.id,
+            all_users="none",
+            users={
+                "users": [{
+                    "uid": user.uid,
+                    "access": "write",
+                }],
+            },
+            groups={
+                "groups": [{
+                    "id": group.id,
+                    "access": "read",
+                }],
+            })
+        ```
+
+
         :param str resource_name: The name of the resource.
         :param SettingsPermissionsArgs args: The arguments to use to populate this resource's properties.
         :param pulumi.ResourceOptions opts: Options for the resource.

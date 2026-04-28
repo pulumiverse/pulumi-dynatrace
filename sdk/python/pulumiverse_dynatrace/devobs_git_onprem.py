@@ -24,6 +24,7 @@ class DevobsGitOnpremArgs:
                  include_credentials: Optional[pulumi.Input[_builtins.bool]] = None):
         """
         The set of arguments for constructing a DevobsGitOnprem resource.
+
         :param pulumi.Input[_builtins.str] git_provider: Possible Values: `AzureOnPrem`, `BitbucketOnPrem`, `GithubOnPrem`, `GitlabOnPrem`
         :param pulumi.Input[_builtins.str] url: An HTTP/HTTPS URL of your server
         :param pulumi.Input[_builtins.bool] include_credentials: If turned on, requests to your Gitlab server will have the `credentials` option set to `include`. Otherwise, it will be set to `omit`.
@@ -78,6 +79,7 @@ class _DevobsGitOnpremState:
                  url: Optional[pulumi.Input[_builtins.str]] = None):
         """
         Input properties used for looking up and filtering DevobsGitOnprem resources.
+
         :param pulumi.Input[_builtins.str] git_provider: Possible Values: `AzureOnPrem`, `BitbucketOnPrem`, `GithubOnPrem`, `GitlabOnPrem`
         :param pulumi.Input[_builtins.bool] include_credentials: If turned on, requests to your Gitlab server will have the `credentials` option set to `include`. Otherwise, it will be set to `omit`.
         :param pulumi.Input[_builtins.str] url: An HTTP/HTTPS URL of your server
@@ -137,7 +139,21 @@ class DevobsGitOnprem(pulumi.CustomResource):
                  url: Optional[pulumi.Input[_builtins.str]] = None,
                  __props__=None):
         """
-        Create a DevobsGitOnprem resource with the given unique name, props, and options.
+        > This resource requires the API token scopes **Read settings** (`settings.read`) and **Write settings** (`settings.write`)
+
+        ## Dynatrace Documentation
+
+        - Developer Observability - https://docs.dynatrace.com/docs/platform-modules/applications-and-microservices/developer-observability
+
+        - Settings API - https://www.dynatrace.com/support/help/dynatrace-api/environment-api/settings (schemaId: `app:dynatrace.devobs.debugger:git.on.prem`)
+
+        ## Export Example Usage
+
+        - `terraform-provider-dynatrace -export DevobsGitOnprem` downloads existing Developer Observability git on-premise server configuration
+
+        The full documentation of the export feature is available [here](https://dt-url.net/h203qmc).
+
+
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[_builtins.str] git_provider: Possible Values: `AzureOnPrem`, `BitbucketOnPrem`, `GithubOnPrem`, `GitlabOnPrem`
@@ -151,7 +167,21 @@ class DevobsGitOnprem(pulumi.CustomResource):
                  args: DevobsGitOnpremArgs,
                  opts: Optional[pulumi.ResourceOptions] = None):
         """
-        Create a DevobsGitOnprem resource with the given unique name, props, and options.
+        > This resource requires the API token scopes **Read settings** (`settings.read`) and **Write settings** (`settings.write`)
+
+        ## Dynatrace Documentation
+
+        - Developer Observability - https://docs.dynatrace.com/docs/platform-modules/applications-and-microservices/developer-observability
+
+        - Settings API - https://www.dynatrace.com/support/help/dynatrace-api/environment-api/settings (schemaId: `app:dynatrace.devobs.debugger:git.on.prem`)
+
+        ## Export Example Usage
+
+        - `terraform-provider-dynatrace -export DevobsGitOnprem` downloads existing Developer Observability git on-premise server configuration
+
+        The full documentation of the export feature is available [here](https://dt-url.net/h203qmc).
+
+
         :param str resource_name: The name of the resource.
         :param DevobsGitOnpremArgs args: The arguments to use to populate this resource's properties.
         :param pulumi.ResourceOptions opts: Options for the resource.

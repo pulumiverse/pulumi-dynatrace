@@ -12,6 +12,17 @@ import (
 	"github.com/pulumiverse/pulumi-dynatrace/sdk/go/dynatrace/internal"
 )
 
+// > The usage of `AgToken` will introduce sensitive data within your Terraform state. The `token` property is flagged as `sensitive`, but the field will be stored as plain-text. More information can be found here.
+//
+// > The token value can be retrieved with `dynatrace_ag_token.<#name#>.token` after apply.
+//
+// > This resource requires the API token scopes **Create ActiveGate tokens** (`activeGateTokenManagement.create`), **Read ActiveGate tokens** (`activeGateTokenManagement.read`) and **Write ActiveGate tokens** (`activeGateTokenManagement.write`)
+//
+// ## Dynatrace Documentation
+//
+// - ActiveGate tokens API - https://www.dynatrace.com/support/help/dynatrace-api/environment-api/tokens-v2/activegate-tokens
+//
+// > The export functionality isn't able to export Active Gate Tokens, because the token value is available only upon creation
 type AgToken struct {
 	pulumi.CustomResourceState
 

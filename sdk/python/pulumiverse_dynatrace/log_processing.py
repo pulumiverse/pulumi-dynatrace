@@ -29,6 +29,7 @@ class LogProcessingArgs:
                  insert_after: Optional[pulumi.Input[_builtins.str]] = None):
         """
         The set of arguments for constructing a LogProcessing resource.
+
         :param pulumi.Input[_builtins.bool] enabled: This setting is enabled (`true`) or disabled (`false`)
         :param pulumi.Input['LogProcessingProcessorDefinitionArgs'] processor_definition: ## Processor definition
                Add a rule definition using our syntax. [In our documentation](https://dt-url.net/8k03xm2) you will find instructions and application [examples](https://dt-url.net/m24305t).
@@ -132,6 +133,7 @@ class _LogProcessingState:
                  rule_testing: Optional[pulumi.Input['LogProcessingRuleTestingArgs']] = None):
         """
         Input properties used for looking up and filtering LogProcessing resources.
+
         :param pulumi.Input[_builtins.bool] enabled: This setting is enabled (`true`) or disabled (`false`)
         :param pulumi.Input[_builtins.str] insert_after: Because this resource allows for ordering you may specify the ID of the resource instance that comes before this instance regarding order. If not specified when creating the setting will be added to the end of the list. If not specified during update the order will remain untouched
         :param pulumi.Input['LogProcessingProcessorDefinitionArgs'] processor_definition: ## Processor definition
@@ -243,7 +245,21 @@ class LogProcessing(pulumi.CustomResource):
                  rule_testing: Optional[pulumi.Input[Union['LogProcessingRuleTestingArgs', 'LogProcessingRuleTestingArgsDict']]] = None,
                  __props__=None):
         """
-        Create a LogProcessing resource with the given unique name, props, and options.
+        > This resource requires the API token scopes **Read settings** (`settings.read`) and **Write settings** (`settings.write`)
+
+        ## Dynatrace Documentation
+
+        - Log processing - https://www.dynatrace.com/support/help/observe-and-explore/logs/log-monitoring/log-processing
+
+        - Settings API - https://www.dynatrace.com/support/help/dynatrace-api/environment-api/settings (schemaId: `builtin:logmonitoring.log-dpp-rules`)
+
+        ## Export Example Usage
+
+        - `terraform-provider-dynatrace -export LogProcessing` downloads all existing log processing configuration
+
+        The full documentation of the export feature is available [here](https://dt-url.net/h203qmc).
+
+
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[_builtins.bool] enabled: This setting is enabled (`true`) or disabled (`false`)
@@ -262,7 +278,21 @@ class LogProcessing(pulumi.CustomResource):
                  args: LogProcessingArgs,
                  opts: Optional[pulumi.ResourceOptions] = None):
         """
-        Create a LogProcessing resource with the given unique name, props, and options.
+        > This resource requires the API token scopes **Read settings** (`settings.read`) and **Write settings** (`settings.write`)
+
+        ## Dynatrace Documentation
+
+        - Log processing - https://www.dynatrace.com/support/help/observe-and-explore/logs/log-monitoring/log-processing
+
+        - Settings API - https://www.dynatrace.com/support/help/dynatrace-api/environment-api/settings (schemaId: `builtin:logmonitoring.log-dpp-rules`)
+
+        ## Export Example Usage
+
+        - `terraform-provider-dynatrace -export LogProcessing` downloads all existing log processing configuration
+
+        The full documentation of the export feature is available [here](https://dt-url.net/h203qmc).
+
+
         :param str resource_name: The name of the resource.
         :param LogProcessingArgs args: The arguments to use to populate this resource's properties.
         :param pulumi.ResourceOptions opts: Options for the resource.

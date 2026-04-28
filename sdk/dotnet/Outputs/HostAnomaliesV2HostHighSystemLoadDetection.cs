@@ -19,7 +19,7 @@ namespace Pulumiverse.Dynatrace.Outputs
         /// </summary>
         public readonly Outputs.HostAnomaliesV2HostHighSystemLoadDetectionCustomThresholds? CustomThresholds;
         /// <summary>
-        /// Possible Values: `Auto`, `Custom`
+        /// Detection mode for High System Load. Possible Values: `Auto`, `Custom`
         /// </summary>
         public readonly string? DetectionMode;
         /// <summary>

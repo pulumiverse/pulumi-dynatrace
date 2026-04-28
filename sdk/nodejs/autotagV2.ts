@@ -6,6 +6,42 @@ import * as inputs from "./types/input";
 import * as outputs from "./types/output";
 import * as utilities from "./utilities";
 
+/**
+ * > This resource requires the API token scopes **Read settings** (`settings.read`) and **Write settings** (`settings.write`)
+ *
+ * ## Dynatrace Documentation
+ *
+ * - Define and apply tags - https://www.dynatrace.com/support/help/how-to-use-dynatrace/tags-and-metadata/setup/how-to-define-tags
+ *
+ * - Settings API - https://www.dynatrace.com/support/help/dynatrace-api/environment-api/settings (schemaId: `builtin:tags.auto-tagging`)
+ *
+ * ## Export Example Usage
+ *
+ * - `terraform-provider-dynatrace -export dynatrace.AutotagV2` downloads all existing automatically applied tags
+ *
+ * The full documentation of the export feature is available [here](https://dt-url.net/h203qmc).
+ *
+ * ## Resource Example Usage
+ *
+ * ```typescript
+ * import * as pulumi from "@pulumi/pulumi";
+ * import * as dynatrace from "@pulumiverse/dynatrace";
+ *
+ * // Sample for how to configure Auto Tag Rules using an Entity Selector
+ * const gKESample = new dynatrace.AutotagV2("GKESample", {
+ *     name: "GKE-Hosts",
+ *     rules: {
+ *         rules: [{
+ *             type: "SELECTOR",
+ *             enabled: true,
+ *             entitySelector: "type(host),entityName.startsWith(\"gke\")",
+ *             valueFormat: "true",
+ *             valueNormalization: "Leave text as-is",
+ *         }],
+ *     },
+ * });
+ * ```
+ */
 export class AutotagV2 extends pulumi.CustomResource {
     /**
      * Get an existing AutotagV2 resource's state with the given name, ID, and optional extra
@@ -47,7 +83,7 @@ export class AutotagV2 extends pulumi.CustomResource {
      */
     declare public readonly rules: pulumi.Output<outputs.AutotagV2Rules | undefined>;
     /**
-     * If `true` this resource will not
+     * If `true` the specified rules are ignored with the assumption that they're maintained externally or via `dynatrace.AutotagRules`
      */
     declare public readonly rulesMaintainedExternally: pulumi.Output<boolean | undefined>;
 
@@ -97,7 +133,7 @@ export interface AutotagV2State {
      */
     rules?: pulumi.Input<inputs.AutotagV2Rules>;
     /**
-     * If `true` this resource will not
+     * If `true` the specified rules are ignored with the assumption that they're maintained externally or via `dynatrace.AutotagRules`
      */
     rulesMaintainedExternally?: pulumi.Input<boolean>;
 }
@@ -119,7 +155,7 @@ export interface AutotagV2Args {
      */
     rules?: pulumi.Input<inputs.AutotagV2Rules>;
     /**
-     * If `true` this resource will not
+     * If `true` the specified rules are ignored with the assumption that they're maintained externally or via `dynatrace.AutotagRules`
      */
     rulesMaintainedExternally?: pulumi.Input<boolean>;
 }

@@ -25,6 +25,7 @@ class HttpMonitorScriptInitArgs:
                  script: pulumi.Input['HttpMonitorScriptScriptArgs']):
         """
         The set of arguments for constructing a HttpMonitorScript resource.
+
         :param pulumi.Input[_builtins.str] http_id: The ID of the HTTP monitor
         :param pulumi.Input['HttpMonitorScriptScriptArgs'] script: The HTTP Script
         """
@@ -63,6 +64,7 @@ class _HttpMonitorScriptState:
                  script: Optional[pulumi.Input['HttpMonitorScriptScriptArgs']] = None):
         """
         Input properties used for looking up and filtering HttpMonitorScript resources.
+
         :param pulumi.Input[_builtins.str] http_id: The ID of the HTTP monitor
         :param pulumi.Input['HttpMonitorScriptScriptArgs'] script: The HTTP Script
         """
@@ -106,7 +108,23 @@ class HttpMonitorScript(pulumi.CustomResource):
                  script: Optional[pulumi.Input[Union['HttpMonitorScriptScriptArgs', 'HttpMonitorScriptScriptArgsDict']]] = None,
                  __props__=None):
         """
-        Create a HttpMonitorScript resource with the given unique name, props, and options.
+        > This resource allows you to manage the script of your HTTP monitor separately from the `HttpMonitor` resource. To utilize this resource, please omit the `script` block and set `no_script=true` in your `HttpMonitor` resource.
+
+        > This resource requires the API token scope **Create and read synthetic monitors, locations, and nodes** (`ExternalSyntheticIntegration`)
+
+        ## Dynatrace Documentation
+
+        - Synthetic Monitoring - HTTP monitors - https://www.dynatrace.com/support/help/shortlink/synthetic-hub#http-monitors
+
+        - Synthetic Monitors API - https://www.dynatrace.com/support/help/dynatrace-api/environment-api/synthetic/synthetic-monitors
+
+        ## Export Example Usage
+
+        - `terraform-provider-dynatrace -export HttpMonitorScript` downloads all existing HTTP monitor script configuration
+
+        The full documentation of the export feature is available [here](https://dt-url.net/h203qmc).
+
+
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[_builtins.str] http_id: The ID of the HTTP monitor
@@ -119,7 +137,23 @@ class HttpMonitorScript(pulumi.CustomResource):
                  args: HttpMonitorScriptInitArgs,
                  opts: Optional[pulumi.ResourceOptions] = None):
         """
-        Create a HttpMonitorScript resource with the given unique name, props, and options.
+        > This resource allows you to manage the script of your HTTP monitor separately from the `HttpMonitor` resource. To utilize this resource, please omit the `script` block and set `no_script=true` in your `HttpMonitor` resource.
+
+        > This resource requires the API token scope **Create and read synthetic monitors, locations, and nodes** (`ExternalSyntheticIntegration`)
+
+        ## Dynatrace Documentation
+
+        - Synthetic Monitoring - HTTP monitors - https://www.dynatrace.com/support/help/shortlink/synthetic-hub#http-monitors
+
+        - Synthetic Monitors API - https://www.dynatrace.com/support/help/dynatrace-api/environment-api/synthetic/synthetic-monitors
+
+        ## Export Example Usage
+
+        - `terraform-provider-dynatrace -export HttpMonitorScript` downloads all existing HTTP monitor script configuration
+
+        The full documentation of the export feature is available [here](https://dt-url.net/h203qmc).
+
+
         :param str resource_name: The name of the resource.
         :param HttpMonitorScriptInitArgs args: The arguments to use to populate this resource's properties.
         :param pulumi.ResourceOptions opts: Options for the resource.

@@ -30,6 +30,7 @@ class ManagedSmtpArgs:
                  use_smtp_server: Optional[pulumi.Input[_builtins.bool]] = None):
         """
         The set of arguments for constructing a ManagedSmtp resource.
+
         :param pulumi.Input[_builtins.str] host_name: Host Name
         :param pulumi.Input[_builtins.str] password: Password
         :param pulumi.Input[_builtins.str] sender_email_address: Sender email address
@@ -178,6 +179,7 @@ class _ManagedSmtpState:
                  user_name: Optional[pulumi.Input[_builtins.str]] = None):
         """
         Input properties used for looking up and filtering ManagedSmtp resources.
+
         :param pulumi.Input[_builtins.bool] allow_fallback_via_mission_control: If true, we will send e-mails via Mission Control in case of problems with SMTP server.
         :param pulumi.Input[_builtins.str] connection_security: Connection security, possible values: `NO_ENCRYPTION`, `OPTIONAL_STARTTLS`, `REQUIRE_STARTTLS`, `TLS`. Default: `NO_ENCRYPTION`
         :param pulumi.Input[_builtins.str] host_name: Host Name
@@ -333,7 +335,35 @@ class ManagedSmtp(pulumi.CustomResource):
                  user_name: Optional[pulumi.Input[_builtins.str]] = None,
                  __props__=None):
         """
-        Create a ManagedSmtp resource with the given unique name, props, and options.
+        !> **HTTP DELETE method not available** Terraform will no longer manage this resource on `destroy` but the configuration will still be present on the Dynatrace cluster.
+
+        > This resource requires the cluster API token scope **Service Provider API** (`ServiceProviderAPI`)
+
+        ## Dynatrace Documentation
+
+        - Configure an SMTP server connection - https://www.dynatrace.com/support/help/managed-cluster/configuration/configure-smtp-server-connection
+
+        - Cluster API v1 - https://www.dynatrace.com/support/help/managed-cluster/cluster-api/cluster-api-v1
+
+        ## Resource Example Usage
+
+        ```python
+        import pulumi
+        import pulumiverse_dynatrace as dynatrace
+
+        test = dynatrace.ManagedSmtp("Test",
+            host_name="hostname",
+            port=25,
+            user_name="username",
+            password="password",
+            is_password_configured=True,
+            connection_security="NO_ENCRYPTION",
+            sender_email_address="noreply@dynatrace-managed.com",
+            allow_fallback_via_mission_control=True,
+            use_smtp_server=True)
+        ```
+
+
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[_builtins.bool] allow_fallback_via_mission_control: If true, we will send e-mails via Mission Control in case of problems with SMTP server.
@@ -353,7 +383,35 @@ class ManagedSmtp(pulumi.CustomResource):
                  args: ManagedSmtpArgs,
                  opts: Optional[pulumi.ResourceOptions] = None):
         """
-        Create a ManagedSmtp resource with the given unique name, props, and options.
+        !> **HTTP DELETE method not available** Terraform will no longer manage this resource on `destroy` but the configuration will still be present on the Dynatrace cluster.
+
+        > This resource requires the cluster API token scope **Service Provider API** (`ServiceProviderAPI`)
+
+        ## Dynatrace Documentation
+
+        - Configure an SMTP server connection - https://www.dynatrace.com/support/help/managed-cluster/configuration/configure-smtp-server-connection
+
+        - Cluster API v1 - https://www.dynatrace.com/support/help/managed-cluster/cluster-api/cluster-api-v1
+
+        ## Resource Example Usage
+
+        ```python
+        import pulumi
+        import pulumiverse_dynatrace as dynatrace
+
+        test = dynatrace.ManagedSmtp("Test",
+            host_name="hostname",
+            port=25,
+            user_name="username",
+            password="password",
+            is_password_configured=True,
+            connection_security="NO_ENCRYPTION",
+            sender_email_address="noreply@dynatrace-managed.com",
+            allow_fallback_via_mission_control=True,
+            use_smtp_server=True)
+        ```
+
+
         :param str resource_name: The name of the resource.
         :param ManagedSmtpArgs args: The arguments to use to populate this resource's properties.
         :param pulumi.ResourceOptions opts: Options for the resource.

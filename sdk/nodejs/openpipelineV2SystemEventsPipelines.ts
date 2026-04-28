@@ -6,6 +6,146 @@ import * as inputs from "./types/input";
 import * as outputs from "./types/output";
 import * as utilities from "./utilities";
 
+/**
+ * > This resource requires the API token scopes **Read settings** (`settings.read`) and **Write settings** (`settings.write`)
+ *
+ * > This resource requires the OAuth scopes **Read settings** (`settings:objects:read`) and **Write settings** (`settings:objects:write`)
+ *
+ * ## Limitations
+ *
+ * > **Warning** If a resource is created using an API token or without setting `DYNATRACE_HTTP_OAUTH_PREFERENCE=true` (when both are used), the settings object's owner will remain empty.
+ *
+ * An empty owner implies:
+ * - The settings object becomes public, allowing other users with settings permissions to read and modify it.
+ * - Changing the settings object's permissions will have no effect, meaning the `dynatrace.SettingsPermissions` resource can't alter its access.
+ *
+ * When a settings object is created using platform credentials:
+ * - The owner is set to the owner of the OAuth client or platform token.
+ * - By default, the settings object is private; only the owner can read and modify it.
+ * - Access modifiers can be managed using the `dynatrace.SettingsPermissions` resource.
+ *
+ * We recommend using platform credentials to ensure a correct setup.
+ * In case an API token is needed, we recommend setting `DYNATRACE_HTTP_OAUTH_PREFERENCE=true`.
+ *
+ * ## Dynatrace Documentation
+ *
+ * - OpenPipeline - https://docs.dynatrace.com/docs/platform/openpipeline
+ *
+ * ## Export Example Usage
+ *
+ * - `terraform-provider-dynatrace -export dynatrace.OpenpipelineV2SystemEventsPipelines` downloads all existing OpenPipeline definitions for system events pipelines
+ *
+ * The full documentation of the export feature is available [here](https://dt-url.net/h203qmc).
+ *
+ * ## Resource Example Usage
+ *
+ * ```typescript
+ * import * as pulumi from "@pulumi/pulumi";
+ * import * as dynatrace from "@pulumiverse/dynatrace";
+ *
+ * const max_pipeline = new dynatrace.OpenpipelineV2SystemEventsPipelines("max-pipeline", {
+ *     displayName: "Warning pipeline",
+ *     customId: "pipeline_Warning_pipeline_2773_tf_#name#",
+ *     metadataList: {
+ *         metadatas: [{
+ *             entryKey: "environment",
+ *             entryValue: "production",
+ *         }],
+ *     },
+ *     davis: {
+ *         processors: {
+ *             processors: [{
+ *                 type: "davis",
+ *                 id: "processor_Create_warning_event_8226",
+ *                 description: "Create warning event",
+ *                 matcher: "true",
+ *                 davis: {
+ *                     properties: {
+ *                         properties: [
+ *                             {
+ *                                 key: "event.type",
+ *                                 value: "CUSTOM_ALERT",
+ *                             },
+ *                             {
+ *                                 key: "event.name",
+ *                                 value: "Warning detected",
+ *                             },
+ *                             {
+ *                                 key: "event.description",
+ *                                 value: "Warning: {dims:record.summary}",
+ *                             },
+ *                         ],
+ *                     },
+ *                 },
+ *                 enabled: true,
+ *             }],
+ *         },
+ *     },
+ *     metricExtraction: {
+ *         processors: {
+ *             processors: [
+ *                 {
+ *                     type: "counterMetric",
+ *                     id: "processor_Count_warning_events_6392",
+ *                     description: "Count warnings",
+ *                     matcher: "true",
+ *                     counterMetric: {
+ *                         metricKey: "warning.count",
+ *                         dimensions: {
+ *                             dimensions: [
+ *                                 {
+ *                                     sourceFieldName: "dt.cost.costcenter",
+ *                                 },
+ *                                 {
+ *                                     sourceFieldName: "dt.cost.product",
+ *                                 },
+ *                                 {
+ *                                     sourceFieldName: "dt.security_context",
+ *                                 },
+ *                                 {
+ *                                     sourceFieldName: "record.category",
+ *                                     destinationFieldName: "warning_category",
+ *                                 },
+ *                             ],
+ *                         },
+ *                     },
+ *                     enabled: true,
+ *                 },
+ *                 {
+ *                     type: "valueMetric",
+ *                     id: "processor_Warning_timeout_1990",
+ *                     description: "Warning timeout",
+ *                     matcher: "true",
+ *                     valueMetric: {
+ *                         metricKey: "warning.timeout",
+ *                         field: "recording.timeout_in_min",
+ *                         defaultValue: "60",
+ *                         dimensions: {
+ *                             dimensions: [
+ *                                 {
+ *                                     sourceFieldName: "dt.cost.costcenter",
+ *                                 },
+ *                                 {
+ *                                     sourceFieldName: "dt.cost.product",
+ *                                 },
+ *                                 {
+ *                                     sourceFieldName: "dt.security_context",
+ *                                 },
+ *                                 {
+ *                                     sourceFieldName: "record.category",
+ *                                     destinationFieldName: "warning_category",
+ *                                 },
+ *                             ],
+ *                         },
+ *                     },
+ *                     enabled: true,
+ *                 },
+ *             ],
+ *         },
+ *     },
+ * });
+ * ```
+ */
 export class OpenpipelineV2SystemEventsPipelines extends pulumi.CustomResource {
     /**
      * Get an existing OpenpipelineV2SystemEventsPipelines resource's state with the given name, ID, and optional extra
@@ -37,7 +177,7 @@ export class OpenpipelineV2SystemEventsPipelines extends pulumi.CustomResource {
     /**
      * Cost allocation stage
      */
-    declare public readonly costAllocation: pulumi.Output<outputs.OpenpipelineV2SystemEventsPipelinesCostAllocation>;
+    declare public readonly costAllocation: pulumi.Output<outputs.OpenpipelineV2SystemEventsPipelinesCostAllocation | undefined>;
     /**
      * Custom pipeline id
      */
@@ -45,35 +185,55 @@ export class OpenpipelineV2SystemEventsPipelines extends pulumi.CustomResource {
     /**
      * Data extraction stage
      */
-    declare public readonly dataExtraction: pulumi.Output<outputs.OpenpipelineV2SystemEventsPipelinesDataExtraction>;
+    declare public readonly dataExtraction: pulumi.Output<outputs.OpenpipelineV2SystemEventsPipelinesDataExtraction | undefined>;
     /**
      * Davis event extraction stage
      */
-    declare public readonly davis: pulumi.Output<outputs.OpenpipelineV2SystemEventsPipelinesDavis>;
+    declare public readonly davis: pulumi.Output<outputs.OpenpipelineV2SystemEventsPipelinesDavis | undefined>;
     /**
      * Display name
      */
     declare public readonly displayName: pulumi.Output<string>;
     /**
+     * Group role. Possible Values: `compositionPipeline`, `memberPipeline`
+     */
+    declare public readonly groupRole: pulumi.Output<string | undefined>;
+    /**
+     * Pipeline metadata list
+     */
+    declare public readonly metadataList: pulumi.Output<outputs.OpenpipelineV2SystemEventsPipelinesMetadataList | undefined>;
+    /**
      * Metrics extraction stage
      */
-    declare public readonly metricExtraction: pulumi.Output<outputs.OpenpipelineV2SystemEventsPipelinesMetricExtraction>;
+    declare public readonly metricExtraction: pulumi.Output<outputs.OpenpipelineV2SystemEventsPipelinesMetricExtraction | undefined>;
     /**
      * Processing stage
      */
-    declare public readonly processing: pulumi.Output<outputs.OpenpipelineV2SystemEventsPipelinesProcessing>;
+    declare public readonly processing: pulumi.Output<outputs.OpenpipelineV2SystemEventsPipelinesProcessing | undefined>;
     /**
      * Product allocation stage
      */
-    declare public readonly productAllocation: pulumi.Output<outputs.OpenpipelineV2SystemEventsPipelinesProductAllocation>;
+    declare public readonly productAllocation: pulumi.Output<outputs.OpenpipelineV2SystemEventsPipelinesProductAllocation | undefined>;
+    /**
+     * Routing. Possible Values: `notRoutable`, `routable`
+     */
+    declare public readonly routing: pulumi.Output<string | undefined>;
     /**
      * Security context stage
      */
-    declare public readonly securityContext: pulumi.Output<outputs.OpenpipelineV2SystemEventsPipelinesSecurityContext>;
+    declare public readonly securityContext: pulumi.Output<outputs.OpenpipelineV2SystemEventsPipelinesSecurityContext | undefined>;
+    /**
+     * Smartscape edge extraction stage
+     */
+    declare public readonly smartscapeEdgeExtraction: pulumi.Output<outputs.OpenpipelineV2SystemEventsPipelinesSmartscapeEdgeExtraction | undefined>;
+    /**
+     * Smartscape node extraction stage
+     */
+    declare public readonly smartscapeNodeExtraction: pulumi.Output<outputs.OpenpipelineV2SystemEventsPipelinesSmartscapeNodeExtraction | undefined>;
     /**
      * Storage stage
      */
-    declare public readonly storage: pulumi.Output<outputs.OpenpipelineV2SystemEventsPipelinesStorage>;
+    declare public readonly storage: pulumi.Output<outputs.OpenpipelineV2SystemEventsPipelinesStorage | undefined>;
 
     /**
      * Create a OpenpipelineV2SystemEventsPipelines resource with the given unique name, arguments, and options.
@@ -93,52 +253,38 @@ export class OpenpipelineV2SystemEventsPipelines extends pulumi.CustomResource {
             resourceInputs["dataExtraction"] = state?.dataExtraction;
             resourceInputs["davis"] = state?.davis;
             resourceInputs["displayName"] = state?.displayName;
+            resourceInputs["groupRole"] = state?.groupRole;
+            resourceInputs["metadataList"] = state?.metadataList;
             resourceInputs["metricExtraction"] = state?.metricExtraction;
             resourceInputs["processing"] = state?.processing;
             resourceInputs["productAllocation"] = state?.productAllocation;
+            resourceInputs["routing"] = state?.routing;
             resourceInputs["securityContext"] = state?.securityContext;
+            resourceInputs["smartscapeEdgeExtraction"] = state?.smartscapeEdgeExtraction;
+            resourceInputs["smartscapeNodeExtraction"] = state?.smartscapeNodeExtraction;
             resourceInputs["storage"] = state?.storage;
         } else {
             const args = argsOrState as OpenpipelineV2SystemEventsPipelinesArgs | undefined;
-            if (args?.costAllocation === undefined && !opts.urn) {
-                throw new Error("Missing required property 'costAllocation'");
-            }
             if (args?.customId === undefined && !opts.urn) {
                 throw new Error("Missing required property 'customId'");
             }
-            if (args?.dataExtraction === undefined && !opts.urn) {
-                throw new Error("Missing required property 'dataExtraction'");
-            }
-            if (args?.davis === undefined && !opts.urn) {
-                throw new Error("Missing required property 'davis'");
-            }
             if (args?.displayName === undefined && !opts.urn) {
                 throw new Error("Missing required property 'displayName'");
-            }
-            if (args?.metricExtraction === undefined && !opts.urn) {
-                throw new Error("Missing required property 'metricExtraction'");
-            }
-            if (args?.processing === undefined && !opts.urn) {
-                throw new Error("Missing required property 'processing'");
-            }
-            if (args?.productAllocation === undefined && !opts.urn) {
-                throw new Error("Missing required property 'productAllocation'");
-            }
-            if (args?.securityContext === undefined && !opts.urn) {
-                throw new Error("Missing required property 'securityContext'");
-            }
-            if (args?.storage === undefined && !opts.urn) {
-                throw new Error("Missing required property 'storage'");
             }
             resourceInputs["costAllocation"] = args?.costAllocation;
             resourceInputs["customId"] = args?.customId;
             resourceInputs["dataExtraction"] = args?.dataExtraction;
             resourceInputs["davis"] = args?.davis;
             resourceInputs["displayName"] = args?.displayName;
+            resourceInputs["groupRole"] = args?.groupRole;
+            resourceInputs["metadataList"] = args?.metadataList;
             resourceInputs["metricExtraction"] = args?.metricExtraction;
             resourceInputs["processing"] = args?.processing;
             resourceInputs["productAllocation"] = args?.productAllocation;
+            resourceInputs["routing"] = args?.routing;
             resourceInputs["securityContext"] = args?.securityContext;
+            resourceInputs["smartscapeEdgeExtraction"] = args?.smartscapeEdgeExtraction;
+            resourceInputs["smartscapeNodeExtraction"] = args?.smartscapeNodeExtraction;
             resourceInputs["storage"] = args?.storage;
         }
         opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts);
@@ -171,6 +317,14 @@ export interface OpenpipelineV2SystemEventsPipelinesState {
      */
     displayName?: pulumi.Input<string>;
     /**
+     * Group role. Possible Values: `compositionPipeline`, `memberPipeline`
+     */
+    groupRole?: pulumi.Input<string>;
+    /**
+     * Pipeline metadata list
+     */
+    metadataList?: pulumi.Input<inputs.OpenpipelineV2SystemEventsPipelinesMetadataList>;
+    /**
      * Metrics extraction stage
      */
     metricExtraction?: pulumi.Input<inputs.OpenpipelineV2SystemEventsPipelinesMetricExtraction>;
@@ -183,9 +337,21 @@ export interface OpenpipelineV2SystemEventsPipelinesState {
      */
     productAllocation?: pulumi.Input<inputs.OpenpipelineV2SystemEventsPipelinesProductAllocation>;
     /**
+     * Routing. Possible Values: `notRoutable`, `routable`
+     */
+    routing?: pulumi.Input<string>;
+    /**
      * Security context stage
      */
     securityContext?: pulumi.Input<inputs.OpenpipelineV2SystemEventsPipelinesSecurityContext>;
+    /**
+     * Smartscape edge extraction stage
+     */
+    smartscapeEdgeExtraction?: pulumi.Input<inputs.OpenpipelineV2SystemEventsPipelinesSmartscapeEdgeExtraction>;
+    /**
+     * Smartscape node extraction stage
+     */
+    smartscapeNodeExtraction?: pulumi.Input<inputs.OpenpipelineV2SystemEventsPipelinesSmartscapeNodeExtraction>;
     /**
      * Storage stage
      */
@@ -199,7 +365,7 @@ export interface OpenpipelineV2SystemEventsPipelinesArgs {
     /**
      * Cost allocation stage
      */
-    costAllocation: pulumi.Input<inputs.OpenpipelineV2SystemEventsPipelinesCostAllocation>;
+    costAllocation?: pulumi.Input<inputs.OpenpipelineV2SystemEventsPipelinesCostAllocation>;
     /**
      * Custom pipeline id
      */
@@ -207,33 +373,53 @@ export interface OpenpipelineV2SystemEventsPipelinesArgs {
     /**
      * Data extraction stage
      */
-    dataExtraction: pulumi.Input<inputs.OpenpipelineV2SystemEventsPipelinesDataExtraction>;
+    dataExtraction?: pulumi.Input<inputs.OpenpipelineV2SystemEventsPipelinesDataExtraction>;
     /**
      * Davis event extraction stage
      */
-    davis: pulumi.Input<inputs.OpenpipelineV2SystemEventsPipelinesDavis>;
+    davis?: pulumi.Input<inputs.OpenpipelineV2SystemEventsPipelinesDavis>;
     /**
      * Display name
      */
     displayName: pulumi.Input<string>;
     /**
+     * Group role. Possible Values: `compositionPipeline`, `memberPipeline`
+     */
+    groupRole?: pulumi.Input<string>;
+    /**
+     * Pipeline metadata list
+     */
+    metadataList?: pulumi.Input<inputs.OpenpipelineV2SystemEventsPipelinesMetadataList>;
+    /**
      * Metrics extraction stage
      */
-    metricExtraction: pulumi.Input<inputs.OpenpipelineV2SystemEventsPipelinesMetricExtraction>;
+    metricExtraction?: pulumi.Input<inputs.OpenpipelineV2SystemEventsPipelinesMetricExtraction>;
     /**
      * Processing stage
      */
-    processing: pulumi.Input<inputs.OpenpipelineV2SystemEventsPipelinesProcessing>;
+    processing?: pulumi.Input<inputs.OpenpipelineV2SystemEventsPipelinesProcessing>;
     /**
      * Product allocation stage
      */
-    productAllocation: pulumi.Input<inputs.OpenpipelineV2SystemEventsPipelinesProductAllocation>;
+    productAllocation?: pulumi.Input<inputs.OpenpipelineV2SystemEventsPipelinesProductAllocation>;
+    /**
+     * Routing. Possible Values: `notRoutable`, `routable`
+     */
+    routing?: pulumi.Input<string>;
     /**
      * Security context stage
      */
-    securityContext: pulumi.Input<inputs.OpenpipelineV2SystemEventsPipelinesSecurityContext>;
+    securityContext?: pulumi.Input<inputs.OpenpipelineV2SystemEventsPipelinesSecurityContext>;
+    /**
+     * Smartscape edge extraction stage
+     */
+    smartscapeEdgeExtraction?: pulumi.Input<inputs.OpenpipelineV2SystemEventsPipelinesSmartscapeEdgeExtraction>;
+    /**
+     * Smartscape node extraction stage
+     */
+    smartscapeNodeExtraction?: pulumi.Input<inputs.OpenpipelineV2SystemEventsPipelinesSmartscapeNodeExtraction>;
     /**
      * Storage stage
      */
-    storage: pulumi.Input<inputs.OpenpipelineV2SystemEventsPipelinesStorage>;
+    storage?: pulumi.Input<inputs.OpenpipelineV2SystemEventsPipelinesStorage>;
 }

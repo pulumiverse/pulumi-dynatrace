@@ -14,16 +14,34 @@ namespace Pulumiverse.Dynatrace.Inputs
     public sealed class BrowserMonitorPerformanceThresholdsThresholdArgs : global::Pulumi.ResourceArgs
     {
         /// <summary>
+        /// Number of most recent non-violating executions that closes the problem
+        /// </summary>
+        [Input("dealertingSamples")]
+        public Input<int>? DealertingSamples { get; set; }
+
+        /// <summary>
         /// Synthetic event
         /// </summary>
         [Input("event", required: true)]
         public Input<string> Event { get; set; } = null!;
 
         /// <summary>
+        /// Number of executions in analyzed sliding window (sliding window size)
+        /// </summary>
+        [Input("samples")]
+        public Input<int>? Samples { get; set; }
+
+        /// <summary>
         /// Threshold (in seconds)
         /// </summary>
         [Input("threshold", required: true)]
         public Input<double> Threshold { get; set; } = null!;
+
+        /// <summary>
+        /// Number of violating executions in analyzed sliding window
+        /// </summary>
+        [Input("violatingSamples")]
+        public Input<int>? ViolatingSamples { get; set; }
 
         public BrowserMonitorPerformanceThresholdsThresholdArgs()
         {

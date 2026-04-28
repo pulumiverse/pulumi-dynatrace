@@ -26,6 +26,7 @@ class OpenpipelineSecurityEventsArgs:
                  routing: Optional[pulumi.Input['OpenpipelineSecurityEventsRoutingArgs']] = None):
         """
         The set of arguments for constructing a OpenpipelineSecurityEvents resource.
+
         :param pulumi.Input['OpenpipelineSecurityEventsEndpointsArgs'] endpoints: List of all ingest sources of the configuration
         :param pulumi.Input['OpenpipelineSecurityEventsPipelinesArgs'] pipelines: List of all pipelines of the configuration
         :param pulumi.Input['OpenpipelineSecurityEventsRoutingArgs'] routing: Dynamic routing definition
@@ -82,6 +83,7 @@ class _OpenpipelineSecurityEventsState:
                  routing: Optional[pulumi.Input['OpenpipelineSecurityEventsRoutingArgs']] = None):
         """
         Input properties used for looking up and filtering OpenpipelineSecurityEvents resources.
+
         :param pulumi.Input['OpenpipelineSecurityEventsEndpointsArgs'] endpoints: List of all ingest sources of the configuration
         :param pulumi.Input['OpenpipelineSecurityEventsPipelinesArgs'] pipelines: List of all pipelines of the configuration
         :param pulumi.Input['OpenpipelineSecurityEventsRoutingArgs'] routing: Dynamic routing definition
@@ -141,7 +143,51 @@ class OpenpipelineSecurityEvents(pulumi.CustomResource):
                  routing: Optional[pulumi.Input[Union['OpenpipelineSecurityEventsRoutingArgs', 'OpenpipelineSecurityEventsRoutingArgsDict']]] = None,
                  __props__=None):
         """
-        Create a OpenpipelineSecurityEvents resource with the given unique name, props, and options.
+        !> This resource API endpoint has been deprecated, please migrate your OpenPipeline configurations and use `dynatrace_openpipeline_v2_security_events_*` instead.
+
+        !> Deploying an OpenPipeline configuration will overwrite the existing one of the same kind, causing any manual changes made in the web UI or other configurations managed by Terraform or Monaco to be lost. Ensure all configurations are defined within a single Terraform or Monaco configuration to prevent data loss.
+
+        > **Dynatrace SaaS only**
+
+        > To utilize this resource, please define the environment variables `DT_CLIENT_ID`, `DT_CLIENT_SECRET`, `DT_ACCOUNT_ID` with an OAuth client including the following permissions: **View OpenPipeline configurations** (`openpipeline:configurations:read`), and **Edit OpenPipeline configurations** (`openpipeline:configurations:write`).
+
+        ## Dynatrace Documentation
+
+        - OpenPipeline - https://docs.dynatrace.com/docs/platform/openpipeline
+
+        ## Export Example Usage
+
+        - `terraform-provider-dynatrace -export OpenpipelineSecurityEvents` downloads all existing OpenPipeline definitions for Security Events
+
+        The full documentation of the export feature is available [here](https://dt-url.net/h203qmc).
+
+        ## Resource Example Usage
+
+        ```python
+        import pulumi
+        import pulumiverse_dynatrace as dynatrace
+
+        events_security = dynatrace.OpenpipelineSecurityEvents("events_security", pipelines={
+            "pipelines": [{
+                "enabled": True,
+                "display_name": "test",
+                "id": "pipeline_test_9035",
+                "processing": {
+                    "processors": [{
+                        "fields_remove_processor": {
+                            "description": "test",
+                            "enabled": True,
+                            "fields": ["test"],
+                            "id": "processor_test_5725",
+                            "matcher": "true",
+                        },
+                    }],
+                },
+            }],
+        })
+        ```
+
+
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[Union['OpenpipelineSecurityEventsEndpointsArgs', 'OpenpipelineSecurityEventsEndpointsArgsDict']] endpoints: List of all ingest sources of the configuration
@@ -155,7 +201,51 @@ class OpenpipelineSecurityEvents(pulumi.CustomResource):
                  args: Optional[OpenpipelineSecurityEventsArgs] = None,
                  opts: Optional[pulumi.ResourceOptions] = None):
         """
-        Create a OpenpipelineSecurityEvents resource with the given unique name, props, and options.
+        !> This resource API endpoint has been deprecated, please migrate your OpenPipeline configurations and use `dynatrace_openpipeline_v2_security_events_*` instead.
+
+        !> Deploying an OpenPipeline configuration will overwrite the existing one of the same kind, causing any manual changes made in the web UI or other configurations managed by Terraform or Monaco to be lost. Ensure all configurations are defined within a single Terraform or Monaco configuration to prevent data loss.
+
+        > **Dynatrace SaaS only**
+
+        > To utilize this resource, please define the environment variables `DT_CLIENT_ID`, `DT_CLIENT_SECRET`, `DT_ACCOUNT_ID` with an OAuth client including the following permissions: **View OpenPipeline configurations** (`openpipeline:configurations:read`), and **Edit OpenPipeline configurations** (`openpipeline:configurations:write`).
+
+        ## Dynatrace Documentation
+
+        - OpenPipeline - https://docs.dynatrace.com/docs/platform/openpipeline
+
+        ## Export Example Usage
+
+        - `terraform-provider-dynatrace -export OpenpipelineSecurityEvents` downloads all existing OpenPipeline definitions for Security Events
+
+        The full documentation of the export feature is available [here](https://dt-url.net/h203qmc).
+
+        ## Resource Example Usage
+
+        ```python
+        import pulumi
+        import pulumiverse_dynatrace as dynatrace
+
+        events_security = dynatrace.OpenpipelineSecurityEvents("events_security", pipelines={
+            "pipelines": [{
+                "enabled": True,
+                "display_name": "test",
+                "id": "pipeline_test_9035",
+                "processing": {
+                    "processors": [{
+                        "fields_remove_processor": {
+                            "description": "test",
+                            "enabled": True,
+                            "fields": ["test"],
+                            "id": "processor_test_5725",
+                            "matcher": "true",
+                        },
+                    }],
+                },
+            }],
+        })
+        ```
+
+
         :param str resource_name: The name of the resource.
         :param OpenpipelineSecurityEventsArgs args: The arguments to use to populate this resource's properties.
         :param pulumi.ResourceOptions opts: Options for the resource.

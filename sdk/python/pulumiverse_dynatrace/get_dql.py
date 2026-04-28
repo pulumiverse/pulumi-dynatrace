@@ -190,6 +190,19 @@ def get_dql(default_sampling_ratio: Optional[_builtins.float] = None,
             timezone: Optional[_builtins.str] = None,
             opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetDqlResult:
     """
+    The `get_dql` data source requires authentication via OAuth Client (`DT_CLIENT` and `DT_CLIENT_SECRET`).
+    It depends on the query you want to execute what permissions are required in details. For more information look into https://docs.dynatrace.com/docs/discover-dynatrace/platform/grail/data-model/assign-permissions-in-grail#grail-permissions-table.
+
+    The only required attribute is the `query` attribute - holding the DQL query.
+    You may or may not utilize the additional attributes in order to narrow down the results. But most of that can also get achieved with in the DQL query itself.
+
+    The result of the query will be available within the attribute `results` in JSON format - usually an array of records.
+    The schema behind these results can, of course, vary depending on the DQL query you're executing.
+
+    Terraform will attempt to poll for results until the query has finished. There is no need to specify a timeout for that.
+
+    !> Executing DQL queries can inflict additional costs in Dynatrace. Be aware of that fact when using this Data Source. Terraform will run that query by default every time you're executing `pulumi preview` or `pulumi up`.
+
     ## Example Usage
 
     ```python
@@ -207,11 +220,10 @@ def get_dql(default_sampling_ratio: Optional[_builtins.float] = None,
     import pulumi_dynatrace as dynatrace
 
     this = dynatrace.get_dql(query=\"\"\"    fetch events |
-        filter event.type == "davis" AND davis.status != "CLOSED" |
+        filter event.type == \\"davis\\" AND davis.status != \\"CLOSED\\" |
         fields timestamp, davis.title, davis.underMaintenance, davis.status |
         sort timestamp |
         limit 10  
-
     \"\"\")
     ```
 
@@ -266,6 +278,19 @@ def get_dql_output(default_sampling_ratio: Optional[pulumi.Input[Optional[_built
                    timezone: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
                    opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetDqlResult]:
     """
+    The `get_dql` data source requires authentication via OAuth Client (`DT_CLIENT` and `DT_CLIENT_SECRET`).
+    It depends on the query you want to execute what permissions are required in details. For more information look into https://docs.dynatrace.com/docs/discover-dynatrace/platform/grail/data-model/assign-permissions-in-grail#grail-permissions-table.
+
+    The only required attribute is the `query` attribute - holding the DQL query.
+    You may or may not utilize the additional attributes in order to narrow down the results. But most of that can also get achieved with in the DQL query itself.
+
+    The result of the query will be available within the attribute `results` in JSON format - usually an array of records.
+    The schema behind these results can, of course, vary depending on the DQL query you're executing.
+
+    Terraform will attempt to poll for results until the query has finished. There is no need to specify a timeout for that.
+
+    !> Executing DQL queries can inflict additional costs in Dynatrace. Be aware of that fact when using this Data Source. Terraform will run that query by default every time you're executing `pulumi preview` or `pulumi up`.
+
     ## Example Usage
 
     ```python
@@ -283,11 +308,10 @@ def get_dql_output(default_sampling_ratio: Optional[pulumi.Input[Optional[_built
     import pulumi_dynatrace as dynatrace
 
     this = dynatrace.get_dql(query=\"\"\"    fetch events |
-        filter event.type == "davis" AND davis.status != "CLOSED" |
+        filter event.type == \\"davis\\" AND davis.status != \\"CLOSED\\" |
         fields timestamp, davis.title, davis.underMaintenance, davis.status |
         sort timestamp |
         limit 10  
-
     \"\"\")
     ```
 

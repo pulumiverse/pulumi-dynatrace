@@ -125,7 +125,60 @@ class GenericSetting(pulumi.CustomResource):
                  value: Optional[pulumi.Input[_builtins.str]] = None,
                  __props__=None):
         """
-        Create a GenericSetting resource with the given unique name, props, and options.
+        > **Dynatrace SaaS only**
+
+        > This resource requires the API token scopes **Read settings** (`settings.read`) and **Write settings** (`settings.write`)
+        In case the Platform App configured by such a settings explicitly validates them, authentication via API Token may not be enough. In such a case the environment variables `DT_CLIENT_ID` and `DT_CLIENT_SECRET`, or alternatively `DT_PLATFORM_TOKEN` are required. The following OAuth scopes are required `app-engine:apps:run` and `settings:objects:write`. In any case, Terraform will primarily attempt to create or modify the settings using the API Token and if that fails will utilize OAuth for authentication.
+
+        ## Limitations
+
+        > **Warning** If a resource is created using an API token or without setting `DYNATRACE_HTTP_OAUTH_PREFERENCE=true` (when both are used), the settings object's owner will remain empty.
+
+        An empty owner implies:
+        - The settings object becomes public, allowing other users with settings permissions to read and modify it.
+        - Changing the settings object's permissions will have no effect, meaning the `SettingsPermissions` resource can't alter its access.
+
+        When a settings object is created using platform credentials:
+        - The owner is set to the owner of the OAuth client or platform token.
+
+        If the provided schema permits modifications to access modifiers, indicated by `ownerBasedAccessControl` being set to `true`, the following statements hold true:
+        - By default, the settings object is private; only the owner can read and modify it.
+        - Access modifiers can be managed using the `SettingsPermissions` resource.
+
+        We recommend using platform credentials to ensure a correct setup.
+        In case an API token is needed, we recommend setting `DYNATRACE_HTTP_OAUTH_PREFERENCE=true`.
+
+        ## Export Example Usage
+
+        - `terraform-provider-dynatrace -export GenericSetting` downloads all existing settings related to Platform Apps.
+
+        The full documentation of the export feature is available [here](https://dt-url.net/h203qmc).
+
+        ## Resource Example Usage
+
+        The actual payload of the configuration is essentially any kind of JSON object assigned to the attribute `value`.
+        The `scope` attribute is optional and defaults to `environment` - which is usually the case for settings contributed by Platform Apps.
+        You can best `schema` for the settings of a specific Platform App find when navigating in the WebUI to these settings and click the ellipsis button.
+
+        ```python
+        import pulumi
+        import json
+        import pulumiverse_dynatrace as dynatrace
+
+        abc = dynatrace.GenericSetting("ABC",
+            schema="app:my.booking.analytics:connection",
+            scope="environment",
+            value=json.dumps({
+                "client_id": "asdfhh",
+                "client_secret": "mysecret",
+                "name": "ABC",
+                "tenant_id": "asdf",
+                "type": "client_secret",
+                "user_id": "asdf",
+            }))
+        ```
+
+
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
         """
@@ -136,7 +189,60 @@ class GenericSetting(pulumi.CustomResource):
                  args: GenericSettingArgs,
                  opts: Optional[pulumi.ResourceOptions] = None):
         """
-        Create a GenericSetting resource with the given unique name, props, and options.
+        > **Dynatrace SaaS only**
+
+        > This resource requires the API token scopes **Read settings** (`settings.read`) and **Write settings** (`settings.write`)
+        In case the Platform App configured by such a settings explicitly validates them, authentication via API Token may not be enough. In such a case the environment variables `DT_CLIENT_ID` and `DT_CLIENT_SECRET`, or alternatively `DT_PLATFORM_TOKEN` are required. The following OAuth scopes are required `app-engine:apps:run` and `settings:objects:write`. In any case, Terraform will primarily attempt to create or modify the settings using the API Token and if that fails will utilize OAuth for authentication.
+
+        ## Limitations
+
+        > **Warning** If a resource is created using an API token or without setting `DYNATRACE_HTTP_OAUTH_PREFERENCE=true` (when both are used), the settings object's owner will remain empty.
+
+        An empty owner implies:
+        - The settings object becomes public, allowing other users with settings permissions to read and modify it.
+        - Changing the settings object's permissions will have no effect, meaning the `SettingsPermissions` resource can't alter its access.
+
+        When a settings object is created using platform credentials:
+        - The owner is set to the owner of the OAuth client or platform token.
+
+        If the provided schema permits modifications to access modifiers, indicated by `ownerBasedAccessControl` being set to `true`, the following statements hold true:
+        - By default, the settings object is private; only the owner can read and modify it.
+        - Access modifiers can be managed using the `SettingsPermissions` resource.
+
+        We recommend using platform credentials to ensure a correct setup.
+        In case an API token is needed, we recommend setting `DYNATRACE_HTTP_OAUTH_PREFERENCE=true`.
+
+        ## Export Example Usage
+
+        - `terraform-provider-dynatrace -export GenericSetting` downloads all existing settings related to Platform Apps.
+
+        The full documentation of the export feature is available [here](https://dt-url.net/h203qmc).
+
+        ## Resource Example Usage
+
+        The actual payload of the configuration is essentially any kind of JSON object assigned to the attribute `value`.
+        The `scope` attribute is optional and defaults to `environment` - which is usually the case for settings contributed by Platform Apps.
+        You can best `schema` for the settings of a specific Platform App find when navigating in the WebUI to these settings and click the ellipsis button.
+
+        ```python
+        import pulumi
+        import json
+        import pulumiverse_dynatrace as dynatrace
+
+        abc = dynatrace.GenericSetting("ABC",
+            schema="app:my.booking.analytics:connection",
+            scope="environment",
+            value=json.dumps({
+                "client_id": "asdfhh",
+                "client_secret": "mysecret",
+                "name": "ABC",
+                "tenant_id": "asdf",
+                "type": "client_secret",
+                "user_id": "asdf",
+            }))
+        ```
+
+
         :param str resource_name: The name of the resource.
         :param GenericSettingArgs args: The arguments to use to populate this resource's properties.
         :param pulumi.ResourceOptions opts: Options for the resource.

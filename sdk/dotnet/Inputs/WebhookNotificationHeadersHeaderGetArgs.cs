@@ -14,7 +14,7 @@ namespace Pulumiverse.Dynatrace.Inputs
     public sealed class WebhookNotificationHeadersHeaderGetArgs : global::Pulumi.ResourceArgs
     {
         /// <summary>
-        /// The name of the HTTP header
+        /// The name of the HTTP header.
         /// </summary>
         [Input("name", required: true)]
         public Input<string> Name { get; set; } = null!;
@@ -23,7 +23,7 @@ namespace Pulumiverse.Dynatrace.Inputs
         private Input<string>? _secretValue;
 
         /// <summary>
-        /// The value of the HTTP header as a sensitive property. May contain an empty value. `SecretValue` and `Value` are mutually exclusive. Only one of those two is allowed to be specified.
+        /// The secret value of the HTTP header. May contain an empty value.
         /// </summary>
         public Input<string>? SecretValue
         {
@@ -36,7 +36,7 @@ namespace Pulumiverse.Dynatrace.Inputs
         }
 
         /// <summary>
-        /// The value of the HTTP header. May contain an empty value. `SecretValue` and `Value` are mutually exclusive. Only one of those two is allowed to be specified.
+        /// The value of the HTTP header. May contain an empty value.
         /// </summary>
         [Input("value")]
         public Input<string>? Value { get; set; }

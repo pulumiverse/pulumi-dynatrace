@@ -10,6 +10,114 @@ using Pulumi;
 
 namespace Pulumiverse.Dynatrace
 {
+    /// <summary>
+    /// &gt; **Dynatrace SaaS only**
+    /// 
+    /// &gt; This resource requires the OAuth scopes **Read settings** (`settings:objects:read`) and **Write settings** (`settings:objects:write`)
+    /// 
+    /// &gt; This resource can alter Settings 2.0 objects of different owners if the OAuth scope `settings:objects:admin` is provided
+    /// 
+    /// ## Limitations
+    /// 
+    /// &gt; Access modifiers can only be altered if the provided Settings 2.0 object allows such modifications, as indicated by its schema having `ownerBasedAccessControl` set to `True`
+    /// 
+    /// The following resources allow for altering access modifiers (please note that this list may be incomplete):
+    /// - `dynatrace.AutomationControllerConnections`
+    /// - `dynatrace.AutomationWorkflowAwsConnections`
+    /// - `dynatrace.AutomationWorkflowJira`
+    /// - `dynatrace.AutomationWorkflowK8sConnections`
+    /// - `dynatrace.AutomationWorkflowSlack`
+    /// - `dynatrace.EventDrivenAnsibleConnections`
+    /// - `dynatrace.GithubConnection`
+    /// - `dynatrace.GitlabConnection`
+    /// - `dynatrace.JenkinsConnection`
+    /// - `dynatrace.Ms365EmailConnection`
+    /// - `dynatrace.MsentraidConnection`
+    /// - `dynatrace.MsteamsConnection`
+    /// - `dynatrace.PagerdutyConnection`
+    /// - `dynatrace.ServicenowConnection`
+    /// - `dynatrace.GenericSetting` if the provided schema supports it
+    /// 
+    /// ## Documentation
+    /// 
+    /// - Access Control for Connectors - https://docs.dynatrace.com/docs/shortlink/access-control-for-connectors
+    /// 
+    /// - Settings API - https://www.dynatrace.com/support/help/dynatrace-api/environment-api/settings
+    /// 
+    /// ## Export Example Usage
+    /// 
+    /// - `terraform-provider-dynatrace -export dynatrace.SettingsPermissions` downloads all existing settings permissions.
+    /// 
+    /// The full documentation of the export feature is available [here](https://dt-url.net/h203qmc).
+    /// 
+    /// ## Resource Example Usage
+    /// 
+    /// ```csharp
+    /// using System.Collections.Generic;
+    /// using System.Linq;
+    /// using Pulumi;
+    /// using Dynatrace = Pulumiverse.Dynatrace;
+    /// 
+    /// return await Deployment.RunAsync(() =&gt; 
+    /// {
+    ///     var @group = new Dynatrace.IamGroup("group", new()
+    ///     {
+    ///         Name = "#name#",
+    ///     });
+    /// 
+    ///     var userIamUser = new Dynatrace.IamUser("user", new()
+    ///     {
+    ///         Email = "#name#@example.com",
+    ///         Groups = new[]
+    ///         {
+    ///             @group.Id,
+    ///         },
+    ///     });
+    /// 
+    ///     // because the UID is not returned for the resource, we need data
+    ///     var user = Dynatrace.GetIamUser.Invoke(new()
+    ///     {
+    ///         Email = userIamUser.Id,
+    ///     });
+    /// 
+    ///     var connection = new Dynatrace.GithubConnection("connection", new()
+    ///     {
+    ///         Name = "#name#",
+    ///         Type = "pat",
+    ///         Token = "azAZ09",
+    ///     });
+    /// 
+    ///     var permission = new Dynatrace.SettingsPermissions("permission", new()
+    ///     {
+    ///         SettingsObjectId = connection.Id,
+    ///         AllUsers = "none",
+    ///         Users = new Dynatrace.Inputs.SettingsPermissionsUsersArgs
+    ///         {
+    ///             Users = new[]
+    ///             {
+    ///                 new Dynatrace.Inputs.SettingsPermissionsUsersUserArgs
+    ///                 {
+    ///                     Uid = user.Apply(getIamUserResult =&gt; getIamUserResult.Uid),
+    ///                     Access = "write",
+    ///                 },
+    ///             },
+    ///         },
+    ///         Groups = new Dynatrace.Inputs.SettingsPermissionsGroupsArgs
+    ///         {
+    ///             Groups = new[]
+    ///             {
+    ///                 new Dynatrace.Inputs.SettingsPermissionsGroupsGroupArgs
+    ///                 {
+    ///                     Id = @group.Id,
+    ///                     Access = "read",
+    ///                 },
+    ///             },
+    ///         },
+    ///     });
+    /// 
+    /// });
+    /// ```
+    /// </summary>
     [DynatraceResourceType("dynatrace:index/settingsPermissions:SettingsPermissions")]
     public partial class SettingsPermissions : global::Pulumi.CustomResource
     {

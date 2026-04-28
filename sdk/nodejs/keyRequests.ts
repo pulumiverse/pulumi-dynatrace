@@ -4,6 +4,21 @@
 import * as pulumi from "@pulumi/pulumi";
 import * as utilities from "./utilities";
 
+/**
+ * > This resource requires the API token scopes **Read settings** (`settings.read`) and **Write settings** (`settings.write`)
+ *
+ * ## Dynatrace Documentation
+ *
+ * - Monitor key requests - https://www.dynatrace.com/support/help/how-to-use-dynatrace/services/analysis/monitor-key-requests
+ *
+ * - Settings API - https://www.dynatrace.com/support/help/dynatrace-api/environment-api/settings (schemaId: `builtin:settings.subscriptions.service`)
+ *
+ * ## Export Example Usage
+ *
+ * - `terraform-provider-dynatrace -export dynatrace.KeyRequests` downloads all existing key request configuration
+ *
+ * The full documentation of the export feature is available [here](https://dt-url.net/h203qmc).
+ */
 export class KeyRequests extends pulumi.CustomResource {
     /**
      * Get an existing KeyRequests resource's state with the given name, ID, and optional extra

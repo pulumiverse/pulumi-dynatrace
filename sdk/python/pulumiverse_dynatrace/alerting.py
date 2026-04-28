@@ -28,6 +28,7 @@ class AlertingArgs:
                  rules: Optional[pulumi.Input['AlertingRulesArgs']] = None):
         """
         The set of arguments for constructing a Alerting resource.
+
         :param pulumi.Input['AlertingFiltersArgs'] filters: The list of event filters.  For all filters that are *negated* inside of these event filters, that is all `Predefined` as well as `Custom` (Title and/or Description) ones the AND logic applies. For all *non-negated* ones the OR logic applies. Between these two groups, negated and non-negated, the AND logic applies.  If you specify both severity rule and event filter, the AND logic applies
         :param pulumi.Input[_builtins.str] legacy_id: The ID of this setting when referred to by the Config REST API V1
         :param pulumi.Input[_builtins.str] management_zone: Entities which are part of the configured management zones will match this alerting profile. It is recommended to use manual tags instead.
@@ -116,6 +117,7 @@ class _AlertingState:
                  rules: Optional[pulumi.Input['AlertingRulesArgs']] = None):
         """
         Input properties used for looking up and filtering Alerting resources.
+
         :param pulumi.Input['AlertingFiltersArgs'] filters: The list of event filters.  For all filters that are *negated* inside of these event filters, that is all `Predefined` as well as `Custom` (Title and/or Description) ones the AND logic applies. For all *non-negated* ones the OR logic applies. Between these two groups, negated and non-negated, the AND logic applies.  If you specify both severity rule and event filter, the AND logic applies
         :param pulumi.Input[_builtins.str] legacy_id: The ID of this setting when referred to by the Config REST API V1
         :param pulumi.Input[_builtins.str] management_zone: Entities which are part of the configured management zones will match this alerting profile. It is recommended to use manual tags instead.
@@ -207,7 +209,21 @@ class Alerting(pulumi.CustomResource):
                  rules: Optional[pulumi.Input[Union['AlertingRulesArgs', 'AlertingRulesArgsDict']]] = None,
                  __props__=None):
         """
-        Create a Alerting resource with the given unique name, props, and options.
+        > This resource requires the API token scopes **Read settings** (`settings.read`) and **Write settings** (`settings.write`)
+
+        ## Dynatrace Documentation
+
+        - Alerting profiles - https://www.dynatrace.com/support/help/how-to-use-dynatrace/problem-detection-and-analysis/notifications-and-alerting/alerting-profiles
+
+        - Settings API - https://www.dynatrace.com/support/help/dynatrace-api/environment-api/settings (schemaId: `builtin:alerting.profile`)
+
+        ## Export Example Usage
+
+        - `terraform-provider-dynatrace -export Alerting` downloads all existing alerting profiles configuration
+
+        The full documentation of the export feature is available [here](https://dt-url.net/h203qmc).
+
+
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[Union['AlertingFiltersArgs', 'AlertingFiltersArgsDict']] filters: The list of event filters.  For all filters that are *negated* inside of these event filters, that is all `Predefined` as well as `Custom` (Title and/or Description) ones the AND logic applies. For all *non-negated* ones the OR logic applies. Between these two groups, negated and non-negated, the AND logic applies.  If you specify both severity rule and event filter, the AND logic applies
@@ -223,7 +239,21 @@ class Alerting(pulumi.CustomResource):
                  args: Optional[AlertingArgs] = None,
                  opts: Optional[pulumi.ResourceOptions] = None):
         """
-        Create a Alerting resource with the given unique name, props, and options.
+        > This resource requires the API token scopes **Read settings** (`settings.read`) and **Write settings** (`settings.write`)
+
+        ## Dynatrace Documentation
+
+        - Alerting profiles - https://www.dynatrace.com/support/help/how-to-use-dynatrace/problem-detection-and-analysis/notifications-and-alerting/alerting-profiles
+
+        - Settings API - https://www.dynatrace.com/support/help/dynatrace-api/environment-api/settings (schemaId: `builtin:alerting.profile`)
+
+        ## Export Example Usage
+
+        - `terraform-provider-dynatrace -export Alerting` downloads all existing alerting profiles configuration
+
+        The full documentation of the export feature is available [here](https://dt-url.net/h203qmc).
+
+
         :param str resource_name: The name of the resource.
         :param AlertingArgs args: The arguments to use to populate this resource's properties.
         :param pulumi.ResourceOptions opts: Options for the resource.

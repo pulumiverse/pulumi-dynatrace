@@ -19,11 +19,11 @@ namespace Pulumiverse.Dynatrace.Outputs
         /// </summary>
         public readonly Outputs.HostAnomaliesV2NetworkNetworkDroppedPacketsDetectionCustomThresholds? CustomThresholds;
         /// <summary>
-        /// Detection mode for high number of dropped packets
+        /// Detection mode for high number of dropped packets. Possible Values: `Auto`, `Custom`
         /// </summary>
         public readonly string? DetectionMode;
         /// <summary>
-        /// Detect high number of dropped packets
+        /// This setting is enabled (`True`) or disabled (`False`)
         /// </summary>
         public readonly bool Enabled;
 

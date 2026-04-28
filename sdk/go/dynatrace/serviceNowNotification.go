@@ -12,32 +12,52 @@ import (
 	"github.com/pulumiverse/pulumi-dynatrace/sdk/go/dynatrace/internal"
 )
 
+// > This resource requires the API token scopes **Read settings** (`settings.read`) and **Write settings** (`settings.write`)
+//
+// ## Dynatrace Documentation
+//
+// - ServiceNow integration - https://www.dynatrace.com/support/help/setup-and-configuration/integrations/problem-notifications/servicenow-integration
+//
+// - Settings API - https://www.dynatrace.com/support/help/dynatrace-api/environment-api/settings (schemaId: `builtin:problem.notifications`)
+//
+// ## Export Example Usage
+//
+// - `terraform-provider-dynatrace -export ServiceNowNotification` downloads the existing problem notifications for Service Now
+//
+// The full documentation of the export feature is available [here](https://dt-url.net/h203qmc).
 type ServiceNowNotification struct {
 	pulumi.CustomResourceState
 
-	// The configuration is enabled (`true`) or disabled (`false`)
+	// This setting is enabled (`true`) or disabled (`false`)
 	Active pulumi.BoolOutput `pulumi:"active"`
-	// Send events into ServiceNow ITOM
+	// Send events into ServiceNow ITOM.
 	Events pulumi.BoolPtrOutput `pulumi:"events"`
 	// Use text format for problem details instead of HTML.
 	FormatProblemDetailsAsText pulumi.BoolPtrOutput `pulumi:"formatProblemDetailsAsText"`
-	// Send incidents into ServiceNow ITSM
+	// Send incidents into ServiceNow ITSM.
 	Incidents pulumi.BoolOutput `pulumi:"incidents"`
-	// The ServiceNow instance identifier. It refers to the first part of your own ServiceNow URL. This field is mutually exclusive with the **url** field. You can only use one of them
+	// The ServiceNow instance identifier. It refers to the first part of your own ServiceNow URL.
+	//
+	//  This field is mutually exclusive with the **url** field. You can only use one of them.
 	Instance pulumi.StringPtrOutput `pulumi:"instance"`
 	// The ID of these settings when referred to from resources requiring the REST API V1 keys
 	LegacyId pulumi.StringOutput `pulumi:"legacyId"`
-	// The content of the ServiceNow description. You can use the following placeholders:  * `{ImpactedEntity}`: The entity impacted by the problem or *X* impacted entities.  * `{PID}`: The ID of the reported problem.  * `{ProblemDetailsHTML}`: All problem event details, including root cause, as an HTML-formatted string.  * `{ProblemID}`: The display number of the reported problem.  * `{ProblemImpact}`: The [impact level](https://www.dynatrace.com/support/help/shortlink/impact-analysis) of the problem. Possible values are `APPLICATION`, `SERVICE`, and `INFRASTRUCTURE`.  * `{ProblemSeverity}`: The [severity level](https://www.dynatrace.com/support/help/shortlink/event-types) of the problem. Possible values are `AVAILABILITY`, `ERROR`, `PERFORMANCE`, `RESOURCE_CONTENTION`, and `CUSTOM_ALERT`.  * `{ProblemTitle}`: A short description of the problem.  * `{ProblemURL}`: The URL of the problem within Dynatrace.  * `{State}`: The state of the problem. Possible values are `OPEN` and `RESOLVED`.  * `{Tags}`: The list of tags that are defined for all impacted entities, separated by commas
+	// The content of the ServiceNow description. Type '{' for placeholder suggestions.. #### Available placeholders
+	// **{ImpactedEntity}**: A short description of the problem and impacted entity (or multiple impacted entities).
 	Message pulumi.StringOutput `pulumi:"message"`
 	// The name of the notification configuration
 	Name pulumi.StringOutput `pulumi:"name"`
-	// The password to the ServiceNow account
+	// The password to the ServiceNow account.
 	Password pulumi.StringPtrOutput `pulumi:"password"`
 	// The ID of the associated alerting profile
 	Profile pulumi.StringOutput `pulumi:"profile"`
-	// The URL of the on-premise ServiceNow installation. This field is mutually exclusive with the **instance** field. You can only use one of them
+	// The URL of the on-premise ServiceNow installation.
+	//
+	//  This field is mutually exclusive with the **instanceName** field. You can only use one of them.
 	Url pulumi.StringPtrOutput `pulumi:"url"`
-	// The username of the ServiceNow account.   Make sure that your user account has the `restService`, `webRequestAdmin`, and `x_dynat_ruxit.Integration` roles
+	// The username of the ServiceNow account.
+	//
+	//  Make sure that your user account has the `webServiceAdmin` and `x_dynat_ruxit.Integration` roles.
 	Username pulumi.StringOutput `pulumi:"username"`
 }
 
@@ -93,56 +113,70 @@ func GetServiceNowNotification(ctx *pulumi.Context,
 
 // Input properties used for looking up and filtering ServiceNowNotification resources.
 type serviceNowNotificationState struct {
-	// The configuration is enabled (`true`) or disabled (`false`)
+	// This setting is enabled (`true`) or disabled (`false`)
 	Active *bool `pulumi:"active"`
-	// Send events into ServiceNow ITOM
+	// Send events into ServiceNow ITOM.
 	Events *bool `pulumi:"events"`
 	// Use text format for problem details instead of HTML.
 	FormatProblemDetailsAsText *bool `pulumi:"formatProblemDetailsAsText"`
-	// Send incidents into ServiceNow ITSM
+	// Send incidents into ServiceNow ITSM.
 	Incidents *bool `pulumi:"incidents"`
-	// The ServiceNow instance identifier. It refers to the first part of your own ServiceNow URL. This field is mutually exclusive with the **url** field. You can only use one of them
+	// The ServiceNow instance identifier. It refers to the first part of your own ServiceNow URL.
+	//
+	//  This field is mutually exclusive with the **url** field. You can only use one of them.
 	Instance *string `pulumi:"instance"`
 	// The ID of these settings when referred to from resources requiring the REST API V1 keys
 	LegacyId *string `pulumi:"legacyId"`
-	// The content of the ServiceNow description. You can use the following placeholders:  * `{ImpactedEntity}`: The entity impacted by the problem or *X* impacted entities.  * `{PID}`: The ID of the reported problem.  * `{ProblemDetailsHTML}`: All problem event details, including root cause, as an HTML-formatted string.  * `{ProblemID}`: The display number of the reported problem.  * `{ProblemImpact}`: The [impact level](https://www.dynatrace.com/support/help/shortlink/impact-analysis) of the problem. Possible values are `APPLICATION`, `SERVICE`, and `INFRASTRUCTURE`.  * `{ProblemSeverity}`: The [severity level](https://www.dynatrace.com/support/help/shortlink/event-types) of the problem. Possible values are `AVAILABILITY`, `ERROR`, `PERFORMANCE`, `RESOURCE_CONTENTION`, and `CUSTOM_ALERT`.  * `{ProblemTitle}`: A short description of the problem.  * `{ProblemURL}`: The URL of the problem within Dynatrace.  * `{State}`: The state of the problem. Possible values are `OPEN` and `RESOLVED`.  * `{Tags}`: The list of tags that are defined for all impacted entities, separated by commas
+	// The content of the ServiceNow description. Type '{' for placeholder suggestions.. #### Available placeholders
+	// **{ImpactedEntity}**: A short description of the problem and impacted entity (or multiple impacted entities).
 	Message *string `pulumi:"message"`
 	// The name of the notification configuration
 	Name *string `pulumi:"name"`
-	// The password to the ServiceNow account
+	// The password to the ServiceNow account.
 	Password *string `pulumi:"password"`
 	// The ID of the associated alerting profile
 	Profile *string `pulumi:"profile"`
-	// The URL of the on-premise ServiceNow installation. This field is mutually exclusive with the **instance** field. You can only use one of them
+	// The URL of the on-premise ServiceNow installation.
+	//
+	//  This field is mutually exclusive with the **instanceName** field. You can only use one of them.
 	Url *string `pulumi:"url"`
-	// The username of the ServiceNow account.   Make sure that your user account has the `restService`, `webRequestAdmin`, and `x_dynat_ruxit.Integration` roles
+	// The username of the ServiceNow account.
+	//
+	//  Make sure that your user account has the `webServiceAdmin` and `x_dynat_ruxit.Integration` roles.
 	Username *string `pulumi:"username"`
 }
 
 type ServiceNowNotificationState struct {
-	// The configuration is enabled (`true`) or disabled (`false`)
+	// This setting is enabled (`true`) or disabled (`false`)
 	Active pulumi.BoolPtrInput
-	// Send events into ServiceNow ITOM
+	// Send events into ServiceNow ITOM.
 	Events pulumi.BoolPtrInput
 	// Use text format for problem details instead of HTML.
 	FormatProblemDetailsAsText pulumi.BoolPtrInput
-	// Send incidents into ServiceNow ITSM
+	// Send incidents into ServiceNow ITSM.
 	Incidents pulumi.BoolPtrInput
-	// The ServiceNow instance identifier. It refers to the first part of your own ServiceNow URL. This field is mutually exclusive with the **url** field. You can only use one of them
+	// The ServiceNow instance identifier. It refers to the first part of your own ServiceNow URL.
+	//
+	//  This field is mutually exclusive with the **url** field. You can only use one of them.
 	Instance pulumi.StringPtrInput
 	// The ID of these settings when referred to from resources requiring the REST API V1 keys
 	LegacyId pulumi.StringPtrInput
-	// The content of the ServiceNow description. You can use the following placeholders:  * `{ImpactedEntity}`: The entity impacted by the problem or *X* impacted entities.  * `{PID}`: The ID of the reported problem.  * `{ProblemDetailsHTML}`: All problem event details, including root cause, as an HTML-formatted string.  * `{ProblemID}`: The display number of the reported problem.  * `{ProblemImpact}`: The [impact level](https://www.dynatrace.com/support/help/shortlink/impact-analysis) of the problem. Possible values are `APPLICATION`, `SERVICE`, and `INFRASTRUCTURE`.  * `{ProblemSeverity}`: The [severity level](https://www.dynatrace.com/support/help/shortlink/event-types) of the problem. Possible values are `AVAILABILITY`, `ERROR`, `PERFORMANCE`, `RESOURCE_CONTENTION`, and `CUSTOM_ALERT`.  * `{ProblemTitle}`: A short description of the problem.  * `{ProblemURL}`: The URL of the problem within Dynatrace.  * `{State}`: The state of the problem. Possible values are `OPEN` and `RESOLVED`.  * `{Tags}`: The list of tags that are defined for all impacted entities, separated by commas
+	// The content of the ServiceNow description. Type '{' for placeholder suggestions.. #### Available placeholders
+	// **{ImpactedEntity}**: A short description of the problem and impacted entity (or multiple impacted entities).
 	Message pulumi.StringPtrInput
 	// The name of the notification configuration
 	Name pulumi.StringPtrInput
-	// The password to the ServiceNow account
+	// The password to the ServiceNow account.
 	Password pulumi.StringPtrInput
 	// The ID of the associated alerting profile
 	Profile pulumi.StringPtrInput
-	// The URL of the on-premise ServiceNow installation. This field is mutually exclusive with the **instance** field. You can only use one of them
+	// The URL of the on-premise ServiceNow installation.
+	//
+	//  This field is mutually exclusive with the **instanceName** field. You can only use one of them.
 	Url pulumi.StringPtrInput
-	// The username of the ServiceNow account.   Make sure that your user account has the `restService`, `webRequestAdmin`, and `x_dynat_ruxit.Integration` roles
+	// The username of the ServiceNow account.
+	//
+	//  Make sure that your user account has the `webServiceAdmin` and `x_dynat_ruxit.Integration` roles.
 	Username pulumi.StringPtrInput
 }
 
@@ -151,57 +185,71 @@ func (ServiceNowNotificationState) ElementType() reflect.Type {
 }
 
 type serviceNowNotificationArgs struct {
-	// The configuration is enabled (`true`) or disabled (`false`)
+	// This setting is enabled (`true`) or disabled (`false`)
 	Active bool `pulumi:"active"`
-	// Send events into ServiceNow ITOM
+	// Send events into ServiceNow ITOM.
 	Events *bool `pulumi:"events"`
 	// Use text format for problem details instead of HTML.
 	FormatProblemDetailsAsText *bool `pulumi:"formatProblemDetailsAsText"`
-	// Send incidents into ServiceNow ITSM
+	// Send incidents into ServiceNow ITSM.
 	Incidents bool `pulumi:"incidents"`
-	// The ServiceNow instance identifier. It refers to the first part of your own ServiceNow URL. This field is mutually exclusive with the **url** field. You can only use one of them
+	// The ServiceNow instance identifier. It refers to the first part of your own ServiceNow URL.
+	//
+	//  This field is mutually exclusive with the **url** field. You can only use one of them.
 	Instance *string `pulumi:"instance"`
 	// The ID of these settings when referred to from resources requiring the REST API V1 keys
 	LegacyId *string `pulumi:"legacyId"`
-	// The content of the ServiceNow description. You can use the following placeholders:  * `{ImpactedEntity}`: The entity impacted by the problem or *X* impacted entities.  * `{PID}`: The ID of the reported problem.  * `{ProblemDetailsHTML}`: All problem event details, including root cause, as an HTML-formatted string.  * `{ProblemID}`: The display number of the reported problem.  * `{ProblemImpact}`: The [impact level](https://www.dynatrace.com/support/help/shortlink/impact-analysis) of the problem. Possible values are `APPLICATION`, `SERVICE`, and `INFRASTRUCTURE`.  * `{ProblemSeverity}`: The [severity level](https://www.dynatrace.com/support/help/shortlink/event-types) of the problem. Possible values are `AVAILABILITY`, `ERROR`, `PERFORMANCE`, `RESOURCE_CONTENTION`, and `CUSTOM_ALERT`.  * `{ProblemTitle}`: A short description of the problem.  * `{ProblemURL}`: The URL of the problem within Dynatrace.  * `{State}`: The state of the problem. Possible values are `OPEN` and `RESOLVED`.  * `{Tags}`: The list of tags that are defined for all impacted entities, separated by commas
+	// The content of the ServiceNow description. Type '{' for placeholder suggestions.. #### Available placeholders
+	// **{ImpactedEntity}**: A short description of the problem and impacted entity (or multiple impacted entities).
 	Message string `pulumi:"message"`
 	// The name of the notification configuration
 	Name *string `pulumi:"name"`
-	// The password to the ServiceNow account
+	// The password to the ServiceNow account.
 	Password *string `pulumi:"password"`
 	// The ID of the associated alerting profile
 	Profile string `pulumi:"profile"`
-	// The URL of the on-premise ServiceNow installation. This field is mutually exclusive with the **instance** field. You can only use one of them
+	// The URL of the on-premise ServiceNow installation.
+	//
+	//  This field is mutually exclusive with the **instanceName** field. You can only use one of them.
 	Url *string `pulumi:"url"`
-	// The username of the ServiceNow account.   Make sure that your user account has the `restService`, `webRequestAdmin`, and `x_dynat_ruxit.Integration` roles
+	// The username of the ServiceNow account.
+	//
+	//  Make sure that your user account has the `webServiceAdmin` and `x_dynat_ruxit.Integration` roles.
 	Username string `pulumi:"username"`
 }
 
 // The set of arguments for constructing a ServiceNowNotification resource.
 type ServiceNowNotificationArgs struct {
-	// The configuration is enabled (`true`) or disabled (`false`)
+	// This setting is enabled (`true`) or disabled (`false`)
 	Active pulumi.BoolInput
-	// Send events into ServiceNow ITOM
+	// Send events into ServiceNow ITOM.
 	Events pulumi.BoolPtrInput
 	// Use text format for problem details instead of HTML.
 	FormatProblemDetailsAsText pulumi.BoolPtrInput
-	// Send incidents into ServiceNow ITSM
+	// Send incidents into ServiceNow ITSM.
 	Incidents pulumi.BoolInput
-	// The ServiceNow instance identifier. It refers to the first part of your own ServiceNow URL. This field is mutually exclusive with the **url** field. You can only use one of them
+	// The ServiceNow instance identifier. It refers to the first part of your own ServiceNow URL.
+	//
+	//  This field is mutually exclusive with the **url** field. You can only use one of them.
 	Instance pulumi.StringPtrInput
 	// The ID of these settings when referred to from resources requiring the REST API V1 keys
 	LegacyId pulumi.StringPtrInput
-	// The content of the ServiceNow description. You can use the following placeholders:  * `{ImpactedEntity}`: The entity impacted by the problem or *X* impacted entities.  * `{PID}`: The ID of the reported problem.  * `{ProblemDetailsHTML}`: All problem event details, including root cause, as an HTML-formatted string.  * `{ProblemID}`: The display number of the reported problem.  * `{ProblemImpact}`: The [impact level](https://www.dynatrace.com/support/help/shortlink/impact-analysis) of the problem. Possible values are `APPLICATION`, `SERVICE`, and `INFRASTRUCTURE`.  * `{ProblemSeverity}`: The [severity level](https://www.dynatrace.com/support/help/shortlink/event-types) of the problem. Possible values are `AVAILABILITY`, `ERROR`, `PERFORMANCE`, `RESOURCE_CONTENTION`, and `CUSTOM_ALERT`.  * `{ProblemTitle}`: A short description of the problem.  * `{ProblemURL}`: The URL of the problem within Dynatrace.  * `{State}`: The state of the problem. Possible values are `OPEN` and `RESOLVED`.  * `{Tags}`: The list of tags that are defined for all impacted entities, separated by commas
+	// The content of the ServiceNow description. Type '{' for placeholder suggestions.. #### Available placeholders
+	// **{ImpactedEntity}**: A short description of the problem and impacted entity (or multiple impacted entities).
 	Message pulumi.StringInput
 	// The name of the notification configuration
 	Name pulumi.StringPtrInput
-	// The password to the ServiceNow account
+	// The password to the ServiceNow account.
 	Password pulumi.StringPtrInput
 	// The ID of the associated alerting profile
 	Profile pulumi.StringInput
-	// The URL of the on-premise ServiceNow installation. This field is mutually exclusive with the **instance** field. You can only use one of them
+	// The URL of the on-premise ServiceNow installation.
+	//
+	//  This field is mutually exclusive with the **instanceName** field. You can only use one of them.
 	Url pulumi.StringPtrInput
-	// The username of the ServiceNow account.   Make sure that your user account has the `restService`, `webRequestAdmin`, and `x_dynat_ruxit.Integration` roles
+	// The username of the ServiceNow account.
+	//
+	//  Make sure that your user account has the `webServiceAdmin` and `x_dynat_ruxit.Integration` roles.
 	Username pulumi.StringInput
 }
 
@@ -292,12 +340,12 @@ func (o ServiceNowNotificationOutput) ToServiceNowNotificationOutputWithContext(
 	return o
 }
 
-// The configuration is enabled (`true`) or disabled (`false`)
+// This setting is enabled (`true`) or disabled (`false`)
 func (o ServiceNowNotificationOutput) Active() pulumi.BoolOutput {
 	return o.ApplyT(func(v *ServiceNowNotification) pulumi.BoolOutput { return v.Active }).(pulumi.BoolOutput)
 }
 
-// Send events into ServiceNow ITOM
+// Send events into ServiceNow ITOM.
 func (o ServiceNowNotificationOutput) Events() pulumi.BoolPtrOutput {
 	return o.ApplyT(func(v *ServiceNowNotification) pulumi.BoolPtrOutput { return v.Events }).(pulumi.BoolPtrOutput)
 }
@@ -307,12 +355,14 @@ func (o ServiceNowNotificationOutput) FormatProblemDetailsAsText() pulumi.BoolPt
 	return o.ApplyT(func(v *ServiceNowNotification) pulumi.BoolPtrOutput { return v.FormatProblemDetailsAsText }).(pulumi.BoolPtrOutput)
 }
 
-// Send incidents into ServiceNow ITSM
+// Send incidents into ServiceNow ITSM.
 func (o ServiceNowNotificationOutput) Incidents() pulumi.BoolOutput {
 	return o.ApplyT(func(v *ServiceNowNotification) pulumi.BoolOutput { return v.Incidents }).(pulumi.BoolOutput)
 }
 
-// The ServiceNow instance identifier. It refers to the first part of your own ServiceNow URL. This field is mutually exclusive with the **url** field. You can only use one of them
+// The ServiceNow instance identifier. It refers to the first part of your own ServiceNow URL.
+//
+//	This field is mutually exclusive with the **url** field. You can only use one of them.
 func (o ServiceNowNotificationOutput) Instance() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v *ServiceNowNotification) pulumi.StringPtrOutput { return v.Instance }).(pulumi.StringPtrOutput)
 }
@@ -322,7 +372,8 @@ func (o ServiceNowNotificationOutput) LegacyId() pulumi.StringOutput {
 	return o.ApplyT(func(v *ServiceNowNotification) pulumi.StringOutput { return v.LegacyId }).(pulumi.StringOutput)
 }
 
-// The content of the ServiceNow description. You can use the following placeholders:  * `{ImpactedEntity}`: The entity impacted by the problem or *X* impacted entities.  * `{PID}`: The ID of the reported problem.  * `{ProblemDetailsHTML}`: All problem event details, including root cause, as an HTML-formatted string.  * `{ProblemID}`: The display number of the reported problem.  * `{ProblemImpact}`: The [impact level](https://www.dynatrace.com/support/help/shortlink/impact-analysis) of the problem. Possible values are `APPLICATION`, `SERVICE`, and `INFRASTRUCTURE`.  * `{ProblemSeverity}`: The [severity level](https://www.dynatrace.com/support/help/shortlink/event-types) of the problem. Possible values are `AVAILABILITY`, `ERROR`, `PERFORMANCE`, `RESOURCE_CONTENTION`, and `CUSTOM_ALERT`.  * `{ProblemTitle}`: A short description of the problem.  * `{ProblemURL}`: The URL of the problem within Dynatrace.  * `{State}`: The state of the problem. Possible values are `OPEN` and `RESOLVED`.  * `{Tags}`: The list of tags that are defined for all impacted entities, separated by commas
+// The content of the ServiceNow description. Type '{' for placeholder suggestions.. #### Available placeholders
+// **{ImpactedEntity}**: A short description of the problem and impacted entity (or multiple impacted entities).
 func (o ServiceNowNotificationOutput) Message() pulumi.StringOutput {
 	return o.ApplyT(func(v *ServiceNowNotification) pulumi.StringOutput { return v.Message }).(pulumi.StringOutput)
 }
@@ -332,7 +383,7 @@ func (o ServiceNowNotificationOutput) Name() pulumi.StringOutput {
 	return o.ApplyT(func(v *ServiceNowNotification) pulumi.StringOutput { return v.Name }).(pulumi.StringOutput)
 }
 
-// The password to the ServiceNow account
+// The password to the ServiceNow account.
 func (o ServiceNowNotificationOutput) Password() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v *ServiceNowNotification) pulumi.StringPtrOutput { return v.Password }).(pulumi.StringPtrOutput)
 }
@@ -342,12 +393,16 @@ func (o ServiceNowNotificationOutput) Profile() pulumi.StringOutput {
 	return o.ApplyT(func(v *ServiceNowNotification) pulumi.StringOutput { return v.Profile }).(pulumi.StringOutput)
 }
 
-// The URL of the on-premise ServiceNow installation. This field is mutually exclusive with the **instance** field. You can only use one of them
+// The URL of the on-premise ServiceNow installation.
+//
+//	This field is mutually exclusive with the **instanceName** field. You can only use one of them.
 func (o ServiceNowNotificationOutput) Url() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v *ServiceNowNotification) pulumi.StringPtrOutput { return v.Url }).(pulumi.StringPtrOutput)
 }
 
-// The username of the ServiceNow account.   Make sure that your user account has the `restService`, `webRequestAdmin`, and `x_dynat_ruxit.Integration` roles
+// The username of the ServiceNow account.
+//
+//	Make sure that your user account has the `webServiceAdmin` and `x_dynat_ruxit.Integration` roles.
 func (o ServiceNowNotificationOutput) Username() pulumi.StringOutput {
 	return o.ApplyT(func(v *ServiceNowNotification) pulumi.StringOutput { return v.Username }).(pulumi.StringOutput)
 }

@@ -27,6 +27,7 @@ class ApplicationDetectionRuleArgs:
                  order: Optional[pulumi.Input[_builtins.str]] = None):
         """
         The set of arguments for constructing a ApplicationDetectionRule resource.
+
         :param pulumi.Input[_builtins.str] application_identifier: The Dynatrace entity ID of the application, for example APPLICATION-4A3B43
         :param pulumi.Input['ApplicationDetectionRuleFilterConfigArgs'] filter_config: The condition of an application detection rule
         :param pulumi.Input[_builtins.str] name: The unique name of the Application detection rule
@@ -101,6 +102,7 @@ class _ApplicationDetectionRuleState:
                  order: Optional[pulumi.Input[_builtins.str]] = None):
         """
         Input properties used for looking up and filtering ApplicationDetectionRule resources.
+
         :param pulumi.Input[_builtins.str] application_identifier: The Dynatrace entity ID of the application, for example APPLICATION-4A3B43
         :param pulumi.Input['ApplicationDetectionRuleFilterConfigArgs'] filter_config: The condition of an application detection rule
         :param pulumi.Input[_builtins.str] name: The unique name of the Application detection rule
@@ -180,7 +182,21 @@ class ApplicationDetectionRule(pulumi.CustomResource):
                  order: Optional[pulumi.Input[_builtins.str]] = None,
                  __props__=None):
         """
-        Create a ApplicationDetectionRule resource with the given unique name, props, and options.
+        > This resource requires the API token scopes **Read configuration** (`ReadConfig`) and **Write configuration** (`WriteConfig`)
+
+        ## Dynatrace Documentation
+
+        - Check application detection rules - https://www.dynatrace.com/support/help/how-to-use-dynatrace/real-user-monitoring/setup-and-configuration/web-applications/additional-configuration/application-detection-rules
+
+        - Applications detection rules API - https://www.dynatrace.com/support/help/dynatrace-api/configuration-api/rum/application-detection-configuration
+
+        ## Export Example Usage
+
+        - `terraform-provider-dynatrace -export ApplicationDetectionRule` downloads all existing application detection rule configuration
+
+        The full documentation of the export feature is available [here](https://dt-url.net/h203qmc).
+
+
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[_builtins.str] application_identifier: The Dynatrace entity ID of the application, for example APPLICATION-4A3B43
@@ -195,7 +211,21 @@ class ApplicationDetectionRule(pulumi.CustomResource):
                  args: ApplicationDetectionRuleArgs,
                  opts: Optional[pulumi.ResourceOptions] = None):
         """
-        Create a ApplicationDetectionRule resource with the given unique name, props, and options.
+        > This resource requires the API token scopes **Read configuration** (`ReadConfig`) and **Write configuration** (`WriteConfig`)
+
+        ## Dynatrace Documentation
+
+        - Check application detection rules - https://www.dynatrace.com/support/help/how-to-use-dynatrace/real-user-monitoring/setup-and-configuration/web-applications/additional-configuration/application-detection-rules
+
+        - Applications detection rules API - https://www.dynatrace.com/support/help/dynatrace-api/configuration-api/rum/application-detection-configuration
+
+        ## Export Example Usage
+
+        - `terraform-provider-dynatrace -export ApplicationDetectionRule` downloads all existing application detection rule configuration
+
+        The full documentation of the export feature is available [here](https://dt-url.net/h203qmc).
+
+
         :param str resource_name: The name of the resource.
         :param ApplicationDetectionRuleArgs args: The arguments to use to populate this resource's properties.
         :param pulumi.ResourceOptions opts: Options for the resource.

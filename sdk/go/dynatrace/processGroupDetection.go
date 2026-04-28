@@ -12,6 +12,63 @@ import (
 	"github.com/pulumiverse/pulumi-dynatrace/sdk/go/dynatrace/internal"
 )
 
+// > This resource requires the API token scopes **Read settings** (`settings.read`) and **Write settings** (`settings.write`)
+//
+// ## Dynatrace Documentation
+//
+// - Advanced Process Group Detection Rules - https://www.dynatrace.com/support/help/how-to-use-dynatrace/process-groups/configuration/pg-detection#advanced
+//
+// - Settings API - https://www.dynatrace.com/support/help/dynatrace-api/environment-api/settings (schemaId: `builtin:process-group.advanced-detection-rule`)
+//
+// ## Export Example Usage
+//
+// - `terraform-provider-dynatrace -export ProcessGroupDetection` downloads all existing advanced process group detection configuration
+//
+// The full documentation of the export feature is available [here](https://dt-url.net/h203qmc).
+//
+// ## Resource Example Usage
+//
+// ```go
+// package main
+//
+// import (
+//
+//	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//	"github.com/pulumiverse/pulumi-dynatrace/sdk/go/dynatrace"
+//
+// )
+//
+//	func main() {
+//		pulumi.Run(func(ctx *pulumi.Context) error {
+//			_, err := dynatrace.NewProcessGroupDetection(ctx, "_47d495a8-5577-436d-a3b3-777924c2d103", &dynatrace.ProcessGroupDetectionArgs{
+//				Enabled: pulumi.Bool(true),
+//				GroupExtraction: &dynatrace.ProcessGroupDetectionGroupExtractionArgs{
+//					Property:       pulumi.String("COMMAND_LINE_ARGS"),
+//					StandaloneRule: pulumi.Bool(false),
+//					Delimiter: &dynatrace.ProcessGroupDetectionGroupExtractionDelimiterArgs{
+//						RemoveIds: pulumi.Bool(true),
+//					},
+//				},
+//				InstanceExtraction: &dynatrace.ProcessGroupDetectionInstanceExtractionArgs{
+//					Property: pulumi.String("AWS_ECS_FAMILY"),
+//					Delimiter: &dynatrace.ProcessGroupDetectionInstanceExtractionDelimiterArgs{
+//						RemoveIds: pulumi.Bool(true),
+//					},
+//				},
+//				ProcessDetection: &dynatrace.ProcessGroupDetectionProcessDetectionArgs{
+//					ContainedString:       pulumi.String("-config"),
+//					Property:              pulumi.String("COMMAND_LINE_ARGS"),
+//					RestrictToProcessType: pulumi.String("PROCESS_TYPE_APACHE_HTTPD"),
+//				},
+//			})
+//			if err != nil {
+//				return err
+//			}
+//			return nil
+//		})
+//	}
+//
+// ```
 type ProcessGroupDetection struct {
 	pulumi.CustomResourceState
 

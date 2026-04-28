@@ -29,6 +29,7 @@ class SiteReliabilityGuardianArgs:
                  variables: Optional[pulumi.Input['SiteReliabilityGuardianVariablesArgs']] = None):
         """
         The set of arguments for constructing a SiteReliabilityGuardian resource.
+
         :param pulumi.Input['SiteReliabilityGuardianObjectivesArgs'] objectives: Objectives
         :param pulumi.Input[_builtins.str] description: Description
         :param pulumi.Input[_builtins.str] event_kind: If set to null/'BIZ*EVENT' validation events stored as bizevents in Grail. If set to 'SDLC*EVENT' validation events stored as SDLC events
@@ -132,6 +133,7 @@ class _SiteReliabilityGuardianState:
                  variables: Optional[pulumi.Input['SiteReliabilityGuardianVariablesArgs']] = None):
         """
         Input properties used for looking up and filtering SiteReliabilityGuardian resources.
+
         :param pulumi.Input[_builtins.str] description: Description
         :param pulumi.Input[_builtins.str] event_kind: If set to null/'BIZ*EVENT' validation events stored as bizevents in Grail. If set to 'SDLC*EVENT' validation events stored as SDLC events
         :param pulumi.Input[_builtins.str] name: Name
@@ -239,7 +241,23 @@ class SiteReliabilityGuardian(pulumi.CustomResource):
                  variables: Optional[pulumi.Input[Union['SiteReliabilityGuardianVariablesArgs', 'SiteReliabilityGuardianVariablesArgsDict']]] = None,
                  __props__=None):
         """
-        Create a SiteReliabilityGuardian resource with the given unique name, props, and options.
+        > This resource requires the `Site Reliability Guardian` app to be installed via the Dynatrace Hub.
+
+        > This resource requires the API token scopes **Read settings** (`settings.read`) and **Write settings** (`settings.write`)
+
+        ## Dynatrace Documentation
+
+        - Site Reliability Guardian - https://docs.dynatrace.com/docs/platform-modules/automations/site-reliability-guardian
+
+        - Settings API - https://www.dynatrace.com/support/help/dynatrace-api/environment-api/settings (schemaId: `app:dynatrace.site.reliability.guardian:guardians`)
+
+        ## Export Example Usage
+
+        - `terraform-provider-dynatrace -export SiteReliabilityGuardian` downloads all existing Site Reliability Guardian configuration
+
+        The full documentation of the export feature is available [here](https://dt-url.net/h203qmc).
+
+
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[_builtins.str] description: Description
@@ -256,7 +274,23 @@ class SiteReliabilityGuardian(pulumi.CustomResource):
                  args: SiteReliabilityGuardianArgs,
                  opts: Optional[pulumi.ResourceOptions] = None):
         """
-        Create a SiteReliabilityGuardian resource with the given unique name, props, and options.
+        > This resource requires the `Site Reliability Guardian` app to be installed via the Dynatrace Hub.
+
+        > This resource requires the API token scopes **Read settings** (`settings.read`) and **Write settings** (`settings.write`)
+
+        ## Dynatrace Documentation
+
+        - Site Reliability Guardian - https://docs.dynatrace.com/docs/platform-modules/automations/site-reliability-guardian
+
+        - Settings API - https://www.dynatrace.com/support/help/dynatrace-api/environment-api/settings (schemaId: `app:dynatrace.site.reliability.guardian:guardians`)
+
+        ## Export Example Usage
+
+        - `terraform-provider-dynatrace -export SiteReliabilityGuardian` downloads all existing Site Reliability Guardian configuration
+
+        The full documentation of the export feature is available [here](https://dt-url.net/h203qmc).
+
+
         :param str resource_name: The name of the resource.
         :param SiteReliabilityGuardianArgs args: The arguments to use to populate this resource's properties.
         :param pulumi.ResourceOptions opts: Options for the resource.

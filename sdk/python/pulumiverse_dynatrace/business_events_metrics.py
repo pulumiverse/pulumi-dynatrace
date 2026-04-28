@@ -27,6 +27,7 @@ class BusinessEventsMetricsArgs:
                  measure_attribute: Optional[pulumi.Input[_builtins.str]] = None):
         """
         The set of arguments for constructing a BusinessEventsMetrics resource.
+
         :param pulumi.Input[_builtins.bool] enabled: This setting is enabled (`true`) or disabled (`false`)
         :param pulumi.Input[_builtins.str] key: Key
         :param pulumi.Input[_builtins.str] matcher: [See our documentation](https://dt-url.net/bp234rv)
@@ -127,6 +128,7 @@ class _BusinessEventsMetricsState:
                  measure_attribute: Optional[pulumi.Input[_builtins.str]] = None):
         """
         Input properties used for looking up and filtering BusinessEventsMetrics resources.
+
         :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] dimensions: no documentation available
         :param pulumi.Input[_builtins.bool] enabled: This setting is enabled (`true`) or disabled (`false`)
         :param pulumi.Input[_builtins.str] key: Key
@@ -234,7 +236,24 @@ class BusinessEventsMetrics(pulumi.CustomResource):
                  measure_attribute: Optional[pulumi.Input[_builtins.str]] = None,
                  __props__=None):
         """
-        Create a BusinessEventsMetrics resource with the given unique name, props, and options.
+        > **Warning** This resource has been deprecated in favor of OpenPipeline.
+        Please migrate your OpenPipeline configurations and use `dynatrace_openpipeline_v2_*` instead.
+
+        > This resource requires the API token scopes **Read settings** (`settings.read`) and **Write settings** (`settings.write`)
+
+        ## Dynatrace Documentation
+
+        - Business event metric extraction - https://www.dynatrace.com/support/help/platform-modules/business-analytics/ba-metric-extraction
+
+        - Settings API - https://www.dynatrace.com/support/help/dynatrace-api/environment-api/settings (schemaId: `builtin:bizevents-processing-metrics.rule`)
+
+        ## Export Example Usage
+
+        - `terraform-provider-dynatrace -export BusinessEventsMetrics` downloads all existing business event metric extractions
+
+        The full documentation of the export feature is available [here](https://dt-url.net/h203qmc).
+
+
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] dimensions: no documentation available
@@ -251,7 +270,24 @@ class BusinessEventsMetrics(pulumi.CustomResource):
                  args: BusinessEventsMetricsArgs,
                  opts: Optional[pulumi.ResourceOptions] = None):
         """
-        Create a BusinessEventsMetrics resource with the given unique name, props, and options.
+        > **Warning** This resource has been deprecated in favor of OpenPipeline.
+        Please migrate your OpenPipeline configurations and use `dynatrace_openpipeline_v2_*` instead.
+
+        > This resource requires the API token scopes **Read settings** (`settings.read`) and **Write settings** (`settings.write`)
+
+        ## Dynatrace Documentation
+
+        - Business event metric extraction - https://www.dynatrace.com/support/help/platform-modules/business-analytics/ba-metric-extraction
+
+        - Settings API - https://www.dynatrace.com/support/help/dynatrace-api/environment-api/settings (schemaId: `builtin:bizevents-processing-metrics.rule`)
+
+        ## Export Example Usage
+
+        - `terraform-provider-dynatrace -export BusinessEventsMetrics` downloads all existing business event metric extractions
+
+        The full documentation of the export feature is available [here](https://dt-url.net/h203qmc).
+
+
         :param str resource_name: The name of the resource.
         :param BusinessEventsMetricsArgs args: The arguments to use to populate this resource's properties.
         :param pulumi.ResourceOptions opts: Options for the resource.

@@ -4,6 +4,21 @@
 import * as pulumi from "@pulumi/pulumi";
 import * as utilities from "./utilities";
 
+/**
+ * > This resource requires the API token scopes **Read settings** (`settings.read`) and **Write settings** (`settings.write`)
+ *
+ * ## Dynatrace Documentation
+ *
+ * - Define applications for Real User Monitoring - https://www.dynatrace.com/support/help/platform-modules/digital-experience/web-applications/setup-and-configuration/initial-configuration/define-your-applications-via-the-my-web-application-placeholder
+ *
+ * - Settings API - https://www.dynatrace.com/support/help/dynatrace-api/environment-api/settings (schemaId: `builtin:rum.host-headers`)
+ *
+ * ## Export Example Usage
+ *
+ * - `terraform-provider-dynatrace -export dynatrace.RumHostHeaders` downloads all existing host name HTTP request header configuration
+ *
+ * The full documentation of the export feature is available [here](https://dt-url.net/h203qmc).
+ */
 export class RumHostHeaders extends pulumi.CustomResource {
     /**
      * Get an existing RumHostHeaders resource's state with the given name, ID, and optional extra

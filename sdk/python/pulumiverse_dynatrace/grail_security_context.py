@@ -24,6 +24,7 @@ class GrailSecurityContextArgs:
                  insert_after: Optional[pulumi.Input[_builtins.str]] = None):
         """
         The set of arguments for constructing a GrailSecurityContext resource.
+
         :param pulumi.Input[_builtins.str] destination_property: The case-sensitive name of a property of the destination type.
         :param pulumi.Input[_builtins.str] entity_type: Type of the entity whose security context to override.
         :param pulumi.Input[_builtins.str] insert_after: Because this resource allows for ordering you may specify the ID of the resource instance that comes before this instance regarding order. If not specified when creating the setting will be added to the end of the list. If not specified during update the order will remain untouched
@@ -78,6 +79,7 @@ class _GrailSecurityContextState:
                  insert_after: Optional[pulumi.Input[_builtins.str]] = None):
         """
         Input properties used for looking up and filtering GrailSecurityContext resources.
+
         :param pulumi.Input[_builtins.str] destination_property: The case-sensitive name of a property of the destination type.
         :param pulumi.Input[_builtins.str] entity_type: Type of the entity whose security context to override.
         :param pulumi.Input[_builtins.str] insert_after: Because this resource allows for ordering you may specify the ID of the resource instance that comes before this instance regarding order. If not specified when creating the setting will be added to the end of the list. If not specified during update the order will remain untouched
@@ -137,7 +139,21 @@ class GrailSecurityContext(pulumi.CustomResource):
                  insert_after: Optional[pulumi.Input[_builtins.str]] = None,
                  __props__=None):
         """
-        Create a GrailSecurityContext resource with the given unique name, props, and options.
+        > This resource requires the API token scopes **Read settings** (`settings.read`) and **Write settings** (`settings.write`)
+
+        ## Dynatrace Documentation
+
+        - Security data on Grail - https://docs.dynatrace.com/docs/platform-modules/application-security/security-data-on-grail
+
+        - Settings API - https://www.dynatrace.com/support/help/dynatrace-api/environment-api/settings (schemaId: `builtin:monitoredentities.grail.security.context`)
+
+        ## Export Example Usage
+
+        - `terraform-provider-dynatrace -export GrailSecurityContext` downloads all existing Grail security context configuration
+
+        The full documentation of the export feature is available [here](https://dt-url.net/h203qmc).
+
+
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[_builtins.str] destination_property: The case-sensitive name of a property of the destination type.
@@ -151,7 +167,21 @@ class GrailSecurityContext(pulumi.CustomResource):
                  args: GrailSecurityContextArgs,
                  opts: Optional[pulumi.ResourceOptions] = None):
         """
-        Create a GrailSecurityContext resource with the given unique name, props, and options.
+        > This resource requires the API token scopes **Read settings** (`settings.read`) and **Write settings** (`settings.write`)
+
+        ## Dynatrace Documentation
+
+        - Security data on Grail - https://docs.dynatrace.com/docs/platform-modules/application-security/security-data-on-grail
+
+        - Settings API - https://www.dynatrace.com/support/help/dynatrace-api/environment-api/settings (schemaId: `builtin:monitoredentities.grail.security.context`)
+
+        ## Export Example Usage
+
+        - `terraform-provider-dynatrace -export GrailSecurityContext` downloads all existing Grail security context configuration
+
+        The full documentation of the export feature is available [here](https://dt-url.net/h203qmc).
+
+
         :param str resource_name: The name of the resource.
         :param GrailSecurityContextArgs args: The arguments to use to populate this resource's properties.
         :param pulumi.ResourceOptions opts: Options for the resource.

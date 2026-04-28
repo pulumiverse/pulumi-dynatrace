@@ -12,6 +12,52 @@ import (
 	"github.com/pulumiverse/pulumi-dynatrace/sdk/go/dynatrace/internal"
 )
 
+// > This resource requires the API token scopes **Read settings** (`settings.read`) and **Write settings** (`settings.write`)
+//
+// ## Dynatrace Documentation
+//
+// - User experience score - https://www.dynatrace.com/support/help/platform-modules/digital-experience/basic-concepts/ratings/user-experience-score#calculate-the-user-experience-score
+//
+// - Settings API - https://www.dynatrace.com/support/help/dynatrace-api/environment-api/settings (schemaId: `builtin:usability-analytics`)
+//
+// ## Export Example Usage
+//
+// - `terraform-provider-dynatrace -export UsabilityAnalytics` downloads the existing settings for Usability Analytics
+//
+// The full documentation of the export feature is available [here](https://dt-url.net/h203qmc).
+//
+// ## Resource Example Usage
+//
+// ```go
+// package main
+//
+// import (
+//
+//	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//	"github.com/pulumiverse/pulumi-dynatrace/sdk/go/dynatrace"
+//
+// )
+//
+//	func main() {
+//		pulumi.Run(func(ctx *pulumi.Context) error {
+//			_, err := dynatrace.NewUsabilityAnalytics(ctx, "test", &dynatrace.UsabilityAnalyticsArgs{
+//				DetectRageClicks: pulumi.Bool(true),
+//			})
+//			if err != nil {
+//				return err
+//			}
+//			_, err = dynatrace.NewUsabilityAnalytics(ctx, "for_app", &dynatrace.UsabilityAnalyticsArgs{
+//				ApplicationId:    pulumi.String("APPLICATION-EA7C4B59F27D43EB"),
+//				DetectRageClicks: pulumi.Bool(false),
+//			})
+//			if err != nil {
+//				return err
+//			}
+//			return nil
+//		})
+//	}
+//
+// ```
 type UsabilityAnalytics struct {
 	pulumi.CustomResourceState
 

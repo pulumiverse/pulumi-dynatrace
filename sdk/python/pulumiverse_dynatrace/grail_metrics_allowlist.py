@@ -24,6 +24,7 @@ class GrailMetricsAllowlistArgs:
                  allow_rules: Optional[pulumi.Input['GrailMetricsAllowlistAllowRulesArgs']] = None):
         """
         The set of arguments for constructing a GrailMetricsAllowlist resource.
+
         :param pulumi.Input['GrailMetricsAllowlistAllowRulesArgs'] allow_rules: Specify rules for forwarding metrics
         """
         if allow_rules is not None:
@@ -48,6 +49,7 @@ class _GrailMetricsAllowlistState:
                  allow_rules: Optional[pulumi.Input['GrailMetricsAllowlistAllowRulesArgs']] = None):
         """
         Input properties used for looking up and filtering GrailMetricsAllowlist resources.
+
         :param pulumi.Input['GrailMetricsAllowlistAllowRulesArgs'] allow_rules: Specify rules for forwarding metrics
         """
         if allow_rules is not None:
@@ -75,7 +77,21 @@ class GrailMetricsAllowlist(pulumi.CustomResource):
                  allow_rules: Optional[pulumi.Input[Union['GrailMetricsAllowlistAllowRulesArgs', 'GrailMetricsAllowlistAllowRulesArgsDict']]] = None,
                  __props__=None):
         """
-        Create a GrailMetricsAllowlist resource with the given unique name, props, and options.
+        > This resource requires the API token scopes **Read settings** (`settings.read`) and **Write settings** (`settings.write`)
+
+        ## Dynatrace Documentation
+
+        - Grail - https://docs.dynatrace.com/docs/platform/grail
+
+        - Settings API - https://www.dynatrace.com/support/help/dynatrace-api/environment-api/settings (schemaId: `builtin:grail.metrics.allow-list`)
+
+        ## Export Example Usage
+
+        - `terraform-provider-dynatrace -export GrailMetricsAllowlist` downloads existing grail metrics configuration
+
+        The full documentation of the export feature is available [here](https://dt-url.net/h203qmc).
+
+
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[Union['GrailMetricsAllowlistAllowRulesArgs', 'GrailMetricsAllowlistAllowRulesArgsDict']] allow_rules: Specify rules for forwarding metrics
@@ -87,7 +103,21 @@ class GrailMetricsAllowlist(pulumi.CustomResource):
                  args: Optional[GrailMetricsAllowlistArgs] = None,
                  opts: Optional[pulumi.ResourceOptions] = None):
         """
-        Create a GrailMetricsAllowlist resource with the given unique name, props, and options.
+        > This resource requires the API token scopes **Read settings** (`settings.read`) and **Write settings** (`settings.write`)
+
+        ## Dynatrace Documentation
+
+        - Grail - https://docs.dynatrace.com/docs/platform/grail
+
+        - Settings API - https://www.dynatrace.com/support/help/dynatrace-api/environment-api/settings (schemaId: `builtin:grail.metrics.allow-list`)
+
+        ## Export Example Usage
+
+        - `terraform-provider-dynatrace -export GrailMetricsAllowlist` downloads existing grail metrics configuration
+
+        The full documentation of the export feature is available [here](https://dt-url.net/h203qmc).
+
+
         :param str resource_name: The name of the resource.
         :param GrailMetricsAllowlistArgs args: The arguments to use to populate this resource's properties.
         :param pulumi.ResourceOptions opts: Options for the resource.

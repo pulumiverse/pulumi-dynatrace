@@ -10,6 +10,54 @@ using Pulumi;
 
 namespace Pulumiverse.Dynatrace
 {
+    /// <summary>
+    /// !&gt; Deploying an OpenPipeline routing configuration will overwrite the existing one of the same kind, causing any manual changes made in the web UI or other routing configurations managed by Terraform or Monaco to be lost. Ensure all routing configurations of the same kind are defined within a single Terraform or Monaco configuration to prevent data loss.
+    /// 
+    /// &gt; This resource requires the API token scopes **Read settings** (`settings.read`) and **Write settings** (`settings.write`)
+    /// 
+    /// &gt; This resource requires the OAuth scopes **Read settings** (`settings:objects:read`) and **Write settings** (`settings:objects:write`)
+    /// 
+    /// ## Dynatrace Documentation
+    /// 
+    /// - OpenPipeline - https://docs.dynatrace.com/docs/platform/openpipeline
+    /// 
+    /// ## Export Example Usage
+    /// 
+    /// - `terraform-provider-dynatrace -export dynatrace.OpenpipelineV2EventsSecurityRouting` downloads all existing OpenPipeline definitions for events security routing
+    /// 
+    /// The full documentation of the export feature is available [here](https://dt-url.net/h203qmc).
+    /// 
+    /// ## Resource Example Usage
+    /// 
+    /// ```csharp
+    /// using System.Collections.Generic;
+    /// using System.Linq;
+    /// using Pulumi;
+    /// using Dynatrace = Pulumiverse.Dynatrace;
+    /// 
+    /// return await Deployment.RunAsync(() =&gt; 
+    /// {
+    ///     var routing = new Dynatrace.OpenpipelineV2EventsSecurityRouting("routing", new()
+    ///     {
+    ///         RoutingEntries = new Dynatrace.Inputs.OpenpipelineV2EventsSecurityRoutingRoutingEntriesArgs
+    ///         {
+    ///             RoutingEntries = new[]
+    ///             {
+    ///                 new Dynatrace.Inputs.OpenpipelineV2EventsSecurityRoutingRoutingEntriesRoutingEntryArgs
+    ///                 {
+    ///                     Enabled = true,
+    ///                     PipelineType = "builtin",
+    ///                     BuiltinPipelineId = "default",
+    ///                     Matcher = "not matchesPhrase(record.title, \"Warning\")",
+    ///                     Description = "Default route",
+    ///                 },
+    ///             },
+    ///         },
+    ///     });
+    /// 
+    /// });
+    /// ```
+    /// </summary>
     [DynatraceResourceType("dynatrace:index/openpipelineV2EventsSecurityRouting:OpenpipelineV2EventsSecurityRouting")]
     public partial class OpenpipelineV2EventsSecurityRouting : global::Pulumi.CustomResource
     {

@@ -6,6 +6,50 @@ import * as inputs from "./types/input";
 import * as outputs from "./types/output";
 import * as utilities from "./utilities";
 
+/**
+ * > This resource requires the API token scopes **Read settings** (`settings.read`) and **Write settings** (`settings.write`)
+ *
+ * ## Dynatrace Documentation
+ *
+ * - Advanced Process Group Detection Rules - https://www.dynatrace.com/support/help/how-to-use-dynatrace/process-groups/configuration/pg-detection#advanced
+ *
+ * - Settings API - https://www.dynatrace.com/support/help/dynatrace-api/environment-api/settings (schemaId: `builtin:process-group.advanced-detection-rule`)
+ *
+ * ## Export Example Usage
+ *
+ * - `terraform-provider-dynatrace -export dynatrace.ProcessGroupDetection` downloads all existing advanced process group detection configuration
+ *
+ * The full documentation of the export feature is available [here](https://dt-url.net/h203qmc).
+ *
+ * ## Resource Example Usage
+ *
+ * ```typescript
+ * import * as pulumi from "@pulumi/pulumi";
+ * import * as dynatrace from "@pulumiverse/dynatrace";
+ *
+ * const _47d495a8_5577_436d_a3b3_777924c2d103 = new dynatrace.ProcessGroupDetection("_47d495a8-5577-436d-a3b3-777924c2d103", {
+ *     enabled: true,
+ *     groupExtraction: {
+ *         property: "COMMAND_LINE_ARGS",
+ *         standaloneRule: false,
+ *         delimiter: {
+ *             removeIds: true,
+ *         },
+ *     },
+ *     instanceExtraction: {
+ *         property: "AWS_ECS_FAMILY",
+ *         delimiter: {
+ *             removeIds: true,
+ *         },
+ *     },
+ *     processDetection: {
+ *         containedString: "-config",
+ *         property: "COMMAND_LINE_ARGS",
+ *         restrictToProcessType: "PROCESS_TYPE_APACHE_HTTPD",
+ *     },
+ * });
+ * ```
+ */
 export class ProcessGroupDetection extends pulumi.CustomResource {
     /**
      * Get an existing ProcessGroupDetection resource's state with the given name, ID, and optional extra

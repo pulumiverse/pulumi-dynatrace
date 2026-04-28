@@ -12,6 +12,19 @@ import (
 	"github.com/pulumiverse/pulumi-dynatrace/sdk/go/dynatrace/internal"
 )
 
+// > This resource requires the API token scopes **Read settings** (`settings.read`) and **Write settings** (`settings.write`)
+//
+// ## Dynatrace Documentation
+//
+// - Define applications for Real User Monitoring - https://www.dynatrace.com/support/help/platform-modules/digital-experience/web-applications/setup-and-configuration/initial-configuration/define-your-applications-via-the-my-web-application-placeholder
+//
+// - Settings API - https://www.dynatrace.com/support/help/dynatrace-api/environment-api/settings (schemaId: `builtin:rum.host-headers`)
+//
+// ## Export Example Usage
+//
+// - `terraform-provider-dynatrace -export RumHostHeaders` downloads all existing host name HTTP request header configuration
+//
+// The full documentation of the export feature is available [here](https://dt-url.net/h203qmc).
 type RumHostHeaders struct {
 	pulumi.CustomResourceState
 

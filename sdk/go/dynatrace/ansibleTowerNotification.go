@@ -12,26 +12,44 @@ import (
 	"github.com/pulumiverse/pulumi-dynatrace/sdk/go/dynatrace/internal"
 )
 
+// > This resource requires the API token scopes **Read settings** (`settings.read`) and **Write settings** (`settings.write`)
+//
+// ## Dynatrace Documentation
+//
+// - Ansible Tower notifications - https://www.dynatrace.com/support/help/setup-and-configuration/integrations/problem-notifications/ansible-tower-integration
+//
+// - Settings API - https://www.dynatrace.com/support/help/dynatrace-api/environment-api/settings (schemaId: `builtin:problem.notifications`)
+//
+// ## Export Example Usage
+//
+// - `terraform-provider-dynatrace -export AnsibleTowerNotification` downloads the existing Problem Notifications for Ansible Tower
+//
+// The full documentation of the export feature is available [here](https://dt-url.net/h203qmc).
 type AnsibleTowerNotification struct {
 	pulumi.CustomResourceState
 
-	// The notification is active (`true`) or inactive (`false`). Default is `false`.
+	// This setting is enabled (`true`) or disabled (`false`)
 	Active pulumi.BoolPtrOutput `pulumi:"active"`
-	// The custom message of the notification. This message will be displayed in the extra variables **Message** field of your job template. You can use the following placeholders:  * `{ImpactedEntities}`: Details about the entities impacted by the problem in form of a JSON array.  * `{ImpactedEntity}`: The entity impacted by the problem or *X* impacted entities.  * `{PID}`: The ID of the reported problem.  * `{ProblemDetailsText}`: All problem event details, including root cause, as a text-formatted string.  * `{ProblemID}`: The display number of the reported problem.  * `{ProblemImpact}`: The [impact level](https://www.dynatrace.com/support/help/shortlink/impact-analysis) of the problem. Possible values are `APPLICATION`, `SERVICE`, and `INFRASTRUCTURE`.  * `{ProblemSeverity}`: The [severity level](https://www.dynatrace.com/support/help/shortlink/event-types) of the problem. Possible values are `AVAILABILITY`, `ERROR`, `PERFORMANCE`, `RESOURCE_CONTENTION`, and `CUSTOM_ALERT`.  * `{ProblemTitle}`: A short description of the problem.  * `{ProblemURL}`: The URL of the problem within Dynatrace.  * `{State}`: The state of the problem. Possible values are `OPEN` and `RESOLVED`.  * `{Tags}`: The list of tags that are defined for all impacted entities, separated by commas
+	// This message will be displayed in the Extra Variables **Message** field of your job template. Type '{' for placeholder suggestions.. #### Available placeholders
+	// **{ImpactedEntities}**: Details about the entities impacted by the problem in form of a json array.
 	CustomMessage pulumi.StringOutput `pulumi:"customMessage"`
-	// Accept any, including self-signed and invalid, SSL certificate (`true`) or only trusted (`false`) certificates. Default is `false`.
+	// Accept any SSL certificate (including self-signed and invalid certificates)
 	Insecure pulumi.BoolPtrOutput `pulumi:"insecure"`
-	// The URL of the target Ansible Tower job template
+	// The URL of the target job template.
+	//
+	// For example, https://<Ansible server name>/#/templates/job_template/<JobTemplateID>
+	//
+	// **Note:** Be sure to select the **Prompt on Launch** option in the Extra Variables section of your job template configuration.
 	JobTemplateUrl pulumi.StringOutput `pulumi:"jobTemplateUrl"`
 	// The ID of these settings when referred to from resources requiring the REST API V1 keys
 	LegacyId pulumi.StringOutput `pulumi:"legacyId"`
-	// The display name within the Dynatrace WebUI.
+	// The name of the notification configuration.
 	Name pulumi.StringOutput `pulumi:"name"`
-	// The password for the Ansible Tower account
+	// Account password.
 	Password pulumi.StringPtrOutput `pulumi:"password"`
 	// The ID of the associated alerting profile.
 	Profile pulumi.StringOutput `pulumi:"profile"`
-	// The username of the Ansible Tower account
+	// Account username.
 	Username pulumi.StringOutput `pulumi:"username"`
 }
 
@@ -84,44 +102,54 @@ func GetAnsibleTowerNotification(ctx *pulumi.Context,
 
 // Input properties used for looking up and filtering AnsibleTowerNotification resources.
 type ansibleTowerNotificationState struct {
-	// The notification is active (`true`) or inactive (`false`). Default is `false`.
+	// This setting is enabled (`true`) or disabled (`false`)
 	Active *bool `pulumi:"active"`
-	// The custom message of the notification. This message will be displayed in the extra variables **Message** field of your job template. You can use the following placeholders:  * `{ImpactedEntities}`: Details about the entities impacted by the problem in form of a JSON array.  * `{ImpactedEntity}`: The entity impacted by the problem or *X* impacted entities.  * `{PID}`: The ID of the reported problem.  * `{ProblemDetailsText}`: All problem event details, including root cause, as a text-formatted string.  * `{ProblemID}`: The display number of the reported problem.  * `{ProblemImpact}`: The [impact level](https://www.dynatrace.com/support/help/shortlink/impact-analysis) of the problem. Possible values are `APPLICATION`, `SERVICE`, and `INFRASTRUCTURE`.  * `{ProblemSeverity}`: The [severity level](https://www.dynatrace.com/support/help/shortlink/event-types) of the problem. Possible values are `AVAILABILITY`, `ERROR`, `PERFORMANCE`, `RESOURCE_CONTENTION`, and `CUSTOM_ALERT`.  * `{ProblemTitle}`: A short description of the problem.  * `{ProblemURL}`: The URL of the problem within Dynatrace.  * `{State}`: The state of the problem. Possible values are `OPEN` and `RESOLVED`.  * `{Tags}`: The list of tags that are defined for all impacted entities, separated by commas
+	// This message will be displayed in the Extra Variables **Message** field of your job template. Type '{' for placeholder suggestions.. #### Available placeholders
+	// **{ImpactedEntities}**: Details about the entities impacted by the problem in form of a json array.
 	CustomMessage *string `pulumi:"customMessage"`
-	// Accept any, including self-signed and invalid, SSL certificate (`true`) or only trusted (`false`) certificates. Default is `false`.
+	// Accept any SSL certificate (including self-signed and invalid certificates)
 	Insecure *bool `pulumi:"insecure"`
-	// The URL of the target Ansible Tower job template
+	// The URL of the target job template.
+	//
+	// For example, https://<Ansible server name>/#/templates/job_template/<JobTemplateID>
+	//
+	// **Note:** Be sure to select the **Prompt on Launch** option in the Extra Variables section of your job template configuration.
 	JobTemplateUrl *string `pulumi:"jobTemplateUrl"`
 	// The ID of these settings when referred to from resources requiring the REST API V1 keys
 	LegacyId *string `pulumi:"legacyId"`
-	// The display name within the Dynatrace WebUI.
+	// The name of the notification configuration.
 	Name *string `pulumi:"name"`
-	// The password for the Ansible Tower account
+	// Account password.
 	Password *string `pulumi:"password"`
 	// The ID of the associated alerting profile.
 	Profile *string `pulumi:"profile"`
-	// The username of the Ansible Tower account
+	// Account username.
 	Username *string `pulumi:"username"`
 }
 
 type AnsibleTowerNotificationState struct {
-	// The notification is active (`true`) or inactive (`false`). Default is `false`.
+	// This setting is enabled (`true`) or disabled (`false`)
 	Active pulumi.BoolPtrInput
-	// The custom message of the notification. This message will be displayed in the extra variables **Message** field of your job template. You can use the following placeholders:  * `{ImpactedEntities}`: Details about the entities impacted by the problem in form of a JSON array.  * `{ImpactedEntity}`: The entity impacted by the problem or *X* impacted entities.  * `{PID}`: The ID of the reported problem.  * `{ProblemDetailsText}`: All problem event details, including root cause, as a text-formatted string.  * `{ProblemID}`: The display number of the reported problem.  * `{ProblemImpact}`: The [impact level](https://www.dynatrace.com/support/help/shortlink/impact-analysis) of the problem. Possible values are `APPLICATION`, `SERVICE`, and `INFRASTRUCTURE`.  * `{ProblemSeverity}`: The [severity level](https://www.dynatrace.com/support/help/shortlink/event-types) of the problem. Possible values are `AVAILABILITY`, `ERROR`, `PERFORMANCE`, `RESOURCE_CONTENTION`, and `CUSTOM_ALERT`.  * `{ProblemTitle}`: A short description of the problem.  * `{ProblemURL}`: The URL of the problem within Dynatrace.  * `{State}`: The state of the problem. Possible values are `OPEN` and `RESOLVED`.  * `{Tags}`: The list of tags that are defined for all impacted entities, separated by commas
+	// This message will be displayed in the Extra Variables **Message** field of your job template. Type '{' for placeholder suggestions.. #### Available placeholders
+	// **{ImpactedEntities}**: Details about the entities impacted by the problem in form of a json array.
 	CustomMessage pulumi.StringPtrInput
-	// Accept any, including self-signed and invalid, SSL certificate (`true`) or only trusted (`false`) certificates. Default is `false`.
+	// Accept any SSL certificate (including self-signed and invalid certificates)
 	Insecure pulumi.BoolPtrInput
-	// The URL of the target Ansible Tower job template
+	// The URL of the target job template.
+	//
+	// For example, https://<Ansible server name>/#/templates/job_template/<JobTemplateID>
+	//
+	// **Note:** Be sure to select the **Prompt on Launch** option in the Extra Variables section of your job template configuration.
 	JobTemplateUrl pulumi.StringPtrInput
 	// The ID of these settings when referred to from resources requiring the REST API V1 keys
 	LegacyId pulumi.StringPtrInput
-	// The display name within the Dynatrace WebUI.
+	// The name of the notification configuration.
 	Name pulumi.StringPtrInput
-	// The password for the Ansible Tower account
+	// Account password.
 	Password pulumi.StringPtrInput
 	// The ID of the associated alerting profile.
 	Profile pulumi.StringPtrInput
-	// The username of the Ansible Tower account
+	// Account username.
 	Username pulumi.StringPtrInput
 }
 
@@ -130,45 +158,55 @@ func (AnsibleTowerNotificationState) ElementType() reflect.Type {
 }
 
 type ansibleTowerNotificationArgs struct {
-	// The notification is active (`true`) or inactive (`false`). Default is `false`.
+	// This setting is enabled (`true`) or disabled (`false`)
 	Active *bool `pulumi:"active"`
-	// The custom message of the notification. This message will be displayed in the extra variables **Message** field of your job template. You can use the following placeholders:  * `{ImpactedEntities}`: Details about the entities impacted by the problem in form of a JSON array.  * `{ImpactedEntity}`: The entity impacted by the problem or *X* impacted entities.  * `{PID}`: The ID of the reported problem.  * `{ProblemDetailsText}`: All problem event details, including root cause, as a text-formatted string.  * `{ProblemID}`: The display number of the reported problem.  * `{ProblemImpact}`: The [impact level](https://www.dynatrace.com/support/help/shortlink/impact-analysis) of the problem. Possible values are `APPLICATION`, `SERVICE`, and `INFRASTRUCTURE`.  * `{ProblemSeverity}`: The [severity level](https://www.dynatrace.com/support/help/shortlink/event-types) of the problem. Possible values are `AVAILABILITY`, `ERROR`, `PERFORMANCE`, `RESOURCE_CONTENTION`, and `CUSTOM_ALERT`.  * `{ProblemTitle}`: A short description of the problem.  * `{ProblemURL}`: The URL of the problem within Dynatrace.  * `{State}`: The state of the problem. Possible values are `OPEN` and `RESOLVED`.  * `{Tags}`: The list of tags that are defined for all impacted entities, separated by commas
+	// This message will be displayed in the Extra Variables **Message** field of your job template. Type '{' for placeholder suggestions.. #### Available placeholders
+	// **{ImpactedEntities}**: Details about the entities impacted by the problem in form of a json array.
 	CustomMessage string `pulumi:"customMessage"`
-	// Accept any, including self-signed and invalid, SSL certificate (`true`) or only trusted (`false`) certificates. Default is `false`.
+	// Accept any SSL certificate (including self-signed and invalid certificates)
 	Insecure *bool `pulumi:"insecure"`
-	// The URL of the target Ansible Tower job template
+	// The URL of the target job template.
+	//
+	// For example, https://<Ansible server name>/#/templates/job_template/<JobTemplateID>
+	//
+	// **Note:** Be sure to select the **Prompt on Launch** option in the Extra Variables section of your job template configuration.
 	JobTemplateUrl string `pulumi:"jobTemplateUrl"`
 	// The ID of these settings when referred to from resources requiring the REST API V1 keys
 	LegacyId *string `pulumi:"legacyId"`
-	// The display name within the Dynatrace WebUI.
+	// The name of the notification configuration.
 	Name *string `pulumi:"name"`
-	// The password for the Ansible Tower account
+	// Account password.
 	Password *string `pulumi:"password"`
 	// The ID of the associated alerting profile.
 	Profile string `pulumi:"profile"`
-	// The username of the Ansible Tower account
+	// Account username.
 	Username string `pulumi:"username"`
 }
 
 // The set of arguments for constructing a AnsibleTowerNotification resource.
 type AnsibleTowerNotificationArgs struct {
-	// The notification is active (`true`) or inactive (`false`). Default is `false`.
+	// This setting is enabled (`true`) or disabled (`false`)
 	Active pulumi.BoolPtrInput
-	// The custom message of the notification. This message will be displayed in the extra variables **Message** field of your job template. You can use the following placeholders:  * `{ImpactedEntities}`: Details about the entities impacted by the problem in form of a JSON array.  * `{ImpactedEntity}`: The entity impacted by the problem or *X* impacted entities.  * `{PID}`: The ID of the reported problem.  * `{ProblemDetailsText}`: All problem event details, including root cause, as a text-formatted string.  * `{ProblemID}`: The display number of the reported problem.  * `{ProblemImpact}`: The [impact level](https://www.dynatrace.com/support/help/shortlink/impact-analysis) of the problem. Possible values are `APPLICATION`, `SERVICE`, and `INFRASTRUCTURE`.  * `{ProblemSeverity}`: The [severity level](https://www.dynatrace.com/support/help/shortlink/event-types) of the problem. Possible values are `AVAILABILITY`, `ERROR`, `PERFORMANCE`, `RESOURCE_CONTENTION`, and `CUSTOM_ALERT`.  * `{ProblemTitle}`: A short description of the problem.  * `{ProblemURL}`: The URL of the problem within Dynatrace.  * `{State}`: The state of the problem. Possible values are `OPEN` and `RESOLVED`.  * `{Tags}`: The list of tags that are defined for all impacted entities, separated by commas
+	// This message will be displayed in the Extra Variables **Message** field of your job template. Type '{' for placeholder suggestions.. #### Available placeholders
+	// **{ImpactedEntities}**: Details about the entities impacted by the problem in form of a json array.
 	CustomMessage pulumi.StringInput
-	// Accept any, including self-signed and invalid, SSL certificate (`true`) or only trusted (`false`) certificates. Default is `false`.
+	// Accept any SSL certificate (including self-signed and invalid certificates)
 	Insecure pulumi.BoolPtrInput
-	// The URL of the target Ansible Tower job template
+	// The URL of the target job template.
+	//
+	// For example, https://<Ansible server name>/#/templates/job_template/<JobTemplateID>
+	//
+	// **Note:** Be sure to select the **Prompt on Launch** option in the Extra Variables section of your job template configuration.
 	JobTemplateUrl pulumi.StringInput
 	// The ID of these settings when referred to from resources requiring the REST API V1 keys
 	LegacyId pulumi.StringPtrInput
-	// The display name within the Dynatrace WebUI.
+	// The name of the notification configuration.
 	Name pulumi.StringPtrInput
-	// The password for the Ansible Tower account
+	// Account password.
 	Password pulumi.StringPtrInput
 	// The ID of the associated alerting profile.
 	Profile pulumi.StringInput
-	// The username of the Ansible Tower account
+	// Account username.
 	Username pulumi.StringInput
 }
 
@@ -259,22 +297,27 @@ func (o AnsibleTowerNotificationOutput) ToAnsibleTowerNotificationOutputWithCont
 	return o
 }
 
-// The notification is active (`true`) or inactive (`false`). Default is `false`.
+// This setting is enabled (`true`) or disabled (`false`)
 func (o AnsibleTowerNotificationOutput) Active() pulumi.BoolPtrOutput {
 	return o.ApplyT(func(v *AnsibleTowerNotification) pulumi.BoolPtrOutput { return v.Active }).(pulumi.BoolPtrOutput)
 }
 
-// The custom message of the notification. This message will be displayed in the extra variables **Message** field of your job template. You can use the following placeholders:  * `{ImpactedEntities}`: Details about the entities impacted by the problem in form of a JSON array.  * `{ImpactedEntity}`: The entity impacted by the problem or *X* impacted entities.  * `{PID}`: The ID of the reported problem.  * `{ProblemDetailsText}`: All problem event details, including root cause, as a text-formatted string.  * `{ProblemID}`: The display number of the reported problem.  * `{ProblemImpact}`: The [impact level](https://www.dynatrace.com/support/help/shortlink/impact-analysis) of the problem. Possible values are `APPLICATION`, `SERVICE`, and `INFRASTRUCTURE`.  * `{ProblemSeverity}`: The [severity level](https://www.dynatrace.com/support/help/shortlink/event-types) of the problem. Possible values are `AVAILABILITY`, `ERROR`, `PERFORMANCE`, `RESOURCE_CONTENTION`, and `CUSTOM_ALERT`.  * `{ProblemTitle}`: A short description of the problem.  * `{ProblemURL}`: The URL of the problem within Dynatrace.  * `{State}`: The state of the problem. Possible values are `OPEN` and `RESOLVED`.  * `{Tags}`: The list of tags that are defined for all impacted entities, separated by commas
+// This message will be displayed in the Extra Variables **Message** field of your job template. Type '{' for placeholder suggestions.. #### Available placeholders
+// **{ImpactedEntities}**: Details about the entities impacted by the problem in form of a json array.
 func (o AnsibleTowerNotificationOutput) CustomMessage() pulumi.StringOutput {
 	return o.ApplyT(func(v *AnsibleTowerNotification) pulumi.StringOutput { return v.CustomMessage }).(pulumi.StringOutput)
 }
 
-// Accept any, including self-signed and invalid, SSL certificate (`true`) or only trusted (`false`) certificates. Default is `false`.
+// Accept any SSL certificate (including self-signed and invalid certificates)
 func (o AnsibleTowerNotificationOutput) Insecure() pulumi.BoolPtrOutput {
 	return o.ApplyT(func(v *AnsibleTowerNotification) pulumi.BoolPtrOutput { return v.Insecure }).(pulumi.BoolPtrOutput)
 }
 
-// The URL of the target Ansible Tower job template
+// The URL of the target job template.
+//
+// For example, https://<Ansible server name>/#/templates/job_template/<JobTemplateID>
+//
+// **Note:** Be sure to select the **Prompt on Launch** option in the Extra Variables section of your job template configuration.
 func (o AnsibleTowerNotificationOutput) JobTemplateUrl() pulumi.StringOutput {
 	return o.ApplyT(func(v *AnsibleTowerNotification) pulumi.StringOutput { return v.JobTemplateUrl }).(pulumi.StringOutput)
 }
@@ -284,12 +327,12 @@ func (o AnsibleTowerNotificationOutput) LegacyId() pulumi.StringOutput {
 	return o.ApplyT(func(v *AnsibleTowerNotification) pulumi.StringOutput { return v.LegacyId }).(pulumi.StringOutput)
 }
 
-// The display name within the Dynatrace WebUI.
+// The name of the notification configuration.
 func (o AnsibleTowerNotificationOutput) Name() pulumi.StringOutput {
 	return o.ApplyT(func(v *AnsibleTowerNotification) pulumi.StringOutput { return v.Name }).(pulumi.StringOutput)
 }
 
-// The password for the Ansible Tower account
+// Account password.
 func (o AnsibleTowerNotificationOutput) Password() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v *AnsibleTowerNotification) pulumi.StringPtrOutput { return v.Password }).(pulumi.StringPtrOutput)
 }
@@ -299,7 +342,7 @@ func (o AnsibleTowerNotificationOutput) Profile() pulumi.StringOutput {
 	return o.ApplyT(func(v *AnsibleTowerNotification) pulumi.StringOutput { return v.Profile }).(pulumi.StringOutput)
 }
 
-// The username of the Ansible Tower account
+// Account username.
 func (o AnsibleTowerNotificationOutput) Username() pulumi.StringOutput {
 	return o.ApplyT(func(v *AnsibleTowerNotification) pulumi.StringOutput { return v.Username }).(pulumi.StringOutput)
 }

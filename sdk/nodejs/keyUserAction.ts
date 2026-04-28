@@ -4,6 +4,21 @@
 import * as pulumi from "@pulumi/pulumi";
 import * as utilities from "./utilities";
 
+/**
+ * > This resource requires the API token scopes **Read configuration** (`ReadConfig`), **Write configuration** (`WriteConfig`) and **Read Entities** (`entities.read`)
+ *
+ * ## Dynatrace Documentation
+ *
+ * - RUM setup and configuration for web applications - https://www.dynatrace.com/support/help/how-to-use-dynatrace/real-user-monitoring/setup-and-configuration/web-applications
+ *
+ * - Web application configuration API for Key User Actions - https://www.dynatrace.com/support/help/dynatrace-api/configuration-api/rum/web-application-configuration-api#edit-key-user-actions-list
+ *
+ * ## Export Example Usage
+ *
+ * - `terraform-provider-dynatrace -export dynatrace.KeyUserAction` downloads all existing Key User Actions
+ *
+ * The full documentation of the export feature is available [here](https://dt-url.net/h203qmc).
+ */
 export class KeyUserAction extends pulumi.CustomResource {
     /**
      * Get an existing KeyUserAction resource's state with the given name, ID, and optional extra

@@ -11,6 +11,75 @@ import (
 	"github.com/pulumiverse/pulumi-dynatrace/sdk/go/dynatrace/internal"
 )
 
+// !> This resource API endpoint has been deprecated, please migrate your OpenPipeline configurations and use `dynatrace_openpipeline_v2_logs_*` instead.
+//
+// !> Deploying an OpenPipeline configuration will overwrite the existing one of the same kind, causing any manual changes made in the web UI or other configurations managed by Terraform or Monaco to be lost. Ensure all configurations are defined within a single Terraform or Monaco configuration to prevent data loss.
+//
+// > **Dynatrace SaaS only**
+//
+// > To utilize this resource, please define the environment variables `DT_CLIENT_ID`, `DT_CLIENT_SECRET`, `DT_ACCOUNT_ID` with an OAuth client including the following permissions: **View OpenPipeline configurations** (`openpipeline:configurations:read`), and **Edit OpenPipeline configurations** (`openpipeline:configurations:write`).
+//
+// ## Dynatrace Documentation
+//
+// - OpenPipeline - https://docs.dynatrace.com/docs/platform/openpipeline
+//
+// ## Export Example Usage
+//
+// - `terraform-provider-dynatrace -export OpenpipelineLogs` downloads all existing OpenPipeline definitions for Logs
+//
+// The full documentation of the export feature is available [here](https://dt-url.net/h203qmc).
+//
+// ## Resource Example Usage
+//
+// ```go
+// package main
+//
+// import (
+//
+//	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//	"github.com/pulumiverse/pulumi-dynatrace/sdk/go/dynatrace"
+//
+// )
+//
+//	func main() {
+//		pulumi.Run(func(ctx *pulumi.Context) error {
+//			_, err := dynatrace.NewOpenpipelineLogs(ctx, "logs", &dynatrace.OpenpipelineLogsArgs{
+//				Pipelines: &dynatrace.OpenpipelineLogsPipelinesArgs{
+//					Pipelines: dynatrace.OpenpipelineLogsPipelinesPipelineArray{
+//						&dynatrace.OpenpipelineLogsPipelinesPipelineArgs{
+//							Enabled:     pulumi.Bool(true),
+//							DisplayName: pulumi.String("test"),
+//							Id:          pulumi.String("pipeline_test_5036"),
+//							Processing: &dynatrace.OpenpipelineLogsPipelinesPipelineProcessingArgs{
+//								Processors: dynatrace.OpenpipelineLogsPipelinesPipelineProcessingProcessorArray{
+//									&dynatrace.OpenpipelineLogsPipelinesPipelineProcessingProcessorArgs{
+//										FieldsRenameProcessor: &dynatrace.OpenpipelineLogsPipelinesPipelineProcessingProcessorFieldsRenameProcessorArgs{
+//											Description: pulumi.String("test"),
+//											Enabled:     pulumi.Bool(true),
+//											Id:          pulumi.String("processor_test_8644"),
+//											Matcher:     pulumi.String("true"),
+//											Fields: dynatrace.OpenpipelineLogsPipelinesPipelineProcessingProcessorFieldsRenameProcessorFieldArray{
+//												&dynatrace.OpenpipelineLogsPipelinesPipelineProcessingProcessorFieldsRenameProcessorFieldArgs{
+//													FromName: pulumi.String("bar"),
+//													ToName:   pulumi.String("foo"),
+//												},
+//											},
+//										},
+//									},
+//								},
+//							},
+//						},
+//					},
+//				},
+//			})
+//			if err != nil {
+//				return err
+//			}
+//			return nil
+//		})
+//	}
+//
+// ```
 type OpenpipelineLogs struct {
 	pulumi.CustomResourceState
 

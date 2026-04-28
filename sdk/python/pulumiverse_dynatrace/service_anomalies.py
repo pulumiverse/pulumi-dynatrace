@@ -27,6 +27,7 @@ class ServiceAnomaliesArgs:
                  response_times: Optional[pulumi.Input['ServiceAnomaliesResponseTimesArgs']] = None):
         """
         The set of arguments for constructing a ServiceAnomalies resource.
+
         :param pulumi.Input['ServiceAnomaliesFailureRatesArgs'] failure_rates: Configuration of failure rate increase detection. Detecting failure rate increases will be disabled if this block is omitted.
         :param pulumi.Input['ServiceAnomaliesLoadArgs'] load: The configuration of load spikes detection. Detecting load spikes will be disabled if this block is omitted.
         :param pulumi.Input['ServiceAnomaliesLoadDropsArgs'] load_drops: The configuration of load drops detection. Detecting load drops will be disabled if this block is omitted.
@@ -99,6 +100,7 @@ class _ServiceAnomaliesState:
                  response_times: Optional[pulumi.Input['ServiceAnomaliesResponseTimesArgs']] = None):
         """
         Input properties used for looking up and filtering ServiceAnomalies resources.
+
         :param pulumi.Input['ServiceAnomaliesFailureRatesArgs'] failure_rates: Configuration of failure rate increase detection. Detecting failure rate increases will be disabled if this block is omitted.
         :param pulumi.Input['ServiceAnomaliesLoadArgs'] load: The configuration of load spikes detection. Detecting load spikes will be disabled if this block is omitted.
         :param pulumi.Input['ServiceAnomaliesLoadDropsArgs'] load_drops: The configuration of load drops detection. Detecting load drops will be disabled if this block is omitted.
@@ -174,7 +176,23 @@ class ServiceAnomalies(pulumi.CustomResource):
                  response_times: Optional[pulumi.Input[Union['ServiceAnomaliesResponseTimesArgs', 'ServiceAnomaliesResponseTimesArgsDict']]] = None,
                  __props__=None):
         """
-        Create a ServiceAnomalies resource with the given unique name, props, and options.
+        !> This resource is utilizing an older API endpoint, please use ServiceAnomaliesV2 instead.
+
+        > This resource requires the API token scopes **Read configuration** (`ReadConfig`) and **Write configuration** (`WriteConfig`)
+
+        ## Dynatrace Documentation
+
+        - Adjust the sensitivity of anomaly detection for services - https://www.dynatrace.com/support/help/how-to-use-dynatrace/problem-detection-and-analysis/problem-detection/adjust-sensitivity-anomaly-detection/adjust-sensitivity-services
+
+        - Anomaly detection API - Services - https://www.dynatrace.com/support/help/dynatrace-api/configuration-api/anomaly-detection-api/anomaly-detection-api-services
+
+        ## Export Example Usage
+
+        - `terraform-provider-dynatrace -export ServiceAnomalies` downloads all existing service anomaly detection configuration
+
+        The full documentation of the export feature is available [here](https://dt-url.net/h203qmc).
+
+
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[Union['ServiceAnomaliesFailureRatesArgs', 'ServiceAnomaliesFailureRatesArgsDict']] failure_rates: Configuration of failure rate increase detection. Detecting failure rate increases will be disabled if this block is omitted.
@@ -189,7 +207,23 @@ class ServiceAnomalies(pulumi.CustomResource):
                  args: Optional[ServiceAnomaliesArgs] = None,
                  opts: Optional[pulumi.ResourceOptions] = None):
         """
-        Create a ServiceAnomalies resource with the given unique name, props, and options.
+        !> This resource is utilizing an older API endpoint, please use ServiceAnomaliesV2 instead.
+
+        > This resource requires the API token scopes **Read configuration** (`ReadConfig`) and **Write configuration** (`WriteConfig`)
+
+        ## Dynatrace Documentation
+
+        - Adjust the sensitivity of anomaly detection for services - https://www.dynatrace.com/support/help/how-to-use-dynatrace/problem-detection-and-analysis/problem-detection/adjust-sensitivity-anomaly-detection/adjust-sensitivity-services
+
+        - Anomaly detection API - Services - https://www.dynatrace.com/support/help/dynatrace-api/configuration-api/anomaly-detection-api/anomaly-detection-api-services
+
+        ## Export Example Usage
+
+        - `terraform-provider-dynatrace -export ServiceAnomalies` downloads all existing service anomaly detection configuration
+
+        The full documentation of the export feature is available [here](https://dt-url.net/h203qmc).
+
+
         :param str resource_name: The name of the resource.
         :param ServiceAnomaliesArgs args: The arguments to use to populate this resource's properties.
         :param pulumi.ResourceOptions opts: Options for the resource.

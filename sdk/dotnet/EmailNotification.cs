@@ -10,29 +10,45 @@ using Pulumi;
 
 namespace Pulumiverse.Dynatrace
 {
+    /// <summary>
+    /// &gt; This resource requires the API token scopes **Read settings** (`settings.read`) and **Write settings** (`settings.write`)
+    /// 
+    /// ## Dynatrace Documentation
+    /// 
+    /// - Email integration - https://www.dynatrace.com/support/help/setup-and-configuration/integrations/problem-notifications/email-integration
+    /// 
+    /// - Settings API - https://www.dynatrace.com/support/help/dynatrace-api/environment-api/settings (schemaId: `builtin:problem.notifications`)
+    /// 
+    /// ## Export Example Usage
+    /// 
+    /// - `terraform-provider-dynatrace -export dynatrace.EmailNotification` downloads the existing problem notifications via Email
+    /// 
+    /// The full documentation of the export feature is available [here](https://dt-url.net/h203qmc).
+    /// </summary>
     [DynatraceResourceType("dynatrace:index/emailNotification:EmailNotification")]
     public partial class EmailNotification : global::Pulumi.CustomResource
     {
         /// <summary>
-        /// The configuration is enabled (`True`) or disabled (`False`)
+        /// This setting is enabled (`True`) or disabled (`False`)
         /// </summary>
         [Output("active")]
         public Output<bool?> Active { get; private set; } = null!;
 
         /// <summary>
-        /// The list of the email BCC-recipients
+        /// BCC
         /// </summary>
         [Output("bccs")]
         public Output<ImmutableArray<string>> Bccs { get; private set; } = null!;
 
         /// <summary>
-        /// The template of the email notification.  You can use the following placeholders:  * `{ImpactedEntities}`: Details about the entities impacted by the problem in form of a JSON array.  * `{ImpactedEntity}`: The entity impacted by the problem or *X* impacted entities.  * `{PID}`: The ID of the reported problem.  * `{ProblemDetailsHTML}`: All problem event details, including root cause, as an HTML-formatted string.  * `{ProblemDetailsJSON}`: All problem event details, including root cause, as a JSON object.  * `{ProblemDetailsMarkdown}`: All problem event details, including root cause, as a [Markdown-formatted](https://www.markdownguide.org/cheat-sheet/) string.  * `{ProblemDetailsText}`: All problem event details, including root cause, as a text-formatted string.  * `{ProblemID}`: The display number of the reported problem.  * `{ProblemImpact}`: The [impact level](https://www.dynatrace.com/support/help/shortlink/impact-analysis) of the problem. Possible values are `APPLICATION`, `SERVICE`, and `INFRASTRUCTURE`.  * `{ProblemSeverity}`: The [severity level](https://www.dynatrace.com/support/help/shortlink/event-types) of the problem. Possible values are `AVAILABILITY`, `ERROR`, `PERFORMANCE`, `RESOURCE_CONTENTION`, and `CUSTOM_ALERT`.  * `{ProblemTitle}`: A short description of the problem.  * `{ProblemURL}`: The URL of the problem within Dynatrace.  * `{State}`: The state of the problem. Possible values are `OPEN` and `RESOLVED`.  * `{Tags}`: The list of tags that are defined for all impacted entities, separated by commas
+        /// The template of the email notifications. Type '{' for placeholder suggestions.. #### Available placeholders
+        /// **{ImpactedEntities}**: Details about the entities impacted by the problem in form of a json array.
         /// </summary>
         [Output("body")]
         public Output<string> Body { get; private set; } = null!;
 
         /// <summary>
-        /// The list of the email CC-recipients
+        /// CC
         /// </summary>
         [Output("ccs")]
         public Output<ImmutableArray<string>> Ccs { get; private set; } = null!;
@@ -44,7 +60,7 @@ namespace Pulumiverse.Dynatrace
         public Output<string> LegacyId { get; private set; } = null!;
 
         /// <summary>
-        /// The name of the notification configuration
+        /// The name of the notification configuration.
         /// </summary>
         [Output("name")]
         public Output<string> Name { get; private set; } = null!;
@@ -62,13 +78,34 @@ namespace Pulumiverse.Dynatrace
         public Output<string> Profile { get; private set; } = null!;
 
         /// <summary>
-        /// The subject of the email notifications
+        /// The subject of the email notifications. Type '{' for placeholder suggestions.. #### Available placeholders
+        /// **{ImpactedEntity}**: A short description of the problem and impacted entity (or multiple impacted entities).
+        /// 
+        /// **{ImpactedEntityNames}**: The entity impacted by the problem.
+        /// 
+        /// **{NamesOfImpactedEntities}**: The names of all entities that are impacted by the problem.
+        /// 
+        /// **{PID}**: Unique system identifier of the reported problem.
+        /// 
+        /// **{ProblemID}**: Display number of the reported problem.
+        /// 
+        /// **{ProblemImpact}**: Impact level of the problem. Possible values are APPLICATION, SERVICE, or INFRASTRUCTURE.
+        /// 
+        /// **{ProblemSeverity}**: Severity level of the problem. Possible values are AVAILABILITY, ERROR, PERFORMANCE, RESOURCE_CONTENTION, or CUSTOM_ALERT.
+        /// 
+        /// **{ProblemTitle}**: Short description of the problem.
+        /// 
+        /// **{ProblemURL}**: URL of the problem within Dynatrace.
+        /// 
+        /// **{State}**: Problem state. Possible values are OPEN or RESOLVED.
+        /// 
+        /// **{Tags}**: Comma separated list of tags that are defined for all impacted entities. To refer to the value of a specific tag, specify the tag's key in square brackets: **{Tags[key]}**. If the tag does not have any assigned value, the placeholder will be replaced by an empty string. The placeholder will not be replaced if the tag key does not exist.
         /// </summary>
         [Output("subject")]
         public Output<string> Subject { get; private set; } = null!;
 
         /// <summary>
-        /// The list of the email recipients
+        /// To
         /// </summary>
         [Output("tos")]
         public Output<ImmutableArray<string>> Tos { get; private set; } = null!;
@@ -121,7 +158,7 @@ namespace Pulumiverse.Dynatrace
     public sealed class EmailNotificationArgs : global::Pulumi.ResourceArgs
     {
         /// <summary>
-        /// The configuration is enabled (`True`) or disabled (`False`)
+        /// This setting is enabled (`True`) or disabled (`False`)
         /// </summary>
         [Input("active")]
         public Input<bool>? Active { get; set; }
@@ -130,7 +167,7 @@ namespace Pulumiverse.Dynatrace
         private InputList<string>? _bccs;
 
         /// <summary>
-        /// The list of the email BCC-recipients
+        /// BCC
         /// </summary>
         public InputList<string> Bccs
         {
@@ -139,7 +176,8 @@ namespace Pulumiverse.Dynatrace
         }
 
         /// <summary>
-        /// The template of the email notification.  You can use the following placeholders:  * `{ImpactedEntities}`: Details about the entities impacted by the problem in form of a JSON array.  * `{ImpactedEntity}`: The entity impacted by the problem or *X* impacted entities.  * `{PID}`: The ID of the reported problem.  * `{ProblemDetailsHTML}`: All problem event details, including root cause, as an HTML-formatted string.  * `{ProblemDetailsJSON}`: All problem event details, including root cause, as a JSON object.  * `{ProblemDetailsMarkdown}`: All problem event details, including root cause, as a [Markdown-formatted](https://www.markdownguide.org/cheat-sheet/) string.  * `{ProblemDetailsText}`: All problem event details, including root cause, as a text-formatted string.  * `{ProblemID}`: The display number of the reported problem.  * `{ProblemImpact}`: The [impact level](https://www.dynatrace.com/support/help/shortlink/impact-analysis) of the problem. Possible values are `APPLICATION`, `SERVICE`, and `INFRASTRUCTURE`.  * `{ProblemSeverity}`: The [severity level](https://www.dynatrace.com/support/help/shortlink/event-types) of the problem. Possible values are `AVAILABILITY`, `ERROR`, `PERFORMANCE`, `RESOURCE_CONTENTION`, and `CUSTOM_ALERT`.  * `{ProblemTitle}`: A short description of the problem.  * `{ProblemURL}`: The URL of the problem within Dynatrace.  * `{State}`: The state of the problem. Possible values are `OPEN` and `RESOLVED`.  * `{Tags}`: The list of tags that are defined for all impacted entities, separated by commas
+        /// The template of the email notifications. Type '{' for placeholder suggestions.. #### Available placeholders
+        /// **{ImpactedEntities}**: Details about the entities impacted by the problem in form of a json array.
         /// </summary>
         [Input("body", required: true)]
         public Input<string> Body { get; set; } = null!;
@@ -148,7 +186,7 @@ namespace Pulumiverse.Dynatrace
         private InputList<string>? _ccs;
 
         /// <summary>
-        /// The list of the email CC-recipients
+        /// CC
         /// </summary>
         public InputList<string> Ccs
         {
@@ -163,7 +201,7 @@ namespace Pulumiverse.Dynatrace
         public Input<string>? LegacyId { get; set; }
 
         /// <summary>
-        /// The name of the notification configuration
+        /// The name of the notification configuration.
         /// </summary>
         [Input("name")]
         public Input<string>? Name { get; set; }
@@ -181,7 +219,28 @@ namespace Pulumiverse.Dynatrace
         public Input<string> Profile { get; set; } = null!;
 
         /// <summary>
-        /// The subject of the email notifications
+        /// The subject of the email notifications. Type '{' for placeholder suggestions.. #### Available placeholders
+        /// **{ImpactedEntity}**: A short description of the problem and impacted entity (or multiple impacted entities).
+        /// 
+        /// **{ImpactedEntityNames}**: The entity impacted by the problem.
+        /// 
+        /// **{NamesOfImpactedEntities}**: The names of all entities that are impacted by the problem.
+        /// 
+        /// **{PID}**: Unique system identifier of the reported problem.
+        /// 
+        /// **{ProblemID}**: Display number of the reported problem.
+        /// 
+        /// **{ProblemImpact}**: Impact level of the problem. Possible values are APPLICATION, SERVICE, or INFRASTRUCTURE.
+        /// 
+        /// **{ProblemSeverity}**: Severity level of the problem. Possible values are AVAILABILITY, ERROR, PERFORMANCE, RESOURCE_CONTENTION, or CUSTOM_ALERT.
+        /// 
+        /// **{ProblemTitle}**: Short description of the problem.
+        /// 
+        /// **{ProblemURL}**: URL of the problem within Dynatrace.
+        /// 
+        /// **{State}**: Problem state. Possible values are OPEN or RESOLVED.
+        /// 
+        /// **{Tags}**: Comma separated list of tags that are defined for all impacted entities. To refer to the value of a specific tag, specify the tag's key in square brackets: **{Tags[key]}**. If the tag does not have any assigned value, the placeholder will be replaced by an empty string. The placeholder will not be replaced if the tag key does not exist.
         /// </summary>
         [Input("subject", required: true)]
         public Input<string> Subject { get; set; } = null!;
@@ -190,7 +249,7 @@ namespace Pulumiverse.Dynatrace
         private InputList<string>? _tos;
 
         /// <summary>
-        /// The list of the email recipients
+        /// To
         /// </summary>
         public InputList<string> Tos
         {
@@ -207,7 +266,7 @@ namespace Pulumiverse.Dynatrace
     public sealed class EmailNotificationState : global::Pulumi.ResourceArgs
     {
         /// <summary>
-        /// The configuration is enabled (`True`) or disabled (`False`)
+        /// This setting is enabled (`True`) or disabled (`False`)
         /// </summary>
         [Input("active")]
         public Input<bool>? Active { get; set; }
@@ -216,7 +275,7 @@ namespace Pulumiverse.Dynatrace
         private InputList<string>? _bccs;
 
         /// <summary>
-        /// The list of the email BCC-recipients
+        /// BCC
         /// </summary>
         public InputList<string> Bccs
         {
@@ -225,7 +284,8 @@ namespace Pulumiverse.Dynatrace
         }
 
         /// <summary>
-        /// The template of the email notification.  You can use the following placeholders:  * `{ImpactedEntities}`: Details about the entities impacted by the problem in form of a JSON array.  * `{ImpactedEntity}`: The entity impacted by the problem or *X* impacted entities.  * `{PID}`: The ID of the reported problem.  * `{ProblemDetailsHTML}`: All problem event details, including root cause, as an HTML-formatted string.  * `{ProblemDetailsJSON}`: All problem event details, including root cause, as a JSON object.  * `{ProblemDetailsMarkdown}`: All problem event details, including root cause, as a [Markdown-formatted](https://www.markdownguide.org/cheat-sheet/) string.  * `{ProblemDetailsText}`: All problem event details, including root cause, as a text-formatted string.  * `{ProblemID}`: The display number of the reported problem.  * `{ProblemImpact}`: The [impact level](https://www.dynatrace.com/support/help/shortlink/impact-analysis) of the problem. Possible values are `APPLICATION`, `SERVICE`, and `INFRASTRUCTURE`.  * `{ProblemSeverity}`: The [severity level](https://www.dynatrace.com/support/help/shortlink/event-types) of the problem. Possible values are `AVAILABILITY`, `ERROR`, `PERFORMANCE`, `RESOURCE_CONTENTION`, and `CUSTOM_ALERT`.  * `{ProblemTitle}`: A short description of the problem.  * `{ProblemURL}`: The URL of the problem within Dynatrace.  * `{State}`: The state of the problem. Possible values are `OPEN` and `RESOLVED`.  * `{Tags}`: The list of tags that are defined for all impacted entities, separated by commas
+        /// The template of the email notifications. Type '{' for placeholder suggestions.. #### Available placeholders
+        /// **{ImpactedEntities}**: Details about the entities impacted by the problem in form of a json array.
         /// </summary>
         [Input("body")]
         public Input<string>? Body { get; set; }
@@ -234,7 +294,7 @@ namespace Pulumiverse.Dynatrace
         private InputList<string>? _ccs;
 
         /// <summary>
-        /// The list of the email CC-recipients
+        /// CC
         /// </summary>
         public InputList<string> Ccs
         {
@@ -249,7 +309,7 @@ namespace Pulumiverse.Dynatrace
         public Input<string>? LegacyId { get; set; }
 
         /// <summary>
-        /// The name of the notification configuration
+        /// The name of the notification configuration.
         /// </summary>
         [Input("name")]
         public Input<string>? Name { get; set; }
@@ -267,7 +327,28 @@ namespace Pulumiverse.Dynatrace
         public Input<string>? Profile { get; set; }
 
         /// <summary>
-        /// The subject of the email notifications
+        /// The subject of the email notifications. Type '{' for placeholder suggestions.. #### Available placeholders
+        /// **{ImpactedEntity}**: A short description of the problem and impacted entity (or multiple impacted entities).
+        /// 
+        /// **{ImpactedEntityNames}**: The entity impacted by the problem.
+        /// 
+        /// **{NamesOfImpactedEntities}**: The names of all entities that are impacted by the problem.
+        /// 
+        /// **{PID}**: Unique system identifier of the reported problem.
+        /// 
+        /// **{ProblemID}**: Display number of the reported problem.
+        /// 
+        /// **{ProblemImpact}**: Impact level of the problem. Possible values are APPLICATION, SERVICE, or INFRASTRUCTURE.
+        /// 
+        /// **{ProblemSeverity}**: Severity level of the problem. Possible values are AVAILABILITY, ERROR, PERFORMANCE, RESOURCE_CONTENTION, or CUSTOM_ALERT.
+        /// 
+        /// **{ProblemTitle}**: Short description of the problem.
+        /// 
+        /// **{ProblemURL}**: URL of the problem within Dynatrace.
+        /// 
+        /// **{State}**: Problem state. Possible values are OPEN or RESOLVED.
+        /// 
+        /// **{Tags}**: Comma separated list of tags that are defined for all impacted entities. To refer to the value of a specific tag, specify the tag's key in square brackets: **{Tags[key]}**. If the tag does not have any assigned value, the placeholder will be replaced by an empty string. The placeholder will not be replaced if the tag key does not exist.
         /// </summary>
         [Input("subject")]
         public Input<string>? Subject { get; set; }
@@ -276,7 +357,7 @@ namespace Pulumiverse.Dynatrace
         private InputList<string>? _tos;
 
         /// <summary>
-        /// The list of the email recipients
+        /// To
         /// </summary>
         public InputList<string> Tos
         {

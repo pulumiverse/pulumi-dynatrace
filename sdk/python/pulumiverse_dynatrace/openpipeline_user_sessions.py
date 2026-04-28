@@ -26,6 +26,7 @@ class OpenpipelineUserSessionsArgs:
                  routing: Optional[pulumi.Input['OpenpipelineUserSessionsRoutingArgs']] = None):
         """
         The set of arguments for constructing a OpenpipelineUserSessions resource.
+
         :param pulumi.Input['OpenpipelineUserSessionsEndpointsArgs'] endpoints: List of all ingest sources of the configuration
         :param pulumi.Input['OpenpipelineUserSessionsPipelinesArgs'] pipelines: List of all pipelines of the configuration
         :param pulumi.Input['OpenpipelineUserSessionsRoutingArgs'] routing: Dynamic routing definition
@@ -82,6 +83,7 @@ class _OpenpipelineUserSessionsState:
                  routing: Optional[pulumi.Input['OpenpipelineUserSessionsRoutingArgs']] = None):
         """
         Input properties used for looking up and filtering OpenpipelineUserSessions resources.
+
         :param pulumi.Input['OpenpipelineUserSessionsEndpointsArgs'] endpoints: List of all ingest sources of the configuration
         :param pulumi.Input['OpenpipelineUserSessionsPipelinesArgs'] pipelines: List of all pipelines of the configuration
         :param pulumi.Input['OpenpipelineUserSessionsRoutingArgs'] routing: Dynamic routing definition
@@ -141,7 +143,54 @@ class OpenpipelineUserSessions(pulumi.CustomResource):
                  routing: Optional[pulumi.Input[Union['OpenpipelineUserSessionsRoutingArgs', 'OpenpipelineUserSessionsRoutingArgsDict']]] = None,
                  __props__=None):
         """
-        Create a OpenpipelineUserSessions resource with the given unique name, props, and options.
+        !> This resource API endpoint has been deprecated, please migrate your OpenPipeline configurations and use `dynatrace_openpipeline_v2_usersessions_*` instead.
+
+        !> Deploying an OpenPipeline configuration will overwrite the existing one of the same kind, causing any manual changes made in the web UI or other configurations managed by Terraform or Monaco to be lost. Ensure all configurations are defined within a single Terraform or Monaco configuration to prevent data loss.
+
+        > **Dynatrace SaaS only**
+
+        > To utilize this resource, please define the environment variables `DT_CLIENT_ID`, `DT_CLIENT_SECRET`, `DT_ACCOUNT_ID` with an OAuth client including the following permissions: **View OpenPipeline configurations** (`openpipeline:configurations:read`), and **Edit OpenPipeline configurations** (`openpipeline:configurations:write`).
+
+        ## Dynatrace Documentation
+
+        - OpenPipeline - https://docs.dynatrace.com/docs/platform/openpipeline
+
+        ## Export Example Usage
+
+        - `terraform-provider-dynatrace -export OpenpipelineUserSessions` downloads all existing OpenPipeline definitions for user sesions
+
+        The full documentation of the export feature is available [here](https://dt-url.net/h203qmc).
+
+        ## Resource Example Usage
+
+        ```python
+        import pulumi
+        import pulumiverse_dynatrace as dynatrace
+
+        usersessions = dynatrace.OpenpipelineUserSessions("usersessions", pipelines={
+            "pipelines": [{
+                "enabled": True,
+                "display_name": "#name#",
+                "id": "pipeline_Custom_user_sessions_#name#",
+                "security_context": {
+                    "processors": [{
+                        "security_context_processor": {
+                            "description": "#name#",
+                            "enabled": True,
+                            "id": "processor_Set_to_static_#name#",
+                            "matcher": "true",
+                            "value": {
+                                "type": "constant",
+                                "constant": "test",
+                            },
+                        },
+                    }],
+                },
+            }],
+        })
+        ```
+
+
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[Union['OpenpipelineUserSessionsEndpointsArgs', 'OpenpipelineUserSessionsEndpointsArgsDict']] endpoints: List of all ingest sources of the configuration
@@ -155,7 +204,54 @@ class OpenpipelineUserSessions(pulumi.CustomResource):
                  args: Optional[OpenpipelineUserSessionsArgs] = None,
                  opts: Optional[pulumi.ResourceOptions] = None):
         """
-        Create a OpenpipelineUserSessions resource with the given unique name, props, and options.
+        !> This resource API endpoint has been deprecated, please migrate your OpenPipeline configurations and use `dynatrace_openpipeline_v2_usersessions_*` instead.
+
+        !> Deploying an OpenPipeline configuration will overwrite the existing one of the same kind, causing any manual changes made in the web UI or other configurations managed by Terraform or Monaco to be lost. Ensure all configurations are defined within a single Terraform or Monaco configuration to prevent data loss.
+
+        > **Dynatrace SaaS only**
+
+        > To utilize this resource, please define the environment variables `DT_CLIENT_ID`, `DT_CLIENT_SECRET`, `DT_ACCOUNT_ID` with an OAuth client including the following permissions: **View OpenPipeline configurations** (`openpipeline:configurations:read`), and **Edit OpenPipeline configurations** (`openpipeline:configurations:write`).
+
+        ## Dynatrace Documentation
+
+        - OpenPipeline - https://docs.dynatrace.com/docs/platform/openpipeline
+
+        ## Export Example Usage
+
+        - `terraform-provider-dynatrace -export OpenpipelineUserSessions` downloads all existing OpenPipeline definitions for user sesions
+
+        The full documentation of the export feature is available [here](https://dt-url.net/h203qmc).
+
+        ## Resource Example Usage
+
+        ```python
+        import pulumi
+        import pulumiverse_dynatrace as dynatrace
+
+        usersessions = dynatrace.OpenpipelineUserSessions("usersessions", pipelines={
+            "pipelines": [{
+                "enabled": True,
+                "display_name": "#name#",
+                "id": "pipeline_Custom_user_sessions_#name#",
+                "security_context": {
+                    "processors": [{
+                        "security_context_processor": {
+                            "description": "#name#",
+                            "enabled": True,
+                            "id": "processor_Set_to_static_#name#",
+                            "matcher": "true",
+                            "value": {
+                                "type": "constant",
+                                "constant": "test",
+                            },
+                        },
+                    }],
+                },
+            }],
+        })
+        ```
+
+
         :param str resource_name: The name of the resource.
         :param OpenpipelineUserSessionsArgs args: The arguments to use to populate this resource's properties.
         :param pulumi.ResourceOptions opts: Options for the resource.

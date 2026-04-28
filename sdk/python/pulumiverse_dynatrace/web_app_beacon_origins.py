@@ -23,6 +23,7 @@ class WebAppBeaconOriginsArgs:
                  pattern: pulumi.Input[_builtins.str]):
         """
         The set of arguments for constructing a WebAppBeaconOrigins resource.
+
         :param pulumi.Input[_builtins.str] matcher: Possible Values: `CONTAINS`, `ENDS_WITH`, `EQUALS`, `STARTS_WITH`
         :param pulumi.Input[_builtins.str] pattern: Pattern
         """
@@ -61,6 +62,7 @@ class _WebAppBeaconOriginsState:
                  pattern: Optional[pulumi.Input[_builtins.str]] = None):
         """
         Input properties used for looking up and filtering WebAppBeaconOrigins resources.
+
         :param pulumi.Input[_builtins.str] matcher: Possible Values: `CONTAINS`, `ENDS_WITH`, `EQUALS`, `STARTS_WITH`
         :param pulumi.Input[_builtins.str] pattern: Pattern
         """
@@ -104,7 +106,21 @@ class WebAppBeaconOrigins(pulumi.CustomResource):
                  pattern: Optional[pulumi.Input[_builtins.str]] = None,
                  __props__=None):
         """
-        Create a WebAppBeaconOrigins resource with the given unique name, props, and options.
+        > This resource requires the API token scopes **Read settings** (`settings.read`) and **Write settings** (`settings.write`)
+
+        ## Dynatrace Documentation
+
+        - Configure beacon origin allowlist for web applications - https://www.dynatrace.com/support/help/platform-modules/digital-experience/web-applications/setup-and-configuration/additional-configuration/configure-beacon-domain-allowlist
+
+        - Settings API - https://www.dynatrace.com/support/help/dynatrace-api/environment-api/settings (schemaId: `builtin:rum.web.beacon-domain-origins`)
+
+        ## Export Example Usage
+
+        - `terraform-provider-dynatrace -export dynatrace_web_beacon_origins` downloads all existing beacon origin allowlist configuration
+
+        The full documentation of the export feature is available [here](https://dt-url.net/h203qmc).
+
+
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[_builtins.str] matcher: Possible Values: `CONTAINS`, `ENDS_WITH`, `EQUALS`, `STARTS_WITH`
@@ -117,7 +133,21 @@ class WebAppBeaconOrigins(pulumi.CustomResource):
                  args: WebAppBeaconOriginsArgs,
                  opts: Optional[pulumi.ResourceOptions] = None):
         """
-        Create a WebAppBeaconOrigins resource with the given unique name, props, and options.
+        > This resource requires the API token scopes **Read settings** (`settings.read`) and **Write settings** (`settings.write`)
+
+        ## Dynatrace Documentation
+
+        - Configure beacon origin allowlist for web applications - https://www.dynatrace.com/support/help/platform-modules/digital-experience/web-applications/setup-and-configuration/additional-configuration/configure-beacon-domain-allowlist
+
+        - Settings API - https://www.dynatrace.com/support/help/dynatrace-api/environment-api/settings (schemaId: `builtin:rum.web.beacon-domain-origins`)
+
+        ## Export Example Usage
+
+        - `terraform-provider-dynatrace -export dynatrace_web_beacon_origins` downloads all existing beacon origin allowlist configuration
+
+        The full documentation of the export feature is available [here](https://dt-url.net/h203qmc).
+
+
         :param str resource_name: The name of the resource.
         :param WebAppBeaconOriginsArgs args: The arguments to use to populate this resource's properties.
         :param pulumi.ResourceOptions opts: Options for the resource.

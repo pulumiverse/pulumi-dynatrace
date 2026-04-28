@@ -32,6 +32,7 @@ class MetricMetadataArgs:
                  unit_display_format: Optional[pulumi.Input[_builtins.str]] = None):
         """
         The set of arguments for constructing a MetricMetadata resource.
+
         :param pulumi.Input[_builtins.str] metric_id: The scope of this setting (metric)
         :param pulumi.Input[_builtins.str] unit: Unit
         :param pulumi.Input[_builtins.str] description: Description
@@ -182,6 +183,7 @@ class _MetricMetadataState:
                  unit_display_format: Optional[pulumi.Input[_builtins.str]] = None):
         """
         Input properties used for looking up and filtering MetricMetadata resources.
+
         :param pulumi.Input[_builtins.str] description: Description
         :param pulumi.Input['MetricMetadataDimensionsArgs'] dimensions: Define metadata per metric dimension.
         :param pulumi.Input[_builtins.str] display_name: Display name
@@ -337,7 +339,21 @@ class MetricMetadata(pulumi.CustomResource):
                  unit_display_format: Optional[pulumi.Input[_builtins.str]] = None,
                  __props__=None):
         """
-        Create a MetricMetadata resource with the given unique name, props, and options.
+        > This resource requires the API token scopes **Read settings** (`settings.read`) and **Write settings** (`settings.write`)
+
+        ## Dynatrace Documentation
+
+        - Metrics - https://www.dynatrace.com/support/help/observe-and-explore/metrics
+
+        - Settings API - https://www.dynatrace.com/support/help/dynatrace-api/environment-api/settings (schemaId: `builtin:metric.metadata`)
+
+        ## Export Example Usage
+
+        - `terraform-provider-dynatrace -export MetricMetadata` downloads all existing metric metadata configuration
+
+        The full documentation of the export feature is available [here](https://dt-url.net/h203qmc).
+
+
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[_builtins.str] description: Description
@@ -357,7 +373,21 @@ class MetricMetadata(pulumi.CustomResource):
                  args: MetricMetadataArgs,
                  opts: Optional[pulumi.ResourceOptions] = None):
         """
-        Create a MetricMetadata resource with the given unique name, props, and options.
+        > This resource requires the API token scopes **Read settings** (`settings.read`) and **Write settings** (`settings.write`)
+
+        ## Dynatrace Documentation
+
+        - Metrics - https://www.dynatrace.com/support/help/observe-and-explore/metrics
+
+        - Settings API - https://www.dynatrace.com/support/help/dynatrace-api/environment-api/settings (schemaId: `builtin:metric.metadata`)
+
+        ## Export Example Usage
+
+        - `terraform-provider-dynatrace -export MetricMetadata` downloads all existing metric metadata configuration
+
+        The full documentation of the export feature is available [here](https://dt-url.net/h203qmc).
+
+
         :param str resource_name: The name of the resource.
         :param MetricMetadataArgs args: The arguments to use to populate this resource's properties.
         :param pulumi.ResourceOptions opts: Options for the resource.

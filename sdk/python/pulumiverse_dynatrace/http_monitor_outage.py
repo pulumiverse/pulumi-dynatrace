@@ -27,6 +27,7 @@ class HttpMonitorOutageArgs:
                  scope: Optional[pulumi.Input[_builtins.str]] = None):
         """
         The set of arguments for constructing a HttpMonitorOutage resource.
+
         :param pulumi.Input[_builtins.bool] global_outages: (Field has overlap with `HttpMonitor`) Generate a problem and send an alert when the monitor is unavailable at all configured locations.
         :param pulumi.Input[_builtins.bool] local_outages: (Field has overlap with `HttpMonitor`) Generate a problem and send an alert when the monitor is unavailable for one or more consecutive runs at any location.
         :param pulumi.Input[_builtins.int] global_consecutive_outage_count_threshold: (Field has overlap with `HttpMonitor`) Alert if all locations are unable to access my web application
@@ -129,6 +130,7 @@ class _HttpMonitorOutageState:
                  scope: Optional[pulumi.Input[_builtins.str]] = None):
         """
         Input properties used for looking up and filtering HttpMonitorOutage resources.
+
         :param pulumi.Input[_builtins.int] global_consecutive_outage_count_threshold: (Field has overlap with `HttpMonitor`) Alert if all locations are unable to access my web application
         :param pulumi.Input[_builtins.bool] global_outages: (Field has overlap with `HttpMonitor`) Generate a problem and send an alert when the monitor is unavailable at all configured locations.
         :param pulumi.Input[_builtins.int] local_consecutive_outage_count_threshold: (Field has overlap with `HttpMonitor`) are unable to access my web application
@@ -236,7 +238,23 @@ class HttpMonitorOutage(pulumi.CustomResource):
                  scope: Optional[pulumi.Input[_builtins.str]] = None,
                  __props__=None):
         """
-        Create a HttpMonitorOutage resource with the given unique name, props, and options.
+        > Configuration of the HTTP check scope overlaps with dynatrace_http_monitor, but this resource in addition provides an option for an environment scope.
+
+        > This resource requires the API token scopes **Read settings** (`settings.read`) and **Write settings** (`settings.write`)
+
+        ## Dynatrace Documentation
+
+        - Synthetic alerting overview - https://www.dynatrace.com/support/help/platform-modules/digital-experience/synthetic-monitoring/analysis-and-alerting/synthetic-alerting-overview
+
+        - Settings API - https://www.dynatrace.com/support/help/dynatrace-api/environment-api/settings (schemaId: `builtin:synthetic.http.outage-handling`)
+
+        ## Export Example Usage
+
+        - `terraform-provider-dynatrace -export HttpMonitorOutage` downloads all existing HTTP monitor outage handling configuration
+
+        The full documentation of the export feature is available [here](https://dt-url.net/h203qmc).
+
+
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[_builtins.int] global_consecutive_outage_count_threshold: (Field has overlap with `HttpMonitor`) Alert if all locations are unable to access my web application
@@ -253,7 +271,23 @@ class HttpMonitorOutage(pulumi.CustomResource):
                  args: HttpMonitorOutageArgs,
                  opts: Optional[pulumi.ResourceOptions] = None):
         """
-        Create a HttpMonitorOutage resource with the given unique name, props, and options.
+        > Configuration of the HTTP check scope overlaps with dynatrace_http_monitor, but this resource in addition provides an option for an environment scope.
+
+        > This resource requires the API token scopes **Read settings** (`settings.read`) and **Write settings** (`settings.write`)
+
+        ## Dynatrace Documentation
+
+        - Synthetic alerting overview - https://www.dynatrace.com/support/help/platform-modules/digital-experience/synthetic-monitoring/analysis-and-alerting/synthetic-alerting-overview
+
+        - Settings API - https://www.dynatrace.com/support/help/dynatrace-api/environment-api/settings (schemaId: `builtin:synthetic.http.outage-handling`)
+
+        ## Export Example Usage
+
+        - `terraform-provider-dynatrace -export HttpMonitorOutage` downloads all existing HTTP monitor outage handling configuration
+
+        The full documentation of the export feature is available [here](https://dt-url.net/h203qmc).
+
+
         :param str resource_name: The name of the resource.
         :param HttpMonitorOutageArgs args: The arguments to use to populate this resource's properties.
         :param pulumi.ResourceOptions opts: Options for the resource.

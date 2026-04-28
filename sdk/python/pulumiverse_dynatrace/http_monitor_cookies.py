@@ -26,6 +26,7 @@ class HttpMonitorCookiesArgs:
                  cookies: Optional[pulumi.Input['HttpMonitorCookiesCookiesArgs']] = None):
         """
         The set of arguments for constructing a HttpMonitorCookies resource.
+
         :param pulumi.Input[_builtins.bool] enabled: This setting is enabled (`true`) or disabled (`false`)
         :param pulumi.Input[_builtins.str] scope: The scope of this setting (HTTP_CHECK)
         :param pulumi.Input['HttpMonitorCookiesCookiesArgs'] cookies: no documentation available
@@ -80,6 +81,7 @@ class _HttpMonitorCookiesState:
                  scope: Optional[pulumi.Input[_builtins.str]] = None):
         """
         Input properties used for looking up and filtering HttpMonitorCookies resources.
+
         :param pulumi.Input['HttpMonitorCookiesCookiesArgs'] cookies: no documentation available
         :param pulumi.Input[_builtins.bool] enabled: This setting is enabled (`true`) or disabled (`false`)
         :param pulumi.Input[_builtins.str] scope: The scope of this setting (HTTP_CHECK)
@@ -139,7 +141,21 @@ class HttpMonitorCookies(pulumi.CustomResource):
                  scope: Optional[pulumi.Input[_builtins.str]] = None,
                  __props__=None):
         """
-        Create a HttpMonitorCookies resource with the given unique name, props, and options.
+        > This resource requires the API token scopes **Read settings** (`settings.read`) and **Write settings** (`settings.write`)
+
+        ## Dynatrace Documentation
+
+        - Monitor setup - https://www.dynatrace.com/support/help/platform-modules/digital-experience/synthetic-monitoring/http-monitors/configure-http-monitors#setup
+
+        - Settings API - https://www.dynatrace.com/support/help/dynatrace-api/environment-api/settings (schemaId: `builtin:synthetic.http.cookies`)
+
+        ## Export Example Usage
+
+        - `terraform-provider-dynatrace -export HttpMonitorCookies` downloads all existing HTTP monitor cookie configuration
+
+        The full documentation of the export feature is available [here](https://dt-url.net/h203qmc).
+
+
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[Union['HttpMonitorCookiesCookiesArgs', 'HttpMonitorCookiesCookiesArgsDict']] cookies: no documentation available
@@ -153,7 +169,21 @@ class HttpMonitorCookies(pulumi.CustomResource):
                  args: HttpMonitorCookiesArgs,
                  opts: Optional[pulumi.ResourceOptions] = None):
         """
-        Create a HttpMonitorCookies resource with the given unique name, props, and options.
+        > This resource requires the API token scopes **Read settings** (`settings.read`) and **Write settings** (`settings.write`)
+
+        ## Dynatrace Documentation
+
+        - Monitor setup - https://www.dynatrace.com/support/help/platform-modules/digital-experience/synthetic-monitoring/http-monitors/configure-http-monitors#setup
+
+        - Settings API - https://www.dynatrace.com/support/help/dynatrace-api/environment-api/settings (schemaId: `builtin:synthetic.http.cookies`)
+
+        ## Export Example Usage
+
+        - `terraform-provider-dynatrace -export HttpMonitorCookies` downloads all existing HTTP monitor cookie configuration
+
+        The full documentation of the export feature is available [here](https://dt-url.net/h203qmc).
+
+
         :param str resource_name: The name of the resource.
         :param HttpMonitorCookiesArgs args: The arguments to use to populate this resource's properties.
         :param pulumi.ResourceOptions opts: Options for the resource.

@@ -12,6 +12,53 @@ import (
 	"github.com/pulumiverse/pulumi-dynatrace/sdk/go/dynatrace/internal"
 )
 
+// > This resource requires the API token scopes **Read settings** (`settings.read`) and **Write settings** (`settings.write`)
+//
+// ## Dynatrace Documentation
+//
+// - Technology support - https://www.dynatrace.com/support/help/technology-support#anchor-containers
+//
+// - Settings API - https://www.dynatrace.com/support/help/dynatrace-api/environment-api/settings (schemaId: `builtin:container.technology`)
+//
+// ## Export Example Usage
+//
+// - `terraform-provider-dynatrace -export ContainerTechnology` downloads all existing container monitoring configuration
+//
+// The full documentation of the export feature is available [here](https://dt-url.net/h203qmc).
+//
+// ## Resource Example Usage
+//
+// ```go
+// package main
+//
+// import (
+//
+//	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//	"github.com/pulumiverse/pulumi-dynatrace/sdk/go/dynatrace"
+//
+// )
+//
+//	func main() {
+//		pulumi.Run(func(ctx *pulumi.Context) error {
+//			_, err := dynatrace.NewContainerTechnology(ctx, "environment", &dynatrace.ContainerTechnologyArgs{
+//				BoshProcessManager: pulumi.Bool(true),
+//				Containerd:         pulumi.Bool(true),
+//				Crio:               pulumi.Bool(true),
+//				Docker:             pulumi.Bool(true),
+//				DockerWindows:      pulumi.Bool(true),
+//				Garden:             pulumi.Bool(true),
+//				Podman:             pulumi.Bool(true),
+//				Scope:              pulumi.String("environment"),
+//				Winc:               pulumi.Bool(true),
+//			})
+//			if err != nil {
+//				return err
+//			}
+//			return nil
+//		})
+//	}
+//
+// ```
 type ContainerTechnology struct {
 	pulumi.CustomResourceState
 

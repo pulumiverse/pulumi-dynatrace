@@ -22,8 +22,8 @@ namespace Pulumiverse.Dynatrace.Inputs
         /// <summary>
         /// Event type
         /// </summary>
-        [Input("eventType")]
-        public Input<Inputs.OpenpipelineV2EventsSecurityPipelinesProductAllocationProcessorsProcessorBizeventEventTypeArgs>? EventType { get; set; }
+        [Input("eventType", required: true)]
+        public Input<Inputs.OpenpipelineV2EventsSecurityPipelinesProductAllocationProcessorsProcessorBizeventEventTypeArgs> EventType { get; set; } = null!;
 
         /// <summary>
         /// Field extraction

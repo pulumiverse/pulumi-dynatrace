@@ -26,6 +26,7 @@ class DirectSharesArgs:
                  access: Optional[pulumi.Input[_builtins.str]] = None):
         """
         The set of arguments for constructing a DirectShares resource.
+
         :param pulumi.Input[_builtins.str] document_id: Document ID
         :param pulumi.Input['DirectSharesRecipientsArgs'] recipients: Recipients of the direct share
         :param pulumi.Input[_builtins.str] access: Access grants. Possible values are `read` and `read-write`
@@ -80,6 +81,7 @@ class _DirectSharesState:
                  recipients: Optional[pulumi.Input['DirectSharesRecipientsArgs']] = None):
         """
         Input properties used for looking up and filtering DirectShares resources.
+
         :param pulumi.Input[_builtins.str] access: Access grants. Possible values are `read` and `read-write`
         :param pulumi.Input[_builtins.str] document_id: Document ID
         :param pulumi.Input['DirectSharesRecipientsArgs'] recipients: Recipients of the direct share
@@ -156,8 +158,9 @@ class DirectShares(pulumi.CustomResource):
         import json
         import pulumiverse_dynatrace as dynatrace
 
-        this_document = dynatrace.Document("thisDocument",
+        this_document = dynatrace.Document("this",
             type="dashboard",
+            name="#name#",
             content=json.dumps({
                 "version": 13,
                 "variables": [],
@@ -288,7 +291,7 @@ class DirectShares(pulumi.CustomResource):
                     },
                 },
             }))
-        this_direct_shares = dynatrace.DirectShares("thisDirectShares",
+        this = dynatrace.DirectShares("this",
             document_id=this_document.id,
             access="read-write",
             recipients={
@@ -304,6 +307,7 @@ class DirectShares(pulumi.CustomResource):
                 ],
             })
         ```
+
 
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
@@ -335,8 +339,9 @@ class DirectShares(pulumi.CustomResource):
         import json
         import pulumiverse_dynatrace as dynatrace
 
-        this_document = dynatrace.Document("thisDocument",
+        this_document = dynatrace.Document("this",
             type="dashboard",
+            name="#name#",
             content=json.dumps({
                 "version": 13,
                 "variables": [],
@@ -467,7 +472,7 @@ class DirectShares(pulumi.CustomResource):
                     },
                 },
             }))
-        this_direct_shares = dynatrace.DirectShares("thisDirectShares",
+        this = dynatrace.DirectShares("this",
             document_id=this_document.id,
             access="read-write",
             recipients={
@@ -483,6 +488,7 @@ class DirectShares(pulumi.CustomResource):
                 ],
             })
         ```
+
 
         :param str resource_name: The name of the resource.
         :param DirectSharesArgs args: The arguments to use to populate this resource's properties.

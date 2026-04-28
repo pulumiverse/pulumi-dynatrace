@@ -24,6 +24,7 @@ class IpAddressMaskingArgs:
                  type: Optional[pulumi.Input[_builtins.str]] = None):
         """
         The set of arguments for constructing a IpAddressMasking resource.
+
         :param pulumi.Input[_builtins.bool] enabled: This setting is enabled (`true`) or disabled (`false`)
         :param pulumi.Input[_builtins.str] scope: The scope of this setting (MOBILE*APPLICATION, CUSTOM*APPLICATION, APPLICATION). Omit this property if you want to cover the whole environment.
         :param pulumi.Input[_builtins.str] type: Possible Values: `all`, `public`
@@ -79,6 +80,7 @@ class _IpAddressMaskingState:
                  type: Optional[pulumi.Input[_builtins.str]] = None):
         """
         Input properties used for looking up and filtering IpAddressMasking resources.
+
         :param pulumi.Input[_builtins.bool] enabled: This setting is enabled (`true`) or disabled (`false`)
         :param pulumi.Input[_builtins.str] scope: The scope of this setting (MOBILE*APPLICATION, CUSTOM*APPLICATION, APPLICATION). Omit this property if you want to cover the whole environment.
         :param pulumi.Input[_builtins.str] type: Possible Values: `all`, `public`
@@ -138,7 +140,21 @@ class IpAddressMasking(pulumi.CustomResource):
                  type: Optional[pulumi.Input[_builtins.str]] = None,
                  __props__=None):
         """
-        Create a IpAddressMasking resource with the given unique name, props, and options.
+        > This resource requires the API token scopes **Read settings** (`settings.read`) and **Write settings** (`settings.write`)
+
+        ## Dynatrace Documentation
+
+        - Data privacy and security - https://www.dynatrace.com/support/help/manage/data-privacy-and-security
+
+        - Settings API - https://www.dynatrace.com/support/help/dynatrace-api/environment-api/settings (schemaId: `builtin:preferences.ipaddressmasking`)
+
+        ## Export Example Usage
+
+        - `terraform-provider-dynatrace -export IpAddressMasking` downloads all existing IP address masking configuration
+
+        The full documentation of the export feature is available [here](https://dt-url.net/h203qmc).
+
+
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[_builtins.bool] enabled: This setting is enabled (`true`) or disabled (`false`)
@@ -152,7 +168,21 @@ class IpAddressMasking(pulumi.CustomResource):
                  args: IpAddressMaskingArgs,
                  opts: Optional[pulumi.ResourceOptions] = None):
         """
-        Create a IpAddressMasking resource with the given unique name, props, and options.
+        > This resource requires the API token scopes **Read settings** (`settings.read`) and **Write settings** (`settings.write`)
+
+        ## Dynatrace Documentation
+
+        - Data privacy and security - https://www.dynatrace.com/support/help/manage/data-privacy-and-security
+
+        - Settings API - https://www.dynatrace.com/support/help/dynatrace-api/environment-api/settings (schemaId: `builtin:preferences.ipaddressmasking`)
+
+        ## Export Example Usage
+
+        - `terraform-provider-dynatrace -export IpAddressMasking` downloads all existing IP address masking configuration
+
+        The full documentation of the export feature is available [here](https://dt-url.net/h203qmc).
+
+
         :param str resource_name: The name of the resource.
         :param IpAddressMaskingArgs args: The arguments to use to populate this resource's properties.
         :param pulumi.ResourceOptions opts: Options for the resource.

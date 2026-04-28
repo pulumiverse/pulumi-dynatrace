@@ -81,7 +81,7 @@ import (
 //				return err
 //			}
 //			json3 := string(tmpJSON3)
-//			_, err = dynatrace.NewAutomationWorkflow(ctx, "sampleWorklowTF", &dynatrace.AutomationWorkflowArgs{
+//			_, err = dynatrace.NewAutomationWorkflow(ctx, "Sample_Worklow_TF", &dynatrace.AutomationWorkflowArgs{
 //				Description: pulumi.String("Desc"),
 //				Actor:       pulumi.String("########-####-####-####-############"),
 //				Title:       pulumi.String("Sample Worklow TF1"),
@@ -159,9 +159,7 @@ import (
 //									"asdf": pulumi.String(""),
 //								},
 //								OnProblemClose: pulumi.Bool(false),
-//								Types: pulumi.StringArray{
-//									pulumi.String("CUSTOM_ANNOTATION"),
-//								},
+//								CustomFilter:   pulumi.String("matchesPhrase(custom.event.type, \"DEPLOY\")"),
 //							},
 //						},
 //					},

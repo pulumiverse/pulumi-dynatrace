@@ -4,6 +4,31 @@
 import * as pulumi from "@pulumi/pulumi";
 import * as utilities from "./utilities";
 
+/**
+ * !> **HTTP DELETE method not available** Terraform will no longer manage this resource on `destroy` but the configuration will still be present on the Dynatrace cluster.
+ *
+ * > This resource requires the cluster API token scope **Service Provider API** (`ServiceProviderAPI`)
+ *
+ * ## Dynatrace Documentation
+ *
+ * - Cluster remote access - https://www.dynatrace.com/support/help/managed-cluster/configuration/cluster-remote-access
+ *
+ * - Cluster API v2 - https://www.dynatrace.com/support/help/managed-cluster/cluster-api/cluster-api-v2
+ *
+ * ## Resource Example Usage
+ *
+ * ```typescript
+ * import * as pulumi from "@pulumi/pulumi";
+ * import * as dynatrace from "@pulumiverse/dynatrace";
+ *
+ * const test = new dynatrace.ManagedRemoteAccess("Test", {
+ *     userId: "example@dynatrace.com",
+ *     reason: "Example",
+ *     requestedDays: 1,
+ *     role: "devops-admin",
+ * });
+ * ```
+ */
 export class ManagedRemoteAccess extends pulumi.CustomResource {
     /**
      * Get an existing ManagedRemoteAccess resource's state with the given name, ID, and optional extra

@@ -25,6 +25,7 @@ class DiskAnomaliesV2Args:
                  scope: pulumi.Input[_builtins.str]):
         """
         The set of arguments for constructing a DiskAnomaliesV2 resource.
+
         :param pulumi.Input['DiskAnomaliesV2DiskArgs'] disk: Disk
         :param pulumi.Input[_builtins.str] scope: The scope for the disk anomaly detection
         """
@@ -63,6 +64,7 @@ class _DiskAnomaliesV2State:
                  scope: Optional[pulumi.Input[_builtins.str]] = None):
         """
         Input properties used for looking up and filtering DiskAnomaliesV2 resources.
+
         :param pulumi.Input['DiskAnomaliesV2DiskArgs'] disk: Disk
         :param pulumi.Input[_builtins.str] scope: The scope for the disk anomaly detection
         """
@@ -106,7 +108,21 @@ class DiskAnomaliesV2(pulumi.CustomResource):
                  scope: Optional[pulumi.Input[_builtins.str]] = None,
                  __props__=None):
         """
-        Create a DiskAnomaliesV2 resource with the given unique name, props, and options.
+        > This resource requires the API token scopes **Read settings** (`settings.read`) and **Write settings** (`settings.write`)
+
+        ## Dynatrace Documentation
+
+        - Adjust the sensitivity of anomaly detection for infrastructure - https://www.dynatrace.com/support/help/how-to-use-dynatrace/problem-detection-and-analysis/problem-detection/adjust-sensitivity-anomaly-detection/adjust-sensitivity-infastructure
+
+        - Settings API - https://www.dynatrace.com/support/help/dynatrace-api/environment-api/settings (schemaId: `builtin:anomaly-detection.infrastructure-disks`)
+
+        ## Export Example Usage
+
+        - `terraform-provider-dynatrace -export DiskAnomaliesV2` downloads all existing disk anomaly detection configuration
+
+        The full documentation of the export feature is available [here](https://dt-url.net/h203qmc).
+
+
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[Union['DiskAnomaliesV2DiskArgs', 'DiskAnomaliesV2DiskArgsDict']] disk: Disk
@@ -119,7 +135,21 @@ class DiskAnomaliesV2(pulumi.CustomResource):
                  args: DiskAnomaliesV2Args,
                  opts: Optional[pulumi.ResourceOptions] = None):
         """
-        Create a DiskAnomaliesV2 resource with the given unique name, props, and options.
+        > This resource requires the API token scopes **Read settings** (`settings.read`) and **Write settings** (`settings.write`)
+
+        ## Dynatrace Documentation
+
+        - Adjust the sensitivity of anomaly detection for infrastructure - https://www.dynatrace.com/support/help/how-to-use-dynatrace/problem-detection-and-analysis/problem-detection/adjust-sensitivity-anomaly-detection/adjust-sensitivity-infastructure
+
+        - Settings API - https://www.dynatrace.com/support/help/dynatrace-api/environment-api/settings (schemaId: `builtin:anomaly-detection.infrastructure-disks`)
+
+        ## Export Example Usage
+
+        - `terraform-provider-dynatrace -export DiskAnomaliesV2` downloads all existing disk anomaly detection configuration
+
+        The full documentation of the export feature is available [here](https://dt-url.net/h203qmc).
+
+
         :param str resource_name: The name of the resource.
         :param DiskAnomaliesV2Args args: The arguments to use to populate this resource's properties.
         :param pulumi.ResourceOptions opts: Options for the resource.

@@ -12,64 +12,6 @@ import (
 )
 
 // The management zones data source allows retrieval of all management zones.
-//
-// ## Example Usage
-//
-// ```go
-// package main
-//
-// import (
-//
-//	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-//	"github.com/pulumiverse/pulumi-dynatrace/sdk/go/dynatrace"
-//
-// )
-//
-//	func main() {
-//		pulumi.Run(func(ctx *pulumi.Context) error {
-//			test, err := dynatrace.GetManagementZones(ctx, map[string]interface{}{}, nil)
-//			if err != nil {
-//				return err
-//			}
-//			_, err = dynatrace.NewCalculatedServiceMetric(ctx, "#name#", &dynatrace.CalculatedServiceMetricArgs{
-//				Enabled: pulumi.Bool(true),
-//				ManagementZones: pulumi.StringArray{
-//					pulumi.String(test.Values[0].Id),
-//				},
-//				MetricKey: pulumi.String("calc:service.#name#"),
-//				Unit:      pulumi.String("MILLI_SECOND_PER_MINUTE"),
-//				Conditions: dynatrace.CalculatedServiceMetricConditionArray{
-//					&dynatrace.CalculatedServiceMetricConditionArgs{
-//						Conditions: dynatrace.CalculatedServiceMetricConditionConditionArray{
-//							&dynatrace.CalculatedServiceMetricConditionConditionArgs{
-//								Attribute: pulumi.String("HTTP_REQUEST_METHOD"),
-//								Comparison: &dynatrace.CalculatedServiceMetricConditionConditionComparisonArgs{
-//									Negate: pulumi.Bool(false),
-//									HttpMethod: &dynatrace.CalculatedServiceMetricConditionConditionComparisonHttpMethodArgs{
-//										Operator: pulumi.String("EQUALS_ANY_OF"),
-//										Values: pulumi.StringArray{
-//											pulumi.String("POST"),
-//											pulumi.String("GET"),
-//										},
-//									},
-//								},
-//							},
-//						},
-//					},
-//				},
-//				MetricDefinition: &dynatrace.CalculatedServiceMetricMetricDefinitionArgs{
-//					Metric:           pulumi.String("REQUEST_ATTRIBUTE"),
-//					RequestAttribute: pulumi.String("foo"),
-//				},
-//			})
-//			if err != nil {
-//				return err
-//			}
-//			return nil
-//		})
-//	}
-//
-// ```
 func GetManagementZones(ctx *pulumi.Context, opts ...pulumi.InvokeOption) (*GetManagementZonesResult, error) {
 	opts = internal.PkgInvokeDefaultOpts(opts)
 	var rv GetManagementZonesResult

@@ -6,6 +6,24 @@ import * as inputs from "./types/input";
 import * as outputs from "./types/output";
 import * as utilities from "./utilities";
 
+/**
+ * > **Warning** This resource has been deprecated in favor of OpenPipeline.
+ * Please migrate your OpenPipeline configurations and use `dynatrace_openpipeline_v2_*` instead.
+ *
+ * > This resource requires the API token scopes **Read settings** (`settings.read`) and **Write settings** (`settings.write`)
+ *
+ * ## Dynatrace Documentation
+ *
+ * - Business event processing - https://www.dynatrace.com/support/help/platform-modules/business-analytics/ba-metric-extraction
+ *
+ * - Settings API - https://www.dynatrace.com/support/help/dynatrace-api/environment-api/settings (schemaId: `builtin:bizevents-processing-pipelines.rule`)
+ *
+ * ## Export Example Usage
+ *
+ * - `terraform-provider-dynatrace -export dynatrace.BusinessEventsProcessing` downloads all existing business event processing configuration
+ *
+ * The full documentation of the export feature is available [here](https://dt-url.net/h203qmc).
+ */
 export class BusinessEventsProcessing extends pulumi.CustomResource {
     /**
      * Get an existing BusinessEventsProcessing resource's state with the given name, ID, and optional extra

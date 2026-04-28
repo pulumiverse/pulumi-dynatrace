@@ -10,6 +10,21 @@ using Pulumi;
 
 namespace Pulumiverse.Dynatrace
 {
+    /// <summary>
+    /// &gt; This resource requires the API token scopes **Read settings** (`settings.read`) and **Write settings** (`settings.write`)
+    /// 
+    /// ## Dynatrace Documentation
+    /// 
+    /// - Discovery &amp; Coverage - https://www.dynatrace.com/hub/detail/discovery-coverage/
+    /// 
+    /// - Settings API - https://www.dynatrace.com/support/help/dynatrace-api/environment-api/settings (schemaId: `app:dynatrace.discovery.coverage:discovery.findings.default.rules.schema`)
+    /// 
+    /// ## Export Example Usage
+    /// 
+    /// - `terraform-provider-dynatrace -export dynatrace.DiscoveryDefaultRules` downloads existing discovery findings default rules
+    /// 
+    /// The full documentation of the export feature is available [here](https://dt-url.net/h203qmc).
+    /// </summary>
     [DynatraceResourceType("dynatrace:index/discoveryDefaultRules:DiscoveryDefaultRules")]
     public partial class DiscoveryDefaultRules : global::Pulumi.CustomResource
     {

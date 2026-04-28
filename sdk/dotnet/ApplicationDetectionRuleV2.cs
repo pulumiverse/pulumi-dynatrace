@@ -10,6 +10,23 @@ using Pulumi;
 
 namespace Pulumiverse.Dynatrace
 {
+    /// <summary>
+    /// !&gt; This resource does not handle ordering of rules. If ordering is required, please use dynatrace.ApplicationDetectionRule instead.
+    /// 
+    /// &gt; This resource requires the API token scopes **Read settings** (`settings.read`) and **Write settings** (`settings.write`)
+    /// 
+    /// ## Dynatrace Documentation
+    /// 
+    /// - Check application detection rules - https://www.dynatrace.com/support/help/platform-modules/digital-experience/web-applications/additional-configuration/application-detection-rules
+    /// 
+    /// - Settings API - https://www.dynatrace.com/support/help/dynatrace-api/environment-api/settings (schemaId: `builtin:rum.web.app-detection`)
+    /// 
+    /// ## Export Example Usage
+    /// 
+    /// - `terraform-provider-dynatrace -export dynatrace.ApplicationDetectionRuleV2` downloads all existing application detection rule configuration
+    /// 
+    /// The full documentation of the export feature is available [here](https://dt-url.net/h203qmc).
+    /// </summary>
     [DynatraceResourceType("dynatrace:index/applicationDetectionRuleV2:ApplicationDetectionRuleV2")]
     public partial class ApplicationDetectionRuleV2 : global::Pulumi.CustomResource
     {

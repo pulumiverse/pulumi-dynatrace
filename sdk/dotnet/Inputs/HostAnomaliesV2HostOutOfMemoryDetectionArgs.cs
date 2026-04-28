@@ -20,13 +20,13 @@ namespace Pulumiverse.Dynatrace.Inputs
         public Input<Inputs.HostAnomaliesV2HostOutOfMemoryDetectionCustomThresholdsArgs>? CustomThresholds { get; set; }
 
         /// <summary>
-        /// Detection mode for Java out of memory problem
+        /// Detection mode for Java out of memory problem. Possible Values: `Auto`, `Custom`
         /// </summary>
         [Input("detectionMode")]
         public Input<string>? DetectionMode { get; set; }
 
         /// <summary>
-        /// Detect Java out of memory problem
+        /// This setting is enabled (`True`) or disabled (`False`)
         /// </summary>
         [Input("enabled", required: true)]
         public Input<bool> Enabled { get; set; } = null!;

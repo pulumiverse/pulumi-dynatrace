@@ -33,6 +33,7 @@ class RpcBasedSamplingArgs:
                  scope: Optional[pulumi.Input[_builtins.str]] = None):
         """
         The set of arguments for constructing a RpcBasedSampling resource.
+
         :param pulumi.Input[_builtins.bool] enabled: This setting is enabled (`true`) or disabled (`false`)
         :param pulumi.Input[_builtins.str] endpoint_name_comparison_type: Possible Values: `CONTAINS`, `DOES_NOT_CONTAIN`, `DOES_NOT_END_WITH`, `DOES_NOT_EQUAL`, `DOES_NOT_START_WITH`, `ENDS_WITH`, `EQUALS`, `STARTS_WITH`
         :param pulumi.Input[_builtins.bool] ignore: No Traces will be captured for matching RPC requests. This applies always, even if Adaptive Traffic Management is inactive.
@@ -323,6 +324,7 @@ class _RpcBasedSamplingState:
                  wire_protocol_type: Optional[pulumi.Input[_builtins.str]] = None):
         """
         Input properties used for looking up and filtering RpcBasedSampling resources.
+
         :param pulumi.Input[_builtins.bool] enabled: This setting is enabled (`true`) or disabled (`false`)
         :param pulumi.Input[_builtins.str] endpoint_name: Specify the RPC endpoint name. If the endpoint name is empty, either remote operation name or remote service name must be specified that can be used for RPC matching.
         :param pulumi.Input[_builtins.str] endpoint_name_comparison_type: Possible Values: `CONTAINS`, `DOES_NOT_CONTAIN`, `DOES_NOT_END_WITH`, `DOES_NOT_EQUAL`, `DOES_NOT_START_WITH`, `ENDS_WITH`, `EQUALS`, `STARTS_WITH`
@@ -630,24 +632,6 @@ class RpcBasedSampling(pulumi.CustomResource):
 
         - Settings API - https://www.dynatrace.com/support/help/dynatrace-api/environment-api/settings (schemaId: `builtin:rpc-based-sampling`)
 
-        ## Resource Example Usage
-
-        ```python
-        import pulumi
-        import pulumiverse_dynatrace as dynatrace
-
-        _name_ = dynatrace.RpcBasedSampling("#name#",
-            enabled=False,
-            endpoint_name="#name#-endpoint",
-            endpoint_name_comparison_type="DOES_NOT_END_WITH",
-            ignore=True,
-            remote_operation_name="#name#-operation",
-            remote_operation_name_comparison_type="CONTAINS",
-            remote_service_name="#name#-service",
-            remote_service_name_comparison_type="STARTS_WITH",
-            scope="environment",
-            wire_protocol_type="8")
-        ```
 
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
@@ -727,24 +711,6 @@ class RpcBasedSampling(pulumi.CustomResource):
 
         - Settings API - https://www.dynatrace.com/support/help/dynatrace-api/environment-api/settings (schemaId: `builtin:rpc-based-sampling`)
 
-        ## Resource Example Usage
-
-        ```python
-        import pulumi
-        import pulumiverse_dynatrace as dynatrace
-
-        _name_ = dynatrace.RpcBasedSampling("#name#",
-            enabled=False,
-            endpoint_name="#name#-endpoint",
-            endpoint_name_comparison_type="DOES_NOT_END_WITH",
-            ignore=True,
-            remote_operation_name="#name#-operation",
-            remote_operation_name_comparison_type="CONTAINS",
-            remote_service_name="#name#-service",
-            remote_service_name_comparison_type="STARTS_WITH",
-            scope="environment",
-            wire_protocol_type="8")
-        ```
 
         :param str resource_name: The name of the resource.
         :param RpcBasedSamplingArgs args: The arguments to use to populate this resource's properties.

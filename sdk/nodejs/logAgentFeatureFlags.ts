@@ -4,6 +4,21 @@
 import * as pulumi from "@pulumi/pulumi";
 import * as utilities from "./utilities";
 
+/**
+ * > This resource requires the API token scopes **Read settings** (`settings.read`) and **Write settings** (`settings.write`)
+ *
+ * ## Dynatrace Documentation
+ *
+ * - Log Management and Analytics - https://www.dynatrace.com/support/help/observe-and-explore/logs/log-management-and-analytics
+ *
+ * - Settings API - https://www.dynatrace.com/support/help/dynatrace-api/environment-api/settings (schemaId: `builtin:logmonitoring.log-agent-feature-flags`)
+ *
+ * ## Export Example Usage
+ *
+ * - `terraform-provider-dynatrace -export dynatrace.LogAgentFeatureFlags` downloads all existing log agent feature flags
+ *
+ * The full documentation of the export feature is available [here](https://dt-url.net/h203qmc).
+ */
 export class LogAgentFeatureFlags extends pulumi.CustomResource {
     /**
      * Get an existing LogAgentFeatureFlags resource's state with the given name, ID, and optional extra

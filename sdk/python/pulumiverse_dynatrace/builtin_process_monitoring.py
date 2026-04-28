@@ -102,6 +102,7 @@ class BuiltinProcessMonitoringArgs:
                  php_script: Optional[pulumi.Input[_builtins.bool]] = None):
         """
         The set of arguments for constructing a BuiltinProcessMonitoring resource.
+
         :param pulumi.Input[_builtins.bool] aspnetcore: Rule id: 3 - Do monitor processes if ASP.NET Core application path exists
         :param pulumi.Input[_builtins.bool] aspnetcore_agentlistener: Rule id: 64 - Do not monitor processes if ASP.NET Core application DLL contains 'Agent.Listener'
         :param pulumi.Input[_builtins.bool] aspnetcore_agentworker: Rule id: 62 - Do not monitor processes if ASP.NET Core application DLL contains 'Agent.Worker'
@@ -1406,6 +1407,7 @@ class _BuiltinProcessMonitoringState:
                  php_script: Optional[pulumi.Input[_builtins.bool]] = None):
         """
         Input properties used for looking up and filtering BuiltinProcessMonitoring resources.
+
         :param pulumi.Input[_builtins.bool] aspnetcore: Rule id: 3 - Do monitor processes if ASP.NET Core application path exists
         :param pulumi.Input[_builtins.bool] aspnetcore_agentlistener: Rule id: 64 - Do not monitor processes if ASP.NET Core application DLL contains 'Agent.Listener'
         :param pulumi.Input[_builtins.bool] aspnetcore_agentworker: Rule id: 62 - Do not monitor processes if ASP.NET Core application DLL contains 'Agent.Worker'
@@ -2713,7 +2715,21 @@ class BuiltinProcessMonitoring(pulumi.CustomResource):
                  php_script: Optional[pulumi.Input[_builtins.bool]] = None,
                  __props__=None):
         """
-        Create a BuiltinProcessMonitoring resource with the given unique name, props, and options.
+        > This resource requires the API token scopes **Read settings** (`settings.read`) and **Write settings** (`settings.write`)
+
+        ## Dynatrace Documentation
+
+        - Process deep monitoring - https://www.dynatrace.com/support/help/platform-modules/infrastructure-monitoring/process-groups/configuration/pg-monitoring
+
+        - Settings API - https://www.dynatrace.com/support/help/dynatrace-api/environment-api/settings (schemaId: `builtin:process.built-in-process-monitoring-rule`)
+
+        ## Export Example Usage
+
+        - `terraform-provider-dynatrace -export BuiltinProcessMonitoring` downloads all existing built-in process monitoring rules
+
+        The full documentation of the export feature is available [here](https://dt-url.net/h203qmc).
+
+
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[_builtins.bool] aspnetcore: Rule id: 3 - Do monitor processes if ASP.NET Core application path exists
@@ -2805,7 +2821,21 @@ class BuiltinProcessMonitoring(pulumi.CustomResource):
                  args: Optional[BuiltinProcessMonitoringArgs] = None,
                  opts: Optional[pulumi.ResourceOptions] = None):
         """
-        Create a BuiltinProcessMonitoring resource with the given unique name, props, and options.
+        > This resource requires the API token scopes **Read settings** (`settings.read`) and **Write settings** (`settings.write`)
+
+        ## Dynatrace Documentation
+
+        - Process deep monitoring - https://www.dynatrace.com/support/help/platform-modules/infrastructure-monitoring/process-groups/configuration/pg-monitoring
+
+        - Settings API - https://www.dynatrace.com/support/help/dynatrace-api/environment-api/settings (schemaId: `builtin:process.built-in-process-monitoring-rule`)
+
+        ## Export Example Usage
+
+        - `terraform-provider-dynatrace -export BuiltinProcessMonitoring` downloads all existing built-in process monitoring rules
+
+        The full documentation of the export feature is available [here](https://dt-url.net/h203qmc).
+
+
         :param str resource_name: The name of the resource.
         :param BuiltinProcessMonitoringArgs args: The arguments to use to populate this resource's properties.
         :param pulumi.ResourceOptions opts: Options for the resource.

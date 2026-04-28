@@ -29,6 +29,7 @@ class EnvironmentArgs:
                  trial: Optional[pulumi.Input[_builtins.bool]] = None):
         """
         The set of arguments for constructing a Environment resource.
+
         :param pulumi.Input[_builtins.str] state: Indicates whether the environment is enabled or disabled. Possible values are `ENABLED` and `DISABLED`. The default value is ENABLED
         :param pulumi.Input['EnvironmentStorageArgs'] storage: Environment level storage usage and limit information
         :param pulumi.Input[_builtins.str] name: The display name of the environment
@@ -131,6 +132,7 @@ class _EnvironmentState:
                  trial: Optional[pulumi.Input[_builtins.bool]] = None):
         """
         Input properties used for looking up and filtering Environment resources.
+
         :param pulumi.Input[_builtins.str] name: The display name of the environment
         :param pulumi.Input['EnvironmentQuotasArgs'] quotas: Environment level consumption and quotas information
         :param pulumi.Input[_builtins.str] state: Indicates whether the environment is enabled or disabled. Possible values are `ENABLED` and `DISABLED`. The default value is ENABLED
@@ -246,6 +248,7 @@ class Environment(pulumi.CustomResource):
 
         - Cluster API v2 - Environments - https://www.dynatrace.com/support/help/shortlink/cluster-api#environments
 
+
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[_builtins.str] name: The display name of the environment
@@ -269,6 +272,7 @@ class Environment(pulumi.CustomResource):
         - Manage your monitoring environments - https://docs.dynatrace.com/managed/managed-cluster/operation/manage-your-monitoring-environments
 
         - Cluster API v2 - Environments - https://www.dynatrace.com/support/help/shortlink/cluster-api#environments
+
 
         :param str resource_name: The name of the resource.
         :param EnvironmentArgs args: The arguments to use to populate this resource's properties.

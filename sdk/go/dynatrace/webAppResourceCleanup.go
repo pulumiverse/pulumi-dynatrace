@@ -12,6 +12,19 @@ import (
 	"github.com/pulumiverse/pulumi-dynatrace/sdk/go/dynatrace/internal"
 )
 
+// > This resource requires the API token scopes **Read settings** (`settings.read`) and **Write settings** (`settings.write`)
+//
+// ## Dynatrace Documentation
+//
+// - Define URL cleanup rules - https://www.dynatrace.com/support/help/platform-modules/digital-experience/web-applications/how-to-use/waterfall-analysis#define-url-cleanup-rules
+//
+// - Settings API - https://www.dynatrace.com/support/help/dynatrace-api/environment-api/settings (schemaId: `builtin:rum.web.resource-cleanup-rules`)
+//
+// ## Export Example Usage
+//
+// - `terraform-provider-dynatrace -export WebAppResourceCleanup` downloads all existing resource URL cleanup rules configuration
+//
+// The full documentation of the export feature is available [here](https://dt-url.net/h203qmc).
 type WebAppResourceCleanup struct {
 	pulumi.CustomResourceState
 

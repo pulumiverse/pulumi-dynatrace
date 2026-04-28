@@ -31,6 +31,7 @@ class CustomServiceArgs:
                  unknowns: Optional[pulumi.Input[_builtins.str]] = None):
         """
         The set of arguments for constructing a CustomService resource.
+
         :param pulumi.Input[_builtins.bool] enabled: Custom service enabled/disabled
         :param pulumi.Input[_builtins.str] technology: Matcher applying to the file name (ENDS*WITH, EQUALS or STARTS*WITH). Default value is ENDS_WITH (if applicable)
         :param pulumi.Input[_builtins.str] name: The name of the custom service, displayed in the UI
@@ -165,6 +166,7 @@ class _CustomServiceState:
                  unknowns: Optional[pulumi.Input[_builtins.str]] = None):
         """
         Input properties used for looking up and filtering CustomService resources.
+
         :param pulumi.Input[_builtins.bool] enabled: Custom service enabled/disabled
         :param pulumi.Input[_builtins.str] name: The name of the custom service, displayed in the UI
         :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] process_groups: The list of process groups the custom service should belong to
@@ -304,7 +306,21 @@ class CustomService(pulumi.CustomResource):
                  unknowns: Optional[pulumi.Input[_builtins.str]] = None,
                  __props__=None):
         """
-        Create a CustomService resource with the given unique name, props, and options.
+        > This resource requires the API token scopes **Read configuration** (`ReadConfig`) and **Write configuration** (`WriteConfig`)
+
+        ## Dynatrace Documentation
+
+        - Define custom services - https://www.dynatrace.com/support/help/how-to-use-dynatrace/services/custom-services
+
+        - Custom services API - https://www.dynatrace.com/support/help/dynatrace-api/configuration-api/service-api/custom-services-api
+
+        ## Export Example Usage
+
+        - `terraform-provider-dynatrace -export CustomService` downloads all existing custom service configuration
+
+        The full documentation of the export feature is available [here](https://dt-url.net/h203qmc).
+
+
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[_builtins.bool] enabled: Custom service enabled/disabled
@@ -323,7 +339,21 @@ class CustomService(pulumi.CustomResource):
                  args: CustomServiceArgs,
                  opts: Optional[pulumi.ResourceOptions] = None):
         """
-        Create a CustomService resource with the given unique name, props, and options.
+        > This resource requires the API token scopes **Read configuration** (`ReadConfig`) and **Write configuration** (`WriteConfig`)
+
+        ## Dynatrace Documentation
+
+        - Define custom services - https://www.dynatrace.com/support/help/how-to-use-dynatrace/services/custom-services
+
+        - Custom services API - https://www.dynatrace.com/support/help/dynatrace-api/configuration-api/service-api/custom-services-api
+
+        ## Export Example Usage
+
+        - `terraform-provider-dynatrace -export CustomService` downloads all existing custom service configuration
+
+        The full documentation of the export feature is available [here](https://dt-url.net/h203qmc).
+
+
         :param str resource_name: The name of the resource.
         :param CustomServiceArgs args: The arguments to use to populate this resource's properties.
         :param pulumi.ResourceOptions opts: Options for the resource.

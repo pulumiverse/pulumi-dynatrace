@@ -27,6 +27,7 @@ class LogEventsArgs:
                  summary: pulumi.Input[_builtins.str]):
         """
         The set of arguments for constructing a LogEvents resource.
+
         :param pulumi.Input[_builtins.bool] enabled: This setting is enabled (`true`) or disabled (`false`)
         :param pulumi.Input['LogEventsEventTemplateArgs'] event_template: Event template
         :param pulumi.Input[_builtins.str] query: Log query
@@ -95,6 +96,7 @@ class _LogEventsState:
                  summary: Optional[pulumi.Input[_builtins.str]] = None):
         """
         Input properties used for looking up and filtering LogEvents resources.
+
         :param pulumi.Input[_builtins.bool] enabled: This setting is enabled (`true`) or disabled (`false`)
         :param pulumi.Input['LogEventsEventTemplateArgs'] event_template: Event template
         :param pulumi.Input[_builtins.str] query: Log query
@@ -170,7 +172,21 @@ class LogEvents(pulumi.CustomResource):
                  summary: Optional[pulumi.Input[_builtins.str]] = None,
                  __props__=None):
         """
-        Create a LogEvents resource with the given unique name, props, and options.
+        > This resource requires the API token scopes **Read settings** (`settings.read`) and **Write settings** (`settings.write`)
+
+        ## Dynatrace Documentation
+
+        - Log events - https://www.dynatrace.com/support/help/observe-and-explore/logs/log-monitoring/analyze-log-data/log-events
+
+        - Settings API - https://www.dynatrace.com/support/help/dynatrace-api/environment-api/settings (schemaId: `builtin:logmonitoring.log-events`)
+
+        ## Export Example Usage
+
+        - `terraform-provider-dynatrace -export LogEvents` downloads all existing log events configuration
+
+        The full documentation of the export feature is available [here](https://dt-url.net/h203qmc).
+
+
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[_builtins.bool] enabled: This setting is enabled (`true`) or disabled (`false`)
@@ -185,7 +201,21 @@ class LogEvents(pulumi.CustomResource):
                  args: LogEventsArgs,
                  opts: Optional[pulumi.ResourceOptions] = None):
         """
-        Create a LogEvents resource with the given unique name, props, and options.
+        > This resource requires the API token scopes **Read settings** (`settings.read`) and **Write settings** (`settings.write`)
+
+        ## Dynatrace Documentation
+
+        - Log events - https://www.dynatrace.com/support/help/observe-and-explore/logs/log-monitoring/analyze-log-data/log-events
+
+        - Settings API - https://www.dynatrace.com/support/help/dynatrace-api/environment-api/settings (schemaId: `builtin:logmonitoring.log-events`)
+
+        ## Export Example Usage
+
+        - `terraform-provider-dynatrace -export LogEvents` downloads all existing log events configuration
+
+        The full documentation of the export feature is available [here](https://dt-url.net/h203qmc).
+
+
         :param str resource_name: The name of the resource.
         :param LogEventsArgs args: The arguments to use to populate this resource's properties.
         :param pulumi.ResourceOptions opts: Options for the resource.

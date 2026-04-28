@@ -4,6 +4,21 @@
 import * as pulumi from "@pulumi/pulumi";
 import * as utilities from "./utilities";
 
+/**
+ * > This resource requires the API token scopes **Read settings** (`settings.read`) and **Write settings** (`settings.write`)
+ *
+ * ## Dynatrace Documentation
+ *
+ * - Configure beacon origin allowlist for web applications - https://www.dynatrace.com/support/help/platform-modules/digital-experience/web-applications/setup-and-configuration/additional-configuration/configure-beacon-domain-allowlist
+ *
+ * - Settings API - https://www.dynatrace.com/support/help/dynatrace-api/environment-api/settings (schemaId: `builtin:rum.web.beacon-domain-origins`)
+ *
+ * ## Export Example Usage
+ *
+ * - `terraform-provider-dynatrace -export dynatraceWebBeaconOrigins` downloads all existing beacon origin allowlist configuration
+ *
+ * The full documentation of the export feature is available [here](https://dt-url.net/h203qmc).
+ */
 export class WebAppBeaconOrigins extends pulumi.CustomResource {
     /**
      * Get an existing WebAppBeaconOrigins resource's state with the given name, ID, and optional extra

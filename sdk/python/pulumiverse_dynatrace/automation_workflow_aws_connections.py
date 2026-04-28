@@ -26,6 +26,7 @@ class AutomationWorkflowAwsConnectionsArgs:
                  web_identity: Optional[pulumi.Input['AutomationWorkflowAwsConnectionsWebIdentityArgs']] = None):
         """
         The set of arguments for constructing a AutomationWorkflowAwsConnections resource.
+
         :param pulumi.Input[_builtins.str] type: Possible Values: `WebIdentity`
         :param pulumi.Input[_builtins.str] name: Name
         :param pulumi.Input['AutomationWorkflowAwsConnectionsWebIdentityArgs'] web_identity: no documentation available
@@ -81,6 +82,7 @@ class _AutomationWorkflowAwsConnectionsState:
                  web_identity: Optional[pulumi.Input['AutomationWorkflowAwsConnectionsWebIdentityArgs']] = None):
         """
         Input properties used for looking up and filtering AutomationWorkflowAwsConnections resources.
+
         :param pulumi.Input[_builtins.str] name: Name
         :param pulumi.Input[_builtins.str] type: Possible Values: `WebIdentity`
         :param pulumi.Input['AutomationWorkflowAwsConnectionsWebIdentityArgs'] web_identity: no documentation available
@@ -140,7 +142,42 @@ class AutomationWorkflowAwsConnections(pulumi.CustomResource):
                  web_identity: Optional[pulumi.Input[Union['AutomationWorkflowAwsConnectionsWebIdentityArgs', 'AutomationWorkflowAwsConnectionsWebIdentityArgsDict']]] = None,
                  __props__=None):
         """
-        Create a AutomationWorkflowAwsConnections resource with the given unique name, props, and options.
+        > **Warning** This resource is deprecated and will be removed in a future release.
+        We recommend using the `AwsConnection` and `dynatrace_aws_role_arn` resources to manage AWS connections.
+
+        > This resource requires the API token scopes **Read settings** (`settings.read`) and **Write settings** (`settings.write`)
+
+        > This resource requires the OAuth scopes **Read settings** (`settings:objects:read`) and **Write settings** (`settings:objects:write`)
+
+        ## Limitations
+
+        > **Warning** If a resource is created using an API token or without setting `DYNATRACE_HTTP_OAUTH_PREFERENCE=true` (when both are used), the settings object's owner will remain empty.
+
+        An empty owner implies:
+        - The settings object becomes public, allowing other users with settings permissions to read and modify it.
+        - Changing the settings object's permissions will have no effect, meaning the `SettingsPermissions` resource can't alter its access.
+
+        When a settings object is created using platform credentials:
+        - The owner is set to the owner of the OAuth client or platform token.
+        - By default, the settings object is private; only the owner can read and modify it.
+        - Access modifiers can be managed using the `SettingsPermissions` resource.
+
+        We recommend using platform credentials to ensure a correct setup.
+        In case an API token is needed, we recommend setting `DYNATRACE_HTTP_OAUTH_PREFERENCE=true`.
+
+        ## Dynatrace Documentation
+
+        - AWS for Workflows - https://docs.dynatrace.com/docs/platform-modules/automations/workflows/actions/aws
+
+        - Settings API - https://www.dynatrace.com/support/help/dynatrace-api/environment-api/settings (schemaId: `builtin:hyperscaler-authentication.aws.connection`)
+
+        ## Export Example Usage
+
+        - `terraform-provider-dynatrace -export AutomationWorkflowAwsConnections` downloads existing AWS connections for Workflows configuration
+
+        The full documentation of the export feature is available [here](https://dt-url.net/h203qmc).
+
+
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[_builtins.str] name: Name
@@ -154,7 +191,42 @@ class AutomationWorkflowAwsConnections(pulumi.CustomResource):
                  args: AutomationWorkflowAwsConnectionsArgs,
                  opts: Optional[pulumi.ResourceOptions] = None):
         """
-        Create a AutomationWorkflowAwsConnections resource with the given unique name, props, and options.
+        > **Warning** This resource is deprecated and will be removed in a future release.
+        We recommend using the `AwsConnection` and `dynatrace_aws_role_arn` resources to manage AWS connections.
+
+        > This resource requires the API token scopes **Read settings** (`settings.read`) and **Write settings** (`settings.write`)
+
+        > This resource requires the OAuth scopes **Read settings** (`settings:objects:read`) and **Write settings** (`settings:objects:write`)
+
+        ## Limitations
+
+        > **Warning** If a resource is created using an API token or without setting `DYNATRACE_HTTP_OAUTH_PREFERENCE=true` (when both are used), the settings object's owner will remain empty.
+
+        An empty owner implies:
+        - The settings object becomes public, allowing other users with settings permissions to read and modify it.
+        - Changing the settings object's permissions will have no effect, meaning the `SettingsPermissions` resource can't alter its access.
+
+        When a settings object is created using platform credentials:
+        - The owner is set to the owner of the OAuth client or platform token.
+        - By default, the settings object is private; only the owner can read and modify it.
+        - Access modifiers can be managed using the `SettingsPermissions` resource.
+
+        We recommend using platform credentials to ensure a correct setup.
+        In case an API token is needed, we recommend setting `DYNATRACE_HTTP_OAUTH_PREFERENCE=true`.
+
+        ## Dynatrace Documentation
+
+        - AWS for Workflows - https://docs.dynatrace.com/docs/platform-modules/automations/workflows/actions/aws
+
+        - Settings API - https://www.dynatrace.com/support/help/dynatrace-api/environment-api/settings (schemaId: `builtin:hyperscaler-authentication.aws.connection`)
+
+        ## Export Example Usage
+
+        - `terraform-provider-dynatrace -export AutomationWorkflowAwsConnections` downloads existing AWS connections for Workflows configuration
+
+        The full documentation of the export feature is available [here](https://dt-url.net/h203qmc).
+
+
         :param str resource_name: The name of the resource.
         :param AutomationWorkflowAwsConnectionsArgs args: The arguments to use to populate this resource's properties.
         :param pulumi.ResourceOptions opts: Options for the resource.

@@ -22,6 +22,7 @@ class SyntheticAvailabilityArgs:
                  exclude_maintenance_windows: pulumi.Input[_builtins.bool]):
         """
         The set of arguments for constructing a SyntheticAvailability resource.
+
         :param pulumi.Input[_builtins.bool] exclude_maintenance_windows: Exclude periods with maintenance windows from availability calculation
         """
         pulumi.set(__self__, "exclude_maintenance_windows", exclude_maintenance_windows)
@@ -45,6 +46,7 @@ class _SyntheticAvailabilityState:
                  exclude_maintenance_windows: Optional[pulumi.Input[_builtins.bool]] = None):
         """
         Input properties used for looking up and filtering SyntheticAvailability resources.
+
         :param pulumi.Input[_builtins.bool] exclude_maintenance_windows: Exclude periods with maintenance windows from availability calculation
         """
         if exclude_maintenance_windows is not None:
@@ -72,7 +74,19 @@ class SyntheticAvailability(pulumi.CustomResource):
                  exclude_maintenance_windows: Optional[pulumi.Input[_builtins.bool]] = None,
                  __props__=None):
         """
-        Create a SyntheticAvailability resource with the given unique name, props, and options.
+        > This resource requires the API token scopes **Read settings** (`settings.read`) and **Write settings** (`settings.write`)
+
+        ## Dynatrace Documentation
+
+        - Settings API - https://www.dynatrace.com/support/help/dynatrace-api/environment-api/settings (schemaId: `builtin:synthetic.synthetic-availability-settings`)
+
+        ## Export Example Usage
+
+        - `terraform-provider-dynatrace -export SyntheticAvailability` downloads the existing settings for Usability Analytics
+
+        The full documentation of the export feature is available [here](https://dt-url.net/h203qmc).
+
+
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[_builtins.bool] exclude_maintenance_windows: Exclude periods with maintenance windows from availability calculation
@@ -84,7 +98,19 @@ class SyntheticAvailability(pulumi.CustomResource):
                  args: SyntheticAvailabilityArgs,
                  opts: Optional[pulumi.ResourceOptions] = None):
         """
-        Create a SyntheticAvailability resource with the given unique name, props, and options.
+        > This resource requires the API token scopes **Read settings** (`settings.read`) and **Write settings** (`settings.write`)
+
+        ## Dynatrace Documentation
+
+        - Settings API - https://www.dynatrace.com/support/help/dynatrace-api/environment-api/settings (schemaId: `builtin:synthetic.synthetic-availability-settings`)
+
+        ## Export Example Usage
+
+        - `terraform-provider-dynatrace -export SyntheticAvailability` downloads the existing settings for Usability Analytics
+
+        The full documentation of the export feature is available [here](https://dt-url.net/h203qmc).
+
+
         :param str resource_name: The name of the resource.
         :param SyntheticAvailabilityArgs args: The arguments to use to populate this resource's properties.
         :param pulumi.ResourceOptions opts: Options for the resource.

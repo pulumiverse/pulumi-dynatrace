@@ -25,6 +25,7 @@ class MobileAppCrashRateArgs:
                  application_id: Optional[pulumi.Input[_builtins.str]] = None):
         """
         The set of arguments for constructing a MobileAppCrashRate resource.
+
         :param pulumi.Input['MobileAppCrashRateCrashRateIncreaseArgs'] crash_rate_increase: Crash rate increase
         :param pulumi.Input[_builtins.str] application_id: The scope of this settings. If the settings should cover the whole environment, just don't specify any scope.
         """
@@ -64,6 +65,7 @@ class _MobileAppCrashRateState:
                  crash_rate_increase: Optional[pulumi.Input['MobileAppCrashRateCrashRateIncreaseArgs']] = None):
         """
         Input properties used for looking up and filtering MobileAppCrashRate resources.
+
         :param pulumi.Input[_builtins.str] application_id: The scope of this settings. If the settings should cover the whole environment, just don't specify any scope.
         :param pulumi.Input['MobileAppCrashRateCrashRateIncreaseArgs'] crash_rate_increase: Crash rate increase
         """
@@ -107,7 +109,21 @@ class MobileAppCrashRate(pulumi.CustomResource):
                  crash_rate_increase: Optional[pulumi.Input[Union['MobileAppCrashRateCrashRateIncreaseArgs', 'MobileAppCrashRateCrashRateIncreaseArgsDict']]] = None,
                  __props__=None):
         """
-        Create a MobileAppCrashRate resource with the given unique name, props, and options.
+        > This resource requires the API token scopes **Read settings** (`settings.read`) and **Write settings** (`settings.write`)
+
+        ## Dynatrace Documentation
+
+        - Adjust the sensitivity of anomaly detection for applications - https://www.dynatrace.com/support/help/how-to-use-dynatrace/problem-detection-and-analysis/problem-detection/adjust-sensitivity-anomaly-detection/adjust-sensitivity-applications
+
+        - Settings API - https://www.dynatrace.com/support/help/dynatrace-api/environment-api/settings (schemaId: `builtin:anomaly-detection.rum-mobile-crash-rate-increase`)
+
+        ## Export Example Usage
+
+        - `terraform-provider-dynatrace -export MobileAppCrashRate` downloads all existing mobile application crash rate increase configuration
+
+        The full documentation of the export feature is available [here](https://dt-url.net/h203qmc).
+
+
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[_builtins.str] application_id: The scope of this settings. If the settings should cover the whole environment, just don't specify any scope.
@@ -120,7 +136,21 @@ class MobileAppCrashRate(pulumi.CustomResource):
                  args: MobileAppCrashRateArgs,
                  opts: Optional[pulumi.ResourceOptions] = None):
         """
-        Create a MobileAppCrashRate resource with the given unique name, props, and options.
+        > This resource requires the API token scopes **Read settings** (`settings.read`) and **Write settings** (`settings.write`)
+
+        ## Dynatrace Documentation
+
+        - Adjust the sensitivity of anomaly detection for applications - https://www.dynatrace.com/support/help/how-to-use-dynatrace/problem-detection-and-analysis/problem-detection/adjust-sensitivity-anomaly-detection/adjust-sensitivity-applications
+
+        - Settings API - https://www.dynatrace.com/support/help/dynatrace-api/environment-api/settings (schemaId: `builtin:anomaly-detection.rum-mobile-crash-rate-increase`)
+
+        ## Export Example Usage
+
+        - `terraform-provider-dynatrace -export MobileAppCrashRate` downloads all existing mobile application crash rate increase configuration
+
+        The full documentation of the export feature is available [here](https://dt-url.net/h203qmc).
+
+
         :param str resource_name: The name of the resource.
         :param MobileAppCrashRateArgs args: The arguments to use to populate this resource's properties.
         :param pulumi.ResourceOptions opts: Options for the resource.

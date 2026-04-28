@@ -22,6 +22,7 @@ class WebAppJavascriptVersionArgs:
                  custom_javascript_version: Optional[pulumi.Input[_builtins.str]] = None):
         """
         The set of arguments for constructing a WebAppJavascriptVersion resource.
+
         :param pulumi.Input[_builtins.str] custom_javascript_version: Choose custom version
         """
         if custom_javascript_version is not None:
@@ -46,6 +47,7 @@ class _WebAppJavascriptVersionState:
                  custom_javascript_version: Optional[pulumi.Input[_builtins.str]] = None):
         """
         Input properties used for looking up and filtering WebAppJavascriptVersion resources.
+
         :param pulumi.Input[_builtins.str] custom_javascript_version: Choose custom version
         """
         if custom_javascript_version is not None:
@@ -73,7 +75,21 @@ class WebAppJavascriptVersion(pulumi.CustomResource):
                  custom_javascript_version: Optional[pulumi.Input[_builtins.str]] = None,
                  __props__=None):
         """
-        Create a WebAppJavascriptVersion resource with the given unique name, props, and options.
+        > This resource requires the API token scopes **Read settings** (`settings.read`) and **Write settings** (`settings.write`)
+
+        ## Dynatrace Documentation
+
+        - Web applications - https://www.dynatrace.com/support/help/platform-modules/digital-experience/web-applications
+
+        - Settings API - https://www.dynatrace.com/support/help/dynatrace-api/environment-api/settings (schemaId: `builtin:rum.web.custom-rum-javascript-version`)
+
+        ## Export Example Usage
+
+        - `terraform-provider-dynatrace -export dynatrace_web_javascript_version` downloads existing Javascript version configuration
+
+        The full documentation of the export feature is available [here](https://dt-url.net/h203qmc).
+
+
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[_builtins.str] custom_javascript_version: Choose custom version
@@ -85,7 +101,21 @@ class WebAppJavascriptVersion(pulumi.CustomResource):
                  args: Optional[WebAppJavascriptVersionArgs] = None,
                  opts: Optional[pulumi.ResourceOptions] = None):
         """
-        Create a WebAppJavascriptVersion resource with the given unique name, props, and options.
+        > This resource requires the API token scopes **Read settings** (`settings.read`) and **Write settings** (`settings.write`)
+
+        ## Dynatrace Documentation
+
+        - Web applications - https://www.dynatrace.com/support/help/platform-modules/digital-experience/web-applications
+
+        - Settings API - https://www.dynatrace.com/support/help/dynatrace-api/environment-api/settings (schemaId: `builtin:rum.web.custom-rum-javascript-version`)
+
+        ## Export Example Usage
+
+        - `terraform-provider-dynatrace -export dynatrace_web_javascript_version` downloads existing Javascript version configuration
+
+        The full documentation of the export feature is available [here](https://dt-url.net/h203qmc).
+
+
         :param str resource_name: The name of the resource.
         :param WebAppJavascriptVersionArgs args: The arguments to use to populate this resource's properties.
         :param pulumi.ResourceOptions opts: Options for the resource.

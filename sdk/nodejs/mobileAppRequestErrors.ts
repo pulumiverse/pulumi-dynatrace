@@ -6,6 +6,23 @@ import * as inputs from "./types/input";
 import * as outputs from "./types/output";
 import * as utilities from "./utilities";
 
+/**
+ * !> This resource may not have full coverage of the required fields, please use dynatrace.ApplicationErrorRules instead.
+ *
+ * > This resource requires the API token scopes **Read settings** (`settings.read`) and **Write settings** (`settings.write`)
+ *
+ * ## Dynatrace Documentation
+ *
+ * - Ignore web request errors for mobile applications - https://www.dynatrace.com/support/help/platform-modules/digital-experience/mobile-applications/setup-and-configuration/additional-configuration/web-request-errors-mobile
+ *
+ * - Settings API - https://www.dynatrace.com/support/help/dynatrace-api/environment-api/settings (schemaId: `builtin:rum.mobile.request-errors`)
+ *
+ * ## Export Example Usage
+ *
+ * - `terraform-provider-dynatrace -export dynatrace.MobileAppRequestErrors` downloads all existing mobile application request error configuration
+ *
+ * The full documentation of the export feature is available [here](https://dt-url.net/h203qmc).
+ */
 export class MobileAppRequestErrors extends pulumi.CustomResource {
     /**
      * Get an existing MobileAppRequestErrors resource's state with the given name, ID, and optional extra

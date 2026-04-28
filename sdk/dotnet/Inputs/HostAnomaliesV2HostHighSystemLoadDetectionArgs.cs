@@ -20,7 +20,7 @@ namespace Pulumiverse.Dynatrace.Inputs
         public Input<Inputs.HostAnomaliesV2HostHighSystemLoadDetectionCustomThresholdsArgs>? CustomThresholds { get; set; }
 
         /// <summary>
-        /// Possible Values: `Auto`, `Custom`
+        /// Detection mode for High System Load. Possible Values: `Auto`, `Custom`
         /// </summary>
         [Input("detectionMode")]
         public Input<string>? DetectionMode { get; set; }

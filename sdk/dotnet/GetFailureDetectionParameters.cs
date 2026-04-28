@@ -25,7 +25,7 @@ namespace Pulumiverse.Dynatrace
         /// using System.Collections.Generic;
         /// using System.Linq;
         /// using Pulumi;
-        /// using Dynatrace = Pulumi.Dynatrace;
+        /// using Dynatrace = Pulumiverse.Dynatrace;
         /// 
         /// return await Deployment.RunAsync(() =&gt; 
         /// {
@@ -57,7 +57,7 @@ namespace Pulumiverse.Dynatrace
         /// using System.Collections.Generic;
         /// using System.Linq;
         /// using Pulumi;
-        /// using Dynatrace = Pulumi.Dynatrace;
+        /// using Dynatrace = Pulumiverse.Dynatrace;
         /// 
         /// return await Deployment.RunAsync(() =&gt; 
         /// {
@@ -89,7 +89,7 @@ namespace Pulumiverse.Dynatrace
         /// using System.Collections.Generic;
         /// using System.Linq;
         /// using Pulumi;
-        /// using Dynatrace = Pulumi.Dynatrace;
+        /// using Dynatrace = Pulumiverse.Dynatrace;
         /// 
         /// return await Deployment.RunAsync(() =&gt; 
         /// {

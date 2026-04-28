@@ -12,6 +12,44 @@ import (
 	"github.com/pulumiverse/pulumi-dynatrace/sdk/go/dynatrace/internal"
 )
 
+// !> **HTTP DELETE method not available** Terraform will no longer manage this resource on `destroy` but the configuration will still be present on the Dynatrace cluster.
+//
+// > This resource requires the cluster API token scope **Service Provider API** (`ServiceProviderAPI`)
+//
+// ## Dynatrace Documentation
+//
+// - Cluster remote access - https://www.dynatrace.com/support/help/managed-cluster/configuration/cluster-remote-access
+//
+// - Cluster API v2 - https://www.dynatrace.com/support/help/managed-cluster/cluster-api/cluster-api-v2
+//
+// ## Resource Example Usage
+//
+// ```go
+// package main
+//
+// import (
+//
+//	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//	"github.com/pulumiverse/pulumi-dynatrace/sdk/go/dynatrace"
+//
+// )
+//
+//	func main() {
+//		pulumi.Run(func(ctx *pulumi.Context) error {
+//			_, err := dynatrace.NewManagedRemoteAccess(ctx, "Test", &dynatrace.ManagedRemoteAccessArgs{
+//				UserId:        pulumi.String("example@dynatrace.com"),
+//				Reason:        pulumi.String("Example"),
+//				RequestedDays: pulumi.Int(1),
+//				Role:          pulumi.String("devops-admin"),
+//			})
+//			if err != nil {
+//				return err
+//			}
+//			return nil
+//		})
+//	}
+//
+// ```
 type ManagedRemoteAccess struct {
 	pulumi.CustomResourceState
 

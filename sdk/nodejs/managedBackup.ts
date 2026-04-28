@@ -4,6 +4,36 @@
 import * as pulumi from "@pulumi/pulumi";
 import * as utilities from "./utilities";
 
+/**
+ * !> **HTTP DELETE method not available** Terraform will no longer manage this resource on `destroy` but the configuration will still be present on the Dynatrace cluster.
+ *
+ * > This resource requires the cluster API token scope **Service Provider API** (`ServiceProviderAPI`)
+ *
+ * ## Dynatrace Documentation
+ *
+ * - Back up and restore a cluster - https://www.dynatrace.com/support/help/managed-cluster/operation/back-up-and-restore-a-cluster
+ *
+ * - Cluster API v1 - https://www.dynatrace.com/support/help/managed-cluster/cluster-api/cluster-api-v1
+ *
+ * ## Resource Example Usage
+ *
+ * ```typescript
+ * import * as pulumi from "@pulumi/pulumi";
+ * import * as dynatrace from "@pulumiverse/dynatrace";
+ *
+ * const test = new dynatrace.ManagedBackup("Test", {
+ *     enabled: true,
+ *     datacenter: "",
+ *     includeRumData: true,
+ *     includeLm20Data: true,
+ *     includeTsMetricData: true,
+ *     bandwidthLimitMbits: 240,
+ *     maxEsSnapshotsToClean: 25,
+ *     cassandraScheduledTime: 22,
+ *     pauseBackups: false,
+ * });
+ * ```
+ */
 export class ManagedBackup extends pulumi.CustomResource {
     /**
      * Get an existing ManagedBackup resource's state with the given name, ID, and optional extra

@@ -33,6 +33,7 @@ class NetworkMonitorArgs:
                  tags: Optional[pulumi.Input[Sequence[pulumi.Input['NetworkMonitorTagArgs']]]] = None):
         """
         The set of arguments for constructing a NetworkMonitor resource.
+
         :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] locations: The locations to which the monitor is assigned
         :param pulumi.Input[Sequence[pulumi.Input['NetworkMonitorStepArgs']]] steps: The steps of the monitor
         :param pulumi.Input[_builtins.str] type: Type of the monitor, possible values: `MULTI_PROTOCOL`
@@ -198,6 +199,7 @@ class _NetworkMonitorState:
                  type: Optional[pulumi.Input[_builtins.str]] = None):
         """
         Input properties used for looking up and filtering NetworkMonitor resources.
+
         :param pulumi.Input[_builtins.str] description: Description of the monitor
         :param pulumi.Input[_builtins.bool] enabled: If true, the monitor is enabled
         :param pulumi.Input[_builtins.int] frequency_min: Frequency of the monitor, in minutes
@@ -369,7 +371,95 @@ class NetworkMonitor(pulumi.CustomResource):
                  type: Optional[pulumi.Input[_builtins.str]] = None,
                  __props__=None):
         """
-        Create a NetworkMonitor resource with the given unique name, props, and options.
+        > This resource requires the API token scopes **Read settings** (`settings.read`) and **Write settings** (`settings.write`)
+
+        ## Dynatrace Documentation
+
+        - Network availability monitors - https://docs.dynatrace.com/docs/platform-modules/digital-experience/synthetic-monitoring/general-information/network-availability-monitors
+
+        ## Export Example Usage
+
+        - `terraform-provider-dynatrace -export NetworkMonitor` downloads all existing network monitor configuration
+
+        The full documentation of the export feature is available [here](https://dt-url.net/h203qmc).
+
+        ## Resource Example Usage
+
+        ```python
+        import pulumi
+        import pulumiverse_dynatrace as dynatrace
+
+        d_ns_test = dynatrace.NetworkMonitor("DNS_Test",
+            name="DNS Test",
+            description="This is an example DNS test",
+            type="MULTI_PROTOCOL",
+            enabled=False,
+            frequency_min=15,
+            locations=["SYNTHETIC_LOCATION-39F97465BE7BF644"],
+            outage_handling={
+                "global_consecutive_outage_count_threshold": 1,
+                "global_outages": True,
+            },
+            performance_thresholds={
+                "enabled": True,
+                "thresholds": {
+                    "thresholds": [{
+                        "aggregation": "AVG",
+                        "dealerting_samples": 5,
+                        "samples": 5,
+                        "step_index": 0,
+                        "threshold": 100,
+                        "violating_samples": 3,
+                    }],
+                },
+            },
+            steps=[{
+                "steps": [{
+                    "name": "DNS Test",
+                    "request_type": "DNS",
+                    "target_lists": [
+                        "google.com",
+                        "yahoo.com",
+                    ],
+                    "properties": {
+                        "DNS_RECORD_TYPES": "A",
+                        "EXECUTION_TIMEOUT": "PT2S",
+                    },
+                    "constraints": [{
+                        "constraints": [{
+                            "type": "SUCCESS_RATE_PERCENT",
+                            "properties": {
+                                "value": "90",
+                                "operator": ">=",
+                            },
+                        }],
+                    }],
+                    "request_configurations": [{
+                        "request_configurations": [{
+                            "constraints": [{
+                                "constraints": [{
+                                    "type": "DNS_STATUS_CODE",
+                                    "properties": {
+                                        "operator": "=",
+                                        "statusCode": "0",
+                                    },
+                                }],
+                            }],
+                        }],
+                    }],
+                }],
+            }],
+            tags=[{
+                "tags": [{
+                    "context": "CONTEXTLESS",
+                    "key": "Key1",
+                    "source": "USER",
+                    "value": "Value1",
+                }],
+            }])
+        ```
+
+
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[_builtins.str] description: Description of the monitor
@@ -390,7 +480,95 @@ class NetworkMonitor(pulumi.CustomResource):
                  args: NetworkMonitorArgs,
                  opts: Optional[pulumi.ResourceOptions] = None):
         """
-        Create a NetworkMonitor resource with the given unique name, props, and options.
+        > This resource requires the API token scopes **Read settings** (`settings.read`) and **Write settings** (`settings.write`)
+
+        ## Dynatrace Documentation
+
+        - Network availability monitors - https://docs.dynatrace.com/docs/platform-modules/digital-experience/synthetic-monitoring/general-information/network-availability-monitors
+
+        ## Export Example Usage
+
+        - `terraform-provider-dynatrace -export NetworkMonitor` downloads all existing network monitor configuration
+
+        The full documentation of the export feature is available [here](https://dt-url.net/h203qmc).
+
+        ## Resource Example Usage
+
+        ```python
+        import pulumi
+        import pulumiverse_dynatrace as dynatrace
+
+        d_ns_test = dynatrace.NetworkMonitor("DNS_Test",
+            name="DNS Test",
+            description="This is an example DNS test",
+            type="MULTI_PROTOCOL",
+            enabled=False,
+            frequency_min=15,
+            locations=["SYNTHETIC_LOCATION-39F97465BE7BF644"],
+            outage_handling={
+                "global_consecutive_outage_count_threshold": 1,
+                "global_outages": True,
+            },
+            performance_thresholds={
+                "enabled": True,
+                "thresholds": {
+                    "thresholds": [{
+                        "aggregation": "AVG",
+                        "dealerting_samples": 5,
+                        "samples": 5,
+                        "step_index": 0,
+                        "threshold": 100,
+                        "violating_samples": 3,
+                    }],
+                },
+            },
+            steps=[{
+                "steps": [{
+                    "name": "DNS Test",
+                    "request_type": "DNS",
+                    "target_lists": [
+                        "google.com",
+                        "yahoo.com",
+                    ],
+                    "properties": {
+                        "DNS_RECORD_TYPES": "A",
+                        "EXECUTION_TIMEOUT": "PT2S",
+                    },
+                    "constraints": [{
+                        "constraints": [{
+                            "type": "SUCCESS_RATE_PERCENT",
+                            "properties": {
+                                "value": "90",
+                                "operator": ">=",
+                            },
+                        }],
+                    }],
+                    "request_configurations": [{
+                        "request_configurations": [{
+                            "constraints": [{
+                                "constraints": [{
+                                    "type": "DNS_STATUS_CODE",
+                                    "properties": {
+                                        "operator": "=",
+                                        "statusCode": "0",
+                                    },
+                                }],
+                            }],
+                        }],
+                    }],
+                }],
+            }],
+            tags=[{
+                "tags": [{
+                    "context": "CONTEXTLESS",
+                    "key": "Key1",
+                    "source": "USER",
+                    "value": "Value1",
+                }],
+            }])
+        ```
+
+
         :param str resource_name: The name of the resource.
         :param NetworkMonitorArgs args: The arguments to use to populate this resource's properties.
         :param pulumi.ResourceOptions opts: Options for the resource.

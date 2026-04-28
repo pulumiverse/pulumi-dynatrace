@@ -23,6 +23,7 @@ class ConnectivityAlertsArgs:
                  process_group_id: pulumi.Input[_builtins.str]):
         """
         The set of arguments for constructing a ConnectivityAlerts resource.
+
         :param pulumi.Input[_builtins.bool] connectivity_alerts: TCP connectivity problems
         :param pulumi.Input[_builtins.str] process_group_id: The scope of this settings
         """
@@ -61,6 +62,7 @@ class _ConnectivityAlertsState:
                  process_group_id: Optional[pulumi.Input[_builtins.str]] = None):
         """
         Input properties used for looking up and filtering ConnectivityAlerts resources.
+
         :param pulumi.Input[_builtins.bool] connectivity_alerts: TCP connectivity problems
         :param pulumi.Input[_builtins.str] process_group_id: The scope of this settings
         """
@@ -104,7 +106,32 @@ class ConnectivityAlerts(pulumi.CustomResource):
                  process_group_id: Optional[pulumi.Input[_builtins.str]] = None,
                  __props__=None):
         """
-        Create a ConnectivityAlerts resource with the given unique name, props, and options.
+        > This resource requires the API token scopes **Read settings** (`settings.read`) and **Write settings** (`settings.write`)
+
+        ## Dynatrace Documentation
+
+        - Process Groups - https://www.dynatrace.com/support/help/how-to-use-dynatrace/process-groups
+
+        - Settings API - https://www.dynatrace.com/support/help/dynatrace-api/environment-api/settings (schemaId: `builtin:alerting.connectivity-alerts`)
+
+        ## Export Example Usage
+
+        - `terraform-provider-dynatrace -export ConnectivityAlerts` downloads all existing process group connectivity alerts
+
+        The full documentation of the export feature is available [here](https://dt-url.net/h203qmc).
+
+        ## Resource Example Usage
+
+        ```python
+        import pulumi
+        import pulumiverse_dynatrace as dynatrace
+
+        proces_s__grou_p_1234567890000000 = dynatrace.ConnectivityAlerts("PROCESS_GROUP-1234567890000000",
+            connectivity_alerts=False,
+            process_group_id="PROCESS_GROUP-1234567890000000")
+        ```
+
+
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[_builtins.bool] connectivity_alerts: TCP connectivity problems
@@ -117,7 +144,32 @@ class ConnectivityAlerts(pulumi.CustomResource):
                  args: ConnectivityAlertsArgs,
                  opts: Optional[pulumi.ResourceOptions] = None):
         """
-        Create a ConnectivityAlerts resource with the given unique name, props, and options.
+        > This resource requires the API token scopes **Read settings** (`settings.read`) and **Write settings** (`settings.write`)
+
+        ## Dynatrace Documentation
+
+        - Process Groups - https://www.dynatrace.com/support/help/how-to-use-dynatrace/process-groups
+
+        - Settings API - https://www.dynatrace.com/support/help/dynatrace-api/environment-api/settings (schemaId: `builtin:alerting.connectivity-alerts`)
+
+        ## Export Example Usage
+
+        - `terraform-provider-dynatrace -export ConnectivityAlerts` downloads all existing process group connectivity alerts
+
+        The full documentation of the export feature is available [here](https://dt-url.net/h203qmc).
+
+        ## Resource Example Usage
+
+        ```python
+        import pulumi
+        import pulumiverse_dynatrace as dynatrace
+
+        proces_s__grou_p_1234567890000000 = dynatrace.ConnectivityAlerts("PROCESS_GROUP-1234567890000000",
+            connectivity_alerts=False,
+            process_group_id="PROCESS_GROUP-1234567890000000")
+        ```
+
+
         :param str resource_name: The name of the resource.
         :param ConnectivityAlertsArgs args: The arguments to use to populate this resource's properties.
         :param pulumi.ResourceOptions opts: Options for the resource.

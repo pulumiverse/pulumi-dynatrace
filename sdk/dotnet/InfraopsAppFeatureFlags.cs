@@ -10,6 +10,23 @@ using Pulumi;
 
 namespace Pulumiverse.Dynatrace
 {
+    /// <summary>
+    /// &gt; The infrastructure and operations app feature flag configuration is only to be configured with direction by Dynatrace ONE
+    /// 
+    /// &gt; This resource requires the API token scopes **Read settings** (`settings.read`) and **Write settings** (`settings.write`)
+    /// 
+    /// ## Dynatrace Documentation
+    /// 
+    /// - Infrastructure &amp; Operations - https://www.dynatrace.com/hub/detail/infrastructure-operations/
+    /// 
+    /// - Settings API - https://www.dynatrace.com/support/help/dynatrace-api/environment-api/settings (schemaId: `app:dynatrace.infraops:feature-flags`)
+    /// 
+    /// ## Export Example Usage
+    /// 
+    /// - `terraform-provider-dynatrace -export dynatrace.InfraopsAppFeatureFlags` downloads existing infrastructure and operations app feature flag configuration
+    /// 
+    /// The full documentation of the export feature is available [here](https://dt-url.net/h203qmc).
+    /// </summary>
     [DynatraceResourceType("dynatrace:index/infraopsAppFeatureFlags:InfraopsAppFeatureFlags")]
     public partial class InfraopsAppFeatureFlags : global::Pulumi.CustomResource
     {

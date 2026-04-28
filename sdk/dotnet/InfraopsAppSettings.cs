@@ -10,6 +10,21 @@ using Pulumi;
 
 namespace Pulumiverse.Dynatrace
 {
+    /// <summary>
+    /// &gt; This resource requires the API token scopes **Read settings** (`settings.read`) and **Write settings** (`settings.write`)
+    /// 
+    /// ## Dynatrace Documentation
+    /// 
+    /// - Infrastructure &amp; Operations - https://www.dynatrace.com/hub/detail/infrastructure-operations/
+    /// 
+    /// - Settings API - https://www.dynatrace.com/support/help/dynatrace-api/environment-api/settings (schemaId: `app:dynatrace.infraops:settings`)
+    /// 
+    /// ## Export Example Usage
+    /// 
+    /// - `terraform-provider-dynatrace -export dynatrace.InfraopsAppSettings` downloads existing infrastructure and operations app feature flag configuration
+    /// 
+    /// The full documentation of the export feature is available [here](https://dt-url.net/h203qmc).
+    /// </summary>
     [DynatraceResourceType("dynatrace:index/infraopsAppSettings:InfraopsAppSettings")]
     public partial class InfraopsAppSettings : global::Pulumi.CustomResource
     {
@@ -20,13 +35,13 @@ namespace Pulumiverse.Dynatrace
         public Output<double?> InterfaceSaturationThreshold { get; private set; } = null!;
 
         /// <summary>
-        /// Limit the number of results returned from Grail for Data center, Host, and Network device entities.
+        /// Limit the number of results returned from Grail for Host, Network device, and Extensions entities.
         /// </summary>
         [Output("invexDqlQueryLimit")]
         public Output<int?> InvexDqlQueryLimit { get; private set; } = null!;
 
         /// <summary>
-        /// Limit for server-side sorting in Data center, Host, and Network device inventories. Sorting is disabled when the row count exceeds the configured threshold.
+        /// Limit for server-side sorting in Host, Network device and Extensions inventories. Sorting is disabled when the row count exceeds the configured threshold.
         /// </summary>
         [Output("invexDqlSortLimit")]
         public Output<int?> InvexDqlSortLimit { get; private set; } = null!;
@@ -97,13 +112,13 @@ namespace Pulumiverse.Dynatrace
         public Input<double>? InterfaceSaturationThreshold { get; set; }
 
         /// <summary>
-        /// Limit the number of results returned from Grail for Data center, Host, and Network device entities.
+        /// Limit the number of results returned from Grail for Host, Network device, and Extensions entities.
         /// </summary>
         [Input("invexDqlQueryLimit")]
         public Input<int>? InvexDqlQueryLimit { get; set; }
 
         /// <summary>
-        /// Limit for server-side sorting in Data center, Host, and Network device inventories. Sorting is disabled when the row count exceeds the configured threshold.
+        /// Limit for server-side sorting in Host, Network device and Extensions inventories. Sorting is disabled when the row count exceeds the configured threshold.
         /// </summary>
         [Input("invexDqlSortLimit")]
         public Input<int>? InvexDqlSortLimit { get; set; }
@@ -135,13 +150,13 @@ namespace Pulumiverse.Dynatrace
         public Input<double>? InterfaceSaturationThreshold { get; set; }
 
         /// <summary>
-        /// Limit the number of results returned from Grail for Data center, Host, and Network device entities.
+        /// Limit the number of results returned from Grail for Host, Network device, and Extensions entities.
         /// </summary>
         [Input("invexDqlQueryLimit")]
         public Input<int>? InvexDqlQueryLimit { get; set; }
 
         /// <summary>
-        /// Limit for server-side sorting in Data center, Host, and Network device inventories. Sorting is disabled when the row count exceeds the configured threshold.
+        /// Limit for server-side sorting in Host, Network device and Extensions inventories. Sorting is disabled when the row count exceeds the configured threshold.
         /// </summary>
         [Input("invexDqlSortLimit")]
         public Input<int>? InvexDqlSortLimit { get; set; }

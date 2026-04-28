@@ -26,6 +26,7 @@ class ManagedRemoteAccessArgs:
                  state: Optional[pulumi.Input[_builtins.str]] = None):
         """
         The set of arguments for constructing a ManagedRemoteAccess resource.
+
         :param pulumi.Input[_builtins.str] reason: Request reason description, cannot be changed once created
         :param pulumi.Input[_builtins.int] requested_days: For how many days access is requested, cannot be changed once created
         :param pulumi.Input[_builtins.str] role: Requested role, cannot be changed once created
@@ -110,6 +111,7 @@ class _ManagedRemoteAccessState:
                  user_id: Optional[pulumi.Input[_builtins.str]] = None):
         """
         Input properties used for looking up and filtering ManagedRemoteAccess resources.
+
         :param pulumi.Input[_builtins.str] reason: Request reason description, cannot be changed once created
         :param pulumi.Input[_builtins.int] requested_days: For how many days access is requested, cannot be changed once created
         :param pulumi.Input[_builtins.str] role: Requested role, cannot be changed once created
@@ -201,7 +203,30 @@ class ManagedRemoteAccess(pulumi.CustomResource):
                  user_id: Optional[pulumi.Input[_builtins.str]] = None,
                  __props__=None):
         """
-        Create a ManagedRemoteAccess resource with the given unique name, props, and options.
+        !> **HTTP DELETE method not available** Terraform will no longer manage this resource on `destroy` but the configuration will still be present on the Dynatrace cluster.
+
+        > This resource requires the cluster API token scope **Service Provider API** (`ServiceProviderAPI`)
+
+        ## Dynatrace Documentation
+
+        - Cluster remote access - https://www.dynatrace.com/support/help/managed-cluster/configuration/cluster-remote-access
+
+        - Cluster API v2 - https://www.dynatrace.com/support/help/managed-cluster/cluster-api/cluster-api-v2
+
+        ## Resource Example Usage
+
+        ```python
+        import pulumi
+        import pulumiverse_dynatrace as dynatrace
+
+        test = dynatrace.ManagedRemoteAccess("Test",
+            user_id="example@dynatrace.com",
+            reason="Example",
+            requested_days=1,
+            role="devops-admin")
+        ```
+
+
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[_builtins.str] reason: Request reason description, cannot be changed once created
@@ -217,7 +242,30 @@ class ManagedRemoteAccess(pulumi.CustomResource):
                  args: ManagedRemoteAccessArgs,
                  opts: Optional[pulumi.ResourceOptions] = None):
         """
-        Create a ManagedRemoteAccess resource with the given unique name, props, and options.
+        !> **HTTP DELETE method not available** Terraform will no longer manage this resource on `destroy` but the configuration will still be present on the Dynatrace cluster.
+
+        > This resource requires the cluster API token scope **Service Provider API** (`ServiceProviderAPI`)
+
+        ## Dynatrace Documentation
+
+        - Cluster remote access - https://www.dynatrace.com/support/help/managed-cluster/configuration/cluster-remote-access
+
+        - Cluster API v2 - https://www.dynatrace.com/support/help/managed-cluster/cluster-api/cluster-api-v2
+
+        ## Resource Example Usage
+
+        ```python
+        import pulumi
+        import pulumiverse_dynatrace as dynatrace
+
+        test = dynatrace.ManagedRemoteAccess("Test",
+            user_id="example@dynatrace.com",
+            reason="Example",
+            requested_days=1,
+            role="devops-admin")
+        ```
+
+
         :param str resource_name: The name of the resource.
         :param ManagedRemoteAccessArgs args: The arguments to use to populate this resource's properties.
         :param pulumi.ResourceOptions opts: Options for the resource.

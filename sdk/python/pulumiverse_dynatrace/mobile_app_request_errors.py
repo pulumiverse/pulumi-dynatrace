@@ -25,6 +25,7 @@ class MobileAppRequestErrorsArgs:
                  error_rules: Optional[pulumi.Input['MobileAppRequestErrorsErrorRulesArgs']] = None):
         """
         The set of arguments for constructing a MobileAppRequestErrors resource.
+
         :param pulumi.Input[_builtins.str] scope: The scope of this setting (MOBILE*APPLICATION, CUSTOM*APPLICATION)
         :param pulumi.Input['MobileAppRequestErrorsErrorRulesArgs'] error_rules: no documentation available
         """
@@ -64,6 +65,7 @@ class _MobileAppRequestErrorsState:
                  scope: Optional[pulumi.Input[_builtins.str]] = None):
         """
         Input properties used for looking up and filtering MobileAppRequestErrors resources.
+
         :param pulumi.Input['MobileAppRequestErrorsErrorRulesArgs'] error_rules: no documentation available
         :param pulumi.Input[_builtins.str] scope: The scope of this setting (MOBILE*APPLICATION, CUSTOM*APPLICATION)
         """
@@ -107,7 +109,23 @@ class MobileAppRequestErrors(pulumi.CustomResource):
                  scope: Optional[pulumi.Input[_builtins.str]] = None,
                  __props__=None):
         """
-        Create a MobileAppRequestErrors resource with the given unique name, props, and options.
+        !> This resource may not have full coverage of the required fields, please use ApplicationErrorRules instead.
+
+        > This resource requires the API token scopes **Read settings** (`settings.read`) and **Write settings** (`settings.write`)
+
+        ## Dynatrace Documentation
+
+        - Ignore web request errors for mobile applications - https://www.dynatrace.com/support/help/platform-modules/digital-experience/mobile-applications/setup-and-configuration/additional-configuration/web-request-errors-mobile
+
+        - Settings API - https://www.dynatrace.com/support/help/dynatrace-api/environment-api/settings (schemaId: `builtin:rum.mobile.request-errors`)
+
+        ## Export Example Usage
+
+        - `terraform-provider-dynatrace -export MobileAppRequestErrors` downloads all existing mobile application request error configuration
+
+        The full documentation of the export feature is available [here](https://dt-url.net/h203qmc).
+
+
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[Union['MobileAppRequestErrorsErrorRulesArgs', 'MobileAppRequestErrorsErrorRulesArgsDict']] error_rules: no documentation available
@@ -120,7 +138,23 @@ class MobileAppRequestErrors(pulumi.CustomResource):
                  args: MobileAppRequestErrorsArgs,
                  opts: Optional[pulumi.ResourceOptions] = None):
         """
-        Create a MobileAppRequestErrors resource with the given unique name, props, and options.
+        !> This resource may not have full coverage of the required fields, please use ApplicationErrorRules instead.
+
+        > This resource requires the API token scopes **Read settings** (`settings.read`) and **Write settings** (`settings.write`)
+
+        ## Dynatrace Documentation
+
+        - Ignore web request errors for mobile applications - https://www.dynatrace.com/support/help/platform-modules/digital-experience/mobile-applications/setup-and-configuration/additional-configuration/web-request-errors-mobile
+
+        - Settings API - https://www.dynatrace.com/support/help/dynatrace-api/environment-api/settings (schemaId: `builtin:rum.mobile.request-errors`)
+
+        ## Export Example Usage
+
+        - `terraform-provider-dynatrace -export MobileAppRequestErrors` downloads all existing mobile application request error configuration
+
+        The full documentation of the export feature is available [here](https://dt-url.net/h203qmc).
+
+
         :param str resource_name: The name of the resource.
         :param MobileAppRequestErrorsArgs args: The arguments to use to populate this resource's properties.
         :param pulumi.ResourceOptions opts: Options for the resource.

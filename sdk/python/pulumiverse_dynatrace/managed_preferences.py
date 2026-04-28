@@ -35,6 +35,7 @@ class ManagedPreferencesArgs:
                  telemetry_sharing: Optional[pulumi.Input[_builtins.bool]] = None):
         """
         The set of arguments for constructing a ManagedPreferences resource.
+
         :param pulumi.Input[_builtins.bool] ruxit_monitors_ruxit: If true, Dynatrace OneAgent monitors Dynatrace. Default: `true`
         :param pulumi.Input[_builtins.bool] support_send_billing: If true, usage and billing information will be reported.
         :param pulumi.Input[_builtins.bool] support_send_cluster_health: If true, Dynatrace cluster health will be reported.
@@ -263,6 +264,7 @@ class _ManagedPreferencesState:
                  telemetry_sharing: Optional[pulumi.Input[_builtins.bool]] = None):
         """
         Input properties used for looking up and filtering ManagedPreferences resources.
+
         :param pulumi.Input[_builtins.bool] certificate_management_enabled: Default: `false`
         :param pulumi.Input[_builtins.bool] certificate_management_possible: Default: `true`
         :param pulumi.Input[_builtins.bool] community_create_user: If true, each new user will get an invitation to set up a Dynatrace user account to access Dynatrace support resources user upon first login. Default: `false`
@@ -498,7 +500,17 @@ class ManagedPreferences(pulumi.CustomResource):
                  telemetry_sharing: Optional[pulumi.Input[_builtins.bool]] = None,
                  __props__=None):
         """
-        Create a ManagedPreferences resource with the given unique name, props, and options.
+        !> **HTTP DELETE method not available** Terraform will no longer manage this resource on `destroy` but the configuration will still be present on the Dynatrace cluster.
+
+        > This resource requires the cluster API token scope **Service Provider API** (`ServiceProviderAPI`)
+
+        ## Dynatrace Documentation
+
+        - Cluster preferences settings - https://www.dynatrace.com/support/help/managed-cluster/configuration/configure-cluster-preferences
+
+        - Cluster API v1 - https://www.dynatrace.com/support/help/managed-cluster/cluster-api/cluster-api-v1
+
+
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[_builtins.bool] certificate_management_enabled: Default: `false`
@@ -523,7 +535,17 @@ class ManagedPreferences(pulumi.CustomResource):
                  args: ManagedPreferencesArgs,
                  opts: Optional[pulumi.ResourceOptions] = None):
         """
-        Create a ManagedPreferences resource with the given unique name, props, and options.
+        !> **HTTP DELETE method not available** Terraform will no longer manage this resource on `destroy` but the configuration will still be present on the Dynatrace cluster.
+
+        > This resource requires the cluster API token scope **Service Provider API** (`ServiceProviderAPI`)
+
+        ## Dynatrace Documentation
+
+        - Cluster preferences settings - https://www.dynatrace.com/support/help/managed-cluster/configuration/configure-cluster-preferences
+
+        - Cluster API v1 - https://www.dynatrace.com/support/help/managed-cluster/cluster-api/cluster-api-v1
+
+
         :param str resource_name: The name of the resource.
         :param ManagedPreferencesArgs args: The arguments to use to populate this resource's properties.
         :param pulumi.ResourceOptions opts: Options for the resource.

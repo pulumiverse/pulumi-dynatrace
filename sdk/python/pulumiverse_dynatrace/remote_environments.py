@@ -25,6 +25,7 @@ class RemoteEnvironmentsArgs:
                  name: Optional[pulumi.Input[_builtins.str]] = None):
         """
         The set of arguments for constructing a RemoteEnvironments resource.
+
         :param pulumi.Input[_builtins.str] network_scope: Possible Values: `CLUSTER`, `EXTERNAL`, `INTERNAL`
         :param pulumi.Input[_builtins.str] token: Provide a valid token created on the remote environment.
         :param pulumi.Input[_builtins.str] uri: Specify the full URI to the remote environment. Your local environment will have to be able to connect this URI on a network level.
@@ -94,6 +95,7 @@ class _RemoteEnvironmentsState:
                  uri: Optional[pulumi.Input[_builtins.str]] = None):
         """
         Input properties used for looking up and filtering RemoteEnvironments resources.
+
         :param pulumi.Input[_builtins.str] name: Name
         :param pulumi.Input[_builtins.str] network_scope: Possible Values: `CLUSTER`, `EXTERNAL`, `INTERNAL`
         :param pulumi.Input[_builtins.str] token: Provide a valid token created on the remote environment.
@@ -169,7 +171,21 @@ class RemoteEnvironments(pulumi.CustomResource):
                  uri: Optional[pulumi.Input[_builtins.str]] = None,
                  __props__=None):
         """
-        Create a RemoteEnvironments resource with the given unique name, props, and options.
+        > This resource requires the API token scopes **Read settings** (`settings.read`) and **Write settings** (`settings.write`)
+
+        ## Dynatrace Documentation
+
+        - Create remote/multi-environment Dynatrace dashboards - https://www.dynatrace.com/support/help/observe-and-explore/dashboards/dashboards/dashboards-multi-environment
+
+        - Settings API - https://www.dynatrace.com/support/help/dynatrace-api/environment-api/settings (schemaId: `builtin:remote.environment`)
+
+        ## Export Example Usage
+
+        - `terraform-provider-dynatrace -export RemoteEnvironments` downloads all existing remote Dynatrace environment configuration
+
+        The full documentation of the export feature is available [here](https://dt-url.net/h203qmc).
+
+
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[_builtins.str] name: Name
@@ -184,7 +200,21 @@ class RemoteEnvironments(pulumi.CustomResource):
                  args: RemoteEnvironmentsArgs,
                  opts: Optional[pulumi.ResourceOptions] = None):
         """
-        Create a RemoteEnvironments resource with the given unique name, props, and options.
+        > This resource requires the API token scopes **Read settings** (`settings.read`) and **Write settings** (`settings.write`)
+
+        ## Dynatrace Documentation
+
+        - Create remote/multi-environment Dynatrace dashboards - https://www.dynatrace.com/support/help/observe-and-explore/dashboards/dashboards/dashboards-multi-environment
+
+        - Settings API - https://www.dynatrace.com/support/help/dynatrace-api/environment-api/settings (schemaId: `builtin:remote.environment`)
+
+        ## Export Example Usage
+
+        - `terraform-provider-dynatrace -export RemoteEnvironments` downloads all existing remote Dynatrace environment configuration
+
+        The full documentation of the export feature is available [here](https://dt-url.net/h203qmc).
+
+
         :param str resource_name: The name of the resource.
         :param RemoteEnvironmentsArgs args: The arguments to use to populate this resource's properties.
         :param pulumi.ResourceOptions opts: Options for the resource.

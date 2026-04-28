@@ -23,7 +23,7 @@ namespace Pulumiverse.Dynatrace.Outputs
         /// </summary>
         public readonly Outputs.OpenpipelineV2MetricsPipelinesSecurityContextProcessorsProcessorSecurityEventFieldExtractionInclude? Include;
         /// <summary>
-        /// Fields Extraction type. Possible Values: `Exclude`, `Include`, `includeAll`.
+        /// Fields Extraction type. Possible Values: `Exclude`, `Include`, `includeAll`
         /// </summary>
         public readonly string Type;
 

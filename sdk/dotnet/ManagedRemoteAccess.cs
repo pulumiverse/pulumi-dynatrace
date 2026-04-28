@@ -10,6 +10,38 @@ using Pulumi;
 
 namespace Pulumiverse.Dynatrace
 {
+    /// <summary>
+    /// !&gt; **HTTP DELETE method not available** Terraform will no longer manage this resource on `Destroy` but the configuration will still be present on the Dynatrace cluster.
+    /// 
+    /// &gt; This resource requires the cluster API token scope **Service Provider API** (`ServiceProviderAPI`)
+    /// 
+    /// ## Dynatrace Documentation
+    /// 
+    /// - Cluster remote access - https://www.dynatrace.com/support/help/managed-cluster/configuration/cluster-remote-access
+    /// 
+    /// - Cluster API v2 - https://www.dynatrace.com/support/help/managed-cluster/cluster-api/cluster-api-v2
+    /// 
+    /// ## Resource Example Usage
+    /// 
+    /// ```csharp
+    /// using System.Collections.Generic;
+    /// using System.Linq;
+    /// using Pulumi;
+    /// using Dynatrace = Pulumiverse.Dynatrace;
+    /// 
+    /// return await Deployment.RunAsync(() =&gt; 
+    /// {
+    ///     var test = new Dynatrace.ManagedRemoteAccess("Test", new()
+    ///     {
+    ///         UserId = "example@dynatrace.com",
+    ///         Reason = "Example",
+    ///         RequestedDays = 1,
+    ///         Role = "devops-admin",
+    ///     });
+    /// 
+    /// });
+    /// ```
+    /// </summary>
     [DynatraceResourceType("dynatrace:index/managedRemoteAccess:ManagedRemoteAccess")]
     public partial class ManagedRemoteAccess : global::Pulumi.CustomResource
     {

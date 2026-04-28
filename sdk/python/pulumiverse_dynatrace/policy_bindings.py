@@ -25,6 +25,7 @@ class PolicyBindingsArgs:
                  environment: Optional[pulumi.Input[_builtins.str]] = None):
         """
         The set of arguments for constructing a PolicyBindings resource.
+
         :param pulumi.Input[_builtins.str] group: The name of the policy
         :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] policies: A list of IDs referring to policies bound to that group. It's not possible to mix policies here that are defined for different scopes (different clusters or environments) than specified via attributes `cluster` or `environment`.
         :param pulumi.Input[_builtins.str] cluster: The UUID of the cluster. The attribute `policies` must contain ONLY policies defined for that cluster.
@@ -95,6 +96,7 @@ class _PolicyBindingsState:
                  policies: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None):
         """
         Input properties used for looking up and filtering PolicyBindings resources.
+
         :param pulumi.Input[_builtins.str] cluster: The UUID of the cluster. The attribute `policies` must contain ONLY policies defined for that cluster.
         :param pulumi.Input[_builtins.str] environment: The ID of the environment (https://<environmentid>.live.dynatrace.com). The attribute `policies` must contain ONLY policies defined for that environment.
         :param pulumi.Input[_builtins.str] group: The name of the policy
@@ -170,7 +172,76 @@ class PolicyBindings(pulumi.CustomResource):
                  policies: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
                  __props__=None):
         """
-        Create a PolicyBindings resource with the given unique name, props, and options.
+        > **Dynatrace Managed only**
+
+        > To utilize this resource, please define the environment variables `DT_CLUSTER_URL` and `DT_CLUSTER_API_TOKEN` with the cluster API token scope **Service Provider API** (`ServiceProviderAPI`).
+
+        ## Dynatrace Documentation
+
+        - Dynatrace IAM Policy Management - https://docs.dynatrace.com/managed/manage/identity-access-management/permission-management/manage-user-permissions-policies
+
+        ## Export Example Usage
+
+        - `terraform-provider-dynatrace -export PolicyBindings` downloads all existing policy bindings
+
+        The full documentation of the export feature is available [here](https://dt-url.net/h203qmc).
+
+        ## Resource Example Usage
+
+        ```python
+        import pulumi
+        import pulumiverse_dynatrace as dynatrace
+
+        my_group = dynatrace.UserGroup("my_group", name="my_group")
+        env_policy = dynatrace.Policy("env_policy",
+            name="my_policy_valid_for_environment_########-####-####-####-############",
+            environment="########-####-####-####-############",
+            statement_query="ALLOW settings:objects:read, settings:schemas:read WHERE settings:schemaId = \\"string\\";")
+        env_bindings = dynatrace.PolicyBindings("env_bindings",
+            group=my_group.id,
+            environment="########-####-####-####-############",
+            policies=[env_policy.id])
+        cluster_policy = dynatrace.Policy("cluster_policy",
+            name="my_policy_valid_for_all_environments_in_this_cluster",
+            cluster="########-####-####-####-############",
+            statement_query="ALLOW settings:objects:read, settings:schemas:read WHERE settings:schemaId = \\"string\\";")
+        cluster_bindings = dynatrace.PolicyBindings("cluster_bindings",
+            group=my_group.id,
+            cluster="########-####-####-####-############",
+            policies=[cluster_policy.id])
+        ```
+
+        # Policy Bindings to Groups on different levels are required to be specified within separate resources.
+        # The following example would be invalid, because policies the policies to be bound to the group are defined for different levels.
+
+        # ```terraform
+        # resource "dynatrace_user_group" "my_group" {
+        # name = "my_group"
+
+        # permissions {
+        # ...
+        # }
+        # }
+
+        # resource "dynatrace_policy" "env_policy" {
+        # name            = "my_policy_valid_for_environment_########-####-####-####-############"
+        # environment     = "########-####-####-####-############"
+        # statement_query = "ALLOW settings:objects:read, settings:schemas:read WHERE settings:schemaId = \\"string\\";"
+        # }
+
+        # resource "dynatrace_policy" "cluster_policy" {
+        # name            = "my_policy_valid_for_all_environments_in_this_cluster"
+        # cluster         = "########-####-####-####-############"
+        # statement_query = "ALLOW settings:objects:read, settings:schemas:read WHERE settings:schemaId = \\"string\\";"
+        # }
+
+        # resource "dynatrace_policy_bindings" "bindings" {
+        # group    = dynatrace_user_group.my_group.id
+        # cluster  = "########-####-####-####-############"
+        # policies = [dynatrace_policy.cluster_policy.id, dynatrace_policy.env_policy.id] # INVALID, because `dynatrace_policy.env_policy` is not defined for the cluster level
+        # }
+
+
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[_builtins.str] cluster: The UUID of the cluster. The attribute `policies` must contain ONLY policies defined for that cluster.
@@ -185,7 +256,76 @@ class PolicyBindings(pulumi.CustomResource):
                  args: PolicyBindingsArgs,
                  opts: Optional[pulumi.ResourceOptions] = None):
         """
-        Create a PolicyBindings resource with the given unique name, props, and options.
+        > **Dynatrace Managed only**
+
+        > To utilize this resource, please define the environment variables `DT_CLUSTER_URL` and `DT_CLUSTER_API_TOKEN` with the cluster API token scope **Service Provider API** (`ServiceProviderAPI`).
+
+        ## Dynatrace Documentation
+
+        - Dynatrace IAM Policy Management - https://docs.dynatrace.com/managed/manage/identity-access-management/permission-management/manage-user-permissions-policies
+
+        ## Export Example Usage
+
+        - `terraform-provider-dynatrace -export PolicyBindings` downloads all existing policy bindings
+
+        The full documentation of the export feature is available [here](https://dt-url.net/h203qmc).
+
+        ## Resource Example Usage
+
+        ```python
+        import pulumi
+        import pulumiverse_dynatrace as dynatrace
+
+        my_group = dynatrace.UserGroup("my_group", name="my_group")
+        env_policy = dynatrace.Policy("env_policy",
+            name="my_policy_valid_for_environment_########-####-####-####-############",
+            environment="########-####-####-####-############",
+            statement_query="ALLOW settings:objects:read, settings:schemas:read WHERE settings:schemaId = \\"string\\";")
+        env_bindings = dynatrace.PolicyBindings("env_bindings",
+            group=my_group.id,
+            environment="########-####-####-####-############",
+            policies=[env_policy.id])
+        cluster_policy = dynatrace.Policy("cluster_policy",
+            name="my_policy_valid_for_all_environments_in_this_cluster",
+            cluster="########-####-####-####-############",
+            statement_query="ALLOW settings:objects:read, settings:schemas:read WHERE settings:schemaId = \\"string\\";")
+        cluster_bindings = dynatrace.PolicyBindings("cluster_bindings",
+            group=my_group.id,
+            cluster="########-####-####-####-############",
+            policies=[cluster_policy.id])
+        ```
+
+        # Policy Bindings to Groups on different levels are required to be specified within separate resources.
+        # The following example would be invalid, because policies the policies to be bound to the group are defined for different levels.
+
+        # ```terraform
+        # resource "dynatrace_user_group" "my_group" {
+        # name = "my_group"
+
+        # permissions {
+        # ...
+        # }
+        # }
+
+        # resource "dynatrace_policy" "env_policy" {
+        # name            = "my_policy_valid_for_environment_########-####-####-####-############"
+        # environment     = "########-####-####-####-############"
+        # statement_query = "ALLOW settings:objects:read, settings:schemas:read WHERE settings:schemaId = \\"string\\";"
+        # }
+
+        # resource "dynatrace_policy" "cluster_policy" {
+        # name            = "my_policy_valid_for_all_environments_in_this_cluster"
+        # cluster         = "########-####-####-####-############"
+        # statement_query = "ALLOW settings:objects:read, settings:schemas:read WHERE settings:schemaId = \\"string\\";"
+        # }
+
+        # resource "dynatrace_policy_bindings" "bindings" {
+        # group    = dynatrace_user_group.my_group.id
+        # cluster  = "########-####-####-####-############"
+        # policies = [dynatrace_policy.cluster_policy.id, dynatrace_policy.env_policy.id] # INVALID, because `dynatrace_policy.env_policy` is not defined for the cluster level
+        # }
+
+
         :param str resource_name: The name of the resource.
         :param PolicyBindingsArgs args: The arguments to use to populate this resource's properties.
         :param pulumi.ResourceOptions opts: Options for the resource.

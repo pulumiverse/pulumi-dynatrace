@@ -25,6 +25,7 @@ class AgTokenArgs:
                  seed: Optional[pulumi.Input[_builtins.bool]] = None):
         """
         The set of arguments for constructing a AgToken resource.
+
         :param pulumi.Input[_builtins.str] type: The type of the ActiveGate for which the token is valid. Possible values are `ENVIRONMENT` or `CLUSTER`
         :param pulumi.Input[_builtins.str] expiration_date: The expiration date of the token.
                
@@ -122,6 +123,7 @@ class _AgTokenState:
                  type: Optional[pulumi.Input[_builtins.str]] = None):
         """
         Input properties used for looking up and filtering AgToken resources.
+
         :param pulumi.Input[_builtins.str] expiration_date: The expiration date of the token.
                
                    You can use one of the following formats:
@@ -251,7 +253,19 @@ class AgToken(pulumi.CustomResource):
                  type: Optional[pulumi.Input[_builtins.str]] = None,
                  __props__=None):
         """
-        Create a AgToken resource with the given unique name, props, and options.
+        > The usage of `AgToken` will introduce sensitive data within your Terraform state. The `token` property is flagged as `sensitive`, but the field will be stored as plain-text. More information can be found here.
+
+        > The token value can be retrieved with `dynatrace_ag_token.<#name#>.token` after apply.
+
+        > This resource requires the API token scopes **Create ActiveGate tokens** (`activeGateTokenManagement.create`), **Read ActiveGate tokens** (`activeGateTokenManagement.read`) and **Write ActiveGate tokens** (`activeGateTokenManagement.write`)
+
+        ## Dynatrace Documentation
+
+        - ActiveGate tokens API - https://www.dynatrace.com/support/help/dynatrace-api/environment-api/tokens-v2/activegate-tokens
+
+        > The export functionality isn't able to export Active Gate Tokens, because the token value is available only upon creation
+
+
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[_builtins.str] expiration_date: The expiration date of the token.
@@ -278,7 +292,19 @@ class AgToken(pulumi.CustomResource):
                  args: AgTokenArgs,
                  opts: Optional[pulumi.ResourceOptions] = None):
         """
-        Create a AgToken resource with the given unique name, props, and options.
+        > The usage of `AgToken` will introduce sensitive data within your Terraform state. The `token` property is flagged as `sensitive`, but the field will be stored as plain-text. More information can be found here.
+
+        > The token value can be retrieved with `dynatrace_ag_token.<#name#>.token` after apply.
+
+        > This resource requires the API token scopes **Create ActiveGate tokens** (`activeGateTokenManagement.create`), **Read ActiveGate tokens** (`activeGateTokenManagement.read`) and **Write ActiveGate tokens** (`activeGateTokenManagement.write`)
+
+        ## Dynatrace Documentation
+
+        - ActiveGate tokens API - https://www.dynatrace.com/support/help/dynatrace-api/environment-api/tokens-v2/activegate-tokens
+
+        > The export functionality isn't able to export Active Gate Tokens, because the token value is available only upon creation
+
+
         :param str resource_name: The name of the resource.
         :param AgTokenArgs args: The arguments to use to populate this resource's properties.
         :param pulumi.ResourceOptions opts: Options for the resource.

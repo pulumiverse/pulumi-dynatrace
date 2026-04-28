@@ -10,6 +10,103 @@ using Pulumi;
 
 namespace Pulumiverse.Dynatrace
 {
+    /// <summary>
+    /// &gt; **Dynatrace Managed only**
+    /// 
+    /// &gt; To utilize this resource, please define the environment variables `DT_CLUSTER_URL` and `DT_CLUSTER_API_TOKEN` with the cluster API token scope **Service Provider API** (`ServiceProviderAPI`).
+    /// 
+    /// ## Dynatrace Documentation
+    /// 
+    /// - Dynatrace IAM Policy Management - https://docs.dynatrace.com/managed/manage/identity-access-management/permission-management/manage-user-permissions-policies
+    /// 
+    /// ## Export Example Usage
+    /// 
+    /// - `terraform-provider-dynatrace -export dynatrace.PolicyBindings` downloads all existing policy bindings
+    /// 
+    /// The full documentation of the export feature is available [here](https://dt-url.net/h203qmc).
+    /// 
+    /// ## Resource Example Usage
+    /// 
+    /// ```csharp
+    /// using System.Collections.Generic;
+    /// using System.Linq;
+    /// using Pulumi;
+    /// using Dynatrace = Pulumiverse.Dynatrace;
+    /// 
+    /// return await Deployment.RunAsync(() =&gt; 
+    /// {
+    ///     var myGroup = new Dynatrace.UserGroup("my_group", new()
+    ///     {
+    ///         Name = "my_group",
+    ///     });
+    /// 
+    ///     var envPolicy = new Dynatrace.Policy("env_policy", new()
+    ///     {
+    ///         Name = "my_policy_valid_for_environment_########-####-####-####-############",
+    ///         Environment = "########-####-####-####-############",
+    ///         StatementQuery = "ALLOW settings:objects:read, settings:schemas:read WHERE settings:schemaId = \"string\";",
+    ///     });
+    /// 
+    ///     var envBindings = new Dynatrace.PolicyBindings("env_bindings", new()
+    ///     {
+    ///         Group = myGroup.Id,
+    ///         Environment = "########-####-####-####-############",
+    ///         Policies = new[]
+    ///         {
+    ///             envPolicy.Id,
+    ///         },
+    ///     });
+    /// 
+    ///     var clusterPolicy = new Dynatrace.Policy("cluster_policy", new()
+    ///     {
+    ///         Name = "my_policy_valid_for_all_environments_in_this_cluster",
+    ///         Cluster = "########-####-####-####-############",
+    ///         StatementQuery = "ALLOW settings:objects:read, settings:schemas:read WHERE settings:schemaId = \"string\";",
+    ///     });
+    /// 
+    ///     var clusterBindings = new Dynatrace.PolicyBindings("cluster_bindings", new()
+    ///     {
+    ///         Group = myGroup.Id,
+    ///         Cluster = "########-####-####-####-############",
+    ///         Policies = new[]
+    ///         {
+    ///             clusterPolicy.Id,
+    ///         },
+    ///     });
+    /// 
+    /// });
+    /// ```
+    /// 
+    /// # Policy Bindings to Groups on different levels are required to be specified within separate resources.
+    /// # The following example would be invalid, because policies the policies to be bound to the group are defined for different levels.
+    /// 
+    /// # ```terraform
+    /// # resource "dynatrace_user_group" "my_group" {
+    /// # name = "my_group"
+    /// 
+    /// # permissions {
+    /// # ...
+    /// # }
+    /// # }
+    /// 
+    /// # resource "dynatrace_policy" "env_policy" {
+    /// # name            = "my_policy_valid_for_environment_########-####-####-####-############"
+    /// # environment     = "########-####-####-####-############"
+    /// # statement_query = "ALLOW settings:objects:read, settings:schemas:read WHERE settings:schemaId = \"string\";"
+    /// # }
+    /// 
+    /// # resource "dynatrace_policy" "cluster_policy" {
+    /// # name            = "my_policy_valid_for_all_environments_in_this_cluster"
+    /// # cluster         = "########-####-####-####-############"
+    /// # statement_query = "ALLOW settings:objects:read, settings:schemas:read WHERE settings:schemaId = \"string\";"
+    /// # }
+    /// 
+    /// # resource "dynatrace_policy_bindings" "bindings" {
+    /// # group    = dynatrace_user_group.my_group.id
+    /// # cluster  = "########-####-####-####-############"
+    /// # policies = [dynatrace_policy.cluster_policy.id, dynatrace_policy.env_policy.id] # INVALID, because `dynatrace_policy.env_policy` is not defined for the cluster level
+    /// # }
+    /// </summary>
     [DynatraceResourceType("dynatrace:index/policyBindings:PolicyBindings")]
     public partial class PolicyBindings : global::Pulumi.CustomResource
     {

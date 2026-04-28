@@ -12,10 +12,23 @@ import (
 	"github.com/pulumiverse/pulumi-dynatrace/sdk/go/dynatrace/internal"
 )
 
+// > This resource requires the API token scopes **Read settings** (`settings.read`) and **Write settings** (`settings.write`)
+//
+// ## Dynatrace Documentation
+//
+// - Disk analytics - https://www.dynatrace.com/support/help/platform-modules/infrastructure-monitoring/hosts/monitoring/host-monitoring/disk-analytics
+//
+// - Settings API - https://www.dynatrace.com/support/help/dynatrace-api/environment-api/settings (schemaId: `builtin:disk.analytics.extension`)
+//
+// ## Export Example Usage
+//
+// - `terraform-provider-dynatrace -export DiskAnalytics` downloads all existing Disk Analytics extension configuration
+//
+// The full documentation of the export feature is available [here](https://dt-url.net/h203qmc).
 type DiskAnalytics struct {
 	pulumi.CustomResourceState
 
-	// The Disk Analytics feature requires an extension to be added to your environment. The Disk Analytics extension consumes custom metrics and [Davis data units](https://www.dynatrace.com/support/help/shortlink/metric-cost-calculation).
+	// The Disk Analytics feature requires an extension to be added to your environment. You can add the Disk Analytics extension to your environment from [Dynatrace Hub](https://www.terraform.io/ui/hub/ext/com.dynatrace.extension.disk-devices#information). The Disk Analytics extension consumes custom metrics and [Davis data units](https://www.dynatrace.com/support/help/shortlink/metric-cost-calculation).
 	Enabled pulumi.BoolOutput `pulumi:"enabled"`
 	// The scope of this setting (HOST, HOST_GROUP)
 	Scope pulumi.StringOutput `pulumi:"scope"`
@@ -57,14 +70,14 @@ func GetDiskAnalytics(ctx *pulumi.Context,
 
 // Input properties used for looking up and filtering DiskAnalytics resources.
 type diskAnalyticsState struct {
-	// The Disk Analytics feature requires an extension to be added to your environment. The Disk Analytics extension consumes custom metrics and [Davis data units](https://www.dynatrace.com/support/help/shortlink/metric-cost-calculation).
+	// The Disk Analytics feature requires an extension to be added to your environment. You can add the Disk Analytics extension to your environment from [Dynatrace Hub](https://www.terraform.io/ui/hub/ext/com.dynatrace.extension.disk-devices#information). The Disk Analytics extension consumes custom metrics and [Davis data units](https://www.dynatrace.com/support/help/shortlink/metric-cost-calculation).
 	Enabled *bool `pulumi:"enabled"`
 	// The scope of this setting (HOST, HOST_GROUP)
 	Scope *string `pulumi:"scope"`
 }
 
 type DiskAnalyticsState struct {
-	// The Disk Analytics feature requires an extension to be added to your environment. The Disk Analytics extension consumes custom metrics and [Davis data units](https://www.dynatrace.com/support/help/shortlink/metric-cost-calculation).
+	// The Disk Analytics feature requires an extension to be added to your environment. You can add the Disk Analytics extension to your environment from [Dynatrace Hub](https://www.terraform.io/ui/hub/ext/com.dynatrace.extension.disk-devices#information). The Disk Analytics extension consumes custom metrics and [Davis data units](https://www.dynatrace.com/support/help/shortlink/metric-cost-calculation).
 	Enabled pulumi.BoolPtrInput
 	// The scope of this setting (HOST, HOST_GROUP)
 	Scope pulumi.StringPtrInput
@@ -75,7 +88,7 @@ func (DiskAnalyticsState) ElementType() reflect.Type {
 }
 
 type diskAnalyticsArgs struct {
-	// The Disk Analytics feature requires an extension to be added to your environment. The Disk Analytics extension consumes custom metrics and [Davis data units](https://www.dynatrace.com/support/help/shortlink/metric-cost-calculation).
+	// The Disk Analytics feature requires an extension to be added to your environment. You can add the Disk Analytics extension to your environment from [Dynatrace Hub](https://www.terraform.io/ui/hub/ext/com.dynatrace.extension.disk-devices#information). The Disk Analytics extension consumes custom metrics and [Davis data units](https://www.dynatrace.com/support/help/shortlink/metric-cost-calculation).
 	Enabled bool `pulumi:"enabled"`
 	// The scope of this setting (HOST, HOST_GROUP)
 	Scope string `pulumi:"scope"`
@@ -83,7 +96,7 @@ type diskAnalyticsArgs struct {
 
 // The set of arguments for constructing a DiskAnalytics resource.
 type DiskAnalyticsArgs struct {
-	// The Disk Analytics feature requires an extension to be added to your environment. The Disk Analytics extension consumes custom metrics and [Davis data units](https://www.dynatrace.com/support/help/shortlink/metric-cost-calculation).
+	// The Disk Analytics feature requires an extension to be added to your environment. You can add the Disk Analytics extension to your environment from [Dynatrace Hub](https://www.terraform.io/ui/hub/ext/com.dynatrace.extension.disk-devices#information). The Disk Analytics extension consumes custom metrics and [Davis data units](https://www.dynatrace.com/support/help/shortlink/metric-cost-calculation).
 	Enabled pulumi.BoolInput
 	// The scope of this setting (HOST, HOST_GROUP)
 	Scope pulumi.StringInput
@@ -176,7 +189,7 @@ func (o DiskAnalyticsOutput) ToDiskAnalyticsOutputWithContext(ctx context.Contex
 	return o
 }
 
-// The Disk Analytics feature requires an extension to be added to your environment. The Disk Analytics extension consumes custom metrics and [Davis data units](https://www.dynatrace.com/support/help/shortlink/metric-cost-calculation).
+// The Disk Analytics feature requires an extension to be added to your environment. You can add the Disk Analytics extension to your environment from [Dynatrace Hub](https://www.terraform.io/ui/hub/ext/com.dynatrace.extension.disk-devices#information). The Disk Analytics extension consumes custom metrics and [Davis data units](https://www.dynatrace.com/support/help/shortlink/metric-cost-calculation).
 func (o DiskAnalyticsOutput) Enabled() pulumi.BoolOutput {
 	return o.ApplyT(func(v *DiskAnalytics) pulumi.BoolOutput { return v.Enabled }).(pulumi.BoolOutput)
 }

@@ -6,6 +6,21 @@ import * as inputs from "./types/input";
 import * as outputs from "./types/output";
 import * as utilities from "./utilities";
 
+/**
+ * > This resource requires the API token scopes **Read settings** (`settings.read`) and **Write settings** (`settings.write`)
+ *
+ * ## Dynatrace Documentation
+ *
+ * - Dashboards - https://www.dynatrace.com/support/help/observe-and-explore/dashboards#expand--add-image-url-to-allowlist--28
+ *
+ * - Settings API - https://www.dynatrace.com/support/help/dynatrace-api/environment-api/settings (schemaId: `builtin:dashboards.image.allowlist`)
+ *
+ * ## Export Example Usage
+ *
+ * - `terraform-provider-dynatrace -export dynatrace.DashboardsAllowlist` downloads all existing allowed URL pattern rules
+ *
+ * The full documentation of the export feature is available [here](https://dt-url.net/h203qmc).
+ */
 export class DashboardsAllowlist extends pulumi.CustomResource {
     /**
      * Get an existing DashboardsAllowlist resource's state with the given name, ID, and optional extra

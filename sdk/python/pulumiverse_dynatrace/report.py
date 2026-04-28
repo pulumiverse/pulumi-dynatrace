@@ -27,6 +27,7 @@ class ReportArgs:
                  subscriptions: Optional[pulumi.Input['ReportSubscriptionsArgs']] = None):
         """
         The set of arguments for constructing a Report resource.
+
         :param pulumi.Input[_builtins.str] dashboard_id: The ID of the associated dashboard
         :param pulumi.Input[_builtins.str] type: The type of report
         :param pulumi.Input[_builtins.bool] email_notifications: The email notifications for the dashboard report are enabled (true) or disabled (false).
@@ -97,6 +98,7 @@ class _ReportState:
                  type: Optional[pulumi.Input[_builtins.str]] = None):
         """
         Input properties used for looking up and filtering Report resources.
+
         :param pulumi.Input[_builtins.str] dashboard_id: The ID of the associated dashboard
         :param pulumi.Input[_builtins.bool] email_notifications: The email notifications for the dashboard report are enabled (true) or disabled (false).
         :param pulumi.Input['ReportSubscriptionsArgs'] subscriptions: A list of the report subscribers
@@ -180,6 +182,7 @@ class Report(pulumi.CustomResource):
 
         - Reports API - https://docs.dynatrace.com/docs/dynatrace-api/configuration-api/reports-api
 
+
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[_builtins.str] dashboard_id: The ID of the associated dashboard
@@ -201,6 +204,7 @@ class Report(pulumi.CustomResource):
         - Subscribe to Dynatrace dashboard reports - https://docs.dynatrace.com/docs/observe-and-explore/dashboards-classic/dashboards/subscribe-to-dashboard-reports
 
         - Reports API - https://docs.dynatrace.com/docs/dynatrace-api/configuration-api/reports-api
+
 
         :param str resource_name: The name of the resource.
         :param ReportArgs args: The arguments to use to populate this resource's properties.

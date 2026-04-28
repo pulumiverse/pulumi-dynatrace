@@ -4,6 +4,40 @@
 import * as pulumi from "@pulumi/pulumi";
 import * as utilities from "./utilities";
 
+/**
+ * > **Dynatrace Managed only**
+ *
+ * > To utilize this resource, please define the environment variables `DT_CLUSTER_URL` and `DT_CLUSTER_API_TOKEN` with the cluster API token scope **Service Provider API** (`ServiceProviderAPI`).
+ *
+ * ## Dynatrace Documentation
+ *
+ * - Manage Groups and Permissions - https://docs.dynatrace.com/managed/manage/identity-access-management/user-and-group-management/user-groups-and-permissions#mz
+ *
+ * - User management API - https://www.dynatrace.com/support/help/dynatrace-api/account-management-api/user-management-api
+ *
+ * ## Export Example Usage
+ *
+ * - `terraform-provider-dynatrace -export dynatrace.MgmzPermission` downloads all user group / management zone permissions
+ *
+ * The full documentation of the export feature is available [here](https://dt-url.net/h203qmc).
+ *
+ * ## Resource Example Usage
+ *
+ * ```typescript
+ * import * as pulumi from "@pulumi/pulumi";
+ * import * as dynatrace from "@pulumiverse/dynatrace";
+ *
+ * const some_perm = new dynatrace.MgmzPermission("some-perm", {
+ *     group: group_a.id,
+ *     environment: "d85dea6a-4287-49d3-bf62-729274ba7036",
+ *     managementZone: "982182035185200933",
+ *     permissions: [
+ *         "VIEWER",
+ *         "REPLAY_SESSION_DATA",
+ *     ],
+ * });
+ * ```
+ */
 export class MgmzPermission extends pulumi.CustomResource {
     /**
      * Get an existing MgmzPermission resource's state with the given name, ID, and optional extra

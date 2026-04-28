@@ -12,6 +12,19 @@ import (
 	"github.com/pulumiverse/pulumi-dynatrace/sdk/go/dynatrace/internal"
 )
 
+// > This resource requires the API token scopes **Read settings** (`settings.read`) and **Write settings** (`settings.write`)
+//
+// ## Dynatrace Documentation
+//
+// - RUM JavaScript injection - https://docs.dynatrace.com/docs/observe/digital-experience/web-applications/initial-setup/rum-injection
+//
+// - Settings API - https://www.dynatrace.com/support/help/dynatrace-api/environment-api/settings (schemaId: `builtin:rum.web.automatic-injection`)
+//
+// ## Export Example Usage
+//
+// - `terraform-provider-dynatrace -export WebAppAutoInjection` downloads existing automatic injection configuration
+//
+// The full documentation of the export feature is available [here](https://dt-url.net/h203qmc).
 type WebAppAutoInjection struct {
 	pulumi.CustomResourceState
 

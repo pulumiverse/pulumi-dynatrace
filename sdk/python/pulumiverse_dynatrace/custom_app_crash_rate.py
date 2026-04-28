@@ -25,6 +25,7 @@ class CustomAppCrashRateArgs:
                  scope: Optional[pulumi.Input[_builtins.str]] = None):
         """
         The set of arguments for constructing a CustomAppCrashRate resource.
+
         :param pulumi.Input['CustomAppCrashRateCrashRateIncreaseArgs'] crash_rate_increase: Crash rate increase
         :param pulumi.Input[_builtins.str] scope: The scope of this setting (CUSTOM_APPLICATION environment)
         """
@@ -64,6 +65,7 @@ class _CustomAppCrashRateState:
                  scope: Optional[pulumi.Input[_builtins.str]] = None):
         """
         Input properties used for looking up and filtering CustomAppCrashRate resources.
+
         :param pulumi.Input['CustomAppCrashRateCrashRateIncreaseArgs'] crash_rate_increase: Crash rate increase
         :param pulumi.Input[_builtins.str] scope: The scope of this setting (CUSTOM_APPLICATION environment)
         """
@@ -107,7 +109,39 @@ class CustomAppCrashRate(pulumi.CustomResource):
                  scope: Optional[pulumi.Input[_builtins.str]] = None,
                  __props__=None):
         """
-        Create a CustomAppCrashRate resource with the given unique name, props, and options.
+        > This resource requires the API token scopes **Read settings** (`settings.read`) and **Write settings** (`settings.write`)
+
+        ## Dynatrace Documentation
+
+        - Adjust the sensitivity of anomaly detection for applications - https://www.dynatrace.com/support/help/how-to-use-dynatrace/problem-detection-and-analysis/problem-detection/adjust-sensitivity-anomaly-detection/adjust-sensitivity-applications
+
+        - Settings API - https://www.dynatrace.com/support/help/dynatrace-api/environment-api/settings (schemaId: `builtin:anomaly-detection.rum-custom-crash-rate-increase`)
+
+        ## Export Example Usage
+
+        - `terraform-provider-dynatrace -export CustomAppCrashRate` downloads all existing custom application crash rate increase configuration
+
+        The full documentation of the export feature is available [here](https://dt-url.net/h203qmc).
+
+        ## Resource Example Usage
+
+        ```python
+        import pulumi
+        import pulumiverse_dynatrace as dynatrace
+
+        custo_m__applicatio_n_1234567890000000 = dynatrace.CustomAppCrashRate("CUSTOM_APPLICATION-1234567890000000",
+            scope="CUSTOM_APPLICATION-1234567890000000",
+            crash_rate_increase={
+                "enabled": True,
+                "detection_mode": "fixed",
+                "crash_rate_increase_fixed": {
+                    "absolute_crash_rate": 25,
+                    "concurrent_users": 200,
+                },
+            })
+        ```
+
+
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[Union['CustomAppCrashRateCrashRateIncreaseArgs', 'CustomAppCrashRateCrashRateIncreaseArgsDict']] crash_rate_increase: Crash rate increase
@@ -120,7 +154,39 @@ class CustomAppCrashRate(pulumi.CustomResource):
                  args: CustomAppCrashRateArgs,
                  opts: Optional[pulumi.ResourceOptions] = None):
         """
-        Create a CustomAppCrashRate resource with the given unique name, props, and options.
+        > This resource requires the API token scopes **Read settings** (`settings.read`) and **Write settings** (`settings.write`)
+
+        ## Dynatrace Documentation
+
+        - Adjust the sensitivity of anomaly detection for applications - https://www.dynatrace.com/support/help/how-to-use-dynatrace/problem-detection-and-analysis/problem-detection/adjust-sensitivity-anomaly-detection/adjust-sensitivity-applications
+
+        - Settings API - https://www.dynatrace.com/support/help/dynatrace-api/environment-api/settings (schemaId: `builtin:anomaly-detection.rum-custom-crash-rate-increase`)
+
+        ## Export Example Usage
+
+        - `terraform-provider-dynatrace -export CustomAppCrashRate` downloads all existing custom application crash rate increase configuration
+
+        The full documentation of the export feature is available [here](https://dt-url.net/h203qmc).
+
+        ## Resource Example Usage
+
+        ```python
+        import pulumi
+        import pulumiverse_dynatrace as dynatrace
+
+        custo_m__applicatio_n_1234567890000000 = dynatrace.CustomAppCrashRate("CUSTOM_APPLICATION-1234567890000000",
+            scope="CUSTOM_APPLICATION-1234567890000000",
+            crash_rate_increase={
+                "enabled": True,
+                "detection_mode": "fixed",
+                "crash_rate_increase_fixed": {
+                    "absolute_crash_rate": 25,
+                    "concurrent_users": 200,
+                },
+            })
+        ```
+
+
         :param str resource_name: The name of the resource.
         :param CustomAppCrashRateArgs args: The arguments to use to populate this resource's properties.
         :param pulumi.ResourceOptions opts: Options for the resource.

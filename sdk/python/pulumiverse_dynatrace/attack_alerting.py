@@ -24,6 +24,7 @@ class AttackAlertingArgs:
                  name: Optional[pulumi.Input[_builtins.str]] = None):
         """
         The set of arguments for constructing a AttackAlerting resource.
+
         :param pulumi.Input[_builtins.bool] enabled: This setting is enabled (`true`) or disabled (`false`)
         :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] enabled_attack_mitigations: Attack State
         :param pulumi.Input[_builtins.str] name: Name
@@ -79,6 +80,7 @@ class _AttackAlertingState:
                  name: Optional[pulumi.Input[_builtins.str]] = None):
         """
         Input properties used for looking up and filtering AttackAlerting resources.
+
         :param pulumi.Input[_builtins.bool] enabled: This setting is enabled (`true`) or disabled (`false`)
         :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] enabled_attack_mitigations: Attack State
         :param pulumi.Input[_builtins.str] name: Name
@@ -138,7 +140,23 @@ class AttackAlerting(pulumi.CustomResource):
                  name: Optional[pulumi.Input[_builtins.str]] = None,
                  __props__=None):
         """
-        Create a AttackAlerting resource with the given unique name, props, and options.
+        > This resource is excluded by default in the export utility since it requires the feature to be activated, please explicitly specify the resource to retrieve existing configuration.
+
+        > This resource requires the API token scopes **Read security problems** (`securityProblems.read`) and **Write security problems** (`securityProblems.write`)
+
+        ## Dynatrace Documentation
+
+        - Runtime Application Protection - https://www.dynatrace.com/support/help/platform-modules/application-security/application-protection
+
+        - Settings API - https://www.dynatrace.com/support/help/dynatrace-api/environment-api/settings (schemaId: `builtin:appsec.notification-attack-alerting-profile`)
+
+        ## Export Example Usage
+
+        - `terraform-provider-dynatrace -export AttackAlerting` downloads all existing attack alerting profiles
+
+        The full documentation of the export feature is available [here](https://dt-url.net/h203qmc).
+
+
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[_builtins.bool] enabled: This setting is enabled (`true`) or disabled (`false`)
@@ -152,7 +170,23 @@ class AttackAlerting(pulumi.CustomResource):
                  args: AttackAlertingArgs,
                  opts: Optional[pulumi.ResourceOptions] = None):
         """
-        Create a AttackAlerting resource with the given unique name, props, and options.
+        > This resource is excluded by default in the export utility since it requires the feature to be activated, please explicitly specify the resource to retrieve existing configuration.
+
+        > This resource requires the API token scopes **Read security problems** (`securityProblems.read`) and **Write security problems** (`securityProblems.write`)
+
+        ## Dynatrace Documentation
+
+        - Runtime Application Protection - https://www.dynatrace.com/support/help/platform-modules/application-security/application-protection
+
+        - Settings API - https://www.dynatrace.com/support/help/dynatrace-api/environment-api/settings (schemaId: `builtin:appsec.notification-attack-alerting-profile`)
+
+        ## Export Example Usage
+
+        - `terraform-provider-dynatrace -export AttackAlerting` downloads all existing attack alerting profiles
+
+        The full documentation of the export feature is available [here](https://dt-url.net/h203qmc).
+
+
         :param str resource_name: The name of the resource.
         :param AttackAlertingArgs args: The arguments to use to populate this resource's properties.
         :param pulumi.ResourceOptions opts: Options for the resource.

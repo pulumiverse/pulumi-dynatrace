@@ -23,6 +23,7 @@ class NettracerArgs:
                  scope: Optional[pulumi.Input[_builtins.str]] = None):
         """
         The set of arguments for constructing a Nettracer resource.
+
         :param pulumi.Input[_builtins.bool] net_tracer: When disabled, OneAgent won't use NetTracer to collect network data from containers. Disabled by default. Applies only to Linux hosts. Requires OneAgent 1.231+.
         :param pulumi.Input[_builtins.str] scope: The scope of this setting (HOST, HOST_GROUP). Omit this property if you want to cover the whole environment.
         """
@@ -62,6 +63,7 @@ class _NettracerState:
                  scope: Optional[pulumi.Input[_builtins.str]] = None):
         """
         Input properties used for looking up and filtering Nettracer resources.
+
         :param pulumi.Input[_builtins.bool] net_tracer: When disabled, OneAgent won't use NetTracer to collect network data from containers. Disabled by default. Applies only to Linux hosts. Requires OneAgent 1.231+.
         :param pulumi.Input[_builtins.str] scope: The scope of this setting (HOST, HOST_GROUP). Omit this property if you want to cover the whole environment.
         """
@@ -105,7 +107,21 @@ class Nettracer(pulumi.CustomResource):
                  scope: Optional[pulumi.Input[_builtins.str]] = None,
                  __props__=None):
         """
-        Create a Nettracer resource with the given unique name, props, and options.
+        > This resource requires the API token scopes **Read settings** (`settings.read`) and **Write settings** (`settings.write`)
+
+        ## Dynatrace Documentation
+
+        - Extended network monitoring - https://www.dynatrace.com/support/help/platform-modules/infrastructure-monitoring/networks/network-monitoring-with-nettracer
+
+        - Settings API - https://www.dynatrace.com/support/help/dynatrace-api/environment-api/settings (schemaId: `builtin:nettracer.traffic`)
+
+        ## Export Example Usage
+
+        - `terraform-provider-dynatrace -export Nettracer` downloads all existing NetTracer traffic configuration
+
+        The full documentation of the export feature is available [here](https://dt-url.net/h203qmc).
+
+
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[_builtins.bool] net_tracer: When disabled, OneAgent won't use NetTracer to collect network data from containers. Disabled by default. Applies only to Linux hosts. Requires OneAgent 1.231+.
@@ -118,7 +134,21 @@ class Nettracer(pulumi.CustomResource):
                  args: NettracerArgs,
                  opts: Optional[pulumi.ResourceOptions] = None):
         """
-        Create a Nettracer resource with the given unique name, props, and options.
+        > This resource requires the API token scopes **Read settings** (`settings.read`) and **Write settings** (`settings.write`)
+
+        ## Dynatrace Documentation
+
+        - Extended network monitoring - https://www.dynatrace.com/support/help/platform-modules/infrastructure-monitoring/networks/network-monitoring-with-nettracer
+
+        - Settings API - https://www.dynatrace.com/support/help/dynatrace-api/environment-api/settings (schemaId: `builtin:nettracer.traffic`)
+
+        ## Export Example Usage
+
+        - `terraform-provider-dynatrace -export Nettracer` downloads all existing NetTracer traffic configuration
+
+        The full documentation of the export feature is available [here](https://dt-url.net/h203qmc).
+
+
         :param str resource_name: The name of the resource.
         :param NettracerArgs args: The arguments to use to populate this resource's properties.
         :param pulumi.ResourceOptions opts: Options for the resource.

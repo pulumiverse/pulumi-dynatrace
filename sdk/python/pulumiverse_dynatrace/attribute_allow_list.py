@@ -23,6 +23,7 @@ class AttributeAllowListArgs:
                  key: pulumi.Input[_builtins.str]):
         """
         The set of arguments for constructing a AttributeAllowList resource.
+
         :param pulumi.Input[_builtins.bool] enabled: This setting is enabled (`true`) or disabled (`false`)
         :param pulumi.Input[_builtins.str] key: Key of the attribute to persist
         """
@@ -61,6 +62,7 @@ class _AttributeAllowListState:
                  key: Optional[pulumi.Input[_builtins.str]] = None):
         """
         Input properties used for looking up and filtering AttributeAllowList resources.
+
         :param pulumi.Input[_builtins.bool] enabled: This setting is enabled (`true`) or disabled (`false`)
         :param pulumi.Input[_builtins.str] key: Key of the attribute to persist
         """
@@ -104,7 +106,21 @@ class AttributeAllowList(pulumi.CustomResource):
                  key: Optional[pulumi.Input[_builtins.str]] = None,
                  __props__=None):
         """
-        Create a AttributeAllowList resource with the given unique name, props, and options.
+        > This resource requires the API token scopes **Read settings** (`settings.read`) and **Write settings** (`settings.write`)
+
+        ## Dynatrace Documentation
+
+        - Span settings - https://www.dynatrace.com/support/help/extend-dynatrace/extend-tracing/span-settings
+
+        - Settings API - https://www.dynatrace.com/support/help/dynatrace-api/environment-api/settings (schemaId: `builtin:attribute-allow-list`)
+
+        ## Export Example Usage
+
+        - `terraform-provider-dynatrace -export AttributeAllowList` downloads all existing attribute allow-list configuration
+
+        The full documentation of the export feature is available [here](https://dt-url.net/h203qmc).
+
+
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[_builtins.bool] enabled: This setting is enabled (`true`) or disabled (`false`)
@@ -117,7 +133,21 @@ class AttributeAllowList(pulumi.CustomResource):
                  args: AttributeAllowListArgs,
                  opts: Optional[pulumi.ResourceOptions] = None):
         """
-        Create a AttributeAllowList resource with the given unique name, props, and options.
+        > This resource requires the API token scopes **Read settings** (`settings.read`) and **Write settings** (`settings.write`)
+
+        ## Dynatrace Documentation
+
+        - Span settings - https://www.dynatrace.com/support/help/extend-dynatrace/extend-tracing/span-settings
+
+        - Settings API - https://www.dynatrace.com/support/help/dynatrace-api/environment-api/settings (schemaId: `builtin:attribute-allow-list`)
+
+        ## Export Example Usage
+
+        - `terraform-provider-dynatrace -export AttributeAllowList` downloads all existing attribute allow-list configuration
+
+        The full documentation of the export feature is available [here](https://dt-url.net/h203qmc).
+
+
         :param str resource_name: The name of the resource.
         :param AttributeAllowListArgs args: The arguments to use to populate this resource's properties.
         :param pulumi.ResourceOptions opts: Options for the resource.

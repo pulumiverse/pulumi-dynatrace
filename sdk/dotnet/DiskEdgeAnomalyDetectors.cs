@@ -10,6 +10,21 @@ using Pulumi;
 
 namespace Pulumiverse.Dynatrace
 {
+    /// <summary>
+    /// &gt; This resource requires the API token scopes **Read settings** (`settings.read`) and **Write settings** (`settings.write`)
+    /// 
+    /// ## Dynatrace Documentation
+    /// 
+    /// - Adjust the sensitivity of anomaly detection for infrastructure - https://www.dynatrace.com/support/help/how-to-use-dynatrace/problem-detection-and-analysis/problem-detection/adjust-sensitivity-anomaly-detection/adjust-sensitivity-infastructure
+    /// 
+    /// - Settings API - https://www.dynatrace.com/support/help/dynatrace-api/environment-api/settings (schemaId: `builtin:infrastructure.disk.edge.anomaly-detectors`)
+    /// 
+    /// ## Export Example Usage
+    /// 
+    /// - `terraform-provider-dynatrace -export dynatrace.DiskEdgeAnomalyDetectors` downloads all existing disk edge anomaly detection configuration
+    /// 
+    /// The full documentation of the export feature is available [here](https://dt-url.net/h203qmc).
+    /// </summary>
     [DynatraceResourceType("dynatrace:index/diskEdgeAnomalyDetectors:DiskEdgeAnomalyDetectors")]
     public partial class DiskEdgeAnomalyDetectors : global::Pulumi.CustomResource
     {
@@ -32,7 +47,7 @@ namespace Pulumiverse.Dynatrace
         public Output<bool> Enabled { get; private set; } = null!;
 
         /// <summary>
-        /// Set of additional key-value properties to be attached to the triggered event.
+        /// Set of additional key-value properties to be attached to the triggered event. You can retrieve the available property keys using the [Events API v2](https://dt-url.net/9622g1w). Additionally any Host resource attribute can be dynamically substituted (agent 1.325+)
         /// </summary>
         [Output("eventProperties")]
         public Output<Outputs.DiskEdgeAnomalyDetectorsEventProperties?> EventProperties { get; private set; } = null!;
@@ -139,7 +154,7 @@ namespace Pulumiverse.Dynatrace
         public Input<bool> Enabled { get; set; } = null!;
 
         /// <summary>
-        /// Set of additional key-value properties to be attached to the triggered event.
+        /// Set of additional key-value properties to be attached to the triggered event. You can retrieve the available property keys using the [Events API v2](https://dt-url.net/9622g1w). Additionally any Host resource attribute can be dynamically substituted (agent 1.325+)
         /// </summary>
         [Input("eventProperties")]
         public Input<Inputs.DiskEdgeAnomalyDetectorsEventPropertiesArgs>? EventProperties { get; set; }
@@ -213,7 +228,7 @@ namespace Pulumiverse.Dynatrace
         public Input<bool>? Enabled { get; set; }
 
         /// <summary>
-        /// Set of additional key-value properties to be attached to the triggered event.
+        /// Set of additional key-value properties to be attached to the triggered event. You can retrieve the available property keys using the [Events API v2](https://dt-url.net/9622g1w). Additionally any Host resource attribute can be dynamically substituted (agent 1.325+)
         /// </summary>
         [Input("eventProperties")]
         public Input<Inputs.DiskEdgeAnomalyDetectorsEventPropertiesGetArgs>? EventProperties { get; set; }

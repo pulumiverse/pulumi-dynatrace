@@ -12,6 +12,19 @@ import (
 	"github.com/pulumiverse/pulumi-dynatrace/sdk/go/dynatrace/internal"
 )
 
+// > This resource requires the API token scopes **Read settings** (`settings.read`) and **Write settings** (`settings.write`)
+//
+// ## Dynatrace Documentation
+//
+// - Developer Observability - https://docs.dynatrace.com/docs/platform-modules/applications-and-microservices/developer-observability
+//
+// - Settings API - https://www.dynatrace.com/support/help/dynatrace-api/environment-api/settings (schemaId: `builtin:devobs.agent.optin`)
+//
+// ## Export Example Usage
+//
+// - `terraform-provider-dynatrace -export DevobsAgentOptin` downloads existing Developer Observability agent opt-in configuration
+//
+// The full documentation of the export feature is available [here](https://dt-url.net/h203qmc).
 type DevobsAgentOptin struct {
 	pulumi.CustomResourceState
 

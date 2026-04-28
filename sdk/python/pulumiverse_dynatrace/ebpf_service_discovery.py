@@ -23,6 +23,7 @@ class EbpfServiceDiscoveryArgs:
                  scope: Optional[pulumi.Input[_builtins.str]] = None):
         """
         The set of arguments for constructing a EbpfServiceDiscovery resource.
+
         :param pulumi.Input[_builtins.bool] ebpf: When disabled, Dynatrace can only detect services in Full stack mode.
         :param pulumi.Input[_builtins.str] scope: The scope of this setting (HOST, HOST_GROUP). Omit this property if you want to cover the whole environment.
         """
@@ -62,6 +63,7 @@ class _EbpfServiceDiscoveryState:
                  scope: Optional[pulumi.Input[_builtins.str]] = None):
         """
         Input properties used for looking up and filtering EbpfServiceDiscovery resources.
+
         :param pulumi.Input[_builtins.bool] ebpf: When disabled, Dynatrace can only detect services in Full stack mode.
         :param pulumi.Input[_builtins.str] scope: The scope of this setting (HOST, HOST_GROUP). Omit this property if you want to cover the whole environment.
         """
@@ -105,7 +107,21 @@ class EbpfServiceDiscovery(pulumi.CustomResource):
                  scope: Optional[pulumi.Input[_builtins.str]] = None,
                  __props__=None):
         """
-        Create a EbpfServiceDiscovery resource with the given unique name, props, and options.
+        > This resource requires the API token scopes **Read settings** (`settings.read`) and **Write settings** (`settings.write`)
+
+        ## Dynatrace Documentation
+
+        - eBPF Discovery - https://github.com/dynatrace-oss/eBPF-Discovery
+
+        - Settings API - https://www.dynatrace.com/support/help/dynatrace-api/environment-api/settings (schemaId: `builtin:ebpf.service.discovery`)
+
+        ## Export Example Usage
+
+        - `terraform-provider-dynatrace -export EbpfServiceDiscovery` downloads existing eBPF service discovery configuration
+
+        The full documentation of the export feature is available [here](https://dt-url.net/h203qmc).
+
+
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[_builtins.bool] ebpf: When disabled, Dynatrace can only detect services in Full stack mode.
@@ -118,7 +134,21 @@ class EbpfServiceDiscovery(pulumi.CustomResource):
                  args: EbpfServiceDiscoveryArgs,
                  opts: Optional[pulumi.ResourceOptions] = None):
         """
-        Create a EbpfServiceDiscovery resource with the given unique name, props, and options.
+        > This resource requires the API token scopes **Read settings** (`settings.read`) and **Write settings** (`settings.write`)
+
+        ## Dynatrace Documentation
+
+        - eBPF Discovery - https://github.com/dynatrace-oss/eBPF-Discovery
+
+        - Settings API - https://www.dynatrace.com/support/help/dynatrace-api/environment-api/settings (schemaId: `builtin:ebpf.service.discovery`)
+
+        ## Export Example Usage
+
+        - `terraform-provider-dynatrace -export EbpfServiceDiscovery` downloads existing eBPF service discovery configuration
+
+        The full documentation of the export feature is available [here](https://dt-url.net/h203qmc).
+
+
         :param str resource_name: The name of the resource.
         :param EbpfServiceDiscoveryArgs args: The arguments to use to populate this resource's properties.
         :param pulumi.ResourceOptions opts: Options for the resource.

@@ -12,6 +12,19 @@ import (
 	"github.com/pulumiverse/pulumi-dynatrace/sdk/go/dynatrace/internal"
 )
 
+// > This resource requires the API token scopes **Read settings** (`settings.read`) and **Write settings** (`settings.write`)
+//
+// ## Dynatrace Documentation
+//
+// - Maintenance windows - https://www.dynatrace.com/support/help/how-to-use-dynatrace/problem-detection-and-analysis/notifications-and-alerting/maintenance-windows
+//
+// - Settings API - https://www.dynatrace.com/support/help/dynatrace-api/environment-api/settings (schemaId: `builtin:alerting.maintenance-window`)
+//
+// ## Export Example Usage
+//
+// - `terraform-provider-dynatrace -export Maintenance` downloads all existing maintenance window configuration
+//
+// The full documentation of the export feature is available [here](https://dt-url.net/h203qmc).
 type Maintenance struct {
 	pulumi.CustomResourceState
 

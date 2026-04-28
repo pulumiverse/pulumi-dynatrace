@@ -19,11 +19,11 @@ namespace Pulumiverse.Dynatrace.Outputs
         /// </summary>
         public readonly Outputs.HostAnomaliesV2HostOutOfThreadsDetectionCustomThresholds? CustomThresholds;
         /// <summary>
-        /// Detection mode for Java out of threads problem
+        /// Detection mode for Java out of threads problem. Possible Values: `Auto`, `Custom`
         /// </summary>
         public readonly string? DetectionMode;
         /// <summary>
-        /// Detect Java out of threads problem
+        /// This setting is enabled (`True`) or disabled (`False`)
         /// </summary>
         public readonly bool Enabled;
 

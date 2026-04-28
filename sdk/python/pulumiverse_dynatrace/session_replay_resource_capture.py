@@ -24,6 +24,7 @@ class SessionReplayResourceCaptureArgs:
                  resource_capture_url_exclusion_pattern_lists: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None):
         """
         The set of arguments for constructing a SessionReplayResourceCapture resource.
+
         :param pulumi.Input[_builtins.bool] enable_resource_capturing: (Field has overlap with `WebApplication`) When turned on, Dynatrace captures resources for up to 0.1% of user sessions recorded with Session Replay. For details, see [Resource capture](https://dt-url.net/sr-resource-capturing).
         :param pulumi.Input[_builtins.str] application_id: The scope of this settings. If the settings should cover the whole environment, just don't specify any scope.
         :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] resource_capture_url_exclusion_pattern_lists: (Field has overlap with `WebApplication`) Add exclusion rules to avoid the capture of resources from certain pages.
@@ -79,6 +80,7 @@ class _SessionReplayResourceCaptureState:
                  resource_capture_url_exclusion_pattern_lists: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None):
         """
         Input properties used for looking up and filtering SessionReplayResourceCapture resources.
+
         :param pulumi.Input[_builtins.str] application_id: The scope of this settings. If the settings should cover the whole environment, just don't specify any scope.
         :param pulumi.Input[_builtins.bool] enable_resource_capturing: (Field has overlap with `WebApplication`) When turned on, Dynatrace captures resources for up to 0.1% of user sessions recorded with Session Replay. For details, see [Resource capture](https://dt-url.net/sr-resource-capturing).
         :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] resource_capture_url_exclusion_pattern_lists: (Field has overlap with `WebApplication`) Add exclusion rules to avoid the capture of resources from certain pages.
@@ -138,7 +140,23 @@ class SessionReplayResourceCapture(pulumi.CustomResource):
                  resource_capture_url_exclusion_pattern_lists: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
                  __props__=None):
         """
-        Create a SessionReplayResourceCapture resource with the given unique name, props, and options.
+        > Configuration of the application scope overlaps with dynatrace_web_application, but this resource in addition provides an option for an environment scope.
+
+        > This resource requires the API token scopes **Read settings** (`settings.read`) and **Write settings** (`settings.write`)
+
+        ## Dynatrace Documentation
+
+        - Resource capture - https://www.dynatrace.com/support/help/platform-modules/digital-experience/session-replay/configure-session-replay-web#sr-resource-capturing
+
+        - Settings API - https://www.dynatrace.com/support/help/dynatrace-api/environment-api/settings (schemaId: `builtin:sessionreplay.web.resource-capturing`)
+
+        ## Export Example Usage
+
+        - `terraform-provider-dynatrace -export SessionReplayResourceCapture` downloads all existing Session Replay resource capture configuration
+
+        The full documentation of the export feature is available [here](https://dt-url.net/h203qmc).
+
+
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[_builtins.str] application_id: The scope of this settings. If the settings should cover the whole environment, just don't specify any scope.
@@ -152,7 +170,23 @@ class SessionReplayResourceCapture(pulumi.CustomResource):
                  args: SessionReplayResourceCaptureArgs,
                  opts: Optional[pulumi.ResourceOptions] = None):
         """
-        Create a SessionReplayResourceCapture resource with the given unique name, props, and options.
+        > Configuration of the application scope overlaps with dynatrace_web_application, but this resource in addition provides an option for an environment scope.
+
+        > This resource requires the API token scopes **Read settings** (`settings.read`) and **Write settings** (`settings.write`)
+
+        ## Dynatrace Documentation
+
+        - Resource capture - https://www.dynatrace.com/support/help/platform-modules/digital-experience/session-replay/configure-session-replay-web#sr-resource-capturing
+
+        - Settings API - https://www.dynatrace.com/support/help/dynatrace-api/environment-api/settings (schemaId: `builtin:sessionreplay.web.resource-capturing`)
+
+        ## Export Example Usage
+
+        - `terraform-provider-dynatrace -export SessionReplayResourceCapture` downloads all existing Session Replay resource capture configuration
+
+        The full documentation of the export feature is available [here](https://dt-url.net/h203qmc).
+
+
         :param str resource_name: The name of the resource.
         :param SessionReplayResourceCaptureArgs args: The arguments to use to populate this resource's properties.
         :param pulumi.ResourceOptions opts: Options for the resource.

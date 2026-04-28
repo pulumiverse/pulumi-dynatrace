@@ -27,6 +27,7 @@ class PolicyArgs:
                  tags: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None):
         """
         The set of arguments for constructing a Policy resource.
+
         :param pulumi.Input[_builtins.str] statement_query: The Statement Query of the policy
         :param pulumi.Input[_builtins.str] cluster: The UUID of the cluster in case the policy should be applied to all environments of this cluster.
         :param pulumi.Input[_builtins.str] description: An optional description text for the policy
@@ -130,6 +131,7 @@ class _PolicyState:
                  tags: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None):
         """
         Input properties used for looking up and filtering Policy resources.
+
         :param pulumi.Input[_builtins.str] cluster: The UUID of the cluster in case the policy should be applied to all environments of this cluster.
         :param pulumi.Input[_builtins.str] description: An optional description text for the policy
         :param pulumi.Input[_builtins.str] environment: The ID of the environment if the policy should be applied to a specific environment
@@ -237,7 +239,43 @@ class Policy(pulumi.CustomResource):
                  tags: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
                  __props__=None):
         """
-        Create a Policy resource with the given unique name, props, and options.
+        > **Dynatrace Managed only**
+
+        > To utilize this resource, please define the environment variables `DT_CLUSTER_URL` and `DT_CLUSTER_API_TOKEN` with the cluster API token scope **Service Provider API** (`ServiceProviderAPI`).
+
+        ## Dynatrace Documentation
+
+        - Dynatrace IAM Policy Management - https://docs.dynatrace.com/managed/manage/identity-access-management/permission-management/manage-user-permissions-policies
+
+        ## Export Example Usage
+
+        - `terraform-provider-dynatrace -export Policy` downloads all existing policies
+
+        The full documentation of the export feature is available [here](https://dt-url.net/h203qmc).
+
+        ## Resource Example Usage
+
+        ```python
+        import pulumi
+        import pulumiverse_dynatrace as dynatrace
+
+        policy = dynatrace.Policy("policy",
+            name="my_policy_valid_for_environment_########-####-####-####-############",
+            environment="########-####-####-####-############",
+            statement_query="ALLOW settings:objects:read, settings:schemas:read WHERE settings:schemaId = \\"string\\";")
+        ```
+
+        ```python
+        import pulumi
+        import pulumiverse_dynatrace as dynatrace
+
+        policy = dynatrace.IamPolicy("policy",
+            name="my_policy_valid_for_all_environments_in_this_cluster",
+            cluster="########-####-####-####-############",
+            statement_query="ALLOW settings:objects:read, settings:schemas:read WHERE settings:schemaId = \\"string\\";")
+        ```
+
+
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[_builtins.str] cluster: The UUID of the cluster in case the policy should be applied to all environments of this cluster.
@@ -254,7 +292,43 @@ class Policy(pulumi.CustomResource):
                  args: PolicyArgs,
                  opts: Optional[pulumi.ResourceOptions] = None):
         """
-        Create a Policy resource with the given unique name, props, and options.
+        > **Dynatrace Managed only**
+
+        > To utilize this resource, please define the environment variables `DT_CLUSTER_URL` and `DT_CLUSTER_API_TOKEN` with the cluster API token scope **Service Provider API** (`ServiceProviderAPI`).
+
+        ## Dynatrace Documentation
+
+        - Dynatrace IAM Policy Management - https://docs.dynatrace.com/managed/manage/identity-access-management/permission-management/manage-user-permissions-policies
+
+        ## Export Example Usage
+
+        - `terraform-provider-dynatrace -export Policy` downloads all existing policies
+
+        The full documentation of the export feature is available [here](https://dt-url.net/h203qmc).
+
+        ## Resource Example Usage
+
+        ```python
+        import pulumi
+        import pulumiverse_dynatrace as dynatrace
+
+        policy = dynatrace.Policy("policy",
+            name="my_policy_valid_for_environment_########-####-####-####-############",
+            environment="########-####-####-####-############",
+            statement_query="ALLOW settings:objects:read, settings:schemas:read WHERE settings:schemaId = \\"string\\";")
+        ```
+
+        ```python
+        import pulumi
+        import pulumiverse_dynatrace as dynatrace
+
+        policy = dynatrace.IamPolicy("policy",
+            name="my_policy_valid_for_all_environments_in_this_cluster",
+            cluster="########-####-####-####-############",
+            statement_query="ALLOW settings:objects:read, settings:schemas:read WHERE settings:schemaId = \\"string\\";")
+        ```
+
+
         :param str resource_name: The name of the resource.
         :param PolicyArgs args: The arguments to use to populate this resource's properties.
         :param pulumi.ResourceOptions opts: Options for the resource.

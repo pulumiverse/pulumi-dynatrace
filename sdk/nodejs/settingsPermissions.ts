@@ -6,6 +6,84 @@ import * as inputs from "./types/input";
 import * as outputs from "./types/output";
 import * as utilities from "./utilities";
 
+/**
+ * > **Dynatrace SaaS only**
+ *
+ * > This resource requires the OAuth scopes **Read settings** (`settings:objects:read`) and **Write settings** (`settings:objects:write`)
+ *
+ * > This resource can alter Settings 2.0 objects of different owners if the OAuth scope `settings:objects:admin` is provided
+ *
+ * ## Limitations
+ *
+ * > Access modifiers can only be altered if the provided Settings 2.0 object allows such modifications, as indicated by its schema having `ownerBasedAccessControl` set to `true`
+ *
+ * The following resources allow for altering access modifiers (please note that this list may be incomplete):
+ * - `dynatrace.AutomationControllerConnections`
+ * - `dynatrace.AutomationWorkflowAwsConnections`
+ * - `dynatrace.AutomationWorkflowJira`
+ * - `dynatrace.AutomationWorkflowK8sConnections`
+ * - `dynatrace.AutomationWorkflowSlack`
+ * - `dynatrace.EventDrivenAnsibleConnections`
+ * - `dynatrace.GithubConnection`
+ * - `dynatrace.GitlabConnection`
+ * - `dynatrace.JenkinsConnection`
+ * - `dynatrace.Ms365EmailConnection`
+ * - `dynatrace.MsentraidConnection`
+ * - `dynatrace.MsteamsConnection`
+ * - `dynatrace.PagerdutyConnection`
+ * - `dynatrace.ServicenowConnection`
+ * - `dynatrace.GenericSetting` if the provided schema supports it
+ *
+ * ## Documentation
+ *
+ * - Access Control for Connectors - https://docs.dynatrace.com/docs/shortlink/access-control-for-connectors
+ *
+ * - Settings API - https://www.dynatrace.com/support/help/dynatrace-api/environment-api/settings
+ *
+ * ## Export Example Usage
+ *
+ * - `terraform-provider-dynatrace -export dynatrace.SettingsPermissions` downloads all existing settings permissions.
+ *
+ * The full documentation of the export feature is available [here](https://dt-url.net/h203qmc).
+ *
+ * ## Resource Example Usage
+ *
+ * ```typescript
+ * import * as pulumi from "@pulumi/pulumi";
+ * import * as dynatrace from "@pulumiverse/dynatrace";
+ *
+ * const group = new dynatrace.IamGroup("group", {name: "#name#"});
+ * const userIamUser = new dynatrace.IamUser("user", {
+ *     email: "#name#@example.com",
+ *     groups: [group.id],
+ * });
+ * // because the UID is not returned for the resource, we need data
+ * const user = dynatrace.getIamUserOutput({
+ *     email: userIamUser.id,
+ * });
+ * const connection = new dynatrace.GithubConnection("connection", {
+ *     name: "#name#",
+ *     type: "pat",
+ *     token: "azAZ09",
+ * });
+ * const permission = new dynatrace.SettingsPermissions("permission", {
+ *     settingsObjectId: connection.id,
+ *     allUsers: "none",
+ *     users: {
+ *         users: [{
+ *             uid: user.apply(user => user.uid),
+ *             access: "write",
+ *         }],
+ *     },
+ *     groups: {
+ *         groups: [{
+ *             id: group.id,
+ *             access: "read",
+ *         }],
+ *     },
+ * });
+ * ```
+ */
 export class SettingsPermissions extends pulumi.CustomResource {
     /**
      * Get an existing SettingsPermissions resource's state with the given name, ID, and optional extra

@@ -10,6 +10,46 @@ using Pulumi;
 
 namespace Pulumiverse.Dynatrace
 {
+    /// <summary>
+    /// &gt; This resource requires the API token scopes **Read settings** (`settings.read`) and **Write settings** (`settings.write`)
+    /// 
+    /// ## Dynatrace Documentation
+    /// 
+    /// - Customize CICS and IMS monitoring - https://www.dynatrace.com/support/help/setup-and-configuration/dynatrace-oneagent/installation-and-operation/zos/operation/cics-ims-monitoring
+    /// 
+    /// - Settings API - https://www.dynatrace.com/support/help/dynatrace-api/environment-api/settings (schemaId: `builtin:mainframe.txmonitoring`)
+    /// 
+    /// ## Export Example Usage
+    /// 
+    /// - `terraform-provider-dynatrace -export dynatrace.MainframeTransactionMonitoring` downloads all additional monitoring settings for CICS and IMS transactions
+    /// 
+    /// The full documentation of the export feature is available [here](https://dt-url.net/h203qmc).
+    /// 
+    /// ## Resource Example Usage
+    /// 
+    /// ```csharp
+    /// using System.Collections.Generic;
+    /// using System.Linq;
+    /// using Pulumi;
+    /// using Dynatrace = Pulumiverse.Dynatrace;
+    /// 
+    /// return await Deployment.RunAsync(() =&gt; 
+    /// {
+    ///     // ID vu9U3hXa3q0AAAABAB5idWlsdGluOm1haW5mcmFtZS50eG1vbml0b3JpbmcABnRlbmFudAAGdGVuYW50ACQwYWYxNWEwOS05YWM0LTMyZGEtOTZjZi01Y2Q3NjI1Y2MxNja-71TeFdrerQ
+    ///     var mainframeTransactionMonitoring = new Dynatrace.MainframeTransactionMonitoring("mainframe_transaction_monitoring", new()
+    ///     {
+    ///         GroupCicsRegions = true,
+    ///         GroupImsRegions = false,
+    ///         MonitorAllCtgProtocols = false,
+    ///         MonitorAllIncomingWebRequests = false,
+    ///         NodeLimit = 500,
+    ///         ZosCicsServiceDetectionUsesTransactionId = false,
+    ///         ZosImsServiceDetectionUsesTransactionId = false,
+    ///     });
+    /// 
+    /// });
+    /// ```
+    /// </summary>
     [DynatraceResourceType("dynatrace:index/mainframeTransactionMonitoring:MainframeTransactionMonitoring")]
     public partial class MainframeTransactionMonitoring : global::Pulumi.CustomResource
     {

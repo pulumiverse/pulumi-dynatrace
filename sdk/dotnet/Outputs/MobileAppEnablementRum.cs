@@ -23,7 +23,7 @@ namespace Pulumiverse.Dynatrace.Outputs
         /// </summary>
         public readonly bool Enabled;
         /// <summary>
-        /// Please be aware that only mobile agents with version **8.303 or higher** can ingest Grail events
+        /// Please be aware that only mobile agents with version **8.309 or higher** can ingest Grail events
         /// </summary>
         public readonly bool? EnabledOnGrail;
 

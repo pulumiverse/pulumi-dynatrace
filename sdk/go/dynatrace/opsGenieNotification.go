@@ -12,18 +12,42 @@ import (
 	"github.com/pulumiverse/pulumi-dynatrace/sdk/go/dynatrace/internal"
 )
 
+// > This resource requires the API token scopes **Read settings** (`settings.read`) and **Write settings** (`settings.write`)
+//
+// ## Dynatrace Documentation
+//
+// - OpsGenie notifications - https://www.dynatrace.com/support/help/setup-and-configuration/integrations/problem-notifications/opsgenie-integration
+//
+// - Settings API - https://www.dynatrace.com/support/help/dynatrace-api/environment-api/settings (schemaId: `builtin:problem.notifications`)
+//
+// ## Export Example Usage
+//
+// - `terraform-provider-dynatrace -export OpsGenieNotification` downloads the existing problem notifications for OpsGenie
+//
+// The full documentation of the export feature is available [here](https://dt-url.net/h203qmc).
 type OpsGenieNotification struct {
 	pulumi.CustomResourceState
 
-	// The configuration is enabled (`true`) or disabled (`false`)
+	// This setting is enabled (`true`) or disabled (`false`)
 	Active pulumi.BoolOutput `pulumi:"active"`
-	// The API key to access OpsGenie
+	// The API key to access OpsGenie.
+	//
+	// Go to OpsGenie-Integrations and create a new Dynatrace integration. Copy the newly created API key.
 	ApiKey pulumi.StringPtrOutput `pulumi:"apiKey"`
-	// The region domain of the OpsGenie
+	// The region domain of the OpsGenie.
 	Domain pulumi.StringOutput `pulumi:"domain"`
 	// The ID of these settings when referred to from resources requiring the REST API V1 keys
 	LegacyId pulumi.StringOutput `pulumi:"legacyId"`
-	// The content of the message.  You can use the following placeholders:  * `{ProblemID}`: The display number of the reported problem.  * `{ProblemImpact}`: The [impact level](https://www.dynatrace.com/support/help/shortlink/impact-analysis) of the problem. Possible values are `APPLICATION`, `SERVICE`, and `INFRASTRUCTURE`.  * `{ProblemSeverity}`: The [severity level](https://www.dynatrace.com/support/help/shortlink/event-types) of the problem. Possible values are `AVAILABILITY`, `ERROR`, `PERFORMANCE`, `RESOURCE_CONTENTION`, and `CUSTOM_ALERT`.  * `{ProblemTitle}`: A short description of the problem
+	// The content of the message. Type '{' for placeholder suggestions.. #### Available placeholders
+	// **{ProblemID}**: Display number of the reported problem.
+	//
+	// **{ProblemImpact}**: Impact level of the problem. Possible values are APPLICATION, SERVICE, or INFRASTRUCTURE.
+	//
+	// **{ProblemSeverity}**: Severity level of the problem. Possible values are AVAILABILITY, ERROR, PERFORMANCE, RESOURCE_CONTENTION, or CUSTOM_ALERT.
+	//
+	// **{ProblemTitle}**: Short description of the problem.
+	//
+	// **{ImpactedEntityNames}**: The entity impacted by the problem (or multiple impacted entities).
 	Message pulumi.StringOutput `pulumi:"message"`
 	// The name of the notification configuration
 	Name pulumi.StringOutput `pulumi:"name"`
@@ -80,15 +104,26 @@ func GetOpsGenieNotification(ctx *pulumi.Context,
 
 // Input properties used for looking up and filtering OpsGenieNotification resources.
 type opsGenieNotificationState struct {
-	// The configuration is enabled (`true`) or disabled (`false`)
+	// This setting is enabled (`true`) or disabled (`false`)
 	Active *bool `pulumi:"active"`
-	// The API key to access OpsGenie
+	// The API key to access OpsGenie.
+	//
+	// Go to OpsGenie-Integrations and create a new Dynatrace integration. Copy the newly created API key.
 	ApiKey *string `pulumi:"apiKey"`
-	// The region domain of the OpsGenie
+	// The region domain of the OpsGenie.
 	Domain *string `pulumi:"domain"`
 	// The ID of these settings when referred to from resources requiring the REST API V1 keys
 	LegacyId *string `pulumi:"legacyId"`
-	// The content of the message.  You can use the following placeholders:  * `{ProblemID}`: The display number of the reported problem.  * `{ProblemImpact}`: The [impact level](https://www.dynatrace.com/support/help/shortlink/impact-analysis) of the problem. Possible values are `APPLICATION`, `SERVICE`, and `INFRASTRUCTURE`.  * `{ProblemSeverity}`: The [severity level](https://www.dynatrace.com/support/help/shortlink/event-types) of the problem. Possible values are `AVAILABILITY`, `ERROR`, `PERFORMANCE`, `RESOURCE_CONTENTION`, and `CUSTOM_ALERT`.  * `{ProblemTitle}`: A short description of the problem
+	// The content of the message. Type '{' for placeholder suggestions.. #### Available placeholders
+	// **{ProblemID}**: Display number of the reported problem.
+	//
+	// **{ProblemImpact}**: Impact level of the problem. Possible values are APPLICATION, SERVICE, or INFRASTRUCTURE.
+	//
+	// **{ProblemSeverity}**: Severity level of the problem. Possible values are AVAILABILITY, ERROR, PERFORMANCE, RESOURCE_CONTENTION, or CUSTOM_ALERT.
+	//
+	// **{ProblemTitle}**: Short description of the problem.
+	//
+	// **{ImpactedEntityNames}**: The entity impacted by the problem (or multiple impacted entities).
 	Message *string `pulumi:"message"`
 	// The name of the notification configuration
 	Name *string `pulumi:"name"`
@@ -97,15 +132,26 @@ type opsGenieNotificationState struct {
 }
 
 type OpsGenieNotificationState struct {
-	// The configuration is enabled (`true`) or disabled (`false`)
+	// This setting is enabled (`true`) or disabled (`false`)
 	Active pulumi.BoolPtrInput
-	// The API key to access OpsGenie
+	// The API key to access OpsGenie.
+	//
+	// Go to OpsGenie-Integrations and create a new Dynatrace integration. Copy the newly created API key.
 	ApiKey pulumi.StringPtrInput
-	// The region domain of the OpsGenie
+	// The region domain of the OpsGenie.
 	Domain pulumi.StringPtrInput
 	// The ID of these settings when referred to from resources requiring the REST API V1 keys
 	LegacyId pulumi.StringPtrInput
-	// The content of the message.  You can use the following placeholders:  * `{ProblemID}`: The display number of the reported problem.  * `{ProblemImpact}`: The [impact level](https://www.dynatrace.com/support/help/shortlink/impact-analysis) of the problem. Possible values are `APPLICATION`, `SERVICE`, and `INFRASTRUCTURE`.  * `{ProblemSeverity}`: The [severity level](https://www.dynatrace.com/support/help/shortlink/event-types) of the problem. Possible values are `AVAILABILITY`, `ERROR`, `PERFORMANCE`, `RESOURCE_CONTENTION`, and `CUSTOM_ALERT`.  * `{ProblemTitle}`: A short description of the problem
+	// The content of the message. Type '{' for placeholder suggestions.. #### Available placeholders
+	// **{ProblemID}**: Display number of the reported problem.
+	//
+	// **{ProblemImpact}**: Impact level of the problem. Possible values are APPLICATION, SERVICE, or INFRASTRUCTURE.
+	//
+	// **{ProblemSeverity}**: Severity level of the problem. Possible values are AVAILABILITY, ERROR, PERFORMANCE, RESOURCE_CONTENTION, or CUSTOM_ALERT.
+	//
+	// **{ProblemTitle}**: Short description of the problem.
+	//
+	// **{ImpactedEntityNames}**: The entity impacted by the problem (or multiple impacted entities).
 	Message pulumi.StringPtrInput
 	// The name of the notification configuration
 	Name pulumi.StringPtrInput
@@ -118,15 +164,26 @@ func (OpsGenieNotificationState) ElementType() reflect.Type {
 }
 
 type opsGenieNotificationArgs struct {
-	// The configuration is enabled (`true`) or disabled (`false`)
+	// This setting is enabled (`true`) or disabled (`false`)
 	Active bool `pulumi:"active"`
-	// The API key to access OpsGenie
+	// The API key to access OpsGenie.
+	//
+	// Go to OpsGenie-Integrations and create a new Dynatrace integration. Copy the newly created API key.
 	ApiKey *string `pulumi:"apiKey"`
-	// The region domain of the OpsGenie
+	// The region domain of the OpsGenie.
 	Domain string `pulumi:"domain"`
 	// The ID of these settings when referred to from resources requiring the REST API V1 keys
 	LegacyId *string `pulumi:"legacyId"`
-	// The content of the message.  You can use the following placeholders:  * `{ProblemID}`: The display number of the reported problem.  * `{ProblemImpact}`: The [impact level](https://www.dynatrace.com/support/help/shortlink/impact-analysis) of the problem. Possible values are `APPLICATION`, `SERVICE`, and `INFRASTRUCTURE`.  * `{ProblemSeverity}`: The [severity level](https://www.dynatrace.com/support/help/shortlink/event-types) of the problem. Possible values are `AVAILABILITY`, `ERROR`, `PERFORMANCE`, `RESOURCE_CONTENTION`, and `CUSTOM_ALERT`.  * `{ProblemTitle}`: A short description of the problem
+	// The content of the message. Type '{' for placeholder suggestions.. #### Available placeholders
+	// **{ProblemID}**: Display number of the reported problem.
+	//
+	// **{ProblemImpact}**: Impact level of the problem. Possible values are APPLICATION, SERVICE, or INFRASTRUCTURE.
+	//
+	// **{ProblemSeverity}**: Severity level of the problem. Possible values are AVAILABILITY, ERROR, PERFORMANCE, RESOURCE_CONTENTION, or CUSTOM_ALERT.
+	//
+	// **{ProblemTitle}**: Short description of the problem.
+	//
+	// **{ImpactedEntityNames}**: The entity impacted by the problem (or multiple impacted entities).
 	Message string `pulumi:"message"`
 	// The name of the notification configuration
 	Name *string `pulumi:"name"`
@@ -136,15 +193,26 @@ type opsGenieNotificationArgs struct {
 
 // The set of arguments for constructing a OpsGenieNotification resource.
 type OpsGenieNotificationArgs struct {
-	// The configuration is enabled (`true`) or disabled (`false`)
+	// This setting is enabled (`true`) or disabled (`false`)
 	Active pulumi.BoolInput
-	// The API key to access OpsGenie
+	// The API key to access OpsGenie.
+	//
+	// Go to OpsGenie-Integrations and create a new Dynatrace integration. Copy the newly created API key.
 	ApiKey pulumi.StringPtrInput
-	// The region domain of the OpsGenie
+	// The region domain of the OpsGenie.
 	Domain pulumi.StringInput
 	// The ID of these settings when referred to from resources requiring the REST API V1 keys
 	LegacyId pulumi.StringPtrInput
-	// The content of the message.  You can use the following placeholders:  * `{ProblemID}`: The display number of the reported problem.  * `{ProblemImpact}`: The [impact level](https://www.dynatrace.com/support/help/shortlink/impact-analysis) of the problem. Possible values are `APPLICATION`, `SERVICE`, and `INFRASTRUCTURE`.  * `{ProblemSeverity}`: The [severity level](https://www.dynatrace.com/support/help/shortlink/event-types) of the problem. Possible values are `AVAILABILITY`, `ERROR`, `PERFORMANCE`, `RESOURCE_CONTENTION`, and `CUSTOM_ALERT`.  * `{ProblemTitle}`: A short description of the problem
+	// The content of the message. Type '{' for placeholder suggestions.. #### Available placeholders
+	// **{ProblemID}**: Display number of the reported problem.
+	//
+	// **{ProblemImpact}**: Impact level of the problem. Possible values are APPLICATION, SERVICE, or INFRASTRUCTURE.
+	//
+	// **{ProblemSeverity}**: Severity level of the problem. Possible values are AVAILABILITY, ERROR, PERFORMANCE, RESOURCE_CONTENTION, or CUSTOM_ALERT.
+	//
+	// **{ProblemTitle}**: Short description of the problem.
+	//
+	// **{ImpactedEntityNames}**: The entity impacted by the problem (or multiple impacted entities).
 	Message pulumi.StringInput
 	// The name of the notification configuration
 	Name pulumi.StringPtrInput
@@ -239,17 +307,19 @@ func (o OpsGenieNotificationOutput) ToOpsGenieNotificationOutputWithContext(ctx 
 	return o
 }
 
-// The configuration is enabled (`true`) or disabled (`false`)
+// This setting is enabled (`true`) or disabled (`false`)
 func (o OpsGenieNotificationOutput) Active() pulumi.BoolOutput {
 	return o.ApplyT(func(v *OpsGenieNotification) pulumi.BoolOutput { return v.Active }).(pulumi.BoolOutput)
 }
 
-// The API key to access OpsGenie
+// The API key to access OpsGenie.
+//
+// Go to OpsGenie-Integrations and create a new Dynatrace integration. Copy the newly created API key.
 func (o OpsGenieNotificationOutput) ApiKey() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v *OpsGenieNotification) pulumi.StringPtrOutput { return v.ApiKey }).(pulumi.StringPtrOutput)
 }
 
-// The region domain of the OpsGenie
+// The region domain of the OpsGenie.
 func (o OpsGenieNotificationOutput) Domain() pulumi.StringOutput {
 	return o.ApplyT(func(v *OpsGenieNotification) pulumi.StringOutput { return v.Domain }).(pulumi.StringOutput)
 }
@@ -259,7 +329,16 @@ func (o OpsGenieNotificationOutput) LegacyId() pulumi.StringOutput {
 	return o.ApplyT(func(v *OpsGenieNotification) pulumi.StringOutput { return v.LegacyId }).(pulumi.StringOutput)
 }
 
-// The content of the message.  You can use the following placeholders:  * `{ProblemID}`: The display number of the reported problem.  * `{ProblemImpact}`: The [impact level](https://www.dynatrace.com/support/help/shortlink/impact-analysis) of the problem. Possible values are `APPLICATION`, `SERVICE`, and `INFRASTRUCTURE`.  * `{ProblemSeverity}`: The [severity level](https://www.dynatrace.com/support/help/shortlink/event-types) of the problem. Possible values are `AVAILABILITY`, `ERROR`, `PERFORMANCE`, `RESOURCE_CONTENTION`, and `CUSTOM_ALERT`.  * `{ProblemTitle}`: A short description of the problem
+// The content of the message. Type '{' for placeholder suggestions.. #### Available placeholders
+// **{ProblemID}**: Display number of the reported problem.
+//
+// **{ProblemImpact}**: Impact level of the problem. Possible values are APPLICATION, SERVICE, or INFRASTRUCTURE.
+//
+// **{ProblemSeverity}**: Severity level of the problem. Possible values are AVAILABILITY, ERROR, PERFORMANCE, RESOURCE_CONTENTION, or CUSTOM_ALERT.
+//
+// **{ProblemTitle}**: Short description of the problem.
+//
+// **{ImpactedEntityNames}**: The entity impacted by the problem (or multiple impacted entities).
 func (o OpsGenieNotificationOutput) Message() pulumi.StringOutput {
 	return o.ApplyT(func(v *OpsGenieNotification) pulumi.StringOutput { return v.Message }).(pulumi.StringOutput)
 }

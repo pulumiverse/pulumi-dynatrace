@@ -12,26 +12,6 @@ import * as utilities from "./utilities";
  * - Trace sampling - https://docs.dynatrace.com/docs/shortlink/url-sampling
  *
  * - Settings API - https://www.dynatrace.com/support/help/dynatrace-api/environment-api/settings (schemaId: `builtin:rpc-based-sampling`)
- *
- * ## Resource Example Usage
- *
- * ```typescript
- * import * as pulumi from "@pulumi/pulumi";
- * import * as dynatrace from "@pulumiverse/dynatrace";
- *
- * const _name_ = new dynatrace.RpcBasedSampling("#name#", {
- *     enabled: false,
- *     endpointName: "#name#-endpoint",
- *     endpointNameComparisonType: "DOES_NOT_END_WITH",
- *     ignore: true,
- *     remoteOperationName: "#name#-operation",
- *     remoteOperationNameComparisonType: "CONTAINS",
- *     remoteServiceName: "#name#-service",
- *     remoteServiceNameComparisonType: "STARTS_WITH",
- *     scope: "environment",
- *     wireProtocolType: "8",
- * });
- * ```
  */
 export class RpcBasedSampling extends pulumi.CustomResource {
     /**

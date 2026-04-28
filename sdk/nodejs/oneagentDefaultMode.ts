@@ -4,6 +4,21 @@
 import * as pulumi from "@pulumi/pulumi";
 import * as utilities from "./utilities";
 
+/**
+ * > This resource requires the API token scopes **Read settings** (`settings.read`) and **Write settings** (`settings.write`)
+ *
+ * ## Dynatrace Documentation
+ *
+ * - Application Security and monitoring modes - https://docs.dynatrace.com/docs/platform-modules/application-security/getting-started/monitoring-modes
+ *
+ * - Settings API - https://www.dynatrace.com/support/help/dynatrace-api/environment-api/settings (schemaId: `builtin:deployment.oneagent.default-mode`)
+ *
+ * ## Export Example Usage
+ *
+ * - `terraform-provider-dynatrace -export dynatrace.OneagentDefaultMode` downloads existing OneAgent default mode configuration
+ *
+ * The full documentation of the export feature is available [here](https://dt-url.net/h203qmc).
+ */
 export class OneagentDefaultMode extends pulumi.CustomResource {
     /**
      * Get an existing OneagentDefaultMode resource's state with the given name, ID, and optional extra

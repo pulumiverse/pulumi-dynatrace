@@ -10,6 +10,47 @@ using Pulumi;
 
 namespace Pulumiverse.Dynatrace
 {
+    /// <summary>
+    /// &gt; This resource requires the API token scopes **Read settings** (`settings.read`) and **Write settings** (`settings.write`)
+    /// 
+    /// ## Dynatrace Documentation
+    /// 
+    /// - Process Availability - https://www.dynatrace.com/support/help/how-to-use-dynatrace/process-groups/configuration/pg-monitoring
+    /// 
+    /// - Settings API - https://www.dynatrace.com/support/help/dynatrace-api/environment-api/settings (schemaId: `builtin:process.custom-process-monitoring-rule`)
+    /// 
+    /// ## Export Example Usage
+    /// 
+    /// - `terraform-provider-dynatrace -export dynatrace.ProcessMonitoringRule` downloads all existing custom process monitoring configuration
+    /// 
+    /// The full documentation of the export feature is available [here](https://dt-url.net/h203qmc).
+    /// 
+    /// ## Resource Example Usage
+    /// 
+    /// ```csharp
+    /// using System.Collections.Generic;
+    /// using System.Linq;
+    /// using Pulumi;
+    /// using Dynatrace = Pulumiverse.Dynatrace;
+    /// 
+    /// return await Deployment.RunAsync(() =&gt; 
+    /// {
+    ///     var test = new Dynatrace.ProcessMonitoringRule("test", new()
+    ///     {
+    ///         Enabled = true,
+    ///         Mode = "MONITORING_OFF",
+    ///         HostGroupId = "HOST_GROUP-0000000000000000",
+    ///         Condition = new Dynatrace.Inputs.ProcessMonitoringRuleConditionArgs
+    ///         {
+    ///             Item = "APACHE_CONFIG_PATH",
+    ///             Operator = "STARTS",
+    ///             Value = "foo-bar-x",
+    ///         },
+    ///     });
+    /// 
+    /// });
+    /// ```
+    /// </summary>
     [DynatraceResourceType("dynatrace:index/processMonitoringRule:ProcessMonitoringRule")]
     public partial class ProcessMonitoringRule : global::Pulumi.CustomResource
     {

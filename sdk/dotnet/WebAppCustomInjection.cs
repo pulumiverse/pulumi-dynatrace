@@ -10,6 +10,44 @@ using Pulumi;
 
 namespace Pulumiverse.Dynatrace
 {
+    /// <summary>
+    /// &gt; This resource requires the API token scopes **Read settings** (`settings.read`) and **Write settings** (`settings.write`)
+    /// 
+    /// ## Dynatrace Documentation
+    /// 
+    /// - Web applications - https://docs.dynatrace.com/docs/platform-modules/digital-experience/web-applications
+    /// 
+    /// - Settings API - https://www.dynatrace.com/support/help/dynatrace-api/environment-api/settings (schemaId: `builtin:rum.web.custom-injection-rules`)
+    /// 
+    /// ## Export Example Usage
+    /// 
+    /// - `terraform-provider-dynatrace -export dynatrace.WebAppCustomInjection` downloads existing custom injection rules
+    /// 
+    /// The full documentation of the export feature is available [here](https://dt-url.net/h203qmc).
+    /// 
+    /// ## Resource Example Usage
+    /// 
+    /// ```csharp
+    /// using System.Collections.Generic;
+    /// using System.Linq;
+    /// using Pulumi;
+    /// using Dynatrace = Pulumiverse.Dynatrace;
+    /// 
+    /// return await Deployment.RunAsync(() =&gt; 
+    /// {
+    ///     var APPLICATION_1234567890000000 = new Dynatrace.WebAppCustomInjection("APPLICATION-1234567890000000", new()
+    ///     {
+    ///         Enabled = false,
+    ///         ApplicationId = "APPLICATION-1234567890000000",
+    ///         Operator = "Starts",
+    ///         UrlPattern = "/terraform",
+    ///         Rule = "AfterSpecificHtml",
+    ///         HtmlPattern = "example",
+    ///     });
+    /// 
+    /// });
+    /// ```
+    /// </summary>
     [DynatraceResourceType("dynatrace:index/webAppCustomInjection:WebAppCustomInjection")]
     public partial class WebAppCustomInjection : global::Pulumi.CustomResource
     {

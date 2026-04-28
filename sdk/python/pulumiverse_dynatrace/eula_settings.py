@@ -23,6 +23,7 @@ class EulaSettingsArgs:
                  scope: Optional[pulumi.Input[_builtins.str]] = None):
         """
         The set of arguments for constructing a EulaSettings resource.
+
         :param pulumi.Input[_builtins.bool] enable_eula: Display end user terms to new users logging in to the environment
         :param pulumi.Input[_builtins.str] scope: The scope of this setting (environment)
         """
@@ -62,6 +63,7 @@ class _EulaSettingsState:
                  scope: Optional[pulumi.Input[_builtins.str]] = None):
         """
         Input properties used for looking up and filtering EulaSettings resources.
+
         :param pulumi.Input[_builtins.bool] enable_eula: Display end user terms to new users logging in to the environment
         :param pulumi.Input[_builtins.str] scope: The scope of this setting (environment)
         """
@@ -105,7 +107,21 @@ class EulaSettings(pulumi.CustomResource):
                  scope: Optional[pulumi.Input[_builtins.str]] = None,
                  __props__=None):
         """
-        Create a EulaSettings resource with the given unique name, props, and options.
+        > This resource requires the API token scopes **Read settings** (`settings.read`) and **Write settings** (`settings.write`)
+
+        ## Dynatrace Documentation
+
+        - Display clickwrap agreement to new users - https://www.dynatrace.com/support/help/manage/access-control/user-management-and-sso/clickwrap-agreement
+
+        - Settings API - https://www.dynatrace.com/support/help/dynatrace-api/environment-api/settings (schemaId: `builtin:eula-settings`)
+
+        ## Export Example Usage
+
+        - `terraform-provider-dynatrace -export EulaSettings` downloads existing clickwrap agreement configuration
+
+        The full documentation of the export feature is available [here](https://dt-url.net/h203qmc).
+
+
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[_builtins.bool] enable_eula: Display end user terms to new users logging in to the environment
@@ -118,7 +134,21 @@ class EulaSettings(pulumi.CustomResource):
                  args: EulaSettingsArgs,
                  opts: Optional[pulumi.ResourceOptions] = None):
         """
-        Create a EulaSettings resource with the given unique name, props, and options.
+        > This resource requires the API token scopes **Read settings** (`settings.read`) and **Write settings** (`settings.write`)
+
+        ## Dynatrace Documentation
+
+        - Display clickwrap agreement to new users - https://www.dynatrace.com/support/help/manage/access-control/user-management-and-sso/clickwrap-agreement
+
+        - Settings API - https://www.dynatrace.com/support/help/dynatrace-api/environment-api/settings (schemaId: `builtin:eula-settings`)
+
+        ## Export Example Usage
+
+        - `terraform-provider-dynatrace -export EulaSettings` downloads existing clickwrap agreement configuration
+
+        The full documentation of the export feature is available [here](https://dt-url.net/h203qmc).
+
+
         :param str resource_name: The name of the resource.
         :param EulaSettingsArgs args: The arguments to use to populate this resource's properties.
         :param pulumi.ResourceOptions opts: Options for the resource.

@@ -10,9 +10,49 @@ using Pulumi;
 
 namespace Pulumiverse.Dynatrace
 {
+    /// <summary>
+    /// &gt; This resource requires the API token scopes **Read settings** (`settings.read`) and **Write settings** (`settings.write`)
+    /// 
+    /// ## Dynatrace Documentation
+    /// 
+    /// - OneAgent Features - https://www.dynatrace.com/support/help/setup-and-configuration/dynatrace-oneagent/oneagent-features#configuration-via-web-ui
+    /// 
+    /// - Settings API - https://www.dynatrace.com/support/help/dynatrace-api/environment-api/settings (schemaId: `builtin:oneagent.features`)
+    /// 
+    /// ## Export Example Usage
+    /// 
+    /// - `terraform-provider-dynatrace -export dynatrace.OneagentFeatures` downloads the current configuration for OneAgent Features
+    /// 
+    /// The full documentation of the export feature is available [here](https://dt-url.net/h203qmc).
+    /// 
+    /// ## Resource Example Usage
+    /// 
+    /// ```csharp
+    /// using System.Collections.Generic;
+    /// using System.Linq;
+    /// using Pulumi;
+    /// using Dynatrace = Pulumiverse.Dynatrace;
+    /// 
+    /// return await Deployment.RunAsync(() =&gt; 
+    /// {
+    ///     // ID vu9U3hXa3q0AAAABABlidWlsdGluOm9uZWFnZW50LmZlYXR1cmVzAAZ0ZW5hbnQABnRlbmFudAAkMWQzYjY4ODMtOWViZi0zMDljLTg1YjktNjg4OTcxYzE3NDM1vu9U3hXa3q0
+    ///     var SENSOR_DOTNET_ASPNET = new Dynatrace.OneagentFeatures("SENSOR_DOTNET_ASPNET", new()
+    ///     {
+    ///         Enabled = true,
+    ///         Instrumentation = true,
+    ///         Key = "SENSOR_DOTNET_ASPNET",
+    ///         Scope = "environment",
+    ///     });
+    /// 
+    /// });
+    /// ```
+    /// </summary>
     [DynatraceResourceType("dynatrace:index/oneagentFeatures:OneagentFeatures")]
     public partial class OneagentFeatures : global::Pulumi.CustomResource
     {
+        /// <summary>
+        /// Used internally by the terraform provider. Do not populate
+        /// </summary>
         [Output("_restore_")]
         public Output<string> _restore_ { get; private set; } = null!;
 
@@ -131,6 +171,9 @@ namespace Pulumiverse.Dynatrace
 
     public sealed class OneagentFeaturesState : global::Pulumi.ResourceArgs
     {
+        /// <summary>
+        /// Used internally by the terraform provider. Do not populate
+        /// </summary>
         [Input("_restore_")]
         public Input<string>? _restore_ { get; set; }
 

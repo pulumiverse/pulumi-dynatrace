@@ -23,6 +23,7 @@ class LogGrailArgs:
                  parallel_ingest_period: pulumi.Input[_builtins.str]):
         """
         The set of arguments for constructing a LogGrail resource.
+
         :param pulumi.Input[_builtins.bool] activated: Activate logs powered by Grail.
         :param pulumi.Input[_builtins.str] parallel_ingest_period: Possible Values: `NONE`, `SEVEN_DAYS`, `THIRTY_FIVE_DAYS`
         """
@@ -61,6 +62,7 @@ class _LogGrailState:
                  parallel_ingest_period: Optional[pulumi.Input[_builtins.str]] = None):
         """
         Input properties used for looking up and filtering LogGrail resources.
+
         :param pulumi.Input[_builtins.bool] activated: Activate logs powered by Grail.
         :param pulumi.Input[_builtins.str] parallel_ingest_period: Possible Values: `NONE`, `SEVEN_DAYS`, `THIRTY_FIVE_DAYS`
         """
@@ -104,7 +106,23 @@ class LogGrail(pulumi.CustomResource):
                  parallel_ingest_period: Optional[pulumi.Input[_builtins.str]] = None,
                  __props__=None):
         """
-        Create a LogGrail resource with the given unique name, props, and options.
+        !> This resource API endpoint has been deprecated since it is only meant to be used for the initial Logs powered by Grail activation.
+
+        > This resource requires the API token scopes **Read settings** (`settings.read`) and **Write settings** (`settings.write`)
+
+        ## Dynatrace Documentation
+
+        - Migration to Log powered by Grail - https://www.dynatrace.com/support/help/observe-and-explore/logs/log-management-and-analytics/lma-migration-to-grail
+
+        - Settings API - https://www.dynatrace.com/support/help/dynatrace-api/environment-api/settings (schemaId: `builtin:logmonitoring.logs-on-grail-activate`)
+
+        ## Export Example Usage
+
+        - `terraform-provider-dynatrace -export LogGrail` downloads log powered by Grail configuration
+
+        The full documentation of the export feature is available [here](https://dt-url.net/h203qmc).
+
+
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[_builtins.bool] activated: Activate logs powered by Grail.
@@ -117,7 +135,23 @@ class LogGrail(pulumi.CustomResource):
                  args: LogGrailArgs,
                  opts: Optional[pulumi.ResourceOptions] = None):
         """
-        Create a LogGrail resource with the given unique name, props, and options.
+        !> This resource API endpoint has been deprecated since it is only meant to be used for the initial Logs powered by Grail activation.
+
+        > This resource requires the API token scopes **Read settings** (`settings.read`) and **Write settings** (`settings.write`)
+
+        ## Dynatrace Documentation
+
+        - Migration to Log powered by Grail - https://www.dynatrace.com/support/help/observe-and-explore/logs/log-management-and-analytics/lma-migration-to-grail
+
+        - Settings API - https://www.dynatrace.com/support/help/dynatrace-api/environment-api/settings (schemaId: `builtin:logmonitoring.logs-on-grail-activate`)
+
+        ## Export Example Usage
+
+        - `terraform-provider-dynatrace -export LogGrail` downloads log powered by Grail configuration
+
+        The full documentation of the export feature is available [here](https://dt-url.net/h203qmc).
+
+
         :param str resource_name: The name of the resource.
         :param LogGrailArgs args: The arguments to use to populate this resource's properties.
         :param pulumi.ResourceOptions opts: Options for the resource.

@@ -12,6 +12,22 @@ import (
 	"github.com/pulumiverse/pulumi-dynatrace/sdk/go/dynatrace/internal"
 )
 
+// > **Dynatrace SaaS only**
+//
+// > This resource requires an OAuth client or platform token configured with the permissions outlined in the [Davis Anomaly Detection](https://docs.dynatrace.com/docs/shortlink/davis-ai-anomaly-detection-app#expand--prerequisites--1) app documentation.
+// Please set the environment variables `DT_CLIENT_ID` and `DT_CLIENT_SECRET`, or alternatively `DT_PLATFORM_TOKEN`.
+//
+// ## Dynatrace Documentation
+//
+// - Davis Anomaly Detection App - https://docs.dynatrace.com/docs/platform/davis-ai/anomaly-detection/anomaly-detection-app
+//
+// - Settings API - https://www.dynatrace.com/support/help/dynatrace-api/environment-api/settings (schemaId: `builtin:davis.anomaly-detectors`)
+//
+// ## Export Example Usage
+//
+// - `terraform-provider-dynatrace -export DavisAnomalyDetectors` downloads all existing Davis anomaly detector configuration
+//
+// The full documentation of the export feature is available [here](https://dt-url.net/h203qmc).
 type DavisAnomalyDetectors struct {
 	pulumi.CustomResourceState
 

@@ -27,6 +27,7 @@ class WebAppKeyPerformanceXhrArgs:
                  fallback_thresholds: Optional[pulumi.Input['WebAppKeyPerformanceXhrFallbackThresholdsArgs']] = None):
         """
         The set of arguments for constructing a WebAppKeyPerformanceXhr resource.
+
         :param pulumi.Input[_builtins.str] kpm: Possible Values: `RESPONSE_END`, `RESPONSE_START`, `USER_ACTION_DURATION`, `VISUALLY_COMPLETE`
         :param pulumi.Input[_builtins.str] scope: The scope of this setting (APPLICATION_METHOD, APPLICATION)
         :param pulumi.Input['WebAppKeyPerformanceXhrThresholdsArgs'] thresholds: Set the Tolerating and Frustrated performance thresholds for this action type.
@@ -96,6 +97,7 @@ class _WebAppKeyPerformanceXhrState:
                  thresholds: Optional[pulumi.Input['WebAppKeyPerformanceXhrThresholdsArgs']] = None):
         """
         Input properties used for looking up and filtering WebAppKeyPerformanceXhr resources.
+
         :param pulumi.Input['WebAppKeyPerformanceXhrFallbackThresholdsArgs'] fallback_thresholds: If the selected key performance metric is not detected, the **User action duration** metric is used instead.
         :param pulumi.Input[_builtins.str] kpm: Possible Values: `RESPONSE_END`, `RESPONSE_START`, `USER_ACTION_DURATION`, `VISUALLY_COMPLETE`
         :param pulumi.Input[_builtins.str] scope: The scope of this setting (APPLICATION_METHOD, APPLICATION)
@@ -171,7 +173,21 @@ class WebAppKeyPerformanceXhr(pulumi.CustomResource):
                  thresholds: Optional[pulumi.Input[Union['WebAppKeyPerformanceXhrThresholdsArgs', 'WebAppKeyPerformanceXhrThresholdsArgsDict']]] = None,
                  __props__=None):
         """
-        Create a WebAppKeyPerformanceXhr resource with the given unique name, props, and options.
+        > This resource requires the API token scopes **Read settings** (`settings.read`) and **Write settings** (`settings.write`)
+
+        ## Dynatrace Documentation
+
+        - Adjust Apdex settings for web applications - https://www.dynatrace.com/support/help/platform-modules/digital-experience/web-applications/additional-configuration/configure-apdex-web
+
+        - Settings API - https://www.dynatrace.com/support/help/dynatrace-api/environment-api/settings (schemaId: `builtin:rum.web.key-performance-metric-xhr-actions`)
+
+        ## Export Example Usage
+
+        - `terraform-provider-dynatrace -export WebAppKeyPerformanceXhr` downloads all existing apdex threshold configuration for XHR actions
+
+        The full documentation of the export feature is available [here](https://dt-url.net/h203qmc).
+
+
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[Union['WebAppKeyPerformanceXhrFallbackThresholdsArgs', 'WebAppKeyPerformanceXhrFallbackThresholdsArgsDict']] fallback_thresholds: If the selected key performance metric is not detected, the **User action duration** metric is used instead.
@@ -186,7 +202,21 @@ class WebAppKeyPerformanceXhr(pulumi.CustomResource):
                  args: WebAppKeyPerformanceXhrArgs,
                  opts: Optional[pulumi.ResourceOptions] = None):
         """
-        Create a WebAppKeyPerformanceXhr resource with the given unique name, props, and options.
+        > This resource requires the API token scopes **Read settings** (`settings.read`) and **Write settings** (`settings.write`)
+
+        ## Dynatrace Documentation
+
+        - Adjust Apdex settings for web applications - https://www.dynatrace.com/support/help/platform-modules/digital-experience/web-applications/additional-configuration/configure-apdex-web
+
+        - Settings API - https://www.dynatrace.com/support/help/dynatrace-api/environment-api/settings (schemaId: `builtin:rum.web.key-performance-metric-xhr-actions`)
+
+        ## Export Example Usage
+
+        - `terraform-provider-dynatrace -export WebAppKeyPerformanceXhr` downloads all existing apdex threshold configuration for XHR actions
+
+        The full documentation of the export feature is available [here](https://dt-url.net/h203qmc).
+
+
         :param str resource_name: The name of the resource.
         :param WebAppKeyPerformanceXhrArgs args: The arguments to use to populate this resource's properties.
         :param pulumi.ResourceOptions opts: Options for the resource.

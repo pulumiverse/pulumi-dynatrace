@@ -26,6 +26,7 @@ class OpenpipelineLogsArgs:
                  routing: Optional[pulumi.Input['OpenpipelineLogsRoutingArgs']] = None):
         """
         The set of arguments for constructing a OpenpipelineLogs resource.
+
         :param pulumi.Input['OpenpipelineLogsEndpointsArgs'] endpoints: List of all ingest sources of the configuration
         :param pulumi.Input['OpenpipelineLogsPipelinesArgs'] pipelines: List of all pipelines of the configuration
         :param pulumi.Input['OpenpipelineLogsRoutingArgs'] routing: Dynamic routing definition
@@ -82,6 +83,7 @@ class _OpenpipelineLogsState:
                  routing: Optional[pulumi.Input['OpenpipelineLogsRoutingArgs']] = None):
         """
         Input properties used for looking up and filtering OpenpipelineLogs resources.
+
         :param pulumi.Input['OpenpipelineLogsEndpointsArgs'] endpoints: List of all ingest sources of the configuration
         :param pulumi.Input['OpenpipelineLogsPipelinesArgs'] pipelines: List of all pipelines of the configuration
         :param pulumi.Input['OpenpipelineLogsRoutingArgs'] routing: Dynamic routing definition
@@ -141,7 +143,54 @@ class OpenpipelineLogs(pulumi.CustomResource):
                  routing: Optional[pulumi.Input[Union['OpenpipelineLogsRoutingArgs', 'OpenpipelineLogsRoutingArgsDict']]] = None,
                  __props__=None):
         """
-        Create a OpenpipelineLogs resource with the given unique name, props, and options.
+        !> This resource API endpoint has been deprecated, please migrate your OpenPipeline configurations and use `dynatrace_openpipeline_v2_logs_*` instead.
+
+        !> Deploying an OpenPipeline configuration will overwrite the existing one of the same kind, causing any manual changes made in the web UI or other configurations managed by Terraform or Monaco to be lost. Ensure all configurations are defined within a single Terraform or Monaco configuration to prevent data loss.
+
+        > **Dynatrace SaaS only**
+
+        > To utilize this resource, please define the environment variables `DT_CLIENT_ID`, `DT_CLIENT_SECRET`, `DT_ACCOUNT_ID` with an OAuth client including the following permissions: **View OpenPipeline configurations** (`openpipeline:configurations:read`), and **Edit OpenPipeline configurations** (`openpipeline:configurations:write`).
+
+        ## Dynatrace Documentation
+
+        - OpenPipeline - https://docs.dynatrace.com/docs/platform/openpipeline
+
+        ## Export Example Usage
+
+        - `terraform-provider-dynatrace -export OpenpipelineLogs` downloads all existing OpenPipeline definitions for Logs
+
+        The full documentation of the export feature is available [here](https://dt-url.net/h203qmc).
+
+        ## Resource Example Usage
+
+        ```python
+        import pulumi
+        import pulumiverse_dynatrace as dynatrace
+
+        logs = dynatrace.OpenpipelineLogs("logs", pipelines={
+            "pipelines": [{
+                "enabled": True,
+                "display_name": "test",
+                "id": "pipeline_test_5036",
+                "processing": {
+                    "processors": [{
+                        "fields_rename_processor": {
+                            "description": "test",
+                            "enabled": True,
+                            "id": "processor_test_8644",
+                            "matcher": "true",
+                            "fields": [{
+                                "from_name": "bar",
+                                "to_name": "foo",
+                            }],
+                        },
+                    }],
+                },
+            }],
+        })
+        ```
+
+
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[Union['OpenpipelineLogsEndpointsArgs', 'OpenpipelineLogsEndpointsArgsDict']] endpoints: List of all ingest sources of the configuration
@@ -155,7 +204,54 @@ class OpenpipelineLogs(pulumi.CustomResource):
                  args: Optional[OpenpipelineLogsArgs] = None,
                  opts: Optional[pulumi.ResourceOptions] = None):
         """
-        Create a OpenpipelineLogs resource with the given unique name, props, and options.
+        !> This resource API endpoint has been deprecated, please migrate your OpenPipeline configurations and use `dynatrace_openpipeline_v2_logs_*` instead.
+
+        !> Deploying an OpenPipeline configuration will overwrite the existing one of the same kind, causing any manual changes made in the web UI or other configurations managed by Terraform or Monaco to be lost. Ensure all configurations are defined within a single Terraform or Monaco configuration to prevent data loss.
+
+        > **Dynatrace SaaS only**
+
+        > To utilize this resource, please define the environment variables `DT_CLIENT_ID`, `DT_CLIENT_SECRET`, `DT_ACCOUNT_ID` with an OAuth client including the following permissions: **View OpenPipeline configurations** (`openpipeline:configurations:read`), and **Edit OpenPipeline configurations** (`openpipeline:configurations:write`).
+
+        ## Dynatrace Documentation
+
+        - OpenPipeline - https://docs.dynatrace.com/docs/platform/openpipeline
+
+        ## Export Example Usage
+
+        - `terraform-provider-dynatrace -export OpenpipelineLogs` downloads all existing OpenPipeline definitions for Logs
+
+        The full documentation of the export feature is available [here](https://dt-url.net/h203qmc).
+
+        ## Resource Example Usage
+
+        ```python
+        import pulumi
+        import pulumiverse_dynatrace as dynatrace
+
+        logs = dynatrace.OpenpipelineLogs("logs", pipelines={
+            "pipelines": [{
+                "enabled": True,
+                "display_name": "test",
+                "id": "pipeline_test_5036",
+                "processing": {
+                    "processors": [{
+                        "fields_rename_processor": {
+                            "description": "test",
+                            "enabled": True,
+                            "id": "processor_test_8644",
+                            "matcher": "true",
+                            "fields": [{
+                                "from_name": "bar",
+                                "to_name": "foo",
+                            }],
+                        },
+                    }],
+                },
+            }],
+        })
+        ```
+
+
         :param str resource_name: The name of the resource.
         :param OpenpipelineLogsArgs args: The arguments to use to populate this resource's properties.
         :param pulumi.ResourceOptions opts: Options for the resource.

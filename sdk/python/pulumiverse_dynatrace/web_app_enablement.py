@@ -27,10 +27,11 @@ class WebAppEnablementArgs:
                  experience_analytics: Optional[pulumi.Input['WebAppEnablementExperienceAnalyticsArgs']] = None):
         """
         The set of arguments for constructing a WebAppEnablement resource.
+
         :param pulumi.Input['WebAppEnablementRumArgs'] rum: Capture and analyze all user actions within your application. Enable [Real User Monitoring (RUM)](https://dt-url.net/1n2b0prq) to monitor and improve your application's performance, identify errors, and gain insight into your user's behavior and experience.
         :param pulumi.Input['WebAppEnablementSessionReplayArgs'] session_replay: [Session Replay](https://dt-url.net/session-replay) captures all user interactions within your application and replays them in a movie-like experience while providing [best-in-class security and data protection](https://dt-url.net/b303zxj).
         :param pulumi.Input[_builtins.str] application_id: The scope of this settings. If the settings should cover the whole environment, just don't specify any scope.
-        :param pulumi.Input['WebAppEnablementExperienceAnalyticsArgs'] experience_analytics: Experience Analytics
+        :param pulumi.Input['WebAppEnablementExperienceAnalyticsArgs'] experience_analytics: User Interactions
         """
         pulumi.set(__self__, "rum", rum)
         pulumi.set(__self__, "session_replay", session_replay)
@@ -79,7 +80,7 @@ class WebAppEnablementArgs:
     @pulumi.getter(name="experienceAnalytics")
     def experience_analytics(self) -> Optional[pulumi.Input['WebAppEnablementExperienceAnalyticsArgs']]:
         """
-        Experience Analytics
+        User Interactions
         """
         return pulumi.get(self, "experience_analytics")
 
@@ -97,8 +98,9 @@ class _WebAppEnablementState:
                  session_replay: Optional[pulumi.Input['WebAppEnablementSessionReplayArgs']] = None):
         """
         Input properties used for looking up and filtering WebAppEnablement resources.
+
         :param pulumi.Input[_builtins.str] application_id: The scope of this settings. If the settings should cover the whole environment, just don't specify any scope.
-        :param pulumi.Input['WebAppEnablementExperienceAnalyticsArgs'] experience_analytics: Experience Analytics
+        :param pulumi.Input['WebAppEnablementExperienceAnalyticsArgs'] experience_analytics: User Interactions
         :param pulumi.Input['WebAppEnablementRumArgs'] rum: Capture and analyze all user actions within your application. Enable [Real User Monitoring (RUM)](https://dt-url.net/1n2b0prq) to monitor and improve your application's performance, identify errors, and gain insight into your user's behavior and experience.
         :param pulumi.Input['WebAppEnablementSessionReplayArgs'] session_replay: [Session Replay](https://dt-url.net/session-replay) captures all user interactions within your application and replays them in a movie-like experience while providing [best-in-class security and data protection](https://dt-url.net/b303zxj).
         """
@@ -127,7 +129,7 @@ class _WebAppEnablementState:
     @pulumi.getter(name="experienceAnalytics")
     def experience_analytics(self) -> Optional[pulumi.Input['WebAppEnablementExperienceAnalyticsArgs']]:
         """
-        Experience Analytics
+        User Interactions
         """
         return pulumi.get(self, "experience_analytics")
 
@@ -172,11 +174,27 @@ class WebAppEnablement(pulumi.CustomResource):
                  session_replay: Optional[pulumi.Input[Union['WebAppEnablementSessionReplayArgs', 'WebAppEnablementSessionReplayArgsDict']]] = None,
                  __props__=None):
         """
-        Create a WebAppEnablement resource with the given unique name, props, and options.
+        > Configuration of the application scope overlaps with dynatrace_web_application, but this resource in addition provides an option for an environment scope.
+
+        > This resource requires the API token scopes **Read settings** (`settings.read`) and **Write settings** (`settings.write`)
+
+        ## Dynatrace Documentation
+
+        - Configure cost and traffic control for web applications - https://www.dynatrace.com/support/help/how-to-use-dynatrace/real-user-monitoring/setup-and-configuration/web-applications/additional-configuration/configure-cost-and-traffic-control-web
+
+        - Settings API - https://www.dynatrace.com/support/help/dynatrace-api/environment-api/settings (schemaId: `builtin:rum.web.enablement`)
+
+        ## Export Example Usage
+
+        - `terraform-provider-dynatrace -export WebAppEnablement` downloads all existing web application enablement and cost control configuration
+
+        The full documentation of the export feature is available [here](https://dt-url.net/h203qmc).
+
+
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[_builtins.str] application_id: The scope of this settings. If the settings should cover the whole environment, just don't specify any scope.
-        :param pulumi.Input[Union['WebAppEnablementExperienceAnalyticsArgs', 'WebAppEnablementExperienceAnalyticsArgsDict']] experience_analytics: Experience Analytics
+        :param pulumi.Input[Union['WebAppEnablementExperienceAnalyticsArgs', 'WebAppEnablementExperienceAnalyticsArgsDict']] experience_analytics: User Interactions
         :param pulumi.Input[Union['WebAppEnablementRumArgs', 'WebAppEnablementRumArgsDict']] rum: Capture and analyze all user actions within your application. Enable [Real User Monitoring (RUM)](https://dt-url.net/1n2b0prq) to monitor and improve your application's performance, identify errors, and gain insight into your user's behavior and experience.
         :param pulumi.Input[Union['WebAppEnablementSessionReplayArgs', 'WebAppEnablementSessionReplayArgsDict']] session_replay: [Session Replay](https://dt-url.net/session-replay) captures all user interactions within your application and replays them in a movie-like experience while providing [best-in-class security and data protection](https://dt-url.net/b303zxj).
         """
@@ -187,7 +205,23 @@ class WebAppEnablement(pulumi.CustomResource):
                  args: WebAppEnablementArgs,
                  opts: Optional[pulumi.ResourceOptions] = None):
         """
-        Create a WebAppEnablement resource with the given unique name, props, and options.
+        > Configuration of the application scope overlaps with dynatrace_web_application, but this resource in addition provides an option for an environment scope.
+
+        > This resource requires the API token scopes **Read settings** (`settings.read`) and **Write settings** (`settings.write`)
+
+        ## Dynatrace Documentation
+
+        - Configure cost and traffic control for web applications - https://www.dynatrace.com/support/help/how-to-use-dynatrace/real-user-monitoring/setup-and-configuration/web-applications/additional-configuration/configure-cost-and-traffic-control-web
+
+        - Settings API - https://www.dynatrace.com/support/help/dynatrace-api/environment-api/settings (schemaId: `builtin:rum.web.enablement`)
+
+        ## Export Example Usage
+
+        - `terraform-provider-dynatrace -export WebAppEnablement` downloads all existing web application enablement and cost control configuration
+
+        The full documentation of the export feature is available [here](https://dt-url.net/h203qmc).
+
+
         :param str resource_name: The name of the resource.
         :param WebAppEnablementArgs args: The arguments to use to populate this resource's properties.
         :param pulumi.ResourceOptions opts: Options for the resource.
@@ -246,7 +280,7 @@ class WebAppEnablement(pulumi.CustomResource):
         :param pulumi.Input[str] id: The unique provider ID of the resource to lookup.
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[_builtins.str] application_id: The scope of this settings. If the settings should cover the whole environment, just don't specify any scope.
-        :param pulumi.Input[Union['WebAppEnablementExperienceAnalyticsArgs', 'WebAppEnablementExperienceAnalyticsArgsDict']] experience_analytics: Experience Analytics
+        :param pulumi.Input[Union['WebAppEnablementExperienceAnalyticsArgs', 'WebAppEnablementExperienceAnalyticsArgsDict']] experience_analytics: User Interactions
         :param pulumi.Input[Union['WebAppEnablementRumArgs', 'WebAppEnablementRumArgsDict']] rum: Capture and analyze all user actions within your application. Enable [Real User Monitoring (RUM)](https://dt-url.net/1n2b0prq) to monitor and improve your application's performance, identify errors, and gain insight into your user's behavior and experience.
         :param pulumi.Input[Union['WebAppEnablementSessionReplayArgs', 'WebAppEnablementSessionReplayArgsDict']] session_replay: [Session Replay](https://dt-url.net/session-replay) captures all user interactions within your application and replays them in a movie-like experience while providing [best-in-class security and data protection](https://dt-url.net/b303zxj).
         """
@@ -272,7 +306,7 @@ class WebAppEnablement(pulumi.CustomResource):
     @pulumi.getter(name="experienceAnalytics")
     def experience_analytics(self) -> pulumi.Output[Optional['outputs.WebAppEnablementExperienceAnalytics']]:
         """
-        Experience Analytics
+        User Interactions
         """
         return pulumi.get(self, "experience_analytics")
 

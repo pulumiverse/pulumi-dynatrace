@@ -12,6 +12,76 @@ import (
 	"github.com/pulumiverse/pulumi-dynatrace/sdk/go/dynatrace/internal"
 )
 
+// > This resource requires the API token scopes `extensions.write`, `extensionEnvironment.write`, `extension.read` and `extensionEnvironment.read`.
+//
+// Using this resource you can determine which version of a specified Extension should currently be active within your environment. In case the extension has not yet gotten installed for the specified version the installation happens automatically.
+//
+// The `name` attribute needs to refer to the fully qualified name of the extension. For a list of eligible names you can utilize the data source `getHubItems` like in this example:
+//
+// ```go
+// package main
+//
+// import (
+//
+//	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//	"github.com/pulumiverse/pulumi-dynatrace/sdk/go/dynatrace"
+//
+// )
+//
+//	func main() {
+//		pulumi.Run(func(ctx *pulumi.Context) error {
+//			_, err := dynatrace.GetHubItems(ctx, &dynatrace.GetHubItemsArgs{
+//				Type: pulumi.StringRef("EXTENSION2"),
+//			}, nil)
+//			if err != nil {
+//				return err
+//			}
+//			return nil
+//		})
+//	}
+//
+// ```
+//
+// > Deleting resources of type `HubExtensionActiveVersion` has no real effect on your Dynatrace Environment. Terraform will just stop managing the active version of that extension.
+//
+// For installing Monitoring Configurations for a specific Extension you can use the resource `HubExtensionConfig`.
+//
+// ## Dynatrace Documentation
+//
+// - Extensions API - https://docs.dynatrace.com/docs/dynatrace-api/environment-api/extensions-20
+//
+// ## Export Example Usage
+//
+// - `terraform-provider-dynatrace -export HubExtensionActiveVersion` downloads a resource for the currently active version of every installed extension.
+//
+// The full documentation of the export feature is available [here](https://dt-url.net/h203qmc).
+//
+// ## Resource Example Usage
+//
+// ```go
+// package main
+//
+// import (
+//
+//	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//	"github.com/pulumiverse/pulumi-dynatrace/sdk/go/dynatrace"
+//
+// )
+//
+//	func main() {
+//		pulumi.Run(func(ctx *pulumi.Context) error {
+//			_, err := dynatrace.NewHubExtensionActiveVersion(ctx, "custom_com_dynatrace_extension_prometheus-cadvisor", &dynatrace.HubExtensionActiveVersionArgs{
+//				Name:    pulumi.String("com.dynatrace.extension.active-directory-python"),
+//				Version: pulumi.String("3.1.6"),
+//			})
+//			if err != nil {
+//				return err
+//			}
+//			return nil
+//		})
+//	}
+//
+// ```
 type HubExtensionActiveVersion struct {
 	pulumi.CustomResourceState
 

@@ -25,7 +25,7 @@ namespace Pulumiverse.Dynatrace.Outputs
         /// <summary>
         /// no documentation available
         /// </summary>
-        public readonly Outputs.HostAnomaliesV2HostHighGcActivityDetection HighGcActivityDetection;
+        public readonly Outputs.HostAnomaliesV2HostHighGcActivityDetection? HighGcActivityDetection;
         /// <summary>
         /// no documentation available
         /// </summary>
@@ -49,7 +49,7 @@ namespace Pulumiverse.Dynatrace.Outputs
 
             Outputs.HostAnomaliesV2HostHighCpuSaturationDetection highCpuSaturationDetection,
 
-            Outputs.HostAnomaliesV2HostHighGcActivityDetection highGcActivityDetection,
+            Outputs.HostAnomaliesV2HostHighGcActivityDetection? highGcActivityDetection,
 
             Outputs.HostAnomaliesV2HostHighMemoryDetection highMemoryDetection,
 

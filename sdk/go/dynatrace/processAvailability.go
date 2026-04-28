@@ -12,6 +12,19 @@ import (
 	"github.com/pulumiverse/pulumi-dynatrace/sdk/go/dynatrace/internal"
 )
 
+// > This resource requires the API token scopes **Read settings** (`settings.read`) and **Write settings** (`settings.write`)
+//
+// ## Dynatrace Documentation
+//
+// - Process Availability - https://www.dynatrace.com/support/help/how-to-use-dynatrace/infrastructure-monitoring/hosts/monitoring/process-availability
+//
+// - Settings API - https://www.dynatrace.com/support/help/dynatrace-api/environment-api/settings (schemaId: `builtin:processavailability`)
+//
+// ## Export Example Usage
+//
+// - `terraform-provider-dynatrace -export ProcessAvailability` downloads all existing process availability configuration
+//
+// The full documentation of the export feature is available [here](https://dt-url.net/h203qmc).
 type ProcessAvailability struct {
 	pulumi.CustomResourceState
 
@@ -19,13 +32,13 @@ type ProcessAvailability struct {
 	Enabled pulumi.BoolOutput `pulumi:"enabled"`
 	// Because this resource allows for ordering you may specify the ID of the resource instance that comes before this instance regarding order. If not specified when creating the setting will be added to the end of the list. If not specified during update the order will remain untouched
 	InsertAfter pulumi.StringOutput `pulumi:"insertAfter"`
-	// Set of additional key-value properties to be attached to the triggered event.
+	// Set of additional key-value properties to be attached to the triggered event. You can retrieve the available property keys using the [Events API v2](https://dt-url.net/9622g1w). Additionally any Host resource attribute can be dynamically substituted (agent 1.325+).
 	Metadata ProcessAvailabilityMetadataPtrOutput `pulumi:"metadata"`
-	// Specify a minimum number of processes matching the monitoring rule. If it's not satisfied, an alert will open.
+	// Specify a minimum number of processes matching the monitoring rule. An alert is triggered if any host falls below this threshold.
 	MinimumProcesses pulumi.IntPtrOutput `pulumi:"minimumProcesses"`
 	// Monitoring rule name
 	Name pulumi.StringOutput `pulumi:"name"`
-	// Select the operating systems on which the monitoring rule should be applied.
+	// Select the operating systems on which the monitoring rule should be applied. Possible Values: `AIX`, `LINUX`, `WINDOWS`
 	OperatingSystems pulumi.StringArrayOutput `pulumi:"operatingSystems"`
 	// Define process detection rules by selecting a process property and a condition. Each monitoring rule can have multiple detection rules associated with it.
 	Rules ProcessAvailabilityRulesPtrOutput `pulumi:"rules"`
@@ -70,13 +83,13 @@ type processAvailabilityState struct {
 	Enabled *bool `pulumi:"enabled"`
 	// Because this resource allows for ordering you may specify the ID of the resource instance that comes before this instance regarding order. If not specified when creating the setting will be added to the end of the list. If not specified during update the order will remain untouched
 	InsertAfter *string `pulumi:"insertAfter"`
-	// Set of additional key-value properties to be attached to the triggered event.
+	// Set of additional key-value properties to be attached to the triggered event. You can retrieve the available property keys using the [Events API v2](https://dt-url.net/9622g1w). Additionally any Host resource attribute can be dynamically substituted (agent 1.325+).
 	Metadata *ProcessAvailabilityMetadata `pulumi:"metadata"`
-	// Specify a minimum number of processes matching the monitoring rule. If it's not satisfied, an alert will open.
+	// Specify a minimum number of processes matching the monitoring rule. An alert is triggered if any host falls below this threshold.
 	MinimumProcesses *int `pulumi:"minimumProcesses"`
 	// Monitoring rule name
 	Name *string `pulumi:"name"`
-	// Select the operating systems on which the monitoring rule should be applied.
+	// Select the operating systems on which the monitoring rule should be applied. Possible Values: `AIX`, `LINUX`, `WINDOWS`
 	OperatingSystems []string `pulumi:"operatingSystems"`
 	// Define process detection rules by selecting a process property and a condition. Each monitoring rule can have multiple detection rules associated with it.
 	Rules *ProcessAvailabilityRules `pulumi:"rules"`
@@ -89,13 +102,13 @@ type ProcessAvailabilityState struct {
 	Enabled pulumi.BoolPtrInput
 	// Because this resource allows for ordering you may specify the ID of the resource instance that comes before this instance regarding order. If not specified when creating the setting will be added to the end of the list. If not specified during update the order will remain untouched
 	InsertAfter pulumi.StringPtrInput
-	// Set of additional key-value properties to be attached to the triggered event.
+	// Set of additional key-value properties to be attached to the triggered event. You can retrieve the available property keys using the [Events API v2](https://dt-url.net/9622g1w). Additionally any Host resource attribute can be dynamically substituted (agent 1.325+).
 	Metadata ProcessAvailabilityMetadataPtrInput
-	// Specify a minimum number of processes matching the monitoring rule. If it's not satisfied, an alert will open.
+	// Specify a minimum number of processes matching the monitoring rule. An alert is triggered if any host falls below this threshold.
 	MinimumProcesses pulumi.IntPtrInput
 	// Monitoring rule name
 	Name pulumi.StringPtrInput
-	// Select the operating systems on which the monitoring rule should be applied.
+	// Select the operating systems on which the monitoring rule should be applied. Possible Values: `AIX`, `LINUX`, `WINDOWS`
 	OperatingSystems pulumi.StringArrayInput
 	// Define process detection rules by selecting a process property and a condition. Each monitoring rule can have multiple detection rules associated with it.
 	Rules ProcessAvailabilityRulesPtrInput
@@ -112,13 +125,13 @@ type processAvailabilityArgs struct {
 	Enabled bool `pulumi:"enabled"`
 	// Because this resource allows for ordering you may specify the ID of the resource instance that comes before this instance regarding order. If not specified when creating the setting will be added to the end of the list. If not specified during update the order will remain untouched
 	InsertAfter *string `pulumi:"insertAfter"`
-	// Set of additional key-value properties to be attached to the triggered event.
+	// Set of additional key-value properties to be attached to the triggered event. You can retrieve the available property keys using the [Events API v2](https://dt-url.net/9622g1w). Additionally any Host resource attribute can be dynamically substituted (agent 1.325+).
 	Metadata *ProcessAvailabilityMetadata `pulumi:"metadata"`
-	// Specify a minimum number of processes matching the monitoring rule. If it's not satisfied, an alert will open.
+	// Specify a minimum number of processes matching the monitoring rule. An alert is triggered if any host falls below this threshold.
 	MinimumProcesses *int `pulumi:"minimumProcesses"`
 	// Monitoring rule name
 	Name *string `pulumi:"name"`
-	// Select the operating systems on which the monitoring rule should be applied.
+	// Select the operating systems on which the monitoring rule should be applied. Possible Values: `AIX`, `LINUX`, `WINDOWS`
 	OperatingSystems []string `pulumi:"operatingSystems"`
 	// Define process detection rules by selecting a process property and a condition. Each monitoring rule can have multiple detection rules associated with it.
 	Rules *ProcessAvailabilityRules `pulumi:"rules"`
@@ -132,13 +145,13 @@ type ProcessAvailabilityArgs struct {
 	Enabled pulumi.BoolInput
 	// Because this resource allows for ordering you may specify the ID of the resource instance that comes before this instance regarding order. If not specified when creating the setting will be added to the end of the list. If not specified during update the order will remain untouched
 	InsertAfter pulumi.StringPtrInput
-	// Set of additional key-value properties to be attached to the triggered event.
+	// Set of additional key-value properties to be attached to the triggered event. You can retrieve the available property keys using the [Events API v2](https://dt-url.net/9622g1w). Additionally any Host resource attribute can be dynamically substituted (agent 1.325+).
 	Metadata ProcessAvailabilityMetadataPtrInput
-	// Specify a minimum number of processes matching the monitoring rule. If it's not satisfied, an alert will open.
+	// Specify a minimum number of processes matching the monitoring rule. An alert is triggered if any host falls below this threshold.
 	MinimumProcesses pulumi.IntPtrInput
 	// Monitoring rule name
 	Name pulumi.StringPtrInput
-	// Select the operating systems on which the monitoring rule should be applied.
+	// Select the operating systems on which the monitoring rule should be applied. Possible Values: `AIX`, `LINUX`, `WINDOWS`
 	OperatingSystems pulumi.StringArrayInput
 	// Define process detection rules by selecting a process property and a condition. Each monitoring rule can have multiple detection rules associated with it.
 	Rules ProcessAvailabilityRulesPtrInput
@@ -243,12 +256,12 @@ func (o ProcessAvailabilityOutput) InsertAfter() pulumi.StringOutput {
 	return o.ApplyT(func(v *ProcessAvailability) pulumi.StringOutput { return v.InsertAfter }).(pulumi.StringOutput)
 }
 
-// Set of additional key-value properties to be attached to the triggered event.
+// Set of additional key-value properties to be attached to the triggered event. You can retrieve the available property keys using the [Events API v2](https://dt-url.net/9622g1w). Additionally any Host resource attribute can be dynamically substituted (agent 1.325+).
 func (o ProcessAvailabilityOutput) Metadata() ProcessAvailabilityMetadataPtrOutput {
 	return o.ApplyT(func(v *ProcessAvailability) ProcessAvailabilityMetadataPtrOutput { return v.Metadata }).(ProcessAvailabilityMetadataPtrOutput)
 }
 
-// Specify a minimum number of processes matching the monitoring rule. If it's not satisfied, an alert will open.
+// Specify a minimum number of processes matching the monitoring rule. An alert is triggered if any host falls below this threshold.
 func (o ProcessAvailabilityOutput) MinimumProcesses() pulumi.IntPtrOutput {
 	return o.ApplyT(func(v *ProcessAvailability) pulumi.IntPtrOutput { return v.MinimumProcesses }).(pulumi.IntPtrOutput)
 }
@@ -258,7 +271,7 @@ func (o ProcessAvailabilityOutput) Name() pulumi.StringOutput {
 	return o.ApplyT(func(v *ProcessAvailability) pulumi.StringOutput { return v.Name }).(pulumi.StringOutput)
 }
 
-// Select the operating systems on which the monitoring rule should be applied.
+// Select the operating systems on which the monitoring rule should be applied. Possible Values: `AIX`, `LINUX`, `WINDOWS`
 func (o ProcessAvailabilityOutput) OperatingSystems() pulumi.StringArrayOutput {
 	return o.ApplyT(func(v *ProcessAvailability) pulumi.StringArrayOutput { return v.OperatingSystems }).(pulumi.StringArrayOutput)
 }

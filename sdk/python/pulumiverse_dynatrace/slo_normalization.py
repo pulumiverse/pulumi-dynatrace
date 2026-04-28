@@ -22,6 +22,7 @@ class SloNormalizationArgs:
                  normalize: pulumi.Input[_builtins.bool]):
         """
         The set of arguments for constructing a SloNormalization resource.
+
         :param pulumi.Input[_builtins.bool] normalize: When set to true, the error budget left will be shown in percent of the total error budget. For more details see [SLO normalization help](https://dt-url.net/slo-normalize-error-budget).
         """
         pulumi.set(__self__, "normalize", normalize)
@@ -45,6 +46,7 @@ class _SloNormalizationState:
                  normalize: Optional[pulumi.Input[_builtins.bool]] = None):
         """
         Input properties used for looking up and filtering SloNormalization resources.
+
         :param pulumi.Input[_builtins.bool] normalize: When set to true, the error budget left will be shown in percent of the total error budget. For more details see [SLO normalization help](https://dt-url.net/slo-normalize-error-budget).
         """
         if normalize is not None:
@@ -72,7 +74,21 @@ class SloNormalization(pulumi.CustomResource):
                  normalize: Optional[pulumi.Input[_builtins.bool]] = None,
                  __props__=None):
         """
-        Create a SloNormalization resource with the given unique name, props, and options.
+        > This resource requires the API token scopes **Read settings** (`settings.read`) and **Write settings** (`settings.write`)
+
+        ## Dynatrace Documentation
+
+        - Normalize error budget - https://www.dynatrace.com/support/help/platform-modules/cloud-automation/service-level-objectives/configure-and-monitor-slo#normalize-error-budget
+
+        - Settings API - https://www.dynatrace.com/support/help/dynatrace-api/environment-api/settings (schemaId: `builtin:monitoring.slo.normalization`)
+
+        ## Export Example Usage
+
+        - `terraform-provider-dynatrace -export SloNormalization` downloads all existing service-level objective setup configuration
+
+        The full documentation of the export feature is available [here](https://dt-url.net/h203qmc).
+
+
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[_builtins.bool] normalize: When set to true, the error budget left will be shown in percent of the total error budget. For more details see [SLO normalization help](https://dt-url.net/slo-normalize-error-budget).
@@ -84,7 +100,21 @@ class SloNormalization(pulumi.CustomResource):
                  args: SloNormalizationArgs,
                  opts: Optional[pulumi.ResourceOptions] = None):
         """
-        Create a SloNormalization resource with the given unique name, props, and options.
+        > This resource requires the API token scopes **Read settings** (`settings.read`) and **Write settings** (`settings.write`)
+
+        ## Dynatrace Documentation
+
+        - Normalize error budget - https://www.dynatrace.com/support/help/platform-modules/cloud-automation/service-level-objectives/configure-and-monitor-slo#normalize-error-budget
+
+        - Settings API - https://www.dynatrace.com/support/help/dynatrace-api/environment-api/settings (schemaId: `builtin:monitoring.slo.normalization`)
+
+        ## Export Example Usage
+
+        - `terraform-provider-dynatrace -export SloNormalization` downloads all existing service-level objective setup configuration
+
+        The full documentation of the export feature is available [here](https://dt-url.net/h203qmc).
+
+
         :param str resource_name: The name of the resource.
         :param SloNormalizationArgs args: The arguments to use to populate this resource's properties.
         :param pulumi.ResourceOptions opts: Options for the resource.

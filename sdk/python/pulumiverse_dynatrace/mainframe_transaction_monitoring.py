@@ -28,6 +28,7 @@ class MainframeTransactionMonitoringArgs:
                  zos_ims_service_detection_uses_transaction_id: pulumi.Input[_builtins.bool]):
         """
         The set of arguments for constructing a MainframeTransactionMonitoring resource.
+
         :param pulumi.Input[_builtins.bool] group_cics_regions: If enabled, CICS regions belonging to the same CICSPlex will be grouped into a single process group. If disabled, a process group will be created for each CICS region.
         :param pulumi.Input[_builtins.bool] group_ims_regions: If enabled, IMS regions belonging to the same subsystem will be grouped into a single process group. If disabled, a process group will be created for each IMS region.
         :param pulumi.Input[_builtins.bool] monitor_all_ctg_protocols: If enabled, the CICS Transaction Gateway sensor will trace all EXCI requests including those that are using the TCP/IP or SNA protocol.
@@ -141,6 +142,7 @@ class _MainframeTransactionMonitoringState:
                  zos_ims_service_detection_uses_transaction_id: Optional[pulumi.Input[_builtins.bool]] = None):
         """
         Input properties used for looking up and filtering MainframeTransactionMonitoring resources.
+
         :param pulumi.Input[_builtins.bool] group_cics_regions: If enabled, CICS regions belonging to the same CICSPlex will be grouped into a single process group. If disabled, a process group will be created for each CICS region.
         :param pulumi.Input[_builtins.bool] group_ims_regions: If enabled, IMS regions belonging to the same subsystem will be grouped into a single process group. If disabled, a process group will be created for each IMS region.
         :param pulumi.Input[_builtins.bool] monitor_all_ctg_protocols: If enabled, the CICS Transaction Gateway sensor will trace all EXCI requests including those that are using the TCP/IP or SNA protocol.
@@ -264,7 +266,38 @@ class MainframeTransactionMonitoring(pulumi.CustomResource):
                  zos_ims_service_detection_uses_transaction_id: Optional[pulumi.Input[_builtins.bool]] = None,
                  __props__=None):
         """
-        Create a MainframeTransactionMonitoring resource with the given unique name, props, and options.
+        > This resource requires the API token scopes **Read settings** (`settings.read`) and **Write settings** (`settings.write`)
+
+        ## Dynatrace Documentation
+
+        - Customize CICS and IMS monitoring - https://www.dynatrace.com/support/help/setup-and-configuration/dynatrace-oneagent/installation-and-operation/zos/operation/cics-ims-monitoring
+
+        - Settings API - https://www.dynatrace.com/support/help/dynatrace-api/environment-api/settings (schemaId: `builtin:mainframe.txmonitoring`)
+
+        ## Export Example Usage
+
+        - `terraform-provider-dynatrace -export MainframeTransactionMonitoring` downloads all additional monitoring settings for CICS and IMS transactions
+
+        The full documentation of the export feature is available [here](https://dt-url.net/h203qmc).
+
+        ## Resource Example Usage
+
+        ```python
+        import pulumi
+        import pulumiverse_dynatrace as dynatrace
+
+        # ID vu9U3hXa3q0AAAABAB5idWlsdGluOm1haW5mcmFtZS50eG1vbml0b3JpbmcABnRlbmFudAAGdGVuYW50ACQwYWYxNWEwOS05YWM0LTMyZGEtOTZjZi01Y2Q3NjI1Y2MxNja-71TeFdrerQ
+        mainframe_transaction_monitoring = dynatrace.MainframeTransactionMonitoring("mainframe_transaction_monitoring",
+            group_cics_regions=True,
+            group_ims_regions=False,
+            monitor_all_ctg_protocols=False,
+            monitor_all_incoming_web_requests=False,
+            node_limit=500,
+            zos_cics_service_detection_uses_transaction_id=False,
+            zos_ims_service_detection_uses_transaction_id=False)
+        ```
+
+
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[_builtins.bool] group_cics_regions: If enabled, CICS regions belonging to the same CICSPlex will be grouped into a single process group. If disabled, a process group will be created for each CICS region.
@@ -282,7 +315,38 @@ class MainframeTransactionMonitoring(pulumi.CustomResource):
                  args: MainframeTransactionMonitoringArgs,
                  opts: Optional[pulumi.ResourceOptions] = None):
         """
-        Create a MainframeTransactionMonitoring resource with the given unique name, props, and options.
+        > This resource requires the API token scopes **Read settings** (`settings.read`) and **Write settings** (`settings.write`)
+
+        ## Dynatrace Documentation
+
+        - Customize CICS and IMS monitoring - https://www.dynatrace.com/support/help/setup-and-configuration/dynatrace-oneagent/installation-and-operation/zos/operation/cics-ims-monitoring
+
+        - Settings API - https://www.dynatrace.com/support/help/dynatrace-api/environment-api/settings (schemaId: `builtin:mainframe.txmonitoring`)
+
+        ## Export Example Usage
+
+        - `terraform-provider-dynatrace -export MainframeTransactionMonitoring` downloads all additional monitoring settings for CICS and IMS transactions
+
+        The full documentation of the export feature is available [here](https://dt-url.net/h203qmc).
+
+        ## Resource Example Usage
+
+        ```python
+        import pulumi
+        import pulumiverse_dynatrace as dynatrace
+
+        # ID vu9U3hXa3q0AAAABAB5idWlsdGluOm1haW5mcmFtZS50eG1vbml0b3JpbmcABnRlbmFudAAGdGVuYW50ACQwYWYxNWEwOS05YWM0LTMyZGEtOTZjZi01Y2Q3NjI1Y2MxNja-71TeFdrerQ
+        mainframe_transaction_monitoring = dynatrace.MainframeTransactionMonitoring("mainframe_transaction_monitoring",
+            group_cics_regions=True,
+            group_ims_regions=False,
+            monitor_all_ctg_protocols=False,
+            monitor_all_incoming_web_requests=False,
+            node_limit=500,
+            zos_cics_service_detection_uses_transaction_id=False,
+            zos_ims_service_detection_uses_transaction_id=False)
+        ```
+
+
         :param str resource_name: The name of the resource.
         :param MainframeTransactionMonitoringArgs args: The arguments to use to populate this resource's properties.
         :param pulumi.ResourceOptions opts: Options for the resource.

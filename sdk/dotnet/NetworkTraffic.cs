@@ -10,6 +10,21 @@ using Pulumi;
 
 namespace Pulumiverse.Dynatrace
 {
+    /// <summary>
+    /// &gt; This resource requires the API token scopes **Read settings** (`settings.read`) and **Write settings** (`settings.write`)
+    /// 
+    /// ## Dynatrace Documentation
+    /// 
+    /// - Exclude disks and network traffic from host monitoring - https://www.dynatrace.com/support/help/platform-modules/infrastructure-monitoring/hosts/configuration/exclude-disks-and-network-traffic
+    /// 
+    /// - Settings API - https://www.dynatrace.com/support/help/dynatrace-api/environment-api/settings (schemaId: `builtin:exclude.network.traffic`)
+    /// 
+    /// ## Export Example Usage
+    /// 
+    /// - `terraform-provider-dynatrace -export dynatrace.NetworkTraffic` downloads all existing host network traffic exclusion configuration
+    /// 
+    /// The full documentation of the export feature is available [here](https://dt-url.net/h203qmc).
+    /// </summary>
     [DynatraceResourceType("dynatrace:index/networkTraffic:NetworkTraffic")]
     public partial class NetworkTraffic : global::Pulumi.CustomResource
     {

@@ -29,6 +29,7 @@ class RumProviderBreakdownArgs:
                  insert_after: Optional[pulumi.Input[_builtins.str]] = None):
         """
         The set of arguments for constructing a RumProviderBreakdown resource.
+
         :param pulumi.Input['RumProviderBreakdownDomainNamePatternListArgs'] domain_name_pattern_list: Domain name pattern
         :param pulumi.Input[_builtins.bool] report_public_improvement: Send the patterns of this provider to Dynatrace to help us improve 3rd-party detection.
         :param pulumi.Input[_builtins.str] resource_name: Resource name
@@ -129,6 +130,7 @@ class _RumProviderBreakdownState:
                  resource_type: Optional[pulumi.Input[_builtins.str]] = None):
         """
         Input properties used for looking up and filtering RumProviderBreakdown resources.
+
         :param pulumi.Input['RumProviderBreakdownDomainNamePatternListArgs'] domain_name_pattern_list: Domain name pattern
         :param pulumi.Input[_builtins.str] icon_url: Specify an URL for the provider's brand icon
         :param pulumi.Input[_builtins.str] insert_after: Because this resource allows for ordering you may specify the ID of the resource instance that comes before this instance regarding order. If not specified when creating the setting will be added to the end of the list. If not specified during update the order will remain untouched
@@ -236,7 +238,21 @@ class RumProviderBreakdown(pulumi.CustomResource):
                  resource_type: Optional[pulumi.Input[_builtins.str]] = None,
                  __props__=None):
         """
-        Create a RumProviderBreakdown resource with the given unique name, props, and options.
+        > This resource requires the API token scopes **Read settings** (`settings.read`) and **Write settings** (`settings.write`)
+
+        ## Dynatrace Documentation
+
+        - Configure first-party, third-party, and CDN resource detection for web applications - https://www.dynatrace.com/support/help/how-to-use-dynatrace/real-user-monitoring/setup-and-configuration/web-applications/additional-configuration/configure-third-party-and-cdn-content-detection-web
+
+        - Settings API - https://www.dynatrace.com/support/help/dynatrace-api/environment-api/settings (schemaId: `builtin:rum.provider-breakdown`)
+
+        ## Export Example Usage
+
+        - `terraform-provider-dynatrace -export RumProviderBreakdown` downloads all existing provider breakdown configuration
+
+        The full documentation of the export feature is available [here](https://dt-url.net/h203qmc).
+
+
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[Union['RumProviderBreakdownDomainNamePatternListArgs', 'RumProviderBreakdownDomainNamePatternListArgsDict']] domain_name_pattern_list: Domain name pattern
@@ -253,7 +269,21 @@ class RumProviderBreakdown(pulumi.CustomResource):
                  args: RumProviderBreakdownArgs,
                  opts: Optional[pulumi.ResourceOptions] = None):
         """
-        Create a RumProviderBreakdown resource with the given unique name, props, and options.
+        > This resource requires the API token scopes **Read settings** (`settings.read`) and **Write settings** (`settings.write`)
+
+        ## Dynatrace Documentation
+
+        - Configure first-party, third-party, and CDN resource detection for web applications - https://www.dynatrace.com/support/help/how-to-use-dynatrace/real-user-monitoring/setup-and-configuration/web-applications/additional-configuration/configure-third-party-and-cdn-content-detection-web
+
+        - Settings API - https://www.dynatrace.com/support/help/dynatrace-api/environment-api/settings (schemaId: `builtin:rum.provider-breakdown`)
+
+        ## Export Example Usage
+
+        - `terraform-provider-dynatrace -export RumProviderBreakdown` downloads all existing provider breakdown configuration
+
+        The full documentation of the export feature is available [here](https://dt-url.net/h203qmc).
+
+
         :param str resource_name: The name of the resource.
         :param RumProviderBreakdownArgs args: The arguments to use to populate this resource's properties.
         :param pulumi.ResourceOptions opts: Options for the resource.

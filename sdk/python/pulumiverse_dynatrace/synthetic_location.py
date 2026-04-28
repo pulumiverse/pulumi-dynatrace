@@ -40,6 +40,7 @@ class SyntheticLocationArgs:
                  use_new_kubernetes_version: Optional[pulumi.Input[_builtins.bool]] = None):
         """
         The set of arguments for constructing a SyntheticLocation resource.
+
         :param pulumi.Input[_builtins.float] latitude: The latitude of the location in `DDD.dddd` format
         :param pulumi.Input[_builtins.float] longitude: The longitude of the location in `DDD.dddd` format
         :param pulumi.Input[_builtins.bool] auto_update_chromium: Auto upgrade of Chromium is enabled (`true`) or disabled (`false`)
@@ -372,6 +373,7 @@ class _SyntheticLocationState:
                  use_new_kubernetes_version: Optional[pulumi.Input[_builtins.bool]] = None):
         """
         Input properties used for looking up and filtering SyntheticLocation resources.
+
         :param pulumi.Input[_builtins.bool] auto_update_chromium: Auto upgrade of Chromium is enabled (`true`) or disabled (`false`)
         :param pulumi.Input[_builtins.bool] availability_location_outage: The alerting of location outage is enabled (`true`) or disabled (`false`)
         :param pulumi.Input[_builtins.bool] availability_node_outage: The alerting of node outage is enabled (`true`) or disabled (`false`).
@@ -709,7 +711,21 @@ class SyntheticLocation(pulumi.CustomResource):
                  use_new_kubernetes_version: Optional[pulumi.Input[_builtins.bool]] = None,
                  __props__=None):
         """
-        Create a SyntheticLocation resource with the given unique name, props, and options.
+        > This resource requires the API token scope **Create and read synthetic monitors, locations, and nodes** (`ExternalSyntheticIntegration`)
+
+        ## Dynatrace Documentation
+
+        - Creating Private Synthetic Locations - https://www.dynatrace.com/support/help/how-to-use-dynatrace/synthetic-monitoring/private-synthetic-locations/create-a-private-synthetic-location
+
+        - Settings API - https://www.dynatrace.com/support/help/dynatrace-api/environment-api/synthetic/synthetic-locations
+
+        ## Export Example Usage
+
+        - `terraform-provider-dynatrace -export SyntheticLocation` downloads the currently configured private synthetic locations
+
+        The full documentation of the export feature is available [here](https://dt-url.net/h203qmc).
+
+
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[_builtins.bool] auto_update_chromium: Auto upgrade of Chromium is enabled (`true`) or disabled (`false`)
@@ -750,7 +766,21 @@ class SyntheticLocation(pulumi.CustomResource):
                  args: SyntheticLocationArgs,
                  opts: Optional[pulumi.ResourceOptions] = None):
         """
-        Create a SyntheticLocation resource with the given unique name, props, and options.
+        > This resource requires the API token scope **Create and read synthetic monitors, locations, and nodes** (`ExternalSyntheticIntegration`)
+
+        ## Dynatrace Documentation
+
+        - Creating Private Synthetic Locations - https://www.dynatrace.com/support/help/how-to-use-dynatrace/synthetic-monitoring/private-synthetic-locations/create-a-private-synthetic-location
+
+        - Settings API - https://www.dynatrace.com/support/help/dynatrace-api/environment-api/synthetic/synthetic-locations
+
+        ## Export Example Usage
+
+        - `terraform-provider-dynatrace -export SyntheticLocation` downloads the currently configured private synthetic locations
+
+        The full documentation of the export feature is available [here](https://dt-url.net/h203qmc).
+
+
         :param str resource_name: The name of the resource.
         :param SyntheticLocationArgs args: The arguments to use to populate this resource's properties.
         :param pulumi.ResourceOptions opts: Options for the resource.

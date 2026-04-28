@@ -119,10 +119,11 @@ class IamUser(pulumi.CustomResource):
         import pulumi
         import pulumiverse_dynatrace as dynatrace
 
-        john_doe_gmail_com = dynatrace.IamUser("johnDoeGmailCom",
+        john_doe_gmail_com = dynatrace.IamUser("john_doe_gmail_com",
             email="john.doe@gmail.com",
-            groups=[data["dynatrace_iam_group"]["Restricted"]["id"]])
+            groups=[restricted["id"]])
         ```
+
 
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
@@ -152,10 +153,11 @@ class IamUser(pulumi.CustomResource):
         import pulumi
         import pulumiverse_dynatrace as dynatrace
 
-        john_doe_gmail_com = dynatrace.IamUser("johnDoeGmailCom",
+        john_doe_gmail_com = dynatrace.IamUser("john_doe_gmail_com",
             email="john.doe@gmail.com",
-            groups=[data["dynatrace_iam_group"]["Restricted"]["id"]])
+            groups=[restricted["id"]])
         ```
+
 
         :param str resource_name: The name of the resource.
         :param IamUserArgs args: The arguments to use to populate this resource's properties.

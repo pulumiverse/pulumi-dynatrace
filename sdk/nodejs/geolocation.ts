@@ -4,6 +4,21 @@
 import * as pulumi from "@pulumi/pulumi";
 import * as utilities from "./utilities";
 
+/**
+ * > This resource requires the API token scopes **Read settings** (`settings.read`) and **Write settings** (`settings.write`)
+ *
+ * ## Dynatrace Documentation
+ *
+ * - World map view - https://www.dynatrace.com/support/help/platform-modules/digital-experience/web-applications/analyze-and-use/world-map-view
+ *
+ * - Settings API - https://www.dynatrace.com/support/help/dynatrace-api/environment-api/settings (schemaId: `builtin:geo-settings`)
+ *
+ * ## Export Example Usage
+ *
+ * - `terraform-provider-dynatrace -export dynatrace.Geolocation` downloads all existing geolocation settings
+ *
+ * The full documentation of the export feature is available [here](https://dt-url.net/h203qmc).
+ */
 export class Geolocation extends pulumi.CustomResource {
     /**
      * Get an existing Geolocation resource's state with the given name, ID, and optional extra

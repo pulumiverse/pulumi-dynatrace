@@ -10,6 +10,23 @@ using Pulumi;
 
 namespace Pulumiverse.Dynatrace
 {
+    /// <summary>
+    /// !&gt; This resource API endpoint has been deprecated, please use dynatrace.AttributeAllowList and dynatrace.AttributeMasking instead.
+    /// 
+    /// &gt; This resource requires the API token scopes **Read settings** (`settings.read`) and **Write settings** (`settings.write`)
+    /// 
+    /// ## Dynatrace Documentation
+    /// 
+    /// - Span settings - https://www.dynatrace.com/support/help/extend-dynatrace/extend-tracing/span-settings
+    /// 
+    /// - Settings API - https://www.dynatrace.com/support/help/dynatrace-api/environment-api/settings (schemaId: `builtin:span-attribute`)
+    /// 
+    /// ## Export Example Usage
+    /// 
+    /// - `terraform-provider-dynatrace -export dynatrace.SpanAttributed` downloads all existing span attribute configuration
+    /// 
+    /// The full documentation of the export feature is available [here](https://dt-url.net/h203qmc).
+    /// </summary>
     [DynatraceResourceType("dynatrace:index/spanAttributed:SpanAttributed")]
     public partial class SpanAttributed : global::Pulumi.CustomResource
     {
@@ -25,6 +42,9 @@ namespace Pulumiverse.Dynatrace
         [Output("masking")]
         public Output<string> Masking { get; private set; } = null!;
 
+        /// <summary>
+        /// Prevents the Span Attribute from getting deleted when running `terraform destroy` - to be used for Span Attributes that are defined by default on every Dynatrace environment.
+        /// </summary>
         [Output("persistent")]
         public Output<bool> Persistent { get; private set; } = null!;
 
@@ -87,6 +107,9 @@ namespace Pulumiverse.Dynatrace
         [Input("masking", required: true)]
         public Input<string> Masking { get; set; } = null!;
 
+        /// <summary>
+        /// Prevents the Span Attribute from getting deleted when running `terraform destroy` - to be used for Span Attributes that are defined by default on every Dynatrace environment.
+        /// </summary>
         [Input("persistent")]
         public Input<bool>? Persistent { get; set; }
 
@@ -110,6 +133,9 @@ namespace Pulumiverse.Dynatrace
         [Input("masking")]
         public Input<string>? Masking { get; set; }
 
+        /// <summary>
+        /// Prevents the Span Attribute from getting deleted when running `terraform destroy` - to be used for Span Attributes that are defined by default on every Dynatrace environment.
+        /// </summary>
         [Input("persistent")]
         public Input<bool>? Persistent { get; set; }
 

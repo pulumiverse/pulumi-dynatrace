@@ -28,6 +28,7 @@ class QueueManagerArgs:
                  remote_queues: Optional[pulumi.Input[Sequence[pulumi.Input['QueueManagerRemoteQueueArgs']]]] = None):
         """
         The set of arguments for constructing a QueueManager resource.
+
         :param pulumi.Input[Sequence[pulumi.Input['QueueManagerAliasQueueArgs']]] alias_queues: The alias queues in the queue manager
         :param pulumi.Input[Sequence[pulumi.Input['QueueManagerClusterQueueArgs']]] cluster_queues: The alias queues in the queue manager
         :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] clusters: Name of the cluster(s) this queue manager is part of
@@ -116,6 +117,7 @@ class _QueueManagerState:
                  remote_queues: Optional[pulumi.Input[Sequence[pulumi.Input['QueueManagerRemoteQueueArgs']]]] = None):
         """
         Input properties used for looking up and filtering QueueManager resources.
+
         :param pulumi.Input[Sequence[pulumi.Input['QueueManagerAliasQueueArgs']]] alias_queues: The alias queues in the queue manager
         :param pulumi.Input[Sequence[pulumi.Input['QueueManagerClusterQueueArgs']]] cluster_queues: The alias queues in the queue manager
         :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] clusters: Name of the cluster(s) this queue manager is part of
@@ -207,7 +209,21 @@ class QueueManager(pulumi.CustomResource):
                  remote_queues: Optional[pulumi.Input[Sequence[pulumi.Input[Union['QueueManagerRemoteQueueArgs', 'QueueManagerRemoteQueueArgsDict']]]]] = None,
                  __props__=None):
         """
-        Create a QueueManager resource with the given unique name, props, and options.
+        > This resource requires the API token scopes **Read settings** (`settings.read`) and **Write settings** (`settings.write`)
+
+        ## Dynatrace Documentation
+
+        - IBM MQ tracing - https://www.dynatrace.com/support/help/how-to-use-dynatrace/queues/configuration/ibm-mq-tracing
+
+        - Settings API - https://www.dynatrace.com/support/help/dynatrace-api/environment-api/settings (schemaId: `builtin:ibmmq.queue-managers`)
+
+        ## Export Example Usage
+
+        - `terraform-provider-dynatrace -export QueueManager` downloads all existing queue manager configuration
+
+        The full documentation of the export feature is available [here](https://dt-url.net/h203qmc).
+
+
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[Sequence[pulumi.Input[Union['QueueManagerAliasQueueArgs', 'QueueManagerAliasQueueArgsDict']]]] alias_queues: The alias queues in the queue manager
@@ -223,7 +239,21 @@ class QueueManager(pulumi.CustomResource):
                  args: Optional[QueueManagerArgs] = None,
                  opts: Optional[pulumi.ResourceOptions] = None):
         """
-        Create a QueueManager resource with the given unique name, props, and options.
+        > This resource requires the API token scopes **Read settings** (`settings.read`) and **Write settings** (`settings.write`)
+
+        ## Dynatrace Documentation
+
+        - IBM MQ tracing - https://www.dynatrace.com/support/help/how-to-use-dynatrace/queues/configuration/ibm-mq-tracing
+
+        - Settings API - https://www.dynatrace.com/support/help/dynatrace-api/environment-api/settings (schemaId: `builtin:ibmmq.queue-managers`)
+
+        ## Export Example Usage
+
+        - `terraform-provider-dynatrace -export QueueManager` downloads all existing queue manager configuration
+
+        The full documentation of the export feature is available [here](https://dt-url.net/h203qmc).
+
+
         :param str resource_name: The name of the resource.
         :param QueueManagerArgs args: The arguments to use to populate this resource's properties.
         :param pulumi.ResourceOptions opts: Options for the resource.

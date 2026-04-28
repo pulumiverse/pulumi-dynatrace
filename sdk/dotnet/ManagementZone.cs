@@ -10,6 +10,23 @@ using Pulumi;
 
 namespace Pulumiverse.Dynatrace
 {
+    /// <summary>
+    /// !&gt; This resource API endpoint has been deprecated, please use dynatrace.ManagementZoneV2 instead.
+    /// 
+    /// &gt; This resource requires the API token scopes **Read configuration** (`ReadConfig`) and **Write configuration** (`WriteConfig`)
+    /// 
+    /// ## Dynatrace Documentation
+    /// 
+    /// - Management zones - https://www.dynatrace.com/support/help/how-to-use-dynatrace/management-zones
+    /// 
+    /// - Management zones API - https://www.dynatrace.com/support/help/dynatrace-api/configuration-api/management-zones-api
+    /// 
+    /// ## Export Example Usage
+    /// 
+    /// - `terraform-provider-dynatrace -export dynatrace.ManagementZone` downloads all existing management zone configuration
+    /// 
+    /// The full documentation of the export feature is available [here](https://dt-url.net/h203qmc).
+    /// </summary>
     [DynatraceResourceType("dynatrace:index/managementZone:ManagementZone")]
     public partial class ManagementZone : global::Pulumi.CustomResource
     {

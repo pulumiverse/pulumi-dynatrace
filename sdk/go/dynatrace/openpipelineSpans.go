@@ -11,6 +11,139 @@ import (
 	"github.com/pulumiverse/pulumi-dynatrace/sdk/go/dynatrace/internal"
 )
 
+// !> This resource API endpoint has been deprecated, please migrate your OpenPipeline configurations and use `dynatrace_openpipeline_v2_spans_*` instead.
+//
+// !> Deploying an OpenPipeline configuration will overwrite the existing one of the same kind, causing any manual changes made in the web UI or other configurations managed by Terraform or Monaco to be lost. Ensure all configurations are defined within a single Terraform or Monaco configuration to prevent data loss.
+//
+// > **Dynatrace SaaS only**
+//
+// > To utilize this resource, please define the environment variables `DT_CLIENT_ID`, `DT_CLIENT_SECRET`, `DT_ACCOUNT_ID` with an OAuth client including the following permissions: **View OpenPipeline configurations** (`openpipeline:configurations:read`), and **Edit OpenPipeline configurations** (`openpipeline:configurations:write`).
+//
+// ## Dynatrace Documentation
+//
+// - OpenPipeline - https://docs.dynatrace.com/docs/platform/openpipeline
+//
+// ## Export Example Usage
+//
+// - `terraform-provider-dynatrace -export OpenpipelineSpans` downloads all existing OpenPipeline definitions for Spans
+//
+// The full documentation of the export feature is available [here](https://dt-url.net/h203qmc).
+//
+// ## Resource Example Usage
+//
+// ```go
+// package main
+//
+// import (
+//
+//	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//	"github.com/pulumiverse/pulumi-dynatrace/sdk/go/dynatrace"
+//
+// )
+//
+//	func main() {
+//		pulumi.Run(func(ctx *pulumi.Context) error {
+//			_, err := dynatrace.NewOpenpipelineSpans(ctx, "spans", &dynatrace.OpenpipelineSpansArgs{
+//				Pipelines: &dynatrace.OpenpipelineSpansPipelinesArgs{
+//					Pipelines: dynatrace.OpenpipelineSpansPipelinesPipelineArray{
+//						&dynatrace.OpenpipelineSpansPipelinesPipelineArgs{
+//							Enabled:     pulumi.Bool(true),
+//							DisplayName: pulumi.String("#name#"),
+//							Id:          pulumi.String("pipeline_Custom_spans_#name#"),
+//							DataExtraction: &dynatrace.OpenpipelineSpansPipelinesPipelineDataExtractionArgs{
+//								Processors: dynatrace.OpenpipelineSpansPipelinesPipelineDataExtractionProcessorArray{
+//									&dynatrace.OpenpipelineSpansPipelinesPipelineDataExtractionProcessorArgs{
+//										BizeventExtractionProcessor: &dynatrace.OpenpipelineSpansPipelinesPipelineDataExtractionProcessorBizeventExtractionProcessorArgs{
+//											Description: pulumi.String("Custom bizevent extraction"),
+//											Enabled:     pulumi.Bool(true),
+//											Id:          pulumi.String("processor_custom_bizevent_1_#name#"),
+//											Matcher:     pulumi.String("true"),
+//											SampleData:  pulumi.String("{}"),
+//											FieldExtraction: &dynatrace.OpenpipelineSpansPipelinesPipelineDataExtractionProcessorBizeventExtractionProcessorFieldExtractionArgs{
+//												Semantic: pulumi.String("INCLUDE"),
+//												Fields: pulumi.StringArray{
+//													pulumi.String("my.field"),
+//												},
+//											},
+//											EventProvider: &dynatrace.OpenpipelineSpansPipelinesPipelineDataExtractionProcessorBizeventExtractionProcessorEventProviderArgs{
+//												Type:     pulumi.String("constant"),
+//												Constant: pulumi.String("my-constant"),
+//											},
+//											EventType: &dynatrace.OpenpipelineSpansPipelinesPipelineDataExtractionProcessorBizeventExtractionProcessorEventTypeArgs{
+//												Type:     pulumi.String("constant"),
+//												Constant: pulumi.String("my-constant"),
+//											},
+//										},
+//									},
+//								},
+//							},
+//							MetricExtraction: &dynatrace.OpenpipelineSpansPipelinesPipelineMetricExtractionArgs{
+//								Processors: dynatrace.OpenpipelineSpansPipelinesPipelineMetricExtractionProcessorArray{
+//									&dynatrace.OpenpipelineSpansPipelinesPipelineMetricExtractionProcessorArgs{
+//										SamplingAwareCounterMetricExtractionProcessor: &dynatrace.OpenpipelineSpansPipelinesPipelineMetricExtractionProcessorSamplingAwareCounterMetricExtractionProcessorArgs{
+//											Description: pulumi.String("Custom sampling counter extraction"),
+//											Enabled:     pulumi.Bool(true),
+//											Id:          pulumi.String("processor_custom_sampling_counter_1_#name#"),
+//											Matcher:     pulumi.String("true"),
+//											MetricKey:   pulumi.String("events.counter"),
+//											Aggregation: pulumi.String("ENABLED"),
+//											SampleData:  pulumi.String("{}"),
+//											Sampling:    pulumi.String("ENABLED"),
+//											Dimensions: pulumi.StringArray{
+//												pulumi.String("ab=xy"),
+//											},
+//										},
+//									},
+//									&dynatrace.OpenpipelineSpansPipelinesPipelineMetricExtractionProcessorArgs{
+//										SamplingAwareValueMetricExtractionProcessor: &dynatrace.OpenpipelineSpansPipelinesPipelineMetricExtractionProcessorSamplingAwareValueMetricExtractionProcessorArgs{
+//											Description:  pulumi.String("Custom sampling value extraction"),
+//											Enabled:      pulumi.Bool(true),
+//											Id:           pulumi.String("processor_custom_sampling_value_1_#name#"),
+//											Matcher:      pulumi.String("true"),
+//											Measurement:  pulumi.String("FIELD"),
+//											MetricKey:    pulumi.String("events.value"),
+//											Aggregation:  pulumi.String("DISABLED"),
+//											Sampling:     pulumi.String("DISABLED"),
+//											DefaultValue: pulumi.String("10"),
+//											Field:        pulumi.String("my.field"),
+//											SampleData:   pulumi.String("{}"),
+//											Dimensions: pulumi.StringArray{
+//												pulumi.String("xyz=abc"),
+//											},
+//										},
+//									},
+//								},
+//							},
+//							Processing: &dynatrace.OpenpipelineSpansPipelinesPipelineProcessingArgs{
+//								Processors: dynatrace.OpenpipelineSpansPipelinesPipelineProcessingProcessorArray{
+//									&dynatrace.OpenpipelineSpansPipelinesPipelineProcessingProcessorArgs{
+//										FieldsAddProcessor: &dynatrace.OpenpipelineSpansPipelinesPipelineProcessingProcessorFieldsAddProcessorArgs{
+//											Description: pulumi.String("#name#"),
+//											Enabled:     pulumi.Bool(true),
+//											Id:          pulumi.String("processor_Add_field_#name#"),
+//											Matcher:     pulumi.String("true"),
+//											Fields: dynatrace.OpenpipelineSpansPipelinesPipelineProcessingProcessorFieldsAddProcessorFieldArray{
+//												&dynatrace.OpenpipelineSpansPipelinesPipelineProcessingProcessorFieldsAddProcessorFieldArgs{
+//													Name:  pulumi.String("test"),
+//													Value: pulumi.String("1"),
+//												},
+//											},
+//										},
+//									},
+//								},
+//							},
+//						},
+//					},
+//				},
+//			})
+//			if err != nil {
+//				return err
+//			}
+//			return nil
+//		})
+//	}
+//
+// ```
 type OpenpipelineSpans struct {
 	pulumi.CustomResourceState
 

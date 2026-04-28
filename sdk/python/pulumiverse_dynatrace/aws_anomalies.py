@@ -31,6 +31,7 @@ class AwsAnomaliesArgs:
                  rds_restarts_sequence_detection: pulumi.Input['AwsAnomaliesRdsRestartsSequenceDetectionArgs']):
         """
         The set of arguments for constructing a AwsAnomalies resource.
+
         :param pulumi.Input['AwsAnomaliesEc2CandidateHighCpuDetectionArgs'] ec2_candidate_high_cpu_detection: no documentation available
         :param pulumi.Input['AwsAnomaliesElbHighConnectionErrorsDetectionArgs'] elb_high_connection_errors_detection: no documentation available
         :param pulumi.Input['AwsAnomaliesLambdaHighErrorRateDetectionArgs'] lambda_high_error_rate_detection: no documentation available
@@ -159,6 +160,7 @@ class _AwsAnomaliesState:
                  rds_restarts_sequence_detection: Optional[pulumi.Input['AwsAnomaliesRdsRestartsSequenceDetectionArgs']] = None):
         """
         Input properties used for looking up and filtering AwsAnomalies resources.
+
         :param pulumi.Input['AwsAnomaliesEc2CandidateHighCpuDetectionArgs'] ec2_candidate_high_cpu_detection: no documentation available
         :param pulumi.Input['AwsAnomaliesElbHighConnectionErrorsDetectionArgs'] elb_high_connection_errors_detection: no documentation available
         :param pulumi.Input['AwsAnomaliesLambdaHighErrorRateDetectionArgs'] lambda_high_error_rate_detection: no documentation available
@@ -298,7 +300,21 @@ class AwsAnomalies(pulumi.CustomResource):
                  rds_restarts_sequence_detection: Optional[pulumi.Input[Union['AwsAnomaliesRdsRestartsSequenceDetectionArgs', 'AwsAnomaliesRdsRestartsSequenceDetectionArgsDict']]] = None,
                  __props__=None):
         """
-        Create a AwsAnomalies resource with the given unique name, props, and options.
+        > This resource requires the API token scopes **Read settings** (`settings.read`) and **Write settings** (`settings.write`)
+
+        ## Dynatrace Documentation
+
+        - Adjust the sensitivity of anomaly detection for infrastructure - https://www.dynatrace.com/support/help/platform/davis-ai/anomaly-detection/adjust-sensitivity-anomaly-detection/adjust-sensitivity-infastructure
+
+        - Settings API - https://www.dynatrace.com/support/help/dynatrace-api/environment-api/settings (schemaId: `builtin:anomaly-detection.infrastructure-aws`)
+
+        ## Export Example Usage
+
+        - `terraform-provider-dynatrace -export AwsAnomalies` downloads all existing AWS anomaly detection configuration
+
+        The full documentation of the export feature is available [here](https://dt-url.net/h203qmc).
+
+
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[Union['AwsAnomaliesEc2CandidateHighCpuDetectionArgs', 'AwsAnomaliesEc2CandidateHighCpuDetectionArgsDict']] ec2_candidate_high_cpu_detection: no documentation available
@@ -317,7 +333,21 @@ class AwsAnomalies(pulumi.CustomResource):
                  args: AwsAnomaliesArgs,
                  opts: Optional[pulumi.ResourceOptions] = None):
         """
-        Create a AwsAnomalies resource with the given unique name, props, and options.
+        > This resource requires the API token scopes **Read settings** (`settings.read`) and **Write settings** (`settings.write`)
+
+        ## Dynatrace Documentation
+
+        - Adjust the sensitivity of anomaly detection for infrastructure - https://www.dynatrace.com/support/help/platform/davis-ai/anomaly-detection/adjust-sensitivity-anomaly-detection/adjust-sensitivity-infastructure
+
+        - Settings API - https://www.dynatrace.com/support/help/dynatrace-api/environment-api/settings (schemaId: `builtin:anomaly-detection.infrastructure-aws`)
+
+        ## Export Example Usage
+
+        - `terraform-provider-dynatrace -export AwsAnomalies` downloads all existing AWS anomaly detection configuration
+
+        The full documentation of the export feature is available [here](https://dt-url.net/h203qmc).
+
+
         :param str resource_name: The name of the resource.
         :param AwsAnomaliesArgs args: The arguments to use to populate this resource's properties.
         :param pulumi.ResourceOptions opts: Options for the resource.

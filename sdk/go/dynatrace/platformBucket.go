@@ -12,6 +12,28 @@ import (
 	"github.com/pulumiverse/pulumi-dynatrace/sdk/go/dynatrace/internal"
 )
 
+// > **Dynatrace SaaS only**
+//
+// > To utilize this resource, please define the environment variables `DT_CLIENT_ID`, `DT_CLIENT_SECRET`, `DT_ACCOUNT_ID` with an OAuth client including the following permissions: **View bucket metadata** (`storage:bucket-definitions:read`), **Write buckets** (`storage:bucket-definitions:write`) and **Delete buckets** (`storage:bucket-definitions:delete`).
+//
+// ## Dynatrace Documentation
+//
+// - Grail Buckets - https://www.dynatrace.com/support/help/platform/grail/data-model#custom-grail-buckets
+//
+// ## Export Example Usage
+//
+// - `terraform-provider-dynatrace -export PlatformBucket` downloads all existing bucket definitions
+//
+// The full documentation of the export feature is available [here](https://dt-url.net/h203qmc).
+//
+// ## Environment Variables (Optional)
+//
+// There may be a delay for this resource to be fully available as a dependency for a subsequent resource. E.g. Utilizing this resource and `LogBuckets` together.
+//
+// A default polling mechanism exists to validate the creation but may require tweaking due to load. The following environment variables can be used to fine tune these settings.
+//
+// - `DT_BUCKETS_RETRIES` (Default: 180, Max: 360) configures the maximum attempts to confirm that the operation (create, update or delete) has succeeded and was completed on the server side. There is a two second delay between consecutive attempts, therefore the check completes with at most 720 seconds with the maximum setting.
+// - `DT_BUCKETS_NUM_SUCCESSES` (Default: 10, Max: 50) configures the number of successful consecutive retries expected, this applies to creating the resource only.
 type PlatformBucket struct {
 	pulumi.CustomResourceState
 

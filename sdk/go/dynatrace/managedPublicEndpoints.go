@@ -11,6 +11,47 @@ import (
 	"github.com/pulumiverse/pulumi-dynatrace/sdk/go/dynatrace/internal"
 )
 
+// !> **HTTP DELETE method not available** Terraform will no longer manage this resource on `destroy` but the configuration will still be present on the Dynatrace cluster.
+//
+// > This resource requires the cluster API token scope **Service Provider API** (`ServiceProviderAPI`)
+//
+// ## Dynatrace Documentation
+//
+// - Dynatrace Managed - https://www.dynatrace.com/support/help/managed-cluster
+//
+// - Cluster API v1 - https://www.dynatrace.com/support/help/managed-cluster/cluster-api/cluster-api-v1
+//
+// ## Resource Example Usage
+//
+// ```go
+// package main
+//
+// import (
+//
+//	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//	"github.com/pulumiverse/pulumi-dynatrace/sdk/go/dynatrace"
+//
+// )
+//
+//	func main() {
+//		pulumi.Run(func(ctx *pulumi.Context) error {
+//			_, err := dynatrace.NewManagedPublicEndpoints(ctx, "Test", &dynatrace.ManagedPublicEndpointsArgs{
+//				WebUiAddress: pulumi.String("https://www.webuiaddress.com"),
+//				AdditionalWebUiAddresses: pulumi.StringArray{
+//					pulumi.String("https://www.webuiaddress1.com"),
+//					pulumi.String("https://www.webuiaddress2.com"),
+//				},
+//				BeaconForwarderAddress: pulumi.String("https://www.beaconforwarderaddress.com:443"),
+//				CdnAddress:             pulumi.String("https://www.cdnaddress.com"),
+//			})
+//			if err != nil {
+//				return err
+//			}
+//			return nil
+//		})
+//	}
+//
+// ```
 type ManagedPublicEndpoints struct {
 	pulumi.CustomResourceState
 

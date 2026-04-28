@@ -12,6 +12,125 @@ import (
 	"github.com/pulumiverse/pulumi-dynatrace/sdk/go/dynatrace/internal"
 )
 
+// > This resource requires the API token scopes `extensions.write`, `extension.read` and `hub.read`.
+//
+// This resource configures a monitoring configuration for the given extension with the specified version. In case the extension has not yet gotten installed for the specified version the installation happens automatically.
+//
+// The `name` attribute needs to refer to the fully qualified name of the extension. For a list of eligible names you can utilize the data source `getHubItems` like in this example:
+//
+// ```go
+// package main
+//
+// import (
+//
+//	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//	"github.com/pulumiverse/pulumi-dynatrace/sdk/go/dynatrace"
+//
+// )
+//
+//	func main() {
+//		pulumi.Run(func(ctx *pulumi.Context) error {
+//			_, err := dynatrace.GetHubItems(ctx, &dynatrace.GetHubItemsArgs{
+//				Type: pulumi.StringRef("EXTENSION2"),
+//			}, nil)
+//			if err != nil {
+//				return err
+//			}
+//			return nil
+//		})
+//	}
+//
+// ```
+//
+// You can optionally specify a scope for the extension using either one of the attributes `host`, `hostGroup`, `managementZone` or `activeGateGroup`.
+// For `host` and `hostGroup` you're expected to specify the IDs of these entities. You can query for these IDs using the data source `getEntity` or `getEntities` like in this example:
+//
+// ```go
+// package main
+//
+// import (
+//
+//	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//	"github.com/pulumiverse/pulumi-dynatrace/sdk/go/dynatrace"
+//
+// )
+//
+//	func main() {
+//		pulumi.Run(func(ctx *pulumi.Context) error {
+//			my_host, err := dynatrace.GetEntity(ctx, &dynatrace.GetEntityArgs{
+//				Type: pulumi.StringRef("HOST"),
+//				Name: pulumi.StringRef("<your-host-name>"),
+//			}, nil)
+//			if err != nil {
+//				return err
+//			}
+//			ctx.Export("my-host", my_host.Id)
+//			return nil
+//		})
+//	}
+//
+// ```
+// for `managementZone` and `activeGateGroup` you are required to specify the **name** and not the ID.
+//
+// The `value` attribute differs depending on the Extension you want to configure. The expected format is JSON. We recommend to navigate via WebUI to the Dynatrace Hub and configure such an Extension there - the WebUI provides you with the correct JSON code to use.
+//
+// For defining which version of a specific Extension should currently be active you can use the resource `HubExtensionActiveVersion`.
+//
+// ## Dynatrace Documentation
+//
+// - Extensions API - https://docs.dynatrace.com/docs/dynatrace-api/environment-api/extensions-20
+//
+// ## Export Example Usage
+//
+// - `terraform-provider-dynatrace -export HubExtensionConfig` downloads the settings for all configured Extensions 2.0
+//
+// The full documentation of the export feature is available [here](https://dt-url.net/h203qmc).
+//
+// ## Resource Example Usage
+//
+// ```go
+// package main
+//
+// import (
+//
+//	"encoding/json"
+//
+//	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//	"github.com/pulumiverse/pulumi-dynatrace/sdk/go/dynatrace"
+//
+// )
+//
+//	func main() {
+//		pulumi.Run(func(ctx *pulumi.Context) error {
+//			tmpJSON0, err := json.Marshal(map[string]interface{}{
+//				"activationContext": "LOCAL",
+//				"activationTags":    []interface{}{},
+//				"enabled":           true,
+//				"description":       "jj",
+//				"version":           "2.0.4",
+//				"featureSets": []string{
+//					"cache",
+//					"connections",
+//					"capacity",
+//				},
+//			})
+//			if err != nil {
+//				return err
+//			}
+//			json0 := string(tmpJSON0)
+//			_, err = dynatrace.NewHubExtensionConfig(ctx, "com_dynatrace_extension_jmx-weblogic-cp", &dynatrace.HubExtensionConfigArgs{
+//				Name:  pulumi.String("com.dynatrace.extension.jmx-weblogic-cp"),
+//				Scope: pulumi.String("environment"),
+//				Value: pulumi.String(json0),
+//			})
+//			if err != nil {
+//				return err
+//			}
+//			return nil
+//		})
+//	}
+//
+// ```
 type HubExtensionConfig struct {
 	pulumi.CustomResourceState
 
@@ -25,6 +144,8 @@ type HubExtensionConfig struct {
 	ManagementZone pulumi.StringPtrOutput `pulumi:"managementZone"`
 	// The fully qualified name of the extension, such as `com.dynatrace.extension.jmx-liberty-cp`. You can query for these names using the data source `getHubItems`
 	Name pulumi.StringOutput `pulumi:"name"`
+	// The scope this monitoring configuration will be defined for
+	Scope pulumi.StringOutput `pulumi:"scope"`
 	// The JSON encoded value for this monitoring configuration
 	Value pulumi.StringOutput `pulumi:"value"`
 }
@@ -72,6 +193,8 @@ type hubExtensionConfigState struct {
 	ManagementZone *string `pulumi:"managementZone"`
 	// The fully qualified name of the extension, such as `com.dynatrace.extension.jmx-liberty-cp`. You can query for these names using the data source `getHubItems`
 	Name *string `pulumi:"name"`
+	// The scope this monitoring configuration will be defined for
+	Scope *string `pulumi:"scope"`
 	// The JSON encoded value for this monitoring configuration
 	Value *string `pulumi:"value"`
 }
@@ -87,6 +210,8 @@ type HubExtensionConfigState struct {
 	ManagementZone pulumi.StringPtrInput
 	// The fully qualified name of the extension, such as `com.dynatrace.extension.jmx-liberty-cp`. You can query for these names using the data source `getHubItems`
 	Name pulumi.StringPtrInput
+	// The scope this monitoring configuration will be defined for
+	Scope pulumi.StringPtrInput
 	// The JSON encoded value for this monitoring configuration
 	Value pulumi.StringPtrInput
 }
@@ -106,6 +231,8 @@ type hubExtensionConfigArgs struct {
 	ManagementZone *string `pulumi:"managementZone"`
 	// The fully qualified name of the extension, such as `com.dynatrace.extension.jmx-liberty-cp`. You can query for these names using the data source `getHubItems`
 	Name *string `pulumi:"name"`
+	// The scope this monitoring configuration will be defined for
+	Scope *string `pulumi:"scope"`
 	// The JSON encoded value for this monitoring configuration
 	Value string `pulumi:"value"`
 }
@@ -122,6 +249,8 @@ type HubExtensionConfigArgs struct {
 	ManagementZone pulumi.StringPtrInput
 	// The fully qualified name of the extension, such as `com.dynatrace.extension.jmx-liberty-cp`. You can query for these names using the data source `getHubItems`
 	Name pulumi.StringPtrInput
+	// The scope this monitoring configuration will be defined for
+	Scope pulumi.StringPtrInput
 	// The JSON encoded value for this monitoring configuration
 	Value pulumi.StringInput
 }
@@ -236,6 +365,11 @@ func (o HubExtensionConfigOutput) ManagementZone() pulumi.StringPtrOutput {
 // The fully qualified name of the extension, such as `com.dynatrace.extension.jmx-liberty-cp`. You can query for these names using the data source `getHubItems`
 func (o HubExtensionConfigOutput) Name() pulumi.StringOutput {
 	return o.ApplyT(func(v *HubExtensionConfig) pulumi.StringOutput { return v.Name }).(pulumi.StringOutput)
+}
+
+// The scope this monitoring configuration will be defined for
+func (o HubExtensionConfigOutput) Scope() pulumi.StringOutput {
+	return o.ApplyT(func(v *HubExtensionConfig) pulumi.StringOutput { return v.Scope }).(pulumi.StringOutput)
 }
 
 // The JSON encoded value for this monitoring configuration

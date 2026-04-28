@@ -22,6 +22,7 @@ class AuditLogArgs:
                  enabled: pulumi.Input[_builtins.bool]):
         """
         The set of arguments for constructing a AuditLog resource.
+
         :param pulumi.Input[_builtins.bool] enabled: This setting is enabled (`true`) or disabled (`false`)
         """
         pulumi.set(__self__, "enabled", enabled)
@@ -45,6 +46,7 @@ class _AuditLogState:
                  enabled: Optional[pulumi.Input[_builtins.bool]] = None):
         """
         Input properties used for looking up and filtering AuditLog resources.
+
         :param pulumi.Input[_builtins.bool] enabled: This setting is enabled (`true`) or disabled (`false`)
         """
         if enabled is not None:
@@ -72,7 +74,21 @@ class AuditLog(pulumi.CustomResource):
                  enabled: Optional[pulumi.Input[_builtins.bool]] = None,
                  __props__=None):
         """
-        Create a AuditLog resource with the given unique name, props, and options.
+        > This resource requires the API token scopes **Read settings** (`settings.read`) and **Write settings** (`settings.write`)
+
+        ## Dynatrace Documentation
+
+        - Manage audit logs - https://www.dynatrace.com/support/help/manage/data-privacy-and-security/configuration/audit-logs
+
+        - Settings API - https://www.dynatrace.com/support/help/dynatrace-api/environment-api/settings (schemaId: `builtin:audit-log`)
+
+        ## Export Example Usage
+
+        - `terraform-provider-dynatrace -export AuditLog` downloads all existing audit log configuration
+
+        The full documentation of the export feature is available [here](https://dt-url.net/h203qmc).
+
+
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[_builtins.bool] enabled: This setting is enabled (`true`) or disabled (`false`)
@@ -84,7 +100,21 @@ class AuditLog(pulumi.CustomResource):
                  args: AuditLogArgs,
                  opts: Optional[pulumi.ResourceOptions] = None):
         """
-        Create a AuditLog resource with the given unique name, props, and options.
+        > This resource requires the API token scopes **Read settings** (`settings.read`) and **Write settings** (`settings.write`)
+
+        ## Dynatrace Documentation
+
+        - Manage audit logs - https://www.dynatrace.com/support/help/manage/data-privacy-and-security/configuration/audit-logs
+
+        - Settings API - https://www.dynatrace.com/support/help/dynatrace-api/environment-api/settings (schemaId: `builtin:audit-log`)
+
+        ## Export Example Usage
+
+        - `terraform-provider-dynatrace -export AuditLog` downloads all existing audit log configuration
+
+        The full documentation of the export feature is available [here](https://dt-url.net/h203qmc).
+
+
         :param str resource_name: The name of the resource.
         :param AuditLogArgs args: The arguments to use to populate this resource's properties.
         :param pulumi.ResourceOptions opts: Options for the resource.

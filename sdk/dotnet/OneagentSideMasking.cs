@@ -10,23 +10,38 @@ using Pulumi;
 
 namespace Pulumiverse.Dynatrace
 {
+    /// <summary>
+    /// &gt; This resource requires the API token scopes **Read settings** (`settings.read`) and **Write settings** (`settings.write`)
+    /// 
+    /// ## Dynatrace Documentation
+    /// 
+    /// - Data privacy and security - https://www.dynatrace.com/support/help/manage/data-privacy-and-security
+    /// 
+    /// - Settings API - https://www.dynatrace.com/support/help/dynatrace-api/environment-api/settings (schemaId: `builtin:oneagent.side.masking.settings`)
+    /// 
+    /// ## Export Example Usage
+    /// 
+    /// - `terraform-provider-dynatrace -export dynatrace.OneagentSideMasking` downloads all existing OneAgent data masking configuration
+    /// 
+    /// The full documentation of the export feature is available [here](https://dt-url.net/h203qmc).
+    /// </summary>
     [DynatraceResourceType("dynatrace:index/oneagentSideMasking:OneagentSideMasking")]
     public partial class OneagentSideMasking : global::Pulumi.CustomResource
     {
         /// <summary>
-        /// Exclude email addresses from URLs
+        /// Exclude email addresses from URLs and exceptions
         /// </summary>
         [Output("isEmailMaskingEnabled")]
         public Output<bool> IsEmailMaskingEnabled { get; private set; } = null!;
 
         /// <summary>
-        /// Exclude IBANs and payment card numbers from URLs
+        /// Exclude IBANs and payment card numbers from URLs and exceptions
         /// </summary>
         [Output("isFinancialMaskingEnabled")]
         public Output<bool> IsFinancialMaskingEnabled { get; private set; } = null!;
 
         /// <summary>
-        /// Exclude hexadecimal IDs and consecutive numbers above 5 digits from URLs
+        /// Exclude hexadecimal IDs and consecutive numbers above 5 digits from URLs and exceptions
         /// </summary>
         [Output("isNumbersMaskingEnabled")]
         public Output<bool> IsNumbersMaskingEnabled { get; private set; } = null!;
@@ -38,7 +53,7 @@ namespace Pulumiverse.Dynatrace
         public Output<bool> IsQueryMaskingEnabled { get; private set; } = null!;
 
         /// <summary>
-        /// The scope of this settings. If the settings should cover the whole environment, just don't specify any scope.
+        /// The scope of this setting (PROCESS*GROUP, CLOUD*APPLICATION, CLOUD*APPLICATION*NAMESPACE, KUBERNETES*CLUSTER, HOST*GROUP). Omit this property if you want to cover the whole environment.
         /// </summary>
         [Output("processGroupId")]
         public Output<string?> ProcessGroupId { get; private set; } = null!;
@@ -91,19 +106,19 @@ namespace Pulumiverse.Dynatrace
     public sealed class OneagentSideMaskingArgs : global::Pulumi.ResourceArgs
     {
         /// <summary>
-        /// Exclude email addresses from URLs
+        /// Exclude email addresses from URLs and exceptions
         /// </summary>
         [Input("isEmailMaskingEnabled", required: true)]
         public Input<bool> IsEmailMaskingEnabled { get; set; } = null!;
 
         /// <summary>
-        /// Exclude IBANs and payment card numbers from URLs
+        /// Exclude IBANs and payment card numbers from URLs and exceptions
         /// </summary>
         [Input("isFinancialMaskingEnabled", required: true)]
         public Input<bool> IsFinancialMaskingEnabled { get; set; } = null!;
 
         /// <summary>
-        /// Exclude hexadecimal IDs and consecutive numbers above 5 digits from URLs
+        /// Exclude hexadecimal IDs and consecutive numbers above 5 digits from URLs and exceptions
         /// </summary>
         [Input("isNumbersMaskingEnabled", required: true)]
         public Input<bool> IsNumbersMaskingEnabled { get; set; } = null!;
@@ -115,7 +130,7 @@ namespace Pulumiverse.Dynatrace
         public Input<bool> IsQueryMaskingEnabled { get; set; } = null!;
 
         /// <summary>
-        /// The scope of this settings. If the settings should cover the whole environment, just don't specify any scope.
+        /// The scope of this setting (PROCESS*GROUP, CLOUD*APPLICATION, CLOUD*APPLICATION*NAMESPACE, KUBERNETES*CLUSTER, HOST*GROUP). Omit this property if you want to cover the whole environment.
         /// </summary>
         [Input("processGroupId")]
         public Input<string>? ProcessGroupId { get; set; }
@@ -129,19 +144,19 @@ namespace Pulumiverse.Dynatrace
     public sealed class OneagentSideMaskingState : global::Pulumi.ResourceArgs
     {
         /// <summary>
-        /// Exclude email addresses from URLs
+        /// Exclude email addresses from URLs and exceptions
         /// </summary>
         [Input("isEmailMaskingEnabled")]
         public Input<bool>? IsEmailMaskingEnabled { get; set; }
 
         /// <summary>
-        /// Exclude IBANs and payment card numbers from URLs
+        /// Exclude IBANs and payment card numbers from URLs and exceptions
         /// </summary>
         [Input("isFinancialMaskingEnabled")]
         public Input<bool>? IsFinancialMaskingEnabled { get; set; }
 
         /// <summary>
-        /// Exclude hexadecimal IDs and consecutive numbers above 5 digits from URLs
+        /// Exclude hexadecimal IDs and consecutive numbers above 5 digits from URLs and exceptions
         /// </summary>
         [Input("isNumbersMaskingEnabled")]
         public Input<bool>? IsNumbersMaskingEnabled { get; set; }
@@ -153,7 +168,7 @@ namespace Pulumiverse.Dynatrace
         public Input<bool>? IsQueryMaskingEnabled { get; set; }
 
         /// <summary>
-        /// The scope of this settings. If the settings should cover the whole environment, just don't specify any scope.
+        /// The scope of this setting (PROCESS*GROUP, CLOUD*APPLICATION, CLOUD*APPLICATION*NAMESPACE, KUBERNETES*CLUSTER, HOST*GROUP). Omit this property if you want to cover the whole environment.
         /// </summary>
         [Input("processGroupId")]
         public Input<string>? ProcessGroupId { get; set; }

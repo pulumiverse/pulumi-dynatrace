@@ -10,36 +10,6 @@ import * as utilities from "./utilities";
  * The SLO objective template data source allows the ID to be retrieved by its name.
  *
  * - `name` (String) Name of the SLO objective template
- *
- * ## Example Usage
- *
- * ```typescript
- * import * as pulumi from "@pulumi/pulumi";
- * import * as dynatrace from "@pulumiverse/dynatrace";
- *
- * const hostCPU = dynatrace.getPlatformSloTemplate({
- *     name: "Host CPU usage utilization",
- * });
- * const _name_ = new dynatrace.PlatformSlo("#name#", {
- *     description: "Measures the CPU usage of selected hosts over time.",
- *     criteria: {
- *         criteriaDetails: [{
- *             target: 95,
- *             timeframeFrom: "now-7d",
- *             timeframeTo: "now",
- *         }],
- *     },
- *     sliReference: {
- *         templateId: hostCPU.then(hostCPU => hostCPU.id),
- *         variables: {
- *             sliReferenceVariables: [{
- *                 name: "hosts",
- *                 value: "\"HOST-1234567890000000\"",
- *             }],
- *         },
- *     },
- * });
- * ```
  */
 export function getPlatformSloTemplate(args: GetPlatformSloTemplateArgs, opts?: pulumi.InvokeOptions): Promise<GetPlatformSloTemplateResult> {
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
@@ -77,36 +47,6 @@ export interface GetPlatformSloTemplateResult {
  * The SLO objective template data source allows the ID to be retrieved by its name.
  *
  * - `name` (String) Name of the SLO objective template
- *
- * ## Example Usage
- *
- * ```typescript
- * import * as pulumi from "@pulumi/pulumi";
- * import * as dynatrace from "@pulumiverse/dynatrace";
- *
- * const hostCPU = dynatrace.getPlatformSloTemplate({
- *     name: "Host CPU usage utilization",
- * });
- * const _name_ = new dynatrace.PlatformSlo("#name#", {
- *     description: "Measures the CPU usage of selected hosts over time.",
- *     criteria: {
- *         criteriaDetails: [{
- *             target: 95,
- *             timeframeFrom: "now-7d",
- *             timeframeTo: "now",
- *         }],
- *     },
- *     sliReference: {
- *         templateId: hostCPU.then(hostCPU => hostCPU.id),
- *         variables: {
- *             sliReferenceVariables: [{
- *                 name: "hosts",
- *                 value: "\"HOST-1234567890000000\"",
- *             }],
- *         },
- *     },
- * });
- * ```
  */
 export function getPlatformSloTemplateOutput(args: GetPlatformSloTemplateOutputArgs, opts?: pulumi.InvokeOutputOptions): pulumi.Output<GetPlatformSloTemplateResult> {
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});

@@ -6,6 +6,23 @@ import * as inputs from "./types/input";
 import * as outputs from "./types/output";
 import * as utilities from "./utilities";
 
+/**
+ * !> This resource API endpoint has been deprecated, please use dynatrace.ManagementZoneV2 instead.
+ *
+ * > This resource requires the API token scopes **Read configuration** (`ReadConfig`) and **Write configuration** (`WriteConfig`)
+ *
+ * ## Dynatrace Documentation
+ *
+ * - Management zones - https://www.dynatrace.com/support/help/how-to-use-dynatrace/management-zones
+ *
+ * - Management zones API - https://www.dynatrace.com/support/help/dynatrace-api/configuration-api/management-zones-api
+ *
+ * ## Export Example Usage
+ *
+ * - `terraform-provider-dynatrace -export dynatrace.ManagementZone` downloads all existing management zone configuration
+ *
+ * The full documentation of the export feature is available [here](https://dt-url.net/h203qmc).
+ */
 export class ManagementZone extends pulumi.CustomResource {
     /**
      * Get an existing ManagementZone resource's state with the given name, ID, and optional extra

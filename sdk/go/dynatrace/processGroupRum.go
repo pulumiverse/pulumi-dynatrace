@@ -12,6 +12,19 @@ import (
 	"github.com/pulumiverse/pulumi-dynatrace/sdk/go/dynatrace/internal"
 )
 
+// > This resource requires the API token scopes **Read settings** (`settings.read`) and **Write settings** (`settings.write`)
+//
+// ## Dynatrace Documentation
+//
+// - Real User Monitoring for process groups - https://www.dynatrace.com/support/help/how-to-use-dynatrace/real-user-monitoring/setup-and-configuration/web-applications/additional-configuration/rum-for-process-groups
+//
+// - Settings API - https://www.dynatrace.com/support/help/dynatrace-api/environment-api/settings (schemaId: `builtin:rum.processgroup`)
+//
+// ## Export Example Usage
+//
+// - `terraform-provider-dynatrace -export ProcessGroupRum` downloads all real user monitoring configuration for process groups
+//
+// The full documentation of the export feature is available [here](https://dt-url.net/h203qmc).
 type ProcessGroupRum struct {
 	pulumi.CustomResourceState
 

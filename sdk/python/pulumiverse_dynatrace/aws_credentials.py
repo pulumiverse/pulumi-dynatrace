@@ -34,6 +34,7 @@ class AwsCredentialsArgs:
                  unknowns: Optional[pulumi.Input[_builtins.str]] = None):
         """
         The set of arguments for constructing a AwsCredentials resource.
+
         :param pulumi.Input['AwsCredentialsAuthenticationDataArgs'] authentication_data: credentials for the AWS authentication
         :param pulumi.Input[_builtins.str] partition_type: The type of the AWS partition
         :param pulumi.Input[_builtins.bool] tagged_only: Monitor only resources which have specified AWS tags (`true`) or all resources (`false`)
@@ -42,6 +43,7 @@ class AwsCredentialsArgs:
         :param pulumi.Input[_builtins.bool] remove_defaults: Instructs the provider to remove the supporting services Dynatrace applies by default to newly created AWS Credentials. Supporting Services applied by via `AwsService` subsequently won't get touched.
                Note: This attribute is only getting considered during creation of the resource. Changing it afterwards won't have an effect
         :param pulumi.Input[_builtins.bool] running_on_dynatrace_infrastructure: Run credentials on Dynatrace infrastructure
+        :param pulumi.Input[_builtins.bool] supporting_services_managed_in_dynatrace: If enabled (`true`) the attribute `supporting_services` will not get synchronized with Dynatrace. You will be able to manage them via WebUI without interference by Terraform.
         :param pulumi.Input[Sequence[pulumi.Input['AwsCredentialsSupportingServicesToMonitorArgs']]] supporting_services_to_monitors: supporting services to be monitored
         :param pulumi.Input[Sequence[pulumi.Input['AwsCredentialsTagsToMonitorArgs']]] tags_to_monitors: AWS tags to be monitored. You can specify up to 10 tags. Only applicable when the **tagged_only** parameter is set to `true`
         :param pulumi.Input[_builtins.str] unknowns: Any attributes that aren't yet supported by this provider
@@ -161,6 +163,9 @@ class AwsCredentialsArgs:
     @pulumi.getter(name="supportingServicesManagedInDynatrace")
     @_utilities.deprecated("""Supporting Services are no longer getting managed via this resource. Regardless of the value set here, this resource won't affect the supporting services during updates""")
     def supporting_services_managed_in_dynatrace(self) -> Optional[pulumi.Input[_builtins.bool]]:
+        """
+        If enabled (`true`) the attribute `supporting_services` will not get synchronized with Dynatrace. You will be able to manage them via WebUI without interference by Terraform.
+        """
         return pulumi.get(self, "supporting_services_managed_in_dynatrace")
 
     @supporting_services_managed_in_dynatrace.setter
@@ -221,6 +226,7 @@ class _AwsCredentialsState:
                  unknowns: Optional[pulumi.Input[_builtins.str]] = None):
         """
         Input properties used for looking up and filtering AwsCredentials resources.
+
         :param pulumi.Input['AwsCredentialsAuthenticationDataArgs'] authentication_data: credentials for the AWS authentication
         :param pulumi.Input[_builtins.bool] credentials_enabled: Enable monitoring of specified AWS credentials
         :param pulumi.Input[_builtins.str] label: The name of the credentials
@@ -228,6 +234,7 @@ class _AwsCredentialsState:
         :param pulumi.Input[_builtins.bool] remove_defaults: Instructs the provider to remove the supporting services Dynatrace applies by default to newly created AWS Credentials. Supporting Services applied by via `AwsService` subsequently won't get touched.
                Note: This attribute is only getting considered during creation of the resource. Changing it afterwards won't have an effect
         :param pulumi.Input[_builtins.bool] running_on_dynatrace_infrastructure: Run credentials on Dynatrace infrastructure
+        :param pulumi.Input[_builtins.bool] supporting_services_managed_in_dynatrace: If enabled (`true`) the attribute `supporting_services` will not get synchronized with Dynatrace. You will be able to manage them via WebUI without interference by Terraform.
         :param pulumi.Input[Sequence[pulumi.Input['AwsCredentialsSupportingServicesToMonitorArgs']]] supporting_services_to_monitors: supporting services to be monitored
         :param pulumi.Input[_builtins.bool] tagged_only: Monitor only resources which have specified AWS tags (`true`) or all resources (`false`)
         :param pulumi.Input[Sequence[pulumi.Input['AwsCredentialsTagsToMonitorArgs']]] tags_to_monitors: AWS tags to be monitored. You can specify up to 10 tags. Only applicable when the **tagged_only** parameter is set to `true`
@@ -339,6 +346,9 @@ class _AwsCredentialsState:
     @pulumi.getter(name="supportingServicesManagedInDynatrace")
     @_utilities.deprecated("""Supporting Services are no longer getting managed via this resource. Regardless of the value set here, this resource won't affect the supporting services during updates""")
     def supporting_services_managed_in_dynatrace(self) -> Optional[pulumi.Input[_builtins.bool]]:
+        """
+        If enabled (`true`) the attribute `supporting_services` will not get synchronized with Dynatrace. You will be able to manage them via WebUI without interference by Terraform.
+        """
         return pulumi.get(self, "supporting_services_managed_in_dynatrace")
 
     @supporting_services_managed_in_dynatrace.setter
@@ -414,7 +424,21 @@ class AwsCredentials(pulumi.CustomResource):
                  unknowns: Optional[pulumi.Input[_builtins.str]] = None,
                  __props__=None):
         """
-        Create a AwsCredentials resource with the given unique name, props, and options.
+        > This resource requires the API token scopes **Read configuration** (`ReadConfig`) and **Write configuration** (`WriteConfig`)
+
+        ## Dynatrace Documentation
+
+        - Set up Dynatrace on Amazon Web Services - https://www.dynatrace.com/support/help/setup-and-configuration/setup-on-cloud-platforms/amazon-web-services
+
+        - AWS credentials API - https://www.dynatrace.com/support/help/dynatrace-api/configuration-api/aws-credentials-api
+
+        ## Export Example Usage
+
+        - `terraform-provider-dynatrace -export AwsCredentials` downloads all existing AWS credentials configuration
+
+        The full documentation of the export feature is available [here](https://dt-url.net/h203qmc).
+
+
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[Union['AwsCredentialsAuthenticationDataArgs', 'AwsCredentialsAuthenticationDataArgsDict']] authentication_data: credentials for the AWS authentication
@@ -424,6 +448,7 @@ class AwsCredentials(pulumi.CustomResource):
         :param pulumi.Input[_builtins.bool] remove_defaults: Instructs the provider to remove the supporting services Dynatrace applies by default to newly created AWS Credentials. Supporting Services applied by via `AwsService` subsequently won't get touched.
                Note: This attribute is only getting considered during creation of the resource. Changing it afterwards won't have an effect
         :param pulumi.Input[_builtins.bool] running_on_dynatrace_infrastructure: Run credentials on Dynatrace infrastructure
+        :param pulumi.Input[_builtins.bool] supporting_services_managed_in_dynatrace: If enabled (`true`) the attribute `supporting_services` will not get synchronized with Dynatrace. You will be able to manage them via WebUI without interference by Terraform.
         :param pulumi.Input[Sequence[pulumi.Input[Union['AwsCredentialsSupportingServicesToMonitorArgs', 'AwsCredentialsSupportingServicesToMonitorArgsDict']]]] supporting_services_to_monitors: supporting services to be monitored
         :param pulumi.Input[_builtins.bool] tagged_only: Monitor only resources which have specified AWS tags (`true`) or all resources (`false`)
         :param pulumi.Input[Sequence[pulumi.Input[Union['AwsCredentialsTagsToMonitorArgs', 'AwsCredentialsTagsToMonitorArgsDict']]]] tags_to_monitors: AWS tags to be monitored. You can specify up to 10 tags. Only applicable when the **tagged_only** parameter is set to `true`
@@ -436,7 +461,21 @@ class AwsCredentials(pulumi.CustomResource):
                  args: AwsCredentialsArgs,
                  opts: Optional[pulumi.ResourceOptions] = None):
         """
-        Create a AwsCredentials resource with the given unique name, props, and options.
+        > This resource requires the API token scopes **Read configuration** (`ReadConfig`) and **Write configuration** (`WriteConfig`)
+
+        ## Dynatrace Documentation
+
+        - Set up Dynatrace on Amazon Web Services - https://www.dynatrace.com/support/help/setup-and-configuration/setup-on-cloud-platforms/amazon-web-services
+
+        - AWS credentials API - https://www.dynatrace.com/support/help/dynatrace-api/configuration-api/aws-credentials-api
+
+        ## Export Example Usage
+
+        - `terraform-provider-dynatrace -export AwsCredentials` downloads all existing AWS credentials configuration
+
+        The full documentation of the export feature is available [here](https://dt-url.net/h203qmc).
+
+
         :param str resource_name: The name of the resource.
         :param AwsCredentialsArgs args: The arguments to use to populate this resource's properties.
         :param pulumi.ResourceOptions opts: Options for the resource.
@@ -524,6 +563,7 @@ class AwsCredentials(pulumi.CustomResource):
         :param pulumi.Input[_builtins.bool] remove_defaults: Instructs the provider to remove the supporting services Dynatrace applies by default to newly created AWS Credentials. Supporting Services applied by via `AwsService` subsequently won't get touched.
                Note: This attribute is only getting considered during creation of the resource. Changing it afterwards won't have an effect
         :param pulumi.Input[_builtins.bool] running_on_dynatrace_infrastructure: Run credentials on Dynatrace infrastructure
+        :param pulumi.Input[_builtins.bool] supporting_services_managed_in_dynatrace: If enabled (`true`) the attribute `supporting_services` will not get synchronized with Dynatrace. You will be able to manage them via WebUI without interference by Terraform.
         :param pulumi.Input[Sequence[pulumi.Input[Union['AwsCredentialsSupportingServicesToMonitorArgs', 'AwsCredentialsSupportingServicesToMonitorArgsDict']]]] supporting_services_to_monitors: supporting services to be monitored
         :param pulumi.Input[_builtins.bool] tagged_only: Monitor only resources which have specified AWS tags (`true`) or all resources (`false`)
         :param pulumi.Input[Sequence[pulumi.Input[Union['AwsCredentialsTagsToMonitorArgs', 'AwsCredentialsTagsToMonitorArgsDict']]]] tags_to_monitors: AWS tags to be monitored. You can specify up to 10 tags. Only applicable when the **tagged_only** parameter is set to `true`
@@ -599,6 +639,9 @@ class AwsCredentials(pulumi.CustomResource):
     @pulumi.getter(name="supportingServicesManagedInDynatrace")
     @_utilities.deprecated("""Supporting Services are no longer getting managed via this resource. Regardless of the value set here, this resource won't affect the supporting services during updates""")
     def supporting_services_managed_in_dynatrace(self) -> pulumi.Output[Optional[_builtins.bool]]:
+        """
+        If enabled (`true`) the attribute `supporting_services` will not get synchronized with Dynatrace. You will be able to manage them via WebUI without interference by Terraform.
+        """
         return pulumi.get(self, "supporting_services_managed_in_dynatrace")
 
     @_builtins.property

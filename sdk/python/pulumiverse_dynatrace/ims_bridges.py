@@ -25,6 +25,7 @@ class ImsBridgesArgs:
                  queue_managers: Optional[pulumi.Input[Sequence[pulumi.Input['ImsBridgesQueueManagerArgs']]]] = None):
         """
         The set of arguments for constructing a ImsBridges resource.
+
         :param pulumi.Input[_builtins.str] name: The name of the IMS bridge
         :param pulumi.Input[Sequence[pulumi.Input['ImsBridgesQueueManagerArgs']]] queue_managers: Queue manager(s) that belong to the IMS bridge
         """
@@ -65,6 +66,7 @@ class _ImsBridgesState:
                  queue_managers: Optional[pulumi.Input[Sequence[pulumi.Input['ImsBridgesQueueManagerArgs']]]] = None):
         """
         Input properties used for looking up and filtering ImsBridges resources.
+
         :param pulumi.Input[_builtins.str] name: The name of the IMS bridge
         :param pulumi.Input[Sequence[pulumi.Input['ImsBridgesQueueManagerArgs']]] queue_managers: Queue manager(s) that belong to the IMS bridge
         """
@@ -108,7 +110,21 @@ class ImsBridges(pulumi.CustomResource):
                  queue_managers: Optional[pulumi.Input[Sequence[pulumi.Input[Union['ImsBridgesQueueManagerArgs', 'ImsBridgesQueueManagerArgsDict']]]]] = None,
                  __props__=None):
         """
-        Create a ImsBridges resource with the given unique name, props, and options.
+        > This resource requires the API token scopes **Read settings** (`settings.read`) and **Write settings** (`settings.write`)
+
+        ## Dynatrace Documentation
+
+        - IBM MQ monitoring - https://www.dynatrace.com/support/help/technology-support/dynatrace-extensions/dynatrace-extension-required/ibm-mq-extensions
+
+        - Settings API - https://www.dynatrace.com/support/help/dynatrace-api/environment-api/settings (schemaId: `builtin:ibmmq.ims-bridges`)
+
+        ## Export Example Usage
+
+        - `terraform-provider-dynatrace -export ImsBridges` downloads all existing IBM MQ IMS bridge configuration
+
+        The full documentation of the export feature is available [here](https://dt-url.net/h203qmc).
+
+
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[_builtins.str] name: The name of the IMS bridge
@@ -121,7 +137,21 @@ class ImsBridges(pulumi.CustomResource):
                  args: Optional[ImsBridgesArgs] = None,
                  opts: Optional[pulumi.ResourceOptions] = None):
         """
-        Create a ImsBridges resource with the given unique name, props, and options.
+        > This resource requires the API token scopes **Read settings** (`settings.read`) and **Write settings** (`settings.write`)
+
+        ## Dynatrace Documentation
+
+        - IBM MQ monitoring - https://www.dynatrace.com/support/help/technology-support/dynatrace-extensions/dynatrace-extension-required/ibm-mq-extensions
+
+        - Settings API - https://www.dynatrace.com/support/help/dynatrace-api/environment-api/settings (schemaId: `builtin:ibmmq.ims-bridges`)
+
+        ## Export Example Usage
+
+        - `terraform-provider-dynatrace -export ImsBridges` downloads all existing IBM MQ IMS bridge configuration
+
+        The full documentation of the export feature is available [here](https://dt-url.net/h203qmc).
+
+
         :param str resource_name: The name of the resource.
         :param ImsBridgesArgs args: The arguments to use to populate this resource's properties.
         :param pulumi.ResourceOptions opts: Options for the resource.

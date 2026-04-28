@@ -10,17 +10,32 @@ using Pulumi;
 
 namespace Pulumiverse.Dynatrace
 {
+    /// <summary>
+    /// &gt; This resource requires the API token scopes **Read settings** (`settings.read`) and **Write settings** (`settings.write`)
+    /// 
+    /// ## Dynatrace Documentation
+    /// 
+    /// - Slack integration - https://www.dynatrace.com/support/help/setup-and-configuration/integrations/problem-notifications/slack-integration
+    /// 
+    /// - Settings API - https://www.dynatrace.com/support/help/dynatrace-api/environment-api/settings (schemaId: `builtin:problem.notifications`)
+    /// 
+    /// ## Export Example Usage
+    /// 
+    /// - `terraform-provider-dynatrace -export dynatrace.SlackNotification` downloads the existing problem notifications for Slack
+    /// 
+    /// The full documentation of the export feature is available [here](https://dt-url.net/h203qmc).
+    /// </summary>
     [DynatraceResourceType("dynatrace:index/slackNotification:SlackNotification")]
     public partial class SlackNotification : global::Pulumi.CustomResource
     {
         /// <summary>
-        /// The configuration is enabled (`True`) or disabled (`False`)
+        /// This setting is enabled (`True`) or disabled (`False`)
         /// </summary>
         [Output("active")]
         public Output<bool> Active { get; private set; } = null!;
 
         /// <summary>
-        /// The channel (for example, `#general`) or the user (for example, `@john.smith`) to send the message to
+        /// The channel (for example, `#general`) or the user (for example, `@john.smith`) to send the message to.
         /// </summary>
         [Output("channel")]
         public Output<string> Channel { get; private set; } = null!;
@@ -32,13 +47,14 @@ namespace Pulumiverse.Dynatrace
         public Output<string> LegacyId { get; private set; } = null!;
 
         /// <summary>
-        /// The content of the message.  You can use the following placeholders:  * `{ImpactedEntity}`: The entity impacted by the problem or *X* impacted entities.  * `{PID}`: The ID of the reported problem.  * `{ProblemDetailsText}`: All problem event details, including root cause, as a text-formatted string.  * `{ProblemID}`: The display number of the reported problem.  * `{ProblemImpact}`: The [impact level](https://www.dynatrace.com/support/help/shortlink/impact-analysis) of the problem. Possible values are `APPLICATION`, `SERVICE`, and `INFRASTRUCTURE`.  * `{ProblemSeverity}`: The [severity level](https://www.dynatrace.com/support/help/shortlink/event-types) of the problem. Possible values are `AVAILABILITY`, `ERROR`, `PERFORMANCE`, `RESOURCE_CONTENTION`, and `CUSTOM_ALERT`.  * `{ProblemTitle}`: A short description of the problem.  * `{ProblemURL}`: The URL of the problem within Dynatrace.  * `{State}`: The state of the problem. Possible values are `OPEN` and `RESOLVED`.  * `{Tags}`: The list of tags that are defined for all impacted entities, separated by commas
+        /// The content of the message. Type '{' for placeholder suggestions.. #### Available placeholders
+        /// **{ImpactedEntity}**: A short description of the problem and impacted entity (or multiple impacted entities).
         /// </summary>
         [Output("message")]
         public Output<string> Message { get; private set; } = null!;
 
         /// <summary>
-        /// The name of the notification configuration
+        /// The name of the notification configuration.
         /// </summary>
         [Output("name")]
         public Output<string> Name { get; private set; } = null!;
@@ -50,7 +66,7 @@ namespace Pulumiverse.Dynatrace
         public Output<string> Profile { get; private set; } = null!;
 
         /// <summary>
-        /// The URL of the Slack WebHook. This is confidential information, therefore GET requests return this field with the `Null` value, and it is optional for PUT requests
+        /// Set up an incoming WebHook integration within your Slack account. Copy and paste the generated WebHook URL into the field above.
         /// </summary>
         [Output("url")]
         public Output<string> Url { get; private set; } = null!;
@@ -107,13 +123,13 @@ namespace Pulumiverse.Dynatrace
     public sealed class SlackNotificationArgs : global::Pulumi.ResourceArgs
     {
         /// <summary>
-        /// The configuration is enabled (`True`) or disabled (`False`)
+        /// This setting is enabled (`True`) or disabled (`False`)
         /// </summary>
         [Input("active", required: true)]
         public Input<bool> Active { get; set; } = null!;
 
         /// <summary>
-        /// The channel (for example, `#general`) or the user (for example, `@john.smith`) to send the message to
+        /// The channel (for example, `#general`) or the user (for example, `@john.smith`) to send the message to.
         /// </summary>
         [Input("channel", required: true)]
         public Input<string> Channel { get; set; } = null!;
@@ -125,13 +141,14 @@ namespace Pulumiverse.Dynatrace
         public Input<string>? LegacyId { get; set; }
 
         /// <summary>
-        /// The content of the message.  You can use the following placeholders:  * `{ImpactedEntity}`: The entity impacted by the problem or *X* impacted entities.  * `{PID}`: The ID of the reported problem.  * `{ProblemDetailsText}`: All problem event details, including root cause, as a text-formatted string.  * `{ProblemID}`: The display number of the reported problem.  * `{ProblemImpact}`: The [impact level](https://www.dynatrace.com/support/help/shortlink/impact-analysis) of the problem. Possible values are `APPLICATION`, `SERVICE`, and `INFRASTRUCTURE`.  * `{ProblemSeverity}`: The [severity level](https://www.dynatrace.com/support/help/shortlink/event-types) of the problem. Possible values are `AVAILABILITY`, `ERROR`, `PERFORMANCE`, `RESOURCE_CONTENTION`, and `CUSTOM_ALERT`.  * `{ProblemTitle}`: A short description of the problem.  * `{ProblemURL}`: The URL of the problem within Dynatrace.  * `{State}`: The state of the problem. Possible values are `OPEN` and `RESOLVED`.  * `{Tags}`: The list of tags that are defined for all impacted entities, separated by commas
+        /// The content of the message. Type '{' for placeholder suggestions.. #### Available placeholders
+        /// **{ImpactedEntity}**: A short description of the problem and impacted entity (or multiple impacted entities).
         /// </summary>
         [Input("message", required: true)]
         public Input<string> Message { get; set; } = null!;
 
         /// <summary>
-        /// The name of the notification configuration
+        /// The name of the notification configuration.
         /// </summary>
         [Input("name")]
         public Input<string>? Name { get; set; }
@@ -146,7 +163,7 @@ namespace Pulumiverse.Dynatrace
         private Input<string>? _url;
 
         /// <summary>
-        /// The URL of the Slack WebHook. This is confidential information, therefore GET requests return this field with the `Null` value, and it is optional for PUT requests
+        /// Set up an incoming WebHook integration within your Slack account. Copy and paste the generated WebHook URL into the field above.
         /// </summary>
         public Input<string>? Url
         {
@@ -167,13 +184,13 @@ namespace Pulumiverse.Dynatrace
     public sealed class SlackNotificationState : global::Pulumi.ResourceArgs
     {
         /// <summary>
-        /// The configuration is enabled (`True`) or disabled (`False`)
+        /// This setting is enabled (`True`) or disabled (`False`)
         /// </summary>
         [Input("active")]
         public Input<bool>? Active { get; set; }
 
         /// <summary>
-        /// The channel (for example, `#general`) or the user (for example, `@john.smith`) to send the message to
+        /// The channel (for example, `#general`) or the user (for example, `@john.smith`) to send the message to.
         /// </summary>
         [Input("channel")]
         public Input<string>? Channel { get; set; }
@@ -185,13 +202,14 @@ namespace Pulumiverse.Dynatrace
         public Input<string>? LegacyId { get; set; }
 
         /// <summary>
-        /// The content of the message.  You can use the following placeholders:  * `{ImpactedEntity}`: The entity impacted by the problem or *X* impacted entities.  * `{PID}`: The ID of the reported problem.  * `{ProblemDetailsText}`: All problem event details, including root cause, as a text-formatted string.  * `{ProblemID}`: The display number of the reported problem.  * `{ProblemImpact}`: The [impact level](https://www.dynatrace.com/support/help/shortlink/impact-analysis) of the problem. Possible values are `APPLICATION`, `SERVICE`, and `INFRASTRUCTURE`.  * `{ProblemSeverity}`: The [severity level](https://www.dynatrace.com/support/help/shortlink/event-types) of the problem. Possible values are `AVAILABILITY`, `ERROR`, `PERFORMANCE`, `RESOURCE_CONTENTION`, and `CUSTOM_ALERT`.  * `{ProblemTitle}`: A short description of the problem.  * `{ProblemURL}`: The URL of the problem within Dynatrace.  * `{State}`: The state of the problem. Possible values are `OPEN` and `RESOLVED`.  * `{Tags}`: The list of tags that are defined for all impacted entities, separated by commas
+        /// The content of the message. Type '{' for placeholder suggestions.. #### Available placeholders
+        /// **{ImpactedEntity}**: A short description of the problem and impacted entity (or multiple impacted entities).
         /// </summary>
         [Input("message")]
         public Input<string>? Message { get; set; }
 
         /// <summary>
-        /// The name of the notification configuration
+        /// The name of the notification configuration.
         /// </summary>
         [Input("name")]
         public Input<string>? Name { get; set; }
@@ -206,7 +224,7 @@ namespace Pulumiverse.Dynatrace
         private Input<string>? _url;
 
         /// <summary>
-        /// The URL of the Slack WebHook. This is confidential information, therefore GET requests return this field with the `Null` value, and it is optional for PUT requests
+        /// Set up an incoming WebHook integration within your Slack account. Copy and paste the generated WebHook URL into the field above.
         /// </summary>
         public Input<string>? Url
         {

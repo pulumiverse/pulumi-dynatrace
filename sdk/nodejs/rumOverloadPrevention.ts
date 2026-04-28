@@ -4,6 +4,21 @@
 import * as pulumi from "@pulumi/pulumi";
 import * as utilities from "./utilities";
 
+/**
+ * > This resource requires the API token scopes **Read settings** (`settings.read`) and **Write settings** (`settings.write`)
+ *
+ * ## Dynatrace Documentation
+ *
+ * - What does a 'Max. user actions per minute exceeded' message mean? - https://www.dynatrace.com/support/help/shortlink/max-user-actions-per-minute-exceeded#can-my-environment-limit-be-changed
+ *
+ * - Settings API - https://www.dynatrace.com/support/help/dynatrace-api/environment-api/settings (schemaId: `builtin:rum.overload-prevention`)
+ *
+ * ## Export Example Usage
+ *
+ * - `terraform-provider-dynatrace -export dynatrace.RumOverloadPrevention` downloads all existing real user monitoring overload prevention configuration
+ *
+ * The full documentation of the export feature is available [here](https://dt-url.net/h203qmc).
+ */
 export class RumOverloadPrevention extends pulumi.CustomResource {
     /**
      * Get an existing RumOverloadPrevention resource's state with the given name, ID, and optional extra

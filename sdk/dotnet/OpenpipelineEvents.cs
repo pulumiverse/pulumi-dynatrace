@@ -10,6 +10,421 @@ using Pulumi;
 
 namespace Pulumiverse.Dynatrace
 {
+    /// <summary>
+    /// !&gt; This resource API endpoint has been deprecated, please migrate your OpenPipeline configurations and use `dynatrace_openpipeline_v2_events_*` instead.
+    /// 
+    /// !&gt; Deploying an OpenPipeline configuration will overwrite the existing one of the same kind, causing any manual changes made in the web UI or other configurations managed by Terraform or Monaco to be lost. Ensure all configurations are defined within a single Terraform or Monaco configuration to prevent data loss.
+    /// 
+    /// &gt; **Dynatrace SaaS only**
+    /// 
+    /// &gt; To utilize this resource, please define the environment variables `DT_CLIENT_ID`, `DT_CLIENT_SECRET`, `DT_ACCOUNT_ID` with an OAuth client including the following permissions: **View OpenPipeline configurations** (`openpipeline:configurations:read`), and **Edit OpenPipeline configurations** (`openpipeline:configurations:write`).
+    /// 
+    /// ## Dynatrace Documentation
+    /// 
+    /// - OpenPipeline - https://docs.dynatrace.com/docs/platform/openpipeline
+    /// 
+    /// ## Export Example Usage
+    /// 
+    /// - `terraform-provider-dynatrace -export dynatrace.OpenpipelineEvents` downloads all existing OpenPipeline definitions for Events
+    /// 
+    /// The full documentation of the export feature is available [here](https://dt-url.net/h203qmc).
+    /// 
+    /// ## Resource Example Usage
+    /// 
+    /// ```csharp
+    /// using System.Collections.Generic;
+    /// using System.Linq;
+    /// using Pulumi;
+    /// using Dynatrace = Pulumiverse.Dynatrace;
+    /// 
+    /// return await Deployment.RunAsync(() =&gt; 
+    /// {
+    ///     var events = new Dynatrace.OpenpipelineEvents("events", new()
+    ///     {
+    ///         Endpoints = new Dynatrace.Inputs.OpenpipelineEventsEndpointsArgs
+    ///         {
+    ///             Endpoints = new[]
+    ///             {
+    ///                 new Dynatrace.Inputs.OpenpipelineEventsEndpointsEndpointArgs
+    ///                 {
+    ///                     Enabled = true,
+    ///                     DefaultBucket = "default_events",
+    ///                     DisplayName = "Custom ingest source",
+    ///                     Segment = "something",
+    ///                     Routing = new Dynatrace.Inputs.OpenpipelineEventsEndpointsEndpointRoutingArgs
+    ///                     {
+    ///                         Type = "static",
+    ///                         PipelineId = "default",
+    ///                     },
+    ///                     Processors = new Dynatrace.Inputs.OpenpipelineEventsEndpointsEndpointProcessorsArgs
+    ///                     {
+    ///                         Processors = new[]
+    ///                         {
+    ///                             new Dynatrace.Inputs.OpenpipelineEventsEndpointsEndpointProcessorsProcessorArgs
+    ///                             {
+    ///                                 FieldsAddProcessor = new Dynatrace.Inputs.OpenpipelineEventsEndpointsEndpointProcessorsProcessorFieldsAddProcessorArgs
+    ///                                 {
+    ///                                     Description = "Custom add field",
+    ///                                     Enabled = true,
+    ///                                     Id = "processor_Add_a_field_1_#name#",
+    ///                                     Matcher = "true",
+    ///                                     Fields = new[]
+    ///                                     {
+    ///                                         new Dynatrace.Inputs.OpenpipelineEventsEndpointsEndpointProcessorsProcessorFieldsAddProcessorFieldArgs
+    ///                                         {
+    ///                                             Name = "field",
+    ///                                             Value = "value",
+    ///                                         },
+    ///                                     },
+    ///                                 },
+    ///                             },
+    ///                             new Dynatrace.Inputs.OpenpipelineEventsEndpointsEndpointProcessorsProcessorArgs
+    ///                             {
+    ///                                 FieldsRenameProcessor = new Dynatrace.Inputs.OpenpipelineEventsEndpointsEndpointProcessorsProcessorFieldsRenameProcessorArgs
+    ///                                 {
+    ///                                     Description = "Custom rename field",
+    ///                                     Enabled = true,
+    ///                                     Id = "processor_Custom_rename_field_1_#name#",
+    ///                                     Matcher = "true",
+    ///                                     Fields = new[]
+    ///                                     {
+    ///                                         new Dynatrace.Inputs.OpenpipelineEventsEndpointsEndpointProcessorsProcessorFieldsRenameProcessorFieldArgs
+    ///                                         {
+    ///                                             FromName = "new",
+    ///                                             ToName = "old",
+    ///                                         },
+    ///                                     },
+    ///                                 },
+    ///                             },
+    ///                             new Dynatrace.Inputs.OpenpipelineEventsEndpointsEndpointProcessorsProcessorArgs
+    ///                             {
+    ///                                 FieldsRemoveProcessor = new Dynatrace.Inputs.OpenpipelineEventsEndpointsEndpointProcessorsProcessorFieldsRemoveProcessorArgs
+    ///                                 {
+    ///                                     Description = "Custom remove field",
+    ///                                     Enabled = true,
+    ///                                     Fields = new[]
+    ///                                     {
+    ///                                         "field",
+    ///                                     },
+    ///                                     Id = "processor_Custom_remove_field_1_#name#",
+    ///                                     Matcher = "true",
+    ///                                 },
+    ///                             },
+    ///                             new Dynatrace.Inputs.OpenpipelineEventsEndpointsEndpointProcessorsProcessorArgs
+    ///                             {
+    ///                                 DqlProcessor = new Dynatrace.Inputs.OpenpipelineEventsEndpointsEndpointProcessorsProcessorDqlProcessorArgs
+    ///                                 {
+    ///                                     Description = "Custom DQL",
+    ///                                     Enabled = true,
+    ///                                     DqlScript = "fieldsAdd (\"test\")",
+    ///                                     Id = "processor_Custom_DQL_1_#name#",
+    ///                                     Matcher = "true",
+    ///                                 },
+    ///                             },
+    ///                             new Dynatrace.Inputs.OpenpipelineEventsEndpointsEndpointProcessorsProcessorArgs
+    ///                             {
+    ///                                 DropProcessor = new Dynatrace.Inputs.OpenpipelineEventsEndpointsEndpointProcessorsProcessorDropProcessorArgs
+    ///                                 {
+    ///                                     Description = "Custom drop processor",
+    ///                                     Enabled = true,
+    ///                                     Id = "processor_custom_drop_1_#name#",
+    ///                                     Matcher = "true",
+    ///                                     SampleData = "{}",
+    ///                                 },
+    ///                             },
+    ///                         },
+    ///                     },
+    ///                 },
+    ///             },
+    ///         },
+    ///         Pipelines = new Dynatrace.Inputs.OpenpipelineEventsPipelinesArgs
+    ///         {
+    ///             Pipelines = new[]
+    ///             {
+    ///                 new Dynatrace.Inputs.OpenpipelineEventsPipelinesPipelineArgs
+    ///                 {
+    ///                     Enabled = true,
+    ///                     DisplayName = "Custom pipeline 1",
+    ///                     Id = "pipeline_Pipeline_1_#name#",
+    ///                     Processing = new Dynatrace.Inputs.OpenpipelineEventsPipelinesPipelineProcessingArgs
+    ///                     {
+    ///                         Processors = new[]
+    ///                         {
+    ///                             new Dynatrace.Inputs.OpenpipelineEventsPipelinesPipelineProcessingProcessorArgs
+    ///                             {
+    ///                                 FieldsAddProcessor = new Dynatrace.Inputs.OpenpipelineEventsPipelinesPipelineProcessingProcessorFieldsAddProcessorArgs
+    ///                                 {
+    ///                                     Description = "Add a field 1",
+    ///                                     Enabled = true,
+    ///                                     Id = "processor_Add_a_field_2_#name#",
+    ///                                     Matcher = "true",
+    ///                                     Fields = new[]
+    ///                                     {
+    ///                                         new Dynatrace.Inputs.OpenpipelineEventsPipelinesPipelineProcessingProcessorFieldsAddProcessorFieldArgs
+    ///                                         {
+    ///                                             Name = "field",
+    ///                                             Value = "value",
+    ///                                         },
+    ///                                     },
+    ///                                 },
+    ///                             },
+    ///                         },
+    ///                     },
+    ///                 },
+    ///                 new Dynatrace.Inputs.OpenpipelineEventsPipelinesPipelineArgs
+    ///                 {
+    ///                     Enabled = true,
+    ///                     DisplayName = "Custom pipeline 2",
+    ///                     Id = "pipeline_Pipeline_2_#name#",
+    ///                     DataExtraction = new Dynatrace.Inputs.OpenpipelineEventsPipelinesPipelineDataExtractionArgs
+    ///                     {
+    ///                         Processors = new[]
+    ///                         {
+    ///                             new Dynatrace.Inputs.OpenpipelineEventsPipelinesPipelineDataExtractionProcessorArgs
+    ///                             {
+    ///                                 DavisEventExtractionProcessor = new Dynatrace.Inputs.OpenpipelineEventsPipelinesPipelineDataExtractionProcessorDavisEventExtractionProcessorArgs
+    ///                                 {
+    ///                                     Description = "Custom event",
+    ///                                     Enabled = true,
+    ///                                     Id = "processor_Custom_event_1_#name#",
+    ///                                     Matcher = "true",
+    ///                                     Properties = new[]
+    ///                                     {
+    ///                                         new Dynatrace.Inputs.OpenpipelineEventsPipelinesPipelineDataExtractionProcessorDavisEventExtractionProcessorPropertyArgs
+    ///                                         {
+    ///                                             Key = "event.type",
+    ///                                             Value = "CUSTOM_ALERT",
+    ///                                         },
+    ///                                         new Dynatrace.Inputs.OpenpipelineEventsPipelinesPipelineDataExtractionProcessorDavisEventExtractionProcessorPropertyArgs
+    ///                                         {
+    ///                                             Key = "event.name",
+    ///                                             Value = "test",
+    ///                                         },
+    ///                                     },
+    ///                                 },
+    ///                             },
+    ///                         },
+    ///                     },
+    ///                     MetricExtraction = new Dynatrace.Inputs.OpenpipelineEventsPipelinesPipelineMetricExtractionArgs
+    ///                     {
+    ///                         Processors = new[]
+    ///                         {
+    ///                             new Dynatrace.Inputs.OpenpipelineEventsPipelinesPipelineMetricExtractionProcessorArgs
+    ///                             {
+    ///                                 ValueMetricExtractionProcessor = new Dynatrace.Inputs.OpenpipelineEventsPipelinesPipelineMetricExtractionProcessorValueMetricExtractionProcessorArgs
+    ///                                 {
+    ///                                     Description = "Custom value metric extraction",
+    ///                                     Enabled = true,
+    ///                                     Dimensions = new[]
+    ///                                     {
+    ///                                         "availability",
+    ///                                     },
+    ///                                     Field = "field1",
+    ///                                     Id = "processor_Custom_metric_extraction_1_#name#",
+    ///                                     Matcher = "true",
+    ///                                     MetricKey = "events.custom",
+    ///                                 },
+    ///                             },
+    ///                             new Dynatrace.Inputs.OpenpipelineEventsPipelinesPipelineMetricExtractionProcessorArgs
+    ///                             {
+    ///                                 CounterMetricExtractionProcessor = new Dynatrace.Inputs.OpenpipelineEventsPipelinesPipelineMetricExtractionProcessorCounterMetricExtractionProcessorArgs
+    ///                                 {
+    ///                                     Description = "Custom counter metric extraction",
+    ///                                     Enabled = true,
+    ///                                     Id = "processor_Custom_counter_metric_extraction_1_#name#",
+    ///                                     Matcher = "true",
+    ///                                     MetricKey = "events.counter",
+    ///                                 },
+    ///                             },
+    ///                         },
+    ///                     },
+    ///                     Processing = new Dynatrace.Inputs.OpenpipelineEventsPipelinesPipelineProcessingArgs
+    ///                     {
+    ///                         Processors = new[]
+    ///                         {
+    ///                             new Dynatrace.Inputs.OpenpipelineEventsPipelinesPipelineProcessingProcessorArgs
+    ///                             {
+    ///                                 FieldsAddProcessor = new Dynatrace.Inputs.OpenpipelineEventsPipelinesPipelineProcessingProcessorFieldsAddProcessorArgs
+    ///                                 {
+    ///                                     Description = "Custom add field",
+    ///                                     Enabled = true,
+    ///                                     Id = "processor_Add_a_field_3_#name#",
+    ///                                     Matcher = "true",
+    ///                                     Fields = new[]
+    ///                                     {
+    ///                                         new Dynatrace.Inputs.OpenpipelineEventsPipelinesPipelineProcessingProcessorFieldsAddProcessorFieldArgs
+    ///                                         {
+    ///                                             Name = "field",
+    ///                                             Value = "value",
+    ///                                         },
+    ///                                     },
+    ///                                 },
+    ///                             },
+    ///                             new Dynatrace.Inputs.OpenpipelineEventsPipelinesPipelineProcessingProcessorArgs
+    ///                             {
+    ///                                 FieldsRenameProcessor = new Dynatrace.Inputs.OpenpipelineEventsPipelinesPipelineProcessingProcessorFieldsRenameProcessorArgs
+    ///                                 {
+    ///                                     Description = "Custom rename field",
+    ///                                     Enabled = true,
+    ///                                     Id = "processor_Custom_rename_field_2_#name#",
+    ///                                     Matcher = "true",
+    ///                                     Fields = new[]
+    ///                                     {
+    ///                                         new Dynatrace.Inputs.OpenpipelineEventsPipelinesPipelineProcessingProcessorFieldsRenameProcessorFieldArgs
+    ///                                         {
+    ///                                             FromName = "new",
+    ///                                             ToName = "old",
+    ///                                         },
+    ///                                     },
+    ///                                 },
+    ///                             },
+    ///                             new Dynatrace.Inputs.OpenpipelineEventsPipelinesPipelineProcessingProcessorArgs
+    ///                             {
+    ///                                 FieldsRemoveProcessor = new Dynatrace.Inputs.OpenpipelineEventsPipelinesPipelineProcessingProcessorFieldsRemoveProcessorArgs
+    ///                                 {
+    ///                                     Description = "Custom remove field",
+    ///                                     Enabled = true,
+    ///                                     Fields = new[]
+    ///                                     {
+    ///                                         "field",
+    ///                                     },
+    ///                                     Id = "processor_Custom_remove_field_2_#name#",
+    ///                                     Matcher = "true",
+    ///                                 },
+    ///                             },
+    ///                             new Dynatrace.Inputs.OpenpipelineEventsPipelinesPipelineProcessingProcessorArgs
+    ///                             {
+    ///                                 DqlProcessor = new Dynatrace.Inputs.OpenpipelineEventsPipelinesPipelineProcessingProcessorDqlProcessorArgs
+    ///                                 {
+    ///                                     Description = "Custom DQL",
+    ///                                     Enabled = true,
+    ///                                     DqlScript = "fieldsAdd (\"test\")",
+    ///                                     Id = "processor_Custom_DQL_2_#name#",
+    ///                                     Matcher = "true",
+    ///                                 },
+    ///                             },
+    ///                             new Dynatrace.Inputs.OpenpipelineEventsPipelinesPipelineProcessingProcessorArgs
+    ///                             {
+    ///                                 DropProcessor = new Dynatrace.Inputs.OpenpipelineEventsPipelinesPipelineProcessingProcessorDropProcessorArgs
+    ///                                 {
+    ///                                     Description = "Custom drop processor",
+    ///                                     Enabled = true,
+    ///                                     Id = "processor_custom_drop_2_#name#",
+    ///                                     Matcher = "true",
+    ///                                     SampleData = "{}",
+    ///                                 },
+    ///                             },
+    ///                         },
+    ///                     },
+    ///                     SecurityContext = new Dynatrace.Inputs.OpenpipelineEventsPipelinesPipelineSecurityContextArgs
+    ///                     {
+    ///                         Processors = new[]
+    ///                         {
+    ///                             new Dynatrace.Inputs.OpenpipelineEventsPipelinesPipelineSecurityContextProcessorArgs
+    ///                             {
+    ///                                 SecurityContextProcessor = new Dynatrace.Inputs.OpenpipelineEventsPipelinesPipelineSecurityContextProcessorSecurityContextProcessorArgs
+    ///                                 {
+    ///                                     Description = "Custom security context 1",
+    ///                                     Enabled = true,
+    ///                                     Id = "processor_Custom_security_context_1_#name#",
+    ///                                     Matcher = "true",
+    ///                                     SampleData = "{}",
+    ///                                     Value = new Dynatrace.Inputs.OpenpipelineEventsPipelinesPipelineSecurityContextProcessorSecurityContextProcessorValueArgs
+    ///                                     {
+    ///                                         Type = "constant",
+    ///                                         Constant = "string",
+    ///                                     },
+    ///                                 },
+    ///                             },
+    ///                             new Dynatrace.Inputs.OpenpipelineEventsPipelinesPipelineSecurityContextProcessorArgs
+    ///                             {
+    ///                                 SecurityContextProcessor = new Dynatrace.Inputs.OpenpipelineEventsPipelinesPipelineSecurityContextProcessorSecurityContextProcessorArgs
+    ///                                 {
+    ///                                     Description = "Custom security context 2",
+    ///                                     Enabled = true,
+    ///                                     Id = "processor_Custom_security_context_2_#name#",
+    ///                                     Matcher = "true",
+    ///                                     SampleData = "{}",
+    ///                                     Value = new Dynatrace.Inputs.OpenpipelineEventsPipelinesPipelineSecurityContextProcessorSecurityContextProcessorValueArgs
+    ///                                     {
+    ///                                         Type = "field",
+    ///                                         Field = "fieldname",
+    ///                                     },
+    ///                                 },
+    ///                             },
+    ///                             new Dynatrace.Inputs.OpenpipelineEventsPipelinesPipelineSecurityContextProcessorArgs
+    ///                             {
+    ///                                 SecurityContextProcessor = new Dynatrace.Inputs.OpenpipelineEventsPipelinesPipelineSecurityContextProcessorSecurityContextProcessorArgs
+    ///                                 {
+    ///                                     Description = "Custom security context 3",
+    ///                                     Enabled = true,
+    ///                                     Id = "processor_Custom_security_context_3_#name#",
+    ///                                     Matcher = "true",
+    ///                                     SampleData = "{}",
+    ///                                     Value = new Dynatrace.Inputs.OpenpipelineEventsPipelinesPipelineSecurityContextProcessorSecurityContextProcessorValueArgs
+    ///                                     {
+    ///                                         Type = "multiValueConstant",
+    ///                                         MultiValueConstants = new[]
+    ///                                         {
+    ///                                             "multi",
+    ///                                             "value",
+    ///                                         },
+    ///                                     },
+    ///                                 },
+    ///                             },
+    ///                         },
+    ///                     },
+    ///                     Storage = new Dynatrace.Inputs.OpenpipelineEventsPipelinesPipelineStorageArgs
+    ///                     {
+    ///                         CatchAllBucketName = "default_events",
+    ///                         Processors = new[]
+    ///                         {
+    ///                             new Dynatrace.Inputs.OpenpipelineEventsPipelinesPipelineStorageProcessorArgs
+    ///                             {
+    ///                                 BucketAssignmentProcessor = new Dynatrace.Inputs.OpenpipelineEventsPipelinesPipelineStorageProcessorBucketAssignmentProcessorArgs
+    ///                                 {
+    ///                                     Description = "Custom bucket assignment",
+    ///                                     Enabled = true,
+    ///                                     BucketName = "default_events",
+    ///                                     Id = "processor_Custom_bucket_assignment_1_#name#",
+    ///                                     Matcher = "true",
+    ///                                     SampleData = "{}",
+    ///                                 },
+    ///                             },
+    ///                             new Dynatrace.Inputs.OpenpipelineEventsPipelinesPipelineStorageProcessorArgs
+    ///                             {
+    ///                                 NoStorageProcessor = new Dynatrace.Inputs.OpenpipelineEventsPipelinesPipelineStorageProcessorNoStorageProcessorArgs
+    ///                                 {
+    ///                                     Description = "Custom no storage assignment",
+    ///                                     Enabled = true,
+    ///                                     Id = "processor_Custom_no_storage_assignment_1_#name#",
+    ///                                     Matcher = "true",
+    ///                                     SampleData = "{}",
+    ///                                 },
+    ///                             },
+    ///                         },
+    ///                     },
+    ///                 },
+    ///             },
+    ///         },
+    ///         Routing = new Dynatrace.Inputs.OpenpipelineEventsRoutingArgs
+    ///         {
+    ///             Entries = new[]
+    ///             {
+    ///                 new Dynatrace.Inputs.OpenpipelineEventsRoutingEntryArgs
+    ///                 {
+    ///                     Enabled = true,
+    ///                     Matcher = "true",
+    ///                     Note = "Custom route",
+    ///                     PipelineId = "pipeline_Pipeline_1_#name#",
+    ///                 },
+    ///             },
+    ///         },
+    ///     });
+    /// 
+    /// });
+    /// ```
+    /// </summary>
     [DynatraceResourceType("dynatrace:index/openpipelineEvents:OpenpipelineEvents")]
     public partial class OpenpipelineEvents : global::Pulumi.CustomResource
     {

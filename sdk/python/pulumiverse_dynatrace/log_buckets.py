@@ -26,6 +26,7 @@ class LogBucketsArgs:
                  insert_after: Optional[pulumi.Input[_builtins.str]] = None):
         """
         The set of arguments for constructing a LogBuckets resource.
+
         :param pulumi.Input[_builtins.str] bucket_name: A 'bucket' is the length of time your logs will be stored. Select the bucket that's best for you.
         :param pulumi.Input[_builtins.bool] enabled: This setting is enabled (`true`) or disabled (`false`)
         :param pulumi.Input[_builtins.str] matcher: Matcher (DQL)
@@ -110,6 +111,7 @@ class _LogBucketsState:
                  rule_name: Optional[pulumi.Input[_builtins.str]] = None):
         """
         Input properties used for looking up and filtering LogBuckets resources.
+
         :param pulumi.Input[_builtins.str] bucket_name: A 'bucket' is the length of time your logs will be stored. Select the bucket that's best for you.
         :param pulumi.Input[_builtins.bool] enabled: This setting is enabled (`true`) or disabled (`false`)
         :param pulumi.Input[_builtins.str] insert_after: Because this resource allows for ordering you may specify the ID of the resource instance that comes before this instance regarding order. If not specified when creating the setting will be added to the end of the list. If not specified during update the order will remain untouched
@@ -201,7 +203,21 @@ class LogBuckets(pulumi.CustomResource):
                  rule_name: Optional[pulumi.Input[_builtins.str]] = None,
                  __props__=None):
         """
-        Create a LogBuckets resource with the given unique name, props, and options.
+        > This resource requires the API token scopes **Read settings** (`settings.read`) and **Write settings** (`settings.write`)
+
+        ## Dynatrace Documentation
+
+        - Log buckets and retention - https://www.dynatrace.com/support/help/observe-and-explore/logs/log-management-and-analytics/lma-log-buckets-and-retention
+
+        - Settings API - https://www.dynatrace.com/support/help/dynatrace-api/environment-api/settings (schemaId: `builtin:logmonitoring.log-buckets-rules`)
+
+        ## Export Example Usage
+
+        - `terraform-provider-dynatrace -export LogBuckets` downloads all existing log bucket configuration
+
+        The full documentation of the export feature is available [here](https://dt-url.net/h203qmc).
+
+
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[_builtins.str] bucket_name: A 'bucket' is the length of time your logs will be stored. Select the bucket that's best for you.
@@ -217,7 +233,21 @@ class LogBuckets(pulumi.CustomResource):
                  args: LogBucketsArgs,
                  opts: Optional[pulumi.ResourceOptions] = None):
         """
-        Create a LogBuckets resource with the given unique name, props, and options.
+        > This resource requires the API token scopes **Read settings** (`settings.read`) and **Write settings** (`settings.write`)
+
+        ## Dynatrace Documentation
+
+        - Log buckets and retention - https://www.dynatrace.com/support/help/observe-and-explore/logs/log-management-and-analytics/lma-log-buckets-and-retention
+
+        - Settings API - https://www.dynatrace.com/support/help/dynatrace-api/environment-api/settings (schemaId: `builtin:logmonitoring.log-buckets-rules`)
+
+        ## Export Example Usage
+
+        - `terraform-provider-dynatrace -export LogBuckets` downloads all existing log bucket configuration
+
+        The full documentation of the export feature is available [here](https://dt-url.net/h203qmc).
+
+
         :param str resource_name: The name of the resource.
         :param LogBucketsArgs args: The arguments to use to populate this resource's properties.
         :param pulumi.ResourceOptions opts: Options for the resource.

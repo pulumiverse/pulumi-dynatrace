@@ -25,6 +25,7 @@ class MonitoredTechnologiesPhpArgs:
                  host_id: Optional[pulumi.Input[_builtins.str]] = None):
         """
         The set of arguments for constructing a MonitoredTechnologiesPhp resource.
+
         :param pulumi.Input[_builtins.bool] enabled: This setting is enabled (`true`) or disabled (`false`)
         :param pulumi.Input[_builtins.bool] enable_php_cli_server: Requires enabled PHP monitoring and Dynatrace OneAgent version 1.261 or later
         :param pulumi.Input[_builtins.bool] enabled_fast_cgi: Requires PHP monitoring enabled and from Dynatrace OneAgent version 1.191 it's ignored and permanently enabled
@@ -96,6 +97,7 @@ class _MonitoredTechnologiesPhpState:
                  host_id: Optional[pulumi.Input[_builtins.str]] = None):
         """
         Input properties used for looking up and filtering MonitoredTechnologiesPhp resources.
+
         :param pulumi.Input[_builtins.bool] enable_php_cli_server: Requires enabled PHP monitoring and Dynatrace OneAgent version 1.261 or later
         :param pulumi.Input[_builtins.bool] enabled: This setting is enabled (`true`) or disabled (`false`)
         :param pulumi.Input[_builtins.bool] enabled_fast_cgi: Requires PHP monitoring enabled and from Dynatrace OneAgent version 1.191 it's ignored and permanently enabled
@@ -171,7 +173,21 @@ class MonitoredTechnologiesPhp(pulumi.CustomResource):
                  host_id: Optional[pulumi.Input[_builtins.str]] = None,
                  __props__=None):
         """
-        Create a MonitoredTechnologiesPhp resource with the given unique name, props, and options.
+        > This resource requires the API token scopes **Read settings** (`settings.read`) and **Write settings** (`settings.write`)
+
+        ## Dynatrace Documentation
+
+        - Hosts - https://www.dynatrace.com/support/help/platform-modules/infrastructure-monitoring/hosts
+
+        - Settings API - https://www.dynatrace.com/support/help/dynatrace-api/environment-api/settings (schemaId: `builtin:monitored-technologies.php`)
+
+        ## Export Example Usage
+
+        - `terraform-provider-dynatrace -export MonitoredTechnologiesPhp` downloads all existing PHP monitoring configuration
+
+        The full documentation of the export feature is available [here](https://dt-url.net/h203qmc).
+
+
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[_builtins.bool] enable_php_cli_server: Requires enabled PHP monitoring and Dynatrace OneAgent version 1.261 or later
@@ -186,7 +202,21 @@ class MonitoredTechnologiesPhp(pulumi.CustomResource):
                  args: MonitoredTechnologiesPhpArgs,
                  opts: Optional[pulumi.ResourceOptions] = None):
         """
-        Create a MonitoredTechnologiesPhp resource with the given unique name, props, and options.
+        > This resource requires the API token scopes **Read settings** (`settings.read`) and **Write settings** (`settings.write`)
+
+        ## Dynatrace Documentation
+
+        - Hosts - https://www.dynatrace.com/support/help/platform-modules/infrastructure-monitoring/hosts
+
+        - Settings API - https://www.dynatrace.com/support/help/dynatrace-api/environment-api/settings (schemaId: `builtin:monitored-technologies.php`)
+
+        ## Export Example Usage
+
+        - `terraform-provider-dynatrace -export MonitoredTechnologiesPhp` downloads all existing PHP monitoring configuration
+
+        The full documentation of the export feature is available [here](https://dt-url.net/h203qmc).
+
+
         :param str resource_name: The name of the resource.
         :param MonitoredTechnologiesPhpArgs args: The arguments to use to populate this resource's properties.
         :param pulumi.ResourceOptions opts: Options for the resource.

@@ -26,6 +26,7 @@ class WebAppRequestErrorsArgs:
                  error_rules: Optional[pulumi.Input['WebAppRequestErrorsErrorRulesArgs']] = None):
         """
         The set of arguments for constructing a WebAppRequestErrors resource.
+
         :param pulumi.Input[_builtins.bool] ignore_request_errors_in_apdex_calculation: (Field has overlap with `ApplicationErrorRules`) This setting overrides Apdex settings for individual rules listed below
         :param pulumi.Input[_builtins.str] scope: The scope of this setting (APPLICATION)
         :param pulumi.Input['WebAppRequestErrorsErrorRulesArgs'] error_rules: (Field has overlap with `ApplicationErrorRules`)
@@ -80,6 +81,7 @@ class _WebAppRequestErrorsState:
                  scope: Optional[pulumi.Input[_builtins.str]] = None):
         """
         Input properties used for looking up and filtering WebAppRequestErrors resources.
+
         :param pulumi.Input['WebAppRequestErrorsErrorRulesArgs'] error_rules: (Field has overlap with `ApplicationErrorRules`)
         :param pulumi.Input[_builtins.bool] ignore_request_errors_in_apdex_calculation: (Field has overlap with `ApplicationErrorRules`) This setting overrides Apdex settings for individual rules listed below
         :param pulumi.Input[_builtins.str] scope: The scope of this setting (APPLICATION)
@@ -139,7 +141,23 @@ class WebAppRequestErrors(pulumi.CustomResource):
                  scope: Optional[pulumi.Input[_builtins.str]] = None,
                  __props__=None):
         """
-        Create a WebAppRequestErrors resource with the given unique name, props, and options.
+        !> This resource may not have full coverage of the required fields, please use ApplicationErrorRules instead.
+
+        > This resource requires the API token scopes **Read settings** (`settings.read`) and **Write settings** (`settings.write`)
+
+        ## Dynatrace Documentation
+
+        - Configure request errors - https://www.dynatrace.com/support/help/platform-modules/digital-experience/web-applications/additional-configuration/configure-errors#configure-request-errors
+
+        - Settings API - https://www.dynatrace.com/support/help/dynatrace-api/environment-api/settings (schemaId: `builtin:rum.web.request-errors`)
+
+        ## Export Example Usage
+
+        - `terraform-provider-dynatrace -export WebAppRequestErrors` downloads all existing request error configuration
+
+        The full documentation of the export feature is available [here](https://dt-url.net/h203qmc).
+
+
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[Union['WebAppRequestErrorsErrorRulesArgs', 'WebAppRequestErrorsErrorRulesArgsDict']] error_rules: (Field has overlap with `ApplicationErrorRules`)
@@ -153,7 +171,23 @@ class WebAppRequestErrors(pulumi.CustomResource):
                  args: WebAppRequestErrorsArgs,
                  opts: Optional[pulumi.ResourceOptions] = None):
         """
-        Create a WebAppRequestErrors resource with the given unique name, props, and options.
+        !> This resource may not have full coverage of the required fields, please use ApplicationErrorRules instead.
+
+        > This resource requires the API token scopes **Read settings** (`settings.read`) and **Write settings** (`settings.write`)
+
+        ## Dynatrace Documentation
+
+        - Configure request errors - https://www.dynatrace.com/support/help/platform-modules/digital-experience/web-applications/additional-configuration/configure-errors#configure-request-errors
+
+        - Settings API - https://www.dynatrace.com/support/help/dynatrace-api/environment-api/settings (schemaId: `builtin:rum.web.request-errors`)
+
+        ## Export Example Usage
+
+        - `terraform-provider-dynatrace -export WebAppRequestErrors` downloads all existing request error configuration
+
+        The full documentation of the export feature is available [here](https://dt-url.net/h203qmc).
+
+
         :param str resource_name: The name of the resource.
         :param WebAppRequestErrorsArgs args: The arguments to use to populate this resource's properties.
         :param pulumi.ResourceOptions opts: Options for the resource.

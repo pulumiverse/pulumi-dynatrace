@@ -30,7 +30,7 @@ type IamPolicyBindings struct {
 	Account pulumi.StringPtrOutput `pulumi:"account"`
 	// The ID of the environment (https://\n\n.live.dynatrace.com). The attribute `policies` must contain ONLY policies defined for that environment.
 	Environment pulumi.StringPtrOutput `pulumi:"environment"`
-	// The name of the policy
+	// The UUID of the group to which the policy applies
 	Group pulumi.StringOutput `pulumi:"group"`
 	// A list of IDs referring to policies bound to that group. It's not possible to mix policies here that are defined for different scopes (different accounts or environments) than specified via attributes `account` or `environment`.
 	Policies pulumi.StringArrayOutput `pulumi:"policies"`
@@ -76,7 +76,7 @@ type iamPolicyBindingsState struct {
 	Account *string `pulumi:"account"`
 	// The ID of the environment (https://\n\n.live.dynatrace.com). The attribute `policies` must contain ONLY policies defined for that environment.
 	Environment *string `pulumi:"environment"`
-	// The name of the policy
+	// The UUID of the group to which the policy applies
 	Group *string `pulumi:"group"`
 	// A list of IDs referring to policies bound to that group. It's not possible to mix policies here that are defined for different scopes (different accounts or environments) than specified via attributes `account` or `environment`.
 	Policies []string `pulumi:"policies"`
@@ -87,7 +87,7 @@ type IamPolicyBindingsState struct {
 	Account pulumi.StringPtrInput
 	// The ID of the environment (https://\n\n.live.dynatrace.com). The attribute `policies` must contain ONLY policies defined for that environment.
 	Environment pulumi.StringPtrInput
-	// The name of the policy
+	// The UUID of the group to which the policy applies
 	Group pulumi.StringPtrInput
 	// A list of IDs referring to policies bound to that group. It's not possible to mix policies here that are defined for different scopes (different accounts or environments) than specified via attributes `account` or `environment`.
 	Policies pulumi.StringArrayInput
@@ -102,7 +102,7 @@ type iamPolicyBindingsArgs struct {
 	Account *string `pulumi:"account"`
 	// The ID of the environment (https://\n\n.live.dynatrace.com). The attribute `policies` must contain ONLY policies defined for that environment.
 	Environment *string `pulumi:"environment"`
-	// The name of the policy
+	// The UUID of the group to which the policy applies
 	Group string `pulumi:"group"`
 	// A list of IDs referring to policies bound to that group. It's not possible to mix policies here that are defined for different scopes (different accounts or environments) than specified via attributes `account` or `environment`.
 	Policies []string `pulumi:"policies"`
@@ -114,7 +114,7 @@ type IamPolicyBindingsArgs struct {
 	Account pulumi.StringPtrInput
 	// The ID of the environment (https://\n\n.live.dynatrace.com). The attribute `policies` must contain ONLY policies defined for that environment.
 	Environment pulumi.StringPtrInput
-	// The name of the policy
+	// The UUID of the group to which the policy applies
 	Group pulumi.StringInput
 	// A list of IDs referring to policies bound to that group. It's not possible to mix policies here that are defined for different scopes (different accounts or environments) than specified via attributes `account` or `environment`.
 	Policies pulumi.StringArrayInput
@@ -217,7 +217,7 @@ func (o IamPolicyBindingsOutput) Environment() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v *IamPolicyBindings) pulumi.StringPtrOutput { return v.Environment }).(pulumi.StringPtrOutput)
 }
 
-// The name of the policy
+// The UUID of the group to which the policy applies
 func (o IamPolicyBindingsOutput) Group() pulumi.StringOutput {
 	return o.ApplyT(func(v *IamPolicyBindings) pulumi.StringOutput { return v.Group }).(pulumi.StringOutput)
 }

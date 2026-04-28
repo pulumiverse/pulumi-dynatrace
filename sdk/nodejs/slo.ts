@@ -6,6 +6,23 @@ import * as inputs from "./types/input";
 import * as outputs from "./types/output";
 import * as utilities from "./utilities";
 
+/**
+ * !> This resource API endpoint has been deprecated, please use dynatrace.SloV2 instead.
+ *
+ * > This resource requires the API token scopes **Read SLO** (`slo.read`) and **Write SLO** (`slo.write`)
+ *
+ * ## Dynatrace Documentation
+ *
+ * - Service-level objectives - https://www.dynatrace.com/support/help/how-to-use-dynatrace/cloud-automation/service-level-objectives
+ *
+ * - Service-level objectives API - https://www.dynatrace.com/support/help/dynatrace-api/environment-api/service-level-objectives
+ *
+ * ## Export Example Usage
+ *
+ * - `terraform-provider-dynatrace -export dynatrace.Slo` downloads all existing service-level objectives configuration
+ *
+ * The full documentation of the export feature is available [here](https://dt-url.net/h203qmc).
+ */
 export class Slo extends pulumi.CustomResource {
     /**
      * Get an existing Slo resource's state with the given name, ID, and optional extra

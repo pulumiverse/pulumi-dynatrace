@@ -4,6 +4,21 @@
 import * as pulumi from "@pulumi/pulumi";
 import * as utilities from "./utilities";
 
+/**
+ * > This resource requires the API token scopes **Read settings** (`settings.read`) and **Write settings** (`settings.write`)
+ *
+ * ## Dynatrace Documentation
+ *
+ * - Update ActiveGate - https://www.dynatrace.com/support/help/setup-and-configuration/dynatrace-activegate/operation/update-activegate
+ *
+ * - Settings API - https://www.dynatrace.com/support/help/dynatrace-api/environment-api/settings (schemaId: `builtin:deployment.activegate.updates`)
+ *
+ * ## Export Example Usage
+ *
+ * - `terraform-provider-dynatrace -export dynatrace.ActivegateUpdates` downloads existing Activegate updates configuration
+ *
+ * The full documentation of the export feature is available [here](https://dt-url.net/h203qmc).
+ */
 export class ActivegateUpdates extends pulumi.CustomResource {
     /**
      * Get an existing ActivegateUpdates resource's state with the given name, ID, and optional extra

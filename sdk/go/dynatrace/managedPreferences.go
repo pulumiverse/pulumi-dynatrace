@@ -12,6 +12,15 @@ import (
 	"github.com/pulumiverse/pulumi-dynatrace/sdk/go/dynatrace/internal"
 )
 
+// !> **HTTP DELETE method not available** Terraform will no longer manage this resource on `destroy` but the configuration will still be present on the Dynatrace cluster.
+//
+// > This resource requires the cluster API token scope **Service Provider API** (`ServiceProviderAPI`)
+//
+// ## Dynatrace Documentation
+//
+// - Cluster preferences settings - https://www.dynatrace.com/support/help/managed-cluster/configuration/configure-cluster-preferences
+//
+// - Cluster API v1 - https://www.dynatrace.com/support/help/managed-cluster/cluster-api/cluster-api-v1
 type ManagedPreferences struct {
 	pulumi.CustomResourceState
 

@@ -19,7 +19,7 @@ namespace Pulumiverse.Dynatrace.Outputs
         /// </summary>
         public readonly string DestinationProperty;
         /// <summary>
-        /// Possible Values: `Leavetextas_is`, `Tolowercase`, `Touppercase`
+        /// Normalize text or leave it as-is?. Possible Values: `Leave text as-is`, `To lower case`, `To upper case`
         /// </summary>
         public readonly string DestinationTransformation;
         /// <summary>
@@ -27,7 +27,7 @@ namespace Pulumiverse.Dynatrace.Outputs
         /// </summary>
         public readonly string SourceProperty;
         /// <summary>
-        /// Possible Values: `Leavetextas_is`, `Tolowercase`, `Touppercase`
+        /// Normalize text or leave it as-is?. Possible Values: `Leave text as-is`, `To lower case`, `To upper case`
         /// </summary>
         public readonly string SourceTransformation;
 

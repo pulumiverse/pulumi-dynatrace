@@ -12,6 +12,19 @@ import (
 	"github.com/pulumiverse/pulumi-dynatrace/sdk/go/dynatrace/internal"
 )
 
+// > This resource requires the API token scopes **Read settings** (`settings.read`) and **Write settings** (`settings.write`)
+//
+// ## Dynatrace Documentation
+//
+// - Define custom topology - https://www.dynatrace.com/support/help/extend-dynatrace/extend-topology/custom-topology
+//
+// - Settings API - https://www.dynatrace.com/support/help/dynatrace-api/environment-api/settings (schemaId: `builtin:monitoredentities.generic.relation`)
+//
+// ## Export Example Usage
+//
+// - `terraform-provider-dynatrace -export GenericRelationships` downloads all existing custom topology generic relationships configuration
+//
+// The full documentation of the export feature is available [here](https://dt-url.net/h203qmc).
 type GenericRelationships struct {
 	pulumi.CustomResourceState
 
@@ -29,7 +42,7 @@ type GenericRelationships struct {
 	ToRole pulumi.StringPtrOutput `pulumi:"toRole"`
 	// Define an entity type as the destination of the relationship. You can choose the same type as the source type. In this case you also may assign different roles for source and destination for having directed relationships.
 	ToType pulumi.StringOutput `pulumi:"toType"`
-	// Possible Values: `CALLS`, `CHILD_OF`, `INSTANCE_OF`, `PART_OF`, `RUNS_ON`, `SAME_AS`
+	// Type of the relationship between the Source Type and the Destination Type. Possible Values: `CALLS`, `CHILD_OF`, `INSTANCE_OF`, `PART_OF`, `RUNS_ON`, `SAME_AS`
 	TypeOfRelation pulumi.StringOutput `pulumi:"typeOfRelation"`
 }
 
@@ -95,7 +108,7 @@ type genericRelationshipsState struct {
 	ToRole *string `pulumi:"toRole"`
 	// Define an entity type as the destination of the relationship. You can choose the same type as the source type. In this case you also may assign different roles for source and destination for having directed relationships.
 	ToType *string `pulumi:"toType"`
-	// Possible Values: `CALLS`, `CHILD_OF`, `INSTANCE_OF`, `PART_OF`, `RUNS_ON`, `SAME_AS`
+	// Type of the relationship between the Source Type and the Destination Type. Possible Values: `CALLS`, `CHILD_OF`, `INSTANCE_OF`, `PART_OF`, `RUNS_ON`, `SAME_AS`
 	TypeOfRelation *string `pulumi:"typeOfRelation"`
 }
 
@@ -114,7 +127,7 @@ type GenericRelationshipsState struct {
 	ToRole pulumi.StringPtrInput
 	// Define an entity type as the destination of the relationship. You can choose the same type as the source type. In this case you also may assign different roles for source and destination for having directed relationships.
 	ToType pulumi.StringPtrInput
-	// Possible Values: `CALLS`, `CHILD_OF`, `INSTANCE_OF`, `PART_OF`, `RUNS_ON`, `SAME_AS`
+	// Type of the relationship between the Source Type and the Destination Type. Possible Values: `CALLS`, `CHILD_OF`, `INSTANCE_OF`, `PART_OF`, `RUNS_ON`, `SAME_AS`
 	TypeOfRelation pulumi.StringPtrInput
 }
 
@@ -137,7 +150,7 @@ type genericRelationshipsArgs struct {
 	ToRole *string `pulumi:"toRole"`
 	// Define an entity type as the destination of the relationship. You can choose the same type as the source type. In this case you also may assign different roles for source and destination for having directed relationships.
 	ToType string `pulumi:"toType"`
-	// Possible Values: `CALLS`, `CHILD_OF`, `INSTANCE_OF`, `PART_OF`, `RUNS_ON`, `SAME_AS`
+	// Type of the relationship between the Source Type and the Destination Type. Possible Values: `CALLS`, `CHILD_OF`, `INSTANCE_OF`, `PART_OF`, `RUNS_ON`, `SAME_AS`
 	TypeOfRelation string `pulumi:"typeOfRelation"`
 }
 
@@ -157,7 +170,7 @@ type GenericRelationshipsArgs struct {
 	ToRole pulumi.StringPtrInput
 	// Define an entity type as the destination of the relationship. You can choose the same type as the source type. In this case you also may assign different roles for source and destination for having directed relationships.
 	ToType pulumi.StringInput
-	// Possible Values: `CALLS`, `CHILD_OF`, `INSTANCE_OF`, `PART_OF`, `RUNS_ON`, `SAME_AS`
+	// Type of the relationship between the Source Type and the Destination Type. Possible Values: `CALLS`, `CHILD_OF`, `INSTANCE_OF`, `PART_OF`, `RUNS_ON`, `SAME_AS`
 	TypeOfRelation pulumi.StringInput
 }
 
@@ -283,7 +296,7 @@ func (o GenericRelationshipsOutput) ToType() pulumi.StringOutput {
 	return o.ApplyT(func(v *GenericRelationships) pulumi.StringOutput { return v.ToType }).(pulumi.StringOutput)
 }
 
-// Possible Values: `CALLS`, `CHILD_OF`, `INSTANCE_OF`, `PART_OF`, `RUNS_ON`, `SAME_AS`
+// Type of the relationship between the Source Type and the Destination Type. Possible Values: `CALLS`, `CHILD_OF`, `INSTANCE_OF`, `PART_OF`, `RUNS_ON`, `SAME_AS`
 func (o GenericRelationshipsOutput) TypeOfRelation() pulumi.StringOutput {
 	return o.ApplyT(func(v *GenericRelationships) pulumi.StringOutput { return v.TypeOfRelation }).(pulumi.StringOutput)
 }

@@ -29,7 +29,7 @@ namespace Pulumiverse.Dynatrace.Outputs
         /// </summary>
         public readonly string? EndpointNameTemplate;
         /// <summary>
-        /// Possible Values: `DETECT_REQUEST_ON_ENDPOINT`, `SUPPRESS_REQUEST`
+        /// If condition matches. Possible Values: `DETECT_REQUEST_ON_ENDPOINT`, `SUPPRESS_REQUEST`
         /// </summary>
         public readonly string IfConditionMatches;
         /// <summary>

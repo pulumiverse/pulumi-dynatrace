@@ -6,6 +6,21 @@ import * as inputs from "./types/input";
 import * as outputs from "./types/output";
 import * as utilities from "./utilities";
 
+/**
+ * > This resource requires the API token scopes **Read configuration** (`ReadConfig`) and **Capture request data** (`CaptureRequestData`)
+ *
+ * ## Dynatrace Documentation
+ *
+ * - Request attributes - https://www.dynatrace.com/support/help/how-to-use-dynatrace/services/request-attributes
+ *
+ * - Request attributes API - https://www.dynatrace.com/support/help/dynatrace-api/configuration-api/service-api/request-attributes-api
+ *
+ * ## Export Example Usage
+ *
+ * - `terraform-provider-dynatrace -export dynatrace.RequestAttribute` downloads all existing request attribute configuration
+ *
+ * The full documentation of the export feature is available [here](https://dt-url.net/h203qmc).
+ */
 export class RequestAttribute extends pulumi.CustomResource {
     /**
      * Get an existing RequestAttribute resource's state with the given name, ID, and optional extra

@@ -10,6 +10,78 @@ using Pulumi;
 
 namespace Pulumiverse.Dynatrace
 {
+    /// <summary>
+    /// !&gt; This resource API endpoint has been deprecated, please migrate your OpenPipeline configurations and use `dynatrace_openpipeline_v2_logs_*` instead.
+    /// 
+    /// !&gt; Deploying an OpenPipeline configuration will overwrite the existing one of the same kind, causing any manual changes made in the web UI or other configurations managed by Terraform or Monaco to be lost. Ensure all configurations are defined within a single Terraform or Monaco configuration to prevent data loss.
+    /// 
+    /// &gt; **Dynatrace SaaS only**
+    /// 
+    /// &gt; To utilize this resource, please define the environment variables `DT_CLIENT_ID`, `DT_CLIENT_SECRET`, `DT_ACCOUNT_ID` with an OAuth client including the following permissions: **View OpenPipeline configurations** (`openpipeline:configurations:read`), and **Edit OpenPipeline configurations** (`openpipeline:configurations:write`).
+    /// 
+    /// ## Dynatrace Documentation
+    /// 
+    /// - OpenPipeline - https://docs.dynatrace.com/docs/platform/openpipeline
+    /// 
+    /// ## Export Example Usage
+    /// 
+    /// - `terraform-provider-dynatrace -export dynatrace.OpenpipelineLogs` downloads all existing OpenPipeline definitions for Logs
+    /// 
+    /// The full documentation of the export feature is available [here](https://dt-url.net/h203qmc).
+    /// 
+    /// ## Resource Example Usage
+    /// 
+    /// ```csharp
+    /// using System.Collections.Generic;
+    /// using System.Linq;
+    /// using Pulumi;
+    /// using Dynatrace = Pulumiverse.Dynatrace;
+    /// 
+    /// return await Deployment.RunAsync(() =&gt; 
+    /// {
+    ///     var logs = new Dynatrace.OpenpipelineLogs("logs", new()
+    ///     {
+    ///         Pipelines = new Dynatrace.Inputs.OpenpipelineLogsPipelinesArgs
+    ///         {
+    ///             Pipelines = new[]
+    ///             {
+    ///                 new Dynatrace.Inputs.OpenpipelineLogsPipelinesPipelineArgs
+    ///                 {
+    ///                     Enabled = true,
+    ///                     DisplayName = "test",
+    ///                     Id = "pipeline_test_5036",
+    ///                     Processing = new Dynatrace.Inputs.OpenpipelineLogsPipelinesPipelineProcessingArgs
+    ///                     {
+    ///                         Processors = new[]
+    ///                         {
+    ///                             new Dynatrace.Inputs.OpenpipelineLogsPipelinesPipelineProcessingProcessorArgs
+    ///                             {
+    ///                                 FieldsRenameProcessor = new Dynatrace.Inputs.OpenpipelineLogsPipelinesPipelineProcessingProcessorFieldsRenameProcessorArgs
+    ///                                 {
+    ///                                     Description = "test",
+    ///                                     Enabled = true,
+    ///                                     Id = "processor_test_8644",
+    ///                                     Matcher = "true",
+    ///                                     Fields = new[]
+    ///                                     {
+    ///                                         new Dynatrace.Inputs.OpenpipelineLogsPipelinesPipelineProcessingProcessorFieldsRenameProcessorFieldArgs
+    ///                                         {
+    ///                                             FromName = "bar",
+    ///                                             ToName = "foo",
+    ///                                         },
+    ///                                     },
+    ///                                 },
+    ///                             },
+    ///                         },
+    ///                     },
+    ///                 },
+    ///             },
+    ///         },
+    ///     });
+    /// 
+    /// });
+    /// ```
+    /// </summary>
     [DynatraceResourceType("dynatrace:index/openpipelineLogs:OpenpipelineLogs")]
     public partial class OpenpipelineLogs : global::Pulumi.CustomResource
     {

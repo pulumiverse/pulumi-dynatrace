@@ -29,6 +29,7 @@ class NetworkZoneArgs:
                  num_of_oneagents_using: Optional[pulumi.Input[_builtins.int]] = None):
         """
         The set of arguments for constructing a NetworkZone resource.
+
         :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] alternative_zones: A list of alternative network zones.
         :param pulumi.Input[_builtins.str] description: A short description of the network zone
         :param pulumi.Input[_builtins.str] fallback_mode: The fallback mode of the network zone. Possible values: `ANY_ACTIVE_GATE`, `NONE`, `ONLY_DEFAULT_ZONE`
@@ -165,6 +166,7 @@ class _NetworkZoneState:
                  num_of_oneagents_using: Optional[pulumi.Input[_builtins.int]] = None):
         """
         Input properties used for looking up and filtering NetworkZone resources.
+
         :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] alternative_zones: A list of alternative network zones.
         :param pulumi.Input[_builtins.str] description: A short description of the network zone
         :param pulumi.Input[_builtins.str] fallback_mode: The fallback mode of the network zone. Possible values: `ANY_ACTIVE_GATE`, `NONE`, `ONLY_DEFAULT_ZONE`
@@ -304,7 +306,21 @@ class NetworkZone(pulumi.CustomResource):
                  num_of_oneagents_using: Optional[pulumi.Input[_builtins.int]] = None,
                  __props__=None):
         """
-        Create a NetworkZone resource with the given unique name, props, and options.
+        > This resource requires the API token scopes **Read network zones** (`networkZones.read`) and **Write network zones** (`networkZones.write`)
+
+        ## Dynatrace Documentation
+
+        - Network zones - https://www.dynatrace.com/support/help/setup-and-configuration/network-zones
+
+        - Network zones API - https://www.dynatrace.com/support/help/dynatrace-api/environment-api/network-zones
+
+        ## Export Example Usage
+
+        - `terraform-provider-dynatrace -export NetworkZone` downloads all existing network zone configuration
+
+        The full documentation of the export feature is available [here](https://dt-url.net/h203qmc).
+
+
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] alternative_zones: A list of alternative network zones.
@@ -323,7 +339,21 @@ class NetworkZone(pulumi.CustomResource):
                  args: Optional[NetworkZoneArgs] = None,
                  opts: Optional[pulumi.ResourceOptions] = None):
         """
-        Create a NetworkZone resource with the given unique name, props, and options.
+        > This resource requires the API token scopes **Read network zones** (`networkZones.read`) and **Write network zones** (`networkZones.write`)
+
+        ## Dynatrace Documentation
+
+        - Network zones - https://www.dynatrace.com/support/help/setup-and-configuration/network-zones
+
+        - Network zones API - https://www.dynatrace.com/support/help/dynatrace-api/environment-api/network-zones
+
+        ## Export Example Usage
+
+        - `terraform-provider-dynatrace -export NetworkZone` downloads all existing network zone configuration
+
+        The full documentation of the export feature is available [here](https://dt-url.net/h203qmc).
+
+
         :param str resource_name: The name of the resource.
         :param NetworkZoneArgs args: The arguments to use to populate this resource's properties.
         :param pulumi.ResourceOptions opts: Options for the resource.

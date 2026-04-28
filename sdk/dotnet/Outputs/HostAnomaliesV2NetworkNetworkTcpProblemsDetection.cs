@@ -19,11 +19,11 @@ namespace Pulumiverse.Dynatrace.Outputs
         /// </summary>
         public readonly Outputs.HostAnomaliesV2NetworkNetworkTcpProblemsDetectionCustomThresholds? CustomThresholds;
         /// <summary>
-        /// Detection mode for TCP connectivity problems
+        /// Detection mode for TCP connectivity problems. Possible Values: `Auto`, `Custom`
         /// </summary>
         public readonly string? DetectionMode;
         /// <summary>
-        /// Detect TCP connectivity problems for process
+        /// This setting is enabled (`True`) or disabled (`False`)
         /// </summary>
         public readonly bool Enabled;
 

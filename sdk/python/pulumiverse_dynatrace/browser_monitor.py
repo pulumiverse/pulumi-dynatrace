@@ -32,6 +32,7 @@ class BrowserMonitorArgs:
                  tags: Optional[pulumi.Input[Sequence[pulumi.Input['BrowserMonitorTagArgs']]]] = None):
         """
         The set of arguments for constructing a BrowserMonitor resource.
+
         :param pulumi.Input[_builtins.int] frequency: The frequency of the monitor, in minutes.
         :param pulumi.Input['BrowserMonitorKeyPerformanceMetricsArgs'] key_performance_metrics: The key performance metrics configuration
         :param pulumi.Input['BrowserMonitorAnomalyDetectionArgs'] anomaly_detection: The anomaly detection configuration.
@@ -190,6 +191,7 @@ class _BrowserMonitorState:
                  tags: Optional[pulumi.Input[Sequence[pulumi.Input['BrowserMonitorTagArgs']]]] = None):
         """
         Input properties used for looking up and filtering BrowserMonitor resources.
+
         :param pulumi.Input['BrowserMonitorAnomalyDetectionArgs'] anomaly_detection: The anomaly detection configuration.
         :param pulumi.Input[_builtins.bool] enabled: The monitor is enabled (`true`) or disabled (`false`).
         :param pulumi.Input[_builtins.int] frequency: The frequency of the monitor, in minutes.
@@ -353,7 +355,21 @@ class BrowserMonitor(pulumi.CustomResource):
                  tags: Optional[pulumi.Input[Sequence[pulumi.Input[Union['BrowserMonitorTagArgs', 'BrowserMonitorTagArgsDict']]]]] = None,
                  __props__=None):
         """
-        Create a BrowserMonitor resource with the given unique name, props, and options.
+        > This resource requires the API token scope **Create and read synthetic monitors, locations, and nodes** (`ExternalSyntheticIntegration`)
+
+        ## Dynatrace Documentation
+
+        - Synthetic Monitoring - Browser monitors - https://www.dynatrace.com/support/help/shortlink/synthetic-hub#browser-monitors
+
+        - Synthetic Monitors API - https://www.dynatrace.com/support/help/dynatrace-api/environment-api/synthetic/synthetic-monitors
+
+        ## Export Example Usage
+
+        - `terraform-provider-dynatrace -export BrowserMonitor` downloads all existing browser monitor configuration
+
+        The full documentation of the export feature is available [here](https://dt-url.net/h203qmc).
+
+
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[Union['BrowserMonitorAnomalyDetectionArgs', 'BrowserMonitorAnomalyDetectionArgsDict']] anomaly_detection: The anomaly detection configuration.
@@ -377,7 +393,21 @@ class BrowserMonitor(pulumi.CustomResource):
                  args: BrowserMonitorArgs,
                  opts: Optional[pulumi.ResourceOptions] = None):
         """
-        Create a BrowserMonitor resource with the given unique name, props, and options.
+        > This resource requires the API token scope **Create and read synthetic monitors, locations, and nodes** (`ExternalSyntheticIntegration`)
+
+        ## Dynatrace Documentation
+
+        - Synthetic Monitoring - Browser monitors - https://www.dynatrace.com/support/help/shortlink/synthetic-hub#browser-monitors
+
+        - Synthetic Monitors API - https://www.dynatrace.com/support/help/dynatrace-api/environment-api/synthetic/synthetic-monitors
+
+        ## Export Example Usage
+
+        - `terraform-provider-dynatrace -export BrowserMonitor` downloads all existing browser monitor configuration
+
+        The full documentation of the export feature is available [here](https://dt-url.net/h203qmc).
+
+
         :param str resource_name: The name of the resource.
         :param BrowserMonitorArgs args: The arguments to use to populate this resource's properties.
         :param pulumi.ResourceOptions opts: Options for the resource.

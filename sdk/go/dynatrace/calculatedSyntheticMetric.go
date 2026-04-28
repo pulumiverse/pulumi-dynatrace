@@ -12,6 +12,19 @@ import (
 	"github.com/pulumiverse/pulumi-dynatrace/sdk/go/dynatrace/internal"
 )
 
+// > This resource requires the API token scopes **Read configuration** (`ReadConfig`) and **Write configuration** (`WriteConfig`)
+//
+// ## Dynatrace Documentation
+//
+// - Multidimensional analysis for browser monitors - https://www.dynatrace.com/support/help/platform-modules/digital-experience/synthetic-monitoring/analysis-and-alerting/multidimensional-analysis-for-browser-monitors
+//
+// - Calculated metrics API - Synthetic - https://www.dynatrace.com/support/help/dynatrace-api/configuration-api/calculated-metrics/synthetic-metrics
+//
+// ## Export Example Usage
+//
+// - `terraform-provider-dynatrace -export CalculatedSyntheticMetric` downloads all existing calculated synthetic metric configuration
+//
+// The full documentation of the export feature is available [here](https://dt-url.net/h203qmc).
 type CalculatedSyntheticMetric struct {
 	pulumi.CustomResourceState
 

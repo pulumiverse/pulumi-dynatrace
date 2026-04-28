@@ -38,10 +38,10 @@ import (
 //
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
-//			_, err := dynatrace.NewIamUser(ctx, "johnDoeGmailCom", &dynatrace.IamUserArgs{
+//			_, err := dynatrace.NewIamUser(ctx, "john_doe_gmail_com", &dynatrace.IamUserArgs{
 //				Email: pulumi.String("john.doe@gmail.com"),
 //				Groups: pulumi.StringArray{
-//					data.Dynatrace_iam_group.Restricted.Id,
+//					restricted.Id,
 //				},
 //			})
 //			if err != nil {

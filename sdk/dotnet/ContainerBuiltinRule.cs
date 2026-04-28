@@ -10,6 +10,21 @@ using Pulumi;
 
 namespace Pulumiverse.Dynatrace
 {
+    /// <summary>
+    /// &gt; This resource requires the API token scopes **Read settings** (`settings.read`) and **Write settings** (`settings.write`)
+    /// 
+    /// ## Dynatrace Documentation
+    /// 
+    /// - Container monitoring rules - https://www.dynatrace.com/support/help/platform-modules/infrastructure-monitoring/container-platform-monitoring/container-monitoring-rules
+    /// 
+    /// - Settings API - https://www.dynatrace.com/support/help/dynatrace-api/environment-api/settings (schemaId: `builtin:container.built-in-monitoring-rule`)
+    /// 
+    /// ## Export Example Usage
+    /// 
+    /// - `terraform-provider-dynatrace -export dynatrace.ContainerBuiltinRule` downloads all existing builtin monitoring rules for containers
+    /// 
+    /// The full documentation of the export feature is available [here](https://dt-url.net/h203qmc).
+    /// </summary>
     [DynatraceResourceType("dynatrace:index/containerBuiltinRule:ContainerBuiltinRule")]
     public partial class ContainerBuiltinRule : global::Pulumi.CustomResource
     {

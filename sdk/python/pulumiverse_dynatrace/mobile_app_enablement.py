@@ -23,17 +23,22 @@ class MobileAppEnablementArgs:
     def __init__(__self__, *,
                  rum: pulumi.Input['MobileAppEnablementRumArgs'],
                  session_replay: pulumi.Input['MobileAppEnablementSessionReplayArgs'],
-                 application_id: Optional[pulumi.Input[_builtins.str]] = None):
+                 application_id: Optional[pulumi.Input[_builtins.str]] = None,
+                 experience_analytics: Optional[pulumi.Input['MobileAppEnablementExperienceAnalyticsArgs']] = None):
         """
         The set of arguments for constructing a MobileAppEnablement resource.
+
         :param pulumi.Input['MobileAppEnablementRumArgs'] rum: (Field has overlap with `MobileApplication`) Capture and analyze all user actions within your application. Enable [Real User Monitoring (RUM)](https://dt-url.net/1n2b0prq) to monitor and improve your application's performance, identify errors, and gain insight into your user's behavior and experience.
-        :param pulumi.Input['MobileAppEnablementSessionReplayArgs'] session_replay: (Field has overlap with `MobileApplication`) [Session Replay on crashes](https://dt-url.net/session-replay) gives you additional context for crash analysis in the form of video-like screen recordings that replay user actions immediately preceding a detected crash, while providing [best-in-class security and data protection](https://dt-url.net/b303zxj).
+        :param pulumi.Input['MobileAppEnablementSessionReplayArgs'] session_replay: (Field has overlap with `MobileApplication`) [Session Replay](https://dt-url.net/session-replay) captures all user interactions within your application and replays them in a movie-like experience while providing [best-in-class security and data protection](https://dt-url.net/b303zxj).
         :param pulumi.Input[_builtins.str] application_id: The scope of this settings. If the settings should cover the whole environment, just don't specify any scope.
+        :param pulumi.Input['MobileAppEnablementExperienceAnalyticsArgs'] experience_analytics: User Interactions
         """
         pulumi.set(__self__, "rum", rum)
         pulumi.set(__self__, "session_replay", session_replay)
         if application_id is not None:
             pulumi.set(__self__, "application_id", application_id)
+        if experience_analytics is not None:
+            pulumi.set(__self__, "experience_analytics", experience_analytics)
 
     @_builtins.property
     @pulumi.getter
@@ -51,7 +56,7 @@ class MobileAppEnablementArgs:
     @pulumi.getter(name="sessionReplay")
     def session_replay(self) -> pulumi.Input['MobileAppEnablementSessionReplayArgs']:
         """
-        (Field has overlap with `MobileApplication`) [Session Replay on crashes](https://dt-url.net/session-replay) gives you additional context for crash analysis in the form of video-like screen recordings that replay user actions immediately preceding a detected crash, while providing [best-in-class security and data protection](https://dt-url.net/b303zxj).
+        (Field has overlap with `MobileApplication`) [Session Replay](https://dt-url.net/session-replay) captures all user interactions within your application and replays them in a movie-like experience while providing [best-in-class security and data protection](https://dt-url.net/b303zxj).
         """
         return pulumi.get(self, "session_replay")
 
@@ -71,21 +76,38 @@ class MobileAppEnablementArgs:
     def application_id(self, value: Optional[pulumi.Input[_builtins.str]]):
         pulumi.set(self, "application_id", value)
 
+    @_builtins.property
+    @pulumi.getter(name="experienceAnalytics")
+    def experience_analytics(self) -> Optional[pulumi.Input['MobileAppEnablementExperienceAnalyticsArgs']]:
+        """
+        User Interactions
+        """
+        return pulumi.get(self, "experience_analytics")
+
+    @experience_analytics.setter
+    def experience_analytics(self, value: Optional[pulumi.Input['MobileAppEnablementExperienceAnalyticsArgs']]):
+        pulumi.set(self, "experience_analytics", value)
+
 
 @pulumi.input_type
 class _MobileAppEnablementState:
     def __init__(__self__, *,
                  application_id: Optional[pulumi.Input[_builtins.str]] = None,
+                 experience_analytics: Optional[pulumi.Input['MobileAppEnablementExperienceAnalyticsArgs']] = None,
                  rum: Optional[pulumi.Input['MobileAppEnablementRumArgs']] = None,
                  session_replay: Optional[pulumi.Input['MobileAppEnablementSessionReplayArgs']] = None):
         """
         Input properties used for looking up and filtering MobileAppEnablement resources.
+
         :param pulumi.Input[_builtins.str] application_id: The scope of this settings. If the settings should cover the whole environment, just don't specify any scope.
+        :param pulumi.Input['MobileAppEnablementExperienceAnalyticsArgs'] experience_analytics: User Interactions
         :param pulumi.Input['MobileAppEnablementRumArgs'] rum: (Field has overlap with `MobileApplication`) Capture and analyze all user actions within your application. Enable [Real User Monitoring (RUM)](https://dt-url.net/1n2b0prq) to monitor and improve your application's performance, identify errors, and gain insight into your user's behavior and experience.
-        :param pulumi.Input['MobileAppEnablementSessionReplayArgs'] session_replay: (Field has overlap with `MobileApplication`) [Session Replay on crashes](https://dt-url.net/session-replay) gives you additional context for crash analysis in the form of video-like screen recordings that replay user actions immediately preceding a detected crash, while providing [best-in-class security and data protection](https://dt-url.net/b303zxj).
+        :param pulumi.Input['MobileAppEnablementSessionReplayArgs'] session_replay: (Field has overlap with `MobileApplication`) [Session Replay](https://dt-url.net/session-replay) captures all user interactions within your application and replays them in a movie-like experience while providing [best-in-class security and data protection](https://dt-url.net/b303zxj).
         """
         if application_id is not None:
             pulumi.set(__self__, "application_id", application_id)
+        if experience_analytics is not None:
+            pulumi.set(__self__, "experience_analytics", experience_analytics)
         if rum is not None:
             pulumi.set(__self__, "rum", rum)
         if session_replay is not None:
@@ -104,6 +126,18 @@ class _MobileAppEnablementState:
         pulumi.set(self, "application_id", value)
 
     @_builtins.property
+    @pulumi.getter(name="experienceAnalytics")
+    def experience_analytics(self) -> Optional[pulumi.Input['MobileAppEnablementExperienceAnalyticsArgs']]:
+        """
+        User Interactions
+        """
+        return pulumi.get(self, "experience_analytics")
+
+    @experience_analytics.setter
+    def experience_analytics(self, value: Optional[pulumi.Input['MobileAppEnablementExperienceAnalyticsArgs']]):
+        pulumi.set(self, "experience_analytics", value)
+
+    @_builtins.property
     @pulumi.getter
     def rum(self) -> Optional[pulumi.Input['MobileAppEnablementRumArgs']]:
         """
@@ -119,7 +153,7 @@ class _MobileAppEnablementState:
     @pulumi.getter(name="sessionReplay")
     def session_replay(self) -> Optional[pulumi.Input['MobileAppEnablementSessionReplayArgs']]:
         """
-        (Field has overlap with `MobileApplication`) [Session Replay on crashes](https://dt-url.net/session-replay) gives you additional context for crash analysis in the form of video-like screen recordings that replay user actions immediately preceding a detected crash, while providing [best-in-class security and data protection](https://dt-url.net/b303zxj).
+        (Field has overlap with `MobileApplication`) [Session Replay](https://dt-url.net/session-replay) captures all user interactions within your application and replays them in a movie-like experience while providing [best-in-class security and data protection](https://dt-url.net/b303zxj).
         """
         return pulumi.get(self, "session_replay")
 
@@ -135,16 +169,34 @@ class MobileAppEnablement(pulumi.CustomResource):
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
                  application_id: Optional[pulumi.Input[_builtins.str]] = None,
+                 experience_analytics: Optional[pulumi.Input[Union['MobileAppEnablementExperienceAnalyticsArgs', 'MobileAppEnablementExperienceAnalyticsArgsDict']]] = None,
                  rum: Optional[pulumi.Input[Union['MobileAppEnablementRumArgs', 'MobileAppEnablementRumArgsDict']]] = None,
                  session_replay: Optional[pulumi.Input[Union['MobileAppEnablementSessionReplayArgs', 'MobileAppEnablementSessionReplayArgsDict']]] = None,
                  __props__=None):
         """
-        Create a MobileAppEnablement resource with the given unique name, props, and options.
+        > Configuration of the application scope overlaps with dynatrace_mobile_application, but this resource in addition provides an option for an environment scope.
+
+        > This resource requires the API token scopes **Read settings** (`settings.read`) and **Write settings** (`settings.write`)
+
+        ## Dynatrace Documentation
+
+        - Configure cost and traffic control for mobile applications - https://www.dynatrace.com/support/help/how-to-use-dynatrace/real-user-monitoring/setup-and-configuration/mobile-applications/configure-cost-and-traffic-control-mobile
+
+        - Settings API - https://www.dynatrace.com/support/help/dynatrace-api/environment-api/settings (schemaId: `builtin:rum.mobile.enablement`)
+
+        ## Export Example Usage
+
+        - `terraform-provider-dynatrace -export MobileAppEnablement` downloads all existing mobile application enablement and cost control configuration
+
+        The full documentation of the export feature is available [here](https://dt-url.net/h203qmc).
+
+
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[_builtins.str] application_id: The scope of this settings. If the settings should cover the whole environment, just don't specify any scope.
+        :param pulumi.Input[Union['MobileAppEnablementExperienceAnalyticsArgs', 'MobileAppEnablementExperienceAnalyticsArgsDict']] experience_analytics: User Interactions
         :param pulumi.Input[Union['MobileAppEnablementRumArgs', 'MobileAppEnablementRumArgsDict']] rum: (Field has overlap with `MobileApplication`) Capture and analyze all user actions within your application. Enable [Real User Monitoring (RUM)](https://dt-url.net/1n2b0prq) to monitor and improve your application's performance, identify errors, and gain insight into your user's behavior and experience.
-        :param pulumi.Input[Union['MobileAppEnablementSessionReplayArgs', 'MobileAppEnablementSessionReplayArgsDict']] session_replay: (Field has overlap with `MobileApplication`) [Session Replay on crashes](https://dt-url.net/session-replay) gives you additional context for crash analysis in the form of video-like screen recordings that replay user actions immediately preceding a detected crash, while providing [best-in-class security and data protection](https://dt-url.net/b303zxj).
+        :param pulumi.Input[Union['MobileAppEnablementSessionReplayArgs', 'MobileAppEnablementSessionReplayArgsDict']] session_replay: (Field has overlap with `MobileApplication`) [Session Replay](https://dt-url.net/session-replay) captures all user interactions within your application and replays them in a movie-like experience while providing [best-in-class security and data protection](https://dt-url.net/b303zxj).
         """
         ...
     @overload
@@ -153,7 +205,23 @@ class MobileAppEnablement(pulumi.CustomResource):
                  args: MobileAppEnablementArgs,
                  opts: Optional[pulumi.ResourceOptions] = None):
         """
-        Create a MobileAppEnablement resource with the given unique name, props, and options.
+        > Configuration of the application scope overlaps with dynatrace_mobile_application, but this resource in addition provides an option for an environment scope.
+
+        > This resource requires the API token scopes **Read settings** (`settings.read`) and **Write settings** (`settings.write`)
+
+        ## Dynatrace Documentation
+
+        - Configure cost and traffic control for mobile applications - https://www.dynatrace.com/support/help/how-to-use-dynatrace/real-user-monitoring/setup-and-configuration/mobile-applications/configure-cost-and-traffic-control-mobile
+
+        - Settings API - https://www.dynatrace.com/support/help/dynatrace-api/environment-api/settings (schemaId: `builtin:rum.mobile.enablement`)
+
+        ## Export Example Usage
+
+        - `terraform-provider-dynatrace -export MobileAppEnablement` downloads all existing mobile application enablement and cost control configuration
+
+        The full documentation of the export feature is available [here](https://dt-url.net/h203qmc).
+
+
         :param str resource_name: The name of the resource.
         :param MobileAppEnablementArgs args: The arguments to use to populate this resource's properties.
         :param pulumi.ResourceOptions opts: Options for the resource.
@@ -170,6 +238,7 @@ class MobileAppEnablement(pulumi.CustomResource):
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
                  application_id: Optional[pulumi.Input[_builtins.str]] = None,
+                 experience_analytics: Optional[pulumi.Input[Union['MobileAppEnablementExperienceAnalyticsArgs', 'MobileAppEnablementExperienceAnalyticsArgsDict']]] = None,
                  rum: Optional[pulumi.Input[Union['MobileAppEnablementRumArgs', 'MobileAppEnablementRumArgsDict']]] = None,
                  session_replay: Optional[pulumi.Input[Union['MobileAppEnablementSessionReplayArgs', 'MobileAppEnablementSessionReplayArgsDict']]] = None,
                  __props__=None):
@@ -182,6 +251,7 @@ class MobileAppEnablement(pulumi.CustomResource):
             __props__ = MobileAppEnablementArgs.__new__(MobileAppEnablementArgs)
 
             __props__.__dict__["application_id"] = application_id
+            __props__.__dict__["experience_analytics"] = experience_analytics
             if rum is None and not opts.urn:
                 raise TypeError("Missing required property 'rum'")
             __props__.__dict__["rum"] = rum
@@ -199,6 +269,7 @@ class MobileAppEnablement(pulumi.CustomResource):
             id: pulumi.Input[str],
             opts: Optional[pulumi.ResourceOptions] = None,
             application_id: Optional[pulumi.Input[_builtins.str]] = None,
+            experience_analytics: Optional[pulumi.Input[Union['MobileAppEnablementExperienceAnalyticsArgs', 'MobileAppEnablementExperienceAnalyticsArgsDict']]] = None,
             rum: Optional[pulumi.Input[Union['MobileAppEnablementRumArgs', 'MobileAppEnablementRumArgsDict']]] = None,
             session_replay: Optional[pulumi.Input[Union['MobileAppEnablementSessionReplayArgs', 'MobileAppEnablementSessionReplayArgsDict']]] = None) -> 'MobileAppEnablement':
         """
@@ -209,14 +280,16 @@ class MobileAppEnablement(pulumi.CustomResource):
         :param pulumi.Input[str] id: The unique provider ID of the resource to lookup.
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[_builtins.str] application_id: The scope of this settings. If the settings should cover the whole environment, just don't specify any scope.
+        :param pulumi.Input[Union['MobileAppEnablementExperienceAnalyticsArgs', 'MobileAppEnablementExperienceAnalyticsArgsDict']] experience_analytics: User Interactions
         :param pulumi.Input[Union['MobileAppEnablementRumArgs', 'MobileAppEnablementRumArgsDict']] rum: (Field has overlap with `MobileApplication`) Capture and analyze all user actions within your application. Enable [Real User Monitoring (RUM)](https://dt-url.net/1n2b0prq) to monitor and improve your application's performance, identify errors, and gain insight into your user's behavior and experience.
-        :param pulumi.Input[Union['MobileAppEnablementSessionReplayArgs', 'MobileAppEnablementSessionReplayArgsDict']] session_replay: (Field has overlap with `MobileApplication`) [Session Replay on crashes](https://dt-url.net/session-replay) gives you additional context for crash analysis in the form of video-like screen recordings that replay user actions immediately preceding a detected crash, while providing [best-in-class security and data protection](https://dt-url.net/b303zxj).
+        :param pulumi.Input[Union['MobileAppEnablementSessionReplayArgs', 'MobileAppEnablementSessionReplayArgsDict']] session_replay: (Field has overlap with `MobileApplication`) [Session Replay](https://dt-url.net/session-replay) captures all user interactions within your application and replays them in a movie-like experience while providing [best-in-class security and data protection](https://dt-url.net/b303zxj).
         """
         opts = pulumi.ResourceOptions.merge(opts, pulumi.ResourceOptions(id=id))
 
         __props__ = _MobileAppEnablementState.__new__(_MobileAppEnablementState)
 
         __props__.__dict__["application_id"] = application_id
+        __props__.__dict__["experience_analytics"] = experience_analytics
         __props__.__dict__["rum"] = rum
         __props__.__dict__["session_replay"] = session_replay
         return MobileAppEnablement(resource_name, opts=opts, __props__=__props__)
@@ -230,6 +303,14 @@ class MobileAppEnablement(pulumi.CustomResource):
         return pulumi.get(self, "application_id")
 
     @_builtins.property
+    @pulumi.getter(name="experienceAnalytics")
+    def experience_analytics(self) -> pulumi.Output[Optional['outputs.MobileAppEnablementExperienceAnalytics']]:
+        """
+        User Interactions
+        """
+        return pulumi.get(self, "experience_analytics")
+
+    @_builtins.property
     @pulumi.getter
     def rum(self) -> pulumi.Output['outputs.MobileAppEnablementRum']:
         """
@@ -241,7 +322,7 @@ class MobileAppEnablement(pulumi.CustomResource):
     @pulumi.getter(name="sessionReplay")
     def session_replay(self) -> pulumi.Output['outputs.MobileAppEnablementSessionReplay']:
         """
-        (Field has overlap with `MobileApplication`) [Session Replay on crashes](https://dt-url.net/session-replay) gives you additional context for crash analysis in the form of video-like screen recordings that replay user actions immediately preceding a detected crash, while providing [best-in-class security and data protection](https://dt-url.net/b303zxj).
+        (Field has overlap with `MobileApplication`) [Session Replay](https://dt-url.net/session-replay) captures all user interactions within your application and replays them in a movie-like experience while providing [best-in-class security and data protection](https://dt-url.net/b303zxj).
         """
         return pulumi.get(self, "session_replay")
 

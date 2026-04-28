@@ -10,6 +10,47 @@ using Pulumi;
 
 namespace Pulumiverse.Dynatrace
 {
+    /// <summary>
+    /// &gt; This resource requires the API token scopes **Read settings** (`settings.read`) and **Write settings** (`settings.write`)
+    /// 
+    /// ## Dynatrace Documentation
+    /// 
+    /// - Technology support - https://www.dynatrace.com/support/help/technology-support#anchor-containers
+    /// 
+    /// - Settings API - https://www.dynatrace.com/support/help/dynatrace-api/environment-api/settings (schemaId: `builtin:container.technology`)
+    /// 
+    /// ## Export Example Usage
+    /// 
+    /// - `terraform-provider-dynatrace -export dynatrace.ContainerTechnology` downloads all existing container monitoring configuration
+    /// 
+    /// The full documentation of the export feature is available [here](https://dt-url.net/h203qmc).
+    /// 
+    /// ## Resource Example Usage
+    /// 
+    /// ```csharp
+    /// using System.Collections.Generic;
+    /// using System.Linq;
+    /// using Pulumi;
+    /// using Dynatrace = Pulumiverse.Dynatrace;
+    /// 
+    /// return await Deployment.RunAsync(() =&gt; 
+    /// {
+    ///     var environment = new Dynatrace.ContainerTechnology("environment", new()
+    ///     {
+    ///         BoshProcessManager = true,
+    ///         Containerd = true,
+    ///         Crio = true,
+    ///         Docker = true,
+    ///         DockerWindows = true,
+    ///         Garden = true,
+    ///         Podman = true,
+    ///         Scope = "environment",
+    ///         Winc = true,
+    ///     });
+    /// 
+    /// });
+    /// ```
+    /// </summary>
     [DynatraceResourceType("dynatrace:index/containerTechnology:ContainerTechnology")]
     public partial class ContainerTechnology : global::Pulumi.CustomResource
     {

@@ -4,6 +4,23 @@
 import * as pulumi from "@pulumi/pulumi";
 import * as utilities from "./utilities";
 
+/**
+ * > Configuration of the application scope overlaps with dynatrace_web_application, but this resource in addition provides an option for an environment scope.
+ *
+ * > This resource requires the API token scopes **Read settings** (`settings.read`) and **Write settings** (`settings.write`)
+ *
+ * ## Dynatrace Documentation
+ *
+ * - Resource capture - https://www.dynatrace.com/support/help/platform-modules/digital-experience/session-replay/configure-session-replay-web#sr-resource-capturing
+ *
+ * - Settings API - https://www.dynatrace.com/support/help/dynatrace-api/environment-api/settings (schemaId: `builtin:sessionreplay.web.resource-capturing`)
+ *
+ * ## Export Example Usage
+ *
+ * - `terraform-provider-dynatrace -export dynatrace.SessionReplayResourceCapture` downloads all existing Session Replay resource capture configuration
+ *
+ * The full documentation of the export feature is available [here](https://dt-url.net/h203qmc).
+ */
 export class SessionReplayResourceCapture extends pulumi.CustomResource {
     /**
      * Get an existing SessionReplayResourceCapture resource's state with the given name, ID, and optional extra

@@ -12,6 +12,133 @@ import (
 	"github.com/pulumiverse/pulumi-dynatrace/sdk/go/dynatrace/internal"
 )
 
+// > This resource requires the API token scopes **Read settings** (`settings.read`) and **Write settings** (`settings.write`)
+//
+// ## Dynatrace Documentation
+//
+// - Network availability monitors - https://docs.dynatrace.com/docs/platform-modules/digital-experience/synthetic-monitoring/general-information/network-availability-monitors
+//
+// ## Export Example Usage
+//
+// - `terraform-provider-dynatrace -export NetworkMonitor` downloads all existing network monitor configuration
+//
+// The full documentation of the export feature is available [here](https://dt-url.net/h203qmc).
+//
+// ## Resource Example Usage
+//
+// ```go
+// package main
+//
+// import (
+//
+//	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//	"github.com/pulumiverse/pulumi-dynatrace/sdk/go/dynatrace"
+//
+// )
+//
+//	func main() {
+//		pulumi.Run(func(ctx *pulumi.Context) error {
+//			_, err := dynatrace.NewNetworkMonitor(ctx, "DNS_Test", &dynatrace.NetworkMonitorArgs{
+//				Name:         pulumi.String("DNS Test"),
+//				Description:  pulumi.String("This is an example DNS test"),
+//				Type:         pulumi.String("MULTI_PROTOCOL"),
+//				Enabled:      pulumi.Bool(false),
+//				FrequencyMin: pulumi.Int(15),
+//				Locations: pulumi.StringArray{
+//					pulumi.String("SYNTHETIC_LOCATION-39F97465BE7BF644"),
+//				},
+//				OutageHandling: &dynatrace.NetworkMonitorOutageHandlingArgs{
+//					GlobalConsecutiveOutageCountThreshold: pulumi.Int(1),
+//					GlobalOutages:                         pulumi.Bool(true),
+//				},
+//				PerformanceThresholds: &dynatrace.NetworkMonitorPerformanceThresholdsArgs{
+//					Enabled: pulumi.Bool(true),
+//					Thresholds: &dynatrace.NetworkMonitorPerformanceThresholdsThresholdsArgs{
+//						Thresholds: dynatrace.NetworkMonitorPerformanceThresholdsThresholdsThresholdArray{
+//							&dynatrace.NetworkMonitorPerformanceThresholdsThresholdsThresholdArgs{
+//								Aggregation:       pulumi.String("AVG"),
+//								DealertingSamples: pulumi.Int(5),
+//								Samples:           pulumi.Int(5),
+//								StepIndex:         pulumi.Int(0),
+//								Threshold:         pulumi.Float64(100),
+//								ViolatingSamples:  pulumi.Int(3),
+//							},
+//						},
+//					},
+//				},
+//				Steps: dynatrace.NetworkMonitorStepArray{
+//					&dynatrace.NetworkMonitorStepArgs{
+//						Steps: dynatrace.NetworkMonitorStepStepArray{
+//							&dynatrace.NetworkMonitorStepStepArgs{
+//								Name:        pulumi.String("DNS Test"),
+//								RequestType: pulumi.String("DNS"),
+//								TargetLists: pulumi.StringArray{
+//									pulumi.String("google.com"),
+//									pulumi.String("yahoo.com"),
+//								},
+//								Properties: pulumi.StringMap{
+//									"DNS_RECORD_TYPES":  pulumi.String("A"),
+//									"EXECUTION_TIMEOUT": pulumi.String("PT2S"),
+//								},
+//								Constraints: dynatrace.NetworkMonitorStepStepConstraintArray{
+//									&dynatrace.NetworkMonitorStepStepConstraintArgs{
+//										Constraints: dynatrace.NetworkMonitorStepStepConstraintConstraintArray{
+//											&dynatrace.NetworkMonitorStepStepConstraintConstraintArgs{
+//												Type: pulumi.String("SUCCESS_RATE_PERCENT"),
+//												Properties: pulumi.StringMap{
+//													"value":    pulumi.String("90"),
+//													"operator": pulumi.String(">="),
+//												},
+//											},
+//										},
+//									},
+//								},
+//								RequestConfigurations: dynatrace.NetworkMonitorStepStepRequestConfigurationArray{
+//									&dynatrace.NetworkMonitorStepStepRequestConfigurationArgs{
+//										RequestConfigurations: dynatrace.NetworkMonitorStepStepRequestConfigurationRequestConfigurationArray{
+//											&dynatrace.NetworkMonitorStepStepRequestConfigurationRequestConfigurationArgs{
+//												Constraints: dynatrace.NetworkMonitorStepStepRequestConfigurationRequestConfigurationConstraintArray{
+//													&dynatrace.NetworkMonitorStepStepRequestConfigurationRequestConfigurationConstraintArgs{
+//														Constraints: dynatrace.NetworkMonitorStepStepRequestConfigurationRequestConfigurationConstraintConstraintArray{
+//															&dynatrace.NetworkMonitorStepStepRequestConfigurationRequestConfigurationConstraintConstraintArgs{
+//																Type: pulumi.String("DNS_STATUS_CODE"),
+//																Properties: pulumi.StringMap{
+//																	"operator":   pulumi.String("="),
+//																	"statusCode": pulumi.String("0"),
+//																},
+//															},
+//														},
+//													},
+//												},
+//											},
+//										},
+//									},
+//								},
+//							},
+//						},
+//					},
+//				},
+//				Tags: dynatrace.NetworkMonitorTagArray{
+//					&dynatrace.NetworkMonitorTagArgs{
+//						Tags: dynatrace.NetworkMonitorTagTagArray{
+//							&dynatrace.NetworkMonitorTagTagArgs{
+//								Context: pulumi.String("CONTEXTLESS"),
+//								Key:     pulumi.String("Key1"),
+//								Source:  pulumi.String("USER"),
+//								Value:   pulumi.String("Value1"),
+//							},
+//						},
+//					},
+//				},
+//			})
+//			if err != nil {
+//				return err
+//			}
+//			return nil
+//		})
+//	}
+//
+// ```
 type NetworkMonitor struct {
 	pulumi.CustomResourceState
 

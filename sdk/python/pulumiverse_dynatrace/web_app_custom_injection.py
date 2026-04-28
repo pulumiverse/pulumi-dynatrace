@@ -28,6 +28,7 @@ class WebAppCustomInjectionArgs:
                  url_pattern: Optional[pulumi.Input[_builtins.str]] = None):
         """
         The set of arguments for constructing a WebAppCustomInjection resource.
+
         :param pulumi.Input[_builtins.str] application_id: The scope of this settings. If the settings should cover the whole environment, just don't specify any scope.
         :param pulumi.Input[_builtins.bool] enabled: This setting is enabled (`true`) or disabled (`false`)
         :param pulumi.Input[_builtins.str] operator: Possible Values: `AllPages`, `Contains`, `Ends`, `Equals`, `Starts`
@@ -144,6 +145,7 @@ class _WebAppCustomInjectionState:
                  url_pattern: Optional[pulumi.Input[_builtins.str]] = None):
         """
         Input properties used for looking up and filtering WebAppCustomInjection resources.
+
         :param pulumi.Input[_builtins.str] application_id: The scope of this settings. If the settings should cover the whole environment, just don't specify any scope.
         :param pulumi.Input[_builtins.bool] enabled: This setting is enabled (`true`) or disabled (`false`)
         :param pulumi.Input[_builtins.str] html_pattern: no documentation available
@@ -267,7 +269,36 @@ class WebAppCustomInjection(pulumi.CustomResource):
                  url_pattern: Optional[pulumi.Input[_builtins.str]] = None,
                  __props__=None):
         """
-        Create a WebAppCustomInjection resource with the given unique name, props, and options.
+        > This resource requires the API token scopes **Read settings** (`settings.read`) and **Write settings** (`settings.write`)
+
+        ## Dynatrace Documentation
+
+        - Web applications - https://docs.dynatrace.com/docs/platform-modules/digital-experience/web-applications
+
+        - Settings API - https://www.dynatrace.com/support/help/dynatrace-api/environment-api/settings (schemaId: `builtin:rum.web.custom-injection-rules`)
+
+        ## Export Example Usage
+
+        - `terraform-provider-dynatrace -export WebAppCustomInjection` downloads existing custom injection rules
+
+        The full documentation of the export feature is available [here](https://dt-url.net/h203qmc).
+
+        ## Resource Example Usage
+
+        ```python
+        import pulumi
+        import pulumiverse_dynatrace as dynatrace
+
+        applicatio_n_1234567890000000 = dynatrace.WebAppCustomInjection("APPLICATION-1234567890000000",
+            enabled=False,
+            application_id="APPLICATION-1234567890000000",
+            operator="Starts",
+            url_pattern="/terraform",
+            rule="AfterSpecificHtml",
+            html_pattern="example")
+        ```
+
+
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[_builtins.str] application_id: The scope of this settings. If the settings should cover the whole environment, just don't specify any scope.
@@ -285,7 +316,36 @@ class WebAppCustomInjection(pulumi.CustomResource):
                  args: WebAppCustomInjectionArgs,
                  opts: Optional[pulumi.ResourceOptions] = None):
         """
-        Create a WebAppCustomInjection resource with the given unique name, props, and options.
+        > This resource requires the API token scopes **Read settings** (`settings.read`) and **Write settings** (`settings.write`)
+
+        ## Dynatrace Documentation
+
+        - Web applications - https://docs.dynatrace.com/docs/platform-modules/digital-experience/web-applications
+
+        - Settings API - https://www.dynatrace.com/support/help/dynatrace-api/environment-api/settings (schemaId: `builtin:rum.web.custom-injection-rules`)
+
+        ## Export Example Usage
+
+        - `terraform-provider-dynatrace -export WebAppCustomInjection` downloads existing custom injection rules
+
+        The full documentation of the export feature is available [here](https://dt-url.net/h203qmc).
+
+        ## Resource Example Usage
+
+        ```python
+        import pulumi
+        import pulumiverse_dynatrace as dynatrace
+
+        applicatio_n_1234567890000000 = dynatrace.WebAppCustomInjection("APPLICATION-1234567890000000",
+            enabled=False,
+            application_id="APPLICATION-1234567890000000",
+            operator="Starts",
+            url_pattern="/terraform",
+            rule="AfterSpecificHtml",
+            html_pattern="example")
+        ```
+
+
         :param str resource_name: The name of the resource.
         :param WebAppCustomInjectionArgs args: The arguments to use to populate this resource's properties.
         :param pulumi.ResourceOptions opts: Options for the resource.

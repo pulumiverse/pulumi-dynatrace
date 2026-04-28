@@ -31,6 +31,7 @@ class CalculatedMobileMetricArgs:
                  user_action_filter: Optional[pulumi.Input['CalculatedMobileMetricUserActionFilterArgs']] = None):
         """
         The set of arguments for constructing a CalculatedMobileMetric resource.
+
         :param pulumi.Input[_builtins.str] app_identifier: The Dynatrace entity ID of the application to which the metric belongs.
         :param pulumi.Input[_builtins.bool] enabled: The metric is enabled (`true`) or disabled (`false`)
         :param pulumi.Input[_builtins.str] metric_key: The unique key of the calculated mobile/custom app metric.
@@ -163,6 +164,7 @@ class _CalculatedMobileMetricState:
                  user_action_filter: Optional[pulumi.Input['CalculatedMobileMetricUserActionFilterArgs']] = None):
         """
         Input properties used for looking up and filtering CalculatedMobileMetric resources.
+
         :param pulumi.Input[_builtins.str] app_identifier: The Dynatrace entity ID of the application to which the metric belongs.
         :param pulumi.Input[_builtins.str] description: Descriptor of a calculated mobile/custom app metric.
         :param pulumi.Input[Sequence[pulumi.Input['CalculatedMobileMetricDimensionArgs']]] dimensions: Parameters of a definition of a calculated mobile/custom app metric.
@@ -302,7 +304,21 @@ class CalculatedMobileMetric(pulumi.CustomResource):
                  user_action_filter: Optional[pulumi.Input[Union['CalculatedMobileMetricUserActionFilterArgs', 'CalculatedMobileMetricUserActionFilterArgsDict']]] = None,
                  __props__=None):
         """
-        Create a CalculatedMobileMetric resource with the given unique name, props, and options.
+        > This resource requires the API token scopes **Read configuration** (`ReadConfig`) and **Write configuration** (`WriteConfig`)
+
+        ## Dynatrace Documentation
+
+        - Create calculated metrics for mobile applications - https://www.dynatrace.com/support/help/platform-modules/digital-experience/mobile-applications/additional-configuration/rum-calculated-metrics-mobile
+
+        - Mobile app metrics API - https://www.dynatrace.com/support/help/dynatrace-api/configuration-api/calculated-metrics/mobile-app-metrics
+
+        ## Export Example Usage
+
+        - `terraform-provider-dynatrace -export calculated_mobile_metric` downloads all existing calculated mobile/custom app metric configuration
+
+        The full documentation of the export feature is available [here](https://dt-url.net/h203qmc).
+
+
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[_builtins.str] app_identifier: The Dynatrace entity ID of the application to which the metric belongs.
@@ -321,7 +337,21 @@ class CalculatedMobileMetric(pulumi.CustomResource):
                  args: CalculatedMobileMetricArgs,
                  opts: Optional[pulumi.ResourceOptions] = None):
         """
-        Create a CalculatedMobileMetric resource with the given unique name, props, and options.
+        > This resource requires the API token scopes **Read configuration** (`ReadConfig`) and **Write configuration** (`WriteConfig`)
+
+        ## Dynatrace Documentation
+
+        - Create calculated metrics for mobile applications - https://www.dynatrace.com/support/help/platform-modules/digital-experience/mobile-applications/additional-configuration/rum-calculated-metrics-mobile
+
+        - Mobile app metrics API - https://www.dynatrace.com/support/help/dynatrace-api/configuration-api/calculated-metrics/mobile-app-metrics
+
+        ## Export Example Usage
+
+        - `terraform-provider-dynatrace -export calculated_mobile_metric` downloads all existing calculated mobile/custom app metric configuration
+
+        The full documentation of the export feature is available [here](https://dt-url.net/h203qmc).
+
+
         :param str resource_name: The name of the resource.
         :param CalculatedMobileMetricArgs args: The arguments to use to populate this resource's properties.
         :param pulumi.ResourceOptions opts: Options for the resource.

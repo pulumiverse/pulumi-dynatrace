@@ -10,6 +10,54 @@ using Pulumi;
 
 namespace Pulumiverse.Dynatrace
 {
+    /// <summary>
+    /// &gt; This resource requires the API token scopes **Read settings** (`settings.read`) and **Write settings** (`settings.write`)
+    /// 
+    /// ## Dynatrace Documentation
+    /// 
+    /// - Define and apply tags - https://www.dynatrace.com/support/help/how-to-use-dynatrace/tags-and-metadata/setup/how-to-define-tags
+    /// 
+    /// - Settings API - https://www.dynatrace.com/support/help/dynatrace-api/environment-api/settings (schemaId: `builtin:tags.auto-tagging`)
+    /// 
+    /// ## Export Example Usage
+    /// 
+    /// - `terraform-provider-dynatrace -export dynatrace.AutotagV2` downloads all existing automatically applied tags
+    /// 
+    /// The full documentation of the export feature is available [here](https://dt-url.net/h203qmc).
+    /// 
+    /// ## Resource Example Usage
+    /// 
+    /// ```csharp
+    /// using System.Collections.Generic;
+    /// using System.Linq;
+    /// using Pulumi;
+    /// using Dynatrace = Pulumiverse.Dynatrace;
+    /// 
+    /// return await Deployment.RunAsync(() =&gt; 
+    /// {
+    ///     // Sample for how to configure Auto Tag Rules using an Entity Selector
+    ///     var gKESample = new Dynatrace.AutotagV2("GKESample", new()
+    ///     {
+    ///         Name = "GKE-Hosts",
+    ///         Rules = new Dynatrace.Inputs.AutotagV2RulesArgs
+    ///         {
+    ///             Rules = new[]
+    ///             {
+    ///                 new Dynatrace.Inputs.AutotagV2RulesRuleArgs
+    ///                 {
+    ///                     Type = "SELECTOR",
+    ///                     Enabled = true,
+    ///                     EntitySelector = "type(host),entityName.startsWith(\"gke\")",
+    ///                     ValueFormat = "true",
+    ///                     ValueNormalization = "Leave text as-is",
+    ///                 },
+    ///             },
+    ///         },
+    ///     });
+    /// 
+    /// });
+    /// ```
+    /// </summary>
     [DynatraceResourceType("dynatrace:index/autotagV2:AutotagV2")]
     public partial class AutotagV2 : global::Pulumi.CustomResource
     {
@@ -32,7 +80,7 @@ namespace Pulumiverse.Dynatrace
         public Output<Outputs.AutotagV2Rules?> Rules { get; private set; } = null!;
 
         /// <summary>
-        /// If `True` this resource will not
+        /// If `True` the specified rules are ignored with the assumption that they're maintained externally or via `dynatrace.AutotagRules`
         /// </summary>
         [Output("rulesMaintainedExternally")]
         public Output<bool?> RulesMaintainedExternally { get; private set; } = null!;
@@ -103,7 +151,7 @@ namespace Pulumiverse.Dynatrace
         public Input<Inputs.AutotagV2RulesArgs>? Rules { get; set; }
 
         /// <summary>
-        /// If `True` this resource will not
+        /// If `True` the specified rules are ignored with the assumption that they're maintained externally or via `dynatrace.AutotagRules`
         /// </summary>
         [Input("rulesMaintainedExternally")]
         public Input<bool>? RulesMaintainedExternally { get; set; }
@@ -135,7 +183,7 @@ namespace Pulumiverse.Dynatrace
         public Input<Inputs.AutotagV2RulesGetArgs>? Rules { get; set; }
 
         /// <summary>
-        /// If `True` this resource will not
+        /// If `True` the specified rules are ignored with the assumption that they're maintained externally or via `dynatrace.AutotagRules`
         /// </summary>
         [Input("rulesMaintainedExternally")]
         public Input<bool>? RulesMaintainedExternally { get; set; }

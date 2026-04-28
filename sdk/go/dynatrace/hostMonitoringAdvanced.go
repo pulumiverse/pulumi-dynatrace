@@ -12,6 +12,19 @@ import (
 	"github.com/pulumiverse/pulumi-dynatrace/sdk/go/dynatrace/internal"
 )
 
+// > This resource requires the API token scopes **Read settings** (`settings.read`) and **Write settings** (`settings.write`)
+//
+// ## Dynatrace Documentation
+//
+// - Hosts - https://www.dynatrace.com/support/help/how-to-use-dynatrace/infrastructure-monitoring/hosts
+//
+// - Settings API - https://www.dynatrace.com/support/help/dynatrace-api/environment-api/settings (schemaId: `builtin:host.monitoring.advanced`)
+//
+// ## Export Example Usage
+//
+// - `terraform-provider-dynatrace -export HostMonitoringAdvanced` downloads all existing advanced host monitoring configuration
+//
+// The full documentation of the export feature is available [here](https://dt-url.net/h203qmc).
 type HostMonitoringAdvanced struct {
 	pulumi.CustomResourceState
 

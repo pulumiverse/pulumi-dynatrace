@@ -19,39 +19,6 @@ import (
 // - Select a snippet format - https://docs.dynatrace.com/docs/shortlink/snippet-formats
 //
 // - Settings API - https://www.dynatrace.com/support/help/dynatrace-api/environment-api/settings (schemaId: `builtin:rum.web.manual-insertion`)
-//
-// ## Resource Example Usage
-//
-// ```go
-// package main
-//
-// import (
-//
-//	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-//	"github.com/pulumiverse/pulumi-dynatrace/sdk/go/dynatrace"
-//
-// )
-//
-//	func main() {
-//		pulumi.Run(func(ctx *pulumi.Context) error {
-//			_, err := dynatrace.NewWebAppManualInsertion(ctx, "#name#", &dynatrace.WebAppManualInsertionArgs{
-//				ApplicationId: pulumi.String("APPLICATION-1234567890000000"),
-//				CodeSnippet: &dynatrace.WebAppManualInsertionCodeSnippetArgs{
-//					CodeSnippetType: pulumi.String("SYNCHRONOUSLY"),
-//				},
-//				JavascriptTag: &dynatrace.WebAppManualInsertionJavascriptTagArgs{
-//					CacheDuration:        pulumi.String("1"),
-//					CrossoriginAnonymous: pulumi.Bool(true),
-//				},
-//			})
-//			if err != nil {
-//				return err
-//			}
-//			return nil
-//		})
-//	}
-//
-// ```
 type WebAppManualInsertion struct {
 	pulumi.CustomResourceState
 

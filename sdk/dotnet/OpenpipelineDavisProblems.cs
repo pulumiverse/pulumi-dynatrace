@@ -10,6 +10,78 @@ using Pulumi;
 
 namespace Pulumiverse.Dynatrace
 {
+    /// <summary>
+    /// !&gt; This resource API endpoint has been deprecated, please migrate your OpenPipeline configurations and use `dynatrace_openpipeline_v2_davis_problems_*` instead.
+    /// 
+    /// !&gt; Deploying an OpenPipeline configuration will overwrite the existing one of the same kind, causing any manual changes made in the web UI or other configurations managed by Terraform or Monaco to be lost. Ensure all configurations are defined within a single Terraform or Monaco configuration to prevent data loss.
+    /// 
+    /// &gt; **Dynatrace SaaS only**
+    /// 
+    /// &gt; To utilize this resource, please define the environment variables `DT_CLIENT_ID`, `DT_CLIENT_SECRET`, `DT_ACCOUNT_ID` with an OAuth client including the following permissions: **View OpenPipeline configurations** (`openpipeline:configurations:read`), and **Edit OpenPipeline configurations** (`openpipeline:configurations:write`).
+    /// 
+    /// ## Dynatrace Documentation
+    /// 
+    /// - OpenPipeline - https://docs.dynatrace.com/docs/platform/openpipeline
+    /// 
+    /// ## Export Example Usage
+    /// 
+    /// - `terraform-provider-dynatrace -export dynatrace.OpenpipelineDavisProblems` downloads all existing OpenPipeline definitions for Davis problems
+    /// 
+    /// The full documentation of the export feature is available [here](https://dt-url.net/h203qmc).
+    /// 
+    /// ## Resource Example Usage
+    /// 
+    /// ```csharp
+    /// using System.Collections.Generic;
+    /// using System.Linq;
+    /// using Pulumi;
+    /// using Dynatrace = Pulumiverse.Dynatrace;
+    /// 
+    /// return await Deployment.RunAsync(() =&gt; 
+    /// {
+    ///     var davisProblems = new Dynatrace.OpenpipelineDavisProblems("davis_problems", new()
+    ///     {
+    ///         Pipelines = new Dynatrace.Inputs.OpenpipelineDavisProblemsPipelinesArgs
+    ///         {
+    ///             Pipelines = new[]
+    ///             {
+    ///                 new Dynatrace.Inputs.OpenpipelineDavisProblemsPipelinesPipelineArgs
+    ///                 {
+    ///                     Enabled = true,
+    ///                     DisplayName = "#name#",
+    ///                     Id = "pipeline_Custom_davis_problems_#name#",
+    ///                     Processing = new Dynatrace.Inputs.OpenpipelineDavisProblemsPipelinesPipelineProcessingArgs
+    ///                     {
+    ///                         Processors = new[]
+    ///                         {
+    ///                             new Dynatrace.Inputs.OpenpipelineDavisProblemsPipelinesPipelineProcessingProcessorArgs
+    ///                             {
+    ///                                 FieldsRenameProcessor = new Dynatrace.Inputs.OpenpipelineDavisProblemsPipelinesPipelineProcessingProcessorFieldsRenameProcessorArgs
+    ///                                 {
+    ///                                     Description = "#name#",
+    ///                                     Enabled = true,
+    ///                                     Id = "processor_Rename_problem_ID_#name#",
+    ///                                     Matcher = "true",
+    ///                                     Fields = new[]
+    ///                                     {
+    ///                                         new Dynatrace.Inputs.OpenpipelineDavisProblemsPipelinesPipelineProcessingProcessorFieldsRenameProcessorFieldArgs
+    ///                                         {
+    ///                                             FromName = "problem_id",
+    ///                                             ToName = "problemId",
+    ///                                         },
+    ///                                     },
+    ///                                 },
+    ///                             },
+    ///                         },
+    ///                     },
+    ///                 },
+    ///             },
+    ///         },
+    ///     });
+    /// 
+    /// });
+    /// ```
+    /// </summary>
     [DynatraceResourceType("dynatrace:index/openpipelineDavisProblems:OpenpipelineDavisProblems")]
     public partial class OpenpipelineDavisProblems : global::Pulumi.CustomResource
     {

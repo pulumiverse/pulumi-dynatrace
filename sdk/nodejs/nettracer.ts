@@ -4,6 +4,21 @@
 import * as pulumi from "@pulumi/pulumi";
 import * as utilities from "./utilities";
 
+/**
+ * > This resource requires the API token scopes **Read settings** (`settings.read`) and **Write settings** (`settings.write`)
+ *
+ * ## Dynatrace Documentation
+ *
+ * - Extended network monitoring - https://www.dynatrace.com/support/help/platform-modules/infrastructure-monitoring/networks/network-monitoring-with-nettracer
+ *
+ * - Settings API - https://www.dynatrace.com/support/help/dynatrace-api/environment-api/settings (schemaId: `builtin:nettracer.traffic`)
+ *
+ * ## Export Example Usage
+ *
+ * - `terraform-provider-dynatrace -export dynatrace.Nettracer` downloads all existing NetTracer traffic configuration
+ *
+ * The full documentation of the export feature is available [here](https://dt-url.net/h203qmc).
+ */
 export class Nettracer extends pulumi.CustomResource {
     /**
      * Get an existing Nettracer resource's state with the given name, ID, and optional extra

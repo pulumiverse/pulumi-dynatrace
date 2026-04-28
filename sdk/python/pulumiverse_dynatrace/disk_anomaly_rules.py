@@ -32,6 +32,7 @@ class DiskAnomalyRulesArgs:
                  threshold_percent: Optional[pulumi.Input[_builtins.float]] = None):
         """
         The set of arguments for constructing a DiskAnomalyRules resource.
+
         :param pulumi.Input['DiskAnomalyRulesDiskNameFilterArgs'] disk_name_filter: Only apply to disks whose name matches
         :param pulumi.Input[_builtins.bool] enabled: This setting is enabled (`true`) or disabled (`false`)
         :param pulumi.Input[_builtins.str] metric: Possible Values: `LOW_DISK_SPACE`, `LOW_INODES`, `READ_TIME_EXCEEDING`, `WRITE_TIME_EXCEEDING`
@@ -180,6 +181,7 @@ class _DiskAnomalyRulesState:
                  threshold_percent: Optional[pulumi.Input[_builtins.float]] = None):
         """
         Input properties used for looking up and filtering DiskAnomalyRules resources.
+
         :param pulumi.Input['DiskAnomalyRulesDiskNameFilterArgs'] disk_name_filter: Only apply to disks whose name matches
         :param pulumi.Input[_builtins.bool] enabled: This setting is enabled (`true`) or disabled (`false`)
         :param pulumi.Input[_builtins.str] host_group_id: The scope of this settings. If the settings should cover the whole environment, just don't specify any scope.
@@ -335,7 +337,21 @@ class DiskAnomalyRules(pulumi.CustomResource):
                  threshold_percent: Optional[pulumi.Input[_builtins.float]] = None,
                  __props__=None):
         """
-        Create a DiskAnomalyRules resource with the given unique name, props, and options.
+        > This resource requires the API token scopes **Read settings** (`settings.read`) and **Write settings** (`settings.write`)
+
+        ## Dynatrace Documentation
+
+        - Adjust the sensitivity of anomaly detection for infrastructure - https://www.dynatrace.com/support/help/how-to-use-dynatrace/problem-detection-and-analysis/problem-detection/adjust-sensitivity-anomaly-detection/adjust-sensitivity-infastructure
+
+        - Settings API - https://www.dynatrace.com/support/help/dynatrace-api/environment-api/settings (schemaId: `builtin:anomaly-detection.disk-rules`)
+
+        ## Export Example Usage
+
+        - `terraform-provider-dynatrace -export DiskAnomalyRules` downloads all existing disk anomaly detection rules
+
+        The full documentation of the export feature is available [here](https://dt-url.net/h203qmc).
+
+
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[Union['DiskAnomalyRulesDiskNameFilterArgs', 'DiskAnomalyRulesDiskNameFilterArgsDict']] disk_name_filter: Only apply to disks whose name matches
@@ -355,7 +371,21 @@ class DiskAnomalyRules(pulumi.CustomResource):
                  args: DiskAnomalyRulesArgs,
                  opts: Optional[pulumi.ResourceOptions] = None):
         """
-        Create a DiskAnomalyRules resource with the given unique name, props, and options.
+        > This resource requires the API token scopes **Read settings** (`settings.read`) and **Write settings** (`settings.write`)
+
+        ## Dynatrace Documentation
+
+        - Adjust the sensitivity of anomaly detection for infrastructure - https://www.dynatrace.com/support/help/how-to-use-dynatrace/problem-detection-and-analysis/problem-detection/adjust-sensitivity-anomaly-detection/adjust-sensitivity-infastructure
+
+        - Settings API - https://www.dynatrace.com/support/help/dynatrace-api/environment-api/settings (schemaId: `builtin:anomaly-detection.disk-rules`)
+
+        ## Export Example Usage
+
+        - `terraform-provider-dynatrace -export DiskAnomalyRules` downloads all existing disk anomaly detection rules
+
+        The full documentation of the export feature is available [here](https://dt-url.net/h203qmc).
+
+
         :param str resource_name: The name of the resource.
         :param DiskAnomalyRulesArgs args: The arguments to use to populate this resource's properties.
         :param pulumi.ResourceOptions opts: Options for the resource.

@@ -11,6 +11,21 @@ import (
 	"github.com/pulumiverse/pulumi-dynatrace/sdk/go/dynatrace/internal"
 )
 
+// !> This resource API endpoint has been deprecated, please use ManagementZoneV2 instead.
+//
+// > This resource requires the API token scopes **Read configuration** (`ReadConfig`) and **Write configuration** (`WriteConfig`)
+//
+// ## Dynatrace Documentation
+//
+// - Management zones - https://www.dynatrace.com/support/help/how-to-use-dynatrace/management-zones
+//
+// - Management zones API - https://www.dynatrace.com/support/help/dynatrace-api/configuration-api/management-zones-api
+//
+// ## Export Example Usage
+//
+// - `terraform-provider-dynatrace -export ManagementZone` downloads all existing management zone configuration
+//
+// The full documentation of the export feature is available [here](https://dt-url.net/h203qmc).
 type ManagementZone struct {
 	pulumi.CustomResourceState
 

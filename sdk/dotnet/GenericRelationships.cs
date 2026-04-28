@@ -10,6 +10,21 @@ using Pulumi;
 
 namespace Pulumiverse.Dynatrace
 {
+    /// <summary>
+    /// &gt; This resource requires the API token scopes **Read settings** (`settings.read`) and **Write settings** (`settings.write`)
+    /// 
+    /// ## Dynatrace Documentation
+    /// 
+    /// - Define custom topology - https://www.dynatrace.com/support/help/extend-dynatrace/extend-topology/custom-topology
+    /// 
+    /// - Settings API - https://www.dynatrace.com/support/help/dynatrace-api/environment-api/settings (schemaId: `builtin:monitoredentities.generic.relation`)
+    /// 
+    /// ## Export Example Usage
+    /// 
+    /// - `terraform-provider-dynatrace -export dynatrace.GenericRelationships` downloads all existing custom topology generic relationships configuration
+    /// 
+    /// The full documentation of the export feature is available [here](https://dt-url.net/h203qmc).
+    /// </summary>
     [DynatraceResourceType("dynatrace:index/genericRelationships:GenericRelationships")]
     public partial class GenericRelationships : global::Pulumi.CustomResource
     {
@@ -56,7 +71,7 @@ namespace Pulumiverse.Dynatrace
         public Output<string> ToType { get; private set; } = null!;
 
         /// <summary>
-        /// Possible Values: `CALLS`, `CHILD_OF`, `INSTANCE_OF`, `PART_OF`, `RUNS_ON`, `SAME_AS`
+        /// Type of the relationship between the Source Type and the Destination Type. Possible Values: `CALLS`, `CHILD_OF`, `INSTANCE_OF`, `PART_OF`, `RUNS_ON`, `SAME_AS`
         /// </summary>
         [Output("typeOfRelation")]
         public Output<string> TypeOfRelation { get; private set; } = null!;
@@ -151,7 +166,7 @@ namespace Pulumiverse.Dynatrace
         public Input<string> ToType { get; set; } = null!;
 
         /// <summary>
-        /// Possible Values: `CALLS`, `CHILD_OF`, `INSTANCE_OF`, `PART_OF`, `RUNS_ON`, `SAME_AS`
+        /// Type of the relationship between the Source Type and the Destination Type. Possible Values: `CALLS`, `CHILD_OF`, `INSTANCE_OF`, `PART_OF`, `RUNS_ON`, `SAME_AS`
         /// </summary>
         [Input("typeOfRelation", required: true)]
         public Input<string> TypeOfRelation { get; set; } = null!;
@@ -207,7 +222,7 @@ namespace Pulumiverse.Dynatrace
         public Input<string>? ToType { get; set; }
 
         /// <summary>
-        /// Possible Values: `CALLS`, `CHILD_OF`, `INSTANCE_OF`, `PART_OF`, `RUNS_ON`, `SAME_AS`
+        /// Type of the relationship between the Source Type and the Destination Type. Possible Values: `CALLS`, `CHILD_OF`, `INSTANCE_OF`, `PART_OF`, `RUNS_ON`, `SAME_AS`
         /// </summary>
         [Input("typeOfRelation")]
         public Input<string>? TypeOfRelation { get; set; }

@@ -22,6 +22,7 @@ class LogDebugSettingsArgs:
                  enabled: pulumi.Input[_builtins.bool]):
         """
         The set of arguments for constructing a LogDebugSettings resource.
+
         :param pulumi.Input[_builtins.bool] enabled: This setting is enabled (`true`) or disabled (`false`)
         """
         pulumi.set(__self__, "enabled", enabled)
@@ -45,6 +46,7 @@ class _LogDebugSettingsState:
                  enabled: Optional[pulumi.Input[_builtins.bool]] = None):
         """
         Input properties used for looking up and filtering LogDebugSettings resources.
+
         :param pulumi.Input[_builtins.bool] enabled: This setting is enabled (`true`) or disabled (`false`)
         """
         if enabled is not None:
@@ -72,7 +74,21 @@ class LogDebugSettings(pulumi.CustomResource):
                  enabled: Optional[pulumi.Input[_builtins.bool]] = None,
                  __props__=None):
         """
-        Create a LogDebugSettings resource with the given unique name, props, and options.
+        > This resource requires the API token scopes **Read settings** (`settings.read`) and **Write settings** (`settings.write`)
+
+        ## Dynatrace Documentation
+
+        - Troubleshooting Log Monitoring (Logs Classic) - https://docs.dynatrace.com/docs/observe-and-explore/log-monitoring/lmc-troubleshooting
+
+        - Settings API - https://www.dynatrace.com/support/help/dynatrace-api/environment-api/settings (schemaId: `builtin:logmonitoring.log-debug-settings`)
+
+        ## Export Example Usage
+
+        - `terraform-provider-dynatrace -export LogDebugSettings` downloads existing log debug settings
+
+        The full documentation of the export feature is available [here](https://dt-url.net/h203qmc).
+
+
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[_builtins.bool] enabled: This setting is enabled (`true`) or disabled (`false`)
@@ -84,7 +100,21 @@ class LogDebugSettings(pulumi.CustomResource):
                  args: LogDebugSettingsArgs,
                  opts: Optional[pulumi.ResourceOptions] = None):
         """
-        Create a LogDebugSettings resource with the given unique name, props, and options.
+        > This resource requires the API token scopes **Read settings** (`settings.read`) and **Write settings** (`settings.write`)
+
+        ## Dynatrace Documentation
+
+        - Troubleshooting Log Monitoring (Logs Classic) - https://docs.dynatrace.com/docs/observe-and-explore/log-monitoring/lmc-troubleshooting
+
+        - Settings API - https://www.dynatrace.com/support/help/dynatrace-api/environment-api/settings (schemaId: `builtin:logmonitoring.log-debug-settings`)
+
+        ## Export Example Usage
+
+        - `terraform-provider-dynatrace -export LogDebugSettings` downloads existing log debug settings
+
+        The full documentation of the export feature is available [here](https://dt-url.net/h203qmc).
+
+
         :param str resource_name: The name of the resource.
         :param LogDebugSettingsArgs args: The arguments to use to populate this resource's properties.
         :param pulumi.ResourceOptions opts: Options for the resource.

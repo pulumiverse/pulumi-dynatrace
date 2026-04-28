@@ -15,13 +15,21 @@ namespace Pulumiverse.Dynatrace.Outputs
     public sealed class HttpMonitorScriptScript
     {
         /// <summary>
+        /// [Preview only](https://docs.dynatrace.com/docs/whats-new/preview-releases). A set of custom properties assigned to the monitor. More information can be found [here](https://docs.dynatrace.com/docs/observe/digital-experience/synthetic-monitoring/http-monitors-classic/advanced-http-monitor-settings-classic).
+        /// </summary>
+        public readonly ImmutableArray<Outputs.HttpMonitorScriptScriptCustomProperty> CustomProperties;
+        /// <summary>
         /// A HTTP request to be performed by the monitor.
         /// </summary>
         public readonly ImmutableArray<Outputs.HttpMonitorScriptScriptRequest> Requests;
 
         [OutputConstructor]
-        private HttpMonitorScriptScript(ImmutableArray<Outputs.HttpMonitorScriptScriptRequest> requests)
+        private HttpMonitorScriptScript(
+            ImmutableArray<Outputs.HttpMonitorScriptScriptCustomProperty> customProperties,
+
+            ImmutableArray<Outputs.HttpMonitorScriptScriptRequest> requests)
         {
+            CustomProperties = customProperties;
             Requests = requests;
         }
     }

@@ -26,6 +26,7 @@ class NetworkTrafficArgs:
                  exclude_nic: Optional[pulumi.Input['NetworkTrafficExcludeNicArgs']] = None):
         """
         The set of arguments for constructing a NetworkTraffic resource.
+
         :param pulumi.Input[_builtins.str] host_id: The scope of this settings. If the settings should cover the whole environment, just don't specify any scope.
         :param pulumi.Input['NetworkTrafficExcludeIpArgs'] exclude_ip: Providing a host IP address, you will exclude network traffic only in calculating connectivity (other metrics will still be calculated).
         :param pulumi.Input['NetworkTrafficExcludeNicArgs'] exclude_nic: Selecting a network interface, you will exclude all network traffic on that interface from being monitored. You can select from the list below what to not monitor, or input it manually using the "other one" option.
@@ -81,6 +82,7 @@ class _NetworkTrafficState:
                  host_id: Optional[pulumi.Input[_builtins.str]] = None):
         """
         Input properties used for looking up and filtering NetworkTraffic resources.
+
         :param pulumi.Input['NetworkTrafficExcludeIpArgs'] exclude_ip: Providing a host IP address, you will exclude network traffic only in calculating connectivity (other metrics will still be calculated).
         :param pulumi.Input['NetworkTrafficExcludeNicArgs'] exclude_nic: Selecting a network interface, you will exclude all network traffic on that interface from being monitored. You can select from the list below what to not monitor, or input it manually using the "other one" option.
         :param pulumi.Input[_builtins.str] host_id: The scope of this settings. If the settings should cover the whole environment, just don't specify any scope.
@@ -140,7 +142,21 @@ class NetworkTraffic(pulumi.CustomResource):
                  host_id: Optional[pulumi.Input[_builtins.str]] = None,
                  __props__=None):
         """
-        Create a NetworkTraffic resource with the given unique name, props, and options.
+        > This resource requires the API token scopes **Read settings** (`settings.read`) and **Write settings** (`settings.write`)
+
+        ## Dynatrace Documentation
+
+        - Exclude disks and network traffic from host monitoring - https://www.dynatrace.com/support/help/platform-modules/infrastructure-monitoring/hosts/configuration/exclude-disks-and-network-traffic
+
+        - Settings API - https://www.dynatrace.com/support/help/dynatrace-api/environment-api/settings (schemaId: `builtin:exclude.network.traffic`)
+
+        ## Export Example Usage
+
+        - `terraform-provider-dynatrace -export NetworkTraffic` downloads all existing host network traffic exclusion configuration
+
+        The full documentation of the export feature is available [here](https://dt-url.net/h203qmc).
+
+
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[Union['NetworkTrafficExcludeIpArgs', 'NetworkTrafficExcludeIpArgsDict']] exclude_ip: Providing a host IP address, you will exclude network traffic only in calculating connectivity (other metrics will still be calculated).
@@ -154,7 +170,21 @@ class NetworkTraffic(pulumi.CustomResource):
                  args: NetworkTrafficArgs,
                  opts: Optional[pulumi.ResourceOptions] = None):
         """
-        Create a NetworkTraffic resource with the given unique name, props, and options.
+        > This resource requires the API token scopes **Read settings** (`settings.read`) and **Write settings** (`settings.write`)
+
+        ## Dynatrace Documentation
+
+        - Exclude disks and network traffic from host monitoring - https://www.dynatrace.com/support/help/platform-modules/infrastructure-monitoring/hosts/configuration/exclude-disks-and-network-traffic
+
+        - Settings API - https://www.dynatrace.com/support/help/dynatrace-api/environment-api/settings (schemaId: `builtin:exclude.network.traffic`)
+
+        ## Export Example Usage
+
+        - `terraform-provider-dynatrace -export NetworkTraffic` downloads all existing host network traffic exclusion configuration
+
+        The full documentation of the export feature is available [here](https://dt-url.net/h203qmc).
+
+
         :param str resource_name: The name of the resource.
         :param NetworkTrafficArgs args: The arguments to use to populate this resource's properties.
         :param pulumi.ResourceOptions opts: Options for the resource.

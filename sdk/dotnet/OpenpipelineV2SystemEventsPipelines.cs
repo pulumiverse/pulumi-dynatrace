@@ -10,6 +10,189 @@ using Pulumi;
 
 namespace Pulumiverse.Dynatrace
 {
+    /// <summary>
+    /// &gt; This resource requires the API token scopes **Read settings** (`settings.read`) and **Write settings** (`settings.write`)
+    /// 
+    /// &gt; This resource requires the OAuth scopes **Read settings** (`settings:objects:read`) and **Write settings** (`settings:objects:write`)
+    /// 
+    /// ## Limitations
+    /// 
+    /// &gt; **Warning** If a resource is created using an API token or without setting `DYNATRACE_HTTP_OAUTH_PREFERENCE=true` (when both are used), the settings object's owner will remain empty.
+    /// 
+    /// An empty owner implies:
+    /// - The settings object becomes public, allowing other users with settings permissions to read and modify it.
+    /// - Changing the settings object's permissions will have no effect, meaning the `dynatrace.SettingsPermissions` resource can't alter its access.
+    /// 
+    /// When a settings object is created using platform credentials:
+    /// - The owner is set to the owner of the OAuth client or platform token.
+    /// - By default, the settings object is private; only the owner can read and modify it.
+    /// - Access modifiers can be managed using the `dynatrace.SettingsPermissions` resource.
+    /// 
+    /// We recommend using platform credentials to ensure a correct setup.
+    /// In case an API token is needed, we recommend setting `DYNATRACE_HTTP_OAUTH_PREFERENCE=true`.
+    /// 
+    /// ## Dynatrace Documentation
+    /// 
+    /// - OpenPipeline - https://docs.dynatrace.com/docs/platform/openpipeline
+    /// 
+    /// ## Export Example Usage
+    /// 
+    /// - `terraform-provider-dynatrace -export dynatrace.OpenpipelineV2SystemEventsPipelines` downloads all existing OpenPipeline definitions for system events pipelines
+    /// 
+    /// The full documentation of the export feature is available [here](https://dt-url.net/h203qmc).
+    /// 
+    /// ## Resource Example Usage
+    /// 
+    /// ```csharp
+    /// using System.Collections.Generic;
+    /// using System.Linq;
+    /// using Pulumi;
+    /// using Dynatrace = Pulumiverse.Dynatrace;
+    /// 
+    /// return await Deployment.RunAsync(() =&gt; 
+    /// {
+    ///     var max_pipeline = new Dynatrace.OpenpipelineV2SystemEventsPipelines("max-pipeline", new()
+    ///     {
+    ///         DisplayName = "Warning pipeline",
+    ///         CustomId = "pipeline_Warning_pipeline_2773_tf_#name#",
+    ///         MetadataList = new Dynatrace.Inputs.OpenpipelineV2SystemEventsPipelinesMetadataListArgs
+    ///         {
+    ///             Metadatas = new[]
+    ///             {
+    ///                 new Dynatrace.Inputs.OpenpipelineV2SystemEventsPipelinesMetadataListMetadataArgs
+    ///                 {
+    ///                     EntryKey = "environment",
+    ///                     EntryValue = "production",
+    ///                 },
+    ///             },
+    ///         },
+    ///         Davis = new Dynatrace.Inputs.OpenpipelineV2SystemEventsPipelinesDavisArgs
+    ///         {
+    ///             Processors = new Dynatrace.Inputs.OpenpipelineV2SystemEventsPipelinesDavisProcessorsArgs
+    ///             {
+    ///                 Processors = new[]
+    ///                 {
+    ///                     new Dynatrace.Inputs.OpenpipelineV2SystemEventsPipelinesDavisProcessorsProcessorArgs
+    ///                     {
+    ///                         Type = "davis",
+    ///                         Id = "processor_Create_warning_event_8226",
+    ///                         Description = "Create warning event",
+    ///                         Matcher = "true",
+    ///                         Davis = new Dynatrace.Inputs.OpenpipelineV2SystemEventsPipelinesDavisProcessorsProcessorDavisArgs
+    ///                         {
+    ///                             Properties = new Dynatrace.Inputs.OpenpipelineV2SystemEventsPipelinesDavisProcessorsProcessorDavisPropertiesArgs
+    ///                             {
+    ///                                 Properties = new[]
+    ///                                 {
+    ///                                     new Dynatrace.Inputs.OpenpipelineV2SystemEventsPipelinesDavisProcessorsProcessorDavisPropertiesPropertyArgs
+    ///                                     {
+    ///                                         Key = "event.type",
+    ///                                         Value = "CUSTOM_ALERT",
+    ///                                     },
+    ///                                     new Dynatrace.Inputs.OpenpipelineV2SystemEventsPipelinesDavisProcessorsProcessorDavisPropertiesPropertyArgs
+    ///                                     {
+    ///                                         Key = "event.name",
+    ///                                         Value = "Warning detected",
+    ///                                     },
+    ///                                     new Dynatrace.Inputs.OpenpipelineV2SystemEventsPipelinesDavisProcessorsProcessorDavisPropertiesPropertyArgs
+    ///                                     {
+    ///                                         Key = "event.description",
+    ///                                         Value = "Warning: {dims:record.summary}",
+    ///                                     },
+    ///                                 },
+    ///                             },
+    ///                         },
+    ///                         Enabled = true,
+    ///                     },
+    ///                 },
+    ///             },
+    ///         },
+    ///         MetricExtraction = new Dynatrace.Inputs.OpenpipelineV2SystemEventsPipelinesMetricExtractionArgs
+    ///         {
+    ///             Processors = new Dynatrace.Inputs.OpenpipelineV2SystemEventsPipelinesMetricExtractionProcessorsArgs
+    ///             {
+    ///                 Processors = new[]
+    ///                 {
+    ///                     new Dynatrace.Inputs.OpenpipelineV2SystemEventsPipelinesMetricExtractionProcessorsProcessorArgs
+    ///                     {
+    ///                         Type = "counterMetric",
+    ///                         Id = "processor_Count_warning_events_6392",
+    ///                         Description = "Count warnings",
+    ///                         Matcher = "true",
+    ///                         CounterMetric = new Dynatrace.Inputs.OpenpipelineV2SystemEventsPipelinesMetricExtractionProcessorsProcessorCounterMetricArgs
+    ///                         {
+    ///                             MetricKey = "warning.count",
+    ///                             Dimensions = new Dynatrace.Inputs.OpenpipelineV2SystemEventsPipelinesMetricExtractionProcessorsProcessorCounterMetricDimensionsArgs
+    ///                             {
+    ///                                 Dimensions = new[]
+    ///                                 {
+    ///                                     new Dynatrace.Inputs.OpenpipelineV2SystemEventsPipelinesMetricExtractionProcessorsProcessorCounterMetricDimensionsDimensionArgs
+    ///                                     {
+    ///                                         SourceFieldName = "dt.cost.costcenter",
+    ///                                     },
+    ///                                     new Dynatrace.Inputs.OpenpipelineV2SystemEventsPipelinesMetricExtractionProcessorsProcessorCounterMetricDimensionsDimensionArgs
+    ///                                     {
+    ///                                         SourceFieldName = "dt.cost.product",
+    ///                                     },
+    ///                                     new Dynatrace.Inputs.OpenpipelineV2SystemEventsPipelinesMetricExtractionProcessorsProcessorCounterMetricDimensionsDimensionArgs
+    ///                                     {
+    ///                                         SourceFieldName = "dt.security_context",
+    ///                                     },
+    ///                                     new Dynatrace.Inputs.OpenpipelineV2SystemEventsPipelinesMetricExtractionProcessorsProcessorCounterMetricDimensionsDimensionArgs
+    ///                                     {
+    ///                                         SourceFieldName = "record.category",
+    ///                                         DestinationFieldName = "warning_category",
+    ///                                     },
+    ///                                 },
+    ///                             },
+    ///                         },
+    ///                         Enabled = true,
+    ///                     },
+    ///                     new Dynatrace.Inputs.OpenpipelineV2SystemEventsPipelinesMetricExtractionProcessorsProcessorArgs
+    ///                     {
+    ///                         Type = "valueMetric",
+    ///                         Id = "processor_Warning_timeout_1990",
+    ///                         Description = "Warning timeout",
+    ///                         Matcher = "true",
+    ///                         ValueMetric = new Dynatrace.Inputs.OpenpipelineV2SystemEventsPipelinesMetricExtractionProcessorsProcessorValueMetricArgs
+    ///                         {
+    ///                             MetricKey = "warning.timeout",
+    ///                             Field = "recording.timeout_in_min",
+    ///                             DefaultValue = "60",
+    ///                             Dimensions = new Dynatrace.Inputs.OpenpipelineV2SystemEventsPipelinesMetricExtractionProcessorsProcessorValueMetricDimensionsArgs
+    ///                             {
+    ///                                 Dimensions = new[]
+    ///                                 {
+    ///                                     new Dynatrace.Inputs.OpenpipelineV2SystemEventsPipelinesMetricExtractionProcessorsProcessorValueMetricDimensionsDimensionArgs
+    ///                                     {
+    ///                                         SourceFieldName = "dt.cost.costcenter",
+    ///                                     },
+    ///                                     new Dynatrace.Inputs.OpenpipelineV2SystemEventsPipelinesMetricExtractionProcessorsProcessorValueMetricDimensionsDimensionArgs
+    ///                                     {
+    ///                                         SourceFieldName = "dt.cost.product",
+    ///                                     },
+    ///                                     new Dynatrace.Inputs.OpenpipelineV2SystemEventsPipelinesMetricExtractionProcessorsProcessorValueMetricDimensionsDimensionArgs
+    ///                                     {
+    ///                                         SourceFieldName = "dt.security_context",
+    ///                                     },
+    ///                                     new Dynatrace.Inputs.OpenpipelineV2SystemEventsPipelinesMetricExtractionProcessorsProcessorValueMetricDimensionsDimensionArgs
+    ///                                     {
+    ///                                         SourceFieldName = "record.category",
+    ///                                         DestinationFieldName = "warning_category",
+    ///                                     },
+    ///                                 },
+    ///                             },
+    ///                         },
+    ///                         Enabled = true,
+    ///                     },
+    ///                 },
+    ///             },
+    ///         },
+    ///     });
+    /// 
+    /// });
+    /// ```
+    /// </summary>
     [DynatraceResourceType("dynatrace:index/openpipelineV2SystemEventsPipelines:OpenpipelineV2SystemEventsPipelines")]
     public partial class OpenpipelineV2SystemEventsPipelines : global::Pulumi.CustomResource
     {
@@ -17,7 +200,7 @@ namespace Pulumiverse.Dynatrace
         /// Cost allocation stage
         /// </summary>
         [Output("costAllocation")]
-        public Output<Outputs.OpenpipelineV2SystemEventsPipelinesCostAllocation> CostAllocation { get; private set; } = null!;
+        public Output<Outputs.OpenpipelineV2SystemEventsPipelinesCostAllocation?> CostAllocation { get; private set; } = null!;
 
         /// <summary>
         /// Custom pipeline id
@@ -29,13 +212,13 @@ namespace Pulumiverse.Dynatrace
         /// Data extraction stage
         /// </summary>
         [Output("dataExtraction")]
-        public Output<Outputs.OpenpipelineV2SystemEventsPipelinesDataExtraction> DataExtraction { get; private set; } = null!;
+        public Output<Outputs.OpenpipelineV2SystemEventsPipelinesDataExtraction?> DataExtraction { get; private set; } = null!;
 
         /// <summary>
         /// Davis event extraction stage
         /// </summary>
         [Output("davis")]
-        public Output<Outputs.OpenpipelineV2SystemEventsPipelinesDavis> Davis { get; private set; } = null!;
+        public Output<Outputs.OpenpipelineV2SystemEventsPipelinesDavis?> Davis { get; private set; } = null!;
 
         /// <summary>
         /// Display name
@@ -44,34 +227,64 @@ namespace Pulumiverse.Dynatrace
         public Output<string> DisplayName { get; private set; } = null!;
 
         /// <summary>
+        /// Group role. Possible Values: `compositionPipeline`, `memberPipeline`
+        /// </summary>
+        [Output("groupRole")]
+        public Output<string?> GroupRole { get; private set; } = null!;
+
+        /// <summary>
+        /// Pipeline metadata list
+        /// </summary>
+        [Output("metadataList")]
+        public Output<Outputs.OpenpipelineV2SystemEventsPipelinesMetadataList?> MetadataList { get; private set; } = null!;
+
+        /// <summary>
         /// Metrics extraction stage
         /// </summary>
         [Output("metricExtraction")]
-        public Output<Outputs.OpenpipelineV2SystemEventsPipelinesMetricExtraction> MetricExtraction { get; private set; } = null!;
+        public Output<Outputs.OpenpipelineV2SystemEventsPipelinesMetricExtraction?> MetricExtraction { get; private set; } = null!;
 
         /// <summary>
         /// Processing stage
         /// </summary>
         [Output("processing")]
-        public Output<Outputs.OpenpipelineV2SystemEventsPipelinesProcessing> Processing { get; private set; } = null!;
+        public Output<Outputs.OpenpipelineV2SystemEventsPipelinesProcessing?> Processing { get; private set; } = null!;
 
         /// <summary>
         /// Product allocation stage
         /// </summary>
         [Output("productAllocation")]
-        public Output<Outputs.OpenpipelineV2SystemEventsPipelinesProductAllocation> ProductAllocation { get; private set; } = null!;
+        public Output<Outputs.OpenpipelineV2SystemEventsPipelinesProductAllocation?> ProductAllocation { get; private set; } = null!;
+
+        /// <summary>
+        /// Routing. Possible Values: `notRoutable`, `Routable`
+        /// </summary>
+        [Output("routing")]
+        public Output<string?> Routing { get; private set; } = null!;
 
         /// <summary>
         /// Security context stage
         /// </summary>
         [Output("securityContext")]
-        public Output<Outputs.OpenpipelineV2SystemEventsPipelinesSecurityContext> SecurityContext { get; private set; } = null!;
+        public Output<Outputs.OpenpipelineV2SystemEventsPipelinesSecurityContext?> SecurityContext { get; private set; } = null!;
+
+        /// <summary>
+        /// Smartscape edge extraction stage
+        /// </summary>
+        [Output("smartscapeEdgeExtraction")]
+        public Output<Outputs.OpenpipelineV2SystemEventsPipelinesSmartscapeEdgeExtraction?> SmartscapeEdgeExtraction { get; private set; } = null!;
+
+        /// <summary>
+        /// Smartscape node extraction stage
+        /// </summary>
+        [Output("smartscapeNodeExtraction")]
+        public Output<Outputs.OpenpipelineV2SystemEventsPipelinesSmartscapeNodeExtraction?> SmartscapeNodeExtraction { get; private set; } = null!;
 
         /// <summary>
         /// Storage stage
         /// </summary>
         [Output("storage")]
-        public Output<Outputs.OpenpipelineV2SystemEventsPipelinesStorage> Storage { get; private set; } = null!;
+        public Output<Outputs.OpenpipelineV2SystemEventsPipelinesStorage?> Storage { get; private set; } = null!;
 
 
         /// <summary>
@@ -123,8 +336,8 @@ namespace Pulumiverse.Dynatrace
         /// <summary>
         /// Cost allocation stage
         /// </summary>
-        [Input("costAllocation", required: true)]
-        public Input<Inputs.OpenpipelineV2SystemEventsPipelinesCostAllocationArgs> CostAllocation { get; set; } = null!;
+        [Input("costAllocation")]
+        public Input<Inputs.OpenpipelineV2SystemEventsPipelinesCostAllocationArgs>? CostAllocation { get; set; }
 
         /// <summary>
         /// Custom pipeline id
@@ -135,14 +348,14 @@ namespace Pulumiverse.Dynatrace
         /// <summary>
         /// Data extraction stage
         /// </summary>
-        [Input("dataExtraction", required: true)]
-        public Input<Inputs.OpenpipelineV2SystemEventsPipelinesDataExtractionArgs> DataExtraction { get; set; } = null!;
+        [Input("dataExtraction")]
+        public Input<Inputs.OpenpipelineV2SystemEventsPipelinesDataExtractionArgs>? DataExtraction { get; set; }
 
         /// <summary>
         /// Davis event extraction stage
         /// </summary>
-        [Input("davis", required: true)]
-        public Input<Inputs.OpenpipelineV2SystemEventsPipelinesDavisArgs> Davis { get; set; } = null!;
+        [Input("davis")]
+        public Input<Inputs.OpenpipelineV2SystemEventsPipelinesDavisArgs>? Davis { get; set; }
 
         /// <summary>
         /// Display name
@@ -151,34 +364,64 @@ namespace Pulumiverse.Dynatrace
         public Input<string> DisplayName { get; set; } = null!;
 
         /// <summary>
+        /// Group role. Possible Values: `compositionPipeline`, `memberPipeline`
+        /// </summary>
+        [Input("groupRole")]
+        public Input<string>? GroupRole { get; set; }
+
+        /// <summary>
+        /// Pipeline metadata list
+        /// </summary>
+        [Input("metadataList")]
+        public Input<Inputs.OpenpipelineV2SystemEventsPipelinesMetadataListArgs>? MetadataList { get; set; }
+
+        /// <summary>
         /// Metrics extraction stage
         /// </summary>
-        [Input("metricExtraction", required: true)]
-        public Input<Inputs.OpenpipelineV2SystemEventsPipelinesMetricExtractionArgs> MetricExtraction { get; set; } = null!;
+        [Input("metricExtraction")]
+        public Input<Inputs.OpenpipelineV2SystemEventsPipelinesMetricExtractionArgs>? MetricExtraction { get; set; }
 
         /// <summary>
         /// Processing stage
         /// </summary>
-        [Input("processing", required: true)]
-        public Input<Inputs.OpenpipelineV2SystemEventsPipelinesProcessingArgs> Processing { get; set; } = null!;
+        [Input("processing")]
+        public Input<Inputs.OpenpipelineV2SystemEventsPipelinesProcessingArgs>? Processing { get; set; }
 
         /// <summary>
         /// Product allocation stage
         /// </summary>
-        [Input("productAllocation", required: true)]
-        public Input<Inputs.OpenpipelineV2SystemEventsPipelinesProductAllocationArgs> ProductAllocation { get; set; } = null!;
+        [Input("productAllocation")]
+        public Input<Inputs.OpenpipelineV2SystemEventsPipelinesProductAllocationArgs>? ProductAllocation { get; set; }
+
+        /// <summary>
+        /// Routing. Possible Values: `notRoutable`, `Routable`
+        /// </summary>
+        [Input("routing")]
+        public Input<string>? Routing { get; set; }
 
         /// <summary>
         /// Security context stage
         /// </summary>
-        [Input("securityContext", required: true)]
-        public Input<Inputs.OpenpipelineV2SystemEventsPipelinesSecurityContextArgs> SecurityContext { get; set; } = null!;
+        [Input("securityContext")]
+        public Input<Inputs.OpenpipelineV2SystemEventsPipelinesSecurityContextArgs>? SecurityContext { get; set; }
+
+        /// <summary>
+        /// Smartscape edge extraction stage
+        /// </summary>
+        [Input("smartscapeEdgeExtraction")]
+        public Input<Inputs.OpenpipelineV2SystemEventsPipelinesSmartscapeEdgeExtractionArgs>? SmartscapeEdgeExtraction { get; set; }
+
+        /// <summary>
+        /// Smartscape node extraction stage
+        /// </summary>
+        [Input("smartscapeNodeExtraction")]
+        public Input<Inputs.OpenpipelineV2SystemEventsPipelinesSmartscapeNodeExtractionArgs>? SmartscapeNodeExtraction { get; set; }
 
         /// <summary>
         /// Storage stage
         /// </summary>
-        [Input("storage", required: true)]
-        public Input<Inputs.OpenpipelineV2SystemEventsPipelinesStorageArgs> Storage { get; set; } = null!;
+        [Input("storage")]
+        public Input<Inputs.OpenpipelineV2SystemEventsPipelinesStorageArgs>? Storage { get; set; }
 
         public OpenpipelineV2SystemEventsPipelinesArgs()
         {
@@ -219,6 +462,18 @@ namespace Pulumiverse.Dynatrace
         public Input<string>? DisplayName { get; set; }
 
         /// <summary>
+        /// Group role. Possible Values: `compositionPipeline`, `memberPipeline`
+        /// </summary>
+        [Input("groupRole")]
+        public Input<string>? GroupRole { get; set; }
+
+        /// <summary>
+        /// Pipeline metadata list
+        /// </summary>
+        [Input("metadataList")]
+        public Input<Inputs.OpenpipelineV2SystemEventsPipelinesMetadataListGetArgs>? MetadataList { get; set; }
+
+        /// <summary>
         /// Metrics extraction stage
         /// </summary>
         [Input("metricExtraction")]
@@ -237,10 +492,28 @@ namespace Pulumiverse.Dynatrace
         public Input<Inputs.OpenpipelineV2SystemEventsPipelinesProductAllocationGetArgs>? ProductAllocation { get; set; }
 
         /// <summary>
+        /// Routing. Possible Values: `notRoutable`, `Routable`
+        /// </summary>
+        [Input("routing")]
+        public Input<string>? Routing { get; set; }
+
+        /// <summary>
         /// Security context stage
         /// </summary>
         [Input("securityContext")]
         public Input<Inputs.OpenpipelineV2SystemEventsPipelinesSecurityContextGetArgs>? SecurityContext { get; set; }
+
+        /// <summary>
+        /// Smartscape edge extraction stage
+        /// </summary>
+        [Input("smartscapeEdgeExtraction")]
+        public Input<Inputs.OpenpipelineV2SystemEventsPipelinesSmartscapeEdgeExtractionGetArgs>? SmartscapeEdgeExtraction { get; set; }
+
+        /// <summary>
+        /// Smartscape node extraction stage
+        /// </summary>
+        [Input("smartscapeNodeExtraction")]
+        public Input<Inputs.OpenpipelineV2SystemEventsPipelinesSmartscapeNodeExtractionGetArgs>? SmartscapeNodeExtraction { get; set; }
 
         /// <summary>
         /// Storage stage

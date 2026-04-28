@@ -6,6 +6,23 @@ import * as inputs from "./types/input";
 import * as outputs from "./types/output";
 import * as utilities from "./utilities";
 
+/**
+ * !> This resource may not have full coverage of the required fields, please use dynatrace.ApplicationErrorRules instead.
+ *
+ * > This resource requires the API token scopes **Read settings** (`settings.read`) and **Write settings** (`settings.write`)
+ *
+ * ## Dynatrace Documentation
+ *
+ * - Configure custom errors - https://www.dynatrace.com/support/help/platform-modules/digital-experience/web-applications/additional-configuration/configure-errors#configure-custom-errors
+ *
+ * - Settings API - https://www.dynatrace.com/support/help/dynatrace-api/environment-api/settings (schemaId: `builtin:rum.web.custom-errors`)
+ *
+ * ## Export Example Usage
+ *
+ * - `terraform-provider-dynatrace -export dynatrace.WebAppCustomErrors` downloads all existing custom error configuration
+ *
+ * The full documentation of the export feature is available [here](https://dt-url.net/h203qmc).
+ */
 export class WebAppCustomErrors extends pulumi.CustomResource {
     /**
      * Get an existing WebAppCustomErrors resource's state with the given name, ID, and optional extra

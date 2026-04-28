@@ -41,6 +41,7 @@ class KubernetesArgs:
                  scope: Optional[pulumi.Input[_builtins.str]] = None):
         """
         The set of arguments for constructing a Kubernetes resource.
+
         :param pulumi.Input[_builtins.bool] cluster_id_enabled: For more information on local Kubernetes API monitoring, see the [documentation](https://dt-url.net/6q62uep).
         :param pulumi.Input[_builtins.bool] enabled: This setting is enabled (`true`) or disabled (`false`)
         :param pulumi.Input[_builtins.str] label: Renaming the cluster breaks configurations that are based on its name (e.g., management zones, and alerting).
@@ -366,6 +367,7 @@ class _KubernetesState:
                  scope: Optional[pulumi.Input[_builtins.str]] = None):
         """
         Input properties used for looking up and filtering Kubernetes resources.
+
         :param pulumi.Input[_builtins.str] active_gate_group: ActiveGate Group
         :param pulumi.Input[_builtins.str] auth_token: Create a bearer token for [Kubernetes](https://dt-url.net/og43szq) or [OpenShift](https://dt-url.net/7l43xtp).
         :param pulumi.Input[_builtins.bool] certificate_check_enabled: Require valid certificates for communication with API server (recommended)
@@ -697,7 +699,21 @@ class Kubernetes(pulumi.CustomResource):
                  scope: Optional[pulumi.Input[_builtins.str]] = None,
                  __props__=None):
         """
-        Create a Kubernetes resource with the given unique name, props, and options.
+        > This resource requires the API token scopes **Read settings** (`settings.read`) and **Write settings** (`settings.write`)
+
+        ## Dynatrace Documentation
+
+        - Kubernetes/OpenShift monitoring - https://www.dynatrace.com/support/help/how-to-use-dynatrace/infrastructure-monitoring/container-platform-monitoring/kubernetes-monitoring
+
+        - Settings API - https://www.dynatrace.com/support/help/dynatrace-api/environment-api/settings (schemaId: `builtin:cloud.kubernetes`)
+
+        ## Export Example Usage
+
+        - `terraform-provider-dynatrace -export Kubernetes` downloads all existing Kubernetes connection settings
+
+        The full documentation of the export feature is available [here](https://dt-url.net/h203qmc).
+
+
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[_builtins.str] active_gate_group: ActiveGate Group
@@ -726,7 +742,21 @@ class Kubernetes(pulumi.CustomResource):
                  args: KubernetesArgs,
                  opts: Optional[pulumi.ResourceOptions] = None):
         """
-        Create a Kubernetes resource with the given unique name, props, and options.
+        > This resource requires the API token scopes **Read settings** (`settings.read`) and **Write settings** (`settings.write`)
+
+        ## Dynatrace Documentation
+
+        - Kubernetes/OpenShift monitoring - https://www.dynatrace.com/support/help/how-to-use-dynatrace/infrastructure-monitoring/container-platform-monitoring/kubernetes-monitoring
+
+        - Settings API - https://www.dynatrace.com/support/help/dynatrace-api/environment-api/settings (schemaId: `builtin:cloud.kubernetes`)
+
+        ## Export Example Usage
+
+        - `terraform-provider-dynatrace -export Kubernetes` downloads all existing Kubernetes connection settings
+
+        The full documentation of the export feature is available [here](https://dt-url.net/h203qmc).
+
+
         :param str resource_name: The name of the resource.
         :param KubernetesArgs args: The arguments to use to populate this resource's properties.
         :param pulumi.ResourceOptions opts: Options for the resource.

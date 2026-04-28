@@ -60,6 +60,10 @@ namespace Pulumiverse.Dynatrace.Outputs
         /// The user agent of the request
         /// </summary>
         public readonly string? UserAgent;
+        /// <summary>
+        /// Client certificates that can only be configured for Linux-based locations
+        /// </summary>
+        public readonly Outputs.BrowserMonitorScriptConfigurationUserCertificates? UserCertificates;
 
         [OutputConstructor]
         private BrowserMonitorScriptConfiguration(
@@ -83,7 +87,9 @@ namespace Pulumiverse.Dynatrace.Outputs
 
             bool? monitorFrames,
 
-            string? userAgent)
+            string? userAgent,
+
+            Outputs.BrowserMonitorScriptConfigurationUserCertificates? userCertificates)
         {
             Bandwidth = bandwidth;
             Blocks = blocks;
@@ -96,6 +102,7 @@ namespace Pulumiverse.Dynatrace.Outputs
             JavascriptSetttings = javascriptSetttings;
             MonitorFrames = monitorFrames;
             UserAgent = userAgent;
+            UserCertificates = userCertificates;
         }
     }
 }

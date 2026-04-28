@@ -22,6 +22,7 @@ class EndpointDetectionRulesOptinArgs:
                  enabled: pulumi.Input[_builtins.bool]):
         """
         The set of arguments for constructing a EndpointDetectionRulesOptin resource.
+
         :param pulumi.Input[_builtins.bool] enabled: This setting is enabled (`true`) or disabled (`false`)
         """
         pulumi.set(__self__, "enabled", enabled)
@@ -45,6 +46,7 @@ class _EndpointDetectionRulesOptinState:
                  enabled: Optional[pulumi.Input[_builtins.bool]] = None):
         """
         Input properties used for looking up and filtering EndpointDetectionRulesOptin resources.
+
         :param pulumi.Input[_builtins.bool] enabled: This setting is enabled (`true`) or disabled (`false`)
         """
         if enabled is not None:
@@ -80,14 +82,6 @@ class EndpointDetectionRulesOptin(pulumi.CustomResource):
 
         - Settings API - https://www.dynatrace.com/support/help/dynatrace-api/environment-api/settings (schemaId: `builtin:endpoint-detection-rules-opt-in`)
 
-        ## Resource Example Usage
-
-        ```python
-        import pulumi
-        import pulumiverse_dynatrace as dynatrace
-
-        _name_ = dynatrace.EndpointDetectionRulesOptin("#name#", enabled=True)
-        ```
 
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
@@ -108,14 +102,6 @@ class EndpointDetectionRulesOptin(pulumi.CustomResource):
 
         - Settings API - https://www.dynatrace.com/support/help/dynatrace-api/environment-api/settings (schemaId: `builtin:endpoint-detection-rules-opt-in`)
 
-        ## Resource Example Usage
-
-        ```python
-        import pulumi
-        import pulumiverse_dynatrace as dynatrace
-
-        _name_ = dynatrace.EndpointDetectionRulesOptin("#name#", enabled=True)
-        ```
 
         :param str resource_name: The name of the resource.
         :param EndpointDetectionRulesOptinArgs args: The arguments to use to populate this resource's properties.

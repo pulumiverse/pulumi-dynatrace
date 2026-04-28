@@ -32,7 +32,7 @@ namespace Pulumiverse.Dynatrace.Inputs
         public Input<bool> Enabled { get; set; } = null!;
 
         /// <summary>
-        /// The documentation of the entity selector can be found [here](https://dt-url.net/apientityselector).
+        /// Learn more about the [Entity selector](https://dt-url.net/apientityselector).
         /// </summary>
         [Input("entitySelector")]
         public Input<string>? EntitySelector { get; set; }

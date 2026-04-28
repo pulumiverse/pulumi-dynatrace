@@ -28,6 +28,7 @@ class CloudfoundryCredentialsArgs:
                  unknowns: Optional[pulumi.Input[_builtins.str]] = None):
         """
         The set of arguments for constructing a CloudfoundryCredentials resource.
+
         :param pulumi.Input[_builtins.str] api_url: The URL of the Cloud Foundry foundation credentials.  The URL must be valid according to RFC 2396.  Leading or trailing whitespaces are not allowed.
         :param pulumi.Input[_builtins.str] login_url: The login URL of the Cloud Foundry foundation credentials. The URL must be valid according to RFC 2396.  Leading or trailing whitespaces are not allowed.
         :param pulumi.Input[_builtins.str] username: The username of the Cloud Foundry foundation credentials.  Leading and trailing whitespaces are not allowed.
@@ -145,6 +146,7 @@ class _CloudfoundryCredentialsState:
                  username: Optional[pulumi.Input[_builtins.str]] = None):
         """
         Input properties used for looking up and filtering CloudfoundryCredentials resources.
+
         :param pulumi.Input[_builtins.bool] active: The monitoring is enabled (`true`) or disabled (`false`) for given credentials configuration.  If not set on creation, the `true` value is used.  If the field is omitted during an update, the old value remains unaffected.
         :param pulumi.Input[_builtins.str] api_url: The URL of the Cloud Foundry foundation credentials.  The URL must be valid according to RFC 2396.  Leading or trailing whitespaces are not allowed.
         :param pulumi.Input[_builtins.str] login_url: The login URL of the Cloud Foundry foundation credentials. The URL must be valid according to RFC 2396.  Leading or trailing whitespaces are not allowed.
@@ -268,7 +270,23 @@ class CloudfoundryCredentials(pulumi.CustomResource):
                  username: Optional[pulumi.Input[_builtins.str]] = None,
                  __props__=None):
         """
-        Create a CloudfoundryCredentials resource with the given unique name, props, and options.
+        !> This resource is utilizing an older API endpoint, please use CloudFoundry instead.
+
+        > This resource requires the API token scopes **Read configuration** (`ReadConfig`) and **Write configuration** (`WriteConfig`)
+
+        ## Dynatrace Documentation
+
+        - Cloud Foundry monitoring - https://www.dynatrace.com/support/help/how-to-use-dynatrace/infrastructure-monitoring/container-platform-monitoring/cloud-foundry-monitoring
+
+        - Cloud Foundry credentials API - https://www.dynatrace.com/support/help/dynatrace-api/configuration-api/cloud-foundry-foundations-credentials-api
+
+        ## Export Example Usage
+
+        - `terraform-provider-dynatrace -export CloudfoundryCredentials` downloads all existing Cloud Foundry credentials configuration
+
+        The full documentation of the export feature is available [here](https://dt-url.net/h203qmc).
+
+
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[_builtins.bool] active: The monitoring is enabled (`true`) or disabled (`false`) for given credentials configuration.  If not set on creation, the `true` value is used.  If the field is omitted during an update, the old value remains unaffected.
@@ -286,7 +304,23 @@ class CloudfoundryCredentials(pulumi.CustomResource):
                  args: CloudfoundryCredentialsArgs,
                  opts: Optional[pulumi.ResourceOptions] = None):
         """
-        Create a CloudfoundryCredentials resource with the given unique name, props, and options.
+        !> This resource is utilizing an older API endpoint, please use CloudFoundry instead.
+
+        > This resource requires the API token scopes **Read configuration** (`ReadConfig`) and **Write configuration** (`WriteConfig`)
+
+        ## Dynatrace Documentation
+
+        - Cloud Foundry monitoring - https://www.dynatrace.com/support/help/how-to-use-dynatrace/infrastructure-monitoring/container-platform-monitoring/cloud-foundry-monitoring
+
+        - Cloud Foundry credentials API - https://www.dynatrace.com/support/help/dynatrace-api/configuration-api/cloud-foundry-foundations-credentials-api
+
+        ## Export Example Usage
+
+        - `terraform-provider-dynatrace -export CloudfoundryCredentials` downloads all existing Cloud Foundry credentials configuration
+
+        The full documentation of the export feature is available [here](https://dt-url.net/h203qmc).
+
+
         :param str resource_name: The name of the resource.
         :param CloudfoundryCredentialsArgs args: The arguments to use to populate this resource's properties.
         :param pulumi.ResourceOptions opts: Options for the resource.

@@ -38,6 +38,7 @@ class AppsecNotificationArgs:
                  webhook_configuration: Optional[pulumi.Input['AppsecNotificationWebhookConfigurationArgs']] = None):
         """
         The set of arguments for constructing a AppsecNotification resource.
+
         :param pulumi.Input[_builtins.str] display_name: Display name of the security notification
         :param pulumi.Input[_builtins.bool] enabled: Enable/Disable the security notification, enabled (`true`) or disabled (`false`)
         :param pulumi.Input[_builtins.str] trigger: Security alert type, possible Values: `ATTACK_CANDIDATE`, `SECURITY_PROBLEM`
@@ -282,6 +283,7 @@ class _AppsecNotificationState:
                  webhook_configuration: Optional[pulumi.Input['AppsecNotificationWebhookConfigurationArgs']] = None):
         """
         Input properties used for looking up and filtering AppsecNotification resources.
+
         :param pulumi.Input[_builtins.str] attack_candidate_based_alerting_profile: For attack candidate alerts, select an [alerting profile](https://www.terraform.io/ui/settings/builtin:appsec.notification-attack-alerting-profile) to control the delivery of security notifications related to this integration.
         :param pulumi.Input['AppsecNotificationAttackCandidateBasedEmailPayloadArgs'] attack_candidate_based_email_payload: Attack candidate based email payload, required when `trigger` equals `ATTACK_CANDIDATE` and `type` equals `EMAIL`
         :param pulumi.Input['AppsecNotificationAttackCandidateBasedJiraPayloadArgs'] attack_candidate_based_jira_payload: Attack candidate based Jira payload, required when `trigger` equals `ATTACK_CANDIDATE` and `type` equals `JIRA`
@@ -533,7 +535,50 @@ class AppsecNotification(pulumi.CustomResource):
                  webhook_configuration: Optional[pulumi.Input[Union['AppsecNotificationWebhookConfigurationArgs', 'AppsecNotificationWebhookConfigurationArgsDict']]] = None,
                  __props__=None):
         """
-        Create a AppsecNotification resource with the given unique name, props, and options.
+        > This resource is excluded by default in the export utility since it requires the feature to be activated, please explicitly specify the resource to retrieve existing configuration.
+
+        > This resource requires the API token scopes **Read security problems** (`securityProblems.read`) and **Write security problems** (`securityProblems.write`)
+
+        ## Dynatrace Documentation
+
+        - Security notifications for vulnerabilities and attacks - https://www.dynatrace.com/support/help/platform-modules/application-security/security-notifications
+
+        - Settings API - https://www.dynatrace.com/support/help/dynatrace-api/environment-api/settings (schemaId: `builtin:appsec.notification-integration`)
+
+        ## Export Example Usage
+
+        - `terraform-provider-dynatrace -export AppsecNotification` downloads all existing security notifications
+
+        The full documentation of the export feature is available [here](https://dt-url.net/h203qmc).
+
+        ## Resource Example Usage
+
+        ```python
+        import pulumi
+        import json
+        import pulumiverse_dynatrace as dynatrace
+
+        terraform_security_problem_webhook_test = dynatrace.AppsecNotification("Terraform_Security_Problem_Webhook_Test",
+            type="WEBHOOK",
+            enabled=True,
+            display_name="Terraform Security Problem Webhook Test",
+            security_problem_based_alerting_profile="vu9U3hXa3q0AAAABACxidWlsdGluOmFwcHNlYy5ub3RpZmljYXRpb24tYWxlcnRpbmctcHJvZmlsZQAGdGVuYW50AAZ0ZW5hbnQAJDMyMDhkNWMyLTFlZmYtMzk5My1iNjMwLWI0MjQ5N2U4MDQ2Nr7vVN4V2t6t",
+            trigger="SECURITY_PROBLEM",
+            security_problem_based_webhook_payload={
+                "payload": json.dumps({
+                    "DavisSecurityScore": "{DavisSecurityScore}",
+                    "SecurityProblemId": "{SecurityProblemId}",
+                    "SecurityProblemUrl": "{SecurityProblemUrl}",
+                    "Severity": "{Severity}",
+                }),
+            },
+            webhook_configuration={
+                "accept_any_certificate": False,
+                "url": "https://www.dynatrace.com",
+            })
+        ```
+
+
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[_builtins.str] attack_candidate_based_alerting_profile: For attack candidate alerts, select an [alerting profile](https://www.terraform.io/ui/settings/builtin:appsec.notification-attack-alerting-profile) to control the delivery of security notifications related to this integration.
@@ -559,7 +604,50 @@ class AppsecNotification(pulumi.CustomResource):
                  args: AppsecNotificationArgs,
                  opts: Optional[pulumi.ResourceOptions] = None):
         """
-        Create a AppsecNotification resource with the given unique name, props, and options.
+        > This resource is excluded by default in the export utility since it requires the feature to be activated, please explicitly specify the resource to retrieve existing configuration.
+
+        > This resource requires the API token scopes **Read security problems** (`securityProblems.read`) and **Write security problems** (`securityProblems.write`)
+
+        ## Dynatrace Documentation
+
+        - Security notifications for vulnerabilities and attacks - https://www.dynatrace.com/support/help/platform-modules/application-security/security-notifications
+
+        - Settings API - https://www.dynatrace.com/support/help/dynatrace-api/environment-api/settings (schemaId: `builtin:appsec.notification-integration`)
+
+        ## Export Example Usage
+
+        - `terraform-provider-dynatrace -export AppsecNotification` downloads all existing security notifications
+
+        The full documentation of the export feature is available [here](https://dt-url.net/h203qmc).
+
+        ## Resource Example Usage
+
+        ```python
+        import pulumi
+        import json
+        import pulumiverse_dynatrace as dynatrace
+
+        terraform_security_problem_webhook_test = dynatrace.AppsecNotification("Terraform_Security_Problem_Webhook_Test",
+            type="WEBHOOK",
+            enabled=True,
+            display_name="Terraform Security Problem Webhook Test",
+            security_problem_based_alerting_profile="vu9U3hXa3q0AAAABACxidWlsdGluOmFwcHNlYy5ub3RpZmljYXRpb24tYWxlcnRpbmctcHJvZmlsZQAGdGVuYW50AAZ0ZW5hbnQAJDMyMDhkNWMyLTFlZmYtMzk5My1iNjMwLWI0MjQ5N2U4MDQ2Nr7vVN4V2t6t",
+            trigger="SECURITY_PROBLEM",
+            security_problem_based_webhook_payload={
+                "payload": json.dumps({
+                    "DavisSecurityScore": "{DavisSecurityScore}",
+                    "SecurityProblemId": "{SecurityProblemId}",
+                    "SecurityProblemUrl": "{SecurityProblemUrl}",
+                    "Severity": "{Severity}",
+                }),
+            },
+            webhook_configuration={
+                "accept_any_certificate": False,
+                "url": "https://www.dynatrace.com",
+            })
+        ```
+
+
         :param str resource_name: The name of the resource.
         :param AppsecNotificationArgs args: The arguments to use to populate this resource's properties.
         :param pulumi.ResourceOptions opts: Options for the resource.

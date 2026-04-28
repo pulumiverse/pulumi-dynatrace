@@ -31,14 +31,16 @@ class XmattersNotificationArgs:
                  name: Optional[pulumi.Input[_builtins.str]] = None):
         """
         The set of arguments for constructing a XmattersNotification resource.
-        :param pulumi.Input[_builtins.bool] active: The configuration is enabled (`true`) or disabled (`false`)
-        :param pulumi.Input[_builtins.str] payload: The content of the notification message. You can use the following placeholders:  * `{ImpactedEntities}`: Details about the entities impacted by the problem in form of a JSON array.  * `{ImpactedEntity}`: The entity impacted by the problem or *X* impacted entities.  * `{PID}`: The ID of the reported problem.  * `{ProblemDetailsHTML}`: All problem event details, including root cause, as an HTML-formatted string.  * `{ProblemDetailsJSON}`: All problem event details, including root cause, as a JSON object.  * `{ProblemDetailsMarkdown}`: All problem event details, including root cause, as a [Markdown-formatted](https://www.markdownguide.org/cheat-sheet/) string.  * `{ProblemDetailsText}`: All problem event details, including root cause, as a text-formatted string.  * `{ProblemID}`: The display number of the reported problem.  * `{ProblemImpact}`: The [impact level](https://www.dynatrace.com/support/help/shortlink/impact-analysis) of the problem. Possible values are `APPLICATION`, `SERVICE`, and `INFRASTRUCTURE`.  * `{ProblemSeverity}`: The [severity level](https://www.dynatrace.com/support/help/shortlink/event-types) of the problem. Possible values are `AVAILABILITY`, `ERROR`, `PERFORMANCE`, `RESOURCE_CONTENTION`, and `CUSTOM_ALERT`.  * `{ProblemTitle}`: A short description of the problem.  * `{ProblemURL}`: The URL of the problem within Dynatrace.  * `{State}`: The state of the problem. Possible values are `OPEN` and `RESOLVED`.  * `{Tags}`: The list of tags that are defined for all impacted entities, separated by commas
+
+        :param pulumi.Input[_builtins.bool] active: This setting is enabled (`true`) or disabled (`false`)
+        :param pulumi.Input[_builtins.str] payload: The content of the notification message. Type '{' for placeholder suggestions.. #### Available placeholders
+               **{ImpactedEntities}**: Details about the entities impacted by the problem in form of a json array.
         :param pulumi.Input[_builtins.str] profile: The ID of the associated alerting profile
-        :param pulumi.Input[_builtins.str] url: The URL of the WebHook endpoint
-        :param pulumi.Input['XmattersNotificationHeadersArgs'] headers: A list of the additional HTTP headers
-        :param pulumi.Input[_builtins.bool] insecure: Accept any, including self-signed and invalid, SSL certificate (`true`) or only trusted (`false`) certificates
+        :param pulumi.Input[_builtins.str] url: The URL of the xMatters webhook.
+        :param pulumi.Input['XmattersNotificationHeadersArgs'] headers: A list of the additional HTTP headers.
+        :param pulumi.Input[_builtins.bool] insecure: Accept any SSL certificate (including self-signed and invalid certificates)
         :param pulumi.Input[_builtins.str] legacy_id: The ID of these settings when referred to from resources requiring the REST API V1 keys
-        :param pulumi.Input[_builtins.str] name: The name of the notification configuration
+        :param pulumi.Input[_builtins.str] name: The name of the notification configuration.
         """
         pulumi.set(__self__, "active", active)
         pulumi.set(__self__, "payload", payload)
@@ -57,7 +59,7 @@ class XmattersNotificationArgs:
     @pulumi.getter
     def active(self) -> pulumi.Input[_builtins.bool]:
         """
-        The configuration is enabled (`true`) or disabled (`false`)
+        This setting is enabled (`true`) or disabled (`false`)
         """
         return pulumi.get(self, "active")
 
@@ -69,7 +71,8 @@ class XmattersNotificationArgs:
     @pulumi.getter
     def payload(self) -> pulumi.Input[_builtins.str]:
         """
-        The content of the notification message. You can use the following placeholders:  * `{ImpactedEntities}`: Details about the entities impacted by the problem in form of a JSON array.  * `{ImpactedEntity}`: The entity impacted by the problem or *X* impacted entities.  * `{PID}`: The ID of the reported problem.  * `{ProblemDetailsHTML}`: All problem event details, including root cause, as an HTML-formatted string.  * `{ProblemDetailsJSON}`: All problem event details, including root cause, as a JSON object.  * `{ProblemDetailsMarkdown}`: All problem event details, including root cause, as a [Markdown-formatted](https://www.markdownguide.org/cheat-sheet/) string.  * `{ProblemDetailsText}`: All problem event details, including root cause, as a text-formatted string.  * `{ProblemID}`: The display number of the reported problem.  * `{ProblemImpact}`: The [impact level](https://www.dynatrace.com/support/help/shortlink/impact-analysis) of the problem. Possible values are `APPLICATION`, `SERVICE`, and `INFRASTRUCTURE`.  * `{ProblemSeverity}`: The [severity level](https://www.dynatrace.com/support/help/shortlink/event-types) of the problem. Possible values are `AVAILABILITY`, `ERROR`, `PERFORMANCE`, `RESOURCE_CONTENTION`, and `CUSTOM_ALERT`.  * `{ProblemTitle}`: A short description of the problem.  * `{ProblemURL}`: The URL of the problem within Dynatrace.  * `{State}`: The state of the problem. Possible values are `OPEN` and `RESOLVED`.  * `{Tags}`: The list of tags that are defined for all impacted entities, separated by commas
+        The content of the notification message. Type '{' for placeholder suggestions.. #### Available placeholders
+        **{ImpactedEntities}**: Details about the entities impacted by the problem in form of a json array.
         """
         return pulumi.get(self, "payload")
 
@@ -93,7 +96,7 @@ class XmattersNotificationArgs:
     @pulumi.getter
     def url(self) -> pulumi.Input[_builtins.str]:
         """
-        The URL of the WebHook endpoint
+        The URL of the xMatters webhook.
         """
         return pulumi.get(self, "url")
 
@@ -105,7 +108,7 @@ class XmattersNotificationArgs:
     @pulumi.getter
     def headers(self) -> Optional[pulumi.Input['XmattersNotificationHeadersArgs']]:
         """
-        A list of the additional HTTP headers
+        A list of the additional HTTP headers.
         """
         return pulumi.get(self, "headers")
 
@@ -117,7 +120,7 @@ class XmattersNotificationArgs:
     @pulumi.getter
     def insecure(self) -> Optional[pulumi.Input[_builtins.bool]]:
         """
-        Accept any, including self-signed and invalid, SSL certificate (`true`) or only trusted (`false`) certificates
+        Accept any SSL certificate (including self-signed and invalid certificates)
         """
         return pulumi.get(self, "insecure")
 
@@ -141,7 +144,7 @@ class XmattersNotificationArgs:
     @pulumi.getter
     def name(self) -> Optional[pulumi.Input[_builtins.str]]:
         """
-        The name of the notification configuration
+        The name of the notification configuration.
         """
         return pulumi.get(self, "name")
 
@@ -163,14 +166,16 @@ class _XmattersNotificationState:
                  url: Optional[pulumi.Input[_builtins.str]] = None):
         """
         Input properties used for looking up and filtering XmattersNotification resources.
-        :param pulumi.Input[_builtins.bool] active: The configuration is enabled (`true`) or disabled (`false`)
-        :param pulumi.Input['XmattersNotificationHeadersArgs'] headers: A list of the additional HTTP headers
-        :param pulumi.Input[_builtins.bool] insecure: Accept any, including self-signed and invalid, SSL certificate (`true`) or only trusted (`false`) certificates
+
+        :param pulumi.Input[_builtins.bool] active: This setting is enabled (`true`) or disabled (`false`)
+        :param pulumi.Input['XmattersNotificationHeadersArgs'] headers: A list of the additional HTTP headers.
+        :param pulumi.Input[_builtins.bool] insecure: Accept any SSL certificate (including self-signed and invalid certificates)
         :param pulumi.Input[_builtins.str] legacy_id: The ID of these settings when referred to from resources requiring the REST API V1 keys
-        :param pulumi.Input[_builtins.str] name: The name of the notification configuration
-        :param pulumi.Input[_builtins.str] payload: The content of the notification message. You can use the following placeholders:  * `{ImpactedEntities}`: Details about the entities impacted by the problem in form of a JSON array.  * `{ImpactedEntity}`: The entity impacted by the problem or *X* impacted entities.  * `{PID}`: The ID of the reported problem.  * `{ProblemDetailsHTML}`: All problem event details, including root cause, as an HTML-formatted string.  * `{ProblemDetailsJSON}`: All problem event details, including root cause, as a JSON object.  * `{ProblemDetailsMarkdown}`: All problem event details, including root cause, as a [Markdown-formatted](https://www.markdownguide.org/cheat-sheet/) string.  * `{ProblemDetailsText}`: All problem event details, including root cause, as a text-formatted string.  * `{ProblemID}`: The display number of the reported problem.  * `{ProblemImpact}`: The [impact level](https://www.dynatrace.com/support/help/shortlink/impact-analysis) of the problem. Possible values are `APPLICATION`, `SERVICE`, and `INFRASTRUCTURE`.  * `{ProblemSeverity}`: The [severity level](https://www.dynatrace.com/support/help/shortlink/event-types) of the problem. Possible values are `AVAILABILITY`, `ERROR`, `PERFORMANCE`, `RESOURCE_CONTENTION`, and `CUSTOM_ALERT`.  * `{ProblemTitle}`: A short description of the problem.  * `{ProblemURL}`: The URL of the problem within Dynatrace.  * `{State}`: The state of the problem. Possible values are `OPEN` and `RESOLVED`.  * `{Tags}`: The list of tags that are defined for all impacted entities, separated by commas
+        :param pulumi.Input[_builtins.str] name: The name of the notification configuration.
+        :param pulumi.Input[_builtins.str] payload: The content of the notification message. Type '{' for placeholder suggestions.. #### Available placeholders
+               **{ImpactedEntities}**: Details about the entities impacted by the problem in form of a json array.
         :param pulumi.Input[_builtins.str] profile: The ID of the associated alerting profile
-        :param pulumi.Input[_builtins.str] url: The URL of the WebHook endpoint
+        :param pulumi.Input[_builtins.str] url: The URL of the xMatters webhook.
         """
         if active is not None:
             pulumi.set(__self__, "active", active)
@@ -193,7 +198,7 @@ class _XmattersNotificationState:
     @pulumi.getter
     def active(self) -> Optional[pulumi.Input[_builtins.bool]]:
         """
-        The configuration is enabled (`true`) or disabled (`false`)
+        This setting is enabled (`true`) or disabled (`false`)
         """
         return pulumi.get(self, "active")
 
@@ -205,7 +210,7 @@ class _XmattersNotificationState:
     @pulumi.getter
     def headers(self) -> Optional[pulumi.Input['XmattersNotificationHeadersArgs']]:
         """
-        A list of the additional HTTP headers
+        A list of the additional HTTP headers.
         """
         return pulumi.get(self, "headers")
 
@@ -217,7 +222,7 @@ class _XmattersNotificationState:
     @pulumi.getter
     def insecure(self) -> Optional[pulumi.Input[_builtins.bool]]:
         """
-        Accept any, including self-signed and invalid, SSL certificate (`true`) or only trusted (`false`) certificates
+        Accept any SSL certificate (including self-signed and invalid certificates)
         """
         return pulumi.get(self, "insecure")
 
@@ -241,7 +246,7 @@ class _XmattersNotificationState:
     @pulumi.getter
     def name(self) -> Optional[pulumi.Input[_builtins.str]]:
         """
-        The name of the notification configuration
+        The name of the notification configuration.
         """
         return pulumi.get(self, "name")
 
@@ -253,7 +258,8 @@ class _XmattersNotificationState:
     @pulumi.getter
     def payload(self) -> Optional[pulumi.Input[_builtins.str]]:
         """
-        The content of the notification message. You can use the following placeholders:  * `{ImpactedEntities}`: Details about the entities impacted by the problem in form of a JSON array.  * `{ImpactedEntity}`: The entity impacted by the problem or *X* impacted entities.  * `{PID}`: The ID of the reported problem.  * `{ProblemDetailsHTML}`: All problem event details, including root cause, as an HTML-formatted string.  * `{ProblemDetailsJSON}`: All problem event details, including root cause, as a JSON object.  * `{ProblemDetailsMarkdown}`: All problem event details, including root cause, as a [Markdown-formatted](https://www.markdownguide.org/cheat-sheet/) string.  * `{ProblemDetailsText}`: All problem event details, including root cause, as a text-formatted string.  * `{ProblemID}`: The display number of the reported problem.  * `{ProblemImpact}`: The [impact level](https://www.dynatrace.com/support/help/shortlink/impact-analysis) of the problem. Possible values are `APPLICATION`, `SERVICE`, and `INFRASTRUCTURE`.  * `{ProblemSeverity}`: The [severity level](https://www.dynatrace.com/support/help/shortlink/event-types) of the problem. Possible values are `AVAILABILITY`, `ERROR`, `PERFORMANCE`, `RESOURCE_CONTENTION`, and `CUSTOM_ALERT`.  * `{ProblemTitle}`: A short description of the problem.  * `{ProblemURL}`: The URL of the problem within Dynatrace.  * `{State}`: The state of the problem. Possible values are `OPEN` and `RESOLVED`.  * `{Tags}`: The list of tags that are defined for all impacted entities, separated by commas
+        The content of the notification message. Type '{' for placeholder suggestions.. #### Available placeholders
+        **{ImpactedEntities}**: Details about the entities impacted by the problem in form of a json array.
         """
         return pulumi.get(self, "payload")
 
@@ -277,7 +283,7 @@ class _XmattersNotificationState:
     @pulumi.getter
     def url(self) -> Optional[pulumi.Input[_builtins.str]]:
         """
-        The URL of the WebHook endpoint
+        The URL of the xMatters webhook.
         """
         return pulumi.get(self, "url")
 
@@ -302,17 +308,32 @@ class XmattersNotification(pulumi.CustomResource):
                  url: Optional[pulumi.Input[_builtins.str]] = None,
                  __props__=None):
         """
-        Create a XmattersNotification resource with the given unique name, props, and options.
+        > This resource requires the API token scopes **Read settings** (`settings.read`) and **Write settings** (`settings.write`)
+
+        ## Dynatrace Documentation
+
+        - xMatters integration - https://www.dynatrace.com/support/help/setup-and-configuration/integrations/problem-notifications/xmatters-integration
+
+        - Settings API - https://www.dynatrace.com/support/help/dynatrace-api/environment-api/settings (schemaId: `builtin:problem.notifications`)
+
+        ## Export Example Usage
+
+        - `terraform-provider-dynatrace -export XmattersNotification` downloads the existing problem notifications for xMatters
+
+        The full documentation of the export feature is available [here](https://dt-url.net/h203qmc).
+
+
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
-        :param pulumi.Input[_builtins.bool] active: The configuration is enabled (`true`) or disabled (`false`)
-        :param pulumi.Input[Union['XmattersNotificationHeadersArgs', 'XmattersNotificationHeadersArgsDict']] headers: A list of the additional HTTP headers
-        :param pulumi.Input[_builtins.bool] insecure: Accept any, including self-signed and invalid, SSL certificate (`true`) or only trusted (`false`) certificates
+        :param pulumi.Input[_builtins.bool] active: This setting is enabled (`true`) or disabled (`false`)
+        :param pulumi.Input[Union['XmattersNotificationHeadersArgs', 'XmattersNotificationHeadersArgsDict']] headers: A list of the additional HTTP headers.
+        :param pulumi.Input[_builtins.bool] insecure: Accept any SSL certificate (including self-signed and invalid certificates)
         :param pulumi.Input[_builtins.str] legacy_id: The ID of these settings when referred to from resources requiring the REST API V1 keys
-        :param pulumi.Input[_builtins.str] name: The name of the notification configuration
-        :param pulumi.Input[_builtins.str] payload: The content of the notification message. You can use the following placeholders:  * `{ImpactedEntities}`: Details about the entities impacted by the problem in form of a JSON array.  * `{ImpactedEntity}`: The entity impacted by the problem or *X* impacted entities.  * `{PID}`: The ID of the reported problem.  * `{ProblemDetailsHTML}`: All problem event details, including root cause, as an HTML-formatted string.  * `{ProblemDetailsJSON}`: All problem event details, including root cause, as a JSON object.  * `{ProblemDetailsMarkdown}`: All problem event details, including root cause, as a [Markdown-formatted](https://www.markdownguide.org/cheat-sheet/) string.  * `{ProblemDetailsText}`: All problem event details, including root cause, as a text-formatted string.  * `{ProblemID}`: The display number of the reported problem.  * `{ProblemImpact}`: The [impact level](https://www.dynatrace.com/support/help/shortlink/impact-analysis) of the problem. Possible values are `APPLICATION`, `SERVICE`, and `INFRASTRUCTURE`.  * `{ProblemSeverity}`: The [severity level](https://www.dynatrace.com/support/help/shortlink/event-types) of the problem. Possible values are `AVAILABILITY`, `ERROR`, `PERFORMANCE`, `RESOURCE_CONTENTION`, and `CUSTOM_ALERT`.  * `{ProblemTitle}`: A short description of the problem.  * `{ProblemURL}`: The URL of the problem within Dynatrace.  * `{State}`: The state of the problem. Possible values are `OPEN` and `RESOLVED`.  * `{Tags}`: The list of tags that are defined for all impacted entities, separated by commas
+        :param pulumi.Input[_builtins.str] name: The name of the notification configuration.
+        :param pulumi.Input[_builtins.str] payload: The content of the notification message. Type '{' for placeholder suggestions.. #### Available placeholders
+               **{ImpactedEntities}**: Details about the entities impacted by the problem in form of a json array.
         :param pulumi.Input[_builtins.str] profile: The ID of the associated alerting profile
-        :param pulumi.Input[_builtins.str] url: The URL of the WebHook endpoint
+        :param pulumi.Input[_builtins.str] url: The URL of the xMatters webhook.
         """
         ...
     @overload
@@ -321,7 +342,21 @@ class XmattersNotification(pulumi.CustomResource):
                  args: XmattersNotificationArgs,
                  opts: Optional[pulumi.ResourceOptions] = None):
         """
-        Create a XmattersNotification resource with the given unique name, props, and options.
+        > This resource requires the API token scopes **Read settings** (`settings.read`) and **Write settings** (`settings.write`)
+
+        ## Dynatrace Documentation
+
+        - xMatters integration - https://www.dynatrace.com/support/help/setup-and-configuration/integrations/problem-notifications/xmatters-integration
+
+        - Settings API - https://www.dynatrace.com/support/help/dynatrace-api/environment-api/settings (schemaId: `builtin:problem.notifications`)
+
+        ## Export Example Usage
+
+        - `terraform-provider-dynatrace -export XmattersNotification` downloads the existing problem notifications for xMatters
+
+        The full documentation of the export feature is available [here](https://dt-url.net/h203qmc).
+
+
         :param str resource_name: The name of the resource.
         :param XmattersNotificationArgs args: The arguments to use to populate this resource's properties.
         :param pulumi.ResourceOptions opts: Options for the resource.
@@ -395,14 +430,15 @@ class XmattersNotification(pulumi.CustomResource):
         :param str resource_name: The unique name of the resulting resource.
         :param pulumi.Input[str] id: The unique provider ID of the resource to lookup.
         :param pulumi.ResourceOptions opts: Options for the resource.
-        :param pulumi.Input[_builtins.bool] active: The configuration is enabled (`true`) or disabled (`false`)
-        :param pulumi.Input[Union['XmattersNotificationHeadersArgs', 'XmattersNotificationHeadersArgsDict']] headers: A list of the additional HTTP headers
-        :param pulumi.Input[_builtins.bool] insecure: Accept any, including self-signed and invalid, SSL certificate (`true`) or only trusted (`false`) certificates
+        :param pulumi.Input[_builtins.bool] active: This setting is enabled (`true`) or disabled (`false`)
+        :param pulumi.Input[Union['XmattersNotificationHeadersArgs', 'XmattersNotificationHeadersArgsDict']] headers: A list of the additional HTTP headers.
+        :param pulumi.Input[_builtins.bool] insecure: Accept any SSL certificate (including self-signed and invalid certificates)
         :param pulumi.Input[_builtins.str] legacy_id: The ID of these settings when referred to from resources requiring the REST API V1 keys
-        :param pulumi.Input[_builtins.str] name: The name of the notification configuration
-        :param pulumi.Input[_builtins.str] payload: The content of the notification message. You can use the following placeholders:  * `{ImpactedEntities}`: Details about the entities impacted by the problem in form of a JSON array.  * `{ImpactedEntity}`: The entity impacted by the problem or *X* impacted entities.  * `{PID}`: The ID of the reported problem.  * `{ProblemDetailsHTML}`: All problem event details, including root cause, as an HTML-formatted string.  * `{ProblemDetailsJSON}`: All problem event details, including root cause, as a JSON object.  * `{ProblemDetailsMarkdown}`: All problem event details, including root cause, as a [Markdown-formatted](https://www.markdownguide.org/cheat-sheet/) string.  * `{ProblemDetailsText}`: All problem event details, including root cause, as a text-formatted string.  * `{ProblemID}`: The display number of the reported problem.  * `{ProblemImpact}`: The [impact level](https://www.dynatrace.com/support/help/shortlink/impact-analysis) of the problem. Possible values are `APPLICATION`, `SERVICE`, and `INFRASTRUCTURE`.  * `{ProblemSeverity}`: The [severity level](https://www.dynatrace.com/support/help/shortlink/event-types) of the problem. Possible values are `AVAILABILITY`, `ERROR`, `PERFORMANCE`, `RESOURCE_CONTENTION`, and `CUSTOM_ALERT`.  * `{ProblemTitle}`: A short description of the problem.  * `{ProblemURL}`: The URL of the problem within Dynatrace.  * `{State}`: The state of the problem. Possible values are `OPEN` and `RESOLVED`.  * `{Tags}`: The list of tags that are defined for all impacted entities, separated by commas
+        :param pulumi.Input[_builtins.str] name: The name of the notification configuration.
+        :param pulumi.Input[_builtins.str] payload: The content of the notification message. Type '{' for placeholder suggestions.. #### Available placeholders
+               **{ImpactedEntities}**: Details about the entities impacted by the problem in form of a json array.
         :param pulumi.Input[_builtins.str] profile: The ID of the associated alerting profile
-        :param pulumi.Input[_builtins.str] url: The URL of the WebHook endpoint
+        :param pulumi.Input[_builtins.str] url: The URL of the xMatters webhook.
         """
         opts = pulumi.ResourceOptions.merge(opts, pulumi.ResourceOptions(id=id))
 
@@ -422,7 +458,7 @@ class XmattersNotification(pulumi.CustomResource):
     @pulumi.getter
     def active(self) -> pulumi.Output[_builtins.bool]:
         """
-        The configuration is enabled (`true`) or disabled (`false`)
+        This setting is enabled (`true`) or disabled (`false`)
         """
         return pulumi.get(self, "active")
 
@@ -430,7 +466,7 @@ class XmattersNotification(pulumi.CustomResource):
     @pulumi.getter
     def headers(self) -> pulumi.Output[Optional['outputs.XmattersNotificationHeaders']]:
         """
-        A list of the additional HTTP headers
+        A list of the additional HTTP headers.
         """
         return pulumi.get(self, "headers")
 
@@ -438,7 +474,7 @@ class XmattersNotification(pulumi.CustomResource):
     @pulumi.getter
     def insecure(self) -> pulumi.Output[Optional[_builtins.bool]]:
         """
-        Accept any, including self-signed and invalid, SSL certificate (`true`) or only trusted (`false`) certificates
+        Accept any SSL certificate (including self-signed and invalid certificates)
         """
         return pulumi.get(self, "insecure")
 
@@ -454,7 +490,7 @@ class XmattersNotification(pulumi.CustomResource):
     @pulumi.getter
     def name(self) -> pulumi.Output[_builtins.str]:
         """
-        The name of the notification configuration
+        The name of the notification configuration.
         """
         return pulumi.get(self, "name")
 
@@ -462,7 +498,8 @@ class XmattersNotification(pulumi.CustomResource):
     @pulumi.getter
     def payload(self) -> pulumi.Output[_builtins.str]:
         """
-        The content of the notification message. You can use the following placeholders:  * `{ImpactedEntities}`: Details about the entities impacted by the problem in form of a JSON array.  * `{ImpactedEntity}`: The entity impacted by the problem or *X* impacted entities.  * `{PID}`: The ID of the reported problem.  * `{ProblemDetailsHTML}`: All problem event details, including root cause, as an HTML-formatted string.  * `{ProblemDetailsJSON}`: All problem event details, including root cause, as a JSON object.  * `{ProblemDetailsMarkdown}`: All problem event details, including root cause, as a [Markdown-formatted](https://www.markdownguide.org/cheat-sheet/) string.  * `{ProblemDetailsText}`: All problem event details, including root cause, as a text-formatted string.  * `{ProblemID}`: The display number of the reported problem.  * `{ProblemImpact}`: The [impact level](https://www.dynatrace.com/support/help/shortlink/impact-analysis) of the problem. Possible values are `APPLICATION`, `SERVICE`, and `INFRASTRUCTURE`.  * `{ProblemSeverity}`: The [severity level](https://www.dynatrace.com/support/help/shortlink/event-types) of the problem. Possible values are `AVAILABILITY`, `ERROR`, `PERFORMANCE`, `RESOURCE_CONTENTION`, and `CUSTOM_ALERT`.  * `{ProblemTitle}`: A short description of the problem.  * `{ProblemURL}`: The URL of the problem within Dynatrace.  * `{State}`: The state of the problem. Possible values are `OPEN` and `RESOLVED`.  * `{Tags}`: The list of tags that are defined for all impacted entities, separated by commas
+        The content of the notification message. Type '{' for placeholder suggestions.. #### Available placeholders
+        **{ImpactedEntities}**: Details about the entities impacted by the problem in form of a json array.
         """
         return pulumi.get(self, "payload")
 
@@ -478,7 +515,7 @@ class XmattersNotification(pulumi.CustomResource):
     @pulumi.getter
     def url(self) -> pulumi.Output[_builtins.str]:
         """
-        The URL of the WebHook endpoint
+        The URL of the xMatters webhook.
         """
         return pulumi.get(self, "url")
 

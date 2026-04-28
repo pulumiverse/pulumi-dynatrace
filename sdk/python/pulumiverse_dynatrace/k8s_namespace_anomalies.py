@@ -29,6 +29,7 @@ class K8sNamespaceAnomaliesArgs:
                  scope: Optional[pulumi.Input[_builtins.str]] = None):
         """
         The set of arguments for constructing a K8sNamespaceAnomalies resource.
+
         :param pulumi.Input['K8sNamespaceAnomaliesCpuLimitsQuotaSaturationArgs'] cpu_limits_quota_saturation: Alerts if almost no CPU-limit quota left in namespace
         :param pulumi.Input['K8sNamespaceAnomaliesCpuRequestsQuotaSaturationArgs'] cpu_requests_quota_saturation: Alerts if almost no CPU-request quota left in namespace
         :param pulumi.Input['K8sNamespaceAnomaliesMemoryLimitsQuotaSaturationArgs'] memory_limits_quota_saturation: Alerts if almost no memory-limit quota left in namespace
@@ -128,6 +129,7 @@ class _K8sNamespaceAnomaliesState:
                  scope: Optional[pulumi.Input[_builtins.str]] = None):
         """
         Input properties used for looking up and filtering K8sNamespaceAnomalies resources.
+
         :param pulumi.Input['K8sNamespaceAnomaliesCpuLimitsQuotaSaturationArgs'] cpu_limits_quota_saturation: Alerts if almost no CPU-limit quota left in namespace
         :param pulumi.Input['K8sNamespaceAnomaliesCpuRequestsQuotaSaturationArgs'] cpu_requests_quota_saturation: Alerts if almost no CPU-request quota left in namespace
         :param pulumi.Input['K8sNamespaceAnomaliesMemoryLimitsQuotaSaturationArgs'] memory_limits_quota_saturation: Alerts if almost no memory-limit quota left in namespace
@@ -235,7 +237,21 @@ class K8sNamespaceAnomalies(pulumi.CustomResource):
                  scope: Optional[pulumi.Input[_builtins.str]] = None,
                  __props__=None):
         """
-        Create a K8sNamespaceAnomalies resource with the given unique name, props, and options.
+        > This resource requires the API token scopes **Read settings** (`settings.read`) and **Write settings** (`settings.write`)
+
+        ## Dynatrace Documentation
+
+        - Alert on common Kubernetes/OpenShift issues - https://www.dynatrace.com/support/help/platform-modules/infrastructure-monitoring/container-platform-monitoring/kubernetes-monitoring/alert-on-kubernetes-issues
+
+        - Settings API - https://www.dynatrace.com/support/help/dynatrace-api/environment-api/settings (schemaId: `builtin:anomaly-detection.kubernetes.namespace`)
+
+        ## Export Example Usage
+
+        - `terraform-provider-dynatrace -export K8sNamespaceAnomalies` downloads all existing Kubernetes namespace anomaly configuration
+
+        The full documentation of the export feature is available [here](https://dt-url.net/h203qmc).
+
+
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[Union['K8sNamespaceAnomaliesCpuLimitsQuotaSaturationArgs', 'K8sNamespaceAnomaliesCpuLimitsQuotaSaturationArgsDict']] cpu_limits_quota_saturation: Alerts if almost no CPU-limit quota left in namespace
@@ -252,7 +268,21 @@ class K8sNamespaceAnomalies(pulumi.CustomResource):
                  args: K8sNamespaceAnomaliesArgs,
                  opts: Optional[pulumi.ResourceOptions] = None):
         """
-        Create a K8sNamespaceAnomalies resource with the given unique name, props, and options.
+        > This resource requires the API token scopes **Read settings** (`settings.read`) and **Write settings** (`settings.write`)
+
+        ## Dynatrace Documentation
+
+        - Alert on common Kubernetes/OpenShift issues - https://www.dynatrace.com/support/help/platform-modules/infrastructure-monitoring/container-platform-monitoring/kubernetes-monitoring/alert-on-kubernetes-issues
+
+        - Settings API - https://www.dynatrace.com/support/help/dynatrace-api/environment-api/settings (schemaId: `builtin:anomaly-detection.kubernetes.namespace`)
+
+        ## Export Example Usage
+
+        - `terraform-provider-dynatrace -export K8sNamespaceAnomalies` downloads all existing Kubernetes namespace anomaly configuration
+
+        The full documentation of the export feature is available [here](https://dt-url.net/h203qmc).
+
+
         :param str resource_name: The name of the resource.
         :param K8sNamespaceAnomaliesArgs args: The arguments to use to populate this resource's properties.
         :param pulumi.ResourceOptions opts: Options for the resource.

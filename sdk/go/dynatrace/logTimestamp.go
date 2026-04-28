@@ -12,6 +12,19 @@ import (
 	"github.com/pulumiverse/pulumi-dynatrace/sdk/go/dynatrace/internal"
 )
 
+// > This resource requires the API token scopes **Read settings** (`settings.read`) and **Write settings** (`settings.write`)
+//
+// ## Dynatrace Documentation
+//
+// - Log timestamp configuration - https://www.dynatrace.com/support/help/observe-and-explore/logs/log-monitoring/log-monitoring-configuration/timestamp-configuration
+//
+// - Settings API - https://www.dynatrace.com/support/help/dynatrace-api/environment-api/settings (schemaId: `builtin:logmonitoring.timestamp-configuration`)
+//
+// ## Export Example Usage
+//
+// - `terraform-provider-dynatrace -export LogTimestamp` downloads all existing log timestamp/splitting patterns
+//
+// The full documentation of the export feature is available [here](https://dt-url.net/h203qmc).
 type LogTimestamp struct {
 	pulumi.CustomResourceState
 
@@ -27,10 +40,14 @@ type LogTimestamp struct {
 	EntryBoundary LogTimestampEntryBoundaryPtrOutput `pulumi:"entryBoundary"`
 	// Because this resource allows for ordering you may specify the ID of the resource instance that comes before this instance regarding order. If not specified when creating the setting will be added to the end of the list. If not specified during update the order will remain untouched
 	InsertAfter pulumi.StringOutput `pulumi:"insertAfter"`
+	// Detect JSON format
+	JsonConfiguration LogTimestampJsonConfigurationPtrOutput `pulumi:"jsonConfiguration"`
 	// no documentation available
 	Matchers LogTimestampMatchersPtrOutput `pulumi:"matchers"`
 	// The scope of this setting (HOST, KUBERNETES*CLUSTER, HOST*GROUP). Omit this property if you want to cover the whole environment.
 	Scope pulumi.StringPtrOutput `pulumi:"scope"`
+	// Don't parse timestamps in lines starting with white character
+	SkipIndentedLines pulumi.BoolPtrOutput `pulumi:"skipIndentedLines"`
 	// Timezone
 	Timezone pulumi.StringOutput `pulumi:"timezone"`
 }
@@ -89,10 +106,14 @@ type logTimestampState struct {
 	EntryBoundary *LogTimestampEntryBoundary `pulumi:"entryBoundary"`
 	// Because this resource allows for ordering you may specify the ID of the resource instance that comes before this instance regarding order. If not specified when creating the setting will be added to the end of the list. If not specified during update the order will remain untouched
 	InsertAfter *string `pulumi:"insertAfter"`
+	// Detect JSON format
+	JsonConfiguration *LogTimestampJsonConfiguration `pulumi:"jsonConfiguration"`
 	// no documentation available
 	Matchers *LogTimestampMatchers `pulumi:"matchers"`
 	// The scope of this setting (HOST, KUBERNETES*CLUSTER, HOST*GROUP). Omit this property if you want to cover the whole environment.
 	Scope *string `pulumi:"scope"`
+	// Don't parse timestamps in lines starting with white character
+	SkipIndentedLines *bool `pulumi:"skipIndentedLines"`
 	// Timezone
 	Timezone *string `pulumi:"timezone"`
 }
@@ -110,10 +131,14 @@ type LogTimestampState struct {
 	EntryBoundary LogTimestampEntryBoundaryPtrInput
 	// Because this resource allows for ordering you may specify the ID of the resource instance that comes before this instance regarding order. If not specified when creating the setting will be added to the end of the list. If not specified during update the order will remain untouched
 	InsertAfter pulumi.StringPtrInput
+	// Detect JSON format
+	JsonConfiguration LogTimestampJsonConfigurationPtrInput
 	// no documentation available
 	Matchers LogTimestampMatchersPtrInput
 	// The scope of this setting (HOST, KUBERNETES*CLUSTER, HOST*GROUP). Omit this property if you want to cover the whole environment.
 	Scope pulumi.StringPtrInput
+	// Don't parse timestamps in lines starting with white character
+	SkipIndentedLines pulumi.BoolPtrInput
 	// Timezone
 	Timezone pulumi.StringPtrInput
 }
@@ -135,10 +160,14 @@ type logTimestampArgs struct {
 	EntryBoundary *LogTimestampEntryBoundary `pulumi:"entryBoundary"`
 	// Because this resource allows for ordering you may specify the ID of the resource instance that comes before this instance regarding order. If not specified when creating the setting will be added to the end of the list. If not specified during update the order will remain untouched
 	InsertAfter *string `pulumi:"insertAfter"`
+	// Detect JSON format
+	JsonConfiguration *LogTimestampJsonConfiguration `pulumi:"jsonConfiguration"`
 	// no documentation available
 	Matchers *LogTimestampMatchers `pulumi:"matchers"`
 	// The scope of this setting (HOST, KUBERNETES*CLUSTER, HOST*GROUP). Omit this property if you want to cover the whole environment.
 	Scope *string `pulumi:"scope"`
+	// Don't parse timestamps in lines starting with white character
+	SkipIndentedLines *bool `pulumi:"skipIndentedLines"`
 	// Timezone
 	Timezone string `pulumi:"timezone"`
 }
@@ -157,10 +186,14 @@ type LogTimestampArgs struct {
 	EntryBoundary LogTimestampEntryBoundaryPtrInput
 	// Because this resource allows for ordering you may specify the ID of the resource instance that comes before this instance regarding order. If not specified when creating the setting will be added to the end of the list. If not specified during update the order will remain untouched
 	InsertAfter pulumi.StringPtrInput
+	// Detect JSON format
+	JsonConfiguration LogTimestampJsonConfigurationPtrInput
 	// no documentation available
 	Matchers LogTimestampMatchersPtrInput
 	// The scope of this setting (HOST, KUBERNETES*CLUSTER, HOST*GROUP). Omit this property if you want to cover the whole environment.
 	Scope pulumi.StringPtrInput
+	// Don't parse timestamps in lines starting with white character
+	SkipIndentedLines pulumi.BoolPtrInput
 	// Timezone
 	Timezone pulumi.StringInput
 }
@@ -282,6 +315,11 @@ func (o LogTimestampOutput) InsertAfter() pulumi.StringOutput {
 	return o.ApplyT(func(v *LogTimestamp) pulumi.StringOutput { return v.InsertAfter }).(pulumi.StringOutput)
 }
 
+// Detect JSON format
+func (o LogTimestampOutput) JsonConfiguration() LogTimestampJsonConfigurationPtrOutput {
+	return o.ApplyT(func(v *LogTimestamp) LogTimestampJsonConfigurationPtrOutput { return v.JsonConfiguration }).(LogTimestampJsonConfigurationPtrOutput)
+}
+
 // no documentation available
 func (o LogTimestampOutput) Matchers() LogTimestampMatchersPtrOutput {
 	return o.ApplyT(func(v *LogTimestamp) LogTimestampMatchersPtrOutput { return v.Matchers }).(LogTimestampMatchersPtrOutput)
@@ -290,6 +328,11 @@ func (o LogTimestampOutput) Matchers() LogTimestampMatchersPtrOutput {
 // The scope of this setting (HOST, KUBERNETES*CLUSTER, HOST*GROUP). Omit this property if you want to cover the whole environment.
 func (o LogTimestampOutput) Scope() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v *LogTimestamp) pulumi.StringPtrOutput { return v.Scope }).(pulumi.StringPtrOutput)
+}
+
+// Don't parse timestamps in lines starting with white character
+func (o LogTimestampOutput) SkipIndentedLines() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v *LogTimestamp) pulumi.BoolPtrOutput { return v.SkipIndentedLines }).(pulumi.BoolPtrOutput)
 }
 
 // Timezone

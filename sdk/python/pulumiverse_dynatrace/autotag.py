@@ -28,6 +28,7 @@ class AutotagArgs:
                  unknowns: Optional[pulumi.Input[_builtins.str]] = None):
         """
         The set of arguments for constructing a Autotag resource.
+
         :param pulumi.Input[_builtins.str] description: The description of the auto-tag.
         :param pulumi.Input[Sequence[pulumi.Input['AutotagEntitySelectorBasedRuleArgs']]] entity_selector_based_rules: A list of entity-selector based rules for management zone usage. If several rules are specified, the `or` logic applies
         :param pulumi.Input[_builtins.str] name: The name of the auto-tag, which is applied to entities.  Additionally you can specify a **valueFormat** in the tag rule. In that case the tag is used in the `name:valueFormat` format.  For example you can extend the `Infrastructure` tag to `Infrastructure:Windows` and `Infrastructure:Linux`.
@@ -116,6 +117,7 @@ class _AutotagState:
                  unknowns: Optional[pulumi.Input[_builtins.str]] = None):
         """
         Input properties used for looking up and filtering Autotag resources.
+
         :param pulumi.Input[_builtins.str] description: The description of the auto-tag.
         :param pulumi.Input[Sequence[pulumi.Input['AutotagEntitySelectorBasedRuleArgs']]] entity_selector_based_rules: A list of entity-selector based rules for management zone usage. If several rules are specified, the `or` logic applies
         :param pulumi.Input[_builtins.str] name: The name of the auto-tag, which is applied to entities.  Additionally you can specify a **valueFormat** in the tag rule. In that case the tag is used in the `name:valueFormat` format.  For example you can extend the `Infrastructure` tag to `Infrastructure:Windows` and `Infrastructure:Linux`.
@@ -207,7 +209,23 @@ class Autotag(pulumi.CustomResource):
                  unknowns: Optional[pulumi.Input[_builtins.str]] = None,
                  __props__=None):
         """
-        Create a Autotag resource with the given unique name, props, and options.
+        !> This resource API endpoint has been deprecated, please use AutotagV2 instead.
+
+        > This resource requires the API token scopes **Read configuration** (`ReadConfig`) and **Write configuration** (`WriteConfig`)
+
+        ## Dynatrace Documentation
+
+        - Define and apply tags - https://www.dynatrace.com/support/help/how-to-use-dynatrace/tags-and-metadata/setup/how-to-define-tags
+
+        - Automatically applied tags API - https://www.dynatrace.com/support/help/dynatrace-api/configuration-api/automatically-applied-tags-api
+
+        ## Export Example Usage
+
+        - `terraform-provider-dynatrace -export Autotag` downloads all existing autotag configuration
+
+        The full documentation of the export feature is available [here](https://dt-url.net/h203qmc).
+
+
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[_builtins.str] description: The description of the auto-tag.
@@ -223,7 +241,23 @@ class Autotag(pulumi.CustomResource):
                  args: Optional[AutotagArgs] = None,
                  opts: Optional[pulumi.ResourceOptions] = None):
         """
-        Create a Autotag resource with the given unique name, props, and options.
+        !> This resource API endpoint has been deprecated, please use AutotagV2 instead.
+
+        > This resource requires the API token scopes **Read configuration** (`ReadConfig`) and **Write configuration** (`WriteConfig`)
+
+        ## Dynatrace Documentation
+
+        - Define and apply tags - https://www.dynatrace.com/support/help/how-to-use-dynatrace/tags-and-metadata/setup/how-to-define-tags
+
+        - Automatically applied tags API - https://www.dynatrace.com/support/help/dynatrace-api/configuration-api/automatically-applied-tags-api
+
+        ## Export Example Usage
+
+        - `terraform-provider-dynatrace -export Autotag` downloads all existing autotag configuration
+
+        The full documentation of the export feature is available [here](https://dt-url.net/h203qmc).
+
+
         :param str resource_name: The name of the resource.
         :param AutotagArgs args: The arguments to use to populate this resource's properties.
         :param pulumi.ResourceOptions opts: Options for the resource.

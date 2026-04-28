@@ -19,11 +19,11 @@ namespace Pulumiverse.Dynatrace.Outputs
         /// </summary>
         public readonly Outputs.HostAnomaliesV2NetworkNetworkErrorsDetectionCustomThresholds? CustomThresholds;
         /// <summary>
-        /// Detection mode for high number of network errors
+        /// Detection mode for high number of network errors. Possible Values: `Auto`, `Custom`
         /// </summary>
         public readonly string? DetectionMode;
         /// <summary>
-        /// Detect high number of network errors
+        /// This setting is enabled (`True`) or disabled (`False`)
         /// </summary>
         public readonly bool Enabled;
 

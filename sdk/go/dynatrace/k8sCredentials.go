@@ -12,6 +12,21 @@ import (
 	"github.com/pulumiverse/pulumi-dynatrace/sdk/go/dynatrace/internal"
 )
 
+// !> This resource is utilizing an older API endpoint, please use Kubernetes instead.
+//
+// > This resource requires the API token scopes **Read configuration** (`ReadConfig`) and **Write configuration** (`WriteConfig`)
+//
+// ## Dynatrace Documentation
+//
+// - Kubernetes/OpenShift monitoring - https://www.dynatrace.com/support/help/how-to-use-dynatrace/infrastructure-monitoring/container-platform-monitoring/kubernetes-monitoring
+//
+// - Kubernetes credentials API - https://www.dynatrace.com/support/help/dynatrace-api/configuration-api/k8s-credentials-api-api
+//
+// ## Export Example Usage
+//
+// - `terraform-provider-dynatrace -export K8sCredentials` downloads all existing Kubernetes credentials configuration
+//
+// The full documentation of the export feature is available [here](https://dt-url.net/h203qmc).
 type K8sCredentials struct {
 	pulumi.CustomResourceState
 

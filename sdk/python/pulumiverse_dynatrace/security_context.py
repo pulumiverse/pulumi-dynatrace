@@ -22,6 +22,7 @@ class SecurityContextArgs:
                  enabled: pulumi.Input[_builtins.bool]):
         """
         The set of arguments for constructing a SecurityContext resource.
+
         :param pulumi.Input[_builtins.bool] enabled: This setting is enabled (`true`) or disabled (`false`)
         """
         pulumi.set(__self__, "enabled", enabled)
@@ -45,6 +46,7 @@ class _SecurityContextState:
                  enabled: Optional[pulumi.Input[_builtins.bool]] = None):
         """
         Input properties used for looking up and filtering SecurityContext resources.
+
         :param pulumi.Input[_builtins.bool] enabled: This setting is enabled (`true`) or disabled (`false`)
         """
         if enabled is not None:
@@ -74,6 +76,7 @@ class SecurityContext(pulumi.CustomResource):
         """
         > This setting has been deprecated by Dynatrace. Trying to apply this resource will produce an error message. It won't have an effect on your Dynatrace Environment anymore.
 
+
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[_builtins.bool] enabled: This setting is enabled (`true`) or disabled (`false`)
@@ -86,6 +89,7 @@ class SecurityContext(pulumi.CustomResource):
                  opts: Optional[pulumi.ResourceOptions] = None):
         """
         > This setting has been deprecated by Dynatrace. Trying to apply this resource will produce an error message. It won't have an effect on your Dynatrace Environment anymore.
+
 
         :param str resource_name: The name of the resource.
         :param SecurityContextArgs args: The arguments to use to populate this resource's properties.

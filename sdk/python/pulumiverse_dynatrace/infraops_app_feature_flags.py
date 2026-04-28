@@ -26,6 +26,7 @@ class InfraopsAppFeatureFlagsArgs:
                  string_value: Optional[pulumi.Input[_builtins.str]] = None):
         """
         The set of arguments for constructing a InfraopsAppFeatureFlags resource.
+
         :param pulumi.Input[_builtins.str] type: Possible Values: `Boolean`, `Number`, `String`
         :param pulumi.Input[_builtins.bool] boolean_value: State of boolean feature
         :param pulumi.Input[_builtins.str] name: Name of the feature
@@ -113,6 +114,7 @@ class _InfraopsAppFeatureFlagsState:
                  type: Optional[pulumi.Input[_builtins.str]] = None):
         """
         Input properties used for looking up and filtering InfraopsAppFeatureFlags resources.
+
         :param pulumi.Input[_builtins.bool] boolean_value: State of boolean feature
         :param pulumi.Input[_builtins.str] name: Name of the feature
         :param pulumi.Input[_builtins.int] number_value: State of numeric feature
@@ -204,7 +206,23 @@ class InfraopsAppFeatureFlags(pulumi.CustomResource):
                  type: Optional[pulumi.Input[_builtins.str]] = None,
                  __props__=None):
         """
-        Create a InfraopsAppFeatureFlags resource with the given unique name, props, and options.
+        > The infrastructure and operations app feature flag configuration is only to be configured with direction by Dynatrace ONE
+
+        > This resource requires the API token scopes **Read settings** (`settings.read`) and **Write settings** (`settings.write`)
+
+        ## Dynatrace Documentation
+
+        - Infrastructure & Operations - https://www.dynatrace.com/hub/detail/infrastructure-operations/
+
+        - Settings API - https://www.dynatrace.com/support/help/dynatrace-api/environment-api/settings (schemaId: `app:dynatrace.infraops:feature-flags`)
+
+        ## Export Example Usage
+
+        - `terraform-provider-dynatrace -export InfraopsAppFeatureFlags` downloads existing infrastructure and operations app feature flag configuration
+
+        The full documentation of the export feature is available [here](https://dt-url.net/h203qmc).
+
+
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[_builtins.bool] boolean_value: State of boolean feature
@@ -220,7 +238,23 @@ class InfraopsAppFeatureFlags(pulumi.CustomResource):
                  args: InfraopsAppFeatureFlagsArgs,
                  opts: Optional[pulumi.ResourceOptions] = None):
         """
-        Create a InfraopsAppFeatureFlags resource with the given unique name, props, and options.
+        > The infrastructure and operations app feature flag configuration is only to be configured with direction by Dynatrace ONE
+
+        > This resource requires the API token scopes **Read settings** (`settings.read`) and **Write settings** (`settings.write`)
+
+        ## Dynatrace Documentation
+
+        - Infrastructure & Operations - https://www.dynatrace.com/hub/detail/infrastructure-operations/
+
+        - Settings API - https://www.dynatrace.com/support/help/dynatrace-api/environment-api/settings (schemaId: `app:dynatrace.infraops:feature-flags`)
+
+        ## Export Example Usage
+
+        - `terraform-provider-dynatrace -export InfraopsAppFeatureFlags` downloads existing infrastructure and operations app feature flag configuration
+
+        The full documentation of the export feature is available [here](https://dt-url.net/h203qmc).
+
+
         :param str resource_name: The name of the resource.
         :param InfraopsAppFeatureFlagsArgs args: The arguments to use to populate this resource's properties.
         :param pulumi.ResourceOptions opts: Options for the resource.

@@ -24,7 +24,7 @@ namespace Pulumiverse.Dynatrace.Outputs
         /// </summary>
         public readonly Outputs.GenericRelationshipsSourcesSourceMappingRules? MappingRules;
         /// <summary>
-        /// Possible Values: `BusinessEvents`, `Entities`, `Events`, `Logs`, `Metrics`, `Spans`, `Topology`
+        /// Specify the source type of the filter to identify which data source should be evaluated.. Possible Values: `Business Events`, `Entities`, `Events`, `Logs`, `Metrics`, `Spans`, `Topology`
         /// </summary>
         public readonly string SourceType;
 

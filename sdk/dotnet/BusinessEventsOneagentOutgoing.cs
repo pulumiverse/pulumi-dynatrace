@@ -10,6 +10,21 @@ using Pulumi;
 
 namespace Pulumiverse.Dynatrace
 {
+    /// <summary>
+    /// &gt; This resource requires the API token scopes **Read settings** (`settings.read`) and **Write settings** (`settings.write`)
+    /// 
+    /// ## Dynatrace Documentation
+    /// 
+    /// - Business event capture - https://www.dynatrace.com/support/help/platform-modules/business-analytics/ba-events-capturing#report-business-event-oneagent
+    /// 
+    /// - Settings API - https://www.dynatrace.com/support/help/dynatrace-api/environment-api/settings (schemaId: `builtin:bizevents.http.outgoing`)
+    /// 
+    /// ## Export Example Usage
+    /// 
+    /// - `terraform-provider-dynatrace -export dynatrace.BusinessEventsOneagentOutgoing` downloads all existing OneAgent business events based on outgoing HTTP requests
+    /// 
+    /// The full documentation of the export feature is available [here](https://dt-url.net/h203qmc).
+    /// </summary>
     [DynatraceResourceType("dynatrace:index/businessEventsOneagentOutgoing:BusinessEventsOneagentOutgoing")]
     public partial class BusinessEventsOneagentOutgoing : global::Pulumi.CustomResource
     {
@@ -44,7 +59,7 @@ namespace Pulumiverse.Dynatrace
         public Output<string?> Scope { get; private set; } = null!;
 
         /// <summary>
-        /// Define conditions to trigger business events from incoming web requests. Triggers are connected by AND logic per capture rule. If you set multiple trigger rules, all of them need to be fulfilled to capture a business event.
+        /// Define conditions to trigger business events from outgoing web requests. Triggers are connected by AND logic per capture rule. If you set multiple trigger rules, all of them need to be fulfilled to capture a business event.
         /// </summary>
         [Output("triggers")]
         public Output<Outputs.BusinessEventsOneagentOutgoingTriggers> Triggers { get; private set; } = null!;
@@ -127,7 +142,7 @@ namespace Pulumiverse.Dynatrace
         public Input<string>? Scope { get; set; }
 
         /// <summary>
-        /// Define conditions to trigger business events from incoming web requests. Triggers are connected by AND logic per capture rule. If you set multiple trigger rules, all of them need to be fulfilled to capture a business event.
+        /// Define conditions to trigger business events from outgoing web requests. Triggers are connected by AND logic per capture rule. If you set multiple trigger rules, all of them need to be fulfilled to capture a business event.
         /// </summary>
         [Input("triggers", required: true)]
         public Input<Inputs.BusinessEventsOneagentOutgoingTriggersArgs> Triggers { get; set; } = null!;
@@ -171,7 +186,7 @@ namespace Pulumiverse.Dynatrace
         public Input<string>? Scope { get; set; }
 
         /// <summary>
-        /// Define conditions to trigger business events from incoming web requests. Triggers are connected by AND logic per capture rule. If you set multiple trigger rules, all of them need to be fulfilled to capture a business event.
+        /// Define conditions to trigger business events from outgoing web requests. Triggers are connected by AND logic per capture rule. If you set multiple trigger rules, all of them need to be fulfilled to capture a business event.
         /// </summary>
         [Input("triggers")]
         public Input<Inputs.BusinessEventsOneagentOutgoingTriggersGetArgs>? Triggers { get; set; }

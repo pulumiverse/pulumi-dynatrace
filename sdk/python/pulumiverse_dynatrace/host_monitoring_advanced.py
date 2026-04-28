@@ -24,6 +24,7 @@ class HostMonitoringAdvancedArgs:
                  code_module_injection: Optional[pulumi.Input[_builtins.bool]] = None):
         """
         The set of arguments for constructing a HostMonitoringAdvanced resource.
+
         :param pulumi.Input[_builtins.str] host_id: The scope of this settings. If the settings should cover the whole environment, just don't specify any scope.
         :param pulumi.Input[_builtins.bool] process_agent_injection: Disabling this via [oneagentctl](https://dt-url.net/oneagentctl) takes precedence over this setting and cannot be changed from the Dynatrace web UI.
         :param pulumi.Input[_builtins.bool] code_module_injection: Inject CodeModules in Discovery mode.
@@ -78,6 +79,7 @@ class _HostMonitoringAdvancedState:
                  process_agent_injection: Optional[pulumi.Input[_builtins.bool]] = None):
         """
         Input properties used for looking up and filtering HostMonitoringAdvanced resources.
+
         :param pulumi.Input[_builtins.bool] code_module_injection: Inject CodeModules in Discovery mode.
         :param pulumi.Input[_builtins.str] host_id: The scope of this settings. If the settings should cover the whole environment, just don't specify any scope.
         :param pulumi.Input[_builtins.bool] process_agent_injection: Disabling this via [oneagentctl](https://dt-url.net/oneagentctl) takes precedence over this setting and cannot be changed from the Dynatrace web UI.
@@ -137,7 +139,21 @@ class HostMonitoringAdvanced(pulumi.CustomResource):
                  process_agent_injection: Optional[pulumi.Input[_builtins.bool]] = None,
                  __props__=None):
         """
-        Create a HostMonitoringAdvanced resource with the given unique name, props, and options.
+        > This resource requires the API token scopes **Read settings** (`settings.read`) and **Write settings** (`settings.write`)
+
+        ## Dynatrace Documentation
+
+        - Hosts - https://www.dynatrace.com/support/help/how-to-use-dynatrace/infrastructure-monitoring/hosts
+
+        - Settings API - https://www.dynatrace.com/support/help/dynatrace-api/environment-api/settings (schemaId: `builtin:host.monitoring.advanced`)
+
+        ## Export Example Usage
+
+        - `terraform-provider-dynatrace -export HostMonitoringAdvanced` downloads all existing advanced host monitoring configuration
+
+        The full documentation of the export feature is available [here](https://dt-url.net/h203qmc).
+
+
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[_builtins.bool] code_module_injection: Inject CodeModules in Discovery mode.
@@ -151,7 +167,21 @@ class HostMonitoringAdvanced(pulumi.CustomResource):
                  args: HostMonitoringAdvancedArgs,
                  opts: Optional[pulumi.ResourceOptions] = None):
         """
-        Create a HostMonitoringAdvanced resource with the given unique name, props, and options.
+        > This resource requires the API token scopes **Read settings** (`settings.read`) and **Write settings** (`settings.write`)
+
+        ## Dynatrace Documentation
+
+        - Hosts - https://www.dynatrace.com/support/help/how-to-use-dynatrace/infrastructure-monitoring/hosts
+
+        - Settings API - https://www.dynatrace.com/support/help/dynatrace-api/environment-api/settings (schemaId: `builtin:host.monitoring.advanced`)
+
+        ## Export Example Usage
+
+        - `terraform-provider-dynatrace -export HostMonitoringAdvanced` downloads all existing advanced host monitoring configuration
+
+        The full documentation of the export feature is available [here](https://dt-url.net/h203qmc).
+
+
         :param str resource_name: The name of the resource.
         :param HostMonitoringAdvancedArgs args: The arguments to use to populate this resource's properties.
         :param pulumi.ResourceOptions opts: Options for the resource.

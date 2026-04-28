@@ -15,6 +15,10 @@ namespace Pulumiverse.Dynatrace.Outputs
     public sealed class AutomationWorkflowTriggerEventConfigDavisEvent
     {
         /// <summary>
+        /// Additional DQL matcher expression to further filter events to match
+        /// </summary>
+        public readonly string? CustomFilter;
+        /// <summary>
         /// key/value pairs for entity tags to match for. For tags that don't require a value, just specify an empty string as value. Multiple values can be provided separated by whitespace (e.g. "val1 val2") and will be parsed as multiple tag values. Omit this attribute if all entities should match
         /// </summary>
         public readonly ImmutableDictionary<string, string>? EntityTags;
@@ -37,6 +41,8 @@ namespace Pulumiverse.Dynatrace.Outputs
 
         [OutputConstructor]
         private AutomationWorkflowTriggerEventConfigDavisEvent(
+            string? customFilter,
+
             ImmutableDictionary<string, string>? entityTags,
 
             string? entityTagsMatch,
@@ -47,6 +53,7 @@ namespace Pulumiverse.Dynatrace.Outputs
 
             ImmutableArray<string> types)
         {
+            CustomFilter = customFilter;
             EntityTags = entityTags;
             EntityTagsMatch = entityTagsMatch;
             Names = names;

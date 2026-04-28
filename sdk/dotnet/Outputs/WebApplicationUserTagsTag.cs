@@ -18,6 +18,9 @@ namespace Pulumiverse.Dynatrace.Outputs
         /// Cleanup rule expression of the userTag
         /// </summary>
         public readonly string? CleanupRule;
+        /// <summary>
+        /// A unique ID among all userTags and properties of this application. Minimum value is 1. Do not set that attribute anymore - terraform will handle it. Kept for backwards compatibility
+        /// </summary>
         public readonly int? Id;
         /// <summary>
         /// If `True`, the value of this tag will always be stored in lower case. Defaults to `False`.

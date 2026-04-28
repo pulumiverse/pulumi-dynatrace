@@ -10,6 +10,21 @@ using Pulumi;
 
 namespace Pulumiverse.Dynatrace
 {
+    /// <summary>
+    /// &gt; This resource requires the API token scopes **Read settings** (`settings.read`) and **Write settings** (`settings.write`)
+    /// 
+    /// ## Dynatrace Documentation
+    /// 
+    /// - Exclude disks - https://www.dynatrace.com/support/help/platform-modules/infrastructure-monitoring/hosts/configuration/exclude-disks-and-network-traffic#exclude-disks
+    /// 
+    /// - Settings API - https://www.dynatrace.com/support/help/dynatrace-api/environment-api/settings (schemaId: `builtin:disk.options`)
+    /// 
+    /// ## Export Example Usage
+    /// 
+    /// - `terraform-provider-dynatrace -export dynatrace.DiskOptions` downloads all existing host disk visibility settings
+    /// 
+    /// The full documentation of the export feature is available [here](https://dt-url.net/h203qmc).
+    /// </summary>
     [DynatraceResourceType("dynatrace:index/diskOptions:DiskOptions")]
     public partial class DiskOptions : global::Pulumi.CustomResource
     {
@@ -26,7 +41,13 @@ namespace Pulumiverse.Dynatrace
         public Output<Outputs.DiskOptionsExclusions?> Exclusions { get; private set; } = null!;
 
         /// <summary>
-        /// When disabled OneAgent will try to deduplicate some of nfs disks. Disabled by default, applies only to Linux hosts. Requires OneAgent 1.209 or later
+        /// Activate tmpfs monitoring on Linux systems
+        /// </summary>
+        [Output("monitorTmpfs")]
+        public Output<bool?> MonitorTmpfs { get; private set; } = null!;
+
+        /// <summary>
+        /// When disabled OneAgent will try to deduplicate some of nfs mount points. Disabled by default, applies only to Linux hosts.
         /// </summary>
         [Output("nfsShowAll")]
         public Output<bool?> NfsShowAll { get; private set; } = null!;
@@ -97,7 +118,13 @@ namespace Pulumiverse.Dynatrace
         public Input<Inputs.DiskOptionsExclusionsArgs>? Exclusions { get; set; }
 
         /// <summary>
-        /// When disabled OneAgent will try to deduplicate some of nfs disks. Disabled by default, applies only to Linux hosts. Requires OneAgent 1.209 or later
+        /// Activate tmpfs monitoring on Linux systems
+        /// </summary>
+        [Input("monitorTmpfs")]
+        public Input<bool>? MonitorTmpfs { get; set; }
+
+        /// <summary>
+        /// When disabled OneAgent will try to deduplicate some of nfs mount points. Disabled by default, applies only to Linux hosts.
         /// </summary>
         [Input("nfsShowAll")]
         public Input<bool>? NfsShowAll { get; set; }
@@ -129,7 +156,13 @@ namespace Pulumiverse.Dynatrace
         public Input<Inputs.DiskOptionsExclusionsGetArgs>? Exclusions { get; set; }
 
         /// <summary>
-        /// When disabled OneAgent will try to deduplicate some of nfs disks. Disabled by default, applies only to Linux hosts. Requires OneAgent 1.209 or later
+        /// Activate tmpfs monitoring on Linux systems
+        /// </summary>
+        [Input("monitorTmpfs")]
+        public Input<bool>? MonitorTmpfs { get; set; }
+
+        /// <summary>
+        /// When disabled OneAgent will try to deduplicate some of nfs mount points. Disabled by default, applies only to Linux hosts.
         /// </summary>
         [Input("nfsShowAll")]
         public Input<bool>? NfsShowAll { get; set; }

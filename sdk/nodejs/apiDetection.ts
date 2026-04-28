@@ -6,6 +6,21 @@ import * as inputs from "./types/input";
 import * as outputs from "./types/output";
 import * as utilities from "./utilities";
 
+/**
+ * > This resource requires the API token scopes **Read settings** (`settings.read`) and **Write settings** (`settings.write`)
+ *
+ * ## Dynatrace Documentation
+ *
+ * - Custom API definitions - https://www.dynatrace.com/support/help/platform-modules/applications-and-microservices/services/service-monitoring-settings/customize-api-definitions
+ *
+ * - Settings API - https://www.dynatrace.com/support/help/dynatrace-api/environment-api/settings (schemaId: `builtin:apis.detection-rules`)
+ *
+ * ## Export Example Usage
+ *
+ * - `terraform-provider-dynatrace -export dynatrace.ApiDetection` downloads all existing API detection rule configuration
+ *
+ * The full documentation of the export feature is available [here](https://dt-url.net/h203qmc).
+ */
 export class ApiDetection extends pulumi.CustomResource {
     /**
      * Get an existing ApiDetection resource's state with the given name, ID, and optional extra

@@ -29,6 +29,7 @@ class DatabaseAnomaliesV2Args:
                  scope: pulumi.Input[_builtins.str]):
         """
         The set of arguments for constructing a DatabaseAnomaliesV2 resource.
+
         :param pulumi.Input['DatabaseAnomaliesV2DatabaseConnectionsArgs'] database_connections: Alert if the number of failed database connects within the specified time exceeds the specified absolute threshold:
         :param pulumi.Input['DatabaseAnomaliesV2FailureRateArgs'] failure_rate: Failure rate
         :param pulumi.Input['DatabaseAnomaliesV2LoadDropsArgs'] load_drops: Alert if the observed load is lower than the expected load by a specified margin for a specified amount of time.
@@ -127,6 +128,7 @@ class _DatabaseAnomaliesV2State:
                  scope: Optional[pulumi.Input[_builtins.str]] = None):
         """
         Input properties used for looking up and filtering DatabaseAnomaliesV2 resources.
+
         :param pulumi.Input['DatabaseAnomaliesV2DatabaseConnectionsArgs'] database_connections: Alert if the number of failed database connects within the specified time exceeds the specified absolute threshold:
         :param pulumi.Input['DatabaseAnomaliesV2FailureRateArgs'] failure_rate: Failure rate
         :param pulumi.Input['DatabaseAnomaliesV2LoadDropsArgs'] load_drops: Alert if the observed load is lower than the expected load by a specified margin for a specified amount of time.
@@ -234,7 +236,21 @@ class DatabaseAnomaliesV2(pulumi.CustomResource):
                  scope: Optional[pulumi.Input[_builtins.str]] = None,
                  __props__=None):
         """
-        Create a DatabaseAnomaliesV2 resource with the given unique name, props, and options.
+        > This resource requires the API token scopes **Read settings** (`settings.read`) and **Write settings** (`settings.write`)
+
+        ## Dynatrace Documentation
+
+        - Adjust the sensitivity of anomaly detection for database services - https://www.dynatrace.com/support/help/how-to-use-dynatrace/problem-detection-and-analysis/problem-detection/adjust-sensitivity-anomaly-detection/adjust-sensitivity-services-database
+
+        - Settings API - https://www.dynatrace.com/support/help/dynatrace-api/environment-api/settings (schemaId: `builtin:anomaly-detection.databases`)
+
+        ## Export Example Usage
+
+        - `terraform-provider-dynatrace -export DatabaseAnomaliesV2` downloads all existing database anomaly detection configuration
+
+        The full documentation of the export feature is available [here](https://dt-url.net/h203qmc).
+
+
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[Union['DatabaseAnomaliesV2DatabaseConnectionsArgs', 'DatabaseAnomaliesV2DatabaseConnectionsArgsDict']] database_connections: Alert if the number of failed database connects within the specified time exceeds the specified absolute threshold:
@@ -251,7 +267,21 @@ class DatabaseAnomaliesV2(pulumi.CustomResource):
                  args: DatabaseAnomaliesV2Args,
                  opts: Optional[pulumi.ResourceOptions] = None):
         """
-        Create a DatabaseAnomaliesV2 resource with the given unique name, props, and options.
+        > This resource requires the API token scopes **Read settings** (`settings.read`) and **Write settings** (`settings.write`)
+
+        ## Dynatrace Documentation
+
+        - Adjust the sensitivity of anomaly detection for database services - https://www.dynatrace.com/support/help/how-to-use-dynatrace/problem-detection-and-analysis/problem-detection/adjust-sensitivity-anomaly-detection/adjust-sensitivity-services-database
+
+        - Settings API - https://www.dynatrace.com/support/help/dynatrace-api/environment-api/settings (schemaId: `builtin:anomaly-detection.databases`)
+
+        ## Export Example Usage
+
+        - `terraform-provider-dynatrace -export DatabaseAnomaliesV2` downloads all existing database anomaly detection configuration
+
+        The full documentation of the export feature is available [here](https://dt-url.net/h203qmc).
+
+
         :param str resource_name: The name of the resource.
         :param DatabaseAnomaliesV2Args args: The arguments to use to populate this resource's properties.
         :param pulumi.ResourceOptions opts: Options for the resource.

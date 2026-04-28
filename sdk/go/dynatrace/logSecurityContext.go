@@ -12,6 +12,19 @@ import (
 	"github.com/pulumiverse/pulumi-dynatrace/sdk/go/dynatrace/internal"
 )
 
+// > This resource requires the API token scopes **Read settings** (`settings.read`) and **Write settings** (`settings.write`)
+//
+// ## Dynatrace Documentation
+//
+// - Log Management and Analytics - https://www.dynatrace.com/support/help/observe-and-explore/logs/log-management-and-analytics
+//
+// - Settings API - https://www.dynatrace.com/support/help/dynatrace-api/environment-api/settings (schemaId: `builtin:logmonitoring.log-security-context-rules`)
+//
+// ## Export Example Usage
+//
+// - `terraform-provider-dynatrace -export LogSecurityContext` downloads all existing log security context configuration
+//
+// The full documentation of the export feature is available [here](https://dt-url.net/h203qmc).
 type LogSecurityContext struct {
 	pulumi.CustomResourceState
 

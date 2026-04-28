@@ -24,6 +24,7 @@ class LimitOutboundConnectionsArgs:
                  allowed_outbound_connections: pulumi.Input['LimitOutboundConnectionsAllowedOutboundConnectionsArgs']):
         """
         The set of arguments for constructing a LimitOutboundConnections resource.
+
         :param pulumi.Input['LimitOutboundConnectionsAllowedOutboundConnectionsArgs'] allowed_outbound_connections: no documentation available
         """
         pulumi.set(__self__, "allowed_outbound_connections", allowed_outbound_connections)
@@ -47,6 +48,7 @@ class _LimitOutboundConnectionsState:
                  allowed_outbound_connections: Optional[pulumi.Input['LimitOutboundConnectionsAllowedOutboundConnectionsArgs']] = None):
         """
         Input properties used for looking up and filtering LimitOutboundConnections resources.
+
         :param pulumi.Input['LimitOutboundConnectionsAllowedOutboundConnectionsArgs'] allowed_outbound_connections: no documentation available
         """
         if allowed_outbound_connections is not None:
@@ -74,7 +76,21 @@ class LimitOutboundConnections(pulumi.CustomResource):
                  allowed_outbound_connections: Optional[pulumi.Input[Union['LimitOutboundConnectionsAllowedOutboundConnectionsArgs', 'LimitOutboundConnectionsAllowedOutboundConnectionsArgsDict']]] = None,
                  __props__=None):
         """
-        Create a LimitOutboundConnections resource with the given unique name, props, and options.
+        > This resource requires the API token scopes **Read settings** (`settings.read`) and **Write settings** (`settings.write`)
+
+        ## Dynatrace Documentation
+
+        - Allow outbound connections - https://developer.dynatrace.com/develop/functions/allow-outbound-connections/
+
+        - Settings API - https://www.dynatrace.com/support/help/dynatrace-api/environment-api/settings (schemaId: `builtin:dt-javascript-runtime.allowed-outbound-connections`)
+
+        ## Export Example Usage
+
+        - `terraform-provider-dynatrace -export LimitOutboundConnections` downloads existing configuration for limiting outbound connections running in the Dynatrace JavaScript runtime
+
+        The full documentation of the export feature is available [here](https://dt-url.net/h203qmc).
+
+
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[Union['LimitOutboundConnectionsAllowedOutboundConnectionsArgs', 'LimitOutboundConnectionsAllowedOutboundConnectionsArgsDict']] allowed_outbound_connections: no documentation available
@@ -86,7 +102,21 @@ class LimitOutboundConnections(pulumi.CustomResource):
                  args: LimitOutboundConnectionsArgs,
                  opts: Optional[pulumi.ResourceOptions] = None):
         """
-        Create a LimitOutboundConnections resource with the given unique name, props, and options.
+        > This resource requires the API token scopes **Read settings** (`settings.read`) and **Write settings** (`settings.write`)
+
+        ## Dynatrace Documentation
+
+        - Allow outbound connections - https://developer.dynatrace.com/develop/functions/allow-outbound-connections/
+
+        - Settings API - https://www.dynatrace.com/support/help/dynatrace-api/environment-api/settings (schemaId: `builtin:dt-javascript-runtime.allowed-outbound-connections`)
+
+        ## Export Example Usage
+
+        - `terraform-provider-dynatrace -export LimitOutboundConnections` downloads existing configuration for limiting outbound connections running in the Dynatrace JavaScript runtime
+
+        The full documentation of the export feature is available [here](https://dt-url.net/h203qmc).
+
+
         :param str resource_name: The name of the resource.
         :param LimitOutboundConnectionsArgs args: The arguments to use to populate this resource's properties.
         :param pulumi.ResourceOptions opts: Options for the resource.

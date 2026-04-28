@@ -11,6 +11,21 @@ import (
 	"github.com/pulumiverse/pulumi-dynatrace/sdk/go/dynatrace/internal"
 )
 
+// !> This resource API endpoint has been deprecated, please use AutotagV2 instead.
+//
+// > This resource requires the API token scopes **Read configuration** (`ReadConfig`) and **Write configuration** (`WriteConfig`)
+//
+// ## Dynatrace Documentation
+//
+// - Define and apply tags - https://www.dynatrace.com/support/help/how-to-use-dynatrace/tags-and-metadata/setup/how-to-define-tags
+//
+// - Automatically applied tags API - https://www.dynatrace.com/support/help/dynatrace-api/configuration-api/automatically-applied-tags-api
+//
+// ## Export Example Usage
+//
+// - `terraform-provider-dynatrace -export Autotag` downloads all existing autotag configuration
+//
+// The full documentation of the export feature is available [here](https://dt-url.net/h203qmc).
 type Autotag struct {
 	pulumi.CustomResourceState
 

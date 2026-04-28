@@ -12,6 +12,19 @@ import (
 	"github.com/pulumiverse/pulumi-dynatrace/sdk/go/dynatrace/internal"
 )
 
+// > This resource requires the API token scopes **Read settings** (`settings.read`) and **Write settings** (`settings.write`)
+//
+// ## Dynatrace Documentation
+//
+// - Grail - https://docs.dynatrace.com/docs/platform/grail
+//
+// - Settings API - https://www.dynatrace.com/support/help/dynatrace-api/environment-api/settings (schemaId: `builtin:problem.record.propagation.rules`)
+//
+// ## Export Example Usage
+//
+// - `terraform-provider-dynatrace -export ProblemRecordPropagationRules` downloads existing problem record propagation rules
+//
+// The full documentation of the export feature is available [here](https://dt-url.net/h203qmc).
 type ProblemRecordPropagationRules struct {
 	pulumi.CustomResourceState
 

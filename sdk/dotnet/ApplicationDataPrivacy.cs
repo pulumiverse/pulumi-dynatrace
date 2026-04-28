@@ -10,6 +10,23 @@ using Pulumi;
 
 namespace Pulumiverse.Dynatrace
 {
+    /// <summary>
+    /// !&gt; This resource is utilizing an older API endpoint, please use dynatrace.DataPrivacy and dynatrace.SessionReplayWebPrivacy instead.
+    /// 
+    /// &gt; This resource requires the API token scopes **Read configuration** (`ReadConfig`) and **Change data privacy settings** (`DataPrivacy`)
+    /// 
+    /// ## Dynatrace Documentation
+    /// 
+    /// - Configure data privacy settings for web applications - https://www.dynatrace.com/support/help/how-to-use-dynatrace/real-user-monitoring/setup-and-configuration/web-applications/additional-configuration/configure-real-user-monitoring-according-to-gdpr
+    /// 
+    /// - Web application configuration API - https://www.dynatrace.com/support/help/dynatrace-api/configuration-api/rum/web-application-configuration-api
+    /// 
+    /// ## Export Example Usage
+    /// 
+    /// - `terraform-provider-dynatrace -export dynatrace.ApplicationDataPrivacy` downloads all existing application data privacy configuration
+    /// 
+    /// The full documentation of the export feature is available [here](https://dt-url.net/h203qmc).
+    /// </summary>
     [DynatraceResourceType("dynatrace:index/applicationDataPrivacy:ApplicationDataPrivacy")]
     public partial class ApplicationDataPrivacy : global::Pulumi.CustomResource
     {

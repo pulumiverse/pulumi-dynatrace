@@ -23,6 +23,7 @@ class LogCustomAttributeArgs:
                  sidebar: pulumi.Input[_builtins.bool]):
         """
         The set of arguments for constructing a LogCustomAttribute resource.
+
         :param pulumi.Input[_builtins.str] key: The attribute key is case sensitive in log data ingestion.
         :param pulumi.Input[_builtins.bool] sidebar: Show attribute values in side bar
         """
@@ -61,6 +62,7 @@ class _LogCustomAttributeState:
                  sidebar: Optional[pulumi.Input[_builtins.bool]] = None):
         """
         Input properties used for looking up and filtering LogCustomAttribute resources.
+
         :param pulumi.Input[_builtins.str] key: The attribute key is case sensitive in log data ingestion.
         :param pulumi.Input[_builtins.bool] sidebar: Show attribute values in side bar
         """
@@ -104,7 +106,21 @@ class LogCustomAttribute(pulumi.CustomResource):
                  sidebar: Optional[pulumi.Input[_builtins.bool]] = None,
                  __props__=None):
         """
-        Create a LogCustomAttribute resource with the given unique name, props, and options.
+        > This resource requires the API token scopes **Read settings** (`settings.read`) and **Write settings** (`settings.write`)
+
+        ## Dynatrace Documentation
+
+        - Custom Log Attributes - https://www.dynatrace.com/support/help/observe-and-explore/logs/log-monitoring/analyze-log-data/log-custom-attributes
+
+        - Settings API - https://www.dynatrace.com/support/help/dynatrace-api/environment-api/settings (schemaId: `builtin:logmonitoring.log-custom-attributes`)
+
+        ## Export Example Usage
+
+        - `terraform-provider-dynatrace -export LogCustomAttribute` downloads all existing custom log attributes
+
+        The full documentation of the export feature is available [here](https://dt-url.net/h203qmc).
+
+
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[_builtins.str] key: The attribute key is case sensitive in log data ingestion.
@@ -117,7 +133,21 @@ class LogCustomAttribute(pulumi.CustomResource):
                  args: LogCustomAttributeArgs,
                  opts: Optional[pulumi.ResourceOptions] = None):
         """
-        Create a LogCustomAttribute resource with the given unique name, props, and options.
+        > This resource requires the API token scopes **Read settings** (`settings.read`) and **Write settings** (`settings.write`)
+
+        ## Dynatrace Documentation
+
+        - Custom Log Attributes - https://www.dynatrace.com/support/help/observe-and-explore/logs/log-monitoring/analyze-log-data/log-custom-attributes
+
+        - Settings API - https://www.dynatrace.com/support/help/dynatrace-api/environment-api/settings (schemaId: `builtin:logmonitoring.log-custom-attributes`)
+
+        ## Export Example Usage
+
+        - `terraform-provider-dynatrace -export LogCustomAttribute` downloads all existing custom log attributes
+
+        The full documentation of the export feature is available [here](https://dt-url.net/h203qmc).
+
+
         :param str resource_name: The name of the resource.
         :param LogCustomAttributeArgs args: The arguments to use to populate this resource's properties.
         :param pulumi.ResourceOptions opts: Options for the resource.

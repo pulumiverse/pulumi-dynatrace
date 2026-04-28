@@ -12,6 +12,21 @@ import (
 	"github.com/pulumiverse/pulumi-dynatrace/sdk/go/dynatrace/internal"
 )
 
+// !> This resource does not handle ordering of rules. If ordering is required, please use ApplicationDetectionRule instead.
+//
+// > This resource requires the API token scopes **Read settings** (`settings.read`) and **Write settings** (`settings.write`)
+//
+// ## Dynatrace Documentation
+//
+// - Check application detection rules - https://www.dynatrace.com/support/help/platform-modules/digital-experience/web-applications/additional-configuration/application-detection-rules
+//
+// - Settings API - https://www.dynatrace.com/support/help/dynatrace-api/environment-api/settings (schemaId: `builtin:rum.web.app-detection`)
+//
+// ## Export Example Usage
+//
+// - `terraform-provider-dynatrace -export ApplicationDetectionRuleV2` downloads all existing application detection rule configuration
+//
+// The full documentation of the export feature is available [here](https://dt-url.net/h203qmc).
 type ApplicationDetectionRuleV2 struct {
 	pulumi.CustomResourceState
 

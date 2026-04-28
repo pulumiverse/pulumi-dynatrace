@@ -23,6 +23,7 @@ class ProcessGroupMonitoringArgs:
                  process_group_id: pulumi.Input[_builtins.str]):
         """
         The set of arguments for constructing a ProcessGroupMonitoring resource.
+
         :param pulumi.Input[_builtins.str] monitoring_state: Possible Values: `DEFAULT`, `MONITORING_OFF`, `MONITORING_ON`
         :param pulumi.Input[_builtins.str] process_group_id: The scope of this settings. If the settings should cover the whole environment, just don't specify any scope.
         """
@@ -61,6 +62,7 @@ class _ProcessGroupMonitoringState:
                  process_group_id: Optional[pulumi.Input[_builtins.str]] = None):
         """
         Input properties used for looking up and filtering ProcessGroupMonitoring resources.
+
         :param pulumi.Input[_builtins.str] monitoring_state: Possible Values: `DEFAULT`, `MONITORING_OFF`, `MONITORING_ON`
         :param pulumi.Input[_builtins.str] process_group_id: The scope of this settings. If the settings should cover the whole environment, just don't specify any scope.
         """
@@ -104,7 +106,21 @@ class ProcessGroupMonitoring(pulumi.CustomResource):
                  process_group_id: Optional[pulumi.Input[_builtins.str]] = None,
                  __props__=None):
         """
-        Create a ProcessGroupMonitoring resource with the given unique name, props, and options.
+        > This resource requires the API token scopes **Read settings** (`settings.read`) and **Write settings** (`settings.write`)
+
+        ## Dynatrace Documentation
+
+        - Process deep monitoring - https://www.dynatrace.com/support/help/platform-modules/infrastructure-monitoring/process-groups/configuration/pg-monitoring
+
+        - Settings API - https://www.dynatrace.com/support/help/dynatrace-api/environment-api/settings (schemaId: `builtin:process-group.monitoring.state`)
+
+        ## Export Example Usage
+
+        - `terraform-provider-dynatrace -export ProcessGroupMonitoring` downloads all existing process group monitoring configuration
+
+        The full documentation of the export feature is available [here](https://dt-url.net/h203qmc).
+
+
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[_builtins.str] monitoring_state: Possible Values: `DEFAULT`, `MONITORING_OFF`, `MONITORING_ON`
@@ -117,7 +133,21 @@ class ProcessGroupMonitoring(pulumi.CustomResource):
                  args: ProcessGroupMonitoringArgs,
                  opts: Optional[pulumi.ResourceOptions] = None):
         """
-        Create a ProcessGroupMonitoring resource with the given unique name, props, and options.
+        > This resource requires the API token scopes **Read settings** (`settings.read`) and **Write settings** (`settings.write`)
+
+        ## Dynatrace Documentation
+
+        - Process deep monitoring - https://www.dynatrace.com/support/help/platform-modules/infrastructure-monitoring/process-groups/configuration/pg-monitoring
+
+        - Settings API - https://www.dynatrace.com/support/help/dynatrace-api/environment-api/settings (schemaId: `builtin:process-group.monitoring.state`)
+
+        ## Export Example Usage
+
+        - `terraform-provider-dynatrace -export ProcessGroupMonitoring` downloads all existing process group monitoring configuration
+
+        The full documentation of the export feature is available [here](https://dt-url.net/h203qmc).
+
+
         :param str resource_name: The name of the resource.
         :param ProcessGroupMonitoringArgs args: The arguments to use to populate this resource's properties.
         :param pulumi.ResourceOptions opts: Options for the resource.

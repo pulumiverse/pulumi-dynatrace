@@ -26,6 +26,7 @@ class OneagentFeaturesArgs:
                  scope: Optional[pulumi.Input[_builtins.str]] = None):
         """
         The set of arguments for constructing a OneagentFeatures resource.
+
         :param pulumi.Input[_builtins.bool] enabled: This setting is enabled (`true`) or disabled (`false`)
         :param pulumi.Input[_builtins.str] key: Feature
         :param pulumi.Input[_builtins.bool] forcible: Activate this feature also in OneAgents only fulfilling the minimum Opt-In version
@@ -113,6 +114,8 @@ class _OneagentFeaturesState:
                  scope: Optional[pulumi.Input[_builtins.str]] = None):
         """
         Input properties used for looking up and filtering OneagentFeatures resources.
+
+        :param pulumi.Input[_builtins.str] _restore_: Used internally by the terraform provider. Do not populate
         :param pulumi.Input[_builtins.bool] enabled: This setting is enabled (`true`) or disabled (`false`)
         :param pulumi.Input[_builtins.bool] forcible: Activate this feature also in OneAgents only fulfilling the minimum Opt-In version
         :param pulumi.Input[_builtins.bool] instrumentation: Instrumentation enabled (change needs a process restart)
@@ -135,6 +138,9 @@ class _OneagentFeaturesState:
     @_builtins.property
     @pulumi.getter
     def _restore_(self) -> Optional[pulumi.Input[_builtins.str]]:
+        """
+        Used internally by the terraform provider. Do not populate
+        """
         return pulumi.get(self, "_restore_")
 
     @_restore_.setter
@@ -215,7 +221,35 @@ class OneagentFeatures(pulumi.CustomResource):
                  scope: Optional[pulumi.Input[_builtins.str]] = None,
                  __props__=None):
         """
-        Create a OneagentFeatures resource with the given unique name, props, and options.
+        > This resource requires the API token scopes **Read settings** (`settings.read`) and **Write settings** (`settings.write`)
+
+        ## Dynatrace Documentation
+
+        - OneAgent Features - https://www.dynatrace.com/support/help/setup-and-configuration/dynatrace-oneagent/oneagent-features#configuration-via-web-ui
+
+        - Settings API - https://www.dynatrace.com/support/help/dynatrace-api/environment-api/settings (schemaId: `builtin:oneagent.features`)
+
+        ## Export Example Usage
+
+        - `terraform-provider-dynatrace -export OneagentFeatures` downloads the current configuration for OneAgent Features
+
+        The full documentation of the export feature is available [here](https://dt-url.net/h203qmc).
+
+        ## Resource Example Usage
+
+        ```python
+        import pulumi
+        import pulumiverse_dynatrace as dynatrace
+
+        # ID vu9U3hXa3q0AAAABABlidWlsdGluOm9uZWFnZW50LmZlYXR1cmVzAAZ0ZW5hbnQABnRlbmFudAAkMWQzYjY4ODMtOWViZi0zMDljLTg1YjktNjg4OTcxYzE3NDM1vu9U3hXa3q0
+        senso_r__dotne_t__aspnet = dynatrace.OneagentFeatures("SENSOR_DOTNET_ASPNET",
+            enabled=True,
+            instrumentation=True,
+            key="SENSOR_DOTNET_ASPNET",
+            scope="environment")
+        ```
+
+
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[_builtins.bool] enabled: This setting is enabled (`true`) or disabled (`false`)
@@ -231,7 +265,35 @@ class OneagentFeatures(pulumi.CustomResource):
                  args: OneagentFeaturesArgs,
                  opts: Optional[pulumi.ResourceOptions] = None):
         """
-        Create a OneagentFeatures resource with the given unique name, props, and options.
+        > This resource requires the API token scopes **Read settings** (`settings.read`) and **Write settings** (`settings.write`)
+
+        ## Dynatrace Documentation
+
+        - OneAgent Features - https://www.dynatrace.com/support/help/setup-and-configuration/dynatrace-oneagent/oneagent-features#configuration-via-web-ui
+
+        - Settings API - https://www.dynatrace.com/support/help/dynatrace-api/environment-api/settings (schemaId: `builtin:oneagent.features`)
+
+        ## Export Example Usage
+
+        - `terraform-provider-dynatrace -export OneagentFeatures` downloads the current configuration for OneAgent Features
+
+        The full documentation of the export feature is available [here](https://dt-url.net/h203qmc).
+
+        ## Resource Example Usage
+
+        ```python
+        import pulumi
+        import pulumiverse_dynatrace as dynatrace
+
+        # ID vu9U3hXa3q0AAAABABlidWlsdGluOm9uZWFnZW50LmZlYXR1cmVzAAZ0ZW5hbnQABnRlbmFudAAkMWQzYjY4ODMtOWViZi0zMDljLTg1YjktNjg4OTcxYzE3NDM1vu9U3hXa3q0
+        senso_r__dotne_t__aspnet = dynatrace.OneagentFeatures("SENSOR_DOTNET_ASPNET",
+            enabled=True,
+            instrumentation=True,
+            key="SENSOR_DOTNET_ASPNET",
+            scope="environment")
+        ```
+
+
         :param str resource_name: The name of the resource.
         :param OneagentFeaturesArgs args: The arguments to use to populate this resource's properties.
         :param pulumi.ResourceOptions opts: Options for the resource.
@@ -294,6 +356,7 @@ class OneagentFeatures(pulumi.CustomResource):
         :param str resource_name: The unique name of the resulting resource.
         :param pulumi.Input[str] id: The unique provider ID of the resource to lookup.
         :param pulumi.ResourceOptions opts: Options for the resource.
+        :param pulumi.Input[_builtins.str] _restore_: Used internally by the terraform provider. Do not populate
         :param pulumi.Input[_builtins.bool] enabled: This setting is enabled (`true`) or disabled (`false`)
         :param pulumi.Input[_builtins.bool] forcible: Activate this feature also in OneAgents only fulfilling the minimum Opt-In version
         :param pulumi.Input[_builtins.bool] instrumentation: Instrumentation enabled (change needs a process restart)
@@ -315,6 +378,9 @@ class OneagentFeatures(pulumi.CustomResource):
     @_builtins.property
     @pulumi.getter
     def _restore_(self) -> pulumi.Output[_builtins.str]:
+        """
+        Used internally by the terraform provider. Do not populate
+        """
         return pulumi.get(self, "_restore_")
 
     @_builtins.property

@@ -10,6 +10,49 @@ using Pulumi;
 
 namespace Pulumiverse.Dynatrace
 {
+    /// <summary>
+    /// &gt; This resource requires the API token scopes **Read settings** (`settings.read`) and **Write settings** (`settings.write`)
+    /// 
+    /// ## Dynatrace Documentation
+    /// 
+    /// - Adjust the sensitivity of anomaly detection for applications - https://www.dynatrace.com/support/help/how-to-use-dynatrace/problem-detection-and-analysis/problem-detection/adjust-sensitivity-anomaly-detection/adjust-sensitivity-applications
+    /// 
+    /// - Settings API - https://www.dynatrace.com/support/help/dynatrace-api/environment-api/settings (schemaId: `builtin:anomaly-detection.rum-custom-crash-rate-increase`)
+    /// 
+    /// ## Export Example Usage
+    /// 
+    /// - `terraform-provider-dynatrace -export dynatrace.CustomAppCrashRate` downloads all existing custom application crash rate increase configuration
+    /// 
+    /// The full documentation of the export feature is available [here](https://dt-url.net/h203qmc).
+    /// 
+    /// ## Resource Example Usage
+    /// 
+    /// ```csharp
+    /// using System.Collections.Generic;
+    /// using System.Linq;
+    /// using Pulumi;
+    /// using Dynatrace = Pulumiverse.Dynatrace;
+    /// 
+    /// return await Deployment.RunAsync(() =&gt; 
+    /// {
+    ///     var CUSTOM_APPLICATION_1234567890000000 = new Dynatrace.CustomAppCrashRate("CUSTOM_APPLICATION-1234567890000000", new()
+    ///     {
+    ///         Scope = "CUSTOM_APPLICATION-1234567890000000",
+    ///         CrashRateIncrease = new Dynatrace.Inputs.CustomAppCrashRateCrashRateIncreaseArgs
+    ///         {
+    ///             Enabled = true,
+    ///             DetectionMode = "fixed",
+    ///             CrashRateIncreaseFixed = new Dynatrace.Inputs.CustomAppCrashRateCrashRateIncreaseCrashRateIncreaseFixedArgs
+    ///             {
+    ///                 AbsoluteCrashRate = 25,
+    ///                 ConcurrentUsers = 200,
+    ///             },
+    ///         },
+    ///     });
+    /// 
+    /// });
+    /// ```
+    /// </summary>
     [DynatraceResourceType("dynatrace:index/customAppCrashRate:CustomAppCrashRate")]
     public partial class CustomAppCrashRate : global::Pulumi.CustomResource
     {

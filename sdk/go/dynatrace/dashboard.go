@@ -11,6 +11,21 @@ import (
 	"github.com/pulumiverse/pulumi-dynatrace/sdk/go/dynatrace/internal"
 )
 
+// !> This resource frequently falls behind due to the constant additions/changes to the dashboard schema, instead it is recommended to use JsonDashboard which allows to send the full JSON payload.
+//
+// > This resource requires the API token scopes **Read configuration** (`ReadConfig`) and **Write configuration** (`WriteConfig`)
+//
+// ## Dynatrace Documentation
+//
+// - Dashboards and reports - https://www.dynatrace.com/support/help/how-to-use-dynatrace/dashboards-and-charts
+//
+// - Dashboards API - https://www.dynatrace.com/support/help/dynatrace-api/configuration-api/dashboards-api
+//
+// ## Export Example Usage
+//
+// - `terraform-provider-dynatrace -export Dashboard` downloads all existing dashboard configuration
+//
+// The full documentation of the export feature is available [here](https://dt-url.net/h203qmc).
 type Dashboard struct {
 	pulumi.CustomResourceState
 

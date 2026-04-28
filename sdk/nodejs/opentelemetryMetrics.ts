@@ -6,6 +6,21 @@ import * as inputs from "./types/input";
 import * as outputs from "./types/output";
 import * as utilities from "./utilities";
 
+/**
+ * > This resource requires the API token scopes **Read settings** (`settings.read`) and **Write settings** (`settings.write`)
+ *
+ * ## Dynatrace Documentation
+ *
+ * - OpenTelemetry metrics - https://www.dynatrace.com/support/help/extend-dynatrace/opentelemetry/opentelemetry-metrics
+ *
+ * - Settings API - https://www.dynatrace.com/support/help/dynatrace-api/environment-api/settings (schemaId: `builtin:opentelemetry-metrics`)
+ *
+ * ## Export Example Usage
+ *
+ * - `terraform-provider-dynatrace -export dynatrace.OpentelemetryMetrics` downloads all existing OpenTelemetry metric configuration
+ *
+ * The full documentation of the export feature is available [here](https://dt-url.net/h203qmc).
+ */
 export class OpentelemetryMetrics extends pulumi.CustomResource {
     /**
      * Get an existing OpentelemetryMetrics resource's state with the given name, ID, and optional extra
@@ -39,15 +54,22 @@ export class OpentelemetryMetrics extends pulumi.CustomResource {
      */
     declare public readonly additionalAttributes: pulumi.Output<outputs.OpentelemetryMetricsAdditionalAttributes | undefined>;
     /**
-     * Add the resource and scope attributes configured below as dimensions
+     * Add the resource and scope attributes configured below as dimensions (Metrics Classic)
      */
     declare public readonly additionalAttributesToDimensionEnabled: pulumi.Output<boolean>;
     /**
      * When enabled, the Meter name (also referred to as InstrumentationScope or InstrumentationLibrary in OpenTelemetry SDKs) and version will be added as dimensions (`otel.scope.name` and `otel.scope.version`) to ingested OTLP metrics.
-     *
-     * **Note:** Modifying this setting will cause the metric to change. This may have an impact on existing dashboards, events and alerts that make use of these dimensions. In this case, they will need to be updated manually
      */
     declare public readonly meterNameToDimensionEnabled: pulumi.Output<boolean>;
+    /**
+     * Specifies whether the given attributes to enable (`additionalAttributes`) and the attributes to drop (`toDropAttributes`) will get applied explicitly (`EXPLICIT`) or additive (`ADDITIVE`).
+     *
+     * Default behavior is `EXPLICIT` - in which case it is recommended to have just ONE instance of this resource
+     *
+     * With mode `ADDITIVE` you're able to have multiple instances of this resource within the same Terraform Module.
+     *
+     * **Note:** Using `ADDITIVE` and `EXPLICIT` at the same time within differnt resource instances will lead to unexpected results.
+     */
     declare public readonly mode: pulumi.Output<string | undefined>;
     /**
      * The scope of this setting (environment-default). Omit this property if you want to cover the whole environment.
@@ -56,13 +78,13 @@ export class OpentelemetryMetrics extends pulumi.CustomResource {
     /**
      * The attributes defined in the list below will be dropped from all ingested OTLP metrics.
      *
-     * Upon ingest, the *Allow list: resource and scope attributes* above is applied first. Then, the *Deny list: all attributes* below is applied. The deny list therefore applies to all attributes from all sources (data points, scope and resource).
-     *
      * **Notes:**
      *
-     * * Modifying this setting (adding, renaming, disabling or removing attributes) will cause the metric to change. This may have an impact on existing dashboards, events and alerts that make use of these dimensions. In this case, they will need to be updated manually.
+     * - Attributes **must** be added in their **original format**, as exported to Dynatrace by the telemetry source. For example, if the attribute is in `PascalCase`, the same case must be used when adding the attribute to the list.
      *
-     * * Dynatrace does not recommend including attributes starting with "dt." to the deny list. Dynatrace leverages these attributes to [Enrich metrics](https://www.dynatrace.com/support/help/extend-dynatrace/extend-metrics/reference/enrich-metrics).
+     * - Wildcards are only supported in Metrics powered by Grail.
+     *
+     * - Dynatrace does not recommend including attributes starting with "dt." to the deny list. Dynatrace leverages these attributes to [Enrich metrics](https://www.dynatrace.com/support/help/extend-dynatrace/extend-metrics/reference/enrich-metrics).
      */
     declare public readonly toDropAttributes: pulumi.Output<outputs.OpentelemetryMetricsToDropAttributes | undefined>;
 
@@ -108,15 +130,22 @@ export interface OpentelemetryMetricsState {
      */
     additionalAttributes?: pulumi.Input<inputs.OpentelemetryMetricsAdditionalAttributes>;
     /**
-     * Add the resource and scope attributes configured below as dimensions
+     * Add the resource and scope attributes configured below as dimensions (Metrics Classic)
      */
     additionalAttributesToDimensionEnabled?: pulumi.Input<boolean>;
     /**
      * When enabled, the Meter name (also referred to as InstrumentationScope or InstrumentationLibrary in OpenTelemetry SDKs) and version will be added as dimensions (`otel.scope.name` and `otel.scope.version`) to ingested OTLP metrics.
-     *
-     * **Note:** Modifying this setting will cause the metric to change. This may have an impact on existing dashboards, events and alerts that make use of these dimensions. In this case, they will need to be updated manually
      */
     meterNameToDimensionEnabled?: pulumi.Input<boolean>;
+    /**
+     * Specifies whether the given attributes to enable (`additionalAttributes`) and the attributes to drop (`toDropAttributes`) will get applied explicitly (`EXPLICIT`) or additive (`ADDITIVE`).
+     *
+     * Default behavior is `EXPLICIT` - in which case it is recommended to have just ONE instance of this resource
+     *
+     * With mode `ADDITIVE` you're able to have multiple instances of this resource within the same Terraform Module.
+     *
+     * **Note:** Using `ADDITIVE` and `EXPLICIT` at the same time within differnt resource instances will lead to unexpected results.
+     */
     mode?: pulumi.Input<string>;
     /**
      * The scope of this setting (environment-default). Omit this property if you want to cover the whole environment.
@@ -125,13 +154,13 @@ export interface OpentelemetryMetricsState {
     /**
      * The attributes defined in the list below will be dropped from all ingested OTLP metrics.
      *
-     * Upon ingest, the *Allow list: resource and scope attributes* above is applied first. Then, the *Deny list: all attributes* below is applied. The deny list therefore applies to all attributes from all sources (data points, scope and resource).
-     *
      * **Notes:**
      *
-     * * Modifying this setting (adding, renaming, disabling or removing attributes) will cause the metric to change. This may have an impact on existing dashboards, events and alerts that make use of these dimensions. In this case, they will need to be updated manually.
+     * - Attributes **must** be added in their **original format**, as exported to Dynatrace by the telemetry source. For example, if the attribute is in `PascalCase`, the same case must be used when adding the attribute to the list.
      *
-     * * Dynatrace does not recommend including attributes starting with "dt." to the deny list. Dynatrace leverages these attributes to [Enrich metrics](https://www.dynatrace.com/support/help/extend-dynatrace/extend-metrics/reference/enrich-metrics).
+     * - Wildcards are only supported in Metrics powered by Grail.
+     *
+     * - Dynatrace does not recommend including attributes starting with "dt." to the deny list. Dynatrace leverages these attributes to [Enrich metrics](https://www.dynatrace.com/support/help/extend-dynatrace/extend-metrics/reference/enrich-metrics).
      */
     toDropAttributes?: pulumi.Input<inputs.OpentelemetryMetricsToDropAttributes>;
 }
@@ -145,15 +174,22 @@ export interface OpentelemetryMetricsArgs {
      */
     additionalAttributes?: pulumi.Input<inputs.OpentelemetryMetricsAdditionalAttributes>;
     /**
-     * Add the resource and scope attributes configured below as dimensions
+     * Add the resource and scope attributes configured below as dimensions (Metrics Classic)
      */
     additionalAttributesToDimensionEnabled?: pulumi.Input<boolean>;
     /**
      * When enabled, the Meter name (also referred to as InstrumentationScope or InstrumentationLibrary in OpenTelemetry SDKs) and version will be added as dimensions (`otel.scope.name` and `otel.scope.version`) to ingested OTLP metrics.
-     *
-     * **Note:** Modifying this setting will cause the metric to change. This may have an impact on existing dashboards, events and alerts that make use of these dimensions. In this case, they will need to be updated manually
      */
     meterNameToDimensionEnabled?: pulumi.Input<boolean>;
+    /**
+     * Specifies whether the given attributes to enable (`additionalAttributes`) and the attributes to drop (`toDropAttributes`) will get applied explicitly (`EXPLICIT`) or additive (`ADDITIVE`).
+     *
+     * Default behavior is `EXPLICIT` - in which case it is recommended to have just ONE instance of this resource
+     *
+     * With mode `ADDITIVE` you're able to have multiple instances of this resource within the same Terraform Module.
+     *
+     * **Note:** Using `ADDITIVE` and `EXPLICIT` at the same time within differnt resource instances will lead to unexpected results.
+     */
     mode?: pulumi.Input<string>;
     /**
      * The scope of this setting (environment-default). Omit this property if you want to cover the whole environment.
@@ -162,13 +198,13 @@ export interface OpentelemetryMetricsArgs {
     /**
      * The attributes defined in the list below will be dropped from all ingested OTLP metrics.
      *
-     * Upon ingest, the *Allow list: resource and scope attributes* above is applied first. Then, the *Deny list: all attributes* below is applied. The deny list therefore applies to all attributes from all sources (data points, scope and resource).
-     *
      * **Notes:**
      *
-     * * Modifying this setting (adding, renaming, disabling or removing attributes) will cause the metric to change. This may have an impact on existing dashboards, events and alerts that make use of these dimensions. In this case, they will need to be updated manually.
+     * - Attributes **must** be added in their **original format**, as exported to Dynatrace by the telemetry source. For example, if the attribute is in `PascalCase`, the same case must be used when adding the attribute to the list.
      *
-     * * Dynatrace does not recommend including attributes starting with "dt." to the deny list. Dynatrace leverages these attributes to [Enrich metrics](https://www.dynatrace.com/support/help/extend-dynatrace/extend-metrics/reference/enrich-metrics).
+     * - Wildcards are only supported in Metrics powered by Grail.
+     *
+     * - Dynatrace does not recommend including attributes starting with "dt." to the deny list. Dynatrace leverages these attributes to [Enrich metrics](https://www.dynatrace.com/support/help/extend-dynatrace/extend-metrics/reference/enrich-metrics).
      */
     toDropAttributes?: pulumi.Input<inputs.OpentelemetryMetricsToDropAttributes>;
 }

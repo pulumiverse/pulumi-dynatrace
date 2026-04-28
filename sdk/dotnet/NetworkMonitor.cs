@@ -10,6 +10,157 @@ using Pulumi;
 
 namespace Pulumiverse.Dynatrace
 {
+    /// <summary>
+    /// &gt; This resource requires the API token scopes **Read settings** (`settings.read`) and **Write settings** (`settings.write`)
+    /// 
+    /// ## Dynatrace Documentation
+    /// 
+    /// - Network availability monitors - https://docs.dynatrace.com/docs/platform-modules/digital-experience/synthetic-monitoring/general-information/network-availability-monitors
+    /// 
+    /// ## Export Example Usage
+    /// 
+    /// - `terraform-provider-dynatrace -export dynatrace.NetworkMonitor` downloads all existing network monitor configuration
+    /// 
+    /// The full documentation of the export feature is available [here](https://dt-url.net/h203qmc).
+    /// 
+    /// ## Resource Example Usage
+    /// 
+    /// ```csharp
+    /// using System.Collections.Generic;
+    /// using System.Linq;
+    /// using Pulumi;
+    /// using Dynatrace = Pulumiverse.Dynatrace;
+    /// 
+    /// return await Deployment.RunAsync(() =&gt; 
+    /// {
+    ///     var dNSTest = new Dynatrace.NetworkMonitor("DNS_Test", new()
+    ///     {
+    ///         Name = "DNS Test",
+    ///         Description = "This is an example DNS test",
+    ///         Type = "MULTI_PROTOCOL",
+    ///         Enabled = false,
+    ///         FrequencyMin = 15,
+    ///         Locations = new[]
+    ///         {
+    ///             "SYNTHETIC_LOCATION-39F97465BE7BF644",
+    ///         },
+    ///         OutageHandling = new Dynatrace.Inputs.NetworkMonitorOutageHandlingArgs
+    ///         {
+    ///             GlobalConsecutiveOutageCountThreshold = 1,
+    ///             GlobalOutages = true,
+    ///         },
+    ///         PerformanceThresholds = new Dynatrace.Inputs.NetworkMonitorPerformanceThresholdsArgs
+    ///         {
+    ///             Enabled = true,
+    ///             Thresholds = new Dynatrace.Inputs.NetworkMonitorPerformanceThresholdsThresholdsArgs
+    ///             {
+    ///                 Thresholds = new[]
+    ///                 {
+    ///                     new Dynatrace.Inputs.NetworkMonitorPerformanceThresholdsThresholdsThresholdArgs
+    ///                     {
+    ///                         Aggregation = "AVG",
+    ///                         DealertingSamples = 5,
+    ///                         Samples = 5,
+    ///                         StepIndex = 0,
+    ///                         Threshold = 100,
+    ///                         ViolatingSamples = 3,
+    ///                     },
+    ///                 },
+    ///             },
+    ///         },
+    ///         Steps = new[]
+    ///         {
+    ///             new Dynatrace.Inputs.NetworkMonitorStepArgs
+    ///             {
+    ///                 Steps = new[]
+    ///                 {
+    ///                     new Dynatrace.Inputs.NetworkMonitorStepStepArgs
+    ///                     {
+    ///                         Name = "DNS Test",
+    ///                         RequestType = "DNS",
+    ///                         TargetLists = new[]
+    ///                         {
+    ///                             "google.com",
+    ///                             "yahoo.com",
+    ///                         },
+    ///                         Properties = 
+    ///                         {
+    ///                             { "DNS_RECORD_TYPES", "A" },
+    ///                             { "EXECUTION_TIMEOUT", "PT2S" },
+    ///                         },
+    ///                         Constraints = new[]
+    ///                         {
+    ///                             new Dynatrace.Inputs.NetworkMonitorStepStepConstraintArgs
+    ///                             {
+    ///                                 Constraints = new[]
+    ///                                 {
+    ///                                     new Dynatrace.Inputs.NetworkMonitorStepStepConstraintConstraintArgs
+    ///                                     {
+    ///                                         Type = "SUCCESS_RATE_PERCENT",
+    ///                                         Properties = 
+    ///                                         {
+    ///                                             { "value", "90" },
+    ///                                             { "operator", "&gt;=" },
+    ///                                         },
+    ///                                     },
+    ///                                 },
+    ///                             },
+    ///                         },
+    ///                         RequestConfigurations = new[]
+    ///                         {
+    ///                             new Dynatrace.Inputs.NetworkMonitorStepStepRequestConfigurationArgs
+    ///                             {
+    ///                                 RequestConfigurations = new[]
+    ///                                 {
+    ///                                     new Dynatrace.Inputs.NetworkMonitorStepStepRequestConfigurationRequestConfigurationArgs
+    ///                                     {
+    ///                                         Constraints = new[]
+    ///                                         {
+    ///                                             new Dynatrace.Inputs.NetworkMonitorStepStepRequestConfigurationRequestConfigurationConstraintArgs
+    ///                                             {
+    ///                                                 Constraints = new[]
+    ///                                                 {
+    ///                                                     new Dynatrace.Inputs.NetworkMonitorStepStepRequestConfigurationRequestConfigurationConstraintConstraintArgs
+    ///                                                     {
+    ///                                                         Type = "DNS_STATUS_CODE",
+    ///                                                         Properties = 
+    ///                                                         {
+    ///                                                             { "operator", "=" },
+    ///                                                             { "statusCode", "0" },
+    ///                                                         },
+    ///                                                     },
+    ///                                                 },
+    ///                                             },
+    ///                                         },
+    ///                                     },
+    ///                                 },
+    ///                             },
+    ///                         },
+    ///                     },
+    ///                 },
+    ///             },
+    ///         },
+    ///         Tags = new[]
+    ///         {
+    ///             new Dynatrace.Inputs.NetworkMonitorTagArgs
+    ///             {
+    ///                 Tags = new[]
+    ///                 {
+    ///                     new Dynatrace.Inputs.NetworkMonitorTagTagArgs
+    ///                     {
+    ///                         Context = "CONTEXTLESS",
+    ///                         Key = "Key1",
+    ///                         Source = "USER",
+    ///                         Value = "Value1",
+    ///                     },
+    ///                 },
+    ///             },
+    ///         },
+    ///     });
+    /// 
+    /// });
+    /// ```
+    /// </summary>
     [DynatraceResourceType("dynatrace:index/networkMonitor:NetworkMonitor")]
     public partial class NetworkMonitor : global::Pulumi.CustomResource
     {

@@ -10,6 +10,42 @@ using Pulumi;
 
 namespace Pulumiverse.Dynatrace
 {
+    /// <summary>
+    /// !&gt; **HTTP DELETE method not available** Terraform will no longer manage this resource on `Destroy` but the configuration will still be present on the Dynatrace cluster.
+    /// 
+    /// &gt; This resource requires the cluster API token scope **Service Provider API** (`ServiceProviderAPI`)
+    /// 
+    /// ## Dynatrace Documentation
+    /// 
+    /// - Dynatrace Managed - https://www.dynatrace.com/support/help/managed-cluster
+    /// 
+    /// - Cluster API v1 - https://www.dynatrace.com/support/help/managed-cluster/cluster-api/cluster-api-v1
+    /// 
+    /// ## Resource Example Usage
+    /// 
+    /// ```csharp
+    /// using System.Collections.Generic;
+    /// using System.Linq;
+    /// using Pulumi;
+    /// using Dynatrace = Pulumiverse.Dynatrace;
+    /// 
+    /// return await Deployment.RunAsync(() =&gt; 
+    /// {
+    ///     var test = new Dynatrace.ManagedPublicEndpoints("Test", new()
+    ///     {
+    ///         WebUiAddress = "https://www.webuiaddress.com",
+    ///         AdditionalWebUiAddresses = new[]
+    ///         {
+    ///             "https://www.webuiaddress1.com",
+    ///             "https://www.webuiaddress2.com",
+    ///         },
+    ///         BeaconForwarderAddress = "https://www.beaconforwarderaddress.com:443",
+    ///         CdnAddress = "https://www.cdnaddress.com",
+    ///     });
+    /// 
+    /// });
+    /// ```
+    /// </summary>
     [DynatraceResourceType("dynatrace:index/managedPublicEndpoints:ManagedPublicEndpoints")]
     public partial class ManagedPublicEndpoints : global::Pulumi.CustomResource
     {

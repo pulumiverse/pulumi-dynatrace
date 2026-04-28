@@ -10,6 +10,74 @@ using Pulumi;
 
 namespace Pulumiverse.Dynatrace
 {
+    /// <summary>
+    /// !&gt; This resource API endpoint has been deprecated, please migrate your OpenPipeline configurations and use `dynatrace_openpipeline_v2_bizevents_*` instead.
+    /// 
+    /// !&gt; Deploying an OpenPipeline configuration will overwrite the existing one of the same kind, causing any manual changes made in the web UI or other configurations managed by Terraform or Monaco to be lost. Ensure all configurations are defined within a single Terraform or Monaco configuration to prevent data loss.
+    /// 
+    /// &gt; **Dynatrace SaaS only**
+    /// 
+    /// &gt; To utilize this resource, please define the environment variables `DT_CLIENT_ID`, `DT_CLIENT_SECRET`, `DT_ACCOUNT_ID` with an OAuth client including the following permissions: **View OpenPipeline configurations** (`openpipeline:configurations:read`), and **Edit OpenPipeline configurations** (`openpipeline:configurations:write`).
+    /// 
+    /// ## Dynatrace Documentation
+    /// 
+    /// - OpenPipeline - https://docs.dynatrace.com/docs/platform/openpipeline
+    /// 
+    /// ## Export Example Usage
+    /// 
+    /// - `terraform-provider-dynatrace -export dynatrace.OpenpipelineBusinessEvents` downloads all existing OpenPipeline definitions for Business Events
+    /// 
+    /// The full documentation of the export feature is available [here](https://dt-url.net/h203qmc).
+    /// 
+    /// ## Resource Example Usage
+    /// 
+    /// ```csharp
+    /// using System.Collections.Generic;
+    /// using System.Linq;
+    /// using Pulumi;
+    /// using Dynatrace = Pulumiverse.Dynatrace;
+    /// 
+    /// return await Deployment.RunAsync(() =&gt; 
+    /// {
+    ///     var bizevents = new Dynatrace.OpenpipelineBusinessEvents("bizevents", new()
+    ///     {
+    ///         Pipelines = new Dynatrace.Inputs.OpenpipelineBusinessEventsPipelinesArgs
+    ///         {
+    ///             Pipelines = new[]
+    ///             {
+    ///                 new Dynatrace.Inputs.OpenpipelineBusinessEventsPipelinesPipelineArgs
+    ///                 {
+    ///                     Enabled = true,
+    ///                     DisplayName = "test",
+    ///                     Id = "pipeline_test_4034",
+    ///                     Processing = new Dynatrace.Inputs.OpenpipelineBusinessEventsPipelinesPipelineProcessingArgs
+    ///                     {
+    ///                         Processors = new[]
+    ///                         {
+    ///                             new Dynatrace.Inputs.OpenpipelineBusinessEventsPipelinesPipelineProcessingProcessorArgs
+    ///                             {
+    ///                                 FieldsRemoveProcessor = new Dynatrace.Inputs.OpenpipelineBusinessEventsPipelinesPipelineProcessingProcessorFieldsRemoveProcessorArgs
+    ///                                 {
+    ///                                     Description = "test",
+    ///                                     Enabled = true,
+    ///                                     Fields = new[]
+    ///                                     {
+    ///                                         "test",
+    ///                                     },
+    ///                                     Id = "processor_test_8410",
+    ///                                     Matcher = "true",
+    ///                                 },
+    ///                             },
+    ///                         },
+    ///                     },
+    ///                 },
+    ///             },
+    ///         },
+    ///     });
+    /// 
+    /// });
+    /// ```
+    /// </summary>
     [DynatraceResourceType("dynatrace:index/openpipelineBusinessEvents:OpenpipelineBusinessEvents")]
     public partial class OpenpipelineBusinessEvents : global::Pulumi.CustomResource
     {

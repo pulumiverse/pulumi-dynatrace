@@ -10,6 +10,62 @@ using Pulumi;
 
 namespace Pulumiverse.Dynatrace
 {
+    /// <summary>
+    /// &gt; This resource requires the API token scopes **Read settings** (`settings.read`) and **Write settings** (`settings.write`)
+    /// 
+    /// ## Dynatrace Documentation
+    /// 
+    /// - Advanced Process Group Detection Rules - https://www.dynatrace.com/support/help/how-to-use-dynatrace/process-groups/configuration/pg-detection#advanced
+    /// 
+    /// - Settings API - https://www.dynatrace.com/support/help/dynatrace-api/environment-api/settings (schemaId: `builtin:process-group.advanced-detection-rule`)
+    /// 
+    /// ## Export Example Usage
+    /// 
+    /// - `terraform-provider-dynatrace -export dynatrace.ProcessGroupDetection` downloads all existing advanced process group detection configuration
+    /// 
+    /// The full documentation of the export feature is available [here](https://dt-url.net/h203qmc).
+    /// 
+    /// ## Resource Example Usage
+    /// 
+    /// ```csharp
+    /// using System.Collections.Generic;
+    /// using System.Linq;
+    /// using Pulumi;
+    /// using Dynatrace = Pulumiverse.Dynatrace;
+    /// 
+    /// return await Deployment.RunAsync(() =&gt; 
+    /// {
+    ///     var _47d495a8_5577_436d_a3b3_777924c2d103 = new Dynatrace.ProcessGroupDetection("_47d495a8-5577-436d-a3b3-777924c2d103", new()
+    ///     {
+    ///         Enabled = true,
+    ///         GroupExtraction = new Dynatrace.Inputs.ProcessGroupDetectionGroupExtractionArgs
+    ///         {
+    ///             Property = "COMMAND_LINE_ARGS",
+    ///             StandaloneRule = false,
+    ///             Delimiter = new Dynatrace.Inputs.ProcessGroupDetectionGroupExtractionDelimiterArgs
+    ///             {
+    ///                 RemoveIds = true,
+    ///             },
+    ///         },
+    ///         InstanceExtraction = new Dynatrace.Inputs.ProcessGroupDetectionInstanceExtractionArgs
+    ///         {
+    ///             Property = "AWS_ECS_FAMILY",
+    ///             Delimiter = new Dynatrace.Inputs.ProcessGroupDetectionInstanceExtractionDelimiterArgs
+    ///             {
+    ///                 RemoveIds = true,
+    ///             },
+    ///         },
+    ///         ProcessDetection = new Dynatrace.Inputs.ProcessGroupDetectionProcessDetectionArgs
+    ///         {
+    ///             ContainedString = "-config",
+    ///             Property = "COMMAND_LINE_ARGS",
+    ///             RestrictToProcessType = "PROCESS_TYPE_APACHE_HTTPD",
+    ///         },
+    ///     });
+    /// 
+    /// });
+    /// ```
+    /// </summary>
     [DynatraceResourceType("dynatrace:index/processGroupDetection:ProcessGroupDetection")]
     public partial class ProcessGroupDetection : global::Pulumi.CustomResource
     {

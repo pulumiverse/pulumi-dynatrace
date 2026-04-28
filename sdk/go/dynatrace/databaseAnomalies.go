@@ -11,6 +11,21 @@ import (
 	"github.com/pulumiverse/pulumi-dynatrace/sdk/go/dynatrace/internal"
 )
 
+// !> This resource is utilizing an older API endpoint, please use DatabaseAnomaliesV2 instead.
+//
+// > This resource requires the API token scopes **Read configuration** (`ReadConfig`) and **Write configuration** (`WriteConfig`)
+//
+// ## Dynatrace Documentation
+//
+// - Adjust the sensitivity of anomaly detection for database services - https://www.dynatrace.com/support/help/how-to-use-dynatrace/problem-detection-and-analysis/problem-detection/adjust-sensitivity-anomaly-detection/adjust-sensitivity-services-database
+//
+// - Anomaly detection API - Database services - https://www.dynatrace.com/support/help/dynatrace-api/configuration-api/anomaly-detection-api/anomaly-detection-api-database
+//
+// ## Export Example Usage
+//
+// - `terraform-provider-dynatrace -export DatabaseAnomalies` downloads all existing database anomaly detection configuration
+//
+// The full documentation of the export feature is available [here](https://dt-url.net/h203qmc).
 type DatabaseAnomalies struct {
 	pulumi.CustomResourceState
 

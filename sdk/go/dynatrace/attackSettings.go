@@ -12,6 +12,21 @@ import (
 	"github.com/pulumiverse/pulumi-dynatrace/sdk/go/dynatrace/internal"
 )
 
+// > This resource is excluded by default in the export utility since it requires the feature to be activated, please explicitly specify the resource to retrieve existing configuration.
+//
+// > This resource requires the API token scopes **Read attacks** (`attacks.read`) and **Write attacks** (`attacks.write`)
+//
+// ## Dynatrace Documentation
+//
+// - Runtime Application Protection - https://www.dynatrace.com/support/help/platform-modules/application-security/application-protection
+//
+// - Settings API - https://www.dynatrace.com/support/help/dynatrace-api/environment-api/settings (schemaId: `builtin:appsec.attack-protection-settings`)
+//
+// ## Export Example Usage
+//
+// - `terraform-provider-dynatrace -export AttackSettings` downloads existing application protection: general settings
+//
+// The full documentation of the export feature is available [here](https://dt-url.net/h203qmc).
 type AttackSettings struct {
 	pulumi.CustomResourceState
 

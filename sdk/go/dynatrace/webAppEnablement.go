@@ -12,12 +12,27 @@ import (
 	"github.com/pulumiverse/pulumi-dynatrace/sdk/go/dynatrace/internal"
 )
 
+// > Configuration of the application scope overlaps with dynatrace_web_application, but this resource in addition provides an option for an environment scope.
+//
+// > This resource requires the API token scopes **Read settings** (`settings.read`) and **Write settings** (`settings.write`)
+//
+// ## Dynatrace Documentation
+//
+// - Configure cost and traffic control for web applications - https://www.dynatrace.com/support/help/how-to-use-dynatrace/real-user-monitoring/setup-and-configuration/web-applications/additional-configuration/configure-cost-and-traffic-control-web
+//
+// - Settings API - https://www.dynatrace.com/support/help/dynatrace-api/environment-api/settings (schemaId: `builtin:rum.web.enablement`)
+//
+// ## Export Example Usage
+//
+// - `terraform-provider-dynatrace -export WebAppEnablement` downloads all existing web application enablement and cost control configuration
+//
+// The full documentation of the export feature is available [here](https://dt-url.net/h203qmc).
 type WebAppEnablement struct {
 	pulumi.CustomResourceState
 
 	// The scope of this settings. If the settings should cover the whole environment, just don't specify any scope.
 	ApplicationId pulumi.StringPtrOutput `pulumi:"applicationId"`
-	// Experience Analytics
+	// User Interactions
 	ExperienceAnalytics WebAppEnablementExperienceAnalyticsPtrOutput `pulumi:"experienceAnalytics"`
 	// Capture and analyze all user actions within your application. Enable [Real User Monitoring (RUM)](https://dt-url.net/1n2b0prq) to monitor and improve your application's performance, identify errors, and gain insight into your user's behavior and experience.
 	Rum WebAppEnablementRumOutput `pulumi:"rum"`
@@ -63,7 +78,7 @@ func GetWebAppEnablement(ctx *pulumi.Context,
 type webAppEnablementState struct {
 	// The scope of this settings. If the settings should cover the whole environment, just don't specify any scope.
 	ApplicationId *string `pulumi:"applicationId"`
-	// Experience Analytics
+	// User Interactions
 	ExperienceAnalytics *WebAppEnablementExperienceAnalytics `pulumi:"experienceAnalytics"`
 	// Capture and analyze all user actions within your application. Enable [Real User Monitoring (RUM)](https://dt-url.net/1n2b0prq) to monitor and improve your application's performance, identify errors, and gain insight into your user's behavior and experience.
 	Rum *WebAppEnablementRum `pulumi:"rum"`
@@ -74,7 +89,7 @@ type webAppEnablementState struct {
 type WebAppEnablementState struct {
 	// The scope of this settings. If the settings should cover the whole environment, just don't specify any scope.
 	ApplicationId pulumi.StringPtrInput
-	// Experience Analytics
+	// User Interactions
 	ExperienceAnalytics WebAppEnablementExperienceAnalyticsPtrInput
 	// Capture and analyze all user actions within your application. Enable [Real User Monitoring (RUM)](https://dt-url.net/1n2b0prq) to monitor and improve your application's performance, identify errors, and gain insight into your user's behavior and experience.
 	Rum WebAppEnablementRumPtrInput
@@ -89,7 +104,7 @@ func (WebAppEnablementState) ElementType() reflect.Type {
 type webAppEnablementArgs struct {
 	// The scope of this settings. If the settings should cover the whole environment, just don't specify any scope.
 	ApplicationId *string `pulumi:"applicationId"`
-	// Experience Analytics
+	// User Interactions
 	ExperienceAnalytics *WebAppEnablementExperienceAnalytics `pulumi:"experienceAnalytics"`
 	// Capture and analyze all user actions within your application. Enable [Real User Monitoring (RUM)](https://dt-url.net/1n2b0prq) to monitor and improve your application's performance, identify errors, and gain insight into your user's behavior and experience.
 	Rum WebAppEnablementRum `pulumi:"rum"`
@@ -101,7 +116,7 @@ type webAppEnablementArgs struct {
 type WebAppEnablementArgs struct {
 	// The scope of this settings. If the settings should cover the whole environment, just don't specify any scope.
 	ApplicationId pulumi.StringPtrInput
-	// Experience Analytics
+	// User Interactions
 	ExperienceAnalytics WebAppEnablementExperienceAnalyticsPtrInput
 	// Capture and analyze all user actions within your application. Enable [Real User Monitoring (RUM)](https://dt-url.net/1n2b0prq) to monitor and improve your application's performance, identify errors, and gain insight into your user's behavior and experience.
 	Rum WebAppEnablementRumInput
@@ -201,7 +216,7 @@ func (o WebAppEnablementOutput) ApplicationId() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v *WebAppEnablement) pulumi.StringPtrOutput { return v.ApplicationId }).(pulumi.StringPtrOutput)
 }
 
-// Experience Analytics
+// User Interactions
 func (o WebAppEnablementOutput) ExperienceAnalytics() WebAppEnablementExperienceAnalyticsPtrOutput {
 	return o.ApplyT(func(v *WebAppEnablement) WebAppEnablementExperienceAnalyticsPtrOutput { return v.ExperienceAnalytics }).(WebAppEnablementExperienceAnalyticsPtrOutput)
 }

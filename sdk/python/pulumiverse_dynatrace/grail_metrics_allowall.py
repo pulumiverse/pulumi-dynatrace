@@ -22,6 +22,7 @@ class GrailMetricsAllowallArgs:
                  allow_all: pulumi.Input[_builtins.bool]):
         """
         The set of arguments for constructing a GrailMetricsAllowall resource.
+
         :param pulumi.Input[_builtins.bool] allow_all: When enabled every custom metric will be ingested to Grail. Warning: this setting can cause [unexpected billing!](https://docs.dynatrace.com/docs/dynatrace-api/environment-api/metric-v2/best-practices#avoid-high-cardinality-limits)
         """
         pulumi.set(__self__, "allow_all", allow_all)
@@ -45,6 +46,7 @@ class _GrailMetricsAllowallState:
                  allow_all: Optional[pulumi.Input[_builtins.bool]] = None):
         """
         Input properties used for looking up and filtering GrailMetricsAllowall resources.
+
         :param pulumi.Input[_builtins.bool] allow_all: When enabled every custom metric will be ingested to Grail. Warning: this setting can cause [unexpected billing!](https://docs.dynatrace.com/docs/dynatrace-api/environment-api/metric-v2/best-practices#avoid-high-cardinality-limits)
         """
         if allow_all is not None:
@@ -72,7 +74,21 @@ class GrailMetricsAllowall(pulumi.CustomResource):
                  allow_all: Optional[pulumi.Input[_builtins.bool]] = None,
                  __props__=None):
         """
-        Create a GrailMetricsAllowall resource with the given unique name, props, and options.
+        > This resource requires the API token scopes **Read settings** (`settings.read`) and **Write settings** (`settings.write`)
+
+        ## Dynatrace Documentation
+
+        - Grail - https://docs.dynatrace.com/docs/platform/grail
+
+        - Settings API - https://www.dynatrace.com/support/help/dynatrace-api/environment-api/settings (schemaId: `builtin:grail.metrics.allow-all`)
+
+        ## Export Example Usage
+
+        - `terraform-provider-dynatrace -export GrailMetricsAllowall` downloads existing grail metrics configuration
+
+        The full documentation of the export feature is available [here](https://dt-url.net/h203qmc).
+
+
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[_builtins.bool] allow_all: When enabled every custom metric will be ingested to Grail. Warning: this setting can cause [unexpected billing!](https://docs.dynatrace.com/docs/dynatrace-api/environment-api/metric-v2/best-practices#avoid-high-cardinality-limits)
@@ -84,7 +100,21 @@ class GrailMetricsAllowall(pulumi.CustomResource):
                  args: GrailMetricsAllowallArgs,
                  opts: Optional[pulumi.ResourceOptions] = None):
         """
-        Create a GrailMetricsAllowall resource with the given unique name, props, and options.
+        > This resource requires the API token scopes **Read settings** (`settings.read`) and **Write settings** (`settings.write`)
+
+        ## Dynatrace Documentation
+
+        - Grail - https://docs.dynatrace.com/docs/platform/grail
+
+        - Settings API - https://www.dynatrace.com/support/help/dynatrace-api/environment-api/settings (schemaId: `builtin:grail.metrics.allow-all`)
+
+        ## Export Example Usage
+
+        - `terraform-provider-dynatrace -export GrailMetricsAllowall` downloads existing grail metrics configuration
+
+        The full documentation of the export feature is available [here](https://dt-url.net/h203qmc).
+
+
         :param str resource_name: The name of the resource.
         :param GrailMetricsAllowallArgs args: The arguments to use to populate this resource's properties.
         :param pulumi.ResourceOptions opts: Options for the resource.

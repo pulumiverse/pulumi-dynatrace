@@ -27,6 +27,7 @@ class ProcessGroupSimpleDetectionArgs:
                  process_type: Optional[pulumi.Input[_builtins.str]] = None):
         """
         The set of arguments for constructing a ProcessGroupSimpleDetection resource.
+
         :param pulumi.Input[_builtins.bool] enabled: This setting is enabled (`true`) or disabled (`false`)
         :param pulumi.Input[_builtins.str] group_identifier: If Dynatrace detects this property at startup of a process, it will use its value to identify process groups more granular.
         :param pulumi.Input[_builtins.str] instance_identifier: Use a variable to identify instances within a process group.
@@ -127,6 +128,7 @@ class _ProcessGroupSimpleDetectionState:
                  rule_type: Optional[pulumi.Input[_builtins.str]] = None):
         """
         Input properties used for looking up and filtering ProcessGroupSimpleDetection resources.
+
         :param pulumi.Input[_builtins.bool] enabled: This setting is enabled (`true`) or disabled (`false`)
         :param pulumi.Input[_builtins.str] group_identifier: If Dynatrace detects this property at startup of a process, it will use its value to identify process groups more granular.
         :param pulumi.Input[_builtins.str] insert_after: Because this resource allows for ordering you may specify the ID of the resource instance that comes before this instance regarding order. If not specified when creating the setting will be added to the end of the list. If not specified during update the order will remain untouched
@@ -234,7 +236,21 @@ class ProcessGroupSimpleDetection(pulumi.CustomResource):
                  rule_type: Optional[pulumi.Input[_builtins.str]] = None,
                  __props__=None):
         """
-        Create a ProcessGroupSimpleDetection resource with the given unique name, props, and options.
+        > This resource requires the API token scopes **Read settings** (`settings.read`) and **Write settings** (`settings.write`)
+
+        ## Dynatrace Documentation
+
+        - Simple detection rules - https://www.dynatrace.com/support/help/platform-modules/infrastructure-monitoring/process-groups/configuration/pg-detection#simple
+
+        - Settings API - https://www.dynatrace.com/support/help/dynatrace-api/environment-api/settings (schemaId: `builtin:process-group.simple-detection-rule`)
+
+        ## Export Example Usage
+
+        - `terraform-provider-dynatrace -export ProcessGroupSimpleDetection` downloads all existing process group simple detection rules
+
+        The full documentation of the export feature is available [here](https://dt-url.net/h203qmc).
+
+
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[_builtins.bool] enabled: This setting is enabled (`true`) or disabled (`false`)
@@ -251,7 +267,21 @@ class ProcessGroupSimpleDetection(pulumi.CustomResource):
                  args: ProcessGroupSimpleDetectionArgs,
                  opts: Optional[pulumi.ResourceOptions] = None):
         """
-        Create a ProcessGroupSimpleDetection resource with the given unique name, props, and options.
+        > This resource requires the API token scopes **Read settings** (`settings.read`) and **Write settings** (`settings.write`)
+
+        ## Dynatrace Documentation
+
+        - Simple detection rules - https://www.dynatrace.com/support/help/platform-modules/infrastructure-monitoring/process-groups/configuration/pg-detection#simple
+
+        - Settings API - https://www.dynatrace.com/support/help/dynatrace-api/environment-api/settings (schemaId: `builtin:process-group.simple-detection-rule`)
+
+        ## Export Example Usage
+
+        - `terraform-provider-dynatrace -export ProcessGroupSimpleDetection` downloads all existing process group simple detection rules
+
+        The full documentation of the export feature is available [here](https://dt-url.net/h203qmc).
+
+
         :param str resource_name: The name of the resource.
         :param ProcessGroupSimpleDetectionArgs args: The arguments to use to populate this resource's properties.
         :param pulumi.ResourceOptions opts: Options for the resource.

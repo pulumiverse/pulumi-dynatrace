@@ -29,6 +29,7 @@ class ApplicationErrorRulesArgs:
                  web_application_id: Optional[pulumi.Input[_builtins.str]] = None):
         """
         The set of arguments for constructing a ApplicationErrorRules resource.
+
         :param pulumi.Input['ApplicationErrorRulesCustomErrorsArgs'] custom_errors: (Field has overlap with `WebAppCustomErrors`) An ordered list of HTTP errors.
         :param pulumi.Input['ApplicationErrorRulesHttpErrorsArgs'] http_errors: (Field has overlap with `WebAppRequestErrors`) An ordered list of HTTP errors.
                
@@ -137,6 +138,7 @@ class _ApplicationErrorRulesState:
                  web_application_id: Optional[pulumi.Input[_builtins.str]] = None):
         """
         Input properties used for looking up and filtering ApplicationErrorRules resources.
+
         :param pulumi.Input['ApplicationErrorRulesCustomErrorsArgs'] custom_errors: (Field has overlap with `WebAppCustomErrors`) An ordered list of HTTP errors.
         :param pulumi.Input['ApplicationErrorRulesHttpErrorsArgs'] http_errors: (Field has overlap with `WebAppRequestErrors`) An ordered list of HTTP errors.
                
@@ -248,7 +250,21 @@ class ApplicationErrorRules(pulumi.CustomResource):
                  web_application_id: Optional[pulumi.Input[_builtins.str]] = None,
                  __props__=None):
         """
-        Create a ApplicationErrorRules resource with the given unique name, props, and options.
+        > This resource requires the API token scopes **Read configuration** (`ReadConfig`) and **Write configuration** (`WriteConfig`)
+
+        ## Dynatrace Documentation
+
+        - Configure web application errors - https://www.dynatrace.com/support/help/how-to-use-dynatrace/real-user-monitoring/setup-and-configuration/web-applications/additional-configuration/configure-errors
+
+        - Web application configuration API - https://www.dynatrace.com/support/help/dynatrace-api/configuration-api/rum/web-application-configuration-api
+
+        ## Export Example Usage
+
+        - `terraform-provider-dynatrace -export ApplicationErrorRules` downloads all existing application error rule configuration
+
+        The full documentation of the export feature is available [here](https://dt-url.net/h203qmc).
+
+
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[Union['ApplicationErrorRulesCustomErrorsArgs', 'ApplicationErrorRulesCustomErrorsArgsDict']] custom_errors: (Field has overlap with `WebAppCustomErrors`) An ordered list of HTTP errors.
@@ -267,7 +283,21 @@ class ApplicationErrorRules(pulumi.CustomResource):
                  args: Optional[ApplicationErrorRulesArgs] = None,
                  opts: Optional[pulumi.ResourceOptions] = None):
         """
-        Create a ApplicationErrorRules resource with the given unique name, props, and options.
+        > This resource requires the API token scopes **Read configuration** (`ReadConfig`) and **Write configuration** (`WriteConfig`)
+
+        ## Dynatrace Documentation
+
+        - Configure web application errors - https://www.dynatrace.com/support/help/how-to-use-dynatrace/real-user-monitoring/setup-and-configuration/web-applications/additional-configuration/configure-errors
+
+        - Web application configuration API - https://www.dynatrace.com/support/help/dynatrace-api/configuration-api/rum/web-application-configuration-api
+
+        ## Export Example Usage
+
+        - `terraform-provider-dynatrace -export ApplicationErrorRules` downloads all existing application error rule configuration
+
+        The full documentation of the export feature is available [here](https://dt-url.net/h203qmc).
+
+
         :param str resource_name: The name of the resource.
         :param ApplicationErrorRulesArgs args: The arguments to use to populate this resource's properties.
         :param pulumi.ResourceOptions opts: Options for the resource.

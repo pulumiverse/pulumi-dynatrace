@@ -32,6 +32,7 @@ class K8sMonitoringArgs:
                  scope: Optional[pulumi.Input[_builtins.str]] = None):
         """
         The set of arguments for constructing a K8sMonitoring resource.
+
         :param pulumi.Input[_builtins.bool] cloud_application_pipeline_enabled: Monitor Kubernetes namespaces, services, workloads, and pods
         :param pulumi.Input[_builtins.bool] event_processing_active: All events are monitored unless event filters are specified. All ingested events are subject to licensing by default.
         :param pulumi.Input[_builtins.bool] open_metrics_builtin_enabled: Workload and node resource metrics are based on a subset of cAdvisor metrics. Depending on your Kubernetes cluster size, this may increase the CPU/memory resource consumption of your ActiveGate.
@@ -184,6 +185,7 @@ class _K8sMonitoringState:
                  scope: Optional[pulumi.Input[_builtins.str]] = None):
         """
         Input properties used for looking up and filtering K8sMonitoring resources.
+
         :param pulumi.Input[_builtins.bool] cloud_application_pipeline_enabled: Monitor Kubernetes namespaces, services, workloads, and pods
         :param pulumi.Input['K8sMonitoringEventPatternsArgs'] event_patterns: Define Kubernetes event filters to ingest events into your environment. For more details, see the [documentation](https://dt-url.net/2201p0u).
         :param pulumi.Input[_builtins.bool] event_processing_active: All events are monitored unless event filters are specified. All ingested events are subject to licensing by default.
@@ -343,7 +345,21 @@ class K8sMonitoring(pulumi.CustomResource):
                  scope: Optional[pulumi.Input[_builtins.str]] = None,
                  __props__=None):
         """
-        Create a K8sMonitoring resource with the given unique name, props, and options.
+        > This resource requires the API token scopes **Read settings** (`settings.read`) and **Write settings** (`settings.write`)
+
+        ## Dynatrace Documentation
+
+        - Kubernetes/OpenShift monitoring - https://www.dynatrace.com/support/help/how-to-use-dynatrace/infrastructure-monitoring/container-platform-monitoring/kubernetes-monitoring
+
+        - Settings API - https://www.dynatrace.com/support/help/dynatrace-api/environment-api/settings (schemaId: `builtin:cloud.kubernetes.monitoring`)
+
+        ## Export Example Usage
+
+        - `terraform-provider-dynatrace -export K8sMonitoring` downloads all existing Kubernetes monitoring settings
+
+        The full documentation of the export feature is available [here](https://dt-url.net/h203qmc).
+
+
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[_builtins.bool] cloud_application_pipeline_enabled: Monitor Kubernetes namespaces, services, workloads, and pods
@@ -363,7 +379,21 @@ class K8sMonitoring(pulumi.CustomResource):
                  args: K8sMonitoringArgs,
                  opts: Optional[pulumi.ResourceOptions] = None):
         """
-        Create a K8sMonitoring resource with the given unique name, props, and options.
+        > This resource requires the API token scopes **Read settings** (`settings.read`) and **Write settings** (`settings.write`)
+
+        ## Dynatrace Documentation
+
+        - Kubernetes/OpenShift monitoring - https://www.dynatrace.com/support/help/how-to-use-dynatrace/infrastructure-monitoring/container-platform-monitoring/kubernetes-monitoring
+
+        - Settings API - https://www.dynatrace.com/support/help/dynatrace-api/environment-api/settings (schemaId: `builtin:cloud.kubernetes.monitoring`)
+
+        ## Export Example Usage
+
+        - `terraform-provider-dynatrace -export K8sMonitoring` downloads all existing Kubernetes monitoring settings
+
+        The full documentation of the export feature is available [here](https://dt-url.net/h203qmc).
+
+
         :param str resource_name: The name of the resource.
         :param K8sMonitoringArgs args: The arguments to use to populate this resource's properties.
         :param pulumi.ResourceOptions opts: Options for the resource.

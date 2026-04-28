@@ -31,6 +31,7 @@ class ApiTokenArgs:
                  personal_access_token: Optional[pulumi.Input[_builtins.bool]] = None):
         """
         The set of arguments for constructing a ApiToken resource.
+
         :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] scopes: A list of the scopes to be assigned to the token.
         :param pulumi.Input[_builtins.str] creation_date: Token creation date in ISO 8601 format (yyyy-MM-dd'T'HH:mm:ss.SSS'Z')
         :param pulumi.Input[_builtins.bool] enabled: The token is enabled (true) or disabled (false), default disabled (false).
@@ -199,6 +200,7 @@ class _ApiTokenState:
                  token: Optional[pulumi.Input[_builtins.str]] = None):
         """
         Input properties used for looking up and filtering ApiToken resources.
+
         :param pulumi.Input[_builtins.str] creation_date: Token creation date in ISO 8601 format (yyyy-MM-dd'T'HH:mm:ss.SSS'Z')
         :param pulumi.Input[_builtins.bool] enabled: The token is enabled (true) or disabled (false), default disabled (false).
         :param pulumi.Input[_builtins.str] expiration_date: The expiration date of the token.
@@ -385,7 +387,25 @@ class ApiToken(pulumi.CustomResource):
                  scopes: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
                  __props__=None):
         """
-        Create a ApiToken resource with the given unique name, props, and options.
+        > The usage of `ApiToken` will introduce sensitive data within your Terraform state. The `token` property is flagged as `sensitive`, but the field will be stored as plain-text. More information can be found here.
+
+        > The token value can be retrieved with `dynatrace_api_token.<#name#>.token` after apply.
+
+        > This resource requires the API token scopes **Read API tokens** (`apiTokens.read`) and **Write API tokens** (`apiTokens.write`)
+
+        ## Dynatrace Documentation
+
+        - Dynatrace API Tokens and authentication - https://www.dynatrace.com/support/help/dynatrace-api/basics/dynatrace-api-authentication
+
+        - Tokens API v2 - https://www.dynatrace.com/support/help/dynatrace-api/environment-api/tokens-v2
+
+        ## Export Example Usage
+
+        - `terraform-provider-dynatrace -export ApiToken` downloads all existing API token configuration
+
+        The full documentation of the export feature is available [here](https://dt-url.net/h203qmc).
+
+
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[_builtins.str] creation_date: Token creation date in ISO 8601 format (yyyy-MM-dd'T'HH:mm:ss.SSS'Z')
@@ -406,7 +426,25 @@ class ApiToken(pulumi.CustomResource):
                  args: ApiTokenArgs,
                  opts: Optional[pulumi.ResourceOptions] = None):
         """
-        Create a ApiToken resource with the given unique name, props, and options.
+        > The usage of `ApiToken` will introduce sensitive data within your Terraform state. The `token` property is flagged as `sensitive`, but the field will be stored as plain-text. More information can be found here.
+
+        > The token value can be retrieved with `dynatrace_api_token.<#name#>.token` after apply.
+
+        > This resource requires the API token scopes **Read API tokens** (`apiTokens.read`) and **Write API tokens** (`apiTokens.write`)
+
+        ## Dynatrace Documentation
+
+        - Dynatrace API Tokens and authentication - https://www.dynatrace.com/support/help/dynatrace-api/basics/dynatrace-api-authentication
+
+        - Tokens API v2 - https://www.dynatrace.com/support/help/dynatrace-api/environment-api/tokens-v2
+
+        ## Export Example Usage
+
+        - `terraform-provider-dynatrace -export ApiToken` downloads all existing API token configuration
+
+        The full documentation of the export feature is available [here](https://dt-url.net/h203qmc).
+
+
         :param str resource_name: The name of the resource.
         :param ApiTokenArgs args: The arguments to use to populate this resource's properties.
         :param pulumi.ResourceOptions opts: Options for the resource.

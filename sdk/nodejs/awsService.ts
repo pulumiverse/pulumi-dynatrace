@@ -29,7 +29,7 @@ import * as utilities from "./utilities";
  * import * as dynatrace from "@pulumiverse/dynatrace";
  *
  * export = async () => {
- *     const tERRAFORMSAMPLE = new dynatrace.AwsCredentials("tERRAFORMSAMPLE", {
+ *     const TERRAFORM_SAMPLE = new dynatrace.AwsCredentials("TERRAFORM_SAMPLE", {
  *         label: "TERRAFORM-TEST-001",
  *         partitionType: "AWS_DEFAULT",
  *         taggedOnly: false,
@@ -42,9 +42,10 @@ import * as utilities from "./utilities";
  *     const supportedServices = await dynatrace.getAwsSupportedServices({});
  *     const tERRAFORMSAMPLEServices: dynatrace.AwsService[] = [];
  *     for (const range of Object.entries(supportedServices.services).map(([k, v]) => ({key: k, value: v}))) {
- *         tERRAFORMSAMPLEServices.push(new dynatrace.AwsService(`tERRAFORMSAMPLEServices-${range.key}`, {
- *             credentialsId: tERRAFORMSAMPLE.id,
+ *         tERRAFORMSAMPLEServices.push(new dynatrace.AwsService(`TERRAFORM_SAMPLE_services-${range.key}`, {
+ *             credentialsId: TERRAFORM_SAMPLE.id,
  *             useRecommendedMetrics: true,
+ *             name: range.key,
  *         }));
  *     }
  * }
@@ -57,7 +58,7 @@ import * as utilities from "./utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as dynatrace from "@pulumiverse/dynatrace";
  *
- * const example = new dynatrace.AwsCredentials("example", {
+ * const example = new dynatrace.AwsCredentials("Example", {
  *     label: "#name#",
  *     partitionType: "AWS_DEFAULT",
  *     taggedOnly: false,
@@ -66,7 +67,8 @@ import * as utilities from "./utilities";
  *         iamRole: "aws-monitoring-role",
  *     },
  * });
- * const elastiCache = new dynatrace.AwsService("elastiCache", {
+ * const elastiCache = new dynatrace.AwsService("ElastiCache", {
+ *     name: "ElastiCache",
  *     credentialsId: example.id,
  *     metrics: [
  *         {
@@ -119,12 +121,21 @@ export class AwsService extends pulumi.CustomResource {
      * the ID of the AWS credentials this supported service belongs to
      */
     declare public readonly credentialsId: pulumi.Output<string>;
+    /**
+     * A list of metrics to be monitored for this service. Depending on the service Dynatrace insists on a set of recommended metrics to be configured for that service. If any of these recommended metrics is missing here, the Terraform Provider will automatically add them during `pulumi up`. This usually results in a non-empty plan, until all of the recommended metrics are present within your configuration. For services considered `built-in` by Dynatrace any metrics specified here will be ignored - Dynatrace enforces a fixed set of metrics for these services.
+     */
     declare public readonly metrics: pulumi.Output<outputs.AwsServiceMetric[] | undefined>;
     /**
      * The name of the supporting service.
      */
     declare public readonly name: pulumi.Output<string>;
+    /**
+     * Used internally by the Terraform Provider in order to remember the metrics enforced by Dynatrace
+     */
     declare public /*out*/ readonly requiredMetrics: pulumi.Output<string>;
+    /**
+     * If `true` Terraform will negotiate with the Dynatrace API about the recommended/enforced metrics to be applied. Any `metric` specified will be therefore ignored.
+     */
     declare public readonly useRecommendedMetrics: pulumi.Output<boolean | undefined>;
 
     /**
@@ -175,12 +186,21 @@ export interface AwsServiceState {
      * the ID of the AWS credentials this supported service belongs to
      */
     credentialsId?: pulumi.Input<string>;
+    /**
+     * A list of metrics to be monitored for this service. Depending on the service Dynatrace insists on a set of recommended metrics to be configured for that service. If any of these recommended metrics is missing here, the Terraform Provider will automatically add them during `pulumi up`. This usually results in a non-empty plan, until all of the recommended metrics are present within your configuration. For services considered `built-in` by Dynatrace any metrics specified here will be ignored - Dynatrace enforces a fixed set of metrics for these services.
+     */
     metrics?: pulumi.Input<pulumi.Input<inputs.AwsServiceMetric>[]>;
     /**
      * The name of the supporting service.
      */
     name?: pulumi.Input<string>;
+    /**
+     * Used internally by the Terraform Provider in order to remember the metrics enforced by Dynatrace
+     */
     requiredMetrics?: pulumi.Input<string>;
+    /**
+     * If `true` Terraform will negotiate with the Dynatrace API about the recommended/enforced metrics to be applied. Any `metric` specified will be therefore ignored.
+     */
     useRecommendedMetrics?: pulumi.Input<boolean>;
 }
 
@@ -192,10 +212,16 @@ export interface AwsServiceArgs {
      * the ID of the AWS credentials this supported service belongs to
      */
     credentialsId: pulumi.Input<string>;
+    /**
+     * A list of metrics to be monitored for this service. Depending on the service Dynatrace insists on a set of recommended metrics to be configured for that service. If any of these recommended metrics is missing here, the Terraform Provider will automatically add them during `pulumi up`. This usually results in a non-empty plan, until all of the recommended metrics are present within your configuration. For services considered `built-in` by Dynatrace any metrics specified here will be ignored - Dynatrace enforces a fixed set of metrics for these services.
+     */
     metrics?: pulumi.Input<pulumi.Input<inputs.AwsServiceMetric>[]>;
     /**
      * The name of the supporting service.
      */
     name?: pulumi.Input<string>;
+    /**
+     * If `true` Terraform will negotiate with the Dynatrace API about the recommended/enforced metrics to be applied. Any `metric` specified will be therefore ignored.
+     */
     useRecommendedMetrics?: pulumi.Input<boolean>;
 }

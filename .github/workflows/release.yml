@@ -286,18 +286,18 @@ jobs:
       fail-fast: true
       matrix:
         dotnetversion:
-        - 8.0.x
+          - 10.0.201
         goversion:
-        - 1.24.x
+          - 1.26.x
         language:
-        - nodejs
-        - python
-        - dotnet
-        - go
+          - nodejs
+          - python
+          - dotnet
+          - go
         nodeversion:
-        - 20.x
+          - 22.x
         pythonversion:
-        - "3.11"
+          - "3.11"
   test:
     name: test
     needs: build_sdk
@@ -370,18 +370,18 @@ jobs:
       fail-fast: true
       matrix:
         dotnetversion:
-        - 8.0.x
+          - 10.0.201
         goversion:
-        - 1.24.x
+          - 1.26.x
         language:
-        - nodejs
-        - python
-        - dotnet
-        - go
+          - nodejs
+          - python
+          - dotnet
+          - go
         nodeversion:
-        - 20.x
+          - 22.x
         pythonversion:
-        - "3.11"
+          - "3.11"
 name: release
 "on":
   push:

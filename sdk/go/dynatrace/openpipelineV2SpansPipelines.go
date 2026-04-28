@@ -12,29 +12,322 @@ import (
 	"github.com/pulumiverse/pulumi-dynatrace/sdk/go/dynatrace/internal"
 )
 
+// > This resource requires the API token scopes **Read settings** (`settings.read`) and **Write settings** (`settings.write`)
+//
+// > This resource requires the OAuth scopes **Read settings** (`settings:objects:read`) and **Write settings** (`settings:objects:write`)
+//
+// ## Limitations
+//
+// > **Warning** If a resource is created using an API token or without setting `DYNATRACE_HTTP_OAUTH_PREFERENCE=true` (when both are used), the settings object's owner will remain empty.
+//
+// An empty owner implies:
+// - The settings object becomes public, allowing other users with settings permissions to read and modify it.
+// - Changing the settings object's permissions will have no effect, meaning the `SettingsPermissions` resource can't alter its access.
+//
+// When a settings object is created using platform credentials:
+// - The owner is set to the owner of the OAuth client or platform token.
+// - By default, the settings object is private; only the owner can read and modify it.
+// - Access modifiers can be managed using the `SettingsPermissions` resource.
+//
+// We recommend using platform credentials to ensure a correct setup.
+// In case an API token is needed, we recommend setting `DYNATRACE_HTTP_OAUTH_PREFERENCE=true`.
+//
+// ## Dynatrace Documentation
+//
+// - OpenPipeline - https://docs.dynatrace.com/docs/platform/openpipeline
+//
+// ## Export Example Usage
+//
+// - `terraform-provider-dynatrace -export OpenpipelineV2SpansPipelines` downloads all existing OpenPipeline definitions for spans pipelines
+//
+// The full documentation of the export feature is available [here](https://dt-url.net/h203qmc).
+//
+// ## Resource Example Usage
+//
+// ```go
+// package main
+//
+// import (
+//
+//	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//	"github.com/pulumiverse/pulumi-dynatrace/sdk/go/dynatrace"
+//
+// )
+//
+//	func main() {
+//		pulumi.Run(func(ctx *pulumi.Context) error {
+//			_, err := dynatrace.NewOpenpipelineV2SpansPipelines(ctx, "max-pipeline", &dynatrace.OpenpipelineV2SpansPipelinesArgs{
+//				DisplayName: pulumi.String("Warning pipeline"),
+//				CustomId:    pulumi.String("pipeline_Warning_pipeline_2773_tf_#name#"),
+//				MetadataList: &dynatrace.OpenpipelineV2SpansPipelinesMetadataListArgs{
+//					Metadatas: dynatrace.OpenpipelineV2SpansPipelinesMetadataListMetadataArray{
+//						&dynatrace.OpenpipelineV2SpansPipelinesMetadataListMetadataArgs{
+//							EntryKey:   pulumi.String("environment"),
+//							EntryValue: pulumi.String("production"),
+//						},
+//					},
+//				},
+//				Processing: &dynatrace.OpenpipelineV2SpansPipelinesProcessingArgs{
+//					Processors: &dynatrace.OpenpipelineV2SpansPipelinesProcessingProcessorsArgs{
+//						Processors: dynatrace.OpenpipelineV2SpansPipelinesProcessingProcessorsProcessorArray{
+//							&dynatrace.OpenpipelineV2SpansPipelinesProcessingProcessorsProcessorArgs{
+//								Type:        pulumi.String("drop"),
+//								Id:          pulumi.String("processor_Drop_unnecessary_records_3802"),
+//								Description: pulumi.String("Drop unnecessary records"),
+//								Matcher:     pulumi.String("not matchesPhrase(record.name, \"Warning\")"),
+//								Enabled:     pulumi.Bool(true),
+//							},
+//							&dynatrace.OpenpipelineV2SpansPipelinesProcessingProcessorsProcessorArgs{
+//								Type:        pulumi.String("fieldsAdd"),
+//								Id:          pulumi.String("processor_Add_warning_flag_5434"),
+//								Description: pulumi.String("Add warning flag"),
+//								Matcher:     pulumi.String("matchesPhrase(record.name, \"Warning\")"),
+//								SampleData:  pulumi.String("{\n  \"record.name\": \"Warning record\" \n}"),
+//								FieldsAdd: &dynatrace.OpenpipelineV2SpansPipelinesProcessingProcessorsProcessorFieldsAddArgs{
+//									Fields: &dynatrace.OpenpipelineV2SpansPipelinesProcessingProcessorsProcessorFieldsAddFieldsArgs{
+//										Fields: dynatrace.OpenpipelineV2SpansPipelinesProcessingProcessorsProcessorFieldsAddFieldsFieldArray{
+//											&dynatrace.OpenpipelineV2SpansPipelinesProcessingProcessorsProcessorFieldsAddFieldsFieldArgs{
+//												Name:  pulumi.String("is_warning"),
+//												Value: pulumi.String("true"),
+//											},
+//										},
+//									},
+//								},
+//								Enabled: pulumi.Bool(true),
+//							},
+//							&dynatrace.OpenpipelineV2SpansPipelinesProcessingProcessorsProcessorArgs{
+//								Type:        pulumi.String("fieldsRemove"),
+//								Id:          pulumi.String("processor_Remove_details_field_8539"),
+//								Description: pulumi.String("Remove details field"),
+//								SampleData:  pulumi.String("{\n  \"record.name\": \"Warning\",\n  \"record.details\": \"some record details\"\n}"),
+//								Matcher:     pulumi.String("isNotNull(record.details)"),
+//								FieldsRemove: &dynatrace.OpenpipelineV2SpansPipelinesProcessingProcessorsProcessorFieldsRemoveArgs{
+//									Fields: pulumi.StringArray{
+//										pulumi.String("record.details"),
+//									},
+//								},
+//								Enabled: pulumi.Bool(true),
+//							},
+//							&dynatrace.OpenpipelineV2SpansPipelinesProcessingProcessorsProcessorArgs{
+//								Type:        pulumi.String("fieldsRename"),
+//								Id:          pulumi.String("processor_Rename_name_to_title_8530"),
+//								Description: pulumi.String("Rename name to title"),
+//								SampleData:  pulumi.String("{\n  \"record.name\": \"Warning\"\n}"),
+//								Matcher:     pulumi.String("true"),
+//								FieldsRename: &dynatrace.OpenpipelineV2SpansPipelinesProcessingProcessorsProcessorFieldsRenameArgs{
+//									Fields: &dynatrace.OpenpipelineV2SpansPipelinesProcessingProcessorsProcessorFieldsRenameFieldsArgs{
+//										Fields: dynatrace.OpenpipelineV2SpansPipelinesProcessingProcessorsProcessorFieldsRenameFieldsFieldArray{
+//											&dynatrace.OpenpipelineV2SpansPipelinesProcessingProcessorsProcessorFieldsRenameFieldsFieldArgs{
+//												FromName: pulumi.String("record.name"),
+//												ToName:   pulumi.String("record.title"),
+//											},
+//										},
+//									},
+//								},
+//								Enabled: pulumi.Bool(true),
+//							},
+//							&dynatrace.OpenpipelineV2SpansPipelinesProcessingProcessorsProcessorArgs{
+//								Type:        pulumi.String("dql"),
+//								Id:          pulumi.String("processor_Combine_title_and_summary_to_name_8808"),
+//								Description: pulumi.String("Combine title and summary to name"),
+//								SampleData:  pulumi.String("{\n  \"record.title\": \"Warning\",\n  \"record.summary\": \"Request failed\"\n}"),
+//								Matcher:     pulumi.String("true"),
+//								Dql: &dynatrace.OpenpipelineV2SpansPipelinesProcessingProcessorsProcessorDqlArgs{
+//									Script: pulumi.String("fieldsAdd record.name = concat(record.title, \" - \", record.summary)"),
+//								},
+//								Enabled: pulumi.Bool(true),
+//							},
+//						},
+//					},
+//				},
+//				Davis: &dynatrace.OpenpipelineV2SpansPipelinesDavisArgs{
+//					Processors: &dynatrace.OpenpipelineV2SpansPipelinesDavisProcessorsArgs{
+//						Processors: dynatrace.OpenpipelineV2SpansPipelinesDavisProcessorsProcessorArray{
+//							&dynatrace.OpenpipelineV2SpansPipelinesDavisProcessorsProcessorArgs{
+//								Type:        pulumi.String("davis"),
+//								Id:          pulumi.String("processor_Create_warning_event_8226"),
+//								Description: pulumi.String("Create warning event"),
+//								Matcher:     pulumi.String("true"),
+//								Davis: &dynatrace.OpenpipelineV2SpansPipelinesDavisProcessorsProcessorDavisArgs{
+//									Properties: &dynatrace.OpenpipelineV2SpansPipelinesDavisProcessorsProcessorDavisPropertiesArgs{
+//										Properties: dynatrace.OpenpipelineV2SpansPipelinesDavisProcessorsProcessorDavisPropertiesPropertyArray{
+//											&dynatrace.OpenpipelineV2SpansPipelinesDavisProcessorsProcessorDavisPropertiesPropertyArgs{
+//												Key:   pulumi.String("event.type"),
+//												Value: pulumi.String("CUSTOM_ALERT"),
+//											},
+//											&dynatrace.OpenpipelineV2SpansPipelinesDavisProcessorsProcessorDavisPropertiesPropertyArgs{
+//												Key:   pulumi.String("event.name"),
+//												Value: pulumi.String("Warning detected"),
+//											},
+//											&dynatrace.OpenpipelineV2SpansPipelinesDavisProcessorsProcessorDavisPropertiesPropertyArgs{
+//												Key:   pulumi.String("event.description"),
+//												Value: pulumi.String("Warning: {dims:record.summary}"),
+//											},
+//										},
+//									},
+//								},
+//								Enabled: pulumi.Bool(true),
+//							},
+//						},
+//					},
+//				},
+//				MetricExtraction: &dynatrace.OpenpipelineV2SpansPipelinesMetricExtractionArgs{
+//					Processors: &dynatrace.OpenpipelineV2SpansPipelinesMetricExtractionProcessorsArgs{
+//						Processors: dynatrace.OpenpipelineV2SpansPipelinesMetricExtractionProcessorsProcessorArray{
+//							&dynatrace.OpenpipelineV2SpansPipelinesMetricExtractionProcessorsProcessorArgs{
+//								Type:        pulumi.String("counterMetric"),
+//								Id:          pulumi.String("processor_Count_warning_events_6392"),
+//								Description: pulumi.String("Count warnings"),
+//								Matcher:     pulumi.String("true"),
+//								CounterMetric: &dynatrace.OpenpipelineV2SpansPipelinesMetricExtractionProcessorsProcessorCounterMetricArgs{
+//									MetricKey: pulumi.String("warning.count"),
+//									Dimensions: &dynatrace.OpenpipelineV2SpansPipelinesMetricExtractionProcessorsProcessorCounterMetricDimensionsArgs{
+//										Dimensions: dynatrace.OpenpipelineV2SpansPipelinesMetricExtractionProcessorsProcessorCounterMetricDimensionsDimensionArray{
+//											&dynatrace.OpenpipelineV2SpansPipelinesMetricExtractionProcessorsProcessorCounterMetricDimensionsDimensionArgs{
+//												SourceFieldName: pulumi.String("dt.cost.costcenter"),
+//											},
+//											&dynatrace.OpenpipelineV2SpansPipelinesMetricExtractionProcessorsProcessorCounterMetricDimensionsDimensionArgs{
+//												SourceFieldName: pulumi.String("dt.cost.product"),
+//											},
+//											&dynatrace.OpenpipelineV2SpansPipelinesMetricExtractionProcessorsProcessorCounterMetricDimensionsDimensionArgs{
+//												SourceFieldName: pulumi.String("dt.security_context"),
+//											},
+//											&dynatrace.OpenpipelineV2SpansPipelinesMetricExtractionProcessorsProcessorCounterMetricDimensionsDimensionArgs{
+//												SourceFieldName:      pulumi.String("record.category"),
+//												DestinationFieldName: pulumi.String("warning_category"),
+//											},
+//										},
+//									},
+//								},
+//								Enabled: pulumi.Bool(true),
+//							},
+//							&dynatrace.OpenpipelineV2SpansPipelinesMetricExtractionProcessorsProcessorArgs{
+//								Type:        pulumi.String("valueMetric"),
+//								Id:          pulumi.String("processor_Warning_timeout_1990"),
+//								Description: pulumi.String("Warning timeout"),
+//								Matcher:     pulumi.String("true"),
+//								ValueMetric: &dynatrace.OpenpipelineV2SpansPipelinesMetricExtractionProcessorsProcessorValueMetricArgs{
+//									MetricKey:    pulumi.String("warning.timeout"),
+//									Field:        pulumi.String("recording.timeout_in_min"),
+//									DefaultValue: pulumi.String("60"),
+//									Dimensions: &dynatrace.OpenpipelineV2SpansPipelinesMetricExtractionProcessorsProcessorValueMetricDimensionsArgs{
+//										Dimensions: dynatrace.OpenpipelineV2SpansPipelinesMetricExtractionProcessorsProcessorValueMetricDimensionsDimensionArray{
+//											&dynatrace.OpenpipelineV2SpansPipelinesMetricExtractionProcessorsProcessorValueMetricDimensionsDimensionArgs{
+//												SourceFieldName: pulumi.String("dt.cost.costcenter"),
+//											},
+//											&dynatrace.OpenpipelineV2SpansPipelinesMetricExtractionProcessorsProcessorValueMetricDimensionsDimensionArgs{
+//												SourceFieldName: pulumi.String("dt.cost.product"),
+//											},
+//											&dynatrace.OpenpipelineV2SpansPipelinesMetricExtractionProcessorsProcessorValueMetricDimensionsDimensionArgs{
+//												SourceFieldName: pulumi.String("dt.security_context"),
+//											},
+//											&dynatrace.OpenpipelineV2SpansPipelinesMetricExtractionProcessorsProcessorValueMetricDimensionsDimensionArgs{
+//												SourceFieldName:      pulumi.String("record.category"),
+//												DestinationFieldName: pulumi.String("warning_category"),
+//											},
+//										},
+//									},
+//								},
+//								Enabled: pulumi.Bool(true),
+//							},
+//						},
+//					},
+//				},
+//				SecurityContext: &dynatrace.OpenpipelineV2SpansPipelinesSecurityContextArgs{
+//					Processors: &dynatrace.OpenpipelineV2SpansPipelinesSecurityContextProcessorsArgs{
+//						Processors: dynatrace.OpenpipelineV2SpansPipelinesSecurityContextProcessorsProcessorArray{
+//							&dynatrace.OpenpipelineV2SpansPipelinesSecurityContextProcessorsProcessorArgs{
+//								Type:        pulumi.String("securityContext"),
+//								Id:          pulumi.String("processor_Use_dt.security_context_if_set_1080"),
+//								Description: pulumi.String("Use dt.security_context if set"),
+//								Matcher:     pulumi.String("isNotNull(dt.security_context)"),
+//								SecurityContext: &dynatrace.OpenpipelineV2SpansPipelinesSecurityContextProcessorsProcessorSecurityContextArgs{
+//									Value: &dynatrace.OpenpipelineV2SpansPipelinesSecurityContextProcessorsProcessorSecurityContextValueArgs{
+//										Type: pulumi.String("field"),
+//										Field: &dynatrace.OpenpipelineV2SpansPipelinesSecurityContextProcessorsProcessorSecurityContextValueFieldArgs{
+//											SourceFieldName: pulumi.String("dt.security_context"),
+//										},
+//									},
+//								},
+//								Enabled: pulumi.Bool(true),
+//							},
+//							&dynatrace.OpenpipelineV2SpansPipelinesSecurityContextProcessorsProcessorArgs{
+//								Type:        pulumi.String("securityContext"),
+//								Id:          pulumi.String("processor_Assign_warnings_to_ACME_teams_if_no_context_set_5465"),
+//								Description: pulumi.String("Assign warnings to ACME teams if no context set"),
+//								Matcher:     pulumi.String("isNull(dt.security_context)"),
+//								SecurityContext: &dynatrace.OpenpipelineV2SpansPipelinesSecurityContextProcessorsProcessorSecurityContextArgs{
+//									Value: &dynatrace.OpenpipelineV2SpansPipelinesSecurityContextProcessorsProcessorSecurityContextValueArgs{
+//										Type: pulumi.String("multiValueConstant"),
+//										MultiValueConstants: pulumi.StringArray{
+//											pulumi.String("ACME1"),
+//											pulumi.String("ACME2"),
+//										},
+//									},
+//								},
+//								Enabled: pulumi.Bool(true),
+//							},
+//						},
+//					},
+//				},
+//				Storage: &dynatrace.OpenpipelineV2SpansPipelinesStorageArgs{
+//					Processors: &dynatrace.OpenpipelineV2SpansPipelinesStorageProcessorsArgs{
+//						Processors: dynatrace.OpenpipelineV2SpansPipelinesStorageProcessorsProcessorArray{
+//							&dynatrace.OpenpipelineV2SpansPipelinesStorageProcessorsProcessorArgs{
+//								Type:        pulumi.String("bucketAssignment"),
+//								Id:          pulumi.String("processor_Add_to_default_bucket_5010"),
+//								Description: pulumi.String("Add to default bucket"),
+//								Matcher:     pulumi.String("true"),
+//								BucketAssignment: &dynatrace.OpenpipelineV2SpansPipelinesStorageProcessorsProcessorBucketAssignmentArgs{
+//									BucketName: pulumi.String("default_events"),
+//								},
+//								Enabled: pulumi.Bool(true),
+//							},
+//						},
+//					},
+//				},
+//			})
+//			if err != nil {
+//				return err
+//			}
+//			return nil
+//		})
+//	}
+//
+// ```
 type OpenpipelineV2SpansPipelines struct {
 	pulumi.CustomResourceState
 
 	// Cost allocation stage
-	CostAllocation OpenpipelineV2SpansPipelinesCostAllocationOutput `pulumi:"costAllocation"`
+	CostAllocation OpenpipelineV2SpansPipelinesCostAllocationPtrOutput `pulumi:"costAllocation"`
 	// Custom pipeline id
 	CustomId pulumi.StringOutput `pulumi:"customId"`
 	// Data extraction stage
-	DataExtraction OpenpipelineV2SpansPipelinesDataExtractionOutput `pulumi:"dataExtraction"`
+	DataExtraction OpenpipelineV2SpansPipelinesDataExtractionPtrOutput `pulumi:"dataExtraction"`
 	// Davis event extraction stage
-	Davis OpenpipelineV2SpansPipelinesDavisOutput `pulumi:"davis"`
+	Davis OpenpipelineV2SpansPipelinesDavisPtrOutput `pulumi:"davis"`
 	// Display name
 	DisplayName pulumi.StringOutput `pulumi:"displayName"`
+	// Group role. Possible Values: `compositionPipeline`, `memberPipeline`
+	GroupRole pulumi.StringPtrOutput `pulumi:"groupRole"`
+	// Pipeline metadata list
+	MetadataList OpenpipelineV2SpansPipelinesMetadataListPtrOutput `pulumi:"metadataList"`
 	// Metrics extraction stage
-	MetricExtraction OpenpipelineV2SpansPipelinesMetricExtractionOutput `pulumi:"metricExtraction"`
+	MetricExtraction OpenpipelineV2SpansPipelinesMetricExtractionPtrOutput `pulumi:"metricExtraction"`
 	// Processing stage
-	Processing OpenpipelineV2SpansPipelinesProcessingOutput `pulumi:"processing"`
+	Processing OpenpipelineV2SpansPipelinesProcessingPtrOutput `pulumi:"processing"`
 	// Product allocation stage
-	ProductAllocation OpenpipelineV2SpansPipelinesProductAllocationOutput `pulumi:"productAllocation"`
+	ProductAllocation OpenpipelineV2SpansPipelinesProductAllocationPtrOutput `pulumi:"productAllocation"`
+	// Routing. Possible Values: `notRoutable`, `routable`
+	Routing pulumi.StringPtrOutput `pulumi:"routing"`
 	// Security context stage
-	SecurityContext OpenpipelineV2SpansPipelinesSecurityContextOutput `pulumi:"securityContext"`
+	SecurityContext OpenpipelineV2SpansPipelinesSecurityContextPtrOutput `pulumi:"securityContext"`
+	// Smartscape edge extraction stage
+	SmartscapeEdgeExtraction OpenpipelineV2SpansPipelinesSmartscapeEdgeExtractionPtrOutput `pulumi:"smartscapeEdgeExtraction"`
+	// Smartscape node extraction stage
+	SmartscapeNodeExtraction OpenpipelineV2SpansPipelinesSmartscapeNodeExtractionPtrOutput `pulumi:"smartscapeNodeExtraction"`
 	// Storage stage
-	Storage OpenpipelineV2SpansPipelinesStorageOutput `pulumi:"storage"`
+	Storage OpenpipelineV2SpansPipelinesStoragePtrOutput `pulumi:"storage"`
 }
 
 // NewOpenpipelineV2SpansPipelines registers a new resource with the given unique name, arguments, and options.
@@ -44,35 +337,11 @@ func NewOpenpipelineV2SpansPipelines(ctx *pulumi.Context,
 		return nil, errors.New("missing one or more required arguments")
 	}
 
-	if args.CostAllocation == nil {
-		return nil, errors.New("invalid value for required argument 'CostAllocation'")
-	}
 	if args.CustomId == nil {
 		return nil, errors.New("invalid value for required argument 'CustomId'")
 	}
-	if args.DataExtraction == nil {
-		return nil, errors.New("invalid value for required argument 'DataExtraction'")
-	}
-	if args.Davis == nil {
-		return nil, errors.New("invalid value for required argument 'Davis'")
-	}
 	if args.DisplayName == nil {
 		return nil, errors.New("invalid value for required argument 'DisplayName'")
-	}
-	if args.MetricExtraction == nil {
-		return nil, errors.New("invalid value for required argument 'MetricExtraction'")
-	}
-	if args.Processing == nil {
-		return nil, errors.New("invalid value for required argument 'Processing'")
-	}
-	if args.ProductAllocation == nil {
-		return nil, errors.New("invalid value for required argument 'ProductAllocation'")
-	}
-	if args.SecurityContext == nil {
-		return nil, errors.New("invalid value for required argument 'SecurityContext'")
-	}
-	if args.Storage == nil {
-		return nil, errors.New("invalid value for required argument 'Storage'")
 	}
 	opts = internal.PkgResourceDefaultOpts(opts)
 	var resource OpenpipelineV2SpansPipelines
@@ -107,14 +376,24 @@ type openpipelineV2SpansPipelinesState struct {
 	Davis *OpenpipelineV2SpansPipelinesDavis `pulumi:"davis"`
 	// Display name
 	DisplayName *string `pulumi:"displayName"`
+	// Group role. Possible Values: `compositionPipeline`, `memberPipeline`
+	GroupRole *string `pulumi:"groupRole"`
+	// Pipeline metadata list
+	MetadataList *OpenpipelineV2SpansPipelinesMetadataList `pulumi:"metadataList"`
 	// Metrics extraction stage
 	MetricExtraction *OpenpipelineV2SpansPipelinesMetricExtraction `pulumi:"metricExtraction"`
 	// Processing stage
 	Processing *OpenpipelineV2SpansPipelinesProcessing `pulumi:"processing"`
 	// Product allocation stage
 	ProductAllocation *OpenpipelineV2SpansPipelinesProductAllocation `pulumi:"productAllocation"`
+	// Routing. Possible Values: `notRoutable`, `routable`
+	Routing *string `pulumi:"routing"`
 	// Security context stage
 	SecurityContext *OpenpipelineV2SpansPipelinesSecurityContext `pulumi:"securityContext"`
+	// Smartscape edge extraction stage
+	SmartscapeEdgeExtraction *OpenpipelineV2SpansPipelinesSmartscapeEdgeExtraction `pulumi:"smartscapeEdgeExtraction"`
+	// Smartscape node extraction stage
+	SmartscapeNodeExtraction *OpenpipelineV2SpansPipelinesSmartscapeNodeExtraction `pulumi:"smartscapeNodeExtraction"`
 	// Storage stage
 	Storage *OpenpipelineV2SpansPipelinesStorage `pulumi:"storage"`
 }
@@ -130,14 +409,24 @@ type OpenpipelineV2SpansPipelinesState struct {
 	Davis OpenpipelineV2SpansPipelinesDavisPtrInput
 	// Display name
 	DisplayName pulumi.StringPtrInput
+	// Group role. Possible Values: `compositionPipeline`, `memberPipeline`
+	GroupRole pulumi.StringPtrInput
+	// Pipeline metadata list
+	MetadataList OpenpipelineV2SpansPipelinesMetadataListPtrInput
 	// Metrics extraction stage
 	MetricExtraction OpenpipelineV2SpansPipelinesMetricExtractionPtrInput
 	// Processing stage
 	Processing OpenpipelineV2SpansPipelinesProcessingPtrInput
 	// Product allocation stage
 	ProductAllocation OpenpipelineV2SpansPipelinesProductAllocationPtrInput
+	// Routing. Possible Values: `notRoutable`, `routable`
+	Routing pulumi.StringPtrInput
 	// Security context stage
 	SecurityContext OpenpipelineV2SpansPipelinesSecurityContextPtrInput
+	// Smartscape edge extraction stage
+	SmartscapeEdgeExtraction OpenpipelineV2SpansPipelinesSmartscapeEdgeExtractionPtrInput
+	// Smartscape node extraction stage
+	SmartscapeNodeExtraction OpenpipelineV2SpansPipelinesSmartscapeNodeExtractionPtrInput
 	// Storage stage
 	Storage OpenpipelineV2SpansPipelinesStoragePtrInput
 }
@@ -148,49 +437,69 @@ func (OpenpipelineV2SpansPipelinesState) ElementType() reflect.Type {
 
 type openpipelineV2SpansPipelinesArgs struct {
 	// Cost allocation stage
-	CostAllocation OpenpipelineV2SpansPipelinesCostAllocation `pulumi:"costAllocation"`
+	CostAllocation *OpenpipelineV2SpansPipelinesCostAllocation `pulumi:"costAllocation"`
 	// Custom pipeline id
 	CustomId string `pulumi:"customId"`
 	// Data extraction stage
-	DataExtraction OpenpipelineV2SpansPipelinesDataExtraction `pulumi:"dataExtraction"`
+	DataExtraction *OpenpipelineV2SpansPipelinesDataExtraction `pulumi:"dataExtraction"`
 	// Davis event extraction stage
-	Davis OpenpipelineV2SpansPipelinesDavis `pulumi:"davis"`
+	Davis *OpenpipelineV2SpansPipelinesDavis `pulumi:"davis"`
 	// Display name
 	DisplayName string `pulumi:"displayName"`
+	// Group role. Possible Values: `compositionPipeline`, `memberPipeline`
+	GroupRole *string `pulumi:"groupRole"`
+	// Pipeline metadata list
+	MetadataList *OpenpipelineV2SpansPipelinesMetadataList `pulumi:"metadataList"`
 	// Metrics extraction stage
-	MetricExtraction OpenpipelineV2SpansPipelinesMetricExtraction `pulumi:"metricExtraction"`
+	MetricExtraction *OpenpipelineV2SpansPipelinesMetricExtraction `pulumi:"metricExtraction"`
 	// Processing stage
-	Processing OpenpipelineV2SpansPipelinesProcessing `pulumi:"processing"`
+	Processing *OpenpipelineV2SpansPipelinesProcessing `pulumi:"processing"`
 	// Product allocation stage
-	ProductAllocation OpenpipelineV2SpansPipelinesProductAllocation `pulumi:"productAllocation"`
+	ProductAllocation *OpenpipelineV2SpansPipelinesProductAllocation `pulumi:"productAllocation"`
+	// Routing. Possible Values: `notRoutable`, `routable`
+	Routing *string `pulumi:"routing"`
 	// Security context stage
-	SecurityContext OpenpipelineV2SpansPipelinesSecurityContext `pulumi:"securityContext"`
+	SecurityContext *OpenpipelineV2SpansPipelinesSecurityContext `pulumi:"securityContext"`
+	// Smartscape edge extraction stage
+	SmartscapeEdgeExtraction *OpenpipelineV2SpansPipelinesSmartscapeEdgeExtraction `pulumi:"smartscapeEdgeExtraction"`
+	// Smartscape node extraction stage
+	SmartscapeNodeExtraction *OpenpipelineV2SpansPipelinesSmartscapeNodeExtraction `pulumi:"smartscapeNodeExtraction"`
 	// Storage stage
-	Storage OpenpipelineV2SpansPipelinesStorage `pulumi:"storage"`
+	Storage *OpenpipelineV2SpansPipelinesStorage `pulumi:"storage"`
 }
 
 // The set of arguments for constructing a OpenpipelineV2SpansPipelines resource.
 type OpenpipelineV2SpansPipelinesArgs struct {
 	// Cost allocation stage
-	CostAllocation OpenpipelineV2SpansPipelinesCostAllocationInput
+	CostAllocation OpenpipelineV2SpansPipelinesCostAllocationPtrInput
 	// Custom pipeline id
 	CustomId pulumi.StringInput
 	// Data extraction stage
-	DataExtraction OpenpipelineV2SpansPipelinesDataExtractionInput
+	DataExtraction OpenpipelineV2SpansPipelinesDataExtractionPtrInput
 	// Davis event extraction stage
-	Davis OpenpipelineV2SpansPipelinesDavisInput
+	Davis OpenpipelineV2SpansPipelinesDavisPtrInput
 	// Display name
 	DisplayName pulumi.StringInput
+	// Group role. Possible Values: `compositionPipeline`, `memberPipeline`
+	GroupRole pulumi.StringPtrInput
+	// Pipeline metadata list
+	MetadataList OpenpipelineV2SpansPipelinesMetadataListPtrInput
 	// Metrics extraction stage
-	MetricExtraction OpenpipelineV2SpansPipelinesMetricExtractionInput
+	MetricExtraction OpenpipelineV2SpansPipelinesMetricExtractionPtrInput
 	// Processing stage
-	Processing OpenpipelineV2SpansPipelinesProcessingInput
+	Processing OpenpipelineV2SpansPipelinesProcessingPtrInput
 	// Product allocation stage
-	ProductAllocation OpenpipelineV2SpansPipelinesProductAllocationInput
+	ProductAllocation OpenpipelineV2SpansPipelinesProductAllocationPtrInput
+	// Routing. Possible Values: `notRoutable`, `routable`
+	Routing pulumi.StringPtrInput
 	// Security context stage
-	SecurityContext OpenpipelineV2SpansPipelinesSecurityContextInput
+	SecurityContext OpenpipelineV2SpansPipelinesSecurityContextPtrInput
+	// Smartscape edge extraction stage
+	SmartscapeEdgeExtraction OpenpipelineV2SpansPipelinesSmartscapeEdgeExtractionPtrInput
+	// Smartscape node extraction stage
+	SmartscapeNodeExtraction OpenpipelineV2SpansPipelinesSmartscapeNodeExtractionPtrInput
 	// Storage stage
-	Storage OpenpipelineV2SpansPipelinesStorageInput
+	Storage OpenpipelineV2SpansPipelinesStoragePtrInput
 }
 
 func (OpenpipelineV2SpansPipelinesArgs) ElementType() reflect.Type {
@@ -281,10 +590,10 @@ func (o OpenpipelineV2SpansPipelinesOutput) ToOpenpipelineV2SpansPipelinesOutput
 }
 
 // Cost allocation stage
-func (o OpenpipelineV2SpansPipelinesOutput) CostAllocation() OpenpipelineV2SpansPipelinesCostAllocationOutput {
-	return o.ApplyT(func(v *OpenpipelineV2SpansPipelines) OpenpipelineV2SpansPipelinesCostAllocationOutput {
+func (o OpenpipelineV2SpansPipelinesOutput) CostAllocation() OpenpipelineV2SpansPipelinesCostAllocationPtrOutput {
+	return o.ApplyT(func(v *OpenpipelineV2SpansPipelines) OpenpipelineV2SpansPipelinesCostAllocationPtrOutput {
 		return v.CostAllocation
-	}).(OpenpipelineV2SpansPipelinesCostAllocationOutput)
+	}).(OpenpipelineV2SpansPipelinesCostAllocationPtrOutput)
 }
 
 // Custom pipeline id
@@ -293,15 +602,15 @@ func (o OpenpipelineV2SpansPipelinesOutput) CustomId() pulumi.StringOutput {
 }
 
 // Data extraction stage
-func (o OpenpipelineV2SpansPipelinesOutput) DataExtraction() OpenpipelineV2SpansPipelinesDataExtractionOutput {
-	return o.ApplyT(func(v *OpenpipelineV2SpansPipelines) OpenpipelineV2SpansPipelinesDataExtractionOutput {
+func (o OpenpipelineV2SpansPipelinesOutput) DataExtraction() OpenpipelineV2SpansPipelinesDataExtractionPtrOutput {
+	return o.ApplyT(func(v *OpenpipelineV2SpansPipelines) OpenpipelineV2SpansPipelinesDataExtractionPtrOutput {
 		return v.DataExtraction
-	}).(OpenpipelineV2SpansPipelinesDataExtractionOutput)
+	}).(OpenpipelineV2SpansPipelinesDataExtractionPtrOutput)
 }
 
 // Davis event extraction stage
-func (o OpenpipelineV2SpansPipelinesOutput) Davis() OpenpipelineV2SpansPipelinesDavisOutput {
-	return o.ApplyT(func(v *OpenpipelineV2SpansPipelines) OpenpipelineV2SpansPipelinesDavisOutput { return v.Davis }).(OpenpipelineV2SpansPipelinesDavisOutput)
+func (o OpenpipelineV2SpansPipelinesOutput) Davis() OpenpipelineV2SpansPipelinesDavisPtrOutput {
+	return o.ApplyT(func(v *OpenpipelineV2SpansPipelines) OpenpipelineV2SpansPipelinesDavisPtrOutput { return v.Davis }).(OpenpipelineV2SpansPipelinesDavisPtrOutput)
 }
 
 // Display name
@@ -309,37 +618,68 @@ func (o OpenpipelineV2SpansPipelinesOutput) DisplayName() pulumi.StringOutput {
 	return o.ApplyT(func(v *OpenpipelineV2SpansPipelines) pulumi.StringOutput { return v.DisplayName }).(pulumi.StringOutput)
 }
 
+// Group role. Possible Values: `compositionPipeline`, `memberPipeline`
+func (o OpenpipelineV2SpansPipelinesOutput) GroupRole() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *OpenpipelineV2SpansPipelines) pulumi.StringPtrOutput { return v.GroupRole }).(pulumi.StringPtrOutput)
+}
+
+// Pipeline metadata list
+func (o OpenpipelineV2SpansPipelinesOutput) MetadataList() OpenpipelineV2SpansPipelinesMetadataListPtrOutput {
+	return o.ApplyT(func(v *OpenpipelineV2SpansPipelines) OpenpipelineV2SpansPipelinesMetadataListPtrOutput {
+		return v.MetadataList
+	}).(OpenpipelineV2SpansPipelinesMetadataListPtrOutput)
+}
+
 // Metrics extraction stage
-func (o OpenpipelineV2SpansPipelinesOutput) MetricExtraction() OpenpipelineV2SpansPipelinesMetricExtractionOutput {
-	return o.ApplyT(func(v *OpenpipelineV2SpansPipelines) OpenpipelineV2SpansPipelinesMetricExtractionOutput {
+func (o OpenpipelineV2SpansPipelinesOutput) MetricExtraction() OpenpipelineV2SpansPipelinesMetricExtractionPtrOutput {
+	return o.ApplyT(func(v *OpenpipelineV2SpansPipelines) OpenpipelineV2SpansPipelinesMetricExtractionPtrOutput {
 		return v.MetricExtraction
-	}).(OpenpipelineV2SpansPipelinesMetricExtractionOutput)
+	}).(OpenpipelineV2SpansPipelinesMetricExtractionPtrOutput)
 }
 
 // Processing stage
-func (o OpenpipelineV2SpansPipelinesOutput) Processing() OpenpipelineV2SpansPipelinesProcessingOutput {
-	return o.ApplyT(func(v *OpenpipelineV2SpansPipelines) OpenpipelineV2SpansPipelinesProcessingOutput {
+func (o OpenpipelineV2SpansPipelinesOutput) Processing() OpenpipelineV2SpansPipelinesProcessingPtrOutput {
+	return o.ApplyT(func(v *OpenpipelineV2SpansPipelines) OpenpipelineV2SpansPipelinesProcessingPtrOutput {
 		return v.Processing
-	}).(OpenpipelineV2SpansPipelinesProcessingOutput)
+	}).(OpenpipelineV2SpansPipelinesProcessingPtrOutput)
 }
 
 // Product allocation stage
-func (o OpenpipelineV2SpansPipelinesOutput) ProductAllocation() OpenpipelineV2SpansPipelinesProductAllocationOutput {
-	return o.ApplyT(func(v *OpenpipelineV2SpansPipelines) OpenpipelineV2SpansPipelinesProductAllocationOutput {
+func (o OpenpipelineV2SpansPipelinesOutput) ProductAllocation() OpenpipelineV2SpansPipelinesProductAllocationPtrOutput {
+	return o.ApplyT(func(v *OpenpipelineV2SpansPipelines) OpenpipelineV2SpansPipelinesProductAllocationPtrOutput {
 		return v.ProductAllocation
-	}).(OpenpipelineV2SpansPipelinesProductAllocationOutput)
+	}).(OpenpipelineV2SpansPipelinesProductAllocationPtrOutput)
+}
+
+// Routing. Possible Values: `notRoutable`, `routable`
+func (o OpenpipelineV2SpansPipelinesOutput) Routing() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *OpenpipelineV2SpansPipelines) pulumi.StringPtrOutput { return v.Routing }).(pulumi.StringPtrOutput)
 }
 
 // Security context stage
-func (o OpenpipelineV2SpansPipelinesOutput) SecurityContext() OpenpipelineV2SpansPipelinesSecurityContextOutput {
-	return o.ApplyT(func(v *OpenpipelineV2SpansPipelines) OpenpipelineV2SpansPipelinesSecurityContextOutput {
+func (o OpenpipelineV2SpansPipelinesOutput) SecurityContext() OpenpipelineV2SpansPipelinesSecurityContextPtrOutput {
+	return o.ApplyT(func(v *OpenpipelineV2SpansPipelines) OpenpipelineV2SpansPipelinesSecurityContextPtrOutput {
 		return v.SecurityContext
-	}).(OpenpipelineV2SpansPipelinesSecurityContextOutput)
+	}).(OpenpipelineV2SpansPipelinesSecurityContextPtrOutput)
+}
+
+// Smartscape edge extraction stage
+func (o OpenpipelineV2SpansPipelinesOutput) SmartscapeEdgeExtraction() OpenpipelineV2SpansPipelinesSmartscapeEdgeExtractionPtrOutput {
+	return o.ApplyT(func(v *OpenpipelineV2SpansPipelines) OpenpipelineV2SpansPipelinesSmartscapeEdgeExtractionPtrOutput {
+		return v.SmartscapeEdgeExtraction
+	}).(OpenpipelineV2SpansPipelinesSmartscapeEdgeExtractionPtrOutput)
+}
+
+// Smartscape node extraction stage
+func (o OpenpipelineV2SpansPipelinesOutput) SmartscapeNodeExtraction() OpenpipelineV2SpansPipelinesSmartscapeNodeExtractionPtrOutput {
+	return o.ApplyT(func(v *OpenpipelineV2SpansPipelines) OpenpipelineV2SpansPipelinesSmartscapeNodeExtractionPtrOutput {
+		return v.SmartscapeNodeExtraction
+	}).(OpenpipelineV2SpansPipelinesSmartscapeNodeExtractionPtrOutput)
 }
 
 // Storage stage
-func (o OpenpipelineV2SpansPipelinesOutput) Storage() OpenpipelineV2SpansPipelinesStorageOutput {
-	return o.ApplyT(func(v *OpenpipelineV2SpansPipelines) OpenpipelineV2SpansPipelinesStorageOutput { return v.Storage }).(OpenpipelineV2SpansPipelinesStorageOutput)
+func (o OpenpipelineV2SpansPipelinesOutput) Storage() OpenpipelineV2SpansPipelinesStoragePtrOutput {
+	return o.ApplyT(func(v *OpenpipelineV2SpansPipelines) OpenpipelineV2SpansPipelinesStoragePtrOutput { return v.Storage }).(OpenpipelineV2SpansPipelinesStoragePtrOutput)
 }
 
 type OpenpipelineV2SpansPipelinesArrayOutput struct{ *pulumi.OutputState }

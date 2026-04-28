@@ -26,6 +26,7 @@ class BusinessEventsBucketsArgs:
                  insert_after: Optional[pulumi.Input[_builtins.str]] = None):
         """
         The set of arguments for constructing a BusinessEventsBuckets resource.
+
         :param pulumi.Input[_builtins.str] bucket_name: Events will be stored in the selected bucket. Analyze bucket contents in the [log & event viewer.](https://www.terraform.io/ui/logs-events?advancedQueryMode=true&query=fetch+bizevents)
         :param pulumi.Input[_builtins.bool] enabled: This setting is enabled (`true`) or disabled (`false`)
         :param pulumi.Input[_builtins.str] matcher: [See our documentation](https://dt-url.net/bp234rv)
@@ -110,6 +111,7 @@ class _BusinessEventsBucketsState:
                  rule_name: Optional[pulumi.Input[_builtins.str]] = None):
         """
         Input properties used for looking up and filtering BusinessEventsBuckets resources.
+
         :param pulumi.Input[_builtins.str] bucket_name: Events will be stored in the selected bucket. Analyze bucket contents in the [log & event viewer.](https://www.terraform.io/ui/logs-events?advancedQueryMode=true&query=fetch+bizevents)
         :param pulumi.Input[_builtins.bool] enabled: This setting is enabled (`true`) or disabled (`false`)
         :param pulumi.Input[_builtins.str] insert_after: Because this resource allows for ordering you may specify the ID of the resource instance that comes before this instance regarding order. If not specified when creating the setting will be added to the end of the list. If not specified during update the order will remain untouched
@@ -201,7 +203,24 @@ class BusinessEventsBuckets(pulumi.CustomResource):
                  rule_name: Optional[pulumi.Input[_builtins.str]] = None,
                  __props__=None):
         """
-        Create a BusinessEventsBuckets resource with the given unique name, props, and options.
+        > **Warning** This resource has been deprecated in favor of OpenPipeline.
+        Please migrate your OpenPipeline configurations and use `dynatrace_openpipeline_v2_*` instead.
+
+        > This resource requires the API token scopes **Read settings** (`settings.read`) and **Write settings** (`settings.write`)
+
+        ## Dynatrace Documentation
+
+        - Business event bucket assignment - https://www.dynatrace.com/support/help/platform-modules/business-analytics/ba-bucket-assignment
+
+        - Settings API - https://www.dynatrace.com/support/help/dynatrace-api/environment-api/settings (schemaId: `builtin:bizevents-processing-buckets.rule`)
+
+        ## Export Example Usage
+
+        - `terraform-provider-dynatrace -export BusinessEventsBuckets` downloads all existing business event bucket assignments
+
+        The full documentation of the export feature is available [here](https://dt-url.net/h203qmc).
+
+
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[_builtins.str] bucket_name: Events will be stored in the selected bucket. Analyze bucket contents in the [log & event viewer.](https://www.terraform.io/ui/logs-events?advancedQueryMode=true&query=fetch+bizevents)
@@ -217,7 +236,24 @@ class BusinessEventsBuckets(pulumi.CustomResource):
                  args: BusinessEventsBucketsArgs,
                  opts: Optional[pulumi.ResourceOptions] = None):
         """
-        Create a BusinessEventsBuckets resource with the given unique name, props, and options.
+        > **Warning** This resource has been deprecated in favor of OpenPipeline.
+        Please migrate your OpenPipeline configurations and use `dynatrace_openpipeline_v2_*` instead.
+
+        > This resource requires the API token scopes **Read settings** (`settings.read`) and **Write settings** (`settings.write`)
+
+        ## Dynatrace Documentation
+
+        - Business event bucket assignment - https://www.dynatrace.com/support/help/platform-modules/business-analytics/ba-bucket-assignment
+
+        - Settings API - https://www.dynatrace.com/support/help/dynatrace-api/environment-api/settings (schemaId: `builtin:bizevents-processing-buckets.rule`)
+
+        ## Export Example Usage
+
+        - `terraform-provider-dynatrace -export BusinessEventsBuckets` downloads all existing business event bucket assignments
+
+        The full documentation of the export feature is available [here](https://dt-url.net/h203qmc).
+
+
         :param str resource_name: The name of the resource.
         :param BusinessEventsBucketsArgs args: The arguments to use to populate this resource's properties.
         :param pulumi.ResourceOptions opts: Options for the resource.

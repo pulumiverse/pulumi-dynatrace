@@ -12,6 +12,71 @@ import (
 	"github.com/pulumiverse/pulumi-dynatrace/sdk/go/dynatrace/internal"
 )
 
+// > This resource requires the API token scopes **Read settings** (`settings.read`) and **Write settings** (`settings.write`)
+//
+// ## Dynatrace Documentation
+//
+// - Cloud application and workload detection - https://www.dynatrace.com/support/help/platform-modules/infrastructure-monitoring/process-groups/configuration/cloud-app-and-workload-detection
+//
+// - Settings API - https://www.dynatrace.com/support/help/dynatrace-api/environment-api/settings (schemaId: `builtin:process-group.cloud-application-workload-detection`)
+//
+// ## Export Example Usage
+//
+// - `terraform-provider-dynatrace -export CloudappWorkloaddetection` downloads all existing workload detection configuration
+//
+// The full documentation of the export feature is available [here](https://dt-url.net/h203qmc).
+//
+// ## Resource Example Usage
+//
+// ```go
+// package main
+//
+// import (
+//
+//	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//	"github.com/pulumiverse/pulumi-dynatrace/sdk/go/dynatrace"
+//
+// )
+//
+//	func main() {
+//		pulumi.Run(func(ctx *pulumi.Context) error {
+//			// ID vu9U3hXa3q0AAAABADpidWlsdGluOnByb2Nlc3MtZ3JvdXAuY2xvdWQtYXBwbGljYXRpb24td29ya2xvYWQtZGV0ZWN0aW9uAAZ0ZW5hbnQABnRlbmFudAAkYjcwNmY4NWYtNWFkNC0zY2ZmLWJhYzMtZDg4YzFmNTkzMjgwvu9U3hXa3q0
+//			_, err := dynatrace.NewCloudappWorkloaddetection(ctx, "cloud_app_workload_detection", &dynatrace.CloudappWorkloaddetectionArgs{
+//				CloudFoundry: &dynatrace.CloudappWorkloaddetectionCloudFoundryArgs{
+//					Enabled: pulumi.Bool(false),
+//				},
+//				Docker: &dynatrace.CloudappWorkloaddetectionDockerArgs{
+//					Enabled: pulumi.Bool(true),
+//				},
+//				Kubernetes: &dynatrace.CloudappWorkloaddetectionKubernetesArgs{
+//					Enabled: pulumi.Bool(true),
+//					Filters: &dynatrace.CloudappWorkloaddetectionKubernetesFiltersArgs{
+//						Filters: dynatrace.CloudappWorkloaddetectionKubernetesFiltersFilterArray{
+//							&dynatrace.CloudappWorkloaddetectionKubernetesFiltersFilterArgs{
+//								Enabled: pulumi.Bool(false),
+//								InclusionToggles: &dynatrace.CloudappWorkloaddetectionKubernetesFiltersFilterInclusionTogglesArgs{
+//									IncBasepod:   pulumi.Bool(false),
+//									IncContainer: pulumi.Bool(true),
+//									IncNamespace: pulumi.Bool(true),
+//									IncProduct:   pulumi.Bool(true),
+//									IncStage:     pulumi.Bool(true),
+//								},
+//								MatchFilter: &dynatrace.CloudappWorkloaddetectionKubernetesFiltersFilterMatchFilterArgs{
+//									MatchOperator: pulumi.String("EXISTS"),
+//								},
+//							},
+//						},
+//					},
+//				},
+//			})
+//			if err != nil {
+//				return err
+//			}
+//			return nil
+//		})
+//	}
+//
+// ```
 type CloudappWorkloaddetection struct {
 	pulumi.CustomResourceState
 

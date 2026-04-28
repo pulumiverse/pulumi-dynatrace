@@ -35,6 +35,7 @@ class NotificationArgs:
                  xmatters: Optional[pulumi.Input['NotificationXmattersArgs']] = None):
         """
         The set of arguments for constructing a Notification resource.
+
         :param pulumi.Input['NotificationAnsibleTowerArgs'] ansible_tower: Configuration for Ansible Tower Notification
         :param pulumi.Input['NotificationConfigArgs'] config: Configuration for Generic Notification
         :param pulumi.Input['NotificationEmailArgs'] email: Configuration for Email Notification
@@ -235,6 +236,7 @@ class _NotificationState:
                  xmatters: Optional[pulumi.Input['NotificationXmattersArgs']] = None):
         """
         Input properties used for looking up and filtering Notification resources.
+
         :param pulumi.Input['NotificationAnsibleTowerArgs'] ansible_tower: Configuration for Ansible Tower Notification
         :param pulumi.Input['NotificationConfigArgs'] config: Configuration for Generic Notification
         :param pulumi.Input['NotificationEmailArgs'] email: Configuration for Email Notification
@@ -438,7 +440,24 @@ class Notification(pulumi.CustomResource):
                  xmatters: Optional[pulumi.Input[Union['NotificationXmattersArgs', 'NotificationXmattersArgsDict']]] = None,
                  __props__=None):
         """
-        Create a Notification resource with the given unique name, props, and options.
+        !> This resource API endpoint has been deprecated, please use dynatrace_{notificationtype}_notification instead.
+        For example, for email notifications use dynatrace_email_notification.
+
+        > This resource requires the API token scopes **Read configuration** (`ReadConfig`) and **Write configuration** (`WriteConfig`)
+
+        ## Dynatrace Documentation
+
+        - Integrations - https://www.dynatrace.com/support/help/setup-and-configuration/integrations
+
+        - Notifications API - https://www.dynatrace.com/support/help/dynatrace-api/configuration-api/notifications-api
+
+        ## Export Example Usage
+
+        - `terraform-provider-dynatrace -export Notification` downloads all existing notification configuration
+
+        The full documentation of the export feature is available [here](https://dt-url.net/h203qmc).
+
+
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[Union['NotificationAnsibleTowerArgs', 'NotificationAnsibleTowerArgsDict']] ansible_tower: Configuration for Ansible Tower Notification
@@ -461,7 +480,24 @@ class Notification(pulumi.CustomResource):
                  args: Optional[NotificationArgs] = None,
                  opts: Optional[pulumi.ResourceOptions] = None):
         """
-        Create a Notification resource with the given unique name, props, and options.
+        !> This resource API endpoint has been deprecated, please use dynatrace_{notificationtype}_notification instead.
+        For example, for email notifications use dynatrace_email_notification.
+
+        > This resource requires the API token scopes **Read configuration** (`ReadConfig`) and **Write configuration** (`WriteConfig`)
+
+        ## Dynatrace Documentation
+
+        - Integrations - https://www.dynatrace.com/support/help/setup-and-configuration/integrations
+
+        - Notifications API - https://www.dynatrace.com/support/help/dynatrace-api/configuration-api/notifications-api
+
+        ## Export Example Usage
+
+        - `terraform-provider-dynatrace -export Notification` downloads all existing notification configuration
+
+        The full documentation of the export feature is available [here](https://dt-url.net/h203qmc).
+
+
         :param str resource_name: The name of the resource.
         :param NotificationArgs args: The arguments to use to populate this resource's properties.
         :param pulumi.ResourceOptions opts: Options for the resource.

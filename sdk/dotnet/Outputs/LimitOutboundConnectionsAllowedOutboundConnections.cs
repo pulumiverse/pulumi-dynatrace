@@ -15,11 +15,11 @@ namespace Pulumiverse.Dynatrace.Outputs
     public sealed class LimitOutboundConnectionsAllowedOutboundConnections
     {
         /// <summary>
-        /// If enabled, the Dynatrace JavaScript runtime will only be able to connect to the specified hosts.
+        /// If enabled, the Dynatrace JavaScript Runtime will only be able to connect to the specified hosts.
         /// </summary>
         public readonly bool Enforced;
         /// <summary>
-        /// The Dynatrace JavaScript runtime will only be to connect to these hosts.
+        /// A host that app backends should be able to connect to.
         /// </summary>
         public readonly ImmutableArray<string> HostLists;
 

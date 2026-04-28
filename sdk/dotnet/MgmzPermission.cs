@@ -10,6 +10,48 @@ using Pulumi;
 
 namespace Pulumiverse.Dynatrace
 {
+    /// <summary>
+    /// &gt; **Dynatrace Managed only**
+    /// 
+    /// &gt; To utilize this resource, please define the environment variables `DT_CLUSTER_URL` and `DT_CLUSTER_API_TOKEN` with the cluster API token scope **Service Provider API** (`ServiceProviderAPI`).
+    /// 
+    /// ## Dynatrace Documentation
+    /// 
+    /// - Manage Groups and Permissions - https://docs.dynatrace.com/managed/manage/identity-access-management/user-and-group-management/user-groups-and-permissions#mz
+    /// 
+    /// - User management API - https://www.dynatrace.com/support/help/dynatrace-api/account-management-api/user-management-api
+    /// 
+    /// ## Export Example Usage
+    /// 
+    /// - `terraform-provider-dynatrace -export dynatrace.MgmzPermission` downloads all user group / management zone permissions
+    /// 
+    /// The full documentation of the export feature is available [here](https://dt-url.net/h203qmc).
+    /// 
+    /// ## Resource Example Usage
+    /// 
+    /// ```csharp
+    /// using System.Collections.Generic;
+    /// using System.Linq;
+    /// using Pulumi;
+    /// using Dynatrace = Pulumiverse.Dynatrace;
+    /// 
+    /// return await Deployment.RunAsync(() =&gt; 
+    /// {
+    ///     var some_perm = new Dynatrace.MgmzPermission("some-perm", new()
+    ///     {
+    ///         Group = group_a.Id,
+    ///         Environment = "d85dea6a-4287-49d3-bf62-729274ba7036",
+    ///         ManagementZone = "982182035185200933",
+    ///         Permissions = new[]
+    ///         {
+    ///             "VIEWER",
+    ///             "REPLAY_SESSION_DATA",
+    ///         },
+    ///     });
+    /// 
+    /// });
+    /// ```
+    /// </summary>
     [DynatraceResourceType("dynatrace:index/mgmzPermission:MgmzPermission")]
     public partial class MgmzPermission : global::Pulumi.CustomResource
     {

@@ -6,6 +6,21 @@ import * as inputs from "./types/input";
 import * as outputs from "./types/output";
 import * as utilities from "./utilities";
 
+/**
+ * > This resource requires the API token scopes **Read settings** (`settings.read`) and **Write settings** (`settings.write`)
+ *
+ * ## Dynatrace Documentation
+ *
+ * - Exclude disks - https://www.dynatrace.com/support/help/platform-modules/infrastructure-monitoring/hosts/configuration/exclude-disks-and-network-traffic#exclude-disks
+ *
+ * - Settings API - https://www.dynatrace.com/support/help/dynatrace-api/environment-api/settings (schemaId: `builtin:disk.options`)
+ *
+ * ## Export Example Usage
+ *
+ * - `terraform-provider-dynatrace -export dynatrace.DiskOptions` downloads all existing host disk visibility settings
+ *
+ * The full documentation of the export feature is available [here](https://dt-url.net/h203qmc).
+ */
 export class DiskOptions extends pulumi.CustomResource {
     /**
      * Get an existing DiskOptions resource's state with the given name, ID, and optional extra
@@ -43,7 +58,11 @@ export class DiskOptions extends pulumi.CustomResource {
      */
     declare public readonly exclusions: pulumi.Output<outputs.DiskOptionsExclusions | undefined>;
     /**
-     * When disabled OneAgent will try to deduplicate some of nfs disks. Disabled by default, applies only to Linux hosts. Requires OneAgent 1.209 or later
+     * Activate tmpfs monitoring on Linux systems
+     */
+    declare public readonly monitorTmpfs: pulumi.Output<boolean | undefined>;
+    /**
+     * When disabled OneAgent will try to deduplicate some of nfs mount points. Disabled by default, applies only to Linux hosts.
      */
     declare public readonly nfsShowAll: pulumi.Output<boolean | undefined>;
     /**
@@ -66,12 +85,14 @@ export class DiskOptions extends pulumi.CustomResource {
             const state = argsOrState as DiskOptionsState | undefined;
             resourceInputs["disableNfsDiskMonitoring"] = state?.disableNfsDiskMonitoring;
             resourceInputs["exclusions"] = state?.exclusions;
+            resourceInputs["monitorTmpfs"] = state?.monitorTmpfs;
             resourceInputs["nfsShowAll"] = state?.nfsShowAll;
             resourceInputs["scope"] = state?.scope;
         } else {
             const args = argsOrState as DiskOptionsArgs | undefined;
             resourceInputs["disableNfsDiskMonitoring"] = args?.disableNfsDiskMonitoring;
             resourceInputs["exclusions"] = args?.exclusions;
+            resourceInputs["monitorTmpfs"] = args?.monitorTmpfs;
             resourceInputs["nfsShowAll"] = args?.nfsShowAll;
             resourceInputs["scope"] = args?.scope;
         }
@@ -93,7 +114,11 @@ export interface DiskOptionsState {
      */
     exclusions?: pulumi.Input<inputs.DiskOptionsExclusions>;
     /**
-     * When disabled OneAgent will try to deduplicate some of nfs disks. Disabled by default, applies only to Linux hosts. Requires OneAgent 1.209 or later
+     * Activate tmpfs monitoring on Linux systems
+     */
+    monitorTmpfs?: pulumi.Input<boolean>;
+    /**
+     * When disabled OneAgent will try to deduplicate some of nfs mount points. Disabled by default, applies only to Linux hosts.
      */
     nfsShowAll?: pulumi.Input<boolean>;
     /**
@@ -115,7 +140,11 @@ export interface DiskOptionsArgs {
      */
     exclusions?: pulumi.Input<inputs.DiskOptionsExclusions>;
     /**
-     * When disabled OneAgent will try to deduplicate some of nfs disks. Disabled by default, applies only to Linux hosts. Requires OneAgent 1.209 or later
+     * Activate tmpfs monitoring on Linux systems
+     */
+    monitorTmpfs?: pulumi.Input<boolean>;
+    /**
+     * When disabled OneAgent will try to deduplicate some of nfs mount points. Disabled by default, applies only to Linux hosts.
      */
     nfsShowAll?: pulumi.Input<boolean>;
     /**

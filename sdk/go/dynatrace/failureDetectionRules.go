@@ -12,6 +12,19 @@ import (
 	"github.com/pulumiverse/pulumi-dynatrace/sdk/go/dynatrace/internal"
 )
 
+// > This resource requires the API token scopes **Read settings** (`settings.read`) and **Write settings** (`settings.write`)
+//
+// ## Dynatrace Documentation
+//
+// - Configure service failure detection - https://www.dynatrace.com/support/help/platform-modules/applications-and-microservices/services/service-monitoring-settings/configure-service-failure-detection
+//
+// - Settings API - https://www.dynatrace.com/support/help/dynatrace-api/environment-api/settings (schemaId: `builtin:failure-detection.environment.rules`)
+//
+// ## Export Example Usage
+//
+// - `terraform-provider-dynatrace -export FailureDetectionRules` downloads all existing failure detection rules
+//
+// The full documentation of the export feature is available [here](https://dt-url.net/h203qmc).
 type FailureDetectionRules struct {
 	pulumi.CustomResourceState
 

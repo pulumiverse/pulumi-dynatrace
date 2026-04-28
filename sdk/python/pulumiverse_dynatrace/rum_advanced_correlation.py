@@ -23,6 +23,7 @@ class RumAdvancedCorrelationArgs:
                  pattern: pulumi.Input[_builtins.str]):
         """
         The set of arguments for constructing a RumAdvancedCorrelation resource.
+
         :param pulumi.Input[_builtins.str] matcher: Possible Values: `CONTAINS`, `ENDS_WITH`, `EQUALS`, `STARTS_WITH`
         :param pulumi.Input[_builtins.str] pattern: Pattern
         """
@@ -61,6 +62,7 @@ class _RumAdvancedCorrelationState:
                  pattern: Optional[pulumi.Input[_builtins.str]] = None):
         """
         Input properties used for looking up and filtering RumAdvancedCorrelation resources.
+
         :param pulumi.Input[_builtins.str] matcher: Possible Values: `CONTAINS`, `ENDS_WITH`, `EQUALS`, `STARTS_WITH`
         :param pulumi.Input[_builtins.str] pattern: Pattern
         """
@@ -104,7 +106,21 @@ class RumAdvancedCorrelation(pulumi.CustomResource):
                  pattern: Optional[pulumi.Input[_builtins.str]] = None,
                  __props__=None):
         """
-        Create a RumAdvancedCorrelation resource with the given unique name, props, and options.
+        > This resource requires the API token scopes **Read settings** (`settings.read`) and **Write settings** (`settings.write`)
+
+        ## Dynatrace Documentation
+
+        - Web applications - https://www.dynatrace.com/support/help/platform-modules/digital-experience/web-applications
+
+        - Settings API - https://www.dynatrace.com/support/help/dynatrace-api/environment-api/settings (schemaId: `builtin:rum.resource-timing-origins`)
+
+        ## Export Example Usage
+
+        - `terraform-provider-dynatrace -export RumAdvancedCorrelation` downloads all existing RUM advanced correlation configuration
+
+        The full documentation of the export feature is available [here](https://dt-url.net/h203qmc).
+
+
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[_builtins.str] matcher: Possible Values: `CONTAINS`, `ENDS_WITH`, `EQUALS`, `STARTS_WITH`
@@ -117,7 +133,21 @@ class RumAdvancedCorrelation(pulumi.CustomResource):
                  args: RumAdvancedCorrelationArgs,
                  opts: Optional[pulumi.ResourceOptions] = None):
         """
-        Create a RumAdvancedCorrelation resource with the given unique name, props, and options.
+        > This resource requires the API token scopes **Read settings** (`settings.read`) and **Write settings** (`settings.write`)
+
+        ## Dynatrace Documentation
+
+        - Web applications - https://www.dynatrace.com/support/help/platform-modules/digital-experience/web-applications
+
+        - Settings API - https://www.dynatrace.com/support/help/dynatrace-api/environment-api/settings (schemaId: `builtin:rum.resource-timing-origins`)
+
+        ## Export Example Usage
+
+        - `terraform-provider-dynatrace -export RumAdvancedCorrelation` downloads all existing RUM advanced correlation configuration
+
+        The full documentation of the export feature is available [here](https://dt-url.net/h203qmc).
+
+
         :param str resource_name: The name of the resource.
         :param RumAdvancedCorrelationArgs args: The arguments to use to populate this resource's properties.
         :param pulumi.ResourceOptions opts: Options for the resource.

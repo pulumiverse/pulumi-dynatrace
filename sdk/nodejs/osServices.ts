@@ -6,6 +6,21 @@ import * as inputs from "./types/input";
 import * as outputs from "./types/output";
 import * as utilities from "./utilities";
 
+/**
+ * > This resource requires the API token scopes **Read settings** (`settings.read`) and **Write settings** (`settings.write`)
+ *
+ * ## Dynatrace Documentation
+ *
+ * - OS services monitoring - https://www.dynatrace.com/support/help/platform-modules/infrastructure-monitoring/hosts/monitoring/os-services
+ *
+ * - Settings API - https://www.dynatrace.com/support/help/dynatrace-api/environment-api/settings (schemaId: `builtin:os-services-monitoring`)
+ *
+ * ## Export Example Usage
+ *
+ * - `terraform-provider-dynatrace -export dynatrace.OsServices` downloads all existing OS services monitoring configuration
+ *
+ * The full documentation of the export feature is available [here](https://dt-url.net/h203qmc).
+ */
 export class OsServices extends pulumi.CustomResource {
     /**
      * Get an existing OsServices resource's state with the given name, ID, and optional extra
@@ -59,7 +74,7 @@ export class OsServices extends pulumi.CustomResource {
      */
     declare public readonly insertAfter: pulumi.Output<string>;
     /**
-     * Set of additional key-value properties to be attached to the triggered event.
+     * Set of additional key-value properties to be attached to the triggered event. You can retrieve the available property keys using the [Events API v2](https://dt-url.net/9622g1w). Additionally any Host resource attribute can be dynamically substituted (agent 1.325+).
      */
     declare public readonly metadata: pulumi.Output<outputs.OsServicesMetadata | undefined>;
     /**
@@ -197,7 +212,7 @@ export interface OsServicesState {
      */
     insertAfter?: pulumi.Input<string>;
     /**
-     * Set of additional key-value properties to be attached to the triggered event.
+     * Set of additional key-value properties to be attached to the triggered event. You can retrieve the available property keys using the [Events API v2](https://dt-url.net/9622g1w). Additionally any Host resource attribute can be dynamically substituted (agent 1.325+).
      */
     metadata?: pulumi.Input<inputs.OsServicesMetadata>;
     /**
@@ -275,7 +290,7 @@ export interface OsServicesArgs {
      */
     insertAfter?: pulumi.Input<string>;
     /**
-     * Set of additional key-value properties to be attached to the triggered event.
+     * Set of additional key-value properties to be attached to the triggered event. You can retrieve the available property keys using the [Events API v2](https://dt-url.net/9622g1w). Additionally any Host resource attribute can be dynamically substituted (agent 1.325+).
      */
     metadata?: pulumi.Input<inputs.OsServicesMetadata>;
     /**

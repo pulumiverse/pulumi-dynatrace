@@ -21,51 +21,68 @@ __all__ = ['OpenpipelineV2SecurityEventsPipelinesArgs', 'OpenpipelineV2SecurityE
 @pulumi.input_type
 class OpenpipelineV2SecurityEventsPipelinesArgs:
     def __init__(__self__, *,
-                 cost_allocation: pulumi.Input['OpenpipelineV2SecurityEventsPipelinesCostAllocationArgs'],
                  custom_id: pulumi.Input[_builtins.str],
-                 data_extraction: pulumi.Input['OpenpipelineV2SecurityEventsPipelinesDataExtractionArgs'],
-                 davis: pulumi.Input['OpenpipelineV2SecurityEventsPipelinesDavisArgs'],
                  display_name: pulumi.Input[_builtins.str],
-                 metric_extraction: pulumi.Input['OpenpipelineV2SecurityEventsPipelinesMetricExtractionArgs'],
-                 processing: pulumi.Input['OpenpipelineV2SecurityEventsPipelinesProcessingArgs'],
-                 product_allocation: pulumi.Input['OpenpipelineV2SecurityEventsPipelinesProductAllocationArgs'],
-                 security_context: pulumi.Input['OpenpipelineV2SecurityEventsPipelinesSecurityContextArgs'],
-                 storage: pulumi.Input['OpenpipelineV2SecurityEventsPipelinesStorageArgs']):
+                 cost_allocation: Optional[pulumi.Input['OpenpipelineV2SecurityEventsPipelinesCostAllocationArgs']] = None,
+                 data_extraction: Optional[pulumi.Input['OpenpipelineV2SecurityEventsPipelinesDataExtractionArgs']] = None,
+                 davis: Optional[pulumi.Input['OpenpipelineV2SecurityEventsPipelinesDavisArgs']] = None,
+                 group_role: Optional[pulumi.Input[_builtins.str]] = None,
+                 metadata_list: Optional[pulumi.Input['OpenpipelineV2SecurityEventsPipelinesMetadataListArgs']] = None,
+                 metric_extraction: Optional[pulumi.Input['OpenpipelineV2SecurityEventsPipelinesMetricExtractionArgs']] = None,
+                 processing: Optional[pulumi.Input['OpenpipelineV2SecurityEventsPipelinesProcessingArgs']] = None,
+                 product_allocation: Optional[pulumi.Input['OpenpipelineV2SecurityEventsPipelinesProductAllocationArgs']] = None,
+                 routing: Optional[pulumi.Input[_builtins.str]] = None,
+                 security_context: Optional[pulumi.Input['OpenpipelineV2SecurityEventsPipelinesSecurityContextArgs']] = None,
+                 smartscape_edge_extraction: Optional[pulumi.Input['OpenpipelineV2SecurityEventsPipelinesSmartscapeEdgeExtractionArgs']] = None,
+                 smartscape_node_extraction: Optional[pulumi.Input['OpenpipelineV2SecurityEventsPipelinesSmartscapeNodeExtractionArgs']] = None,
+                 storage: Optional[pulumi.Input['OpenpipelineV2SecurityEventsPipelinesStorageArgs']] = None):
         """
         The set of arguments for constructing a OpenpipelineV2SecurityEventsPipelines resource.
-        :param pulumi.Input['OpenpipelineV2SecurityEventsPipelinesCostAllocationArgs'] cost_allocation: Cost allocation stage
+
         :param pulumi.Input[_builtins.str] custom_id: Custom pipeline id
+        :param pulumi.Input[_builtins.str] display_name: Display name
+        :param pulumi.Input['OpenpipelineV2SecurityEventsPipelinesCostAllocationArgs'] cost_allocation: Cost allocation stage
         :param pulumi.Input['OpenpipelineV2SecurityEventsPipelinesDataExtractionArgs'] data_extraction: Data extraction stage
         :param pulumi.Input['OpenpipelineV2SecurityEventsPipelinesDavisArgs'] davis: Davis event extraction stage
-        :param pulumi.Input[_builtins.str] display_name: Display name
+        :param pulumi.Input[_builtins.str] group_role: Group role. Possible Values: `compositionPipeline`, `memberPipeline`
+        :param pulumi.Input['OpenpipelineV2SecurityEventsPipelinesMetadataListArgs'] metadata_list: Pipeline metadata list
         :param pulumi.Input['OpenpipelineV2SecurityEventsPipelinesMetricExtractionArgs'] metric_extraction: Metrics extraction stage
         :param pulumi.Input['OpenpipelineV2SecurityEventsPipelinesProcessingArgs'] processing: Processing stage
         :param pulumi.Input['OpenpipelineV2SecurityEventsPipelinesProductAllocationArgs'] product_allocation: Product allocation stage
+        :param pulumi.Input[_builtins.str] routing: Routing. Possible Values: `notRoutable`, `routable`
         :param pulumi.Input['OpenpipelineV2SecurityEventsPipelinesSecurityContextArgs'] security_context: Security context stage
+        :param pulumi.Input['OpenpipelineV2SecurityEventsPipelinesSmartscapeEdgeExtractionArgs'] smartscape_edge_extraction: Smartscape edge extraction stage
+        :param pulumi.Input['OpenpipelineV2SecurityEventsPipelinesSmartscapeNodeExtractionArgs'] smartscape_node_extraction: Smartscape node extraction stage
         :param pulumi.Input['OpenpipelineV2SecurityEventsPipelinesStorageArgs'] storage: Storage stage
         """
-        pulumi.set(__self__, "cost_allocation", cost_allocation)
         pulumi.set(__self__, "custom_id", custom_id)
-        pulumi.set(__self__, "data_extraction", data_extraction)
-        pulumi.set(__self__, "davis", davis)
         pulumi.set(__self__, "display_name", display_name)
-        pulumi.set(__self__, "metric_extraction", metric_extraction)
-        pulumi.set(__self__, "processing", processing)
-        pulumi.set(__self__, "product_allocation", product_allocation)
-        pulumi.set(__self__, "security_context", security_context)
-        pulumi.set(__self__, "storage", storage)
-
-    @_builtins.property
-    @pulumi.getter(name="costAllocation")
-    def cost_allocation(self) -> pulumi.Input['OpenpipelineV2SecurityEventsPipelinesCostAllocationArgs']:
-        """
-        Cost allocation stage
-        """
-        return pulumi.get(self, "cost_allocation")
-
-    @cost_allocation.setter
-    def cost_allocation(self, value: pulumi.Input['OpenpipelineV2SecurityEventsPipelinesCostAllocationArgs']):
-        pulumi.set(self, "cost_allocation", value)
+        if cost_allocation is not None:
+            pulumi.set(__self__, "cost_allocation", cost_allocation)
+        if data_extraction is not None:
+            pulumi.set(__self__, "data_extraction", data_extraction)
+        if davis is not None:
+            pulumi.set(__self__, "davis", davis)
+        if group_role is not None:
+            pulumi.set(__self__, "group_role", group_role)
+        if metadata_list is not None:
+            pulumi.set(__self__, "metadata_list", metadata_list)
+        if metric_extraction is not None:
+            pulumi.set(__self__, "metric_extraction", metric_extraction)
+        if processing is not None:
+            pulumi.set(__self__, "processing", processing)
+        if product_allocation is not None:
+            pulumi.set(__self__, "product_allocation", product_allocation)
+        if routing is not None:
+            pulumi.set(__self__, "routing", routing)
+        if security_context is not None:
+            pulumi.set(__self__, "security_context", security_context)
+        if smartscape_edge_extraction is not None:
+            pulumi.set(__self__, "smartscape_edge_extraction", smartscape_edge_extraction)
+        if smartscape_node_extraction is not None:
+            pulumi.set(__self__, "smartscape_node_extraction", smartscape_node_extraction)
+        if storage is not None:
+            pulumi.set(__self__, "storage", storage)
 
     @_builtins.property
     @pulumi.getter(name="customId")
@@ -80,30 +97,6 @@ class OpenpipelineV2SecurityEventsPipelinesArgs:
         pulumi.set(self, "custom_id", value)
 
     @_builtins.property
-    @pulumi.getter(name="dataExtraction")
-    def data_extraction(self) -> pulumi.Input['OpenpipelineV2SecurityEventsPipelinesDataExtractionArgs']:
-        """
-        Data extraction stage
-        """
-        return pulumi.get(self, "data_extraction")
-
-    @data_extraction.setter
-    def data_extraction(self, value: pulumi.Input['OpenpipelineV2SecurityEventsPipelinesDataExtractionArgs']):
-        pulumi.set(self, "data_extraction", value)
-
-    @_builtins.property
-    @pulumi.getter
-    def davis(self) -> pulumi.Input['OpenpipelineV2SecurityEventsPipelinesDavisArgs']:
-        """
-        Davis event extraction stage
-        """
-        return pulumi.get(self, "davis")
-
-    @davis.setter
-    def davis(self, value: pulumi.Input['OpenpipelineV2SecurityEventsPipelinesDavisArgs']):
-        pulumi.set(self, "davis", value)
-
-    @_builtins.property
     @pulumi.getter(name="displayName")
     def display_name(self) -> pulumi.Input[_builtins.str]:
         """
@@ -116,63 +109,159 @@ class OpenpipelineV2SecurityEventsPipelinesArgs:
         pulumi.set(self, "display_name", value)
 
     @_builtins.property
+    @pulumi.getter(name="costAllocation")
+    def cost_allocation(self) -> Optional[pulumi.Input['OpenpipelineV2SecurityEventsPipelinesCostAllocationArgs']]:
+        """
+        Cost allocation stage
+        """
+        return pulumi.get(self, "cost_allocation")
+
+    @cost_allocation.setter
+    def cost_allocation(self, value: Optional[pulumi.Input['OpenpipelineV2SecurityEventsPipelinesCostAllocationArgs']]):
+        pulumi.set(self, "cost_allocation", value)
+
+    @_builtins.property
+    @pulumi.getter(name="dataExtraction")
+    def data_extraction(self) -> Optional[pulumi.Input['OpenpipelineV2SecurityEventsPipelinesDataExtractionArgs']]:
+        """
+        Data extraction stage
+        """
+        return pulumi.get(self, "data_extraction")
+
+    @data_extraction.setter
+    def data_extraction(self, value: Optional[pulumi.Input['OpenpipelineV2SecurityEventsPipelinesDataExtractionArgs']]):
+        pulumi.set(self, "data_extraction", value)
+
+    @_builtins.property
+    @pulumi.getter
+    def davis(self) -> Optional[pulumi.Input['OpenpipelineV2SecurityEventsPipelinesDavisArgs']]:
+        """
+        Davis event extraction stage
+        """
+        return pulumi.get(self, "davis")
+
+    @davis.setter
+    def davis(self, value: Optional[pulumi.Input['OpenpipelineV2SecurityEventsPipelinesDavisArgs']]):
+        pulumi.set(self, "davis", value)
+
+    @_builtins.property
+    @pulumi.getter(name="groupRole")
+    def group_role(self) -> Optional[pulumi.Input[_builtins.str]]:
+        """
+        Group role. Possible Values: `compositionPipeline`, `memberPipeline`
+        """
+        return pulumi.get(self, "group_role")
+
+    @group_role.setter
+    def group_role(self, value: Optional[pulumi.Input[_builtins.str]]):
+        pulumi.set(self, "group_role", value)
+
+    @_builtins.property
+    @pulumi.getter(name="metadataList")
+    def metadata_list(self) -> Optional[pulumi.Input['OpenpipelineV2SecurityEventsPipelinesMetadataListArgs']]:
+        """
+        Pipeline metadata list
+        """
+        return pulumi.get(self, "metadata_list")
+
+    @metadata_list.setter
+    def metadata_list(self, value: Optional[pulumi.Input['OpenpipelineV2SecurityEventsPipelinesMetadataListArgs']]):
+        pulumi.set(self, "metadata_list", value)
+
+    @_builtins.property
     @pulumi.getter(name="metricExtraction")
-    def metric_extraction(self) -> pulumi.Input['OpenpipelineV2SecurityEventsPipelinesMetricExtractionArgs']:
+    def metric_extraction(self) -> Optional[pulumi.Input['OpenpipelineV2SecurityEventsPipelinesMetricExtractionArgs']]:
         """
         Metrics extraction stage
         """
         return pulumi.get(self, "metric_extraction")
 
     @metric_extraction.setter
-    def metric_extraction(self, value: pulumi.Input['OpenpipelineV2SecurityEventsPipelinesMetricExtractionArgs']):
+    def metric_extraction(self, value: Optional[pulumi.Input['OpenpipelineV2SecurityEventsPipelinesMetricExtractionArgs']]):
         pulumi.set(self, "metric_extraction", value)
 
     @_builtins.property
     @pulumi.getter
-    def processing(self) -> pulumi.Input['OpenpipelineV2SecurityEventsPipelinesProcessingArgs']:
+    def processing(self) -> Optional[pulumi.Input['OpenpipelineV2SecurityEventsPipelinesProcessingArgs']]:
         """
         Processing stage
         """
         return pulumi.get(self, "processing")
 
     @processing.setter
-    def processing(self, value: pulumi.Input['OpenpipelineV2SecurityEventsPipelinesProcessingArgs']):
+    def processing(self, value: Optional[pulumi.Input['OpenpipelineV2SecurityEventsPipelinesProcessingArgs']]):
         pulumi.set(self, "processing", value)
 
     @_builtins.property
     @pulumi.getter(name="productAllocation")
-    def product_allocation(self) -> pulumi.Input['OpenpipelineV2SecurityEventsPipelinesProductAllocationArgs']:
+    def product_allocation(self) -> Optional[pulumi.Input['OpenpipelineV2SecurityEventsPipelinesProductAllocationArgs']]:
         """
         Product allocation stage
         """
         return pulumi.get(self, "product_allocation")
 
     @product_allocation.setter
-    def product_allocation(self, value: pulumi.Input['OpenpipelineV2SecurityEventsPipelinesProductAllocationArgs']):
+    def product_allocation(self, value: Optional[pulumi.Input['OpenpipelineV2SecurityEventsPipelinesProductAllocationArgs']]):
         pulumi.set(self, "product_allocation", value)
 
     @_builtins.property
+    @pulumi.getter
+    def routing(self) -> Optional[pulumi.Input[_builtins.str]]:
+        """
+        Routing. Possible Values: `notRoutable`, `routable`
+        """
+        return pulumi.get(self, "routing")
+
+    @routing.setter
+    def routing(self, value: Optional[pulumi.Input[_builtins.str]]):
+        pulumi.set(self, "routing", value)
+
+    @_builtins.property
     @pulumi.getter(name="securityContext")
-    def security_context(self) -> pulumi.Input['OpenpipelineV2SecurityEventsPipelinesSecurityContextArgs']:
+    def security_context(self) -> Optional[pulumi.Input['OpenpipelineV2SecurityEventsPipelinesSecurityContextArgs']]:
         """
         Security context stage
         """
         return pulumi.get(self, "security_context")
 
     @security_context.setter
-    def security_context(self, value: pulumi.Input['OpenpipelineV2SecurityEventsPipelinesSecurityContextArgs']):
+    def security_context(self, value: Optional[pulumi.Input['OpenpipelineV2SecurityEventsPipelinesSecurityContextArgs']]):
         pulumi.set(self, "security_context", value)
 
     @_builtins.property
+    @pulumi.getter(name="smartscapeEdgeExtraction")
+    def smartscape_edge_extraction(self) -> Optional[pulumi.Input['OpenpipelineV2SecurityEventsPipelinesSmartscapeEdgeExtractionArgs']]:
+        """
+        Smartscape edge extraction stage
+        """
+        return pulumi.get(self, "smartscape_edge_extraction")
+
+    @smartscape_edge_extraction.setter
+    def smartscape_edge_extraction(self, value: Optional[pulumi.Input['OpenpipelineV2SecurityEventsPipelinesSmartscapeEdgeExtractionArgs']]):
+        pulumi.set(self, "smartscape_edge_extraction", value)
+
+    @_builtins.property
+    @pulumi.getter(name="smartscapeNodeExtraction")
+    def smartscape_node_extraction(self) -> Optional[pulumi.Input['OpenpipelineV2SecurityEventsPipelinesSmartscapeNodeExtractionArgs']]:
+        """
+        Smartscape node extraction stage
+        """
+        return pulumi.get(self, "smartscape_node_extraction")
+
+    @smartscape_node_extraction.setter
+    def smartscape_node_extraction(self, value: Optional[pulumi.Input['OpenpipelineV2SecurityEventsPipelinesSmartscapeNodeExtractionArgs']]):
+        pulumi.set(self, "smartscape_node_extraction", value)
+
+    @_builtins.property
     @pulumi.getter
-    def storage(self) -> pulumi.Input['OpenpipelineV2SecurityEventsPipelinesStorageArgs']:
+    def storage(self) -> Optional[pulumi.Input['OpenpipelineV2SecurityEventsPipelinesStorageArgs']]:
         """
         Storage stage
         """
         return pulumi.get(self, "storage")
 
     @storage.setter
-    def storage(self, value: pulumi.Input['OpenpipelineV2SecurityEventsPipelinesStorageArgs']):
+    def storage(self, value: Optional[pulumi.Input['OpenpipelineV2SecurityEventsPipelinesStorageArgs']]):
         pulumi.set(self, "storage", value)
 
 
@@ -184,22 +273,33 @@ class _OpenpipelineV2SecurityEventsPipelinesState:
                  data_extraction: Optional[pulumi.Input['OpenpipelineV2SecurityEventsPipelinesDataExtractionArgs']] = None,
                  davis: Optional[pulumi.Input['OpenpipelineV2SecurityEventsPipelinesDavisArgs']] = None,
                  display_name: Optional[pulumi.Input[_builtins.str]] = None,
+                 group_role: Optional[pulumi.Input[_builtins.str]] = None,
+                 metadata_list: Optional[pulumi.Input['OpenpipelineV2SecurityEventsPipelinesMetadataListArgs']] = None,
                  metric_extraction: Optional[pulumi.Input['OpenpipelineV2SecurityEventsPipelinesMetricExtractionArgs']] = None,
                  processing: Optional[pulumi.Input['OpenpipelineV2SecurityEventsPipelinesProcessingArgs']] = None,
                  product_allocation: Optional[pulumi.Input['OpenpipelineV2SecurityEventsPipelinesProductAllocationArgs']] = None,
+                 routing: Optional[pulumi.Input[_builtins.str]] = None,
                  security_context: Optional[pulumi.Input['OpenpipelineV2SecurityEventsPipelinesSecurityContextArgs']] = None,
+                 smartscape_edge_extraction: Optional[pulumi.Input['OpenpipelineV2SecurityEventsPipelinesSmartscapeEdgeExtractionArgs']] = None,
+                 smartscape_node_extraction: Optional[pulumi.Input['OpenpipelineV2SecurityEventsPipelinesSmartscapeNodeExtractionArgs']] = None,
                  storage: Optional[pulumi.Input['OpenpipelineV2SecurityEventsPipelinesStorageArgs']] = None):
         """
         Input properties used for looking up and filtering OpenpipelineV2SecurityEventsPipelines resources.
+
         :param pulumi.Input['OpenpipelineV2SecurityEventsPipelinesCostAllocationArgs'] cost_allocation: Cost allocation stage
         :param pulumi.Input[_builtins.str] custom_id: Custom pipeline id
         :param pulumi.Input['OpenpipelineV2SecurityEventsPipelinesDataExtractionArgs'] data_extraction: Data extraction stage
         :param pulumi.Input['OpenpipelineV2SecurityEventsPipelinesDavisArgs'] davis: Davis event extraction stage
         :param pulumi.Input[_builtins.str] display_name: Display name
+        :param pulumi.Input[_builtins.str] group_role: Group role. Possible Values: `compositionPipeline`, `memberPipeline`
+        :param pulumi.Input['OpenpipelineV2SecurityEventsPipelinesMetadataListArgs'] metadata_list: Pipeline metadata list
         :param pulumi.Input['OpenpipelineV2SecurityEventsPipelinesMetricExtractionArgs'] metric_extraction: Metrics extraction stage
         :param pulumi.Input['OpenpipelineV2SecurityEventsPipelinesProcessingArgs'] processing: Processing stage
         :param pulumi.Input['OpenpipelineV2SecurityEventsPipelinesProductAllocationArgs'] product_allocation: Product allocation stage
+        :param pulumi.Input[_builtins.str] routing: Routing. Possible Values: `notRoutable`, `routable`
         :param pulumi.Input['OpenpipelineV2SecurityEventsPipelinesSecurityContextArgs'] security_context: Security context stage
+        :param pulumi.Input['OpenpipelineV2SecurityEventsPipelinesSmartscapeEdgeExtractionArgs'] smartscape_edge_extraction: Smartscape edge extraction stage
+        :param pulumi.Input['OpenpipelineV2SecurityEventsPipelinesSmartscapeNodeExtractionArgs'] smartscape_node_extraction: Smartscape node extraction stage
         :param pulumi.Input['OpenpipelineV2SecurityEventsPipelinesStorageArgs'] storage: Storage stage
         """
         if cost_allocation is not None:
@@ -212,14 +312,24 @@ class _OpenpipelineV2SecurityEventsPipelinesState:
             pulumi.set(__self__, "davis", davis)
         if display_name is not None:
             pulumi.set(__self__, "display_name", display_name)
+        if group_role is not None:
+            pulumi.set(__self__, "group_role", group_role)
+        if metadata_list is not None:
+            pulumi.set(__self__, "metadata_list", metadata_list)
         if metric_extraction is not None:
             pulumi.set(__self__, "metric_extraction", metric_extraction)
         if processing is not None:
             pulumi.set(__self__, "processing", processing)
         if product_allocation is not None:
             pulumi.set(__self__, "product_allocation", product_allocation)
+        if routing is not None:
+            pulumi.set(__self__, "routing", routing)
         if security_context is not None:
             pulumi.set(__self__, "security_context", security_context)
+        if smartscape_edge_extraction is not None:
+            pulumi.set(__self__, "smartscape_edge_extraction", smartscape_edge_extraction)
+        if smartscape_node_extraction is not None:
+            pulumi.set(__self__, "smartscape_node_extraction", smartscape_node_extraction)
         if storage is not None:
             pulumi.set(__self__, "storage", storage)
 
@@ -284,6 +394,30 @@ class _OpenpipelineV2SecurityEventsPipelinesState:
         pulumi.set(self, "display_name", value)
 
     @_builtins.property
+    @pulumi.getter(name="groupRole")
+    def group_role(self) -> Optional[pulumi.Input[_builtins.str]]:
+        """
+        Group role. Possible Values: `compositionPipeline`, `memberPipeline`
+        """
+        return pulumi.get(self, "group_role")
+
+    @group_role.setter
+    def group_role(self, value: Optional[pulumi.Input[_builtins.str]]):
+        pulumi.set(self, "group_role", value)
+
+    @_builtins.property
+    @pulumi.getter(name="metadataList")
+    def metadata_list(self) -> Optional[pulumi.Input['OpenpipelineV2SecurityEventsPipelinesMetadataListArgs']]:
+        """
+        Pipeline metadata list
+        """
+        return pulumi.get(self, "metadata_list")
+
+    @metadata_list.setter
+    def metadata_list(self, value: Optional[pulumi.Input['OpenpipelineV2SecurityEventsPipelinesMetadataListArgs']]):
+        pulumi.set(self, "metadata_list", value)
+
+    @_builtins.property
     @pulumi.getter(name="metricExtraction")
     def metric_extraction(self) -> Optional[pulumi.Input['OpenpipelineV2SecurityEventsPipelinesMetricExtractionArgs']]:
         """
@@ -320,6 +454,18 @@ class _OpenpipelineV2SecurityEventsPipelinesState:
         pulumi.set(self, "product_allocation", value)
 
     @_builtins.property
+    @pulumi.getter
+    def routing(self) -> Optional[pulumi.Input[_builtins.str]]:
+        """
+        Routing. Possible Values: `notRoutable`, `routable`
+        """
+        return pulumi.get(self, "routing")
+
+    @routing.setter
+    def routing(self, value: Optional[pulumi.Input[_builtins.str]]):
+        pulumi.set(self, "routing", value)
+
+    @_builtins.property
     @pulumi.getter(name="securityContext")
     def security_context(self) -> Optional[pulumi.Input['OpenpipelineV2SecurityEventsPipelinesSecurityContextArgs']]:
         """
@@ -330,6 +476,30 @@ class _OpenpipelineV2SecurityEventsPipelinesState:
     @security_context.setter
     def security_context(self, value: Optional[pulumi.Input['OpenpipelineV2SecurityEventsPipelinesSecurityContextArgs']]):
         pulumi.set(self, "security_context", value)
+
+    @_builtins.property
+    @pulumi.getter(name="smartscapeEdgeExtraction")
+    def smartscape_edge_extraction(self) -> Optional[pulumi.Input['OpenpipelineV2SecurityEventsPipelinesSmartscapeEdgeExtractionArgs']]:
+        """
+        Smartscape edge extraction stage
+        """
+        return pulumi.get(self, "smartscape_edge_extraction")
+
+    @smartscape_edge_extraction.setter
+    def smartscape_edge_extraction(self, value: Optional[pulumi.Input['OpenpipelineV2SecurityEventsPipelinesSmartscapeEdgeExtractionArgs']]):
+        pulumi.set(self, "smartscape_edge_extraction", value)
+
+    @_builtins.property
+    @pulumi.getter(name="smartscapeNodeExtraction")
+    def smartscape_node_extraction(self) -> Optional[pulumi.Input['OpenpipelineV2SecurityEventsPipelinesSmartscapeNodeExtractionArgs']]:
+        """
+        Smartscape node extraction stage
+        """
+        return pulumi.get(self, "smartscape_node_extraction")
+
+    @smartscape_node_extraction.setter
+    def smartscape_node_extraction(self, value: Optional[pulumi.Input['OpenpipelineV2SecurityEventsPipelinesSmartscapeNodeExtractionArgs']]):
+        pulumi.set(self, "smartscape_node_extraction", value)
 
     @_builtins.property
     @pulumi.getter
@@ -355,14 +525,285 @@ class OpenpipelineV2SecurityEventsPipelines(pulumi.CustomResource):
                  data_extraction: Optional[pulumi.Input[Union['OpenpipelineV2SecurityEventsPipelinesDataExtractionArgs', 'OpenpipelineV2SecurityEventsPipelinesDataExtractionArgsDict']]] = None,
                  davis: Optional[pulumi.Input[Union['OpenpipelineV2SecurityEventsPipelinesDavisArgs', 'OpenpipelineV2SecurityEventsPipelinesDavisArgsDict']]] = None,
                  display_name: Optional[pulumi.Input[_builtins.str]] = None,
+                 group_role: Optional[pulumi.Input[_builtins.str]] = None,
+                 metadata_list: Optional[pulumi.Input[Union['OpenpipelineV2SecurityEventsPipelinesMetadataListArgs', 'OpenpipelineV2SecurityEventsPipelinesMetadataListArgsDict']]] = None,
                  metric_extraction: Optional[pulumi.Input[Union['OpenpipelineV2SecurityEventsPipelinesMetricExtractionArgs', 'OpenpipelineV2SecurityEventsPipelinesMetricExtractionArgsDict']]] = None,
                  processing: Optional[pulumi.Input[Union['OpenpipelineV2SecurityEventsPipelinesProcessingArgs', 'OpenpipelineV2SecurityEventsPipelinesProcessingArgsDict']]] = None,
                  product_allocation: Optional[pulumi.Input[Union['OpenpipelineV2SecurityEventsPipelinesProductAllocationArgs', 'OpenpipelineV2SecurityEventsPipelinesProductAllocationArgsDict']]] = None,
+                 routing: Optional[pulumi.Input[_builtins.str]] = None,
                  security_context: Optional[pulumi.Input[Union['OpenpipelineV2SecurityEventsPipelinesSecurityContextArgs', 'OpenpipelineV2SecurityEventsPipelinesSecurityContextArgsDict']]] = None,
+                 smartscape_edge_extraction: Optional[pulumi.Input[Union['OpenpipelineV2SecurityEventsPipelinesSmartscapeEdgeExtractionArgs', 'OpenpipelineV2SecurityEventsPipelinesSmartscapeEdgeExtractionArgsDict']]] = None,
+                 smartscape_node_extraction: Optional[pulumi.Input[Union['OpenpipelineV2SecurityEventsPipelinesSmartscapeNodeExtractionArgs', 'OpenpipelineV2SecurityEventsPipelinesSmartscapeNodeExtractionArgsDict']]] = None,
                  storage: Optional[pulumi.Input[Union['OpenpipelineV2SecurityEventsPipelinesStorageArgs', 'OpenpipelineV2SecurityEventsPipelinesStorageArgsDict']]] = None,
                  __props__=None):
         """
-        Create a OpenpipelineV2SecurityEventsPipelines resource with the given unique name, props, and options.
+        > This resource requires the API token scopes **Read settings** (`settings.read`) and **Write settings** (`settings.write`)
+
+        > This resource requires the OAuth scopes **Read settings** (`settings:objects:read`) and **Write settings** (`settings:objects:write`)
+
+        ## Limitations
+
+        > **Warning** If a resource is created using an API token or without setting `DYNATRACE_HTTP_OAUTH_PREFERENCE=true` (when both are used), the settings object's owner will remain empty.
+
+        An empty owner implies:
+        - The settings object becomes public, allowing other users with settings permissions to read and modify it.
+        - Changing the settings object's permissions will have no effect, meaning the `SettingsPermissions` resource can't alter its access.
+
+        When a settings object is created using platform credentials:
+        - The owner is set to the owner of the OAuth client or platform token.
+        - By default, the settings object is private; only the owner can read and modify it.
+        - Access modifiers can be managed using the `SettingsPermissions` resource.
+
+        We recommend using platform credentials to ensure a correct setup.
+        In case an API token is needed, we recommend setting `DYNATRACE_HTTP_OAUTH_PREFERENCE=true`.
+
+        ## Dynatrace Documentation
+
+        - OpenPipeline - https://docs.dynatrace.com/docs/platform/openpipeline
+
+        ## Export Example Usage
+
+        - `terraform-provider-dynatrace -export OpenpipelineV2SecurityEventsPipelines` downloads all existing OpenPipeline definitions for security events pipelines
+
+        The full documentation of the export feature is available [here](https://dt-url.net/h203qmc).
+
+        ## Resource Example Usage
+
+        ```python
+        import pulumi
+        import pulumiverse_dynatrace as dynatrace
+
+        max_pipeline = dynatrace.OpenpipelineV2SecurityEventsPipelines("max-pipeline",
+            display_name="Warning pipeline",
+            custom_id="pipeline_Warning_pipeline_2773_tf_#name#",
+            metadata_list={
+                "metadatas": [{
+                    "entry_key": "environment",
+                    "entry_value": "production",
+                }],
+            },
+            processing={
+                "processors": {
+                    "processors": [
+                        {
+                            "type": "drop",
+                            "id": "processor_Drop_unnecessary_records_3802",
+                            "description": "Drop unnecessary records",
+                            "matcher": "not matchesPhrase(record.name, \\"Warning\\")",
+                            "enabled": True,
+                        },
+                        {
+                            "type": "fieldsAdd",
+                            "id": "processor_Add_warning_flag_5434",
+                            "description": "Add warning flag",
+                            "matcher": "matchesPhrase(record.name, \\"Warning\\")",
+                            "sample_data": \"\"\"{
+          "record.name": "Warning record" 
+        }\"\"\",
+                            "fields_add": {
+                                "fields": {
+                                    "fields": [{
+                                        "name": "is_warning",
+                                        "value": "true",
+                                    }],
+                                },
+                            },
+                            "enabled": True,
+                        },
+                        {
+                            "type": "fieldsRemove",
+                            "id": "processor_Remove_details_field_8539",
+                            "description": "Remove details field",
+                            "sample_data": \"\"\"{
+          "record.name": "Warning",
+          "record.details": "some record details"
+        }\"\"\",
+                            "matcher": "isNotNull(record.details)",
+                            "fields_remove": {
+                                "fields": ["record.details"],
+                            },
+                            "enabled": True,
+                        },
+                        {
+                            "type": "fieldsRename",
+                            "id": "processor_Rename_name_to_title_8530",
+                            "description": "Rename name to title",
+                            "sample_data": \"\"\"{
+          "record.name": "Warning"
+        }\"\"\",
+                            "matcher": "true",
+                            "fields_rename": {
+                                "fields": {
+                                    "fields": [{
+                                        "from_name": "record.name",
+                                        "to_name": "record.title",
+                                    }],
+                                },
+                            },
+                            "enabled": True,
+                        },
+                        {
+                            "type": "dql",
+                            "id": "processor_Combine_title_and_summary_to_name_8808",
+                            "description": "Combine title and summary to name",
+                            "sample_data": \"\"\"{
+          "record.title": "Warning",
+          "record.summary": "Request failed"
+        }\"\"\",
+                            "matcher": "true",
+                            "dql": {
+                                "script": "fieldsAdd record.name = concat(record.title, \\" - \\", record.summary)",
+                            },
+                            "enabled": True,
+                        },
+                    ],
+                },
+            },
+            davis={
+                "processors": {
+                    "processors": [{
+                        "type": "davis",
+                        "id": "processor_Create_warning_event_8226",
+                        "description": "Create warning event",
+                        "matcher": "true",
+                        "davis": {
+                            "properties": {
+                                "properties": [
+                                    {
+                                        "key": "event.type",
+                                        "value": "CUSTOM_ALERT",
+                                    },
+                                    {
+                                        "key": "event.name",
+                                        "value": "Warning detected",
+                                    },
+                                    {
+                                        "key": "event.description",
+                                        "value": "Warning: {dims:record.summary}",
+                                    },
+                                ],
+                            },
+                        },
+                        "enabled": True,
+                    }],
+                },
+            },
+            metric_extraction={
+                "processors": {
+                    "processors": [
+                        {
+                            "type": "counterMetric",
+                            "id": "processor_Count_warning_events_6392",
+                            "description": "Count warnings",
+                            "matcher": "true",
+                            "counter_metric": {
+                                "metric_key": "warning.count",
+                                "dimensions": {
+                                    "dimensions": [
+                                        {
+                                            "source_field_name": "dt.cost.costcenter",
+                                        },
+                                        {
+                                            "source_field_name": "dt.cost.product",
+                                        },
+                                        {
+                                            "source_field_name": "dt.security_context",
+                                        },
+                                        {
+                                            "source_field_name": "record.category",
+                                            "destination_field_name": "warning_category",
+                                        },
+                                    ],
+                                },
+                            },
+                            "enabled": True,
+                        },
+                        {
+                            "type": "valueMetric",
+                            "id": "processor_Warning_timeout_1990",
+                            "description": "Warning timeout",
+                            "matcher": "true",
+                            "value_metric": {
+                                "metric_key": "warning.timeout",
+                                "field": "recording.timeout_in_min",
+                                "default_value": "60",
+                                "dimensions": {
+                                    "dimensions": [
+                                        {
+                                            "source_field_name": "dt.cost.costcenter",
+                                        },
+                                        {
+                                            "source_field_name": "dt.cost.product",
+                                        },
+                                        {
+                                            "source_field_name": "dt.security_context",
+                                        },
+                                        {
+                                            "source_field_name": "record.category",
+                                            "destination_field_name": "warning_category",
+                                        },
+                                    ],
+                                },
+                            },
+                            "enabled": True,
+                        },
+                    ],
+                },
+            },
+            security_context={
+                "processors": {
+                    "processors": [
+                        {
+                            "type": "securityContext",
+                            "id": "processor_Use_dt.security_context_if_set_1080",
+                            "description": "Use dt.security_context if set",
+                            "matcher": "isNotNull(dt.security_context)",
+                            "security_context": {
+                                "value": {
+                                    "type": "field",
+                                    "field": {
+                                        "source_field_name": "dt.security_context",
+                                    },
+                                },
+                            },
+                            "enabled": True,
+                        },
+                        {
+                            "type": "securityContext",
+                            "id": "processor_Assign_warnings_to_ACME_teams_if_no_context_set_5465",
+                            "description": "Assign warnings to ACME teams if no context set",
+                            "matcher": "isNull(dt.security_context)",
+                            "security_context": {
+                                "value": {
+                                    "type": "multiValueConstant",
+                                    "multi_value_constants": [
+                                        "ACME1",
+                                        "ACME2",
+                                    ],
+                                },
+                            },
+                            "enabled": True,
+                        },
+                    ],
+                },
+            },
+            storage={
+                "processors": {
+                    "processors": [{
+                        "type": "bucketAssignment",
+                        "id": "processor_Add_to_default_bucket_5010",
+                        "description": "Add to default bucket",
+                        "matcher": "true",
+                        "bucket_assignment": {
+                            "bucket_name": "default_events",
+                        },
+                        "enabled": True,
+                    }],
+                },
+            })
+        ```
+
+
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[Union['OpenpipelineV2SecurityEventsPipelinesCostAllocationArgs', 'OpenpipelineV2SecurityEventsPipelinesCostAllocationArgsDict']] cost_allocation: Cost allocation stage
@@ -370,10 +811,15 @@ class OpenpipelineV2SecurityEventsPipelines(pulumi.CustomResource):
         :param pulumi.Input[Union['OpenpipelineV2SecurityEventsPipelinesDataExtractionArgs', 'OpenpipelineV2SecurityEventsPipelinesDataExtractionArgsDict']] data_extraction: Data extraction stage
         :param pulumi.Input[Union['OpenpipelineV2SecurityEventsPipelinesDavisArgs', 'OpenpipelineV2SecurityEventsPipelinesDavisArgsDict']] davis: Davis event extraction stage
         :param pulumi.Input[_builtins.str] display_name: Display name
+        :param pulumi.Input[_builtins.str] group_role: Group role. Possible Values: `compositionPipeline`, `memberPipeline`
+        :param pulumi.Input[Union['OpenpipelineV2SecurityEventsPipelinesMetadataListArgs', 'OpenpipelineV2SecurityEventsPipelinesMetadataListArgsDict']] metadata_list: Pipeline metadata list
         :param pulumi.Input[Union['OpenpipelineV2SecurityEventsPipelinesMetricExtractionArgs', 'OpenpipelineV2SecurityEventsPipelinesMetricExtractionArgsDict']] metric_extraction: Metrics extraction stage
         :param pulumi.Input[Union['OpenpipelineV2SecurityEventsPipelinesProcessingArgs', 'OpenpipelineV2SecurityEventsPipelinesProcessingArgsDict']] processing: Processing stage
         :param pulumi.Input[Union['OpenpipelineV2SecurityEventsPipelinesProductAllocationArgs', 'OpenpipelineV2SecurityEventsPipelinesProductAllocationArgsDict']] product_allocation: Product allocation stage
+        :param pulumi.Input[_builtins.str] routing: Routing. Possible Values: `notRoutable`, `routable`
         :param pulumi.Input[Union['OpenpipelineV2SecurityEventsPipelinesSecurityContextArgs', 'OpenpipelineV2SecurityEventsPipelinesSecurityContextArgsDict']] security_context: Security context stage
+        :param pulumi.Input[Union['OpenpipelineV2SecurityEventsPipelinesSmartscapeEdgeExtractionArgs', 'OpenpipelineV2SecurityEventsPipelinesSmartscapeEdgeExtractionArgsDict']] smartscape_edge_extraction: Smartscape edge extraction stage
+        :param pulumi.Input[Union['OpenpipelineV2SecurityEventsPipelinesSmartscapeNodeExtractionArgs', 'OpenpipelineV2SecurityEventsPipelinesSmartscapeNodeExtractionArgsDict']] smartscape_node_extraction: Smartscape node extraction stage
         :param pulumi.Input[Union['OpenpipelineV2SecurityEventsPipelinesStorageArgs', 'OpenpipelineV2SecurityEventsPipelinesStorageArgsDict']] storage: Storage stage
         """
         ...
@@ -383,7 +829,273 @@ class OpenpipelineV2SecurityEventsPipelines(pulumi.CustomResource):
                  args: OpenpipelineV2SecurityEventsPipelinesArgs,
                  opts: Optional[pulumi.ResourceOptions] = None):
         """
-        Create a OpenpipelineV2SecurityEventsPipelines resource with the given unique name, props, and options.
+        > This resource requires the API token scopes **Read settings** (`settings.read`) and **Write settings** (`settings.write`)
+
+        > This resource requires the OAuth scopes **Read settings** (`settings:objects:read`) and **Write settings** (`settings:objects:write`)
+
+        ## Limitations
+
+        > **Warning** If a resource is created using an API token or without setting `DYNATRACE_HTTP_OAUTH_PREFERENCE=true` (when both are used), the settings object's owner will remain empty.
+
+        An empty owner implies:
+        - The settings object becomes public, allowing other users with settings permissions to read and modify it.
+        - Changing the settings object's permissions will have no effect, meaning the `SettingsPermissions` resource can't alter its access.
+
+        When a settings object is created using platform credentials:
+        - The owner is set to the owner of the OAuth client or platform token.
+        - By default, the settings object is private; only the owner can read and modify it.
+        - Access modifiers can be managed using the `SettingsPermissions` resource.
+
+        We recommend using platform credentials to ensure a correct setup.
+        In case an API token is needed, we recommend setting `DYNATRACE_HTTP_OAUTH_PREFERENCE=true`.
+
+        ## Dynatrace Documentation
+
+        - OpenPipeline - https://docs.dynatrace.com/docs/platform/openpipeline
+
+        ## Export Example Usage
+
+        - `terraform-provider-dynatrace -export OpenpipelineV2SecurityEventsPipelines` downloads all existing OpenPipeline definitions for security events pipelines
+
+        The full documentation of the export feature is available [here](https://dt-url.net/h203qmc).
+
+        ## Resource Example Usage
+
+        ```python
+        import pulumi
+        import pulumiverse_dynatrace as dynatrace
+
+        max_pipeline = dynatrace.OpenpipelineV2SecurityEventsPipelines("max-pipeline",
+            display_name="Warning pipeline",
+            custom_id="pipeline_Warning_pipeline_2773_tf_#name#",
+            metadata_list={
+                "metadatas": [{
+                    "entry_key": "environment",
+                    "entry_value": "production",
+                }],
+            },
+            processing={
+                "processors": {
+                    "processors": [
+                        {
+                            "type": "drop",
+                            "id": "processor_Drop_unnecessary_records_3802",
+                            "description": "Drop unnecessary records",
+                            "matcher": "not matchesPhrase(record.name, \\"Warning\\")",
+                            "enabled": True,
+                        },
+                        {
+                            "type": "fieldsAdd",
+                            "id": "processor_Add_warning_flag_5434",
+                            "description": "Add warning flag",
+                            "matcher": "matchesPhrase(record.name, \\"Warning\\")",
+                            "sample_data": \"\"\"{
+          "record.name": "Warning record" 
+        }\"\"\",
+                            "fields_add": {
+                                "fields": {
+                                    "fields": [{
+                                        "name": "is_warning",
+                                        "value": "true",
+                                    }],
+                                },
+                            },
+                            "enabled": True,
+                        },
+                        {
+                            "type": "fieldsRemove",
+                            "id": "processor_Remove_details_field_8539",
+                            "description": "Remove details field",
+                            "sample_data": \"\"\"{
+          "record.name": "Warning",
+          "record.details": "some record details"
+        }\"\"\",
+                            "matcher": "isNotNull(record.details)",
+                            "fields_remove": {
+                                "fields": ["record.details"],
+                            },
+                            "enabled": True,
+                        },
+                        {
+                            "type": "fieldsRename",
+                            "id": "processor_Rename_name_to_title_8530",
+                            "description": "Rename name to title",
+                            "sample_data": \"\"\"{
+          "record.name": "Warning"
+        }\"\"\",
+                            "matcher": "true",
+                            "fields_rename": {
+                                "fields": {
+                                    "fields": [{
+                                        "from_name": "record.name",
+                                        "to_name": "record.title",
+                                    }],
+                                },
+                            },
+                            "enabled": True,
+                        },
+                        {
+                            "type": "dql",
+                            "id": "processor_Combine_title_and_summary_to_name_8808",
+                            "description": "Combine title and summary to name",
+                            "sample_data": \"\"\"{
+          "record.title": "Warning",
+          "record.summary": "Request failed"
+        }\"\"\",
+                            "matcher": "true",
+                            "dql": {
+                                "script": "fieldsAdd record.name = concat(record.title, \\" - \\", record.summary)",
+                            },
+                            "enabled": True,
+                        },
+                    ],
+                },
+            },
+            davis={
+                "processors": {
+                    "processors": [{
+                        "type": "davis",
+                        "id": "processor_Create_warning_event_8226",
+                        "description": "Create warning event",
+                        "matcher": "true",
+                        "davis": {
+                            "properties": {
+                                "properties": [
+                                    {
+                                        "key": "event.type",
+                                        "value": "CUSTOM_ALERT",
+                                    },
+                                    {
+                                        "key": "event.name",
+                                        "value": "Warning detected",
+                                    },
+                                    {
+                                        "key": "event.description",
+                                        "value": "Warning: {dims:record.summary}",
+                                    },
+                                ],
+                            },
+                        },
+                        "enabled": True,
+                    }],
+                },
+            },
+            metric_extraction={
+                "processors": {
+                    "processors": [
+                        {
+                            "type": "counterMetric",
+                            "id": "processor_Count_warning_events_6392",
+                            "description": "Count warnings",
+                            "matcher": "true",
+                            "counter_metric": {
+                                "metric_key": "warning.count",
+                                "dimensions": {
+                                    "dimensions": [
+                                        {
+                                            "source_field_name": "dt.cost.costcenter",
+                                        },
+                                        {
+                                            "source_field_name": "dt.cost.product",
+                                        },
+                                        {
+                                            "source_field_name": "dt.security_context",
+                                        },
+                                        {
+                                            "source_field_name": "record.category",
+                                            "destination_field_name": "warning_category",
+                                        },
+                                    ],
+                                },
+                            },
+                            "enabled": True,
+                        },
+                        {
+                            "type": "valueMetric",
+                            "id": "processor_Warning_timeout_1990",
+                            "description": "Warning timeout",
+                            "matcher": "true",
+                            "value_metric": {
+                                "metric_key": "warning.timeout",
+                                "field": "recording.timeout_in_min",
+                                "default_value": "60",
+                                "dimensions": {
+                                    "dimensions": [
+                                        {
+                                            "source_field_name": "dt.cost.costcenter",
+                                        },
+                                        {
+                                            "source_field_name": "dt.cost.product",
+                                        },
+                                        {
+                                            "source_field_name": "dt.security_context",
+                                        },
+                                        {
+                                            "source_field_name": "record.category",
+                                            "destination_field_name": "warning_category",
+                                        },
+                                    ],
+                                },
+                            },
+                            "enabled": True,
+                        },
+                    ],
+                },
+            },
+            security_context={
+                "processors": {
+                    "processors": [
+                        {
+                            "type": "securityContext",
+                            "id": "processor_Use_dt.security_context_if_set_1080",
+                            "description": "Use dt.security_context if set",
+                            "matcher": "isNotNull(dt.security_context)",
+                            "security_context": {
+                                "value": {
+                                    "type": "field",
+                                    "field": {
+                                        "source_field_name": "dt.security_context",
+                                    },
+                                },
+                            },
+                            "enabled": True,
+                        },
+                        {
+                            "type": "securityContext",
+                            "id": "processor_Assign_warnings_to_ACME_teams_if_no_context_set_5465",
+                            "description": "Assign warnings to ACME teams if no context set",
+                            "matcher": "isNull(dt.security_context)",
+                            "security_context": {
+                                "value": {
+                                    "type": "multiValueConstant",
+                                    "multi_value_constants": [
+                                        "ACME1",
+                                        "ACME2",
+                                    ],
+                                },
+                            },
+                            "enabled": True,
+                        },
+                    ],
+                },
+            },
+            storage={
+                "processors": {
+                    "processors": [{
+                        "type": "bucketAssignment",
+                        "id": "processor_Add_to_default_bucket_5010",
+                        "description": "Add to default bucket",
+                        "matcher": "true",
+                        "bucket_assignment": {
+                            "bucket_name": "default_events",
+                        },
+                        "enabled": True,
+                    }],
+                },
+            })
+        ```
+
+
         :param str resource_name: The name of the resource.
         :param OpenpipelineV2SecurityEventsPipelinesArgs args: The arguments to use to populate this resource's properties.
         :param pulumi.ResourceOptions opts: Options for the resource.
@@ -404,10 +1116,15 @@ class OpenpipelineV2SecurityEventsPipelines(pulumi.CustomResource):
                  data_extraction: Optional[pulumi.Input[Union['OpenpipelineV2SecurityEventsPipelinesDataExtractionArgs', 'OpenpipelineV2SecurityEventsPipelinesDataExtractionArgsDict']]] = None,
                  davis: Optional[pulumi.Input[Union['OpenpipelineV2SecurityEventsPipelinesDavisArgs', 'OpenpipelineV2SecurityEventsPipelinesDavisArgsDict']]] = None,
                  display_name: Optional[pulumi.Input[_builtins.str]] = None,
+                 group_role: Optional[pulumi.Input[_builtins.str]] = None,
+                 metadata_list: Optional[pulumi.Input[Union['OpenpipelineV2SecurityEventsPipelinesMetadataListArgs', 'OpenpipelineV2SecurityEventsPipelinesMetadataListArgsDict']]] = None,
                  metric_extraction: Optional[pulumi.Input[Union['OpenpipelineV2SecurityEventsPipelinesMetricExtractionArgs', 'OpenpipelineV2SecurityEventsPipelinesMetricExtractionArgsDict']]] = None,
                  processing: Optional[pulumi.Input[Union['OpenpipelineV2SecurityEventsPipelinesProcessingArgs', 'OpenpipelineV2SecurityEventsPipelinesProcessingArgsDict']]] = None,
                  product_allocation: Optional[pulumi.Input[Union['OpenpipelineV2SecurityEventsPipelinesProductAllocationArgs', 'OpenpipelineV2SecurityEventsPipelinesProductAllocationArgsDict']]] = None,
+                 routing: Optional[pulumi.Input[_builtins.str]] = None,
                  security_context: Optional[pulumi.Input[Union['OpenpipelineV2SecurityEventsPipelinesSecurityContextArgs', 'OpenpipelineV2SecurityEventsPipelinesSecurityContextArgsDict']]] = None,
+                 smartscape_edge_extraction: Optional[pulumi.Input[Union['OpenpipelineV2SecurityEventsPipelinesSmartscapeEdgeExtractionArgs', 'OpenpipelineV2SecurityEventsPipelinesSmartscapeEdgeExtractionArgsDict']]] = None,
+                 smartscape_node_extraction: Optional[pulumi.Input[Union['OpenpipelineV2SecurityEventsPipelinesSmartscapeNodeExtractionArgs', 'OpenpipelineV2SecurityEventsPipelinesSmartscapeNodeExtractionArgsDict']]] = None,
                  storage: Optional[pulumi.Input[Union['OpenpipelineV2SecurityEventsPipelinesStorageArgs', 'OpenpipelineV2SecurityEventsPipelinesStorageArgsDict']]] = None,
                  __props__=None):
         opts = pulumi.ResourceOptions.merge(_utilities.get_resource_opts_defaults(), opts)
@@ -418,35 +1135,24 @@ class OpenpipelineV2SecurityEventsPipelines(pulumi.CustomResource):
                 raise TypeError('__props__ is only valid when passed in combination with a valid opts.id to get an existing resource')
             __props__ = OpenpipelineV2SecurityEventsPipelinesArgs.__new__(OpenpipelineV2SecurityEventsPipelinesArgs)
 
-            if cost_allocation is None and not opts.urn:
-                raise TypeError("Missing required property 'cost_allocation'")
             __props__.__dict__["cost_allocation"] = cost_allocation
             if custom_id is None and not opts.urn:
                 raise TypeError("Missing required property 'custom_id'")
             __props__.__dict__["custom_id"] = custom_id
-            if data_extraction is None and not opts.urn:
-                raise TypeError("Missing required property 'data_extraction'")
             __props__.__dict__["data_extraction"] = data_extraction
-            if davis is None and not opts.urn:
-                raise TypeError("Missing required property 'davis'")
             __props__.__dict__["davis"] = davis
             if display_name is None and not opts.urn:
                 raise TypeError("Missing required property 'display_name'")
             __props__.__dict__["display_name"] = display_name
-            if metric_extraction is None and not opts.urn:
-                raise TypeError("Missing required property 'metric_extraction'")
+            __props__.__dict__["group_role"] = group_role
+            __props__.__dict__["metadata_list"] = metadata_list
             __props__.__dict__["metric_extraction"] = metric_extraction
-            if processing is None and not opts.urn:
-                raise TypeError("Missing required property 'processing'")
             __props__.__dict__["processing"] = processing
-            if product_allocation is None and not opts.urn:
-                raise TypeError("Missing required property 'product_allocation'")
             __props__.__dict__["product_allocation"] = product_allocation
-            if security_context is None and not opts.urn:
-                raise TypeError("Missing required property 'security_context'")
+            __props__.__dict__["routing"] = routing
             __props__.__dict__["security_context"] = security_context
-            if storage is None and not opts.urn:
-                raise TypeError("Missing required property 'storage'")
+            __props__.__dict__["smartscape_edge_extraction"] = smartscape_edge_extraction
+            __props__.__dict__["smartscape_node_extraction"] = smartscape_node_extraction
             __props__.__dict__["storage"] = storage
         super(OpenpipelineV2SecurityEventsPipelines, __self__).__init__(
             'dynatrace:index/openpipelineV2SecurityEventsPipelines:OpenpipelineV2SecurityEventsPipelines',
@@ -463,10 +1169,15 @@ class OpenpipelineV2SecurityEventsPipelines(pulumi.CustomResource):
             data_extraction: Optional[pulumi.Input[Union['OpenpipelineV2SecurityEventsPipelinesDataExtractionArgs', 'OpenpipelineV2SecurityEventsPipelinesDataExtractionArgsDict']]] = None,
             davis: Optional[pulumi.Input[Union['OpenpipelineV2SecurityEventsPipelinesDavisArgs', 'OpenpipelineV2SecurityEventsPipelinesDavisArgsDict']]] = None,
             display_name: Optional[pulumi.Input[_builtins.str]] = None,
+            group_role: Optional[pulumi.Input[_builtins.str]] = None,
+            metadata_list: Optional[pulumi.Input[Union['OpenpipelineV2SecurityEventsPipelinesMetadataListArgs', 'OpenpipelineV2SecurityEventsPipelinesMetadataListArgsDict']]] = None,
             metric_extraction: Optional[pulumi.Input[Union['OpenpipelineV2SecurityEventsPipelinesMetricExtractionArgs', 'OpenpipelineV2SecurityEventsPipelinesMetricExtractionArgsDict']]] = None,
             processing: Optional[pulumi.Input[Union['OpenpipelineV2SecurityEventsPipelinesProcessingArgs', 'OpenpipelineV2SecurityEventsPipelinesProcessingArgsDict']]] = None,
             product_allocation: Optional[pulumi.Input[Union['OpenpipelineV2SecurityEventsPipelinesProductAllocationArgs', 'OpenpipelineV2SecurityEventsPipelinesProductAllocationArgsDict']]] = None,
+            routing: Optional[pulumi.Input[_builtins.str]] = None,
             security_context: Optional[pulumi.Input[Union['OpenpipelineV2SecurityEventsPipelinesSecurityContextArgs', 'OpenpipelineV2SecurityEventsPipelinesSecurityContextArgsDict']]] = None,
+            smartscape_edge_extraction: Optional[pulumi.Input[Union['OpenpipelineV2SecurityEventsPipelinesSmartscapeEdgeExtractionArgs', 'OpenpipelineV2SecurityEventsPipelinesSmartscapeEdgeExtractionArgsDict']]] = None,
+            smartscape_node_extraction: Optional[pulumi.Input[Union['OpenpipelineV2SecurityEventsPipelinesSmartscapeNodeExtractionArgs', 'OpenpipelineV2SecurityEventsPipelinesSmartscapeNodeExtractionArgsDict']]] = None,
             storage: Optional[pulumi.Input[Union['OpenpipelineV2SecurityEventsPipelinesStorageArgs', 'OpenpipelineV2SecurityEventsPipelinesStorageArgsDict']]] = None) -> 'OpenpipelineV2SecurityEventsPipelines':
         """
         Get an existing OpenpipelineV2SecurityEventsPipelines resource's state with the given name, id, and optional extra
@@ -480,10 +1191,15 @@ class OpenpipelineV2SecurityEventsPipelines(pulumi.CustomResource):
         :param pulumi.Input[Union['OpenpipelineV2SecurityEventsPipelinesDataExtractionArgs', 'OpenpipelineV2SecurityEventsPipelinesDataExtractionArgsDict']] data_extraction: Data extraction stage
         :param pulumi.Input[Union['OpenpipelineV2SecurityEventsPipelinesDavisArgs', 'OpenpipelineV2SecurityEventsPipelinesDavisArgsDict']] davis: Davis event extraction stage
         :param pulumi.Input[_builtins.str] display_name: Display name
+        :param pulumi.Input[_builtins.str] group_role: Group role. Possible Values: `compositionPipeline`, `memberPipeline`
+        :param pulumi.Input[Union['OpenpipelineV2SecurityEventsPipelinesMetadataListArgs', 'OpenpipelineV2SecurityEventsPipelinesMetadataListArgsDict']] metadata_list: Pipeline metadata list
         :param pulumi.Input[Union['OpenpipelineV2SecurityEventsPipelinesMetricExtractionArgs', 'OpenpipelineV2SecurityEventsPipelinesMetricExtractionArgsDict']] metric_extraction: Metrics extraction stage
         :param pulumi.Input[Union['OpenpipelineV2SecurityEventsPipelinesProcessingArgs', 'OpenpipelineV2SecurityEventsPipelinesProcessingArgsDict']] processing: Processing stage
         :param pulumi.Input[Union['OpenpipelineV2SecurityEventsPipelinesProductAllocationArgs', 'OpenpipelineV2SecurityEventsPipelinesProductAllocationArgsDict']] product_allocation: Product allocation stage
+        :param pulumi.Input[_builtins.str] routing: Routing. Possible Values: `notRoutable`, `routable`
         :param pulumi.Input[Union['OpenpipelineV2SecurityEventsPipelinesSecurityContextArgs', 'OpenpipelineV2SecurityEventsPipelinesSecurityContextArgsDict']] security_context: Security context stage
+        :param pulumi.Input[Union['OpenpipelineV2SecurityEventsPipelinesSmartscapeEdgeExtractionArgs', 'OpenpipelineV2SecurityEventsPipelinesSmartscapeEdgeExtractionArgsDict']] smartscape_edge_extraction: Smartscape edge extraction stage
+        :param pulumi.Input[Union['OpenpipelineV2SecurityEventsPipelinesSmartscapeNodeExtractionArgs', 'OpenpipelineV2SecurityEventsPipelinesSmartscapeNodeExtractionArgsDict']] smartscape_node_extraction: Smartscape node extraction stage
         :param pulumi.Input[Union['OpenpipelineV2SecurityEventsPipelinesStorageArgs', 'OpenpipelineV2SecurityEventsPipelinesStorageArgsDict']] storage: Storage stage
         """
         opts = pulumi.ResourceOptions.merge(opts, pulumi.ResourceOptions(id=id))
@@ -495,16 +1211,21 @@ class OpenpipelineV2SecurityEventsPipelines(pulumi.CustomResource):
         __props__.__dict__["data_extraction"] = data_extraction
         __props__.__dict__["davis"] = davis
         __props__.__dict__["display_name"] = display_name
+        __props__.__dict__["group_role"] = group_role
+        __props__.__dict__["metadata_list"] = metadata_list
         __props__.__dict__["metric_extraction"] = metric_extraction
         __props__.__dict__["processing"] = processing
         __props__.__dict__["product_allocation"] = product_allocation
+        __props__.__dict__["routing"] = routing
         __props__.__dict__["security_context"] = security_context
+        __props__.__dict__["smartscape_edge_extraction"] = smartscape_edge_extraction
+        __props__.__dict__["smartscape_node_extraction"] = smartscape_node_extraction
         __props__.__dict__["storage"] = storage
         return OpenpipelineV2SecurityEventsPipelines(resource_name, opts=opts, __props__=__props__)
 
     @_builtins.property
     @pulumi.getter(name="costAllocation")
-    def cost_allocation(self) -> pulumi.Output['outputs.OpenpipelineV2SecurityEventsPipelinesCostAllocation']:
+    def cost_allocation(self) -> pulumi.Output[Optional['outputs.OpenpipelineV2SecurityEventsPipelinesCostAllocation']]:
         """
         Cost allocation stage
         """
@@ -520,7 +1241,7 @@ class OpenpipelineV2SecurityEventsPipelines(pulumi.CustomResource):
 
     @_builtins.property
     @pulumi.getter(name="dataExtraction")
-    def data_extraction(self) -> pulumi.Output['outputs.OpenpipelineV2SecurityEventsPipelinesDataExtraction']:
+    def data_extraction(self) -> pulumi.Output[Optional['outputs.OpenpipelineV2SecurityEventsPipelinesDataExtraction']]:
         """
         Data extraction stage
         """
@@ -528,7 +1249,7 @@ class OpenpipelineV2SecurityEventsPipelines(pulumi.CustomResource):
 
     @_builtins.property
     @pulumi.getter
-    def davis(self) -> pulumi.Output['outputs.OpenpipelineV2SecurityEventsPipelinesDavis']:
+    def davis(self) -> pulumi.Output[Optional['outputs.OpenpipelineV2SecurityEventsPipelinesDavis']]:
         """
         Davis event extraction stage
         """
@@ -543,8 +1264,24 @@ class OpenpipelineV2SecurityEventsPipelines(pulumi.CustomResource):
         return pulumi.get(self, "display_name")
 
     @_builtins.property
+    @pulumi.getter(name="groupRole")
+    def group_role(self) -> pulumi.Output[Optional[_builtins.str]]:
+        """
+        Group role. Possible Values: `compositionPipeline`, `memberPipeline`
+        """
+        return pulumi.get(self, "group_role")
+
+    @_builtins.property
+    @pulumi.getter(name="metadataList")
+    def metadata_list(self) -> pulumi.Output[Optional['outputs.OpenpipelineV2SecurityEventsPipelinesMetadataList']]:
+        """
+        Pipeline metadata list
+        """
+        return pulumi.get(self, "metadata_list")
+
+    @_builtins.property
     @pulumi.getter(name="metricExtraction")
-    def metric_extraction(self) -> pulumi.Output['outputs.OpenpipelineV2SecurityEventsPipelinesMetricExtraction']:
+    def metric_extraction(self) -> pulumi.Output[Optional['outputs.OpenpipelineV2SecurityEventsPipelinesMetricExtraction']]:
         """
         Metrics extraction stage
         """
@@ -552,7 +1289,7 @@ class OpenpipelineV2SecurityEventsPipelines(pulumi.CustomResource):
 
     @_builtins.property
     @pulumi.getter
-    def processing(self) -> pulumi.Output['outputs.OpenpipelineV2SecurityEventsPipelinesProcessing']:
+    def processing(self) -> pulumi.Output[Optional['outputs.OpenpipelineV2SecurityEventsPipelinesProcessing']]:
         """
         Processing stage
         """
@@ -560,23 +1297,47 @@ class OpenpipelineV2SecurityEventsPipelines(pulumi.CustomResource):
 
     @_builtins.property
     @pulumi.getter(name="productAllocation")
-    def product_allocation(self) -> pulumi.Output['outputs.OpenpipelineV2SecurityEventsPipelinesProductAllocation']:
+    def product_allocation(self) -> pulumi.Output[Optional['outputs.OpenpipelineV2SecurityEventsPipelinesProductAllocation']]:
         """
         Product allocation stage
         """
         return pulumi.get(self, "product_allocation")
 
     @_builtins.property
+    @pulumi.getter
+    def routing(self) -> pulumi.Output[Optional[_builtins.str]]:
+        """
+        Routing. Possible Values: `notRoutable`, `routable`
+        """
+        return pulumi.get(self, "routing")
+
+    @_builtins.property
     @pulumi.getter(name="securityContext")
-    def security_context(self) -> pulumi.Output['outputs.OpenpipelineV2SecurityEventsPipelinesSecurityContext']:
+    def security_context(self) -> pulumi.Output[Optional['outputs.OpenpipelineV2SecurityEventsPipelinesSecurityContext']]:
         """
         Security context stage
         """
         return pulumi.get(self, "security_context")
 
     @_builtins.property
+    @pulumi.getter(name="smartscapeEdgeExtraction")
+    def smartscape_edge_extraction(self) -> pulumi.Output[Optional['outputs.OpenpipelineV2SecurityEventsPipelinesSmartscapeEdgeExtraction']]:
+        """
+        Smartscape edge extraction stage
+        """
+        return pulumi.get(self, "smartscape_edge_extraction")
+
+    @_builtins.property
+    @pulumi.getter(name="smartscapeNodeExtraction")
+    def smartscape_node_extraction(self) -> pulumi.Output[Optional['outputs.OpenpipelineV2SecurityEventsPipelinesSmartscapeNodeExtraction']]:
+        """
+        Smartscape node extraction stage
+        """
+        return pulumi.get(self, "smartscape_node_extraction")
+
+    @_builtins.property
     @pulumi.getter
-    def storage(self) -> pulumi.Output['outputs.OpenpipelineV2SecurityEventsPipelinesStorage']:
+    def storage(self) -> pulumi.Output[Optional['outputs.OpenpipelineV2SecurityEventsPipelinesStorage']]:
         """
         Storage stage
         """

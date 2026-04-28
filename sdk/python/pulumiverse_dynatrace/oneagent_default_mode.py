@@ -22,6 +22,7 @@ class OneagentDefaultModeArgs:
                  default_mode: pulumi.Input[_builtins.str]):
         """
         The set of arguments for constructing a OneagentDefaultMode resource.
+
         :param pulumi.Input[_builtins.str] default_mode: Possible Values: `DISCOVERY`, `FULL_STACK`, `INFRASTRUCTURE`
         """
         pulumi.set(__self__, "default_mode", default_mode)
@@ -45,6 +46,7 @@ class _OneagentDefaultModeState:
                  default_mode: Optional[pulumi.Input[_builtins.str]] = None):
         """
         Input properties used for looking up and filtering OneagentDefaultMode resources.
+
         :param pulumi.Input[_builtins.str] default_mode: Possible Values: `DISCOVERY`, `FULL_STACK`, `INFRASTRUCTURE`
         """
         if default_mode is not None:
@@ -72,7 +74,21 @@ class OneagentDefaultMode(pulumi.CustomResource):
                  default_mode: Optional[pulumi.Input[_builtins.str]] = None,
                  __props__=None):
         """
-        Create a OneagentDefaultMode resource with the given unique name, props, and options.
+        > This resource requires the API token scopes **Read settings** (`settings.read`) and **Write settings** (`settings.write`)
+
+        ## Dynatrace Documentation
+
+        - Application Security and monitoring modes - https://docs.dynatrace.com/docs/platform-modules/application-security/getting-started/monitoring-modes
+
+        - Settings API - https://www.dynatrace.com/support/help/dynatrace-api/environment-api/settings (schemaId: `builtin:deployment.oneagent.default-mode`)
+
+        ## Export Example Usage
+
+        - `terraform-provider-dynatrace -export OneagentDefaultMode` downloads existing OneAgent default mode configuration
+
+        The full documentation of the export feature is available [here](https://dt-url.net/h203qmc).
+
+
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[_builtins.str] default_mode: Possible Values: `DISCOVERY`, `FULL_STACK`, `INFRASTRUCTURE`
@@ -84,7 +100,21 @@ class OneagentDefaultMode(pulumi.CustomResource):
                  args: OneagentDefaultModeArgs,
                  opts: Optional[pulumi.ResourceOptions] = None):
         """
-        Create a OneagentDefaultMode resource with the given unique name, props, and options.
+        > This resource requires the API token scopes **Read settings** (`settings.read`) and **Write settings** (`settings.write`)
+
+        ## Dynatrace Documentation
+
+        - Application Security and monitoring modes - https://docs.dynatrace.com/docs/platform-modules/application-security/getting-started/monitoring-modes
+
+        - Settings API - https://www.dynatrace.com/support/help/dynatrace-api/environment-api/settings (schemaId: `builtin:deployment.oneagent.default-mode`)
+
+        ## Export Example Usage
+
+        - `terraform-provider-dynatrace -export OneagentDefaultMode` downloads existing OneAgent default mode configuration
+
+        The full documentation of the export feature is available [here](https://dt-url.net/h203qmc).
+
+
         :param str resource_name: The name of the resource.
         :param OneagentDefaultModeArgs args: The arguments to use to populate this resource's properties.
         :param pulumi.ResourceOptions opts: Options for the resource.

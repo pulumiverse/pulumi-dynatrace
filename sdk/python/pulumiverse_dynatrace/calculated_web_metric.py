@@ -31,6 +31,7 @@ class CalculatedWebMetricArgs:
                  user_action_filter: Optional[pulumi.Input['CalculatedWebMetricUserActionFilterArgs']] = None):
         """
         The set of arguments for constructing a CalculatedWebMetric resource.
+
         :param pulumi.Input[_builtins.str] app_identifier: The Dynatrace entity ID of the application to which the metric belongs.
         :param pulumi.Input[_builtins.bool] enabled: The metric is enabled (`true`) or disabled (`false`)
         :param pulumi.Input['CalculatedWebMetricMetricDefinitionArgs'] metric_definition: The definition of a calculated web metric.
@@ -163,6 +164,7 @@ class _CalculatedWebMetricState:
                  user_action_filter: Optional[pulumi.Input['CalculatedWebMetricUserActionFilterArgs']] = None):
         """
         Input properties used for looking up and filtering CalculatedWebMetric resources.
+
         :param pulumi.Input[_builtins.str] app_identifier: The Dynatrace entity ID of the application to which the metric belongs.
         :param pulumi.Input[_builtins.str] description: Descriptor of a calculated web metric.
         :param pulumi.Input[Sequence[pulumi.Input['CalculatedWebMetricDimensionArgs']]] dimensions: Parameters of a definition of a calculated web metric.
@@ -302,7 +304,21 @@ class CalculatedWebMetric(pulumi.CustomResource):
                  user_action_filter: Optional[pulumi.Input[Union['CalculatedWebMetricUserActionFilterArgs', 'CalculatedWebMetricUserActionFilterArgsDict']]] = None,
                  __props__=None):
         """
-        Create a CalculatedWebMetric resource with the given unique name, props, and options.
+        > This resource requires the API token scopes **Read configuration** (`ReadConfig`) and **Write configuration** (`WriteConfig`)
+
+        ## Dynatrace Documentation
+
+        - Create calculated metrics for web applications - https://www.dynatrace.com/support/help/platform-modules/digital-experience/web-applications/additional-configuration/rum-calculated-metrics-web
+
+        - Web application metrics API - https://www.dynatrace.com/support/help/dynatrace-api/configuration-api/calculated-metrics/rum-metrics
+
+        ## Export Example Usage
+
+        - `terraform-provider-dynatrace -export CalculatedWebMetric` downloads all existing calculated web app metric configuration
+
+        The full documentation of the export feature is available [here](https://dt-url.net/h203qmc).
+
+
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[_builtins.str] app_identifier: The Dynatrace entity ID of the application to which the metric belongs.
@@ -321,7 +337,21 @@ class CalculatedWebMetric(pulumi.CustomResource):
                  args: CalculatedWebMetricArgs,
                  opts: Optional[pulumi.ResourceOptions] = None):
         """
-        Create a CalculatedWebMetric resource with the given unique name, props, and options.
+        > This resource requires the API token scopes **Read configuration** (`ReadConfig`) and **Write configuration** (`WriteConfig`)
+
+        ## Dynatrace Documentation
+
+        - Create calculated metrics for web applications - https://www.dynatrace.com/support/help/platform-modules/digital-experience/web-applications/additional-configuration/rum-calculated-metrics-web
+
+        - Web application metrics API - https://www.dynatrace.com/support/help/dynatrace-api/configuration-api/calculated-metrics/rum-metrics
+
+        ## Export Example Usage
+
+        - `terraform-provider-dynatrace -export CalculatedWebMetric` downloads all existing calculated web app metric configuration
+
+        The full documentation of the export feature is available [here](https://dt-url.net/h203qmc).
+
+
         :param str resource_name: The name of the resource.
         :param CalculatedWebMetricArgs args: The arguments to use to populate this resource's properties.
         :param pulumi.ResourceOptions opts: Options for the resource.

@@ -97,10 +97,18 @@ func (m *module) Construct(ctx *pulumi.Context, name, typ, urn string) (r pulumi
 		r = &AutotagV2{}
 	case "dynatrace:index/awsAnomalies:AwsAnomalies":
 		r = &AwsAnomalies{}
+	case "dynatrace:index/awsConnection:AwsConnection":
+		r = &AwsConnection{}
+	case "dynatrace:index/awsConnectionRoleArn:AwsConnectionRoleArn":
+		r = &AwsConnectionRoleArn{}
 	case "dynatrace:index/awsCredentials:AwsCredentials":
 		r = &AwsCredentials{}
 	case "dynatrace:index/awsService:AwsService":
 		r = &AwsService{}
+	case "dynatrace:index/azureConnection:AzureConnection":
+		r = &AzureConnection{}
+	case "dynatrace:index/azureConnectionAuthentication:AzureConnectionAuthentication":
+		r = &AzureConnectionAuthentication{}
 	case "dynatrace:index/azureCredentials:AzureCredentials":
 		r = &AzureCredentials{}
 	case "dynatrace:index/azureService:AzureService":
@@ -325,6 +333,8 @@ func (m *module) Construct(ctx *pulumi.Context, name, typ, urn string) (r pulumi
 		r = &IamPolicyBindingsV2{}
 	case "dynatrace:index/iamPolicyBoundary:IamPolicyBoundary":
 		r = &IamPolicyBoundary{}
+	case "dynatrace:index/iamServiceUser:IamServiceUser":
+		r = &IamServiceUser{}
 	case "dynatrace:index/iamUser:IamUser":
 		r = &IamUser{}
 	case "dynatrace:index/ibmMqFilters:IbmMqFilters":
@@ -1068,12 +1078,32 @@ func init() {
 	)
 	pulumi.RegisterResourceModule(
 		"dynatrace",
+		"index/awsConnection",
+		&module{version},
+	)
+	pulumi.RegisterResourceModule(
+		"dynatrace",
+		"index/awsConnectionRoleArn",
+		&module{version},
+	)
+	pulumi.RegisterResourceModule(
+		"dynatrace",
 		"index/awsCredentials",
 		&module{version},
 	)
 	pulumi.RegisterResourceModule(
 		"dynatrace",
 		"index/awsService",
+		&module{version},
+	)
+	pulumi.RegisterResourceModule(
+		"dynatrace",
+		"index/azureConnection",
+		&module{version},
+	)
+	pulumi.RegisterResourceModule(
+		"dynatrace",
+		"index/azureConnectionAuthentication",
 		&module{version},
 	)
 	pulumi.RegisterResourceModule(
@@ -1634,6 +1664,11 @@ func init() {
 	pulumi.RegisterResourceModule(
 		"dynatrace",
 		"index/iamPolicyBoundary",
+		&module{version},
+	)
+	pulumi.RegisterResourceModule(
+		"dynatrace",
+		"index/iamServiceUser",
 		&module{version},
 	)
 	pulumi.RegisterResourceModule(

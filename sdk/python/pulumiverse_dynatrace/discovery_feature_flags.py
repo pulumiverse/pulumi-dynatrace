@@ -26,6 +26,7 @@ class DiscoveryFeatureFlagsArgs:
                  string_value: Optional[pulumi.Input[_builtins.str]] = None):
         """
         The set of arguments for constructing a DiscoveryFeatureFlags resource.
+
         :param pulumi.Input[_builtins.str] type: Possible Values: `Boolean`, `Number`, `String`
         :param pulumi.Input[_builtins.bool] boolean_value: State of boolean feature
         :param pulumi.Input[_builtins.str] name: Name of the feature
@@ -113,6 +114,7 @@ class _DiscoveryFeatureFlagsState:
                  type: Optional[pulumi.Input[_builtins.str]] = None):
         """
         Input properties used for looking up and filtering DiscoveryFeatureFlags resources.
+
         :param pulumi.Input[_builtins.bool] boolean_value: State of boolean feature
         :param pulumi.Input[_builtins.str] name: Name of the feature
         :param pulumi.Input[_builtins.int] number_value: State of numeric feature
@@ -204,7 +206,21 @@ class DiscoveryFeatureFlags(pulumi.CustomResource):
                  type: Optional[pulumi.Input[_builtins.str]] = None,
                  __props__=None):
         """
-        Create a DiscoveryFeatureFlags resource with the given unique name, props, and options.
+        > This resource requires the API token scopes **Read settings** (`settings.read`) and **Write settings** (`settings.write`)
+
+        ## Dynatrace Documentation
+
+        - Discovery & Coverage - https://www.dynatrace.com/hub/detail/discovery-coverage/
+
+        - Settings API - https://www.dynatrace.com/support/help/dynatrace-api/environment-api/settings (schemaId: `app:dynatrace.discovery.coverage:feature-flags`)
+
+        ## Export Example Usage
+
+        - `terraform-provider-dynatrace -export DiscoveryFeatureFlags` downloads existing Discovery and Coverage app feature flags
+
+        The full documentation of the export feature is available [here](https://dt-url.net/h203qmc).
+
+
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[_builtins.bool] boolean_value: State of boolean feature
@@ -220,7 +236,21 @@ class DiscoveryFeatureFlags(pulumi.CustomResource):
                  args: DiscoveryFeatureFlagsArgs,
                  opts: Optional[pulumi.ResourceOptions] = None):
         """
-        Create a DiscoveryFeatureFlags resource with the given unique name, props, and options.
+        > This resource requires the API token scopes **Read settings** (`settings.read`) and **Write settings** (`settings.write`)
+
+        ## Dynatrace Documentation
+
+        - Discovery & Coverage - https://www.dynatrace.com/hub/detail/discovery-coverage/
+
+        - Settings API - https://www.dynatrace.com/support/help/dynatrace-api/environment-api/settings (schemaId: `app:dynatrace.discovery.coverage:feature-flags`)
+
+        ## Export Example Usage
+
+        - `terraform-provider-dynatrace -export DiscoveryFeatureFlags` downloads existing Discovery and Coverage app feature flags
+
+        The full documentation of the export feature is available [here](https://dt-url.net/h203qmc).
+
+
         :param str resource_name: The name of the resource.
         :param DiscoveryFeatureFlagsArgs args: The arguments to use to populate this resource's properties.
         :param pulumi.ResourceOptions opts: Options for the resource.

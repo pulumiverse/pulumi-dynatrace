@@ -10,6 +10,23 @@ using Pulumi;
 
 namespace Pulumiverse.Dynatrace
 {
+    /// <summary>
+    /// &gt; This resource is excluded by default in the export utility since it requires the feature to be activated, please explicitly specify the resource to retrieve existing configuration.
+    /// 
+    /// &gt; This resource requires the API token scopes **Read attacks** (`attacks.read`) and **Write attacks** (`attacks.write`)
+    /// 
+    /// ## Dynatrace Documentation
+    /// 
+    /// - Runtime Application Protection - https://www.dynatrace.com/support/help/platform-modules/application-security/application-protection
+    /// 
+    /// - Settings API - https://www.dynatrace.com/support/help/dynatrace-api/environment-api/settings (schemaId: `builtin:appsec.attack-protection-allowlist-config`)
+    /// 
+    /// ## Export Example Usage
+    /// 
+    /// - `terraform-provider-dynatrace -export dynatrace.AttackAllowlist` downloads all existing application protection: allowlist configuration
+    /// 
+    /// The full documentation of the export feature is available [here](https://dt-url.net/h203qmc).
+    /// </summary>
     [DynatraceResourceType("dynatrace:index/attackAllowlist:AttackAllowlist")]
     public partial class AttackAllowlist : global::Pulumi.CustomResource
     {

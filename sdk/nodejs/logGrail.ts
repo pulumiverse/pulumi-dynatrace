@@ -4,6 +4,23 @@
 import * as pulumi from "@pulumi/pulumi";
 import * as utilities from "./utilities";
 
+/**
+ * !> This resource API endpoint has been deprecated since it is only meant to be used for the initial Logs powered by Grail activation.
+ *
+ * > This resource requires the API token scopes **Read settings** (`settings.read`) and **Write settings** (`settings.write`)
+ *
+ * ## Dynatrace Documentation
+ *
+ * - Migration to Log powered by Grail - https://www.dynatrace.com/support/help/observe-and-explore/logs/log-management-and-analytics/lma-migration-to-grail
+ *
+ * - Settings API - https://www.dynatrace.com/support/help/dynatrace-api/environment-api/settings (schemaId: `builtin:logmonitoring.logs-on-grail-activate`)
+ *
+ * ## Export Example Usage
+ *
+ * - `terraform-provider-dynatrace -export dynatrace.LogGrail` downloads log powered by Grail configuration
+ *
+ * The full documentation of the export feature is available [here](https://dt-url.net/h203qmc).
+ */
 export class LogGrail extends pulumi.CustomResource {
     /**
      * Get an existing LogGrail resource's state with the given name, ID, and optional extra

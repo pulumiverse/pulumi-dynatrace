@@ -35,6 +35,7 @@ class SloV2Args:
                  name: Optional[pulumi.Input[_builtins.str]] = None):
         """
         The set of arguments for constructing a SloV2 resource.
+
         :param pulumi.Input[_builtins.bool] enabled: This setting is enabled (`true`) or disabled (`false`)
         :param pulumi.Input['SloV2ErrorBudgetBurnRateArgs'] error_budget_burn_rate: ### Error budget burn rate
         :param pulumi.Input[_builtins.str] evaluation_type: Possible Values: `AGGREGATE`
@@ -227,6 +228,7 @@ class _SloV2State:
                  target_warning: Optional[pulumi.Input[_builtins.float]] = None):
         """
         Input properties used for looking up and filtering SloV2 resources.
+
         :param pulumi.Input[_builtins.str] custom_description: The description of the SLO
         :param pulumi.Input[_builtins.bool] enabled: This setting is enabled (`true`) or disabled (`false`)
         :param pulumi.Input['SloV2ErrorBudgetBurnRateArgs'] error_budget_burn_rate: ### Error budget burn rate
@@ -430,7 +432,21 @@ class SloV2(pulumi.CustomResource):
                  target_warning: Optional[pulumi.Input[_builtins.float]] = None,
                  __props__=None):
         """
-        Create a SloV2 resource with the given unique name, props, and options.
+        > This resource requires the API token scopes  **Read SLO** (`slo.read`), **Write SLO** (`slo.write`), **Read settings** (`settings.read`) and **Write settings** (`settings.write`)
+
+        ## Dynatrace Documentation
+
+        - Service-level objectives - https://www.dynatrace.com/support/help/how-to-use-dynatrace/cloud-automation/service-level-objectives
+
+        - Settings API - https://www.dynatrace.com/support/help/dynatrace-api/environment-api/settings (schemaId: `builtin:monitoring.slo`)
+
+        ## Export Example Usage
+
+        - `terraform-provider-dynatrace -export SloV2` downloads all existing service-level objectives configuration
+
+        The full documentation of the export feature is available [here](https://dt-url.net/h203qmc).
+
+
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[_builtins.str] custom_description: The description of the SLO
@@ -453,7 +469,21 @@ class SloV2(pulumi.CustomResource):
                  args: SloV2Args,
                  opts: Optional[pulumi.ResourceOptions] = None):
         """
-        Create a SloV2 resource with the given unique name, props, and options.
+        > This resource requires the API token scopes  **Read SLO** (`slo.read`), **Write SLO** (`slo.write`), **Read settings** (`settings.read`) and **Write settings** (`settings.write`)
+
+        ## Dynatrace Documentation
+
+        - Service-level objectives - https://www.dynatrace.com/support/help/how-to-use-dynatrace/cloud-automation/service-level-objectives
+
+        - Settings API - https://www.dynatrace.com/support/help/dynatrace-api/environment-api/settings (schemaId: `builtin:monitoring.slo`)
+
+        ## Export Example Usage
+
+        - `terraform-provider-dynatrace -export SloV2` downloads all existing service-level objectives configuration
+
+        The full documentation of the export feature is available [here](https://dt-url.net/h203qmc).
+
+
         :param str resource_name: The name of the resource.
         :param SloV2Args args: The arguments to use to populate this resource's properties.
         :param pulumi.ResourceOptions opts: Options for the resource.

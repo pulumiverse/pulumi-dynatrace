@@ -4,6 +4,36 @@
 import * as pulumi from "@pulumi/pulumi";
 import * as utilities from "./utilities";
 
+/**
+ * > This resource requires the API token scopes **Read settings** (`settings.read`) and **Write settings** (`settings.write`)
+ *
+ * ## Dynatrace Documentation
+ *
+ * - OneAgent Features - https://www.dynatrace.com/support/help/setup-and-configuration/dynatrace-oneagent/oneagent-features#configuration-via-web-ui
+ *
+ * - Settings API - https://www.dynatrace.com/support/help/dynatrace-api/environment-api/settings (schemaId: `builtin:oneagent.features`)
+ *
+ * ## Export Example Usage
+ *
+ * - `terraform-provider-dynatrace -export dynatrace.OneagentFeatures` downloads the current configuration for OneAgent Features
+ *
+ * The full documentation of the export feature is available [here](https://dt-url.net/h203qmc).
+ *
+ * ## Resource Example Usage
+ *
+ * ```typescript
+ * import * as pulumi from "@pulumi/pulumi";
+ * import * as dynatrace from "@pulumiverse/dynatrace";
+ *
+ * // ID vu9U3hXa3q0AAAABABlidWlsdGluOm9uZWFnZW50LmZlYXR1cmVzAAZ0ZW5hbnQABnRlbmFudAAkMWQzYjY4ODMtOWViZi0zMDljLTg1YjktNjg4OTcxYzE3NDM1vu9U3hXa3q0
+ * const SENSOR_DOTNET_ASPNET = new dynatrace.OneagentFeatures("SENSOR_DOTNET_ASPNET", {
+ *     enabled: true,
+ *     instrumentation: true,
+ *     key: "SENSOR_DOTNET_ASPNET",
+ *     scope: "environment",
+ * });
+ * ```
+ */
 export class OneagentFeatures extends pulumi.CustomResource {
     /**
      * Get an existing OneagentFeatures resource's state with the given name, ID, and optional extra
@@ -32,6 +62,9 @@ export class OneagentFeatures extends pulumi.CustomResource {
         return obj['__pulumiType'] === OneagentFeatures.__pulumiType;
     }
 
+    /**
+     * Used internally by the terraform provider. Do not populate
+     */
     declare public /*out*/ readonly _restore_: pulumi.Output<string>;
     /**
      * This setting is enabled (`true`) or disabled (`false`)
@@ -97,6 +130,9 @@ export class OneagentFeatures extends pulumi.CustomResource {
  * Input properties used for looking up and filtering OneagentFeatures resources.
  */
 export interface OneagentFeaturesState {
+    /**
+     * Used internally by the terraform provider. Do not populate
+     */
     _restore_?: pulumi.Input<string>;
     /**
      * This setting is enabled (`true`) or disabled (`false`)
