@@ -10,6 +10,45 @@ using Pulumi;
 
 namespace Pulumiverse.Dynatrace
 {
+    /// <summary>
+    /// &gt; This resource requires the API token scopes **Read settings** (`settings.read`) and **Write settings** (`settings.write`)
+    /// 
+    /// ## Dynatrace Documentation
+    /// 
+    /// - User experience score - https://www.dynatrace.com/support/help/platform-modules/digital-experience/basic-concepts/ratings/user-experience-score#calculate-the-user-experience-score
+    /// 
+    /// - Settings API - https://www.dynatrace.com/support/help/dynatrace-api/environment-api/settings (schemaId: `builtin:usability-analytics`)
+    /// 
+    /// ## Export Example Usage
+    /// 
+    /// - `terraform-provider-dynatrace -export dynatrace.UsabilityAnalytics` downloads the existing settings for Usability Analytics
+    /// 
+    /// The full documentation of the export feature is available [here](https://dt-url.net/h203qmc).
+    /// 
+    /// ## Resource Example Usage
+    /// 
+    /// ```csharp
+    /// using System.Collections.Generic;
+    /// using System.Linq;
+    /// using Pulumi;
+    /// using Dynatrace = Pulumiverse.Dynatrace;
+    /// 
+    /// return await Deployment.RunAsync(() =&gt; 
+    /// {
+    ///     var test = new Dynatrace.UsabilityAnalytics("test", new()
+    ///     {
+    ///         DetectRageClicks = true,
+    ///     });
+    /// 
+    ///     var forApp = new Dynatrace.UsabilityAnalytics("for_app", new()
+    ///     {
+    ///         ApplicationId = "APPLICATION-EA7C4B59F27D43EB",
+    ///         DetectRageClicks = false,
+    ///     });
+    /// 
+    /// });
+    /// ```
+    /// </summary>
     [DynatraceResourceType("dynatrace:index/usabilityAnalytics:UsabilityAnalytics")]
     public partial class UsabilityAnalytics : global::Pulumi.CustomResource
     {

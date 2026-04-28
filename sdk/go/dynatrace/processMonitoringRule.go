@@ -12,6 +12,52 @@ import (
 	"github.com/pulumiverse/pulumi-dynatrace/sdk/go/dynatrace/internal"
 )
 
+// > This resource requires the API token scopes **Read settings** (`settings.read`) and **Write settings** (`settings.write`)
+//
+// ## Dynatrace Documentation
+//
+// - Process Availability - https://www.dynatrace.com/support/help/how-to-use-dynatrace/process-groups/configuration/pg-monitoring
+//
+// - Settings API - https://www.dynatrace.com/support/help/dynatrace-api/environment-api/settings (schemaId: `builtin:process.custom-process-monitoring-rule`)
+//
+// ## Export Example Usage
+//
+// - `terraform-provider-dynatrace -export ProcessMonitoringRule` downloads all existing custom process monitoring configuration
+//
+// The full documentation of the export feature is available [here](https://dt-url.net/h203qmc).
+//
+// ## Resource Example Usage
+//
+// ```go
+// package main
+//
+// import (
+//
+//	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//	"github.com/pulumiverse/pulumi-dynatrace/sdk/go/dynatrace"
+//
+// )
+//
+//	func main() {
+//		pulumi.Run(func(ctx *pulumi.Context) error {
+//			_, err := dynatrace.NewProcessMonitoringRule(ctx, "test", &dynatrace.ProcessMonitoringRuleArgs{
+//				Enabled:     pulumi.Bool(true),
+//				Mode:        pulumi.String("MONITORING_OFF"),
+//				HostGroupId: pulumi.String("HOST_GROUP-0000000000000000"),
+//				Condition: &dynatrace.ProcessMonitoringRuleConditionArgs{
+//					Item:     pulumi.String("APACHE_CONFIG_PATH"),
+//					Operator: pulumi.String("STARTS"),
+//					Value:    pulumi.String("foo-bar-x"),
+//				},
+//			})
+//			if err != nil {
+//				return err
+//			}
+//			return nil
+//		})
+//	}
+//
+// ```
 type ProcessMonitoringRule struct {
 	pulumi.CustomResourceState
 

@@ -25,6 +25,7 @@ class WebAppResourceTypesArgs:
                  secondary_resource_type: Optional[pulumi.Input[_builtins.str]] = None):
         """
         The set of arguments for constructing a WebAppResourceTypes resource.
+
         :param pulumi.Input[_builtins.str] primary_resource_type: Possible Values: `CSS`, `IMAGE`, `OTHER`, `SCRIPT`
         :param pulumi.Input[_builtins.str] regular_expression: The regular expression to detect the resource.
         :param pulumi.Input[_builtins.str] insert_after: Because this resource allows for ordering you may specify the ID of the resource instance that comes before this instance regarding order. If not specified when creating the setting will be added to the end of the list. If not specified during update the order will remain untouched
@@ -95,6 +96,7 @@ class _WebAppResourceTypesState:
                  secondary_resource_type: Optional[pulumi.Input[_builtins.str]] = None):
         """
         Input properties used for looking up and filtering WebAppResourceTypes resources.
+
         :param pulumi.Input[_builtins.str] insert_after: Because this resource allows for ordering you may specify the ID of the resource instance that comes before this instance regarding order. If not specified when creating the setting will be added to the end of the list. If not specified during update the order will remain untouched
         :param pulumi.Input[_builtins.str] primary_resource_type: Possible Values: `CSS`, `IMAGE`, `OTHER`, `SCRIPT`
         :param pulumi.Input[_builtins.str] regular_expression: The regular expression to detect the resource.
@@ -170,7 +172,21 @@ class WebAppResourceTypes(pulumi.CustomResource):
                  secondary_resource_type: Optional[pulumi.Input[_builtins.str]] = None,
                  __props__=None):
         """
-        Create a WebAppResourceTypes resource with the given unique name, props, and options.
+        > This resource requires the API token scopes **Read settings** (`settings.read`) and **Write settings** (`settings.write`)
+
+        ## Dynatrace Documentation
+
+        - Web applications - https://www.dynatrace.com/support/help/platform-modules/digital-experience/web-applications
+
+        - Settings API - https://www.dynatrace.com/support/help/dynatrace-api/environment-api/settings (schemaId: `builtin:rum.web.resource-types`)
+
+        ## Export Example Usage
+
+        - `terraform-provider-dynatrace -export dynatrace_web_resource_types` downloads all existing resource type configuration
+
+        The full documentation of the export feature is available [here](https://dt-url.net/h203qmc).
+
+
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[_builtins.str] insert_after: Because this resource allows for ordering you may specify the ID of the resource instance that comes before this instance regarding order. If not specified when creating the setting will be added to the end of the list. If not specified during update the order will remain untouched
@@ -185,7 +201,21 @@ class WebAppResourceTypes(pulumi.CustomResource):
                  args: WebAppResourceTypesArgs,
                  opts: Optional[pulumi.ResourceOptions] = None):
         """
-        Create a WebAppResourceTypes resource with the given unique name, props, and options.
+        > This resource requires the API token scopes **Read settings** (`settings.read`) and **Write settings** (`settings.write`)
+
+        ## Dynatrace Documentation
+
+        - Web applications - https://www.dynatrace.com/support/help/platform-modules/digital-experience/web-applications
+
+        - Settings API - https://www.dynatrace.com/support/help/dynatrace-api/environment-api/settings (schemaId: `builtin:rum.web.resource-types`)
+
+        ## Export Example Usage
+
+        - `terraform-provider-dynatrace -export dynatrace_web_resource_types` downloads all existing resource type configuration
+
+        The full documentation of the export feature is available [here](https://dt-url.net/h203qmc).
+
+
         :param str resource_name: The name of the resource.
         :param WebAppResourceTypesArgs args: The arguments to use to populate this resource's properties.
         :param pulumi.ResourceOptions opts: Options for the resource.

@@ -23,6 +23,7 @@ class HubExtensionActiveVersionArgs:
                  name: Optional[pulumi.Input[_builtins.str]] = None):
         """
         The set of arguments for constructing a HubExtensionActiveVersion resource.
+
         :param pulumi.Input[_builtins.str] version: The version that should be active
         :param pulumi.Input[_builtins.str] name: The fully qualified name of the extension, such as `com.dynatrace.extension.jmx-liberty-cp`. You can query for these names using the data source `get_hub_items`
         """
@@ -62,6 +63,7 @@ class _HubExtensionActiveVersionState:
                  version: Optional[pulumi.Input[_builtins.str]] = None):
         """
         Input properties used for looking up and filtering HubExtensionActiveVersion resources.
+
         :param pulumi.Input[_builtins.str] name: The fully qualified name of the extension, such as `com.dynatrace.extension.jmx-liberty-cp`. You can query for these names using the data source `get_hub_items`
         :param pulumi.Input[_builtins.str] version: The version that should be active
         """
@@ -105,7 +107,45 @@ class HubExtensionActiveVersion(pulumi.CustomResource):
                  version: Optional[pulumi.Input[_builtins.str]] = None,
                  __props__=None):
         """
-        Create a HubExtensionActiveVersion resource with the given unique name, props, and options.
+        > This resource requires the API token scopes `extensions.write`, `extensionEnvironment.write`, `extension.read` and `extensionEnvironment.read`.
+
+        Using this resource you can determine which version of a specified Extension should currently be active within your environment. In case the extension has not yet gotten installed for the specified version the installation happens automatically.
+
+        The `name` attribute needs to refer to the fully qualified name of the extension. For a list of eligible names you can utilize the data source `get_hub_items` like in this example:
+
+        ```python
+        import pulumi
+        import pulumi_dynatrace as dynatrace
+
+        extension_20_items = dynatrace.get_hub_items(type="EXTENSION2")
+        ```
+
+        > Deleting resources of type `HubExtensionActiveVersion` has no real effect on your Dynatrace Environment. Terraform will just stop managing the active version of that extension.
+
+        For installing Monitoring Configurations for a specific Extension you can use the resource `HubExtensionConfig`.
+
+        ## Dynatrace Documentation
+
+        - Extensions API - https://docs.dynatrace.com/docs/dynatrace-api/environment-api/extensions-20
+
+        ## Export Example Usage
+
+        - `terraform-provider-dynatrace -export HubExtensionActiveVersion` downloads a resource for the currently active version of every installed extension.
+
+        The full documentation of the export feature is available [here](https://dt-url.net/h203qmc).
+
+        ## Resource Example Usage
+
+        ```python
+        import pulumi
+        import pulumiverse_dynatrace as dynatrace
+
+        custom_com_dynatrace_extension_prometheus_cadvisor = dynatrace.HubExtensionActiveVersion("custom_com_dynatrace_extension_prometheus-cadvisor",
+            name="com.dynatrace.extension.active-directory-python",
+            version="3.1.6")
+        ```
+
+
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[_builtins.str] name: The fully qualified name of the extension, such as `com.dynatrace.extension.jmx-liberty-cp`. You can query for these names using the data source `get_hub_items`
@@ -118,7 +158,45 @@ class HubExtensionActiveVersion(pulumi.CustomResource):
                  args: HubExtensionActiveVersionArgs,
                  opts: Optional[pulumi.ResourceOptions] = None):
         """
-        Create a HubExtensionActiveVersion resource with the given unique name, props, and options.
+        > This resource requires the API token scopes `extensions.write`, `extensionEnvironment.write`, `extension.read` and `extensionEnvironment.read`.
+
+        Using this resource you can determine which version of a specified Extension should currently be active within your environment. In case the extension has not yet gotten installed for the specified version the installation happens automatically.
+
+        The `name` attribute needs to refer to the fully qualified name of the extension. For a list of eligible names you can utilize the data source `get_hub_items` like in this example:
+
+        ```python
+        import pulumi
+        import pulumi_dynatrace as dynatrace
+
+        extension_20_items = dynatrace.get_hub_items(type="EXTENSION2")
+        ```
+
+        > Deleting resources of type `HubExtensionActiveVersion` has no real effect on your Dynatrace Environment. Terraform will just stop managing the active version of that extension.
+
+        For installing Monitoring Configurations for a specific Extension you can use the resource `HubExtensionConfig`.
+
+        ## Dynatrace Documentation
+
+        - Extensions API - https://docs.dynatrace.com/docs/dynatrace-api/environment-api/extensions-20
+
+        ## Export Example Usage
+
+        - `terraform-provider-dynatrace -export HubExtensionActiveVersion` downloads a resource for the currently active version of every installed extension.
+
+        The full documentation of the export feature is available [here](https://dt-url.net/h203qmc).
+
+        ## Resource Example Usage
+
+        ```python
+        import pulumi
+        import pulumiverse_dynatrace as dynatrace
+
+        custom_com_dynatrace_extension_prometheus_cadvisor = dynatrace.HubExtensionActiveVersion("custom_com_dynatrace_extension_prometheus-cadvisor",
+            name="com.dynatrace.extension.active-directory-python",
+            version="3.1.6")
+        ```
+
+
         :param str resource_name: The name of the resource.
         :param HubExtensionActiveVersionArgs args: The arguments to use to populate this resource's properties.
         :param pulumi.ResourceOptions opts: Options for the resource.

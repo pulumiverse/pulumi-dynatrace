@@ -4,6 +4,23 @@
 import * as pulumi from "@pulumi/pulumi";
 import * as utilities from "./utilities";
 
+/**
+ * > This resource is excluded by default in the export utility since there could be a large amount of dashboards.
+ *
+ * > This resource requires the API token scopes **Read configuration** (`ReadConfig`) and **Write configuration** (`WriteConfig`)
+ *
+ * ## Dynatrace Documentation
+ *
+ * - Dashboards and reports - https://www.dynatrace.com/support/help/how-to-use-dynatrace/dashboards-and-charts
+ *
+ * - Dashboards API - https://www.dynatrace.com/support/help/dynatrace-api/configuration-api/dashboards-api
+ *
+ * ## Export Example Usage
+ *
+ * - `terraform-provider-dynatrace -export dynatrace.JsonDashboard` downloads all existing dashboard configuration
+ *
+ * The full documentation of the export feature is available [here](https://dt-url.net/h203qmc).
+ */
 export class JsonDashboard extends pulumi.CustomResource {
     /**
      * Get an existing JsonDashboard resource's state with the given name, ID, and optional extra

@@ -22,6 +22,7 @@ class HostNamingOrderArgs:
                  naming_rule_ids: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None):
         """
         The set of arguments for constructing a HostNamingOrder resource.
+
         :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] naming_rule_ids: The IDs of the naming rules to define the order for
         """
         if naming_rule_ids is not None:
@@ -46,6 +47,7 @@ class _HostNamingOrderState:
                  naming_rule_ids: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None):
         """
         Input properties used for looking up and filtering HostNamingOrder resources.
+
         :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] naming_rule_ids: The IDs of the naming rules to define the order for
         """
         if naming_rule_ids is not None:
@@ -73,7 +75,21 @@ class HostNamingOrder(pulumi.CustomResource):
                  naming_rule_ids: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
                  __props__=None):
         """
-        Create a HostNamingOrder resource with the given unique name, props, and options.
+        > This resource requires the API token scopes **Read configuration** (`ReadConfig`) and **Write configuration** (`WriteConfig`)
+
+        ## Dynatrace Documentation
+
+        - Service naming rules - https://www.dynatrace.com/support/help/how-to-use-dynatrace/services/service-detection-and-naming/customize-service-naming
+
+        - Conditional naming API - https://www.dynatrace.com/support/help/dynatrace-api/configuration-api/conditional-naming
+
+        ## Export Example Usage
+
+        - `terraform-provider-dynatrace -export HostNamingOrder` downloads an ordered list of service naming rule IDs
+
+        The full documentation of the export feature is available [here](https://dt-url.net/h203qmc).
+
+
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] naming_rule_ids: The IDs of the naming rules to define the order for
@@ -85,7 +101,21 @@ class HostNamingOrder(pulumi.CustomResource):
                  args: Optional[HostNamingOrderArgs] = None,
                  opts: Optional[pulumi.ResourceOptions] = None):
         """
-        Create a HostNamingOrder resource with the given unique name, props, and options.
+        > This resource requires the API token scopes **Read configuration** (`ReadConfig`) and **Write configuration** (`WriteConfig`)
+
+        ## Dynatrace Documentation
+
+        - Service naming rules - https://www.dynatrace.com/support/help/how-to-use-dynatrace/services/service-detection-and-naming/customize-service-naming
+
+        - Conditional naming API - https://www.dynatrace.com/support/help/dynatrace-api/configuration-api/conditional-naming
+
+        ## Export Example Usage
+
+        - `terraform-provider-dynatrace -export HostNamingOrder` downloads an ordered list of service naming rule IDs
+
+        The full documentation of the export feature is available [here](https://dt-url.net/h203qmc).
+
+
         :param str resource_name: The name of the resource.
         :param HostNamingOrderArgs args: The arguments to use to populate this resource's properties.
         :param pulumi.ResourceOptions opts: Options for the resource.

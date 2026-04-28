@@ -27,6 +27,7 @@ class FailureDetectionRuleSetsArgs:
                  scope: Optional[pulumi.Input[_builtins.str]] = None):
         """
         The set of arguments for constructing a FailureDetectionRuleSets resource.
+
         :param pulumi.Input[_builtins.bool] enabled: This setting is enabled (`true`) or disabled (`false`)
         :param pulumi.Input['FailureDetectionRuleSetsRulesetArgs'] ruleset: Ruleset
         :param pulumi.Input[_builtins.str] insert_after: Because this resource allows for ordering you may specify the ID of the resource instance that comes before this instance regarding order. If not specified when creating the setting will be added to the end of the list. If not specified during update the order will remain untouched
@@ -97,6 +98,7 @@ class _FailureDetectionRuleSetsState:
                  scope: Optional[pulumi.Input[_builtins.str]] = None):
         """
         Input properties used for looking up and filtering FailureDetectionRuleSets resources.
+
         :param pulumi.Input[_builtins.bool] enabled: This setting is enabled (`true`) or disabled (`false`)
         :param pulumi.Input[_builtins.str] insert_after: Because this resource allows for ordering you may specify the ID of the resource instance that comes before this instance regarding order. If not specified when creating the setting will be added to the end of the list. If not specified during update the order will remain untouched
         :param pulumi.Input['FailureDetectionRuleSetsRulesetArgs'] ruleset: Ruleset
@@ -180,38 +182,6 @@ class FailureDetectionRuleSets(pulumi.CustomResource):
 
         - Settings API - https://www.dynatrace.com/support/help/dynatrace-api/environment-api/settings (schemaId: `builtin:failure-detection-rulesets`)
 
-        ## Resource Example Usage
-
-        ```python
-        import pulumi
-        import pulumiverse_dynatrace as dynatrace
-
-        _name_ = dynatrace.FailureDetectionRuleSets("#name#",
-            enabled=False,
-            ruleset={
-                "condition": "matchesValue(k8s.cluster.name,\\"#name#\\")",
-                "description": "This is a sample description",
-                "fail_on_exceptions": {
-                    "enabled": True,
-                },
-                "fail_on_grpc_status_codes": {
-                    "status_codes": "2,4,12,13,14,15",
-                },
-                "fail_on_http_response_status_codes": {
-                    "status_codes": "500-599",
-                },
-                "fail_on_span_status_error": {
-                    "enabled": True,
-                },
-                "overrides": {
-                    "force_success_on_span_status_ok": {
-                        "enabled": False,
-                    },
-                },
-                "ruleset_name": "#name#",
-            },
-            scope="environment")
-        ```
 
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
@@ -235,38 +205,6 @@ class FailureDetectionRuleSets(pulumi.CustomResource):
 
         - Settings API - https://www.dynatrace.com/support/help/dynatrace-api/environment-api/settings (schemaId: `builtin:failure-detection-rulesets`)
 
-        ## Resource Example Usage
-
-        ```python
-        import pulumi
-        import pulumiverse_dynatrace as dynatrace
-
-        _name_ = dynatrace.FailureDetectionRuleSets("#name#",
-            enabled=False,
-            ruleset={
-                "condition": "matchesValue(k8s.cluster.name,\\"#name#\\")",
-                "description": "This is a sample description",
-                "fail_on_exceptions": {
-                    "enabled": True,
-                },
-                "fail_on_grpc_status_codes": {
-                    "status_codes": "2,4,12,13,14,15",
-                },
-                "fail_on_http_response_status_codes": {
-                    "status_codes": "500-599",
-                },
-                "fail_on_span_status_error": {
-                    "enabled": True,
-                },
-                "overrides": {
-                    "force_success_on_span_status_ok": {
-                        "enabled": False,
-                    },
-                },
-                "ruleset_name": "#name#",
-            },
-            scope="environment")
-        ```
 
         :param str resource_name: The name of the resource.
         :param FailureDetectionRuleSetsArgs args: The arguments to use to populate this resource's properties.

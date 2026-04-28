@@ -6,6 +6,56 @@ import * as inputs from "./types/input";
 import * as outputs from "./types/output";
 import * as utilities from "./utilities";
 
+/**
+ * > This resource requires the API token scopes **Read settings** (`settings.read`) and **Write settings** (`settings.write`)
+ *
+ * ## Dynatrace Documentation
+ *
+ * - Cloud application and workload detection - https://www.dynatrace.com/support/help/platform-modules/infrastructure-monitoring/process-groups/configuration/cloud-app-and-workload-detection
+ *
+ * - Settings API - https://www.dynatrace.com/support/help/dynatrace-api/environment-api/settings (schemaId: `builtin:process-group.cloud-application-workload-detection`)
+ *
+ * ## Export Example Usage
+ *
+ * - `terraform-provider-dynatrace -export dynatrace.CloudappWorkloaddetection` downloads all existing workload detection configuration
+ *
+ * The full documentation of the export feature is available [here](https://dt-url.net/h203qmc).
+ *
+ * ## Resource Example Usage
+ *
+ * ```typescript
+ * import * as pulumi from "@pulumi/pulumi";
+ * import * as dynatrace from "@pulumiverse/dynatrace";
+ *
+ * // ID vu9U3hXa3q0AAAABADpidWlsdGluOnByb2Nlc3MtZ3JvdXAuY2xvdWQtYXBwbGljYXRpb24td29ya2xvYWQtZGV0ZWN0aW9uAAZ0ZW5hbnQABnRlbmFudAAkYjcwNmY4NWYtNWFkNC0zY2ZmLWJhYzMtZDg4YzFmNTkzMjgwvu9U3hXa3q0
+ * const cloudAppWorkloadDetection = new dynatrace.CloudappWorkloaddetection("cloud_app_workload_detection", {
+ *     cloudFoundry: {
+ *         enabled: false,
+ *     },
+ *     docker: {
+ *         enabled: true,
+ *     },
+ *     kubernetes: {
+ *         enabled: true,
+ *         filters: {
+ *             filters: [{
+ *                 enabled: false,
+ *                 inclusionToggles: {
+ *                     incBasepod: false,
+ *                     incContainer: true,
+ *                     incNamespace: true,
+ *                     incProduct: true,
+ *                     incStage: true,
+ *                 },
+ *                 matchFilter: {
+ *                     matchOperator: "EXISTS",
+ *                 },
+ *             }],
+ *         },
+ *     },
+ * });
+ * ```
+ */
 export class CloudappWorkloaddetection extends pulumi.CustomResource {
     /**
      * Get an existing CloudappWorkloaddetection resource's state with the given name, ID, and optional extra

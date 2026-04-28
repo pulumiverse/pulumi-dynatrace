@@ -20,7 +20,7 @@ namespace Pulumiverse.Dynatrace.Inputs
         public Input<string> DestinationProperty { get; set; } = null!;
 
         /// <summary>
-        /// Possible Values: `Leavetextas_is`, `Tolowercase`, `Touppercase`
+        /// Normalize text or leave it as-is?. Possible Values: `Leave text as-is`, `To lower case`, `To upper case`
         /// </summary>
         [Input("destinationTransformation", required: true)]
         public Input<string> DestinationTransformation { get; set; } = null!;
@@ -32,7 +32,7 @@ namespace Pulumiverse.Dynatrace.Inputs
         public Input<string> SourceProperty { get; set; } = null!;
 
         /// <summary>
-        /// Possible Values: `Leavetextas_is`, `Tolowercase`, `Touppercase`
+        /// Normalize text or leave it as-is?. Possible Values: `Leave text as-is`, `To lower case`, `To upper case`
         /// </summary>
         [Input("sourceTransformation", required: true)]
         public Input<string> SourceTransformation { get; set; } = null!;

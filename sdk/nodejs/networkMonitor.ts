@@ -6,6 +6,96 @@ import * as inputs from "./types/input";
 import * as outputs from "./types/output";
 import * as utilities from "./utilities";
 
+/**
+ * > This resource requires the API token scopes **Read settings** (`settings.read`) and **Write settings** (`settings.write`)
+ *
+ * ## Dynatrace Documentation
+ *
+ * - Network availability monitors - https://docs.dynatrace.com/docs/platform-modules/digital-experience/synthetic-monitoring/general-information/network-availability-monitors
+ *
+ * ## Export Example Usage
+ *
+ * - `terraform-provider-dynatrace -export dynatrace.NetworkMonitor` downloads all existing network monitor configuration
+ *
+ * The full documentation of the export feature is available [here](https://dt-url.net/h203qmc).
+ *
+ * ## Resource Example Usage
+ *
+ * ```typescript
+ * import * as pulumi from "@pulumi/pulumi";
+ * import * as dynatrace from "@pulumiverse/dynatrace";
+ *
+ * const dNSTest = new dynatrace.NetworkMonitor("DNS_Test", {
+ *     name: "DNS Test",
+ *     description: "This is an example DNS test",
+ *     type: "MULTI_PROTOCOL",
+ *     enabled: false,
+ *     frequencyMin: 15,
+ *     locations: ["SYNTHETIC_LOCATION-39F97465BE7BF644"],
+ *     outageHandling: {
+ *         globalConsecutiveOutageCountThreshold: 1,
+ *         globalOutages: true,
+ *     },
+ *     performanceThresholds: {
+ *         enabled: true,
+ *         thresholds: {
+ *             thresholds: [{
+ *                 aggregation: "AVG",
+ *                 dealertingSamples: 5,
+ *                 samples: 5,
+ *                 stepIndex: 0,
+ *                 threshold: 100,
+ *                 violatingSamples: 3,
+ *             }],
+ *         },
+ *     },
+ *     steps: [{
+ *         steps: [{
+ *             name: "DNS Test",
+ *             requestType: "DNS",
+ *             targetLists: [
+ *                 "google.com",
+ *                 "yahoo.com",
+ *             ],
+ *             properties: {
+ *                 DNS_RECORD_TYPES: "A",
+ *                 EXECUTION_TIMEOUT: "PT2S",
+ *             },
+ *             constraints: [{
+ *                 constraints: [{
+ *                     type: "SUCCESS_RATE_PERCENT",
+ *                     properties: {
+ *                         value: "90",
+ *                         operator: ">=",
+ *                     },
+ *                 }],
+ *             }],
+ *             requestConfigurations: [{
+ *                 requestConfigurations: [{
+ *                     constraints: [{
+ *                         constraints: [{
+ *                             type: "DNS_STATUS_CODE",
+ *                             properties: {
+ *                                 operator: "=",
+ *                                 statusCode: "0",
+ *                             },
+ *                         }],
+ *                     }],
+ *                 }],
+ *             }],
+ *         }],
+ *     }],
+ *     tags: [{
+ *         tags: [{
+ *             context: "CONTEXTLESS",
+ *             key: "Key1",
+ *             source: "USER",
+ *             value: "Value1",
+ *         }],
+ *     }],
+ * });
+ * ```
+ */
 export class NetworkMonitor extends pulumi.CustomResource {
     /**
      * Get an existing NetworkMonitor resource's state with the given name, ID, and optional extra

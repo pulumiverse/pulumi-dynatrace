@@ -33,12 +33,11 @@ namespace Pulumiverse.Dynatrace
     /// using System.Linq;
     /// using System.Threading.Tasks;
     /// using Pulumi;
-    /// using Dynatrace = Pulumi.Dynatrace;
     /// using Dynatrace = Pulumiverse.Dynatrace;
     /// 
     /// return await Deployment.RunAsync(async() =&gt; 
     /// {
-    ///     var tERRAFORMSAMPLE = new Dynatrace.AwsCredentials("tERRAFORMSAMPLE", new()
+    ///     var TERRAFORM_SAMPLE = new Dynatrace.AwsCredentials("TERRAFORM_SAMPLE", new()
     ///     {
     ///         Label = "TERRAFORM-TEST-001",
     ///         PartitionType = "AWS_DEFAULT",
@@ -56,10 +55,11 @@ namespace Pulumiverse.Dynatrace
     ///     var tERRAFORMSAMPLEServices = new List&lt;Dynatrace.AwsService&gt;();
     ///     foreach (var range in )
     ///     {
-    ///         tERRAFORMSAMPLEServices.Add(new Dynatrace.AwsService($"tERRAFORMSAMPLEServices-{range.Key}", new()
+    ///         tERRAFORMSAMPLEServices.Add(new Dynatrace.AwsService($"TERRAFORM_SAMPLE_services-{range.Key}", new()
     ///         {
-    ///             CredentialsId = tERRAFORMSAMPLE.Id,
+    ///             CredentialsId = TERRAFORM_SAMPLE.Id,
     ///             UseRecommendedMetrics = true,
+    ///             Name = range.Key,
     ///         }));
     ///     }
     /// });
@@ -76,7 +76,7 @@ namespace Pulumiverse.Dynatrace
     /// 
     /// return await Deployment.RunAsync(() =&gt; 
     /// {
-    ///     var example = new Dynatrace.AwsCredentials("example", new()
+    ///     var example = new Dynatrace.AwsCredentials("Example", new()
     ///     {
     ///         Label = "#name#",
     ///         PartitionType = "AWS_DEFAULT",
@@ -88,8 +88,9 @@ namespace Pulumiverse.Dynatrace
     ///         },
     ///     });
     /// 
-    ///     var elastiCache = new Dynatrace.AwsService("elastiCache", new()
+    ///     var elastiCache = new Dynatrace.AwsService("ElastiCache", new()
     ///     {
+    ///         Name = "ElastiCache",
     ///         CredentialsId = example.Id,
     ///         Metrics = new[]
     ///         {
@@ -132,6 +133,9 @@ namespace Pulumiverse.Dynatrace
         [Output("credentialsId")]
         public Output<string> CredentialsId { get; private set; } = null!;
 
+        /// <summary>
+        /// A list of metrics to be monitored for this service. Depending on the service Dynatrace insists on a set of recommended metrics to be configured for that service. If any of these recommended metrics is missing here, the Terraform Provider will automatically add them during `pulumi up`. This usually results in a non-empty plan, until all of the recommended metrics are present within your configuration. For services considered `built-in` by Dynatrace any metrics specified here will be ignored - Dynatrace enforces a fixed set of metrics for these services.
+        /// </summary>
         [Output("metrics")]
         public Output<ImmutableArray<Outputs.AwsServiceMetric>> Metrics { get; private set; } = null!;
 
@@ -141,9 +145,15 @@ namespace Pulumiverse.Dynatrace
         [Output("name")]
         public Output<string> Name { get; private set; } = null!;
 
+        /// <summary>
+        /// Used internally by the Terraform Provider in order to remember the metrics enforced by Dynatrace
+        /// </summary>
         [Output("requiredMetrics")]
         public Output<string> RequiredMetrics { get; private set; } = null!;
 
+        /// <summary>
+        /// If `True` Terraform will negotiate with the Dynatrace API about the recommended/enforced metrics to be applied. Any `Metric` specified will be therefore ignored.
+        /// </summary>
         [Output("useRecommendedMetrics")]
         public Output<bool?> UseRecommendedMetrics { get; private set; } = null!;
 
@@ -202,6 +212,10 @@ namespace Pulumiverse.Dynatrace
 
         [Input("metrics")]
         private InputList<Inputs.AwsServiceMetricArgs>? _metrics;
+
+        /// <summary>
+        /// A list of metrics to be monitored for this service. Depending on the service Dynatrace insists on a set of recommended metrics to be configured for that service. If any of these recommended metrics is missing here, the Terraform Provider will automatically add them during `pulumi up`. This usually results in a non-empty plan, until all of the recommended metrics are present within your configuration. For services considered `built-in` by Dynatrace any metrics specified here will be ignored - Dynatrace enforces a fixed set of metrics for these services.
+        /// </summary>
         public InputList<Inputs.AwsServiceMetricArgs> Metrics
         {
             get => _metrics ?? (_metrics = new InputList<Inputs.AwsServiceMetricArgs>());
@@ -214,6 +228,9 @@ namespace Pulumiverse.Dynatrace
         [Input("name")]
         public Input<string>? Name { get; set; }
 
+        /// <summary>
+        /// If `True` Terraform will negotiate with the Dynatrace API about the recommended/enforced metrics to be applied. Any `Metric` specified will be therefore ignored.
+        /// </summary>
         [Input("useRecommendedMetrics")]
         public Input<bool>? UseRecommendedMetrics { get; set; }
 
@@ -239,6 +256,10 @@ namespace Pulumiverse.Dynatrace
 
         [Input("metrics")]
         private InputList<Inputs.AwsServiceMetricGetArgs>? _metrics;
+
+        /// <summary>
+        /// A list of metrics to be monitored for this service. Depending on the service Dynatrace insists on a set of recommended metrics to be configured for that service. If any of these recommended metrics is missing here, the Terraform Provider will automatically add them during `pulumi up`. This usually results in a non-empty plan, until all of the recommended metrics are present within your configuration. For services considered `built-in` by Dynatrace any metrics specified here will be ignored - Dynatrace enforces a fixed set of metrics for these services.
+        /// </summary>
         public InputList<Inputs.AwsServiceMetricGetArgs> Metrics
         {
             get => _metrics ?? (_metrics = new InputList<Inputs.AwsServiceMetricGetArgs>());
@@ -251,9 +272,15 @@ namespace Pulumiverse.Dynatrace
         [Input("name")]
         public Input<string>? Name { get; set; }
 
+        /// <summary>
+        /// Used internally by the Terraform Provider in order to remember the metrics enforced by Dynatrace
+        /// </summary>
         [Input("requiredMetrics")]
         public Input<string>? RequiredMetrics { get; set; }
 
+        /// <summary>
+        /// If `True` Terraform will negotiate with the Dynatrace API about the recommended/enforced metrics to be applied. Any `Metric` specified will be therefore ignored.
+        /// </summary>
         [Input("useRecommendedMetrics")]
         public Input<bool>? UseRecommendedMetrics { get; set; }
 

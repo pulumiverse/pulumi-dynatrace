@@ -12,6 +12,19 @@ import (
 	"github.com/pulumiverse/pulumi-dynatrace/sdk/go/dynatrace/internal"
 )
 
+// > This resource requires the API token scopes **Read settings** (`settings.read`) and **Write settings** (`settings.write`)
+//
+// ## Dynatrace Documentation
+//
+// - Business event capture - https://www.dynatrace.com/support/help/platform-modules/business-analytics/ba-events-capturing#report-business-event-oneagent
+//
+// - Settings API - https://www.dynatrace.com/support/help/dynatrace-api/environment-api/settings (schemaId: `builtin:bizevents.http.incoming`)
+//
+// ## Export Example Usage
+//
+// - `terraform-provider-dynatrace -export BusinessEventsOneagent` downloads all existing OneAgent business events based on incoming HTTP requests
+//
+// The full documentation of the export feature is available [here](https://dt-url.net/h203qmc).
 type BusinessEventsOneagent struct {
 	pulumi.CustomResourceState
 

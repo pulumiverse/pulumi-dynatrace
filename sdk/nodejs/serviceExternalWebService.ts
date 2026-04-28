@@ -6,6 +6,21 @@ import * as inputs from "./types/input";
 import * as outputs from "./types/output";
 import * as utilities from "./utilities";
 
+/**
+ * > This resource requires the API token scopes **Read settings** (`settings.read`) and **Write settings** (`settings.write`)
+ *
+ * ## Dynatrace Documentation
+ *
+ * - Service detection rules - https://www.dynatrace.com/support/help/platform-modules/applications-and-microservices/services/service-detection-and-naming/customize-service-detection
+ *
+ * - Settings API - https://www.dynatrace.com/support/help/dynatrace-api/environment-api/settings (schemaId: `builtin:service-detection.external-web-service`)
+ *
+ * ## Export Example Usage
+ *
+ * - `terraform-provider-dynatrace -export dynatrace.ServiceExternalWebService` downloads all existing service detection rules for external web services
+ *
+ * The full documentation of the export feature is available [here](https://dt-url.net/h203qmc).
+ */
 export class ServiceExternalWebService extends pulumi.CustomResource {
     /**
      * Get an existing ServiceExternalWebService resource's state with the given name, ID, and optional extra

@@ -12,6 +12,19 @@ import (
 	"github.com/pulumiverse/pulumi-dynatrace/sdk/go/dynatrace/internal"
 )
 
+// > This resource requires the API token scopes **Read settings** (`settings.read`) and **Write settings** (`settings.write`)
+//
+// ## Dynatrace Documentation
+//
+// - Monitor key requests - https://www.dynatrace.com/support/help/how-to-use-dynatrace/services/analysis/monitor-key-requests
+//
+// - Settings API - https://www.dynatrace.com/support/help/dynatrace-api/environment-api/settings (schemaId: `builtin:settings.subscriptions.service`)
+//
+// ## Export Example Usage
+//
+// - `terraform-provider-dynatrace -export KeyRequests` downloads all existing key request configuration
+//
+// The full documentation of the export feature is available [here](https://dt-url.net/h203qmc).
 type KeyRequests struct {
 	pulumi.CustomResourceState
 

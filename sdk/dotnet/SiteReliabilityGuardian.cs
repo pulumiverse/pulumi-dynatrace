@@ -10,6 +10,23 @@ using Pulumi;
 
 namespace Pulumiverse.Dynatrace
 {
+    /// <summary>
+    /// &gt; This resource requires the `Site Reliability Guardian` app to be installed via the Dynatrace Hub.
+    /// 
+    /// &gt; This resource requires the API token scopes **Read settings** (`settings.read`) and **Write settings** (`settings.write`)
+    /// 
+    /// ## Dynatrace Documentation
+    /// 
+    /// - Site Reliability Guardian - https://docs.dynatrace.com/docs/platform-modules/automations/site-reliability-guardian
+    /// 
+    /// - Settings API - https://www.dynatrace.com/support/help/dynatrace-api/environment-api/settings (schemaId: `app:dynatrace.site.reliability.guardian:guardians`)
+    /// 
+    /// ## Export Example Usage
+    /// 
+    /// - `terraform-provider-dynatrace -export dynatrace.SiteReliabilityGuardian` downloads all existing Site Reliability Guardian configuration
+    /// 
+    /// The full documentation of the export feature is available [here](https://dt-url.net/h203qmc).
+    /// </summary>
     [DynatraceResourceType("dynatrace:index/siteReliabilityGuardian:SiteReliabilityGuardian")]
     public partial class SiteReliabilityGuardian : global::Pulumi.CustomResource
     {

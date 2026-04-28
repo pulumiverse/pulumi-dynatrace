@@ -4,6 +4,21 @@
 import * as pulumi from "@pulumi/pulumi";
 import * as utilities from "./utilities";
 
+/**
+ * > This resource requires the API token scopes **Read settings** (`settings.read`) and **Write settings** (`settings.write`)
+ *
+ * ## Dynatrace Documentation
+ *
+ * - Discovery & Coverage - https://www.dynatrace.com/hub/detail/discovery-coverage/
+ *
+ * - Settings API - https://www.dynatrace.com/support/help/dynatrace-api/environment-api/settings (schemaId: `app:dynatrace.discovery.coverage:feature-flags`)
+ *
+ * ## Export Example Usage
+ *
+ * - `terraform-provider-dynatrace -export dynatrace.DiscoveryFeatureFlags` downloads existing Discovery and Coverage app feature flags
+ *
+ * The full documentation of the export feature is available [here](https://dt-url.net/h203qmc).
+ */
 export class DiscoveryFeatureFlags extends pulumi.CustomResource {
     /**
      * Get an existing DiscoveryFeatureFlags resource's state with the given name, ID, and optional extra

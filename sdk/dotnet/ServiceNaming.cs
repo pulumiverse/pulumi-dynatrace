@@ -10,6 +10,21 @@ using Pulumi;
 
 namespace Pulumiverse.Dynatrace
 {
+    /// <summary>
+    /// &gt; This resource requires the API token scopes **Read configuration** (`ReadConfig`) and **Write configuration** (`WriteConfig`)
+    /// 
+    /// ## Dynatrace Documentation
+    /// 
+    /// - Service naming rules - https://www.dynatrace.com/support/help/how-to-use-dynatrace/services/service-detection-and-naming/customize-service-naming
+    /// 
+    /// - Conditional naming API - https://www.dynatrace.com/support/help/dynatrace-api/configuration-api/conditional-naming
+    /// 
+    /// ## Export Example Usage
+    /// 
+    /// - `terraform-provider-dynatrace -export dynatrace.ServiceNaming` downloads all existing service naming configuration
+    /// 
+    /// The full documentation of the export feature is available [here](https://dt-url.net/h203qmc).
+    /// </summary>
     [DynatraceResourceType("dynatrace:index/serviceNaming:ServiceNaming")]
     public partial class ServiceNaming : global::Pulumi.CustomResource
     {

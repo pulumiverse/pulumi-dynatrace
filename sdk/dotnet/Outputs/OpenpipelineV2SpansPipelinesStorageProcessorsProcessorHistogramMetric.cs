@@ -15,6 +15,10 @@ namespace Pulumiverse.Dynatrace.Outputs
     public sealed class OpenpipelineV2SpansPipelinesStorageProcessorsProcessorHistogramMetric
     {
         /// <summary>
+        /// Default value with metric value
+        /// </summary>
+        public readonly string? DefaultValue;
+        /// <summary>
         /// List of dimensions
         /// </summary>
         public readonly Outputs.OpenpipelineV2SpansPipelinesStorageProcessorsProcessorHistogramMetricDimensions? Dimensions;
@@ -29,12 +33,15 @@ namespace Pulumiverse.Dynatrace.Outputs
 
         [OutputConstructor]
         private OpenpipelineV2SpansPipelinesStorageProcessorsProcessorHistogramMetric(
+            string? defaultValue,
+
             Outputs.OpenpipelineV2SpansPipelinesStorageProcessorsProcessorHistogramMetricDimensions? dimensions,
 
             string field,
 
             string metricKey)
         {
+            DefaultValue = defaultValue;
             Dimensions = dimensions;
             Field = field;
             MetricKey = metricKey;

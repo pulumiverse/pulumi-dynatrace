@@ -6,6 +6,65 @@ import * as inputs from "./types/input";
 import * as outputs from "./types/output";
 import * as utilities from "./utilities";
 
+/**
+ * > **Dynatrace Managed only**
+ *
+ * > To utilize this resource, please define the environment variables `DT_CLUSTER_URL` and `DT_CLUSTER_API_TOKEN` with the cluster API token scope **Service Provider API** (`ServiceProviderAPI`).
+ *
+ * ## Dynatrace Documentation
+ *
+ * - User and group management - https://docs.dynatrace.com/managed/manage/identity-access-management/user-and-group-management
+ *
+ * - User management API - https://www.dynatrace.com/support/help/dynatrace-api/account-management-api/user-management-api
+ *
+ * ## Export Example Usage
+ *
+ * - `terraform-provider-dynatrace -export dynatrace.UserGroup` downloads all existing user groups
+ *
+ * The full documentation of the export feature is available [here](https://dt-url.net/h203qmc).
+ *
+ * ## Resource Example Usage
+ *
+ * ```typescript
+ * import * as pulumi from "@pulumi/pulumi";
+ * import * as dynatrace from "@pulumiverse/dynatrace";
+ *
+ * const config = new pulumi.Config();
+ * const cluster = config.get("cluster") || "<the-id-of-your-dynatrace-cluster>";
+ * const environment = config.get("environment") || "<the-id-of-an-environment-within-your-cluster";
+ * const terraform = new dynatrace.UserGroup("terraform", {
+ *     name: "Anonymous",
+ *     ldapGroups: ["Anonymous"],
+ * });
+ * const terraformUser = new dynatrace.User("terraform", {
+ *     email: "me@example.com",
+ *     firstName: "John",
+ *     groups: [terraform.id],
+ *     lastName: "Doe",
+ *     userName: "me@example.com",
+ * });
+ * const terraformCluster = new dynatrace.Policy("terraform_cluster", {
+ *     name: "terraform_cluster",
+ *     cluster: cluster,
+ *     statementQuery: "ALLOW settings:objects:read, settings:schemas:read WHERE settings:schemaId = \"terraform-cluster\";",
+ * });
+ * const terraformEnv = new dynatrace.Policy("terraform_env", {
+ *     name: "terraform_env",
+ *     environment: environment,
+ *     statementQuery: "ALLOW environment:roles:viewer;",
+ * });
+ * const terraformClusterBinding = new dynatrace.PolicyBindings("terraform_cluster_binding", {
+ *     cluster: cluster,
+ *     group: terraform.id,
+ *     policies: [terraformCluster.id],
+ * });
+ * const terraformEnvBinding = new dynatrace.PolicyBindings("terraform_env_binding", {
+ *     environment: environment,
+ *     group: terraform.id,
+ *     policies: [terraformEnv.id],
+ * });
+ * ```
+ */
 export class UserGroup extends pulumi.CustomResource {
     /**
      * Get an existing UserGroup resource's state with the given name, ID, and optional extra

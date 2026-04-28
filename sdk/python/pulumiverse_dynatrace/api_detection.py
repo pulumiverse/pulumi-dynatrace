@@ -29,6 +29,7 @@ class ApiDetectionArgs:
                  technology: Optional[pulumi.Input[_builtins.str]] = None):
         """
         The set of arguments for constructing a ApiDetection resource.
+
         :param pulumi.Input[_builtins.str] api_color: This color will be used to highlight APIs when viewing code level data, such as distributed traces or method hotspots.
         :param pulumi.Input[_builtins.str] api_name: API name
         :param pulumi.Input[_builtins.bool] third_party_api: This API defines a third party library
@@ -130,6 +131,7 @@ class _ApiDetectionState:
                  third_party_api: Optional[pulumi.Input[_builtins.bool]] = None):
         """
         Input properties used for looking up and filtering ApiDetection resources.
+
         :param pulumi.Input[_builtins.str] api_color: This color will be used to highlight APIs when viewing code level data, such as distributed traces or method hotspots.
         :param pulumi.Input[_builtins.str] api_name: API name
         :param pulumi.Input['ApiDetectionConditionsArgs'] conditions: List of conditions
@@ -237,7 +239,21 @@ class ApiDetection(pulumi.CustomResource):
                  third_party_api: Optional[pulumi.Input[_builtins.bool]] = None,
                  __props__=None):
         """
-        Create a ApiDetection resource with the given unique name, props, and options.
+        > This resource requires the API token scopes **Read settings** (`settings.read`) and **Write settings** (`settings.write`)
+
+        ## Dynatrace Documentation
+
+        - Custom API definitions - https://www.dynatrace.com/support/help/platform-modules/applications-and-microservices/services/service-monitoring-settings/customize-api-definitions
+
+        - Settings API - https://www.dynatrace.com/support/help/dynatrace-api/environment-api/settings (schemaId: `builtin:apis.detection-rules`)
+
+        ## Export Example Usage
+
+        - `terraform-provider-dynatrace -export ApiDetection` downloads all existing API detection rule configuration
+
+        The full documentation of the export feature is available [here](https://dt-url.net/h203qmc).
+
+
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[_builtins.str] api_color: This color will be used to highlight APIs when viewing code level data, such as distributed traces or method hotspots.
@@ -254,7 +270,21 @@ class ApiDetection(pulumi.CustomResource):
                  args: ApiDetectionArgs,
                  opts: Optional[pulumi.ResourceOptions] = None):
         """
-        Create a ApiDetection resource with the given unique name, props, and options.
+        > This resource requires the API token scopes **Read settings** (`settings.read`) and **Write settings** (`settings.write`)
+
+        ## Dynatrace Documentation
+
+        - Custom API definitions - https://www.dynatrace.com/support/help/platform-modules/applications-and-microservices/services/service-monitoring-settings/customize-api-definitions
+
+        - Settings API - https://www.dynatrace.com/support/help/dynatrace-api/environment-api/settings (schemaId: `builtin:apis.detection-rules`)
+
+        ## Export Example Usage
+
+        - `terraform-provider-dynatrace -export ApiDetection` downloads all existing API detection rule configuration
+
+        The full documentation of the export feature is available [here](https://dt-url.net/h203qmc).
+
+
         :param str resource_name: The name of the resource.
         :param ApiDetectionArgs args: The arguments to use to populate this resource's properties.
         :param pulumi.ResourceOptions opts: Options for the resource.

@@ -10,17 +10,32 @@ using Pulumi;
 
 namespace Pulumiverse.Dynatrace
 {
+    /// <summary>
+    /// &gt; This resource requires the API token scopes **Read settings** (`settings.read`) and **Write settings** (`settings.write`)
+    /// 
+    /// ## Dynatrace Documentation
+    /// 
+    /// - ServiceNow integration - https://www.dynatrace.com/support/help/setup-and-configuration/integrations/problem-notifications/servicenow-integration
+    /// 
+    /// - Settings API - https://www.dynatrace.com/support/help/dynatrace-api/environment-api/settings (schemaId: `builtin:problem.notifications`)
+    /// 
+    /// ## Export Example Usage
+    /// 
+    /// - `terraform-provider-dynatrace -export dynatrace.ServiceNowNotification` downloads the existing problem notifications for Service Now
+    /// 
+    /// The full documentation of the export feature is available [here](https://dt-url.net/h203qmc).
+    /// </summary>
     [DynatraceResourceType("dynatrace:index/serviceNowNotification:ServiceNowNotification")]
     public partial class ServiceNowNotification : global::Pulumi.CustomResource
     {
         /// <summary>
-        /// The configuration is enabled (`True`) or disabled (`False`)
+        /// This setting is enabled (`True`) or disabled (`False`)
         /// </summary>
         [Output("active")]
         public Output<bool> Active { get; private set; } = null!;
 
         /// <summary>
-        /// Send events into ServiceNow ITOM
+        /// Send events into ServiceNow ITOM.
         /// </summary>
         [Output("events")]
         public Output<bool?> Events { get; private set; } = null!;
@@ -32,13 +47,15 @@ namespace Pulumiverse.Dynatrace
         public Output<bool?> FormatProblemDetailsAsText { get; private set; } = null!;
 
         /// <summary>
-        /// Send incidents into ServiceNow ITSM
+        /// Send incidents into ServiceNow ITSM.
         /// </summary>
         [Output("incidents")]
         public Output<bool> Incidents { get; private set; } = null!;
 
         /// <summary>
-        /// The ServiceNow instance identifier. It refers to the first part of your own ServiceNow URL. This field is mutually exclusive with the **url** field. You can only use one of them
+        /// The ServiceNow instance identifier. It refers to the first part of your own ServiceNow URL. 
+        /// 
+        ///  This field is mutually exclusive with the **url** field. You can only use one of them.
         /// </summary>
         [Output("instance")]
         public Output<string?> Instance { get; private set; } = null!;
@@ -50,7 +67,8 @@ namespace Pulumiverse.Dynatrace
         public Output<string> LegacyId { get; private set; } = null!;
 
         /// <summary>
-        /// The content of the ServiceNow description. You can use the following placeholders:  * `{ImpactedEntity}`: The entity impacted by the problem or *X* impacted entities.  * `{PID}`: The ID of the reported problem.  * `{ProblemDetailsHTML}`: All problem event details, including root cause, as an HTML-formatted string.  * `{ProblemID}`: The display number of the reported problem.  * `{ProblemImpact}`: The [impact level](https://www.dynatrace.com/support/help/shortlink/impact-analysis) of the problem. Possible values are `APPLICATION`, `SERVICE`, and `INFRASTRUCTURE`.  * `{ProblemSeverity}`: The [severity level](https://www.dynatrace.com/support/help/shortlink/event-types) of the problem. Possible values are `AVAILABILITY`, `ERROR`, `PERFORMANCE`, `RESOURCE_CONTENTION`, and `CUSTOM_ALERT`.  * `{ProblemTitle}`: A short description of the problem.  * `{ProblemURL}`: The URL of the problem within Dynatrace.  * `{State}`: The state of the problem. Possible values are `OPEN` and `RESOLVED`.  * `{Tags}`: The list of tags that are defined for all impacted entities, separated by commas
+        /// The content of the ServiceNow description. Type '{' for placeholder suggestions.. #### Available placeholders
+        /// **{ImpactedEntity}**: A short description of the problem and impacted entity (or multiple impacted entities).
         /// </summary>
         [Output("message")]
         public Output<string> Message { get; private set; } = null!;
@@ -62,7 +80,7 @@ namespace Pulumiverse.Dynatrace
         public Output<string> Name { get; private set; } = null!;
 
         /// <summary>
-        /// The password to the ServiceNow account
+        /// The password to the ServiceNow account.
         /// </summary>
         [Output("password")]
         public Output<string?> Password { get; private set; } = null!;
@@ -74,13 +92,17 @@ namespace Pulumiverse.Dynatrace
         public Output<string> Profile { get; private set; } = null!;
 
         /// <summary>
-        /// The URL of the on-premise ServiceNow installation. This field is mutually exclusive with the **instance** field. You can only use one of them
+        /// The URL of the on-premise ServiceNow installation. 
+        /// 
+        ///  This field is mutually exclusive with the **instanceName** field. You can only use one of them.
         /// </summary>
         [Output("url")]
         public Output<string?> Url { get; private set; } = null!;
 
         /// <summary>
-        /// The username of the ServiceNow account.   Make sure that your user account has the `RestService`, `WebRequestAdmin`, and `x_dynat_ruxit.Integration` roles
+        /// The username of the ServiceNow account. 
+        /// 
+        ///  Make sure that your user account has the `WebServiceAdmin` and `x_dynat_ruxit.Integration` roles.
         /// </summary>
         [Output("username")]
         public Output<string> Username { get; private set; } = null!;
@@ -137,13 +159,13 @@ namespace Pulumiverse.Dynatrace
     public sealed class ServiceNowNotificationArgs : global::Pulumi.ResourceArgs
     {
         /// <summary>
-        /// The configuration is enabled (`True`) or disabled (`False`)
+        /// This setting is enabled (`True`) or disabled (`False`)
         /// </summary>
         [Input("active", required: true)]
         public Input<bool> Active { get; set; } = null!;
 
         /// <summary>
-        /// Send events into ServiceNow ITOM
+        /// Send events into ServiceNow ITOM.
         /// </summary>
         [Input("events")]
         public Input<bool>? Events { get; set; }
@@ -155,13 +177,15 @@ namespace Pulumiverse.Dynatrace
         public Input<bool>? FormatProblemDetailsAsText { get; set; }
 
         /// <summary>
-        /// Send incidents into ServiceNow ITSM
+        /// Send incidents into ServiceNow ITSM.
         /// </summary>
         [Input("incidents", required: true)]
         public Input<bool> Incidents { get; set; } = null!;
 
         /// <summary>
-        /// The ServiceNow instance identifier. It refers to the first part of your own ServiceNow URL. This field is mutually exclusive with the **url** field. You can only use one of them
+        /// The ServiceNow instance identifier. It refers to the first part of your own ServiceNow URL. 
+        /// 
+        ///  This field is mutually exclusive with the **url** field. You can only use one of them.
         /// </summary>
         [Input("instance")]
         public Input<string>? Instance { get; set; }
@@ -173,7 +197,8 @@ namespace Pulumiverse.Dynatrace
         public Input<string>? LegacyId { get; set; }
 
         /// <summary>
-        /// The content of the ServiceNow description. You can use the following placeholders:  * `{ImpactedEntity}`: The entity impacted by the problem or *X* impacted entities.  * `{PID}`: The ID of the reported problem.  * `{ProblemDetailsHTML}`: All problem event details, including root cause, as an HTML-formatted string.  * `{ProblemID}`: The display number of the reported problem.  * `{ProblemImpact}`: The [impact level](https://www.dynatrace.com/support/help/shortlink/impact-analysis) of the problem. Possible values are `APPLICATION`, `SERVICE`, and `INFRASTRUCTURE`.  * `{ProblemSeverity}`: The [severity level](https://www.dynatrace.com/support/help/shortlink/event-types) of the problem. Possible values are `AVAILABILITY`, `ERROR`, `PERFORMANCE`, `RESOURCE_CONTENTION`, and `CUSTOM_ALERT`.  * `{ProblemTitle}`: A short description of the problem.  * `{ProblemURL}`: The URL of the problem within Dynatrace.  * `{State}`: The state of the problem. Possible values are `OPEN` and `RESOLVED`.  * `{Tags}`: The list of tags that are defined for all impacted entities, separated by commas
+        /// The content of the ServiceNow description. Type '{' for placeholder suggestions.. #### Available placeholders
+        /// **{ImpactedEntity}**: A short description of the problem and impacted entity (or multiple impacted entities).
         /// </summary>
         [Input("message", required: true)]
         public Input<string> Message { get; set; } = null!;
@@ -188,7 +213,7 @@ namespace Pulumiverse.Dynatrace
         private Input<string>? _password;
 
         /// <summary>
-        /// The password to the ServiceNow account
+        /// The password to the ServiceNow account.
         /// </summary>
         public Input<string>? Password
         {
@@ -207,13 +232,17 @@ namespace Pulumiverse.Dynatrace
         public Input<string> Profile { get; set; } = null!;
 
         /// <summary>
-        /// The URL of the on-premise ServiceNow installation. This field is mutually exclusive with the **instance** field. You can only use one of them
+        /// The URL of the on-premise ServiceNow installation. 
+        /// 
+        ///  This field is mutually exclusive with the **instanceName** field. You can only use one of them.
         /// </summary>
         [Input("url")]
         public Input<string>? Url { get; set; }
 
         /// <summary>
-        /// The username of the ServiceNow account.   Make sure that your user account has the `RestService`, `WebRequestAdmin`, and `x_dynat_ruxit.Integration` roles
+        /// The username of the ServiceNow account. 
+        /// 
+        ///  Make sure that your user account has the `WebServiceAdmin` and `x_dynat_ruxit.Integration` roles.
         /// </summary>
         [Input("username", required: true)]
         public Input<string> Username { get; set; } = null!;
@@ -227,13 +256,13 @@ namespace Pulumiverse.Dynatrace
     public sealed class ServiceNowNotificationState : global::Pulumi.ResourceArgs
     {
         /// <summary>
-        /// The configuration is enabled (`True`) or disabled (`False`)
+        /// This setting is enabled (`True`) or disabled (`False`)
         /// </summary>
         [Input("active")]
         public Input<bool>? Active { get; set; }
 
         /// <summary>
-        /// Send events into ServiceNow ITOM
+        /// Send events into ServiceNow ITOM.
         /// </summary>
         [Input("events")]
         public Input<bool>? Events { get; set; }
@@ -245,13 +274,15 @@ namespace Pulumiverse.Dynatrace
         public Input<bool>? FormatProblemDetailsAsText { get; set; }
 
         /// <summary>
-        /// Send incidents into ServiceNow ITSM
+        /// Send incidents into ServiceNow ITSM.
         /// </summary>
         [Input("incidents")]
         public Input<bool>? Incidents { get; set; }
 
         /// <summary>
-        /// The ServiceNow instance identifier. It refers to the first part of your own ServiceNow URL. This field is mutually exclusive with the **url** field. You can only use one of them
+        /// The ServiceNow instance identifier. It refers to the first part of your own ServiceNow URL. 
+        /// 
+        ///  This field is mutually exclusive with the **url** field. You can only use one of them.
         /// </summary>
         [Input("instance")]
         public Input<string>? Instance { get; set; }
@@ -263,7 +294,8 @@ namespace Pulumiverse.Dynatrace
         public Input<string>? LegacyId { get; set; }
 
         /// <summary>
-        /// The content of the ServiceNow description. You can use the following placeholders:  * `{ImpactedEntity}`: The entity impacted by the problem or *X* impacted entities.  * `{PID}`: The ID of the reported problem.  * `{ProblemDetailsHTML}`: All problem event details, including root cause, as an HTML-formatted string.  * `{ProblemID}`: The display number of the reported problem.  * `{ProblemImpact}`: The [impact level](https://www.dynatrace.com/support/help/shortlink/impact-analysis) of the problem. Possible values are `APPLICATION`, `SERVICE`, and `INFRASTRUCTURE`.  * `{ProblemSeverity}`: The [severity level](https://www.dynatrace.com/support/help/shortlink/event-types) of the problem. Possible values are `AVAILABILITY`, `ERROR`, `PERFORMANCE`, `RESOURCE_CONTENTION`, and `CUSTOM_ALERT`.  * `{ProblemTitle}`: A short description of the problem.  * `{ProblemURL}`: The URL of the problem within Dynatrace.  * `{State}`: The state of the problem. Possible values are `OPEN` and `RESOLVED`.  * `{Tags}`: The list of tags that are defined for all impacted entities, separated by commas
+        /// The content of the ServiceNow description. Type '{' for placeholder suggestions.. #### Available placeholders
+        /// **{ImpactedEntity}**: A short description of the problem and impacted entity (or multiple impacted entities).
         /// </summary>
         [Input("message")]
         public Input<string>? Message { get; set; }
@@ -278,7 +310,7 @@ namespace Pulumiverse.Dynatrace
         private Input<string>? _password;
 
         /// <summary>
-        /// The password to the ServiceNow account
+        /// The password to the ServiceNow account.
         /// </summary>
         public Input<string>? Password
         {
@@ -297,13 +329,17 @@ namespace Pulumiverse.Dynatrace
         public Input<string>? Profile { get; set; }
 
         /// <summary>
-        /// The URL of the on-premise ServiceNow installation. This field is mutually exclusive with the **instance** field. You can only use one of them
+        /// The URL of the on-premise ServiceNow installation. 
+        /// 
+        ///  This field is mutually exclusive with the **instanceName** field. You can only use one of them.
         /// </summary>
         [Input("url")]
         public Input<string>? Url { get; set; }
 
         /// <summary>
-        /// The username of the ServiceNow account.   Make sure that your user account has the `RestService`, `WebRequestAdmin`, and `x_dynat_ruxit.Integration` roles
+        /// The username of the ServiceNow account. 
+        /// 
+        ///  Make sure that your user account has the `WebServiceAdmin` and `x_dynat_ruxit.Integration` roles.
         /// </summary>
         [Input("username")]
         public Input<string>? Username { get; set; }

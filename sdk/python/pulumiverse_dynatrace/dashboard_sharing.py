@@ -28,6 +28,7 @@ class DashboardSharingArgs:
                  public: Optional[pulumi.Input['DashboardSharingPublicArgs']] = None):
         """
         The set of arguments for constructing a DashboardSharing resource.
+
         :param pulumi.Input[_builtins.str] dashboard_id: The Dynatrace entity ID of the dashboard
         :param pulumi.Input[_builtins.bool] enabled: The dashboard is shared (`true`) or private (`false`). Make sure that this value is aligned with the attribute `shared` of the resources `Dashboard` and `JsonDashboard`. Otherwise you will encounter non-empty plans.
         :param pulumi.Input['DashboardSharingPermissionsArgs'] permissions: Access permissions of the dashboard
@@ -116,6 +117,7 @@ class _DashboardSharingState:
                  public: Optional[pulumi.Input['DashboardSharingPublicArgs']] = None):
         """
         Input properties used for looking up and filtering DashboardSharing resources.
+
         :param pulumi.Input[_builtins.str] dashboard_id: The Dynatrace entity ID of the dashboard
         :param pulumi.Input[_builtins.bool] enabled: The dashboard is shared (`true`) or private (`false`). Make sure that this value is aligned with the attribute `shared` of the resources `Dashboard` and `JsonDashboard`. Otherwise you will encounter non-empty plans.
         :param pulumi.Input[_builtins.bool] muted: Reserved for internal use by the provider
@@ -232,6 +234,7 @@ class DashboardSharing(pulumi.CustomResource):
 
         - Dashboards API - https://www.dynatrace.com/support/help/dynatrace-api/configuration-api/dashboards-api
 
+
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[_builtins.str] dashboard_id: The Dynatrace entity ID of the dashboard
@@ -256,6 +259,7 @@ class DashboardSharing(pulumi.CustomResource):
         - Share Dynatrace dashboards - https://www.dynatrace.com/support/help/how-to-use-dynatrace/dashboards-and-charts/dashboards/share-dashboards
 
         - Dashboards API - https://www.dynatrace.com/support/help/dynatrace-api/configuration-api/dashboards-api
+
 
         :param str resource_name: The name of the resource.
         :param DashboardSharingArgs args: The arguments to use to populate this resource's properties.

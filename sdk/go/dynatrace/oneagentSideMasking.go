@@ -12,18 +12,31 @@ import (
 	"github.com/pulumiverse/pulumi-dynatrace/sdk/go/dynatrace/internal"
 )
 
+// > This resource requires the API token scopes **Read settings** (`settings.read`) and **Write settings** (`settings.write`)
+//
+// ## Dynatrace Documentation
+//
+// - Data privacy and security - https://www.dynatrace.com/support/help/manage/data-privacy-and-security
+//
+// - Settings API - https://www.dynatrace.com/support/help/dynatrace-api/environment-api/settings (schemaId: `builtin:oneagent.side.masking.settings`)
+//
+// ## Export Example Usage
+//
+// - `terraform-provider-dynatrace -export OneagentSideMasking` downloads all existing OneAgent data masking configuration
+//
+// The full documentation of the export feature is available [here](https://dt-url.net/h203qmc).
 type OneagentSideMasking struct {
 	pulumi.CustomResourceState
 
-	// Exclude email addresses from URLs
+	// Exclude email addresses from URLs and exceptions
 	IsEmailMaskingEnabled pulumi.BoolOutput `pulumi:"isEmailMaskingEnabled"`
-	// Exclude IBANs and payment card numbers from URLs
+	// Exclude IBANs and payment card numbers from URLs and exceptions
 	IsFinancialMaskingEnabled pulumi.BoolOutput `pulumi:"isFinancialMaskingEnabled"`
-	// Exclude hexadecimal IDs and consecutive numbers above 5 digits from URLs
+	// Exclude hexadecimal IDs and consecutive numbers above 5 digits from URLs and exceptions
 	IsNumbersMaskingEnabled pulumi.BoolOutput `pulumi:"isNumbersMaskingEnabled"`
 	// Exclude query parameters from URLs and web requests
 	IsQueryMaskingEnabled pulumi.BoolOutput `pulumi:"isQueryMaskingEnabled"`
-	// The scope of this settings. If the settings should cover the whole environment, just don't specify any scope.
+	// The scope of this setting (PROCESS*GROUP, CLOUD*APPLICATION, CLOUD*APPLICATION*NAMESPACE, KUBERNETES*CLUSTER, HOST*GROUP). Omit this property if you want to cover the whole environment.
 	ProcessGroupId pulumi.StringPtrOutput `pulumi:"processGroupId"`
 }
 
@@ -69,28 +82,28 @@ func GetOneagentSideMasking(ctx *pulumi.Context,
 
 // Input properties used for looking up and filtering OneagentSideMasking resources.
 type oneagentSideMaskingState struct {
-	// Exclude email addresses from URLs
+	// Exclude email addresses from URLs and exceptions
 	IsEmailMaskingEnabled *bool `pulumi:"isEmailMaskingEnabled"`
-	// Exclude IBANs and payment card numbers from URLs
+	// Exclude IBANs and payment card numbers from URLs and exceptions
 	IsFinancialMaskingEnabled *bool `pulumi:"isFinancialMaskingEnabled"`
-	// Exclude hexadecimal IDs and consecutive numbers above 5 digits from URLs
+	// Exclude hexadecimal IDs and consecutive numbers above 5 digits from URLs and exceptions
 	IsNumbersMaskingEnabled *bool `pulumi:"isNumbersMaskingEnabled"`
 	// Exclude query parameters from URLs and web requests
 	IsQueryMaskingEnabled *bool `pulumi:"isQueryMaskingEnabled"`
-	// The scope of this settings. If the settings should cover the whole environment, just don't specify any scope.
+	// The scope of this setting (PROCESS*GROUP, CLOUD*APPLICATION, CLOUD*APPLICATION*NAMESPACE, KUBERNETES*CLUSTER, HOST*GROUP). Omit this property if you want to cover the whole environment.
 	ProcessGroupId *string `pulumi:"processGroupId"`
 }
 
 type OneagentSideMaskingState struct {
-	// Exclude email addresses from URLs
+	// Exclude email addresses from URLs and exceptions
 	IsEmailMaskingEnabled pulumi.BoolPtrInput
-	// Exclude IBANs and payment card numbers from URLs
+	// Exclude IBANs and payment card numbers from URLs and exceptions
 	IsFinancialMaskingEnabled pulumi.BoolPtrInput
-	// Exclude hexadecimal IDs and consecutive numbers above 5 digits from URLs
+	// Exclude hexadecimal IDs and consecutive numbers above 5 digits from URLs and exceptions
 	IsNumbersMaskingEnabled pulumi.BoolPtrInput
 	// Exclude query parameters from URLs and web requests
 	IsQueryMaskingEnabled pulumi.BoolPtrInput
-	// The scope of this settings. If the settings should cover the whole environment, just don't specify any scope.
+	// The scope of this setting (PROCESS*GROUP, CLOUD*APPLICATION, CLOUD*APPLICATION*NAMESPACE, KUBERNETES*CLUSTER, HOST*GROUP). Omit this property if you want to cover the whole environment.
 	ProcessGroupId pulumi.StringPtrInput
 }
 
@@ -99,29 +112,29 @@ func (OneagentSideMaskingState) ElementType() reflect.Type {
 }
 
 type oneagentSideMaskingArgs struct {
-	// Exclude email addresses from URLs
+	// Exclude email addresses from URLs and exceptions
 	IsEmailMaskingEnabled bool `pulumi:"isEmailMaskingEnabled"`
-	// Exclude IBANs and payment card numbers from URLs
+	// Exclude IBANs and payment card numbers from URLs and exceptions
 	IsFinancialMaskingEnabled bool `pulumi:"isFinancialMaskingEnabled"`
-	// Exclude hexadecimal IDs and consecutive numbers above 5 digits from URLs
+	// Exclude hexadecimal IDs and consecutive numbers above 5 digits from URLs and exceptions
 	IsNumbersMaskingEnabled bool `pulumi:"isNumbersMaskingEnabled"`
 	// Exclude query parameters from URLs and web requests
 	IsQueryMaskingEnabled bool `pulumi:"isQueryMaskingEnabled"`
-	// The scope of this settings. If the settings should cover the whole environment, just don't specify any scope.
+	// The scope of this setting (PROCESS*GROUP, CLOUD*APPLICATION, CLOUD*APPLICATION*NAMESPACE, KUBERNETES*CLUSTER, HOST*GROUP). Omit this property if you want to cover the whole environment.
 	ProcessGroupId *string `pulumi:"processGroupId"`
 }
 
 // The set of arguments for constructing a OneagentSideMasking resource.
 type OneagentSideMaskingArgs struct {
-	// Exclude email addresses from URLs
+	// Exclude email addresses from URLs and exceptions
 	IsEmailMaskingEnabled pulumi.BoolInput
-	// Exclude IBANs and payment card numbers from URLs
+	// Exclude IBANs and payment card numbers from URLs and exceptions
 	IsFinancialMaskingEnabled pulumi.BoolInput
-	// Exclude hexadecimal IDs and consecutive numbers above 5 digits from URLs
+	// Exclude hexadecimal IDs and consecutive numbers above 5 digits from URLs and exceptions
 	IsNumbersMaskingEnabled pulumi.BoolInput
 	// Exclude query parameters from URLs and web requests
 	IsQueryMaskingEnabled pulumi.BoolInput
-	// The scope of this settings. If the settings should cover the whole environment, just don't specify any scope.
+	// The scope of this setting (PROCESS*GROUP, CLOUD*APPLICATION, CLOUD*APPLICATION*NAMESPACE, KUBERNETES*CLUSTER, HOST*GROUP). Omit this property if you want to cover the whole environment.
 	ProcessGroupId pulumi.StringPtrInput
 }
 
@@ -212,17 +225,17 @@ func (o OneagentSideMaskingOutput) ToOneagentSideMaskingOutputWithContext(ctx co
 	return o
 }
 
-// Exclude email addresses from URLs
+// Exclude email addresses from URLs and exceptions
 func (o OneagentSideMaskingOutput) IsEmailMaskingEnabled() pulumi.BoolOutput {
 	return o.ApplyT(func(v *OneagentSideMasking) pulumi.BoolOutput { return v.IsEmailMaskingEnabled }).(pulumi.BoolOutput)
 }
 
-// Exclude IBANs and payment card numbers from URLs
+// Exclude IBANs and payment card numbers from URLs and exceptions
 func (o OneagentSideMaskingOutput) IsFinancialMaskingEnabled() pulumi.BoolOutput {
 	return o.ApplyT(func(v *OneagentSideMasking) pulumi.BoolOutput { return v.IsFinancialMaskingEnabled }).(pulumi.BoolOutput)
 }
 
-// Exclude hexadecimal IDs and consecutive numbers above 5 digits from URLs
+// Exclude hexadecimal IDs and consecutive numbers above 5 digits from URLs and exceptions
 func (o OneagentSideMaskingOutput) IsNumbersMaskingEnabled() pulumi.BoolOutput {
 	return o.ApplyT(func(v *OneagentSideMasking) pulumi.BoolOutput { return v.IsNumbersMaskingEnabled }).(pulumi.BoolOutput)
 }
@@ -232,7 +245,7 @@ func (o OneagentSideMaskingOutput) IsQueryMaskingEnabled() pulumi.BoolOutput {
 	return o.ApplyT(func(v *OneagentSideMasking) pulumi.BoolOutput { return v.IsQueryMaskingEnabled }).(pulumi.BoolOutput)
 }
 
-// The scope of this settings. If the settings should cover the whole environment, just don't specify any scope.
+// The scope of this setting (PROCESS*GROUP, CLOUD*APPLICATION, CLOUD*APPLICATION*NAMESPACE, KUBERNETES*CLUSTER, HOST*GROUP). Omit this property if you want to cover the whole environment.
 func (o OneagentSideMaskingOutput) ProcessGroupId() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v *OneagentSideMasking) pulumi.StringPtrOutput { return v.ProcessGroupId }).(pulumi.StringPtrOutput)
 }

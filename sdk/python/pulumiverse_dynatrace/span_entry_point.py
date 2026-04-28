@@ -27,6 +27,7 @@ class SpanEntryPointArgs:
                  name: Optional[pulumi.Input[_builtins.str]] = None):
         """
         The set of arguments for constructing a SpanEntryPoint resource.
+
         :param pulumi.Input[_builtins.str] action: Whether to create an entry point or not
         :param pulumi.Input['SpanEntryPointMatchesArgs'] matches: Matching strategies for the Span
         :param pulumi.Input[_builtins.str] insert_after: Because this resource allows for ordering you may specify the ID of the resource instance that comes before this instance regarding order. If not specified when creating the setting will be added to the end of the list. If not specified during update the order will remain untouched
@@ -97,6 +98,7 @@ class _SpanEntryPointState:
                  name: Optional[pulumi.Input[_builtins.str]] = None):
         """
         Input properties used for looking up and filtering SpanEntryPoint resources.
+
         :param pulumi.Input[_builtins.str] action: Whether to create an entry point or not
         :param pulumi.Input[_builtins.str] insert_after: Because this resource allows for ordering you may specify the ID of the resource instance that comes before this instance regarding order. If not specified when creating the setting will be added to the end of the list. If not specified during update the order will remain untouched
         :param pulumi.Input['SpanEntryPointMatchesArgs'] matches: Matching strategies for the Span
@@ -172,7 +174,21 @@ class SpanEntryPoint(pulumi.CustomResource):
                  name: Optional[pulumi.Input[_builtins.str]] = None,
                  __props__=None):
         """
-        Create a SpanEntryPoint resource with the given unique name, props, and options.
+        > This resource requires the API token scopes **Read settings** (`settings.read`) and **Write settings** (`settings.write`)
+
+        ## Dynatrace Documentation
+
+        - Span settings - https://www.dynatrace.com/support/help/extend-dynatrace/extend-tracing/span-settings
+
+        - Settings API - https://www.dynatrace.com/support/help/dynatrace-api/environment-api/settings (schemaId: `builtin:span-entry-points`)
+
+        ## Export Example Usage
+
+        - `terraform-provider-dynatrace -export SpanEntryPoint` downloads all existing span entry point configuration
+
+        The full documentation of the export feature is available [here](https://dt-url.net/h203qmc).
+
+
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[_builtins.str] action: Whether to create an entry point or not
@@ -187,7 +203,21 @@ class SpanEntryPoint(pulumi.CustomResource):
                  args: SpanEntryPointArgs,
                  opts: Optional[pulumi.ResourceOptions] = None):
         """
-        Create a SpanEntryPoint resource with the given unique name, props, and options.
+        > This resource requires the API token scopes **Read settings** (`settings.read`) and **Write settings** (`settings.write`)
+
+        ## Dynatrace Documentation
+
+        - Span settings - https://www.dynatrace.com/support/help/extend-dynatrace/extend-tracing/span-settings
+
+        - Settings API - https://www.dynatrace.com/support/help/dynatrace-api/environment-api/settings (schemaId: `builtin:span-entry-points`)
+
+        ## Export Example Usage
+
+        - `terraform-provider-dynatrace -export SpanEntryPoint` downloads all existing span entry point configuration
+
+        The full documentation of the export feature is available [here](https://dt-url.net/h203qmc).
+
+
         :param str resource_name: The name of the resource.
         :param SpanEntryPointArgs args: The arguments to use to populate this resource's properties.
         :param pulumi.ResourceOptions opts: Options for the resource.

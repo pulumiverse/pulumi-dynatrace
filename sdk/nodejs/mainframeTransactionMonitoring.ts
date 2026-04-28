@@ -4,6 +4,39 @@
 import * as pulumi from "@pulumi/pulumi";
 import * as utilities from "./utilities";
 
+/**
+ * > This resource requires the API token scopes **Read settings** (`settings.read`) and **Write settings** (`settings.write`)
+ *
+ * ## Dynatrace Documentation
+ *
+ * - Customize CICS and IMS monitoring - https://www.dynatrace.com/support/help/setup-and-configuration/dynatrace-oneagent/installation-and-operation/zos/operation/cics-ims-monitoring
+ *
+ * - Settings API - https://www.dynatrace.com/support/help/dynatrace-api/environment-api/settings (schemaId: `builtin:mainframe.txmonitoring`)
+ *
+ * ## Export Example Usage
+ *
+ * - `terraform-provider-dynatrace -export dynatrace.MainframeTransactionMonitoring` downloads all additional monitoring settings for CICS and IMS transactions
+ *
+ * The full documentation of the export feature is available [here](https://dt-url.net/h203qmc).
+ *
+ * ## Resource Example Usage
+ *
+ * ```typescript
+ * import * as pulumi from "@pulumi/pulumi";
+ * import * as dynatrace from "@pulumiverse/dynatrace";
+ *
+ * // ID vu9U3hXa3q0AAAABAB5idWlsdGluOm1haW5mcmFtZS50eG1vbml0b3JpbmcABnRlbmFudAAGdGVuYW50ACQwYWYxNWEwOS05YWM0LTMyZGEtOTZjZi01Y2Q3NjI1Y2MxNja-71TeFdrerQ
+ * const mainframeTransactionMonitoring = new dynatrace.MainframeTransactionMonitoring("mainframe_transaction_monitoring", {
+ *     groupCicsRegions: true,
+ *     groupImsRegions: false,
+ *     monitorAllCtgProtocols: false,
+ *     monitorAllIncomingWebRequests: false,
+ *     nodeLimit: 500,
+ *     zosCicsServiceDetectionUsesTransactionId: false,
+ *     zosImsServiceDetectionUsesTransactionId: false,
+ * });
+ * ```
+ */
 export class MainframeTransactionMonitoring extends pulumi.CustomResource {
     /**
      * Get an existing MainframeTransactionMonitoring resource's state with the given name, ID, and optional extra

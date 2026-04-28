@@ -29,10 +29,11 @@ class BusinessEventsOneagentOutgoingArgs:
                  scope: Optional[pulumi.Input[_builtins.str]] = None):
         """
         The set of arguments for constructing a BusinessEventsOneagentOutgoing resource.
+
         :param pulumi.Input[_builtins.bool] enabled: This setting is enabled (`true`) or disabled (`false`)
         :param pulumi.Input['BusinessEventsOneagentOutgoingEventArgs'] event: Event meta data
         :param pulumi.Input[_builtins.str] rule_name: Rule name
-        :param pulumi.Input['BusinessEventsOneagentOutgoingTriggersArgs'] triggers: Define conditions to trigger business events from incoming web requests. Triggers are connected by AND logic per capture rule. If you set multiple trigger rules, all of them need to be fulfilled to capture a business event.
+        :param pulumi.Input['BusinessEventsOneagentOutgoingTriggersArgs'] triggers: Define conditions to trigger business events from outgoing web requests. Triggers are connected by AND logic per capture rule. If you set multiple trigger rules, all of them need to be fulfilled to capture a business event.
         :param pulumi.Input[_builtins.str] insert_after: Because this resource allows for ordering you may specify the ID of the resource instance that comes before this instance regarding order. If not specified when creating the setting will be added to the end of the list. If not specified during update the order will remain untouched
         :param pulumi.Input[_builtins.str] scope: The scope of this setting (HOST, HOST_GROUP). Omit this property if you want to cover the whole environment.
         """
@@ -85,7 +86,7 @@ class BusinessEventsOneagentOutgoingArgs:
     @pulumi.getter
     def triggers(self) -> pulumi.Input['BusinessEventsOneagentOutgoingTriggersArgs']:
         """
-        Define conditions to trigger business events from incoming web requests. Triggers are connected by AND logic per capture rule. If you set multiple trigger rules, all of them need to be fulfilled to capture a business event.
+        Define conditions to trigger business events from outgoing web requests. Triggers are connected by AND logic per capture rule. If you set multiple trigger rules, all of them need to be fulfilled to capture a business event.
         """
         return pulumi.get(self, "triggers")
 
@@ -129,12 +130,13 @@ class _BusinessEventsOneagentOutgoingState:
                  triggers: Optional[pulumi.Input['BusinessEventsOneagentOutgoingTriggersArgs']] = None):
         """
         Input properties used for looking up and filtering BusinessEventsOneagentOutgoing resources.
+
         :param pulumi.Input[_builtins.bool] enabled: This setting is enabled (`true`) or disabled (`false`)
         :param pulumi.Input['BusinessEventsOneagentOutgoingEventArgs'] event: Event meta data
         :param pulumi.Input[_builtins.str] insert_after: Because this resource allows for ordering you may specify the ID of the resource instance that comes before this instance regarding order. If not specified when creating the setting will be added to the end of the list. If not specified during update the order will remain untouched
         :param pulumi.Input[_builtins.str] rule_name: Rule name
         :param pulumi.Input[_builtins.str] scope: The scope of this setting (HOST, HOST_GROUP). Omit this property if you want to cover the whole environment.
-        :param pulumi.Input['BusinessEventsOneagentOutgoingTriggersArgs'] triggers: Define conditions to trigger business events from incoming web requests. Triggers are connected by AND logic per capture rule. If you set multiple trigger rules, all of them need to be fulfilled to capture a business event.
+        :param pulumi.Input['BusinessEventsOneagentOutgoingTriggersArgs'] triggers: Define conditions to trigger business events from outgoing web requests. Triggers are connected by AND logic per capture rule. If you set multiple trigger rules, all of them need to be fulfilled to capture a business event.
         """
         if enabled is not None:
             pulumi.set(__self__, "enabled", enabled)
@@ -213,7 +215,7 @@ class _BusinessEventsOneagentOutgoingState:
     @pulumi.getter
     def triggers(self) -> Optional[pulumi.Input['BusinessEventsOneagentOutgoingTriggersArgs']]:
         """
-        Define conditions to trigger business events from incoming web requests. Triggers are connected by AND logic per capture rule. If you set multiple trigger rules, all of them need to be fulfilled to capture a business event.
+        Define conditions to trigger business events from outgoing web requests. Triggers are connected by AND logic per capture rule. If you set multiple trigger rules, all of them need to be fulfilled to capture a business event.
         """
         return pulumi.get(self, "triggers")
 
@@ -236,7 +238,21 @@ class BusinessEventsOneagentOutgoing(pulumi.CustomResource):
                  triggers: Optional[pulumi.Input[Union['BusinessEventsOneagentOutgoingTriggersArgs', 'BusinessEventsOneagentOutgoingTriggersArgsDict']]] = None,
                  __props__=None):
         """
-        Create a BusinessEventsOneagentOutgoing resource with the given unique name, props, and options.
+        > This resource requires the API token scopes **Read settings** (`settings.read`) and **Write settings** (`settings.write`)
+
+        ## Dynatrace Documentation
+
+        - Business event capture - https://www.dynatrace.com/support/help/platform-modules/business-analytics/ba-events-capturing#report-business-event-oneagent
+
+        - Settings API - https://www.dynatrace.com/support/help/dynatrace-api/environment-api/settings (schemaId: `builtin:bizevents.http.outgoing`)
+
+        ## Export Example Usage
+
+        - `terraform-provider-dynatrace -export BusinessEventsOneagentOutgoing` downloads all existing OneAgent business events based on outgoing HTTP requests
+
+        The full documentation of the export feature is available [here](https://dt-url.net/h203qmc).
+
+
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[_builtins.bool] enabled: This setting is enabled (`true`) or disabled (`false`)
@@ -244,7 +260,7 @@ class BusinessEventsOneagentOutgoing(pulumi.CustomResource):
         :param pulumi.Input[_builtins.str] insert_after: Because this resource allows for ordering you may specify the ID of the resource instance that comes before this instance regarding order. If not specified when creating the setting will be added to the end of the list. If not specified during update the order will remain untouched
         :param pulumi.Input[_builtins.str] rule_name: Rule name
         :param pulumi.Input[_builtins.str] scope: The scope of this setting (HOST, HOST_GROUP). Omit this property if you want to cover the whole environment.
-        :param pulumi.Input[Union['BusinessEventsOneagentOutgoingTriggersArgs', 'BusinessEventsOneagentOutgoingTriggersArgsDict']] triggers: Define conditions to trigger business events from incoming web requests. Triggers are connected by AND logic per capture rule. If you set multiple trigger rules, all of them need to be fulfilled to capture a business event.
+        :param pulumi.Input[Union['BusinessEventsOneagentOutgoingTriggersArgs', 'BusinessEventsOneagentOutgoingTriggersArgsDict']] triggers: Define conditions to trigger business events from outgoing web requests. Triggers are connected by AND logic per capture rule. If you set multiple trigger rules, all of them need to be fulfilled to capture a business event.
         """
         ...
     @overload
@@ -253,7 +269,21 @@ class BusinessEventsOneagentOutgoing(pulumi.CustomResource):
                  args: BusinessEventsOneagentOutgoingArgs,
                  opts: Optional[pulumi.ResourceOptions] = None):
         """
-        Create a BusinessEventsOneagentOutgoing resource with the given unique name, props, and options.
+        > This resource requires the API token scopes **Read settings** (`settings.read`) and **Write settings** (`settings.write`)
+
+        ## Dynatrace Documentation
+
+        - Business event capture - https://www.dynatrace.com/support/help/platform-modules/business-analytics/ba-events-capturing#report-business-event-oneagent
+
+        - Settings API - https://www.dynatrace.com/support/help/dynatrace-api/environment-api/settings (schemaId: `builtin:bizevents.http.outgoing`)
+
+        ## Export Example Usage
+
+        - `terraform-provider-dynatrace -export BusinessEventsOneagentOutgoing` downloads all existing OneAgent business events based on outgoing HTTP requests
+
+        The full documentation of the export feature is available [here](https://dt-url.net/h203qmc).
+
+
         :param str resource_name: The name of the resource.
         :param BusinessEventsOneagentOutgoingArgs args: The arguments to use to populate this resource's properties.
         :param pulumi.ResourceOptions opts: Options for the resource.
@@ -326,7 +356,7 @@ class BusinessEventsOneagentOutgoing(pulumi.CustomResource):
         :param pulumi.Input[_builtins.str] insert_after: Because this resource allows for ordering you may specify the ID of the resource instance that comes before this instance regarding order. If not specified when creating the setting will be added to the end of the list. If not specified during update the order will remain untouched
         :param pulumi.Input[_builtins.str] rule_name: Rule name
         :param pulumi.Input[_builtins.str] scope: The scope of this setting (HOST, HOST_GROUP). Omit this property if you want to cover the whole environment.
-        :param pulumi.Input[Union['BusinessEventsOneagentOutgoingTriggersArgs', 'BusinessEventsOneagentOutgoingTriggersArgsDict']] triggers: Define conditions to trigger business events from incoming web requests. Triggers are connected by AND logic per capture rule. If you set multiple trigger rules, all of them need to be fulfilled to capture a business event.
+        :param pulumi.Input[Union['BusinessEventsOneagentOutgoingTriggersArgs', 'BusinessEventsOneagentOutgoingTriggersArgsDict']] triggers: Define conditions to trigger business events from outgoing web requests. Triggers are connected by AND logic per capture rule. If you set multiple trigger rules, all of them need to be fulfilled to capture a business event.
         """
         opts = pulumi.ResourceOptions.merge(opts, pulumi.ResourceOptions(id=id))
 
@@ -384,7 +414,7 @@ class BusinessEventsOneagentOutgoing(pulumi.CustomResource):
     @pulumi.getter
     def triggers(self) -> pulumi.Output['outputs.BusinessEventsOneagentOutgoingTriggers']:
         """
-        Define conditions to trigger business events from incoming web requests. Triggers are connected by AND logic per capture rule. If you set multiple trigger rules, all of them need to be fulfilled to capture a business event.
+        Define conditions to trigger business events from outgoing web requests. Triggers are connected by AND logic per capture rule. If you set multiple trigger rules, all of them need to be fulfilled to capture a business event.
         """
         return pulumi.get(self, "triggers")
 

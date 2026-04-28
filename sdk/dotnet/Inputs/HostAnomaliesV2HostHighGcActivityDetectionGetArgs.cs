@@ -20,13 +20,13 @@ namespace Pulumiverse.Dynatrace.Inputs
         public Input<Inputs.HostAnomaliesV2HostHighGcActivityDetectionCustomThresholdsGetArgs>? CustomThresholds { get; set; }
 
         /// <summary>
-        /// Detection mode for high GC activity
+        /// Detection mode for high GC activity. Possible Values: `Auto`, `Custom`
         /// </summary>
         [Input("detectionMode")]
         public Input<string>? DetectionMode { get; set; }
 
         /// <summary>
-        /// You may also configure high GC activity alerting for .NET processes on [extensions events page](https://www.terraform.io/#settings/anomalydetection/extensionevents).
+        /// This setting is enabled (`True`) or disabled (`False`)
         /// </summary>
         [Input("enabled", required: true)]
         public Input<bool> Enabled { get; set; } = null!;

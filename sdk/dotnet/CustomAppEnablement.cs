@@ -10,6 +10,23 @@ using Pulumi;
 
 namespace Pulumiverse.Dynatrace
 {
+    /// <summary>
+    /// &gt; Configuration of the application scope overlaps with dynatrace_mobile_application, but this resource in addition provides an option for an environment scope.
+    /// 
+    /// &gt; This resource requires the API token scopes **Read settings** (`settings.read`) and **Write settings** (`settings.write`)
+    /// 
+    /// ## Dynatrace Documentation
+    /// 
+    /// - Configure cost and traffic control for custom applications - https://www.dynatrace.com/support/help/how-to-use-dynatrace/real-user-monitoring/setup-and-configuration/custom-applications/configure-cost-and-traffic-control-custom
+    /// 
+    /// - Settings API - https://www.dynatrace.com/support/help/dynatrace-api/environment-api/settings (schemaId: `builtin:rum.custom.enablement`)
+    /// 
+    /// ## Export Example Usage
+    /// 
+    /// - `terraform-provider-dynatrace -export dynatrace.CustomAppEnablement` downloads all existing custom application enablement and cost control configuration
+    /// 
+    /// The full documentation of the export feature is available [here](https://dt-url.net/h203qmc).
+    /// </summary>
     [DynatraceResourceType("dynatrace:index/customAppEnablement:CustomAppEnablement")]
     public partial class CustomAppEnablement : global::Pulumi.CustomResource
     {

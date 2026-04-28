@@ -4,6 +4,21 @@
 import * as pulumi from "@pulumi/pulumi";
 import * as utilities from "./utilities";
 
+/**
+ * > This resource requires the API token scopes **Read settings** (`settings.read`) and **Write settings** (`settings.write`)
+ *
+ * ## Dynatrace Documentation
+ *
+ * - VictoOps integration - https://www.dynatrace.com/support/help/setup-and-configuration/integrations/problem-notifications/victorops-integration
+ *
+ * - Settings API - https://www.dynatrace.com/support/help/dynatrace-api/environment-api/settings (schemaId: `builtin:problem.notifications`)
+ *
+ * ## Export Example Usage
+ *
+ * - `terraform-provider-dynatrace -export dynatrace.VictorOpsNotification` downloads the existing problem notifications for VictorOps
+ *
+ * The full documentation of the export feature is available [here](https://dt-url.net/h203qmc).
+ */
 export class VictorOpsNotification extends pulumi.CustomResource {
     /**
      * Get an existing VictorOpsNotification resource's state with the given name, ID, and optional extra
@@ -33,11 +48,13 @@ export class VictorOpsNotification extends pulumi.CustomResource {
     }
 
     /**
-     * The configuration is enabled (`true`) or disabled (`false`)
+     * This setting is enabled (`true`) or disabled (`false`)
      */
     declare public readonly active: pulumi.Output<boolean>;
     /**
-     * The API key for the target VictorOps account
+     * The API key for the target Splunk On-Call account.
+     *
+     * Receive your Splunk On-Call API key by navigating to: Settings > Integrations > Rest Endpoint > Dynatrace.
      */
     declare public readonly apiKey: pulumi.Output<string | undefined>;
     /**
@@ -45,11 +62,12 @@ export class VictorOpsNotification extends pulumi.CustomResource {
      */
     declare public readonly legacyId: pulumi.Output<string>;
     /**
-     * The content of the message.  You can use the following placeholders:  * `{ImpactedEntity}`: The entity impacted by the problem or *X* impacted entities.  * `{ProblemDetailsText}`: All problem event details, including root cause, as a text-formatted string.  * `{ProblemID}`: The display number of the reported problem.  * `{ProblemImpact}`: The [impact level](https://www.dynatrace.com/support/help/shortlink/impact-analysis) of the problem. Possible values are `APPLICATION`, `SERVICE`, and `INFRASTRUCTURE`.  * `{ProblemSeverity}`: The [severity level](https://www.dynatrace.com/support/help/shortlink/event-types) of the problem. Possible values are `AVAILABILITY`, `ERROR`, `PERFORMANCE`, `RESOURCE_CONTENTION`, and `CUSTOM_ALERT`.  * `{ProblemTitle}`: A short description of the problem.  * `{ProblemURL}`: The URL of the problem within Dynatrace.  * `{State}`: The state of the problem. Possible values are `OPEN` and `RESOLVED`
+     * The content of the message. Type '{' for placeholder suggestions.. #### Available placeholders
+     * **{ImpactedEntity}**: A short description of the problem and impacted entity (or multiple impacted entities).
      */
     declare public readonly message: pulumi.Output<string>;
     /**
-     * The name of the notification configuration
+     * The name of the notification configuration.
      */
     declare public readonly name: pulumi.Output<string>;
     /**
@@ -57,7 +75,7 @@ export class VictorOpsNotification extends pulumi.CustomResource {
      */
     declare public readonly profile: pulumi.Output<string>;
     /**
-     * The routing key, defining the group to be notified
+     * The routing key, defining the group to be notified.
      */
     declare public readonly routingKey: pulumi.Output<string>;
 
@@ -115,11 +133,13 @@ export class VictorOpsNotification extends pulumi.CustomResource {
  */
 export interface VictorOpsNotificationState {
     /**
-     * The configuration is enabled (`true`) or disabled (`false`)
+     * This setting is enabled (`true`) or disabled (`false`)
      */
     active?: pulumi.Input<boolean>;
     /**
-     * The API key for the target VictorOps account
+     * The API key for the target Splunk On-Call account.
+     *
+     * Receive your Splunk On-Call API key by navigating to: Settings > Integrations > Rest Endpoint > Dynatrace.
      */
     apiKey?: pulumi.Input<string>;
     /**
@@ -127,11 +147,12 @@ export interface VictorOpsNotificationState {
      */
     legacyId?: pulumi.Input<string>;
     /**
-     * The content of the message.  You can use the following placeholders:  * `{ImpactedEntity}`: The entity impacted by the problem or *X* impacted entities.  * `{ProblemDetailsText}`: All problem event details, including root cause, as a text-formatted string.  * `{ProblemID}`: The display number of the reported problem.  * `{ProblemImpact}`: The [impact level](https://www.dynatrace.com/support/help/shortlink/impact-analysis) of the problem. Possible values are `APPLICATION`, `SERVICE`, and `INFRASTRUCTURE`.  * `{ProblemSeverity}`: The [severity level](https://www.dynatrace.com/support/help/shortlink/event-types) of the problem. Possible values are `AVAILABILITY`, `ERROR`, `PERFORMANCE`, `RESOURCE_CONTENTION`, and `CUSTOM_ALERT`.  * `{ProblemTitle}`: A short description of the problem.  * `{ProblemURL}`: The URL of the problem within Dynatrace.  * `{State}`: The state of the problem. Possible values are `OPEN` and `RESOLVED`
+     * The content of the message. Type '{' for placeholder suggestions.. #### Available placeholders
+     * **{ImpactedEntity}**: A short description of the problem and impacted entity (or multiple impacted entities).
      */
     message?: pulumi.Input<string>;
     /**
-     * The name of the notification configuration
+     * The name of the notification configuration.
      */
     name?: pulumi.Input<string>;
     /**
@@ -139,7 +160,7 @@ export interface VictorOpsNotificationState {
      */
     profile?: pulumi.Input<string>;
     /**
-     * The routing key, defining the group to be notified
+     * The routing key, defining the group to be notified.
      */
     routingKey?: pulumi.Input<string>;
 }
@@ -149,11 +170,13 @@ export interface VictorOpsNotificationState {
  */
 export interface VictorOpsNotificationArgs {
     /**
-     * The configuration is enabled (`true`) or disabled (`false`)
+     * This setting is enabled (`true`) or disabled (`false`)
      */
     active: pulumi.Input<boolean>;
     /**
-     * The API key for the target VictorOps account
+     * The API key for the target Splunk On-Call account.
+     *
+     * Receive your Splunk On-Call API key by navigating to: Settings > Integrations > Rest Endpoint > Dynatrace.
      */
     apiKey?: pulumi.Input<string>;
     /**
@@ -161,11 +184,12 @@ export interface VictorOpsNotificationArgs {
      */
     legacyId?: pulumi.Input<string>;
     /**
-     * The content of the message.  You can use the following placeholders:  * `{ImpactedEntity}`: The entity impacted by the problem or *X* impacted entities.  * `{ProblemDetailsText}`: All problem event details, including root cause, as a text-formatted string.  * `{ProblemID}`: The display number of the reported problem.  * `{ProblemImpact}`: The [impact level](https://www.dynatrace.com/support/help/shortlink/impact-analysis) of the problem. Possible values are `APPLICATION`, `SERVICE`, and `INFRASTRUCTURE`.  * `{ProblemSeverity}`: The [severity level](https://www.dynatrace.com/support/help/shortlink/event-types) of the problem. Possible values are `AVAILABILITY`, `ERROR`, `PERFORMANCE`, `RESOURCE_CONTENTION`, and `CUSTOM_ALERT`.  * `{ProblemTitle}`: A short description of the problem.  * `{ProblemURL}`: The URL of the problem within Dynatrace.  * `{State}`: The state of the problem. Possible values are `OPEN` and `RESOLVED`
+     * The content of the message. Type '{' for placeholder suggestions.. #### Available placeholders
+     * **{ImpactedEntity}**: A short description of the problem and impacted entity (or multiple impacted entities).
      */
     message: pulumi.Input<string>;
     /**
-     * The name of the notification configuration
+     * The name of the notification configuration.
      */
     name?: pulumi.Input<string>;
     /**
@@ -173,7 +197,7 @@ export interface VictorOpsNotificationArgs {
      */
     profile: pulumi.Input<string>;
     /**
-     * The routing key, defining the group to be notified
+     * The routing key, defining the group to be notified.
      */
     routingKey: pulumi.Input<string>;
 }

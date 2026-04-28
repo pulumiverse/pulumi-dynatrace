@@ -27,23 +27,25 @@ namespace Pulumiverse.Dynatrace.Inputs
         public Input<string>? Condition { get; set; }
 
         /// <summary>
-        /// Host custom metadata refers to user-defined key-value pairs that you can assign to hosts monitored by Dynatrace.
+        /// Host resource attributes are dimensions enriching the host including custom metadata which are user-defined key-value pairs that you can assign to hosts monitored by Dynatrace.
         /// 
         /// By defining custom metadata, you can enrich the monitoring data with context specific to your organization's needs, such as environment names, team ownership, application versions, or any other relevant details.
         /// 
         /// See [Define tags and metadata for hosts](https://dt-url.net/w3hv0kbw).
+        /// 
+        /// Note: Starting from version 1.325 host resource attributes are supported in addition to host custom metadata.
         /// </summary>
         [Input("hostMetadataCondition")]
         public Input<Inputs.ProcessAvailabilityRulesRuleHostMetadataConditionGetArgs>? HostMetadataCondition { get; set; }
 
         /// <summary>
-        /// Possible Values: `CommandLine`, `Executable`, `ExecutablePath`, `User`
+        /// Select process property. Possible Values: `commandLine`, `Executable`, `executablePath`, `User`
         /// </summary>
         [Input("property")]
         public Input<string>? Property { get; set; }
 
         /// <summary>
-        /// Possible Values: `RuleTypeHost`, `RuleTypeProcess`
+        /// Rule scope. Possible Values: `RuleTypeHost`, `RuleTypeProcess`
         /// </summary>
         [Input("ruleType")]
         public Input<string>? RuleType { get; set; }

@@ -10,6 +10,23 @@ using Pulumi;
 
 namespace Pulumiverse.Dynatrace
 {
+    /// <summary>
+    /// &gt; Configuration of the application scope overlaps with dynatrace_mobile_application, but this resource in addition provides an option for an environment scope.
+    /// 
+    /// &gt; This resource requires the API token scopes **Read settings** (`settings.read`) and **Write settings** (`settings.write`)
+    /// 
+    /// ## Dynatrace Documentation
+    /// 
+    /// - Configure cost and traffic control for mobile applications - https://www.dynatrace.com/support/help/how-to-use-dynatrace/real-user-monitoring/setup-and-configuration/mobile-applications/configure-cost-and-traffic-control-mobile
+    /// 
+    /// - Settings API - https://www.dynatrace.com/support/help/dynatrace-api/environment-api/settings (schemaId: `builtin:rum.mobile.enablement`)
+    /// 
+    /// ## Export Example Usage
+    /// 
+    /// - `terraform-provider-dynatrace -export dynatrace.MobileAppEnablement` downloads all existing mobile application enablement and cost control configuration
+    /// 
+    /// The full documentation of the export feature is available [here](https://dt-url.net/h203qmc).
+    /// </summary>
     [DynatraceResourceType("dynatrace:index/mobileAppEnablement:MobileAppEnablement")]
     public partial class MobileAppEnablement : global::Pulumi.CustomResource
     {
@@ -20,13 +37,19 @@ namespace Pulumiverse.Dynatrace
         public Output<string?> ApplicationId { get; private set; } = null!;
 
         /// <summary>
+        /// User Interactions
+        /// </summary>
+        [Output("experienceAnalytics")]
+        public Output<Outputs.MobileAppEnablementExperienceAnalytics?> ExperienceAnalytics { get; private set; } = null!;
+
+        /// <summary>
         /// (Field has overlap with `dynatrace.MobileApplication`) Capture and analyze all user actions within your application. Enable [Real User Monitoring (RUM)](https://dt-url.net/1n2b0prq) to monitor and improve your application's performance, identify errors, and gain insight into your user's behavior and experience.
         /// </summary>
         [Output("rum")]
         public Output<Outputs.MobileAppEnablementRum> Rum { get; private set; } = null!;
 
         /// <summary>
-        /// (Field has overlap with `dynatrace.MobileApplication`) [Session Replay on crashes](https://dt-url.net/session-replay) gives you additional context for crash analysis in the form of video-like screen recordings that replay user actions immediately preceding a detected crash, while providing [best-in-class security and data protection](https://dt-url.net/b303zxj).
+        /// (Field has overlap with `dynatrace.MobileApplication`) [Session Replay](https://dt-url.net/session-replay) captures all user interactions within your application and replays them in a movie-like experience while providing [best-in-class security and data protection](https://dt-url.net/b303zxj).
         /// </summary>
         [Output("sessionReplay")]
         public Output<Outputs.MobileAppEnablementSessionReplay> SessionReplay { get; private set; } = null!;
@@ -85,13 +108,19 @@ namespace Pulumiverse.Dynatrace
         public Input<string>? ApplicationId { get; set; }
 
         /// <summary>
+        /// User Interactions
+        /// </summary>
+        [Input("experienceAnalytics")]
+        public Input<Inputs.MobileAppEnablementExperienceAnalyticsArgs>? ExperienceAnalytics { get; set; }
+
+        /// <summary>
         /// (Field has overlap with `dynatrace.MobileApplication`) Capture and analyze all user actions within your application. Enable [Real User Monitoring (RUM)](https://dt-url.net/1n2b0prq) to monitor and improve your application's performance, identify errors, and gain insight into your user's behavior and experience.
         /// </summary>
         [Input("rum", required: true)]
         public Input<Inputs.MobileAppEnablementRumArgs> Rum { get; set; } = null!;
 
         /// <summary>
-        /// (Field has overlap with `dynatrace.MobileApplication`) [Session Replay on crashes](https://dt-url.net/session-replay) gives you additional context for crash analysis in the form of video-like screen recordings that replay user actions immediately preceding a detected crash, while providing [best-in-class security and data protection](https://dt-url.net/b303zxj).
+        /// (Field has overlap with `dynatrace.MobileApplication`) [Session Replay](https://dt-url.net/session-replay) captures all user interactions within your application and replays them in a movie-like experience while providing [best-in-class security and data protection](https://dt-url.net/b303zxj).
         /// </summary>
         [Input("sessionReplay", required: true)]
         public Input<Inputs.MobileAppEnablementSessionReplayArgs> SessionReplay { get; set; } = null!;
@@ -111,13 +140,19 @@ namespace Pulumiverse.Dynatrace
         public Input<string>? ApplicationId { get; set; }
 
         /// <summary>
+        /// User Interactions
+        /// </summary>
+        [Input("experienceAnalytics")]
+        public Input<Inputs.MobileAppEnablementExperienceAnalyticsGetArgs>? ExperienceAnalytics { get; set; }
+
+        /// <summary>
         /// (Field has overlap with `dynatrace.MobileApplication`) Capture and analyze all user actions within your application. Enable [Real User Monitoring (RUM)](https://dt-url.net/1n2b0prq) to monitor and improve your application's performance, identify errors, and gain insight into your user's behavior and experience.
         /// </summary>
         [Input("rum")]
         public Input<Inputs.MobileAppEnablementRumGetArgs>? Rum { get; set; }
 
         /// <summary>
-        /// (Field has overlap with `dynatrace.MobileApplication`) [Session Replay on crashes](https://dt-url.net/session-replay) gives you additional context for crash analysis in the form of video-like screen recordings that replay user actions immediately preceding a detected crash, while providing [best-in-class security and data protection](https://dt-url.net/b303zxj).
+        /// (Field has overlap with `dynatrace.MobileApplication`) [Session Replay](https://dt-url.net/session-replay) captures all user interactions within your application and replays them in a movie-like experience while providing [best-in-class security and data protection](https://dt-url.net/b303zxj).
         /// </summary>
         [Input("sessionReplay")]
         public Input<Inputs.MobileAppEnablementSessionReplayGetArgs>? SessionReplay { get; set; }

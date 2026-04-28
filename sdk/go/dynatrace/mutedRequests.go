@@ -12,6 +12,19 @@ import (
 	"github.com/pulumiverse/pulumi-dynatrace/sdk/go/dynatrace/internal"
 )
 
+// > This resource requires the API token scopes **Read settings** (`settings.read`) and **Write settings** (`settings.write`)
+//
+// ## Dynatrace Documentation
+//
+// - Mute monitoring of service requests - https://www.dynatrace.com/support/help/how-to-use-dynatrace/services/service-monitoring-settings/service-monitoring-mute
+//
+// - Settings API - https://www.dynatrace.com/support/help/dynatrace-api/environment-api/settings (schemaId: `builtin:settings.mutedrequests`)
+//
+// ## Export Example Usage
+//
+// - `terraform-provider-dynatrace -export MutedRequests` downloads all existing muted requests configuration
+//
+// The full documentation of the export feature is available [here](https://dt-url.net/h203qmc).
 type MutedRequests struct {
 	pulumi.CustomResourceState
 

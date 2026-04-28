@@ -4,6 +4,21 @@
 import * as pulumi from "@pulumi/pulumi";
 import * as utilities from "./utilities";
 
+/**
+ * > This resource requires the API token scopes **Read settings** (`settings.read`) and **Write settings** (`settings.write`)
+ *
+ * ## Dynatrace Documentation
+ *
+ * - Define URL cleanup rules - https://www.dynatrace.com/support/help/platform-modules/digital-experience/web-applications/how-to-use/waterfall-analysis#define-url-cleanup-rules
+ *
+ * - Settings API - https://www.dynatrace.com/support/help/dynatrace-api/environment-api/settings (schemaId: `builtin:rum.web.resource-cleanup-rules`)
+ *
+ * ## Export Example Usage
+ *
+ * - `terraform-provider-dynatrace -export dynatrace.WebAppResourceCleanup` downloads all existing resource URL cleanup rules configuration
+ *
+ * The full documentation of the export feature is available [here](https://dt-url.net/h203qmc).
+ */
 export class WebAppResourceCleanup extends pulumi.CustomResource {
     /**
      * Get an existing WebAppResourceCleanup resource's state with the given name, ID, and optional extra

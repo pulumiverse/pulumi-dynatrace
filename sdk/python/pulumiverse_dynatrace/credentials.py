@@ -38,6 +38,7 @@ class CredentialsArgs:
                  username: Optional[pulumi.Input[_builtins.str]] = None):
         """
         The set of arguments for constructing a Credentials resource.
+
         :param pulumi.Input[_builtins.bool] allow_contextless_requests: Allow ad-hoc functions to access the credential details (requires the APP_ENGINE scope).
         :param pulumi.Input['CredentialsAllowedEntitiesArgs'] allowed_entities: The set of entities allowed to use the credential.
         :param pulumi.Input[_builtins.str] certificate: The certificate in the string format.
@@ -47,6 +48,7 @@ class CredentialsArgs:
         :param pulumi.Input[_builtins.str] format: The certificate format. Possible values are `PEM`, `PKCS12` and `UNKNOWN`.
         :param pulumi.Input[_builtins.str] name: The name of the credentials set
         :param pulumi.Input[_builtins.bool] owner_access_only: The credentials set is available to every user (`false`) or to owner only (`true`)
+        :param pulumi.Input[_builtins.str] password: The password of the credential. Note: Terraform treats an empty string for a value as if the attribute was absent. If you want to set an empty password, use the value `--empty--`.
         :param pulumi.Input[_builtins.bool] public: For certificate authentication specifies whether it's public certificate auth (`true`) or not (`false`).
         :param pulumi.Input[_builtins.str] scope: The scope of the credentials set. Possible values are `ALL`, `APP_ENGINE`, `EXTENSION` and `SYNTHETIC`
         :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] scopes: The set of scopes of the credentials set. Possible values are `APP_ENGINE` and `SYNTHETIC`
@@ -202,6 +204,9 @@ class CredentialsArgs:
     @_builtins.property
     @pulumi.getter
     def password(self) -> Optional[pulumi.Input[_builtins.str]]:
+        """
+        The password of the credential. Note: Terraform treats an empty string for a value as if the attribute was absent. If you want to set an empty password, use the value `--empty--`.
+        """
         return pulumi.get(self, "password")
 
     @password.setter
@@ -290,6 +295,7 @@ class _CredentialsState:
                  username: Optional[pulumi.Input[_builtins.str]] = None):
         """
         Input properties used for looking up and filtering Credentials resources.
+
         :param pulumi.Input[_builtins.bool] allow_contextless_requests: Allow ad-hoc functions to access the credential details (requires the APP_ENGINE scope).
         :param pulumi.Input['CredentialsAllowedEntitiesArgs'] allowed_entities: The set of entities allowed to use the credential.
         :param pulumi.Input[_builtins.str] certificate: The certificate in the string format.
@@ -299,6 +305,7 @@ class _CredentialsState:
         :param pulumi.Input[_builtins.str] format: The certificate format. Possible values are `PEM`, `PKCS12` and `UNKNOWN`.
         :param pulumi.Input[_builtins.str] name: The name of the credentials set
         :param pulumi.Input[_builtins.bool] owner_access_only: The credentials set is available to every user (`false`) or to owner only (`true`)
+        :param pulumi.Input[_builtins.str] password: The password of the credential. Note: Terraform treats an empty string for a value as if the attribute was absent. If you want to set an empty password, use the value `--empty--`.
         :param pulumi.Input[_builtins.bool] public: For certificate authentication specifies whether it's public certificate auth (`true`) or not (`false`).
         :param pulumi.Input[_builtins.str] scope: The scope of the credentials set. Possible values are `ALL`, `APP_ENGINE`, `EXTENSION` and `SYNTHETIC`
         :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] scopes: The set of scopes of the credentials set. Possible values are `APP_ENGINE` and `SYNTHETIC`
@@ -454,6 +461,9 @@ class _CredentialsState:
     @_builtins.property
     @pulumi.getter
     def password(self) -> Optional[pulumi.Input[_builtins.str]]:
+        """
+        The password of the credential. Note: Terraform treats an empty string for a value as if the attribute was absent. If you want to set an empty password, use the value `--empty--`.
+        """
         return pulumi.get(self, "password")
 
     @password.setter
@@ -545,7 +555,45 @@ class Credentials(pulumi.CustomResource):
                  username: Optional[pulumi.Input[_builtins.str]] = None,
                  __props__=None):
         """
-        Create a Credentials resource with the given unique name, props, and options.
+        > **Destroy Warning** Credentials **cannot be deleted** if they are still associated with active synthetic monitors.
+        Terraform will proceed with the destroy operation, but the credential will **not** be removed if any associations remain. **Action Required:** Before destroying this resource, ensure the credential is removed from all associated monitors.
+        If any monitors remain associated after destroy, you must manually remove those associations and delete the credential manually.
+
+        > This resource requires the API token scopes **Read credential vault entries** (`credentialVault.read`) and **Write credential vault entries** (`credentialVault.write`)
+
+        ## Dynatrace Documentation
+
+        - Credential vault for synthetic monitors - https://www.dynatrace.com/support/help/platform-modules/digital-experience/synthetic-monitoring/general-information/credential-vault-for-synthetic-monitors
+
+        - Credential vault API - https://www.dynatrace.com/support/help/dynatrace-api/environment-api/credential-vault
+
+        ## Export Example Usage
+
+        - `terraform-provider-dynatrace -export Credentials` downloads all existing credentials
+
+        The full documentation of the export feature is available [here](https://dt-url.net/h203qmc).
+
+        ## Resource Example Usage
+
+        ```python
+        import pulumi
+        import pulumi_std as std
+        import pulumiverse_dynatrace as dynatrace
+
+        name = dynatrace.Credentials("name",
+            name="name",
+            scopes=["SYNTHETIC"],
+            username="username",
+            password="password")
+        root_certificate = dynatrace.Credentials("root_certificate",
+            name="Root Certificate",
+            description="Root certificate for validating Extension 2.0 signatures",
+            certificate=std.base64encode(input=std.file(input="certificate.pem").result).result,
+            format="PEM",
+            public=True)
+        ```
+
+
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[_builtins.bool] allow_contextless_requests: Allow ad-hoc functions to access the credential details (requires the APP_ENGINE scope).
@@ -557,6 +605,7 @@ class Credentials(pulumi.CustomResource):
         :param pulumi.Input[_builtins.str] format: The certificate format. Possible values are `PEM`, `PKCS12` and `UNKNOWN`.
         :param pulumi.Input[_builtins.str] name: The name of the credentials set
         :param pulumi.Input[_builtins.bool] owner_access_only: The credentials set is available to every user (`false`) or to owner only (`true`)
+        :param pulumi.Input[_builtins.str] password: The password of the credential. Note: Terraform treats an empty string for a value as if the attribute was absent. If you want to set an empty password, use the value `--empty--`.
         :param pulumi.Input[_builtins.bool] public: For certificate authentication specifies whether it's public certificate auth (`true`) or not (`false`).
         :param pulumi.Input[_builtins.str] scope: The scope of the credentials set. Possible values are `ALL`, `APP_ENGINE`, `EXTENSION` and `SYNTHETIC`
         :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] scopes: The set of scopes of the credentials set. Possible values are `APP_ENGINE` and `SYNTHETIC`
@@ -570,7 +619,45 @@ class Credentials(pulumi.CustomResource):
                  args: Optional[CredentialsArgs] = None,
                  opts: Optional[pulumi.ResourceOptions] = None):
         """
-        Create a Credentials resource with the given unique name, props, and options.
+        > **Destroy Warning** Credentials **cannot be deleted** if they are still associated with active synthetic monitors.
+        Terraform will proceed with the destroy operation, but the credential will **not** be removed if any associations remain. **Action Required:** Before destroying this resource, ensure the credential is removed from all associated monitors.
+        If any monitors remain associated after destroy, you must manually remove those associations and delete the credential manually.
+
+        > This resource requires the API token scopes **Read credential vault entries** (`credentialVault.read`) and **Write credential vault entries** (`credentialVault.write`)
+
+        ## Dynatrace Documentation
+
+        - Credential vault for synthetic monitors - https://www.dynatrace.com/support/help/platform-modules/digital-experience/synthetic-monitoring/general-information/credential-vault-for-synthetic-monitors
+
+        - Credential vault API - https://www.dynatrace.com/support/help/dynatrace-api/environment-api/credential-vault
+
+        ## Export Example Usage
+
+        - `terraform-provider-dynatrace -export Credentials` downloads all existing credentials
+
+        The full documentation of the export feature is available [here](https://dt-url.net/h203qmc).
+
+        ## Resource Example Usage
+
+        ```python
+        import pulumi
+        import pulumi_std as std
+        import pulumiverse_dynatrace as dynatrace
+
+        name = dynatrace.Credentials("name",
+            name="name",
+            scopes=["SYNTHETIC"],
+            username="username",
+            password="password")
+        root_certificate = dynatrace.Credentials("root_certificate",
+            name="Root Certificate",
+            description="Root certificate for validating Extension 2.0 signatures",
+            certificate=std.base64encode(input=std.file(input="certificate.pem").result).result,
+            format="PEM",
+            public=True)
+        ```
+
+
         :param str resource_name: The name of the resource.
         :param CredentialsArgs args: The arguments to use to populate this resource's properties.
         :param pulumi.ResourceOptions opts: Options for the resource.
@@ -668,6 +755,7 @@ class Credentials(pulumi.CustomResource):
         :param pulumi.Input[_builtins.str] format: The certificate format. Possible values are `PEM`, `PKCS12` and `UNKNOWN`.
         :param pulumi.Input[_builtins.str] name: The name of the credentials set
         :param pulumi.Input[_builtins.bool] owner_access_only: The credentials set is available to every user (`false`) or to owner only (`true`)
+        :param pulumi.Input[_builtins.str] password: The password of the credential. Note: Terraform treats an empty string for a value as if the attribute was absent. If you want to set an empty password, use the value `--empty--`.
         :param pulumi.Input[_builtins.bool] public: For certificate authentication specifies whether it's public certificate auth (`true`) or not (`false`).
         :param pulumi.Input[_builtins.str] scope: The scope of the credentials set. Possible values are `ALL`, `APP_ENGINE`, `EXTENSION` and `SYNTHETIC`
         :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] scopes: The set of scopes of the credentials set. Possible values are `APP_ENGINE` and `SYNTHETIC`
@@ -771,6 +859,9 @@ class Credentials(pulumi.CustomResource):
     @_builtins.property
     @pulumi.getter
     def password(self) -> pulumi.Output[Optional[_builtins.str]]:
+        """
+        The password of the credential. Note: Terraform treats an empty string for a value as if the attribute was absent. If you want to set an empty password, use the value `--empty--`.
+        """
         return pulumi.get(self, "password")
 
     @_builtins.property

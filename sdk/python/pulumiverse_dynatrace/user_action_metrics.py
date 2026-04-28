@@ -28,6 +28,7 @@ class UserActionMetricsArgs:
                  filters: Optional[pulumi.Input['UserActionMetricsFiltersArgs']] = None):
         """
         The set of arguments for constructing a UserActionMetrics resource.
+
         :param pulumi.Input[_builtins.bool] enabled: This setting is enabled (`true`) or disabled (`false`)
         :param pulumi.Input[_builtins.str] metric_key: Metric key
         :param pulumi.Input['UserActionMetricsValueArgs'] value: Defines the type of value to be extracted from the user action. When using **user action counter**, the number of user actions is counted (similar to count(*) when using USQL). When using **user action field value**, the value of a user action field is extracted.
@@ -113,6 +114,7 @@ class _UserActionMetricsState:
                  value: Optional[pulumi.Input['UserActionMetricsValueArgs']] = None):
         """
         Input properties used for looking up and filtering UserActionMetrics resources.
+
         :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] dimensions: Defines the fields that are used as dimensions. A dimension is a collection of reference information about a metric data point that is of interest to your business. Dimensions are parameters like "application", "type", "apdexCategory". For example, using "type" as a dimension allows you to split chart data based on the user action type.
         :param pulumi.Input[_builtins.bool] enabled: This setting is enabled (`true`) or disabled (`false`)
         :param pulumi.Input['UserActionMetricsFiltersArgs'] filters: Defines the filters for the user action. Filters apply at the moment of extracting the data and only sessions that satisfy the filtering criteria will be used to extract the custom metrics. You will not be able to modify these filters in the metric data explorer. For example, using "type equals Xhr" will give you only data from xhr actions, while forcing the rest of user actions of different types to be ignored.
@@ -204,7 +206,21 @@ class UserActionMetrics(pulumi.CustomResource):
                  value: Optional[pulumi.Input[Union['UserActionMetricsValueArgs', 'UserActionMetricsValueArgsDict']]] = None,
                  __props__=None):
         """
-        Create a UserActionMetrics resource with the given unique name, props, and options.
+        > This resource requires the API token scopes **Read settings** (`settings.read`) and **Write settings** (`settings.write`)
+
+        ## Dynatrace Documentation
+
+        - Create USQL custom metrics for web applications - https://www.dynatrace.com/support/help/platform-modules/digital-experience/web-applications/additional-configuration/custom-metrics-from-user-sessions
+
+        - Settings API - https://www.dynatrace.com/support/help/dynatrace-api/environment-api/settings (schemaId: `builtin:user-action-custom-metrics`)
+
+        ## Export Example Usage
+
+        - `terraform-provider-dynatrace -export UserActionMetrics` downloads all existing user action custom metrics configuration
+
+        The full documentation of the export feature is available [here](https://dt-url.net/h203qmc).
+
+
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] dimensions: Defines the fields that are used as dimensions. A dimension is a collection of reference information about a metric data point that is of interest to your business. Dimensions are parameters like "application", "type", "apdexCategory". For example, using "type" as a dimension allows you to split chart data based on the user action type.
@@ -220,7 +236,21 @@ class UserActionMetrics(pulumi.CustomResource):
                  args: UserActionMetricsArgs,
                  opts: Optional[pulumi.ResourceOptions] = None):
         """
-        Create a UserActionMetrics resource with the given unique name, props, and options.
+        > This resource requires the API token scopes **Read settings** (`settings.read`) and **Write settings** (`settings.write`)
+
+        ## Dynatrace Documentation
+
+        - Create USQL custom metrics for web applications - https://www.dynatrace.com/support/help/platform-modules/digital-experience/web-applications/additional-configuration/custom-metrics-from-user-sessions
+
+        - Settings API - https://www.dynatrace.com/support/help/dynatrace-api/environment-api/settings (schemaId: `builtin:user-action-custom-metrics`)
+
+        ## Export Example Usage
+
+        - `terraform-provider-dynatrace -export UserActionMetrics` downloads all existing user action custom metrics configuration
+
+        The full documentation of the export feature is available [here](https://dt-url.net/h203qmc).
+
+
         :param str resource_name: The name of the resource.
         :param UserActionMetricsArgs args: The arguments to use to populate this resource's properties.
         :param pulumi.ResourceOptions opts: Options for the resource.

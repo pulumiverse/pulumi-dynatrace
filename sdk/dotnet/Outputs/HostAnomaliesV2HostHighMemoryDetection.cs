@@ -19,11 +19,11 @@ namespace Pulumiverse.Dynatrace.Outputs
         /// </summary>
         public readonly Outputs.HostAnomaliesV2HostHighMemoryDetectionCustomThresholds? CustomThresholds;
         /// <summary>
-        /// Detection mode for high memory usage
+        /// Detection mode for high memory usage. Possible Values: `Auto`, `Custom`
         /// </summary>
         public readonly string? DetectionMode;
         /// <summary>
-        /// Detect high memory usage on host
+        /// This setting is enabled (`True`) or disabled (`False`)
         /// </summary>
         public readonly bool Enabled;
 

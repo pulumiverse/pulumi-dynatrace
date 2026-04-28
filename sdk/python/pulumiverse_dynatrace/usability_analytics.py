@@ -23,6 +23,7 @@ class UsabilityAnalyticsArgs:
                  application_id: Optional[pulumi.Input[_builtins.str]] = None):
         """
         The set of arguments for constructing a UsabilityAnalytics resource.
+
         :param pulumi.Input[_builtins.bool] detect_rage_clicks: Three or more rapid clicks within the same area of a web page are considered to be rage clicks. Rage clicks commonly reflect slow-loading or failed page resources. Rage click counts are compiled for each session and considered in the [User Experience Score](https://dt-url.net/39034wt) .
                With this setting enabled, a rage click count is compiled for each monitored user session.
         :param pulumi.Input[_builtins.str] application_id: The scope of this settings. If the settings should cover the whole environment, just don't specify any scope.
@@ -64,6 +65,7 @@ class _UsabilityAnalyticsState:
                  detect_rage_clicks: Optional[pulumi.Input[_builtins.bool]] = None):
         """
         Input properties used for looking up and filtering UsabilityAnalytics resources.
+
         :param pulumi.Input[_builtins.str] application_id: The scope of this settings. If the settings should cover the whole environment, just don't specify any scope.
         :param pulumi.Input[_builtins.bool] detect_rage_clicks: Three or more rapid clicks within the same area of a web page are considered to be rage clicks. Rage clicks commonly reflect slow-loading or failed page resources. Rage click counts are compiled for each session and considered in the [User Experience Score](https://dt-url.net/39034wt) .
                With this setting enabled, a rage click count is compiled for each monitored user session.
@@ -109,7 +111,33 @@ class UsabilityAnalytics(pulumi.CustomResource):
                  detect_rage_clicks: Optional[pulumi.Input[_builtins.bool]] = None,
                  __props__=None):
         """
-        Create a UsabilityAnalytics resource with the given unique name, props, and options.
+        > This resource requires the API token scopes **Read settings** (`settings.read`) and **Write settings** (`settings.write`)
+
+        ## Dynatrace Documentation
+
+        - User experience score - https://www.dynatrace.com/support/help/platform-modules/digital-experience/basic-concepts/ratings/user-experience-score#calculate-the-user-experience-score
+
+        - Settings API - https://www.dynatrace.com/support/help/dynatrace-api/environment-api/settings (schemaId: `builtin:usability-analytics`)
+
+        ## Export Example Usage
+
+        - `terraform-provider-dynatrace -export UsabilityAnalytics` downloads the existing settings for Usability Analytics
+
+        The full documentation of the export feature is available [here](https://dt-url.net/h203qmc).
+
+        ## Resource Example Usage
+
+        ```python
+        import pulumi
+        import pulumiverse_dynatrace as dynatrace
+
+        test = dynatrace.UsabilityAnalytics("test", detect_rage_clicks=True)
+        for_app = dynatrace.UsabilityAnalytics("for_app",
+            application_id="APPLICATION-EA7C4B59F27D43EB",
+            detect_rage_clicks=False)
+        ```
+
+
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[_builtins.str] application_id: The scope of this settings. If the settings should cover the whole environment, just don't specify any scope.
@@ -123,7 +151,33 @@ class UsabilityAnalytics(pulumi.CustomResource):
                  args: UsabilityAnalyticsArgs,
                  opts: Optional[pulumi.ResourceOptions] = None):
         """
-        Create a UsabilityAnalytics resource with the given unique name, props, and options.
+        > This resource requires the API token scopes **Read settings** (`settings.read`) and **Write settings** (`settings.write`)
+
+        ## Dynatrace Documentation
+
+        - User experience score - https://www.dynatrace.com/support/help/platform-modules/digital-experience/basic-concepts/ratings/user-experience-score#calculate-the-user-experience-score
+
+        - Settings API - https://www.dynatrace.com/support/help/dynatrace-api/environment-api/settings (schemaId: `builtin:usability-analytics`)
+
+        ## Export Example Usage
+
+        - `terraform-provider-dynatrace -export UsabilityAnalytics` downloads the existing settings for Usability Analytics
+
+        The full documentation of the export feature is available [here](https://dt-url.net/h203qmc).
+
+        ## Resource Example Usage
+
+        ```python
+        import pulumi
+        import pulumiverse_dynatrace as dynatrace
+
+        test = dynatrace.UsabilityAnalytics("test", detect_rage_clicks=True)
+        for_app = dynatrace.UsabilityAnalytics("for_app",
+            application_id="APPLICATION-EA7C4B59F27D43EB",
+            detect_rage_clicks=False)
+        ```
+
+
         :param str resource_name: The name of the resource.
         :param UsabilityAnalyticsArgs args: The arguments to use to populate this resource's properties.
         :param pulumi.ResourceOptions opts: Options for the resource.

@@ -12,6 +12,19 @@ import (
 	"github.com/pulumiverse/pulumi-dynatrace/sdk/go/dynatrace/internal"
 )
 
+// > This resource requires the API token scopes **Read settings** (`settings.read`) and **Write settings** (`settings.write`)
+//
+// ## Dynatrace Documentation
+//
+// - Cookies - https://docs.dynatrace.com/docs/manage/data-privacy-and-security/data-privacy/cookies
+//
+// - Settings API - https://www.dynatrace.com/support/help/dynatrace-api/environment-api/settings (schemaId: `builtin:rum.web.injection.cookie`)
+//
+// ## Export Example Usage
+//
+// - `terraform-provider-dynatrace -export WebAppInjectionCookie` downloads existing cookie configuration
+//
+// The full documentation of the export feature is available [here](https://dt-url.net/h203qmc).
 type WebAppInjectionCookie struct {
 	pulumi.CustomResourceState
 

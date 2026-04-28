@@ -11,6 +11,21 @@ import (
 	"github.com/pulumiverse/pulumi-dynatrace/sdk/go/dynatrace/internal"
 )
 
+// !> This resource is utilizing an older API endpoint, please use WebAppAnomalies instead.
+//
+// > This resource requires the API token scopes **Read configuration** (`ReadConfig`) and **Write configuration** (`WriteConfig`)
+//
+// ## Dynatrace Documentation
+//
+// - Adjust the sensitivity of anomaly detection for applications - https://www.dynatrace.com/support/help/how-to-use-dynatrace/problem-detection-and-analysis/problem-detection/adjust-sensitivity-anomaly-detection/adjust-sensitivity-applications
+//
+// - Anomaly detection API - Applications - https://www.dynatrace.com/support/help/dynatrace-api/configuration-api/anomaly-detection-api/anomaly-detection-api-applications
+//
+// ## Export Example Usage
+//
+// - `terraform-provider-dynatrace -export ApplicationAnomalies` downloads all existing application anomaly detection configuration
+//
+// The full documentation of the export feature is available [here](https://dt-url.net/h203qmc).
 type ApplicationAnomalies struct {
 	pulumi.CustomResourceState
 

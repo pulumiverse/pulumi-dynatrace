@@ -38,6 +38,7 @@ class K8sWorkloadAnomaliesArgs:
                  scope: Optional[pulumi.Input[_builtins.str]] = None):
         """
         The set of arguments for constructing a K8sWorkloadAnomalies resource.
+
         :param pulumi.Input['K8sWorkloadAnomaliesContainerRestartsArgs'] container_restarts: no documentation available
         :param pulumi.Input['K8sWorkloadAnomaliesDeploymentStuckArgs'] deployment_stuck: no documentation available
         :param pulumi.Input['K8sWorkloadAnomaliesHighCpuThrottlingArgs'] high_cpu_throttling: no documentation available
@@ -272,6 +273,7 @@ class _K8sWorkloadAnomaliesState:
                  workload_without_ready_pods: Optional[pulumi.Input['K8sWorkloadAnomaliesWorkloadWithoutReadyPodsArgs']] = None):
         """
         Input properties used for looking up and filtering K8sWorkloadAnomalies resources.
+
         :param pulumi.Input['K8sWorkloadAnomaliesContainerRestartsArgs'] container_restarts: no documentation available
         :param pulumi.Input['K8sWorkloadAnomaliesDeploymentStuckArgs'] deployment_stuck: no documentation available
         :param pulumi.Input['K8sWorkloadAnomaliesHighCpuThrottlingArgs'] high_cpu_throttling: no documentation available
@@ -523,7 +525,21 @@ class K8sWorkloadAnomalies(pulumi.CustomResource):
                  workload_without_ready_pods: Optional[pulumi.Input[Union['K8sWorkloadAnomaliesWorkloadWithoutReadyPodsArgs', 'K8sWorkloadAnomaliesWorkloadWithoutReadyPodsArgsDict']]] = None,
                  __props__=None):
         """
-        Create a K8sWorkloadAnomalies resource with the given unique name, props, and options.
+        > This resource requires the API token scopes **Read settings** (`settings.read`) and **Write settings** (`settings.write`)
+
+        ## Dynatrace Documentation
+
+        - Alert on common Kubernetes/OpenShift issues - https://www.dynatrace.com/support/help/platform-modules/infrastructure-monitoring/container-platform-monitoring/kubernetes-monitoring/alert-on-kubernetes-issues
+
+        - Settings API - https://www.dynatrace.com/support/help/dynatrace-api/environment-api/settings (schemaId: `builtin:anomaly-detection.kubernetes.workload`)
+
+        ## Export Example Usage
+
+        - `terraform-provider-dynatrace -export K8sWorkloadAnomalies` downloads all existing Kubernetes workload anomaly configuration
+
+        The full documentation of the export feature is available [here](https://dt-url.net/h203qmc).
+
+
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[Union['K8sWorkloadAnomaliesContainerRestartsArgs', 'K8sWorkloadAnomaliesContainerRestartsArgsDict']] container_restarts: no documentation available
@@ -549,7 +565,21 @@ class K8sWorkloadAnomalies(pulumi.CustomResource):
                  args: K8sWorkloadAnomaliesArgs,
                  opts: Optional[pulumi.ResourceOptions] = None):
         """
-        Create a K8sWorkloadAnomalies resource with the given unique name, props, and options.
+        > This resource requires the API token scopes **Read settings** (`settings.read`) and **Write settings** (`settings.write`)
+
+        ## Dynatrace Documentation
+
+        - Alert on common Kubernetes/OpenShift issues - https://www.dynatrace.com/support/help/platform-modules/infrastructure-monitoring/container-platform-monitoring/kubernetes-monitoring/alert-on-kubernetes-issues
+
+        - Settings API - https://www.dynatrace.com/support/help/dynatrace-api/environment-api/settings (schemaId: `builtin:anomaly-detection.kubernetes.workload`)
+
+        ## Export Example Usage
+
+        - `terraform-provider-dynatrace -export K8sWorkloadAnomalies` downloads all existing Kubernetes workload anomaly configuration
+
+        The full documentation of the export feature is available [here](https://dt-url.net/h203qmc).
+
+
         :param str resource_name: The name of the resource.
         :param K8sWorkloadAnomaliesArgs args: The arguments to use to populate this resource's properties.
         :param pulumi.ResourceOptions opts: Options for the resource.

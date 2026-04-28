@@ -25,6 +25,7 @@ class PgAlertingArgs:
                  minimum_instance_threshold: Optional[pulumi.Input[_builtins.int]] = None):
         """
         The set of arguments for constructing a PgAlerting resource.
+
         :param pulumi.Input[_builtins.bool] enabled: Enable (`true`) or disable (`false`) process group availability monitoring
         :param pulumi.Input[_builtins.str] process_group: The process group ID for availability monitoring
         :param pulumi.Input[_builtins.str] alerting_mode: Possible Values: `ON_INSTANCE_COUNT_VIOLATION`, `ON_PGI_UNAVAILABILITY`
@@ -95,6 +96,7 @@ class _PgAlertingState:
                  process_group: Optional[pulumi.Input[_builtins.str]] = None):
         """
         Input properties used for looking up and filtering PgAlerting resources.
+
         :param pulumi.Input[_builtins.str] alerting_mode: Possible Values: `ON_INSTANCE_COUNT_VIOLATION`, `ON_PGI_UNAVAILABILITY`
         :param pulumi.Input[_builtins.bool] enabled: Enable (`true`) or disable (`false`) process group availability monitoring
         :param pulumi.Input[_builtins.int] minimum_instance_threshold: Open a new problem if the number of active process instances in the group is fewer than X
@@ -170,7 +172,21 @@ class PgAlerting(pulumi.CustomResource):
                  process_group: Optional[pulumi.Input[_builtins.str]] = None,
                  __props__=None):
         """
-        Create a PgAlerting resource with the given unique name, props, and options.
+        > This resource requires the API token scopes **Read settings** (`settings.read`) and **Write settings** (`settings.write`)
+
+        ## Dynatrace Documentation
+
+        - Process group availability monitoring and alerting - https://www.dynatrace.com/support/help/how-to-use-dynatrace/process-groups/monitoring/process-group-availability-monitoring-and-alerting
+
+        - Settings API - https://www.dynatrace.com/support/help/dynatrace-api/environment-api/settings (schemaId: `builtin:availability.process-group-alerting`)
+
+        ## Export Example Usage
+
+        - `terraform-provider-dynatrace -export PgAlerting` downloads all existing process group availability monitoring configuration
+
+        The full documentation of the export feature is available [here](https://dt-url.net/h203qmc).
+
+
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[_builtins.str] alerting_mode: Possible Values: `ON_INSTANCE_COUNT_VIOLATION`, `ON_PGI_UNAVAILABILITY`
@@ -185,7 +201,21 @@ class PgAlerting(pulumi.CustomResource):
                  args: PgAlertingArgs,
                  opts: Optional[pulumi.ResourceOptions] = None):
         """
-        Create a PgAlerting resource with the given unique name, props, and options.
+        > This resource requires the API token scopes **Read settings** (`settings.read`) and **Write settings** (`settings.write`)
+
+        ## Dynatrace Documentation
+
+        - Process group availability monitoring and alerting - https://www.dynatrace.com/support/help/how-to-use-dynatrace/process-groups/monitoring/process-group-availability-monitoring-and-alerting
+
+        - Settings API - https://www.dynatrace.com/support/help/dynatrace-api/environment-api/settings (schemaId: `builtin:availability.process-group-alerting`)
+
+        ## Export Example Usage
+
+        - `terraform-provider-dynatrace -export PgAlerting` downloads all existing process group availability monitoring configuration
+
+        The full documentation of the export feature is available [here](https://dt-url.net/h203qmc).
+
+
         :param str resource_name: The name of the resource.
         :param PgAlertingArgs args: The arguments to use to populate this resource's properties.
         :param pulumi.ResourceOptions opts: Options for the resource.

@@ -12,6 +12,21 @@ import (
 	"github.com/pulumiverse/pulumi-dynatrace/sdk/go/dynatrace/internal"
 )
 
+// > This resource requires the API token scopes **Read settings** (`settings.read`) and **Write settings** (`settings.write`)
+//
+// ## Dynatrace Documentation
+//
+// !> This resource API endpoint has been deprecated, please use AttributeAllowList and AttributeMasking instead.
+//
+// - Span settings - https://www.dynatrace.com/support/help/extend-dynatrace/extend-tracing/span-settings
+//
+// - Settings API - https://www.dynatrace.com/support/help/dynatrace-api/environment-api/settings (schemaId: `builtin:span-event-attribute`)
+//
+// ## Export Example Usage
+//
+// - `terraform-provider-dynatrace -export SpanEvents` downloads all existing span event configuration
+//
+// The full documentation of the export feature is available [here](https://dt-url.net/h203qmc).
 type SpanEvents struct {
 	pulumi.CustomResourceState
 

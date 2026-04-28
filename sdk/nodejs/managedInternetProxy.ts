@@ -19,13 +19,13 @@ import * as utilities from "./utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as dynatrace from "@pulumiverse/dynatrace";
  *
- * const test = new dynatrace.ManagedInternetProxy("test", {
- *     nonProxyHosts: ["string"],
- *     password: "string",
- *     port: 65535,
+ * const test = new dynatrace.ManagedInternetProxy("Test", {
  *     scheme: "http",
  *     server: "zAOE-GV81/65oVgaIlPYTCADGSPFJ9ZqXYNGbxn97dbq:flAI2E8e8bfOvlmaGu",
+ *     port: 65535,
  *     user: "string",
+ *     password: "string",
+ *     nonProxyHosts: ["string"],
  * });
  * ```
  */

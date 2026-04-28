@@ -23,6 +23,7 @@ class MetricQueryArgs:
                  metric_selector: pulumi.Input[_builtins.str]):
         """
         The set of arguments for constructing a MetricQuery resource.
+
         :param pulumi.Input[_builtins.str] metric_id: The scope of this setting (metric)
         :param pulumi.Input[_builtins.str] metric_selector: Query
         """
@@ -61,6 +62,7 @@ class _MetricQueryState:
                  metric_selector: Optional[pulumi.Input[_builtins.str]] = None):
         """
         Input properties used for looking up and filtering MetricQuery resources.
+
         :param pulumi.Input[_builtins.str] metric_id: The scope of this setting (metric)
         :param pulumi.Input[_builtins.str] metric_selector: Query
         """
@@ -104,7 +106,21 @@ class MetricQuery(pulumi.CustomResource):
                  metric_selector: Optional[pulumi.Input[_builtins.str]] = None,
                  __props__=None):
         """
-        Create a MetricQuery resource with the given unique name, props, and options.
+        > This resource requires the API token scopes **Read settings** (`settings.read`) and **Write settings** (`settings.write`)
+
+        ## Dynatrace Documentation
+
+        - Metrics - https://www.dynatrace.com/support/help/observe-and-explore/metrics
+
+        - Settings API - https://www.dynatrace.com/support/help/dynatrace-api/environment-api/settings (schemaId: `builtin:metric.query`)
+
+        ## Export Example Usage
+
+        - `terraform-provider-dynatrace -export MetricQuery` downloads all existing metric query configuration
+
+        The full documentation of the export feature is available [here](https://dt-url.net/h203qmc).
+
+
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[_builtins.str] metric_id: The scope of this setting (metric)
@@ -117,7 +133,21 @@ class MetricQuery(pulumi.CustomResource):
                  args: MetricQueryArgs,
                  opts: Optional[pulumi.ResourceOptions] = None):
         """
-        Create a MetricQuery resource with the given unique name, props, and options.
+        > This resource requires the API token scopes **Read settings** (`settings.read`) and **Write settings** (`settings.write`)
+
+        ## Dynatrace Documentation
+
+        - Metrics - https://www.dynatrace.com/support/help/observe-and-explore/metrics
+
+        - Settings API - https://www.dynatrace.com/support/help/dynatrace-api/environment-api/settings (schemaId: `builtin:metric.query`)
+
+        ## Export Example Usage
+
+        - `terraform-provider-dynatrace -export MetricQuery` downloads all existing metric query configuration
+
+        The full documentation of the export feature is available [here](https://dt-url.net/h203qmc).
+
+
         :param str resource_name: The name of the resource.
         :param MetricQueryArgs args: The arguments to use to populate this resource's properties.
         :param pulumi.ResourceOptions opts: Options for the resource.

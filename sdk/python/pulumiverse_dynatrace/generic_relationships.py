@@ -31,12 +31,13 @@ class GenericRelationshipsArgs:
                  to_role: Optional[pulumi.Input[_builtins.str]] = None):
         """
         The set of arguments for constructing a GenericRelationships resource.
+
         :param pulumi.Input[_builtins.str] created_by: The user or extension that created this relationship.
         :param pulumi.Input[_builtins.bool] enabled: This setting is enabled (`true`) or disabled (`false`)
         :param pulumi.Input[_builtins.str] from_type: Define an entity type as the source of the relationship.
         :param pulumi.Input['GenericRelationshipsSourcesArgs'] sources: Specify all sources which should be evaluated for this relationship rule. The relationship is only created when any of the filters match.
         :param pulumi.Input[_builtins.str] to_type: Define an entity type as the destination of the relationship. You can choose the same type as the source type. In this case you also may assign different roles for source and destination for having directed relationships.
-        :param pulumi.Input[_builtins.str] type_of_relation: Possible Values: `CALLS`, `CHILD_OF`, `INSTANCE_OF`, `PART_OF`, `RUNS_ON`, `SAME_AS`
+        :param pulumi.Input[_builtins.str] type_of_relation: Type of the relationship between the Source Type and the Destination Type. Possible Values: `CALLS`, `CHILD_OF`, `INSTANCE_OF`, `PART_OF`, `RUNS_ON`, `SAME_AS`
         :param pulumi.Input[_builtins.str] from_role: Specify a role for the source entity. If both source and destination type are the same, referring different roles will allow identification of a relationships direction. If role is left blank, any role of the source type is considered for the relationship.
         :param pulumi.Input[_builtins.str] to_role: Specify a role for the destination entity. If both source and destination type are the same, referring different roles will allow identification of a relationships direction. If role is left blank, any role of the destination type is considered for the relationship.
         """
@@ -115,7 +116,7 @@ class GenericRelationshipsArgs:
     @pulumi.getter(name="typeOfRelation")
     def type_of_relation(self) -> pulumi.Input[_builtins.str]:
         """
-        Possible Values: `CALLS`, `CHILD_OF`, `INSTANCE_OF`, `PART_OF`, `RUNS_ON`, `SAME_AS`
+        Type of the relationship between the Source Type and the Destination Type. Possible Values: `CALLS`, `CHILD_OF`, `INSTANCE_OF`, `PART_OF`, `RUNS_ON`, `SAME_AS`
         """
         return pulumi.get(self, "type_of_relation")
 
@@ -161,6 +162,7 @@ class _GenericRelationshipsState:
                  type_of_relation: Optional[pulumi.Input[_builtins.str]] = None):
         """
         Input properties used for looking up and filtering GenericRelationships resources.
+
         :param pulumi.Input[_builtins.str] created_by: The user or extension that created this relationship.
         :param pulumi.Input[_builtins.bool] enabled: This setting is enabled (`true`) or disabled (`false`)
         :param pulumi.Input[_builtins.str] from_role: Specify a role for the source entity. If both source and destination type are the same, referring different roles will allow identification of a relationships direction. If role is left blank, any role of the source type is considered for the relationship.
@@ -168,7 +170,7 @@ class _GenericRelationshipsState:
         :param pulumi.Input['GenericRelationshipsSourcesArgs'] sources: Specify all sources which should be evaluated for this relationship rule. The relationship is only created when any of the filters match.
         :param pulumi.Input[_builtins.str] to_role: Specify a role for the destination entity. If both source and destination type are the same, referring different roles will allow identification of a relationships direction. If role is left blank, any role of the destination type is considered for the relationship.
         :param pulumi.Input[_builtins.str] to_type: Define an entity type as the destination of the relationship. You can choose the same type as the source type. In this case you also may assign different roles for source and destination for having directed relationships.
-        :param pulumi.Input[_builtins.str] type_of_relation: Possible Values: `CALLS`, `CHILD_OF`, `INSTANCE_OF`, `PART_OF`, `RUNS_ON`, `SAME_AS`
+        :param pulumi.Input[_builtins.str] type_of_relation: Type of the relationship between the Source Type and the Destination Type. Possible Values: `CALLS`, `CHILD_OF`, `INSTANCE_OF`, `PART_OF`, `RUNS_ON`, `SAME_AS`
         """
         if created_by is not None:
             pulumi.set(__self__, "created_by", created_by)
@@ -275,7 +277,7 @@ class _GenericRelationshipsState:
     @pulumi.getter(name="typeOfRelation")
     def type_of_relation(self) -> Optional[pulumi.Input[_builtins.str]]:
         """
-        Possible Values: `CALLS`, `CHILD_OF`, `INSTANCE_OF`, `PART_OF`, `RUNS_ON`, `SAME_AS`
+        Type of the relationship between the Source Type and the Destination Type. Possible Values: `CALLS`, `CHILD_OF`, `INSTANCE_OF`, `PART_OF`, `RUNS_ON`, `SAME_AS`
         """
         return pulumi.get(self, "type_of_relation")
 
@@ -300,7 +302,21 @@ class GenericRelationships(pulumi.CustomResource):
                  type_of_relation: Optional[pulumi.Input[_builtins.str]] = None,
                  __props__=None):
         """
-        Create a GenericRelationships resource with the given unique name, props, and options.
+        > This resource requires the API token scopes **Read settings** (`settings.read`) and **Write settings** (`settings.write`)
+
+        ## Dynatrace Documentation
+
+        - Define custom topology - https://www.dynatrace.com/support/help/extend-dynatrace/extend-topology/custom-topology
+
+        - Settings API - https://www.dynatrace.com/support/help/dynatrace-api/environment-api/settings (schemaId: `builtin:monitoredentities.generic.relation`)
+
+        ## Export Example Usage
+
+        - `terraform-provider-dynatrace -export GenericRelationships` downloads all existing custom topology generic relationships configuration
+
+        The full documentation of the export feature is available [here](https://dt-url.net/h203qmc).
+
+
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[_builtins.str] created_by: The user or extension that created this relationship.
@@ -310,7 +326,7 @@ class GenericRelationships(pulumi.CustomResource):
         :param pulumi.Input[Union['GenericRelationshipsSourcesArgs', 'GenericRelationshipsSourcesArgsDict']] sources: Specify all sources which should be evaluated for this relationship rule. The relationship is only created when any of the filters match.
         :param pulumi.Input[_builtins.str] to_role: Specify a role for the destination entity. If both source and destination type are the same, referring different roles will allow identification of a relationships direction. If role is left blank, any role of the destination type is considered for the relationship.
         :param pulumi.Input[_builtins.str] to_type: Define an entity type as the destination of the relationship. You can choose the same type as the source type. In this case you also may assign different roles for source and destination for having directed relationships.
-        :param pulumi.Input[_builtins.str] type_of_relation: Possible Values: `CALLS`, `CHILD_OF`, `INSTANCE_OF`, `PART_OF`, `RUNS_ON`, `SAME_AS`
+        :param pulumi.Input[_builtins.str] type_of_relation: Type of the relationship between the Source Type and the Destination Type. Possible Values: `CALLS`, `CHILD_OF`, `INSTANCE_OF`, `PART_OF`, `RUNS_ON`, `SAME_AS`
         """
         ...
     @overload
@@ -319,7 +335,21 @@ class GenericRelationships(pulumi.CustomResource):
                  args: GenericRelationshipsArgs,
                  opts: Optional[pulumi.ResourceOptions] = None):
         """
-        Create a GenericRelationships resource with the given unique name, props, and options.
+        > This resource requires the API token scopes **Read settings** (`settings.read`) and **Write settings** (`settings.write`)
+
+        ## Dynatrace Documentation
+
+        - Define custom topology - https://www.dynatrace.com/support/help/extend-dynatrace/extend-topology/custom-topology
+
+        - Settings API - https://www.dynatrace.com/support/help/dynatrace-api/environment-api/settings (schemaId: `builtin:monitoredentities.generic.relation`)
+
+        ## Export Example Usage
+
+        - `terraform-provider-dynatrace -export GenericRelationships` downloads all existing custom topology generic relationships configuration
+
+        The full documentation of the export feature is available [here](https://dt-url.net/h203qmc).
+
+
         :param str resource_name: The name of the resource.
         :param GenericRelationshipsArgs args: The arguments to use to populate this resource's properties.
         :param pulumi.ResourceOptions opts: Options for the resource.
@@ -404,7 +434,7 @@ class GenericRelationships(pulumi.CustomResource):
         :param pulumi.Input[Union['GenericRelationshipsSourcesArgs', 'GenericRelationshipsSourcesArgsDict']] sources: Specify all sources which should be evaluated for this relationship rule. The relationship is only created when any of the filters match.
         :param pulumi.Input[_builtins.str] to_role: Specify a role for the destination entity. If both source and destination type are the same, referring different roles will allow identification of a relationships direction. If role is left blank, any role of the destination type is considered for the relationship.
         :param pulumi.Input[_builtins.str] to_type: Define an entity type as the destination of the relationship. You can choose the same type as the source type. In this case you also may assign different roles for source and destination for having directed relationships.
-        :param pulumi.Input[_builtins.str] type_of_relation: Possible Values: `CALLS`, `CHILD_OF`, `INSTANCE_OF`, `PART_OF`, `RUNS_ON`, `SAME_AS`
+        :param pulumi.Input[_builtins.str] type_of_relation: Type of the relationship between the Source Type and the Destination Type. Possible Values: `CALLS`, `CHILD_OF`, `INSTANCE_OF`, `PART_OF`, `RUNS_ON`, `SAME_AS`
         """
         opts = pulumi.ResourceOptions.merge(opts, pulumi.ResourceOptions(id=id))
 
@@ -480,7 +510,7 @@ class GenericRelationships(pulumi.CustomResource):
     @pulumi.getter(name="typeOfRelation")
     def type_of_relation(self) -> pulumi.Output[_builtins.str]:
         """
-        Possible Values: `CALLS`, `CHILD_OF`, `INSTANCE_OF`, `PART_OF`, `RUNS_ON`, `SAME_AS`
+        Type of the relationship between the Source Type and the Destination Type. Possible Values: `CALLS`, `CHILD_OF`, `INSTANCE_OF`, `PART_OF`, `RUNS_ON`, `SAME_AS`
         """
         return pulumi.get(self, "type_of_relation")
 

@@ -195,6 +195,16 @@ export type AwsAnomalies = import("./awsAnomalies").AwsAnomalies;
 export const AwsAnomalies: typeof import("./awsAnomalies").AwsAnomalies = null as any;
 utilities.lazyLoad(exports, ["AwsAnomalies"], () => require("./awsAnomalies"));
 
+export { AwsConnectionArgs, AwsConnectionState } from "./awsConnection";
+export type AwsConnection = import("./awsConnection").AwsConnection;
+export const AwsConnection: typeof import("./awsConnection").AwsConnection = null as any;
+utilities.lazyLoad(exports, ["AwsConnection"], () => require("./awsConnection"));
+
+export { AwsConnectionRoleArnArgs, AwsConnectionRoleArnState } from "./awsConnectionRoleArn";
+export type AwsConnectionRoleArn = import("./awsConnectionRoleArn").AwsConnectionRoleArn;
+export const AwsConnectionRoleArn: typeof import("./awsConnectionRoleArn").AwsConnectionRoleArn = null as any;
+utilities.lazyLoad(exports, ["AwsConnectionRoleArn"], () => require("./awsConnectionRoleArn"));
+
 export { AwsCredentialsArgs, AwsCredentialsState } from "./awsCredentials";
 export type AwsCredentials = import("./awsCredentials").AwsCredentials;
 export const AwsCredentials: typeof import("./awsCredentials").AwsCredentials = null as any;
@@ -204,6 +214,16 @@ export { AwsServiceArgs, AwsServiceState } from "./awsService";
 export type AwsService = import("./awsService").AwsService;
 export const AwsService: typeof import("./awsService").AwsService = null as any;
 utilities.lazyLoad(exports, ["AwsService"], () => require("./awsService"));
+
+export { AzureConnectionArgs, AzureConnectionState } from "./azureConnection";
+export type AzureConnection = import("./azureConnection").AzureConnection;
+export const AzureConnection: typeof import("./azureConnection").AzureConnection = null as any;
+utilities.lazyLoad(exports, ["AzureConnection"], () => require("./azureConnection"));
+
+export { AzureConnectionAuthenticationArgs, AzureConnectionAuthenticationState } from "./azureConnectionAuthentication";
+export type AzureConnectionAuthentication = import("./azureConnectionAuthentication").AzureConnectionAuthentication;
+export const AzureConnectionAuthentication: typeof import("./azureConnectionAuthentication").AzureConnectionAuthentication = null as any;
+utilities.lazyLoad(exports, ["AzureConnectionAuthentication"], () => require("./azureConnectionAuthentication"));
 
 export { AzureCredentialsArgs, AzureCredentialsState } from "./azureCredentials";
 export type AzureCredentials = import("./azureCredentials").AzureCredentials;
@@ -755,6 +775,11 @@ export const getHubItems: typeof import("./getHubItems").getHubItems = null as a
 export const getHubItemsOutput: typeof import("./getHubItems").getHubItemsOutput = null as any;
 utilities.lazyLoad(exports, ["getHubItems","getHubItemsOutput"], () => require("./getHubItems"));
 
+export { GetIamEnvironmentsArgs, GetIamEnvironmentsResult, GetIamEnvironmentsOutputArgs } from "./getIamEnvironments";
+export const getIamEnvironments: typeof import("./getIamEnvironments").getIamEnvironments = null as any;
+export const getIamEnvironmentsOutput: typeof import("./getIamEnvironments").getIamEnvironmentsOutput = null as any;
+utilities.lazyLoad(exports, ["getIamEnvironments","getIamEnvironmentsOutput"], () => require("./getIamEnvironments"));
+
 export { GetIamGroupArgs, GetIamGroupResult, GetIamGroupOutputArgs } from "./getIamGroup";
 export const getIamGroup: typeof import("./getIamGroup").getIamGroup = null as any;
 export const getIamGroupOutput: typeof import("./getIamGroup").getIamGroupOutput = null as any;
@@ -774,6 +799,11 @@ export { GetIamPolicyArgs, GetIamPolicyResult, GetIamPolicyOutputArgs } from "./
 export const getIamPolicy: typeof import("./getIamPolicy").getIamPolicy = null as any;
 export const getIamPolicyOutput: typeof import("./getIamPolicy").getIamPolicyOutput = null as any;
 utilities.lazyLoad(exports, ["getIamPolicy","getIamPolicyOutput"], () => require("./getIamPolicy"));
+
+export { GetIamServiceUserArgs, GetIamServiceUserResult, GetIamServiceUserOutputArgs } from "./getIamServiceUser";
+export const getIamServiceUser: typeof import("./getIamServiceUser").getIamServiceUser = null as any;
+export const getIamServiceUserOutput: typeof import("./getIamServiceUser").getIamServiceUserOutput = null as any;
+utilities.lazyLoad(exports, ["getIamServiceUser","getIamServiceUserOutput"], () => require("./getIamServiceUser"));
 
 export { GetIamUserArgs, GetIamUserResult, GetIamUserOutputArgs } from "./getIamUser";
 export const getIamUser: typeof import("./getIamUser").getIamUser = null as any;
@@ -1029,6 +1059,11 @@ export { IamPolicyBoundaryArgs, IamPolicyBoundaryState } from "./iamPolicyBounda
 export type IamPolicyBoundary = import("./iamPolicyBoundary").IamPolicyBoundary;
 export const IamPolicyBoundary: typeof import("./iamPolicyBoundary").IamPolicyBoundary = null as any;
 utilities.lazyLoad(exports, ["IamPolicyBoundary"], () => require("./iamPolicyBoundary"));
+
+export { IamServiceUserArgs, IamServiceUserState } from "./iamServiceUser";
+export type IamServiceUser = import("./iamServiceUser").IamServiceUser;
+export const IamServiceUser: typeof import("./iamServiceUser").IamServiceUser = null as any;
+utilities.lazyLoad(exports, ["IamServiceUser"], () => require("./iamServiceUser"));
 
 export { IamUserArgs, IamUserState } from "./iamUser";
 export type IamUser = import("./iamUser").IamUser;
@@ -2423,10 +2458,18 @@ const _module = {
                 return new AutotagV2(name, <any>undefined, { urn })
             case "dynatrace:index/awsAnomalies:AwsAnomalies":
                 return new AwsAnomalies(name, <any>undefined, { urn })
+            case "dynatrace:index/awsConnection:AwsConnection":
+                return new AwsConnection(name, <any>undefined, { urn })
+            case "dynatrace:index/awsConnectionRoleArn:AwsConnectionRoleArn":
+                return new AwsConnectionRoleArn(name, <any>undefined, { urn })
             case "dynatrace:index/awsCredentials:AwsCredentials":
                 return new AwsCredentials(name, <any>undefined, { urn })
             case "dynatrace:index/awsService:AwsService":
                 return new AwsService(name, <any>undefined, { urn })
+            case "dynatrace:index/azureConnection:AzureConnection":
+                return new AzureConnection(name, <any>undefined, { urn })
+            case "dynatrace:index/azureConnectionAuthentication:AzureConnectionAuthentication":
+                return new AzureConnectionAuthentication(name, <any>undefined, { urn })
             case "dynatrace:index/azureCredentials:AzureCredentials":
                 return new AzureCredentials(name, <any>undefined, { urn })
             case "dynatrace:index/azureService:AzureService":
@@ -2651,6 +2694,8 @@ const _module = {
                 return new IamPolicyBindingsV2(name, <any>undefined, { urn })
             case "dynatrace:index/iamPolicyBoundary:IamPolicyBoundary":
                 return new IamPolicyBoundary(name, <any>undefined, { urn })
+            case "dynatrace:index/iamServiceUser:IamServiceUser":
+                return new IamServiceUser(name, <any>undefined, { urn })
             case "dynatrace:index/iamUser:IamUser":
                 return new IamUser(name, <any>undefined, { urn })
             case "dynatrace:index/ibmMqFilters:IbmMqFilters":
@@ -3214,8 +3259,12 @@ pulumi.runtime.registerResourceModule("dynatrace", "index/autotag", _module)
 pulumi.runtime.registerResourceModule("dynatrace", "index/autotagRules", _module)
 pulumi.runtime.registerResourceModule("dynatrace", "index/autotagV2", _module)
 pulumi.runtime.registerResourceModule("dynatrace", "index/awsAnomalies", _module)
+pulumi.runtime.registerResourceModule("dynatrace", "index/awsConnection", _module)
+pulumi.runtime.registerResourceModule("dynatrace", "index/awsConnectionRoleArn", _module)
 pulumi.runtime.registerResourceModule("dynatrace", "index/awsCredentials", _module)
 pulumi.runtime.registerResourceModule("dynatrace", "index/awsService", _module)
+pulumi.runtime.registerResourceModule("dynatrace", "index/azureConnection", _module)
+pulumi.runtime.registerResourceModule("dynatrace", "index/azureConnectionAuthentication", _module)
 pulumi.runtime.registerResourceModule("dynatrace", "index/azureCredentials", _module)
 pulumi.runtime.registerResourceModule("dynatrace", "index/azureService", _module)
 pulumi.runtime.registerResourceModule("dynatrace", "index/browserMonitor", _module)
@@ -3328,6 +3377,7 @@ pulumi.runtime.registerResourceModule("dynatrace", "index/iamPolicy", _module)
 pulumi.runtime.registerResourceModule("dynatrace", "index/iamPolicyBindings", _module)
 pulumi.runtime.registerResourceModule("dynatrace", "index/iamPolicyBindingsV2", _module)
 pulumi.runtime.registerResourceModule("dynatrace", "index/iamPolicyBoundary", _module)
+pulumi.runtime.registerResourceModule("dynatrace", "index/iamServiceUser", _module)
 pulumi.runtime.registerResourceModule("dynatrace", "index/iamUser", _module)
 pulumi.runtime.registerResourceModule("dynatrace", "index/ibmMqFilters", _module)
 pulumi.runtime.registerResourceModule("dynatrace", "index/imsBridges", _module)

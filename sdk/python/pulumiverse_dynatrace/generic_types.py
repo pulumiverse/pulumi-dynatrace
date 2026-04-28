@@ -29,6 +29,7 @@ class GenericTypesArgs:
                  name: Optional[pulumi.Input[_builtins.str]] = None):
         """
         The set of arguments for constructing a GenericTypes resource.
+
         :param pulumi.Input[_builtins.str] created_by: The user or extension that created this type.
         :param pulumi.Input[_builtins.str] display_name: The human readable type name for this entity type.
         :param pulumi.Input[_builtins.bool] enabled: This setting is enabled (`true`) or disabled (`false`)
@@ -129,6 +130,7 @@ class _GenericTypesState:
                  rules: Optional[pulumi.Input['GenericTypesRulesArgs']] = None):
         """
         Input properties used for looking up and filtering GenericTypes resources.
+
         :param pulumi.Input[_builtins.str] created_by: The user or extension that created this type.
         :param pulumi.Input[_builtins.str] display_name: The human readable type name for this entity type.
         :param pulumi.Input[_builtins.bool] enabled: This setting is enabled (`true`) or disabled (`false`)
@@ -236,7 +238,21 @@ class GenericTypes(pulumi.CustomResource):
                  rules: Optional[pulumi.Input[Union['GenericTypesRulesArgs', 'GenericTypesRulesArgsDict']]] = None,
                  __props__=None):
         """
-        Create a GenericTypes resource with the given unique name, props, and options.
+        > This resource requires the API token scopes **Read settings** (`settings.read`) and **Write settings** (`settings.write`)
+
+        ## Dynatrace Documentation
+
+        - Define custom topology - https://www.dynatrace.com/support/help/extend-dynatrace/extend-topology/custom-topology
+
+        - Settings API - https://www.dynatrace.com/support/help/dynatrace-api/environment-api/settings (schemaId: `builtin:monitoredentities.generic.type`)
+
+        ## Export Example Usage
+
+        - `terraform-provider-dynatrace -export GenericTypes` downloads all existing custom topology generic types configuration
+
+        The full documentation of the export feature is available [here](https://dt-url.net/h203qmc).
+
+
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[_builtins.str] created_by: The user or extension that created this type.
@@ -253,7 +269,21 @@ class GenericTypes(pulumi.CustomResource):
                  args: GenericTypesArgs,
                  opts: Optional[pulumi.ResourceOptions] = None):
         """
-        Create a GenericTypes resource with the given unique name, props, and options.
+        > This resource requires the API token scopes **Read settings** (`settings.read`) and **Write settings** (`settings.write`)
+
+        ## Dynatrace Documentation
+
+        - Define custom topology - https://www.dynatrace.com/support/help/extend-dynatrace/extend-topology/custom-topology
+
+        - Settings API - https://www.dynatrace.com/support/help/dynatrace-api/environment-api/settings (schemaId: `builtin:monitoredentities.generic.type`)
+
+        ## Export Example Usage
+
+        - `terraform-provider-dynatrace -export GenericTypes` downloads all existing custom topology generic types configuration
+
+        The full documentation of the export feature is available [here](https://dt-url.net/h203qmc).
+
+
         :param str resource_name: The name of the resource.
         :param GenericTypesArgs args: The arguments to use to populate this resource's properties.
         :param pulumi.ResourceOptions opts: Options for the resource.

@@ -6,6 +6,110 @@ import * as inputs from "./types/input";
 import * as outputs from "./types/output";
 import * as utilities from "./utilities";
 
+/**
+ * !> This resource API endpoint has been deprecated, please migrate your OpenPipeline configurations and use `dynatrace_openpipeline_v2_spans_*` instead.
+ *
+ * !> Deploying an OpenPipeline configuration will overwrite the existing one of the same kind, causing any manual changes made in the web UI or other configurations managed by Terraform or Monaco to be lost. Ensure all configurations are defined within a single Terraform or Monaco configuration to prevent data loss.
+ *
+ * > **Dynatrace SaaS only**
+ *
+ * > To utilize this resource, please define the environment variables `DT_CLIENT_ID`, `DT_CLIENT_SECRET`, `DT_ACCOUNT_ID` with an OAuth client including the following permissions: **View OpenPipeline configurations** (`openpipeline:configurations:read`), and **Edit OpenPipeline configurations** (`openpipeline:configurations:write`).
+ *
+ * ## Dynatrace Documentation
+ *
+ * - OpenPipeline - https://docs.dynatrace.com/docs/platform/openpipeline
+ *
+ * ## Export Example Usage
+ *
+ * - `terraform-provider-dynatrace -export dynatrace.OpenpipelineSpans` downloads all existing OpenPipeline definitions for Spans
+ *
+ * The full documentation of the export feature is available [here](https://dt-url.net/h203qmc).
+ *
+ * ## Resource Example Usage
+ *
+ * ```typescript
+ * import * as pulumi from "@pulumi/pulumi";
+ * import * as dynatrace from "@pulumiverse/dynatrace";
+ *
+ * const spans = new dynatrace.OpenpipelineSpans("spans", {pipelines: {
+ *     pipelines: [{
+ *         enabled: true,
+ *         displayName: "#name#",
+ *         id: "pipeline_Custom_spans_#name#",
+ *         dataExtraction: {
+ *             processors: [{
+ *                 bizeventExtractionProcessor: {
+ *                     description: "Custom bizevent extraction",
+ *                     enabled: true,
+ *                     id: "processor_custom_bizevent_1_#name#",
+ *                     matcher: "true",
+ *                     sampleData: "{}",
+ *                     fieldExtraction: {
+ *                         semantic: "INCLUDE",
+ *                         fields: ["my.field"],
+ *                     },
+ *                     eventProvider: {
+ *                         type: "constant",
+ *                         constant: "my-constant",
+ *                     },
+ *                     eventType: {
+ *                         type: "constant",
+ *                         constant: "my-constant",
+ *                     },
+ *                 },
+ *             }],
+ *         },
+ *         metricExtraction: {
+ *             processors: [
+ *                 {
+ *                     samplingAwareCounterMetricExtractionProcessor: {
+ *                         description: "Custom sampling counter extraction",
+ *                         enabled: true,
+ *                         id: "processor_custom_sampling_counter_1_#name#",
+ *                         matcher: "true",
+ *                         metricKey: "events.counter",
+ *                         aggregation: "ENABLED",
+ *                         sampleData: "{}",
+ *                         sampling: "ENABLED",
+ *                         dimensions: ["ab=xy"],
+ *                     },
+ *                 },
+ *                 {
+ *                     samplingAwareValueMetricExtractionProcessor: {
+ *                         description: "Custom sampling value extraction",
+ *                         enabled: true,
+ *                         id: "processor_custom_sampling_value_1_#name#",
+ *                         matcher: "true",
+ *                         measurement: "FIELD",
+ *                         metricKey: "events.value",
+ *                         aggregation: "DISABLED",
+ *                         sampling: "DISABLED",
+ *                         defaultValue: "10",
+ *                         field: "my.field",
+ *                         sampleData: "{}",
+ *                         dimensions: ["xyz=abc"],
+ *                     },
+ *                 },
+ *             ],
+ *         },
+ *         processing: {
+ *             processors: [{
+ *                 fieldsAddProcessor: {
+ *                     description: "#name#",
+ *                     enabled: true,
+ *                     id: "processor_Add_field_#name#",
+ *                     matcher: "true",
+ *                     fields: [{
+ *                         name: "test",
+ *                         value: "1",
+ *                     }],
+ *                 },
+ *             }],
+ *         },
+ *     }],
+ * }});
+ * ```
+ */
 export class OpenpipelineSpans extends pulumi.CustomResource {
     /**
      * Get an existing OpenpipelineSpans resource's state with the given name, ID, and optional extra

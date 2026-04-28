@@ -22,6 +22,7 @@ class JsonDashboardBaseArgs:
                  contents: Optional[pulumi.Input[_builtins.str]] = None):
         """
         The set of arguments for constructing a JsonDashboardBase resource.
+
         :param pulumi.Input[_builtins.str] contents: This attribute exists for backwards compatibility. You do not have to define it.
         """
         if contents is not None:
@@ -46,6 +47,7 @@ class _JsonDashboardBaseState:
                  contents: Optional[pulumi.Input[_builtins.str]] = None):
         """
         Input properties used for looking up and filtering JsonDashboardBase resources.
+
         :param pulumi.Input[_builtins.str] contents: This attribute exists for backwards compatibility. You do not have to define it.
         """
         if contents is not None:
@@ -73,7 +75,10 @@ class JsonDashboardBase(pulumi.CustomResource):
                  contents: Optional[pulumi.Input[_builtins.str]] = None,
                  __props__=None):
         """
-        Create a JsonDashboardBase resource with the given unique name, props, and options.
+        The resource `JsonDashboardBase` doesn't contain any attributes itself. It acts as some sort of anchor resource that defines the eventual `ID` of a Dashboard - without having to
+        refer to the resource `JsonDashboard` explicitly.
+
+
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[_builtins.str] contents: This attribute exists for backwards compatibility. You do not have to define it.
@@ -85,7 +90,10 @@ class JsonDashboardBase(pulumi.CustomResource):
                  args: Optional[JsonDashboardBaseArgs] = None,
                  opts: Optional[pulumi.ResourceOptions] = None):
         """
-        Create a JsonDashboardBase resource with the given unique name, props, and options.
+        The resource `JsonDashboardBase` doesn't contain any attributes itself. It acts as some sort of anchor resource that defines the eventual `ID` of a Dashboard - without having to
+        refer to the resource `JsonDashboard` explicitly.
+
+
         :param str resource_name: The name of the resource.
         :param JsonDashboardBaseArgs args: The arguments to use to populate this resource's properties.
         :param pulumi.ResourceOptions opts: Options for the resource.

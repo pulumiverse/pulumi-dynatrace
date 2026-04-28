@@ -31,6 +31,7 @@ class VmwareAnomaliesArgs:
                  undersized_storage_detection: pulumi.Input['VmwareAnomaliesUndersizedStorageDetectionArgs']):
         """
         The set of arguments for constructing a VmwareAnomalies resource.
+
         :param pulumi.Input['VmwareAnomaliesDroppedPacketsDetectionArgs'] dropped_packets_detection: no documentation available
         :param pulumi.Input['VmwareAnomaliesEsxiHighCpuDetectionArgs'] esxi_high_cpu_detection: no documentation available
         :param pulumi.Input['VmwareAnomaliesEsxiHighMemoryDetectionArgs'] esxi_high_memory_detection: no documentation available
@@ -159,6 +160,7 @@ class _VmwareAnomaliesState:
                  undersized_storage_detection: Optional[pulumi.Input['VmwareAnomaliesUndersizedStorageDetectionArgs']] = None):
         """
         Input properties used for looking up and filtering VmwareAnomalies resources.
+
         :param pulumi.Input['VmwareAnomaliesDroppedPacketsDetectionArgs'] dropped_packets_detection: no documentation available
         :param pulumi.Input['VmwareAnomaliesEsxiHighCpuDetectionArgs'] esxi_high_cpu_detection: no documentation available
         :param pulumi.Input['VmwareAnomaliesEsxiHighMemoryDetectionArgs'] esxi_high_memory_detection: no documentation available
@@ -298,7 +300,21 @@ class VmwareAnomalies(pulumi.CustomResource):
                  undersized_storage_detection: Optional[pulumi.Input[Union['VmwareAnomaliesUndersizedStorageDetectionArgs', 'VmwareAnomaliesUndersizedStorageDetectionArgsDict']]] = None,
                  __props__=None):
         """
-        Create a VmwareAnomalies resource with the given unique name, props, and options.
+        > This resource requires the API token scopes **Read settings** (`settings.read`) and **Write settings** (`settings.write`)
+
+        ## Dynatrace Documentation
+
+        - Adjust the sensitivity of anomaly detection for infrastructure - https://www.dynatrace.com/support/help/platform/davis-ai/anomaly-detection/adjust-sensitivity-anomaly-detection/adjust-sensitivity-infastructure
+
+        - Settings API - https://www.dynatrace.com/support/help/dynatrace-api/environment-api/settings (schemaId: `builtin:anomaly-detection.infrastructure-vmware`)
+
+        ## Export Example Usage
+
+        - `terraform-provider-dynatrace -export VmwareAnomalies` downloads all existing VMware anomaly detection configuration
+
+        The full documentation of the export feature is available [here](https://dt-url.net/h203qmc).
+
+
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[Union['VmwareAnomaliesDroppedPacketsDetectionArgs', 'VmwareAnomaliesDroppedPacketsDetectionArgsDict']] dropped_packets_detection: no documentation available
@@ -317,7 +333,21 @@ class VmwareAnomalies(pulumi.CustomResource):
                  args: VmwareAnomaliesArgs,
                  opts: Optional[pulumi.ResourceOptions] = None):
         """
-        Create a VmwareAnomalies resource with the given unique name, props, and options.
+        > This resource requires the API token scopes **Read settings** (`settings.read`) and **Write settings** (`settings.write`)
+
+        ## Dynatrace Documentation
+
+        - Adjust the sensitivity of anomaly detection for infrastructure - https://www.dynatrace.com/support/help/platform/davis-ai/anomaly-detection/adjust-sensitivity-anomaly-detection/adjust-sensitivity-infastructure
+
+        - Settings API - https://www.dynatrace.com/support/help/dynatrace-api/environment-api/settings (schemaId: `builtin:anomaly-detection.infrastructure-vmware`)
+
+        ## Export Example Usage
+
+        - `terraform-provider-dynatrace -export VmwareAnomalies` downloads all existing VMware anomaly detection configuration
+
+        The full documentation of the export feature is available [here](https://dt-url.net/h203qmc).
+
+
         :param str resource_name: The name of the resource.
         :param VmwareAnomaliesArgs args: The arguments to use to populate this resource's properties.
         :param pulumi.ResourceOptions opts: Options for the resource.

@@ -11,6 +11,58 @@ import (
 	"github.com/pulumiverse/pulumi-dynatrace/sdk/go/dynatrace/internal"
 )
 
+// > This resource requires the API token scopes **Read settings** (`settings.read`) and **Write settings** (`settings.write`)
+//
+// ## Dynatrace Documentation
+//
+// - Customize CICS and IMS monitoring - https://www.dynatrace.com/support/help/setup-and-configuration/dynatrace-oneagent/installation-and-operation/zos/operation/cics-ims-monitoring#transaction-start-filters
+//
+// - Settings API - https://www.dynatrace.com/support/help/dynatrace-api/environment-api/settings (schemaId: `builtin:mainframe.txstartfilters`)
+//
+// ## Export Example Usage
+//
+// - `terraform-provider-dynatrace -export TransactionStartFilters` downloads the current configuration for Transaction Start Filters
+//
+// The full documentation of the export feature is available [here](https://dt-url.net/h203qmc).
+//
+// ## Resource Example Usage
+//
+// ```go
+// package main
+//
+// import (
+//
+//	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//	"github.com/pulumiverse/pulumi-dynatrace/sdk/go/dynatrace"
+//
+// )
+//
+//	func main() {
+//		pulumi.Run(func(ctx *pulumi.Context) error {
+//			_, err := dynatrace.NewTransactionStartFilters(ctx, "transaction_start_filters", &dynatrace.TransactionStartFiltersArgs{
+//				CicsTerminalTransactionIds: pulumi.StringArray{
+//					pulumi.String("DTAX"),
+//					pulumi.String("ATAX"),
+//				},
+//				CicsTransactionIds: pulumi.StringArray{
+//					pulumi.String("TIPU"),
+//				},
+//				ImsTransactionIds: pulumi.StringArray{
+//					pulumi.String("FAKE"),
+//				},
+//				ImsTerminalTransactionIds: pulumi.StringArray{
+//					pulumi.String("DTAX"),
+//					pulumi.String("ATAX"),
+//				},
+//			})
+//			if err != nil {
+//				return err
+//			}
+//			return nil
+//		})
+//	}
+//
+// ```
 type TransactionStartFilters struct {
 	pulumi.CustomResourceState
 

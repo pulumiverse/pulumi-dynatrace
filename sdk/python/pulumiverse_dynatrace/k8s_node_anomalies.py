@@ -29,6 +29,7 @@ class K8sNodeAnomaliesArgs:
                  scope: Optional[pulumi.Input[_builtins.str]] = None):
         """
         The set of arguments for constructing a K8sNodeAnomalies resource.
+
         :param pulumi.Input['K8sNodeAnomaliesCpuRequestsSaturationArgs'] cpu_requests_saturation: no documentation available
         :param pulumi.Input['K8sNodeAnomaliesMemoryRequestsSaturationArgs'] memory_requests_saturation: no documentation available
         :param pulumi.Input['K8sNodeAnomaliesNodeProblematicConditionArgs'] node_problematic_condition: no documentation available
@@ -128,6 +129,7 @@ class _K8sNodeAnomaliesState:
                  scope: Optional[pulumi.Input[_builtins.str]] = None):
         """
         Input properties used for looking up and filtering K8sNodeAnomalies resources.
+
         :param pulumi.Input['K8sNodeAnomaliesCpuRequestsSaturationArgs'] cpu_requests_saturation: no documentation available
         :param pulumi.Input['K8sNodeAnomaliesMemoryRequestsSaturationArgs'] memory_requests_saturation: no documentation available
         :param pulumi.Input['K8sNodeAnomaliesNodeProblematicConditionArgs'] node_problematic_condition: no documentation available
@@ -235,7 +237,21 @@ class K8sNodeAnomalies(pulumi.CustomResource):
                  scope: Optional[pulumi.Input[_builtins.str]] = None,
                  __props__=None):
         """
-        Create a K8sNodeAnomalies resource with the given unique name, props, and options.
+        > This resource requires the API token scopes **Read settings** (`settings.read`) and **Write settings** (`settings.write`)
+
+        ## Dynatrace Documentation
+
+        - Alert on common Kubernetes/OpenShift issues - https://www.dynatrace.com/support/help/platform-modules/infrastructure-monitoring/container-platform-monitoring/kubernetes-monitoring/alert-on-kubernetes-issues
+
+        - Settings API - https://www.dynatrace.com/support/help/dynatrace-api/environment-api/settings (schemaId: `builtin:anomaly-detection.kubernetes.node`)
+
+        ## Export Example Usage
+
+        - `terraform-provider-dynatrace -export K8sNodeAnomalies` downloads all existing Kubernetes node anomaly configuration
+
+        The full documentation of the export feature is available [here](https://dt-url.net/h203qmc).
+
+
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[Union['K8sNodeAnomaliesCpuRequestsSaturationArgs', 'K8sNodeAnomaliesCpuRequestsSaturationArgsDict']] cpu_requests_saturation: no documentation available
@@ -252,7 +268,21 @@ class K8sNodeAnomalies(pulumi.CustomResource):
                  args: K8sNodeAnomaliesArgs,
                  opts: Optional[pulumi.ResourceOptions] = None):
         """
-        Create a K8sNodeAnomalies resource with the given unique name, props, and options.
+        > This resource requires the API token scopes **Read settings** (`settings.read`) and **Write settings** (`settings.write`)
+
+        ## Dynatrace Documentation
+
+        - Alert on common Kubernetes/OpenShift issues - https://www.dynatrace.com/support/help/platform-modules/infrastructure-monitoring/container-platform-monitoring/kubernetes-monitoring/alert-on-kubernetes-issues
+
+        - Settings API - https://www.dynatrace.com/support/help/dynatrace-api/environment-api/settings (schemaId: `builtin:anomaly-detection.kubernetes.node`)
+
+        ## Export Example Usage
+
+        - `terraform-provider-dynatrace -export K8sNodeAnomalies` downloads all existing Kubernetes node anomaly configuration
+
+        The full documentation of the export feature is available [here](https://dt-url.net/h203qmc).
+
+
         :param str resource_name: The name of the resource.
         :param K8sNodeAnomaliesArgs args: The arguments to use to populate this resource's properties.
         :param pulumi.ResourceOptions opts: Options for the resource.

@@ -26,6 +26,7 @@ class OpenpipelineEventsArgs:
                  routing: Optional[pulumi.Input['OpenpipelineEventsRoutingArgs']] = None):
         """
         The set of arguments for constructing a OpenpipelineEvents resource.
+
         :param pulumi.Input['OpenpipelineEventsEndpointsArgs'] endpoints: List of all ingest sources of the configuration
         :param pulumi.Input['OpenpipelineEventsPipelinesArgs'] pipelines: List of all pipelines of the configuration
         :param pulumi.Input['OpenpipelineEventsRoutingArgs'] routing: Dynamic routing definition
@@ -82,6 +83,7 @@ class _OpenpipelineEventsState:
                  routing: Optional[pulumi.Input['OpenpipelineEventsRoutingArgs']] = None):
         """
         Input properties used for looking up and filtering OpenpipelineEvents resources.
+
         :param pulumi.Input['OpenpipelineEventsEndpointsArgs'] endpoints: List of all ingest sources of the configuration
         :param pulumi.Input['OpenpipelineEventsPipelinesArgs'] pipelines: List of all pipelines of the configuration
         :param pulumi.Input['OpenpipelineEventsRoutingArgs'] routing: Dynamic routing definition
@@ -141,7 +143,306 @@ class OpenpipelineEvents(pulumi.CustomResource):
                  routing: Optional[pulumi.Input[Union['OpenpipelineEventsRoutingArgs', 'OpenpipelineEventsRoutingArgsDict']]] = None,
                  __props__=None):
         """
-        Create a OpenpipelineEvents resource with the given unique name, props, and options.
+        !> This resource API endpoint has been deprecated, please migrate your OpenPipeline configurations and use `dynatrace_openpipeline_v2_events_*` instead.
+
+        !> Deploying an OpenPipeline configuration will overwrite the existing one of the same kind, causing any manual changes made in the web UI or other configurations managed by Terraform or Monaco to be lost. Ensure all configurations are defined within a single Terraform or Monaco configuration to prevent data loss.
+
+        > **Dynatrace SaaS only**
+
+        > To utilize this resource, please define the environment variables `DT_CLIENT_ID`, `DT_CLIENT_SECRET`, `DT_ACCOUNT_ID` with an OAuth client including the following permissions: **View OpenPipeline configurations** (`openpipeline:configurations:read`), and **Edit OpenPipeline configurations** (`openpipeline:configurations:write`).
+
+        ## Dynatrace Documentation
+
+        - OpenPipeline - https://docs.dynatrace.com/docs/platform/openpipeline
+
+        ## Export Example Usage
+
+        - `terraform-provider-dynatrace -export OpenpipelineEvents` downloads all existing OpenPipeline definitions for Events
+
+        The full documentation of the export feature is available [here](https://dt-url.net/h203qmc).
+
+        ## Resource Example Usage
+
+        ```python
+        import pulumi
+        import pulumiverse_dynatrace as dynatrace
+
+        events = dynatrace.OpenpipelineEvents("events",
+            endpoints={
+                "endpoints": [{
+                    "enabled": True,
+                    "default_bucket": "default_events",
+                    "display_name": "Custom ingest source",
+                    "segment": "something",
+                    "routing": {
+                        "type": "static",
+                        "pipeline_id": "default",
+                    },
+                    "processors": {
+                        "processors": [
+                            {
+                                "fields_add_processor": {
+                                    "description": "Custom add field",
+                                    "enabled": True,
+                                    "id": "processor_Add_a_field_1_#name#",
+                                    "matcher": "true",
+                                    "fields": [{
+                                        "name": "field",
+                                        "value": "value",
+                                    }],
+                                },
+                            },
+                            {
+                                "fields_rename_processor": {
+                                    "description": "Custom rename field",
+                                    "enabled": True,
+                                    "id": "processor_Custom_rename_field_1_#name#",
+                                    "matcher": "true",
+                                    "fields": [{
+                                        "from_name": "new",
+                                        "to_name": "old",
+                                    }],
+                                },
+                            },
+                            {
+                                "fields_remove_processor": {
+                                    "description": "Custom remove field",
+                                    "enabled": True,
+                                    "fields": ["field"],
+                                    "id": "processor_Custom_remove_field_1_#name#",
+                                    "matcher": "true",
+                                },
+                            },
+                            {
+                                "dql_processor": {
+                                    "description": "Custom DQL",
+                                    "enabled": True,
+                                    "dql_script": "fieldsAdd (\\"test\\")",
+                                    "id": "processor_Custom_DQL_1_#name#",
+                                    "matcher": "true",
+                                },
+                            },
+                            {
+                                "drop_processor": {
+                                    "description": "Custom drop processor",
+                                    "enabled": True,
+                                    "id": "processor_custom_drop_1_#name#",
+                                    "matcher": "true",
+                                    "sample_data": "{}",
+                                },
+                            },
+                        ],
+                    },
+                }],
+            },
+            pipelines={
+                "pipelines": [
+                    {
+                        "enabled": True,
+                        "display_name": "Custom pipeline 1",
+                        "id": "pipeline_Pipeline_1_#name#",
+                        "processing": {
+                            "processors": [{
+                                "fields_add_processor": {
+                                    "description": "Add a field 1",
+                                    "enabled": True,
+                                    "id": "processor_Add_a_field_2_#name#",
+                                    "matcher": "true",
+                                    "fields": [{
+                                        "name": "field",
+                                        "value": "value",
+                                    }],
+                                },
+                            }],
+                        },
+                    },
+                    {
+                        "enabled": True,
+                        "display_name": "Custom pipeline 2",
+                        "id": "pipeline_Pipeline_2_#name#",
+                        "data_extraction": {
+                            "processors": [{
+                                "davis_event_extraction_processor": {
+                                    "description": "Custom event",
+                                    "enabled": True,
+                                    "id": "processor_Custom_event_1_#name#",
+                                    "matcher": "true",
+                                    "properties": [
+                                        {
+                                            "key": "event.type",
+                                            "value": "CUSTOM_ALERT",
+                                        },
+                                        {
+                                            "key": "event.name",
+                                            "value": "test",
+                                        },
+                                    ],
+                                },
+                            }],
+                        },
+                        "metric_extraction": {
+                            "processors": [
+                                {
+                                    "value_metric_extraction_processor": {
+                                        "description": "Custom value metric extraction",
+                                        "enabled": True,
+                                        "dimensions": ["availability"],
+                                        "field": "field1",
+                                        "id": "processor_Custom_metric_extraction_1_#name#",
+                                        "matcher": "true",
+                                        "metric_key": "events.custom",
+                                    },
+                                },
+                                {
+                                    "counter_metric_extraction_processor": {
+                                        "description": "Custom counter metric extraction",
+                                        "enabled": True,
+                                        "id": "processor_Custom_counter_metric_extraction_1_#name#",
+                                        "matcher": "true",
+                                        "metric_key": "events.counter",
+                                    },
+                                },
+                            ],
+                        },
+                        "processing": {
+                            "processors": [
+                                {
+                                    "fields_add_processor": {
+                                        "description": "Custom add field",
+                                        "enabled": True,
+                                        "id": "processor_Add_a_field_3_#name#",
+                                        "matcher": "true",
+                                        "fields": [{
+                                            "name": "field",
+                                            "value": "value",
+                                        }],
+                                    },
+                                },
+                                {
+                                    "fields_rename_processor": {
+                                        "description": "Custom rename field",
+                                        "enabled": True,
+                                        "id": "processor_Custom_rename_field_2_#name#",
+                                        "matcher": "true",
+                                        "fields": [{
+                                            "from_name": "new",
+                                            "to_name": "old",
+                                        }],
+                                    },
+                                },
+                                {
+                                    "fields_remove_processor": {
+                                        "description": "Custom remove field",
+                                        "enabled": True,
+                                        "fields": ["field"],
+                                        "id": "processor_Custom_remove_field_2_#name#",
+                                        "matcher": "true",
+                                    },
+                                },
+                                {
+                                    "dql_processor": {
+                                        "description": "Custom DQL",
+                                        "enabled": True,
+                                        "dql_script": "fieldsAdd (\\"test\\")",
+                                        "id": "processor_Custom_DQL_2_#name#",
+                                        "matcher": "true",
+                                    },
+                                },
+                                {
+                                    "drop_processor": {
+                                        "description": "Custom drop processor",
+                                        "enabled": True,
+                                        "id": "processor_custom_drop_2_#name#",
+                                        "matcher": "true",
+                                        "sample_data": "{}",
+                                    },
+                                },
+                            ],
+                        },
+                        "security_context": {
+                            "processors": [
+                                {
+                                    "security_context_processor": {
+                                        "description": "Custom security context 1",
+                                        "enabled": True,
+                                        "id": "processor_Custom_security_context_1_#name#",
+                                        "matcher": "true",
+                                        "sample_data": "{}",
+                                        "value": {
+                                            "type": "constant",
+                                            "constant": "string",
+                                        },
+                                    },
+                                },
+                                {
+                                    "security_context_processor": {
+                                        "description": "Custom security context 2",
+                                        "enabled": True,
+                                        "id": "processor_Custom_security_context_2_#name#",
+                                        "matcher": "true",
+                                        "sample_data": "{}",
+                                        "value": {
+                                            "type": "field",
+                                            "field": "fieldname",
+                                        },
+                                    },
+                                },
+                                {
+                                    "security_context_processor": {
+                                        "description": "Custom security context 3",
+                                        "enabled": True,
+                                        "id": "processor_Custom_security_context_3_#name#",
+                                        "matcher": "true",
+                                        "sample_data": "{}",
+                                        "value": {
+                                            "type": "multiValueConstant",
+                                            "multi_value_constants": [
+                                                "multi",
+                                                "value",
+                                            ],
+                                        },
+                                    },
+                                },
+                            ],
+                        },
+                        "storage": {
+                            "catch_all_bucket_name": "default_events",
+                            "processors": [
+                                {
+                                    "bucket_assignment_processor": {
+                                        "description": "Custom bucket assignment",
+                                        "enabled": True,
+                                        "bucket_name": "default_events",
+                                        "id": "processor_Custom_bucket_assignment_1_#name#",
+                                        "matcher": "true",
+                                        "sample_data": "{}",
+                                    },
+                                },
+                                {
+                                    "no_storage_processor": {
+                                        "description": "Custom no storage assignment",
+                                        "enabled": True,
+                                        "id": "processor_Custom_no_storage_assignment_1_#name#",
+                                        "matcher": "true",
+                                        "sample_data": "{}",
+                                    },
+                                },
+                            ],
+                        },
+                    },
+                ],
+            },
+            routing={
+                "entries": [{
+                    "enabled": True,
+                    "matcher": "true",
+                    "note": "Custom route",
+                    "pipeline_id": "pipeline_Pipeline_1_#name#",
+                }],
+            })
+        ```
+
+
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[Union['OpenpipelineEventsEndpointsArgs', 'OpenpipelineEventsEndpointsArgsDict']] endpoints: List of all ingest sources of the configuration
@@ -155,7 +456,306 @@ class OpenpipelineEvents(pulumi.CustomResource):
                  args: Optional[OpenpipelineEventsArgs] = None,
                  opts: Optional[pulumi.ResourceOptions] = None):
         """
-        Create a OpenpipelineEvents resource with the given unique name, props, and options.
+        !> This resource API endpoint has been deprecated, please migrate your OpenPipeline configurations and use `dynatrace_openpipeline_v2_events_*` instead.
+
+        !> Deploying an OpenPipeline configuration will overwrite the existing one of the same kind, causing any manual changes made in the web UI or other configurations managed by Terraform or Monaco to be lost. Ensure all configurations are defined within a single Terraform or Monaco configuration to prevent data loss.
+
+        > **Dynatrace SaaS only**
+
+        > To utilize this resource, please define the environment variables `DT_CLIENT_ID`, `DT_CLIENT_SECRET`, `DT_ACCOUNT_ID` with an OAuth client including the following permissions: **View OpenPipeline configurations** (`openpipeline:configurations:read`), and **Edit OpenPipeline configurations** (`openpipeline:configurations:write`).
+
+        ## Dynatrace Documentation
+
+        - OpenPipeline - https://docs.dynatrace.com/docs/platform/openpipeline
+
+        ## Export Example Usage
+
+        - `terraform-provider-dynatrace -export OpenpipelineEvents` downloads all existing OpenPipeline definitions for Events
+
+        The full documentation of the export feature is available [here](https://dt-url.net/h203qmc).
+
+        ## Resource Example Usage
+
+        ```python
+        import pulumi
+        import pulumiverse_dynatrace as dynatrace
+
+        events = dynatrace.OpenpipelineEvents("events",
+            endpoints={
+                "endpoints": [{
+                    "enabled": True,
+                    "default_bucket": "default_events",
+                    "display_name": "Custom ingest source",
+                    "segment": "something",
+                    "routing": {
+                        "type": "static",
+                        "pipeline_id": "default",
+                    },
+                    "processors": {
+                        "processors": [
+                            {
+                                "fields_add_processor": {
+                                    "description": "Custom add field",
+                                    "enabled": True,
+                                    "id": "processor_Add_a_field_1_#name#",
+                                    "matcher": "true",
+                                    "fields": [{
+                                        "name": "field",
+                                        "value": "value",
+                                    }],
+                                },
+                            },
+                            {
+                                "fields_rename_processor": {
+                                    "description": "Custom rename field",
+                                    "enabled": True,
+                                    "id": "processor_Custom_rename_field_1_#name#",
+                                    "matcher": "true",
+                                    "fields": [{
+                                        "from_name": "new",
+                                        "to_name": "old",
+                                    }],
+                                },
+                            },
+                            {
+                                "fields_remove_processor": {
+                                    "description": "Custom remove field",
+                                    "enabled": True,
+                                    "fields": ["field"],
+                                    "id": "processor_Custom_remove_field_1_#name#",
+                                    "matcher": "true",
+                                },
+                            },
+                            {
+                                "dql_processor": {
+                                    "description": "Custom DQL",
+                                    "enabled": True,
+                                    "dql_script": "fieldsAdd (\\"test\\")",
+                                    "id": "processor_Custom_DQL_1_#name#",
+                                    "matcher": "true",
+                                },
+                            },
+                            {
+                                "drop_processor": {
+                                    "description": "Custom drop processor",
+                                    "enabled": True,
+                                    "id": "processor_custom_drop_1_#name#",
+                                    "matcher": "true",
+                                    "sample_data": "{}",
+                                },
+                            },
+                        ],
+                    },
+                }],
+            },
+            pipelines={
+                "pipelines": [
+                    {
+                        "enabled": True,
+                        "display_name": "Custom pipeline 1",
+                        "id": "pipeline_Pipeline_1_#name#",
+                        "processing": {
+                            "processors": [{
+                                "fields_add_processor": {
+                                    "description": "Add a field 1",
+                                    "enabled": True,
+                                    "id": "processor_Add_a_field_2_#name#",
+                                    "matcher": "true",
+                                    "fields": [{
+                                        "name": "field",
+                                        "value": "value",
+                                    }],
+                                },
+                            }],
+                        },
+                    },
+                    {
+                        "enabled": True,
+                        "display_name": "Custom pipeline 2",
+                        "id": "pipeline_Pipeline_2_#name#",
+                        "data_extraction": {
+                            "processors": [{
+                                "davis_event_extraction_processor": {
+                                    "description": "Custom event",
+                                    "enabled": True,
+                                    "id": "processor_Custom_event_1_#name#",
+                                    "matcher": "true",
+                                    "properties": [
+                                        {
+                                            "key": "event.type",
+                                            "value": "CUSTOM_ALERT",
+                                        },
+                                        {
+                                            "key": "event.name",
+                                            "value": "test",
+                                        },
+                                    ],
+                                },
+                            }],
+                        },
+                        "metric_extraction": {
+                            "processors": [
+                                {
+                                    "value_metric_extraction_processor": {
+                                        "description": "Custom value metric extraction",
+                                        "enabled": True,
+                                        "dimensions": ["availability"],
+                                        "field": "field1",
+                                        "id": "processor_Custom_metric_extraction_1_#name#",
+                                        "matcher": "true",
+                                        "metric_key": "events.custom",
+                                    },
+                                },
+                                {
+                                    "counter_metric_extraction_processor": {
+                                        "description": "Custom counter metric extraction",
+                                        "enabled": True,
+                                        "id": "processor_Custom_counter_metric_extraction_1_#name#",
+                                        "matcher": "true",
+                                        "metric_key": "events.counter",
+                                    },
+                                },
+                            ],
+                        },
+                        "processing": {
+                            "processors": [
+                                {
+                                    "fields_add_processor": {
+                                        "description": "Custom add field",
+                                        "enabled": True,
+                                        "id": "processor_Add_a_field_3_#name#",
+                                        "matcher": "true",
+                                        "fields": [{
+                                            "name": "field",
+                                            "value": "value",
+                                        }],
+                                    },
+                                },
+                                {
+                                    "fields_rename_processor": {
+                                        "description": "Custom rename field",
+                                        "enabled": True,
+                                        "id": "processor_Custom_rename_field_2_#name#",
+                                        "matcher": "true",
+                                        "fields": [{
+                                            "from_name": "new",
+                                            "to_name": "old",
+                                        }],
+                                    },
+                                },
+                                {
+                                    "fields_remove_processor": {
+                                        "description": "Custom remove field",
+                                        "enabled": True,
+                                        "fields": ["field"],
+                                        "id": "processor_Custom_remove_field_2_#name#",
+                                        "matcher": "true",
+                                    },
+                                },
+                                {
+                                    "dql_processor": {
+                                        "description": "Custom DQL",
+                                        "enabled": True,
+                                        "dql_script": "fieldsAdd (\\"test\\")",
+                                        "id": "processor_Custom_DQL_2_#name#",
+                                        "matcher": "true",
+                                    },
+                                },
+                                {
+                                    "drop_processor": {
+                                        "description": "Custom drop processor",
+                                        "enabled": True,
+                                        "id": "processor_custom_drop_2_#name#",
+                                        "matcher": "true",
+                                        "sample_data": "{}",
+                                    },
+                                },
+                            ],
+                        },
+                        "security_context": {
+                            "processors": [
+                                {
+                                    "security_context_processor": {
+                                        "description": "Custom security context 1",
+                                        "enabled": True,
+                                        "id": "processor_Custom_security_context_1_#name#",
+                                        "matcher": "true",
+                                        "sample_data": "{}",
+                                        "value": {
+                                            "type": "constant",
+                                            "constant": "string",
+                                        },
+                                    },
+                                },
+                                {
+                                    "security_context_processor": {
+                                        "description": "Custom security context 2",
+                                        "enabled": True,
+                                        "id": "processor_Custom_security_context_2_#name#",
+                                        "matcher": "true",
+                                        "sample_data": "{}",
+                                        "value": {
+                                            "type": "field",
+                                            "field": "fieldname",
+                                        },
+                                    },
+                                },
+                                {
+                                    "security_context_processor": {
+                                        "description": "Custom security context 3",
+                                        "enabled": True,
+                                        "id": "processor_Custom_security_context_3_#name#",
+                                        "matcher": "true",
+                                        "sample_data": "{}",
+                                        "value": {
+                                            "type": "multiValueConstant",
+                                            "multi_value_constants": [
+                                                "multi",
+                                                "value",
+                                            ],
+                                        },
+                                    },
+                                },
+                            ],
+                        },
+                        "storage": {
+                            "catch_all_bucket_name": "default_events",
+                            "processors": [
+                                {
+                                    "bucket_assignment_processor": {
+                                        "description": "Custom bucket assignment",
+                                        "enabled": True,
+                                        "bucket_name": "default_events",
+                                        "id": "processor_Custom_bucket_assignment_1_#name#",
+                                        "matcher": "true",
+                                        "sample_data": "{}",
+                                    },
+                                },
+                                {
+                                    "no_storage_processor": {
+                                        "description": "Custom no storage assignment",
+                                        "enabled": True,
+                                        "id": "processor_Custom_no_storage_assignment_1_#name#",
+                                        "matcher": "true",
+                                        "sample_data": "{}",
+                                    },
+                                },
+                            ],
+                        },
+                    },
+                ],
+            },
+            routing={
+                "entries": [{
+                    "enabled": True,
+                    "matcher": "true",
+                    "note": "Custom route",
+                    "pipeline_id": "pipeline_Pipeline_1_#name#",
+                }],
+            })
+        ```
+
+
         :param str resource_name: The name of the resource.
         :param OpenpipelineEventsArgs args: The arguments to use to populate this resource's properties.
         :param pulumi.ResourceOptions opts: Options for the resource.

@@ -27,7 +27,7 @@ namespace Pulumiverse.Dynatrace.Outputs
         /// </summary>
         public readonly bool Enabled;
         /// <summary>
-        /// The documentation of the entity selector can be found [here](https://dt-url.net/apientityselector).
+        /// Learn more about the [Entity selector](https://dt-url.net/apientityselector).
         /// </summary>
         public readonly string? EntitySelector;
         /// <summary>

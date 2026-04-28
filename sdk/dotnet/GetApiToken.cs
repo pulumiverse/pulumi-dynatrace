@@ -23,18 +23,18 @@ namespace Pulumiverse.Dynatrace
         /// using System.Collections.Generic;
         /// using System.Linq;
         /// using Pulumi;
-        /// using Dynatrace = Pulumi.Dynatrace;
+        /// using Dynatrace = Pulumiverse.Dynatrace;
         /// 
         /// return await Deployment.RunAsync(() =&gt; 
         /// {
-        ///     var exampleApiToken = Dynatrace.GetApiToken.Invoke(new()
+        ///     var example = Dynatrace.GetApiToken.Invoke(new()
         ///     {
         ///         Name = "Terraform",
         ///     });
         /// 
         ///     return new Dictionary&lt;string, object?&gt;
         ///     {
-        ///         ["example"] = exampleApiToken,
+        ///         ["example"] = example,
         ///     };
         /// });
         /// ```
@@ -53,18 +53,18 @@ namespace Pulumiverse.Dynatrace
         /// using System.Collections.Generic;
         /// using System.Linq;
         /// using Pulumi;
-        /// using Dynatrace = Pulumi.Dynatrace;
+        /// using Dynatrace = Pulumiverse.Dynatrace;
         /// 
         /// return await Deployment.RunAsync(() =&gt; 
         /// {
-        ///     var exampleApiToken = Dynatrace.GetApiToken.Invoke(new()
+        ///     var example = Dynatrace.GetApiToken.Invoke(new()
         ///     {
         ///         Name = "Terraform",
         ///     });
         /// 
         ///     return new Dictionary&lt;string, object?&gt;
         ///     {
-        ///         ["example"] = exampleApiToken,
+        ///         ["example"] = example,
         ///     };
         /// });
         /// ```
@@ -83,18 +83,18 @@ namespace Pulumiverse.Dynatrace
         /// using System.Collections.Generic;
         /// using System.Linq;
         /// using Pulumi;
-        /// using Dynatrace = Pulumi.Dynatrace;
+        /// using Dynatrace = Pulumiverse.Dynatrace;
         /// 
         /// return await Deployment.RunAsync(() =&gt; 
         /// {
-        ///     var exampleApiToken = Dynatrace.GetApiToken.Invoke(new()
+        ///     var example = Dynatrace.GetApiToken.Invoke(new()
         ///     {
         ///         Name = "Terraform",
         ///     });
         /// 
         ///     return new Dictionary&lt;string, object?&gt;
         ///     {
-        ///         ["example"] = exampleApiToken,
+        ///         ["example"] = example,
         ///     };
         /// });
         /// ```

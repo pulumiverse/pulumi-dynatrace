@@ -12,6 +12,19 @@ import (
 	"github.com/pulumiverse/pulumi-dynatrace/sdk/go/dynatrace/internal"
 )
 
+// > This resource requires the API token scopes **Read settings** (`settings.read`) and **Write settings** (`settings.write`)
+//
+// ## Dynatrace Documentation
+//
+// - Configure first-party, third-party, and CDN resource detection for web applications - https://www.dynatrace.com/support/help/how-to-use-dynatrace/real-user-monitoring/setup-and-configuration/web-applications/additional-configuration/configure-third-party-and-cdn-content-detection-web
+//
+// - Settings API - https://www.dynatrace.com/support/help/dynatrace-api/environment-api/settings (schemaId: `builtin:rum.provider-breakdown`)
+//
+// ## Export Example Usage
+//
+// - `terraform-provider-dynatrace -export RumProviderBreakdown` downloads all existing provider breakdown configuration
+//
+// The full documentation of the export feature is available [here](https://dt-url.net/h203qmc).
 type RumProviderBreakdown struct {
 	pulumi.CustomResourceState
 

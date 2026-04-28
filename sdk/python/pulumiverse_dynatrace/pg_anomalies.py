@@ -25,6 +25,7 @@ class PgAnomaliesArgs:
                  availability: Optional[pulumi.Input['PgAnomaliesAvailabilityArgs']] = None):
         """
         The set of arguments for constructing a PgAnomalies resource.
+
         :param pulumi.Input[_builtins.str] pg_id: The ID of the process group
         :param pulumi.Input['PgAnomaliesAvailabilityArgs'] availability: Configuration of the availability monitoring for the process group.
         """
@@ -64,6 +65,7 @@ class _PgAnomaliesState:
                  pg_id: Optional[pulumi.Input[_builtins.str]] = None):
         """
         Input properties used for looking up and filtering PgAnomalies resources.
+
         :param pulumi.Input['PgAnomaliesAvailabilityArgs'] availability: Configuration of the availability monitoring for the process group.
         :param pulumi.Input[_builtins.str] pg_id: The ID of the process group
         """
@@ -107,7 +109,23 @@ class PgAnomalies(pulumi.CustomResource):
                  pg_id: Optional[pulumi.Input[_builtins.str]] = None,
                  __props__=None):
         """
-        Create a PgAnomalies resource with the given unique name, props, and options.
+        !> This resource is utilizing an older API endpoint, please use PgAlerting instead.
+
+        > This resource requires the API token scopes **Read configuration** (`ReadConfig`) and **Write configuration** (`WriteConfig`)
+
+        ## Dynatrace Documentation
+
+        - Process groups - https://www.dynatrace.com/support/help/how-to-use-dynatrace/process-groups
+
+        - Anomaly detection API - Process groups - https://www.dynatrace.com/support/help/dynatrace-api/configuration-api/anomaly-detection-api/anomaly-detection-api-process-groups
+
+        ## Export Example Usage
+
+        - `terraform-provider-dynatrace -export PgAnomalies` downloads all existing process group detection configuration
+
+        The full documentation of the export feature is available [here](https://dt-url.net/h203qmc).
+
+
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[Union['PgAnomaliesAvailabilityArgs', 'PgAnomaliesAvailabilityArgsDict']] availability: Configuration of the availability monitoring for the process group.
@@ -120,7 +138,23 @@ class PgAnomalies(pulumi.CustomResource):
                  args: PgAnomaliesArgs,
                  opts: Optional[pulumi.ResourceOptions] = None):
         """
-        Create a PgAnomalies resource with the given unique name, props, and options.
+        !> This resource is utilizing an older API endpoint, please use PgAlerting instead.
+
+        > This resource requires the API token scopes **Read configuration** (`ReadConfig`) and **Write configuration** (`WriteConfig`)
+
+        ## Dynatrace Documentation
+
+        - Process groups - https://www.dynatrace.com/support/help/how-to-use-dynatrace/process-groups
+
+        - Anomaly detection API - Process groups - https://www.dynatrace.com/support/help/dynatrace-api/configuration-api/anomaly-detection-api/anomaly-detection-api-process-groups
+
+        ## Export Example Usage
+
+        - `terraform-provider-dynatrace -export PgAnomalies` downloads all existing process group detection configuration
+
+        The full documentation of the export feature is available [here](https://dt-url.net/h203qmc).
+
+
         :param str resource_name: The name of the resource.
         :param PgAnomaliesArgs args: The arguments to use to populate this resource's properties.
         :param pulumi.ResourceOptions opts: Options for the resource.

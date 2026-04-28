@@ -24,6 +24,7 @@ class OpenpipelineV2EventsSecurityRoutingArgs:
                  routing_entries: Optional[pulumi.Input['OpenpipelineV2EventsSecurityRoutingRoutingEntriesArgs']] = None):
         """
         The set of arguments for constructing a OpenpipelineV2EventsSecurityRouting resource.
+
         :param pulumi.Input['OpenpipelineV2EventsSecurityRoutingRoutingEntriesArgs'] routing_entries: Routing for pipelines
         """
         if routing_entries is not None:
@@ -48,6 +49,7 @@ class _OpenpipelineV2EventsSecurityRoutingState:
                  routing_entries: Optional[pulumi.Input['OpenpipelineV2EventsSecurityRoutingRoutingEntriesArgs']] = None):
         """
         Input properties used for looking up and filtering OpenpipelineV2EventsSecurityRouting resources.
+
         :param pulumi.Input['OpenpipelineV2EventsSecurityRoutingRoutingEntriesArgs'] routing_entries: Routing for pipelines
         """
         if routing_entries is not None:
@@ -75,7 +77,40 @@ class OpenpipelineV2EventsSecurityRouting(pulumi.CustomResource):
                  routing_entries: Optional[pulumi.Input[Union['OpenpipelineV2EventsSecurityRoutingRoutingEntriesArgs', 'OpenpipelineV2EventsSecurityRoutingRoutingEntriesArgsDict']]] = None,
                  __props__=None):
         """
-        Create a OpenpipelineV2EventsSecurityRouting resource with the given unique name, props, and options.
+        !> Deploying an OpenPipeline routing configuration will overwrite the existing one of the same kind, causing any manual changes made in the web UI or other routing configurations managed by Terraform or Monaco to be lost. Ensure all routing configurations of the same kind are defined within a single Terraform or Monaco configuration to prevent data loss.
+
+        > This resource requires the API token scopes **Read settings** (`settings.read`) and **Write settings** (`settings.write`)
+
+        > This resource requires the OAuth scopes **Read settings** (`settings:objects:read`) and **Write settings** (`settings:objects:write`)
+
+        ## Dynatrace Documentation
+
+        - OpenPipeline - https://docs.dynatrace.com/docs/platform/openpipeline
+
+        ## Export Example Usage
+
+        - `terraform-provider-dynatrace -export OpenpipelineV2EventsSecurityRouting` downloads all existing OpenPipeline definitions for events security routing
+
+        The full documentation of the export feature is available [here](https://dt-url.net/h203qmc).
+
+        ## Resource Example Usage
+
+        ```python
+        import pulumi
+        import pulumiverse_dynatrace as dynatrace
+
+        routing = dynatrace.OpenpipelineV2EventsSecurityRouting("routing", routing_entries={
+            "routing_entries": [{
+                "enabled": True,
+                "pipeline_type": "builtin",
+                "builtin_pipeline_id": "default",
+                "matcher": "not matchesPhrase(record.title, \\"Warning\\")",
+                "description": "Default route",
+            }],
+        })
+        ```
+
+
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[Union['OpenpipelineV2EventsSecurityRoutingRoutingEntriesArgs', 'OpenpipelineV2EventsSecurityRoutingRoutingEntriesArgsDict']] routing_entries: Routing for pipelines
@@ -87,7 +122,40 @@ class OpenpipelineV2EventsSecurityRouting(pulumi.CustomResource):
                  args: Optional[OpenpipelineV2EventsSecurityRoutingArgs] = None,
                  opts: Optional[pulumi.ResourceOptions] = None):
         """
-        Create a OpenpipelineV2EventsSecurityRouting resource with the given unique name, props, and options.
+        !> Deploying an OpenPipeline routing configuration will overwrite the existing one of the same kind, causing any manual changes made in the web UI or other routing configurations managed by Terraform or Monaco to be lost. Ensure all routing configurations of the same kind are defined within a single Terraform or Monaco configuration to prevent data loss.
+
+        > This resource requires the API token scopes **Read settings** (`settings.read`) and **Write settings** (`settings.write`)
+
+        > This resource requires the OAuth scopes **Read settings** (`settings:objects:read`) and **Write settings** (`settings:objects:write`)
+
+        ## Dynatrace Documentation
+
+        - OpenPipeline - https://docs.dynatrace.com/docs/platform/openpipeline
+
+        ## Export Example Usage
+
+        - `terraform-provider-dynatrace -export OpenpipelineV2EventsSecurityRouting` downloads all existing OpenPipeline definitions for events security routing
+
+        The full documentation of the export feature is available [here](https://dt-url.net/h203qmc).
+
+        ## Resource Example Usage
+
+        ```python
+        import pulumi
+        import pulumiverse_dynatrace as dynatrace
+
+        routing = dynatrace.OpenpipelineV2EventsSecurityRouting("routing", routing_entries={
+            "routing_entries": [{
+                "enabled": True,
+                "pipeline_type": "builtin",
+                "builtin_pipeline_id": "default",
+                "matcher": "not matchesPhrase(record.title, \\"Warning\\")",
+                "description": "Default route",
+            }],
+        })
+        ```
+
+
         :param str resource_name: The name of the resource.
         :param OpenpipelineV2EventsSecurityRoutingArgs args: The arguments to use to populate this resource's properties.
         :param pulumi.ResourceOptions opts: Options for the resource.

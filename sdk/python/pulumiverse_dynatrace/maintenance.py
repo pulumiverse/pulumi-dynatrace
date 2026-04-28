@@ -28,6 +28,7 @@ class MaintenanceArgs:
                  legacy_id: Optional[pulumi.Input[_builtins.str]] = None):
         """
         The set of arguments for constructing a Maintenance resource.
+
         :param pulumi.Input[_builtins.bool] enabled: This setting is enabled (`true`) or disabled (`false`)
         :param pulumi.Input['MaintenanceGeneralPropertiesArgs'] general_properties: The general properties of the maintenance window
         :param pulumi.Input['MaintenanceScheduleArgs'] schedule: The schedule of the maintenance window
@@ -115,6 +116,7 @@ class _MaintenanceState:
                  schedule: Optional[pulumi.Input['MaintenanceScheduleArgs']] = None):
         """
         Input properties used for looking up and filtering Maintenance resources.
+
         :param pulumi.Input[_builtins.bool] enabled: This setting is enabled (`true`) or disabled (`false`)
         :param pulumi.Input['MaintenanceFiltersArgs'] filters: ## Filters
                Add filters to limit the scope of maintenance to only select matching entities. If no filter is defined, the maintenance window is valid for the whole environment. Each filter is evaluated separately (**OR**).
@@ -208,7 +210,21 @@ class Maintenance(pulumi.CustomResource):
                  schedule: Optional[pulumi.Input[Union['MaintenanceScheduleArgs', 'MaintenanceScheduleArgsDict']]] = None,
                  __props__=None):
         """
-        Create a Maintenance resource with the given unique name, props, and options.
+        > This resource requires the API token scopes **Read settings** (`settings.read`) and **Write settings** (`settings.write`)
+
+        ## Dynatrace Documentation
+
+        - Maintenance windows - https://www.dynatrace.com/support/help/how-to-use-dynatrace/problem-detection-and-analysis/notifications-and-alerting/maintenance-windows
+
+        - Settings API - https://www.dynatrace.com/support/help/dynatrace-api/environment-api/settings (schemaId: `builtin:alerting.maintenance-window`)
+
+        ## Export Example Usage
+
+        - `terraform-provider-dynatrace -export Maintenance` downloads all existing maintenance window configuration
+
+        The full documentation of the export feature is available [here](https://dt-url.net/h203qmc).
+
+
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[_builtins.bool] enabled: This setting is enabled (`true`) or disabled (`false`)
@@ -225,7 +241,21 @@ class Maintenance(pulumi.CustomResource):
                  args: MaintenanceArgs,
                  opts: Optional[pulumi.ResourceOptions] = None):
         """
-        Create a Maintenance resource with the given unique name, props, and options.
+        > This resource requires the API token scopes **Read settings** (`settings.read`) and **Write settings** (`settings.write`)
+
+        ## Dynatrace Documentation
+
+        - Maintenance windows - https://www.dynatrace.com/support/help/how-to-use-dynatrace/problem-detection-and-analysis/notifications-and-alerting/maintenance-windows
+
+        - Settings API - https://www.dynatrace.com/support/help/dynatrace-api/environment-api/settings (schemaId: `builtin:alerting.maintenance-window`)
+
+        ## Export Example Usage
+
+        - `terraform-provider-dynatrace -export Maintenance` downloads all existing maintenance window configuration
+
+        The full documentation of the export feature is available [here](https://dt-url.net/h203qmc).
+
+
         :param str resource_name: The name of the resource.
         :param MaintenanceArgs args: The arguments to use to populate this resource's properties.
         :param pulumi.ResourceOptions opts: Options for the resource.

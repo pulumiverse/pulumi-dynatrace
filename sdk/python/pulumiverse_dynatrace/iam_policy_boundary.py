@@ -23,6 +23,7 @@ class IamPolicyBoundaryArgs:
                  name: Optional[pulumi.Input[_builtins.str]] = None):
         """
         The set of arguments for constructing a IamPolicyBoundary resource.
+
         :param pulumi.Input[_builtins.str] query: The boundary query
         :param pulumi.Input[_builtins.str] name: The name of the policy
         """
@@ -62,6 +63,7 @@ class _IamPolicyBoundaryState:
                  query: Optional[pulumi.Input[_builtins.str]] = None):
         """
         Input properties used for looking up and filtering IamPolicyBoundary resources.
+
         :param pulumi.Input[_builtins.str] name: The name of the policy
         :param pulumi.Input[_builtins.str] query: The boundary query
         """
@@ -123,19 +125,23 @@ class IamPolicyBoundary(pulumi.CustomResource):
         import pulumi
         import pulumiverse_dynatrace as dynatrace
 
-        this_iam_policy_boundary = dynatrace.IamPolicyBoundary("thisIamPolicyBoundary", query="environment:management-zone startsWith \\"[Foo]\\";")
-        this_iam_group = dynatrace.IamGroup("thisIamGroup")
-        this_iam_policy = dynatrace.IamPolicy("thisIamPolicy",
+        this = dynatrace.IamPolicyBoundary("this",
+            name="Foo",
+            query="environment:management-zone startsWith \\"[Foo]\\";")
+        this_iam_group = dynatrace.IamGroup("this", name="my-group-name")
+        this_iam_policy = dynatrace.IamPolicy("this",
+            name="this",
             account="########-####-####-####-############",
             statement_query="ALLOW settings:objects:read, settings:schemas:read WHERE settings:schemaId = \\"#########\\";")
-        this_iam_policy_bindings_v2 = dynatrace.IamPolicyBindingsV2("thisIamPolicyBindingsV2",
+        this_iam_policy_bindings_v2 = dynatrace.IamPolicyBindingsV2("this",
             environment="########",
             group=this_iam_group.id,
             policies=[{
                 "id": this_iam_policy.id,
-                "boundaries": [this_iam_policy_boundary.id],
+                "boundaries": [this.id],
             }])
         ```
+
 
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
@@ -167,19 +173,23 @@ class IamPolicyBoundary(pulumi.CustomResource):
         import pulumi
         import pulumiverse_dynatrace as dynatrace
 
-        this_iam_policy_boundary = dynatrace.IamPolicyBoundary("thisIamPolicyBoundary", query="environment:management-zone startsWith \\"[Foo]\\";")
-        this_iam_group = dynatrace.IamGroup("thisIamGroup")
-        this_iam_policy = dynatrace.IamPolicy("thisIamPolicy",
+        this = dynatrace.IamPolicyBoundary("this",
+            name="Foo",
+            query="environment:management-zone startsWith \\"[Foo]\\";")
+        this_iam_group = dynatrace.IamGroup("this", name="my-group-name")
+        this_iam_policy = dynatrace.IamPolicy("this",
+            name="this",
             account="########-####-####-####-############",
             statement_query="ALLOW settings:objects:read, settings:schemas:read WHERE settings:schemaId = \\"#########\\";")
-        this_iam_policy_bindings_v2 = dynatrace.IamPolicyBindingsV2("thisIamPolicyBindingsV2",
+        this_iam_policy_bindings_v2 = dynatrace.IamPolicyBindingsV2("this",
             environment="########",
             group=this_iam_group.id,
             policies=[{
                 "id": this_iam_policy.id,
-                "boundaries": [this_iam_policy_boundary.id],
+                "boundaries": [this.id],
             }])
         ```
+
 
         :param str resource_name: The name of the resource.
         :param IamPolicyBoundaryArgs args: The arguments to use to populate this resource's properties.

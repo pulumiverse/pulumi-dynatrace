@@ -31,6 +31,7 @@ class IssueTrackingArgs:
                  token: Optional[pulumi.Input[_builtins.str]] = None):
         """
         The set of arguments for constructing a IssueTracking resource.
+
         :param pulumi.Input[_builtins.bool] enabled: This setting is enabled (`true`) or disabled (`false`)
         :param pulumi.Input[_builtins.str] issuelabel: Set a label to identify these issues, for example, `release_blocker` or `non-critical`
         :param pulumi.Input[_builtins.str] issuequery: You can use the following placeholders to automatically insert values from the **Release monitoring** page in your query: `{NAME}`, `{VERSION}`, `{STAGE}`, `{PRODUCT}`.
@@ -192,6 +193,7 @@ class _IssueTrackingState:
                  username: Optional[pulumi.Input[_builtins.str]] = None):
         """
         Input properties used for looking up and filtering IssueTracking resources.
+
         :param pulumi.Input[_builtins.bool] enabled: This setting is enabled (`true`) or disabled (`false`)
         :param pulumi.Input[_builtins.str] insert_after: Because this resource allows for ordering you may specify the ID of the resource instance that comes before this instance regarding order. If not specified when creating the setting will be added to the end of the list. If not specified during update the order will remain untouched
         :param pulumi.Input[_builtins.str] issuelabel: Set a label to identify these issues, for example, `release_blocker` or `non-critical`
@@ -363,7 +365,21 @@ class IssueTracking(pulumi.CustomResource):
                  username: Optional[pulumi.Input[_builtins.str]] = None,
                  __props__=None):
         """
-        Create a IssueTracking resource with the given unique name, props, and options.
+        > This resource requires the API token scopes **Read settings** (`settings.read`) and **Write settings** (`settings.write`)
+
+        ## Dynatrace Documentation
+
+        - Issue-tracking integration - https://www.dynatrace.com/support/help/platform-modules/cloud-automation/release-monitoring/issue-tracking-integration
+
+        - Settings API - https://www.dynatrace.com/support/help/dynatrace-api/environment-api/settings (schemaId: `builtin:issue-tracking.integration`)
+
+        ## Export Example Usage
+
+        - `terraform-provider-dynatrace -export IssueTracking` downloads all existing issue-tracking integrations
+
+        The full documentation of the export feature is available [here](https://dt-url.net/h203qmc).
+
+
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[_builtins.bool] enabled: This setting is enabled (`true`) or disabled (`false`)
@@ -384,7 +400,21 @@ class IssueTracking(pulumi.CustomResource):
                  args: IssueTrackingArgs,
                  opts: Optional[pulumi.ResourceOptions] = None):
         """
-        Create a IssueTracking resource with the given unique name, props, and options.
+        > This resource requires the API token scopes **Read settings** (`settings.read`) and **Write settings** (`settings.write`)
+
+        ## Dynatrace Documentation
+
+        - Issue-tracking integration - https://www.dynatrace.com/support/help/platform-modules/cloud-automation/release-monitoring/issue-tracking-integration
+
+        - Settings API - https://www.dynatrace.com/support/help/dynatrace-api/environment-api/settings (schemaId: `builtin:issue-tracking.integration`)
+
+        ## Export Example Usage
+
+        - `terraform-provider-dynatrace -export IssueTracking` downloads all existing issue-tracking integrations
+
+        The full documentation of the export feature is available [here](https://dt-url.net/h203qmc).
+
+
         :param str resource_name: The name of the resource.
         :param IssueTrackingArgs args: The arguments to use to populate this resource's properties.
         :param pulumi.ResourceOptions opts: Options for the resource.

@@ -15,7 +15,7 @@ namespace Pulumiverse.Dynatrace.Outputs
     public sealed class LogTimestampMatchersMatcher
     {
         /// <summary>
-        /// Possible Values: `Container_name`, `Dt_entity_container_group`, `Dt_entity_process_group`, `Host_tag`, `K8s_container_name`, `K8s_deployment_name`, `K8s_namespace_name`, `K8s_pod_annotation`, `K8s_pod_label`, `K8s_workload_kind`, `K8s_workload_name`, `Log_source`, `Log_source_origin`, `Process_technology`
+        /// Possible Values: `container.name`, `dt.entity.container_group`, `dt.entity.process_group`, `host.tag`, `k8s.container.name`, `k8s.deployment.name`, `k8s.namespace.name`, `k8s.pod.annotation`, `k8s.pod.label`, `k8s.workload.kind`, `k8s.workload.name`, `log.source`, `log.source.origin`, `process.technology`
         /// </summary>
         public readonly string Attribute;
         /// <summary>

@@ -6,6 +6,21 @@ import * as inputs from "./types/input";
 import * as outputs from "./types/output";
 import * as utilities from "./utilities";
 
+/**
+ * > This resource requires the API token scopes **Read settings** (`settings.read`) and **Write settings** (`settings.write`)
+ *
+ * ## Dynatrace Documentation
+ *
+ * - Process Availability - https://www.dynatrace.com/support/help/how-to-use-dynatrace/infrastructure-monitoring/hosts/monitoring/process-availability
+ *
+ * - Settings API - https://www.dynatrace.com/support/help/dynatrace-api/environment-api/settings (schemaId: `builtin:processavailability`)
+ *
+ * ## Export Example Usage
+ *
+ * - `terraform-provider-dynatrace -export dynatrace.ProcessAvailability` downloads all existing process availability configuration
+ *
+ * The full documentation of the export feature is available [here](https://dt-url.net/h203qmc).
+ */
 export class ProcessAvailability extends pulumi.CustomResource {
     /**
      * Get an existing ProcessAvailability resource's state with the given name, ID, and optional extra
@@ -43,11 +58,11 @@ export class ProcessAvailability extends pulumi.CustomResource {
      */
     declare public readonly insertAfter: pulumi.Output<string>;
     /**
-     * Set of additional key-value properties to be attached to the triggered event.
+     * Set of additional key-value properties to be attached to the triggered event. You can retrieve the available property keys using the [Events API v2](https://dt-url.net/9622g1w). Additionally any Host resource attribute can be dynamically substituted (agent 1.325+).
      */
     declare public readonly metadata: pulumi.Output<outputs.ProcessAvailabilityMetadata | undefined>;
     /**
-     * Specify a minimum number of processes matching the monitoring rule. If it's not satisfied, an alert will open.
+     * Specify a minimum number of processes matching the monitoring rule. An alert is triggered if any host falls below this threshold.
      */
     declare public readonly minimumProcesses: pulumi.Output<number | undefined>;
     /**
@@ -55,7 +70,7 @@ export class ProcessAvailability extends pulumi.CustomResource {
      */
     declare public readonly name: pulumi.Output<string>;
     /**
-     * Select the operating systems on which the monitoring rule should be applied.
+     * Select the operating systems on which the monitoring rule should be applied. Possible Values: `AIX`, `LINUX`, `WINDOWS`
      */
     declare public readonly operatingSystems: pulumi.Output<string[] | undefined>;
     /**
@@ -120,11 +135,11 @@ export interface ProcessAvailabilityState {
      */
     insertAfter?: pulumi.Input<string>;
     /**
-     * Set of additional key-value properties to be attached to the triggered event.
+     * Set of additional key-value properties to be attached to the triggered event. You can retrieve the available property keys using the [Events API v2](https://dt-url.net/9622g1w). Additionally any Host resource attribute can be dynamically substituted (agent 1.325+).
      */
     metadata?: pulumi.Input<inputs.ProcessAvailabilityMetadata>;
     /**
-     * Specify a minimum number of processes matching the monitoring rule. If it's not satisfied, an alert will open.
+     * Specify a minimum number of processes matching the monitoring rule. An alert is triggered if any host falls below this threshold.
      */
     minimumProcesses?: pulumi.Input<number>;
     /**
@@ -132,7 +147,7 @@ export interface ProcessAvailabilityState {
      */
     name?: pulumi.Input<string>;
     /**
-     * Select the operating systems on which the monitoring rule should be applied.
+     * Select the operating systems on which the monitoring rule should be applied. Possible Values: `AIX`, `LINUX`, `WINDOWS`
      */
     operatingSystems?: pulumi.Input<pulumi.Input<string>[]>;
     /**
@@ -158,11 +173,11 @@ export interface ProcessAvailabilityArgs {
      */
     insertAfter?: pulumi.Input<string>;
     /**
-     * Set of additional key-value properties to be attached to the triggered event.
+     * Set of additional key-value properties to be attached to the triggered event. You can retrieve the available property keys using the [Events API v2](https://dt-url.net/9622g1w). Additionally any Host resource attribute can be dynamically substituted (agent 1.325+).
      */
     metadata?: pulumi.Input<inputs.ProcessAvailabilityMetadata>;
     /**
-     * Specify a minimum number of processes matching the monitoring rule. If it's not satisfied, an alert will open.
+     * Specify a minimum number of processes matching the monitoring rule. An alert is triggered if any host falls below this threshold.
      */
     minimumProcesses?: pulumi.Input<number>;
     /**
@@ -170,7 +185,7 @@ export interface ProcessAvailabilityArgs {
      */
     name?: pulumi.Input<string>;
     /**
-     * Select the operating systems on which the monitoring rule should be applied.
+     * Select the operating systems on which the monitoring rule should be applied. Possible Values: `AIX`, `LINUX`, `WINDOWS`
      */
     operatingSystems?: pulumi.Input<pulumi.Input<string>[]>;
     /**

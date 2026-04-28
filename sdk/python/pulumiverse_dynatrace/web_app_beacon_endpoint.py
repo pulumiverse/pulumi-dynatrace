@@ -25,6 +25,7 @@ class WebAppBeaconEndpointArgs:
                  use_cors: Optional[pulumi.Input[_builtins.bool]] = None):
         """
         The set of arguments for constructing a WebAppBeaconEndpoint resource.
+
         :param pulumi.Input[_builtins.str] application_id: The scope of this setting
         :param pulumi.Input[_builtins.str] type: Possible Values: `ACTIVEGATE`, `DEFAULT_CONFIG`, `ONEAGENT`
         :param pulumi.Input[_builtins.str] url: You can specify either path segments or an absolute URL.
@@ -95,6 +96,7 @@ class _WebAppBeaconEndpointState:
                  use_cors: Optional[pulumi.Input[_builtins.bool]] = None):
         """
         Input properties used for looking up and filtering WebAppBeaconEndpoint resources.
+
         :param pulumi.Input[_builtins.str] application_id: The scope of this setting
         :param pulumi.Input[_builtins.str] type: Possible Values: `ACTIVEGATE`, `DEFAULT_CONFIG`, `ONEAGENT`
         :param pulumi.Input[_builtins.str] url: You can specify either path segments or an absolute URL.
@@ -170,7 +172,21 @@ class WebAppBeaconEndpoint(pulumi.CustomResource):
                  use_cors: Optional[pulumi.Input[_builtins.bool]] = None,
                  __props__=None):
         """
-        Create a WebAppBeaconEndpoint resource with the given unique name, props, and options.
+        > This resource requires the API token scopes **Read settings** (`settings.read`) and **Write settings** (`settings.write`)
+
+        ## Dynatrace Documentation
+
+        - Configure beacon endpoint for web applications - https://docs.dynatrace.com/docs/platform-modules/digital-experience/web-applications/troubleshooting/beacon-forwarder
+
+        - Settings API - https://www.dynatrace.com/support/help/dynatrace-api/environment-api/settings (schemaId: `builtin:rum.web.beacon-endpoint`)
+
+        ## Export Example Usage
+
+        - `terraform-provider-dynatrace -export dynatrace_web_beacon_endpoint` downloads existing beacon endpoint configuration
+
+        The full documentation of the export feature is available [here](https://dt-url.net/h203qmc).
+
+
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[_builtins.str] application_id: The scope of this setting
@@ -185,7 +201,21 @@ class WebAppBeaconEndpoint(pulumi.CustomResource):
                  args: WebAppBeaconEndpointArgs,
                  opts: Optional[pulumi.ResourceOptions] = None):
         """
-        Create a WebAppBeaconEndpoint resource with the given unique name, props, and options.
+        > This resource requires the API token scopes **Read settings** (`settings.read`) and **Write settings** (`settings.write`)
+
+        ## Dynatrace Documentation
+
+        - Configure beacon endpoint for web applications - https://docs.dynatrace.com/docs/platform-modules/digital-experience/web-applications/troubleshooting/beacon-forwarder
+
+        - Settings API - https://www.dynatrace.com/support/help/dynatrace-api/environment-api/settings (schemaId: `builtin:rum.web.beacon-endpoint`)
+
+        ## Export Example Usage
+
+        - `terraform-provider-dynatrace -export dynatrace_web_beacon_endpoint` downloads existing beacon endpoint configuration
+
+        The full documentation of the export feature is available [here](https://dt-url.net/h203qmc).
+
+
         :param str resource_name: The name of the resource.
         :param WebAppBeaconEndpointArgs args: The arguments to use to populate this resource's properties.
         :param pulumi.ResourceOptions opts: Options for the resource.

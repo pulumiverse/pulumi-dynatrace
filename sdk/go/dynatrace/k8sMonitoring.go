@@ -12,6 +12,19 @@ import (
 	"github.com/pulumiverse/pulumi-dynatrace/sdk/go/dynatrace/internal"
 )
 
+// > This resource requires the API token scopes **Read settings** (`settings.read`) and **Write settings** (`settings.write`)
+//
+// ## Dynatrace Documentation
+//
+// - Kubernetes/OpenShift monitoring - https://www.dynatrace.com/support/help/how-to-use-dynatrace/infrastructure-monitoring/container-platform-monitoring/kubernetes-monitoring
+//
+// - Settings API - https://www.dynatrace.com/support/help/dynatrace-api/environment-api/settings (schemaId: `builtin:cloud.kubernetes.monitoring`)
+//
+// ## Export Example Usage
+//
+// - `terraform-provider-dynatrace -export K8sMonitoring` downloads all existing Kubernetes monitoring settings
+//
+// The full documentation of the export feature is available [here](https://dt-url.net/h203qmc).
 type K8sMonitoring struct {
 	pulumi.CustomResourceState
 

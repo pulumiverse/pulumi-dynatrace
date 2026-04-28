@@ -6,6 +6,50 @@ import * as inputs from "./types/input";
 import * as outputs from "./types/output";
 import * as utilities from "./utilities";
 
+/**
+ * > This resource is excluded by default in the export utility since it requires the feature to be activated, please explicitly specify the resource to retrieve existing configuration.
+ *
+ * > This resource requires the API token scopes **Read security problems** (`securityProblems.read`) and **Write security problems** (`securityProblems.write`)
+ *
+ * ## Dynatrace Documentation
+ *
+ * - Security notifications for vulnerabilities and attacks - https://www.dynatrace.com/support/help/platform-modules/application-security/security-notifications
+ *
+ * - Settings API - https://www.dynatrace.com/support/help/dynatrace-api/environment-api/settings (schemaId: `builtin:appsec.notification-integration`)
+ *
+ * ## Export Example Usage
+ *
+ * - `terraform-provider-dynatrace -export dynatrace.AppsecNotification` downloads all existing security notifications
+ *
+ * The full documentation of the export feature is available [here](https://dt-url.net/h203qmc).
+ *
+ * ## Resource Example Usage
+ *
+ * ```typescript
+ * import * as pulumi from "@pulumi/pulumi";
+ * import * as dynatrace from "@pulumiverse/dynatrace";
+ *
+ * const terraformSecurityProblemWebhookTest = new dynatrace.AppsecNotification("Terraform_Security_Problem_Webhook_Test", {
+ *     type: "WEBHOOK",
+ *     enabled: true,
+ *     displayName: "Terraform Security Problem Webhook Test",
+ *     securityProblemBasedAlertingProfile: "vu9U3hXa3q0AAAABACxidWlsdGluOmFwcHNlYy5ub3RpZmljYXRpb24tYWxlcnRpbmctcHJvZmlsZQAGdGVuYW50AAZ0ZW5hbnQAJDMyMDhkNWMyLTFlZmYtMzk5My1iNjMwLWI0MjQ5N2U4MDQ2Nr7vVN4V2t6t",
+ *     trigger: "SECURITY_PROBLEM",
+ *     securityProblemBasedWebhookPayload: {
+ *         payload: JSON.stringify({
+ *             DavisSecurityScore: "{DavisSecurityScore}",
+ *             SecurityProblemId: "{SecurityProblemId}",
+ *             SecurityProblemUrl: "{SecurityProblemUrl}",
+ *             Severity: "{Severity}",
+ *         }),
+ *     },
+ *     webhookConfiguration: {
+ *         acceptAnyCertificate: false,
+ *         url: "https://www.dynatrace.com",
+ *     },
+ * });
+ * ```
+ */
 export class AppsecNotification extends pulumi.CustomResource {
     /**
      * Get an existing AppsecNotification resource's state with the given name, ID, and optional extra

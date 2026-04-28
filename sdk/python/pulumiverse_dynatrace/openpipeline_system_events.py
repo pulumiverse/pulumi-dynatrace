@@ -26,6 +26,7 @@ class OpenpipelineSystemEventsArgs:
                  routing: Optional[pulumi.Input['OpenpipelineSystemEventsRoutingArgs']] = None):
         """
         The set of arguments for constructing a OpenpipelineSystemEvents resource.
+
         :param pulumi.Input['OpenpipelineSystemEventsEndpointsArgs'] endpoints: List of all ingest sources of the configuration
         :param pulumi.Input['OpenpipelineSystemEventsPipelinesArgs'] pipelines: List of all pipelines of the configuration
         :param pulumi.Input['OpenpipelineSystemEventsRoutingArgs'] routing: Dynamic routing definition
@@ -82,6 +83,7 @@ class _OpenpipelineSystemEventsState:
                  routing: Optional[pulumi.Input['OpenpipelineSystemEventsRoutingArgs']] = None):
         """
         Input properties used for looking up and filtering OpenpipelineSystemEvents resources.
+
         :param pulumi.Input['OpenpipelineSystemEventsEndpointsArgs'] endpoints: List of all ingest sources of the configuration
         :param pulumi.Input['OpenpipelineSystemEventsPipelinesArgs'] pipelines: List of all pipelines of the configuration
         :param pulumi.Input['OpenpipelineSystemEventsRoutingArgs'] routing: Dynamic routing definition
@@ -141,7 +143,68 @@ class OpenpipelineSystemEvents(pulumi.CustomResource):
                  routing: Optional[pulumi.Input[Union['OpenpipelineSystemEventsRoutingArgs', 'OpenpipelineSystemEventsRoutingArgsDict']]] = None,
                  __props__=None):
         """
-        Create a OpenpipelineSystemEvents resource with the given unique name, props, and options.
+        !> This resource API endpoint has been deprecated, please migrate your OpenPipeline configurations and use `dynatrace_openpipeline_v2_system_events_*` instead.
+
+        !> Deploying an OpenPipeline configuration will overwrite the existing one of the same kind, causing any manual changes made in the web UI or other configurations managed by Terraform or Monaco to be lost. Ensure all configurations are defined within a single Terraform or Monaco configuration to prevent data loss.
+
+        > **Dynatrace SaaS only**
+
+        > To utilize this resource, please define the environment variables `DT_CLIENT_ID`, `DT_CLIENT_SECRET`, `DT_ACCOUNT_ID` with an OAuth client including the following permissions: **View OpenPipeline configurations** (`openpipeline:configurations:read`), and **Edit OpenPipeline configurations** (`openpipeline:configurations:write`).
+
+        ## Dynatrace Documentation
+
+        - OpenPipeline - https://docs.dynatrace.com/docs/platform/openpipeline
+
+        ## Export Example Usage
+
+        - `terraform-provider-dynatrace -export OpenpipelineSystemEvents` downloads all existing OpenPipeline definitions for sytem events
+
+        The full documentation of the export feature is available [here](https://dt-url.net/h203qmc).
+
+        ## Resource Example Usage
+
+        ```python
+        import pulumi
+        import pulumiverse_dynatrace as dynatrace
+
+        system_events = dynatrace.OpenpipelineSystemEvents("system_events", pipelines={
+            "pipelines": [{
+                "enabled": True,
+                "display_name": "#name#",
+                "id": "pipeline_Custom_system_events_#name#",
+                "data_extraction": {
+                    "processors": [{
+                        "davis_event_extraction_processor": {
+                            "description": "#name#",
+                            "enabled": True,
+                            "id": "processor_My_Davis_event_#name#",
+                            "matcher": "true",
+                            "properties": [
+                                {
+                                    "key": "event.type",
+                                    "value": "CUSTOM_ALERT",
+                                },
+                                {
+                                    "key": "event.name",
+                                    "value": "test.event",
+                                },
+                                {
+                                    "key": "var",
+                                    "value": "val",
+                                },
+                                {
+                                    "key": "event.description",
+                                    "value": "Some description",
+                                },
+                            ],
+                        },
+                    }],
+                },
+            }],
+        })
+        ```
+
+
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[Union['OpenpipelineSystemEventsEndpointsArgs', 'OpenpipelineSystemEventsEndpointsArgsDict']] endpoints: List of all ingest sources of the configuration
@@ -155,7 +218,68 @@ class OpenpipelineSystemEvents(pulumi.CustomResource):
                  args: Optional[OpenpipelineSystemEventsArgs] = None,
                  opts: Optional[pulumi.ResourceOptions] = None):
         """
-        Create a OpenpipelineSystemEvents resource with the given unique name, props, and options.
+        !> This resource API endpoint has been deprecated, please migrate your OpenPipeline configurations and use `dynatrace_openpipeline_v2_system_events_*` instead.
+
+        !> Deploying an OpenPipeline configuration will overwrite the existing one of the same kind, causing any manual changes made in the web UI or other configurations managed by Terraform or Monaco to be lost. Ensure all configurations are defined within a single Terraform or Monaco configuration to prevent data loss.
+
+        > **Dynatrace SaaS only**
+
+        > To utilize this resource, please define the environment variables `DT_CLIENT_ID`, `DT_CLIENT_SECRET`, `DT_ACCOUNT_ID` with an OAuth client including the following permissions: **View OpenPipeline configurations** (`openpipeline:configurations:read`), and **Edit OpenPipeline configurations** (`openpipeline:configurations:write`).
+
+        ## Dynatrace Documentation
+
+        - OpenPipeline - https://docs.dynatrace.com/docs/platform/openpipeline
+
+        ## Export Example Usage
+
+        - `terraform-provider-dynatrace -export OpenpipelineSystemEvents` downloads all existing OpenPipeline definitions for sytem events
+
+        The full documentation of the export feature is available [here](https://dt-url.net/h203qmc).
+
+        ## Resource Example Usage
+
+        ```python
+        import pulumi
+        import pulumiverse_dynatrace as dynatrace
+
+        system_events = dynatrace.OpenpipelineSystemEvents("system_events", pipelines={
+            "pipelines": [{
+                "enabled": True,
+                "display_name": "#name#",
+                "id": "pipeline_Custom_system_events_#name#",
+                "data_extraction": {
+                    "processors": [{
+                        "davis_event_extraction_processor": {
+                            "description": "#name#",
+                            "enabled": True,
+                            "id": "processor_My_Davis_event_#name#",
+                            "matcher": "true",
+                            "properties": [
+                                {
+                                    "key": "event.type",
+                                    "value": "CUSTOM_ALERT",
+                                },
+                                {
+                                    "key": "event.name",
+                                    "value": "test.event",
+                                },
+                                {
+                                    "key": "var",
+                                    "value": "val",
+                                },
+                                {
+                                    "key": "event.description",
+                                    "value": "Some description",
+                                },
+                            ],
+                        },
+                    }],
+                },
+            }],
+        })
+        ```
+
+
         :param str resource_name: The name of the resource.
         :param OpenpipelineSystemEventsArgs args: The arguments to use to populate this resource's properties.
         :param pulumi.ResourceOptions opts: Options for the resource.

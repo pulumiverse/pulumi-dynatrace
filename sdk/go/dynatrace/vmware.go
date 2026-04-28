@@ -12,6 +12,19 @@ import (
 	"github.com/pulumiverse/pulumi-dynatrace/sdk/go/dynatrace/internal"
 )
 
+// > This resource requires the API token scopes **Read settings** (`settings.read`) and **Write settings** (`settings.write`)
+//
+// ## Dynatrace Documentation
+//
+// - VMware vSphere monitoring - https://www.dynatrace.com/support/help/platform-modules/infrastructure-monitoring/vmware-vsphere-monitoring
+//
+// - Settings API - https://www.dynatrace.com/support/help/dynatrace-api/environment-api/settings (schemaId: `builtin:virtualization.vmware`)
+//
+// ## Export Example Usage
+//
+// - `terraform-provider-dynatrace -export Vmware` downloads all existing VMware configuration
+//
+// The full documentation of the export feature is available [here](https://dt-url.net/h203qmc).
 type Vmware struct {
 	pulumi.CustomResourceState
 

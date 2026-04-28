@@ -26,6 +26,7 @@ class ExtensionExecutionControllerArgs:
                  statsd_active: Optional[pulumi.Input[_builtins.bool]] = None):
         """
         The set of arguments for constructing a ExtensionExecutionController resource.
+
         :param pulumi.Input[_builtins.bool] enabled: This setting is enabled (`true`) or disabled (`false`)
         :param pulumi.Input[_builtins.bool] ingest_active: Enable local HTTP Metric, Log and Event Ingest API
         :param pulumi.Input[_builtins.str] performance_profile: Possible Values: `DEFAULT`, `HIGH`
@@ -113,6 +114,7 @@ class _ExtensionExecutionControllerState:
                  statsd_active: Optional[pulumi.Input[_builtins.bool]] = None):
         """
         Input properties used for looking up and filtering ExtensionExecutionController resources.
+
         :param pulumi.Input[_builtins.bool] enabled: This setting is enabled (`true`) or disabled (`false`)
         :param pulumi.Input[_builtins.bool] ingest_active: Enable local HTTP Metric, Log and Event Ingest API
         :param pulumi.Input[_builtins.str] performance_profile: Possible Values: `DEFAULT`, `HIGH`
@@ -204,7 +206,21 @@ class ExtensionExecutionController(pulumi.CustomResource):
                  statsd_active: Optional[pulumi.Input[_builtins.bool]] = None,
                  __props__=None):
         """
-        Create a ExtensionExecutionController resource with the given unique name, props, and options.
+        > This resource requires the API token scopes **Read settings** (`settings.read`) and **Write settings** (`settings.write`)
+
+        ## Dynatrace Documentation
+
+        - Extensions 2.0 - https://www.dynatrace.com/support/help/extend-dynatrace/extensions20/extensions-concepts
+
+        - Settings API - https://www.dynatrace.com/support/help/dynatrace-api/environment-api/settings (schemaId: `builtin:eec.local`)
+
+        ## Export Example Usage
+
+        - `terraform-provider-dynatrace -export ExtensionExecutionController` downloads all existing Extension Execution Controller configuration
+
+        The full documentation of the export feature is available [here](https://dt-url.net/h203qmc).
+
+
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[_builtins.bool] enabled: This setting is enabled (`true`) or disabled (`false`)
@@ -220,7 +236,21 @@ class ExtensionExecutionController(pulumi.CustomResource):
                  args: ExtensionExecutionControllerArgs,
                  opts: Optional[pulumi.ResourceOptions] = None):
         """
-        Create a ExtensionExecutionController resource with the given unique name, props, and options.
+        > This resource requires the API token scopes **Read settings** (`settings.read`) and **Write settings** (`settings.write`)
+
+        ## Dynatrace Documentation
+
+        - Extensions 2.0 - https://www.dynatrace.com/support/help/extend-dynatrace/extensions20/extensions-concepts
+
+        - Settings API - https://www.dynatrace.com/support/help/dynatrace-api/environment-api/settings (schemaId: `builtin:eec.local`)
+
+        ## Export Example Usage
+
+        - `terraform-provider-dynatrace -export ExtensionExecutionController` downloads all existing Extension Execution Controller configuration
+
+        The full documentation of the export feature is available [here](https://dt-url.net/h203qmc).
+
+
         :param str resource_name: The name of the resource.
         :param ExtensionExecutionControllerArgs args: The arguments to use to populate this resource's properties.
         :param pulumi.ResourceOptions opts: Options for the resource.

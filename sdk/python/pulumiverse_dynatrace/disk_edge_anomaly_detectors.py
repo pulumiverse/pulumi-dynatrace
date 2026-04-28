@@ -32,11 +32,12 @@ class DiskEdgeAnomalyDetectorsArgs:
                  scope: Optional[pulumi.Input[_builtins.str]] = None):
         """
         The set of arguments for constructing a DiskEdgeAnomalyDetectors resource.
+
         :param pulumi.Input[_builtins.bool] enabled: This setting is enabled (`true`) or disabled (`false`)
         :param pulumi.Input[_builtins.str] policy_name: Policy name
         :param pulumi.Input['DiskEdgeAnomalyDetectorsAlertsArgs'] alerts: Alerts
         :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] disk_name_filters: Disk will be included in this policy if **any** of the filters match
-        :param pulumi.Input['DiskEdgeAnomalyDetectorsEventPropertiesArgs'] event_properties: Set of additional key-value properties to be attached to the triggered event.
+        :param pulumi.Input['DiskEdgeAnomalyDetectorsEventPropertiesArgs'] event_properties: Set of additional key-value properties to be attached to the triggered event. You can retrieve the available property keys using the [Events API v2](https://dt-url.net/9622g1w). Additionally any Host resource attribute can be dynamically substituted (agent 1.325+)
         :param pulumi.Input['DiskEdgeAnomalyDetectorsHostMetadataConditionsArgs'] host_metadata_conditions: The policy will be enabled if **all** conditions are met
         :param pulumi.Input[_builtins.str] insert_after: Because this resource allows for ordering you may specify the ID of the resource instance that comes before this instance regarding order. If not specified when creating the setting will be added to the end of the list. If not specified during update the order will remain untouched
         :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] operating_systems: Select the operating systems on which policy should be applied
@@ -111,7 +112,7 @@ class DiskEdgeAnomalyDetectorsArgs:
     @pulumi.getter(name="eventProperties")
     def event_properties(self) -> Optional[pulumi.Input['DiskEdgeAnomalyDetectorsEventPropertiesArgs']]:
         """
-        Set of additional key-value properties to be attached to the triggered event.
+        Set of additional key-value properties to be attached to the triggered event. You can retrieve the available property keys using the [Events API v2](https://dt-url.net/9622g1w). Additionally any Host resource attribute can be dynamically substituted (agent 1.325+)
         """
         return pulumi.get(self, "event_properties")
 
@@ -182,10 +183,11 @@ class _DiskEdgeAnomalyDetectorsState:
                  scope: Optional[pulumi.Input[_builtins.str]] = None):
         """
         Input properties used for looking up and filtering DiskEdgeAnomalyDetectors resources.
+
         :param pulumi.Input['DiskEdgeAnomalyDetectorsAlertsArgs'] alerts: Alerts
         :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] disk_name_filters: Disk will be included in this policy if **any** of the filters match
         :param pulumi.Input[_builtins.bool] enabled: This setting is enabled (`true`) or disabled (`false`)
-        :param pulumi.Input['DiskEdgeAnomalyDetectorsEventPropertiesArgs'] event_properties: Set of additional key-value properties to be attached to the triggered event.
+        :param pulumi.Input['DiskEdgeAnomalyDetectorsEventPropertiesArgs'] event_properties: Set of additional key-value properties to be attached to the triggered event. You can retrieve the available property keys using the [Events API v2](https://dt-url.net/9622g1w). Additionally any Host resource attribute can be dynamically substituted (agent 1.325+)
         :param pulumi.Input['DiskEdgeAnomalyDetectorsHostMetadataConditionsArgs'] host_metadata_conditions: The policy will be enabled if **all** conditions are met
         :param pulumi.Input[_builtins.str] insert_after: Because this resource allows for ordering you may specify the ID of the resource instance that comes before this instance regarding order. If not specified when creating the setting will be added to the end of the list. If not specified during update the order will remain untouched
         :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] operating_systems: Select the operating systems on which policy should be applied
@@ -251,7 +253,7 @@ class _DiskEdgeAnomalyDetectorsState:
     @pulumi.getter(name="eventProperties")
     def event_properties(self) -> Optional[pulumi.Input['DiskEdgeAnomalyDetectorsEventPropertiesArgs']]:
         """
-        Set of additional key-value properties to be attached to the triggered event.
+        Set of additional key-value properties to be attached to the triggered event. You can retrieve the available property keys using the [Events API v2](https://dt-url.net/9622g1w). Additionally any Host resource attribute can be dynamically substituted (agent 1.325+)
         """
         return pulumi.get(self, "event_properties")
 
@@ -337,13 +339,27 @@ class DiskEdgeAnomalyDetectors(pulumi.CustomResource):
                  scope: Optional[pulumi.Input[_builtins.str]] = None,
                  __props__=None):
         """
-        Create a DiskEdgeAnomalyDetectors resource with the given unique name, props, and options.
+        > This resource requires the API token scopes **Read settings** (`settings.read`) and **Write settings** (`settings.write`)
+
+        ## Dynatrace Documentation
+
+        - Adjust the sensitivity of anomaly detection for infrastructure - https://www.dynatrace.com/support/help/how-to-use-dynatrace/problem-detection-and-analysis/problem-detection/adjust-sensitivity-anomaly-detection/adjust-sensitivity-infastructure
+
+        - Settings API - https://www.dynatrace.com/support/help/dynatrace-api/environment-api/settings (schemaId: `builtin:infrastructure.disk.edge.anomaly-detectors`)
+
+        ## Export Example Usage
+
+        - `terraform-provider-dynatrace -export DiskEdgeAnomalyDetectors` downloads all existing disk edge anomaly detection configuration
+
+        The full documentation of the export feature is available [here](https://dt-url.net/h203qmc).
+
+
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[Union['DiskEdgeAnomalyDetectorsAlertsArgs', 'DiskEdgeAnomalyDetectorsAlertsArgsDict']] alerts: Alerts
         :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] disk_name_filters: Disk will be included in this policy if **any** of the filters match
         :param pulumi.Input[_builtins.bool] enabled: This setting is enabled (`true`) or disabled (`false`)
-        :param pulumi.Input[Union['DiskEdgeAnomalyDetectorsEventPropertiesArgs', 'DiskEdgeAnomalyDetectorsEventPropertiesArgsDict']] event_properties: Set of additional key-value properties to be attached to the triggered event.
+        :param pulumi.Input[Union['DiskEdgeAnomalyDetectorsEventPropertiesArgs', 'DiskEdgeAnomalyDetectorsEventPropertiesArgsDict']] event_properties: Set of additional key-value properties to be attached to the triggered event. You can retrieve the available property keys using the [Events API v2](https://dt-url.net/9622g1w). Additionally any Host resource attribute can be dynamically substituted (agent 1.325+)
         :param pulumi.Input[Union['DiskEdgeAnomalyDetectorsHostMetadataConditionsArgs', 'DiskEdgeAnomalyDetectorsHostMetadataConditionsArgsDict']] host_metadata_conditions: The policy will be enabled if **all** conditions are met
         :param pulumi.Input[_builtins.str] insert_after: Because this resource allows for ordering you may specify the ID of the resource instance that comes before this instance regarding order. If not specified when creating the setting will be added to the end of the list. If not specified during update the order will remain untouched
         :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] operating_systems: Select the operating systems on which policy should be applied
@@ -357,7 +373,21 @@ class DiskEdgeAnomalyDetectors(pulumi.CustomResource):
                  args: DiskEdgeAnomalyDetectorsArgs,
                  opts: Optional[pulumi.ResourceOptions] = None):
         """
-        Create a DiskEdgeAnomalyDetectors resource with the given unique name, props, and options.
+        > This resource requires the API token scopes **Read settings** (`settings.read`) and **Write settings** (`settings.write`)
+
+        ## Dynatrace Documentation
+
+        - Adjust the sensitivity of anomaly detection for infrastructure - https://www.dynatrace.com/support/help/how-to-use-dynatrace/problem-detection-and-analysis/problem-detection/adjust-sensitivity-anomaly-detection/adjust-sensitivity-infastructure
+
+        - Settings API - https://www.dynatrace.com/support/help/dynatrace-api/environment-api/settings (schemaId: `builtin:infrastructure.disk.edge.anomaly-detectors`)
+
+        ## Export Example Usage
+
+        - `terraform-provider-dynatrace -export DiskEdgeAnomalyDetectors` downloads all existing disk edge anomaly detection configuration
+
+        The full documentation of the export feature is available [here](https://dt-url.net/h203qmc).
+
+
         :param str resource_name: The name of the resource.
         :param DiskEdgeAnomalyDetectorsArgs args: The arguments to use to populate this resource's properties.
         :param pulumi.ResourceOptions opts: Options for the resource.
@@ -433,7 +463,7 @@ class DiskEdgeAnomalyDetectors(pulumi.CustomResource):
         :param pulumi.Input[Union['DiskEdgeAnomalyDetectorsAlertsArgs', 'DiskEdgeAnomalyDetectorsAlertsArgsDict']] alerts: Alerts
         :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] disk_name_filters: Disk will be included in this policy if **any** of the filters match
         :param pulumi.Input[_builtins.bool] enabled: This setting is enabled (`true`) or disabled (`false`)
-        :param pulumi.Input[Union['DiskEdgeAnomalyDetectorsEventPropertiesArgs', 'DiskEdgeAnomalyDetectorsEventPropertiesArgsDict']] event_properties: Set of additional key-value properties to be attached to the triggered event.
+        :param pulumi.Input[Union['DiskEdgeAnomalyDetectorsEventPropertiesArgs', 'DiskEdgeAnomalyDetectorsEventPropertiesArgsDict']] event_properties: Set of additional key-value properties to be attached to the triggered event. You can retrieve the available property keys using the [Events API v2](https://dt-url.net/9622g1w). Additionally any Host resource attribute can be dynamically substituted (agent 1.325+)
         :param pulumi.Input[Union['DiskEdgeAnomalyDetectorsHostMetadataConditionsArgs', 'DiskEdgeAnomalyDetectorsHostMetadataConditionsArgsDict']] host_metadata_conditions: The policy will be enabled if **all** conditions are met
         :param pulumi.Input[_builtins.str] insert_after: Because this resource allows for ordering you may specify the ID of the resource instance that comes before this instance regarding order. If not specified when creating the setting will be added to the end of the list. If not specified during update the order will remain untouched
         :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] operating_systems: Select the operating systems on which policy should be applied
@@ -483,7 +513,7 @@ class DiskEdgeAnomalyDetectors(pulumi.CustomResource):
     @pulumi.getter(name="eventProperties")
     def event_properties(self) -> pulumi.Output[Optional['outputs.DiskEdgeAnomalyDetectorsEventProperties']]:
         """
-        Set of additional key-value properties to be attached to the triggered event.
+        Set of additional key-value properties to be attached to the triggered event. You can retrieve the available property keys using the [Events API v2](https://dt-url.net/9622g1w). Additionally any Host resource attribute can be dynamically substituted (agent 1.325+)
         """
         return pulumi.get(self, "event_properties")
 

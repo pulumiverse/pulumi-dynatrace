@@ -10,6 +10,21 @@ using Pulumi;
 
 namespace Pulumiverse.Dynatrace
 {
+    /// <summary>
+    /// &gt; This resource requires the API token scopes **Read configuration** (`ReadConfig`) and **Write configuration** (`WriteConfig`)
+    /// 
+    /// ## Dynatrace Documentation
+    /// 
+    /// - Define custom services - https://www.dynatrace.com/support/help/how-to-use-dynatrace/services/custom-services
+    /// 
+    /// - Custom services API - https://www.dynatrace.com/support/help/dynatrace-api/configuration-api/service-api/custom-services-api
+    /// 
+    /// ## Export Example Usage
+    /// 
+    /// - `terraform-provider-dynatrace -export dynatrace.CustomService` downloads all existing custom service configuration
+    /// 
+    /// The full documentation of the export feature is available [here](https://dt-url.net/h203qmc).
+    /// </summary>
     [DynatraceResourceType("dynatrace:index/customService:CustomService")]
     public partial class CustomService : global::Pulumi.CustomResource
     {

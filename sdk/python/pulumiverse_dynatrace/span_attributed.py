@@ -24,8 +24,10 @@ class SpanAttributedArgs:
                  persistent: Optional[pulumi.Input[_builtins.bool]] = None):
         """
         The set of arguments for constructing a SpanAttributed resource.
+
         :param pulumi.Input[_builtins.str] key: Key of the span attribute to store
         :param pulumi.Input[_builtins.str] masking: Possible Values: `MASK_ENTIRE_VALUE`, `MASK_ONLY_CONFIDENTIAL_DATA`, `NOT_MASKED`
+        :param pulumi.Input[_builtins.bool] persistent: Prevents the Span Attribute from getting deleted when running `terraform destroy` - to be used for Span Attributes that are defined by default on every Dynatrace environment.
         """
         pulumi.set(__self__, "key", key)
         pulumi.set(__self__, "masking", masking)
@@ -59,6 +61,9 @@ class SpanAttributedArgs:
     @_builtins.property
     @pulumi.getter
     def persistent(self) -> Optional[pulumi.Input[_builtins.bool]]:
+        """
+        Prevents the Span Attribute from getting deleted when running `terraform destroy` - to be used for Span Attributes that are defined by default on every Dynatrace environment.
+        """
         return pulumi.get(self, "persistent")
 
     @persistent.setter
@@ -74,8 +79,10 @@ class _SpanAttributedState:
                  persistent: Optional[pulumi.Input[_builtins.bool]] = None):
         """
         Input properties used for looking up and filtering SpanAttributed resources.
+
         :param pulumi.Input[_builtins.str] key: Key of the span attribute to store
         :param pulumi.Input[_builtins.str] masking: Possible Values: `MASK_ENTIRE_VALUE`, `MASK_ONLY_CONFIDENTIAL_DATA`, `NOT_MASKED`
+        :param pulumi.Input[_builtins.bool] persistent: Prevents the Span Attribute from getting deleted when running `terraform destroy` - to be used for Span Attributes that are defined by default on every Dynatrace environment.
         """
         if key is not None:
             pulumi.set(__self__, "key", key)
@@ -111,6 +118,9 @@ class _SpanAttributedState:
     @_builtins.property
     @pulumi.getter
     def persistent(self) -> Optional[pulumi.Input[_builtins.bool]]:
+        """
+        Prevents the Span Attribute from getting deleted when running `terraform destroy` - to be used for Span Attributes that are defined by default on every Dynatrace environment.
+        """
         return pulumi.get(self, "persistent")
 
     @persistent.setter
@@ -129,11 +139,28 @@ class SpanAttributed(pulumi.CustomResource):
                  persistent: Optional[pulumi.Input[_builtins.bool]] = None,
                  __props__=None):
         """
-        Create a SpanAttributed resource with the given unique name, props, and options.
+        !> This resource API endpoint has been deprecated, please use AttributeAllowList and AttributeMasking instead.
+
+        > This resource requires the API token scopes **Read settings** (`settings.read`) and **Write settings** (`settings.write`)
+
+        ## Dynatrace Documentation
+
+        - Span settings - https://www.dynatrace.com/support/help/extend-dynatrace/extend-tracing/span-settings
+
+        - Settings API - https://www.dynatrace.com/support/help/dynatrace-api/environment-api/settings (schemaId: `builtin:span-attribute`)
+
+        ## Export Example Usage
+
+        - `terraform-provider-dynatrace -export SpanAttributed` downloads all existing span attribute configuration
+
+        The full documentation of the export feature is available [here](https://dt-url.net/h203qmc).
+
+
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[_builtins.str] key: Key of the span attribute to store
         :param pulumi.Input[_builtins.str] masking: Possible Values: `MASK_ENTIRE_VALUE`, `MASK_ONLY_CONFIDENTIAL_DATA`, `NOT_MASKED`
+        :param pulumi.Input[_builtins.bool] persistent: Prevents the Span Attribute from getting deleted when running `terraform destroy` - to be used for Span Attributes that are defined by default on every Dynatrace environment.
         """
         ...
     @overload
@@ -142,7 +169,23 @@ class SpanAttributed(pulumi.CustomResource):
                  args: SpanAttributedArgs,
                  opts: Optional[pulumi.ResourceOptions] = None):
         """
-        Create a SpanAttributed resource with the given unique name, props, and options.
+        !> This resource API endpoint has been deprecated, please use AttributeAllowList and AttributeMasking instead.
+
+        > This resource requires the API token scopes **Read settings** (`settings.read`) and **Write settings** (`settings.write`)
+
+        ## Dynatrace Documentation
+
+        - Span settings - https://www.dynatrace.com/support/help/extend-dynatrace/extend-tracing/span-settings
+
+        - Settings API - https://www.dynatrace.com/support/help/dynatrace-api/environment-api/settings (schemaId: `builtin:span-attribute`)
+
+        ## Export Example Usage
+
+        - `terraform-provider-dynatrace -export SpanAttributed` downloads all existing span attribute configuration
+
+        The full documentation of the export feature is available [here](https://dt-url.net/h203qmc).
+
+
         :param str resource_name: The name of the resource.
         :param SpanAttributedArgs args: The arguments to use to populate this resource's properties.
         :param pulumi.ResourceOptions opts: Options for the resource.
@@ -199,6 +242,7 @@ class SpanAttributed(pulumi.CustomResource):
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[_builtins.str] key: Key of the span attribute to store
         :param pulumi.Input[_builtins.str] masking: Possible Values: `MASK_ENTIRE_VALUE`, `MASK_ONLY_CONFIDENTIAL_DATA`, `NOT_MASKED`
+        :param pulumi.Input[_builtins.bool] persistent: Prevents the Span Attribute from getting deleted when running `terraform destroy` - to be used for Span Attributes that are defined by default on every Dynatrace environment.
         """
         opts = pulumi.ResourceOptions.merge(opts, pulumi.ResourceOptions(id=id))
 
@@ -228,5 +272,8 @@ class SpanAttributed(pulumi.CustomResource):
     @_builtins.property
     @pulumi.getter
     def persistent(self) -> pulumi.Output[_builtins.bool]:
+        """
+        Prevents the Span Attribute from getting deleted when running `terraform destroy` - to be used for Span Attributes that are defined by default on every Dynatrace environment.
+        """
         return pulumi.get(self, "persistent")
 

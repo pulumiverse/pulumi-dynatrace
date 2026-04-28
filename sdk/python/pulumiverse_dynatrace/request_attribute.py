@@ -32,6 +32,7 @@ class RequestAttributeArgs:
                  unknowns: Optional[pulumi.Input[_builtins.str]] = None):
         """
         The set of arguments for constructing a RequestAttribute resource.
+
         :param pulumi.Input[_builtins.str] aggregation: Aggregation type for the request values
         :param pulumi.Input[_builtins.str] data_type: The data type of the request attribute
         :param pulumi.Input[_builtins.str] normalization: String values transformation.   If the **dataType** is not `string`, set the `Original` here
@@ -181,6 +182,7 @@ class _RequestAttributeState:
                  unknowns: Optional[pulumi.Input[_builtins.str]] = None):
         """
         Input properties used for looking up and filtering RequestAttribute resources.
+
         :param pulumi.Input[_builtins.str] aggregation: Aggregation type for the request values
         :param pulumi.Input[_builtins.bool] confidential: Confidential data flag. Set `true` to treat the captured data as confidential
         :param pulumi.Input[Sequence[pulumi.Input['RequestAttributeDataSourceArgs']]] data_sources: The list of data sources
@@ -336,7 +338,21 @@ class RequestAttribute(pulumi.CustomResource):
                  unknowns: Optional[pulumi.Input[_builtins.str]] = None,
                  __props__=None):
         """
-        Create a RequestAttribute resource with the given unique name, props, and options.
+        > This resource requires the API token scopes **Read configuration** (`ReadConfig`) and **Capture request data** (`CaptureRequestData`)
+
+        ## Dynatrace Documentation
+
+        - Request attributes - https://www.dynatrace.com/support/help/how-to-use-dynatrace/services/request-attributes
+
+        - Request attributes API - https://www.dynatrace.com/support/help/dynatrace-api/configuration-api/service-api/request-attributes-api
+
+        ## Export Example Usage
+
+        - `terraform-provider-dynatrace -export RequestAttribute` downloads all existing request attribute configuration
+
+        The full documentation of the export feature is available [here](https://dt-url.net/h203qmc).
+
+
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[_builtins.str] aggregation: Aggregation type for the request values
@@ -356,7 +372,21 @@ class RequestAttribute(pulumi.CustomResource):
                  args: RequestAttributeArgs,
                  opts: Optional[pulumi.ResourceOptions] = None):
         """
-        Create a RequestAttribute resource with the given unique name, props, and options.
+        > This resource requires the API token scopes **Read configuration** (`ReadConfig`) and **Capture request data** (`CaptureRequestData`)
+
+        ## Dynatrace Documentation
+
+        - Request attributes - https://www.dynatrace.com/support/help/how-to-use-dynatrace/services/request-attributes
+
+        - Request attributes API - https://www.dynatrace.com/support/help/dynatrace-api/configuration-api/service-api/request-attributes-api
+
+        ## Export Example Usage
+
+        - `terraform-provider-dynatrace -export RequestAttribute` downloads all existing request attribute configuration
+
+        The full documentation of the export feature is available [here](https://dt-url.net/h203qmc).
+
+
         :param str resource_name: The name of the resource.
         :param RequestAttributeArgs args: The arguments to use to populate this resource's properties.
         :param pulumi.ResourceOptions opts: Options for the resource.

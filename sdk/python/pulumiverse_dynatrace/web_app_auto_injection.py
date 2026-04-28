@@ -27,6 +27,7 @@ class WebAppAutoInjectionArgs:
                  snippet_format: pulumi.Input['WebAppAutoInjectionSnippetFormatArgs']):
         """
         The set of arguments for constructing a WebAppAutoInjection resource.
+
         :param pulumi.Input[_builtins.str] application_id: The scope of this settings. If the settings should cover the whole environment, just don't specify any scope.
         :param pulumi.Input['WebAppAutoInjectionCacheControlHeadersArgs'] cache_control_headers: Cache control headers
         :param pulumi.Input['WebAppAutoInjectionMonitoringCodeSourceSectionArgs'] monitoring_code_source_section: Real User Monitoring code source
@@ -95,6 +96,7 @@ class _WebAppAutoInjectionState:
                  snippet_format: Optional[pulumi.Input['WebAppAutoInjectionSnippetFormatArgs']] = None):
         """
         Input properties used for looking up and filtering WebAppAutoInjection resources.
+
         :param pulumi.Input[_builtins.str] application_id: The scope of this settings. If the settings should cover the whole environment, just don't specify any scope.
         :param pulumi.Input['WebAppAutoInjectionCacheControlHeadersArgs'] cache_control_headers: Cache control headers
         :param pulumi.Input['WebAppAutoInjectionMonitoringCodeSourceSectionArgs'] monitoring_code_source_section: Real User Monitoring code source
@@ -170,7 +172,21 @@ class WebAppAutoInjection(pulumi.CustomResource):
                  snippet_format: Optional[pulumi.Input[Union['WebAppAutoInjectionSnippetFormatArgs', 'WebAppAutoInjectionSnippetFormatArgsDict']]] = None,
                  __props__=None):
         """
-        Create a WebAppAutoInjection resource with the given unique name, props, and options.
+        > This resource requires the API token scopes **Read settings** (`settings.read`) and **Write settings** (`settings.write`)
+
+        ## Dynatrace Documentation
+
+        - RUM JavaScript injection - https://docs.dynatrace.com/docs/observe/digital-experience/web-applications/initial-setup/rum-injection
+
+        - Settings API - https://www.dynatrace.com/support/help/dynatrace-api/environment-api/settings (schemaId: `builtin:rum.web.automatic-injection`)
+
+        ## Export Example Usage
+
+        - `terraform-provider-dynatrace -export WebAppAutoInjection` downloads existing automatic injection configuration
+
+        The full documentation of the export feature is available [here](https://dt-url.net/h203qmc).
+
+
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[_builtins.str] application_id: The scope of this settings. If the settings should cover the whole environment, just don't specify any scope.
@@ -185,7 +201,21 @@ class WebAppAutoInjection(pulumi.CustomResource):
                  args: WebAppAutoInjectionArgs,
                  opts: Optional[pulumi.ResourceOptions] = None):
         """
-        Create a WebAppAutoInjection resource with the given unique name, props, and options.
+        > This resource requires the API token scopes **Read settings** (`settings.read`) and **Write settings** (`settings.write`)
+
+        ## Dynatrace Documentation
+
+        - RUM JavaScript injection - https://docs.dynatrace.com/docs/observe/digital-experience/web-applications/initial-setup/rum-injection
+
+        - Settings API - https://www.dynatrace.com/support/help/dynatrace-api/environment-api/settings (schemaId: `builtin:rum.web.automatic-injection`)
+
+        ## Export Example Usage
+
+        - `terraform-provider-dynatrace -export WebAppAutoInjection` downloads existing automatic injection configuration
+
+        The full documentation of the export feature is available [here](https://dt-url.net/h203qmc).
+
+
         :param str resource_name: The name of the resource.
         :param WebAppAutoInjectionArgs args: The arguments to use to populate this resource's properties.
         :param pulumi.ResourceOptions opts: Options for the resource.

@@ -11,6 +11,19 @@ import (
 	"github.com/pulumiverse/pulumi-dynatrace/sdk/go/dynatrace/internal"
 )
 
+// > This resource requires the API token scopes **Read network zones** (`networkZones.read`) and **Write network zones** (`networkZones.write`)
+//
+// ## Dynatrace Documentation
+//
+// - Network zones - https://www.dynatrace.com/support/help/setup-and-configuration/network-zones
+//
+// - Network zones API - https://www.dynatrace.com/support/help/dynatrace-api/environment-api/network-zones
+//
+// ## Export Example Usage
+//
+// - `terraform-provider-dynatrace -export NetworkZone` downloads all existing network zone configuration
+//
+// The full documentation of the export feature is available [here](https://dt-url.net/h203qmc).
 type NetworkZone struct {
 	pulumi.CustomResourceState
 

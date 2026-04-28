@@ -10,6 +10,21 @@ using Pulumi;
 
 namespace Pulumiverse.Dynatrace
 {
+    /// <summary>
+    /// &gt; This resource requires the API token scopes **Read configuration** (`ReadConfig`) and **Write configuration** (`WriteConfig`)
+    /// 
+    /// ## Dynatrace Documentation
+    /// 
+    /// - Calculated metrics for services - https://www.dynatrace.com/support/help/how-to-use-dynatrace/services/service-monitoring-settings/calculated-service-metric
+    /// 
+    /// - Service metrics API - https://www.dynatrace.com/support/help/dynatrace-api/configuration-api/calculated-metrics/service-metrics
+    /// 
+    /// ## Export Example Usage
+    /// 
+    /// - `terraform-provider-dynatrace -export dynatrace.CalculatedServiceMetric` downloads all existing calculated service metric configuration
+    /// 
+    /// The full documentation of the export feature is available [here](https://dt-url.net/h203qmc).
+    /// </summary>
     [DynatraceResourceType("dynatrace:index/calculatedServiceMetric:CalculatedServiceMetric")]
     public partial class CalculatedServiceMetric : global::Pulumi.CustomResource
     {

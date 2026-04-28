@@ -25,6 +25,7 @@ class ManagedPublicEndpointsArgs:
                  web_ui_address: Optional[pulumi.Input[_builtins.str]] = None):
         """
         The set of arguments for constructing a ManagedPublicEndpoints resource.
+
         :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] additional_web_ui_addresses: Additional web UI addresses
         :param pulumi.Input[_builtins.str] beacon_forwarder_address: Beacon forwarder address
         :param pulumi.Input[_builtins.str] cdn_address: CDN address
@@ -97,6 +98,7 @@ class _ManagedPublicEndpointsState:
                  web_ui_address: Optional[pulumi.Input[_builtins.str]] = None):
         """
         Input properties used for looking up and filtering ManagedPublicEndpoints resources.
+
         :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] additional_web_ui_addresses: Additional web UI addresses
         :param pulumi.Input[_builtins.str] beacon_forwarder_address: Beacon forwarder address
         :param pulumi.Input[_builtins.str] cdn_address: CDN address
@@ -172,7 +174,33 @@ class ManagedPublicEndpoints(pulumi.CustomResource):
                  web_ui_address: Optional[pulumi.Input[_builtins.str]] = None,
                  __props__=None):
         """
-        Create a ManagedPublicEndpoints resource with the given unique name, props, and options.
+        !> **HTTP DELETE method not available** Terraform will no longer manage this resource on `destroy` but the configuration will still be present on the Dynatrace cluster.
+
+        > This resource requires the cluster API token scope **Service Provider API** (`ServiceProviderAPI`)
+
+        ## Dynatrace Documentation
+
+        - Dynatrace Managed - https://www.dynatrace.com/support/help/managed-cluster
+
+        - Cluster API v1 - https://www.dynatrace.com/support/help/managed-cluster/cluster-api/cluster-api-v1
+
+        ## Resource Example Usage
+
+        ```python
+        import pulumi
+        import pulumiverse_dynatrace as dynatrace
+
+        test = dynatrace.ManagedPublicEndpoints("Test",
+            web_ui_address="https://www.webuiaddress.com",
+            additional_web_ui_addresses=[
+                "https://www.webuiaddress1.com",
+                "https://www.webuiaddress2.com",
+            ],
+            beacon_forwarder_address="https://www.beaconforwarderaddress.com:443",
+            cdn_address="https://www.cdnaddress.com")
+        ```
+
+
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] additional_web_ui_addresses: Additional web UI addresses
@@ -187,7 +215,33 @@ class ManagedPublicEndpoints(pulumi.CustomResource):
                  args: Optional[ManagedPublicEndpointsArgs] = None,
                  opts: Optional[pulumi.ResourceOptions] = None):
         """
-        Create a ManagedPublicEndpoints resource with the given unique name, props, and options.
+        !> **HTTP DELETE method not available** Terraform will no longer manage this resource on `destroy` but the configuration will still be present on the Dynatrace cluster.
+
+        > This resource requires the cluster API token scope **Service Provider API** (`ServiceProviderAPI`)
+
+        ## Dynatrace Documentation
+
+        - Dynatrace Managed - https://www.dynatrace.com/support/help/managed-cluster
+
+        - Cluster API v1 - https://www.dynatrace.com/support/help/managed-cluster/cluster-api/cluster-api-v1
+
+        ## Resource Example Usage
+
+        ```python
+        import pulumi
+        import pulumiverse_dynatrace as dynatrace
+
+        test = dynatrace.ManagedPublicEndpoints("Test",
+            web_ui_address="https://www.webuiaddress.com",
+            additional_web_ui_addresses=[
+                "https://www.webuiaddress1.com",
+                "https://www.webuiaddress2.com",
+            ],
+            beacon_forwarder_address="https://www.beaconforwarderaddress.com:443",
+            cdn_address="https://www.cdnaddress.com")
+        ```
+
+
         :param str resource_name: The name of the resource.
         :param ManagedPublicEndpointsArgs args: The arguments to use to populate this resource's properties.
         :param pulumi.ResourceOptions opts: Options for the resource.

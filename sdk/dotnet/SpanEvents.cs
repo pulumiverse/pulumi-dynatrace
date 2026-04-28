@@ -10,6 +10,23 @@ using Pulumi;
 
 namespace Pulumiverse.Dynatrace
 {
+    /// <summary>
+    /// &gt; This resource requires the API token scopes **Read settings** (`settings.read`) and **Write settings** (`settings.write`)
+    /// 
+    /// ## Dynatrace Documentation
+    /// 
+    /// !&gt; This resource API endpoint has been deprecated, please use dynatrace.AttributeAllowList and dynatrace.AttributeMasking instead.
+    /// 
+    /// - Span settings - https://www.dynatrace.com/support/help/extend-dynatrace/extend-tracing/span-settings
+    /// 
+    /// - Settings API - https://www.dynatrace.com/support/help/dynatrace-api/environment-api/settings (schemaId: `builtin:span-event-attribute`)
+    /// 
+    /// ## Export Example Usage
+    /// 
+    /// - `terraform-provider-dynatrace -export dynatrace.SpanEvents` downloads all existing span event configuration
+    /// 
+    /// The full documentation of the export feature is available [here](https://dt-url.net/h203qmc).
+    /// </summary>
     [DynatraceResourceType("dynatrace:index/spanEvents:SpanEvents")]
     public partial class SpanEvents : global::Pulumi.CustomResource
     {

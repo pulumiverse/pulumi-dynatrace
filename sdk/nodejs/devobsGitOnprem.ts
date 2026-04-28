@@ -4,6 +4,21 @@
 import * as pulumi from "@pulumi/pulumi";
 import * as utilities from "./utilities";
 
+/**
+ * > This resource requires the API token scopes **Read settings** (`settings.read`) and **Write settings** (`settings.write`)
+ *
+ * ## Dynatrace Documentation
+ *
+ * - Developer Observability - https://docs.dynatrace.com/docs/platform-modules/applications-and-microservices/developer-observability
+ *
+ * - Settings API - https://www.dynatrace.com/support/help/dynatrace-api/environment-api/settings (schemaId: `app:dynatrace.devobs.debugger:git.on.prem`)
+ *
+ * ## Export Example Usage
+ *
+ * - `terraform-provider-dynatrace -export dynatrace.DevobsGitOnprem` downloads existing Developer Observability git on-premise server configuration
+ *
+ * The full documentation of the export feature is available [here](https://dt-url.net/h203qmc).
+ */
 export class DevobsGitOnprem extends pulumi.CustomResource {
     /**
      * Get an existing DevobsGitOnprem resource's state with the given name, ID, and optional extra

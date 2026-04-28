@@ -23,6 +23,7 @@ class JsonDashboardArgs:
                  link_id: Optional[pulumi.Input[_builtins.str]] = None):
         """
         The set of arguments for constructing a JsonDashboard resource.
+
         :param pulumi.Input[_builtins.str] contents: Contains the JSON Code of the Dashboard
         :param pulumi.Input[_builtins.str] link_id: ID of the dashboard, used with the json*dashboard*base resource and variables to create circular dependencies between dashboards for hyperlinks. See the documentation for `JsonDashboardBase` for a concrete example.
         """
@@ -62,6 +63,7 @@ class _JsonDashboardState:
                  link_id: Optional[pulumi.Input[_builtins.str]] = None):
         """
         Input properties used for looking up and filtering JsonDashboard resources.
+
         :param pulumi.Input[_builtins.str] contents: Contains the JSON Code of the Dashboard
         :param pulumi.Input[_builtins.str] link_id: ID of the dashboard, used with the json*dashboard*base resource and variables to create circular dependencies between dashboards for hyperlinks. See the documentation for `JsonDashboardBase` for a concrete example.
         """
@@ -105,7 +107,23 @@ class JsonDashboard(pulumi.CustomResource):
                  link_id: Optional[pulumi.Input[_builtins.str]] = None,
                  __props__=None):
         """
-        Create a JsonDashboard resource with the given unique name, props, and options.
+        > This resource is excluded by default in the export utility since there could be a large amount of dashboards.
+
+        > This resource requires the API token scopes **Read configuration** (`ReadConfig`) and **Write configuration** (`WriteConfig`)
+
+        ## Dynatrace Documentation
+
+        - Dashboards and reports - https://www.dynatrace.com/support/help/how-to-use-dynatrace/dashboards-and-charts
+
+        - Dashboards API - https://www.dynatrace.com/support/help/dynatrace-api/configuration-api/dashboards-api
+
+        ## Export Example Usage
+
+        - `terraform-provider-dynatrace -export JsonDashboard` downloads all existing dashboard configuration
+
+        The full documentation of the export feature is available [here](https://dt-url.net/h203qmc).
+
+
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[_builtins.str] contents: Contains the JSON Code of the Dashboard
@@ -118,7 +136,23 @@ class JsonDashboard(pulumi.CustomResource):
                  args: JsonDashboardArgs,
                  opts: Optional[pulumi.ResourceOptions] = None):
         """
-        Create a JsonDashboard resource with the given unique name, props, and options.
+        > This resource is excluded by default in the export utility since there could be a large amount of dashboards.
+
+        > This resource requires the API token scopes **Read configuration** (`ReadConfig`) and **Write configuration** (`WriteConfig`)
+
+        ## Dynatrace Documentation
+
+        - Dashboards and reports - https://www.dynatrace.com/support/help/how-to-use-dynatrace/dashboards-and-charts
+
+        - Dashboards API - https://www.dynatrace.com/support/help/dynatrace-api/configuration-api/dashboards-api
+
+        ## Export Example Usage
+
+        - `terraform-provider-dynatrace -export JsonDashboard` downloads all existing dashboard configuration
+
+        The full documentation of the export feature is available [here](https://dt-url.net/h203qmc).
+
+
         :param str resource_name: The name of the resource.
         :param JsonDashboardArgs args: The arguments to use to populate this resource's properties.
         :param pulumi.ResourceOptions opts: Options for the resource.

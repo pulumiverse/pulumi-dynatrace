@@ -36,6 +36,7 @@ class LogOneagentArgs:
                  scope: Optional[pulumi.Input[_builtins.str]] = None):
         """
         The set of arguments for constructing a LogOneagent resource.
+
         :param pulumi.Input[_builtins.bool] container_timezone_heuristic_enabled: Enables automatic detection of timezone in container's logs if it is not explicitly defined in content or configured.
         :param pulumi.Input[_builtins.bool] containers_logs_detection_enabled: Allows detection of log messages written to the containerized application's stdout/stderr streams.
         :param pulumi.Input[_builtins.int] date_search_limit_bytes: Defines the number of characters in every log line (starting from the first character in the line) where the timestamp is searched.
@@ -270,6 +271,7 @@ class _LogOneagentState:
                  system_logs_detection_enabled: Optional[pulumi.Input[_builtins.bool]] = None):
         """
         Input properties used for looking up and filtering LogOneagent resources.
+
         :param pulumi.Input[_builtins.bool] container_timezone_heuristic_enabled: Enables automatic detection of timezone in container's logs if it is not explicitly defined in content or configured.
         :param pulumi.Input[_builtins.bool] containers_logs_detection_enabled: Allows detection of log messages written to the containerized application's stdout/stderr streams.
         :param pulumi.Input[_builtins.int] date_search_limit_bytes: Defines the number of characters in every log line (starting from the first character in the line) where the timestamp is searched.
@@ -521,7 +523,21 @@ class LogOneagent(pulumi.CustomResource):
                  system_logs_detection_enabled: Optional[pulumi.Input[_builtins.bool]] = None,
                  __props__=None):
         """
-        Create a LogOneagent resource with the given unique name, props, and options.
+        > This resource requires the API token scopes **Read settings** (`settings.read`) and **Write settings** (`settings.write`)
+
+        ## Dynatrace Documentation
+
+        - Log Monitoring configuration (Logs Classic) - https://www.dynatrace.com/support/help/observe-and-explore/logs/log-monitoring/log-monitoring-configuration
+
+        - Settings API - https://www.dynatrace.com/support/help/dynatrace-api/environment-api/settings (schemaId: `"builtin:logmonitoring.log-agent-configuration`)
+
+        ## Export Example Usage
+
+        - `terraform-provider-dynatrace -export LogOneagent` downloads all existing OneAgent settings for Log Monitoring
+
+        The full documentation of the export feature is available [here](https://dt-url.net/h203qmc).
+
+
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[_builtins.bool] container_timezone_heuristic_enabled: Enables automatic detection of timezone in container's logs if it is not explicitly defined in content or configured.
@@ -547,7 +563,21 @@ class LogOneagent(pulumi.CustomResource):
                  args: LogOneagentArgs,
                  opts: Optional[pulumi.ResourceOptions] = None):
         """
-        Create a LogOneagent resource with the given unique name, props, and options.
+        > This resource requires the API token scopes **Read settings** (`settings.read`) and **Write settings** (`settings.write`)
+
+        ## Dynatrace Documentation
+
+        - Log Monitoring configuration (Logs Classic) - https://www.dynatrace.com/support/help/observe-and-explore/logs/log-monitoring/log-monitoring-configuration
+
+        - Settings API - https://www.dynatrace.com/support/help/dynatrace-api/environment-api/settings (schemaId: `"builtin:logmonitoring.log-agent-configuration`)
+
+        ## Export Example Usage
+
+        - `terraform-provider-dynatrace -export LogOneagent` downloads all existing OneAgent settings for Log Monitoring
+
+        The full documentation of the export feature is available [here](https://dt-url.net/h203qmc).
+
+
         :param str resource_name: The name of the resource.
         :param LogOneagentArgs args: The arguments to use to populate this resource's properties.
         :param pulumi.ResourceOptions opts: Options for the resource.

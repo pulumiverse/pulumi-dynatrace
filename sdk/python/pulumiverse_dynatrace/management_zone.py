@@ -29,6 +29,7 @@ class ManagementZoneArgs:
                  unknowns: Optional[pulumi.Input[_builtins.str]] = None):
         """
         The set of arguments for constructing a ManagementZone resource.
+
         :param pulumi.Input[_builtins.str] description: The description of the management zone
         :param pulumi.Input[Sequence[pulumi.Input['ManagementZoneDimensionalRuleArgs']]] dimensional_rules: A list of dimensional data rules for management zone usage. If several rules are specified, the `or` logic applies
         :param pulumi.Input[Sequence[pulumi.Input['ManagementZoneEntitySelectorBasedRuleArgs']]] entity_selector_based_rules: A list of entity-selector based rules for management zone usage. If several rules are specified, the `or` logic applies
@@ -133,6 +134,7 @@ class _ManagementZoneState:
                  unknowns: Optional[pulumi.Input[_builtins.str]] = None):
         """
         Input properties used for looking up and filtering ManagementZone resources.
+
         :param pulumi.Input[_builtins.str] description: The description of the management zone
         :param pulumi.Input[Sequence[pulumi.Input['ManagementZoneDimensionalRuleArgs']]] dimensional_rules: A list of dimensional data rules for management zone usage. If several rules are specified, the `or` logic applies
         :param pulumi.Input[Sequence[pulumi.Input['ManagementZoneEntitySelectorBasedRuleArgs']]] entity_selector_based_rules: A list of entity-selector based rules for management zone usage. If several rules are specified, the `or` logic applies
@@ -240,7 +242,23 @@ class ManagementZone(pulumi.CustomResource):
                  unknowns: Optional[pulumi.Input[_builtins.str]] = None,
                  __props__=None):
         """
-        Create a ManagementZone resource with the given unique name, props, and options.
+        !> This resource API endpoint has been deprecated, please use ManagementZoneV2 instead.
+
+        > This resource requires the API token scopes **Read configuration** (`ReadConfig`) and **Write configuration** (`WriteConfig`)
+
+        ## Dynatrace Documentation
+
+        - Management zones - https://www.dynatrace.com/support/help/how-to-use-dynatrace/management-zones
+
+        - Management zones API - https://www.dynatrace.com/support/help/dynatrace-api/configuration-api/management-zones-api
+
+        ## Export Example Usage
+
+        - `terraform-provider-dynatrace -export ManagementZone` downloads all existing management zone configuration
+
+        The full documentation of the export feature is available [here](https://dt-url.net/h203qmc).
+
+
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[_builtins.str] description: The description of the management zone
@@ -257,7 +275,23 @@ class ManagementZone(pulumi.CustomResource):
                  args: Optional[ManagementZoneArgs] = None,
                  opts: Optional[pulumi.ResourceOptions] = None):
         """
-        Create a ManagementZone resource with the given unique name, props, and options.
+        !> This resource API endpoint has been deprecated, please use ManagementZoneV2 instead.
+
+        > This resource requires the API token scopes **Read configuration** (`ReadConfig`) and **Write configuration** (`WriteConfig`)
+
+        ## Dynatrace Documentation
+
+        - Management zones - https://www.dynatrace.com/support/help/how-to-use-dynatrace/management-zones
+
+        - Management zones API - https://www.dynatrace.com/support/help/dynatrace-api/configuration-api/management-zones-api
+
+        ## Export Example Usage
+
+        - `terraform-provider-dynatrace -export ManagementZone` downloads all existing management zone configuration
+
+        The full documentation of the export feature is available [here](https://dt-url.net/h203qmc).
+
+
         :param str resource_name: The name of the resource.
         :param ManagementZoneArgs args: The arguments to use to populate this resource's properties.
         :param pulumi.ResourceOptions opts: Options for the resource.

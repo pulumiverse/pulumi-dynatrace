@@ -27,6 +27,7 @@ class ServiceSplittingArgs:
                  scope: Optional[pulumi.Input[_builtins.str]] = None):
         """
         The set of arguments for constructing a ServiceSplitting resource.
+
         :param pulumi.Input[_builtins.bool] enabled: This setting is enabled (`true`) or disabled (`false`)
         :param pulumi.Input['ServiceSplittingRuleArgs'] rule: Rule
         :param pulumi.Input[_builtins.str] insert_after: Because this resource allows for ordering you may specify the ID of the resource instance that comes before this instance regarding order. If not specified when creating the setting will be added to the end of the list. If not specified during update the order will remain untouched
@@ -97,6 +98,7 @@ class _ServiceSplittingState:
                  scope: Optional[pulumi.Input[_builtins.str]] = None):
         """
         Input properties used for looking up and filtering ServiceSplitting resources.
+
         :param pulumi.Input[_builtins.bool] enabled: This setting is enabled (`true`) or disabled (`false`)
         :param pulumi.Input[_builtins.str] insert_after: Because this resource allows for ordering you may specify the ID of the resource instance that comes before this instance regarding order. If not specified when creating the setting will be added to the end of the list. If not specified during update the order will remain untouched
         :param pulumi.Input['ServiceSplittingRuleArgs'] rule: Rule
@@ -180,7 +182,6 @@ class ServiceSplitting(pulumi.CustomResource):
 
         - Settings API - https://www.dynatrace.com/support/help/dynatrace-api/environment-api/settings (schemaId: `builtin:service-splitting-rules`)
 
-        ## Resource Example Usage
 
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
@@ -204,7 +205,6 @@ class ServiceSplitting(pulumi.CustomResource):
 
         - Settings API - https://www.dynatrace.com/support/help/dynatrace-api/environment-api/settings (schemaId: `builtin:service-splitting-rules`)
 
-        ## Resource Example Usage
 
         :param str resource_name: The name of the resource.
         :param ServiceSplittingArgs args: The arguments to use to populate this resource's properties.

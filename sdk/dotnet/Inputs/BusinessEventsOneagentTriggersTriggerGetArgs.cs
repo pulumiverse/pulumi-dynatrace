@@ -26,7 +26,7 @@ namespace Pulumiverse.Dynatrace.Inputs
         public Input<Inputs.BusinessEventsOneagentTriggersTriggerSourceGetArgs> Source { get; set; } = null!;
 
         /// <summary>
-        /// Possible Values: `CONTAINS`, `ENDS_WITH`, `EQUALS`, `EXISTS`, `N_CONTAINS`, `N_ENDS_WITH`, `N_EQUALS`, `N_EXISTS`, `N_STARTS_WITH`, `STARTS_WITH`
+        /// Operator. Possible Values: `CONTAINS`, `ENDS_WITH`, `EQUALS`, `EXISTS`, `N_CONTAINS`, `N_ENDS_WITH`, `N_EQUALS`, `N_EXISTS`, `N_STARTS_WITH`, `STARTS_WITH`
         /// </summary>
         [Input("type", required: true)]
         public Input<string> Type { get; set; } = null!;

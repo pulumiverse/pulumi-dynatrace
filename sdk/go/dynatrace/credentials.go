@@ -11,6 +11,73 @@ import (
 	"github.com/pulumiverse/pulumi-dynatrace/sdk/go/dynatrace/internal"
 )
 
+// > **Destroy Warning** Credentials **cannot be deleted** if they are still associated with active synthetic monitors.
+// Terraform will proceed with the destroy operation, but the credential will **not** be removed if any associations remain. **Action Required:** Before destroying this resource, ensure the credential is removed from all associated monitors.
+// If any monitors remain associated after destroy, you must manually remove those associations and delete the credential manually.
+//
+// > This resource requires the API token scopes **Read credential vault entries** (`credentialVault.read`) and **Write credential vault entries** (`credentialVault.write`)
+//
+// ## Dynatrace Documentation
+//
+// - Credential vault for synthetic monitors - https://www.dynatrace.com/support/help/platform-modules/digital-experience/synthetic-monitoring/general-information/credential-vault-for-synthetic-monitors
+//
+// - Credential vault API - https://www.dynatrace.com/support/help/dynatrace-api/environment-api/credential-vault
+//
+// ## Export Example Usage
+//
+// - `terraform-provider-dynatrace -export Credentials` downloads all existing credentials
+//
+// The full documentation of the export feature is available [here](https://dt-url.net/h203qmc).
+//
+// ## Resource Example Usage
+//
+// ```go
+// package main
+//
+// import (
+//
+//	"github.com/pulumi/pulumi-std/sdk/v2/go/std"
+//	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//	"github.com/pulumiverse/pulumi-dynatrace/sdk/go/dynatrace"
+//
+// )
+//
+//	func main() {
+//		pulumi.Run(func(ctx *pulumi.Context) error {
+//			_, err := dynatrace.NewCredentials(ctx, "name", &dynatrace.CredentialsArgs{
+//				Name: pulumi.String("name"),
+//				Scopes: pulumi.StringArray{
+//					pulumi.String("SYNTHETIC"),
+//				},
+//				Username: pulumi.String("username"),
+//				Password: pulumi.String("password"),
+//			})
+//			if err != nil {
+//				return err
+//			}
+//			invokeBase64encode, err := std.Base64encode(ctx, &std.Base64encodeArgs{
+//				Input: std.File(ctx, &std.FileArgs{
+//					Input: "certificate.pem",
+//				}, nil).Result,
+//			}, nil)
+//			if err != nil {
+//				return err
+//			}
+//			_, err = dynatrace.NewCredentials(ctx, "root_certificate", &dynatrace.CredentialsArgs{
+//				Name:        pulumi.String("Root Certificate"),
+//				Description: pulumi.String("Root certificate for validating Extension 2.0 signatures"),
+//				Certificate: pulumi.String(invokeBase64encode.Result),
+//				Format:      pulumi.String("PEM"),
+//				Public:      pulumi.Bool(true),
+//			})
+//			if err != nil {
+//				return err
+//			}
+//			return nil
+//		})
+//	}
+//
+// ```
 type Credentials struct {
 	pulumi.CustomResourceState
 
@@ -33,8 +100,9 @@ type Credentials struct {
 	// The name of the credentials set
 	Name pulumi.StringOutput `pulumi:"name"`
 	// The credentials set is available to every user (`false`) or to owner only (`true`)
-	OwnerAccessOnly pulumi.BoolPtrOutput   `pulumi:"ownerAccessOnly"`
-	Password        pulumi.StringPtrOutput `pulumi:"password"`
+	OwnerAccessOnly pulumi.BoolPtrOutput `pulumi:"ownerAccessOnly"`
+	// The password of the credential. Note: Terraform treats an empty string for a value as if the attribute was absent. If you want to set an empty password, use the value `--empty--`.
+	Password pulumi.StringPtrOutput `pulumi:"password"`
 	// For certificate authentication specifies whether it's public certificate auth (`true`) or not (`false`).
 	Public pulumi.BoolPtrOutput `pulumi:"public"`
 	// The scope of the credentials set. Possible values are `ALL`, `APP_ENGINE`, `EXTENSION` and `SYNTHETIC`
@@ -113,8 +181,9 @@ type credentialsState struct {
 	// The name of the credentials set
 	Name *string `pulumi:"name"`
 	// The credentials set is available to every user (`false`) or to owner only (`true`)
-	OwnerAccessOnly *bool   `pulumi:"ownerAccessOnly"`
-	Password        *string `pulumi:"password"`
+	OwnerAccessOnly *bool `pulumi:"ownerAccessOnly"`
+	// The password of the credential. Note: Terraform treats an empty string for a value as if the attribute was absent. If you want to set an empty password, use the value `--empty--`.
+	Password *string `pulumi:"password"`
 	// For certificate authentication specifies whether it's public certificate auth (`true`) or not (`false`).
 	Public *bool `pulumi:"public"`
 	// The scope of the credentials set. Possible values are `ALL`, `APP_ENGINE`, `EXTENSION` and `SYNTHETIC`
@@ -150,7 +219,8 @@ type CredentialsState struct {
 	Name pulumi.StringPtrInput
 	// The credentials set is available to every user (`false`) or to owner only (`true`)
 	OwnerAccessOnly pulumi.BoolPtrInput
-	Password        pulumi.StringPtrInput
+	// The password of the credential. Note: Terraform treats an empty string for a value as if the attribute was absent. If you want to set an empty password, use the value `--empty--`.
+	Password pulumi.StringPtrInput
 	// For certificate authentication specifies whether it's public certificate auth (`true`) or not (`false`).
 	Public pulumi.BoolPtrInput
 	// The scope of the credentials set. Possible values are `ALL`, `APP_ENGINE`, `EXTENSION` and `SYNTHETIC`
@@ -189,8 +259,9 @@ type credentialsArgs struct {
 	// The name of the credentials set
 	Name *string `pulumi:"name"`
 	// The credentials set is available to every user (`false`) or to owner only (`true`)
-	OwnerAccessOnly *bool   `pulumi:"ownerAccessOnly"`
-	Password        *string `pulumi:"password"`
+	OwnerAccessOnly *bool `pulumi:"ownerAccessOnly"`
+	// The password of the credential. Note: Terraform treats an empty string for a value as if the attribute was absent. If you want to set an empty password, use the value `--empty--`.
+	Password *string `pulumi:"password"`
 	// For certificate authentication specifies whether it's public certificate auth (`true`) or not (`false`).
 	Public *bool `pulumi:"public"`
 	// The scope of the credentials set. Possible values are `ALL`, `APP_ENGINE`, `EXTENSION` and `SYNTHETIC`
@@ -227,7 +298,8 @@ type CredentialsArgs struct {
 	Name pulumi.StringPtrInput
 	// The credentials set is available to every user (`false`) or to owner only (`true`)
 	OwnerAccessOnly pulumi.BoolPtrInput
-	Password        pulumi.StringPtrInput
+	// The password of the credential. Note: Terraform treats an empty string for a value as if the attribute was absent. If you want to set an empty password, use the value `--empty--`.
+	Password pulumi.StringPtrInput
 	// For certificate authentication specifies whether it's public certificate auth (`true`) or not (`false`).
 	Public pulumi.BoolPtrInput
 	// The scope of the credentials set. Possible values are `ALL`, `APP_ENGINE`, `EXTENSION` and `SYNTHETIC`
@@ -376,6 +448,7 @@ func (o CredentialsOutput) OwnerAccessOnly() pulumi.BoolPtrOutput {
 	return o.ApplyT(func(v *Credentials) pulumi.BoolPtrOutput { return v.OwnerAccessOnly }).(pulumi.BoolPtrOutput)
 }
 
+// The password of the credential. Note: Terraform treats an empty string for a value as if the attribute was absent. If you want to set an empty password, use the value `--empty--`.
 func (o CredentialsOutput) Password() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v *Credentials) pulumi.StringPtrOutput { return v.Password }).(pulumi.StringPtrOutput)
 }

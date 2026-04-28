@@ -28,6 +28,7 @@ class BrowserMonitorOutageArgs:
                  scope: Optional[pulumi.Input[_builtins.str]] = None):
         """
         The set of arguments for constructing a BrowserMonitorOutage resource.
+
         :param pulumi.Input[_builtins.bool] global_outages: (Field has overlap with `BrowserMonitor`) Generate a problem and send an alert when the monitor is unavailable at all configured locations.
         :param pulumi.Input[_builtins.bool] local_outages: (Field has overlap with `BrowserMonitor`) Generate a problem and send an alert when the monitor is unavailable for one or more consecutive runs at any location.
         :param pulumi.Input[_builtins.bool] retry_on_error: (Field has overlap with `BrowserMonitor`) When enabled, which is the default, failing monitor executions are retried immediately one time to avoid false positives and only the second result is used. When disabled, we use the first result right away.
@@ -147,6 +148,7 @@ class _BrowserMonitorOutageState:
                  scope: Optional[pulumi.Input[_builtins.str]] = None):
         """
         Input properties used for looking up and filtering BrowserMonitorOutage resources.
+
         :param pulumi.Input[_builtins.int] global_consecutive_outage_count_threshold: (Field has overlap with `BrowserMonitor`) Alert if all locations are unable to access my web application
         :param pulumi.Input[_builtins.bool] global_outages: (Field has overlap with `BrowserMonitor`) Generate a problem and send an alert when the monitor is unavailable at all configured locations.
         :param pulumi.Input[_builtins.int] local_consecutive_outage_count_threshold: (Field has overlap with `BrowserMonitor`) are unable to access my web application
@@ -272,7 +274,23 @@ class BrowserMonitorOutage(pulumi.CustomResource):
                  scope: Optional[pulumi.Input[_builtins.str]] = None,
                  __props__=None):
         """
-        Create a BrowserMonitorOutage resource with the given unique name, props, and options.
+        > Configuration of the synthetic test scope overlaps with dynatrace_browser_monitor, but this resource in addition provides an option for an environment scope.
+
+        > This resource requires the API token scopes **Read settings** (`settings.read`) and **Write settings** (`settings.write`)
+
+        ## Dynatrace Documentation
+
+        - Synthetic alerting overview - https://www.dynatrace.com/support/help/platform-modules/digital-experience/synthetic-monitoring/analysis-and-alerting/synthetic-alerting-overview
+
+        - Settings API - https://www.dynatrace.com/support/help/dynatrace-api/environment-api/settings (schemaId: `builtin:synthetic.browser.outage-handling`)
+
+        ## Export Example Usage
+
+        - `terraform-provider-dynatrace -export BrowserMonitorOutage` downloads all existing browser monitor outage handling configuration
+
+        The full documentation of the export feature is available [here](https://dt-url.net/h203qmc).
+
+
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[_builtins.int] global_consecutive_outage_count_threshold: (Field has overlap with `BrowserMonitor`) Alert if all locations are unable to access my web application
@@ -291,7 +309,23 @@ class BrowserMonitorOutage(pulumi.CustomResource):
                  args: BrowserMonitorOutageArgs,
                  opts: Optional[pulumi.ResourceOptions] = None):
         """
-        Create a BrowserMonitorOutage resource with the given unique name, props, and options.
+        > Configuration of the synthetic test scope overlaps with dynatrace_browser_monitor, but this resource in addition provides an option for an environment scope.
+
+        > This resource requires the API token scopes **Read settings** (`settings.read`) and **Write settings** (`settings.write`)
+
+        ## Dynatrace Documentation
+
+        - Synthetic alerting overview - https://www.dynatrace.com/support/help/platform-modules/digital-experience/synthetic-monitoring/analysis-and-alerting/synthetic-alerting-overview
+
+        - Settings API - https://www.dynatrace.com/support/help/dynatrace-api/environment-api/settings (schemaId: `builtin:synthetic.browser.outage-handling`)
+
+        ## Export Example Usage
+
+        - `terraform-provider-dynatrace -export BrowserMonitorOutage` downloads all existing browser monitor outage handling configuration
+
+        The full documentation of the export feature is available [here](https://dt-url.net/h203qmc).
+
+
         :param str resource_name: The name of the resource.
         :param BrowserMonitorOutageArgs args: The arguments to use to populate this resource's properties.
         :param pulumi.ResourceOptions opts: Options for the resource.

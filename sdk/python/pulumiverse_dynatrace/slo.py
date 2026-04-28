@@ -37,6 +37,7 @@ class SloArgs:
                  rate: Optional[pulumi.Input[_builtins.str]] = None):
         """
         The set of arguments for constructing a Slo resource.
+
         :param pulumi.Input[_builtins.str] evaluation: The evaluation type of the SLO. Currently only `AGGREGATE` is supported
         :param pulumi.Input[_builtins.float] target: The target value of the SLO
         :param pulumi.Input[_builtins.str] timeframe: The timeframe for the SLO evaluation. Use the syntax of the global timeframe selector
@@ -269,6 +270,7 @@ class _SloState:
                  warning: Optional[pulumi.Input[_builtins.float]] = None):
         """
         Input properties used for looking up and filtering Slo resources.
+
         :param pulumi.Input[_builtins.str] denominator: The total count metric (the denominator in rate calculation)
         :param pulumi.Input[_builtins.str] description: The custom description of the SLO (optional)
         :param pulumi.Input[_builtins.bool] disabled: The SLO is enabled (`false`) or disabled (`true`)
@@ -508,7 +510,23 @@ class Slo(pulumi.CustomResource):
                  warning: Optional[pulumi.Input[_builtins.float]] = None,
                  __props__=None):
         """
-        Create a Slo resource with the given unique name, props, and options.
+        !> This resource API endpoint has been deprecated, please use SloV2 instead.
+
+        > This resource requires the API token scopes **Read SLO** (`slo.read`) and **Write SLO** (`slo.write`)
+
+        ## Dynatrace Documentation
+
+        - Service-level objectives - https://www.dynatrace.com/support/help/how-to-use-dynatrace/cloud-automation/service-level-objectives
+
+        - Service-level objectives API - https://www.dynatrace.com/support/help/dynatrace-api/environment-api/service-level-objectives
+
+        ## Export Example Usage
+
+        - `terraform-provider-dynatrace -export Slo` downloads all existing service-level objectives configuration
+
+        The full documentation of the export feature is available [here](https://dt-url.net/h203qmc).
+
+
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[_builtins.str] denominator: The total count metric (the denominator in rate calculation)
@@ -533,7 +551,23 @@ class Slo(pulumi.CustomResource):
                  args: SloArgs,
                  opts: Optional[pulumi.ResourceOptions] = None):
         """
-        Create a Slo resource with the given unique name, props, and options.
+        !> This resource API endpoint has been deprecated, please use SloV2 instead.
+
+        > This resource requires the API token scopes **Read SLO** (`slo.read`) and **Write SLO** (`slo.write`)
+
+        ## Dynatrace Documentation
+
+        - Service-level objectives - https://www.dynatrace.com/support/help/how-to-use-dynatrace/cloud-automation/service-level-objectives
+
+        - Service-level objectives API - https://www.dynatrace.com/support/help/dynatrace-api/environment-api/service-level-objectives
+
+        ## Export Example Usage
+
+        - `terraform-provider-dynatrace -export Slo` downloads all existing service-level objectives configuration
+
+        The full documentation of the export feature is available [here](https://dt-url.net/h203qmc).
+
+
         :param str resource_name: The name of the resource.
         :param SloArgs args: The arguments to use to populate this resource's properties.
         :param pulumi.ResourceOptions opts: Options for the resource.

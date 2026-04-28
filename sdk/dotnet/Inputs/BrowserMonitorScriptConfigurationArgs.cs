@@ -87,6 +87,12 @@ namespace Pulumiverse.Dynatrace.Inputs
         [Input("userAgent")]
         public Input<string>? UserAgent { get; set; }
 
+        /// <summary>
+        /// Client certificates that can only be configured for Linux-based locations
+        /// </summary>
+        [Input("userCertificates")]
+        public Input<Inputs.BrowserMonitorScriptConfigurationUserCertificatesArgs>? UserCertificates { get; set; }
+
         public BrowserMonitorScriptConfigurationArgs()
         {
         }

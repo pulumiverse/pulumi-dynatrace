@@ -11,6 +11,19 @@ import (
 	"github.com/pulumiverse/pulumi-dynatrace/sdk/go/dynatrace/internal"
 )
 
+// > This resource requires the API token scopes **Read settings** (`settings.read`) and **Write settings** (`settings.write`)
+//
+// ## Dynatrace Documentation
+//
+// - Alerting profiles - https://www.dynatrace.com/support/help/how-to-use-dynatrace/problem-detection-and-analysis/notifications-and-alerting/alerting-profiles
+//
+// - Settings API - https://www.dynatrace.com/support/help/dynatrace-api/environment-api/settings (schemaId: `builtin:alerting.profile`)
+//
+// ## Export Example Usage
+//
+// - `terraform-provider-dynatrace -export Alerting` downloads all existing alerting profiles configuration
+//
+// The full documentation of the export feature is available [here](https://dt-url.net/h203qmc).
 type Alerting struct {
 	pulumi.CustomResourceState
 

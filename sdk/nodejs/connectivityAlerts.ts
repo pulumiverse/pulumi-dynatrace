@@ -4,6 +4,33 @@
 import * as pulumi from "@pulumi/pulumi";
 import * as utilities from "./utilities";
 
+/**
+ * > This resource requires the API token scopes **Read settings** (`settings.read`) and **Write settings** (`settings.write`)
+ *
+ * ## Dynatrace Documentation
+ *
+ * - Process Groups - https://www.dynatrace.com/support/help/how-to-use-dynatrace/process-groups
+ *
+ * - Settings API - https://www.dynatrace.com/support/help/dynatrace-api/environment-api/settings (schemaId: `builtin:alerting.connectivity-alerts`)
+ *
+ * ## Export Example Usage
+ *
+ * - `terraform-provider-dynatrace -export dynatrace.ConnectivityAlerts` downloads all existing process group connectivity alerts
+ *
+ * The full documentation of the export feature is available [here](https://dt-url.net/h203qmc).
+ *
+ * ## Resource Example Usage
+ *
+ * ```typescript
+ * import * as pulumi from "@pulumi/pulumi";
+ * import * as dynatrace from "@pulumiverse/dynatrace";
+ *
+ * const PROCESS_GROUP_1234567890000000 = new dynatrace.ConnectivityAlerts("PROCESS_GROUP-1234567890000000", {
+ *     connectivityAlerts: false,
+ *     processGroupId: "PROCESS_GROUP-1234567890000000",
+ * });
+ * ```
+ */
 export class ConnectivityAlerts extends pulumi.CustomResource {
     /**
      * Get an existing ConnectivityAlerts resource's state with the given name, ID, and optional extra

@@ -10,6 +10,21 @@ using Pulumi;
 
 namespace Pulumiverse.Dynatrace
 {
+    /// <summary>
+    /// &gt; This resource requires the API token scopes **Read settings** (`settings.read`) and **Write settings** (`settings.write`)
+    /// 
+    /// ## Dynatrace Documentation
+    /// 
+    /// - Process deep monitoring - https://www.dynatrace.com/support/help/platform-modules/infrastructure-monitoring/process-groups/configuration/pg-monitoring
+    /// 
+    /// - Settings API - https://www.dynatrace.com/support/help/dynatrace-api/environment-api/settings (schemaId: `builtin:process-group.monitoring.state`)
+    /// 
+    /// ## Export Example Usage
+    /// 
+    /// - `terraform-provider-dynatrace -export dynatrace.ProcessGroupMonitoring` downloads all existing process group monitoring configuration
+    /// 
+    /// The full documentation of the export feature is available [here](https://dt-url.net/h203qmc).
+    /// </summary>
     [DynatraceResourceType("dynatrace:index/processGroupMonitoring:ProcessGroupMonitoring")]
     public partial class ProcessGroupMonitoring : global::Pulumi.CustomResource
     {

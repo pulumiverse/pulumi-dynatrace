@@ -27,10 +27,11 @@ class AutotagV2Args:
                  rules_maintained_externally: Optional[pulumi.Input[_builtins.bool]] = None):
         """
         The set of arguments for constructing a AutotagV2 resource.
+
         :param pulumi.Input[_builtins.str] description: Description
         :param pulumi.Input[_builtins.str] name: Tag name
         :param pulumi.Input['AutotagV2RulesArgs'] rules: Rules
-        :param pulumi.Input[_builtins.bool] rules_maintained_externally: If `true` this resource will not
+        :param pulumi.Input[_builtins.bool] rules_maintained_externally: If `true` the specified rules are ignored with the assumption that they're maintained externally or via `AutotagRules`
         """
         if description is not None:
             pulumi.set(__self__, "description", description)
@@ -81,7 +82,7 @@ class AutotagV2Args:
     @pulumi.getter(name="rulesMaintainedExternally")
     def rules_maintained_externally(self) -> Optional[pulumi.Input[_builtins.bool]]:
         """
-        If `true` this resource will not
+        If `true` the specified rules are ignored with the assumption that they're maintained externally or via `AutotagRules`
         """
         return pulumi.get(self, "rules_maintained_externally")
 
@@ -99,10 +100,11 @@ class _AutotagV2State:
                  rules_maintained_externally: Optional[pulumi.Input[_builtins.bool]] = None):
         """
         Input properties used for looking up and filtering AutotagV2 resources.
+
         :param pulumi.Input[_builtins.str] description: Description
         :param pulumi.Input[_builtins.str] name: Tag name
         :param pulumi.Input['AutotagV2RulesArgs'] rules: Rules
-        :param pulumi.Input[_builtins.bool] rules_maintained_externally: If `true` this resource will not
+        :param pulumi.Input[_builtins.bool] rules_maintained_externally: If `true` the specified rules are ignored with the assumption that they're maintained externally or via `AutotagRules`
         """
         if description is not None:
             pulumi.set(__self__, "description", description)
@@ -153,7 +155,7 @@ class _AutotagV2State:
     @pulumi.getter(name="rulesMaintainedExternally")
     def rules_maintained_externally(self) -> Optional[pulumi.Input[_builtins.bool]]:
         """
-        If `true` this resource will not
+        If `true` the specified rules are ignored with the assumption that they're maintained externally or via `AutotagRules`
         """
         return pulumi.get(self, "rules_maintained_externally")
 
@@ -174,13 +176,47 @@ class AutotagV2(pulumi.CustomResource):
                  rules_maintained_externally: Optional[pulumi.Input[_builtins.bool]] = None,
                  __props__=None):
         """
-        Create a AutotagV2 resource with the given unique name, props, and options.
+        > This resource requires the API token scopes **Read settings** (`settings.read`) and **Write settings** (`settings.write`)
+
+        ## Dynatrace Documentation
+
+        - Define and apply tags - https://www.dynatrace.com/support/help/how-to-use-dynatrace/tags-and-metadata/setup/how-to-define-tags
+
+        - Settings API - https://www.dynatrace.com/support/help/dynatrace-api/environment-api/settings (schemaId: `builtin:tags.auto-tagging`)
+
+        ## Export Example Usage
+
+        - `terraform-provider-dynatrace -export AutotagV2` downloads all existing automatically applied tags
+
+        The full documentation of the export feature is available [here](https://dt-url.net/h203qmc).
+
+        ## Resource Example Usage
+
+        ```python
+        import pulumi
+        import pulumiverse_dynatrace as dynatrace
+
+        # Sample for how to configure Auto Tag Rules using an Entity Selector
+        g_ke_sample = dynatrace.AutotagV2("GKESample",
+            name="GKE-Hosts",
+            rules={
+                "rules": [{
+                    "type": "SELECTOR",
+                    "enabled": True,
+                    "entity_selector": "type(host),entityName.startsWith(\\"gke\\")",
+                    "value_format": "true",
+                    "value_normalization": "Leave text as-is",
+                }],
+            })
+        ```
+
+
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[_builtins.str] description: Description
         :param pulumi.Input[_builtins.str] name: Tag name
         :param pulumi.Input[Union['AutotagV2RulesArgs', 'AutotagV2RulesArgsDict']] rules: Rules
-        :param pulumi.Input[_builtins.bool] rules_maintained_externally: If `true` this resource will not
+        :param pulumi.Input[_builtins.bool] rules_maintained_externally: If `true` the specified rules are ignored with the assumption that they're maintained externally or via `AutotagRules`
         """
         ...
     @overload
@@ -189,7 +225,41 @@ class AutotagV2(pulumi.CustomResource):
                  args: Optional[AutotagV2Args] = None,
                  opts: Optional[pulumi.ResourceOptions] = None):
         """
-        Create a AutotagV2 resource with the given unique name, props, and options.
+        > This resource requires the API token scopes **Read settings** (`settings.read`) and **Write settings** (`settings.write`)
+
+        ## Dynatrace Documentation
+
+        - Define and apply tags - https://www.dynatrace.com/support/help/how-to-use-dynatrace/tags-and-metadata/setup/how-to-define-tags
+
+        - Settings API - https://www.dynatrace.com/support/help/dynatrace-api/environment-api/settings (schemaId: `builtin:tags.auto-tagging`)
+
+        ## Export Example Usage
+
+        - `terraform-provider-dynatrace -export AutotagV2` downloads all existing automatically applied tags
+
+        The full documentation of the export feature is available [here](https://dt-url.net/h203qmc).
+
+        ## Resource Example Usage
+
+        ```python
+        import pulumi
+        import pulumiverse_dynatrace as dynatrace
+
+        # Sample for how to configure Auto Tag Rules using an Entity Selector
+        g_ke_sample = dynatrace.AutotagV2("GKESample",
+            name="GKE-Hosts",
+            rules={
+                "rules": [{
+                    "type": "SELECTOR",
+                    "enabled": True,
+                    "entity_selector": "type(host),entityName.startsWith(\\"gke\\")",
+                    "value_format": "true",
+                    "value_normalization": "Leave text as-is",
+                }],
+            })
+        ```
+
+
         :param str resource_name: The name of the resource.
         :param AutotagV2Args args: The arguments to use to populate this resource's properties.
         :param pulumi.ResourceOptions opts: Options for the resource.
@@ -246,7 +316,7 @@ class AutotagV2(pulumi.CustomResource):
         :param pulumi.Input[_builtins.str] description: Description
         :param pulumi.Input[_builtins.str] name: Tag name
         :param pulumi.Input[Union['AutotagV2RulesArgs', 'AutotagV2RulesArgsDict']] rules: Rules
-        :param pulumi.Input[_builtins.bool] rules_maintained_externally: If `true` this resource will not
+        :param pulumi.Input[_builtins.bool] rules_maintained_externally: If `true` the specified rules are ignored with the assumption that they're maintained externally or via `AutotagRules`
         """
         opts = pulumi.ResourceOptions.merge(opts, pulumi.ResourceOptions(id=id))
 
@@ -286,7 +356,7 @@ class AutotagV2(pulumi.CustomResource):
     @pulumi.getter(name="rulesMaintainedExternally")
     def rules_maintained_externally(self) -> pulumi.Output[Optional[_builtins.bool]]:
         """
-        If `true` this resource will not
+        If `true` the specified rules are ignored with the assumption that they're maintained externally or via `AutotagRules`
         """
         return pulumi.get(self, "rules_maintained_externally")
 

@@ -10,35 +10,73 @@ using Pulumi;
 
 namespace Pulumiverse.Dynatrace
 {
+    /// <summary>
+    /// &gt; This resource requires the API token scopes **Read settings** (`settings.read`) and **Write settings** (`settings.write`)
+    /// 
+    /// ## Dynatrace Documentation
+    /// 
+    /// - Trello integration - https://www.dynatrace.com/support/help/setup-and-configuration/integrations/problem-notifications/trello-integration
+    /// 
+    /// - Settings API - https://www.dynatrace.com/support/help/dynatrace-api/environment-api/settings (schemaId: `builtin:problem.notifications`)
+    /// 
+    /// ## Export Example Usage
+    /// 
+    /// - `terraform-provider-dynatrace -export dynatrace.TrelloNotification` downloads the existing problem notifications for Trello
+    /// 
+    /// The full documentation of the export feature is available [here](https://dt-url.net/h203qmc).
+    /// </summary>
     [DynatraceResourceType("dynatrace:index/trelloNotification:TrelloNotification")]
     public partial class TrelloNotification : global::Pulumi.CustomResource
     {
         /// <summary>
-        /// The configuration is enabled (`True`) or disabled (`False`)
+        /// This setting is enabled (`True`) or disabled (`False`)
         /// </summary>
         [Output("active")]
         public Output<bool> Active { get; private set; } = null!;
 
         /// <summary>
-        /// The application key for the Trello account
+        /// The application key for the Trello account.
         /// </summary>
         [Output("applicationKey")]
         public Output<string> ApplicationKey { get; private set; } = null!;
 
         /// <summary>
-        /// The application token for the Trello account
+        /// The authorization token for the Trello account.
         /// </summary>
         [Output("authorizationToken")]
-        public Output<string?> AuthorizationToken { get; private set; } = null!;
+        public Output<string> AuthorizationToken { get; private set; } = null!;
 
         /// <summary>
-        /// The Trello board to which the card should be assigned
+        /// Trello board ID problem cards should be assigned to
         /// </summary>
         [Output("boardId")]
         public Output<string> BoardId { get; private set; } = null!;
 
         /// <summary>
-        /// The description of the Trello card.   You can use same placeholders as in card text
+        /// The description of the Trello card. Type '{' for placeholder suggestions.. #### Available placeholders
+        /// **{ImpactedEntity}**: A short description of the problem and impacted entity (or multiple impacted entities).
+        /// 
+        /// **{ImpactedEntityNames}**: The entity impacted by the problem.
+        /// 
+        /// **{NamesOfImpactedEntities}**: The names of all entities that are impacted by the problem.
+        /// 
+        /// **{PID}**: Unique system identifier of the reported problem.
+        /// 
+        /// **{ProblemDetailsMarkdown}**: All problem event details including root cause as a Markdown-formatted string.
+        /// 
+        /// **{ProblemID}**: Display number of the reported problem.
+        /// 
+        /// **{ProblemImpact}**: Impact level of the problem. Possible values are APPLICATION, SERVICE, or INFRASTRUCTURE.
+        /// 
+        /// **{ProblemSeverity}**: Severity level of the problem. Possible values are AVAILABILITY, ERROR, PERFORMANCE, RESOURCE_CONTENTION, or CUSTOM_ALERT.
+        /// 
+        /// **{ProblemTitle}**: Short description of the problem.
+        /// 
+        /// **{ProblemURL}**: URL of the problem within Dynatrace.
+        /// 
+        /// **{State}**: Problem state. Possible values are OPEN or RESOLVED.
+        /// 
+        /// **{Tags}**: Comma separated list of tags that are defined for all impacted entities. To refer to the value of a specific tag, specify the tag's key in square brackets: **{Tags[key]}**. If the tag does not have any assigned value, the placeholder will be replaced by an empty string. The placeholder will not be replaced if the tag key does not exist.
         /// </summary>
         [Output("description")]
         public Output<string> Description { get; private set; } = null!;
@@ -50,13 +88,13 @@ namespace Pulumiverse.Dynatrace
         public Output<string> LegacyId { get; private set; } = null!;
 
         /// <summary>
-        /// The Trello list to which the card should be assigned
+        /// Trello list ID new problem cards should be assigned to
         /// </summary>
         [Output("listId")]
         public Output<string> ListId { get; private set; } = null!;
 
         /// <summary>
-        /// The name of the notification configuration
+        /// The name of the notification configuration.
         /// </summary>
         [Output("name")]
         public Output<string> Name { get; private set; } = null!;
@@ -68,13 +106,34 @@ namespace Pulumiverse.Dynatrace
         public Output<string> Profile { get; private set; } = null!;
 
         /// <summary>
-        /// The Trello list to which the card of the resolved problem should be assigned
+        /// Trello list ID resolved problem cards should be assigned to
         /// </summary>
         [Output("resolvedListId")]
         public Output<string> ResolvedListId { get; private set; } = null!;
 
         /// <summary>
-        /// The text of the generated Trello card.  You can use the following placeholders:  * `{ImpactedEntity}`: The entity impacted by the problem or *X* impacted entities.  * `{PID}`: The ID of the reported problem.  * `{ProblemDetailsMarkdown}`: All problem event details, including root cause, as a [Markdown-formatted](https://www.markdownguide.org/cheat-sheet/) string.  * `{ProblemID}`: The display number of the reported problem.  * `{ProblemImpact}`: The [impact level](https://www.dynatrace.com/support/help/shortlink/impact-analysis) of the problem. Possible values are `APPLICATION`, `SERVICE`, and `INFRASTRUCTURE`.  * `{ProblemSeverity}`: The [severity level](https://www.dynatrace.com/support/help/shortlink/event-types) of the problem. Possible values are `AVAILABILITY`, `ERROR`, `PERFORMANCE`, `RESOURCE_CONTENTION`, and `CUSTOM_ALERT`.  * `{ProblemTitle}`: A short description of the problem.  * `{ProblemURL}`: The URL of the problem within Dynatrace.  * `{State}`: The state of the problem. Possible values are `OPEN` and `RESOLVED`.  * `{Tags}`: The list of tags that are defined for all impacted entities, separated by commas
+        /// The card text and problem placeholders to appear on new problem cards. Type '{' for placeholder suggestions.. #### Available placeholders
+        /// **{ImpactedEntity}**: A short description of the problem and impacted entity (or multiple impacted entities).
+        /// 
+        /// **{ImpactedEntityNames}**: The entity impacted by the problem.
+        /// 
+        /// **{NamesOfImpactedEntities}**: The names of all entities that are impacted by the problem.
+        /// 
+        /// **{PID}**: Unique system identifier of the reported problem.
+        /// 
+        /// **{ProblemID}**: Display number of the reported problem.
+        /// 
+        /// **{ProblemImpact}**: Impact level of the problem. Possible values are APPLICATION, SERVICE, or INFRASTRUCTURE.
+        /// 
+        /// **{ProblemSeverity}**: Severity level of the problem. Possible values are AVAILABILITY, ERROR, PERFORMANCE, RESOURCE_CONTENTION, or CUSTOM_ALERT.
+        /// 
+        /// **{ProblemTitle}**: Short description of the problem.
+        /// 
+        /// **{ProblemURL}**: URL of the problem within Dynatrace.
+        /// 
+        /// **{State}**: Problem state. Possible values are OPEN or RESOLVED.
+        /// 
+        /// **{Tags}**: Comma separated list of tags that are defined for all impacted entities. To refer to the value of a specific tag, specify the tag's key in square brackets: **{Tags[key]}**. If the tag does not have any assigned value, the placeholder will be replaced by an empty string. The placeholder will not be replaced if the tag key does not exist.
         /// </summary>
         [Output("text")]
         public Output<string> Text { get; private set; } = null!;
@@ -131,22 +190,22 @@ namespace Pulumiverse.Dynatrace
     public sealed class TrelloNotificationArgs : global::Pulumi.ResourceArgs
     {
         /// <summary>
-        /// The configuration is enabled (`True`) or disabled (`False`)
+        /// This setting is enabled (`True`) or disabled (`False`)
         /// </summary>
         [Input("active", required: true)]
         public Input<bool> Active { get; set; } = null!;
 
         /// <summary>
-        /// The application key for the Trello account
+        /// The application key for the Trello account.
         /// </summary>
         [Input("applicationKey", required: true)]
         public Input<string> ApplicationKey { get; set; } = null!;
 
-        [Input("authorizationToken")]
+        [Input("authorizationToken", required: true)]
         private Input<string>? _authorizationToken;
 
         /// <summary>
-        /// The application token for the Trello account
+        /// The authorization token for the Trello account.
         /// </summary>
         public Input<string>? AuthorizationToken
         {
@@ -159,13 +218,36 @@ namespace Pulumiverse.Dynatrace
         }
 
         /// <summary>
-        /// The Trello board to which the card should be assigned
+        /// Trello board ID problem cards should be assigned to
         /// </summary>
         [Input("boardId", required: true)]
         public Input<string> BoardId { get; set; } = null!;
 
         /// <summary>
-        /// The description of the Trello card.   You can use same placeholders as in card text
+        /// The description of the Trello card. Type '{' for placeholder suggestions.. #### Available placeholders
+        /// **{ImpactedEntity}**: A short description of the problem and impacted entity (or multiple impacted entities).
+        /// 
+        /// **{ImpactedEntityNames}**: The entity impacted by the problem.
+        /// 
+        /// **{NamesOfImpactedEntities}**: The names of all entities that are impacted by the problem.
+        /// 
+        /// **{PID}**: Unique system identifier of the reported problem.
+        /// 
+        /// **{ProblemDetailsMarkdown}**: All problem event details including root cause as a Markdown-formatted string.
+        /// 
+        /// **{ProblemID}**: Display number of the reported problem.
+        /// 
+        /// **{ProblemImpact}**: Impact level of the problem. Possible values are APPLICATION, SERVICE, or INFRASTRUCTURE.
+        /// 
+        /// **{ProblemSeverity}**: Severity level of the problem. Possible values are AVAILABILITY, ERROR, PERFORMANCE, RESOURCE_CONTENTION, or CUSTOM_ALERT.
+        /// 
+        /// **{ProblemTitle}**: Short description of the problem.
+        /// 
+        /// **{ProblemURL}**: URL of the problem within Dynatrace.
+        /// 
+        /// **{State}**: Problem state. Possible values are OPEN or RESOLVED.
+        /// 
+        /// **{Tags}**: Comma separated list of tags that are defined for all impacted entities. To refer to the value of a specific tag, specify the tag's key in square brackets: **{Tags[key]}**. If the tag does not have any assigned value, the placeholder will be replaced by an empty string. The placeholder will not be replaced if the tag key does not exist.
         /// </summary>
         [Input("description", required: true)]
         public Input<string> Description { get; set; } = null!;
@@ -177,13 +259,13 @@ namespace Pulumiverse.Dynatrace
         public Input<string>? LegacyId { get; set; }
 
         /// <summary>
-        /// The Trello list to which the card should be assigned
+        /// Trello list ID new problem cards should be assigned to
         /// </summary>
         [Input("listId", required: true)]
         public Input<string> ListId { get; set; } = null!;
 
         /// <summary>
-        /// The name of the notification configuration
+        /// The name of the notification configuration.
         /// </summary>
         [Input("name")]
         public Input<string>? Name { get; set; }
@@ -195,13 +277,34 @@ namespace Pulumiverse.Dynatrace
         public Input<string> Profile { get; set; } = null!;
 
         /// <summary>
-        /// The Trello list to which the card of the resolved problem should be assigned
+        /// Trello list ID resolved problem cards should be assigned to
         /// </summary>
         [Input("resolvedListId", required: true)]
         public Input<string> ResolvedListId { get; set; } = null!;
 
         /// <summary>
-        /// The text of the generated Trello card.  You can use the following placeholders:  * `{ImpactedEntity}`: The entity impacted by the problem or *X* impacted entities.  * `{PID}`: The ID of the reported problem.  * `{ProblemDetailsMarkdown}`: All problem event details, including root cause, as a [Markdown-formatted](https://www.markdownguide.org/cheat-sheet/) string.  * `{ProblemID}`: The display number of the reported problem.  * `{ProblemImpact}`: The [impact level](https://www.dynatrace.com/support/help/shortlink/impact-analysis) of the problem. Possible values are `APPLICATION`, `SERVICE`, and `INFRASTRUCTURE`.  * `{ProblemSeverity}`: The [severity level](https://www.dynatrace.com/support/help/shortlink/event-types) of the problem. Possible values are `AVAILABILITY`, `ERROR`, `PERFORMANCE`, `RESOURCE_CONTENTION`, and `CUSTOM_ALERT`.  * `{ProblemTitle}`: A short description of the problem.  * `{ProblemURL}`: The URL of the problem within Dynatrace.  * `{State}`: The state of the problem. Possible values are `OPEN` and `RESOLVED`.  * `{Tags}`: The list of tags that are defined for all impacted entities, separated by commas
+        /// The card text and problem placeholders to appear on new problem cards. Type '{' for placeholder suggestions.. #### Available placeholders
+        /// **{ImpactedEntity}**: A short description of the problem and impacted entity (or multiple impacted entities).
+        /// 
+        /// **{ImpactedEntityNames}**: The entity impacted by the problem.
+        /// 
+        /// **{NamesOfImpactedEntities}**: The names of all entities that are impacted by the problem.
+        /// 
+        /// **{PID}**: Unique system identifier of the reported problem.
+        /// 
+        /// **{ProblemID}**: Display number of the reported problem.
+        /// 
+        /// **{ProblemImpact}**: Impact level of the problem. Possible values are APPLICATION, SERVICE, or INFRASTRUCTURE.
+        /// 
+        /// **{ProblemSeverity}**: Severity level of the problem. Possible values are AVAILABILITY, ERROR, PERFORMANCE, RESOURCE_CONTENTION, or CUSTOM_ALERT.
+        /// 
+        /// **{ProblemTitle}**: Short description of the problem.
+        /// 
+        /// **{ProblemURL}**: URL of the problem within Dynatrace.
+        /// 
+        /// **{State}**: Problem state. Possible values are OPEN or RESOLVED.
+        /// 
+        /// **{Tags}**: Comma separated list of tags that are defined for all impacted entities. To refer to the value of a specific tag, specify the tag's key in square brackets: **{Tags[key]}**. If the tag does not have any assigned value, the placeholder will be replaced by an empty string. The placeholder will not be replaced if the tag key does not exist.
         /// </summary>
         [Input("text", required: true)]
         public Input<string> Text { get; set; } = null!;
@@ -215,13 +318,13 @@ namespace Pulumiverse.Dynatrace
     public sealed class TrelloNotificationState : global::Pulumi.ResourceArgs
     {
         /// <summary>
-        /// The configuration is enabled (`True`) or disabled (`False`)
+        /// This setting is enabled (`True`) or disabled (`False`)
         /// </summary>
         [Input("active")]
         public Input<bool>? Active { get; set; }
 
         /// <summary>
-        /// The application key for the Trello account
+        /// The application key for the Trello account.
         /// </summary>
         [Input("applicationKey")]
         public Input<string>? ApplicationKey { get; set; }
@@ -230,7 +333,7 @@ namespace Pulumiverse.Dynatrace
         private Input<string>? _authorizationToken;
 
         /// <summary>
-        /// The application token for the Trello account
+        /// The authorization token for the Trello account.
         /// </summary>
         public Input<string>? AuthorizationToken
         {
@@ -243,13 +346,36 @@ namespace Pulumiverse.Dynatrace
         }
 
         /// <summary>
-        /// The Trello board to which the card should be assigned
+        /// Trello board ID problem cards should be assigned to
         /// </summary>
         [Input("boardId")]
         public Input<string>? BoardId { get; set; }
 
         /// <summary>
-        /// The description of the Trello card.   You can use same placeholders as in card text
+        /// The description of the Trello card. Type '{' for placeholder suggestions.. #### Available placeholders
+        /// **{ImpactedEntity}**: A short description of the problem and impacted entity (or multiple impacted entities).
+        /// 
+        /// **{ImpactedEntityNames}**: The entity impacted by the problem.
+        /// 
+        /// **{NamesOfImpactedEntities}**: The names of all entities that are impacted by the problem.
+        /// 
+        /// **{PID}**: Unique system identifier of the reported problem.
+        /// 
+        /// **{ProblemDetailsMarkdown}**: All problem event details including root cause as a Markdown-formatted string.
+        /// 
+        /// **{ProblemID}**: Display number of the reported problem.
+        /// 
+        /// **{ProblemImpact}**: Impact level of the problem. Possible values are APPLICATION, SERVICE, or INFRASTRUCTURE.
+        /// 
+        /// **{ProblemSeverity}**: Severity level of the problem. Possible values are AVAILABILITY, ERROR, PERFORMANCE, RESOURCE_CONTENTION, or CUSTOM_ALERT.
+        /// 
+        /// **{ProblemTitle}**: Short description of the problem.
+        /// 
+        /// **{ProblemURL}**: URL of the problem within Dynatrace.
+        /// 
+        /// **{State}**: Problem state. Possible values are OPEN or RESOLVED.
+        /// 
+        /// **{Tags}**: Comma separated list of tags that are defined for all impacted entities. To refer to the value of a specific tag, specify the tag's key in square brackets: **{Tags[key]}**. If the tag does not have any assigned value, the placeholder will be replaced by an empty string. The placeholder will not be replaced if the tag key does not exist.
         /// </summary>
         [Input("description")]
         public Input<string>? Description { get; set; }
@@ -261,13 +387,13 @@ namespace Pulumiverse.Dynatrace
         public Input<string>? LegacyId { get; set; }
 
         /// <summary>
-        /// The Trello list to which the card should be assigned
+        /// Trello list ID new problem cards should be assigned to
         /// </summary>
         [Input("listId")]
         public Input<string>? ListId { get; set; }
 
         /// <summary>
-        /// The name of the notification configuration
+        /// The name of the notification configuration.
         /// </summary>
         [Input("name")]
         public Input<string>? Name { get; set; }
@@ -279,13 +405,34 @@ namespace Pulumiverse.Dynatrace
         public Input<string>? Profile { get; set; }
 
         /// <summary>
-        /// The Trello list to which the card of the resolved problem should be assigned
+        /// Trello list ID resolved problem cards should be assigned to
         /// </summary>
         [Input("resolvedListId")]
         public Input<string>? ResolvedListId { get; set; }
 
         /// <summary>
-        /// The text of the generated Trello card.  You can use the following placeholders:  * `{ImpactedEntity}`: The entity impacted by the problem or *X* impacted entities.  * `{PID}`: The ID of the reported problem.  * `{ProblemDetailsMarkdown}`: All problem event details, including root cause, as a [Markdown-formatted](https://www.markdownguide.org/cheat-sheet/) string.  * `{ProblemID}`: The display number of the reported problem.  * `{ProblemImpact}`: The [impact level](https://www.dynatrace.com/support/help/shortlink/impact-analysis) of the problem. Possible values are `APPLICATION`, `SERVICE`, and `INFRASTRUCTURE`.  * `{ProblemSeverity}`: The [severity level](https://www.dynatrace.com/support/help/shortlink/event-types) of the problem. Possible values are `AVAILABILITY`, `ERROR`, `PERFORMANCE`, `RESOURCE_CONTENTION`, and `CUSTOM_ALERT`.  * `{ProblemTitle}`: A short description of the problem.  * `{ProblemURL}`: The URL of the problem within Dynatrace.  * `{State}`: The state of the problem. Possible values are `OPEN` and `RESOLVED`.  * `{Tags}`: The list of tags that are defined for all impacted entities, separated by commas
+        /// The card text and problem placeholders to appear on new problem cards. Type '{' for placeholder suggestions.. #### Available placeholders
+        /// **{ImpactedEntity}**: A short description of the problem and impacted entity (or multiple impacted entities).
+        /// 
+        /// **{ImpactedEntityNames}**: The entity impacted by the problem.
+        /// 
+        /// **{NamesOfImpactedEntities}**: The names of all entities that are impacted by the problem.
+        /// 
+        /// **{PID}**: Unique system identifier of the reported problem.
+        /// 
+        /// **{ProblemID}**: Display number of the reported problem.
+        /// 
+        /// **{ProblemImpact}**: Impact level of the problem. Possible values are APPLICATION, SERVICE, or INFRASTRUCTURE.
+        /// 
+        /// **{ProblemSeverity}**: Severity level of the problem. Possible values are AVAILABILITY, ERROR, PERFORMANCE, RESOURCE_CONTENTION, or CUSTOM_ALERT.
+        /// 
+        /// **{ProblemTitle}**: Short description of the problem.
+        /// 
+        /// **{ProblemURL}**: URL of the problem within Dynatrace.
+        /// 
+        /// **{State}**: Problem state. Possible values are OPEN or RESOLVED.
+        /// 
+        /// **{Tags}**: Comma separated list of tags that are defined for all impacted entities. To refer to the value of a specific tag, specify the tag's key in square brackets: **{Tags[key]}**. If the tag does not have any assigned value, the placeholder will be replaced by an empty string. The placeholder will not be replaced if the tag key does not exist.
         /// </summary>
         [Input("text")]
         public Input<string>? Text { get; set; }

@@ -11,6 +11,412 @@ import (
 	"github.com/pulumiverse/pulumi-dynatrace/sdk/go/dynatrace/internal"
 )
 
+// !> This resource is currently in an experimental phase. It is disabled by default. If you would like to get early access please reach out to us via GitHub ticket. Dynatrace Support will not yet be able to assist you here.
+//
+// The resource `GoldenState` doesn't represent an actual setting that can get maintained within a Dynatrace Environment or on a Dynatrace Cluster.
+// Purpose of this resource is to easily identify whether there exist setttings on a Dynatrace environment that are not maintained by Terraform.
+//
+// The resource allows you to specify for every supported resource a set of IDs. Any settings that are not among that set of IDs are then considered to be maintained outside of Terraform.
+// `GoldenState` in that case either prints out warnings for these "non-terraform" settings or optionally automatically deletes them.
+//
+// ## Usage Examples
+//
+// ### Example A
+//
+// ```go
+// package main
+//
+// import (
+//
+//	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//	"github.com/pulumiverse/pulumi-dynatrace/sdk/go/dynatrace"
+//
+// )
+//
+//	func main() {
+//		pulumi.Run(func(ctx *pulumi.Context) error {
+//			_, err := dynatrace.NewGoldenState(ctx, "golden_state", &dynatrace.GoldenStateArgs{
+//				DynatraceManagementZoneV2s: pulumi.StringArray{
+//					team_mainframe.Id,
+//					frontend.Id,
+//					team_hawaiian_pizza.Id,
+//				},
+//			})
+//			if err != nil {
+//				return err
+//			}
+//			return nil
+//		})
+//	}
+//
+// ```
+//
+// All Management Zones except the ones referred to with the IDs `dynatrace_management_zone_v2.team-mainframe.id`, `dynatrace_management_zone_v2.frontend.id` and `dynatrace_management_zone_v2.team-hawaiian-pizza.id` will be treated as "not maintained by Terraform'.
+// `pulumi up` will result with output similar to this:
+//
+// ### Example B
+//
+// ```go
+// package main
+//
+// import (
+//
+//	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//	"github.com/pulumiverse/pulumi-dynatrace/sdk/go/dynatrace"
+//
+// )
+//
+//	func main() {
+//		pulumi.Run(func(ctx *pulumi.Context) error {
+//			_, err := dynatrace.NewGoldenState(ctx, "golden_state", &dynatrace.GoldenStateArgs{
+//				Mode: pulumi.String("DELETE"),
+//				DynatraceManagementZoneV2s: pulumi.StringArray{
+//					team_mainframe.Id,
+//					frontend.Id,
+//					team_hawaiian_pizza.Id,
+//				},
+//			})
+//			if err != nil {
+//				return err
+//			}
+//			return nil
+//		})
+//	}
+//
+// ```
+// All Management Zones except the ones referred to with the IDs `dynatrace_management_zone_v2.team-mainframe.id`, `dynatrace_management_zone_v2.frontend.id` and `dynatrace_management_zone_v2.team-hawaiian-pizza.id` will be treated as "not maintained by Terraform'.
+//
+// `pulumi up` will result in all Management Zones which's IDs are not within that given set of IDs to get automatically deleted.
+//
+// Resources other than `ManagementZoneV2` will not be affected.
+//
+// ### Example C
+//
+// ```go
+// package main
+//
+// import (
+//
+//	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//	"github.com/pulumiverse/pulumi-dynatrace/sdk/go/dynatrace"
+//
+// )
+//
+//	func main() {
+//		pulumi.Run(func(ctx *pulumi.Context) error {
+//			_, err := dynatrace.NewGoldenState(ctx, "golden_state", &dynatrace.GoldenStateArgs{
+//				DynatraceManagementZoneV2s: pulumi.StringArray{},
+//			})
+//			if err != nil {
+//				return err
+//			}
+//			return nil
+//		})
+//	}
+//
+// ```
+// You're signaling to `GoldenState` that you expect no Management Zones at all are configured on the Dynatrace Environment.
+//
+// `pulumi up` will automatically delete existing Management Zones. Resources other than `ManagementZoneV2` will not be affected.
+//
+// Resources other than `ManagementZoneV2` will not be taken into consideration.
+//
+// ### Example D
+//
+// ```go
+// package main
+//
+// import (
+//
+//	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//	"github.com/pulumiverse/pulumi-dynatrace/sdk/go/dynatrace"
+//
+// )
+//
+//	func main() {
+//		pulumi.Run(func(ctx *pulumi.Context) error {
+//			_, err := dynatrace.NewGoldenState(ctx, "golden_state", &dynatrace.GoldenStateArgs{
+//				Mode:                       pulumi.String("DELETE"),
+//				DynatraceManagementZoneV2s: pulumi.StringArray{},
+//			})
+//			if err != nil {
+//				return err
+//			}
+//			return nil
+//		})
+//	}
+//
+// ```
+// You're signaling to `GoldenState` that you expect no Management Zones at all are configured on the Dynatrace Environment.
+//
+// `pulumi up` will print out a warning message like in Example A for all existing Management Zones. Resources other than `ManagementZoneV2` will not be affected.
+//
+// ### Example E
+//
+// ```go
+// package main
+//
+// import (
+//
+//	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//	"github.com/pulumiverse/pulumi-dynatrace/sdk/go/dynatrace"
+//
+// )
+//
+//	func main() {
+//		pulumi.Run(func(ctx *pulumi.Context) error {
+//			_, err := dynatrace.NewGoldenState(ctx, "golden_state", &dynatrace.GoldenStateArgs{
+//				DynatraceManagementZoneV2s: pulumi.StringArray{
+//					team_mainframe.Id,
+//					frontend.Id,
+//					team_hawaiian_pizza.Id,
+//				},
+//				DynatraceAlertings: pulumi.StringArray{
+//					quick.Id,
+//					slow.Id,
+//				},
+//				DynatraceAutotagV2s: pulumi.StringArray{},
+//			})
+//			if err != nil {
+//				return err
+//			}
+//			return nil
+//		})
+//	}
+//
+// ```
+// You're signaling to `GoldenState` that
+// * You expect only the Management Zones referred to with `dynatrace_management_zone_v2.team-mainframe.id`, `dynatrace_management_zone_v2.frontend.id`, `dynatrace_management_zone_v2.team-hawaiian-pizza.id` to exist the Dynatrace Environment
+// * You expect only the Alerting Profiles referred to with `dynatrace_alerting.quick.id` and `dynatrace_alerting.slow.id` to exist on the Dynatrace Environment
+// * You expect to see no Auto Tags to exist on the Dynatrace Environment
+//
+// `pulumi up` will print out a warning message like in Example A for all Management Zones, Alerting Profiles and Auto Tags that don't match the IDs provided.
+//
+// Resources other than `ManagementZoneV2`, `Alerting` and `AutotagV2` will not be taken into consideration.
+//
+// ### Example F
+//
+// ```go
+// package main
+//
+// import (
+//
+//	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//	"github.com/pulumiverse/pulumi-dynatrace/sdk/go/dynatrace"
+//
+// )
+//
+//	func main() {
+//		pulumi.Run(func(ctx *pulumi.Context) error {
+//			_, err := dynatrace.NewGoldenState(ctx, "golden_state", &dynatrace.GoldenStateArgs{
+//				Mode: pulumi.String("DELETE"),
+//				DynatraceManagementZoneV2s: pulumi.StringArray{
+//					team_mainframe.Id,
+//					frontend.Id,
+//					team_hawaiian_pizza.Id,
+//				},
+//				DynatraceAlertings: pulumi.StringArray{
+//					quick.Id,
+//					slow.Id,
+//				},
+//				DynatraceAutotagV2s: pulumi.StringArray{},
+//			})
+//			if err != nil {
+//				return err
+//			}
+//			return nil
+//		})
+//	}
+//
+// ```
+// You're signaling to `GoldenState` that
+// * You wish to delete all Management Zones except the ones referred to with `dynatrace_management_zone_v2.team-mainframe.id`, `dynatrace_management_zone_v2.frontend.id`, `dynatrace_management_zone_v2.team-hawaiian-pizza.id`
+// * You with to delete all Alerting Profiles expect the ones referred to with `dynatrace_alerting.quick.id` and `dynatrace_alerting.slow.id`
+// * You wish to delete all Auto Tags from the Dynatrace Environment
+//
+// `pulumi up` will automatically delete all Management Zones, Alerting Profiles and Auto Tags that don't match the IDs provided.
+//
+// Resources other than `ManagementZoneV2`, `Alerting` and `AutotagV2` will not be taken into consideration.
+//
+// ### Example G
+//
+// ```go
+// package main
+//
+// import (
+//
+//	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//	"github.com/pulumiverse/pulumi-dynatrace/sdk/go/dynatrace"
+//
+// )
+//
+//	func main() {
+//		pulumi.Run(func(ctx *pulumi.Context) error {
+//			_, err := dynatrace.NewGoldenState(ctx, "golden_state_auto_delete", &dynatrace.GoldenStateArgs{
+//				Mode: pulumi.String("DELETE"),
+//				DynatraceManagementZoneV2s: pulumi.StringArray{
+//					team_mainframe.Id,
+//					frontend.Id,
+//					team_hawaiian_pizza.Id,
+//				},
+//				DynatraceAlertings: pulumi.StringArray{
+//					quick.Id,
+//					slow.Id,
+//				},
+//			})
+//			if err != nil {
+//				return err
+//			}
+//			_, err = dynatrace.NewGoldenState(ctx, "golden_state_warn", &dynatrace.GoldenStateArgs{
+//				DynatraceAutotagV2s: pulumi.StringArray{},
+//			})
+//			if err != nil {
+//				return err
+//			}
+//			return nil
+//		})
+//	}
+//
+// ```
+//
+// Utilizing two separate `GoldenState` resource blocks allows you to specify different behavior for different resources.
+// For some resources you may want Terraform to automatically delete them.
+// For some resources you may want to just get notified via warning messages.
+//
+// You're signaling that
+// * You wish to delete all Management Zones except the ones referred to with `dynatrace_management_zone_v2.team-mainframe.id`, `dynatrace_management_zone_v2.frontend.id`, `dynatrace_management_zone_v2.team-hawaiian-pizza.id`
+// * You with to delete all Alerting Profiles expect the ones referred to with `dynatrace_alerting.quick.id` and `dynatrace_alerting.slow.id`
+// * You expect to see no Auto Tags to exist on the Dynatrace Environment
+//
+// `pulumi up` will automatically delete all Management Zones, Alerting Profiles that don't match the IDs provided. For any Auto Tags that are configured it will print out a warning like in Example A.
+//
+// !> Specifying the same resource in BOTH `GoldenState` resource blocks may lead to unpredictable results. Make sure that e.g. `AutotagV2` is just specified in ONE of these two blocks.
+//
+// Resources other than `ManagementZoneV2`, `Alerting` and `AutotagV2` will not be taken into consideration.
+//
+// ## Frequently Asked Questions
+//
+// ### Wouldn't `pulumi preview` reveal the same as the warning messages?
+// Running `pulumi preview` in a lot of cases matches up with the warning messages produced when specifying `mode = "WARN"`. Unfortunately the plan doesn't exactly reflect the differences detected by `GoldenState`.
+// In some cases the plan for resource `GoldenState` shows difference that eventually don't result in any warnings or automatic deletions.
+//
+// > Be aware of the fact that `GoldenState` shouldn't be considered a `classic` Terraform Resource. There doesn't exist a setting on the Dynatrace Environment that reflects exactly what's configured for that resource. The "remote state` needs to get queried for and deducted internally by the Provider.
+//
+// ### Why do I have to specify the "known" IDs explicitly?
+// We've initially aimed for functionality where you don't have to specify the "known" IDs explicitly - and that essentially automatically covers all resources within the same Terraform Module.
+// That's unfortunately easier said than done. Terraform doesn't offer any mechanisms that allows a Provider to query for what other resources exist within the same module.
+// We've also discussed evaluating the State file for that purpose. But of course that would immediately exclude environments where the state is getting managed remote - which is the case for most production environments.
+//
+// ### Warnings for settings not maintained by Terraform don't consistently contain the name of the setting in `[]`
+// Where applicable (e.g. Management Zones, Alerting Profiles, ...) a user readable name for a settings will show up within the error message - allowing you to identify it as easily as possible.
+// A lot of Settings offered by a Dynatrace Environment unfortunately cannot get identified by a name. Here you will have to work with the ID.
+//
+// ### `GoldenState` doesn't recognize resource `dynatraceXyz`, but that resource is supported by the Provider
+// It depends on the specific resource why that's the case
+// * Some Settings (e.g. `DduPool`) exist just as a singleton on a Dynatrace Environment. It makes much more sense to configure the settings you would like to enforce using a normal resource block. `GoldenState` wouldn't bring in any benefits as it just focuses on deleting.
+// * Some Settings (e.g. `SpanEntryPoint`) come prepopulated on every freshly provisioned Dynatrace Environment. Moreover thes "defaults" may even change over time (during cluster updates). We've decided to not mess around with these resources in order to avoid inconsistencies when `GoldenState` is configured to automatically delete settings.
+// * The resource `GoldenState` is not yet feature complete. Every resource it currently supports needs to get manually tested against a brand new environment. Essentially in order to ensure that neither of the two previous reasons are applicable. About 60% of all resources have been tested through already. We're adding support for additional resources gradually.
+//
+// ### What resources are currently supported by `GoldenState`?
+//   - ManagementZoneV2
+//   - Alerting
+//   - AutotagV2
+//   - RequestAttribute
+//   - QueueManager
+//   - ImsBridges
+//   - CustomService
+//   - AwsCredentials
+//   - AzureCredentials
+//   - SpanCaptureRule
+//   - SpanContextPropagation
+//   - SloV2
+//   - WebApplication
+//   - MobileApplication
+//   - JiraNotification
+//   - WebhookNotification
+//   - AnsibleTowerNotification
+//   - EmailNotification
+//   - OpsGenieNotification
+//   - PagerDutyNotification
+//   - ServiceNowNotification
+//   - SlackNotification
+//   - TrelloNotification
+//   - VictorOpsNotification
+//   - XmattersNotification
+//   - Maintenance
+//   - MetricEvents
+//   - KeyRequests
+//   - Credentials
+//   - CalculatedServiceMetric
+//   - CalculatedWebMetric
+//   - CalculatedMobileMetric
+//   - HttpMonitor
+//   - BrowserMonitor
+//   - CalculatedSyntheticMetric
+//   - HostNaming
+//   - ProcessgroupNaming
+//   - ServiceNaming
+//   - RequestNaming
+//   - ApplicationDetectionRule
+//   - ApplicationErrorRules
+//   - SyntheticLocation
+//   - QueueSharingGroups
+//   - PgAlerting
+//   - DatabaseAnomaliesV2
+//   - ProcessMonitoringRule
+//   - DiskAnomaliesV2
+//   - DiskSpecificAnomaliesV2
+//   - HostAnomaliesV2
+//   - CustomAppAnomalies
+//   - CustomAppCrashRate
+//   - ProcessMonitoring
+//   - ProcessAvailability
+//   - ProcessGroupDetection
+//   - MobileAppAnomalies
+//   - MobileAppCrashRate
+//   - WebAppAnomalies
+//   - MutedRequests
+//   - DeclarativeGrouping
+//   - HostProcessGroupMonitoring
+//   - RumIpLocations
+//   - CustomAppEnablement
+//   - MobileAppEnablement
+//   - WebAppEnablement
+//   - ProcessGroupRum
+//   - RumProviderBreakdown
+//   - WebAppResourceCleanup
+//   - UpdateWindows
+//   - ProcessGroupDetectionFlags
+//   - ProcessGroupMonitoring
+//   - ProcessGroupSimpleDetection
+//   - LogMetrics
+//   - BrowserMonitorPerformance
+//   - SessionReplayWebPrivacy
+//   - MonitoredTechnologiesApache
+//   - MonitoredTechnologiesDotnet
+//   - MonitoredTechnologiesGo
+//   - MonitoredTechnologiesIis
+//   - MonitoredTechnologiesJava
+//   - MonitoredTechnologiesNginx
+//   - MonitoredTechnologiesNodejs
+//   - MonitoredTechnologiesOpentracing
+//   - MonitoredTechnologiesPhp
+//   - MonitoredTechnologiesVarnish
+//   - MonitoredTechnologiesWsmb
+//   - ProcessVisibility
+//   - OneagentFeatures
+//   - RumAdvancedCorrelation
+//   - WebAppBeaconOrigins
+//   - WebAppResourceTypes
+//   - GenericTypes
+//   - DataPrivacy
+//   - ServiceFailure
+//   - ServiceHttpFailure
+//   - DiskOptions
+//   - ExtensionExecutionController
+//   - Nettracer
+//   - AixExtension
+//   - K8sNamespaceAnomalies
 type GoldenState struct {
 	pulumi.CustomResourceState
 
@@ -212,7 +618,10 @@ type GoldenState struct {
 	DynatraceWebhookNotifications pulumi.StringArrayOutput `pulumi:"dynatraceWebhookNotifications"`
 	// The IDs for resource of type `XmattersNotification` this `GoldenState` should ignore (and therefore neither warn about their existence nor attempt to delete them). Specify `[]` if you expect no such resources to exist in Dynatrace. Omit this attribute if you don't care about these kinds of resources regarding the golden state of the environment.
 	DynatraceXmattersNotifications pulumi.StringArrayOutput `pulumi:"dynatraceXmattersNotifications"`
-	Mode                           pulumi.StringPtrOutput   `pulumi:"mode"`
+	// Possible values are:
+	// * `DELETE` if you want resources to automatally get deleted` n*  `WARN`  if you want to get notified about resources that aren't managed by Terraform via a warning message from this resource `
+	//   Default is `WARN`.
+	Mode pulumi.StringPtrOutput `pulumi:"mode"`
 }
 
 // NewGoldenState registers a new resource with the given unique name, arguments, and options.
@@ -443,7 +852,10 @@ type goldenStateState struct {
 	DynatraceWebhookNotifications []string `pulumi:"dynatraceWebhookNotifications"`
 	// The IDs for resource of type `XmattersNotification` this `GoldenState` should ignore (and therefore neither warn about their existence nor attempt to delete them). Specify `[]` if you expect no such resources to exist in Dynatrace. Omit this attribute if you don't care about these kinds of resources regarding the golden state of the environment.
 	DynatraceXmattersNotifications []string `pulumi:"dynatraceXmattersNotifications"`
-	Mode                           *string  `pulumi:"mode"`
+	// Possible values are:
+	// * `DELETE` if you want resources to automatally get deleted` n*  `WARN`  if you want to get notified about resources that aren't managed by Terraform via a warning message from this resource `
+	//   Default is `WARN`.
+	Mode *string `pulumi:"mode"`
 }
 
 type GoldenStateState struct {
@@ -645,7 +1057,10 @@ type GoldenStateState struct {
 	DynatraceWebhookNotifications pulumi.StringArrayInput
 	// The IDs for resource of type `XmattersNotification` this `GoldenState` should ignore (and therefore neither warn about their existence nor attempt to delete them). Specify `[]` if you expect no such resources to exist in Dynatrace. Omit this attribute if you don't care about these kinds of resources regarding the golden state of the environment.
 	DynatraceXmattersNotifications pulumi.StringArrayInput
-	Mode                           pulumi.StringPtrInput
+	// Possible values are:
+	// * `DELETE` if you want resources to automatally get deleted` n*  `WARN`  if you want to get notified about resources that aren't managed by Terraform via a warning message from this resource `
+	//   Default is `WARN`.
+	Mode pulumi.StringPtrInput
 }
 
 func (GoldenStateState) ElementType() reflect.Type {
@@ -851,7 +1266,10 @@ type goldenStateArgs struct {
 	DynatraceWebhookNotifications []string `pulumi:"dynatraceWebhookNotifications"`
 	// The IDs for resource of type `XmattersNotification` this `GoldenState` should ignore (and therefore neither warn about their existence nor attempt to delete them). Specify `[]` if you expect no such resources to exist in Dynatrace. Omit this attribute if you don't care about these kinds of resources regarding the golden state of the environment.
 	DynatraceXmattersNotifications []string `pulumi:"dynatraceXmattersNotifications"`
-	Mode                           *string  `pulumi:"mode"`
+	// Possible values are:
+	// * `DELETE` if you want resources to automatally get deleted` n*  `WARN`  if you want to get notified about resources that aren't managed by Terraform via a warning message from this resource `
+	//   Default is `WARN`.
+	Mode *string `pulumi:"mode"`
 }
 
 // The set of arguments for constructing a GoldenState resource.
@@ -1054,7 +1472,10 @@ type GoldenStateArgs struct {
 	DynatraceWebhookNotifications pulumi.StringArrayInput
 	// The IDs for resource of type `XmattersNotification` this `GoldenState` should ignore (and therefore neither warn about their existence nor attempt to delete them). Specify `[]` if you expect no such resources to exist in Dynatrace. Omit this attribute if you don't care about these kinds of resources regarding the golden state of the environment.
 	DynatraceXmattersNotifications pulumi.StringArrayInput
-	Mode                           pulumi.StringPtrInput
+	// Possible values are:
+	// * `DELETE` if you want resources to automatally get deleted` n*  `WARN`  if you want to get notified about resources that aren't managed by Terraform via a warning message from this resource `
+	//   Default is `WARN`.
+	Mode pulumi.StringPtrInput
 }
 
 func (GoldenStateArgs) ElementType() reflect.Type {
@@ -1639,6 +2060,9 @@ func (o GoldenStateOutput) DynatraceXmattersNotifications() pulumi.StringArrayOu
 	return o.ApplyT(func(v *GoldenState) pulumi.StringArrayOutput { return v.DynatraceXmattersNotifications }).(pulumi.StringArrayOutput)
 }
 
+// Possible values are:
+//   - `DELETE` if you want resources to automatally get deleted` n*  `WARN`  if you want to get notified about resources that aren't managed by Terraform via a warning message from this resource `
+//     Default is `WARN`.
 func (o GoldenStateOutput) Mode() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v *GoldenState) pulumi.StringPtrOutput { return v.Mode }).(pulumi.StringPtrOutput)
 }

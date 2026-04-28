@@ -12,6 +12,116 @@ import (
 	"github.com/pulumiverse/pulumi-dynatrace/sdk/go/dynatrace/internal"
 )
 
+// > **Dynatrace SaaS only**
+//
+// > This resource requires the OAuth scopes **Read settings** (`settings:objects:read`) and **Write settings** (`settings:objects:write`)
+//
+// > This resource can alter Settings 2.0 objects of different owners if the OAuth scope `settings:objects:admin` is provided
+//
+// ## Limitations
+//
+// > Access modifiers can only be altered if the provided Settings 2.0 object allows such modifications, as indicated by its schema having `ownerBasedAccessControl` set to `true`
+//
+// The following resources allow for altering access modifiers (please note that this list may be incomplete):
+// - `AutomationControllerConnections`
+// - `AutomationWorkflowAwsConnections`
+// - `AutomationWorkflowJira`
+// - `AutomationWorkflowK8sConnections`
+// - `AutomationWorkflowSlack`
+// - `EventDrivenAnsibleConnections`
+// - `GithubConnection`
+// - `GitlabConnection`
+// - `JenkinsConnection`
+// - `Ms365EmailConnection`
+// - `MsentraidConnection`
+// - `MsteamsConnection`
+// - `PagerdutyConnection`
+// - `ServicenowConnection`
+// - `GenericSetting` if the provided schema supports it
+//
+// ## Documentation
+//
+// - Access Control for Connectors - https://docs.dynatrace.com/docs/shortlink/access-control-for-connectors
+//
+// - Settings API - https://www.dynatrace.com/support/help/dynatrace-api/environment-api/settings
+//
+// ## Export Example Usage
+//
+// - `terraform-provider-dynatrace -export SettingsPermissions` downloads all existing settings permissions.
+//
+// The full documentation of the export feature is available [here](https://dt-url.net/h203qmc).
+//
+// ## Resource Example Usage
+//
+// ```go
+// package main
+//
+// import (
+//
+//	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//	"github.com/pulumiverse/pulumi-dynatrace/sdk/go/dynatrace"
+//
+// )
+//
+//	func main() {
+//		pulumi.Run(func(ctx *pulumi.Context) error {
+//			group, err := dynatrace.NewIamGroup(ctx, "group", &dynatrace.IamGroupArgs{
+//				Name: pulumi.String("#name#"),
+//			})
+//			if err != nil {
+//				return err
+//			}
+//			userIamUser, err := dynatrace.NewIamUser(ctx, "user", &dynatrace.IamUserArgs{
+//				Email: pulumi.String("#name#@example.com"),
+//				Groups: pulumi.StringArray{
+//					group.ID(),
+//				},
+//			})
+//			if err != nil {
+//				return err
+//			}
+//			// because the UID is not returned for the resource, we need data
+//			user := dynatrace.LookupIamUserOutput(ctx, dynatrace.GetIamUserOutputArgs{
+//				Email: userIamUser.ID(),
+//			}, nil)
+//			connection, err := dynatrace.NewGithubConnection(ctx, "connection", &dynatrace.GithubConnectionArgs{
+//				Name:  pulumi.String("#name#"),
+//				Type:  pulumi.String("pat"),
+//				Token: pulumi.String("azAZ09"),
+//			})
+//			if err != nil {
+//				return err
+//			}
+//			_, err = dynatrace.NewSettingsPermissions(ctx, "permission", &dynatrace.SettingsPermissionsArgs{
+//				SettingsObjectId: connection.ID(),
+//				AllUsers:         pulumi.String("none"),
+//				Users: &dynatrace.SettingsPermissionsUsersArgs{
+//					Users: dynatrace.SettingsPermissionsUsersUserArray{
+//						&dynatrace.SettingsPermissionsUsersUserArgs{
+//							Uid: user.ApplyT(func(user dynatrace.GetIamUserResult) (*string, error) {
+//								return &user.Uid, nil
+//							}).(pulumi.StringPtrOutput),
+//							Access: pulumi.String("write"),
+//						},
+//					},
+//				},
+//				Groups: &dynatrace.SettingsPermissionsGroupsArgs{
+//					Groups: dynatrace.SettingsPermissionsGroupsGroupArray{
+//						&dynatrace.SettingsPermissionsGroupsGroupArgs{
+//							Id:     group.ID(),
+//							Access: pulumi.String("read"),
+//						},
+//					},
+//				},
+//			})
+//			if err != nil {
+//				return err
+//			}
+//			return nil
+//		})
+//	}
+//
+// ```
 type SettingsPermissions struct {
 	pulumi.CustomResourceState
 

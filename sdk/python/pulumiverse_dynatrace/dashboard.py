@@ -27,6 +27,7 @@ class DashboardArgs:
                  unknowns: Optional[pulumi.Input[_builtins.str]] = None):
         """
         The set of arguments for constructing a Dashboard resource.
+
         :param pulumi.Input['DashboardDashboardMetadataArgs'] dashboard_metadata: contains parameters of a dashboard
         :param pulumi.Input['DashboardMetadataArgs'] metadata: `metadata` exists for backwards compatibility but shouldn't get specified anymore
         :param pulumi.Input[Sequence[pulumi.Input['DashboardTileArgs']]] tiles: the tiles this Dashboard consist of
@@ -103,6 +104,7 @@ class _DashboardState:
                  unknowns: Optional[pulumi.Input[_builtins.str]] = None):
         """
         Input properties used for looking up and filtering Dashboard resources.
+
         :param pulumi.Input['DashboardDashboardMetadataArgs'] dashboard_metadata: contains parameters of a dashboard
         :param pulumi.Input['DashboardMetadataArgs'] metadata: `metadata` exists for backwards compatibility but shouldn't get specified anymore
         :param pulumi.Input[Sequence[pulumi.Input['DashboardTileArgs']]] tiles: the tiles this Dashboard consist of
@@ -182,7 +184,23 @@ class Dashboard(pulumi.CustomResource):
                  unknowns: Optional[pulumi.Input[_builtins.str]] = None,
                  __props__=None):
         """
-        Create a Dashboard resource with the given unique name, props, and options.
+        !> This resource frequently falls behind due to the constant additions/changes to the dashboard schema, instead it is recommended to use JsonDashboard which allows to send the full JSON payload.
+
+        > This resource requires the API token scopes **Read configuration** (`ReadConfig`) and **Write configuration** (`WriteConfig`)
+
+        ## Dynatrace Documentation
+
+        - Dashboards and reports - https://www.dynatrace.com/support/help/how-to-use-dynatrace/dashboards-and-charts
+
+        - Dashboards API - https://www.dynatrace.com/support/help/dynatrace-api/configuration-api/dashboards-api
+
+        ## Export Example Usage
+
+        - `terraform-provider-dynatrace -export Dashboard` downloads all existing dashboard configuration
+
+        The full documentation of the export feature is available [here](https://dt-url.net/h203qmc).
+
+
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[Union['DashboardDashboardMetadataArgs', 'DashboardDashboardMetadataArgsDict']] dashboard_metadata: contains parameters of a dashboard
@@ -197,7 +215,23 @@ class Dashboard(pulumi.CustomResource):
                  args: Optional[DashboardArgs] = None,
                  opts: Optional[pulumi.ResourceOptions] = None):
         """
-        Create a Dashboard resource with the given unique name, props, and options.
+        !> This resource frequently falls behind due to the constant additions/changes to the dashboard schema, instead it is recommended to use JsonDashboard which allows to send the full JSON payload.
+
+        > This resource requires the API token scopes **Read configuration** (`ReadConfig`) and **Write configuration** (`WriteConfig`)
+
+        ## Dynatrace Documentation
+
+        - Dashboards and reports - https://www.dynatrace.com/support/help/how-to-use-dynatrace/dashboards-and-charts
+
+        - Dashboards API - https://www.dynatrace.com/support/help/dynatrace-api/configuration-api/dashboards-api
+
+        ## Export Example Usage
+
+        - `terraform-provider-dynatrace -export Dashboard` downloads all existing dashboard configuration
+
+        The full documentation of the export feature is available [here](https://dt-url.net/h203qmc).
+
+
         :param str resource_name: The name of the resource.
         :param DashboardArgs args: The arguments to use to populate this resource's properties.
         :param pulumi.ResourceOptions opts: Options for the resource.

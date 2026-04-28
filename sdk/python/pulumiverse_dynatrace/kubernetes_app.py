@@ -25,6 +25,7 @@ class KubernetesAppArgs:
                  scope: Optional[pulumi.Input[_builtins.str]] = None):
         """
         The set of arguments for constructing a KubernetesApp resource.
+
         :param pulumi.Input['KubernetesAppKubernetesAppOptionsArgs'] kubernetes_app_options: no documentation available
         :param pulumi.Input[_builtins.str] scope: The scope of this setting (KUBERNETES_CLUSTER). Omit this property if you want to cover the whole environment.
         """
@@ -64,6 +65,7 @@ class _KubernetesAppState:
                  scope: Optional[pulumi.Input[_builtins.str]] = None):
         """
         Input properties used for looking up and filtering KubernetesApp resources.
+
         :param pulumi.Input['KubernetesAppKubernetesAppOptionsArgs'] kubernetes_app_options: no documentation available
         :param pulumi.Input[_builtins.str] scope: The scope of this setting (KUBERNETES_CLUSTER). Omit this property if you want to cover the whole environment.
         """
@@ -107,7 +109,21 @@ class KubernetesApp(pulumi.CustomResource):
                  scope: Optional[pulumi.Input[_builtins.str]] = None,
                  __props__=None):
         """
-        Create a KubernetesApp resource with the given unique name, props, and options.
+        > This resource requires the API token scopes **Read settings** (`settings.read`) and **Write settings** (`settings.write`)
+
+        ## Dynatrace Documentation
+
+        - Kubernetes app - https://docs.dynatrace.com/docs/platform-modules/infrastructure-monitoring/container-platform-monitoring/kubernetes-app
+
+        - Settings API - https://www.dynatrace.com/support/help/dynatrace-api/environment-api/settings (schemaId: `builtin:app-transition.kubernetes`)
+
+        ## Export Example Usage
+
+        - `terraform-provider-dynatrace -export KubernetesApp` downloads all existing Kubernetes app settings
+
+        The full documentation of the export feature is available [here](https://dt-url.net/h203qmc).
+
+
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[Union['KubernetesAppKubernetesAppOptionsArgs', 'KubernetesAppKubernetesAppOptionsArgsDict']] kubernetes_app_options: no documentation available
@@ -120,7 +136,21 @@ class KubernetesApp(pulumi.CustomResource):
                  args: KubernetesAppArgs,
                  opts: Optional[pulumi.ResourceOptions] = None):
         """
-        Create a KubernetesApp resource with the given unique name, props, and options.
+        > This resource requires the API token scopes **Read settings** (`settings.read`) and **Write settings** (`settings.write`)
+
+        ## Dynatrace Documentation
+
+        - Kubernetes app - https://docs.dynatrace.com/docs/platform-modules/infrastructure-monitoring/container-platform-monitoring/kubernetes-app
+
+        - Settings API - https://www.dynatrace.com/support/help/dynatrace-api/environment-api/settings (schemaId: `builtin:app-transition.kubernetes`)
+
+        ## Export Example Usage
+
+        - `terraform-provider-dynatrace -export KubernetesApp` downloads all existing Kubernetes app settings
+
+        The full documentation of the export feature is available [here](https://dt-url.net/h203qmc).
+
+
         :param str resource_name: The name of the resource.
         :param KubernetesAppArgs args: The arguments to use to populate this resource's properties.
         :param pulumi.ResourceOptions opts: Options for the resource.

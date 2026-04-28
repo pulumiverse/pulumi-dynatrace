@@ -6,6 +6,274 @@ import * as inputs from "./types/input";
 import * as outputs from "./types/output";
 import * as utilities from "./utilities";
 
+/**
+ * > This resource requires the API token scopes **Read settings** (`settings.read`) and **Write settings** (`settings.write`)
+ *
+ * > This resource requires the OAuth scopes **Read settings** (`settings:objects:read`) and **Write settings** (`settings:objects:write`)
+ *
+ * ## Limitations
+ *
+ * > **Warning** If a resource is created using an API token or without setting `DYNATRACE_HTTP_OAUTH_PREFERENCE=true` (when both are used), the settings object's owner will remain empty.
+ *
+ * An empty owner implies:
+ * - The settings object becomes public, allowing other users with settings permissions to read and modify it.
+ * - Changing the settings object's permissions will have no effect, meaning the `dynatrace.SettingsPermissions` resource can't alter its access.
+ *
+ * When a settings object is created using platform credentials:
+ * - The owner is set to the owner of the OAuth client or platform token.
+ * - By default, the settings object is private; only the owner can read and modify it.
+ * - Access modifiers can be managed using the `dynatrace.SettingsPermissions` resource.
+ *
+ * We recommend using platform credentials to ensure a correct setup.
+ * In case an API token is needed, we recommend setting `DYNATRACE_HTTP_OAUTH_PREFERENCE=true`.
+ *
+ * ## Dynatrace Documentation
+ *
+ * - OpenPipeline - https://docs.dynatrace.com/docs/platform/openpipeline
+ *
+ * ## Export Example Usage
+ *
+ * - `terraform-provider-dynatrace -export dynatrace.OpenpipelineV2EventsSdlcPipelines` downloads all existing OpenPipeline definitions for events sdlc pipelines
+ *
+ * The full documentation of the export feature is available [here](https://dt-url.net/h203qmc).
+ *
+ * ## Resource Example Usage
+ *
+ * ```typescript
+ * import * as pulumi from "@pulumi/pulumi";
+ * import * as dynatrace from "@pulumiverse/dynatrace";
+ *
+ * const max_pipeline = new dynatrace.OpenpipelineV2EventsSdlcPipelines("max-pipeline", {
+ *     displayName: "Warning pipeline",
+ *     customId: "pipeline_Warning_pipeline_2773_tf_#name#",
+ *     metadataList: {
+ *         metadatas: [{
+ *             entryKey: "environment",
+ *             entryValue: "production",
+ *         }],
+ *     },
+ *     processing: {
+ *         processors: {
+ *             processors: [
+ *                 {
+ *                     type: "drop",
+ *                     id: "processor_Drop_unnecessary_records_3802",
+ *                     description: "Drop unnecessary records",
+ *                     matcher: "not matchesPhrase(record.name, \"Warning\")",
+ *                     enabled: true,
+ *                 },
+ *                 {
+ *                     type: "fieldsAdd",
+ *                     id: "processor_Add_warning_flag_5434",
+ *                     description: "Add warning flag",
+ *                     matcher: "matchesPhrase(record.name, \"Warning\")",
+ *                     sampleData: `{
+ *   "record.name": "Warning record" 
+ * }`,
+ *                     fieldsAdd: {
+ *                         fields: {
+ *                             fields: [{
+ *                                 name: "is_warning",
+ *                                 value: "true",
+ *                             }],
+ *                         },
+ *                     },
+ *                     enabled: true,
+ *                 },
+ *                 {
+ *                     type: "fieldsRemove",
+ *                     id: "processor_Remove_details_field_8539",
+ *                     description: "Remove details field",
+ *                     sampleData: `{
+ *   "record.name": "Warning",
+ *   "record.details": "some record details"
+ * }`,
+ *                     matcher: "isNotNull(record.details)",
+ *                     fieldsRemove: {
+ *                         fields: ["record.details"],
+ *                     },
+ *                     enabled: true,
+ *                 },
+ *                 {
+ *                     type: "fieldsRename",
+ *                     id: "processor_Rename_name_to_title_8530",
+ *                     description: "Rename name to title",
+ *                     sampleData: `{
+ *   "record.name": "Warning"
+ * }`,
+ *                     matcher: "true",
+ *                     fieldsRename: {
+ *                         fields: {
+ *                             fields: [{
+ *                                 fromName: "record.name",
+ *                                 toName: "record.title",
+ *                             }],
+ *                         },
+ *                     },
+ *                     enabled: true,
+ *                 },
+ *                 {
+ *                     type: "dql",
+ *                     id: "processor_Combine_title_and_summary_to_name_8808",
+ *                     description: "Combine title and summary to name",
+ *                     sampleData: `{
+ *   "record.title": "Warning",
+ *   "record.summary": "Request failed"
+ * }`,
+ *                     matcher: "true",
+ *                     dql: {
+ *                         script: "fieldsAdd record.name = concat(record.title, \" - \", record.summary)",
+ *                     },
+ *                     enabled: true,
+ *                 },
+ *             ],
+ *         },
+ *     },
+ *     davis: {
+ *         processors: {
+ *             processors: [{
+ *                 type: "davis",
+ *                 id: "processor_Create_warning_event_8226",
+ *                 description: "Create warning event",
+ *                 matcher: "true",
+ *                 davis: {
+ *                     properties: {
+ *                         properties: [
+ *                             {
+ *                                 key: "event.type",
+ *                                 value: "CUSTOM_ALERT",
+ *                             },
+ *                             {
+ *                                 key: "event.name",
+ *                                 value: "Warning detected",
+ *                             },
+ *                             {
+ *                                 key: "event.description",
+ *                                 value: "Warning: {dims:record.summary}",
+ *                             },
+ *                         ],
+ *                     },
+ *                 },
+ *                 enabled: true,
+ *             }],
+ *         },
+ *     },
+ *     metricExtraction: {
+ *         processors: {
+ *             processors: [
+ *                 {
+ *                     type: "counterMetric",
+ *                     id: "processor_Count_warning_events_6392",
+ *                     description: "Count warnings",
+ *                     matcher: "true",
+ *                     counterMetric: {
+ *                         metricKey: "warning.count",
+ *                         dimensions: {
+ *                             dimensions: [
+ *                                 {
+ *                                     sourceFieldName: "dt.cost.costcenter",
+ *                                 },
+ *                                 {
+ *                                     sourceFieldName: "dt.cost.product",
+ *                                 },
+ *                                 {
+ *                                     sourceFieldName: "dt.security_context",
+ *                                 },
+ *                                 {
+ *                                     sourceFieldName: "record.category",
+ *                                     destinationFieldName: "warning_category",
+ *                                 },
+ *                             ],
+ *                         },
+ *                     },
+ *                     enabled: true,
+ *                 },
+ *                 {
+ *                     type: "valueMetric",
+ *                     id: "processor_Warning_timeout_1990",
+ *                     description: "Warning timeout",
+ *                     matcher: "true",
+ *                     valueMetric: {
+ *                         metricKey: "warning.timeout",
+ *                         field: "recording.timeout_in_min",
+ *                         defaultValue: "60",
+ *                         dimensions: {
+ *                             dimensions: [
+ *                                 {
+ *                                     sourceFieldName: "dt.cost.costcenter",
+ *                                 },
+ *                                 {
+ *                                     sourceFieldName: "dt.cost.product",
+ *                                 },
+ *                                 {
+ *                                     sourceFieldName: "dt.security_context",
+ *                                 },
+ *                                 {
+ *                                     sourceFieldName: "record.category",
+ *                                     destinationFieldName: "warning_category",
+ *                                 },
+ *                             ],
+ *                         },
+ *                     },
+ *                     enabled: true,
+ *                 },
+ *             ],
+ *         },
+ *     },
+ *     securityContext: {
+ *         processors: {
+ *             processors: [
+ *                 {
+ *                     type: "securityContext",
+ *                     id: "processor_Use_dt.security_context_if_set_1080",
+ *                     description: "Use dt.security_context if set",
+ *                     matcher: "isNotNull(dt.security_context)",
+ *                     securityContext: {
+ *                         value: {
+ *                             type: "field",
+ *                             field: {
+ *                                 sourceFieldName: "dt.security_context",
+ *                             },
+ *                         },
+ *                     },
+ *                     enabled: true,
+ *                 },
+ *                 {
+ *                     type: "securityContext",
+ *                     id: "processor_Assign_warnings_to_ACME_teams_if_no_context_set_5465",
+ *                     description: "Assign warnings to ACME teams if no context set",
+ *                     matcher: "isNull(dt.security_context)",
+ *                     securityContext: {
+ *                         value: {
+ *                             type: "multiValueConstant",
+ *                             multiValueConstants: [
+ *                                 "ACME1",
+ *                                 "ACME2",
+ *                             ],
+ *                         },
+ *                     },
+ *                     enabled: true,
+ *                 },
+ *             ],
+ *         },
+ *     },
+ *     storage: {
+ *         processors: {
+ *             processors: [{
+ *                 type: "bucketAssignment",
+ *                 id: "processor_Add_to_default_bucket_5010",
+ *                 description: "Add to default bucket",
+ *                 matcher: "true",
+ *                 bucketAssignment: {
+ *                     bucketName: "default_events",
+ *                 },
+ *                 enabled: true,
+ *             }],
+ *         },
+ *     },
+ * });
+ * ```
+ */
 export class OpenpipelineV2EventsSdlcPipelines extends pulumi.CustomResource {
     /**
      * Get an existing OpenpipelineV2EventsSdlcPipelines resource's state with the given name, ID, and optional extra
@@ -37,7 +305,7 @@ export class OpenpipelineV2EventsSdlcPipelines extends pulumi.CustomResource {
     /**
      * Cost allocation stage
      */
-    declare public readonly costAllocation: pulumi.Output<outputs.OpenpipelineV2EventsSdlcPipelinesCostAllocation>;
+    declare public readonly costAllocation: pulumi.Output<outputs.OpenpipelineV2EventsSdlcPipelinesCostAllocation | undefined>;
     /**
      * Custom pipeline id
      */
@@ -45,35 +313,47 @@ export class OpenpipelineV2EventsSdlcPipelines extends pulumi.CustomResource {
     /**
      * Data extraction stage
      */
-    declare public readonly dataExtraction: pulumi.Output<outputs.OpenpipelineV2EventsSdlcPipelinesDataExtraction>;
+    declare public readonly dataExtraction: pulumi.Output<outputs.OpenpipelineV2EventsSdlcPipelinesDataExtraction | undefined>;
     /**
      * Davis event extraction stage
      */
-    declare public readonly davis: pulumi.Output<outputs.OpenpipelineV2EventsSdlcPipelinesDavis>;
+    declare public readonly davis: pulumi.Output<outputs.OpenpipelineV2EventsSdlcPipelinesDavis | undefined>;
     /**
      * Display name
      */
     declare public readonly displayName: pulumi.Output<string>;
     /**
+     * Pipeline metadata list
+     */
+    declare public readonly metadataList: pulumi.Output<outputs.OpenpipelineV2EventsSdlcPipelinesMetadataList | undefined>;
+    /**
      * Metrics extraction stage
      */
-    declare public readonly metricExtraction: pulumi.Output<outputs.OpenpipelineV2EventsSdlcPipelinesMetricExtraction>;
+    declare public readonly metricExtraction: pulumi.Output<outputs.OpenpipelineV2EventsSdlcPipelinesMetricExtraction | undefined>;
     /**
      * Processing stage
      */
-    declare public readonly processing: pulumi.Output<outputs.OpenpipelineV2EventsSdlcPipelinesProcessing>;
+    declare public readonly processing: pulumi.Output<outputs.OpenpipelineV2EventsSdlcPipelinesProcessing | undefined>;
     /**
      * Product allocation stage
      */
-    declare public readonly productAllocation: pulumi.Output<outputs.OpenpipelineV2EventsSdlcPipelinesProductAllocation>;
+    declare public readonly productAllocation: pulumi.Output<outputs.OpenpipelineV2EventsSdlcPipelinesProductAllocation | undefined>;
     /**
      * Security context stage
      */
-    declare public readonly securityContext: pulumi.Output<outputs.OpenpipelineV2EventsSdlcPipelinesSecurityContext>;
+    declare public readonly securityContext: pulumi.Output<outputs.OpenpipelineV2EventsSdlcPipelinesSecurityContext | undefined>;
+    /**
+     * Smartscape edge extraction stage
+     */
+    declare public readonly smartscapeEdgeExtraction: pulumi.Output<outputs.OpenpipelineV2EventsSdlcPipelinesSmartscapeEdgeExtraction | undefined>;
+    /**
+     * Smartscape node extraction stage
+     */
+    declare public readonly smartscapeNodeExtraction: pulumi.Output<outputs.OpenpipelineV2EventsSdlcPipelinesSmartscapeNodeExtraction | undefined>;
     /**
      * Storage stage
      */
-    declare public readonly storage: pulumi.Output<outputs.OpenpipelineV2EventsSdlcPipelinesStorage>;
+    declare public readonly storage: pulumi.Output<outputs.OpenpipelineV2EventsSdlcPipelinesStorage | undefined>;
 
     /**
      * Create a OpenpipelineV2EventsSdlcPipelines resource with the given unique name, arguments, and options.
@@ -93,52 +373,34 @@ export class OpenpipelineV2EventsSdlcPipelines extends pulumi.CustomResource {
             resourceInputs["dataExtraction"] = state?.dataExtraction;
             resourceInputs["davis"] = state?.davis;
             resourceInputs["displayName"] = state?.displayName;
+            resourceInputs["metadataList"] = state?.metadataList;
             resourceInputs["metricExtraction"] = state?.metricExtraction;
             resourceInputs["processing"] = state?.processing;
             resourceInputs["productAllocation"] = state?.productAllocation;
             resourceInputs["securityContext"] = state?.securityContext;
+            resourceInputs["smartscapeEdgeExtraction"] = state?.smartscapeEdgeExtraction;
+            resourceInputs["smartscapeNodeExtraction"] = state?.smartscapeNodeExtraction;
             resourceInputs["storage"] = state?.storage;
         } else {
             const args = argsOrState as OpenpipelineV2EventsSdlcPipelinesArgs | undefined;
-            if (args?.costAllocation === undefined && !opts.urn) {
-                throw new Error("Missing required property 'costAllocation'");
-            }
             if (args?.customId === undefined && !opts.urn) {
                 throw new Error("Missing required property 'customId'");
             }
-            if (args?.dataExtraction === undefined && !opts.urn) {
-                throw new Error("Missing required property 'dataExtraction'");
-            }
-            if (args?.davis === undefined && !opts.urn) {
-                throw new Error("Missing required property 'davis'");
-            }
             if (args?.displayName === undefined && !opts.urn) {
                 throw new Error("Missing required property 'displayName'");
-            }
-            if (args?.metricExtraction === undefined && !opts.urn) {
-                throw new Error("Missing required property 'metricExtraction'");
-            }
-            if (args?.processing === undefined && !opts.urn) {
-                throw new Error("Missing required property 'processing'");
-            }
-            if (args?.productAllocation === undefined && !opts.urn) {
-                throw new Error("Missing required property 'productAllocation'");
-            }
-            if (args?.securityContext === undefined && !opts.urn) {
-                throw new Error("Missing required property 'securityContext'");
-            }
-            if (args?.storage === undefined && !opts.urn) {
-                throw new Error("Missing required property 'storage'");
             }
             resourceInputs["costAllocation"] = args?.costAllocation;
             resourceInputs["customId"] = args?.customId;
             resourceInputs["dataExtraction"] = args?.dataExtraction;
             resourceInputs["davis"] = args?.davis;
             resourceInputs["displayName"] = args?.displayName;
+            resourceInputs["metadataList"] = args?.metadataList;
             resourceInputs["metricExtraction"] = args?.metricExtraction;
             resourceInputs["processing"] = args?.processing;
             resourceInputs["productAllocation"] = args?.productAllocation;
             resourceInputs["securityContext"] = args?.securityContext;
+            resourceInputs["smartscapeEdgeExtraction"] = args?.smartscapeEdgeExtraction;
+            resourceInputs["smartscapeNodeExtraction"] = args?.smartscapeNodeExtraction;
             resourceInputs["storage"] = args?.storage;
         }
         opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts);
@@ -171,6 +433,10 @@ export interface OpenpipelineV2EventsSdlcPipelinesState {
      */
     displayName?: pulumi.Input<string>;
     /**
+     * Pipeline metadata list
+     */
+    metadataList?: pulumi.Input<inputs.OpenpipelineV2EventsSdlcPipelinesMetadataList>;
+    /**
      * Metrics extraction stage
      */
     metricExtraction?: pulumi.Input<inputs.OpenpipelineV2EventsSdlcPipelinesMetricExtraction>;
@@ -187,6 +453,14 @@ export interface OpenpipelineV2EventsSdlcPipelinesState {
      */
     securityContext?: pulumi.Input<inputs.OpenpipelineV2EventsSdlcPipelinesSecurityContext>;
     /**
+     * Smartscape edge extraction stage
+     */
+    smartscapeEdgeExtraction?: pulumi.Input<inputs.OpenpipelineV2EventsSdlcPipelinesSmartscapeEdgeExtraction>;
+    /**
+     * Smartscape node extraction stage
+     */
+    smartscapeNodeExtraction?: pulumi.Input<inputs.OpenpipelineV2EventsSdlcPipelinesSmartscapeNodeExtraction>;
+    /**
      * Storage stage
      */
     storage?: pulumi.Input<inputs.OpenpipelineV2EventsSdlcPipelinesStorage>;
@@ -199,7 +473,7 @@ export interface OpenpipelineV2EventsSdlcPipelinesArgs {
     /**
      * Cost allocation stage
      */
-    costAllocation: pulumi.Input<inputs.OpenpipelineV2EventsSdlcPipelinesCostAllocation>;
+    costAllocation?: pulumi.Input<inputs.OpenpipelineV2EventsSdlcPipelinesCostAllocation>;
     /**
      * Custom pipeline id
      */
@@ -207,33 +481,45 @@ export interface OpenpipelineV2EventsSdlcPipelinesArgs {
     /**
      * Data extraction stage
      */
-    dataExtraction: pulumi.Input<inputs.OpenpipelineV2EventsSdlcPipelinesDataExtraction>;
+    dataExtraction?: pulumi.Input<inputs.OpenpipelineV2EventsSdlcPipelinesDataExtraction>;
     /**
      * Davis event extraction stage
      */
-    davis: pulumi.Input<inputs.OpenpipelineV2EventsSdlcPipelinesDavis>;
+    davis?: pulumi.Input<inputs.OpenpipelineV2EventsSdlcPipelinesDavis>;
     /**
      * Display name
      */
     displayName: pulumi.Input<string>;
     /**
+     * Pipeline metadata list
+     */
+    metadataList?: pulumi.Input<inputs.OpenpipelineV2EventsSdlcPipelinesMetadataList>;
+    /**
      * Metrics extraction stage
      */
-    metricExtraction: pulumi.Input<inputs.OpenpipelineV2EventsSdlcPipelinesMetricExtraction>;
+    metricExtraction?: pulumi.Input<inputs.OpenpipelineV2EventsSdlcPipelinesMetricExtraction>;
     /**
      * Processing stage
      */
-    processing: pulumi.Input<inputs.OpenpipelineV2EventsSdlcPipelinesProcessing>;
+    processing?: pulumi.Input<inputs.OpenpipelineV2EventsSdlcPipelinesProcessing>;
     /**
      * Product allocation stage
      */
-    productAllocation: pulumi.Input<inputs.OpenpipelineV2EventsSdlcPipelinesProductAllocation>;
+    productAllocation?: pulumi.Input<inputs.OpenpipelineV2EventsSdlcPipelinesProductAllocation>;
     /**
      * Security context stage
      */
-    securityContext: pulumi.Input<inputs.OpenpipelineV2EventsSdlcPipelinesSecurityContext>;
+    securityContext?: pulumi.Input<inputs.OpenpipelineV2EventsSdlcPipelinesSecurityContext>;
+    /**
+     * Smartscape edge extraction stage
+     */
+    smartscapeEdgeExtraction?: pulumi.Input<inputs.OpenpipelineV2EventsSdlcPipelinesSmartscapeEdgeExtraction>;
+    /**
+     * Smartscape node extraction stage
+     */
+    smartscapeNodeExtraction?: pulumi.Input<inputs.OpenpipelineV2EventsSdlcPipelinesSmartscapeNodeExtraction>;
     /**
      * Storage stage
      */
-    storage: pulumi.Input<inputs.OpenpipelineV2EventsSdlcPipelinesStorage>;
+    storage?: pulumi.Input<inputs.OpenpipelineV2EventsSdlcPipelinesStorage>;
 }

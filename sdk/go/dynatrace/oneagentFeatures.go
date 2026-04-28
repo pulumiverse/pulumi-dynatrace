@@ -12,9 +12,53 @@ import (
 	"github.com/pulumiverse/pulumi-dynatrace/sdk/go/dynatrace/internal"
 )
 
+// > This resource requires the API token scopes **Read settings** (`settings.read`) and **Write settings** (`settings.write`)
+//
+// ## Dynatrace Documentation
+//
+// - OneAgent Features - https://www.dynatrace.com/support/help/setup-and-configuration/dynatrace-oneagent/oneagent-features#configuration-via-web-ui
+//
+// - Settings API - https://www.dynatrace.com/support/help/dynatrace-api/environment-api/settings (schemaId: `builtin:oneagent.features`)
+//
+// ## Export Example Usage
+//
+// - `terraform-provider-dynatrace -export OneagentFeatures` downloads the current configuration for OneAgent Features
+//
+// The full documentation of the export feature is available [here](https://dt-url.net/h203qmc).
+//
+// ## Resource Example Usage
+//
+// ```go
+// package main
+//
+// import (
+//
+//	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//	"github.com/pulumiverse/pulumi-dynatrace/sdk/go/dynatrace"
+//
+// )
+//
+//	func main() {
+//		pulumi.Run(func(ctx *pulumi.Context) error {
+//			// ID vu9U3hXa3q0AAAABABlidWlsdGluOm9uZWFnZW50LmZlYXR1cmVzAAZ0ZW5hbnQABnRlbmFudAAkMWQzYjY4ODMtOWViZi0zMDljLTg1YjktNjg4OTcxYzE3NDM1vu9U3hXa3q0
+//			_, err := dynatrace.NewOneagentFeatures(ctx, "SENSOR_DOTNET_ASPNET", &dynatrace.OneagentFeaturesArgs{
+//				Enabled:         pulumi.Bool(true),
+//				Instrumentation: pulumi.Bool(true),
+//				Key:             pulumi.String("SENSOR_DOTNET_ASPNET"),
+//				Scope:           pulumi.String("environment"),
+//			})
+//			if err != nil {
+//				return err
+//			}
+//			return nil
+//		})
+//	}
+//
+// ```
 type OneagentFeatures struct {
 	pulumi.CustomResourceState
 
+	// Used internally by the terraform provider. Do not populate
 	_restore_ pulumi.StringOutput `pulumi:"_restore_"`
 	// This setting is enabled (`true`) or disabled (`false`)
 	Enabled pulumi.BoolOutput `pulumi:"enabled"`
@@ -64,6 +108,7 @@ func GetOneagentFeatures(ctx *pulumi.Context,
 
 // Input properties used for looking up and filtering OneagentFeatures resources.
 type oneagentFeaturesState struct {
+	// Used internally by the terraform provider. Do not populate
 	_restore_ *string `pulumi:"_restore_"`
 	// This setting is enabled (`true`) or disabled (`false`)
 	Enabled *bool `pulumi:"enabled"`
@@ -78,6 +123,7 @@ type oneagentFeaturesState struct {
 }
 
 type OneagentFeaturesState struct {
+	// Used internally by the terraform provider. Do not populate
 	_restore_ pulumi.StringPtrInput
 	// This setting is enabled (`true`) or disabled (`false`)
 	Enabled pulumi.BoolPtrInput
@@ -209,6 +255,7 @@ func (o OneagentFeaturesOutput) ToOneagentFeaturesOutputWithContext(ctx context.
 	return o
 }
 
+// Used internally by the terraform provider. Do not populate
 func (o OneagentFeaturesOutput) _restore_() pulumi.StringOutput {
 	return o.ApplyT(func(v *OneagentFeatures) pulumi.StringOutput { return v._restore_ }).(pulumi.StringOutput)
 }

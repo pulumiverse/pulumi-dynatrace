@@ -4,6 +4,21 @@
 import * as pulumi from "@pulumi/pulumi";
 import * as utilities from "./utilities";
 
+/**
+ * > This resource requires the API token scopes **Read configuration** (`ReadConfig`) and **Write configuration** (`WriteConfig`)
+ *
+ * ## Dynatrace Documentation
+ *
+ * - Process group naming - https://www.dynatrace.com/support/help/how-to-use-dynatrace/process-groups/configuration/pg-naming
+ *
+ * - Conditional naming API - https://www.dynatrace.com/support/help/dynatrace-api/configuration-api/conditional-naming
+ *
+ * ## Export Example Usage
+ *
+ * - `terraform-provider-dynatrace -export dynatrace.ProcessgroupNamingOrder` downloads an ordered list of process group naming rule IDs
+ *
+ * The full documentation of the export feature is available [here](https://dt-url.net/h203qmc).
+ */
 export class ProcessgroupNamingOrder extends pulumi.CustomResource {
     /**
      * Get an existing ProcessgroupNamingOrder resource's state with the given name, ID, and optional extra

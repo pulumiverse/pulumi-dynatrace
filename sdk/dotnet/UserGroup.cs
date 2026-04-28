@@ -10,6 +10,94 @@ using Pulumi;
 
 namespace Pulumiverse.Dynatrace
 {
+    /// <summary>
+    /// &gt; **Dynatrace Managed only**
+    /// 
+    /// &gt; To utilize this resource, please define the environment variables `DT_CLUSTER_URL` and `DT_CLUSTER_API_TOKEN` with the cluster API token scope **Service Provider API** (`ServiceProviderAPI`).
+    /// 
+    /// ## Dynatrace Documentation
+    /// 
+    /// - User and group management - https://docs.dynatrace.com/managed/manage/identity-access-management/user-and-group-management
+    /// 
+    /// - User management API - https://www.dynatrace.com/support/help/dynatrace-api/account-management-api/user-management-api
+    /// 
+    /// ## Export Example Usage
+    /// 
+    /// - `terraform-provider-dynatrace -export dynatrace.UserGroup` downloads all existing user groups
+    /// 
+    /// The full documentation of the export feature is available [here](https://dt-url.net/h203qmc).
+    /// 
+    /// ## Resource Example Usage
+    /// 
+    /// ```csharp
+    /// using System.Collections.Generic;
+    /// using System.Linq;
+    /// using Pulumi;
+    /// using Dynatrace = Pulumiverse.Dynatrace;
+    /// 
+    /// return await Deployment.RunAsync(() =&gt; 
+    /// {
+    ///     var config = new Config();
+    ///     var cluster = config.Get("cluster") ?? "&lt;the-id-of-your-dynatrace-cluster&gt;";
+    ///     var environment = config.Get("environment") ?? "&lt;the-id-of-an-environment-within-your-cluster";
+    ///     var terraform = new Dynatrace.UserGroup("terraform", new()
+    ///     {
+    ///         Name = "Anonymous",
+    ///         LdapGroups = new[]
+    ///         {
+    ///             "Anonymous",
+    ///         },
+    ///     });
+    /// 
+    ///     var terraformUser = new Dynatrace.User("terraform", new()
+    ///     {
+    ///         Email = "me@example.com",
+    ///         FirstName = "John",
+    ///         Groups = new[]
+    ///         {
+    ///             terraform.Id,
+    ///         },
+    ///         LastName = "Doe",
+    ///         UserName = "me@example.com",
+    ///     });
+    /// 
+    ///     var terraformCluster = new Dynatrace.Policy("terraform_cluster", new()
+    ///     {
+    ///         Name = "terraform_cluster",
+    ///         Cluster = cluster,
+    ///         StatementQuery = "ALLOW settings:objects:read, settings:schemas:read WHERE settings:schemaId = \"terraform-cluster\";",
+    ///     });
+    /// 
+    ///     var terraformEnv = new Dynatrace.Policy("terraform_env", new()
+    ///     {
+    ///         Name = "terraform_env",
+    ///         Environment = environment,
+    ///         StatementQuery = "ALLOW environment:roles:viewer;",
+    ///     });
+    /// 
+    ///     var terraformClusterBinding = new Dynatrace.PolicyBindings("terraform_cluster_binding", new()
+    ///     {
+    ///         Cluster = cluster,
+    ///         Group = terraform.Id,
+    ///         Policies = new[]
+    ///         {
+    ///             terraformCluster.Id,
+    ///         },
+    ///     });
+    /// 
+    ///     var terraformEnvBinding = new Dynatrace.PolicyBindings("terraform_env_binding", new()
+    ///     {
+    ///         Environment = environment,
+    ///         Group = terraform.Id,
+    ///         Policies = new[]
+    ///         {
+    ///             terraformEnv.Id,
+    ///         },
+    ///     });
+    /// 
+    /// });
+    /// ```
+    /// </summary>
     [DynatraceResourceType("dynatrace:index/userGroup:UserGroup")]
     public partial class UserGroup : global::Pulumi.CustomResource
     {

@@ -10,6 +10,23 @@ using Pulumi;
 
 namespace Pulumiverse.Dynatrace
 {
+    /// <summary>
+    /// &gt; Configuration of the synthetic test scope overlaps with dynatrace_browser_monitor, but this resource in addition provides an option for an environment scope.
+    /// 
+    /// &gt; This resource requires the API token scopes **Read settings** (`settings.read`) and **Write settings** (`settings.write`)
+    /// 
+    /// ## Dynatrace Documentation
+    /// 
+    /// - Performance thresholds - https://www.dynatrace.com/support/help/platform-modules/digital-experience/synthetic-monitoring/browser-monitors/configure-browser-monitors#performance-thresholds
+    /// 
+    /// - Settings API - https://www.dynatrace.com/support/help/dynatrace-api/environment-api/settings (schemaId: `builtin:synthetic.browser.performance-thresholds`)
+    /// 
+    /// ## Export Example Usage
+    /// 
+    /// - `terraform-provider-dynatrace -export dynatrace.BrowserMonitorPerformance` downloads all existing browser monitor performance thresholds configuration
+    /// 
+    /// The full documentation of the export feature is available [here](https://dt-url.net/h203qmc).
+    /// </summary>
     [DynatraceResourceType("dynatrace:index/browserMonitorPerformance:BrowserMonitorPerformance")]
     public partial class BrowserMonitorPerformance : global::Pulumi.CustomResource
     {

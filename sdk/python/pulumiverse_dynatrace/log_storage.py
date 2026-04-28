@@ -29,6 +29,7 @@ class LogStorageArgs:
                  scope: Optional[pulumi.Input[_builtins.str]] = None):
         """
         The set of arguments for constructing a LogStorage resource.
+
         :param pulumi.Input[_builtins.bool] enabled: This setting is enabled (`true`) or disabled (`false`)
         :param pulumi.Input[_builtins.bool] send_to_storage: If `true` matching logs will be included in storage. If `false` matching logs will be excluded from storage.
         :param pulumi.Input[_builtins.str] insert_after: Because this resource allows for ordering you may specify the ID of the resource instance that comes before this instance regarding order. If not specified when creating the setting will be added to the end of the list. If not specified during update the order will remain untouched
@@ -131,6 +132,7 @@ class _LogStorageState:
                  send_to_storage: Optional[pulumi.Input[_builtins.bool]] = None):
         """
         Input properties used for looking up and filtering LogStorage resources.
+
         :param pulumi.Input[_builtins.bool] enabled: This setting is enabled (`true`) or disabled (`false`)
         :param pulumi.Input[_builtins.str] insert_after: Because this resource allows for ordering you may specify the ID of the resource instance that comes before this instance regarding order. If not specified when creating the setting will be added to the end of the list. If not specified during update the order will remain untouched
         :param pulumi.Input['LogStorageMatchersArgs'] matchers: no documentation available
@@ -238,7 +240,21 @@ class LogStorage(pulumi.CustomResource):
                  send_to_storage: Optional[pulumi.Input[_builtins.bool]] = None,
                  __props__=None):
         """
-        Create a LogStorage resource with the given unique name, props, and options.
+        > This resource requires the API token scopes **Read settings** (`settings.read`) and **Write settings** (`settings.write`)
+
+        ## Dynatrace Documentation
+
+        - Log storage configuration (Logs Classic) - https://www.dynatrace.com/support/help/observe-and-explore/logs/log-monitoring/acquire-log-data/log-storage
+
+        - Settings API - https://www.dynatrace.com/support/help/dynatrace-api/environment-api/settings (schemaId: `builtin:logmonitoring.log-storage-settings`)
+
+        ## Export Example Usage
+
+        - `terraform-provider-dynatrace -export LogStorage` downloads all existing log ingest rules
+
+        The full documentation of the export feature is available [here](https://dt-url.net/h203qmc).
+
+
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[_builtins.bool] enabled: This setting is enabled (`true`) or disabled (`false`)
@@ -255,7 +271,21 @@ class LogStorage(pulumi.CustomResource):
                  args: LogStorageArgs,
                  opts: Optional[pulumi.ResourceOptions] = None):
         """
-        Create a LogStorage resource with the given unique name, props, and options.
+        > This resource requires the API token scopes **Read settings** (`settings.read`) and **Write settings** (`settings.write`)
+
+        ## Dynatrace Documentation
+
+        - Log storage configuration (Logs Classic) - https://www.dynatrace.com/support/help/observe-and-explore/logs/log-monitoring/acquire-log-data/log-storage
+
+        - Settings API - https://www.dynatrace.com/support/help/dynatrace-api/environment-api/settings (schemaId: `builtin:logmonitoring.log-storage-settings`)
+
+        ## Export Example Usage
+
+        - `terraform-provider-dynatrace -export LogStorage` downloads all existing log ingest rules
+
+        The full documentation of the export feature is available [here](https://dt-url.net/h203qmc).
+
+
         :param str resource_name: The name of the resource.
         :param LogStorageArgs args: The arguments to use to populate this resource's properties.
         :param pulumi.ResourceOptions opts: Options for the resource.

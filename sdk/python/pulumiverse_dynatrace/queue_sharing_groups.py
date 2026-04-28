@@ -24,6 +24,7 @@ class QueueSharingGroupsArgs:
                  shared_queues: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None):
         """
         The set of arguments for constructing a QueueSharingGroups resource.
+
         :param pulumi.Input[_builtins.str] name: Queue sharing group name
         :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] queue_managers: Queue managers
         :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] shared_queues: Shared queues
@@ -80,6 +81,7 @@ class _QueueSharingGroupsState:
                  shared_queues: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None):
         """
         Input properties used for looking up and filtering QueueSharingGroups resources.
+
         :param pulumi.Input[_builtins.str] name: Queue sharing group name
         :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] queue_managers: Queue managers
         :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] shared_queues: Shared queues
@@ -139,7 +141,21 @@ class QueueSharingGroups(pulumi.CustomResource):
                  shared_queues: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
                  __props__=None):
         """
-        Create a QueueSharingGroups resource with the given unique name, props, and options.
+        > This resource requires the API token scopes **Read settings** (`settings.read`) and **Write settings** (`settings.write`)
+
+        ## Dynatrace Documentation
+
+        - IBM MQ tracing - https://www.dynatrace.com/support/help/how-to-use-dynatrace/queues/configuration/ibm-mq-tracing
+
+        - Settings API - https://www.dynatrace.com/support/help/dynatrace-api/environment-api/settings (schemaId: `builtin:ibmmq.queue-sharing-group`)
+
+        ## Export Example Usage
+
+        - `terraform-provider-dynatrace -export QueueSharingGroups` downloads all existing IBM MQ queue sharing group configuration
+
+        The full documentation of the export feature is available [here](https://dt-url.net/h203qmc).
+
+
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[_builtins.str] name: Queue sharing group name
@@ -153,7 +169,21 @@ class QueueSharingGroups(pulumi.CustomResource):
                  args: Optional[QueueSharingGroupsArgs] = None,
                  opts: Optional[pulumi.ResourceOptions] = None):
         """
-        Create a QueueSharingGroups resource with the given unique name, props, and options.
+        > This resource requires the API token scopes **Read settings** (`settings.read`) and **Write settings** (`settings.write`)
+
+        ## Dynatrace Documentation
+
+        - IBM MQ tracing - https://www.dynatrace.com/support/help/how-to-use-dynatrace/queues/configuration/ibm-mq-tracing
+
+        - Settings API - https://www.dynatrace.com/support/help/dynatrace-api/environment-api/settings (schemaId: `builtin:ibmmq.queue-sharing-group`)
+
+        ## Export Example Usage
+
+        - `terraform-provider-dynatrace -export QueueSharingGroups` downloads all existing IBM MQ queue sharing group configuration
+
+        The full documentation of the export feature is available [here](https://dt-url.net/h203qmc).
+
+
         :param str resource_name: The name of the resource.
         :param QueueSharingGroupsArgs args: The arguments to use to populate this resource's properties.
         :param pulumi.ResourceOptions opts: Options for the resource.

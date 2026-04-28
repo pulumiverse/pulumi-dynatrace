@@ -28,13 +28,17 @@ class VictorOpsNotificationArgs:
                  name: Optional[pulumi.Input[_builtins.str]] = None):
         """
         The set of arguments for constructing a VictorOpsNotification resource.
-        :param pulumi.Input[_builtins.bool] active: The configuration is enabled (`true`) or disabled (`false`)
-        :param pulumi.Input[_builtins.str] message: The content of the message.  You can use the following placeholders:  * `{ImpactedEntity}`: The entity impacted by the problem or *X* impacted entities.  * `{ProblemDetailsText}`: All problem event details, including root cause, as a text-formatted string.  * `{ProblemID}`: The display number of the reported problem.  * `{ProblemImpact}`: The [impact level](https://www.dynatrace.com/support/help/shortlink/impact-analysis) of the problem. Possible values are `APPLICATION`, `SERVICE`, and `INFRASTRUCTURE`.  * `{ProblemSeverity}`: The [severity level](https://www.dynatrace.com/support/help/shortlink/event-types) of the problem. Possible values are `AVAILABILITY`, `ERROR`, `PERFORMANCE`, `RESOURCE_CONTENTION`, and `CUSTOM_ALERT`.  * `{ProblemTitle}`: A short description of the problem.  * `{ProblemURL}`: The URL of the problem within Dynatrace.  * `{State}`: The state of the problem. Possible values are `OPEN` and `RESOLVED`
+
+        :param pulumi.Input[_builtins.bool] active: This setting is enabled (`true`) or disabled (`false`)
+        :param pulumi.Input[_builtins.str] message: The content of the message. Type '{' for placeholder suggestions.. #### Available placeholders
+               **{ImpactedEntity}**: A short description of the problem and impacted entity (or multiple impacted entities).
         :param pulumi.Input[_builtins.str] profile: The ID of the associated alerting profile
-        :param pulumi.Input[_builtins.str] routing_key: The routing key, defining the group to be notified
-        :param pulumi.Input[_builtins.str] api_key: The API key for the target VictorOps account
+        :param pulumi.Input[_builtins.str] routing_key: The routing key, defining the group to be notified.
+        :param pulumi.Input[_builtins.str] api_key: The API key for the target Splunk On-Call account.
+               
+               Receive your Splunk On-Call API key by navigating to: Settings > Integrations > Rest Endpoint > Dynatrace.
         :param pulumi.Input[_builtins.str] legacy_id: The ID of these settings when referred to from resources requiring the REST API V1 keys
-        :param pulumi.Input[_builtins.str] name: The name of the notification configuration
+        :param pulumi.Input[_builtins.str] name: The name of the notification configuration.
         """
         pulumi.set(__self__, "active", active)
         pulumi.set(__self__, "message", message)
@@ -51,7 +55,7 @@ class VictorOpsNotificationArgs:
     @pulumi.getter
     def active(self) -> pulumi.Input[_builtins.bool]:
         """
-        The configuration is enabled (`true`) or disabled (`false`)
+        This setting is enabled (`true`) or disabled (`false`)
         """
         return pulumi.get(self, "active")
 
@@ -63,7 +67,8 @@ class VictorOpsNotificationArgs:
     @pulumi.getter
     def message(self) -> pulumi.Input[_builtins.str]:
         """
-        The content of the message.  You can use the following placeholders:  * `{ImpactedEntity}`: The entity impacted by the problem or *X* impacted entities.  * `{ProblemDetailsText}`: All problem event details, including root cause, as a text-formatted string.  * `{ProblemID}`: The display number of the reported problem.  * `{ProblemImpact}`: The [impact level](https://www.dynatrace.com/support/help/shortlink/impact-analysis) of the problem. Possible values are `APPLICATION`, `SERVICE`, and `INFRASTRUCTURE`.  * `{ProblemSeverity}`: The [severity level](https://www.dynatrace.com/support/help/shortlink/event-types) of the problem. Possible values are `AVAILABILITY`, `ERROR`, `PERFORMANCE`, `RESOURCE_CONTENTION`, and `CUSTOM_ALERT`.  * `{ProblemTitle}`: A short description of the problem.  * `{ProblemURL}`: The URL of the problem within Dynatrace.  * `{State}`: The state of the problem. Possible values are `OPEN` and `RESOLVED`
+        The content of the message. Type '{' for placeholder suggestions.. #### Available placeholders
+        **{ImpactedEntity}**: A short description of the problem and impacted entity (or multiple impacted entities).
         """
         return pulumi.get(self, "message")
 
@@ -87,7 +92,7 @@ class VictorOpsNotificationArgs:
     @pulumi.getter(name="routingKey")
     def routing_key(self) -> pulumi.Input[_builtins.str]:
         """
-        The routing key, defining the group to be notified
+        The routing key, defining the group to be notified.
         """
         return pulumi.get(self, "routing_key")
 
@@ -99,7 +104,9 @@ class VictorOpsNotificationArgs:
     @pulumi.getter(name="apiKey")
     def api_key(self) -> Optional[pulumi.Input[_builtins.str]]:
         """
-        The API key for the target VictorOps account
+        The API key for the target Splunk On-Call account.
+
+        Receive your Splunk On-Call API key by navigating to: Settings > Integrations > Rest Endpoint > Dynatrace.
         """
         return pulumi.get(self, "api_key")
 
@@ -123,7 +130,7 @@ class VictorOpsNotificationArgs:
     @pulumi.getter
     def name(self) -> Optional[pulumi.Input[_builtins.str]]:
         """
-        The name of the notification configuration
+        The name of the notification configuration.
         """
         return pulumi.get(self, "name")
 
@@ -144,13 +151,17 @@ class _VictorOpsNotificationState:
                  routing_key: Optional[pulumi.Input[_builtins.str]] = None):
         """
         Input properties used for looking up and filtering VictorOpsNotification resources.
-        :param pulumi.Input[_builtins.bool] active: The configuration is enabled (`true`) or disabled (`false`)
-        :param pulumi.Input[_builtins.str] api_key: The API key for the target VictorOps account
+
+        :param pulumi.Input[_builtins.bool] active: This setting is enabled (`true`) or disabled (`false`)
+        :param pulumi.Input[_builtins.str] api_key: The API key for the target Splunk On-Call account.
+               
+               Receive your Splunk On-Call API key by navigating to: Settings > Integrations > Rest Endpoint > Dynatrace.
         :param pulumi.Input[_builtins.str] legacy_id: The ID of these settings when referred to from resources requiring the REST API V1 keys
-        :param pulumi.Input[_builtins.str] message: The content of the message.  You can use the following placeholders:  * `{ImpactedEntity}`: The entity impacted by the problem or *X* impacted entities.  * `{ProblemDetailsText}`: All problem event details, including root cause, as a text-formatted string.  * `{ProblemID}`: The display number of the reported problem.  * `{ProblemImpact}`: The [impact level](https://www.dynatrace.com/support/help/shortlink/impact-analysis) of the problem. Possible values are `APPLICATION`, `SERVICE`, and `INFRASTRUCTURE`.  * `{ProblemSeverity}`: The [severity level](https://www.dynatrace.com/support/help/shortlink/event-types) of the problem. Possible values are `AVAILABILITY`, `ERROR`, `PERFORMANCE`, `RESOURCE_CONTENTION`, and `CUSTOM_ALERT`.  * `{ProblemTitle}`: A short description of the problem.  * `{ProblemURL}`: The URL of the problem within Dynatrace.  * `{State}`: The state of the problem. Possible values are `OPEN` and `RESOLVED`
-        :param pulumi.Input[_builtins.str] name: The name of the notification configuration
+        :param pulumi.Input[_builtins.str] message: The content of the message. Type '{' for placeholder suggestions.. #### Available placeholders
+               **{ImpactedEntity}**: A short description of the problem and impacted entity (or multiple impacted entities).
+        :param pulumi.Input[_builtins.str] name: The name of the notification configuration.
         :param pulumi.Input[_builtins.str] profile: The ID of the associated alerting profile
-        :param pulumi.Input[_builtins.str] routing_key: The routing key, defining the group to be notified
+        :param pulumi.Input[_builtins.str] routing_key: The routing key, defining the group to be notified.
         """
         if active is not None:
             pulumi.set(__self__, "active", active)
@@ -171,7 +182,7 @@ class _VictorOpsNotificationState:
     @pulumi.getter
     def active(self) -> Optional[pulumi.Input[_builtins.bool]]:
         """
-        The configuration is enabled (`true`) or disabled (`false`)
+        This setting is enabled (`true`) or disabled (`false`)
         """
         return pulumi.get(self, "active")
 
@@ -183,7 +194,9 @@ class _VictorOpsNotificationState:
     @pulumi.getter(name="apiKey")
     def api_key(self) -> Optional[pulumi.Input[_builtins.str]]:
         """
-        The API key for the target VictorOps account
+        The API key for the target Splunk On-Call account.
+
+        Receive your Splunk On-Call API key by navigating to: Settings > Integrations > Rest Endpoint > Dynatrace.
         """
         return pulumi.get(self, "api_key")
 
@@ -207,7 +220,8 @@ class _VictorOpsNotificationState:
     @pulumi.getter
     def message(self) -> Optional[pulumi.Input[_builtins.str]]:
         """
-        The content of the message.  You can use the following placeholders:  * `{ImpactedEntity}`: The entity impacted by the problem or *X* impacted entities.  * `{ProblemDetailsText}`: All problem event details, including root cause, as a text-formatted string.  * `{ProblemID}`: The display number of the reported problem.  * `{ProblemImpact}`: The [impact level](https://www.dynatrace.com/support/help/shortlink/impact-analysis) of the problem. Possible values are `APPLICATION`, `SERVICE`, and `INFRASTRUCTURE`.  * `{ProblemSeverity}`: The [severity level](https://www.dynatrace.com/support/help/shortlink/event-types) of the problem. Possible values are `AVAILABILITY`, `ERROR`, `PERFORMANCE`, `RESOURCE_CONTENTION`, and `CUSTOM_ALERT`.  * `{ProblemTitle}`: A short description of the problem.  * `{ProblemURL}`: The URL of the problem within Dynatrace.  * `{State}`: The state of the problem. Possible values are `OPEN` and `RESOLVED`
+        The content of the message. Type '{' for placeholder suggestions.. #### Available placeholders
+        **{ImpactedEntity}**: A short description of the problem and impacted entity (or multiple impacted entities).
         """
         return pulumi.get(self, "message")
 
@@ -219,7 +233,7 @@ class _VictorOpsNotificationState:
     @pulumi.getter
     def name(self) -> Optional[pulumi.Input[_builtins.str]]:
         """
-        The name of the notification configuration
+        The name of the notification configuration.
         """
         return pulumi.get(self, "name")
 
@@ -243,7 +257,7 @@ class _VictorOpsNotificationState:
     @pulumi.getter(name="routingKey")
     def routing_key(self) -> Optional[pulumi.Input[_builtins.str]]:
         """
-        The routing key, defining the group to be notified
+        The routing key, defining the group to be notified.
         """
         return pulumi.get(self, "routing_key")
 
@@ -267,16 +281,33 @@ class VictorOpsNotification(pulumi.CustomResource):
                  routing_key: Optional[pulumi.Input[_builtins.str]] = None,
                  __props__=None):
         """
-        Create a VictorOpsNotification resource with the given unique name, props, and options.
+        > This resource requires the API token scopes **Read settings** (`settings.read`) and **Write settings** (`settings.write`)
+
+        ## Dynatrace Documentation
+
+        - VictoOps integration - https://www.dynatrace.com/support/help/setup-and-configuration/integrations/problem-notifications/victorops-integration
+
+        - Settings API - https://www.dynatrace.com/support/help/dynatrace-api/environment-api/settings (schemaId: `builtin:problem.notifications`)
+
+        ## Export Example Usage
+
+        - `terraform-provider-dynatrace -export VictorOpsNotification` downloads the existing problem notifications for VictorOps
+
+        The full documentation of the export feature is available [here](https://dt-url.net/h203qmc).
+
+
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
-        :param pulumi.Input[_builtins.bool] active: The configuration is enabled (`true`) or disabled (`false`)
-        :param pulumi.Input[_builtins.str] api_key: The API key for the target VictorOps account
+        :param pulumi.Input[_builtins.bool] active: This setting is enabled (`true`) or disabled (`false`)
+        :param pulumi.Input[_builtins.str] api_key: The API key for the target Splunk On-Call account.
+               
+               Receive your Splunk On-Call API key by navigating to: Settings > Integrations > Rest Endpoint > Dynatrace.
         :param pulumi.Input[_builtins.str] legacy_id: The ID of these settings when referred to from resources requiring the REST API V1 keys
-        :param pulumi.Input[_builtins.str] message: The content of the message.  You can use the following placeholders:  * `{ImpactedEntity}`: The entity impacted by the problem or *X* impacted entities.  * `{ProblemDetailsText}`: All problem event details, including root cause, as a text-formatted string.  * `{ProblemID}`: The display number of the reported problem.  * `{ProblemImpact}`: The [impact level](https://www.dynatrace.com/support/help/shortlink/impact-analysis) of the problem. Possible values are `APPLICATION`, `SERVICE`, and `INFRASTRUCTURE`.  * `{ProblemSeverity}`: The [severity level](https://www.dynatrace.com/support/help/shortlink/event-types) of the problem. Possible values are `AVAILABILITY`, `ERROR`, `PERFORMANCE`, `RESOURCE_CONTENTION`, and `CUSTOM_ALERT`.  * `{ProblemTitle}`: A short description of the problem.  * `{ProblemURL}`: The URL of the problem within Dynatrace.  * `{State}`: The state of the problem. Possible values are `OPEN` and `RESOLVED`
-        :param pulumi.Input[_builtins.str] name: The name of the notification configuration
+        :param pulumi.Input[_builtins.str] message: The content of the message. Type '{' for placeholder suggestions.. #### Available placeholders
+               **{ImpactedEntity}**: A short description of the problem and impacted entity (or multiple impacted entities).
+        :param pulumi.Input[_builtins.str] name: The name of the notification configuration.
         :param pulumi.Input[_builtins.str] profile: The ID of the associated alerting profile
-        :param pulumi.Input[_builtins.str] routing_key: The routing key, defining the group to be notified
+        :param pulumi.Input[_builtins.str] routing_key: The routing key, defining the group to be notified.
         """
         ...
     @overload
@@ -285,7 +316,21 @@ class VictorOpsNotification(pulumi.CustomResource):
                  args: VictorOpsNotificationArgs,
                  opts: Optional[pulumi.ResourceOptions] = None):
         """
-        Create a VictorOpsNotification resource with the given unique name, props, and options.
+        > This resource requires the API token scopes **Read settings** (`settings.read`) and **Write settings** (`settings.write`)
+
+        ## Dynatrace Documentation
+
+        - VictoOps integration - https://www.dynatrace.com/support/help/setup-and-configuration/integrations/problem-notifications/victorops-integration
+
+        - Settings API - https://www.dynatrace.com/support/help/dynatrace-api/environment-api/settings (schemaId: `builtin:problem.notifications`)
+
+        ## Export Example Usage
+
+        - `terraform-provider-dynatrace -export VictorOpsNotification` downloads the existing problem notifications for VictorOps
+
+        The full documentation of the export feature is available [here](https://dt-url.net/h203qmc).
+
+
         :param str resource_name: The name of the resource.
         :param VictorOpsNotificationArgs args: The arguments to use to populate this resource's properties.
         :param pulumi.ResourceOptions opts: Options for the resource.
@@ -358,13 +403,16 @@ class VictorOpsNotification(pulumi.CustomResource):
         :param str resource_name: The unique name of the resulting resource.
         :param pulumi.Input[str] id: The unique provider ID of the resource to lookup.
         :param pulumi.ResourceOptions opts: Options for the resource.
-        :param pulumi.Input[_builtins.bool] active: The configuration is enabled (`true`) or disabled (`false`)
-        :param pulumi.Input[_builtins.str] api_key: The API key for the target VictorOps account
+        :param pulumi.Input[_builtins.bool] active: This setting is enabled (`true`) or disabled (`false`)
+        :param pulumi.Input[_builtins.str] api_key: The API key for the target Splunk On-Call account.
+               
+               Receive your Splunk On-Call API key by navigating to: Settings > Integrations > Rest Endpoint > Dynatrace.
         :param pulumi.Input[_builtins.str] legacy_id: The ID of these settings when referred to from resources requiring the REST API V1 keys
-        :param pulumi.Input[_builtins.str] message: The content of the message.  You can use the following placeholders:  * `{ImpactedEntity}`: The entity impacted by the problem or *X* impacted entities.  * `{ProblemDetailsText}`: All problem event details, including root cause, as a text-formatted string.  * `{ProblemID}`: The display number of the reported problem.  * `{ProblemImpact}`: The [impact level](https://www.dynatrace.com/support/help/shortlink/impact-analysis) of the problem. Possible values are `APPLICATION`, `SERVICE`, and `INFRASTRUCTURE`.  * `{ProblemSeverity}`: The [severity level](https://www.dynatrace.com/support/help/shortlink/event-types) of the problem. Possible values are `AVAILABILITY`, `ERROR`, `PERFORMANCE`, `RESOURCE_CONTENTION`, and `CUSTOM_ALERT`.  * `{ProblemTitle}`: A short description of the problem.  * `{ProblemURL}`: The URL of the problem within Dynatrace.  * `{State}`: The state of the problem. Possible values are `OPEN` and `RESOLVED`
-        :param pulumi.Input[_builtins.str] name: The name of the notification configuration
+        :param pulumi.Input[_builtins.str] message: The content of the message. Type '{' for placeholder suggestions.. #### Available placeholders
+               **{ImpactedEntity}**: A short description of the problem and impacted entity (or multiple impacted entities).
+        :param pulumi.Input[_builtins.str] name: The name of the notification configuration.
         :param pulumi.Input[_builtins.str] profile: The ID of the associated alerting profile
-        :param pulumi.Input[_builtins.str] routing_key: The routing key, defining the group to be notified
+        :param pulumi.Input[_builtins.str] routing_key: The routing key, defining the group to be notified.
         """
         opts = pulumi.ResourceOptions.merge(opts, pulumi.ResourceOptions(id=id))
 
@@ -383,7 +431,7 @@ class VictorOpsNotification(pulumi.CustomResource):
     @pulumi.getter
     def active(self) -> pulumi.Output[_builtins.bool]:
         """
-        The configuration is enabled (`true`) or disabled (`false`)
+        This setting is enabled (`true`) or disabled (`false`)
         """
         return pulumi.get(self, "active")
 
@@ -391,7 +439,9 @@ class VictorOpsNotification(pulumi.CustomResource):
     @pulumi.getter(name="apiKey")
     def api_key(self) -> pulumi.Output[Optional[_builtins.str]]:
         """
-        The API key for the target VictorOps account
+        The API key for the target Splunk On-Call account.
+
+        Receive your Splunk On-Call API key by navigating to: Settings > Integrations > Rest Endpoint > Dynatrace.
         """
         return pulumi.get(self, "api_key")
 
@@ -407,7 +457,8 @@ class VictorOpsNotification(pulumi.CustomResource):
     @pulumi.getter
     def message(self) -> pulumi.Output[_builtins.str]:
         """
-        The content of the message.  You can use the following placeholders:  * `{ImpactedEntity}`: The entity impacted by the problem or *X* impacted entities.  * `{ProblemDetailsText}`: All problem event details, including root cause, as a text-formatted string.  * `{ProblemID}`: The display number of the reported problem.  * `{ProblemImpact}`: The [impact level](https://www.dynatrace.com/support/help/shortlink/impact-analysis) of the problem. Possible values are `APPLICATION`, `SERVICE`, and `INFRASTRUCTURE`.  * `{ProblemSeverity}`: The [severity level](https://www.dynatrace.com/support/help/shortlink/event-types) of the problem. Possible values are `AVAILABILITY`, `ERROR`, `PERFORMANCE`, `RESOURCE_CONTENTION`, and `CUSTOM_ALERT`.  * `{ProblemTitle}`: A short description of the problem.  * `{ProblemURL}`: The URL of the problem within Dynatrace.  * `{State}`: The state of the problem. Possible values are `OPEN` and `RESOLVED`
+        The content of the message. Type '{' for placeholder suggestions.. #### Available placeholders
+        **{ImpactedEntity}**: A short description of the problem and impacted entity (or multiple impacted entities).
         """
         return pulumi.get(self, "message")
 
@@ -415,7 +466,7 @@ class VictorOpsNotification(pulumi.CustomResource):
     @pulumi.getter
     def name(self) -> pulumi.Output[_builtins.str]:
         """
-        The name of the notification configuration
+        The name of the notification configuration.
         """
         return pulumi.get(self, "name")
 
@@ -431,7 +482,7 @@ class VictorOpsNotification(pulumi.CustomResource):
     @pulumi.getter(name="routingKey")
     def routing_key(self) -> pulumi.Output[_builtins.str]:
         """
-        The routing key, defining the group to be notified
+        The routing key, defining the group to be notified.
         """
         return pulumi.get(self, "routing_key")
 

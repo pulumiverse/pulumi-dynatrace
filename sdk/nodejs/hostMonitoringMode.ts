@@ -4,6 +4,25 @@
 import * as pulumi from "@pulumi/pulumi";
 import * as utilities from "./utilities";
 
+/**
+ * > This resource requires the API token scopes **Read settings** (`settings.read`) and **Write settings** (`settings.write`)
+ *
+ * > Changing the Monitoring Mode for Agents that are currently not connected to Dynatrace is not possible. By default the Terraform Provider will silently ignore settings for these hosts. You have, of course, to expect non-empty plans in such cases. If you would like to get notified explicitly about the inability to change the monitoring mode for an offline host, you can set the environment variable `DYNATRACE_HOST_MONITORING_WARNINGS` to `true`. Terraform will then print out a warning about that resource.
+ *
+ * ## Dynatrace Documentation
+ *
+ * - Hosts - https://www.dynatrace.com/support/help/how-to-use-dynatrace/infrastructure-monitoring/hosts
+ *
+ * - Settings API - https://www.dynatrace.com/support/help/dynatrace-api/environment-api/settings (schemaId: `builtin:host.monitoring.mode`)
+ *
+ * ## Export Example Usage
+ *
+ * - `terraform-provider-dynatrace -export dynatrace.HostMonitoringMode` downloads all existing host monitoring mode configuration
+ *
+ * > By default settings for Agents that are currently offline are not getting exported. You can change that by setting the environment variable `DYNATRACE_HOST_MONITORING_OFFLINE` to `true` before running the export. Be aware that you will get settings exported for every host that has been connected within the last 3 years that way.
+ *
+ * The full documentation of the export feature is available [here](https://dt-url.net/h203qmc).
+ */
 export class HostMonitoringMode extends pulumi.CustomResource {
     /**
      * Get an existing HostMonitoringMode resource's state with the given name, ID, and optional extra

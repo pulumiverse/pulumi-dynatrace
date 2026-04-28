@@ -25,6 +25,7 @@ class AttackSettingsArgs:
                  enabled: pulumi.Input[_builtins.bool]):
         """
         The set of arguments for constructing a AttackSettings resource.
+
         :param pulumi.Input['AttackSettingsDefaultAttackHandlingArgs'] default_attack_handling: Define global incoming attack control
         :param pulumi.Input[_builtins.bool] enabled: This setting is enabled (`true`) or disabled (`false`)
         """
@@ -63,6 +64,7 @@ class _AttackSettingsState:
                  enabled: Optional[pulumi.Input[_builtins.bool]] = None):
         """
         Input properties used for looking up and filtering AttackSettings resources.
+
         :param pulumi.Input['AttackSettingsDefaultAttackHandlingArgs'] default_attack_handling: Define global incoming attack control
         :param pulumi.Input[_builtins.bool] enabled: This setting is enabled (`true`) or disabled (`false`)
         """
@@ -106,7 +108,23 @@ class AttackSettings(pulumi.CustomResource):
                  enabled: Optional[pulumi.Input[_builtins.bool]] = None,
                  __props__=None):
         """
-        Create a AttackSettings resource with the given unique name, props, and options.
+        > This resource is excluded by default in the export utility since it requires the feature to be activated, please explicitly specify the resource to retrieve existing configuration.
+
+        > This resource requires the API token scopes **Read attacks** (`attacks.read`) and **Write attacks** (`attacks.write`)
+
+        ## Dynatrace Documentation
+
+        - Runtime Application Protection - https://www.dynatrace.com/support/help/platform-modules/application-security/application-protection
+
+        - Settings API - https://www.dynatrace.com/support/help/dynatrace-api/environment-api/settings (schemaId: `builtin:appsec.attack-protection-settings`)
+
+        ## Export Example Usage
+
+        - `terraform-provider-dynatrace -export AttackSettings` downloads existing application protection: general settings
+
+        The full documentation of the export feature is available [here](https://dt-url.net/h203qmc).
+
+
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[Union['AttackSettingsDefaultAttackHandlingArgs', 'AttackSettingsDefaultAttackHandlingArgsDict']] default_attack_handling: Define global incoming attack control
@@ -119,7 +137,23 @@ class AttackSettings(pulumi.CustomResource):
                  args: AttackSettingsArgs,
                  opts: Optional[pulumi.ResourceOptions] = None):
         """
-        Create a AttackSettings resource with the given unique name, props, and options.
+        > This resource is excluded by default in the export utility since it requires the feature to be activated, please explicitly specify the resource to retrieve existing configuration.
+
+        > This resource requires the API token scopes **Read attacks** (`attacks.read`) and **Write attacks** (`attacks.write`)
+
+        ## Dynatrace Documentation
+
+        - Runtime Application Protection - https://www.dynatrace.com/support/help/platform-modules/application-security/application-protection
+
+        - Settings API - https://www.dynatrace.com/support/help/dynatrace-api/environment-api/settings (schemaId: `builtin:appsec.attack-protection-settings`)
+
+        ## Export Example Usage
+
+        - `terraform-provider-dynatrace -export AttackSettings` downloads existing application protection: general settings
+
+        The full documentation of the export feature is available [here](https://dt-url.net/h203qmc).
+
+
         :param str resource_name: The name of the resource.
         :param AttackSettingsArgs args: The arguments to use to populate this resource's properties.
         :param pulumi.ResourceOptions opts: Options for the resource.

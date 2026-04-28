@@ -6,6 +6,21 @@ import * as inputs from "./types/input";
 import * as outputs from "./types/output";
 import * as utilities from "./utilities";
 
+/**
+ * > This resource requires the API token scopes **Read settings** (`settings.read`) and **Write settings** (`settings.write`)
+ *
+ * ## Dynatrace Documentation
+ *
+ * - Define custom topology - https://www.dynatrace.com/support/help/extend-dynatrace/extend-topology/custom-topology
+ *
+ * - Settings API - https://www.dynatrace.com/support/help/dynatrace-api/environment-api/settings (schemaId: `builtin:monitoredentities.generic.relation`)
+ *
+ * ## Export Example Usage
+ *
+ * - `terraform-provider-dynatrace -export dynatrace.GenericRelationships` downloads all existing custom topology generic relationships configuration
+ *
+ * The full documentation of the export feature is available [here](https://dt-url.net/h203qmc).
+ */
 export class GenericRelationships extends pulumi.CustomResource {
     /**
      * Get an existing GenericRelationships resource's state with the given name, ID, and optional extra
@@ -63,7 +78,7 @@ export class GenericRelationships extends pulumi.CustomResource {
      */
     declare public readonly toType: pulumi.Output<string>;
     /**
-     * Possible Values: `CALLS`, `CHILD_OF`, `INSTANCE_OF`, `PART_OF`, `RUNS_ON`, `SAME_AS`
+     * Type of the relationship between the Source Type and the Destination Type. Possible Values: `CALLS`, `CHILD_OF`, `INSTANCE_OF`, `PART_OF`, `RUNS_ON`, `SAME_AS`
      */
     declare public readonly typeOfRelation: pulumi.Output<string>;
 
@@ -155,7 +170,7 @@ export interface GenericRelationshipsState {
      */
     toType?: pulumi.Input<string>;
     /**
-     * Possible Values: `CALLS`, `CHILD_OF`, `INSTANCE_OF`, `PART_OF`, `RUNS_ON`, `SAME_AS`
+     * Type of the relationship between the Source Type and the Destination Type. Possible Values: `CALLS`, `CHILD_OF`, `INSTANCE_OF`, `PART_OF`, `RUNS_ON`, `SAME_AS`
      */
     typeOfRelation?: pulumi.Input<string>;
 }
@@ -193,7 +208,7 @@ export interface GenericRelationshipsArgs {
      */
     toType: pulumi.Input<string>;
     /**
-     * Possible Values: `CALLS`, `CHILD_OF`, `INSTANCE_OF`, `PART_OF`, `RUNS_ON`, `SAME_AS`
+     * Type of the relationship between the Source Type and the Destination Type. Possible Values: `CALLS`, `CHILD_OF`, `INSTANCE_OF`, `PART_OF`, `RUNS_ON`, `SAME_AS`
      */
     typeOfRelation: pulumi.Input<string>;
 }

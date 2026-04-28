@@ -4,6 +4,21 @@
 import * as pulumi from "@pulumi/pulumi";
 import * as utilities from "./utilities";
 
+/**
+ * > This resource requires the API token scopes **Read settings** (`settings.read`) and **Write settings** (`settings.write`)
+ *
+ * ## Dynatrace Documentation
+ *
+ * - Issue-tracking integration - https://www.dynatrace.com/support/help/platform-modules/cloud-automation/release-monitoring/issue-tracking-integration
+ *
+ * - Settings API - https://www.dynatrace.com/support/help/dynatrace-api/environment-api/settings (schemaId: `builtin:issue-tracking.integration`)
+ *
+ * ## Export Example Usage
+ *
+ * - `terraform-provider-dynatrace -export dynatrace.IssueTracking` downloads all existing issue-tracking integrations
+ *
+ * The full documentation of the export feature is available [here](https://dt-url.net/h203qmc).
+ */
 export class IssueTracking extends pulumi.CustomResource {
     /**
      * Get an existing IssueTracking resource's state with the given name, ID, and optional extra

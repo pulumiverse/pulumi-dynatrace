@@ -27,6 +27,7 @@ class ManagedInternetProxyArgs:
                  user: Optional[pulumi.Input[_builtins.str]] = None):
         """
         The set of arguments for constructing a ManagedInternetProxy resource.
+
         :param pulumi.Input[_builtins.int] port: Port of proxy server
         :param pulumi.Input[_builtins.str] scheme: Protocol which proxy server uses
         :param pulumi.Input[_builtins.str] server: Address (either IP or Hostname) of proxy server
@@ -128,6 +129,7 @@ class _ManagedInternetProxyState:
                  user: Optional[pulumi.Input[_builtins.str]] = None):
         """
         Input properties used for looking up and filtering ManagedInternetProxy resources.
+
         :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] non_proxy_hosts: Definition of hosts for which proxy won't be used. You can define multiple hosts. Each host can start or end with wildcard '*' for instance to match whole domain.
         :param pulumi.Input[_builtins.str] password: Password of proxy server, null means do not change previous value
         :param pulumi.Input[_builtins.int] port: Port of proxy server
@@ -249,14 +251,15 @@ class ManagedInternetProxy(pulumi.CustomResource):
         import pulumi
         import pulumiverse_dynatrace as dynatrace
 
-        test = dynatrace.ManagedInternetProxy("test",
-            non_proxy_hosts=["string"],
-            password="string",
-            port=65535,
+        test = dynatrace.ManagedInternetProxy("Test",
             scheme="http",
             server="zAOE-GV81/65oVgaIlPYTCADGSPFJ9ZqXYNGbxn97dbq:flAI2E8e8bfOvlmaGu",
-            user="string")
+            port=65535,
+            user="string",
+            password="string",
+            non_proxy_hosts=["string"])
         ```
+
 
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
@@ -288,14 +291,15 @@ class ManagedInternetProxy(pulumi.CustomResource):
         import pulumi
         import pulumiverse_dynatrace as dynatrace
 
-        test = dynatrace.ManagedInternetProxy("test",
-            non_proxy_hosts=["string"],
-            password="string",
-            port=65535,
+        test = dynatrace.ManagedInternetProxy("Test",
             scheme="http",
             server="zAOE-GV81/65oVgaIlPYTCADGSPFJ9ZqXYNGbxn97dbq:flAI2E8e8bfOvlmaGu",
-            user="string")
+            port=65535,
+            user="string",
+            password="string",
+            non_proxy_hosts=["string"])
         ```
+
 
         :param str resource_name: The name of the resource.
         :param ManagedInternetProxyArgs args: The arguments to use to populate this resource's properties.

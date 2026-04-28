@@ -6,6 +6,51 @@ import * as inputs from "./types/input";
 import * as outputs from "./types/output";
 import * as utilities from "./utilities";
 
+/**
+ * > **Destroy Warning** Credentials **cannot be deleted** if they are still associated with active synthetic monitors.
+ * Terraform will proceed with the destroy operation, but the credential will **not** be removed if any associations remain. **Action Required:** Before destroying this resource, ensure the credential is removed from all associated monitors.
+ * If any monitors remain associated after destroy, you must manually remove those associations and delete the credential manually.
+ *
+ * > This resource requires the API token scopes **Read credential vault entries** (`credentialVault.read`) and **Write credential vault entries** (`credentialVault.write`)
+ *
+ * ## Dynatrace Documentation
+ *
+ * - Credential vault for synthetic monitors - https://www.dynatrace.com/support/help/platform-modules/digital-experience/synthetic-monitoring/general-information/credential-vault-for-synthetic-monitors
+ *
+ * - Credential vault API - https://www.dynatrace.com/support/help/dynatrace-api/environment-api/credential-vault
+ *
+ * ## Export Example Usage
+ *
+ * - `terraform-provider-dynatrace -export dynatrace.Credentials` downloads all existing credentials
+ *
+ * The full documentation of the export feature is available [here](https://dt-url.net/h203qmc).
+ *
+ * ## Resource Example Usage
+ *
+ * ```typescript
+ * import * as pulumi from "@pulumi/pulumi";
+ * import * as dynatrace from "@pulumiverse/dynatrace";
+ * import * as std from "@pulumi/std";
+ *
+ * const name = new dynatrace.Credentials("name", {
+ *     name: "name",
+ *     scopes: ["SYNTHETIC"],
+ *     username: "username",
+ *     password: "password",
+ * });
+ * const rootCertificate = new dynatrace.Credentials("root_certificate", {
+ *     name: "Root Certificate",
+ *     description: "Root certificate for validating Extension 2.0 signatures",
+ *     certificate: std.file({
+ *         input: "certificate.pem",
+ *     }).then(invoke => std.base64encode({
+ *         input: invoke.result,
+ *     })).then(invoke => invoke.result),
+ *     format: "PEM",
+ *     "public": true,
+ * });
+ * ```
+ */
 export class Credentials extends pulumi.CustomResource {
     /**
      * Get an existing Credentials resource's state with the given name, ID, and optional extra
@@ -72,6 +117,9 @@ export class Credentials extends pulumi.CustomResource {
      * The credentials set is available to every user (`false`) or to owner only (`true`)
      */
     declare public readonly ownerAccessOnly: pulumi.Output<boolean | undefined>;
+    /**
+     * The password of the credential. Note: Terraform treats an empty string for a value as if the attribute was absent. If you want to set an empty password, use the value `--empty--`.
+     */
     declare public readonly password: pulumi.Output<string | undefined>;
     /**
      * For certificate authentication specifies whether it's public certificate auth (`true`) or not (`false`).
@@ -191,6 +239,9 @@ export interface CredentialsState {
      * The credentials set is available to every user (`false`) or to owner only (`true`)
      */
     ownerAccessOnly?: pulumi.Input<boolean>;
+    /**
+     * The password of the credential. Note: Terraform treats an empty string for a value as if the attribute was absent. If you want to set an empty password, use the value `--empty--`.
+     */
     password?: pulumi.Input<string>;
     /**
      * For certificate authentication specifies whether it's public certificate auth (`true`) or not (`false`).
@@ -258,6 +309,9 @@ export interface CredentialsArgs {
      * The credentials set is available to every user (`false`) or to owner only (`true`)
      */
     ownerAccessOnly?: pulumi.Input<boolean>;
+    /**
+     * The password of the credential. Note: Terraform treats an empty string for a value as if the attribute was absent. If you want to set an empty password, use the value `--empty--`.
+     */
     password?: pulumi.Input<string>;
     /**
      * For certificate authentication specifies whether it's public certificate auth (`true`) or not (`false`).

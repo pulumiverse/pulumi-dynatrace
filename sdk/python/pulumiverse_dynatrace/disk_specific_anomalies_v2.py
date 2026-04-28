@@ -30,6 +30,7 @@ class DiskSpecificAnomaliesV2Args:
                  disk_slow_writes_and_reads_detection: Optional[pulumi.Input['DiskSpecificAnomaliesV2DiskSlowWritesAndReadsDetectionArgs']] = None):
         """
         The set of arguments for constructing a DiskSpecificAnomaliesV2 resource.
+
         :param pulumi.Input[_builtins.str] disk_id: The id for the disk anomaly detection
         :param pulumi.Input[_builtins.bool] override_disk_low_space_detection: Override low disk space detection settings
         :param pulumi.Input[_builtins.bool] override_low_inodes_detection: Override low inodes detection settings
@@ -146,6 +147,7 @@ class _DiskSpecificAnomaliesV2State:
                  override_slow_writes_and_reads_detection: Optional[pulumi.Input[_builtins.bool]] = None):
         """
         Input properties used for looking up and filtering DiskSpecificAnomaliesV2 resources.
+
         :param pulumi.Input[_builtins.str] disk_id: The id for the disk anomaly detection
         :param pulumi.Input['DiskSpecificAnomaliesV2DiskLowInodesDetectionArgs'] disk_low_inodes_detection: no documentation available
         :param pulumi.Input['DiskSpecificAnomaliesV2DiskLowSpaceDetectionArgs'] disk_low_space_detection: no documentation available
@@ -269,7 +271,21 @@ class DiskSpecificAnomaliesV2(pulumi.CustomResource):
                  override_slow_writes_and_reads_detection: Optional[pulumi.Input[_builtins.bool]] = None,
                  __props__=None):
         """
-        Create a DiskSpecificAnomaliesV2 resource with the given unique name, props, and options.
+        > This resource requires the API token scopes **Read settings** (`settings.read`) and **Write settings** (`settings.write`)
+
+        ## Dynatrace Documentation
+
+        - Adjust the sensitivity of anomaly detection for infrastructure - https://www.dynatrace.com/support/help/how-to-use-dynatrace/problem-detection-and-analysis/problem-detection/adjust-sensitivity-anomaly-detection/adjust-sensitivity-infastructure
+
+        - Settings API - https://www.dynatrace.com/support/help/dynatrace-api/environment-api/settings (schemaId: `builtin:anomaly-detection.infrastructure-disks.per-disk-override`)
+
+        ## Export Example Usage
+
+        - `terraform-provider-dynatrace -export DiskSpecificAnomaliesV2` downloads all existing disk specific anomaly detection configuration
+
+        The full documentation of the export feature is available [here](https://dt-url.net/h203qmc).
+
+
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[_builtins.str] disk_id: The id for the disk anomaly detection
@@ -287,7 +303,21 @@ class DiskSpecificAnomaliesV2(pulumi.CustomResource):
                  args: DiskSpecificAnomaliesV2Args,
                  opts: Optional[pulumi.ResourceOptions] = None):
         """
-        Create a DiskSpecificAnomaliesV2 resource with the given unique name, props, and options.
+        > This resource requires the API token scopes **Read settings** (`settings.read`) and **Write settings** (`settings.write`)
+
+        ## Dynatrace Documentation
+
+        - Adjust the sensitivity of anomaly detection for infrastructure - https://www.dynatrace.com/support/help/how-to-use-dynatrace/problem-detection-and-analysis/problem-detection/adjust-sensitivity-anomaly-detection/adjust-sensitivity-infastructure
+
+        - Settings API - https://www.dynatrace.com/support/help/dynatrace-api/environment-api/settings (schemaId: `builtin:anomaly-detection.infrastructure-disks.per-disk-override`)
+
+        ## Export Example Usage
+
+        - `terraform-provider-dynatrace -export DiskSpecificAnomaliesV2` downloads all existing disk specific anomaly detection configuration
+
+        The full documentation of the export feature is available [here](https://dt-url.net/h203qmc).
+
+
         :param str resource_name: The name of the resource.
         :param DiskSpecificAnomaliesV2Args args: The arguments to use to populate this resource's properties.
         :param pulumi.ResourceOptions opts: Options for the resource.

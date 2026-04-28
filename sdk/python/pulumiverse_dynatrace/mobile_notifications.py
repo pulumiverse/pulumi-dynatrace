@@ -22,6 +22,7 @@ class MobileNotificationsArgs:
                  enabled: pulumi.Input[_builtins.bool]):
         """
         The set of arguments for constructing a MobileNotifications resource.
+
         :param pulumi.Input[_builtins.bool] enabled: This setting is enabled (`true`) or disabled (`false`)
         """
         pulumi.set(__self__, "enabled", enabled)
@@ -45,6 +46,7 @@ class _MobileNotificationsState:
                  enabled: Optional[pulumi.Input[_builtins.bool]] = None):
         """
         Input properties used for looking up and filtering MobileNotifications resources.
+
         :param pulumi.Input[_builtins.bool] enabled: This setting is enabled (`true`) or disabled (`false`)
         """
         if enabled is not None:
@@ -72,7 +74,21 @@ class MobileNotifications(pulumi.CustomResource):
                  enabled: Optional[pulumi.Input[_builtins.bool]] = None,
                  __props__=None):
         """
-        Create a MobileNotifications resource with the given unique name, props, and options.
+        > This resource requires the API token scopes **Read settings** (`settings.read`) and **Write settings** (`settings.write`)
+
+        ## Dynatrace Documentation
+
+        - Web Hook integration - https://www.dynatrace.com/support/help/setup-and-configuration/integrations/problem-notifications/webhook-integration
+
+        - Settings API - https://www.dynatrace.com/support/help/dynatrace-api/environment-api/settings (schemaId: `builtin:problem.notifications`)
+
+        ## Export Example Usage
+
+        - `terraform-provider-dynatrace -export MobileNotifications` downloads the existing problem notifications via Web Hook
+
+        The full documentation of the export feature is available [here](https://dt-url.net/h203qmc).
+
+
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[_builtins.bool] enabled: This setting is enabled (`true`) or disabled (`false`)
@@ -84,7 +100,21 @@ class MobileNotifications(pulumi.CustomResource):
                  args: MobileNotificationsArgs,
                  opts: Optional[pulumi.ResourceOptions] = None):
         """
-        Create a MobileNotifications resource with the given unique name, props, and options.
+        > This resource requires the API token scopes **Read settings** (`settings.read`) and **Write settings** (`settings.write`)
+
+        ## Dynatrace Documentation
+
+        - Web Hook integration - https://www.dynatrace.com/support/help/setup-and-configuration/integrations/problem-notifications/webhook-integration
+
+        - Settings API - https://www.dynatrace.com/support/help/dynatrace-api/environment-api/settings (schemaId: `builtin:problem.notifications`)
+
+        ## Export Example Usage
+
+        - `terraform-provider-dynatrace -export MobileNotifications` downloads the existing problem notifications via Web Hook
+
+        The full documentation of the export feature is available [here](https://dt-url.net/h203qmc).
+
+
         :param str resource_name: The name of the resource.
         :param MobileNotificationsArgs args: The arguments to use to populate this resource's properties.
         :param pulumi.ResourceOptions opts: Options for the resource.

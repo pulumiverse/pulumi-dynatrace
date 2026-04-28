@@ -10,6 +10,23 @@ using Pulumi;
 
 namespace Pulumiverse.Dynatrace
 {
+    /// <summary>
+    /// &gt; This resource requires the API token scopes **Read settings** (`settings.read`) and **Write settings** (`settings.write`)
+    /// 
+    /// When Adaptive traffic management is activated, some PurePath distributed traces will be discarded based on your environment licensed limit. With URL-based sampling, you can configure the importance of specific URLs. URLs with higher importance can be treated to be captured more often and vice versa.
+    /// 
+    /// ## Dynatrace Documentation
+    /// 
+    /// - Adaptive traffic management for distributed tracing - https://docs.dynatrace.com/docs/observe-and-explore/purepath-distributed-traces/adaptive-traffic-management
+    /// 
+    /// - Settings API - https://www.dynatrace.com/support/help/dynatrace-api/environment-api/settings (schemaId: `builtin:url-based-sampling`)
+    /// 
+    /// ## Export Example Usage
+    /// 
+    /// - `terraform-provider-dynatrace -export dynatrace.UrlBasedSampling` downloads all existing URL-based sampling configuration
+    /// 
+    /// The full documentation of the export feature is available [here](https://dt-url.net/h203qmc).
+    /// </summary>
     [DynatraceResourceType("dynatrace:index/urlBasedSampling:UrlBasedSampling")]
     public partial class UrlBasedSampling : global::Pulumi.CustomResource
     {

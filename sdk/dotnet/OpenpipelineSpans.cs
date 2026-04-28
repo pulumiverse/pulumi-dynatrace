@@ -10,6 +10,158 @@ using Pulumi;
 
 namespace Pulumiverse.Dynatrace
 {
+    /// <summary>
+    /// !&gt; This resource API endpoint has been deprecated, please migrate your OpenPipeline configurations and use `dynatrace_openpipeline_v2_spans_*` instead.
+    /// 
+    /// !&gt; Deploying an OpenPipeline configuration will overwrite the existing one of the same kind, causing any manual changes made in the web UI or other configurations managed by Terraform or Monaco to be lost. Ensure all configurations are defined within a single Terraform or Monaco configuration to prevent data loss.
+    /// 
+    /// &gt; **Dynatrace SaaS only**
+    /// 
+    /// &gt; To utilize this resource, please define the environment variables `DT_CLIENT_ID`, `DT_CLIENT_SECRET`, `DT_ACCOUNT_ID` with an OAuth client including the following permissions: **View OpenPipeline configurations** (`openpipeline:configurations:read`), and **Edit OpenPipeline configurations** (`openpipeline:configurations:write`).
+    /// 
+    /// ## Dynatrace Documentation
+    /// 
+    /// - OpenPipeline - https://docs.dynatrace.com/docs/platform/openpipeline
+    /// 
+    /// ## Export Example Usage
+    /// 
+    /// - `terraform-provider-dynatrace -export dynatrace.OpenpipelineSpans` downloads all existing OpenPipeline definitions for Spans
+    /// 
+    /// The full documentation of the export feature is available [here](https://dt-url.net/h203qmc).
+    /// 
+    /// ## Resource Example Usage
+    /// 
+    /// ```csharp
+    /// using System.Collections.Generic;
+    /// using System.Linq;
+    /// using Pulumi;
+    /// using Dynatrace = Pulumiverse.Dynatrace;
+    /// 
+    /// return await Deployment.RunAsync(() =&gt; 
+    /// {
+    ///     var spans = new Dynatrace.OpenpipelineSpans("spans", new()
+    ///     {
+    ///         Pipelines = new Dynatrace.Inputs.OpenpipelineSpansPipelinesArgs
+    ///         {
+    ///             Pipelines = new[]
+    ///             {
+    ///                 new Dynatrace.Inputs.OpenpipelineSpansPipelinesPipelineArgs
+    ///                 {
+    ///                     Enabled = true,
+    ///                     DisplayName = "#name#",
+    ///                     Id = "pipeline_Custom_spans_#name#",
+    ///                     DataExtraction = new Dynatrace.Inputs.OpenpipelineSpansPipelinesPipelineDataExtractionArgs
+    ///                     {
+    ///                         Processors = new[]
+    ///                         {
+    ///                             new Dynatrace.Inputs.OpenpipelineSpansPipelinesPipelineDataExtractionProcessorArgs
+    ///                             {
+    ///                                 BizeventExtractionProcessor = new Dynatrace.Inputs.OpenpipelineSpansPipelinesPipelineDataExtractionProcessorBizeventExtractionProcessorArgs
+    ///                                 {
+    ///                                     Description = "Custom bizevent extraction",
+    ///                                     Enabled = true,
+    ///                                     Id = "processor_custom_bizevent_1_#name#",
+    ///                                     Matcher = "true",
+    ///                                     SampleData = "{}",
+    ///                                     FieldExtraction = new Dynatrace.Inputs.OpenpipelineSpansPipelinesPipelineDataExtractionProcessorBizeventExtractionProcessorFieldExtractionArgs
+    ///                                     {
+    ///                                         Semantic = "INCLUDE",
+    ///                                         Fields = new[]
+    ///                                         {
+    ///                                             "my.field",
+    ///                                         },
+    ///                                     },
+    ///                                     EventProvider = new Dynatrace.Inputs.OpenpipelineSpansPipelinesPipelineDataExtractionProcessorBizeventExtractionProcessorEventProviderArgs
+    ///                                     {
+    ///                                         Type = "constant",
+    ///                                         Constant = "my-constant",
+    ///                                     },
+    ///                                     EventType = new Dynatrace.Inputs.OpenpipelineSpansPipelinesPipelineDataExtractionProcessorBizeventExtractionProcessorEventTypeArgs
+    ///                                     {
+    ///                                         Type = "constant",
+    ///                                         Constant = "my-constant",
+    ///                                     },
+    ///                                 },
+    ///                             },
+    ///                         },
+    ///                     },
+    ///                     MetricExtraction = new Dynatrace.Inputs.OpenpipelineSpansPipelinesPipelineMetricExtractionArgs
+    ///                     {
+    ///                         Processors = new[]
+    ///                         {
+    ///                             new Dynatrace.Inputs.OpenpipelineSpansPipelinesPipelineMetricExtractionProcessorArgs
+    ///                             {
+    ///                                 SamplingAwareCounterMetricExtractionProcessor = new Dynatrace.Inputs.OpenpipelineSpansPipelinesPipelineMetricExtractionProcessorSamplingAwareCounterMetricExtractionProcessorArgs
+    ///                                 {
+    ///                                     Description = "Custom sampling counter extraction",
+    ///                                     Enabled = true,
+    ///                                     Id = "processor_custom_sampling_counter_1_#name#",
+    ///                                     Matcher = "true",
+    ///                                     MetricKey = "events.counter",
+    ///                                     Aggregation = "ENABLED",
+    ///                                     SampleData = "{}",
+    ///                                     Sampling = "ENABLED",
+    ///                                     Dimensions = new[]
+    ///                                     {
+    ///                                         "ab=xy",
+    ///                                     },
+    ///                                 },
+    ///                             },
+    ///                             new Dynatrace.Inputs.OpenpipelineSpansPipelinesPipelineMetricExtractionProcessorArgs
+    ///                             {
+    ///                                 SamplingAwareValueMetricExtractionProcessor = new Dynatrace.Inputs.OpenpipelineSpansPipelinesPipelineMetricExtractionProcessorSamplingAwareValueMetricExtractionProcessorArgs
+    ///                                 {
+    ///                                     Description = "Custom sampling value extraction",
+    ///                                     Enabled = true,
+    ///                                     Id = "processor_custom_sampling_value_1_#name#",
+    ///                                     Matcher = "true",
+    ///                                     Measurement = "FIELD",
+    ///                                     MetricKey = "events.value",
+    ///                                     Aggregation = "DISABLED",
+    ///                                     Sampling = "DISABLED",
+    ///                                     DefaultValue = "10",
+    ///                                     Field = "my.field",
+    ///                                     SampleData = "{}",
+    ///                                     Dimensions = new[]
+    ///                                     {
+    ///                                         "xyz=abc",
+    ///                                     },
+    ///                                 },
+    ///                             },
+    ///                         },
+    ///                     },
+    ///                     Processing = new Dynatrace.Inputs.OpenpipelineSpansPipelinesPipelineProcessingArgs
+    ///                     {
+    ///                         Processors = new[]
+    ///                         {
+    ///                             new Dynatrace.Inputs.OpenpipelineSpansPipelinesPipelineProcessingProcessorArgs
+    ///                             {
+    ///                                 FieldsAddProcessor = new Dynatrace.Inputs.OpenpipelineSpansPipelinesPipelineProcessingProcessorFieldsAddProcessorArgs
+    ///                                 {
+    ///                                     Description = "#name#",
+    ///                                     Enabled = true,
+    ///                                     Id = "processor_Add_field_#name#",
+    ///                                     Matcher = "true",
+    ///                                     Fields = new[]
+    ///                                     {
+    ///                                         new Dynatrace.Inputs.OpenpipelineSpansPipelinesPipelineProcessingProcessorFieldsAddProcessorFieldArgs
+    ///                                         {
+    ///                                             Name = "test",
+    ///                                             Value = "1",
+    ///                                         },
+    ///                                     },
+    ///                                 },
+    ///                             },
+    ///                         },
+    ///                     },
+    ///                 },
+    ///             },
+    ///         },
+    ///     });
+    /// 
+    /// });
+    /// ```
+    /// </summary>
     [DynatraceResourceType("dynatrace:index/openpipelineSpans:OpenpipelineSpans")]
     public partial class OpenpipelineSpans : global::Pulumi.CustomResource
     {

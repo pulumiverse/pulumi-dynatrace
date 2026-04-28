@@ -26,6 +26,7 @@ class AutotagRulesArgs:
                  rules: Optional[pulumi.Input['AutotagRulesRulesArgs']] = None):
         """
         The set of arguments for constructing a AutotagRules resource.
+
         :param pulumi.Input[_builtins.str] auto_tag_id: Automatically applied tag ID
         :param pulumi.Input[_builtins.str] current_state: For internal use: current state of rules in JSON format
         :param pulumi.Input['AutotagRulesRulesArgs'] rules: Rules
@@ -81,6 +82,7 @@ class _AutotagRulesState:
                  rules: Optional[pulumi.Input['AutotagRulesRulesArgs']] = None):
         """
         Input properties used for looking up and filtering AutotagRules resources.
+
         :param pulumi.Input[_builtins.str] auto_tag_id: Automatically applied tag ID
         :param pulumi.Input[_builtins.str] current_state: For internal use: current state of rules in JSON format
         :param pulumi.Input['AutotagRulesRulesArgs'] rules: Rules
@@ -158,12 +160,14 @@ class AutotagRules(pulumi.CustomResource):
         import pulumi
         import pulumiverse_dynatrace as dynatrace
 
-        sample_autotag_v2 = dynatrace.AutotagV2("sampleAutotagV2", rules_maintained_externally=True)
+        sample = dynatrace.AutotagV2("sample",
+            name="sample",
+            rules_maintained_externally=True)
         #Be careful when maintaining `dynatrace_autotag_rules` in separate modules.
         #Do not execute `pulumi up` in parallel when several modules contain 
         #`dynatrace_autotag_rules` referring to the same `dynatrace_autotag_v2`.
-        sample_autotag_rules = dynatrace.AutotagRules("sampleAutotagRules",
-            auto_tag_id=sample_autotag_v2.id,
+        sample_autotag_rules = dynatrace.AutotagRules("sample",
+            auto_tag_id=sample.id,
             rules={
                 "rules": [{
                     "type": "SELECTOR",
@@ -174,6 +178,7 @@ class AutotagRules(pulumi.CustomResource):
                 }],
             })
         ```
+
 
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
@@ -206,12 +211,14 @@ class AutotagRules(pulumi.CustomResource):
         import pulumi
         import pulumiverse_dynatrace as dynatrace
 
-        sample_autotag_v2 = dynatrace.AutotagV2("sampleAutotagV2", rules_maintained_externally=True)
+        sample = dynatrace.AutotagV2("sample",
+            name="sample",
+            rules_maintained_externally=True)
         #Be careful when maintaining `dynatrace_autotag_rules` in separate modules.
         #Do not execute `pulumi up` in parallel when several modules contain 
         #`dynatrace_autotag_rules` referring to the same `dynatrace_autotag_v2`.
-        sample_autotag_rules = dynatrace.AutotagRules("sampleAutotagRules",
-            auto_tag_id=sample_autotag_v2.id,
+        sample_autotag_rules = dynatrace.AutotagRules("sample",
+            auto_tag_id=sample.id,
             rules={
                 "rules": [{
                     "type": "SELECTOR",
@@ -222,6 +229,7 @@ class AutotagRules(pulumi.CustomResource):
                 }],
             })
         ```
+
 
         :param str resource_name: The name of the resource.
         :param AutotagRulesArgs args: The arguments to use to populate this resource's properties.

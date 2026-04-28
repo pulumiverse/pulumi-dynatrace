@@ -27,6 +27,7 @@ class CustomTagsArgs:
                  matched_entities: Optional[pulumi.Input[_builtins.int]] = None):
         """
         The set of arguments for constructing a CustomTags resource.
+
         :param pulumi.Input[_builtins.str] entity_selector: Specifies the entities where you want to update tags
         :param pulumi.Input['CustomTagsTagsArgs'] tags: Specifies the entities where you want to update tags
         :param pulumi.Input[_builtins.str] current_state: For internal use: current state of tags in JSON format
@@ -97,6 +98,7 @@ class _CustomTagsState:
                  tags: Optional[pulumi.Input['CustomTagsTagsArgs']] = None):
         """
         Input properties used for looking up and filtering CustomTags resources.
+
         :param pulumi.Input[_builtins.str] current_state: For internal use: current state of tags in JSON format
         :param pulumi.Input[_builtins.str] entity_selector: Specifies the entities where you want to update tags
         :param pulumi.Input[_builtins.int] matched_entities: The number of monitored entities where the tags have been added.
@@ -172,7 +174,21 @@ class CustomTags(pulumi.CustomResource):
                  tags: Optional[pulumi.Input[Union['CustomTagsTagsArgs', 'CustomTagsTagsArgsDict']]] = None,
                  __props__=None):
         """
-        Create a CustomTags resource with the given unique name, props, and options.
+        > This resource requires the API token scopes **Read entities** (`entities.read`) and **Write entities** (`entities.write`)
+
+        ## Dynatrace Documentation
+
+        - Define and apply tags - https://www.dynatrace.com/support/help/shortlink/tagging#manual
+
+        - Custom tags API - https://www.dynatrace.com/support/help/dynatrace-api/environment-api/custom-tags
+
+        ## Export Example Usage
+
+        - `terraform-provider-dynatrace -export CustomTags` downloads all existing custom tags configuration
+
+        The full documentation of the export feature is available [here](https://dt-url.net/h203qmc).
+
+
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[_builtins.str] current_state: For internal use: current state of tags in JSON format
@@ -187,7 +203,21 @@ class CustomTags(pulumi.CustomResource):
                  args: CustomTagsArgs,
                  opts: Optional[pulumi.ResourceOptions] = None):
         """
-        Create a CustomTags resource with the given unique name, props, and options.
+        > This resource requires the API token scopes **Read entities** (`entities.read`) and **Write entities** (`entities.write`)
+
+        ## Dynatrace Documentation
+
+        - Define and apply tags - https://www.dynatrace.com/support/help/shortlink/tagging#manual
+
+        - Custom tags API - https://www.dynatrace.com/support/help/dynatrace-api/environment-api/custom-tags
+
+        ## Export Example Usage
+
+        - `terraform-provider-dynatrace -export CustomTags` downloads all existing custom tags configuration
+
+        The full documentation of the export feature is available [here](https://dt-url.net/h203qmc).
+
+
         :param str resource_name: The name of the resource.
         :param CustomTagsArgs args: The arguments to use to populate this resource's properties.
         :param pulumi.ResourceOptions opts: Options for the resource.

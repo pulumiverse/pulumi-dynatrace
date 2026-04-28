@@ -6,6 +6,23 @@ import * as inputs from "./types/input";
 import * as outputs from "./types/output";
 import * as utilities from "./utilities";
 
+/**
+ * !> This resource is utilizing an older API endpoint, please use dynatrace.Kubernetes instead.
+ *
+ * > This resource requires the API token scopes **Read configuration** (`ReadConfig`) and **Write configuration** (`WriteConfig`)
+ *
+ * ## Dynatrace Documentation
+ *
+ * - Kubernetes/OpenShift monitoring - https://www.dynatrace.com/support/help/how-to-use-dynatrace/infrastructure-monitoring/container-platform-monitoring/kubernetes-monitoring
+ *
+ * - Kubernetes credentials API - https://www.dynatrace.com/support/help/dynatrace-api/configuration-api/k8s-credentials-api-api
+ *
+ * ## Export Example Usage
+ *
+ * - `terraform-provider-dynatrace -export dynatrace.K8sCredentials` downloads all existing Kubernetes credentials configuration
+ *
+ * The full documentation of the export feature is available [here](https://dt-url.net/h203qmc).
+ */
 export class K8sCredentials extends pulumi.CustomResource {
     /**
      * Get an existing K8sCredentials resource's state with the given name, ID, and optional extra

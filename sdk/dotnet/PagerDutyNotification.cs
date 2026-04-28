@@ -10,23 +10,38 @@ using Pulumi;
 
 namespace Pulumiverse.Dynatrace
 {
+    /// <summary>
+    /// &gt; This resource requires the API token scopes **Read settings** (`settings.read`) and **Write settings** (`settings.write`)
+    /// 
+    /// ## Dynatrace Documentation
+    /// 
+    /// - Pager Duty notifications - https://www.dynatrace.com/support/help/setup-and-configuration/integrations/problem-notifications/pagerduty-integration
+    /// 
+    /// - Settings API - https://www.dynatrace.com/support/help/dynatrace-api/environment-api/settings (schemaId: `builtin:problem.notifications`)
+    /// 
+    /// ## Export Example Usage
+    /// 
+    /// - `terraform-provider-dynatrace -export dynatrace.PagerDutyNotification` downloads the existing problem notifications for Pager Duty
+    /// 
+    /// The full documentation of the export feature is available [here](https://dt-url.net/h203qmc).
+    /// </summary>
     [DynatraceResourceType("dynatrace:index/pagerDutyNotification:PagerDutyNotification")]
     public partial class PagerDutyNotification : global::Pulumi.CustomResource
     {
         /// <summary>
-        /// The name of the PagerDuty account
+        /// The name of the PagerDuty account.
         /// </summary>
         [Output("account")]
         public Output<string> Account { get; private set; } = null!;
 
         /// <summary>
-        /// The configuration is enabled (`True`) or disabled (`False`)
+        /// This setting is enabled (`True`) or disabled (`False`)
         /// </summary>
         [Output("active")]
         public Output<bool> Active { get; private set; } = null!;
 
         /// <summary>
-        /// The API key to access PagerDuty
+        /// The Events API key to access PagerDuty.
         /// </summary>
         [Output("apiKey")]
         public Output<string?> ApiKey { get; private set; } = null!;
@@ -50,7 +65,7 @@ namespace Pulumiverse.Dynatrace
         public Output<string> Profile { get; private set; } = null!;
 
         /// <summary>
-        /// The name of the PagerDuty Service
+        /// The name of the service.
         /// </summary>
         [Output("service")]
         public Output<string> Service { get; private set; } = null!;
@@ -107,13 +122,13 @@ namespace Pulumiverse.Dynatrace
     public sealed class PagerDutyNotificationArgs : global::Pulumi.ResourceArgs
     {
         /// <summary>
-        /// The name of the PagerDuty account
+        /// The name of the PagerDuty account.
         /// </summary>
         [Input("account", required: true)]
         public Input<string> Account { get; set; } = null!;
 
         /// <summary>
-        /// The configuration is enabled (`True`) or disabled (`False`)
+        /// This setting is enabled (`True`) or disabled (`False`)
         /// </summary>
         [Input("active", required: true)]
         public Input<bool> Active { get; set; } = null!;
@@ -122,7 +137,7 @@ namespace Pulumiverse.Dynatrace
         private Input<string>? _apiKey;
 
         /// <summary>
-        /// The API key to access PagerDuty
+        /// The Events API key to access PagerDuty.
         /// </summary>
         public Input<string>? ApiKey
         {
@@ -153,7 +168,7 @@ namespace Pulumiverse.Dynatrace
         public Input<string> Profile { get; set; } = null!;
 
         /// <summary>
-        /// The name of the PagerDuty Service
+        /// The name of the service.
         /// </summary>
         [Input("service", required: true)]
         public Input<string> Service { get; set; } = null!;
@@ -167,13 +182,13 @@ namespace Pulumiverse.Dynatrace
     public sealed class PagerDutyNotificationState : global::Pulumi.ResourceArgs
     {
         /// <summary>
-        /// The name of the PagerDuty account
+        /// The name of the PagerDuty account.
         /// </summary>
         [Input("account")]
         public Input<string>? Account { get; set; }
 
         /// <summary>
-        /// The configuration is enabled (`True`) or disabled (`False`)
+        /// This setting is enabled (`True`) or disabled (`False`)
         /// </summary>
         [Input("active")]
         public Input<bool>? Active { get; set; }
@@ -182,7 +197,7 @@ namespace Pulumiverse.Dynatrace
         private Input<string>? _apiKey;
 
         /// <summary>
-        /// The API key to access PagerDuty
+        /// The Events API key to access PagerDuty.
         /// </summary>
         public Input<string>? ApiKey
         {
@@ -213,7 +228,7 @@ namespace Pulumiverse.Dynatrace
         public Input<string>? Profile { get; set; }
 
         /// <summary>
-        /// The name of the PagerDuty Service
+        /// The name of the service.
         /// </summary>
         [Input("service")]
         public Input<string>? Service { get; set; }

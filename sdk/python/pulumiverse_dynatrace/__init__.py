@@ -44,8 +44,12 @@ from .autotag import *
 from .autotag_rules import *
 from .autotag_v2 import *
 from .aws_anomalies import *
+from .aws_connection import *
+from .aws_connection_role_arn import *
 from .aws_credentials import *
 from .aws_service import *
+from .azure_connection import *
+from .azure_connection_authentication import *
 from .azure_credentials import *
 from .azure_service import *
 from .browser_monitor import *
@@ -156,10 +160,12 @@ from .get_geo_countries import *
 from .get_geo_regions import *
 from .get_host import *
 from .get_hub_items import *
+from .get_iam_environments import *
 from .get_iam_group import *
 from .get_iam_groups import *
 from .get_iam_policies import *
 from .get_iam_policy import *
+from .get_iam_service_user import *
 from .get_iam_user import *
 from .get_lambda_agent_version import *
 from .get_management_zone import *
@@ -211,6 +217,7 @@ from .iam_policy import *
 from .iam_policy_bindings import *
 from .iam_policy_bindings_v2 import *
 from .iam_policy_boundary import *
+from .iam_service_user import *
 from .iam_user import *
 from .ibm_mq_filters import *
 from .ims_bridges import *
@@ -791,6 +798,22 @@ _utilities.register(
  },
  {
   "pkg": "dynatrace",
+  "mod": "index/awsConnection",
+  "fqn": "pulumiverse_dynatrace",
+  "classes": {
+   "dynatrace:index/awsConnection:AwsConnection": "AwsConnection"
+  }
+ },
+ {
+  "pkg": "dynatrace",
+  "mod": "index/awsConnectionRoleArn",
+  "fqn": "pulumiverse_dynatrace",
+  "classes": {
+   "dynatrace:index/awsConnectionRoleArn:AwsConnectionRoleArn": "AwsConnectionRoleArn"
+  }
+ },
+ {
+  "pkg": "dynatrace",
   "mod": "index/awsCredentials",
   "fqn": "pulumiverse_dynatrace",
   "classes": {
@@ -803,6 +826,22 @@ _utilities.register(
   "fqn": "pulumiverse_dynatrace",
   "classes": {
    "dynatrace:index/awsService:AwsService": "AwsService"
+  }
+ },
+ {
+  "pkg": "dynatrace",
+  "mod": "index/azureConnection",
+  "fqn": "pulumiverse_dynatrace",
+  "classes": {
+   "dynatrace:index/azureConnection:AzureConnection": "AzureConnection"
+  }
+ },
+ {
+  "pkg": "dynatrace",
+  "mod": "index/azureConnectionAuthentication",
+  "fqn": "pulumiverse_dynatrace",
+  "classes": {
+   "dynatrace:index/azureConnectionAuthentication:AzureConnectionAuthentication": "AzureConnectionAuthentication"
   }
  },
  {
@@ -1699,6 +1738,14 @@ _utilities.register(
   "fqn": "pulumiverse_dynatrace",
   "classes": {
    "dynatrace:index/iamPolicyBoundary:IamPolicyBoundary": "IamPolicyBoundary"
+  }
+ },
+ {
+  "pkg": "dynatrace",
+  "mod": "index/iamServiceUser",
+  "fqn": "pulumiverse_dynatrace",
+  "classes": {
+   "dynatrace:index/iamServiceUser:IamServiceUser": "IamServiceUser"
   }
  },
  {

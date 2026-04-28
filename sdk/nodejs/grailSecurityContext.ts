@@ -4,6 +4,21 @@
 import * as pulumi from "@pulumi/pulumi";
 import * as utilities from "./utilities";
 
+/**
+ * > This resource requires the API token scopes **Read settings** (`settings.read`) and **Write settings** (`settings.write`)
+ *
+ * ## Dynatrace Documentation
+ *
+ * - Security data on Grail - https://docs.dynatrace.com/docs/platform-modules/application-security/security-data-on-grail
+ *
+ * - Settings API - https://www.dynatrace.com/support/help/dynatrace-api/environment-api/settings (schemaId: `builtin:monitoredentities.grail.security.context`)
+ *
+ * ## Export Example Usage
+ *
+ * - `terraform-provider-dynatrace -export dynatrace.GrailSecurityContext` downloads all existing Grail security context configuration
+ *
+ * The full documentation of the export feature is available [here](https://dt-url.net/h203qmc).
+ */
 export class GrailSecurityContext extends pulumi.CustomResource {
     /**
      * Get an existing GrailSecurityContext resource's state with the given name, ID, and optional extra

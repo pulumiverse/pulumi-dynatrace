@@ -26,6 +26,7 @@ class OpenpipelineSpansArgs:
                  routing: Optional[pulumi.Input['OpenpipelineSpansRoutingArgs']] = None):
         """
         The set of arguments for constructing a OpenpipelineSpans resource.
+
         :param pulumi.Input['OpenpipelineSpansEndpointsArgs'] endpoints: List of all ingest sources of the configuration
         :param pulumi.Input['OpenpipelineSpansPipelinesArgs'] pipelines: List of all pipelines of the configuration
         :param pulumi.Input['OpenpipelineSpansRoutingArgs'] routing: Dynamic routing definition
@@ -82,6 +83,7 @@ class _OpenpipelineSpansState:
                  routing: Optional[pulumi.Input['OpenpipelineSpansRoutingArgs']] = None):
         """
         Input properties used for looking up and filtering OpenpipelineSpans resources.
+
         :param pulumi.Input['OpenpipelineSpansEndpointsArgs'] endpoints: List of all ingest sources of the configuration
         :param pulumi.Input['OpenpipelineSpansPipelinesArgs'] pipelines: List of all pipelines of the configuration
         :param pulumi.Input['OpenpipelineSpansRoutingArgs'] routing: Dynamic routing definition
@@ -141,7 +143,110 @@ class OpenpipelineSpans(pulumi.CustomResource):
                  routing: Optional[pulumi.Input[Union['OpenpipelineSpansRoutingArgs', 'OpenpipelineSpansRoutingArgsDict']]] = None,
                  __props__=None):
         """
-        Create a OpenpipelineSpans resource with the given unique name, props, and options.
+        !> This resource API endpoint has been deprecated, please migrate your OpenPipeline configurations and use `dynatrace_openpipeline_v2_spans_*` instead.
+
+        !> Deploying an OpenPipeline configuration will overwrite the existing one of the same kind, causing any manual changes made in the web UI or other configurations managed by Terraform or Monaco to be lost. Ensure all configurations are defined within a single Terraform or Monaco configuration to prevent data loss.
+
+        > **Dynatrace SaaS only**
+
+        > To utilize this resource, please define the environment variables `DT_CLIENT_ID`, `DT_CLIENT_SECRET`, `DT_ACCOUNT_ID` with an OAuth client including the following permissions: **View OpenPipeline configurations** (`openpipeline:configurations:read`), and **Edit OpenPipeline configurations** (`openpipeline:configurations:write`).
+
+        ## Dynatrace Documentation
+
+        - OpenPipeline - https://docs.dynatrace.com/docs/platform/openpipeline
+
+        ## Export Example Usage
+
+        - `terraform-provider-dynatrace -export OpenpipelineSpans` downloads all existing OpenPipeline definitions for Spans
+
+        The full documentation of the export feature is available [here](https://dt-url.net/h203qmc).
+
+        ## Resource Example Usage
+
+        ```python
+        import pulumi
+        import pulumiverse_dynatrace as dynatrace
+
+        spans = dynatrace.OpenpipelineSpans("spans", pipelines={
+            "pipelines": [{
+                "enabled": True,
+                "display_name": "#name#",
+                "id": "pipeline_Custom_spans_#name#",
+                "data_extraction": {
+                    "processors": [{
+                        "bizevent_extraction_processor": {
+                            "description": "Custom bizevent extraction",
+                            "enabled": True,
+                            "id": "processor_custom_bizevent_1_#name#",
+                            "matcher": "true",
+                            "sample_data": "{}",
+                            "field_extraction": {
+                                "semantic": "INCLUDE",
+                                "fields": ["my.field"],
+                            },
+                            "event_provider": {
+                                "type": "constant",
+                                "constant": "my-constant",
+                            },
+                            "event_type": {
+                                "type": "constant",
+                                "constant": "my-constant",
+                            },
+                        },
+                    }],
+                },
+                "metric_extraction": {
+                    "processors": [
+                        {
+                            "sampling_aware_counter_metric_extraction_processor": {
+                                "description": "Custom sampling counter extraction",
+                                "enabled": True,
+                                "id": "processor_custom_sampling_counter_1_#name#",
+                                "matcher": "true",
+                                "metric_key": "events.counter",
+                                "aggregation": "ENABLED",
+                                "sample_data": "{}",
+                                "sampling": "ENABLED",
+                                "dimensions": ["ab=xy"],
+                            },
+                        },
+                        {
+                            "sampling_aware_value_metric_extraction_processor": {
+                                "description": "Custom sampling value extraction",
+                                "enabled": True,
+                                "id": "processor_custom_sampling_value_1_#name#",
+                                "matcher": "true",
+                                "measurement": "FIELD",
+                                "metric_key": "events.value",
+                                "aggregation": "DISABLED",
+                                "sampling": "DISABLED",
+                                "default_value": "10",
+                                "field": "my.field",
+                                "sample_data": "{}",
+                                "dimensions": ["xyz=abc"],
+                            },
+                        },
+                    ],
+                },
+                "processing": {
+                    "processors": [{
+                        "fields_add_processor": {
+                            "description": "#name#",
+                            "enabled": True,
+                            "id": "processor_Add_field_#name#",
+                            "matcher": "true",
+                            "fields": [{
+                                "name": "test",
+                                "value": "1",
+                            }],
+                        },
+                    }],
+                },
+            }],
+        })
+        ```
+
+
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[Union['OpenpipelineSpansEndpointsArgs', 'OpenpipelineSpansEndpointsArgsDict']] endpoints: List of all ingest sources of the configuration
@@ -155,7 +260,110 @@ class OpenpipelineSpans(pulumi.CustomResource):
                  args: Optional[OpenpipelineSpansArgs] = None,
                  opts: Optional[pulumi.ResourceOptions] = None):
         """
-        Create a OpenpipelineSpans resource with the given unique name, props, and options.
+        !> This resource API endpoint has been deprecated, please migrate your OpenPipeline configurations and use `dynatrace_openpipeline_v2_spans_*` instead.
+
+        !> Deploying an OpenPipeline configuration will overwrite the existing one of the same kind, causing any manual changes made in the web UI or other configurations managed by Terraform or Monaco to be lost. Ensure all configurations are defined within a single Terraform or Monaco configuration to prevent data loss.
+
+        > **Dynatrace SaaS only**
+
+        > To utilize this resource, please define the environment variables `DT_CLIENT_ID`, `DT_CLIENT_SECRET`, `DT_ACCOUNT_ID` with an OAuth client including the following permissions: **View OpenPipeline configurations** (`openpipeline:configurations:read`), and **Edit OpenPipeline configurations** (`openpipeline:configurations:write`).
+
+        ## Dynatrace Documentation
+
+        - OpenPipeline - https://docs.dynatrace.com/docs/platform/openpipeline
+
+        ## Export Example Usage
+
+        - `terraform-provider-dynatrace -export OpenpipelineSpans` downloads all existing OpenPipeline definitions for Spans
+
+        The full documentation of the export feature is available [here](https://dt-url.net/h203qmc).
+
+        ## Resource Example Usage
+
+        ```python
+        import pulumi
+        import pulumiverse_dynatrace as dynatrace
+
+        spans = dynatrace.OpenpipelineSpans("spans", pipelines={
+            "pipelines": [{
+                "enabled": True,
+                "display_name": "#name#",
+                "id": "pipeline_Custom_spans_#name#",
+                "data_extraction": {
+                    "processors": [{
+                        "bizevent_extraction_processor": {
+                            "description": "Custom bizevent extraction",
+                            "enabled": True,
+                            "id": "processor_custom_bizevent_1_#name#",
+                            "matcher": "true",
+                            "sample_data": "{}",
+                            "field_extraction": {
+                                "semantic": "INCLUDE",
+                                "fields": ["my.field"],
+                            },
+                            "event_provider": {
+                                "type": "constant",
+                                "constant": "my-constant",
+                            },
+                            "event_type": {
+                                "type": "constant",
+                                "constant": "my-constant",
+                            },
+                        },
+                    }],
+                },
+                "metric_extraction": {
+                    "processors": [
+                        {
+                            "sampling_aware_counter_metric_extraction_processor": {
+                                "description": "Custom sampling counter extraction",
+                                "enabled": True,
+                                "id": "processor_custom_sampling_counter_1_#name#",
+                                "matcher": "true",
+                                "metric_key": "events.counter",
+                                "aggregation": "ENABLED",
+                                "sample_data": "{}",
+                                "sampling": "ENABLED",
+                                "dimensions": ["ab=xy"],
+                            },
+                        },
+                        {
+                            "sampling_aware_value_metric_extraction_processor": {
+                                "description": "Custom sampling value extraction",
+                                "enabled": True,
+                                "id": "processor_custom_sampling_value_1_#name#",
+                                "matcher": "true",
+                                "measurement": "FIELD",
+                                "metric_key": "events.value",
+                                "aggregation": "DISABLED",
+                                "sampling": "DISABLED",
+                                "default_value": "10",
+                                "field": "my.field",
+                                "sample_data": "{}",
+                                "dimensions": ["xyz=abc"],
+                            },
+                        },
+                    ],
+                },
+                "processing": {
+                    "processors": [{
+                        "fields_add_processor": {
+                            "description": "#name#",
+                            "enabled": True,
+                            "id": "processor_Add_field_#name#",
+                            "matcher": "true",
+                            "fields": [{
+                                "name": "test",
+                                "value": "1",
+                            }],
+                        },
+                    }],
+                },
+            }],
+        })
+        ```
+
+
         :param str resource_name: The name of the resource.
         :param OpenpipelineSpansArgs args: The arguments to use to populate this resource's properties.
         :param pulumi.ResourceOptions opts: Options for the resource.

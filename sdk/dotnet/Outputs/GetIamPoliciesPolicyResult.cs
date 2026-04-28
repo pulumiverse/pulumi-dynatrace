@@ -26,6 +26,9 @@ namespace Pulumiverse.Dynatrace.Outputs
         /// `True` if this is a global policy`
         /// </summary>
         public readonly bool? Global;
+        /// <summary>
+        /// The ID of the policy as it is known by Terraform. It contains the UUID, LevelType and LevelID of the policy in concatenated form
+        /// </summary>
         public readonly string Id;
         /// <summary>
         /// The name of the policy

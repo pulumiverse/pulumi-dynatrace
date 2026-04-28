@@ -23,25 +23,40 @@ class OpenpipelineV2MetricsIngestsourcesArgs:
     def __init__(__self__, *,
                  display_name: pulumi.Input[_builtins.str],
                  enabled: pulumi.Input[_builtins.bool],
-                 path_segment: pulumi.Input[_builtins.str],
-                 processing: pulumi.Input['OpenpipelineV2MetricsIngestsourcesProcessingArgs'],
                  default_bucket: Optional[pulumi.Input[_builtins.str]] = None,
+                 metadata_list: Optional[pulumi.Input['OpenpipelineV2MetricsIngestsourcesMetadataListArgs']] = None,
+                 path_segment: Optional[pulumi.Input[_builtins.str]] = None,
+                 processing: Optional[pulumi.Input['OpenpipelineV2MetricsIngestsourcesProcessingArgs']] = None,
+                 source: Optional[pulumi.Input[_builtins.str]] = None,
+                 source_type: Optional[pulumi.Input[_builtins.str]] = None,
                  static_routing: Optional[pulumi.Input['OpenpipelineV2MetricsIngestsourcesStaticRoutingArgs']] = None):
         """
         The set of arguments for constructing a OpenpipelineV2MetricsIngestsources resource.
+
         :param pulumi.Input[_builtins.str] display_name: Endpoint display name
         :param pulumi.Input[_builtins.bool] enabled: This setting is enabled (`true`) or disabled (`false`)
+        :param pulumi.Input[_builtins.str] default_bucket: Default Bucket
+        :param pulumi.Input['OpenpipelineV2MetricsIngestsourcesMetadataListArgs'] metadata_list: Ingest source metadata list
         :param pulumi.Input[_builtins.str] path_segment: Endpoint segment
         :param pulumi.Input['OpenpipelineV2MetricsIngestsourcesProcessingArgs'] processing: Processing stage
-        :param pulumi.Input[_builtins.str] default_bucket: Default Bucket
+        :param pulumi.Input[_builtins.str] source: Source
+        :param pulumi.Input[_builtins.str] source_type: Source Type. Possible Values: `extension`, `http`
         :param pulumi.Input['OpenpipelineV2MetricsIngestsourcesStaticRoutingArgs'] static_routing: Static routing of endpoint
         """
         pulumi.set(__self__, "display_name", display_name)
         pulumi.set(__self__, "enabled", enabled)
-        pulumi.set(__self__, "path_segment", path_segment)
-        pulumi.set(__self__, "processing", processing)
         if default_bucket is not None:
             pulumi.set(__self__, "default_bucket", default_bucket)
+        if metadata_list is not None:
+            pulumi.set(__self__, "metadata_list", metadata_list)
+        if path_segment is not None:
+            pulumi.set(__self__, "path_segment", path_segment)
+        if processing is not None:
+            pulumi.set(__self__, "processing", processing)
+        if source is not None:
+            pulumi.set(__self__, "source", source)
+        if source_type is not None:
+            pulumi.set(__self__, "source_type", source_type)
         if static_routing is not None:
             pulumi.set(__self__, "static_routing", static_routing)
 
@@ -70,30 +85,6 @@ class OpenpipelineV2MetricsIngestsourcesArgs:
         pulumi.set(self, "enabled", value)
 
     @_builtins.property
-    @pulumi.getter(name="pathSegment")
-    def path_segment(self) -> pulumi.Input[_builtins.str]:
-        """
-        Endpoint segment
-        """
-        return pulumi.get(self, "path_segment")
-
-    @path_segment.setter
-    def path_segment(self, value: pulumi.Input[_builtins.str]):
-        pulumi.set(self, "path_segment", value)
-
-    @_builtins.property
-    @pulumi.getter
-    def processing(self) -> pulumi.Input['OpenpipelineV2MetricsIngestsourcesProcessingArgs']:
-        """
-        Processing stage
-        """
-        return pulumi.get(self, "processing")
-
-    @processing.setter
-    def processing(self, value: pulumi.Input['OpenpipelineV2MetricsIngestsourcesProcessingArgs']):
-        pulumi.set(self, "processing", value)
-
-    @_builtins.property
     @pulumi.getter(name="defaultBucket")
     def default_bucket(self) -> Optional[pulumi.Input[_builtins.str]]:
         """
@@ -104,6 +95,66 @@ class OpenpipelineV2MetricsIngestsourcesArgs:
     @default_bucket.setter
     def default_bucket(self, value: Optional[pulumi.Input[_builtins.str]]):
         pulumi.set(self, "default_bucket", value)
+
+    @_builtins.property
+    @pulumi.getter(name="metadataList")
+    def metadata_list(self) -> Optional[pulumi.Input['OpenpipelineV2MetricsIngestsourcesMetadataListArgs']]:
+        """
+        Ingest source metadata list
+        """
+        return pulumi.get(self, "metadata_list")
+
+    @metadata_list.setter
+    def metadata_list(self, value: Optional[pulumi.Input['OpenpipelineV2MetricsIngestsourcesMetadataListArgs']]):
+        pulumi.set(self, "metadata_list", value)
+
+    @_builtins.property
+    @pulumi.getter(name="pathSegment")
+    def path_segment(self) -> Optional[pulumi.Input[_builtins.str]]:
+        """
+        Endpoint segment
+        """
+        return pulumi.get(self, "path_segment")
+
+    @path_segment.setter
+    def path_segment(self, value: Optional[pulumi.Input[_builtins.str]]):
+        pulumi.set(self, "path_segment", value)
+
+    @_builtins.property
+    @pulumi.getter
+    def processing(self) -> Optional[pulumi.Input['OpenpipelineV2MetricsIngestsourcesProcessingArgs']]:
+        """
+        Processing stage
+        """
+        return pulumi.get(self, "processing")
+
+    @processing.setter
+    def processing(self, value: Optional[pulumi.Input['OpenpipelineV2MetricsIngestsourcesProcessingArgs']]):
+        pulumi.set(self, "processing", value)
+
+    @_builtins.property
+    @pulumi.getter
+    def source(self) -> Optional[pulumi.Input[_builtins.str]]:
+        """
+        Source
+        """
+        return pulumi.get(self, "source")
+
+    @source.setter
+    def source(self, value: Optional[pulumi.Input[_builtins.str]]):
+        pulumi.set(self, "source", value)
+
+    @_builtins.property
+    @pulumi.getter(name="sourceType")
+    def source_type(self) -> Optional[pulumi.Input[_builtins.str]]:
+        """
+        Source Type. Possible Values: `extension`, `http`
+        """
+        return pulumi.get(self, "source_type")
+
+    @source_type.setter
+    def source_type(self, value: Optional[pulumi.Input[_builtins.str]]):
+        pulumi.set(self, "source_type", value)
 
     @_builtins.property
     @pulumi.getter(name="staticRouting")
@@ -124,16 +175,23 @@ class _OpenpipelineV2MetricsIngestsourcesState:
                  default_bucket: Optional[pulumi.Input[_builtins.str]] = None,
                  display_name: Optional[pulumi.Input[_builtins.str]] = None,
                  enabled: Optional[pulumi.Input[_builtins.bool]] = None,
+                 metadata_list: Optional[pulumi.Input['OpenpipelineV2MetricsIngestsourcesMetadataListArgs']] = None,
                  path_segment: Optional[pulumi.Input[_builtins.str]] = None,
                  processing: Optional[pulumi.Input['OpenpipelineV2MetricsIngestsourcesProcessingArgs']] = None,
+                 source: Optional[pulumi.Input[_builtins.str]] = None,
+                 source_type: Optional[pulumi.Input[_builtins.str]] = None,
                  static_routing: Optional[pulumi.Input['OpenpipelineV2MetricsIngestsourcesStaticRoutingArgs']] = None):
         """
         Input properties used for looking up and filtering OpenpipelineV2MetricsIngestsources resources.
+
         :param pulumi.Input[_builtins.str] default_bucket: Default Bucket
         :param pulumi.Input[_builtins.str] display_name: Endpoint display name
         :param pulumi.Input[_builtins.bool] enabled: This setting is enabled (`true`) or disabled (`false`)
+        :param pulumi.Input['OpenpipelineV2MetricsIngestsourcesMetadataListArgs'] metadata_list: Ingest source metadata list
         :param pulumi.Input[_builtins.str] path_segment: Endpoint segment
         :param pulumi.Input['OpenpipelineV2MetricsIngestsourcesProcessingArgs'] processing: Processing stage
+        :param pulumi.Input[_builtins.str] source: Source
+        :param pulumi.Input[_builtins.str] source_type: Source Type. Possible Values: `extension`, `http`
         :param pulumi.Input['OpenpipelineV2MetricsIngestsourcesStaticRoutingArgs'] static_routing: Static routing of endpoint
         """
         if default_bucket is not None:
@@ -142,10 +200,16 @@ class _OpenpipelineV2MetricsIngestsourcesState:
             pulumi.set(__self__, "display_name", display_name)
         if enabled is not None:
             pulumi.set(__self__, "enabled", enabled)
+        if metadata_list is not None:
+            pulumi.set(__self__, "metadata_list", metadata_list)
         if path_segment is not None:
             pulumi.set(__self__, "path_segment", path_segment)
         if processing is not None:
             pulumi.set(__self__, "processing", processing)
+        if source is not None:
+            pulumi.set(__self__, "source", source)
+        if source_type is not None:
+            pulumi.set(__self__, "source_type", source_type)
         if static_routing is not None:
             pulumi.set(__self__, "static_routing", static_routing)
 
@@ -186,6 +250,18 @@ class _OpenpipelineV2MetricsIngestsourcesState:
         pulumi.set(self, "enabled", value)
 
     @_builtins.property
+    @pulumi.getter(name="metadataList")
+    def metadata_list(self) -> Optional[pulumi.Input['OpenpipelineV2MetricsIngestsourcesMetadataListArgs']]:
+        """
+        Ingest source metadata list
+        """
+        return pulumi.get(self, "metadata_list")
+
+    @metadata_list.setter
+    def metadata_list(self, value: Optional[pulumi.Input['OpenpipelineV2MetricsIngestsourcesMetadataListArgs']]):
+        pulumi.set(self, "metadata_list", value)
+
+    @_builtins.property
     @pulumi.getter(name="pathSegment")
     def path_segment(self) -> Optional[pulumi.Input[_builtins.str]]:
         """
@@ -210,6 +286,30 @@ class _OpenpipelineV2MetricsIngestsourcesState:
         pulumi.set(self, "processing", value)
 
     @_builtins.property
+    @pulumi.getter
+    def source(self) -> Optional[pulumi.Input[_builtins.str]]:
+        """
+        Source
+        """
+        return pulumi.get(self, "source")
+
+    @source.setter
+    def source(self, value: Optional[pulumi.Input[_builtins.str]]):
+        pulumi.set(self, "source", value)
+
+    @_builtins.property
+    @pulumi.getter(name="sourceType")
+    def source_type(self) -> Optional[pulumi.Input[_builtins.str]]:
+        """
+        Source Type. Possible Values: `extension`, `http`
+        """
+        return pulumi.get(self, "source_type")
+
+    @source_type.setter
+    def source_type(self, value: Optional[pulumi.Input[_builtins.str]]):
+        pulumi.set(self, "source_type", value)
+
+    @_builtins.property
     @pulumi.getter(name="staticRouting")
     def static_routing(self) -> Optional[pulumi.Input['OpenpipelineV2MetricsIngestsourcesStaticRoutingArgs']]:
         """
@@ -231,19 +331,156 @@ class OpenpipelineV2MetricsIngestsources(pulumi.CustomResource):
                  default_bucket: Optional[pulumi.Input[_builtins.str]] = None,
                  display_name: Optional[pulumi.Input[_builtins.str]] = None,
                  enabled: Optional[pulumi.Input[_builtins.bool]] = None,
+                 metadata_list: Optional[pulumi.Input[Union['OpenpipelineV2MetricsIngestsourcesMetadataListArgs', 'OpenpipelineV2MetricsIngestsourcesMetadataListArgsDict']]] = None,
                  path_segment: Optional[pulumi.Input[_builtins.str]] = None,
                  processing: Optional[pulumi.Input[Union['OpenpipelineV2MetricsIngestsourcesProcessingArgs', 'OpenpipelineV2MetricsIngestsourcesProcessingArgsDict']]] = None,
+                 source: Optional[pulumi.Input[_builtins.str]] = None,
+                 source_type: Optional[pulumi.Input[_builtins.str]] = None,
                  static_routing: Optional[pulumi.Input[Union['OpenpipelineV2MetricsIngestsourcesStaticRoutingArgs', 'OpenpipelineV2MetricsIngestsourcesStaticRoutingArgsDict']]] = None,
                  __props__=None):
         """
-        Create a OpenpipelineV2MetricsIngestsources resource with the given unique name, props, and options.
+        > This resource requires the API token scopes **Read settings** (`settings.read`) and **Write settings** (`settings.write`)
+
+        > This resource requires the OAuth scopes **Read settings** (`settings:objects:read`) and **Write settings** (`settings:objects:write`)
+
+        ## Limitations
+
+        > **Warning** If a resource is created using an API token or without setting `DYNATRACE_HTTP_OAUTH_PREFERENCE=true` (when both are used), the settings object's owner will remain empty.
+
+        An empty owner implies:
+        - The settings object becomes public, allowing other users with settings permissions to read and modify it.
+        - Changing the settings object's permissions will have no effect, meaning the `SettingsPermissions` resource can't alter its access.
+
+        When a settings object is created using platform credentials:
+        - The owner is set to the owner of the OAuth client or platform token.
+        - By default, the settings object is private; only the owner can read and modify it.
+        - Access modifiers can be managed using the `SettingsPermissions` resource.
+
+        We recommend using platform credentials to ensure a correct setup.
+        In case an API token is needed, we recommend setting `DYNATRACE_HTTP_OAUTH_PREFERENCE=true`.
+
+        ## Dynatrace Documentation
+
+        - OpenPipeline - https://docs.dynatrace.com/docs/platform/openpipeline
+
+        ## Export Example Usage
+
+        - `terraform-provider-dynatrace -export OpenpipelineV2MetricsIngestsources` downloads all existing OpenPipeline definitions for metrics ingest sources
+
+        The full documentation of the export feature is available [here](https://dt-url.net/h203qmc).
+
+        ## Resource Example Usage
+
+        ```python
+        import pulumi
+        import pulumiverse_dynatrace as dynatrace
+
+        maximal_source = dynatrace.OpenpipelineV2MetricsIngestsources("maximal-source",
+            enabled=True,
+            display_name="max-ingestsource",
+            path_segment="processor.ingestsource.path.max.tf.#name#",
+            source_type="http",
+            static_routing={
+                "pipeline_type": "builtin",
+                "builtin_pipeline_id": "default",
+            },
+            default_bucket="default_events",
+            metadata_list={
+                "metadatas": [{
+                    "entry_key": "environment",
+                    "entry_value": "production",
+                }],
+            },
+            processing={
+                "processors": {
+                    "processors": [
+                        {
+                            "enabled": True,
+                            "type": "drop",
+                            "id": "processor_Drop_unnecessary_records_1234",
+                            "description": "Drop unnecessary records",
+                            "matcher": "not matchesPhrase(record.name, \\"Error\\") and not matchesPhrase(record.name, \\"Warning\\")",
+                        },
+                        {
+                            "enabled": True,
+                            "type": "fieldsAdd",
+                            "id": "processor_Add_error_flag_6132",
+                            "description": "Add error flag",
+                            "matcher": "matchesPhrase(record.name, \\"Error\\")",
+                            "sample_data": \"\"\"{
+          "record.name": "Error record" 
+        }\"\"\",
+                            "fields_add": {
+                                "fields": {
+                                    "fields": [{
+                                        "name": "is_error",
+                                        "value": "true",
+                                    }],
+                                },
+                            },
+                        },
+                        {
+                            "enabled": True,
+                            "type": "fieldsRemove",
+                            "id": "processor_Remove_details_field_8919",
+                            "description": "Remove details field",
+                            "matcher": "isNotNull(record.details)",
+                            "sample_data": \"\"\"{
+          "record.name": "Error",
+          "record.details": "some record details"
+        }\"\"\",
+                            "fields_remove": {
+                                "fields": ["record.details"],
+                            },
+                        },
+                        {
+                            "enabled": True,
+                            "type": "fieldsRename",
+                            "id": "processor_Rename_name_to_title_5347",
+                            "description": "Rename name to title",
+                            "matcher": "true",
+                            "sample_data": \"\"\"{
+          "record.name": "Error"
+        }\"\"\",
+                            "fields_rename": {
+                                "fields": {
+                                    "fields": [{
+                                        "from_name": "record.name",
+                                        "to_name": "record.title",
+                                    }],
+                                },
+                            },
+                        },
+                        {
+                            "enabled": True,
+                            "type": "dql",
+                            "id": "processor_Combine_title_and_summary_to_name_1244",
+                            "description": "Combine title and summary to name",
+                            "sample_data": \"\"\"{
+          "record.title": "Error",
+          "record.summary": "Request failed"
+        }\"\"\",
+                            "matcher": "true",
+                            "dql": {
+                                "script": "fieldsAdd record.name = concat(record.title, \\" - \\", record.summary)",
+                            },
+                        },
+                    ],
+                },
+            })
+        ```
+
+
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[_builtins.str] default_bucket: Default Bucket
         :param pulumi.Input[_builtins.str] display_name: Endpoint display name
         :param pulumi.Input[_builtins.bool] enabled: This setting is enabled (`true`) or disabled (`false`)
+        :param pulumi.Input[Union['OpenpipelineV2MetricsIngestsourcesMetadataListArgs', 'OpenpipelineV2MetricsIngestsourcesMetadataListArgsDict']] metadata_list: Ingest source metadata list
         :param pulumi.Input[_builtins.str] path_segment: Endpoint segment
         :param pulumi.Input[Union['OpenpipelineV2MetricsIngestsourcesProcessingArgs', 'OpenpipelineV2MetricsIngestsourcesProcessingArgsDict']] processing: Processing stage
+        :param pulumi.Input[_builtins.str] source: Source
+        :param pulumi.Input[_builtins.str] source_type: Source Type. Possible Values: `extension`, `http`
         :param pulumi.Input[Union['OpenpipelineV2MetricsIngestsourcesStaticRoutingArgs', 'OpenpipelineV2MetricsIngestsourcesStaticRoutingArgsDict']] static_routing: Static routing of endpoint
         """
         ...
@@ -253,7 +490,138 @@ class OpenpipelineV2MetricsIngestsources(pulumi.CustomResource):
                  args: OpenpipelineV2MetricsIngestsourcesArgs,
                  opts: Optional[pulumi.ResourceOptions] = None):
         """
-        Create a OpenpipelineV2MetricsIngestsources resource with the given unique name, props, and options.
+        > This resource requires the API token scopes **Read settings** (`settings.read`) and **Write settings** (`settings.write`)
+
+        > This resource requires the OAuth scopes **Read settings** (`settings:objects:read`) and **Write settings** (`settings:objects:write`)
+
+        ## Limitations
+
+        > **Warning** If a resource is created using an API token or without setting `DYNATRACE_HTTP_OAUTH_PREFERENCE=true` (when both are used), the settings object's owner will remain empty.
+
+        An empty owner implies:
+        - The settings object becomes public, allowing other users with settings permissions to read and modify it.
+        - Changing the settings object's permissions will have no effect, meaning the `SettingsPermissions` resource can't alter its access.
+
+        When a settings object is created using platform credentials:
+        - The owner is set to the owner of the OAuth client or platform token.
+        - By default, the settings object is private; only the owner can read and modify it.
+        - Access modifiers can be managed using the `SettingsPermissions` resource.
+
+        We recommend using platform credentials to ensure a correct setup.
+        In case an API token is needed, we recommend setting `DYNATRACE_HTTP_OAUTH_PREFERENCE=true`.
+
+        ## Dynatrace Documentation
+
+        - OpenPipeline - https://docs.dynatrace.com/docs/platform/openpipeline
+
+        ## Export Example Usage
+
+        - `terraform-provider-dynatrace -export OpenpipelineV2MetricsIngestsources` downloads all existing OpenPipeline definitions for metrics ingest sources
+
+        The full documentation of the export feature is available [here](https://dt-url.net/h203qmc).
+
+        ## Resource Example Usage
+
+        ```python
+        import pulumi
+        import pulumiverse_dynatrace as dynatrace
+
+        maximal_source = dynatrace.OpenpipelineV2MetricsIngestsources("maximal-source",
+            enabled=True,
+            display_name="max-ingestsource",
+            path_segment="processor.ingestsource.path.max.tf.#name#",
+            source_type="http",
+            static_routing={
+                "pipeline_type": "builtin",
+                "builtin_pipeline_id": "default",
+            },
+            default_bucket="default_events",
+            metadata_list={
+                "metadatas": [{
+                    "entry_key": "environment",
+                    "entry_value": "production",
+                }],
+            },
+            processing={
+                "processors": {
+                    "processors": [
+                        {
+                            "enabled": True,
+                            "type": "drop",
+                            "id": "processor_Drop_unnecessary_records_1234",
+                            "description": "Drop unnecessary records",
+                            "matcher": "not matchesPhrase(record.name, \\"Error\\") and not matchesPhrase(record.name, \\"Warning\\")",
+                        },
+                        {
+                            "enabled": True,
+                            "type": "fieldsAdd",
+                            "id": "processor_Add_error_flag_6132",
+                            "description": "Add error flag",
+                            "matcher": "matchesPhrase(record.name, \\"Error\\")",
+                            "sample_data": \"\"\"{
+          "record.name": "Error record" 
+        }\"\"\",
+                            "fields_add": {
+                                "fields": {
+                                    "fields": [{
+                                        "name": "is_error",
+                                        "value": "true",
+                                    }],
+                                },
+                            },
+                        },
+                        {
+                            "enabled": True,
+                            "type": "fieldsRemove",
+                            "id": "processor_Remove_details_field_8919",
+                            "description": "Remove details field",
+                            "matcher": "isNotNull(record.details)",
+                            "sample_data": \"\"\"{
+          "record.name": "Error",
+          "record.details": "some record details"
+        }\"\"\",
+                            "fields_remove": {
+                                "fields": ["record.details"],
+                            },
+                        },
+                        {
+                            "enabled": True,
+                            "type": "fieldsRename",
+                            "id": "processor_Rename_name_to_title_5347",
+                            "description": "Rename name to title",
+                            "matcher": "true",
+                            "sample_data": \"\"\"{
+          "record.name": "Error"
+        }\"\"\",
+                            "fields_rename": {
+                                "fields": {
+                                    "fields": [{
+                                        "from_name": "record.name",
+                                        "to_name": "record.title",
+                                    }],
+                                },
+                            },
+                        },
+                        {
+                            "enabled": True,
+                            "type": "dql",
+                            "id": "processor_Combine_title_and_summary_to_name_1244",
+                            "description": "Combine title and summary to name",
+                            "sample_data": \"\"\"{
+          "record.title": "Error",
+          "record.summary": "Request failed"
+        }\"\"\",
+                            "matcher": "true",
+                            "dql": {
+                                "script": "fieldsAdd record.name = concat(record.title, \\" - \\", record.summary)",
+                            },
+                        },
+                    ],
+                },
+            })
+        ```
+
+
         :param str resource_name: The name of the resource.
         :param OpenpipelineV2MetricsIngestsourcesArgs args: The arguments to use to populate this resource's properties.
         :param pulumi.ResourceOptions opts: Options for the resource.
@@ -272,8 +640,11 @@ class OpenpipelineV2MetricsIngestsources(pulumi.CustomResource):
                  default_bucket: Optional[pulumi.Input[_builtins.str]] = None,
                  display_name: Optional[pulumi.Input[_builtins.str]] = None,
                  enabled: Optional[pulumi.Input[_builtins.bool]] = None,
+                 metadata_list: Optional[pulumi.Input[Union['OpenpipelineV2MetricsIngestsourcesMetadataListArgs', 'OpenpipelineV2MetricsIngestsourcesMetadataListArgsDict']]] = None,
                  path_segment: Optional[pulumi.Input[_builtins.str]] = None,
                  processing: Optional[pulumi.Input[Union['OpenpipelineV2MetricsIngestsourcesProcessingArgs', 'OpenpipelineV2MetricsIngestsourcesProcessingArgsDict']]] = None,
+                 source: Optional[pulumi.Input[_builtins.str]] = None,
+                 source_type: Optional[pulumi.Input[_builtins.str]] = None,
                  static_routing: Optional[pulumi.Input[Union['OpenpipelineV2MetricsIngestsourcesStaticRoutingArgs', 'OpenpipelineV2MetricsIngestsourcesStaticRoutingArgsDict']]] = None,
                  __props__=None):
         opts = pulumi.ResourceOptions.merge(_utilities.get_resource_opts_defaults(), opts)
@@ -291,12 +662,11 @@ class OpenpipelineV2MetricsIngestsources(pulumi.CustomResource):
             if enabled is None and not opts.urn:
                 raise TypeError("Missing required property 'enabled'")
             __props__.__dict__["enabled"] = enabled
-            if path_segment is None and not opts.urn:
-                raise TypeError("Missing required property 'path_segment'")
+            __props__.__dict__["metadata_list"] = metadata_list
             __props__.__dict__["path_segment"] = path_segment
-            if processing is None and not opts.urn:
-                raise TypeError("Missing required property 'processing'")
             __props__.__dict__["processing"] = processing
+            __props__.__dict__["source"] = source
+            __props__.__dict__["source_type"] = source_type
             __props__.__dict__["static_routing"] = static_routing
         super(OpenpipelineV2MetricsIngestsources, __self__).__init__(
             'dynatrace:index/openpipelineV2MetricsIngestsources:OpenpipelineV2MetricsIngestsources',
@@ -311,8 +681,11 @@ class OpenpipelineV2MetricsIngestsources(pulumi.CustomResource):
             default_bucket: Optional[pulumi.Input[_builtins.str]] = None,
             display_name: Optional[pulumi.Input[_builtins.str]] = None,
             enabled: Optional[pulumi.Input[_builtins.bool]] = None,
+            metadata_list: Optional[pulumi.Input[Union['OpenpipelineV2MetricsIngestsourcesMetadataListArgs', 'OpenpipelineV2MetricsIngestsourcesMetadataListArgsDict']]] = None,
             path_segment: Optional[pulumi.Input[_builtins.str]] = None,
             processing: Optional[pulumi.Input[Union['OpenpipelineV2MetricsIngestsourcesProcessingArgs', 'OpenpipelineV2MetricsIngestsourcesProcessingArgsDict']]] = None,
+            source: Optional[pulumi.Input[_builtins.str]] = None,
+            source_type: Optional[pulumi.Input[_builtins.str]] = None,
             static_routing: Optional[pulumi.Input[Union['OpenpipelineV2MetricsIngestsourcesStaticRoutingArgs', 'OpenpipelineV2MetricsIngestsourcesStaticRoutingArgsDict']]] = None) -> 'OpenpipelineV2MetricsIngestsources':
         """
         Get an existing OpenpipelineV2MetricsIngestsources resource's state with the given name, id, and optional extra
@@ -324,8 +697,11 @@ class OpenpipelineV2MetricsIngestsources(pulumi.CustomResource):
         :param pulumi.Input[_builtins.str] default_bucket: Default Bucket
         :param pulumi.Input[_builtins.str] display_name: Endpoint display name
         :param pulumi.Input[_builtins.bool] enabled: This setting is enabled (`true`) or disabled (`false`)
+        :param pulumi.Input[Union['OpenpipelineV2MetricsIngestsourcesMetadataListArgs', 'OpenpipelineV2MetricsIngestsourcesMetadataListArgsDict']] metadata_list: Ingest source metadata list
         :param pulumi.Input[_builtins.str] path_segment: Endpoint segment
         :param pulumi.Input[Union['OpenpipelineV2MetricsIngestsourcesProcessingArgs', 'OpenpipelineV2MetricsIngestsourcesProcessingArgsDict']] processing: Processing stage
+        :param pulumi.Input[_builtins.str] source: Source
+        :param pulumi.Input[_builtins.str] source_type: Source Type. Possible Values: `extension`, `http`
         :param pulumi.Input[Union['OpenpipelineV2MetricsIngestsourcesStaticRoutingArgs', 'OpenpipelineV2MetricsIngestsourcesStaticRoutingArgsDict']] static_routing: Static routing of endpoint
         """
         opts = pulumi.ResourceOptions.merge(opts, pulumi.ResourceOptions(id=id))
@@ -335,8 +711,11 @@ class OpenpipelineV2MetricsIngestsources(pulumi.CustomResource):
         __props__.__dict__["default_bucket"] = default_bucket
         __props__.__dict__["display_name"] = display_name
         __props__.__dict__["enabled"] = enabled
+        __props__.__dict__["metadata_list"] = metadata_list
         __props__.__dict__["path_segment"] = path_segment
         __props__.__dict__["processing"] = processing
+        __props__.__dict__["source"] = source
+        __props__.__dict__["source_type"] = source_type
         __props__.__dict__["static_routing"] = static_routing
         return OpenpipelineV2MetricsIngestsources(resource_name, opts=opts, __props__=__props__)
 
@@ -365,8 +744,16 @@ class OpenpipelineV2MetricsIngestsources(pulumi.CustomResource):
         return pulumi.get(self, "enabled")
 
     @_builtins.property
+    @pulumi.getter(name="metadataList")
+    def metadata_list(self) -> pulumi.Output[Optional['outputs.OpenpipelineV2MetricsIngestsourcesMetadataList']]:
+        """
+        Ingest source metadata list
+        """
+        return pulumi.get(self, "metadata_list")
+
+    @_builtins.property
     @pulumi.getter(name="pathSegment")
-    def path_segment(self) -> pulumi.Output[_builtins.str]:
+    def path_segment(self) -> pulumi.Output[Optional[_builtins.str]]:
         """
         Endpoint segment
         """
@@ -374,11 +761,27 @@ class OpenpipelineV2MetricsIngestsources(pulumi.CustomResource):
 
     @_builtins.property
     @pulumi.getter
-    def processing(self) -> pulumi.Output['outputs.OpenpipelineV2MetricsIngestsourcesProcessing']:
+    def processing(self) -> pulumi.Output[Optional['outputs.OpenpipelineV2MetricsIngestsourcesProcessing']]:
         """
         Processing stage
         """
         return pulumi.get(self, "processing")
+
+    @_builtins.property
+    @pulumi.getter
+    def source(self) -> pulumi.Output[Optional[_builtins.str]]:
+        """
+        Source
+        """
+        return pulumi.get(self, "source")
+
+    @_builtins.property
+    @pulumi.getter(name="sourceType")
+    def source_type(self) -> pulumi.Output[Optional[_builtins.str]]:
+        """
+        Source Type. Possible Values: `extension`, `http`
+        """
+        return pulumi.get(self, "source_type")
 
     @_builtins.property
     @pulumi.getter(name="staticRouting")

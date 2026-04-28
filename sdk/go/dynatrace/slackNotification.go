@@ -12,22 +12,36 @@ import (
 	"github.com/pulumiverse/pulumi-dynatrace/sdk/go/dynatrace/internal"
 )
 
+// > This resource requires the API token scopes **Read settings** (`settings.read`) and **Write settings** (`settings.write`)
+//
+// ## Dynatrace Documentation
+//
+// - Slack integration - https://www.dynatrace.com/support/help/setup-and-configuration/integrations/problem-notifications/slack-integration
+//
+// - Settings API - https://www.dynatrace.com/support/help/dynatrace-api/environment-api/settings (schemaId: `builtin:problem.notifications`)
+//
+// ## Export Example Usage
+//
+// - `terraform-provider-dynatrace -export SlackNotification` downloads the existing problem notifications for Slack
+//
+// The full documentation of the export feature is available [here](https://dt-url.net/h203qmc).
 type SlackNotification struct {
 	pulumi.CustomResourceState
 
-	// The configuration is enabled (`true`) or disabled (`false`)
+	// This setting is enabled (`true`) or disabled (`false`)
 	Active pulumi.BoolOutput `pulumi:"active"`
-	// The channel (for example, `#general`) or the user (for example, `@john.smith`) to send the message to
+	// The channel (for example, `#general`) or the user (for example, `@john.smith`) to send the message to.
 	Channel pulumi.StringOutput `pulumi:"channel"`
 	// The ID of these settings when referred to from resources requiring the REST API V1 keys
 	LegacyId pulumi.StringOutput `pulumi:"legacyId"`
-	// The content of the message.  You can use the following placeholders:  * `{ImpactedEntity}`: The entity impacted by the problem or *X* impacted entities.  * `{PID}`: The ID of the reported problem.  * `{ProblemDetailsText}`: All problem event details, including root cause, as a text-formatted string.  * `{ProblemID}`: The display number of the reported problem.  * `{ProblemImpact}`: The [impact level](https://www.dynatrace.com/support/help/shortlink/impact-analysis) of the problem. Possible values are `APPLICATION`, `SERVICE`, and `INFRASTRUCTURE`.  * `{ProblemSeverity}`: The [severity level](https://www.dynatrace.com/support/help/shortlink/event-types) of the problem. Possible values are `AVAILABILITY`, `ERROR`, `PERFORMANCE`, `RESOURCE_CONTENTION`, and `CUSTOM_ALERT`.  * `{ProblemTitle}`: A short description of the problem.  * `{ProblemURL}`: The URL of the problem within Dynatrace.  * `{State}`: The state of the problem. Possible values are `OPEN` and `RESOLVED`.  * `{Tags}`: The list of tags that are defined for all impacted entities, separated by commas
+	// The content of the message. Type '{' for placeholder suggestions.. #### Available placeholders
+	// **{ImpactedEntity}**: A short description of the problem and impacted entity (or multiple impacted entities).
 	Message pulumi.StringOutput `pulumi:"message"`
-	// The name of the notification configuration
+	// The name of the notification configuration.
 	Name pulumi.StringOutput `pulumi:"name"`
 	// The ID of the associated alerting profile
 	Profile pulumi.StringOutput `pulumi:"profile"`
-	// The URL of the Slack WebHook. This is confidential information, therefore GET requests return this field with the `null` value, and it is optional for PUT requests
+	// Set up an incoming WebHook integration within your Slack account. Copy and paste the generated WebHook URL into the field above.
 	Url pulumi.StringOutput `pulumi:"url"`
 }
 
@@ -83,36 +97,38 @@ func GetSlackNotification(ctx *pulumi.Context,
 
 // Input properties used for looking up and filtering SlackNotification resources.
 type slackNotificationState struct {
-	// The configuration is enabled (`true`) or disabled (`false`)
+	// This setting is enabled (`true`) or disabled (`false`)
 	Active *bool `pulumi:"active"`
-	// The channel (for example, `#general`) or the user (for example, `@john.smith`) to send the message to
+	// The channel (for example, `#general`) or the user (for example, `@john.smith`) to send the message to.
 	Channel *string `pulumi:"channel"`
 	// The ID of these settings when referred to from resources requiring the REST API V1 keys
 	LegacyId *string `pulumi:"legacyId"`
-	// The content of the message.  You can use the following placeholders:  * `{ImpactedEntity}`: The entity impacted by the problem or *X* impacted entities.  * `{PID}`: The ID of the reported problem.  * `{ProblemDetailsText}`: All problem event details, including root cause, as a text-formatted string.  * `{ProblemID}`: The display number of the reported problem.  * `{ProblemImpact}`: The [impact level](https://www.dynatrace.com/support/help/shortlink/impact-analysis) of the problem. Possible values are `APPLICATION`, `SERVICE`, and `INFRASTRUCTURE`.  * `{ProblemSeverity}`: The [severity level](https://www.dynatrace.com/support/help/shortlink/event-types) of the problem. Possible values are `AVAILABILITY`, `ERROR`, `PERFORMANCE`, `RESOURCE_CONTENTION`, and `CUSTOM_ALERT`.  * `{ProblemTitle}`: A short description of the problem.  * `{ProblemURL}`: The URL of the problem within Dynatrace.  * `{State}`: The state of the problem. Possible values are `OPEN` and `RESOLVED`.  * `{Tags}`: The list of tags that are defined for all impacted entities, separated by commas
+	// The content of the message. Type '{' for placeholder suggestions.. #### Available placeholders
+	// **{ImpactedEntity}**: A short description of the problem and impacted entity (or multiple impacted entities).
 	Message *string `pulumi:"message"`
-	// The name of the notification configuration
+	// The name of the notification configuration.
 	Name *string `pulumi:"name"`
 	// The ID of the associated alerting profile
 	Profile *string `pulumi:"profile"`
-	// The URL of the Slack WebHook. This is confidential information, therefore GET requests return this field with the `null` value, and it is optional for PUT requests
+	// Set up an incoming WebHook integration within your Slack account. Copy and paste the generated WebHook URL into the field above.
 	Url *string `pulumi:"url"`
 }
 
 type SlackNotificationState struct {
-	// The configuration is enabled (`true`) or disabled (`false`)
+	// This setting is enabled (`true`) or disabled (`false`)
 	Active pulumi.BoolPtrInput
-	// The channel (for example, `#general`) or the user (for example, `@john.smith`) to send the message to
+	// The channel (for example, `#general`) or the user (for example, `@john.smith`) to send the message to.
 	Channel pulumi.StringPtrInput
 	// The ID of these settings when referred to from resources requiring the REST API V1 keys
 	LegacyId pulumi.StringPtrInput
-	// The content of the message.  You can use the following placeholders:  * `{ImpactedEntity}`: The entity impacted by the problem or *X* impacted entities.  * `{PID}`: The ID of the reported problem.  * `{ProblemDetailsText}`: All problem event details, including root cause, as a text-formatted string.  * `{ProblemID}`: The display number of the reported problem.  * `{ProblemImpact}`: The [impact level](https://www.dynatrace.com/support/help/shortlink/impact-analysis) of the problem. Possible values are `APPLICATION`, `SERVICE`, and `INFRASTRUCTURE`.  * `{ProblemSeverity}`: The [severity level](https://www.dynatrace.com/support/help/shortlink/event-types) of the problem. Possible values are `AVAILABILITY`, `ERROR`, `PERFORMANCE`, `RESOURCE_CONTENTION`, and `CUSTOM_ALERT`.  * `{ProblemTitle}`: A short description of the problem.  * `{ProblemURL}`: The URL of the problem within Dynatrace.  * `{State}`: The state of the problem. Possible values are `OPEN` and `RESOLVED`.  * `{Tags}`: The list of tags that are defined for all impacted entities, separated by commas
+	// The content of the message. Type '{' for placeholder suggestions.. #### Available placeholders
+	// **{ImpactedEntity}**: A short description of the problem and impacted entity (or multiple impacted entities).
 	Message pulumi.StringPtrInput
-	// The name of the notification configuration
+	// The name of the notification configuration.
 	Name pulumi.StringPtrInput
 	// The ID of the associated alerting profile
 	Profile pulumi.StringPtrInput
-	// The URL of the Slack WebHook. This is confidential information, therefore GET requests return this field with the `null` value, and it is optional for PUT requests
+	// Set up an incoming WebHook integration within your Slack account. Copy and paste the generated WebHook URL into the field above.
 	Url pulumi.StringPtrInput
 }
 
@@ -121,37 +137,39 @@ func (SlackNotificationState) ElementType() reflect.Type {
 }
 
 type slackNotificationArgs struct {
-	// The configuration is enabled (`true`) or disabled (`false`)
+	// This setting is enabled (`true`) or disabled (`false`)
 	Active bool `pulumi:"active"`
-	// The channel (for example, `#general`) or the user (for example, `@john.smith`) to send the message to
+	// The channel (for example, `#general`) or the user (for example, `@john.smith`) to send the message to.
 	Channel string `pulumi:"channel"`
 	// The ID of these settings when referred to from resources requiring the REST API V1 keys
 	LegacyId *string `pulumi:"legacyId"`
-	// The content of the message.  You can use the following placeholders:  * `{ImpactedEntity}`: The entity impacted by the problem or *X* impacted entities.  * `{PID}`: The ID of the reported problem.  * `{ProblemDetailsText}`: All problem event details, including root cause, as a text-formatted string.  * `{ProblemID}`: The display number of the reported problem.  * `{ProblemImpact}`: The [impact level](https://www.dynatrace.com/support/help/shortlink/impact-analysis) of the problem. Possible values are `APPLICATION`, `SERVICE`, and `INFRASTRUCTURE`.  * `{ProblemSeverity}`: The [severity level](https://www.dynatrace.com/support/help/shortlink/event-types) of the problem. Possible values are `AVAILABILITY`, `ERROR`, `PERFORMANCE`, `RESOURCE_CONTENTION`, and `CUSTOM_ALERT`.  * `{ProblemTitle}`: A short description of the problem.  * `{ProblemURL}`: The URL of the problem within Dynatrace.  * `{State}`: The state of the problem. Possible values are `OPEN` and `RESOLVED`.  * `{Tags}`: The list of tags that are defined for all impacted entities, separated by commas
+	// The content of the message. Type '{' for placeholder suggestions.. #### Available placeholders
+	// **{ImpactedEntity}**: A short description of the problem and impacted entity (or multiple impacted entities).
 	Message string `pulumi:"message"`
-	// The name of the notification configuration
+	// The name of the notification configuration.
 	Name *string `pulumi:"name"`
 	// The ID of the associated alerting profile
 	Profile string `pulumi:"profile"`
-	// The URL of the Slack WebHook. This is confidential information, therefore GET requests return this field with the `null` value, and it is optional for PUT requests
+	// Set up an incoming WebHook integration within your Slack account. Copy and paste the generated WebHook URL into the field above.
 	Url string `pulumi:"url"`
 }
 
 // The set of arguments for constructing a SlackNotification resource.
 type SlackNotificationArgs struct {
-	// The configuration is enabled (`true`) or disabled (`false`)
+	// This setting is enabled (`true`) or disabled (`false`)
 	Active pulumi.BoolInput
-	// The channel (for example, `#general`) or the user (for example, `@john.smith`) to send the message to
+	// The channel (for example, `#general`) or the user (for example, `@john.smith`) to send the message to.
 	Channel pulumi.StringInput
 	// The ID of these settings when referred to from resources requiring the REST API V1 keys
 	LegacyId pulumi.StringPtrInput
-	// The content of the message.  You can use the following placeholders:  * `{ImpactedEntity}`: The entity impacted by the problem or *X* impacted entities.  * `{PID}`: The ID of the reported problem.  * `{ProblemDetailsText}`: All problem event details, including root cause, as a text-formatted string.  * `{ProblemID}`: The display number of the reported problem.  * `{ProblemImpact}`: The [impact level](https://www.dynatrace.com/support/help/shortlink/impact-analysis) of the problem. Possible values are `APPLICATION`, `SERVICE`, and `INFRASTRUCTURE`.  * `{ProblemSeverity}`: The [severity level](https://www.dynatrace.com/support/help/shortlink/event-types) of the problem. Possible values are `AVAILABILITY`, `ERROR`, `PERFORMANCE`, `RESOURCE_CONTENTION`, and `CUSTOM_ALERT`.  * `{ProblemTitle}`: A short description of the problem.  * `{ProblemURL}`: The URL of the problem within Dynatrace.  * `{State}`: The state of the problem. Possible values are `OPEN` and `RESOLVED`.  * `{Tags}`: The list of tags that are defined for all impacted entities, separated by commas
+	// The content of the message. Type '{' for placeholder suggestions.. #### Available placeholders
+	// **{ImpactedEntity}**: A short description of the problem and impacted entity (or multiple impacted entities).
 	Message pulumi.StringInput
-	// The name of the notification configuration
+	// The name of the notification configuration.
 	Name pulumi.StringPtrInput
 	// The ID of the associated alerting profile
 	Profile pulumi.StringInput
-	// The URL of the Slack WebHook. This is confidential information, therefore GET requests return this field with the `null` value, and it is optional for PUT requests
+	// Set up an incoming WebHook integration within your Slack account. Copy and paste the generated WebHook URL into the field above.
 	Url pulumi.StringInput
 }
 
@@ -242,12 +260,12 @@ func (o SlackNotificationOutput) ToSlackNotificationOutputWithContext(ctx contex
 	return o
 }
 
-// The configuration is enabled (`true`) or disabled (`false`)
+// This setting is enabled (`true`) or disabled (`false`)
 func (o SlackNotificationOutput) Active() pulumi.BoolOutput {
 	return o.ApplyT(func(v *SlackNotification) pulumi.BoolOutput { return v.Active }).(pulumi.BoolOutput)
 }
 
-// The channel (for example, `#general`) or the user (for example, `@john.smith`) to send the message to
+// The channel (for example, `#general`) or the user (for example, `@john.smith`) to send the message to.
 func (o SlackNotificationOutput) Channel() pulumi.StringOutput {
 	return o.ApplyT(func(v *SlackNotification) pulumi.StringOutput { return v.Channel }).(pulumi.StringOutput)
 }
@@ -257,12 +275,13 @@ func (o SlackNotificationOutput) LegacyId() pulumi.StringOutput {
 	return o.ApplyT(func(v *SlackNotification) pulumi.StringOutput { return v.LegacyId }).(pulumi.StringOutput)
 }
 
-// The content of the message.  You can use the following placeholders:  * `{ImpactedEntity}`: The entity impacted by the problem or *X* impacted entities.  * `{PID}`: The ID of the reported problem.  * `{ProblemDetailsText}`: All problem event details, including root cause, as a text-formatted string.  * `{ProblemID}`: The display number of the reported problem.  * `{ProblemImpact}`: The [impact level](https://www.dynatrace.com/support/help/shortlink/impact-analysis) of the problem. Possible values are `APPLICATION`, `SERVICE`, and `INFRASTRUCTURE`.  * `{ProblemSeverity}`: The [severity level](https://www.dynatrace.com/support/help/shortlink/event-types) of the problem. Possible values are `AVAILABILITY`, `ERROR`, `PERFORMANCE`, `RESOURCE_CONTENTION`, and `CUSTOM_ALERT`.  * `{ProblemTitle}`: A short description of the problem.  * `{ProblemURL}`: The URL of the problem within Dynatrace.  * `{State}`: The state of the problem. Possible values are `OPEN` and `RESOLVED`.  * `{Tags}`: The list of tags that are defined for all impacted entities, separated by commas
+// The content of the message. Type '{' for placeholder suggestions.. #### Available placeholders
+// **{ImpactedEntity}**: A short description of the problem and impacted entity (or multiple impacted entities).
 func (o SlackNotificationOutput) Message() pulumi.StringOutput {
 	return o.ApplyT(func(v *SlackNotification) pulumi.StringOutput { return v.Message }).(pulumi.StringOutput)
 }
 
-// The name of the notification configuration
+// The name of the notification configuration.
 func (o SlackNotificationOutput) Name() pulumi.StringOutput {
 	return o.ApplyT(func(v *SlackNotification) pulumi.StringOutput { return v.Name }).(pulumi.StringOutput)
 }
@@ -272,7 +291,7 @@ func (o SlackNotificationOutput) Profile() pulumi.StringOutput {
 	return o.ApplyT(func(v *SlackNotification) pulumi.StringOutput { return v.Profile }).(pulumi.StringOutput)
 }
 
-// The URL of the Slack WebHook. This is confidential information, therefore GET requests return this field with the `null` value, and it is optional for PUT requests
+// Set up an incoming WebHook integration within your Slack account. Copy and paste the generated WebHook URL into the field above.
 func (o SlackNotificationOutput) Url() pulumi.StringOutput {
 	return o.ApplyT(func(v *SlackNotification) pulumi.StringOutput { return v.Url }).(pulumi.StringOutput)
 }

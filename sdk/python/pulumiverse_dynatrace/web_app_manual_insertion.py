@@ -28,6 +28,7 @@ class WebAppManualInsertionArgs:
                  oneagent_javascript_tag_sri: Optional[pulumi.Input['WebAppManualInsertionOneagentJavascriptTagSriArgs']] = None):
         """
         The set of arguments for constructing a WebAppManualInsertion resource.
+
         :param pulumi.Input[_builtins.str] application_id: The scope of this settings. If the settings should cover the whole environment, just don't specify any scope.
         :param pulumi.Input['WebAppManualInsertionCodeSnippetArgs'] code_snippet: Code snippet is a piece of inline code that implements basic functionality and loads the full functionality either synchronously or deferred. Even though it implements an update mechanism, regular updates are still required to guarantee compatibility.
         :param pulumi.Input['WebAppManualInsertionJavascriptTagArgs'] javascript_tag: JavaScript tag references an external file containing monitoring code and configuration. Due to its dynamic update mechanism, it is recommended for most use cases.
@@ -113,6 +114,7 @@ class _WebAppManualInsertionState:
                  oneagent_javascript_tag_sri: Optional[pulumi.Input['WebAppManualInsertionOneagentJavascriptTagSriArgs']] = None):
         """
         Input properties used for looking up and filtering WebAppManualInsertion resources.
+
         :param pulumi.Input[_builtins.str] application_id: The scope of this settings. If the settings should cover the whole environment, just don't specify any scope.
         :param pulumi.Input['WebAppManualInsertionCodeSnippetArgs'] code_snippet: Code snippet is a piece of inline code that implements basic functionality and loads the full functionality either synchronously or deferred. Even though it implements an update mechanism, regular updates are still required to guarantee compatibility.
         :param pulumi.Input['WebAppManualInsertionJavascriptTagArgs'] javascript_tag: JavaScript tag references an external file containing monitoring code and configuration. Due to its dynamic update mechanism, it is recommended for most use cases.
@@ -212,22 +214,6 @@ class WebAppManualInsertion(pulumi.CustomResource):
 
         - Settings API - https://www.dynatrace.com/support/help/dynatrace-api/environment-api/settings (schemaId: `builtin:rum.web.manual-insertion`)
 
-        ## Resource Example Usage
-
-        ```python
-        import pulumi
-        import pulumiverse_dynatrace as dynatrace
-
-        _name_ = dynatrace.WebAppManualInsertion("#name#",
-            application_id="APPLICATION-1234567890000000",
-            code_snippet={
-                "code_snippet_type": "SYNCHRONOUSLY",
-            },
-            javascript_tag={
-                "cache_duration": "1",
-                "crossorigin_anonymous": True,
-            })
-        ```
 
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
@@ -252,22 +238,6 @@ class WebAppManualInsertion(pulumi.CustomResource):
 
         - Settings API - https://www.dynatrace.com/support/help/dynatrace-api/environment-api/settings (schemaId: `builtin:rum.web.manual-insertion`)
 
-        ## Resource Example Usage
-
-        ```python
-        import pulumi
-        import pulumiverse_dynatrace as dynatrace
-
-        _name_ = dynatrace.WebAppManualInsertion("#name#",
-            application_id="APPLICATION-1234567890000000",
-            code_snippet={
-                "code_snippet_type": "SYNCHRONOUSLY",
-            },
-            javascript_tag={
-                "cache_duration": "1",
-                "crossorigin_anonymous": True,
-            })
-        ```
 
         :param str resource_name: The name of the resource.
         :param WebAppManualInsertionArgs args: The arguments to use to populate this resource's properties.

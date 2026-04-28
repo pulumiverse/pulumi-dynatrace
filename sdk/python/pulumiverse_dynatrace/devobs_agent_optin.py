@@ -23,6 +23,7 @@ class DevobsAgentOptinArgs:
                  scope: Optional[pulumi.Input[_builtins.str]] = None):
         """
         The set of arguments for constructing a DevobsAgentOptin resource.
+
         :param pulumi.Input[_builtins.bool] enabled: This setting is enabled (`true`) or disabled (`false`)
         :param pulumi.Input[_builtins.str] scope: The scope of this setting (PROCESS*GROUP, CLOUD*APPLICATION*NAMESPACE, KUBERNETES*CLUSTER). Omit this property if you want to cover the whole environment.
         """
@@ -62,6 +63,7 @@ class _DevobsAgentOptinState:
                  scope: Optional[pulumi.Input[_builtins.str]] = None):
         """
         Input properties used for looking up and filtering DevobsAgentOptin resources.
+
         :param pulumi.Input[_builtins.bool] enabled: This setting is enabled (`true`) or disabled (`false`)
         :param pulumi.Input[_builtins.str] scope: The scope of this setting (PROCESS*GROUP, CLOUD*APPLICATION*NAMESPACE, KUBERNETES*CLUSTER). Omit this property if you want to cover the whole environment.
         """
@@ -105,7 +107,21 @@ class DevobsAgentOptin(pulumi.CustomResource):
                  scope: Optional[pulumi.Input[_builtins.str]] = None,
                  __props__=None):
         """
-        Create a DevobsAgentOptin resource with the given unique name, props, and options.
+        > This resource requires the API token scopes **Read settings** (`settings.read`) and **Write settings** (`settings.write`)
+
+        ## Dynatrace Documentation
+
+        - Developer Observability - https://docs.dynatrace.com/docs/platform-modules/applications-and-microservices/developer-observability
+
+        - Settings API - https://www.dynatrace.com/support/help/dynatrace-api/environment-api/settings (schemaId: `builtin:devobs.agent.optin`)
+
+        ## Export Example Usage
+
+        - `terraform-provider-dynatrace -export DevobsAgentOptin` downloads existing Developer Observability agent opt-in configuration
+
+        The full documentation of the export feature is available [here](https://dt-url.net/h203qmc).
+
+
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[_builtins.bool] enabled: This setting is enabled (`true`) or disabled (`false`)
@@ -118,7 +134,21 @@ class DevobsAgentOptin(pulumi.CustomResource):
                  args: DevobsAgentOptinArgs,
                  opts: Optional[pulumi.ResourceOptions] = None):
         """
-        Create a DevobsAgentOptin resource with the given unique name, props, and options.
+        > This resource requires the API token scopes **Read settings** (`settings.read`) and **Write settings** (`settings.write`)
+
+        ## Dynatrace Documentation
+
+        - Developer Observability - https://docs.dynatrace.com/docs/platform-modules/applications-and-microservices/developer-observability
+
+        - Settings API - https://www.dynatrace.com/support/help/dynatrace-api/environment-api/settings (schemaId: `builtin:devobs.agent.optin`)
+
+        ## Export Example Usage
+
+        - `terraform-provider-dynatrace -export DevobsAgentOptin` downloads existing Developer Observability agent opt-in configuration
+
+        The full documentation of the export feature is available [here](https://dt-url.net/h203qmc).
+
+
         :param str resource_name: The name of the resource.
         :param DevobsAgentOptinArgs args: The arguments to use to populate this resource's properties.
         :param pulumi.ResourceOptions opts: Options for the resource.

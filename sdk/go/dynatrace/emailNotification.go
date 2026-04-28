@@ -12,28 +12,63 @@ import (
 	"github.com/pulumiverse/pulumi-dynatrace/sdk/go/dynatrace/internal"
 )
 
+// > This resource requires the API token scopes **Read settings** (`settings.read`) and **Write settings** (`settings.write`)
+//
+// ## Dynatrace Documentation
+//
+// - Email integration - https://www.dynatrace.com/support/help/setup-and-configuration/integrations/problem-notifications/email-integration
+//
+// - Settings API - https://www.dynatrace.com/support/help/dynatrace-api/environment-api/settings (schemaId: `builtin:problem.notifications`)
+//
+// ## Export Example Usage
+//
+// - `terraform-provider-dynatrace -export EmailNotification` downloads the existing problem notifications via Email
+//
+// The full documentation of the export feature is available [here](https://dt-url.net/h203qmc).
 type EmailNotification struct {
 	pulumi.CustomResourceState
 
-	// The configuration is enabled (`true`) or disabled (`false`)
+	// This setting is enabled (`true`) or disabled (`false`)
 	Active pulumi.BoolPtrOutput `pulumi:"active"`
-	// The list of the email BCC-recipients
+	// BCC
 	Bccs pulumi.StringArrayOutput `pulumi:"bccs"`
-	// The template of the email notification.  You can use the following placeholders:  * `{ImpactedEntities}`: Details about the entities impacted by the problem in form of a JSON array.  * `{ImpactedEntity}`: The entity impacted by the problem or *X* impacted entities.  * `{PID}`: The ID of the reported problem.  * `{ProblemDetailsHTML}`: All problem event details, including root cause, as an HTML-formatted string.  * `{ProblemDetailsJSON}`: All problem event details, including root cause, as a JSON object.  * `{ProblemDetailsMarkdown}`: All problem event details, including root cause, as a [Markdown-formatted](https://www.markdownguide.org/cheat-sheet/) string.  * `{ProblemDetailsText}`: All problem event details, including root cause, as a text-formatted string.  * `{ProblemID}`: The display number of the reported problem.  * `{ProblemImpact}`: The [impact level](https://www.dynatrace.com/support/help/shortlink/impact-analysis) of the problem. Possible values are `APPLICATION`, `SERVICE`, and `INFRASTRUCTURE`.  * `{ProblemSeverity}`: The [severity level](https://www.dynatrace.com/support/help/shortlink/event-types) of the problem. Possible values are `AVAILABILITY`, `ERROR`, `PERFORMANCE`, `RESOURCE_CONTENTION`, and `CUSTOM_ALERT`.  * `{ProblemTitle}`: A short description of the problem.  * `{ProblemURL}`: The URL of the problem within Dynatrace.  * `{State}`: The state of the problem. Possible values are `OPEN` and `RESOLVED`.  * `{Tags}`: The list of tags that are defined for all impacted entities, separated by commas
+	// The template of the email notifications. Type '{' for placeholder suggestions.. #### Available placeholders
+	// **{ImpactedEntities}**: Details about the entities impacted by the problem in form of a json array.
 	Body pulumi.StringOutput `pulumi:"body"`
-	// The list of the email CC-recipients
+	// CC
 	Ccs pulumi.StringArrayOutput `pulumi:"ccs"`
 	// The ID of these settings when referred to from resources requiring the REST API V1 keys
 	LegacyId pulumi.StringOutput `pulumi:"legacyId"`
-	// The name of the notification configuration
+	// The name of the notification configuration.
 	Name pulumi.StringOutput `pulumi:"name"`
 	// Send email if problem is closed
 	NotifyClosedProblems pulumi.BoolPtrOutput `pulumi:"notifyClosedProblems"`
 	// The ID of the associated alerting profile
 	Profile pulumi.StringOutput `pulumi:"profile"`
-	// The subject of the email notifications
+	// The subject of the email notifications. Type '{' for placeholder suggestions.. #### Available placeholders
+	// **{ImpactedEntity}**: A short description of the problem and impacted entity (or multiple impacted entities).
+	//
+	// **{ImpactedEntityNames}**: The entity impacted by the problem.
+	//
+	// **{NamesOfImpactedEntities}**: The names of all entities that are impacted by the problem.
+	//
+	// **{PID}**: Unique system identifier of the reported problem.
+	//
+	// **{ProblemID}**: Display number of the reported problem.
+	//
+	// **{ProblemImpact}**: Impact level of the problem. Possible values are APPLICATION, SERVICE, or INFRASTRUCTURE.
+	//
+	// **{ProblemSeverity}**: Severity level of the problem. Possible values are AVAILABILITY, ERROR, PERFORMANCE, RESOURCE_CONTENTION, or CUSTOM_ALERT.
+	//
+	// **{ProblemTitle}**: Short description of the problem.
+	//
+	// **{ProblemURL}**: URL of the problem within Dynatrace.
+	//
+	// **{State}**: Problem state. Possible values are OPEN or RESOLVED.
+	//
+	// **{Tags}**: Comma separated list of tags that are defined for all impacted entities. To refer to the value of a specific tag, specify the tag's key in square brackets: **{Tags[key]}**. If the tag does not have any assigned value, the placeholder will be replaced by an empty string. The placeholder will not be replaced if the tag key does not exist.
 	Subject pulumi.StringOutput `pulumi:"subject"`
-	// The list of the email recipients
+	// To
 	Tos pulumi.StringArrayOutput `pulumi:"tos"`
 }
 
@@ -79,48 +114,92 @@ func GetEmailNotification(ctx *pulumi.Context,
 
 // Input properties used for looking up and filtering EmailNotification resources.
 type emailNotificationState struct {
-	// The configuration is enabled (`true`) or disabled (`false`)
+	// This setting is enabled (`true`) or disabled (`false`)
 	Active *bool `pulumi:"active"`
-	// The list of the email BCC-recipients
+	// BCC
 	Bccs []string `pulumi:"bccs"`
-	// The template of the email notification.  You can use the following placeholders:  * `{ImpactedEntities}`: Details about the entities impacted by the problem in form of a JSON array.  * `{ImpactedEntity}`: The entity impacted by the problem or *X* impacted entities.  * `{PID}`: The ID of the reported problem.  * `{ProblemDetailsHTML}`: All problem event details, including root cause, as an HTML-formatted string.  * `{ProblemDetailsJSON}`: All problem event details, including root cause, as a JSON object.  * `{ProblemDetailsMarkdown}`: All problem event details, including root cause, as a [Markdown-formatted](https://www.markdownguide.org/cheat-sheet/) string.  * `{ProblemDetailsText}`: All problem event details, including root cause, as a text-formatted string.  * `{ProblemID}`: The display number of the reported problem.  * `{ProblemImpact}`: The [impact level](https://www.dynatrace.com/support/help/shortlink/impact-analysis) of the problem. Possible values are `APPLICATION`, `SERVICE`, and `INFRASTRUCTURE`.  * `{ProblemSeverity}`: The [severity level](https://www.dynatrace.com/support/help/shortlink/event-types) of the problem. Possible values are `AVAILABILITY`, `ERROR`, `PERFORMANCE`, `RESOURCE_CONTENTION`, and `CUSTOM_ALERT`.  * `{ProblemTitle}`: A short description of the problem.  * `{ProblemURL}`: The URL of the problem within Dynatrace.  * `{State}`: The state of the problem. Possible values are `OPEN` and `RESOLVED`.  * `{Tags}`: The list of tags that are defined for all impacted entities, separated by commas
+	// The template of the email notifications. Type '{' for placeholder suggestions.. #### Available placeholders
+	// **{ImpactedEntities}**: Details about the entities impacted by the problem in form of a json array.
 	Body *string `pulumi:"body"`
-	// The list of the email CC-recipients
+	// CC
 	Ccs []string `pulumi:"ccs"`
 	// The ID of these settings when referred to from resources requiring the REST API V1 keys
 	LegacyId *string `pulumi:"legacyId"`
-	// The name of the notification configuration
+	// The name of the notification configuration.
 	Name *string `pulumi:"name"`
 	// Send email if problem is closed
 	NotifyClosedProblems *bool `pulumi:"notifyClosedProblems"`
 	// The ID of the associated alerting profile
 	Profile *string `pulumi:"profile"`
-	// The subject of the email notifications
+	// The subject of the email notifications. Type '{' for placeholder suggestions.. #### Available placeholders
+	// **{ImpactedEntity}**: A short description of the problem and impacted entity (or multiple impacted entities).
+	//
+	// **{ImpactedEntityNames}**: The entity impacted by the problem.
+	//
+	// **{NamesOfImpactedEntities}**: The names of all entities that are impacted by the problem.
+	//
+	// **{PID}**: Unique system identifier of the reported problem.
+	//
+	// **{ProblemID}**: Display number of the reported problem.
+	//
+	// **{ProblemImpact}**: Impact level of the problem. Possible values are APPLICATION, SERVICE, or INFRASTRUCTURE.
+	//
+	// **{ProblemSeverity}**: Severity level of the problem. Possible values are AVAILABILITY, ERROR, PERFORMANCE, RESOURCE_CONTENTION, or CUSTOM_ALERT.
+	//
+	// **{ProblemTitle}**: Short description of the problem.
+	//
+	// **{ProblemURL}**: URL of the problem within Dynatrace.
+	//
+	// **{State}**: Problem state. Possible values are OPEN or RESOLVED.
+	//
+	// **{Tags}**: Comma separated list of tags that are defined for all impacted entities. To refer to the value of a specific tag, specify the tag's key in square brackets: **{Tags[key]}**. If the tag does not have any assigned value, the placeholder will be replaced by an empty string. The placeholder will not be replaced if the tag key does not exist.
 	Subject *string `pulumi:"subject"`
-	// The list of the email recipients
+	// To
 	Tos []string `pulumi:"tos"`
 }
 
 type EmailNotificationState struct {
-	// The configuration is enabled (`true`) or disabled (`false`)
+	// This setting is enabled (`true`) or disabled (`false`)
 	Active pulumi.BoolPtrInput
-	// The list of the email BCC-recipients
+	// BCC
 	Bccs pulumi.StringArrayInput
-	// The template of the email notification.  You can use the following placeholders:  * `{ImpactedEntities}`: Details about the entities impacted by the problem in form of a JSON array.  * `{ImpactedEntity}`: The entity impacted by the problem or *X* impacted entities.  * `{PID}`: The ID of the reported problem.  * `{ProblemDetailsHTML}`: All problem event details, including root cause, as an HTML-formatted string.  * `{ProblemDetailsJSON}`: All problem event details, including root cause, as a JSON object.  * `{ProblemDetailsMarkdown}`: All problem event details, including root cause, as a [Markdown-formatted](https://www.markdownguide.org/cheat-sheet/) string.  * `{ProblemDetailsText}`: All problem event details, including root cause, as a text-formatted string.  * `{ProblemID}`: The display number of the reported problem.  * `{ProblemImpact}`: The [impact level](https://www.dynatrace.com/support/help/shortlink/impact-analysis) of the problem. Possible values are `APPLICATION`, `SERVICE`, and `INFRASTRUCTURE`.  * `{ProblemSeverity}`: The [severity level](https://www.dynatrace.com/support/help/shortlink/event-types) of the problem. Possible values are `AVAILABILITY`, `ERROR`, `PERFORMANCE`, `RESOURCE_CONTENTION`, and `CUSTOM_ALERT`.  * `{ProblemTitle}`: A short description of the problem.  * `{ProblemURL}`: The URL of the problem within Dynatrace.  * `{State}`: The state of the problem. Possible values are `OPEN` and `RESOLVED`.  * `{Tags}`: The list of tags that are defined for all impacted entities, separated by commas
+	// The template of the email notifications. Type '{' for placeholder suggestions.. #### Available placeholders
+	// **{ImpactedEntities}**: Details about the entities impacted by the problem in form of a json array.
 	Body pulumi.StringPtrInput
-	// The list of the email CC-recipients
+	// CC
 	Ccs pulumi.StringArrayInput
 	// The ID of these settings when referred to from resources requiring the REST API V1 keys
 	LegacyId pulumi.StringPtrInput
-	// The name of the notification configuration
+	// The name of the notification configuration.
 	Name pulumi.StringPtrInput
 	// Send email if problem is closed
 	NotifyClosedProblems pulumi.BoolPtrInput
 	// The ID of the associated alerting profile
 	Profile pulumi.StringPtrInput
-	// The subject of the email notifications
+	// The subject of the email notifications. Type '{' for placeholder suggestions.. #### Available placeholders
+	// **{ImpactedEntity}**: A short description of the problem and impacted entity (or multiple impacted entities).
+	//
+	// **{ImpactedEntityNames}**: The entity impacted by the problem.
+	//
+	// **{NamesOfImpactedEntities}**: The names of all entities that are impacted by the problem.
+	//
+	// **{PID}**: Unique system identifier of the reported problem.
+	//
+	// **{ProblemID}**: Display number of the reported problem.
+	//
+	// **{ProblemImpact}**: Impact level of the problem. Possible values are APPLICATION, SERVICE, or INFRASTRUCTURE.
+	//
+	// **{ProblemSeverity}**: Severity level of the problem. Possible values are AVAILABILITY, ERROR, PERFORMANCE, RESOURCE_CONTENTION, or CUSTOM_ALERT.
+	//
+	// **{ProblemTitle}**: Short description of the problem.
+	//
+	// **{ProblemURL}**: URL of the problem within Dynatrace.
+	//
+	// **{State}**: Problem state. Possible values are OPEN or RESOLVED.
+	//
+	// **{Tags}**: Comma separated list of tags that are defined for all impacted entities. To refer to the value of a specific tag, specify the tag's key in square brackets: **{Tags[key]}**. If the tag does not have any assigned value, the placeholder will be replaced by an empty string. The placeholder will not be replaced if the tag key does not exist.
 	Subject pulumi.StringPtrInput
-	// The list of the email recipients
+	// To
 	Tos pulumi.StringArrayInput
 }
 
@@ -129,49 +208,93 @@ func (EmailNotificationState) ElementType() reflect.Type {
 }
 
 type emailNotificationArgs struct {
-	// The configuration is enabled (`true`) or disabled (`false`)
+	// This setting is enabled (`true`) or disabled (`false`)
 	Active *bool `pulumi:"active"`
-	// The list of the email BCC-recipients
+	// BCC
 	Bccs []string `pulumi:"bccs"`
-	// The template of the email notification.  You can use the following placeholders:  * `{ImpactedEntities}`: Details about the entities impacted by the problem in form of a JSON array.  * `{ImpactedEntity}`: The entity impacted by the problem or *X* impacted entities.  * `{PID}`: The ID of the reported problem.  * `{ProblemDetailsHTML}`: All problem event details, including root cause, as an HTML-formatted string.  * `{ProblemDetailsJSON}`: All problem event details, including root cause, as a JSON object.  * `{ProblemDetailsMarkdown}`: All problem event details, including root cause, as a [Markdown-formatted](https://www.markdownguide.org/cheat-sheet/) string.  * `{ProblemDetailsText}`: All problem event details, including root cause, as a text-formatted string.  * `{ProblemID}`: The display number of the reported problem.  * `{ProblemImpact}`: The [impact level](https://www.dynatrace.com/support/help/shortlink/impact-analysis) of the problem. Possible values are `APPLICATION`, `SERVICE`, and `INFRASTRUCTURE`.  * `{ProblemSeverity}`: The [severity level](https://www.dynatrace.com/support/help/shortlink/event-types) of the problem. Possible values are `AVAILABILITY`, `ERROR`, `PERFORMANCE`, `RESOURCE_CONTENTION`, and `CUSTOM_ALERT`.  * `{ProblemTitle}`: A short description of the problem.  * `{ProblemURL}`: The URL of the problem within Dynatrace.  * `{State}`: The state of the problem. Possible values are `OPEN` and `RESOLVED`.  * `{Tags}`: The list of tags that are defined for all impacted entities, separated by commas
+	// The template of the email notifications. Type '{' for placeholder suggestions.. #### Available placeholders
+	// **{ImpactedEntities}**: Details about the entities impacted by the problem in form of a json array.
 	Body string `pulumi:"body"`
-	// The list of the email CC-recipients
+	// CC
 	Ccs []string `pulumi:"ccs"`
 	// The ID of these settings when referred to from resources requiring the REST API V1 keys
 	LegacyId *string `pulumi:"legacyId"`
-	// The name of the notification configuration
+	// The name of the notification configuration.
 	Name *string `pulumi:"name"`
 	// Send email if problem is closed
 	NotifyClosedProblems *bool `pulumi:"notifyClosedProblems"`
 	// The ID of the associated alerting profile
 	Profile string `pulumi:"profile"`
-	// The subject of the email notifications
+	// The subject of the email notifications. Type '{' for placeholder suggestions.. #### Available placeholders
+	// **{ImpactedEntity}**: A short description of the problem and impacted entity (or multiple impacted entities).
+	//
+	// **{ImpactedEntityNames}**: The entity impacted by the problem.
+	//
+	// **{NamesOfImpactedEntities}**: The names of all entities that are impacted by the problem.
+	//
+	// **{PID}**: Unique system identifier of the reported problem.
+	//
+	// **{ProblemID}**: Display number of the reported problem.
+	//
+	// **{ProblemImpact}**: Impact level of the problem. Possible values are APPLICATION, SERVICE, or INFRASTRUCTURE.
+	//
+	// **{ProblemSeverity}**: Severity level of the problem. Possible values are AVAILABILITY, ERROR, PERFORMANCE, RESOURCE_CONTENTION, or CUSTOM_ALERT.
+	//
+	// **{ProblemTitle}**: Short description of the problem.
+	//
+	// **{ProblemURL}**: URL of the problem within Dynatrace.
+	//
+	// **{State}**: Problem state. Possible values are OPEN or RESOLVED.
+	//
+	// **{Tags}**: Comma separated list of tags that are defined for all impacted entities. To refer to the value of a specific tag, specify the tag's key in square brackets: **{Tags[key]}**. If the tag does not have any assigned value, the placeholder will be replaced by an empty string. The placeholder will not be replaced if the tag key does not exist.
 	Subject string `pulumi:"subject"`
-	// The list of the email recipients
+	// To
 	Tos []string `pulumi:"tos"`
 }
 
 // The set of arguments for constructing a EmailNotification resource.
 type EmailNotificationArgs struct {
-	// The configuration is enabled (`true`) or disabled (`false`)
+	// This setting is enabled (`true`) or disabled (`false`)
 	Active pulumi.BoolPtrInput
-	// The list of the email BCC-recipients
+	// BCC
 	Bccs pulumi.StringArrayInput
-	// The template of the email notification.  You can use the following placeholders:  * `{ImpactedEntities}`: Details about the entities impacted by the problem in form of a JSON array.  * `{ImpactedEntity}`: The entity impacted by the problem or *X* impacted entities.  * `{PID}`: The ID of the reported problem.  * `{ProblemDetailsHTML}`: All problem event details, including root cause, as an HTML-formatted string.  * `{ProblemDetailsJSON}`: All problem event details, including root cause, as a JSON object.  * `{ProblemDetailsMarkdown}`: All problem event details, including root cause, as a [Markdown-formatted](https://www.markdownguide.org/cheat-sheet/) string.  * `{ProblemDetailsText}`: All problem event details, including root cause, as a text-formatted string.  * `{ProblemID}`: The display number of the reported problem.  * `{ProblemImpact}`: The [impact level](https://www.dynatrace.com/support/help/shortlink/impact-analysis) of the problem. Possible values are `APPLICATION`, `SERVICE`, and `INFRASTRUCTURE`.  * `{ProblemSeverity}`: The [severity level](https://www.dynatrace.com/support/help/shortlink/event-types) of the problem. Possible values are `AVAILABILITY`, `ERROR`, `PERFORMANCE`, `RESOURCE_CONTENTION`, and `CUSTOM_ALERT`.  * `{ProblemTitle}`: A short description of the problem.  * `{ProblemURL}`: The URL of the problem within Dynatrace.  * `{State}`: The state of the problem. Possible values are `OPEN` and `RESOLVED`.  * `{Tags}`: The list of tags that are defined for all impacted entities, separated by commas
+	// The template of the email notifications. Type '{' for placeholder suggestions.. #### Available placeholders
+	// **{ImpactedEntities}**: Details about the entities impacted by the problem in form of a json array.
 	Body pulumi.StringInput
-	// The list of the email CC-recipients
+	// CC
 	Ccs pulumi.StringArrayInput
 	// The ID of these settings when referred to from resources requiring the REST API V1 keys
 	LegacyId pulumi.StringPtrInput
-	// The name of the notification configuration
+	// The name of the notification configuration.
 	Name pulumi.StringPtrInput
 	// Send email if problem is closed
 	NotifyClosedProblems pulumi.BoolPtrInput
 	// The ID of the associated alerting profile
 	Profile pulumi.StringInput
-	// The subject of the email notifications
+	// The subject of the email notifications. Type '{' for placeholder suggestions.. #### Available placeholders
+	// **{ImpactedEntity}**: A short description of the problem and impacted entity (or multiple impacted entities).
+	//
+	// **{ImpactedEntityNames}**: The entity impacted by the problem.
+	//
+	// **{NamesOfImpactedEntities}**: The names of all entities that are impacted by the problem.
+	//
+	// **{PID}**: Unique system identifier of the reported problem.
+	//
+	// **{ProblemID}**: Display number of the reported problem.
+	//
+	// **{ProblemImpact}**: Impact level of the problem. Possible values are APPLICATION, SERVICE, or INFRASTRUCTURE.
+	//
+	// **{ProblemSeverity}**: Severity level of the problem. Possible values are AVAILABILITY, ERROR, PERFORMANCE, RESOURCE_CONTENTION, or CUSTOM_ALERT.
+	//
+	// **{ProblemTitle}**: Short description of the problem.
+	//
+	// **{ProblemURL}**: URL of the problem within Dynatrace.
+	//
+	// **{State}**: Problem state. Possible values are OPEN or RESOLVED.
+	//
+	// **{Tags}**: Comma separated list of tags that are defined for all impacted entities. To refer to the value of a specific tag, specify the tag's key in square brackets: **{Tags[key]}**. If the tag does not have any assigned value, the placeholder will be replaced by an empty string. The placeholder will not be replaced if the tag key does not exist.
 	Subject pulumi.StringInput
-	// The list of the email recipients
+	// To
 	Tos pulumi.StringArrayInput
 }
 
@@ -262,22 +385,23 @@ func (o EmailNotificationOutput) ToEmailNotificationOutputWithContext(ctx contex
 	return o
 }
 
-// The configuration is enabled (`true`) or disabled (`false`)
+// This setting is enabled (`true`) or disabled (`false`)
 func (o EmailNotificationOutput) Active() pulumi.BoolPtrOutput {
 	return o.ApplyT(func(v *EmailNotification) pulumi.BoolPtrOutput { return v.Active }).(pulumi.BoolPtrOutput)
 }
 
-// The list of the email BCC-recipients
+// BCC
 func (o EmailNotificationOutput) Bccs() pulumi.StringArrayOutput {
 	return o.ApplyT(func(v *EmailNotification) pulumi.StringArrayOutput { return v.Bccs }).(pulumi.StringArrayOutput)
 }
 
-// The template of the email notification.  You can use the following placeholders:  * `{ImpactedEntities}`: Details about the entities impacted by the problem in form of a JSON array.  * `{ImpactedEntity}`: The entity impacted by the problem or *X* impacted entities.  * `{PID}`: The ID of the reported problem.  * `{ProblemDetailsHTML}`: All problem event details, including root cause, as an HTML-formatted string.  * `{ProblemDetailsJSON}`: All problem event details, including root cause, as a JSON object.  * `{ProblemDetailsMarkdown}`: All problem event details, including root cause, as a [Markdown-formatted](https://www.markdownguide.org/cheat-sheet/) string.  * `{ProblemDetailsText}`: All problem event details, including root cause, as a text-formatted string.  * `{ProblemID}`: The display number of the reported problem.  * `{ProblemImpact}`: The [impact level](https://www.dynatrace.com/support/help/shortlink/impact-analysis) of the problem. Possible values are `APPLICATION`, `SERVICE`, and `INFRASTRUCTURE`.  * `{ProblemSeverity}`: The [severity level](https://www.dynatrace.com/support/help/shortlink/event-types) of the problem. Possible values are `AVAILABILITY`, `ERROR`, `PERFORMANCE`, `RESOURCE_CONTENTION`, and `CUSTOM_ALERT`.  * `{ProblemTitle}`: A short description of the problem.  * `{ProblemURL}`: The URL of the problem within Dynatrace.  * `{State}`: The state of the problem. Possible values are `OPEN` and `RESOLVED`.  * `{Tags}`: The list of tags that are defined for all impacted entities, separated by commas
+// The template of the email notifications. Type '{' for placeholder suggestions.. #### Available placeholders
+// **{ImpactedEntities}**: Details about the entities impacted by the problem in form of a json array.
 func (o EmailNotificationOutput) Body() pulumi.StringOutput {
 	return o.ApplyT(func(v *EmailNotification) pulumi.StringOutput { return v.Body }).(pulumi.StringOutput)
 }
 
-// The list of the email CC-recipients
+// CC
 func (o EmailNotificationOutput) Ccs() pulumi.StringArrayOutput {
 	return o.ApplyT(func(v *EmailNotification) pulumi.StringArrayOutput { return v.Ccs }).(pulumi.StringArrayOutput)
 }
@@ -287,7 +411,7 @@ func (o EmailNotificationOutput) LegacyId() pulumi.StringOutput {
 	return o.ApplyT(func(v *EmailNotification) pulumi.StringOutput { return v.LegacyId }).(pulumi.StringOutput)
 }
 
-// The name of the notification configuration
+// The name of the notification configuration.
 func (o EmailNotificationOutput) Name() pulumi.StringOutput {
 	return o.ApplyT(func(v *EmailNotification) pulumi.StringOutput { return v.Name }).(pulumi.StringOutput)
 }
@@ -302,12 +426,33 @@ func (o EmailNotificationOutput) Profile() pulumi.StringOutput {
 	return o.ApplyT(func(v *EmailNotification) pulumi.StringOutput { return v.Profile }).(pulumi.StringOutput)
 }
 
-// The subject of the email notifications
+// The subject of the email notifications. Type '{' for placeholder suggestions.. #### Available placeholders
+// **{ImpactedEntity}**: A short description of the problem and impacted entity (or multiple impacted entities).
+//
+// **{ImpactedEntityNames}**: The entity impacted by the problem.
+//
+// **{NamesOfImpactedEntities}**: The names of all entities that are impacted by the problem.
+//
+// **{PID}**: Unique system identifier of the reported problem.
+//
+// **{ProblemID}**: Display number of the reported problem.
+//
+// **{ProblemImpact}**: Impact level of the problem. Possible values are APPLICATION, SERVICE, or INFRASTRUCTURE.
+//
+// **{ProblemSeverity}**: Severity level of the problem. Possible values are AVAILABILITY, ERROR, PERFORMANCE, RESOURCE_CONTENTION, or CUSTOM_ALERT.
+//
+// **{ProblemTitle}**: Short description of the problem.
+//
+// **{ProblemURL}**: URL of the problem within Dynatrace.
+//
+// **{State}**: Problem state. Possible values are OPEN or RESOLVED.
+//
+// **{Tags}**: Comma separated list of tags that are defined for all impacted entities. To refer to the value of a specific tag, specify the tag's key in square brackets: **{Tags[key]}**. If the tag does not have any assigned value, the placeholder will be replaced by an empty string. The placeholder will not be replaced if the tag key does not exist.
 func (o EmailNotificationOutput) Subject() pulumi.StringOutput {
 	return o.ApplyT(func(v *EmailNotification) pulumi.StringOutput { return v.Subject }).(pulumi.StringOutput)
 }
 
-// The list of the email recipients
+// To
 func (o EmailNotificationOutput) Tos() pulumi.StringArrayOutput {
 	return o.ApplyT(func(v *EmailNotification) pulumi.StringArrayOutput { return v.Tos }).(pulumi.StringArrayOutput)
 }

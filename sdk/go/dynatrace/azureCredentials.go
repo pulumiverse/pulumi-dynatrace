@@ -12,6 +12,19 @@ import (
 	"github.com/pulumiverse/pulumi-dynatrace/sdk/go/dynatrace/internal"
 )
 
+// > This resource requires the API token scopes **Read configuration** (`ReadConfig`) and **Write configuration** (`WriteConfig`)
+//
+// ## Dynatrace Documentation
+//
+// - Microsoft Azure monitoring - https://www.dynatrace.com/support/help/how-to-use-dynatrace/infrastructure-monitoring/cloud-platform-monitoring/microsoft-azure-services-monitoring
+//
+// - Azure credentials API - https://www.dynatrace.com/support/help/dynatrace-api/configuration-api/azure-credentials-api
+//
+// ## Export Example Usage
+//
+// - `terraform-provider-dynatrace -export AzureCredentials` downloads all existing Azure credentials configuration
+//
+// The full documentation of the export feature is available [here](https://dt-url.net/h203qmc).
 type AzureCredentials struct {
 	pulumi.CustomResourceState
 
@@ -39,6 +52,8 @@ type AzureCredentials struct {
 	//
 	// Deprecated: Assigning supported services directly when creating Azure Credentials is deprecated. Use the resource `AzureService` instead.
 	SupportingServices AzureCredentialsSupportingServiceArrayOutput `pulumi:"supportingServices"`
+	// If enabled (`true`) the attribute `supportingServices` will not get synchronized with Dynatrace. You will be able to manage them via WebUI without interference by Terraform.
+	//
 	// Deprecated: This attribute is deprecated and has no effect any more. It always defaults to `true`.
 	SupportingServicesManagedInDynatrace pulumi.BoolPtrOutput `pulumi:"supportingServicesManagedInDynatrace"`
 	// Any attributes that aren't yet supported by this provider
@@ -115,6 +130,8 @@ type azureCredentialsState struct {
 	//
 	// Deprecated: Assigning supported services directly when creating Azure Credentials is deprecated. Use the resource `AzureService` instead.
 	SupportingServices []AzureCredentialsSupportingService `pulumi:"supportingServices"`
+	// If enabled (`true`) the attribute `supportingServices` will not get synchronized with Dynatrace. You will be able to manage them via WebUI without interference by Terraform.
+	//
 	// Deprecated: This attribute is deprecated and has no effect any more. It always defaults to `true`.
 	SupportingServicesManagedInDynatrace *bool `pulumi:"supportingServicesManagedInDynatrace"`
 	// Any attributes that aren't yet supported by this provider
@@ -146,6 +163,8 @@ type AzureCredentialsState struct {
 	//
 	// Deprecated: Assigning supported services directly when creating Azure Credentials is deprecated. Use the resource `AzureService` instead.
 	SupportingServices AzureCredentialsSupportingServiceArrayInput
+	// If enabled (`true`) the attribute `supportingServices` will not get synchronized with Dynatrace. You will be able to manage them via WebUI without interference by Terraform.
+	//
 	// Deprecated: This attribute is deprecated and has no effect any more. It always defaults to `true`.
 	SupportingServicesManagedInDynatrace pulumi.BoolPtrInput
 	// Any attributes that aren't yet supported by this provider
@@ -181,6 +200,8 @@ type azureCredentialsArgs struct {
 	//
 	// Deprecated: Assigning supported services directly when creating Azure Credentials is deprecated. Use the resource `AzureService` instead.
 	SupportingServices []AzureCredentialsSupportingService `pulumi:"supportingServices"`
+	// If enabled (`true`) the attribute `supportingServices` will not get synchronized with Dynatrace. You will be able to manage them via WebUI without interference by Terraform.
+	//
 	// Deprecated: This attribute is deprecated and has no effect any more. It always defaults to `true`.
 	SupportingServicesManagedInDynatrace *bool `pulumi:"supportingServicesManagedInDynatrace"`
 	// Any attributes that aren't yet supported by this provider
@@ -213,6 +234,8 @@ type AzureCredentialsArgs struct {
 	//
 	// Deprecated: Assigning supported services directly when creating Azure Credentials is deprecated. Use the resource `AzureService` instead.
 	SupportingServices AzureCredentialsSupportingServiceArrayInput
+	// If enabled (`true`) the attribute `supportingServices` will not get synchronized with Dynatrace. You will be able to manage them via WebUI without interference by Terraform.
+	//
 	// Deprecated: This attribute is deprecated and has no effect any more. It always defaults to `true`.
 	SupportingServicesManagedInDynatrace pulumi.BoolPtrInput
 	// Any attributes that aren't yet supported by this provider
@@ -365,6 +388,8 @@ func (o AzureCredentialsOutput) SupportingServices() AzureCredentialsSupportingS
 	return o.ApplyT(func(v *AzureCredentials) AzureCredentialsSupportingServiceArrayOutput { return v.SupportingServices }).(AzureCredentialsSupportingServiceArrayOutput)
 }
 
+// If enabled (`true`) the attribute `supportingServices` will not get synchronized with Dynatrace. You will be able to manage them via WebUI without interference by Terraform.
+//
 // Deprecated: This attribute is deprecated and has no effect any more. It always defaults to `true`.
 func (o AzureCredentialsOutput) SupportingServicesManagedInDynatrace() pulumi.BoolPtrOutput {
 	return o.ApplyT(func(v *AzureCredentials) pulumi.BoolPtrOutput { return v.SupportingServicesManagedInDynatrace }).(pulumi.BoolPtrOutput)

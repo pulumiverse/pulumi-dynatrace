@@ -12,6 +12,21 @@ import (
 	"github.com/pulumiverse/pulumi-dynatrace/sdk/go/dynatrace/internal"
 )
 
+// > This resource requires the API token scopes **Read settings** (`settings.read`) and **Write settings** (`settings.write`)
+//
+// This resource allows configuring email recipients for Dynatrace Hub app installation requests.
+//
+// ## Dynatrace Documentation
+//
+// - Dynatrace Hub - https://docs.dynatrace.com/docs/manage/hub
+//
+// - Settings API - https://www.dynatrace.com/support/help/dynatrace-api/environment-api/settings (schemaId: `app:dynatrace.hub:manage.permissions`)
+//
+// ## Export Example Usage
+//
+// - `terraform-provider-dynatrace -export HubPermissions` downloads all existing hub permissions
+//
+// The full documentation of the export feature is available [here](https://dt-url.net/h203qmc).
 type HubPermissions struct {
 	pulumi.CustomResourceState
 

@@ -4,6 +4,25 @@
 import * as pulumi from "@pulumi/pulumi";
 import * as utilities from "./utilities";
 
+/**
+ * > The usage of `dynatrace.ApiToken` will introduce sensitive data within your Terraform state. The `token` property is flagged as `sensitive`, but the field will be stored as plain-text. More information can be found here.
+ *
+ * > The token value can be retrieved with `dynatrace_api_token.<#name#>.token` after apply.
+ *
+ * > This resource requires the API token scopes **Read API tokens** (`apiTokens.read`) and **Write API tokens** (`apiTokens.write`)
+ *
+ * ## Dynatrace Documentation
+ *
+ * - Dynatrace API Tokens and authentication - https://www.dynatrace.com/support/help/dynatrace-api/basics/dynatrace-api-authentication
+ *
+ * - Tokens API v2 - https://www.dynatrace.com/support/help/dynatrace-api/environment-api/tokens-v2
+ *
+ * ## Export Example Usage
+ *
+ * - `terraform-provider-dynatrace -export dynatrace.ApiToken` downloads all existing API token configuration
+ *
+ * The full documentation of the export feature is available [here](https://dt-url.net/h203qmc).
+ */
 export class ApiToken extends pulumi.CustomResource {
     /**
      * Get an existing ApiToken resource's state with the given name, ID, and optional extra

@@ -25,6 +25,7 @@ class HostMonitoringArgs:
                  full_stack: Optional[pulumi.Input[_builtins.bool]] = None):
         """
         The set of arguments for constructing a HostMonitoring resource.
+
         :param pulumi.Input[_builtins.bool] enabled: This setting is enabled (`true`) or disabled (`false`)
         :param pulumi.Input[_builtins.str] host_id: The scope of this settings. If the settings should cover the whole environment, just don't specify any scope.
         :param pulumi.Input[_builtins.bool] auto_injection: An auto-injection disabled with [oneagentctl](https://dt-url.net/oneagentctl) takes precedence over this setting and cannot be changed from the Dynatrace web UI.
@@ -103,6 +104,7 @@ class _HostMonitoringState:
                  host_id: Optional[pulumi.Input[_builtins.str]] = None):
         """
         Input properties used for looking up and filtering HostMonitoring resources.
+
         :param pulumi.Input[_builtins.bool] auto_injection: An auto-injection disabled with [oneagentctl](https://dt-url.net/oneagentctl) takes precedence over this setting and cannot be changed from the Dynatrace web UI.
         :param pulumi.Input[_builtins.bool] enabled: This setting is enabled (`true`) or disabled (`false`)
         :param pulumi.Input[_builtins.bool] full_stack: Dynatrace uses full-stack monitoring by default, to monitor every aspect of your environment, including all processes, services, and applications detected on your hosts.
@@ -186,7 +188,21 @@ class HostMonitoring(pulumi.CustomResource):
                  host_id: Optional[pulumi.Input[_builtins.str]] = None,
                  __props__=None):
         """
-        Create a HostMonitoring resource with the given unique name, props, and options.
+        > This resource requires the API token scopes **Read settings** (`settings.read`) and **Write settings** (`settings.write`)
+
+        ## Dynatrace Documentation
+
+        - Hosts - https://www.dynatrace.com/support/help/how-to-use-dynatrace/infrastructure-monitoring/hosts
+
+        - Settings API - https://www.dynatrace.com/support/help/dynatrace-api/environment-api/settings (schemaId: `builtin:host.monitoring`)
+
+        ## Export Example Usage
+
+        - `terraform-provider-dynatrace -export HostMonitoring` downloads all existing host monitoring configuration
+
+        The full documentation of the export feature is available [here](https://dt-url.net/h203qmc).
+
+
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[_builtins.bool] auto_injection: An auto-injection disabled with [oneagentctl](https://dt-url.net/oneagentctl) takes precedence over this setting and cannot be changed from the Dynatrace web UI.
@@ -201,7 +217,21 @@ class HostMonitoring(pulumi.CustomResource):
                  args: HostMonitoringArgs,
                  opts: Optional[pulumi.ResourceOptions] = None):
         """
-        Create a HostMonitoring resource with the given unique name, props, and options.
+        > This resource requires the API token scopes **Read settings** (`settings.read`) and **Write settings** (`settings.write`)
+
+        ## Dynatrace Documentation
+
+        - Hosts - https://www.dynatrace.com/support/help/how-to-use-dynatrace/infrastructure-monitoring/hosts
+
+        - Settings API - https://www.dynatrace.com/support/help/dynatrace-api/environment-api/settings (schemaId: `builtin:host.monitoring`)
+
+        ## Export Example Usage
+
+        - `terraform-provider-dynatrace -export HostMonitoring` downloads all existing host monitoring configuration
+
+        The full documentation of the export feature is available [here](https://dt-url.net/h203qmc).
+
+
         :param str resource_name: The name of the resource.
         :param HostMonitoringArgs args: The arguments to use to populate this resource's properties.
         :param pulumi.ResourceOptions opts: Options for the resource.

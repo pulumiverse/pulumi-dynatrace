@@ -25,6 +25,7 @@ class WebAppKeyPerformanceCustomArgs:
                  thresholds: pulumi.Input['WebAppKeyPerformanceCustomThresholdsArgs']):
         """
         The set of arguments for constructing a WebAppKeyPerformanceCustom resource.
+
         :param pulumi.Input[_builtins.str] scope: The scope of this setting (APPLICATION_METHOD, APPLICATION)
         :param pulumi.Input['WebAppKeyPerformanceCustomThresholdsArgs'] thresholds: User action duration thresholds
         """
@@ -63,6 +64,7 @@ class _WebAppKeyPerformanceCustomState:
                  thresholds: Optional[pulumi.Input['WebAppKeyPerformanceCustomThresholdsArgs']] = None):
         """
         Input properties used for looking up and filtering WebAppKeyPerformanceCustom resources.
+
         :param pulumi.Input[_builtins.str] scope: The scope of this setting (APPLICATION_METHOD, APPLICATION)
         :param pulumi.Input['WebAppKeyPerformanceCustomThresholdsArgs'] thresholds: User action duration thresholds
         """
@@ -106,7 +108,21 @@ class WebAppKeyPerformanceCustom(pulumi.CustomResource):
                  thresholds: Optional[pulumi.Input[Union['WebAppKeyPerformanceCustomThresholdsArgs', 'WebAppKeyPerformanceCustomThresholdsArgsDict']]] = None,
                  __props__=None):
         """
-        Create a WebAppKeyPerformanceCustom resource with the given unique name, props, and options.
+        > This resource requires the API token scopes **Read settings** (`settings.read`) and **Write settings** (`settings.write`)
+
+        ## Dynatrace Documentation
+
+        - Adjust Apdex settings for web applications - https://www.dynatrace.com/support/help/platform-modules/digital-experience/web-applications/additional-configuration/configure-apdex-web
+
+        - Settings API - https://www.dynatrace.com/support/help/dynatrace-api/environment-api/settings (schemaId: `builtin:rum.web.key-performance-metric-custom-actions`)
+
+        ## Export Example Usage
+
+        - `terraform-provider-dynatrace -export WebAppKeyPerformanceCustom` downloads all existing apdex threshold configuration for custom actions
+
+        The full documentation of the export feature is available [here](https://dt-url.net/h203qmc).
+
+
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[_builtins.str] scope: The scope of this setting (APPLICATION_METHOD, APPLICATION)
@@ -119,7 +135,21 @@ class WebAppKeyPerformanceCustom(pulumi.CustomResource):
                  args: WebAppKeyPerformanceCustomArgs,
                  opts: Optional[pulumi.ResourceOptions] = None):
         """
-        Create a WebAppKeyPerformanceCustom resource with the given unique name, props, and options.
+        > This resource requires the API token scopes **Read settings** (`settings.read`) and **Write settings** (`settings.write`)
+
+        ## Dynatrace Documentation
+
+        - Adjust Apdex settings for web applications - https://www.dynatrace.com/support/help/platform-modules/digital-experience/web-applications/additional-configuration/configure-apdex-web
+
+        - Settings API - https://www.dynatrace.com/support/help/dynatrace-api/environment-api/settings (schemaId: `builtin:rum.web.key-performance-metric-custom-actions`)
+
+        ## Export Example Usage
+
+        - `terraform-provider-dynatrace -export WebAppKeyPerformanceCustom` downloads all existing apdex threshold configuration for custom actions
+
+        The full documentation of the export feature is available [here](https://dt-url.net/h203qmc).
+
+
         :param str resource_name: The name of the resource.
         :param WebAppKeyPerformanceCustomArgs args: The arguments to use to populate this resource's properties.
         :param pulumi.ResourceOptions opts: Options for the resource.

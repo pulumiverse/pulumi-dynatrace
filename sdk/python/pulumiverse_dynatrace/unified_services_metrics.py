@@ -23,6 +23,7 @@ class UnifiedServicesMetricsArgs:
                  service_id: Optional[pulumi.Input[_builtins.str]] = None):
         """
         The set of arguments for constructing a UnifiedServicesMetrics resource.
+
         :param pulumi.Input[_builtins.bool] enable_endpoint_metrics: Should metrics be written for endpoints? Please be aware that this setting has billing implications. Check out this [documentation](https://dt-url.net/td23cgh) for further details.
         :param pulumi.Input[_builtins.str] service_id: The scope of this settings. If the settings should cover the whole environment, just don't specify any scope.
         """
@@ -62,6 +63,7 @@ class _UnifiedServicesMetricsState:
                  service_id: Optional[pulumi.Input[_builtins.str]] = None):
         """
         Input properties used for looking up and filtering UnifiedServicesMetrics resources.
+
         :param pulumi.Input[_builtins.bool] enable_endpoint_metrics: Should metrics be written for endpoints? Please be aware that this setting has billing implications. Check out this [documentation](https://dt-url.net/td23cgh) for further details.
         :param pulumi.Input[_builtins.str] service_id: The scope of this settings. If the settings should cover the whole environment, just don't specify any scope.
         """
@@ -105,7 +107,21 @@ class UnifiedServicesMetrics(pulumi.CustomResource):
                  service_id: Optional[pulumi.Input[_builtins.str]] = None,
                  __props__=None):
         """
-        Create a UnifiedServicesMetrics resource with the given unique name, props, and options.
+        > This resource requires the API token scopes **Read settings** (`settings.read`) and **Write settings** (`settings.write`)
+
+        ## Dynatrace Documentation
+
+        - Unified service - https://www.dynatrace.com/support/help/platform-modules/applications-and-microservices/services/service-detection-and-naming/service-types/unified-service
+
+        - Settings API - https://www.dynatrace.com/support/help/dynatrace-api/environment-api/settings (schemaId: `builtin:unified-services-endpoint-metrics`)
+
+        ## Export Example Usage
+
+        - `terraform-provider-dynatrace -export UnifiedServicesMetrics` downloads existing unified services endpoint metrics configuration
+
+        The full documentation of the export feature is available [here](https://dt-url.net/h203qmc).
+
+
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[_builtins.bool] enable_endpoint_metrics: Should metrics be written for endpoints? Please be aware that this setting has billing implications. Check out this [documentation](https://dt-url.net/td23cgh) for further details.
@@ -118,7 +134,21 @@ class UnifiedServicesMetrics(pulumi.CustomResource):
                  args: UnifiedServicesMetricsArgs,
                  opts: Optional[pulumi.ResourceOptions] = None):
         """
-        Create a UnifiedServicesMetrics resource with the given unique name, props, and options.
+        > This resource requires the API token scopes **Read settings** (`settings.read`) and **Write settings** (`settings.write`)
+
+        ## Dynatrace Documentation
+
+        - Unified service - https://www.dynatrace.com/support/help/platform-modules/applications-and-microservices/services/service-detection-and-naming/service-types/unified-service
+
+        - Settings API - https://www.dynatrace.com/support/help/dynatrace-api/environment-api/settings (schemaId: `builtin:unified-services-endpoint-metrics`)
+
+        ## Export Example Usage
+
+        - `terraform-provider-dynatrace -export UnifiedServicesMetrics` downloads existing unified services endpoint metrics configuration
+
+        The full documentation of the export feature is available [here](https://dt-url.net/h203qmc).
+
+
         :param str resource_name: The name of the resource.
         :param UnifiedServicesMetricsArgs args: The arguments to use to populate this resource's properties.
         :param pulumi.ResourceOptions opts: Options for the resource.

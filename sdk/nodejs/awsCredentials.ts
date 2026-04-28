@@ -6,6 +6,21 @@ import * as inputs from "./types/input";
 import * as outputs from "./types/output";
 import * as utilities from "./utilities";
 
+/**
+ * > This resource requires the API token scopes **Read configuration** (`ReadConfig`) and **Write configuration** (`WriteConfig`)
+ *
+ * ## Dynatrace Documentation
+ *
+ * - Set up Dynatrace on Amazon Web Services - https://www.dynatrace.com/support/help/setup-and-configuration/setup-on-cloud-platforms/amazon-web-services
+ *
+ * - AWS credentials API - https://www.dynatrace.com/support/help/dynatrace-api/configuration-api/aws-credentials-api
+ *
+ * ## Export Example Usage
+ *
+ * - `terraform-provider-dynatrace -export dynatrace.AwsCredentials` downloads all existing AWS credentials configuration
+ *
+ * The full documentation of the export feature is available [here](https://dt-url.net/h203qmc).
+ */
 export class AwsCredentials extends pulumi.CustomResource {
     /**
      * Get an existing AwsCredentials resource's state with the given name, ID, and optional extra
@@ -60,6 +75,8 @@ export class AwsCredentials extends pulumi.CustomResource {
      */
     declare public readonly runningOnDynatraceInfrastructure: pulumi.Output<boolean | undefined>;
     /**
+     * If enabled (`true`) the attribute `supportingServices` will not get synchronized with Dynatrace. You will be able to manage them via WebUI without interference by Terraform.
+     *
      * @deprecated Supporting Services are no longer getting managed via this resource. Regardless of the value set here, this resource won't affect the supporting services during updates
      */
     declare public readonly supportingServicesManagedInDynatrace: pulumi.Output<boolean | undefined>;
@@ -164,6 +181,8 @@ export interface AwsCredentialsState {
      */
     runningOnDynatraceInfrastructure?: pulumi.Input<boolean>;
     /**
+     * If enabled (`true`) the attribute `supportingServices` will not get synchronized with Dynatrace. You will be able to manage them via WebUI without interference by Terraform.
+     *
      * @deprecated Supporting Services are no longer getting managed via this resource. Regardless of the value set here, this resource won't affect the supporting services during updates
      */
     supportingServicesManagedInDynatrace?: pulumi.Input<boolean>;
@@ -217,6 +236,8 @@ export interface AwsCredentialsArgs {
      */
     runningOnDynatraceInfrastructure?: pulumi.Input<boolean>;
     /**
+     * If enabled (`true`) the attribute `supportingServices` will not get synchronized with Dynatrace. You will be able to manage them via WebUI without interference by Terraform.
+     *
      * @deprecated Supporting Services are no longer getting managed via this resource. Regardless of the value set here, this resource won't affect the supporting services during updates
      */
     supportingServicesManagedInDynatrace?: pulumi.Input<boolean>;

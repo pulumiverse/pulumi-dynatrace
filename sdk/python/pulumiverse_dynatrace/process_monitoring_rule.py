@@ -28,6 +28,7 @@ class ProcessMonitoringRuleArgs:
                  insert_after: Optional[pulumi.Input[_builtins.str]] = None):
         """
         The set of arguments for constructing a ProcessMonitoringRule resource.
+
         :param pulumi.Input['ProcessMonitoringRuleConditionArgs'] condition: Condition
         :param pulumi.Input[_builtins.bool] enabled: This setting is enabled (`true`) or disabled (`false`)
         :param pulumi.Input[_builtins.str] mode: Possible Values: `MONITORING_ON`, `MONITORING_OFF`
@@ -113,6 +114,7 @@ class _ProcessMonitoringRuleState:
                  mode: Optional[pulumi.Input[_builtins.str]] = None):
         """
         Input properties used for looking up and filtering ProcessMonitoringRule resources.
+
         :param pulumi.Input['ProcessMonitoringRuleConditionArgs'] condition: Condition
         :param pulumi.Input[_builtins.bool] enabled: This setting is enabled (`true`) or disabled (`false`)
         :param pulumi.Input[_builtins.str] host_group_id: The scope of this settings. If the settings should cover the whole environment, just don't specify any scope
@@ -204,7 +206,38 @@ class ProcessMonitoringRule(pulumi.CustomResource):
                  mode: Optional[pulumi.Input[_builtins.str]] = None,
                  __props__=None):
         """
-        Create a ProcessMonitoringRule resource with the given unique name, props, and options.
+        > This resource requires the API token scopes **Read settings** (`settings.read`) and **Write settings** (`settings.write`)
+
+        ## Dynatrace Documentation
+
+        - Process Availability - https://www.dynatrace.com/support/help/how-to-use-dynatrace/process-groups/configuration/pg-monitoring
+
+        - Settings API - https://www.dynatrace.com/support/help/dynatrace-api/environment-api/settings (schemaId: `builtin:process.custom-process-monitoring-rule`)
+
+        ## Export Example Usage
+
+        - `terraform-provider-dynatrace -export ProcessMonitoringRule` downloads all existing custom process monitoring configuration
+
+        The full documentation of the export feature is available [here](https://dt-url.net/h203qmc).
+
+        ## Resource Example Usage
+
+        ```python
+        import pulumi
+        import pulumiverse_dynatrace as dynatrace
+
+        test = dynatrace.ProcessMonitoringRule("test",
+            enabled=True,
+            mode="MONITORING_OFF",
+            host_group_id="HOST_GROUP-0000000000000000",
+            condition={
+                "item": "APACHE_CONFIG_PATH",
+                "operator": "STARTS",
+                "value": "foo-bar-x",
+            })
+        ```
+
+
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[Union['ProcessMonitoringRuleConditionArgs', 'ProcessMonitoringRuleConditionArgsDict']] condition: Condition
@@ -220,7 +253,38 @@ class ProcessMonitoringRule(pulumi.CustomResource):
                  args: ProcessMonitoringRuleArgs,
                  opts: Optional[pulumi.ResourceOptions] = None):
         """
-        Create a ProcessMonitoringRule resource with the given unique name, props, and options.
+        > This resource requires the API token scopes **Read settings** (`settings.read`) and **Write settings** (`settings.write`)
+
+        ## Dynatrace Documentation
+
+        - Process Availability - https://www.dynatrace.com/support/help/how-to-use-dynatrace/process-groups/configuration/pg-monitoring
+
+        - Settings API - https://www.dynatrace.com/support/help/dynatrace-api/environment-api/settings (schemaId: `builtin:process.custom-process-monitoring-rule`)
+
+        ## Export Example Usage
+
+        - `terraform-provider-dynatrace -export ProcessMonitoringRule` downloads all existing custom process monitoring configuration
+
+        The full documentation of the export feature is available [here](https://dt-url.net/h203qmc).
+
+        ## Resource Example Usage
+
+        ```python
+        import pulumi
+        import pulumiverse_dynatrace as dynatrace
+
+        test = dynatrace.ProcessMonitoringRule("test",
+            enabled=True,
+            mode="MONITORING_OFF",
+            host_group_id="HOST_GROUP-0000000000000000",
+            condition={
+                "item": "APACHE_CONFIG_PATH",
+                "operator": "STARTS",
+                "value": "foo-bar-x",
+            })
+        ```
+
+
         :param str resource_name: The name of the resource.
         :param ProcessMonitoringRuleArgs args: The arguments to use to populate this resource's properties.
         :param pulumi.ResourceOptions opts: Options for the resource.

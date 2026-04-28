@@ -26,6 +26,7 @@ class MobileAppKeyPerformanceArgs:
                  thresholds: pulumi.Input['MobileAppKeyPerformanceThresholdsArgs']):
         """
         The set of arguments for constructing a MobileAppKeyPerformance resource.
+
         :param pulumi.Input[_builtins.bool] frustrating_if_reported_or_web_request_error: Treat user actions with reported errors or web request errors as erroneous and rate their performance as Frustrating. Turn off this setting if errors should not affect the Apdex rate.
         :param pulumi.Input[_builtins.str] scope: The scope of this setting (DEVICE*APPLICATION*METHOD, MOBILE*APPLICATION, CUSTOM*APPLICATION)
         :param pulumi.Input['MobileAppKeyPerformanceThresholdsArgs'] thresholds: no documentation available
@@ -79,6 +80,7 @@ class _MobileAppKeyPerformanceState:
                  thresholds: Optional[pulumi.Input['MobileAppKeyPerformanceThresholdsArgs']] = None):
         """
         Input properties used for looking up and filtering MobileAppKeyPerformance resources.
+
         :param pulumi.Input[_builtins.bool] frustrating_if_reported_or_web_request_error: Treat user actions with reported errors or web request errors as erroneous and rate their performance as Frustrating. Turn off this setting if errors should not affect the Apdex rate.
         :param pulumi.Input[_builtins.str] scope: The scope of this setting (DEVICE*APPLICATION*METHOD, MOBILE*APPLICATION, CUSTOM*APPLICATION)
         :param pulumi.Input['MobileAppKeyPerformanceThresholdsArgs'] thresholds: no documentation available
@@ -138,7 +140,23 @@ class MobileAppKeyPerformance(pulumi.CustomResource):
                  thresholds: Optional[pulumi.Input[Union['MobileAppKeyPerformanceThresholdsArgs', 'MobileAppKeyPerformanceThresholdsArgsDict']]] = None,
                  __props__=None):
         """
-        Create a MobileAppKeyPerformance resource with the given unique name, props, and options.
+        > Configuration of the mobile/custom application scope overlaps with dynatrace_mobile_application, but this resource in addition provides an option for a key user action scope.
+
+        > This resource requires the API token scopes **Read settings** (`settings.read`) and **Write settings** (`settings.write`)
+
+        ## Dynatrace Documentation
+
+        - Adjust Apdex settings for mobile applications - https://www.dynatrace.com/support/help/platform-modules/digital-experience/mobile-applications/additional-configuration/configure-apdex-mobile
+
+        - Settings API - https://www.dynatrace.com/support/help/dynatrace-api/environment-api/settings (schemaId: `builtin:rum.mobile.key-performance-metrics`)
+
+        ## Export Example Usage
+
+        - `terraform-provider-dynatrace -export MobileAppKeyPerformance` downloads all existing apdex threshold configuration for mobile/custom applications
+
+        The full documentation of the export feature is available [here](https://dt-url.net/h203qmc).
+
+
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[_builtins.bool] frustrating_if_reported_or_web_request_error: Treat user actions with reported errors or web request errors as erroneous and rate their performance as Frustrating. Turn off this setting if errors should not affect the Apdex rate.
@@ -152,7 +170,23 @@ class MobileAppKeyPerformance(pulumi.CustomResource):
                  args: MobileAppKeyPerformanceArgs,
                  opts: Optional[pulumi.ResourceOptions] = None):
         """
-        Create a MobileAppKeyPerformance resource with the given unique name, props, and options.
+        > Configuration of the mobile/custom application scope overlaps with dynatrace_mobile_application, but this resource in addition provides an option for a key user action scope.
+
+        > This resource requires the API token scopes **Read settings** (`settings.read`) and **Write settings** (`settings.write`)
+
+        ## Dynatrace Documentation
+
+        - Adjust Apdex settings for mobile applications - https://www.dynatrace.com/support/help/platform-modules/digital-experience/mobile-applications/additional-configuration/configure-apdex-mobile
+
+        - Settings API - https://www.dynatrace.com/support/help/dynatrace-api/environment-api/settings (schemaId: `builtin:rum.mobile.key-performance-metrics`)
+
+        ## Export Example Usage
+
+        - `terraform-provider-dynatrace -export MobileAppKeyPerformance` downloads all existing apdex threshold configuration for mobile/custom applications
+
+        The full documentation of the export feature is available [here](https://dt-url.net/h203qmc).
+
+
         :param str resource_name: The name of the resource.
         :param MobileAppKeyPerformanceArgs args: The arguments to use to populate this resource's properties.
         :param pulumi.ResourceOptions opts: Options for the resource.

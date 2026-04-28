@@ -28,6 +28,7 @@ class MobileAppAnomaliesArgs:
                  scope: Optional[pulumi.Input[_builtins.str]] = None):
         """
         The set of arguments for constructing a MobileAppAnomalies resource.
+
         :param pulumi.Input['MobileAppAnomaliesErrorRateIncreaseArgs'] error_rate_increase: Error rate increase
         :param pulumi.Input['MobileAppAnomaliesSlowUserActionsArgs'] slow_user_actions: Slow user actions
         :param pulumi.Input['MobileAppAnomaliesUnexpectedHighLoadArgs'] unexpected_high_load: Unexpected high load
@@ -112,6 +113,7 @@ class _MobileAppAnomaliesState:
                  unexpected_low_load: Optional[pulumi.Input['MobileAppAnomaliesUnexpectedLowLoadArgs']] = None):
         """
         Input properties used for looking up and filtering MobileAppAnomalies resources.
+
         :param pulumi.Input['MobileAppAnomaliesErrorRateIncreaseArgs'] error_rate_increase: Error rate increase
         :param pulumi.Input[_builtins.str] scope: The scope of this setting (DEVICE*APPLICATION*METHOD, MOBILE_APPLICATION). Omit this property if you want to cover the whole environment.
         :param pulumi.Input['MobileAppAnomaliesSlowUserActionsArgs'] slow_user_actions: Slow user actions
@@ -203,7 +205,21 @@ class MobileAppAnomalies(pulumi.CustomResource):
                  unexpected_low_load: Optional[pulumi.Input[Union['MobileAppAnomaliesUnexpectedLowLoadArgs', 'MobileAppAnomaliesUnexpectedLowLoadArgsDict']]] = None,
                  __props__=None):
         """
-        Create a MobileAppAnomalies resource with the given unique name, props, and options.
+        > This resource requires the API token scopes **Read settings** (`settings.read`) and **Write settings** (`settings.write`)
+
+        ## Dynatrace Documentation
+
+        - Adjust the sensitivity of anomaly detection for applications - https://www.dynatrace.com/support/help/how-to-use-dynatrace/problem-detection-and-analysis/problem-detection/adjust-sensitivity-anomaly-detection/adjust-sensitivity-applications
+
+        - Settings API - https://www.dynatrace.com/support/help/dynatrace-api/environment-api/settings (schemaId: `builtin:anomaly-detection.rum-mobile`)
+
+        ## Export Example Usage
+
+        - `terraform-provider-dynatrace -export MobileAppAnomalies` downloads all existing mobile application anomaly detection configuration
+
+        The full documentation of the export feature is available [here](https://dt-url.net/h203qmc).
+
+
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[Union['MobileAppAnomaliesErrorRateIncreaseArgs', 'MobileAppAnomaliesErrorRateIncreaseArgsDict']] error_rate_increase: Error rate increase
@@ -219,7 +235,21 @@ class MobileAppAnomalies(pulumi.CustomResource):
                  args: MobileAppAnomaliesArgs,
                  opts: Optional[pulumi.ResourceOptions] = None):
         """
-        Create a MobileAppAnomalies resource with the given unique name, props, and options.
+        > This resource requires the API token scopes **Read settings** (`settings.read`) and **Write settings** (`settings.write`)
+
+        ## Dynatrace Documentation
+
+        - Adjust the sensitivity of anomaly detection for applications - https://www.dynatrace.com/support/help/how-to-use-dynatrace/problem-detection-and-analysis/problem-detection/adjust-sensitivity-anomaly-detection/adjust-sensitivity-applications
+
+        - Settings API - https://www.dynatrace.com/support/help/dynatrace-api/environment-api/settings (schemaId: `builtin:anomaly-detection.rum-mobile`)
+
+        ## Export Example Usage
+
+        - `terraform-provider-dynatrace -export MobileAppAnomalies` downloads all existing mobile application anomaly detection configuration
+
+        The full documentation of the export feature is available [here](https://dt-url.net/h203qmc).
+
+
         :param str resource_name: The name of the resource.
         :param MobileAppAnomaliesArgs args: The arguments to use to populate this resource's properties.
         :param pulumi.ResourceOptions opts: Options for the resource.

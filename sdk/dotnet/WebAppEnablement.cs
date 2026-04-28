@@ -10,6 +10,23 @@ using Pulumi;
 
 namespace Pulumiverse.Dynatrace
 {
+    /// <summary>
+    /// &gt; Configuration of the application scope overlaps with dynatrace_web_application, but this resource in addition provides an option for an environment scope.
+    /// 
+    /// &gt; This resource requires the API token scopes **Read settings** (`settings.read`) and **Write settings** (`settings.write`)
+    /// 
+    /// ## Dynatrace Documentation
+    /// 
+    /// - Configure cost and traffic control for web applications - https://www.dynatrace.com/support/help/how-to-use-dynatrace/real-user-monitoring/setup-and-configuration/web-applications/additional-configuration/configure-cost-and-traffic-control-web
+    /// 
+    /// - Settings API - https://www.dynatrace.com/support/help/dynatrace-api/environment-api/settings (schemaId: `builtin:rum.web.enablement`)
+    /// 
+    /// ## Export Example Usage
+    /// 
+    /// - `terraform-provider-dynatrace -export dynatrace.WebAppEnablement` downloads all existing web application enablement and cost control configuration
+    /// 
+    /// The full documentation of the export feature is available [here](https://dt-url.net/h203qmc).
+    /// </summary>
     [DynatraceResourceType("dynatrace:index/webAppEnablement:WebAppEnablement")]
     public partial class WebAppEnablement : global::Pulumi.CustomResource
     {
@@ -20,7 +37,7 @@ namespace Pulumiverse.Dynatrace
         public Output<string?> ApplicationId { get; private set; } = null!;
 
         /// <summary>
-        /// Experience Analytics
+        /// User Interactions
         /// </summary>
         [Output("experienceAnalytics")]
         public Output<Outputs.WebAppEnablementExperienceAnalytics?> ExperienceAnalytics { get; private set; } = null!;
@@ -91,7 +108,7 @@ namespace Pulumiverse.Dynatrace
         public Input<string>? ApplicationId { get; set; }
 
         /// <summary>
-        /// Experience Analytics
+        /// User Interactions
         /// </summary>
         [Input("experienceAnalytics")]
         public Input<Inputs.WebAppEnablementExperienceAnalyticsArgs>? ExperienceAnalytics { get; set; }
@@ -123,7 +140,7 @@ namespace Pulumiverse.Dynatrace
         public Input<string>? ApplicationId { get; set; }
 
         /// <summary>
-        /// Experience Analytics
+        /// User Interactions
         /// </summary>
         [Input("experienceAnalytics")]
         public Input<Inputs.WebAppEnablementExperienceAnalyticsGetArgs>? ExperienceAnalytics { get; set; }

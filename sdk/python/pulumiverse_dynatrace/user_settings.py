@@ -30,6 +30,7 @@ class UserSettingsArgs:
                  timezone: Optional[pulumi.Input[_builtins.str]] = None):
         """
         The set of arguments for constructing a UserSettings resource.
+
         :param pulumi.Input[_builtins.bool] auto_language: Language - use browser default
         :param pulumi.Input[_builtins.bool] auto_region: Region - use browser default
         :param pulumi.Input[_builtins.bool] auto_theme: Theme - use browser default
@@ -177,6 +178,7 @@ class _UserSettingsState:
                  timezone: Optional[pulumi.Input[_builtins.str]] = None):
         """
         Input properties used for looking up and filtering UserSettings resources.
+
         :param pulumi.Input[_builtins.bool] auto_language: Language - use browser default
         :param pulumi.Input[_builtins.bool] auto_region: Region - use browser default
         :param pulumi.Input[_builtins.bool] auto_theme: Theme - use browser default
@@ -332,7 +334,21 @@ class UserSettings(pulumi.CustomResource):
                  timezone: Optional[pulumi.Input[_builtins.str]] = None,
                  __props__=None):
         """
-        Create a UserSettings resource with the given unique name, props, and options.
+        > This resource is excluded by default in the export utility since it is scoped for an individual user and requires a personal access token.
+
+        > This resource requires the API token scopes **Read settings** (`settings.read`) and **Write settings** (`settings.write`)
+
+        ## Dynatrace Documentation
+
+        - Settings API - https://www.dynatrace.com/support/help/dynatrace-api/environment-api/settings (schemaId: `builtin:user-settings`)
+
+        ## Export Example Usage
+
+        - `terraform-provider-dynatrace -export UserSettings` downloads user settings of the individual user
+
+        The full documentation of the export feature is available [here](https://dt-url.net/h203qmc).
+
+
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[_builtins.bool] auto_language: Language - use browser default
@@ -352,7 +368,21 @@ class UserSettings(pulumi.CustomResource):
                  args: UserSettingsArgs,
                  opts: Optional[pulumi.ResourceOptions] = None):
         """
-        Create a UserSettings resource with the given unique name, props, and options.
+        > This resource is excluded by default in the export utility since it is scoped for an individual user and requires a personal access token.
+
+        > This resource requires the API token scopes **Read settings** (`settings.read`) and **Write settings** (`settings.write`)
+
+        ## Dynatrace Documentation
+
+        - Settings API - https://www.dynatrace.com/support/help/dynatrace-api/environment-api/settings (schemaId: `builtin:user-settings`)
+
+        ## Export Example Usage
+
+        - `terraform-provider-dynatrace -export UserSettings` downloads user settings of the individual user
+
+        The full documentation of the export feature is available [here](https://dt-url.net/h203qmc).
+
+
         :param str resource_name: The name of the resource.
         :param UserSettingsArgs args: The arguments to use to populate this resource's properties.
         :param pulumi.ResourceOptions opts: Options for the resource.

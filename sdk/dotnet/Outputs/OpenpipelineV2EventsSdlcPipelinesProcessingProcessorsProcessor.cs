@@ -87,9 +87,17 @@ namespace Pulumiverse.Dynatrace.Outputs
         /// </summary>
         public readonly Outputs.OpenpipelineV2EventsSdlcPipelinesProcessingProcessorsProcessorSamplingAwareCounterMetric? SamplingAwareCounterMetric;
         /// <summary>
+        /// Sampling aware histogram metric processor attributes
+        /// </summary>
+        public readonly Outputs.OpenpipelineV2EventsSdlcPipelinesProcessingProcessorsProcessorSamplingAwareHistogramMetric? SamplingAwareHistogramMetric;
+        /// <summary>
         /// Sampling aware value metric processor attributes
         /// </summary>
         public readonly Outputs.OpenpipelineV2EventsSdlcPipelinesProcessingProcessorsProcessorSamplingAwareValueMetric? SamplingAwareValueMetric;
+        /// <summary>
+        /// SdlcEvent extraction processor attributes
+        /// </summary>
+        public readonly Outputs.OpenpipelineV2EventsSdlcPipelinesProcessingProcessorsProcessorSdlcEvent? SdlcEvent;
         /// <summary>
         /// Security context processor attributes
         /// </summary>
@@ -99,11 +107,19 @@ namespace Pulumiverse.Dynatrace.Outputs
         /// </summary>
         public readonly Outputs.OpenpipelineV2EventsSdlcPipelinesProcessingProcessorsProcessorSecurityEvent? SecurityEvent;
         /// <summary>
+        /// Smartscape edge extraction processor attributes
+        /// </summary>
+        public readonly Outputs.OpenpipelineV2EventsSdlcPipelinesProcessingProcessorsProcessorSmartscapeEdge? SmartscapeEdge;
+        /// <summary>
+        /// Smartscape node extraction processor attributes
+        /// </summary>
+        public readonly Outputs.OpenpipelineV2EventsSdlcPipelinesProcessingProcessorsProcessorSmartscapeNode? SmartscapeNode;
+        /// <summary>
         /// Technology processor attributes
         /// </summary>
         public readonly Outputs.OpenpipelineV2EventsSdlcPipelinesProcessingProcessorsProcessorTechnology? Technology;
         /// <summary>
-        /// Processor type. Possible Values: `azureLogForwarding`, `Bizevent`, `bucketAssignment`, `costAllocation`, `counterMetric`, `Davis`, `Dql`, `Drop`, `fieldsAdd`, `fieldsRemove`, `fieldsRename`, `histogramMetric`, `noStorage`, `productAllocation`, `samplingAwareCounterMetric`, `samplingAwareValueMetric`, `securityContext`, `securityEvent`, `Technology`, `valueMetric`.
+        /// Processor type. Possible Values: `azureLogForwarding`, `Bizevent`, `bucketAssignment`, `costAllocation`, `counterMetric`, `Davis`, `Dql`, `Drop`, `fieldsAdd`, `fieldsRemove`, `fieldsRename`, `histogramMetric`, `noStorage`, `productAllocation`, `samplingAwareCounterMetric`, `samplingAwareHistogramMetric`, `samplingAwareValueMetric`, `sdlcEvent`, `securityContext`, `securityEvent`, `smartscapeEdge`, `smartscapeNode`, `Technology`, `valueMetric`
         /// </summary>
         public readonly string Type;
         /// <summary>
@@ -149,11 +165,19 @@ namespace Pulumiverse.Dynatrace.Outputs
 
             Outputs.OpenpipelineV2EventsSdlcPipelinesProcessingProcessorsProcessorSamplingAwareCounterMetric? samplingAwareCounterMetric,
 
+            Outputs.OpenpipelineV2EventsSdlcPipelinesProcessingProcessorsProcessorSamplingAwareHistogramMetric? samplingAwareHistogramMetric,
+
             Outputs.OpenpipelineV2EventsSdlcPipelinesProcessingProcessorsProcessorSamplingAwareValueMetric? samplingAwareValueMetric,
+
+            Outputs.OpenpipelineV2EventsSdlcPipelinesProcessingProcessorsProcessorSdlcEvent? sdlcEvent,
 
             Outputs.OpenpipelineV2EventsSdlcPipelinesProcessingProcessorsProcessorSecurityContext? securityContext,
 
             Outputs.OpenpipelineV2EventsSdlcPipelinesProcessingProcessorsProcessorSecurityEvent? securityEvent,
+
+            Outputs.OpenpipelineV2EventsSdlcPipelinesProcessingProcessorsProcessorSmartscapeEdge? smartscapeEdge,
+
+            Outputs.OpenpipelineV2EventsSdlcPipelinesProcessingProcessorsProcessorSmartscapeNode? smartscapeNode,
 
             Outputs.OpenpipelineV2EventsSdlcPipelinesProcessingProcessorsProcessorTechnology? technology,
 
@@ -179,9 +203,13 @@ namespace Pulumiverse.Dynatrace.Outputs
             ProductAllocation = productAllocation;
             SampleData = sampleData;
             SamplingAwareCounterMetric = samplingAwareCounterMetric;
+            SamplingAwareHistogramMetric = samplingAwareHistogramMetric;
             SamplingAwareValueMetric = samplingAwareValueMetric;
+            SdlcEvent = sdlcEvent;
             SecurityContext = securityContext;
             SecurityEvent = securityEvent;
+            SmartscapeEdge = smartscapeEdge;
+            SmartscapeNode = smartscapeNode;
             Technology = technology;
             Type = type;
             ValueMetric = valueMetric;

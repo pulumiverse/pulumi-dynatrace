@@ -29,6 +29,7 @@ class ManagedNetworkZonesArgs:
                  num_of_oneagents_using: Optional[pulumi.Input[_builtins.int]] = None):
         """
         The set of arguments for constructing a ManagedNetworkZones resource.
+
         :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] alternative_zones: A list of alternative network zones.
         :param pulumi.Input[_builtins.str] description: A short description of the network zone
         :param pulumi.Input[_builtins.str] fallback_mode: The fallback mode of the network zone. Possible values: `ANY_ACTIVE_GATE`, `NONE`, `ONLY_DEFAULT_ZONE`
@@ -165,6 +166,7 @@ class _ManagedNetworkZonesState:
                  num_of_oneagents_using: Optional[pulumi.Input[_builtins.int]] = None):
         """
         Input properties used for looking up and filtering ManagedNetworkZones resources.
+
         :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] alternative_zones: A list of alternative network zones.
         :param pulumi.Input[_builtins.str] description: A short description of the network zone
         :param pulumi.Input[_builtins.str] fallback_mode: The fallback mode of the network zone. Possible values: `ANY_ACTIVE_GATE`, `NONE`, `ONLY_DEFAULT_ZONE`
@@ -318,11 +320,13 @@ class ManagedNetworkZones(pulumi.CustomResource):
         import pulumi
         import pulumiverse_dynatrace as dynatrace
 
-        test = dynatrace.ManagedNetworkZones("test",
-            alternative_zones=["alternativeexample"],
+        test = dynatrace.ManagedNetworkZones("Test",
+            name="terraformtest",
             description="This is an example network zone",
+            alternative_zones=["alternativeexample"],
             fallback_mode="ANY_ACTIVE_GATE")
         ```
+
 
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
@@ -356,11 +360,13 @@ class ManagedNetworkZones(pulumi.CustomResource):
         import pulumi
         import pulumiverse_dynatrace as dynatrace
 
-        test = dynatrace.ManagedNetworkZones("test",
-            alternative_zones=["alternativeexample"],
+        test = dynatrace.ManagedNetworkZones("Test",
+            name="terraformtest",
             description="This is an example network zone",
+            alternative_zones=["alternativeexample"],
             fallback_mode="ANY_ACTIVE_GATE")
         ```
+
 
         :param str resource_name: The name of the resource.
         :param ManagedNetworkZonesArgs args: The arguments to use to populate this resource's properties.

@@ -10,6 +10,21 @@ using Pulumi;
 
 namespace Pulumiverse.Dynatrace
 {
+    /// <summary>
+    /// &gt; This resource requires the API token scopes **Read configuration** (`ReadConfig`) and **Write configuration** (`WriteConfig`)
+    /// 
+    /// ## Dynatrace Documentation
+    /// 
+    /// - Microsoft Azure monitoring - https://www.dynatrace.com/support/help/how-to-use-dynatrace/infrastructure-monitoring/cloud-platform-monitoring/microsoft-azure-services-monitoring
+    /// 
+    /// - Azure credentials API - https://www.dynatrace.com/support/help/dynatrace-api/configuration-api/azure-credentials-api
+    /// 
+    /// ## Export Example Usage
+    /// 
+    /// - `terraform-provider-dynatrace -export dynatrace.AzureCredentials` downloads all existing Azure credentials configuration
+    /// 
+    /// The full documentation of the export feature is available [here](https://dt-url.net/h203qmc).
+    /// </summary>
     [DynatraceResourceType("dynatrace:index/azureCredentials:AzureCredentials")]
     public partial class AzureCredentials : global::Pulumi.CustomResource
     {
@@ -79,6 +94,9 @@ namespace Pulumiverse.Dynatrace
         [Output("supportingServices")]
         public Output<ImmutableArray<Outputs.AzureCredentialsSupportingService>> SupportingServices { get; private set; } = null!;
 
+        /// <summary>
+        /// If enabled (`True`) the attribute `SupportingServices` will not get synchronized with Dynatrace. You will be able to manage them via WebUI without interference by Terraform.
+        /// </summary>
         [Output("supportingServicesManagedInDynatrace")]
         public Output<bool?> SupportingServicesManagedInDynatrace { get; private set; } = null!;
 
@@ -234,6 +252,9 @@ namespace Pulumiverse.Dynatrace
             set => _supportingServices = value;
         }
 
+        /// <summary>
+        /// If enabled (`True`) the attribute `SupportingServices` will not get synchronized with Dynatrace. You will be able to manage them via WebUI without interference by Terraform.
+        /// </summary>
         [Input("supportingServicesManagedInDynatrace")]
         public Input<bool>? SupportingServicesManagedInDynatrace { get; set; }
 
@@ -346,6 +367,9 @@ namespace Pulumiverse.Dynatrace
             set => _supportingServices = value;
         }
 
+        /// <summary>
+        /// If enabled (`True`) the attribute `SupportingServices` will not get synchronized with Dynatrace. You will be able to manage them via WebUI without interference by Terraform.
+        /// </summary>
         [Input("supportingServicesManagedInDynatrace")]
         public Input<bool>? SupportingServicesManagedInDynatrace { get; set; }
 

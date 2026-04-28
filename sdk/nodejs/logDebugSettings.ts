@@ -4,6 +4,21 @@
 import * as pulumi from "@pulumi/pulumi";
 import * as utilities from "./utilities";
 
+/**
+ * > This resource requires the API token scopes **Read settings** (`settings.read`) and **Write settings** (`settings.write`)
+ *
+ * ## Dynatrace Documentation
+ *
+ * - Troubleshooting Log Monitoring (Logs Classic) - https://docs.dynatrace.com/docs/observe-and-explore/log-monitoring/lmc-troubleshooting
+ *
+ * - Settings API - https://www.dynatrace.com/support/help/dynatrace-api/environment-api/settings (schemaId: `builtin:logmonitoring.log-debug-settings`)
+ *
+ * ## Export Example Usage
+ *
+ * - `terraform-provider-dynatrace -export dynatrace.LogDebugSettings` downloads existing log debug settings
+ *
+ * The full documentation of the export feature is available [here](https://dt-url.net/h203qmc).
+ */
 export class LogDebugSettings extends pulumi.CustomResource {
     /**
      * Get an existing LogDebugSettings resource's state with the given name, ID, and optional extra

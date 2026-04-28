@@ -23,6 +23,7 @@ class SpanEventsArgs:
                  masking: pulumi.Input[_builtins.str]):
         """
         The set of arguments for constructing a SpanEvents resource.
+
         :param pulumi.Input[_builtins.str] key: Key of the span event attribute to store
         :param pulumi.Input[_builtins.str] masking: Possible Values: `MASK_ENTIRE_VALUE`, `MASK_ONLY_CONFIDENTIAL_DATA`, `NOT_MASKED`
         """
@@ -61,6 +62,7 @@ class _SpanEventsState:
                  masking: Optional[pulumi.Input[_builtins.str]] = None):
         """
         Input properties used for looking up and filtering SpanEvents resources.
+
         :param pulumi.Input[_builtins.str] key: Key of the span event attribute to store
         :param pulumi.Input[_builtins.str] masking: Possible Values: `MASK_ENTIRE_VALUE`, `MASK_ONLY_CONFIDENTIAL_DATA`, `NOT_MASKED`
         """
@@ -104,7 +106,23 @@ class SpanEvents(pulumi.CustomResource):
                  masking: Optional[pulumi.Input[_builtins.str]] = None,
                  __props__=None):
         """
-        Create a SpanEvents resource with the given unique name, props, and options.
+        > This resource requires the API token scopes **Read settings** (`settings.read`) and **Write settings** (`settings.write`)
+
+        ## Dynatrace Documentation
+
+        !> This resource API endpoint has been deprecated, please use AttributeAllowList and AttributeMasking instead.
+
+        - Span settings - https://www.dynatrace.com/support/help/extend-dynatrace/extend-tracing/span-settings
+
+        - Settings API - https://www.dynatrace.com/support/help/dynatrace-api/environment-api/settings (schemaId: `builtin:span-event-attribute`)
+
+        ## Export Example Usage
+
+        - `terraform-provider-dynatrace -export SpanEvents` downloads all existing span event configuration
+
+        The full documentation of the export feature is available [here](https://dt-url.net/h203qmc).
+
+
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[_builtins.str] key: Key of the span event attribute to store
@@ -117,7 +135,23 @@ class SpanEvents(pulumi.CustomResource):
                  args: SpanEventsArgs,
                  opts: Optional[pulumi.ResourceOptions] = None):
         """
-        Create a SpanEvents resource with the given unique name, props, and options.
+        > This resource requires the API token scopes **Read settings** (`settings.read`) and **Write settings** (`settings.write`)
+
+        ## Dynatrace Documentation
+
+        !> This resource API endpoint has been deprecated, please use AttributeAllowList and AttributeMasking instead.
+
+        - Span settings - https://www.dynatrace.com/support/help/extend-dynatrace/extend-tracing/span-settings
+
+        - Settings API - https://www.dynatrace.com/support/help/dynatrace-api/environment-api/settings (schemaId: `builtin:span-event-attribute`)
+
+        ## Export Example Usage
+
+        - `terraform-provider-dynatrace -export SpanEvents` downloads all existing span event configuration
+
+        The full documentation of the export feature is available [here](https://dt-url.net/h203qmc).
+
+
         :param str resource_name: The name of the resource.
         :param SpanEventsArgs args: The arguments to use to populate this resource's properties.
         :param pulumi.ResourceOptions opts: Options for the resource.

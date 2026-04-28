@@ -12,6 +12,19 @@ import (
 	"github.com/pulumiverse/pulumi-dynatrace/sdk/go/dynatrace/internal"
 )
 
+// > This resource requires the API token scopes **Read settings** (`settings.read`) and **Write settings** (`settings.write`)
+//
+// ## Dynatrace Documentation
+//
+// - Log storage configuration (Logs Classic) - https://www.dynatrace.com/support/help/observe-and-explore/logs/log-monitoring/acquire-log-data/log-storage
+//
+// - Settings API - https://www.dynatrace.com/support/help/dynatrace-api/environment-api/settings (schemaId: `builtin:logmonitoring.log-storage-settings`)
+//
+// ## Export Example Usage
+//
+// - `terraform-provider-dynatrace -export LogStorage` downloads all existing log ingest rules
+//
+// The full documentation of the export feature is available [here](https://dt-url.net/h203qmc).
 type LogStorage struct {
 	pulumi.CustomResourceState
 

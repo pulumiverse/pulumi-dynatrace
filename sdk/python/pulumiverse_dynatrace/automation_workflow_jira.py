@@ -28,6 +28,7 @@ class AutomationWorkflowJiraArgs:
                  user: Optional[pulumi.Input[_builtins.str]] = None):
         """
         The set of arguments for constructing a AutomationWorkflowJira resource.
+
         :param pulumi.Input[_builtins.str] type: Possible Values: `Basic`, `Cloud_token`, `Pat`
         :param pulumi.Input[_builtins.str] url: URL of the Jira server
         :param pulumi.Input[_builtins.str] insert_after: Because this resource allows for ordering you may specify the ID of the resource instance that comes before this instance regarding order. If not specified when creating the setting will be added to the end of the list. If not specified during update the order will remain untouched
@@ -150,6 +151,7 @@ class _AutomationWorkflowJiraState:
                  user: Optional[pulumi.Input[_builtins.str]] = None):
         """
         Input properties used for looking up and filtering AutomationWorkflowJira resources.
+
         :param pulumi.Input[_builtins.str] insert_after: Because this resource allows for ordering you may specify the ID of the resource instance that comes before this instance regarding order. If not specified when creating the setting will be added to the end of the list. If not specified during update the order will remain untouched
         :param pulumi.Input[_builtins.str] name: The name of the Jira connection
         :param pulumi.Input[_builtins.str] password: Password of the Jira user
@@ -277,7 +279,39 @@ class AutomationWorkflowJira(pulumi.CustomResource):
                  user: Optional[pulumi.Input[_builtins.str]] = None,
                  __props__=None):
         """
-        Create a AutomationWorkflowJira resource with the given unique name, props, and options.
+        > This resource requires the API token scopes **Read settings** (`settings.read`) and **Write settings** (`settings.write`)
+
+        > This resource requires the OAuth scopes **Read settings** (`settings:objects:read`) and **Write settings** (`settings:objects:write`)
+
+        ## Limitations
+
+        > **Warning** If a resource is created using an API token or without setting `DYNATRACE_HTTP_OAUTH_PREFERENCE=true` (when both are used), the settings object's owner will remain empty.
+
+        An empty owner implies:
+        - The settings object becomes public, allowing other users with settings permissions to read and modify it.
+        - Changing the settings object's permissions will have no effect, meaning the `SettingsPermissions` resource can't alter its access.
+
+        When a settings object is created using platform credentials:
+        - The owner is set to the owner of the OAuth client or platform token.
+        - By default, the settings object is private; only the owner can read and modify it.
+        - Access modifiers can be managed using the `SettingsPermissions` resource.
+
+        We recommend using platform credentials to ensure a correct setup.
+        In case an API token is needed, we recommend setting `DYNATRACE_HTTP_OAUTH_PREFERENCE=true`.
+
+        ## Dynatrace Documentation
+
+        - Jira for Workflows - https://docs.dynatrace.com/docs/platform-modules/automations/workflows/actions/jira
+
+        - Settings API - https://www.dynatrace.com/support/help/dynatrace-api/environment-api/settings (schemaId: `app:dynatrace.jira:connection`)
+
+        ## Export Example Usage
+
+        - `terraform-provider-dynatrace -export AutomationWorkflowJira` downloads existing Jira for Workflows configuration
+
+        The full documentation of the export feature is available [here](https://dt-url.net/h203qmc).
+
+
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[_builtins.str] insert_after: Because this resource allows for ordering you may specify the ID of the resource instance that comes before this instance regarding order. If not specified when creating the setting will be added to the end of the list. If not specified during update the order will remain untouched
@@ -295,7 +329,39 @@ class AutomationWorkflowJira(pulumi.CustomResource):
                  args: AutomationWorkflowJiraArgs,
                  opts: Optional[pulumi.ResourceOptions] = None):
         """
-        Create a AutomationWorkflowJira resource with the given unique name, props, and options.
+        > This resource requires the API token scopes **Read settings** (`settings.read`) and **Write settings** (`settings.write`)
+
+        > This resource requires the OAuth scopes **Read settings** (`settings:objects:read`) and **Write settings** (`settings:objects:write`)
+
+        ## Limitations
+
+        > **Warning** If a resource is created using an API token or without setting `DYNATRACE_HTTP_OAUTH_PREFERENCE=true` (when both are used), the settings object's owner will remain empty.
+
+        An empty owner implies:
+        - The settings object becomes public, allowing other users with settings permissions to read and modify it.
+        - Changing the settings object's permissions will have no effect, meaning the `SettingsPermissions` resource can't alter its access.
+
+        When a settings object is created using platform credentials:
+        - The owner is set to the owner of the OAuth client or platform token.
+        - By default, the settings object is private; only the owner can read and modify it.
+        - Access modifiers can be managed using the `SettingsPermissions` resource.
+
+        We recommend using platform credentials to ensure a correct setup.
+        In case an API token is needed, we recommend setting `DYNATRACE_HTTP_OAUTH_PREFERENCE=true`.
+
+        ## Dynatrace Documentation
+
+        - Jira for Workflows - https://docs.dynatrace.com/docs/platform-modules/automations/workflows/actions/jira
+
+        - Settings API - https://www.dynatrace.com/support/help/dynatrace-api/environment-api/settings (schemaId: `app:dynatrace.jira:connection`)
+
+        ## Export Example Usage
+
+        - `terraform-provider-dynatrace -export AutomationWorkflowJira` downloads existing Jira for Workflows configuration
+
+        The full documentation of the export feature is available [here](https://dt-url.net/h203qmc).
+
+
         :param str resource_name: The name of the resource.
         :param AutomationWorkflowJiraArgs args: The arguments to use to populate this resource's properties.
         :param pulumi.ResourceOptions opts: Options for the resource.

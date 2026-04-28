@@ -20,40 +20,6 @@ namespace Pulumiverse.Dynatrace
     /// - Exclude IP addresses, browsers, bots, and spiders from monitoring for web applications - https://docs.dynatrace.com/docs/shortlink/rum-exclude-bots
     /// 
     /// - Settings API - https://www.dynatrace.com/support/help/dynatrace-api/environment-api/settings (schemaId: `builtin:rum.web.ipaddress-exclusion`)
-    /// 
-    /// ## Resource Example Usage
-    /// 
-    /// ```csharp
-    /// using System.Collections.Generic;
-    /// using System.Linq;
-    /// using Pulumi;
-    /// using Dynatrace = Pulumiverse.Dynatrace;
-    /// 
-    /// return await Deployment.RunAsync(() =&gt; 
-    /// {
-    ///     var _name_ = new Dynatrace.WebAppIpAddressExclusion("#name#", new()
-    ///     {
-    ///         ApplicationId = "APPLICATION-1234567890000000",
-    ///         IpAddressExclusionInclude = false,
-    ///         IpExclusionList = new Dynatrace.Inputs.WebAppIpAddressExclusionIpExclusionListArgs
-    ///         {
-    ///             IpExclusions = new[]
-    ///             {
-    ///                 new Dynatrace.Inputs.WebAppIpAddressExclusionIpExclusionListIpExclusionArgs
-    ///                 {
-    ///                     Ip = "192.168.1.5",
-    ///                 },
-    ///                 new Dynatrace.Inputs.WebAppIpAddressExclusionIpExclusionListIpExclusionArgs
-    ///                 {
-    ///                     Ip = "10.0.0.1",
-    ///                     IpTo = "10.0.0.5",
-    ///                 },
-    ///             },
-    ///         },
-    ///     });
-    /// 
-    /// });
-    /// ```
     /// </summary>
     [DynatraceResourceType("dynatrace:index/webAppIpAddressExclusion:WebAppIpAddressExclusion")]
     public partial class WebAppIpAddressExclusion : global::Pulumi.CustomResource

@@ -10,6 +10,24 @@ using Pulumi;
 
 namespace Pulumiverse.Dynatrace
 {
+    /// <summary>
+    /// &gt; **Warning** This resource has been deprecated in favor of OpenPipeline.
+    /// Please migrate your OpenPipeline configurations and use `dynatrace_openpipeline_v2_*` instead.
+    /// 
+    /// &gt; This resource requires the API token scopes **Read settings** (`settings.read`) and **Write settings** (`settings.write`)
+    /// 
+    /// ## Dynatrace Documentation
+    /// 
+    /// - Business event bucket assignment - https://www.dynatrace.com/support/help/platform-modules/business-analytics/ba-bucket-assignment
+    /// 
+    /// - Settings API - https://www.dynatrace.com/support/help/dynatrace-api/environment-api/settings (schemaId: `builtin:bizevents-processing-buckets.rule`)
+    /// 
+    /// ## Export Example Usage
+    /// 
+    /// - `terraform-provider-dynatrace -export dynatrace.BusinessEventsBuckets` downloads all existing business event bucket assignments
+    /// 
+    /// The full documentation of the export feature is available [here](https://dt-url.net/h203qmc).
+    /// </summary>
     [DynatraceResourceType("dynatrace:index/businessEventsBuckets:BusinessEventsBuckets")]
     public partial class BusinessEventsBuckets : global::Pulumi.CustomResource
     {

@@ -30,6 +30,7 @@ class MetricEventsArgs:
                  legacy_id: Optional[pulumi.Input[_builtins.str]] = None):
         """
         The set of arguments for constructing a MetricEvents resource.
+
         :param pulumi.Input[_builtins.bool] enabled: This setting is enabled (`true`) or disabled (`false`)
         :param pulumi.Input['MetricEventsEventTemplateArgs'] event_template: Event template
         :param pulumi.Input['MetricEventsModelPropertiesArgs'] model_properties: Monitoring strategy
@@ -145,6 +146,7 @@ class _MetricEventsState:
                  summary: Optional[pulumi.Input[_builtins.str]] = None):
         """
         Input properties used for looking up and filtering MetricEvents resources.
+
         :param pulumi.Input[_builtins.bool] enabled: This setting is enabled (`true`) or disabled (`false`)
         :param pulumi.Input[_builtins.str] event_entity_dimension_key: Controls the preferred entity type used for triggered events.
         :param pulumi.Input['MetricEventsEventTemplateArgs'] event_template: Event template
@@ -268,7 +270,21 @@ class MetricEvents(pulumi.CustomResource):
                  summary: Optional[pulumi.Input[_builtins.str]] = None,
                  __props__=None):
         """
-        Create a MetricEvents resource with the given unique name, props, and options.
+        > This resource requires the API token scopes **Read settings** (`settings.read`) and **Write settings** (`settings.write`)
+
+        ## Dynatrace Documentation
+
+        - Metric events for alerting - https://www.dynatrace.com/support/help/how-to-use-dynatrace/problem-detection-and-analysis/problem-detection/metric-events-for-alerting
+
+        - Settings API - https://www.dynatrace.com/support/help/dynatrace-api/environment-api/settings (schemaId: `builtin:anomaly-detection.metric-events`)
+
+        ## Export Example Usage
+
+        - `terraform-provider-dynatrace -export MetricEvents` downloads all existing custom metric event configuration
+
+        The full documentation of the export feature is available [here](https://dt-url.net/h203qmc).
+
+
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[_builtins.bool] enabled: This setting is enabled (`true`) or disabled (`false`)
@@ -286,7 +302,21 @@ class MetricEvents(pulumi.CustomResource):
                  args: MetricEventsArgs,
                  opts: Optional[pulumi.ResourceOptions] = None):
         """
-        Create a MetricEvents resource with the given unique name, props, and options.
+        > This resource requires the API token scopes **Read settings** (`settings.read`) and **Write settings** (`settings.write`)
+
+        ## Dynatrace Documentation
+
+        - Metric events for alerting - https://www.dynatrace.com/support/help/how-to-use-dynatrace/problem-detection-and-analysis/problem-detection/metric-events-for-alerting
+
+        - Settings API - https://www.dynatrace.com/support/help/dynatrace-api/environment-api/settings (schemaId: `builtin:anomaly-detection.metric-events`)
+
+        ## Export Example Usage
+
+        - `terraform-provider-dynatrace -export MetricEvents` downloads all existing custom metric event configuration
+
+        The full documentation of the export feature is available [here](https://dt-url.net/h203qmc).
+
+
         :param str resource_name: The name of the resource.
         :param MetricEventsArgs args: The arguments to use to populate this resource's properties.
         :param pulumi.ResourceOptions opts: Options for the resource.

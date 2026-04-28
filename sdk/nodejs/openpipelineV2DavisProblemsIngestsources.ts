@@ -6,6 +6,139 @@ import * as inputs from "./types/input";
 import * as outputs from "./types/output";
 import * as utilities from "./utilities";
 
+/**
+ * > This resource requires the API token scopes **Read settings** (`settings.read`) and **Write settings** (`settings.write`)
+ *
+ * > This resource requires the OAuth scopes **Read settings** (`settings:objects:read`) and **Write settings** (`settings:objects:write`)
+ *
+ * ## Limitations
+ *
+ * > **Warning** If a resource is created using an API token or without setting `DYNATRACE_HTTP_OAUTH_PREFERENCE=true` (when both are used), the settings object's owner will remain empty.
+ *
+ * An empty owner implies:
+ * - The settings object becomes public, allowing other users with settings permissions to read and modify it.
+ * - Changing the settings object's permissions will have no effect, meaning the `dynatrace.SettingsPermissions` resource can't alter its access.
+ *
+ * When a settings object is created using platform credentials:
+ * - The owner is set to the owner of the OAuth client or platform token.
+ * - By default, the settings object is private; only the owner can read and modify it.
+ * - Access modifiers can be managed using the `dynatrace.SettingsPermissions` resource.
+ *
+ * We recommend using platform credentials to ensure a correct setup.
+ * In case an API token is needed, we recommend setting `DYNATRACE_HTTP_OAUTH_PREFERENCE=true`.
+ *
+ * ## Dynatrace Documentation
+ *
+ * - OpenPipeline - https://docs.dynatrace.com/docs/platform/openpipeline
+ *
+ * ## Export Example Usage
+ *
+ * - `terraform-provider-dynatrace -export dynatrace.OpenpipelineV2DavisProblemsIngestsources` downloads all existing OpenPipeline definitions for davis problems ingest sources
+ *
+ * The full documentation of the export feature is available [here](https://dt-url.net/h203qmc).
+ *
+ * ## Resource Example Usage
+ *
+ * ```typescript
+ * import * as pulumi from "@pulumi/pulumi";
+ * import * as dynatrace from "@pulumiverse/dynatrace";
+ *
+ * const maximal_source = new dynatrace.OpenpipelineV2DavisProblemsIngestsources("maximal-source", {
+ *     enabled: true,
+ *     displayName: "max-ingestsource",
+ *     pathSegment: "processor.ingestsource.path.max.tf.#name#",
+ *     sourceType: "http",
+ *     staticRouting: {
+ *         pipelineType: "builtin",
+ *         builtinPipelineId: "default",
+ *     },
+ *     defaultBucket: "default_events",
+ *     metadataList: {
+ *         metadatas: [{
+ *             entryKey: "environment",
+ *             entryValue: "production",
+ *         }],
+ *     },
+ *     processing: {
+ *         processors: {
+ *             processors: [
+ *                 {
+ *                     enabled: true,
+ *                     type: "drop",
+ *                     id: "processor_Drop_unnecessary_records_1234",
+ *                     description: "Drop unnecessary records",
+ *                     matcher: "not matchesPhrase(record.name, \"Error\") and not matchesPhrase(record.name, \"Warning\")",
+ *                 },
+ *                 {
+ *                     enabled: true,
+ *                     type: "fieldsAdd",
+ *                     id: "processor_Add_error_flag_6132",
+ *                     description: "Add error flag",
+ *                     matcher: "matchesPhrase(record.name, \"Error\")",
+ *                     sampleData: `{
+ *   "record.name": "Error record" 
+ * }`,
+ *                     fieldsAdd: {
+ *                         fields: {
+ *                             fields: [{
+ *                                 name: "is_error",
+ *                                 value: "true",
+ *                             }],
+ *                         },
+ *                     },
+ *                 },
+ *                 {
+ *                     enabled: true,
+ *                     type: "fieldsRemove",
+ *                     id: "processor_Remove_details_field_8919",
+ *                     description: "Remove details field",
+ *                     matcher: "isNotNull(record.details)",
+ *                     sampleData: `{
+ *   "record.name": "Error",
+ *   "record.details": "some record details"
+ * }`,
+ *                     fieldsRemove: {
+ *                         fields: ["record.details"],
+ *                     },
+ *                 },
+ *                 {
+ *                     enabled: true,
+ *                     type: "fieldsRename",
+ *                     id: "processor_Rename_name_to_title_5347",
+ *                     description: "Rename name to title",
+ *                     matcher: "true",
+ *                     sampleData: `{
+ *   "record.name": "Error"
+ * }`,
+ *                     fieldsRename: {
+ *                         fields: {
+ *                             fields: [{
+ *                                 fromName: "record.name",
+ *                                 toName: "record.title",
+ *                             }],
+ *                         },
+ *                     },
+ *                 },
+ *                 {
+ *                     enabled: true,
+ *                     type: "dql",
+ *                     id: "processor_Combine_title_and_summary_to_name_1244",
+ *                     description: "Combine title and summary to name",
+ *                     sampleData: `{
+ *   "record.title": "Error",
+ *   "record.summary": "Request failed"
+ * }`,
+ *                     matcher: "true",
+ *                     dql: {
+ *                         script: "fieldsAdd record.name = concat(record.title, \" - \", record.summary)",
+ *                     },
+ *                 },
+ *             ],
+ *         },
+ *     },
+ * });
+ * ```
+ */
 export class OpenpipelineV2DavisProblemsIngestsources extends pulumi.CustomResource {
     /**
      * Get an existing OpenpipelineV2DavisProblemsIngestsources resource's state with the given name, ID, and optional extra
@@ -47,13 +180,25 @@ export class OpenpipelineV2DavisProblemsIngestsources extends pulumi.CustomResou
      */
     declare public readonly enabled: pulumi.Output<boolean>;
     /**
+     * Ingest source metadata list
+     */
+    declare public readonly metadataList: pulumi.Output<outputs.OpenpipelineV2DavisProblemsIngestsourcesMetadataList | undefined>;
+    /**
      * Endpoint segment
      */
-    declare public readonly pathSegment: pulumi.Output<string>;
+    declare public readonly pathSegment: pulumi.Output<string | undefined>;
     /**
      * Processing stage
      */
-    declare public readonly processing: pulumi.Output<outputs.OpenpipelineV2DavisProblemsIngestsourcesProcessing>;
+    declare public readonly processing: pulumi.Output<outputs.OpenpipelineV2DavisProblemsIngestsourcesProcessing | undefined>;
+    /**
+     * Source
+     */
+    declare public readonly source: pulumi.Output<string | undefined>;
+    /**
+     * Source Type. Possible Values: `extension`, `http`
+     */
+    declare public readonly sourceType: pulumi.Output<string | undefined>;
     /**
      * Static routing of endpoint
      */
@@ -75,8 +220,11 @@ export class OpenpipelineV2DavisProblemsIngestsources extends pulumi.CustomResou
             resourceInputs["defaultBucket"] = state?.defaultBucket;
             resourceInputs["displayName"] = state?.displayName;
             resourceInputs["enabled"] = state?.enabled;
+            resourceInputs["metadataList"] = state?.metadataList;
             resourceInputs["pathSegment"] = state?.pathSegment;
             resourceInputs["processing"] = state?.processing;
+            resourceInputs["source"] = state?.source;
+            resourceInputs["sourceType"] = state?.sourceType;
             resourceInputs["staticRouting"] = state?.staticRouting;
         } else {
             const args = argsOrState as OpenpipelineV2DavisProblemsIngestsourcesArgs | undefined;
@@ -86,17 +234,14 @@ export class OpenpipelineV2DavisProblemsIngestsources extends pulumi.CustomResou
             if (args?.enabled === undefined && !opts.urn) {
                 throw new Error("Missing required property 'enabled'");
             }
-            if (args?.pathSegment === undefined && !opts.urn) {
-                throw new Error("Missing required property 'pathSegment'");
-            }
-            if (args?.processing === undefined && !opts.urn) {
-                throw new Error("Missing required property 'processing'");
-            }
             resourceInputs["defaultBucket"] = args?.defaultBucket;
             resourceInputs["displayName"] = args?.displayName;
             resourceInputs["enabled"] = args?.enabled;
+            resourceInputs["metadataList"] = args?.metadataList;
             resourceInputs["pathSegment"] = args?.pathSegment;
             resourceInputs["processing"] = args?.processing;
+            resourceInputs["source"] = args?.source;
+            resourceInputs["sourceType"] = args?.sourceType;
             resourceInputs["staticRouting"] = args?.staticRouting;
         }
         opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts);
@@ -121,6 +266,10 @@ export interface OpenpipelineV2DavisProblemsIngestsourcesState {
      */
     enabled?: pulumi.Input<boolean>;
     /**
+     * Ingest source metadata list
+     */
+    metadataList?: pulumi.Input<inputs.OpenpipelineV2DavisProblemsIngestsourcesMetadataList>;
+    /**
      * Endpoint segment
      */
     pathSegment?: pulumi.Input<string>;
@@ -128,6 +277,14 @@ export interface OpenpipelineV2DavisProblemsIngestsourcesState {
      * Processing stage
      */
     processing?: pulumi.Input<inputs.OpenpipelineV2DavisProblemsIngestsourcesProcessing>;
+    /**
+     * Source
+     */
+    source?: pulumi.Input<string>;
+    /**
+     * Source Type. Possible Values: `extension`, `http`
+     */
+    sourceType?: pulumi.Input<string>;
     /**
      * Static routing of endpoint
      */
@@ -151,13 +308,25 @@ export interface OpenpipelineV2DavisProblemsIngestsourcesArgs {
      */
     enabled: pulumi.Input<boolean>;
     /**
+     * Ingest source metadata list
+     */
+    metadataList?: pulumi.Input<inputs.OpenpipelineV2DavisProblemsIngestsourcesMetadataList>;
+    /**
      * Endpoint segment
      */
-    pathSegment: pulumi.Input<string>;
+    pathSegment?: pulumi.Input<string>;
     /**
      * Processing stage
      */
-    processing: pulumi.Input<inputs.OpenpipelineV2DavisProblemsIngestsourcesProcessing>;
+    processing?: pulumi.Input<inputs.OpenpipelineV2DavisProblemsIngestsourcesProcessing>;
+    /**
+     * Source
+     */
+    source?: pulumi.Input<string>;
+    /**
+     * Source Type. Possible Values: `extension`, `http`
+     */
+    sourceType?: pulumi.Input<string>;
     /**
      * Static routing of endpoint
      */

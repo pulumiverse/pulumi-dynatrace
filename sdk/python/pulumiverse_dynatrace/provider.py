@@ -38,6 +38,7 @@ class ProviderArgs:
                  platform_token: Optional[pulumi.Input[_builtins.str]] = None):
         """
         The set of arguments for constructing a Provider resource.
+
         :param pulumi.Input[_builtins.str] automation_env_url: The URL of the Dynatrace Environment with Platform capabilities turned on (`https://#####.apps.dynatrace.com)`. This is optional configuration when `dt_env_url` already specifies a SaaS Environment like `https://#####.live.dynatrace.com` or `https://#####.apps.dynatrace.com`
         :param pulumi.Input[_builtins.str] automation_token_url: The URL that provides the Bearer tokens when accessing the Automation REST API. This is optional configuration when `dt_env_url` already specifies a SaaS Environment like `https://#####.live.dynatrace.com` or `https://#####.apps.dynatrace.com`
         :param pulumi.Input[_builtins.str] platform_token: A Dynatrace Platform Token. Specifying such a token allows for easy authentication against Platform resources. In such a case it supersedes `automation_client_id`, `automation_client_secret`, `automation_token_url` and `automation_env_url`
@@ -278,6 +279,7 @@ class Provider(pulumi.ProviderResource):
         construction to achieve fine-grained programmatic control over provider settings. See the
         [documentation](https://www.pulumi.com/docs/reference/programming-model/#providers) for more information.
 
+
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[_builtins.str] automation_env_url: The URL of the Dynatrace Environment with Platform capabilities turned on (`https://#####.apps.dynatrace.com)`. This is optional configuration when `dt_env_url` already specifies a SaaS Environment like `https://#####.live.dynatrace.com` or `https://#####.apps.dynatrace.com`
@@ -295,6 +297,7 @@ class Provider(pulumi.ProviderResource):
         settings, however an explicit `Provider` instance may be created and passed during resource
         construction to achieve fine-grained programmatic control over provider settings. See the
         [documentation](https://www.pulumi.com/docs/reference/programming-model/#providers) for more information.
+
 
         :param str resource_name: The name of the resource.
         :param ProviderArgs args: The arguments to use to populate this resource's properties.

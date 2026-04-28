@@ -25,6 +25,7 @@ class DashboardsPresetsArgs:
                  dashboard_presets_list: Optional[pulumi.Input['DashboardsPresetsDashboardPresetsListArgs']] = None):
         """
         The set of arguments for constructing a DashboardsPresets resource.
+
         :param pulumi.Input[_builtins.bool] enable_dashboard_presets: Dashboard presets are visible to all users by default. For a pristine environment you may disable them entirely or opt to manually limit visibility to selected user groups.
         :param pulumi.Input['DashboardsPresetsDashboardPresetsListArgs'] dashboard_presets_list: Show selected preset to respective user group only.
         """
@@ -64,6 +65,7 @@ class _DashboardsPresetsState:
                  enable_dashboard_presets: Optional[pulumi.Input[_builtins.bool]] = None):
         """
         Input properties used for looking up and filtering DashboardsPresets resources.
+
         :param pulumi.Input['DashboardsPresetsDashboardPresetsListArgs'] dashboard_presets_list: Show selected preset to respective user group only.
         :param pulumi.Input[_builtins.bool] enable_dashboard_presets: Dashboard presets are visible to all users by default. For a pristine environment you may disable them entirely or opt to manually limit visibility to selected user groups.
         """
@@ -107,7 +109,21 @@ class DashboardsPresets(pulumi.CustomResource):
                  enable_dashboard_presets: Optional[pulumi.Input[_builtins.bool]] = None,
                  __props__=None):
         """
-        Create a DashboardsPresets resource with the given unique name, props, and options.
+        > This resource requires the API token scopes **Read settings** (`settings.read`) and **Write settings** (`settings.write`)
+
+        ## Dynatrace Documentation
+
+        - Preset Dynatrace dashboards - https://www.dynatrace.com/support/help/observe-and-explore/dashboards/dashboards/dashboards-preset
+
+        - Settings API - https://www.dynatrace.com/support/help/dynatrace-api/environment-api/settings (schemaId: `builtin:dashboards.presets`)
+
+        ## Export Example Usage
+
+        - `terraform-provider-dynatrace -export DashboardsPresets` downloads all existing dashboard preset settings
+
+        The full documentation of the export feature is available [here](https://dt-url.net/h203qmc).
+
+
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[Union['DashboardsPresetsDashboardPresetsListArgs', 'DashboardsPresetsDashboardPresetsListArgsDict']] dashboard_presets_list: Show selected preset to respective user group only.
@@ -120,7 +136,21 @@ class DashboardsPresets(pulumi.CustomResource):
                  args: DashboardsPresetsArgs,
                  opts: Optional[pulumi.ResourceOptions] = None):
         """
-        Create a DashboardsPresets resource with the given unique name, props, and options.
+        > This resource requires the API token scopes **Read settings** (`settings.read`) and **Write settings** (`settings.write`)
+
+        ## Dynatrace Documentation
+
+        - Preset Dynatrace dashboards - https://www.dynatrace.com/support/help/observe-and-explore/dashboards/dashboards/dashboards-preset
+
+        - Settings API - https://www.dynatrace.com/support/help/dynatrace-api/environment-api/settings (schemaId: `builtin:dashboards.presets`)
+
+        ## Export Example Usage
+
+        - `terraform-provider-dynatrace -export DashboardsPresets` downloads all existing dashboard preset settings
+
+        The full documentation of the export feature is available [here](https://dt-url.net/h203qmc).
+
+
         :param str resource_name: The name of the resource.
         :param DashboardsPresetsArgs args: The arguments to use to populate this resource's properties.
         :param pulumi.ResourceOptions opts: Options for the resource.

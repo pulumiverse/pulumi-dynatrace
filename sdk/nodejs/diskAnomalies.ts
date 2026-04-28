@@ -6,6 +6,23 @@ import * as inputs from "./types/input";
 import * as outputs from "./types/output";
 import * as utilities from "./utilities";
 
+/**
+ * !> This resource is utilizing an older API endpoint, please use dynatrace.DiskAnomalyRules instead.
+ *
+ * > This resource requires the API token scopes **Read configuration** (`ReadConfig`) and **Write configuration** (`WriteConfig`)
+ *
+ * ## Dynatrace Documentation
+ *
+ * - Adjust the sensitivity of anomaly detection for infrastructure - https://www.dynatrace.com/support/help/how-to-use-dynatrace/problem-detection-and-analysis/problem-detection/adjust-sensitivity-anomaly-detection/adjust-sensitivity-infastructure
+ *
+ * - Anomaly detection API - Disk events - https://www.dynatrace.com/support/help/dynatrace-api/configuration-api/anomaly-detection-api/anomaly-detection-api-disk-events
+ *
+ * ## Export Example Usage
+ *
+ * - `terraform-provider-dynatrace -export dynatrace.DiskAnomalies` downloads all existing disk anomaly detection configuration
+ *
+ * The full documentation of the export feature is available [here](https://dt-url.net/h203qmc).
+ */
 export class DiskAnomalies extends pulumi.CustomResource {
     /**
      * Get an existing DiskAnomalies resource's state with the given name, ID, and optional extra

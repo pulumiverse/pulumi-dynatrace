@@ -30,7 +30,7 @@ type IamPolicyBindingsV2 struct {
 	Account pulumi.StringPtrOutput `pulumi:"account"`
 	// The ID of the environment (https://\n\n.live.dynatrace.com). The attribute `policies` must contain ONLY policies defined for that environment.
 	Environment pulumi.StringPtrOutput `pulumi:"environment"`
-	// The name of the policy
+	// The UUID of the group to which the policy applies
 	Group pulumi.StringOutput `pulumi:"group"`
 	// A list of Policies (ID and parameters/metadata) referring to policies bound to that group. It's not possible to mix policies here that are defined for different scopes (different accounts or environments) than specified via attributes `account` or `environment`.
 	Policies IamPolicyBindingsV2PolicyArrayOutput `pulumi:"policies"`
@@ -73,7 +73,7 @@ type iamPolicyBindingsV2State struct {
 	Account *string `pulumi:"account"`
 	// The ID of the environment (https://\n\n.live.dynatrace.com). The attribute `policies` must contain ONLY policies defined for that environment.
 	Environment *string `pulumi:"environment"`
-	// The name of the policy
+	// The UUID of the group to which the policy applies
 	Group *string `pulumi:"group"`
 	// A list of Policies (ID and parameters/metadata) referring to policies bound to that group. It's not possible to mix policies here that are defined for different scopes (different accounts or environments) than specified via attributes `account` or `environment`.
 	Policies []IamPolicyBindingsV2Policy `pulumi:"policies"`
@@ -84,7 +84,7 @@ type IamPolicyBindingsV2State struct {
 	Account pulumi.StringPtrInput
 	// The ID of the environment (https://\n\n.live.dynatrace.com). The attribute `policies` must contain ONLY policies defined for that environment.
 	Environment pulumi.StringPtrInput
-	// The name of the policy
+	// The UUID of the group to which the policy applies
 	Group pulumi.StringPtrInput
 	// A list of Policies (ID and parameters/metadata) referring to policies bound to that group. It's not possible to mix policies here that are defined for different scopes (different accounts or environments) than specified via attributes `account` or `environment`.
 	Policies IamPolicyBindingsV2PolicyArrayInput
@@ -99,7 +99,7 @@ type iamPolicyBindingsV2Args struct {
 	Account *string `pulumi:"account"`
 	// The ID of the environment (https://\n\n.live.dynatrace.com). The attribute `policies` must contain ONLY policies defined for that environment.
 	Environment *string `pulumi:"environment"`
-	// The name of the policy
+	// The UUID of the group to which the policy applies
 	Group string `pulumi:"group"`
 	// A list of Policies (ID and parameters/metadata) referring to policies bound to that group. It's not possible to mix policies here that are defined for different scopes (different accounts or environments) than specified via attributes `account` or `environment`.
 	Policies []IamPolicyBindingsV2Policy `pulumi:"policies"`
@@ -111,7 +111,7 @@ type IamPolicyBindingsV2Args struct {
 	Account pulumi.StringPtrInput
 	// The ID of the environment (https://\n\n.live.dynatrace.com). The attribute `policies` must contain ONLY policies defined for that environment.
 	Environment pulumi.StringPtrInput
-	// The name of the policy
+	// The UUID of the group to which the policy applies
 	Group pulumi.StringInput
 	// A list of Policies (ID and parameters/metadata) referring to policies bound to that group. It's not possible to mix policies here that are defined for different scopes (different accounts or environments) than specified via attributes `account` or `environment`.
 	Policies IamPolicyBindingsV2PolicyArrayInput
@@ -214,7 +214,7 @@ func (o IamPolicyBindingsV2Output) Environment() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v *IamPolicyBindingsV2) pulumi.StringPtrOutput { return v.Environment }).(pulumi.StringPtrOutput)
 }
 
-// The name of the policy
+// The UUID of the group to which the policy applies
 func (o IamPolicyBindingsV2Output) Group() pulumi.StringOutput {
 	return o.ApplyT(func(v *IamPolicyBindingsV2) pulumi.StringOutput { return v.Group }).(pulumi.StringOutput)
 }

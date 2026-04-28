@@ -20,13 +20,13 @@ namespace Pulumiverse.Dynatrace.Inputs
         public Input<Inputs.HostAnomaliesV2NetworkNetworkDroppedPacketsDetectionCustomThresholdsArgs>? CustomThresholds { get; set; }
 
         /// <summary>
-        /// Detection mode for high number of dropped packets
+        /// Detection mode for high number of dropped packets. Possible Values: `Auto`, `Custom`
         /// </summary>
         [Input("detectionMode")]
         public Input<string>? DetectionMode { get; set; }
 
         /// <summary>
-        /// Detect high number of dropped packets
+        /// This setting is enabled (`True`) or disabled (`False`)
         /// </summary>
         [Input("enabled", required: true)]
         public Input<bool> Enabled { get; set; } = null!;

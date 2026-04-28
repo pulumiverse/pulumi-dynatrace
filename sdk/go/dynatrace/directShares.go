@@ -176,14 +176,15 @@ import (
 //				return err
 //			}
 //			json0 := string(tmpJSON0)
-//			thisDocument, err := dynatrace.NewDocument(ctx, "thisDocument", &dynatrace.DocumentArgs{
+//			thisDocument, err := dynatrace.NewDocument(ctx, "this", &dynatrace.DocumentArgs{
 //				Type:    pulumi.String("dashboard"),
+//				Name:    pulumi.String("#name#"),
 //				Content: pulumi.String(json0),
 //			})
 //			if err != nil {
 //				return err
 //			}
-//			_, err = dynatrace.NewDirectShares(ctx, "thisDirectShares", &dynatrace.DirectSharesArgs{
+//			_, err = dynatrace.NewDirectShares(ctx, "this", &dynatrace.DirectSharesArgs{
 //				DocumentId: thisDocument.ID(),
 //				Access:     pulumi.String("read-write"),
 //				Recipients: &dynatrace.DirectSharesRecipientsArgs{

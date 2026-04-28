@@ -11,6 +11,75 @@ import (
 	"github.com/pulumiverse/pulumi-dynatrace/sdk/go/dynatrace/internal"
 )
 
+// !> This resource API endpoint has been deprecated, please migrate your OpenPipeline configurations and use `dynatrace_openpipeline_v2_davis_problems_*` instead.
+//
+// !> Deploying an OpenPipeline configuration will overwrite the existing one of the same kind, causing any manual changes made in the web UI or other configurations managed by Terraform or Monaco to be lost. Ensure all configurations are defined within a single Terraform or Monaco configuration to prevent data loss.
+//
+// > **Dynatrace SaaS only**
+//
+// > To utilize this resource, please define the environment variables `DT_CLIENT_ID`, `DT_CLIENT_SECRET`, `DT_ACCOUNT_ID` with an OAuth client including the following permissions: **View OpenPipeline configurations** (`openpipeline:configurations:read`), and **Edit OpenPipeline configurations** (`openpipeline:configurations:write`).
+//
+// ## Dynatrace Documentation
+//
+// - OpenPipeline - https://docs.dynatrace.com/docs/platform/openpipeline
+//
+// ## Export Example Usage
+//
+// - `terraform-provider-dynatrace -export OpenpipelineDavisProblems` downloads all existing OpenPipeline definitions for Davis problems
+//
+// The full documentation of the export feature is available [here](https://dt-url.net/h203qmc).
+//
+// ## Resource Example Usage
+//
+// ```go
+// package main
+//
+// import (
+//
+//	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//	"github.com/pulumiverse/pulumi-dynatrace/sdk/go/dynatrace"
+//
+// )
+//
+//	func main() {
+//		pulumi.Run(func(ctx *pulumi.Context) error {
+//			_, err := dynatrace.NewOpenpipelineDavisProblems(ctx, "davis_problems", &dynatrace.OpenpipelineDavisProblemsArgs{
+//				Pipelines: &dynatrace.OpenpipelineDavisProblemsPipelinesArgs{
+//					Pipelines: dynatrace.OpenpipelineDavisProblemsPipelinesPipelineArray{
+//						&dynatrace.OpenpipelineDavisProblemsPipelinesPipelineArgs{
+//							Enabled:     pulumi.Bool(true),
+//							DisplayName: pulumi.String("#name#"),
+//							Id:          pulumi.String("pipeline_Custom_davis_problems_#name#"),
+//							Processing: &dynatrace.OpenpipelineDavisProblemsPipelinesPipelineProcessingArgs{
+//								Processors: dynatrace.OpenpipelineDavisProblemsPipelinesPipelineProcessingProcessorArray{
+//									&dynatrace.OpenpipelineDavisProblemsPipelinesPipelineProcessingProcessorArgs{
+//										FieldsRenameProcessor: &dynatrace.OpenpipelineDavisProblemsPipelinesPipelineProcessingProcessorFieldsRenameProcessorArgs{
+//											Description: pulumi.String("#name#"),
+//											Enabled:     pulumi.Bool(true),
+//											Id:          pulumi.String("processor_Rename_problem_ID_#name#"),
+//											Matcher:     pulumi.String("true"),
+//											Fields: dynatrace.OpenpipelineDavisProblemsPipelinesPipelineProcessingProcessorFieldsRenameProcessorFieldArray{
+//												&dynatrace.OpenpipelineDavisProblemsPipelinesPipelineProcessingProcessorFieldsRenameProcessorFieldArgs{
+//													FromName: pulumi.String("problem_id"),
+//													ToName:   pulumi.String("problemId"),
+//												},
+//											},
+//										},
+//									},
+//								},
+//							},
+//						},
+//					},
+//				},
+//			})
+//			if err != nil {
+//				return err
+//			}
+//			return nil
+//		})
+//	}
+//
+// ```
 type OpenpipelineDavisProblems struct {
 	pulumi.CustomResourceState
 

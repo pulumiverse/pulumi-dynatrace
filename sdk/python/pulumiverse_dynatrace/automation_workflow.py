@@ -31,6 +31,7 @@ class AutomationWorkflowArgs:
                  type: Optional[pulumi.Input[_builtins.str]] = None):
         """
         The set of arguments for constructing a AutomationWorkflow resource.
+
         :param pulumi.Input['AutomationWorkflowTasksArgs'] tasks: The tasks to run for every execution of this workflow
         :param pulumi.Input[_builtins.str] title: The title / name of the workflow
         :param pulumi.Input[_builtins.str] actor: The user context the executions of the workflow will happen with
@@ -165,6 +166,7 @@ class _AutomationWorkflowState:
                  type: Optional[pulumi.Input[_builtins.str]] = None):
         """
         Input properties used for looking up and filtering AutomationWorkflow resources.
+
         :param pulumi.Input[_builtins.str] actor: The user context the executions of the workflow will happen with
         :param pulumi.Input[_builtins.str] description: An optional description for the workflow
         :param pulumi.Input[_builtins.str] owner: The ID of the owner of this workflow
@@ -321,7 +323,7 @@ class AutomationWorkflow(pulumi.CustomResource):
         import json
         import pulumiverse_dynatrace as dynatrace
 
-        sample_worklow_tf = dynatrace.AutomationWorkflow("sampleWorklowTF",
+        sample_worklow_tf = dynatrace.AutomationWorkflow("Sample_Worklow_TF",
             description="Desc",
             actor="########-####-####-####-############",
             title="Sample Worklow TF1",
@@ -420,12 +422,13 @@ class AutomationWorkflow(pulumi.CustomResource):
                                 "asdf": "",
                             },
                             "on_problem_close": False,
-                            "types": ["CUSTOM_ANNOTATION"],
+                            "custom_filter": "matchesPhrase(custom.event.type, \\"DEPLOY\\")",
                         },
                     },
                 },
             })
         ```
+
 
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
@@ -462,7 +465,7 @@ class AutomationWorkflow(pulumi.CustomResource):
         import json
         import pulumiverse_dynatrace as dynatrace
 
-        sample_worklow_tf = dynatrace.AutomationWorkflow("sampleWorklowTF",
+        sample_worklow_tf = dynatrace.AutomationWorkflow("Sample_Worklow_TF",
             description="Desc",
             actor="########-####-####-####-############",
             title="Sample Worklow TF1",
@@ -561,12 +564,13 @@ class AutomationWorkflow(pulumi.CustomResource):
                                 "asdf": "",
                             },
                             "on_problem_close": False,
-                            "types": ["CUSTOM_ANNOTATION"],
+                            "custom_filter": "matchesPhrase(custom.event.type, \\"DEPLOY\\")",
                         },
                     },
                 },
             })
         ```
+
 
         :param str resource_name: The name of the resource.
         :param AutomationWorkflowArgs args: The arguments to use to populate this resource's properties.

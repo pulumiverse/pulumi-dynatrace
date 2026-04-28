@@ -10,6 +10,177 @@ using Pulumi;
 
 namespace Pulumiverse.Dynatrace
 {
+    /// <summary>
+    /// &gt; This resource requires the API token scopes **Read settings** (`settings.read`) and **Write settings** (`settings.write`)
+    /// 
+    /// &gt; This resource requires the OAuth scopes **Read settings** (`settings:objects:read`) and **Write settings** (`settings:objects:write`)
+    /// 
+    /// ## Limitations
+    /// 
+    /// &gt; **Warning** If a resource is created using an API token or without setting `DYNATRACE_HTTP_OAUTH_PREFERENCE=true` (when both are used), the settings object's owner will remain empty.
+    /// 
+    /// An empty owner implies:
+    /// - The settings object becomes public, allowing other users with settings permissions to read and modify it.
+    /// - Changing the settings object's permissions will have no effect, meaning the `dynatrace.SettingsPermissions` resource can't alter its access.
+    /// 
+    /// When a settings object is created using platform credentials:
+    /// - The owner is set to the owner of the OAuth client or platform token.
+    /// - By default, the settings object is private; only the owner can read and modify it.
+    /// - Access modifiers can be managed using the `dynatrace.SettingsPermissions` resource.
+    /// 
+    /// We recommend using platform credentials to ensure a correct setup.
+    /// In case an API token is needed, we recommend setting `DYNATRACE_HTTP_OAUTH_PREFERENCE=true`.
+    /// 
+    /// ## Dynatrace Documentation
+    /// 
+    /// - OpenPipeline - https://docs.dynatrace.com/docs/platform/openpipeline
+    /// 
+    /// ## Export Example Usage
+    /// 
+    /// - `terraform-provider-dynatrace -export dynatrace.OpenpipelineV2EventsSdlcIngestsources` downloads all existing OpenPipeline definitions for events sdlc ingest sources
+    /// 
+    /// The full documentation of the export feature is available [here](https://dt-url.net/h203qmc).
+    /// 
+    /// ## Resource Example Usage
+    /// 
+    /// ```csharp
+    /// using System.Collections.Generic;
+    /// using System.Linq;
+    /// using Pulumi;
+    /// using Dynatrace = Pulumiverse.Dynatrace;
+    /// 
+    /// return await Deployment.RunAsync(() =&gt; 
+    /// {
+    ///     var maximal_source = new Dynatrace.OpenpipelineV2EventsSdlcIngestsources("maximal-source", new()
+    ///     {
+    ///         Enabled = true,
+    ///         DisplayName = "max-ingestsource",
+    ///         PathSegment = "processor.ingestsource.path.max.tf.#name#",
+    ///         SourceType = "http",
+    ///         StaticRouting = new Dynatrace.Inputs.OpenpipelineV2EventsSdlcIngestsourcesStaticRoutingArgs
+    ///         {
+    ///             PipelineType = "builtin",
+    ///             BuiltinPipelineId = "default",
+    ///         },
+    ///         DefaultBucket = "default_events",
+    ///         MetadataList = new Dynatrace.Inputs.OpenpipelineV2EventsSdlcIngestsourcesMetadataListArgs
+    ///         {
+    ///             Metadatas = new[]
+    ///             {
+    ///                 new Dynatrace.Inputs.OpenpipelineV2EventsSdlcIngestsourcesMetadataListMetadataArgs
+    ///                 {
+    ///                     EntryKey = "environment",
+    ///                     EntryValue = "production",
+    ///                 },
+    ///             },
+    ///         },
+    ///         Processing = new Dynatrace.Inputs.OpenpipelineV2EventsSdlcIngestsourcesProcessingArgs
+    ///         {
+    ///             Processors = new Dynatrace.Inputs.OpenpipelineV2EventsSdlcIngestsourcesProcessingProcessorsArgs
+    ///             {
+    ///                 Processors = new[]
+    ///                 {
+    ///                     new Dynatrace.Inputs.OpenpipelineV2EventsSdlcIngestsourcesProcessingProcessorsProcessorArgs
+    ///                     {
+    ///                         Enabled = true,
+    ///                         Type = "drop",
+    ///                         Id = "processor_Drop_unnecessary_records_1234",
+    ///                         Description = "Drop unnecessary records",
+    ///                         Matcher = "not matchesPhrase(record.name, \"Error\") and not matchesPhrase(record.name, \"Warning\")",
+    ///                     },
+    ///                     new Dynatrace.Inputs.OpenpipelineV2EventsSdlcIngestsourcesProcessingProcessorsProcessorArgs
+    ///                     {
+    ///                         Enabled = true,
+    ///                         Type = "fieldsAdd",
+    ///                         Id = "processor_Add_error_flag_6132",
+    ///                         Description = "Add error flag",
+    ///                         Matcher = "matchesPhrase(record.name, \"Error\")",
+    ///                         SampleData = @"{
+    ///   ""record.name"": ""Error record"" 
+    /// }",
+    ///                         FieldsAdd = new Dynatrace.Inputs.OpenpipelineV2EventsSdlcIngestsourcesProcessingProcessorsProcessorFieldsAddArgs
+    ///                         {
+    ///                             Fields = new Dynatrace.Inputs.OpenpipelineV2EventsSdlcIngestsourcesProcessingProcessorsProcessorFieldsAddFieldsArgs
+    ///                             {
+    ///                                 Fields = new[]
+    ///                                 {
+    ///                                     new Dynatrace.Inputs.OpenpipelineV2EventsSdlcIngestsourcesProcessingProcessorsProcessorFieldsAddFieldsFieldArgs
+    ///                                     {
+    ///                                         Name = "is_error",
+    ///                                         Value = "true",
+    ///                                     },
+    ///                                 },
+    ///                             },
+    ///                         },
+    ///                     },
+    ///                     new Dynatrace.Inputs.OpenpipelineV2EventsSdlcIngestsourcesProcessingProcessorsProcessorArgs
+    ///                     {
+    ///                         Enabled = true,
+    ///                         Type = "fieldsRemove",
+    ///                         Id = "processor_Remove_details_field_8919",
+    ///                         Description = "Remove details field",
+    ///                         Matcher = "isNotNull(record.details)",
+    ///                         SampleData = @"{
+    ///   ""record.name"": ""Error"",
+    ///   ""record.details"": ""some record details""
+    /// }",
+    ///                         FieldsRemove = new Dynatrace.Inputs.OpenpipelineV2EventsSdlcIngestsourcesProcessingProcessorsProcessorFieldsRemoveArgs
+    ///                         {
+    ///                             Fields = new[]
+    ///                             {
+    ///                                 "record.details",
+    ///                             },
+    ///                         },
+    ///                     },
+    ///                     new Dynatrace.Inputs.OpenpipelineV2EventsSdlcIngestsourcesProcessingProcessorsProcessorArgs
+    ///                     {
+    ///                         Enabled = true,
+    ///                         Type = "fieldsRename",
+    ///                         Id = "processor_Rename_name_to_title_5347",
+    ///                         Description = "Rename name to title",
+    ///                         Matcher = "true",
+    ///                         SampleData = @"{
+    ///   ""record.name"": ""Error""
+    /// }",
+    ///                         FieldsRename = new Dynatrace.Inputs.OpenpipelineV2EventsSdlcIngestsourcesProcessingProcessorsProcessorFieldsRenameArgs
+    ///                         {
+    ///                             Fields = new Dynatrace.Inputs.OpenpipelineV2EventsSdlcIngestsourcesProcessingProcessorsProcessorFieldsRenameFieldsArgs
+    ///                             {
+    ///                                 Fields = new[]
+    ///                                 {
+    ///                                     new Dynatrace.Inputs.OpenpipelineV2EventsSdlcIngestsourcesProcessingProcessorsProcessorFieldsRenameFieldsFieldArgs
+    ///                                     {
+    ///                                         FromName = "record.name",
+    ///                                         ToName = "record.title",
+    ///                                     },
+    ///                                 },
+    ///                             },
+    ///                         },
+    ///                     },
+    ///                     new Dynatrace.Inputs.OpenpipelineV2EventsSdlcIngestsourcesProcessingProcessorsProcessorArgs
+    ///                     {
+    ///                         Enabled = true,
+    ///                         Type = "dql",
+    ///                         Id = "processor_Combine_title_and_summary_to_name_1244",
+    ///                         Description = "Combine title and summary to name",
+    ///                         SampleData = @"{
+    ///   ""record.title"": ""Error"",
+    ///   ""record.summary"": ""Request failed""
+    /// }",
+    ///                         Matcher = "true",
+    ///                         Dql = new Dynatrace.Inputs.OpenpipelineV2EventsSdlcIngestsourcesProcessingProcessorsProcessorDqlArgs
+    ///                         {
+    ///                             Script = "fieldsAdd record.name = concat(record.title, \" - \", record.summary)",
+    ///                         },
+    ///                     },
+    ///                 },
+    ///             },
+    ///         },
+    ///     });
+    /// 
+    /// });
+    /// ```
+    /// </summary>
     [DynatraceResourceType("dynatrace:index/openpipelineV2EventsSdlcIngestsources:OpenpipelineV2EventsSdlcIngestsources")]
     public partial class OpenpipelineV2EventsSdlcIngestsources : global::Pulumi.CustomResource
     {
@@ -32,16 +203,34 @@ namespace Pulumiverse.Dynatrace
         public Output<bool> Enabled { get; private set; } = null!;
 
         /// <summary>
+        /// Ingest source metadata list
+        /// </summary>
+        [Output("metadataList")]
+        public Output<Outputs.OpenpipelineV2EventsSdlcIngestsourcesMetadataList?> MetadataList { get; private set; } = null!;
+
+        /// <summary>
         /// Endpoint segment
         /// </summary>
         [Output("pathSegment")]
-        public Output<string> PathSegment { get; private set; } = null!;
+        public Output<string?> PathSegment { get; private set; } = null!;
 
         /// <summary>
         /// Processing stage
         /// </summary>
         [Output("processing")]
-        public Output<Outputs.OpenpipelineV2EventsSdlcIngestsourcesProcessing> Processing { get; private set; } = null!;
+        public Output<Outputs.OpenpipelineV2EventsSdlcIngestsourcesProcessing?> Processing { get; private set; } = null!;
+
+        /// <summary>
+        /// Source
+        /// </summary>
+        [Output("source")]
+        public Output<string?> Source { get; private set; } = null!;
+
+        /// <summary>
+        /// Source Type. Possible Values: `Extension`, `Http`
+        /// </summary>
+        [Output("sourceType")]
+        public Output<string?> SourceType { get; private set; } = null!;
 
         /// <summary>
         /// Static routing of endpoint
@@ -115,16 +304,34 @@ namespace Pulumiverse.Dynatrace
         public Input<bool> Enabled { get; set; } = null!;
 
         /// <summary>
+        /// Ingest source metadata list
+        /// </summary>
+        [Input("metadataList")]
+        public Input<Inputs.OpenpipelineV2EventsSdlcIngestsourcesMetadataListArgs>? MetadataList { get; set; }
+
+        /// <summary>
         /// Endpoint segment
         /// </summary>
-        [Input("pathSegment", required: true)]
-        public Input<string> PathSegment { get; set; } = null!;
+        [Input("pathSegment")]
+        public Input<string>? PathSegment { get; set; }
 
         /// <summary>
         /// Processing stage
         /// </summary>
-        [Input("processing", required: true)]
-        public Input<Inputs.OpenpipelineV2EventsSdlcIngestsourcesProcessingArgs> Processing { get; set; } = null!;
+        [Input("processing")]
+        public Input<Inputs.OpenpipelineV2EventsSdlcIngestsourcesProcessingArgs>? Processing { get; set; }
+
+        /// <summary>
+        /// Source
+        /// </summary>
+        [Input("source")]
+        public Input<string>? Source { get; set; }
+
+        /// <summary>
+        /// Source Type. Possible Values: `Extension`, `Http`
+        /// </summary>
+        [Input("sourceType")]
+        public Input<string>? SourceType { get; set; }
 
         /// <summary>
         /// Static routing of endpoint
@@ -159,6 +366,12 @@ namespace Pulumiverse.Dynatrace
         public Input<bool>? Enabled { get; set; }
 
         /// <summary>
+        /// Ingest source metadata list
+        /// </summary>
+        [Input("metadataList")]
+        public Input<Inputs.OpenpipelineV2EventsSdlcIngestsourcesMetadataListGetArgs>? MetadataList { get; set; }
+
+        /// <summary>
         /// Endpoint segment
         /// </summary>
         [Input("pathSegment")]
@@ -169,6 +382,18 @@ namespace Pulumiverse.Dynatrace
         /// </summary>
         [Input("processing")]
         public Input<Inputs.OpenpipelineV2EventsSdlcIngestsourcesProcessingGetArgs>? Processing { get; set; }
+
+        /// <summary>
+        /// Source
+        /// </summary>
+        [Input("source")]
+        public Input<string>? Source { get; set; }
+
+        /// <summary>
+        /// Source Type. Possible Values: `Extension`, `Http`
+        /// </summary>
+        [Input("sourceType")]
+        public Input<string>? SourceType { get; set; }
 
         /// <summary>
         /// Static routing of endpoint

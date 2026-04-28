@@ -12,14 +12,27 @@ import (
 	"github.com/pulumiverse/pulumi-dynatrace/sdk/go/dynatrace/internal"
 )
 
+// > This resource requires the API token scopes **Read settings** (`settings.read`) and **Write settings** (`settings.write`)
+//
+// ## Dynatrace Documentation
+//
+// - Pager Duty notifications - https://www.dynatrace.com/support/help/setup-and-configuration/integrations/problem-notifications/pagerduty-integration
+//
+// - Settings API - https://www.dynatrace.com/support/help/dynatrace-api/environment-api/settings (schemaId: `builtin:problem.notifications`)
+//
+// ## Export Example Usage
+//
+// - `terraform-provider-dynatrace -export PagerDutyNotification` downloads the existing problem notifications for Pager Duty
+//
+// The full documentation of the export feature is available [here](https://dt-url.net/h203qmc).
 type PagerDutyNotification struct {
 	pulumi.CustomResourceState
 
-	// The name of the PagerDuty account
+	// The name of the PagerDuty account.
 	Account pulumi.StringOutput `pulumi:"account"`
-	// The configuration is enabled (`true`) or disabled (`false`)
+	// This setting is enabled (`true`) or disabled (`false`)
 	Active pulumi.BoolOutput `pulumi:"active"`
-	// The API key to access PagerDuty
+	// The Events API key to access PagerDuty.
 	ApiKey pulumi.StringPtrOutput `pulumi:"apiKey"`
 	// The ID of these settings when referred to from resources requiring the REST API V1 keys
 	LegacyId pulumi.StringOutput `pulumi:"legacyId"`
@@ -27,7 +40,7 @@ type PagerDutyNotification struct {
 	Name pulumi.StringOutput `pulumi:"name"`
 	// The ID of the associated alerting profile
 	Profile pulumi.StringOutput `pulumi:"profile"`
-	// The name of the PagerDuty Service
+	// The name of the service.
 	Service pulumi.StringOutput `pulumi:"service"`
 }
 
@@ -80,11 +93,11 @@ func GetPagerDutyNotification(ctx *pulumi.Context,
 
 // Input properties used for looking up and filtering PagerDutyNotification resources.
 type pagerDutyNotificationState struct {
-	// The name of the PagerDuty account
+	// The name of the PagerDuty account.
 	Account *string `pulumi:"account"`
-	// The configuration is enabled (`true`) or disabled (`false`)
+	// This setting is enabled (`true`) or disabled (`false`)
 	Active *bool `pulumi:"active"`
-	// The API key to access PagerDuty
+	// The Events API key to access PagerDuty.
 	ApiKey *string `pulumi:"apiKey"`
 	// The ID of these settings when referred to from resources requiring the REST API V1 keys
 	LegacyId *string `pulumi:"legacyId"`
@@ -92,16 +105,16 @@ type pagerDutyNotificationState struct {
 	Name *string `pulumi:"name"`
 	// The ID of the associated alerting profile
 	Profile *string `pulumi:"profile"`
-	// The name of the PagerDuty Service
+	// The name of the service.
 	Service *string `pulumi:"service"`
 }
 
 type PagerDutyNotificationState struct {
-	// The name of the PagerDuty account
+	// The name of the PagerDuty account.
 	Account pulumi.StringPtrInput
-	// The configuration is enabled (`true`) or disabled (`false`)
+	// This setting is enabled (`true`) or disabled (`false`)
 	Active pulumi.BoolPtrInput
-	// The API key to access PagerDuty
+	// The Events API key to access PagerDuty.
 	ApiKey pulumi.StringPtrInput
 	// The ID of these settings when referred to from resources requiring the REST API V1 keys
 	LegacyId pulumi.StringPtrInput
@@ -109,7 +122,7 @@ type PagerDutyNotificationState struct {
 	Name pulumi.StringPtrInput
 	// The ID of the associated alerting profile
 	Profile pulumi.StringPtrInput
-	// The name of the PagerDuty Service
+	// The name of the service.
 	Service pulumi.StringPtrInput
 }
 
@@ -118,11 +131,11 @@ func (PagerDutyNotificationState) ElementType() reflect.Type {
 }
 
 type pagerDutyNotificationArgs struct {
-	// The name of the PagerDuty account
+	// The name of the PagerDuty account.
 	Account string `pulumi:"account"`
-	// The configuration is enabled (`true`) or disabled (`false`)
+	// This setting is enabled (`true`) or disabled (`false`)
 	Active bool `pulumi:"active"`
-	// The API key to access PagerDuty
+	// The Events API key to access PagerDuty.
 	ApiKey *string `pulumi:"apiKey"`
 	// The ID of these settings when referred to from resources requiring the REST API V1 keys
 	LegacyId *string `pulumi:"legacyId"`
@@ -130,17 +143,17 @@ type pagerDutyNotificationArgs struct {
 	Name *string `pulumi:"name"`
 	// The ID of the associated alerting profile
 	Profile string `pulumi:"profile"`
-	// The name of the PagerDuty Service
+	// The name of the service.
 	Service string `pulumi:"service"`
 }
 
 // The set of arguments for constructing a PagerDutyNotification resource.
 type PagerDutyNotificationArgs struct {
-	// The name of the PagerDuty account
+	// The name of the PagerDuty account.
 	Account pulumi.StringInput
-	// The configuration is enabled (`true`) or disabled (`false`)
+	// This setting is enabled (`true`) or disabled (`false`)
 	Active pulumi.BoolInput
-	// The API key to access PagerDuty
+	// The Events API key to access PagerDuty.
 	ApiKey pulumi.StringPtrInput
 	// The ID of these settings when referred to from resources requiring the REST API V1 keys
 	LegacyId pulumi.StringPtrInput
@@ -148,7 +161,7 @@ type PagerDutyNotificationArgs struct {
 	Name pulumi.StringPtrInput
 	// The ID of the associated alerting profile
 	Profile pulumi.StringInput
-	// The name of the PagerDuty Service
+	// The name of the service.
 	Service pulumi.StringInput
 }
 
@@ -239,17 +252,17 @@ func (o PagerDutyNotificationOutput) ToPagerDutyNotificationOutputWithContext(ct
 	return o
 }
 
-// The name of the PagerDuty account
+// The name of the PagerDuty account.
 func (o PagerDutyNotificationOutput) Account() pulumi.StringOutput {
 	return o.ApplyT(func(v *PagerDutyNotification) pulumi.StringOutput { return v.Account }).(pulumi.StringOutput)
 }
 
-// The configuration is enabled (`true`) or disabled (`false`)
+// This setting is enabled (`true`) or disabled (`false`)
 func (o PagerDutyNotificationOutput) Active() pulumi.BoolOutput {
 	return o.ApplyT(func(v *PagerDutyNotification) pulumi.BoolOutput { return v.Active }).(pulumi.BoolOutput)
 }
 
-// The API key to access PagerDuty
+// The Events API key to access PagerDuty.
 func (o PagerDutyNotificationOutput) ApiKey() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v *PagerDutyNotification) pulumi.StringPtrOutput { return v.ApiKey }).(pulumi.StringPtrOutput)
 }
@@ -269,7 +282,7 @@ func (o PagerDutyNotificationOutput) Profile() pulumi.StringOutput {
 	return o.ApplyT(func(v *PagerDutyNotification) pulumi.StringOutput { return v.Profile }).(pulumi.StringOutput)
 }
 
-// The name of the PagerDuty Service
+// The name of the service.
 func (o PagerDutyNotificationOutput) Service() pulumi.StringOutput {
 	return o.ApplyT(func(v *PagerDutyNotification) pulumi.StringOutput { return v.Service }).(pulumi.StringOutput)
 }

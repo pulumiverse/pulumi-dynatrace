@@ -11,6 +11,19 @@ import (
 	"github.com/pulumiverse/pulumi-dynatrace/sdk/go/dynatrace/internal"
 )
 
+// > This resource requires the API token scopes **Read settings** (`settings.read`) and **Write settings** (`settings.write`)
+//
+// ## Dynatrace Documentation
+//
+// - Exclude disks - https://www.dynatrace.com/support/help/platform-modules/infrastructure-monitoring/hosts/configuration/exclude-disks-and-network-traffic#exclude-disks
+//
+// - Settings API - https://www.dynatrace.com/support/help/dynatrace-api/environment-api/settings (schemaId: `builtin:disk.options`)
+//
+// ## Export Example Usage
+//
+// - `terraform-provider-dynatrace -export DiskOptions` downloads all existing host disk visibility settings
+//
+// The full documentation of the export feature is available [here](https://dt-url.net/h203qmc).
 type DiskOptions struct {
 	pulumi.CustomResourceState
 
@@ -18,7 +31,9 @@ type DiskOptions struct {
 	DisableNfsDiskMonitoring pulumi.BoolPtrOutput `pulumi:"disableNfsDiskMonitoring"`
 	// OneAgent automatically detects and monitors all your mount points, however you can create exception rules to remove disks from the monitoring list.
 	Exclusions DiskOptionsExclusionsPtrOutput `pulumi:"exclusions"`
-	// When disabled OneAgent will try to deduplicate some of nfs disks. Disabled by default, applies only to Linux hosts. Requires OneAgent 1.209 or later
+	// Activate tmpfs monitoring on Linux systems
+	MonitorTmpfs pulumi.BoolPtrOutput `pulumi:"monitorTmpfs"`
+	// When disabled OneAgent will try to deduplicate some of nfs mount points. Disabled by default, applies only to Linux hosts.
 	NfsShowAll pulumi.BoolPtrOutput `pulumi:"nfsShowAll"`
 	// The scope of this setting (HOST, HOST_GROUP). Omit this property if you want to cover the whole environment.
 	Scope pulumi.StringPtrOutput `pulumi:"scope"`
@@ -58,7 +73,9 @@ type diskOptionsState struct {
 	DisableNfsDiskMonitoring *bool `pulumi:"disableNfsDiskMonitoring"`
 	// OneAgent automatically detects and monitors all your mount points, however you can create exception rules to remove disks from the monitoring list.
 	Exclusions *DiskOptionsExclusions `pulumi:"exclusions"`
-	// When disabled OneAgent will try to deduplicate some of nfs disks. Disabled by default, applies only to Linux hosts. Requires OneAgent 1.209 or later
+	// Activate tmpfs monitoring on Linux systems
+	MonitorTmpfs *bool `pulumi:"monitorTmpfs"`
+	// When disabled OneAgent will try to deduplicate some of nfs mount points. Disabled by default, applies only to Linux hosts.
 	NfsShowAll *bool `pulumi:"nfsShowAll"`
 	// The scope of this setting (HOST, HOST_GROUP). Omit this property if you want to cover the whole environment.
 	Scope *string `pulumi:"scope"`
@@ -69,7 +86,9 @@ type DiskOptionsState struct {
 	DisableNfsDiskMonitoring pulumi.BoolPtrInput
 	// OneAgent automatically detects and monitors all your mount points, however you can create exception rules to remove disks from the monitoring list.
 	Exclusions DiskOptionsExclusionsPtrInput
-	// When disabled OneAgent will try to deduplicate some of nfs disks. Disabled by default, applies only to Linux hosts. Requires OneAgent 1.209 or later
+	// Activate tmpfs monitoring on Linux systems
+	MonitorTmpfs pulumi.BoolPtrInput
+	// When disabled OneAgent will try to deduplicate some of nfs mount points. Disabled by default, applies only to Linux hosts.
 	NfsShowAll pulumi.BoolPtrInput
 	// The scope of this setting (HOST, HOST_GROUP). Omit this property if you want to cover the whole environment.
 	Scope pulumi.StringPtrInput
@@ -84,7 +103,9 @@ type diskOptionsArgs struct {
 	DisableNfsDiskMonitoring *bool `pulumi:"disableNfsDiskMonitoring"`
 	// OneAgent automatically detects and monitors all your mount points, however you can create exception rules to remove disks from the monitoring list.
 	Exclusions *DiskOptionsExclusions `pulumi:"exclusions"`
-	// When disabled OneAgent will try to deduplicate some of nfs disks. Disabled by default, applies only to Linux hosts. Requires OneAgent 1.209 or later
+	// Activate tmpfs monitoring on Linux systems
+	MonitorTmpfs *bool `pulumi:"monitorTmpfs"`
+	// When disabled OneAgent will try to deduplicate some of nfs mount points. Disabled by default, applies only to Linux hosts.
 	NfsShowAll *bool `pulumi:"nfsShowAll"`
 	// The scope of this setting (HOST, HOST_GROUP). Omit this property if you want to cover the whole environment.
 	Scope *string `pulumi:"scope"`
@@ -96,7 +117,9 @@ type DiskOptionsArgs struct {
 	DisableNfsDiskMonitoring pulumi.BoolPtrInput
 	// OneAgent automatically detects and monitors all your mount points, however you can create exception rules to remove disks from the monitoring list.
 	Exclusions DiskOptionsExclusionsPtrInput
-	// When disabled OneAgent will try to deduplicate some of nfs disks. Disabled by default, applies only to Linux hosts. Requires OneAgent 1.209 or later
+	// Activate tmpfs monitoring on Linux systems
+	MonitorTmpfs pulumi.BoolPtrInput
+	// When disabled OneAgent will try to deduplicate some of nfs mount points. Disabled by default, applies only to Linux hosts.
 	NfsShowAll pulumi.BoolPtrInput
 	// The scope of this setting (HOST, HOST_GROUP). Omit this property if you want to cover the whole environment.
 	Scope pulumi.StringPtrInput
@@ -199,7 +222,12 @@ func (o DiskOptionsOutput) Exclusions() DiskOptionsExclusionsPtrOutput {
 	return o.ApplyT(func(v *DiskOptions) DiskOptionsExclusionsPtrOutput { return v.Exclusions }).(DiskOptionsExclusionsPtrOutput)
 }
 
-// When disabled OneAgent will try to deduplicate some of nfs disks. Disabled by default, applies only to Linux hosts. Requires OneAgent 1.209 or later
+// Activate tmpfs monitoring on Linux systems
+func (o DiskOptionsOutput) MonitorTmpfs() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v *DiskOptions) pulumi.BoolPtrOutput { return v.MonitorTmpfs }).(pulumi.BoolPtrOutput)
+}
+
+// When disabled OneAgent will try to deduplicate some of nfs mount points. Disabled by default, applies only to Linux hosts.
 func (o DiskOptionsOutput) NfsShowAll() pulumi.BoolPtrOutput {
 	return o.ApplyT(func(v *DiskOptions) pulumi.BoolPtrOutput { return v.NfsShowAll }).(pulumi.BoolPtrOutput)
 }

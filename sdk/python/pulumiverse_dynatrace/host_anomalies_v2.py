@@ -26,6 +26,7 @@ class HostAnomaliesV2Args:
                  scope: pulumi.Input[_builtins.str]):
         """
         The set of arguments for constructing a HostAnomaliesV2 resource.
+
         :param pulumi.Input['HostAnomaliesV2HostArgs'] host: Hosts
         :param pulumi.Input['HostAnomaliesV2NetworkArgs'] network: Network
         :param pulumi.Input[_builtins.str] scope: The scope of this setting (HOST HOST_GROUP environment)
@@ -79,6 +80,7 @@ class _HostAnomaliesV2State:
                  scope: Optional[pulumi.Input[_builtins.str]] = None):
         """
         Input properties used for looking up and filtering HostAnomaliesV2 resources.
+
         :param pulumi.Input['HostAnomaliesV2HostArgs'] host: Hosts
         :param pulumi.Input['HostAnomaliesV2NetworkArgs'] network: Network
         :param pulumi.Input[_builtins.str] scope: The scope of this setting (HOST HOST_GROUP environment)
@@ -138,7 +140,21 @@ class HostAnomaliesV2(pulumi.CustomResource):
                  scope: Optional[pulumi.Input[_builtins.str]] = None,
                  __props__=None):
         """
-        Create a HostAnomaliesV2 resource with the given unique name, props, and options.
+        > This resource requires the API token scopes **Read settings** (`settings.read`) and **Write settings** (`settings.write`)
+
+        ## Dynatrace Documentation
+
+        - Adjust the sensitivity of anomaly detection for infrastructure - https://www.dynatrace.com/support/help/how-to-use-dynatrace/problem-detection-and-analysis/problem-detection/adjust-sensitivity-anomaly-detection/adjust-sensitivity-infastructure
+
+        - Settings API - https://www.dynatrace.com/support/help/dynatrace-api/environment-api/settings (schemaId: `builtin:anomaly-detection.infrastructure-hosts`)
+
+        ## Export Example Usage
+
+        - `terraform-provider-dynatrace -export HostAnomaliesV2` downloads all existing host anomaly detection configuration
+
+        The full documentation of the export feature is available [here](https://dt-url.net/h203qmc).
+
+
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[Union['HostAnomaliesV2HostArgs', 'HostAnomaliesV2HostArgsDict']] host: Hosts
@@ -152,7 +168,21 @@ class HostAnomaliesV2(pulumi.CustomResource):
                  args: HostAnomaliesV2Args,
                  opts: Optional[pulumi.ResourceOptions] = None):
         """
-        Create a HostAnomaliesV2 resource with the given unique name, props, and options.
+        > This resource requires the API token scopes **Read settings** (`settings.read`) and **Write settings** (`settings.write`)
+
+        ## Dynatrace Documentation
+
+        - Adjust the sensitivity of anomaly detection for infrastructure - https://www.dynatrace.com/support/help/how-to-use-dynatrace/problem-detection-and-analysis/problem-detection/adjust-sensitivity-anomaly-detection/adjust-sensitivity-infastructure
+
+        - Settings API - https://www.dynatrace.com/support/help/dynatrace-api/environment-api/settings (schemaId: `builtin:anomaly-detection.infrastructure-hosts`)
+
+        ## Export Example Usage
+
+        - `terraform-provider-dynatrace -export HostAnomaliesV2` downloads all existing host anomaly detection configuration
+
+        The full documentation of the export feature is available [here](https://dt-url.net/h203qmc).
+
+
         :param str resource_name: The name of the resource.
         :param HostAnomaliesV2Args args: The arguments to use to populate this resource's properties.
         :param pulumi.ResourceOptions opts: Options for the resource.

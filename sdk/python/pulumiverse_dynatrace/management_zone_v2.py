@@ -27,6 +27,7 @@ class ManagementZoneV2Args:
                  rules: Optional[pulumi.Input['ManagementZoneV2RulesArgs']] = None):
         """
         The set of arguments for constructing a ManagementZoneV2 resource.
+
         :param pulumi.Input[_builtins.str] description: Description
         :param pulumi.Input[_builtins.str] legacy_id: The ID of this setting when referred to by the Config REST API V1
         :param pulumi.Input[_builtins.str] name: **Be careful when renaming** - if there are policies that are referencing this Management zone, they will need to be adapted to the new name!
@@ -99,6 +100,7 @@ class _ManagementZoneV2State:
                  rules: Optional[pulumi.Input['ManagementZoneV2RulesArgs']] = None):
         """
         Input properties used for looking up and filtering ManagementZoneV2 resources.
+
         :param pulumi.Input[_builtins.str] description: Description
         :param pulumi.Input[_builtins.str] legacy_id: The ID of this setting when referred to by the Config REST API V1
         :param pulumi.Input[_builtins.str] name: **Be careful when renaming** - if there are policies that are referencing this Management zone, they will need to be adapted to the new name!
@@ -174,7 +176,30 @@ class ManagementZoneV2(pulumi.CustomResource):
                  rules: Optional[pulumi.Input[Union['ManagementZoneV2RulesArgs', 'ManagementZoneV2RulesArgsDict']]] = None,
                  __props__=None):
         """
-        Create a ManagementZoneV2 resource with the given unique name, props, and options.
+        > This resource requires the API token scopes **Read settings** (`settings.read`) and **Write settings** (`settings.write`)
+
+        ## Dynatrace Documentation
+
+        - Management zones - https://www.dynatrace.com/support/help/how-to-use-dynatrace/management-zones
+
+        - Settings API - https://www.dynatrace.com/support/help/dynatrace-api/environment-api/settings (schemaId: `builtin:management-zones`)
+
+        ## Environment Variables (Optional)
+
+        There may be a delay for this resource to be fully available as a dependency for a subsequent resource. E.g. Utilizing this resource and `Slo` together.
+
+        A default polling mechanism exists to validate the creation but may require adjustment due to load. The following environment variables can be used to fine tune these settings.
+
+        - `DT_MGMZ_RETRIES` (Default: 50, Max: 600) configures the maximum attempts to confirm that the create operation has succeeded.
+        - `DT_MGMZ_SUCCESSES` (Default: 5, Max: 100) configures the number of successful consecutive retries expected.
+
+        ## Export Example Usage
+
+        - `terraform-provider-dynatrace -export ManagementZoneV2` downloads all existing management zone configuration
+
+        The full documentation of the export feature is available [here](https://dt-url.net/h203qmc).
+
+
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[_builtins.str] description: Description
@@ -189,7 +214,30 @@ class ManagementZoneV2(pulumi.CustomResource):
                  args: Optional[ManagementZoneV2Args] = None,
                  opts: Optional[pulumi.ResourceOptions] = None):
         """
-        Create a ManagementZoneV2 resource with the given unique name, props, and options.
+        > This resource requires the API token scopes **Read settings** (`settings.read`) and **Write settings** (`settings.write`)
+
+        ## Dynatrace Documentation
+
+        - Management zones - https://www.dynatrace.com/support/help/how-to-use-dynatrace/management-zones
+
+        - Settings API - https://www.dynatrace.com/support/help/dynatrace-api/environment-api/settings (schemaId: `builtin:management-zones`)
+
+        ## Environment Variables (Optional)
+
+        There may be a delay for this resource to be fully available as a dependency for a subsequent resource. E.g. Utilizing this resource and `Slo` together.
+
+        A default polling mechanism exists to validate the creation but may require adjustment due to load. The following environment variables can be used to fine tune these settings.
+
+        - `DT_MGMZ_RETRIES` (Default: 50, Max: 600) configures the maximum attempts to confirm that the create operation has succeeded.
+        - `DT_MGMZ_SUCCESSES` (Default: 5, Max: 100) configures the number of successful consecutive retries expected.
+
+        ## Export Example Usage
+
+        - `terraform-provider-dynatrace -export ManagementZoneV2` downloads all existing management zone configuration
+
+        The full documentation of the export feature is available [here](https://dt-url.net/h203qmc).
+
+
         :param str resource_name: The name of the resource.
         :param ManagementZoneV2Args args: The arguments to use to populate this resource's properties.
         :param pulumi.ResourceOptions opts: Options for the resource.

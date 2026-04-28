@@ -4,6 +4,48 @@
 import * as pulumi from "@pulumi/pulumi";
 import * as utilities from "./utilities";
 
+/**
+ * > This resource requires the API token scopes `extensions.write`, `extensionEnvironment.write`, `extension.read` and `extensionEnvironment.read`.
+ *
+ * Using this resource you can determine which version of a specified Extension should currently be active within your environment. In case the extension has not yet gotten installed for the specified version the installation happens automatically.
+ *
+ * The `name` attribute needs to refer to the fully qualified name of the extension. For a list of eligible names you can utilize the data source `dynatrace.getHubItems` like in this example:
+ *
+ * ```typescript
+ * import * as pulumi from "@pulumi/pulumi";
+ * import * as dynatrace from "@pulumiverse/dynatrace";
+ *
+ * const extension_20_items = dynatrace.getHubItems({
+ *     type: "EXTENSION2",
+ * });
+ * ```
+ *
+ * > Deleting resources of type `dynatrace.HubExtensionActiveVersion` has no real effect on your Dynatrace Environment. Terraform will just stop managing the active version of that extension.
+ *
+ * For installing Monitoring Configurations for a specific Extension you can use the resource `dynatrace.HubExtensionConfig`.
+ *
+ * ## Dynatrace Documentation
+ *
+ * - Extensions API - https://docs.dynatrace.com/docs/dynatrace-api/environment-api/extensions-20
+ *
+ * ## Export Example Usage
+ *
+ * - `terraform-provider-dynatrace -export dynatrace.HubExtensionActiveVersion` downloads a resource for the currently active version of every installed extension.
+ *
+ * The full documentation of the export feature is available [here](https://dt-url.net/h203qmc).
+ *
+ * ## Resource Example Usage
+ *
+ * ```typescript
+ * import * as pulumi from "@pulumi/pulumi";
+ * import * as dynatrace from "@pulumiverse/dynatrace";
+ *
+ * const customComDynatraceExtensionPrometheus_cadvisor = new dynatrace.HubExtensionActiveVersion("custom_com_dynatrace_extension_prometheus-cadvisor", {
+ *     name: "com.dynatrace.extension.active-directory-python",
+ *     version: "3.1.6",
+ * });
+ * ```
+ */
 export class HubExtensionActiveVersion extends pulumi.CustomResource {
     /**
      * Get an existing HubExtensionActiveVersion resource's state with the given name, ID, and optional extra

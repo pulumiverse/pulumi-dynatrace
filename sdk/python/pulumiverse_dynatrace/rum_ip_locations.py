@@ -28,6 +28,7 @@ class RumIpLocationsArgs:
                  region_code: Optional[pulumi.Input[_builtins.str]] = None):
         """
         The set of arguments for constructing a RumIpLocations resource.
+
         :param pulumi.Input[_builtins.str] country_code: The country code of the location.
         :param pulumi.Input[_builtins.str] ip: Single IP or IP range start address
         :param pulumi.Input[_builtins.str] city: The city name of the location.
@@ -154,6 +155,7 @@ class _RumIpLocationsState:
                  region_code: Optional[pulumi.Input[_builtins.str]] = None):
         """
         Input properties used for looking up and filtering RumIpLocations resources.
+
         :param pulumi.Input[_builtins.str] city: The city name of the location.
         :param pulumi.Input[_builtins.str] country_code: The country code of the location.
         :param pulumi.Input[_builtins.str] ip: Single IP or IP range start address
@@ -285,7 +287,21 @@ class RumIpLocations(pulumi.CustomResource):
                  region_code: Optional[pulumi.Input[_builtins.str]] = None,
                  __props__=None):
         """
-        Create a RumIpLocations resource with the given unique name, props, and options.
+        > This resource requires the API token scopes **Read settings** (`settings.read`) and **Write settings** (`settings.write`)
+
+        ## Dynatrace Documentation
+
+        - Map internal IP addresses to locations - https://www.dynatrace.com/support/help/how-to-use-dynatrace/real-user-monitoring/setup-and-configuration/web-applications/additional-configuration/map-internal-ip-addresses-to-locations-web
+
+        - Settings API - https://www.dynatrace.com/support/help/dynatrace-api/environment-api/settings (schemaId: `builtin:rum.ip-mappings`)
+
+        ## Export Example Usage
+
+        - `terraform-provider-dynatrace -export RumIpLocations` downloads all existing IP address mapping configuration
+
+        The full documentation of the export feature is available [here](https://dt-url.net/h203qmc).
+
+
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[_builtins.str] city: The city name of the location.
@@ -307,7 +323,21 @@ class RumIpLocations(pulumi.CustomResource):
                  args: RumIpLocationsArgs,
                  opts: Optional[pulumi.ResourceOptions] = None):
         """
-        Create a RumIpLocations resource with the given unique name, props, and options.
+        > This resource requires the API token scopes **Read settings** (`settings.read`) and **Write settings** (`settings.write`)
+
+        ## Dynatrace Documentation
+
+        - Map internal IP addresses to locations - https://www.dynatrace.com/support/help/how-to-use-dynatrace/real-user-monitoring/setup-and-configuration/web-applications/additional-configuration/map-internal-ip-addresses-to-locations-web
+
+        - Settings API - https://www.dynatrace.com/support/help/dynatrace-api/environment-api/settings (schemaId: `builtin:rum.ip-mappings`)
+
+        ## Export Example Usage
+
+        - `terraform-provider-dynatrace -export RumIpLocations` downloads all existing IP address mapping configuration
+
+        The full documentation of the export feature is available [here](https://dt-url.net/h203qmc).
+
+
         :param str resource_name: The name of the resource.
         :param RumIpLocationsArgs args: The arguments to use to populate this resource's properties.
         :param pulumi.ResourceOptions opts: Options for the resource.

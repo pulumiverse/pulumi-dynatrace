@@ -10,6 +10,21 @@ using Pulumi;
 
 namespace Pulumiverse.Dynatrace
 {
+    /// <summary>
+    /// &gt; This resource requires the API token scopes **Read settings** (`settings.read`) and **Write settings** (`settings.write`)
+    /// 
+    /// ## Dynatrace Documentation
+    /// 
+    /// - Hosts - https://www.dynatrace.com/support/help/platform-modules/infrastructure-monitoring/hosts
+    /// 
+    /// - Settings API - https://www.dynatrace.com/support/help/dynatrace-api/environment-api/settings (schemaId: `builtin:monitored-technologies.varnish`)
+    /// 
+    /// ## Export Example Usage
+    /// 
+    /// - `terraform-provider-dynatrace -export dynatrace.MonitoredTechnologiesVarnish` downloads all existing Varnish monitoring configuration
+    /// 
+    /// The full documentation of the export feature is available [here](https://dt-url.net/h203qmc).
+    /// </summary>
     [DynatraceResourceType("dynatrace:index/monitoredTechnologiesVarnish:MonitoredTechnologiesVarnish")]
     public partial class MonitoredTechnologiesVarnish : global::Pulumi.CustomResource
     {

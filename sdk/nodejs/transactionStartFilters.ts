@@ -4,6 +4,41 @@
 import * as pulumi from "@pulumi/pulumi";
 import * as utilities from "./utilities";
 
+/**
+ * > This resource requires the API token scopes **Read settings** (`settings.read`) and **Write settings** (`settings.write`)
+ *
+ * ## Dynatrace Documentation
+ *
+ * - Customize CICS and IMS monitoring - https://www.dynatrace.com/support/help/setup-and-configuration/dynatrace-oneagent/installation-and-operation/zos/operation/cics-ims-monitoring#transaction-start-filters
+ *
+ * - Settings API - https://www.dynatrace.com/support/help/dynatrace-api/environment-api/settings (schemaId: `builtin:mainframe.txstartfilters`)
+ *
+ * ## Export Example Usage
+ *
+ * - `terraform-provider-dynatrace -export dynatrace.TransactionStartFilters` downloads the current configuration for Transaction Start Filters
+ *
+ * The full documentation of the export feature is available [here](https://dt-url.net/h203qmc).
+ *
+ * ## Resource Example Usage
+ *
+ * ```typescript
+ * import * as pulumi from "@pulumi/pulumi";
+ * import * as dynatrace from "@pulumiverse/dynatrace";
+ *
+ * const transactionStartFilters = new dynatrace.TransactionStartFilters("transaction_start_filters", {
+ *     cicsTerminalTransactionIds: [
+ *         "DTAX",
+ *         "ATAX",
+ *     ],
+ *     cicsTransactionIds: ["TIPU"],
+ *     imsTransactionIds: ["FAKE"],
+ *     imsTerminalTransactionIds: [
+ *         "DTAX",
+ *         "ATAX",
+ *     ],
+ * });
+ * ```
+ */
 export class TransactionStartFilters extends pulumi.CustomResource {
     /**
      * Get an existing TransactionStartFilters resource's state with the given name, ID, and optional extra

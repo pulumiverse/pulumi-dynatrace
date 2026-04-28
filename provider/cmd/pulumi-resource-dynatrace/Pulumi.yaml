@@ -1,0 +1,3 @@
+name: dynatrace
+description: A Pulumi resource provider for dynatrace.
+language: schema

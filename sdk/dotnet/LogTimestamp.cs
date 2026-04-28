@@ -10,6 +10,21 @@ using Pulumi;
 
 namespace Pulumiverse.Dynatrace
 {
+    /// <summary>
+    /// &gt; This resource requires the API token scopes **Read settings** (`settings.read`) and **Write settings** (`settings.write`)
+    /// 
+    /// ## Dynatrace Documentation
+    /// 
+    /// - Log timestamp configuration - https://www.dynatrace.com/support/help/observe-and-explore/logs/log-monitoring/log-monitoring-configuration/timestamp-configuration
+    /// 
+    /// - Settings API - https://www.dynatrace.com/support/help/dynatrace-api/environment-api/settings (schemaId: `builtin:logmonitoring.timestamp-configuration`)
+    /// 
+    /// ## Export Example Usage
+    /// 
+    /// - `terraform-provider-dynatrace -export dynatrace.LogTimestamp` downloads all existing log timestamp/splitting patterns
+    /// 
+    /// The full documentation of the export feature is available [here](https://dt-url.net/h203qmc).
+    /// </summary>
     [DynatraceResourceType("dynatrace:index/logTimestamp:LogTimestamp")]
     public partial class LogTimestamp : global::Pulumi.CustomResource
     {
@@ -50,6 +65,12 @@ namespace Pulumiverse.Dynatrace
         public Output<string> InsertAfter { get; private set; } = null!;
 
         /// <summary>
+        /// Detect JSON format
+        /// </summary>
+        [Output("jsonConfiguration")]
+        public Output<Outputs.LogTimestampJsonConfiguration?> JsonConfiguration { get; private set; } = null!;
+
+        /// <summary>
         /// no documentation available
         /// </summary>
         [Output("matchers")]
@@ -60,6 +81,12 @@ namespace Pulumiverse.Dynatrace
         /// </summary>
         [Output("scope")]
         public Output<string?> Scope { get; private set; } = null!;
+
+        /// <summary>
+        /// Don't parse timestamps in lines starting with white character
+        /// </summary>
+        [Output("skipIndentedLines")]
+        public Output<bool?> SkipIndentedLines { get; private set; } = null!;
 
         /// <summary>
         /// Timezone
@@ -151,6 +178,12 @@ namespace Pulumiverse.Dynatrace
         public Input<string>? InsertAfter { get; set; }
 
         /// <summary>
+        /// Detect JSON format
+        /// </summary>
+        [Input("jsonConfiguration")]
+        public Input<Inputs.LogTimestampJsonConfigurationArgs>? JsonConfiguration { get; set; }
+
+        /// <summary>
         /// no documentation available
         /// </summary>
         [Input("matchers")]
@@ -161,6 +194,12 @@ namespace Pulumiverse.Dynatrace
         /// </summary>
         [Input("scope")]
         public Input<string>? Scope { get; set; }
+
+        /// <summary>
+        /// Don't parse timestamps in lines starting with white character
+        /// </summary>
+        [Input("skipIndentedLines")]
+        public Input<bool>? SkipIndentedLines { get; set; }
 
         /// <summary>
         /// Timezone
@@ -213,6 +252,12 @@ namespace Pulumiverse.Dynatrace
         public Input<string>? InsertAfter { get; set; }
 
         /// <summary>
+        /// Detect JSON format
+        /// </summary>
+        [Input("jsonConfiguration")]
+        public Input<Inputs.LogTimestampJsonConfigurationGetArgs>? JsonConfiguration { get; set; }
+
+        /// <summary>
         /// no documentation available
         /// </summary>
         [Input("matchers")]
@@ -223,6 +268,12 @@ namespace Pulumiverse.Dynatrace
         /// </summary>
         [Input("scope")]
         public Input<string>? Scope { get; set; }
+
+        /// <summary>
+        /// Don't parse timestamps in lines starting with white character
+        /// </summary>
+        [Input("skipIndentedLines")]
+        public Input<bool>? SkipIndentedLines { get; set; }
 
         /// <summary>
         /// Timezone

@@ -12,6 +12,70 @@ import (
 	"github.com/pulumiverse/pulumi-dynatrace/sdk/go/dynatrace/internal"
 )
 
+// > This resource is excluded by default in the export utility since it requires the feature to be activated, please explicitly specify the resource to retrieve existing configuration.
+//
+// > This resource requires the API token scopes **Read security problems** (`securityProblems.read`) and **Write security problems** (`securityProblems.write`)
+//
+// ## Dynatrace Documentation
+//
+// - Security notifications for vulnerabilities and attacks - https://www.dynatrace.com/support/help/platform-modules/application-security/security-notifications
+//
+// - Settings API - https://www.dynatrace.com/support/help/dynatrace-api/environment-api/settings (schemaId: `builtin:appsec.notification-integration`)
+//
+// ## Export Example Usage
+//
+// - `terraform-provider-dynatrace -export AppsecNotification` downloads all existing security notifications
+//
+// The full documentation of the export feature is available [here](https://dt-url.net/h203qmc).
+//
+// ## Resource Example Usage
+//
+// ```go
+// package main
+//
+// import (
+//
+//	"encoding/json"
+//
+//	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//	"github.com/pulumiverse/pulumi-dynatrace/sdk/go/dynatrace"
+//
+// )
+//
+//	func main() {
+//		pulumi.Run(func(ctx *pulumi.Context) error {
+//			tmpJSON0, err := json.Marshal(map[string]interface{}{
+//				"DavisSecurityScore": "{DavisSecurityScore}",
+//				"SecurityProblemId":  "{SecurityProblemId}",
+//				"SecurityProblemUrl": "{SecurityProblemUrl}",
+//				"Severity":           "{Severity}",
+//			})
+//			if err != nil {
+//				return err
+//			}
+//			json0 := string(tmpJSON0)
+//			_, err = dynatrace.NewAppsecNotification(ctx, "Terraform_Security_Problem_Webhook_Test", &dynatrace.AppsecNotificationArgs{
+//				Type:                                pulumi.String("WEBHOOK"),
+//				Enabled:                             pulumi.Bool(true),
+//				DisplayName:                         pulumi.String("Terraform Security Problem Webhook Test"),
+//				SecurityProblemBasedAlertingProfile: pulumi.String("vu9U3hXa3q0AAAABACxidWlsdGluOmFwcHNlYy5ub3RpZmljYXRpb24tYWxlcnRpbmctcHJvZmlsZQAGdGVuYW50AAZ0ZW5hbnQAJDMyMDhkNWMyLTFlZmYtMzk5My1iNjMwLWI0MjQ5N2U4MDQ2Nr7vVN4V2t6t"),
+//				Trigger:                             pulumi.String("SECURITY_PROBLEM"),
+//				SecurityProblemBasedWebhookPayload: &dynatrace.AppsecNotificationSecurityProblemBasedWebhookPayloadArgs{
+//					Payload: pulumi.String(json0),
+//				},
+//				WebhookConfiguration: &dynatrace.AppsecNotificationWebhookConfigurationArgs{
+//					AcceptAnyCertificate: pulumi.Bool(false),
+//					Url:                  pulumi.String("https://www.dynatrace.com"),
+//				},
+//			})
+//			if err != nil {
+//				return err
+//			}
+//			return nil
+//		})
+//	}
+//
+// ```
 type AppsecNotification struct {
 	pulumi.CustomResourceState
 

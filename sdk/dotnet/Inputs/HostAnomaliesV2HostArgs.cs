@@ -28,8 +28,8 @@ namespace Pulumiverse.Dynatrace.Inputs
         /// <summary>
         /// no documentation available
         /// </summary>
-        [Input("highGcActivityDetection", required: true)]
-        public Input<Inputs.HostAnomaliesV2HostHighGcActivityDetectionArgs> HighGcActivityDetection { get; set; } = null!;
+        [Input("highGcActivityDetection")]
+        public Input<Inputs.HostAnomaliesV2HostHighGcActivityDetectionArgs>? HighGcActivityDetection { get; set; }
 
         /// <summary>
         /// no documentation available

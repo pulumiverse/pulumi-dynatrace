@@ -23,6 +23,7 @@ class WebAppCustomConfigPropertiesArgs:
                  custom_property: pulumi.Input[_builtins.str]):
         """
         The set of arguments for constructing a WebAppCustomConfigProperties resource.
+
         :param pulumi.Input[_builtins.str] application_id: The scope of this setting
         :param pulumi.Input[_builtins.str] custom_property: Custom configuration property
         """
@@ -61,6 +62,7 @@ class _WebAppCustomConfigPropertiesState:
                  custom_property: Optional[pulumi.Input[_builtins.str]] = None):
         """
         Input properties used for looking up and filtering WebAppCustomConfigProperties resources.
+
         :param pulumi.Input[_builtins.str] application_id: The scope of this setting
         :param pulumi.Input[_builtins.str] custom_property: Custom configuration property
         """
@@ -104,7 +106,21 @@ class WebAppCustomConfigProperties(pulumi.CustomResource):
                  custom_property: Optional[pulumi.Input[_builtins.str]] = None,
                  __props__=None):
         """
-        Create a WebAppCustomConfigProperties resource with the given unique name, props, and options.
+        > This resource requires the API token scopes **Read settings** (`settings.read`) and **Write settings** (`settings.write`)
+
+        ## Dynatrace Documentation
+
+        - Web applications - https://docs.dynatrace.com/docs/platform-modules/digital-experience/web-applications
+
+        - Settings API - https://www.dynatrace.com/support/help/dynatrace-api/environment-api/settings (schemaId: `builtin:rum.web.custom-configuration-properties`)
+
+        ## Export Example Usage
+
+        - `terraform-provider-dynatrace -export WebAppCustomConfigProperties` downloads existing custom configuration properties
+
+        The full documentation of the export feature is available [here](https://dt-url.net/h203qmc).
+
+
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[_builtins.str] application_id: The scope of this setting
@@ -117,7 +133,21 @@ class WebAppCustomConfigProperties(pulumi.CustomResource):
                  args: WebAppCustomConfigPropertiesArgs,
                  opts: Optional[pulumi.ResourceOptions] = None):
         """
-        Create a WebAppCustomConfigProperties resource with the given unique name, props, and options.
+        > This resource requires the API token scopes **Read settings** (`settings.read`) and **Write settings** (`settings.write`)
+
+        ## Dynatrace Documentation
+
+        - Web applications - https://docs.dynatrace.com/docs/platform-modules/digital-experience/web-applications
+
+        - Settings API - https://www.dynatrace.com/support/help/dynatrace-api/environment-api/settings (schemaId: `builtin:rum.web.custom-configuration-properties`)
+
+        ## Export Example Usage
+
+        - `terraform-provider-dynatrace -export WebAppCustomConfigProperties` downloads existing custom configuration properties
+
+        The full documentation of the export feature is available [here](https://dt-url.net/h203qmc).
+
+
         :param str resource_name: The name of the resource.
         :param WebAppCustomConfigPropertiesArgs args: The arguments to use to populate this resource's properties.
         :param pulumi.ResourceOptions opts: Options for the resource.

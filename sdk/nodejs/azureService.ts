@@ -29,7 +29,7 @@ import * as utilities from "./utilities";
  * import * as dynatrace from "@pulumiverse/dynatrace";
  *
  * export = async () => {
- *     const tERRAFORMSAMPLE = new dynatrace.AzureCredentials("tERRAFORMSAMPLE", {
+ *     const TERRAFORM_SAMPLE = new dynatrace.AzureCredentials("TERRAFORM_SAMPLE", {
  *         active: false,
  *         appId: "ABCDE",
  *         autoTagging: true,
@@ -47,9 +47,10 @@ import * as utilities from "./utilities";
  *     });
  *     const tERRAFORMSAMPLEServices: dynatrace.AzureService[] = [];
  *     for (const range of Object.entries(supportedServices.services).map(([k, v]) => ({key: k, value: v}))) {
- *         tERRAFORMSAMPLEServices.push(new dynatrace.AzureService(`tERRAFORMSAMPLEServices-${range.key}`, {
- *             credentialsId: tERRAFORMSAMPLE.id,
+ *         tERRAFORMSAMPLEServices.push(new dynatrace.AzureService(`TERRAFORM_SAMPLE_services-${range.key}`, {
+ *             credentialsId: TERRAFORM_SAMPLE.id,
  *             useRecommendedMetrics: true,
+ *             name: range.key,
  *         }));
  *     }
  * }
@@ -62,7 +63,7 @@ import * as utilities from "./utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as dynatrace from "@pulumiverse/dynatrace";
  *
- * const example = new dynatrace.AzureCredentials("example", {
+ * const example = new dynatrace.AzureCredentials("Example", {
  *     active: true,
  *     appId: "123456789",
  *     autoTagging: true,
@@ -71,7 +72,8 @@ import * as utilities from "./utilities";
  *     label: "#name#",
  *     monitorOnlyTaggedEntities: false,
  * });
- * const containerService = new dynatrace.AzureService("containerService", {
+ * const containerService = new dynatrace.AzureService("ContainerService", {
+ *     name: "cloud:azure:containerservice:managedcluster",
  *     credentialsId: example.id,
  *     metrics: [
  *         {
@@ -133,12 +135,21 @@ export class AzureService extends pulumi.CustomResource {
      * the ID of the Azure credentials this supported service belongs to
      */
     declare public readonly credentialsId: pulumi.Output<string>;
+    /**
+     * A list of metrics to be monitored for this service. Depending on the service Dynatrace insists on a set of recommended metrics to be configured for that service. If any of these recommended metrics is missing here, the Terraform Provider will automatically add them during `pulumi up`. This usually results in a non-empty plan, until all of the recommended metrics are present within your configuration. For services considered `built-in` by Dynatrace any metrics specified here will be ignored - Dynatrace enforces a fixed set of metrics for these services.
+     */
     declare public readonly metrics: pulumi.Output<outputs.AzureServiceMetric[] | undefined>;
     /**
      * The name of the supporting service.
      */
     declare public readonly name: pulumi.Output<string>;
+    /**
+     * Used internally by the Terraform Provider in order to remember the metrics enforced by Dynatrace
+     */
     declare public /*out*/ readonly requiredMetrics: pulumi.Output<string>;
+    /**
+     * If `true` Terraform will negotiate with the Dynatrace API about the recommended/enforced metrics to be applied. Any `metric` specified will be therefore ignored.
+     */
     declare public readonly useRecommendedMetrics: pulumi.Output<boolean | undefined>;
 
     /**
@@ -189,12 +200,21 @@ export interface AzureServiceState {
      * the ID of the Azure credentials this supported service belongs to
      */
     credentialsId?: pulumi.Input<string>;
+    /**
+     * A list of metrics to be monitored for this service. Depending on the service Dynatrace insists on a set of recommended metrics to be configured for that service. If any of these recommended metrics is missing here, the Terraform Provider will automatically add them during `pulumi up`. This usually results in a non-empty plan, until all of the recommended metrics are present within your configuration. For services considered `built-in` by Dynatrace any metrics specified here will be ignored - Dynatrace enforces a fixed set of metrics for these services.
+     */
     metrics?: pulumi.Input<pulumi.Input<inputs.AzureServiceMetric>[]>;
     /**
      * The name of the supporting service.
      */
     name?: pulumi.Input<string>;
+    /**
+     * Used internally by the Terraform Provider in order to remember the metrics enforced by Dynatrace
+     */
     requiredMetrics?: pulumi.Input<string>;
+    /**
+     * If `true` Terraform will negotiate with the Dynatrace API about the recommended/enforced metrics to be applied. Any `metric` specified will be therefore ignored.
+     */
     useRecommendedMetrics?: pulumi.Input<boolean>;
 }
 
@@ -206,10 +226,16 @@ export interface AzureServiceArgs {
      * the ID of the Azure credentials this supported service belongs to
      */
     credentialsId: pulumi.Input<string>;
+    /**
+     * A list of metrics to be monitored for this service. Depending on the service Dynatrace insists on a set of recommended metrics to be configured for that service. If any of these recommended metrics is missing here, the Terraform Provider will automatically add them during `pulumi up`. This usually results in a non-empty plan, until all of the recommended metrics are present within your configuration. For services considered `built-in` by Dynatrace any metrics specified here will be ignored - Dynatrace enforces a fixed set of metrics for these services.
+     */
     metrics?: pulumi.Input<pulumi.Input<inputs.AzureServiceMetric>[]>;
     /**
      * The name of the supporting service.
      */
     name?: pulumi.Input<string>;
+    /**
+     * If `true` Terraform will negotiate with the Dynatrace API about the recommended/enforced metrics to be applied. Any `metric` specified will be therefore ignored.
+     */
     useRecommendedMetrics?: pulumi.Input<boolean>;
 }

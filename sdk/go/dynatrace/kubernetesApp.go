@@ -12,6 +12,19 @@ import (
 	"github.com/pulumiverse/pulumi-dynatrace/sdk/go/dynatrace/internal"
 )
 
+// > This resource requires the API token scopes **Read settings** (`settings.read`) and **Write settings** (`settings.write`)
+//
+// ## Dynatrace Documentation
+//
+// - Kubernetes app - https://docs.dynatrace.com/docs/platform-modules/infrastructure-monitoring/container-platform-monitoring/kubernetes-app
+//
+// - Settings API - https://www.dynatrace.com/support/help/dynatrace-api/environment-api/settings (schemaId: `builtin:app-transition.kubernetes`)
+//
+// ## Export Example Usage
+//
+// - `terraform-provider-dynatrace -export KubernetesApp` downloads all existing Kubernetes app settings
+//
+// The full documentation of the export feature is available [here](https://dt-url.net/h203qmc).
 type KubernetesApp struct {
 	pulumi.CustomResourceState
 

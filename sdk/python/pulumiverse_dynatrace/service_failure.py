@@ -26,6 +26,7 @@ class ServiceFailureArgs:
                  exception_rules: Optional[pulumi.Input['ServiceFailureExceptionRulesArgs']] = None):
         """
         The set of arguments for constructing a ServiceFailure resource.
+
         :param pulumi.Input[_builtins.bool] enabled: This setting is enabled (`true`) or disabled (`false`)
         :param pulumi.Input[_builtins.str] service_id: The scope of this settings. If the settings should cover the whole environment, just don't specify any scope.
         :param pulumi.Input['ServiceFailureExceptionRulesArgs'] exception_rules: Customize failure detection for specific exceptions and errors
@@ -80,6 +81,7 @@ class _ServiceFailureState:
                  service_id: Optional[pulumi.Input[_builtins.str]] = None):
         """
         Input properties used for looking up and filtering ServiceFailure resources.
+
         :param pulumi.Input[_builtins.bool] enabled: This setting is enabled (`true`) or disabled (`false`)
         :param pulumi.Input['ServiceFailureExceptionRulesArgs'] exception_rules: Customize failure detection for specific exceptions and errors
         :param pulumi.Input[_builtins.str] service_id: The scope of this settings. If the settings should cover the whole environment, just don't specify any scope.
@@ -139,7 +141,21 @@ class ServiceFailure(pulumi.CustomResource):
                  service_id: Optional[pulumi.Input[_builtins.str]] = None,
                  __props__=None):
         """
-        Create a ServiceFailure resource with the given unique name, props, and options.
+        > This resource requires the API token scopes **Read settings** (`settings.read`) and **Write settings** (`settings.write`)
+
+        ## Dynatrace Documentation
+
+        - Configure service failure detection - https://www.dynatrace.com/support/help/platform-modules/applications-and-microservices/services/service-monitoring-settings/configure-service-failure-detection
+
+        - Settings API - https://www.dynatrace.com/support/help/dynatrace-api/environment-api/settings (schemaId: `builtin:failure-detection.service.general-parameters`)
+
+        ## Export Example Usage
+
+        - `terraform-provider-dynatrace -export ServiceFailure` downloads all existing service-level general failure detection parameters
+
+        The full documentation of the export feature is available [here](https://dt-url.net/h203qmc).
+
+
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[_builtins.bool] enabled: This setting is enabled (`true`) or disabled (`false`)
@@ -153,7 +169,21 @@ class ServiceFailure(pulumi.CustomResource):
                  args: ServiceFailureArgs,
                  opts: Optional[pulumi.ResourceOptions] = None):
         """
-        Create a ServiceFailure resource with the given unique name, props, and options.
+        > This resource requires the API token scopes **Read settings** (`settings.read`) and **Write settings** (`settings.write`)
+
+        ## Dynatrace Documentation
+
+        - Configure service failure detection - https://www.dynatrace.com/support/help/platform-modules/applications-and-microservices/services/service-monitoring-settings/configure-service-failure-detection
+
+        - Settings API - https://www.dynatrace.com/support/help/dynatrace-api/environment-api/settings (schemaId: `builtin:failure-detection.service.general-parameters`)
+
+        ## Export Example Usage
+
+        - `terraform-provider-dynatrace -export ServiceFailure` downloads all existing service-level general failure detection parameters
+
+        The full documentation of the export feature is available [here](https://dt-url.net/h203qmc).
+
+
         :param str resource_name: The name of the resource.
         :param ServiceFailureArgs args: The arguments to use to populate this resource's properties.
         :param pulumi.ResourceOptions opts: Options for the resource.

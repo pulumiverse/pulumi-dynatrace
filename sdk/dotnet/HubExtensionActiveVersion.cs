@@ -10,6 +10,62 @@ using Pulumi;
 
 namespace Pulumiverse.Dynatrace
 {
+    /// <summary>
+    /// &gt; This resource requires the API token scopes `extensions.write`, `extensionEnvironment.write`, `extension.read` and `extensionEnvironment.read`.
+    /// 
+    /// Using this resource you can determine which version of a specified Extension should currently be active within your environment. In case the extension has not yet gotten installed for the specified version the installation happens automatically.
+    /// 
+    /// The `Name` attribute needs to refer to the fully qualified name of the extension. For a list of eligible names you can utilize the data source `dynatrace.getHubItems` like in this example:
+    /// 
+    /// ```csharp
+    /// using System.Collections.Generic;
+    /// using System.Linq;
+    /// using Pulumi;
+    /// using Dynatrace = Pulumiverse.Dynatrace;
+    /// 
+    /// return await Deployment.RunAsync(() =&gt; 
+    /// {
+    ///     var extension_20_items = Dynatrace.GetHubItems.Invoke(new()
+    ///     {
+    ///         Type = "EXTENSION2",
+    ///     });
+    /// 
+    /// });
+    /// ```
+    /// 
+    /// &gt; Deleting resources of type `dynatrace.HubExtensionActiveVersion` has no real effect on your Dynatrace Environment. Terraform will just stop managing the active version of that extension.
+    /// 
+    /// For installing Monitoring Configurations for a specific Extension you can use the resource `dynatrace.HubExtensionConfig`.
+    /// 
+    /// ## Dynatrace Documentation
+    /// 
+    /// - Extensions API - https://docs.dynatrace.com/docs/dynatrace-api/environment-api/extensions-20
+    /// 
+    /// ## Export Example Usage
+    /// 
+    /// - `terraform-provider-dynatrace -export dynatrace.HubExtensionActiveVersion` downloads a resource for the currently active version of every installed extension.
+    /// 
+    /// The full documentation of the export feature is available [here](https://dt-url.net/h203qmc).
+    /// 
+    /// ## Resource Example Usage
+    /// 
+    /// ```csharp
+    /// using System.Collections.Generic;
+    /// using System.Linq;
+    /// using Pulumi;
+    /// using Dynatrace = Pulumiverse.Dynatrace;
+    /// 
+    /// return await Deployment.RunAsync(() =&gt; 
+    /// {
+    ///     var customComDynatraceExtensionPrometheus_cadvisor = new Dynatrace.HubExtensionActiveVersion("custom_com_dynatrace_extension_prometheus-cadvisor", new()
+    ///     {
+    ///         Name = "com.dynatrace.extension.active-directory-python",
+    ///         Version = "3.1.6",
+    ///     });
+    /// 
+    /// });
+    /// ```
+    /// </summary>
     [DynatraceResourceType("dynatrace:index/hubExtensionActiveVersion:HubExtensionActiveVersion")]
     public partial class HubExtensionActiveVersion : global::Pulumi.CustomResource
     {

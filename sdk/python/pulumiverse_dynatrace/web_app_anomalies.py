@@ -28,6 +28,7 @@ class WebAppAnomaliesArgs:
                  scope: Optional[pulumi.Input[_builtins.str]] = None):
         """
         The set of arguments for constructing a WebAppAnomalies resource.
+
         :param pulumi.Input['WebAppAnomaliesErrorRateArgs'] error_rate: Error rate
         :param pulumi.Input['WebAppAnomaliesResponseTimeArgs'] response_time: Response time
         :param pulumi.Input['WebAppAnomaliesTrafficDropsArgs'] traffic_drops: Detect traffic drops
@@ -112,6 +113,7 @@ class _WebAppAnomaliesState:
                  traffic_spikes: Optional[pulumi.Input['WebAppAnomaliesTrafficSpikesArgs']] = None):
         """
         Input properties used for looking up and filtering WebAppAnomalies resources.
+
         :param pulumi.Input['WebAppAnomaliesErrorRateArgs'] error_rate: Error rate
         :param pulumi.Input['WebAppAnomaliesResponseTimeArgs'] response_time: Response time
         :param pulumi.Input[_builtins.str] scope: The scope of this setting (APPLICATION_METHOD, APPLICATION). Omit this property if you want to cover the whole environment.
@@ -203,7 +205,21 @@ class WebAppAnomalies(pulumi.CustomResource):
                  traffic_spikes: Optional[pulumi.Input[Union['WebAppAnomaliesTrafficSpikesArgs', 'WebAppAnomaliesTrafficSpikesArgsDict']]] = None,
                  __props__=None):
         """
-        Create a WebAppAnomalies resource with the given unique name, props, and options.
+        > This resource requires the API token scopes **Read settings** (`settings.read`) and **Write settings** (`settings.write`)
+
+        ## Dynatrace Documentation
+
+        - Adjust the sensitivity of anomaly detection for applications - https://www.dynatrace.com/support/help/how-to-use-dynatrace/problem-detection-and-analysis/problem-detection/adjust-sensitivity-anomaly-detection/adjust-sensitivity-applications
+
+        - Settings API - https://www.dynatrace.com/support/help/dynatrace-api/environment-api/settings (schemaId: `builtin:anomaly-detection.rum-web`)
+
+        ## Export Example Usage
+
+        - `terraform-provider-dynatrace -export WebAppAnomalies` downloads all existing web application anomaly detection configuration
+
+        The full documentation of the export feature is available [here](https://dt-url.net/h203qmc).
+
+
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[Union['WebAppAnomaliesErrorRateArgs', 'WebAppAnomaliesErrorRateArgsDict']] error_rate: Error rate
@@ -219,7 +235,21 @@ class WebAppAnomalies(pulumi.CustomResource):
                  args: WebAppAnomaliesArgs,
                  opts: Optional[pulumi.ResourceOptions] = None):
         """
-        Create a WebAppAnomalies resource with the given unique name, props, and options.
+        > This resource requires the API token scopes **Read settings** (`settings.read`) and **Write settings** (`settings.write`)
+
+        ## Dynatrace Documentation
+
+        - Adjust the sensitivity of anomaly detection for applications - https://www.dynatrace.com/support/help/how-to-use-dynatrace/problem-detection-and-analysis/problem-detection/adjust-sensitivity-anomaly-detection/adjust-sensitivity-applications
+
+        - Settings API - https://www.dynatrace.com/support/help/dynatrace-api/environment-api/settings (schemaId: `builtin:anomaly-detection.rum-web`)
+
+        ## Export Example Usage
+
+        - `terraform-provider-dynatrace -export WebAppAnomalies` downloads all existing web application anomaly detection configuration
+
+        The full documentation of the export feature is available [here](https://dt-url.net/h203qmc).
+
+
         :param str resource_name: The name of the resource.
         :param WebAppAnomaliesArgs args: The arguments to use to populate this resource's properties.
         :param pulumi.ResourceOptions opts: Options for the resource.

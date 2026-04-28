@@ -12,6 +12,49 @@ import (
 	"github.com/pulumiverse/pulumi-dynatrace/sdk/go/dynatrace/internal"
 )
 
+// !> **HTTP DELETE method not available** Terraform will no longer manage this resource on `destroy` but the configuration will still be present on the Dynatrace cluster.
+//
+// > This resource requires the cluster API token scope **Service Provider API** (`ServiceProviderAPI`)
+//
+// ## Dynatrace Documentation
+//
+// - Configure an SMTP server connection - https://www.dynatrace.com/support/help/managed-cluster/configuration/configure-smtp-server-connection
+//
+// - Cluster API v1 - https://www.dynatrace.com/support/help/managed-cluster/cluster-api/cluster-api-v1
+//
+// ## Resource Example Usage
+//
+// ```go
+// package main
+//
+// import (
+//
+//	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//	"github.com/pulumiverse/pulumi-dynatrace/sdk/go/dynatrace"
+//
+// )
+//
+//	func main() {
+//		pulumi.Run(func(ctx *pulumi.Context) error {
+//			_, err := dynatrace.NewManagedSmtp(ctx, "Test", &dynatrace.ManagedSmtpArgs{
+//				HostName:                       pulumi.String("hostname"),
+//				Port:                           pulumi.Int(25),
+//				UserName:                       pulumi.String("username"),
+//				Password:                       pulumi.String("password"),
+//				IsPasswordConfigured:           pulumi.Bool(true),
+//				ConnectionSecurity:             pulumi.String("NO_ENCRYPTION"),
+//				SenderEmailAddress:             pulumi.String("noreply@dynatrace-managed.com"),
+//				AllowFallbackViaMissionControl: pulumi.Bool(true),
+//				UseSmtpServer:                  pulumi.Bool(true),
+//			})
+//			if err != nil {
+//				return err
+//			}
+//			return nil
+//		})
+//	}
+//
+// ```
 type ManagedSmtp struct {
 	pulumi.CustomResourceState
 

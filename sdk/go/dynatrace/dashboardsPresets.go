@@ -12,6 +12,19 @@ import (
 	"github.com/pulumiverse/pulumi-dynatrace/sdk/go/dynatrace/internal"
 )
 
+// > This resource requires the API token scopes **Read settings** (`settings.read`) and **Write settings** (`settings.write`)
+//
+// ## Dynatrace Documentation
+//
+// - Preset Dynatrace dashboards - https://www.dynatrace.com/support/help/observe-and-explore/dashboards/dashboards/dashboards-preset
+//
+// - Settings API - https://www.dynatrace.com/support/help/dynatrace-api/environment-api/settings (schemaId: `builtin:dashboards.presets`)
+//
+// ## Export Example Usage
+//
+// - `terraform-provider-dynatrace -export DashboardsPresets` downloads all existing dashboard preset settings
+//
+// The full documentation of the export feature is available [here](https://dt-url.net/h203qmc).
 type DashboardsPresets struct {
 	pulumi.CustomResourceState
 

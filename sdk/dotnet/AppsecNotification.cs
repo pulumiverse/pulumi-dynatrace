@@ -10,6 +10,61 @@ using Pulumi;
 
 namespace Pulumiverse.Dynatrace
 {
+    /// <summary>
+    /// &gt; This resource is excluded by default in the export utility since it requires the feature to be activated, please explicitly specify the resource to retrieve existing configuration.
+    /// 
+    /// &gt; This resource requires the API token scopes **Read security problems** (`securityProblems.read`) and **Write security problems** (`securityProblems.write`)
+    /// 
+    /// ## Dynatrace Documentation
+    /// 
+    /// - Security notifications for vulnerabilities and attacks - https://www.dynatrace.com/support/help/platform-modules/application-security/security-notifications
+    /// 
+    /// - Settings API - https://www.dynatrace.com/support/help/dynatrace-api/environment-api/settings (schemaId: `builtin:appsec.notification-integration`)
+    /// 
+    /// ## Export Example Usage
+    /// 
+    /// - `terraform-provider-dynatrace -export dynatrace.AppsecNotification` downloads all existing security notifications
+    /// 
+    /// The full documentation of the export feature is available [here](https://dt-url.net/h203qmc).
+    /// 
+    /// ## Resource Example Usage
+    /// 
+    /// ```csharp
+    /// using System.Collections.Generic;
+    /// using System.Linq;
+    /// using System.Text.Json;
+    /// using Pulumi;
+    /// using Dynatrace = Pulumiverse.Dynatrace;
+    /// 
+    /// return await Deployment.RunAsync(() =&gt; 
+    /// {
+    ///     var terraformSecurityProblemWebhookTest = new Dynatrace.AppsecNotification("Terraform_Security_Problem_Webhook_Test", new()
+    ///     {
+    ///         Type = "WEBHOOK",
+    ///         Enabled = true,
+    ///         DisplayName = "Terraform Security Problem Webhook Test",
+    ///         SecurityProblemBasedAlertingProfile = "vu9U3hXa3q0AAAABACxidWlsdGluOmFwcHNlYy5ub3RpZmljYXRpb24tYWxlcnRpbmctcHJvZmlsZQAGdGVuYW50AAZ0ZW5hbnQAJDMyMDhkNWMyLTFlZmYtMzk5My1iNjMwLWI0MjQ5N2U4MDQ2Nr7vVN4V2t6t",
+    ///         Trigger = "SECURITY_PROBLEM",
+    ///         SecurityProblemBasedWebhookPayload = new Dynatrace.Inputs.AppsecNotificationSecurityProblemBasedWebhookPayloadArgs
+    ///         {
+    ///             Payload = JsonSerializer.Serialize(new Dictionary&lt;string, object?&gt;
+    ///             {
+    ///                 ["DavisSecurityScore"] = "{DavisSecurityScore}",
+    ///                 ["SecurityProblemId"] = "{SecurityProblemId}",
+    ///                 ["SecurityProblemUrl"] = "{SecurityProblemUrl}",
+    ///                 ["Severity"] = "{Severity}",
+    ///             }),
+    ///         },
+    ///         WebhookConfiguration = new Dynatrace.Inputs.AppsecNotificationWebhookConfigurationArgs
+    ///         {
+    ///             AcceptAnyCertificate = false,
+    ///             Url = "https://www.dynatrace.com",
+    ///         },
+    ///     });
+    /// 
+    /// });
+    /// ```
+    /// </summary>
     [DynatraceResourceType("dynatrace:index/appsecNotification:AppsecNotification")]
     public partial class AppsecNotification : global::Pulumi.CustomResource
     {

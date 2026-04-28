@@ -28,6 +28,7 @@ class ProcessGroupDetectionArgs:
                  instance_extraction: Optional[pulumi.Input['ProcessGroupDetectionInstanceExtractionArgs']] = None):
         """
         The set of arguments for constructing a ProcessGroupDetection resource.
+
         :param pulumi.Input[_builtins.bool] enabled: This setting is enabled (`true`) or disabled (`false`)
         :param pulumi.Input['ProcessGroupDetectionGroupExtractionArgs'] group_extraction: You can define the properties that should be used to identify your process groups.
         :param pulumi.Input['ProcessGroupDetectionProcessDetectionArgs'] process_detection: Apply this rule to processes where the selected property contains the specified string.
@@ -113,6 +114,7 @@ class _ProcessGroupDetectionState:
                  process_detection: Optional[pulumi.Input['ProcessGroupDetectionProcessDetectionArgs']] = None):
         """
         Input properties used for looking up and filtering ProcessGroupDetection resources.
+
         :param pulumi.Input[_builtins.bool] enabled: This setting is enabled (`true`) or disabled (`false`)
         :param pulumi.Input['ProcessGroupDetectionGroupExtractionArgs'] group_extraction: You can define the properties that should be used to identify your process groups.
         :param pulumi.Input[_builtins.str] insert_after: Because this resource allows for ordering you may specify the ID of the resource instance that comes before this instance regarding order. If not specified when creating the setting will be added to the end of the list. If not specified during update the order will remain untouched
@@ -204,7 +206,49 @@ class ProcessGroupDetection(pulumi.CustomResource):
                  process_detection: Optional[pulumi.Input[Union['ProcessGroupDetectionProcessDetectionArgs', 'ProcessGroupDetectionProcessDetectionArgsDict']]] = None,
                  __props__=None):
         """
-        Create a ProcessGroupDetection resource with the given unique name, props, and options.
+        > This resource requires the API token scopes **Read settings** (`settings.read`) and **Write settings** (`settings.write`)
+
+        ## Dynatrace Documentation
+
+        - Advanced Process Group Detection Rules - https://www.dynatrace.com/support/help/how-to-use-dynatrace/process-groups/configuration/pg-detection#advanced
+
+        - Settings API - https://www.dynatrace.com/support/help/dynatrace-api/environment-api/settings (schemaId: `builtin:process-group.advanced-detection-rule`)
+
+        ## Export Example Usage
+
+        - `terraform-provider-dynatrace -export ProcessGroupDetection` downloads all existing advanced process group detection configuration
+
+        The full documentation of the export feature is available [here](https://dt-url.net/h203qmc).
+
+        ## Resource Example Usage
+
+        ```python
+        import pulumi
+        import pulumiverse_dynatrace as dynatrace
+
+        _47d495a8_5577_436d_a3b3_777924c2d103 = dynatrace.ProcessGroupDetection("_47d495a8-5577-436d-a3b3-777924c2d103",
+            enabled=True,
+            group_extraction={
+                "property": "COMMAND_LINE_ARGS",
+                "standalone_rule": False,
+                "delimiter": {
+                    "remove_ids": True,
+                },
+            },
+            instance_extraction={
+                "property": "AWS_ECS_FAMILY",
+                "delimiter": {
+                    "remove_ids": True,
+                },
+            },
+            process_detection={
+                "contained_string": "-config",
+                "property": "COMMAND_LINE_ARGS",
+                "restrict_to_process_type": "PROCESS_TYPE_APACHE_HTTPD",
+            })
+        ```
+
+
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[_builtins.bool] enabled: This setting is enabled (`true`) or disabled (`false`)
@@ -220,7 +264,49 @@ class ProcessGroupDetection(pulumi.CustomResource):
                  args: ProcessGroupDetectionArgs,
                  opts: Optional[pulumi.ResourceOptions] = None):
         """
-        Create a ProcessGroupDetection resource with the given unique name, props, and options.
+        > This resource requires the API token scopes **Read settings** (`settings.read`) and **Write settings** (`settings.write`)
+
+        ## Dynatrace Documentation
+
+        - Advanced Process Group Detection Rules - https://www.dynatrace.com/support/help/how-to-use-dynatrace/process-groups/configuration/pg-detection#advanced
+
+        - Settings API - https://www.dynatrace.com/support/help/dynatrace-api/environment-api/settings (schemaId: `builtin:process-group.advanced-detection-rule`)
+
+        ## Export Example Usage
+
+        - `terraform-provider-dynatrace -export ProcessGroupDetection` downloads all existing advanced process group detection configuration
+
+        The full documentation of the export feature is available [here](https://dt-url.net/h203qmc).
+
+        ## Resource Example Usage
+
+        ```python
+        import pulumi
+        import pulumiverse_dynatrace as dynatrace
+
+        _47d495a8_5577_436d_a3b3_777924c2d103 = dynatrace.ProcessGroupDetection("_47d495a8-5577-436d-a3b3-777924c2d103",
+            enabled=True,
+            group_extraction={
+                "property": "COMMAND_LINE_ARGS",
+                "standalone_rule": False,
+                "delimiter": {
+                    "remove_ids": True,
+                },
+            },
+            instance_extraction={
+                "property": "AWS_ECS_FAMILY",
+                "delimiter": {
+                    "remove_ids": True,
+                },
+            },
+            process_detection={
+                "contained_string": "-config",
+                "property": "COMMAND_LINE_ARGS",
+                "restrict_to_process_type": "PROCESS_TYPE_APACHE_HTTPD",
+            })
+        ```
+
+
         :param str resource_name: The name of the resource.
         :param ProcessGroupDetectionArgs args: The arguments to use to populate this resource's properties.
         :param pulumi.ResourceOptions opts: Options for the resource.

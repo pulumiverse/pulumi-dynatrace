@@ -6,6 +6,40 @@ import * as inputs from "./types/input";
 import * as outputs from "./types/output";
 import * as utilities from "./utilities";
 
+/**
+ * > This resource requires the API token scopes **Read settings** (`settings.read`) and **Write settings** (`settings.write`)
+ *
+ * ## Dynatrace Documentation
+ *
+ * - Adjust the sensitivity of anomaly detection for applications - https://www.dynatrace.com/support/help/how-to-use-dynatrace/problem-detection-and-analysis/problem-detection/adjust-sensitivity-anomaly-detection/adjust-sensitivity-applications
+ *
+ * - Settings API - https://www.dynatrace.com/support/help/dynatrace-api/environment-api/settings (schemaId: `builtin:anomaly-detection.rum-custom-crash-rate-increase`)
+ *
+ * ## Export Example Usage
+ *
+ * - `terraform-provider-dynatrace -export dynatrace.CustomAppCrashRate` downloads all existing custom application crash rate increase configuration
+ *
+ * The full documentation of the export feature is available [here](https://dt-url.net/h203qmc).
+ *
+ * ## Resource Example Usage
+ *
+ * ```typescript
+ * import * as pulumi from "@pulumi/pulumi";
+ * import * as dynatrace from "@pulumiverse/dynatrace";
+ *
+ * const CUSTOM_APPLICATION_1234567890000000 = new dynatrace.CustomAppCrashRate("CUSTOM_APPLICATION-1234567890000000", {
+ *     scope: "CUSTOM_APPLICATION-1234567890000000",
+ *     crashRateIncrease: {
+ *         enabled: true,
+ *         detectionMode: "fixed",
+ *         crashRateIncreaseFixed: {
+ *             absoluteCrashRate: 25,
+ *             concurrentUsers: 200,
+ *         },
+ *     },
+ * });
+ * ```
+ */
 export class CustomAppCrashRate extends pulumi.CustomResource {
     /**
      * Get an existing CustomAppCrashRate resource's state with the given name, ID, and optional extra

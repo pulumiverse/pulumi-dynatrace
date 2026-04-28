@@ -6,6 +6,54 @@ import * as inputs from "./types/input";
 import * as outputs from "./types/output";
 import * as utilities from "./utilities";
 
+/**
+ * !> This resource API endpoint has been deprecated, please migrate your OpenPipeline configurations and use `dynatrace_openpipeline_v2_davis_problems_*` instead.
+ *
+ * !> Deploying an OpenPipeline configuration will overwrite the existing one of the same kind, causing any manual changes made in the web UI or other configurations managed by Terraform or Monaco to be lost. Ensure all configurations are defined within a single Terraform or Monaco configuration to prevent data loss.
+ *
+ * > **Dynatrace SaaS only**
+ *
+ * > To utilize this resource, please define the environment variables `DT_CLIENT_ID`, `DT_CLIENT_SECRET`, `DT_ACCOUNT_ID` with an OAuth client including the following permissions: **View OpenPipeline configurations** (`openpipeline:configurations:read`), and **Edit OpenPipeline configurations** (`openpipeline:configurations:write`).
+ *
+ * ## Dynatrace Documentation
+ *
+ * - OpenPipeline - https://docs.dynatrace.com/docs/platform/openpipeline
+ *
+ * ## Export Example Usage
+ *
+ * - `terraform-provider-dynatrace -export dynatrace.OpenpipelineDavisProblems` downloads all existing OpenPipeline definitions for Davis problems
+ *
+ * The full documentation of the export feature is available [here](https://dt-url.net/h203qmc).
+ *
+ * ## Resource Example Usage
+ *
+ * ```typescript
+ * import * as pulumi from "@pulumi/pulumi";
+ * import * as dynatrace from "@pulumiverse/dynatrace";
+ *
+ * const davisProblems = new dynatrace.OpenpipelineDavisProblems("davis_problems", {pipelines: {
+ *     pipelines: [{
+ *         enabled: true,
+ *         displayName: "#name#",
+ *         id: "pipeline_Custom_davis_problems_#name#",
+ *         processing: {
+ *             processors: [{
+ *                 fieldsRenameProcessor: {
+ *                     description: "#name#",
+ *                     enabled: true,
+ *                     id: "processor_Rename_problem_ID_#name#",
+ *                     matcher: "true",
+ *                     fields: [{
+ *                         fromName: "problem_id",
+ *                         toName: "problemId",
+ *                     }],
+ *                 },
+ *             }],
+ *         },
+ *     }],
+ * }});
+ * ```
+ */
 export class OpenpipelineDavisProblems extends pulumi.CustomResource {
     /**
      * Get an existing OpenpipelineDavisProblems resource's state with the given name, ID, and optional extra

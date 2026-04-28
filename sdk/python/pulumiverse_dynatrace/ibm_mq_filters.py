@@ -27,6 +27,7 @@ class IbmMqFiltersArgs:
                  ims_mq_queue_id_includes: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None):
         """
         The set of arguments for constructing a IbmMqFilters resource.
+
         :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] cics_mq_queue_id_excludes: CICS: Excluded MQ queues
         :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] cics_mq_queue_id_includes: CICS: Included MQ queues
         :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] ims_cr_trn_id_excludes: When you add a transaction ID to the exclude list remaining transactions are still monitored.
@@ -131,6 +132,7 @@ class _IbmMqFiltersState:
                  ims_mq_queue_id_includes: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None):
         """
         Input properties used for looking up and filtering IbmMqFilters resources.
+
         :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] cics_mq_queue_id_excludes: CICS: Excluded MQ queues
         :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] cics_mq_queue_id_includes: CICS: Included MQ queues
         :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] ims_cr_trn_id_excludes: When you add a transaction ID to the exclude list remaining transactions are still monitored.
@@ -238,7 +240,21 @@ class IbmMqFilters(pulumi.CustomResource):
                  ims_mq_queue_id_includes: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
                  __props__=None):
         """
-        Create a IbmMqFilters resource with the given unique name, props, and options.
+        > This resource requires the API token scopes **Read settings** (`settings.read`) and **Write settings** (`settings.write`)
+
+        ## Dynatrace Documentation
+
+        - IBM MQ monitoring - https://www.dynatrace.com/support/help/technology-support/dynatrace-extensions/dynatrace-extension-required/ibm-mq-extensions
+
+        - Settings API - https://www.dynatrace.com/support/help/dynatrace-api/environment-api/settings (schemaId: `builtin:mainframe.mqfilters`)
+
+        ## Export Example Usage
+
+        - `terraform-provider-dynatrace -export IbmMqFilters` downloads all existing IBM MQ filter configuration
+
+        The full documentation of the export feature is available [here](https://dt-url.net/h203qmc).
+
+
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] cics_mq_queue_id_excludes: CICS: Excluded MQ queues
@@ -255,7 +271,21 @@ class IbmMqFilters(pulumi.CustomResource):
                  args: Optional[IbmMqFiltersArgs] = None,
                  opts: Optional[pulumi.ResourceOptions] = None):
         """
-        Create a IbmMqFilters resource with the given unique name, props, and options.
+        > This resource requires the API token scopes **Read settings** (`settings.read`) and **Write settings** (`settings.write`)
+
+        ## Dynatrace Documentation
+
+        - IBM MQ monitoring - https://www.dynatrace.com/support/help/technology-support/dynatrace-extensions/dynatrace-extension-required/ibm-mq-extensions
+
+        - Settings API - https://www.dynatrace.com/support/help/dynatrace-api/environment-api/settings (schemaId: `builtin:mainframe.mqfilters`)
+
+        ## Export Example Usage
+
+        - `terraform-provider-dynatrace -export IbmMqFilters` downloads all existing IBM MQ filter configuration
+
+        The full documentation of the export feature is available [here](https://dt-url.net/h203qmc).
+
+
         :param str resource_name: The name of the resource.
         :param IbmMqFiltersArgs args: The arguments to use to populate this resource's properties.
         :param pulumi.ResourceOptions opts: Options for the resource.

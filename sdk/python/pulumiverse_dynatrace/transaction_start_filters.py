@@ -25,6 +25,7 @@ class TransactionStartFiltersArgs:
                  ims_transaction_ids: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None):
         """
         The set of arguments for constructing a TransactionStartFilters resource.
+
         :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] cics_terminal_transaction_ids: You can use * as wildcard. For example use A* to trace all transaction IDs that start with A.
         :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] cics_transaction_ids: You can use * as wildcard. For example use A* to trace all transaction IDs that start with A.
         :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] ims_terminal_transaction_ids: You can use * as wildcard. For example use A* to trace all transaction IDs that start with A.
@@ -97,6 +98,7 @@ class _TransactionStartFiltersState:
                  ims_transaction_ids: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None):
         """
         Input properties used for looking up and filtering TransactionStartFilters resources.
+
         :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] cics_terminal_transaction_ids: You can use * as wildcard. For example use A* to trace all transaction IDs that start with A.
         :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] cics_transaction_ids: You can use * as wildcard. For example use A* to trace all transaction IDs that start with A.
         :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] ims_terminal_transaction_ids: You can use * as wildcard. For example use A* to trace all transaction IDs that start with A.
@@ -172,7 +174,40 @@ class TransactionStartFilters(pulumi.CustomResource):
                  ims_transaction_ids: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
                  __props__=None):
         """
-        Create a TransactionStartFilters resource with the given unique name, props, and options.
+        > This resource requires the API token scopes **Read settings** (`settings.read`) and **Write settings** (`settings.write`)
+
+        ## Dynatrace Documentation
+
+        - Customize CICS and IMS monitoring - https://www.dynatrace.com/support/help/setup-and-configuration/dynatrace-oneagent/installation-and-operation/zos/operation/cics-ims-monitoring#transaction-start-filters
+
+        - Settings API - https://www.dynatrace.com/support/help/dynatrace-api/environment-api/settings (schemaId: `builtin:mainframe.txstartfilters`)
+
+        ## Export Example Usage
+
+        - `terraform-provider-dynatrace -export TransactionStartFilters` downloads the current configuration for Transaction Start Filters
+
+        The full documentation of the export feature is available [here](https://dt-url.net/h203qmc).
+
+        ## Resource Example Usage
+
+        ```python
+        import pulumi
+        import pulumiverse_dynatrace as dynatrace
+
+        transaction_start_filters = dynatrace.TransactionStartFilters("transaction_start_filters",
+            cics_terminal_transaction_ids=[
+                "DTAX",
+                "ATAX",
+            ],
+            cics_transaction_ids=["TIPU"],
+            ims_transaction_ids=["FAKE"],
+            ims_terminal_transaction_ids=[
+                "DTAX",
+                "ATAX",
+            ])
+        ```
+
+
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] cics_terminal_transaction_ids: You can use * as wildcard. For example use A* to trace all transaction IDs that start with A.
@@ -187,7 +222,40 @@ class TransactionStartFilters(pulumi.CustomResource):
                  args: Optional[TransactionStartFiltersArgs] = None,
                  opts: Optional[pulumi.ResourceOptions] = None):
         """
-        Create a TransactionStartFilters resource with the given unique name, props, and options.
+        > This resource requires the API token scopes **Read settings** (`settings.read`) and **Write settings** (`settings.write`)
+
+        ## Dynatrace Documentation
+
+        - Customize CICS and IMS monitoring - https://www.dynatrace.com/support/help/setup-and-configuration/dynatrace-oneagent/installation-and-operation/zos/operation/cics-ims-monitoring#transaction-start-filters
+
+        - Settings API - https://www.dynatrace.com/support/help/dynatrace-api/environment-api/settings (schemaId: `builtin:mainframe.txstartfilters`)
+
+        ## Export Example Usage
+
+        - `terraform-provider-dynatrace -export TransactionStartFilters` downloads the current configuration for Transaction Start Filters
+
+        The full documentation of the export feature is available [here](https://dt-url.net/h203qmc).
+
+        ## Resource Example Usage
+
+        ```python
+        import pulumi
+        import pulumiverse_dynatrace as dynatrace
+
+        transaction_start_filters = dynatrace.TransactionStartFilters("transaction_start_filters",
+            cics_terminal_transaction_ids=[
+                "DTAX",
+                "ATAX",
+            ],
+            cics_transaction_ids=["TIPU"],
+            ims_transaction_ids=["FAKE"],
+            ims_terminal_transaction_ids=[
+                "DTAX",
+                "ATAX",
+            ])
+        ```
+
+
         :param str resource_name: The name of the resource.
         :param TransactionStartFiltersArgs args: The arguments to use to populate this resource's properties.
         :param pulumi.ResourceOptions opts: Options for the resource.

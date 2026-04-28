@@ -12,6 +12,19 @@ import (
 	"github.com/pulumiverse/pulumi-dynatrace/sdk/go/dynatrace/internal"
 )
 
+// > This resource requires the API token scopes **Read settings** (`settings.read`) and **Write settings** (`settings.write`)
+//
+// ## Dynatrace Documentation
+//
+// - Monitor setup - https://www.dynatrace.com/support/help/platform-modules/digital-experience/synthetic-monitoring/http-monitors/configure-http-monitors#setup
+//
+// - Settings API - https://www.dynatrace.com/support/help/dynatrace-api/environment-api/settings (schemaId: `builtin:synthetic.http.cookies`)
+//
+// ## Export Example Usage
+//
+// - `terraform-provider-dynatrace -export HttpMonitorCookies` downloads all existing HTTP monitor cookie configuration
+//
+// The full documentation of the export feature is available [here](https://dt-url.net/h203qmc).
 type HttpMonitorCookies struct {
 	pulumi.CustomResourceState
 

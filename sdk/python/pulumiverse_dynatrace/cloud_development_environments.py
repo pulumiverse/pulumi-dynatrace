@@ -22,6 +22,7 @@ class CloudDevelopmentEnvironmentsArgs:
                  cloud_development_environments: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None):
         """
         The set of arguments for constructing a CloudDevelopmentEnvironments resource.
+
         :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] cloud_development_environments: The URL to allow app development from. E.g. `https://*.my-company.my-cde-provider.com`.
         """
         if cloud_development_environments is not None:
@@ -46,6 +47,7 @@ class _CloudDevelopmentEnvironmentsState:
                  cloud_development_environments: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None):
         """
         Input properties used for looking up and filtering CloudDevelopmentEnvironments resources.
+
         :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] cloud_development_environments: The URL to allow app development from. E.g. `https://*.my-company.my-cde-provider.com`.
         """
         if cloud_development_environments is not None:
@@ -73,7 +75,21 @@ class CloudDevelopmentEnvironments(pulumi.CustomResource):
                  cloud_development_environments: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
                  __props__=None):
         """
-        Create a CloudDevelopmentEnvironments resource with the given unique name, props, and options.
+        > This resource requires the API token scopes **Read settings** (`settings.read`) and **Write settings** (`settings.write`)
+
+        ## Dynatrace Documentation
+
+        - AppEngine - https://docs.dynatrace.com/docs/platform/appengine
+
+        - Settings API - https://www.dynatrace.com/support/help/dynatrace-api/environment-api/settings (schemaId: `builtin:app-engine-registry.cloud-development-environments`)
+
+        ## Export Example Usage
+
+        - `terraform-provider-dynatrace -export CloudDevelopmentEnvironments` downloads existing cloud development environments configuration
+
+        The full documentation of the export feature is available [here](https://dt-url.net/h203qmc).
+
+
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] cloud_development_environments: The URL to allow app development from. E.g. `https://*.my-company.my-cde-provider.com`.
@@ -85,7 +101,21 @@ class CloudDevelopmentEnvironments(pulumi.CustomResource):
                  args: Optional[CloudDevelopmentEnvironmentsArgs] = None,
                  opts: Optional[pulumi.ResourceOptions] = None):
         """
-        Create a CloudDevelopmentEnvironments resource with the given unique name, props, and options.
+        > This resource requires the API token scopes **Read settings** (`settings.read`) and **Write settings** (`settings.write`)
+
+        ## Dynatrace Documentation
+
+        - AppEngine - https://docs.dynatrace.com/docs/platform/appengine
+
+        - Settings API - https://www.dynatrace.com/support/help/dynatrace-api/environment-api/settings (schemaId: `builtin:app-engine-registry.cloud-development-environments`)
+
+        ## Export Example Usage
+
+        - `terraform-provider-dynatrace -export CloudDevelopmentEnvironments` downloads existing cloud development environments configuration
+
+        The full documentation of the export feature is available [here](https://dt-url.net/h203qmc).
+
+
         :param str resource_name: The name of the resource.
         :param CloudDevelopmentEnvironmentsArgs args: The arguments to use to populate this resource's properties.
         :param pulumi.ResourceOptions opts: Options for the resource.

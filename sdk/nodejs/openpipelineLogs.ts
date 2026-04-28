@@ -6,6 +6,54 @@ import * as inputs from "./types/input";
 import * as outputs from "./types/output";
 import * as utilities from "./utilities";
 
+/**
+ * !> This resource API endpoint has been deprecated, please migrate your OpenPipeline configurations and use `dynatrace_openpipeline_v2_logs_*` instead.
+ *
+ * !> Deploying an OpenPipeline configuration will overwrite the existing one of the same kind, causing any manual changes made in the web UI or other configurations managed by Terraform or Monaco to be lost. Ensure all configurations are defined within a single Terraform or Monaco configuration to prevent data loss.
+ *
+ * > **Dynatrace SaaS only**
+ *
+ * > To utilize this resource, please define the environment variables `DT_CLIENT_ID`, `DT_CLIENT_SECRET`, `DT_ACCOUNT_ID` with an OAuth client including the following permissions: **View OpenPipeline configurations** (`openpipeline:configurations:read`), and **Edit OpenPipeline configurations** (`openpipeline:configurations:write`).
+ *
+ * ## Dynatrace Documentation
+ *
+ * - OpenPipeline - https://docs.dynatrace.com/docs/platform/openpipeline
+ *
+ * ## Export Example Usage
+ *
+ * - `terraform-provider-dynatrace -export dynatrace.OpenpipelineLogs` downloads all existing OpenPipeline definitions for Logs
+ *
+ * The full documentation of the export feature is available [here](https://dt-url.net/h203qmc).
+ *
+ * ## Resource Example Usage
+ *
+ * ```typescript
+ * import * as pulumi from "@pulumi/pulumi";
+ * import * as dynatrace from "@pulumiverse/dynatrace";
+ *
+ * const logs = new dynatrace.OpenpipelineLogs("logs", {pipelines: {
+ *     pipelines: [{
+ *         enabled: true,
+ *         displayName: "test",
+ *         id: "pipeline_test_5036",
+ *         processing: {
+ *             processors: [{
+ *                 fieldsRenameProcessor: {
+ *                     description: "test",
+ *                     enabled: true,
+ *                     id: "processor_test_8644",
+ *                     matcher: "true",
+ *                     fields: [{
+ *                         fromName: "bar",
+ *                         toName: "foo",
+ *                     }],
+ *                 },
+ *             }],
+ *         },
+ *     }],
+ * }});
+ * ```
+ */
 export class OpenpipelineLogs extends pulumi.CustomResource {
     /**
      * Get an existing OpenpipelineLogs resource's state with the given name, ID, and optional extra

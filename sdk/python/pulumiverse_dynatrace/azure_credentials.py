@@ -36,6 +36,7 @@ class AzureCredentialsArgs:
                  unknowns: Optional[pulumi.Input[_builtins.str]] = None):
         """
         The set of arguments for constructing a AzureCredentials resource.
+
         :param pulumi.Input[_builtins.bool] active: The monitoring is enabled (`true`) or disabled (`false`).  If not set on creation, the `true` value is used.  If the field is omitted during an update, the old value remains unaffected
         :param pulumi.Input[_builtins.str] label: The unique name of the Azure credentials configuration.  Allowed characters are letters, numbers, and spaces. Also the special characters `.+-_` are allowed
         :param pulumi.Input[_builtins.bool] monitor_only_tagged_entities: Monitor only resources that have specified Azure tags (`true`) or all resources (`false`).
@@ -47,6 +48,7 @@ class AzureCredentialsArgs:
         :param pulumi.Input[Sequence[pulumi.Input['AzureCredentialsMonitorOnlyTagPairArgs']]] monitor_only_tag_pairs: A list of Azure tags to be monitored.  You can specify up to 20 tags. A resource tagged with *any* of the specified tags is monitored.  Only applicable when the **monitorOnlyTaggedEntities** parameter is set to `true`
         :param pulumi.Input[_builtins.bool] remove_defaults: Instructs the provider to remove the supporting services Dynatrace applies by default to newly created Azure Credentials. Supporting Services applied by via `AzureService` subsequently won't get touched.
         :param pulumi.Input[Sequence[pulumi.Input['AzureCredentialsSupportingServiceArgs']]] supporting_services: A list of Azure supporting services to be monitored. For each service there's a sublist of its metrics and the metrics' dimensions that should be monitored. All of these elements (services, metrics, dimensions) must have corresponding static definitions on the server.
+        :param pulumi.Input[_builtins.bool] supporting_services_managed_in_dynatrace: If enabled (`true`) the attribute `supporting_services` will not get synchronized with Dynatrace. You will be able to manage them via WebUI without interference by Terraform.
         :param pulumi.Input[_builtins.str] unknowns: Any attributes that aren't yet supported by this provider
         """
         pulumi.set(__self__, "active", active)
@@ -216,6 +218,9 @@ class AzureCredentialsArgs:
     @pulumi.getter(name="supportingServicesManagedInDynatrace")
     @_utilities.deprecated("""This attribute is deprecated and has no effect any more. It always defaults to `true`.""")
     def supporting_services_managed_in_dynatrace(self) -> Optional[pulumi.Input[_builtins.bool]]:
+        """
+        If enabled (`true`) the attribute `supporting_services` will not get synchronized with Dynatrace. You will be able to manage them via WebUI without interference by Terraform.
+        """
         return pulumi.get(self, "supporting_services_managed_in_dynatrace")
 
     @supporting_services_managed_in_dynatrace.setter
@@ -253,6 +258,7 @@ class _AzureCredentialsState:
                  unknowns: Optional[pulumi.Input[_builtins.str]] = None):
         """
         Input properties used for looking up and filtering AzureCredentials resources.
+
         :param pulumi.Input[_builtins.bool] active: The monitoring is enabled (`true`) or disabled (`false`).  If not set on creation, the `true` value is used.  If the field is omitted during an update, the old value remains unaffected
         :param pulumi.Input[_builtins.str] app_id: The Application ID (also referred to as Client ID)  The combination of Application ID and Directory ID must be unique
         :param pulumi.Input[_builtins.bool] auto_tagging: The automatic capture of Azure tags is on (`true`) or off (`false`)
@@ -264,6 +270,7 @@ class _AzureCredentialsState:
         :param pulumi.Input[_builtins.bool] monitor_only_tagged_entities: Monitor only resources that have specified Azure tags (`true`) or all resources (`false`).
         :param pulumi.Input[_builtins.bool] remove_defaults: Instructs the provider to remove the supporting services Dynatrace applies by default to newly created Azure Credentials. Supporting Services applied by via `AzureService` subsequently won't get touched.
         :param pulumi.Input[Sequence[pulumi.Input['AzureCredentialsSupportingServiceArgs']]] supporting_services: A list of Azure supporting services to be monitored. For each service there's a sublist of its metrics and the metrics' dimensions that should be monitored. All of these elements (services, metrics, dimensions) must have corresponding static definitions on the server.
+        :param pulumi.Input[_builtins.bool] supporting_services_managed_in_dynatrace: If enabled (`true`) the attribute `supporting_services` will not get synchronized with Dynatrace. You will be able to manage them via WebUI without interference by Terraform.
         :param pulumi.Input[_builtins.str] unknowns: Any attributes that aren't yet supported by this provider
         """
         if active is not None:
@@ -436,6 +443,9 @@ class _AzureCredentialsState:
     @pulumi.getter(name="supportingServicesManagedInDynatrace")
     @_utilities.deprecated("""This attribute is deprecated and has no effect any more. It always defaults to `true`.""")
     def supporting_services_managed_in_dynatrace(self) -> Optional[pulumi.Input[_builtins.bool]]:
+        """
+        If enabled (`true`) the attribute `supporting_services` will not get synchronized with Dynatrace. You will be able to manage them via WebUI without interference by Terraform.
+        """
         return pulumi.get(self, "supporting_services_managed_in_dynatrace")
 
     @supporting_services_managed_in_dynatrace.setter
@@ -476,7 +486,21 @@ class AzureCredentials(pulumi.CustomResource):
                  unknowns: Optional[pulumi.Input[_builtins.str]] = None,
                  __props__=None):
         """
-        Create a AzureCredentials resource with the given unique name, props, and options.
+        > This resource requires the API token scopes **Read configuration** (`ReadConfig`) and **Write configuration** (`WriteConfig`)
+
+        ## Dynatrace Documentation
+
+        - Microsoft Azure monitoring - https://www.dynatrace.com/support/help/how-to-use-dynatrace/infrastructure-monitoring/cloud-platform-monitoring/microsoft-azure-services-monitoring
+
+        - Azure credentials API - https://www.dynatrace.com/support/help/dynatrace-api/configuration-api/azure-credentials-api
+
+        ## Export Example Usage
+
+        - `terraform-provider-dynatrace -export AzureCredentials` downloads all existing Azure credentials configuration
+
+        The full documentation of the export feature is available [here](https://dt-url.net/h203qmc).
+
+
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[_builtins.bool] active: The monitoring is enabled (`true`) or disabled (`false`).  If not set on creation, the `true` value is used.  If the field is omitted during an update, the old value remains unaffected
@@ -490,6 +514,7 @@ class AzureCredentials(pulumi.CustomResource):
         :param pulumi.Input[_builtins.bool] monitor_only_tagged_entities: Monitor only resources that have specified Azure tags (`true`) or all resources (`false`).
         :param pulumi.Input[_builtins.bool] remove_defaults: Instructs the provider to remove the supporting services Dynatrace applies by default to newly created Azure Credentials. Supporting Services applied by via `AzureService` subsequently won't get touched.
         :param pulumi.Input[Sequence[pulumi.Input[Union['AzureCredentialsSupportingServiceArgs', 'AzureCredentialsSupportingServiceArgsDict']]]] supporting_services: A list of Azure supporting services to be monitored. For each service there's a sublist of its metrics and the metrics' dimensions that should be monitored. All of these elements (services, metrics, dimensions) must have corresponding static definitions on the server.
+        :param pulumi.Input[_builtins.bool] supporting_services_managed_in_dynatrace: If enabled (`true`) the attribute `supporting_services` will not get synchronized with Dynatrace. You will be able to manage them via WebUI without interference by Terraform.
         :param pulumi.Input[_builtins.str] unknowns: Any attributes that aren't yet supported by this provider
         """
         ...
@@ -499,7 +524,21 @@ class AzureCredentials(pulumi.CustomResource):
                  args: AzureCredentialsArgs,
                  opts: Optional[pulumi.ResourceOptions] = None):
         """
-        Create a AzureCredentials resource with the given unique name, props, and options.
+        > This resource requires the API token scopes **Read configuration** (`ReadConfig`) and **Write configuration** (`WriteConfig`)
+
+        ## Dynatrace Documentation
+
+        - Microsoft Azure monitoring - https://www.dynatrace.com/support/help/how-to-use-dynatrace/infrastructure-monitoring/cloud-platform-monitoring/microsoft-azure-services-monitoring
+
+        - Azure credentials API - https://www.dynatrace.com/support/help/dynatrace-api/configuration-api/azure-credentials-api
+
+        ## Export Example Usage
+
+        - `terraform-provider-dynatrace -export AzureCredentials` downloads all existing Azure credentials configuration
+
+        The full documentation of the export feature is available [here](https://dt-url.net/h203qmc).
+
+
         :param str resource_name: The name of the resource.
         :param AzureCredentialsArgs args: The arguments to use to populate this resource's properties.
         :param pulumi.ResourceOptions opts: Options for the resource.
@@ -599,6 +638,7 @@ class AzureCredentials(pulumi.CustomResource):
         :param pulumi.Input[_builtins.bool] monitor_only_tagged_entities: Monitor only resources that have specified Azure tags (`true`) or all resources (`false`).
         :param pulumi.Input[_builtins.bool] remove_defaults: Instructs the provider to remove the supporting services Dynatrace applies by default to newly created Azure Credentials. Supporting Services applied by via `AzureService` subsequently won't get touched.
         :param pulumi.Input[Sequence[pulumi.Input[Union['AzureCredentialsSupportingServiceArgs', 'AzureCredentialsSupportingServiceArgsDict']]]] supporting_services: A list of Azure supporting services to be monitored. For each service there's a sublist of its metrics and the metrics' dimensions that should be monitored. All of these elements (services, metrics, dimensions) must have corresponding static definitions on the server.
+        :param pulumi.Input[_builtins.bool] supporting_services_managed_in_dynatrace: If enabled (`true`) the attribute `supporting_services` will not get synchronized with Dynatrace. You will be able to manage them via WebUI without interference by Terraform.
         :param pulumi.Input[_builtins.str] unknowns: Any attributes that aren't yet supported by this provider
         """
         opts = pulumi.ResourceOptions.merge(opts, pulumi.ResourceOptions(id=id))
@@ -713,6 +753,9 @@ class AzureCredentials(pulumi.CustomResource):
     @pulumi.getter(name="supportingServicesManagedInDynatrace")
     @_utilities.deprecated("""This attribute is deprecated and has no effect any more. It always defaults to `true`.""")
     def supporting_services_managed_in_dynatrace(self) -> pulumi.Output[Optional[_builtins.bool]]:
+        """
+        If enabled (`true`) the attribute `supporting_services` will not get synchronized with Dynatrace. You will be able to manage them via WebUI without interference by Terraform.
+        """
         return pulumi.get(self, "supporting_services_managed_in_dynatrace")
 
     @_builtins.property

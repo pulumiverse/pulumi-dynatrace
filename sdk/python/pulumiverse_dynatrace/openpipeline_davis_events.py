@@ -26,6 +26,7 @@ class OpenpipelineDavisEventsArgs:
                  routing: Optional[pulumi.Input['OpenpipelineDavisEventsRoutingArgs']] = None):
         """
         The set of arguments for constructing a OpenpipelineDavisEvents resource.
+
         :param pulumi.Input['OpenpipelineDavisEventsEndpointsArgs'] endpoints: List of all ingest sources of the configuration
         :param pulumi.Input['OpenpipelineDavisEventsPipelinesArgs'] pipelines: List of all pipelines of the configuration
         :param pulumi.Input['OpenpipelineDavisEventsRoutingArgs'] routing: Dynamic routing definition
@@ -82,6 +83,7 @@ class _OpenpipelineDavisEventsState:
                  routing: Optional[pulumi.Input['OpenpipelineDavisEventsRoutingArgs']] = None):
         """
         Input properties used for looking up and filtering OpenpipelineDavisEvents resources.
+
         :param pulumi.Input['OpenpipelineDavisEventsEndpointsArgs'] endpoints: List of all ingest sources of the configuration
         :param pulumi.Input['OpenpipelineDavisEventsPipelinesArgs'] pipelines: List of all pipelines of the configuration
         :param pulumi.Input['OpenpipelineDavisEventsRoutingArgs'] routing: Dynamic routing definition
@@ -141,7 +143,51 @@ class OpenpipelineDavisEvents(pulumi.CustomResource):
                  routing: Optional[pulumi.Input[Union['OpenpipelineDavisEventsRoutingArgs', 'OpenpipelineDavisEventsRoutingArgsDict']]] = None,
                  __props__=None):
         """
-        Create a OpenpipelineDavisEvents resource with the given unique name, props, and options.
+        !> This resource API endpoint has been deprecated, please migrate your OpenPipeline configurations and use `dynatrace_openpipeline_v2_davis_events_*` instead.
+
+        !> Deploying an OpenPipeline configuration will overwrite the existing one of the same kind, causing any manual changes made in the web UI or other configurations managed by Terraform or Monaco to be lost. Ensure all configurations are defined within a single Terraform or Monaco configuration to prevent data loss.
+
+        > **Dynatrace SaaS only**
+
+        > To utilize this resource, please define the environment variables `DT_CLIENT_ID`, `DT_CLIENT_SECRET`, `DT_ACCOUNT_ID` with an OAuth client including the following permissions: **View OpenPipeline configurations** (`openpipeline:configurations:read`), and **Edit OpenPipeline configurations** (`openpipeline:configurations:write`).
+
+        ## Dynatrace Documentation
+
+        - OpenPipeline - https://docs.dynatrace.com/docs/platform/openpipeline
+
+        ## Export Example Usage
+
+        - `terraform-provider-dynatrace -export OpenpipelineDavisEvents` downloads all existing OpenPipeline definitions for Davis events
+
+        The full documentation of the export feature is available [here](https://dt-url.net/h203qmc).
+
+        ## Resource Example Usage
+
+        ```python
+        import pulumi
+        import pulumiverse_dynatrace as dynatrace
+
+        davis_events = dynatrace.OpenpipelineDavisEvents("davis_events", pipelines={
+            "pipelines": [{
+                "enabled": True,
+                "display_name": "#name#",
+                "id": "pipeline_Custom_davis_events_#name#",
+                "storage": {
+                    "catch_all_bucket_name": "default_davis_custom_events",
+                    "processors": [{
+                        "no_storage_processor": {
+                            "description": "#name#",
+                            "enabled": True,
+                            "id": "processor_No_storage_#name#",
+                            "matcher": "true",
+                        },
+                    }],
+                },
+            }],
+        })
+        ```
+
+
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[Union['OpenpipelineDavisEventsEndpointsArgs', 'OpenpipelineDavisEventsEndpointsArgsDict']] endpoints: List of all ingest sources of the configuration
@@ -155,7 +201,51 @@ class OpenpipelineDavisEvents(pulumi.CustomResource):
                  args: Optional[OpenpipelineDavisEventsArgs] = None,
                  opts: Optional[pulumi.ResourceOptions] = None):
         """
-        Create a OpenpipelineDavisEvents resource with the given unique name, props, and options.
+        !> This resource API endpoint has been deprecated, please migrate your OpenPipeline configurations and use `dynatrace_openpipeline_v2_davis_events_*` instead.
+
+        !> Deploying an OpenPipeline configuration will overwrite the existing one of the same kind, causing any manual changes made in the web UI or other configurations managed by Terraform or Monaco to be lost. Ensure all configurations are defined within a single Terraform or Monaco configuration to prevent data loss.
+
+        > **Dynatrace SaaS only**
+
+        > To utilize this resource, please define the environment variables `DT_CLIENT_ID`, `DT_CLIENT_SECRET`, `DT_ACCOUNT_ID` with an OAuth client including the following permissions: **View OpenPipeline configurations** (`openpipeline:configurations:read`), and **Edit OpenPipeline configurations** (`openpipeline:configurations:write`).
+
+        ## Dynatrace Documentation
+
+        - OpenPipeline - https://docs.dynatrace.com/docs/platform/openpipeline
+
+        ## Export Example Usage
+
+        - `terraform-provider-dynatrace -export OpenpipelineDavisEvents` downloads all existing OpenPipeline definitions for Davis events
+
+        The full documentation of the export feature is available [here](https://dt-url.net/h203qmc).
+
+        ## Resource Example Usage
+
+        ```python
+        import pulumi
+        import pulumiverse_dynatrace as dynatrace
+
+        davis_events = dynatrace.OpenpipelineDavisEvents("davis_events", pipelines={
+            "pipelines": [{
+                "enabled": True,
+                "display_name": "#name#",
+                "id": "pipeline_Custom_davis_events_#name#",
+                "storage": {
+                    "catch_all_bucket_name": "default_davis_custom_events",
+                    "processors": [{
+                        "no_storage_processor": {
+                            "description": "#name#",
+                            "enabled": True,
+                            "id": "processor_No_storage_#name#",
+                            "matcher": "true",
+                        },
+                    }],
+                },
+            }],
+        })
+        ```
+
+
         :param str resource_name: The name of the resource.
         :param OpenpipelineDavisEventsArgs args: The arguments to use to populate this resource's properties.
         :param pulumi.ResourceOptions opts: Options for the resource.

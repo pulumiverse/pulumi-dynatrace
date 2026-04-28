@@ -64,23 +64,6 @@ def get_application(name: Optional[_builtins.str] = None,
     The application data source allows the application ID to be retrieved by its name.
 
     - `name` queries for all applications with the specified name
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_dynatrace as dynatrace
-    import pulumiverse_dynatrace as dynatrace
-
-    test = dynatrace.get_application(name="Example")
-    _name_ = dynatrace.ApplicationDetectionRule("#name#",
-        application_identifier=test.id,
-        filter_config={
-            "application_match_target": "DOMAIN",
-            "application_match_type": "MATCHES",
-            "pattern": "www.google.com",
-        })
-    ```
     """
     __args__ = dict()
     __args__['name'] = name
@@ -96,23 +79,6 @@ def get_application_output(name: Optional[pulumi.Input[_builtins.str]] = None,
     The application data source allows the application ID to be retrieved by its name.
 
     - `name` queries for all applications with the specified name
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_dynatrace as dynatrace
-    import pulumiverse_dynatrace as dynatrace
-
-    test = dynatrace.get_application(name="Example")
-    _name_ = dynatrace.ApplicationDetectionRule("#name#",
-        application_identifier=test.id,
-        filter_config={
-            "application_match_target": "DOMAIN",
-            "application_match_type": "MATCHES",
-            "pattern": "www.google.com",
-        })
-    ```
     """
     __args__ = dict()
     __args__['name'] = name

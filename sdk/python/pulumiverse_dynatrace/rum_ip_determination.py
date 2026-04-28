@@ -23,6 +23,7 @@ class RumIpDeterminationArgs:
                  insert_after: Optional[pulumi.Input[_builtins.str]] = None):
         """
         The set of arguments for constructing a RumIpDetermination resource.
+
         :param pulumi.Input[_builtins.str] header_name: Client IP header name
         :param pulumi.Input[_builtins.str] insert_after: Because this resource allows for ordering you may specify the ID of the resource instance that comes before this instance regarding order. If not specified when creating the setting will be added to the end of the list. If not specified during update the order will remain untouched
         """
@@ -62,6 +63,7 @@ class _RumIpDeterminationState:
                  insert_after: Optional[pulumi.Input[_builtins.str]] = None):
         """
         Input properties used for looking up and filtering RumIpDetermination resources.
+
         :param pulumi.Input[_builtins.str] header_name: Client IP header name
         :param pulumi.Input[_builtins.str] insert_after: Because this resource allows for ordering you may specify the ID of the resource instance that comes before this instance regarding order. If not specified when creating the setting will be added to the end of the list. If not specified during update the order will remain untouched
         """
@@ -105,7 +107,21 @@ class RumIpDetermination(pulumi.CustomResource):
                  insert_after: Optional[pulumi.Input[_builtins.str]] = None,
                  __props__=None):
         """
-        Create a RumIpDetermination resource with the given unique name, props, and options.
+        > This resource requires the API token scopes **Read settings** (`settings.read`) and **Write settings** (`settings.write`)
+
+        ## Dynatrace Documentation
+
+        - Customize IP address detection - https://www.dynatrace.com/support/help/platform-modules/digital-experience/web-applications/setup-and-configuration/additional-configuration/customize-ip-address-detection-web
+
+        - Settings API - https://www.dynatrace.com/support/help/dynatrace-api/environment-api/settings (schemaId: `builtin:rum.ip-determination`)
+
+        ## Export Example Usage
+
+        - `terraform-provider-dynatrace -export RumIpDetermination` downloads all existing client IP determination configuration
+
+        The full documentation of the export feature is available [here](https://dt-url.net/h203qmc).
+
+
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[_builtins.str] header_name: Client IP header name
@@ -118,7 +134,21 @@ class RumIpDetermination(pulumi.CustomResource):
                  args: RumIpDeterminationArgs,
                  opts: Optional[pulumi.ResourceOptions] = None):
         """
-        Create a RumIpDetermination resource with the given unique name, props, and options.
+        > This resource requires the API token scopes **Read settings** (`settings.read`) and **Write settings** (`settings.write`)
+
+        ## Dynatrace Documentation
+
+        - Customize IP address detection - https://www.dynatrace.com/support/help/platform-modules/digital-experience/web-applications/setup-and-configuration/additional-configuration/customize-ip-address-detection-web
+
+        - Settings API - https://www.dynatrace.com/support/help/dynatrace-api/environment-api/settings (schemaId: `builtin:rum.ip-determination`)
+
+        ## Export Example Usage
+
+        - `terraform-provider-dynatrace -export RumIpDetermination` downloads all existing client IP determination configuration
+
+        The full documentation of the export feature is available [here](https://dt-url.net/h203qmc).
+
+
         :param str resource_name: The name of the resource.
         :param RumIpDeterminationArgs args: The arguments to use to populate this resource's properties.
         :param pulumi.ResourceOptions opts: Options for the resource.

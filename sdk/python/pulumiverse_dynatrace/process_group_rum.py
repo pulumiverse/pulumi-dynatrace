@@ -23,6 +23,7 @@ class ProcessGroupRumArgs:
                  process_group_id: pulumi.Input[_builtins.str]):
         """
         The set of arguments for constructing a ProcessGroupRum resource.
+
         :param pulumi.Input[_builtins.bool] enable: Allows OneAgent to:
                * automatically inject the RUM JavaScript tag into each page delivered by this process group
                * provide the necessary info to correlate RUM data with server-side PurePaths
@@ -69,6 +70,7 @@ class _ProcessGroupRumState:
                  process_group_id: Optional[pulumi.Input[_builtins.str]] = None):
         """
         Input properties used for looking up and filtering ProcessGroupRum resources.
+
         :param pulumi.Input[_builtins.bool] enable: Allows OneAgent to:
                * automatically inject the RUM JavaScript tag into each page delivered by this process group
                * provide the necessary info to correlate RUM data with server-side PurePaths
@@ -120,7 +122,21 @@ class ProcessGroupRum(pulumi.CustomResource):
                  process_group_id: Optional[pulumi.Input[_builtins.str]] = None,
                  __props__=None):
         """
-        Create a ProcessGroupRum resource with the given unique name, props, and options.
+        > This resource requires the API token scopes **Read settings** (`settings.read`) and **Write settings** (`settings.write`)
+
+        ## Dynatrace Documentation
+
+        - Real User Monitoring for process groups - https://www.dynatrace.com/support/help/how-to-use-dynatrace/real-user-monitoring/setup-and-configuration/web-applications/additional-configuration/rum-for-process-groups
+
+        - Settings API - https://www.dynatrace.com/support/help/dynatrace-api/environment-api/settings (schemaId: `builtin:rum.processgroup`)
+
+        ## Export Example Usage
+
+        - `terraform-provider-dynatrace -export ProcessGroupRum` downloads all real user monitoring configuration for process groups
+
+        The full documentation of the export feature is available [here](https://dt-url.net/h203qmc).
+
+
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[_builtins.bool] enable: Allows OneAgent to:
@@ -137,7 +153,21 @@ class ProcessGroupRum(pulumi.CustomResource):
                  args: ProcessGroupRumArgs,
                  opts: Optional[pulumi.ResourceOptions] = None):
         """
-        Create a ProcessGroupRum resource with the given unique name, props, and options.
+        > This resource requires the API token scopes **Read settings** (`settings.read`) and **Write settings** (`settings.write`)
+
+        ## Dynatrace Documentation
+
+        - Real User Monitoring for process groups - https://www.dynatrace.com/support/help/how-to-use-dynatrace/real-user-monitoring/setup-and-configuration/web-applications/additional-configuration/rum-for-process-groups
+
+        - Settings API - https://www.dynatrace.com/support/help/dynatrace-api/environment-api/settings (schemaId: `builtin:rum.processgroup`)
+
+        ## Export Example Usage
+
+        - `terraform-provider-dynatrace -export ProcessGroupRum` downloads all real user monitoring configuration for process groups
+
+        The full documentation of the export feature is available [here](https://dt-url.net/h203qmc).
+
+
         :param str resource_name: The name of the resource.
         :param ProcessGroupRumArgs args: The arguments to use to populate this resource's properties.
         :param pulumi.ResourceOptions opts: Options for the resource.

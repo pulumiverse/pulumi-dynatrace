@@ -22,6 +22,7 @@ class RequestNamingsArgs:
                  ids: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None):
         """
         The set of arguments for constructing a RequestNamings resource.
+
         :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] ids: The IDs of the request namings in the order they should be taken into consideration
         """
         if ids is not None:
@@ -46,6 +47,7 @@ class _RequestNamingsState:
                  ids: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None):
         """
         Input properties used for looking up and filtering RequestNamings resources.
+
         :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] ids: The IDs of the request namings in the order they should be taken into consideration
         """
         if ids is not None:
@@ -81,6 +83,7 @@ class RequestNamings(pulumi.CustomResource):
 
         - Request naming API - https://www.dynatrace.com/support/help/dynatrace-api/configuration-api/service-api/request-naming-api
 
+
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] ids: The IDs of the request namings in the order they should be taken into consideration
@@ -99,6 +102,7 @@ class RequestNamings(pulumi.CustomResource):
         - Set up request naming - https://www.dynatrace.com/support/help/how-to-use-dynatrace/services/service-monitoring-settings/set-up-request-naming
 
         - Request naming API - https://www.dynatrace.com/support/help/dynatrace-api/configuration-api/service-api/request-naming-api
+
 
         :param str resource_name: The name of the resource.
         :param RequestNamingsArgs args: The arguments to use to populate this resource's properties.

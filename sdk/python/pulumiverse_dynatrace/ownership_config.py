@@ -24,6 +24,7 @@ class OwnershipConfigArgs:
                  ownership_identifiers: pulumi.Input['OwnershipConfigOwnershipIdentifiersArgs']):
         """
         The set of arguments for constructing a OwnershipConfig resource.
+
         :param pulumi.Input['OwnershipConfigOwnershipIdentifiersArgs'] ownership_identifiers: Tags and metadata are key-value pairs. Define keys for tags and metadata that are considered for ownership. If a tag or any metadata starts with a key defined below, the value of the tag or metadata is considered a team identifier.
         """
         pulumi.set(__self__, "ownership_identifiers", ownership_identifiers)
@@ -47,6 +48,7 @@ class _OwnershipConfigState:
                  ownership_identifiers: Optional[pulumi.Input['OwnershipConfigOwnershipIdentifiersArgs']] = None):
         """
         Input properties used for looking up and filtering OwnershipConfig resources.
+
         :param pulumi.Input['OwnershipConfigOwnershipIdentifiersArgs'] ownership_identifiers: Tags and metadata are key-value pairs. Define keys for tags and metadata that are considered for ownership. If a tag or any metadata starts with a key defined below, the value of the tag or metadata is considered a team identifier.
         """
         if ownership_identifiers is not None:
@@ -74,7 +76,21 @@ class OwnershipConfig(pulumi.CustomResource):
                  ownership_identifiers: Optional[pulumi.Input[Union['OwnershipConfigOwnershipIdentifiersArgs', 'OwnershipConfigOwnershipIdentifiersArgsDict']]] = None,
                  __props__=None):
         """
-        Create a OwnershipConfig resource with the given unique name, props, and options.
+        > This resource requires the API token scopes **Read settings** (`settings.read`) and **Write settings** (`settings.write`)
+
+        ## Dynatrace Documentation
+
+        - Ownership - https://www.dynatrace.com/support/help/manage/ownership
+
+        - Settings API - https://www.dynatrace.com/support/help/dynatrace-api/environment-api/settings (schemaId: `builtin:ownership.config`)
+
+        ## Export Example Usage
+
+        - `terraform-provider-dynatrace -export OwnershipConfig` downloads all existing ownership configuration
+
+        The full documentation of the export feature is available [here](https://dt-url.net/h203qmc).
+
+
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[Union['OwnershipConfigOwnershipIdentifiersArgs', 'OwnershipConfigOwnershipIdentifiersArgsDict']] ownership_identifiers: Tags and metadata are key-value pairs. Define keys for tags and metadata that are considered for ownership. If a tag or any metadata starts with a key defined below, the value of the tag or metadata is considered a team identifier.
@@ -86,7 +102,21 @@ class OwnershipConfig(pulumi.CustomResource):
                  args: OwnershipConfigArgs,
                  opts: Optional[pulumi.ResourceOptions] = None):
         """
-        Create a OwnershipConfig resource with the given unique name, props, and options.
+        > This resource requires the API token scopes **Read settings** (`settings.read`) and **Write settings** (`settings.write`)
+
+        ## Dynatrace Documentation
+
+        - Ownership - https://www.dynatrace.com/support/help/manage/ownership
+
+        - Settings API - https://www.dynatrace.com/support/help/dynatrace-api/environment-api/settings (schemaId: `builtin:ownership.config`)
+
+        ## Export Example Usage
+
+        - `terraform-provider-dynatrace -export OwnershipConfig` downloads all existing ownership configuration
+
+        The full documentation of the export feature is available [here](https://dt-url.net/h203qmc).
+
+
         :param str resource_name: The name of the resource.
         :param OwnershipConfigArgs args: The arguments to use to populate this resource's properties.
         :param pulumi.ResourceOptions opts: Options for the resource.

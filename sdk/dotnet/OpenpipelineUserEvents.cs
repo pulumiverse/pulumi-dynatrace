@@ -10,6 +10,75 @@ using Pulumi;
 
 namespace Pulumiverse.Dynatrace
 {
+    /// <summary>
+    /// !&gt; This resource API endpoint has been deprecated, please migrate your OpenPipeline configurations and use `dynatrace_openpipeline_v2_user_events_*` instead.
+    /// 
+    /// !&gt; Deploying an OpenPipeline configuration will overwrite the existing one of the same kind, causing any manual changes made in the web UI or other configurations managed by Terraform or Monaco to be lost. Ensure all configurations are defined within a single Terraform or Monaco configuration to prevent data loss.
+    /// 
+    /// &gt; **Dynatrace SaaS only**
+    /// 
+    /// &gt; To utilize this resource, please define the environment variables `DT_CLIENT_ID`, `DT_CLIENT_SECRET`, `DT_ACCOUNT_ID` with an OAuth client including the following permissions: **View OpenPipeline configurations** (`openpipeline:configurations:read`), and **Edit OpenPipeline configurations** (`openpipeline:configurations:write`).
+    /// 
+    /// ## Dynatrace Documentation
+    /// 
+    /// - OpenPipeline - https://docs.dynatrace.com/docs/platform/openpipeline
+    /// 
+    /// ## Export Example Usage
+    /// 
+    /// - `terraform-provider-dynatrace -export dynatrace.OpenpipelineUserEvents` downloads all existing OpenPipeline definitions for user events
+    /// 
+    /// The full documentation of the export feature is available [here](https://dt-url.net/h203qmc).
+    /// 
+    /// ## Resource Example Usage
+    /// 
+    /// ```csharp
+    /// using System.Collections.Generic;
+    /// using System.Linq;
+    /// using Pulumi;
+    /// using Dynatrace = Pulumiverse.Dynatrace;
+    /// 
+    /// return await Deployment.RunAsync(() =&gt; 
+    /// {
+    ///     var userEvents = new Dynatrace.OpenpipelineUserEvents("user_events", new()
+    ///     {
+    ///         Pipelines = new Dynatrace.Inputs.OpenpipelineUserEventsPipelinesArgs
+    ///         {
+    ///             Pipelines = new[]
+    ///             {
+    ///                 new Dynatrace.Inputs.OpenpipelineUserEventsPipelinesPipelineArgs
+    ///                 {
+    ///                     Enabled = true,
+    ///                     DisplayName = "#name#",
+    ///                     Id = "pipeline_Custom_user_events_#name#",
+    ///                     SecurityContext = new Dynatrace.Inputs.OpenpipelineUserEventsPipelinesPipelineSecurityContextArgs
+    ///                     {
+    ///                         Processors = new[]
+    ///                         {
+    ///                             new Dynatrace.Inputs.OpenpipelineUserEventsPipelinesPipelineSecurityContextProcessorArgs
+    ///                             {
+    ///                                 SecurityContextProcessor = new Dynatrace.Inputs.OpenpipelineUserEventsPipelinesPipelineSecurityContextProcessorSecurityContextProcessorArgs
+    ///                                 {
+    ///                                     Description = "#name#",
+    ///                                     Enabled = true,
+    ///                                     Id = "processor_Set_security_context_#name#",
+    ///                                     Matcher = "true",
+    ///                                     Value = new Dynatrace.Inputs.OpenpipelineUserEventsPipelinesPipelineSecurityContextProcessorSecurityContextProcessorValueArgs
+    ///                                     {
+    ///                                         Type = "constant",
+    ///                                         Constant = "val",
+    ///                                     },
+    ///                                 },
+    ///                             },
+    ///                         },
+    ///                     },
+    ///                 },
+    ///             },
+    ///         },
+    ///     });
+    /// 
+    /// });
+    /// ```
+    /// </summary>
     [DynatraceResourceType("dynatrace:index/openpipelineUserEvents:OpenpipelineUserEvents")]
     public partial class OpenpipelineUserEvents : global::Pulumi.CustomResource
     {

@@ -10,6 +10,21 @@ using Pulumi;
 
 namespace Pulumiverse.Dynatrace
 {
+    /// <summary>
+    /// &gt; This resource requires the API token scopes **Read settings** (`settings.read`) and **Write settings** (`settings.write`)
+    /// 
+    /// ## Dynatrace Documentation
+    /// 
+    /// - OS services monitoring - https://www.dynatrace.com/support/help/platform-modules/infrastructure-monitoring/hosts/monitoring/os-services
+    /// 
+    /// - Settings API - https://www.dynatrace.com/support/help/dynatrace-api/environment-api/settings (schemaId: `builtin:os-services-monitoring`)
+    /// 
+    /// ## Export Example Usage
+    /// 
+    /// - `terraform-provider-dynatrace -export dynatrace.OsServices` downloads all existing OS services monitoring configuration
+    /// 
+    /// The full documentation of the export feature is available [here](https://dt-url.net/h203qmc).
+    /// </summary>
     [DynatraceResourceType("dynatrace:index/osServices:OsServices")]
     public partial class OsServices : global::Pulumi.CustomResource
     {
@@ -50,7 +65,7 @@ namespace Pulumiverse.Dynatrace
         public Output<string> InsertAfter { get; private set; } = null!;
 
         /// <summary>
-        /// Set of additional key-value properties to be attached to the triggered event.
+        /// Set of additional key-value properties to be attached to the triggered event. You can retrieve the available property keys using the [Events API v2](https://dt-url.net/9622g1w). Additionally any Host resource attribute can be dynamically substituted (agent 1.325+).
         /// </summary>
         [Output("metadata")]
         public Output<Outputs.OsServicesMetadata?> Metadata { get; private set; } = null!;
@@ -197,7 +212,7 @@ namespace Pulumiverse.Dynatrace
         public Input<string>? InsertAfter { get; set; }
 
         /// <summary>
-        /// Set of additional key-value properties to be attached to the triggered event.
+        /// Set of additional key-value properties to be attached to the triggered event. You can retrieve the available property keys using the [Events API v2](https://dt-url.net/9622g1w). Additionally any Host resource attribute can be dynamically substituted (agent 1.325+).
         /// </summary>
         [Input("metadata")]
         public Input<Inputs.OsServicesMetadataArgs>? Metadata { get; set; }
@@ -305,7 +320,7 @@ namespace Pulumiverse.Dynatrace
         public Input<string>? InsertAfter { get; set; }
 
         /// <summary>
-        /// Set of additional key-value properties to be attached to the triggered event.
+        /// Set of additional key-value properties to be attached to the triggered event. You can retrieve the available property keys using the [Events API v2](https://dt-url.net/9622g1w). Additionally any Host resource attribute can be dynamically substituted (agent 1.325+).
         /// </summary>
         [Input("metadata")]
         public Input<Inputs.OsServicesMetadataGetArgs>? Metadata { get; set; }

@@ -10,6 +10,21 @@ using Pulumi;
 
 namespace Pulumiverse.Dynatrace
 {
+    /// <summary>
+    /// &gt; This resource requires the API token scopes **Read settings** (`settings.read`) and **Write settings** (`settings.write`)
+    /// 
+    /// ## Dynatrace Documentation
+    /// 
+    /// - Sensitive Data Masking - https://www.dynatrace.com/support/help/observe-and-explore/logs/log-monitoring/log-monitoring-configuration/sensitive-data-masking
+    /// 
+    /// - Settings API - https://www.dynatrace.com/support/help/dynatrace-api/environment-api/settings (schemaId: `builtin:logmonitoring.sensitive-data-masking-settings`)
+    /// 
+    /// ## Export Example Usage
+    /// 
+    /// - `terraform-provider-dynatrace -export dynatrace.LogSensitiveDataMasking` downloads all existing custom log attributes
+    /// 
+    /// The full documentation of the export feature is available [here](https://dt-url.net/h203qmc).
+    /// </summary>
     [DynatraceResourceType("dynatrace:index/logSensitiveDataMasking:LogSensitiveDataMasking")]
     public partial class LogSensitiveDataMasking : global::Pulumi.CustomResource
     {

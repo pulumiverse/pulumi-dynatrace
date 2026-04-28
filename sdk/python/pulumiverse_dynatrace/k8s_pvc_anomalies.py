@@ -26,6 +26,7 @@ class K8sPvcAnomaliesArgs:
                  scope: Optional[pulumi.Input[_builtins.str]] = None):
         """
         The set of arguments for constructing a K8sPvcAnomalies resource.
+
         :param pulumi.Input['K8sPvcAnomaliesLowDiskSpaceCriticalArgs'] low_disk_space_critical: Alerts on low disk space in megabytes for a persistent volume claim.
         :param pulumi.Input['K8sPvcAnomaliesLowDiskSpaceCriticalPercentageArgs'] low_disk_space_critical_percentage: Alerts on low disk space in % for a persistent volume claim.
         :param pulumi.Input[_builtins.str] scope: The scope of this setting (CLOUD*APPLICATION*NAMESPACE, KUBERNETES_CLUSTER). Omit this property if you want to cover the whole environment.
@@ -80,6 +81,7 @@ class _K8sPvcAnomaliesState:
                  scope: Optional[pulumi.Input[_builtins.str]] = None):
         """
         Input properties used for looking up and filtering K8sPvcAnomalies resources.
+
         :param pulumi.Input['K8sPvcAnomaliesLowDiskSpaceCriticalArgs'] low_disk_space_critical: Alerts on low disk space in megabytes for a persistent volume claim.
         :param pulumi.Input['K8sPvcAnomaliesLowDiskSpaceCriticalPercentageArgs'] low_disk_space_critical_percentage: Alerts on low disk space in % for a persistent volume claim.
         :param pulumi.Input[_builtins.str] scope: The scope of this setting (CLOUD*APPLICATION*NAMESPACE, KUBERNETES_CLUSTER). Omit this property if you want to cover the whole environment.
@@ -139,7 +141,21 @@ class K8sPvcAnomalies(pulumi.CustomResource):
                  scope: Optional[pulumi.Input[_builtins.str]] = None,
                  __props__=None):
         """
-        Create a K8sPvcAnomalies resource with the given unique name, props, and options.
+        > This resource requires the API token scopes **Read settings** (`settings.read`) and **Write settings** (`settings.write`)
+
+        ## Dynatrace Documentation
+
+        - Alert on common Kubernetes/OpenShift issues - https://www.dynatrace.com/support/help/platform-modules/infrastructure-monitoring/container-platform-monitoring/kubernetes-monitoring/alert-on-kubernetes-issues
+
+        - Settings API - https://www.dynatrace.com/support/help/dynatrace-api/environment-api/settings (schemaId: `builtin:anomaly-detection.kubernetes.pvc`)
+
+        ## Export Example Usage
+
+        - `terraform-provider-dynatrace -export K8sPvcAnomalies` downloads all existing Kubernetes persistent volume claim anomaly configuration
+
+        The full documentation of the export feature is available [here](https://dt-url.net/h203qmc).
+
+
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[Union['K8sPvcAnomaliesLowDiskSpaceCriticalArgs', 'K8sPvcAnomaliesLowDiskSpaceCriticalArgsDict']] low_disk_space_critical: Alerts on low disk space in megabytes for a persistent volume claim.
@@ -153,7 +169,21 @@ class K8sPvcAnomalies(pulumi.CustomResource):
                  args: K8sPvcAnomaliesArgs,
                  opts: Optional[pulumi.ResourceOptions] = None):
         """
-        Create a K8sPvcAnomalies resource with the given unique name, props, and options.
+        > This resource requires the API token scopes **Read settings** (`settings.read`) and **Write settings** (`settings.write`)
+
+        ## Dynatrace Documentation
+
+        - Alert on common Kubernetes/OpenShift issues - https://www.dynatrace.com/support/help/platform-modules/infrastructure-monitoring/container-platform-monitoring/kubernetes-monitoring/alert-on-kubernetes-issues
+
+        - Settings API - https://www.dynatrace.com/support/help/dynatrace-api/environment-api/settings (schemaId: `builtin:anomaly-detection.kubernetes.pvc`)
+
+        ## Export Example Usage
+
+        - `terraform-provider-dynatrace -export K8sPvcAnomalies` downloads all existing Kubernetes persistent volume claim anomaly configuration
+
+        The full documentation of the export feature is available [here](https://dt-url.net/h203qmc).
+
+
         :param str resource_name: The name of the resource.
         :param K8sPvcAnomaliesArgs args: The arguments to use to populate this resource's properties.
         :param pulumi.ResourceOptions opts: Options for the resource.

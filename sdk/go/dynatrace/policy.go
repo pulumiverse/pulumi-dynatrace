@@ -12,6 +12,73 @@ import (
 	"github.com/pulumiverse/pulumi-dynatrace/sdk/go/dynatrace/internal"
 )
 
+// > **Dynatrace Managed only**
+//
+// > To utilize this resource, please define the environment variables `DT_CLUSTER_URL` and `DT_CLUSTER_API_TOKEN` with the cluster API token scope **Service Provider API** (`ServiceProviderAPI`).
+//
+// ## Dynatrace Documentation
+//
+// - Dynatrace IAM Policy Management - https://docs.dynatrace.com/managed/manage/identity-access-management/permission-management/manage-user-permissions-policies
+//
+// ## Export Example Usage
+//
+// - `terraform-provider-dynatrace -export Policy` downloads all existing policies
+//
+// The full documentation of the export feature is available [here](https://dt-url.net/h203qmc).
+//
+// ## Resource Example Usage
+//
+// ```go
+// package main
+//
+// import (
+//
+//	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//	"github.com/pulumiverse/pulumi-dynatrace/sdk/go/dynatrace"
+//
+// )
+//
+//	func main() {
+//		pulumi.Run(func(ctx *pulumi.Context) error {
+//			_, err := dynatrace.NewPolicy(ctx, "policy", &dynatrace.PolicyArgs{
+//				Name:           pulumi.String("my_policy_valid_for_environment_########-####-####-####-############"),
+//				Environment:    pulumi.String("########-####-####-####-############"),
+//				StatementQuery: pulumi.String("ALLOW settings:objects:read, settings:schemas:read WHERE settings:schemaId = \"string\";"),
+//			})
+//			if err != nil {
+//				return err
+//			}
+//			return nil
+//		})
+//	}
+//
+// ```
+//
+// ```go
+// package main
+//
+// import (
+//
+//	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//	"github.com/pulumiverse/pulumi-dynatrace/sdk/go/dynatrace"
+//
+// )
+//
+//	func main() {
+//		pulumi.Run(func(ctx *pulumi.Context) error {
+//			_, err := dynatrace.NewIamPolicy(ctx, "policy", &dynatrace.IamPolicyArgs{
+//				Name:           pulumi.String("my_policy_valid_for_all_environments_in_this_cluster"),
+//				Cluster:        "########-####-####-####-############",
+//				StatementQuery: pulumi.String("ALLOW settings:objects:read, settings:schemas:read WHERE settings:schemaId = \"string\";"),
+//			})
+//			if err != nil {
+//				return err
+//			}
+//			return nil
+//		})
+//	}
+//
+// ```
 type Policy struct {
 	pulumi.CustomResourceState
 

@@ -10,6 +10,23 @@ using Pulumi;
 
 namespace Pulumiverse.Dynatrace
 {
+    /// <summary>
+    /// &gt; Configuration of the synthetic test scope overlaps with dynatrace_network_monitor, but this resource in addition provides an option for an environment scope.
+    /// 
+    /// &gt; This resource requires the API token scopes **Read settings** (`settings.read`) and **Write settings** (`settings.write`)
+    /// 
+    /// ## Dynatrace Documentation
+    /// 
+    /// - Network availability monitors - https://docs.dynatrace.com/docs/platform-modules/digital-experience/synthetic-monitoring/general-information/network-availability-monitors
+    /// 
+    /// - Settings API - https://www.dynatrace.com/support/help/dynatrace-api/environment-api/settings (schemaId: `builtin:synthetic.multiprotocol.outage-handling`)
+    /// 
+    /// ## Export Example Usage
+    /// 
+    /// - `terraform-provider-dynatrace -export dynatrace.NetworkMonitorOutage` downloads all existing network availability monitor outage handling configuration
+    /// 
+    /// The full documentation of the export feature is available [here](https://dt-url.net/h203qmc).
+    /// </summary>
     [DynatraceResourceType("dynatrace:index/networkMonitorOutage:NetworkMonitorOutage")]
     public partial class NetworkMonitorOutage : global::Pulumi.CustomResource
     {

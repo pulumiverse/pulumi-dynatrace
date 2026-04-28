@@ -27,6 +27,7 @@ class ServiceDetectionRulesArgs:
                  scope: Optional[pulumi.Input[_builtins.str]] = None):
         """
         The set of arguments for constructing a ServiceDetectionRules resource.
+
         :param pulumi.Input[_builtins.bool] enabled: This setting is enabled (`true`) or disabled (`false`)
         :param pulumi.Input['ServiceDetectionRulesRuleArgs'] rule: Rule
         :param pulumi.Input[_builtins.str] insert_after: Because this resource allows for ordering you may specify the ID of the resource instance that comes before this instance regarding order. If not specified when creating the setting will be added to the end of the list. If not specified during update the order will remain untouched
@@ -97,6 +98,7 @@ class _ServiceDetectionRulesState:
                  scope: Optional[pulumi.Input[_builtins.str]] = None):
         """
         Input properties used for looking up and filtering ServiceDetectionRules resources.
+
         :param pulumi.Input[_builtins.bool] enabled: This setting is enabled (`true`) or disabled (`false`)
         :param pulumi.Input[_builtins.str] insert_after: Because this resource allows for ordering you may specify the ID of the resource instance that comes before this instance regarding order. If not specified when creating the setting will be added to the end of the list. If not specified during update the order will remain untouched
         :param pulumi.Input['ServiceDetectionRulesRuleArgs'] rule: Rule
@@ -180,26 +182,6 @@ class ServiceDetectionRules(pulumi.CustomResource):
 
         - Settings API - https://www.dynatrace.com/support/help/dynatrace-api/environment-api/settings (schemaId: `builtin:service-detection-rules`)
 
-        ## Resource Example Usage
-
-        ```python
-        import pulumi
-        import pulumiverse_dynatrace as dynatrace
-
-        _name_ = dynatrace.ServiceDetectionRules("#name#",
-            enabled=False,
-            rule={
-                "additional_required_attributes": [
-                    "attribute-1",
-                    "attribute-2",
-                ],
-                "condition": "matchesValue(k8s.cluster.name,\\"terraform\\")",
-                "description": "Example description",
-                "rule_name": "#name#",
-                "service_name_template": "{k8s.workload.name}",
-            },
-            scope="environment")
-        ```
 
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
@@ -223,26 +205,6 @@ class ServiceDetectionRules(pulumi.CustomResource):
 
         - Settings API - https://www.dynatrace.com/support/help/dynatrace-api/environment-api/settings (schemaId: `builtin:service-detection-rules`)
 
-        ## Resource Example Usage
-
-        ```python
-        import pulumi
-        import pulumiverse_dynatrace as dynatrace
-
-        _name_ = dynatrace.ServiceDetectionRules("#name#",
-            enabled=False,
-            rule={
-                "additional_required_attributes": [
-                    "attribute-1",
-                    "attribute-2",
-                ],
-                "condition": "matchesValue(k8s.cluster.name,\\"terraform\\")",
-                "description": "Example description",
-                "rule_name": "#name#",
-                "service_name_template": "{k8s.workload.name}",
-            },
-            scope="environment")
-        ```
 
         :param str resource_name: The name of the resource.
         :param ServiceDetectionRulesArgs args: The arguments to use to populate this resource's properties.

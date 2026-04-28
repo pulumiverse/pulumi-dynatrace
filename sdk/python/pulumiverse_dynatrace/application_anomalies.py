@@ -26,6 +26,7 @@ class ApplicationAnomaliesArgs:
                  traffic: Optional[pulumi.Input['ApplicationAnomaliesTrafficArgs']] = None):
         """
         The set of arguments for constructing a ApplicationAnomalies resource.
+
         :param pulumi.Input['ApplicationAnomaliesFailureRateArgs'] failure_rate: Configuration of failure rate increase detection
         :param pulumi.Input['ApplicationAnomaliesResponseTimeArgs'] response_time: Configuration of response time degradation detection
         :param pulumi.Input['ApplicationAnomaliesTrafficArgs'] traffic: Configuration for anomalies regarding traffic
@@ -82,6 +83,7 @@ class _ApplicationAnomaliesState:
                  traffic: Optional[pulumi.Input['ApplicationAnomaliesTrafficArgs']] = None):
         """
         Input properties used for looking up and filtering ApplicationAnomalies resources.
+
         :param pulumi.Input['ApplicationAnomaliesFailureRateArgs'] failure_rate: Configuration of failure rate increase detection
         :param pulumi.Input['ApplicationAnomaliesResponseTimeArgs'] response_time: Configuration of response time degradation detection
         :param pulumi.Input['ApplicationAnomaliesTrafficArgs'] traffic: Configuration for anomalies regarding traffic
@@ -141,7 +143,23 @@ class ApplicationAnomalies(pulumi.CustomResource):
                  traffic: Optional[pulumi.Input[Union['ApplicationAnomaliesTrafficArgs', 'ApplicationAnomaliesTrafficArgsDict']]] = None,
                  __props__=None):
         """
-        Create a ApplicationAnomalies resource with the given unique name, props, and options.
+        !> This resource is utilizing an older API endpoint, please use WebAppAnomalies instead.
+
+        > This resource requires the API token scopes **Read configuration** (`ReadConfig`) and **Write configuration** (`WriteConfig`)
+
+        ## Dynatrace Documentation
+
+        - Adjust the sensitivity of anomaly detection for applications - https://www.dynatrace.com/support/help/how-to-use-dynatrace/problem-detection-and-analysis/problem-detection/adjust-sensitivity-anomaly-detection/adjust-sensitivity-applications
+
+        - Anomaly detection API - Applications - https://www.dynatrace.com/support/help/dynatrace-api/configuration-api/anomaly-detection-api/anomaly-detection-api-applications
+
+        ## Export Example Usage
+
+        - `terraform-provider-dynatrace -export ApplicationAnomalies` downloads all existing application anomaly detection configuration
+
+        The full documentation of the export feature is available [here](https://dt-url.net/h203qmc).
+
+
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[Union['ApplicationAnomaliesFailureRateArgs', 'ApplicationAnomaliesFailureRateArgsDict']] failure_rate: Configuration of failure rate increase detection
@@ -155,7 +173,23 @@ class ApplicationAnomalies(pulumi.CustomResource):
                  args: Optional[ApplicationAnomaliesArgs] = None,
                  opts: Optional[pulumi.ResourceOptions] = None):
         """
-        Create a ApplicationAnomalies resource with the given unique name, props, and options.
+        !> This resource is utilizing an older API endpoint, please use WebAppAnomalies instead.
+
+        > This resource requires the API token scopes **Read configuration** (`ReadConfig`) and **Write configuration** (`WriteConfig`)
+
+        ## Dynatrace Documentation
+
+        - Adjust the sensitivity of anomaly detection for applications - https://www.dynatrace.com/support/help/how-to-use-dynatrace/problem-detection-and-analysis/problem-detection/adjust-sensitivity-anomaly-detection/adjust-sensitivity-applications
+
+        - Anomaly detection API - Applications - https://www.dynatrace.com/support/help/dynatrace-api/configuration-api/anomaly-detection-api/anomaly-detection-api-applications
+
+        ## Export Example Usage
+
+        - `terraform-provider-dynatrace -export ApplicationAnomalies` downloads all existing application anomaly detection configuration
+
+        The full documentation of the export feature is available [here](https://dt-url.net/h203qmc).
+
+
         :param str resource_name: The name of the resource.
         :param ApplicationAnomaliesArgs args: The arguments to use to populate this resource's properties.
         :param pulumi.ResourceOptions opts: Options for the resource.

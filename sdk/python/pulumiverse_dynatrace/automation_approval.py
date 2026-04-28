@@ -22,6 +22,7 @@ class AutomationApprovalArgs:
                  workflow_app_access_approval_enabled: pulumi.Input[_builtins.bool]):
         """
         The set of arguments for constructing a AutomationApproval resource.
+
         :param pulumi.Input[_builtins.bool] workflow_app_access_approval_enabled: Allow on tenant level anyone with access to the app can respond to requests via an approval link.
         """
         pulumi.set(__self__, "workflow_app_access_approval_enabled", workflow_app_access_approval_enabled)
@@ -45,6 +46,7 @@ class _AutomationApprovalState:
                  workflow_app_access_approval_enabled: Optional[pulumi.Input[_builtins.bool]] = None):
         """
         Input properties used for looking up and filtering AutomationApproval resources.
+
         :param pulumi.Input[_builtins.bool] workflow_app_access_approval_enabled: Allow on tenant level anyone with access to the app can respond to requests via an approval link.
         """
         if workflow_app_access_approval_enabled is not None:
@@ -80,14 +82,6 @@ class AutomationApproval(pulumi.CustomResource):
 
         - Settings API - https://www.dynatrace.com/support/help/dynatrace-api/environment-api/settings (schemaId: `builtin:automation.approval)
 
-        ## Resource Example Usage
-
-        ```python
-        import pulumi
-        import pulumiverse_dynatrace as dynatrace
-
-        _name_ = dynatrace.AutomationApproval("#name#", workflow_app_access_approval_enabled=True)
-        ```
 
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
@@ -108,14 +102,6 @@ class AutomationApproval(pulumi.CustomResource):
 
         - Settings API - https://www.dynatrace.com/support/help/dynatrace-api/environment-api/settings (schemaId: `builtin:automation.approval)
 
-        ## Resource Example Usage
-
-        ```python
-        import pulumi
-        import pulumiverse_dynatrace as dynatrace
-
-        _name_ = dynatrace.AutomationApproval("#name#", workflow_app_access_approval_enabled=True)
-        ```
 
         :param str resource_name: The name of the resource.
         :param AutomationApprovalArgs args: The arguments to use to populate this resource's properties.

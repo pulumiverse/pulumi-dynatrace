@@ -11,6 +11,19 @@ import (
 	"github.com/pulumiverse/pulumi-dynatrace/sdk/go/dynatrace/internal"
 )
 
+// > This resource requires the API token scopes **Read settings** (`settings.read`) and **Write settings** (`settings.write`)
+//
+// ## Dynatrace Documentation
+//
+// - Process deep monitoring - https://www.dynatrace.com/support/help/platform-modules/infrastructure-monitoring/process-groups/configuration/pg-monitoring
+//
+// - Settings API - https://www.dynatrace.com/support/help/dynatrace-api/environment-api/settings (schemaId: `builtin:process.built-in-process-monitoring-rule`)
+//
+// ## Export Example Usage
+//
+// - `terraform-provider-dynatrace -export BuiltinProcessMonitoring` downloads all existing built-in process monitoring rules
+//
+// The full documentation of the export feature is available [here](https://dt-url.net/h203qmc).
 type BuiltinProcessMonitoring struct {
 	pulumi.CustomResourceState
 

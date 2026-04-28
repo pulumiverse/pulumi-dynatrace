@@ -30,6 +30,7 @@ class ContainerTechnologyArgs:
                  scope: Optional[pulumi.Input[_builtins.str]] = None):
         """
         The set of arguments for constructing a ContainerTechnology resource.
+
         :param pulumi.Input[_builtins.bool] bosh_process_manager: Platform: Cloud Foundry
         :param pulumi.Input[_builtins.bool] containerd: Platform: Kubernetes
                
@@ -254,6 +255,7 @@ class _ContainerTechnologyState:
                  winc: Optional[pulumi.Input[_builtins.bool]] = None):
         """
         Input properties used for looking up and filtering ContainerTechnology resources.
+
         :param pulumi.Input[_builtins.bool] bosh_process_manager: Platform: Cloud Foundry
         :param pulumi.Input[_builtins.bool] containerd: Platform: Kubernetes
                
@@ -489,7 +491,39 @@ class ContainerTechnology(pulumi.CustomResource):
                  winc: Optional[pulumi.Input[_builtins.bool]] = None,
                  __props__=None):
         """
-        Create a ContainerTechnology resource with the given unique name, props, and options.
+        > This resource requires the API token scopes **Read settings** (`settings.read`) and **Write settings** (`settings.write`)
+
+        ## Dynatrace Documentation
+
+        - Technology support - https://www.dynatrace.com/support/help/technology-support#anchor-containers
+
+        - Settings API - https://www.dynatrace.com/support/help/dynatrace-api/environment-api/settings (schemaId: `builtin:container.technology`)
+
+        ## Export Example Usage
+
+        - `terraform-provider-dynatrace -export ContainerTechnology` downloads all existing container monitoring configuration
+
+        The full documentation of the export feature is available [here](https://dt-url.net/h203qmc).
+
+        ## Resource Example Usage
+
+        ```python
+        import pulumi
+        import pulumiverse_dynatrace as dynatrace
+
+        environment = dynatrace.ContainerTechnology("environment",
+            bosh_process_manager=True,
+            containerd=True,
+            crio=True,
+            docker=True,
+            docker_windows=True,
+            garden=True,
+            podman=True,
+            scope="environment",
+            winc=True)
+        ```
+
+
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[_builtins.bool] bosh_process_manager: Platform: Cloud Foundry
@@ -549,7 +583,39 @@ class ContainerTechnology(pulumi.CustomResource):
                  args: ContainerTechnologyArgs,
                  opts: Optional[pulumi.ResourceOptions] = None):
         """
-        Create a ContainerTechnology resource with the given unique name, props, and options.
+        > This resource requires the API token scopes **Read settings** (`settings.read`) and **Write settings** (`settings.write`)
+
+        ## Dynatrace Documentation
+
+        - Technology support - https://www.dynatrace.com/support/help/technology-support#anchor-containers
+
+        - Settings API - https://www.dynatrace.com/support/help/dynatrace-api/environment-api/settings (schemaId: `builtin:container.technology`)
+
+        ## Export Example Usage
+
+        - `terraform-provider-dynatrace -export ContainerTechnology` downloads all existing container monitoring configuration
+
+        The full documentation of the export feature is available [here](https://dt-url.net/h203qmc).
+
+        ## Resource Example Usage
+
+        ```python
+        import pulumi
+        import pulumiverse_dynatrace as dynatrace
+
+        environment = dynatrace.ContainerTechnology("environment",
+            bosh_process_manager=True,
+            containerd=True,
+            crio=True,
+            docker=True,
+            docker_windows=True,
+            garden=True,
+            podman=True,
+            scope="environment",
+            winc=True)
+        ```
+
+
         :param str resource_name: The name of the resource.
         :param ContainerTechnologyArgs args: The arguments to use to populate this resource's properties.
         :param pulumi.ResourceOptions opts: Options for the resource.

@@ -32,6 +32,7 @@ class DiskAnomaliesArgs:
                  tags: Optional[pulumi.Input['DiskAnomaliesTagsArgs']] = None):
         """
         The set of arguments for constructing a DiskAnomalies resource.
+
         :param pulumi.Input[_builtins.bool] enabled: Disk event rule enabled/disabled
         :param pulumi.Input[_builtins.str] metric: The metric to monitor. Possible values are: `LOW_DISK_SPACE`, `LOW_INODES`, `READ_TIME_EXCEEDING` and `WRITE_TIME_EXCEEDING`
         :param pulumi.Input[_builtins.int] samples: The number of samples to evaluate
@@ -179,6 +180,7 @@ class _DiskAnomaliesState:
                  violating_samples: Optional[pulumi.Input[_builtins.int]] = None):
         """
         Input properties used for looking up and filtering DiskAnomalies resources.
+
         :param pulumi.Input['DiskAnomaliesDiskNameArgs'] disk_name: Narrows the rule usage down to disks, matching the specified criteria
         :param pulumi.Input[_builtins.bool] enabled: Disk event rule enabled/disabled
         :param pulumi.Input[_builtins.str] host_group_id: Narrows the rule usage down to disks that run on hosts that themselves run on the specified host group
@@ -334,7 +336,23 @@ class DiskAnomalies(pulumi.CustomResource):
                  violating_samples: Optional[pulumi.Input[_builtins.int]] = None,
                  __props__=None):
         """
-        Create a DiskAnomalies resource with the given unique name, props, and options.
+        !> This resource is utilizing an older API endpoint, please use DiskAnomalyRules instead.
+
+        > This resource requires the API token scopes **Read configuration** (`ReadConfig`) and **Write configuration** (`WriteConfig`)
+
+        ## Dynatrace Documentation
+
+        - Adjust the sensitivity of anomaly detection for infrastructure - https://www.dynatrace.com/support/help/how-to-use-dynatrace/problem-detection-and-analysis/problem-detection/adjust-sensitivity-anomaly-detection/adjust-sensitivity-infastructure
+
+        - Anomaly detection API - Disk events - https://www.dynatrace.com/support/help/dynatrace-api/configuration-api/anomaly-detection-api/anomaly-detection-api-disk-events
+
+        ## Export Example Usage
+
+        - `terraform-provider-dynatrace -export DiskAnomalies` downloads all existing disk anomaly detection configuration
+
+        The full documentation of the export feature is available [here](https://dt-url.net/h203qmc).
+
+
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[Union['DiskAnomaliesDiskNameArgs', 'DiskAnomaliesDiskNameArgsDict']] disk_name: Narrows the rule usage down to disks, matching the specified criteria
@@ -354,7 +372,23 @@ class DiskAnomalies(pulumi.CustomResource):
                  args: DiskAnomaliesArgs,
                  opts: Optional[pulumi.ResourceOptions] = None):
         """
-        Create a DiskAnomalies resource with the given unique name, props, and options.
+        !> This resource is utilizing an older API endpoint, please use DiskAnomalyRules instead.
+
+        > This resource requires the API token scopes **Read configuration** (`ReadConfig`) and **Write configuration** (`WriteConfig`)
+
+        ## Dynatrace Documentation
+
+        - Adjust the sensitivity of anomaly detection for infrastructure - https://www.dynatrace.com/support/help/how-to-use-dynatrace/problem-detection-and-analysis/problem-detection/adjust-sensitivity-anomaly-detection/adjust-sensitivity-infastructure
+
+        - Anomaly detection API - Disk events - https://www.dynatrace.com/support/help/dynatrace-api/configuration-api/anomaly-detection-api/anomaly-detection-api-disk-events
+
+        ## Export Example Usage
+
+        - `terraform-provider-dynatrace -export DiskAnomalies` downloads all existing disk anomaly detection configuration
+
+        The full documentation of the export feature is available [here](https://dt-url.net/h203qmc).
+
+
         :param str resource_name: The name of the resource.
         :param DiskAnomaliesArgs args: The arguments to use to populate this resource's properties.
         :param pulumi.ResourceOptions opts: Options for the resource.

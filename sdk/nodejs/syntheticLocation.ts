@@ -4,6 +4,21 @@
 import * as pulumi from "@pulumi/pulumi";
 import * as utilities from "./utilities";
 
+/**
+ * > This resource requires the API token scope **Create and read synthetic monitors, locations, and nodes** (`ExternalSyntheticIntegration`)
+ *
+ * ## Dynatrace Documentation
+ *
+ * - Creating Private Synthetic Locations - https://www.dynatrace.com/support/help/how-to-use-dynatrace/synthetic-monitoring/private-synthetic-locations/create-a-private-synthetic-location
+ *
+ * - Settings API - https://www.dynatrace.com/support/help/dynatrace-api/environment-api/synthetic/synthetic-locations
+ *
+ * ## Export Example Usage
+ *
+ * - `terraform-provider-dynatrace -export dynatrace.SyntheticLocation` downloads the currently configured private synthetic locations
+ *
+ * The full documentation of the export feature is available [here](https://dt-url.net/h203qmc).
+ */
 export class SyntheticLocation extends pulumi.CustomResource {
     /**
      * Get an existing SyntheticLocation resource's state with the given name, ID, and optional extra

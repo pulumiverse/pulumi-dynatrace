@@ -32,7 +32,7 @@ namespace Pulumiverse.Dynatrace
     /// 
     /// return await Deployment.RunAsync(() =&gt; 
     /// {
-    ///     var sampleWorklowTF = new Dynatrace.AutomationWorkflow("sampleWorklowTF", new()
+    ///     var sampleWorklowTF = new Dynatrace.AutomationWorkflow("Sample_Worklow_TF", new()
     ///     {
     ///         Description = "Desc",
     ///         Actor = "########-####-####-####-############",
@@ -155,10 +155,7 @@ namespace Pulumiverse.Dynatrace
     ///                             { "asdf", "" },
     ///                         },
     ///                         OnProblemClose = false,
-    ///                         Types = new[]
-    ///                         {
-    ///                             "CUSTOM_ANNOTATION",
-    ///                         },
+    ///                         CustomFilter = "matchesPhrase(custom.event.type, \"DEPLOY\")",
     ///                     },
     ///                 },
     ///             },

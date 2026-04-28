@@ -31,6 +31,7 @@ class CalculatedSyntheticMetricArgs:
                  name: Optional[pulumi.Input[_builtins.str]] = None):
         """
         The set of arguments for constructing a CalculatedSyntheticMetric resource.
+
         :param pulumi.Input[_builtins.bool] enabled: The metric is enabled (`true`) or disabled (`false`)
         :param pulumi.Input[_builtins.str] metric: The type of the synthetic metric. Possible values: [ ApplicationCache, Callback, CumulativeLayoutShift, DNSLookup, DOMComplete, DOMContentLoaded, DOMInteractive, FailedRequestsResources, FirstContentfulPaint, FirstInputDelay, FirstInputStart, FirstPaint, HTMLDownloaded, HttpErrors, JavaScriptErrors, LargestContentfulPaint, LoadEventEnd, LoadEventStart, LongTasks, NavigationStart, OnDOMContentLoaded, OnLoad, Processing, RedirectTime, Request, RequestStart, ResourceCount, Response, SecureConnect, SpeedIndex, TCPConnect, TimeToFirstByte, TotalDuration, TransferSize, UserActionDuration, VisuallyComplete ]
         :param pulumi.Input[_builtins.str] metric_key: The unique key of the calculated synthetic metric.
@@ -163,6 +164,7 @@ class _CalculatedSyntheticMetricState:
                  name: Optional[pulumi.Input[_builtins.str]] = None):
         """
         Input properties used for looking up and filtering CalculatedSyntheticMetric resources.
+
         :param pulumi.Input[_builtins.str] description: Descriptor of a calculated synthetic metric.
         :param pulumi.Input[Sequence[pulumi.Input['CalculatedSyntheticMetricDimensionArgs']]] dimensions: Dimension of the calculated synthetic metric.
         :param pulumi.Input[_builtins.bool] enabled: The metric is enabled (`true`) or disabled (`false`)
@@ -302,7 +304,21 @@ class CalculatedSyntheticMetric(pulumi.CustomResource):
                  name: Optional[pulumi.Input[_builtins.str]] = None,
                  __props__=None):
         """
-        Create a CalculatedSyntheticMetric resource with the given unique name, props, and options.
+        > This resource requires the API token scopes **Read configuration** (`ReadConfig`) and **Write configuration** (`WriteConfig`)
+
+        ## Dynatrace Documentation
+
+        - Multidimensional analysis for browser monitors - https://www.dynatrace.com/support/help/platform-modules/digital-experience/synthetic-monitoring/analysis-and-alerting/multidimensional-analysis-for-browser-monitors
+
+        - Calculated metrics API - Synthetic - https://www.dynatrace.com/support/help/dynatrace-api/configuration-api/calculated-metrics/synthetic-metrics
+
+        ## Export Example Usage
+
+        - `terraform-provider-dynatrace -export CalculatedSyntheticMetric` downloads all existing calculated synthetic metric configuration
+
+        The full documentation of the export feature is available [here](https://dt-url.net/h203qmc).
+
+
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[_builtins.str] description: Descriptor of a calculated synthetic metric.
@@ -321,7 +337,21 @@ class CalculatedSyntheticMetric(pulumi.CustomResource):
                  args: CalculatedSyntheticMetricArgs,
                  opts: Optional[pulumi.ResourceOptions] = None):
         """
-        Create a CalculatedSyntheticMetric resource with the given unique name, props, and options.
+        > This resource requires the API token scopes **Read configuration** (`ReadConfig`) and **Write configuration** (`WriteConfig`)
+
+        ## Dynatrace Documentation
+
+        - Multidimensional analysis for browser monitors - https://www.dynatrace.com/support/help/platform-modules/digital-experience/synthetic-monitoring/analysis-and-alerting/multidimensional-analysis-for-browser-monitors
+
+        - Calculated metrics API - Synthetic - https://www.dynatrace.com/support/help/dynatrace-api/configuration-api/calculated-metrics/synthetic-metrics
+
+        ## Export Example Usage
+
+        - `terraform-provider-dynatrace -export CalculatedSyntheticMetric` downloads all existing calculated synthetic metric configuration
+
+        The full documentation of the export feature is available [here](https://dt-url.net/h203qmc).
+
+
         :param str resource_name: The name of the resource.
         :param CalculatedSyntheticMetricArgs args: The arguments to use to populate this resource's properties.
         :param pulumi.ResourceOptions opts: Options for the resource.

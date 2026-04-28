@@ -12,14 +12,30 @@ import (
 	"github.com/pulumiverse/pulumi-dynatrace/sdk/go/dynatrace/internal"
 )
 
+// !> This resource API endpoint has been deprecated, please use AttributeAllowList and AttributeMasking instead.
+//
+// > This resource requires the API token scopes **Read settings** (`settings.read`) and **Write settings** (`settings.write`)
+//
+// ## Dynatrace Documentation
+//
+// - Span settings - https://www.dynatrace.com/support/help/extend-dynatrace/extend-tracing/span-settings
+//
+// - Settings API - https://www.dynatrace.com/support/help/dynatrace-api/environment-api/settings (schemaId: `builtin:span-attribute`)
+//
+// ## Export Example Usage
+//
+// - `terraform-provider-dynatrace -export SpanAttributed` downloads all existing span attribute configuration
+//
+// The full documentation of the export feature is available [here](https://dt-url.net/h203qmc).
 type SpanAttributed struct {
 	pulumi.CustomResourceState
 
 	// Key of the span attribute to store
 	Key pulumi.StringOutput `pulumi:"key"`
 	// Possible Values: `MASK_ENTIRE_VALUE`, `MASK_ONLY_CONFIDENTIAL_DATA`, `NOT_MASKED`
-	Masking    pulumi.StringOutput `pulumi:"masking"`
-	Persistent pulumi.BoolOutput   `pulumi:"persistent"`
+	Masking pulumi.StringOutput `pulumi:"masking"`
+	// Prevents the Span Attribute from getting deleted when running `terraform destroy` - to be used for Span Attributes that are defined by default on every Dynatrace environment.
+	Persistent pulumi.BoolOutput `pulumi:"persistent"`
 }
 
 // NewSpanAttributed registers a new resource with the given unique name, arguments, and options.
@@ -61,15 +77,17 @@ type spanAttributedState struct {
 	// Key of the span attribute to store
 	Key *string `pulumi:"key"`
 	// Possible Values: `MASK_ENTIRE_VALUE`, `MASK_ONLY_CONFIDENTIAL_DATA`, `NOT_MASKED`
-	Masking    *string `pulumi:"masking"`
-	Persistent *bool   `pulumi:"persistent"`
+	Masking *string `pulumi:"masking"`
+	// Prevents the Span Attribute from getting deleted when running `terraform destroy` - to be used for Span Attributes that are defined by default on every Dynatrace environment.
+	Persistent *bool `pulumi:"persistent"`
 }
 
 type SpanAttributedState struct {
 	// Key of the span attribute to store
 	Key pulumi.StringPtrInput
 	// Possible Values: `MASK_ENTIRE_VALUE`, `MASK_ONLY_CONFIDENTIAL_DATA`, `NOT_MASKED`
-	Masking    pulumi.StringPtrInput
+	Masking pulumi.StringPtrInput
+	// Prevents the Span Attribute from getting deleted when running `terraform destroy` - to be used for Span Attributes that are defined by default on every Dynatrace environment.
 	Persistent pulumi.BoolPtrInput
 }
 
@@ -81,8 +99,9 @@ type spanAttributedArgs struct {
 	// Key of the span attribute to store
 	Key string `pulumi:"key"`
 	// Possible Values: `MASK_ENTIRE_VALUE`, `MASK_ONLY_CONFIDENTIAL_DATA`, `NOT_MASKED`
-	Masking    string `pulumi:"masking"`
-	Persistent *bool  `pulumi:"persistent"`
+	Masking string `pulumi:"masking"`
+	// Prevents the Span Attribute from getting deleted when running `terraform destroy` - to be used for Span Attributes that are defined by default on every Dynatrace environment.
+	Persistent *bool `pulumi:"persistent"`
 }
 
 // The set of arguments for constructing a SpanAttributed resource.
@@ -90,7 +109,8 @@ type SpanAttributedArgs struct {
 	// Key of the span attribute to store
 	Key pulumi.StringInput
 	// Possible Values: `MASK_ENTIRE_VALUE`, `MASK_ONLY_CONFIDENTIAL_DATA`, `NOT_MASKED`
-	Masking    pulumi.StringInput
+	Masking pulumi.StringInput
+	// Prevents the Span Attribute from getting deleted when running `terraform destroy` - to be used for Span Attributes that are defined by default on every Dynatrace environment.
 	Persistent pulumi.BoolPtrInput
 }
 
@@ -191,6 +211,7 @@ func (o SpanAttributedOutput) Masking() pulumi.StringOutput {
 	return o.ApplyT(func(v *SpanAttributed) pulumi.StringOutput { return v.Masking }).(pulumi.StringOutput)
 }
 
+// Prevents the Span Attribute from getting deleted when running `terraform destroy` - to be used for Span Attributes that are defined by default on every Dynatrace environment.
 func (o SpanAttributedOutput) Persistent() pulumi.BoolOutput {
 	return o.ApplyT(func(v *SpanAttributed) pulumi.BoolOutput { return v.Persistent }).(pulumi.BoolOutput)
 }

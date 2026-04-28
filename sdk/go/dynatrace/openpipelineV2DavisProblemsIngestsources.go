@@ -12,6 +12,150 @@ import (
 	"github.com/pulumiverse/pulumi-dynatrace/sdk/go/dynatrace/internal"
 )
 
+// > This resource requires the API token scopes **Read settings** (`settings.read`) and **Write settings** (`settings.write`)
+//
+// > This resource requires the OAuth scopes **Read settings** (`settings:objects:read`) and **Write settings** (`settings:objects:write`)
+//
+// ## Limitations
+//
+// > **Warning** If a resource is created using an API token or without setting `DYNATRACE_HTTP_OAUTH_PREFERENCE=true` (when both are used), the settings object's owner will remain empty.
+//
+// An empty owner implies:
+// - The settings object becomes public, allowing other users with settings permissions to read and modify it.
+// - Changing the settings object's permissions will have no effect, meaning the `SettingsPermissions` resource can't alter its access.
+//
+// When a settings object is created using platform credentials:
+// - The owner is set to the owner of the OAuth client or platform token.
+// - By default, the settings object is private; only the owner can read and modify it.
+// - Access modifiers can be managed using the `SettingsPermissions` resource.
+//
+// We recommend using platform credentials to ensure a correct setup.
+// In case an API token is needed, we recommend setting `DYNATRACE_HTTP_OAUTH_PREFERENCE=true`.
+//
+// ## Dynatrace Documentation
+//
+// - OpenPipeline - https://docs.dynatrace.com/docs/platform/openpipeline
+//
+// ## Export Example Usage
+//
+// - `terraform-provider-dynatrace -export OpenpipelineV2DavisProblemsIngestsources` downloads all existing OpenPipeline definitions for davis problems ingest sources
+//
+// The full documentation of the export feature is available [here](https://dt-url.net/h203qmc).
+//
+// ## Resource Example Usage
+//
+// ```go
+// package main
+//
+// import (
+//
+//	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//	"github.com/pulumiverse/pulumi-dynatrace/sdk/go/dynatrace"
+//
+// )
+//
+//	func main() {
+//		pulumi.Run(func(ctx *pulumi.Context) error {
+//			_, err := dynatrace.NewOpenpipelineV2DavisProblemsIngestsources(ctx, "maximal-source", &dynatrace.OpenpipelineV2DavisProblemsIngestsourcesArgs{
+//				Enabled:     pulumi.Bool(true),
+//				DisplayName: pulumi.String("max-ingestsource"),
+//				PathSegment: pulumi.String("processor.ingestsource.path.max.tf.#name#"),
+//				SourceType:  pulumi.String("http"),
+//				StaticRouting: &dynatrace.OpenpipelineV2DavisProblemsIngestsourcesStaticRoutingArgs{
+//					PipelineType:      pulumi.String("builtin"),
+//					BuiltinPipelineId: pulumi.String("default"),
+//				},
+//				DefaultBucket: pulumi.String("default_events"),
+//				MetadataList: &dynatrace.OpenpipelineV2DavisProblemsIngestsourcesMetadataListArgs{
+//					Metadatas: dynatrace.OpenpipelineV2DavisProblemsIngestsourcesMetadataListMetadataArray{
+//						&dynatrace.OpenpipelineV2DavisProblemsIngestsourcesMetadataListMetadataArgs{
+//							EntryKey:   pulumi.String("environment"),
+//							EntryValue: pulumi.String("production"),
+//						},
+//					},
+//				},
+//				Processing: &dynatrace.OpenpipelineV2DavisProblemsIngestsourcesProcessingArgs{
+//					Processors: &dynatrace.OpenpipelineV2DavisProblemsIngestsourcesProcessingProcessorsArgs{
+//						Processors: dynatrace.OpenpipelineV2DavisProblemsIngestsourcesProcessingProcessorsProcessorArray{
+//							&dynatrace.OpenpipelineV2DavisProblemsIngestsourcesProcessingProcessorsProcessorArgs{
+//								Enabled:     pulumi.Bool(true),
+//								Type:        pulumi.String("drop"),
+//								Id:          pulumi.String("processor_Drop_unnecessary_records_1234"),
+//								Description: pulumi.String("Drop unnecessary records"),
+//								Matcher:     pulumi.String("not matchesPhrase(record.name, \"Error\") and not matchesPhrase(record.name, \"Warning\")"),
+//							},
+//							&dynatrace.OpenpipelineV2DavisProblemsIngestsourcesProcessingProcessorsProcessorArgs{
+//								Enabled:     pulumi.Bool(true),
+//								Type:        pulumi.String("fieldsAdd"),
+//								Id:          pulumi.String("processor_Add_error_flag_6132"),
+//								Description: pulumi.String("Add error flag"),
+//								Matcher:     pulumi.String("matchesPhrase(record.name, \"Error\")"),
+//								SampleData:  pulumi.String("{\n  \"record.name\": \"Error record\" \n}"),
+//								FieldsAdd: &dynatrace.OpenpipelineV2DavisProblemsIngestsourcesProcessingProcessorsProcessorFieldsAddArgs{
+//									Fields: &dynatrace.OpenpipelineV2DavisProblemsIngestsourcesProcessingProcessorsProcessorFieldsAddFieldsArgs{
+//										Fields: dynatrace.OpenpipelineV2DavisProblemsIngestsourcesProcessingProcessorsProcessorFieldsAddFieldsFieldArray{
+//											&dynatrace.OpenpipelineV2DavisProblemsIngestsourcesProcessingProcessorsProcessorFieldsAddFieldsFieldArgs{
+//												Name:  pulumi.String("is_error"),
+//												Value: pulumi.String("true"),
+//											},
+//										},
+//									},
+//								},
+//							},
+//							&dynatrace.OpenpipelineV2DavisProblemsIngestsourcesProcessingProcessorsProcessorArgs{
+//								Enabled:     pulumi.Bool(true),
+//								Type:        pulumi.String("fieldsRemove"),
+//								Id:          pulumi.String("processor_Remove_details_field_8919"),
+//								Description: pulumi.String("Remove details field"),
+//								Matcher:     pulumi.String("isNotNull(record.details)"),
+//								SampleData:  pulumi.String("{\n  \"record.name\": \"Error\",\n  \"record.details\": \"some record details\"\n}"),
+//								FieldsRemove: &dynatrace.OpenpipelineV2DavisProblemsIngestsourcesProcessingProcessorsProcessorFieldsRemoveArgs{
+//									Fields: pulumi.StringArray{
+//										pulumi.String("record.details"),
+//									},
+//								},
+//							},
+//							&dynatrace.OpenpipelineV2DavisProblemsIngestsourcesProcessingProcessorsProcessorArgs{
+//								Enabled:     pulumi.Bool(true),
+//								Type:        pulumi.String("fieldsRename"),
+//								Id:          pulumi.String("processor_Rename_name_to_title_5347"),
+//								Description: pulumi.String("Rename name to title"),
+//								Matcher:     pulumi.String("true"),
+//								SampleData:  pulumi.String("{\n  \"record.name\": \"Error\"\n}"),
+//								FieldsRename: &dynatrace.OpenpipelineV2DavisProblemsIngestsourcesProcessingProcessorsProcessorFieldsRenameArgs{
+//									Fields: &dynatrace.OpenpipelineV2DavisProblemsIngestsourcesProcessingProcessorsProcessorFieldsRenameFieldsArgs{
+//										Fields: dynatrace.OpenpipelineV2DavisProblemsIngestsourcesProcessingProcessorsProcessorFieldsRenameFieldsFieldArray{
+//											&dynatrace.OpenpipelineV2DavisProblemsIngestsourcesProcessingProcessorsProcessorFieldsRenameFieldsFieldArgs{
+//												FromName: pulumi.String("record.name"),
+//												ToName:   pulumi.String("record.title"),
+//											},
+//										},
+//									},
+//								},
+//							},
+//							&dynatrace.OpenpipelineV2DavisProblemsIngestsourcesProcessingProcessorsProcessorArgs{
+//								Enabled:     pulumi.Bool(true),
+//								Type:        pulumi.String("dql"),
+//								Id:          pulumi.String("processor_Combine_title_and_summary_to_name_1244"),
+//								Description: pulumi.String("Combine title and summary to name"),
+//								SampleData:  pulumi.String("{\n  \"record.title\": \"Error\",\n  \"record.summary\": \"Request failed\"\n}"),
+//								Matcher:     pulumi.String("true"),
+//								Dql: &dynatrace.OpenpipelineV2DavisProblemsIngestsourcesProcessingProcessorsProcessorDqlArgs{
+//									Script: pulumi.String("fieldsAdd record.name = concat(record.title, \" - \", record.summary)"),
+//								},
+//							},
+//						},
+//					},
+//				},
+//			})
+//			if err != nil {
+//				return err
+//			}
+//			return nil
+//		})
+//	}
+//
+// ```
 type OpenpipelineV2DavisProblemsIngestsources struct {
 	pulumi.CustomResourceState
 
@@ -21,10 +165,16 @@ type OpenpipelineV2DavisProblemsIngestsources struct {
 	DisplayName pulumi.StringOutput `pulumi:"displayName"`
 	// This setting is enabled (`true`) or disabled (`false`)
 	Enabled pulumi.BoolOutput `pulumi:"enabled"`
+	// Ingest source metadata list
+	MetadataList OpenpipelineV2DavisProblemsIngestsourcesMetadataListPtrOutput `pulumi:"metadataList"`
 	// Endpoint segment
-	PathSegment pulumi.StringOutput `pulumi:"pathSegment"`
+	PathSegment pulumi.StringPtrOutput `pulumi:"pathSegment"`
 	// Processing stage
-	Processing OpenpipelineV2DavisProblemsIngestsourcesProcessingOutput `pulumi:"processing"`
+	Processing OpenpipelineV2DavisProblemsIngestsourcesProcessingPtrOutput `pulumi:"processing"`
+	// Source
+	Source pulumi.StringPtrOutput `pulumi:"source"`
+	// Source Type. Possible Values: `extension`, `http`
+	SourceType pulumi.StringPtrOutput `pulumi:"sourceType"`
 	// Static routing of endpoint
 	StaticRouting OpenpipelineV2DavisProblemsIngestsourcesStaticRoutingPtrOutput `pulumi:"staticRouting"`
 }
@@ -41,12 +191,6 @@ func NewOpenpipelineV2DavisProblemsIngestsources(ctx *pulumi.Context,
 	}
 	if args.Enabled == nil {
 		return nil, errors.New("invalid value for required argument 'Enabled'")
-	}
-	if args.PathSegment == nil {
-		return nil, errors.New("invalid value for required argument 'PathSegment'")
-	}
-	if args.Processing == nil {
-		return nil, errors.New("invalid value for required argument 'Processing'")
 	}
 	opts = internal.PkgResourceDefaultOpts(opts)
 	var resource OpenpipelineV2DavisProblemsIngestsources
@@ -77,10 +221,16 @@ type openpipelineV2DavisProblemsIngestsourcesState struct {
 	DisplayName *string `pulumi:"displayName"`
 	// This setting is enabled (`true`) or disabled (`false`)
 	Enabled *bool `pulumi:"enabled"`
+	// Ingest source metadata list
+	MetadataList *OpenpipelineV2DavisProblemsIngestsourcesMetadataList `pulumi:"metadataList"`
 	// Endpoint segment
 	PathSegment *string `pulumi:"pathSegment"`
 	// Processing stage
 	Processing *OpenpipelineV2DavisProblemsIngestsourcesProcessing `pulumi:"processing"`
+	// Source
+	Source *string `pulumi:"source"`
+	// Source Type. Possible Values: `extension`, `http`
+	SourceType *string `pulumi:"sourceType"`
 	// Static routing of endpoint
 	StaticRouting *OpenpipelineV2DavisProblemsIngestsourcesStaticRouting `pulumi:"staticRouting"`
 }
@@ -92,10 +242,16 @@ type OpenpipelineV2DavisProblemsIngestsourcesState struct {
 	DisplayName pulumi.StringPtrInput
 	// This setting is enabled (`true`) or disabled (`false`)
 	Enabled pulumi.BoolPtrInput
+	// Ingest source metadata list
+	MetadataList OpenpipelineV2DavisProblemsIngestsourcesMetadataListPtrInput
 	// Endpoint segment
 	PathSegment pulumi.StringPtrInput
 	// Processing stage
 	Processing OpenpipelineV2DavisProblemsIngestsourcesProcessingPtrInput
+	// Source
+	Source pulumi.StringPtrInput
+	// Source Type. Possible Values: `extension`, `http`
+	SourceType pulumi.StringPtrInput
 	// Static routing of endpoint
 	StaticRouting OpenpipelineV2DavisProblemsIngestsourcesStaticRoutingPtrInput
 }
@@ -111,10 +267,16 @@ type openpipelineV2DavisProblemsIngestsourcesArgs struct {
 	DisplayName string `pulumi:"displayName"`
 	// This setting is enabled (`true`) or disabled (`false`)
 	Enabled bool `pulumi:"enabled"`
+	// Ingest source metadata list
+	MetadataList *OpenpipelineV2DavisProblemsIngestsourcesMetadataList `pulumi:"metadataList"`
 	// Endpoint segment
-	PathSegment string `pulumi:"pathSegment"`
+	PathSegment *string `pulumi:"pathSegment"`
 	// Processing stage
-	Processing OpenpipelineV2DavisProblemsIngestsourcesProcessing `pulumi:"processing"`
+	Processing *OpenpipelineV2DavisProblemsIngestsourcesProcessing `pulumi:"processing"`
+	// Source
+	Source *string `pulumi:"source"`
+	// Source Type. Possible Values: `extension`, `http`
+	SourceType *string `pulumi:"sourceType"`
 	// Static routing of endpoint
 	StaticRouting *OpenpipelineV2DavisProblemsIngestsourcesStaticRouting `pulumi:"staticRouting"`
 }
@@ -127,10 +289,16 @@ type OpenpipelineV2DavisProblemsIngestsourcesArgs struct {
 	DisplayName pulumi.StringInput
 	// This setting is enabled (`true`) or disabled (`false`)
 	Enabled pulumi.BoolInput
+	// Ingest source metadata list
+	MetadataList OpenpipelineV2DavisProblemsIngestsourcesMetadataListPtrInput
 	// Endpoint segment
-	PathSegment pulumi.StringInput
+	PathSegment pulumi.StringPtrInput
 	// Processing stage
-	Processing OpenpipelineV2DavisProblemsIngestsourcesProcessingInput
+	Processing OpenpipelineV2DavisProblemsIngestsourcesProcessingPtrInput
+	// Source
+	Source pulumi.StringPtrInput
+	// Source Type. Possible Values: `extension`, `http`
+	SourceType pulumi.StringPtrInput
 	// Static routing of endpoint
 	StaticRouting OpenpipelineV2DavisProblemsIngestsourcesStaticRoutingPtrInput
 }
@@ -237,16 +405,33 @@ func (o OpenpipelineV2DavisProblemsIngestsourcesOutput) Enabled() pulumi.BoolOut
 	return o.ApplyT(func(v *OpenpipelineV2DavisProblemsIngestsources) pulumi.BoolOutput { return v.Enabled }).(pulumi.BoolOutput)
 }
 
+// Ingest source metadata list
+func (o OpenpipelineV2DavisProblemsIngestsourcesOutput) MetadataList() OpenpipelineV2DavisProblemsIngestsourcesMetadataListPtrOutput {
+	return o.ApplyT(func(v *OpenpipelineV2DavisProblemsIngestsources) OpenpipelineV2DavisProblemsIngestsourcesMetadataListPtrOutput {
+		return v.MetadataList
+	}).(OpenpipelineV2DavisProblemsIngestsourcesMetadataListPtrOutput)
+}
+
 // Endpoint segment
-func (o OpenpipelineV2DavisProblemsIngestsourcesOutput) PathSegment() pulumi.StringOutput {
-	return o.ApplyT(func(v *OpenpipelineV2DavisProblemsIngestsources) pulumi.StringOutput { return v.PathSegment }).(pulumi.StringOutput)
+func (o OpenpipelineV2DavisProblemsIngestsourcesOutput) PathSegment() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *OpenpipelineV2DavisProblemsIngestsources) pulumi.StringPtrOutput { return v.PathSegment }).(pulumi.StringPtrOutput)
 }
 
 // Processing stage
-func (o OpenpipelineV2DavisProblemsIngestsourcesOutput) Processing() OpenpipelineV2DavisProblemsIngestsourcesProcessingOutput {
-	return o.ApplyT(func(v *OpenpipelineV2DavisProblemsIngestsources) OpenpipelineV2DavisProblemsIngestsourcesProcessingOutput {
+func (o OpenpipelineV2DavisProblemsIngestsourcesOutput) Processing() OpenpipelineV2DavisProblemsIngestsourcesProcessingPtrOutput {
+	return o.ApplyT(func(v *OpenpipelineV2DavisProblemsIngestsources) OpenpipelineV2DavisProblemsIngestsourcesProcessingPtrOutput {
 		return v.Processing
-	}).(OpenpipelineV2DavisProblemsIngestsourcesProcessingOutput)
+	}).(OpenpipelineV2DavisProblemsIngestsourcesProcessingPtrOutput)
+}
+
+// Source
+func (o OpenpipelineV2DavisProblemsIngestsourcesOutput) Source() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *OpenpipelineV2DavisProblemsIngestsources) pulumi.StringPtrOutput { return v.Source }).(pulumi.StringPtrOutput)
+}
+
+// Source Type. Possible Values: `extension`, `http`
+func (o OpenpipelineV2DavisProblemsIngestsourcesOutput) SourceType() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *OpenpipelineV2DavisProblemsIngestsources) pulumi.StringPtrOutput { return v.SourceType }).(pulumi.StringPtrOutput)
 }
 
 // Static routing of endpoint

@@ -6,6 +6,23 @@ import * as inputs from "./types/input";
 import * as outputs from "./types/output";
 import * as utilities from "./utilities";
 
+/**
+ * > Configuration of the application scope overlaps with dynatrace_web_application, but this resource in addition provides an option for an environment scope.
+ *
+ * > This resource requires the API token scopes **Read settings** (`settings.read`) and **Write settings** (`settings.write`)
+ *
+ * ## Dynatrace Documentation
+ *
+ * - Configure cost and traffic control for web applications - https://www.dynatrace.com/support/help/how-to-use-dynatrace/real-user-monitoring/setup-and-configuration/web-applications/additional-configuration/configure-cost-and-traffic-control-web
+ *
+ * - Settings API - https://www.dynatrace.com/support/help/dynatrace-api/environment-api/settings (schemaId: `builtin:rum.web.enablement`)
+ *
+ * ## Export Example Usage
+ *
+ * - `terraform-provider-dynatrace -export dynatrace.WebAppEnablement` downloads all existing web application enablement and cost control configuration
+ *
+ * The full documentation of the export feature is available [here](https://dt-url.net/h203qmc).
+ */
 export class WebAppEnablement extends pulumi.CustomResource {
     /**
      * Get an existing WebAppEnablement resource's state with the given name, ID, and optional extra
@@ -39,7 +56,7 @@ export class WebAppEnablement extends pulumi.CustomResource {
      */
     declare public readonly applicationId: pulumi.Output<string | undefined>;
     /**
-     * Experience Analytics
+     * User Interactions
      */
     declare public readonly experienceAnalytics: pulumi.Output<outputs.WebAppEnablementExperienceAnalytics | undefined>;
     /**
@@ -95,7 +112,7 @@ export interface WebAppEnablementState {
      */
     applicationId?: pulumi.Input<string>;
     /**
-     * Experience Analytics
+     * User Interactions
      */
     experienceAnalytics?: pulumi.Input<inputs.WebAppEnablementExperienceAnalytics>;
     /**
@@ -117,7 +134,7 @@ export interface WebAppEnablementArgs {
      */
     applicationId?: pulumi.Input<string>;
     /**
-     * Experience Analytics
+     * User Interactions
      */
     experienceAnalytics?: pulumi.Input<inputs.WebAppEnablementExperienceAnalytics>;
     /**

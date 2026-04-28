@@ -23,6 +23,7 @@ class GeolocationArgs:
                  scope: Optional[pulumi.Input[_builtins.str]] = None):
         """
         The set of arguments for constructing a Geolocation resource.
+
         :param pulumi.Input[_builtins.bool] display_worldmap: Display the world map
         :param pulumi.Input[_builtins.str] scope: The scope of this setting (environment-default). Omit this property if you want to cover the whole environment.
         """
@@ -62,6 +63,7 @@ class _GeolocationState:
                  scope: Optional[pulumi.Input[_builtins.str]] = None):
         """
         Input properties used for looking up and filtering Geolocation resources.
+
         :param pulumi.Input[_builtins.bool] display_worldmap: Display the world map
         :param pulumi.Input[_builtins.str] scope: The scope of this setting (environment-default). Omit this property if you want to cover the whole environment.
         """
@@ -105,7 +107,21 @@ class Geolocation(pulumi.CustomResource):
                  scope: Optional[pulumi.Input[_builtins.str]] = None,
                  __props__=None):
         """
-        Create a Geolocation resource with the given unique name, props, and options.
+        > This resource requires the API token scopes **Read settings** (`settings.read`) and **Write settings** (`settings.write`)
+
+        ## Dynatrace Documentation
+
+        - World map view - https://www.dynatrace.com/support/help/platform-modules/digital-experience/web-applications/analyze-and-use/world-map-view
+
+        - Settings API - https://www.dynatrace.com/support/help/dynatrace-api/environment-api/settings (schemaId: `builtin:geo-settings`)
+
+        ## Export Example Usage
+
+        - `terraform-provider-dynatrace -export Geolocation` downloads all existing geolocation settings
+
+        The full documentation of the export feature is available [here](https://dt-url.net/h203qmc).
+
+
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[_builtins.bool] display_worldmap: Display the world map
@@ -118,7 +134,21 @@ class Geolocation(pulumi.CustomResource):
                  args: GeolocationArgs,
                  opts: Optional[pulumi.ResourceOptions] = None):
         """
-        Create a Geolocation resource with the given unique name, props, and options.
+        > This resource requires the API token scopes **Read settings** (`settings.read`) and **Write settings** (`settings.write`)
+
+        ## Dynatrace Documentation
+
+        - World map view - https://www.dynatrace.com/support/help/platform-modules/digital-experience/web-applications/analyze-and-use/world-map-view
+
+        - Settings API - https://www.dynatrace.com/support/help/dynatrace-api/environment-api/settings (schemaId: `builtin:geo-settings`)
+
+        ## Export Example Usage
+
+        - `terraform-provider-dynatrace -export Geolocation` downloads all existing geolocation settings
+
+        The full documentation of the export feature is available [here](https://dt-url.net/h203qmc).
+
+
         :param str resource_name: The name of the resource.
         :param GeolocationArgs args: The arguments to use to populate this resource's properties.
         :param pulumi.ResourceOptions opts: Options for the resource.

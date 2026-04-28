@@ -13,25 +13,6 @@ import * as utilities from "./utilities";
  * - `tags` (optional) refers to the tags that need to be present for the process (inclusive)
  *
  * If multiple processes match the given criteria, the first result will be retrieved.
- *
- * ## Example Usage
- *
- * ```typescript
- * import * as pulumi from "@pulumi/pulumi";
- * import * as dynatrace from "@pulumiverse/dynatrace";
- *
- * const test = dynatrace.getProcess({
- *     name: "Example",
- *     tags: [
- *         "TerraformKeyTest",
- *         "TerraformKeyValueTest=TestValue",
- *     ],
- * });
- * const _name_ = new dynatrace.ManagementZone("#name#", {entitySelectorBasedRules: [{
- *     enabled: true,
- *     selector: test.then(test => `type("process_group_instance"),entityId("${test.id}")`),
- * }]});
- * ```
  */
 export function getProcess(args: GetProcessArgs, opts?: pulumi.InvokeOptions): Promise<GetProcessResult> {
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
@@ -75,25 +56,6 @@ export interface GetProcessResult {
  * - `tags` (optional) refers to the tags that need to be present for the process (inclusive)
  *
  * If multiple processes match the given criteria, the first result will be retrieved.
- *
- * ## Example Usage
- *
- * ```typescript
- * import * as pulumi from "@pulumi/pulumi";
- * import * as dynatrace from "@pulumiverse/dynatrace";
- *
- * const test = dynatrace.getProcess({
- *     name: "Example",
- *     tags: [
- *         "TerraformKeyTest",
- *         "TerraformKeyValueTest=TestValue",
- *     ],
- * });
- * const _name_ = new dynatrace.ManagementZone("#name#", {entitySelectorBasedRules: [{
- *     enabled: true,
- *     selector: test.then(test => `type("process_group_instance"),entityId("${test.id}")`),
- * }]});
- * ```
  */
 export function getProcessOutput(args: GetProcessOutputArgs, opts?: pulumi.InvokeOutputOptions): pulumi.Output<GetProcessResult> {
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});

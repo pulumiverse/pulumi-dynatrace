@@ -12,30 +12,87 @@ import (
 	"github.com/pulumiverse/pulumi-dynatrace/sdk/go/dynatrace/internal"
 )
 
+// > This resource requires the API token scopes **Read settings** (`settings.read`) and **Write settings** (`settings.write`)
+//
+// ## Dynatrace Documentation
+//
+// - Trello integration - https://www.dynatrace.com/support/help/setup-and-configuration/integrations/problem-notifications/trello-integration
+//
+// - Settings API - https://www.dynatrace.com/support/help/dynatrace-api/environment-api/settings (schemaId: `builtin:problem.notifications`)
+//
+// ## Export Example Usage
+//
+// - `terraform-provider-dynatrace -export TrelloNotification` downloads the existing problem notifications for Trello
+//
+// The full documentation of the export feature is available [here](https://dt-url.net/h203qmc).
 type TrelloNotification struct {
 	pulumi.CustomResourceState
 
-	// The configuration is enabled (`true`) or disabled (`false`)
+	// This setting is enabled (`true`) or disabled (`false`)
 	Active pulumi.BoolOutput `pulumi:"active"`
-	// The application key for the Trello account
+	// The application key for the Trello account.
 	ApplicationKey pulumi.StringOutput `pulumi:"applicationKey"`
-	// The application token for the Trello account
-	AuthorizationToken pulumi.StringPtrOutput `pulumi:"authorizationToken"`
-	// The Trello board to which the card should be assigned
+	// The authorization token for the Trello account.
+	AuthorizationToken pulumi.StringOutput `pulumi:"authorizationToken"`
+	// Trello board ID problem cards should be assigned to
 	BoardId pulumi.StringOutput `pulumi:"boardId"`
-	// The description of the Trello card.   You can use same placeholders as in card text
+	// The description of the Trello card. Type '{' for placeholder suggestions.. #### Available placeholders
+	// **{ImpactedEntity}**: A short description of the problem and impacted entity (or multiple impacted entities).
+	//
+	// **{ImpactedEntityNames}**: The entity impacted by the problem.
+	//
+	// **{NamesOfImpactedEntities}**: The names of all entities that are impacted by the problem.
+	//
+	// **{PID}**: Unique system identifier of the reported problem.
+	//
+	// **{ProblemDetailsMarkdown}**: All problem event details including root cause as a Markdown-formatted string.
+	//
+	// **{ProblemID}**: Display number of the reported problem.
+	//
+	// **{ProblemImpact}**: Impact level of the problem. Possible values are APPLICATION, SERVICE, or INFRASTRUCTURE.
+	//
+	// **{ProblemSeverity}**: Severity level of the problem. Possible values are AVAILABILITY, ERROR, PERFORMANCE, RESOURCE_CONTENTION, or CUSTOM_ALERT.
+	//
+	// **{ProblemTitle}**: Short description of the problem.
+	//
+	// **{ProblemURL}**: URL of the problem within Dynatrace.
+	//
+	// **{State}**: Problem state. Possible values are OPEN or RESOLVED.
+	//
+	// **{Tags}**: Comma separated list of tags that are defined for all impacted entities. To refer to the value of a specific tag, specify the tag's key in square brackets: **{Tags[key]}**. If the tag does not have any assigned value, the placeholder will be replaced by an empty string. The placeholder will not be replaced if the tag key does not exist.
 	Description pulumi.StringOutput `pulumi:"description"`
 	// The ID of these settings when referred to from resources requiring the REST API V1 keys
 	LegacyId pulumi.StringOutput `pulumi:"legacyId"`
-	// The Trello list to which the card should be assigned
+	// Trello list ID new problem cards should be assigned to
 	ListId pulumi.StringOutput `pulumi:"listId"`
-	// The name of the notification configuration
+	// The name of the notification configuration.
 	Name pulumi.StringOutput `pulumi:"name"`
 	// The ID of the associated alerting profile
 	Profile pulumi.StringOutput `pulumi:"profile"`
-	// The Trello list to which the card of the resolved problem should be assigned
+	// Trello list ID resolved problem cards should be assigned to
 	ResolvedListId pulumi.StringOutput `pulumi:"resolvedListId"`
-	// The text of the generated Trello card.  You can use the following placeholders:  * `{ImpactedEntity}`: The entity impacted by the problem or *X* impacted entities.  * `{PID}`: The ID of the reported problem.  * `{ProblemDetailsMarkdown}`: All problem event details, including root cause, as a [Markdown-formatted](https://www.markdownguide.org/cheat-sheet/) string.  * `{ProblemID}`: The display number of the reported problem.  * `{ProblemImpact}`: The [impact level](https://www.dynatrace.com/support/help/shortlink/impact-analysis) of the problem. Possible values are `APPLICATION`, `SERVICE`, and `INFRASTRUCTURE`.  * `{ProblemSeverity}`: The [severity level](https://www.dynatrace.com/support/help/shortlink/event-types) of the problem. Possible values are `AVAILABILITY`, `ERROR`, `PERFORMANCE`, `RESOURCE_CONTENTION`, and `CUSTOM_ALERT`.  * `{ProblemTitle}`: A short description of the problem.  * `{ProblemURL}`: The URL of the problem within Dynatrace.  * `{State}`: The state of the problem. Possible values are `OPEN` and `RESOLVED`.  * `{Tags}`: The list of tags that are defined for all impacted entities, separated by commas
+	// The card text and problem placeholders to appear on new problem cards. Type '{' for placeholder suggestions.. #### Available placeholders
+	// **{ImpactedEntity}**: A short description of the problem and impacted entity (or multiple impacted entities).
+	//
+	// **{ImpactedEntityNames}**: The entity impacted by the problem.
+	//
+	// **{NamesOfImpactedEntities}**: The names of all entities that are impacted by the problem.
+	//
+	// **{PID}**: Unique system identifier of the reported problem.
+	//
+	// **{ProblemID}**: Display number of the reported problem.
+	//
+	// **{ProblemImpact}**: Impact level of the problem. Possible values are APPLICATION, SERVICE, or INFRASTRUCTURE.
+	//
+	// **{ProblemSeverity}**: Severity level of the problem. Possible values are AVAILABILITY, ERROR, PERFORMANCE, RESOURCE_CONTENTION, or CUSTOM_ALERT.
+	//
+	// **{ProblemTitle}**: Short description of the problem.
+	//
+	// **{ProblemURL}**: URL of the problem within Dynatrace.
+	//
+	// **{State}**: Problem state. Possible values are OPEN or RESOLVED.
+	//
+	// **{Tags}**: Comma separated list of tags that are defined for all impacted entities. To refer to the value of a specific tag, specify the tag's key in square brackets: **{Tags[key]}**. If the tag does not have any assigned value, the placeholder will be replaced by an empty string. The placeholder will not be replaced if the tag key does not exist.
 	Text pulumi.StringOutput `pulumi:"text"`
 }
 
@@ -51,6 +108,9 @@ func NewTrelloNotification(ctx *pulumi.Context,
 	}
 	if args.ApplicationKey == nil {
 		return nil, errors.New("invalid value for required argument 'ApplicationKey'")
+	}
+	if args.AuthorizationToken == nil {
+		return nil, errors.New("invalid value for required argument 'AuthorizationToken'")
 	}
 	if args.BoardId == nil {
 		return nil, errors.New("invalid value for required argument 'BoardId'")
@@ -71,7 +131,7 @@ func NewTrelloNotification(ctx *pulumi.Context,
 		return nil, errors.New("invalid value for required argument 'Text'")
 	}
 	if args.AuthorizationToken != nil {
-		args.AuthorizationToken = pulumi.ToSecret(args.AuthorizationToken).(pulumi.StringPtrInput)
+		args.AuthorizationToken = pulumi.ToSecret(args.AuthorizationToken).(pulumi.StringInput)
 	}
 	secrets := pulumi.AdditionalSecretOutputs([]string{
 		"authorizationToken",
@@ -100,52 +160,140 @@ func GetTrelloNotification(ctx *pulumi.Context,
 
 // Input properties used for looking up and filtering TrelloNotification resources.
 type trelloNotificationState struct {
-	// The configuration is enabled (`true`) or disabled (`false`)
+	// This setting is enabled (`true`) or disabled (`false`)
 	Active *bool `pulumi:"active"`
-	// The application key for the Trello account
+	// The application key for the Trello account.
 	ApplicationKey *string `pulumi:"applicationKey"`
-	// The application token for the Trello account
+	// The authorization token for the Trello account.
 	AuthorizationToken *string `pulumi:"authorizationToken"`
-	// The Trello board to which the card should be assigned
+	// Trello board ID problem cards should be assigned to
 	BoardId *string `pulumi:"boardId"`
-	// The description of the Trello card.   You can use same placeholders as in card text
+	// The description of the Trello card. Type '{' for placeholder suggestions.. #### Available placeholders
+	// **{ImpactedEntity}**: A short description of the problem and impacted entity (or multiple impacted entities).
+	//
+	// **{ImpactedEntityNames}**: The entity impacted by the problem.
+	//
+	// **{NamesOfImpactedEntities}**: The names of all entities that are impacted by the problem.
+	//
+	// **{PID}**: Unique system identifier of the reported problem.
+	//
+	// **{ProblemDetailsMarkdown}**: All problem event details including root cause as a Markdown-formatted string.
+	//
+	// **{ProblemID}**: Display number of the reported problem.
+	//
+	// **{ProblemImpact}**: Impact level of the problem. Possible values are APPLICATION, SERVICE, or INFRASTRUCTURE.
+	//
+	// **{ProblemSeverity}**: Severity level of the problem. Possible values are AVAILABILITY, ERROR, PERFORMANCE, RESOURCE_CONTENTION, or CUSTOM_ALERT.
+	//
+	// **{ProblemTitle}**: Short description of the problem.
+	//
+	// **{ProblemURL}**: URL of the problem within Dynatrace.
+	//
+	// **{State}**: Problem state. Possible values are OPEN or RESOLVED.
+	//
+	// **{Tags}**: Comma separated list of tags that are defined for all impacted entities. To refer to the value of a specific tag, specify the tag's key in square brackets: **{Tags[key]}**. If the tag does not have any assigned value, the placeholder will be replaced by an empty string. The placeholder will not be replaced if the tag key does not exist.
 	Description *string `pulumi:"description"`
 	// The ID of these settings when referred to from resources requiring the REST API V1 keys
 	LegacyId *string `pulumi:"legacyId"`
-	// The Trello list to which the card should be assigned
+	// Trello list ID new problem cards should be assigned to
 	ListId *string `pulumi:"listId"`
-	// The name of the notification configuration
+	// The name of the notification configuration.
 	Name *string `pulumi:"name"`
 	// The ID of the associated alerting profile
 	Profile *string `pulumi:"profile"`
-	// The Trello list to which the card of the resolved problem should be assigned
+	// Trello list ID resolved problem cards should be assigned to
 	ResolvedListId *string `pulumi:"resolvedListId"`
-	// The text of the generated Trello card.  You can use the following placeholders:  * `{ImpactedEntity}`: The entity impacted by the problem or *X* impacted entities.  * `{PID}`: The ID of the reported problem.  * `{ProblemDetailsMarkdown}`: All problem event details, including root cause, as a [Markdown-formatted](https://www.markdownguide.org/cheat-sheet/) string.  * `{ProblemID}`: The display number of the reported problem.  * `{ProblemImpact}`: The [impact level](https://www.dynatrace.com/support/help/shortlink/impact-analysis) of the problem. Possible values are `APPLICATION`, `SERVICE`, and `INFRASTRUCTURE`.  * `{ProblemSeverity}`: The [severity level](https://www.dynatrace.com/support/help/shortlink/event-types) of the problem. Possible values are `AVAILABILITY`, `ERROR`, `PERFORMANCE`, `RESOURCE_CONTENTION`, and `CUSTOM_ALERT`.  * `{ProblemTitle}`: A short description of the problem.  * `{ProblemURL}`: The URL of the problem within Dynatrace.  * `{State}`: The state of the problem. Possible values are `OPEN` and `RESOLVED`.  * `{Tags}`: The list of tags that are defined for all impacted entities, separated by commas
+	// The card text and problem placeholders to appear on new problem cards. Type '{' for placeholder suggestions.. #### Available placeholders
+	// **{ImpactedEntity}**: A short description of the problem and impacted entity (or multiple impacted entities).
+	//
+	// **{ImpactedEntityNames}**: The entity impacted by the problem.
+	//
+	// **{NamesOfImpactedEntities}**: The names of all entities that are impacted by the problem.
+	//
+	// **{PID}**: Unique system identifier of the reported problem.
+	//
+	// **{ProblemID}**: Display number of the reported problem.
+	//
+	// **{ProblemImpact}**: Impact level of the problem. Possible values are APPLICATION, SERVICE, or INFRASTRUCTURE.
+	//
+	// **{ProblemSeverity}**: Severity level of the problem. Possible values are AVAILABILITY, ERROR, PERFORMANCE, RESOURCE_CONTENTION, or CUSTOM_ALERT.
+	//
+	// **{ProblemTitle}**: Short description of the problem.
+	//
+	// **{ProblemURL}**: URL of the problem within Dynatrace.
+	//
+	// **{State}**: Problem state. Possible values are OPEN or RESOLVED.
+	//
+	// **{Tags}**: Comma separated list of tags that are defined for all impacted entities. To refer to the value of a specific tag, specify the tag's key in square brackets: **{Tags[key]}**. If the tag does not have any assigned value, the placeholder will be replaced by an empty string. The placeholder will not be replaced if the tag key does not exist.
 	Text *string `pulumi:"text"`
 }
 
 type TrelloNotificationState struct {
-	// The configuration is enabled (`true`) or disabled (`false`)
+	// This setting is enabled (`true`) or disabled (`false`)
 	Active pulumi.BoolPtrInput
-	// The application key for the Trello account
+	// The application key for the Trello account.
 	ApplicationKey pulumi.StringPtrInput
-	// The application token for the Trello account
+	// The authorization token for the Trello account.
 	AuthorizationToken pulumi.StringPtrInput
-	// The Trello board to which the card should be assigned
+	// Trello board ID problem cards should be assigned to
 	BoardId pulumi.StringPtrInput
-	// The description of the Trello card.   You can use same placeholders as in card text
+	// The description of the Trello card. Type '{' for placeholder suggestions.. #### Available placeholders
+	// **{ImpactedEntity}**: A short description of the problem and impacted entity (or multiple impacted entities).
+	//
+	// **{ImpactedEntityNames}**: The entity impacted by the problem.
+	//
+	// **{NamesOfImpactedEntities}**: The names of all entities that are impacted by the problem.
+	//
+	// **{PID}**: Unique system identifier of the reported problem.
+	//
+	// **{ProblemDetailsMarkdown}**: All problem event details including root cause as a Markdown-formatted string.
+	//
+	// **{ProblemID}**: Display number of the reported problem.
+	//
+	// **{ProblemImpact}**: Impact level of the problem. Possible values are APPLICATION, SERVICE, or INFRASTRUCTURE.
+	//
+	// **{ProblemSeverity}**: Severity level of the problem. Possible values are AVAILABILITY, ERROR, PERFORMANCE, RESOURCE_CONTENTION, or CUSTOM_ALERT.
+	//
+	// **{ProblemTitle}**: Short description of the problem.
+	//
+	// **{ProblemURL}**: URL of the problem within Dynatrace.
+	//
+	// **{State}**: Problem state. Possible values are OPEN or RESOLVED.
+	//
+	// **{Tags}**: Comma separated list of tags that are defined for all impacted entities. To refer to the value of a specific tag, specify the tag's key in square brackets: **{Tags[key]}**. If the tag does not have any assigned value, the placeholder will be replaced by an empty string. The placeholder will not be replaced if the tag key does not exist.
 	Description pulumi.StringPtrInput
 	// The ID of these settings when referred to from resources requiring the REST API V1 keys
 	LegacyId pulumi.StringPtrInput
-	// The Trello list to which the card should be assigned
+	// Trello list ID new problem cards should be assigned to
 	ListId pulumi.StringPtrInput
-	// The name of the notification configuration
+	// The name of the notification configuration.
 	Name pulumi.StringPtrInput
 	// The ID of the associated alerting profile
 	Profile pulumi.StringPtrInput
-	// The Trello list to which the card of the resolved problem should be assigned
+	// Trello list ID resolved problem cards should be assigned to
 	ResolvedListId pulumi.StringPtrInput
-	// The text of the generated Trello card.  You can use the following placeholders:  * `{ImpactedEntity}`: The entity impacted by the problem or *X* impacted entities.  * `{PID}`: The ID of the reported problem.  * `{ProblemDetailsMarkdown}`: All problem event details, including root cause, as a [Markdown-formatted](https://www.markdownguide.org/cheat-sheet/) string.  * `{ProblemID}`: The display number of the reported problem.  * `{ProblemImpact}`: The [impact level](https://www.dynatrace.com/support/help/shortlink/impact-analysis) of the problem. Possible values are `APPLICATION`, `SERVICE`, and `INFRASTRUCTURE`.  * `{ProblemSeverity}`: The [severity level](https://www.dynatrace.com/support/help/shortlink/event-types) of the problem. Possible values are `AVAILABILITY`, `ERROR`, `PERFORMANCE`, `RESOURCE_CONTENTION`, and `CUSTOM_ALERT`.  * `{ProblemTitle}`: A short description of the problem.  * `{ProblemURL}`: The URL of the problem within Dynatrace.  * `{State}`: The state of the problem. Possible values are `OPEN` and `RESOLVED`.  * `{Tags}`: The list of tags that are defined for all impacted entities, separated by commas
+	// The card text and problem placeholders to appear on new problem cards. Type '{' for placeholder suggestions.. #### Available placeholders
+	// **{ImpactedEntity}**: A short description of the problem and impacted entity (or multiple impacted entities).
+	//
+	// **{ImpactedEntityNames}**: The entity impacted by the problem.
+	//
+	// **{NamesOfImpactedEntities}**: The names of all entities that are impacted by the problem.
+	//
+	// **{PID}**: Unique system identifier of the reported problem.
+	//
+	// **{ProblemID}**: Display number of the reported problem.
+	//
+	// **{ProblemImpact}**: Impact level of the problem. Possible values are APPLICATION, SERVICE, or INFRASTRUCTURE.
+	//
+	// **{ProblemSeverity}**: Severity level of the problem. Possible values are AVAILABILITY, ERROR, PERFORMANCE, RESOURCE_CONTENTION, or CUSTOM_ALERT.
+	//
+	// **{ProblemTitle}**: Short description of the problem.
+	//
+	// **{ProblemURL}**: URL of the problem within Dynatrace.
+	//
+	// **{State}**: Problem state. Possible values are OPEN or RESOLVED.
+	//
+	// **{Tags}**: Comma separated list of tags that are defined for all impacted entities. To refer to the value of a specific tag, specify the tag's key in square brackets: **{Tags[key]}**. If the tag does not have any assigned value, the placeholder will be replaced by an empty string. The placeholder will not be replaced if the tag key does not exist.
 	Text pulumi.StringPtrInput
 }
 
@@ -154,53 +302,141 @@ func (TrelloNotificationState) ElementType() reflect.Type {
 }
 
 type trelloNotificationArgs struct {
-	// The configuration is enabled (`true`) or disabled (`false`)
+	// This setting is enabled (`true`) or disabled (`false`)
 	Active bool `pulumi:"active"`
-	// The application key for the Trello account
+	// The application key for the Trello account.
 	ApplicationKey string `pulumi:"applicationKey"`
-	// The application token for the Trello account
-	AuthorizationToken *string `pulumi:"authorizationToken"`
-	// The Trello board to which the card should be assigned
+	// The authorization token for the Trello account.
+	AuthorizationToken string `pulumi:"authorizationToken"`
+	// Trello board ID problem cards should be assigned to
 	BoardId string `pulumi:"boardId"`
-	// The description of the Trello card.   You can use same placeholders as in card text
+	// The description of the Trello card. Type '{' for placeholder suggestions.. #### Available placeholders
+	// **{ImpactedEntity}**: A short description of the problem and impacted entity (or multiple impacted entities).
+	//
+	// **{ImpactedEntityNames}**: The entity impacted by the problem.
+	//
+	// **{NamesOfImpactedEntities}**: The names of all entities that are impacted by the problem.
+	//
+	// **{PID}**: Unique system identifier of the reported problem.
+	//
+	// **{ProblemDetailsMarkdown}**: All problem event details including root cause as a Markdown-formatted string.
+	//
+	// **{ProblemID}**: Display number of the reported problem.
+	//
+	// **{ProblemImpact}**: Impact level of the problem. Possible values are APPLICATION, SERVICE, or INFRASTRUCTURE.
+	//
+	// **{ProblemSeverity}**: Severity level of the problem. Possible values are AVAILABILITY, ERROR, PERFORMANCE, RESOURCE_CONTENTION, or CUSTOM_ALERT.
+	//
+	// **{ProblemTitle}**: Short description of the problem.
+	//
+	// **{ProblemURL}**: URL of the problem within Dynatrace.
+	//
+	// **{State}**: Problem state. Possible values are OPEN or RESOLVED.
+	//
+	// **{Tags}**: Comma separated list of tags that are defined for all impacted entities. To refer to the value of a specific tag, specify the tag's key in square brackets: **{Tags[key]}**. If the tag does not have any assigned value, the placeholder will be replaced by an empty string. The placeholder will not be replaced if the tag key does not exist.
 	Description string `pulumi:"description"`
 	// The ID of these settings when referred to from resources requiring the REST API V1 keys
 	LegacyId *string `pulumi:"legacyId"`
-	// The Trello list to which the card should be assigned
+	// Trello list ID new problem cards should be assigned to
 	ListId string `pulumi:"listId"`
-	// The name of the notification configuration
+	// The name of the notification configuration.
 	Name *string `pulumi:"name"`
 	// The ID of the associated alerting profile
 	Profile string `pulumi:"profile"`
-	// The Trello list to which the card of the resolved problem should be assigned
+	// Trello list ID resolved problem cards should be assigned to
 	ResolvedListId string `pulumi:"resolvedListId"`
-	// The text of the generated Trello card.  You can use the following placeholders:  * `{ImpactedEntity}`: The entity impacted by the problem or *X* impacted entities.  * `{PID}`: The ID of the reported problem.  * `{ProblemDetailsMarkdown}`: All problem event details, including root cause, as a [Markdown-formatted](https://www.markdownguide.org/cheat-sheet/) string.  * `{ProblemID}`: The display number of the reported problem.  * `{ProblemImpact}`: The [impact level](https://www.dynatrace.com/support/help/shortlink/impact-analysis) of the problem. Possible values are `APPLICATION`, `SERVICE`, and `INFRASTRUCTURE`.  * `{ProblemSeverity}`: The [severity level](https://www.dynatrace.com/support/help/shortlink/event-types) of the problem. Possible values are `AVAILABILITY`, `ERROR`, `PERFORMANCE`, `RESOURCE_CONTENTION`, and `CUSTOM_ALERT`.  * `{ProblemTitle}`: A short description of the problem.  * `{ProblemURL}`: The URL of the problem within Dynatrace.  * `{State}`: The state of the problem. Possible values are `OPEN` and `RESOLVED`.  * `{Tags}`: The list of tags that are defined for all impacted entities, separated by commas
+	// The card text and problem placeholders to appear on new problem cards. Type '{' for placeholder suggestions.. #### Available placeholders
+	// **{ImpactedEntity}**: A short description of the problem and impacted entity (or multiple impacted entities).
+	//
+	// **{ImpactedEntityNames}**: The entity impacted by the problem.
+	//
+	// **{NamesOfImpactedEntities}**: The names of all entities that are impacted by the problem.
+	//
+	// **{PID}**: Unique system identifier of the reported problem.
+	//
+	// **{ProblemID}**: Display number of the reported problem.
+	//
+	// **{ProblemImpact}**: Impact level of the problem. Possible values are APPLICATION, SERVICE, or INFRASTRUCTURE.
+	//
+	// **{ProblemSeverity}**: Severity level of the problem. Possible values are AVAILABILITY, ERROR, PERFORMANCE, RESOURCE_CONTENTION, or CUSTOM_ALERT.
+	//
+	// **{ProblemTitle}**: Short description of the problem.
+	//
+	// **{ProblemURL}**: URL of the problem within Dynatrace.
+	//
+	// **{State}**: Problem state. Possible values are OPEN or RESOLVED.
+	//
+	// **{Tags}**: Comma separated list of tags that are defined for all impacted entities. To refer to the value of a specific tag, specify the tag's key in square brackets: **{Tags[key]}**. If the tag does not have any assigned value, the placeholder will be replaced by an empty string. The placeholder will not be replaced if the tag key does not exist.
 	Text string `pulumi:"text"`
 }
 
 // The set of arguments for constructing a TrelloNotification resource.
 type TrelloNotificationArgs struct {
-	// The configuration is enabled (`true`) or disabled (`false`)
+	// This setting is enabled (`true`) or disabled (`false`)
 	Active pulumi.BoolInput
-	// The application key for the Trello account
+	// The application key for the Trello account.
 	ApplicationKey pulumi.StringInput
-	// The application token for the Trello account
-	AuthorizationToken pulumi.StringPtrInput
-	// The Trello board to which the card should be assigned
+	// The authorization token for the Trello account.
+	AuthorizationToken pulumi.StringInput
+	// Trello board ID problem cards should be assigned to
 	BoardId pulumi.StringInput
-	// The description of the Trello card.   You can use same placeholders as in card text
+	// The description of the Trello card. Type '{' for placeholder suggestions.. #### Available placeholders
+	// **{ImpactedEntity}**: A short description of the problem and impacted entity (or multiple impacted entities).
+	//
+	// **{ImpactedEntityNames}**: The entity impacted by the problem.
+	//
+	// **{NamesOfImpactedEntities}**: The names of all entities that are impacted by the problem.
+	//
+	// **{PID}**: Unique system identifier of the reported problem.
+	//
+	// **{ProblemDetailsMarkdown}**: All problem event details including root cause as a Markdown-formatted string.
+	//
+	// **{ProblemID}**: Display number of the reported problem.
+	//
+	// **{ProblemImpact}**: Impact level of the problem. Possible values are APPLICATION, SERVICE, or INFRASTRUCTURE.
+	//
+	// **{ProblemSeverity}**: Severity level of the problem. Possible values are AVAILABILITY, ERROR, PERFORMANCE, RESOURCE_CONTENTION, or CUSTOM_ALERT.
+	//
+	// **{ProblemTitle}**: Short description of the problem.
+	//
+	// **{ProblemURL}**: URL of the problem within Dynatrace.
+	//
+	// **{State}**: Problem state. Possible values are OPEN or RESOLVED.
+	//
+	// **{Tags}**: Comma separated list of tags that are defined for all impacted entities. To refer to the value of a specific tag, specify the tag's key in square brackets: **{Tags[key]}**. If the tag does not have any assigned value, the placeholder will be replaced by an empty string. The placeholder will not be replaced if the tag key does not exist.
 	Description pulumi.StringInput
 	// The ID of these settings when referred to from resources requiring the REST API V1 keys
 	LegacyId pulumi.StringPtrInput
-	// The Trello list to which the card should be assigned
+	// Trello list ID new problem cards should be assigned to
 	ListId pulumi.StringInput
-	// The name of the notification configuration
+	// The name of the notification configuration.
 	Name pulumi.StringPtrInput
 	// The ID of the associated alerting profile
 	Profile pulumi.StringInput
-	// The Trello list to which the card of the resolved problem should be assigned
+	// Trello list ID resolved problem cards should be assigned to
 	ResolvedListId pulumi.StringInput
-	// The text of the generated Trello card.  You can use the following placeholders:  * `{ImpactedEntity}`: The entity impacted by the problem or *X* impacted entities.  * `{PID}`: The ID of the reported problem.  * `{ProblemDetailsMarkdown}`: All problem event details, including root cause, as a [Markdown-formatted](https://www.markdownguide.org/cheat-sheet/) string.  * `{ProblemID}`: The display number of the reported problem.  * `{ProblemImpact}`: The [impact level](https://www.dynatrace.com/support/help/shortlink/impact-analysis) of the problem. Possible values are `APPLICATION`, `SERVICE`, and `INFRASTRUCTURE`.  * `{ProblemSeverity}`: The [severity level](https://www.dynatrace.com/support/help/shortlink/event-types) of the problem. Possible values are `AVAILABILITY`, `ERROR`, `PERFORMANCE`, `RESOURCE_CONTENTION`, and `CUSTOM_ALERT`.  * `{ProblemTitle}`: A short description of the problem.  * `{ProblemURL}`: The URL of the problem within Dynatrace.  * `{State}`: The state of the problem. Possible values are `OPEN` and `RESOLVED`.  * `{Tags}`: The list of tags that are defined for all impacted entities, separated by commas
+	// The card text and problem placeholders to appear on new problem cards. Type '{' for placeholder suggestions.. #### Available placeholders
+	// **{ImpactedEntity}**: A short description of the problem and impacted entity (or multiple impacted entities).
+	//
+	// **{ImpactedEntityNames}**: The entity impacted by the problem.
+	//
+	// **{NamesOfImpactedEntities}**: The names of all entities that are impacted by the problem.
+	//
+	// **{PID}**: Unique system identifier of the reported problem.
+	//
+	// **{ProblemID}**: Display number of the reported problem.
+	//
+	// **{ProblemImpact}**: Impact level of the problem. Possible values are APPLICATION, SERVICE, or INFRASTRUCTURE.
+	//
+	// **{ProblemSeverity}**: Severity level of the problem. Possible values are AVAILABILITY, ERROR, PERFORMANCE, RESOURCE_CONTENTION, or CUSTOM_ALERT.
+	//
+	// **{ProblemTitle}**: Short description of the problem.
+	//
+	// **{ProblemURL}**: URL of the problem within Dynatrace.
+	//
+	// **{State}**: Problem state. Possible values are OPEN or RESOLVED.
+	//
+	// **{Tags}**: Comma separated list of tags that are defined for all impacted entities. To refer to the value of a specific tag, specify the tag's key in square brackets: **{Tags[key]}**. If the tag does not have any assigned value, the placeholder will be replaced by an empty string. The placeholder will not be replaced if the tag key does not exist.
 	Text pulumi.StringInput
 }
 
@@ -291,27 +527,50 @@ func (o TrelloNotificationOutput) ToTrelloNotificationOutputWithContext(ctx cont
 	return o
 }
 
-// The configuration is enabled (`true`) or disabled (`false`)
+// This setting is enabled (`true`) or disabled (`false`)
 func (o TrelloNotificationOutput) Active() pulumi.BoolOutput {
 	return o.ApplyT(func(v *TrelloNotification) pulumi.BoolOutput { return v.Active }).(pulumi.BoolOutput)
 }
 
-// The application key for the Trello account
+// The application key for the Trello account.
 func (o TrelloNotificationOutput) ApplicationKey() pulumi.StringOutput {
 	return o.ApplyT(func(v *TrelloNotification) pulumi.StringOutput { return v.ApplicationKey }).(pulumi.StringOutput)
 }
 
-// The application token for the Trello account
-func (o TrelloNotificationOutput) AuthorizationToken() pulumi.StringPtrOutput {
-	return o.ApplyT(func(v *TrelloNotification) pulumi.StringPtrOutput { return v.AuthorizationToken }).(pulumi.StringPtrOutput)
+// The authorization token for the Trello account.
+func (o TrelloNotificationOutput) AuthorizationToken() pulumi.StringOutput {
+	return o.ApplyT(func(v *TrelloNotification) pulumi.StringOutput { return v.AuthorizationToken }).(pulumi.StringOutput)
 }
 
-// The Trello board to which the card should be assigned
+// Trello board ID problem cards should be assigned to
 func (o TrelloNotificationOutput) BoardId() pulumi.StringOutput {
 	return o.ApplyT(func(v *TrelloNotification) pulumi.StringOutput { return v.BoardId }).(pulumi.StringOutput)
 }
 
-// The description of the Trello card.   You can use same placeholders as in card text
+// The description of the Trello card. Type '{' for placeholder suggestions.. #### Available placeholders
+// **{ImpactedEntity}**: A short description of the problem and impacted entity (or multiple impacted entities).
+//
+// **{ImpactedEntityNames}**: The entity impacted by the problem.
+//
+// **{NamesOfImpactedEntities}**: The names of all entities that are impacted by the problem.
+//
+// **{PID}**: Unique system identifier of the reported problem.
+//
+// **{ProblemDetailsMarkdown}**: All problem event details including root cause as a Markdown-formatted string.
+//
+// **{ProblemID}**: Display number of the reported problem.
+//
+// **{ProblemImpact}**: Impact level of the problem. Possible values are APPLICATION, SERVICE, or INFRASTRUCTURE.
+//
+// **{ProblemSeverity}**: Severity level of the problem. Possible values are AVAILABILITY, ERROR, PERFORMANCE, RESOURCE_CONTENTION, or CUSTOM_ALERT.
+//
+// **{ProblemTitle}**: Short description of the problem.
+//
+// **{ProblemURL}**: URL of the problem within Dynatrace.
+//
+// **{State}**: Problem state. Possible values are OPEN or RESOLVED.
+//
+// **{Tags}**: Comma separated list of tags that are defined for all impacted entities. To refer to the value of a specific tag, specify the tag's key in square brackets: **{Tags[key]}**. If the tag does not have any assigned value, the placeholder will be replaced by an empty string. The placeholder will not be replaced if the tag key does not exist.
 func (o TrelloNotificationOutput) Description() pulumi.StringOutput {
 	return o.ApplyT(func(v *TrelloNotification) pulumi.StringOutput { return v.Description }).(pulumi.StringOutput)
 }
@@ -321,12 +580,12 @@ func (o TrelloNotificationOutput) LegacyId() pulumi.StringOutput {
 	return o.ApplyT(func(v *TrelloNotification) pulumi.StringOutput { return v.LegacyId }).(pulumi.StringOutput)
 }
 
-// The Trello list to which the card should be assigned
+// Trello list ID new problem cards should be assigned to
 func (o TrelloNotificationOutput) ListId() pulumi.StringOutput {
 	return o.ApplyT(func(v *TrelloNotification) pulumi.StringOutput { return v.ListId }).(pulumi.StringOutput)
 }
 
-// The name of the notification configuration
+// The name of the notification configuration.
 func (o TrelloNotificationOutput) Name() pulumi.StringOutput {
 	return o.ApplyT(func(v *TrelloNotification) pulumi.StringOutput { return v.Name }).(pulumi.StringOutput)
 }
@@ -336,12 +595,33 @@ func (o TrelloNotificationOutput) Profile() pulumi.StringOutput {
 	return o.ApplyT(func(v *TrelloNotification) pulumi.StringOutput { return v.Profile }).(pulumi.StringOutput)
 }
 
-// The Trello list to which the card of the resolved problem should be assigned
+// Trello list ID resolved problem cards should be assigned to
 func (o TrelloNotificationOutput) ResolvedListId() pulumi.StringOutput {
 	return o.ApplyT(func(v *TrelloNotification) pulumi.StringOutput { return v.ResolvedListId }).(pulumi.StringOutput)
 }
 
-// The text of the generated Trello card.  You can use the following placeholders:  * `{ImpactedEntity}`: The entity impacted by the problem or *X* impacted entities.  * `{PID}`: The ID of the reported problem.  * `{ProblemDetailsMarkdown}`: All problem event details, including root cause, as a [Markdown-formatted](https://www.markdownguide.org/cheat-sheet/) string.  * `{ProblemID}`: The display number of the reported problem.  * `{ProblemImpact}`: The [impact level](https://www.dynatrace.com/support/help/shortlink/impact-analysis) of the problem. Possible values are `APPLICATION`, `SERVICE`, and `INFRASTRUCTURE`.  * `{ProblemSeverity}`: The [severity level](https://www.dynatrace.com/support/help/shortlink/event-types) of the problem. Possible values are `AVAILABILITY`, `ERROR`, `PERFORMANCE`, `RESOURCE_CONTENTION`, and `CUSTOM_ALERT`.  * `{ProblemTitle}`: A short description of the problem.  * `{ProblemURL}`: The URL of the problem within Dynatrace.  * `{State}`: The state of the problem. Possible values are `OPEN` and `RESOLVED`.  * `{Tags}`: The list of tags that are defined for all impacted entities, separated by commas
+// The card text and problem placeholders to appear on new problem cards. Type '{' for placeholder suggestions.. #### Available placeholders
+// **{ImpactedEntity}**: A short description of the problem and impacted entity (or multiple impacted entities).
+//
+// **{ImpactedEntityNames}**: The entity impacted by the problem.
+//
+// **{NamesOfImpactedEntities}**: The names of all entities that are impacted by the problem.
+//
+// **{PID}**: Unique system identifier of the reported problem.
+//
+// **{ProblemID}**: Display number of the reported problem.
+//
+// **{ProblemImpact}**: Impact level of the problem. Possible values are APPLICATION, SERVICE, or INFRASTRUCTURE.
+//
+// **{ProblemSeverity}**: Severity level of the problem. Possible values are AVAILABILITY, ERROR, PERFORMANCE, RESOURCE_CONTENTION, or CUSTOM_ALERT.
+//
+// **{ProblemTitle}**: Short description of the problem.
+//
+// **{ProblemURL}**: URL of the problem within Dynatrace.
+//
+// **{State}**: Problem state. Possible values are OPEN or RESOLVED.
+//
+// **{Tags}**: Comma separated list of tags that are defined for all impacted entities. To refer to the value of a specific tag, specify the tag's key in square brackets: **{Tags[key]}**. If the tag does not have any assigned value, the placeholder will be replaced by an empty string. The placeholder will not be replaced if the tag key does not exist.
 func (o TrelloNotificationOutput) Text() pulumi.StringOutput {
 	return o.ApplyT(func(v *TrelloNotification) pulumi.StringOutput { return v.Text }).(pulumi.StringOutput)
 }

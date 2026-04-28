@@ -4,6 +4,37 @@
 import * as pulumi from "@pulumi/pulumi";
 import * as utilities from "./utilities";
 
+/**
+ * > This resource requires the API token scopes **Read settings** (`settings.read`) and **Write settings** (`settings.write`)
+ *
+ * ## Dynatrace Documentation
+ *
+ * - Web applications - https://docs.dynatrace.com/docs/platform-modules/digital-experience/web-applications
+ *
+ * - Settings API - https://www.dynatrace.com/support/help/dynatrace-api/environment-api/settings (schemaId: `builtin:rum.web.custom-injection-rules`)
+ *
+ * ## Export Example Usage
+ *
+ * - `terraform-provider-dynatrace -export dynatrace.WebAppCustomInjection` downloads existing custom injection rules
+ *
+ * The full documentation of the export feature is available [here](https://dt-url.net/h203qmc).
+ *
+ * ## Resource Example Usage
+ *
+ * ```typescript
+ * import * as pulumi from "@pulumi/pulumi";
+ * import * as dynatrace from "@pulumiverse/dynatrace";
+ *
+ * const APPLICATION_1234567890000000 = new dynatrace.WebAppCustomInjection("APPLICATION-1234567890000000", {
+ *     enabled: false,
+ *     applicationId: "APPLICATION-1234567890000000",
+ *     operator: "Starts",
+ *     urlPattern: "/terraform",
+ *     rule: "AfterSpecificHtml",
+ *     htmlPattern: "example",
+ * });
+ * ```
+ */
 export class WebAppCustomInjection extends pulumi.CustomResource {
     /**
      * Get an existing WebAppCustomInjection resource's state with the given name, ID, and optional extra

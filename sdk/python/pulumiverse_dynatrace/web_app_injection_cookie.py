@@ -25,6 +25,7 @@ class WebAppInjectionCookieArgs:
                  cookie_placement_domain: Optional[pulumi.Input[_builtins.str]] = None):
         """
         The set of arguments for constructing a WebAppInjectionCookie resource.
+
         :param pulumi.Input[_builtins.str] application_id: The scope of this settings. If the settings should cover the whole environment, just don't specify any scope.
         :param pulumi.Input[_builtins.str] same_site_cookie_attribute: Possible Values: `LAX`, `NONE`, `NOTSET`, `STRICT`
         :param pulumi.Input[_builtins.bool] use_secure_cookie_attribute: If your application is only accessible via SSL, you can add the Secure attribute to all cookies set by Dynatrace. This setting prevents the display of warnings from PCI-compliance security scanners. Be aware that with this setting enabled Dynatrace correlation of user actions with server-side web requests is only possible over SSL connections.
@@ -94,6 +95,7 @@ class _WebAppInjectionCookieState:
                  use_secure_cookie_attribute: Optional[pulumi.Input[_builtins.bool]] = None):
         """
         Input properties used for looking up and filtering WebAppInjectionCookie resources.
+
         :param pulumi.Input[_builtins.str] application_id: The scope of this settings. If the settings should cover the whole environment, just don't specify any scope.
         :param pulumi.Input[_builtins.str] cookie_placement_domain: Specify an alternative domain for cookies set by Dynatrace. Keep in mind that your browser may not allow placement of cookies on certain domains (for example, top-level domains). Before typing a domain name here, confirm that the domain will accept cookies from your browser. For details, see the list of [forbidden top-level domains](https://dt-url.net/9n6b0pfz).
         :param pulumi.Input[_builtins.str] same_site_cookie_attribute: Possible Values: `LAX`, `NONE`, `NOTSET`, `STRICT`
@@ -169,7 +171,21 @@ class WebAppInjectionCookie(pulumi.CustomResource):
                  use_secure_cookie_attribute: Optional[pulumi.Input[_builtins.bool]] = None,
                  __props__=None):
         """
-        Create a WebAppInjectionCookie resource with the given unique name, props, and options.
+        > This resource requires the API token scopes **Read settings** (`settings.read`) and **Write settings** (`settings.write`)
+
+        ## Dynatrace Documentation
+
+        - Cookies - https://docs.dynatrace.com/docs/manage/data-privacy-and-security/data-privacy/cookies
+
+        - Settings API - https://www.dynatrace.com/support/help/dynatrace-api/environment-api/settings (schemaId: `builtin:rum.web.injection.cookie`)
+
+        ## Export Example Usage
+
+        - `terraform-provider-dynatrace -export WebAppInjectionCookie` downloads existing cookie configuration
+
+        The full documentation of the export feature is available [here](https://dt-url.net/h203qmc).
+
+
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[_builtins.str] application_id: The scope of this settings. If the settings should cover the whole environment, just don't specify any scope.
@@ -184,7 +200,21 @@ class WebAppInjectionCookie(pulumi.CustomResource):
                  args: WebAppInjectionCookieArgs,
                  opts: Optional[pulumi.ResourceOptions] = None):
         """
-        Create a WebAppInjectionCookie resource with the given unique name, props, and options.
+        > This resource requires the API token scopes **Read settings** (`settings.read`) and **Write settings** (`settings.write`)
+
+        ## Dynatrace Documentation
+
+        - Cookies - https://docs.dynatrace.com/docs/manage/data-privacy-and-security/data-privacy/cookies
+
+        - Settings API - https://www.dynatrace.com/support/help/dynatrace-api/environment-api/settings (schemaId: `builtin:rum.web.injection.cookie`)
+
+        ## Export Example Usage
+
+        - `terraform-provider-dynatrace -export WebAppInjectionCookie` downloads existing cookie configuration
+
+        The full documentation of the export feature is available [here](https://dt-url.net/h203qmc).
+
+
         :param str resource_name: The name of the resource.
         :param WebAppInjectionCookieArgs args: The arguments to use to populate this resource's properties.
         :param pulumi.ResourceOptions opts: Options for the resource.

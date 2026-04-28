@@ -34,7 +34,7 @@ namespace Pulumiverse.Dynatrace.Inputs
         public Input<string>? EndpointNameTemplate { get; set; }
 
         /// <summary>
-        /// Possible Values: `DETECT_REQUEST_ON_ENDPOINT`, `SUPPRESS_REQUEST`
+        /// If condition matches. Possible Values: `DETECT_REQUEST_ON_ENDPOINT`, `SUPPRESS_REQUEST`
         /// </summary>
         [Input("ifConditionMatches", required: true)]
         public Input<string> IfConditionMatches { get; set; } = null!;

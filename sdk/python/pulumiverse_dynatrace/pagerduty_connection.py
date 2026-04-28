@@ -24,6 +24,7 @@ class PagerdutyConnectionArgs:
                  name: Optional[pulumi.Input[_builtins.str]] = None):
         """
         The set of arguments for constructing a PagerdutyConnection resource.
+
         :param pulumi.Input[_builtins.str] token: Token for the PagerDuty API endpoint
         :param pulumi.Input[_builtins.str] url: URL of the PagerDuty API endpoint
         :param pulumi.Input[_builtins.str] name: The name of the PagerDuty connection
@@ -78,6 +79,7 @@ class _PagerdutyConnectionState:
                  url: Optional[pulumi.Input[_builtins.str]] = None):
         """
         Input properties used for looking up and filtering PagerdutyConnection resources.
+
         :param pulumi.Input[_builtins.str] name: The name of the PagerDuty connection
         :param pulumi.Input[_builtins.str] token: Token for the PagerDuty API endpoint
         :param pulumi.Input[_builtins.str] url: URL of the PagerDuty API endpoint
@@ -137,7 +139,39 @@ class PagerdutyConnection(pulumi.CustomResource):
                  url: Optional[pulumi.Input[_builtins.str]] = None,
                  __props__=None):
         """
-        Create a PagerdutyConnection resource with the given unique name, props, and options.
+        > This resource requires the API token scopes **Read settings** (`settings.read`) and **Write settings** (`settings.write`)
+
+        > This resource requires the OAuth scopes **Read settings** (`settings:objects:read`) and **Write settings** (`settings:objects:write`)
+
+        ## Limitations
+
+        > **Warning** If a resource is created using an API token or without setting `DYNATRACE_HTTP_OAUTH_PREFERENCE=true` (when both are used), the settings object's owner will remain empty.
+
+        An empty owner implies:
+        - The settings object becomes public, allowing other users with settings permissions to read and modify it.
+        - Changing the settings object's permissions will have no effect, meaning the `SettingsPermissions` resource can't alter its access.
+
+        When a settings object is created using platform credentials:
+        - The owner is set to the owner of the OAuth client or platform token.
+        - By default, the settings object is private; only the owner can read and modify it.
+        - Access modifiers can be managed using the `SettingsPermissions` resource.
+
+        We recommend using platform credentials to ensure a correct setup.
+        In case an API token is needed, we recommend setting `DYNATRACE_HTTP_OAUTH_PREFERENCE=true`.
+
+        ## Dynatrace Documentation
+
+        - PagerDuty - https://docs.dynatrace.com/docs/analyze-explore-automate/workflows/actions/pagerduty
+
+        - Settings API - https://www.dynatrace.com/support/help/dynatrace-api/environment-api/settings (schemaId: `app:dynatrace.pagerduty:connection`)
+
+        ## Export Example Usage
+
+        - `terraform-provider-dynatrace -export PagerdutyConnection` downloads all existing PagerDuty connections
+
+        The full documentation of the export feature is available [here](https://dt-url.net/h203qmc).
+
+
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[_builtins.str] name: The name of the PagerDuty connection
@@ -151,7 +185,39 @@ class PagerdutyConnection(pulumi.CustomResource):
                  args: PagerdutyConnectionArgs,
                  opts: Optional[pulumi.ResourceOptions] = None):
         """
-        Create a PagerdutyConnection resource with the given unique name, props, and options.
+        > This resource requires the API token scopes **Read settings** (`settings.read`) and **Write settings** (`settings.write`)
+
+        > This resource requires the OAuth scopes **Read settings** (`settings:objects:read`) and **Write settings** (`settings:objects:write`)
+
+        ## Limitations
+
+        > **Warning** If a resource is created using an API token or without setting `DYNATRACE_HTTP_OAUTH_PREFERENCE=true` (when both are used), the settings object's owner will remain empty.
+
+        An empty owner implies:
+        - The settings object becomes public, allowing other users with settings permissions to read and modify it.
+        - Changing the settings object's permissions will have no effect, meaning the `SettingsPermissions` resource can't alter its access.
+
+        When a settings object is created using platform credentials:
+        - The owner is set to the owner of the OAuth client or platform token.
+        - By default, the settings object is private; only the owner can read and modify it.
+        - Access modifiers can be managed using the `SettingsPermissions` resource.
+
+        We recommend using platform credentials to ensure a correct setup.
+        In case an API token is needed, we recommend setting `DYNATRACE_HTTP_OAUTH_PREFERENCE=true`.
+
+        ## Dynatrace Documentation
+
+        - PagerDuty - https://docs.dynatrace.com/docs/analyze-explore-automate/workflows/actions/pagerduty
+
+        - Settings API - https://www.dynatrace.com/support/help/dynatrace-api/environment-api/settings (schemaId: `app:dynatrace.pagerduty:connection`)
+
+        ## Export Example Usage
+
+        - `terraform-provider-dynatrace -export PagerdutyConnection` downloads all existing PagerDuty connections
+
+        The full documentation of the export feature is available [here](https://dt-url.net/h203qmc).
+
+
         :param str resource_name: The name of the resource.
         :param PagerdutyConnectionArgs args: The arguments to use to populate this resource's properties.
         :param pulumi.ResourceOptions opts: Options for the resource.

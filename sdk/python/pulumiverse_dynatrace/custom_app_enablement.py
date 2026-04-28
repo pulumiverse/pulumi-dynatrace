@@ -25,6 +25,7 @@ class CustomAppEnablementArgs:
                  scope: Optional[pulumi.Input[_builtins.str]] = None):
         """
         The set of arguments for constructing a CustomAppEnablement resource.
+
         :param pulumi.Input['CustomAppEnablementRumArgs'] rum: Capture and analyze all user actions within your application. Enable [Real User Monitoring (RUM)](https://dt-url.net/1n2b0prq) to monitor and improve your application's performance, identify errors, and gain insight into your user's behavior and experience.
         :param pulumi.Input[_builtins.str] scope: The scope of this setting (CUSTOM_APPLICATION). Omit this property if you want to cover the whole environment.
         """
@@ -64,6 +65,7 @@ class _CustomAppEnablementState:
                  scope: Optional[pulumi.Input[_builtins.str]] = None):
         """
         Input properties used for looking up and filtering CustomAppEnablement resources.
+
         :param pulumi.Input['CustomAppEnablementRumArgs'] rum: Capture and analyze all user actions within your application. Enable [Real User Monitoring (RUM)](https://dt-url.net/1n2b0prq) to monitor and improve your application's performance, identify errors, and gain insight into your user's behavior and experience.
         :param pulumi.Input[_builtins.str] scope: The scope of this setting (CUSTOM_APPLICATION). Omit this property if you want to cover the whole environment.
         """
@@ -107,7 +109,23 @@ class CustomAppEnablement(pulumi.CustomResource):
                  scope: Optional[pulumi.Input[_builtins.str]] = None,
                  __props__=None):
         """
-        Create a CustomAppEnablement resource with the given unique name, props, and options.
+        > Configuration of the application scope overlaps with dynatrace_mobile_application, but this resource in addition provides an option for an environment scope.
+
+        > This resource requires the API token scopes **Read settings** (`settings.read`) and **Write settings** (`settings.write`)
+
+        ## Dynatrace Documentation
+
+        - Configure cost and traffic control for custom applications - https://www.dynatrace.com/support/help/how-to-use-dynatrace/real-user-monitoring/setup-and-configuration/custom-applications/configure-cost-and-traffic-control-custom
+
+        - Settings API - https://www.dynatrace.com/support/help/dynatrace-api/environment-api/settings (schemaId: `builtin:rum.custom.enablement`)
+
+        ## Export Example Usage
+
+        - `terraform-provider-dynatrace -export CustomAppEnablement` downloads all existing custom application enablement and cost control configuration
+
+        The full documentation of the export feature is available [here](https://dt-url.net/h203qmc).
+
+
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[Union['CustomAppEnablementRumArgs', 'CustomAppEnablementRumArgsDict']] rum: Capture and analyze all user actions within your application. Enable [Real User Monitoring (RUM)](https://dt-url.net/1n2b0prq) to monitor and improve your application's performance, identify errors, and gain insight into your user's behavior and experience.
@@ -120,7 +138,23 @@ class CustomAppEnablement(pulumi.CustomResource):
                  args: CustomAppEnablementArgs,
                  opts: Optional[pulumi.ResourceOptions] = None):
         """
-        Create a CustomAppEnablement resource with the given unique name, props, and options.
+        > Configuration of the application scope overlaps with dynatrace_mobile_application, but this resource in addition provides an option for an environment scope.
+
+        > This resource requires the API token scopes **Read settings** (`settings.read`) and **Write settings** (`settings.write`)
+
+        ## Dynatrace Documentation
+
+        - Configure cost and traffic control for custom applications - https://www.dynatrace.com/support/help/how-to-use-dynatrace/real-user-monitoring/setup-and-configuration/custom-applications/configure-cost-and-traffic-control-custom
+
+        - Settings API - https://www.dynatrace.com/support/help/dynatrace-api/environment-api/settings (schemaId: `builtin:rum.custom.enablement`)
+
+        ## Export Example Usage
+
+        - `terraform-provider-dynatrace -export CustomAppEnablement` downloads all existing custom application enablement and cost control configuration
+
+        The full documentation of the export feature is available [here](https://dt-url.net/h203qmc).
+
+
         :param str resource_name: The name of the resource.
         :param CustomAppEnablementArgs args: The arguments to use to populate this resource's properties.
         :param pulumi.ResourceOptions opts: Options for the resource.

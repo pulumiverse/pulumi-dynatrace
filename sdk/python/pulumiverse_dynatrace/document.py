@@ -26,6 +26,7 @@ class DocumentArgs:
                  private: Optional[pulumi.Input[_builtins.bool]] = None):
         """
         The set of arguments for constructing a Document resource.
+
         :param pulumi.Input[_builtins.str] content: Document content as JSON
         :param pulumi.Input[_builtins.str] type: Type of the document. Possible Values are `dashboard`, `launchpad` and `notebook`
         :param pulumi.Input[_builtins.str] custom_id: If provided, this will be the id of the document. If not provided, a system-generated id is used.
@@ -114,6 +115,7 @@ class _DocumentState:
                  version: Optional[pulumi.Input[_builtins.int]] = None):
         """
         Input properties used for looking up and filtering Document resources.
+
         :param pulumi.Input[_builtins.str] content: Document content as JSON
         :param pulumi.Input[_builtins.str] custom_id: If provided, this will be the id of the document. If not provided, a system-generated id is used.
         :param pulumi.Input[_builtins.str] name: The name/name of the document
@@ -254,6 +256,7 @@ class Document(pulumi.CustomResource):
 
         this = dynatrace.Document("this",
             type="dashboard",
+            name="Example Dashboard",
             custom_id="#name#",
             content=json.dumps({
                 "version": 13,
@@ -386,6 +389,7 @@ class Document(pulumi.CustomResource):
                 },
             }))
         ```
+
 
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
@@ -421,6 +425,7 @@ class Document(pulumi.CustomResource):
 
         this = dynatrace.Document("this",
             type="dashboard",
+            name="Example Dashboard",
             custom_id="#name#",
             content=json.dumps({
                 "version": 13,
@@ -553,6 +558,7 @@ class Document(pulumi.CustomResource):
                 },
             }))
         ```
+
 
         :param str resource_name: The name of the resource.
         :param DocumentArgs args: The arguments to use to populate this resource's properties.

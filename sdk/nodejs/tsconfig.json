@@ -1,16 +1,22 @@
 {
     "compilerOptions": {
+        // Output
         "outDir": "bin",
-        "target": "ES2020",
-        "module": "commonjs",
-        "moduleResolution": "node",
         "declaration": true,
+        "declarationMap": true,
         "sourceMap": true,
         "stripInternal": true,
-        "experimentalDecorators": true,
+        // Environment
+        "target": "ES2022",
+        "module": "nodenext",
+        "moduleResolution": "nodenext",
+        "moduleDetection": "force",
+        "types": ["node"],
+        // Type Checking
+        "strict": true,
         "noFallthroughCasesInSwitch": true,
-        "forceConsistentCasingInFileNames": true,
-        "strict": true
+        "noImplicitReturns": true,
+        "skipLibCheck": true
     },
     "files": [
         "activegateToken.ts",
@@ -51,8 +57,12 @@
         "autotagRules.ts",
         "autotagV2.ts",
         "awsAnomalies.ts",
+        "awsConnection.ts",
+        "awsConnectionRoleArn.ts",
         "awsCredentials.ts",
         "awsService.ts",
+        "azureConnection.ts",
+        "azureConnectionAuthentication.ts",
         "azureCredentials.ts",
         "azureService.ts",
         "browserMonitor.ts",
@@ -165,10 +175,12 @@
         "getGeoRegions.ts",
         "getHost.ts",
         "getHubItems.ts",
+        "getIamEnvironments.ts",
         "getIamGroup.ts",
         "getIamGroups.ts",
         "getIamPolicies.ts",
         "getIamPolicy.ts",
+        "getIamServiceUser.ts",
         "getIamUser.ts",
         "getLambdaAgentVersion.ts",
         "getManagementZone.ts",
@@ -220,6 +232,7 @@
         "iamPolicyBindings.ts",
         "iamPolicyBindingsV2.ts",
         "iamPolicyBoundary.ts",
+        "iamServiceUser.ts",
         "iamUser.ts",
         "ibmMqFilters.ts",
         "imsBridges.ts",

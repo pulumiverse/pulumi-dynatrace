@@ -11,6 +11,57 @@ import (
 	"github.com/pulumiverse/pulumi-dynatrace/sdk/go/dynatrace/internal"
 )
 
+// !> Deploying an OpenPipeline routing configuration will overwrite the existing one of the same kind, causing any manual changes made in the web UI or other routing configurations managed by Terraform or Monaco to be lost. Ensure all routing configurations of the same kind are defined within a single Terraform or Monaco configuration to prevent data loss.
+//
+// > This resource requires the API token scopes **Read settings** (`settings.read`) and **Write settings** (`settings.write`)
+//
+// > This resource requires the OAuth scopes **Read settings** (`settings:objects:read`) and **Write settings** (`settings:objects:write`)
+//
+// ## Dynatrace Documentation
+//
+// - OpenPipeline - https://docs.dynatrace.com/docs/platform/openpipeline
+//
+// ## Export Example Usage
+//
+// - `terraform-provider-dynatrace -export OpenpipelineV2SystemEventsRouting` downloads all existing OpenPipeline definitions for system events routing
+//
+// The full documentation of the export feature is available [here](https://dt-url.net/h203qmc).
+//
+// ## Resource Example Usage
+//
+// ```go
+// package main
+//
+// import (
+//
+//	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//	"github.com/pulumiverse/pulumi-dynatrace/sdk/go/dynatrace"
+//
+// )
+//
+//	func main() {
+//		pulumi.Run(func(ctx *pulumi.Context) error {
+//			_, err := dynatrace.NewOpenpipelineV2SystemEventsRouting(ctx, "routing", &dynatrace.OpenpipelineV2SystemEventsRoutingArgs{
+//				RoutingEntries: &dynatrace.OpenpipelineV2SystemEventsRoutingRoutingEntriesArgs{
+//					RoutingEntries: dynatrace.OpenpipelineV2SystemEventsRoutingRoutingEntriesRoutingEntryArray{
+//						&dynatrace.OpenpipelineV2SystemEventsRoutingRoutingEntriesRoutingEntryArgs{
+//							Enabled:           pulumi.Bool(true),
+//							PipelineType:      pulumi.String("builtin"),
+//							BuiltinPipelineId: pulumi.String("default"),
+//							Matcher:           pulumi.String("not matchesPhrase(record.title, \"Warning\")"),
+//							Description:       pulumi.String("Default route"),
+//						},
+//					},
+//				},
+//			})
+//			if err != nil {
+//				return err
+//			}
+//			return nil
+//		})
+//	}
+//
+// ```
 type OpenpipelineV2SystemEventsRouting struct {
 	pulumi.CustomResourceState
 

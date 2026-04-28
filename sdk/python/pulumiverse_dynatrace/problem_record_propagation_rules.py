@@ -24,6 +24,7 @@ class ProblemRecordPropagationRulesArgs:
                  target_attribute_key: pulumi.Input[_builtins.str]):
         """
         The set of arguments for constructing a ProblemRecordPropagationRules resource.
+
         :param pulumi.Input[_builtins.bool] enabled: This setting is enabled (`true`) or disabled (`false`)
         :param pulumi.Input[_builtins.str] source_attribute_key: Attribute key from the event that will be propagated.
         :param pulumi.Input[_builtins.str] target_attribute_key: Attribute key under which the propagated event data will be stored on the problem.
@@ -77,6 +78,7 @@ class _ProblemRecordPropagationRulesState:
                  target_attribute_key: Optional[pulumi.Input[_builtins.str]] = None):
         """
         Input properties used for looking up and filtering ProblemRecordPropagationRules resources.
+
         :param pulumi.Input[_builtins.bool] enabled: This setting is enabled (`true`) or disabled (`false`)
         :param pulumi.Input[_builtins.str] source_attribute_key: Attribute key from the event that will be propagated.
         :param pulumi.Input[_builtins.str] target_attribute_key: Attribute key under which the propagated event data will be stored on the problem.
@@ -136,7 +138,21 @@ class ProblemRecordPropagationRules(pulumi.CustomResource):
                  target_attribute_key: Optional[pulumi.Input[_builtins.str]] = None,
                  __props__=None):
         """
-        Create a ProblemRecordPropagationRules resource with the given unique name, props, and options.
+        > This resource requires the API token scopes **Read settings** (`settings.read`) and **Write settings** (`settings.write`)
+
+        ## Dynatrace Documentation
+
+        - Grail - https://docs.dynatrace.com/docs/platform/grail
+
+        - Settings API - https://www.dynatrace.com/support/help/dynatrace-api/environment-api/settings (schemaId: `builtin:problem.record.propagation.rules`)
+
+        ## Export Example Usage
+
+        - `terraform-provider-dynatrace -export ProblemRecordPropagationRules` downloads existing problem record propagation rules
+
+        The full documentation of the export feature is available [here](https://dt-url.net/h203qmc).
+
+
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[_builtins.bool] enabled: This setting is enabled (`true`) or disabled (`false`)
@@ -150,7 +166,21 @@ class ProblemRecordPropagationRules(pulumi.CustomResource):
                  args: ProblemRecordPropagationRulesArgs,
                  opts: Optional[pulumi.ResourceOptions] = None):
         """
-        Create a ProblemRecordPropagationRules resource with the given unique name, props, and options.
+        > This resource requires the API token scopes **Read settings** (`settings.read`) and **Write settings** (`settings.write`)
+
+        ## Dynatrace Documentation
+
+        - Grail - https://docs.dynatrace.com/docs/platform/grail
+
+        - Settings API - https://www.dynatrace.com/support/help/dynatrace-api/environment-api/settings (schemaId: `builtin:problem.record.propagation.rules`)
+
+        ## Export Example Usage
+
+        - `terraform-provider-dynatrace -export ProblemRecordPropagationRules` downloads existing problem record propagation rules
+
+        The full documentation of the export feature is available [here](https://dt-url.net/h203qmc).
+
+
         :param str resource_name: The name of the resource.
         :param ProblemRecordPropagationRulesArgs args: The arguments to use to populate this resource's properties.
         :param pulumi.ResourceOptions opts: Options for the resource.

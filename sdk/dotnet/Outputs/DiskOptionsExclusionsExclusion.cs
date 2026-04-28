@@ -41,10 +41,12 @@ namespace Pulumiverse.Dynatrace.Outputs
         /// The wildcard in **/staff/*** means to exclude every child folder of /staff.
         /// 
         /// The wildcard in **/disk*** means to exclude every mount point starting with /disk, for example /disk1, /disk99,  /diskabc
+        /// 
+        ///  ⚠️ Filtering is done before resolving symbolic links.
         /// </summary>
         public readonly string? Mountpoint;
         /// <summary>
-        /// Possible Values: `OS_TYPE_AIX`, `OS_TYPE_DARWIN`, `OS_TYPE_HPUX`, `OS_TYPE_LINUX`, `OS_TYPE_SOLARIS`, `OS_TYPE_UNKNOWN`, `OS_TYPE_WINDOWS`, `OS_TYPE_ZOS`
+        /// Operating system. Possible Values: `OS_TYPE_AIX`, `OS_TYPE_DARWIN`, `OS_TYPE_HPUX`, `OS_TYPE_LINUX`, `OS_TYPE_SOLARIS`, `OS_TYPE_UNKNOWN`, `OS_TYPE_WINDOWS`, `OS_TYPE_ZOS`
         /// </summary>
         public readonly string Os;
 

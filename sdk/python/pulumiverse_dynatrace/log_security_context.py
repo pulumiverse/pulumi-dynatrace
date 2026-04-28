@@ -25,6 +25,7 @@ class LogSecurityContextArgs:
                  insert_after: Optional[pulumi.Input[_builtins.str]] = None):
         """
         The set of arguments for constructing a LogSecurityContext resource.
+
         :param pulumi.Input['LogSecurityContextSecurityContextRuleArgs'] security_context_rule: no documentation available
         :param pulumi.Input[_builtins.str] insert_after: Because this resource allows for ordering you may specify the ID of the resource instance that comes before this instance regarding order. If not specified when creating the setting will be added to the end of the list. If not specified during update the order will remain untouched
         """
@@ -64,6 +65,7 @@ class _LogSecurityContextState:
                  security_context_rule: Optional[pulumi.Input['LogSecurityContextSecurityContextRuleArgs']] = None):
         """
         Input properties used for looking up and filtering LogSecurityContext resources.
+
         :param pulumi.Input[_builtins.str] insert_after: Because this resource allows for ordering you may specify the ID of the resource instance that comes before this instance regarding order. If not specified when creating the setting will be added to the end of the list. If not specified during update the order will remain untouched
         :param pulumi.Input['LogSecurityContextSecurityContextRuleArgs'] security_context_rule: no documentation available
         """
@@ -107,7 +109,21 @@ class LogSecurityContext(pulumi.CustomResource):
                  security_context_rule: Optional[pulumi.Input[Union['LogSecurityContextSecurityContextRuleArgs', 'LogSecurityContextSecurityContextRuleArgsDict']]] = None,
                  __props__=None):
         """
-        Create a LogSecurityContext resource with the given unique name, props, and options.
+        > This resource requires the API token scopes **Read settings** (`settings.read`) and **Write settings** (`settings.write`)
+
+        ## Dynatrace Documentation
+
+        - Log Management and Analytics - https://www.dynatrace.com/support/help/observe-and-explore/logs/log-management-and-analytics
+
+        - Settings API - https://www.dynatrace.com/support/help/dynatrace-api/environment-api/settings (schemaId: `builtin:logmonitoring.log-security-context-rules`)
+
+        ## Export Example Usage
+
+        - `terraform-provider-dynatrace -export LogSecurityContext` downloads all existing log security context configuration
+
+        The full documentation of the export feature is available [here](https://dt-url.net/h203qmc).
+
+
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[_builtins.str] insert_after: Because this resource allows for ordering you may specify the ID of the resource instance that comes before this instance regarding order. If not specified when creating the setting will be added to the end of the list. If not specified during update the order will remain untouched
@@ -120,7 +136,21 @@ class LogSecurityContext(pulumi.CustomResource):
                  args: LogSecurityContextArgs,
                  opts: Optional[pulumi.ResourceOptions] = None):
         """
-        Create a LogSecurityContext resource with the given unique name, props, and options.
+        > This resource requires the API token scopes **Read settings** (`settings.read`) and **Write settings** (`settings.write`)
+
+        ## Dynatrace Documentation
+
+        - Log Management and Analytics - https://www.dynatrace.com/support/help/observe-and-explore/logs/log-management-and-analytics
+
+        - Settings API - https://www.dynatrace.com/support/help/dynatrace-api/environment-api/settings (schemaId: `builtin:logmonitoring.log-security-context-rules`)
+
+        ## Export Example Usage
+
+        - `terraform-provider-dynatrace -export LogSecurityContext` downloads all existing log security context configuration
+
+        The full documentation of the export feature is available [here](https://dt-url.net/h203qmc).
+
+
         :param str resource_name: The name of the resource.
         :param LogSecurityContextArgs args: The arguments to use to populate this resource's properties.
         :param pulumi.ResourceOptions opts: Options for the resource.

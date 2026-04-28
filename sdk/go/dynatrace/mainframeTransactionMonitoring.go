@@ -12,6 +12,52 @@ import (
 	"github.com/pulumiverse/pulumi-dynatrace/sdk/go/dynatrace/internal"
 )
 
+// > This resource requires the API token scopes **Read settings** (`settings.read`) and **Write settings** (`settings.write`)
+//
+// ## Dynatrace Documentation
+//
+// - Customize CICS and IMS monitoring - https://www.dynatrace.com/support/help/setup-and-configuration/dynatrace-oneagent/installation-and-operation/zos/operation/cics-ims-monitoring
+//
+// - Settings API - https://www.dynatrace.com/support/help/dynatrace-api/environment-api/settings (schemaId: `builtin:mainframe.txmonitoring`)
+//
+// ## Export Example Usage
+//
+// - `terraform-provider-dynatrace -export MainframeTransactionMonitoring` downloads all additional monitoring settings for CICS and IMS transactions
+//
+// The full documentation of the export feature is available [here](https://dt-url.net/h203qmc).
+//
+// ## Resource Example Usage
+//
+// ```go
+// package main
+//
+// import (
+//
+//	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//	"github.com/pulumiverse/pulumi-dynatrace/sdk/go/dynatrace"
+//
+// )
+//
+//	func main() {
+//		pulumi.Run(func(ctx *pulumi.Context) error {
+//			// ID vu9U3hXa3q0AAAABAB5idWlsdGluOm1haW5mcmFtZS50eG1vbml0b3JpbmcABnRlbmFudAAGdGVuYW50ACQwYWYxNWEwOS05YWM0LTMyZGEtOTZjZi01Y2Q3NjI1Y2MxNja-71TeFdrerQ
+//			_, err := dynatrace.NewMainframeTransactionMonitoring(ctx, "mainframe_transaction_monitoring", &dynatrace.MainframeTransactionMonitoringArgs{
+//				GroupCicsRegions:                         pulumi.Bool(true),
+//				GroupImsRegions:                          pulumi.Bool(false),
+//				MonitorAllCtgProtocols:                   pulumi.Bool(false),
+//				MonitorAllIncomingWebRequests:            pulumi.Bool(false),
+//				NodeLimit:                                pulumi.Int(500),
+//				ZosCicsServiceDetectionUsesTransactionId: pulumi.Bool(false),
+//				ZosImsServiceDetectionUsesTransactionId:  pulumi.Bool(false),
+//			})
+//			if err != nil {
+//				return err
+//			}
+//			return nil
+//		})
+//	}
+//
+// ```
 type MainframeTransactionMonitoring struct {
 	pulumi.CustomResourceState
 

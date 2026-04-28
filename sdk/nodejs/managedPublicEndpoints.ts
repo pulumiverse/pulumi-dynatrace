@@ -4,6 +4,34 @@
 import * as pulumi from "@pulumi/pulumi";
 import * as utilities from "./utilities";
 
+/**
+ * !> **HTTP DELETE method not available** Terraform will no longer manage this resource on `destroy` but the configuration will still be present on the Dynatrace cluster.
+ *
+ * > This resource requires the cluster API token scope **Service Provider API** (`ServiceProviderAPI`)
+ *
+ * ## Dynatrace Documentation
+ *
+ * - Dynatrace Managed - https://www.dynatrace.com/support/help/managed-cluster
+ *
+ * - Cluster API v1 - https://www.dynatrace.com/support/help/managed-cluster/cluster-api/cluster-api-v1
+ *
+ * ## Resource Example Usage
+ *
+ * ```typescript
+ * import * as pulumi from "@pulumi/pulumi";
+ * import * as dynatrace from "@pulumiverse/dynatrace";
+ *
+ * const test = new dynatrace.ManagedPublicEndpoints("Test", {
+ *     webUiAddress: "https://www.webuiaddress.com",
+ *     additionalWebUiAddresses: [
+ *         "https://www.webuiaddress1.com",
+ *         "https://www.webuiaddress2.com",
+ *     ],
+ *     beaconForwarderAddress: "https://www.beaconforwarderaddress.com:443",
+ *     cdnAddress: "https://www.cdnaddress.com",
+ * });
+ * ```
+ */
 export class ManagedPublicEndpoints extends pulumi.CustomResource {
     /**
      * Get an existing ManagedPublicEndpoints resource's state with the given name, ID, and optional extra

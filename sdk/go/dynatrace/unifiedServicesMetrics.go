@@ -12,6 +12,19 @@ import (
 	"github.com/pulumiverse/pulumi-dynatrace/sdk/go/dynatrace/internal"
 )
 
+// > This resource requires the API token scopes **Read settings** (`settings.read`) and **Write settings** (`settings.write`)
+//
+// ## Dynatrace Documentation
+//
+// - Unified service - https://www.dynatrace.com/support/help/platform-modules/applications-and-microservices/services/service-detection-and-naming/service-types/unified-service
+//
+// - Settings API - https://www.dynatrace.com/support/help/dynatrace-api/environment-api/settings (schemaId: `builtin:unified-services-endpoint-metrics`)
+//
+// ## Export Example Usage
+//
+// - `terraform-provider-dynatrace -export UnifiedServicesMetrics` downloads existing unified services endpoint metrics configuration
+//
+// The full documentation of the export feature is available [here](https://dt-url.net/h203qmc).
 type UnifiedServicesMetrics struct {
 	pulumi.CustomResourceState
 

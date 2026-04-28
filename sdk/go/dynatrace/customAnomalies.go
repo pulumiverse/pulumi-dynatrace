@@ -12,6 +12,21 @@ import (
 	"github.com/pulumiverse/pulumi-dynatrace/sdk/go/dynatrace/internal"
 )
 
+// !> This resource API endpoint has been deprecated, please use MetricEvents instead.
+//
+// > This resource requires the API token scopes **Read configuration** (`ReadConfig`) and **Write configuration** (`WriteConfig`)
+//
+// ## Dynatrace Documentation
+//
+// - Metric events for alerting - https://www.dynatrace.com/support/help/how-to-use-dynatrace/problem-detection-and-analysis/problem-detection/metric-events-for-alerting
+//
+// - Anomaly detection API - Metric events - https://www.dynatrace.com/support/help/dynatrace-api/configuration-api/anomaly-detection-api/anomaly-detection-api-metric-events
+//
+// ## Export Example Usage
+//
+// - `terraform-provider-dynatrace -export CustomAnomalies` downloads all existing custom metric event configuration
+//
+// The full documentation of the export feature is available [here](https://dt-url.net/h203qmc).
 type CustomAnomalies struct {
 	pulumi.CustomResourceState
 

@@ -21,6 +21,9 @@ namespace Pulumiverse.Dynatrace.Inputs
             set => _categories = value;
         }
 
+        /// <summary>
+        /// Additional DQL matcher expression to further filter events to match
+        /// </summary>
         [Input("customFilter")]
         public Input<string>? CustomFilter { get; set; }
 

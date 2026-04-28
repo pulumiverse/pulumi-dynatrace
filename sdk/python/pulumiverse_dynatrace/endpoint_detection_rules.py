@@ -27,6 +27,7 @@ class EndpointDetectionRulesArgs:
                  scope: Optional[pulumi.Input[_builtins.str]] = None):
         """
         The set of arguments for constructing a EndpointDetectionRules resource.
+
         :param pulumi.Input[_builtins.bool] enabled: This setting is enabled (`true`) or disabled (`false`)
         :param pulumi.Input['EndpointDetectionRulesRuleArgs'] rule: Rule
         :param pulumi.Input[_builtins.str] insert_after: Because this resource allows for ordering you may specify the ID of the resource instance that comes before this instance regarding order. If not specified when creating the setting will be added to the end of the list. If not specified during update the order will remain untouched
@@ -97,6 +98,7 @@ class _EndpointDetectionRulesState:
                  scope: Optional[pulumi.Input[_builtins.str]] = None):
         """
         Input properties used for looking up and filtering EndpointDetectionRules resources.
+
         :param pulumi.Input[_builtins.bool] enabled: This setting is enabled (`true`) or disabled (`false`)
         :param pulumi.Input[_builtins.str] insert_after: Because this resource allows for ordering you may specify the ID of the resource instance that comes before this instance regarding order. If not specified when creating the setting will be added to the end of the list. If not specified during update the order will remain untouched
         :param pulumi.Input['EndpointDetectionRulesRuleArgs'] rule: Rule
@@ -207,6 +209,7 @@ class EndpointDetectionRules(pulumi.CustomResource):
             })
         ```
 
+
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[_builtins.bool] enabled: This setting is enabled (`true`) or disabled (`false`)
@@ -255,6 +258,7 @@ class EndpointDetectionRules(pulumi.CustomResource):
                 "rule_name": "#name#-2",
             })
         ```
+
 
         :param str resource_name: The name of the resource.
         :param EndpointDetectionRulesArgs args: The arguments to use to populate this resource's properties.

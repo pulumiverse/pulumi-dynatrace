@@ -10,6 +10,59 @@ using Pulumi;
 
 namespace Pulumiverse.Dynatrace
 {
+    /// <summary>
+    /// &gt; **Dynatrace Managed only**
+    /// 
+    /// &gt; To utilize this resource, please define the environment variables `DT_CLUSTER_URL` and `DT_CLUSTER_API_TOKEN` with the cluster API token scope **Service Provider API** (`ServiceProviderAPI`).
+    /// 
+    /// ## Dynatrace Documentation
+    /// 
+    /// - Dynatrace IAM Policy Management - https://docs.dynatrace.com/managed/manage/identity-access-management/permission-management/manage-user-permissions-policies
+    /// 
+    /// ## Export Example Usage
+    /// 
+    /// - `terraform-provider-dynatrace -export dynatrace.Policy` downloads all existing policies
+    /// 
+    /// The full documentation of the export feature is available [here](https://dt-url.net/h203qmc).
+    /// 
+    /// ## Resource Example Usage
+    /// 
+    /// ```csharp
+    /// using System.Collections.Generic;
+    /// using System.Linq;
+    /// using Pulumi;
+    /// using Dynatrace = Pulumiverse.Dynatrace;
+    /// 
+    /// return await Deployment.RunAsync(() =&gt; 
+    /// {
+    ///     var policy = new Dynatrace.Policy("policy", new()
+    ///     {
+    ///         Name = "my_policy_valid_for_environment_########-####-####-####-############",
+    ///         Environment = "########-####-####-####-############",
+    ///         StatementQuery = "ALLOW settings:objects:read, settings:schemas:read WHERE settings:schemaId = \"string\";",
+    ///     });
+    /// 
+    /// });
+    /// ```
+    /// 
+    /// ```csharp
+    /// using System.Collections.Generic;
+    /// using System.Linq;
+    /// using Pulumi;
+    /// using Dynatrace = Pulumiverse.Dynatrace;
+    /// 
+    /// return await Deployment.RunAsync(() =&gt; 
+    /// {
+    ///     var policy = new Dynatrace.IamPolicy("policy", new()
+    ///     {
+    ///         Name = "my_policy_valid_for_all_environments_in_this_cluster",
+    ///         Cluster = "########-####-####-####-############",
+    ///         StatementQuery = "ALLOW settings:objects:read, settings:schemas:read WHERE settings:schemaId = \"string\";",
+    ///     });
+    /// 
+    /// });
+    /// ```
+    /// </summary>
     [DynatraceResourceType("dynatrace:index/policy:Policy")]
     public partial class Policy : global::Pulumi.CustomResource
     {

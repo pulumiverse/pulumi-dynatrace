@@ -10,6 +10,10 @@ using Pulumi;
 
 namespace Pulumiverse.Dynatrace
 {
+    /// <summary>
+    /// The resource `dynatrace.JsonDashboardBase` doesn't contain any attributes itself. It acts as some sort of anchor resource that defines the eventual `ID` of a Dashboard - without having to
+    /// refer to the resource `dynatrace.JsonDashboard` explicitly.
+    /// </summary>
     [DynatraceResourceType("dynatrace:index/jsonDashboardBase:JsonDashboardBase")]
     public partial class JsonDashboardBase : global::Pulumi.CustomResource
     {

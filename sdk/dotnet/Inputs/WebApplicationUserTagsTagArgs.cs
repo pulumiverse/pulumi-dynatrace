@@ -19,6 +19,9 @@ namespace Pulumiverse.Dynatrace.Inputs
         [Input("cleanupRule")]
         public Input<string>? CleanupRule { get; set; }
 
+        /// <summary>
+        /// A unique ID among all userTags and properties of this application. Minimum value is 1. Do not set that attribute anymore - terraform will handle it. Kept for backwards compatibility
+        /// </summary>
         [Input("id")]
         public Input<int>? Id { get; set; }
 

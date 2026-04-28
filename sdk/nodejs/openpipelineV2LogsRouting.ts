@@ -6,6 +6,40 @@ import * as inputs from "./types/input";
 import * as outputs from "./types/output";
 import * as utilities from "./utilities";
 
+/**
+ * !> Deploying an OpenPipeline routing configuration will overwrite the existing one of the same kind, causing any manual changes made in the web UI or other routing configurations managed by Terraform or Monaco to be lost. Ensure all routing configurations of the same kind are defined within a single Terraform or Monaco configuration to prevent data loss.
+ *
+ * > This resource requires the API token scopes **Read settings** (`settings.read`) and **Write settings** (`settings.write`)
+ *
+ * > This resource requires the OAuth scopes **Read settings** (`settings:objects:read`) and **Write settings** (`settings:objects:write`)
+ *
+ * ## Dynatrace Documentation
+ *
+ * - OpenPipeline - https://docs.dynatrace.com/docs/platform/openpipeline
+ *
+ * ## Export Example Usage
+ *
+ * - `terraform-provider-dynatrace -export dynatrace.OpenpipelineV2LogsRouting` downloads all existing OpenPipeline definitions for logs routing
+ *
+ * The full documentation of the export feature is available [here](https://dt-url.net/h203qmc).
+ *
+ * ## Resource Example Usage
+ *
+ * ```typescript
+ * import * as pulumi from "@pulumi/pulumi";
+ * import * as dynatrace from "@pulumiverse/dynatrace";
+ *
+ * const routing = new dynatrace.OpenpipelineV2LogsRouting("routing", {routingEntries: {
+ *     routingEntries: [{
+ *         enabled: true,
+ *         pipelineType: "builtin",
+ *         builtinPipelineId: "default",
+ *         matcher: "not matchesPhrase(record.title, \"Warning\")",
+ *         description: "Default route",
+ *     }],
+ * }});
+ * ```
+ */
 export class OpenpipelineV2LogsRouting extends pulumi.CustomResource {
     /**
      * Get an existing OpenpipelineV2LogsRouting resource's state with the given name, ID, and optional extra

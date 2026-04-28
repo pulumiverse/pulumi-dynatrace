@@ -12,6 +12,19 @@ import (
 	"github.com/pulumiverse/pulumi-dynatrace/sdk/go/dynatrace/internal"
 )
 
+// > This resource requires the API token scopes **Read settings** (`settings.read`) and **Write settings** (`settings.write`)
+//
+// ## Dynatrace Documentation
+//
+// - Map internal IP addresses to locations - https://www.dynatrace.com/support/help/how-to-use-dynatrace/real-user-monitoring/setup-and-configuration/web-applications/additional-configuration/map-internal-ip-addresses-to-locations-web
+//
+// - Settings API - https://www.dynatrace.com/support/help/dynatrace-api/environment-api/settings (schemaId: `builtin:rum.ip-mappings`)
+//
+// ## Export Example Usage
+//
+// - `terraform-provider-dynatrace -export RumIpLocations` downloads all existing IP address mapping configuration
+//
+// The full documentation of the export feature is available [here](https://dt-url.net/h203qmc).
 type RumIpLocations struct {
 	pulumi.CustomResourceState
 

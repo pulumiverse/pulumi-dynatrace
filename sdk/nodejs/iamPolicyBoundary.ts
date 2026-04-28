@@ -23,18 +23,22 @@ import * as utilities from "./utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as dynatrace from "@pulumiverse/dynatrace";
  *
- * const thisIamPolicyBoundary = new dynatrace.IamPolicyBoundary("thisIamPolicyBoundary", {query: "environment:management-zone startsWith \"[Foo]\";"});
- * const thisIamGroup = new dynatrace.IamGroup("thisIamGroup", {});
- * const thisIamPolicy = new dynatrace.IamPolicy("thisIamPolicy", {
+ * const _this = new dynatrace.IamPolicyBoundary("this", {
+ *     name: "Foo",
+ *     query: "environment:management-zone startsWith \"[Foo]\";",
+ * });
+ * const thisIamGroup = new dynatrace.IamGroup("this", {name: "my-group-name"});
+ * const thisIamPolicy = new dynatrace.IamPolicy("this", {
+ *     name: "this",
  *     account: "########-####-####-####-############",
  *     statementQuery: "ALLOW settings:objects:read, settings:schemas:read WHERE settings:schemaId = \"#########\";",
  * });
- * const thisIamPolicyBindingsV2 = new dynatrace.IamPolicyBindingsV2("thisIamPolicyBindingsV2", {
+ * const thisIamPolicyBindingsV2 = new dynatrace.IamPolicyBindingsV2("this", {
  *     environment: "########",
  *     group: thisIamGroup.id,
  *     policies: [{
  *         id: thisIamPolicy.id,
- *         boundaries: [thisIamPolicyBoundary.id],
+ *         boundaries: [_this.id],
  *     }],
  * });
  * ```

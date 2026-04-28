@@ -4,6 +4,21 @@
 import * as pulumi from "@pulumi/pulumi";
 import * as utilities from "./utilities";
 
+/**
+ * > This resource requires the API token scopes **Read settings** (`settings.read`) and **Write settings** (`settings.write`)
+ *
+ * ## Dynatrace Documentation
+ *
+ * - Data privacy and security - https://www.dynatrace.com/support/help/manage/data-privacy-and-security
+ *
+ * - Settings API - https://www.dynatrace.com/support/help/dynatrace-api/environment-api/settings (schemaId: `builtin:oneagent.side.masking.settings`)
+ *
+ * ## Export Example Usage
+ *
+ * - `terraform-provider-dynatrace -export dynatrace.OneagentSideMasking` downloads all existing OneAgent data masking configuration
+ *
+ * The full documentation of the export feature is available [here](https://dt-url.net/h203qmc).
+ */
 export class OneagentSideMasking extends pulumi.CustomResource {
     /**
      * Get an existing OneagentSideMasking resource's state with the given name, ID, and optional extra
@@ -33,15 +48,15 @@ export class OneagentSideMasking extends pulumi.CustomResource {
     }
 
     /**
-     * Exclude email addresses from URLs
+     * Exclude email addresses from URLs and exceptions
      */
     declare public readonly isEmailMaskingEnabled: pulumi.Output<boolean>;
     /**
-     * Exclude IBANs and payment card numbers from URLs
+     * Exclude IBANs and payment card numbers from URLs and exceptions
      */
     declare public readonly isFinancialMaskingEnabled: pulumi.Output<boolean>;
     /**
-     * Exclude hexadecimal IDs and consecutive numbers above 5 digits from URLs
+     * Exclude hexadecimal IDs and consecutive numbers above 5 digits from URLs and exceptions
      */
     declare public readonly isNumbersMaskingEnabled: pulumi.Output<boolean>;
     /**
@@ -49,7 +64,7 @@ export class OneagentSideMasking extends pulumi.CustomResource {
      */
     declare public readonly isQueryMaskingEnabled: pulumi.Output<boolean>;
     /**
-     * The scope of this settings. If the settings should cover the whole environment, just don't specify any scope.
+     * The scope of this setting (PROCESS*GROUP, CLOUD*APPLICATION, CLOUD*APPLICATION*NAMESPACE, KUBERNETES*CLUSTER, HOST*GROUP). Omit this property if you want to cover the whole environment.
      */
     declare public readonly processGroupId: pulumi.Output<string | undefined>;
 
@@ -101,15 +116,15 @@ export class OneagentSideMasking extends pulumi.CustomResource {
  */
 export interface OneagentSideMaskingState {
     /**
-     * Exclude email addresses from URLs
+     * Exclude email addresses from URLs and exceptions
      */
     isEmailMaskingEnabled?: pulumi.Input<boolean>;
     /**
-     * Exclude IBANs and payment card numbers from URLs
+     * Exclude IBANs and payment card numbers from URLs and exceptions
      */
     isFinancialMaskingEnabled?: pulumi.Input<boolean>;
     /**
-     * Exclude hexadecimal IDs and consecutive numbers above 5 digits from URLs
+     * Exclude hexadecimal IDs and consecutive numbers above 5 digits from URLs and exceptions
      */
     isNumbersMaskingEnabled?: pulumi.Input<boolean>;
     /**
@@ -117,7 +132,7 @@ export interface OneagentSideMaskingState {
      */
     isQueryMaskingEnabled?: pulumi.Input<boolean>;
     /**
-     * The scope of this settings. If the settings should cover the whole environment, just don't specify any scope.
+     * The scope of this setting (PROCESS*GROUP, CLOUD*APPLICATION, CLOUD*APPLICATION*NAMESPACE, KUBERNETES*CLUSTER, HOST*GROUP). Omit this property if you want to cover the whole environment.
      */
     processGroupId?: pulumi.Input<string>;
 }
@@ -127,15 +142,15 @@ export interface OneagentSideMaskingState {
  */
 export interface OneagentSideMaskingArgs {
     /**
-     * Exclude email addresses from URLs
+     * Exclude email addresses from URLs and exceptions
      */
     isEmailMaskingEnabled: pulumi.Input<boolean>;
     /**
-     * Exclude IBANs and payment card numbers from URLs
+     * Exclude IBANs and payment card numbers from URLs and exceptions
      */
     isFinancialMaskingEnabled: pulumi.Input<boolean>;
     /**
-     * Exclude hexadecimal IDs and consecutive numbers above 5 digits from URLs
+     * Exclude hexadecimal IDs and consecutive numbers above 5 digits from URLs and exceptions
      */
     isNumbersMaskingEnabled: pulumi.Input<boolean>;
     /**
@@ -143,7 +158,7 @@ export interface OneagentSideMaskingArgs {
      */
     isQueryMaskingEnabled: pulumi.Input<boolean>;
     /**
-     * The scope of this settings. If the settings should cover the whole environment, just don't specify any scope.
+     * The scope of this setting (PROCESS*GROUP, CLOUD*APPLICATION, CLOUD*APPLICATION*NAMESPACE, KUBERNETES*CLUSTER, HOST*GROUP). Omit this property if you want to cover the whole environment.
      */
     processGroupId?: pulumi.Input<string>;
 }

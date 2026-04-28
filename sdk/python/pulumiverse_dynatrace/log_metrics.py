@@ -27,6 +27,7 @@ class LogMetricsArgs:
                  measure_attribute: Optional[pulumi.Input[_builtins.str]] = None):
         """
         The set of arguments for constructing a LogMetrics resource.
+
         :param pulumi.Input[_builtins.bool] enabled: This setting is enabled (`true`) or disabled (`false`)
         :param pulumi.Input[_builtins.str] key: Metric key
         :param pulumi.Input[_builtins.str] measure: Possible Values: `OCCURRENCE`, `ATTRIBUTE`
@@ -127,6 +128,7 @@ class _LogMetricsState:
                  query: Optional[pulumi.Input[_builtins.str]] = None):
         """
         Input properties used for looking up and filtering LogMetrics resources.
+
         :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] dimensions: To enable splitting on your metric, add desired dimensions.
         :param pulumi.Input[_builtins.bool] enabled: This setting is enabled (`true`) or disabled (`false`)
         :param pulumi.Input[_builtins.str] key: Metric key
@@ -234,7 +236,21 @@ class LogMetrics(pulumi.CustomResource):
                  query: Optional[pulumi.Input[_builtins.str]] = None,
                  __props__=None):
         """
-        Create a LogMetrics resource with the given unique name, props, and options.
+        > This resource requires the API token scopes **Read settings** (`settings.read`) and **Write settings** (`settings.write`)
+
+        ## Dynatrace Documentation
+
+        - Log metrics - https://www.dynatrace.com/support/help/observe-and-explore/logs/log-monitoring/analyze-log-data/log-metrics
+
+        - Settings API - https://www.dynatrace.com/support/help/dynatrace-api/environment-api/settings (schemaId: `builtin:logmonitoring.schemaless-log-metric`)
+
+        ## Export Example Usage
+
+        - `terraform-provider-dynatrace -export LogMetrics` downloads all existing log metric configuration
+
+        The full documentation of the export feature is available [here](https://dt-url.net/h203qmc).
+
+
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] dimensions: To enable splitting on your metric, add desired dimensions.
@@ -251,7 +267,21 @@ class LogMetrics(pulumi.CustomResource):
                  args: LogMetricsArgs,
                  opts: Optional[pulumi.ResourceOptions] = None):
         """
-        Create a LogMetrics resource with the given unique name, props, and options.
+        > This resource requires the API token scopes **Read settings** (`settings.read`) and **Write settings** (`settings.write`)
+
+        ## Dynatrace Documentation
+
+        - Log metrics - https://www.dynatrace.com/support/help/observe-and-explore/logs/log-monitoring/analyze-log-data/log-metrics
+
+        - Settings API - https://www.dynatrace.com/support/help/dynatrace-api/environment-api/settings (schemaId: `builtin:logmonitoring.schemaless-log-metric`)
+
+        ## Export Example Usage
+
+        - `terraform-provider-dynatrace -export LogMetrics` downloads all existing log metric configuration
+
+        The full documentation of the export feature is available [here](https://dt-url.net/h203qmc).
+
+
         :param str resource_name: The name of the resource.
         :param LogMetricsArgs args: The arguments to use to populate this resource's properties.
         :param pulumi.ResourceOptions opts: Options for the resource.

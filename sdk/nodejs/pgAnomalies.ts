@@ -6,6 +6,23 @@ import * as inputs from "./types/input";
 import * as outputs from "./types/output";
 import * as utilities from "./utilities";
 
+/**
+ * !> This resource is utilizing an older API endpoint, please use dynatrace.PgAlerting instead.
+ *
+ * > This resource requires the API token scopes **Read configuration** (`ReadConfig`) and **Write configuration** (`WriteConfig`)
+ *
+ * ## Dynatrace Documentation
+ *
+ * - Process groups - https://www.dynatrace.com/support/help/how-to-use-dynatrace/process-groups
+ *
+ * - Anomaly detection API - Process groups - https://www.dynatrace.com/support/help/dynatrace-api/configuration-api/anomaly-detection-api/anomaly-detection-api-process-groups
+ *
+ * ## Export Example Usage
+ *
+ * - `terraform-provider-dynatrace -export dynatrace.PgAnomalies` downloads all existing process group detection configuration
+ *
+ * The full documentation of the export feature is available [here](https://dt-url.net/h203qmc).
+ */
 export class PgAnomalies extends pulumi.CustomResource {
     /**
      * Get an existing PgAnomalies resource's state with the given name, ID, and optional extra

@@ -25,6 +25,7 @@ class DiscoveryDefaultRulesArgs:
                  settings: pulumi.Input['DiscoveryDefaultRulesSettingsArgs']):
         """
         The set of arguments for constructing a DiscoveryDefaultRules resource.
+
         :param pulumi.Input['DiscoveryDefaultRulesRuleArgs'] rule: Rule:
         :param pulumi.Input['DiscoveryDefaultRulesSettingsArgs'] settings: Settings:
         """
@@ -63,6 +64,7 @@ class _DiscoveryDefaultRulesState:
                  settings: Optional[pulumi.Input['DiscoveryDefaultRulesSettingsArgs']] = None):
         """
         Input properties used for looking up and filtering DiscoveryDefaultRules resources.
+
         :param pulumi.Input['DiscoveryDefaultRulesRuleArgs'] rule: Rule:
         :param pulumi.Input['DiscoveryDefaultRulesSettingsArgs'] settings: Settings:
         """
@@ -106,7 +108,21 @@ class DiscoveryDefaultRules(pulumi.CustomResource):
                  settings: Optional[pulumi.Input[Union['DiscoveryDefaultRulesSettingsArgs', 'DiscoveryDefaultRulesSettingsArgsDict']]] = None,
                  __props__=None):
         """
-        Create a DiscoveryDefaultRules resource with the given unique name, props, and options.
+        > This resource requires the API token scopes **Read settings** (`settings.read`) and **Write settings** (`settings.write`)
+
+        ## Dynatrace Documentation
+
+        - Discovery & Coverage - https://www.dynatrace.com/hub/detail/discovery-coverage/
+
+        - Settings API - https://www.dynatrace.com/support/help/dynatrace-api/environment-api/settings (schemaId: `app:dynatrace.discovery.coverage:discovery.findings.default.rules.schema`)
+
+        ## Export Example Usage
+
+        - `terraform-provider-dynatrace -export DiscoveryDefaultRules` downloads existing discovery findings default rules
+
+        The full documentation of the export feature is available [here](https://dt-url.net/h203qmc).
+
+
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[Union['DiscoveryDefaultRulesRuleArgs', 'DiscoveryDefaultRulesRuleArgsDict']] rule: Rule:
@@ -119,7 +135,21 @@ class DiscoveryDefaultRules(pulumi.CustomResource):
                  args: DiscoveryDefaultRulesArgs,
                  opts: Optional[pulumi.ResourceOptions] = None):
         """
-        Create a DiscoveryDefaultRules resource with the given unique name, props, and options.
+        > This resource requires the API token scopes **Read settings** (`settings.read`) and **Write settings** (`settings.write`)
+
+        ## Dynatrace Documentation
+
+        - Discovery & Coverage - https://www.dynatrace.com/hub/detail/discovery-coverage/
+
+        - Settings API - https://www.dynatrace.com/support/help/dynatrace-api/environment-api/settings (schemaId: `app:dynatrace.discovery.coverage:discovery.findings.default.rules.schema`)
+
+        ## Export Example Usage
+
+        - `terraform-provider-dynatrace -export DiscoveryDefaultRules` downloads existing discovery findings default rules
+
+        The full documentation of the export feature is available [here](https://dt-url.net/h203qmc).
+
+
         :param str resource_name: The name of the resource.
         :param DiscoveryDefaultRulesArgs args: The arguments to use to populate this resource's properties.
         :param pulumi.ResourceOptions opts: Options for the resource.

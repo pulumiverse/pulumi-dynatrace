@@ -39,7 +39,7 @@ namespace Pulumiverse.Dynatrace
         public Output<string?> Environment { get; private set; } = null!;
 
         /// <summary>
-        /// The name of the policy
+        /// The UUID of the group to which the policy applies
         /// </summary>
         [Output("group")]
         public Output<string> Group { get; private set; } = null!;
@@ -110,7 +110,7 @@ namespace Pulumiverse.Dynatrace
         public Input<string>? Environment { get; set; }
 
         /// <summary>
-        /// The name of the policy
+        /// The UUID of the group to which the policy applies
         /// </summary>
         [Input("group", required: true)]
         public Input<string> Group { get; set; } = null!;
@@ -148,7 +148,7 @@ namespace Pulumiverse.Dynatrace
         public Input<string>? Environment { get; set; }
 
         /// <summary>
-        /// The name of the policy
+        /// The UUID of the group to which the policy applies
         /// </summary>
         [Input("group")]
         public Input<string>? Group { get; set; }

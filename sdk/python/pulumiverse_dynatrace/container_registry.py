@@ -22,6 +22,7 @@ class ContainerRegistryArgs:
                  container_registry: Optional[pulumi.Input[_builtins.str]] = None):
         """
         The set of arguments for constructing a ContainerRegistry resource.
+
         :param pulumi.Input[_builtins.str] container_registry: Typically set without protocol. Leave empty to use default configuration
         """
         if container_registry is not None:
@@ -46,6 +47,7 @@ class _ContainerRegistryState:
                  container_registry: Optional[pulumi.Input[_builtins.str]] = None):
         """
         Input properties used for looking up and filtering ContainerRegistry resources.
+
         :param pulumi.Input[_builtins.str] container_registry: Typically set without protocol. Leave empty to use default configuration
         """
         if container_registry is not None:
@@ -73,7 +75,28 @@ class ContainerRegistry(pulumi.CustomResource):
                  container_registry: Optional[pulumi.Input[_builtins.str]] = None,
                  __props__=None):
         """
-        Create a ContainerRegistry resource with the given unique name, props, and options.
+        > This resource requires the API token scopes **Read settings** (`settings.read`) and **Write settings** (`settings.write`)
+
+        ## Dynatrace Documentation
+
+        - Settings API - https://www.dynatrace.com/support/help/dynatrace-api/environment-api/settings (schemaId: `builtin:container-registry`)
+
+        ## Export Example Usage
+
+        - `terraform-provider-dynatrace -export ContainerRegistry` downloads the existing container URL of the public/private repository hosting container images
+
+        The full documentation of the export feature is available [here](https://dt-url.net/h203qmc).
+
+        ## Resource Example Usage
+
+        ```python
+        import pulumi
+        import pulumiverse_dynatrace as dynatrace
+
+        environment = dynatrace.ContainerRegistry("environment", container_registry="private.registry.org")
+        ```
+
+
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[_builtins.str] container_registry: Typically set without protocol. Leave empty to use default configuration
@@ -85,7 +108,28 @@ class ContainerRegistry(pulumi.CustomResource):
                  args: Optional[ContainerRegistryArgs] = None,
                  opts: Optional[pulumi.ResourceOptions] = None):
         """
-        Create a ContainerRegistry resource with the given unique name, props, and options.
+        > This resource requires the API token scopes **Read settings** (`settings.read`) and **Write settings** (`settings.write`)
+
+        ## Dynatrace Documentation
+
+        - Settings API - https://www.dynatrace.com/support/help/dynatrace-api/environment-api/settings (schemaId: `builtin:container-registry`)
+
+        ## Export Example Usage
+
+        - `terraform-provider-dynatrace -export ContainerRegistry` downloads the existing container URL of the public/private repository hosting container images
+
+        The full documentation of the export feature is available [here](https://dt-url.net/h203qmc).
+
+        ## Resource Example Usage
+
+        ```python
+        import pulumi
+        import pulumiverse_dynatrace as dynatrace
+
+        environment = dynatrace.ContainerRegistry("environment", container_registry="private.registry.org")
+        ```
+
+
         :param str resource_name: The name of the resource.
         :param ContainerRegistryArgs args: The arguments to use to populate this resource's properties.
         :param pulumi.ResourceOptions opts: Options for the resource.

@@ -26,11 +26,12 @@ class OneagentSideMaskingArgs:
                  process_group_id: Optional[pulumi.Input[_builtins.str]] = None):
         """
         The set of arguments for constructing a OneagentSideMasking resource.
-        :param pulumi.Input[_builtins.bool] is_email_masking_enabled: Exclude email addresses from URLs
-        :param pulumi.Input[_builtins.bool] is_financial_masking_enabled: Exclude IBANs and payment card numbers from URLs
-        :param pulumi.Input[_builtins.bool] is_numbers_masking_enabled: Exclude hexadecimal IDs and consecutive numbers above 5 digits from URLs
+
+        :param pulumi.Input[_builtins.bool] is_email_masking_enabled: Exclude email addresses from URLs and exceptions
+        :param pulumi.Input[_builtins.bool] is_financial_masking_enabled: Exclude IBANs and payment card numbers from URLs and exceptions
+        :param pulumi.Input[_builtins.bool] is_numbers_masking_enabled: Exclude hexadecimal IDs and consecutive numbers above 5 digits from URLs and exceptions
         :param pulumi.Input[_builtins.bool] is_query_masking_enabled: Exclude query parameters from URLs and web requests
-        :param pulumi.Input[_builtins.str] process_group_id: The scope of this settings. If the settings should cover the whole environment, just don't specify any scope.
+        :param pulumi.Input[_builtins.str] process_group_id: The scope of this setting (PROCESS*GROUP, CLOUD*APPLICATION, CLOUD*APPLICATION*NAMESPACE, KUBERNETES*CLUSTER, HOST*GROUP). Omit this property if you want to cover the whole environment.
         """
         pulumi.set(__self__, "is_email_masking_enabled", is_email_masking_enabled)
         pulumi.set(__self__, "is_financial_masking_enabled", is_financial_masking_enabled)
@@ -43,7 +44,7 @@ class OneagentSideMaskingArgs:
     @pulumi.getter(name="isEmailMaskingEnabled")
     def is_email_masking_enabled(self) -> pulumi.Input[_builtins.bool]:
         """
-        Exclude email addresses from URLs
+        Exclude email addresses from URLs and exceptions
         """
         return pulumi.get(self, "is_email_masking_enabled")
 
@@ -55,7 +56,7 @@ class OneagentSideMaskingArgs:
     @pulumi.getter(name="isFinancialMaskingEnabled")
     def is_financial_masking_enabled(self) -> pulumi.Input[_builtins.bool]:
         """
-        Exclude IBANs and payment card numbers from URLs
+        Exclude IBANs and payment card numbers from URLs and exceptions
         """
         return pulumi.get(self, "is_financial_masking_enabled")
 
@@ -67,7 +68,7 @@ class OneagentSideMaskingArgs:
     @pulumi.getter(name="isNumbersMaskingEnabled")
     def is_numbers_masking_enabled(self) -> pulumi.Input[_builtins.bool]:
         """
-        Exclude hexadecimal IDs and consecutive numbers above 5 digits from URLs
+        Exclude hexadecimal IDs and consecutive numbers above 5 digits from URLs and exceptions
         """
         return pulumi.get(self, "is_numbers_masking_enabled")
 
@@ -91,7 +92,7 @@ class OneagentSideMaskingArgs:
     @pulumi.getter(name="processGroupId")
     def process_group_id(self) -> Optional[pulumi.Input[_builtins.str]]:
         """
-        The scope of this settings. If the settings should cover the whole environment, just don't specify any scope.
+        The scope of this setting (PROCESS*GROUP, CLOUD*APPLICATION, CLOUD*APPLICATION*NAMESPACE, KUBERNETES*CLUSTER, HOST*GROUP). Omit this property if you want to cover the whole environment.
         """
         return pulumi.get(self, "process_group_id")
 
@@ -110,11 +111,12 @@ class _OneagentSideMaskingState:
                  process_group_id: Optional[pulumi.Input[_builtins.str]] = None):
         """
         Input properties used for looking up and filtering OneagentSideMasking resources.
-        :param pulumi.Input[_builtins.bool] is_email_masking_enabled: Exclude email addresses from URLs
-        :param pulumi.Input[_builtins.bool] is_financial_masking_enabled: Exclude IBANs and payment card numbers from URLs
-        :param pulumi.Input[_builtins.bool] is_numbers_masking_enabled: Exclude hexadecimal IDs and consecutive numbers above 5 digits from URLs
+
+        :param pulumi.Input[_builtins.bool] is_email_masking_enabled: Exclude email addresses from URLs and exceptions
+        :param pulumi.Input[_builtins.bool] is_financial_masking_enabled: Exclude IBANs and payment card numbers from URLs and exceptions
+        :param pulumi.Input[_builtins.bool] is_numbers_masking_enabled: Exclude hexadecimal IDs and consecutive numbers above 5 digits from URLs and exceptions
         :param pulumi.Input[_builtins.bool] is_query_masking_enabled: Exclude query parameters from URLs and web requests
-        :param pulumi.Input[_builtins.str] process_group_id: The scope of this settings. If the settings should cover the whole environment, just don't specify any scope.
+        :param pulumi.Input[_builtins.str] process_group_id: The scope of this setting (PROCESS*GROUP, CLOUD*APPLICATION, CLOUD*APPLICATION*NAMESPACE, KUBERNETES*CLUSTER, HOST*GROUP). Omit this property if you want to cover the whole environment.
         """
         if is_email_masking_enabled is not None:
             pulumi.set(__self__, "is_email_masking_enabled", is_email_masking_enabled)
@@ -131,7 +133,7 @@ class _OneagentSideMaskingState:
     @pulumi.getter(name="isEmailMaskingEnabled")
     def is_email_masking_enabled(self) -> Optional[pulumi.Input[_builtins.bool]]:
         """
-        Exclude email addresses from URLs
+        Exclude email addresses from URLs and exceptions
         """
         return pulumi.get(self, "is_email_masking_enabled")
 
@@ -143,7 +145,7 @@ class _OneagentSideMaskingState:
     @pulumi.getter(name="isFinancialMaskingEnabled")
     def is_financial_masking_enabled(self) -> Optional[pulumi.Input[_builtins.bool]]:
         """
-        Exclude IBANs and payment card numbers from URLs
+        Exclude IBANs and payment card numbers from URLs and exceptions
         """
         return pulumi.get(self, "is_financial_masking_enabled")
 
@@ -155,7 +157,7 @@ class _OneagentSideMaskingState:
     @pulumi.getter(name="isNumbersMaskingEnabled")
     def is_numbers_masking_enabled(self) -> Optional[pulumi.Input[_builtins.bool]]:
         """
-        Exclude hexadecimal IDs and consecutive numbers above 5 digits from URLs
+        Exclude hexadecimal IDs and consecutive numbers above 5 digits from URLs and exceptions
         """
         return pulumi.get(self, "is_numbers_masking_enabled")
 
@@ -179,7 +181,7 @@ class _OneagentSideMaskingState:
     @pulumi.getter(name="processGroupId")
     def process_group_id(self) -> Optional[pulumi.Input[_builtins.str]]:
         """
-        The scope of this settings. If the settings should cover the whole environment, just don't specify any scope.
+        The scope of this setting (PROCESS*GROUP, CLOUD*APPLICATION, CLOUD*APPLICATION*NAMESPACE, KUBERNETES*CLUSTER, HOST*GROUP). Omit this property if you want to cover the whole environment.
         """
         return pulumi.get(self, "process_group_id")
 
@@ -201,14 +203,28 @@ class OneagentSideMasking(pulumi.CustomResource):
                  process_group_id: Optional[pulumi.Input[_builtins.str]] = None,
                  __props__=None):
         """
-        Create a OneagentSideMasking resource with the given unique name, props, and options.
+        > This resource requires the API token scopes **Read settings** (`settings.read`) and **Write settings** (`settings.write`)
+
+        ## Dynatrace Documentation
+
+        - Data privacy and security - https://www.dynatrace.com/support/help/manage/data-privacy-and-security
+
+        - Settings API - https://www.dynatrace.com/support/help/dynatrace-api/environment-api/settings (schemaId: `builtin:oneagent.side.masking.settings`)
+
+        ## Export Example Usage
+
+        - `terraform-provider-dynatrace -export OneagentSideMasking` downloads all existing OneAgent data masking configuration
+
+        The full documentation of the export feature is available [here](https://dt-url.net/h203qmc).
+
+
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
-        :param pulumi.Input[_builtins.bool] is_email_masking_enabled: Exclude email addresses from URLs
-        :param pulumi.Input[_builtins.bool] is_financial_masking_enabled: Exclude IBANs and payment card numbers from URLs
-        :param pulumi.Input[_builtins.bool] is_numbers_masking_enabled: Exclude hexadecimal IDs and consecutive numbers above 5 digits from URLs
+        :param pulumi.Input[_builtins.bool] is_email_masking_enabled: Exclude email addresses from URLs and exceptions
+        :param pulumi.Input[_builtins.bool] is_financial_masking_enabled: Exclude IBANs and payment card numbers from URLs and exceptions
+        :param pulumi.Input[_builtins.bool] is_numbers_masking_enabled: Exclude hexadecimal IDs and consecutive numbers above 5 digits from URLs and exceptions
         :param pulumi.Input[_builtins.bool] is_query_masking_enabled: Exclude query parameters from URLs and web requests
-        :param pulumi.Input[_builtins.str] process_group_id: The scope of this settings. If the settings should cover the whole environment, just don't specify any scope.
+        :param pulumi.Input[_builtins.str] process_group_id: The scope of this setting (PROCESS*GROUP, CLOUD*APPLICATION, CLOUD*APPLICATION*NAMESPACE, KUBERNETES*CLUSTER, HOST*GROUP). Omit this property if you want to cover the whole environment.
         """
         ...
     @overload
@@ -217,7 +233,21 @@ class OneagentSideMasking(pulumi.CustomResource):
                  args: OneagentSideMaskingArgs,
                  opts: Optional[pulumi.ResourceOptions] = None):
         """
-        Create a OneagentSideMasking resource with the given unique name, props, and options.
+        > This resource requires the API token scopes **Read settings** (`settings.read`) and **Write settings** (`settings.write`)
+
+        ## Dynatrace Documentation
+
+        - Data privacy and security - https://www.dynatrace.com/support/help/manage/data-privacy-and-security
+
+        - Settings API - https://www.dynatrace.com/support/help/dynatrace-api/environment-api/settings (schemaId: `builtin:oneagent.side.masking.settings`)
+
+        ## Export Example Usage
+
+        - `terraform-provider-dynatrace -export OneagentSideMasking` downloads all existing OneAgent data masking configuration
+
+        The full documentation of the export feature is available [here](https://dt-url.net/h203qmc).
+
+
         :param str resource_name: The name of the resource.
         :param OneagentSideMaskingArgs args: The arguments to use to populate this resource's properties.
         :param pulumi.ResourceOptions opts: Options for the resource.
@@ -282,11 +312,11 @@ class OneagentSideMasking(pulumi.CustomResource):
         :param str resource_name: The unique name of the resulting resource.
         :param pulumi.Input[str] id: The unique provider ID of the resource to lookup.
         :param pulumi.ResourceOptions opts: Options for the resource.
-        :param pulumi.Input[_builtins.bool] is_email_masking_enabled: Exclude email addresses from URLs
-        :param pulumi.Input[_builtins.bool] is_financial_masking_enabled: Exclude IBANs and payment card numbers from URLs
-        :param pulumi.Input[_builtins.bool] is_numbers_masking_enabled: Exclude hexadecimal IDs and consecutive numbers above 5 digits from URLs
+        :param pulumi.Input[_builtins.bool] is_email_masking_enabled: Exclude email addresses from URLs and exceptions
+        :param pulumi.Input[_builtins.bool] is_financial_masking_enabled: Exclude IBANs and payment card numbers from URLs and exceptions
+        :param pulumi.Input[_builtins.bool] is_numbers_masking_enabled: Exclude hexadecimal IDs and consecutive numbers above 5 digits from URLs and exceptions
         :param pulumi.Input[_builtins.bool] is_query_masking_enabled: Exclude query parameters from URLs and web requests
-        :param pulumi.Input[_builtins.str] process_group_id: The scope of this settings. If the settings should cover the whole environment, just don't specify any scope.
+        :param pulumi.Input[_builtins.str] process_group_id: The scope of this setting (PROCESS*GROUP, CLOUD*APPLICATION, CLOUD*APPLICATION*NAMESPACE, KUBERNETES*CLUSTER, HOST*GROUP). Omit this property if you want to cover the whole environment.
         """
         opts = pulumi.ResourceOptions.merge(opts, pulumi.ResourceOptions(id=id))
 
@@ -303,7 +333,7 @@ class OneagentSideMasking(pulumi.CustomResource):
     @pulumi.getter(name="isEmailMaskingEnabled")
     def is_email_masking_enabled(self) -> pulumi.Output[_builtins.bool]:
         """
-        Exclude email addresses from URLs
+        Exclude email addresses from URLs and exceptions
         """
         return pulumi.get(self, "is_email_masking_enabled")
 
@@ -311,7 +341,7 @@ class OneagentSideMasking(pulumi.CustomResource):
     @pulumi.getter(name="isFinancialMaskingEnabled")
     def is_financial_masking_enabled(self) -> pulumi.Output[_builtins.bool]:
         """
-        Exclude IBANs and payment card numbers from URLs
+        Exclude IBANs and payment card numbers from URLs and exceptions
         """
         return pulumi.get(self, "is_financial_masking_enabled")
 
@@ -319,7 +349,7 @@ class OneagentSideMasking(pulumi.CustomResource):
     @pulumi.getter(name="isNumbersMaskingEnabled")
     def is_numbers_masking_enabled(self) -> pulumi.Output[_builtins.bool]:
         """
-        Exclude hexadecimal IDs and consecutive numbers above 5 digits from URLs
+        Exclude hexadecimal IDs and consecutive numbers above 5 digits from URLs and exceptions
         """
         return pulumi.get(self, "is_numbers_masking_enabled")
 
@@ -335,7 +365,7 @@ class OneagentSideMasking(pulumi.CustomResource):
     @pulumi.getter(name="processGroupId")
     def process_group_id(self) -> pulumi.Output[Optional[_builtins.str]]:
         """
-        The scope of this settings. If the settings should cover the whole environment, just don't specify any scope.
+        The scope of this setting (PROCESS*GROUP, CLOUD*APPLICATION, CLOUD*APPLICATION*NAMESPACE, KUBERNETES*CLUSTER, HOST*GROUP). Omit this property if you want to cover the whole environment.
         """
         return pulumi.get(self, "process_group_id")
 

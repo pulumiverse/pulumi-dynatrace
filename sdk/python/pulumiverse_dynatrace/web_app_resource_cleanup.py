@@ -25,6 +25,7 @@ class WebAppResourceCleanupArgs:
                  name: Optional[pulumi.Input[_builtins.str]] = None):
         """
         The set of arguments for constructing a WebAppResourceCleanup resource.
+
         :param pulumi.Input[_builtins.str] regular_expression: For example: `(.*)(journeyId=)-?\\d+(.*)`
         :param pulumi.Input[_builtins.str] replace_with: For example: `$1$2\\*$3`
         :param pulumi.Input[_builtins.str] insert_after: Because this resource allows for ordering you may specify the ID of the resource instance that comes before this instance regarding order. If not specified when creating the setting will be added to the end of the list. If not specified during update the order will remain untouched
@@ -95,6 +96,7 @@ class _WebAppResourceCleanupState:
                  replace_with: Optional[pulumi.Input[_builtins.str]] = None):
         """
         Input properties used for looking up and filtering WebAppResourceCleanup resources.
+
         :param pulumi.Input[_builtins.str] insert_after: Because this resource allows for ordering you may specify the ID of the resource instance that comes before this instance regarding order. If not specified when creating the setting will be added to the end of the list. If not specified during update the order will remain untouched
         :param pulumi.Input[_builtins.str] name: For example: *Mask journeyId*
         :param pulumi.Input[_builtins.str] regular_expression: For example: `(.*)(journeyId=)-?\\d+(.*)`
@@ -170,7 +172,21 @@ class WebAppResourceCleanup(pulumi.CustomResource):
                  replace_with: Optional[pulumi.Input[_builtins.str]] = None,
                  __props__=None):
         """
-        Create a WebAppResourceCleanup resource with the given unique name, props, and options.
+        > This resource requires the API token scopes **Read settings** (`settings.read`) and **Write settings** (`settings.write`)
+
+        ## Dynatrace Documentation
+
+        - Define URL cleanup rules - https://www.dynatrace.com/support/help/platform-modules/digital-experience/web-applications/how-to-use/waterfall-analysis#define-url-cleanup-rules
+
+        - Settings API - https://www.dynatrace.com/support/help/dynatrace-api/environment-api/settings (schemaId: `builtin:rum.web.resource-cleanup-rules`)
+
+        ## Export Example Usage
+
+        - `terraform-provider-dynatrace -export WebAppResourceCleanup` downloads all existing resource URL cleanup rules configuration
+
+        The full documentation of the export feature is available [here](https://dt-url.net/h203qmc).
+
+
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[_builtins.str] insert_after: Because this resource allows for ordering you may specify the ID of the resource instance that comes before this instance regarding order. If not specified when creating the setting will be added to the end of the list. If not specified during update the order will remain untouched
@@ -185,7 +201,21 @@ class WebAppResourceCleanup(pulumi.CustomResource):
                  args: WebAppResourceCleanupArgs,
                  opts: Optional[pulumi.ResourceOptions] = None):
         """
-        Create a WebAppResourceCleanup resource with the given unique name, props, and options.
+        > This resource requires the API token scopes **Read settings** (`settings.read`) and **Write settings** (`settings.write`)
+
+        ## Dynatrace Documentation
+
+        - Define URL cleanup rules - https://www.dynatrace.com/support/help/platform-modules/digital-experience/web-applications/how-to-use/waterfall-analysis#define-url-cleanup-rules
+
+        - Settings API - https://www.dynatrace.com/support/help/dynatrace-api/environment-api/settings (schemaId: `builtin:rum.web.resource-cleanup-rules`)
+
+        ## Export Example Usage
+
+        - `terraform-provider-dynatrace -export WebAppResourceCleanup` downloads all existing resource URL cleanup rules configuration
+
+        The full documentation of the export feature is available [here](https://dt-url.net/h203qmc).
+
+
         :param str resource_name: The name of the resource.
         :param WebAppResourceCleanupArgs args: The arguments to use to populate this resource's properties.
         :param pulumi.ResourceOptions opts: Options for the resource.

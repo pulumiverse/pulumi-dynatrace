@@ -12,6 +12,21 @@ import (
 	"github.com/pulumiverse/pulumi-dynatrace/sdk/go/dynatrace/internal"
 )
 
+// > The database app feature flag configuration is only to be configured with direction by Dynatrace ONE
+//
+// > This resource requires the API token scopes **Read settings** (`settings.read`) and **Write settings** (`settings.write`)
+//
+// ## Dynatrace Documentation
+//
+// - Databases app - https://docs.dynatrace.com/docs/platform-modules/applications-and-microservices/databases/database-app
+//
+// - Settings API - https://www.dynatrace.com/support/help/dynatrace-api/environment-api/settings (schemaId: `app:dynatrace.database.overview:feature-flags`)
+//
+// ## Export Example Usage
+//
+// - `terraform-provider-dynatrace -export DbAppFeatureFlags` downloads existing database app feature flag configuration
+//
+// The full documentation of the export feature is available [here](https://dt-url.net/h203qmc).
 type DbAppFeatureFlags struct {
 	pulumi.CustomResourceState
 

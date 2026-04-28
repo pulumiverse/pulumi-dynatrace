@@ -20,13 +20,13 @@ namespace Pulumiverse.Dynatrace.Inputs
         public Input<Inputs.HostAnomaliesV2HostHighCpuSaturationDetectionCustomThresholdsGetArgs>? CustomThresholds { get; set; }
 
         /// <summary>
-        /// Detection mode for CPU saturation
+        /// Detection mode for CPU saturation. Possible Values: `Auto`, `Custom`
         /// </summary>
         [Input("detectionMode")]
         public Input<string>? DetectionMode { get; set; }
 
         /// <summary>
-        /// Detect CPU saturation on host
+        /// This setting is enabled (`True`) or disabled (`False`)
         /// </summary>
         [Input("enabled", required: true)]
         public Input<bool> Enabled { get; set; } = null!;

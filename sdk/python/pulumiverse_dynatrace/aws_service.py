@@ -27,8 +27,11 @@ class AwsServiceArgs:
                  use_recommended_metrics: Optional[pulumi.Input[_builtins.bool]] = None):
         """
         The set of arguments for constructing a AwsService resource.
+
         :param pulumi.Input[_builtins.str] credentials_id: the ID of the AWS credentials this supported service belongs to
+        :param pulumi.Input[Sequence[pulumi.Input['AwsServiceMetricArgs']]] metrics: A list of metrics to be monitored for this service. Depending on the service Dynatrace insists on a set of recommended metrics to be configured for that service. If any of these recommended metrics is missing here, the Terraform Provider will automatically add them during `pulumi up`. This usually results in a non-empty plan, until all of the recommended metrics are present within your configuration. For services considered `built-in` by Dynatrace any metrics specified here will be ignored - Dynatrace enforces a fixed set of metrics for these services.
         :param pulumi.Input[_builtins.str] name: The name of the supporting service.
+        :param pulumi.Input[_builtins.bool] use_recommended_metrics: If `true` Terraform will negotiate with the Dynatrace API about the recommended/enforced metrics to be applied. Any `metric` specified will be therefore ignored.
         """
         pulumi.set(__self__, "credentials_id", credentials_id)
         if metrics is not None:
@@ -53,6 +56,9 @@ class AwsServiceArgs:
     @_builtins.property
     @pulumi.getter
     def metrics(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['AwsServiceMetricArgs']]]]:
+        """
+        A list of metrics to be monitored for this service. Depending on the service Dynatrace insists on a set of recommended metrics to be configured for that service. If any of these recommended metrics is missing here, the Terraform Provider will automatically add them during `pulumi up`. This usually results in a non-empty plan, until all of the recommended metrics are present within your configuration. For services considered `built-in` by Dynatrace any metrics specified here will be ignored - Dynatrace enforces a fixed set of metrics for these services.
+        """
         return pulumi.get(self, "metrics")
 
     @metrics.setter
@@ -74,6 +80,9 @@ class AwsServiceArgs:
     @_builtins.property
     @pulumi.getter(name="useRecommendedMetrics")
     def use_recommended_metrics(self) -> Optional[pulumi.Input[_builtins.bool]]:
+        """
+        If `true` Terraform will negotiate with the Dynatrace API about the recommended/enforced metrics to be applied. Any `metric` specified will be therefore ignored.
+        """
         return pulumi.get(self, "use_recommended_metrics")
 
     @use_recommended_metrics.setter
@@ -92,9 +101,13 @@ class _AwsServiceState:
                  use_recommended_metrics: Optional[pulumi.Input[_builtins.bool]] = None):
         """
         Input properties used for looking up and filtering AwsService resources.
+
         :param pulumi.Input[_builtins.bool] built_in: This attribute is automatically set to `true` if Dynatrace considers the supporting service with the given name to be a built-in service
         :param pulumi.Input[_builtins.str] credentials_id: the ID of the AWS credentials this supported service belongs to
+        :param pulumi.Input[Sequence[pulumi.Input['AwsServiceMetricArgs']]] metrics: A list of metrics to be monitored for this service. Depending on the service Dynatrace insists on a set of recommended metrics to be configured for that service. If any of these recommended metrics is missing here, the Terraform Provider will automatically add them during `pulumi up`. This usually results in a non-empty plan, until all of the recommended metrics are present within your configuration. For services considered `built-in` by Dynatrace any metrics specified here will be ignored - Dynatrace enforces a fixed set of metrics for these services.
         :param pulumi.Input[_builtins.str] name: The name of the supporting service.
+        :param pulumi.Input[_builtins.str] required_metrics: Used internally by the Terraform Provider in order to remember the metrics enforced by Dynatrace
+        :param pulumi.Input[_builtins.bool] use_recommended_metrics: If `true` Terraform will negotiate with the Dynatrace API about the recommended/enforced metrics to be applied. Any `metric` specified will be therefore ignored.
         """
         if built_in is not None:
             pulumi.set(__self__, "built_in", built_in)
@@ -136,6 +149,9 @@ class _AwsServiceState:
     @_builtins.property
     @pulumi.getter
     def metrics(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['AwsServiceMetricArgs']]]]:
+        """
+        A list of metrics to be monitored for this service. Depending on the service Dynatrace insists on a set of recommended metrics to be configured for that service. If any of these recommended metrics is missing here, the Terraform Provider will automatically add them during `pulumi up`. This usually results in a non-empty plan, until all of the recommended metrics are present within your configuration. For services considered `built-in` by Dynatrace any metrics specified here will be ignored - Dynatrace enforces a fixed set of metrics for these services.
+        """
         return pulumi.get(self, "metrics")
 
     @metrics.setter
@@ -157,6 +173,9 @@ class _AwsServiceState:
     @_builtins.property
     @pulumi.getter(name="requiredMetrics")
     def required_metrics(self) -> Optional[pulumi.Input[_builtins.str]]:
+        """
+        Used internally by the Terraform Provider in order to remember the metrics enforced by Dynatrace
+        """
         return pulumi.get(self, "required_metrics")
 
     @required_metrics.setter
@@ -166,6 +185,9 @@ class _AwsServiceState:
     @_builtins.property
     @pulumi.getter(name="useRecommendedMetrics")
     def use_recommended_metrics(self) -> Optional[pulumi.Input[_builtins.bool]]:
+        """
+        If `true` Terraform will negotiate with the Dynatrace API about the recommended/enforced metrics to be applied. Any `metric` specified will be therefore ignored.
+        """
         return pulumi.get(self, "use_recommended_metrics")
 
     @use_recommended_metrics.setter
@@ -207,7 +229,7 @@ class AwsService(pulumi.CustomResource):
         import pulumi_dynatrace as dynatrace
         import pulumiverse_dynatrace as dynatrace
 
-        t_erraformsample = dynatrace.AwsCredentials("tERRAFORMSAMPLE",
+        terrafor_m__sample = dynatrace.AwsCredentials("TERRAFORM_SAMPLE",
             label="TERRAFORM-TEST-001",
             partition_type="AWS_DEFAULT",
             tagged_only=False,
@@ -219,9 +241,10 @@ class AwsService(pulumi.CustomResource):
         supported_services = dynatrace.get_aws_supported_services()
         t_erraformsample_services = []
         for range in [{"key": k, "value": v} for [k, v] in enumerate(supported_services.services)]:
-            t_erraformsample_services.append(dynatrace.AwsService(f"tERRAFORMSAMPLEServices-{range['key']}",
-                credentials_id=t_erraformsample.id,
-                use_recommended_metrics=True))
+            t_erraformsample_services.append(dynatrace.AwsService(f"TERRAFORM_SAMPLE_services-{range['key']}",
+                credentials_id=terrafor_m__sample.id,
+                use_recommended_metrics=True,
+                name=range["key"]))
         ```
 
         If you want to configure a different set of metrics for a specific service, a separate resource `AwsService` will be necessary for that. That allows you to configure the `metric` blocks according to your wishes.
@@ -231,7 +254,7 @@ class AwsService(pulumi.CustomResource):
         import pulumi
         import pulumiverse_dynatrace as dynatrace
 
-        example = dynatrace.AwsCredentials("example",
+        example = dynatrace.AwsCredentials("Example",
             label="#name#",
             partition_type="AWS_DEFAULT",
             tagged_only=False,
@@ -239,7 +262,8 @@ class AwsService(pulumi.CustomResource):
                 "account_id": "123456789",
                 "iam_role": "aws-monitoring-role",
             })
-        elasti_cache = dynatrace.AwsService("elastiCache",
+        elasti_cache = dynatrace.AwsService("ElastiCache",
+            name="ElastiCache",
             credentials_id=example.id,
             metrics=[
                 {
@@ -255,10 +279,13 @@ class AwsService(pulumi.CustomResource):
             ])
         ```
 
+
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[_builtins.str] credentials_id: the ID of the AWS credentials this supported service belongs to
+        :param pulumi.Input[Sequence[pulumi.Input[Union['AwsServiceMetricArgs', 'AwsServiceMetricArgsDict']]]] metrics: A list of metrics to be monitored for this service. Depending on the service Dynatrace insists on a set of recommended metrics to be configured for that service. If any of these recommended metrics is missing here, the Terraform Provider will automatically add them during `pulumi up`. This usually results in a non-empty plan, until all of the recommended metrics are present within your configuration. For services considered `built-in` by Dynatrace any metrics specified here will be ignored - Dynatrace enforces a fixed set of metrics for these services.
         :param pulumi.Input[_builtins.str] name: The name of the supporting service.
+        :param pulumi.Input[_builtins.bool] use_recommended_metrics: If `true` Terraform will negotiate with the Dynatrace API about the recommended/enforced metrics to be applied. Any `metric` specified will be therefore ignored.
         """
         ...
     @overload
@@ -289,7 +316,7 @@ class AwsService(pulumi.CustomResource):
         import pulumi_dynatrace as dynatrace
         import pulumiverse_dynatrace as dynatrace
 
-        t_erraformsample = dynatrace.AwsCredentials("tERRAFORMSAMPLE",
+        terrafor_m__sample = dynatrace.AwsCredentials("TERRAFORM_SAMPLE",
             label="TERRAFORM-TEST-001",
             partition_type="AWS_DEFAULT",
             tagged_only=False,
@@ -301,9 +328,10 @@ class AwsService(pulumi.CustomResource):
         supported_services = dynatrace.get_aws_supported_services()
         t_erraformsample_services = []
         for range in [{"key": k, "value": v} for [k, v] in enumerate(supported_services.services)]:
-            t_erraformsample_services.append(dynatrace.AwsService(f"tERRAFORMSAMPLEServices-{range['key']}",
-                credentials_id=t_erraformsample.id,
-                use_recommended_metrics=True))
+            t_erraformsample_services.append(dynatrace.AwsService(f"TERRAFORM_SAMPLE_services-{range['key']}",
+                credentials_id=terrafor_m__sample.id,
+                use_recommended_metrics=True,
+                name=range["key"]))
         ```
 
         If you want to configure a different set of metrics for a specific service, a separate resource `AwsService` will be necessary for that. That allows you to configure the `metric` blocks according to your wishes.
@@ -313,7 +341,7 @@ class AwsService(pulumi.CustomResource):
         import pulumi
         import pulumiverse_dynatrace as dynatrace
 
-        example = dynatrace.AwsCredentials("example",
+        example = dynatrace.AwsCredentials("Example",
             label="#name#",
             partition_type="AWS_DEFAULT",
             tagged_only=False,
@@ -321,7 +349,8 @@ class AwsService(pulumi.CustomResource):
                 "account_id": "123456789",
                 "iam_role": "aws-monitoring-role",
             })
-        elasti_cache = dynatrace.AwsService("elastiCache",
+        elasti_cache = dynatrace.AwsService("ElastiCache",
+            name="ElastiCache",
             credentials_id=example.id,
             metrics=[
                 {
@@ -336,6 +365,7 @@ class AwsService(pulumi.CustomResource):
                 },
             ])
         ```
+
 
         :param str resource_name: The name of the resource.
         :param AwsServiceArgs args: The arguments to use to populate this resource's properties.
@@ -398,7 +428,10 @@ class AwsService(pulumi.CustomResource):
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[_builtins.bool] built_in: This attribute is automatically set to `true` if Dynatrace considers the supporting service with the given name to be a built-in service
         :param pulumi.Input[_builtins.str] credentials_id: the ID of the AWS credentials this supported service belongs to
+        :param pulumi.Input[Sequence[pulumi.Input[Union['AwsServiceMetricArgs', 'AwsServiceMetricArgsDict']]]] metrics: A list of metrics to be monitored for this service. Depending on the service Dynatrace insists on a set of recommended metrics to be configured for that service. If any of these recommended metrics is missing here, the Terraform Provider will automatically add them during `pulumi up`. This usually results in a non-empty plan, until all of the recommended metrics are present within your configuration. For services considered `built-in` by Dynatrace any metrics specified here will be ignored - Dynatrace enforces a fixed set of metrics for these services.
         :param pulumi.Input[_builtins.str] name: The name of the supporting service.
+        :param pulumi.Input[_builtins.str] required_metrics: Used internally by the Terraform Provider in order to remember the metrics enforced by Dynatrace
+        :param pulumi.Input[_builtins.bool] use_recommended_metrics: If `true` Terraform will negotiate with the Dynatrace API about the recommended/enforced metrics to be applied. Any `metric` specified will be therefore ignored.
         """
         opts = pulumi.ResourceOptions.merge(opts, pulumi.ResourceOptions(id=id))
 
@@ -431,6 +464,9 @@ class AwsService(pulumi.CustomResource):
     @_builtins.property
     @pulumi.getter
     def metrics(self) -> pulumi.Output[Optional[Sequence['outputs.AwsServiceMetric']]]:
+        """
+        A list of metrics to be monitored for this service. Depending on the service Dynatrace insists on a set of recommended metrics to be configured for that service. If any of these recommended metrics is missing here, the Terraform Provider will automatically add them during `pulumi up`. This usually results in a non-empty plan, until all of the recommended metrics are present within your configuration. For services considered `built-in` by Dynatrace any metrics specified here will be ignored - Dynatrace enforces a fixed set of metrics for these services.
+        """
         return pulumi.get(self, "metrics")
 
     @_builtins.property
@@ -444,10 +480,16 @@ class AwsService(pulumi.CustomResource):
     @_builtins.property
     @pulumi.getter(name="requiredMetrics")
     def required_metrics(self) -> pulumi.Output[_builtins.str]:
+        """
+        Used internally by the Terraform Provider in order to remember the metrics enforced by Dynatrace
+        """
         return pulumi.get(self, "required_metrics")
 
     @_builtins.property
     @pulumi.getter(name="useRecommendedMetrics")
     def use_recommended_metrics(self) -> pulumi.Output[Optional[_builtins.bool]]:
+        """
+        If `true` Terraform will negotiate with the Dynatrace API about the recommended/enforced metrics to be applied. Any `metric` specified will be therefore ignored.
+        """
         return pulumi.get(self, "use_recommended_metrics")
 

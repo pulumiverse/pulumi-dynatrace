@@ -11,6 +11,8 @@ import (
 	"github.com/pulumiverse/pulumi-dynatrace/sdk/go/dynatrace/internal"
 )
 
+// The resource `JsonDashboardBase` doesn't contain any attributes itself. It acts as some sort of anchor resource that defines the eventual `ID` of a Dashboard - without having to
+// refer to the resource `JsonDashboard` explicitly.
 type JsonDashboardBase struct {
 	pulumi.CustomResourceState
 

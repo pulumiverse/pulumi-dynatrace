@@ -29,6 +29,7 @@ class RequestNamingArgs:
                  unknowns: Optional[pulumi.Input[_builtins.str]] = None):
         """
         The set of arguments for constructing a RequestNaming resource.
+
         :param pulumi.Input['RequestNamingConditionsArgs'] conditions: The set of conditions for the request naming rule usage. 
                
                 You can specify several conditions. The request has to match **all** the specified conditions for the rule to trigger
@@ -139,6 +140,7 @@ class _RequestNamingState:
                  unknowns: Optional[pulumi.Input[_builtins.str]] = None):
         """
         Input properties used for looking up and filtering RequestNaming resources.
+
         :param pulumi.Input['RequestNamingConditionsArgs'] conditions: The set of conditions for the request naming rule usage. 
                
                 You can specify several conditions. The request has to match **all** the specified conditions for the rule to trigger
@@ -254,7 +256,21 @@ class RequestNaming(pulumi.CustomResource):
                  unknowns: Optional[pulumi.Input[_builtins.str]] = None,
                  __props__=None):
         """
-        Create a RequestNaming resource with the given unique name, props, and options.
+        > This resource requires the API token scopes **Read configuration** (`ReadConfig`) and **Write configuration** (`WriteConfig`)
+
+        ## Dynatrace Documentation
+
+        - Set up request naming - https://www.dynatrace.com/support/help/how-to-use-dynatrace/services/service-monitoring-settings/set-up-request-naming
+
+        - Request naming API - https://www.dynatrace.com/support/help/dynatrace-api/configuration-api/service-api/request-naming-api
+
+        ## Export Example Usage
+
+        - `terraform-provider-dynatrace -export RequestNaming` downloads all existing request naming configuration
+
+        The full documentation of the export feature is available [here](https://dt-url.net/h203qmc).
+
+
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[Union['RequestNamingConditionsArgs', 'RequestNamingConditionsArgsDict']] conditions: The set of conditions for the request naming rule usage. 
@@ -275,7 +291,21 @@ class RequestNaming(pulumi.CustomResource):
                  args: RequestNamingArgs,
                  opts: Optional[pulumi.ResourceOptions] = None):
         """
-        Create a RequestNaming resource with the given unique name, props, and options.
+        > This resource requires the API token scopes **Read configuration** (`ReadConfig`) and **Write configuration** (`WriteConfig`)
+
+        ## Dynatrace Documentation
+
+        - Set up request naming - https://www.dynatrace.com/support/help/how-to-use-dynatrace/services/service-monitoring-settings/set-up-request-naming
+
+        - Request naming API - https://www.dynatrace.com/support/help/dynatrace-api/configuration-api/service-api/request-naming-api
+
+        ## Export Example Usage
+
+        - `terraform-provider-dynatrace -export RequestNaming` downloads all existing request naming configuration
+
+        The full documentation of the export feature is available [here](https://dt-url.net/h203qmc).
+
+
         :param str resource_name: The name of the resource.
         :param RequestNamingArgs args: The arguments to use to populate this resource's properties.
         :param pulumi.ResourceOptions opts: Options for the resource.

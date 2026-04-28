@@ -20,7 +20,7 @@ namespace Pulumiverse.Dynatrace.Inputs
         public Input<Inputs.HostAnomaliesV2HostHighSystemLoadDetectionCustomThresholdsEventThresholdsArgs> EventThresholds { get; set; } = null!;
 
         /// <summary>
-        /// Alert if the System Load / Logical cpu core is higher than this threshold for the defined amount of samples
+        /// Alert if the System Load divided by the number of logical CPU cores is higher than this threshold for the defined amount of samples.
         /// </summary>
         [Input("systemLoad", required: true)]
         public Input<double> SystemLoad { get; set; } = null!;

@@ -12,6 +12,53 @@ import (
 	"github.com/pulumiverse/pulumi-dynatrace/sdk/go/dynatrace/internal"
 )
 
+// > **Dynatrace Managed only**
+//
+// > To utilize this resource, please define the environment variables `DT_CLUSTER_URL` and `DT_CLUSTER_API_TOKEN` with the cluster API token scope **Service Provider API** (`ServiceProviderAPI`).
+//
+// ## Dynatrace Documentation
+//
+// - Manage Groups and Permissions - https://docs.dynatrace.com/managed/manage/identity-access-management/user-and-group-management/user-groups-and-permissions#mz
+//
+// - User management API - https://www.dynatrace.com/support/help/dynatrace-api/account-management-api/user-management-api
+//
+// ## Export Example Usage
+//
+// - `terraform-provider-dynatrace -export MgmzPermission` downloads all user group / management zone permissions
+//
+// The full documentation of the export feature is available [here](https://dt-url.net/h203qmc).
+//
+// ## Resource Example Usage
+//
+// ```go
+// package main
+//
+// import (
+//
+//	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//	"github.com/pulumiverse/pulumi-dynatrace/sdk/go/dynatrace"
+//
+// )
+//
+//	func main() {
+//		pulumi.Run(func(ctx *pulumi.Context) error {
+//			_, err := dynatrace.NewMgmzPermission(ctx, "some-perm", &dynatrace.MgmzPermissionArgs{
+//				Group:          pulumi.Any(group_a.Id),
+//				Environment:    pulumi.String("d85dea6a-4287-49d3-bf62-729274ba7036"),
+//				ManagementZone: pulumi.String("982182035185200933"),
+//				Permissions: pulumi.StringArray{
+//					pulumi.String("VIEWER"),
+//					pulumi.String("REPLAY_SESSION_DATA"),
+//				},
+//			})
+//			if err != nil {
+//				return err
+//			}
+//			return nil
+//		})
+//	}
+//
+// ```
 type MgmzPermission struct {
 	pulumi.CustomResourceState
 

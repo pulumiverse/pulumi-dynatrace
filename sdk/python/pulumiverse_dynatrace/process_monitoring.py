@@ -23,6 +23,7 @@ class ProcessMonitoringArgs:
                  host_group_id: Optional[pulumi.Input[_builtins.str]] = None):
         """
         The set of arguments for constructing a ProcessMonitoring resource.
+
         :param pulumi.Input[_builtins.bool] auto_monitoring: By disabling automatic deep monitoring the Dynatrace OneAgent will only deep monitor processes that are covered by a respective deep monitoring rule or where monitoring is enabled explicitly.
                Disabling only works if all installed Agents have version 1.123 or higher.
         :param pulumi.Input[_builtins.str] host_group_id: The scope of this settings. If the settings should cover the whole environment, just don't specify any scope.
@@ -64,6 +65,7 @@ class _ProcessMonitoringState:
                  host_group_id: Optional[pulumi.Input[_builtins.str]] = None):
         """
         Input properties used for looking up and filtering ProcessMonitoring resources.
+
         :param pulumi.Input[_builtins.bool] auto_monitoring: By disabling automatic deep monitoring the Dynatrace OneAgent will only deep monitor processes that are covered by a respective deep monitoring rule or where monitoring is enabled explicitly.
                Disabling only works if all installed Agents have version 1.123 or higher.
         :param pulumi.Input[_builtins.str] host_group_id: The scope of this settings. If the settings should cover the whole environment, just don't specify any scope.
@@ -109,7 +111,32 @@ class ProcessMonitoring(pulumi.CustomResource):
                  host_group_id: Optional[pulumi.Input[_builtins.str]] = None,
                  __props__=None):
         """
-        Create a ProcessMonitoring resource with the given unique name, props, and options.
+        > This resource requires the API token scopes **Read settings** (`settings.read`) and **Write settings** (`settings.write`)
+
+        ## Dynatrace Documentation
+
+        - Process Availability - https://www.dynatrace.com/support/help/how-to-use-dynatrace/process-groups/configuration/pg-monitoring
+
+        - Settings API - https://www.dynatrace.com/support/help/dynatrace-api/environment-api/settings (schemaId: `builtin:process.process-monitoring`)
+
+        ## Export Example Usage
+
+        - `terraform-provider-dynatrace -export ProcessMonitoring` downloads all existing key processes configuration
+
+        The full documentation of the export feature is available [here](https://dt-url.net/h203qmc).
+
+        ## Resource Example Usage
+
+        ```python
+        import pulumi
+        import pulumiverse_dynatrace as dynatrace
+
+        example = dynatrace.ProcessMonitoring("example",
+            host_group_id="HOST_GROUP-0000000000000000",
+            auto_monitoring=True)
+        ```
+
+
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[_builtins.bool] auto_monitoring: By disabling automatic deep monitoring the Dynatrace OneAgent will only deep monitor processes that are covered by a respective deep monitoring rule or where monitoring is enabled explicitly.
@@ -123,7 +150,32 @@ class ProcessMonitoring(pulumi.CustomResource):
                  args: ProcessMonitoringArgs,
                  opts: Optional[pulumi.ResourceOptions] = None):
         """
-        Create a ProcessMonitoring resource with the given unique name, props, and options.
+        > This resource requires the API token scopes **Read settings** (`settings.read`) and **Write settings** (`settings.write`)
+
+        ## Dynatrace Documentation
+
+        - Process Availability - https://www.dynatrace.com/support/help/how-to-use-dynatrace/process-groups/configuration/pg-monitoring
+
+        - Settings API - https://www.dynatrace.com/support/help/dynatrace-api/environment-api/settings (schemaId: `builtin:process.process-monitoring`)
+
+        ## Export Example Usage
+
+        - `terraform-provider-dynatrace -export ProcessMonitoring` downloads all existing key processes configuration
+
+        The full documentation of the export feature is available [here](https://dt-url.net/h203qmc).
+
+        ## Resource Example Usage
+
+        ```python
+        import pulumi
+        import pulumiverse_dynatrace as dynatrace
+
+        example = dynatrace.ProcessMonitoring("example",
+            host_group_id="HOST_GROUP-0000000000000000",
+            auto_monitoring=True)
+        ```
+
+
         :param str resource_name: The name of the resource.
         :param ProcessMonitoringArgs args: The arguments to use to populate this resource's properties.
         :param pulumi.ResourceOptions opts: Options for the resource.

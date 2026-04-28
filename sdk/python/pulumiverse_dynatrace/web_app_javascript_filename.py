@@ -22,6 +22,7 @@ class WebAppJavascriptFilenameArgs:
                  filename: pulumi.Input[_builtins.str]):
         """
         The set of arguments for constructing a WebAppJavascriptFilename resource.
+
         :param pulumi.Input[_builtins.str] filename: Custom filename prefix
         """
         pulumi.set(__self__, "filename", filename)
@@ -45,6 +46,7 @@ class _WebAppJavascriptFilenameState:
                  filename: Optional[pulumi.Input[_builtins.str]] = None):
         """
         Input properties used for looking up and filtering WebAppJavascriptFilename resources.
+
         :param pulumi.Input[_builtins.str] filename: Custom filename prefix
         """
         if filename is not None:
@@ -80,14 +82,6 @@ class WebAppJavascriptFilename(pulumi.CustomResource):
 
         - Settings API - https://www.dynatrace.com/support/help/dynatrace-api/environment-api/settings (schemaId: `builtin:rum.web.rum-javascript-file-name`)
 
-        ## Resource Example Usage
-
-        ```python
-        import pulumi
-        import pulumiverse_dynatrace as dynatrace
-
-        _name_ = dynatrace.WebAppJavascriptFilename("#name#", filename="tf")
-        ```
 
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
@@ -108,14 +102,6 @@ class WebAppJavascriptFilename(pulumi.CustomResource):
 
         - Settings API - https://www.dynatrace.com/support/help/dynatrace-api/environment-api/settings (schemaId: `builtin:rum.web.rum-javascript-file-name`)
 
-        ## Resource Example Usage
-
-        ```python
-        import pulumi
-        import pulumiverse_dynatrace as dynatrace
-
-        _name_ = dynatrace.WebAppJavascriptFilename("#name#", filename="tf")
-        ```
 
         :param str resource_name: The name of the resource.
         :param WebAppJavascriptFilenameArgs args: The arguments to use to populate this resource's properties.

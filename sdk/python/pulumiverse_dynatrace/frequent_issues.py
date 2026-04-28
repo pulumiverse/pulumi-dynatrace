@@ -25,6 +25,7 @@ class FrequentIssuesArgs:
                  detect_env: Optional[pulumi.Input[_builtins.bool]] = None):
         """
         The set of arguments for constructing a FrequentIssues resource.
+
         :param pulumi.Input[_builtins.bool] detect_apps: Detect frequent issues within applications, enabled (`true`) or disabled (`false`)
         :param pulumi.Input[_builtins.bool] detect_infra: Detect frequent issues within infrastructure, enabled (`true`) or disabled (`false`)
         :param pulumi.Input[_builtins.bool] detect_txn: Detect frequent issues within transactions and services, enabled (`true`) or disabled (`false`)
@@ -94,6 +95,7 @@ class _FrequentIssuesState:
                  detect_txn: Optional[pulumi.Input[_builtins.bool]] = None):
         """
         Input properties used for looking up and filtering FrequentIssues resources.
+
         :param pulumi.Input[_builtins.bool] detect_apps: Detect frequent issues within applications, enabled (`true`) or disabled (`false`)
         :param pulumi.Input[_builtins.bool] detect_env: Events raised at this level typically occur when no specific topological entity is applicable, often based on data such as logs and metrics. This does not impact the detection of issues within applications, transactions, services, or infrastructure.
         :param pulumi.Input[_builtins.bool] detect_infra: Detect frequent issues within infrastructure, enabled (`true`) or disabled (`false`)
@@ -169,7 +171,21 @@ class FrequentIssues(pulumi.CustomResource):
                  detect_txn: Optional[pulumi.Input[_builtins.bool]] = None,
                  __props__=None):
         """
-        Create a FrequentIssues resource with the given unique name, props, and options.
+        > This resource requires the API token scopes **Read settings** (`settings.read`) and **Write settings** (`settings.write`)
+
+        ## Dynatrace Documentation
+
+        - Detection of frequent issues - https://www.dynatrace.com/support/help/how-to-use-dynatrace/problem-detection-and-analysis/problem-detection/detection-of-frequent-issues
+
+        - Settings API - https://www.dynatrace.com/support/help/dynatrace-api/environment-api/settings (schemaId: `builtin:anomaly-detection.frequent-issues`)
+
+        ## Export Example Usage
+
+        - `terraform-provider-dynatrace -export FrequentIssues` downloads the existing frequent issue detection configuration
+
+        The full documentation of the export feature is available [here](https://dt-url.net/h203qmc).
+
+
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[_builtins.bool] detect_apps: Detect frequent issues within applications, enabled (`true`) or disabled (`false`)
@@ -184,7 +200,21 @@ class FrequentIssues(pulumi.CustomResource):
                  args: FrequentIssuesArgs,
                  opts: Optional[pulumi.ResourceOptions] = None):
         """
-        Create a FrequentIssues resource with the given unique name, props, and options.
+        > This resource requires the API token scopes **Read settings** (`settings.read`) and **Write settings** (`settings.write`)
+
+        ## Dynatrace Documentation
+
+        - Detection of frequent issues - https://www.dynatrace.com/support/help/how-to-use-dynatrace/problem-detection-and-analysis/problem-detection/detection-of-frequent-issues
+
+        - Settings API - https://www.dynatrace.com/support/help/dynatrace-api/environment-api/settings (schemaId: `builtin:anomaly-detection.frequent-issues`)
+
+        ## Export Example Usage
+
+        - `terraform-provider-dynatrace -export FrequentIssues` downloads the existing frequent issue detection configuration
+
+        The full documentation of the export feature is available [here](https://dt-url.net/h203qmc).
+
+
         :param str resource_name: The name of the resource.
         :param FrequentIssuesArgs args: The arguments to use to populate this resource's properties.
         :param pulumi.ResourceOptions opts: Options for the resource.

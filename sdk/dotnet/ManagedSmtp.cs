@@ -10,6 +10,43 @@ using Pulumi;
 
 namespace Pulumiverse.Dynatrace
 {
+    /// <summary>
+    /// !&gt; **HTTP DELETE method not available** Terraform will no longer manage this resource on `Destroy` but the configuration will still be present on the Dynatrace cluster.
+    /// 
+    /// &gt; This resource requires the cluster API token scope **Service Provider API** (`ServiceProviderAPI`)
+    /// 
+    /// ## Dynatrace Documentation
+    /// 
+    /// - Configure an SMTP server connection - https://www.dynatrace.com/support/help/managed-cluster/configuration/configure-smtp-server-connection
+    /// 
+    /// - Cluster API v1 - https://www.dynatrace.com/support/help/managed-cluster/cluster-api/cluster-api-v1
+    /// 
+    /// ## Resource Example Usage
+    /// 
+    /// ```csharp
+    /// using System.Collections.Generic;
+    /// using System.Linq;
+    /// using Pulumi;
+    /// using Dynatrace = Pulumiverse.Dynatrace;
+    /// 
+    /// return await Deployment.RunAsync(() =&gt; 
+    /// {
+    ///     var test = new Dynatrace.ManagedSmtp("Test", new()
+    ///     {
+    ///         HostName = "hostname",
+    ///         Port = 25,
+    ///         UserName = "username",
+    ///         Password = "password",
+    ///         IsPasswordConfigured = true,
+    ///         ConnectionSecurity = "NO_ENCRYPTION",
+    ///         SenderEmailAddress = "noreply@dynatrace-managed.com",
+    ///         AllowFallbackViaMissionControl = true,
+    ///         UseSmtpServer = true,
+    ///     });
+    /// 
+    /// });
+    /// ```
+    /// </summary>
     [DynatraceResourceType("dynatrace:index/managedSmtp:ManagedSmtp")]
     public partial class ManagedSmtp : global::Pulumi.CustomResource
     {

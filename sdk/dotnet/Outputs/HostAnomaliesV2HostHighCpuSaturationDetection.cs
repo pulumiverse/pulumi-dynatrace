@@ -19,11 +19,11 @@ namespace Pulumiverse.Dynatrace.Outputs
         /// </summary>
         public readonly Outputs.HostAnomaliesV2HostHighCpuSaturationDetectionCustomThresholds? CustomThresholds;
         /// <summary>
-        /// Detection mode for CPU saturation
+        /// Detection mode for CPU saturation. Possible Values: `Auto`, `Custom`
         /// </summary>
         public readonly string? DetectionMode;
         /// <summary>
-        /// Detect CPU saturation on host
+        /// This setting is enabled (`True`) or disabled (`False`)
         /// </summary>
         public readonly bool Enabled;
 

@@ -28,6 +28,7 @@ class FailureDetectionParametersArgs:
                  name: Optional[pulumi.Input[_builtins.str]] = None):
         """
         The set of arguments for constructing a FailureDetectionParameters resource.
+
         :param pulumi.Input['FailureDetectionParametersBrokenLinksArgs'] broken_links: HTTP 404 response codes are thrown when a web server can't find a certain page. 404s are classified as broken links on the client side and therefore aren't considered to be service failures. By enabling this setting, you can have 404s treated as server-side service failures.
         :param pulumi.Input['FailureDetectionParametersExceptionRulesArgs'] exception_rules: Customize failure detection for specific exceptions and errors
         :param pulumi.Input['FailureDetectionParametersHttpResponseCodesArgs'] http_response_codes: HTTP response codes
@@ -113,6 +114,7 @@ class _FailureDetectionParametersState:
                  name: Optional[pulumi.Input[_builtins.str]] = None):
         """
         Input properties used for looking up and filtering FailureDetectionParameters resources.
+
         :param pulumi.Input['FailureDetectionParametersBrokenLinksArgs'] broken_links: HTTP 404 response codes are thrown when a web server can't find a certain page. 404s are classified as broken links on the client side and therefore aren't considered to be service failures. By enabling this setting, you can have 404s treated as server-side service failures.
         :param pulumi.Input[_builtins.str] description: Description
         :param pulumi.Input['FailureDetectionParametersExceptionRulesArgs'] exception_rules: Customize failure detection for specific exceptions and errors
@@ -204,7 +206,21 @@ class FailureDetectionParameters(pulumi.CustomResource):
                  name: Optional[pulumi.Input[_builtins.str]] = None,
                  __props__=None):
         """
-        Create a FailureDetectionParameters resource with the given unique name, props, and options.
+        > This resource requires the API token scopes **Read settings** (`settings.read`) and **Write settings** (`settings.write`)
+
+        ## Dynatrace Documentation
+
+        - Configure service failure detection - https://www.dynatrace.com/support/help/platform-modules/applications-and-microservices/services/service-monitoring-settings/configure-service-failure-detection
+
+        - Settings API - https://www.dynatrace.com/support/help/dynatrace-api/environment-api/settings (schemaId: `builtin:failure-detection.environment.parameters`)
+
+        ## Export Example Usage
+
+        - `terraform-provider-dynatrace -export FailureDetectionParameters` downloads all existing failure detection parameters
+
+        The full documentation of the export feature is available [here](https://dt-url.net/h203qmc).
+
+
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[Union['FailureDetectionParametersBrokenLinksArgs', 'FailureDetectionParametersBrokenLinksArgsDict']] broken_links: HTTP 404 response codes are thrown when a web server can't find a certain page. 404s are classified as broken links on the client side and therefore aren't considered to be service failures. By enabling this setting, you can have 404s treated as server-side service failures.
@@ -220,7 +236,21 @@ class FailureDetectionParameters(pulumi.CustomResource):
                  args: FailureDetectionParametersArgs,
                  opts: Optional[pulumi.ResourceOptions] = None):
         """
-        Create a FailureDetectionParameters resource with the given unique name, props, and options.
+        > This resource requires the API token scopes **Read settings** (`settings.read`) and **Write settings** (`settings.write`)
+
+        ## Dynatrace Documentation
+
+        - Configure service failure detection - https://www.dynatrace.com/support/help/platform-modules/applications-and-microservices/services/service-monitoring-settings/configure-service-failure-detection
+
+        - Settings API - https://www.dynatrace.com/support/help/dynatrace-api/environment-api/settings (schemaId: `builtin:failure-detection.environment.parameters`)
+
+        ## Export Example Usage
+
+        - `terraform-provider-dynatrace -export FailureDetectionParameters` downloads all existing failure detection parameters
+
+        The full documentation of the export feature is available [here](https://dt-url.net/h203qmc).
+
+
         :param str resource_name: The name of the resource.
         :param FailureDetectionParametersArgs args: The arguments to use to populate this resource's properties.
         :param pulumi.ResourceOptions opts: Options for the resource.

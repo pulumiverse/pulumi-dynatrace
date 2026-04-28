@@ -24,6 +24,7 @@ class ProcessVisibilityArgs:
                  scope: Optional[pulumi.Input[_builtins.str]] = None):
         """
         The set of arguments for constructing a ProcessVisibility resource.
+
         :param pulumi.Input[_builtins.bool] enabled: This setting is enabled (`true`) or disabled (`false`)
         :param pulumi.Input[_builtins.int] max_processes: The maximum amount of processes that host may report is **100**
         :param pulumi.Input[_builtins.str] scope: The scope of this setting (HOST, HOST_GROUP). Omit this property if you want to cover the whole environment.
@@ -78,6 +79,7 @@ class _ProcessVisibilityState:
                  scope: Optional[pulumi.Input[_builtins.str]] = None):
         """
         Input properties used for looking up and filtering ProcessVisibility resources.
+
         :param pulumi.Input[_builtins.bool] enabled: This setting is enabled (`true`) or disabled (`false`)
         :param pulumi.Input[_builtins.int] max_processes: The maximum amount of processes that host may report is **100**
         :param pulumi.Input[_builtins.str] scope: The scope of this setting (HOST, HOST_GROUP). Omit this property if you want to cover the whole environment.
@@ -137,7 +139,21 @@ class ProcessVisibility(pulumi.CustomResource):
                  scope: Optional[pulumi.Input[_builtins.str]] = None,
                  __props__=None):
         """
-        Create a ProcessVisibility resource with the given unique name, props, and options.
+        > This resource requires the API token scopes **Read settings** (`settings.read`) and **Write settings** (`settings.write`)
+
+        ## Dynatrace Documentation
+
+        - Process instance snapshots - https://www.dynatrace.com/support/help/platform-modules/infrastructure-monitoring/hosts/monitoring/host-monitoring#snapshots
+
+        - Settings API - https://www.dynatrace.com/support/help/dynatrace-api/environment-api/settings (schemaId: `builtin:processvisibility`)
+
+        ## Export Example Usage
+
+        - `terraform-provider-dynatrace -export ProcessVisibility` downloads all existing process instance snapshots configuration
+
+        The full documentation of the export feature is available [here](https://dt-url.net/h203qmc).
+
+
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[_builtins.bool] enabled: This setting is enabled (`true`) or disabled (`false`)
@@ -151,7 +167,21 @@ class ProcessVisibility(pulumi.CustomResource):
                  args: ProcessVisibilityArgs,
                  opts: Optional[pulumi.ResourceOptions] = None):
         """
-        Create a ProcessVisibility resource with the given unique name, props, and options.
+        > This resource requires the API token scopes **Read settings** (`settings.read`) and **Write settings** (`settings.write`)
+
+        ## Dynatrace Documentation
+
+        - Process instance snapshots - https://www.dynatrace.com/support/help/platform-modules/infrastructure-monitoring/hosts/monitoring/host-monitoring#snapshots
+
+        - Settings API - https://www.dynatrace.com/support/help/dynatrace-api/environment-api/settings (schemaId: `builtin:processvisibility`)
+
+        ## Export Example Usage
+
+        - `terraform-provider-dynatrace -export ProcessVisibility` downloads all existing process instance snapshots configuration
+
+        The full documentation of the export feature is available [here](https://dt-url.net/h203qmc).
+
+
         :param str resource_name: The name of the resource.
         :param ProcessVisibilityArgs args: The arguments to use to populate this resource's properties.
         :param pulumi.ResourceOptions opts: Options for the resource.

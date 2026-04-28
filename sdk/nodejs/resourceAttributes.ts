@@ -6,6 +6,23 @@ import * as inputs from "./types/input";
 import * as outputs from "./types/output";
 import * as utilities from "./utilities";
 
+/**
+ * !> This resource API endpoint has been deprecated, please use dynatrace.AttributeAllowList and dynatrace.AttributeMasking instead.
+ *
+ * > This resource requires the API token scopes **Read settings** (`settings.read`) and **Write settings** (`settings.write`)
+ *
+ * ## Dynatrace Documentation
+ *
+ * - OpenTelemetry traces - https://www.dynatrace.com/support/help/extend-dynatrace/opentelemetry/opentelemetry-traces
+ *
+ * - Settings API - https://www.dynatrace.com/support/help/dynatrace-api/environment-api/settings (schemaId: `builtin:resource-attribute`)
+ *
+ * ## Export Example Usage
+ *
+ * - `terraform-provider-dynatrace -export dynatrace.ResourceAttributes` downloads all existing resource attribute configuration
+ *
+ * The full documentation of the export feature is available [here](https://dt-url.net/h203qmc).
+ */
 export class ResourceAttributes extends pulumi.CustomResource {
     /**
      * Get an existing ResourceAttributes resource's state with the given name, ID, and optional extra

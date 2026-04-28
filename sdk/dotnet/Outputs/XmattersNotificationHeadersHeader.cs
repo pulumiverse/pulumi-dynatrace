@@ -15,15 +15,15 @@ namespace Pulumiverse.Dynatrace.Outputs
     public sealed class XmattersNotificationHeadersHeader
     {
         /// <summary>
-        /// The name of the HTTP header
+        /// The name of the HTTP header.
         /// </summary>
         public readonly string Name;
         /// <summary>
-        /// The value of the HTTP header as a sensitive property. May contain an empty value. `SecretValue` and `Value` are mutually exclusive. Only one of those two is allowed to be specified.
+        /// The secret value of the HTTP header. May contain an empty value.
         /// </summary>
         public readonly string? SecretValue;
         /// <summary>
-        /// The value of the HTTP header. May contain an empty value. `SecretValue` and `Value` are mutually exclusive. Only one of those two is allowed to be specified.
+        /// The value of the HTTP header. May contain an empty value.
         /// </summary>
         public readonly string? Value;
 

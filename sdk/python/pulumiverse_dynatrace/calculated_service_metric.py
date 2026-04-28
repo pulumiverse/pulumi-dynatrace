@@ -36,6 +36,7 @@ class CalculatedServiceMetricArgs:
                  unknowns: Optional[pulumi.Input[_builtins.str]] = None):
         """
         The set of arguments for constructing a CalculatedServiceMetric resource.
+
         :param pulumi.Input[_builtins.str] metric_key: The key of the calculated service metric
         :param pulumi.Input[_builtins.str] unit: The unit of the metric. Possible values are `BIT`, `BIT_PER_HOUR`, `BIT_PER_MINUTE`, `BIT_PER_SECOND`, `BYTE`, `BYTE_PER_HOUR`, `BYTE_PER_MINUTE`, `BYTE_PER_SECOND`, `CORES`, `COUNT`, `DAY`, `DECIBEL_MILLI_WATT`, `GIBI_BYTE`, `GIGA`, `GIGA_BYTE`, `HOUR`, `KIBI_BYTE`, `KIBI_BYTE_PER_HOUR`, `KIBI_BYTE_PER_MINUTE`, `KIBI_BYTE_PER_SECOND`, `KILO`, `KILO_BYTE`, `KILO_BYTE_PER_HOUR`, `KILO_BYTE_PER_MINUTE`, `KILO_BYTE_PER_SECOND`, `MEBI_BYTE`, `MEBI_BYTE_PER_HOUR`, `MEBI_BYTE_PER_MINUTE`, `MEBI_BYTE_PER_SECOND`, `MEGA`, `MEGA_BYTE`, `MEGA_BYTE_PER_HOUR`, `MEGA_BYTE_PER_MINUTE`, `MEGA_BYTE_PER_SECOND`, `MICRO_SECOND`, `MILLI_CORES`, `MILLI_SECOND`, `MILLI_SECOND_PER_MINUTE`, `MINUTE`, `MONTH`, `MSU`, `NANO_SECOND`, `NANO_SECOND_PER_MINUTE`, `NOT_APPLICABLE`, `PERCENT`, `PER_HOUR`, `PER_MINUTE`, `PER_SECOND`, `PIXEL`, `PROMILLE`, `RATIO`, `SECOND`, `STATE`, `UNSPECIFIED`, `WEEK` and `YEAR`
         :param pulumi.Input[Sequence[pulumi.Input['CalculatedServiceMetricConditionArgs']]] conditions: The set of conditions for the metric usage. **All** the specified conditions must be fulfilled to use the metric
@@ -250,6 +251,7 @@ class _CalculatedServiceMetricState:
                  unknowns: Optional[pulumi.Input[_builtins.str]] = None):
         """
         Input properties used for looking up and filtering CalculatedServiceMetric resources.
+
         :param pulumi.Input[Sequence[pulumi.Input['CalculatedServiceMetricConditionArgs']]] conditions: The set of conditions for the metric usage. **All** the specified conditions must be fulfilled to use the metric
         :param pulumi.Input[_builtins.str] description: The displayed description of the metric
         :param pulumi.Input['CalculatedServiceMetricDimensionDefinitionArgs'] dimension_definition: Parameters of a definition of a calculated service metric
@@ -469,7 +471,21 @@ class CalculatedServiceMetric(pulumi.CustomResource):
                  unknowns: Optional[pulumi.Input[_builtins.str]] = None,
                  __props__=None):
         """
-        Create a CalculatedServiceMetric resource with the given unique name, props, and options.
+        > This resource requires the API token scopes **Read configuration** (`ReadConfig`) and **Write configuration** (`WriteConfig`)
+
+        ## Dynatrace Documentation
+
+        - Calculated metrics for services - https://www.dynatrace.com/support/help/how-to-use-dynatrace/services/service-monitoring-settings/calculated-service-metric
+
+        - Service metrics API - https://www.dynatrace.com/support/help/dynatrace-api/configuration-api/calculated-metrics/service-metrics
+
+        ## Export Example Usage
+
+        - `terraform-provider-dynatrace -export CalculatedServiceMetric` downloads all existing calculated service metric configuration
+
+        The full documentation of the export feature is available [here](https://dt-url.net/h203qmc).
+
+
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[Sequence[pulumi.Input[Union['CalculatedServiceMetricConditionArgs', 'CalculatedServiceMetricConditionArgsDict']]]] conditions: The set of conditions for the metric usage. **All** the specified conditions must be fulfilled to use the metric
@@ -493,7 +509,21 @@ class CalculatedServiceMetric(pulumi.CustomResource):
                  args: CalculatedServiceMetricArgs,
                  opts: Optional[pulumi.ResourceOptions] = None):
         """
-        Create a CalculatedServiceMetric resource with the given unique name, props, and options.
+        > This resource requires the API token scopes **Read configuration** (`ReadConfig`) and **Write configuration** (`WriteConfig`)
+
+        ## Dynatrace Documentation
+
+        - Calculated metrics for services - https://www.dynatrace.com/support/help/how-to-use-dynatrace/services/service-monitoring-settings/calculated-service-metric
+
+        - Service metrics API - https://www.dynatrace.com/support/help/dynatrace-api/configuration-api/calculated-metrics/service-metrics
+
+        ## Export Example Usage
+
+        - `terraform-provider-dynatrace -export CalculatedServiceMetric` downloads all existing calculated service metric configuration
+
+        The full documentation of the export feature is available [here](https://dt-url.net/h203qmc).
+
+
         :param str resource_name: The name of the resource.
         :param CalculatedServiceMetricArgs args: The arguments to use to populate this resource's properties.
         :param pulumi.ResourceOptions opts: Options for the resource.

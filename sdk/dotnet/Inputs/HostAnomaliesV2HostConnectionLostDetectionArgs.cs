@@ -14,13 +14,13 @@ namespace Pulumiverse.Dynatrace.Inputs
     public sealed class HostAnomaliesV2HostConnectionLostDetectionArgs : global::Pulumi.ResourceArgs
     {
         /// <summary>
-        /// Detect host or monitoring connection lost problems
+        /// This setting is enabled (`True`) or disabled (`False`)
         /// </summary>
         [Input("enabled", required: true)]
         public Input<bool> Enabled { get; set; } = null!;
 
         /// <summary>
-        /// Graceful host shutdowns. Possible values: `DONT_ALERT_ON_GRACEFUL_SHUTDOWN`, `ALERT_ON_GRACEFUL_SHUTDOWN`
+        /// Graceful host shutdowns. Possible Values: `ALERT_ON_GRACEFUL_SHUTDOWN`, `DONT_ALERT_ON_GRACEFUL_SHUTDOWN`
         /// </summary>
         [Input("onGracefulShutdowns")]
         public Input<string>? OnGracefulShutdowns { get; set; }

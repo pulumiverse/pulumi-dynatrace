@@ -26,6 +26,7 @@ class CustomServiceOrderArgs:
                  phps: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None):
         """
         The set of arguments for constructing a CustomServiceOrder resource.
+
         :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] dotnets: The IDs of Custom Services for .Net in the desired order
         :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] golangs: The IDs of Custom Services for Golang in the desired order
         :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] javas: The IDs of Custom Services for Java in the desired order
@@ -114,6 +115,7 @@ class _CustomServiceOrderState:
                  phps: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None):
         """
         Input properties used for looking up and filtering CustomServiceOrder resources.
+
         :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] dotnets: The IDs of Custom Services for .Net in the desired order
         :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] golangs: The IDs of Custom Services for Golang in the desired order
         :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] javas: The IDs of Custom Services for Java in the desired order
@@ -205,7 +207,21 @@ class CustomServiceOrder(pulumi.CustomResource):
                  phps: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
                  __props__=None):
         """
-        Create a CustomServiceOrder resource with the given unique name, props, and options.
+        > This resource requires the API token scopes **Read configuration** (`ReadConfig`) and **Write configuration** (`WriteConfig`)
+
+        ## Dynatrace Documentation
+
+        - Define custom services - https://www.dynatrace.com/support/help/how-to-use-dynatrace/services/custom-services
+
+        - Custom services API - https://www.dynatrace.com/support/help/dynatrace-api/configuration-api/service-api/custom-services-api
+
+        ## Export Example Usage
+
+        - `terraform-provider-dynatrace -export CustomServiceOrder` downloads a resource containing the current order for Custom Services defined in the Dynatrace Environment.
+
+        The full documentation of the export feature is available [here](https://dt-url.net/h203qmc).
+
+
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] dotnets: The IDs of Custom Services for .Net in the desired order
@@ -221,7 +237,21 @@ class CustomServiceOrder(pulumi.CustomResource):
                  args: Optional[CustomServiceOrderArgs] = None,
                  opts: Optional[pulumi.ResourceOptions] = None):
         """
-        Create a CustomServiceOrder resource with the given unique name, props, and options.
+        > This resource requires the API token scopes **Read configuration** (`ReadConfig`) and **Write configuration** (`WriteConfig`)
+
+        ## Dynatrace Documentation
+
+        - Define custom services - https://www.dynatrace.com/support/help/how-to-use-dynatrace/services/custom-services
+
+        - Custom services API - https://www.dynatrace.com/support/help/dynatrace-api/configuration-api/service-api/custom-services-api
+
+        ## Export Example Usage
+
+        - `terraform-provider-dynatrace -export CustomServiceOrder` downloads a resource containing the current order for Custom Services defined in the Dynatrace Environment.
+
+        The full documentation of the export feature is available [here](https://dt-url.net/h203qmc).
+
+
         :param str resource_name: The name of the resource.
         :param CustomServiceOrderArgs args: The arguments to use to populate this resource's properties.
         :param pulumi.ResourceOptions opts: Options for the resource.

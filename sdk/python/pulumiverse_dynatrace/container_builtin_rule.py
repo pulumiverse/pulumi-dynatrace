@@ -25,6 +25,7 @@ class ContainerBuiltinRuleArgs:
                  ignore_open_shift_sdn_namespace: pulumi.Input[_builtins.bool]):
         """
         The set of arguments for constructing a ContainerBuiltinRule resource.
+
         :param pulumi.Input[_builtins.bool] ignore_docker_pause_container: Disable monitoring of platform internal pause containers in Kubernetes and OpenShift.
         :param pulumi.Input[_builtins.bool] ignore_kubernetes_pause_container: Disable monitoring of platform internal pause containers in Kubernetes and OpenShift.
         :param pulumi.Input[_builtins.bool] ignore_open_shift_build_pod_name: Disable monitoring of intermediate containers created during image build.
@@ -93,6 +94,7 @@ class _ContainerBuiltinRuleState:
                  ignore_open_shift_sdn_namespace: Optional[pulumi.Input[_builtins.bool]] = None):
         """
         Input properties used for looking up and filtering ContainerBuiltinRule resources.
+
         :param pulumi.Input[_builtins.bool] ignore_docker_pause_container: Disable monitoring of platform internal pause containers in Kubernetes and OpenShift.
         :param pulumi.Input[_builtins.bool] ignore_kubernetes_pause_container: Disable monitoring of platform internal pause containers in Kubernetes and OpenShift.
         :param pulumi.Input[_builtins.bool] ignore_open_shift_build_pod_name: Disable monitoring of intermediate containers created during image build.
@@ -168,7 +170,21 @@ class ContainerBuiltinRule(pulumi.CustomResource):
                  ignore_open_shift_sdn_namespace: Optional[pulumi.Input[_builtins.bool]] = None,
                  __props__=None):
         """
-        Create a ContainerBuiltinRule resource with the given unique name, props, and options.
+        > This resource requires the API token scopes **Read settings** (`settings.read`) and **Write settings** (`settings.write`)
+
+        ## Dynatrace Documentation
+
+        - Container monitoring rules - https://www.dynatrace.com/support/help/platform-modules/infrastructure-monitoring/container-platform-monitoring/container-monitoring-rules
+
+        - Settings API - https://www.dynatrace.com/support/help/dynatrace-api/environment-api/settings (schemaId: `builtin:container.built-in-monitoring-rule`)
+
+        ## Export Example Usage
+
+        - `terraform-provider-dynatrace -export ContainerBuiltinRule` downloads all existing builtin monitoring rules for containers
+
+        The full documentation of the export feature is available [here](https://dt-url.net/h203qmc).
+
+
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[_builtins.bool] ignore_docker_pause_container: Disable monitoring of platform internal pause containers in Kubernetes and OpenShift.
@@ -183,7 +199,21 @@ class ContainerBuiltinRule(pulumi.CustomResource):
                  args: ContainerBuiltinRuleArgs,
                  opts: Optional[pulumi.ResourceOptions] = None):
         """
-        Create a ContainerBuiltinRule resource with the given unique name, props, and options.
+        > This resource requires the API token scopes **Read settings** (`settings.read`) and **Write settings** (`settings.write`)
+
+        ## Dynatrace Documentation
+
+        - Container monitoring rules - https://www.dynatrace.com/support/help/platform-modules/infrastructure-monitoring/container-platform-monitoring/container-monitoring-rules
+
+        - Settings API - https://www.dynatrace.com/support/help/dynatrace-api/environment-api/settings (schemaId: `builtin:container.built-in-monitoring-rule`)
+
+        ## Export Example Usage
+
+        - `terraform-provider-dynatrace -export ContainerBuiltinRule` downloads all existing builtin monitoring rules for containers
+
+        The full documentation of the export feature is available [here](https://dt-url.net/h203qmc).
+
+
         :param str resource_name: The name of the resource.
         :param ContainerBuiltinRuleArgs args: The arguments to use to populate this resource's properties.
         :param pulumi.ResourceOptions opts: Options for the resource.

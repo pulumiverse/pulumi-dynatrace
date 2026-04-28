@@ -24,6 +24,7 @@ class DefaultLaunchpadArgs:
                  group_launchpads: Optional[pulumi.Input['DefaultLaunchpadGroupLaunchpadsArgs']] = None):
         """
         The set of arguments for constructing a DefaultLaunchpad resource.
+
         :param pulumi.Input['DefaultLaunchpadGroupLaunchpadsArgs'] group_launchpads: Set default launchpads for user groups. The highest ranked will be shown to the user of a group.
         """
         if group_launchpads is not None:
@@ -48,6 +49,7 @@ class _DefaultLaunchpadState:
                  group_launchpads: Optional[pulumi.Input['DefaultLaunchpadGroupLaunchpadsArgs']] = None):
         """
         Input properties used for looking up and filtering DefaultLaunchpad resources.
+
         :param pulumi.Input['DefaultLaunchpadGroupLaunchpadsArgs'] group_launchpads: Set default launchpads for user groups. The highest ranked will be shown to the user of a group.
         """
         if group_launchpads is not None:
@@ -75,7 +77,21 @@ class DefaultLaunchpad(pulumi.CustomResource):
                  group_launchpads: Optional[pulumi.Input[Union['DefaultLaunchpadGroupLaunchpadsArgs', 'DefaultLaunchpadGroupLaunchpadsArgsDict']]] = None,
                  __props__=None):
         """
-        Create a DefaultLaunchpad resource with the given unique name, props, and options.
+        > This resource requires the API token scopes **Read settings** (`settings.read`) and **Write settings** (`settings.write`)
+
+        ## Dynatrace Documentation
+
+        - Launchpads - https://docs.dynatrace.com/docs/discover-dynatrace/get-started/dynatrace-ui/launchpads
+
+        - Settings API - https://www.dynatrace.com/support/help/dynatrace-api/environment-api/settings (schemaId: `app:dynatrace.launcher:default.launchpad`)
+
+        ## Export Example Usage
+
+        - `terraform-provider-dynatrace -export DefaultLaunchpad` downloads all existing default Launchpads by user group configuration
+
+        The full documentation of the export feature is available [here](https://dt-url.net/h203qmc).
+
+
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[Union['DefaultLaunchpadGroupLaunchpadsArgs', 'DefaultLaunchpadGroupLaunchpadsArgsDict']] group_launchpads: Set default launchpads for user groups. The highest ranked will be shown to the user of a group.
@@ -87,7 +103,21 @@ class DefaultLaunchpad(pulumi.CustomResource):
                  args: Optional[DefaultLaunchpadArgs] = None,
                  opts: Optional[pulumi.ResourceOptions] = None):
         """
-        Create a DefaultLaunchpad resource with the given unique name, props, and options.
+        > This resource requires the API token scopes **Read settings** (`settings.read`) and **Write settings** (`settings.write`)
+
+        ## Dynatrace Documentation
+
+        - Launchpads - https://docs.dynatrace.com/docs/discover-dynatrace/get-started/dynatrace-ui/launchpads
+
+        - Settings API - https://www.dynatrace.com/support/help/dynatrace-api/environment-api/settings (schemaId: `app:dynatrace.launcher:default.launchpad`)
+
+        ## Export Example Usage
+
+        - `terraform-provider-dynatrace -export DefaultLaunchpad` downloads all existing default Launchpads by user group configuration
+
+        The full documentation of the export feature is available [here](https://dt-url.net/h203qmc).
+
+
         :param str resource_name: The name of the resource.
         :param DefaultLaunchpadArgs args: The arguments to use to populate this resource's properties.
         :param pulumi.ResourceOptions opts: Options for the resource.

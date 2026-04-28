@@ -27,6 +27,7 @@ class VmwareArgs:
                  filter: Optional[pulumi.Input[_builtins.str]] = None):
         """
         The set of arguments for constructing a Vmware resource.
+
         :param pulumi.Input[_builtins.bool] enabled: This setting is enabled (`true`) or disabled (`false`)
         :param pulumi.Input[_builtins.str] ipaddress: Specify the IP address or name of the vCenter or standalone ESXi host:
         :param pulumi.Input[_builtins.str] label: Name this connection
@@ -134,6 +135,7 @@ class _VmwareState:
                  username: Optional[pulumi.Input[_builtins.str]] = None):
         """
         Input properties used for looking up and filtering Vmware resources.
+
         :param pulumi.Input[_builtins.bool] enabled: This setting is enabled (`true`) or disabled (`false`)
         :param pulumi.Input[_builtins.str] filter: This string should have one of the following formats:
                - $prefix(parameter) - property value starting with 'parameter'
@@ -249,7 +251,21 @@ class Vmware(pulumi.CustomResource):
                  username: Optional[pulumi.Input[_builtins.str]] = None,
                  __props__=None):
         """
-        Create a Vmware resource with the given unique name, props, and options.
+        > This resource requires the API token scopes **Read settings** (`settings.read`) and **Write settings** (`settings.write`)
+
+        ## Dynatrace Documentation
+
+        - VMware vSphere monitoring - https://www.dynatrace.com/support/help/platform-modules/infrastructure-monitoring/vmware-vsphere-monitoring
+
+        - Settings API - https://www.dynatrace.com/support/help/dynatrace-api/environment-api/settings (schemaId: `builtin:virtualization.vmware`)
+
+        ## Export Example Usage
+
+        - `terraform-provider-dynatrace -export Vmware` downloads all existing VMware configuration
+
+        The full documentation of the export feature is available [here](https://dt-url.net/h203qmc).
+
+
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[_builtins.bool] enabled: This setting is enabled (`true`) or disabled (`false`)
@@ -270,7 +286,21 @@ class Vmware(pulumi.CustomResource):
                  args: VmwareArgs,
                  opts: Optional[pulumi.ResourceOptions] = None):
         """
-        Create a Vmware resource with the given unique name, props, and options.
+        > This resource requires the API token scopes **Read settings** (`settings.read`) and **Write settings** (`settings.write`)
+
+        ## Dynatrace Documentation
+
+        - VMware vSphere monitoring - https://www.dynatrace.com/support/help/platform-modules/infrastructure-monitoring/vmware-vsphere-monitoring
+
+        - Settings API - https://www.dynatrace.com/support/help/dynatrace-api/environment-api/settings (schemaId: `builtin:virtualization.vmware`)
+
+        ## Export Example Usage
+
+        - `terraform-provider-dynatrace -export Vmware` downloads all existing VMware configuration
+
+        The full documentation of the export feature is available [here](https://dt-url.net/h203qmc).
+
+
         :param str resource_name: The name of the resource.
         :param VmwareArgs args: The arguments to use to populate this resource's properties.
         :param pulumi.ResourceOptions opts: Options for the resource.

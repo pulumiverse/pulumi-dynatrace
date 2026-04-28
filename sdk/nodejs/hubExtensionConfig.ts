@@ -4,6 +4,79 @@
 import * as pulumi from "@pulumi/pulumi";
 import * as utilities from "./utilities";
 
+/**
+ * > This resource requires the API token scopes `extensions.write`, `extension.read` and `hub.read`.
+ *
+ * This resource configures a monitoring configuration for the given extension with the specified version. In case the extension has not yet gotten installed for the specified version the installation happens automatically.
+ *
+ * The `name` attribute needs to refer to the fully qualified name of the extension. For a list of eligible names you can utilize the data source `dynatrace.getHubItems` like in this example:
+ *
+ * ```typescript
+ * import * as pulumi from "@pulumi/pulumi";
+ * import * as dynatrace from "@pulumiverse/dynatrace";
+ *
+ * const extension_20_items = dynatrace.getHubItems({
+ *     type: "EXTENSION2",
+ * });
+ * ```
+ *
+ * You can optionally specify a scope for the extension using either one of the attributes `host`, `hostGroup`, `managementZone` or `activeGateGroup`.
+ * For `host` and `hostGroup` you're expected to specify the IDs of these entities. You can query for these IDs using the data source `dynatrace.getEntity` or `dynatrace.getEntities` like in this example:
+ *
+ * ```typescript
+ * import * as pulumi from "@pulumi/pulumi";
+ * import * as dynatrace from "@pulumiverse/dynatrace";
+ *
+ * export = async () => {
+ *     const my_host = await dynatrace.getEntity({
+ *         type: "HOST",
+ *         name: "<your-host-name>",
+ *     });
+ *     return {
+ *         "my-host": my_host.id,
+ *     };
+ * }
+ * ```
+ * for `managementZone` and `activeGateGroup` you are required to specify the **name** and not the ID.
+ *
+ * The `value` attribute differs depending on the Extension you want to configure. The expected format is JSON. We recommend to navigate via WebUI to the Dynatrace Hub and configure such an Extension there - the WebUI provides you with the correct JSON code to use.
+ *
+ * For defining which version of a specific Extension should currently be active you can use the resource `dynatrace.HubExtensionActiveVersion`.
+ *
+ * ## Dynatrace Documentation
+ *
+ * - Extensions API - https://docs.dynatrace.com/docs/dynatrace-api/environment-api/extensions-20
+ *
+ * ## Export Example Usage
+ *
+ * - `terraform-provider-dynatrace -export dynatrace.HubExtensionConfig` downloads the settings for all configured Extensions 2.0
+ *
+ * The full documentation of the export feature is available [here](https://dt-url.net/h203qmc).
+ *
+ * ## Resource Example Usage
+ *
+ * ```typescript
+ * import * as pulumi from "@pulumi/pulumi";
+ * import * as dynatrace from "@pulumiverse/dynatrace";
+ *
+ * const comDynatraceExtensionJmx_weblogic_cp = new dynatrace.HubExtensionConfig("com_dynatrace_extension_jmx-weblogic-cp", {
+ *     name: "com.dynatrace.extension.jmx-weblogic-cp",
+ *     scope: "environment",
+ *     value: JSON.stringify({
+ *         activationContext: "LOCAL",
+ *         activationTags: [],
+ *         enabled: true,
+ *         description: "jj",
+ *         version: "2.0.4",
+ *         featureSets: [
+ *             "cache",
+ *             "connections",
+ *             "capacity",
+ *         ],
+ *     }),
+ * });
+ * ```
+ */
 export class HubExtensionConfig extends pulumi.CustomResource {
     /**
      * Get an existing HubExtensionConfig resource's state with the given name, ID, and optional extra
@@ -53,6 +126,10 @@ export class HubExtensionConfig extends pulumi.CustomResource {
      */
     declare public readonly name: pulumi.Output<string>;
     /**
+     * The scope this monitoring configuration will be defined for
+     */
+    declare public readonly scope: pulumi.Output<string>;
+    /**
      * The JSON encoded value for this monitoring configuration
      */
     declare public readonly value: pulumi.Output<string>;
@@ -75,6 +152,7 @@ export class HubExtensionConfig extends pulumi.CustomResource {
             resourceInputs["hostGroup"] = state?.hostGroup;
             resourceInputs["managementZone"] = state?.managementZone;
             resourceInputs["name"] = state?.name;
+            resourceInputs["scope"] = state?.scope;
             resourceInputs["value"] = state?.value;
         } else {
             const args = argsOrState as HubExtensionConfigArgs | undefined;
@@ -86,6 +164,7 @@ export class HubExtensionConfig extends pulumi.CustomResource {
             resourceInputs["hostGroup"] = args?.hostGroup;
             resourceInputs["managementZone"] = args?.managementZone;
             resourceInputs["name"] = args?.name;
+            resourceInputs["scope"] = args?.scope;
             resourceInputs["value"] = args?.value;
         }
         opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts);
@@ -118,6 +197,10 @@ export interface HubExtensionConfigState {
      */
     name?: pulumi.Input<string>;
     /**
+     * The scope this monitoring configuration will be defined for
+     */
+    scope?: pulumi.Input<string>;
+    /**
      * The JSON encoded value for this monitoring configuration
      */
     value?: pulumi.Input<string>;
@@ -147,6 +230,10 @@ export interface HubExtensionConfigArgs {
      * The fully qualified name of the extension, such as `com.dynatrace.extension.jmx-liberty-cp`. You can query for these names using the data source `dynatrace.getHubItems`
      */
     name?: pulumi.Input<string>;
+    /**
+     * The scope this monitoring configuration will be defined for
+     */
+    scope?: pulumi.Input<string>;
     /**
      * The JSON encoded value for this monitoring configuration
      */

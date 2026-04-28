@@ -26,6 +26,7 @@ class BusinessEventsCapturingVariantsArgs:
                  scope: Optional[pulumi.Input[_builtins.str]] = None):
         """
         The set of arguments for constructing a BusinessEventsCapturingVariants resource.
+
         :param pulumi.Input[_builtins.str] content_type_matcher: Possible Values: `CONTAINS`, `ENDS_WITH`, `EQUALS`, `STARTS_WITH`
         :param pulumi.Input[_builtins.str] content_type_value: Content-type match value
         :param pulumi.Input[_builtins.str] parser: Possible Values: `JSON`, `Raw`, `Text`, `URLencoded`, `XML`
@@ -111,6 +112,7 @@ class _BusinessEventsCapturingVariantsState:
                  scope: Optional[pulumi.Input[_builtins.str]] = None):
         """
         Input properties used for looking up and filtering BusinessEventsCapturingVariants resources.
+
         :param pulumi.Input[_builtins.str] content_type_matcher: Possible Values: `CONTAINS`, `ENDS_WITH`, `EQUALS`, `STARTS_WITH`
         :param pulumi.Input[_builtins.str] content_type_value: Content-type match value
         :param pulumi.Input[_builtins.str] insert_after: Because this resource allows for ordering you may specify the ID of the resource instance that comes before this instance regarding order. If not specified when creating the setting will be added to the end of the list. If not specified during update the order will remain untouched
@@ -202,7 +204,21 @@ class BusinessEventsCapturingVariants(pulumi.CustomResource):
                  scope: Optional[pulumi.Input[_builtins.str]] = None,
                  __props__=None):
         """
-        Create a BusinessEventsCapturingVariants resource with the given unique name, props, and options.
+        > This resource requires the API token scopes **Read settings** (`settings.read`) and **Write settings** (`settings.write`)
+
+        ## Dynatrace Documentation
+
+        - Business event capture - https://docs.dynatrace.com/docs/observe/business-analytics/ba-events-capturing
+
+        - Settings API - https://www.dynatrace.com/support/help/dynatrace-api/environment-api/settings (schemaId: `builtin:bizevents.http.capturing-variants`)
+
+        ## Export Example Usage
+
+        - `terraform-provider-dynatrace -export BusinessEventsCapturingVariants` downloads all existing OneAgent business event capturing variants configuration
+
+        The full documentation of the export feature is available [here](https://dt-url.net/h203qmc).
+
+
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[_builtins.str] content_type_matcher: Possible Values: `CONTAINS`, `ENDS_WITH`, `EQUALS`, `STARTS_WITH`
@@ -218,7 +234,21 @@ class BusinessEventsCapturingVariants(pulumi.CustomResource):
                  args: BusinessEventsCapturingVariantsArgs,
                  opts: Optional[pulumi.ResourceOptions] = None):
         """
-        Create a BusinessEventsCapturingVariants resource with the given unique name, props, and options.
+        > This resource requires the API token scopes **Read settings** (`settings.read`) and **Write settings** (`settings.write`)
+
+        ## Dynatrace Documentation
+
+        - Business event capture - https://docs.dynatrace.com/docs/observe/business-analytics/ba-events-capturing
+
+        - Settings API - https://www.dynatrace.com/support/help/dynatrace-api/environment-api/settings (schemaId: `builtin:bizevents.http.capturing-variants`)
+
+        ## Export Example Usage
+
+        - `terraform-provider-dynatrace -export BusinessEventsCapturingVariants` downloads all existing OneAgent business event capturing variants configuration
+
+        The full documentation of the export feature is available [here](https://dt-url.net/h203qmc).
+
+
         :param str resource_name: The name of the resource.
         :param BusinessEventsCapturingVariantsArgs args: The arguments to use to populate this resource's properties.
         :param pulumi.ResourceOptions opts: Options for the resource.

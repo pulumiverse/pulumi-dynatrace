@@ -33,12 +33,12 @@ namespace Pulumiverse.Dynatrace
     /// 
     /// return await Deployment.RunAsync(() =&gt; 
     /// {
-    ///     var johnDoeGmailCom = new Dynatrace.IamUser("johnDoeGmailCom", new()
+    ///     var johnDoeGmailCom = new Dynatrace.IamUser("john_doe_gmail_com", new()
     ///     {
     ///         Email = "john.doe@gmail.com",
     ///         Groups = new[]
     ///         {
-    ///             data.Dynatrace_iam_group.Restricted.Id,
+    ///             restricted.Id,
     ///         },
     ///     });
     /// 

@@ -19,49 +19,6 @@ import (
 // - `tags` (optional) refers to the tags that need to be present for the host (inclusive)
 //
 // If multiple hosts match the given criteria, the first result will be retrieved.
-//
-// ## Example Usage
-//
-// ```go
-// package main
-//
-// import (
-//
-//	"fmt"
-//
-//	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-//	"github.com/pulumiverse/pulumi-dynatrace/sdk/go/dynatrace"
-//
-// )
-//
-//	func main() {
-//		pulumi.Run(func(ctx *pulumi.Context) error {
-//			test, err := dynatrace.GetHost(ctx, &dynatrace.GetHostArgs{
-//				Name: "Example",
-//				Tags: []string{
-//					"TerraformKeyTest",
-//					"TerraformKeyValueTest=TestValue",
-//				},
-//			}, nil)
-//			if err != nil {
-//				return err
-//			}
-//			_, err = dynatrace.NewManagementZone(ctx, "#name#", &dynatrace.ManagementZoneArgs{
-//				EntitySelectorBasedRules: dynatrace.ManagementZoneEntitySelectorBasedRuleArray{
-//					&dynatrace.ManagementZoneEntitySelectorBasedRuleArgs{
-//						Enabled:  pulumi.Bool(true),
-//						Selector: pulumi.Sprintf("type(\"host\"),entityId(\"%v\")", test.Id),
-//					},
-//				},
-//			})
-//			if err != nil {
-//				return err
-//			}
-//			return nil
-//		})
-//	}
-//
-// ```
 func GetHost(ctx *pulumi.Context, args *GetHostArgs, opts ...pulumi.InvokeOption) (*GetHostResult, error) {
 	opts = internal.PkgInvokeDefaultOpts(opts)
 	var rv GetHostResult

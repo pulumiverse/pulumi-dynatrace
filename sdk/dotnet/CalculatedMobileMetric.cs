@@ -10,6 +10,21 @@ using Pulumi;
 
 namespace Pulumiverse.Dynatrace
 {
+    /// <summary>
+    /// &gt; This resource requires the API token scopes **Read configuration** (`ReadConfig`) and **Write configuration** (`WriteConfig`)
+    /// 
+    /// ## Dynatrace Documentation
+    /// 
+    /// - Create calculated metrics for mobile applications - https://www.dynatrace.com/support/help/platform-modules/digital-experience/mobile-applications/additional-configuration/rum-calculated-metrics-mobile
+    /// 
+    /// - Mobile app metrics API - https://www.dynatrace.com/support/help/dynatrace-api/configuration-api/calculated-metrics/mobile-app-metrics
+    /// 
+    /// ## Export Example Usage
+    /// 
+    /// - `terraform-provider-dynatrace -export CalculatedMobileMetric` downloads all existing calculated mobile/custom app metric configuration
+    /// 
+    /// The full documentation of the export feature is available [here](https://dt-url.net/h203qmc).
+    /// </summary>
     [DynatraceResourceType("dynatrace:index/calculatedMobileMetric:CalculatedMobileMetric")]
     public partial class CalculatedMobileMetric : global::Pulumi.CustomResource
     {

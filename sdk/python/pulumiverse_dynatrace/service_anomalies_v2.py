@@ -28,6 +28,7 @@ class ServiceAnomaliesV2Args:
                  scope: Optional[pulumi.Input[_builtins.str]] = None):
         """
         The set of arguments for constructing a ServiceAnomaliesV2 resource.
+
         :param pulumi.Input['ServiceAnomaliesV2FailureRateArgs'] failure_rate: Failure rate
         :param pulumi.Input['ServiceAnomaliesV2LoadDropsArgs'] load_drops: Alert if the observed load is lower than the expected load by a specified margin for a specified amount of time:
         :param pulumi.Input['ServiceAnomaliesV2LoadSpikesArgs'] load_spikes: Alert if the observed load exceeds the expected load by a specified margin for a specified amount of time:
@@ -112,6 +113,7 @@ class _ServiceAnomaliesV2State:
                  scope: Optional[pulumi.Input[_builtins.str]] = None):
         """
         Input properties used for looking up and filtering ServiceAnomaliesV2 resources.
+
         :param pulumi.Input['ServiceAnomaliesV2FailureRateArgs'] failure_rate: Failure rate
         :param pulumi.Input['ServiceAnomaliesV2LoadDropsArgs'] load_drops: Alert if the observed load is lower than the expected load by a specified margin for a specified amount of time:
         :param pulumi.Input['ServiceAnomaliesV2LoadSpikesArgs'] load_spikes: Alert if the observed load exceeds the expected load by a specified margin for a specified amount of time:
@@ -203,7 +205,21 @@ class ServiceAnomaliesV2(pulumi.CustomResource):
                  scope: Optional[pulumi.Input[_builtins.str]] = None,
                  __props__=None):
         """
-        Create a ServiceAnomaliesV2 resource with the given unique name, props, and options.
+        > This resource requires the API token scopes **Read settings** (`settings.read`) and **Write settings** (`settings.write`)
+
+        ## Dynatrace Documentation
+
+        - Adjust the sensitivity of anomaly detection for services - https://www.dynatrace.com/support/help/how-to-use-dynatrace/problem-detection-and-analysis/problem-detection/adjust-sensitivity-anomaly-detection/adjust-sensitivity-services
+
+        - Settings API - https://www.dynatrace.com/support/help/dynatrace-api/environment-api/settings (schemaId: `builtin:anomaly-detection.services`)
+
+        ## Export Example Usage
+
+        - `terraform-provider-dynatrace -export ServiceAnomaliesV2` downloads all existing service anomaly detection configuration
+
+        The full documentation of the export feature is available [here](https://dt-url.net/h203qmc).
+
+
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[Union['ServiceAnomaliesV2FailureRateArgs', 'ServiceAnomaliesV2FailureRateArgsDict']] failure_rate: Failure rate
@@ -219,7 +235,21 @@ class ServiceAnomaliesV2(pulumi.CustomResource):
                  args: ServiceAnomaliesV2Args,
                  opts: Optional[pulumi.ResourceOptions] = None):
         """
-        Create a ServiceAnomaliesV2 resource with the given unique name, props, and options.
+        > This resource requires the API token scopes **Read settings** (`settings.read`) and **Write settings** (`settings.write`)
+
+        ## Dynatrace Documentation
+
+        - Adjust the sensitivity of anomaly detection for services - https://www.dynatrace.com/support/help/how-to-use-dynatrace/problem-detection-and-analysis/problem-detection/adjust-sensitivity-anomaly-detection/adjust-sensitivity-services
+
+        - Settings API - https://www.dynatrace.com/support/help/dynatrace-api/environment-api/settings (schemaId: `builtin:anomaly-detection.services`)
+
+        ## Export Example Usage
+
+        - `terraform-provider-dynatrace -export ServiceAnomaliesV2` downloads all existing service anomaly detection configuration
+
+        The full documentation of the export feature is available [here](https://dt-url.net/h203qmc).
+
+
         :param str resource_name: The name of the resource.
         :param ServiceAnomaliesV2Args args: The arguments to use to populate this resource's properties.
         :param pulumi.ResourceOptions opts: Options for the resource.

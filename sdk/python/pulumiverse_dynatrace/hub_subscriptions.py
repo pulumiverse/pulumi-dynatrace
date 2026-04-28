@@ -24,6 +24,7 @@ class HubSubscriptionsArgs:
                  token_subscriptions: Optional[pulumi.Input['HubSubscriptionsTokenSubscriptionsArgs']] = None):
         """
         The set of arguments for constructing a HubSubscriptions resource.
+
         :param pulumi.Input['HubSubscriptionsTokenSubscriptionsArgs'] token_subscriptions: Subscriptions
         """
         if token_subscriptions is not None:
@@ -48,6 +49,7 @@ class _HubSubscriptionsState:
                  token_subscriptions: Optional[pulumi.Input['HubSubscriptionsTokenSubscriptionsArgs']] = None):
         """
         Input properties used for looking up and filtering HubSubscriptions resources.
+
         :param pulumi.Input['HubSubscriptionsTokenSubscriptionsArgs'] token_subscriptions: Subscriptions
         """
         if token_subscriptions is not None:
@@ -75,7 +77,21 @@ class HubSubscriptions(pulumi.CustomResource):
                  token_subscriptions: Optional[pulumi.Input[Union['HubSubscriptionsTokenSubscriptionsArgs', 'HubSubscriptionsTokenSubscriptionsArgsDict']]] = None,
                  __props__=None):
         """
-        Create a HubSubscriptions resource with the given unique name, props, and options.
+        > This resource requires the API token scopes **Read settings** (`settings.read`) and **Write settings** (`settings.write`)
+
+        ## Dynatrace Documentation
+
+        - Dynatrace Hub - https://docs.dynatrace.com/docs/manage/hub
+
+        - Settings API - https://www.dynatrace.com/support/help/dynatrace-api/environment-api/settings (schemaId: `builtin:hub-channel.subscriptions`)
+
+        ## Export Example Usage
+
+        - `terraform-provider-dynatrace -export HubSubscriptions` downloads all existing hub subscriptions
+
+        The full documentation of the export feature is available [here](https://dt-url.net/h203qmc).
+
+
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[Union['HubSubscriptionsTokenSubscriptionsArgs', 'HubSubscriptionsTokenSubscriptionsArgsDict']] token_subscriptions: Subscriptions
@@ -87,7 +103,21 @@ class HubSubscriptions(pulumi.CustomResource):
                  args: Optional[HubSubscriptionsArgs] = None,
                  opts: Optional[pulumi.ResourceOptions] = None):
         """
-        Create a HubSubscriptions resource with the given unique name, props, and options.
+        > This resource requires the API token scopes **Read settings** (`settings.read`) and **Write settings** (`settings.write`)
+
+        ## Dynatrace Documentation
+
+        - Dynatrace Hub - https://docs.dynatrace.com/docs/manage/hub
+
+        - Settings API - https://www.dynatrace.com/support/help/dynatrace-api/environment-api/settings (schemaId: `builtin:hub-channel.subscriptions`)
+
+        ## Export Example Usage
+
+        - `terraform-provider-dynatrace -export HubSubscriptions` downloads all existing hub subscriptions
+
+        The full documentation of the export feature is available [here](https://dt-url.net/h203qmc).
+
+
         :param str resource_name: The name of the resource.
         :param HubSubscriptionsArgs args: The arguments to use to populate this resource's properties.
         :param pulumi.ResourceOptions opts: Options for the resource.

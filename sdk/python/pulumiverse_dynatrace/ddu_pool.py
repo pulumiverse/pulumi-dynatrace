@@ -28,6 +28,7 @@ class DduPoolArgs:
                  traces: Optional[pulumi.Input['DduPoolTracesArgs']] = None):
         """
         The set of arguments for constructing a DduPool resource.
+
         :param pulumi.Input['DduPoolEventsArgs'] events: DDU pool settings for Events
         :param pulumi.Input['DduPoolLogMonitoringArgs'] log_monitoring: DDU pool settings for Log Monitoring
         :param pulumi.Input['DduPoolMetricsArgs'] metrics: DDU pool settings for Metrics
@@ -116,6 +117,7 @@ class _DduPoolState:
                  traces: Optional[pulumi.Input['DduPoolTracesArgs']] = None):
         """
         Input properties used for looking up and filtering DduPool resources.
+
         :param pulumi.Input['DduPoolEventsArgs'] events: DDU pool settings for Events
         :param pulumi.Input['DduPoolLogMonitoringArgs'] log_monitoring: DDU pool settings for Log Monitoring
         :param pulumi.Input['DduPoolMetricsArgs'] metrics: DDU pool settings for Metrics
@@ -217,39 +219,6 @@ class DduPool(pulumi.CustomResource):
 
         - Settings API - https://www.dynatrace.com/support/help/dynatrace-api/environment-api/settings (schemaId: `builtin:accounting.ddu.limit`)
 
-        ## Resource Example Usage
-
-        ```python
-        import pulumi
-        import pulumiverse_dynatrace as dynatrace
-
-        _name_ = dynatrace.DduPool("#name#",
-            events={
-                "enabled": True,
-                "type": "MONTHLY",
-                "value": 125,
-            },
-            log_monitoring={
-                "enabled": True,
-                "type": "MONTHLY",
-                "value": 124,
-            },
-            metrics={
-                "enabled": True,
-                "type": "MONTHLY",
-                "value": 123,
-            },
-            serverless={
-                "enabled": True,
-                "type": "MONTHLY",
-                "value": 126,
-            },
-            traces={
-                "enabled": True,
-                "type": "MONTHLY",
-                "value": 127,
-            })
-        ```
 
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
@@ -276,39 +245,6 @@ class DduPool(pulumi.CustomResource):
 
         - Settings API - https://www.dynatrace.com/support/help/dynatrace-api/environment-api/settings (schemaId: `builtin:accounting.ddu.limit`)
 
-        ## Resource Example Usage
-
-        ```python
-        import pulumi
-        import pulumiverse_dynatrace as dynatrace
-
-        _name_ = dynatrace.DduPool("#name#",
-            events={
-                "enabled": True,
-                "type": "MONTHLY",
-                "value": 125,
-            },
-            log_monitoring={
-                "enabled": True,
-                "type": "MONTHLY",
-                "value": 124,
-            },
-            metrics={
-                "enabled": True,
-                "type": "MONTHLY",
-                "value": 123,
-            },
-            serverless={
-                "enabled": True,
-                "type": "MONTHLY",
-                "value": 126,
-            },
-            traces={
-                "enabled": True,
-                "type": "MONTHLY",
-                "value": 127,
-            })
-        ```
 
         :param str resource_name: The name of the resource.
         :param DduPoolArgs args: The arguments to use to populate this resource's properties.

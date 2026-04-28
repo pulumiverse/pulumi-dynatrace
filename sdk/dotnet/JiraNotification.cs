@@ -10,11 +10,28 @@ using Pulumi;
 
 namespace Pulumiverse.Dynatrace
 {
+    /// <summary>
+    /// &gt; This resource requires the `Jira for Workflows` app to be installed via the Dynatrace Hub.
+    /// 
+    /// &gt; This resource requires the API token scopes **Read settings** (`settings.read`) and **Write settings** (`settings.write`)
+    /// 
+    /// ## Dynatrace Documentation
+    /// 
+    /// - Jira notifications - https://www.dynatrace.com/support/help/setup-and-configuration/integrations/problem-notifications/jira-integration
+    /// 
+    /// - Settings API - https://www.dynatrace.com/support/help/dynatrace-api/environment-api/settings (schemaId: `builtin:problem.notifications`)
+    /// 
+    /// ## Export Example Usage
+    /// 
+    /// - `terraform-provider-dynatrace -export dynatrace.JiraNotification` downloads the existing problem notifications for Jira
+    /// 
+    /// The full documentation of the export feature is available [here](https://dt-url.net/h203qmc).
+    /// </summary>
     [DynatraceResourceType("dynatrace:index/jiraNotification:JiraNotification")]
     public partial class JiraNotification : global::Pulumi.CustomResource
     {
         /// <summary>
-        /// The configuration is enabled (`True`) or disabled (`False`)
+        /// This setting is enabled (`True`) or disabled (`False`)
         /// </summary>
         [Output("active")]
         public Output<bool> Active { get; private set; } = null!;
@@ -26,13 +43,16 @@ namespace Pulumiverse.Dynatrace
         public Output<string?> ApiToken { get; private set; } = null!;
 
         /// <summary>
-        /// The description of the Jira issue to be created by this notification.   You can use same placeholders as in issue summary
+        /// The description of the Jira issue to be created by this notification. Type '{' for placeholder suggestions.. #### Available placeholders
+        /// **{ImpactedEntity}**: A short description of the problem and impacted entity (or multiple impacted entities).
         /// </summary>
         [Output("description")]
         public Output<string> Description { get; private set; } = null!;
 
         /// <summary>
-        /// The type of the Jira issue to be created by this notification
+        /// The type of the Jira issue to be created by this notification.
+        /// 
+        /// To find all available issue types, or to create your own issue type, within JIRA go to Options &gt; Issues.
         /// </summary>
         [Output("issueType")]
         public Output<string> IssueType { get; private set; } = null!;
@@ -44,7 +64,7 @@ namespace Pulumiverse.Dynatrace
         public Output<string> LegacyId { get; private set; } = null!;
 
         /// <summary>
-        /// The name of the notification configuration
+        /// The name of the notification configuration.
         /// </summary>
         [Output("name")]
         public Output<string> Name { get; private set; } = null!;
@@ -56,25 +76,46 @@ namespace Pulumiverse.Dynatrace
         public Output<string> Profile { get; private set; } = null!;
 
         /// <summary>
-        /// The project key of the Jira issue to be created by this notification
+        /// The project key of the Jira issue to be created by this notification.
         /// </summary>
         [Output("projectKey")]
         public Output<string> ProjectKey { get; private set; } = null!;
 
         /// <summary>
-        /// The summary of the Jira issue to be created by this notification.  You can use the following placeholders:  * `{ImpactedEntity}`: The entity impacted by the problem or *X* impacted entities.  * `{PID}`: The ID of the reported problem.  * `{ProblemDetailsText}`: All problem event details, including root cause, as a text-formatted string.  * `{ProblemID}`: The display number of the reported problem.  * `{ProblemImpact}`: The [impact level](https://www.dynatrace.com/support/help/shortlink/impact-analysis) of the problem. Possible values are `APPLICATION`, `SERVICE`, and `INFRASTRUCTURE`.  * `{ProblemSeverity}`: The [severity level](https://www.dynatrace.com/support/help/shortlink/event-types) of the problem. Possible values are `AVAILABILITY`, `ERROR`, `PERFORMANCE`, `RESOURCE_CONTENTION`, and `CUSTOM_ALERT`.  * `{ProblemTitle}`: A short description of the problem.  * `{ProblemURL}`: The URL of the problem within Dynatrace.  * `{State}`: The state of the problem. Possible values are `OPEN` and `RESOLVED`.  * `{Tags}`: The list of tags that are defined for all impacted entities, separated by commas
+        /// The summary of the Jira issue to be created by this notification. Type '{' for placeholder suggestions.. #### Available placeholders
+        /// **{ImpactedEntity}**: A short description of the problem and impacted entity (or multiple impacted entities).
+        /// 
+        /// **{ImpactedEntityNames}**: The entity impacted by the problem.
+        /// 
+        /// **{NamesOfImpactedEntities}**: The names of all entities that are impacted by the problem.
+        /// 
+        /// **{PID}**: Unique system identifier of the reported problem.
+        /// 
+        /// **{ProblemID}**: Display number of the reported problem.
+        /// 
+        /// **{ProblemImpact}**: Impact level of the problem. Possible values are APPLICATION, SERVICE, or INFRASTRUCTURE.
+        /// 
+        /// **{ProblemSeverity}**: Severity level of the problem. Possible values are AVAILABILITY, ERROR, PERFORMANCE, RESOURCE_CONTENTION, or CUSTOM_ALERT.
+        /// 
+        /// **{ProblemTitle}**: Short description of the problem.
+        /// 
+        /// **{ProblemURL}**: URL of the problem within Dynatrace.
+        /// 
+        /// **{State}**: Problem state. Possible values are OPEN or RESOLVED.
+        /// 
+        /// **{Tags}**: Comma separated list of tags that are defined for all impacted entities. To refer to the value of a specific tag, specify the tag's key in square brackets: **{Tags[key]}**. If the tag does not have any assigned value, the placeholder will be replaced by an empty string. The placeholder will not be replaced if the tag key does not exist.
         /// </summary>
         [Output("summary")]
         public Output<string> Summary { get; private set; } = null!;
 
         /// <summary>
-        /// The URL of the Jira API endpoint
+        /// The URL of the Jira API endpoint.
         /// </summary>
         [Output("url")]
         public Output<string> Url { get; private set; } = null!;
 
         /// <summary>
-        /// The username of the Jira profile
+        /// The username of the Jira profile.
         /// </summary>
         [Output("username")]
         public Output<string> Username { get; private set; } = null!;
@@ -131,7 +172,7 @@ namespace Pulumiverse.Dynatrace
     public sealed class JiraNotificationArgs : global::Pulumi.ResourceArgs
     {
         /// <summary>
-        /// The configuration is enabled (`True`) or disabled (`False`)
+        /// This setting is enabled (`True`) or disabled (`False`)
         /// </summary>
         [Input("active", required: true)]
         public Input<bool> Active { get; set; } = null!;
@@ -153,13 +194,16 @@ namespace Pulumiverse.Dynatrace
         }
 
         /// <summary>
-        /// The description of the Jira issue to be created by this notification.   You can use same placeholders as in issue summary
+        /// The description of the Jira issue to be created by this notification. Type '{' for placeholder suggestions.. #### Available placeholders
+        /// **{ImpactedEntity}**: A short description of the problem and impacted entity (or multiple impacted entities).
         /// </summary>
         [Input("description", required: true)]
         public Input<string> Description { get; set; } = null!;
 
         /// <summary>
-        /// The type of the Jira issue to be created by this notification
+        /// The type of the Jira issue to be created by this notification.
+        /// 
+        /// To find all available issue types, or to create your own issue type, within JIRA go to Options &gt; Issues.
         /// </summary>
         [Input("issueType", required: true)]
         public Input<string> IssueType { get; set; } = null!;
@@ -171,7 +215,7 @@ namespace Pulumiverse.Dynatrace
         public Input<string>? LegacyId { get; set; }
 
         /// <summary>
-        /// The name of the notification configuration
+        /// The name of the notification configuration.
         /// </summary>
         [Input("name")]
         public Input<string>? Name { get; set; }
@@ -183,25 +227,46 @@ namespace Pulumiverse.Dynatrace
         public Input<string> Profile { get; set; } = null!;
 
         /// <summary>
-        /// The project key of the Jira issue to be created by this notification
+        /// The project key of the Jira issue to be created by this notification.
         /// </summary>
         [Input("projectKey", required: true)]
         public Input<string> ProjectKey { get; set; } = null!;
 
         /// <summary>
-        /// The summary of the Jira issue to be created by this notification.  You can use the following placeholders:  * `{ImpactedEntity}`: The entity impacted by the problem or *X* impacted entities.  * `{PID}`: The ID of the reported problem.  * `{ProblemDetailsText}`: All problem event details, including root cause, as a text-formatted string.  * `{ProblemID}`: The display number of the reported problem.  * `{ProblemImpact}`: The [impact level](https://www.dynatrace.com/support/help/shortlink/impact-analysis) of the problem. Possible values are `APPLICATION`, `SERVICE`, and `INFRASTRUCTURE`.  * `{ProblemSeverity}`: The [severity level](https://www.dynatrace.com/support/help/shortlink/event-types) of the problem. Possible values are `AVAILABILITY`, `ERROR`, `PERFORMANCE`, `RESOURCE_CONTENTION`, and `CUSTOM_ALERT`.  * `{ProblemTitle}`: A short description of the problem.  * `{ProblemURL}`: The URL of the problem within Dynatrace.  * `{State}`: The state of the problem. Possible values are `OPEN` and `RESOLVED`.  * `{Tags}`: The list of tags that are defined for all impacted entities, separated by commas
+        /// The summary of the Jira issue to be created by this notification. Type '{' for placeholder suggestions.. #### Available placeholders
+        /// **{ImpactedEntity}**: A short description of the problem and impacted entity (or multiple impacted entities).
+        /// 
+        /// **{ImpactedEntityNames}**: The entity impacted by the problem.
+        /// 
+        /// **{NamesOfImpactedEntities}**: The names of all entities that are impacted by the problem.
+        /// 
+        /// **{PID}**: Unique system identifier of the reported problem.
+        /// 
+        /// **{ProblemID}**: Display number of the reported problem.
+        /// 
+        /// **{ProblemImpact}**: Impact level of the problem. Possible values are APPLICATION, SERVICE, or INFRASTRUCTURE.
+        /// 
+        /// **{ProblemSeverity}**: Severity level of the problem. Possible values are AVAILABILITY, ERROR, PERFORMANCE, RESOURCE_CONTENTION, or CUSTOM_ALERT.
+        /// 
+        /// **{ProblemTitle}**: Short description of the problem.
+        /// 
+        /// **{ProblemURL}**: URL of the problem within Dynatrace.
+        /// 
+        /// **{State}**: Problem state. Possible values are OPEN or RESOLVED.
+        /// 
+        /// **{Tags}**: Comma separated list of tags that are defined for all impacted entities. To refer to the value of a specific tag, specify the tag's key in square brackets: **{Tags[key]}**. If the tag does not have any assigned value, the placeholder will be replaced by an empty string. The placeholder will not be replaced if the tag key does not exist.
         /// </summary>
         [Input("summary", required: true)]
         public Input<string> Summary { get; set; } = null!;
 
         /// <summary>
-        /// The URL of the Jira API endpoint
+        /// The URL of the Jira API endpoint.
         /// </summary>
         [Input("url", required: true)]
         public Input<string> Url { get; set; } = null!;
 
         /// <summary>
-        /// The username of the Jira profile
+        /// The username of the Jira profile.
         /// </summary>
         [Input("username", required: true)]
         public Input<string> Username { get; set; } = null!;
@@ -215,7 +280,7 @@ namespace Pulumiverse.Dynatrace
     public sealed class JiraNotificationState : global::Pulumi.ResourceArgs
     {
         /// <summary>
-        /// The configuration is enabled (`True`) or disabled (`False`)
+        /// This setting is enabled (`True`) or disabled (`False`)
         /// </summary>
         [Input("active")]
         public Input<bool>? Active { get; set; }
@@ -237,13 +302,16 @@ namespace Pulumiverse.Dynatrace
         }
 
         /// <summary>
-        /// The description of the Jira issue to be created by this notification.   You can use same placeholders as in issue summary
+        /// The description of the Jira issue to be created by this notification. Type '{' for placeholder suggestions.. #### Available placeholders
+        /// **{ImpactedEntity}**: A short description of the problem and impacted entity (or multiple impacted entities).
         /// </summary>
         [Input("description")]
         public Input<string>? Description { get; set; }
 
         /// <summary>
-        /// The type of the Jira issue to be created by this notification
+        /// The type of the Jira issue to be created by this notification.
+        /// 
+        /// To find all available issue types, or to create your own issue type, within JIRA go to Options &gt; Issues.
         /// </summary>
         [Input("issueType")]
         public Input<string>? IssueType { get; set; }
@@ -255,7 +323,7 @@ namespace Pulumiverse.Dynatrace
         public Input<string>? LegacyId { get; set; }
 
         /// <summary>
-        /// The name of the notification configuration
+        /// The name of the notification configuration.
         /// </summary>
         [Input("name")]
         public Input<string>? Name { get; set; }
@@ -267,25 +335,46 @@ namespace Pulumiverse.Dynatrace
         public Input<string>? Profile { get; set; }
 
         /// <summary>
-        /// The project key of the Jira issue to be created by this notification
+        /// The project key of the Jira issue to be created by this notification.
         /// </summary>
         [Input("projectKey")]
         public Input<string>? ProjectKey { get; set; }
 
         /// <summary>
-        /// The summary of the Jira issue to be created by this notification.  You can use the following placeholders:  * `{ImpactedEntity}`: The entity impacted by the problem or *X* impacted entities.  * `{PID}`: The ID of the reported problem.  * `{ProblemDetailsText}`: All problem event details, including root cause, as a text-formatted string.  * `{ProblemID}`: The display number of the reported problem.  * `{ProblemImpact}`: The [impact level](https://www.dynatrace.com/support/help/shortlink/impact-analysis) of the problem. Possible values are `APPLICATION`, `SERVICE`, and `INFRASTRUCTURE`.  * `{ProblemSeverity}`: The [severity level](https://www.dynatrace.com/support/help/shortlink/event-types) of the problem. Possible values are `AVAILABILITY`, `ERROR`, `PERFORMANCE`, `RESOURCE_CONTENTION`, and `CUSTOM_ALERT`.  * `{ProblemTitle}`: A short description of the problem.  * `{ProblemURL}`: The URL of the problem within Dynatrace.  * `{State}`: The state of the problem. Possible values are `OPEN` and `RESOLVED`.  * `{Tags}`: The list of tags that are defined for all impacted entities, separated by commas
+        /// The summary of the Jira issue to be created by this notification. Type '{' for placeholder suggestions.. #### Available placeholders
+        /// **{ImpactedEntity}**: A short description of the problem and impacted entity (or multiple impacted entities).
+        /// 
+        /// **{ImpactedEntityNames}**: The entity impacted by the problem.
+        /// 
+        /// **{NamesOfImpactedEntities}**: The names of all entities that are impacted by the problem.
+        /// 
+        /// **{PID}**: Unique system identifier of the reported problem.
+        /// 
+        /// **{ProblemID}**: Display number of the reported problem.
+        /// 
+        /// **{ProblemImpact}**: Impact level of the problem. Possible values are APPLICATION, SERVICE, or INFRASTRUCTURE.
+        /// 
+        /// **{ProblemSeverity}**: Severity level of the problem. Possible values are AVAILABILITY, ERROR, PERFORMANCE, RESOURCE_CONTENTION, or CUSTOM_ALERT.
+        /// 
+        /// **{ProblemTitle}**: Short description of the problem.
+        /// 
+        /// **{ProblemURL}**: URL of the problem within Dynatrace.
+        /// 
+        /// **{State}**: Problem state. Possible values are OPEN or RESOLVED.
+        /// 
+        /// **{Tags}**: Comma separated list of tags that are defined for all impacted entities. To refer to the value of a specific tag, specify the tag's key in square brackets: **{Tags[key]}**. If the tag does not have any assigned value, the placeholder will be replaced by an empty string. The placeholder will not be replaced if the tag key does not exist.
         /// </summary>
         [Input("summary")]
         public Input<string>? Summary { get; set; }
 
         /// <summary>
-        /// The URL of the Jira API endpoint
+        /// The URL of the Jira API endpoint.
         /// </summary>
         [Input("url")]
         public Input<string>? Url { get; set; }
 
         /// <summary>
-        /// The username of the Jira profile
+        /// The username of the Jira profile.
         /// </summary>
         [Input("username")]
         public Input<string>? Username { get; set; }

@@ -13,6 +13,18 @@ namespace Pulumiverse.Dynatrace.Inputs
 
     public sealed class HttpMonitorScriptScriptGetArgs : global::Pulumi.ResourceArgs
     {
+        [Input("customProperties")]
+        private InputList<Inputs.HttpMonitorScriptScriptCustomPropertyGetArgs>? _customProperties;
+
+        /// <summary>
+        /// [Preview only](https://docs.dynatrace.com/docs/whats-new/preview-releases). A set of custom properties assigned to the monitor. More information can be found [here](https://docs.dynatrace.com/docs/observe/digital-experience/synthetic-monitoring/http-monitors-classic/advanced-http-monitor-settings-classic).
+        /// </summary>
+        public InputList<Inputs.HttpMonitorScriptScriptCustomPropertyGetArgs> CustomProperties
+        {
+            get => _customProperties ?? (_customProperties = new InputList<Inputs.HttpMonitorScriptScriptCustomPropertyGetArgs>());
+            set => _customProperties = value;
+        }
+
         [Input("requests", required: true)]
         private InputList<Inputs.HttpMonitorScriptScriptRequestGetArgs>? _requests;
 

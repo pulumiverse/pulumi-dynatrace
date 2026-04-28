@@ -10,6 +10,73 @@ using Pulumi;
 
 namespace Pulumiverse.Dynatrace
 {
+    /// <summary>
+    /// &gt; This resource requires the API token scopes **Read settings** (`settings.read`) and **Write settings** (`settings.write`)
+    /// 
+    /// ## Dynatrace Documentation
+    /// 
+    /// - Cloud application and workload detection - https://www.dynatrace.com/support/help/platform-modules/infrastructure-monitoring/process-groups/configuration/cloud-app-and-workload-detection
+    /// 
+    /// - Settings API - https://www.dynatrace.com/support/help/dynatrace-api/environment-api/settings (schemaId: `builtin:process-group.cloud-application-workload-detection`)
+    /// 
+    /// ## Export Example Usage
+    /// 
+    /// - `terraform-provider-dynatrace -export dynatrace.CloudappWorkloaddetection` downloads all existing workload detection configuration
+    /// 
+    /// The full documentation of the export feature is available [here](https://dt-url.net/h203qmc).
+    /// 
+    /// ## Resource Example Usage
+    /// 
+    /// ```csharp
+    /// using System.Collections.Generic;
+    /// using System.Linq;
+    /// using Pulumi;
+    /// using Dynatrace = Pulumiverse.Dynatrace;
+    /// 
+    /// return await Deployment.RunAsync(() =&gt; 
+    /// {
+    ///     // ID vu9U3hXa3q0AAAABADpidWlsdGluOnByb2Nlc3MtZ3JvdXAuY2xvdWQtYXBwbGljYXRpb24td29ya2xvYWQtZGV0ZWN0aW9uAAZ0ZW5hbnQABnRlbmFudAAkYjcwNmY4NWYtNWFkNC0zY2ZmLWJhYzMtZDg4YzFmNTkzMjgwvu9U3hXa3q0
+    ///     var cloudAppWorkloadDetection = new Dynatrace.CloudappWorkloaddetection("cloud_app_workload_detection", new()
+    ///     {
+    ///         CloudFoundry = new Dynatrace.Inputs.CloudappWorkloaddetectionCloudFoundryArgs
+    ///         {
+    ///             Enabled = false,
+    ///         },
+    ///         Docker = new Dynatrace.Inputs.CloudappWorkloaddetectionDockerArgs
+    ///         {
+    ///             Enabled = true,
+    ///         },
+    ///         Kubernetes = new Dynatrace.Inputs.CloudappWorkloaddetectionKubernetesArgs
+    ///         {
+    ///             Enabled = true,
+    ///             Filters = new Dynatrace.Inputs.CloudappWorkloaddetectionKubernetesFiltersArgs
+    ///             {
+    ///                 Filters = new[]
+    ///                 {
+    ///                     new Dynatrace.Inputs.CloudappWorkloaddetectionKubernetesFiltersFilterArgs
+    ///                     {
+    ///                         Enabled = false,
+    ///                         InclusionToggles = new Dynatrace.Inputs.CloudappWorkloaddetectionKubernetesFiltersFilterInclusionTogglesArgs
+    ///                         {
+    ///                             IncBasepod = false,
+    ///                             IncContainer = true,
+    ///                             IncNamespace = true,
+    ///                             IncProduct = true,
+    ///                             IncStage = true,
+    ///                         },
+    ///                         MatchFilter = new Dynatrace.Inputs.CloudappWorkloaddetectionKubernetesFiltersFilterMatchFilterArgs
+    ///                         {
+    ///                             MatchOperator = "EXISTS",
+    ///                         },
+    ///                     },
+    ///                 },
+    ///             },
+    ///         },
+    ///     });
+    /// 
+    /// });
+    /// ```
+    /// </summary>
     [DynatraceResourceType("dynatrace:index/cloudappWorkloaddetection:CloudappWorkloaddetection")]
     public partial class CloudappWorkloaddetection : global::Pulumi.CustomResource
     {

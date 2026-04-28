@@ -12,6 +12,19 @@ import (
 	"github.com/pulumiverse/pulumi-dynatrace/sdk/go/dynatrace/internal"
 )
 
+// > This resource requires the API token scopes  **Read SLO** (`slo.read`), **Write SLO** (`slo.write`), **Read settings** (`settings.read`) and **Write settings** (`settings.write`)
+//
+// ## Dynatrace Documentation
+//
+// - Service-level objectives - https://www.dynatrace.com/support/help/how-to-use-dynatrace/cloud-automation/service-level-objectives
+//
+// - Settings API - https://www.dynatrace.com/support/help/dynatrace-api/environment-api/settings (schemaId: `builtin:monitoring.slo`)
+//
+// ## Export Example Usage
+//
+// - `terraform-provider-dynatrace -export SloV2` downloads all existing service-level objectives configuration
+//
+// The full documentation of the export feature is available [here](https://dt-url.net/h203qmc).
 type SloV2 struct {
 	pulumi.CustomResourceState
 

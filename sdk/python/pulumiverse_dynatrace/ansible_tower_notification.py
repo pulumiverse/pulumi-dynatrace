@@ -30,15 +30,21 @@ class AnsibleTowerNotificationArgs:
                  password: Optional[pulumi.Input[_builtins.str]] = None):
         """
         The set of arguments for constructing a AnsibleTowerNotification resource.
-        :param pulumi.Input[_builtins.str] custom_message: The custom message of the notification. This message will be displayed in the extra variables **Message** field of your job template. You can use the following placeholders:  * `{ImpactedEntities}`: Details about the entities impacted by the problem in form of a JSON array.  * `{ImpactedEntity}`: The entity impacted by the problem or *X* impacted entities.  * `{PID}`: The ID of the reported problem.  * `{ProblemDetailsText}`: All problem event details, including root cause, as a text-formatted string.  * `{ProblemID}`: The display number of the reported problem.  * `{ProblemImpact}`: The [impact level](https://www.dynatrace.com/support/help/shortlink/impact-analysis) of the problem. Possible values are `APPLICATION`, `SERVICE`, and `INFRASTRUCTURE`.  * `{ProblemSeverity}`: The [severity level](https://www.dynatrace.com/support/help/shortlink/event-types) of the problem. Possible values are `AVAILABILITY`, `ERROR`, `PERFORMANCE`, `RESOURCE_CONTENTION`, and `CUSTOM_ALERT`.  * `{ProblemTitle}`: A short description of the problem.  * `{ProblemURL}`: The URL of the problem within Dynatrace.  * `{State}`: The state of the problem. Possible values are `OPEN` and `RESOLVED`.  * `{Tags}`: The list of tags that are defined for all impacted entities, separated by commas
-        :param pulumi.Input[_builtins.str] job_template_url: The URL of the target Ansible Tower job template
+
+        :param pulumi.Input[_builtins.str] custom_message: This message will be displayed in the Extra Variables **Message** field of your job template. Type '{' for placeholder suggestions.. #### Available placeholders
+               **{ImpactedEntities}**: Details about the entities impacted by the problem in form of a json array.
+        :param pulumi.Input[_builtins.str] job_template_url: The URL of the target job template.
+               
+               For example, https://<Ansible server name>/#/templates/job_template/<JobTemplateID>
+               
+               **Note:** Be sure to select the **Prompt on Launch** option in the Extra Variables section of your job template configuration.
         :param pulumi.Input[_builtins.str] profile: The ID of the associated alerting profile.
-        :param pulumi.Input[_builtins.str] username: The username of the Ansible Tower account
-        :param pulumi.Input[_builtins.bool] active: The notification is active (`true`) or inactive (`false`). Default is `false`.
-        :param pulumi.Input[_builtins.bool] insecure: Accept any, including self-signed and invalid, SSL certificate (`true`) or only trusted (`false`) certificates. Default is `false`.
+        :param pulumi.Input[_builtins.str] username: Account username.
+        :param pulumi.Input[_builtins.bool] active: This setting is enabled (`true`) or disabled (`false`)
+        :param pulumi.Input[_builtins.bool] insecure: Accept any SSL certificate (including self-signed and invalid certificates)
         :param pulumi.Input[_builtins.str] legacy_id: The ID of these settings when referred to from resources requiring the REST API V1 keys
-        :param pulumi.Input[_builtins.str] name: The display name within the Dynatrace WebUI.
-        :param pulumi.Input[_builtins.str] password: The password for the Ansible Tower account
+        :param pulumi.Input[_builtins.str] name: The name of the notification configuration.
+        :param pulumi.Input[_builtins.str] password: Account password.
         """
         pulumi.set(__self__, "custom_message", custom_message)
         pulumi.set(__self__, "job_template_url", job_template_url)
@@ -59,7 +65,8 @@ class AnsibleTowerNotificationArgs:
     @pulumi.getter(name="customMessage")
     def custom_message(self) -> pulumi.Input[_builtins.str]:
         """
-        The custom message of the notification. This message will be displayed in the extra variables **Message** field of your job template. You can use the following placeholders:  * `{ImpactedEntities}`: Details about the entities impacted by the problem in form of a JSON array.  * `{ImpactedEntity}`: The entity impacted by the problem or *X* impacted entities.  * `{PID}`: The ID of the reported problem.  * `{ProblemDetailsText}`: All problem event details, including root cause, as a text-formatted string.  * `{ProblemID}`: The display number of the reported problem.  * `{ProblemImpact}`: The [impact level](https://www.dynatrace.com/support/help/shortlink/impact-analysis) of the problem. Possible values are `APPLICATION`, `SERVICE`, and `INFRASTRUCTURE`.  * `{ProblemSeverity}`: The [severity level](https://www.dynatrace.com/support/help/shortlink/event-types) of the problem. Possible values are `AVAILABILITY`, `ERROR`, `PERFORMANCE`, `RESOURCE_CONTENTION`, and `CUSTOM_ALERT`.  * `{ProblemTitle}`: A short description of the problem.  * `{ProblemURL}`: The URL of the problem within Dynatrace.  * `{State}`: The state of the problem. Possible values are `OPEN` and `RESOLVED`.  * `{Tags}`: The list of tags that are defined for all impacted entities, separated by commas
+        This message will be displayed in the Extra Variables **Message** field of your job template. Type '{' for placeholder suggestions.. #### Available placeholders
+        **{ImpactedEntities}**: Details about the entities impacted by the problem in form of a json array.
         """
         return pulumi.get(self, "custom_message")
 
@@ -71,7 +78,11 @@ class AnsibleTowerNotificationArgs:
     @pulumi.getter(name="jobTemplateUrl")
     def job_template_url(self) -> pulumi.Input[_builtins.str]:
         """
-        The URL of the target Ansible Tower job template
+        The URL of the target job template.
+
+        For example, https://<Ansible server name>/#/templates/job_template/<JobTemplateID>
+
+        **Note:** Be sure to select the **Prompt on Launch** option in the Extra Variables section of your job template configuration.
         """
         return pulumi.get(self, "job_template_url")
 
@@ -95,7 +106,7 @@ class AnsibleTowerNotificationArgs:
     @pulumi.getter
     def username(self) -> pulumi.Input[_builtins.str]:
         """
-        The username of the Ansible Tower account
+        Account username.
         """
         return pulumi.get(self, "username")
 
@@ -107,7 +118,7 @@ class AnsibleTowerNotificationArgs:
     @pulumi.getter
     def active(self) -> Optional[pulumi.Input[_builtins.bool]]:
         """
-        The notification is active (`true`) or inactive (`false`). Default is `false`.
+        This setting is enabled (`true`) or disabled (`false`)
         """
         return pulumi.get(self, "active")
 
@@ -119,7 +130,7 @@ class AnsibleTowerNotificationArgs:
     @pulumi.getter
     def insecure(self) -> Optional[pulumi.Input[_builtins.bool]]:
         """
-        Accept any, including self-signed and invalid, SSL certificate (`true`) or only trusted (`false`) certificates. Default is `false`.
+        Accept any SSL certificate (including self-signed and invalid certificates)
         """
         return pulumi.get(self, "insecure")
 
@@ -143,7 +154,7 @@ class AnsibleTowerNotificationArgs:
     @pulumi.getter
     def name(self) -> Optional[pulumi.Input[_builtins.str]]:
         """
-        The display name within the Dynatrace WebUI.
+        The name of the notification configuration.
         """
         return pulumi.get(self, "name")
 
@@ -155,7 +166,7 @@ class AnsibleTowerNotificationArgs:
     @pulumi.getter
     def password(self) -> Optional[pulumi.Input[_builtins.str]]:
         """
-        The password for the Ansible Tower account
+        Account password.
         """
         return pulumi.get(self, "password")
 
@@ -178,15 +189,21 @@ class _AnsibleTowerNotificationState:
                  username: Optional[pulumi.Input[_builtins.str]] = None):
         """
         Input properties used for looking up and filtering AnsibleTowerNotification resources.
-        :param pulumi.Input[_builtins.bool] active: The notification is active (`true`) or inactive (`false`). Default is `false`.
-        :param pulumi.Input[_builtins.str] custom_message: The custom message of the notification. This message will be displayed in the extra variables **Message** field of your job template. You can use the following placeholders:  * `{ImpactedEntities}`: Details about the entities impacted by the problem in form of a JSON array.  * `{ImpactedEntity}`: The entity impacted by the problem or *X* impacted entities.  * `{PID}`: The ID of the reported problem.  * `{ProblemDetailsText}`: All problem event details, including root cause, as a text-formatted string.  * `{ProblemID}`: The display number of the reported problem.  * `{ProblemImpact}`: The [impact level](https://www.dynatrace.com/support/help/shortlink/impact-analysis) of the problem. Possible values are `APPLICATION`, `SERVICE`, and `INFRASTRUCTURE`.  * `{ProblemSeverity}`: The [severity level](https://www.dynatrace.com/support/help/shortlink/event-types) of the problem. Possible values are `AVAILABILITY`, `ERROR`, `PERFORMANCE`, `RESOURCE_CONTENTION`, and `CUSTOM_ALERT`.  * `{ProblemTitle}`: A short description of the problem.  * `{ProblemURL}`: The URL of the problem within Dynatrace.  * `{State}`: The state of the problem. Possible values are `OPEN` and `RESOLVED`.  * `{Tags}`: The list of tags that are defined for all impacted entities, separated by commas
-        :param pulumi.Input[_builtins.bool] insecure: Accept any, including self-signed and invalid, SSL certificate (`true`) or only trusted (`false`) certificates. Default is `false`.
-        :param pulumi.Input[_builtins.str] job_template_url: The URL of the target Ansible Tower job template
+
+        :param pulumi.Input[_builtins.bool] active: This setting is enabled (`true`) or disabled (`false`)
+        :param pulumi.Input[_builtins.str] custom_message: This message will be displayed in the Extra Variables **Message** field of your job template. Type '{' for placeholder suggestions.. #### Available placeholders
+               **{ImpactedEntities}**: Details about the entities impacted by the problem in form of a json array.
+        :param pulumi.Input[_builtins.bool] insecure: Accept any SSL certificate (including self-signed and invalid certificates)
+        :param pulumi.Input[_builtins.str] job_template_url: The URL of the target job template.
+               
+               For example, https://<Ansible server name>/#/templates/job_template/<JobTemplateID>
+               
+               **Note:** Be sure to select the **Prompt on Launch** option in the Extra Variables section of your job template configuration.
         :param pulumi.Input[_builtins.str] legacy_id: The ID of these settings when referred to from resources requiring the REST API V1 keys
-        :param pulumi.Input[_builtins.str] name: The display name within the Dynatrace WebUI.
-        :param pulumi.Input[_builtins.str] password: The password for the Ansible Tower account
+        :param pulumi.Input[_builtins.str] name: The name of the notification configuration.
+        :param pulumi.Input[_builtins.str] password: Account password.
         :param pulumi.Input[_builtins.str] profile: The ID of the associated alerting profile.
-        :param pulumi.Input[_builtins.str] username: The username of the Ansible Tower account
+        :param pulumi.Input[_builtins.str] username: Account username.
         """
         if active is not None:
             pulumi.set(__self__, "active", active)
@@ -211,7 +228,7 @@ class _AnsibleTowerNotificationState:
     @pulumi.getter
     def active(self) -> Optional[pulumi.Input[_builtins.bool]]:
         """
-        The notification is active (`true`) or inactive (`false`). Default is `false`.
+        This setting is enabled (`true`) or disabled (`false`)
         """
         return pulumi.get(self, "active")
 
@@ -223,7 +240,8 @@ class _AnsibleTowerNotificationState:
     @pulumi.getter(name="customMessage")
     def custom_message(self) -> Optional[pulumi.Input[_builtins.str]]:
         """
-        The custom message of the notification. This message will be displayed in the extra variables **Message** field of your job template. You can use the following placeholders:  * `{ImpactedEntities}`: Details about the entities impacted by the problem in form of a JSON array.  * `{ImpactedEntity}`: The entity impacted by the problem or *X* impacted entities.  * `{PID}`: The ID of the reported problem.  * `{ProblemDetailsText}`: All problem event details, including root cause, as a text-formatted string.  * `{ProblemID}`: The display number of the reported problem.  * `{ProblemImpact}`: The [impact level](https://www.dynatrace.com/support/help/shortlink/impact-analysis) of the problem. Possible values are `APPLICATION`, `SERVICE`, and `INFRASTRUCTURE`.  * `{ProblemSeverity}`: The [severity level](https://www.dynatrace.com/support/help/shortlink/event-types) of the problem. Possible values are `AVAILABILITY`, `ERROR`, `PERFORMANCE`, `RESOURCE_CONTENTION`, and `CUSTOM_ALERT`.  * `{ProblemTitle}`: A short description of the problem.  * `{ProblemURL}`: The URL of the problem within Dynatrace.  * `{State}`: The state of the problem. Possible values are `OPEN` and `RESOLVED`.  * `{Tags}`: The list of tags that are defined for all impacted entities, separated by commas
+        This message will be displayed in the Extra Variables **Message** field of your job template. Type '{' for placeholder suggestions.. #### Available placeholders
+        **{ImpactedEntities}**: Details about the entities impacted by the problem in form of a json array.
         """
         return pulumi.get(self, "custom_message")
 
@@ -235,7 +253,7 @@ class _AnsibleTowerNotificationState:
     @pulumi.getter
     def insecure(self) -> Optional[pulumi.Input[_builtins.bool]]:
         """
-        Accept any, including self-signed and invalid, SSL certificate (`true`) or only trusted (`false`) certificates. Default is `false`.
+        Accept any SSL certificate (including self-signed and invalid certificates)
         """
         return pulumi.get(self, "insecure")
 
@@ -247,7 +265,11 @@ class _AnsibleTowerNotificationState:
     @pulumi.getter(name="jobTemplateUrl")
     def job_template_url(self) -> Optional[pulumi.Input[_builtins.str]]:
         """
-        The URL of the target Ansible Tower job template
+        The URL of the target job template.
+
+        For example, https://<Ansible server name>/#/templates/job_template/<JobTemplateID>
+
+        **Note:** Be sure to select the **Prompt on Launch** option in the Extra Variables section of your job template configuration.
         """
         return pulumi.get(self, "job_template_url")
 
@@ -271,7 +293,7 @@ class _AnsibleTowerNotificationState:
     @pulumi.getter
     def name(self) -> Optional[pulumi.Input[_builtins.str]]:
         """
-        The display name within the Dynatrace WebUI.
+        The name of the notification configuration.
         """
         return pulumi.get(self, "name")
 
@@ -283,7 +305,7 @@ class _AnsibleTowerNotificationState:
     @pulumi.getter
     def password(self) -> Optional[pulumi.Input[_builtins.str]]:
         """
-        The password for the Ansible Tower account
+        Account password.
         """
         return pulumi.get(self, "password")
 
@@ -307,7 +329,7 @@ class _AnsibleTowerNotificationState:
     @pulumi.getter
     def username(self) -> Optional[pulumi.Input[_builtins.str]]:
         """
-        The username of the Ansible Tower account
+        Account username.
         """
         return pulumi.get(self, "username")
 
@@ -333,18 +355,37 @@ class AnsibleTowerNotification(pulumi.CustomResource):
                  username: Optional[pulumi.Input[_builtins.str]] = None,
                  __props__=None):
         """
-        Create a AnsibleTowerNotification resource with the given unique name, props, and options.
+        > This resource requires the API token scopes **Read settings** (`settings.read`) and **Write settings** (`settings.write`)
+
+        ## Dynatrace Documentation
+
+        - Ansible Tower notifications - https://www.dynatrace.com/support/help/setup-and-configuration/integrations/problem-notifications/ansible-tower-integration
+
+        - Settings API - https://www.dynatrace.com/support/help/dynatrace-api/environment-api/settings (schemaId: `builtin:problem.notifications`)
+
+        ## Export Example Usage
+
+        - `terraform-provider-dynatrace -export AnsibleTowerNotification` downloads the existing Problem Notifications for Ansible Tower
+
+        The full documentation of the export feature is available [here](https://dt-url.net/h203qmc).
+
+
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
-        :param pulumi.Input[_builtins.bool] active: The notification is active (`true`) or inactive (`false`). Default is `false`.
-        :param pulumi.Input[_builtins.str] custom_message: The custom message of the notification. This message will be displayed in the extra variables **Message** field of your job template. You can use the following placeholders:  * `{ImpactedEntities}`: Details about the entities impacted by the problem in form of a JSON array.  * `{ImpactedEntity}`: The entity impacted by the problem or *X* impacted entities.  * `{PID}`: The ID of the reported problem.  * `{ProblemDetailsText}`: All problem event details, including root cause, as a text-formatted string.  * `{ProblemID}`: The display number of the reported problem.  * `{ProblemImpact}`: The [impact level](https://www.dynatrace.com/support/help/shortlink/impact-analysis) of the problem. Possible values are `APPLICATION`, `SERVICE`, and `INFRASTRUCTURE`.  * `{ProblemSeverity}`: The [severity level](https://www.dynatrace.com/support/help/shortlink/event-types) of the problem. Possible values are `AVAILABILITY`, `ERROR`, `PERFORMANCE`, `RESOURCE_CONTENTION`, and `CUSTOM_ALERT`.  * `{ProblemTitle}`: A short description of the problem.  * `{ProblemURL}`: The URL of the problem within Dynatrace.  * `{State}`: The state of the problem. Possible values are `OPEN` and `RESOLVED`.  * `{Tags}`: The list of tags that are defined for all impacted entities, separated by commas
-        :param pulumi.Input[_builtins.bool] insecure: Accept any, including self-signed and invalid, SSL certificate (`true`) or only trusted (`false`) certificates. Default is `false`.
-        :param pulumi.Input[_builtins.str] job_template_url: The URL of the target Ansible Tower job template
+        :param pulumi.Input[_builtins.bool] active: This setting is enabled (`true`) or disabled (`false`)
+        :param pulumi.Input[_builtins.str] custom_message: This message will be displayed in the Extra Variables **Message** field of your job template. Type '{' for placeholder suggestions.. #### Available placeholders
+               **{ImpactedEntities}**: Details about the entities impacted by the problem in form of a json array.
+        :param pulumi.Input[_builtins.bool] insecure: Accept any SSL certificate (including self-signed and invalid certificates)
+        :param pulumi.Input[_builtins.str] job_template_url: The URL of the target job template.
+               
+               For example, https://<Ansible server name>/#/templates/job_template/<JobTemplateID>
+               
+               **Note:** Be sure to select the **Prompt on Launch** option in the Extra Variables section of your job template configuration.
         :param pulumi.Input[_builtins.str] legacy_id: The ID of these settings when referred to from resources requiring the REST API V1 keys
-        :param pulumi.Input[_builtins.str] name: The display name within the Dynatrace WebUI.
-        :param pulumi.Input[_builtins.str] password: The password for the Ansible Tower account
+        :param pulumi.Input[_builtins.str] name: The name of the notification configuration.
+        :param pulumi.Input[_builtins.str] password: Account password.
         :param pulumi.Input[_builtins.str] profile: The ID of the associated alerting profile.
-        :param pulumi.Input[_builtins.str] username: The username of the Ansible Tower account
+        :param pulumi.Input[_builtins.str] username: Account username.
         """
         ...
     @overload
@@ -353,7 +394,21 @@ class AnsibleTowerNotification(pulumi.CustomResource):
                  args: AnsibleTowerNotificationArgs,
                  opts: Optional[pulumi.ResourceOptions] = None):
         """
-        Create a AnsibleTowerNotification resource with the given unique name, props, and options.
+        > This resource requires the API token scopes **Read settings** (`settings.read`) and **Write settings** (`settings.write`)
+
+        ## Dynatrace Documentation
+
+        - Ansible Tower notifications - https://www.dynatrace.com/support/help/setup-and-configuration/integrations/problem-notifications/ansible-tower-integration
+
+        - Settings API - https://www.dynatrace.com/support/help/dynatrace-api/environment-api/settings (schemaId: `builtin:problem.notifications`)
+
+        ## Export Example Usage
+
+        - `terraform-provider-dynatrace -export AnsibleTowerNotification` downloads the existing Problem Notifications for Ansible Tower
+
+        The full documentation of the export feature is available [here](https://dt-url.net/h203qmc).
+
+
         :param str resource_name: The name of the resource.
         :param AnsibleTowerNotificationArgs args: The arguments to use to populate this resource's properties.
         :param pulumi.ResourceOptions opts: Options for the resource.
@@ -432,15 +487,20 @@ class AnsibleTowerNotification(pulumi.CustomResource):
         :param str resource_name: The unique name of the resulting resource.
         :param pulumi.Input[str] id: The unique provider ID of the resource to lookup.
         :param pulumi.ResourceOptions opts: Options for the resource.
-        :param pulumi.Input[_builtins.bool] active: The notification is active (`true`) or inactive (`false`). Default is `false`.
-        :param pulumi.Input[_builtins.str] custom_message: The custom message of the notification. This message will be displayed in the extra variables **Message** field of your job template. You can use the following placeholders:  * `{ImpactedEntities}`: Details about the entities impacted by the problem in form of a JSON array.  * `{ImpactedEntity}`: The entity impacted by the problem or *X* impacted entities.  * `{PID}`: The ID of the reported problem.  * `{ProblemDetailsText}`: All problem event details, including root cause, as a text-formatted string.  * `{ProblemID}`: The display number of the reported problem.  * `{ProblemImpact}`: The [impact level](https://www.dynatrace.com/support/help/shortlink/impact-analysis) of the problem. Possible values are `APPLICATION`, `SERVICE`, and `INFRASTRUCTURE`.  * `{ProblemSeverity}`: The [severity level](https://www.dynatrace.com/support/help/shortlink/event-types) of the problem. Possible values are `AVAILABILITY`, `ERROR`, `PERFORMANCE`, `RESOURCE_CONTENTION`, and `CUSTOM_ALERT`.  * `{ProblemTitle}`: A short description of the problem.  * `{ProblemURL}`: The URL of the problem within Dynatrace.  * `{State}`: The state of the problem. Possible values are `OPEN` and `RESOLVED`.  * `{Tags}`: The list of tags that are defined for all impacted entities, separated by commas
-        :param pulumi.Input[_builtins.bool] insecure: Accept any, including self-signed and invalid, SSL certificate (`true`) or only trusted (`false`) certificates. Default is `false`.
-        :param pulumi.Input[_builtins.str] job_template_url: The URL of the target Ansible Tower job template
+        :param pulumi.Input[_builtins.bool] active: This setting is enabled (`true`) or disabled (`false`)
+        :param pulumi.Input[_builtins.str] custom_message: This message will be displayed in the Extra Variables **Message** field of your job template. Type '{' for placeholder suggestions.. #### Available placeholders
+               **{ImpactedEntities}**: Details about the entities impacted by the problem in form of a json array.
+        :param pulumi.Input[_builtins.bool] insecure: Accept any SSL certificate (including self-signed and invalid certificates)
+        :param pulumi.Input[_builtins.str] job_template_url: The URL of the target job template.
+               
+               For example, https://<Ansible server name>/#/templates/job_template/<JobTemplateID>
+               
+               **Note:** Be sure to select the **Prompt on Launch** option in the Extra Variables section of your job template configuration.
         :param pulumi.Input[_builtins.str] legacy_id: The ID of these settings when referred to from resources requiring the REST API V1 keys
-        :param pulumi.Input[_builtins.str] name: The display name within the Dynatrace WebUI.
-        :param pulumi.Input[_builtins.str] password: The password for the Ansible Tower account
+        :param pulumi.Input[_builtins.str] name: The name of the notification configuration.
+        :param pulumi.Input[_builtins.str] password: Account password.
         :param pulumi.Input[_builtins.str] profile: The ID of the associated alerting profile.
-        :param pulumi.Input[_builtins.str] username: The username of the Ansible Tower account
+        :param pulumi.Input[_builtins.str] username: Account username.
         """
         opts = pulumi.ResourceOptions.merge(opts, pulumi.ResourceOptions(id=id))
 
@@ -461,7 +521,7 @@ class AnsibleTowerNotification(pulumi.CustomResource):
     @pulumi.getter
     def active(self) -> pulumi.Output[Optional[_builtins.bool]]:
         """
-        The notification is active (`true`) or inactive (`false`). Default is `false`.
+        This setting is enabled (`true`) or disabled (`false`)
         """
         return pulumi.get(self, "active")
 
@@ -469,7 +529,8 @@ class AnsibleTowerNotification(pulumi.CustomResource):
     @pulumi.getter(name="customMessage")
     def custom_message(self) -> pulumi.Output[_builtins.str]:
         """
-        The custom message of the notification. This message will be displayed in the extra variables **Message** field of your job template. You can use the following placeholders:  * `{ImpactedEntities}`: Details about the entities impacted by the problem in form of a JSON array.  * `{ImpactedEntity}`: The entity impacted by the problem or *X* impacted entities.  * `{PID}`: The ID of the reported problem.  * `{ProblemDetailsText}`: All problem event details, including root cause, as a text-formatted string.  * `{ProblemID}`: The display number of the reported problem.  * `{ProblemImpact}`: The [impact level](https://www.dynatrace.com/support/help/shortlink/impact-analysis) of the problem. Possible values are `APPLICATION`, `SERVICE`, and `INFRASTRUCTURE`.  * `{ProblemSeverity}`: The [severity level](https://www.dynatrace.com/support/help/shortlink/event-types) of the problem. Possible values are `AVAILABILITY`, `ERROR`, `PERFORMANCE`, `RESOURCE_CONTENTION`, and `CUSTOM_ALERT`.  * `{ProblemTitle}`: A short description of the problem.  * `{ProblemURL}`: The URL of the problem within Dynatrace.  * `{State}`: The state of the problem. Possible values are `OPEN` and `RESOLVED`.  * `{Tags}`: The list of tags that are defined for all impacted entities, separated by commas
+        This message will be displayed in the Extra Variables **Message** field of your job template. Type '{' for placeholder suggestions.. #### Available placeholders
+        **{ImpactedEntities}**: Details about the entities impacted by the problem in form of a json array.
         """
         return pulumi.get(self, "custom_message")
 
@@ -477,7 +538,7 @@ class AnsibleTowerNotification(pulumi.CustomResource):
     @pulumi.getter
     def insecure(self) -> pulumi.Output[Optional[_builtins.bool]]:
         """
-        Accept any, including self-signed and invalid, SSL certificate (`true`) or only trusted (`false`) certificates. Default is `false`.
+        Accept any SSL certificate (including self-signed and invalid certificates)
         """
         return pulumi.get(self, "insecure")
 
@@ -485,7 +546,11 @@ class AnsibleTowerNotification(pulumi.CustomResource):
     @pulumi.getter(name="jobTemplateUrl")
     def job_template_url(self) -> pulumi.Output[_builtins.str]:
         """
-        The URL of the target Ansible Tower job template
+        The URL of the target job template.
+
+        For example, https://<Ansible server name>/#/templates/job_template/<JobTemplateID>
+
+        **Note:** Be sure to select the **Prompt on Launch** option in the Extra Variables section of your job template configuration.
         """
         return pulumi.get(self, "job_template_url")
 
@@ -501,7 +566,7 @@ class AnsibleTowerNotification(pulumi.CustomResource):
     @pulumi.getter
     def name(self) -> pulumi.Output[_builtins.str]:
         """
-        The display name within the Dynatrace WebUI.
+        The name of the notification configuration.
         """
         return pulumi.get(self, "name")
 
@@ -509,7 +574,7 @@ class AnsibleTowerNotification(pulumi.CustomResource):
     @pulumi.getter
     def password(self) -> pulumi.Output[Optional[_builtins.str]]:
         """
-        The password for the Ansible Tower account
+        Account password.
         """
         return pulumi.get(self, "password")
 
@@ -525,7 +590,7 @@ class AnsibleTowerNotification(pulumi.CustomResource):
     @pulumi.getter
     def username(self) -> pulumi.Output[_builtins.str]:
         """
-        The username of the Ansible Tower account
+        Account username.
         """
         return pulumi.get(self, "username")
 

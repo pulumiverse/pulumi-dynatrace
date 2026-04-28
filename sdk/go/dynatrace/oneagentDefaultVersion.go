@@ -12,6 +12,7 @@ import (
 	"github.com/pulumiverse/pulumi-dynatrace/sdk/go/dynatrace/internal"
 )
 
+// !> This resource API endpoint has been deprecated.
 type OneagentDefaultVersion struct {
 	pulumi.CustomResourceState
 

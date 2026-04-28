@@ -6,6 +6,21 @@ import * as inputs from "./types/input";
 import * as outputs from "./types/output";
 import * as utilities from "./utilities";
 
+/**
+ * > This resource requires the API token scopes **Read settings** (`settings.read`) and **Write settings** (`settings.write`)
+ *
+ * ## Dynatrace Documentation
+ *
+ * - Log timestamp configuration - https://www.dynatrace.com/support/help/observe-and-explore/logs/log-monitoring/log-monitoring-configuration/timestamp-configuration
+ *
+ * - Settings API - https://www.dynatrace.com/support/help/dynatrace-api/environment-api/settings (schemaId: `builtin:logmonitoring.timestamp-configuration`)
+ *
+ * ## Export Example Usage
+ *
+ * - `terraform-provider-dynatrace -export dynatrace.LogTimestamp` downloads all existing log timestamp/splitting patterns
+ *
+ * The full documentation of the export feature is available [here](https://dt-url.net/h203qmc).
+ */
 export class LogTimestamp extends pulumi.CustomResource {
     /**
      * Get an existing LogTimestamp resource's state with the given name, ID, and optional extra
@@ -59,6 +74,10 @@ export class LogTimestamp extends pulumi.CustomResource {
      */
     declare public readonly insertAfter: pulumi.Output<string>;
     /**
+     * Detect JSON format
+     */
+    declare public readonly jsonConfiguration: pulumi.Output<outputs.LogTimestampJsonConfiguration | undefined>;
+    /**
      * no documentation available
      */
     declare public readonly matchers: pulumi.Output<outputs.LogTimestampMatchers | undefined>;
@@ -66,6 +85,10 @@ export class LogTimestamp extends pulumi.CustomResource {
      * The scope of this setting (HOST, KUBERNETES*CLUSTER, HOST*GROUP). Omit this property if you want to cover the whole environment.
      */
     declare public readonly scope: pulumi.Output<string | undefined>;
+    /**
+     * Don't parse timestamps in lines starting with white character
+     */
+    declare public readonly skipIndentedLines: pulumi.Output<boolean | undefined>;
     /**
      * Timezone
      */
@@ -90,8 +113,10 @@ export class LogTimestamp extends pulumi.CustomResource {
             resourceInputs["enabled"] = state?.enabled;
             resourceInputs["entryBoundary"] = state?.entryBoundary;
             resourceInputs["insertAfter"] = state?.insertAfter;
+            resourceInputs["jsonConfiguration"] = state?.jsonConfiguration;
             resourceInputs["matchers"] = state?.matchers;
             resourceInputs["scope"] = state?.scope;
+            resourceInputs["skipIndentedLines"] = state?.skipIndentedLines;
             resourceInputs["timezone"] = state?.timezone;
         } else {
             const args = argsOrState as LogTimestampArgs | undefined;
@@ -113,8 +138,10 @@ export class LogTimestamp extends pulumi.CustomResource {
             resourceInputs["enabled"] = args?.enabled;
             resourceInputs["entryBoundary"] = args?.entryBoundary;
             resourceInputs["insertAfter"] = args?.insertAfter;
+            resourceInputs["jsonConfiguration"] = args?.jsonConfiguration;
             resourceInputs["matchers"] = args?.matchers;
             resourceInputs["scope"] = args?.scope;
+            resourceInputs["skipIndentedLines"] = args?.skipIndentedLines;
             resourceInputs["timezone"] = args?.timezone;
         }
         opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts);
@@ -151,6 +178,10 @@ export interface LogTimestampState {
      */
     insertAfter?: pulumi.Input<string>;
     /**
+     * Detect JSON format
+     */
+    jsonConfiguration?: pulumi.Input<inputs.LogTimestampJsonConfiguration>;
+    /**
      * no documentation available
      */
     matchers?: pulumi.Input<inputs.LogTimestampMatchers>;
@@ -158,6 +189,10 @@ export interface LogTimestampState {
      * The scope of this setting (HOST, KUBERNETES*CLUSTER, HOST*GROUP). Omit this property if you want to cover the whole environment.
      */
     scope?: pulumi.Input<string>;
+    /**
+     * Don't parse timestamps in lines starting with white character
+     */
+    skipIndentedLines?: pulumi.Input<boolean>;
     /**
      * Timezone
      */
@@ -193,6 +228,10 @@ export interface LogTimestampArgs {
      */
     insertAfter?: pulumi.Input<string>;
     /**
+     * Detect JSON format
+     */
+    jsonConfiguration?: pulumi.Input<inputs.LogTimestampJsonConfiguration>;
+    /**
      * no documentation available
      */
     matchers?: pulumi.Input<inputs.LogTimestampMatchers>;
@@ -200,6 +239,10 @@ export interface LogTimestampArgs {
      * The scope of this setting (HOST, KUBERNETES*CLUSTER, HOST*GROUP). Omit this property if you want to cover the whole environment.
      */
     scope?: pulumi.Input<string>;
+    /**
+     * Don't parse timestamps in lines starting with white character
+     */
+    skipIndentedLines?: pulumi.Input<boolean>;
     /**
      * Timezone
      */

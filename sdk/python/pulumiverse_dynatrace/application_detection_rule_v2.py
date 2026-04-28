@@ -26,6 +26,7 @@ class ApplicationDetectionRuleV2Args:
                  insert_after: Optional[pulumi.Input[_builtins.str]] = None):
         """
         The set of arguments for constructing a ApplicationDetectionRuleV2 resource.
+
         :param pulumi.Input[_builtins.str] application_id: Select an existing application or create a new one.
         :param pulumi.Input[_builtins.str] matcher: Possible Values: `DOMAIN_CONTAINS`, `DOMAIN_ENDS_WITH`, `DOMAIN_EQUALS`, `DOMAIN_MATCHES`, `DOMAIN_STARTS_WITH`, `URL_CONTAINS`, `URL_ENDS_WITH`, `URL_EQUALS`, `URL_STARTS_WITH`
         :param pulumi.Input[_builtins.str] pattern: Pattern
@@ -111,6 +112,7 @@ class _ApplicationDetectionRuleV2State:
                  pattern: Optional[pulumi.Input[_builtins.str]] = None):
         """
         Input properties used for looking up and filtering ApplicationDetectionRuleV2 resources.
+
         :param pulumi.Input[_builtins.str] application_id: Select an existing application or create a new one.
         :param pulumi.Input[_builtins.str] description: (v1.274) Add a description for your rule
         :param pulumi.Input[_builtins.str] insert_after: Because this resource allows for ordering you may specify the ID of the resource instance that comes before this instance regarding order. If not specified when creating the setting will be added to the end of the list. If not specified during update the order will remain untouched
@@ -202,7 +204,23 @@ class ApplicationDetectionRuleV2(pulumi.CustomResource):
                  pattern: Optional[pulumi.Input[_builtins.str]] = None,
                  __props__=None):
         """
-        Create a ApplicationDetectionRuleV2 resource with the given unique name, props, and options.
+        !> This resource does not handle ordering of rules. If ordering is required, please use ApplicationDetectionRule instead.
+
+        > This resource requires the API token scopes **Read settings** (`settings.read`) and **Write settings** (`settings.write`)
+
+        ## Dynatrace Documentation
+
+        - Check application detection rules - https://www.dynatrace.com/support/help/platform-modules/digital-experience/web-applications/additional-configuration/application-detection-rules
+
+        - Settings API - https://www.dynatrace.com/support/help/dynatrace-api/environment-api/settings (schemaId: `builtin:rum.web.app-detection`)
+
+        ## Export Example Usage
+
+        - `terraform-provider-dynatrace -export ApplicationDetectionRuleV2` downloads all existing application detection rule configuration
+
+        The full documentation of the export feature is available [here](https://dt-url.net/h203qmc).
+
+
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[_builtins.str] application_id: Select an existing application or create a new one.
@@ -218,7 +236,23 @@ class ApplicationDetectionRuleV2(pulumi.CustomResource):
                  args: ApplicationDetectionRuleV2Args,
                  opts: Optional[pulumi.ResourceOptions] = None):
         """
-        Create a ApplicationDetectionRuleV2 resource with the given unique name, props, and options.
+        !> This resource does not handle ordering of rules. If ordering is required, please use ApplicationDetectionRule instead.
+
+        > This resource requires the API token scopes **Read settings** (`settings.read`) and **Write settings** (`settings.write`)
+
+        ## Dynatrace Documentation
+
+        - Check application detection rules - https://www.dynatrace.com/support/help/platform-modules/digital-experience/web-applications/additional-configuration/application-detection-rules
+
+        - Settings API - https://www.dynatrace.com/support/help/dynatrace-api/environment-api/settings (schemaId: `builtin:rum.web.app-detection`)
+
+        ## Export Example Usage
+
+        - `terraform-provider-dynatrace -export ApplicationDetectionRuleV2` downloads all existing application detection rule configuration
+
+        The full documentation of the export feature is available [here](https://dt-url.net/h203qmc).
+
+
         :param str resource_name: The name of the resource.
         :param ApplicationDetectionRuleV2Args args: The arguments to use to populate this resource's properties.
         :param pulumi.ResourceOptions opts: Options for the resource.

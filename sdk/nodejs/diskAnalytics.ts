@@ -4,6 +4,21 @@
 import * as pulumi from "@pulumi/pulumi";
 import * as utilities from "./utilities";
 
+/**
+ * > This resource requires the API token scopes **Read settings** (`settings.read`) and **Write settings** (`settings.write`)
+ *
+ * ## Dynatrace Documentation
+ *
+ * - Disk analytics - https://www.dynatrace.com/support/help/platform-modules/infrastructure-monitoring/hosts/monitoring/host-monitoring/disk-analytics
+ *
+ * - Settings API - https://www.dynatrace.com/support/help/dynatrace-api/environment-api/settings (schemaId: `builtin:disk.analytics.extension`)
+ *
+ * ## Export Example Usage
+ *
+ * - `terraform-provider-dynatrace -export dynatrace.DiskAnalytics` downloads all existing Disk Analytics extension configuration
+ *
+ * The full documentation of the export feature is available [here](https://dt-url.net/h203qmc).
+ */
 export class DiskAnalytics extends pulumi.CustomResource {
     /**
      * Get an existing DiskAnalytics resource's state with the given name, ID, and optional extra
@@ -33,7 +48,7 @@ export class DiskAnalytics extends pulumi.CustomResource {
     }
 
     /**
-     * The Disk Analytics feature requires an extension to be added to your environment. The Disk Analytics extension consumes custom metrics and [Davis data units](https://www.dynatrace.com/support/help/shortlink/metric-cost-calculation).
+     * The Disk Analytics feature requires an extension to be added to your environment. You can add the Disk Analytics extension to your environment from [Dynatrace Hub](https://www.terraform.io/ui/hub/ext/com.dynatrace.extension.disk-devices#information). The Disk Analytics extension consumes custom metrics and [Davis data units](https://www.dynatrace.com/support/help/shortlink/metric-cost-calculation).
      */
     declare public readonly enabled: pulumi.Output<boolean>;
     /**
@@ -77,7 +92,7 @@ export class DiskAnalytics extends pulumi.CustomResource {
  */
 export interface DiskAnalyticsState {
     /**
-     * The Disk Analytics feature requires an extension to be added to your environment. The Disk Analytics extension consumes custom metrics and [Davis data units](https://www.dynatrace.com/support/help/shortlink/metric-cost-calculation).
+     * The Disk Analytics feature requires an extension to be added to your environment. You can add the Disk Analytics extension to your environment from [Dynatrace Hub](https://www.terraform.io/ui/hub/ext/com.dynatrace.extension.disk-devices#information). The Disk Analytics extension consumes custom metrics and [Davis data units](https://www.dynatrace.com/support/help/shortlink/metric-cost-calculation).
      */
     enabled?: pulumi.Input<boolean>;
     /**
@@ -91,7 +106,7 @@ export interface DiskAnalyticsState {
  */
 export interface DiskAnalyticsArgs {
     /**
-     * The Disk Analytics feature requires an extension to be added to your environment. The Disk Analytics extension consumes custom metrics and [Davis data units](https://www.dynatrace.com/support/help/shortlink/metric-cost-calculation).
+     * The Disk Analytics feature requires an extension to be added to your environment. You can add the Disk Analytics extension to your environment from [Dynatrace Hub](https://www.terraform.io/ui/hub/ext/com.dynatrace.extension.disk-devices#information). The Disk Analytics extension consumes custom metrics and [Davis data units](https://www.dynatrace.com/support/help/shortlink/metric-cost-calculation).
      */
     enabled: pulumi.Input<boolean>;
     /**

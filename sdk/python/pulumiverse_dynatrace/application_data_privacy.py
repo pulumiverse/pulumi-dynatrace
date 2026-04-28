@@ -28,6 +28,7 @@ class ApplicationDataPrivacyArgs:
                  persistent_cookie_for_user_tracking: Optional[pulumi.Input[_builtins.bool]] = None):
         """
         The set of arguments for constructing a ApplicationDataPrivacy resource.
+
         :param pulumi.Input[_builtins.str] do_not_track_behaviour: (Field has overlap with `DataPrivacy`) How to handle the "Do Not Track" header:
         :param pulumi.Input['ApplicationDataPrivacySessionReplayDataPrivacyArgs'] session_replay_data_privacy: (Field has overlap with `SessionReplayWebPrivacy`) Data privacy settings for Session Replay
         :param pulumi.Input[_builtins.str] web_application_id: Dynatrace entity ID of the web application
@@ -113,6 +114,7 @@ class _ApplicationDataPrivacyState:
                  web_application_id: Optional[pulumi.Input[_builtins.str]] = None):
         """
         Input properties used for looking up and filtering ApplicationDataPrivacy resources.
+
         :param pulumi.Input[_builtins.bool] data_capture_opt_in: (Field has overlap with `DataPrivacy`) Set to `true` to disable data capture and cookies until JavaScriptAPI `dtrum.enable()` is called
         :param pulumi.Input[_builtins.str] do_not_track_behaviour: (Field has overlap with `DataPrivacy`) How to handle the "Do Not Track" header:
         :param pulumi.Input[_builtins.bool] persistent_cookie_for_user_tracking: (Field has overlap with `DataPrivacy`) Set to `true` to set persistent cookie in order to recognize returning devices
@@ -204,7 +206,23 @@ class ApplicationDataPrivacy(pulumi.CustomResource):
                  web_application_id: Optional[pulumi.Input[_builtins.str]] = None,
                  __props__=None):
         """
-        Create a ApplicationDataPrivacy resource with the given unique name, props, and options.
+        !> This resource is utilizing an older API endpoint, please use DataPrivacy and SessionReplayWebPrivacy instead.
+
+        > This resource requires the API token scopes **Read configuration** (`ReadConfig`) and **Change data privacy settings** (`DataPrivacy`)
+
+        ## Dynatrace Documentation
+
+        - Configure data privacy settings for web applications - https://www.dynatrace.com/support/help/how-to-use-dynatrace/real-user-monitoring/setup-and-configuration/web-applications/additional-configuration/configure-real-user-monitoring-according-to-gdpr
+
+        - Web application configuration API - https://www.dynatrace.com/support/help/dynatrace-api/configuration-api/rum/web-application-configuration-api
+
+        ## Export Example Usage
+
+        - `terraform-provider-dynatrace -export ApplicationDataPrivacy` downloads all existing application data privacy configuration
+
+        The full documentation of the export feature is available [here](https://dt-url.net/h203qmc).
+
+
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[_builtins.bool] data_capture_opt_in: (Field has overlap with `DataPrivacy`) Set to `true` to disable data capture and cookies until JavaScriptAPI `dtrum.enable()` is called
@@ -220,7 +238,23 @@ class ApplicationDataPrivacy(pulumi.CustomResource):
                  args: ApplicationDataPrivacyArgs,
                  opts: Optional[pulumi.ResourceOptions] = None):
         """
-        Create a ApplicationDataPrivacy resource with the given unique name, props, and options.
+        !> This resource is utilizing an older API endpoint, please use DataPrivacy and SessionReplayWebPrivacy instead.
+
+        > This resource requires the API token scopes **Read configuration** (`ReadConfig`) and **Change data privacy settings** (`DataPrivacy`)
+
+        ## Dynatrace Documentation
+
+        - Configure data privacy settings for web applications - https://www.dynatrace.com/support/help/how-to-use-dynatrace/real-user-monitoring/setup-and-configuration/web-applications/additional-configuration/configure-real-user-monitoring-according-to-gdpr
+
+        - Web application configuration API - https://www.dynatrace.com/support/help/dynatrace-api/configuration-api/rum/web-application-configuration-api
+
+        ## Export Example Usage
+
+        - `terraform-provider-dynatrace -export ApplicationDataPrivacy` downloads all existing application data privacy configuration
+
+        The full documentation of the export feature is available [here](https://dt-url.net/h203qmc).
+
+
         :param str resource_name: The name of the resource.
         :param ApplicationDataPrivacyArgs args: The arguments to use to populate this resource's properties.
         :param pulumi.ResourceOptions opts: Options for the resource.

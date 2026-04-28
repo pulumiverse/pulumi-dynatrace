@@ -28,6 +28,7 @@ class CloudFoundryArgs:
                  active_gate_group: Optional[pulumi.Input[_builtins.str]] = None):
         """
         The set of arguments for constructing a CloudFoundry resource.
+
         :param pulumi.Input[_builtins.str] api_url: Cloud Foundry API Target
         :param pulumi.Input[_builtins.bool] enabled: This setting is enabled (`true`) or disabled (`false`)
         :param pulumi.Input[_builtins.str] label: Name this connection
@@ -142,6 +143,7 @@ class _CloudFoundryState:
                  username: Optional[pulumi.Input[_builtins.str]] = None):
         """
         Input properties used for looking up and filtering CloudFoundry resources.
+
         :param pulumi.Input[_builtins.str] active_gate_group: ActiveGate group
         :param pulumi.Input[_builtins.str] api_url: Cloud Foundry API Target
         :param pulumi.Input[_builtins.bool] enabled: This setting is enabled (`true`) or disabled (`false`)
@@ -265,7 +267,21 @@ class CloudFoundry(pulumi.CustomResource):
                  username: Optional[pulumi.Input[_builtins.str]] = None,
                  __props__=None):
         """
-        Create a CloudFoundry resource with the given unique name, props, and options.
+        > This resource requires the API token scopes **Read settings** (`settings.read`) and **Write settings** (`settings.write`)
+
+        ## Dynatrace Documentation
+
+        - Cloud Foundry monitoring - https://www.dynatrace.com/support/help/how-to-use-dynatrace/infrastructure-monitoring/container-platform-monitoring/cloud-foundry-monitoring
+
+        - Settings API - https://www.dynatrace.com/support/help/dynatrace-api/environment-api/settings (schemaId: `builtin:cloud.cloudfoundry`)
+
+        ## Export Example Usage
+
+        - `terraform-provider-dynatrace -export CloudFoundry` downloads all existing Cloud Foundry monitoring configuration
+
+        The full documentation of the export feature is available [here](https://dt-url.net/h203qmc).
+
+
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[_builtins.str] active_gate_group: ActiveGate group
@@ -283,7 +299,21 @@ class CloudFoundry(pulumi.CustomResource):
                  args: CloudFoundryArgs,
                  opts: Optional[pulumi.ResourceOptions] = None):
         """
-        Create a CloudFoundry resource with the given unique name, props, and options.
+        > This resource requires the API token scopes **Read settings** (`settings.read`) and **Write settings** (`settings.write`)
+
+        ## Dynatrace Documentation
+
+        - Cloud Foundry monitoring - https://www.dynatrace.com/support/help/how-to-use-dynatrace/infrastructure-monitoring/container-platform-monitoring/cloud-foundry-monitoring
+
+        - Settings API - https://www.dynatrace.com/support/help/dynatrace-api/environment-api/settings (schemaId: `builtin:cloud.cloudfoundry`)
+
+        ## Export Example Usage
+
+        - `terraform-provider-dynatrace -export CloudFoundry` downloads all existing Cloud Foundry monitoring configuration
+
+        The full documentation of the export feature is available [here](https://dt-url.net/h203qmc).
+
+
         :param str resource_name: The name of the resource.
         :param CloudFoundryArgs args: The arguments to use to populate this resource's properties.
         :param pulumi.ResourceOptions opts: Options for the resource.

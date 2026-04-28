@@ -19,42 +19,6 @@ import (
 // - `tags` (optional) refers to the tags that need to be present for the service (inclusive)
 //
 // If multiple services match the given criteria, the first result will be retrieved.
-//
-// ## Example Usage
-//
-// ```go
-// package main
-//
-// import (
-//
-//	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-//	"github.com/pulumiverse/pulumi-dynatrace/sdk/go/dynatrace"
-//
-// )
-//
-//	func main() {
-//		pulumi.Run(func(ctx *pulumi.Context) error {
-//			test, err := dynatrace.GetService(ctx, &dynatrace.GetServiceArgs{
-//				Name: "Example",
-//				Tags: []string{
-//					"TerraformKeyTest",
-//					"TerraformKeyValueTest=TestValue",
-//				},
-//			}, nil)
-//			if err != nil {
-//				return err
-//			}
-//			_, err = dynatrace.NewKeyRequests(ctx, "#name#", &dynatrace.KeyRequestsArgs{
-//				Service: pulumi.String(test.Id),
-//			})
-//			if err != nil {
-//				return err
-//			}
-//			return nil
-//		})
-//	}
-//
-// ```
 func GetService(ctx *pulumi.Context, args *GetServiceArgs, opts ...pulumi.InvokeOption) (*GetServiceResult, error) {
 	opts = internal.PkgInvokeDefaultOpts(opts)
 	var rv GetServiceResult

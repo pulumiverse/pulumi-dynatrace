@@ -6,6 +6,21 @@ import * as inputs from "./types/input";
 import * as outputs from "./types/output";
 import * as utilities from "./utilities";
 
+/**
+ * > This resource requires the API token scopes **Read settings** (`settings.read`) and **Write settings** (`settings.write`)
+ *
+ * ## Dynatrace Documentation
+ *
+ * - Business event capture - https://www.dynatrace.com/support/help/platform-modules/business-analytics/ba-events-capturing#report-business-event-oneagent
+ *
+ * - Settings API - https://www.dynatrace.com/support/help/dynatrace-api/environment-api/settings (schemaId: `builtin:bizevents.http.outgoing`)
+ *
+ * ## Export Example Usage
+ *
+ * - `terraform-provider-dynatrace -export dynatrace.BusinessEventsOneagentOutgoing` downloads all existing OneAgent business events based on outgoing HTTP requests
+ *
+ * The full documentation of the export feature is available [here](https://dt-url.net/h203qmc).
+ */
 export class BusinessEventsOneagentOutgoing extends pulumi.CustomResource {
     /**
      * Get an existing BusinessEventsOneagentOutgoing resource's state with the given name, ID, and optional extra
@@ -55,7 +70,7 @@ export class BusinessEventsOneagentOutgoing extends pulumi.CustomResource {
      */
     declare public readonly scope: pulumi.Output<string | undefined>;
     /**
-     * Define conditions to trigger business events from incoming web requests. Triggers are connected by AND logic per capture rule. If you set multiple trigger rules, all of them need to be fulfilled to capture a business event.
+     * Define conditions to trigger business events from outgoing web requests. Triggers are connected by AND logic per capture rule. If you set multiple trigger rules, all of them need to be fulfilled to capture a business event.
      */
     declare public readonly triggers: pulumi.Output<outputs.BusinessEventsOneagentOutgoingTriggers>;
 
@@ -129,7 +144,7 @@ export interface BusinessEventsOneagentOutgoingState {
      */
     scope?: pulumi.Input<string>;
     /**
-     * Define conditions to trigger business events from incoming web requests. Triggers are connected by AND logic per capture rule. If you set multiple trigger rules, all of them need to be fulfilled to capture a business event.
+     * Define conditions to trigger business events from outgoing web requests. Triggers are connected by AND logic per capture rule. If you set multiple trigger rules, all of them need to be fulfilled to capture a business event.
      */
     triggers?: pulumi.Input<inputs.BusinessEventsOneagentOutgoingTriggers>;
 }
@@ -159,7 +174,7 @@ export interface BusinessEventsOneagentOutgoingArgs {
      */
     scope?: pulumi.Input<string>;
     /**
-     * Define conditions to trigger business events from incoming web requests. Triggers are connected by AND logic per capture rule. If you set multiple trigger rules, all of them need to be fulfilled to capture a business event.
+     * Define conditions to trigger business events from outgoing web requests. Triggers are connected by AND logic per capture rule. If you set multiple trigger rules, all of them need to be fulfilled to capture a business event.
      */
     triggers: pulumi.Input<inputs.BusinessEventsOneagentOutgoingTriggers>;
 }

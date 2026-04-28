@@ -15,7 +15,7 @@ namespace Pulumiverse.Dynatrace.Outputs
     public sealed class BusinessEventsOneagentOutgoingTriggersTriggerSource
     {
         /// <summary>
-        /// Possible Values: `Request_body`, `Request_headers`, `Request_method`, `Request_parameters`, `Request_path`, `Request_url`, `Response_body`, `Response_headers`, `Response_statusCode`
+        /// Data source. Possible Values: `request.body`, `request.headers`, `request.method`, `request.parameters`, `request.path`, `request.url`, `response.body`, `response.headers`, `response.statusCode`
         /// </summary>
         public readonly string DataSource;
         /// <summary>

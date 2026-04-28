@@ -12,14 +12,31 @@ import (
 	"github.com/pulumiverse/pulumi-dynatrace/sdk/go/dynatrace/internal"
 )
 
+// > Configuration of the application scope overlaps with dynatrace_mobile_application, but this resource in addition provides an option for an environment scope.
+//
+// > This resource requires the API token scopes **Read settings** (`settings.read`) and **Write settings** (`settings.write`)
+//
+// ## Dynatrace Documentation
+//
+// - Configure cost and traffic control for mobile applications - https://www.dynatrace.com/support/help/how-to-use-dynatrace/real-user-monitoring/setup-and-configuration/mobile-applications/configure-cost-and-traffic-control-mobile
+//
+// - Settings API - https://www.dynatrace.com/support/help/dynatrace-api/environment-api/settings (schemaId: `builtin:rum.mobile.enablement`)
+//
+// ## Export Example Usage
+//
+// - `terraform-provider-dynatrace -export MobileAppEnablement` downloads all existing mobile application enablement and cost control configuration
+//
+// The full documentation of the export feature is available [here](https://dt-url.net/h203qmc).
 type MobileAppEnablement struct {
 	pulumi.CustomResourceState
 
 	// The scope of this settings. If the settings should cover the whole environment, just don't specify any scope.
 	ApplicationId pulumi.StringPtrOutput `pulumi:"applicationId"`
+	// User Interactions
+	ExperienceAnalytics MobileAppEnablementExperienceAnalyticsPtrOutput `pulumi:"experienceAnalytics"`
 	// (Field has overlap with `MobileApplication`) Capture and analyze all user actions within your application. Enable [Real User Monitoring (RUM)](https://dt-url.net/1n2b0prq) to monitor and improve your application's performance, identify errors, and gain insight into your user's behavior and experience.
 	Rum MobileAppEnablementRumOutput `pulumi:"rum"`
-	// (Field has overlap with `MobileApplication`) [Session Replay on crashes](https://dt-url.net/session-replay) gives you additional context for crash analysis in the form of video-like screen recordings that replay user actions immediately preceding a detected crash, while providing [best-in-class security and data protection](https://dt-url.net/b303zxj).
+	// (Field has overlap with `MobileApplication`) [Session Replay](https://dt-url.net/session-replay) captures all user interactions within your application and replays them in a movie-like experience while providing [best-in-class security and data protection](https://dt-url.net/b303zxj).
 	SessionReplay MobileAppEnablementSessionReplayOutput `pulumi:"sessionReplay"`
 }
 
@@ -61,18 +78,22 @@ func GetMobileAppEnablement(ctx *pulumi.Context,
 type mobileAppEnablementState struct {
 	// The scope of this settings. If the settings should cover the whole environment, just don't specify any scope.
 	ApplicationId *string `pulumi:"applicationId"`
+	// User Interactions
+	ExperienceAnalytics *MobileAppEnablementExperienceAnalytics `pulumi:"experienceAnalytics"`
 	// (Field has overlap with `MobileApplication`) Capture and analyze all user actions within your application. Enable [Real User Monitoring (RUM)](https://dt-url.net/1n2b0prq) to monitor and improve your application's performance, identify errors, and gain insight into your user's behavior and experience.
 	Rum *MobileAppEnablementRum `pulumi:"rum"`
-	// (Field has overlap with `MobileApplication`) [Session Replay on crashes](https://dt-url.net/session-replay) gives you additional context for crash analysis in the form of video-like screen recordings that replay user actions immediately preceding a detected crash, while providing [best-in-class security and data protection](https://dt-url.net/b303zxj).
+	// (Field has overlap with `MobileApplication`) [Session Replay](https://dt-url.net/session-replay) captures all user interactions within your application and replays them in a movie-like experience while providing [best-in-class security and data protection](https://dt-url.net/b303zxj).
 	SessionReplay *MobileAppEnablementSessionReplay `pulumi:"sessionReplay"`
 }
 
 type MobileAppEnablementState struct {
 	// The scope of this settings. If the settings should cover the whole environment, just don't specify any scope.
 	ApplicationId pulumi.StringPtrInput
+	// User Interactions
+	ExperienceAnalytics MobileAppEnablementExperienceAnalyticsPtrInput
 	// (Field has overlap with `MobileApplication`) Capture and analyze all user actions within your application. Enable [Real User Monitoring (RUM)](https://dt-url.net/1n2b0prq) to monitor and improve your application's performance, identify errors, and gain insight into your user's behavior and experience.
 	Rum MobileAppEnablementRumPtrInput
-	// (Field has overlap with `MobileApplication`) [Session Replay on crashes](https://dt-url.net/session-replay) gives you additional context for crash analysis in the form of video-like screen recordings that replay user actions immediately preceding a detected crash, while providing [best-in-class security and data protection](https://dt-url.net/b303zxj).
+	// (Field has overlap with `MobileApplication`) [Session Replay](https://dt-url.net/session-replay) captures all user interactions within your application and replays them in a movie-like experience while providing [best-in-class security and data protection](https://dt-url.net/b303zxj).
 	SessionReplay MobileAppEnablementSessionReplayPtrInput
 }
 
@@ -83,9 +104,11 @@ func (MobileAppEnablementState) ElementType() reflect.Type {
 type mobileAppEnablementArgs struct {
 	// The scope of this settings. If the settings should cover the whole environment, just don't specify any scope.
 	ApplicationId *string `pulumi:"applicationId"`
+	// User Interactions
+	ExperienceAnalytics *MobileAppEnablementExperienceAnalytics `pulumi:"experienceAnalytics"`
 	// (Field has overlap with `MobileApplication`) Capture and analyze all user actions within your application. Enable [Real User Monitoring (RUM)](https://dt-url.net/1n2b0prq) to monitor and improve your application's performance, identify errors, and gain insight into your user's behavior and experience.
 	Rum MobileAppEnablementRum `pulumi:"rum"`
-	// (Field has overlap with `MobileApplication`) [Session Replay on crashes](https://dt-url.net/session-replay) gives you additional context for crash analysis in the form of video-like screen recordings that replay user actions immediately preceding a detected crash, while providing [best-in-class security and data protection](https://dt-url.net/b303zxj).
+	// (Field has overlap with `MobileApplication`) [Session Replay](https://dt-url.net/session-replay) captures all user interactions within your application and replays them in a movie-like experience while providing [best-in-class security and data protection](https://dt-url.net/b303zxj).
 	SessionReplay MobileAppEnablementSessionReplay `pulumi:"sessionReplay"`
 }
 
@@ -93,9 +116,11 @@ type mobileAppEnablementArgs struct {
 type MobileAppEnablementArgs struct {
 	// The scope of this settings. If the settings should cover the whole environment, just don't specify any scope.
 	ApplicationId pulumi.StringPtrInput
+	// User Interactions
+	ExperienceAnalytics MobileAppEnablementExperienceAnalyticsPtrInput
 	// (Field has overlap with `MobileApplication`) Capture and analyze all user actions within your application. Enable [Real User Monitoring (RUM)](https://dt-url.net/1n2b0prq) to monitor and improve your application's performance, identify errors, and gain insight into your user's behavior and experience.
 	Rum MobileAppEnablementRumInput
-	// (Field has overlap with `MobileApplication`) [Session Replay on crashes](https://dt-url.net/session-replay) gives you additional context for crash analysis in the form of video-like screen recordings that replay user actions immediately preceding a detected crash, while providing [best-in-class security and data protection](https://dt-url.net/b303zxj).
+	// (Field has overlap with `MobileApplication`) [Session Replay](https://dt-url.net/session-replay) captures all user interactions within your application and replays them in a movie-like experience while providing [best-in-class security and data protection](https://dt-url.net/b303zxj).
 	SessionReplay MobileAppEnablementSessionReplayInput
 }
 
@@ -191,12 +216,19 @@ func (o MobileAppEnablementOutput) ApplicationId() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v *MobileAppEnablement) pulumi.StringPtrOutput { return v.ApplicationId }).(pulumi.StringPtrOutput)
 }
 
+// User Interactions
+func (o MobileAppEnablementOutput) ExperienceAnalytics() MobileAppEnablementExperienceAnalyticsPtrOutput {
+	return o.ApplyT(func(v *MobileAppEnablement) MobileAppEnablementExperienceAnalyticsPtrOutput {
+		return v.ExperienceAnalytics
+	}).(MobileAppEnablementExperienceAnalyticsPtrOutput)
+}
+
 // (Field has overlap with `MobileApplication`) Capture and analyze all user actions within your application. Enable [Real User Monitoring (RUM)](https://dt-url.net/1n2b0prq) to monitor and improve your application's performance, identify errors, and gain insight into your user's behavior and experience.
 func (o MobileAppEnablementOutput) Rum() MobileAppEnablementRumOutput {
 	return o.ApplyT(func(v *MobileAppEnablement) MobileAppEnablementRumOutput { return v.Rum }).(MobileAppEnablementRumOutput)
 }
 
-// (Field has overlap with `MobileApplication`) [Session Replay on crashes](https://dt-url.net/session-replay) gives you additional context for crash analysis in the form of video-like screen recordings that replay user actions immediately preceding a detected crash, while providing [best-in-class security and data protection](https://dt-url.net/b303zxj).
+// (Field has overlap with `MobileApplication`) [Session Replay](https://dt-url.net/session-replay) captures all user interactions within your application and replays them in a movie-like experience while providing [best-in-class security and data protection](https://dt-url.net/b303zxj).
 func (o MobileAppEnablementOutput) SessionReplay() MobileAppEnablementSessionReplayOutput {
 	return o.ApplyT(func(v *MobileAppEnablement) MobileAppEnablementSessionReplayOutput { return v.SessionReplay }).(MobileAppEnablementSessionReplayOutput)
 }

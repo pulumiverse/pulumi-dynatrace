@@ -24,6 +24,7 @@ class DashboardsAllowlistArgs:
                  allowlist: Optional[pulumi.Input['DashboardsAllowlistAllowlistArgs']] = None):
         """
         The set of arguments for constructing a DashboardsAllowlist resource.
+
         :param pulumi.Input['DashboardsAllowlistAllowlistArgs'] allowlist: List of URL pattern matchers
         """
         if allowlist is not None:
@@ -48,6 +49,7 @@ class _DashboardsAllowlistState:
                  allowlist: Optional[pulumi.Input['DashboardsAllowlistAllowlistArgs']] = None):
         """
         Input properties used for looking up and filtering DashboardsAllowlist resources.
+
         :param pulumi.Input['DashboardsAllowlistAllowlistArgs'] allowlist: List of URL pattern matchers
         """
         if allowlist is not None:
@@ -75,7 +77,21 @@ class DashboardsAllowlist(pulumi.CustomResource):
                  allowlist: Optional[pulumi.Input[Union['DashboardsAllowlistAllowlistArgs', 'DashboardsAllowlistAllowlistArgsDict']]] = None,
                  __props__=None):
         """
-        Create a DashboardsAllowlist resource with the given unique name, props, and options.
+        > This resource requires the API token scopes **Read settings** (`settings.read`) and **Write settings** (`settings.write`)
+
+        ## Dynatrace Documentation
+
+        - Dashboards - https://www.dynatrace.com/support/help/observe-and-explore/dashboards#expand--add-image-url-to-allowlist--28
+
+        - Settings API - https://www.dynatrace.com/support/help/dynatrace-api/environment-api/settings (schemaId: `builtin:dashboards.image.allowlist`)
+
+        ## Export Example Usage
+
+        - `terraform-provider-dynatrace -export DashboardsAllowlist` downloads all existing allowed URL pattern rules
+
+        The full documentation of the export feature is available [here](https://dt-url.net/h203qmc).
+
+
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[Union['DashboardsAllowlistAllowlistArgs', 'DashboardsAllowlistAllowlistArgsDict']] allowlist: List of URL pattern matchers
@@ -87,7 +103,21 @@ class DashboardsAllowlist(pulumi.CustomResource):
                  args: Optional[DashboardsAllowlistArgs] = None,
                  opts: Optional[pulumi.ResourceOptions] = None):
         """
-        Create a DashboardsAllowlist resource with the given unique name, props, and options.
+        > This resource requires the API token scopes **Read settings** (`settings.read`) and **Write settings** (`settings.write`)
+
+        ## Dynatrace Documentation
+
+        - Dashboards - https://www.dynatrace.com/support/help/observe-and-explore/dashboards#expand--add-image-url-to-allowlist--28
+
+        - Settings API - https://www.dynatrace.com/support/help/dynatrace-api/environment-api/settings (schemaId: `builtin:dashboards.image.allowlist`)
+
+        ## Export Example Usage
+
+        - `terraform-provider-dynatrace -export DashboardsAllowlist` downloads all existing allowed URL pattern rules
+
+        The full documentation of the export feature is available [here](https://dt-url.net/h203qmc).
+
+
         :param str resource_name: The name of the resource.
         :param DashboardsAllowlistArgs args: The arguments to use to populate this resource's properties.
         :param pulumi.ResourceOptions opts: Options for the resource.

@@ -19,11 +19,11 @@ namespace Pulumiverse.Dynatrace.Outputs
         /// </summary>
         public readonly Outputs.HostAnomaliesV2NetworkNetworkHighRetransmissionDetectionCustomThresholds? CustomThresholds;
         /// <summary>
-        /// Detection mode for high retransmission rate
+        /// Detection mode for high retransmission rate. Possible Values: `Auto`, `Custom`
         /// </summary>
         public readonly string? DetectionMode;
         /// <summary>
-        /// Detect high retransmission rate
+        /// This setting is enabled (`True`) or disabled (`False`)
         /// </summary>
         public readonly bool Enabled;
 

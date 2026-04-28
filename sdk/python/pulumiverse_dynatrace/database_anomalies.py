@@ -27,6 +27,7 @@ class DatabaseAnomaliesArgs:
                  response_time: Optional[pulumi.Input['DatabaseAnomaliesResponseTimeArgs']] = None):
         """
         The set of arguments for constructing a DatabaseAnomalies resource.
+
         :param pulumi.Input['DatabaseAnomaliesDbConnectFailuresArgs'] db_connect_failures: Parameters of the failed database connections detection.  The alert is triggered when failed connections number exceeds **connectionFailsCount** during any **timePeriodMinutes** minutes period
         :param pulumi.Input['DatabaseAnomaliesFailureRateArgs'] failure_rate: Configuration of failure rate increase detection
         :param pulumi.Input['DatabaseAnomaliesLoadArgs'] load: Configuration for anomalies regarding load drops and spikes
@@ -99,6 +100,7 @@ class _DatabaseAnomaliesState:
                  response_time: Optional[pulumi.Input['DatabaseAnomaliesResponseTimeArgs']] = None):
         """
         Input properties used for looking up and filtering DatabaseAnomalies resources.
+
         :param pulumi.Input['DatabaseAnomaliesDbConnectFailuresArgs'] db_connect_failures: Parameters of the failed database connections detection.  The alert is triggered when failed connections number exceeds **connectionFailsCount** during any **timePeriodMinutes** minutes period
         :param pulumi.Input['DatabaseAnomaliesFailureRateArgs'] failure_rate: Configuration of failure rate increase detection
         :param pulumi.Input['DatabaseAnomaliesLoadArgs'] load: Configuration for anomalies regarding load drops and spikes
@@ -174,7 +176,23 @@ class DatabaseAnomalies(pulumi.CustomResource):
                  response_time: Optional[pulumi.Input[Union['DatabaseAnomaliesResponseTimeArgs', 'DatabaseAnomaliesResponseTimeArgsDict']]] = None,
                  __props__=None):
         """
-        Create a DatabaseAnomalies resource with the given unique name, props, and options.
+        !> This resource is utilizing an older API endpoint, please use DatabaseAnomaliesV2 instead.
+
+        > This resource requires the API token scopes **Read configuration** (`ReadConfig`) and **Write configuration** (`WriteConfig`)
+
+        ## Dynatrace Documentation
+
+        - Adjust the sensitivity of anomaly detection for database services - https://www.dynatrace.com/support/help/how-to-use-dynatrace/problem-detection-and-analysis/problem-detection/adjust-sensitivity-anomaly-detection/adjust-sensitivity-services-database
+
+        - Anomaly detection API - Database services - https://www.dynatrace.com/support/help/dynatrace-api/configuration-api/anomaly-detection-api/anomaly-detection-api-database
+
+        ## Export Example Usage
+
+        - `terraform-provider-dynatrace -export DatabaseAnomalies` downloads all existing database anomaly detection configuration
+
+        The full documentation of the export feature is available [here](https://dt-url.net/h203qmc).
+
+
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[Union['DatabaseAnomaliesDbConnectFailuresArgs', 'DatabaseAnomaliesDbConnectFailuresArgsDict']] db_connect_failures: Parameters of the failed database connections detection.  The alert is triggered when failed connections number exceeds **connectionFailsCount** during any **timePeriodMinutes** minutes period
@@ -189,7 +207,23 @@ class DatabaseAnomalies(pulumi.CustomResource):
                  args: Optional[DatabaseAnomaliesArgs] = None,
                  opts: Optional[pulumi.ResourceOptions] = None):
         """
-        Create a DatabaseAnomalies resource with the given unique name, props, and options.
+        !> This resource is utilizing an older API endpoint, please use DatabaseAnomaliesV2 instead.
+
+        > This resource requires the API token scopes **Read configuration** (`ReadConfig`) and **Write configuration** (`WriteConfig`)
+
+        ## Dynatrace Documentation
+
+        - Adjust the sensitivity of anomaly detection for database services - https://www.dynatrace.com/support/help/how-to-use-dynatrace/problem-detection-and-analysis/problem-detection/adjust-sensitivity-anomaly-detection/adjust-sensitivity-services-database
+
+        - Anomaly detection API - Database services - https://www.dynatrace.com/support/help/dynatrace-api/configuration-api/anomaly-detection-api/anomaly-detection-api-database
+
+        ## Export Example Usage
+
+        - `terraform-provider-dynatrace -export DatabaseAnomalies` downloads all existing database anomaly detection configuration
+
+        The full documentation of the export feature is available [here](https://dt-url.net/h203qmc).
+
+
         :param str resource_name: The name of the resource.
         :param DatabaseAnomaliesArgs args: The arguments to use to populate this resource's properties.
         :param pulumi.ResourceOptions opts: Options for the resource.

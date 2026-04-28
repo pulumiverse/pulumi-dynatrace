@@ -12,6 +12,19 @@ import (
 	"github.com/pulumiverse/pulumi-dynatrace/sdk/go/dynatrace/internal"
 )
 
+// > This resource requires the API token scopes **Read settings** (`settings.read`) and **Write settings** (`settings.write`)
+//
+// ## Dynatrace Documentation
+//
+// - Detection of frequent issues - https://www.dynatrace.com/support/help/how-to-use-dynatrace/problem-detection-and-analysis/problem-detection/detection-of-frequent-issues
+//
+// - Settings API - https://www.dynatrace.com/support/help/dynatrace-api/environment-api/settings (schemaId: `builtin:anomaly-detection.frequent-issues`)
+//
+// ## Export Example Usage
+//
+// - `terraform-provider-dynatrace -export FrequentIssues` downloads the existing frequent issue detection configuration
+//
+// The full documentation of the export feature is available [here](https://dt-url.net/h203qmc).
 type FrequentIssues struct {
 	pulumi.CustomResourceState
 

@@ -10,6 +10,21 @@ using Pulumi;
 
 namespace Pulumiverse.Dynatrace
 {
+    /// <summary>
+    /// &gt; This resource requires the API token scopes **Read configuration** (`ReadConfig`) and **Write configuration** (`WriteConfig`)
+    /// 
+    /// ## Dynatrace Documentation
+    /// 
+    /// - Create calculated metrics for web applications - https://www.dynatrace.com/support/help/platform-modules/digital-experience/web-applications/additional-configuration/rum-calculated-metrics-web
+    /// 
+    /// - Web application metrics API - https://www.dynatrace.com/support/help/dynatrace-api/configuration-api/calculated-metrics/rum-metrics
+    /// 
+    /// ## Export Example Usage
+    /// 
+    /// - `terraform-provider-dynatrace -export dynatrace.CalculatedWebMetric` downloads all existing calculated web app metric configuration
+    /// 
+    /// The full documentation of the export feature is available [here](https://dt-url.net/h203qmc).
+    /// </summary>
     [DynatraceResourceType("dynatrace:index/calculatedWebMetric:CalculatedWebMetric")]
     public partial class CalculatedWebMetric : global::Pulumi.CustomResource
     {

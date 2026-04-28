@@ -14,6 +14,12 @@ namespace Pulumiverse.Dynatrace.Inputs
     public sealed class OpenpipelineV2EventsSecurityPipelinesCostAllocationProcessorsProcessorHistogramMetricArgs : global::Pulumi.ResourceArgs
     {
         /// <summary>
+        /// Default value with metric value
+        /// </summary>
+        [Input("defaultValue")]
+        public Input<string>? DefaultValue { get; set; }
+
+        /// <summary>
         /// List of dimensions
         /// </summary>
         [Input("dimensions")]

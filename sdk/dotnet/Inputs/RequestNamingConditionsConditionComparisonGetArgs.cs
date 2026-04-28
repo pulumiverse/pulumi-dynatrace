@@ -104,6 +104,12 @@ namespace Pulumiverse.Dynatrace.Inputs
         public Input<Inputs.RequestNamingConditionsConditionComparisonStringGetArgs>? String { get; set; }
 
         /// <summary>
+        /// Comparison for `STRING_ONE_AGENT_ATTRIBUTE` attributes
+        /// </summary>
+        [Input("stringOneAgentAttribute")]
+        public Input<Inputs.RequestNamingConditionsConditionComparisonStringOneAgentAttributeGetArgs>? StringOneAgentAttribute { get; set; }
+
+        /// <summary>
         /// Comparison for `STRING_REQUEST_ATTRIBUTE` attributes
         /// </summary>
         [Input("stringRequestAttribute")]

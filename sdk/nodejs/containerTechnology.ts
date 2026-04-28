@@ -4,6 +4,40 @@
 import * as pulumi from "@pulumi/pulumi";
 import * as utilities from "./utilities";
 
+/**
+ * > This resource requires the API token scopes **Read settings** (`settings.read`) and **Write settings** (`settings.write`)
+ *
+ * ## Dynatrace Documentation
+ *
+ * - Technology support - https://www.dynatrace.com/support/help/technology-support#anchor-containers
+ *
+ * - Settings API - https://www.dynatrace.com/support/help/dynatrace-api/environment-api/settings (schemaId: `builtin:container.technology`)
+ *
+ * ## Export Example Usage
+ *
+ * - `terraform-provider-dynatrace -export dynatrace.ContainerTechnology` downloads all existing container monitoring configuration
+ *
+ * The full documentation of the export feature is available [here](https://dt-url.net/h203qmc).
+ *
+ * ## Resource Example Usage
+ *
+ * ```typescript
+ * import * as pulumi from "@pulumi/pulumi";
+ * import * as dynatrace from "@pulumiverse/dynatrace";
+ *
+ * const environment = new dynatrace.ContainerTechnology("environment", {
+ *     boshProcessManager: true,
+ *     containerd: true,
+ *     crio: true,
+ *     docker: true,
+ *     dockerWindows: true,
+ *     garden: true,
+ *     podman: true,
+ *     scope: "environment",
+ *     winc: true,
+ * });
+ * ```
+ */
 export class ContainerTechnology extends pulumi.CustomResource {
     /**
      * Get an existing ContainerTechnology resource's state with the given name, ID, and optional extra

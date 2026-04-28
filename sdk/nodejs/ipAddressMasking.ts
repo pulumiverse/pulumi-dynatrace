@@ -4,6 +4,21 @@
 import * as pulumi from "@pulumi/pulumi";
 import * as utilities from "./utilities";
 
+/**
+ * > This resource requires the API token scopes **Read settings** (`settings.read`) and **Write settings** (`settings.write`)
+ *
+ * ## Dynatrace Documentation
+ *
+ * - Data privacy and security - https://www.dynatrace.com/support/help/manage/data-privacy-and-security
+ *
+ * - Settings API - https://www.dynatrace.com/support/help/dynatrace-api/environment-api/settings (schemaId: `builtin:preferences.ipaddressmasking`)
+ *
+ * ## Export Example Usage
+ *
+ * - `terraform-provider-dynatrace -export dynatrace.IpAddressMasking` downloads all existing IP address masking configuration
+ *
+ * The full documentation of the export feature is available [here](https://dt-url.net/h203qmc).
+ */
 export class IpAddressMasking extends pulumi.CustomResource {
     /**
      * Get an existing IpAddressMasking resource's state with the given name, ID, and optional extra

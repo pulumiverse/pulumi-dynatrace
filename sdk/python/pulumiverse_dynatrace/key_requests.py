@@ -24,6 +24,7 @@ class KeyRequestsArgs:
                  names: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None):
         """
         The set of arguments for constructing a KeyRequests resource.
+
         :param pulumi.Input[_builtins.str] service: ID of Dynatrace Service, eg. SERVICE-123ABC45678EFGH
         :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] key_request_ids: The ids of the key requests
         :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] names: The names of the key requests
@@ -79,6 +80,7 @@ class _KeyRequestsState:
                  service: Optional[pulumi.Input[_builtins.str]] = None):
         """
         Input properties used for looking up and filtering KeyRequests resources.
+
         :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] key_request_ids: The ids of the key requests
         :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] names: The names of the key requests
         :param pulumi.Input[_builtins.str] service: ID of Dynatrace Service, eg. SERVICE-123ABC45678EFGH
@@ -138,7 +140,21 @@ class KeyRequests(pulumi.CustomResource):
                  service: Optional[pulumi.Input[_builtins.str]] = None,
                  __props__=None):
         """
-        Create a KeyRequests resource with the given unique name, props, and options.
+        > This resource requires the API token scopes **Read settings** (`settings.read`) and **Write settings** (`settings.write`)
+
+        ## Dynatrace Documentation
+
+        - Monitor key requests - https://www.dynatrace.com/support/help/how-to-use-dynatrace/services/analysis/monitor-key-requests
+
+        - Settings API - https://www.dynatrace.com/support/help/dynatrace-api/environment-api/settings (schemaId: `builtin:settings.subscriptions.service`)
+
+        ## Export Example Usage
+
+        - `terraform-provider-dynatrace -export KeyRequests` downloads all existing key request configuration
+
+        The full documentation of the export feature is available [here](https://dt-url.net/h203qmc).
+
+
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] key_request_ids: The ids of the key requests
@@ -152,7 +168,21 @@ class KeyRequests(pulumi.CustomResource):
                  args: KeyRequestsArgs,
                  opts: Optional[pulumi.ResourceOptions] = None):
         """
-        Create a KeyRequests resource with the given unique name, props, and options.
+        > This resource requires the API token scopes **Read settings** (`settings.read`) and **Write settings** (`settings.write`)
+
+        ## Dynatrace Documentation
+
+        - Monitor key requests - https://www.dynatrace.com/support/help/how-to-use-dynatrace/services/analysis/monitor-key-requests
+
+        - Settings API - https://www.dynatrace.com/support/help/dynatrace-api/environment-api/settings (schemaId: `builtin:settings.subscriptions.service`)
+
+        ## Export Example Usage
+
+        - `terraform-provider-dynatrace -export KeyRequests` downloads all existing key request configuration
+
+        The full documentation of the export feature is available [here](https://dt-url.net/h203qmc).
+
+
         :param str resource_name: The name of the resource.
         :param KeyRequestsArgs args: The arguments to use to populate this resource's properties.
         :param pulumi.ResourceOptions opts: Options for the resource.

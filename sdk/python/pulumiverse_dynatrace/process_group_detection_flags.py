@@ -39,6 +39,7 @@ class ProcessGroupDetectionFlagsArgs:
                  split_db2_grouping_by_instances: Optional[pulumi.Input[_builtins.bool]] = None):
         """
         The set of arguments for constructing a ProcessGroupDetectionFlags resource.
+
         :param pulumi.Input[_builtins.bool] add_node_js_script_name: In older versions, Node.js applications were distinguished based on their directory name, omitting the script name. Changing this setting may change the general handling of Node.js process groups. Leave unchanged if in doubt.
         :param pulumi.Input[_builtins.bool] auto_detect_cassandra_clusters: Enabling this flag will detect separate Cassandra process groups based on the configured Cassandra cluster name.
         :param pulumi.Input[_builtins.bool] auto_detect_spring_boot: Enabling this flag will detect Spring Boot process groups based on command line and applications' configuration files.
@@ -320,6 +321,7 @@ class _ProcessGroupDetectionFlagsState:
                  use_docker_container_name: Optional[pulumi.Input[_builtins.bool]] = None):
         """
         Input properties used for looking up and filtering ProcessGroupDetectionFlags resources.
+
         :param pulumi.Input[_builtins.bool] add_node_js_script_name: In older versions, Node.js applications were distinguished based on their directory name, omitting the script name. Changing this setting may change the general handling of Node.js process groups. Leave unchanged if in doubt.
         :param pulumi.Input[_builtins.bool] auto_detect_cassandra_clusters: Enabling this flag will detect separate Cassandra process groups based on the configured Cassandra cluster name.
         :param pulumi.Input[_builtins.bool] auto_detect_spring_boot: Enabling this flag will detect Spring Boot process groups based on command line and applications' configuration files.
@@ -619,7 +621,21 @@ class ProcessGroupDetectionFlags(pulumi.CustomResource):
                  use_docker_container_name: Optional[pulumi.Input[_builtins.bool]] = None,
                  __props__=None):
         """
-        Create a ProcessGroupDetectionFlags resource with the given unique name, props, and options.
+        > This resource requires the API token scopes **Read settings** (`settings.read`) and **Write settings** (`settings.write`)
+
+        ## Dynatrace Documentation
+
+        - Process group detection - https://www.dynatrace.com/support/help/platform-modules/infrastructure-monitoring/process-groups/configuration/pg-detection
+
+        - Settings API - https://www.dynatrace.com/support/help/dynatrace-api/environment-api/settings (schemaId: `builtin:process-group.detection-flags`)
+
+        ## Export Example Usage
+
+        - `terraform-provider-dynatrace -export ProcessGroupDetectionFlags` downloads all existing built-in process group detection rules
+
+        The full documentation of the export feature is available [here](https://dt-url.net/h203qmc).
+
+
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[_builtins.bool] add_node_js_script_name: In older versions, Node.js applications were distinguished based on their directory name, omitting the script name. Changing this setting may change the general handling of Node.js process groups. Leave unchanged if in doubt.
@@ -648,7 +664,21 @@ class ProcessGroupDetectionFlags(pulumi.CustomResource):
                  args: ProcessGroupDetectionFlagsArgs,
                  opts: Optional[pulumi.ResourceOptions] = None):
         """
-        Create a ProcessGroupDetectionFlags resource with the given unique name, props, and options.
+        > This resource requires the API token scopes **Read settings** (`settings.read`) and **Write settings** (`settings.write`)
+
+        ## Dynatrace Documentation
+
+        - Process group detection - https://www.dynatrace.com/support/help/platform-modules/infrastructure-monitoring/process-groups/configuration/pg-detection
+
+        - Settings API - https://www.dynatrace.com/support/help/dynatrace-api/environment-api/settings (schemaId: `builtin:process-group.detection-flags`)
+
+        ## Export Example Usage
+
+        - `terraform-provider-dynatrace -export ProcessGroupDetectionFlags` downloads all existing built-in process group detection rules
+
+        The full documentation of the export feature is available [here](https://dt-url.net/h203qmc).
+
+
         :param str resource_name: The name of the resource.
         :param ProcessGroupDetectionFlagsArgs args: The arguments to use to populate this resource's properties.
         :param pulumi.ResourceOptions opts: Options for the resource.

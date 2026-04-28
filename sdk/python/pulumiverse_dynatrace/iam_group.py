@@ -35,61 +35,8 @@ class IamGroupArgs:
         if name is not None:
             pulumi.set(__self__, "name", name)
         if permissions is not None:
-            pulumi.set(__self__, "permissions", permissions)
-
-    @_builtins.property
-    @pulumi.getter
-    def description(self) -> Optional[pulumi.Input[_builtins.str]]:
-        return pulumi.get(self, "description")
-
-    @description.setter
-    def description(self, value: Optional[pulumi.Input[_builtins.str]]):
-        pulumi.set(self, "description", value)
-
-    @_builtins.property
-    @pulumi.getter(name="federatedAttributeValues")
-    def federated_attribute_values(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]:
-        return pulumi.get(self, "federated_attribute_values")
-
-    @federated_attribute_values.setter
-    def federated_attribute_values(self, value: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]):
-        pulumi.set(self, "federated_attribute_values", value)
-
-    @_builtins.property
-    @pulumi.getter
-    def name(self) -> Optional[pulumi.Input[_builtins.str]]:
-        return pulumi.get(self, "name")
-
-    @name.setter
-    def name(self, value: Optional[pulumi.Input[_builtins.str]]):
-        pulumi.set(self, "name", value)
-
-    @_builtins.property
-    @pulumi.getter
-    def permissions(self) -> Optional[pulumi.Input['IamGroupPermissionsArgs']]:
-        return pulumi.get(self, "permissions")
-
-    @permissions.setter
-    def permissions(self, value: Optional[pulumi.Input['IamGroupPermissionsArgs']]):
-        pulumi.set(self, "permissions", value)
-
-
-@pulumi.input_type
-class _IamGroupState:
-    def __init__(__self__, *,
-                 description: Optional[pulumi.Input[_builtins.str]] = None,
-                 federated_attribute_values: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-                 name: Optional[pulumi.Input[_builtins.str]] = None,
-                 permissions: Optional[pulumi.Input['IamGroupPermissionsArgs']] = None):
-        """
-        Input properties used for looking up and filtering IamGroup resources.
-        """
-        if description is not None:
-            pulumi.set(__self__, "description", description)
-        if federated_attribute_values is not None:
-            pulumi.set(__self__, "federated_attribute_values", federated_attribute_values)
-        if name is not None:
-            pulumi.set(__self__, "name", name)
+            warnings.warn("""Assigning permissions directly when creating a group is deprecated. Use the resource `IamPermission` instead.""", DeprecationWarning)
+            pulumi.log.warn("""permissions is deprecated: Assigning permissions directly when creating a group is deprecated. Use the resource `IamPermission` instead.""")
         if permissions is not None:
             pulumi.set(__self__, "permissions", permissions)
 
@@ -122,6 +69,67 @@ class _IamGroupState:
 
     @_builtins.property
     @pulumi.getter
+    @_utilities.deprecated("""Assigning permissions directly when creating a group is deprecated. Use the resource `IamPermission` instead.""")
+    def permissions(self) -> Optional[pulumi.Input['IamGroupPermissionsArgs']]:
+        return pulumi.get(self, "permissions")
+
+    @permissions.setter
+    def permissions(self, value: Optional[pulumi.Input['IamGroupPermissionsArgs']]):
+        pulumi.set(self, "permissions", value)
+
+
+@pulumi.input_type
+class _IamGroupState:
+    def __init__(__self__, *,
+                 description: Optional[pulumi.Input[_builtins.str]] = None,
+                 federated_attribute_values: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 name: Optional[pulumi.Input[_builtins.str]] = None,
+                 permissions: Optional[pulumi.Input['IamGroupPermissionsArgs']] = None):
+        """
+        Input properties used for looking up and filtering IamGroup resources.
+        """
+        if description is not None:
+            pulumi.set(__self__, "description", description)
+        if federated_attribute_values is not None:
+            pulumi.set(__self__, "federated_attribute_values", federated_attribute_values)
+        if name is not None:
+            pulumi.set(__self__, "name", name)
+        if permissions is not None:
+            warnings.warn("""Assigning permissions directly when creating a group is deprecated. Use the resource `IamPermission` instead.""", DeprecationWarning)
+            pulumi.log.warn("""permissions is deprecated: Assigning permissions directly when creating a group is deprecated. Use the resource `IamPermission` instead.""")
+        if permissions is not None:
+            pulumi.set(__self__, "permissions", permissions)
+
+    @_builtins.property
+    @pulumi.getter
+    def description(self) -> Optional[pulumi.Input[_builtins.str]]:
+        return pulumi.get(self, "description")
+
+    @description.setter
+    def description(self, value: Optional[pulumi.Input[_builtins.str]]):
+        pulumi.set(self, "description", value)
+
+    @_builtins.property
+    @pulumi.getter(name="federatedAttributeValues")
+    def federated_attribute_values(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]:
+        return pulumi.get(self, "federated_attribute_values")
+
+    @federated_attribute_values.setter
+    def federated_attribute_values(self, value: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]):
+        pulumi.set(self, "federated_attribute_values", value)
+
+    @_builtins.property
+    @pulumi.getter
+    def name(self) -> Optional[pulumi.Input[_builtins.str]]:
+        return pulumi.get(self, "name")
+
+    @name.setter
+    def name(self, value: Optional[pulumi.Input[_builtins.str]]):
+        pulumi.set(self, "name", value)
+
+    @_builtins.property
+    @pulumi.getter
+    @_utilities.deprecated("""Assigning permissions directly when creating a group is deprecated. Use the resource `IamPermission` instead.""")
     def permissions(self) -> Optional[pulumi.Input['IamGroupPermissionsArgs']]:
         return pulumi.get(self, "permissions")
 
@@ -148,6 +156,18 @@ class IamGroup(pulumi.CustomResource):
 
         > This resource is excluded by default in the export utility, please explicitly specify the resource to retrieve existing configuration.
 
+        ## Conflicts
+
+        > **Warning** If this resource is used in combination with `IamPermission`, there is a potential for conflicts when both resources attempt to manage group permissions.
+        It is recommended to manage group permissions with the `IamPermission` resource.
+        To avoid conflicts when using the `IamPermission` resource, ensure to add the following lifecycle block to the `IamGroup` resource:
+        ```python
+        import pulumi
+        import pulumiverse_dynatrace as dynatrace
+
+        restricted = dynatrace.IamGroup("Restricted", name="Restricted")
+        ```
+
         ## Dynatrace Documentation
 
         - Dynatrace IAM - https://www.dynatrace.com/support/help/how-to-use-dynatrace/user-management-and-sso/manage-groups-and-permissions
@@ -160,14 +180,17 @@ class IamGroup(pulumi.CustomResource):
         import pulumi
         import pulumiverse_dynatrace as dynatrace
 
-        restricted = dynatrace.IamGroup("restricted", permissions={
-            "permissions": [{
-                "name": "tenant-viewer",
-                "scope": "<environment-id>:<managementzone-id>",
-                "type": "management-zone",
-            }],
-        })
+        restricted = dynatrace.IamGroup("Restricted",
+            name="Restricted",
+            permissions={
+                "permissions": [{
+                    "name": "tenant-viewer",
+                    "type": "management-zone",
+                    "scope": "<environment-id>:<managementzone-id>",
+                }],
+            })
         ```
+
 
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
@@ -185,6 +208,18 @@ class IamGroup(pulumi.CustomResource):
 
         > This resource is excluded by default in the export utility, please explicitly specify the resource to retrieve existing configuration.
 
+        ## Conflicts
+
+        > **Warning** If this resource is used in combination with `IamPermission`, there is a potential for conflicts when both resources attempt to manage group permissions.
+        It is recommended to manage group permissions with the `IamPermission` resource.
+        To avoid conflicts when using the `IamPermission` resource, ensure to add the following lifecycle block to the `IamGroup` resource:
+        ```python
+        import pulumi
+        import pulumiverse_dynatrace as dynatrace
+
+        restricted = dynatrace.IamGroup("Restricted", name="Restricted")
+        ```
+
         ## Dynatrace Documentation
 
         - Dynatrace IAM - https://www.dynatrace.com/support/help/how-to-use-dynatrace/user-management-and-sso/manage-groups-and-permissions
@@ -197,14 +232,17 @@ class IamGroup(pulumi.CustomResource):
         import pulumi
         import pulumiverse_dynatrace as dynatrace
 
-        restricted = dynatrace.IamGroup("restricted", permissions={
-            "permissions": [{
-                "name": "tenant-viewer",
-                "scope": "<environment-id>:<managementzone-id>",
-                "type": "management-zone",
-            }],
-        })
+        restricted = dynatrace.IamGroup("Restricted",
+            name="Restricted",
+            permissions={
+                "permissions": [{
+                    "name": "tenant-viewer",
+                    "type": "management-zone",
+                    "scope": "<environment-id>:<managementzone-id>",
+                }],
+            })
         ```
+
 
         :param str resource_name: The name of the resource.
         :param IamGroupArgs args: The arguments to use to populate this resource's properties.
@@ -287,6 +325,7 @@ class IamGroup(pulumi.CustomResource):
 
     @_builtins.property
     @pulumi.getter
+    @_utilities.deprecated("""Assigning permissions directly when creating a group is deprecated. Use the resource `IamPermission` instead.""")
     def permissions(self) -> pulumi.Output[Optional['outputs.IamGroupPermissions']]:
         return pulumi.get(self, "permissions")
 

@@ -25,6 +25,7 @@ class MgmzPermissionArgs:
                  permissions: pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]):
         """
         The set of arguments for constructing a MgmzPermission resource.
+
         :param pulumi.Input[_builtins.str] environment: The UUID of the environment
         :param pulumi.Input[_builtins.str] group: The ID of the group the permissions are valid for. You may refer to the id of a resource `UserGroup` here
         :param pulumi.Input[_builtins.str] management_zone: The ID of the management zone the permissions are valid for. When referring to resource `ManagementZoneV2` or data source `ManagementZone` you need to refer to the attribute `legacy_id`.
@@ -95,6 +96,7 @@ class _MgmzPermissionState:
                  permissions: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None):
         """
         Input properties used for looking up and filtering MgmzPermission resources.
+
         :param pulumi.Input[_builtins.str] environment: The UUID of the environment
         :param pulumi.Input[_builtins.str] group: The ID of the group the permissions are valid for. You may refer to the id of a resource `UserGroup` here
         :param pulumi.Input[_builtins.str] management_zone: The ID of the management zone the permissions are valid for. When referring to resource `ManagementZoneV2` or data source `ManagementZone` you need to refer to the attribute `legacy_id`.
@@ -172,7 +174,39 @@ class MgmzPermission(pulumi.CustomResource):
                  permissions: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
                  __props__=None):
         """
-        Create a MgmzPermission resource with the given unique name, props, and options.
+        > **Dynatrace Managed only**
+
+        > To utilize this resource, please define the environment variables `DT_CLUSTER_URL` and `DT_CLUSTER_API_TOKEN` with the cluster API token scope **Service Provider API** (`ServiceProviderAPI`).
+
+        ## Dynatrace Documentation
+
+        - Manage Groups and Permissions - https://docs.dynatrace.com/managed/manage/identity-access-management/user-and-group-management/user-groups-and-permissions#mz
+
+        - User management API - https://www.dynatrace.com/support/help/dynatrace-api/account-management-api/user-management-api
+
+        ## Export Example Usage
+
+        - `terraform-provider-dynatrace -export MgmzPermission` downloads all user group / management zone permissions
+
+        The full documentation of the export feature is available [here](https://dt-url.net/h203qmc).
+
+        ## Resource Example Usage
+
+        ```python
+        import pulumi
+        import pulumiverse_dynatrace as dynatrace
+
+        some_perm = dynatrace.MgmzPermission("some-perm",
+            group=group_a["id"],
+            environment="d85dea6a-4287-49d3-bf62-729274ba7036",
+            management_zone="982182035185200933",
+            permissions=[
+                "VIEWER",
+                "REPLAY_SESSION_DATA",
+            ])
+        ```
+
+
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[_builtins.str] environment: The UUID of the environment
@@ -188,7 +222,39 @@ class MgmzPermission(pulumi.CustomResource):
                  args: MgmzPermissionArgs,
                  opts: Optional[pulumi.ResourceOptions] = None):
         """
-        Create a MgmzPermission resource with the given unique name, props, and options.
+        > **Dynatrace Managed only**
+
+        > To utilize this resource, please define the environment variables `DT_CLUSTER_URL` and `DT_CLUSTER_API_TOKEN` with the cluster API token scope **Service Provider API** (`ServiceProviderAPI`).
+
+        ## Dynatrace Documentation
+
+        - Manage Groups and Permissions - https://docs.dynatrace.com/managed/manage/identity-access-management/user-and-group-management/user-groups-and-permissions#mz
+
+        - User management API - https://www.dynatrace.com/support/help/dynatrace-api/account-management-api/user-management-api
+
+        ## Export Example Usage
+
+        - `terraform-provider-dynatrace -export MgmzPermission` downloads all user group / management zone permissions
+
+        The full documentation of the export feature is available [here](https://dt-url.net/h203qmc).
+
+        ## Resource Example Usage
+
+        ```python
+        import pulumi
+        import pulumiverse_dynatrace as dynatrace
+
+        some_perm = dynatrace.MgmzPermission("some-perm",
+            group=group_a["id"],
+            environment="d85dea6a-4287-49d3-bf62-729274ba7036",
+            management_zone="982182035185200933",
+            permissions=[
+                "VIEWER",
+                "REPLAY_SESSION_DATA",
+            ])
+        ```
+
+
         :param str resource_name: The name of the resource.
         :param MgmzPermissionArgs args: The arguments to use to populate this resource's properties.
         :param pulumi.ResourceOptions opts: Options for the resource.

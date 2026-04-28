@@ -30,6 +30,7 @@ class ServiceFullWebServiceArgs:
                  name: Optional[pulumi.Input[_builtins.str]] = None):
         """
         The set of arguments for constructing a ServiceFullWebService resource.
+
         :param pulumi.Input[_builtins.bool] enabled: This setting is enabled (`true`) or disabled (`false`)
         :param pulumi.Input['ServiceFullWebServiceIdContributorsArgs'] id_contributors: Contributors to the Service Identifier calculation. All of the Contributors are always applied.
         :param pulumi.Input['ServiceFullWebServiceConditionsArgs'] conditions: A list of conditions necessary for the rule to take effect. If multiple conditions are specified, they must **all** match a Request for the rule to apply. If there is no condition at all, the rule is always applied. Conditions are evaluated against attributes, but do not modify them.
@@ -148,6 +149,7 @@ class _ServiceFullWebServiceState:
                  name: Optional[pulumi.Input[_builtins.str]] = None):
         """
         Input properties used for looking up and filtering ServiceFullWebService resources.
+
         :param pulumi.Input['ServiceFullWebServiceConditionsArgs'] conditions: A list of conditions necessary for the rule to take effect. If multiple conditions are specified, they must **all** match a Request for the rule to apply. If there is no condition at all, the rule is always applied. Conditions are evaluated against attributes, but do not modify them.
         :param pulumi.Input[_builtins.str] description: Description
         :param pulumi.Input[_builtins.bool] enabled: This setting is enabled (`true`) or disabled (`false`)
@@ -271,7 +273,21 @@ class ServiceFullWebService(pulumi.CustomResource):
                  name: Optional[pulumi.Input[_builtins.str]] = None,
                  __props__=None):
         """
-        Create a ServiceFullWebService resource with the given unique name, props, and options.
+        > This resource requires the API token scopes **Read settings** (`settings.read`) and **Write settings** (`settings.write`)
+
+        ## Dynatrace Documentation
+
+        - Service detection rules - https://www.dynatrace.com/support/help/platform-modules/applications-and-microservices/services/service-detection-and-naming/customize-service-detection
+
+        - Settings API - https://www.dynatrace.com/support/help/dynatrace-api/environment-api/settings (schemaId: `builtin:service-detection.full-web-service`)
+
+        ## Export Example Usage
+
+        - `terraform-provider-dynatrace -export ServiceFullWebService` downloads all existing service detection rules for full web services
+
+        The full documentation of the export feature is available [here](https://dt-url.net/h203qmc).
+
+
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[Union['ServiceFullWebServiceConditionsArgs', 'ServiceFullWebServiceConditionsArgsDict']] conditions: A list of conditions necessary for the rule to take effect. If multiple conditions are specified, they must **all** match a Request for the rule to apply. If there is no condition at all, the rule is always applied. Conditions are evaluated against attributes, but do not modify them.
@@ -289,7 +305,21 @@ class ServiceFullWebService(pulumi.CustomResource):
                  args: ServiceFullWebServiceArgs,
                  opts: Optional[pulumi.ResourceOptions] = None):
         """
-        Create a ServiceFullWebService resource with the given unique name, props, and options.
+        > This resource requires the API token scopes **Read settings** (`settings.read`) and **Write settings** (`settings.write`)
+
+        ## Dynatrace Documentation
+
+        - Service detection rules - https://www.dynatrace.com/support/help/platform-modules/applications-and-microservices/services/service-detection-and-naming/customize-service-detection
+
+        - Settings API - https://www.dynatrace.com/support/help/dynatrace-api/environment-api/settings (schemaId: `builtin:service-detection.full-web-service`)
+
+        ## Export Example Usage
+
+        - `terraform-provider-dynatrace -export ServiceFullWebService` downloads all existing service detection rules for full web services
+
+        The full documentation of the export feature is available [here](https://dt-url.net/h203qmc).
+
+
         :param str resource_name: The name of the resource.
         :param ServiceFullWebServiceArgs args: The arguments to use to populate this resource's properties.
         :param pulumi.ResourceOptions opts: Options for the resource.

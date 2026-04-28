@@ -6,6 +6,307 @@ import * as inputs from "./types/input";
 import * as outputs from "./types/output";
 import * as utilities from "./utilities";
 
+/**
+ * !> This resource API endpoint has been deprecated, please migrate your OpenPipeline configurations and use `dynatrace_openpipeline_v2_events_*` instead.
+ *
+ * !> Deploying an OpenPipeline configuration will overwrite the existing one of the same kind, causing any manual changes made in the web UI or other configurations managed by Terraform or Monaco to be lost. Ensure all configurations are defined within a single Terraform or Monaco configuration to prevent data loss.
+ *
+ * > **Dynatrace SaaS only**
+ *
+ * > To utilize this resource, please define the environment variables `DT_CLIENT_ID`, `DT_CLIENT_SECRET`, `DT_ACCOUNT_ID` with an OAuth client including the following permissions: **View OpenPipeline configurations** (`openpipeline:configurations:read`), and **Edit OpenPipeline configurations** (`openpipeline:configurations:write`).
+ *
+ * ## Dynatrace Documentation
+ *
+ * - OpenPipeline - https://docs.dynatrace.com/docs/platform/openpipeline
+ *
+ * ## Export Example Usage
+ *
+ * - `terraform-provider-dynatrace -export dynatrace.OpenpipelineEvents` downloads all existing OpenPipeline definitions for Events
+ *
+ * The full documentation of the export feature is available [here](https://dt-url.net/h203qmc).
+ *
+ * ## Resource Example Usage
+ *
+ * ```typescript
+ * import * as pulumi from "@pulumi/pulumi";
+ * import * as dynatrace from "@pulumiverse/dynatrace";
+ *
+ * const events = new dynatrace.OpenpipelineEvents("events", {
+ *     endpoints: {
+ *         endpoints: [{
+ *             enabled: true,
+ *             defaultBucket: "default_events",
+ *             displayName: "Custom ingest source",
+ *             segment: "something",
+ *             routing: {
+ *                 type: "static",
+ *                 pipelineId: "default",
+ *             },
+ *             processors: {
+ *                 processors: [
+ *                     {
+ *                         fieldsAddProcessor: {
+ *                             description: "Custom add field",
+ *                             enabled: true,
+ *                             id: "processor_Add_a_field_1_#name#",
+ *                             matcher: "true",
+ *                             fields: [{
+ *                                 name: "field",
+ *                                 value: "value",
+ *                             }],
+ *                         },
+ *                     },
+ *                     {
+ *                         fieldsRenameProcessor: {
+ *                             description: "Custom rename field",
+ *                             enabled: true,
+ *                             id: "processor_Custom_rename_field_1_#name#",
+ *                             matcher: "true",
+ *                             fields: [{
+ *                                 fromName: "new",
+ *                                 toName: "old",
+ *                             }],
+ *                         },
+ *                     },
+ *                     {
+ *                         fieldsRemoveProcessor: {
+ *                             description: "Custom remove field",
+ *                             enabled: true,
+ *                             fields: ["field"],
+ *                             id: "processor_Custom_remove_field_1_#name#",
+ *                             matcher: "true",
+ *                         },
+ *                     },
+ *                     {
+ *                         dqlProcessor: {
+ *                             description: "Custom DQL",
+ *                             enabled: true,
+ *                             dqlScript: "fieldsAdd (\"test\")",
+ *                             id: "processor_Custom_DQL_1_#name#",
+ *                             matcher: "true",
+ *                         },
+ *                     },
+ *                     {
+ *                         dropProcessor: {
+ *                             description: "Custom drop processor",
+ *                             enabled: true,
+ *                             id: "processor_custom_drop_1_#name#",
+ *                             matcher: "true",
+ *                             sampleData: "{}",
+ *                         },
+ *                     },
+ *                 ],
+ *             },
+ *         }],
+ *     },
+ *     pipelines: {
+ *         pipelines: [
+ *             {
+ *                 enabled: true,
+ *                 displayName: "Custom pipeline 1",
+ *                 id: "pipeline_Pipeline_1_#name#",
+ *                 processing: {
+ *                     processors: [{
+ *                         fieldsAddProcessor: {
+ *                             description: "Add a field 1",
+ *                             enabled: true,
+ *                             id: "processor_Add_a_field_2_#name#",
+ *                             matcher: "true",
+ *                             fields: [{
+ *                                 name: "field",
+ *                                 value: "value",
+ *                             }],
+ *                         },
+ *                     }],
+ *                 },
+ *             },
+ *             {
+ *                 enabled: true,
+ *                 displayName: "Custom pipeline 2",
+ *                 id: "pipeline_Pipeline_2_#name#",
+ *                 dataExtraction: {
+ *                     processors: [{
+ *                         davisEventExtractionProcessor: {
+ *                             description: "Custom event",
+ *                             enabled: true,
+ *                             id: "processor_Custom_event_1_#name#",
+ *                             matcher: "true",
+ *                             properties: [
+ *                                 {
+ *                                     key: "event.type",
+ *                                     value: "CUSTOM_ALERT",
+ *                                 },
+ *                                 {
+ *                                     key: "event.name",
+ *                                     value: "test",
+ *                                 },
+ *                             ],
+ *                         },
+ *                     }],
+ *                 },
+ *                 metricExtraction: {
+ *                     processors: [
+ *                         {
+ *                             valueMetricExtractionProcessor: {
+ *                                 description: "Custom value metric extraction",
+ *                                 enabled: true,
+ *                                 dimensions: ["availability"],
+ *                                 field: "field1",
+ *                                 id: "processor_Custom_metric_extraction_1_#name#",
+ *                                 matcher: "true",
+ *                                 metricKey: "events.custom",
+ *                             },
+ *                         },
+ *                         {
+ *                             counterMetricExtractionProcessor: {
+ *                                 description: "Custom counter metric extraction",
+ *                                 enabled: true,
+ *                                 id: "processor_Custom_counter_metric_extraction_1_#name#",
+ *                                 matcher: "true",
+ *                                 metricKey: "events.counter",
+ *                             },
+ *                         },
+ *                     ],
+ *                 },
+ *                 processing: {
+ *                     processors: [
+ *                         {
+ *                             fieldsAddProcessor: {
+ *                                 description: "Custom add field",
+ *                                 enabled: true,
+ *                                 id: "processor_Add_a_field_3_#name#",
+ *                                 matcher: "true",
+ *                                 fields: [{
+ *                                     name: "field",
+ *                                     value: "value",
+ *                                 }],
+ *                             },
+ *                         },
+ *                         {
+ *                             fieldsRenameProcessor: {
+ *                                 description: "Custom rename field",
+ *                                 enabled: true,
+ *                                 id: "processor_Custom_rename_field_2_#name#",
+ *                                 matcher: "true",
+ *                                 fields: [{
+ *                                     fromName: "new",
+ *                                     toName: "old",
+ *                                 }],
+ *                             },
+ *                         },
+ *                         {
+ *                             fieldsRemoveProcessor: {
+ *                                 description: "Custom remove field",
+ *                                 enabled: true,
+ *                                 fields: ["field"],
+ *                                 id: "processor_Custom_remove_field_2_#name#",
+ *                                 matcher: "true",
+ *                             },
+ *                         },
+ *                         {
+ *                             dqlProcessor: {
+ *                                 description: "Custom DQL",
+ *                                 enabled: true,
+ *                                 dqlScript: "fieldsAdd (\"test\")",
+ *                                 id: "processor_Custom_DQL_2_#name#",
+ *                                 matcher: "true",
+ *                             },
+ *                         },
+ *                         {
+ *                             dropProcessor: {
+ *                                 description: "Custom drop processor",
+ *                                 enabled: true,
+ *                                 id: "processor_custom_drop_2_#name#",
+ *                                 matcher: "true",
+ *                                 sampleData: "{}",
+ *                             },
+ *                         },
+ *                     ],
+ *                 },
+ *                 securityContext: {
+ *                     processors: [
+ *                         {
+ *                             securityContextProcessor: {
+ *                                 description: "Custom security context 1",
+ *                                 enabled: true,
+ *                                 id: "processor_Custom_security_context_1_#name#",
+ *                                 matcher: "true",
+ *                                 sampleData: "{}",
+ *                                 value: {
+ *                                     type: "constant",
+ *                                     constant: "string",
+ *                                 },
+ *                             },
+ *                         },
+ *                         {
+ *                             securityContextProcessor: {
+ *                                 description: "Custom security context 2",
+ *                                 enabled: true,
+ *                                 id: "processor_Custom_security_context_2_#name#",
+ *                                 matcher: "true",
+ *                                 sampleData: "{}",
+ *                                 value: {
+ *                                     type: "field",
+ *                                     field: "fieldname",
+ *                                 },
+ *                             },
+ *                         },
+ *                         {
+ *                             securityContextProcessor: {
+ *                                 description: "Custom security context 3",
+ *                                 enabled: true,
+ *                                 id: "processor_Custom_security_context_3_#name#",
+ *                                 matcher: "true",
+ *                                 sampleData: "{}",
+ *                                 value: {
+ *                                     type: "multiValueConstant",
+ *                                     multiValueConstants: [
+ *                                         "multi",
+ *                                         "value",
+ *                                     ],
+ *                                 },
+ *                             },
+ *                         },
+ *                     ],
+ *                 },
+ *                 storage: {
+ *                     catchAllBucketName: "default_events",
+ *                     processors: [
+ *                         {
+ *                             bucketAssignmentProcessor: {
+ *                                 description: "Custom bucket assignment",
+ *                                 enabled: true,
+ *                                 bucketName: "default_events",
+ *                                 id: "processor_Custom_bucket_assignment_1_#name#",
+ *                                 matcher: "true",
+ *                                 sampleData: "{}",
+ *                             },
+ *                         },
+ *                         {
+ *                             noStorageProcessor: {
+ *                                 description: "Custom no storage assignment",
+ *                                 enabled: true,
+ *                                 id: "processor_Custom_no_storage_assignment_1_#name#",
+ *                                 matcher: "true",
+ *                                 sampleData: "{}",
+ *                             },
+ *                         },
+ *                     ],
+ *                 },
+ *             },
+ *         ],
+ *     },
+ *     routing: {
+ *         entries: [{
+ *             enabled: true,
+ *             matcher: "true",
+ *             note: "Custom route",
+ *             pipelineId: "pipeline_Pipeline_1_#name#",
+ *         }],
+ *     },
+ * });
+ * ```
+ */
 export class OpenpipelineEvents extends pulumi.CustomResource {
     /**
      * Get an existing OpenpipelineEvents resource's state with the given name, ID, and optional extra

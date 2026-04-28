@@ -21,15 +21,15 @@ namespace Pulumiverse.Dynatrace
         /// using System.Collections.Generic;
         /// using System.Linq;
         /// using Pulumi;
-        /// using Dynatrace = Pulumi.Dynatrace;
+        /// using Dynatrace = Pulumiverse.Dynatrace;
         /// 
         /// return await Deployment.RunAsync(() =&gt; 
         /// {
-        ///     var exampleApiTokens = Dynatrace.GetApiTokens.Invoke();
+        ///     var example = Dynatrace.GetApiTokens.Invoke();
         /// 
         ///     return new Dictionary&lt;string, object?&gt;
         ///     {
-        ///         ["example"] = exampleApiTokens,
+        ///         ["example"] = example,
         ///     };
         /// });
         /// ```
@@ -46,15 +46,15 @@ namespace Pulumiverse.Dynatrace
         /// using System.Collections.Generic;
         /// using System.Linq;
         /// using Pulumi;
-        /// using Dynatrace = Pulumi.Dynatrace;
+        /// using Dynatrace = Pulumiverse.Dynatrace;
         /// 
         /// return await Deployment.RunAsync(() =&gt; 
         /// {
-        ///     var exampleApiTokens = Dynatrace.GetApiTokens.Invoke();
+        ///     var example = Dynatrace.GetApiTokens.Invoke();
         /// 
         ///     return new Dictionary&lt;string, object?&gt;
         ///     {
-        ///         ["example"] = exampleApiTokens,
+        ///         ["example"] = example,
         ///     };
         /// });
         /// ```
@@ -71,15 +71,15 @@ namespace Pulumiverse.Dynatrace
         /// using System.Collections.Generic;
         /// using System.Linq;
         /// using Pulumi;
-        /// using Dynatrace = Pulumi.Dynatrace;
+        /// using Dynatrace = Pulumiverse.Dynatrace;
         /// 
         /// return await Deployment.RunAsync(() =&gt; 
         /// {
-        ///     var exampleApiTokens = Dynatrace.GetApiTokens.Invoke();
+        ///     var example = Dynatrace.GetApiTokens.Invoke();
         /// 
         ///     return new Dictionary&lt;string, object?&gt;
         ///     {
-        ///         ["example"] = exampleApiTokens,
+        ///         ["example"] = example,
         ///     };
         /// });
         /// ```

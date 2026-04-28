@@ -12,6 +12,19 @@ import (
 	"github.com/pulumiverse/pulumi-dynatrace/sdk/go/dynatrace/internal"
 )
 
+// > This resource requires the API token scopes **Read settings** (`settings.read`) and **Write settings** (`settings.write`)
+//
+// ## Dynatrace Documentation
+//
+// - Metrics - https://www.dynatrace.com/support/help/observe-and-explore/metrics
+//
+// - Settings API - https://www.dynatrace.com/support/help/dynatrace-api/environment-api/settings (schemaId: `builtin:metric.query`)
+//
+// ## Export Example Usage
+//
+// - `terraform-provider-dynatrace -export MetricQuery` downloads all existing metric query configuration
+//
+// The full documentation of the export feature is available [here](https://dt-url.net/h203qmc).
 type MetricQuery struct {
 	pulumi.CustomResourceState
 

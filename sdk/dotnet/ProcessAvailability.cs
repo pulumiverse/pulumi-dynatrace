@@ -10,6 +10,21 @@ using Pulumi;
 
 namespace Pulumiverse.Dynatrace
 {
+    /// <summary>
+    /// &gt; This resource requires the API token scopes **Read settings** (`settings.read`) and **Write settings** (`settings.write`)
+    /// 
+    /// ## Dynatrace Documentation
+    /// 
+    /// - Process Availability - https://www.dynatrace.com/support/help/how-to-use-dynatrace/infrastructure-monitoring/hosts/monitoring/process-availability
+    /// 
+    /// - Settings API - https://www.dynatrace.com/support/help/dynatrace-api/environment-api/settings (schemaId: `builtin:processavailability`)
+    /// 
+    /// ## Export Example Usage
+    /// 
+    /// - `terraform-provider-dynatrace -export dynatrace.ProcessAvailability` downloads all existing process availability configuration
+    /// 
+    /// The full documentation of the export feature is available [here](https://dt-url.net/h203qmc).
+    /// </summary>
     [DynatraceResourceType("dynatrace:index/processAvailability:ProcessAvailability")]
     public partial class ProcessAvailability : global::Pulumi.CustomResource
     {
@@ -26,13 +41,13 @@ namespace Pulumiverse.Dynatrace
         public Output<string> InsertAfter { get; private set; } = null!;
 
         /// <summary>
-        /// Set of additional key-value properties to be attached to the triggered event.
+        /// Set of additional key-value properties to be attached to the triggered event. You can retrieve the available property keys using the [Events API v2](https://dt-url.net/9622g1w). Additionally any Host resource attribute can be dynamically substituted (agent 1.325+).
         /// </summary>
         [Output("metadata")]
         public Output<Outputs.ProcessAvailabilityMetadata?> Metadata { get; private set; } = null!;
 
         /// <summary>
-        /// Specify a minimum number of processes matching the monitoring rule. If it's not satisfied, an alert will open.
+        /// Specify a minimum number of processes matching the monitoring rule. An alert is triggered if any host falls below this threshold.
         /// </summary>
         [Output("minimumProcesses")]
         public Output<int?> MinimumProcesses { get; private set; } = null!;
@@ -44,7 +59,7 @@ namespace Pulumiverse.Dynatrace
         public Output<string> Name { get; private set; } = null!;
 
         /// <summary>
-        /// Select the operating systems on which the monitoring rule should be applied.
+        /// Select the operating systems on which the monitoring rule should be applied. Possible Values: `AIX`, `LINUX`, `WINDOWS`
         /// </summary>
         [Output("operatingSystems")]
         public Output<ImmutableArray<string>> OperatingSystems { get; private set; } = null!;
@@ -121,13 +136,13 @@ namespace Pulumiverse.Dynatrace
         public Input<string>? InsertAfter { get; set; }
 
         /// <summary>
-        /// Set of additional key-value properties to be attached to the triggered event.
+        /// Set of additional key-value properties to be attached to the triggered event. You can retrieve the available property keys using the [Events API v2](https://dt-url.net/9622g1w). Additionally any Host resource attribute can be dynamically substituted (agent 1.325+).
         /// </summary>
         [Input("metadata")]
         public Input<Inputs.ProcessAvailabilityMetadataArgs>? Metadata { get; set; }
 
         /// <summary>
-        /// Specify a minimum number of processes matching the monitoring rule. If it's not satisfied, an alert will open.
+        /// Specify a minimum number of processes matching the monitoring rule. An alert is triggered if any host falls below this threshold.
         /// </summary>
         [Input("minimumProcesses")]
         public Input<int>? MinimumProcesses { get; set; }
@@ -142,7 +157,7 @@ namespace Pulumiverse.Dynatrace
         private InputList<string>? _operatingSystems;
 
         /// <summary>
-        /// Select the operating systems on which the monitoring rule should be applied.
+        /// Select the operating systems on which the monitoring rule should be applied. Possible Values: `AIX`, `LINUX`, `WINDOWS`
         /// </summary>
         public InputList<string> OperatingSystems
         {
@@ -183,13 +198,13 @@ namespace Pulumiverse.Dynatrace
         public Input<string>? InsertAfter { get; set; }
 
         /// <summary>
-        /// Set of additional key-value properties to be attached to the triggered event.
+        /// Set of additional key-value properties to be attached to the triggered event. You can retrieve the available property keys using the [Events API v2](https://dt-url.net/9622g1w). Additionally any Host resource attribute can be dynamically substituted (agent 1.325+).
         /// </summary>
         [Input("metadata")]
         public Input<Inputs.ProcessAvailabilityMetadataGetArgs>? Metadata { get; set; }
 
         /// <summary>
-        /// Specify a minimum number of processes matching the monitoring rule. If it's not satisfied, an alert will open.
+        /// Specify a minimum number of processes matching the monitoring rule. An alert is triggered if any host falls below this threshold.
         /// </summary>
         [Input("minimumProcesses")]
         public Input<int>? MinimumProcesses { get; set; }
@@ -204,7 +219,7 @@ namespace Pulumiverse.Dynatrace
         private InputList<string>? _operatingSystems;
 
         /// <summary>
-        /// Select the operating systems on which the monitoring rule should be applied.
+        /// Select the operating systems on which the monitoring rule should be applied. Possible Values: `AIX`, `LINUX`, `WINDOWS`
         /// </summary>
         public InputList<string> OperatingSystems
         {

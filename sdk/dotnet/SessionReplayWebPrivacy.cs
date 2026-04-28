@@ -10,6 +10,21 @@ using Pulumi;
 
 namespace Pulumiverse.Dynatrace
 {
+    /// <summary>
+    /// &gt; This resource requires the API token scopes **Read settings** (`settings.read`) and **Write settings** (`settings.write`)
+    /// 
+    /// ## Dynatrace Documentation
+    /// 
+    /// - Configure Session Replay for web applications - https://www.dynatrace.com/support/help/platform-modules/digital-experience/session-replay/configure-session-replay-web
+    /// 
+    /// - Settings API - https://www.dynatrace.com/support/help/dynatrace-api/environment-api/settings (schemaId: `builtin:sessionreplay.web.privacy-preferences`)
+    /// 
+    /// ## Export Example Usage
+    /// 
+    /// - `terraform-provider-dynatrace -export dynatrace.SessionReplayWebPrivacy` downloads all existing Session Replay data privacy configuration
+    /// 
+    /// The full documentation of the export feature is available [here](https://dt-url.net/h203qmc).
+    /// </summary>
     [DynatraceResourceType("dynatrace:index/sessionReplayWebPrivacy:SessionReplayWebPrivacy")]
     public partial class SessionReplayWebPrivacy : global::Pulumi.CustomResource
     {

@@ -20,13 +20,13 @@ namespace Pulumiverse.Dynatrace.Inputs
         public Input<Inputs.HostAnomaliesV2HostHighMemoryDetectionCustomThresholdsGetArgs>? CustomThresholds { get; set; }
 
         /// <summary>
-        /// Detection mode for high memory usage
+        /// Detection mode for high memory usage. Possible Values: `Auto`, `Custom`
         /// </summary>
         [Input("detectionMode")]
         public Input<string>? DetectionMode { get; set; }
 
         /// <summary>
-        /// Detect high memory usage on host
+        /// This setting is enabled (`True`) or disabled (`False`)
         /// </summary>
         [Input("enabled", required: true)]
         public Input<bool> Enabled { get; set; } = null!;

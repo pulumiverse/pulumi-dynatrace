@@ -26,6 +26,7 @@ class BrowserMonitorPerformanceArgs:
                  thresholds: Optional[pulumi.Input['BrowserMonitorPerformanceThresholdsArgs']] = None):
         """
         The set of arguments for constructing a BrowserMonitorPerformance resource.
+
         :param pulumi.Input[_builtins.bool] enabled: This setting is enabled (`true`) or disabled (`false`)
         :param pulumi.Input[_builtins.str] scope: The scope of this setting (SYNTHETIC_TEST)
         :param pulumi.Input['BrowserMonitorPerformanceThresholdsArgs'] thresholds: Performance thresholds
@@ -80,6 +81,7 @@ class _BrowserMonitorPerformanceState:
                  thresholds: Optional[pulumi.Input['BrowserMonitorPerformanceThresholdsArgs']] = None):
         """
         Input properties used for looking up and filtering BrowserMonitorPerformance resources.
+
         :param pulumi.Input[_builtins.bool] enabled: This setting is enabled (`true`) or disabled (`false`)
         :param pulumi.Input[_builtins.str] scope: The scope of this setting (SYNTHETIC_TEST)
         :param pulumi.Input['BrowserMonitorPerformanceThresholdsArgs'] thresholds: Performance thresholds
@@ -139,7 +141,23 @@ class BrowserMonitorPerformance(pulumi.CustomResource):
                  thresholds: Optional[pulumi.Input[Union['BrowserMonitorPerformanceThresholdsArgs', 'BrowserMonitorPerformanceThresholdsArgsDict']]] = None,
                  __props__=None):
         """
-        Create a BrowserMonitorPerformance resource with the given unique name, props, and options.
+        > Configuration of the synthetic test scope overlaps with dynatrace_browser_monitor, but this resource in addition provides an option for an environment scope.
+
+        > This resource requires the API token scopes **Read settings** (`settings.read`) and **Write settings** (`settings.write`)
+
+        ## Dynatrace Documentation
+
+        - Performance thresholds - https://www.dynatrace.com/support/help/platform-modules/digital-experience/synthetic-monitoring/browser-monitors/configure-browser-monitors#performance-thresholds
+
+        - Settings API - https://www.dynatrace.com/support/help/dynatrace-api/environment-api/settings (schemaId: `builtin:synthetic.browser.performance-thresholds`)
+
+        ## Export Example Usage
+
+        - `terraform-provider-dynatrace -export BrowserMonitorPerformance` downloads all existing browser monitor performance thresholds configuration
+
+        The full documentation of the export feature is available [here](https://dt-url.net/h203qmc).
+
+
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[_builtins.bool] enabled: This setting is enabled (`true`) or disabled (`false`)
@@ -153,7 +171,23 @@ class BrowserMonitorPerformance(pulumi.CustomResource):
                  args: BrowserMonitorPerformanceArgs,
                  opts: Optional[pulumi.ResourceOptions] = None):
         """
-        Create a BrowserMonitorPerformance resource with the given unique name, props, and options.
+        > Configuration of the synthetic test scope overlaps with dynatrace_browser_monitor, but this resource in addition provides an option for an environment scope.
+
+        > This resource requires the API token scopes **Read settings** (`settings.read`) and **Write settings** (`settings.write`)
+
+        ## Dynatrace Documentation
+
+        - Performance thresholds - https://www.dynatrace.com/support/help/platform-modules/digital-experience/synthetic-monitoring/browser-monitors/configure-browser-monitors#performance-thresholds
+
+        - Settings API - https://www.dynatrace.com/support/help/dynatrace-api/environment-api/settings (schemaId: `builtin:synthetic.browser.performance-thresholds`)
+
+        ## Export Example Usage
+
+        - `terraform-provider-dynatrace -export BrowserMonitorPerformance` downloads all existing browser monitor performance thresholds configuration
+
+        The full documentation of the export feature is available [here](https://dt-url.net/h203qmc).
+
+
         :param str resource_name: The name of the resource.
         :param BrowserMonitorPerformanceArgs args: The arguments to use to populate this resource's properties.
         :param pulumi.ResourceOptions opts: Options for the resource.

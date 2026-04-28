@@ -23,6 +23,7 @@ class HubPermissionsArgs:
                  email: pulumi.Input[_builtins.str]):
         """
         The set of arguments for constructing a HubPermissions resource.
+
         :param pulumi.Input[_builtins.str] description: Name
         :param pulumi.Input[_builtins.str] email: Contact Email
         """
@@ -61,6 +62,7 @@ class _HubPermissionsState:
                  email: Optional[pulumi.Input[_builtins.str]] = None):
         """
         Input properties used for looking up and filtering HubPermissions resources.
+
         :param pulumi.Input[_builtins.str] description: Name
         :param pulumi.Input[_builtins.str] email: Contact Email
         """
@@ -104,7 +106,23 @@ class HubPermissions(pulumi.CustomResource):
                  email: Optional[pulumi.Input[_builtins.str]] = None,
                  __props__=None):
         """
-        Create a HubPermissions resource with the given unique name, props, and options.
+        > This resource requires the API token scopes **Read settings** (`settings.read`) and **Write settings** (`settings.write`)
+
+        This resource allows configuring email recipients for Dynatrace Hub app installation requests.
+
+        ## Dynatrace Documentation
+
+        - Dynatrace Hub - https://docs.dynatrace.com/docs/manage/hub
+
+        - Settings API - https://www.dynatrace.com/support/help/dynatrace-api/environment-api/settings (schemaId: `app:dynatrace.hub:manage.permissions`)
+
+        ## Export Example Usage
+
+        - `terraform-provider-dynatrace -export HubPermissions` downloads all existing hub permissions
+
+        The full documentation of the export feature is available [here](https://dt-url.net/h203qmc).
+
+
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[_builtins.str] description: Name
@@ -117,7 +135,23 @@ class HubPermissions(pulumi.CustomResource):
                  args: HubPermissionsArgs,
                  opts: Optional[pulumi.ResourceOptions] = None):
         """
-        Create a HubPermissions resource with the given unique name, props, and options.
+        > This resource requires the API token scopes **Read settings** (`settings.read`) and **Write settings** (`settings.write`)
+
+        This resource allows configuring email recipients for Dynatrace Hub app installation requests.
+
+        ## Dynatrace Documentation
+
+        - Dynatrace Hub - https://docs.dynatrace.com/docs/manage/hub
+
+        - Settings API - https://www.dynatrace.com/support/help/dynatrace-api/environment-api/settings (schemaId: `app:dynatrace.hub:manage.permissions`)
+
+        ## Export Example Usage
+
+        - `terraform-provider-dynatrace -export HubPermissions` downloads all existing hub permissions
+
+        The full documentation of the export feature is available [here](https://dt-url.net/h203qmc).
+
+
         :param str resource_name: The name of the resource.
         :param HubPermissionsArgs args: The arguments to use to populate this resource's properties.
         :param pulumi.ResourceOptions opts: Options for the resource.

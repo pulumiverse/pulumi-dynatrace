@@ -26,6 +26,7 @@ class DbAppFeatureFlagsArgs:
                  string_value: Optional[pulumi.Input[_builtins.str]] = None):
         """
         The set of arguments for constructing a DbAppFeatureFlags resource.
+
         :param pulumi.Input[_builtins.str] type: Possible Values: `Boolean`, `Number`, `String`
         :param pulumi.Input[_builtins.bool] boolean_value: State of boolean feature flag
         :param pulumi.Input[_builtins.str] name: Name of the feature
@@ -113,6 +114,7 @@ class _DbAppFeatureFlagsState:
                  type: Optional[pulumi.Input[_builtins.str]] = None):
         """
         Input properties used for looking up and filtering DbAppFeatureFlags resources.
+
         :param pulumi.Input[_builtins.bool] boolean_value: State of boolean feature flag
         :param pulumi.Input[_builtins.str] name: Name of the feature
         :param pulumi.Input[_builtins.int] number_value: State of numeric feature flag
@@ -204,7 +206,23 @@ class DbAppFeatureFlags(pulumi.CustomResource):
                  type: Optional[pulumi.Input[_builtins.str]] = None,
                  __props__=None):
         """
-        Create a DbAppFeatureFlags resource with the given unique name, props, and options.
+        > The database app feature flag configuration is only to be configured with direction by Dynatrace ONE
+
+        > This resource requires the API token scopes **Read settings** (`settings.read`) and **Write settings** (`settings.write`)
+
+        ## Dynatrace Documentation
+
+        - Databases app - https://docs.dynatrace.com/docs/platform-modules/applications-and-microservices/databases/database-app
+
+        - Settings API - https://www.dynatrace.com/support/help/dynatrace-api/environment-api/settings (schemaId: `app:dynatrace.database.overview:feature-flags`)
+
+        ## Export Example Usage
+
+        - `terraform-provider-dynatrace -export DbAppFeatureFlags` downloads existing database app feature flag configuration
+
+        The full documentation of the export feature is available [here](https://dt-url.net/h203qmc).
+
+
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[_builtins.bool] boolean_value: State of boolean feature flag
@@ -220,7 +238,23 @@ class DbAppFeatureFlags(pulumi.CustomResource):
                  args: DbAppFeatureFlagsArgs,
                  opts: Optional[pulumi.ResourceOptions] = None):
         """
-        Create a DbAppFeatureFlags resource with the given unique name, props, and options.
+        > The database app feature flag configuration is only to be configured with direction by Dynatrace ONE
+
+        > This resource requires the API token scopes **Read settings** (`settings.read`) and **Write settings** (`settings.write`)
+
+        ## Dynatrace Documentation
+
+        - Databases app - https://docs.dynatrace.com/docs/platform-modules/applications-and-microservices/databases/database-app
+
+        - Settings API - https://www.dynatrace.com/support/help/dynatrace-api/environment-api/settings (schemaId: `app:dynatrace.database.overview:feature-flags`)
+
+        ## Export Example Usage
+
+        - `terraform-provider-dynatrace -export DbAppFeatureFlags` downloads existing database app feature flag configuration
+
+        The full documentation of the export feature is available [here](https://dt-url.net/h203qmc).
+
+
         :param str resource_name: The name of the resource.
         :param DbAppFeatureFlagsArgs args: The arguments to use to populate this resource's properties.
         :param pulumi.ResourceOptions opts: Options for the resource.

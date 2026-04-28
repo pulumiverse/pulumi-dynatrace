@@ -23,6 +23,7 @@ class CrashdumpAnalyticsArgs:
                  host_id: pulumi.Input[_builtins.str]):
         """
         The set of arguments for constructing a CrashdumpAnalytics resource.
+
         :param pulumi.Input[_builtins.bool] enable_crash_dump_analytics: Disable the feature to stop receiving information about crash details and potential problems. We recommend keeping the feature enabled.
         :param pulumi.Input[_builtins.str] host_id: The scope of this setting (HOST HOST_GROUP environment)
         """
@@ -61,6 +62,7 @@ class _CrashdumpAnalyticsState:
                  host_id: Optional[pulumi.Input[_builtins.str]] = None):
         """
         Input properties used for looking up and filtering CrashdumpAnalytics resources.
+
         :param pulumi.Input[_builtins.bool] enable_crash_dump_analytics: Disable the feature to stop receiving information about crash details and potential problems. We recommend keeping the feature enabled.
         :param pulumi.Input[_builtins.str] host_id: The scope of this setting (HOST HOST_GROUP environment)
         """
@@ -104,7 +106,21 @@ class CrashdumpAnalytics(pulumi.CustomResource):
                  host_id: Optional[pulumi.Input[_builtins.str]] = None,
                  __props__=None):
         """
-        Create a CrashdumpAnalytics resource with the given unique name, props, and options.
+        > This resource requires the API token scopes **Read settings** (`settings.read`) and **Write settings** (`settings.write`)
+
+        ## Dynatrace Documentation
+
+        - Crash analysis - https://docs.dynatrace.com/docs/platform-modules/applications-and-microservices/profiling-and-optimization/crash-analysis
+
+        - Settings API - https://www.dynatrace.com/support/help/dynatrace-api/environment-api/settings (schemaId: `builtin:crashdump.analytics`)
+
+        ## Export Example Usage
+
+        - `terraform-provider-dynatrace -export CrashdumpAnalytics` downloads all existing crash dump analytics configuration
+
+        The full documentation of the export feature is available [here](https://dt-url.net/h203qmc).
+
+
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[_builtins.bool] enable_crash_dump_analytics: Disable the feature to stop receiving information about crash details and potential problems. We recommend keeping the feature enabled.
@@ -117,7 +133,21 @@ class CrashdumpAnalytics(pulumi.CustomResource):
                  args: CrashdumpAnalyticsArgs,
                  opts: Optional[pulumi.ResourceOptions] = None):
         """
-        Create a CrashdumpAnalytics resource with the given unique name, props, and options.
+        > This resource requires the API token scopes **Read settings** (`settings.read`) and **Write settings** (`settings.write`)
+
+        ## Dynatrace Documentation
+
+        - Crash analysis - https://docs.dynatrace.com/docs/platform-modules/applications-and-microservices/profiling-and-optimization/crash-analysis
+
+        - Settings API - https://www.dynatrace.com/support/help/dynatrace-api/environment-api/settings (schemaId: `builtin:crashdump.analytics`)
+
+        ## Export Example Usage
+
+        - `terraform-provider-dynatrace -export CrashdumpAnalytics` downloads all existing crash dump analytics configuration
+
+        The full documentation of the export feature is available [here](https://dt-url.net/h203qmc).
+
+
         :param str resource_name: The name of the resource.
         :param CrashdumpAnalyticsArgs args: The arguments to use to populate this resource's properties.
         :param pulumi.ResourceOptions opts: Options for the resource.

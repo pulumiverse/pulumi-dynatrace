@@ -28,11 +28,23 @@ class OpsGenieNotificationArgs:
                  name: Optional[pulumi.Input[_builtins.str]] = None):
         """
         The set of arguments for constructing a OpsGenieNotification resource.
-        :param pulumi.Input[_builtins.bool] active: The configuration is enabled (`true`) or disabled (`false`)
-        :param pulumi.Input[_builtins.str] domain: The region domain of the OpsGenie
-        :param pulumi.Input[_builtins.str] message: The content of the message.  You can use the following placeholders:  * `{ProblemID}`: The display number of the reported problem.  * `{ProblemImpact}`: The [impact level](https://www.dynatrace.com/support/help/shortlink/impact-analysis) of the problem. Possible values are `APPLICATION`, `SERVICE`, and `INFRASTRUCTURE`.  * `{ProblemSeverity}`: The [severity level](https://www.dynatrace.com/support/help/shortlink/event-types) of the problem. Possible values are `AVAILABILITY`, `ERROR`, `PERFORMANCE`, `RESOURCE_CONTENTION`, and `CUSTOM_ALERT`.  * `{ProblemTitle}`: A short description of the problem
+
+        :param pulumi.Input[_builtins.bool] active: This setting is enabled (`true`) or disabled (`false`)
+        :param pulumi.Input[_builtins.str] domain: The region domain of the OpsGenie.
+        :param pulumi.Input[_builtins.str] message: The content of the message. Type '{' for placeholder suggestions.. #### Available placeholders
+               **{ProblemID}**: Display number of the reported problem.
+               
+               **{ProblemImpact}**: Impact level of the problem. Possible values are APPLICATION, SERVICE, or INFRASTRUCTURE.
+               
+               **{ProblemSeverity}**: Severity level of the problem. Possible values are AVAILABILITY, ERROR, PERFORMANCE, RESOURCE_CONTENTION, or CUSTOM_ALERT.
+               
+               **{ProblemTitle}**: Short description of the problem.
+               
+               **{ImpactedEntityNames}**: The entity impacted by the problem (or multiple impacted entities).
         :param pulumi.Input[_builtins.str] profile: The ID of the associated alerting profile
-        :param pulumi.Input[_builtins.str] api_key: The API key to access OpsGenie
+        :param pulumi.Input[_builtins.str] api_key: The API key to access OpsGenie.
+               
+               Go to OpsGenie-Integrations and create a new Dynatrace integration. Copy the newly created API key.
         :param pulumi.Input[_builtins.str] legacy_id: The ID of these settings when referred to from resources requiring the REST API V1 keys
         :param pulumi.Input[_builtins.str] name: The name of the notification configuration
         """
@@ -51,7 +63,7 @@ class OpsGenieNotificationArgs:
     @pulumi.getter
     def active(self) -> pulumi.Input[_builtins.bool]:
         """
-        The configuration is enabled (`true`) or disabled (`false`)
+        This setting is enabled (`true`) or disabled (`false`)
         """
         return pulumi.get(self, "active")
 
@@ -63,7 +75,7 @@ class OpsGenieNotificationArgs:
     @pulumi.getter
     def domain(self) -> pulumi.Input[_builtins.str]:
         """
-        The region domain of the OpsGenie
+        The region domain of the OpsGenie.
         """
         return pulumi.get(self, "domain")
 
@@ -75,7 +87,16 @@ class OpsGenieNotificationArgs:
     @pulumi.getter
     def message(self) -> pulumi.Input[_builtins.str]:
         """
-        The content of the message.  You can use the following placeholders:  * `{ProblemID}`: The display number of the reported problem.  * `{ProblemImpact}`: The [impact level](https://www.dynatrace.com/support/help/shortlink/impact-analysis) of the problem. Possible values are `APPLICATION`, `SERVICE`, and `INFRASTRUCTURE`.  * `{ProblemSeverity}`: The [severity level](https://www.dynatrace.com/support/help/shortlink/event-types) of the problem. Possible values are `AVAILABILITY`, `ERROR`, `PERFORMANCE`, `RESOURCE_CONTENTION`, and `CUSTOM_ALERT`.  * `{ProblemTitle}`: A short description of the problem
+        The content of the message. Type '{' for placeholder suggestions.. #### Available placeholders
+        **{ProblemID}**: Display number of the reported problem.
+
+        **{ProblemImpact}**: Impact level of the problem. Possible values are APPLICATION, SERVICE, or INFRASTRUCTURE.
+
+        **{ProblemSeverity}**: Severity level of the problem. Possible values are AVAILABILITY, ERROR, PERFORMANCE, RESOURCE_CONTENTION, or CUSTOM_ALERT.
+
+        **{ProblemTitle}**: Short description of the problem.
+
+        **{ImpactedEntityNames}**: The entity impacted by the problem (or multiple impacted entities).
         """
         return pulumi.get(self, "message")
 
@@ -99,7 +120,9 @@ class OpsGenieNotificationArgs:
     @pulumi.getter(name="apiKey")
     def api_key(self) -> Optional[pulumi.Input[_builtins.str]]:
         """
-        The API key to access OpsGenie
+        The API key to access OpsGenie.
+
+        Go to OpsGenie-Integrations and create a new Dynatrace integration. Copy the newly created API key.
         """
         return pulumi.get(self, "api_key")
 
@@ -144,11 +167,23 @@ class _OpsGenieNotificationState:
                  profile: Optional[pulumi.Input[_builtins.str]] = None):
         """
         Input properties used for looking up and filtering OpsGenieNotification resources.
-        :param pulumi.Input[_builtins.bool] active: The configuration is enabled (`true`) or disabled (`false`)
-        :param pulumi.Input[_builtins.str] api_key: The API key to access OpsGenie
-        :param pulumi.Input[_builtins.str] domain: The region domain of the OpsGenie
+
+        :param pulumi.Input[_builtins.bool] active: This setting is enabled (`true`) or disabled (`false`)
+        :param pulumi.Input[_builtins.str] api_key: The API key to access OpsGenie.
+               
+               Go to OpsGenie-Integrations and create a new Dynatrace integration. Copy the newly created API key.
+        :param pulumi.Input[_builtins.str] domain: The region domain of the OpsGenie.
         :param pulumi.Input[_builtins.str] legacy_id: The ID of these settings when referred to from resources requiring the REST API V1 keys
-        :param pulumi.Input[_builtins.str] message: The content of the message.  You can use the following placeholders:  * `{ProblemID}`: The display number of the reported problem.  * `{ProblemImpact}`: The [impact level](https://www.dynatrace.com/support/help/shortlink/impact-analysis) of the problem. Possible values are `APPLICATION`, `SERVICE`, and `INFRASTRUCTURE`.  * `{ProblemSeverity}`: The [severity level](https://www.dynatrace.com/support/help/shortlink/event-types) of the problem. Possible values are `AVAILABILITY`, `ERROR`, `PERFORMANCE`, `RESOURCE_CONTENTION`, and `CUSTOM_ALERT`.  * `{ProblemTitle}`: A short description of the problem
+        :param pulumi.Input[_builtins.str] message: The content of the message. Type '{' for placeholder suggestions.. #### Available placeholders
+               **{ProblemID}**: Display number of the reported problem.
+               
+               **{ProblemImpact}**: Impact level of the problem. Possible values are APPLICATION, SERVICE, or INFRASTRUCTURE.
+               
+               **{ProblemSeverity}**: Severity level of the problem. Possible values are AVAILABILITY, ERROR, PERFORMANCE, RESOURCE_CONTENTION, or CUSTOM_ALERT.
+               
+               **{ProblemTitle}**: Short description of the problem.
+               
+               **{ImpactedEntityNames}**: The entity impacted by the problem (or multiple impacted entities).
         :param pulumi.Input[_builtins.str] name: The name of the notification configuration
         :param pulumi.Input[_builtins.str] profile: The ID of the associated alerting profile
         """
@@ -171,7 +206,7 @@ class _OpsGenieNotificationState:
     @pulumi.getter
     def active(self) -> Optional[pulumi.Input[_builtins.bool]]:
         """
-        The configuration is enabled (`true`) or disabled (`false`)
+        This setting is enabled (`true`) or disabled (`false`)
         """
         return pulumi.get(self, "active")
 
@@ -183,7 +218,9 @@ class _OpsGenieNotificationState:
     @pulumi.getter(name="apiKey")
     def api_key(self) -> Optional[pulumi.Input[_builtins.str]]:
         """
-        The API key to access OpsGenie
+        The API key to access OpsGenie.
+
+        Go to OpsGenie-Integrations and create a new Dynatrace integration. Copy the newly created API key.
         """
         return pulumi.get(self, "api_key")
 
@@ -195,7 +232,7 @@ class _OpsGenieNotificationState:
     @pulumi.getter
     def domain(self) -> Optional[pulumi.Input[_builtins.str]]:
         """
-        The region domain of the OpsGenie
+        The region domain of the OpsGenie.
         """
         return pulumi.get(self, "domain")
 
@@ -219,7 +256,16 @@ class _OpsGenieNotificationState:
     @pulumi.getter
     def message(self) -> Optional[pulumi.Input[_builtins.str]]:
         """
-        The content of the message.  You can use the following placeholders:  * `{ProblemID}`: The display number of the reported problem.  * `{ProblemImpact}`: The [impact level](https://www.dynatrace.com/support/help/shortlink/impact-analysis) of the problem. Possible values are `APPLICATION`, `SERVICE`, and `INFRASTRUCTURE`.  * `{ProblemSeverity}`: The [severity level](https://www.dynatrace.com/support/help/shortlink/event-types) of the problem. Possible values are `AVAILABILITY`, `ERROR`, `PERFORMANCE`, `RESOURCE_CONTENTION`, and `CUSTOM_ALERT`.  * `{ProblemTitle}`: A short description of the problem
+        The content of the message. Type '{' for placeholder suggestions.. #### Available placeholders
+        **{ProblemID}**: Display number of the reported problem.
+
+        **{ProblemImpact}**: Impact level of the problem. Possible values are APPLICATION, SERVICE, or INFRASTRUCTURE.
+
+        **{ProblemSeverity}**: Severity level of the problem. Possible values are AVAILABILITY, ERROR, PERFORMANCE, RESOURCE_CONTENTION, or CUSTOM_ALERT.
+
+        **{ProblemTitle}**: Short description of the problem.
+
+        **{ImpactedEntityNames}**: The entity impacted by the problem (or multiple impacted entities).
         """
         return pulumi.get(self, "message")
 
@@ -267,14 +313,39 @@ class OpsGenieNotification(pulumi.CustomResource):
                  profile: Optional[pulumi.Input[_builtins.str]] = None,
                  __props__=None):
         """
-        Create a OpsGenieNotification resource with the given unique name, props, and options.
+        > This resource requires the API token scopes **Read settings** (`settings.read`) and **Write settings** (`settings.write`)
+
+        ## Dynatrace Documentation
+
+        - OpsGenie notifications - https://www.dynatrace.com/support/help/setup-and-configuration/integrations/problem-notifications/opsgenie-integration
+
+        - Settings API - https://www.dynatrace.com/support/help/dynatrace-api/environment-api/settings (schemaId: `builtin:problem.notifications`)
+
+        ## Export Example Usage
+
+        - `terraform-provider-dynatrace -export OpsGenieNotification` downloads the existing problem notifications for OpsGenie
+
+        The full documentation of the export feature is available [here](https://dt-url.net/h203qmc).
+
+
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
-        :param pulumi.Input[_builtins.bool] active: The configuration is enabled (`true`) or disabled (`false`)
-        :param pulumi.Input[_builtins.str] api_key: The API key to access OpsGenie
-        :param pulumi.Input[_builtins.str] domain: The region domain of the OpsGenie
+        :param pulumi.Input[_builtins.bool] active: This setting is enabled (`true`) or disabled (`false`)
+        :param pulumi.Input[_builtins.str] api_key: The API key to access OpsGenie.
+               
+               Go to OpsGenie-Integrations and create a new Dynatrace integration. Copy the newly created API key.
+        :param pulumi.Input[_builtins.str] domain: The region domain of the OpsGenie.
         :param pulumi.Input[_builtins.str] legacy_id: The ID of these settings when referred to from resources requiring the REST API V1 keys
-        :param pulumi.Input[_builtins.str] message: The content of the message.  You can use the following placeholders:  * `{ProblemID}`: The display number of the reported problem.  * `{ProblemImpact}`: The [impact level](https://www.dynatrace.com/support/help/shortlink/impact-analysis) of the problem. Possible values are `APPLICATION`, `SERVICE`, and `INFRASTRUCTURE`.  * `{ProblemSeverity}`: The [severity level](https://www.dynatrace.com/support/help/shortlink/event-types) of the problem. Possible values are `AVAILABILITY`, `ERROR`, `PERFORMANCE`, `RESOURCE_CONTENTION`, and `CUSTOM_ALERT`.  * `{ProblemTitle}`: A short description of the problem
+        :param pulumi.Input[_builtins.str] message: The content of the message. Type '{' for placeholder suggestions.. #### Available placeholders
+               **{ProblemID}**: Display number of the reported problem.
+               
+               **{ProblemImpact}**: Impact level of the problem. Possible values are APPLICATION, SERVICE, or INFRASTRUCTURE.
+               
+               **{ProblemSeverity}**: Severity level of the problem. Possible values are AVAILABILITY, ERROR, PERFORMANCE, RESOURCE_CONTENTION, or CUSTOM_ALERT.
+               
+               **{ProblemTitle}**: Short description of the problem.
+               
+               **{ImpactedEntityNames}**: The entity impacted by the problem (or multiple impacted entities).
         :param pulumi.Input[_builtins.str] name: The name of the notification configuration
         :param pulumi.Input[_builtins.str] profile: The ID of the associated alerting profile
         """
@@ -285,7 +356,21 @@ class OpsGenieNotification(pulumi.CustomResource):
                  args: OpsGenieNotificationArgs,
                  opts: Optional[pulumi.ResourceOptions] = None):
         """
-        Create a OpsGenieNotification resource with the given unique name, props, and options.
+        > This resource requires the API token scopes **Read settings** (`settings.read`) and **Write settings** (`settings.write`)
+
+        ## Dynatrace Documentation
+
+        - OpsGenie notifications - https://www.dynatrace.com/support/help/setup-and-configuration/integrations/problem-notifications/opsgenie-integration
+
+        - Settings API - https://www.dynatrace.com/support/help/dynatrace-api/environment-api/settings (schemaId: `builtin:problem.notifications`)
+
+        ## Export Example Usage
+
+        - `terraform-provider-dynatrace -export OpsGenieNotification` downloads the existing problem notifications for OpsGenie
+
+        The full documentation of the export feature is available [here](https://dt-url.net/h203qmc).
+
+
         :param str resource_name: The name of the resource.
         :param OpsGenieNotificationArgs args: The arguments to use to populate this resource's properties.
         :param pulumi.ResourceOptions opts: Options for the resource.
@@ -358,11 +443,22 @@ class OpsGenieNotification(pulumi.CustomResource):
         :param str resource_name: The unique name of the resulting resource.
         :param pulumi.Input[str] id: The unique provider ID of the resource to lookup.
         :param pulumi.ResourceOptions opts: Options for the resource.
-        :param pulumi.Input[_builtins.bool] active: The configuration is enabled (`true`) or disabled (`false`)
-        :param pulumi.Input[_builtins.str] api_key: The API key to access OpsGenie
-        :param pulumi.Input[_builtins.str] domain: The region domain of the OpsGenie
+        :param pulumi.Input[_builtins.bool] active: This setting is enabled (`true`) or disabled (`false`)
+        :param pulumi.Input[_builtins.str] api_key: The API key to access OpsGenie.
+               
+               Go to OpsGenie-Integrations and create a new Dynatrace integration. Copy the newly created API key.
+        :param pulumi.Input[_builtins.str] domain: The region domain of the OpsGenie.
         :param pulumi.Input[_builtins.str] legacy_id: The ID of these settings when referred to from resources requiring the REST API V1 keys
-        :param pulumi.Input[_builtins.str] message: The content of the message.  You can use the following placeholders:  * `{ProblemID}`: The display number of the reported problem.  * `{ProblemImpact}`: The [impact level](https://www.dynatrace.com/support/help/shortlink/impact-analysis) of the problem. Possible values are `APPLICATION`, `SERVICE`, and `INFRASTRUCTURE`.  * `{ProblemSeverity}`: The [severity level](https://www.dynatrace.com/support/help/shortlink/event-types) of the problem. Possible values are `AVAILABILITY`, `ERROR`, `PERFORMANCE`, `RESOURCE_CONTENTION`, and `CUSTOM_ALERT`.  * `{ProblemTitle}`: A short description of the problem
+        :param pulumi.Input[_builtins.str] message: The content of the message. Type '{' for placeholder suggestions.. #### Available placeholders
+               **{ProblemID}**: Display number of the reported problem.
+               
+               **{ProblemImpact}**: Impact level of the problem. Possible values are APPLICATION, SERVICE, or INFRASTRUCTURE.
+               
+               **{ProblemSeverity}**: Severity level of the problem. Possible values are AVAILABILITY, ERROR, PERFORMANCE, RESOURCE_CONTENTION, or CUSTOM_ALERT.
+               
+               **{ProblemTitle}**: Short description of the problem.
+               
+               **{ImpactedEntityNames}**: The entity impacted by the problem (or multiple impacted entities).
         :param pulumi.Input[_builtins.str] name: The name of the notification configuration
         :param pulumi.Input[_builtins.str] profile: The ID of the associated alerting profile
         """
@@ -383,7 +479,7 @@ class OpsGenieNotification(pulumi.CustomResource):
     @pulumi.getter
     def active(self) -> pulumi.Output[_builtins.bool]:
         """
-        The configuration is enabled (`true`) or disabled (`false`)
+        This setting is enabled (`true`) or disabled (`false`)
         """
         return pulumi.get(self, "active")
 
@@ -391,7 +487,9 @@ class OpsGenieNotification(pulumi.CustomResource):
     @pulumi.getter(name="apiKey")
     def api_key(self) -> pulumi.Output[Optional[_builtins.str]]:
         """
-        The API key to access OpsGenie
+        The API key to access OpsGenie.
+
+        Go to OpsGenie-Integrations and create a new Dynatrace integration. Copy the newly created API key.
         """
         return pulumi.get(self, "api_key")
 
@@ -399,7 +497,7 @@ class OpsGenieNotification(pulumi.CustomResource):
     @pulumi.getter
     def domain(self) -> pulumi.Output[_builtins.str]:
         """
-        The region domain of the OpsGenie
+        The region domain of the OpsGenie.
         """
         return pulumi.get(self, "domain")
 
@@ -415,7 +513,16 @@ class OpsGenieNotification(pulumi.CustomResource):
     @pulumi.getter
     def message(self) -> pulumi.Output[_builtins.str]:
         """
-        The content of the message.  You can use the following placeholders:  * `{ProblemID}`: The display number of the reported problem.  * `{ProblemImpact}`: The [impact level](https://www.dynatrace.com/support/help/shortlink/impact-analysis) of the problem. Possible values are `APPLICATION`, `SERVICE`, and `INFRASTRUCTURE`.  * `{ProblemSeverity}`: The [severity level](https://www.dynatrace.com/support/help/shortlink/event-types) of the problem. Possible values are `AVAILABILITY`, `ERROR`, `PERFORMANCE`, `RESOURCE_CONTENTION`, and `CUSTOM_ALERT`.  * `{ProblemTitle}`: A short description of the problem
+        The content of the message. Type '{' for placeholder suggestions.. #### Available placeholders
+        **{ProblemID}**: Display number of the reported problem.
+
+        **{ProblemImpact}**: Impact level of the problem. Possible values are APPLICATION, SERVICE, or INFRASTRUCTURE.
+
+        **{ProblemSeverity}**: Severity level of the problem. Possible values are AVAILABILITY, ERROR, PERFORMANCE, RESOURCE_CONTENTION, or CUSTOM_ALERT.
+
+        **{ProblemTitle}**: Short description of the problem.
+
+        **{ImpactedEntityNames}**: The entity impacted by the problem (or multiple impacted entities).
         """
         return pulumi.get(self, "message")
 

@@ -4,6 +4,23 @@
 import * as pulumi from "@pulumi/pulumi";
 import * as utilities from "./utilities";
 
+/**
+ * !> This resource is utilizing an older API endpoint, please use dynatrace.CloudFoundry instead.
+ *
+ * > This resource requires the API token scopes **Read configuration** (`ReadConfig`) and **Write configuration** (`WriteConfig`)
+ *
+ * ## Dynatrace Documentation
+ *
+ * - Cloud Foundry monitoring - https://www.dynatrace.com/support/help/how-to-use-dynatrace/infrastructure-monitoring/container-platform-monitoring/cloud-foundry-monitoring
+ *
+ * - Cloud Foundry credentials API - https://www.dynatrace.com/support/help/dynatrace-api/configuration-api/cloud-foundry-foundations-credentials-api
+ *
+ * ## Export Example Usage
+ *
+ * - `terraform-provider-dynatrace -export dynatrace.CloudfoundryCredentials` downloads all existing Cloud Foundry credentials configuration
+ *
+ * The full documentation of the export feature is available [here](https://dt-url.net/h203qmc).
+ */
 export class CloudfoundryCredentials extends pulumi.CustomResource {
     /**
      * Get an existing CloudfoundryCredentials resource's state with the given name, ID, and optional extra

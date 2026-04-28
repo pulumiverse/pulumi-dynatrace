@@ -10,23 +10,38 @@ using Pulumi;
 
 namespace Pulumiverse.Dynatrace
 {
+    /// <summary>
+    /// &gt; This resource requires the API token scopes **Read settings** (`settings.read`) and **Write settings** (`settings.write`)
+    /// 
+    /// ## Dynatrace Documentation
+    /// 
+    /// - Web Hook integration - https://www.dynatrace.com/support/help/setup-and-configuration/integrations/problem-notifications/webhook-integration
+    /// 
+    /// - Settings API - https://www.dynatrace.com/support/help/dynatrace-api/environment-api/settings (schemaId: `builtin:problem.notifications`)
+    /// 
+    /// ## Export Example Usage
+    /// 
+    /// - `terraform-provider-dynatrace -export dynatrace.WebhookNotification` downloads the existing problem notifications via Web Hook
+    /// 
+    /// The full documentation of the export feature is available [here](https://dt-url.net/h203qmc).
+    /// </summary>
     [DynatraceResourceType("dynatrace:index/webhookNotification:WebhookNotification")]
     public partial class WebhookNotification : global::Pulumi.CustomResource
     {
         /// <summary>
-        /// The configuration is enabled (`True`) or disabled (`False`)
+        /// This setting is enabled (`True`) or disabled (`False`)
         /// </summary>
         [Output("active")]
         public Output<bool> Active { get; private set; } = null!;
 
         /// <summary>
-        /// A list of the additional HTTP headers
+        /// A list of the additional HTTP headers.
         /// </summary>
         [Output("headers")]
         public Output<Outputs.WebhookNotificationHeaders?> Headers { get; private set; } = null!;
 
         /// <summary>
-        /// Accept any, including self-signed and invalid, SSL certificate (`True`) or only trusted (`False`) certificates
+        /// Accept any SSL certificate (including self-signed and invalid certificates)
         /// </summary>
         [Output("insecure")]
         public Output<bool?> Insecure { get; private set; } = null!;
@@ -38,13 +53,13 @@ namespace Pulumiverse.Dynatrace
         public Output<string> LegacyId { get; private set; } = null!;
 
         /// <summary>
-        /// The name of the notification configuration
+        /// The name of the notification configuration.
         /// </summary>
         [Output("name")]
         public Output<string> Name { get; private set; } = null!;
 
         /// <summary>
-        /// Send email if problem is closed
+        /// Call webhook if problem is closed
         /// </summary>
         [Output("notifyClosedProblems")]
         public Output<bool?> NotifyClosedProblems { get; private set; } = null!;
@@ -57,12 +72,15 @@ namespace Pulumiverse.Dynatrace
 
         /// <summary>
         /// To authenticate your integration, the OAuth 2.0 *Client Credentials* Flow (Grant Type) is used. For details see [Client Credentials Flow](https://dt-url.net/ym22wsm)).
+        /// 
+        /// The obtained Access Token is subsequently provided in the *Authorization* header of the request carrying the notification payload.
         /// </summary>
         [Output("oauth2Credentials")]
         public Output<Outputs.WebhookNotificationOauth2Credentials?> Oauth2Credentials { get; private set; } = null!;
 
         /// <summary>
-        /// The content of the notification message. You can use the following placeholders:  * `{ImpactedEntities}`: Details about the entities impacted by the problem in form of a JSON array.  * `{ImpactedEntity}`: The entity impacted by the problem or *X* impacted entities.  * `{PID}`: The ID of the reported problem.  * `{ProblemDetailsHTML}`: All problem event details, including root cause, as an HTML-formatted string.  * `{ProblemDetailsJSON}`: All problem event details, including root cause, as a JSON object.  * `{ProblemDetailsMarkdown}`: All problem event details, including root cause, as a [Markdown-formatted](https://www.markdownguide.org/cheat-sheet/) string.  * `{ProblemDetailsText}`: All problem event details, including root cause, as a text-formatted string.  * `{ProblemID}`: The display number of the reported problem.  * `{ProblemImpact}`: The [impact level](https://www.dynatrace.com/support/help/shortlink/impact-analysis) of the problem. Possible values are `APPLICATION`, `SERVICE`, and `INFRASTRUCTURE`.  * `{ProblemSeverity}`: The [severity level](https://www.dynatrace.com/support/help/shortlink/event-types) of the problem. Possible values are `AVAILABILITY`, `ERROR`, `PERFORMANCE`, `RESOURCE_CONTENTION`, and `CUSTOM_ALERT`.  * `{ProblemTitle}`: A short description of the problem.  * `{ProblemURL}`: The URL of the problem within Dynatrace.  * `{State}`: The state of the problem. Possible values are `OPEN` and `RESOLVED`.  * `{Tags}`: The list of tags that are defined for all impacted entities, separated by commas
+        /// The content of the notification message. Type '{' for placeholder suggestions.. #### Available placeholders
+        /// **{ImpactedEntities}**: Details about the entities impacted by the problem in form of a json array.
         /// </summary>
         [Output("payload")]
         public Output<string> Payload { get; private set; } = null!;
@@ -80,7 +98,7 @@ namespace Pulumiverse.Dynatrace
         public Output<string?> SecretUrl { get; private set; } = null!;
 
         /// <summary>
-        /// The URL of the WebHook endpoint
+        /// The URL of the webhook endpoint.
         /// </summary>
         [Output("url")]
         public Output<string?> Url { get; private set; } = null!;
@@ -149,19 +167,19 @@ namespace Pulumiverse.Dynatrace
     public sealed class WebhookNotificationArgs : global::Pulumi.ResourceArgs
     {
         /// <summary>
-        /// The configuration is enabled (`True`) or disabled (`False`)
+        /// This setting is enabled (`True`) or disabled (`False`)
         /// </summary>
         [Input("active", required: true)]
         public Input<bool> Active { get; set; } = null!;
 
         /// <summary>
-        /// A list of the additional HTTP headers
+        /// A list of the additional HTTP headers.
         /// </summary>
         [Input("headers")]
         public Input<Inputs.WebhookNotificationHeadersArgs>? Headers { get; set; }
 
         /// <summary>
-        /// Accept any, including self-signed and invalid, SSL certificate (`True`) or only trusted (`False`) certificates
+        /// Accept any SSL certificate (including self-signed and invalid certificates)
         /// </summary>
         [Input("insecure")]
         public Input<bool>? Insecure { get; set; }
@@ -173,13 +191,13 @@ namespace Pulumiverse.Dynatrace
         public Input<string>? LegacyId { get; set; }
 
         /// <summary>
-        /// The name of the notification configuration
+        /// The name of the notification configuration.
         /// </summary>
         [Input("name")]
         public Input<string>? Name { get; set; }
 
         /// <summary>
-        /// Send email if problem is closed
+        /// Call webhook if problem is closed
         /// </summary>
         [Input("notifyClosedProblems")]
         public Input<bool>? NotifyClosedProblems { get; set; }
@@ -192,12 +210,15 @@ namespace Pulumiverse.Dynatrace
 
         /// <summary>
         /// To authenticate your integration, the OAuth 2.0 *Client Credentials* Flow (Grant Type) is used. For details see [Client Credentials Flow](https://dt-url.net/ym22wsm)).
+        /// 
+        /// The obtained Access Token is subsequently provided in the *Authorization* header of the request carrying the notification payload.
         /// </summary>
         [Input("oauth2Credentials")]
         public Input<Inputs.WebhookNotificationOauth2CredentialsArgs>? Oauth2Credentials { get; set; }
 
         /// <summary>
-        /// The content of the notification message. You can use the following placeholders:  * `{ImpactedEntities}`: Details about the entities impacted by the problem in form of a JSON array.  * `{ImpactedEntity}`: The entity impacted by the problem or *X* impacted entities.  * `{PID}`: The ID of the reported problem.  * `{ProblemDetailsHTML}`: All problem event details, including root cause, as an HTML-formatted string.  * `{ProblemDetailsJSON}`: All problem event details, including root cause, as a JSON object.  * `{ProblemDetailsMarkdown}`: All problem event details, including root cause, as a [Markdown-formatted](https://www.markdownguide.org/cheat-sheet/) string.  * `{ProblemDetailsText}`: All problem event details, including root cause, as a text-formatted string.  * `{ProblemID}`: The display number of the reported problem.  * `{ProblemImpact}`: The [impact level](https://www.dynatrace.com/support/help/shortlink/impact-analysis) of the problem. Possible values are `APPLICATION`, `SERVICE`, and `INFRASTRUCTURE`.  * `{ProblemSeverity}`: The [severity level](https://www.dynatrace.com/support/help/shortlink/event-types) of the problem. Possible values are `AVAILABILITY`, `ERROR`, `PERFORMANCE`, `RESOURCE_CONTENTION`, and `CUSTOM_ALERT`.  * `{ProblemTitle}`: A short description of the problem.  * `{ProblemURL}`: The URL of the problem within Dynatrace.  * `{State}`: The state of the problem. Possible values are `OPEN` and `RESOLVED`.  * `{Tags}`: The list of tags that are defined for all impacted entities, separated by commas
+        /// The content of the notification message. Type '{' for placeholder suggestions.. #### Available placeholders
+        /// **{ImpactedEntities}**: Details about the entities impacted by the problem in form of a json array.
         /// </summary>
         [Input("payload", required: true)]
         public Input<string> Payload { get; set; } = null!;
@@ -225,7 +246,7 @@ namespace Pulumiverse.Dynatrace
         }
 
         /// <summary>
-        /// The URL of the WebHook endpoint
+        /// The URL of the webhook endpoint.
         /// </summary>
         [Input("url")]
         public Input<string>? Url { get; set; }
@@ -251,19 +272,19 @@ namespace Pulumiverse.Dynatrace
     public sealed class WebhookNotificationState : global::Pulumi.ResourceArgs
     {
         /// <summary>
-        /// The configuration is enabled (`True`) or disabled (`False`)
+        /// This setting is enabled (`True`) or disabled (`False`)
         /// </summary>
         [Input("active")]
         public Input<bool>? Active { get; set; }
 
         /// <summary>
-        /// A list of the additional HTTP headers
+        /// A list of the additional HTTP headers.
         /// </summary>
         [Input("headers")]
         public Input<Inputs.WebhookNotificationHeadersGetArgs>? Headers { get; set; }
 
         /// <summary>
-        /// Accept any, including self-signed and invalid, SSL certificate (`True`) or only trusted (`False`) certificates
+        /// Accept any SSL certificate (including self-signed and invalid certificates)
         /// </summary>
         [Input("insecure")]
         public Input<bool>? Insecure { get; set; }
@@ -275,13 +296,13 @@ namespace Pulumiverse.Dynatrace
         public Input<string>? LegacyId { get; set; }
 
         /// <summary>
-        /// The name of the notification configuration
+        /// The name of the notification configuration.
         /// </summary>
         [Input("name")]
         public Input<string>? Name { get; set; }
 
         /// <summary>
-        /// Send email if problem is closed
+        /// Call webhook if problem is closed
         /// </summary>
         [Input("notifyClosedProblems")]
         public Input<bool>? NotifyClosedProblems { get; set; }
@@ -294,12 +315,15 @@ namespace Pulumiverse.Dynatrace
 
         /// <summary>
         /// To authenticate your integration, the OAuth 2.0 *Client Credentials* Flow (Grant Type) is used. For details see [Client Credentials Flow](https://dt-url.net/ym22wsm)).
+        /// 
+        /// The obtained Access Token is subsequently provided in the *Authorization* header of the request carrying the notification payload.
         /// </summary>
         [Input("oauth2Credentials")]
         public Input<Inputs.WebhookNotificationOauth2CredentialsGetArgs>? Oauth2Credentials { get; set; }
 
         /// <summary>
-        /// The content of the notification message. You can use the following placeholders:  * `{ImpactedEntities}`: Details about the entities impacted by the problem in form of a JSON array.  * `{ImpactedEntity}`: The entity impacted by the problem or *X* impacted entities.  * `{PID}`: The ID of the reported problem.  * `{ProblemDetailsHTML}`: All problem event details, including root cause, as an HTML-formatted string.  * `{ProblemDetailsJSON}`: All problem event details, including root cause, as a JSON object.  * `{ProblemDetailsMarkdown}`: All problem event details, including root cause, as a [Markdown-formatted](https://www.markdownguide.org/cheat-sheet/) string.  * `{ProblemDetailsText}`: All problem event details, including root cause, as a text-formatted string.  * `{ProblemID}`: The display number of the reported problem.  * `{ProblemImpact}`: The [impact level](https://www.dynatrace.com/support/help/shortlink/impact-analysis) of the problem. Possible values are `APPLICATION`, `SERVICE`, and `INFRASTRUCTURE`.  * `{ProblemSeverity}`: The [severity level](https://www.dynatrace.com/support/help/shortlink/event-types) of the problem. Possible values are `AVAILABILITY`, `ERROR`, `PERFORMANCE`, `RESOURCE_CONTENTION`, and `CUSTOM_ALERT`.  * `{ProblemTitle}`: A short description of the problem.  * `{ProblemURL}`: The URL of the problem within Dynatrace.  * `{State}`: The state of the problem. Possible values are `OPEN` and `RESOLVED`.  * `{Tags}`: The list of tags that are defined for all impacted entities, separated by commas
+        /// The content of the notification message. Type '{' for placeholder suggestions.. #### Available placeholders
+        /// **{ImpactedEntities}**: Details about the entities impacted by the problem in form of a json array.
         /// </summary>
         [Input("payload")]
         public Input<string>? Payload { get; set; }
@@ -327,7 +351,7 @@ namespace Pulumiverse.Dynatrace
         }
 
         /// <summary>
-        /// The URL of the WebHook endpoint
+        /// The URL of the webhook endpoint.
         /// </summary>
         [Input("url")]
         public Input<string>? Url { get; set; }

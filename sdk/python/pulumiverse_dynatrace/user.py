@@ -26,6 +26,7 @@ class UserArgs:
                  groups: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None):
         """
         The set of arguments for constructing a User resource.
+
         :param pulumi.Input[_builtins.str] email: User's email address
         :param pulumi.Input[_builtins.str] first_name: User's first name
         :param pulumi.Input[_builtins.str] last_name: User's last name
@@ -110,6 +111,7 @@ class _UserState:
                  user_name: Optional[pulumi.Input[_builtins.str]] = None):
         """
         Input properties used for looking up and filtering User resources.
+
         :param pulumi.Input[_builtins.str] email: User's email address
         :param pulumi.Input[_builtins.str] first_name: User's first name
         :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] groups: List of user's user group IDs
@@ -201,7 +203,63 @@ class User(pulumi.CustomResource):
                  user_name: Optional[pulumi.Input[_builtins.str]] = None,
                  __props__=None):
         """
-        Create a User resource with the given unique name, props, and options.
+        > **Dynatrace Managed only**
+
+        > To utilize this resource, please define the environment variables `DT_CLUSTER_URL` and `DT_CLUSTER_API_TOKEN` with the cluster API token scope **Service Provider API** (`ServiceProviderAPI`).
+
+        ## Dynatrace Documentation
+
+        - User and group management - https://docs.dynatrace.com/managed/manage/identity-access-management/user-and-group-management
+
+        - User management API - https://www.dynatrace.com/support/help/dynatrace-api/account-management-api/user-management-api
+
+        ## Export Example Usage
+
+        - `terraform-provider-dynatrace -export User` downloads all existing users
+
+        The full documentation of the export feature is available [here](https://dt-url.net/h203qmc).
+
+        ## Resource Example Usage
+
+        ```python
+        import pulumi
+        import pulumiverse_dynatrace as dynatrace
+
+        config = pulumi.Config()
+        cluster = config.get("cluster")
+        if cluster is None:
+            cluster = "<the-id-of-your-dynatrace-cluster>"
+        environment = config.get("environment")
+        if environment is None:
+            environment = "<the-id-of-an-environment-within-your-cluster"
+        terraform = dynatrace.UserGroup("terraform",
+            name="Anonymous",
+            ldap_groups=["Anonymous"])
+        terraform_user = dynatrace.User("terraform",
+            email="me@example.com",
+            first_name="John",
+            groups=[terraform.id],
+            last_name="Doe",
+            user_name="me@example.com")
+        terraform_cluster = dynatrace.Policy("terraform_cluster",
+            name="terraform_cluster",
+            cluster=cluster,
+            statement_query="ALLOW settings:objects:read, settings:schemas:read WHERE settings:schemaId = \\"terraform-cluster\\";")
+        terraform_env = dynatrace.Policy("terraform_env",
+            name="terraform_env",
+            environment=environment,
+            statement_query="ALLOW environment:roles:viewer;")
+        terraform_cluster_binding = dynatrace.PolicyBindings("terraform_cluster_binding",
+            cluster=cluster,
+            group=terraform.id,
+            policies=[terraform_cluster.id])
+        terraform_env_binding = dynatrace.PolicyBindings("terraform_env_binding",
+            environment=environment,
+            group=terraform.id,
+            policies=[terraform_env.id])
+        ```
+
+
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[_builtins.str] email: User's email address
@@ -217,7 +275,63 @@ class User(pulumi.CustomResource):
                  args: UserArgs,
                  opts: Optional[pulumi.ResourceOptions] = None):
         """
-        Create a User resource with the given unique name, props, and options.
+        > **Dynatrace Managed only**
+
+        > To utilize this resource, please define the environment variables `DT_CLUSTER_URL` and `DT_CLUSTER_API_TOKEN` with the cluster API token scope **Service Provider API** (`ServiceProviderAPI`).
+
+        ## Dynatrace Documentation
+
+        - User and group management - https://docs.dynatrace.com/managed/manage/identity-access-management/user-and-group-management
+
+        - User management API - https://www.dynatrace.com/support/help/dynatrace-api/account-management-api/user-management-api
+
+        ## Export Example Usage
+
+        - `terraform-provider-dynatrace -export User` downloads all existing users
+
+        The full documentation of the export feature is available [here](https://dt-url.net/h203qmc).
+
+        ## Resource Example Usage
+
+        ```python
+        import pulumi
+        import pulumiverse_dynatrace as dynatrace
+
+        config = pulumi.Config()
+        cluster = config.get("cluster")
+        if cluster is None:
+            cluster = "<the-id-of-your-dynatrace-cluster>"
+        environment = config.get("environment")
+        if environment is None:
+            environment = "<the-id-of-an-environment-within-your-cluster"
+        terraform = dynatrace.UserGroup("terraform",
+            name="Anonymous",
+            ldap_groups=["Anonymous"])
+        terraform_user = dynatrace.User("terraform",
+            email="me@example.com",
+            first_name="John",
+            groups=[terraform.id],
+            last_name="Doe",
+            user_name="me@example.com")
+        terraform_cluster = dynatrace.Policy("terraform_cluster",
+            name="terraform_cluster",
+            cluster=cluster,
+            statement_query="ALLOW settings:objects:read, settings:schemas:read WHERE settings:schemaId = \\"terraform-cluster\\";")
+        terraform_env = dynatrace.Policy("terraform_env",
+            name="terraform_env",
+            environment=environment,
+            statement_query="ALLOW environment:roles:viewer;")
+        terraform_cluster_binding = dynatrace.PolicyBindings("terraform_cluster_binding",
+            cluster=cluster,
+            group=terraform.id,
+            policies=[terraform_cluster.id])
+        terraform_env_binding = dynatrace.PolicyBindings("terraform_env_binding",
+            environment=environment,
+            group=terraform.id,
+            policies=[terraform_env.id])
+        ```
+
+
         :param str resource_name: The name of the resource.
         :param UserArgs args: The arguments to use to populate this resource's properties.
         :param pulumi.ResourceOptions opts: Options for the resource.

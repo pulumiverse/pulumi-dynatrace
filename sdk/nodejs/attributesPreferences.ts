@@ -4,6 +4,21 @@
 import * as pulumi from "@pulumi/pulumi";
 import * as utilities from "./utilities";
 
+/**
+ * > This resource requires the API token scopes **Read settings** (`settings.read`) and **Write settings** (`settings.write`)
+ *
+ * ## Dynatrace Documentation
+ *
+ * - Span settings - https://www.dynatrace.com/support/help/extend-dynatrace/extend-tracing/span-settings
+ *
+ * - Settings API - https://www.dynatrace.com/support/help/dynatrace-api/environment-api/settings (schemaId: `builtin:attributes-preferences`)
+ *
+ * ## Export Example Usage
+ *
+ * - `terraform-provider-dynatrace -export dynatrace.AttributesPreferences` downloads existing attribute preference configuration
+ *
+ * The full documentation of the export feature is available [here](https://dt-url.net/h203qmc).
+ */
 export class AttributesPreferences extends pulumi.CustomResource {
     /**
      * Get an existing AttributesPreferences resource's state with the given name, ID, and optional extra

@@ -30,6 +30,7 @@ class DavisAnomalyDetectorsArgs:
                  title: pulumi.Input[_builtins.str]):
         """
         The set of arguments for constructing a DavisAnomalyDetectors resource.
+
         :param pulumi.Input['DavisAnomalyDetectorsAnalyzerArgs'] analyzer: Analyzer input
         :param pulumi.Input[_builtins.str] description: The description of the anomaly detector
         :param pulumi.Input[_builtins.bool] enabled: This setting is enabled (`true`) or disabled (`false`)
@@ -143,6 +144,7 @@ class _DavisAnomalyDetectorsState:
                  title: Optional[pulumi.Input[_builtins.str]] = None):
         """
         Input properties used for looking up and filtering DavisAnomalyDetectors resources.
+
         :param pulumi.Input['DavisAnomalyDetectorsAnalyzerArgs'] analyzer: Analyzer input
         :param pulumi.Input[_builtins.str] description: The description of the anomaly detector
         :param pulumi.Input[_builtins.bool] enabled: This setting is enabled (`true`) or disabled (`false`)
@@ -266,7 +268,24 @@ class DavisAnomalyDetectors(pulumi.CustomResource):
                  title: Optional[pulumi.Input[_builtins.str]] = None,
                  __props__=None):
         """
-        Create a DavisAnomalyDetectors resource with the given unique name, props, and options.
+        > **Dynatrace SaaS only**
+
+        > This resource requires an OAuth client or platform token configured with the permissions outlined in the [Davis Anomaly Detection](https://docs.dynatrace.com/docs/shortlink/davis-ai-anomaly-detection-app#expand--prerequisites--1) app documentation.
+        Please set the environment variables `DT_CLIENT_ID` and `DT_CLIENT_SECRET`, or alternatively `DT_PLATFORM_TOKEN`.
+
+        ## Dynatrace Documentation
+
+        - Davis Anomaly Detection App - https://docs.dynatrace.com/docs/platform/davis-ai/anomaly-detection/anomaly-detection-app
+
+        - Settings API - https://www.dynatrace.com/support/help/dynatrace-api/environment-api/settings (schemaId: `builtin:davis.anomaly-detectors`)
+
+        ## Export Example Usage
+
+        - `terraform-provider-dynatrace -export DavisAnomalyDetectors` downloads all existing Davis anomaly detector configuration
+
+        The full documentation of the export feature is available [here](https://dt-url.net/h203qmc).
+
+
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[Union['DavisAnomalyDetectorsAnalyzerArgs', 'DavisAnomalyDetectorsAnalyzerArgsDict']] analyzer: Analyzer input
@@ -284,7 +303,24 @@ class DavisAnomalyDetectors(pulumi.CustomResource):
                  args: DavisAnomalyDetectorsArgs,
                  opts: Optional[pulumi.ResourceOptions] = None):
         """
-        Create a DavisAnomalyDetectors resource with the given unique name, props, and options.
+        > **Dynatrace SaaS only**
+
+        > This resource requires an OAuth client or platform token configured with the permissions outlined in the [Davis Anomaly Detection](https://docs.dynatrace.com/docs/shortlink/davis-ai-anomaly-detection-app#expand--prerequisites--1) app documentation.
+        Please set the environment variables `DT_CLIENT_ID` and `DT_CLIENT_SECRET`, or alternatively `DT_PLATFORM_TOKEN`.
+
+        ## Dynatrace Documentation
+
+        - Davis Anomaly Detection App - https://docs.dynatrace.com/docs/platform/davis-ai/anomaly-detection/anomaly-detection-app
+
+        - Settings API - https://www.dynatrace.com/support/help/dynatrace-api/environment-api/settings (schemaId: `builtin:davis.anomaly-detectors`)
+
+        ## Export Example Usage
+
+        - `terraform-provider-dynatrace -export DavisAnomalyDetectors` downloads all existing Davis anomaly detector configuration
+
+        The full documentation of the export feature is available [here](https://dt-url.net/h203qmc).
+
+
         :param str resource_name: The name of the resource.
         :param DavisAnomalyDetectorsArgs args: The arguments to use to populate this resource's properties.
         :param pulumi.ResourceOptions opts: Options for the resource.

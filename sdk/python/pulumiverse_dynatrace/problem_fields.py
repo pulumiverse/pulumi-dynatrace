@@ -24,6 +24,7 @@ class ProblemFieldsArgs:
                  problem_field: pulumi.Input[_builtins.str]):
         """
         The set of arguments for constructing a ProblemFields resource.
+
         :param pulumi.Input[_builtins.bool] enabled: This setting is enabled (`true`) or disabled (`false`)
         :param pulumi.Input[_builtins.str] event_field: Field from the event that will be extracted.
         :param pulumi.Input[_builtins.str] problem_field: Field under which the extracted event data will be stored on the problem.
@@ -77,6 +78,7 @@ class _ProblemFieldsState:
                  problem_field: Optional[pulumi.Input[_builtins.str]] = None):
         """
         Input properties used for looking up and filtering ProblemFields resources.
+
         :param pulumi.Input[_builtins.bool] enabled: This setting is enabled (`true`) or disabled (`false`)
         :param pulumi.Input[_builtins.str] event_field: Field from the event that will be extracted.
         :param pulumi.Input[_builtins.str] problem_field: Field under which the extracted event data will be stored on the problem.
@@ -136,7 +138,21 @@ class ProblemFields(pulumi.CustomResource):
                  problem_field: Optional[pulumi.Input[_builtins.str]] = None,
                  __props__=None):
         """
-        Create a ProblemFields resource with the given unique name, props, and options.
+        > This resource requires the API token scopes **Read settings** (`settings.read`) and **Write settings** (`settings.write`)
+
+        ## Dynatrace Documentation
+
+        - Davis AI - https://docs.dynatrace.com/docs/discover-dynatrace/platform/davis-ai
+
+        - Settings API - https://www.dynatrace.com/support/help/dynatrace-api/environment-api/settings (schemaId: `builtin:problem.fields`)
+
+        ## Export Example Usage
+
+        - `terraform-provider-dynatrace -export ProblemFields` downloads existing problem fields rules
+
+        The full documentation of the export feature is available [here](https://dt-url.net/h203qmc).
+
+
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[_builtins.bool] enabled: This setting is enabled (`true`) or disabled (`false`)
@@ -150,7 +166,21 @@ class ProblemFields(pulumi.CustomResource):
                  args: ProblemFieldsArgs,
                  opts: Optional[pulumi.ResourceOptions] = None):
         """
-        Create a ProblemFields resource with the given unique name, props, and options.
+        > This resource requires the API token scopes **Read settings** (`settings.read`) and **Write settings** (`settings.write`)
+
+        ## Dynatrace Documentation
+
+        - Davis AI - https://docs.dynatrace.com/docs/discover-dynatrace/platform/davis-ai
+
+        - Settings API - https://www.dynatrace.com/support/help/dynatrace-api/environment-api/settings (schemaId: `builtin:problem.fields`)
+
+        ## Export Example Usage
+
+        - `terraform-provider-dynatrace -export ProblemFields` downloads existing problem fields rules
+
+        The full documentation of the export feature is available [here](https://dt-url.net/h203qmc).
+
+
         :param str resource_name: The name of the resource.
         :param ProblemFieldsArgs args: The arguments to use to populate this resource's properties.
         :param pulumi.ResourceOptions opts: Options for the resource.

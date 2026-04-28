@@ -32,6 +32,7 @@ class ManagedBackupArgs:
                  storage_path: Optional[pulumi.Input[_builtins.str]] = None):
         """
         The set of arguments for constructing a ManagedBackup resource.
+
         :param pulumi.Input[_builtins.int] cassandra_scheduled_time: Hour to start Cassandra backups each day.
         :param pulumi.Input[_builtins.int] bandwidth_limit_mbits: Cassandra backup bandwidth limit in Mbps
         :param pulumi.Input[_builtins.str] current_state: For internal use: current state of rules in JSON format
@@ -215,6 +216,7 @@ class _ManagedBackupState:
                  storage_path: Optional[pulumi.Input[_builtins.str]] = None):
         """
         Input properties used for looking up and filtering ManagedBackup resources.
+
         :param pulumi.Input[_builtins.int] bandwidth_limit_mbits: Cassandra backup bandwidth limit in Mbps
         :param pulumi.Input[_builtins.int] cassandra_scheduled_time: Hour to start Cassandra backups each day.
         :param pulumi.Input[_builtins.str] current_state: For internal use: current state of rules in JSON format
@@ -402,7 +404,35 @@ class ManagedBackup(pulumi.CustomResource):
                  storage_path: Optional[pulumi.Input[_builtins.str]] = None,
                  __props__=None):
         """
-        Create a ManagedBackup resource with the given unique name, props, and options.
+        !> **HTTP DELETE method not available** Terraform will no longer manage this resource on `destroy` but the configuration will still be present on the Dynatrace cluster.
+
+        > This resource requires the cluster API token scope **Service Provider API** (`ServiceProviderAPI`)
+
+        ## Dynatrace Documentation
+
+        - Back up and restore a cluster - https://www.dynatrace.com/support/help/managed-cluster/operation/back-up-and-restore-a-cluster
+
+        - Cluster API v1 - https://www.dynatrace.com/support/help/managed-cluster/cluster-api/cluster-api-v1
+
+        ## Resource Example Usage
+
+        ```python
+        import pulumi
+        import pulumiverse_dynatrace as dynatrace
+
+        test = dynatrace.ManagedBackup("Test",
+            enabled=True,
+            datacenter="",
+            include_rum_data=True,
+            include_lm20_data=True,
+            include_ts_metric_data=True,
+            bandwidth_limit_mbits=240,
+            max_es_snapshots_to_clean=25,
+            cassandra_scheduled_time=22,
+            pause_backups=False)
+        ```
+
+
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[_builtins.int] bandwidth_limit_mbits: Cassandra backup bandwidth limit in Mbps
@@ -424,7 +454,35 @@ class ManagedBackup(pulumi.CustomResource):
                  args: ManagedBackupArgs,
                  opts: Optional[pulumi.ResourceOptions] = None):
         """
-        Create a ManagedBackup resource with the given unique name, props, and options.
+        !> **HTTP DELETE method not available** Terraform will no longer manage this resource on `destroy` but the configuration will still be present on the Dynatrace cluster.
+
+        > This resource requires the cluster API token scope **Service Provider API** (`ServiceProviderAPI`)
+
+        ## Dynatrace Documentation
+
+        - Back up and restore a cluster - https://www.dynatrace.com/support/help/managed-cluster/operation/back-up-and-restore-a-cluster
+
+        - Cluster API v1 - https://www.dynatrace.com/support/help/managed-cluster/cluster-api/cluster-api-v1
+
+        ## Resource Example Usage
+
+        ```python
+        import pulumi
+        import pulumiverse_dynatrace as dynatrace
+
+        test = dynatrace.ManagedBackup("Test",
+            enabled=True,
+            datacenter="",
+            include_rum_data=True,
+            include_lm20_data=True,
+            include_ts_metric_data=True,
+            bandwidth_limit_mbits=240,
+            max_es_snapshots_to_clean=25,
+            cassandra_scheduled_time=22,
+            pause_backups=False)
+        ```
+
+
         :param str resource_name: The name of the resource.
         :param ManagedBackupArgs args: The arguments to use to populate this resource's properties.
         :param pulumi.ResourceOptions opts: Options for the resource.

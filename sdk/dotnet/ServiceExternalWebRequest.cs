@@ -10,6 +10,21 @@ using Pulumi;
 
 namespace Pulumiverse.Dynatrace
 {
+    /// <summary>
+    /// &gt; This resource requires the API token scopes **Read settings** (`settings.read`) and **Write settings** (`settings.write`)
+    /// 
+    /// ## Dynatrace Documentation
+    /// 
+    /// - Service detection rules - https://www.dynatrace.com/support/help/platform-modules/applications-and-microservices/services/service-detection-and-naming/customize-service-detection
+    /// 
+    /// - Settings API - https://www.dynatrace.com/support/help/dynatrace-api/environment-api/settings (schemaId: `builtin:service-detection.external-web-request`)
+    /// 
+    /// ## Export Example Usage
+    /// 
+    /// - `terraform-provider-dynatrace -export dynatrace.ServiceExternalWebRequest` downloads all existing service detection rules for external web requests
+    /// 
+    /// The full documentation of the export feature is available [here](https://dt-url.net/h203qmc).
+    /// </summary>
     [DynatraceResourceType("dynatrace:index/serviceExternalWebRequest:ServiceExternalWebRequest")]
     public partial class ServiceExternalWebRequest : global::Pulumi.CustomResource
     {

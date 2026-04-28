@@ -15,11 +15,11 @@ namespace Pulumiverse.Dynatrace.Outputs
     public sealed class HostAnomaliesV2HostConnectionLostDetection
     {
         /// <summary>
-        /// Detect host or monitoring connection lost problems
+        /// This setting is enabled (`True`) or disabled (`False`)
         /// </summary>
         public readonly bool Enabled;
         /// <summary>
-        /// Graceful host shutdowns. Possible values: `DONT_ALERT_ON_GRACEFUL_SHUTDOWN`, `ALERT_ON_GRACEFUL_SHUTDOWN`
+        /// Graceful host shutdowns. Possible Values: `ALERT_ON_GRACEFUL_SHUTDOWN`, `DONT_ALERT_ON_GRACEFUL_SHUTDOWN`
         /// </summary>
         public readonly string? OnGracefulShutdowns;
 

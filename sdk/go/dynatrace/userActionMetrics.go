@@ -12,6 +12,19 @@ import (
 	"github.com/pulumiverse/pulumi-dynatrace/sdk/go/dynatrace/internal"
 )
 
+// > This resource requires the API token scopes **Read settings** (`settings.read`) and **Write settings** (`settings.write`)
+//
+// ## Dynatrace Documentation
+//
+// - Create USQL custom metrics for web applications - https://www.dynatrace.com/support/help/platform-modules/digital-experience/web-applications/additional-configuration/custom-metrics-from-user-sessions
+//
+// - Settings API - https://www.dynatrace.com/support/help/dynatrace-api/environment-api/settings (schemaId: `builtin:user-action-custom-metrics`)
+//
+// ## Export Example Usage
+//
+// - `terraform-provider-dynatrace -export UserActionMetrics` downloads all existing user action custom metrics configuration
+//
+// The full documentation of the export feature is available [here](https://dt-url.net/h203qmc).
 type UserActionMetrics struct {
 	pulumi.CustomResourceState
 

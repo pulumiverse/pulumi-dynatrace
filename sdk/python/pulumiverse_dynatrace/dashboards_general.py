@@ -25,6 +25,7 @@ class DashboardsGeneralArgs:
                  default_dashboard_list: Optional[pulumi.Input['DashboardsGeneralDefaultDashboardListArgs']] = None):
         """
         The set of arguments for constructing a DashboardsGeneral resource.
+
         :param pulumi.Input[_builtins.bool] enable_public_sharing: Allow users to grant anonymous access to dashboards. No sign-in will be required to view those dashboards read-only.
         :param pulumi.Input['DashboardsGeneralDefaultDashboardListArgs'] default_dashboard_list: Configure home dashboard for selected user group. The selected preset dashboard will be loaded as default landing page for this environment.
         """
@@ -64,6 +65,7 @@ class _DashboardsGeneralState:
                  enable_public_sharing: Optional[pulumi.Input[_builtins.bool]] = None):
         """
         Input properties used for looking up and filtering DashboardsGeneral resources.
+
         :param pulumi.Input['DashboardsGeneralDefaultDashboardListArgs'] default_dashboard_list: Configure home dashboard for selected user group. The selected preset dashboard will be loaded as default landing page for this environment.
         :param pulumi.Input[_builtins.bool] enable_public_sharing: Allow users to grant anonymous access to dashboards. No sign-in will be required to view those dashboards read-only.
         """
@@ -107,7 +109,21 @@ class DashboardsGeneral(pulumi.CustomResource):
                  enable_public_sharing: Optional[pulumi.Input[_builtins.bool]] = None,
                  __props__=None):
         """
-        Create a DashboardsGeneral resource with the given unique name, props, and options.
+        > This resource requires the API token scopes **Read settings** (`settings.read`) and **Write settings** (`settings.write`)
+
+        ## Dynatrace Documentation
+
+        - Dashboards - https://www.dynatrace.com/support/help/observe-and-explore/dashboards
+
+        - Settings API - https://www.dynatrace.com/support/help/dynatrace-api/environment-api/settings (schemaId: `builtin:dashboards.general`)
+
+        ## Export Example Usage
+
+        - `terraform-provider-dynatrace -export DashboardsGeneral` downloads all existing general dashboard settings
+
+        The full documentation of the export feature is available [here](https://dt-url.net/h203qmc).
+
+
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[Union['DashboardsGeneralDefaultDashboardListArgs', 'DashboardsGeneralDefaultDashboardListArgsDict']] default_dashboard_list: Configure home dashboard for selected user group. The selected preset dashboard will be loaded as default landing page for this environment.
@@ -120,7 +136,21 @@ class DashboardsGeneral(pulumi.CustomResource):
                  args: DashboardsGeneralArgs,
                  opts: Optional[pulumi.ResourceOptions] = None):
         """
-        Create a DashboardsGeneral resource with the given unique name, props, and options.
+        > This resource requires the API token scopes **Read settings** (`settings.read`) and **Write settings** (`settings.write`)
+
+        ## Dynatrace Documentation
+
+        - Dashboards - https://www.dynatrace.com/support/help/observe-and-explore/dashboards
+
+        - Settings API - https://www.dynatrace.com/support/help/dynatrace-api/environment-api/settings (schemaId: `builtin:dashboards.general`)
+
+        ## Export Example Usage
+
+        - `terraform-provider-dynatrace -export DashboardsGeneral` downloads all existing general dashboard settings
+
+        The full documentation of the export feature is available [here](https://dt-url.net/h203qmc).
+
+
         :param str resource_name: The name of the resource.
         :param DashboardsGeneralArgs args: The arguments to use to populate this resource's properties.
         :param pulumi.ResourceOptions opts: Options for the resource.

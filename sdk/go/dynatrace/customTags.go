@@ -12,6 +12,19 @@ import (
 	"github.com/pulumiverse/pulumi-dynatrace/sdk/go/dynatrace/internal"
 )
 
+// > This resource requires the API token scopes **Read entities** (`entities.read`) and **Write entities** (`entities.write`)
+//
+// ## Dynatrace Documentation
+//
+// - Define and apply tags - https://www.dynatrace.com/support/help/shortlink/tagging#manual
+//
+// - Custom tags API - https://www.dynatrace.com/support/help/dynatrace-api/environment-api/custom-tags
+//
+// ## Export Example Usage
+//
+// - `terraform-provider-dynatrace -export CustomTags` downloads all existing custom tags configuration
+//
+// The full documentation of the export feature is available [here](https://dt-url.net/h203qmc).
 type CustomTags struct {
 	pulumi.CustomResourceState
 

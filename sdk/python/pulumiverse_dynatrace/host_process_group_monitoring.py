@@ -24,6 +24,7 @@ class HostProcessGroupMonitoringArgs:
                  process_group: pulumi.Input[_builtins.str]):
         """
         The set of arguments for constructing a HostProcessGroupMonitoring resource.
+
         :param pulumi.Input[_builtins.str] host_id: The scope of this settings. If the settings should cover the whole environment, just don't specify any scope.
         :param pulumi.Input[_builtins.str] monitoring_state: Possible Values: `DEFAULT`, `MONITORING_OFF`, `MONITORING_ON`
         :param pulumi.Input[_builtins.str] process_group: Process group
@@ -77,6 +78,7 @@ class _HostProcessGroupMonitoringState:
                  process_group: Optional[pulumi.Input[_builtins.str]] = None):
         """
         Input properties used for looking up and filtering HostProcessGroupMonitoring resources.
+
         :param pulumi.Input[_builtins.str] host_id: The scope of this settings. If the settings should cover the whole environment, just don't specify any scope.
         :param pulumi.Input[_builtins.str] monitoring_state: Possible Values: `DEFAULT`, `MONITORING_OFF`, `MONITORING_ON`
         :param pulumi.Input[_builtins.str] process_group: Process group
@@ -136,7 +138,21 @@ class HostProcessGroupMonitoring(pulumi.CustomResource):
                  process_group: Optional[pulumi.Input[_builtins.str]] = None,
                  __props__=None):
         """
-        Create a HostProcessGroupMonitoring resource with the given unique name, props, and options.
+        > This resource requires the API token scopes **Read settings** (`settings.read`) and **Write settings** (`settings.write`)
+
+        ## Dynatrace Documentation
+
+        - Set monitoring rules at host level - https://www.dynatrace.com/support/help/how-to-use-dynatrace/process-groups/configuration/pg-monitoring#set-monitoring-rules-at-host-level
+
+        - Settings API - https://www.dynatrace.com/support/help/dynatrace-api/environment-api/settings (schemaId: `builtin:host.process-groups.monitoring-state`)
+
+        ## Export Example Usage
+
+        - `terraform-provider-dynatrace -export HostProcessGroupMonitoring` downloads all existing host level process group monitoring configuration
+
+        The full documentation of the export feature is available [here](https://dt-url.net/h203qmc).
+
+
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[_builtins.str] host_id: The scope of this settings. If the settings should cover the whole environment, just don't specify any scope.
@@ -150,7 +166,21 @@ class HostProcessGroupMonitoring(pulumi.CustomResource):
                  args: HostProcessGroupMonitoringArgs,
                  opts: Optional[pulumi.ResourceOptions] = None):
         """
-        Create a HostProcessGroupMonitoring resource with the given unique name, props, and options.
+        > This resource requires the API token scopes **Read settings** (`settings.read`) and **Write settings** (`settings.write`)
+
+        ## Dynatrace Documentation
+
+        - Set monitoring rules at host level - https://www.dynatrace.com/support/help/how-to-use-dynatrace/process-groups/configuration/pg-monitoring#set-monitoring-rules-at-host-level
+
+        - Settings API - https://www.dynatrace.com/support/help/dynatrace-api/environment-api/settings (schemaId: `builtin:host.process-groups.monitoring-state`)
+
+        ## Export Example Usage
+
+        - `terraform-provider-dynatrace -export HostProcessGroupMonitoring` downloads all existing host level process group monitoring configuration
+
+        The full documentation of the export feature is available [here](https://dt-url.net/h203qmc).
+
+
         :param str resource_name: The name of the resource.
         :param HostProcessGroupMonitoringArgs args: The arguments to use to populate this resource's properties.
         :param pulumi.ResourceOptions opts: Options for the resource.

@@ -24,6 +24,7 @@ class ResourceAttributesArgs:
                  keys: Optional[pulumi.Input['ResourceAttributesKeysArgs']] = None):
         """
         The set of arguments for constructing a ResourceAttributes resource.
+
         :param pulumi.Input['ResourceAttributesKeysArgs'] keys: Attribute key allow-list
         """
         if keys is not None:
@@ -48,6 +49,7 @@ class _ResourceAttributesState:
                  keys: Optional[pulumi.Input['ResourceAttributesKeysArgs']] = None):
         """
         Input properties used for looking up and filtering ResourceAttributes resources.
+
         :param pulumi.Input['ResourceAttributesKeysArgs'] keys: Attribute key allow-list
         """
         if keys is not None:
@@ -75,7 +77,23 @@ class ResourceAttributes(pulumi.CustomResource):
                  keys: Optional[pulumi.Input[Union['ResourceAttributesKeysArgs', 'ResourceAttributesKeysArgsDict']]] = None,
                  __props__=None):
         """
-        Create a ResourceAttributes resource with the given unique name, props, and options.
+        !> This resource API endpoint has been deprecated, please use AttributeAllowList and AttributeMasking instead.
+
+        > This resource requires the API token scopes **Read settings** (`settings.read`) and **Write settings** (`settings.write`)
+
+        ## Dynatrace Documentation
+
+        - OpenTelemetry traces - https://www.dynatrace.com/support/help/extend-dynatrace/opentelemetry/opentelemetry-traces
+
+        - Settings API - https://www.dynatrace.com/support/help/dynatrace-api/environment-api/settings (schemaId: `builtin:resource-attribute`)
+
+        ## Export Example Usage
+
+        - `terraform-provider-dynatrace -export ResourceAttributes` downloads all existing resource attribute configuration
+
+        The full documentation of the export feature is available [here](https://dt-url.net/h203qmc).
+
+
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[Union['ResourceAttributesKeysArgs', 'ResourceAttributesKeysArgsDict']] keys: Attribute key allow-list
@@ -87,7 +105,23 @@ class ResourceAttributes(pulumi.CustomResource):
                  args: Optional[ResourceAttributesArgs] = None,
                  opts: Optional[pulumi.ResourceOptions] = None):
         """
-        Create a ResourceAttributes resource with the given unique name, props, and options.
+        !> This resource API endpoint has been deprecated, please use AttributeAllowList and AttributeMasking instead.
+
+        > This resource requires the API token scopes **Read settings** (`settings.read`) and **Write settings** (`settings.write`)
+
+        ## Dynatrace Documentation
+
+        - OpenTelemetry traces - https://www.dynatrace.com/support/help/extend-dynatrace/opentelemetry/opentelemetry-traces
+
+        - Settings API - https://www.dynatrace.com/support/help/dynatrace-api/environment-api/settings (schemaId: `builtin:resource-attribute`)
+
+        ## Export Example Usage
+
+        - `terraform-provider-dynatrace -export ResourceAttributes` downloads all existing resource attribute configuration
+
+        The full documentation of the export feature is available [here](https://dt-url.net/h203qmc).
+
+
         :param str resource_name: The name of the resource.
         :param ResourceAttributesArgs args: The arguments to use to populate this resource's properties.
         :param pulumi.ResourceOptions opts: Options for the resource.

@@ -42,6 +42,7 @@ class WebApplicationArgs:
                  user_tags: Optional[pulumi.Input['WebApplicationUserTagsArgs']] = None):
         """
         The set of arguments for constructing a WebApplication resource.
+
         :param pulumi.Input[_builtins.int] cost_control_user_session_percentage: (Field has overlap with `WebAppEnablement`) Analize *X*% of user sessions
         :param pulumi.Input['WebApplicationCustomActionApdexSettingsArgs'] custom_action_apdex_settings: Defines the Custom Action Apdex settings of an application
         :param pulumi.Input['WebApplicationLoadActionApdexSettingsArgs'] load_action_apdex_settings: Defines the Load Action Apdex settings of an application
@@ -349,6 +350,7 @@ class _WebApplicationState:
                  xhr_action_key_performance_metric: Optional[pulumi.Input[_builtins.str]] = None):
         """
         Input properties used for looking up and filtering WebApplication resources.
+
         :param pulumi.Input['WebApplicationConversionGoalsArgs'] conversion_goals: A list of conversion goals of the application
         :param pulumi.Input[_builtins.int] cost_control_user_session_percentage: (Field has overlap with `WebAppEnablement`) Analize *X*% of user sessions
         :param pulumi.Input['WebApplicationCustomActionApdexSettingsArgs'] custom_action_apdex_settings: Defines the Custom Action Apdex settings of an application
@@ -668,7 +670,29 @@ class WebApplication(pulumi.CustomResource):
                  xhr_action_key_performance_metric: Optional[pulumi.Input[_builtins.str]] = None,
                  __props__=None):
         """
-        Create a WebApplication resource with the given unique name, props, and options.
+        > This resource requires the API token scopes **Read configuration** (`ReadConfig`) and **Write configuration** (`WriteConfig`)
+
+        ## Dynatrace Documentation
+
+        - RUM setup and configuration for web applications - https://www.dynatrace.com/support/help/how-to-use-dynatrace/real-user-monitoring/setup-and-configuration/web-applications
+
+        - Web application configuration API - https://www.dynatrace.com/support/help/dynatrace-api/configuration-api/rum/web-application-configuration-api
+
+        ## Environment Variables (Optional)
+
+        There may be a delay for this resource to be fully available as a dependency for a subsequent resource. E.g. Utilizing this resource and application detection rules together.
+
+        A default polling mechanism exists to validate the creation but may require adjustment due to load. The following environment variable can be used to fine tune this setting.
+
+        - `DYNATRACE_CREATE_CONFIRM_WEB_APPLICATION` (Default: 60, Max: 300) configures the number of successful consecutive retries expected.
+
+        ## Export Example Usage
+
+        - `terraform-provider-dynatrace -export WebApplication` downloads all existing web application configuration
+
+        The full documentation of the export feature is available [here](https://dt-url.net/h203qmc).
+
+
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[Union['WebApplicationConversionGoalsArgs', 'WebApplicationConversionGoalsArgsDict']] conversion_goals: A list of conversion goals of the application
@@ -698,7 +722,29 @@ class WebApplication(pulumi.CustomResource):
                  args: WebApplicationArgs,
                  opts: Optional[pulumi.ResourceOptions] = None):
         """
-        Create a WebApplication resource with the given unique name, props, and options.
+        > This resource requires the API token scopes **Read configuration** (`ReadConfig`) and **Write configuration** (`WriteConfig`)
+
+        ## Dynatrace Documentation
+
+        - RUM setup and configuration for web applications - https://www.dynatrace.com/support/help/how-to-use-dynatrace/real-user-monitoring/setup-and-configuration/web-applications
+
+        - Web application configuration API - https://www.dynatrace.com/support/help/dynatrace-api/configuration-api/rum/web-application-configuration-api
+
+        ## Environment Variables (Optional)
+
+        There may be a delay for this resource to be fully available as a dependency for a subsequent resource. E.g. Utilizing this resource and application detection rules together.
+
+        A default polling mechanism exists to validate the creation but may require adjustment due to load. The following environment variable can be used to fine tune this setting.
+
+        - `DYNATRACE_CREATE_CONFIRM_WEB_APPLICATION` (Default: 60, Max: 300) configures the number of successful consecutive retries expected.
+
+        ## Export Example Usage
+
+        - `terraform-provider-dynatrace -export WebApplication` downloads all existing web application configuration
+
+        The full documentation of the export feature is available [here](https://dt-url.net/h203qmc).
+
+
         :param str resource_name: The name of the resource.
         :param WebApplicationArgs args: The arguments to use to populate this resource's properties.
         :param pulumi.ResourceOptions opts: Options for the resource.

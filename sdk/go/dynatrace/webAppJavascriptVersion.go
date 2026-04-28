@@ -11,6 +11,19 @@ import (
 	"github.com/pulumiverse/pulumi-dynatrace/sdk/go/dynatrace/internal"
 )
 
+// > This resource requires the API token scopes **Read settings** (`settings.read`) and **Write settings** (`settings.write`)
+//
+// ## Dynatrace Documentation
+//
+// - Web applications - https://www.dynatrace.com/support/help/platform-modules/digital-experience/web-applications
+//
+// - Settings API - https://www.dynatrace.com/support/help/dynatrace-api/environment-api/settings (schemaId: `builtin:rum.web.custom-rum-javascript-version`)
+//
+// ## Export Example Usage
+//
+// - `terraform-provider-dynatrace -export dynatraceWebJavascriptVersion` downloads existing Javascript version configuration
+//
+// The full documentation of the export feature is available [here](https://dt-url.net/h203qmc).
 type WebAppJavascriptVersion struct {
 	pulumi.CustomResourceState
 

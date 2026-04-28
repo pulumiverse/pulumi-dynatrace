@@ -4,6 +4,23 @@
 import * as pulumi from "@pulumi/pulumi";
 import * as utilities from "./utilities";
 
+/**
+ * > This resource is excluded by default in the export utility since it requires the feature to be activated, please explicitly specify the resource to retrieve existing configuration.
+ *
+ * > This resource requires the API token scopes **Read security problems** (`securityProblems.read`) and **Write security problems** (`securityProblems.write`)
+ *
+ * ## Dynatrace Documentation
+ *
+ * - Runtime Application Protection - https://www.dynatrace.com/support/help/platform-modules/application-security/application-protection
+ *
+ * - Settings API - https://www.dynatrace.com/support/help/dynatrace-api/environment-api/settings (schemaId: `builtin:appsec.notification-attack-alerting-profile`)
+ *
+ * ## Export Example Usage
+ *
+ * - `terraform-provider-dynatrace -export dynatrace.AttackAlerting` downloads all existing attack alerting profiles
+ *
+ * The full documentation of the export feature is available [here](https://dt-url.net/h203qmc).
+ */
 export class AttackAlerting extends pulumi.CustomResource {
     /**
      * Get an existing AttackAlerting resource's state with the given name, ID, and optional extra

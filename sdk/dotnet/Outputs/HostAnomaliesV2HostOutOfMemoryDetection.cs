@@ -19,11 +19,11 @@ namespace Pulumiverse.Dynatrace.Outputs
         /// </summary>
         public readonly Outputs.HostAnomaliesV2HostOutOfMemoryDetectionCustomThresholds? CustomThresholds;
         /// <summary>
-        /// Detection mode for Java out of memory problem
+        /// Detection mode for Java out of memory problem. Possible Values: `Auto`, `Custom`
         /// </summary>
         public readonly string? DetectionMode;
         /// <summary>
-        /// Detect Java out of memory problem
+        /// This setting is enabled (`True`) or disabled (`False`)
         /// </summary>
         public readonly bool Enabled;
 

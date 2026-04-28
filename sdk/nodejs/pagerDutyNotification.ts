@@ -4,6 +4,21 @@
 import * as pulumi from "@pulumi/pulumi";
 import * as utilities from "./utilities";
 
+/**
+ * > This resource requires the API token scopes **Read settings** (`settings.read`) and **Write settings** (`settings.write`)
+ *
+ * ## Dynatrace Documentation
+ *
+ * - Pager Duty notifications - https://www.dynatrace.com/support/help/setup-and-configuration/integrations/problem-notifications/pagerduty-integration
+ *
+ * - Settings API - https://www.dynatrace.com/support/help/dynatrace-api/environment-api/settings (schemaId: `builtin:problem.notifications`)
+ *
+ * ## Export Example Usage
+ *
+ * - `terraform-provider-dynatrace -export dynatrace.PagerDutyNotification` downloads the existing problem notifications for Pager Duty
+ *
+ * The full documentation of the export feature is available [here](https://dt-url.net/h203qmc).
+ */
 export class PagerDutyNotification extends pulumi.CustomResource {
     /**
      * Get an existing PagerDutyNotification resource's state with the given name, ID, and optional extra
@@ -33,15 +48,15 @@ export class PagerDutyNotification extends pulumi.CustomResource {
     }
 
     /**
-     * The name of the PagerDuty account
+     * The name of the PagerDuty account.
      */
     declare public readonly account: pulumi.Output<string>;
     /**
-     * The configuration is enabled (`true`) or disabled (`false`)
+     * This setting is enabled (`true`) or disabled (`false`)
      */
     declare public readonly active: pulumi.Output<boolean>;
     /**
-     * The API key to access PagerDuty
+     * The Events API key to access PagerDuty.
      */
     declare public readonly apiKey: pulumi.Output<string | undefined>;
     /**
@@ -57,7 +72,7 @@ export class PagerDutyNotification extends pulumi.CustomResource {
      */
     declare public readonly profile: pulumi.Output<string>;
     /**
-     * The name of the PagerDuty Service
+     * The name of the service.
      */
     declare public readonly service: pulumi.Output<string>;
 
@@ -115,15 +130,15 @@ export class PagerDutyNotification extends pulumi.CustomResource {
  */
 export interface PagerDutyNotificationState {
     /**
-     * The name of the PagerDuty account
+     * The name of the PagerDuty account.
      */
     account?: pulumi.Input<string>;
     /**
-     * The configuration is enabled (`true`) or disabled (`false`)
+     * This setting is enabled (`true`) or disabled (`false`)
      */
     active?: pulumi.Input<boolean>;
     /**
-     * The API key to access PagerDuty
+     * The Events API key to access PagerDuty.
      */
     apiKey?: pulumi.Input<string>;
     /**
@@ -139,7 +154,7 @@ export interface PagerDutyNotificationState {
      */
     profile?: pulumi.Input<string>;
     /**
-     * The name of the PagerDuty Service
+     * The name of the service.
      */
     service?: pulumi.Input<string>;
 }
@@ -149,15 +164,15 @@ export interface PagerDutyNotificationState {
  */
 export interface PagerDutyNotificationArgs {
     /**
-     * The name of the PagerDuty account
+     * The name of the PagerDuty account.
      */
     account: pulumi.Input<string>;
     /**
-     * The configuration is enabled (`true`) or disabled (`false`)
+     * This setting is enabled (`true`) or disabled (`false`)
      */
     active: pulumi.Input<boolean>;
     /**
-     * The API key to access PagerDuty
+     * The Events API key to access PagerDuty.
      */
     apiKey?: pulumi.Input<string>;
     /**
@@ -173,7 +188,7 @@ export interface PagerDutyNotificationArgs {
      */
     profile: pulumi.Input<string>;
     /**
-     * The name of the PagerDuty Service
+     * The name of the service.
      */
     service: pulumi.Input<string>;
 }

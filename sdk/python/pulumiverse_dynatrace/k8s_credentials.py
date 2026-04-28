@@ -37,6 +37,7 @@ class K8sCredentialsArgs:
                  workload_integration_enabled: Optional[pulumi.Input[_builtins.bool]] = None):
         """
         The set of arguments for constructing a K8sCredentials resource.
+
         :param pulumi.Input[_builtins.str] label: The name of the Kubernetes credentials configuration.  Allowed characters are letters, numbers, whitespaces, and the following characters: `.+-_`. Leading or trailing whitespace is not allowed.
         :param pulumi.Input[_builtins.bool] active: Monitoring is enabled (`true`) or disabled (`false`) for given credentials configuration.  If not set on creation, the `true` value is used.  If the field is omitted during an update, the old value remains unaffected.
         :param pulumi.Input[_builtins.str] active_gate_group: Active Gate group to filter active gates for this credentials.
@@ -268,6 +269,7 @@ class _K8sCredentialsState:
                  workload_integration_enabled: Optional[pulumi.Input[_builtins.bool]] = None):
         """
         Input properties used for looking up and filtering K8sCredentials resources.
+
         :param pulumi.Input[_builtins.bool] active: Monitoring is enabled (`true`) or disabled (`false`) for given credentials configuration.  If not set on creation, the `true` value is used.  If the field is omitted during an update, the old value remains unaffected.
         :param pulumi.Input[_builtins.str] active_gate_group: Active Gate group to filter active gates for this credentials.
         :param pulumi.Input[_builtins.str] auth_token: The service account bearer token for the Kubernetes API server.  Submit your token on creation or update of the configuration. For security reasons, GET requests return this field as `null`.  If the field is omitted during an update, the old value remains unaffected.
@@ -503,7 +505,23 @@ class K8sCredentials(pulumi.CustomResource):
                  workload_integration_enabled: Optional[pulumi.Input[_builtins.bool]] = None,
                  __props__=None):
         """
-        Create a K8sCredentials resource with the given unique name, props, and options.
+        !> This resource is utilizing an older API endpoint, please use Kubernetes instead.
+
+        > This resource requires the API token scopes **Read configuration** (`ReadConfig`) and **Write configuration** (`WriteConfig`)
+
+        ## Dynatrace Documentation
+
+        - Kubernetes/OpenShift monitoring - https://www.dynatrace.com/support/help/how-to-use-dynatrace/infrastructure-monitoring/container-platform-monitoring/kubernetes-monitoring
+
+        - Kubernetes credentials API - https://www.dynatrace.com/support/help/dynatrace-api/configuration-api/k8s-credentials-api-api
+
+        ## Export Example Usage
+
+        - `terraform-provider-dynatrace -export K8sCredentials` downloads all existing Kubernetes credentials configuration
+
+        The full documentation of the export feature is available [here](https://dt-url.net/h203qmc).
+
+
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[_builtins.bool] active: Monitoring is enabled (`true`) or disabled (`false`) for given credentials configuration.  If not set on creation, the `true` value is used.  If the field is omitted during an update, the old value remains unaffected.
@@ -528,7 +546,23 @@ class K8sCredentials(pulumi.CustomResource):
                  args: K8sCredentialsArgs,
                  opts: Optional[pulumi.ResourceOptions] = None):
         """
-        Create a K8sCredentials resource with the given unique name, props, and options.
+        !> This resource is utilizing an older API endpoint, please use Kubernetes instead.
+
+        > This resource requires the API token scopes **Read configuration** (`ReadConfig`) and **Write configuration** (`WriteConfig`)
+
+        ## Dynatrace Documentation
+
+        - Kubernetes/OpenShift monitoring - https://www.dynatrace.com/support/help/how-to-use-dynatrace/infrastructure-monitoring/container-platform-monitoring/kubernetes-monitoring
+
+        - Kubernetes credentials API - https://www.dynatrace.com/support/help/dynatrace-api/configuration-api/k8s-credentials-api-api
+
+        ## Export Example Usage
+
+        - `terraform-provider-dynatrace -export K8sCredentials` downloads all existing Kubernetes credentials configuration
+
+        The full documentation of the export feature is available [here](https://dt-url.net/h203qmc).
+
+
         :param str resource_name: The name of the resource.
         :param K8sCredentialsArgs args: The arguments to use to populate this resource's properties.
         :param pulumi.ResourceOptions opts: Options for the resource.

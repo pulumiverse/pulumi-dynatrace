@@ -12,6 +12,19 @@ import (
 	"github.com/pulumiverse/pulumi-dynatrace/sdk/go/dynatrace/internal"
 )
 
+// > This resource requires the API token scopes **Read settings** (`settings.read`) and **Write settings** (`settings.write`)
+//
+// ## Dynatrace Documentation
+//
+// - Span settings - https://www.dynatrace.com/support/help/extend-dynatrace/extend-tracing/span-settings
+//
+// - Settings API - https://www.dynatrace.com/support/help/dynatrace-api/environment-api/settings (schemaId: `builtin:span-capturing`)
+//
+// ## Export Example Usage
+//
+// - `terraform-provider-dynatrace -export SpanCaptureRule` downloads all existing span capture rule configuration
+//
+// The full documentation of the export feature is available [here](https://dt-url.net/h203qmc).
 type SpanCaptureRule struct {
 	pulumi.CustomResourceState
 

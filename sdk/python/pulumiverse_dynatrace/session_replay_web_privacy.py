@@ -27,6 +27,7 @@ class SessionReplayWebPrivacyArgs:
                  url_exclusion_pattern_lists: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None):
         """
         The set of arguments for constructing a SessionReplayWebPrivacy resource.
+
         :param pulumi.Input[_builtins.bool] enable_opt_in_mode: (Field has overlap with `ApplicationDataPrivacy`) When [Session Replay opt-in mode](https://dt-url.net/sr-opt-in-mode) is turned on, Session Replay is deactivated until explicitly activated via an API call.
         :param pulumi.Input['SessionReplayWebPrivacyMaskingPresetsArgs'] masking_presets: (Field has overlap with `ApplicationDataPrivacy`) To protect your end users' privacy, select or customize [predefined masking options](https://dt-url.net/sr-masking-preset-options) that suit your content recording and playback requirements.
         :param pulumi.Input[_builtins.str] application_id: The scope of this settings. If the settings should cover the whole environment, just don't specify any scope.
@@ -97,6 +98,7 @@ class _SessionReplayWebPrivacyState:
                  url_exclusion_pattern_lists: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None):
         """
         Input properties used for looking up and filtering SessionReplayWebPrivacy resources.
+
         :param pulumi.Input[_builtins.str] application_id: The scope of this settings. If the settings should cover the whole environment, just don't specify any scope.
         :param pulumi.Input[_builtins.bool] enable_opt_in_mode: (Field has overlap with `ApplicationDataPrivacy`) When [Session Replay opt-in mode](https://dt-url.net/sr-opt-in-mode) is turned on, Session Replay is deactivated until explicitly activated via an API call.
         :param pulumi.Input['SessionReplayWebPrivacyMaskingPresetsArgs'] masking_presets: (Field has overlap with `ApplicationDataPrivacy`) To protect your end users' privacy, select or customize [predefined masking options](https://dt-url.net/sr-masking-preset-options) that suit your content recording and playback requirements.
@@ -172,7 +174,21 @@ class SessionReplayWebPrivacy(pulumi.CustomResource):
                  url_exclusion_pattern_lists: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
                  __props__=None):
         """
-        Create a SessionReplayWebPrivacy resource with the given unique name, props, and options.
+        > This resource requires the API token scopes **Read settings** (`settings.read`) and **Write settings** (`settings.write`)
+
+        ## Dynatrace Documentation
+
+        - Configure Session Replay for web applications - https://www.dynatrace.com/support/help/platform-modules/digital-experience/session-replay/configure-session-replay-web
+
+        - Settings API - https://www.dynatrace.com/support/help/dynatrace-api/environment-api/settings (schemaId: `builtin:sessionreplay.web.privacy-preferences`)
+
+        ## Export Example Usage
+
+        - `terraform-provider-dynatrace -export SessionReplayWebPrivacy` downloads all existing Session Replay data privacy configuration
+
+        The full documentation of the export feature is available [here](https://dt-url.net/h203qmc).
+
+
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[_builtins.str] application_id: The scope of this settings. If the settings should cover the whole environment, just don't specify any scope.
@@ -187,7 +203,21 @@ class SessionReplayWebPrivacy(pulumi.CustomResource):
                  args: SessionReplayWebPrivacyArgs,
                  opts: Optional[pulumi.ResourceOptions] = None):
         """
-        Create a SessionReplayWebPrivacy resource with the given unique name, props, and options.
+        > This resource requires the API token scopes **Read settings** (`settings.read`) and **Write settings** (`settings.write`)
+
+        ## Dynatrace Documentation
+
+        - Configure Session Replay for web applications - https://www.dynatrace.com/support/help/platform-modules/digital-experience/session-replay/configure-session-replay-web
+
+        - Settings API - https://www.dynatrace.com/support/help/dynatrace-api/environment-api/settings (schemaId: `builtin:sessionreplay.web.privacy-preferences`)
+
+        ## Export Example Usage
+
+        - `terraform-provider-dynatrace -export SessionReplayWebPrivacy` downloads all existing Session Replay data privacy configuration
+
+        The full documentation of the export feature is available [here](https://dt-url.net/h203qmc).
+
+
         :param str resource_name: The name of the resource.
         :param SessionReplayWebPrivacyArgs args: The arguments to use to populate this resource's properties.
         :param pulumi.ResourceOptions opts: Options for the resource.

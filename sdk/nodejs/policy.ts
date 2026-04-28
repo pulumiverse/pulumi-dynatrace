@@ -4,6 +4,45 @@
 import * as pulumi from "@pulumi/pulumi";
 import * as utilities from "./utilities";
 
+/**
+ * > **Dynatrace Managed only**
+ *
+ * > To utilize this resource, please define the environment variables `DT_CLUSTER_URL` and `DT_CLUSTER_API_TOKEN` with the cluster API token scope **Service Provider API** (`ServiceProviderAPI`).
+ *
+ * ## Dynatrace Documentation
+ *
+ * - Dynatrace IAM Policy Management - https://docs.dynatrace.com/managed/manage/identity-access-management/permission-management/manage-user-permissions-policies
+ *
+ * ## Export Example Usage
+ *
+ * - `terraform-provider-dynatrace -export dynatrace.Policy` downloads all existing policies
+ *
+ * The full documentation of the export feature is available [here](https://dt-url.net/h203qmc).
+ *
+ * ## Resource Example Usage
+ *
+ * ```typescript
+ * import * as pulumi from "@pulumi/pulumi";
+ * import * as dynatrace from "@pulumiverse/dynatrace";
+ *
+ * const policy = new dynatrace.Policy("policy", {
+ *     name: "my_policy_valid_for_environment_########-####-####-####-############",
+ *     environment: "########-####-####-####-############",
+ *     statementQuery: "ALLOW settings:objects:read, settings:schemas:read WHERE settings:schemaId = \"string\";",
+ * });
+ * ```
+ *
+ * ```typescript
+ * import * as pulumi from "@pulumi/pulumi";
+ * import * as dynatrace from "@pulumiverse/dynatrace";
+ *
+ * const policy = new dynatrace.IamPolicy("policy", {
+ *     name: "my_policy_valid_for_all_environments_in_this_cluster",
+ *     cluster: "########-####-####-####-############",
+ *     statementQuery: "ALLOW settings:objects:read, settings:schemas:read WHERE settings:schemaId = \"string\";",
+ * });
+ * ```
+ */
 export class Policy extends pulumi.CustomResource {
     /**
      * Get an existing Policy resource's state with the given name, ID, and optional extra

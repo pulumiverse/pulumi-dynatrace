@@ -10,6 +10,24 @@ using Pulumi;
 
 namespace Pulumiverse.Dynatrace
 {
+    /// <summary>
+    /// !&gt; This resource API endpoint has been deprecated, please use dynatrace_{notificationtype}_notification instead.
+    /// For example, for email notifications use dynatrace_email_notification.
+    /// 
+    /// &gt; This resource requires the API token scopes **Read configuration** (`ReadConfig`) and **Write configuration** (`WriteConfig`)
+    /// 
+    /// ## Dynatrace Documentation
+    /// 
+    /// - Integrations - https://www.dynatrace.com/support/help/setup-and-configuration/integrations
+    /// 
+    /// - Notifications API - https://www.dynatrace.com/support/help/dynatrace-api/configuration-api/notifications-api
+    /// 
+    /// ## Export Example Usage
+    /// 
+    /// - `terraform-provider-dynatrace -export dynatrace.Notification` downloads all existing notification configuration
+    /// 
+    /// The full documentation of the export feature is available [here](https://dt-url.net/h203qmc).
+    /// </summary>
     [DynatraceResourceType("dynatrace:index/notification:Notification")]
     public partial class Notification : global::Pulumi.CustomResource
     {

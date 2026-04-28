@@ -4,6 +4,21 @@
 import * as pulumi from "@pulumi/pulumi";
 import * as utilities from "./utilities";
 
+/**
+ * > This resource requires the API token scopes **Read settings** (`settings.read`) and **Write settings** (`settings.write`)
+ *
+ * ## Dynatrace Documentation
+ *
+ * - eBPF Discovery - https://github.com/dynatrace-oss/eBPF-Discovery
+ *
+ * - Settings API - https://www.dynatrace.com/support/help/dynatrace-api/environment-api/settings (schemaId: `builtin:ebpf.service.discovery`)
+ *
+ * ## Export Example Usage
+ *
+ * - `terraform-provider-dynatrace -export dynatrace.EbpfServiceDiscovery` downloads existing eBPF service discovery configuration
+ *
+ * The full documentation of the export feature is available [here](https://dt-url.net/h203qmc).
+ */
 export class EbpfServiceDiscovery extends pulumi.CustomResource {
     /**
      * Get an existing EbpfServiceDiscovery resource's state with the given name, ID, and optional extra

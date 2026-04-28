@@ -10,6 +10,21 @@ using Pulumi;
 
 namespace Pulumiverse.Dynatrace
 {
+    /// <summary>
+    /// &gt; This resource requires the API token scopes **Read settings** (`settings.read`) and **Write settings** (`settings.write`)
+    /// 
+    /// ## Dynatrace Documentation
+    /// 
+    /// - Process group availability monitoring and alerting - https://www.dynatrace.com/support/help/how-to-use-dynatrace/process-groups/monitoring/process-group-availability-monitoring-and-alerting
+    /// 
+    /// - Settings API - https://www.dynatrace.com/support/help/dynatrace-api/environment-api/settings (schemaId: `builtin:availability.process-group-alerting`)
+    /// 
+    /// ## Export Example Usage
+    /// 
+    /// - `terraform-provider-dynatrace -export dynatrace.PgAlerting` downloads all existing process group availability monitoring configuration
+    /// 
+    /// The full documentation of the export feature is available [here](https://dt-url.net/h203qmc).
+    /// </summary>
     [DynatraceResourceType("dynatrace:index/pgAlerting:PgAlerting")]
     public partial class PgAlerting : global::Pulumi.CustomResource
     {

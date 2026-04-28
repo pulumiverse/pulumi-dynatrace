@@ -12,6 +12,19 @@ import (
 	"github.com/pulumiverse/pulumi-dynatrace/sdk/go/dynatrace/internal"
 )
 
+// > This resource requires the API token scopes **Read settings** (`settings.read`) and **Write settings** (`settings.write`)
+//
+// ## Dynatrace Documentation
+//
+// - Metric events for alerting - https://www.dynatrace.com/support/help/how-to-use-dynatrace/problem-detection-and-analysis/problem-detection/metric-events-for-alerting
+//
+// - Settings API - https://www.dynatrace.com/support/help/dynatrace-api/environment-api/settings (schemaId: `builtin:anomaly-detection.metric-events`)
+//
+// ## Export Example Usage
+//
+// - `terraform-provider-dynatrace -export MetricEvents` downloads all existing custom metric event configuration
+//
+// The full documentation of the export feature is available [here](https://dt-url.net/h203qmc).
 type MetricEvents struct {
 	pulumi.CustomResourceState
 

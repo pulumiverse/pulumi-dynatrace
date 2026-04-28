@@ -25,6 +25,7 @@ class KubernetesEnrichmentArgs:
                  scope: Optional[pulumi.Input[_builtins.str]] = None):
         """
         The set of arguments for constructing a KubernetesEnrichment resource.
+
         :param pulumi.Input['KubernetesEnrichmentRulesArgs'] rules: Dynatrace allows to use metadata defined on Kubernetes nodes, namespaces, and pods to set security and cost allocation attributes and dimensions for metrics, events, log, spans, and entities associated with the respective Kubernetes resource.
         :param pulumi.Input[_builtins.str] scope: The scope of this setting (KUBERNETES_CLUSTER). Omit this property if you want to cover the whole environment.
         """
@@ -65,6 +66,7 @@ class _KubernetesEnrichmentState:
                  scope: Optional[pulumi.Input[_builtins.str]] = None):
         """
         Input properties used for looking up and filtering KubernetesEnrichment resources.
+
         :param pulumi.Input['KubernetesEnrichmentRulesArgs'] rules: Dynatrace allows to use metadata defined on Kubernetes nodes, namespaces, and pods to set security and cost allocation attributes and dimensions for metrics, events, log, spans, and entities associated with the respective Kubernetes resource.
         :param pulumi.Input[_builtins.str] scope: The scope of this setting (KUBERNETES_CLUSTER). Omit this property if you want to cover the whole environment.
         """
@@ -108,7 +110,21 @@ class KubernetesEnrichment(pulumi.CustomResource):
                  scope: Optional[pulumi.Input[_builtins.str]] = None,
                  __props__=None):
         """
-        Create a KubernetesEnrichment resource with the given unique name, props, and options.
+        > This resource requires the API token scopes **Read settings** (`settings.read`) and **Write settings** (`settings.write`)
+
+        ## Dynatrace Documentation
+
+        - Kubernetes app - https://docs.dynatrace.com/docs/platform-modules/infrastructure-monitoring/container-platform-monitoring/kubernetes-app
+
+        - Settings API - https://www.dynatrace.com/support/help/dynatrace-api/environment-api/settings (schemaId: `builtin:kubernetes.generic.metadata.enrichment`)
+
+        ## Export Example Usage
+
+        - `terraform-provider-dynatrace -export KubernetesEnrichment` downloads all existing generic metadata enrichment rules for Kubernetes
+
+        The full documentation of the export feature is available [here](https://dt-url.net/h203qmc).
+
+
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[Union['KubernetesEnrichmentRulesArgs', 'KubernetesEnrichmentRulesArgsDict']] rules: Dynatrace allows to use metadata defined on Kubernetes nodes, namespaces, and pods to set security and cost allocation attributes and dimensions for metrics, events, log, spans, and entities associated with the respective Kubernetes resource.
@@ -121,7 +137,21 @@ class KubernetesEnrichment(pulumi.CustomResource):
                  args: Optional[KubernetesEnrichmentArgs] = None,
                  opts: Optional[pulumi.ResourceOptions] = None):
         """
-        Create a KubernetesEnrichment resource with the given unique name, props, and options.
+        > This resource requires the API token scopes **Read settings** (`settings.read`) and **Write settings** (`settings.write`)
+
+        ## Dynatrace Documentation
+
+        - Kubernetes app - https://docs.dynatrace.com/docs/platform-modules/infrastructure-monitoring/container-platform-monitoring/kubernetes-app
+
+        - Settings API - https://www.dynatrace.com/support/help/dynatrace-api/environment-api/settings (schemaId: `builtin:kubernetes.generic.metadata.enrichment`)
+
+        ## Export Example Usage
+
+        - `terraform-provider-dynatrace -export KubernetesEnrichment` downloads all existing generic metadata enrichment rules for Kubernetes
+
+        The full documentation of the export feature is available [here](https://dt-url.net/h203qmc).
+
+
         :param str resource_name: The name of the resource.
         :param KubernetesEnrichmentArgs args: The arguments to use to populate this resource's properties.
         :param pulumi.ResourceOptions opts: Options for the resource.

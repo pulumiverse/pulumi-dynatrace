@@ -33,6 +33,7 @@ class UrlBasedSamplingArgs:
                  scope: Optional[pulumi.Input[_builtins.str]] = None):
         """
         The set of arguments for constructing a UrlBasedSampling resource.
+
         :param pulumi.Input[_builtins.bool] enabled: This setting is enabled (`true`) or disabled (`false`)
         :param pulumi.Input[_builtins.bool] http_method_any: The scaling factor for the defined URL will be applied to any HTTP method.
         :param pulumi.Input[_builtins.bool] ignore: The matching URLs will always be ignored, also if Adaptive Traffic Management is not active.
@@ -198,6 +199,7 @@ class _UrlBasedSamplingState:
                  scope: Optional[pulumi.Input[_builtins.str]] = None):
         """
         Input properties used for looking up and filtering UrlBasedSampling resources.
+
         :param pulumi.Input[_builtins.bool] enabled: This setting is enabled (`true`) or disabled (`false`)
         :param pulumi.Input[_builtins.str] factor: Select the scaling factor for the current sampling rate of the system. Possible values: `IncreaseCapturing128Times`, `IncreaseCapturing64Times`, `IncreaseCapturing32Times`, `IncreaseCapturing16Times`, `IncreaseCapturing8Times`, `IncreaseCapturing4Times`, `IncreaseCapturing2Times`, `ReduceCapturingByFactor2`, `ReduceCapturingByFactor4`, `ReduceCapturingByFactor8`, `ReduceCapturingByFactor16`, `ReduceCapturingByFactor32`, `ReduceCapturingByFactor64`, `ReduceCapturingByFactor128`
         :param pulumi.Input[_builtins.bool] http_method_any: The scaling factor for the defined URL will be applied to any HTTP method.
@@ -369,7 +371,23 @@ class UrlBasedSampling(pulumi.CustomResource):
                  scope: Optional[pulumi.Input[_builtins.str]] = None,
                  __props__=None):
         """
-        Create a UrlBasedSampling resource with the given unique name, props, and options.
+        > This resource requires the API token scopes **Read settings** (`settings.read`) and **Write settings** (`settings.write`)
+
+        When Adaptive traffic management is activated, some PurePath distributed traces will be discarded based on your environment licensed limit. With URL-based sampling, you can configure the importance of specific URLs. URLs with higher importance can be treated to be captured more often and vice versa.
+
+        ## Dynatrace Documentation
+
+        - Adaptive traffic management for distributed tracing - https://docs.dynatrace.com/docs/observe-and-explore/purepath-distributed-traces/adaptive-traffic-management
+
+        - Settings API - https://www.dynatrace.com/support/help/dynatrace-api/environment-api/settings (schemaId: `builtin:url-based-sampling`)
+
+        ## Export Example Usage
+
+        - `terraform-provider-dynatrace -export UrlBasedSampling` downloads all existing URL-based sampling configuration
+
+        The full documentation of the export feature is available [here](https://dt-url.net/h203qmc).
+
+
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[_builtins.bool] enabled: This setting is enabled (`true`) or disabled (`false`)
@@ -390,7 +408,23 @@ class UrlBasedSampling(pulumi.CustomResource):
                  args: UrlBasedSamplingArgs,
                  opts: Optional[pulumi.ResourceOptions] = None):
         """
-        Create a UrlBasedSampling resource with the given unique name, props, and options.
+        > This resource requires the API token scopes **Read settings** (`settings.read`) and **Write settings** (`settings.write`)
+
+        When Adaptive traffic management is activated, some PurePath distributed traces will be discarded based on your environment licensed limit. With URL-based sampling, you can configure the importance of specific URLs. URLs with higher importance can be treated to be captured more often and vice versa.
+
+        ## Dynatrace Documentation
+
+        - Adaptive traffic management for distributed tracing - https://docs.dynatrace.com/docs/observe-and-explore/purepath-distributed-traces/adaptive-traffic-management
+
+        - Settings API - https://www.dynatrace.com/support/help/dynatrace-api/environment-api/settings (schemaId: `builtin:url-based-sampling`)
+
+        ## Export Example Usage
+
+        - `terraform-provider-dynatrace -export UrlBasedSampling` downloads all existing URL-based sampling configuration
+
+        The full documentation of the export feature is available [here](https://dt-url.net/h203qmc).
+
+
         :param str resource_name: The name of the resource.
         :param UrlBasedSamplingArgs args: The arguments to use to populate this resource's properties.
         :param pulumi.ResourceOptions opts: Options for the resource.

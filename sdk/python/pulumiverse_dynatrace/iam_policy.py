@@ -27,6 +27,7 @@ class IamPolicyArgs:
                  tags: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None):
         """
         The set of arguments for constructing a IamPolicy resource.
+
         :param pulumi.Input[_builtins.str] statement_query: The Statement Query of the policy
         :param pulumi.Input[_builtins.str] account: The UUID of the account (`urn:dtaccount:<account-uuid>`) in case the policy should be applied to all environments of this account. The prefix `urn:dtaccount:` MUST be omitted here.
         :param pulumi.Input[_builtins.str] description: An optional description text for the policy
@@ -135,6 +136,7 @@ class _IamPolicyState:
                  uuid: Optional[pulumi.Input[_builtins.str]] = None):
         """
         Input properties used for looking up and filtering IamPolicy resources.
+
         :param pulumi.Input[_builtins.str] account: The UUID of the account (`urn:dtaccount:<account-uuid>`) in case the policy should be applied to all environments of this account. The prefix `urn:dtaccount:` MUST be omitted here.
         :param pulumi.Input[_builtins.str] description: An optional description text for the policy
         :param pulumi.Input[_builtins.str] environment: The ID of the environment (https://\\n\\n.live.dynatrace.com) if the policy should be applied to a specific environment
@@ -280,6 +282,7 @@ class IamPolicy(pulumi.CustomResource):
         import pulumiverse_dynatrace as dynatrace
 
         policy = dynatrace.IamPolicy("policy",
+            name="my_policy_valid_for_environment_siz654##",
             environment="siz654##",
             statement_query="ALLOW settings:objects:read, settings:schemas:read WHERE settings:schemaId = \\"string\\";")
         ```
@@ -289,9 +292,11 @@ class IamPolicy(pulumi.CustomResource):
         import pulumiverse_dynatrace as dynatrace
 
         policy = dynatrace.IamPolicy("policy",
+            name="my_policy_valid_for_all_environments_in_this_account",
             account="########-####-####-####-############",
             statement_query="ALLOW settings:objects:read, settings:schemas:read WHERE settings:schemaId = \\"string\\";")
         ```
+
 
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
@@ -328,6 +333,7 @@ class IamPolicy(pulumi.CustomResource):
         import pulumiverse_dynatrace as dynatrace
 
         policy = dynatrace.IamPolicy("policy",
+            name="my_policy_valid_for_environment_siz654##",
             environment="siz654##",
             statement_query="ALLOW settings:objects:read, settings:schemas:read WHERE settings:schemaId = \\"string\\";")
         ```
@@ -337,9 +343,11 @@ class IamPolicy(pulumi.CustomResource):
         import pulumiverse_dynatrace as dynatrace
 
         policy = dynatrace.IamPolicy("policy",
+            name="my_policy_valid_for_all_environments_in_this_account",
             account="########-####-####-####-############",
             statement_query="ALLOW settings:objects:read, settings:schemas:read WHERE settings:schemaId = \\"string\\";")
         ```
+
 
         :param str resource_name: The name of the resource.
         :param IamPolicyArgs args: The arguments to use to populate this resource's properties.

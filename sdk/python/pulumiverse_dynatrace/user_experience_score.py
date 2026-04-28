@@ -25,6 +25,7 @@ class UserExperienceScoreArgs:
                  min_satisfied_user_actions_threshold: pulumi.Input[_builtins.int]):
         """
         The set of arguments for constructing a UserExperienceScore resource.
+
         :param pulumi.Input[_builtins.bool] consider_last_action: If last user action in a session is classified as Frustrating, classify the entire session as Frustrating
         :param pulumi.Input[_builtins.bool] consider_rage_click: Consider rage clicks / rage taps in score calculation
         :param pulumi.Input[_builtins.int] max_frustrated_user_actions_threshold: User experience is considered Frustrating when the selected percentage or more of the user actions in a session are rated as Frustrating.
@@ -93,6 +94,7 @@ class _UserExperienceScoreState:
                  min_satisfied_user_actions_threshold: Optional[pulumi.Input[_builtins.int]] = None):
         """
         Input properties used for looking up and filtering UserExperienceScore resources.
+
         :param pulumi.Input[_builtins.bool] consider_last_action: If last user action in a session is classified as Frustrating, classify the entire session as Frustrating
         :param pulumi.Input[_builtins.bool] consider_rage_click: Consider rage clicks / rage taps in score calculation
         :param pulumi.Input[_builtins.int] max_frustrated_user_actions_threshold: User experience is considered Frustrating when the selected percentage or more of the user actions in a session are rated as Frustrating.
@@ -168,7 +170,21 @@ class UserExperienceScore(pulumi.CustomResource):
                  min_satisfied_user_actions_threshold: Optional[pulumi.Input[_builtins.int]] = None,
                  __props__=None):
         """
-        Create a UserExperienceScore resource with the given unique name, props, and options.
+        > This resource requires the API token scopes **Read settings** (`settings.read`) and **Write settings** (`settings.write`)
+
+        ## Dynatrace Documentation
+
+        - Change user experience score thresholds for web applications - https://www.dynatrace.com/support/help/how-to-use-dynatrace/real-user-monitoring/setup-and-configuration/web-applications/additional-configuration/configure-user-experience-score-web
+
+        - Settings API - https://www.dynatrace.com/support/help/dynatrace-api/environment-api/settings (schemaId: `builtin:rum.user-experience-score`)
+
+        ## Export Example Usage
+
+        - `terraform-provider-dynatrace -export UserExperienceScore` downloads the existing user experience score configuration
+
+        The full documentation of the export feature is available [here](https://dt-url.net/h203qmc).
+
+
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[_builtins.bool] consider_last_action: If last user action in a session is classified as Frustrating, classify the entire session as Frustrating
@@ -183,7 +199,21 @@ class UserExperienceScore(pulumi.CustomResource):
                  args: UserExperienceScoreArgs,
                  opts: Optional[pulumi.ResourceOptions] = None):
         """
-        Create a UserExperienceScore resource with the given unique name, props, and options.
+        > This resource requires the API token scopes **Read settings** (`settings.read`) and **Write settings** (`settings.write`)
+
+        ## Dynatrace Documentation
+
+        - Change user experience score thresholds for web applications - https://www.dynatrace.com/support/help/how-to-use-dynatrace/real-user-monitoring/setup-and-configuration/web-applications/additional-configuration/configure-user-experience-score-web
+
+        - Settings API - https://www.dynatrace.com/support/help/dynatrace-api/environment-api/settings (schemaId: `builtin:rum.user-experience-score`)
+
+        ## Export Example Usage
+
+        - `terraform-provider-dynatrace -export UserExperienceScore` downloads the existing user experience score configuration
+
+        The full documentation of the export feature is available [here](https://dt-url.net/h203qmc).
+
+
         :param str resource_name: The name of the resource.
         :param UserExperienceScoreArgs args: The arguments to use to populate this resource's properties.
         :param pulumi.ResourceOptions opts: Options for the resource.

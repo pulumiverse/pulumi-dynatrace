@@ -10,6 +10,65 @@ using Pulumi;
 
 namespace Pulumiverse.Dynatrace
 {
+    /// <summary>
+    /// &gt; **Destroy Warning** Credentials **cannot be deleted** if they are still associated with active synthetic monitors.
+    /// Terraform will proceed with the destroy operation, but the credential will **not** be removed if any associations remain. **Action Required:** Before destroying this resource, ensure the credential is removed from all associated monitors.
+    /// If any monitors remain associated after destroy, you must manually remove those associations and delete the credential manually.
+    /// 
+    /// &gt; This resource requires the API token scopes **Read credential vault entries** (`credentialVault.read`) and **Write credential vault entries** (`credentialVault.write`)
+    /// 
+    /// ## Dynatrace Documentation
+    /// 
+    /// - Credential vault for synthetic monitors - https://www.dynatrace.com/support/help/platform-modules/digital-experience/synthetic-monitoring/general-information/credential-vault-for-synthetic-monitors
+    /// 
+    /// - Credential vault API - https://www.dynatrace.com/support/help/dynatrace-api/environment-api/credential-vault
+    /// 
+    /// ## Export Example Usage
+    /// 
+    /// - `terraform-provider-dynatrace -export dynatrace.Credentials` downloads all existing credentials
+    /// 
+    /// The full documentation of the export feature is available [here](https://dt-url.net/h203qmc).
+    /// 
+    /// ## Resource Example Usage
+    /// 
+    /// ```csharp
+    /// using System.Collections.Generic;
+    /// using System.Linq;
+    /// using Pulumi;
+    /// using Dynatrace = Pulumiverse.Dynatrace;
+    /// using Std = Pulumi.Std;
+    /// 
+    /// return await Deployment.RunAsync(() =&gt; 
+    /// {
+    ///     var name = new Dynatrace.Credentials("name", new()
+    ///     {
+    ///         Name = "name",
+    ///         Scopes = new[]
+    ///         {
+    ///             "SYNTHETIC",
+    ///         },
+    ///         Username = "username",
+    ///         Password = "password",
+    ///     });
+    /// 
+    ///     var rootCertificate = new Dynatrace.Credentials("root_certificate", new()
+    ///     {
+    ///         Name = "Root Certificate",
+    ///         Description = "Root certificate for validating Extension 2.0 signatures",
+    ///         Certificate = Std.File.Invoke(new()
+    ///         {
+    ///             Input = "certificate.pem",
+    ///         }).Apply(invoke =&gt; Std.Base64encode.Invoke(new()
+    ///         {
+    ///             Input = invoke.Result,
+    ///         })).Apply(invoke =&gt; invoke.Result),
+    ///         Format = "PEM",
+    ///         Public = true,
+    ///     });
+    /// 
+    /// });
+    /// ```
+    /// </summary>
     [DynatraceResourceType("dynatrace:index/credentials:Credentials")]
     public partial class Credentials : global::Pulumi.CustomResource
     {
@@ -67,6 +126,9 @@ namespace Pulumiverse.Dynatrace
         [Output("ownerAccessOnly")]
         public Output<bool?> OwnerAccessOnly { get; private set; } = null!;
 
+        /// <summary>
+        /// The password of the credential. Note: Terraform treats an empty string for a value as if the attribute was absent. If you want to set an empty password, use the value `--empty--`.
+        /// </summary>
         [Output("password")]
         public Output<string?> Password { get; private set; } = null!;
 
@@ -216,6 +278,10 @@ namespace Pulumiverse.Dynatrace
 
         [Input("password")]
         private Input<string>? _password;
+
+        /// <summary>
+        /// The password of the credential. Note: Terraform treats an empty string for a value as if the attribute was absent. If you want to set an empty password, use the value `--empty--`.
+        /// </summary>
         public Input<string>? Password
         {
             get => _password;
@@ -353,6 +419,10 @@ namespace Pulumiverse.Dynatrace
 
         [Input("password")]
         private Input<string>? _password;
+
+        /// <summary>
+        /// The password of the credential. Note: Terraform treats an empty string for a value as if the attribute was absent. If you want to set an empty password, use the value `--empty--`.
+        /// </summary>
         public Input<string>? Password
         {
             get => _password;

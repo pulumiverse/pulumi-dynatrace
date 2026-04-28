@@ -12,6 +12,19 @@ import (
 	"github.com/pulumiverse/pulumi-dynatrace/sdk/go/dynatrace/internal"
 )
 
+// > This resource requires the API token scopes **Read settings** (`settings.read`) and **Write settings** (`settings.write`)
+//
+// ## Dynatrace Documentation
+//
+// - Tokens and authentication - https://www.dynatrace.com/support/help/dynatrace-api/basics/dynatrace-api-authentication
+//
+// - Settings API - https://www.dynatrace.com/support/help/dynatrace-api/environment-api/settings (schemaId: `builtin:tokens.token-settings`)
+//
+// ## Export Example Usage
+//
+// - `terraform-provider-dynatrace -export TokenSettings` downloads existing access token configuration
+//
+// The full documentation of the export feature is available [here](https://dt-url.net/h203qmc).
 type TokenSettings struct {
 	pulumi.CustomResourceState
 

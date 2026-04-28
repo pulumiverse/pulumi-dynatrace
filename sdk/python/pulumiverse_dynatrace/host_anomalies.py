@@ -30,6 +30,7 @@ class HostAnomaliesArgs:
                  network: Optional[pulumi.Input['HostAnomaliesNetworkArgs']] = None):
         """
         The set of arguments for constructing a HostAnomalies resource.
+
         :param pulumi.Input['HostAnomaliesConnectionsArgs'] connections: Configuration of lost connection detection
         :param pulumi.Input['HostAnomaliesCpuArgs'] cpu: Configuration of high CPU saturation detection
         :param pulumi.Input['HostAnomaliesDisksArgs'] disks: Configuration of disk related anomalies
@@ -150,6 +151,7 @@ class _HostAnomaliesState:
                  network: Optional[pulumi.Input['HostAnomaliesNetworkArgs']] = None):
         """
         Input properties used for looking up and filtering HostAnomalies resources.
+
         :param pulumi.Input['HostAnomaliesConnectionsArgs'] connections: Configuration of lost connection detection
         :param pulumi.Input['HostAnomaliesCpuArgs'] cpu: Configuration of high CPU saturation detection
         :param pulumi.Input['HostAnomaliesDisksArgs'] disks: Configuration of disk related anomalies
@@ -273,7 +275,23 @@ class HostAnomalies(pulumi.CustomResource):
                  network: Optional[pulumi.Input[Union['HostAnomaliesNetworkArgs', 'HostAnomaliesNetworkArgsDict']]] = None,
                  __props__=None):
         """
-        Create a HostAnomalies resource with the given unique name, props, and options.
+        !> This resource is utilizing an older API endpoint, please use HostAnomaliesV2 instead.
+
+        > This resource requires the API token scopes **Read configuration** (`ReadConfig`) and **Write configuration** (`WriteConfig`)
+
+        ## Dynatrace Documentation
+
+        - Adjust the sensitivity of anomaly detection for infrastructure - https://www.dynatrace.com/support/help/how-to-use-dynatrace/problem-detection-and-analysis/problem-detection/adjust-sensitivity-anomaly-detection/adjust-sensitivity-infastructure
+
+        - Anomaly detection API - Hosts - https://www.dynatrace.com/support/help/dynatrace-api/configuration-api/anomaly-detection-api/anomaly-detection-api-hosts
+
+        ## Export Example Usage
+
+        - `terraform-provider-dynatrace -export HostAnomalies` downloads all existing host anomaly detection configuration
+
+        The full documentation of the export feature is available [here](https://dt-url.net/h203qmc).
+
+
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[Union['HostAnomaliesConnectionsArgs', 'HostAnomaliesConnectionsArgsDict']] connections: Configuration of lost connection detection
@@ -291,7 +309,23 @@ class HostAnomalies(pulumi.CustomResource):
                  args: Optional[HostAnomaliesArgs] = None,
                  opts: Optional[pulumi.ResourceOptions] = None):
         """
-        Create a HostAnomalies resource with the given unique name, props, and options.
+        !> This resource is utilizing an older API endpoint, please use HostAnomaliesV2 instead.
+
+        > This resource requires the API token scopes **Read configuration** (`ReadConfig`) and **Write configuration** (`WriteConfig`)
+
+        ## Dynatrace Documentation
+
+        - Adjust the sensitivity of anomaly detection for infrastructure - https://www.dynatrace.com/support/help/how-to-use-dynatrace/problem-detection-and-analysis/problem-detection/adjust-sensitivity-anomaly-detection/adjust-sensitivity-infastructure
+
+        - Anomaly detection API - Hosts - https://www.dynatrace.com/support/help/dynatrace-api/configuration-api/anomaly-detection-api/anomaly-detection-api-hosts
+
+        ## Export Example Usage
+
+        - `terraform-provider-dynatrace -export HostAnomalies` downloads all existing host anomaly detection configuration
+
+        The full documentation of the export feature is available [here](https://dt-url.net/h203qmc).
+
+
         :param str resource_name: The name of the resource.
         :param HostAnomaliesArgs args: The arguments to use to populate this resource's properties.
         :param pulumi.ResourceOptions opts: Options for the resource.

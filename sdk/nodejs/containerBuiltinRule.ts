@@ -4,6 +4,21 @@
 import * as pulumi from "@pulumi/pulumi";
 import * as utilities from "./utilities";
 
+/**
+ * > This resource requires the API token scopes **Read settings** (`settings.read`) and **Write settings** (`settings.write`)
+ *
+ * ## Dynatrace Documentation
+ *
+ * - Container monitoring rules - https://www.dynatrace.com/support/help/platform-modules/infrastructure-monitoring/container-platform-monitoring/container-monitoring-rules
+ *
+ * - Settings API - https://www.dynatrace.com/support/help/dynatrace-api/environment-api/settings (schemaId: `builtin:container.built-in-monitoring-rule`)
+ *
+ * ## Export Example Usage
+ *
+ * - `terraform-provider-dynatrace -export dynatrace.ContainerBuiltinRule` downloads all existing builtin monitoring rules for containers
+ *
+ * The full documentation of the export feature is available [here](https://dt-url.net/h203qmc).
+ */
 export class ContainerBuiltinRule extends pulumi.CustomResource {
     /**
      * Get an existing ContainerBuiltinRule resource's state with the given name, ID, and optional extra

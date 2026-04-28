@@ -23,6 +23,7 @@ class KubernetesSpmArgs:
                  scope: Optional[pulumi.Input[_builtins.str]] = None):
         """
         The set of arguments for constructing a KubernetesSpm resource.
+
         :param pulumi.Input[_builtins.bool] configuration_dataset_pipeline_enabled: Follow the [installation instructions](https://dt-url.net/4x23ut5) to deploy the Security Posture Management components.
         :param pulumi.Input[_builtins.str] scope: The scope of this setting (KUBERNETES_CLUSTER). Omit this property if you want to cover the whole environment.
         """
@@ -62,6 +63,7 @@ class _KubernetesSpmState:
                  scope: Optional[pulumi.Input[_builtins.str]] = None):
         """
         Input properties used for looking up and filtering KubernetesSpm resources.
+
         :param pulumi.Input[_builtins.bool] configuration_dataset_pipeline_enabled: Follow the [installation instructions](https://dt-url.net/4x23ut5) to deploy the Security Posture Management components.
         :param pulumi.Input[_builtins.str] scope: The scope of this setting (KUBERNETES_CLUSTER). Omit this property if you want to cover the whole environment.
         """
@@ -105,7 +107,21 @@ class KubernetesSpm(pulumi.CustomResource):
                  scope: Optional[pulumi.Input[_builtins.str]] = None,
                  __props__=None):
         """
-        Create a KubernetesSpm resource with the given unique name, props, and options.
+        > This resource requires the API token scopes **Read settings** (`settings.read`) and **Write settings** (`settings.write`)
+
+        ## Dynatrace Documentation
+
+        - Security Posture Management: Kubernetes - https://docs.dynatrace.com/docs/shortlink/kspm-start
+
+        - Settings API - https://www.dynatrace.com/support/help/dynatrace-api/environment-api/settings (schemaId: `builtin:kubernetes.security-posture-management`)
+
+        ## Export Example Usage
+
+        - `terraform-provider-dynatrace -export KubernetesSpm` downloads all existing configuration for Kubernetes security posture management
+
+        The full documentation of the export feature is available [here](https://dt-url.net/h203qmc).
+
+
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[_builtins.bool] configuration_dataset_pipeline_enabled: Follow the [installation instructions](https://dt-url.net/4x23ut5) to deploy the Security Posture Management components.
@@ -118,7 +134,21 @@ class KubernetesSpm(pulumi.CustomResource):
                  args: KubernetesSpmArgs,
                  opts: Optional[pulumi.ResourceOptions] = None):
         """
-        Create a KubernetesSpm resource with the given unique name, props, and options.
+        > This resource requires the API token scopes **Read settings** (`settings.read`) and **Write settings** (`settings.write`)
+
+        ## Dynatrace Documentation
+
+        - Security Posture Management: Kubernetes - https://docs.dynatrace.com/docs/shortlink/kspm-start
+
+        - Settings API - https://www.dynatrace.com/support/help/dynatrace-api/environment-api/settings (schemaId: `builtin:kubernetes.security-posture-management`)
+
+        ## Export Example Usage
+
+        - `terraform-provider-dynatrace -export KubernetesSpm` downloads all existing configuration for Kubernetes security posture management
+
+        The full documentation of the export feature is available [here](https://dt-url.net/h203qmc).
+
+
         :param str resource_name: The name of the resource.
         :param KubernetesSpmArgs args: The arguments to use to populate this resource's properties.
         :param pulumi.ResourceOptions opts: Options for the resource.

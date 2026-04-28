@@ -24,6 +24,7 @@ class AixExtensionArgs:
                  enabled: Optional[pulumi.Input[_builtins.bool]] = None):
         """
         The set of arguments for constructing a AixExtension resource.
+
         :param pulumi.Input[_builtins.str] host_id: The scope of this settings. If the settings should cover the whole environment, just don't specify any scope.
         :param pulumi.Input[_builtins.bool] use_global_settings: Use global settings
         :param pulumi.Input[_builtins.bool] enabled: This setting is enabled (`true`) or disabled (`false`)
@@ -78,6 +79,7 @@ class _AixExtensionState:
                  use_global_settings: Optional[pulumi.Input[_builtins.bool]] = None):
         """
         Input properties used for looking up and filtering AixExtension resources.
+
         :param pulumi.Input[_builtins.bool] enabled: This setting is enabled (`true`) or disabled (`false`)
         :param pulumi.Input[_builtins.str] host_id: The scope of this settings. If the settings should cover the whole environment, just don't specify any scope.
         :param pulumi.Input[_builtins.bool] use_global_settings: Use global settings
@@ -137,7 +139,21 @@ class AixExtension(pulumi.CustomResource):
                  use_global_settings: Optional[pulumi.Input[_builtins.bool]] = None,
                  __props__=None):
         """
-        Create a AixExtension resource with the given unique name, props, and options.
+        > This resource requires the API token scopes **Read settings** (`settings.read`) and **Write settings** (`settings.write`)
+
+        ## Dynatrace Documentation
+
+        - Automated injection of deep-code monitoring on AIX - https://www.dynatrace.com/support/help/setup-and-configuration/dynatrace-oneagent/installation-and-operation/aix/operation/enable-auto-injection
+
+        - Settings API - https://www.dynatrace.com/support/help/dynatrace-api/environment-api/settings (schemaId: `builtin:host.monitoring.aix-kernel-extension`)
+
+        ## Export Example Usage
+
+        - `terraform-provider-dynatrace -export AixExtension` downloads all existing AIX kernel extension configuration
+
+        The full documentation of the export feature is available [here](https://dt-url.net/h203qmc).
+
+
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[_builtins.bool] enabled: This setting is enabled (`true`) or disabled (`false`)
@@ -151,7 +167,21 @@ class AixExtension(pulumi.CustomResource):
                  args: AixExtensionArgs,
                  opts: Optional[pulumi.ResourceOptions] = None):
         """
-        Create a AixExtension resource with the given unique name, props, and options.
+        > This resource requires the API token scopes **Read settings** (`settings.read`) and **Write settings** (`settings.write`)
+
+        ## Dynatrace Documentation
+
+        - Automated injection of deep-code monitoring on AIX - https://www.dynatrace.com/support/help/setup-and-configuration/dynatrace-oneagent/installation-and-operation/aix/operation/enable-auto-injection
+
+        - Settings API - https://www.dynatrace.com/support/help/dynatrace-api/environment-api/settings (schemaId: `builtin:host.monitoring.aix-kernel-extension`)
+
+        ## Export Example Usage
+
+        - `terraform-provider-dynatrace -export AixExtension` downloads all existing AIX kernel extension configuration
+
+        The full documentation of the export feature is available [here](https://dt-url.net/h203qmc).
+
+
         :param str resource_name: The name of the resource.
         :param AixExtensionArgs args: The arguments to use to populate this resource's properties.
         :param pulumi.ResourceOptions opts: Options for the resource.

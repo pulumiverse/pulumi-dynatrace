@@ -28,6 +28,7 @@ class UserSessionMetricsArgs:
                  filters: Optional[pulumi.Input['UserSessionMetricsFiltersArgs']] = None):
         """
         The set of arguments for constructing a UserSessionMetrics resource.
+
         :param pulumi.Input[_builtins.bool] enabled: This setting is enabled (`true`) or disabled (`false`)
         :param pulumi.Input[_builtins.str] metric_key: Metric key
         :param pulumi.Input['UserSessionMetricsValueArgs'] value: Defines the type of value to be extracted from the user session. When using **User session counter**, the number of user sessions is counted (similar to count(*) when using USQL). When using **User session field value**, the value of a user session field is extracted.
@@ -113,6 +114,7 @@ class _UserSessionMetricsState:
                  value: Optional[pulumi.Input['UserSessionMetricsValueArgs']] = None):
         """
         Input properties used for looking up and filtering UserSessionMetrics resources.
+
         :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] dimensions: Defines the fields that are used as dimensions. A dimension is a collection of reference information about a metric data point that is of interest to your business. Dimensions are parameters like "browserFamily", "userType", "country". For example, using "userType" as a dimension allows you to split chart data based on user types.
         :param pulumi.Input[_builtins.bool] enabled: This setting is enabled (`true`) or disabled (`false`)
         :param pulumi.Input['UserSessionMetricsFiltersArgs'] filters: Defines the filters for the user session. Filters apply at the moment of extracting the data and only sessions that satisfy the filtering criteria will be used to extract the custom metrics. You will not be able to modify these filters in the metric data explorer. For example, using "userType equals REAL_USER" will give you only data from real users, while forcing the synthetic sessions to be ignored.
@@ -204,7 +206,21 @@ class UserSessionMetrics(pulumi.CustomResource):
                  value: Optional[pulumi.Input[Union['UserSessionMetricsValueArgs', 'UserSessionMetricsValueArgsDict']]] = None,
                  __props__=None):
         """
-        Create a UserSessionMetrics resource with the given unique name, props, and options.
+        > This resource requires the API token scopes **Read settings** (`settings.read`) and **Write settings** (`settings.write`)
+
+        ## Dynatrace Documentation
+
+        - Create USQL custom metrics for web applications - https://www.dynatrace.com/support/help/platform-modules/digital-experience/web-applications/additional-configuration/custom-metrics-from-user-sessions
+
+        - Settings API - https://www.dynatrace.com/support/help/dynatrace-api/environment-api/settings (schemaId: `builtin:custom-metrics`)
+
+        ## Export Example Usage
+
+        - `terraform-provider-dynatrace -export UserSessionMetrics` downloads all existing user session custom metrics configuration
+
+        The full documentation of the export feature is available [here](https://dt-url.net/h203qmc).
+
+
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] dimensions: Defines the fields that are used as dimensions. A dimension is a collection of reference information about a metric data point that is of interest to your business. Dimensions are parameters like "browserFamily", "userType", "country". For example, using "userType" as a dimension allows you to split chart data based on user types.
@@ -220,7 +236,21 @@ class UserSessionMetrics(pulumi.CustomResource):
                  args: UserSessionMetricsArgs,
                  opts: Optional[pulumi.ResourceOptions] = None):
         """
-        Create a UserSessionMetrics resource with the given unique name, props, and options.
+        > This resource requires the API token scopes **Read settings** (`settings.read`) and **Write settings** (`settings.write`)
+
+        ## Dynatrace Documentation
+
+        - Create USQL custom metrics for web applications - https://www.dynatrace.com/support/help/platform-modules/digital-experience/web-applications/additional-configuration/custom-metrics-from-user-sessions
+
+        - Settings API - https://www.dynatrace.com/support/help/dynatrace-api/environment-api/settings (schemaId: `builtin:custom-metrics`)
+
+        ## Export Example Usage
+
+        - `terraform-provider-dynatrace -export UserSessionMetrics` downloads all existing user session custom metrics configuration
+
+        The full documentation of the export feature is available [here](https://dt-url.net/h203qmc).
+
+
         :param str resource_name: The name of the resource.
         :param UserSessionMetricsArgs args: The arguments to use to populate this resource's properties.
         :param pulumi.ResourceOptions opts: Options for the resource.

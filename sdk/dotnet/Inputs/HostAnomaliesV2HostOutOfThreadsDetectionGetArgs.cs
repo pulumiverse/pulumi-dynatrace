@@ -20,13 +20,13 @@ namespace Pulumiverse.Dynatrace.Inputs
         public Input<Inputs.HostAnomaliesV2HostOutOfThreadsDetectionCustomThresholdsGetArgs>? CustomThresholds { get; set; }
 
         /// <summary>
-        /// Detection mode for Java out of threads problem
+        /// Detection mode for Java out of threads problem. Possible Values: `Auto`, `Custom`
         /// </summary>
         [Input("detectionMode")]
         public Input<string>? DetectionMode { get; set; }
 
         /// <summary>
-        /// Detect Java out of threads problem
+        /// This setting is enabled (`True`) or disabled (`False`)
         /// </summary>
         [Input("enabled", required: true)]
         public Input<bool> Enabled { get; set; } = null!;

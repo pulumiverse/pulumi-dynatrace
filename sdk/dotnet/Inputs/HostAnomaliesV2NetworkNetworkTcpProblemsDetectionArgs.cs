@@ -20,13 +20,13 @@ namespace Pulumiverse.Dynatrace.Inputs
         public Input<Inputs.HostAnomaliesV2NetworkNetworkTcpProblemsDetectionCustomThresholdsArgs>? CustomThresholds { get; set; }
 
         /// <summary>
-        /// Detection mode for TCP connectivity problems
+        /// Detection mode for TCP connectivity problems. Possible Values: `Auto`, `Custom`
         /// </summary>
         [Input("detectionMode")]
         public Input<string>? DetectionMode { get; set; }
 
         /// <summary>
-        /// Detect TCP connectivity problems for process
+        /// This setting is enabled (`True`) or disabled (`False`)
         /// </summary>
         [Input("enabled", required: true)]
         public Input<bool> Enabled { get; set; } = null!;

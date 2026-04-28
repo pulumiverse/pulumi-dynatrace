@@ -32,6 +32,7 @@ class HttpMonitorArgs:
                  tags: Optional[pulumi.Input[Sequence[pulumi.Input['HttpMonitorTagArgs']]]] = None):
         """
         The set of arguments for constructing a HttpMonitor resource.
+
         :param pulumi.Input[_builtins.int] frequency: The frequency of the monitor, in minutes.
         :param pulumi.Input[Sequence[pulumi.Input['HttpMonitorAnomalyDetectionArgs']]] anomaly_detections: The anomaly detection configuration.
         :param pulumi.Input[_builtins.bool] enabled: The monitor is enabled (`true`) or disabled (`false`).
@@ -191,6 +192,7 @@ class _HttpMonitorState:
                  tags: Optional[pulumi.Input[Sequence[pulumi.Input['HttpMonitorTagArgs']]]] = None):
         """
         Input properties used for looking up and filtering HttpMonitor resources.
+
         :param pulumi.Input[Sequence[pulumi.Input['HttpMonitorAnomalyDetectionArgs']]] anomaly_detections: The anomaly detection configuration.
         :param pulumi.Input[_builtins.bool] enabled: The monitor is enabled (`true`) or disabled (`false`).
         :param pulumi.Input[_builtins.int] frequency: The frequency of the monitor, in minutes.
@@ -354,7 +356,21 @@ class HttpMonitor(pulumi.CustomResource):
                  tags: Optional[pulumi.Input[Sequence[pulumi.Input[Union['HttpMonitorTagArgs', 'HttpMonitorTagArgsDict']]]]] = None,
                  __props__=None):
         """
-        Create a HttpMonitor resource with the given unique name, props, and options.
+        > This resource requires the API token scope **Create and read synthetic monitors, locations, and nodes** (`ExternalSyntheticIntegration`)
+
+        ## Dynatrace Documentation
+
+        - Synthetic Monitoring - HTTP monitors - https://www.dynatrace.com/support/help/shortlink/synthetic-hub#http-monitors
+
+        - Synthetic Monitors API - https://www.dynatrace.com/support/help/dynatrace-api/environment-api/synthetic/synthetic-monitors
+
+        ## Export Example Usage
+
+        - `terraform-provider-dynatrace -export HttpMonitor` downloads all existing HTTP monitor configuration
+
+        The full documentation of the export feature is available [here](https://dt-url.net/h203qmc).
+
+
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[Sequence[pulumi.Input[Union['HttpMonitorAnomalyDetectionArgs', 'HttpMonitorAnomalyDetectionArgsDict']]]] anomaly_detections: The anomaly detection configuration.
@@ -378,7 +394,21 @@ class HttpMonitor(pulumi.CustomResource):
                  args: HttpMonitorArgs,
                  opts: Optional[pulumi.ResourceOptions] = None):
         """
-        Create a HttpMonitor resource with the given unique name, props, and options.
+        > This resource requires the API token scope **Create and read synthetic monitors, locations, and nodes** (`ExternalSyntheticIntegration`)
+
+        ## Dynatrace Documentation
+
+        - Synthetic Monitoring - HTTP monitors - https://www.dynatrace.com/support/help/shortlink/synthetic-hub#http-monitors
+
+        - Synthetic Monitors API - https://www.dynatrace.com/support/help/dynatrace-api/environment-api/synthetic/synthetic-monitors
+
+        ## Export Example Usage
+
+        - `terraform-provider-dynatrace -export HttpMonitor` downloads all existing HTTP monitor configuration
+
+        The full documentation of the export feature is available [here](https://dt-url.net/h203qmc).
+
+
         :param str resource_name: The name of the resource.
         :param HttpMonitorArgs args: The arguments to use to populate this resource's properties.
         :param pulumi.ResourceOptions opts: Options for the resource.

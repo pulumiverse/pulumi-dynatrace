@@ -12,6 +12,19 @@ import (
 	"github.com/pulumiverse/pulumi-dynatrace/sdk/go/dynatrace/internal"
 )
 
+// > This resource is excluded by default in the export utility since it is scoped for an individual user and requires a personal access token.
+//
+// > This resource requires the API token scopes **Read settings** (`settings.read`) and **Write settings** (`settings.write`)
+//
+// ## Dynatrace Documentation
+//
+// - Settings API - https://www.dynatrace.com/support/help/dynatrace-api/environment-api/settings (schemaId: `builtin:user-settings`)
+//
+// ## Export Example Usage
+//
+// - `terraform-provider-dynatrace -export UserSettings` downloads user settings of the individual user
+//
+// The full documentation of the export feature is available [here](https://dt-url.net/h203qmc).
 type UserSettings struct {
 	pulumi.CustomResourceState
 

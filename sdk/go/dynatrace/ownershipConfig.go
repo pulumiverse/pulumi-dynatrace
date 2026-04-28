@@ -12,6 +12,19 @@ import (
 	"github.com/pulumiverse/pulumi-dynatrace/sdk/go/dynatrace/internal"
 )
 
+// > This resource requires the API token scopes **Read settings** (`settings.read`) and **Write settings** (`settings.write`)
+//
+// ## Dynatrace Documentation
+//
+// - Ownership - https://www.dynatrace.com/support/help/manage/ownership
+//
+// - Settings API - https://www.dynatrace.com/support/help/dynatrace-api/environment-api/settings (schemaId: `builtin:ownership.config`)
+//
+// ## Export Example Usage
+//
+// - `terraform-provider-dynatrace -export OwnershipConfig` downloads all existing ownership configuration
+//
+// The full documentation of the export feature is available [here](https://dt-url.net/h203qmc).
 type OwnershipConfig struct {
 	pulumi.CustomResourceState
 

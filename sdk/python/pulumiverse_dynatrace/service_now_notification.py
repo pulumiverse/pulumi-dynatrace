@@ -33,18 +33,26 @@ class ServiceNowNotificationArgs:
                  url: Optional[pulumi.Input[_builtins.str]] = None):
         """
         The set of arguments for constructing a ServiceNowNotification resource.
-        :param pulumi.Input[_builtins.bool] active: The configuration is enabled (`true`) or disabled (`false`)
-        :param pulumi.Input[_builtins.bool] incidents: Send incidents into ServiceNow ITSM
-        :param pulumi.Input[_builtins.str] message: The content of the ServiceNow description. You can use the following placeholders:  * `{ImpactedEntity}`: The entity impacted by the problem or *X* impacted entities.  * `{PID}`: The ID of the reported problem.  * `{ProblemDetailsHTML}`: All problem event details, including root cause, as an HTML-formatted string.  * `{ProblemID}`: The display number of the reported problem.  * `{ProblemImpact}`: The [impact level](https://www.dynatrace.com/support/help/shortlink/impact-analysis) of the problem. Possible values are `APPLICATION`, `SERVICE`, and `INFRASTRUCTURE`.  * `{ProblemSeverity}`: The [severity level](https://www.dynatrace.com/support/help/shortlink/event-types) of the problem. Possible values are `AVAILABILITY`, `ERROR`, `PERFORMANCE`, `RESOURCE_CONTENTION`, and `CUSTOM_ALERT`.  * `{ProblemTitle}`: A short description of the problem.  * `{ProblemURL}`: The URL of the problem within Dynatrace.  * `{State}`: The state of the problem. Possible values are `OPEN` and `RESOLVED`.  * `{Tags}`: The list of tags that are defined for all impacted entities, separated by commas
+
+        :param pulumi.Input[_builtins.bool] active: This setting is enabled (`true`) or disabled (`false`)
+        :param pulumi.Input[_builtins.bool] incidents: Send incidents into ServiceNow ITSM.
+        :param pulumi.Input[_builtins.str] message: The content of the ServiceNow description. Type '{' for placeholder suggestions.. #### Available placeholders
+               **{ImpactedEntity}**: A short description of the problem and impacted entity (or multiple impacted entities).
         :param pulumi.Input[_builtins.str] profile: The ID of the associated alerting profile
-        :param pulumi.Input[_builtins.str] username: The username of the ServiceNow account.   Make sure that your user account has the `rest_service`, `web_request_admin`, and `x_dynat_ruxit.Integration` roles
-        :param pulumi.Input[_builtins.bool] events: Send events into ServiceNow ITOM
+        :param pulumi.Input[_builtins.str] username: The username of the ServiceNow account. 
+               
+                Make sure that your user account has the `web_service_admin` and `x_dynat_ruxit.Integration` roles.
+        :param pulumi.Input[_builtins.bool] events: Send events into ServiceNow ITOM.
         :param pulumi.Input[_builtins.bool] format_problem_details_as_text: Use text format for problem details instead of HTML.
-        :param pulumi.Input[_builtins.str] instance: The ServiceNow instance identifier. It refers to the first part of your own ServiceNow URL. This field is mutually exclusive with the **url** field. You can only use one of them
+        :param pulumi.Input[_builtins.str] instance: The ServiceNow instance identifier. It refers to the first part of your own ServiceNow URL. 
+               
+                This field is mutually exclusive with the **url** field. You can only use one of them.
         :param pulumi.Input[_builtins.str] legacy_id: The ID of these settings when referred to from resources requiring the REST API V1 keys
         :param pulumi.Input[_builtins.str] name: The name of the notification configuration
-        :param pulumi.Input[_builtins.str] password: The password to the ServiceNow account
-        :param pulumi.Input[_builtins.str] url: The URL of the on-premise ServiceNow installation. This field is mutually exclusive with the **instance** field. You can only use one of them
+        :param pulumi.Input[_builtins.str] password: The password to the ServiceNow account.
+        :param pulumi.Input[_builtins.str] url: The URL of the on-premise ServiceNow installation. 
+               
+                This field is mutually exclusive with the **instanceName** field. You can only use one of them.
         """
         pulumi.set(__self__, "active", active)
         pulumi.set(__self__, "incidents", incidents)
@@ -70,7 +78,7 @@ class ServiceNowNotificationArgs:
     @pulumi.getter
     def active(self) -> pulumi.Input[_builtins.bool]:
         """
-        The configuration is enabled (`true`) or disabled (`false`)
+        This setting is enabled (`true`) or disabled (`false`)
         """
         return pulumi.get(self, "active")
 
@@ -82,7 +90,7 @@ class ServiceNowNotificationArgs:
     @pulumi.getter
     def incidents(self) -> pulumi.Input[_builtins.bool]:
         """
-        Send incidents into ServiceNow ITSM
+        Send incidents into ServiceNow ITSM.
         """
         return pulumi.get(self, "incidents")
 
@@ -94,7 +102,8 @@ class ServiceNowNotificationArgs:
     @pulumi.getter
     def message(self) -> pulumi.Input[_builtins.str]:
         """
-        The content of the ServiceNow description. You can use the following placeholders:  * `{ImpactedEntity}`: The entity impacted by the problem or *X* impacted entities.  * `{PID}`: The ID of the reported problem.  * `{ProblemDetailsHTML}`: All problem event details, including root cause, as an HTML-formatted string.  * `{ProblemID}`: The display number of the reported problem.  * `{ProblemImpact}`: The [impact level](https://www.dynatrace.com/support/help/shortlink/impact-analysis) of the problem. Possible values are `APPLICATION`, `SERVICE`, and `INFRASTRUCTURE`.  * `{ProblemSeverity}`: The [severity level](https://www.dynatrace.com/support/help/shortlink/event-types) of the problem. Possible values are `AVAILABILITY`, `ERROR`, `PERFORMANCE`, `RESOURCE_CONTENTION`, and `CUSTOM_ALERT`.  * `{ProblemTitle}`: A short description of the problem.  * `{ProblemURL}`: The URL of the problem within Dynatrace.  * `{State}`: The state of the problem. Possible values are `OPEN` and `RESOLVED`.  * `{Tags}`: The list of tags that are defined for all impacted entities, separated by commas
+        The content of the ServiceNow description. Type '{' for placeholder suggestions.. #### Available placeholders
+        **{ImpactedEntity}**: A short description of the problem and impacted entity (or multiple impacted entities).
         """
         return pulumi.get(self, "message")
 
@@ -118,7 +127,9 @@ class ServiceNowNotificationArgs:
     @pulumi.getter
     def username(self) -> pulumi.Input[_builtins.str]:
         """
-        The username of the ServiceNow account.   Make sure that your user account has the `rest_service`, `web_request_admin`, and `x_dynat_ruxit.Integration` roles
+        The username of the ServiceNow account. 
+
+         Make sure that your user account has the `web_service_admin` and `x_dynat_ruxit.Integration` roles.
         """
         return pulumi.get(self, "username")
 
@@ -130,7 +141,7 @@ class ServiceNowNotificationArgs:
     @pulumi.getter
     def events(self) -> Optional[pulumi.Input[_builtins.bool]]:
         """
-        Send events into ServiceNow ITOM
+        Send events into ServiceNow ITOM.
         """
         return pulumi.get(self, "events")
 
@@ -154,7 +165,9 @@ class ServiceNowNotificationArgs:
     @pulumi.getter
     def instance(self) -> Optional[pulumi.Input[_builtins.str]]:
         """
-        The ServiceNow instance identifier. It refers to the first part of your own ServiceNow URL. This field is mutually exclusive with the **url** field. You can only use one of them
+        The ServiceNow instance identifier. It refers to the first part of your own ServiceNow URL. 
+
+         This field is mutually exclusive with the **url** field. You can only use one of them.
         """
         return pulumi.get(self, "instance")
 
@@ -190,7 +203,7 @@ class ServiceNowNotificationArgs:
     @pulumi.getter
     def password(self) -> Optional[pulumi.Input[_builtins.str]]:
         """
-        The password to the ServiceNow account
+        The password to the ServiceNow account.
         """
         return pulumi.get(self, "password")
 
@@ -202,7 +215,9 @@ class ServiceNowNotificationArgs:
     @pulumi.getter
     def url(self) -> Optional[pulumi.Input[_builtins.str]]:
         """
-        The URL of the on-premise ServiceNow installation. This field is mutually exclusive with the **instance** field. You can only use one of them
+        The URL of the on-premise ServiceNow installation. 
+
+         This field is mutually exclusive with the **instanceName** field. You can only use one of them.
         """
         return pulumi.get(self, "url")
 
@@ -228,18 +243,26 @@ class _ServiceNowNotificationState:
                  username: Optional[pulumi.Input[_builtins.str]] = None):
         """
         Input properties used for looking up and filtering ServiceNowNotification resources.
-        :param pulumi.Input[_builtins.bool] active: The configuration is enabled (`true`) or disabled (`false`)
-        :param pulumi.Input[_builtins.bool] events: Send events into ServiceNow ITOM
+
+        :param pulumi.Input[_builtins.bool] active: This setting is enabled (`true`) or disabled (`false`)
+        :param pulumi.Input[_builtins.bool] events: Send events into ServiceNow ITOM.
         :param pulumi.Input[_builtins.bool] format_problem_details_as_text: Use text format for problem details instead of HTML.
-        :param pulumi.Input[_builtins.bool] incidents: Send incidents into ServiceNow ITSM
-        :param pulumi.Input[_builtins.str] instance: The ServiceNow instance identifier. It refers to the first part of your own ServiceNow URL. This field is mutually exclusive with the **url** field. You can only use one of them
+        :param pulumi.Input[_builtins.bool] incidents: Send incidents into ServiceNow ITSM.
+        :param pulumi.Input[_builtins.str] instance: The ServiceNow instance identifier. It refers to the first part of your own ServiceNow URL. 
+               
+                This field is mutually exclusive with the **url** field. You can only use one of them.
         :param pulumi.Input[_builtins.str] legacy_id: The ID of these settings when referred to from resources requiring the REST API V1 keys
-        :param pulumi.Input[_builtins.str] message: The content of the ServiceNow description. You can use the following placeholders:  * `{ImpactedEntity}`: The entity impacted by the problem or *X* impacted entities.  * `{PID}`: The ID of the reported problem.  * `{ProblemDetailsHTML}`: All problem event details, including root cause, as an HTML-formatted string.  * `{ProblemID}`: The display number of the reported problem.  * `{ProblemImpact}`: The [impact level](https://www.dynatrace.com/support/help/shortlink/impact-analysis) of the problem. Possible values are `APPLICATION`, `SERVICE`, and `INFRASTRUCTURE`.  * `{ProblemSeverity}`: The [severity level](https://www.dynatrace.com/support/help/shortlink/event-types) of the problem. Possible values are `AVAILABILITY`, `ERROR`, `PERFORMANCE`, `RESOURCE_CONTENTION`, and `CUSTOM_ALERT`.  * `{ProblemTitle}`: A short description of the problem.  * `{ProblemURL}`: The URL of the problem within Dynatrace.  * `{State}`: The state of the problem. Possible values are `OPEN` and `RESOLVED`.  * `{Tags}`: The list of tags that are defined for all impacted entities, separated by commas
+        :param pulumi.Input[_builtins.str] message: The content of the ServiceNow description. Type '{' for placeholder suggestions.. #### Available placeholders
+               **{ImpactedEntity}**: A short description of the problem and impacted entity (or multiple impacted entities).
         :param pulumi.Input[_builtins.str] name: The name of the notification configuration
-        :param pulumi.Input[_builtins.str] password: The password to the ServiceNow account
+        :param pulumi.Input[_builtins.str] password: The password to the ServiceNow account.
         :param pulumi.Input[_builtins.str] profile: The ID of the associated alerting profile
-        :param pulumi.Input[_builtins.str] url: The URL of the on-premise ServiceNow installation. This field is mutually exclusive with the **instance** field. You can only use one of them
-        :param pulumi.Input[_builtins.str] username: The username of the ServiceNow account.   Make sure that your user account has the `rest_service`, `web_request_admin`, and `x_dynat_ruxit.Integration` roles
+        :param pulumi.Input[_builtins.str] url: The URL of the on-premise ServiceNow installation. 
+               
+                This field is mutually exclusive with the **instanceName** field. You can only use one of them.
+        :param pulumi.Input[_builtins.str] username: The username of the ServiceNow account. 
+               
+                Make sure that your user account has the `web_service_admin` and `x_dynat_ruxit.Integration` roles.
         """
         if active is not None:
             pulumi.set(__self__, "active", active)
@@ -270,7 +293,7 @@ class _ServiceNowNotificationState:
     @pulumi.getter
     def active(self) -> Optional[pulumi.Input[_builtins.bool]]:
         """
-        The configuration is enabled (`true`) or disabled (`false`)
+        This setting is enabled (`true`) or disabled (`false`)
         """
         return pulumi.get(self, "active")
 
@@ -282,7 +305,7 @@ class _ServiceNowNotificationState:
     @pulumi.getter
     def events(self) -> Optional[pulumi.Input[_builtins.bool]]:
         """
-        Send events into ServiceNow ITOM
+        Send events into ServiceNow ITOM.
         """
         return pulumi.get(self, "events")
 
@@ -306,7 +329,7 @@ class _ServiceNowNotificationState:
     @pulumi.getter
     def incidents(self) -> Optional[pulumi.Input[_builtins.bool]]:
         """
-        Send incidents into ServiceNow ITSM
+        Send incidents into ServiceNow ITSM.
         """
         return pulumi.get(self, "incidents")
 
@@ -318,7 +341,9 @@ class _ServiceNowNotificationState:
     @pulumi.getter
     def instance(self) -> Optional[pulumi.Input[_builtins.str]]:
         """
-        The ServiceNow instance identifier. It refers to the first part of your own ServiceNow URL. This field is mutually exclusive with the **url** field. You can only use one of them
+        The ServiceNow instance identifier. It refers to the first part of your own ServiceNow URL. 
+
+         This field is mutually exclusive with the **url** field. You can only use one of them.
         """
         return pulumi.get(self, "instance")
 
@@ -342,7 +367,8 @@ class _ServiceNowNotificationState:
     @pulumi.getter
     def message(self) -> Optional[pulumi.Input[_builtins.str]]:
         """
-        The content of the ServiceNow description. You can use the following placeholders:  * `{ImpactedEntity}`: The entity impacted by the problem or *X* impacted entities.  * `{PID}`: The ID of the reported problem.  * `{ProblemDetailsHTML}`: All problem event details, including root cause, as an HTML-formatted string.  * `{ProblemID}`: The display number of the reported problem.  * `{ProblemImpact}`: The [impact level](https://www.dynatrace.com/support/help/shortlink/impact-analysis) of the problem. Possible values are `APPLICATION`, `SERVICE`, and `INFRASTRUCTURE`.  * `{ProblemSeverity}`: The [severity level](https://www.dynatrace.com/support/help/shortlink/event-types) of the problem. Possible values are `AVAILABILITY`, `ERROR`, `PERFORMANCE`, `RESOURCE_CONTENTION`, and `CUSTOM_ALERT`.  * `{ProblemTitle}`: A short description of the problem.  * `{ProblemURL}`: The URL of the problem within Dynatrace.  * `{State}`: The state of the problem. Possible values are `OPEN` and `RESOLVED`.  * `{Tags}`: The list of tags that are defined for all impacted entities, separated by commas
+        The content of the ServiceNow description. Type '{' for placeholder suggestions.. #### Available placeholders
+        **{ImpactedEntity}**: A short description of the problem and impacted entity (or multiple impacted entities).
         """
         return pulumi.get(self, "message")
 
@@ -366,7 +392,7 @@ class _ServiceNowNotificationState:
     @pulumi.getter
     def password(self) -> Optional[pulumi.Input[_builtins.str]]:
         """
-        The password to the ServiceNow account
+        The password to the ServiceNow account.
         """
         return pulumi.get(self, "password")
 
@@ -390,7 +416,9 @@ class _ServiceNowNotificationState:
     @pulumi.getter
     def url(self) -> Optional[pulumi.Input[_builtins.str]]:
         """
-        The URL of the on-premise ServiceNow installation. This field is mutually exclusive with the **instance** field. You can only use one of them
+        The URL of the on-premise ServiceNow installation. 
+
+         This field is mutually exclusive with the **instanceName** field. You can only use one of them.
         """
         return pulumi.get(self, "url")
 
@@ -402,7 +430,9 @@ class _ServiceNowNotificationState:
     @pulumi.getter
     def username(self) -> Optional[pulumi.Input[_builtins.str]]:
         """
-        The username of the ServiceNow account.   Make sure that your user account has the `rest_service`, `web_request_admin`, and `x_dynat_ruxit.Integration` roles
+        The username of the ServiceNow account. 
+
+         Make sure that your user account has the `web_service_admin` and `x_dynat_ruxit.Integration` roles.
         """
         return pulumi.get(self, "username")
 
@@ -431,21 +461,42 @@ class ServiceNowNotification(pulumi.CustomResource):
                  username: Optional[pulumi.Input[_builtins.str]] = None,
                  __props__=None):
         """
-        Create a ServiceNowNotification resource with the given unique name, props, and options.
+        > This resource requires the API token scopes **Read settings** (`settings.read`) and **Write settings** (`settings.write`)
+
+        ## Dynatrace Documentation
+
+        - ServiceNow integration - https://www.dynatrace.com/support/help/setup-and-configuration/integrations/problem-notifications/servicenow-integration
+
+        - Settings API - https://www.dynatrace.com/support/help/dynatrace-api/environment-api/settings (schemaId: `builtin:problem.notifications`)
+
+        ## Export Example Usage
+
+        - `terraform-provider-dynatrace -export ServiceNowNotification` downloads the existing problem notifications for Service Now
+
+        The full documentation of the export feature is available [here](https://dt-url.net/h203qmc).
+
+
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
-        :param pulumi.Input[_builtins.bool] active: The configuration is enabled (`true`) or disabled (`false`)
-        :param pulumi.Input[_builtins.bool] events: Send events into ServiceNow ITOM
+        :param pulumi.Input[_builtins.bool] active: This setting is enabled (`true`) or disabled (`false`)
+        :param pulumi.Input[_builtins.bool] events: Send events into ServiceNow ITOM.
         :param pulumi.Input[_builtins.bool] format_problem_details_as_text: Use text format for problem details instead of HTML.
-        :param pulumi.Input[_builtins.bool] incidents: Send incidents into ServiceNow ITSM
-        :param pulumi.Input[_builtins.str] instance: The ServiceNow instance identifier. It refers to the first part of your own ServiceNow URL. This field is mutually exclusive with the **url** field. You can only use one of them
+        :param pulumi.Input[_builtins.bool] incidents: Send incidents into ServiceNow ITSM.
+        :param pulumi.Input[_builtins.str] instance: The ServiceNow instance identifier. It refers to the first part of your own ServiceNow URL. 
+               
+                This field is mutually exclusive with the **url** field. You can only use one of them.
         :param pulumi.Input[_builtins.str] legacy_id: The ID of these settings when referred to from resources requiring the REST API V1 keys
-        :param pulumi.Input[_builtins.str] message: The content of the ServiceNow description. You can use the following placeholders:  * `{ImpactedEntity}`: The entity impacted by the problem or *X* impacted entities.  * `{PID}`: The ID of the reported problem.  * `{ProblemDetailsHTML}`: All problem event details, including root cause, as an HTML-formatted string.  * `{ProblemID}`: The display number of the reported problem.  * `{ProblemImpact}`: The [impact level](https://www.dynatrace.com/support/help/shortlink/impact-analysis) of the problem. Possible values are `APPLICATION`, `SERVICE`, and `INFRASTRUCTURE`.  * `{ProblemSeverity}`: The [severity level](https://www.dynatrace.com/support/help/shortlink/event-types) of the problem. Possible values are `AVAILABILITY`, `ERROR`, `PERFORMANCE`, `RESOURCE_CONTENTION`, and `CUSTOM_ALERT`.  * `{ProblemTitle}`: A short description of the problem.  * `{ProblemURL}`: The URL of the problem within Dynatrace.  * `{State}`: The state of the problem. Possible values are `OPEN` and `RESOLVED`.  * `{Tags}`: The list of tags that are defined for all impacted entities, separated by commas
+        :param pulumi.Input[_builtins.str] message: The content of the ServiceNow description. Type '{' for placeholder suggestions.. #### Available placeholders
+               **{ImpactedEntity}**: A short description of the problem and impacted entity (or multiple impacted entities).
         :param pulumi.Input[_builtins.str] name: The name of the notification configuration
-        :param pulumi.Input[_builtins.str] password: The password to the ServiceNow account
+        :param pulumi.Input[_builtins.str] password: The password to the ServiceNow account.
         :param pulumi.Input[_builtins.str] profile: The ID of the associated alerting profile
-        :param pulumi.Input[_builtins.str] url: The URL of the on-premise ServiceNow installation. This field is mutually exclusive with the **instance** field. You can only use one of them
-        :param pulumi.Input[_builtins.str] username: The username of the ServiceNow account.   Make sure that your user account has the `rest_service`, `web_request_admin`, and `x_dynat_ruxit.Integration` roles
+        :param pulumi.Input[_builtins.str] url: The URL of the on-premise ServiceNow installation. 
+               
+                This field is mutually exclusive with the **instanceName** field. You can only use one of them.
+        :param pulumi.Input[_builtins.str] username: The username of the ServiceNow account. 
+               
+                Make sure that your user account has the `web_service_admin` and `x_dynat_ruxit.Integration` roles.
         """
         ...
     @overload
@@ -454,7 +505,21 @@ class ServiceNowNotification(pulumi.CustomResource):
                  args: ServiceNowNotificationArgs,
                  opts: Optional[pulumi.ResourceOptions] = None):
         """
-        Create a ServiceNowNotification resource with the given unique name, props, and options.
+        > This resource requires the API token scopes **Read settings** (`settings.read`) and **Write settings** (`settings.write`)
+
+        ## Dynatrace Documentation
+
+        - ServiceNow integration - https://www.dynatrace.com/support/help/setup-and-configuration/integrations/problem-notifications/servicenow-integration
+
+        - Settings API - https://www.dynatrace.com/support/help/dynatrace-api/environment-api/settings (schemaId: `builtin:problem.notifications`)
+
+        ## Export Example Usage
+
+        - `terraform-provider-dynatrace -export ServiceNowNotification` downloads the existing problem notifications for Service Now
+
+        The full documentation of the export feature is available [here](https://dt-url.net/h203qmc).
+
+
         :param str resource_name: The name of the resource.
         :param ServiceNowNotificationArgs args: The arguments to use to populate this resource's properties.
         :param pulumi.ResourceOptions opts: Options for the resource.
@@ -544,18 +609,25 @@ class ServiceNowNotification(pulumi.CustomResource):
         :param str resource_name: The unique name of the resulting resource.
         :param pulumi.Input[str] id: The unique provider ID of the resource to lookup.
         :param pulumi.ResourceOptions opts: Options for the resource.
-        :param pulumi.Input[_builtins.bool] active: The configuration is enabled (`true`) or disabled (`false`)
-        :param pulumi.Input[_builtins.bool] events: Send events into ServiceNow ITOM
+        :param pulumi.Input[_builtins.bool] active: This setting is enabled (`true`) or disabled (`false`)
+        :param pulumi.Input[_builtins.bool] events: Send events into ServiceNow ITOM.
         :param pulumi.Input[_builtins.bool] format_problem_details_as_text: Use text format for problem details instead of HTML.
-        :param pulumi.Input[_builtins.bool] incidents: Send incidents into ServiceNow ITSM
-        :param pulumi.Input[_builtins.str] instance: The ServiceNow instance identifier. It refers to the first part of your own ServiceNow URL. This field is mutually exclusive with the **url** field. You can only use one of them
+        :param pulumi.Input[_builtins.bool] incidents: Send incidents into ServiceNow ITSM.
+        :param pulumi.Input[_builtins.str] instance: The ServiceNow instance identifier. It refers to the first part of your own ServiceNow URL. 
+               
+                This field is mutually exclusive with the **url** field. You can only use one of them.
         :param pulumi.Input[_builtins.str] legacy_id: The ID of these settings when referred to from resources requiring the REST API V1 keys
-        :param pulumi.Input[_builtins.str] message: The content of the ServiceNow description. You can use the following placeholders:  * `{ImpactedEntity}`: The entity impacted by the problem or *X* impacted entities.  * `{PID}`: The ID of the reported problem.  * `{ProblemDetailsHTML}`: All problem event details, including root cause, as an HTML-formatted string.  * `{ProblemID}`: The display number of the reported problem.  * `{ProblemImpact}`: The [impact level](https://www.dynatrace.com/support/help/shortlink/impact-analysis) of the problem. Possible values are `APPLICATION`, `SERVICE`, and `INFRASTRUCTURE`.  * `{ProblemSeverity}`: The [severity level](https://www.dynatrace.com/support/help/shortlink/event-types) of the problem. Possible values are `AVAILABILITY`, `ERROR`, `PERFORMANCE`, `RESOURCE_CONTENTION`, and `CUSTOM_ALERT`.  * `{ProblemTitle}`: A short description of the problem.  * `{ProblemURL}`: The URL of the problem within Dynatrace.  * `{State}`: The state of the problem. Possible values are `OPEN` and `RESOLVED`.  * `{Tags}`: The list of tags that are defined for all impacted entities, separated by commas
+        :param pulumi.Input[_builtins.str] message: The content of the ServiceNow description. Type '{' for placeholder suggestions.. #### Available placeholders
+               **{ImpactedEntity}**: A short description of the problem and impacted entity (or multiple impacted entities).
         :param pulumi.Input[_builtins.str] name: The name of the notification configuration
-        :param pulumi.Input[_builtins.str] password: The password to the ServiceNow account
+        :param pulumi.Input[_builtins.str] password: The password to the ServiceNow account.
         :param pulumi.Input[_builtins.str] profile: The ID of the associated alerting profile
-        :param pulumi.Input[_builtins.str] url: The URL of the on-premise ServiceNow installation. This field is mutually exclusive with the **instance** field. You can only use one of them
-        :param pulumi.Input[_builtins.str] username: The username of the ServiceNow account.   Make sure that your user account has the `rest_service`, `web_request_admin`, and `x_dynat_ruxit.Integration` roles
+        :param pulumi.Input[_builtins.str] url: The URL of the on-premise ServiceNow installation. 
+               
+                This field is mutually exclusive with the **instanceName** field. You can only use one of them.
+        :param pulumi.Input[_builtins.str] username: The username of the ServiceNow account. 
+               
+                Make sure that your user account has the `web_service_admin` and `x_dynat_ruxit.Integration` roles.
         """
         opts = pulumi.ResourceOptions.merge(opts, pulumi.ResourceOptions(id=id))
 
@@ -579,7 +651,7 @@ class ServiceNowNotification(pulumi.CustomResource):
     @pulumi.getter
     def active(self) -> pulumi.Output[_builtins.bool]:
         """
-        The configuration is enabled (`true`) or disabled (`false`)
+        This setting is enabled (`true`) or disabled (`false`)
         """
         return pulumi.get(self, "active")
 
@@ -587,7 +659,7 @@ class ServiceNowNotification(pulumi.CustomResource):
     @pulumi.getter
     def events(self) -> pulumi.Output[Optional[_builtins.bool]]:
         """
-        Send events into ServiceNow ITOM
+        Send events into ServiceNow ITOM.
         """
         return pulumi.get(self, "events")
 
@@ -603,7 +675,7 @@ class ServiceNowNotification(pulumi.CustomResource):
     @pulumi.getter
     def incidents(self) -> pulumi.Output[_builtins.bool]:
         """
-        Send incidents into ServiceNow ITSM
+        Send incidents into ServiceNow ITSM.
         """
         return pulumi.get(self, "incidents")
 
@@ -611,7 +683,9 @@ class ServiceNowNotification(pulumi.CustomResource):
     @pulumi.getter
     def instance(self) -> pulumi.Output[Optional[_builtins.str]]:
         """
-        The ServiceNow instance identifier. It refers to the first part of your own ServiceNow URL. This field is mutually exclusive with the **url** field. You can only use one of them
+        The ServiceNow instance identifier. It refers to the first part of your own ServiceNow URL. 
+
+         This field is mutually exclusive with the **url** field. You can only use one of them.
         """
         return pulumi.get(self, "instance")
 
@@ -627,7 +701,8 @@ class ServiceNowNotification(pulumi.CustomResource):
     @pulumi.getter
     def message(self) -> pulumi.Output[_builtins.str]:
         """
-        The content of the ServiceNow description. You can use the following placeholders:  * `{ImpactedEntity}`: The entity impacted by the problem or *X* impacted entities.  * `{PID}`: The ID of the reported problem.  * `{ProblemDetailsHTML}`: All problem event details, including root cause, as an HTML-formatted string.  * `{ProblemID}`: The display number of the reported problem.  * `{ProblemImpact}`: The [impact level](https://www.dynatrace.com/support/help/shortlink/impact-analysis) of the problem. Possible values are `APPLICATION`, `SERVICE`, and `INFRASTRUCTURE`.  * `{ProblemSeverity}`: The [severity level](https://www.dynatrace.com/support/help/shortlink/event-types) of the problem. Possible values are `AVAILABILITY`, `ERROR`, `PERFORMANCE`, `RESOURCE_CONTENTION`, and `CUSTOM_ALERT`.  * `{ProblemTitle}`: A short description of the problem.  * `{ProblemURL}`: The URL of the problem within Dynatrace.  * `{State}`: The state of the problem. Possible values are `OPEN` and `RESOLVED`.  * `{Tags}`: The list of tags that are defined for all impacted entities, separated by commas
+        The content of the ServiceNow description. Type '{' for placeholder suggestions.. #### Available placeholders
+        **{ImpactedEntity}**: A short description of the problem and impacted entity (or multiple impacted entities).
         """
         return pulumi.get(self, "message")
 
@@ -643,7 +718,7 @@ class ServiceNowNotification(pulumi.CustomResource):
     @pulumi.getter
     def password(self) -> pulumi.Output[Optional[_builtins.str]]:
         """
-        The password to the ServiceNow account
+        The password to the ServiceNow account.
         """
         return pulumi.get(self, "password")
 
@@ -659,7 +734,9 @@ class ServiceNowNotification(pulumi.CustomResource):
     @pulumi.getter
     def url(self) -> pulumi.Output[Optional[_builtins.str]]:
         """
-        The URL of the on-premise ServiceNow installation. This field is mutually exclusive with the **instance** field. You can only use one of them
+        The URL of the on-premise ServiceNow installation. 
+
+         This field is mutually exclusive with the **instanceName** field. You can only use one of them.
         """
         return pulumi.get(self, "url")
 
@@ -667,7 +744,9 @@ class ServiceNowNotification(pulumi.CustomResource):
     @pulumi.getter
     def username(self) -> pulumi.Output[_builtins.str]:
         """
-        The username of the ServiceNow account.   Make sure that your user account has the `rest_service`, `web_request_admin`, and `x_dynat_ruxit.Integration` roles
+        The username of the ServiceNow account. 
+
+         Make sure that your user account has the `web_service_admin` and `x_dynat_ruxit.Integration` roles.
         """
         return pulumi.get(self, "username")
 

@@ -11,6 +11,57 @@ import (
 	"github.com/pulumiverse/pulumi-dynatrace/sdk/go/dynatrace/internal"
 )
 
+// > This resource requires the API token scopes **Read settings** (`settings.read`) and **Write settings** (`settings.write`)
+//
+// ## Dynatrace Documentation
+//
+// - Define and apply tags - https://www.dynatrace.com/support/help/how-to-use-dynatrace/tags-and-metadata/setup/how-to-define-tags
+//
+// - Settings API - https://www.dynatrace.com/support/help/dynatrace-api/environment-api/settings (schemaId: `builtin:tags.auto-tagging`)
+//
+// ## Export Example Usage
+//
+// - `terraform-provider-dynatrace -export AutotagV2` downloads all existing automatically applied tags
+//
+// The full documentation of the export feature is available [here](https://dt-url.net/h203qmc).
+//
+// ## Resource Example Usage
+//
+// ```go
+// package main
+//
+// import (
+//
+//	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//	"github.com/pulumiverse/pulumi-dynatrace/sdk/go/dynatrace"
+//
+// )
+//
+//	func main() {
+//		pulumi.Run(func(ctx *pulumi.Context) error {
+//			// Sample for how to configure Auto Tag Rules using an Entity Selector
+//			_, err := dynatrace.NewAutotagV2(ctx, "GKESample", &dynatrace.AutotagV2Args{
+//				Name: pulumi.String("GKE-Hosts"),
+//				Rules: &dynatrace.AutotagV2RulesArgs{
+//					Rules: dynatrace.AutotagV2RulesRuleArray{
+//						&dynatrace.AutotagV2RulesRuleArgs{
+//							Type:               pulumi.String("SELECTOR"),
+//							Enabled:            pulumi.Bool(true),
+//							EntitySelector:     pulumi.String("type(host),entityName.startsWith(\"gke\")"),
+//							ValueFormat:        pulumi.String("true"),
+//							ValueNormalization: pulumi.String("Leave text as-is"),
+//						},
+//					},
+//				},
+//			})
+//			if err != nil {
+//				return err
+//			}
+//			return nil
+//		})
+//	}
+//
+// ```
 type AutotagV2 struct {
 	pulumi.CustomResourceState
 
@@ -20,7 +71,7 @@ type AutotagV2 struct {
 	Name pulumi.StringOutput `pulumi:"name"`
 	// Rules
 	Rules AutotagV2RulesPtrOutput `pulumi:"rules"`
-	// If `true` this resource will not
+	// If `true` the specified rules are ignored with the assumption that they're maintained externally or via `AutotagRules`
 	RulesMaintainedExternally pulumi.BoolPtrOutput `pulumi:"rulesMaintainedExternally"`
 }
 
@@ -60,7 +111,7 @@ type autotagV2State struct {
 	Name *string `pulumi:"name"`
 	// Rules
 	Rules *AutotagV2Rules `pulumi:"rules"`
-	// If `true` this resource will not
+	// If `true` the specified rules are ignored with the assumption that they're maintained externally or via `AutotagRules`
 	RulesMaintainedExternally *bool `pulumi:"rulesMaintainedExternally"`
 }
 
@@ -71,7 +122,7 @@ type AutotagV2State struct {
 	Name pulumi.StringPtrInput
 	// Rules
 	Rules AutotagV2RulesPtrInput
-	// If `true` this resource will not
+	// If `true` the specified rules are ignored with the assumption that they're maintained externally or via `AutotagRules`
 	RulesMaintainedExternally pulumi.BoolPtrInput
 }
 
@@ -86,7 +137,7 @@ type autotagV2Args struct {
 	Name *string `pulumi:"name"`
 	// Rules
 	Rules *AutotagV2Rules `pulumi:"rules"`
-	// If `true` this resource will not
+	// If `true` the specified rules are ignored with the assumption that they're maintained externally or via `AutotagRules`
 	RulesMaintainedExternally *bool `pulumi:"rulesMaintainedExternally"`
 }
 
@@ -98,7 +149,7 @@ type AutotagV2Args struct {
 	Name pulumi.StringPtrInput
 	// Rules
 	Rules AutotagV2RulesPtrInput
-	// If `true` this resource will not
+	// If `true` the specified rules are ignored with the assumption that they're maintained externally or via `AutotagRules`
 	RulesMaintainedExternally pulumi.BoolPtrInput
 }
 
@@ -204,7 +255,7 @@ func (o AutotagV2Output) Rules() AutotagV2RulesPtrOutput {
 	return o.ApplyT(func(v *AutotagV2) AutotagV2RulesPtrOutput { return v.Rules }).(AutotagV2RulesPtrOutput)
 }
 
-// If `true` this resource will not
+// If `true` the specified rules are ignored with the assumption that they're maintained externally or via `AutotagRules`
 func (o AutotagV2Output) RulesMaintainedExternally() pulumi.BoolPtrOutput {
 	return o.ApplyT(func(v *AutotagV2) pulumi.BoolPtrOutput { return v.RulesMaintainedExternally }).(pulumi.BoolPtrOutput)
 }

@@ -12,6 +12,19 @@ import (
 	"github.com/pulumiverse/pulumi-dynatrace/sdk/go/dynatrace/internal"
 )
 
+// > This resource requires the API token scopes **Read settings** (`settings.read`) and **Write settings** (`settings.write`)
+//
+// ## Dynatrace Documentation
+//
+// - Custom log source (Logs Classic) - https://www.dynatrace.com/support/help/observe-and-explore/logs/log-monitoring/acquire-log-data/log-custom-source
+//
+// - Settings API - https://www.dynatrace.com/support/help/dynatrace-api/environment-api/settings (schemaId: `builtin:logmonitoring.custom-log-source-settings`)
+//
+// ## Export Example Usage
+//
+// - `terraform-provider-dynatrace -export LogCustomSource` downloads all existing custom log sources
+//
+// The full documentation of the export feature is available [here](https://dt-url.net/h203qmc).
 type LogCustomSource struct {
 	pulumi.CustomResourceState
 

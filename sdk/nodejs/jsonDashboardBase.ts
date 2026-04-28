@@ -4,6 +4,10 @@
 import * as pulumi from "@pulumi/pulumi";
 import * as utilities from "./utilities";
 
+/**
+ * The resource `dynatrace.JsonDashboardBase` doesn't contain any attributes itself. It acts as some sort of anchor resource that defines the eventual `ID` of a Dashboard - without having to
+ * refer to the resource `dynatrace.JsonDashboard` explicitly.
+ */
 export class JsonDashboardBase extends pulumi.CustomResource {
     /**
      * Get an existing JsonDashboardBase resource's state with the given name, ID, and optional extra

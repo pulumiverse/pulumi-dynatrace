@@ -75,6 +75,10 @@ namespace Pulumiverse.Dynatrace.Outputs
         /// </summary>
         public readonly Outputs.CalculatedServiceMetricConditionConditionComparisonString? String;
         /// <summary>
+        /// Comparison for `STRING_ONE_AGENT_ATTRIBUTE` attributes
+        /// </summary>
+        public readonly Outputs.CalculatedServiceMetricConditionConditionComparisonStringOneAgentAttribute? StringOneAgentAttribute;
+        /// <summary>
         /// Comparison for `STRING_REQUEST_ATTRIBUTE` attributes
         /// </summary>
         public readonly Outputs.CalculatedServiceMetricConditionConditionComparisonStringRequestAttribute? StringRequestAttribute;
@@ -119,6 +123,8 @@ namespace Pulumiverse.Dynatrace.Outputs
 
             Outputs.CalculatedServiceMetricConditionConditionComparisonString? @string,
 
+            Outputs.CalculatedServiceMetricConditionConditionComparisonStringOneAgentAttribute? stringOneAgentAttribute,
+
             Outputs.CalculatedServiceMetricConditionConditionComparisonStringRequestAttribute? stringRequestAttribute,
 
             Outputs.CalculatedServiceMetricConditionConditionComparisonTag? tag,
@@ -140,6 +146,7 @@ namespace Pulumiverse.Dynatrace.Outputs
             NumberRequestAttribute = numberRequestAttribute;
             ServiceType = serviceType;
             String = @string;
+            StringOneAgentAttribute = stringOneAgentAttribute;
             StringRequestAttribute = stringRequestAttribute;
             Tag = tag;
             ZosCallType = zosCallType;

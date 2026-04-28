@@ -23,6 +23,7 @@ class TokenSettingsArgs:
                  personal_tokens: pulumi.Input[_builtins.bool]):
         """
         The set of arguments for constructing a TokenSettings resource.
+
         :param pulumi.Input[_builtins.bool] new_token_format: Check out this [blog post](http://www.dynatrace.com/blog/further-increased-security-of-your-api-tokens-by-automating-token-protection/) to find out more about the new Dynatrace API token format.
         :param pulumi.Input[_builtins.bool] personal_tokens: Allow users of this environment to generate personal access tokens based on user permissions.
                Note that existing personal access tokens will become unusable while this setting is disabled.
@@ -63,6 +64,7 @@ class _TokenSettingsState:
                  personal_tokens: Optional[pulumi.Input[_builtins.bool]] = None):
         """
         Input properties used for looking up and filtering TokenSettings resources.
+
         :param pulumi.Input[_builtins.bool] new_token_format: Check out this [blog post](http://www.dynatrace.com/blog/further-increased-security-of-your-api-tokens-by-automating-token-protection/) to find out more about the new Dynatrace API token format.
         :param pulumi.Input[_builtins.bool] personal_tokens: Allow users of this environment to generate personal access tokens based on user permissions.
                Note that existing personal access tokens will become unusable while this setting is disabled.
@@ -108,7 +110,21 @@ class TokenSettings(pulumi.CustomResource):
                  personal_tokens: Optional[pulumi.Input[_builtins.bool]] = None,
                  __props__=None):
         """
-        Create a TokenSettings resource with the given unique name, props, and options.
+        > This resource requires the API token scopes **Read settings** (`settings.read`) and **Write settings** (`settings.write`)
+
+        ## Dynatrace Documentation
+
+        - Tokens and authentication - https://www.dynatrace.com/support/help/dynatrace-api/basics/dynatrace-api-authentication
+
+        - Settings API - https://www.dynatrace.com/support/help/dynatrace-api/environment-api/settings (schemaId: `builtin:tokens.token-settings`)
+
+        ## Export Example Usage
+
+        - `terraform-provider-dynatrace -export TokenSettings` downloads existing access token configuration
+
+        The full documentation of the export feature is available [here](https://dt-url.net/h203qmc).
+
+
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[_builtins.bool] new_token_format: Check out this [blog post](http://www.dynatrace.com/blog/further-increased-security-of-your-api-tokens-by-automating-token-protection/) to find out more about the new Dynatrace API token format.
@@ -122,7 +138,21 @@ class TokenSettings(pulumi.CustomResource):
                  args: TokenSettingsArgs,
                  opts: Optional[pulumi.ResourceOptions] = None):
         """
-        Create a TokenSettings resource with the given unique name, props, and options.
+        > This resource requires the API token scopes **Read settings** (`settings.read`) and **Write settings** (`settings.write`)
+
+        ## Dynatrace Documentation
+
+        - Tokens and authentication - https://www.dynatrace.com/support/help/dynatrace-api/basics/dynatrace-api-authentication
+
+        - Settings API - https://www.dynatrace.com/support/help/dynatrace-api/environment-api/settings (schemaId: `builtin:tokens.token-settings`)
+
+        ## Export Example Usage
+
+        - `terraform-provider-dynatrace -export TokenSettings` downloads existing access token configuration
+
+        The full documentation of the export feature is available [here](https://dt-url.net/h203qmc).
+
+
         :param str resource_name: The name of the resource.
         :param TokenSettingsArgs args: The arguments to use to populate this resource's properties.
         :param pulumi.ResourceOptions opts: Options for the resource.

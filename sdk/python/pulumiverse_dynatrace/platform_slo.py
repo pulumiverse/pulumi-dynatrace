@@ -29,6 +29,7 @@ class PlatformSloArgs:
                  tags: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None):
         """
         The set of arguments for constructing a PlatformSlo resource.
+
         :param pulumi.Input['PlatformSloCriteriaArgs'] criteria: Criteria of the SLO
         :param pulumi.Input['PlatformSloCustomSliArgs'] custom_sli: Custom SLI of the SLO
         :param pulumi.Input[_builtins.str] description: Description of the SLO
@@ -132,6 +133,7 @@ class _PlatformSloState:
                  tags: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None):
         """
         Input properties used for looking up and filtering PlatformSlo resources.
+
         :param pulumi.Input['PlatformSloCriteriaArgs'] criteria: Criteria of the SLO
         :param pulumi.Input['PlatformSloCustomSliArgs'] custom_sli: Custom SLI of the SLO
         :param pulumi.Input[_builtins.str] description: Description of the SLO
@@ -251,34 +253,6 @@ class PlatformSlo(pulumi.CustomResource):
 
         - SLO Service Public API - https://########.apps.dynatrace.com/platform/swagger-ui/index.html?urls.primaryName=Service-Level+Objectives
 
-        ## Resource Example Usage
-
-        ```python
-        import pulumi
-        import pulumiverse_dynatrace as dynatrace
-
-        _name_ = dynatrace.PlatformSlo("#name#",
-            criteria={
-                "criteria_details": [{
-                    "target": 96,
-                    "timeframe_from": "now-30d",
-                    "timeframe_to": "now",
-                    "warning": 99,
-                }],
-            },
-            custom_sli={
-                "indicator": \"\"\"  timeseries { total=sum(dt.service.request.count) ,failures=sum(dt.service.request.failure_count) }, by: { dt.entity.service }
-          | fieldsAdd tags=entityAttr(dt.entity.service, "tags")
-          | filter in(tags, "criticality:Gold")
-          | fieldsAdd entityName = entityName(dt.entity.service)
-          | fieldsAdd sli=(((total[]-failures[])/total[])*(100))
-          | fieldsRemove total, failures, tags
-
-        \"\"\",
-            },
-            description="Sample custom SLO",
-            tags=["ExampleKey:ExampleValue"])
-        ```
 
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
@@ -308,34 +282,6 @@ class PlatformSlo(pulumi.CustomResource):
 
         - SLO Service Public API - https://########.apps.dynatrace.com/platform/swagger-ui/index.html?urls.primaryName=Service-Level+Objectives
 
-        ## Resource Example Usage
-
-        ```python
-        import pulumi
-        import pulumiverse_dynatrace as dynatrace
-
-        _name_ = dynatrace.PlatformSlo("#name#",
-            criteria={
-                "criteria_details": [{
-                    "target": 96,
-                    "timeframe_from": "now-30d",
-                    "timeframe_to": "now",
-                    "warning": 99,
-                }],
-            },
-            custom_sli={
-                "indicator": \"\"\"  timeseries { total=sum(dt.service.request.count) ,failures=sum(dt.service.request.failure_count) }, by: { dt.entity.service }
-          | fieldsAdd tags=entityAttr(dt.entity.service, "tags")
-          | filter in(tags, "criticality:Gold")
-          | fieldsAdd entityName = entityName(dt.entity.service)
-          | fieldsAdd sli=(((total[]-failures[])/total[])*(100))
-          | fieldsRemove total, failures, tags
-
-        \"\"\",
-            },
-            description="Sample custom SLO",
-            tags=["ExampleKey:ExampleValue"])
-        ```
 
         :param str resource_name: The name of the resource.
         :param PlatformSloArgs args: The arguments to use to populate this resource's properties.
