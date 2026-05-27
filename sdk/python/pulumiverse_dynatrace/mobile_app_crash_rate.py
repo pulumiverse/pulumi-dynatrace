@@ -22,7 +22,7 @@ __all__ = ['MobileAppCrashRateArgs', 'MobileAppCrashRate']
 class MobileAppCrashRateArgs:
     def __init__(__self__, *,
                  crash_rate_increase: pulumi.Input['MobileAppCrashRateCrashRateIncreaseArgs'],
-                 application_id: Optional[pulumi.Input[_builtins.str]] = None):
+                 application_id: pulumi.Input[Optional[_builtins.str]] = None):
         """
         The set of arguments for constructing a MobileAppCrashRate resource.
 
@@ -47,22 +47,22 @@ class MobileAppCrashRateArgs:
 
     @_builtins.property
     @pulumi.getter(name="applicationId")
-    def application_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def application_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The scope of this settings. If the settings should cover the whole environment, just don't specify any scope.
         """
         return pulumi.get(self, "application_id")
 
     @application_id.setter
-    def application_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def application_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "application_id", value)
 
 
 @pulumi.input_type
 class _MobileAppCrashRateState:
     def __init__(__self__, *,
-                 application_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 crash_rate_increase: Optional[pulumi.Input['MobileAppCrashRateCrashRateIncreaseArgs']] = None):
+                 application_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 crash_rate_increase: pulumi.Input[Optional['MobileAppCrashRateCrashRateIncreaseArgs']] = None):
         """
         Input properties used for looking up and filtering MobileAppCrashRate resources.
 
@@ -76,26 +76,26 @@ class _MobileAppCrashRateState:
 
     @_builtins.property
     @pulumi.getter(name="applicationId")
-    def application_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def application_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The scope of this settings. If the settings should cover the whole environment, just don't specify any scope.
         """
         return pulumi.get(self, "application_id")
 
     @application_id.setter
-    def application_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def application_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "application_id", value)
 
     @_builtins.property
     @pulumi.getter(name="crashRateIncrease")
-    def crash_rate_increase(self) -> Optional[pulumi.Input['MobileAppCrashRateCrashRateIncreaseArgs']]:
+    def crash_rate_increase(self) -> pulumi.Input[Optional['MobileAppCrashRateCrashRateIncreaseArgs']]:
         """
         Crash rate increase
         """
         return pulumi.get(self, "crash_rate_increase")
 
     @crash_rate_increase.setter
-    def crash_rate_increase(self, value: Optional[pulumi.Input['MobileAppCrashRateCrashRateIncreaseArgs']]):
+    def crash_rate_increase(self, value: pulumi.Input[Optional['MobileAppCrashRateCrashRateIncreaseArgs']]):
         pulumi.set(self, "crash_rate_increase", value)
 
 
@@ -105,8 +105,8 @@ class MobileAppCrashRate(pulumi.CustomResource):
     def __init__(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 application_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 crash_rate_increase: Optional[pulumi.Input[Union['MobileAppCrashRateCrashRateIncreaseArgs', 'MobileAppCrashRateCrashRateIncreaseArgsDict']]] = None,
+                 application_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 crash_rate_increase: pulumi.Input[Optional[Union['MobileAppCrashRateCrashRateIncreaseArgs', 'MobileAppCrashRateCrashRateIncreaseArgsDict']]] = None,
                  __props__=None):
         """
         > This resource requires the API token scopes **Read settings** (`settings.read`) and **Write settings** (`settings.write`)
@@ -166,8 +166,8 @@ class MobileAppCrashRate(pulumi.CustomResource):
     def _internal_init(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 application_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 crash_rate_increase: Optional[pulumi.Input[Union['MobileAppCrashRateCrashRateIncreaseArgs', 'MobileAppCrashRateCrashRateIncreaseArgsDict']]] = None,
+                 application_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 crash_rate_increase: pulumi.Input[Optional[Union['MobileAppCrashRateCrashRateIncreaseArgs', 'MobileAppCrashRateCrashRateIncreaseArgsDict']]] = None,
                  __props__=None):
         opts = pulumi.ResourceOptions.merge(_utilities.get_resource_opts_defaults(), opts)
         if not isinstance(opts, pulumi.ResourceOptions):
@@ -191,8 +191,8 @@ class MobileAppCrashRate(pulumi.CustomResource):
     def get(resource_name: str,
             id: pulumi.Input[str],
             opts: Optional[pulumi.ResourceOptions] = None,
-            application_id: Optional[pulumi.Input[_builtins.str]] = None,
-            crash_rate_increase: Optional[pulumi.Input[Union['MobileAppCrashRateCrashRateIncreaseArgs', 'MobileAppCrashRateCrashRateIncreaseArgsDict']]] = None) -> 'MobileAppCrashRate':
+            application_id: pulumi.Input[Optional[_builtins.str]] = None,
+            crash_rate_increase: pulumi.Input[Optional[Union['MobileAppCrashRateCrashRateIncreaseArgs', 'MobileAppCrashRateCrashRateIncreaseArgsDict']]] = None) -> 'MobileAppCrashRate':
         """
         Get an existing MobileAppCrashRate resource's state with the given name, id, and optional extra
         properties used to qualify the lookup.

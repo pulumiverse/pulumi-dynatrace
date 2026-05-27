@@ -139,23 +139,23 @@ export interface AutomationWorkflowK8sConnectionsState {
      *
      * @deprecated This resource is no longer ordered, please remove this attribute from the configuration
      */
-    insertAfter?: pulumi.Input<string>;
+    insertAfter?: pulumi.Input<string | undefined>;
     /**
      * The name of the EdgeConnect deployment
      */
-    name?: pulumi.Input<string>;
+    name?: pulumi.Input<string | undefined>;
     /**
      * The namespace where EdgeConnect is deployed
      */
-    namespace?: pulumi.Input<string>;
+    namespace?: pulumi.Input<string | undefined>;
     /**
      * Token
      */
-    token?: pulumi.Input<string>;
+    token?: pulumi.Input<string | undefined>;
     /**
      * A pseudo-ID for the cluster, set to the UID of the kube-system namespace
      */
-    uid?: pulumi.Input<string>;
+    uid?: pulumi.Input<string | undefined>;
 }
 
 /**
@@ -167,11 +167,11 @@ export interface AutomationWorkflowK8sConnectionsArgs {
      *
      * @deprecated This resource is no longer ordered, please remove this attribute from the configuration
      */
-    insertAfter?: pulumi.Input<string>;
+    insertAfter?: pulumi.Input<string | undefined>;
     /**
      * The name of the EdgeConnect deployment
      */
-    name?: pulumi.Input<string>;
+    name?: pulumi.Input<string | undefined>;
     /**
      * The namespace where EdgeConnect is deployed
      */

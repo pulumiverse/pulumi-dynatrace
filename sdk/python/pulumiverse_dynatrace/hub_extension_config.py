@@ -20,12 +20,12 @@ __all__ = ['HubExtensionConfigArgs', 'HubExtensionConfig']
 class HubExtensionConfigArgs:
     def __init__(__self__, *,
                  value: pulumi.Input[_builtins.str],
-                 active_gate_group: Optional[pulumi.Input[_builtins.str]] = None,
-                 host: Optional[pulumi.Input[_builtins.str]] = None,
-                 host_group: Optional[pulumi.Input[_builtins.str]] = None,
-                 management_zone: Optional[pulumi.Input[_builtins.str]] = None,
-                 name: Optional[pulumi.Input[_builtins.str]] = None,
-                 scope: Optional[pulumi.Input[_builtins.str]] = None):
+                 active_gate_group: pulumi.Input[Optional[_builtins.str]] = None,
+                 host: pulumi.Input[Optional[_builtins.str]] = None,
+                 host_group: pulumi.Input[Optional[_builtins.str]] = None,
+                 management_zone: pulumi.Input[Optional[_builtins.str]] = None,
+                 name: pulumi.Input[Optional[_builtins.str]] = None,
+                 scope: pulumi.Input[Optional[_builtins.str]] = None):
         """
         The set of arguments for constructing a HubExtensionConfig resource.
 
@@ -65,87 +65,87 @@ class HubExtensionConfigArgs:
 
     @_builtins.property
     @pulumi.getter(name="activeGateGroup")
-    def active_gate_group(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def active_gate_group(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The name of the Active Gate Group this monitoring configuration will be defined for
         """
         return pulumi.get(self, "active_gate_group")
 
     @active_gate_group.setter
-    def active_gate_group(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def active_gate_group(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "active_gate_group", value)
 
     @_builtins.property
     @pulumi.getter
-    def host(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def host(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The ID of the host this monitoring configuration will be defined for
         """
         return pulumi.get(self, "host")
 
     @host.setter
-    def host(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def host(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "host", value)
 
     @_builtins.property
     @pulumi.getter(name="hostGroup")
-    def host_group(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def host_group(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The ID of the host group this monitoring configuration will be defined for
         """
         return pulumi.get(self, "host_group")
 
     @host_group.setter
-    def host_group(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def host_group(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "host_group", value)
 
     @_builtins.property
     @pulumi.getter(name="managementZone")
-    def management_zone(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def management_zone(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The name of the Management Zone this monitoring configuration will be defined for
         """
         return pulumi.get(self, "management_zone")
 
     @management_zone.setter
-    def management_zone(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def management_zone(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "management_zone", value)
 
     @_builtins.property
     @pulumi.getter
-    def name(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def name(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The fully qualified name of the extension, such as `com.dynatrace.extension.jmx-liberty-cp`. You can query for these names using the data source `get_hub_items`
         """
         return pulumi.get(self, "name")
 
     @name.setter
-    def name(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def name(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "name", value)
 
     @_builtins.property
     @pulumi.getter
-    def scope(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def scope(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The scope this monitoring configuration will be defined for
         """
         return pulumi.get(self, "scope")
 
     @scope.setter
-    def scope(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def scope(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "scope", value)
 
 
 @pulumi.input_type
 class _HubExtensionConfigState:
     def __init__(__self__, *,
-                 active_gate_group: Optional[pulumi.Input[_builtins.str]] = None,
-                 host: Optional[pulumi.Input[_builtins.str]] = None,
-                 host_group: Optional[pulumi.Input[_builtins.str]] = None,
-                 management_zone: Optional[pulumi.Input[_builtins.str]] = None,
-                 name: Optional[pulumi.Input[_builtins.str]] = None,
-                 scope: Optional[pulumi.Input[_builtins.str]] = None,
-                 value: Optional[pulumi.Input[_builtins.str]] = None):
+                 active_gate_group: pulumi.Input[Optional[_builtins.str]] = None,
+                 host: pulumi.Input[Optional[_builtins.str]] = None,
+                 host_group: pulumi.Input[Optional[_builtins.str]] = None,
+                 management_zone: pulumi.Input[Optional[_builtins.str]] = None,
+                 name: pulumi.Input[Optional[_builtins.str]] = None,
+                 scope: pulumi.Input[Optional[_builtins.str]] = None,
+                 value: pulumi.Input[Optional[_builtins.str]] = None):
         """
         Input properties used for looking up and filtering HubExtensionConfig resources.
 
@@ -174,86 +174,86 @@ class _HubExtensionConfigState:
 
     @_builtins.property
     @pulumi.getter(name="activeGateGroup")
-    def active_gate_group(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def active_gate_group(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The name of the Active Gate Group this monitoring configuration will be defined for
         """
         return pulumi.get(self, "active_gate_group")
 
     @active_gate_group.setter
-    def active_gate_group(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def active_gate_group(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "active_gate_group", value)
 
     @_builtins.property
     @pulumi.getter
-    def host(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def host(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The ID of the host this monitoring configuration will be defined for
         """
         return pulumi.get(self, "host")
 
     @host.setter
-    def host(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def host(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "host", value)
 
     @_builtins.property
     @pulumi.getter(name="hostGroup")
-    def host_group(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def host_group(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The ID of the host group this monitoring configuration will be defined for
         """
         return pulumi.get(self, "host_group")
 
     @host_group.setter
-    def host_group(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def host_group(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "host_group", value)
 
     @_builtins.property
     @pulumi.getter(name="managementZone")
-    def management_zone(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def management_zone(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The name of the Management Zone this monitoring configuration will be defined for
         """
         return pulumi.get(self, "management_zone")
 
     @management_zone.setter
-    def management_zone(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def management_zone(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "management_zone", value)
 
     @_builtins.property
     @pulumi.getter
-    def name(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def name(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The fully qualified name of the extension, such as `com.dynatrace.extension.jmx-liberty-cp`. You can query for these names using the data source `get_hub_items`
         """
         return pulumi.get(self, "name")
 
     @name.setter
-    def name(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def name(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "name", value)
 
     @_builtins.property
     @pulumi.getter
-    def scope(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def scope(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The scope this monitoring configuration will be defined for
         """
         return pulumi.get(self, "scope")
 
     @scope.setter
-    def scope(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def scope(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "scope", value)
 
     @_builtins.property
     @pulumi.getter
-    def value(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def value(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The JSON encoded value for this monitoring configuration
         """
         return pulumi.get(self, "value")
 
     @value.setter
-    def value(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def value(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "value", value)
 
 
@@ -263,13 +263,13 @@ class HubExtensionConfig(pulumi.CustomResource):
     def __init__(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 active_gate_group: Optional[pulumi.Input[_builtins.str]] = None,
-                 host: Optional[pulumi.Input[_builtins.str]] = None,
-                 host_group: Optional[pulumi.Input[_builtins.str]] = None,
-                 management_zone: Optional[pulumi.Input[_builtins.str]] = None,
-                 name: Optional[pulumi.Input[_builtins.str]] = None,
-                 scope: Optional[pulumi.Input[_builtins.str]] = None,
-                 value: Optional[pulumi.Input[_builtins.str]] = None,
+                 active_gate_group: pulumi.Input[Optional[_builtins.str]] = None,
+                 host: pulumi.Input[Optional[_builtins.str]] = None,
+                 host_group: pulumi.Input[Optional[_builtins.str]] = None,
+                 management_zone: pulumi.Input[Optional[_builtins.str]] = None,
+                 name: pulumi.Input[Optional[_builtins.str]] = None,
+                 scope: pulumi.Input[Optional[_builtins.str]] = None,
+                 value: pulumi.Input[Optional[_builtins.str]] = None,
                  __props__=None):
         """
         > This resource requires the API token scopes `extensions.write`, `extension.read` and `hub.read`.
@@ -434,13 +434,13 @@ class HubExtensionConfig(pulumi.CustomResource):
     def _internal_init(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 active_gate_group: Optional[pulumi.Input[_builtins.str]] = None,
-                 host: Optional[pulumi.Input[_builtins.str]] = None,
-                 host_group: Optional[pulumi.Input[_builtins.str]] = None,
-                 management_zone: Optional[pulumi.Input[_builtins.str]] = None,
-                 name: Optional[pulumi.Input[_builtins.str]] = None,
-                 scope: Optional[pulumi.Input[_builtins.str]] = None,
-                 value: Optional[pulumi.Input[_builtins.str]] = None,
+                 active_gate_group: pulumi.Input[Optional[_builtins.str]] = None,
+                 host: pulumi.Input[Optional[_builtins.str]] = None,
+                 host_group: pulumi.Input[Optional[_builtins.str]] = None,
+                 management_zone: pulumi.Input[Optional[_builtins.str]] = None,
+                 name: pulumi.Input[Optional[_builtins.str]] = None,
+                 scope: pulumi.Input[Optional[_builtins.str]] = None,
+                 value: pulumi.Input[Optional[_builtins.str]] = None,
                  __props__=None):
         opts = pulumi.ResourceOptions.merge(_utilities.get_resource_opts_defaults(), opts)
         if not isinstance(opts, pulumi.ResourceOptions):
@@ -469,13 +469,13 @@ class HubExtensionConfig(pulumi.CustomResource):
     def get(resource_name: str,
             id: pulumi.Input[str],
             opts: Optional[pulumi.ResourceOptions] = None,
-            active_gate_group: Optional[pulumi.Input[_builtins.str]] = None,
-            host: Optional[pulumi.Input[_builtins.str]] = None,
-            host_group: Optional[pulumi.Input[_builtins.str]] = None,
-            management_zone: Optional[pulumi.Input[_builtins.str]] = None,
-            name: Optional[pulumi.Input[_builtins.str]] = None,
-            scope: Optional[pulumi.Input[_builtins.str]] = None,
-            value: Optional[pulumi.Input[_builtins.str]] = None) -> 'HubExtensionConfig':
+            active_gate_group: pulumi.Input[Optional[_builtins.str]] = None,
+            host: pulumi.Input[Optional[_builtins.str]] = None,
+            host_group: pulumi.Input[Optional[_builtins.str]] = None,
+            management_zone: pulumi.Input[Optional[_builtins.str]] = None,
+            name: pulumi.Input[Optional[_builtins.str]] = None,
+            scope: pulumi.Input[Optional[_builtins.str]] = None,
+            value: pulumi.Input[Optional[_builtins.str]] = None) -> 'HubExtensionConfig':
         """
         Get an existing HubExtensionConfig resource's state with the given name, id, and optional extra
         properties used to qualify the lookup.

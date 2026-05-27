@@ -108,19 +108,19 @@ export interface CustomTagsState {
     /**
      * For internal use: current state of tags in JSON format
      */
-    currentState?: pulumi.Input<string>;
+    currentState?: pulumi.Input<string | undefined>;
     /**
      * Specifies the entities where you want to update tags
      */
-    entitySelector?: pulumi.Input<string>;
+    entitySelector?: pulumi.Input<string | undefined>;
     /**
      * The number of monitored entities where the tags have been added.
      */
-    matchedEntities?: pulumi.Input<number>;
+    matchedEntities?: pulumi.Input<number | undefined>;
     /**
      * Specifies the entities where you want to update tags
      */
-    tags?: pulumi.Input<inputs.CustomTagsTags>;
+    tags?: pulumi.Input<inputs.CustomTagsTags | undefined>;
 }
 
 /**
@@ -130,7 +130,7 @@ export interface CustomTagsArgs {
     /**
      * For internal use: current state of tags in JSON format
      */
-    currentState?: pulumi.Input<string>;
+    currentState?: pulumi.Input<string | undefined>;
     /**
      * Specifies the entities where you want to update tags
      */
@@ -138,7 +138,7 @@ export interface CustomTagsArgs {
     /**
      * The number of monitored entities where the tags have been added.
      */
-    matchedEntities?: pulumi.Input<number>;
+    matchedEntities?: pulumi.Input<number | undefined>;
     /**
      * Specifies the entities where you want to update tags
      */

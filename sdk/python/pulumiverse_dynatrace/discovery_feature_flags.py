@@ -20,10 +20,10 @@ __all__ = ['DiscoveryFeatureFlagsArgs', 'DiscoveryFeatureFlags']
 class DiscoveryFeatureFlagsArgs:
     def __init__(__self__, *,
                  type: pulumi.Input[_builtins.str],
-                 boolean_value: Optional[pulumi.Input[_builtins.bool]] = None,
-                 name: Optional[pulumi.Input[_builtins.str]] = None,
-                 number_value: Optional[pulumi.Input[_builtins.int]] = None,
-                 string_value: Optional[pulumi.Input[_builtins.str]] = None):
+                 boolean_value: pulumi.Input[Optional[_builtins.bool]] = None,
+                 name: pulumi.Input[Optional[_builtins.str]] = None,
+                 number_value: pulumi.Input[Optional[_builtins.int]] = None,
+                 string_value: pulumi.Input[Optional[_builtins.str]] = None):
         """
         The set of arguments for constructing a DiscoveryFeatureFlags resource.
 
@@ -57,61 +57,61 @@ class DiscoveryFeatureFlagsArgs:
 
     @_builtins.property
     @pulumi.getter(name="booleanValue")
-    def boolean_value(self) -> Optional[pulumi.Input[_builtins.bool]]:
+    def boolean_value(self) -> pulumi.Input[Optional[_builtins.bool]]:
         """
         State of boolean feature
         """
         return pulumi.get(self, "boolean_value")
 
     @boolean_value.setter
-    def boolean_value(self, value: Optional[pulumi.Input[_builtins.bool]]):
+    def boolean_value(self, value: pulumi.Input[Optional[_builtins.bool]]):
         pulumi.set(self, "boolean_value", value)
 
     @_builtins.property
     @pulumi.getter
-    def name(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def name(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Name of the feature
         """
         return pulumi.get(self, "name")
 
     @name.setter
-    def name(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def name(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "name", value)
 
     @_builtins.property
     @pulumi.getter(name="numberValue")
-    def number_value(self) -> Optional[pulumi.Input[_builtins.int]]:
+    def number_value(self) -> pulumi.Input[Optional[_builtins.int]]:
         """
         State of numeric feature
         """
         return pulumi.get(self, "number_value")
 
     @number_value.setter
-    def number_value(self, value: Optional[pulumi.Input[_builtins.int]]):
+    def number_value(self, value: pulumi.Input[Optional[_builtins.int]]):
         pulumi.set(self, "number_value", value)
 
     @_builtins.property
     @pulumi.getter(name="stringValue")
-    def string_value(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def string_value(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         State of textual feature
         """
         return pulumi.get(self, "string_value")
 
     @string_value.setter
-    def string_value(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def string_value(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "string_value", value)
 
 
 @pulumi.input_type
 class _DiscoveryFeatureFlagsState:
     def __init__(__self__, *,
-                 boolean_value: Optional[pulumi.Input[_builtins.bool]] = None,
-                 name: Optional[pulumi.Input[_builtins.str]] = None,
-                 number_value: Optional[pulumi.Input[_builtins.int]] = None,
-                 string_value: Optional[pulumi.Input[_builtins.str]] = None,
-                 type: Optional[pulumi.Input[_builtins.str]] = None):
+                 boolean_value: pulumi.Input[Optional[_builtins.bool]] = None,
+                 name: pulumi.Input[Optional[_builtins.str]] = None,
+                 number_value: pulumi.Input[Optional[_builtins.int]] = None,
+                 string_value: pulumi.Input[Optional[_builtins.str]] = None,
+                 type: pulumi.Input[Optional[_builtins.str]] = None):
         """
         Input properties used for looking up and filtering DiscoveryFeatureFlags resources.
 
@@ -134,62 +134,62 @@ class _DiscoveryFeatureFlagsState:
 
     @_builtins.property
     @pulumi.getter(name="booleanValue")
-    def boolean_value(self) -> Optional[pulumi.Input[_builtins.bool]]:
+    def boolean_value(self) -> pulumi.Input[Optional[_builtins.bool]]:
         """
         State of boolean feature
         """
         return pulumi.get(self, "boolean_value")
 
     @boolean_value.setter
-    def boolean_value(self, value: Optional[pulumi.Input[_builtins.bool]]):
+    def boolean_value(self, value: pulumi.Input[Optional[_builtins.bool]]):
         pulumi.set(self, "boolean_value", value)
 
     @_builtins.property
     @pulumi.getter
-    def name(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def name(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Name of the feature
         """
         return pulumi.get(self, "name")
 
     @name.setter
-    def name(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def name(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "name", value)
 
     @_builtins.property
     @pulumi.getter(name="numberValue")
-    def number_value(self) -> Optional[pulumi.Input[_builtins.int]]:
+    def number_value(self) -> pulumi.Input[Optional[_builtins.int]]:
         """
         State of numeric feature
         """
         return pulumi.get(self, "number_value")
 
     @number_value.setter
-    def number_value(self, value: Optional[pulumi.Input[_builtins.int]]):
+    def number_value(self, value: pulumi.Input[Optional[_builtins.int]]):
         pulumi.set(self, "number_value", value)
 
     @_builtins.property
     @pulumi.getter(name="stringValue")
-    def string_value(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def string_value(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         State of textual feature
         """
         return pulumi.get(self, "string_value")
 
     @string_value.setter
-    def string_value(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def string_value(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "string_value", value)
 
     @_builtins.property
     @pulumi.getter
-    def type(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def type(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Possible Values: `Boolean`, `Number`, `String`
         """
         return pulumi.get(self, "type")
 
     @type.setter
-    def type(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def type(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "type", value)
 
 
@@ -199,11 +199,11 @@ class DiscoveryFeatureFlags(pulumi.CustomResource):
     def __init__(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 boolean_value: Optional[pulumi.Input[_builtins.bool]] = None,
-                 name: Optional[pulumi.Input[_builtins.str]] = None,
-                 number_value: Optional[pulumi.Input[_builtins.int]] = None,
-                 string_value: Optional[pulumi.Input[_builtins.str]] = None,
-                 type: Optional[pulumi.Input[_builtins.str]] = None,
+                 boolean_value: pulumi.Input[Optional[_builtins.bool]] = None,
+                 name: pulumi.Input[Optional[_builtins.str]] = None,
+                 number_value: pulumi.Input[Optional[_builtins.int]] = None,
+                 string_value: pulumi.Input[Optional[_builtins.str]] = None,
+                 type: pulumi.Input[Optional[_builtins.str]] = None,
                  __props__=None):
         """
         > This resource requires the API token scopes **Read settings** (`settings.read`) and **Write settings** (`settings.write`)
@@ -266,11 +266,11 @@ class DiscoveryFeatureFlags(pulumi.CustomResource):
     def _internal_init(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 boolean_value: Optional[pulumi.Input[_builtins.bool]] = None,
-                 name: Optional[pulumi.Input[_builtins.str]] = None,
-                 number_value: Optional[pulumi.Input[_builtins.int]] = None,
-                 string_value: Optional[pulumi.Input[_builtins.str]] = None,
-                 type: Optional[pulumi.Input[_builtins.str]] = None,
+                 boolean_value: pulumi.Input[Optional[_builtins.bool]] = None,
+                 name: pulumi.Input[Optional[_builtins.str]] = None,
+                 number_value: pulumi.Input[Optional[_builtins.int]] = None,
+                 string_value: pulumi.Input[Optional[_builtins.str]] = None,
+                 type: pulumi.Input[Optional[_builtins.str]] = None,
                  __props__=None):
         opts = pulumi.ResourceOptions.merge(_utilities.get_resource_opts_defaults(), opts)
         if not isinstance(opts, pulumi.ResourceOptions):
@@ -297,11 +297,11 @@ class DiscoveryFeatureFlags(pulumi.CustomResource):
     def get(resource_name: str,
             id: pulumi.Input[str],
             opts: Optional[pulumi.ResourceOptions] = None,
-            boolean_value: Optional[pulumi.Input[_builtins.bool]] = None,
-            name: Optional[pulumi.Input[_builtins.str]] = None,
-            number_value: Optional[pulumi.Input[_builtins.int]] = None,
-            string_value: Optional[pulumi.Input[_builtins.str]] = None,
-            type: Optional[pulumi.Input[_builtins.str]] = None) -> 'DiscoveryFeatureFlags':
+            boolean_value: pulumi.Input[Optional[_builtins.bool]] = None,
+            name: pulumi.Input[Optional[_builtins.str]] = None,
+            number_value: pulumi.Input[Optional[_builtins.int]] = None,
+            string_value: pulumi.Input[Optional[_builtins.str]] = None,
+            type: pulumi.Input[Optional[_builtins.str]] = None) -> 'DiscoveryFeatureFlags':
         """
         Get an existing DiscoveryFeatureFlags resource's state with the given name, id, and optional extra
         properties used to qualify the lookup.

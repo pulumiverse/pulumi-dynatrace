@@ -150,35 +150,35 @@ export interface AwsAnomaliesState {
     /**
      * no documentation available
      */
-    ec2CandidateHighCpuDetection?: pulumi.Input<inputs.AwsAnomaliesEc2CandidateHighCpuDetection>;
+    ec2CandidateHighCpuDetection?: pulumi.Input<inputs.AwsAnomaliesEc2CandidateHighCpuDetection | undefined>;
     /**
      * no documentation available
      */
-    elbHighConnectionErrorsDetection?: pulumi.Input<inputs.AwsAnomaliesElbHighConnectionErrorsDetection>;
+    elbHighConnectionErrorsDetection?: pulumi.Input<inputs.AwsAnomaliesElbHighConnectionErrorsDetection | undefined>;
     /**
      * no documentation available
      */
-    lambdaHighErrorRateDetection?: pulumi.Input<inputs.AwsAnomaliesLambdaHighErrorRateDetection>;
+    lambdaHighErrorRateDetection?: pulumi.Input<inputs.AwsAnomaliesLambdaHighErrorRateDetection | undefined>;
     /**
      * no documentation available
      */
-    rdsHighCpuDetection?: pulumi.Input<inputs.AwsAnomaliesRdsHighCpuDetection>;
+    rdsHighCpuDetection?: pulumi.Input<inputs.AwsAnomaliesRdsHighCpuDetection | undefined>;
     /**
      * no documentation available
      */
-    rdsHighMemoryDetection?: pulumi.Input<inputs.AwsAnomaliesRdsHighMemoryDetection>;
+    rdsHighMemoryDetection?: pulumi.Input<inputs.AwsAnomaliesRdsHighMemoryDetection | undefined>;
     /**
      * no documentation available
      */
-    rdsHighWriteReadLatencyDetection?: pulumi.Input<inputs.AwsAnomaliesRdsHighWriteReadLatencyDetection>;
+    rdsHighWriteReadLatencyDetection?: pulumi.Input<inputs.AwsAnomaliesRdsHighWriteReadLatencyDetection | undefined>;
     /**
      * no documentation available
      */
-    rdsLowStorageDetection?: pulumi.Input<inputs.AwsAnomaliesRdsLowStorageDetection>;
+    rdsLowStorageDetection?: pulumi.Input<inputs.AwsAnomaliesRdsLowStorageDetection | undefined>;
     /**
      * no documentation available
      */
-    rdsRestartsSequenceDetection?: pulumi.Input<inputs.AwsAnomaliesRdsRestartsSequenceDetection>;
+    rdsRestartsSequenceDetection?: pulumi.Input<inputs.AwsAnomaliesRdsRestartsSequenceDetection | undefined>;
 }
 
 /**

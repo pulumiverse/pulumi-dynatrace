@@ -20,9 +20,9 @@ __all__ = ['MonitoredTechnologiesPhpArgs', 'MonitoredTechnologiesPhp']
 class MonitoredTechnologiesPhpArgs:
     def __init__(__self__, *,
                  enabled: pulumi.Input[_builtins.bool],
-                 enable_php_cli_server: Optional[pulumi.Input[_builtins.bool]] = None,
-                 enabled_fast_cgi: Optional[pulumi.Input[_builtins.bool]] = None,
-                 host_id: Optional[pulumi.Input[_builtins.str]] = None):
+                 enable_php_cli_server: pulumi.Input[Optional[_builtins.bool]] = None,
+                 enabled_fast_cgi: pulumi.Input[Optional[_builtins.bool]] = None,
+                 host_id: pulumi.Input[Optional[_builtins.str]] = None):
         """
         The set of arguments for constructing a MonitoredTechnologiesPhp resource.
 
@@ -53,48 +53,48 @@ class MonitoredTechnologiesPhpArgs:
 
     @_builtins.property
     @pulumi.getter(name="enablePhpCliServer")
-    def enable_php_cli_server(self) -> Optional[pulumi.Input[_builtins.bool]]:
+    def enable_php_cli_server(self) -> pulumi.Input[Optional[_builtins.bool]]:
         """
         Requires enabled PHP monitoring and Dynatrace OneAgent version 1.261 or later
         """
         return pulumi.get(self, "enable_php_cli_server")
 
     @enable_php_cli_server.setter
-    def enable_php_cli_server(self, value: Optional[pulumi.Input[_builtins.bool]]):
+    def enable_php_cli_server(self, value: pulumi.Input[Optional[_builtins.bool]]):
         pulumi.set(self, "enable_php_cli_server", value)
 
     @_builtins.property
     @pulumi.getter(name="enabledFastCgi")
-    def enabled_fast_cgi(self) -> Optional[pulumi.Input[_builtins.bool]]:
+    def enabled_fast_cgi(self) -> pulumi.Input[Optional[_builtins.bool]]:
         """
         Requires PHP monitoring enabled and from Dynatrace OneAgent version 1.191 it's ignored and permanently enabled
         """
         return pulumi.get(self, "enabled_fast_cgi")
 
     @enabled_fast_cgi.setter
-    def enabled_fast_cgi(self, value: Optional[pulumi.Input[_builtins.bool]]):
+    def enabled_fast_cgi(self, value: pulumi.Input[Optional[_builtins.bool]]):
         pulumi.set(self, "enabled_fast_cgi", value)
 
     @_builtins.property
     @pulumi.getter(name="hostId")
-    def host_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def host_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The scope of this settings. If the settings should cover the whole environment, just don't specify any scope.
         """
         return pulumi.get(self, "host_id")
 
     @host_id.setter
-    def host_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def host_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "host_id", value)
 
 
 @pulumi.input_type
 class _MonitoredTechnologiesPhpState:
     def __init__(__self__, *,
-                 enable_php_cli_server: Optional[pulumi.Input[_builtins.bool]] = None,
-                 enabled: Optional[pulumi.Input[_builtins.bool]] = None,
-                 enabled_fast_cgi: Optional[pulumi.Input[_builtins.bool]] = None,
-                 host_id: Optional[pulumi.Input[_builtins.str]] = None):
+                 enable_php_cli_server: pulumi.Input[Optional[_builtins.bool]] = None,
+                 enabled: pulumi.Input[Optional[_builtins.bool]] = None,
+                 enabled_fast_cgi: pulumi.Input[Optional[_builtins.bool]] = None,
+                 host_id: pulumi.Input[Optional[_builtins.str]] = None):
         """
         Input properties used for looking up and filtering MonitoredTechnologiesPhp resources.
 
@@ -114,50 +114,50 @@ class _MonitoredTechnologiesPhpState:
 
     @_builtins.property
     @pulumi.getter(name="enablePhpCliServer")
-    def enable_php_cli_server(self) -> Optional[pulumi.Input[_builtins.bool]]:
+    def enable_php_cli_server(self) -> pulumi.Input[Optional[_builtins.bool]]:
         """
         Requires enabled PHP monitoring and Dynatrace OneAgent version 1.261 or later
         """
         return pulumi.get(self, "enable_php_cli_server")
 
     @enable_php_cli_server.setter
-    def enable_php_cli_server(self, value: Optional[pulumi.Input[_builtins.bool]]):
+    def enable_php_cli_server(self, value: pulumi.Input[Optional[_builtins.bool]]):
         pulumi.set(self, "enable_php_cli_server", value)
 
     @_builtins.property
     @pulumi.getter
-    def enabled(self) -> Optional[pulumi.Input[_builtins.bool]]:
+    def enabled(self) -> pulumi.Input[Optional[_builtins.bool]]:
         """
         This setting is enabled (`true`) or disabled (`false`)
         """
         return pulumi.get(self, "enabled")
 
     @enabled.setter
-    def enabled(self, value: Optional[pulumi.Input[_builtins.bool]]):
+    def enabled(self, value: pulumi.Input[Optional[_builtins.bool]]):
         pulumi.set(self, "enabled", value)
 
     @_builtins.property
     @pulumi.getter(name="enabledFastCgi")
-    def enabled_fast_cgi(self) -> Optional[pulumi.Input[_builtins.bool]]:
+    def enabled_fast_cgi(self) -> pulumi.Input[Optional[_builtins.bool]]:
         """
         Requires PHP monitoring enabled and from Dynatrace OneAgent version 1.191 it's ignored and permanently enabled
         """
         return pulumi.get(self, "enabled_fast_cgi")
 
     @enabled_fast_cgi.setter
-    def enabled_fast_cgi(self, value: Optional[pulumi.Input[_builtins.bool]]):
+    def enabled_fast_cgi(self, value: pulumi.Input[Optional[_builtins.bool]]):
         pulumi.set(self, "enabled_fast_cgi", value)
 
     @_builtins.property
     @pulumi.getter(name="hostId")
-    def host_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def host_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The scope of this settings. If the settings should cover the whole environment, just don't specify any scope.
         """
         return pulumi.get(self, "host_id")
 
     @host_id.setter
-    def host_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def host_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "host_id", value)
 
 
@@ -167,10 +167,10 @@ class MonitoredTechnologiesPhp(pulumi.CustomResource):
     def __init__(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 enable_php_cli_server: Optional[pulumi.Input[_builtins.bool]] = None,
-                 enabled: Optional[pulumi.Input[_builtins.bool]] = None,
-                 enabled_fast_cgi: Optional[pulumi.Input[_builtins.bool]] = None,
-                 host_id: Optional[pulumi.Input[_builtins.str]] = None,
+                 enable_php_cli_server: pulumi.Input[Optional[_builtins.bool]] = None,
+                 enabled: pulumi.Input[Optional[_builtins.bool]] = None,
+                 enabled_fast_cgi: pulumi.Input[Optional[_builtins.bool]] = None,
+                 host_id: pulumi.Input[Optional[_builtins.str]] = None,
                  __props__=None):
         """
         > This resource requires the API token scopes **Read settings** (`settings.read`) and **Write settings** (`settings.write`)
@@ -232,10 +232,10 @@ class MonitoredTechnologiesPhp(pulumi.CustomResource):
     def _internal_init(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 enable_php_cli_server: Optional[pulumi.Input[_builtins.bool]] = None,
-                 enabled: Optional[pulumi.Input[_builtins.bool]] = None,
-                 enabled_fast_cgi: Optional[pulumi.Input[_builtins.bool]] = None,
-                 host_id: Optional[pulumi.Input[_builtins.str]] = None,
+                 enable_php_cli_server: pulumi.Input[Optional[_builtins.bool]] = None,
+                 enabled: pulumi.Input[Optional[_builtins.bool]] = None,
+                 enabled_fast_cgi: pulumi.Input[Optional[_builtins.bool]] = None,
+                 host_id: pulumi.Input[Optional[_builtins.str]] = None,
                  __props__=None):
         opts = pulumi.ResourceOptions.merge(_utilities.get_resource_opts_defaults(), opts)
         if not isinstance(opts, pulumi.ResourceOptions):
@@ -261,10 +261,10 @@ class MonitoredTechnologiesPhp(pulumi.CustomResource):
     def get(resource_name: str,
             id: pulumi.Input[str],
             opts: Optional[pulumi.ResourceOptions] = None,
-            enable_php_cli_server: Optional[pulumi.Input[_builtins.bool]] = None,
-            enabled: Optional[pulumi.Input[_builtins.bool]] = None,
-            enabled_fast_cgi: Optional[pulumi.Input[_builtins.bool]] = None,
-            host_id: Optional[pulumi.Input[_builtins.str]] = None) -> 'MonitoredTechnologiesPhp':
+            enable_php_cli_server: pulumi.Input[Optional[_builtins.bool]] = None,
+            enabled: pulumi.Input[Optional[_builtins.bool]] = None,
+            enabled_fast_cgi: pulumi.Input[Optional[_builtins.bool]] = None,
+            host_id: pulumi.Input[Optional[_builtins.str]] = None) -> 'MonitoredTechnologiesPhp':
         """
         Get an existing MonitoredTechnologiesPhp resource's state with the given name, id, and optional extra
         properties used to qualify the lookup.

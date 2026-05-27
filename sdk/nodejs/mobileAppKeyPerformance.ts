@@ -107,15 +107,15 @@ export interface MobileAppKeyPerformanceState {
     /**
      * Treat user actions with reported errors or web request errors as erroneous and rate their performance as Frustrating. Turn off this setting if errors should not affect the Apdex rate.
      */
-    frustratingIfReportedOrWebRequestError?: pulumi.Input<boolean>;
+    frustratingIfReportedOrWebRequestError?: pulumi.Input<boolean | undefined>;
     /**
      * The scope of this setting (DEVICE*APPLICATION*METHOD, MOBILE*APPLICATION, CUSTOM*APPLICATION)
      */
-    scope?: pulumi.Input<string>;
+    scope?: pulumi.Input<string | undefined>;
     /**
      * no documentation available
      */
-    thresholds?: pulumi.Input<inputs.MobileAppKeyPerformanceThresholds>;
+    thresholds?: pulumi.Input<inputs.MobileAppKeyPerformanceThresholds | undefined>;
 }
 
 /**

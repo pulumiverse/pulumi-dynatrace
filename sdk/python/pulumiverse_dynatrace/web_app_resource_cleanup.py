@@ -21,8 +21,8 @@ class WebAppResourceCleanupArgs:
     def __init__(__self__, *,
                  regular_expression: pulumi.Input[_builtins.str],
                  replace_with: pulumi.Input[_builtins.str],
-                 insert_after: Optional[pulumi.Input[_builtins.str]] = None,
-                 name: Optional[pulumi.Input[_builtins.str]] = None):
+                 insert_after: pulumi.Input[Optional[_builtins.str]] = None,
+                 name: pulumi.Input[Optional[_builtins.str]] = None):
         """
         The set of arguments for constructing a WebAppResourceCleanup resource.
 
@@ -64,36 +64,36 @@ class WebAppResourceCleanupArgs:
 
     @_builtins.property
     @pulumi.getter(name="insertAfter")
-    def insert_after(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def insert_after(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Because this resource allows for ordering you may specify the ID of the resource instance that comes before this instance regarding order. If not specified when creating the setting will be added to the end of the list. If not specified during update the order will remain untouched
         """
         return pulumi.get(self, "insert_after")
 
     @insert_after.setter
-    def insert_after(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def insert_after(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "insert_after", value)
 
     @_builtins.property
     @pulumi.getter
-    def name(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def name(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         For example: *Mask journeyId*
         """
         return pulumi.get(self, "name")
 
     @name.setter
-    def name(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def name(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "name", value)
 
 
 @pulumi.input_type
 class _WebAppResourceCleanupState:
     def __init__(__self__, *,
-                 insert_after: Optional[pulumi.Input[_builtins.str]] = None,
-                 name: Optional[pulumi.Input[_builtins.str]] = None,
-                 regular_expression: Optional[pulumi.Input[_builtins.str]] = None,
-                 replace_with: Optional[pulumi.Input[_builtins.str]] = None):
+                 insert_after: pulumi.Input[Optional[_builtins.str]] = None,
+                 name: pulumi.Input[Optional[_builtins.str]] = None,
+                 regular_expression: pulumi.Input[Optional[_builtins.str]] = None,
+                 replace_with: pulumi.Input[Optional[_builtins.str]] = None):
         """
         Input properties used for looking up and filtering WebAppResourceCleanup resources.
 
@@ -113,50 +113,50 @@ class _WebAppResourceCleanupState:
 
     @_builtins.property
     @pulumi.getter(name="insertAfter")
-    def insert_after(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def insert_after(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Because this resource allows for ordering you may specify the ID of the resource instance that comes before this instance regarding order. If not specified when creating the setting will be added to the end of the list. If not specified during update the order will remain untouched
         """
         return pulumi.get(self, "insert_after")
 
     @insert_after.setter
-    def insert_after(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def insert_after(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "insert_after", value)
 
     @_builtins.property
     @pulumi.getter
-    def name(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def name(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         For example: *Mask journeyId*
         """
         return pulumi.get(self, "name")
 
     @name.setter
-    def name(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def name(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "name", value)
 
     @_builtins.property
     @pulumi.getter(name="regularExpression")
-    def regular_expression(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def regular_expression(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         For example: `(.*)(journeyId=)-?\\d+(.*)`
         """
         return pulumi.get(self, "regular_expression")
 
     @regular_expression.setter
-    def regular_expression(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def regular_expression(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "regular_expression", value)
 
     @_builtins.property
     @pulumi.getter(name="replaceWith")
-    def replace_with(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def replace_with(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         For example: `$1$2\\*$3`
         """
         return pulumi.get(self, "replace_with")
 
     @replace_with.setter
-    def replace_with(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def replace_with(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "replace_with", value)
 
 
@@ -166,10 +166,10 @@ class WebAppResourceCleanup(pulumi.CustomResource):
     def __init__(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 insert_after: Optional[pulumi.Input[_builtins.str]] = None,
-                 name: Optional[pulumi.Input[_builtins.str]] = None,
-                 regular_expression: Optional[pulumi.Input[_builtins.str]] = None,
-                 replace_with: Optional[pulumi.Input[_builtins.str]] = None,
+                 insert_after: pulumi.Input[Optional[_builtins.str]] = None,
+                 name: pulumi.Input[Optional[_builtins.str]] = None,
+                 regular_expression: pulumi.Input[Optional[_builtins.str]] = None,
+                 replace_with: pulumi.Input[Optional[_builtins.str]] = None,
                  __props__=None):
         """
         > This resource requires the API token scopes **Read settings** (`settings.read`) and **Write settings** (`settings.write`)
@@ -231,10 +231,10 @@ class WebAppResourceCleanup(pulumi.CustomResource):
     def _internal_init(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 insert_after: Optional[pulumi.Input[_builtins.str]] = None,
-                 name: Optional[pulumi.Input[_builtins.str]] = None,
-                 regular_expression: Optional[pulumi.Input[_builtins.str]] = None,
-                 replace_with: Optional[pulumi.Input[_builtins.str]] = None,
+                 insert_after: pulumi.Input[Optional[_builtins.str]] = None,
+                 name: pulumi.Input[Optional[_builtins.str]] = None,
+                 regular_expression: pulumi.Input[Optional[_builtins.str]] = None,
+                 replace_with: pulumi.Input[Optional[_builtins.str]] = None,
                  __props__=None):
         opts = pulumi.ResourceOptions.merge(_utilities.get_resource_opts_defaults(), opts)
         if not isinstance(opts, pulumi.ResourceOptions):
@@ -262,10 +262,10 @@ class WebAppResourceCleanup(pulumi.CustomResource):
     def get(resource_name: str,
             id: pulumi.Input[str],
             opts: Optional[pulumi.ResourceOptions] = None,
-            insert_after: Optional[pulumi.Input[_builtins.str]] = None,
-            name: Optional[pulumi.Input[_builtins.str]] = None,
-            regular_expression: Optional[pulumi.Input[_builtins.str]] = None,
-            replace_with: Optional[pulumi.Input[_builtins.str]] = None) -> 'WebAppResourceCleanup':
+            insert_after: pulumi.Input[Optional[_builtins.str]] = None,
+            name: pulumi.Input[Optional[_builtins.str]] = None,
+            regular_expression: pulumi.Input[Optional[_builtins.str]] = None,
+            replace_with: pulumi.Input[Optional[_builtins.str]] = None) -> 'WebAppResourceCleanup':
         """
         Get an existing WebAppResourceCleanup resource's state with the given name, id, and optional extra
         properties used to qualify the lookup.

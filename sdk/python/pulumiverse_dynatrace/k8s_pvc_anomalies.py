@@ -23,7 +23,7 @@ class K8sPvcAnomaliesArgs:
     def __init__(__self__, *,
                  low_disk_space_critical: pulumi.Input['K8sPvcAnomaliesLowDiskSpaceCriticalArgs'],
                  low_disk_space_critical_percentage: pulumi.Input['K8sPvcAnomaliesLowDiskSpaceCriticalPercentageArgs'],
-                 scope: Optional[pulumi.Input[_builtins.str]] = None):
+                 scope: pulumi.Input[Optional[_builtins.str]] = None):
         """
         The set of arguments for constructing a K8sPvcAnomalies resource.
 
@@ -62,23 +62,23 @@ class K8sPvcAnomaliesArgs:
 
     @_builtins.property
     @pulumi.getter
-    def scope(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def scope(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The scope of this setting (CLOUD*APPLICATION*NAMESPACE, KUBERNETES_CLUSTER). Omit this property if you want to cover the whole environment.
         """
         return pulumi.get(self, "scope")
 
     @scope.setter
-    def scope(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def scope(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "scope", value)
 
 
 @pulumi.input_type
 class _K8sPvcAnomaliesState:
     def __init__(__self__, *,
-                 low_disk_space_critical: Optional[pulumi.Input['K8sPvcAnomaliesLowDiskSpaceCriticalArgs']] = None,
-                 low_disk_space_critical_percentage: Optional[pulumi.Input['K8sPvcAnomaliesLowDiskSpaceCriticalPercentageArgs']] = None,
-                 scope: Optional[pulumi.Input[_builtins.str]] = None):
+                 low_disk_space_critical: pulumi.Input[Optional['K8sPvcAnomaliesLowDiskSpaceCriticalArgs']] = None,
+                 low_disk_space_critical_percentage: pulumi.Input[Optional['K8sPvcAnomaliesLowDiskSpaceCriticalPercentageArgs']] = None,
+                 scope: pulumi.Input[Optional[_builtins.str]] = None):
         """
         Input properties used for looking up and filtering K8sPvcAnomalies resources.
 
@@ -95,38 +95,38 @@ class _K8sPvcAnomaliesState:
 
     @_builtins.property
     @pulumi.getter(name="lowDiskSpaceCritical")
-    def low_disk_space_critical(self) -> Optional[pulumi.Input['K8sPvcAnomaliesLowDiskSpaceCriticalArgs']]:
+    def low_disk_space_critical(self) -> pulumi.Input[Optional['K8sPvcAnomaliesLowDiskSpaceCriticalArgs']]:
         """
         Alerts on low disk space in megabytes for a persistent volume claim.
         """
         return pulumi.get(self, "low_disk_space_critical")
 
     @low_disk_space_critical.setter
-    def low_disk_space_critical(self, value: Optional[pulumi.Input['K8sPvcAnomaliesLowDiskSpaceCriticalArgs']]):
+    def low_disk_space_critical(self, value: pulumi.Input[Optional['K8sPvcAnomaliesLowDiskSpaceCriticalArgs']]):
         pulumi.set(self, "low_disk_space_critical", value)
 
     @_builtins.property
     @pulumi.getter(name="lowDiskSpaceCriticalPercentage")
-    def low_disk_space_critical_percentage(self) -> Optional[pulumi.Input['K8sPvcAnomaliesLowDiskSpaceCriticalPercentageArgs']]:
+    def low_disk_space_critical_percentage(self) -> pulumi.Input[Optional['K8sPvcAnomaliesLowDiskSpaceCriticalPercentageArgs']]:
         """
         Alerts on low disk space in % for a persistent volume claim.
         """
         return pulumi.get(self, "low_disk_space_critical_percentage")
 
     @low_disk_space_critical_percentage.setter
-    def low_disk_space_critical_percentage(self, value: Optional[pulumi.Input['K8sPvcAnomaliesLowDiskSpaceCriticalPercentageArgs']]):
+    def low_disk_space_critical_percentage(self, value: pulumi.Input[Optional['K8sPvcAnomaliesLowDiskSpaceCriticalPercentageArgs']]):
         pulumi.set(self, "low_disk_space_critical_percentage", value)
 
     @_builtins.property
     @pulumi.getter
-    def scope(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def scope(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The scope of this setting (CLOUD*APPLICATION*NAMESPACE, KUBERNETES_CLUSTER). Omit this property if you want to cover the whole environment.
         """
         return pulumi.get(self, "scope")
 
     @scope.setter
-    def scope(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def scope(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "scope", value)
 
 
@@ -136,9 +136,9 @@ class K8sPvcAnomalies(pulumi.CustomResource):
     def __init__(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 low_disk_space_critical: Optional[pulumi.Input[Union['K8sPvcAnomaliesLowDiskSpaceCriticalArgs', 'K8sPvcAnomaliesLowDiskSpaceCriticalArgsDict']]] = None,
-                 low_disk_space_critical_percentage: Optional[pulumi.Input[Union['K8sPvcAnomaliesLowDiskSpaceCriticalPercentageArgs', 'K8sPvcAnomaliesLowDiskSpaceCriticalPercentageArgsDict']]] = None,
-                 scope: Optional[pulumi.Input[_builtins.str]] = None,
+                 low_disk_space_critical: pulumi.Input[Optional[Union['K8sPvcAnomaliesLowDiskSpaceCriticalArgs', 'K8sPvcAnomaliesLowDiskSpaceCriticalArgsDict']]] = None,
+                 low_disk_space_critical_percentage: pulumi.Input[Optional[Union['K8sPvcAnomaliesLowDiskSpaceCriticalPercentageArgs', 'K8sPvcAnomaliesLowDiskSpaceCriticalPercentageArgsDict']]] = None,
+                 scope: pulumi.Input[Optional[_builtins.str]] = None,
                  __props__=None):
         """
         > This resource requires the API token scopes **Read settings** (`settings.read`) and **Write settings** (`settings.write`)
@@ -199,9 +199,9 @@ class K8sPvcAnomalies(pulumi.CustomResource):
     def _internal_init(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 low_disk_space_critical: Optional[pulumi.Input[Union['K8sPvcAnomaliesLowDiskSpaceCriticalArgs', 'K8sPvcAnomaliesLowDiskSpaceCriticalArgsDict']]] = None,
-                 low_disk_space_critical_percentage: Optional[pulumi.Input[Union['K8sPvcAnomaliesLowDiskSpaceCriticalPercentageArgs', 'K8sPvcAnomaliesLowDiskSpaceCriticalPercentageArgsDict']]] = None,
-                 scope: Optional[pulumi.Input[_builtins.str]] = None,
+                 low_disk_space_critical: pulumi.Input[Optional[Union['K8sPvcAnomaliesLowDiskSpaceCriticalArgs', 'K8sPvcAnomaliesLowDiskSpaceCriticalArgsDict']]] = None,
+                 low_disk_space_critical_percentage: pulumi.Input[Optional[Union['K8sPvcAnomaliesLowDiskSpaceCriticalPercentageArgs', 'K8sPvcAnomaliesLowDiskSpaceCriticalPercentageArgsDict']]] = None,
+                 scope: pulumi.Input[Optional[_builtins.str]] = None,
                  __props__=None):
         opts = pulumi.ResourceOptions.merge(_utilities.get_resource_opts_defaults(), opts)
         if not isinstance(opts, pulumi.ResourceOptions):
@@ -228,9 +228,9 @@ class K8sPvcAnomalies(pulumi.CustomResource):
     def get(resource_name: str,
             id: pulumi.Input[str],
             opts: Optional[pulumi.ResourceOptions] = None,
-            low_disk_space_critical: Optional[pulumi.Input[Union['K8sPvcAnomaliesLowDiskSpaceCriticalArgs', 'K8sPvcAnomaliesLowDiskSpaceCriticalArgsDict']]] = None,
-            low_disk_space_critical_percentage: Optional[pulumi.Input[Union['K8sPvcAnomaliesLowDiskSpaceCriticalPercentageArgs', 'K8sPvcAnomaliesLowDiskSpaceCriticalPercentageArgsDict']]] = None,
-            scope: Optional[pulumi.Input[_builtins.str]] = None) -> 'K8sPvcAnomalies':
+            low_disk_space_critical: pulumi.Input[Optional[Union['K8sPvcAnomaliesLowDiskSpaceCriticalArgs', 'K8sPvcAnomaliesLowDiskSpaceCriticalArgsDict']]] = None,
+            low_disk_space_critical_percentage: pulumi.Input[Optional[Union['K8sPvcAnomaliesLowDiskSpaceCriticalPercentageArgs', 'K8sPvcAnomaliesLowDiskSpaceCriticalPercentageArgsDict']]] = None,
+            scope: pulumi.Input[Optional[_builtins.str]] = None) -> 'K8sPvcAnomalies':
         """
         Get an existing K8sPvcAnomalies resource's state with the given name, id, and optional extra
         properties used to qualify the lookup.

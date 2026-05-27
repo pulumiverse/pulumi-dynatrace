@@ -21,10 +21,10 @@ __all__ = ['DashboardArgs', 'Dashboard']
 @pulumi.input_type
 class DashboardArgs:
     def __init__(__self__, *,
-                 dashboard_metadata: Optional[pulumi.Input['DashboardDashboardMetadataArgs']] = None,
-                 metadata: Optional[pulumi.Input['DashboardMetadataArgs']] = None,
-                 tiles: Optional[pulumi.Input[Sequence[pulumi.Input['DashboardTileArgs']]]] = None,
-                 unknowns: Optional[pulumi.Input[_builtins.str]] = None):
+                 dashboard_metadata: pulumi.Input[Optional['DashboardDashboardMetadataArgs']] = None,
+                 metadata: pulumi.Input[Optional['DashboardMetadataArgs']] = None,
+                 tiles: pulumi.Input[Optional[Sequence[pulumi.Input['DashboardTileArgs']]]] = None,
+                 unknowns: pulumi.Input[Optional[_builtins.str]] = None):
         """
         The set of arguments for constructing a Dashboard resource.
 
@@ -47,61 +47,61 @@ class DashboardArgs:
 
     @_builtins.property
     @pulumi.getter(name="dashboardMetadata")
-    def dashboard_metadata(self) -> Optional[pulumi.Input['DashboardDashboardMetadataArgs']]:
+    def dashboard_metadata(self) -> pulumi.Input[Optional['DashboardDashboardMetadataArgs']]:
         """
         contains parameters of a dashboard
         """
         return pulumi.get(self, "dashboard_metadata")
 
     @dashboard_metadata.setter
-    def dashboard_metadata(self, value: Optional[pulumi.Input['DashboardDashboardMetadataArgs']]):
+    def dashboard_metadata(self, value: pulumi.Input[Optional['DashboardDashboardMetadataArgs']]):
         pulumi.set(self, "dashboard_metadata", value)
 
     @_builtins.property
     @pulumi.getter
     @_utilities.deprecated("""`metadata` exists for backwards compatibility but shouldn't get specified anymore""")
-    def metadata(self) -> Optional[pulumi.Input['DashboardMetadataArgs']]:
+    def metadata(self) -> pulumi.Input[Optional['DashboardMetadataArgs']]:
         """
         `metadata` exists for backwards compatibility but shouldn't get specified anymore
         """
         return pulumi.get(self, "metadata")
 
     @metadata.setter
-    def metadata(self, value: Optional[pulumi.Input['DashboardMetadataArgs']]):
+    def metadata(self, value: pulumi.Input[Optional['DashboardMetadataArgs']]):
         pulumi.set(self, "metadata", value)
 
     @_builtins.property
     @pulumi.getter
-    def tiles(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['DashboardTileArgs']]]]:
+    def tiles(self) -> pulumi.Input[Optional[Sequence[pulumi.Input['DashboardTileArgs']]]]:
         """
         the tiles this Dashboard consist of
         """
         return pulumi.get(self, "tiles")
 
     @tiles.setter
-    def tiles(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['DashboardTileArgs']]]]):
+    def tiles(self, value: pulumi.Input[Optional[Sequence[pulumi.Input['DashboardTileArgs']]]]):
         pulumi.set(self, "tiles", value)
 
     @_builtins.property
     @pulumi.getter
-    def unknowns(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def unknowns(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         allows for configuring properties that are not explicitly supported by the current version of this provider
         """
         return pulumi.get(self, "unknowns")
 
     @unknowns.setter
-    def unknowns(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def unknowns(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "unknowns", value)
 
 
 @pulumi.input_type
 class _DashboardState:
     def __init__(__self__, *,
-                 dashboard_metadata: Optional[pulumi.Input['DashboardDashboardMetadataArgs']] = None,
-                 metadata: Optional[pulumi.Input['DashboardMetadataArgs']] = None,
-                 tiles: Optional[pulumi.Input[Sequence[pulumi.Input['DashboardTileArgs']]]] = None,
-                 unknowns: Optional[pulumi.Input[_builtins.str]] = None):
+                 dashboard_metadata: pulumi.Input[Optional['DashboardDashboardMetadataArgs']] = None,
+                 metadata: pulumi.Input[Optional['DashboardMetadataArgs']] = None,
+                 tiles: pulumi.Input[Optional[Sequence[pulumi.Input['DashboardTileArgs']]]] = None,
+                 unknowns: pulumi.Input[Optional[_builtins.str]] = None):
         """
         Input properties used for looking up and filtering Dashboard resources.
 
@@ -124,51 +124,51 @@ class _DashboardState:
 
     @_builtins.property
     @pulumi.getter(name="dashboardMetadata")
-    def dashboard_metadata(self) -> Optional[pulumi.Input['DashboardDashboardMetadataArgs']]:
+    def dashboard_metadata(self) -> pulumi.Input[Optional['DashboardDashboardMetadataArgs']]:
         """
         contains parameters of a dashboard
         """
         return pulumi.get(self, "dashboard_metadata")
 
     @dashboard_metadata.setter
-    def dashboard_metadata(self, value: Optional[pulumi.Input['DashboardDashboardMetadataArgs']]):
+    def dashboard_metadata(self, value: pulumi.Input[Optional['DashboardDashboardMetadataArgs']]):
         pulumi.set(self, "dashboard_metadata", value)
 
     @_builtins.property
     @pulumi.getter
     @_utilities.deprecated("""`metadata` exists for backwards compatibility but shouldn't get specified anymore""")
-    def metadata(self) -> Optional[pulumi.Input['DashboardMetadataArgs']]:
+    def metadata(self) -> pulumi.Input[Optional['DashboardMetadataArgs']]:
         """
         `metadata` exists for backwards compatibility but shouldn't get specified anymore
         """
         return pulumi.get(self, "metadata")
 
     @metadata.setter
-    def metadata(self, value: Optional[pulumi.Input['DashboardMetadataArgs']]):
+    def metadata(self, value: pulumi.Input[Optional['DashboardMetadataArgs']]):
         pulumi.set(self, "metadata", value)
 
     @_builtins.property
     @pulumi.getter
-    def tiles(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['DashboardTileArgs']]]]:
+    def tiles(self) -> pulumi.Input[Optional[Sequence[pulumi.Input['DashboardTileArgs']]]]:
         """
         the tiles this Dashboard consist of
         """
         return pulumi.get(self, "tiles")
 
     @tiles.setter
-    def tiles(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['DashboardTileArgs']]]]):
+    def tiles(self, value: pulumi.Input[Optional[Sequence[pulumi.Input['DashboardTileArgs']]]]):
         pulumi.set(self, "tiles", value)
 
     @_builtins.property
     @pulumi.getter
-    def unknowns(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def unknowns(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         allows for configuring properties that are not explicitly supported by the current version of this provider
         """
         return pulumi.get(self, "unknowns")
 
     @unknowns.setter
-    def unknowns(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def unknowns(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "unknowns", value)
 
 
@@ -178,10 +178,10 @@ class Dashboard(pulumi.CustomResource):
     def __init__(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 dashboard_metadata: Optional[pulumi.Input[Union['DashboardDashboardMetadataArgs', 'DashboardDashboardMetadataArgsDict']]] = None,
-                 metadata: Optional[pulumi.Input[Union['DashboardMetadataArgs', 'DashboardMetadataArgsDict']]] = None,
-                 tiles: Optional[pulumi.Input[Sequence[pulumi.Input[Union['DashboardTileArgs', 'DashboardTileArgsDict']]]]] = None,
-                 unknowns: Optional[pulumi.Input[_builtins.str]] = None,
+                 dashboard_metadata: pulumi.Input[Optional[Union['DashboardDashboardMetadataArgs', 'DashboardDashboardMetadataArgsDict']]] = None,
+                 metadata: pulumi.Input[Optional[Union['DashboardMetadataArgs', 'DashboardMetadataArgsDict']]] = None,
+                 tiles: pulumi.Input[Optional[Sequence[pulumi.Input[Union['DashboardTileArgs', 'DashboardTileArgsDict']]]]] = None,
+                 unknowns: pulumi.Input[Optional[_builtins.str]] = None,
                  __props__=None):
         """
         !> This resource frequently falls behind due to the constant additions/changes to the dashboard schema, instead it is recommended to use JsonDashboard which allows to send the full JSON payload.
@@ -247,10 +247,10 @@ class Dashboard(pulumi.CustomResource):
     def _internal_init(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 dashboard_metadata: Optional[pulumi.Input[Union['DashboardDashboardMetadataArgs', 'DashboardDashboardMetadataArgsDict']]] = None,
-                 metadata: Optional[pulumi.Input[Union['DashboardMetadataArgs', 'DashboardMetadataArgsDict']]] = None,
-                 tiles: Optional[pulumi.Input[Sequence[pulumi.Input[Union['DashboardTileArgs', 'DashboardTileArgsDict']]]]] = None,
-                 unknowns: Optional[pulumi.Input[_builtins.str]] = None,
+                 dashboard_metadata: pulumi.Input[Optional[Union['DashboardDashboardMetadataArgs', 'DashboardDashboardMetadataArgsDict']]] = None,
+                 metadata: pulumi.Input[Optional[Union['DashboardMetadataArgs', 'DashboardMetadataArgsDict']]] = None,
+                 tiles: pulumi.Input[Optional[Sequence[pulumi.Input[Union['DashboardTileArgs', 'DashboardTileArgsDict']]]]] = None,
+                 unknowns: pulumi.Input[Optional[_builtins.str]] = None,
                  __props__=None):
         opts = pulumi.ResourceOptions.merge(_utilities.get_resource_opts_defaults(), opts)
         if not isinstance(opts, pulumi.ResourceOptions):
@@ -274,10 +274,10 @@ class Dashboard(pulumi.CustomResource):
     def get(resource_name: str,
             id: pulumi.Input[str],
             opts: Optional[pulumi.ResourceOptions] = None,
-            dashboard_metadata: Optional[pulumi.Input[Union['DashboardDashboardMetadataArgs', 'DashboardDashboardMetadataArgsDict']]] = None,
-            metadata: Optional[pulumi.Input[Union['DashboardMetadataArgs', 'DashboardMetadataArgsDict']]] = None,
-            tiles: Optional[pulumi.Input[Sequence[pulumi.Input[Union['DashboardTileArgs', 'DashboardTileArgsDict']]]]] = None,
-            unknowns: Optional[pulumi.Input[_builtins.str]] = None) -> 'Dashboard':
+            dashboard_metadata: pulumi.Input[Optional[Union['DashboardDashboardMetadataArgs', 'DashboardDashboardMetadataArgsDict']]] = None,
+            metadata: pulumi.Input[Optional[Union['DashboardMetadataArgs', 'DashboardMetadataArgsDict']]] = None,
+            tiles: pulumi.Input[Optional[Sequence[pulumi.Input[Union['DashboardTileArgs', 'DashboardTileArgsDict']]]]] = None,
+            unknowns: pulumi.Input[Optional[_builtins.str]] = None) -> 'Dashboard':
         """
         Get an existing Dashboard resource's state with the given name, id, and optional extra
         properties used to qualify the lookup.

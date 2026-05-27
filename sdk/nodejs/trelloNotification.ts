@@ -215,19 +215,19 @@ export interface TrelloNotificationState {
     /**
      * This setting is enabled (`true`) or disabled (`false`)
      */
-    active?: pulumi.Input<boolean>;
+    active?: pulumi.Input<boolean | undefined>;
     /**
      * The application key for the Trello account.
      */
-    applicationKey?: pulumi.Input<string>;
+    applicationKey?: pulumi.Input<string | undefined>;
     /**
      * The authorization token for the Trello account.
      */
-    authorizationToken?: pulumi.Input<string>;
+    authorizationToken?: pulumi.Input<string | undefined>;
     /**
      * Trello board ID problem cards should be assigned to
      */
-    boardId?: pulumi.Input<string>;
+    boardId?: pulumi.Input<string | undefined>;
     /**
      * The description of the Trello card. Type '{' for placeholder suggestions.. #### Available placeholders
      * **{ImpactedEntity}**: A short description of the problem and impacted entity (or multiple impacted entities).
@@ -254,27 +254,27 @@ export interface TrelloNotificationState {
      *
      * **{Tags}**: Comma separated list of tags that are defined for all impacted entities. To refer to the value of a specific tag, specify the tag's key in square brackets: **{Tags[key]}**. If the tag does not have any assigned value, the placeholder will be replaced by an empty string. The placeholder will not be replaced if the tag key does not exist.
      */
-    description?: pulumi.Input<string>;
+    description?: pulumi.Input<string | undefined>;
     /**
      * The ID of these settings when referred to from resources requiring the REST API V1 keys
      */
-    legacyId?: pulumi.Input<string>;
+    legacyId?: pulumi.Input<string | undefined>;
     /**
      * Trello list ID new problem cards should be assigned to
      */
-    listId?: pulumi.Input<string>;
+    listId?: pulumi.Input<string | undefined>;
     /**
      * The name of the notification configuration.
      */
-    name?: pulumi.Input<string>;
+    name?: pulumi.Input<string | undefined>;
     /**
      * The ID of the associated alerting profile
      */
-    profile?: pulumi.Input<string>;
+    profile?: pulumi.Input<string | undefined>;
     /**
      * Trello list ID resolved problem cards should be assigned to
      */
-    resolvedListId?: pulumi.Input<string>;
+    resolvedListId?: pulumi.Input<string | undefined>;
     /**
      * The card text and problem placeholders to appear on new problem cards. Type '{' for placeholder suggestions.. #### Available placeholders
      * **{ImpactedEntity}**: A short description of the problem and impacted entity (or multiple impacted entities).
@@ -299,7 +299,7 @@ export interface TrelloNotificationState {
      *
      * **{Tags}**: Comma separated list of tags that are defined for all impacted entities. To refer to the value of a specific tag, specify the tag's key in square brackets: **{Tags[key]}**. If the tag does not have any assigned value, the placeholder will be replaced by an empty string. The placeholder will not be replaced if the tag key does not exist.
      */
-    text?: pulumi.Input<string>;
+    text?: pulumi.Input<string | undefined>;
 }
 
 /**
@@ -352,7 +352,7 @@ export interface TrelloNotificationArgs {
     /**
      * The ID of these settings when referred to from resources requiring the REST API V1 keys
      */
-    legacyId?: pulumi.Input<string>;
+    legacyId?: pulumi.Input<string | undefined>;
     /**
      * Trello list ID new problem cards should be assigned to
      */
@@ -360,7 +360,7 @@ export interface TrelloNotificationArgs {
     /**
      * The name of the notification configuration.
      */
-    name?: pulumi.Input<string>;
+    name?: pulumi.Input<string | undefined>;
     /**
      * The ID of the associated alerting profile
      */

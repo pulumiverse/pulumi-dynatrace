@@ -256,15 +256,15 @@ export interface DirectSharesState {
     /**
      * Access grants. Possible values are `read` and `read-write`
      */
-    access?: pulumi.Input<string>;
+    access?: pulumi.Input<string | undefined>;
     /**
      * Document ID
      */
-    documentId?: pulumi.Input<string>;
+    documentId?: pulumi.Input<string | undefined>;
     /**
      * Recipients of the direct share
      */
-    recipients?: pulumi.Input<inputs.DirectSharesRecipients>;
+    recipients?: pulumi.Input<inputs.DirectSharesRecipients | undefined>;
 }
 
 /**
@@ -274,7 +274,7 @@ export interface DirectSharesArgs {
     /**
      * Access grants. Possible values are `read` and `read-write`
      */
-    access?: pulumi.Input<string>;
+    access?: pulumi.Input<string | undefined>;
     /**
      * Document ID
      */

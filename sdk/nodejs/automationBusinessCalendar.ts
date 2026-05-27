@@ -119,31 +119,31 @@ export interface AutomationBusinessCalendarState {
     /**
      * An optional description for the Business Calendar
      */
-    description?: pulumi.Input<string>;
+    description?: pulumi.Input<string | undefined>;
     /**
      * A list of holidays valid in this calendar
      */
-    holidays?: pulumi.Input<inputs.AutomationBusinessCalendarHolidays>;
+    holidays?: pulumi.Input<inputs.AutomationBusinessCalendarHolidays | undefined>;
     /**
      * The title / name of the Business Calendar
      */
-    title?: pulumi.Input<string>;
+    title?: pulumi.Input<string | undefined>;
     /**
      * The date from when on this calendar is valid from. Example: `2023-07-04` for July 4th 2023
      */
-    validFrom?: pulumi.Input<string>;
+    validFrom?: pulumi.Input<string | undefined>;
     /**
      * The date until when on this calendar is valid to. Example: `2023-07-04` for July 4th 2023
      */
-    validTo?: pulumi.Input<string>;
+    validTo?: pulumi.Input<string | undefined>;
     /**
      * The days to be considered week days in this calendar. `1' =`Monday`,`2`=`Tuesday`,`3`=`Wednesday`,`4`=`Thursday`,`5`=`Friday`,`6`=`Saturday`,`7`=`Sunday`
      */
-    weekDays?: pulumi.Input<pulumi.Input<number>[]>;
+    weekDays?: pulumi.Input<pulumi.Input<number>[] | undefined>;
     /**
      * Specifies the day of the week that's considered to be the first day in the week. `1` for Monday, `7` for Sunday
      */
-    weekStart?: pulumi.Input<number>;
+    weekStart?: pulumi.Input<number | undefined>;
 }
 
 /**
@@ -153,11 +153,11 @@ export interface AutomationBusinessCalendarArgs {
     /**
      * An optional description for the Business Calendar
      */
-    description?: pulumi.Input<string>;
+    description?: pulumi.Input<string | undefined>;
     /**
      * A list of holidays valid in this calendar
      */
-    holidays?: pulumi.Input<inputs.AutomationBusinessCalendarHolidays>;
+    holidays?: pulumi.Input<inputs.AutomationBusinessCalendarHolidays | undefined>;
     /**
      * The title / name of the Business Calendar
      */
@@ -165,17 +165,17 @@ export interface AutomationBusinessCalendarArgs {
     /**
      * The date from when on this calendar is valid from. Example: `2023-07-04` for July 4th 2023
      */
-    validFrom?: pulumi.Input<string>;
+    validFrom?: pulumi.Input<string | undefined>;
     /**
      * The date until when on this calendar is valid to. Example: `2023-07-04` for July 4th 2023
      */
-    validTo?: pulumi.Input<string>;
+    validTo?: pulumi.Input<string | undefined>;
     /**
      * The days to be considered week days in this calendar. `1' =`Monday`,`2`=`Tuesday`,`3`=`Wednesday`,`4`=`Thursday`,`5`=`Friday`,`6`=`Saturday`,`7`=`Sunday`
      */
-    weekDays?: pulumi.Input<pulumi.Input<number>[]>;
+    weekDays?: pulumi.Input<pulumi.Input<number>[] | undefined>;
     /**
      * Specifies the day of the week that's considered to be the first day in the week. `1` for Monday, `7` for Sunday
      */
-    weekStart?: pulumi.Input<number>;
+    weekStart?: pulumi.Input<number | undefined>;
 }

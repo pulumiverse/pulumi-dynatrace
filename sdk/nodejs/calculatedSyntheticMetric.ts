@@ -138,35 +138,35 @@ export interface CalculatedSyntheticMetricState {
     /**
      * Descriptor of a calculated synthetic metric.
      */
-    description?: pulumi.Input<string>;
+    description?: pulumi.Input<string | undefined>;
     /**
      * Dimension of the calculated synthetic metric.
      */
-    dimensions?: pulumi.Input<pulumi.Input<inputs.CalculatedSyntheticMetricDimension>[]>;
+    dimensions?: pulumi.Input<pulumi.Input<inputs.CalculatedSyntheticMetricDimension>[] | undefined>;
     /**
      * The metric is enabled (`true`) or disabled (`false`)
      */
-    enabled?: pulumi.Input<boolean>;
+    enabled?: pulumi.Input<boolean | undefined>;
     /**
      * Filter of the calculated synthetic metric.
      */
-    filter?: pulumi.Input<inputs.CalculatedSyntheticMetricFilter>;
+    filter?: pulumi.Input<inputs.CalculatedSyntheticMetricFilter | undefined>;
     /**
      * The type of the synthetic metric. Possible values: [ ApplicationCache, Callback, CumulativeLayoutShift, DNSLookup, DOMComplete, DOMContentLoaded, DOMInteractive, FailedRequestsResources, FirstContentfulPaint, FirstInputDelay, FirstInputStart, FirstPaint, HTMLDownloaded, HttpErrors, JavaScriptErrors, LargestContentfulPaint, LoadEventEnd, LoadEventStart, LongTasks, NavigationStart, OnDOMContentLoaded, OnLoad, Processing, RedirectTime, Request, RequestStart, ResourceCount, Response, SecureConnect, SpeedIndex, TCPConnect, TimeToFirstByte, TotalDuration, TransferSize, UserActionDuration, VisuallyComplete ]
      */
-    metric?: pulumi.Input<string>;
+    metric?: pulumi.Input<string | undefined>;
     /**
      * The unique key of the calculated synthetic metric.
      */
-    metricKey?: pulumi.Input<string>;
+    metricKey?: pulumi.Input<string | undefined>;
     /**
      * The Dynatrace entity ID of the monitor to which the metric belongs.
      */
-    monitorIdentifier?: pulumi.Input<string>;
+    monitorIdentifier?: pulumi.Input<string | undefined>;
     /**
      * The displayed name of the metric.
      */
-    name?: pulumi.Input<string>;
+    name?: pulumi.Input<string | undefined>;
 }
 
 /**
@@ -176,11 +176,11 @@ export interface CalculatedSyntheticMetricArgs {
     /**
      * Descriptor of a calculated synthetic metric.
      */
-    description?: pulumi.Input<string>;
+    description?: pulumi.Input<string | undefined>;
     /**
      * Dimension of the calculated synthetic metric.
      */
-    dimensions?: pulumi.Input<pulumi.Input<inputs.CalculatedSyntheticMetricDimension>[]>;
+    dimensions?: pulumi.Input<pulumi.Input<inputs.CalculatedSyntheticMetricDimension>[] | undefined>;
     /**
      * The metric is enabled (`true`) or disabled (`false`)
      */
@@ -188,7 +188,7 @@ export interface CalculatedSyntheticMetricArgs {
     /**
      * Filter of the calculated synthetic metric.
      */
-    filter?: pulumi.Input<inputs.CalculatedSyntheticMetricFilter>;
+    filter?: pulumi.Input<inputs.CalculatedSyntheticMetricFilter | undefined>;
     /**
      * The type of the synthetic metric. Possible values: [ ApplicationCache, Callback, CumulativeLayoutShift, DNSLookup, DOMComplete, DOMContentLoaded, DOMInteractive, FailedRequestsResources, FirstContentfulPaint, FirstInputDelay, FirstInputStart, FirstPaint, HTMLDownloaded, HttpErrors, JavaScriptErrors, LargestContentfulPaint, LoadEventEnd, LoadEventStart, LongTasks, NavigationStart, OnDOMContentLoaded, OnLoad, Processing, RedirectTime, Request, RequestStart, ResourceCount, Response, SecureConnect, SpeedIndex, TCPConnect, TimeToFirstByte, TotalDuration, TransferSize, UserActionDuration, VisuallyComplete ]
      */
@@ -204,5 +204,5 @@ export interface CalculatedSyntheticMetricArgs {
     /**
      * The displayed name of the metric.
      */
-    name?: pulumi.Input<string>;
+    name?: pulumi.Input<string | undefined>;
 }

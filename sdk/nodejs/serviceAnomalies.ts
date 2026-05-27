@@ -104,19 +104,19 @@ export interface ServiceAnomaliesState {
     /**
      * Configuration of failure rate increase detection. Detecting failure rate increases will be disabled if this block is omitted.
      */
-    failureRates?: pulumi.Input<inputs.ServiceAnomaliesFailureRates>;
+    failureRates?: pulumi.Input<inputs.ServiceAnomaliesFailureRates | undefined>;
     /**
      * The configuration of load spikes detection. Detecting load spikes will be disabled if this block is omitted.
      */
-    load?: pulumi.Input<inputs.ServiceAnomaliesLoad>;
+    load?: pulumi.Input<inputs.ServiceAnomaliesLoad | undefined>;
     /**
      * The configuration of load drops detection. Detecting load drops will be disabled if this block is omitted.
      */
-    loadDrops?: pulumi.Input<inputs.ServiceAnomaliesLoadDrops>;
+    loadDrops?: pulumi.Input<inputs.ServiceAnomaliesLoadDrops | undefined>;
     /**
      * Configuration of response time degradation detection. Detecting response time degradation will be disabled if this block is omitted.
      */
-    responseTimes?: pulumi.Input<inputs.ServiceAnomaliesResponseTimes>;
+    responseTimes?: pulumi.Input<inputs.ServiceAnomaliesResponseTimes | undefined>;
 }
 
 /**
@@ -126,17 +126,17 @@ export interface ServiceAnomaliesArgs {
     /**
      * Configuration of failure rate increase detection. Detecting failure rate increases will be disabled if this block is omitted.
      */
-    failureRates?: pulumi.Input<inputs.ServiceAnomaliesFailureRates>;
+    failureRates?: pulumi.Input<inputs.ServiceAnomaliesFailureRates | undefined>;
     /**
      * The configuration of load spikes detection. Detecting load spikes will be disabled if this block is omitted.
      */
-    load?: pulumi.Input<inputs.ServiceAnomaliesLoad>;
+    load?: pulumi.Input<inputs.ServiceAnomaliesLoad | undefined>;
     /**
      * The configuration of load drops detection. Detecting load drops will be disabled if this block is omitted.
      */
-    loadDrops?: pulumi.Input<inputs.ServiceAnomaliesLoadDrops>;
+    loadDrops?: pulumi.Input<inputs.ServiceAnomaliesLoadDrops | undefined>;
     /**
      * Configuration of response time degradation detection. Detecting response time degradation will be disabled if this block is omitted.
      */
-    responseTimes?: pulumi.Input<inputs.ServiceAnomaliesResponseTimes>;
+    responseTimes?: pulumi.Input<inputs.ServiceAnomaliesResponseTimes | undefined>;
 }

@@ -22,9 +22,9 @@ __all__ = ['AzureConnectionArgs', 'AzureConnection']
 class AzureConnectionArgs:
     def __init__(__self__, *,
                  type: pulumi.Input[_builtins.str],
-                 client_secret: Optional[pulumi.Input['AzureConnectionClientSecretArgs']] = None,
-                 federated_identity_credential: Optional[pulumi.Input['AzureConnectionFederatedIdentityCredentialArgs']] = None,
-                 name: Optional[pulumi.Input[_builtins.str]] = None):
+                 client_secret: pulumi.Input[Optional['AzureConnectionClientSecretArgs']] = None,
+                 federated_identity_credential: pulumi.Input[Optional['AzureConnectionFederatedIdentityCredentialArgs']] = None,
+                 name: pulumi.Input[Optional[_builtins.str]] = None):
         """
         The set of arguments for constructing a AzureConnection resource.
 
@@ -55,48 +55,48 @@ class AzureConnectionArgs:
 
     @_builtins.property
     @pulumi.getter(name="clientSecret")
-    def client_secret(self) -> Optional[pulumi.Input['AzureConnectionClientSecretArgs']]:
+    def client_secret(self) -> pulumi.Input[Optional['AzureConnectionClientSecretArgs']]:
         """
         no documentation available
         """
         return pulumi.get(self, "client_secret")
 
     @client_secret.setter
-    def client_secret(self, value: Optional[pulumi.Input['AzureConnectionClientSecretArgs']]):
+    def client_secret(self, value: pulumi.Input[Optional['AzureConnectionClientSecretArgs']]):
         pulumi.set(self, "client_secret", value)
 
     @_builtins.property
     @pulumi.getter(name="federatedIdentityCredential")
-    def federated_identity_credential(self) -> Optional[pulumi.Input['AzureConnectionFederatedIdentityCredentialArgs']]:
+    def federated_identity_credential(self) -> pulumi.Input[Optional['AzureConnectionFederatedIdentityCredentialArgs']]:
         """
         no documentation available
         """
         return pulumi.get(self, "federated_identity_credential")
 
     @federated_identity_credential.setter
-    def federated_identity_credential(self, value: Optional[pulumi.Input['AzureConnectionFederatedIdentityCredentialArgs']]):
+    def federated_identity_credential(self, value: pulumi.Input[Optional['AzureConnectionFederatedIdentityCredentialArgs']]):
         pulumi.set(self, "federated_identity_credential", value)
 
     @_builtins.property
     @pulumi.getter
-    def name(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def name(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The name of the connection
         """
         return pulumi.get(self, "name")
 
     @name.setter
-    def name(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def name(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "name", value)
 
 
 @pulumi.input_type
 class _AzureConnectionState:
     def __init__(__self__, *,
-                 client_secret: Optional[pulumi.Input['AzureConnectionClientSecretArgs']] = None,
-                 federated_identity_credential: Optional[pulumi.Input['AzureConnectionFederatedIdentityCredentialArgs']] = None,
-                 name: Optional[pulumi.Input[_builtins.str]] = None,
-                 type: Optional[pulumi.Input[_builtins.str]] = None):
+                 client_secret: pulumi.Input[Optional['AzureConnectionClientSecretArgs']] = None,
+                 federated_identity_credential: pulumi.Input[Optional['AzureConnectionFederatedIdentityCredentialArgs']] = None,
+                 name: pulumi.Input[Optional[_builtins.str]] = None,
+                 type: pulumi.Input[Optional[_builtins.str]] = None):
         """
         Input properties used for looking up and filtering AzureConnection resources.
 
@@ -116,50 +116,50 @@ class _AzureConnectionState:
 
     @_builtins.property
     @pulumi.getter(name="clientSecret")
-    def client_secret(self) -> Optional[pulumi.Input['AzureConnectionClientSecretArgs']]:
+    def client_secret(self) -> pulumi.Input[Optional['AzureConnectionClientSecretArgs']]:
         """
         no documentation available
         """
         return pulumi.get(self, "client_secret")
 
     @client_secret.setter
-    def client_secret(self, value: Optional[pulumi.Input['AzureConnectionClientSecretArgs']]):
+    def client_secret(self, value: pulumi.Input[Optional['AzureConnectionClientSecretArgs']]):
         pulumi.set(self, "client_secret", value)
 
     @_builtins.property
     @pulumi.getter(name="federatedIdentityCredential")
-    def federated_identity_credential(self) -> Optional[pulumi.Input['AzureConnectionFederatedIdentityCredentialArgs']]:
+    def federated_identity_credential(self) -> pulumi.Input[Optional['AzureConnectionFederatedIdentityCredentialArgs']]:
         """
         no documentation available
         """
         return pulumi.get(self, "federated_identity_credential")
 
     @federated_identity_credential.setter
-    def federated_identity_credential(self, value: Optional[pulumi.Input['AzureConnectionFederatedIdentityCredentialArgs']]):
+    def federated_identity_credential(self, value: pulumi.Input[Optional['AzureConnectionFederatedIdentityCredentialArgs']]):
         pulumi.set(self, "federated_identity_credential", value)
 
     @_builtins.property
     @pulumi.getter
-    def name(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def name(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The name of the connection
         """
         return pulumi.get(self, "name")
 
     @name.setter
-    def name(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def name(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "name", value)
 
     @_builtins.property
     @pulumi.getter
-    def type(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def type(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Azure Authentication mechanism to be used by the connection. Possible Values: `clientSecret`, `federatedIdentityCredential`
         """
         return pulumi.get(self, "type")
 
     @type.setter
-    def type(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def type(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "type", value)
 
 
@@ -169,10 +169,10 @@ class AzureConnection(pulumi.CustomResource):
     def __init__(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 client_secret: Optional[pulumi.Input[Union['AzureConnectionClientSecretArgs', 'AzureConnectionClientSecretArgsDict']]] = None,
-                 federated_identity_credential: Optional[pulumi.Input[Union['AzureConnectionFederatedIdentityCredentialArgs', 'AzureConnectionFederatedIdentityCredentialArgsDict']]] = None,
-                 name: Optional[pulumi.Input[_builtins.str]] = None,
-                 type: Optional[pulumi.Input[_builtins.str]] = None,
+                 client_secret: pulumi.Input[Optional[Union['AzureConnectionClientSecretArgs', 'AzureConnectionClientSecretArgsDict']]] = None,
+                 federated_identity_credential: pulumi.Input[Optional[Union['AzureConnectionFederatedIdentityCredentialArgs', 'AzureConnectionFederatedIdentityCredentialArgsDict']]] = None,
+                 name: pulumi.Input[Optional[_builtins.str]] = None,
+                 type: pulumi.Input[Optional[_builtins.str]] = None,
                  __props__=None):
         """
         > This resource requires the API token scopes **Read settings** (`settings.read`) and **Write settings** (`settings.write`)
@@ -408,10 +408,10 @@ class AzureConnection(pulumi.CustomResource):
     def _internal_init(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 client_secret: Optional[pulumi.Input[Union['AzureConnectionClientSecretArgs', 'AzureConnectionClientSecretArgsDict']]] = None,
-                 federated_identity_credential: Optional[pulumi.Input[Union['AzureConnectionFederatedIdentityCredentialArgs', 'AzureConnectionFederatedIdentityCredentialArgsDict']]] = None,
-                 name: Optional[pulumi.Input[_builtins.str]] = None,
-                 type: Optional[pulumi.Input[_builtins.str]] = None,
+                 client_secret: pulumi.Input[Optional[Union['AzureConnectionClientSecretArgs', 'AzureConnectionClientSecretArgsDict']]] = None,
+                 federated_identity_credential: pulumi.Input[Optional[Union['AzureConnectionFederatedIdentityCredentialArgs', 'AzureConnectionFederatedIdentityCredentialArgsDict']]] = None,
+                 name: pulumi.Input[Optional[_builtins.str]] = None,
+                 type: pulumi.Input[Optional[_builtins.str]] = None,
                  __props__=None):
         opts = pulumi.ResourceOptions.merge(_utilities.get_resource_opts_defaults(), opts)
         if not isinstance(opts, pulumi.ResourceOptions):
@@ -437,10 +437,10 @@ class AzureConnection(pulumi.CustomResource):
     def get(resource_name: str,
             id: pulumi.Input[str],
             opts: Optional[pulumi.ResourceOptions] = None,
-            client_secret: Optional[pulumi.Input[Union['AzureConnectionClientSecretArgs', 'AzureConnectionClientSecretArgsDict']]] = None,
-            federated_identity_credential: Optional[pulumi.Input[Union['AzureConnectionFederatedIdentityCredentialArgs', 'AzureConnectionFederatedIdentityCredentialArgsDict']]] = None,
-            name: Optional[pulumi.Input[_builtins.str]] = None,
-            type: Optional[pulumi.Input[_builtins.str]] = None) -> 'AzureConnection':
+            client_secret: pulumi.Input[Optional[Union['AzureConnectionClientSecretArgs', 'AzureConnectionClientSecretArgsDict']]] = None,
+            federated_identity_credential: pulumi.Input[Optional[Union['AzureConnectionFederatedIdentityCredentialArgs', 'AzureConnectionFederatedIdentityCredentialArgsDict']]] = None,
+            name: pulumi.Input[Optional[_builtins.str]] = None,
+            type: pulumi.Input[Optional[_builtins.str]] = None) -> 'AzureConnection':
         """
         Get an existing AzureConnection resource's state with the given name, id, and optional extra
         properties used to qualify the lookup.

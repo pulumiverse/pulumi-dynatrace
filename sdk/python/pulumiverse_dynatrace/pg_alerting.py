@@ -21,8 +21,8 @@ class PgAlertingArgs:
     def __init__(__self__, *,
                  enabled: pulumi.Input[_builtins.bool],
                  process_group: pulumi.Input[_builtins.str],
-                 alerting_mode: Optional[pulumi.Input[_builtins.str]] = None,
-                 minimum_instance_threshold: Optional[pulumi.Input[_builtins.int]] = None):
+                 alerting_mode: pulumi.Input[Optional[_builtins.str]] = None,
+                 minimum_instance_threshold: pulumi.Input[Optional[_builtins.int]] = None):
         """
         The set of arguments for constructing a PgAlerting resource.
 
@@ -64,36 +64,36 @@ class PgAlertingArgs:
 
     @_builtins.property
     @pulumi.getter(name="alertingMode")
-    def alerting_mode(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def alerting_mode(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Possible Values: `ON_INSTANCE_COUNT_VIOLATION`, `ON_PGI_UNAVAILABILITY`
         """
         return pulumi.get(self, "alerting_mode")
 
     @alerting_mode.setter
-    def alerting_mode(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def alerting_mode(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "alerting_mode", value)
 
     @_builtins.property
     @pulumi.getter(name="minimumInstanceThreshold")
-    def minimum_instance_threshold(self) -> Optional[pulumi.Input[_builtins.int]]:
+    def minimum_instance_threshold(self) -> pulumi.Input[Optional[_builtins.int]]:
         """
         Open a new problem if the number of active process instances in the group is fewer than X
         """
         return pulumi.get(self, "minimum_instance_threshold")
 
     @minimum_instance_threshold.setter
-    def minimum_instance_threshold(self, value: Optional[pulumi.Input[_builtins.int]]):
+    def minimum_instance_threshold(self, value: pulumi.Input[Optional[_builtins.int]]):
         pulumi.set(self, "minimum_instance_threshold", value)
 
 
 @pulumi.input_type
 class _PgAlertingState:
     def __init__(__self__, *,
-                 alerting_mode: Optional[pulumi.Input[_builtins.str]] = None,
-                 enabled: Optional[pulumi.Input[_builtins.bool]] = None,
-                 minimum_instance_threshold: Optional[pulumi.Input[_builtins.int]] = None,
-                 process_group: Optional[pulumi.Input[_builtins.str]] = None):
+                 alerting_mode: pulumi.Input[Optional[_builtins.str]] = None,
+                 enabled: pulumi.Input[Optional[_builtins.bool]] = None,
+                 minimum_instance_threshold: pulumi.Input[Optional[_builtins.int]] = None,
+                 process_group: pulumi.Input[Optional[_builtins.str]] = None):
         """
         Input properties used for looking up and filtering PgAlerting resources.
 
@@ -113,50 +113,50 @@ class _PgAlertingState:
 
     @_builtins.property
     @pulumi.getter(name="alertingMode")
-    def alerting_mode(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def alerting_mode(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Possible Values: `ON_INSTANCE_COUNT_VIOLATION`, `ON_PGI_UNAVAILABILITY`
         """
         return pulumi.get(self, "alerting_mode")
 
     @alerting_mode.setter
-    def alerting_mode(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def alerting_mode(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "alerting_mode", value)
 
     @_builtins.property
     @pulumi.getter
-    def enabled(self) -> Optional[pulumi.Input[_builtins.bool]]:
+    def enabled(self) -> pulumi.Input[Optional[_builtins.bool]]:
         """
         Enable (`true`) or disable (`false`) process group availability monitoring
         """
         return pulumi.get(self, "enabled")
 
     @enabled.setter
-    def enabled(self, value: Optional[pulumi.Input[_builtins.bool]]):
+    def enabled(self, value: pulumi.Input[Optional[_builtins.bool]]):
         pulumi.set(self, "enabled", value)
 
     @_builtins.property
     @pulumi.getter(name="minimumInstanceThreshold")
-    def minimum_instance_threshold(self) -> Optional[pulumi.Input[_builtins.int]]:
+    def minimum_instance_threshold(self) -> pulumi.Input[Optional[_builtins.int]]:
         """
         Open a new problem if the number of active process instances in the group is fewer than X
         """
         return pulumi.get(self, "minimum_instance_threshold")
 
     @minimum_instance_threshold.setter
-    def minimum_instance_threshold(self, value: Optional[pulumi.Input[_builtins.int]]):
+    def minimum_instance_threshold(self, value: pulumi.Input[Optional[_builtins.int]]):
         pulumi.set(self, "minimum_instance_threshold", value)
 
     @_builtins.property
     @pulumi.getter(name="processGroup")
-    def process_group(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def process_group(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The process group ID for availability monitoring
         """
         return pulumi.get(self, "process_group")
 
     @process_group.setter
-    def process_group(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def process_group(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "process_group", value)
 
 
@@ -166,10 +166,10 @@ class PgAlerting(pulumi.CustomResource):
     def __init__(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 alerting_mode: Optional[pulumi.Input[_builtins.str]] = None,
-                 enabled: Optional[pulumi.Input[_builtins.bool]] = None,
-                 minimum_instance_threshold: Optional[pulumi.Input[_builtins.int]] = None,
-                 process_group: Optional[pulumi.Input[_builtins.str]] = None,
+                 alerting_mode: pulumi.Input[Optional[_builtins.str]] = None,
+                 enabled: pulumi.Input[Optional[_builtins.bool]] = None,
+                 minimum_instance_threshold: pulumi.Input[Optional[_builtins.int]] = None,
+                 process_group: pulumi.Input[Optional[_builtins.str]] = None,
                  __props__=None):
         """
         > This resource requires the API token scopes **Read settings** (`settings.read`) and **Write settings** (`settings.write`)
@@ -231,10 +231,10 @@ class PgAlerting(pulumi.CustomResource):
     def _internal_init(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 alerting_mode: Optional[pulumi.Input[_builtins.str]] = None,
-                 enabled: Optional[pulumi.Input[_builtins.bool]] = None,
-                 minimum_instance_threshold: Optional[pulumi.Input[_builtins.int]] = None,
-                 process_group: Optional[pulumi.Input[_builtins.str]] = None,
+                 alerting_mode: pulumi.Input[Optional[_builtins.str]] = None,
+                 enabled: pulumi.Input[Optional[_builtins.bool]] = None,
+                 minimum_instance_threshold: pulumi.Input[Optional[_builtins.int]] = None,
+                 process_group: pulumi.Input[Optional[_builtins.str]] = None,
                  __props__=None):
         opts = pulumi.ResourceOptions.merge(_utilities.get_resource_opts_defaults(), opts)
         if not isinstance(opts, pulumi.ResourceOptions):
@@ -262,10 +262,10 @@ class PgAlerting(pulumi.CustomResource):
     def get(resource_name: str,
             id: pulumi.Input[str],
             opts: Optional[pulumi.ResourceOptions] = None,
-            alerting_mode: Optional[pulumi.Input[_builtins.str]] = None,
-            enabled: Optional[pulumi.Input[_builtins.bool]] = None,
-            minimum_instance_threshold: Optional[pulumi.Input[_builtins.int]] = None,
-            process_group: Optional[pulumi.Input[_builtins.str]] = None) -> 'PgAlerting':
+            alerting_mode: pulumi.Input[Optional[_builtins.str]] = None,
+            enabled: pulumi.Input[Optional[_builtins.bool]] = None,
+            minimum_instance_threshold: pulumi.Input[Optional[_builtins.int]] = None,
+            process_group: pulumi.Input[Optional[_builtins.str]] = None) -> 'PgAlerting':
         """
         Get an existing PgAlerting resource's state with the given name, id, and optional extra
         properties used to qualify the lookup.

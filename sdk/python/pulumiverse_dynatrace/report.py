@@ -23,8 +23,8 @@ class ReportArgs:
     def __init__(__self__, *,
                  dashboard_id: pulumi.Input[_builtins.str],
                  type: pulumi.Input[_builtins.str],
-                 email_notifications: Optional[pulumi.Input[_builtins.bool]] = None,
-                 subscriptions: Optional[pulumi.Input['ReportSubscriptionsArgs']] = None):
+                 email_notifications: pulumi.Input[Optional[_builtins.bool]] = None,
+                 subscriptions: pulumi.Input[Optional['ReportSubscriptionsArgs']] = None):
         """
         The set of arguments for constructing a Report resource.
 
@@ -66,36 +66,36 @@ class ReportArgs:
 
     @_builtins.property
     @pulumi.getter(name="emailNotifications")
-    def email_notifications(self) -> Optional[pulumi.Input[_builtins.bool]]:
+    def email_notifications(self) -> pulumi.Input[Optional[_builtins.bool]]:
         """
         The email notifications for the dashboard report are enabled (true) or disabled (false).
         """
         return pulumi.get(self, "email_notifications")
 
     @email_notifications.setter
-    def email_notifications(self, value: Optional[pulumi.Input[_builtins.bool]]):
+    def email_notifications(self, value: pulumi.Input[Optional[_builtins.bool]]):
         pulumi.set(self, "email_notifications", value)
 
     @_builtins.property
     @pulumi.getter
-    def subscriptions(self) -> Optional[pulumi.Input['ReportSubscriptionsArgs']]:
+    def subscriptions(self) -> pulumi.Input[Optional['ReportSubscriptionsArgs']]:
         """
         A list of the report subscribers
         """
         return pulumi.get(self, "subscriptions")
 
     @subscriptions.setter
-    def subscriptions(self, value: Optional[pulumi.Input['ReportSubscriptionsArgs']]):
+    def subscriptions(self, value: pulumi.Input[Optional['ReportSubscriptionsArgs']]):
         pulumi.set(self, "subscriptions", value)
 
 
 @pulumi.input_type
 class _ReportState:
     def __init__(__self__, *,
-                 dashboard_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 email_notifications: Optional[pulumi.Input[_builtins.bool]] = None,
-                 subscriptions: Optional[pulumi.Input['ReportSubscriptionsArgs']] = None,
-                 type: Optional[pulumi.Input[_builtins.str]] = None):
+                 dashboard_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 email_notifications: pulumi.Input[Optional[_builtins.bool]] = None,
+                 subscriptions: pulumi.Input[Optional['ReportSubscriptionsArgs']] = None,
+                 type: pulumi.Input[Optional[_builtins.str]] = None):
         """
         Input properties used for looking up and filtering Report resources.
 
@@ -115,50 +115,50 @@ class _ReportState:
 
     @_builtins.property
     @pulumi.getter(name="dashboardId")
-    def dashboard_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def dashboard_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The ID of the associated dashboard
         """
         return pulumi.get(self, "dashboard_id")
 
     @dashboard_id.setter
-    def dashboard_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def dashboard_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "dashboard_id", value)
 
     @_builtins.property
     @pulumi.getter(name="emailNotifications")
-    def email_notifications(self) -> Optional[pulumi.Input[_builtins.bool]]:
+    def email_notifications(self) -> pulumi.Input[Optional[_builtins.bool]]:
         """
         The email notifications for the dashboard report are enabled (true) or disabled (false).
         """
         return pulumi.get(self, "email_notifications")
 
     @email_notifications.setter
-    def email_notifications(self, value: Optional[pulumi.Input[_builtins.bool]]):
+    def email_notifications(self, value: pulumi.Input[Optional[_builtins.bool]]):
         pulumi.set(self, "email_notifications", value)
 
     @_builtins.property
     @pulumi.getter
-    def subscriptions(self) -> Optional[pulumi.Input['ReportSubscriptionsArgs']]:
+    def subscriptions(self) -> pulumi.Input[Optional['ReportSubscriptionsArgs']]:
         """
         A list of the report subscribers
         """
         return pulumi.get(self, "subscriptions")
 
     @subscriptions.setter
-    def subscriptions(self, value: Optional[pulumi.Input['ReportSubscriptionsArgs']]):
+    def subscriptions(self, value: pulumi.Input[Optional['ReportSubscriptionsArgs']]):
         pulumi.set(self, "subscriptions", value)
 
     @_builtins.property
     @pulumi.getter
-    def type(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def type(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The type of report
         """
         return pulumi.get(self, "type")
 
     @type.setter
-    def type(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def type(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "type", value)
 
 
@@ -168,10 +168,10 @@ class Report(pulumi.CustomResource):
     def __init__(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 dashboard_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 email_notifications: Optional[pulumi.Input[_builtins.bool]] = None,
-                 subscriptions: Optional[pulumi.Input[Union['ReportSubscriptionsArgs', 'ReportSubscriptionsArgsDict']]] = None,
-                 type: Optional[pulumi.Input[_builtins.str]] = None,
+                 dashboard_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 email_notifications: pulumi.Input[Optional[_builtins.bool]] = None,
+                 subscriptions: pulumi.Input[Optional[Union['ReportSubscriptionsArgs', 'ReportSubscriptionsArgsDict']]] = None,
+                 type: pulumi.Input[Optional[_builtins.str]] = None,
                  __props__=None):
         """
         > This resource requires the API token scopes **Read configuration** (`ReadConfig`) and **Write configuration** (`WriteConfig`)
@@ -221,10 +221,10 @@ class Report(pulumi.CustomResource):
     def _internal_init(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 dashboard_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 email_notifications: Optional[pulumi.Input[_builtins.bool]] = None,
-                 subscriptions: Optional[pulumi.Input[Union['ReportSubscriptionsArgs', 'ReportSubscriptionsArgsDict']]] = None,
-                 type: Optional[pulumi.Input[_builtins.str]] = None,
+                 dashboard_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 email_notifications: pulumi.Input[Optional[_builtins.bool]] = None,
+                 subscriptions: pulumi.Input[Optional[Union['ReportSubscriptionsArgs', 'ReportSubscriptionsArgsDict']]] = None,
+                 type: pulumi.Input[Optional[_builtins.str]] = None,
                  __props__=None):
         opts = pulumi.ResourceOptions.merge(_utilities.get_resource_opts_defaults(), opts)
         if not isinstance(opts, pulumi.ResourceOptions):
@@ -252,10 +252,10 @@ class Report(pulumi.CustomResource):
     def get(resource_name: str,
             id: pulumi.Input[str],
             opts: Optional[pulumi.ResourceOptions] = None,
-            dashboard_id: Optional[pulumi.Input[_builtins.str]] = None,
-            email_notifications: Optional[pulumi.Input[_builtins.bool]] = None,
-            subscriptions: Optional[pulumi.Input[Union['ReportSubscriptionsArgs', 'ReportSubscriptionsArgsDict']]] = None,
-            type: Optional[pulumi.Input[_builtins.str]] = None) -> 'Report':
+            dashboard_id: pulumi.Input[Optional[_builtins.str]] = None,
+            email_notifications: pulumi.Input[Optional[_builtins.bool]] = None,
+            subscriptions: pulumi.Input[Optional[Union['ReportSubscriptionsArgs', 'ReportSubscriptionsArgsDict']]] = None,
+            type: pulumi.Input[Optional[_builtins.str]] = None) -> 'Report':
         """
         Get an existing Report resource's state with the given name, id, and optional extra
         properties used to qualify the lookup.

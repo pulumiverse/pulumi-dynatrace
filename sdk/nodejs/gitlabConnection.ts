@@ -120,15 +120,15 @@ export interface GitlabConnectionState {
     /**
      * A unique and clearly identifiable connection name to your GitLab instance.
      */
-    name?: pulumi.Input<string>;
+    name?: pulumi.Input<string | undefined>;
     /**
      * The GitLab token to use for authentication. Please note that this token is not refreshed and can expire.
      */
-    token?: pulumi.Input<string>;
+    token?: pulumi.Input<string | undefined>;
     /**
      * The GitLab URL instance you want to connect. For example, https://gitlab.com
      */
-    url?: pulumi.Input<string>;
+    url?: pulumi.Input<string | undefined>;
 }
 
 /**
@@ -138,7 +138,7 @@ export interface GitlabConnectionArgs {
     /**
      * A unique and clearly identifiable connection name to your GitLab instance.
      */
-    name?: pulumi.Input<string>;
+    name?: pulumi.Input<string | undefined>;
     /**
      * The GitLab token to use for authentication. Please note that this token is not refreshed and can expire.
      */

@@ -22,12 +22,12 @@ __all__ = ['AutomationSchedulingRuleArgs', 'AutomationSchedulingRule']
 class AutomationSchedulingRuleArgs:
     def __init__(__self__, *,
                  title: pulumi.Input[_builtins.str],
-                 business_calendar: Optional[pulumi.Input[_builtins.str]] = None,
-                 description: Optional[pulumi.Input[_builtins.str]] = None,
-                 fixed_offset: Optional[pulumi.Input['AutomationSchedulingRuleFixedOffsetArgs']] = None,
-                 grouping: Optional[pulumi.Input['AutomationSchedulingRuleGroupingArgs']] = None,
-                 recurrence: Optional[pulumi.Input['AutomationSchedulingRuleRecurrenceArgs']] = None,
-                 relative_offset: Optional[pulumi.Input['AutomationSchedulingRuleRelativeOffsetArgs']] = None):
+                 business_calendar: pulumi.Input[Optional[_builtins.str]] = None,
+                 description: pulumi.Input[Optional[_builtins.str]] = None,
+                 fixed_offset: pulumi.Input[Optional['AutomationSchedulingRuleFixedOffsetArgs']] = None,
+                 grouping: pulumi.Input[Optional['AutomationSchedulingRuleGroupingArgs']] = None,
+                 recurrence: pulumi.Input[Optional['AutomationSchedulingRuleRecurrenceArgs']] = None,
+                 relative_offset: pulumi.Input[Optional['AutomationSchedulingRuleRelativeOffsetArgs']] = None):
         """
         The set of arguments for constructing a AutomationSchedulingRule resource.
 
@@ -62,72 +62,72 @@ class AutomationSchedulingRuleArgs:
 
     @_builtins.property
     @pulumi.getter(name="businessCalendar")
-    def business_calendar(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def business_calendar(self) -> pulumi.Input[Optional[_builtins.str]]:
         return pulumi.get(self, "business_calendar")
 
     @business_calendar.setter
-    def business_calendar(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def business_calendar(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "business_calendar", value)
 
     @_builtins.property
     @pulumi.getter
-    def description(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def description(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         An optional description for the scheduling rule
         """
         return pulumi.get(self, "description")
 
     @description.setter
-    def description(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def description(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "description", value)
 
     @_builtins.property
     @pulumi.getter(name="fixedOffset")
-    def fixed_offset(self) -> Optional[pulumi.Input['AutomationSchedulingRuleFixedOffsetArgs']]:
+    def fixed_offset(self) -> pulumi.Input[Optional['AutomationSchedulingRuleFixedOffsetArgs']]:
         return pulumi.get(self, "fixed_offset")
 
     @fixed_offset.setter
-    def fixed_offset(self, value: Optional[pulumi.Input['AutomationSchedulingRuleFixedOffsetArgs']]):
+    def fixed_offset(self, value: pulumi.Input[Optional['AutomationSchedulingRuleFixedOffsetArgs']]):
         pulumi.set(self, "fixed_offset", value)
 
     @_builtins.property
     @pulumi.getter
-    def grouping(self) -> Optional[pulumi.Input['AutomationSchedulingRuleGroupingArgs']]:
+    def grouping(self) -> pulumi.Input[Optional['AutomationSchedulingRuleGroupingArgs']]:
         return pulumi.get(self, "grouping")
 
     @grouping.setter
-    def grouping(self, value: Optional[pulumi.Input['AutomationSchedulingRuleGroupingArgs']]):
+    def grouping(self, value: pulumi.Input[Optional['AutomationSchedulingRuleGroupingArgs']]):
         pulumi.set(self, "grouping", value)
 
     @_builtins.property
     @pulumi.getter
-    def recurrence(self) -> Optional[pulumi.Input['AutomationSchedulingRuleRecurrenceArgs']]:
+    def recurrence(self) -> pulumi.Input[Optional['AutomationSchedulingRuleRecurrenceArgs']]:
         return pulumi.get(self, "recurrence")
 
     @recurrence.setter
-    def recurrence(self, value: Optional[pulumi.Input['AutomationSchedulingRuleRecurrenceArgs']]):
+    def recurrence(self, value: pulumi.Input[Optional['AutomationSchedulingRuleRecurrenceArgs']]):
         pulumi.set(self, "recurrence", value)
 
     @_builtins.property
     @pulumi.getter(name="relativeOffset")
-    def relative_offset(self) -> Optional[pulumi.Input['AutomationSchedulingRuleRelativeOffsetArgs']]:
+    def relative_offset(self) -> pulumi.Input[Optional['AutomationSchedulingRuleRelativeOffsetArgs']]:
         return pulumi.get(self, "relative_offset")
 
     @relative_offset.setter
-    def relative_offset(self, value: Optional[pulumi.Input['AutomationSchedulingRuleRelativeOffsetArgs']]):
+    def relative_offset(self, value: pulumi.Input[Optional['AutomationSchedulingRuleRelativeOffsetArgs']]):
         pulumi.set(self, "relative_offset", value)
 
 
 @pulumi.input_type
 class _AutomationSchedulingRuleState:
     def __init__(__self__, *,
-                 business_calendar: Optional[pulumi.Input[_builtins.str]] = None,
-                 description: Optional[pulumi.Input[_builtins.str]] = None,
-                 fixed_offset: Optional[pulumi.Input['AutomationSchedulingRuleFixedOffsetArgs']] = None,
-                 grouping: Optional[pulumi.Input['AutomationSchedulingRuleGroupingArgs']] = None,
-                 recurrence: Optional[pulumi.Input['AutomationSchedulingRuleRecurrenceArgs']] = None,
-                 relative_offset: Optional[pulumi.Input['AutomationSchedulingRuleRelativeOffsetArgs']] = None,
-                 title: Optional[pulumi.Input[_builtins.str]] = None):
+                 business_calendar: pulumi.Input[Optional[_builtins.str]] = None,
+                 description: pulumi.Input[Optional[_builtins.str]] = None,
+                 fixed_offset: pulumi.Input[Optional['AutomationSchedulingRuleFixedOffsetArgs']] = None,
+                 grouping: pulumi.Input[Optional['AutomationSchedulingRuleGroupingArgs']] = None,
+                 recurrence: pulumi.Input[Optional['AutomationSchedulingRuleRecurrenceArgs']] = None,
+                 relative_offset: pulumi.Input[Optional['AutomationSchedulingRuleRelativeOffsetArgs']] = None,
+                 title: pulumi.Input[Optional[_builtins.str]] = None):
         """
         Input properties used for looking up and filtering AutomationSchedulingRule resources.
 
@@ -151,71 +151,71 @@ class _AutomationSchedulingRuleState:
 
     @_builtins.property
     @pulumi.getter(name="businessCalendar")
-    def business_calendar(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def business_calendar(self) -> pulumi.Input[Optional[_builtins.str]]:
         return pulumi.get(self, "business_calendar")
 
     @business_calendar.setter
-    def business_calendar(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def business_calendar(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "business_calendar", value)
 
     @_builtins.property
     @pulumi.getter
-    def description(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def description(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         An optional description for the scheduling rule
         """
         return pulumi.get(self, "description")
 
     @description.setter
-    def description(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def description(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "description", value)
 
     @_builtins.property
     @pulumi.getter(name="fixedOffset")
-    def fixed_offset(self) -> Optional[pulumi.Input['AutomationSchedulingRuleFixedOffsetArgs']]:
+    def fixed_offset(self) -> pulumi.Input[Optional['AutomationSchedulingRuleFixedOffsetArgs']]:
         return pulumi.get(self, "fixed_offset")
 
     @fixed_offset.setter
-    def fixed_offset(self, value: Optional[pulumi.Input['AutomationSchedulingRuleFixedOffsetArgs']]):
+    def fixed_offset(self, value: pulumi.Input[Optional['AutomationSchedulingRuleFixedOffsetArgs']]):
         pulumi.set(self, "fixed_offset", value)
 
     @_builtins.property
     @pulumi.getter
-    def grouping(self) -> Optional[pulumi.Input['AutomationSchedulingRuleGroupingArgs']]:
+    def grouping(self) -> pulumi.Input[Optional['AutomationSchedulingRuleGroupingArgs']]:
         return pulumi.get(self, "grouping")
 
     @grouping.setter
-    def grouping(self, value: Optional[pulumi.Input['AutomationSchedulingRuleGroupingArgs']]):
+    def grouping(self, value: pulumi.Input[Optional['AutomationSchedulingRuleGroupingArgs']]):
         pulumi.set(self, "grouping", value)
 
     @_builtins.property
     @pulumi.getter
-    def recurrence(self) -> Optional[pulumi.Input['AutomationSchedulingRuleRecurrenceArgs']]:
+    def recurrence(self) -> pulumi.Input[Optional['AutomationSchedulingRuleRecurrenceArgs']]:
         return pulumi.get(self, "recurrence")
 
     @recurrence.setter
-    def recurrence(self, value: Optional[pulumi.Input['AutomationSchedulingRuleRecurrenceArgs']]):
+    def recurrence(self, value: pulumi.Input[Optional['AutomationSchedulingRuleRecurrenceArgs']]):
         pulumi.set(self, "recurrence", value)
 
     @_builtins.property
     @pulumi.getter(name="relativeOffset")
-    def relative_offset(self) -> Optional[pulumi.Input['AutomationSchedulingRuleRelativeOffsetArgs']]:
+    def relative_offset(self) -> pulumi.Input[Optional['AutomationSchedulingRuleRelativeOffsetArgs']]:
         return pulumi.get(self, "relative_offset")
 
     @relative_offset.setter
-    def relative_offset(self, value: Optional[pulumi.Input['AutomationSchedulingRuleRelativeOffsetArgs']]):
+    def relative_offset(self, value: pulumi.Input[Optional['AutomationSchedulingRuleRelativeOffsetArgs']]):
         pulumi.set(self, "relative_offset", value)
 
     @_builtins.property
     @pulumi.getter
-    def title(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def title(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The title / name of the scheduling rule
         """
         return pulumi.get(self, "title")
 
     @title.setter
-    def title(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def title(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "title", value)
 
 
@@ -225,13 +225,13 @@ class AutomationSchedulingRule(pulumi.CustomResource):
     def __init__(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 business_calendar: Optional[pulumi.Input[_builtins.str]] = None,
-                 description: Optional[pulumi.Input[_builtins.str]] = None,
-                 fixed_offset: Optional[pulumi.Input[Union['AutomationSchedulingRuleFixedOffsetArgs', 'AutomationSchedulingRuleFixedOffsetArgsDict']]] = None,
-                 grouping: Optional[pulumi.Input[Union['AutomationSchedulingRuleGroupingArgs', 'AutomationSchedulingRuleGroupingArgsDict']]] = None,
-                 recurrence: Optional[pulumi.Input[Union['AutomationSchedulingRuleRecurrenceArgs', 'AutomationSchedulingRuleRecurrenceArgsDict']]] = None,
-                 relative_offset: Optional[pulumi.Input[Union['AutomationSchedulingRuleRelativeOffsetArgs', 'AutomationSchedulingRuleRelativeOffsetArgsDict']]] = None,
-                 title: Optional[pulumi.Input[_builtins.str]] = None,
+                 business_calendar: pulumi.Input[Optional[_builtins.str]] = None,
+                 description: pulumi.Input[Optional[_builtins.str]] = None,
+                 fixed_offset: pulumi.Input[Optional[Union['AutomationSchedulingRuleFixedOffsetArgs', 'AutomationSchedulingRuleFixedOffsetArgsDict']]] = None,
+                 grouping: pulumi.Input[Optional[Union['AutomationSchedulingRuleGroupingArgs', 'AutomationSchedulingRuleGroupingArgsDict']]] = None,
+                 recurrence: pulumi.Input[Optional[Union['AutomationSchedulingRuleRecurrenceArgs', 'AutomationSchedulingRuleRecurrenceArgsDict']]] = None,
+                 relative_offset: pulumi.Input[Optional[Union['AutomationSchedulingRuleRelativeOffsetArgs', 'AutomationSchedulingRuleRelativeOffsetArgsDict']]] = None,
+                 title: pulumi.Input[Optional[_builtins.str]] = None,
                  __props__=None):
         """
         > **Dynatrace SaaS only**
@@ -287,13 +287,13 @@ class AutomationSchedulingRule(pulumi.CustomResource):
     def _internal_init(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 business_calendar: Optional[pulumi.Input[_builtins.str]] = None,
-                 description: Optional[pulumi.Input[_builtins.str]] = None,
-                 fixed_offset: Optional[pulumi.Input[Union['AutomationSchedulingRuleFixedOffsetArgs', 'AutomationSchedulingRuleFixedOffsetArgsDict']]] = None,
-                 grouping: Optional[pulumi.Input[Union['AutomationSchedulingRuleGroupingArgs', 'AutomationSchedulingRuleGroupingArgsDict']]] = None,
-                 recurrence: Optional[pulumi.Input[Union['AutomationSchedulingRuleRecurrenceArgs', 'AutomationSchedulingRuleRecurrenceArgsDict']]] = None,
-                 relative_offset: Optional[pulumi.Input[Union['AutomationSchedulingRuleRelativeOffsetArgs', 'AutomationSchedulingRuleRelativeOffsetArgsDict']]] = None,
-                 title: Optional[pulumi.Input[_builtins.str]] = None,
+                 business_calendar: pulumi.Input[Optional[_builtins.str]] = None,
+                 description: pulumi.Input[Optional[_builtins.str]] = None,
+                 fixed_offset: pulumi.Input[Optional[Union['AutomationSchedulingRuleFixedOffsetArgs', 'AutomationSchedulingRuleFixedOffsetArgsDict']]] = None,
+                 grouping: pulumi.Input[Optional[Union['AutomationSchedulingRuleGroupingArgs', 'AutomationSchedulingRuleGroupingArgsDict']]] = None,
+                 recurrence: pulumi.Input[Optional[Union['AutomationSchedulingRuleRecurrenceArgs', 'AutomationSchedulingRuleRecurrenceArgsDict']]] = None,
+                 relative_offset: pulumi.Input[Optional[Union['AutomationSchedulingRuleRelativeOffsetArgs', 'AutomationSchedulingRuleRelativeOffsetArgsDict']]] = None,
+                 title: pulumi.Input[Optional[_builtins.str]] = None,
                  __props__=None):
         opts = pulumi.ResourceOptions.merge(_utilities.get_resource_opts_defaults(), opts)
         if not isinstance(opts, pulumi.ResourceOptions):
@@ -322,13 +322,13 @@ class AutomationSchedulingRule(pulumi.CustomResource):
     def get(resource_name: str,
             id: pulumi.Input[str],
             opts: Optional[pulumi.ResourceOptions] = None,
-            business_calendar: Optional[pulumi.Input[_builtins.str]] = None,
-            description: Optional[pulumi.Input[_builtins.str]] = None,
-            fixed_offset: Optional[pulumi.Input[Union['AutomationSchedulingRuleFixedOffsetArgs', 'AutomationSchedulingRuleFixedOffsetArgsDict']]] = None,
-            grouping: Optional[pulumi.Input[Union['AutomationSchedulingRuleGroupingArgs', 'AutomationSchedulingRuleGroupingArgsDict']]] = None,
-            recurrence: Optional[pulumi.Input[Union['AutomationSchedulingRuleRecurrenceArgs', 'AutomationSchedulingRuleRecurrenceArgsDict']]] = None,
-            relative_offset: Optional[pulumi.Input[Union['AutomationSchedulingRuleRelativeOffsetArgs', 'AutomationSchedulingRuleRelativeOffsetArgsDict']]] = None,
-            title: Optional[pulumi.Input[_builtins.str]] = None) -> 'AutomationSchedulingRule':
+            business_calendar: pulumi.Input[Optional[_builtins.str]] = None,
+            description: pulumi.Input[Optional[_builtins.str]] = None,
+            fixed_offset: pulumi.Input[Optional[Union['AutomationSchedulingRuleFixedOffsetArgs', 'AutomationSchedulingRuleFixedOffsetArgsDict']]] = None,
+            grouping: pulumi.Input[Optional[Union['AutomationSchedulingRuleGroupingArgs', 'AutomationSchedulingRuleGroupingArgsDict']]] = None,
+            recurrence: pulumi.Input[Optional[Union['AutomationSchedulingRuleRecurrenceArgs', 'AutomationSchedulingRuleRecurrenceArgsDict']]] = None,
+            relative_offset: pulumi.Input[Optional[Union['AutomationSchedulingRuleRelativeOffsetArgs', 'AutomationSchedulingRuleRelativeOffsetArgsDict']]] = None,
+            title: pulumi.Input[Optional[_builtins.str]] = None) -> 'AutomationSchedulingRule':
         """
         Get an existing AutomationSchedulingRule resource's state with the given name, id, and optional extra
         properties used to qualify the lookup.

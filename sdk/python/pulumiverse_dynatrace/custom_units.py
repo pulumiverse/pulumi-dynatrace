@@ -22,7 +22,7 @@ class CustomUnitsArgs:
                  description: pulumi.Input[_builtins.str],
                  plural_name: pulumi.Input[_builtins.str],
                  symbol: pulumi.Input[_builtins.str],
-                 name: Optional[pulumi.Input[_builtins.str]] = None):
+                 name: pulumi.Input[Optional[_builtins.str]] = None):
         """
         The set of arguments for constructing a CustomUnits resource.
 
@@ -75,24 +75,24 @@ class CustomUnitsArgs:
 
     @_builtins.property
     @pulumi.getter
-    def name(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def name(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Unit name has to be unique and is used as identifier.
         """
         return pulumi.get(self, "name")
 
     @name.setter
-    def name(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def name(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "name", value)
 
 
 @pulumi.input_type
 class _CustomUnitsState:
     def __init__(__self__, *,
-                 description: Optional[pulumi.Input[_builtins.str]] = None,
-                 name: Optional[pulumi.Input[_builtins.str]] = None,
-                 plural_name: Optional[pulumi.Input[_builtins.str]] = None,
-                 symbol: Optional[pulumi.Input[_builtins.str]] = None):
+                 description: pulumi.Input[Optional[_builtins.str]] = None,
+                 name: pulumi.Input[Optional[_builtins.str]] = None,
+                 plural_name: pulumi.Input[Optional[_builtins.str]] = None,
+                 symbol: pulumi.Input[Optional[_builtins.str]] = None):
         """
         Input properties used for looking up and filtering CustomUnits resources.
 
@@ -112,50 +112,50 @@ class _CustomUnitsState:
 
     @_builtins.property
     @pulumi.getter
-    def description(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def description(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Unit description should provide additional information about the new unit
         """
         return pulumi.get(self, "description")
 
     @description.setter
-    def description(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def description(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "description", value)
 
     @_builtins.property
     @pulumi.getter
-    def name(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def name(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Unit name has to be unique and is used as identifier.
         """
         return pulumi.get(self, "name")
 
     @name.setter
-    def name(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def name(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "name", value)
 
     @_builtins.property
     @pulumi.getter(name="pluralName")
-    def plural_name(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def plural_name(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Unit plural name represent the plural form of the unit name.
         """
         return pulumi.get(self, "plural_name")
 
     @plural_name.setter
-    def plural_name(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def plural_name(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "plural_name", value)
 
     @_builtins.property
     @pulumi.getter
-    def symbol(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def symbol(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Unit symbol has to be unique.
         """
         return pulumi.get(self, "symbol")
 
     @symbol.setter
-    def symbol(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def symbol(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "symbol", value)
 
 
@@ -165,10 +165,10 @@ class CustomUnits(pulumi.CustomResource):
     def __init__(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 description: Optional[pulumi.Input[_builtins.str]] = None,
-                 name: Optional[pulumi.Input[_builtins.str]] = None,
-                 plural_name: Optional[pulumi.Input[_builtins.str]] = None,
-                 symbol: Optional[pulumi.Input[_builtins.str]] = None,
+                 description: pulumi.Input[Optional[_builtins.str]] = None,
+                 name: pulumi.Input[Optional[_builtins.str]] = None,
+                 plural_name: pulumi.Input[Optional[_builtins.str]] = None,
+                 symbol: pulumi.Input[Optional[_builtins.str]] = None,
                  __props__=None):
         """
         > This resource requires the API token scopes **Read settings** (`settings.read`) and **Write settings** (`settings.write`)
@@ -226,10 +226,10 @@ class CustomUnits(pulumi.CustomResource):
     def _internal_init(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 description: Optional[pulumi.Input[_builtins.str]] = None,
-                 name: Optional[pulumi.Input[_builtins.str]] = None,
-                 plural_name: Optional[pulumi.Input[_builtins.str]] = None,
-                 symbol: Optional[pulumi.Input[_builtins.str]] = None,
+                 description: pulumi.Input[Optional[_builtins.str]] = None,
+                 name: pulumi.Input[Optional[_builtins.str]] = None,
+                 plural_name: pulumi.Input[Optional[_builtins.str]] = None,
+                 symbol: pulumi.Input[Optional[_builtins.str]] = None,
                  __props__=None):
         opts = pulumi.ResourceOptions.merge(_utilities.get_resource_opts_defaults(), opts)
         if not isinstance(opts, pulumi.ResourceOptions):
@@ -259,10 +259,10 @@ class CustomUnits(pulumi.CustomResource):
     def get(resource_name: str,
             id: pulumi.Input[str],
             opts: Optional[pulumi.ResourceOptions] = None,
-            description: Optional[pulumi.Input[_builtins.str]] = None,
-            name: Optional[pulumi.Input[_builtins.str]] = None,
-            plural_name: Optional[pulumi.Input[_builtins.str]] = None,
-            symbol: Optional[pulumi.Input[_builtins.str]] = None) -> 'CustomUnits':
+            description: pulumi.Input[Optional[_builtins.str]] = None,
+            name: pulumi.Input[Optional[_builtins.str]] = None,
+            plural_name: pulumi.Input[Optional[_builtins.str]] = None,
+            symbol: pulumi.Input[Optional[_builtins.str]] = None) -> 'CustomUnits':
         """
         Get an existing CustomUnits resource's state with the given name, id, and optional extra
         properties used to qualify the lookup.

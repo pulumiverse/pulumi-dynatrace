@@ -21,8 +21,8 @@ class HostMonitoringArgs:
     def __init__(__self__, *,
                  enabled: pulumi.Input[_builtins.bool],
                  host_id: pulumi.Input[_builtins.str],
-                 auto_injection: Optional[pulumi.Input[_builtins.bool]] = None,
-                 full_stack: Optional[pulumi.Input[_builtins.bool]] = None):
+                 auto_injection: pulumi.Input[Optional[_builtins.bool]] = None,
+                 full_stack: pulumi.Input[Optional[_builtins.bool]] = None):
         """
         The set of arguments for constructing a HostMonitoring resource.
 
@@ -71,37 +71,37 @@ class HostMonitoringArgs:
     @_builtins.property
     @pulumi.getter(name="autoInjection")
     @_utilities.deprecated("""This field has been moved to a new schema, please utilize the resource `HostMonitoringAdvanced` to configure this field.""")
-    def auto_injection(self) -> Optional[pulumi.Input[_builtins.bool]]:
+    def auto_injection(self) -> pulumi.Input[Optional[_builtins.bool]]:
         """
         An auto-injection disabled with [oneagentctl](https://dt-url.net/oneagentctl) takes precedence over this setting and cannot be changed from the Dynatrace web UI.
         """
         return pulumi.get(self, "auto_injection")
 
     @auto_injection.setter
-    def auto_injection(self, value: Optional[pulumi.Input[_builtins.bool]]):
+    def auto_injection(self, value: pulumi.Input[Optional[_builtins.bool]]):
         pulumi.set(self, "auto_injection", value)
 
     @_builtins.property
     @pulumi.getter(name="fullStack")
     @_utilities.deprecated("""This attribute is not supported anymore by the Dynatrace API""")
-    def full_stack(self) -> Optional[pulumi.Input[_builtins.bool]]:
+    def full_stack(self) -> pulumi.Input[Optional[_builtins.bool]]:
         """
         Dynatrace uses full-stack monitoring by default, to monitor every aspect of your environment, including all processes, services, and applications detected on your hosts.
         """
         return pulumi.get(self, "full_stack")
 
     @full_stack.setter
-    def full_stack(self, value: Optional[pulumi.Input[_builtins.bool]]):
+    def full_stack(self, value: pulumi.Input[Optional[_builtins.bool]]):
         pulumi.set(self, "full_stack", value)
 
 
 @pulumi.input_type
 class _HostMonitoringState:
     def __init__(__self__, *,
-                 auto_injection: Optional[pulumi.Input[_builtins.bool]] = None,
-                 enabled: Optional[pulumi.Input[_builtins.bool]] = None,
-                 full_stack: Optional[pulumi.Input[_builtins.bool]] = None,
-                 host_id: Optional[pulumi.Input[_builtins.str]] = None):
+                 auto_injection: pulumi.Input[Optional[_builtins.bool]] = None,
+                 enabled: pulumi.Input[Optional[_builtins.bool]] = None,
+                 full_stack: pulumi.Input[Optional[_builtins.bool]] = None,
+                 host_id: pulumi.Input[Optional[_builtins.str]] = None):
         """
         Input properties used for looking up and filtering HostMonitoring resources.
 
@@ -128,51 +128,51 @@ class _HostMonitoringState:
     @_builtins.property
     @pulumi.getter(name="autoInjection")
     @_utilities.deprecated("""This field has been moved to a new schema, please utilize the resource `HostMonitoringAdvanced` to configure this field.""")
-    def auto_injection(self) -> Optional[pulumi.Input[_builtins.bool]]:
+    def auto_injection(self) -> pulumi.Input[Optional[_builtins.bool]]:
         """
         An auto-injection disabled with [oneagentctl](https://dt-url.net/oneagentctl) takes precedence over this setting and cannot be changed from the Dynatrace web UI.
         """
         return pulumi.get(self, "auto_injection")
 
     @auto_injection.setter
-    def auto_injection(self, value: Optional[pulumi.Input[_builtins.bool]]):
+    def auto_injection(self, value: pulumi.Input[Optional[_builtins.bool]]):
         pulumi.set(self, "auto_injection", value)
 
     @_builtins.property
     @pulumi.getter
-    def enabled(self) -> Optional[pulumi.Input[_builtins.bool]]:
+    def enabled(self) -> pulumi.Input[Optional[_builtins.bool]]:
         """
         This setting is enabled (`true`) or disabled (`false`)
         """
         return pulumi.get(self, "enabled")
 
     @enabled.setter
-    def enabled(self, value: Optional[pulumi.Input[_builtins.bool]]):
+    def enabled(self, value: pulumi.Input[Optional[_builtins.bool]]):
         pulumi.set(self, "enabled", value)
 
     @_builtins.property
     @pulumi.getter(name="fullStack")
     @_utilities.deprecated("""This attribute is not supported anymore by the Dynatrace API""")
-    def full_stack(self) -> Optional[pulumi.Input[_builtins.bool]]:
+    def full_stack(self) -> pulumi.Input[Optional[_builtins.bool]]:
         """
         Dynatrace uses full-stack monitoring by default, to monitor every aspect of your environment, including all processes, services, and applications detected on your hosts.
         """
         return pulumi.get(self, "full_stack")
 
     @full_stack.setter
-    def full_stack(self, value: Optional[pulumi.Input[_builtins.bool]]):
+    def full_stack(self, value: pulumi.Input[Optional[_builtins.bool]]):
         pulumi.set(self, "full_stack", value)
 
     @_builtins.property
     @pulumi.getter(name="hostId")
-    def host_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def host_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The scope of this settings. If the settings should cover the whole environment, just don't specify any scope.
         """
         return pulumi.get(self, "host_id")
 
     @host_id.setter
-    def host_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def host_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "host_id", value)
 
 
@@ -182,10 +182,10 @@ class HostMonitoring(pulumi.CustomResource):
     def __init__(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 auto_injection: Optional[pulumi.Input[_builtins.bool]] = None,
-                 enabled: Optional[pulumi.Input[_builtins.bool]] = None,
-                 full_stack: Optional[pulumi.Input[_builtins.bool]] = None,
-                 host_id: Optional[pulumi.Input[_builtins.str]] = None,
+                 auto_injection: pulumi.Input[Optional[_builtins.bool]] = None,
+                 enabled: pulumi.Input[Optional[_builtins.bool]] = None,
+                 full_stack: pulumi.Input[Optional[_builtins.bool]] = None,
+                 host_id: pulumi.Input[Optional[_builtins.str]] = None,
                  __props__=None):
         """
         > This resource requires the API token scopes **Read settings** (`settings.read`) and **Write settings** (`settings.write`)
@@ -247,10 +247,10 @@ class HostMonitoring(pulumi.CustomResource):
     def _internal_init(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 auto_injection: Optional[pulumi.Input[_builtins.bool]] = None,
-                 enabled: Optional[pulumi.Input[_builtins.bool]] = None,
-                 full_stack: Optional[pulumi.Input[_builtins.bool]] = None,
-                 host_id: Optional[pulumi.Input[_builtins.str]] = None,
+                 auto_injection: pulumi.Input[Optional[_builtins.bool]] = None,
+                 enabled: pulumi.Input[Optional[_builtins.bool]] = None,
+                 full_stack: pulumi.Input[Optional[_builtins.bool]] = None,
+                 host_id: pulumi.Input[Optional[_builtins.str]] = None,
                  __props__=None):
         opts = pulumi.ResourceOptions.merge(_utilities.get_resource_opts_defaults(), opts)
         if not isinstance(opts, pulumi.ResourceOptions):
@@ -278,10 +278,10 @@ class HostMonitoring(pulumi.CustomResource):
     def get(resource_name: str,
             id: pulumi.Input[str],
             opts: Optional[pulumi.ResourceOptions] = None,
-            auto_injection: Optional[pulumi.Input[_builtins.bool]] = None,
-            enabled: Optional[pulumi.Input[_builtins.bool]] = None,
-            full_stack: Optional[pulumi.Input[_builtins.bool]] = None,
-            host_id: Optional[pulumi.Input[_builtins.str]] = None) -> 'HostMonitoring':
+            auto_injection: pulumi.Input[Optional[_builtins.bool]] = None,
+            enabled: pulumi.Input[Optional[_builtins.bool]] = None,
+            full_stack: pulumi.Input[Optional[_builtins.bool]] = None,
+            host_id: pulumi.Input[Optional[_builtins.str]] = None) -> 'HostMonitoring':
         """
         Get an existing HostMonitoring resource's state with the given name, id, and optional extra
         properties used to qualify the lookup.

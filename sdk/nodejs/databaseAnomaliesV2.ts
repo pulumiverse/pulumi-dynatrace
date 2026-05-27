@@ -132,27 +132,27 @@ export interface DatabaseAnomaliesV2State {
     /**
      * Alert if the number of failed database connects within the specified time exceeds the specified absolute threshold:
      */
-    databaseConnections?: pulumi.Input<inputs.DatabaseAnomaliesV2DatabaseConnections>;
+    databaseConnections?: pulumi.Input<inputs.DatabaseAnomaliesV2DatabaseConnections | undefined>;
     /**
      * Failure rate
      */
-    failureRate?: pulumi.Input<inputs.DatabaseAnomaliesV2FailureRate>;
+    failureRate?: pulumi.Input<inputs.DatabaseAnomaliesV2FailureRate | undefined>;
     /**
      * Alert if the observed load is lower than the expected load by a specified margin for a specified amount of time.
      */
-    loadDrops?: pulumi.Input<inputs.DatabaseAnomaliesV2LoadDrops>;
+    loadDrops?: pulumi.Input<inputs.DatabaseAnomaliesV2LoadDrops | undefined>;
     /**
      * Alert if the observed load exceeds the expected load by a specified margin for a specified amount of time.
      */
-    loadSpikes?: pulumi.Input<inputs.DatabaseAnomaliesV2LoadSpikes>;
+    loadSpikes?: pulumi.Input<inputs.DatabaseAnomaliesV2LoadSpikes | undefined>;
     /**
      * Response time
      */
-    responseTime?: pulumi.Input<inputs.DatabaseAnomaliesV2ResponseTime>;
+    responseTime?: pulumi.Input<inputs.DatabaseAnomaliesV2ResponseTime | undefined>;
     /**
      * The scope for the database anomaly detection
      */
-    scope?: pulumi.Input<string>;
+    scope?: pulumi.Input<string | undefined>;
 }
 
 /**

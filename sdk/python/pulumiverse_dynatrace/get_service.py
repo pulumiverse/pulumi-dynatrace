@@ -108,9 +108,9 @@ def get_service(name: Optional[_builtins.str] = None,
         name=pulumi.get(__ret__, 'name'),
         operator=pulumi.get(__ret__, 'operator'),
         tags=pulumi.get(__ret__, 'tags'))
-def get_service_output(name: Optional[pulumi.Input[_builtins.str]] = None,
-                       operator: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                       tags: Optional[pulumi.Input[Optional[Sequence[_builtins.str]]]] = None,
+def get_service_output(name: pulumi.Input[Optional[_builtins.str]] = None,
+                       operator: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                       tags: pulumi.Input[Optional[Optional[Sequence[_builtins.str]]]] = None,
                        opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetServiceResult]:
     """
     !> The data source API endpoint has been deprecated, please use get_entity with entity type `SERVICE` instead.

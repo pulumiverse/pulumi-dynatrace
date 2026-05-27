@@ -107,19 +107,19 @@ export interface CustomUnitsState {
     /**
      * Unit description should provide additional information about the new unit
      */
-    description?: pulumi.Input<string>;
+    description?: pulumi.Input<string | undefined>;
     /**
      * Unit name has to be unique and is used as identifier.
      */
-    name?: pulumi.Input<string>;
+    name?: pulumi.Input<string | undefined>;
     /**
      * Unit plural name represent the plural form of the unit name.
      */
-    pluralName?: pulumi.Input<string>;
+    pluralName?: pulumi.Input<string | undefined>;
     /**
      * Unit symbol has to be unique.
      */
-    symbol?: pulumi.Input<string>;
+    symbol?: pulumi.Input<string | undefined>;
 }
 
 /**
@@ -133,7 +133,7 @@ export interface CustomUnitsArgs {
     /**
      * Unit name has to be unique and is used as identifier.
      */
-    name?: pulumi.Input<string>;
+    name?: pulumi.Input<string | undefined>;
     /**
      * Unit plural name represent the plural form of the unit name.
      */

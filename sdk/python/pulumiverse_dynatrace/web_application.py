@@ -30,16 +30,16 @@ class WebApplicationArgs:
                  waterfall_settings: pulumi.Input['WebApplicationWaterfallSettingsArgs'],
                  xhr_action_apdex_settings: pulumi.Input['WebApplicationXhrActionApdexSettingsArgs'],
                  xhr_action_key_performance_metric: pulumi.Input[_builtins.str],
-                 conversion_goals: Optional[pulumi.Input['WebApplicationConversionGoalsArgs']] = None,
-                 key_user_actions: Optional[pulumi.Input[Sequence[pulumi.Input['WebApplicationKeyUserActionArgs']]]] = None,
-                 meta_data_capture_settings: Optional[pulumi.Input['WebApplicationMetaDataCaptureSettingsArgs']] = None,
-                 name: Optional[pulumi.Input[_builtins.str]] = None,
-                 real_user_monitoring_enabled: Optional[pulumi.Input[_builtins.bool]] = None,
-                 session_replay_config: Optional[pulumi.Input['WebApplicationSessionReplayConfigArgs']] = None,
-                 url_injection_pattern: Optional[pulumi.Input[_builtins.str]] = None,
-                 user_action_and_session_properties: Optional[pulumi.Input['WebApplicationUserActionAndSessionPropertiesArgs']] = None,
-                 user_action_naming_settings: Optional[pulumi.Input['WebApplicationUserActionNamingSettingsArgs']] = None,
-                 user_tags: Optional[pulumi.Input['WebApplicationUserTagsArgs']] = None):
+                 conversion_goals: pulumi.Input[Optional['WebApplicationConversionGoalsArgs']] = None,
+                 key_user_actions: pulumi.Input[Optional[Sequence[pulumi.Input['WebApplicationKeyUserActionArgs']]]] = None,
+                 meta_data_capture_settings: pulumi.Input[Optional['WebApplicationMetaDataCaptureSettingsArgs']] = None,
+                 name: pulumi.Input[Optional[_builtins.str]] = None,
+                 real_user_monitoring_enabled: pulumi.Input[Optional[_builtins.bool]] = None,
+                 session_replay_config: pulumi.Input[Optional['WebApplicationSessionReplayConfigArgs']] = None,
+                 url_injection_pattern: pulumi.Input[Optional[_builtins.str]] = None,
+                 user_action_and_session_properties: pulumi.Input[Optional['WebApplicationUserActionAndSessionPropertiesArgs']] = None,
+                 user_action_naming_settings: pulumi.Input[Optional['WebApplicationUserActionNamingSettingsArgs']] = None,
+                 user_tags: pulumi.Input[Optional['WebApplicationUserTagsArgs']] = None):
         """
         The set of arguments for constructing a WebApplication resource.
 
@@ -206,148 +206,148 @@ class WebApplicationArgs:
 
     @_builtins.property
     @pulumi.getter(name="conversionGoals")
-    def conversion_goals(self) -> Optional[pulumi.Input['WebApplicationConversionGoalsArgs']]:
+    def conversion_goals(self) -> pulumi.Input[Optional['WebApplicationConversionGoalsArgs']]:
         """
         A list of conversion goals of the application
         """
         return pulumi.get(self, "conversion_goals")
 
     @conversion_goals.setter
-    def conversion_goals(self, value: Optional[pulumi.Input['WebApplicationConversionGoalsArgs']]):
+    def conversion_goals(self, value: pulumi.Input[Optional['WebApplicationConversionGoalsArgs']]):
         pulumi.set(self, "conversion_goals", value)
 
     @_builtins.property
     @pulumi.getter(name="keyUserActions")
     @_utilities.deprecated("""Configuring Key User Actions within `WebApplication` is discouraged. Use the dedicated resource `KeyUserAction` instead.""")
-    def key_user_actions(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['WebApplicationKeyUserActionArgs']]]]:
+    def key_user_actions(self) -> pulumi.Input[Optional[Sequence[pulumi.Input['WebApplicationKeyUserActionArgs']]]]:
         """
         User Action names to be flagged as Key User Actions
         """
         return pulumi.get(self, "key_user_actions")
 
     @key_user_actions.setter
-    def key_user_actions(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['WebApplicationKeyUserActionArgs']]]]):
+    def key_user_actions(self, value: pulumi.Input[Optional[Sequence[pulumi.Input['WebApplicationKeyUserActionArgs']]]]):
         pulumi.set(self, "key_user_actions", value)
 
     @_builtins.property
     @pulumi.getter(name="metaDataCaptureSettings")
-    def meta_data_capture_settings(self) -> Optional[pulumi.Input['WebApplicationMetaDataCaptureSettingsArgs']]:
+    def meta_data_capture_settings(self) -> pulumi.Input[Optional['WebApplicationMetaDataCaptureSettingsArgs']]:
         """
         Java script agent meta data capture settings
         """
         return pulumi.get(self, "meta_data_capture_settings")
 
     @meta_data_capture_settings.setter
-    def meta_data_capture_settings(self, value: Optional[pulumi.Input['WebApplicationMetaDataCaptureSettingsArgs']]):
+    def meta_data_capture_settings(self, value: pulumi.Input[Optional['WebApplicationMetaDataCaptureSettingsArgs']]):
         pulumi.set(self, "meta_data_capture_settings", value)
 
     @_builtins.property
     @pulumi.getter
-    def name(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def name(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The name of the web application, displayed in the UI
         """
         return pulumi.get(self, "name")
 
     @name.setter
-    def name(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def name(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "name", value)
 
     @_builtins.property
     @pulumi.getter(name="realUserMonitoringEnabled")
-    def real_user_monitoring_enabled(self) -> Optional[pulumi.Input[_builtins.bool]]:
+    def real_user_monitoring_enabled(self) -> pulumi.Input[Optional[_builtins.bool]]:
         """
         (Field has overlap with `WebAppEnablement`) Real user monitoring enabled/disabled
         """
         return pulumi.get(self, "real_user_monitoring_enabled")
 
     @real_user_monitoring_enabled.setter
-    def real_user_monitoring_enabled(self, value: Optional[pulumi.Input[_builtins.bool]]):
+    def real_user_monitoring_enabled(self, value: pulumi.Input[Optional[_builtins.bool]]):
         pulumi.set(self, "real_user_monitoring_enabled", value)
 
     @_builtins.property
     @pulumi.getter(name="sessionReplayConfig")
-    def session_replay_config(self) -> Optional[pulumi.Input['WebApplicationSessionReplayConfigArgs']]:
+    def session_replay_config(self) -> pulumi.Input[Optional['WebApplicationSessionReplayConfigArgs']]:
         """
         Settings regarding Session Replay
         """
         return pulumi.get(self, "session_replay_config")
 
     @session_replay_config.setter
-    def session_replay_config(self, value: Optional[pulumi.Input['WebApplicationSessionReplayConfigArgs']]):
+    def session_replay_config(self, value: pulumi.Input[Optional['WebApplicationSessionReplayConfigArgs']]):
         pulumi.set(self, "session_replay_config", value)
 
     @_builtins.property
     @pulumi.getter(name="urlInjectionPattern")
-    def url_injection_pattern(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def url_injection_pattern(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         URL injection pattern for manual web application
         """
         return pulumi.get(self, "url_injection_pattern")
 
     @url_injection_pattern.setter
-    def url_injection_pattern(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def url_injection_pattern(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "url_injection_pattern", value)
 
     @_builtins.property
     @pulumi.getter(name="userActionAndSessionProperties")
-    def user_action_and_session_properties(self) -> Optional[pulumi.Input['WebApplicationUserActionAndSessionPropertiesArgs']]:
+    def user_action_and_session_properties(self) -> pulumi.Input[Optional['WebApplicationUserActionAndSessionPropertiesArgs']]:
         """
         User action and session properties settings
         """
         return pulumi.get(self, "user_action_and_session_properties")
 
     @user_action_and_session_properties.setter
-    def user_action_and_session_properties(self, value: Optional[pulumi.Input['WebApplicationUserActionAndSessionPropertiesArgs']]):
+    def user_action_and_session_properties(self, value: pulumi.Input[Optional['WebApplicationUserActionAndSessionPropertiesArgs']]):
         pulumi.set(self, "user_action_and_session_properties", value)
 
     @_builtins.property
     @pulumi.getter(name="userActionNamingSettings")
-    def user_action_naming_settings(self) -> Optional[pulumi.Input['WebApplicationUserActionNamingSettingsArgs']]:
+    def user_action_naming_settings(self) -> pulumi.Input[Optional['WebApplicationUserActionNamingSettingsArgs']]:
         """
         The settings of user action naming
         """
         return pulumi.get(self, "user_action_naming_settings")
 
     @user_action_naming_settings.setter
-    def user_action_naming_settings(self, value: Optional[pulumi.Input['WebApplicationUserActionNamingSettingsArgs']]):
+    def user_action_naming_settings(self, value: pulumi.Input[Optional['WebApplicationUserActionNamingSettingsArgs']]):
         pulumi.set(self, "user_action_naming_settings", value)
 
     @_builtins.property
     @pulumi.getter(name="userTags")
-    def user_tags(self) -> Optional[pulumi.Input['WebApplicationUserTagsArgs']]:
+    def user_tags(self) -> pulumi.Input[Optional['WebApplicationUserTagsArgs']]:
         """
         User tags settings
         """
         return pulumi.get(self, "user_tags")
 
     @user_tags.setter
-    def user_tags(self, value: Optional[pulumi.Input['WebApplicationUserTagsArgs']]):
+    def user_tags(self, value: pulumi.Input[Optional['WebApplicationUserTagsArgs']]):
         pulumi.set(self, "user_tags", value)
 
 
 @pulumi.input_type
 class _WebApplicationState:
     def __init__(__self__, *,
-                 conversion_goals: Optional[pulumi.Input['WebApplicationConversionGoalsArgs']] = None,
-                 cost_control_user_session_percentage: Optional[pulumi.Input[_builtins.int]] = None,
-                 custom_action_apdex_settings: Optional[pulumi.Input['WebApplicationCustomActionApdexSettingsArgs']] = None,
-                 key_user_actions: Optional[pulumi.Input[Sequence[pulumi.Input['WebApplicationKeyUserActionArgs']]]] = None,
-                 load_action_apdex_settings: Optional[pulumi.Input['WebApplicationLoadActionApdexSettingsArgs']] = None,
-                 load_action_key_performance_metric: Optional[pulumi.Input[_builtins.str]] = None,
-                 meta_data_capture_settings: Optional[pulumi.Input['WebApplicationMetaDataCaptureSettingsArgs']] = None,
-                 monitoring_settings: Optional[pulumi.Input['WebApplicationMonitoringSettingsArgs']] = None,
-                 name: Optional[pulumi.Input[_builtins.str]] = None,
-                 real_user_monitoring_enabled: Optional[pulumi.Input[_builtins.bool]] = None,
-                 session_replay_config: Optional[pulumi.Input['WebApplicationSessionReplayConfigArgs']] = None,
-                 type: Optional[pulumi.Input[_builtins.str]] = None,
-                 url_injection_pattern: Optional[pulumi.Input[_builtins.str]] = None,
-                 user_action_and_session_properties: Optional[pulumi.Input['WebApplicationUserActionAndSessionPropertiesArgs']] = None,
-                 user_action_naming_settings: Optional[pulumi.Input['WebApplicationUserActionNamingSettingsArgs']] = None,
-                 user_tags: Optional[pulumi.Input['WebApplicationUserTagsArgs']] = None,
-                 waterfall_settings: Optional[pulumi.Input['WebApplicationWaterfallSettingsArgs']] = None,
-                 xhr_action_apdex_settings: Optional[pulumi.Input['WebApplicationXhrActionApdexSettingsArgs']] = None,
-                 xhr_action_key_performance_metric: Optional[pulumi.Input[_builtins.str]] = None):
+                 conversion_goals: pulumi.Input[Optional['WebApplicationConversionGoalsArgs']] = None,
+                 cost_control_user_session_percentage: pulumi.Input[Optional[_builtins.int]] = None,
+                 custom_action_apdex_settings: pulumi.Input[Optional['WebApplicationCustomActionApdexSettingsArgs']] = None,
+                 key_user_actions: pulumi.Input[Optional[Sequence[pulumi.Input['WebApplicationKeyUserActionArgs']]]] = None,
+                 load_action_apdex_settings: pulumi.Input[Optional['WebApplicationLoadActionApdexSettingsArgs']] = None,
+                 load_action_key_performance_metric: pulumi.Input[Optional[_builtins.str]] = None,
+                 meta_data_capture_settings: pulumi.Input[Optional['WebApplicationMetaDataCaptureSettingsArgs']] = None,
+                 monitoring_settings: pulumi.Input[Optional['WebApplicationMonitoringSettingsArgs']] = None,
+                 name: pulumi.Input[Optional[_builtins.str]] = None,
+                 real_user_monitoring_enabled: pulumi.Input[Optional[_builtins.bool]] = None,
+                 session_replay_config: pulumi.Input[Optional['WebApplicationSessionReplayConfigArgs']] = None,
+                 type: pulumi.Input[Optional[_builtins.str]] = None,
+                 url_injection_pattern: pulumi.Input[Optional[_builtins.str]] = None,
+                 user_action_and_session_properties: pulumi.Input[Optional['WebApplicationUserActionAndSessionPropertiesArgs']] = None,
+                 user_action_naming_settings: pulumi.Input[Optional['WebApplicationUserActionNamingSettingsArgs']] = None,
+                 user_tags: pulumi.Input[Optional['WebApplicationUserTagsArgs']] = None,
+                 waterfall_settings: pulumi.Input[Optional['WebApplicationWaterfallSettingsArgs']] = None,
+                 xhr_action_apdex_settings: pulumi.Input[Optional['WebApplicationXhrActionApdexSettingsArgs']] = None,
+                 xhr_action_key_performance_metric: pulumi.Input[Optional[_builtins.str]] = None):
         """
         Input properties used for looking up and filtering WebApplication resources.
 
@@ -415,231 +415,231 @@ class _WebApplicationState:
 
     @_builtins.property
     @pulumi.getter(name="conversionGoals")
-    def conversion_goals(self) -> Optional[pulumi.Input['WebApplicationConversionGoalsArgs']]:
+    def conversion_goals(self) -> pulumi.Input[Optional['WebApplicationConversionGoalsArgs']]:
         """
         A list of conversion goals of the application
         """
         return pulumi.get(self, "conversion_goals")
 
     @conversion_goals.setter
-    def conversion_goals(self, value: Optional[pulumi.Input['WebApplicationConversionGoalsArgs']]):
+    def conversion_goals(self, value: pulumi.Input[Optional['WebApplicationConversionGoalsArgs']]):
         pulumi.set(self, "conversion_goals", value)
 
     @_builtins.property
     @pulumi.getter(name="costControlUserSessionPercentage")
-    def cost_control_user_session_percentage(self) -> Optional[pulumi.Input[_builtins.int]]:
+    def cost_control_user_session_percentage(self) -> pulumi.Input[Optional[_builtins.int]]:
         """
         (Field has overlap with `WebAppEnablement`) Analize *X*% of user sessions
         """
         return pulumi.get(self, "cost_control_user_session_percentage")
 
     @cost_control_user_session_percentage.setter
-    def cost_control_user_session_percentage(self, value: Optional[pulumi.Input[_builtins.int]]):
+    def cost_control_user_session_percentage(self, value: pulumi.Input[Optional[_builtins.int]]):
         pulumi.set(self, "cost_control_user_session_percentage", value)
 
     @_builtins.property
     @pulumi.getter(name="customActionApdexSettings")
-    def custom_action_apdex_settings(self) -> Optional[pulumi.Input['WebApplicationCustomActionApdexSettingsArgs']]:
+    def custom_action_apdex_settings(self) -> pulumi.Input[Optional['WebApplicationCustomActionApdexSettingsArgs']]:
         """
         Defines the Custom Action Apdex settings of an application
         """
         return pulumi.get(self, "custom_action_apdex_settings")
 
     @custom_action_apdex_settings.setter
-    def custom_action_apdex_settings(self, value: Optional[pulumi.Input['WebApplicationCustomActionApdexSettingsArgs']]):
+    def custom_action_apdex_settings(self, value: pulumi.Input[Optional['WebApplicationCustomActionApdexSettingsArgs']]):
         pulumi.set(self, "custom_action_apdex_settings", value)
 
     @_builtins.property
     @pulumi.getter(name="keyUserActions")
     @_utilities.deprecated("""Configuring Key User Actions within `WebApplication` is discouraged. Use the dedicated resource `KeyUserAction` instead.""")
-    def key_user_actions(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['WebApplicationKeyUserActionArgs']]]]:
+    def key_user_actions(self) -> pulumi.Input[Optional[Sequence[pulumi.Input['WebApplicationKeyUserActionArgs']]]]:
         """
         User Action names to be flagged as Key User Actions
         """
         return pulumi.get(self, "key_user_actions")
 
     @key_user_actions.setter
-    def key_user_actions(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['WebApplicationKeyUserActionArgs']]]]):
+    def key_user_actions(self, value: pulumi.Input[Optional[Sequence[pulumi.Input['WebApplicationKeyUserActionArgs']]]]):
         pulumi.set(self, "key_user_actions", value)
 
     @_builtins.property
     @pulumi.getter(name="loadActionApdexSettings")
-    def load_action_apdex_settings(self) -> Optional[pulumi.Input['WebApplicationLoadActionApdexSettingsArgs']]:
+    def load_action_apdex_settings(self) -> pulumi.Input[Optional['WebApplicationLoadActionApdexSettingsArgs']]:
         """
         Defines the Load Action Apdex settings of an application
         """
         return pulumi.get(self, "load_action_apdex_settings")
 
     @load_action_apdex_settings.setter
-    def load_action_apdex_settings(self, value: Optional[pulumi.Input['WebApplicationLoadActionApdexSettingsArgs']]):
+    def load_action_apdex_settings(self, value: pulumi.Input[Optional['WebApplicationLoadActionApdexSettingsArgs']]):
         pulumi.set(self, "load_action_apdex_settings", value)
 
     @_builtins.property
     @pulumi.getter(name="loadActionKeyPerformanceMetric")
-    def load_action_key_performance_metric(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def load_action_key_performance_metric(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The key performance metric of load actions. Possible values are `ACTION_DURATION`, `CUMULATIVE_LAYOUT_SHIFT`, `DOM_INTERACTIVE`, `FIRST_INPUT_DELAY`, `LARGEST_CONTENTFUL_PAINT`, `LOAD_EVENT_END`, `LOAD_EVENT_START`, `RESPONSE_END`, `RESPONSE_START`, `SPEED_INDEX` and `VISUALLY_COMPLETE`
         """
         return pulumi.get(self, "load_action_key_performance_metric")
 
     @load_action_key_performance_metric.setter
-    def load_action_key_performance_metric(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def load_action_key_performance_metric(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "load_action_key_performance_metric", value)
 
     @_builtins.property
     @pulumi.getter(name="metaDataCaptureSettings")
-    def meta_data_capture_settings(self) -> Optional[pulumi.Input['WebApplicationMetaDataCaptureSettingsArgs']]:
+    def meta_data_capture_settings(self) -> pulumi.Input[Optional['WebApplicationMetaDataCaptureSettingsArgs']]:
         """
         Java script agent meta data capture settings
         """
         return pulumi.get(self, "meta_data_capture_settings")
 
     @meta_data_capture_settings.setter
-    def meta_data_capture_settings(self, value: Optional[pulumi.Input['WebApplicationMetaDataCaptureSettingsArgs']]):
+    def meta_data_capture_settings(self, value: pulumi.Input[Optional['WebApplicationMetaDataCaptureSettingsArgs']]):
         pulumi.set(self, "meta_data_capture_settings", value)
 
     @_builtins.property
     @pulumi.getter(name="monitoringSettings")
-    def monitoring_settings(self) -> Optional[pulumi.Input['WebApplicationMonitoringSettingsArgs']]:
+    def monitoring_settings(self) -> pulumi.Input[Optional['WebApplicationMonitoringSettingsArgs']]:
         """
         Real user monitoring settings
         """
         return pulumi.get(self, "monitoring_settings")
 
     @monitoring_settings.setter
-    def monitoring_settings(self, value: Optional[pulumi.Input['WebApplicationMonitoringSettingsArgs']]):
+    def monitoring_settings(self, value: pulumi.Input[Optional['WebApplicationMonitoringSettingsArgs']]):
         pulumi.set(self, "monitoring_settings", value)
 
     @_builtins.property
     @pulumi.getter
-    def name(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def name(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The name of the web application, displayed in the UI
         """
         return pulumi.get(self, "name")
 
     @name.setter
-    def name(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def name(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "name", value)
 
     @_builtins.property
     @pulumi.getter(name="realUserMonitoringEnabled")
-    def real_user_monitoring_enabled(self) -> Optional[pulumi.Input[_builtins.bool]]:
+    def real_user_monitoring_enabled(self) -> pulumi.Input[Optional[_builtins.bool]]:
         """
         (Field has overlap with `WebAppEnablement`) Real user monitoring enabled/disabled
         """
         return pulumi.get(self, "real_user_monitoring_enabled")
 
     @real_user_monitoring_enabled.setter
-    def real_user_monitoring_enabled(self, value: Optional[pulumi.Input[_builtins.bool]]):
+    def real_user_monitoring_enabled(self, value: pulumi.Input[Optional[_builtins.bool]]):
         pulumi.set(self, "real_user_monitoring_enabled", value)
 
     @_builtins.property
     @pulumi.getter(name="sessionReplayConfig")
-    def session_replay_config(self) -> Optional[pulumi.Input['WebApplicationSessionReplayConfigArgs']]:
+    def session_replay_config(self) -> pulumi.Input[Optional['WebApplicationSessionReplayConfigArgs']]:
         """
         Settings regarding Session Replay
         """
         return pulumi.get(self, "session_replay_config")
 
     @session_replay_config.setter
-    def session_replay_config(self, value: Optional[pulumi.Input['WebApplicationSessionReplayConfigArgs']]):
+    def session_replay_config(self, value: pulumi.Input[Optional['WebApplicationSessionReplayConfigArgs']]):
         pulumi.set(self, "session_replay_config", value)
 
     @_builtins.property
     @pulumi.getter
-    def type(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def type(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The type of the web application. Possible values are `AUTO_INJECTED`, `BROWSER_EXTENSION_INJECTED` and `MANUALLY_INJECTED`
         """
         return pulumi.get(self, "type")
 
     @type.setter
-    def type(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def type(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "type", value)
 
     @_builtins.property
     @pulumi.getter(name="urlInjectionPattern")
-    def url_injection_pattern(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def url_injection_pattern(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         URL injection pattern for manual web application
         """
         return pulumi.get(self, "url_injection_pattern")
 
     @url_injection_pattern.setter
-    def url_injection_pattern(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def url_injection_pattern(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "url_injection_pattern", value)
 
     @_builtins.property
     @pulumi.getter(name="userActionAndSessionProperties")
-    def user_action_and_session_properties(self) -> Optional[pulumi.Input['WebApplicationUserActionAndSessionPropertiesArgs']]:
+    def user_action_and_session_properties(self) -> pulumi.Input[Optional['WebApplicationUserActionAndSessionPropertiesArgs']]:
         """
         User action and session properties settings
         """
         return pulumi.get(self, "user_action_and_session_properties")
 
     @user_action_and_session_properties.setter
-    def user_action_and_session_properties(self, value: Optional[pulumi.Input['WebApplicationUserActionAndSessionPropertiesArgs']]):
+    def user_action_and_session_properties(self, value: pulumi.Input[Optional['WebApplicationUserActionAndSessionPropertiesArgs']]):
         pulumi.set(self, "user_action_and_session_properties", value)
 
     @_builtins.property
     @pulumi.getter(name="userActionNamingSettings")
-    def user_action_naming_settings(self) -> Optional[pulumi.Input['WebApplicationUserActionNamingSettingsArgs']]:
+    def user_action_naming_settings(self) -> pulumi.Input[Optional['WebApplicationUserActionNamingSettingsArgs']]:
         """
         The settings of user action naming
         """
         return pulumi.get(self, "user_action_naming_settings")
 
     @user_action_naming_settings.setter
-    def user_action_naming_settings(self, value: Optional[pulumi.Input['WebApplicationUserActionNamingSettingsArgs']]):
+    def user_action_naming_settings(self, value: pulumi.Input[Optional['WebApplicationUserActionNamingSettingsArgs']]):
         pulumi.set(self, "user_action_naming_settings", value)
 
     @_builtins.property
     @pulumi.getter(name="userTags")
-    def user_tags(self) -> Optional[pulumi.Input['WebApplicationUserTagsArgs']]:
+    def user_tags(self) -> pulumi.Input[Optional['WebApplicationUserTagsArgs']]:
         """
         User tags settings
         """
         return pulumi.get(self, "user_tags")
 
     @user_tags.setter
-    def user_tags(self, value: Optional[pulumi.Input['WebApplicationUserTagsArgs']]):
+    def user_tags(self, value: pulumi.Input[Optional['WebApplicationUserTagsArgs']]):
         pulumi.set(self, "user_tags", value)
 
     @_builtins.property
     @pulumi.getter(name="waterfallSettings")
-    def waterfall_settings(self) -> Optional[pulumi.Input['WebApplicationWaterfallSettingsArgs']]:
+    def waterfall_settings(self) -> pulumi.Input[Optional['WebApplicationWaterfallSettingsArgs']]:
         """
         These settings influence the monitoring data you receive for 3rd party, CDN, and 1st party resources
         """
         return pulumi.get(self, "waterfall_settings")
 
     @waterfall_settings.setter
-    def waterfall_settings(self, value: Optional[pulumi.Input['WebApplicationWaterfallSettingsArgs']]):
+    def waterfall_settings(self, value: pulumi.Input[Optional['WebApplicationWaterfallSettingsArgs']]):
         pulumi.set(self, "waterfall_settings", value)
 
     @_builtins.property
     @pulumi.getter(name="xhrActionApdexSettings")
-    def xhr_action_apdex_settings(self) -> Optional[pulumi.Input['WebApplicationXhrActionApdexSettingsArgs']]:
+    def xhr_action_apdex_settings(self) -> pulumi.Input[Optional['WebApplicationXhrActionApdexSettingsArgs']]:
         """
         Defines the XHR Action Apdex settings of an application
         """
         return pulumi.get(self, "xhr_action_apdex_settings")
 
     @xhr_action_apdex_settings.setter
-    def xhr_action_apdex_settings(self, value: Optional[pulumi.Input['WebApplicationXhrActionApdexSettingsArgs']]):
+    def xhr_action_apdex_settings(self, value: pulumi.Input[Optional['WebApplicationXhrActionApdexSettingsArgs']]):
         pulumi.set(self, "xhr_action_apdex_settings", value)
 
     @_builtins.property
     @pulumi.getter(name="xhrActionKeyPerformanceMetric")
-    def xhr_action_key_performance_metric(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def xhr_action_key_performance_metric(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The key performance metric of XHR actions. Possible values are `ACTION_DURATION`, `RESPONSE_END`, `RESPONSE_START` and `VISUALLY_COMPLETE`.
         """
         return pulumi.get(self, "xhr_action_key_performance_metric")
 
     @xhr_action_key_performance_metric.setter
-    def xhr_action_key_performance_metric(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def xhr_action_key_performance_metric(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "xhr_action_key_performance_metric", value)
 
 
@@ -649,25 +649,25 @@ class WebApplication(pulumi.CustomResource):
     def __init__(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 conversion_goals: Optional[pulumi.Input[Union['WebApplicationConversionGoalsArgs', 'WebApplicationConversionGoalsArgsDict']]] = None,
-                 cost_control_user_session_percentage: Optional[pulumi.Input[_builtins.int]] = None,
-                 custom_action_apdex_settings: Optional[pulumi.Input[Union['WebApplicationCustomActionApdexSettingsArgs', 'WebApplicationCustomActionApdexSettingsArgsDict']]] = None,
-                 key_user_actions: Optional[pulumi.Input[Sequence[pulumi.Input[Union['WebApplicationKeyUserActionArgs', 'WebApplicationKeyUserActionArgsDict']]]]] = None,
-                 load_action_apdex_settings: Optional[pulumi.Input[Union['WebApplicationLoadActionApdexSettingsArgs', 'WebApplicationLoadActionApdexSettingsArgsDict']]] = None,
-                 load_action_key_performance_metric: Optional[pulumi.Input[_builtins.str]] = None,
-                 meta_data_capture_settings: Optional[pulumi.Input[Union['WebApplicationMetaDataCaptureSettingsArgs', 'WebApplicationMetaDataCaptureSettingsArgsDict']]] = None,
-                 monitoring_settings: Optional[pulumi.Input[Union['WebApplicationMonitoringSettingsArgs', 'WebApplicationMonitoringSettingsArgsDict']]] = None,
-                 name: Optional[pulumi.Input[_builtins.str]] = None,
-                 real_user_monitoring_enabled: Optional[pulumi.Input[_builtins.bool]] = None,
-                 session_replay_config: Optional[pulumi.Input[Union['WebApplicationSessionReplayConfigArgs', 'WebApplicationSessionReplayConfigArgsDict']]] = None,
-                 type: Optional[pulumi.Input[_builtins.str]] = None,
-                 url_injection_pattern: Optional[pulumi.Input[_builtins.str]] = None,
-                 user_action_and_session_properties: Optional[pulumi.Input[Union['WebApplicationUserActionAndSessionPropertiesArgs', 'WebApplicationUserActionAndSessionPropertiesArgsDict']]] = None,
-                 user_action_naming_settings: Optional[pulumi.Input[Union['WebApplicationUserActionNamingSettingsArgs', 'WebApplicationUserActionNamingSettingsArgsDict']]] = None,
-                 user_tags: Optional[pulumi.Input[Union['WebApplicationUserTagsArgs', 'WebApplicationUserTagsArgsDict']]] = None,
-                 waterfall_settings: Optional[pulumi.Input[Union['WebApplicationWaterfallSettingsArgs', 'WebApplicationWaterfallSettingsArgsDict']]] = None,
-                 xhr_action_apdex_settings: Optional[pulumi.Input[Union['WebApplicationXhrActionApdexSettingsArgs', 'WebApplicationXhrActionApdexSettingsArgsDict']]] = None,
-                 xhr_action_key_performance_metric: Optional[pulumi.Input[_builtins.str]] = None,
+                 conversion_goals: pulumi.Input[Optional[Union['WebApplicationConversionGoalsArgs', 'WebApplicationConversionGoalsArgsDict']]] = None,
+                 cost_control_user_session_percentage: pulumi.Input[Optional[_builtins.int]] = None,
+                 custom_action_apdex_settings: pulumi.Input[Optional[Union['WebApplicationCustomActionApdexSettingsArgs', 'WebApplicationCustomActionApdexSettingsArgsDict']]] = None,
+                 key_user_actions: pulumi.Input[Optional[Sequence[pulumi.Input[Union['WebApplicationKeyUserActionArgs', 'WebApplicationKeyUserActionArgsDict']]]]] = None,
+                 load_action_apdex_settings: pulumi.Input[Optional[Union['WebApplicationLoadActionApdexSettingsArgs', 'WebApplicationLoadActionApdexSettingsArgsDict']]] = None,
+                 load_action_key_performance_metric: pulumi.Input[Optional[_builtins.str]] = None,
+                 meta_data_capture_settings: pulumi.Input[Optional[Union['WebApplicationMetaDataCaptureSettingsArgs', 'WebApplicationMetaDataCaptureSettingsArgsDict']]] = None,
+                 monitoring_settings: pulumi.Input[Optional[Union['WebApplicationMonitoringSettingsArgs', 'WebApplicationMonitoringSettingsArgsDict']]] = None,
+                 name: pulumi.Input[Optional[_builtins.str]] = None,
+                 real_user_monitoring_enabled: pulumi.Input[Optional[_builtins.bool]] = None,
+                 session_replay_config: pulumi.Input[Optional[Union['WebApplicationSessionReplayConfigArgs', 'WebApplicationSessionReplayConfigArgsDict']]] = None,
+                 type: pulumi.Input[Optional[_builtins.str]] = None,
+                 url_injection_pattern: pulumi.Input[Optional[_builtins.str]] = None,
+                 user_action_and_session_properties: pulumi.Input[Optional[Union['WebApplicationUserActionAndSessionPropertiesArgs', 'WebApplicationUserActionAndSessionPropertiesArgsDict']]] = None,
+                 user_action_naming_settings: pulumi.Input[Optional[Union['WebApplicationUserActionNamingSettingsArgs', 'WebApplicationUserActionNamingSettingsArgsDict']]] = None,
+                 user_tags: pulumi.Input[Optional[Union['WebApplicationUserTagsArgs', 'WebApplicationUserTagsArgsDict']]] = None,
+                 waterfall_settings: pulumi.Input[Optional[Union['WebApplicationWaterfallSettingsArgs', 'WebApplicationWaterfallSettingsArgsDict']]] = None,
+                 xhr_action_apdex_settings: pulumi.Input[Optional[Union['WebApplicationXhrActionApdexSettingsArgs', 'WebApplicationXhrActionApdexSettingsArgsDict']]] = None,
+                 xhr_action_key_performance_metric: pulumi.Input[Optional[_builtins.str]] = None,
                  __props__=None):
         """
         > This resource requires the API token scopes **Read configuration** (`ReadConfig`) and **Write configuration** (`WriteConfig`)
@@ -760,25 +760,25 @@ class WebApplication(pulumi.CustomResource):
     def _internal_init(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 conversion_goals: Optional[pulumi.Input[Union['WebApplicationConversionGoalsArgs', 'WebApplicationConversionGoalsArgsDict']]] = None,
-                 cost_control_user_session_percentage: Optional[pulumi.Input[_builtins.int]] = None,
-                 custom_action_apdex_settings: Optional[pulumi.Input[Union['WebApplicationCustomActionApdexSettingsArgs', 'WebApplicationCustomActionApdexSettingsArgsDict']]] = None,
-                 key_user_actions: Optional[pulumi.Input[Sequence[pulumi.Input[Union['WebApplicationKeyUserActionArgs', 'WebApplicationKeyUserActionArgsDict']]]]] = None,
-                 load_action_apdex_settings: Optional[pulumi.Input[Union['WebApplicationLoadActionApdexSettingsArgs', 'WebApplicationLoadActionApdexSettingsArgsDict']]] = None,
-                 load_action_key_performance_metric: Optional[pulumi.Input[_builtins.str]] = None,
-                 meta_data_capture_settings: Optional[pulumi.Input[Union['WebApplicationMetaDataCaptureSettingsArgs', 'WebApplicationMetaDataCaptureSettingsArgsDict']]] = None,
-                 monitoring_settings: Optional[pulumi.Input[Union['WebApplicationMonitoringSettingsArgs', 'WebApplicationMonitoringSettingsArgsDict']]] = None,
-                 name: Optional[pulumi.Input[_builtins.str]] = None,
-                 real_user_monitoring_enabled: Optional[pulumi.Input[_builtins.bool]] = None,
-                 session_replay_config: Optional[pulumi.Input[Union['WebApplicationSessionReplayConfigArgs', 'WebApplicationSessionReplayConfigArgsDict']]] = None,
-                 type: Optional[pulumi.Input[_builtins.str]] = None,
-                 url_injection_pattern: Optional[pulumi.Input[_builtins.str]] = None,
-                 user_action_and_session_properties: Optional[pulumi.Input[Union['WebApplicationUserActionAndSessionPropertiesArgs', 'WebApplicationUserActionAndSessionPropertiesArgsDict']]] = None,
-                 user_action_naming_settings: Optional[pulumi.Input[Union['WebApplicationUserActionNamingSettingsArgs', 'WebApplicationUserActionNamingSettingsArgsDict']]] = None,
-                 user_tags: Optional[pulumi.Input[Union['WebApplicationUserTagsArgs', 'WebApplicationUserTagsArgsDict']]] = None,
-                 waterfall_settings: Optional[pulumi.Input[Union['WebApplicationWaterfallSettingsArgs', 'WebApplicationWaterfallSettingsArgsDict']]] = None,
-                 xhr_action_apdex_settings: Optional[pulumi.Input[Union['WebApplicationXhrActionApdexSettingsArgs', 'WebApplicationXhrActionApdexSettingsArgsDict']]] = None,
-                 xhr_action_key_performance_metric: Optional[pulumi.Input[_builtins.str]] = None,
+                 conversion_goals: pulumi.Input[Optional[Union['WebApplicationConversionGoalsArgs', 'WebApplicationConversionGoalsArgsDict']]] = None,
+                 cost_control_user_session_percentage: pulumi.Input[Optional[_builtins.int]] = None,
+                 custom_action_apdex_settings: pulumi.Input[Optional[Union['WebApplicationCustomActionApdexSettingsArgs', 'WebApplicationCustomActionApdexSettingsArgsDict']]] = None,
+                 key_user_actions: pulumi.Input[Optional[Sequence[pulumi.Input[Union['WebApplicationKeyUserActionArgs', 'WebApplicationKeyUserActionArgsDict']]]]] = None,
+                 load_action_apdex_settings: pulumi.Input[Optional[Union['WebApplicationLoadActionApdexSettingsArgs', 'WebApplicationLoadActionApdexSettingsArgsDict']]] = None,
+                 load_action_key_performance_metric: pulumi.Input[Optional[_builtins.str]] = None,
+                 meta_data_capture_settings: pulumi.Input[Optional[Union['WebApplicationMetaDataCaptureSettingsArgs', 'WebApplicationMetaDataCaptureSettingsArgsDict']]] = None,
+                 monitoring_settings: pulumi.Input[Optional[Union['WebApplicationMonitoringSettingsArgs', 'WebApplicationMonitoringSettingsArgsDict']]] = None,
+                 name: pulumi.Input[Optional[_builtins.str]] = None,
+                 real_user_monitoring_enabled: pulumi.Input[Optional[_builtins.bool]] = None,
+                 session_replay_config: pulumi.Input[Optional[Union['WebApplicationSessionReplayConfigArgs', 'WebApplicationSessionReplayConfigArgsDict']]] = None,
+                 type: pulumi.Input[Optional[_builtins.str]] = None,
+                 url_injection_pattern: pulumi.Input[Optional[_builtins.str]] = None,
+                 user_action_and_session_properties: pulumi.Input[Optional[Union['WebApplicationUserActionAndSessionPropertiesArgs', 'WebApplicationUserActionAndSessionPropertiesArgsDict']]] = None,
+                 user_action_naming_settings: pulumi.Input[Optional[Union['WebApplicationUserActionNamingSettingsArgs', 'WebApplicationUserActionNamingSettingsArgsDict']]] = None,
+                 user_tags: pulumi.Input[Optional[Union['WebApplicationUserTagsArgs', 'WebApplicationUserTagsArgsDict']]] = None,
+                 waterfall_settings: pulumi.Input[Optional[Union['WebApplicationWaterfallSettingsArgs', 'WebApplicationWaterfallSettingsArgsDict']]] = None,
+                 xhr_action_apdex_settings: pulumi.Input[Optional[Union['WebApplicationXhrActionApdexSettingsArgs', 'WebApplicationXhrActionApdexSettingsArgsDict']]] = None,
+                 xhr_action_key_performance_metric: pulumi.Input[Optional[_builtins.str]] = None,
                  __props__=None):
         opts = pulumi.ResourceOptions.merge(_utilities.get_resource_opts_defaults(), opts)
         if not isinstance(opts, pulumi.ResourceOptions):
@@ -835,25 +835,25 @@ class WebApplication(pulumi.CustomResource):
     def get(resource_name: str,
             id: pulumi.Input[str],
             opts: Optional[pulumi.ResourceOptions] = None,
-            conversion_goals: Optional[pulumi.Input[Union['WebApplicationConversionGoalsArgs', 'WebApplicationConversionGoalsArgsDict']]] = None,
-            cost_control_user_session_percentage: Optional[pulumi.Input[_builtins.int]] = None,
-            custom_action_apdex_settings: Optional[pulumi.Input[Union['WebApplicationCustomActionApdexSettingsArgs', 'WebApplicationCustomActionApdexSettingsArgsDict']]] = None,
-            key_user_actions: Optional[pulumi.Input[Sequence[pulumi.Input[Union['WebApplicationKeyUserActionArgs', 'WebApplicationKeyUserActionArgsDict']]]]] = None,
-            load_action_apdex_settings: Optional[pulumi.Input[Union['WebApplicationLoadActionApdexSettingsArgs', 'WebApplicationLoadActionApdexSettingsArgsDict']]] = None,
-            load_action_key_performance_metric: Optional[pulumi.Input[_builtins.str]] = None,
-            meta_data_capture_settings: Optional[pulumi.Input[Union['WebApplicationMetaDataCaptureSettingsArgs', 'WebApplicationMetaDataCaptureSettingsArgsDict']]] = None,
-            monitoring_settings: Optional[pulumi.Input[Union['WebApplicationMonitoringSettingsArgs', 'WebApplicationMonitoringSettingsArgsDict']]] = None,
-            name: Optional[pulumi.Input[_builtins.str]] = None,
-            real_user_monitoring_enabled: Optional[pulumi.Input[_builtins.bool]] = None,
-            session_replay_config: Optional[pulumi.Input[Union['WebApplicationSessionReplayConfigArgs', 'WebApplicationSessionReplayConfigArgsDict']]] = None,
-            type: Optional[pulumi.Input[_builtins.str]] = None,
-            url_injection_pattern: Optional[pulumi.Input[_builtins.str]] = None,
-            user_action_and_session_properties: Optional[pulumi.Input[Union['WebApplicationUserActionAndSessionPropertiesArgs', 'WebApplicationUserActionAndSessionPropertiesArgsDict']]] = None,
-            user_action_naming_settings: Optional[pulumi.Input[Union['WebApplicationUserActionNamingSettingsArgs', 'WebApplicationUserActionNamingSettingsArgsDict']]] = None,
-            user_tags: Optional[pulumi.Input[Union['WebApplicationUserTagsArgs', 'WebApplicationUserTagsArgsDict']]] = None,
-            waterfall_settings: Optional[pulumi.Input[Union['WebApplicationWaterfallSettingsArgs', 'WebApplicationWaterfallSettingsArgsDict']]] = None,
-            xhr_action_apdex_settings: Optional[pulumi.Input[Union['WebApplicationXhrActionApdexSettingsArgs', 'WebApplicationXhrActionApdexSettingsArgsDict']]] = None,
-            xhr_action_key_performance_metric: Optional[pulumi.Input[_builtins.str]] = None) -> 'WebApplication':
+            conversion_goals: pulumi.Input[Optional[Union['WebApplicationConversionGoalsArgs', 'WebApplicationConversionGoalsArgsDict']]] = None,
+            cost_control_user_session_percentage: pulumi.Input[Optional[_builtins.int]] = None,
+            custom_action_apdex_settings: pulumi.Input[Optional[Union['WebApplicationCustomActionApdexSettingsArgs', 'WebApplicationCustomActionApdexSettingsArgsDict']]] = None,
+            key_user_actions: pulumi.Input[Optional[Sequence[pulumi.Input[Union['WebApplicationKeyUserActionArgs', 'WebApplicationKeyUserActionArgsDict']]]]] = None,
+            load_action_apdex_settings: pulumi.Input[Optional[Union['WebApplicationLoadActionApdexSettingsArgs', 'WebApplicationLoadActionApdexSettingsArgsDict']]] = None,
+            load_action_key_performance_metric: pulumi.Input[Optional[_builtins.str]] = None,
+            meta_data_capture_settings: pulumi.Input[Optional[Union['WebApplicationMetaDataCaptureSettingsArgs', 'WebApplicationMetaDataCaptureSettingsArgsDict']]] = None,
+            monitoring_settings: pulumi.Input[Optional[Union['WebApplicationMonitoringSettingsArgs', 'WebApplicationMonitoringSettingsArgsDict']]] = None,
+            name: pulumi.Input[Optional[_builtins.str]] = None,
+            real_user_monitoring_enabled: pulumi.Input[Optional[_builtins.bool]] = None,
+            session_replay_config: pulumi.Input[Optional[Union['WebApplicationSessionReplayConfigArgs', 'WebApplicationSessionReplayConfigArgsDict']]] = None,
+            type: pulumi.Input[Optional[_builtins.str]] = None,
+            url_injection_pattern: pulumi.Input[Optional[_builtins.str]] = None,
+            user_action_and_session_properties: pulumi.Input[Optional[Union['WebApplicationUserActionAndSessionPropertiesArgs', 'WebApplicationUserActionAndSessionPropertiesArgsDict']]] = None,
+            user_action_naming_settings: pulumi.Input[Optional[Union['WebApplicationUserActionNamingSettingsArgs', 'WebApplicationUserActionNamingSettingsArgsDict']]] = None,
+            user_tags: pulumi.Input[Optional[Union['WebApplicationUserTagsArgs', 'WebApplicationUserTagsArgsDict']]] = None,
+            waterfall_settings: pulumi.Input[Optional[Union['WebApplicationWaterfallSettingsArgs', 'WebApplicationWaterfallSettingsArgsDict']]] = None,
+            xhr_action_apdex_settings: pulumi.Input[Optional[Union['WebApplicationXhrActionApdexSettingsArgs', 'WebApplicationXhrActionApdexSettingsArgsDict']]] = None,
+            xhr_action_key_performance_metric: pulumi.Input[Optional[_builtins.str]] = None) -> 'WebApplication':
         """
         Get an existing WebApplication resource's state with the given name, id, and optional extra
         properties used to qualify the lookup.

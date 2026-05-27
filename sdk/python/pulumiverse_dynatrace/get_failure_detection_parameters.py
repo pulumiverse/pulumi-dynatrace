@@ -85,7 +85,7 @@ def get_failure_detection_parameters(name: Optional[_builtins.str] = None,
     return AwaitableGetFailureDetectionParametersResult(
         id=pulumi.get(__ret__, 'id'),
         name=pulumi.get(__ret__, 'name'))
-def get_failure_detection_parameters_output(name: Optional[pulumi.Input[_builtins.str]] = None,
+def get_failure_detection_parameters_output(name: pulumi.Input[Optional[_builtins.str]] = None,
                                             opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetFailureDetectionParametersResult]:
     """
     The `FailureDetectionParameters` data source allows the failure detection parameter ID to be retrieved by its name.

@@ -130,9 +130,9 @@ def get_generic_settings(filter: Optional[_builtins.str] = None,
         schema=pulumi.get(__ret__, 'schema'),
         scope=pulumi.get(__ret__, 'scope'),
         values=pulumi.get(__ret__, 'values'))
-def get_generic_settings_output(filter: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                                schema: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                                scope: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
+def get_generic_settings_output(filter: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                                schema: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                                scope: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
                                 opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetGenericSettingsResult]:
     """
     The generic settings data source allows Settings 2.0 objects to be retrieved by its schema ID, scope, and/or filter.

@@ -20,7 +20,7 @@ __all__ = ['UsabilityAnalyticsArgs', 'UsabilityAnalytics']
 class UsabilityAnalyticsArgs:
     def __init__(__self__, *,
                  detect_rage_clicks: pulumi.Input[_builtins.bool],
-                 application_id: Optional[pulumi.Input[_builtins.str]] = None):
+                 application_id: pulumi.Input[Optional[_builtins.str]] = None):
         """
         The set of arguments for constructing a UsabilityAnalytics resource.
 
@@ -47,22 +47,22 @@ class UsabilityAnalyticsArgs:
 
     @_builtins.property
     @pulumi.getter(name="applicationId")
-    def application_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def application_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The scope of this settings. If the settings should cover the whole environment, just don't specify any scope.
         """
         return pulumi.get(self, "application_id")
 
     @application_id.setter
-    def application_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def application_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "application_id", value)
 
 
 @pulumi.input_type
 class _UsabilityAnalyticsState:
     def __init__(__self__, *,
-                 application_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 detect_rage_clicks: Optional[pulumi.Input[_builtins.bool]] = None):
+                 application_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 detect_rage_clicks: pulumi.Input[Optional[_builtins.bool]] = None):
         """
         Input properties used for looking up and filtering UsabilityAnalytics resources.
 
@@ -77,19 +77,19 @@ class _UsabilityAnalyticsState:
 
     @_builtins.property
     @pulumi.getter(name="applicationId")
-    def application_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def application_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The scope of this settings. If the settings should cover the whole environment, just don't specify any scope.
         """
         return pulumi.get(self, "application_id")
 
     @application_id.setter
-    def application_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def application_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "application_id", value)
 
     @_builtins.property
     @pulumi.getter(name="detectRageClicks")
-    def detect_rage_clicks(self) -> Optional[pulumi.Input[_builtins.bool]]:
+    def detect_rage_clicks(self) -> pulumi.Input[Optional[_builtins.bool]]:
         """
         Three or more rapid clicks within the same area of a web page are considered to be rage clicks. Rage clicks commonly reflect slow-loading or failed page resources. Rage click counts are compiled for each session and considered in the [User Experience Score](https://dt-url.net/39034wt) .
         With this setting enabled, a rage click count is compiled for each monitored user session.
@@ -97,7 +97,7 @@ class _UsabilityAnalyticsState:
         return pulumi.get(self, "detect_rage_clicks")
 
     @detect_rage_clicks.setter
-    def detect_rage_clicks(self, value: Optional[pulumi.Input[_builtins.bool]]):
+    def detect_rage_clicks(self, value: pulumi.Input[Optional[_builtins.bool]]):
         pulumi.set(self, "detect_rage_clicks", value)
 
 
@@ -107,8 +107,8 @@ class UsabilityAnalytics(pulumi.CustomResource):
     def __init__(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 application_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 detect_rage_clicks: Optional[pulumi.Input[_builtins.bool]] = None,
+                 application_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 detect_rage_clicks: pulumi.Input[Optional[_builtins.bool]] = None,
                  __props__=None):
         """
         > This resource requires the API token scopes **Read settings** (`settings.read`) and **Write settings** (`settings.write`)
@@ -193,8 +193,8 @@ class UsabilityAnalytics(pulumi.CustomResource):
     def _internal_init(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 application_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 detect_rage_clicks: Optional[pulumi.Input[_builtins.bool]] = None,
+                 application_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 detect_rage_clicks: pulumi.Input[Optional[_builtins.bool]] = None,
                  __props__=None):
         opts = pulumi.ResourceOptions.merge(_utilities.get_resource_opts_defaults(), opts)
         if not isinstance(opts, pulumi.ResourceOptions):
@@ -218,8 +218,8 @@ class UsabilityAnalytics(pulumi.CustomResource):
     def get(resource_name: str,
             id: pulumi.Input[str],
             opts: Optional[pulumi.ResourceOptions] = None,
-            application_id: Optional[pulumi.Input[_builtins.str]] = None,
-            detect_rage_clicks: Optional[pulumi.Input[_builtins.bool]] = None) -> 'UsabilityAnalytics':
+            application_id: pulumi.Input[Optional[_builtins.str]] = None,
+            detect_rage_clicks: pulumi.Input[Optional[_builtins.bool]] = None) -> 'UsabilityAnalytics':
         """
         Get an existing UsabilityAnalytics resource's state with the given name, id, and optional extra
         properties used to qualify the lookup.

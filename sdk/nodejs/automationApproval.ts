@@ -79,7 +79,7 @@ export interface AutomationApprovalState {
     /**
      * Allow on tenant level anyone with access to the app can respond to requests via an approval link.
      */
-    workflowAppAccessApprovalEnabled?: pulumi.Input<boolean>;
+    workflowAppAccessApprovalEnabled?: pulumi.Input<boolean | undefined>;
 }
 
 /**

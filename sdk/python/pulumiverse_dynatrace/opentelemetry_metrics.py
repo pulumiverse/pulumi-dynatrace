@@ -21,12 +21,12 @@ __all__ = ['OpentelemetryMetricsArgs', 'OpentelemetryMetrics']
 @pulumi.input_type
 class OpentelemetryMetricsArgs:
     def __init__(__self__, *,
-                 additional_attributes: Optional[pulumi.Input['OpentelemetryMetricsAdditionalAttributesArgs']] = None,
-                 additional_attributes_to_dimension_enabled: Optional[pulumi.Input[_builtins.bool]] = None,
-                 meter_name_to_dimension_enabled: Optional[pulumi.Input[_builtins.bool]] = None,
-                 mode: Optional[pulumi.Input[_builtins.str]] = None,
-                 scope: Optional[pulumi.Input[_builtins.str]] = None,
-                 to_drop_attributes: Optional[pulumi.Input['OpentelemetryMetricsToDropAttributesArgs']] = None):
+                 additional_attributes: pulumi.Input[Optional['OpentelemetryMetricsAdditionalAttributesArgs']] = None,
+                 additional_attributes_to_dimension_enabled: pulumi.Input[Optional[_builtins.bool]] = None,
+                 meter_name_to_dimension_enabled: pulumi.Input[Optional[_builtins.bool]] = None,
+                 mode: pulumi.Input[Optional[_builtins.str]] = None,
+                 scope: pulumi.Input[Optional[_builtins.str]] = None,
+                 to_drop_attributes: pulumi.Input[Optional['OpentelemetryMetricsToDropAttributesArgs']] = None):
         """
         The set of arguments for constructing a OpentelemetryMetrics resource.
 
@@ -66,43 +66,43 @@ class OpentelemetryMetricsArgs:
 
     @_builtins.property
     @pulumi.getter(name="additionalAttributes")
-    def additional_attributes(self) -> Optional[pulumi.Input['OpentelemetryMetricsAdditionalAttributesArgs']]:
+    def additional_attributes(self) -> pulumi.Input[Optional['OpentelemetryMetricsAdditionalAttributesArgs']]:
         """
         When enabled, the attributes defined in the list below will be added as dimensions to ingested OTLP metrics if they are present in the OpenTelemetry resource or in the instrumentation scope.
         """
         return pulumi.get(self, "additional_attributes")
 
     @additional_attributes.setter
-    def additional_attributes(self, value: Optional[pulumi.Input['OpentelemetryMetricsAdditionalAttributesArgs']]):
+    def additional_attributes(self, value: pulumi.Input[Optional['OpentelemetryMetricsAdditionalAttributesArgs']]):
         pulumi.set(self, "additional_attributes", value)
 
     @_builtins.property
     @pulumi.getter(name="additionalAttributesToDimensionEnabled")
-    def additional_attributes_to_dimension_enabled(self) -> Optional[pulumi.Input[_builtins.bool]]:
+    def additional_attributes_to_dimension_enabled(self) -> pulumi.Input[Optional[_builtins.bool]]:
         """
         Add the resource and scope attributes configured below as dimensions (Metrics Classic)
         """
         return pulumi.get(self, "additional_attributes_to_dimension_enabled")
 
     @additional_attributes_to_dimension_enabled.setter
-    def additional_attributes_to_dimension_enabled(self, value: Optional[pulumi.Input[_builtins.bool]]):
+    def additional_attributes_to_dimension_enabled(self, value: pulumi.Input[Optional[_builtins.bool]]):
         pulumi.set(self, "additional_attributes_to_dimension_enabled", value)
 
     @_builtins.property
     @pulumi.getter(name="meterNameToDimensionEnabled")
-    def meter_name_to_dimension_enabled(self) -> Optional[pulumi.Input[_builtins.bool]]:
+    def meter_name_to_dimension_enabled(self) -> pulumi.Input[Optional[_builtins.bool]]:
         """
         When enabled, the Meter name (also referred to as InstrumentationScope or InstrumentationLibrary in OpenTelemetry SDKs) and version will be added as dimensions (`otel.scope.name` and `otel.scope.version`) to ingested OTLP metrics.
         """
         return pulumi.get(self, "meter_name_to_dimension_enabled")
 
     @meter_name_to_dimension_enabled.setter
-    def meter_name_to_dimension_enabled(self, value: Optional[pulumi.Input[_builtins.bool]]):
+    def meter_name_to_dimension_enabled(self, value: pulumi.Input[Optional[_builtins.bool]]):
         pulumi.set(self, "meter_name_to_dimension_enabled", value)
 
     @_builtins.property
     @pulumi.getter
-    def mode(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def mode(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Specifies whether the given attributes to enable (`additional_attributes`) and the attributes to drop (`to_drop_attributes`) will get applied explicitly (`EXPLICIT`) or additive (`ADDITIVE`).
 
@@ -115,24 +115,24 @@ class OpentelemetryMetricsArgs:
         return pulumi.get(self, "mode")
 
     @mode.setter
-    def mode(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def mode(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "mode", value)
 
     @_builtins.property
     @pulumi.getter
-    def scope(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def scope(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The scope of this setting (environment-default). Omit this property if you want to cover the whole environment.
         """
         return pulumi.get(self, "scope")
 
     @scope.setter
-    def scope(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def scope(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "scope", value)
 
     @_builtins.property
     @pulumi.getter(name="toDropAttributes")
-    def to_drop_attributes(self) -> Optional[pulumi.Input['OpentelemetryMetricsToDropAttributesArgs']]:
+    def to_drop_attributes(self) -> pulumi.Input[Optional['OpentelemetryMetricsToDropAttributesArgs']]:
         """
         The attributes defined in the list below will be dropped from all ingested OTLP metrics.
 
@@ -147,19 +147,19 @@ class OpentelemetryMetricsArgs:
         return pulumi.get(self, "to_drop_attributes")
 
     @to_drop_attributes.setter
-    def to_drop_attributes(self, value: Optional[pulumi.Input['OpentelemetryMetricsToDropAttributesArgs']]):
+    def to_drop_attributes(self, value: pulumi.Input[Optional['OpentelemetryMetricsToDropAttributesArgs']]):
         pulumi.set(self, "to_drop_attributes", value)
 
 
 @pulumi.input_type
 class _OpentelemetryMetricsState:
     def __init__(__self__, *,
-                 additional_attributes: Optional[pulumi.Input['OpentelemetryMetricsAdditionalAttributesArgs']] = None,
-                 additional_attributes_to_dimension_enabled: Optional[pulumi.Input[_builtins.bool]] = None,
-                 meter_name_to_dimension_enabled: Optional[pulumi.Input[_builtins.bool]] = None,
-                 mode: Optional[pulumi.Input[_builtins.str]] = None,
-                 scope: Optional[pulumi.Input[_builtins.str]] = None,
-                 to_drop_attributes: Optional[pulumi.Input['OpentelemetryMetricsToDropAttributesArgs']] = None):
+                 additional_attributes: pulumi.Input[Optional['OpentelemetryMetricsAdditionalAttributesArgs']] = None,
+                 additional_attributes_to_dimension_enabled: pulumi.Input[Optional[_builtins.bool]] = None,
+                 meter_name_to_dimension_enabled: pulumi.Input[Optional[_builtins.bool]] = None,
+                 mode: pulumi.Input[Optional[_builtins.str]] = None,
+                 scope: pulumi.Input[Optional[_builtins.str]] = None,
+                 to_drop_attributes: pulumi.Input[Optional['OpentelemetryMetricsToDropAttributesArgs']] = None):
         """
         Input properties used for looking up and filtering OpentelemetryMetrics resources.
 
@@ -199,43 +199,43 @@ class _OpentelemetryMetricsState:
 
     @_builtins.property
     @pulumi.getter(name="additionalAttributes")
-    def additional_attributes(self) -> Optional[pulumi.Input['OpentelemetryMetricsAdditionalAttributesArgs']]:
+    def additional_attributes(self) -> pulumi.Input[Optional['OpentelemetryMetricsAdditionalAttributesArgs']]:
         """
         When enabled, the attributes defined in the list below will be added as dimensions to ingested OTLP metrics if they are present in the OpenTelemetry resource or in the instrumentation scope.
         """
         return pulumi.get(self, "additional_attributes")
 
     @additional_attributes.setter
-    def additional_attributes(self, value: Optional[pulumi.Input['OpentelemetryMetricsAdditionalAttributesArgs']]):
+    def additional_attributes(self, value: pulumi.Input[Optional['OpentelemetryMetricsAdditionalAttributesArgs']]):
         pulumi.set(self, "additional_attributes", value)
 
     @_builtins.property
     @pulumi.getter(name="additionalAttributesToDimensionEnabled")
-    def additional_attributes_to_dimension_enabled(self) -> Optional[pulumi.Input[_builtins.bool]]:
+    def additional_attributes_to_dimension_enabled(self) -> pulumi.Input[Optional[_builtins.bool]]:
         """
         Add the resource and scope attributes configured below as dimensions (Metrics Classic)
         """
         return pulumi.get(self, "additional_attributes_to_dimension_enabled")
 
     @additional_attributes_to_dimension_enabled.setter
-    def additional_attributes_to_dimension_enabled(self, value: Optional[pulumi.Input[_builtins.bool]]):
+    def additional_attributes_to_dimension_enabled(self, value: pulumi.Input[Optional[_builtins.bool]]):
         pulumi.set(self, "additional_attributes_to_dimension_enabled", value)
 
     @_builtins.property
     @pulumi.getter(name="meterNameToDimensionEnabled")
-    def meter_name_to_dimension_enabled(self) -> Optional[pulumi.Input[_builtins.bool]]:
+    def meter_name_to_dimension_enabled(self) -> pulumi.Input[Optional[_builtins.bool]]:
         """
         When enabled, the Meter name (also referred to as InstrumentationScope or InstrumentationLibrary in OpenTelemetry SDKs) and version will be added as dimensions (`otel.scope.name` and `otel.scope.version`) to ingested OTLP metrics.
         """
         return pulumi.get(self, "meter_name_to_dimension_enabled")
 
     @meter_name_to_dimension_enabled.setter
-    def meter_name_to_dimension_enabled(self, value: Optional[pulumi.Input[_builtins.bool]]):
+    def meter_name_to_dimension_enabled(self, value: pulumi.Input[Optional[_builtins.bool]]):
         pulumi.set(self, "meter_name_to_dimension_enabled", value)
 
     @_builtins.property
     @pulumi.getter
-    def mode(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def mode(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Specifies whether the given attributes to enable (`additional_attributes`) and the attributes to drop (`to_drop_attributes`) will get applied explicitly (`EXPLICIT`) or additive (`ADDITIVE`).
 
@@ -248,24 +248,24 @@ class _OpentelemetryMetricsState:
         return pulumi.get(self, "mode")
 
     @mode.setter
-    def mode(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def mode(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "mode", value)
 
     @_builtins.property
     @pulumi.getter
-    def scope(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def scope(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The scope of this setting (environment-default). Omit this property if you want to cover the whole environment.
         """
         return pulumi.get(self, "scope")
 
     @scope.setter
-    def scope(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def scope(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "scope", value)
 
     @_builtins.property
     @pulumi.getter(name="toDropAttributes")
-    def to_drop_attributes(self) -> Optional[pulumi.Input['OpentelemetryMetricsToDropAttributesArgs']]:
+    def to_drop_attributes(self) -> pulumi.Input[Optional['OpentelemetryMetricsToDropAttributesArgs']]:
         """
         The attributes defined in the list below will be dropped from all ingested OTLP metrics.
 
@@ -280,7 +280,7 @@ class _OpentelemetryMetricsState:
         return pulumi.get(self, "to_drop_attributes")
 
     @to_drop_attributes.setter
-    def to_drop_attributes(self, value: Optional[pulumi.Input['OpentelemetryMetricsToDropAttributesArgs']]):
+    def to_drop_attributes(self, value: pulumi.Input[Optional['OpentelemetryMetricsToDropAttributesArgs']]):
         pulumi.set(self, "to_drop_attributes", value)
 
 
@@ -290,12 +290,12 @@ class OpentelemetryMetrics(pulumi.CustomResource):
     def __init__(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 additional_attributes: Optional[pulumi.Input[Union['OpentelemetryMetricsAdditionalAttributesArgs', 'OpentelemetryMetricsAdditionalAttributesArgsDict']]] = None,
-                 additional_attributes_to_dimension_enabled: Optional[pulumi.Input[_builtins.bool]] = None,
-                 meter_name_to_dimension_enabled: Optional[pulumi.Input[_builtins.bool]] = None,
-                 mode: Optional[pulumi.Input[_builtins.str]] = None,
-                 scope: Optional[pulumi.Input[_builtins.str]] = None,
-                 to_drop_attributes: Optional[pulumi.Input[Union['OpentelemetryMetricsToDropAttributesArgs', 'OpentelemetryMetricsToDropAttributesArgsDict']]] = None,
+                 additional_attributes: pulumi.Input[Optional[Union['OpentelemetryMetricsAdditionalAttributesArgs', 'OpentelemetryMetricsAdditionalAttributesArgsDict']]] = None,
+                 additional_attributes_to_dimension_enabled: pulumi.Input[Optional[_builtins.bool]] = None,
+                 meter_name_to_dimension_enabled: pulumi.Input[Optional[_builtins.bool]] = None,
+                 mode: pulumi.Input[Optional[_builtins.str]] = None,
+                 scope: pulumi.Input[Optional[_builtins.str]] = None,
+                 to_drop_attributes: pulumi.Input[Optional[Union['OpentelemetryMetricsToDropAttributesArgs', 'OpentelemetryMetricsToDropAttributesArgsDict']]] = None,
                  __props__=None):
         """
         > This resource requires the API token scopes **Read settings** (`settings.read`) and **Write settings** (`settings.write`)
@@ -373,12 +373,12 @@ class OpentelemetryMetrics(pulumi.CustomResource):
     def _internal_init(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 additional_attributes: Optional[pulumi.Input[Union['OpentelemetryMetricsAdditionalAttributesArgs', 'OpentelemetryMetricsAdditionalAttributesArgsDict']]] = None,
-                 additional_attributes_to_dimension_enabled: Optional[pulumi.Input[_builtins.bool]] = None,
-                 meter_name_to_dimension_enabled: Optional[pulumi.Input[_builtins.bool]] = None,
-                 mode: Optional[pulumi.Input[_builtins.str]] = None,
-                 scope: Optional[pulumi.Input[_builtins.str]] = None,
-                 to_drop_attributes: Optional[pulumi.Input[Union['OpentelemetryMetricsToDropAttributesArgs', 'OpentelemetryMetricsToDropAttributesArgsDict']]] = None,
+                 additional_attributes: pulumi.Input[Optional[Union['OpentelemetryMetricsAdditionalAttributesArgs', 'OpentelemetryMetricsAdditionalAttributesArgsDict']]] = None,
+                 additional_attributes_to_dimension_enabled: pulumi.Input[Optional[_builtins.bool]] = None,
+                 meter_name_to_dimension_enabled: pulumi.Input[Optional[_builtins.bool]] = None,
+                 mode: pulumi.Input[Optional[_builtins.str]] = None,
+                 scope: pulumi.Input[Optional[_builtins.str]] = None,
+                 to_drop_attributes: pulumi.Input[Optional[Union['OpentelemetryMetricsToDropAttributesArgs', 'OpentelemetryMetricsToDropAttributesArgsDict']]] = None,
                  __props__=None):
         opts = pulumi.ResourceOptions.merge(_utilities.get_resource_opts_defaults(), opts)
         if not isinstance(opts, pulumi.ResourceOptions):
@@ -404,12 +404,12 @@ class OpentelemetryMetrics(pulumi.CustomResource):
     def get(resource_name: str,
             id: pulumi.Input[str],
             opts: Optional[pulumi.ResourceOptions] = None,
-            additional_attributes: Optional[pulumi.Input[Union['OpentelemetryMetricsAdditionalAttributesArgs', 'OpentelemetryMetricsAdditionalAttributesArgsDict']]] = None,
-            additional_attributes_to_dimension_enabled: Optional[pulumi.Input[_builtins.bool]] = None,
-            meter_name_to_dimension_enabled: Optional[pulumi.Input[_builtins.bool]] = None,
-            mode: Optional[pulumi.Input[_builtins.str]] = None,
-            scope: Optional[pulumi.Input[_builtins.str]] = None,
-            to_drop_attributes: Optional[pulumi.Input[Union['OpentelemetryMetricsToDropAttributesArgs', 'OpentelemetryMetricsToDropAttributesArgsDict']]] = None) -> 'OpentelemetryMetrics':
+            additional_attributes: pulumi.Input[Optional[Union['OpentelemetryMetricsAdditionalAttributesArgs', 'OpentelemetryMetricsAdditionalAttributesArgsDict']]] = None,
+            additional_attributes_to_dimension_enabled: pulumi.Input[Optional[_builtins.bool]] = None,
+            meter_name_to_dimension_enabled: pulumi.Input[Optional[_builtins.bool]] = None,
+            mode: pulumi.Input[Optional[_builtins.str]] = None,
+            scope: pulumi.Input[Optional[_builtins.str]] = None,
+            to_drop_attributes: pulumi.Input[Optional[Union['OpentelemetryMetricsToDropAttributesArgs', 'OpentelemetryMetricsToDropAttributesArgsDict']]] = None) -> 'OpentelemetryMetrics':
         """
         Get an existing OpentelemetryMetrics resource's state with the given name, id, and optional extra
         properties used to qualify the lookup.

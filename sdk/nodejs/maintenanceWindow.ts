@@ -134,39 +134,39 @@ export interface MaintenanceWindowState {
     /**
      * A short description of the maintenance purpose
      */
-    description?: pulumi.Input<string>;
+    description?: pulumi.Input<string | undefined>;
     /**
      * The Maintenance Window is enabled or disabled
      */
-    enabled?: pulumi.Input<boolean>;
+    enabled?: pulumi.Input<boolean | undefined>;
     /**
      * The name of the maintenance window, displayed in the UI
      */
-    name?: pulumi.Input<string>;
+    name?: pulumi.Input<string | undefined>;
     /**
      * The schedule of the maintenance window
      */
-    schedule?: pulumi.Input<inputs.MaintenanceWindowSchedule>;
+    schedule?: pulumi.Input<inputs.MaintenanceWindowSchedule | undefined>;
     /**
      * the tiles this Dashboard consist of
      */
-    scope?: pulumi.Input<inputs.MaintenanceWindowScope>;
+    scope?: pulumi.Input<inputs.MaintenanceWindowScope | undefined>;
     /**
      * Suppress execution of synthetic monitors during the maintenance
      */
-    suppressSynthMonExec?: pulumi.Input<boolean>;
+    suppressSynthMonExec?: pulumi.Input<boolean | undefined>;
     /**
      * The type of suppression of alerting and problem detection during the maintenance
      */
-    suppression?: pulumi.Input<string>;
+    suppression?: pulumi.Input<string | undefined>;
     /**
      * The type of the maintenance: planned or unplanned
      */
-    type?: pulumi.Input<string>;
+    type?: pulumi.Input<string | undefined>;
     /**
      * allows for configuring properties that are not explicitly supported by the current version of this provider
      */
-    unknowns?: pulumi.Input<string>;
+    unknowns?: pulumi.Input<string | undefined>;
 }
 
 /**
@@ -176,27 +176,27 @@ export interface MaintenanceWindowArgs {
     /**
      * A short description of the maintenance purpose
      */
-    description?: pulumi.Input<string>;
+    description?: pulumi.Input<string | undefined>;
     /**
      * The Maintenance Window is enabled or disabled
      */
-    enabled?: pulumi.Input<boolean>;
+    enabled?: pulumi.Input<boolean | undefined>;
     /**
      * The name of the maintenance window, displayed in the UI
      */
-    name?: pulumi.Input<string>;
+    name?: pulumi.Input<string | undefined>;
     /**
      * The schedule of the maintenance window
      */
-    schedule?: pulumi.Input<inputs.MaintenanceWindowSchedule>;
+    schedule?: pulumi.Input<inputs.MaintenanceWindowSchedule | undefined>;
     /**
      * the tiles this Dashboard consist of
      */
-    scope?: pulumi.Input<inputs.MaintenanceWindowScope>;
+    scope?: pulumi.Input<inputs.MaintenanceWindowScope | undefined>;
     /**
      * Suppress execution of synthetic monitors during the maintenance
      */
-    suppressSynthMonExec?: pulumi.Input<boolean>;
+    suppressSynthMonExec?: pulumi.Input<boolean | undefined>;
     /**
      * The type of suppression of alerting and problem detection during the maintenance
      */
@@ -208,5 +208,5 @@ export interface MaintenanceWindowArgs {
     /**
      * allows for configuring properties that are not explicitly supported by the current version of this provider
      */
-    unknowns?: pulumi.Input<string>;
+    unknowns?: pulumi.Input<string | undefined>;
 }

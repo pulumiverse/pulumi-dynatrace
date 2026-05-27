@@ -23,13 +23,13 @@ class MaintenanceWindowArgs:
     def __init__(__self__, *,
                  suppression: pulumi.Input[_builtins.str],
                  type: pulumi.Input[_builtins.str],
-                 description: Optional[pulumi.Input[_builtins.str]] = None,
-                 enabled: Optional[pulumi.Input[_builtins.bool]] = None,
-                 name: Optional[pulumi.Input[_builtins.str]] = None,
-                 schedule: Optional[pulumi.Input['MaintenanceWindowScheduleArgs']] = None,
-                 scope: Optional[pulumi.Input['MaintenanceWindowScopeArgs']] = None,
-                 suppress_synth_mon_exec: Optional[pulumi.Input[_builtins.bool]] = None,
-                 unknowns: Optional[pulumi.Input[_builtins.str]] = None):
+                 description: pulumi.Input[Optional[_builtins.str]] = None,
+                 enabled: pulumi.Input[Optional[_builtins.bool]] = None,
+                 name: pulumi.Input[Optional[_builtins.str]] = None,
+                 schedule: pulumi.Input[Optional['MaintenanceWindowScheduleArgs']] = None,
+                 scope: pulumi.Input[Optional['MaintenanceWindowScopeArgs']] = None,
+                 suppress_synth_mon_exec: pulumi.Input[Optional[_builtins.bool]] = None,
+                 unknowns: pulumi.Input[Optional[_builtins.str]] = None):
         """
         The set of arguments for constructing a MaintenanceWindow resource.
 
@@ -86,101 +86,101 @@ class MaintenanceWindowArgs:
 
     @_builtins.property
     @pulumi.getter
-    def description(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def description(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         A short description of the maintenance purpose
         """
         return pulumi.get(self, "description")
 
     @description.setter
-    def description(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def description(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "description", value)
 
     @_builtins.property
     @pulumi.getter
-    def enabled(self) -> Optional[pulumi.Input[_builtins.bool]]:
+    def enabled(self) -> pulumi.Input[Optional[_builtins.bool]]:
         """
         The Maintenance Window is enabled or disabled
         """
         return pulumi.get(self, "enabled")
 
     @enabled.setter
-    def enabled(self, value: Optional[pulumi.Input[_builtins.bool]]):
+    def enabled(self, value: pulumi.Input[Optional[_builtins.bool]]):
         pulumi.set(self, "enabled", value)
 
     @_builtins.property
     @pulumi.getter
-    def name(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def name(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The name of the maintenance window, displayed in the UI
         """
         return pulumi.get(self, "name")
 
     @name.setter
-    def name(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def name(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "name", value)
 
     @_builtins.property
     @pulumi.getter
-    def schedule(self) -> Optional[pulumi.Input['MaintenanceWindowScheduleArgs']]:
+    def schedule(self) -> pulumi.Input[Optional['MaintenanceWindowScheduleArgs']]:
         """
         The schedule of the maintenance window
         """
         return pulumi.get(self, "schedule")
 
     @schedule.setter
-    def schedule(self, value: Optional[pulumi.Input['MaintenanceWindowScheduleArgs']]):
+    def schedule(self, value: pulumi.Input[Optional['MaintenanceWindowScheduleArgs']]):
         pulumi.set(self, "schedule", value)
 
     @_builtins.property
     @pulumi.getter
-    def scope(self) -> Optional[pulumi.Input['MaintenanceWindowScopeArgs']]:
+    def scope(self) -> pulumi.Input[Optional['MaintenanceWindowScopeArgs']]:
         """
         the tiles this Dashboard consist of
         """
         return pulumi.get(self, "scope")
 
     @scope.setter
-    def scope(self, value: Optional[pulumi.Input['MaintenanceWindowScopeArgs']]):
+    def scope(self, value: pulumi.Input[Optional['MaintenanceWindowScopeArgs']]):
         pulumi.set(self, "scope", value)
 
     @_builtins.property
     @pulumi.getter(name="suppressSynthMonExec")
-    def suppress_synth_mon_exec(self) -> Optional[pulumi.Input[_builtins.bool]]:
+    def suppress_synth_mon_exec(self) -> pulumi.Input[Optional[_builtins.bool]]:
         """
         Suppress execution of synthetic monitors during the maintenance
         """
         return pulumi.get(self, "suppress_synth_mon_exec")
 
     @suppress_synth_mon_exec.setter
-    def suppress_synth_mon_exec(self, value: Optional[pulumi.Input[_builtins.bool]]):
+    def suppress_synth_mon_exec(self, value: pulumi.Input[Optional[_builtins.bool]]):
         pulumi.set(self, "suppress_synth_mon_exec", value)
 
     @_builtins.property
     @pulumi.getter
-    def unknowns(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def unknowns(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         allows for configuring properties that are not explicitly supported by the current version of this provider
         """
         return pulumi.get(self, "unknowns")
 
     @unknowns.setter
-    def unknowns(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def unknowns(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "unknowns", value)
 
 
 @pulumi.input_type
 class _MaintenanceWindowState:
     def __init__(__self__, *,
-                 description: Optional[pulumi.Input[_builtins.str]] = None,
-                 enabled: Optional[pulumi.Input[_builtins.bool]] = None,
-                 name: Optional[pulumi.Input[_builtins.str]] = None,
-                 schedule: Optional[pulumi.Input['MaintenanceWindowScheduleArgs']] = None,
-                 scope: Optional[pulumi.Input['MaintenanceWindowScopeArgs']] = None,
-                 suppress_synth_mon_exec: Optional[pulumi.Input[_builtins.bool]] = None,
-                 suppression: Optional[pulumi.Input[_builtins.str]] = None,
-                 type: Optional[pulumi.Input[_builtins.str]] = None,
-                 unknowns: Optional[pulumi.Input[_builtins.str]] = None):
+                 description: pulumi.Input[Optional[_builtins.str]] = None,
+                 enabled: pulumi.Input[Optional[_builtins.bool]] = None,
+                 name: pulumi.Input[Optional[_builtins.str]] = None,
+                 schedule: pulumi.Input[Optional['MaintenanceWindowScheduleArgs']] = None,
+                 scope: pulumi.Input[Optional['MaintenanceWindowScopeArgs']] = None,
+                 suppress_synth_mon_exec: pulumi.Input[Optional[_builtins.bool]] = None,
+                 suppression: pulumi.Input[Optional[_builtins.str]] = None,
+                 type: pulumi.Input[Optional[_builtins.str]] = None,
+                 unknowns: pulumi.Input[Optional[_builtins.str]] = None):
         """
         Input properties used for looking up and filtering MaintenanceWindow resources.
 
@@ -215,110 +215,110 @@ class _MaintenanceWindowState:
 
     @_builtins.property
     @pulumi.getter
-    def description(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def description(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         A short description of the maintenance purpose
         """
         return pulumi.get(self, "description")
 
     @description.setter
-    def description(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def description(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "description", value)
 
     @_builtins.property
     @pulumi.getter
-    def enabled(self) -> Optional[pulumi.Input[_builtins.bool]]:
+    def enabled(self) -> pulumi.Input[Optional[_builtins.bool]]:
         """
         The Maintenance Window is enabled or disabled
         """
         return pulumi.get(self, "enabled")
 
     @enabled.setter
-    def enabled(self, value: Optional[pulumi.Input[_builtins.bool]]):
+    def enabled(self, value: pulumi.Input[Optional[_builtins.bool]]):
         pulumi.set(self, "enabled", value)
 
     @_builtins.property
     @pulumi.getter
-    def name(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def name(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The name of the maintenance window, displayed in the UI
         """
         return pulumi.get(self, "name")
 
     @name.setter
-    def name(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def name(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "name", value)
 
     @_builtins.property
     @pulumi.getter
-    def schedule(self) -> Optional[pulumi.Input['MaintenanceWindowScheduleArgs']]:
+    def schedule(self) -> pulumi.Input[Optional['MaintenanceWindowScheduleArgs']]:
         """
         The schedule of the maintenance window
         """
         return pulumi.get(self, "schedule")
 
     @schedule.setter
-    def schedule(self, value: Optional[pulumi.Input['MaintenanceWindowScheduleArgs']]):
+    def schedule(self, value: pulumi.Input[Optional['MaintenanceWindowScheduleArgs']]):
         pulumi.set(self, "schedule", value)
 
     @_builtins.property
     @pulumi.getter
-    def scope(self) -> Optional[pulumi.Input['MaintenanceWindowScopeArgs']]:
+    def scope(self) -> pulumi.Input[Optional['MaintenanceWindowScopeArgs']]:
         """
         the tiles this Dashboard consist of
         """
         return pulumi.get(self, "scope")
 
     @scope.setter
-    def scope(self, value: Optional[pulumi.Input['MaintenanceWindowScopeArgs']]):
+    def scope(self, value: pulumi.Input[Optional['MaintenanceWindowScopeArgs']]):
         pulumi.set(self, "scope", value)
 
     @_builtins.property
     @pulumi.getter(name="suppressSynthMonExec")
-    def suppress_synth_mon_exec(self) -> Optional[pulumi.Input[_builtins.bool]]:
+    def suppress_synth_mon_exec(self) -> pulumi.Input[Optional[_builtins.bool]]:
         """
         Suppress execution of synthetic monitors during the maintenance
         """
         return pulumi.get(self, "suppress_synth_mon_exec")
 
     @suppress_synth_mon_exec.setter
-    def suppress_synth_mon_exec(self, value: Optional[pulumi.Input[_builtins.bool]]):
+    def suppress_synth_mon_exec(self, value: pulumi.Input[Optional[_builtins.bool]]):
         pulumi.set(self, "suppress_synth_mon_exec", value)
 
     @_builtins.property
     @pulumi.getter
-    def suppression(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def suppression(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The type of suppression of alerting and problem detection during the maintenance
         """
         return pulumi.get(self, "suppression")
 
     @suppression.setter
-    def suppression(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def suppression(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "suppression", value)
 
     @_builtins.property
     @pulumi.getter
-    def type(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def type(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The type of the maintenance: planned or unplanned
         """
         return pulumi.get(self, "type")
 
     @type.setter
-    def type(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def type(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "type", value)
 
     @_builtins.property
     @pulumi.getter
-    def unknowns(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def unknowns(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         allows for configuring properties that are not explicitly supported by the current version of this provider
         """
         return pulumi.get(self, "unknowns")
 
     @unknowns.setter
-    def unknowns(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def unknowns(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "unknowns", value)
 
 
@@ -328,15 +328,15 @@ class MaintenanceWindow(pulumi.CustomResource):
     def __init__(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 description: Optional[pulumi.Input[_builtins.str]] = None,
-                 enabled: Optional[pulumi.Input[_builtins.bool]] = None,
-                 name: Optional[pulumi.Input[_builtins.str]] = None,
-                 schedule: Optional[pulumi.Input[Union['MaintenanceWindowScheduleArgs', 'MaintenanceWindowScheduleArgsDict']]] = None,
-                 scope: Optional[pulumi.Input[Union['MaintenanceWindowScopeArgs', 'MaintenanceWindowScopeArgsDict']]] = None,
-                 suppress_synth_mon_exec: Optional[pulumi.Input[_builtins.bool]] = None,
-                 suppression: Optional[pulumi.Input[_builtins.str]] = None,
-                 type: Optional[pulumi.Input[_builtins.str]] = None,
-                 unknowns: Optional[pulumi.Input[_builtins.str]] = None,
+                 description: pulumi.Input[Optional[_builtins.str]] = None,
+                 enabled: pulumi.Input[Optional[_builtins.bool]] = None,
+                 name: pulumi.Input[Optional[_builtins.str]] = None,
+                 schedule: pulumi.Input[Optional[Union['MaintenanceWindowScheduleArgs', 'MaintenanceWindowScheduleArgsDict']]] = None,
+                 scope: pulumi.Input[Optional[Union['MaintenanceWindowScopeArgs', 'MaintenanceWindowScopeArgsDict']]] = None,
+                 suppress_synth_mon_exec: pulumi.Input[Optional[_builtins.bool]] = None,
+                 suppression: pulumi.Input[Optional[_builtins.str]] = None,
+                 type: pulumi.Input[Optional[_builtins.str]] = None,
+                 unknowns: pulumi.Input[Optional[_builtins.str]] = None,
                  __props__=None):
         """
         !> This resource API endpoint has been deprecated, please use Maintenance instead.
@@ -395,15 +395,15 @@ class MaintenanceWindow(pulumi.CustomResource):
     def _internal_init(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 description: Optional[pulumi.Input[_builtins.str]] = None,
-                 enabled: Optional[pulumi.Input[_builtins.bool]] = None,
-                 name: Optional[pulumi.Input[_builtins.str]] = None,
-                 schedule: Optional[pulumi.Input[Union['MaintenanceWindowScheduleArgs', 'MaintenanceWindowScheduleArgsDict']]] = None,
-                 scope: Optional[pulumi.Input[Union['MaintenanceWindowScopeArgs', 'MaintenanceWindowScopeArgsDict']]] = None,
-                 suppress_synth_mon_exec: Optional[pulumi.Input[_builtins.bool]] = None,
-                 suppression: Optional[pulumi.Input[_builtins.str]] = None,
-                 type: Optional[pulumi.Input[_builtins.str]] = None,
-                 unknowns: Optional[pulumi.Input[_builtins.str]] = None,
+                 description: pulumi.Input[Optional[_builtins.str]] = None,
+                 enabled: pulumi.Input[Optional[_builtins.bool]] = None,
+                 name: pulumi.Input[Optional[_builtins.str]] = None,
+                 schedule: pulumi.Input[Optional[Union['MaintenanceWindowScheduleArgs', 'MaintenanceWindowScheduleArgsDict']]] = None,
+                 scope: pulumi.Input[Optional[Union['MaintenanceWindowScopeArgs', 'MaintenanceWindowScopeArgsDict']]] = None,
+                 suppress_synth_mon_exec: pulumi.Input[Optional[_builtins.bool]] = None,
+                 suppression: pulumi.Input[Optional[_builtins.str]] = None,
+                 type: pulumi.Input[Optional[_builtins.str]] = None,
+                 unknowns: pulumi.Input[Optional[_builtins.str]] = None,
                  __props__=None):
         opts = pulumi.ResourceOptions.merge(_utilities.get_resource_opts_defaults(), opts)
         if not isinstance(opts, pulumi.ResourceOptions):
@@ -436,15 +436,15 @@ class MaintenanceWindow(pulumi.CustomResource):
     def get(resource_name: str,
             id: pulumi.Input[str],
             opts: Optional[pulumi.ResourceOptions] = None,
-            description: Optional[pulumi.Input[_builtins.str]] = None,
-            enabled: Optional[pulumi.Input[_builtins.bool]] = None,
-            name: Optional[pulumi.Input[_builtins.str]] = None,
-            schedule: Optional[pulumi.Input[Union['MaintenanceWindowScheduleArgs', 'MaintenanceWindowScheduleArgsDict']]] = None,
-            scope: Optional[pulumi.Input[Union['MaintenanceWindowScopeArgs', 'MaintenanceWindowScopeArgsDict']]] = None,
-            suppress_synth_mon_exec: Optional[pulumi.Input[_builtins.bool]] = None,
-            suppression: Optional[pulumi.Input[_builtins.str]] = None,
-            type: Optional[pulumi.Input[_builtins.str]] = None,
-            unknowns: Optional[pulumi.Input[_builtins.str]] = None) -> 'MaintenanceWindow':
+            description: pulumi.Input[Optional[_builtins.str]] = None,
+            enabled: pulumi.Input[Optional[_builtins.bool]] = None,
+            name: pulumi.Input[Optional[_builtins.str]] = None,
+            schedule: pulumi.Input[Optional[Union['MaintenanceWindowScheduleArgs', 'MaintenanceWindowScheduleArgsDict']]] = None,
+            scope: pulumi.Input[Optional[Union['MaintenanceWindowScopeArgs', 'MaintenanceWindowScopeArgsDict']]] = None,
+            suppress_synth_mon_exec: pulumi.Input[Optional[_builtins.bool]] = None,
+            suppression: pulumi.Input[Optional[_builtins.str]] = None,
+            type: pulumi.Input[Optional[_builtins.str]] = None,
+            unknowns: pulumi.Input[Optional[_builtins.str]] = None) -> 'MaintenanceWindow':
         """
         Get an existing MaintenanceWindow resource's state with the given name, id, and optional extra
         properties used to qualify the lookup.

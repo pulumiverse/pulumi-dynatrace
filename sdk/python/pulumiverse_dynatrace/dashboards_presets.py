@@ -22,7 +22,7 @@ __all__ = ['DashboardsPresetsArgs', 'DashboardsPresets']
 class DashboardsPresetsArgs:
     def __init__(__self__, *,
                  enable_dashboard_presets: pulumi.Input[_builtins.bool],
-                 dashboard_presets_list: Optional[pulumi.Input['DashboardsPresetsDashboardPresetsListArgs']] = None):
+                 dashboard_presets_list: pulumi.Input[Optional['DashboardsPresetsDashboardPresetsListArgs']] = None):
         """
         The set of arguments for constructing a DashboardsPresets resource.
 
@@ -47,22 +47,22 @@ class DashboardsPresetsArgs:
 
     @_builtins.property
     @pulumi.getter(name="dashboardPresetsList")
-    def dashboard_presets_list(self) -> Optional[pulumi.Input['DashboardsPresetsDashboardPresetsListArgs']]:
+    def dashboard_presets_list(self) -> pulumi.Input[Optional['DashboardsPresetsDashboardPresetsListArgs']]:
         """
         Show selected preset to respective user group only.
         """
         return pulumi.get(self, "dashboard_presets_list")
 
     @dashboard_presets_list.setter
-    def dashboard_presets_list(self, value: Optional[pulumi.Input['DashboardsPresetsDashboardPresetsListArgs']]):
+    def dashboard_presets_list(self, value: pulumi.Input[Optional['DashboardsPresetsDashboardPresetsListArgs']]):
         pulumi.set(self, "dashboard_presets_list", value)
 
 
 @pulumi.input_type
 class _DashboardsPresetsState:
     def __init__(__self__, *,
-                 dashboard_presets_list: Optional[pulumi.Input['DashboardsPresetsDashboardPresetsListArgs']] = None,
-                 enable_dashboard_presets: Optional[pulumi.Input[_builtins.bool]] = None):
+                 dashboard_presets_list: pulumi.Input[Optional['DashboardsPresetsDashboardPresetsListArgs']] = None,
+                 enable_dashboard_presets: pulumi.Input[Optional[_builtins.bool]] = None):
         """
         Input properties used for looking up and filtering DashboardsPresets resources.
 
@@ -76,26 +76,26 @@ class _DashboardsPresetsState:
 
     @_builtins.property
     @pulumi.getter(name="dashboardPresetsList")
-    def dashboard_presets_list(self) -> Optional[pulumi.Input['DashboardsPresetsDashboardPresetsListArgs']]:
+    def dashboard_presets_list(self) -> pulumi.Input[Optional['DashboardsPresetsDashboardPresetsListArgs']]:
         """
         Show selected preset to respective user group only.
         """
         return pulumi.get(self, "dashboard_presets_list")
 
     @dashboard_presets_list.setter
-    def dashboard_presets_list(self, value: Optional[pulumi.Input['DashboardsPresetsDashboardPresetsListArgs']]):
+    def dashboard_presets_list(self, value: pulumi.Input[Optional['DashboardsPresetsDashboardPresetsListArgs']]):
         pulumi.set(self, "dashboard_presets_list", value)
 
     @_builtins.property
     @pulumi.getter(name="enableDashboardPresets")
-    def enable_dashboard_presets(self) -> Optional[pulumi.Input[_builtins.bool]]:
+    def enable_dashboard_presets(self) -> pulumi.Input[Optional[_builtins.bool]]:
         """
         Dashboard presets are visible to all users by default. For a pristine environment you may disable them entirely or opt to manually limit visibility to selected user groups.
         """
         return pulumi.get(self, "enable_dashboard_presets")
 
     @enable_dashboard_presets.setter
-    def enable_dashboard_presets(self, value: Optional[pulumi.Input[_builtins.bool]]):
+    def enable_dashboard_presets(self, value: pulumi.Input[Optional[_builtins.bool]]):
         pulumi.set(self, "enable_dashboard_presets", value)
 
 
@@ -105,8 +105,8 @@ class DashboardsPresets(pulumi.CustomResource):
     def __init__(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 dashboard_presets_list: Optional[pulumi.Input[Union['DashboardsPresetsDashboardPresetsListArgs', 'DashboardsPresetsDashboardPresetsListArgsDict']]] = None,
-                 enable_dashboard_presets: Optional[pulumi.Input[_builtins.bool]] = None,
+                 dashboard_presets_list: pulumi.Input[Optional[Union['DashboardsPresetsDashboardPresetsListArgs', 'DashboardsPresetsDashboardPresetsListArgsDict']]] = None,
+                 enable_dashboard_presets: pulumi.Input[Optional[_builtins.bool]] = None,
                  __props__=None):
         """
         > This resource requires the API token scopes **Read settings** (`settings.read`) and **Write settings** (`settings.write`)
@@ -166,8 +166,8 @@ class DashboardsPresets(pulumi.CustomResource):
     def _internal_init(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 dashboard_presets_list: Optional[pulumi.Input[Union['DashboardsPresetsDashboardPresetsListArgs', 'DashboardsPresetsDashboardPresetsListArgsDict']]] = None,
-                 enable_dashboard_presets: Optional[pulumi.Input[_builtins.bool]] = None,
+                 dashboard_presets_list: pulumi.Input[Optional[Union['DashboardsPresetsDashboardPresetsListArgs', 'DashboardsPresetsDashboardPresetsListArgsDict']]] = None,
+                 enable_dashboard_presets: pulumi.Input[Optional[_builtins.bool]] = None,
                  __props__=None):
         opts = pulumi.ResourceOptions.merge(_utilities.get_resource_opts_defaults(), opts)
         if not isinstance(opts, pulumi.ResourceOptions):
@@ -191,8 +191,8 @@ class DashboardsPresets(pulumi.CustomResource):
     def get(resource_name: str,
             id: pulumi.Input[str],
             opts: Optional[pulumi.ResourceOptions] = None,
-            dashboard_presets_list: Optional[pulumi.Input[Union['DashboardsPresetsDashboardPresetsListArgs', 'DashboardsPresetsDashboardPresetsListArgsDict']]] = None,
-            enable_dashboard_presets: Optional[pulumi.Input[_builtins.bool]] = None) -> 'DashboardsPresets':
+            dashboard_presets_list: pulumi.Input[Optional[Union['DashboardsPresetsDashboardPresetsListArgs', 'DashboardsPresetsDashboardPresetsListArgsDict']]] = None,
+            enable_dashboard_presets: pulumi.Input[Optional[_builtins.bool]] = None) -> 'DashboardsPresets':
         """
         Get an existing DashboardsPresets resource's state with the given name, id, and optional extra
         properties used to qualify the lookup.

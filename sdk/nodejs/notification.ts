@@ -153,51 +153,51 @@ export interface NotificationState {
     /**
      * Configuration for Ansible Tower Notification
      */
-    ansibleTower?: pulumi.Input<inputs.NotificationAnsibleTower>;
+    ansibleTower?: pulumi.Input<inputs.NotificationAnsibleTower | undefined>;
     /**
      * Configuration for Generic Notification
      */
-    config?: pulumi.Input<inputs.NotificationConfig>;
+    config?: pulumi.Input<inputs.NotificationConfig | undefined>;
     /**
      * Configuration for Email Notification
      */
-    email?: pulumi.Input<inputs.NotificationEmail>;
+    email?: pulumi.Input<inputs.NotificationEmail | undefined>;
     /**
      * Configuration for Jira Notification
      */
-    jira?: pulumi.Input<inputs.NotificationJira>;
+    jira?: pulumi.Input<inputs.NotificationJira | undefined>;
     /**
      * Configuration for OpsGenie Notification
      */
-    opsGenie?: pulumi.Input<inputs.NotificationOpsGenie>;
+    opsGenie?: pulumi.Input<inputs.NotificationOpsGenie | undefined>;
     /**
      * Configuration for PagerDuty Notification
      */
-    pagerDuty?: pulumi.Input<inputs.NotificationPagerDuty>;
+    pagerDuty?: pulumi.Input<inputs.NotificationPagerDuty | undefined>;
     /**
      * Configuration for ServiceNow Notification
      */
-    serviceNow?: pulumi.Input<inputs.NotificationServiceNow>;
+    serviceNow?: pulumi.Input<inputs.NotificationServiceNow | undefined>;
     /**
      * Configuration for Slack Notification
      */
-    slack?: pulumi.Input<inputs.NotificationSlack>;
+    slack?: pulumi.Input<inputs.NotificationSlack | undefined>;
     /**
      * Configuration for Trello Notification
      */
-    trello?: pulumi.Input<inputs.NotificationTrello>;
+    trello?: pulumi.Input<inputs.NotificationTrello | undefined>;
     /**
      * Configuration for VictorOps Notification
      */
-    victorOps?: pulumi.Input<inputs.NotificationVictorOps>;
+    victorOps?: pulumi.Input<inputs.NotificationVictorOps | undefined>;
     /**
      * Configuration for WebHook Notification
      */
-    webHook?: pulumi.Input<inputs.NotificationWebHook>;
+    webHook?: pulumi.Input<inputs.NotificationWebHook | undefined>;
     /**
      * Configuration for XMatters Notification
      */
-    xmatters?: pulumi.Input<inputs.NotificationXmatters>;
+    xmatters?: pulumi.Input<inputs.NotificationXmatters | undefined>;
 }
 
 /**
@@ -207,49 +207,49 @@ export interface NotificationArgs {
     /**
      * Configuration for Ansible Tower Notification
      */
-    ansibleTower?: pulumi.Input<inputs.NotificationAnsibleTower>;
+    ansibleTower?: pulumi.Input<inputs.NotificationAnsibleTower | undefined>;
     /**
      * Configuration for Generic Notification
      */
-    config?: pulumi.Input<inputs.NotificationConfig>;
+    config?: pulumi.Input<inputs.NotificationConfig | undefined>;
     /**
      * Configuration for Email Notification
      */
-    email?: pulumi.Input<inputs.NotificationEmail>;
+    email?: pulumi.Input<inputs.NotificationEmail | undefined>;
     /**
      * Configuration for Jira Notification
      */
-    jira?: pulumi.Input<inputs.NotificationJira>;
+    jira?: pulumi.Input<inputs.NotificationJira | undefined>;
     /**
      * Configuration for OpsGenie Notification
      */
-    opsGenie?: pulumi.Input<inputs.NotificationOpsGenie>;
+    opsGenie?: pulumi.Input<inputs.NotificationOpsGenie | undefined>;
     /**
      * Configuration for PagerDuty Notification
      */
-    pagerDuty?: pulumi.Input<inputs.NotificationPagerDuty>;
+    pagerDuty?: pulumi.Input<inputs.NotificationPagerDuty | undefined>;
     /**
      * Configuration for ServiceNow Notification
      */
-    serviceNow?: pulumi.Input<inputs.NotificationServiceNow>;
+    serviceNow?: pulumi.Input<inputs.NotificationServiceNow | undefined>;
     /**
      * Configuration for Slack Notification
      */
-    slack?: pulumi.Input<inputs.NotificationSlack>;
+    slack?: pulumi.Input<inputs.NotificationSlack | undefined>;
     /**
      * Configuration for Trello Notification
      */
-    trello?: pulumi.Input<inputs.NotificationTrello>;
+    trello?: pulumi.Input<inputs.NotificationTrello | undefined>;
     /**
      * Configuration for VictorOps Notification
      */
-    victorOps?: pulumi.Input<inputs.NotificationVictorOps>;
+    victorOps?: pulumi.Input<inputs.NotificationVictorOps | undefined>;
     /**
      * Configuration for WebHook Notification
      */
-    webHook?: pulumi.Input<inputs.NotificationWebHook>;
+    webHook?: pulumi.Input<inputs.NotificationWebHook | undefined>;
     /**
      * Configuration for XMatters Notification
      */
-    xmatters?: pulumi.Input<inputs.NotificationXmatters>;
+    xmatters?: pulumi.Input<inputs.NotificationXmatters | undefined>;
 }

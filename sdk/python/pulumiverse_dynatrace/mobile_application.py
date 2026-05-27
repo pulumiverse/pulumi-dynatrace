@@ -23,17 +23,17 @@ class MobileApplicationArgs:
     def __init__(__self__, *,
                  apdex: pulumi.Input['MobileApplicationApdexArgs'],
                  beacon_endpoint_type: pulumi.Input[_builtins.str],
-                 application_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 application_type: Optional[pulumi.Input[_builtins.str]] = None,
-                 beacon_endpoint_url: Optional[pulumi.Input[_builtins.str]] = None,
-                 icon_type: Optional[pulumi.Input[_builtins.str]] = None,
-                 key_user_actions: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-                 name: Optional[pulumi.Input[_builtins.str]] = None,
-                 opt_in_mode: Optional[pulumi.Input[_builtins.bool]] = None,
-                 properties: Optional[pulumi.Input['MobileApplicationPropertiesArgs']] = None,
-                 session_replay: Optional[pulumi.Input[_builtins.bool]] = None,
-                 session_replay_on_crash: Optional[pulumi.Input[_builtins.bool]] = None,
-                 user_session_percentage: Optional[pulumi.Input[_builtins.int]] = None):
+                 application_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 application_type: pulumi.Input[Optional[_builtins.str]] = None,
+                 beacon_endpoint_url: pulumi.Input[Optional[_builtins.str]] = None,
+                 icon_type: pulumi.Input[Optional[_builtins.str]] = None,
+                 key_user_actions: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 name: pulumi.Input[Optional[_builtins.str]] = None,
+                 opt_in_mode: pulumi.Input[Optional[_builtins.bool]] = None,
+                 properties: pulumi.Input[Optional['MobileApplicationPropertiesArgs']] = None,
+                 session_replay: pulumi.Input[Optional[_builtins.bool]] = None,
+                 session_replay_on_crash: pulumi.Input[Optional[_builtins.bool]] = None,
+                 user_session_percentage: pulumi.Input[Optional[_builtins.int]] = None):
         """
         The set of arguments for constructing a MobileApplication resource.
 
@@ -106,31 +106,31 @@ class MobileApplicationArgs:
 
     @_builtins.property
     @pulumi.getter(name="applicationId")
-    def application_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def application_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The UUID of the application.
         """
         return pulumi.get(self, "application_id")
 
     @application_id.setter
-    def application_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def application_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "application_id", value)
 
     @_builtins.property
     @pulumi.getter(name="applicationType")
-    def application_type(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def application_type(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The type of the application. Either `CUSTOM_APPLICATION` or `MOBILE_APPLICATION`.
         """
         return pulumi.get(self, "application_type")
 
     @application_type.setter
-    def application_type(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def application_type(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "application_type", value)
 
     @_builtins.property
     @pulumi.getter(name="beaconEndpointUrl")
-    def beacon_endpoint_url(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def beacon_endpoint_url(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The URL of the beacon endpoint.
 
@@ -139,84 +139,84 @@ class MobileApplicationArgs:
         return pulumi.get(self, "beacon_endpoint_url")
 
     @beacon_endpoint_url.setter
-    def beacon_endpoint_url(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def beacon_endpoint_url(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "beacon_endpoint_url", value)
 
     @_builtins.property
     @pulumi.getter(name="iconType")
-    def icon_type(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def icon_type(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Custom application icon. Mobile apps always use the mobile device icon, so this icon can only be set for custom apps.
         """
         return pulumi.get(self, "icon_type")
 
     @icon_type.setter
-    def icon_type(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def icon_type(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "icon_type", value)
 
     @_builtins.property
     @pulumi.getter(name="keyUserActions")
-    def key_user_actions(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]:
+    def key_user_actions(self) -> pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]:
         """
         User Action names to be flagged as Key User Actions
         """
         return pulumi.get(self, "key_user_actions")
 
     @key_user_actions.setter
-    def key_user_actions(self, value: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]):
+    def key_user_actions(self, value: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "key_user_actions", value)
 
     @_builtins.property
     @pulumi.getter
-    def name(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def name(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The name of the application
         """
         return pulumi.get(self, "name")
 
     @name.setter
-    def name(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def name(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "name", value)
 
     @_builtins.property
     @pulumi.getter(name="optInMode")
-    def opt_in_mode(self) -> Optional[pulumi.Input[_builtins.bool]]:
+    def opt_in_mode(self) -> pulumi.Input[Optional[_builtins.bool]]:
         """
         The opt-in mode is enabled (`true`) or disabled (`false`)
         """
         return pulumi.get(self, "opt_in_mode")
 
     @opt_in_mode.setter
-    def opt_in_mode(self, value: Optional[pulumi.Input[_builtins.bool]]):
+    def opt_in_mode(self, value: pulumi.Input[Optional[_builtins.bool]]):
         pulumi.set(self, "opt_in_mode", value)
 
     @_builtins.property
     @pulumi.getter
-    def properties(self) -> Optional[pulumi.Input['MobileApplicationPropertiesArgs']]:
+    def properties(self) -> pulumi.Input[Optional['MobileApplicationPropertiesArgs']]:
         """
         User Action and Session Properties
         """
         return pulumi.get(self, "properties")
 
     @properties.setter
-    def properties(self, value: Optional[pulumi.Input['MobileApplicationPropertiesArgs']]):
+    def properties(self, value: pulumi.Input[Optional['MobileApplicationPropertiesArgs']]):
         pulumi.set(self, "properties", value)
 
     @_builtins.property
     @pulumi.getter(name="sessionReplay")
-    def session_replay(self) -> Optional[pulumi.Input[_builtins.bool]]:
+    def session_replay(self) -> pulumi.Input[Optional[_builtins.bool]]:
         """
         (Field has overlap with `MobileAppEnablement`) The session replay is enabled (`true`) or disabled (`false`).
         """
         return pulumi.get(self, "session_replay")
 
     @session_replay.setter
-    def session_replay(self, value: Optional[pulumi.Input[_builtins.bool]]):
+    def session_replay(self, value: pulumi.Input[Optional[_builtins.bool]]):
         pulumi.set(self, "session_replay", value)
 
     @_builtins.property
     @pulumi.getter(name="sessionReplayOnCrash")
-    def session_replay_on_crash(self) -> Optional[pulumi.Input[_builtins.bool]]:
+    def session_replay_on_crash(self) -> pulumi.Input[Optional[_builtins.bool]]:
         """
         The session replay on crash is enabled (`true`) or disabled (`false`). 
 
@@ -225,38 +225,38 @@ class MobileApplicationArgs:
         return pulumi.get(self, "session_replay_on_crash")
 
     @session_replay_on_crash.setter
-    def session_replay_on_crash(self, value: Optional[pulumi.Input[_builtins.bool]]):
+    def session_replay_on_crash(self, value: pulumi.Input[Optional[_builtins.bool]]):
         pulumi.set(self, "session_replay_on_crash", value)
 
     @_builtins.property
     @pulumi.getter(name="userSessionPercentage")
-    def user_session_percentage(self) -> Optional[pulumi.Input[_builtins.int]]:
+    def user_session_percentage(self) -> pulumi.Input[Optional[_builtins.int]]:
         """
         (Field has overlap with `MobileAppEnablement` for mobile and `CustomAppEnablement` for custom apps) The percentage of user sessions to be analyzed
         """
         return pulumi.get(self, "user_session_percentage")
 
     @user_session_percentage.setter
-    def user_session_percentage(self, value: Optional[pulumi.Input[_builtins.int]]):
+    def user_session_percentage(self, value: pulumi.Input[Optional[_builtins.int]]):
         pulumi.set(self, "user_session_percentage", value)
 
 
 @pulumi.input_type
 class _MobileApplicationState:
     def __init__(__self__, *,
-                 apdex: Optional[pulumi.Input['MobileApplicationApdexArgs']] = None,
-                 application_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 application_type: Optional[pulumi.Input[_builtins.str]] = None,
-                 beacon_endpoint_type: Optional[pulumi.Input[_builtins.str]] = None,
-                 beacon_endpoint_url: Optional[pulumi.Input[_builtins.str]] = None,
-                 icon_type: Optional[pulumi.Input[_builtins.str]] = None,
-                 key_user_actions: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-                 name: Optional[pulumi.Input[_builtins.str]] = None,
-                 opt_in_mode: Optional[pulumi.Input[_builtins.bool]] = None,
-                 properties: Optional[pulumi.Input['MobileApplicationPropertiesArgs']] = None,
-                 session_replay: Optional[pulumi.Input[_builtins.bool]] = None,
-                 session_replay_on_crash: Optional[pulumi.Input[_builtins.bool]] = None,
-                 user_session_percentage: Optional[pulumi.Input[_builtins.int]] = None):
+                 apdex: pulumi.Input[Optional['MobileApplicationApdexArgs']] = None,
+                 application_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 application_type: pulumi.Input[Optional[_builtins.str]] = None,
+                 beacon_endpoint_type: pulumi.Input[Optional[_builtins.str]] = None,
+                 beacon_endpoint_url: pulumi.Input[Optional[_builtins.str]] = None,
+                 icon_type: pulumi.Input[Optional[_builtins.str]] = None,
+                 key_user_actions: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 name: pulumi.Input[Optional[_builtins.str]] = None,
+                 opt_in_mode: pulumi.Input[Optional[_builtins.bool]] = None,
+                 properties: pulumi.Input[Optional['MobileApplicationPropertiesArgs']] = None,
+                 session_replay: pulumi.Input[Optional[_builtins.bool]] = None,
+                 session_replay_on_crash: pulumi.Input[Optional[_builtins.bool]] = None,
+                 user_session_percentage: pulumi.Input[Optional[_builtins.int]] = None):
         """
         Input properties used for looking up and filtering MobileApplication resources.
 
@@ -307,55 +307,55 @@ class _MobileApplicationState:
 
     @_builtins.property
     @pulumi.getter
-    def apdex(self) -> Optional[pulumi.Input['MobileApplicationApdexArgs']]:
+    def apdex(self) -> pulumi.Input[Optional['MobileApplicationApdexArgs']]:
         """
         Apdex configuration of a mobile application. A duration less than the **tolerable** threshold is considered satisfied
         """
         return pulumi.get(self, "apdex")
 
     @apdex.setter
-    def apdex(self, value: Optional[pulumi.Input['MobileApplicationApdexArgs']]):
+    def apdex(self, value: pulumi.Input[Optional['MobileApplicationApdexArgs']]):
         pulumi.set(self, "apdex", value)
 
     @_builtins.property
     @pulumi.getter(name="applicationId")
-    def application_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def application_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The UUID of the application.
         """
         return pulumi.get(self, "application_id")
 
     @application_id.setter
-    def application_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def application_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "application_id", value)
 
     @_builtins.property
     @pulumi.getter(name="applicationType")
-    def application_type(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def application_type(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The type of the application. Either `CUSTOM_APPLICATION` or `MOBILE_APPLICATION`.
         """
         return pulumi.get(self, "application_type")
 
     @application_type.setter
-    def application_type(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def application_type(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "application_type", value)
 
     @_builtins.property
     @pulumi.getter(name="beaconEndpointType")
-    def beacon_endpoint_type(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def beacon_endpoint_type(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The type of the beacon endpoint. Possible values are `CLUSTER_ACTIVE_GATE`, `ENVIRONMENT_ACTIVE_GATE` and `INSTRUMENTED_WEB_SERVER`.
         """
         return pulumi.get(self, "beacon_endpoint_type")
 
     @beacon_endpoint_type.setter
-    def beacon_endpoint_type(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def beacon_endpoint_type(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "beacon_endpoint_type", value)
 
     @_builtins.property
     @pulumi.getter(name="beaconEndpointUrl")
-    def beacon_endpoint_url(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def beacon_endpoint_url(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The URL of the beacon endpoint.
 
@@ -364,84 +364,84 @@ class _MobileApplicationState:
         return pulumi.get(self, "beacon_endpoint_url")
 
     @beacon_endpoint_url.setter
-    def beacon_endpoint_url(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def beacon_endpoint_url(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "beacon_endpoint_url", value)
 
     @_builtins.property
     @pulumi.getter(name="iconType")
-    def icon_type(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def icon_type(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Custom application icon. Mobile apps always use the mobile device icon, so this icon can only be set for custom apps.
         """
         return pulumi.get(self, "icon_type")
 
     @icon_type.setter
-    def icon_type(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def icon_type(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "icon_type", value)
 
     @_builtins.property
     @pulumi.getter(name="keyUserActions")
-    def key_user_actions(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]:
+    def key_user_actions(self) -> pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]:
         """
         User Action names to be flagged as Key User Actions
         """
         return pulumi.get(self, "key_user_actions")
 
     @key_user_actions.setter
-    def key_user_actions(self, value: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]):
+    def key_user_actions(self, value: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "key_user_actions", value)
 
     @_builtins.property
     @pulumi.getter
-    def name(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def name(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The name of the application
         """
         return pulumi.get(self, "name")
 
     @name.setter
-    def name(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def name(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "name", value)
 
     @_builtins.property
     @pulumi.getter(name="optInMode")
-    def opt_in_mode(self) -> Optional[pulumi.Input[_builtins.bool]]:
+    def opt_in_mode(self) -> pulumi.Input[Optional[_builtins.bool]]:
         """
         The opt-in mode is enabled (`true`) or disabled (`false`)
         """
         return pulumi.get(self, "opt_in_mode")
 
     @opt_in_mode.setter
-    def opt_in_mode(self, value: Optional[pulumi.Input[_builtins.bool]]):
+    def opt_in_mode(self, value: pulumi.Input[Optional[_builtins.bool]]):
         pulumi.set(self, "opt_in_mode", value)
 
     @_builtins.property
     @pulumi.getter
-    def properties(self) -> Optional[pulumi.Input['MobileApplicationPropertiesArgs']]:
+    def properties(self) -> pulumi.Input[Optional['MobileApplicationPropertiesArgs']]:
         """
         User Action and Session Properties
         """
         return pulumi.get(self, "properties")
 
     @properties.setter
-    def properties(self, value: Optional[pulumi.Input['MobileApplicationPropertiesArgs']]):
+    def properties(self, value: pulumi.Input[Optional['MobileApplicationPropertiesArgs']]):
         pulumi.set(self, "properties", value)
 
     @_builtins.property
     @pulumi.getter(name="sessionReplay")
-    def session_replay(self) -> Optional[pulumi.Input[_builtins.bool]]:
+    def session_replay(self) -> pulumi.Input[Optional[_builtins.bool]]:
         """
         (Field has overlap with `MobileAppEnablement`) The session replay is enabled (`true`) or disabled (`false`).
         """
         return pulumi.get(self, "session_replay")
 
     @session_replay.setter
-    def session_replay(self, value: Optional[pulumi.Input[_builtins.bool]]):
+    def session_replay(self, value: pulumi.Input[Optional[_builtins.bool]]):
         pulumi.set(self, "session_replay", value)
 
     @_builtins.property
     @pulumi.getter(name="sessionReplayOnCrash")
-    def session_replay_on_crash(self) -> Optional[pulumi.Input[_builtins.bool]]:
+    def session_replay_on_crash(self) -> pulumi.Input[Optional[_builtins.bool]]:
         """
         The session replay on crash is enabled (`true`) or disabled (`false`). 
 
@@ -450,19 +450,19 @@ class _MobileApplicationState:
         return pulumi.get(self, "session_replay_on_crash")
 
     @session_replay_on_crash.setter
-    def session_replay_on_crash(self, value: Optional[pulumi.Input[_builtins.bool]]):
+    def session_replay_on_crash(self, value: pulumi.Input[Optional[_builtins.bool]]):
         pulumi.set(self, "session_replay_on_crash", value)
 
     @_builtins.property
     @pulumi.getter(name="userSessionPercentage")
-    def user_session_percentage(self) -> Optional[pulumi.Input[_builtins.int]]:
+    def user_session_percentage(self) -> pulumi.Input[Optional[_builtins.int]]:
         """
         (Field has overlap with `MobileAppEnablement` for mobile and `CustomAppEnablement` for custom apps) The percentage of user sessions to be analyzed
         """
         return pulumi.get(self, "user_session_percentage")
 
     @user_session_percentage.setter
-    def user_session_percentage(self, value: Optional[pulumi.Input[_builtins.int]]):
+    def user_session_percentage(self, value: pulumi.Input[Optional[_builtins.int]]):
         pulumi.set(self, "user_session_percentage", value)
 
 
@@ -472,19 +472,19 @@ class MobileApplication(pulumi.CustomResource):
     def __init__(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 apdex: Optional[pulumi.Input[Union['MobileApplicationApdexArgs', 'MobileApplicationApdexArgsDict']]] = None,
-                 application_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 application_type: Optional[pulumi.Input[_builtins.str]] = None,
-                 beacon_endpoint_type: Optional[pulumi.Input[_builtins.str]] = None,
-                 beacon_endpoint_url: Optional[pulumi.Input[_builtins.str]] = None,
-                 icon_type: Optional[pulumi.Input[_builtins.str]] = None,
-                 key_user_actions: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-                 name: Optional[pulumi.Input[_builtins.str]] = None,
-                 opt_in_mode: Optional[pulumi.Input[_builtins.bool]] = None,
-                 properties: Optional[pulumi.Input[Union['MobileApplicationPropertiesArgs', 'MobileApplicationPropertiesArgsDict']]] = None,
-                 session_replay: Optional[pulumi.Input[_builtins.bool]] = None,
-                 session_replay_on_crash: Optional[pulumi.Input[_builtins.bool]] = None,
-                 user_session_percentage: Optional[pulumi.Input[_builtins.int]] = None,
+                 apdex: pulumi.Input[Optional[Union['MobileApplicationApdexArgs', 'MobileApplicationApdexArgsDict']]] = None,
+                 application_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 application_type: pulumi.Input[Optional[_builtins.str]] = None,
+                 beacon_endpoint_type: pulumi.Input[Optional[_builtins.str]] = None,
+                 beacon_endpoint_url: pulumi.Input[Optional[_builtins.str]] = None,
+                 icon_type: pulumi.Input[Optional[_builtins.str]] = None,
+                 key_user_actions: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 name: pulumi.Input[Optional[_builtins.str]] = None,
+                 opt_in_mode: pulumi.Input[Optional[_builtins.bool]] = None,
+                 properties: pulumi.Input[Optional[Union['MobileApplicationPropertiesArgs', 'MobileApplicationPropertiesArgsDict']]] = None,
+                 session_replay: pulumi.Input[Optional[_builtins.bool]] = None,
+                 session_replay_on_crash: pulumi.Input[Optional[_builtins.bool]] = None,
+                 user_session_percentage: pulumi.Input[Optional[_builtins.int]] = None,
                  __props__=None):
         """
         > If the property `application_id` is not specified during creation, it will be generated by Dynatrace. As a result, the initial `.tf` file will need to be updated with the generated `application_id`.
@@ -699,19 +699,19 @@ class MobileApplication(pulumi.CustomResource):
     def _internal_init(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 apdex: Optional[pulumi.Input[Union['MobileApplicationApdexArgs', 'MobileApplicationApdexArgsDict']]] = None,
-                 application_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 application_type: Optional[pulumi.Input[_builtins.str]] = None,
-                 beacon_endpoint_type: Optional[pulumi.Input[_builtins.str]] = None,
-                 beacon_endpoint_url: Optional[pulumi.Input[_builtins.str]] = None,
-                 icon_type: Optional[pulumi.Input[_builtins.str]] = None,
-                 key_user_actions: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-                 name: Optional[pulumi.Input[_builtins.str]] = None,
-                 opt_in_mode: Optional[pulumi.Input[_builtins.bool]] = None,
-                 properties: Optional[pulumi.Input[Union['MobileApplicationPropertiesArgs', 'MobileApplicationPropertiesArgsDict']]] = None,
-                 session_replay: Optional[pulumi.Input[_builtins.bool]] = None,
-                 session_replay_on_crash: Optional[pulumi.Input[_builtins.bool]] = None,
-                 user_session_percentage: Optional[pulumi.Input[_builtins.int]] = None,
+                 apdex: pulumi.Input[Optional[Union['MobileApplicationApdexArgs', 'MobileApplicationApdexArgsDict']]] = None,
+                 application_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 application_type: pulumi.Input[Optional[_builtins.str]] = None,
+                 beacon_endpoint_type: pulumi.Input[Optional[_builtins.str]] = None,
+                 beacon_endpoint_url: pulumi.Input[Optional[_builtins.str]] = None,
+                 icon_type: pulumi.Input[Optional[_builtins.str]] = None,
+                 key_user_actions: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 name: pulumi.Input[Optional[_builtins.str]] = None,
+                 opt_in_mode: pulumi.Input[Optional[_builtins.bool]] = None,
+                 properties: pulumi.Input[Optional[Union['MobileApplicationPropertiesArgs', 'MobileApplicationPropertiesArgsDict']]] = None,
+                 session_replay: pulumi.Input[Optional[_builtins.bool]] = None,
+                 session_replay_on_crash: pulumi.Input[Optional[_builtins.bool]] = None,
+                 user_session_percentage: pulumi.Input[Optional[_builtins.int]] = None,
                  __props__=None):
         opts = pulumi.ResourceOptions.merge(_utilities.get_resource_opts_defaults(), opts)
         if not isinstance(opts, pulumi.ResourceOptions):
@@ -748,19 +748,19 @@ class MobileApplication(pulumi.CustomResource):
     def get(resource_name: str,
             id: pulumi.Input[str],
             opts: Optional[pulumi.ResourceOptions] = None,
-            apdex: Optional[pulumi.Input[Union['MobileApplicationApdexArgs', 'MobileApplicationApdexArgsDict']]] = None,
-            application_id: Optional[pulumi.Input[_builtins.str]] = None,
-            application_type: Optional[pulumi.Input[_builtins.str]] = None,
-            beacon_endpoint_type: Optional[pulumi.Input[_builtins.str]] = None,
-            beacon_endpoint_url: Optional[pulumi.Input[_builtins.str]] = None,
-            icon_type: Optional[pulumi.Input[_builtins.str]] = None,
-            key_user_actions: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-            name: Optional[pulumi.Input[_builtins.str]] = None,
-            opt_in_mode: Optional[pulumi.Input[_builtins.bool]] = None,
-            properties: Optional[pulumi.Input[Union['MobileApplicationPropertiesArgs', 'MobileApplicationPropertiesArgsDict']]] = None,
-            session_replay: Optional[pulumi.Input[_builtins.bool]] = None,
-            session_replay_on_crash: Optional[pulumi.Input[_builtins.bool]] = None,
-            user_session_percentage: Optional[pulumi.Input[_builtins.int]] = None) -> 'MobileApplication':
+            apdex: pulumi.Input[Optional[Union['MobileApplicationApdexArgs', 'MobileApplicationApdexArgsDict']]] = None,
+            application_id: pulumi.Input[Optional[_builtins.str]] = None,
+            application_type: pulumi.Input[Optional[_builtins.str]] = None,
+            beacon_endpoint_type: pulumi.Input[Optional[_builtins.str]] = None,
+            beacon_endpoint_url: pulumi.Input[Optional[_builtins.str]] = None,
+            icon_type: pulumi.Input[Optional[_builtins.str]] = None,
+            key_user_actions: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+            name: pulumi.Input[Optional[_builtins.str]] = None,
+            opt_in_mode: pulumi.Input[Optional[_builtins.bool]] = None,
+            properties: pulumi.Input[Optional[Union['MobileApplicationPropertiesArgs', 'MobileApplicationPropertiesArgsDict']]] = None,
+            session_replay: pulumi.Input[Optional[_builtins.bool]] = None,
+            session_replay_on_crash: pulumi.Input[Optional[_builtins.bool]] = None,
+            user_session_percentage: pulumi.Input[Optional[_builtins.int]] = None) -> 'MobileApplication':
         """
         Get an existing MobileApplication resource's state with the given name, id, and optional extra
         properties used to qualify the lookup.

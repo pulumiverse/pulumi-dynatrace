@@ -91,11 +91,11 @@ export interface EbpfServiceDiscoveryState {
     /**
      * When disabled, Dynatrace can only detect services in Full stack mode.
      */
-    ebpf?: pulumi.Input<boolean>;
+    ebpf?: pulumi.Input<boolean | undefined>;
     /**
      * The scope of this setting (HOST, HOST_GROUP). Omit this property if you want to cover the whole environment.
      */
-    scope?: pulumi.Input<string>;
+    scope?: pulumi.Input<string | undefined>;
 }
 
 /**
@@ -109,5 +109,5 @@ export interface EbpfServiceDiscoveryArgs {
     /**
      * The scope of this setting (HOST, HOST_GROUP). Omit this property if you want to cover the whole environment.
      */
-    scope?: pulumi.Input<string>;
+    scope?: pulumi.Input<string | undefined>;
 }

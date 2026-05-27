@@ -123,15 +123,15 @@ export interface AutomationWorkflowSlackState {
      *
      * @deprecated This resource is no longer ordered, please remove this attribute from the configuration
      */
-    insertAfter?: pulumi.Input<string>;
+    insertAfter?: pulumi.Input<string | undefined>;
     /**
      * The name of the Slack connection
      */
-    name?: pulumi.Input<string>;
+    name?: pulumi.Input<string | undefined>;
     /**
      * The bot token obtained from the Slack App Management UI
      */
-    token?: pulumi.Input<string>;
+    token?: pulumi.Input<string | undefined>;
 }
 
 /**
@@ -143,11 +143,11 @@ export interface AutomationWorkflowSlackArgs {
      *
      * @deprecated This resource is no longer ordered, please remove this attribute from the configuration
      */
-    insertAfter?: pulumi.Input<string>;
+    insertAfter?: pulumi.Input<string | undefined>;
     /**
      * The name of the Slack connection
      */
-    name?: pulumi.Input<string>;
+    name?: pulumi.Input<string | undefined>;
     /**
      * The bot token obtained from the Slack App Management UI
      */

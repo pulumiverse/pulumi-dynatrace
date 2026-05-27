@@ -23,8 +23,8 @@ class ApplicationDetectionRuleArgs:
     def __init__(__self__, *,
                  application_identifier: pulumi.Input[_builtins.str],
                  filter_config: pulumi.Input['ApplicationDetectionRuleFilterConfigArgs'],
-                 name: Optional[pulumi.Input[_builtins.str]] = None,
-                 order: Optional[pulumi.Input[_builtins.str]] = None):
+                 name: pulumi.Input[Optional[_builtins.str]] = None,
+                 order: pulumi.Input[Optional[_builtins.str]] = None):
         """
         The set of arguments for constructing a ApplicationDetectionRule resource.
 
@@ -70,36 +70,36 @@ class ApplicationDetectionRuleArgs:
     @_builtins.property
     @pulumi.getter
     @_utilities.deprecated("""Dynatrace computes that value automatically. Any attempts to specify that value will are getting ignored.""")
-    def name(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def name(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The unique name of the Application detection rule
         """
         return pulumi.get(self, "name")
 
     @name.setter
-    def name(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def name(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "name", value)
 
     @_builtins.property
     @pulumi.getter
-    def order(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def order(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The order of the rule in the rules list
         """
         return pulumi.get(self, "order")
 
     @order.setter
-    def order(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def order(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "order", value)
 
 
 @pulumi.input_type
 class _ApplicationDetectionRuleState:
     def __init__(__self__, *,
-                 application_identifier: Optional[pulumi.Input[_builtins.str]] = None,
-                 filter_config: Optional[pulumi.Input['ApplicationDetectionRuleFilterConfigArgs']] = None,
-                 name: Optional[pulumi.Input[_builtins.str]] = None,
-                 order: Optional[pulumi.Input[_builtins.str]] = None):
+                 application_identifier: pulumi.Input[Optional[_builtins.str]] = None,
+                 filter_config: pulumi.Input[Optional['ApplicationDetectionRuleFilterConfigArgs']] = None,
+                 name: pulumi.Input[Optional[_builtins.str]] = None,
+                 order: pulumi.Input[Optional[_builtins.str]] = None):
         """
         Input properties used for looking up and filtering ApplicationDetectionRule resources.
 
@@ -122,51 +122,51 @@ class _ApplicationDetectionRuleState:
 
     @_builtins.property
     @pulumi.getter(name="applicationIdentifier")
-    def application_identifier(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def application_identifier(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The Dynatrace entity ID of the application, for example APPLICATION-4A3B43
         """
         return pulumi.get(self, "application_identifier")
 
     @application_identifier.setter
-    def application_identifier(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def application_identifier(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "application_identifier", value)
 
     @_builtins.property
     @pulumi.getter(name="filterConfig")
-    def filter_config(self) -> Optional[pulumi.Input['ApplicationDetectionRuleFilterConfigArgs']]:
+    def filter_config(self) -> pulumi.Input[Optional['ApplicationDetectionRuleFilterConfigArgs']]:
         """
         The condition of an application detection rule
         """
         return pulumi.get(self, "filter_config")
 
     @filter_config.setter
-    def filter_config(self, value: Optional[pulumi.Input['ApplicationDetectionRuleFilterConfigArgs']]):
+    def filter_config(self, value: pulumi.Input[Optional['ApplicationDetectionRuleFilterConfigArgs']]):
         pulumi.set(self, "filter_config", value)
 
     @_builtins.property
     @pulumi.getter
     @_utilities.deprecated("""Dynatrace computes that value automatically. Any attempts to specify that value will are getting ignored.""")
-    def name(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def name(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The unique name of the Application detection rule
         """
         return pulumi.get(self, "name")
 
     @name.setter
-    def name(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def name(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "name", value)
 
     @_builtins.property
     @pulumi.getter
-    def order(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def order(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The order of the rule in the rules list
         """
         return pulumi.get(self, "order")
 
     @order.setter
-    def order(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def order(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "order", value)
 
 
@@ -176,10 +176,10 @@ class ApplicationDetectionRule(pulumi.CustomResource):
     def __init__(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 application_identifier: Optional[pulumi.Input[_builtins.str]] = None,
-                 filter_config: Optional[pulumi.Input[Union['ApplicationDetectionRuleFilterConfigArgs', 'ApplicationDetectionRuleFilterConfigArgsDict']]] = None,
-                 name: Optional[pulumi.Input[_builtins.str]] = None,
-                 order: Optional[pulumi.Input[_builtins.str]] = None,
+                 application_identifier: pulumi.Input[Optional[_builtins.str]] = None,
+                 filter_config: pulumi.Input[Optional[Union['ApplicationDetectionRuleFilterConfigArgs', 'ApplicationDetectionRuleFilterConfigArgsDict']]] = None,
+                 name: pulumi.Input[Optional[_builtins.str]] = None,
+                 order: pulumi.Input[Optional[_builtins.str]] = None,
                  __props__=None):
         """
         > This resource requires the API token scopes **Read configuration** (`ReadConfig`) and **Write configuration** (`WriteConfig`)
@@ -241,10 +241,10 @@ class ApplicationDetectionRule(pulumi.CustomResource):
     def _internal_init(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 application_identifier: Optional[pulumi.Input[_builtins.str]] = None,
-                 filter_config: Optional[pulumi.Input[Union['ApplicationDetectionRuleFilterConfigArgs', 'ApplicationDetectionRuleFilterConfigArgsDict']]] = None,
-                 name: Optional[pulumi.Input[_builtins.str]] = None,
-                 order: Optional[pulumi.Input[_builtins.str]] = None,
+                 application_identifier: pulumi.Input[Optional[_builtins.str]] = None,
+                 filter_config: pulumi.Input[Optional[Union['ApplicationDetectionRuleFilterConfigArgs', 'ApplicationDetectionRuleFilterConfigArgsDict']]] = None,
+                 name: pulumi.Input[Optional[_builtins.str]] = None,
+                 order: pulumi.Input[Optional[_builtins.str]] = None,
                  __props__=None):
         opts = pulumi.ResourceOptions.merge(_utilities.get_resource_opts_defaults(), opts)
         if not isinstance(opts, pulumi.ResourceOptions):
@@ -272,10 +272,10 @@ class ApplicationDetectionRule(pulumi.CustomResource):
     def get(resource_name: str,
             id: pulumi.Input[str],
             opts: Optional[pulumi.ResourceOptions] = None,
-            application_identifier: Optional[pulumi.Input[_builtins.str]] = None,
-            filter_config: Optional[pulumi.Input[Union['ApplicationDetectionRuleFilterConfigArgs', 'ApplicationDetectionRuleFilterConfigArgsDict']]] = None,
-            name: Optional[pulumi.Input[_builtins.str]] = None,
-            order: Optional[pulumi.Input[_builtins.str]] = None) -> 'ApplicationDetectionRule':
+            application_identifier: pulumi.Input[Optional[_builtins.str]] = None,
+            filter_config: pulumi.Input[Optional[Union['ApplicationDetectionRuleFilterConfigArgs', 'ApplicationDetectionRuleFilterConfigArgsDict']]] = None,
+            name: pulumi.Input[Optional[_builtins.str]] = None,
+            order: pulumi.Input[Optional[_builtins.str]] = None) -> 'ApplicationDetectionRule':
         """
         Get an existing ApplicationDetectionRule resource's state with the given name, id, and optional extra
         properties used to qualify the lookup.

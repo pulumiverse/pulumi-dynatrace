@@ -96,11 +96,11 @@ export interface LogGrailState {
     /**
      * Activate logs powered by Grail.
      */
-    activated?: pulumi.Input<boolean>;
+    activated?: pulumi.Input<boolean | undefined>;
     /**
      * Possible Values: `NONE`, `SEVEN_DAYS`, `THIRTY_FIVE_DAYS`
      */
-    parallelIngestPeriod?: pulumi.Input<string>;
+    parallelIngestPeriod?: pulumi.Input<string | undefined>;
 }
 
 /**

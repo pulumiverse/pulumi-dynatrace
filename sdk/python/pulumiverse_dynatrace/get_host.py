@@ -96,8 +96,8 @@ def get_host(name: Optional[_builtins.str] = None,
         id=pulumi.get(__ret__, 'id'),
         name=pulumi.get(__ret__, 'name'),
         tags=pulumi.get(__ret__, 'tags'))
-def get_host_output(name: Optional[pulumi.Input[_builtins.str]] = None,
-                    tags: Optional[pulumi.Input[Optional[Sequence[_builtins.str]]]] = None,
+def get_host_output(name: pulumi.Input[Optional[_builtins.str]] = None,
+                    tags: pulumi.Input[Optional[Optional[Sequence[_builtins.str]]]] = None,
                     opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetHostResult]:
     """
     !> The data source API endpoint has been deprecated, please use get_entity with entity type `HOST` instead.

@@ -96,11 +96,11 @@ export interface WebAppKeyPerformanceCustomState {
     /**
      * The scope of this setting (APPLICATION_METHOD, APPLICATION)
      */
-    scope?: pulumi.Input<string>;
+    scope?: pulumi.Input<string | undefined>;
     /**
      * User action duration thresholds
      */
-    thresholds?: pulumi.Input<inputs.WebAppKeyPerformanceCustomThresholds>;
+    thresholds?: pulumi.Input<inputs.WebAppKeyPerformanceCustomThresholds | undefined>;
 }
 
 /**

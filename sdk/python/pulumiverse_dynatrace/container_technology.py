@@ -27,7 +27,7 @@ class ContainerTechnologyArgs:
                  garden: pulumi.Input[_builtins.bool],
                  podman: pulumi.Input[_builtins.bool],
                  winc: pulumi.Input[_builtins.bool],
-                 scope: Optional[pulumi.Input[_builtins.str]] = None):
+                 scope: pulumi.Input[Optional[_builtins.str]] = None):
         """
         The set of arguments for constructing a ContainerTechnology resource.
 
@@ -230,29 +230,29 @@ class ContainerTechnologyArgs:
 
     @_builtins.property
     @pulumi.getter
-    def scope(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def scope(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The scope of this setting (HOST, HOST_GROUP). Omit this property if you want to cover the whole environment.
         """
         return pulumi.get(self, "scope")
 
     @scope.setter
-    def scope(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def scope(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "scope", value)
 
 
 @pulumi.input_type
 class _ContainerTechnologyState:
     def __init__(__self__, *,
-                 bosh_process_manager: Optional[pulumi.Input[_builtins.bool]] = None,
-                 containerd: Optional[pulumi.Input[_builtins.bool]] = None,
-                 crio: Optional[pulumi.Input[_builtins.bool]] = None,
-                 docker: Optional[pulumi.Input[_builtins.bool]] = None,
-                 docker_windows: Optional[pulumi.Input[_builtins.bool]] = None,
-                 garden: Optional[pulumi.Input[_builtins.bool]] = None,
-                 podman: Optional[pulumi.Input[_builtins.bool]] = None,
-                 scope: Optional[pulumi.Input[_builtins.str]] = None,
-                 winc: Optional[pulumi.Input[_builtins.bool]] = None):
+                 bosh_process_manager: pulumi.Input[Optional[_builtins.bool]] = None,
+                 containerd: pulumi.Input[Optional[_builtins.bool]] = None,
+                 crio: pulumi.Input[Optional[_builtins.bool]] = None,
+                 docker: pulumi.Input[Optional[_builtins.bool]] = None,
+                 docker_windows: pulumi.Input[Optional[_builtins.bool]] = None,
+                 garden: pulumi.Input[Optional[_builtins.bool]] = None,
+                 podman: pulumi.Input[Optional[_builtins.bool]] = None,
+                 scope: pulumi.Input[Optional[_builtins.str]] = None,
+                 winc: pulumi.Input[Optional[_builtins.bool]] = None):
         """
         Input properties used for looking up and filtering ContainerTechnology resources.
 
@@ -327,19 +327,19 @@ class _ContainerTechnologyState:
 
     @_builtins.property
     @pulumi.getter(name="boshProcessManager")
-    def bosh_process_manager(self) -> Optional[pulumi.Input[_builtins.bool]]:
+    def bosh_process_manager(self) -> pulumi.Input[Optional[_builtins.bool]]:
         """
         Platform: Cloud Foundry
         """
         return pulumi.get(self, "bosh_process_manager")
 
     @bosh_process_manager.setter
-    def bosh_process_manager(self, value: Optional[pulumi.Input[_builtins.bool]]):
+    def bosh_process_manager(self, value: pulumi.Input[Optional[_builtins.bool]]):
         pulumi.set(self, "bosh_process_manager", value)
 
     @_builtins.property
     @pulumi.getter
-    def containerd(self) -> Optional[pulumi.Input[_builtins.bool]]:
+    def containerd(self) -> pulumi.Input[Optional[_builtins.bool]]:
         """
         Platform: Kubernetes
 
@@ -352,12 +352,12 @@ class _ContainerTechnologyState:
         return pulumi.get(self, "containerd")
 
     @containerd.setter
-    def containerd(self, value: Optional[pulumi.Input[_builtins.bool]]):
+    def containerd(self, value: pulumi.Input[Optional[_builtins.bool]]):
         pulumi.set(self, "containerd", value)
 
     @_builtins.property
     @pulumi.getter
-    def crio(self) -> Optional[pulumi.Input[_builtins.bool]]:
+    def crio(self) -> pulumi.Input[Optional[_builtins.bool]]:
         """
         Platform: Kubernetes
 
@@ -370,12 +370,12 @@ class _ContainerTechnologyState:
         return pulumi.get(self, "crio")
 
     @crio.setter
-    def crio(self, value: Optional[pulumi.Input[_builtins.bool]]):
+    def crio(self, value: pulumi.Input[Optional[_builtins.bool]]):
         pulumi.set(self, "crio", value)
 
     @_builtins.property
     @pulumi.getter
-    def docker(self) -> Optional[pulumi.Input[_builtins.bool]]:
+    def docker(self) -> pulumi.Input[Optional[_builtins.bool]]:
         """
         Platform: Docker and Kubernetes
 
@@ -386,12 +386,12 @@ class _ContainerTechnologyState:
         return pulumi.get(self, "docker")
 
     @docker.setter
-    def docker(self, value: Optional[pulumi.Input[_builtins.bool]]):
+    def docker(self, value: pulumi.Input[Optional[_builtins.bool]]):
         pulumi.set(self, "docker", value)
 
     @_builtins.property
     @pulumi.getter(name="dockerWindows")
-    def docker_windows(self) -> Optional[pulumi.Input[_builtins.bool]]:
+    def docker_windows(self) -> pulumi.Input[Optional[_builtins.bool]]:
         """
         Platform: Docker
 
@@ -404,12 +404,12 @@ class _ContainerTechnologyState:
         return pulumi.get(self, "docker_windows")
 
     @docker_windows.setter
-    def docker_windows(self, value: Optional[pulumi.Input[_builtins.bool]]):
+    def docker_windows(self, value: pulumi.Input[Optional[_builtins.bool]]):
         pulumi.set(self, "docker_windows", value)
 
     @_builtins.property
     @pulumi.getter
-    def garden(self) -> Optional[pulumi.Input[_builtins.bool]]:
+    def garden(self) -> pulumi.Input[Optional[_builtins.bool]]:
         """
         Platform: Cloud Foundry
 
@@ -422,12 +422,12 @@ class _ContainerTechnologyState:
         return pulumi.get(self, "garden")
 
     @garden.setter
-    def garden(self, value: Optional[pulumi.Input[_builtins.bool]]):
+    def garden(self, value: pulumi.Input[Optional[_builtins.bool]]):
         pulumi.set(self, "garden", value)
 
     @_builtins.property
     @pulumi.getter
-    def podman(self) -> Optional[pulumi.Input[_builtins.bool]]:
+    def podman(self) -> pulumi.Input[Optional[_builtins.bool]]:
         """
         Platform: Podman
 
@@ -440,24 +440,24 @@ class _ContainerTechnologyState:
         return pulumi.get(self, "podman")
 
     @podman.setter
-    def podman(self, value: Optional[pulumi.Input[_builtins.bool]]):
+    def podman(self, value: pulumi.Input[Optional[_builtins.bool]]):
         pulumi.set(self, "podman", value)
 
     @_builtins.property
     @pulumi.getter
-    def scope(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def scope(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The scope of this setting (HOST, HOST_GROUP). Omit this property if you want to cover the whole environment.
         """
         return pulumi.get(self, "scope")
 
     @scope.setter
-    def scope(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def scope(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "scope", value)
 
     @_builtins.property
     @pulumi.getter
-    def winc(self) -> Optional[pulumi.Input[_builtins.bool]]:
+    def winc(self) -> pulumi.Input[Optional[_builtins.bool]]:
         """
         Platform: Cloud Foundry
 
@@ -470,7 +470,7 @@ class _ContainerTechnologyState:
         return pulumi.get(self, "winc")
 
     @winc.setter
-    def winc(self, value: Optional[pulumi.Input[_builtins.bool]]):
+    def winc(self, value: pulumi.Input[Optional[_builtins.bool]]):
         pulumi.set(self, "winc", value)
 
 
@@ -480,15 +480,15 @@ class ContainerTechnology(pulumi.CustomResource):
     def __init__(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 bosh_process_manager: Optional[pulumi.Input[_builtins.bool]] = None,
-                 containerd: Optional[pulumi.Input[_builtins.bool]] = None,
-                 crio: Optional[pulumi.Input[_builtins.bool]] = None,
-                 docker: Optional[pulumi.Input[_builtins.bool]] = None,
-                 docker_windows: Optional[pulumi.Input[_builtins.bool]] = None,
-                 garden: Optional[pulumi.Input[_builtins.bool]] = None,
-                 podman: Optional[pulumi.Input[_builtins.bool]] = None,
-                 scope: Optional[pulumi.Input[_builtins.str]] = None,
-                 winc: Optional[pulumi.Input[_builtins.bool]] = None,
+                 bosh_process_manager: pulumi.Input[Optional[_builtins.bool]] = None,
+                 containerd: pulumi.Input[Optional[_builtins.bool]] = None,
+                 crio: pulumi.Input[Optional[_builtins.bool]] = None,
+                 docker: pulumi.Input[Optional[_builtins.bool]] = None,
+                 docker_windows: pulumi.Input[Optional[_builtins.bool]] = None,
+                 garden: pulumi.Input[Optional[_builtins.bool]] = None,
+                 podman: pulumi.Input[Optional[_builtins.bool]] = None,
+                 scope: pulumi.Input[Optional[_builtins.str]] = None,
+                 winc: pulumi.Input[Optional[_builtins.bool]] = None,
                  __props__=None):
         """
         > This resource requires the API token scopes **Read settings** (`settings.read`) and **Write settings** (`settings.write`)
@@ -631,15 +631,15 @@ class ContainerTechnology(pulumi.CustomResource):
     def _internal_init(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 bosh_process_manager: Optional[pulumi.Input[_builtins.bool]] = None,
-                 containerd: Optional[pulumi.Input[_builtins.bool]] = None,
-                 crio: Optional[pulumi.Input[_builtins.bool]] = None,
-                 docker: Optional[pulumi.Input[_builtins.bool]] = None,
-                 docker_windows: Optional[pulumi.Input[_builtins.bool]] = None,
-                 garden: Optional[pulumi.Input[_builtins.bool]] = None,
-                 podman: Optional[pulumi.Input[_builtins.bool]] = None,
-                 scope: Optional[pulumi.Input[_builtins.str]] = None,
-                 winc: Optional[pulumi.Input[_builtins.bool]] = None,
+                 bosh_process_manager: pulumi.Input[Optional[_builtins.bool]] = None,
+                 containerd: pulumi.Input[Optional[_builtins.bool]] = None,
+                 crio: pulumi.Input[Optional[_builtins.bool]] = None,
+                 docker: pulumi.Input[Optional[_builtins.bool]] = None,
+                 docker_windows: pulumi.Input[Optional[_builtins.bool]] = None,
+                 garden: pulumi.Input[Optional[_builtins.bool]] = None,
+                 podman: pulumi.Input[Optional[_builtins.bool]] = None,
+                 scope: pulumi.Input[Optional[_builtins.str]] = None,
+                 winc: pulumi.Input[Optional[_builtins.bool]] = None,
                  __props__=None):
         opts = pulumi.ResourceOptions.merge(_utilities.get_resource_opts_defaults(), opts)
         if not isinstance(opts, pulumi.ResourceOptions):
@@ -684,15 +684,15 @@ class ContainerTechnology(pulumi.CustomResource):
     def get(resource_name: str,
             id: pulumi.Input[str],
             opts: Optional[pulumi.ResourceOptions] = None,
-            bosh_process_manager: Optional[pulumi.Input[_builtins.bool]] = None,
-            containerd: Optional[pulumi.Input[_builtins.bool]] = None,
-            crio: Optional[pulumi.Input[_builtins.bool]] = None,
-            docker: Optional[pulumi.Input[_builtins.bool]] = None,
-            docker_windows: Optional[pulumi.Input[_builtins.bool]] = None,
-            garden: Optional[pulumi.Input[_builtins.bool]] = None,
-            podman: Optional[pulumi.Input[_builtins.bool]] = None,
-            scope: Optional[pulumi.Input[_builtins.str]] = None,
-            winc: Optional[pulumi.Input[_builtins.bool]] = None) -> 'ContainerTechnology':
+            bosh_process_manager: pulumi.Input[Optional[_builtins.bool]] = None,
+            containerd: pulumi.Input[Optional[_builtins.bool]] = None,
+            crio: pulumi.Input[Optional[_builtins.bool]] = None,
+            docker: pulumi.Input[Optional[_builtins.bool]] = None,
+            docker_windows: pulumi.Input[Optional[_builtins.bool]] = None,
+            garden: pulumi.Input[Optional[_builtins.bool]] = None,
+            podman: pulumi.Input[Optional[_builtins.bool]] = None,
+            scope: pulumi.Input[Optional[_builtins.str]] = None,
+            winc: pulumi.Input[Optional[_builtins.bool]] = None) -> 'ContainerTechnology':
         """
         Get an existing ContainerTechnology resource's state with the given name, id, and optional extra
         properties used to qualify the lookup.

@@ -60,8 +60,8 @@ class DiscoveryDefaultRulesArgs:
 @pulumi.input_type
 class _DiscoveryDefaultRulesState:
     def __init__(__self__, *,
-                 rule: Optional[pulumi.Input['DiscoveryDefaultRulesRuleArgs']] = None,
-                 settings: Optional[pulumi.Input['DiscoveryDefaultRulesSettingsArgs']] = None):
+                 rule: pulumi.Input[Optional['DiscoveryDefaultRulesRuleArgs']] = None,
+                 settings: pulumi.Input[Optional['DiscoveryDefaultRulesSettingsArgs']] = None):
         """
         Input properties used for looking up and filtering DiscoveryDefaultRules resources.
 
@@ -75,26 +75,26 @@ class _DiscoveryDefaultRulesState:
 
     @_builtins.property
     @pulumi.getter
-    def rule(self) -> Optional[pulumi.Input['DiscoveryDefaultRulesRuleArgs']]:
+    def rule(self) -> pulumi.Input[Optional['DiscoveryDefaultRulesRuleArgs']]:
         """
         Rule:
         """
         return pulumi.get(self, "rule")
 
     @rule.setter
-    def rule(self, value: Optional[pulumi.Input['DiscoveryDefaultRulesRuleArgs']]):
+    def rule(self, value: pulumi.Input[Optional['DiscoveryDefaultRulesRuleArgs']]):
         pulumi.set(self, "rule", value)
 
     @_builtins.property
     @pulumi.getter
-    def settings(self) -> Optional[pulumi.Input['DiscoveryDefaultRulesSettingsArgs']]:
+    def settings(self) -> pulumi.Input[Optional['DiscoveryDefaultRulesSettingsArgs']]:
         """
         Settings:
         """
         return pulumi.get(self, "settings")
 
     @settings.setter
-    def settings(self, value: Optional[pulumi.Input['DiscoveryDefaultRulesSettingsArgs']]):
+    def settings(self, value: pulumi.Input[Optional['DiscoveryDefaultRulesSettingsArgs']]):
         pulumi.set(self, "settings", value)
 
 
@@ -104,8 +104,8 @@ class DiscoveryDefaultRules(pulumi.CustomResource):
     def __init__(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 rule: Optional[pulumi.Input[Union['DiscoveryDefaultRulesRuleArgs', 'DiscoveryDefaultRulesRuleArgsDict']]] = None,
-                 settings: Optional[pulumi.Input[Union['DiscoveryDefaultRulesSettingsArgs', 'DiscoveryDefaultRulesSettingsArgsDict']]] = None,
+                 rule: pulumi.Input[Optional[Union['DiscoveryDefaultRulesRuleArgs', 'DiscoveryDefaultRulesRuleArgsDict']]] = None,
+                 settings: pulumi.Input[Optional[Union['DiscoveryDefaultRulesSettingsArgs', 'DiscoveryDefaultRulesSettingsArgsDict']]] = None,
                  __props__=None):
         """
         > This resource requires the API token scopes **Read settings** (`settings.read`) and **Write settings** (`settings.write`)
@@ -165,8 +165,8 @@ class DiscoveryDefaultRules(pulumi.CustomResource):
     def _internal_init(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 rule: Optional[pulumi.Input[Union['DiscoveryDefaultRulesRuleArgs', 'DiscoveryDefaultRulesRuleArgsDict']]] = None,
-                 settings: Optional[pulumi.Input[Union['DiscoveryDefaultRulesSettingsArgs', 'DiscoveryDefaultRulesSettingsArgsDict']]] = None,
+                 rule: pulumi.Input[Optional[Union['DiscoveryDefaultRulesRuleArgs', 'DiscoveryDefaultRulesRuleArgsDict']]] = None,
+                 settings: pulumi.Input[Optional[Union['DiscoveryDefaultRulesSettingsArgs', 'DiscoveryDefaultRulesSettingsArgsDict']]] = None,
                  __props__=None):
         opts = pulumi.ResourceOptions.merge(_utilities.get_resource_opts_defaults(), opts)
         if not isinstance(opts, pulumi.ResourceOptions):
@@ -192,8 +192,8 @@ class DiscoveryDefaultRules(pulumi.CustomResource):
     def get(resource_name: str,
             id: pulumi.Input[str],
             opts: Optional[pulumi.ResourceOptions] = None,
-            rule: Optional[pulumi.Input[Union['DiscoveryDefaultRulesRuleArgs', 'DiscoveryDefaultRulesRuleArgsDict']]] = None,
-            settings: Optional[pulumi.Input[Union['DiscoveryDefaultRulesSettingsArgs', 'DiscoveryDefaultRulesSettingsArgsDict']]] = None) -> 'DiscoveryDefaultRules':
+            rule: pulumi.Input[Optional[Union['DiscoveryDefaultRulesRuleArgs', 'DiscoveryDefaultRulesRuleArgsDict']]] = None,
+            settings: pulumi.Input[Optional[Union['DiscoveryDefaultRulesSettingsArgs', 'DiscoveryDefaultRulesSettingsArgsDict']]] = None) -> 'DiscoveryDefaultRules':
         """
         Get an existing DiscoveryDefaultRules resource's state with the given name, id, and optional extra
         properties used to qualify the lookup.

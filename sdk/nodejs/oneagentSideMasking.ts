@@ -118,23 +118,23 @@ export interface OneagentSideMaskingState {
     /**
      * Exclude email addresses from URLs and exceptions
      */
-    isEmailMaskingEnabled?: pulumi.Input<boolean>;
+    isEmailMaskingEnabled?: pulumi.Input<boolean | undefined>;
     /**
      * Exclude IBANs and payment card numbers from URLs and exceptions
      */
-    isFinancialMaskingEnabled?: pulumi.Input<boolean>;
+    isFinancialMaskingEnabled?: pulumi.Input<boolean | undefined>;
     /**
      * Exclude hexadecimal IDs and consecutive numbers above 5 digits from URLs and exceptions
      */
-    isNumbersMaskingEnabled?: pulumi.Input<boolean>;
+    isNumbersMaskingEnabled?: pulumi.Input<boolean | undefined>;
     /**
      * Exclude query parameters from URLs and web requests
      */
-    isQueryMaskingEnabled?: pulumi.Input<boolean>;
+    isQueryMaskingEnabled?: pulumi.Input<boolean | undefined>;
     /**
      * The scope of this setting (PROCESS*GROUP, CLOUD*APPLICATION, CLOUD*APPLICATION*NAMESPACE, KUBERNETES*CLUSTER, HOST*GROUP). Omit this property if you want to cover the whole environment.
      */
-    processGroupId?: pulumi.Input<string>;
+    processGroupId?: pulumi.Input<string | undefined>;
 }
 
 /**
@@ -160,5 +160,5 @@ export interface OneagentSideMaskingArgs {
     /**
      * The scope of this setting (PROCESS*GROUP, CLOUD*APPLICATION, CLOUD*APPLICATION*NAMESPACE, KUBERNETES*CLUSTER, HOST*GROUP). Omit this property if you want to cover the whole environment.
      */
-    processGroupId?: pulumi.Input<string>;
+    processGroupId?: pulumi.Input<string | undefined>;
 }

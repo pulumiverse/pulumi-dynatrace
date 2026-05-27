@@ -101,32 +101,32 @@ export class Provider extends pulumi.ProviderResource {
  * The set of arguments for constructing a Provider resource.
  */
 export interface ProviderArgs {
-    accountId?: pulumi.Input<string>;
-    automationClientId?: pulumi.Input<string>;
-    automationClientSecret?: pulumi.Input<string>;
+    accountId?: pulumi.Input<string | undefined>;
+    automationClientId?: pulumi.Input<string | undefined>;
+    automationClientSecret?: pulumi.Input<string | undefined>;
     /**
      * The URL of the Dynatrace Environment with Platform capabilities turned on (`https://#####.apps.dynatrace.com)`. This is optional configuration when `dtEnvUrl` already specifies a SaaS Environment like `https://#####.live.dynatrace.com` or `https://#####.apps.dynatrace.com`
      */
-    automationEnvUrl?: pulumi.Input<string>;
+    automationEnvUrl?: pulumi.Input<string | undefined>;
     /**
      * The URL that provides the Bearer tokens when accessing the Automation REST API. This is optional configuration when `dtEnvUrl` already specifies a SaaS Environment like `https://#####.live.dynatrace.com` or `https://#####.apps.dynatrace.com`
      */
-    automationTokenUrl?: pulumi.Input<string>;
-    clientId?: pulumi.Input<string>;
-    clientSecret?: pulumi.Input<string>;
-    dtApiToken?: pulumi.Input<string>;
-    dtClusterApiToken?: pulumi.Input<string>;
-    dtClusterUrl?: pulumi.Input<string>;
-    dtEnvUrl?: pulumi.Input<string>;
-    iamAccountId?: pulumi.Input<string>;
-    iamClientId?: pulumi.Input<string>;
-    iamClientSecret?: pulumi.Input<string>;
-    iamEndpointUrl?: pulumi.Input<string>;
-    iamTokenUrl?: pulumi.Input<string>;
+    automationTokenUrl?: pulumi.Input<string | undefined>;
+    clientId?: pulumi.Input<string | undefined>;
+    clientSecret?: pulumi.Input<string | undefined>;
+    dtApiToken?: pulumi.Input<string | undefined>;
+    dtClusterApiToken?: pulumi.Input<string | undefined>;
+    dtClusterUrl?: pulumi.Input<string | undefined>;
+    dtEnvUrl?: pulumi.Input<string | undefined>;
+    iamAccountId?: pulumi.Input<string | undefined>;
+    iamClientId?: pulumi.Input<string | undefined>;
+    iamClientSecret?: pulumi.Input<string | undefined>;
+    iamEndpointUrl?: pulumi.Input<string | undefined>;
+    iamTokenUrl?: pulumi.Input<string | undefined>;
     /**
      * A Dynatrace Platform Token. Specifying such a token allows for easy authentication against Platform resources. In such a case it supersedes `automationClientId`, `automationClientSecret`, `automationTokenUrl` and `automationEnvUrl`
      */
-    platformToken?: pulumi.Input<string>;
+    platformToken?: pulumi.Input<string | undefined>;
 }
 
 export namespace Provider {

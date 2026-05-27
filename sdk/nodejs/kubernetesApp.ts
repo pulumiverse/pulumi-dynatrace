@@ -93,11 +93,11 @@ export interface KubernetesAppState {
     /**
      * no documentation available
      */
-    kubernetesAppOptions?: pulumi.Input<inputs.KubernetesAppKubernetesAppOptions>;
+    kubernetesAppOptions?: pulumi.Input<inputs.KubernetesAppKubernetesAppOptions | undefined>;
     /**
      * The scope of this setting (KUBERNETES_CLUSTER). Omit this property if you want to cover the whole environment.
      */
-    scope?: pulumi.Input<string>;
+    scope?: pulumi.Input<string | undefined>;
 }
 
 /**
@@ -111,5 +111,5 @@ export interface KubernetesAppArgs {
     /**
      * The scope of this setting (KUBERNETES_CLUSTER). Omit this property if you want to cover the whole environment.
      */
-    scope?: pulumi.Input<string>;
+    scope?: pulumi.Input<string | undefined>;
 }

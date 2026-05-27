@@ -21,7 +21,7 @@ class HostMonitoringAdvancedArgs:
     def __init__(__self__, *,
                  host_id: pulumi.Input[_builtins.str],
                  process_agent_injection: pulumi.Input[_builtins.bool],
-                 code_module_injection: Optional[pulumi.Input[_builtins.bool]] = None):
+                 code_module_injection: pulumi.Input[Optional[_builtins.bool]] = None):
         """
         The set of arguments for constructing a HostMonitoringAdvanced resource.
 
@@ -60,23 +60,23 @@ class HostMonitoringAdvancedArgs:
 
     @_builtins.property
     @pulumi.getter(name="codeModuleInjection")
-    def code_module_injection(self) -> Optional[pulumi.Input[_builtins.bool]]:
+    def code_module_injection(self) -> pulumi.Input[Optional[_builtins.bool]]:
         """
         Inject CodeModules in Discovery mode.
         """
         return pulumi.get(self, "code_module_injection")
 
     @code_module_injection.setter
-    def code_module_injection(self, value: Optional[pulumi.Input[_builtins.bool]]):
+    def code_module_injection(self, value: pulumi.Input[Optional[_builtins.bool]]):
         pulumi.set(self, "code_module_injection", value)
 
 
 @pulumi.input_type
 class _HostMonitoringAdvancedState:
     def __init__(__self__, *,
-                 code_module_injection: Optional[pulumi.Input[_builtins.bool]] = None,
-                 host_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 process_agent_injection: Optional[pulumi.Input[_builtins.bool]] = None):
+                 code_module_injection: pulumi.Input[Optional[_builtins.bool]] = None,
+                 host_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 process_agent_injection: pulumi.Input[Optional[_builtins.bool]] = None):
         """
         Input properties used for looking up and filtering HostMonitoringAdvanced resources.
 
@@ -93,38 +93,38 @@ class _HostMonitoringAdvancedState:
 
     @_builtins.property
     @pulumi.getter(name="codeModuleInjection")
-    def code_module_injection(self) -> Optional[pulumi.Input[_builtins.bool]]:
+    def code_module_injection(self) -> pulumi.Input[Optional[_builtins.bool]]:
         """
         Inject CodeModules in Discovery mode.
         """
         return pulumi.get(self, "code_module_injection")
 
     @code_module_injection.setter
-    def code_module_injection(self, value: Optional[pulumi.Input[_builtins.bool]]):
+    def code_module_injection(self, value: pulumi.Input[Optional[_builtins.bool]]):
         pulumi.set(self, "code_module_injection", value)
 
     @_builtins.property
     @pulumi.getter(name="hostId")
-    def host_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def host_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The scope of this settings. If the settings should cover the whole environment, just don't specify any scope.
         """
         return pulumi.get(self, "host_id")
 
     @host_id.setter
-    def host_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def host_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "host_id", value)
 
     @_builtins.property
     @pulumi.getter(name="processAgentInjection")
-    def process_agent_injection(self) -> Optional[pulumi.Input[_builtins.bool]]:
+    def process_agent_injection(self) -> pulumi.Input[Optional[_builtins.bool]]:
         """
         Disabling this via [oneagentctl](https://dt-url.net/oneagentctl) takes precedence over this setting and cannot be changed from the Dynatrace web UI.
         """
         return pulumi.get(self, "process_agent_injection")
 
     @process_agent_injection.setter
-    def process_agent_injection(self, value: Optional[pulumi.Input[_builtins.bool]]):
+    def process_agent_injection(self, value: pulumi.Input[Optional[_builtins.bool]]):
         pulumi.set(self, "process_agent_injection", value)
 
 
@@ -134,9 +134,9 @@ class HostMonitoringAdvanced(pulumi.CustomResource):
     def __init__(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 code_module_injection: Optional[pulumi.Input[_builtins.bool]] = None,
-                 host_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 process_agent_injection: Optional[pulumi.Input[_builtins.bool]] = None,
+                 code_module_injection: pulumi.Input[Optional[_builtins.bool]] = None,
+                 host_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 process_agent_injection: pulumi.Input[Optional[_builtins.bool]] = None,
                  __props__=None):
         """
         > This resource requires the API token scopes **Read settings** (`settings.read`) and **Write settings** (`settings.write`)
@@ -197,9 +197,9 @@ class HostMonitoringAdvanced(pulumi.CustomResource):
     def _internal_init(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 code_module_injection: Optional[pulumi.Input[_builtins.bool]] = None,
-                 host_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 process_agent_injection: Optional[pulumi.Input[_builtins.bool]] = None,
+                 code_module_injection: pulumi.Input[Optional[_builtins.bool]] = None,
+                 host_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 process_agent_injection: pulumi.Input[Optional[_builtins.bool]] = None,
                  __props__=None):
         opts = pulumi.ResourceOptions.merge(_utilities.get_resource_opts_defaults(), opts)
         if not isinstance(opts, pulumi.ResourceOptions):
@@ -226,9 +226,9 @@ class HostMonitoringAdvanced(pulumi.CustomResource):
     def get(resource_name: str,
             id: pulumi.Input[str],
             opts: Optional[pulumi.ResourceOptions] = None,
-            code_module_injection: Optional[pulumi.Input[_builtins.bool]] = None,
-            host_id: Optional[pulumi.Input[_builtins.str]] = None,
-            process_agent_injection: Optional[pulumi.Input[_builtins.bool]] = None) -> 'HostMonitoringAdvanced':
+            code_module_injection: pulumi.Input[Optional[_builtins.bool]] = None,
+            host_id: pulumi.Input[Optional[_builtins.str]] = None,
+            process_agent_injection: pulumi.Input[Optional[_builtins.bool]] = None) -> 'HostMonitoringAdvanced':
         """
         Get an existing HostMonitoringAdvanced resource's state with the given name, id, and optional extra
         properties used to qualify the lookup.

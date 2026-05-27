@@ -114,19 +114,19 @@ export interface WebAppAutoInjectionState {
     /**
      * The scope of this settings. If the settings should cover the whole environment, just don't specify any scope.
      */
-    applicationId?: pulumi.Input<string>;
+    applicationId?: pulumi.Input<string | undefined>;
     /**
      * Cache control headers
      */
-    cacheControlHeaders?: pulumi.Input<inputs.WebAppAutoInjectionCacheControlHeaders>;
+    cacheControlHeaders?: pulumi.Input<inputs.WebAppAutoInjectionCacheControlHeaders | undefined>;
     /**
      * Real User Monitoring code source
      */
-    monitoringCodeSourceSection?: pulumi.Input<inputs.WebAppAutoInjectionMonitoringCodeSourceSection>;
+    monitoringCodeSourceSection?: pulumi.Input<inputs.WebAppAutoInjectionMonitoringCodeSourceSection | undefined>;
     /**
      * *Code Snippet:* OneAgent injects an inline script that initializes Dynatrace and dynamically downloads the monitoring code into your application. Use when you want to inject the monitoring code in deferred mode.
      */
-    snippetFormat?: pulumi.Input<inputs.WebAppAutoInjectionSnippetFormat>;
+    snippetFormat?: pulumi.Input<inputs.WebAppAutoInjectionSnippetFormat | undefined>;
 }
 
 /**

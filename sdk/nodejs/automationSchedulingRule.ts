@@ -103,34 +103,34 @@ export class AutomationSchedulingRule extends pulumi.CustomResource {
  * Input properties used for looking up and filtering AutomationSchedulingRule resources.
  */
 export interface AutomationSchedulingRuleState {
-    businessCalendar?: pulumi.Input<string>;
+    businessCalendar?: pulumi.Input<string | undefined>;
     /**
      * An optional description for the scheduling rule
      */
-    description?: pulumi.Input<string>;
-    fixedOffset?: pulumi.Input<inputs.AutomationSchedulingRuleFixedOffset>;
-    grouping?: pulumi.Input<inputs.AutomationSchedulingRuleGrouping>;
-    recurrence?: pulumi.Input<inputs.AutomationSchedulingRuleRecurrence>;
-    relativeOffset?: pulumi.Input<inputs.AutomationSchedulingRuleRelativeOffset>;
+    description?: pulumi.Input<string | undefined>;
+    fixedOffset?: pulumi.Input<inputs.AutomationSchedulingRuleFixedOffset | undefined>;
+    grouping?: pulumi.Input<inputs.AutomationSchedulingRuleGrouping | undefined>;
+    recurrence?: pulumi.Input<inputs.AutomationSchedulingRuleRecurrence | undefined>;
+    relativeOffset?: pulumi.Input<inputs.AutomationSchedulingRuleRelativeOffset | undefined>;
     /**
      * The title / name of the scheduling rule
      */
-    title?: pulumi.Input<string>;
+    title?: pulumi.Input<string | undefined>;
 }
 
 /**
  * The set of arguments for constructing a AutomationSchedulingRule resource.
  */
 export interface AutomationSchedulingRuleArgs {
-    businessCalendar?: pulumi.Input<string>;
+    businessCalendar?: pulumi.Input<string | undefined>;
     /**
      * An optional description for the scheduling rule
      */
-    description?: pulumi.Input<string>;
-    fixedOffset?: pulumi.Input<inputs.AutomationSchedulingRuleFixedOffset>;
-    grouping?: pulumi.Input<inputs.AutomationSchedulingRuleGrouping>;
-    recurrence?: pulumi.Input<inputs.AutomationSchedulingRuleRecurrence>;
-    relativeOffset?: pulumi.Input<inputs.AutomationSchedulingRuleRelativeOffset>;
+    description?: pulumi.Input<string | undefined>;
+    fixedOffset?: pulumi.Input<inputs.AutomationSchedulingRuleFixedOffset | undefined>;
+    grouping?: pulumi.Input<inputs.AutomationSchedulingRuleGrouping | undefined>;
+    recurrence?: pulumi.Input<inputs.AutomationSchedulingRuleRecurrence | undefined>;
+    relativeOffset?: pulumi.Input<inputs.AutomationSchedulingRuleRelativeOffset | undefined>;
     /**
      * The title / name of the scheduling rule
      */

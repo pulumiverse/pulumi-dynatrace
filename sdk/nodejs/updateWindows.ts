@@ -126,31 +126,31 @@ export interface UpdateWindowsState {
     /**
      * no documentation available
      */
-    dailyRecurrence?: pulumi.Input<inputs.UpdateWindowsDailyRecurrence>;
+    dailyRecurrence?: pulumi.Input<inputs.UpdateWindowsDailyRecurrence | undefined>;
     /**
      * This setting is enabled (`true`) or disabled (`false`)
      */
-    enabled?: pulumi.Input<boolean>;
+    enabled?: pulumi.Input<boolean | undefined>;
     /**
      * no documentation available
      */
-    monthlyRecurrence?: pulumi.Input<inputs.UpdateWindowsMonthlyRecurrence>;
+    monthlyRecurrence?: pulumi.Input<inputs.UpdateWindowsMonthlyRecurrence | undefined>;
     /**
      * Name
      */
-    name?: pulumi.Input<string>;
+    name?: pulumi.Input<string | undefined>;
     /**
      * no documentation available
      */
-    onceRecurrence?: pulumi.Input<inputs.UpdateWindowsOnceRecurrence>;
+    onceRecurrence?: pulumi.Input<inputs.UpdateWindowsOnceRecurrence | undefined>;
     /**
      * Possible Values: `MONTHLY`, `ONCE`, `DAILY`, `WEEKLY`
      */
-    recurrence?: pulumi.Input<string>;
+    recurrence?: pulumi.Input<string | undefined>;
     /**
      * no documentation available
      */
-    weeklyRecurrence?: pulumi.Input<inputs.UpdateWindowsWeeklyRecurrence>;
+    weeklyRecurrence?: pulumi.Input<inputs.UpdateWindowsWeeklyRecurrence | undefined>;
 }
 
 /**
@@ -160,7 +160,7 @@ export interface UpdateWindowsArgs {
     /**
      * no documentation available
      */
-    dailyRecurrence?: pulumi.Input<inputs.UpdateWindowsDailyRecurrence>;
+    dailyRecurrence?: pulumi.Input<inputs.UpdateWindowsDailyRecurrence | undefined>;
     /**
      * This setting is enabled (`true`) or disabled (`false`)
      */
@@ -168,15 +168,15 @@ export interface UpdateWindowsArgs {
     /**
      * no documentation available
      */
-    monthlyRecurrence?: pulumi.Input<inputs.UpdateWindowsMonthlyRecurrence>;
+    monthlyRecurrence?: pulumi.Input<inputs.UpdateWindowsMonthlyRecurrence | undefined>;
     /**
      * Name
      */
-    name?: pulumi.Input<string>;
+    name?: pulumi.Input<string | undefined>;
     /**
      * no documentation available
      */
-    onceRecurrence?: pulumi.Input<inputs.UpdateWindowsOnceRecurrence>;
+    onceRecurrence?: pulumi.Input<inputs.UpdateWindowsOnceRecurrence | undefined>;
     /**
      * Possible Values: `MONTHLY`, `ONCE`, `DAILY`, `WEEKLY`
      */
@@ -184,5 +184,5 @@ export interface UpdateWindowsArgs {
     /**
      * no documentation available
      */
-    weeklyRecurrence?: pulumi.Input<inputs.UpdateWindowsWeeklyRecurrence>;
+    weeklyRecurrence?: pulumi.Input<inputs.UpdateWindowsWeeklyRecurrence | undefined>;
 }

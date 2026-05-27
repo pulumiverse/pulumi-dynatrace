@@ -26,8 +26,8 @@ class MetricEventsArgs:
                  model_properties: pulumi.Input['MetricEventsModelPropertiesArgs'],
                  query_definition: pulumi.Input['MetricEventsQueryDefinitionArgs'],
                  summary: pulumi.Input[_builtins.str],
-                 event_entity_dimension_key: Optional[pulumi.Input[_builtins.str]] = None,
-                 legacy_id: Optional[pulumi.Input[_builtins.str]] = None):
+                 event_entity_dimension_key: pulumi.Input[Optional[_builtins.str]] = None,
+                 legacy_id: pulumi.Input[Optional[_builtins.str]] = None):
         """
         The set of arguments for constructing a MetricEvents resource.
 
@@ -111,39 +111,39 @@ class MetricEventsArgs:
 
     @_builtins.property
     @pulumi.getter(name="eventEntityDimensionKey")
-    def event_entity_dimension_key(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def event_entity_dimension_key(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Controls the preferred entity type used for triggered events.
         """
         return pulumi.get(self, "event_entity_dimension_key")
 
     @event_entity_dimension_key.setter
-    def event_entity_dimension_key(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def event_entity_dimension_key(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "event_entity_dimension_key", value)
 
     @_builtins.property
     @pulumi.getter(name="legacyId")
-    def legacy_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def legacy_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Config id
         """
         return pulumi.get(self, "legacy_id")
 
     @legacy_id.setter
-    def legacy_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def legacy_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "legacy_id", value)
 
 
 @pulumi.input_type
 class _MetricEventsState:
     def __init__(__self__, *,
-                 enabled: Optional[pulumi.Input[_builtins.bool]] = None,
-                 event_entity_dimension_key: Optional[pulumi.Input[_builtins.str]] = None,
-                 event_template: Optional[pulumi.Input['MetricEventsEventTemplateArgs']] = None,
-                 legacy_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 model_properties: Optional[pulumi.Input['MetricEventsModelPropertiesArgs']] = None,
-                 query_definition: Optional[pulumi.Input['MetricEventsQueryDefinitionArgs']] = None,
-                 summary: Optional[pulumi.Input[_builtins.str]] = None):
+                 enabled: pulumi.Input[Optional[_builtins.bool]] = None,
+                 event_entity_dimension_key: pulumi.Input[Optional[_builtins.str]] = None,
+                 event_template: pulumi.Input[Optional['MetricEventsEventTemplateArgs']] = None,
+                 legacy_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 model_properties: pulumi.Input[Optional['MetricEventsModelPropertiesArgs']] = None,
+                 query_definition: pulumi.Input[Optional['MetricEventsQueryDefinitionArgs']] = None,
+                 summary: pulumi.Input[Optional[_builtins.str]] = None):
         """
         Input properties used for looking up and filtering MetricEvents resources.
 
@@ -172,86 +172,86 @@ class _MetricEventsState:
 
     @_builtins.property
     @pulumi.getter
-    def enabled(self) -> Optional[pulumi.Input[_builtins.bool]]:
+    def enabled(self) -> pulumi.Input[Optional[_builtins.bool]]:
         """
         This setting is enabled (`true`) or disabled (`false`)
         """
         return pulumi.get(self, "enabled")
 
     @enabled.setter
-    def enabled(self, value: Optional[pulumi.Input[_builtins.bool]]):
+    def enabled(self, value: pulumi.Input[Optional[_builtins.bool]]):
         pulumi.set(self, "enabled", value)
 
     @_builtins.property
     @pulumi.getter(name="eventEntityDimensionKey")
-    def event_entity_dimension_key(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def event_entity_dimension_key(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Controls the preferred entity type used for triggered events.
         """
         return pulumi.get(self, "event_entity_dimension_key")
 
     @event_entity_dimension_key.setter
-    def event_entity_dimension_key(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def event_entity_dimension_key(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "event_entity_dimension_key", value)
 
     @_builtins.property
     @pulumi.getter(name="eventTemplate")
-    def event_template(self) -> Optional[pulumi.Input['MetricEventsEventTemplateArgs']]:
+    def event_template(self) -> pulumi.Input[Optional['MetricEventsEventTemplateArgs']]:
         """
         Event template
         """
         return pulumi.get(self, "event_template")
 
     @event_template.setter
-    def event_template(self, value: Optional[pulumi.Input['MetricEventsEventTemplateArgs']]):
+    def event_template(self, value: pulumi.Input[Optional['MetricEventsEventTemplateArgs']]):
         pulumi.set(self, "event_template", value)
 
     @_builtins.property
     @pulumi.getter(name="legacyId")
-    def legacy_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def legacy_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Config id
         """
         return pulumi.get(self, "legacy_id")
 
     @legacy_id.setter
-    def legacy_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def legacy_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "legacy_id", value)
 
     @_builtins.property
     @pulumi.getter(name="modelProperties")
-    def model_properties(self) -> Optional[pulumi.Input['MetricEventsModelPropertiesArgs']]:
+    def model_properties(self) -> pulumi.Input[Optional['MetricEventsModelPropertiesArgs']]:
         """
         Monitoring strategy
         """
         return pulumi.get(self, "model_properties")
 
     @model_properties.setter
-    def model_properties(self, value: Optional[pulumi.Input['MetricEventsModelPropertiesArgs']]):
+    def model_properties(self, value: pulumi.Input[Optional['MetricEventsModelPropertiesArgs']]):
         pulumi.set(self, "model_properties", value)
 
     @_builtins.property
     @pulumi.getter(name="queryDefinition")
-    def query_definition(self) -> Optional[pulumi.Input['MetricEventsQueryDefinitionArgs']]:
+    def query_definition(self) -> pulumi.Input[Optional['MetricEventsQueryDefinitionArgs']]:
         """
         Query definition
         """
         return pulumi.get(self, "query_definition")
 
     @query_definition.setter
-    def query_definition(self, value: Optional[pulumi.Input['MetricEventsQueryDefinitionArgs']]):
+    def query_definition(self, value: pulumi.Input[Optional['MetricEventsQueryDefinitionArgs']]):
         pulumi.set(self, "query_definition", value)
 
     @_builtins.property
     @pulumi.getter
-    def summary(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def summary(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The textual summary of the metric event entry
         """
         return pulumi.get(self, "summary")
 
     @summary.setter
-    def summary(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def summary(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "summary", value)
 
 
@@ -261,13 +261,13 @@ class MetricEvents(pulumi.CustomResource):
     def __init__(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 enabled: Optional[pulumi.Input[_builtins.bool]] = None,
-                 event_entity_dimension_key: Optional[pulumi.Input[_builtins.str]] = None,
-                 event_template: Optional[pulumi.Input[Union['MetricEventsEventTemplateArgs', 'MetricEventsEventTemplateArgsDict']]] = None,
-                 legacy_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 model_properties: Optional[pulumi.Input[Union['MetricEventsModelPropertiesArgs', 'MetricEventsModelPropertiesArgsDict']]] = None,
-                 query_definition: Optional[pulumi.Input[Union['MetricEventsQueryDefinitionArgs', 'MetricEventsQueryDefinitionArgsDict']]] = None,
-                 summary: Optional[pulumi.Input[_builtins.str]] = None,
+                 enabled: pulumi.Input[Optional[_builtins.bool]] = None,
+                 event_entity_dimension_key: pulumi.Input[Optional[_builtins.str]] = None,
+                 event_template: pulumi.Input[Optional[Union['MetricEventsEventTemplateArgs', 'MetricEventsEventTemplateArgsDict']]] = None,
+                 legacy_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 model_properties: pulumi.Input[Optional[Union['MetricEventsModelPropertiesArgs', 'MetricEventsModelPropertiesArgsDict']]] = None,
+                 query_definition: pulumi.Input[Optional[Union['MetricEventsQueryDefinitionArgs', 'MetricEventsQueryDefinitionArgsDict']]] = None,
+                 summary: pulumi.Input[Optional[_builtins.str]] = None,
                  __props__=None):
         """
         > This resource requires the API token scopes **Read settings** (`settings.read`) and **Write settings** (`settings.write`)
@@ -332,13 +332,13 @@ class MetricEvents(pulumi.CustomResource):
     def _internal_init(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 enabled: Optional[pulumi.Input[_builtins.bool]] = None,
-                 event_entity_dimension_key: Optional[pulumi.Input[_builtins.str]] = None,
-                 event_template: Optional[pulumi.Input[Union['MetricEventsEventTemplateArgs', 'MetricEventsEventTemplateArgsDict']]] = None,
-                 legacy_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 model_properties: Optional[pulumi.Input[Union['MetricEventsModelPropertiesArgs', 'MetricEventsModelPropertiesArgsDict']]] = None,
-                 query_definition: Optional[pulumi.Input[Union['MetricEventsQueryDefinitionArgs', 'MetricEventsQueryDefinitionArgsDict']]] = None,
-                 summary: Optional[pulumi.Input[_builtins.str]] = None,
+                 enabled: pulumi.Input[Optional[_builtins.bool]] = None,
+                 event_entity_dimension_key: pulumi.Input[Optional[_builtins.str]] = None,
+                 event_template: pulumi.Input[Optional[Union['MetricEventsEventTemplateArgs', 'MetricEventsEventTemplateArgsDict']]] = None,
+                 legacy_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 model_properties: pulumi.Input[Optional[Union['MetricEventsModelPropertiesArgs', 'MetricEventsModelPropertiesArgsDict']]] = None,
+                 query_definition: pulumi.Input[Optional[Union['MetricEventsQueryDefinitionArgs', 'MetricEventsQueryDefinitionArgsDict']]] = None,
+                 summary: pulumi.Input[Optional[_builtins.str]] = None,
                  __props__=None):
         opts = pulumi.ResourceOptions.merge(_utilities.get_resource_opts_defaults(), opts)
         if not isinstance(opts, pulumi.ResourceOptions):
@@ -375,13 +375,13 @@ class MetricEvents(pulumi.CustomResource):
     def get(resource_name: str,
             id: pulumi.Input[str],
             opts: Optional[pulumi.ResourceOptions] = None,
-            enabled: Optional[pulumi.Input[_builtins.bool]] = None,
-            event_entity_dimension_key: Optional[pulumi.Input[_builtins.str]] = None,
-            event_template: Optional[pulumi.Input[Union['MetricEventsEventTemplateArgs', 'MetricEventsEventTemplateArgsDict']]] = None,
-            legacy_id: Optional[pulumi.Input[_builtins.str]] = None,
-            model_properties: Optional[pulumi.Input[Union['MetricEventsModelPropertiesArgs', 'MetricEventsModelPropertiesArgsDict']]] = None,
-            query_definition: Optional[pulumi.Input[Union['MetricEventsQueryDefinitionArgs', 'MetricEventsQueryDefinitionArgsDict']]] = None,
-            summary: Optional[pulumi.Input[_builtins.str]] = None) -> 'MetricEvents':
+            enabled: pulumi.Input[Optional[_builtins.bool]] = None,
+            event_entity_dimension_key: pulumi.Input[Optional[_builtins.str]] = None,
+            event_template: pulumi.Input[Optional[Union['MetricEventsEventTemplateArgs', 'MetricEventsEventTemplateArgsDict']]] = None,
+            legacy_id: pulumi.Input[Optional[_builtins.str]] = None,
+            model_properties: pulumi.Input[Optional[Union['MetricEventsModelPropertiesArgs', 'MetricEventsModelPropertiesArgsDict']]] = None,
+            query_definition: pulumi.Input[Optional[Union['MetricEventsQueryDefinitionArgs', 'MetricEventsQueryDefinitionArgsDict']]] = None,
+            summary: pulumi.Input[Optional[_builtins.str]] = None) -> 'MetricEvents':
         """
         Get an existing MetricEvents resource's state with the given name, id, and optional extra
         properties used to qualify the lookup.

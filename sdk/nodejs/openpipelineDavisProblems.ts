@@ -129,15 +129,15 @@ export interface OpenpipelineDavisProblemsState {
     /**
      * List of all ingest sources of the configuration
      */
-    endpoints?: pulumi.Input<inputs.OpenpipelineDavisProblemsEndpoints>;
+    endpoints?: pulumi.Input<inputs.OpenpipelineDavisProblemsEndpoints | undefined>;
     /**
      * List of all pipelines of the configuration
      */
-    pipelines?: pulumi.Input<inputs.OpenpipelineDavisProblemsPipelines>;
+    pipelines?: pulumi.Input<inputs.OpenpipelineDavisProblemsPipelines | undefined>;
     /**
      * Dynamic routing definition
      */
-    routing?: pulumi.Input<inputs.OpenpipelineDavisProblemsRouting>;
+    routing?: pulumi.Input<inputs.OpenpipelineDavisProblemsRouting | undefined>;
 }
 
 /**
@@ -147,13 +147,13 @@ export interface OpenpipelineDavisProblemsArgs {
     /**
      * List of all ingest sources of the configuration
      */
-    endpoints?: pulumi.Input<inputs.OpenpipelineDavisProblemsEndpoints>;
+    endpoints?: pulumi.Input<inputs.OpenpipelineDavisProblemsEndpoints | undefined>;
     /**
      * List of all pipelines of the configuration
      */
-    pipelines?: pulumi.Input<inputs.OpenpipelineDavisProblemsPipelines>;
+    pipelines?: pulumi.Input<inputs.OpenpipelineDavisProblemsPipelines | undefined>;
     /**
      * Dynamic routing definition
      */
-    routing?: pulumi.Input<inputs.OpenpipelineDavisProblemsRouting>;
+    routing?: pulumi.Input<inputs.OpenpipelineDavisProblemsRouting | undefined>;
 }

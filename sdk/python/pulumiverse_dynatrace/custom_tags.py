@@ -23,8 +23,8 @@ class CustomTagsArgs:
     def __init__(__self__, *,
                  entity_selector: pulumi.Input[_builtins.str],
                  tags: pulumi.Input['CustomTagsTagsArgs'],
-                 current_state: Optional[pulumi.Input[_builtins.str]] = None,
-                 matched_entities: Optional[pulumi.Input[_builtins.int]] = None):
+                 current_state: pulumi.Input[Optional[_builtins.str]] = None,
+                 matched_entities: pulumi.Input[Optional[_builtins.int]] = None):
         """
         The set of arguments for constructing a CustomTags resource.
 
@@ -66,36 +66,36 @@ class CustomTagsArgs:
 
     @_builtins.property
     @pulumi.getter(name="currentState")
-    def current_state(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def current_state(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         For internal use: current state of tags in JSON format
         """
         return pulumi.get(self, "current_state")
 
     @current_state.setter
-    def current_state(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def current_state(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "current_state", value)
 
     @_builtins.property
     @pulumi.getter(name="matchedEntities")
-    def matched_entities(self) -> Optional[pulumi.Input[_builtins.int]]:
+    def matched_entities(self) -> pulumi.Input[Optional[_builtins.int]]:
         """
         The number of monitored entities where the tags have been added.
         """
         return pulumi.get(self, "matched_entities")
 
     @matched_entities.setter
-    def matched_entities(self, value: Optional[pulumi.Input[_builtins.int]]):
+    def matched_entities(self, value: pulumi.Input[Optional[_builtins.int]]):
         pulumi.set(self, "matched_entities", value)
 
 
 @pulumi.input_type
 class _CustomTagsState:
     def __init__(__self__, *,
-                 current_state: Optional[pulumi.Input[_builtins.str]] = None,
-                 entity_selector: Optional[pulumi.Input[_builtins.str]] = None,
-                 matched_entities: Optional[pulumi.Input[_builtins.int]] = None,
-                 tags: Optional[pulumi.Input['CustomTagsTagsArgs']] = None):
+                 current_state: pulumi.Input[Optional[_builtins.str]] = None,
+                 entity_selector: pulumi.Input[Optional[_builtins.str]] = None,
+                 matched_entities: pulumi.Input[Optional[_builtins.int]] = None,
+                 tags: pulumi.Input[Optional['CustomTagsTagsArgs']] = None):
         """
         Input properties used for looking up and filtering CustomTags resources.
 
@@ -115,50 +115,50 @@ class _CustomTagsState:
 
     @_builtins.property
     @pulumi.getter(name="currentState")
-    def current_state(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def current_state(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         For internal use: current state of tags in JSON format
         """
         return pulumi.get(self, "current_state")
 
     @current_state.setter
-    def current_state(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def current_state(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "current_state", value)
 
     @_builtins.property
     @pulumi.getter(name="entitySelector")
-    def entity_selector(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def entity_selector(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Specifies the entities where you want to update tags
         """
         return pulumi.get(self, "entity_selector")
 
     @entity_selector.setter
-    def entity_selector(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def entity_selector(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "entity_selector", value)
 
     @_builtins.property
     @pulumi.getter(name="matchedEntities")
-    def matched_entities(self) -> Optional[pulumi.Input[_builtins.int]]:
+    def matched_entities(self) -> pulumi.Input[Optional[_builtins.int]]:
         """
         The number of monitored entities where the tags have been added.
         """
         return pulumi.get(self, "matched_entities")
 
     @matched_entities.setter
-    def matched_entities(self, value: Optional[pulumi.Input[_builtins.int]]):
+    def matched_entities(self, value: pulumi.Input[Optional[_builtins.int]]):
         pulumi.set(self, "matched_entities", value)
 
     @_builtins.property
     @pulumi.getter
-    def tags(self) -> Optional[pulumi.Input['CustomTagsTagsArgs']]:
+    def tags(self) -> pulumi.Input[Optional['CustomTagsTagsArgs']]:
         """
         Specifies the entities where you want to update tags
         """
         return pulumi.get(self, "tags")
 
     @tags.setter
-    def tags(self, value: Optional[pulumi.Input['CustomTagsTagsArgs']]):
+    def tags(self, value: pulumi.Input[Optional['CustomTagsTagsArgs']]):
         pulumi.set(self, "tags", value)
 
 
@@ -168,10 +168,10 @@ class CustomTags(pulumi.CustomResource):
     def __init__(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 current_state: Optional[pulumi.Input[_builtins.str]] = None,
-                 entity_selector: Optional[pulumi.Input[_builtins.str]] = None,
-                 matched_entities: Optional[pulumi.Input[_builtins.int]] = None,
-                 tags: Optional[pulumi.Input[Union['CustomTagsTagsArgs', 'CustomTagsTagsArgsDict']]] = None,
+                 current_state: pulumi.Input[Optional[_builtins.str]] = None,
+                 entity_selector: pulumi.Input[Optional[_builtins.str]] = None,
+                 matched_entities: pulumi.Input[Optional[_builtins.int]] = None,
+                 tags: pulumi.Input[Optional[Union['CustomTagsTagsArgs', 'CustomTagsTagsArgsDict']]] = None,
                  __props__=None):
         """
         > This resource requires the API token scopes **Read entities** (`entities.read`) and **Write entities** (`entities.write`)
@@ -233,10 +233,10 @@ class CustomTags(pulumi.CustomResource):
     def _internal_init(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 current_state: Optional[pulumi.Input[_builtins.str]] = None,
-                 entity_selector: Optional[pulumi.Input[_builtins.str]] = None,
-                 matched_entities: Optional[pulumi.Input[_builtins.int]] = None,
-                 tags: Optional[pulumi.Input[Union['CustomTagsTagsArgs', 'CustomTagsTagsArgsDict']]] = None,
+                 current_state: pulumi.Input[Optional[_builtins.str]] = None,
+                 entity_selector: pulumi.Input[Optional[_builtins.str]] = None,
+                 matched_entities: pulumi.Input[Optional[_builtins.int]] = None,
+                 tags: pulumi.Input[Optional[Union['CustomTagsTagsArgs', 'CustomTagsTagsArgsDict']]] = None,
                  __props__=None):
         opts = pulumi.ResourceOptions.merge(_utilities.get_resource_opts_defaults(), opts)
         if not isinstance(opts, pulumi.ResourceOptions):
@@ -264,10 +264,10 @@ class CustomTags(pulumi.CustomResource):
     def get(resource_name: str,
             id: pulumi.Input[str],
             opts: Optional[pulumi.ResourceOptions] = None,
-            current_state: Optional[pulumi.Input[_builtins.str]] = None,
-            entity_selector: Optional[pulumi.Input[_builtins.str]] = None,
-            matched_entities: Optional[pulumi.Input[_builtins.int]] = None,
-            tags: Optional[pulumi.Input[Union['CustomTagsTagsArgs', 'CustomTagsTagsArgsDict']]] = None) -> 'CustomTags':
+            current_state: pulumi.Input[Optional[_builtins.str]] = None,
+            entity_selector: pulumi.Input[Optional[_builtins.str]] = None,
+            matched_entities: pulumi.Input[Optional[_builtins.int]] = None,
+            tags: pulumi.Input[Optional[Union['CustomTagsTagsArgs', 'CustomTagsTagsArgsDict']]] = None) -> 'CustomTags':
         """
         Get an existing CustomTags resource's state with the given name, id, and optional extra
         properties used to qualify the lookup.

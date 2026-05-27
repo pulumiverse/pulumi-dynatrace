@@ -229,75 +229,75 @@ export interface ProcessGroupDetectionFlagsState {
     /**
      * In older versions, Node.js applications were distinguished based on their directory name, omitting the script name. Changing this setting may change the general handling of Node.js process groups. Leave unchanged if in doubt.
      */
-    addNodeJsScriptName?: pulumi.Input<boolean>;
+    addNodeJsScriptName?: pulumi.Input<boolean | undefined>;
     /**
      * Enabling this flag will detect separate Cassandra process groups based on the configured Cassandra cluster name.
      */
-    autoDetectCassandraClusters?: pulumi.Input<boolean>;
+    autoDetectCassandraClusters?: pulumi.Input<boolean | undefined>;
     /**
      * Enabling this flag will detect Spring Boot process groups based on command line and applications' configuration files.
      */
-    autoDetectSpringBoot?: pulumi.Input<boolean>;
+    autoDetectSpringBoot?: pulumi.Input<boolean | undefined>;
     /**
      * Enabling this flag will detect separate TIBCO BusinessWorks process groups per engine property file.
      */
-    autoDetectTibcoContainerEditionEngines?: pulumi.Input<boolean>;
+    autoDetectTibcoContainerEditionEngines?: pulumi.Input<boolean | undefined>;
     /**
      * Enabling this flag will detect separate TIBCO BusinessWorks process groups per engine property file.
      */
-    autoDetectTibcoEngines?: pulumi.Input<boolean>;
+    autoDetectTibcoEngines?: pulumi.Input<boolean | undefined>;
     /**
      * Enabling this flag will detect webMethods Integration Server including specific properties like install root and product name.
      */
-    autoDetectWebMethodsIntegrationServer?: pulumi.Input<boolean>;
+    autoDetectWebMethodsIntegrationServer?: pulumi.Input<boolean | undefined>;
     /**
      * Enabling this flag will detect separate WebSphere Liberty process groups based on java command line.
      */
-    autoDetectWebSphereLibertyApplication?: pulumi.Input<boolean>;
+    autoDetectWebSphereLibertyApplication?: pulumi.Input<boolean | undefined>;
     /**
      * Enable to group and separately analyze the processes of each IBM MQ Queue manager instance. Each process group receives a unique name based on the queue manager instance name.
      */
-    groupIbmmqbyInstanceName?: pulumi.Input<boolean>;
+    groupIbmmqbyInstanceName?: pulumi.Input<boolean | undefined>;
     /**
      * Enabling this flag will detect the JBoss server name from the system property jboss.server.name=\n\n, only if -D[Server:\n\n] is not set.
      */
-    identifyJbossServerBySystemProperty?: pulumi.Input<boolean>;
+    identifyJbossServerBySystemProperty?: pulumi.Input<boolean | undefined>;
     /**
      * To determine the unique identity of each detected process, and to generate a unique name for each detected process, Dynatrace evaluates the name of the directory that each process binary is contained within. For application containers like Tomcat and JBoss, Dynatrace evaluates important directories like CATALINA*HOME and JBOSS*HOME for this information. In some automated deployment scenarios such directory names are updated automatically with new version numbers, build numbers, dates, or GUIDs. Enable this setting to ensure that automated directory name changes don't result in Dynatrace registering pre-existing processes as new processes.
      */
-    ignoreUniqueIdentifiers?: pulumi.Input<boolean>;
+    ignoreUniqueIdentifiers?: pulumi.Input<boolean | undefined>;
     /**
      * The scope of this setting (HOST, HOST_GROUP). Omit this property if you want to cover the whole environment.
      */
-    scope?: pulumi.Input<string>;
+    scope?: pulumi.Input<string | undefined>;
     /**
      * This flag enables the detection of security software such as anti-malware protection.
      */
-    securitySoftwareDetectionEnabled?: pulumi.Input<boolean>;
+    securitySoftwareDetectionEnabled?: pulumi.Input<boolean | undefined>;
     /**
      * Enable to monitor CPU and memory usage of short lived processes, otherwise being lost by traditional monitoring. Disabling this flag blocks passing data to cluster only, it does not stop data collection and has no effect on performance.
      */
-    shortLivedProcessesMonitoring?: pulumi.Input<boolean>;
+    shortLivedProcessesMonitoring?: pulumi.Input<boolean | undefined>;
     /**
      * Enable to group and separately analyze the processes of each DB2 Instance. Each process receives a unique name based on the DB2 Instance name.
      */
-    splitDb2GroupingByInstances?: pulumi.Input<boolean>;
+    splitDb2GroupingByInstances?: pulumi.Input<boolean | undefined>;
     /**
      * Enable to group and separately analyze the processes of each Oracle DB. Each process group receives a unique name based on the Oracle DB SID.
      */
-    splitOracleDatabasePg?: pulumi.Input<boolean>;
+    splitOracleDatabasePg?: pulumi.Input<boolean | undefined>;
     /**
      * Enable to group and separately analyze the processes of each Oracle Listener. Each process group receives a unique name based on the Oracle Listener name.
      */
-    splitOracleListenerPg?: pulumi.Input<boolean>;
+    splitOracleListenerPg?: pulumi.Input<boolean | undefined>;
     /**
      * By default, Tomcat clusters are identified and named based on the CATALINA*HOME directory name. This setting results in the use of the CATALINA*BASE directory name to identify multiple Tomcat nodes within each Tomcat cluster. If this setting is not enabled, each CATALINA*HOME+CATALINA*BASE combination will be considered a separate Tomcat cluster. In other words, Tomcat clusters can't have multiple nodes on a single host.
      */
-    useCatalinaBase?: pulumi.Input<boolean>;
+    useCatalinaBase?: pulumi.Input<boolean | undefined>;
     /**
      * By default, Dynatrace uses image names as identifiers for individual process groups, with one process-group instance per host. Normally Docker container names can't serve as stable identifiers of process group instances because they are variable and auto-generated. You can however manually assign proper container names to their Docker instances. Such manually-assigned container names can serve as reliable process-group instance identifiers. This flag instructs Dynatrace to use Docker-provided names to distinguish between multiple instances of the same image. If this flag is not applied and you run multiple containers of the same image on the same host, the resulting processes will be consolidated into a single process view. Use this flag with caution!
      */
-    useDockerContainerName?: pulumi.Input<boolean>;
+    useDockerContainerName?: pulumi.Input<boolean | undefined>;
 }
 
 /**
@@ -347,11 +347,11 @@ export interface ProcessGroupDetectionFlagsArgs {
     /**
      * The scope of this setting (HOST, HOST_GROUP). Omit this property if you want to cover the whole environment.
      */
-    scope?: pulumi.Input<string>;
+    scope?: pulumi.Input<string | undefined>;
     /**
      * This flag enables the detection of security software such as anti-malware protection.
      */
-    securitySoftwareDetectionEnabled?: pulumi.Input<boolean>;
+    securitySoftwareDetectionEnabled?: pulumi.Input<boolean | undefined>;
     /**
      * Enable to monitor CPU and memory usage of short lived processes, otherwise being lost by traditional monitoring. Disabling this flag blocks passing data to cluster only, it does not stop data collection and has no effect on performance.
      */
@@ -359,7 +359,7 @@ export interface ProcessGroupDetectionFlagsArgs {
     /**
      * Enable to group and separately analyze the processes of each DB2 Instance. Each process receives a unique name based on the DB2 Instance name.
      */
-    splitDb2GroupingByInstances?: pulumi.Input<boolean>;
+    splitDb2GroupingByInstances?: pulumi.Input<boolean | undefined>;
     /**
      * Enable to group and separately analyze the processes of each Oracle DB. Each process group receives a unique name based on the Oracle DB SID.
      */

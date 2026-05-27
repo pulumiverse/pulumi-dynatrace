@@ -562,327 +562,327 @@ export interface BuiltinProcessMonitoringState {
     /**
      * Rule id: 3 - Do monitor processes if ASP.NET Core application path exists
      */
-    aspnetcore?: pulumi.Input<boolean>;
+    aspnetcore?: pulumi.Input<boolean | undefined>;
     /**
      * Rule id: 64 - Do not monitor processes if ASP.NET Core application DLL contains 'Agent.Listener'
      */
-    aspnetcoreAgentlistener?: pulumi.Input<boolean>;
+    aspnetcoreAgentlistener?: pulumi.Input<boolean | undefined>;
     /**
      * Rule id: 62 - Do not monitor processes if ASP.NET Core application DLL contains 'Agent.Worker'
      */
-    aspnetcoreAgentworker?: pulumi.Input<boolean>;
+    aspnetcoreAgentworker?: pulumi.Input<boolean | undefined>;
     /**
      * Rule id: 37 - Do monitor processes if Cloud Foundry application exists
      */
-    cf?: pulumi.Input<boolean>;
+    cf?: pulumi.Input<boolean | undefined>;
     /**
      * Do not monitor processes if Cloud Foundry application begins with 'apps-manager-js'
      */
-    cfAppsmanagerjs?: pulumi.Input<boolean>;
+    cfAppsmanagerjs?: pulumi.Input<boolean | undefined>;
     /**
      * Rule id: 84 - Do not monitor processes if command line arguments contain 'forever/bin/monitor'
      */
-    cmdForeverbinmonitor?: pulumi.Input<boolean>;
+    cmdForeverbinmonitor?: pulumi.Input<boolean | undefined>;
     /**
      * Rule id: 41 - Do monitor processes if container name exists
      */
-    container?: pulumi.Input<boolean>;
+    container?: pulumi.Input<boolean | undefined>;
     /**
      * Rule id: 39 - Do not monitor processes if Docker stripped image contains 'pause-amd64'
      */
-    dockerPauseamd64?: pulumi.Input<boolean>;
+    dockerPauseamd64?: pulumi.Input<boolean | undefined>;
     /**
      * Rule id: 7 - Do monitor processes if EXE name equals 'adapter'
      */
-    exeAdapter?: pulumi.Input<boolean>;
+    exeAdapter?: pulumi.Input<boolean | undefined>;
     /**
      * Rule id: 63 - Do not monitor processes if EXE name contains 'Agent.Listener'
      */
-    exeAgentlistener?: pulumi.Input<boolean>;
+    exeAgentlistener?: pulumi.Input<boolean | undefined>;
     /**
      * Rule id: 61 - Do not monitor processes if EXE name contains 'Agent.Worker'
      */
-    exeAgentworker?: pulumi.Input<boolean>;
+    exeAgentworker?: pulumi.Input<boolean | undefined>;
     /**
      * Rule id: 79 - Do not monitor processes if EXE name equals 'ansible'
      */
-    exeAnsible?: pulumi.Input<boolean>;
+    exeAnsible?: pulumi.Input<boolean | undefined>;
     /**
      * Rule id: 8 - Do monitor processes if EXE name equals 'auctioneer'
      */
-    exeAuctioneer?: pulumi.Input<boolean>;
+    exeAuctioneer?: pulumi.Input<boolean | undefined>;
     /**
      * Rule id: 52 - Do not monitor processes if EXE name equals 'auditbeat'
      */
-    exeAuditbeat?: pulumi.Input<boolean>;
+    exeAuditbeat?: pulumi.Input<boolean | undefined>;
     /**
      * Rule id: 81 - Do not monitor processes if EXE name equals 'aws'
      */
-    exeAws?: pulumi.Input<boolean>;
+    exeAws?: pulumi.Input<boolean | undefined>;
     /**
      * Rule id: 82 - Do not monitor processes if EXE name equals 'az'
      */
-    exeAz?: pulumi.Input<boolean>;
+    exeAz?: pulumi.Input<boolean | undefined>;
     /**
      * Rule id: 9 - Do monitor processes if EXE name equals 'bbs'
      */
-    exeBbs?: pulumi.Input<boolean>;
+    exeBbs?: pulumi.Input<boolean | undefined>;
     /**
      * Rule id: 5 - Do monitor processes if EXE name equals 'caddy'
      */
-    exeCaddy?: pulumi.Input<boolean>;
+    exeCaddy?: pulumi.Input<boolean | undefined>;
     /**
      * Rule id: 58 - Do not monitor processes if EXE name equals 'calico-node'
      */
-    exeCaliconode?: pulumi.Input<boolean>;
+    exeCaliconode?: pulumi.Input<boolean | undefined>;
     /**
      * Rule id: 59 - Do not monitor processes if EXE name equals 'casclient.exe'
      */
-    exeCasclient?: pulumi.Input<boolean>;
+    exeCasclient?: pulumi.Input<boolean | undefined>;
     /**
      * Rule id: 10 - Do monitor processes if EXE name equals 'cc-uploader'
      */
-    exeCcuploader?: pulumi.Input<boolean>;
+    exeCcuploader?: pulumi.Input<boolean | undefined>;
     /**
      * Rule id: 78 - Do not monitor processes if EXE name equals 'conda'
      */
-    exeConda?: pulumi.Input<boolean>;
+    exeConda?: pulumi.Input<boolean | undefined>;
     /**
      * Rule id: 11 - Do monitor processes if EXE name equals 'doppler'
      */
-    exeDoppler?: pulumi.Input<boolean>;
+    exeDoppler?: pulumi.Input<boolean | undefined>;
     /**
      * Rule id: 49 - Do not monitor processes if EXE name equals 'filebeat'
      */
-    exeFilebeat?: pulumi.Input<boolean>;
+    exeFilebeat?: pulumi.Input<boolean | undefined>;
     /**
      * Rule id: 65 - Do not monitor processes if EXE name equals 'FlexNetJobExecutorService'
      */
-    exeFlexnetjobexecutorservice?: pulumi.Input<boolean>;
+    exeFlexnetjobexecutorservice?: pulumi.Input<boolean | undefined>;
     /**
      * Rule id: 66 - Do not monitor processes if EXE name equals 'FlexNetMaintenanceRemotingService'
      */
-    exeFlexnetmaintenanceremotingservice?: pulumi.Input<boolean>;
+    exeFlexnetmaintenanceremotingservice?: pulumi.Input<boolean | undefined>;
     /**
      * Rule id: 54 - Do not monitor processes if EXE name equals 'functionbeat'
      */
-    exeFunctionbeat?: pulumi.Input<boolean>;
+    exeFunctionbeat?: pulumi.Input<boolean | undefined>;
     /**
      * Rule id: 83 - Do not monitor processes if EXE name equals 'gcloud'
      */
-    exeGcloud?: pulumi.Input<boolean>;
+    exeGcloud?: pulumi.Input<boolean | undefined>;
     /**
      * Rule id: 12 - Do monitor processes if EXE name equals 'gorouter'
      */
-    exeGorouter?: pulumi.Input<boolean>;
+    exeGorouter?: pulumi.Input<boolean | undefined>;
     /**
      * Rule id: 55 - Do not monitor processes if EXE name equals 'grootfs'
      */
-    exeGrootfs?: pulumi.Input<boolean>;
+    exeGrootfs?: pulumi.Input<boolean | undefined>;
     /**
      * Rule id: 74 - Do not monitor processes if EXE name equals 'hatch'
      */
-    exeHatch?: pulumi.Input<boolean>;
+    exeHatch?: pulumi.Input<boolean | undefined>;
     /**
      * Rule id: 53 - Do not monitor processes if EXE name equals 'heartbeat'
      */
-    exeHeartbeat?: pulumi.Input<boolean>;
+    exeHeartbeat?: pulumi.Input<boolean | undefined>;
     /**
      * Rule id: 6 - Do monitor processes if EXE name equals 'influxd'
      */
-    exeInfluxd?: pulumi.Input<boolean>;
+    exeInfluxd?: pulumi.Input<boolean | undefined>;
     /**
      * Rule id: 77 - Do not monitor processes if EXE name equals 'jupyter'
      */
-    exeJupyter?: pulumi.Input<boolean>;
+    exeJupyter?: pulumi.Input<boolean | undefined>;
     /**
      * Rule id: 13 - Do monitor processes if EXE name equals 'locket'
      */
-    exeLocket?: pulumi.Input<boolean>;
+    exeLocket?: pulumi.Input<boolean | undefined>;
     /**
      * Rule id: 50 - Do not monitor processes if EXE name equals 'metricbeat'
      */
-    exeMetricbeat?: pulumi.Input<boolean>;
+    exeMetricbeat?: pulumi.Input<boolean | undefined>;
     /**
      * Rule id: 14 - Do monitor processes if EXE name equals 'metron'
      */
-    exeMetron?: pulumi.Input<boolean>;
+    exeMetron?: pulumi.Input<boolean | undefined>;
     /**
      * Rule id: 48 - Do not monitor processes if EXE name begins with 'mqsi'
      */
-    exeMqsi?: pulumi.Input<boolean>;
+    exeMqsi?: pulumi.Input<boolean | undefined>;
     /**
      * Rule id: 44 - Do not monitor processes if EXE name equals 'oc'
      */
-    exeOc?: pulumi.Input<boolean>;
+    exeOc?: pulumi.Input<boolean | undefined>;
     /**
      * Rule id: 71 - Do not monitor processes if EXE name equals 'openhandlecollector.exe'
      */
-    exeOpenhandlecollector?: pulumi.Input<boolean>;
+    exeOpenhandlecollector?: pulumi.Input<boolean | undefined>;
     /**
      * Rule id: 80 - Do not monitor processes if EXE name equals 'openstack'
      */
-    exeOpenstack?: pulumi.Input<boolean>;
+    exeOpenstack?: pulumi.Input<boolean | undefined>;
     /**
      * Rule id: 46 - Do not monitor processes if EXE path equals '/opt/cni/bin/host-local'
      */
-    exeOptcnibinhostlocal?: pulumi.Input<boolean>;
+    exeOptcnibinhostlocal?: pulumi.Input<boolean | undefined>;
     /**
      * Rule id: 51 - Do not monitor processes if EXE name equals 'packetbeat'
      */
-    exePacketbeat?: pulumi.Input<boolean>;
+    exePacketbeat?: pulumi.Input<boolean | undefined>;
     /**
      * Rule id: 2 - Do not monitor processes if EXE name equals 'php-cgi'
      */
-    exePhpcgi?: pulumi.Input<boolean>;
+    exePhpcgi?: pulumi.Input<boolean | undefined>;
     /**
      * Rule id: 73 - Do not monitor processes if EXE name equals 'pip'
      */
-    exePip?: pulumi.Input<boolean>;
+    exePip?: pulumi.Input<boolean | undefined>;
     /**
      * Rule id: 16 - Do monitor processes if EXE name equals 'rep'
      */
-    exeRep?: pulumi.Input<boolean>;
+    exeRep?: pulumi.Input<boolean | undefined>;
     /**
      * Rule id: 17 - Do monitor processes if EXE name equals 'route-emitter'
      */
-    exeRouteemitter?: pulumi.Input<boolean>;
+    exeRouteemitter?: pulumi.Input<boolean | undefined>;
     /**
      * Rule id: 18 - Do monitor processes if EXE name equals 'route-registrar'
      */
-    exeRouteregistrar?: pulumi.Input<boolean>;
+    exeRouteregistrar?: pulumi.Input<boolean | undefined>;
     /**
      * Rule id: 19 - Do monitor processes if EXE name equals 'routing-api'
      */
-    exeRoutingapi?: pulumi.Input<boolean>;
+    exeRoutingapi?: pulumi.Input<boolean | undefined>;
     /**
      * Rule id: 20 - Do monitor processes if EXE name equals 'scheduler'
      */
-    exeSchedular?: pulumi.Input<boolean>;
+    exeSchedular?: pulumi.Input<boolean | undefined>;
     /**
      * Rule id: 21 - Do monitor processes if EXE name equals 'silk-daemon'
      */
-    exeSilkdaemon?: pulumi.Input<boolean>;
+    exeSilkdaemon?: pulumi.Input<boolean | undefined>;
     /**
      * Rule id: 22 - Do monitor processes if EXE name equals 'switchboard'
      */
-    exeSwitchboard?: pulumi.Input<boolean>;
+    exeSwitchboard?: pulumi.Input<boolean | undefined>;
     /**
      * Rule id: 23 - Do monitor processes if EXE name equals 'syslog*drain*binder'
      */
-    exeSyslogdrainbinder?: pulumi.Input<boolean>;
+    exeSyslogdrainbinder?: pulumi.Input<boolean | undefined>;
     /**
      * Rule id: 56 - Do not monitor processes if EXE name equals 'tardis'
      */
-    exeTardis?: pulumi.Input<boolean>;
+    exeTardis?: pulumi.Input<boolean | undefined>;
     /**
      * Rule id: 43 - Do not monitor processes if EXE path begins with '/tmp/buildpacks/'
      */
-    exeTmpbuildpacks?: pulumi.Input<boolean>;
+    exeTmpbuildpacks?: pulumi.Input<boolean | undefined>;
     /**
      * Rule id: 24 - Do monitor processes if EXE name equals 'tps-watcher'
      */
-    exeTpswatcher?: pulumi.Input<boolean>;
+    exeTpswatcher?: pulumi.Input<boolean | undefined>;
     /**
      * Rule id: 25 - Do monitor processes if EXE name equals 'trafficcontroller'
      */
-    exeTrafficcontroller?: pulumi.Input<boolean>;
+    exeTrafficcontroller?: pulumi.Input<boolean | undefined>;
     /**
      * Rule id: 70 - Do not monitor processes if EXE name contains 'UiPath'
      */
-    exeUipath?: pulumi.Input<boolean>;
+    exeUipath?: pulumi.Input<boolean | undefined>;
     /**
      * Rule id: 67 - Do not monitor processes if EXE path equals '/usr/bin/piper'
      */
-    exeUserbinpiper?: pulumi.Input<boolean>;
+    exeUserbinpiper?: pulumi.Input<boolean | undefined>;
     /**
      * Rule id: 4 - Do monitor processes if EXE name equals 'w3wp.exe'
      */
-    exeW3wp?: pulumi.Input<boolean>;
+    exeW3wp?: pulumi.Input<boolean | undefined>;
     /**
      * Rule id: 75 - Do not monitor processes if EXE name equals 'wheel'
      */
-    exeWheel?: pulumi.Input<boolean>;
+    exeWheel?: pulumi.Input<boolean | undefined>;
     /**
      * Rule id: 72 - Do not monitor processes if EXE name equals 'yq'
      */
-    exeYq?: pulumi.Input<boolean>;
+    exeYq?: pulumi.Input<boolean | undefined>;
     /**
      * Rule id: 76 - Do not monitor processes if EXE name equals 'yum'
      */
-    exeYum?: pulumi.Input<boolean>;
+    exeYum?: pulumi.Input<boolean | undefined>;
     /**
      * Rule id: 47 - Do not monitor processes if Go Binary Linkage equals 'static'
      */
-    goStatic?: pulumi.Input<boolean>;
+    goStatic?: pulumi.Input<boolean | undefined>;
     /**
      * The scope of this settings. If the settings should cover the whole environment, just don't specify any scope.
      */
-    hostGroupId?: pulumi.Input<string>;
+    hostGroupId?: pulumi.Input<string | undefined>;
     /**
      * Rule id: 60 - Do not monitor processes if JAR file name equals 'dynatrace*ibm*mq_connector.jar'
      */
-    jarDtibmmqconnector?: pulumi.Input<boolean>;
+    jarDtibmmqconnector?: pulumi.Input<boolean | undefined>;
     /**
      * Rule id: 57 - Do not monitor processes if Java JAR file begins with 'org.eclipse.equinox.launcher'
      */
-    jarEclipseequinox?: pulumi.Input<boolean>;
+    jarEclipseequinox?: pulumi.Input<boolean | undefined>;
     /**
      * Rule id: 69 - Do not monitor processes if Kubernetes container name equals 'cassandra-operator'
      */
-    k8sCassandraoperator?: pulumi.Input<boolean>;
+    k8sCassandraoperator?: pulumi.Input<boolean | undefined>;
     /**
      * Rule id: 38 - Do not monitor processes if Kubernetes container name equals 'POD'
      */
-    k8sContainerpod?: pulumi.Input<boolean>;
+    k8sContainerpod?: pulumi.Input<boolean | undefined>;
     /**
      * Rule id: 40 - Do monitor processes if Kubernetes namespace exists
      */
-    k8sNamespace?: pulumi.Input<boolean>;
+    k8sNamespace?: pulumi.Input<boolean | undefined>;
     /**
      * Do not monitor processes if Node.js script equals 'bin/pm2'
      */
-    nodeBinpm2?: pulumi.Input<boolean>;
+    nodeBinpm2?: pulumi.Input<boolean | undefined>;
     /**
      * Rule id: 68 - Do not monitor processes if Node.js application equals 'corepack'
      */
-    nodeCorepack?: pulumi.Input<boolean>;
+    nodeCorepack?: pulumi.Input<boolean | undefined>;
     /**
      * Rule id: 28 - Do not monitor processes if Node.js application base directory ends with '/node_modules/grunt'
      */
-    nodeGrunt?: pulumi.Input<boolean>;
+    nodeGrunt?: pulumi.Input<boolean | undefined>;
     /**
      * Do not monitor processes if Node.js application base directory ends with '/node_modules/gulp-cli'
      */
-    nodeGulpcli?: pulumi.Input<boolean>;
+    nodeGulpcli?: pulumi.Input<boolean | undefined>;
     /**
      * Rule id: 33 - Do not monitor processes if Node.js application base directory ends with '/node_modules/node-gyp'
      */
-    nodeNodegyp?: pulumi.Input<boolean>;
+    nodeNodegyp?: pulumi.Input<boolean | undefined>;
     /**
      * Rule id: 32 - Do not monitor processes if Node.js application base directory ends with '/node_modules/node-pre-gyp'
      */
-    nodeNodepregyp?: pulumi.Input<boolean>;
+    nodeNodepregyp?: pulumi.Input<boolean | undefined>;
     /**
      * Rule id: 27 - Do not monitor processes if Node.js application base directory ends with '/node_modules/npm'
      */
-    nodeNpm?: pulumi.Input<boolean>;
+    nodeNpm?: pulumi.Input<boolean | undefined>;
     /**
      * Rule id: 26 - Do not monitor processes if Node.js application base directory ends with '/node_modules/prebuild-install'
      */
-    nodePrebuildinstall?: pulumi.Input<boolean>;
+    nodePrebuildinstall?: pulumi.Input<boolean | undefined>;
     /**
      * Rule id: 29 - Do not monitor processes if Node.js application base directory ends with '/node_modules/typescript'
      */
-    nodeTypescript?: pulumi.Input<boolean>;
+    nodeTypescript?: pulumi.Input<boolean | undefined>;
     /**
      * Rule id: 45 - Do not monitor processes if Node.js application equals 'yarn'
      */
-    nodeYarn?: pulumi.Input<boolean>;
+    nodeYarn?: pulumi.Input<boolean | undefined>;
     /**
      * (v1.274) Rule id: 1 - Do not monitor processes if PHP script exists
      */
-    phpScript?: pulumi.Input<boolean>;
+    phpScript?: pulumi.Input<boolean | undefined>;
 }
 
 /**
@@ -892,325 +892,325 @@ export interface BuiltinProcessMonitoringArgs {
     /**
      * Rule id: 3 - Do monitor processes if ASP.NET Core application path exists
      */
-    aspnetcore?: pulumi.Input<boolean>;
+    aspnetcore?: pulumi.Input<boolean | undefined>;
     /**
      * Rule id: 64 - Do not monitor processes if ASP.NET Core application DLL contains 'Agent.Listener'
      */
-    aspnetcoreAgentlistener?: pulumi.Input<boolean>;
+    aspnetcoreAgentlistener?: pulumi.Input<boolean | undefined>;
     /**
      * Rule id: 62 - Do not monitor processes if ASP.NET Core application DLL contains 'Agent.Worker'
      */
-    aspnetcoreAgentworker?: pulumi.Input<boolean>;
+    aspnetcoreAgentworker?: pulumi.Input<boolean | undefined>;
     /**
      * Rule id: 37 - Do monitor processes if Cloud Foundry application exists
      */
-    cf?: pulumi.Input<boolean>;
+    cf?: pulumi.Input<boolean | undefined>;
     /**
      * Do not monitor processes if Cloud Foundry application begins with 'apps-manager-js'
      */
-    cfAppsmanagerjs?: pulumi.Input<boolean>;
+    cfAppsmanagerjs?: pulumi.Input<boolean | undefined>;
     /**
      * Rule id: 84 - Do not monitor processes if command line arguments contain 'forever/bin/monitor'
      */
-    cmdForeverbinmonitor?: pulumi.Input<boolean>;
+    cmdForeverbinmonitor?: pulumi.Input<boolean | undefined>;
     /**
      * Rule id: 41 - Do monitor processes if container name exists
      */
-    container?: pulumi.Input<boolean>;
+    container?: pulumi.Input<boolean | undefined>;
     /**
      * Rule id: 39 - Do not monitor processes if Docker stripped image contains 'pause-amd64'
      */
-    dockerPauseamd64?: pulumi.Input<boolean>;
+    dockerPauseamd64?: pulumi.Input<boolean | undefined>;
     /**
      * Rule id: 7 - Do monitor processes if EXE name equals 'adapter'
      */
-    exeAdapter?: pulumi.Input<boolean>;
+    exeAdapter?: pulumi.Input<boolean | undefined>;
     /**
      * Rule id: 63 - Do not monitor processes if EXE name contains 'Agent.Listener'
      */
-    exeAgentlistener?: pulumi.Input<boolean>;
+    exeAgentlistener?: pulumi.Input<boolean | undefined>;
     /**
      * Rule id: 61 - Do not monitor processes if EXE name contains 'Agent.Worker'
      */
-    exeAgentworker?: pulumi.Input<boolean>;
+    exeAgentworker?: pulumi.Input<boolean | undefined>;
     /**
      * Rule id: 79 - Do not monitor processes if EXE name equals 'ansible'
      */
-    exeAnsible?: pulumi.Input<boolean>;
+    exeAnsible?: pulumi.Input<boolean | undefined>;
     /**
      * Rule id: 8 - Do monitor processes if EXE name equals 'auctioneer'
      */
-    exeAuctioneer?: pulumi.Input<boolean>;
+    exeAuctioneer?: pulumi.Input<boolean | undefined>;
     /**
      * Rule id: 52 - Do not monitor processes if EXE name equals 'auditbeat'
      */
-    exeAuditbeat?: pulumi.Input<boolean>;
+    exeAuditbeat?: pulumi.Input<boolean | undefined>;
     /**
      * Rule id: 81 - Do not monitor processes if EXE name equals 'aws'
      */
-    exeAws?: pulumi.Input<boolean>;
+    exeAws?: pulumi.Input<boolean | undefined>;
     /**
      * Rule id: 82 - Do not monitor processes if EXE name equals 'az'
      */
-    exeAz?: pulumi.Input<boolean>;
+    exeAz?: pulumi.Input<boolean | undefined>;
     /**
      * Rule id: 9 - Do monitor processes if EXE name equals 'bbs'
      */
-    exeBbs?: pulumi.Input<boolean>;
+    exeBbs?: pulumi.Input<boolean | undefined>;
     /**
      * Rule id: 5 - Do monitor processes if EXE name equals 'caddy'
      */
-    exeCaddy?: pulumi.Input<boolean>;
+    exeCaddy?: pulumi.Input<boolean | undefined>;
     /**
      * Rule id: 58 - Do not monitor processes if EXE name equals 'calico-node'
      */
-    exeCaliconode?: pulumi.Input<boolean>;
+    exeCaliconode?: pulumi.Input<boolean | undefined>;
     /**
      * Rule id: 59 - Do not monitor processes if EXE name equals 'casclient.exe'
      */
-    exeCasclient?: pulumi.Input<boolean>;
+    exeCasclient?: pulumi.Input<boolean | undefined>;
     /**
      * Rule id: 10 - Do monitor processes if EXE name equals 'cc-uploader'
      */
-    exeCcuploader?: pulumi.Input<boolean>;
+    exeCcuploader?: pulumi.Input<boolean | undefined>;
     /**
      * Rule id: 78 - Do not monitor processes if EXE name equals 'conda'
      */
-    exeConda?: pulumi.Input<boolean>;
+    exeConda?: pulumi.Input<boolean | undefined>;
     /**
      * Rule id: 11 - Do monitor processes if EXE name equals 'doppler'
      */
-    exeDoppler?: pulumi.Input<boolean>;
+    exeDoppler?: pulumi.Input<boolean | undefined>;
     /**
      * Rule id: 49 - Do not monitor processes if EXE name equals 'filebeat'
      */
-    exeFilebeat?: pulumi.Input<boolean>;
+    exeFilebeat?: pulumi.Input<boolean | undefined>;
     /**
      * Rule id: 65 - Do not monitor processes if EXE name equals 'FlexNetJobExecutorService'
      */
-    exeFlexnetjobexecutorservice?: pulumi.Input<boolean>;
+    exeFlexnetjobexecutorservice?: pulumi.Input<boolean | undefined>;
     /**
      * Rule id: 66 - Do not monitor processes if EXE name equals 'FlexNetMaintenanceRemotingService'
      */
-    exeFlexnetmaintenanceremotingservice?: pulumi.Input<boolean>;
+    exeFlexnetmaintenanceremotingservice?: pulumi.Input<boolean | undefined>;
     /**
      * Rule id: 54 - Do not monitor processes if EXE name equals 'functionbeat'
      */
-    exeFunctionbeat?: pulumi.Input<boolean>;
+    exeFunctionbeat?: pulumi.Input<boolean | undefined>;
     /**
      * Rule id: 83 - Do not monitor processes if EXE name equals 'gcloud'
      */
-    exeGcloud?: pulumi.Input<boolean>;
+    exeGcloud?: pulumi.Input<boolean | undefined>;
     /**
      * Rule id: 12 - Do monitor processes if EXE name equals 'gorouter'
      */
-    exeGorouter?: pulumi.Input<boolean>;
+    exeGorouter?: pulumi.Input<boolean | undefined>;
     /**
      * Rule id: 55 - Do not monitor processes if EXE name equals 'grootfs'
      */
-    exeGrootfs?: pulumi.Input<boolean>;
+    exeGrootfs?: pulumi.Input<boolean | undefined>;
     /**
      * Rule id: 74 - Do not monitor processes if EXE name equals 'hatch'
      */
-    exeHatch?: pulumi.Input<boolean>;
+    exeHatch?: pulumi.Input<boolean | undefined>;
     /**
      * Rule id: 53 - Do not monitor processes if EXE name equals 'heartbeat'
      */
-    exeHeartbeat?: pulumi.Input<boolean>;
+    exeHeartbeat?: pulumi.Input<boolean | undefined>;
     /**
      * Rule id: 6 - Do monitor processes if EXE name equals 'influxd'
      */
-    exeInfluxd?: pulumi.Input<boolean>;
+    exeInfluxd?: pulumi.Input<boolean | undefined>;
     /**
      * Rule id: 77 - Do not monitor processes if EXE name equals 'jupyter'
      */
-    exeJupyter?: pulumi.Input<boolean>;
+    exeJupyter?: pulumi.Input<boolean | undefined>;
     /**
      * Rule id: 13 - Do monitor processes if EXE name equals 'locket'
      */
-    exeLocket?: pulumi.Input<boolean>;
+    exeLocket?: pulumi.Input<boolean | undefined>;
     /**
      * Rule id: 50 - Do not monitor processes if EXE name equals 'metricbeat'
      */
-    exeMetricbeat?: pulumi.Input<boolean>;
+    exeMetricbeat?: pulumi.Input<boolean | undefined>;
     /**
      * Rule id: 14 - Do monitor processes if EXE name equals 'metron'
      */
-    exeMetron?: pulumi.Input<boolean>;
+    exeMetron?: pulumi.Input<boolean | undefined>;
     /**
      * Rule id: 48 - Do not monitor processes if EXE name begins with 'mqsi'
      */
-    exeMqsi?: pulumi.Input<boolean>;
+    exeMqsi?: pulumi.Input<boolean | undefined>;
     /**
      * Rule id: 44 - Do not monitor processes if EXE name equals 'oc'
      */
-    exeOc?: pulumi.Input<boolean>;
+    exeOc?: pulumi.Input<boolean | undefined>;
     /**
      * Rule id: 71 - Do not monitor processes if EXE name equals 'openhandlecollector.exe'
      */
-    exeOpenhandlecollector?: pulumi.Input<boolean>;
+    exeOpenhandlecollector?: pulumi.Input<boolean | undefined>;
     /**
      * Rule id: 80 - Do not monitor processes if EXE name equals 'openstack'
      */
-    exeOpenstack?: pulumi.Input<boolean>;
+    exeOpenstack?: pulumi.Input<boolean | undefined>;
     /**
      * Rule id: 46 - Do not monitor processes if EXE path equals '/opt/cni/bin/host-local'
      */
-    exeOptcnibinhostlocal?: pulumi.Input<boolean>;
+    exeOptcnibinhostlocal?: pulumi.Input<boolean | undefined>;
     /**
      * Rule id: 51 - Do not monitor processes if EXE name equals 'packetbeat'
      */
-    exePacketbeat?: pulumi.Input<boolean>;
+    exePacketbeat?: pulumi.Input<boolean | undefined>;
     /**
      * Rule id: 2 - Do not monitor processes if EXE name equals 'php-cgi'
      */
-    exePhpcgi?: pulumi.Input<boolean>;
+    exePhpcgi?: pulumi.Input<boolean | undefined>;
     /**
      * Rule id: 73 - Do not monitor processes if EXE name equals 'pip'
      */
-    exePip?: pulumi.Input<boolean>;
+    exePip?: pulumi.Input<boolean | undefined>;
     /**
      * Rule id: 16 - Do monitor processes if EXE name equals 'rep'
      */
-    exeRep?: pulumi.Input<boolean>;
+    exeRep?: pulumi.Input<boolean | undefined>;
     /**
      * Rule id: 17 - Do monitor processes if EXE name equals 'route-emitter'
      */
-    exeRouteemitter?: pulumi.Input<boolean>;
+    exeRouteemitter?: pulumi.Input<boolean | undefined>;
     /**
      * Rule id: 18 - Do monitor processes if EXE name equals 'route-registrar'
      */
-    exeRouteregistrar?: pulumi.Input<boolean>;
+    exeRouteregistrar?: pulumi.Input<boolean | undefined>;
     /**
      * Rule id: 19 - Do monitor processes if EXE name equals 'routing-api'
      */
-    exeRoutingapi?: pulumi.Input<boolean>;
+    exeRoutingapi?: pulumi.Input<boolean | undefined>;
     /**
      * Rule id: 20 - Do monitor processes if EXE name equals 'scheduler'
      */
-    exeSchedular?: pulumi.Input<boolean>;
+    exeSchedular?: pulumi.Input<boolean | undefined>;
     /**
      * Rule id: 21 - Do monitor processes if EXE name equals 'silk-daemon'
      */
-    exeSilkdaemon?: pulumi.Input<boolean>;
+    exeSilkdaemon?: pulumi.Input<boolean | undefined>;
     /**
      * Rule id: 22 - Do monitor processes if EXE name equals 'switchboard'
      */
-    exeSwitchboard?: pulumi.Input<boolean>;
+    exeSwitchboard?: pulumi.Input<boolean | undefined>;
     /**
      * Rule id: 23 - Do monitor processes if EXE name equals 'syslog*drain*binder'
      */
-    exeSyslogdrainbinder?: pulumi.Input<boolean>;
+    exeSyslogdrainbinder?: pulumi.Input<boolean | undefined>;
     /**
      * Rule id: 56 - Do not monitor processes if EXE name equals 'tardis'
      */
-    exeTardis?: pulumi.Input<boolean>;
+    exeTardis?: pulumi.Input<boolean | undefined>;
     /**
      * Rule id: 43 - Do not monitor processes if EXE path begins with '/tmp/buildpacks/'
      */
-    exeTmpbuildpacks?: pulumi.Input<boolean>;
+    exeTmpbuildpacks?: pulumi.Input<boolean | undefined>;
     /**
      * Rule id: 24 - Do monitor processes if EXE name equals 'tps-watcher'
      */
-    exeTpswatcher?: pulumi.Input<boolean>;
+    exeTpswatcher?: pulumi.Input<boolean | undefined>;
     /**
      * Rule id: 25 - Do monitor processes if EXE name equals 'trafficcontroller'
      */
-    exeTrafficcontroller?: pulumi.Input<boolean>;
+    exeTrafficcontroller?: pulumi.Input<boolean | undefined>;
     /**
      * Rule id: 70 - Do not monitor processes if EXE name contains 'UiPath'
      */
-    exeUipath?: pulumi.Input<boolean>;
+    exeUipath?: pulumi.Input<boolean | undefined>;
     /**
      * Rule id: 67 - Do not monitor processes if EXE path equals '/usr/bin/piper'
      */
-    exeUserbinpiper?: pulumi.Input<boolean>;
+    exeUserbinpiper?: pulumi.Input<boolean | undefined>;
     /**
      * Rule id: 4 - Do monitor processes if EXE name equals 'w3wp.exe'
      */
-    exeW3wp?: pulumi.Input<boolean>;
+    exeW3wp?: pulumi.Input<boolean | undefined>;
     /**
      * Rule id: 75 - Do not monitor processes if EXE name equals 'wheel'
      */
-    exeWheel?: pulumi.Input<boolean>;
+    exeWheel?: pulumi.Input<boolean | undefined>;
     /**
      * Rule id: 72 - Do not monitor processes if EXE name equals 'yq'
      */
-    exeYq?: pulumi.Input<boolean>;
+    exeYq?: pulumi.Input<boolean | undefined>;
     /**
      * Rule id: 76 - Do not monitor processes if EXE name equals 'yum'
      */
-    exeYum?: pulumi.Input<boolean>;
+    exeYum?: pulumi.Input<boolean | undefined>;
     /**
      * Rule id: 47 - Do not monitor processes if Go Binary Linkage equals 'static'
      */
-    goStatic?: pulumi.Input<boolean>;
+    goStatic?: pulumi.Input<boolean | undefined>;
     /**
      * The scope of this settings. If the settings should cover the whole environment, just don't specify any scope.
      */
-    hostGroupId?: pulumi.Input<string>;
+    hostGroupId?: pulumi.Input<string | undefined>;
     /**
      * Rule id: 60 - Do not monitor processes if JAR file name equals 'dynatrace*ibm*mq_connector.jar'
      */
-    jarDtibmmqconnector?: pulumi.Input<boolean>;
+    jarDtibmmqconnector?: pulumi.Input<boolean | undefined>;
     /**
      * Rule id: 57 - Do not monitor processes if Java JAR file begins with 'org.eclipse.equinox.launcher'
      */
-    jarEclipseequinox?: pulumi.Input<boolean>;
+    jarEclipseequinox?: pulumi.Input<boolean | undefined>;
     /**
      * Rule id: 69 - Do not monitor processes if Kubernetes container name equals 'cassandra-operator'
      */
-    k8sCassandraoperator?: pulumi.Input<boolean>;
+    k8sCassandraoperator?: pulumi.Input<boolean | undefined>;
     /**
      * Rule id: 38 - Do not monitor processes if Kubernetes container name equals 'POD'
      */
-    k8sContainerpod?: pulumi.Input<boolean>;
+    k8sContainerpod?: pulumi.Input<boolean | undefined>;
     /**
      * Rule id: 40 - Do monitor processes if Kubernetes namespace exists
      */
-    k8sNamespace?: pulumi.Input<boolean>;
+    k8sNamespace?: pulumi.Input<boolean | undefined>;
     /**
      * Do not monitor processes if Node.js script equals 'bin/pm2'
      */
-    nodeBinpm2?: pulumi.Input<boolean>;
+    nodeBinpm2?: pulumi.Input<boolean | undefined>;
     /**
      * Rule id: 68 - Do not monitor processes if Node.js application equals 'corepack'
      */
-    nodeCorepack?: pulumi.Input<boolean>;
+    nodeCorepack?: pulumi.Input<boolean | undefined>;
     /**
      * Rule id: 28 - Do not monitor processes if Node.js application base directory ends with '/node_modules/grunt'
      */
-    nodeGrunt?: pulumi.Input<boolean>;
+    nodeGrunt?: pulumi.Input<boolean | undefined>;
     /**
      * Do not monitor processes if Node.js application base directory ends with '/node_modules/gulp-cli'
      */
-    nodeGulpcli?: pulumi.Input<boolean>;
+    nodeGulpcli?: pulumi.Input<boolean | undefined>;
     /**
      * Rule id: 33 - Do not monitor processes if Node.js application base directory ends with '/node_modules/node-gyp'
      */
-    nodeNodegyp?: pulumi.Input<boolean>;
+    nodeNodegyp?: pulumi.Input<boolean | undefined>;
     /**
      * Rule id: 32 - Do not monitor processes if Node.js application base directory ends with '/node_modules/node-pre-gyp'
      */
-    nodeNodepregyp?: pulumi.Input<boolean>;
+    nodeNodepregyp?: pulumi.Input<boolean | undefined>;
     /**
      * Rule id: 27 - Do not monitor processes if Node.js application base directory ends with '/node_modules/npm'
      */
-    nodeNpm?: pulumi.Input<boolean>;
+    nodeNpm?: pulumi.Input<boolean | undefined>;
     /**
      * Rule id: 26 - Do not monitor processes if Node.js application base directory ends with '/node_modules/prebuild-install'
      */
-    nodePrebuildinstall?: pulumi.Input<boolean>;
+    nodePrebuildinstall?: pulumi.Input<boolean | undefined>;
     /**
      * Rule id: 29 - Do not monitor processes if Node.js application base directory ends with '/node_modules/typescript'
      */
-    nodeTypescript?: pulumi.Input<boolean>;
+    nodeTypescript?: pulumi.Input<boolean | undefined>;
     /**
      * Rule id: 45 - Do not monitor processes if Node.js application equals 'yarn'
      */
-    nodeYarn?: pulumi.Input<boolean>;
+    nodeYarn?: pulumi.Input<boolean | undefined>;
     /**
      * (v1.274) Rule id: 1 - Do not monitor processes if PHP script exists
      */
-    phpScript?: pulumi.Input<boolean>;
+    phpScript?: pulumi.Input<boolean | undefined>;
 }

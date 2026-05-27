@@ -105,11 +105,11 @@ export interface ProcessMonitoringState {
      * By disabling automatic deep monitoring the Dynatrace OneAgent will only deep monitor processes that are covered by a respective deep monitoring rule or where monitoring is enabled explicitly.
      * Disabling only works if all installed Agents have version 1.123 or higher.
      */
-    autoMonitoring?: pulumi.Input<boolean>;
+    autoMonitoring?: pulumi.Input<boolean | undefined>;
     /**
      * The scope of this settings. If the settings should cover the whole environment, just don't specify any scope.
      */
-    hostGroupId?: pulumi.Input<string>;
+    hostGroupId?: pulumi.Input<string | undefined>;
 }
 
 /**
@@ -124,5 +124,5 @@ export interface ProcessMonitoringArgs {
     /**
      * The scope of this settings. If the settings should cover the whole environment, just don't specify any scope.
      */
-    hostGroupId?: pulumi.Input<string>;
+    hostGroupId?: pulumi.Input<string | undefined>;
 }

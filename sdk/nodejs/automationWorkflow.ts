@@ -241,35 +241,35 @@ export interface AutomationWorkflowState {
     /**
      * The user context the executions of the workflow will happen with
      */
-    actor?: pulumi.Input<string>;
+    actor?: pulumi.Input<string | undefined>;
     /**
      * An optional description for the workflow
      */
-    description?: pulumi.Input<string>;
+    description?: pulumi.Input<string | undefined>;
     /**
      * The ID of the owner of this workflow
      */
-    owner?: pulumi.Input<string>;
+    owner?: pulumi.Input<string | undefined>;
     /**
      * Defines whether this workflow is private to the owner or not. Default is `true`
      */
-    private?: pulumi.Input<boolean>;
+    private?: pulumi.Input<boolean | undefined>;
     /**
      * The tasks to run for every execution of this workflow
      */
-    tasks?: pulumi.Input<inputs.AutomationWorkflowTasks>;
+    tasks?: pulumi.Input<inputs.AutomationWorkflowTasks | undefined>;
     /**
      * The title / name of the workflow
      */
-    title?: pulumi.Input<string>;
+    title?: pulumi.Input<string | undefined>;
     /**
      * Configures how executions of the workflows are getting triggered. If no trigger is specified it means the workflow is getting manually triggered
      */
-    trigger?: pulumi.Input<inputs.AutomationWorkflowTrigger>;
+    trigger?: pulumi.Input<inputs.AutomationWorkflowTrigger | undefined>;
     /**
      * The type of the workflow. Possible values are `STANDARD` and `SIMPLE`. Defaults to `STANDARD`. Workflows of type `SIMPLE` are allowed to contain only one action
      */
-    type?: pulumi.Input<string>;
+    type?: pulumi.Input<string | undefined>;
 }
 
 /**
@@ -279,19 +279,19 @@ export interface AutomationWorkflowArgs {
     /**
      * The user context the executions of the workflow will happen with
      */
-    actor?: pulumi.Input<string>;
+    actor?: pulumi.Input<string | undefined>;
     /**
      * An optional description for the workflow
      */
-    description?: pulumi.Input<string>;
+    description?: pulumi.Input<string | undefined>;
     /**
      * The ID of the owner of this workflow
      */
-    owner?: pulumi.Input<string>;
+    owner?: pulumi.Input<string | undefined>;
     /**
      * Defines whether this workflow is private to the owner or not. Default is `true`
      */
-    private?: pulumi.Input<boolean>;
+    private?: pulumi.Input<boolean | undefined>;
     /**
      * The tasks to run for every execution of this workflow
      */
@@ -303,9 +303,9 @@ export interface AutomationWorkflowArgs {
     /**
      * Configures how executions of the workflows are getting triggered. If no trigger is specified it means the workflow is getting manually triggered
      */
-    trigger?: pulumi.Input<inputs.AutomationWorkflowTrigger>;
+    trigger?: pulumi.Input<inputs.AutomationWorkflowTrigger | undefined>;
     /**
      * The type of the workflow. Possible values are `STANDARD` and `SIMPLE`. Defaults to `STANDARD`. Workflows of type `SIMPLE` are allowed to contain only one action
      */
-    type?: pulumi.Input<string>;
+    type?: pulumi.Input<string | undefined>;
 }

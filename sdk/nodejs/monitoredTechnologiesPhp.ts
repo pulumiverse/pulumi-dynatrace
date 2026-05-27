@@ -103,19 +103,19 @@ export interface MonitoredTechnologiesPhpState {
     /**
      * Requires enabled PHP monitoring and Dynatrace OneAgent version 1.261 or later
      */
-    enablePhpCliServer?: pulumi.Input<boolean>;
+    enablePhpCliServer?: pulumi.Input<boolean | undefined>;
     /**
      * This setting is enabled (`true`) or disabled (`false`)
      */
-    enabled?: pulumi.Input<boolean>;
+    enabled?: pulumi.Input<boolean | undefined>;
     /**
      * Requires PHP monitoring enabled and from Dynatrace OneAgent version 1.191 it's ignored and permanently enabled
      */
-    enabledFastCgi?: pulumi.Input<boolean>;
+    enabledFastCgi?: pulumi.Input<boolean | undefined>;
     /**
      * The scope of this settings. If the settings should cover the whole environment, just don't specify any scope.
      */
-    hostId?: pulumi.Input<string>;
+    hostId?: pulumi.Input<string | undefined>;
 }
 
 /**
@@ -125,7 +125,7 @@ export interface MonitoredTechnologiesPhpArgs {
     /**
      * Requires enabled PHP monitoring and Dynatrace OneAgent version 1.261 or later
      */
-    enablePhpCliServer?: pulumi.Input<boolean>;
+    enablePhpCliServer?: pulumi.Input<boolean | undefined>;
     /**
      * This setting is enabled (`true`) or disabled (`false`)
      */
@@ -133,9 +133,9 @@ export interface MonitoredTechnologiesPhpArgs {
     /**
      * Requires PHP monitoring enabled and from Dynatrace OneAgent version 1.191 it's ignored and permanently enabled
      */
-    enabledFastCgi?: pulumi.Input<boolean>;
+    enabledFastCgi?: pulumi.Input<boolean | undefined>;
     /**
      * The scope of this settings. If the settings should cover the whole environment, just don't specify any scope.
      */
-    hostId?: pulumi.Input<string>;
+    hostId?: pulumi.Input<string | undefined>;
 }

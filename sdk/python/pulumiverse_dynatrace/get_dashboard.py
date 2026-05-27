@@ -99,8 +99,8 @@ def get_dashboard(name: Optional[_builtins.str] = None,
         id=pulumi.get(__ret__, 'id'),
         name=pulumi.get(__ret__, 'name'),
         owner=pulumi.get(__ret__, 'owner'))
-def get_dashboard_output(name: Optional[pulumi.Input[_builtins.str]] = None,
-                         owner: Optional[pulumi.Input[_builtins.str]] = None,
+def get_dashboard_output(name: pulumi.Input[Optional[_builtins.str]] = None,
+                         owner: pulumi.Input[Optional[_builtins.str]] = None,
                          opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetDashboardResult]:
     """
     The `Dashboard` data source allows the dashboard ID to be retrieved by its name and owner.

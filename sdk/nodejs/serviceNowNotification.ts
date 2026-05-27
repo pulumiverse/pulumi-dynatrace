@@ -172,58 +172,58 @@ export interface ServiceNowNotificationState {
     /**
      * This setting is enabled (`true`) or disabled (`false`)
      */
-    active?: pulumi.Input<boolean>;
+    active?: pulumi.Input<boolean | undefined>;
     /**
      * Send events into ServiceNow ITOM.
      */
-    events?: pulumi.Input<boolean>;
+    events?: pulumi.Input<boolean | undefined>;
     /**
      * Use text format for problem details instead of HTML.
      */
-    formatProblemDetailsAsText?: pulumi.Input<boolean>;
+    formatProblemDetailsAsText?: pulumi.Input<boolean | undefined>;
     /**
      * Send incidents into ServiceNow ITSM.
      */
-    incidents?: pulumi.Input<boolean>;
+    incidents?: pulumi.Input<boolean | undefined>;
     /**
      * The ServiceNow instance identifier. It refers to the first part of your own ServiceNow URL. 
      *
      *  This field is mutually exclusive with the **url** field. You can only use one of them.
      */
-    instance?: pulumi.Input<string>;
+    instance?: pulumi.Input<string | undefined>;
     /**
      * The ID of these settings when referred to from resources requiring the REST API V1 keys
      */
-    legacyId?: pulumi.Input<string>;
+    legacyId?: pulumi.Input<string | undefined>;
     /**
      * The content of the ServiceNow description. Type '{' for placeholder suggestions.. #### Available placeholders
      * **{ImpactedEntity}**: A short description of the problem and impacted entity (or multiple impacted entities).
      */
-    message?: pulumi.Input<string>;
+    message?: pulumi.Input<string | undefined>;
     /**
      * The name of the notification configuration
      */
-    name?: pulumi.Input<string>;
+    name?: pulumi.Input<string | undefined>;
     /**
      * The password to the ServiceNow account.
      */
-    password?: pulumi.Input<string>;
+    password?: pulumi.Input<string | undefined>;
     /**
      * The ID of the associated alerting profile
      */
-    profile?: pulumi.Input<string>;
+    profile?: pulumi.Input<string | undefined>;
     /**
      * The URL of the on-premise ServiceNow installation. 
      *
      *  This field is mutually exclusive with the **instanceName** field. You can only use one of them.
      */
-    url?: pulumi.Input<string>;
+    url?: pulumi.Input<string | undefined>;
     /**
      * The username of the ServiceNow account. 
      *
      *  Make sure that your user account has the `webServiceAdmin` and `x_dynat_ruxit.Integration` roles.
      */
-    username?: pulumi.Input<string>;
+    username?: pulumi.Input<string | undefined>;
 }
 
 /**
@@ -237,11 +237,11 @@ export interface ServiceNowNotificationArgs {
     /**
      * Send events into ServiceNow ITOM.
      */
-    events?: pulumi.Input<boolean>;
+    events?: pulumi.Input<boolean | undefined>;
     /**
      * Use text format for problem details instead of HTML.
      */
-    formatProblemDetailsAsText?: pulumi.Input<boolean>;
+    formatProblemDetailsAsText?: pulumi.Input<boolean | undefined>;
     /**
      * Send incidents into ServiceNow ITSM.
      */
@@ -251,11 +251,11 @@ export interface ServiceNowNotificationArgs {
      *
      *  This field is mutually exclusive with the **url** field. You can only use one of them.
      */
-    instance?: pulumi.Input<string>;
+    instance?: pulumi.Input<string | undefined>;
     /**
      * The ID of these settings when referred to from resources requiring the REST API V1 keys
      */
-    legacyId?: pulumi.Input<string>;
+    legacyId?: pulumi.Input<string | undefined>;
     /**
      * The content of the ServiceNow description. Type '{' for placeholder suggestions.. #### Available placeholders
      * **{ImpactedEntity}**: A short description of the problem and impacted entity (or multiple impacted entities).
@@ -264,11 +264,11 @@ export interface ServiceNowNotificationArgs {
     /**
      * The name of the notification configuration
      */
-    name?: pulumi.Input<string>;
+    name?: pulumi.Input<string | undefined>;
     /**
      * The password to the ServiceNow account.
      */
-    password?: pulumi.Input<string>;
+    password?: pulumi.Input<string | undefined>;
     /**
      * The ID of the associated alerting profile
      */
@@ -278,7 +278,7 @@ export interface ServiceNowNotificationArgs {
      *
      *  This field is mutually exclusive with the **instanceName** field. You can only use one of them.
      */
-    url?: pulumi.Input<string>;
+    url?: pulumi.Input<string | undefined>;
     /**
      * The username of the ServiceNow account. 
      *

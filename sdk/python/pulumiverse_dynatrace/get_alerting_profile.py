@@ -101,7 +101,7 @@ def get_alerting_profile(name: Optional[_builtins.str] = None,
         id=pulumi.get(__ret__, 'id'),
         legacy_id=pulumi.get(__ret__, 'legacy_id'),
         name=pulumi.get(__ret__, 'name'))
-def get_alerting_profile_output(name: Optional[pulumi.Input[_builtins.str]] = None,
+def get_alerting_profile_output(name: pulumi.Input[Optional[_builtins.str]] = None,
                                 opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetAlertingProfileResult]:
     """
     The Alerting Profile queries for an Alerting Profile that has a specified name. In case multiple Alerting Profiles share the same name the first one found will be used.

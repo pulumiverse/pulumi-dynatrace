@@ -21,8 +21,8 @@ __all__ = ['ImsBridgesArgs', 'ImsBridges']
 @pulumi.input_type
 class ImsBridgesArgs:
     def __init__(__self__, *,
-                 name: Optional[pulumi.Input[_builtins.str]] = None,
-                 queue_managers: Optional[pulumi.Input[Sequence[pulumi.Input['ImsBridgesQueueManagerArgs']]]] = None):
+                 name: pulumi.Input[Optional[_builtins.str]] = None,
+                 queue_managers: pulumi.Input[Optional[Sequence[pulumi.Input['ImsBridgesQueueManagerArgs']]]] = None):
         """
         The set of arguments for constructing a ImsBridges resource.
 
@@ -36,34 +36,34 @@ class ImsBridgesArgs:
 
     @_builtins.property
     @pulumi.getter
-    def name(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def name(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The name of the IMS bridge
         """
         return pulumi.get(self, "name")
 
     @name.setter
-    def name(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def name(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "name", value)
 
     @_builtins.property
     @pulumi.getter(name="queueManagers")
-    def queue_managers(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['ImsBridgesQueueManagerArgs']]]]:
+    def queue_managers(self) -> pulumi.Input[Optional[Sequence[pulumi.Input['ImsBridgesQueueManagerArgs']]]]:
         """
         Queue manager(s) that belong to the IMS bridge
         """
         return pulumi.get(self, "queue_managers")
 
     @queue_managers.setter
-    def queue_managers(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['ImsBridgesQueueManagerArgs']]]]):
+    def queue_managers(self, value: pulumi.Input[Optional[Sequence[pulumi.Input['ImsBridgesQueueManagerArgs']]]]):
         pulumi.set(self, "queue_managers", value)
 
 
 @pulumi.input_type
 class _ImsBridgesState:
     def __init__(__self__, *,
-                 name: Optional[pulumi.Input[_builtins.str]] = None,
-                 queue_managers: Optional[pulumi.Input[Sequence[pulumi.Input['ImsBridgesQueueManagerArgs']]]] = None):
+                 name: pulumi.Input[Optional[_builtins.str]] = None,
+                 queue_managers: pulumi.Input[Optional[Sequence[pulumi.Input['ImsBridgesQueueManagerArgs']]]] = None):
         """
         Input properties used for looking up and filtering ImsBridges resources.
 
@@ -77,26 +77,26 @@ class _ImsBridgesState:
 
     @_builtins.property
     @pulumi.getter
-    def name(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def name(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The name of the IMS bridge
         """
         return pulumi.get(self, "name")
 
     @name.setter
-    def name(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def name(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "name", value)
 
     @_builtins.property
     @pulumi.getter(name="queueManagers")
-    def queue_managers(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['ImsBridgesQueueManagerArgs']]]]:
+    def queue_managers(self) -> pulumi.Input[Optional[Sequence[pulumi.Input['ImsBridgesQueueManagerArgs']]]]:
         """
         Queue manager(s) that belong to the IMS bridge
         """
         return pulumi.get(self, "queue_managers")
 
     @queue_managers.setter
-    def queue_managers(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['ImsBridgesQueueManagerArgs']]]]):
+    def queue_managers(self, value: pulumi.Input[Optional[Sequence[pulumi.Input['ImsBridgesQueueManagerArgs']]]]):
         pulumi.set(self, "queue_managers", value)
 
 
@@ -106,8 +106,8 @@ class ImsBridges(pulumi.CustomResource):
     def __init__(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 name: Optional[pulumi.Input[_builtins.str]] = None,
-                 queue_managers: Optional[pulumi.Input[Sequence[pulumi.Input[Union['ImsBridgesQueueManagerArgs', 'ImsBridgesQueueManagerArgsDict']]]]] = None,
+                 name: pulumi.Input[Optional[_builtins.str]] = None,
+                 queue_managers: pulumi.Input[Optional[Sequence[pulumi.Input[Union['ImsBridgesQueueManagerArgs', 'ImsBridgesQueueManagerArgsDict']]]]] = None,
                  __props__=None):
         """
         > This resource requires the API token scopes **Read settings** (`settings.read`) and **Write settings** (`settings.write`)
@@ -167,8 +167,8 @@ class ImsBridges(pulumi.CustomResource):
     def _internal_init(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 name: Optional[pulumi.Input[_builtins.str]] = None,
-                 queue_managers: Optional[pulumi.Input[Sequence[pulumi.Input[Union['ImsBridgesQueueManagerArgs', 'ImsBridgesQueueManagerArgsDict']]]]] = None,
+                 name: pulumi.Input[Optional[_builtins.str]] = None,
+                 queue_managers: pulumi.Input[Optional[Sequence[pulumi.Input[Union['ImsBridgesQueueManagerArgs', 'ImsBridgesQueueManagerArgsDict']]]]] = None,
                  __props__=None):
         opts = pulumi.ResourceOptions.merge(_utilities.get_resource_opts_defaults(), opts)
         if not isinstance(opts, pulumi.ResourceOptions):
@@ -190,8 +190,8 @@ class ImsBridges(pulumi.CustomResource):
     def get(resource_name: str,
             id: pulumi.Input[str],
             opts: Optional[pulumi.ResourceOptions] = None,
-            name: Optional[pulumi.Input[_builtins.str]] = None,
-            queue_managers: Optional[pulumi.Input[Sequence[pulumi.Input[Union['ImsBridgesQueueManagerArgs', 'ImsBridgesQueueManagerArgsDict']]]]] = None) -> 'ImsBridges':
+            name: pulumi.Input[Optional[_builtins.str]] = None,
+            queue_managers: pulumi.Input[Optional[Sequence[pulumi.Input[Union['ImsBridgesQueueManagerArgs', 'ImsBridgesQueueManagerArgsDict']]]]] = None) -> 'ImsBridges':
         """
         Get an existing ImsBridges resource's state with the given name, id, and optional extra
         properties used to qualify the lookup.

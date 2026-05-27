@@ -120,23 +120,23 @@ export interface ServiceAnomaliesV2State {
     /**
      * Failure rate
      */
-    failureRate?: pulumi.Input<inputs.ServiceAnomaliesV2FailureRate>;
+    failureRate?: pulumi.Input<inputs.ServiceAnomaliesV2FailureRate | undefined>;
     /**
      * Alert if the observed load is lower than the expected load by a specified margin for a specified amount of time:
      */
-    loadDrops?: pulumi.Input<inputs.ServiceAnomaliesV2LoadDrops>;
+    loadDrops?: pulumi.Input<inputs.ServiceAnomaliesV2LoadDrops | undefined>;
     /**
      * Alert if the observed load exceeds the expected load by a specified margin for a specified amount of time:
      */
-    loadSpikes?: pulumi.Input<inputs.ServiceAnomaliesV2LoadSpikes>;
+    loadSpikes?: pulumi.Input<inputs.ServiceAnomaliesV2LoadSpikes | undefined>;
     /**
      * Response time
      */
-    responseTime?: pulumi.Input<inputs.ServiceAnomaliesV2ResponseTime>;
+    responseTime?: pulumi.Input<inputs.ServiceAnomaliesV2ResponseTime | undefined>;
     /**
      * The scope of this setting (SERVICE*METHOD, SERVICE, HOST*GROUP). Omit this property if you want to cover the whole environment.
      */
-    scope?: pulumi.Input<string>;
+    scope?: pulumi.Input<string | undefined>;
 }
 
 /**
@@ -162,5 +162,5 @@ export interface ServiceAnomaliesV2Args {
     /**
      * The scope of this setting (SERVICE*METHOD, SERVICE, HOST*GROUP). Omit this property if you want to cover the whole environment.
      */
-    scope?: pulumi.Input<string>;
+    scope?: pulumi.Input<string | undefined>;
 }

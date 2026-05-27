@@ -20,7 +20,7 @@ __all__ = ['MutedRequestsArgs', 'MutedRequests']
 class MutedRequestsArgs:
     def __init__(__self__, *,
                  service_id: pulumi.Input[_builtins.str],
-                 muted_request_names: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None):
+                 muted_request_names: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None):
         """
         The set of arguments for constructing a MutedRequests resource.
 
@@ -45,22 +45,22 @@ class MutedRequestsArgs:
 
     @_builtins.property
     @pulumi.getter(name="mutedRequestNames")
-    def muted_request_names(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]:
+    def muted_request_names(self) -> pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]:
         """
         Muted request names
         """
         return pulumi.get(self, "muted_request_names")
 
     @muted_request_names.setter
-    def muted_request_names(self, value: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]):
+    def muted_request_names(self, value: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "muted_request_names", value)
 
 
 @pulumi.input_type
 class _MutedRequestsState:
     def __init__(__self__, *,
-                 muted_request_names: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-                 service_id: Optional[pulumi.Input[_builtins.str]] = None):
+                 muted_request_names: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 service_id: pulumi.Input[Optional[_builtins.str]] = None):
         """
         Input properties used for looking up and filtering MutedRequests resources.
 
@@ -74,26 +74,26 @@ class _MutedRequestsState:
 
     @_builtins.property
     @pulumi.getter(name="mutedRequestNames")
-    def muted_request_names(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]:
+    def muted_request_names(self) -> pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]:
         """
         Muted request names
         """
         return pulumi.get(self, "muted_request_names")
 
     @muted_request_names.setter
-    def muted_request_names(self, value: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]):
+    def muted_request_names(self, value: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "muted_request_names", value)
 
     @_builtins.property
     @pulumi.getter(name="serviceId")
-    def service_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def service_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The scope of this settings. If the settings should cover the whole environment, just don't specify any scope.
         """
         return pulumi.get(self, "service_id")
 
     @service_id.setter
-    def service_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def service_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "service_id", value)
 
 
@@ -103,8 +103,8 @@ class MutedRequests(pulumi.CustomResource):
     def __init__(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 muted_request_names: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-                 service_id: Optional[pulumi.Input[_builtins.str]] = None,
+                 muted_request_names: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 service_id: pulumi.Input[Optional[_builtins.str]] = None,
                  __props__=None):
         """
         > This resource requires the API token scopes **Read settings** (`settings.read`) and **Write settings** (`settings.write`)
@@ -164,8 +164,8 @@ class MutedRequests(pulumi.CustomResource):
     def _internal_init(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 muted_request_names: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-                 service_id: Optional[pulumi.Input[_builtins.str]] = None,
+                 muted_request_names: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 service_id: pulumi.Input[Optional[_builtins.str]] = None,
                  __props__=None):
         opts = pulumi.ResourceOptions.merge(_utilities.get_resource_opts_defaults(), opts)
         if not isinstance(opts, pulumi.ResourceOptions):
@@ -189,8 +189,8 @@ class MutedRequests(pulumi.CustomResource):
     def get(resource_name: str,
             id: pulumi.Input[str],
             opts: Optional[pulumi.ResourceOptions] = None,
-            muted_request_names: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-            service_id: Optional[pulumi.Input[_builtins.str]] = None) -> 'MutedRequests':
+            muted_request_names: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+            service_id: pulumi.Input[Optional[_builtins.str]] = None) -> 'MutedRequests':
         """
         Get an existing MutedRequests resource's state with the given name, id, and optional extra
         properties used to qualify the lookup.

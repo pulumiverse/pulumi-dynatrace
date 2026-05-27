@@ -85,7 +85,7 @@ export interface NetworkZonesState {
     /**
      * Network Zones are enabled (`true`) or disabled (`false`)
      */
-    enabled?: pulumi.Input<boolean>;
+    enabled?: pulumi.Input<boolean | undefined>;
 }
 
 /**

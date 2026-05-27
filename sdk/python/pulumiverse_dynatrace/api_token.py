@@ -20,15 +20,15 @@ __all__ = ['ApiTokenArgs', 'ApiToken']
 class ApiTokenArgs:
     def __init__(__self__, *,
                  scopes: pulumi.Input[Sequence[pulumi.Input[_builtins.str]]],
-                 creation_date: Optional[pulumi.Input[_builtins.str]] = None,
-                 enabled: Optional[pulumi.Input[_builtins.bool]] = None,
-                 expiration_date: Optional[pulumi.Input[_builtins.str]] = None,
-                 last_used_date: Optional[pulumi.Input[_builtins.str]] = None,
-                 last_used_ip_address: Optional[pulumi.Input[_builtins.str]] = None,
-                 modified_date: Optional[pulumi.Input[_builtins.str]] = None,
-                 name: Optional[pulumi.Input[_builtins.str]] = None,
-                 owner: Optional[pulumi.Input[_builtins.str]] = None,
-                 personal_access_token: Optional[pulumi.Input[_builtins.bool]] = None):
+                 creation_date: pulumi.Input[Optional[_builtins.str]] = None,
+                 enabled: pulumi.Input[Optional[_builtins.bool]] = None,
+                 expiration_date: pulumi.Input[Optional[_builtins.str]] = None,
+                 last_used_date: pulumi.Input[Optional[_builtins.str]] = None,
+                 last_used_ip_address: pulumi.Input[Optional[_builtins.str]] = None,
+                 modified_date: pulumi.Input[Optional[_builtins.str]] = None,
+                 name: pulumi.Input[Optional[_builtins.str]] = None,
+                 owner: pulumi.Input[Optional[_builtins.str]] = None,
+                 personal_access_token: pulumi.Input[Optional[_builtins.bool]] = None):
         """
         The set of arguments for constructing a ApiToken resource.
 
@@ -77,127 +77,127 @@ class ApiTokenArgs:
 
     @_builtins.property
     @pulumi.getter(name="creationDate")
-    def creation_date(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def creation_date(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Token creation date in ISO 8601 format (yyyy-MM-dd'T'HH:mm:ss.SSS'Z')
         """
         return pulumi.get(self, "creation_date")
 
     @creation_date.setter
-    def creation_date(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def creation_date(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "creation_date", value)
 
     @_builtins.property
     @pulumi.getter
-    def enabled(self) -> Optional[pulumi.Input[_builtins.bool]]:
+    def enabled(self) -> pulumi.Input[Optional[_builtins.bool]]:
         """
         The token is enabled (true) or disabled (false), default disabled (false).
         """
         return pulumi.get(self, "enabled")
 
     @enabled.setter
-    def enabled(self, value: Optional[pulumi.Input[_builtins.bool]]):
+    def enabled(self, value: pulumi.Input[Optional[_builtins.bool]]):
         pulumi.set(self, "enabled", value)
 
     @_builtins.property
     @pulumi.getter(name="expirationDate")
-    def expiration_date(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def expiration_date(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The expiration date of the token.
         """
         return pulumi.get(self, "expiration_date")
 
     @expiration_date.setter
-    def expiration_date(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def expiration_date(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "expiration_date", value)
 
     @_builtins.property
     @pulumi.getter(name="lastUsedDate")
-    def last_used_date(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def last_used_date(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Token last used date in ISO 8601 format (yyyy-MM-dd'T'HH:mm:ss.SSS'Z')
         """
         return pulumi.get(self, "last_used_date")
 
     @last_used_date.setter
-    def last_used_date(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def last_used_date(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "last_used_date", value)
 
     @_builtins.property
     @pulumi.getter(name="lastUsedIpAddress")
-    def last_used_ip_address(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def last_used_ip_address(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Token last used IP address.
         """
         return pulumi.get(self, "last_used_ip_address")
 
     @last_used_ip_address.setter
-    def last_used_ip_address(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def last_used_ip_address(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "last_used_ip_address", value)
 
     @_builtins.property
     @pulumi.getter(name="modifiedDate")
-    def modified_date(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def modified_date(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Token last modified date in ISO 8601 format (yyyy-MM-dd'T'HH:mm:ss.SSS'Z').
         """
         return pulumi.get(self, "modified_date")
 
     @modified_date.setter
-    def modified_date(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def modified_date(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "modified_date", value)
 
     @_builtins.property
     @pulumi.getter
-    def name(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def name(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The name of the token.
         """
         return pulumi.get(self, "name")
 
     @name.setter
-    def name(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def name(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "name", value)
 
     @_builtins.property
     @pulumi.getter
-    def owner(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def owner(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The owner of the token
         """
         return pulumi.get(self, "owner")
 
     @owner.setter
-    def owner(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def owner(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "owner", value)
 
     @_builtins.property
     @pulumi.getter(name="personalAccessToken")
-    def personal_access_token(self) -> Optional[pulumi.Input[_builtins.bool]]:
+    def personal_access_token(self) -> pulumi.Input[Optional[_builtins.bool]]:
         """
         The token is a personal access token (true) or an API token (false).
         """
         return pulumi.get(self, "personal_access_token")
 
     @personal_access_token.setter
-    def personal_access_token(self, value: Optional[pulumi.Input[_builtins.bool]]):
+    def personal_access_token(self, value: pulumi.Input[Optional[_builtins.bool]]):
         pulumi.set(self, "personal_access_token", value)
 
 
 @pulumi.input_type
 class _ApiTokenState:
     def __init__(__self__, *,
-                 creation_date: Optional[pulumi.Input[_builtins.str]] = None,
-                 enabled: Optional[pulumi.Input[_builtins.bool]] = None,
-                 expiration_date: Optional[pulumi.Input[_builtins.str]] = None,
-                 last_used_date: Optional[pulumi.Input[_builtins.str]] = None,
-                 last_used_ip_address: Optional[pulumi.Input[_builtins.str]] = None,
-                 modified_date: Optional[pulumi.Input[_builtins.str]] = None,
-                 name: Optional[pulumi.Input[_builtins.str]] = None,
-                 owner: Optional[pulumi.Input[_builtins.str]] = None,
-                 personal_access_token: Optional[pulumi.Input[_builtins.bool]] = None,
-                 scopes: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-                 token: Optional[pulumi.Input[_builtins.str]] = None):
+                 creation_date: pulumi.Input[Optional[_builtins.str]] = None,
+                 enabled: pulumi.Input[Optional[_builtins.bool]] = None,
+                 expiration_date: pulumi.Input[Optional[_builtins.str]] = None,
+                 last_used_date: pulumi.Input[Optional[_builtins.str]] = None,
+                 last_used_ip_address: pulumi.Input[Optional[_builtins.str]] = None,
+                 modified_date: pulumi.Input[Optional[_builtins.str]] = None,
+                 name: pulumi.Input[Optional[_builtins.str]] = None,
+                 owner: pulumi.Input[Optional[_builtins.str]] = None,
+                 personal_access_token: pulumi.Input[Optional[_builtins.bool]] = None,
+                 scopes: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 token: pulumi.Input[Optional[_builtins.str]] = None):
         """
         Input properties used for looking up and filtering ApiToken resources.
 
@@ -238,134 +238,134 @@ class _ApiTokenState:
 
     @_builtins.property
     @pulumi.getter(name="creationDate")
-    def creation_date(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def creation_date(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Token creation date in ISO 8601 format (yyyy-MM-dd'T'HH:mm:ss.SSS'Z')
         """
         return pulumi.get(self, "creation_date")
 
     @creation_date.setter
-    def creation_date(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def creation_date(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "creation_date", value)
 
     @_builtins.property
     @pulumi.getter
-    def enabled(self) -> Optional[pulumi.Input[_builtins.bool]]:
+    def enabled(self) -> pulumi.Input[Optional[_builtins.bool]]:
         """
         The token is enabled (true) or disabled (false), default disabled (false).
         """
         return pulumi.get(self, "enabled")
 
     @enabled.setter
-    def enabled(self, value: Optional[pulumi.Input[_builtins.bool]]):
+    def enabled(self, value: pulumi.Input[Optional[_builtins.bool]]):
         pulumi.set(self, "enabled", value)
 
     @_builtins.property
     @pulumi.getter(name="expirationDate")
-    def expiration_date(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def expiration_date(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The expiration date of the token.
         """
         return pulumi.get(self, "expiration_date")
 
     @expiration_date.setter
-    def expiration_date(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def expiration_date(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "expiration_date", value)
 
     @_builtins.property
     @pulumi.getter(name="lastUsedDate")
-    def last_used_date(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def last_used_date(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Token last used date in ISO 8601 format (yyyy-MM-dd'T'HH:mm:ss.SSS'Z')
         """
         return pulumi.get(self, "last_used_date")
 
     @last_used_date.setter
-    def last_used_date(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def last_used_date(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "last_used_date", value)
 
     @_builtins.property
     @pulumi.getter(name="lastUsedIpAddress")
-    def last_used_ip_address(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def last_used_ip_address(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Token last used IP address.
         """
         return pulumi.get(self, "last_used_ip_address")
 
     @last_used_ip_address.setter
-    def last_used_ip_address(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def last_used_ip_address(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "last_used_ip_address", value)
 
     @_builtins.property
     @pulumi.getter(name="modifiedDate")
-    def modified_date(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def modified_date(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Token last modified date in ISO 8601 format (yyyy-MM-dd'T'HH:mm:ss.SSS'Z').
         """
         return pulumi.get(self, "modified_date")
 
     @modified_date.setter
-    def modified_date(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def modified_date(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "modified_date", value)
 
     @_builtins.property
     @pulumi.getter
-    def name(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def name(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The name of the token.
         """
         return pulumi.get(self, "name")
 
     @name.setter
-    def name(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def name(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "name", value)
 
     @_builtins.property
     @pulumi.getter
-    def owner(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def owner(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The owner of the token
         """
         return pulumi.get(self, "owner")
 
     @owner.setter
-    def owner(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def owner(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "owner", value)
 
     @_builtins.property
     @pulumi.getter(name="personalAccessToken")
-    def personal_access_token(self) -> Optional[pulumi.Input[_builtins.bool]]:
+    def personal_access_token(self) -> pulumi.Input[Optional[_builtins.bool]]:
         """
         The token is a personal access token (true) or an API token (false).
         """
         return pulumi.get(self, "personal_access_token")
 
     @personal_access_token.setter
-    def personal_access_token(self, value: Optional[pulumi.Input[_builtins.bool]]):
+    def personal_access_token(self, value: pulumi.Input[Optional[_builtins.bool]]):
         pulumi.set(self, "personal_access_token", value)
 
     @_builtins.property
     @pulumi.getter
-    def scopes(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]:
+    def scopes(self) -> pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]:
         """
         A list of the scopes to be assigned to the token.
         """
         return pulumi.get(self, "scopes")
 
     @scopes.setter
-    def scopes(self, value: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]):
+    def scopes(self, value: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "scopes", value)
 
     @_builtins.property
     @pulumi.getter
-    def token(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def token(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The secret of the token.
         """
         return pulumi.get(self, "token")
 
     @token.setter
-    def token(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def token(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "token", value)
 
 
@@ -375,16 +375,16 @@ class ApiToken(pulumi.CustomResource):
     def __init__(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 creation_date: Optional[pulumi.Input[_builtins.str]] = None,
-                 enabled: Optional[pulumi.Input[_builtins.bool]] = None,
-                 expiration_date: Optional[pulumi.Input[_builtins.str]] = None,
-                 last_used_date: Optional[pulumi.Input[_builtins.str]] = None,
-                 last_used_ip_address: Optional[pulumi.Input[_builtins.str]] = None,
-                 modified_date: Optional[pulumi.Input[_builtins.str]] = None,
-                 name: Optional[pulumi.Input[_builtins.str]] = None,
-                 owner: Optional[pulumi.Input[_builtins.str]] = None,
-                 personal_access_token: Optional[pulumi.Input[_builtins.bool]] = None,
-                 scopes: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 creation_date: pulumi.Input[Optional[_builtins.str]] = None,
+                 enabled: pulumi.Input[Optional[_builtins.bool]] = None,
+                 expiration_date: pulumi.Input[Optional[_builtins.str]] = None,
+                 last_used_date: pulumi.Input[Optional[_builtins.str]] = None,
+                 last_used_ip_address: pulumi.Input[Optional[_builtins.str]] = None,
+                 modified_date: pulumi.Input[Optional[_builtins.str]] = None,
+                 name: pulumi.Input[Optional[_builtins.str]] = None,
+                 owner: pulumi.Input[Optional[_builtins.str]] = None,
+                 personal_access_token: pulumi.Input[Optional[_builtins.bool]] = None,
+                 scopes: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
                  __props__=None):
         """
         > The usage of `ApiToken` will introduce sensitive data within your Terraform state. The `token` property is flagged as `sensitive`, but the field will be stored as plain-text. More information can be found here.
@@ -460,16 +460,16 @@ class ApiToken(pulumi.CustomResource):
     def _internal_init(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 creation_date: Optional[pulumi.Input[_builtins.str]] = None,
-                 enabled: Optional[pulumi.Input[_builtins.bool]] = None,
-                 expiration_date: Optional[pulumi.Input[_builtins.str]] = None,
-                 last_used_date: Optional[pulumi.Input[_builtins.str]] = None,
-                 last_used_ip_address: Optional[pulumi.Input[_builtins.str]] = None,
-                 modified_date: Optional[pulumi.Input[_builtins.str]] = None,
-                 name: Optional[pulumi.Input[_builtins.str]] = None,
-                 owner: Optional[pulumi.Input[_builtins.str]] = None,
-                 personal_access_token: Optional[pulumi.Input[_builtins.bool]] = None,
-                 scopes: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 creation_date: pulumi.Input[Optional[_builtins.str]] = None,
+                 enabled: pulumi.Input[Optional[_builtins.bool]] = None,
+                 expiration_date: pulumi.Input[Optional[_builtins.str]] = None,
+                 last_used_date: pulumi.Input[Optional[_builtins.str]] = None,
+                 last_used_ip_address: pulumi.Input[Optional[_builtins.str]] = None,
+                 modified_date: pulumi.Input[Optional[_builtins.str]] = None,
+                 name: pulumi.Input[Optional[_builtins.str]] = None,
+                 owner: pulumi.Input[Optional[_builtins.str]] = None,
+                 personal_access_token: pulumi.Input[Optional[_builtins.bool]] = None,
+                 scopes: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
                  __props__=None):
         opts = pulumi.ResourceOptions.merge(_utilities.get_resource_opts_defaults(), opts)
         if not isinstance(opts, pulumi.ResourceOptions):
@@ -504,17 +504,17 @@ class ApiToken(pulumi.CustomResource):
     def get(resource_name: str,
             id: pulumi.Input[str],
             opts: Optional[pulumi.ResourceOptions] = None,
-            creation_date: Optional[pulumi.Input[_builtins.str]] = None,
-            enabled: Optional[pulumi.Input[_builtins.bool]] = None,
-            expiration_date: Optional[pulumi.Input[_builtins.str]] = None,
-            last_used_date: Optional[pulumi.Input[_builtins.str]] = None,
-            last_used_ip_address: Optional[pulumi.Input[_builtins.str]] = None,
-            modified_date: Optional[pulumi.Input[_builtins.str]] = None,
-            name: Optional[pulumi.Input[_builtins.str]] = None,
-            owner: Optional[pulumi.Input[_builtins.str]] = None,
-            personal_access_token: Optional[pulumi.Input[_builtins.bool]] = None,
-            scopes: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-            token: Optional[pulumi.Input[_builtins.str]] = None) -> 'ApiToken':
+            creation_date: pulumi.Input[Optional[_builtins.str]] = None,
+            enabled: pulumi.Input[Optional[_builtins.bool]] = None,
+            expiration_date: pulumi.Input[Optional[_builtins.str]] = None,
+            last_used_date: pulumi.Input[Optional[_builtins.str]] = None,
+            last_used_ip_address: pulumi.Input[Optional[_builtins.str]] = None,
+            modified_date: pulumi.Input[Optional[_builtins.str]] = None,
+            name: pulumi.Input[Optional[_builtins.str]] = None,
+            owner: pulumi.Input[Optional[_builtins.str]] = None,
+            personal_access_token: pulumi.Input[Optional[_builtins.bool]] = None,
+            scopes: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+            token: pulumi.Input[Optional[_builtins.str]] = None) -> 'ApiToken':
         """
         Get an existing ApiToken resource's state with the given name, id, and optional extra
         properties used to qualify the lookup.

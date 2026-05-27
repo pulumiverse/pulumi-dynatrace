@@ -144,27 +144,27 @@ export interface Ms365EmailConnectionState {
     /**
      * Application (client) ID of your app registered in Microsoft Azure App registrations
      */
-    clientId?: pulumi.Input<string>;
+    clientId?: pulumi.Input<string | undefined>;
     /**
      * Client secret of your app registered in Microsoft Azure App registrations
      */
-    clientSecret?: pulumi.Input<string>;
+    clientSecret?: pulumi.Input<string | undefined>;
     /**
      * The email address from which the messages will be sent
      */
-    fromAddress?: pulumi.Input<string>;
+    fromAddress?: pulumi.Input<string | undefined>;
     /**
      * A unique name for the Microsoft 365 email connection
      */
-    name?: pulumi.Input<string>;
+    name?: pulumi.Input<string | undefined>;
     /**
      * Directory (tenant) ID of your Azure Active Directory
      */
-    tenantId?: pulumi.Input<string>;
+    tenantId?: pulumi.Input<string | undefined>;
     /**
      * Possible Values: `clientSecret`
      */
-    type?: pulumi.Input<string>;
+    type?: pulumi.Input<string | undefined>;
 }
 
 /**
@@ -178,7 +178,7 @@ export interface Ms365EmailConnectionArgs {
     /**
      * Client secret of your app registered in Microsoft Azure App registrations
      */
-    clientSecret?: pulumi.Input<string>;
+    clientSecret?: pulumi.Input<string | undefined>;
     /**
      * The email address from which the messages will be sent
      */
@@ -186,7 +186,7 @@ export interface Ms365EmailConnectionArgs {
     /**
      * A unique name for the Microsoft 365 email connection
      */
-    name?: pulumi.Input<string>;
+    name?: pulumi.Input<string | undefined>;
     /**
      * Directory (tenant) ID of your Azure Active Directory
      */

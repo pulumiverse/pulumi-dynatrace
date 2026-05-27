@@ -110,21 +110,21 @@ export interface ApplicationDetectionRuleState {
     /**
      * The Dynatrace entity ID of the application, for example APPLICATION-4A3B43
      */
-    applicationIdentifier?: pulumi.Input<string>;
+    applicationIdentifier?: pulumi.Input<string | undefined>;
     /**
      * The condition of an application detection rule
      */
-    filterConfig?: pulumi.Input<inputs.ApplicationDetectionRuleFilterConfig>;
+    filterConfig?: pulumi.Input<inputs.ApplicationDetectionRuleFilterConfig | undefined>;
     /**
      * The unique name of the Application detection rule
      *
      * @deprecated Dynatrace computes that value automatically. Any attempts to specify that value will are getting ignored.
      */
-    name?: pulumi.Input<string>;
+    name?: pulumi.Input<string | undefined>;
     /**
      * The order of the rule in the rules list
      */
-    order?: pulumi.Input<string>;
+    order?: pulumi.Input<string | undefined>;
 }
 
 /**
@@ -144,9 +144,9 @@ export interface ApplicationDetectionRuleArgs {
      *
      * @deprecated Dynatrace computes that value automatically. Any attempts to specify that value will are getting ignored.
      */
-    name?: pulumi.Input<string>;
+    name?: pulumi.Input<string | undefined>;
     /**
      * The order of the rule in the rules list
      */
-    order?: pulumi.Input<string>;
+    order?: pulumi.Input<string | undefined>;
 }

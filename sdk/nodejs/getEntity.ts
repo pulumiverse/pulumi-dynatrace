@@ -100,9 +100,9 @@ export function getEntityOutput(args?: GetEntityOutputArgs, opts?: pulumi.Invoke
  * A collection of arguments for invoking getEntity.
  */
 export interface GetEntityOutputArgs {
-    entitySelector?: pulumi.Input<string>;
-    from?: pulumi.Input<string>;
-    name?: pulumi.Input<string>;
-    to?: pulumi.Input<string>;
-    type?: pulumi.Input<string>;
+    entitySelector?: pulumi.Input<string | undefined>;
+    from?: pulumi.Input<string | undefined>;
+    name?: pulumi.Input<string | undefined>;
+    to?: pulumi.Input<string | undefined>;
+    type?: pulumi.Input<string | undefined>;
 }

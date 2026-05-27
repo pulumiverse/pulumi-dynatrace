@@ -129,19 +129,19 @@ export interface JenkinsConnectionState {
     /**
      * The name of the Jenkins connection
      */
-    name?: pulumi.Input<string>;
+    name?: pulumi.Input<string | undefined>;
     /**
      * The password of the user or API token obtained from the Jenkins UI (Dashboard > User > Configure > API Token)
      */
-    password?: pulumi.Input<string>;
+    password?: pulumi.Input<string | undefined>;
     /**
      * Base URL of your Jenkins instance (e.g. https://[YOUR*JENKINS*DOMAIN]/)
      */
-    url?: pulumi.Input<string>;
+    url?: pulumi.Input<string | undefined>;
     /**
      * The name of your Jenkins user (e.g. jenkins)
      */
-    username?: pulumi.Input<string>;
+    username?: pulumi.Input<string | undefined>;
 }
 
 /**
@@ -151,7 +151,7 @@ export interface JenkinsConnectionArgs {
     /**
      * The name of the Jenkins connection
      */
-    name?: pulumi.Input<string>;
+    name?: pulumi.Input<string | undefined>;
     /**
      * The password of the user or API token obtained from the Jenkins UI (Dashboard > User > Configure > API Token)
      */

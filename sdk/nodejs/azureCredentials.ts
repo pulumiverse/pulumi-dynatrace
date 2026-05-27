@@ -171,59 +171,59 @@ export interface AzureCredentialsState {
     /**
      * The monitoring is enabled (`true`) or disabled (`false`).  If not set on creation, the `true` value is used.  If the field is omitted during an update, the old value remains unaffected
      */
-    active?: pulumi.Input<boolean>;
+    active?: pulumi.Input<boolean | undefined>;
     /**
      * The Application ID (also referred to as Client ID)  The combination of Application ID and Directory ID must be unique
      */
-    appId?: pulumi.Input<string>;
+    appId?: pulumi.Input<string | undefined>;
     /**
      * The automatic capture of Azure tags is on (`true`) or off (`false`)
      */
-    autoTagging?: pulumi.Input<boolean>;
+    autoTagging?: pulumi.Input<boolean | undefined>;
     /**
      * The Directory ID (also referred to as Tenant ID)  The combination of Application ID and Directory ID must be unique
      */
-    directoryId?: pulumi.Input<string>;
+    directoryId?: pulumi.Input<string | undefined>;
     /**
      * The secret key associated with the Application ID.  For security reasons, GET requests return this field as `null`. Submit your key on creation or update of the configuration. If the field is omitted during an update, the old value remains unaffected.
      */
-    key?: pulumi.Input<string>;
+    key?: pulumi.Input<string | undefined>;
     /**
      * The unique name of the Azure credentials configuration.  Allowed characters are letters, numbers, and spaces. Also the special characters `.+-_` are allowed
      */
-    label?: pulumi.Input<string>;
+    label?: pulumi.Input<string | undefined>;
     /**
      * A list of Azure tags to be excluded from monitoring.  You can specify up to 20 tags. A resource tagged with *any* of the specified tags is monitored.  Only applicable when the **monitorOnlyTaggedEntities** parameter is set to `true`.
      */
-    monitorOnlyExcludingTagPairs?: pulumi.Input<pulumi.Input<inputs.AzureCredentialsMonitorOnlyExcludingTagPair>[]>;
+    monitorOnlyExcludingTagPairs?: pulumi.Input<pulumi.Input<inputs.AzureCredentialsMonitorOnlyExcludingTagPair>[] | undefined>;
     /**
      * A list of Azure tags to be monitored.  You can specify up to 20 tags. A resource tagged with *any* of the specified tags is monitored.  Only applicable when the **monitorOnlyTaggedEntities** parameter is set to `true`
      */
-    monitorOnlyTagPairs?: pulumi.Input<pulumi.Input<inputs.AzureCredentialsMonitorOnlyTagPair>[]>;
+    monitorOnlyTagPairs?: pulumi.Input<pulumi.Input<inputs.AzureCredentialsMonitorOnlyTagPair>[] | undefined>;
     /**
      * Monitor only resources that have specified Azure tags (`true`) or all resources (`false`).
      */
-    monitorOnlyTaggedEntities?: pulumi.Input<boolean>;
+    monitorOnlyTaggedEntities?: pulumi.Input<boolean | undefined>;
     /**
      * Instructs the provider to remove the supporting services Dynatrace applies by default to newly created Azure Credentials. Supporting Services applied by via `dynatrace.AzureService` subsequently won't get touched.
      */
-    removeDefaults?: pulumi.Input<boolean>;
+    removeDefaults?: pulumi.Input<boolean | undefined>;
     /**
      * A list of Azure supporting services to be monitored. For each service there's a sublist of its metrics and the metrics' dimensions that should be monitored. All of these elements (services, metrics, dimensions) must have corresponding static definitions on the server.
      *
      * @deprecated Assigning supported services directly when creating Azure Credentials is deprecated. Use the resource `dynatrace.AzureService` instead.
      */
-    supportingServices?: pulumi.Input<pulumi.Input<inputs.AzureCredentialsSupportingService>[]>;
+    supportingServices?: pulumi.Input<pulumi.Input<inputs.AzureCredentialsSupportingService>[] | undefined>;
     /**
      * If enabled (`true`) the attribute `supportingServices` will not get synchronized with Dynatrace. You will be able to manage them via WebUI without interference by Terraform.
      *
      * @deprecated This attribute is deprecated and has no effect any more. It always defaults to `true`.
      */
-    supportingServicesManagedInDynatrace?: pulumi.Input<boolean>;
+    supportingServicesManagedInDynatrace?: pulumi.Input<boolean | undefined>;
     /**
      * Any attributes that aren't yet supported by this provider
      */
-    unknowns?: pulumi.Input<string>;
+    unknowns?: pulumi.Input<string | undefined>;
 }
 
 /**
@@ -237,19 +237,19 @@ export interface AzureCredentialsArgs {
     /**
      * The Application ID (also referred to as Client ID)  The combination of Application ID and Directory ID must be unique
      */
-    appId?: pulumi.Input<string>;
+    appId?: pulumi.Input<string | undefined>;
     /**
      * The automatic capture of Azure tags is on (`true`) or off (`false`)
      */
-    autoTagging?: pulumi.Input<boolean>;
+    autoTagging?: pulumi.Input<boolean | undefined>;
     /**
      * The Directory ID (also referred to as Tenant ID)  The combination of Application ID and Directory ID must be unique
      */
-    directoryId?: pulumi.Input<string>;
+    directoryId?: pulumi.Input<string | undefined>;
     /**
      * The secret key associated with the Application ID.  For security reasons, GET requests return this field as `null`. Submit your key on creation or update of the configuration. If the field is omitted during an update, the old value remains unaffected.
      */
-    key?: pulumi.Input<string>;
+    key?: pulumi.Input<string | undefined>;
     /**
      * The unique name of the Azure credentials configuration.  Allowed characters are letters, numbers, and spaces. Also the special characters `.+-_` are allowed
      */
@@ -257,11 +257,11 @@ export interface AzureCredentialsArgs {
     /**
      * A list of Azure tags to be excluded from monitoring.  You can specify up to 20 tags. A resource tagged with *any* of the specified tags is monitored.  Only applicable when the **monitorOnlyTaggedEntities** parameter is set to `true`.
      */
-    monitorOnlyExcludingTagPairs?: pulumi.Input<pulumi.Input<inputs.AzureCredentialsMonitorOnlyExcludingTagPair>[]>;
+    monitorOnlyExcludingTagPairs?: pulumi.Input<pulumi.Input<inputs.AzureCredentialsMonitorOnlyExcludingTagPair>[] | undefined>;
     /**
      * A list of Azure tags to be monitored.  You can specify up to 20 tags. A resource tagged with *any* of the specified tags is monitored.  Only applicable when the **monitorOnlyTaggedEntities** parameter is set to `true`
      */
-    monitorOnlyTagPairs?: pulumi.Input<pulumi.Input<inputs.AzureCredentialsMonitorOnlyTagPair>[]>;
+    monitorOnlyTagPairs?: pulumi.Input<pulumi.Input<inputs.AzureCredentialsMonitorOnlyTagPair>[] | undefined>;
     /**
      * Monitor only resources that have specified Azure tags (`true`) or all resources (`false`).
      */
@@ -269,21 +269,21 @@ export interface AzureCredentialsArgs {
     /**
      * Instructs the provider to remove the supporting services Dynatrace applies by default to newly created Azure Credentials. Supporting Services applied by via `dynatrace.AzureService` subsequently won't get touched.
      */
-    removeDefaults?: pulumi.Input<boolean>;
+    removeDefaults?: pulumi.Input<boolean | undefined>;
     /**
      * A list of Azure supporting services to be monitored. For each service there's a sublist of its metrics and the metrics' dimensions that should be monitored. All of these elements (services, metrics, dimensions) must have corresponding static definitions on the server.
      *
      * @deprecated Assigning supported services directly when creating Azure Credentials is deprecated. Use the resource `dynatrace.AzureService` instead.
      */
-    supportingServices?: pulumi.Input<pulumi.Input<inputs.AzureCredentialsSupportingService>[]>;
+    supportingServices?: pulumi.Input<pulumi.Input<inputs.AzureCredentialsSupportingService>[] | undefined>;
     /**
      * If enabled (`true`) the attribute `supportingServices` will not get synchronized with Dynatrace. You will be able to manage them via WebUI without interference by Terraform.
      *
      * @deprecated This attribute is deprecated and has no effect any more. It always defaults to `true`.
      */
-    supportingServicesManagedInDynatrace?: pulumi.Input<boolean>;
+    supportingServicesManagedInDynatrace?: pulumi.Input<boolean | undefined>;
     /**
      * Any attributes that aren't yet supported by this provider
      */
-    unknowns?: pulumi.Input<string>;
+    unknowns?: pulumi.Input<string | undefined>;
 }

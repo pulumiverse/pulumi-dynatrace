@@ -127,7 +127,7 @@ def get_autotag(name: Optional[_builtins.str] = None,
     return AwaitableGetAutotagResult(
         id=pulumi.get(__ret__, 'id'),
         name=pulumi.get(__ret__, 'name'))
-def get_autotag_output(name: Optional[pulumi.Input[_builtins.str]] = None,
+def get_autotag_output(name: pulumi.Input[Optional[_builtins.str]] = None,
                        opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetAutotagResult]:
     """
     The automatically applied tag data source allows the tag ID to be retrieved by its name.

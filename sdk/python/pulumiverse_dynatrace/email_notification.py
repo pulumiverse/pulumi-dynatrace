@@ -23,12 +23,12 @@ class EmailNotificationArgs:
                  profile: pulumi.Input[_builtins.str],
                  subject: pulumi.Input[_builtins.str],
                  tos: pulumi.Input[Sequence[pulumi.Input[_builtins.str]]],
-                 active: Optional[pulumi.Input[_builtins.bool]] = None,
-                 bccs: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-                 ccs: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-                 legacy_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 name: Optional[pulumi.Input[_builtins.str]] = None,
-                 notify_closed_problems: Optional[pulumi.Input[_builtins.bool]] = None):
+                 active: pulumi.Input[Optional[_builtins.bool]] = None,
+                 bccs: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 ccs: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 legacy_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 name: pulumi.Input[Optional[_builtins.str]] = None,
+                 notify_closed_problems: pulumi.Input[Optional[_builtins.bool]] = None):
         """
         The set of arguments for constructing a EmailNotification resource.
 
@@ -154,90 +154,90 @@ class EmailNotificationArgs:
 
     @_builtins.property
     @pulumi.getter
-    def active(self) -> Optional[pulumi.Input[_builtins.bool]]:
+    def active(self) -> pulumi.Input[Optional[_builtins.bool]]:
         """
         This setting is enabled (`true`) or disabled (`false`)
         """
         return pulumi.get(self, "active")
 
     @active.setter
-    def active(self, value: Optional[pulumi.Input[_builtins.bool]]):
+    def active(self, value: pulumi.Input[Optional[_builtins.bool]]):
         pulumi.set(self, "active", value)
 
     @_builtins.property
     @pulumi.getter
-    def bccs(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]:
+    def bccs(self) -> pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]:
         """
         BCC
         """
         return pulumi.get(self, "bccs")
 
     @bccs.setter
-    def bccs(self, value: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]):
+    def bccs(self, value: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "bccs", value)
 
     @_builtins.property
     @pulumi.getter
-    def ccs(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]:
+    def ccs(self) -> pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]:
         """
         CC
         """
         return pulumi.get(self, "ccs")
 
     @ccs.setter
-    def ccs(self, value: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]):
+    def ccs(self, value: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "ccs", value)
 
     @_builtins.property
     @pulumi.getter(name="legacyId")
-    def legacy_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def legacy_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The ID of these settings when referred to from resources requiring the REST API V1 keys
         """
         return pulumi.get(self, "legacy_id")
 
     @legacy_id.setter
-    def legacy_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def legacy_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "legacy_id", value)
 
     @_builtins.property
     @pulumi.getter
-    def name(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def name(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The name of the notification configuration.
         """
         return pulumi.get(self, "name")
 
     @name.setter
-    def name(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def name(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "name", value)
 
     @_builtins.property
     @pulumi.getter(name="notifyClosedProblems")
-    def notify_closed_problems(self) -> Optional[pulumi.Input[_builtins.bool]]:
+    def notify_closed_problems(self) -> pulumi.Input[Optional[_builtins.bool]]:
         """
         Send email if problem is closed
         """
         return pulumi.get(self, "notify_closed_problems")
 
     @notify_closed_problems.setter
-    def notify_closed_problems(self, value: Optional[pulumi.Input[_builtins.bool]]):
+    def notify_closed_problems(self, value: pulumi.Input[Optional[_builtins.bool]]):
         pulumi.set(self, "notify_closed_problems", value)
 
 
 @pulumi.input_type
 class _EmailNotificationState:
     def __init__(__self__, *,
-                 active: Optional[pulumi.Input[_builtins.bool]] = None,
-                 bccs: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-                 body: Optional[pulumi.Input[_builtins.str]] = None,
-                 ccs: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-                 legacy_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 name: Optional[pulumi.Input[_builtins.str]] = None,
-                 notify_closed_problems: Optional[pulumi.Input[_builtins.bool]] = None,
-                 profile: Optional[pulumi.Input[_builtins.str]] = None,
-                 subject: Optional[pulumi.Input[_builtins.str]] = None,
-                 tos: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None):
+                 active: pulumi.Input[Optional[_builtins.bool]] = None,
+                 bccs: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 body: pulumi.Input[Optional[_builtins.str]] = None,
+                 ccs: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 legacy_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 name: pulumi.Input[Optional[_builtins.str]] = None,
+                 notify_closed_problems: pulumi.Input[Optional[_builtins.bool]] = None,
+                 profile: pulumi.Input[Optional[_builtins.str]] = None,
+                 subject: pulumi.Input[Optional[_builtins.str]] = None,
+                 tos: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None):
         """
         Input properties used for looking up and filtering EmailNotification resources.
 
@@ -297,31 +297,31 @@ class _EmailNotificationState:
 
     @_builtins.property
     @pulumi.getter
-    def active(self) -> Optional[pulumi.Input[_builtins.bool]]:
+    def active(self) -> pulumi.Input[Optional[_builtins.bool]]:
         """
         This setting is enabled (`true`) or disabled (`false`)
         """
         return pulumi.get(self, "active")
 
     @active.setter
-    def active(self, value: Optional[pulumi.Input[_builtins.bool]]):
+    def active(self, value: pulumi.Input[Optional[_builtins.bool]]):
         pulumi.set(self, "active", value)
 
     @_builtins.property
     @pulumi.getter
-    def bccs(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]:
+    def bccs(self) -> pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]:
         """
         BCC
         """
         return pulumi.get(self, "bccs")
 
     @bccs.setter
-    def bccs(self, value: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]):
+    def bccs(self, value: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "bccs", value)
 
     @_builtins.property
     @pulumi.getter
-    def body(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def body(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The template of the email notifications. Type '{' for placeholder suggestions.. #### Available placeholders
         **{ImpactedEntities}**: Details about the entities impacted by the problem in form of a json array.
@@ -329,72 +329,72 @@ class _EmailNotificationState:
         return pulumi.get(self, "body")
 
     @body.setter
-    def body(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def body(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "body", value)
 
     @_builtins.property
     @pulumi.getter
-    def ccs(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]:
+    def ccs(self) -> pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]:
         """
         CC
         """
         return pulumi.get(self, "ccs")
 
     @ccs.setter
-    def ccs(self, value: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]):
+    def ccs(self, value: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "ccs", value)
 
     @_builtins.property
     @pulumi.getter(name="legacyId")
-    def legacy_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def legacy_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The ID of these settings when referred to from resources requiring the REST API V1 keys
         """
         return pulumi.get(self, "legacy_id")
 
     @legacy_id.setter
-    def legacy_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def legacy_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "legacy_id", value)
 
     @_builtins.property
     @pulumi.getter
-    def name(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def name(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The name of the notification configuration.
         """
         return pulumi.get(self, "name")
 
     @name.setter
-    def name(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def name(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "name", value)
 
     @_builtins.property
     @pulumi.getter(name="notifyClosedProblems")
-    def notify_closed_problems(self) -> Optional[pulumi.Input[_builtins.bool]]:
+    def notify_closed_problems(self) -> pulumi.Input[Optional[_builtins.bool]]:
         """
         Send email if problem is closed
         """
         return pulumi.get(self, "notify_closed_problems")
 
     @notify_closed_problems.setter
-    def notify_closed_problems(self, value: Optional[pulumi.Input[_builtins.bool]]):
+    def notify_closed_problems(self, value: pulumi.Input[Optional[_builtins.bool]]):
         pulumi.set(self, "notify_closed_problems", value)
 
     @_builtins.property
     @pulumi.getter
-    def profile(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def profile(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The ID of the associated alerting profile
         """
         return pulumi.get(self, "profile")
 
     @profile.setter
-    def profile(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def profile(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "profile", value)
 
     @_builtins.property
     @pulumi.getter
-    def subject(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def subject(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The subject of the email notifications. Type '{' for placeholder suggestions.. #### Available placeholders
         **{ImpactedEntity}**: A short description of the problem and impacted entity (or multiple impacted entities).
@@ -422,19 +422,19 @@ class _EmailNotificationState:
         return pulumi.get(self, "subject")
 
     @subject.setter
-    def subject(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def subject(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "subject", value)
 
     @_builtins.property
     @pulumi.getter
-    def tos(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]:
+    def tos(self) -> pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]:
         """
         To
         """
         return pulumi.get(self, "tos")
 
     @tos.setter
-    def tos(self, value: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]):
+    def tos(self, value: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "tos", value)
 
 
@@ -444,16 +444,16 @@ class EmailNotification(pulumi.CustomResource):
     def __init__(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 active: Optional[pulumi.Input[_builtins.bool]] = None,
-                 bccs: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-                 body: Optional[pulumi.Input[_builtins.str]] = None,
-                 ccs: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-                 legacy_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 name: Optional[pulumi.Input[_builtins.str]] = None,
-                 notify_closed_problems: Optional[pulumi.Input[_builtins.bool]] = None,
-                 profile: Optional[pulumi.Input[_builtins.str]] = None,
-                 subject: Optional[pulumi.Input[_builtins.str]] = None,
-                 tos: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 active: pulumi.Input[Optional[_builtins.bool]] = None,
+                 bccs: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 body: pulumi.Input[Optional[_builtins.str]] = None,
+                 ccs: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 legacy_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 name: pulumi.Input[Optional[_builtins.str]] = None,
+                 notify_closed_problems: pulumi.Input[Optional[_builtins.bool]] = None,
+                 profile: pulumi.Input[Optional[_builtins.str]] = None,
+                 subject: pulumi.Input[Optional[_builtins.str]] = None,
+                 tos: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
                  __props__=None):
         """
         > This resource requires the API token scopes **Read settings** (`settings.read`) and **Write settings** (`settings.write`)
@@ -543,16 +543,16 @@ class EmailNotification(pulumi.CustomResource):
     def _internal_init(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 active: Optional[pulumi.Input[_builtins.bool]] = None,
-                 bccs: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-                 body: Optional[pulumi.Input[_builtins.str]] = None,
-                 ccs: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-                 legacy_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 name: Optional[pulumi.Input[_builtins.str]] = None,
-                 notify_closed_problems: Optional[pulumi.Input[_builtins.bool]] = None,
-                 profile: Optional[pulumi.Input[_builtins.str]] = None,
-                 subject: Optional[pulumi.Input[_builtins.str]] = None,
-                 tos: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 active: pulumi.Input[Optional[_builtins.bool]] = None,
+                 bccs: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 body: pulumi.Input[Optional[_builtins.str]] = None,
+                 ccs: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 legacy_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 name: pulumi.Input[Optional[_builtins.str]] = None,
+                 notify_closed_problems: pulumi.Input[Optional[_builtins.bool]] = None,
+                 profile: pulumi.Input[Optional[_builtins.str]] = None,
+                 subject: pulumi.Input[Optional[_builtins.str]] = None,
+                 tos: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
                  __props__=None):
         opts = pulumi.ResourceOptions.merge(_utilities.get_resource_opts_defaults(), opts)
         if not isinstance(opts, pulumi.ResourceOptions):
@@ -590,16 +590,16 @@ class EmailNotification(pulumi.CustomResource):
     def get(resource_name: str,
             id: pulumi.Input[str],
             opts: Optional[pulumi.ResourceOptions] = None,
-            active: Optional[pulumi.Input[_builtins.bool]] = None,
-            bccs: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-            body: Optional[pulumi.Input[_builtins.str]] = None,
-            ccs: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-            legacy_id: Optional[pulumi.Input[_builtins.str]] = None,
-            name: Optional[pulumi.Input[_builtins.str]] = None,
-            notify_closed_problems: Optional[pulumi.Input[_builtins.bool]] = None,
-            profile: Optional[pulumi.Input[_builtins.str]] = None,
-            subject: Optional[pulumi.Input[_builtins.str]] = None,
-            tos: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None) -> 'EmailNotification':
+            active: pulumi.Input[Optional[_builtins.bool]] = None,
+            bccs: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+            body: pulumi.Input[Optional[_builtins.str]] = None,
+            ccs: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+            legacy_id: pulumi.Input[Optional[_builtins.str]] = None,
+            name: pulumi.Input[Optional[_builtins.str]] = None,
+            notify_closed_problems: pulumi.Input[Optional[_builtins.bool]] = None,
+            profile: pulumi.Input[Optional[_builtins.str]] = None,
+            subject: pulumi.Input[Optional[_builtins.str]] = None,
+            tos: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None) -> 'EmailNotification':
         """
         Get an existing EmailNotification resource's state with the given name, id, and optional extra
         properties used to qualify the lookup.

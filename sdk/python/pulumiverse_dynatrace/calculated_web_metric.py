@@ -25,10 +25,10 @@ class CalculatedWebMetricArgs:
                  enabled: pulumi.Input[_builtins.bool],
                  metric_definition: pulumi.Input['CalculatedWebMetricMetricDefinitionArgs'],
                  metric_key: pulumi.Input[_builtins.str],
-                 description: Optional[pulumi.Input[_builtins.str]] = None,
-                 dimensions: Optional[pulumi.Input[Sequence[pulumi.Input['CalculatedWebMetricDimensionArgs']]]] = None,
-                 name: Optional[pulumi.Input[_builtins.str]] = None,
-                 user_action_filter: Optional[pulumi.Input['CalculatedWebMetricUserActionFilterArgs']] = None):
+                 description: pulumi.Input[Optional[_builtins.str]] = None,
+                 dimensions: pulumi.Input[Optional[Sequence[pulumi.Input['CalculatedWebMetricDimensionArgs']]]] = None,
+                 name: pulumi.Input[Optional[_builtins.str]] = None,
+                 user_action_filter: pulumi.Input[Optional['CalculatedWebMetricUserActionFilterArgs']] = None):
         """
         The set of arguments for constructing a CalculatedWebMetric resource.
 
@@ -104,64 +104,64 @@ class CalculatedWebMetricArgs:
 
     @_builtins.property
     @pulumi.getter
-    def description(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def description(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Descriptor of a calculated web metric.
         """
         return pulumi.get(self, "description")
 
     @description.setter
-    def description(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def description(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "description", value)
 
     @_builtins.property
     @pulumi.getter
-    def dimensions(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['CalculatedWebMetricDimensionArgs']]]]:
+    def dimensions(self) -> pulumi.Input[Optional[Sequence[pulumi.Input['CalculatedWebMetricDimensionArgs']]]]:
         """
         Parameters of a definition of a calculated web metric.
         """
         return pulumi.get(self, "dimensions")
 
     @dimensions.setter
-    def dimensions(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['CalculatedWebMetricDimensionArgs']]]]):
+    def dimensions(self, value: pulumi.Input[Optional[Sequence[pulumi.Input['CalculatedWebMetricDimensionArgs']]]]):
         pulumi.set(self, "dimensions", value)
 
     @_builtins.property
     @pulumi.getter
-    def name(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def name(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The displayed name of the metric.
         """
         return pulumi.get(self, "name")
 
     @name.setter
-    def name(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def name(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "name", value)
 
     @_builtins.property
     @pulumi.getter(name="userActionFilter")
-    def user_action_filter(self) -> Optional[pulumi.Input['CalculatedWebMetricUserActionFilterArgs']]:
+    def user_action_filter(self) -> pulumi.Input[Optional['CalculatedWebMetricUserActionFilterArgs']]:
         """
         Parameters of a definition of a calculated web metric.
         """
         return pulumi.get(self, "user_action_filter")
 
     @user_action_filter.setter
-    def user_action_filter(self, value: Optional[pulumi.Input['CalculatedWebMetricUserActionFilterArgs']]):
+    def user_action_filter(self, value: pulumi.Input[Optional['CalculatedWebMetricUserActionFilterArgs']]):
         pulumi.set(self, "user_action_filter", value)
 
 
 @pulumi.input_type
 class _CalculatedWebMetricState:
     def __init__(__self__, *,
-                 app_identifier: Optional[pulumi.Input[_builtins.str]] = None,
-                 description: Optional[pulumi.Input[_builtins.str]] = None,
-                 dimensions: Optional[pulumi.Input[Sequence[pulumi.Input['CalculatedWebMetricDimensionArgs']]]] = None,
-                 enabled: Optional[pulumi.Input[_builtins.bool]] = None,
-                 metric_definition: Optional[pulumi.Input['CalculatedWebMetricMetricDefinitionArgs']] = None,
-                 metric_key: Optional[pulumi.Input[_builtins.str]] = None,
-                 name: Optional[pulumi.Input[_builtins.str]] = None,
-                 user_action_filter: Optional[pulumi.Input['CalculatedWebMetricUserActionFilterArgs']] = None):
+                 app_identifier: pulumi.Input[Optional[_builtins.str]] = None,
+                 description: pulumi.Input[Optional[_builtins.str]] = None,
+                 dimensions: pulumi.Input[Optional[Sequence[pulumi.Input['CalculatedWebMetricDimensionArgs']]]] = None,
+                 enabled: pulumi.Input[Optional[_builtins.bool]] = None,
+                 metric_definition: pulumi.Input[Optional['CalculatedWebMetricMetricDefinitionArgs']] = None,
+                 metric_key: pulumi.Input[Optional[_builtins.str]] = None,
+                 name: pulumi.Input[Optional[_builtins.str]] = None,
+                 user_action_filter: pulumi.Input[Optional['CalculatedWebMetricUserActionFilterArgs']] = None):
         """
         Input properties used for looking up and filtering CalculatedWebMetric resources.
 
@@ -193,98 +193,98 @@ class _CalculatedWebMetricState:
 
     @_builtins.property
     @pulumi.getter(name="appIdentifier")
-    def app_identifier(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def app_identifier(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The Dynatrace entity ID of the application to which the metric belongs.
         """
         return pulumi.get(self, "app_identifier")
 
     @app_identifier.setter
-    def app_identifier(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def app_identifier(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "app_identifier", value)
 
     @_builtins.property
     @pulumi.getter
-    def description(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def description(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Descriptor of a calculated web metric.
         """
         return pulumi.get(self, "description")
 
     @description.setter
-    def description(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def description(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "description", value)
 
     @_builtins.property
     @pulumi.getter
-    def dimensions(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['CalculatedWebMetricDimensionArgs']]]]:
+    def dimensions(self) -> pulumi.Input[Optional[Sequence[pulumi.Input['CalculatedWebMetricDimensionArgs']]]]:
         """
         Parameters of a definition of a calculated web metric.
         """
         return pulumi.get(self, "dimensions")
 
     @dimensions.setter
-    def dimensions(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['CalculatedWebMetricDimensionArgs']]]]):
+    def dimensions(self, value: pulumi.Input[Optional[Sequence[pulumi.Input['CalculatedWebMetricDimensionArgs']]]]):
         pulumi.set(self, "dimensions", value)
 
     @_builtins.property
     @pulumi.getter
-    def enabled(self) -> Optional[pulumi.Input[_builtins.bool]]:
+    def enabled(self) -> pulumi.Input[Optional[_builtins.bool]]:
         """
         The metric is enabled (`true`) or disabled (`false`)
         """
         return pulumi.get(self, "enabled")
 
     @enabled.setter
-    def enabled(self, value: Optional[pulumi.Input[_builtins.bool]]):
+    def enabled(self, value: pulumi.Input[Optional[_builtins.bool]]):
         pulumi.set(self, "enabled", value)
 
     @_builtins.property
     @pulumi.getter(name="metricDefinition")
-    def metric_definition(self) -> Optional[pulumi.Input['CalculatedWebMetricMetricDefinitionArgs']]:
+    def metric_definition(self) -> pulumi.Input[Optional['CalculatedWebMetricMetricDefinitionArgs']]:
         """
         The definition of a calculated web metric.
         """
         return pulumi.get(self, "metric_definition")
 
     @metric_definition.setter
-    def metric_definition(self, value: Optional[pulumi.Input['CalculatedWebMetricMetricDefinitionArgs']]):
+    def metric_definition(self, value: pulumi.Input[Optional['CalculatedWebMetricMetricDefinitionArgs']]):
         pulumi.set(self, "metric_definition", value)
 
     @_builtins.property
     @pulumi.getter(name="metricKey")
-    def metric_key(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def metric_key(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The unique key of the calculated web metric.
         """
         return pulumi.get(self, "metric_key")
 
     @metric_key.setter
-    def metric_key(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def metric_key(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "metric_key", value)
 
     @_builtins.property
     @pulumi.getter
-    def name(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def name(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The displayed name of the metric.
         """
         return pulumi.get(self, "name")
 
     @name.setter
-    def name(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def name(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "name", value)
 
     @_builtins.property
     @pulumi.getter(name="userActionFilter")
-    def user_action_filter(self) -> Optional[pulumi.Input['CalculatedWebMetricUserActionFilterArgs']]:
+    def user_action_filter(self) -> pulumi.Input[Optional['CalculatedWebMetricUserActionFilterArgs']]:
         """
         Parameters of a definition of a calculated web metric.
         """
         return pulumi.get(self, "user_action_filter")
 
     @user_action_filter.setter
-    def user_action_filter(self, value: Optional[pulumi.Input['CalculatedWebMetricUserActionFilterArgs']]):
+    def user_action_filter(self, value: pulumi.Input[Optional['CalculatedWebMetricUserActionFilterArgs']]):
         pulumi.set(self, "user_action_filter", value)
 
 
@@ -294,14 +294,14 @@ class CalculatedWebMetric(pulumi.CustomResource):
     def __init__(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 app_identifier: Optional[pulumi.Input[_builtins.str]] = None,
-                 description: Optional[pulumi.Input[_builtins.str]] = None,
-                 dimensions: Optional[pulumi.Input[Sequence[pulumi.Input[Union['CalculatedWebMetricDimensionArgs', 'CalculatedWebMetricDimensionArgsDict']]]]] = None,
-                 enabled: Optional[pulumi.Input[_builtins.bool]] = None,
-                 metric_definition: Optional[pulumi.Input[Union['CalculatedWebMetricMetricDefinitionArgs', 'CalculatedWebMetricMetricDefinitionArgsDict']]] = None,
-                 metric_key: Optional[pulumi.Input[_builtins.str]] = None,
-                 name: Optional[pulumi.Input[_builtins.str]] = None,
-                 user_action_filter: Optional[pulumi.Input[Union['CalculatedWebMetricUserActionFilterArgs', 'CalculatedWebMetricUserActionFilterArgsDict']]] = None,
+                 app_identifier: pulumi.Input[Optional[_builtins.str]] = None,
+                 description: pulumi.Input[Optional[_builtins.str]] = None,
+                 dimensions: pulumi.Input[Optional[Sequence[pulumi.Input[Union['CalculatedWebMetricDimensionArgs', 'CalculatedWebMetricDimensionArgsDict']]]]] = None,
+                 enabled: pulumi.Input[Optional[_builtins.bool]] = None,
+                 metric_definition: pulumi.Input[Optional[Union['CalculatedWebMetricMetricDefinitionArgs', 'CalculatedWebMetricMetricDefinitionArgsDict']]] = None,
+                 metric_key: pulumi.Input[Optional[_builtins.str]] = None,
+                 name: pulumi.Input[Optional[_builtins.str]] = None,
+                 user_action_filter: pulumi.Input[Optional[Union['CalculatedWebMetricUserActionFilterArgs', 'CalculatedWebMetricUserActionFilterArgsDict']]] = None,
                  __props__=None):
         """
         > This resource requires the API token scopes **Read configuration** (`ReadConfig`) and **Write configuration** (`WriteConfig`)
@@ -367,14 +367,14 @@ class CalculatedWebMetric(pulumi.CustomResource):
     def _internal_init(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 app_identifier: Optional[pulumi.Input[_builtins.str]] = None,
-                 description: Optional[pulumi.Input[_builtins.str]] = None,
-                 dimensions: Optional[pulumi.Input[Sequence[pulumi.Input[Union['CalculatedWebMetricDimensionArgs', 'CalculatedWebMetricDimensionArgsDict']]]]] = None,
-                 enabled: Optional[pulumi.Input[_builtins.bool]] = None,
-                 metric_definition: Optional[pulumi.Input[Union['CalculatedWebMetricMetricDefinitionArgs', 'CalculatedWebMetricMetricDefinitionArgsDict']]] = None,
-                 metric_key: Optional[pulumi.Input[_builtins.str]] = None,
-                 name: Optional[pulumi.Input[_builtins.str]] = None,
-                 user_action_filter: Optional[pulumi.Input[Union['CalculatedWebMetricUserActionFilterArgs', 'CalculatedWebMetricUserActionFilterArgsDict']]] = None,
+                 app_identifier: pulumi.Input[Optional[_builtins.str]] = None,
+                 description: pulumi.Input[Optional[_builtins.str]] = None,
+                 dimensions: pulumi.Input[Optional[Sequence[pulumi.Input[Union['CalculatedWebMetricDimensionArgs', 'CalculatedWebMetricDimensionArgsDict']]]]] = None,
+                 enabled: pulumi.Input[Optional[_builtins.bool]] = None,
+                 metric_definition: pulumi.Input[Optional[Union['CalculatedWebMetricMetricDefinitionArgs', 'CalculatedWebMetricMetricDefinitionArgsDict']]] = None,
+                 metric_key: pulumi.Input[Optional[_builtins.str]] = None,
+                 name: pulumi.Input[Optional[_builtins.str]] = None,
+                 user_action_filter: pulumi.Input[Optional[Union['CalculatedWebMetricUserActionFilterArgs', 'CalculatedWebMetricUserActionFilterArgsDict']]] = None,
                  __props__=None):
         opts = pulumi.ResourceOptions.merge(_utilities.get_resource_opts_defaults(), opts)
         if not isinstance(opts, pulumi.ResourceOptions):
@@ -410,14 +410,14 @@ class CalculatedWebMetric(pulumi.CustomResource):
     def get(resource_name: str,
             id: pulumi.Input[str],
             opts: Optional[pulumi.ResourceOptions] = None,
-            app_identifier: Optional[pulumi.Input[_builtins.str]] = None,
-            description: Optional[pulumi.Input[_builtins.str]] = None,
-            dimensions: Optional[pulumi.Input[Sequence[pulumi.Input[Union['CalculatedWebMetricDimensionArgs', 'CalculatedWebMetricDimensionArgsDict']]]]] = None,
-            enabled: Optional[pulumi.Input[_builtins.bool]] = None,
-            metric_definition: Optional[pulumi.Input[Union['CalculatedWebMetricMetricDefinitionArgs', 'CalculatedWebMetricMetricDefinitionArgsDict']]] = None,
-            metric_key: Optional[pulumi.Input[_builtins.str]] = None,
-            name: Optional[pulumi.Input[_builtins.str]] = None,
-            user_action_filter: Optional[pulumi.Input[Union['CalculatedWebMetricUserActionFilterArgs', 'CalculatedWebMetricUserActionFilterArgsDict']]] = None) -> 'CalculatedWebMetric':
+            app_identifier: pulumi.Input[Optional[_builtins.str]] = None,
+            description: pulumi.Input[Optional[_builtins.str]] = None,
+            dimensions: pulumi.Input[Optional[Sequence[pulumi.Input[Union['CalculatedWebMetricDimensionArgs', 'CalculatedWebMetricDimensionArgsDict']]]]] = None,
+            enabled: pulumi.Input[Optional[_builtins.bool]] = None,
+            metric_definition: pulumi.Input[Optional[Union['CalculatedWebMetricMetricDefinitionArgs', 'CalculatedWebMetricMetricDefinitionArgsDict']]] = None,
+            metric_key: pulumi.Input[Optional[_builtins.str]] = None,
+            name: pulumi.Input[Optional[_builtins.str]] = None,
+            user_action_filter: pulumi.Input[Optional[Union['CalculatedWebMetricUserActionFilterArgs', 'CalculatedWebMetricUserActionFilterArgsDict']]] = None) -> 'CalculatedWebMetric':
         """
         Get an existing CalculatedWebMetric resource's state with the given name, id, and optional extra
         properties used to qualify the lookup.

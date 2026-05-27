@@ -22,7 +22,7 @@ class WebAppInjectionCookieArgs:
                  application_id: pulumi.Input[_builtins.str],
                  same_site_cookie_attribute: pulumi.Input[_builtins.str],
                  use_secure_cookie_attribute: pulumi.Input[_builtins.bool],
-                 cookie_placement_domain: Optional[pulumi.Input[_builtins.str]] = None):
+                 cookie_placement_domain: pulumi.Input[Optional[_builtins.str]] = None):
         """
         The set of arguments for constructing a WebAppInjectionCookie resource.
 
@@ -75,24 +75,24 @@ class WebAppInjectionCookieArgs:
 
     @_builtins.property
     @pulumi.getter(name="cookiePlacementDomain")
-    def cookie_placement_domain(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def cookie_placement_domain(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Specify an alternative domain for cookies set by Dynatrace. Keep in mind that your browser may not allow placement of cookies on certain domains (for example, top-level domains). Before typing a domain name here, confirm that the domain will accept cookies from your browser. For details, see the list of [forbidden top-level domains](https://dt-url.net/9n6b0pfz).
         """
         return pulumi.get(self, "cookie_placement_domain")
 
     @cookie_placement_domain.setter
-    def cookie_placement_domain(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def cookie_placement_domain(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "cookie_placement_domain", value)
 
 
 @pulumi.input_type
 class _WebAppInjectionCookieState:
     def __init__(__self__, *,
-                 application_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 cookie_placement_domain: Optional[pulumi.Input[_builtins.str]] = None,
-                 same_site_cookie_attribute: Optional[pulumi.Input[_builtins.str]] = None,
-                 use_secure_cookie_attribute: Optional[pulumi.Input[_builtins.bool]] = None):
+                 application_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 cookie_placement_domain: pulumi.Input[Optional[_builtins.str]] = None,
+                 same_site_cookie_attribute: pulumi.Input[Optional[_builtins.str]] = None,
+                 use_secure_cookie_attribute: pulumi.Input[Optional[_builtins.bool]] = None):
         """
         Input properties used for looking up and filtering WebAppInjectionCookie resources.
 
@@ -112,50 +112,50 @@ class _WebAppInjectionCookieState:
 
     @_builtins.property
     @pulumi.getter(name="applicationId")
-    def application_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def application_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The scope of this settings. If the settings should cover the whole environment, just don't specify any scope.
         """
         return pulumi.get(self, "application_id")
 
     @application_id.setter
-    def application_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def application_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "application_id", value)
 
     @_builtins.property
     @pulumi.getter(name="cookiePlacementDomain")
-    def cookie_placement_domain(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def cookie_placement_domain(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Specify an alternative domain for cookies set by Dynatrace. Keep in mind that your browser may not allow placement of cookies on certain domains (for example, top-level domains). Before typing a domain name here, confirm that the domain will accept cookies from your browser. For details, see the list of [forbidden top-level domains](https://dt-url.net/9n6b0pfz).
         """
         return pulumi.get(self, "cookie_placement_domain")
 
     @cookie_placement_domain.setter
-    def cookie_placement_domain(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def cookie_placement_domain(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "cookie_placement_domain", value)
 
     @_builtins.property
     @pulumi.getter(name="sameSiteCookieAttribute")
-    def same_site_cookie_attribute(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def same_site_cookie_attribute(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Possible Values: `LAX`, `NONE`, `NOTSET`, `STRICT`
         """
         return pulumi.get(self, "same_site_cookie_attribute")
 
     @same_site_cookie_attribute.setter
-    def same_site_cookie_attribute(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def same_site_cookie_attribute(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "same_site_cookie_attribute", value)
 
     @_builtins.property
     @pulumi.getter(name="useSecureCookieAttribute")
-    def use_secure_cookie_attribute(self) -> Optional[pulumi.Input[_builtins.bool]]:
+    def use_secure_cookie_attribute(self) -> pulumi.Input[Optional[_builtins.bool]]:
         """
         If your application is only accessible via SSL, you can add the Secure attribute to all cookies set by Dynatrace. This setting prevents the display of warnings from PCI-compliance security scanners. Be aware that with this setting enabled Dynatrace correlation of user actions with server-side web requests is only possible over SSL connections.
         """
         return pulumi.get(self, "use_secure_cookie_attribute")
 
     @use_secure_cookie_attribute.setter
-    def use_secure_cookie_attribute(self, value: Optional[pulumi.Input[_builtins.bool]]):
+    def use_secure_cookie_attribute(self, value: pulumi.Input[Optional[_builtins.bool]]):
         pulumi.set(self, "use_secure_cookie_attribute", value)
 
 
@@ -165,10 +165,10 @@ class WebAppInjectionCookie(pulumi.CustomResource):
     def __init__(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 application_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 cookie_placement_domain: Optional[pulumi.Input[_builtins.str]] = None,
-                 same_site_cookie_attribute: Optional[pulumi.Input[_builtins.str]] = None,
-                 use_secure_cookie_attribute: Optional[pulumi.Input[_builtins.bool]] = None,
+                 application_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 cookie_placement_domain: pulumi.Input[Optional[_builtins.str]] = None,
+                 same_site_cookie_attribute: pulumi.Input[Optional[_builtins.str]] = None,
+                 use_secure_cookie_attribute: pulumi.Input[Optional[_builtins.bool]] = None,
                  __props__=None):
         """
         > This resource requires the API token scopes **Read settings** (`settings.read`) and **Write settings** (`settings.write`)
@@ -230,10 +230,10 @@ class WebAppInjectionCookie(pulumi.CustomResource):
     def _internal_init(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 application_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 cookie_placement_domain: Optional[pulumi.Input[_builtins.str]] = None,
-                 same_site_cookie_attribute: Optional[pulumi.Input[_builtins.str]] = None,
-                 use_secure_cookie_attribute: Optional[pulumi.Input[_builtins.bool]] = None,
+                 application_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 cookie_placement_domain: pulumi.Input[Optional[_builtins.str]] = None,
+                 same_site_cookie_attribute: pulumi.Input[Optional[_builtins.str]] = None,
+                 use_secure_cookie_attribute: pulumi.Input[Optional[_builtins.bool]] = None,
                  __props__=None):
         opts = pulumi.ResourceOptions.merge(_utilities.get_resource_opts_defaults(), opts)
         if not isinstance(opts, pulumi.ResourceOptions):
@@ -263,10 +263,10 @@ class WebAppInjectionCookie(pulumi.CustomResource):
     def get(resource_name: str,
             id: pulumi.Input[str],
             opts: Optional[pulumi.ResourceOptions] = None,
-            application_id: Optional[pulumi.Input[_builtins.str]] = None,
-            cookie_placement_domain: Optional[pulumi.Input[_builtins.str]] = None,
-            same_site_cookie_attribute: Optional[pulumi.Input[_builtins.str]] = None,
-            use_secure_cookie_attribute: Optional[pulumi.Input[_builtins.bool]] = None) -> 'WebAppInjectionCookie':
+            application_id: pulumi.Input[Optional[_builtins.str]] = None,
+            cookie_placement_domain: pulumi.Input[Optional[_builtins.str]] = None,
+            same_site_cookie_attribute: pulumi.Input[Optional[_builtins.str]] = None,
+            use_secure_cookie_attribute: pulumi.Input[Optional[_builtins.bool]] = None) -> 'WebAppInjectionCookie':
         """
         Get an existing WebAppInjectionCookie resource's state with the given name, id, and optional extra
         properties used to qualify the lookup.

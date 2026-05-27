@@ -23,11 +23,11 @@ class UpdateWindowsArgs:
     def __init__(__self__, *,
                  enabled: pulumi.Input[_builtins.bool],
                  recurrence: pulumi.Input[_builtins.str],
-                 daily_recurrence: Optional[pulumi.Input['UpdateWindowsDailyRecurrenceArgs']] = None,
-                 monthly_recurrence: Optional[pulumi.Input['UpdateWindowsMonthlyRecurrenceArgs']] = None,
-                 name: Optional[pulumi.Input[_builtins.str]] = None,
-                 once_recurrence: Optional[pulumi.Input['UpdateWindowsOnceRecurrenceArgs']] = None,
-                 weekly_recurrence: Optional[pulumi.Input['UpdateWindowsWeeklyRecurrenceArgs']] = None):
+                 daily_recurrence: pulumi.Input[Optional['UpdateWindowsDailyRecurrenceArgs']] = None,
+                 monthly_recurrence: pulumi.Input[Optional['UpdateWindowsMonthlyRecurrenceArgs']] = None,
+                 name: pulumi.Input[Optional[_builtins.str]] = None,
+                 once_recurrence: pulumi.Input[Optional['UpdateWindowsOnceRecurrenceArgs']] = None,
+                 weekly_recurrence: pulumi.Input[Optional['UpdateWindowsWeeklyRecurrenceArgs']] = None):
         """
         The set of arguments for constructing a UpdateWindows resource.
 
@@ -78,75 +78,75 @@ class UpdateWindowsArgs:
 
     @_builtins.property
     @pulumi.getter(name="dailyRecurrence")
-    def daily_recurrence(self) -> Optional[pulumi.Input['UpdateWindowsDailyRecurrenceArgs']]:
+    def daily_recurrence(self) -> pulumi.Input[Optional['UpdateWindowsDailyRecurrenceArgs']]:
         """
         no documentation available
         """
         return pulumi.get(self, "daily_recurrence")
 
     @daily_recurrence.setter
-    def daily_recurrence(self, value: Optional[pulumi.Input['UpdateWindowsDailyRecurrenceArgs']]):
+    def daily_recurrence(self, value: pulumi.Input[Optional['UpdateWindowsDailyRecurrenceArgs']]):
         pulumi.set(self, "daily_recurrence", value)
 
     @_builtins.property
     @pulumi.getter(name="monthlyRecurrence")
-    def monthly_recurrence(self) -> Optional[pulumi.Input['UpdateWindowsMonthlyRecurrenceArgs']]:
+    def monthly_recurrence(self) -> pulumi.Input[Optional['UpdateWindowsMonthlyRecurrenceArgs']]:
         """
         no documentation available
         """
         return pulumi.get(self, "monthly_recurrence")
 
     @monthly_recurrence.setter
-    def monthly_recurrence(self, value: Optional[pulumi.Input['UpdateWindowsMonthlyRecurrenceArgs']]):
+    def monthly_recurrence(self, value: pulumi.Input[Optional['UpdateWindowsMonthlyRecurrenceArgs']]):
         pulumi.set(self, "monthly_recurrence", value)
 
     @_builtins.property
     @pulumi.getter
-    def name(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def name(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Name
         """
         return pulumi.get(self, "name")
 
     @name.setter
-    def name(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def name(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "name", value)
 
     @_builtins.property
     @pulumi.getter(name="onceRecurrence")
-    def once_recurrence(self) -> Optional[pulumi.Input['UpdateWindowsOnceRecurrenceArgs']]:
+    def once_recurrence(self) -> pulumi.Input[Optional['UpdateWindowsOnceRecurrenceArgs']]:
         """
         no documentation available
         """
         return pulumi.get(self, "once_recurrence")
 
     @once_recurrence.setter
-    def once_recurrence(self, value: Optional[pulumi.Input['UpdateWindowsOnceRecurrenceArgs']]):
+    def once_recurrence(self, value: pulumi.Input[Optional['UpdateWindowsOnceRecurrenceArgs']]):
         pulumi.set(self, "once_recurrence", value)
 
     @_builtins.property
     @pulumi.getter(name="weeklyRecurrence")
-    def weekly_recurrence(self) -> Optional[pulumi.Input['UpdateWindowsWeeklyRecurrenceArgs']]:
+    def weekly_recurrence(self) -> pulumi.Input[Optional['UpdateWindowsWeeklyRecurrenceArgs']]:
         """
         no documentation available
         """
         return pulumi.get(self, "weekly_recurrence")
 
     @weekly_recurrence.setter
-    def weekly_recurrence(self, value: Optional[pulumi.Input['UpdateWindowsWeeklyRecurrenceArgs']]):
+    def weekly_recurrence(self, value: pulumi.Input[Optional['UpdateWindowsWeeklyRecurrenceArgs']]):
         pulumi.set(self, "weekly_recurrence", value)
 
 
 @pulumi.input_type
 class _UpdateWindowsState:
     def __init__(__self__, *,
-                 daily_recurrence: Optional[pulumi.Input['UpdateWindowsDailyRecurrenceArgs']] = None,
-                 enabled: Optional[pulumi.Input[_builtins.bool]] = None,
-                 monthly_recurrence: Optional[pulumi.Input['UpdateWindowsMonthlyRecurrenceArgs']] = None,
-                 name: Optional[pulumi.Input[_builtins.str]] = None,
-                 once_recurrence: Optional[pulumi.Input['UpdateWindowsOnceRecurrenceArgs']] = None,
-                 recurrence: Optional[pulumi.Input[_builtins.str]] = None,
-                 weekly_recurrence: Optional[pulumi.Input['UpdateWindowsWeeklyRecurrenceArgs']] = None):
+                 daily_recurrence: pulumi.Input[Optional['UpdateWindowsDailyRecurrenceArgs']] = None,
+                 enabled: pulumi.Input[Optional[_builtins.bool]] = None,
+                 monthly_recurrence: pulumi.Input[Optional['UpdateWindowsMonthlyRecurrenceArgs']] = None,
+                 name: pulumi.Input[Optional[_builtins.str]] = None,
+                 once_recurrence: pulumi.Input[Optional['UpdateWindowsOnceRecurrenceArgs']] = None,
+                 recurrence: pulumi.Input[Optional[_builtins.str]] = None,
+                 weekly_recurrence: pulumi.Input[Optional['UpdateWindowsWeeklyRecurrenceArgs']] = None):
         """
         Input properties used for looking up and filtering UpdateWindows resources.
 
@@ -175,86 +175,86 @@ class _UpdateWindowsState:
 
     @_builtins.property
     @pulumi.getter(name="dailyRecurrence")
-    def daily_recurrence(self) -> Optional[pulumi.Input['UpdateWindowsDailyRecurrenceArgs']]:
+    def daily_recurrence(self) -> pulumi.Input[Optional['UpdateWindowsDailyRecurrenceArgs']]:
         """
         no documentation available
         """
         return pulumi.get(self, "daily_recurrence")
 
     @daily_recurrence.setter
-    def daily_recurrence(self, value: Optional[pulumi.Input['UpdateWindowsDailyRecurrenceArgs']]):
+    def daily_recurrence(self, value: pulumi.Input[Optional['UpdateWindowsDailyRecurrenceArgs']]):
         pulumi.set(self, "daily_recurrence", value)
 
     @_builtins.property
     @pulumi.getter
-    def enabled(self) -> Optional[pulumi.Input[_builtins.bool]]:
+    def enabled(self) -> pulumi.Input[Optional[_builtins.bool]]:
         """
         This setting is enabled (`true`) or disabled (`false`)
         """
         return pulumi.get(self, "enabled")
 
     @enabled.setter
-    def enabled(self, value: Optional[pulumi.Input[_builtins.bool]]):
+    def enabled(self, value: pulumi.Input[Optional[_builtins.bool]]):
         pulumi.set(self, "enabled", value)
 
     @_builtins.property
     @pulumi.getter(name="monthlyRecurrence")
-    def monthly_recurrence(self) -> Optional[pulumi.Input['UpdateWindowsMonthlyRecurrenceArgs']]:
+    def monthly_recurrence(self) -> pulumi.Input[Optional['UpdateWindowsMonthlyRecurrenceArgs']]:
         """
         no documentation available
         """
         return pulumi.get(self, "monthly_recurrence")
 
     @monthly_recurrence.setter
-    def monthly_recurrence(self, value: Optional[pulumi.Input['UpdateWindowsMonthlyRecurrenceArgs']]):
+    def monthly_recurrence(self, value: pulumi.Input[Optional['UpdateWindowsMonthlyRecurrenceArgs']]):
         pulumi.set(self, "monthly_recurrence", value)
 
     @_builtins.property
     @pulumi.getter
-    def name(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def name(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Name
         """
         return pulumi.get(self, "name")
 
     @name.setter
-    def name(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def name(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "name", value)
 
     @_builtins.property
     @pulumi.getter(name="onceRecurrence")
-    def once_recurrence(self) -> Optional[pulumi.Input['UpdateWindowsOnceRecurrenceArgs']]:
+    def once_recurrence(self) -> pulumi.Input[Optional['UpdateWindowsOnceRecurrenceArgs']]:
         """
         no documentation available
         """
         return pulumi.get(self, "once_recurrence")
 
     @once_recurrence.setter
-    def once_recurrence(self, value: Optional[pulumi.Input['UpdateWindowsOnceRecurrenceArgs']]):
+    def once_recurrence(self, value: pulumi.Input[Optional['UpdateWindowsOnceRecurrenceArgs']]):
         pulumi.set(self, "once_recurrence", value)
 
     @_builtins.property
     @pulumi.getter
-    def recurrence(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def recurrence(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Possible Values: `MONTHLY`, `ONCE`, `DAILY`, `WEEKLY`
         """
         return pulumi.get(self, "recurrence")
 
     @recurrence.setter
-    def recurrence(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def recurrence(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "recurrence", value)
 
     @_builtins.property
     @pulumi.getter(name="weeklyRecurrence")
-    def weekly_recurrence(self) -> Optional[pulumi.Input['UpdateWindowsWeeklyRecurrenceArgs']]:
+    def weekly_recurrence(self) -> pulumi.Input[Optional['UpdateWindowsWeeklyRecurrenceArgs']]:
         """
         no documentation available
         """
         return pulumi.get(self, "weekly_recurrence")
 
     @weekly_recurrence.setter
-    def weekly_recurrence(self, value: Optional[pulumi.Input['UpdateWindowsWeeklyRecurrenceArgs']]):
+    def weekly_recurrence(self, value: pulumi.Input[Optional['UpdateWindowsWeeklyRecurrenceArgs']]):
         pulumi.set(self, "weekly_recurrence", value)
 
 
@@ -264,13 +264,13 @@ class UpdateWindows(pulumi.CustomResource):
     def __init__(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 daily_recurrence: Optional[pulumi.Input[Union['UpdateWindowsDailyRecurrenceArgs', 'UpdateWindowsDailyRecurrenceArgsDict']]] = None,
-                 enabled: Optional[pulumi.Input[_builtins.bool]] = None,
-                 monthly_recurrence: Optional[pulumi.Input[Union['UpdateWindowsMonthlyRecurrenceArgs', 'UpdateWindowsMonthlyRecurrenceArgsDict']]] = None,
-                 name: Optional[pulumi.Input[_builtins.str]] = None,
-                 once_recurrence: Optional[pulumi.Input[Union['UpdateWindowsOnceRecurrenceArgs', 'UpdateWindowsOnceRecurrenceArgsDict']]] = None,
-                 recurrence: Optional[pulumi.Input[_builtins.str]] = None,
-                 weekly_recurrence: Optional[pulumi.Input[Union['UpdateWindowsWeeklyRecurrenceArgs', 'UpdateWindowsWeeklyRecurrenceArgsDict']]] = None,
+                 daily_recurrence: pulumi.Input[Optional[Union['UpdateWindowsDailyRecurrenceArgs', 'UpdateWindowsDailyRecurrenceArgsDict']]] = None,
+                 enabled: pulumi.Input[Optional[_builtins.bool]] = None,
+                 monthly_recurrence: pulumi.Input[Optional[Union['UpdateWindowsMonthlyRecurrenceArgs', 'UpdateWindowsMonthlyRecurrenceArgsDict']]] = None,
+                 name: pulumi.Input[Optional[_builtins.str]] = None,
+                 once_recurrence: pulumi.Input[Optional[Union['UpdateWindowsOnceRecurrenceArgs', 'UpdateWindowsOnceRecurrenceArgsDict']]] = None,
+                 recurrence: pulumi.Input[Optional[_builtins.str]] = None,
+                 weekly_recurrence: pulumi.Input[Optional[Union['UpdateWindowsWeeklyRecurrenceArgs', 'UpdateWindowsWeeklyRecurrenceArgsDict']]] = None,
                  __props__=None):
         """
         > This resource requires the API token scopes **Read settings** (`settings.read`) and **Write settings** (`settings.write`)
@@ -335,13 +335,13 @@ class UpdateWindows(pulumi.CustomResource):
     def _internal_init(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 daily_recurrence: Optional[pulumi.Input[Union['UpdateWindowsDailyRecurrenceArgs', 'UpdateWindowsDailyRecurrenceArgsDict']]] = None,
-                 enabled: Optional[pulumi.Input[_builtins.bool]] = None,
-                 monthly_recurrence: Optional[pulumi.Input[Union['UpdateWindowsMonthlyRecurrenceArgs', 'UpdateWindowsMonthlyRecurrenceArgsDict']]] = None,
-                 name: Optional[pulumi.Input[_builtins.str]] = None,
-                 once_recurrence: Optional[pulumi.Input[Union['UpdateWindowsOnceRecurrenceArgs', 'UpdateWindowsOnceRecurrenceArgsDict']]] = None,
-                 recurrence: Optional[pulumi.Input[_builtins.str]] = None,
-                 weekly_recurrence: Optional[pulumi.Input[Union['UpdateWindowsWeeklyRecurrenceArgs', 'UpdateWindowsWeeklyRecurrenceArgsDict']]] = None,
+                 daily_recurrence: pulumi.Input[Optional[Union['UpdateWindowsDailyRecurrenceArgs', 'UpdateWindowsDailyRecurrenceArgsDict']]] = None,
+                 enabled: pulumi.Input[Optional[_builtins.bool]] = None,
+                 monthly_recurrence: pulumi.Input[Optional[Union['UpdateWindowsMonthlyRecurrenceArgs', 'UpdateWindowsMonthlyRecurrenceArgsDict']]] = None,
+                 name: pulumi.Input[Optional[_builtins.str]] = None,
+                 once_recurrence: pulumi.Input[Optional[Union['UpdateWindowsOnceRecurrenceArgs', 'UpdateWindowsOnceRecurrenceArgsDict']]] = None,
+                 recurrence: pulumi.Input[Optional[_builtins.str]] = None,
+                 weekly_recurrence: pulumi.Input[Optional[Union['UpdateWindowsWeeklyRecurrenceArgs', 'UpdateWindowsWeeklyRecurrenceArgsDict']]] = None,
                  __props__=None):
         opts = pulumi.ResourceOptions.merge(_utilities.get_resource_opts_defaults(), opts)
         if not isinstance(opts, pulumi.ResourceOptions):
@@ -372,13 +372,13 @@ class UpdateWindows(pulumi.CustomResource):
     def get(resource_name: str,
             id: pulumi.Input[str],
             opts: Optional[pulumi.ResourceOptions] = None,
-            daily_recurrence: Optional[pulumi.Input[Union['UpdateWindowsDailyRecurrenceArgs', 'UpdateWindowsDailyRecurrenceArgsDict']]] = None,
-            enabled: Optional[pulumi.Input[_builtins.bool]] = None,
-            monthly_recurrence: Optional[pulumi.Input[Union['UpdateWindowsMonthlyRecurrenceArgs', 'UpdateWindowsMonthlyRecurrenceArgsDict']]] = None,
-            name: Optional[pulumi.Input[_builtins.str]] = None,
-            once_recurrence: Optional[pulumi.Input[Union['UpdateWindowsOnceRecurrenceArgs', 'UpdateWindowsOnceRecurrenceArgsDict']]] = None,
-            recurrence: Optional[pulumi.Input[_builtins.str]] = None,
-            weekly_recurrence: Optional[pulumi.Input[Union['UpdateWindowsWeeklyRecurrenceArgs', 'UpdateWindowsWeeklyRecurrenceArgsDict']]] = None) -> 'UpdateWindows':
+            daily_recurrence: pulumi.Input[Optional[Union['UpdateWindowsDailyRecurrenceArgs', 'UpdateWindowsDailyRecurrenceArgsDict']]] = None,
+            enabled: pulumi.Input[Optional[_builtins.bool]] = None,
+            monthly_recurrence: pulumi.Input[Optional[Union['UpdateWindowsMonthlyRecurrenceArgs', 'UpdateWindowsMonthlyRecurrenceArgsDict']]] = None,
+            name: pulumi.Input[Optional[_builtins.str]] = None,
+            once_recurrence: pulumi.Input[Optional[Union['UpdateWindowsOnceRecurrenceArgs', 'UpdateWindowsOnceRecurrenceArgsDict']]] = None,
+            recurrence: pulumi.Input[Optional[_builtins.str]] = None,
+            weekly_recurrence: pulumi.Input[Optional[Union['UpdateWindowsWeeklyRecurrenceArgs', 'UpdateWindowsWeeklyRecurrenceArgsDict']]] = None) -> 'UpdateWindows':
         """
         Get an existing UpdateWindows resource's state with the given name, id, and optional extra
         properties used to qualify the lookup.

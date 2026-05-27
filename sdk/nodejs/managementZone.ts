@@ -116,27 +116,27 @@ export interface ManagementZoneState {
     /**
      * The description of the management zone
      */
-    description?: pulumi.Input<string>;
+    description?: pulumi.Input<string | undefined>;
     /**
      * A list of dimensional data rules for management zone usage. If several rules are specified, the `or` logic applies
      */
-    dimensionalRules?: pulumi.Input<pulumi.Input<inputs.ManagementZoneDimensionalRule>[]>;
+    dimensionalRules?: pulumi.Input<pulumi.Input<inputs.ManagementZoneDimensionalRule>[] | undefined>;
     /**
      * A list of entity-selector based rules for management zone usage. If several rules are specified, the `or` logic applies
      */
-    entitySelectorBasedRules?: pulumi.Input<pulumi.Input<inputs.ManagementZoneEntitySelectorBasedRule>[]>;
+    entitySelectorBasedRules?: pulumi.Input<pulumi.Input<inputs.ManagementZoneEntitySelectorBasedRule>[] | undefined>;
     /**
      * The name of the management zone
      */
-    name?: pulumi.Input<string>;
+    name?: pulumi.Input<string | undefined>;
     /**
      * A list of rules for management zone usage.  Each rule is evaluated independently of all other rules
      */
-    rules?: pulumi.Input<pulumi.Input<inputs.ManagementZoneRule>[]>;
+    rules?: pulumi.Input<pulumi.Input<inputs.ManagementZoneRule>[] | undefined>;
     /**
      * allows for configuring properties that are not explicitly supported by the current version of this provider
      */
-    unknowns?: pulumi.Input<string>;
+    unknowns?: pulumi.Input<string | undefined>;
 }
 
 /**
@@ -146,25 +146,25 @@ export interface ManagementZoneArgs {
     /**
      * The description of the management zone
      */
-    description?: pulumi.Input<string>;
+    description?: pulumi.Input<string | undefined>;
     /**
      * A list of dimensional data rules for management zone usage. If several rules are specified, the `or` logic applies
      */
-    dimensionalRules?: pulumi.Input<pulumi.Input<inputs.ManagementZoneDimensionalRule>[]>;
+    dimensionalRules?: pulumi.Input<pulumi.Input<inputs.ManagementZoneDimensionalRule>[] | undefined>;
     /**
      * A list of entity-selector based rules for management zone usage. If several rules are specified, the `or` logic applies
      */
-    entitySelectorBasedRules?: pulumi.Input<pulumi.Input<inputs.ManagementZoneEntitySelectorBasedRule>[]>;
+    entitySelectorBasedRules?: pulumi.Input<pulumi.Input<inputs.ManagementZoneEntitySelectorBasedRule>[] | undefined>;
     /**
      * The name of the management zone
      */
-    name?: pulumi.Input<string>;
+    name?: pulumi.Input<string | undefined>;
     /**
      * A list of rules for management zone usage.  Each rule is evaluated independently of all other rules
      */
-    rules?: pulumi.Input<pulumi.Input<inputs.ManagementZoneRule>[]>;
+    rules?: pulumi.Input<pulumi.Input<inputs.ManagementZoneRule>[] | undefined>;
     /**
      * allows for configuring properties that are not explicitly supported by the current version of this provider
      */
-    unknowns?: pulumi.Input<string>;
+    unknowns?: pulumi.Input<string | undefined>;
 }

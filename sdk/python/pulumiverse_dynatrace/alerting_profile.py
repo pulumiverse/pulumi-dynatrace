@@ -22,11 +22,11 @@ __all__ = ['AlertingProfileArgs', 'AlertingProfile']
 class AlertingProfileArgs:
     def __init__(__self__, *,
                  display_name: pulumi.Input[_builtins.str],
-                 event_type_filters: Optional[pulumi.Input[Sequence[pulumi.Input['AlertingProfileEventTypeFilterArgs']]]] = None,
-                 metadata: Optional[pulumi.Input['AlertingProfileMetadataArgs']] = None,
-                 mz_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 rules: Optional[pulumi.Input[Sequence[pulumi.Input['AlertingProfileRuleArgs']]]] = None,
-                 unknowns: Optional[pulumi.Input[_builtins.str]] = None):
+                 event_type_filters: pulumi.Input[Optional[Sequence[pulumi.Input['AlertingProfileEventTypeFilterArgs']]]] = None,
+                 metadata: pulumi.Input[Optional['AlertingProfileMetadataArgs']] = None,
+                 mz_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 rules: pulumi.Input[Optional[Sequence[pulumi.Input['AlertingProfileRuleArgs']]]] = None,
+                 unknowns: pulumi.Input[Optional[_builtins.str]] = None):
         """
         The set of arguments for constructing a AlertingProfile resource.
 
@@ -66,75 +66,75 @@ class AlertingProfileArgs:
 
     @_builtins.property
     @pulumi.getter(name="eventTypeFilters")
-    def event_type_filters(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['AlertingProfileEventTypeFilterArgs']]]]:
+    def event_type_filters(self) -> pulumi.Input[Optional[Sequence[pulumi.Input['AlertingProfileEventTypeFilterArgs']]]]:
         """
         The list of event filters.  For all filters that are *negated* inside of these event filters, that is all `Predefined` as well as `Custom` (Title and/or Description) ones the AND logic applies. For all *non-negated* ones the OR logic applies. Between these two groups, negated and non-negated, the AND logic applies.  If you specify both severity rule and event filter, the AND logic applies
         """
         return pulumi.get(self, "event_type_filters")
 
     @event_type_filters.setter
-    def event_type_filters(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['AlertingProfileEventTypeFilterArgs']]]]):
+    def event_type_filters(self, value: pulumi.Input[Optional[Sequence[pulumi.Input['AlertingProfileEventTypeFilterArgs']]]]):
         pulumi.set(self, "event_type_filters", value)
 
     @_builtins.property
     @pulumi.getter
     @_utilities.deprecated("""`metadata` exists for backwards compatibility but shouldn't get specified anymore""")
-    def metadata(self) -> Optional[pulumi.Input['AlertingProfileMetadataArgs']]:
+    def metadata(self) -> pulumi.Input[Optional['AlertingProfileMetadataArgs']]:
         """
         `metadata` exists for backwards compatibility but shouldn't get specified anymore
         """
         return pulumi.get(self, "metadata")
 
     @metadata.setter
-    def metadata(self, value: Optional[pulumi.Input['AlertingProfileMetadataArgs']]):
+    def metadata(self, value: pulumi.Input[Optional['AlertingProfileMetadataArgs']]):
         pulumi.set(self, "metadata", value)
 
     @_builtins.property
     @pulumi.getter(name="mzId")
-    def mz_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def mz_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The ID of the management zone to which the alerting profile applies
         """
         return pulumi.get(self, "mz_id")
 
     @mz_id.setter
-    def mz_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def mz_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "mz_id", value)
 
     @_builtins.property
     @pulumi.getter
-    def rules(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['AlertingProfileRuleArgs']]]]:
+    def rules(self) -> pulumi.Input[Optional[Sequence[pulumi.Input['AlertingProfileRuleArgs']]]]:
         """
         A list of rules for management zone usage.  Each rule is evaluated independently of all other rules
         """
         return pulumi.get(self, "rules")
 
     @rules.setter
-    def rules(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['AlertingProfileRuleArgs']]]]):
+    def rules(self, value: pulumi.Input[Optional[Sequence[pulumi.Input['AlertingProfileRuleArgs']]]]):
         pulumi.set(self, "rules", value)
 
     @_builtins.property
     @pulumi.getter
-    def unknowns(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def unknowns(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         allows for configuring properties that are not explicitly supported by the current version of this provider
         """
         return pulumi.get(self, "unknowns")
 
     @unknowns.setter
-    def unknowns(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def unknowns(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "unknowns", value)
 
 
 @pulumi.input_type
 class _AlertingProfileState:
     def __init__(__self__, *,
-                 display_name: Optional[pulumi.Input[_builtins.str]] = None,
-                 event_type_filters: Optional[pulumi.Input[Sequence[pulumi.Input['AlertingProfileEventTypeFilterArgs']]]] = None,
-                 metadata: Optional[pulumi.Input['AlertingProfileMetadataArgs']] = None,
-                 mz_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 rules: Optional[pulumi.Input[Sequence[pulumi.Input['AlertingProfileRuleArgs']]]] = None,
-                 unknowns: Optional[pulumi.Input[_builtins.str]] = None):
+                 display_name: pulumi.Input[Optional[_builtins.str]] = None,
+                 event_type_filters: pulumi.Input[Optional[Sequence[pulumi.Input['AlertingProfileEventTypeFilterArgs']]]] = None,
+                 metadata: pulumi.Input[Optional['AlertingProfileMetadataArgs']] = None,
+                 mz_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 rules: pulumi.Input[Optional[Sequence[pulumi.Input['AlertingProfileRuleArgs']]]] = None,
+                 unknowns: pulumi.Input[Optional[_builtins.str]] = None):
         """
         Input properties used for looking up and filtering AlertingProfile resources.
 
@@ -163,75 +163,75 @@ class _AlertingProfileState:
 
     @_builtins.property
     @pulumi.getter(name="displayName")
-    def display_name(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def display_name(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The name of the alerting profile, displayed in the UI
         """
         return pulumi.get(self, "display_name")
 
     @display_name.setter
-    def display_name(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def display_name(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "display_name", value)
 
     @_builtins.property
     @pulumi.getter(name="eventTypeFilters")
-    def event_type_filters(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['AlertingProfileEventTypeFilterArgs']]]]:
+    def event_type_filters(self) -> pulumi.Input[Optional[Sequence[pulumi.Input['AlertingProfileEventTypeFilterArgs']]]]:
         """
         The list of event filters.  For all filters that are *negated* inside of these event filters, that is all `Predefined` as well as `Custom` (Title and/or Description) ones the AND logic applies. For all *non-negated* ones the OR logic applies. Between these two groups, negated and non-negated, the AND logic applies.  If you specify both severity rule and event filter, the AND logic applies
         """
         return pulumi.get(self, "event_type_filters")
 
     @event_type_filters.setter
-    def event_type_filters(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['AlertingProfileEventTypeFilterArgs']]]]):
+    def event_type_filters(self, value: pulumi.Input[Optional[Sequence[pulumi.Input['AlertingProfileEventTypeFilterArgs']]]]):
         pulumi.set(self, "event_type_filters", value)
 
     @_builtins.property
     @pulumi.getter
     @_utilities.deprecated("""`metadata` exists for backwards compatibility but shouldn't get specified anymore""")
-    def metadata(self) -> Optional[pulumi.Input['AlertingProfileMetadataArgs']]:
+    def metadata(self) -> pulumi.Input[Optional['AlertingProfileMetadataArgs']]:
         """
         `metadata` exists for backwards compatibility but shouldn't get specified anymore
         """
         return pulumi.get(self, "metadata")
 
     @metadata.setter
-    def metadata(self, value: Optional[pulumi.Input['AlertingProfileMetadataArgs']]):
+    def metadata(self, value: pulumi.Input[Optional['AlertingProfileMetadataArgs']]):
         pulumi.set(self, "metadata", value)
 
     @_builtins.property
     @pulumi.getter(name="mzId")
-    def mz_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def mz_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The ID of the management zone to which the alerting profile applies
         """
         return pulumi.get(self, "mz_id")
 
     @mz_id.setter
-    def mz_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def mz_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "mz_id", value)
 
     @_builtins.property
     @pulumi.getter
-    def rules(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['AlertingProfileRuleArgs']]]]:
+    def rules(self) -> pulumi.Input[Optional[Sequence[pulumi.Input['AlertingProfileRuleArgs']]]]:
         """
         A list of rules for management zone usage.  Each rule is evaluated independently of all other rules
         """
         return pulumi.get(self, "rules")
 
     @rules.setter
-    def rules(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['AlertingProfileRuleArgs']]]]):
+    def rules(self, value: pulumi.Input[Optional[Sequence[pulumi.Input['AlertingProfileRuleArgs']]]]):
         pulumi.set(self, "rules", value)
 
     @_builtins.property
     @pulumi.getter
-    def unknowns(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def unknowns(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         allows for configuring properties that are not explicitly supported by the current version of this provider
         """
         return pulumi.get(self, "unknowns")
 
     @unknowns.setter
-    def unknowns(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def unknowns(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "unknowns", value)
 
 
@@ -241,12 +241,12 @@ class AlertingProfile(pulumi.CustomResource):
     def __init__(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 display_name: Optional[pulumi.Input[_builtins.str]] = None,
-                 event_type_filters: Optional[pulumi.Input[Sequence[pulumi.Input[Union['AlertingProfileEventTypeFilterArgs', 'AlertingProfileEventTypeFilterArgsDict']]]]] = None,
-                 metadata: Optional[pulumi.Input[Union['AlertingProfileMetadataArgs', 'AlertingProfileMetadataArgsDict']]] = None,
-                 mz_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 rules: Optional[pulumi.Input[Sequence[pulumi.Input[Union['AlertingProfileRuleArgs', 'AlertingProfileRuleArgsDict']]]]] = None,
-                 unknowns: Optional[pulumi.Input[_builtins.str]] = None,
+                 display_name: pulumi.Input[Optional[_builtins.str]] = None,
+                 event_type_filters: pulumi.Input[Optional[Sequence[pulumi.Input[Union['AlertingProfileEventTypeFilterArgs', 'AlertingProfileEventTypeFilterArgsDict']]]]] = None,
+                 metadata: pulumi.Input[Optional[Union['AlertingProfileMetadataArgs', 'AlertingProfileMetadataArgsDict']]] = None,
+                 mz_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 rules: pulumi.Input[Optional[Sequence[pulumi.Input[Union['AlertingProfileRuleArgs', 'AlertingProfileRuleArgsDict']]]]] = None,
+                 unknowns: pulumi.Input[Optional[_builtins.str]] = None,
                  __props__=None):
         """
         !> This resource API endpoint has been deprecated, please use Alerting instead.
@@ -302,12 +302,12 @@ class AlertingProfile(pulumi.CustomResource):
     def _internal_init(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 display_name: Optional[pulumi.Input[_builtins.str]] = None,
-                 event_type_filters: Optional[pulumi.Input[Sequence[pulumi.Input[Union['AlertingProfileEventTypeFilterArgs', 'AlertingProfileEventTypeFilterArgsDict']]]]] = None,
-                 metadata: Optional[pulumi.Input[Union['AlertingProfileMetadataArgs', 'AlertingProfileMetadataArgsDict']]] = None,
-                 mz_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 rules: Optional[pulumi.Input[Sequence[pulumi.Input[Union['AlertingProfileRuleArgs', 'AlertingProfileRuleArgsDict']]]]] = None,
-                 unknowns: Optional[pulumi.Input[_builtins.str]] = None,
+                 display_name: pulumi.Input[Optional[_builtins.str]] = None,
+                 event_type_filters: pulumi.Input[Optional[Sequence[pulumi.Input[Union['AlertingProfileEventTypeFilterArgs', 'AlertingProfileEventTypeFilterArgsDict']]]]] = None,
+                 metadata: pulumi.Input[Optional[Union['AlertingProfileMetadataArgs', 'AlertingProfileMetadataArgsDict']]] = None,
+                 mz_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 rules: pulumi.Input[Optional[Sequence[pulumi.Input[Union['AlertingProfileRuleArgs', 'AlertingProfileRuleArgsDict']]]]] = None,
+                 unknowns: pulumi.Input[Optional[_builtins.str]] = None,
                  __props__=None):
         opts = pulumi.ResourceOptions.merge(_utilities.get_resource_opts_defaults(), opts)
         if not isinstance(opts, pulumi.ResourceOptions):
@@ -335,12 +335,12 @@ class AlertingProfile(pulumi.CustomResource):
     def get(resource_name: str,
             id: pulumi.Input[str],
             opts: Optional[pulumi.ResourceOptions] = None,
-            display_name: Optional[pulumi.Input[_builtins.str]] = None,
-            event_type_filters: Optional[pulumi.Input[Sequence[pulumi.Input[Union['AlertingProfileEventTypeFilterArgs', 'AlertingProfileEventTypeFilterArgsDict']]]]] = None,
-            metadata: Optional[pulumi.Input[Union['AlertingProfileMetadataArgs', 'AlertingProfileMetadataArgsDict']]] = None,
-            mz_id: Optional[pulumi.Input[_builtins.str]] = None,
-            rules: Optional[pulumi.Input[Sequence[pulumi.Input[Union['AlertingProfileRuleArgs', 'AlertingProfileRuleArgsDict']]]]] = None,
-            unknowns: Optional[pulumi.Input[_builtins.str]] = None) -> 'AlertingProfile':
+            display_name: pulumi.Input[Optional[_builtins.str]] = None,
+            event_type_filters: pulumi.Input[Optional[Sequence[pulumi.Input[Union['AlertingProfileEventTypeFilterArgs', 'AlertingProfileEventTypeFilterArgsDict']]]]] = None,
+            metadata: pulumi.Input[Optional[Union['AlertingProfileMetadataArgs', 'AlertingProfileMetadataArgsDict']]] = None,
+            mz_id: pulumi.Input[Optional[_builtins.str]] = None,
+            rules: pulumi.Input[Optional[Sequence[pulumi.Input[Union['AlertingProfileRuleArgs', 'AlertingProfileRuleArgsDict']]]]] = None,
+            unknowns: pulumi.Input[Optional[_builtins.str]] = None) -> 'AlertingProfile':
         """
         Get an existing AlertingProfile resource's state with the given name, id, and optional extra
         properties used to qualify the lookup.

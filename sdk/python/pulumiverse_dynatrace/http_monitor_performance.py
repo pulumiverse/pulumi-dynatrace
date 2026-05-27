@@ -23,7 +23,7 @@ class HttpMonitorPerformanceArgs:
     def __init__(__self__, *,
                  enabled: pulumi.Input[_builtins.bool],
                  scope: pulumi.Input[_builtins.str],
-                 thresholds: Optional[pulumi.Input['HttpMonitorPerformanceThresholdsArgs']] = None):
+                 thresholds: pulumi.Input[Optional['HttpMonitorPerformanceThresholdsArgs']] = None):
         """
         The set of arguments for constructing a HttpMonitorPerformance resource.
 
@@ -62,23 +62,23 @@ class HttpMonitorPerformanceArgs:
 
     @_builtins.property
     @pulumi.getter
-    def thresholds(self) -> Optional[pulumi.Input['HttpMonitorPerformanceThresholdsArgs']]:
+    def thresholds(self) -> pulumi.Input[Optional['HttpMonitorPerformanceThresholdsArgs']]:
         """
         Performance thresholds
         """
         return pulumi.get(self, "thresholds")
 
     @thresholds.setter
-    def thresholds(self, value: Optional[pulumi.Input['HttpMonitorPerformanceThresholdsArgs']]):
+    def thresholds(self, value: pulumi.Input[Optional['HttpMonitorPerformanceThresholdsArgs']]):
         pulumi.set(self, "thresholds", value)
 
 
 @pulumi.input_type
 class _HttpMonitorPerformanceState:
     def __init__(__self__, *,
-                 enabled: Optional[pulumi.Input[_builtins.bool]] = None,
-                 scope: Optional[pulumi.Input[_builtins.str]] = None,
-                 thresholds: Optional[pulumi.Input['HttpMonitorPerformanceThresholdsArgs']] = None):
+                 enabled: pulumi.Input[Optional[_builtins.bool]] = None,
+                 scope: pulumi.Input[Optional[_builtins.str]] = None,
+                 thresholds: pulumi.Input[Optional['HttpMonitorPerformanceThresholdsArgs']] = None):
         """
         Input properties used for looking up and filtering HttpMonitorPerformance resources.
 
@@ -95,38 +95,38 @@ class _HttpMonitorPerformanceState:
 
     @_builtins.property
     @pulumi.getter
-    def enabled(self) -> Optional[pulumi.Input[_builtins.bool]]:
+    def enabled(self) -> pulumi.Input[Optional[_builtins.bool]]:
         """
         This setting is enabled (`true`) or disabled (`false`)
         """
         return pulumi.get(self, "enabled")
 
     @enabled.setter
-    def enabled(self, value: Optional[pulumi.Input[_builtins.bool]]):
+    def enabled(self, value: pulumi.Input[Optional[_builtins.bool]]):
         pulumi.set(self, "enabled", value)
 
     @_builtins.property
     @pulumi.getter
-    def scope(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def scope(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The scope of this setting (HTTP_CHECK)
         """
         return pulumi.get(self, "scope")
 
     @scope.setter
-    def scope(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def scope(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "scope", value)
 
     @_builtins.property
     @pulumi.getter
-    def thresholds(self) -> Optional[pulumi.Input['HttpMonitorPerformanceThresholdsArgs']]:
+    def thresholds(self) -> pulumi.Input[Optional['HttpMonitorPerformanceThresholdsArgs']]:
         """
         Performance thresholds
         """
         return pulumi.get(self, "thresholds")
 
     @thresholds.setter
-    def thresholds(self, value: Optional[pulumi.Input['HttpMonitorPerformanceThresholdsArgs']]):
+    def thresholds(self, value: pulumi.Input[Optional['HttpMonitorPerformanceThresholdsArgs']]):
         pulumi.set(self, "thresholds", value)
 
 
@@ -136,9 +136,9 @@ class HttpMonitorPerformance(pulumi.CustomResource):
     def __init__(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 enabled: Optional[pulumi.Input[_builtins.bool]] = None,
-                 scope: Optional[pulumi.Input[_builtins.str]] = None,
-                 thresholds: Optional[pulumi.Input[Union['HttpMonitorPerformanceThresholdsArgs', 'HttpMonitorPerformanceThresholdsArgsDict']]] = None,
+                 enabled: pulumi.Input[Optional[_builtins.bool]] = None,
+                 scope: pulumi.Input[Optional[_builtins.str]] = None,
+                 thresholds: pulumi.Input[Optional[Union['HttpMonitorPerformanceThresholdsArgs', 'HttpMonitorPerformanceThresholdsArgsDict']]] = None,
                  __props__=None):
         """
         > Configuration of the HTTP check scope overlaps with dynatrace_http_monitor, but this resource in addition provides an option for an environment scope.
@@ -203,9 +203,9 @@ class HttpMonitorPerformance(pulumi.CustomResource):
     def _internal_init(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 enabled: Optional[pulumi.Input[_builtins.bool]] = None,
-                 scope: Optional[pulumi.Input[_builtins.str]] = None,
-                 thresholds: Optional[pulumi.Input[Union['HttpMonitorPerformanceThresholdsArgs', 'HttpMonitorPerformanceThresholdsArgsDict']]] = None,
+                 enabled: pulumi.Input[Optional[_builtins.bool]] = None,
+                 scope: pulumi.Input[Optional[_builtins.str]] = None,
+                 thresholds: pulumi.Input[Optional[Union['HttpMonitorPerformanceThresholdsArgs', 'HttpMonitorPerformanceThresholdsArgsDict']]] = None,
                  __props__=None):
         opts = pulumi.ResourceOptions.merge(_utilities.get_resource_opts_defaults(), opts)
         if not isinstance(opts, pulumi.ResourceOptions):
@@ -232,9 +232,9 @@ class HttpMonitorPerformance(pulumi.CustomResource):
     def get(resource_name: str,
             id: pulumi.Input[str],
             opts: Optional[pulumi.ResourceOptions] = None,
-            enabled: Optional[pulumi.Input[_builtins.bool]] = None,
-            scope: Optional[pulumi.Input[_builtins.str]] = None,
-            thresholds: Optional[pulumi.Input[Union['HttpMonitorPerformanceThresholdsArgs', 'HttpMonitorPerformanceThresholdsArgsDict']]] = None) -> 'HttpMonitorPerformance':
+            enabled: pulumi.Input[Optional[_builtins.bool]] = None,
+            scope: pulumi.Input[Optional[_builtins.str]] = None,
+            thresholds: pulumi.Input[Optional[Union['HttpMonitorPerformanceThresholdsArgs', 'HttpMonitorPerformanceThresholdsArgsDict']]] = None) -> 'HttpMonitorPerformance':
         """
         Get an existing HttpMonitorPerformance resource's state with the given name, id, and optional extra
         properties used to qualify the lookup.

@@ -91,11 +91,11 @@ export interface MutedRequestsState {
     /**
      * Muted request names
      */
-    mutedRequestNames?: pulumi.Input<pulumi.Input<string>[]>;
+    mutedRequestNames?: pulumi.Input<pulumi.Input<string>[] | undefined>;
     /**
      * The scope of this settings. If the settings should cover the whole environment, just don't specify any scope.
      */
-    serviceId?: pulumi.Input<string>;
+    serviceId?: pulumi.Input<string | undefined>;
 }
 
 /**
@@ -105,7 +105,7 @@ export interface MutedRequestsArgs {
     /**
      * Muted request names
      */
-    mutedRequestNames?: pulumi.Input<pulumi.Input<string>[]>;
+    mutedRequestNames?: pulumi.Input<pulumi.Input<string>[] | undefined>;
     /**
      * The scope of this settings. If the settings should cover the whole environment, just don't specify any scope.
      */

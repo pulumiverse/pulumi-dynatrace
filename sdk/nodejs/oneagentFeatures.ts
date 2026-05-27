@@ -133,27 +133,27 @@ export interface OneagentFeaturesState {
     /**
      * Used internally by the terraform provider. Do not populate
      */
-    _restore_?: pulumi.Input<string>;
+    _restore_?: pulumi.Input<string | undefined>;
     /**
      * This setting is enabled (`true`) or disabled (`false`)
      */
-    enabled?: pulumi.Input<boolean>;
+    enabled?: pulumi.Input<boolean | undefined>;
     /**
      * Activate this feature also in OneAgents only fulfilling the minimum Opt-In version
      */
-    forcible?: pulumi.Input<boolean>;
+    forcible?: pulumi.Input<boolean | undefined>;
     /**
      * Instrumentation enabled (change needs a process restart)
      */
-    instrumentation?: pulumi.Input<boolean>;
+    instrumentation?: pulumi.Input<boolean | undefined>;
     /**
      * Feature
      */
-    key?: pulumi.Input<string>;
+    key?: pulumi.Input<string | undefined>;
     /**
      * The scope of this setting (PROCESS*GROUP*INSTANCE, PROCESS_GROUP). Omit this property if you want to cover the whole environment.
      */
-    scope?: pulumi.Input<string>;
+    scope?: pulumi.Input<string | undefined>;
 }
 
 /**
@@ -167,11 +167,11 @@ export interface OneagentFeaturesArgs {
     /**
      * Activate this feature also in OneAgents only fulfilling the minimum Opt-In version
      */
-    forcible?: pulumi.Input<boolean>;
+    forcible?: pulumi.Input<boolean | undefined>;
     /**
      * Instrumentation enabled (change needs a process restart)
      */
-    instrumentation?: pulumi.Input<boolean>;
+    instrumentation?: pulumi.Input<boolean | undefined>;
     /**
      * Feature
      */
@@ -179,5 +179,5 @@ export interface OneagentFeaturesArgs {
     /**
      * The scope of this setting (PROCESS*GROUP*INSTANCE, PROCESS_GROUP). Omit this property if you want to cover the whole environment.
      */
-    scope?: pulumi.Input<string>;
+    scope?: pulumi.Input<string | undefined>;
 }

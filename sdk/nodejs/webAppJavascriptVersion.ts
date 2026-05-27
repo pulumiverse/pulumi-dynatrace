@@ -82,7 +82,7 @@ export interface WebAppJavascriptVersionState {
     /**
      * Choose custom version
      */
-    customJavascriptVersion?: pulumi.Input<string>;
+    customJavascriptVersion?: pulumi.Input<string | undefined>;
 }
 
 /**
@@ -92,5 +92,5 @@ export interface WebAppJavascriptVersionArgs {
     /**
      * Choose custom version
      */
-    customJavascriptVersion?: pulumi.Input<string>;
+    customJavascriptVersion?: pulumi.Input<string | undefined>;
 }

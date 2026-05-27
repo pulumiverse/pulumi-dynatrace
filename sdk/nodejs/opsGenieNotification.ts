@@ -143,21 +143,21 @@ export interface OpsGenieNotificationState {
     /**
      * This setting is enabled (`true`) or disabled (`false`)
      */
-    active?: pulumi.Input<boolean>;
+    active?: pulumi.Input<boolean | undefined>;
     /**
      * The API key to access OpsGenie.
      *
      * Go to OpsGenie-Integrations and create a new Dynatrace integration. Copy the newly created API key.
      */
-    apiKey?: pulumi.Input<string>;
+    apiKey?: pulumi.Input<string | undefined>;
     /**
      * The region domain of the OpsGenie.
      */
-    domain?: pulumi.Input<string>;
+    domain?: pulumi.Input<string | undefined>;
     /**
      * The ID of these settings when referred to from resources requiring the REST API V1 keys
      */
-    legacyId?: pulumi.Input<string>;
+    legacyId?: pulumi.Input<string | undefined>;
     /**
      * The content of the message. Type '{' for placeholder suggestions.. #### Available placeholders
      * **{ProblemID}**: Display number of the reported problem.
@@ -170,15 +170,15 @@ export interface OpsGenieNotificationState {
      *
      * **{ImpactedEntityNames}**: The entity impacted by the problem (or multiple impacted entities).
      */
-    message?: pulumi.Input<string>;
+    message?: pulumi.Input<string | undefined>;
     /**
      * The name of the notification configuration
      */
-    name?: pulumi.Input<string>;
+    name?: pulumi.Input<string | undefined>;
     /**
      * The ID of the associated alerting profile
      */
-    profile?: pulumi.Input<string>;
+    profile?: pulumi.Input<string | undefined>;
 }
 
 /**
@@ -194,7 +194,7 @@ export interface OpsGenieNotificationArgs {
      *
      * Go to OpsGenie-Integrations and create a new Dynatrace integration. Copy the newly created API key.
      */
-    apiKey?: pulumi.Input<string>;
+    apiKey?: pulumi.Input<string | undefined>;
     /**
      * The region domain of the OpsGenie.
      */
@@ -202,7 +202,7 @@ export interface OpsGenieNotificationArgs {
     /**
      * The ID of these settings when referred to from resources requiring the REST API V1 keys
      */
-    legacyId?: pulumi.Input<string>;
+    legacyId?: pulumi.Input<string | undefined>;
     /**
      * The content of the message. Type '{' for placeholder suggestions.. #### Available placeholders
      * **{ProblemID}**: Display number of the reported problem.
@@ -219,7 +219,7 @@ export interface OpsGenieNotificationArgs {
     /**
      * The name of the notification configuration
      */
-    name?: pulumi.Input<string>;
+    name?: pulumi.Input<string | undefined>;
     /**
      * The ID of the associated alerting profile
      */

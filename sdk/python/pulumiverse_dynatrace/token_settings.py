@@ -60,8 +60,8 @@ class TokenSettingsArgs:
 @pulumi.input_type
 class _TokenSettingsState:
     def __init__(__self__, *,
-                 new_token_format: Optional[pulumi.Input[_builtins.bool]] = None,
-                 personal_tokens: Optional[pulumi.Input[_builtins.bool]] = None):
+                 new_token_format: pulumi.Input[Optional[_builtins.bool]] = None,
+                 personal_tokens: pulumi.Input[Optional[_builtins.bool]] = None):
         """
         Input properties used for looking up and filtering TokenSettings resources.
 
@@ -76,19 +76,19 @@ class _TokenSettingsState:
 
     @_builtins.property
     @pulumi.getter(name="newTokenFormat")
-    def new_token_format(self) -> Optional[pulumi.Input[_builtins.bool]]:
+    def new_token_format(self) -> pulumi.Input[Optional[_builtins.bool]]:
         """
         Check out this [blog post](http://www.dynatrace.com/blog/further-increased-security-of-your-api-tokens-by-automating-token-protection/) to find out more about the new Dynatrace API token format.
         """
         return pulumi.get(self, "new_token_format")
 
     @new_token_format.setter
-    def new_token_format(self, value: Optional[pulumi.Input[_builtins.bool]]):
+    def new_token_format(self, value: pulumi.Input[Optional[_builtins.bool]]):
         pulumi.set(self, "new_token_format", value)
 
     @_builtins.property
     @pulumi.getter(name="personalTokens")
-    def personal_tokens(self) -> Optional[pulumi.Input[_builtins.bool]]:
+    def personal_tokens(self) -> pulumi.Input[Optional[_builtins.bool]]:
         """
         Allow users of this environment to generate personal access tokens based on user permissions.
         Note that existing personal access tokens will become unusable while this setting is disabled.
@@ -96,7 +96,7 @@ class _TokenSettingsState:
         return pulumi.get(self, "personal_tokens")
 
     @personal_tokens.setter
-    def personal_tokens(self, value: Optional[pulumi.Input[_builtins.bool]]):
+    def personal_tokens(self, value: pulumi.Input[Optional[_builtins.bool]]):
         pulumi.set(self, "personal_tokens", value)
 
 
@@ -106,8 +106,8 @@ class TokenSettings(pulumi.CustomResource):
     def __init__(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 new_token_format: Optional[pulumi.Input[_builtins.bool]] = None,
-                 personal_tokens: Optional[pulumi.Input[_builtins.bool]] = None,
+                 new_token_format: pulumi.Input[Optional[_builtins.bool]] = None,
+                 personal_tokens: pulumi.Input[Optional[_builtins.bool]] = None,
                  __props__=None):
         """
         > This resource requires the API token scopes **Read settings** (`settings.read`) and **Write settings** (`settings.write`)
@@ -168,8 +168,8 @@ class TokenSettings(pulumi.CustomResource):
     def _internal_init(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 new_token_format: Optional[pulumi.Input[_builtins.bool]] = None,
-                 personal_tokens: Optional[pulumi.Input[_builtins.bool]] = None,
+                 new_token_format: pulumi.Input[Optional[_builtins.bool]] = None,
+                 personal_tokens: pulumi.Input[Optional[_builtins.bool]] = None,
                  __props__=None):
         opts = pulumi.ResourceOptions.merge(_utilities.get_resource_opts_defaults(), opts)
         if not isinstance(opts, pulumi.ResourceOptions):
@@ -195,8 +195,8 @@ class TokenSettings(pulumi.CustomResource):
     def get(resource_name: str,
             id: pulumi.Input[str],
             opts: Optional[pulumi.ResourceOptions] = None,
-            new_token_format: Optional[pulumi.Input[_builtins.bool]] = None,
-            personal_tokens: Optional[pulumi.Input[_builtins.bool]] = None) -> 'TokenSettings':
+            new_token_format: pulumi.Input[Optional[_builtins.bool]] = None,
+            personal_tokens: pulumi.Input[Optional[_builtins.bool]] = None) -> 'TokenSettings':
         """
         Get an existing TokenSettings resource's state with the given name, id, and optional extra
         properties used to qualify the lookup.

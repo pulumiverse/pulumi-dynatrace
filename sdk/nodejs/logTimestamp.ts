@@ -156,47 +156,47 @@ export interface LogTimestampState {
     /**
      * Name
      */
-    configItemTitle?: pulumi.Input<string>;
+    configItemTitle?: pulumi.Input<string | undefined>;
     /**
      * Defines the number of characters in every log line (starting from the first character in the line) where the timestamp is searched.
      */
-    dateSearchLimit?: pulumi.Input<number>;
+    dateSearchLimit?: pulumi.Input<number | undefined>;
     /**
      * Date-time pattern
      */
-    dateTimePattern?: pulumi.Input<string>;
+    dateTimePattern?: pulumi.Input<string | undefined>;
     /**
      * This setting is enabled (`true`) or disabled (`false`)
      */
-    enabled?: pulumi.Input<boolean>;
+    enabled?: pulumi.Input<boolean | undefined>;
     /**
      * Optional field. Enter a fragment of the line text that starts the entry. No support for wildcards - the text is treated literally.
      */
-    entryBoundary?: pulumi.Input<inputs.LogTimestampEntryBoundary>;
+    entryBoundary?: pulumi.Input<inputs.LogTimestampEntryBoundary | undefined>;
     /**
      * Because this resource allows for ordering you may specify the ID of the resource instance that comes before this instance regarding order. If not specified when creating the setting will be added to the end of the list. If not specified during update the order will remain untouched
      */
-    insertAfter?: pulumi.Input<string>;
+    insertAfter?: pulumi.Input<string | undefined>;
     /**
      * Detect JSON format
      */
-    jsonConfiguration?: pulumi.Input<inputs.LogTimestampJsonConfiguration>;
+    jsonConfiguration?: pulumi.Input<inputs.LogTimestampJsonConfiguration | undefined>;
     /**
      * no documentation available
      */
-    matchers?: pulumi.Input<inputs.LogTimestampMatchers>;
+    matchers?: pulumi.Input<inputs.LogTimestampMatchers | undefined>;
     /**
      * The scope of this setting (HOST, KUBERNETES*CLUSTER, HOST*GROUP). Omit this property if you want to cover the whole environment.
      */
-    scope?: pulumi.Input<string>;
+    scope?: pulumi.Input<string | undefined>;
     /**
      * Don't parse timestamps in lines starting with white character
      */
-    skipIndentedLines?: pulumi.Input<boolean>;
+    skipIndentedLines?: pulumi.Input<boolean | undefined>;
     /**
      * Timezone
      */
-    timezone?: pulumi.Input<string>;
+    timezone?: pulumi.Input<string | undefined>;
 }
 
 /**
@@ -210,7 +210,7 @@ export interface LogTimestampArgs {
     /**
      * Defines the number of characters in every log line (starting from the first character in the line) where the timestamp is searched.
      */
-    dateSearchLimit?: pulumi.Input<number>;
+    dateSearchLimit?: pulumi.Input<number | undefined>;
     /**
      * Date-time pattern
      */
@@ -222,27 +222,27 @@ export interface LogTimestampArgs {
     /**
      * Optional field. Enter a fragment of the line text that starts the entry. No support for wildcards - the text is treated literally.
      */
-    entryBoundary?: pulumi.Input<inputs.LogTimestampEntryBoundary>;
+    entryBoundary?: pulumi.Input<inputs.LogTimestampEntryBoundary | undefined>;
     /**
      * Because this resource allows for ordering you may specify the ID of the resource instance that comes before this instance regarding order. If not specified when creating the setting will be added to the end of the list. If not specified during update the order will remain untouched
      */
-    insertAfter?: pulumi.Input<string>;
+    insertAfter?: pulumi.Input<string | undefined>;
     /**
      * Detect JSON format
      */
-    jsonConfiguration?: pulumi.Input<inputs.LogTimestampJsonConfiguration>;
+    jsonConfiguration?: pulumi.Input<inputs.LogTimestampJsonConfiguration | undefined>;
     /**
      * no documentation available
      */
-    matchers?: pulumi.Input<inputs.LogTimestampMatchers>;
+    matchers?: pulumi.Input<inputs.LogTimestampMatchers | undefined>;
     /**
      * The scope of this setting (HOST, KUBERNETES*CLUSTER, HOST*GROUP). Omit this property if you want to cover the whole environment.
      */
-    scope?: pulumi.Input<string>;
+    scope?: pulumi.Input<string | undefined>;
     /**
      * Don't parse timestamps in lines starting with white character
      */
-    skipIndentedLines?: pulumi.Input<boolean>;
+    skipIndentedLines?: pulumi.Input<boolean | undefined>;
     /**
      * Timezone
      */

@@ -85,7 +85,7 @@ export interface AttributesPreferencesState {
     /**
      * Possible Values: `ALLOW_ALL_ATTRIBUTES`, `BLOCK_ALL_ATTRIBUTES`
      */
-    persistenceMode?: pulumi.Input<string>;
+    persistenceMode?: pulumi.Input<string | undefined>;
 }
 
 /**

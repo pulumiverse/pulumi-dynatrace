@@ -90,12 +90,12 @@ export interface GetSyntheticLocationOutputArgs {
     /**
      * The cloud provider where the location is hosted.
      */
-    cloudPlatform?: pulumi.Input<string>;
-    entityId?: pulumi.Input<string>;
-    geoLocationId?: pulumi.Input<string>;
-    ips?: pulumi.Input<pulumi.Input<string>[]>;
-    name?: pulumi.Input<string>;
-    stage?: pulumi.Input<string>;
-    status?: pulumi.Input<string>;
-    type?: pulumi.Input<string>;
+    cloudPlatform?: pulumi.Input<string | undefined>;
+    entityId?: pulumi.Input<string | undefined>;
+    geoLocationId?: pulumi.Input<string | undefined>;
+    ips?: pulumi.Input<pulumi.Input<string>[] | undefined>;
+    name?: pulumi.Input<string | undefined>;
+    stage?: pulumi.Input<string | undefined>;
+    status?: pulumi.Input<string | undefined>;
+    type?: pulumi.Input<string | undefined>;
 }

@@ -168,59 +168,59 @@ export interface ManagedPreferencesState {
     /**
      * Default: `false`
      */
-    certificateManagementEnabled?: pulumi.Input<boolean>;
+    certificateManagementEnabled?: pulumi.Input<boolean | undefined>;
     /**
      * Default: `true`
      */
-    certificateManagementPossible?: pulumi.Input<boolean>;
+    certificateManagementPossible?: pulumi.Input<boolean | undefined>;
     /**
      * If true, each new user will get an invitation to set up a Dynatrace user account to access Dynatrace support resources user upon first login. Default: `false`
      */
-    communityCreateUser?: pulumi.Input<boolean>;
+    communityCreateUser?: pulumi.Input<boolean | undefined>;
     /**
      * If true, results from Documentation are included in platform search. Default: `false`
      */
-    communityExternalSearch?: pulumi.Input<boolean>;
+    communityExternalSearch?: pulumi.Input<boolean | undefined>;
     /**
      * If true, live, in-product assistance with our Product Experts is enabled. Default: `false`
      */
-    helpChatEnabled?: pulumi.Input<boolean>;
+    helpChatEnabled?: pulumi.Input<boolean | undefined>;
     /**
      * If true, audited, read-only remote access to your Dynatrace configuration settings is allowed. Default: `false`
      */
-    readOnlyRemoteAccessAllowed?: pulumi.Input<boolean>;
+    readOnlyRemoteAccessAllowed?: pulumi.Input<boolean | undefined>;
     /**
      * If true, audited access to your Dynatrace cluster is allowed by approved Dynatrace employees otherwise by privileged Dynatrace employees. Default: `false`
      */
-    remoteAccessOnDemandOnly?: pulumi.Input<boolean>;
+    remoteAccessOnDemandOnly?: pulumi.Input<boolean | undefined>;
     /**
      * If true, Dynatrace OneAgent monitors Dynatrace. Default: `true`
      */
-    ruxitMonitorsRuxit?: pulumi.Input<boolean>;
+    ruxitMonitorsRuxit?: pulumi.Input<boolean | undefined>;
     /**
      * If true, audited remote-access to your Dynatrace configuration is allowed settings. Default: `true`
      */
-    supportAllowRemoteAccess?: pulumi.Input<boolean>;
+    supportAllowRemoteAccess?: pulumi.Input<boolean | undefined>;
     /**
      * If true, usage and billing information will be reported.
      */
-    supportSendBilling?: pulumi.Input<boolean>;
+    supportSendBilling?: pulumi.Input<boolean | undefined>;
     /**
      * If true, Dynatrace cluster health will be reported.
      */
-    supportSendClusterHealth?: pulumi.Input<boolean>;
+    supportSendClusterHealth?: pulumi.Input<boolean | undefined>;
     /**
      * If true, Dynatrace cluster health and OneAgent events will be reported. Default: `true`
      */
-    supportSendEvents?: pulumi.Input<boolean>;
+    supportSendEvents?: pulumi.Input<boolean | undefined>;
     /**
      * If true, usage and billing information will NOT be reported.
      */
-    suppressNonBillingRelevantData?: pulumi.Input<boolean>;
+    suppressNonBillingRelevantData?: pulumi.Input<boolean | undefined>;
     /**
      * Default: `false`
      */
-    telemetrySharing?: pulumi.Input<boolean>;
+    telemetrySharing?: pulumi.Input<boolean | undefined>;
 }
 
 /**
@@ -230,31 +230,31 @@ export interface ManagedPreferencesArgs {
     /**
      * Default: `false`
      */
-    certificateManagementEnabled?: pulumi.Input<boolean>;
+    certificateManagementEnabled?: pulumi.Input<boolean | undefined>;
     /**
      * Default: `true`
      */
-    certificateManagementPossible?: pulumi.Input<boolean>;
+    certificateManagementPossible?: pulumi.Input<boolean | undefined>;
     /**
      * If true, each new user will get an invitation to set up a Dynatrace user account to access Dynatrace support resources user upon first login. Default: `false`
      */
-    communityCreateUser?: pulumi.Input<boolean>;
+    communityCreateUser?: pulumi.Input<boolean | undefined>;
     /**
      * If true, results from Documentation are included in platform search. Default: `false`
      */
-    communityExternalSearch?: pulumi.Input<boolean>;
+    communityExternalSearch?: pulumi.Input<boolean | undefined>;
     /**
      * If true, live, in-product assistance with our Product Experts is enabled. Default: `false`
      */
-    helpChatEnabled?: pulumi.Input<boolean>;
+    helpChatEnabled?: pulumi.Input<boolean | undefined>;
     /**
      * If true, audited, read-only remote access to your Dynatrace configuration settings is allowed. Default: `false`
      */
-    readOnlyRemoteAccessAllowed?: pulumi.Input<boolean>;
+    readOnlyRemoteAccessAllowed?: pulumi.Input<boolean | undefined>;
     /**
      * If true, audited access to your Dynatrace cluster is allowed by approved Dynatrace employees otherwise by privileged Dynatrace employees. Default: `false`
      */
-    remoteAccessOnDemandOnly?: pulumi.Input<boolean>;
+    remoteAccessOnDemandOnly?: pulumi.Input<boolean | undefined>;
     /**
      * If true, Dynatrace OneAgent monitors Dynatrace. Default: `true`
      */
@@ -262,7 +262,7 @@ export interface ManagedPreferencesArgs {
     /**
      * If true, audited remote-access to your Dynatrace configuration is allowed settings. Default: `true`
      */
-    supportAllowRemoteAccess?: pulumi.Input<boolean>;
+    supportAllowRemoteAccess?: pulumi.Input<boolean | undefined>;
     /**
      * If true, usage and billing information will be reported.
      */
@@ -274,7 +274,7 @@ export interface ManagedPreferencesArgs {
     /**
      * If true, Dynatrace cluster health and OneAgent events will be reported. Default: `true`
      */
-    supportSendEvents?: pulumi.Input<boolean>;
+    supportSendEvents?: pulumi.Input<boolean | undefined>;
     /**
      * If true, usage and billing information will NOT be reported.
      */
@@ -282,5 +282,5 @@ export interface ManagedPreferencesArgs {
     /**
      * Default: `false`
      */
-    telemetrySharing?: pulumi.Input<boolean>;
+    telemetrySharing?: pulumi.Input<boolean | undefined>;
 }

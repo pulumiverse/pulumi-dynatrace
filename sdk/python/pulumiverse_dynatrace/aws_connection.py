@@ -21,9 +21,9 @@ __all__ = ['AwsConnectionArgs', 'AwsConnection']
 @pulumi.input_type
 class AwsConnectionArgs:
     def __init__(__self__, *,
-                 name: Optional[pulumi.Input[_builtins.str]] = None,
-                 role_based_auth: Optional[pulumi.Input['AwsConnectionRoleBasedAuthArgs']] = None,
-                 web_identity: Optional[pulumi.Input['AwsConnectionWebIdentityArgs']] = None):
+                 name: pulumi.Input[Optional[_builtins.str]] = None,
+                 role_based_auth: pulumi.Input[Optional['AwsConnectionRoleBasedAuthArgs']] = None,
+                 web_identity: pulumi.Input[Optional['AwsConnectionWebIdentityArgs']] = None):
         """
         The set of arguments for constructing a AwsConnection resource.
 
@@ -40,47 +40,47 @@ class AwsConnectionArgs:
 
     @_builtins.property
     @pulumi.getter
-    def name(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def name(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Name
         """
         return pulumi.get(self, "name")
 
     @name.setter
-    def name(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def name(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "name", value)
 
     @_builtins.property
     @pulumi.getter(name="roleBasedAuth")
-    def role_based_auth(self) -> Optional[pulumi.Input['AwsConnectionRoleBasedAuthArgs']]:
+    def role_based_auth(self) -> pulumi.Input[Optional['AwsConnectionRoleBasedAuthArgs']]:
         """
         Configuration required for authenticating via AWS Role Based Authentication
         """
         return pulumi.get(self, "role_based_auth")
 
     @role_based_auth.setter
-    def role_based_auth(self, value: Optional[pulumi.Input['AwsConnectionRoleBasedAuthArgs']]):
+    def role_based_auth(self, value: pulumi.Input[Optional['AwsConnectionRoleBasedAuthArgs']]):
         pulumi.set(self, "role_based_auth", value)
 
     @_builtins.property
     @pulumi.getter(name="webIdentity")
-    def web_identity(self) -> Optional[pulumi.Input['AwsConnectionWebIdentityArgs']]:
+    def web_identity(self) -> pulumi.Input[Optional['AwsConnectionWebIdentityArgs']]:
         """
         Configuration required for authenticating via AWS Web Identity
         """
         return pulumi.get(self, "web_identity")
 
     @web_identity.setter
-    def web_identity(self, value: Optional[pulumi.Input['AwsConnectionWebIdentityArgs']]):
+    def web_identity(self, value: pulumi.Input[Optional['AwsConnectionWebIdentityArgs']]):
         pulumi.set(self, "web_identity", value)
 
 
 @pulumi.input_type
 class _AwsConnectionState:
     def __init__(__self__, *,
-                 name: Optional[pulumi.Input[_builtins.str]] = None,
-                 role_based_auth: Optional[pulumi.Input['AwsConnectionRoleBasedAuthArgs']] = None,
-                 web_identity: Optional[pulumi.Input['AwsConnectionWebIdentityArgs']] = None):
+                 name: pulumi.Input[Optional[_builtins.str]] = None,
+                 role_based_auth: pulumi.Input[Optional['AwsConnectionRoleBasedAuthArgs']] = None,
+                 web_identity: pulumi.Input[Optional['AwsConnectionWebIdentityArgs']] = None):
         """
         Input properties used for looking up and filtering AwsConnection resources.
 
@@ -97,38 +97,38 @@ class _AwsConnectionState:
 
     @_builtins.property
     @pulumi.getter
-    def name(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def name(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Name
         """
         return pulumi.get(self, "name")
 
     @name.setter
-    def name(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def name(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "name", value)
 
     @_builtins.property
     @pulumi.getter(name="roleBasedAuth")
-    def role_based_auth(self) -> Optional[pulumi.Input['AwsConnectionRoleBasedAuthArgs']]:
+    def role_based_auth(self) -> pulumi.Input[Optional['AwsConnectionRoleBasedAuthArgs']]:
         """
         Configuration required for authenticating via AWS Role Based Authentication
         """
         return pulumi.get(self, "role_based_auth")
 
     @role_based_auth.setter
-    def role_based_auth(self, value: Optional[pulumi.Input['AwsConnectionRoleBasedAuthArgs']]):
+    def role_based_auth(self, value: pulumi.Input[Optional['AwsConnectionRoleBasedAuthArgs']]):
         pulumi.set(self, "role_based_auth", value)
 
     @_builtins.property
     @pulumi.getter(name="webIdentity")
-    def web_identity(self) -> Optional[pulumi.Input['AwsConnectionWebIdentityArgs']]:
+    def web_identity(self) -> pulumi.Input[Optional['AwsConnectionWebIdentityArgs']]:
         """
         Configuration required for authenticating via AWS Web Identity
         """
         return pulumi.get(self, "web_identity")
 
     @web_identity.setter
-    def web_identity(self, value: Optional[pulumi.Input['AwsConnectionWebIdentityArgs']]):
+    def web_identity(self, value: pulumi.Input[Optional['AwsConnectionWebIdentityArgs']]):
         pulumi.set(self, "web_identity", value)
 
 
@@ -138,9 +138,9 @@ class AwsConnection(pulumi.CustomResource):
     def __init__(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 name: Optional[pulumi.Input[_builtins.str]] = None,
-                 role_based_auth: Optional[pulumi.Input[Union['AwsConnectionRoleBasedAuthArgs', 'AwsConnectionRoleBasedAuthArgsDict']]] = None,
-                 web_identity: Optional[pulumi.Input[Union['AwsConnectionWebIdentityArgs', 'AwsConnectionWebIdentityArgsDict']]] = None,
+                 name: pulumi.Input[Optional[_builtins.str]] = None,
+                 role_based_auth: pulumi.Input[Optional[Union['AwsConnectionRoleBasedAuthArgs', 'AwsConnectionRoleBasedAuthArgsDict']]] = None,
+                 web_identity: pulumi.Input[Optional[Union['AwsConnectionWebIdentityArgs', 'AwsConnectionWebIdentityArgsDict']]] = None,
                  __props__=None):
         """
         > This resource requires the API token scopes **Read settings** (`settings.read`) and **Write settings** (`settings.write`)
@@ -337,9 +337,9 @@ class AwsConnection(pulumi.CustomResource):
     def _internal_init(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 name: Optional[pulumi.Input[_builtins.str]] = None,
-                 role_based_auth: Optional[pulumi.Input[Union['AwsConnectionRoleBasedAuthArgs', 'AwsConnectionRoleBasedAuthArgsDict']]] = None,
-                 web_identity: Optional[pulumi.Input[Union['AwsConnectionWebIdentityArgs', 'AwsConnectionWebIdentityArgsDict']]] = None,
+                 name: pulumi.Input[Optional[_builtins.str]] = None,
+                 role_based_auth: pulumi.Input[Optional[Union['AwsConnectionRoleBasedAuthArgs', 'AwsConnectionRoleBasedAuthArgsDict']]] = None,
+                 web_identity: pulumi.Input[Optional[Union['AwsConnectionWebIdentityArgs', 'AwsConnectionWebIdentityArgsDict']]] = None,
                  __props__=None):
         opts = pulumi.ResourceOptions.merge(_utilities.get_resource_opts_defaults(), opts)
         if not isinstance(opts, pulumi.ResourceOptions):
@@ -362,9 +362,9 @@ class AwsConnection(pulumi.CustomResource):
     def get(resource_name: str,
             id: pulumi.Input[str],
             opts: Optional[pulumi.ResourceOptions] = None,
-            name: Optional[pulumi.Input[_builtins.str]] = None,
-            role_based_auth: Optional[pulumi.Input[Union['AwsConnectionRoleBasedAuthArgs', 'AwsConnectionRoleBasedAuthArgsDict']]] = None,
-            web_identity: Optional[pulumi.Input[Union['AwsConnectionWebIdentityArgs', 'AwsConnectionWebIdentityArgsDict']]] = None) -> 'AwsConnection':
+            name: pulumi.Input[Optional[_builtins.str]] = None,
+            role_based_auth: pulumi.Input[Optional[Union['AwsConnectionRoleBasedAuthArgs', 'AwsConnectionRoleBasedAuthArgsDict']]] = None,
+            web_identity: pulumi.Input[Optional[Union['AwsConnectionWebIdentityArgs', 'AwsConnectionWebIdentityArgsDict']]] = None) -> 'AwsConnection':
         """
         Get an existing AwsConnection resource's state with the given name, id, and optional extra
         properties used to qualify the lookup.

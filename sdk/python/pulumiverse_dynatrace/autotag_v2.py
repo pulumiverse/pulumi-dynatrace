@@ -21,10 +21,10 @@ __all__ = ['AutotagV2Args', 'AutotagV2']
 @pulumi.input_type
 class AutotagV2Args:
     def __init__(__self__, *,
-                 description: Optional[pulumi.Input[_builtins.str]] = None,
-                 name: Optional[pulumi.Input[_builtins.str]] = None,
-                 rules: Optional[pulumi.Input['AutotagV2RulesArgs']] = None,
-                 rules_maintained_externally: Optional[pulumi.Input[_builtins.bool]] = None):
+                 description: pulumi.Input[Optional[_builtins.str]] = None,
+                 name: pulumi.Input[Optional[_builtins.str]] = None,
+                 rules: pulumi.Input[Optional['AutotagV2RulesArgs']] = None,
+                 rules_maintained_externally: pulumi.Input[Optional[_builtins.bool]] = None):
         """
         The set of arguments for constructing a AutotagV2 resource.
 
@@ -44,60 +44,60 @@ class AutotagV2Args:
 
     @_builtins.property
     @pulumi.getter
-    def description(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def description(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Description
         """
         return pulumi.get(self, "description")
 
     @description.setter
-    def description(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def description(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "description", value)
 
     @_builtins.property
     @pulumi.getter
-    def name(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def name(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Tag name
         """
         return pulumi.get(self, "name")
 
     @name.setter
-    def name(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def name(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "name", value)
 
     @_builtins.property
     @pulumi.getter
-    def rules(self) -> Optional[pulumi.Input['AutotagV2RulesArgs']]:
+    def rules(self) -> pulumi.Input[Optional['AutotagV2RulesArgs']]:
         """
         Rules
         """
         return pulumi.get(self, "rules")
 
     @rules.setter
-    def rules(self, value: Optional[pulumi.Input['AutotagV2RulesArgs']]):
+    def rules(self, value: pulumi.Input[Optional['AutotagV2RulesArgs']]):
         pulumi.set(self, "rules", value)
 
     @_builtins.property
     @pulumi.getter(name="rulesMaintainedExternally")
-    def rules_maintained_externally(self) -> Optional[pulumi.Input[_builtins.bool]]:
+    def rules_maintained_externally(self) -> pulumi.Input[Optional[_builtins.bool]]:
         """
         If `true` the specified rules are ignored with the assumption that they're maintained externally or via `AutotagRules`
         """
         return pulumi.get(self, "rules_maintained_externally")
 
     @rules_maintained_externally.setter
-    def rules_maintained_externally(self, value: Optional[pulumi.Input[_builtins.bool]]):
+    def rules_maintained_externally(self, value: pulumi.Input[Optional[_builtins.bool]]):
         pulumi.set(self, "rules_maintained_externally", value)
 
 
 @pulumi.input_type
 class _AutotagV2State:
     def __init__(__self__, *,
-                 description: Optional[pulumi.Input[_builtins.str]] = None,
-                 name: Optional[pulumi.Input[_builtins.str]] = None,
-                 rules: Optional[pulumi.Input['AutotagV2RulesArgs']] = None,
-                 rules_maintained_externally: Optional[pulumi.Input[_builtins.bool]] = None):
+                 description: pulumi.Input[Optional[_builtins.str]] = None,
+                 name: pulumi.Input[Optional[_builtins.str]] = None,
+                 rules: pulumi.Input[Optional['AutotagV2RulesArgs']] = None,
+                 rules_maintained_externally: pulumi.Input[Optional[_builtins.bool]] = None):
         """
         Input properties used for looking up and filtering AutotagV2 resources.
 
@@ -117,50 +117,50 @@ class _AutotagV2State:
 
     @_builtins.property
     @pulumi.getter
-    def description(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def description(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Description
         """
         return pulumi.get(self, "description")
 
     @description.setter
-    def description(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def description(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "description", value)
 
     @_builtins.property
     @pulumi.getter
-    def name(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def name(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Tag name
         """
         return pulumi.get(self, "name")
 
     @name.setter
-    def name(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def name(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "name", value)
 
     @_builtins.property
     @pulumi.getter
-    def rules(self) -> Optional[pulumi.Input['AutotagV2RulesArgs']]:
+    def rules(self) -> pulumi.Input[Optional['AutotagV2RulesArgs']]:
         """
         Rules
         """
         return pulumi.get(self, "rules")
 
     @rules.setter
-    def rules(self, value: Optional[pulumi.Input['AutotagV2RulesArgs']]):
+    def rules(self, value: pulumi.Input[Optional['AutotagV2RulesArgs']]):
         pulumi.set(self, "rules", value)
 
     @_builtins.property
     @pulumi.getter(name="rulesMaintainedExternally")
-    def rules_maintained_externally(self) -> Optional[pulumi.Input[_builtins.bool]]:
+    def rules_maintained_externally(self) -> pulumi.Input[Optional[_builtins.bool]]:
         """
         If `true` the specified rules are ignored with the assumption that they're maintained externally or via `AutotagRules`
         """
         return pulumi.get(self, "rules_maintained_externally")
 
     @rules_maintained_externally.setter
-    def rules_maintained_externally(self, value: Optional[pulumi.Input[_builtins.bool]]):
+    def rules_maintained_externally(self, value: pulumi.Input[Optional[_builtins.bool]]):
         pulumi.set(self, "rules_maintained_externally", value)
 
 
@@ -170,10 +170,10 @@ class AutotagV2(pulumi.CustomResource):
     def __init__(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 description: Optional[pulumi.Input[_builtins.str]] = None,
-                 name: Optional[pulumi.Input[_builtins.str]] = None,
-                 rules: Optional[pulumi.Input[Union['AutotagV2RulesArgs', 'AutotagV2RulesArgsDict']]] = None,
-                 rules_maintained_externally: Optional[pulumi.Input[_builtins.bool]] = None,
+                 description: pulumi.Input[Optional[_builtins.str]] = None,
+                 name: pulumi.Input[Optional[_builtins.str]] = None,
+                 rules: pulumi.Input[Optional[Union['AutotagV2RulesArgs', 'AutotagV2RulesArgsDict']]] = None,
+                 rules_maintained_externally: pulumi.Input[Optional[_builtins.bool]] = None,
                  __props__=None):
         """
         > This resource requires the API token scopes **Read settings** (`settings.read`) and **Write settings** (`settings.write`)
@@ -275,10 +275,10 @@ class AutotagV2(pulumi.CustomResource):
     def _internal_init(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 description: Optional[pulumi.Input[_builtins.str]] = None,
-                 name: Optional[pulumi.Input[_builtins.str]] = None,
-                 rules: Optional[pulumi.Input[Union['AutotagV2RulesArgs', 'AutotagV2RulesArgsDict']]] = None,
-                 rules_maintained_externally: Optional[pulumi.Input[_builtins.bool]] = None,
+                 description: pulumi.Input[Optional[_builtins.str]] = None,
+                 name: pulumi.Input[Optional[_builtins.str]] = None,
+                 rules: pulumi.Input[Optional[Union['AutotagV2RulesArgs', 'AutotagV2RulesArgsDict']]] = None,
+                 rules_maintained_externally: pulumi.Input[Optional[_builtins.bool]] = None,
                  __props__=None):
         opts = pulumi.ResourceOptions.merge(_utilities.get_resource_opts_defaults(), opts)
         if not isinstance(opts, pulumi.ResourceOptions):
@@ -302,10 +302,10 @@ class AutotagV2(pulumi.CustomResource):
     def get(resource_name: str,
             id: pulumi.Input[str],
             opts: Optional[pulumi.ResourceOptions] = None,
-            description: Optional[pulumi.Input[_builtins.str]] = None,
-            name: Optional[pulumi.Input[_builtins.str]] = None,
-            rules: Optional[pulumi.Input[Union['AutotagV2RulesArgs', 'AutotagV2RulesArgsDict']]] = None,
-            rules_maintained_externally: Optional[pulumi.Input[_builtins.bool]] = None) -> 'AutotagV2':
+            description: pulumi.Input[Optional[_builtins.str]] = None,
+            name: pulumi.Input[Optional[_builtins.str]] = None,
+            rules: pulumi.Input[Optional[Union['AutotagV2RulesArgs', 'AutotagV2RulesArgsDict']]] = None,
+            rules_maintained_externally: pulumi.Input[Optional[_builtins.bool]] = None) -> 'AutotagV2':
         """
         Get an existing AutotagV2 resource's state with the given name, id, and optional extra
         properties used to qualify the lookup.

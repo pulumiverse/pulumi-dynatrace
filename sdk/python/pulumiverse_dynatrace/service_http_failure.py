@@ -23,8 +23,8 @@ class ServiceHttpFailureArgs:
     def __init__(__self__, *,
                  enabled: pulumi.Input[_builtins.bool],
                  service_id: pulumi.Input[_builtins.str],
-                 broken_links: Optional[pulumi.Input['ServiceHttpFailureBrokenLinksArgs']] = None,
-                 http_response_codes: Optional[pulumi.Input['ServiceHttpFailureHttpResponseCodesArgs']] = None):
+                 broken_links: pulumi.Input[Optional['ServiceHttpFailureBrokenLinksArgs']] = None,
+                 http_response_codes: pulumi.Input[Optional['ServiceHttpFailureHttpResponseCodesArgs']] = None):
         """
         The set of arguments for constructing a ServiceHttpFailure resource.
 
@@ -66,36 +66,36 @@ class ServiceHttpFailureArgs:
 
     @_builtins.property
     @pulumi.getter(name="brokenLinks")
-    def broken_links(self) -> Optional[pulumi.Input['ServiceHttpFailureBrokenLinksArgs']]:
+    def broken_links(self) -> pulumi.Input[Optional['ServiceHttpFailureBrokenLinksArgs']]:
         """
         HTTP 404 response codes are thrown when a web server can't find a certain page. 404s are classified as broken links on the client side and therefore aren't considered to be service failures. By enabling this setting, you can have 404s treated as server-side service failures.
         """
         return pulumi.get(self, "broken_links")
 
     @broken_links.setter
-    def broken_links(self, value: Optional[pulumi.Input['ServiceHttpFailureBrokenLinksArgs']]):
+    def broken_links(self, value: pulumi.Input[Optional['ServiceHttpFailureBrokenLinksArgs']]):
         pulumi.set(self, "broken_links", value)
 
     @_builtins.property
     @pulumi.getter(name="httpResponseCodes")
-    def http_response_codes(self) -> Optional[pulumi.Input['ServiceHttpFailureHttpResponseCodesArgs']]:
+    def http_response_codes(self) -> pulumi.Input[Optional['ServiceHttpFailureHttpResponseCodesArgs']]:
         """
         HTTP response codes
         """
         return pulumi.get(self, "http_response_codes")
 
     @http_response_codes.setter
-    def http_response_codes(self, value: Optional[pulumi.Input['ServiceHttpFailureHttpResponseCodesArgs']]):
+    def http_response_codes(self, value: pulumi.Input[Optional['ServiceHttpFailureHttpResponseCodesArgs']]):
         pulumi.set(self, "http_response_codes", value)
 
 
 @pulumi.input_type
 class _ServiceHttpFailureState:
     def __init__(__self__, *,
-                 broken_links: Optional[pulumi.Input['ServiceHttpFailureBrokenLinksArgs']] = None,
-                 enabled: Optional[pulumi.Input[_builtins.bool]] = None,
-                 http_response_codes: Optional[pulumi.Input['ServiceHttpFailureHttpResponseCodesArgs']] = None,
-                 service_id: Optional[pulumi.Input[_builtins.str]] = None):
+                 broken_links: pulumi.Input[Optional['ServiceHttpFailureBrokenLinksArgs']] = None,
+                 enabled: pulumi.Input[Optional[_builtins.bool]] = None,
+                 http_response_codes: pulumi.Input[Optional['ServiceHttpFailureHttpResponseCodesArgs']] = None,
+                 service_id: pulumi.Input[Optional[_builtins.str]] = None):
         """
         Input properties used for looking up and filtering ServiceHttpFailure resources.
 
@@ -115,50 +115,50 @@ class _ServiceHttpFailureState:
 
     @_builtins.property
     @pulumi.getter(name="brokenLinks")
-    def broken_links(self) -> Optional[pulumi.Input['ServiceHttpFailureBrokenLinksArgs']]:
+    def broken_links(self) -> pulumi.Input[Optional['ServiceHttpFailureBrokenLinksArgs']]:
         """
         HTTP 404 response codes are thrown when a web server can't find a certain page. 404s are classified as broken links on the client side and therefore aren't considered to be service failures. By enabling this setting, you can have 404s treated as server-side service failures.
         """
         return pulumi.get(self, "broken_links")
 
     @broken_links.setter
-    def broken_links(self, value: Optional[pulumi.Input['ServiceHttpFailureBrokenLinksArgs']]):
+    def broken_links(self, value: pulumi.Input[Optional['ServiceHttpFailureBrokenLinksArgs']]):
         pulumi.set(self, "broken_links", value)
 
     @_builtins.property
     @pulumi.getter
-    def enabled(self) -> Optional[pulumi.Input[_builtins.bool]]:
+    def enabled(self) -> pulumi.Input[Optional[_builtins.bool]]:
         """
         This setting is enabled (`true`) or disabled (`false`)
         """
         return pulumi.get(self, "enabled")
 
     @enabled.setter
-    def enabled(self, value: Optional[pulumi.Input[_builtins.bool]]):
+    def enabled(self, value: pulumi.Input[Optional[_builtins.bool]]):
         pulumi.set(self, "enabled", value)
 
     @_builtins.property
     @pulumi.getter(name="httpResponseCodes")
-    def http_response_codes(self) -> Optional[pulumi.Input['ServiceHttpFailureHttpResponseCodesArgs']]:
+    def http_response_codes(self) -> pulumi.Input[Optional['ServiceHttpFailureHttpResponseCodesArgs']]:
         """
         HTTP response codes
         """
         return pulumi.get(self, "http_response_codes")
 
     @http_response_codes.setter
-    def http_response_codes(self, value: Optional[pulumi.Input['ServiceHttpFailureHttpResponseCodesArgs']]):
+    def http_response_codes(self, value: pulumi.Input[Optional['ServiceHttpFailureHttpResponseCodesArgs']]):
         pulumi.set(self, "http_response_codes", value)
 
     @_builtins.property
     @pulumi.getter(name="serviceId")
-    def service_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def service_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The scope of this settings. If the settings should cover the whole environment, just don't specify any scope.
         """
         return pulumi.get(self, "service_id")
 
     @service_id.setter
-    def service_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def service_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "service_id", value)
 
 
@@ -168,10 +168,10 @@ class ServiceHttpFailure(pulumi.CustomResource):
     def __init__(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 broken_links: Optional[pulumi.Input[Union['ServiceHttpFailureBrokenLinksArgs', 'ServiceHttpFailureBrokenLinksArgsDict']]] = None,
-                 enabled: Optional[pulumi.Input[_builtins.bool]] = None,
-                 http_response_codes: Optional[pulumi.Input[Union['ServiceHttpFailureHttpResponseCodesArgs', 'ServiceHttpFailureHttpResponseCodesArgsDict']]] = None,
-                 service_id: Optional[pulumi.Input[_builtins.str]] = None,
+                 broken_links: pulumi.Input[Optional[Union['ServiceHttpFailureBrokenLinksArgs', 'ServiceHttpFailureBrokenLinksArgsDict']]] = None,
+                 enabled: pulumi.Input[Optional[_builtins.bool]] = None,
+                 http_response_codes: pulumi.Input[Optional[Union['ServiceHttpFailureHttpResponseCodesArgs', 'ServiceHttpFailureHttpResponseCodesArgsDict']]] = None,
+                 service_id: pulumi.Input[Optional[_builtins.str]] = None,
                  __props__=None):
         """
         > This resource requires the API token scopes **Read settings** (`settings.read`) and **Write settings** (`settings.write`)
@@ -233,10 +233,10 @@ class ServiceHttpFailure(pulumi.CustomResource):
     def _internal_init(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 broken_links: Optional[pulumi.Input[Union['ServiceHttpFailureBrokenLinksArgs', 'ServiceHttpFailureBrokenLinksArgsDict']]] = None,
-                 enabled: Optional[pulumi.Input[_builtins.bool]] = None,
-                 http_response_codes: Optional[pulumi.Input[Union['ServiceHttpFailureHttpResponseCodesArgs', 'ServiceHttpFailureHttpResponseCodesArgsDict']]] = None,
-                 service_id: Optional[pulumi.Input[_builtins.str]] = None,
+                 broken_links: pulumi.Input[Optional[Union['ServiceHttpFailureBrokenLinksArgs', 'ServiceHttpFailureBrokenLinksArgsDict']]] = None,
+                 enabled: pulumi.Input[Optional[_builtins.bool]] = None,
+                 http_response_codes: pulumi.Input[Optional[Union['ServiceHttpFailureHttpResponseCodesArgs', 'ServiceHttpFailureHttpResponseCodesArgsDict']]] = None,
+                 service_id: pulumi.Input[Optional[_builtins.str]] = None,
                  __props__=None):
         opts = pulumi.ResourceOptions.merge(_utilities.get_resource_opts_defaults(), opts)
         if not isinstance(opts, pulumi.ResourceOptions):
@@ -264,10 +264,10 @@ class ServiceHttpFailure(pulumi.CustomResource):
     def get(resource_name: str,
             id: pulumi.Input[str],
             opts: Optional[pulumi.ResourceOptions] = None,
-            broken_links: Optional[pulumi.Input[Union['ServiceHttpFailureBrokenLinksArgs', 'ServiceHttpFailureBrokenLinksArgsDict']]] = None,
-            enabled: Optional[pulumi.Input[_builtins.bool]] = None,
-            http_response_codes: Optional[pulumi.Input[Union['ServiceHttpFailureHttpResponseCodesArgs', 'ServiceHttpFailureHttpResponseCodesArgsDict']]] = None,
-            service_id: Optional[pulumi.Input[_builtins.str]] = None) -> 'ServiceHttpFailure':
+            broken_links: pulumi.Input[Optional[Union['ServiceHttpFailureBrokenLinksArgs', 'ServiceHttpFailureBrokenLinksArgsDict']]] = None,
+            enabled: pulumi.Input[Optional[_builtins.bool]] = None,
+            http_response_codes: pulumi.Input[Optional[Union['ServiceHttpFailureHttpResponseCodesArgs', 'ServiceHttpFailureHttpResponseCodesArgsDict']]] = None,
+            service_id: pulumi.Input[Optional[_builtins.str]] = None) -> 'ServiceHttpFailure':
         """
         Get an existing ServiceHttpFailure resource's state with the given name, id, and optional extra
         properties used to qualify the lookup.

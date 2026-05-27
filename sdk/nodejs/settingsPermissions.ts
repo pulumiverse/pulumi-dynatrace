@@ -162,13 +162,13 @@ export interface SettingsPermissionsState {
     /**
      * Defines the default access level granted to all users in this environment. Allowed values are `read`, `write`, or `none`
      */
-    allUsers?: pulumi.Input<string>;
-    groups?: pulumi.Input<inputs.SettingsPermissionsGroups>;
+    allUsers?: pulumi.Input<string | undefined>;
+    groups?: pulumi.Input<inputs.SettingsPermissionsGroups | undefined>;
     /**
      * The ID of the settings object for which access is to be granted. Here, you can use the `id` attribute of the respective settings object resource
      */
-    settingsObjectId?: pulumi.Input<string>;
-    users?: pulumi.Input<inputs.SettingsPermissionsUsers>;
+    settingsObjectId?: pulumi.Input<string | undefined>;
+    users?: pulumi.Input<inputs.SettingsPermissionsUsers | undefined>;
 }
 
 /**
@@ -178,11 +178,11 @@ export interface SettingsPermissionsArgs {
     /**
      * Defines the default access level granted to all users in this environment. Allowed values are `read`, `write`, or `none`
      */
-    allUsers?: pulumi.Input<string>;
-    groups?: pulumi.Input<inputs.SettingsPermissionsGroups>;
+    allUsers?: pulumi.Input<string | undefined>;
+    groups?: pulumi.Input<inputs.SettingsPermissionsGroups | undefined>;
     /**
      * The ID of the settings object for which access is to be granted. Here, you can use the `id` attribute of the respective settings object resource
      */
     settingsObjectId: pulumi.Input<string>;
-    users?: pulumi.Input<inputs.SettingsPermissionsUsers>;
+    users?: pulumi.Input<inputs.SettingsPermissionsUsers | undefined>;
 }

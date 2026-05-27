@@ -58,8 +58,8 @@ class ExtensionExecutionRemoteArgs:
 @pulumi.input_type
 class _ExtensionExecutionRemoteState:
     def __init__(__self__, *,
-                 performance_profile: Optional[pulumi.Input[_builtins.str]] = None,
-                 scope: Optional[pulumi.Input[_builtins.str]] = None):
+                 performance_profile: pulumi.Input[Optional[_builtins.str]] = None,
+                 scope: pulumi.Input[Optional[_builtins.str]] = None):
         """
         Input properties used for looking up and filtering ExtensionExecutionRemote resources.
 
@@ -73,26 +73,26 @@ class _ExtensionExecutionRemoteState:
 
     @_builtins.property
     @pulumi.getter(name="performanceProfile")
-    def performance_profile(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def performance_profile(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Select performance profile for Extension Execution Controller [Documentation](https://www.dynatrace.com/support/help/shortlink/extensions-concepts#resource-consumption)
         """
         return pulumi.get(self, "performance_profile")
 
     @performance_profile.setter
-    def performance_profile(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def performance_profile(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "performance_profile", value)
 
     @_builtins.property
     @pulumi.getter
-    def scope(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def scope(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The scope of this setting (ENVIRONMENT*ACTIVE*GATE)
         """
         return pulumi.get(self, "scope")
 
     @scope.setter
-    def scope(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def scope(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "scope", value)
 
 
@@ -102,8 +102,8 @@ class ExtensionExecutionRemote(pulumi.CustomResource):
     def __init__(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 performance_profile: Optional[pulumi.Input[_builtins.str]] = None,
-                 scope: Optional[pulumi.Input[_builtins.str]] = None,
+                 performance_profile: pulumi.Input[Optional[_builtins.str]] = None,
+                 scope: pulumi.Input[Optional[_builtins.str]] = None,
                  __props__=None):
         """
         > This resource requires the API token scopes **Read settings** (`settings.read`) and **Write settings** (`settings.write`)
@@ -163,8 +163,8 @@ class ExtensionExecutionRemote(pulumi.CustomResource):
     def _internal_init(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 performance_profile: Optional[pulumi.Input[_builtins.str]] = None,
-                 scope: Optional[pulumi.Input[_builtins.str]] = None,
+                 performance_profile: pulumi.Input[Optional[_builtins.str]] = None,
+                 scope: pulumi.Input[Optional[_builtins.str]] = None,
                  __props__=None):
         opts = pulumi.ResourceOptions.merge(_utilities.get_resource_opts_defaults(), opts)
         if not isinstance(opts, pulumi.ResourceOptions):
@@ -190,8 +190,8 @@ class ExtensionExecutionRemote(pulumi.CustomResource):
     def get(resource_name: str,
             id: pulumi.Input[str],
             opts: Optional[pulumi.ResourceOptions] = None,
-            performance_profile: Optional[pulumi.Input[_builtins.str]] = None,
-            scope: Optional[pulumi.Input[_builtins.str]] = None) -> 'ExtensionExecutionRemote':
+            performance_profile: pulumi.Input[Optional[_builtins.str]] = None,
+            scope: pulumi.Input[Optional[_builtins.str]] = None) -> 'ExtensionExecutionRemote':
         """
         Get an existing ExtensionExecutionRemote resource's state with the given name, id, and optional extra
         properties used to qualify the lookup.

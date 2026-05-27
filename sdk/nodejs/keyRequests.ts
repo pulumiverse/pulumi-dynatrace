@@ -97,15 +97,15 @@ export interface KeyRequestsState {
     /**
      * The ids of the key requests
      */
-    keyRequestIds?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
+    keyRequestIds?: pulumi.Input<{[key: string]: pulumi.Input<string>} | undefined>;
     /**
      * The names of the key requests
      */
-    names?: pulumi.Input<pulumi.Input<string>[]>;
+    names?: pulumi.Input<pulumi.Input<string>[] | undefined>;
     /**
      * ID of Dynatrace Service, eg. SERVICE-123ABC45678EFGH
      */
-    service?: pulumi.Input<string>;
+    service?: pulumi.Input<string | undefined>;
 }
 
 /**
@@ -115,11 +115,11 @@ export interface KeyRequestsArgs {
     /**
      * The ids of the key requests
      */
-    keyRequestIds?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
+    keyRequestIds?: pulumi.Input<{[key: string]: pulumi.Input<string>} | undefined>;
     /**
      * The names of the key requests
      */
-    names?: pulumi.Input<pulumi.Input<string>[]>;
+    names?: pulumi.Input<pulumi.Input<string>[] | undefined>;
     /**
      * ID of Dynatrace Service, eg. SERVICE-123ABC45678EFGH
      */

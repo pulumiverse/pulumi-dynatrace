@@ -174,51 +174,51 @@ export interface SloV2State {
     /**
      * The description of the SLO
      */
-    customDescription?: pulumi.Input<string>;
+    customDescription?: pulumi.Input<string | undefined>;
     /**
      * This setting is enabled (`true`) or disabled (`false`)
      */
-    enabled?: pulumi.Input<boolean>;
+    enabled?: pulumi.Input<boolean | undefined>;
     /**
      * ### Error budget burn rate
      */
-    errorBudgetBurnRate?: pulumi.Input<inputs.SloV2ErrorBudgetBurnRate>;
+    errorBudgetBurnRate?: pulumi.Input<inputs.SloV2ErrorBudgetBurnRate | undefined>;
     /**
      * Possible Values: `AGGREGATE`
      */
-    evaluationType?: pulumi.Input<string>;
+    evaluationType?: pulumi.Input<string | undefined>;
     /**
      * Define the timeframe during which the SLO is to be evaluated. For the timeframe you can enter expressions like -1h (last hour), -1w (last week) or complex expressions like -2d to now (last two days), -1d/d to now/d (beginning of yesterday to beginning of today).
      */
-    evaluationWindow?: pulumi.Input<string>;
+    evaluationWindow?: pulumi.Input<string | undefined>;
     /**
      * Set a filter parameter (entitySelector) on any GET call to evaluate this SLO against specific services only (for example, type("SERVICE")).  For details, see the [Entity Selector documentation](https://dt-url.net/entityselector).
      */
-    filter?: pulumi.Input<string>;
+    filter?: pulumi.Input<string | undefined>;
     /**
      * The ID of this setting when referred to by the Config REST API V1
      */
-    legacyId?: pulumi.Input<string>;
+    legacyId?: pulumi.Input<string | undefined>;
     /**
      * For details, see the [Metrics page](https://www.terraform.io/ui/metrics).
      */
-    metricExpression?: pulumi.Input<string>;
+    metricExpression?: pulumi.Input<string | undefined>;
     /**
      * Metric name
      */
-    metricName?: pulumi.Input<string>;
+    metricName?: pulumi.Input<string | undefined>;
     /**
      * SLO name
      */
-    name?: pulumi.Input<string>;
+    name?: pulumi.Input<string | undefined>;
     /**
      * Set the target value of the SLO. A percentage below this value indicates a failure.
      */
-    targetSuccess?: pulumi.Input<number>;
+    targetSuccess?: pulumi.Input<number | undefined>;
     /**
      * Set the warning value of the SLO. At the warning state the SLO is fulfilled. However, it is getting close to a failure.
      */
-    targetWarning?: pulumi.Input<number>;
+    targetWarning?: pulumi.Input<number | undefined>;
 }
 
 /**
@@ -228,7 +228,7 @@ export interface SloV2Args {
     /**
      * The description of the SLO
      */
-    customDescription?: pulumi.Input<string>;
+    customDescription?: pulumi.Input<string | undefined>;
     /**
      * This setting is enabled (`true`) or disabled (`false`)
      */
@@ -252,7 +252,7 @@ export interface SloV2Args {
     /**
      * The ID of this setting when referred to by the Config REST API V1
      */
-    legacyId?: pulumi.Input<string>;
+    legacyId?: pulumi.Input<string | undefined>;
     /**
      * For details, see the [Metrics page](https://www.terraform.io/ui/metrics).
      */
@@ -260,11 +260,11 @@ export interface SloV2Args {
     /**
      * Metric name
      */
-    metricName?: pulumi.Input<string>;
+    metricName?: pulumi.Input<string | undefined>;
     /**
      * SLO name
      */
-    name?: pulumi.Input<string>;
+    name?: pulumi.Input<string | undefined>;
     /**
      * Set the target value of the SLO. A percentage below this value indicates a failure.
      */

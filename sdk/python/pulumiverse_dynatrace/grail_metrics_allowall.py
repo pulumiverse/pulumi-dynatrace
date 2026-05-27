@@ -43,7 +43,7 @@ class GrailMetricsAllowallArgs:
 @pulumi.input_type
 class _GrailMetricsAllowallState:
     def __init__(__self__, *,
-                 allow_all: Optional[pulumi.Input[_builtins.bool]] = None):
+                 allow_all: pulumi.Input[Optional[_builtins.bool]] = None):
         """
         Input properties used for looking up and filtering GrailMetricsAllowall resources.
 
@@ -54,14 +54,14 @@ class _GrailMetricsAllowallState:
 
     @_builtins.property
     @pulumi.getter(name="allowAll")
-    def allow_all(self) -> Optional[pulumi.Input[_builtins.bool]]:
+    def allow_all(self) -> pulumi.Input[Optional[_builtins.bool]]:
         """
         When enabled every custom metric will be ingested to Grail. Warning: this setting can cause [unexpected billing!](https://docs.dynatrace.com/docs/dynatrace-api/environment-api/metric-v2/best-practices#avoid-high-cardinality-limits)
         """
         return pulumi.get(self, "allow_all")
 
     @allow_all.setter
-    def allow_all(self, value: Optional[pulumi.Input[_builtins.bool]]):
+    def allow_all(self, value: pulumi.Input[Optional[_builtins.bool]]):
         pulumi.set(self, "allow_all", value)
 
 
@@ -71,7 +71,7 @@ class GrailMetricsAllowall(pulumi.CustomResource):
     def __init__(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 allow_all: Optional[pulumi.Input[_builtins.bool]] = None,
+                 allow_all: pulumi.Input[Optional[_builtins.bool]] = None,
                  __props__=None):
         """
         > This resource requires the API token scopes **Read settings** (`settings.read`) and **Write settings** (`settings.write`)
@@ -130,7 +130,7 @@ class GrailMetricsAllowall(pulumi.CustomResource):
     def _internal_init(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 allow_all: Optional[pulumi.Input[_builtins.bool]] = None,
+                 allow_all: pulumi.Input[Optional[_builtins.bool]] = None,
                  __props__=None):
         opts = pulumi.ResourceOptions.merge(_utilities.get_resource_opts_defaults(), opts)
         if not isinstance(opts, pulumi.ResourceOptions):
@@ -153,7 +153,7 @@ class GrailMetricsAllowall(pulumi.CustomResource):
     def get(resource_name: str,
             id: pulumi.Input[str],
             opts: Optional[pulumi.ResourceOptions] = None,
-            allow_all: Optional[pulumi.Input[_builtins.bool]] = None) -> 'GrailMetricsAllowall':
+            allow_all: pulumi.Input[Optional[_builtins.bool]] = None) -> 'GrailMetricsAllowall':
         """
         Get an existing GrailMetricsAllowall resource's state with the given name, id, and optional extra
         properties used to qualify the lookup.

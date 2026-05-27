@@ -94,11 +94,11 @@ export interface WebAppBeaconOriginsState {
     /**
      * Possible Values: `CONTAINS`, `ENDS_WITH`, `EQUALS`, `STARTS_WITH`
      */
-    matcher?: pulumi.Input<string>;
+    matcher?: pulumi.Input<string | undefined>;
     /**
      * Pattern
      */
-    pattern?: pulumi.Input<string>;
+    pattern?: pulumi.Input<string | undefined>;
 }
 
 /**

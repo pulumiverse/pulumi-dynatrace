@@ -58,8 +58,8 @@ class ProcessGroupMonitoringArgs:
 @pulumi.input_type
 class _ProcessGroupMonitoringState:
     def __init__(__self__, *,
-                 monitoring_state: Optional[pulumi.Input[_builtins.str]] = None,
-                 process_group_id: Optional[pulumi.Input[_builtins.str]] = None):
+                 monitoring_state: pulumi.Input[Optional[_builtins.str]] = None,
+                 process_group_id: pulumi.Input[Optional[_builtins.str]] = None):
         """
         Input properties used for looking up and filtering ProcessGroupMonitoring resources.
 
@@ -73,26 +73,26 @@ class _ProcessGroupMonitoringState:
 
     @_builtins.property
     @pulumi.getter(name="monitoringState")
-    def monitoring_state(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def monitoring_state(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Possible Values: `DEFAULT`, `MONITORING_OFF`, `MONITORING_ON`
         """
         return pulumi.get(self, "monitoring_state")
 
     @monitoring_state.setter
-    def monitoring_state(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def monitoring_state(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "monitoring_state", value)
 
     @_builtins.property
     @pulumi.getter(name="processGroupId")
-    def process_group_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def process_group_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The scope of this settings. If the settings should cover the whole environment, just don't specify any scope.
         """
         return pulumi.get(self, "process_group_id")
 
     @process_group_id.setter
-    def process_group_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def process_group_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "process_group_id", value)
 
 
@@ -102,8 +102,8 @@ class ProcessGroupMonitoring(pulumi.CustomResource):
     def __init__(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 monitoring_state: Optional[pulumi.Input[_builtins.str]] = None,
-                 process_group_id: Optional[pulumi.Input[_builtins.str]] = None,
+                 monitoring_state: pulumi.Input[Optional[_builtins.str]] = None,
+                 process_group_id: pulumi.Input[Optional[_builtins.str]] = None,
                  __props__=None):
         """
         > This resource requires the API token scopes **Read settings** (`settings.read`) and **Write settings** (`settings.write`)
@@ -163,8 +163,8 @@ class ProcessGroupMonitoring(pulumi.CustomResource):
     def _internal_init(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 monitoring_state: Optional[pulumi.Input[_builtins.str]] = None,
-                 process_group_id: Optional[pulumi.Input[_builtins.str]] = None,
+                 monitoring_state: pulumi.Input[Optional[_builtins.str]] = None,
+                 process_group_id: pulumi.Input[Optional[_builtins.str]] = None,
                  __props__=None):
         opts = pulumi.ResourceOptions.merge(_utilities.get_resource_opts_defaults(), opts)
         if not isinstance(opts, pulumi.ResourceOptions):
@@ -190,8 +190,8 @@ class ProcessGroupMonitoring(pulumi.CustomResource):
     def get(resource_name: str,
             id: pulumi.Input[str],
             opts: Optional[pulumi.ResourceOptions] = None,
-            monitoring_state: Optional[pulumi.Input[_builtins.str]] = None,
-            process_group_id: Optional[pulumi.Input[_builtins.str]] = None) -> 'ProcessGroupMonitoring':
+            monitoring_state: pulumi.Input[Optional[_builtins.str]] = None,
+            process_group_id: pulumi.Input[Optional[_builtins.str]] = None) -> 'ProcessGroupMonitoring':
         """
         Get an existing ProcessGroupMonitoring resource's state with the given name, id, and optional extra
         properties used to qualify the lookup.

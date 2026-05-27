@@ -93,11 +93,11 @@ export interface JsonDashboardState {
     /**
      * Contains the JSON Code of the Dashboard
      */
-    contents?: pulumi.Input<string>;
+    contents?: pulumi.Input<string | undefined>;
     /**
      * ID of the dashboard, used with the json*dashboard*base resource and variables to create circular dependencies between dashboards for hyperlinks. See the documentation for `dynatrace.JsonDashboardBase` for a concrete example.
      */
-    linkId?: pulumi.Input<string>;
+    linkId?: pulumi.Input<string | undefined>;
 }
 
 /**
@@ -111,5 +111,5 @@ export interface JsonDashboardArgs {
     /**
      * ID of the dashboard, used with the json*dashboard*base resource and variables to create circular dependencies between dashboards for hyperlinks. See the documentation for `dynatrace.JsonDashboardBase` for a concrete example.
      */
-    linkId?: pulumi.Input<string>;
+    linkId?: pulumi.Input<string | undefined>;
 }

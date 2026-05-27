@@ -179,31 +179,31 @@ export interface HubExtensionConfigState {
     /**
      * The name of the Active Gate Group this monitoring configuration will be defined for
      */
-    activeGateGroup?: pulumi.Input<string>;
+    activeGateGroup?: pulumi.Input<string | undefined>;
     /**
      * The ID of the host this monitoring configuration will be defined for
      */
-    host?: pulumi.Input<string>;
+    host?: pulumi.Input<string | undefined>;
     /**
      * The ID of the host group this monitoring configuration will be defined for
      */
-    hostGroup?: pulumi.Input<string>;
+    hostGroup?: pulumi.Input<string | undefined>;
     /**
      * The name of the Management Zone this monitoring configuration will be defined for
      */
-    managementZone?: pulumi.Input<string>;
+    managementZone?: pulumi.Input<string | undefined>;
     /**
      * The fully qualified name of the extension, such as `com.dynatrace.extension.jmx-liberty-cp`. You can query for these names using the data source `dynatrace.getHubItems`
      */
-    name?: pulumi.Input<string>;
+    name?: pulumi.Input<string | undefined>;
     /**
      * The scope this monitoring configuration will be defined for
      */
-    scope?: pulumi.Input<string>;
+    scope?: pulumi.Input<string | undefined>;
     /**
      * The JSON encoded value for this monitoring configuration
      */
-    value?: pulumi.Input<string>;
+    value?: pulumi.Input<string | undefined>;
 }
 
 /**
@@ -213,27 +213,27 @@ export interface HubExtensionConfigArgs {
     /**
      * The name of the Active Gate Group this monitoring configuration will be defined for
      */
-    activeGateGroup?: pulumi.Input<string>;
+    activeGateGroup?: pulumi.Input<string | undefined>;
     /**
      * The ID of the host this monitoring configuration will be defined for
      */
-    host?: pulumi.Input<string>;
+    host?: pulumi.Input<string | undefined>;
     /**
      * The ID of the host group this monitoring configuration will be defined for
      */
-    hostGroup?: pulumi.Input<string>;
+    hostGroup?: pulumi.Input<string | undefined>;
     /**
      * The name of the Management Zone this monitoring configuration will be defined for
      */
-    managementZone?: pulumi.Input<string>;
+    managementZone?: pulumi.Input<string | undefined>;
     /**
      * The fully qualified name of the extension, such as `com.dynatrace.extension.jmx-liberty-cp`. You can query for these names using the data source `dynatrace.getHubItems`
      */
-    name?: pulumi.Input<string>;
+    name?: pulumi.Input<string | undefined>;
     /**
      * The scope this monitoring configuration will be defined for
      */
-    scope?: pulumi.Input<string>;
+    scope?: pulumi.Input<string | undefined>;
     /**
      * The JSON encoded value for this monitoring configuration
      */

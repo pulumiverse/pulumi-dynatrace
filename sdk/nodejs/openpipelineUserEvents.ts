@@ -129,15 +129,15 @@ export interface OpenpipelineUserEventsState {
     /**
      * List of all ingest sources of the configuration
      */
-    endpoints?: pulumi.Input<inputs.OpenpipelineUserEventsEndpoints>;
+    endpoints?: pulumi.Input<inputs.OpenpipelineUserEventsEndpoints | undefined>;
     /**
      * List of all pipelines of the configuration
      */
-    pipelines?: pulumi.Input<inputs.OpenpipelineUserEventsPipelines>;
+    pipelines?: pulumi.Input<inputs.OpenpipelineUserEventsPipelines | undefined>;
     /**
      * Dynamic routing definition
      */
-    routing?: pulumi.Input<inputs.OpenpipelineUserEventsRouting>;
+    routing?: pulumi.Input<inputs.OpenpipelineUserEventsRouting | undefined>;
 }
 
 /**
@@ -147,13 +147,13 @@ export interface OpenpipelineUserEventsArgs {
     /**
      * List of all ingest sources of the configuration
      */
-    endpoints?: pulumi.Input<inputs.OpenpipelineUserEventsEndpoints>;
+    endpoints?: pulumi.Input<inputs.OpenpipelineUserEventsEndpoints | undefined>;
     /**
      * List of all pipelines of the configuration
      */
-    pipelines?: pulumi.Input<inputs.OpenpipelineUserEventsPipelines>;
+    pipelines?: pulumi.Input<inputs.OpenpipelineUserEventsPipelines | undefined>;
     /**
      * Dynamic routing definition
      */
-    routing?: pulumi.Input<inputs.OpenpipelineUserEventsRouting>;
+    routing?: pulumi.Input<inputs.OpenpipelineUserEventsRouting | undefined>;
 }

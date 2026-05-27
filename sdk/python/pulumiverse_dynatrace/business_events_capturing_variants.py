@@ -22,8 +22,8 @@ class BusinessEventsCapturingVariantsArgs:
                  content_type_matcher: pulumi.Input[_builtins.str],
                  content_type_value: pulumi.Input[_builtins.str],
                  parser: pulumi.Input[_builtins.str],
-                 insert_after: Optional[pulumi.Input[_builtins.str]] = None,
-                 scope: Optional[pulumi.Input[_builtins.str]] = None):
+                 insert_after: pulumi.Input[Optional[_builtins.str]] = None,
+                 scope: pulumi.Input[Optional[_builtins.str]] = None):
         """
         The set of arguments for constructing a BusinessEventsCapturingVariants resource.
 
@@ -79,37 +79,37 @@ class BusinessEventsCapturingVariantsArgs:
 
     @_builtins.property
     @pulumi.getter(name="insertAfter")
-    def insert_after(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def insert_after(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Because this resource allows for ordering you may specify the ID of the resource instance that comes before this instance regarding order. If not specified when creating the setting will be added to the end of the list. If not specified during update the order will remain untouched
         """
         return pulumi.get(self, "insert_after")
 
     @insert_after.setter
-    def insert_after(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def insert_after(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "insert_after", value)
 
     @_builtins.property
     @pulumi.getter
-    def scope(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def scope(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The scope of this setting (HOST, HOST_GROUP). Omit this property if you want to cover the whole environment.
         """
         return pulumi.get(self, "scope")
 
     @scope.setter
-    def scope(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def scope(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "scope", value)
 
 
 @pulumi.input_type
 class _BusinessEventsCapturingVariantsState:
     def __init__(__self__, *,
-                 content_type_matcher: Optional[pulumi.Input[_builtins.str]] = None,
-                 content_type_value: Optional[pulumi.Input[_builtins.str]] = None,
-                 insert_after: Optional[pulumi.Input[_builtins.str]] = None,
-                 parser: Optional[pulumi.Input[_builtins.str]] = None,
-                 scope: Optional[pulumi.Input[_builtins.str]] = None):
+                 content_type_matcher: pulumi.Input[Optional[_builtins.str]] = None,
+                 content_type_value: pulumi.Input[Optional[_builtins.str]] = None,
+                 insert_after: pulumi.Input[Optional[_builtins.str]] = None,
+                 parser: pulumi.Input[Optional[_builtins.str]] = None,
+                 scope: pulumi.Input[Optional[_builtins.str]] = None):
         """
         Input properties used for looking up and filtering BusinessEventsCapturingVariants resources.
 
@@ -132,62 +132,62 @@ class _BusinessEventsCapturingVariantsState:
 
     @_builtins.property
     @pulumi.getter(name="contentTypeMatcher")
-    def content_type_matcher(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def content_type_matcher(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Possible Values: `CONTAINS`, `ENDS_WITH`, `EQUALS`, `STARTS_WITH`
         """
         return pulumi.get(self, "content_type_matcher")
 
     @content_type_matcher.setter
-    def content_type_matcher(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def content_type_matcher(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "content_type_matcher", value)
 
     @_builtins.property
     @pulumi.getter(name="contentTypeValue")
-    def content_type_value(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def content_type_value(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Content-type match value
         """
         return pulumi.get(self, "content_type_value")
 
     @content_type_value.setter
-    def content_type_value(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def content_type_value(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "content_type_value", value)
 
     @_builtins.property
     @pulumi.getter(name="insertAfter")
-    def insert_after(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def insert_after(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Because this resource allows for ordering you may specify the ID of the resource instance that comes before this instance regarding order. If not specified when creating the setting will be added to the end of the list. If not specified during update the order will remain untouched
         """
         return pulumi.get(self, "insert_after")
 
     @insert_after.setter
-    def insert_after(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def insert_after(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "insert_after", value)
 
     @_builtins.property
     @pulumi.getter
-    def parser(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def parser(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Possible Values: `JSON`, `Raw`, `Text`, `URLencoded`, `XML`
         """
         return pulumi.get(self, "parser")
 
     @parser.setter
-    def parser(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def parser(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "parser", value)
 
     @_builtins.property
     @pulumi.getter
-    def scope(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def scope(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The scope of this setting (HOST, HOST_GROUP). Omit this property if you want to cover the whole environment.
         """
         return pulumi.get(self, "scope")
 
     @scope.setter
-    def scope(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def scope(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "scope", value)
 
 
@@ -197,11 +197,11 @@ class BusinessEventsCapturingVariants(pulumi.CustomResource):
     def __init__(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 content_type_matcher: Optional[pulumi.Input[_builtins.str]] = None,
-                 content_type_value: Optional[pulumi.Input[_builtins.str]] = None,
-                 insert_after: Optional[pulumi.Input[_builtins.str]] = None,
-                 parser: Optional[pulumi.Input[_builtins.str]] = None,
-                 scope: Optional[pulumi.Input[_builtins.str]] = None,
+                 content_type_matcher: pulumi.Input[Optional[_builtins.str]] = None,
+                 content_type_value: pulumi.Input[Optional[_builtins.str]] = None,
+                 insert_after: pulumi.Input[Optional[_builtins.str]] = None,
+                 parser: pulumi.Input[Optional[_builtins.str]] = None,
+                 scope: pulumi.Input[Optional[_builtins.str]] = None,
                  __props__=None):
         """
         > This resource requires the API token scopes **Read settings** (`settings.read`) and **Write settings** (`settings.write`)
@@ -264,11 +264,11 @@ class BusinessEventsCapturingVariants(pulumi.CustomResource):
     def _internal_init(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 content_type_matcher: Optional[pulumi.Input[_builtins.str]] = None,
-                 content_type_value: Optional[pulumi.Input[_builtins.str]] = None,
-                 insert_after: Optional[pulumi.Input[_builtins.str]] = None,
-                 parser: Optional[pulumi.Input[_builtins.str]] = None,
-                 scope: Optional[pulumi.Input[_builtins.str]] = None,
+                 content_type_matcher: pulumi.Input[Optional[_builtins.str]] = None,
+                 content_type_value: pulumi.Input[Optional[_builtins.str]] = None,
+                 insert_after: pulumi.Input[Optional[_builtins.str]] = None,
+                 parser: pulumi.Input[Optional[_builtins.str]] = None,
+                 scope: pulumi.Input[Optional[_builtins.str]] = None,
                  __props__=None):
         opts = pulumi.ResourceOptions.merge(_utilities.get_resource_opts_defaults(), opts)
         if not isinstance(opts, pulumi.ResourceOptions):
@@ -299,11 +299,11 @@ class BusinessEventsCapturingVariants(pulumi.CustomResource):
     def get(resource_name: str,
             id: pulumi.Input[str],
             opts: Optional[pulumi.ResourceOptions] = None,
-            content_type_matcher: Optional[pulumi.Input[_builtins.str]] = None,
-            content_type_value: Optional[pulumi.Input[_builtins.str]] = None,
-            insert_after: Optional[pulumi.Input[_builtins.str]] = None,
-            parser: Optional[pulumi.Input[_builtins.str]] = None,
-            scope: Optional[pulumi.Input[_builtins.str]] = None) -> 'BusinessEventsCapturingVariants':
+            content_type_matcher: pulumi.Input[Optional[_builtins.str]] = None,
+            content_type_value: pulumi.Input[Optional[_builtins.str]] = None,
+            insert_after: pulumi.Input[Optional[_builtins.str]] = None,
+            parser: pulumi.Input[Optional[_builtins.str]] = None,
+            scope: pulumi.Input[Optional[_builtins.str]] = None) -> 'BusinessEventsCapturingVariants':
         """
         Get an existing BusinessEventsCapturingVariants resource's state with the given name, id, and optional extra
         properties used to qualify the lookup.

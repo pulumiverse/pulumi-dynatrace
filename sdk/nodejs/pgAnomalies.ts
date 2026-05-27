@@ -95,11 +95,11 @@ export interface PgAnomaliesState {
     /**
      * Configuration of the availability monitoring for the process group.
      */
-    availability?: pulumi.Input<inputs.PgAnomaliesAvailability>;
+    availability?: pulumi.Input<inputs.PgAnomaliesAvailability | undefined>;
     /**
      * The ID of the process group
      */
-    pgId?: pulumi.Input<string>;
+    pgId?: pulumi.Input<string | undefined>;
 }
 
 /**
@@ -109,7 +109,7 @@ export interface PgAnomaliesArgs {
     /**
      * Configuration of the availability monitoring for the process group.
      */
-    availability?: pulumi.Input<inputs.PgAnomaliesAvailability>;
+    availability?: pulumi.Input<inputs.PgAnomaliesAvailability | undefined>;
     /**
      * The ID of the process group
      */

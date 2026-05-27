@@ -190,51 +190,51 @@ export interface OsServicesState {
     /**
      * The number of **10-second measurement cycles** before alerting is triggered
      */
-    alertActivationDuration?: pulumi.Input<number>;
+    alertActivationDuration?: pulumi.Input<number | undefined>;
     /**
      * Toggle the switch in order to enable or disable alerting for this policy
      */
-    alerting?: pulumi.Input<boolean>;
+    alerting?: pulumi.Input<boolean | undefined>;
     /**
      * Detection rules
      */
-    detectionConditionsLinux?: pulumi.Input<inputs.OsServicesDetectionConditionsLinux>;
+    detectionConditionsLinux?: pulumi.Input<inputs.OsServicesDetectionConditionsLinux | undefined>;
     /**
      * Detection rules
      */
-    detectionConditionsWindows?: pulumi.Input<inputs.OsServicesDetectionConditionsWindows>;
+    detectionConditionsWindows?: pulumi.Input<inputs.OsServicesDetectionConditionsWindows | undefined>;
     /**
      * This setting is enabled (`true`) or disabled (`false`)
      */
-    enabled?: pulumi.Input<boolean>;
+    enabled?: pulumi.Input<boolean | undefined>;
     /**
      * Because this resource allows for ordering you may specify the ID of the resource instance that comes before this instance regarding order. If not specified when creating the setting will be added to the end of the list. If not specified during update the order will remain untouched
      */
-    insertAfter?: pulumi.Input<string>;
+    insertAfter?: pulumi.Input<string | undefined>;
     /**
      * Set of additional key-value properties to be attached to the triggered event. You can retrieve the available property keys using the [Events API v2](https://dt-url.net/9622g1w). Additionally any Host resource attribute can be dynamically substituted (agent 1.325+).
      */
-    metadata?: pulumi.Input<inputs.OsServicesMetadata>;
+    metadata?: pulumi.Input<inputs.OsServicesMetadata | undefined>;
     /**
      * Toggle the switch in order to enable or disable availability metric monitoring for this policy. Availability metrics produce custom metrics. Refer to [documentation](https://dt-url.net/vl03xzk) for consumption examples. Each monitored service consumes one custom metric.
      */
-    monitoring?: pulumi.Input<boolean>;
+    monitoring?: pulumi.Input<boolean | undefined>;
     /**
      * Rule name
      */
-    name?: pulumi.Input<string>;
+    name?: pulumi.Input<string | undefined>;
     /**
      * By default, Dynatrace does not alert if the service is not installed. Toggle the switch to enable or disable this feature
      */
-    notInstalledAlerting?: pulumi.Input<boolean>;
+    notInstalledAlerting?: pulumi.Input<boolean | undefined>;
     /**
      * The scope of this setting (HOST, HOST_GROUP). Omit this property if you want to cover the whole environment.
      */
-    scope?: pulumi.Input<string>;
+    scope?: pulumi.Input<string | undefined>;
     /**
      * This string has to match a required format. See [OS services monitoring](https://dt-url.net/vl03xzk).
      */
-    statusConditionLinux?: pulumi.Input<string>;
+    statusConditionLinux?: pulumi.Input<string | undefined>;
     /**
      * This string has to match a required format. See [OS services monitoring](https://dt-url.net/vl03xzk).
      *
@@ -254,11 +254,11 @@ export interface OsServicesState {
      * - `pausePending`
      * - `paused`
      */
-    statusConditionWindows?: pulumi.Input<string>;
+    statusConditionWindows?: pulumi.Input<string | undefined>;
     /**
      * Possible Values: `LINUX`, `WINDOWS`
      */
-    system?: pulumi.Input<string>;
+    system?: pulumi.Input<string | undefined>;
 }
 
 /**
@@ -268,7 +268,7 @@ export interface OsServicesArgs {
     /**
      * The number of **10-second measurement cycles** before alerting is triggered
      */
-    alertActivationDuration?: pulumi.Input<number>;
+    alertActivationDuration?: pulumi.Input<number | undefined>;
     /**
      * Toggle the switch in order to enable or disable alerting for this policy
      */
@@ -276,11 +276,11 @@ export interface OsServicesArgs {
     /**
      * Detection rules
      */
-    detectionConditionsLinux?: pulumi.Input<inputs.OsServicesDetectionConditionsLinux>;
+    detectionConditionsLinux?: pulumi.Input<inputs.OsServicesDetectionConditionsLinux | undefined>;
     /**
      * Detection rules
      */
-    detectionConditionsWindows?: pulumi.Input<inputs.OsServicesDetectionConditionsWindows>;
+    detectionConditionsWindows?: pulumi.Input<inputs.OsServicesDetectionConditionsWindows | undefined>;
     /**
      * This setting is enabled (`true`) or disabled (`false`)
      */
@@ -288,11 +288,11 @@ export interface OsServicesArgs {
     /**
      * Because this resource allows for ordering you may specify the ID of the resource instance that comes before this instance regarding order. If not specified when creating the setting will be added to the end of the list. If not specified during update the order will remain untouched
      */
-    insertAfter?: pulumi.Input<string>;
+    insertAfter?: pulumi.Input<string | undefined>;
     /**
      * Set of additional key-value properties to be attached to the triggered event. You can retrieve the available property keys using the [Events API v2](https://dt-url.net/9622g1w). Additionally any Host resource attribute can be dynamically substituted (agent 1.325+).
      */
-    metadata?: pulumi.Input<inputs.OsServicesMetadata>;
+    metadata?: pulumi.Input<inputs.OsServicesMetadata | undefined>;
     /**
      * Toggle the switch in order to enable or disable availability metric monitoring for this policy. Availability metrics produce custom metrics. Refer to [documentation](https://dt-url.net/vl03xzk) for consumption examples. Each monitored service consumes one custom metric.
      */
@@ -300,19 +300,19 @@ export interface OsServicesArgs {
     /**
      * Rule name
      */
-    name?: pulumi.Input<string>;
+    name?: pulumi.Input<string | undefined>;
     /**
      * By default, Dynatrace does not alert if the service is not installed. Toggle the switch to enable or disable this feature
      */
-    notInstalledAlerting?: pulumi.Input<boolean>;
+    notInstalledAlerting?: pulumi.Input<boolean | undefined>;
     /**
      * The scope of this setting (HOST, HOST_GROUP). Omit this property if you want to cover the whole environment.
      */
-    scope?: pulumi.Input<string>;
+    scope?: pulumi.Input<string | undefined>;
     /**
      * This string has to match a required format. See [OS services monitoring](https://dt-url.net/vl03xzk).
      */
-    statusConditionLinux?: pulumi.Input<string>;
+    statusConditionLinux?: pulumi.Input<string | undefined>;
     /**
      * This string has to match a required format. See [OS services monitoring](https://dt-url.net/vl03xzk).
      *
@@ -332,7 +332,7 @@ export interface OsServicesArgs {
      * - `pausePending`
      * - `paused`
      */
-    statusConditionWindows?: pulumi.Input<string>;
+    statusConditionWindows?: pulumi.Input<string | undefined>;
     /**
      * Possible Values: `LINUX`, `WINDOWS`
      */

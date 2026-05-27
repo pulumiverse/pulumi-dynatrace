@@ -85,7 +85,7 @@ export interface SloNormalizationState {
     /**
      * When set to true, the error budget left will be shown in percent of the total error budget. For more details see [SLO normalization help](https://dt-url.net/slo-normalize-error-budget).
      */
-    normalize?: pulumi.Input<boolean>;
+    normalize?: pulumi.Input<boolean | undefined>;
 }
 
 /**

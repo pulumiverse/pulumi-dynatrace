@@ -19,10 +19,10 @@ __all__ = ['TransactionStartFiltersArgs', 'TransactionStartFilters']
 @pulumi.input_type
 class TransactionStartFiltersArgs:
     def __init__(__self__, *,
-                 cics_terminal_transaction_ids: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-                 cics_transaction_ids: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-                 ims_terminal_transaction_ids: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-                 ims_transaction_ids: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None):
+                 cics_terminal_transaction_ids: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 cics_transaction_ids: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 ims_terminal_transaction_ids: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 ims_transaction_ids: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None):
         """
         The set of arguments for constructing a TransactionStartFilters resource.
 
@@ -42,60 +42,60 @@ class TransactionStartFiltersArgs:
 
     @_builtins.property
     @pulumi.getter(name="cicsTerminalTransactionIds")
-    def cics_terminal_transaction_ids(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]:
+    def cics_terminal_transaction_ids(self) -> pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]:
         """
         You can use * as wildcard. For example use A* to trace all transaction IDs that start with A.
         """
         return pulumi.get(self, "cics_terminal_transaction_ids")
 
     @cics_terminal_transaction_ids.setter
-    def cics_terminal_transaction_ids(self, value: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]):
+    def cics_terminal_transaction_ids(self, value: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "cics_terminal_transaction_ids", value)
 
     @_builtins.property
     @pulumi.getter(name="cicsTransactionIds")
-    def cics_transaction_ids(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]:
+    def cics_transaction_ids(self) -> pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]:
         """
         You can use * as wildcard. For example use A* to trace all transaction IDs that start with A.
         """
         return pulumi.get(self, "cics_transaction_ids")
 
     @cics_transaction_ids.setter
-    def cics_transaction_ids(self, value: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]):
+    def cics_transaction_ids(self, value: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "cics_transaction_ids", value)
 
     @_builtins.property
     @pulumi.getter(name="imsTerminalTransactionIds")
-    def ims_terminal_transaction_ids(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]:
+    def ims_terminal_transaction_ids(self) -> pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]:
         """
         You can use * as wildcard. For example use A* to trace all transaction IDs that start with A.
         """
         return pulumi.get(self, "ims_terminal_transaction_ids")
 
     @ims_terminal_transaction_ids.setter
-    def ims_terminal_transaction_ids(self, value: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]):
+    def ims_terminal_transaction_ids(self, value: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "ims_terminal_transaction_ids", value)
 
     @_builtins.property
     @pulumi.getter(name="imsTransactionIds")
-    def ims_transaction_ids(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]:
+    def ims_transaction_ids(self) -> pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]:
         """
         You can use * as wildcard. For example use A* to trace all transaction IDs that start with A.
         """
         return pulumi.get(self, "ims_transaction_ids")
 
     @ims_transaction_ids.setter
-    def ims_transaction_ids(self, value: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]):
+    def ims_transaction_ids(self, value: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "ims_transaction_ids", value)
 
 
 @pulumi.input_type
 class _TransactionStartFiltersState:
     def __init__(__self__, *,
-                 cics_terminal_transaction_ids: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-                 cics_transaction_ids: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-                 ims_terminal_transaction_ids: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-                 ims_transaction_ids: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None):
+                 cics_terminal_transaction_ids: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 cics_transaction_ids: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 ims_terminal_transaction_ids: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 ims_transaction_ids: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None):
         """
         Input properties used for looking up and filtering TransactionStartFilters resources.
 
@@ -115,50 +115,50 @@ class _TransactionStartFiltersState:
 
     @_builtins.property
     @pulumi.getter(name="cicsTerminalTransactionIds")
-    def cics_terminal_transaction_ids(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]:
+    def cics_terminal_transaction_ids(self) -> pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]:
         """
         You can use * as wildcard. For example use A* to trace all transaction IDs that start with A.
         """
         return pulumi.get(self, "cics_terminal_transaction_ids")
 
     @cics_terminal_transaction_ids.setter
-    def cics_terminal_transaction_ids(self, value: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]):
+    def cics_terminal_transaction_ids(self, value: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "cics_terminal_transaction_ids", value)
 
     @_builtins.property
     @pulumi.getter(name="cicsTransactionIds")
-    def cics_transaction_ids(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]:
+    def cics_transaction_ids(self) -> pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]:
         """
         You can use * as wildcard. For example use A* to trace all transaction IDs that start with A.
         """
         return pulumi.get(self, "cics_transaction_ids")
 
     @cics_transaction_ids.setter
-    def cics_transaction_ids(self, value: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]):
+    def cics_transaction_ids(self, value: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "cics_transaction_ids", value)
 
     @_builtins.property
     @pulumi.getter(name="imsTerminalTransactionIds")
-    def ims_terminal_transaction_ids(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]:
+    def ims_terminal_transaction_ids(self) -> pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]:
         """
         You can use * as wildcard. For example use A* to trace all transaction IDs that start with A.
         """
         return pulumi.get(self, "ims_terminal_transaction_ids")
 
     @ims_terminal_transaction_ids.setter
-    def ims_terminal_transaction_ids(self, value: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]):
+    def ims_terminal_transaction_ids(self, value: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "ims_terminal_transaction_ids", value)
 
     @_builtins.property
     @pulumi.getter(name="imsTransactionIds")
-    def ims_transaction_ids(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]:
+    def ims_transaction_ids(self) -> pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]:
         """
         You can use * as wildcard. For example use A* to trace all transaction IDs that start with A.
         """
         return pulumi.get(self, "ims_transaction_ids")
 
     @ims_transaction_ids.setter
-    def ims_transaction_ids(self, value: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]):
+    def ims_transaction_ids(self, value: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "ims_transaction_ids", value)
 
 
@@ -168,10 +168,10 @@ class TransactionStartFilters(pulumi.CustomResource):
     def __init__(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 cics_terminal_transaction_ids: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-                 cics_transaction_ids: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-                 ims_terminal_transaction_ids: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-                 ims_transaction_ids: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 cics_terminal_transaction_ids: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 cics_transaction_ids: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 ims_terminal_transaction_ids: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 ims_transaction_ids: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
                  __props__=None):
         """
         > This resource requires the API token scopes **Read settings** (`settings.read`) and **Write settings** (`settings.write`)
@@ -271,10 +271,10 @@ class TransactionStartFilters(pulumi.CustomResource):
     def _internal_init(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 cics_terminal_transaction_ids: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-                 cics_transaction_ids: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-                 ims_terminal_transaction_ids: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-                 ims_transaction_ids: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 cics_terminal_transaction_ids: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 cics_transaction_ids: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 ims_terminal_transaction_ids: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 ims_transaction_ids: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
                  __props__=None):
         opts = pulumi.ResourceOptions.merge(_utilities.get_resource_opts_defaults(), opts)
         if not isinstance(opts, pulumi.ResourceOptions):
@@ -298,10 +298,10 @@ class TransactionStartFilters(pulumi.CustomResource):
     def get(resource_name: str,
             id: pulumi.Input[str],
             opts: Optional[pulumi.ResourceOptions] = None,
-            cics_terminal_transaction_ids: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-            cics_transaction_ids: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-            ims_terminal_transaction_ids: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-            ims_transaction_ids: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None) -> 'TransactionStartFilters':
+            cics_terminal_transaction_ids: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+            cics_transaction_ids: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+            ims_terminal_transaction_ids: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+            ims_transaction_ids: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None) -> 'TransactionStartFilters':
         """
         Get an existing TransactionStartFilters resource's state with the given name, id, and optional extra
         properties used to qualify the lookup.

@@ -45,7 +45,7 @@ class OwnershipConfigArgs:
 @pulumi.input_type
 class _OwnershipConfigState:
     def __init__(__self__, *,
-                 ownership_identifiers: Optional[pulumi.Input['OwnershipConfigOwnershipIdentifiersArgs']] = None):
+                 ownership_identifiers: pulumi.Input[Optional['OwnershipConfigOwnershipIdentifiersArgs']] = None):
         """
         Input properties used for looking up and filtering OwnershipConfig resources.
 
@@ -56,14 +56,14 @@ class _OwnershipConfigState:
 
     @_builtins.property
     @pulumi.getter(name="ownershipIdentifiers")
-    def ownership_identifiers(self) -> Optional[pulumi.Input['OwnershipConfigOwnershipIdentifiersArgs']]:
+    def ownership_identifiers(self) -> pulumi.Input[Optional['OwnershipConfigOwnershipIdentifiersArgs']]:
         """
         Tags and metadata are key-value pairs. Define keys for tags and metadata that are considered for ownership. If a tag or any metadata starts with a key defined below, the value of the tag or metadata is considered a team identifier.
         """
         return pulumi.get(self, "ownership_identifiers")
 
     @ownership_identifiers.setter
-    def ownership_identifiers(self, value: Optional[pulumi.Input['OwnershipConfigOwnershipIdentifiersArgs']]):
+    def ownership_identifiers(self, value: pulumi.Input[Optional['OwnershipConfigOwnershipIdentifiersArgs']]):
         pulumi.set(self, "ownership_identifiers", value)
 
 
@@ -73,7 +73,7 @@ class OwnershipConfig(pulumi.CustomResource):
     def __init__(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 ownership_identifiers: Optional[pulumi.Input[Union['OwnershipConfigOwnershipIdentifiersArgs', 'OwnershipConfigOwnershipIdentifiersArgsDict']]] = None,
+                 ownership_identifiers: pulumi.Input[Optional[Union['OwnershipConfigOwnershipIdentifiersArgs', 'OwnershipConfigOwnershipIdentifiersArgsDict']]] = None,
                  __props__=None):
         """
         > This resource requires the API token scopes **Read settings** (`settings.read`) and **Write settings** (`settings.write`)
@@ -132,7 +132,7 @@ class OwnershipConfig(pulumi.CustomResource):
     def _internal_init(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 ownership_identifiers: Optional[pulumi.Input[Union['OwnershipConfigOwnershipIdentifiersArgs', 'OwnershipConfigOwnershipIdentifiersArgsDict']]] = None,
+                 ownership_identifiers: pulumi.Input[Optional[Union['OwnershipConfigOwnershipIdentifiersArgs', 'OwnershipConfigOwnershipIdentifiersArgsDict']]] = None,
                  __props__=None):
         opts = pulumi.ResourceOptions.merge(_utilities.get_resource_opts_defaults(), opts)
         if not isinstance(opts, pulumi.ResourceOptions):
@@ -155,7 +155,7 @@ class OwnershipConfig(pulumi.CustomResource):
     def get(resource_name: str,
             id: pulumi.Input[str],
             opts: Optional[pulumi.ResourceOptions] = None,
-            ownership_identifiers: Optional[pulumi.Input[Union['OwnershipConfigOwnershipIdentifiersArgs', 'OwnershipConfigOwnershipIdentifiersArgsDict']]] = None) -> 'OwnershipConfig':
+            ownership_identifiers: pulumi.Input[Optional[Union['OwnershipConfigOwnershipIdentifiersArgs', 'OwnershipConfigOwnershipIdentifiersArgsDict']]] = None) -> 'OwnershipConfig':
         """
         Get an existing OwnershipConfig resource's state with the given name, id, and optional extra
         properties used to qualify the lookup.

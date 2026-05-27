@@ -114,7 +114,7 @@ export interface LogAgentFeatureFlagsState {
      * This setting enables:
      * * Detection and to have logs ingested matching ingest rule is required.
      */
-    journaldLogDetector?: pulumi.Input<boolean>;
+    journaldLogDetector?: pulumi.Input<boolean | undefined>;
     /**
      * Enable OneAgent to collect all container logs in Kubernetes environments. 
      * This setting enables:
@@ -125,15 +125,15 @@ export interface LogAgentFeatureFlagsState {
      *
      *  For more details, check our [documentation](https://dt-url.net/jn02ey0).
      */
-    newContainerLogDetector?: pulumi.Input<boolean>;
+    newContainerLogDetector?: pulumi.Input<boolean | undefined>;
     /**
      * The scope of this setting (HOST, KUBERNETES_CLUSTER, HOST_GROUP). Omit this property if you want to cover the whole environment.
      */
-    scope?: pulumi.Input<string>;
+    scope?: pulumi.Input<string | undefined>;
     /**
      * Enable OneAgent to collect data from Event Logs in the User Data and Event Data sections.
      */
-    userAndEventData?: pulumi.Input<boolean>;
+    userAndEventData?: pulumi.Input<boolean | undefined>;
 }
 
 /**
@@ -145,7 +145,7 @@ export interface LogAgentFeatureFlagsArgs {
      * This setting enables:
      * * Detection and to have logs ingested matching ingest rule is required.
      */
-    journaldLogDetector?: pulumi.Input<boolean>;
+    journaldLogDetector?: pulumi.Input<boolean | undefined>;
     /**
      * Enable OneAgent to collect all container logs in Kubernetes environments. 
      * This setting enables:
@@ -160,9 +160,9 @@ export interface LogAgentFeatureFlagsArgs {
     /**
      * The scope of this setting (HOST, KUBERNETES_CLUSTER, HOST_GROUP). Omit this property if you want to cover the whole environment.
      */
-    scope?: pulumi.Input<string>;
+    scope?: pulumi.Input<string | undefined>;
     /**
      * Enable OneAgent to collect data from Event Logs in the User Data and Event Data sections.
      */
-    userAndEventData?: pulumi.Input<boolean>;
+    userAndEventData?: pulumi.Input<boolean | undefined>;
 }

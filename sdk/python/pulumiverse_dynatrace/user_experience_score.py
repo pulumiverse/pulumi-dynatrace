@@ -88,10 +88,10 @@ class UserExperienceScoreArgs:
 @pulumi.input_type
 class _UserExperienceScoreState:
     def __init__(__self__, *,
-                 consider_last_action: Optional[pulumi.Input[_builtins.bool]] = None,
-                 consider_rage_click: Optional[pulumi.Input[_builtins.bool]] = None,
-                 max_frustrated_user_actions_threshold: Optional[pulumi.Input[_builtins.int]] = None,
-                 min_satisfied_user_actions_threshold: Optional[pulumi.Input[_builtins.int]] = None):
+                 consider_last_action: pulumi.Input[Optional[_builtins.bool]] = None,
+                 consider_rage_click: pulumi.Input[Optional[_builtins.bool]] = None,
+                 max_frustrated_user_actions_threshold: pulumi.Input[Optional[_builtins.int]] = None,
+                 min_satisfied_user_actions_threshold: pulumi.Input[Optional[_builtins.int]] = None):
         """
         Input properties used for looking up and filtering UserExperienceScore resources.
 
@@ -111,50 +111,50 @@ class _UserExperienceScoreState:
 
     @_builtins.property
     @pulumi.getter(name="considerLastAction")
-    def consider_last_action(self) -> Optional[pulumi.Input[_builtins.bool]]:
+    def consider_last_action(self) -> pulumi.Input[Optional[_builtins.bool]]:
         """
         If last user action in a session is classified as Frustrating, classify the entire session as Frustrating
         """
         return pulumi.get(self, "consider_last_action")
 
     @consider_last_action.setter
-    def consider_last_action(self, value: Optional[pulumi.Input[_builtins.bool]]):
+    def consider_last_action(self, value: pulumi.Input[Optional[_builtins.bool]]):
         pulumi.set(self, "consider_last_action", value)
 
     @_builtins.property
     @pulumi.getter(name="considerRageClick")
-    def consider_rage_click(self) -> Optional[pulumi.Input[_builtins.bool]]:
+    def consider_rage_click(self) -> pulumi.Input[Optional[_builtins.bool]]:
         """
         Consider rage clicks / rage taps in score calculation
         """
         return pulumi.get(self, "consider_rage_click")
 
     @consider_rage_click.setter
-    def consider_rage_click(self, value: Optional[pulumi.Input[_builtins.bool]]):
+    def consider_rage_click(self, value: pulumi.Input[Optional[_builtins.bool]]):
         pulumi.set(self, "consider_rage_click", value)
 
     @_builtins.property
     @pulumi.getter(name="maxFrustratedUserActionsThreshold")
-    def max_frustrated_user_actions_threshold(self) -> Optional[pulumi.Input[_builtins.int]]:
+    def max_frustrated_user_actions_threshold(self) -> pulumi.Input[Optional[_builtins.int]]:
         """
         User experience is considered Frustrating when the selected percentage or more of the user actions in a session are rated as Frustrating.
         """
         return pulumi.get(self, "max_frustrated_user_actions_threshold")
 
     @max_frustrated_user_actions_threshold.setter
-    def max_frustrated_user_actions_threshold(self, value: Optional[pulumi.Input[_builtins.int]]):
+    def max_frustrated_user_actions_threshold(self, value: pulumi.Input[Optional[_builtins.int]]):
         pulumi.set(self, "max_frustrated_user_actions_threshold", value)
 
     @_builtins.property
     @pulumi.getter(name="minSatisfiedUserActionsThreshold")
-    def min_satisfied_user_actions_threshold(self) -> Optional[pulumi.Input[_builtins.int]]:
+    def min_satisfied_user_actions_threshold(self) -> pulumi.Input[Optional[_builtins.int]]:
         """
         User experience is considered Satisfying when at least the selected percentage of the user actions in a session are rated as Satisfying.
         """
         return pulumi.get(self, "min_satisfied_user_actions_threshold")
 
     @min_satisfied_user_actions_threshold.setter
-    def min_satisfied_user_actions_threshold(self, value: Optional[pulumi.Input[_builtins.int]]):
+    def min_satisfied_user_actions_threshold(self, value: pulumi.Input[Optional[_builtins.int]]):
         pulumi.set(self, "min_satisfied_user_actions_threshold", value)
 
 
@@ -164,10 +164,10 @@ class UserExperienceScore(pulumi.CustomResource):
     def __init__(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 consider_last_action: Optional[pulumi.Input[_builtins.bool]] = None,
-                 consider_rage_click: Optional[pulumi.Input[_builtins.bool]] = None,
-                 max_frustrated_user_actions_threshold: Optional[pulumi.Input[_builtins.int]] = None,
-                 min_satisfied_user_actions_threshold: Optional[pulumi.Input[_builtins.int]] = None,
+                 consider_last_action: pulumi.Input[Optional[_builtins.bool]] = None,
+                 consider_rage_click: pulumi.Input[Optional[_builtins.bool]] = None,
+                 max_frustrated_user_actions_threshold: pulumi.Input[Optional[_builtins.int]] = None,
+                 min_satisfied_user_actions_threshold: pulumi.Input[Optional[_builtins.int]] = None,
                  __props__=None):
         """
         > This resource requires the API token scopes **Read settings** (`settings.read`) and **Write settings** (`settings.write`)
@@ -229,10 +229,10 @@ class UserExperienceScore(pulumi.CustomResource):
     def _internal_init(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 consider_last_action: Optional[pulumi.Input[_builtins.bool]] = None,
-                 consider_rage_click: Optional[pulumi.Input[_builtins.bool]] = None,
-                 max_frustrated_user_actions_threshold: Optional[pulumi.Input[_builtins.int]] = None,
-                 min_satisfied_user_actions_threshold: Optional[pulumi.Input[_builtins.int]] = None,
+                 consider_last_action: pulumi.Input[Optional[_builtins.bool]] = None,
+                 consider_rage_click: pulumi.Input[Optional[_builtins.bool]] = None,
+                 max_frustrated_user_actions_threshold: pulumi.Input[Optional[_builtins.int]] = None,
+                 min_satisfied_user_actions_threshold: pulumi.Input[Optional[_builtins.int]] = None,
                  __props__=None):
         opts = pulumi.ResourceOptions.merge(_utilities.get_resource_opts_defaults(), opts)
         if not isinstance(opts, pulumi.ResourceOptions):
@@ -264,10 +264,10 @@ class UserExperienceScore(pulumi.CustomResource):
     def get(resource_name: str,
             id: pulumi.Input[str],
             opts: Optional[pulumi.ResourceOptions] = None,
-            consider_last_action: Optional[pulumi.Input[_builtins.bool]] = None,
-            consider_rage_click: Optional[pulumi.Input[_builtins.bool]] = None,
-            max_frustrated_user_actions_threshold: Optional[pulumi.Input[_builtins.int]] = None,
-            min_satisfied_user_actions_threshold: Optional[pulumi.Input[_builtins.int]] = None) -> 'UserExperienceScore':
+            consider_last_action: pulumi.Input[Optional[_builtins.bool]] = None,
+            consider_rage_click: pulumi.Input[Optional[_builtins.bool]] = None,
+            max_frustrated_user_actions_threshold: pulumi.Input[Optional[_builtins.int]] = None,
+            min_satisfied_user_actions_threshold: pulumi.Input[Optional[_builtins.int]] = None) -> 'UserExperienceScore':
         """
         Get an existing UserExperienceScore resource's state with the given name, id, and optional extra
         properties used to qualify the lookup.

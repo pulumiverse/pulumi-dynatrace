@@ -25,8 +25,8 @@ class RumProviderBreakdownArgs:
                  report_public_improvement: pulumi.Input[_builtins.bool],
                  resource_name: pulumi.Input[_builtins.str],
                  resource_type: pulumi.Input[_builtins.str],
-                 icon_url: Optional[pulumi.Input[_builtins.str]] = None,
-                 insert_after: Optional[pulumi.Input[_builtins.str]] = None):
+                 icon_url: pulumi.Input[Optional[_builtins.str]] = None,
+                 insert_after: pulumi.Input[Optional[_builtins.str]] = None):
         """
         The set of arguments for constructing a RumProviderBreakdown resource.
 
@@ -96,38 +96,38 @@ class RumProviderBreakdownArgs:
 
     @_builtins.property
     @pulumi.getter(name="iconUrl")
-    def icon_url(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def icon_url(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Specify an URL for the provider's brand icon
         """
         return pulumi.get(self, "icon_url")
 
     @icon_url.setter
-    def icon_url(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def icon_url(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "icon_url", value)
 
     @_builtins.property
     @pulumi.getter(name="insertAfter")
-    def insert_after(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def insert_after(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Because this resource allows for ordering you may specify the ID of the resource instance that comes before this instance regarding order. If not specified when creating the setting will be added to the end of the list. If not specified during update the order will remain untouched
         """
         return pulumi.get(self, "insert_after")
 
     @insert_after.setter
-    def insert_after(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def insert_after(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "insert_after", value)
 
 
 @pulumi.input_type
 class _RumProviderBreakdownState:
     def __init__(__self__, *,
-                 domain_name_pattern_list: Optional[pulumi.Input['RumProviderBreakdownDomainNamePatternListArgs']] = None,
-                 icon_url: Optional[pulumi.Input[_builtins.str]] = None,
-                 insert_after: Optional[pulumi.Input[_builtins.str]] = None,
-                 report_public_improvement: Optional[pulumi.Input[_builtins.bool]] = None,
-                 resource_name: Optional[pulumi.Input[_builtins.str]] = None,
-                 resource_type: Optional[pulumi.Input[_builtins.str]] = None):
+                 domain_name_pattern_list: pulumi.Input[Optional['RumProviderBreakdownDomainNamePatternListArgs']] = None,
+                 icon_url: pulumi.Input[Optional[_builtins.str]] = None,
+                 insert_after: pulumi.Input[Optional[_builtins.str]] = None,
+                 report_public_improvement: pulumi.Input[Optional[_builtins.bool]] = None,
+                 resource_name: pulumi.Input[Optional[_builtins.str]] = None,
+                 resource_type: pulumi.Input[Optional[_builtins.str]] = None):
         """
         Input properties used for looking up and filtering RumProviderBreakdown resources.
 
@@ -153,74 +153,74 @@ class _RumProviderBreakdownState:
 
     @_builtins.property
     @pulumi.getter(name="domainNamePatternList")
-    def domain_name_pattern_list(self) -> Optional[pulumi.Input['RumProviderBreakdownDomainNamePatternListArgs']]:
+    def domain_name_pattern_list(self) -> pulumi.Input[Optional['RumProviderBreakdownDomainNamePatternListArgs']]:
         """
         Domain name pattern
         """
         return pulumi.get(self, "domain_name_pattern_list")
 
     @domain_name_pattern_list.setter
-    def domain_name_pattern_list(self, value: Optional[pulumi.Input['RumProviderBreakdownDomainNamePatternListArgs']]):
+    def domain_name_pattern_list(self, value: pulumi.Input[Optional['RumProviderBreakdownDomainNamePatternListArgs']]):
         pulumi.set(self, "domain_name_pattern_list", value)
 
     @_builtins.property
     @pulumi.getter(name="iconUrl")
-    def icon_url(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def icon_url(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Specify an URL for the provider's brand icon
         """
         return pulumi.get(self, "icon_url")
 
     @icon_url.setter
-    def icon_url(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def icon_url(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "icon_url", value)
 
     @_builtins.property
     @pulumi.getter(name="insertAfter")
-    def insert_after(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def insert_after(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Because this resource allows for ordering you may specify the ID of the resource instance that comes before this instance regarding order. If not specified when creating the setting will be added to the end of the list. If not specified during update the order will remain untouched
         """
         return pulumi.get(self, "insert_after")
 
     @insert_after.setter
-    def insert_after(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def insert_after(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "insert_after", value)
 
     @_builtins.property
     @pulumi.getter(name="reportPublicImprovement")
-    def report_public_improvement(self) -> Optional[pulumi.Input[_builtins.bool]]:
+    def report_public_improvement(self) -> pulumi.Input[Optional[_builtins.bool]]:
         """
         Send the patterns of this provider to Dynatrace to help us improve 3rd-party detection.
         """
         return pulumi.get(self, "report_public_improvement")
 
     @report_public_improvement.setter
-    def report_public_improvement(self, value: Optional[pulumi.Input[_builtins.bool]]):
+    def report_public_improvement(self, value: pulumi.Input[Optional[_builtins.bool]]):
         pulumi.set(self, "report_public_improvement", value)
 
     @_builtins.property
     @pulumi.getter(name="resourceName")
-    def resource_name(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def resource_name(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Resource name
         """
         return pulumi.get(self, "resource_name")
 
     @resource_name.setter
-    def resource_name(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def resource_name(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "resource_name", value)
 
     @_builtins.property
     @pulumi.getter(name="resourceType")
-    def resource_type(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def resource_type(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Possible Values: `FirstParty`, `ThirdParty`, `Cdn`
         """
         return pulumi.get(self, "resource_type")
 
     @resource_type.setter
-    def resource_type(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def resource_type(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "resource_type", value)
 
 
@@ -230,12 +230,12 @@ class RumProviderBreakdown(pulumi.CustomResource):
     def __init__(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 domain_name_pattern_list: Optional[pulumi.Input[Union['RumProviderBreakdownDomainNamePatternListArgs', 'RumProviderBreakdownDomainNamePatternListArgsDict']]] = None,
-                 icon_url: Optional[pulumi.Input[_builtins.str]] = None,
-                 insert_after: Optional[pulumi.Input[_builtins.str]] = None,
-                 report_public_improvement: Optional[pulumi.Input[_builtins.bool]] = None,
-                 resource_name_: Optional[pulumi.Input[_builtins.str]] = None,
-                 resource_type: Optional[pulumi.Input[_builtins.str]] = None,
+                 domain_name_pattern_list: pulumi.Input[Optional[Union['RumProviderBreakdownDomainNamePatternListArgs', 'RumProviderBreakdownDomainNamePatternListArgsDict']]] = None,
+                 icon_url: pulumi.Input[Optional[_builtins.str]] = None,
+                 insert_after: pulumi.Input[Optional[_builtins.str]] = None,
+                 report_public_improvement: pulumi.Input[Optional[_builtins.bool]] = None,
+                 resource_name_: pulumi.Input[Optional[_builtins.str]] = None,
+                 resource_type: pulumi.Input[Optional[_builtins.str]] = None,
                  __props__=None):
         """
         > This resource requires the API token scopes **Read settings** (`settings.read`) and **Write settings** (`settings.write`)
@@ -299,12 +299,12 @@ class RumProviderBreakdown(pulumi.CustomResource):
     def _internal_init(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 domain_name_pattern_list: Optional[pulumi.Input[Union['RumProviderBreakdownDomainNamePatternListArgs', 'RumProviderBreakdownDomainNamePatternListArgsDict']]] = None,
-                 icon_url: Optional[pulumi.Input[_builtins.str]] = None,
-                 insert_after: Optional[pulumi.Input[_builtins.str]] = None,
-                 report_public_improvement: Optional[pulumi.Input[_builtins.bool]] = None,
-                 resource_name_: Optional[pulumi.Input[_builtins.str]] = None,
-                 resource_type: Optional[pulumi.Input[_builtins.str]] = None,
+                 domain_name_pattern_list: pulumi.Input[Optional[Union['RumProviderBreakdownDomainNamePatternListArgs', 'RumProviderBreakdownDomainNamePatternListArgsDict']]] = None,
+                 icon_url: pulumi.Input[Optional[_builtins.str]] = None,
+                 insert_after: pulumi.Input[Optional[_builtins.str]] = None,
+                 report_public_improvement: pulumi.Input[Optional[_builtins.bool]] = None,
+                 resource_name_: pulumi.Input[Optional[_builtins.str]] = None,
+                 resource_type: pulumi.Input[Optional[_builtins.str]] = None,
                  __props__=None):
         opts = pulumi.ResourceOptions.merge(_utilities.get_resource_opts_defaults(), opts)
         if not isinstance(opts, pulumi.ResourceOptions):
@@ -338,12 +338,12 @@ class RumProviderBreakdown(pulumi.CustomResource):
     def get(resource_name: str,
             id: pulumi.Input[str],
             opts: Optional[pulumi.ResourceOptions] = None,
-            domain_name_pattern_list: Optional[pulumi.Input[Union['RumProviderBreakdownDomainNamePatternListArgs', 'RumProviderBreakdownDomainNamePatternListArgsDict']]] = None,
-            icon_url: Optional[pulumi.Input[_builtins.str]] = None,
-            insert_after: Optional[pulumi.Input[_builtins.str]] = None,
-            report_public_improvement: Optional[pulumi.Input[_builtins.bool]] = None,
-            resource_name_: Optional[pulumi.Input[_builtins.str]] = None,
-            resource_type: Optional[pulumi.Input[_builtins.str]] = None) -> 'RumProviderBreakdown':
+            domain_name_pattern_list: pulumi.Input[Optional[Union['RumProviderBreakdownDomainNamePatternListArgs', 'RumProviderBreakdownDomainNamePatternListArgsDict']]] = None,
+            icon_url: pulumi.Input[Optional[_builtins.str]] = None,
+            insert_after: pulumi.Input[Optional[_builtins.str]] = None,
+            report_public_improvement: pulumi.Input[Optional[_builtins.bool]] = None,
+            resource_name_: pulumi.Input[Optional[_builtins.str]] = None,
+            resource_type: pulumi.Input[Optional[_builtins.str]] = None) -> 'RumProviderBreakdown':
         """
         Get an existing RumProviderBreakdown resource's state with the given name, id, and optional extra
         properties used to qualify the lookup.

@@ -21,11 +21,11 @@ __all__ = ['QueueManagerArgs', 'QueueManager']
 @pulumi.input_type
 class QueueManagerArgs:
     def __init__(__self__, *,
-                 alias_queues: Optional[pulumi.Input[Sequence[pulumi.Input['QueueManagerAliasQueueArgs']]]] = None,
-                 cluster_queues: Optional[pulumi.Input[Sequence[pulumi.Input['QueueManagerClusterQueueArgs']]]] = None,
-                 clusters: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-                 name: Optional[pulumi.Input[_builtins.str]] = None,
-                 remote_queues: Optional[pulumi.Input[Sequence[pulumi.Input['QueueManagerRemoteQueueArgs']]]] = None):
+                 alias_queues: pulumi.Input[Optional[Sequence[pulumi.Input['QueueManagerAliasQueueArgs']]]] = None,
+                 cluster_queues: pulumi.Input[Optional[Sequence[pulumi.Input['QueueManagerClusterQueueArgs']]]] = None,
+                 clusters: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 name: pulumi.Input[Optional[_builtins.str]] = None,
+                 remote_queues: pulumi.Input[Optional[Sequence[pulumi.Input['QueueManagerRemoteQueueArgs']]]] = None):
         """
         The set of arguments for constructing a QueueManager resource.
 
@@ -48,73 +48,73 @@ class QueueManagerArgs:
 
     @_builtins.property
     @pulumi.getter(name="aliasQueues")
-    def alias_queues(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['QueueManagerAliasQueueArgs']]]]:
+    def alias_queues(self) -> pulumi.Input[Optional[Sequence[pulumi.Input['QueueManagerAliasQueueArgs']]]]:
         """
         The alias queues in the queue manager
         """
         return pulumi.get(self, "alias_queues")
 
     @alias_queues.setter
-    def alias_queues(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['QueueManagerAliasQueueArgs']]]]):
+    def alias_queues(self, value: pulumi.Input[Optional[Sequence[pulumi.Input['QueueManagerAliasQueueArgs']]]]):
         pulumi.set(self, "alias_queues", value)
 
     @_builtins.property
     @pulumi.getter(name="clusterQueues")
-    def cluster_queues(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['QueueManagerClusterQueueArgs']]]]:
+    def cluster_queues(self) -> pulumi.Input[Optional[Sequence[pulumi.Input['QueueManagerClusterQueueArgs']]]]:
         """
         The alias queues in the queue manager
         """
         return pulumi.get(self, "cluster_queues")
 
     @cluster_queues.setter
-    def cluster_queues(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['QueueManagerClusterQueueArgs']]]]):
+    def cluster_queues(self, value: pulumi.Input[Optional[Sequence[pulumi.Input['QueueManagerClusterQueueArgs']]]]):
         pulumi.set(self, "cluster_queues", value)
 
     @_builtins.property
     @pulumi.getter
-    def clusters(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]:
+    def clusters(self) -> pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]:
         """
         Name of the cluster(s) this queue manager is part of
         """
         return pulumi.get(self, "clusters")
 
     @clusters.setter
-    def clusters(self, value: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]):
+    def clusters(self, value: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "clusters", value)
 
     @_builtins.property
     @pulumi.getter
-    def name(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def name(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The name of the queue manager
         """
         return pulumi.get(self, "name")
 
     @name.setter
-    def name(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def name(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "name", value)
 
     @_builtins.property
     @pulumi.getter(name="remoteQueues")
-    def remote_queues(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['QueueManagerRemoteQueueArgs']]]]:
+    def remote_queues(self) -> pulumi.Input[Optional[Sequence[pulumi.Input['QueueManagerRemoteQueueArgs']]]]:
         """
         The alias queues in the queue manager
         """
         return pulumi.get(self, "remote_queues")
 
     @remote_queues.setter
-    def remote_queues(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['QueueManagerRemoteQueueArgs']]]]):
+    def remote_queues(self, value: pulumi.Input[Optional[Sequence[pulumi.Input['QueueManagerRemoteQueueArgs']]]]):
         pulumi.set(self, "remote_queues", value)
 
 
 @pulumi.input_type
 class _QueueManagerState:
     def __init__(__self__, *,
-                 alias_queues: Optional[pulumi.Input[Sequence[pulumi.Input['QueueManagerAliasQueueArgs']]]] = None,
-                 cluster_queues: Optional[pulumi.Input[Sequence[pulumi.Input['QueueManagerClusterQueueArgs']]]] = None,
-                 clusters: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-                 name: Optional[pulumi.Input[_builtins.str]] = None,
-                 remote_queues: Optional[pulumi.Input[Sequence[pulumi.Input['QueueManagerRemoteQueueArgs']]]] = None):
+                 alias_queues: pulumi.Input[Optional[Sequence[pulumi.Input['QueueManagerAliasQueueArgs']]]] = None,
+                 cluster_queues: pulumi.Input[Optional[Sequence[pulumi.Input['QueueManagerClusterQueueArgs']]]] = None,
+                 clusters: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 name: pulumi.Input[Optional[_builtins.str]] = None,
+                 remote_queues: pulumi.Input[Optional[Sequence[pulumi.Input['QueueManagerRemoteQueueArgs']]]] = None):
         """
         Input properties used for looking up and filtering QueueManager resources.
 
@@ -137,62 +137,62 @@ class _QueueManagerState:
 
     @_builtins.property
     @pulumi.getter(name="aliasQueues")
-    def alias_queues(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['QueueManagerAliasQueueArgs']]]]:
+    def alias_queues(self) -> pulumi.Input[Optional[Sequence[pulumi.Input['QueueManagerAliasQueueArgs']]]]:
         """
         The alias queues in the queue manager
         """
         return pulumi.get(self, "alias_queues")
 
     @alias_queues.setter
-    def alias_queues(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['QueueManagerAliasQueueArgs']]]]):
+    def alias_queues(self, value: pulumi.Input[Optional[Sequence[pulumi.Input['QueueManagerAliasQueueArgs']]]]):
         pulumi.set(self, "alias_queues", value)
 
     @_builtins.property
     @pulumi.getter(name="clusterQueues")
-    def cluster_queues(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['QueueManagerClusterQueueArgs']]]]:
+    def cluster_queues(self) -> pulumi.Input[Optional[Sequence[pulumi.Input['QueueManagerClusterQueueArgs']]]]:
         """
         The alias queues in the queue manager
         """
         return pulumi.get(self, "cluster_queues")
 
     @cluster_queues.setter
-    def cluster_queues(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['QueueManagerClusterQueueArgs']]]]):
+    def cluster_queues(self, value: pulumi.Input[Optional[Sequence[pulumi.Input['QueueManagerClusterQueueArgs']]]]):
         pulumi.set(self, "cluster_queues", value)
 
     @_builtins.property
     @pulumi.getter
-    def clusters(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]:
+    def clusters(self) -> pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]:
         """
         Name of the cluster(s) this queue manager is part of
         """
         return pulumi.get(self, "clusters")
 
     @clusters.setter
-    def clusters(self, value: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]):
+    def clusters(self, value: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "clusters", value)
 
     @_builtins.property
     @pulumi.getter
-    def name(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def name(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The name of the queue manager
         """
         return pulumi.get(self, "name")
 
     @name.setter
-    def name(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def name(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "name", value)
 
     @_builtins.property
     @pulumi.getter(name="remoteQueues")
-    def remote_queues(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['QueueManagerRemoteQueueArgs']]]]:
+    def remote_queues(self) -> pulumi.Input[Optional[Sequence[pulumi.Input['QueueManagerRemoteQueueArgs']]]]:
         """
         The alias queues in the queue manager
         """
         return pulumi.get(self, "remote_queues")
 
     @remote_queues.setter
-    def remote_queues(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['QueueManagerRemoteQueueArgs']]]]):
+    def remote_queues(self, value: pulumi.Input[Optional[Sequence[pulumi.Input['QueueManagerRemoteQueueArgs']]]]):
         pulumi.set(self, "remote_queues", value)
 
 
@@ -202,11 +202,11 @@ class QueueManager(pulumi.CustomResource):
     def __init__(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 alias_queues: Optional[pulumi.Input[Sequence[pulumi.Input[Union['QueueManagerAliasQueueArgs', 'QueueManagerAliasQueueArgsDict']]]]] = None,
-                 cluster_queues: Optional[pulumi.Input[Sequence[pulumi.Input[Union['QueueManagerClusterQueueArgs', 'QueueManagerClusterQueueArgsDict']]]]] = None,
-                 clusters: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-                 name: Optional[pulumi.Input[_builtins.str]] = None,
-                 remote_queues: Optional[pulumi.Input[Sequence[pulumi.Input[Union['QueueManagerRemoteQueueArgs', 'QueueManagerRemoteQueueArgsDict']]]]] = None,
+                 alias_queues: pulumi.Input[Optional[Sequence[pulumi.Input[Union['QueueManagerAliasQueueArgs', 'QueueManagerAliasQueueArgsDict']]]]] = None,
+                 cluster_queues: pulumi.Input[Optional[Sequence[pulumi.Input[Union['QueueManagerClusterQueueArgs', 'QueueManagerClusterQueueArgsDict']]]]] = None,
+                 clusters: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 name: pulumi.Input[Optional[_builtins.str]] = None,
+                 remote_queues: pulumi.Input[Optional[Sequence[pulumi.Input[Union['QueueManagerRemoteQueueArgs', 'QueueManagerRemoteQueueArgsDict']]]]] = None,
                  __props__=None):
         """
         > This resource requires the API token scopes **Read settings** (`settings.read`) and **Write settings** (`settings.write`)
@@ -269,11 +269,11 @@ class QueueManager(pulumi.CustomResource):
     def _internal_init(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 alias_queues: Optional[pulumi.Input[Sequence[pulumi.Input[Union['QueueManagerAliasQueueArgs', 'QueueManagerAliasQueueArgsDict']]]]] = None,
-                 cluster_queues: Optional[pulumi.Input[Sequence[pulumi.Input[Union['QueueManagerClusterQueueArgs', 'QueueManagerClusterQueueArgsDict']]]]] = None,
-                 clusters: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-                 name: Optional[pulumi.Input[_builtins.str]] = None,
-                 remote_queues: Optional[pulumi.Input[Sequence[pulumi.Input[Union['QueueManagerRemoteQueueArgs', 'QueueManagerRemoteQueueArgsDict']]]]] = None,
+                 alias_queues: pulumi.Input[Optional[Sequence[pulumi.Input[Union['QueueManagerAliasQueueArgs', 'QueueManagerAliasQueueArgsDict']]]]] = None,
+                 cluster_queues: pulumi.Input[Optional[Sequence[pulumi.Input[Union['QueueManagerClusterQueueArgs', 'QueueManagerClusterQueueArgsDict']]]]] = None,
+                 clusters: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 name: pulumi.Input[Optional[_builtins.str]] = None,
+                 remote_queues: pulumi.Input[Optional[Sequence[pulumi.Input[Union['QueueManagerRemoteQueueArgs', 'QueueManagerRemoteQueueArgsDict']]]]] = None,
                  __props__=None):
         opts = pulumi.ResourceOptions.merge(_utilities.get_resource_opts_defaults(), opts)
         if not isinstance(opts, pulumi.ResourceOptions):
@@ -298,11 +298,11 @@ class QueueManager(pulumi.CustomResource):
     def get(resource_name: str,
             id: pulumi.Input[str],
             opts: Optional[pulumi.ResourceOptions] = None,
-            alias_queues: Optional[pulumi.Input[Sequence[pulumi.Input[Union['QueueManagerAliasQueueArgs', 'QueueManagerAliasQueueArgsDict']]]]] = None,
-            cluster_queues: Optional[pulumi.Input[Sequence[pulumi.Input[Union['QueueManagerClusterQueueArgs', 'QueueManagerClusterQueueArgsDict']]]]] = None,
-            clusters: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-            name: Optional[pulumi.Input[_builtins.str]] = None,
-            remote_queues: Optional[pulumi.Input[Sequence[pulumi.Input[Union['QueueManagerRemoteQueueArgs', 'QueueManagerRemoteQueueArgsDict']]]]] = None) -> 'QueueManager':
+            alias_queues: pulumi.Input[Optional[Sequence[pulumi.Input[Union['QueueManagerAliasQueueArgs', 'QueueManagerAliasQueueArgsDict']]]]] = None,
+            cluster_queues: pulumi.Input[Optional[Sequence[pulumi.Input[Union['QueueManagerClusterQueueArgs', 'QueueManagerClusterQueueArgsDict']]]]] = None,
+            clusters: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+            name: pulumi.Input[Optional[_builtins.str]] = None,
+            remote_queues: pulumi.Input[Optional[Sequence[pulumi.Input[Union['QueueManagerRemoteQueueArgs', 'QueueManagerRemoteQueueArgsDict']]]]] = None) -> 'QueueManager':
         """
         Get an existing QueueManager resource's state with the given name, id, and optional extra
         properties used to qualify the lookup.

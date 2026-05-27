@@ -58,8 +58,8 @@ class ConnectivityAlertsArgs:
 @pulumi.input_type
 class _ConnectivityAlertsState:
     def __init__(__self__, *,
-                 connectivity_alerts: Optional[pulumi.Input[_builtins.bool]] = None,
-                 process_group_id: Optional[pulumi.Input[_builtins.str]] = None):
+                 connectivity_alerts: pulumi.Input[Optional[_builtins.bool]] = None,
+                 process_group_id: pulumi.Input[Optional[_builtins.str]] = None):
         """
         Input properties used for looking up and filtering ConnectivityAlerts resources.
 
@@ -73,26 +73,26 @@ class _ConnectivityAlertsState:
 
     @_builtins.property
     @pulumi.getter(name="connectivityAlerts")
-    def connectivity_alerts(self) -> Optional[pulumi.Input[_builtins.bool]]:
+    def connectivity_alerts(self) -> pulumi.Input[Optional[_builtins.bool]]:
         """
         TCP connectivity problems
         """
         return pulumi.get(self, "connectivity_alerts")
 
     @connectivity_alerts.setter
-    def connectivity_alerts(self, value: Optional[pulumi.Input[_builtins.bool]]):
+    def connectivity_alerts(self, value: pulumi.Input[Optional[_builtins.bool]]):
         pulumi.set(self, "connectivity_alerts", value)
 
     @_builtins.property
     @pulumi.getter(name="processGroupId")
-    def process_group_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def process_group_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The scope of this settings
         """
         return pulumi.get(self, "process_group_id")
 
     @process_group_id.setter
-    def process_group_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def process_group_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "process_group_id", value)
 
 
@@ -102,8 +102,8 @@ class ConnectivityAlerts(pulumi.CustomResource):
     def __init__(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 connectivity_alerts: Optional[pulumi.Input[_builtins.bool]] = None,
-                 process_group_id: Optional[pulumi.Input[_builtins.str]] = None,
+                 connectivity_alerts: pulumi.Input[Optional[_builtins.bool]] = None,
+                 process_group_id: pulumi.Input[Optional[_builtins.str]] = None,
                  __props__=None):
         """
         > This resource requires the API token scopes **Read settings** (`settings.read`) and **Write settings** (`settings.write`)
@@ -185,8 +185,8 @@ class ConnectivityAlerts(pulumi.CustomResource):
     def _internal_init(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 connectivity_alerts: Optional[pulumi.Input[_builtins.bool]] = None,
-                 process_group_id: Optional[pulumi.Input[_builtins.str]] = None,
+                 connectivity_alerts: pulumi.Input[Optional[_builtins.bool]] = None,
+                 process_group_id: pulumi.Input[Optional[_builtins.str]] = None,
                  __props__=None):
         opts = pulumi.ResourceOptions.merge(_utilities.get_resource_opts_defaults(), opts)
         if not isinstance(opts, pulumi.ResourceOptions):
@@ -212,8 +212,8 @@ class ConnectivityAlerts(pulumi.CustomResource):
     def get(resource_name: str,
             id: pulumi.Input[str],
             opts: Optional[pulumi.ResourceOptions] = None,
-            connectivity_alerts: Optional[pulumi.Input[_builtins.bool]] = None,
-            process_group_id: Optional[pulumi.Input[_builtins.str]] = None) -> 'ConnectivityAlerts':
+            connectivity_alerts: pulumi.Input[Optional[_builtins.bool]] = None,
+            process_group_id: pulumi.Input[Optional[_builtins.str]] = None) -> 'ConnectivityAlerts':
         """
         Get an existing ConnectivityAlerts resource's state with the given name, id, and optional extra
         properties used to qualify the lookup.

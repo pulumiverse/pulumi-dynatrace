@@ -94,11 +94,11 @@ export interface CrashdumpAnalyticsState {
     /**
      * Disable the feature to stop receiving information about crash details and potential problems. We recommend keeping the feature enabled.
      */
-    enableCrashDumpAnalytics?: pulumi.Input<boolean>;
+    enableCrashDumpAnalytics?: pulumi.Input<boolean | undefined>;
     /**
      * The scope of this setting (HOST HOST_GROUP environment)
      */
-    hostId?: pulumi.Input<string>;
+    hostId?: pulumi.Input<string | undefined>;
 }
 
 /**

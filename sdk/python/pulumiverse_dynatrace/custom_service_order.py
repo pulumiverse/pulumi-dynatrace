@@ -19,11 +19,11 @@ __all__ = ['CustomServiceOrderArgs', 'CustomServiceOrder']
 @pulumi.input_type
 class CustomServiceOrderArgs:
     def __init__(__self__, *,
-                 dotnets: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-                 golangs: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-                 javas: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-                 nodejs: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-                 phps: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None):
+                 dotnets: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 golangs: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 javas: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 nodejs: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 phps: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None):
         """
         The set of arguments for constructing a CustomServiceOrder resource.
 
@@ -46,73 +46,73 @@ class CustomServiceOrderArgs:
 
     @_builtins.property
     @pulumi.getter
-    def dotnets(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]:
+    def dotnets(self) -> pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]:
         """
         The IDs of Custom Services for .Net in the desired order
         """
         return pulumi.get(self, "dotnets")
 
     @dotnets.setter
-    def dotnets(self, value: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]):
+    def dotnets(self, value: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "dotnets", value)
 
     @_builtins.property
     @pulumi.getter
-    def golangs(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]:
+    def golangs(self) -> pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]:
         """
         The IDs of Custom Services for Golang in the desired order
         """
         return pulumi.get(self, "golangs")
 
     @golangs.setter
-    def golangs(self, value: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]):
+    def golangs(self, value: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "golangs", value)
 
     @_builtins.property
     @pulumi.getter
-    def javas(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]:
+    def javas(self) -> pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]:
         """
         The IDs of Custom Services for Java in the desired order
         """
         return pulumi.get(self, "javas")
 
     @javas.setter
-    def javas(self, value: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]):
+    def javas(self, value: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "javas", value)
 
     @_builtins.property
     @pulumi.getter
-    def nodejs(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]:
+    def nodejs(self) -> pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]:
         """
         The IDs of Custom Services for NodeJS in the desired order
         """
         return pulumi.get(self, "nodejs")
 
     @nodejs.setter
-    def nodejs(self, value: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]):
+    def nodejs(self, value: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "nodejs", value)
 
     @_builtins.property
     @pulumi.getter
-    def phps(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]:
+    def phps(self) -> pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]:
         """
         The IDs of Custom Services for PHP in the desired order
         """
         return pulumi.get(self, "phps")
 
     @phps.setter
-    def phps(self, value: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]):
+    def phps(self, value: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "phps", value)
 
 
 @pulumi.input_type
 class _CustomServiceOrderState:
     def __init__(__self__, *,
-                 dotnets: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-                 golangs: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-                 javas: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-                 nodejs: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-                 phps: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None):
+                 dotnets: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 golangs: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 javas: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 nodejs: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 phps: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None):
         """
         Input properties used for looking up and filtering CustomServiceOrder resources.
 
@@ -135,62 +135,62 @@ class _CustomServiceOrderState:
 
     @_builtins.property
     @pulumi.getter
-    def dotnets(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]:
+    def dotnets(self) -> pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]:
         """
         The IDs of Custom Services for .Net in the desired order
         """
         return pulumi.get(self, "dotnets")
 
     @dotnets.setter
-    def dotnets(self, value: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]):
+    def dotnets(self, value: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "dotnets", value)
 
     @_builtins.property
     @pulumi.getter
-    def golangs(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]:
+    def golangs(self) -> pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]:
         """
         The IDs of Custom Services for Golang in the desired order
         """
         return pulumi.get(self, "golangs")
 
     @golangs.setter
-    def golangs(self, value: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]):
+    def golangs(self, value: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "golangs", value)
 
     @_builtins.property
     @pulumi.getter
-    def javas(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]:
+    def javas(self) -> pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]:
         """
         The IDs of Custom Services for Java in the desired order
         """
         return pulumi.get(self, "javas")
 
     @javas.setter
-    def javas(self, value: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]):
+    def javas(self, value: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "javas", value)
 
     @_builtins.property
     @pulumi.getter
-    def nodejs(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]:
+    def nodejs(self) -> pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]:
         """
         The IDs of Custom Services for NodeJS in the desired order
         """
         return pulumi.get(self, "nodejs")
 
     @nodejs.setter
-    def nodejs(self, value: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]):
+    def nodejs(self, value: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "nodejs", value)
 
     @_builtins.property
     @pulumi.getter
-    def phps(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]:
+    def phps(self) -> pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]:
         """
         The IDs of Custom Services for PHP in the desired order
         """
         return pulumi.get(self, "phps")
 
     @phps.setter
-    def phps(self, value: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]):
+    def phps(self, value: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "phps", value)
 
 
@@ -200,11 +200,11 @@ class CustomServiceOrder(pulumi.CustomResource):
     def __init__(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 dotnets: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-                 golangs: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-                 javas: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-                 nodejs: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-                 phps: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 dotnets: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 golangs: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 javas: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 nodejs: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 phps: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
                  __props__=None):
         """
         > This resource requires the API token scopes **Read configuration** (`ReadConfig`) and **Write configuration** (`WriteConfig`)
@@ -267,11 +267,11 @@ class CustomServiceOrder(pulumi.CustomResource):
     def _internal_init(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 dotnets: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-                 golangs: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-                 javas: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-                 nodejs: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-                 phps: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 dotnets: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 golangs: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 javas: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 nodejs: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 phps: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
                  __props__=None):
         opts = pulumi.ResourceOptions.merge(_utilities.get_resource_opts_defaults(), opts)
         if not isinstance(opts, pulumi.ResourceOptions):
@@ -296,11 +296,11 @@ class CustomServiceOrder(pulumi.CustomResource):
     def get(resource_name: str,
             id: pulumi.Input[str],
             opts: Optional[pulumi.ResourceOptions] = None,
-            dotnets: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-            golangs: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-            javas: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-            nodejs: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-            phps: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None) -> 'CustomServiceOrder':
+            dotnets: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+            golangs: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+            javas: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+            nodejs: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+            phps: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None) -> 'CustomServiceOrder':
         """
         Get an existing CustomServiceOrder resource's state with the given name, id, and optional extra
         properties used to qualify the lookup.

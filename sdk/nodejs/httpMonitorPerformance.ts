@@ -104,15 +104,15 @@ export interface HttpMonitorPerformanceState {
     /**
      * This setting is enabled (`true`) or disabled (`false`)
      */
-    enabled?: pulumi.Input<boolean>;
+    enabled?: pulumi.Input<boolean | undefined>;
     /**
      * The scope of this setting (HTTP_CHECK)
      */
-    scope?: pulumi.Input<string>;
+    scope?: pulumi.Input<string | undefined>;
     /**
      * Performance thresholds
      */
-    thresholds?: pulumi.Input<inputs.HttpMonitorPerformanceThresholds>;
+    thresholds?: pulumi.Input<inputs.HttpMonitorPerformanceThresholds | undefined>;
 }
 
 /**
@@ -130,5 +130,5 @@ export interface HttpMonitorPerformanceArgs {
     /**
      * Performance thresholds
      */
-    thresholds?: pulumi.Input<inputs.HttpMonitorPerformanceThresholds>;
+    thresholds?: pulumi.Input<inputs.HttpMonitorPerformanceThresholds | undefined>;
 }

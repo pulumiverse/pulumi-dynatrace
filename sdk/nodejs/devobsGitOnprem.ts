@@ -100,15 +100,15 @@ export interface DevobsGitOnpremState {
     /**
      * Possible Values: `AzureOnPrem`, `BitbucketOnPrem`, `GithubOnPrem`, `GitlabOnPrem`
      */
-    gitProvider?: pulumi.Input<string>;
+    gitProvider?: pulumi.Input<string | undefined>;
     /**
      * If turned on, requests to your Gitlab server will have the `credentials` option set to `include`. Otherwise, it will be set to `omit`.
      */
-    includeCredentials?: pulumi.Input<boolean>;
+    includeCredentials?: pulumi.Input<boolean | undefined>;
     /**
      * An HTTP/HTTPS URL of your server
      */
-    url?: pulumi.Input<string>;
+    url?: pulumi.Input<string | undefined>;
 }
 
 /**
@@ -122,7 +122,7 @@ export interface DevobsGitOnpremArgs {
     /**
      * If turned on, requests to your Gitlab server will have the `credentials` option set to `include`. Otherwise, it will be set to `omit`.
      */
-    includeCredentials?: pulumi.Input<boolean>;
+    includeCredentials?: pulumi.Input<boolean | undefined>;
     /**
      * An HTTP/HTTPS URL of your server
      */

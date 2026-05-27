@@ -50,5 +50,5 @@ export function getAlertingProfilesOutput(args?: GetAlertingProfilesOutputArgs, 
  * A collection of arguments for invoking getAlertingProfiles.
  */
 export interface GetAlertingProfilesOutputArgs {
-    profiles?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
+    profiles?: pulumi.Input<{[key: string]: pulumi.Input<string>} | undefined>;
 }

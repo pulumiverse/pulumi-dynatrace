@@ -136,35 +136,35 @@ export interface DevobsDataMaskingState {
     /**
      * This setting is enabled (`true`) or disabled (`false`)
      */
-    enabled?: pulumi.Input<boolean>;
+    enabled?: pulumi.Input<boolean | undefined>;
     /**
      * Because this resource allows for ordering you may specify the ID of the resource instance that comes before this instance regarding order. If not specified when creating the setting will be added to the end of the list. If not specified during update the order will remain untouched
      */
-    insertAfter?: pulumi.Input<string>;
+    insertAfter?: pulumi.Input<string | undefined>;
     /**
      * no documentation available
      */
-    replacementPattern?: pulumi.Input<string>;
+    replacementPattern?: pulumi.Input<string | undefined>;
     /**
      * Possible Values: `SHA256`, `STRING`
      */
-    replacementType?: pulumi.Input<string>;
+    replacementType?: pulumi.Input<string | undefined>;
     /**
      * Rule Name
      */
-    ruleName?: pulumi.Input<string>;
+    ruleName?: pulumi.Input<string | undefined>;
     /**
      * no documentation available
      */
-    ruleRegex?: pulumi.Input<string>;
+    ruleRegex?: pulumi.Input<string | undefined>;
     /**
      * Possible Values: `REGEX`, `VAR_NAME`
      */
-    ruleType?: pulumi.Input<string>;
+    ruleType?: pulumi.Input<string | undefined>;
     /**
      * no documentation available
      */
-    ruleVarName?: pulumi.Input<string>;
+    ruleVarName?: pulumi.Input<string | undefined>;
 }
 
 /**
@@ -178,11 +178,11 @@ export interface DevobsDataMaskingArgs {
     /**
      * Because this resource allows for ordering you may specify the ID of the resource instance that comes before this instance regarding order. If not specified when creating the setting will be added to the end of the list. If not specified during update the order will remain untouched
      */
-    insertAfter?: pulumi.Input<string>;
+    insertAfter?: pulumi.Input<string | undefined>;
     /**
      * no documentation available
      */
-    replacementPattern?: pulumi.Input<string>;
+    replacementPattern?: pulumi.Input<string | undefined>;
     /**
      * Possible Values: `SHA256`, `STRING`
      */
@@ -194,7 +194,7 @@ export interface DevobsDataMaskingArgs {
     /**
      * no documentation available
      */
-    ruleRegex?: pulumi.Input<string>;
+    ruleRegex?: pulumi.Input<string | undefined>;
     /**
      * Possible Values: `REGEX`, `VAR_NAME`
      */
@@ -202,5 +202,5 @@ export interface DevobsDataMaskingArgs {
     /**
      * no documentation available
      */
-    ruleVarName?: pulumi.Input<string>;
+    ruleVarName?: pulumi.Input<string | undefined>;
 }

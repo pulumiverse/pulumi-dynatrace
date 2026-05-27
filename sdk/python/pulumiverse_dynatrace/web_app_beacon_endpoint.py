@@ -21,8 +21,8 @@ class WebAppBeaconEndpointArgs:
     def __init__(__self__, *,
                  application_id: pulumi.Input[_builtins.str],
                  type: pulumi.Input[_builtins.str],
-                 url: Optional[pulumi.Input[_builtins.str]] = None,
-                 use_cors: Optional[pulumi.Input[_builtins.bool]] = None):
+                 url: pulumi.Input[Optional[_builtins.str]] = None,
+                 use_cors: pulumi.Input[Optional[_builtins.bool]] = None):
         """
         The set of arguments for constructing a WebAppBeaconEndpoint resource.
 
@@ -64,36 +64,36 @@ class WebAppBeaconEndpointArgs:
 
     @_builtins.property
     @pulumi.getter
-    def url(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def url(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         You can specify either path segments or an absolute URL.
         """
         return pulumi.get(self, "url")
 
     @url.setter
-    def url(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def url(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "url", value)
 
     @_builtins.property
     @pulumi.getter(name="useCors")
-    def use_cors(self) -> Optional[pulumi.Input[_builtins.bool]]:
+    def use_cors(self) -> pulumi.Input[Optional[_builtins.bool]]:
         """
         Learn more about [sending beacon data via CORS](https://dt-url.net/r7038sa)
         """
         return pulumi.get(self, "use_cors")
 
     @use_cors.setter
-    def use_cors(self, value: Optional[pulumi.Input[_builtins.bool]]):
+    def use_cors(self, value: pulumi.Input[Optional[_builtins.bool]]):
         pulumi.set(self, "use_cors", value)
 
 
 @pulumi.input_type
 class _WebAppBeaconEndpointState:
     def __init__(__self__, *,
-                 application_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 type: Optional[pulumi.Input[_builtins.str]] = None,
-                 url: Optional[pulumi.Input[_builtins.str]] = None,
-                 use_cors: Optional[pulumi.Input[_builtins.bool]] = None):
+                 application_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 type: pulumi.Input[Optional[_builtins.str]] = None,
+                 url: pulumi.Input[Optional[_builtins.str]] = None,
+                 use_cors: pulumi.Input[Optional[_builtins.bool]] = None):
         """
         Input properties used for looking up and filtering WebAppBeaconEndpoint resources.
 
@@ -113,50 +113,50 @@ class _WebAppBeaconEndpointState:
 
     @_builtins.property
     @pulumi.getter(name="applicationId")
-    def application_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def application_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The scope of this setting
         """
         return pulumi.get(self, "application_id")
 
     @application_id.setter
-    def application_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def application_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "application_id", value)
 
     @_builtins.property
     @pulumi.getter
-    def type(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def type(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Possible Values: `ACTIVEGATE`, `DEFAULT_CONFIG`, `ONEAGENT`
         """
         return pulumi.get(self, "type")
 
     @type.setter
-    def type(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def type(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "type", value)
 
     @_builtins.property
     @pulumi.getter
-    def url(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def url(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         You can specify either path segments or an absolute URL.
         """
         return pulumi.get(self, "url")
 
     @url.setter
-    def url(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def url(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "url", value)
 
     @_builtins.property
     @pulumi.getter(name="useCors")
-    def use_cors(self) -> Optional[pulumi.Input[_builtins.bool]]:
+    def use_cors(self) -> pulumi.Input[Optional[_builtins.bool]]:
         """
         Learn more about [sending beacon data via CORS](https://dt-url.net/r7038sa)
         """
         return pulumi.get(self, "use_cors")
 
     @use_cors.setter
-    def use_cors(self, value: Optional[pulumi.Input[_builtins.bool]]):
+    def use_cors(self, value: pulumi.Input[Optional[_builtins.bool]]):
         pulumi.set(self, "use_cors", value)
 
 
@@ -166,10 +166,10 @@ class WebAppBeaconEndpoint(pulumi.CustomResource):
     def __init__(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 application_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 type: Optional[pulumi.Input[_builtins.str]] = None,
-                 url: Optional[pulumi.Input[_builtins.str]] = None,
-                 use_cors: Optional[pulumi.Input[_builtins.bool]] = None,
+                 application_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 type: pulumi.Input[Optional[_builtins.str]] = None,
+                 url: pulumi.Input[Optional[_builtins.str]] = None,
+                 use_cors: pulumi.Input[Optional[_builtins.bool]] = None,
                  __props__=None):
         """
         > This resource requires the API token scopes **Read settings** (`settings.read`) and **Write settings** (`settings.write`)
@@ -231,10 +231,10 @@ class WebAppBeaconEndpoint(pulumi.CustomResource):
     def _internal_init(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 application_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 type: Optional[pulumi.Input[_builtins.str]] = None,
-                 url: Optional[pulumi.Input[_builtins.str]] = None,
-                 use_cors: Optional[pulumi.Input[_builtins.bool]] = None,
+                 application_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 type: pulumi.Input[Optional[_builtins.str]] = None,
+                 url: pulumi.Input[Optional[_builtins.str]] = None,
+                 use_cors: pulumi.Input[Optional[_builtins.bool]] = None,
                  __props__=None):
         opts = pulumi.ResourceOptions.merge(_utilities.get_resource_opts_defaults(), opts)
         if not isinstance(opts, pulumi.ResourceOptions):
@@ -262,10 +262,10 @@ class WebAppBeaconEndpoint(pulumi.CustomResource):
     def get(resource_name: str,
             id: pulumi.Input[str],
             opts: Optional[pulumi.ResourceOptions] = None,
-            application_id: Optional[pulumi.Input[_builtins.str]] = None,
-            type: Optional[pulumi.Input[_builtins.str]] = None,
-            url: Optional[pulumi.Input[_builtins.str]] = None,
-            use_cors: Optional[pulumi.Input[_builtins.bool]] = None) -> 'WebAppBeaconEndpoint':
+            application_id: pulumi.Input[Optional[_builtins.str]] = None,
+            type: pulumi.Input[Optional[_builtins.str]] = None,
+            url: pulumi.Input[Optional[_builtins.str]] = None,
+            use_cors: pulumi.Input[Optional[_builtins.bool]] = None) -> 'WebAppBeaconEndpoint':
         """
         Get an existing WebAppBeaconEndpoint resource's state with the given name, id, and optional extra
         properties used to qualify the lookup.

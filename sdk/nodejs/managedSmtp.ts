@@ -159,39 +159,39 @@ export interface ManagedSmtpState {
     /**
      * If true, we will send e-mails via Mission Control in case of problems with SMTP server.
      */
-    allowFallbackViaMissionControl?: pulumi.Input<boolean>;
+    allowFallbackViaMissionControl?: pulumi.Input<boolean | undefined>;
     /**
      * Connection security, possible values: `NO_ENCRYPTION`, `OPTIONAL_STARTTLS`, `REQUIRE_STARTTLS`, `TLS`. Default: `NO_ENCRYPTION`
      */
-    connectionSecurity?: pulumi.Input<string>;
+    connectionSecurity?: pulumi.Input<string | undefined>;
     /**
      * Host Name
      */
-    hostName?: pulumi.Input<string>;
+    hostName?: pulumi.Input<string | undefined>;
     /**
      * If true, a password has been configured. Default: `false`.
      */
-    isPasswordConfigured?: pulumi.Input<boolean>;
+    isPasswordConfigured?: pulumi.Input<boolean | undefined>;
     /**
      * Password
      */
-    password?: pulumi.Input<string>;
+    password?: pulumi.Input<string | undefined>;
     /**
      * Integer value of port. Default: `25`
      */
-    port?: pulumi.Input<number>;
+    port?: pulumi.Input<number | undefined>;
     /**
      * Sender email address
      */
-    senderEmailAddress?: pulumi.Input<string>;
+    senderEmailAddress?: pulumi.Input<string | undefined>;
     /**
      * If true, we will send e-mails via SMTP server.
      */
-    useSmtpServer?: pulumi.Input<boolean>;
+    useSmtpServer?: pulumi.Input<boolean | undefined>;
     /**
      * User Name
      */
-    userName?: pulumi.Input<string>;
+    userName?: pulumi.Input<string | undefined>;
 }
 
 /**
@@ -201,11 +201,11 @@ export interface ManagedSmtpArgs {
     /**
      * If true, we will send e-mails via Mission Control in case of problems with SMTP server.
      */
-    allowFallbackViaMissionControl?: pulumi.Input<boolean>;
+    allowFallbackViaMissionControl?: pulumi.Input<boolean | undefined>;
     /**
      * Connection security, possible values: `NO_ENCRYPTION`, `OPTIONAL_STARTTLS`, `REQUIRE_STARTTLS`, `TLS`. Default: `NO_ENCRYPTION`
      */
-    connectionSecurity?: pulumi.Input<string>;
+    connectionSecurity?: pulumi.Input<string | undefined>;
     /**
      * Host Name
      */
@@ -213,7 +213,7 @@ export interface ManagedSmtpArgs {
     /**
      * If true, a password has been configured. Default: `false`.
      */
-    isPasswordConfigured?: pulumi.Input<boolean>;
+    isPasswordConfigured?: pulumi.Input<boolean | undefined>;
     /**
      * Password
      */
@@ -221,7 +221,7 @@ export interface ManagedSmtpArgs {
     /**
      * Integer value of port. Default: `25`
      */
-    port?: pulumi.Input<number>;
+    port?: pulumi.Input<number | undefined>;
     /**
      * Sender email address
      */
@@ -229,7 +229,7 @@ export interface ManagedSmtpArgs {
     /**
      * If true, we will send e-mails via SMTP server.
      */
-    useSmtpServer?: pulumi.Input<boolean>;
+    useSmtpServer?: pulumi.Input<boolean | undefined>;
     /**
      * User Name
      */

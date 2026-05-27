@@ -106,19 +106,19 @@ export interface WebAppResourceTypesState {
     /**
      * Because this resource allows for ordering you may specify the ID of the resource instance that comes before this instance regarding order. If not specified when creating the setting will be added to the end of the list. If not specified during update the order will remain untouched
      */
-    insertAfter?: pulumi.Input<string>;
+    insertAfter?: pulumi.Input<string | undefined>;
     /**
      * Possible Values: `CSS`, `IMAGE`, `OTHER`, `SCRIPT`
      */
-    primaryResourceType?: pulumi.Input<string>;
+    primaryResourceType?: pulumi.Input<string | undefined>;
     /**
      * The regular expression to detect the resource.
      */
-    regularExpression?: pulumi.Input<string>;
+    regularExpression?: pulumi.Input<string | undefined>;
     /**
      * The secondary type of the resource.
      */
-    secondaryResourceType?: pulumi.Input<string>;
+    secondaryResourceType?: pulumi.Input<string | undefined>;
 }
 
 /**
@@ -128,7 +128,7 @@ export interface WebAppResourceTypesArgs {
     /**
      * Because this resource allows for ordering you may specify the ID of the resource instance that comes before this instance regarding order. If not specified when creating the setting will be added to the end of the list. If not specified during update the order will remain untouched
      */
-    insertAfter?: pulumi.Input<string>;
+    insertAfter?: pulumi.Input<string | undefined>;
     /**
      * Possible Values: `CSS`, `IMAGE`, `OTHER`, `SCRIPT`
      */
@@ -140,5 +140,5 @@ export interface WebAppResourceTypesArgs {
     /**
      * The secondary type of the resource.
      */
-    secondaryResourceType?: pulumi.Input<string>;
+    secondaryResourceType?: pulumi.Input<string | undefined>;
 }

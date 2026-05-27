@@ -102,7 +102,7 @@ def get_geo_regions(country_code: Optional[_builtins.str] = None,
         country_code=pulumi.get(__ret__, 'country_code'),
         id=pulumi.get(__ret__, 'id'),
         regions=pulumi.get(__ret__, 'regions'))
-def get_geo_regions_output(country_code: Optional[pulumi.Input[_builtins.str]] = None,
+def get_geo_regions_output(country_code: pulumi.Input[Optional[_builtins.str]] = None,
                            opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetGeoRegionsResult]:
     """
     The `get_geo_regions` data source retrieves the list of regions and their codes based on country code.

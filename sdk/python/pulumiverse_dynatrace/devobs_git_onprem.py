@@ -21,7 +21,7 @@ class DevobsGitOnpremArgs:
     def __init__(__self__, *,
                  git_provider: pulumi.Input[_builtins.str],
                  url: pulumi.Input[_builtins.str],
-                 include_credentials: Optional[pulumi.Input[_builtins.bool]] = None):
+                 include_credentials: pulumi.Input[Optional[_builtins.bool]] = None):
         """
         The set of arguments for constructing a DevobsGitOnprem resource.
 
@@ -60,23 +60,23 @@ class DevobsGitOnpremArgs:
 
     @_builtins.property
     @pulumi.getter(name="includeCredentials")
-    def include_credentials(self) -> Optional[pulumi.Input[_builtins.bool]]:
+    def include_credentials(self) -> pulumi.Input[Optional[_builtins.bool]]:
         """
         If turned on, requests to your Gitlab server will have the `credentials` option set to `include`. Otherwise, it will be set to `omit`.
         """
         return pulumi.get(self, "include_credentials")
 
     @include_credentials.setter
-    def include_credentials(self, value: Optional[pulumi.Input[_builtins.bool]]):
+    def include_credentials(self, value: pulumi.Input[Optional[_builtins.bool]]):
         pulumi.set(self, "include_credentials", value)
 
 
 @pulumi.input_type
 class _DevobsGitOnpremState:
     def __init__(__self__, *,
-                 git_provider: Optional[pulumi.Input[_builtins.str]] = None,
-                 include_credentials: Optional[pulumi.Input[_builtins.bool]] = None,
-                 url: Optional[pulumi.Input[_builtins.str]] = None):
+                 git_provider: pulumi.Input[Optional[_builtins.str]] = None,
+                 include_credentials: pulumi.Input[Optional[_builtins.bool]] = None,
+                 url: pulumi.Input[Optional[_builtins.str]] = None):
         """
         Input properties used for looking up and filtering DevobsGitOnprem resources.
 
@@ -93,38 +93,38 @@ class _DevobsGitOnpremState:
 
     @_builtins.property
     @pulumi.getter(name="gitProvider")
-    def git_provider(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def git_provider(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Possible Values: `AzureOnPrem`, `BitbucketOnPrem`, `GithubOnPrem`, `GitlabOnPrem`
         """
         return pulumi.get(self, "git_provider")
 
     @git_provider.setter
-    def git_provider(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def git_provider(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "git_provider", value)
 
     @_builtins.property
     @pulumi.getter(name="includeCredentials")
-    def include_credentials(self) -> Optional[pulumi.Input[_builtins.bool]]:
+    def include_credentials(self) -> pulumi.Input[Optional[_builtins.bool]]:
         """
         If turned on, requests to your Gitlab server will have the `credentials` option set to `include`. Otherwise, it will be set to `omit`.
         """
         return pulumi.get(self, "include_credentials")
 
     @include_credentials.setter
-    def include_credentials(self, value: Optional[pulumi.Input[_builtins.bool]]):
+    def include_credentials(self, value: pulumi.Input[Optional[_builtins.bool]]):
         pulumi.set(self, "include_credentials", value)
 
     @_builtins.property
     @pulumi.getter
-    def url(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def url(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         An HTTP/HTTPS URL of your server
         """
         return pulumi.get(self, "url")
 
     @url.setter
-    def url(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def url(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "url", value)
 
 
@@ -134,9 +134,9 @@ class DevobsGitOnprem(pulumi.CustomResource):
     def __init__(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 git_provider: Optional[pulumi.Input[_builtins.str]] = None,
-                 include_credentials: Optional[pulumi.Input[_builtins.bool]] = None,
-                 url: Optional[pulumi.Input[_builtins.str]] = None,
+                 git_provider: pulumi.Input[Optional[_builtins.str]] = None,
+                 include_credentials: pulumi.Input[Optional[_builtins.bool]] = None,
+                 url: pulumi.Input[Optional[_builtins.str]] = None,
                  __props__=None):
         """
         > This resource requires the API token scopes **Read settings** (`settings.read`) and **Write settings** (`settings.write`)
@@ -197,9 +197,9 @@ class DevobsGitOnprem(pulumi.CustomResource):
     def _internal_init(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 git_provider: Optional[pulumi.Input[_builtins.str]] = None,
-                 include_credentials: Optional[pulumi.Input[_builtins.bool]] = None,
-                 url: Optional[pulumi.Input[_builtins.str]] = None,
+                 git_provider: pulumi.Input[Optional[_builtins.str]] = None,
+                 include_credentials: pulumi.Input[Optional[_builtins.bool]] = None,
+                 url: pulumi.Input[Optional[_builtins.str]] = None,
                  __props__=None):
         opts = pulumi.ResourceOptions.merge(_utilities.get_resource_opts_defaults(), opts)
         if not isinstance(opts, pulumi.ResourceOptions):
@@ -226,9 +226,9 @@ class DevobsGitOnprem(pulumi.CustomResource):
     def get(resource_name: str,
             id: pulumi.Input[str],
             opts: Optional[pulumi.ResourceOptions] = None,
-            git_provider: Optional[pulumi.Input[_builtins.str]] = None,
-            include_credentials: Optional[pulumi.Input[_builtins.bool]] = None,
-            url: Optional[pulumi.Input[_builtins.str]] = None) -> 'DevobsGitOnprem':
+            git_provider: pulumi.Input[Optional[_builtins.str]] = None,
+            include_credentials: pulumi.Input[Optional[_builtins.bool]] = None,
+            url: pulumi.Input[Optional[_builtins.str]] = None) -> 'DevobsGitOnprem':
         """
         Get an existing DevobsGitOnprem resource's state with the given name, id, and optional extra
         properties used to qualify the lookup.

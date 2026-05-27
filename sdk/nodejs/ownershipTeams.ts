@@ -138,39 +138,39 @@ export interface OwnershipTeamsState {
     /**
      * Define key/value pairs that further describe this team — for example, cost center, solution type, or business unit assignments.
      */
-    additionalInformation?: pulumi.Input<inputs.OwnershipTeamsAdditionalInformation>;
+    additionalInformation?: pulumi.Input<inputs.OwnershipTeamsAdditionalInformation | undefined>;
     /**
      * Define options for messaging integration or other means of contacting this team.
      */
-    contactDetails?: pulumi.Input<inputs.OwnershipTeamsContactDetails>;
+    contactDetails?: pulumi.Input<inputs.OwnershipTeamsContactDetails | undefined>;
     /**
      * Description
      */
-    description?: pulumi.Input<string>;
+    description?: pulumi.Input<string | undefined>;
     /**
      * This field should only be used for the automation purpose when importing team information.
      */
-    externalId?: pulumi.Input<string>;
+    externalId?: pulumi.Input<string | undefined>;
     /**
      * The team identifier is used to reference the team from any entity in Dynatrace. If you are using Kubernetes labels, keep in mind the 63 character limit that they enforce.
      */
-    identifier?: pulumi.Input<string>;
+    identifier?: pulumi.Input<string | undefined>;
     /**
      * Include links to online resources where information relevant to this team’s responsibilities can be found.
      */
-    links?: pulumi.Input<inputs.OwnershipTeamsLinks>;
+    links?: pulumi.Input<inputs.OwnershipTeamsLinks | undefined>;
     /**
      * Team name
      */
-    name?: pulumi.Input<string>;
+    name?: pulumi.Input<string | undefined>;
     /**
      * Turn on all responsibility assignments that apply to this team.
      */
-    responsibilities?: pulumi.Input<inputs.OwnershipTeamsResponsibilities>;
+    responsibilities?: pulumi.Input<inputs.OwnershipTeamsResponsibilities | undefined>;
     /**
      * The supplementary team identifiers can be optionally used in addition to the main team identifier to reference this team from any entity in Dynatrace. Up to 3 supplementary identifiers are supported.
      */
-    supplementaryIdentifiers?: pulumi.Input<inputs.OwnershipTeamsSupplementaryIdentifiers>;
+    supplementaryIdentifiers?: pulumi.Input<inputs.OwnershipTeamsSupplementaryIdentifiers | undefined>;
 }
 
 /**
@@ -180,19 +180,19 @@ export interface OwnershipTeamsArgs {
     /**
      * Define key/value pairs that further describe this team — for example, cost center, solution type, or business unit assignments.
      */
-    additionalInformation?: pulumi.Input<inputs.OwnershipTeamsAdditionalInformation>;
+    additionalInformation?: pulumi.Input<inputs.OwnershipTeamsAdditionalInformation | undefined>;
     /**
      * Define options for messaging integration or other means of contacting this team.
      */
-    contactDetails?: pulumi.Input<inputs.OwnershipTeamsContactDetails>;
+    contactDetails?: pulumi.Input<inputs.OwnershipTeamsContactDetails | undefined>;
     /**
      * Description
      */
-    description?: pulumi.Input<string>;
+    description?: pulumi.Input<string | undefined>;
     /**
      * This field should only be used for the automation purpose when importing team information.
      */
-    externalId?: pulumi.Input<string>;
+    externalId?: pulumi.Input<string | undefined>;
     /**
      * The team identifier is used to reference the team from any entity in Dynatrace. If you are using Kubernetes labels, keep in mind the 63 character limit that they enforce.
      */
@@ -200,11 +200,11 @@ export interface OwnershipTeamsArgs {
     /**
      * Include links to online resources where information relevant to this team’s responsibilities can be found.
      */
-    links?: pulumi.Input<inputs.OwnershipTeamsLinks>;
+    links?: pulumi.Input<inputs.OwnershipTeamsLinks | undefined>;
     /**
      * Team name
      */
-    name?: pulumi.Input<string>;
+    name?: pulumi.Input<string | undefined>;
     /**
      * Turn on all responsibility assignments that apply to this team.
      */
@@ -212,5 +212,5 @@ export interface OwnershipTeamsArgs {
     /**
      * The supplementary team identifiers can be optionally used in addition to the main team identifier to reference this team from any entity in Dynatrace. Up to 3 supplementary identifiers are supported.
      */
-    supplementaryIdentifiers?: pulumi.Input<inputs.OwnershipTeamsSupplementaryIdentifiers>;
+    supplementaryIdentifiers?: pulumi.Input<inputs.OwnershipTeamsSupplementaryIdentifiers | undefined>;
 }

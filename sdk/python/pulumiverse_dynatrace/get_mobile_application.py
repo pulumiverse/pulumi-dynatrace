@@ -83,7 +83,7 @@ def get_mobile_application(name: Optional[_builtins.str] = None,
     return AwaitableGetMobileApplicationResult(
         id=pulumi.get(__ret__, 'id'),
         name=pulumi.get(__ret__, 'name'))
-def get_mobile_application_output(name: Optional[pulumi.Input[_builtins.str]] = None,
+def get_mobile_application_output(name: pulumi.Input[Optional[_builtins.str]] = None,
                                   opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetMobileApplicationResult]:
     """
     The `MobileApplication` data source allows the mobile application ID to be retrieved by its name.

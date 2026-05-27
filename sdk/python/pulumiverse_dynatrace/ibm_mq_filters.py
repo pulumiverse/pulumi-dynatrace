@@ -19,12 +19,12 @@ __all__ = ['IbmMqFiltersArgs', 'IbmMqFilters']
 @pulumi.input_type
 class IbmMqFiltersArgs:
     def __init__(__self__, *,
-                 cics_mq_queue_id_excludes: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-                 cics_mq_queue_id_includes: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-                 ims_cr_trn_id_excludes: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-                 ims_cr_trn_id_includes: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-                 ims_mq_queue_id_excludes: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-                 ims_mq_queue_id_includes: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None):
+                 cics_mq_queue_id_excludes: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 cics_mq_queue_id_includes: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 ims_cr_trn_id_excludes: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 ims_cr_trn_id_includes: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 ims_mq_queue_id_excludes: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 ims_mq_queue_id_includes: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None):
         """
         The set of arguments for constructing a IbmMqFilters resource.
 
@@ -50,86 +50,86 @@ class IbmMqFiltersArgs:
 
     @_builtins.property
     @pulumi.getter(name="cicsMqQueueIdExcludes")
-    def cics_mq_queue_id_excludes(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]:
+    def cics_mq_queue_id_excludes(self) -> pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]:
         """
         CICS: Excluded MQ queues
         """
         return pulumi.get(self, "cics_mq_queue_id_excludes")
 
     @cics_mq_queue_id_excludes.setter
-    def cics_mq_queue_id_excludes(self, value: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]):
+    def cics_mq_queue_id_excludes(self, value: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "cics_mq_queue_id_excludes", value)
 
     @_builtins.property
     @pulumi.getter(name="cicsMqQueueIdIncludes")
-    def cics_mq_queue_id_includes(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]:
+    def cics_mq_queue_id_includes(self) -> pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]:
         """
         CICS: Included MQ queues
         """
         return pulumi.get(self, "cics_mq_queue_id_includes")
 
     @cics_mq_queue_id_includes.setter
-    def cics_mq_queue_id_includes(self, value: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]):
+    def cics_mq_queue_id_includes(self, value: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "cics_mq_queue_id_includes", value)
 
     @_builtins.property
     @pulumi.getter(name="imsCrTrnIdExcludes")
-    def ims_cr_trn_id_excludes(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]:
+    def ims_cr_trn_id_excludes(self) -> pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]:
         """
         When you add a transaction ID to the exclude list remaining transactions are still monitored.
         """
         return pulumi.get(self, "ims_cr_trn_id_excludes")
 
     @ims_cr_trn_id_excludes.setter
-    def ims_cr_trn_id_excludes(self, value: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]):
+    def ims_cr_trn_id_excludes(self, value: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "ims_cr_trn_id_excludes", value)
 
     @_builtins.property
     @pulumi.getter(name="imsCrTrnIdIncludes")
-    def ims_cr_trn_id_includes(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]:
+    def ims_cr_trn_id_includes(self) -> pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]:
         """
         When you add a transaction ID to the include list, all the remaining transactions are ignored.
         """
         return pulumi.get(self, "ims_cr_trn_id_includes")
 
     @ims_cr_trn_id_includes.setter
-    def ims_cr_trn_id_includes(self, value: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]):
+    def ims_cr_trn_id_includes(self, value: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "ims_cr_trn_id_includes", value)
 
     @_builtins.property
     @pulumi.getter(name="imsMqQueueIdExcludes")
-    def ims_mq_queue_id_excludes(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]:
+    def ims_mq_queue_id_excludes(self) -> pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]:
         """
         IMS: Excluded MQ queues
         """
         return pulumi.get(self, "ims_mq_queue_id_excludes")
 
     @ims_mq_queue_id_excludes.setter
-    def ims_mq_queue_id_excludes(self, value: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]):
+    def ims_mq_queue_id_excludes(self, value: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "ims_mq_queue_id_excludes", value)
 
     @_builtins.property
     @pulumi.getter(name="imsMqQueueIdIncludes")
-    def ims_mq_queue_id_includes(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]:
+    def ims_mq_queue_id_includes(self) -> pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]:
         """
         IMS: Included MQ queues
         """
         return pulumi.get(self, "ims_mq_queue_id_includes")
 
     @ims_mq_queue_id_includes.setter
-    def ims_mq_queue_id_includes(self, value: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]):
+    def ims_mq_queue_id_includes(self, value: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "ims_mq_queue_id_includes", value)
 
 
 @pulumi.input_type
 class _IbmMqFiltersState:
     def __init__(__self__, *,
-                 cics_mq_queue_id_excludes: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-                 cics_mq_queue_id_includes: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-                 ims_cr_trn_id_excludes: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-                 ims_cr_trn_id_includes: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-                 ims_mq_queue_id_excludes: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-                 ims_mq_queue_id_includes: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None):
+                 cics_mq_queue_id_excludes: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 cics_mq_queue_id_includes: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 ims_cr_trn_id_excludes: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 ims_cr_trn_id_includes: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 ims_mq_queue_id_excludes: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 ims_mq_queue_id_includes: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None):
         """
         Input properties used for looking up and filtering IbmMqFilters resources.
 
@@ -155,74 +155,74 @@ class _IbmMqFiltersState:
 
     @_builtins.property
     @pulumi.getter(name="cicsMqQueueIdExcludes")
-    def cics_mq_queue_id_excludes(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]:
+    def cics_mq_queue_id_excludes(self) -> pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]:
         """
         CICS: Excluded MQ queues
         """
         return pulumi.get(self, "cics_mq_queue_id_excludes")
 
     @cics_mq_queue_id_excludes.setter
-    def cics_mq_queue_id_excludes(self, value: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]):
+    def cics_mq_queue_id_excludes(self, value: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "cics_mq_queue_id_excludes", value)
 
     @_builtins.property
     @pulumi.getter(name="cicsMqQueueIdIncludes")
-    def cics_mq_queue_id_includes(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]:
+    def cics_mq_queue_id_includes(self) -> pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]:
         """
         CICS: Included MQ queues
         """
         return pulumi.get(self, "cics_mq_queue_id_includes")
 
     @cics_mq_queue_id_includes.setter
-    def cics_mq_queue_id_includes(self, value: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]):
+    def cics_mq_queue_id_includes(self, value: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "cics_mq_queue_id_includes", value)
 
     @_builtins.property
     @pulumi.getter(name="imsCrTrnIdExcludes")
-    def ims_cr_trn_id_excludes(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]:
+    def ims_cr_trn_id_excludes(self) -> pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]:
         """
         When you add a transaction ID to the exclude list remaining transactions are still monitored.
         """
         return pulumi.get(self, "ims_cr_trn_id_excludes")
 
     @ims_cr_trn_id_excludes.setter
-    def ims_cr_trn_id_excludes(self, value: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]):
+    def ims_cr_trn_id_excludes(self, value: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "ims_cr_trn_id_excludes", value)
 
     @_builtins.property
     @pulumi.getter(name="imsCrTrnIdIncludes")
-    def ims_cr_trn_id_includes(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]:
+    def ims_cr_trn_id_includes(self) -> pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]:
         """
         When you add a transaction ID to the include list, all the remaining transactions are ignored.
         """
         return pulumi.get(self, "ims_cr_trn_id_includes")
 
     @ims_cr_trn_id_includes.setter
-    def ims_cr_trn_id_includes(self, value: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]):
+    def ims_cr_trn_id_includes(self, value: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "ims_cr_trn_id_includes", value)
 
     @_builtins.property
     @pulumi.getter(name="imsMqQueueIdExcludes")
-    def ims_mq_queue_id_excludes(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]:
+    def ims_mq_queue_id_excludes(self) -> pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]:
         """
         IMS: Excluded MQ queues
         """
         return pulumi.get(self, "ims_mq_queue_id_excludes")
 
     @ims_mq_queue_id_excludes.setter
-    def ims_mq_queue_id_excludes(self, value: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]):
+    def ims_mq_queue_id_excludes(self, value: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "ims_mq_queue_id_excludes", value)
 
     @_builtins.property
     @pulumi.getter(name="imsMqQueueIdIncludes")
-    def ims_mq_queue_id_includes(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]:
+    def ims_mq_queue_id_includes(self) -> pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]:
         """
         IMS: Included MQ queues
         """
         return pulumi.get(self, "ims_mq_queue_id_includes")
 
     @ims_mq_queue_id_includes.setter
-    def ims_mq_queue_id_includes(self, value: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]):
+    def ims_mq_queue_id_includes(self, value: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "ims_mq_queue_id_includes", value)
 
 
@@ -232,12 +232,12 @@ class IbmMqFilters(pulumi.CustomResource):
     def __init__(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 cics_mq_queue_id_excludes: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-                 cics_mq_queue_id_includes: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-                 ims_cr_trn_id_excludes: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-                 ims_cr_trn_id_includes: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-                 ims_mq_queue_id_excludes: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-                 ims_mq_queue_id_includes: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 cics_mq_queue_id_excludes: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 cics_mq_queue_id_includes: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 ims_cr_trn_id_excludes: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 ims_cr_trn_id_includes: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 ims_mq_queue_id_excludes: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 ims_mq_queue_id_includes: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
                  __props__=None):
         """
         > This resource requires the API token scopes **Read settings** (`settings.read`) and **Write settings** (`settings.write`)
@@ -301,12 +301,12 @@ class IbmMqFilters(pulumi.CustomResource):
     def _internal_init(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 cics_mq_queue_id_excludes: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-                 cics_mq_queue_id_includes: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-                 ims_cr_trn_id_excludes: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-                 ims_cr_trn_id_includes: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-                 ims_mq_queue_id_excludes: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-                 ims_mq_queue_id_includes: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 cics_mq_queue_id_excludes: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 cics_mq_queue_id_includes: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 ims_cr_trn_id_excludes: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 ims_cr_trn_id_includes: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 ims_mq_queue_id_excludes: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 ims_mq_queue_id_includes: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
                  __props__=None):
         opts = pulumi.ResourceOptions.merge(_utilities.get_resource_opts_defaults(), opts)
         if not isinstance(opts, pulumi.ResourceOptions):
@@ -332,12 +332,12 @@ class IbmMqFilters(pulumi.CustomResource):
     def get(resource_name: str,
             id: pulumi.Input[str],
             opts: Optional[pulumi.ResourceOptions] = None,
-            cics_mq_queue_id_excludes: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-            cics_mq_queue_id_includes: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-            ims_cr_trn_id_excludes: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-            ims_cr_trn_id_includes: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-            ims_mq_queue_id_excludes: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-            ims_mq_queue_id_includes: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None) -> 'IbmMqFilters':
+            cics_mq_queue_id_excludes: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+            cics_mq_queue_id_includes: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+            ims_cr_trn_id_excludes: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+            ims_cr_trn_id_includes: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+            ims_mq_queue_id_excludes: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+            ims_mq_queue_id_includes: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None) -> 'IbmMqFilters':
         """
         Get an existing IbmMqFilters resource's state with the given name, id, and optional extra
         properties used to qualify the lookup.

@@ -25,9 +25,9 @@ class AttackRulesArgs:
                  criteria: pulumi.Input['AttackRulesCriteriaArgs'],
                  enabled: pulumi.Input[_builtins.bool],
                  metadata: pulumi.Input['AttackRulesMetadataArgs'],
-                 insert_after: Optional[pulumi.Input[_builtins.str]] = None,
-                 resource_attribute_conditions: Optional[pulumi.Input['AttackRulesResourceAttributeConditionsArgs']] = None,
-                 rule_name: Optional[pulumi.Input[_builtins.str]] = None):
+                 insert_after: pulumi.Input[Optional[_builtins.str]] = None,
+                 resource_attribute_conditions: pulumi.Input[Optional['AttackRulesResourceAttributeConditionsArgs']] = None,
+                 rule_name: pulumi.Input[Optional[_builtins.str]] = None):
         """
         The set of arguments for constructing a AttackRules resource.
 
@@ -100,51 +100,51 @@ class AttackRulesArgs:
 
     @_builtins.property
     @pulumi.getter(name="insertAfter")
-    def insert_after(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def insert_after(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Because this resource allows for ordering you may specify the ID of the resource instance that comes before this instance regarding order. If not specified when creating the setting will be added to the end of the list. If not specified during update the order will remain untouched
         """
         return pulumi.get(self, "insert_after")
 
     @insert_after.setter
-    def insert_after(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def insert_after(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "insert_after", value)
 
     @_builtins.property
     @pulumi.getter(name="resourceAttributeConditions")
-    def resource_attribute_conditions(self) -> Optional[pulumi.Input['AttackRulesResourceAttributeConditionsArgs']]:
+    def resource_attribute_conditions(self) -> pulumi.Input[Optional['AttackRulesResourceAttributeConditionsArgs']]:
         """
         If you add more than one condition, note that all conditions must be true simultaneously for the rule to apply.
         """
         return pulumi.get(self, "resource_attribute_conditions")
 
     @resource_attribute_conditions.setter
-    def resource_attribute_conditions(self, value: Optional[pulumi.Input['AttackRulesResourceAttributeConditionsArgs']]):
+    def resource_attribute_conditions(self, value: pulumi.Input[Optional['AttackRulesResourceAttributeConditionsArgs']]):
         pulumi.set(self, "resource_attribute_conditions", value)
 
     @_builtins.property
     @pulumi.getter(name="ruleName")
-    def rule_name(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def rule_name(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Rule name
         """
         return pulumi.get(self, "rule_name")
 
     @rule_name.setter
-    def rule_name(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def rule_name(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "rule_name", value)
 
 
 @pulumi.input_type
 class _AttackRulesState:
     def __init__(__self__, *,
-                 attack_handling: Optional[pulumi.Input['AttackRulesAttackHandlingArgs']] = None,
-                 criteria: Optional[pulumi.Input['AttackRulesCriteriaArgs']] = None,
-                 enabled: Optional[pulumi.Input[_builtins.bool]] = None,
-                 insert_after: Optional[pulumi.Input[_builtins.str]] = None,
-                 metadata: Optional[pulumi.Input['AttackRulesMetadataArgs']] = None,
-                 resource_attribute_conditions: Optional[pulumi.Input['AttackRulesResourceAttributeConditionsArgs']] = None,
-                 rule_name: Optional[pulumi.Input[_builtins.str]] = None):
+                 attack_handling: pulumi.Input[Optional['AttackRulesAttackHandlingArgs']] = None,
+                 criteria: pulumi.Input[Optional['AttackRulesCriteriaArgs']] = None,
+                 enabled: pulumi.Input[Optional[_builtins.bool]] = None,
+                 insert_after: pulumi.Input[Optional[_builtins.str]] = None,
+                 metadata: pulumi.Input[Optional['AttackRulesMetadataArgs']] = None,
+                 resource_attribute_conditions: pulumi.Input[Optional['AttackRulesResourceAttributeConditionsArgs']] = None,
+                 rule_name: pulumi.Input[Optional[_builtins.str]] = None):
         """
         Input properties used for looking up and filtering AttackRules resources.
 
@@ -173,86 +173,86 @@ class _AttackRulesState:
 
     @_builtins.property
     @pulumi.getter(name="attackHandling")
-    def attack_handling(self) -> Optional[pulumi.Input['AttackRulesAttackHandlingArgs']]:
+    def attack_handling(self) -> pulumi.Input[Optional['AttackRulesAttackHandlingArgs']]:
         """
         Step 1: Select attack protection behavior
         """
         return pulumi.get(self, "attack_handling")
 
     @attack_handling.setter
-    def attack_handling(self, value: Optional[pulumi.Input['AttackRulesAttackHandlingArgs']]):
+    def attack_handling(self, value: pulumi.Input[Optional['AttackRulesAttackHandlingArgs']]):
         pulumi.set(self, "attack_handling", value)
 
     @_builtins.property
     @pulumi.getter
-    def criteria(self) -> Optional[pulumi.Input['AttackRulesCriteriaArgs']]:
+    def criteria(self) -> pulumi.Input[Optional['AttackRulesCriteriaArgs']]:
         """
         Step 2: Select attack type
         """
         return pulumi.get(self, "criteria")
 
     @criteria.setter
-    def criteria(self, value: Optional[pulumi.Input['AttackRulesCriteriaArgs']]):
+    def criteria(self, value: pulumi.Input[Optional['AttackRulesCriteriaArgs']]):
         pulumi.set(self, "criteria", value)
 
     @_builtins.property
     @pulumi.getter
-    def enabled(self) -> Optional[pulumi.Input[_builtins.bool]]:
+    def enabled(self) -> pulumi.Input[Optional[_builtins.bool]]:
         """
         This setting is enabled (`true`) or disabled (`false`)
         """
         return pulumi.get(self, "enabled")
 
     @enabled.setter
-    def enabled(self, value: Optional[pulumi.Input[_builtins.bool]]):
+    def enabled(self, value: pulumi.Input[Optional[_builtins.bool]]):
         pulumi.set(self, "enabled", value)
 
     @_builtins.property
     @pulumi.getter(name="insertAfter")
-    def insert_after(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def insert_after(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Because this resource allows for ordering you may specify the ID of the resource instance that comes before this instance regarding order. If not specified when creating the setting will be added to the end of the list. If not specified during update the order will remain untouched
         """
         return pulumi.get(self, "insert_after")
 
     @insert_after.setter
-    def insert_after(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def insert_after(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "insert_after", value)
 
     @_builtins.property
     @pulumi.getter
-    def metadata(self) -> Optional[pulumi.Input['AttackRulesMetadataArgs']]:
+    def metadata(self) -> pulumi.Input[Optional['AttackRulesMetadataArgs']]:
         """
         Step 4: Leave comment (optional)
         """
         return pulumi.get(self, "metadata")
 
     @metadata.setter
-    def metadata(self, value: Optional[pulumi.Input['AttackRulesMetadataArgs']]):
+    def metadata(self, value: pulumi.Input[Optional['AttackRulesMetadataArgs']]):
         pulumi.set(self, "metadata", value)
 
     @_builtins.property
     @pulumi.getter(name="resourceAttributeConditions")
-    def resource_attribute_conditions(self) -> Optional[pulumi.Input['AttackRulesResourceAttributeConditionsArgs']]:
+    def resource_attribute_conditions(self) -> pulumi.Input[Optional['AttackRulesResourceAttributeConditionsArgs']]:
         """
         If you add more than one condition, note that all conditions must be true simultaneously for the rule to apply.
         """
         return pulumi.get(self, "resource_attribute_conditions")
 
     @resource_attribute_conditions.setter
-    def resource_attribute_conditions(self, value: Optional[pulumi.Input['AttackRulesResourceAttributeConditionsArgs']]):
+    def resource_attribute_conditions(self, value: pulumi.Input[Optional['AttackRulesResourceAttributeConditionsArgs']]):
         pulumi.set(self, "resource_attribute_conditions", value)
 
     @_builtins.property
     @pulumi.getter(name="ruleName")
-    def rule_name(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def rule_name(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Rule name
         """
         return pulumi.get(self, "rule_name")
 
     @rule_name.setter
-    def rule_name(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def rule_name(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "rule_name", value)
 
 
@@ -262,13 +262,13 @@ class AttackRules(pulumi.CustomResource):
     def __init__(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 attack_handling: Optional[pulumi.Input[Union['AttackRulesAttackHandlingArgs', 'AttackRulesAttackHandlingArgsDict']]] = None,
-                 criteria: Optional[pulumi.Input[Union['AttackRulesCriteriaArgs', 'AttackRulesCriteriaArgsDict']]] = None,
-                 enabled: Optional[pulumi.Input[_builtins.bool]] = None,
-                 insert_after: Optional[pulumi.Input[_builtins.str]] = None,
-                 metadata: Optional[pulumi.Input[Union['AttackRulesMetadataArgs', 'AttackRulesMetadataArgsDict']]] = None,
-                 resource_attribute_conditions: Optional[pulumi.Input[Union['AttackRulesResourceAttributeConditionsArgs', 'AttackRulesResourceAttributeConditionsArgsDict']]] = None,
-                 rule_name: Optional[pulumi.Input[_builtins.str]] = None,
+                 attack_handling: pulumi.Input[Optional[Union['AttackRulesAttackHandlingArgs', 'AttackRulesAttackHandlingArgsDict']]] = None,
+                 criteria: pulumi.Input[Optional[Union['AttackRulesCriteriaArgs', 'AttackRulesCriteriaArgsDict']]] = None,
+                 enabled: pulumi.Input[Optional[_builtins.bool]] = None,
+                 insert_after: pulumi.Input[Optional[_builtins.str]] = None,
+                 metadata: pulumi.Input[Optional[Union['AttackRulesMetadataArgs', 'AttackRulesMetadataArgsDict']]] = None,
+                 resource_attribute_conditions: pulumi.Input[Optional[Union['AttackRulesResourceAttributeConditionsArgs', 'AttackRulesResourceAttributeConditionsArgsDict']]] = None,
+                 rule_name: pulumi.Input[Optional[_builtins.str]] = None,
                  __props__=None):
         """
         > This resource is excluded by default in the export utility since it requires the feature to be activated, please explicitly specify the resource to retrieve existing configuration.
@@ -337,13 +337,13 @@ class AttackRules(pulumi.CustomResource):
     def _internal_init(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 attack_handling: Optional[pulumi.Input[Union['AttackRulesAttackHandlingArgs', 'AttackRulesAttackHandlingArgsDict']]] = None,
-                 criteria: Optional[pulumi.Input[Union['AttackRulesCriteriaArgs', 'AttackRulesCriteriaArgsDict']]] = None,
-                 enabled: Optional[pulumi.Input[_builtins.bool]] = None,
-                 insert_after: Optional[pulumi.Input[_builtins.str]] = None,
-                 metadata: Optional[pulumi.Input[Union['AttackRulesMetadataArgs', 'AttackRulesMetadataArgsDict']]] = None,
-                 resource_attribute_conditions: Optional[pulumi.Input[Union['AttackRulesResourceAttributeConditionsArgs', 'AttackRulesResourceAttributeConditionsArgsDict']]] = None,
-                 rule_name: Optional[pulumi.Input[_builtins.str]] = None,
+                 attack_handling: pulumi.Input[Optional[Union['AttackRulesAttackHandlingArgs', 'AttackRulesAttackHandlingArgsDict']]] = None,
+                 criteria: pulumi.Input[Optional[Union['AttackRulesCriteriaArgs', 'AttackRulesCriteriaArgsDict']]] = None,
+                 enabled: pulumi.Input[Optional[_builtins.bool]] = None,
+                 insert_after: pulumi.Input[Optional[_builtins.str]] = None,
+                 metadata: pulumi.Input[Optional[Union['AttackRulesMetadataArgs', 'AttackRulesMetadataArgsDict']]] = None,
+                 resource_attribute_conditions: pulumi.Input[Optional[Union['AttackRulesResourceAttributeConditionsArgs', 'AttackRulesResourceAttributeConditionsArgsDict']]] = None,
+                 rule_name: pulumi.Input[Optional[_builtins.str]] = None,
                  __props__=None):
         opts = pulumi.ResourceOptions.merge(_utilities.get_resource_opts_defaults(), opts)
         if not isinstance(opts, pulumi.ResourceOptions):
@@ -378,13 +378,13 @@ class AttackRules(pulumi.CustomResource):
     def get(resource_name: str,
             id: pulumi.Input[str],
             opts: Optional[pulumi.ResourceOptions] = None,
-            attack_handling: Optional[pulumi.Input[Union['AttackRulesAttackHandlingArgs', 'AttackRulesAttackHandlingArgsDict']]] = None,
-            criteria: Optional[pulumi.Input[Union['AttackRulesCriteriaArgs', 'AttackRulesCriteriaArgsDict']]] = None,
-            enabled: Optional[pulumi.Input[_builtins.bool]] = None,
-            insert_after: Optional[pulumi.Input[_builtins.str]] = None,
-            metadata: Optional[pulumi.Input[Union['AttackRulesMetadataArgs', 'AttackRulesMetadataArgsDict']]] = None,
-            resource_attribute_conditions: Optional[pulumi.Input[Union['AttackRulesResourceAttributeConditionsArgs', 'AttackRulesResourceAttributeConditionsArgsDict']]] = None,
-            rule_name: Optional[pulumi.Input[_builtins.str]] = None) -> 'AttackRules':
+            attack_handling: pulumi.Input[Optional[Union['AttackRulesAttackHandlingArgs', 'AttackRulesAttackHandlingArgsDict']]] = None,
+            criteria: pulumi.Input[Optional[Union['AttackRulesCriteriaArgs', 'AttackRulesCriteriaArgsDict']]] = None,
+            enabled: pulumi.Input[Optional[_builtins.bool]] = None,
+            insert_after: pulumi.Input[Optional[_builtins.str]] = None,
+            metadata: pulumi.Input[Optional[Union['AttackRulesMetadataArgs', 'AttackRulesMetadataArgsDict']]] = None,
+            resource_attribute_conditions: pulumi.Input[Optional[Union['AttackRulesResourceAttributeConditionsArgs', 'AttackRulesResourceAttributeConditionsArgsDict']]] = None,
+            rule_name: pulumi.Input[Optional[_builtins.str]] = None) -> 'AttackRules':
         """
         Get an existing AttackRules resource's state with the given name, id, and optional extra
         properties used to qualify the lookup.

@@ -114,23 +114,23 @@ export interface LogCustomSourceState {
     /**
      * Define Custom Log Source only within context if provided
      */
-    context?: pulumi.Input<inputs.LogCustomSourceContext>;
+    context?: pulumi.Input<inputs.LogCustomSourceContext | undefined>;
     /**
      * no documentation available
      */
-    customLogSource?: pulumi.Input<inputs.LogCustomSourceCustomLogSource>;
+    customLogSource?: pulumi.Input<inputs.LogCustomSourceCustomLogSource | undefined>;
     /**
      * This setting is enabled (`true`) or disabled (`false`)
      */
-    enabled?: pulumi.Input<boolean>;
+    enabled?: pulumi.Input<boolean | undefined>;
     /**
      * Name
      */
-    name?: pulumi.Input<string>;
+    name?: pulumi.Input<string | undefined>;
     /**
      * The scope of this setting (HOST, KUBERNETES*CLUSTER, HOST*GROUP). Omit this property if you want to cover the whole environment.
      */
-    scope?: pulumi.Input<string>;
+    scope?: pulumi.Input<string | undefined>;
 }
 
 /**
@@ -140,7 +140,7 @@ export interface LogCustomSourceArgs {
     /**
      * Define Custom Log Source only within context if provided
      */
-    context?: pulumi.Input<inputs.LogCustomSourceContext>;
+    context?: pulumi.Input<inputs.LogCustomSourceContext | undefined>;
     /**
      * no documentation available
      */
@@ -152,9 +152,9 @@ export interface LogCustomSourceArgs {
     /**
      * Name
      */
-    name?: pulumi.Input<string>;
+    name?: pulumi.Input<string | undefined>;
     /**
      * The scope of this setting (HOST, KUBERNETES*CLUSTER, HOST*GROUP). Omit this property if you want to cover the whole environment.
      */
-    scope?: pulumi.Input<string>;
+    scope?: pulumi.Input<string | undefined>;
 }

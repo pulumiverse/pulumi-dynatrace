@@ -20,7 +20,7 @@ __all__ = ['JsonDashboardArgs', 'JsonDashboard']
 class JsonDashboardArgs:
     def __init__(__self__, *,
                  contents: pulumi.Input[_builtins.str],
-                 link_id: Optional[pulumi.Input[_builtins.str]] = None):
+                 link_id: pulumi.Input[Optional[_builtins.str]] = None):
         """
         The set of arguments for constructing a JsonDashboard resource.
 
@@ -45,22 +45,22 @@ class JsonDashboardArgs:
 
     @_builtins.property
     @pulumi.getter(name="linkId")
-    def link_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def link_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         ID of the dashboard, used with the json*dashboard*base resource and variables to create circular dependencies between dashboards for hyperlinks. See the documentation for `JsonDashboardBase` for a concrete example.
         """
         return pulumi.get(self, "link_id")
 
     @link_id.setter
-    def link_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def link_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "link_id", value)
 
 
 @pulumi.input_type
 class _JsonDashboardState:
     def __init__(__self__, *,
-                 contents: Optional[pulumi.Input[_builtins.str]] = None,
-                 link_id: Optional[pulumi.Input[_builtins.str]] = None):
+                 contents: pulumi.Input[Optional[_builtins.str]] = None,
+                 link_id: pulumi.Input[Optional[_builtins.str]] = None):
         """
         Input properties used for looking up and filtering JsonDashboard resources.
 
@@ -74,26 +74,26 @@ class _JsonDashboardState:
 
     @_builtins.property
     @pulumi.getter
-    def contents(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def contents(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Contains the JSON Code of the Dashboard
         """
         return pulumi.get(self, "contents")
 
     @contents.setter
-    def contents(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def contents(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "contents", value)
 
     @_builtins.property
     @pulumi.getter(name="linkId")
-    def link_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def link_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         ID of the dashboard, used with the json*dashboard*base resource and variables to create circular dependencies between dashboards for hyperlinks. See the documentation for `JsonDashboardBase` for a concrete example.
         """
         return pulumi.get(self, "link_id")
 
     @link_id.setter
-    def link_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def link_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "link_id", value)
 
 
@@ -103,8 +103,8 @@ class JsonDashboard(pulumi.CustomResource):
     def __init__(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 contents: Optional[pulumi.Input[_builtins.str]] = None,
-                 link_id: Optional[pulumi.Input[_builtins.str]] = None,
+                 contents: pulumi.Input[Optional[_builtins.str]] = None,
+                 link_id: pulumi.Input[Optional[_builtins.str]] = None,
                  __props__=None):
         """
         > This resource is excluded by default in the export utility since there could be a large amount of dashboards.
@@ -168,8 +168,8 @@ class JsonDashboard(pulumi.CustomResource):
     def _internal_init(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 contents: Optional[pulumi.Input[_builtins.str]] = None,
-                 link_id: Optional[pulumi.Input[_builtins.str]] = None,
+                 contents: pulumi.Input[Optional[_builtins.str]] = None,
+                 link_id: pulumi.Input[Optional[_builtins.str]] = None,
                  __props__=None):
         opts = pulumi.ResourceOptions.merge(_utilities.get_resource_opts_defaults(), opts)
         if not isinstance(opts, pulumi.ResourceOptions):
@@ -193,8 +193,8 @@ class JsonDashboard(pulumi.CustomResource):
     def get(resource_name: str,
             id: pulumi.Input[str],
             opts: Optional[pulumi.ResourceOptions] = None,
-            contents: Optional[pulumi.Input[_builtins.str]] = None,
-            link_id: Optional[pulumi.Input[_builtins.str]] = None) -> 'JsonDashboard':
+            contents: pulumi.Input[Optional[_builtins.str]] = None,
+            link_id: pulumi.Input[Optional[_builtins.str]] = None) -> 'JsonDashboard':
         """
         Get an existing JsonDashboard resource's state with the given name, id, and optional extra
         properties used to qualify the lookup.

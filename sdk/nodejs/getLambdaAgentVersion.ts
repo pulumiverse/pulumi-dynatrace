@@ -136,29 +136,29 @@ export interface GetLambdaAgentVersionOutputArgs {
     /**
      * Latest version name of standalone log collector
      */
-    collector?: pulumi.Input<string>;
+    collector?: pulumi.Input<string | undefined>;
     /**
      * Latest version name of Java code module
      */
-    java?: pulumi.Input<string>;
+    java?: pulumi.Input<string | undefined>;
     /**
      * Latest version name of Java code module with log collector
      */
-    javaWithCollector?: pulumi.Input<string>;
+    javaWithCollector?: pulumi.Input<string | undefined>;
     /**
      * Latest version name of NodeJS code module
      */
-    nodejs?: pulumi.Input<string>;
+    nodejs?: pulumi.Input<string | undefined>;
     /**
      * Latest version name of NodeJS code module with log collector
      */
-    nodejsWithCollector?: pulumi.Input<string>;
+    nodejsWithCollector?: pulumi.Input<string | undefined>;
     /**
      * Latest version name of Python code module
      */
-    python?: pulumi.Input<string>;
+    python?: pulumi.Input<string | undefined>;
     /**
      * Latest version name of Python code module with log collector
      */
-    pythonWithCollector?: pulumi.Input<string>;
+    pythonWithCollector?: pulumi.Input<string | undefined>;
 }

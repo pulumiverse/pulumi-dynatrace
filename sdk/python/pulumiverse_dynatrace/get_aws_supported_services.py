@@ -94,7 +94,7 @@ def get_aws_supported_services(excepts: Optional[Sequence[_builtins.str]] = None
         excepts=pulumi.get(__ret__, 'excepts'),
         id=pulumi.get(__ret__, 'id'),
         services=pulumi.get(__ret__, 'services'))
-def get_aws_supported_services_output(excepts: Optional[pulumi.Input[Optional[Sequence[_builtins.str]]]] = None,
+def get_aws_supported_services_output(excepts: pulumi.Input[Optional[Optional[Sequence[_builtins.str]]]] = None,
                                       opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetAwsSupportedServicesResult]:
     """
     The AWS supported service data source queries for a full list of all supported services.

@@ -93,15 +93,15 @@ export interface WebAppCustomPropRestrictionsState {
     /**
      * The scope of this settings. If the settings should cover the whole environment, just don't specify any scope.
      */
-    applicationId?: pulumi.Input<string>;
+    applicationId?: pulumi.Input<string | undefined>;
     /**
      * List of allowed custom event properties
      */
-    customEventPropertiesAllowList?: pulumi.Input<inputs.WebAppCustomPropRestrictionsCustomEventPropertiesAllowList>;
+    customEventPropertiesAllowList?: pulumi.Input<inputs.WebAppCustomPropRestrictionsCustomEventPropertiesAllowList | undefined>;
     /**
      * List of allowed custom session properties
      */
-    customSessionPropertiesAllowList?: pulumi.Input<inputs.WebAppCustomPropRestrictionsCustomSessionPropertiesAllowList>;
+    customSessionPropertiesAllowList?: pulumi.Input<inputs.WebAppCustomPropRestrictionsCustomSessionPropertiesAllowList | undefined>;
 }
 
 /**
@@ -115,9 +115,9 @@ export interface WebAppCustomPropRestrictionsArgs {
     /**
      * List of allowed custom event properties
      */
-    customEventPropertiesAllowList?: pulumi.Input<inputs.WebAppCustomPropRestrictionsCustomEventPropertiesAllowList>;
+    customEventPropertiesAllowList?: pulumi.Input<inputs.WebAppCustomPropRestrictionsCustomEventPropertiesAllowList | undefined>;
     /**
      * List of allowed custom session properties
      */
-    customSessionPropertiesAllowList?: pulumi.Input<inputs.WebAppCustomPropRestrictionsCustomSessionPropertiesAllowList>;
+    customSessionPropertiesAllowList?: pulumi.Input<inputs.WebAppCustomPropRestrictionsCustomSessionPropertiesAllowList | undefined>;
 }

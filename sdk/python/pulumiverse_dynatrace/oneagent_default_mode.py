@@ -43,7 +43,7 @@ class OneagentDefaultModeArgs:
 @pulumi.input_type
 class _OneagentDefaultModeState:
     def __init__(__self__, *,
-                 default_mode: Optional[pulumi.Input[_builtins.str]] = None):
+                 default_mode: pulumi.Input[Optional[_builtins.str]] = None):
         """
         Input properties used for looking up and filtering OneagentDefaultMode resources.
 
@@ -54,14 +54,14 @@ class _OneagentDefaultModeState:
 
     @_builtins.property
     @pulumi.getter(name="defaultMode")
-    def default_mode(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def default_mode(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Possible Values: `DISCOVERY`, `FULL_STACK`, `INFRASTRUCTURE`
         """
         return pulumi.get(self, "default_mode")
 
     @default_mode.setter
-    def default_mode(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def default_mode(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "default_mode", value)
 
 
@@ -71,7 +71,7 @@ class OneagentDefaultMode(pulumi.CustomResource):
     def __init__(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 default_mode: Optional[pulumi.Input[_builtins.str]] = None,
+                 default_mode: pulumi.Input[Optional[_builtins.str]] = None,
                  __props__=None):
         """
         > This resource requires the API token scopes **Read settings** (`settings.read`) and **Write settings** (`settings.write`)
@@ -130,7 +130,7 @@ class OneagentDefaultMode(pulumi.CustomResource):
     def _internal_init(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 default_mode: Optional[pulumi.Input[_builtins.str]] = None,
+                 default_mode: pulumi.Input[Optional[_builtins.str]] = None,
                  __props__=None):
         opts = pulumi.ResourceOptions.merge(_utilities.get_resource_opts_defaults(), opts)
         if not isinstance(opts, pulumi.ResourceOptions):
@@ -153,7 +153,7 @@ class OneagentDefaultMode(pulumi.CustomResource):
     def get(resource_name: str,
             id: pulumi.Input[str],
             opts: Optional[pulumi.ResourceOptions] = None,
-            default_mode: Optional[pulumi.Input[_builtins.str]] = None) -> 'OneagentDefaultMode':
+            default_mode: pulumi.Input[Optional[_builtins.str]] = None) -> 'OneagentDefaultMode':
         """
         Get an existing OneagentDefaultMode resource's state with the given name, id, and optional extra
         properties used to qualify the lookup.

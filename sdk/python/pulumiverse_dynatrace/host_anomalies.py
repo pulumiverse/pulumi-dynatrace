@@ -21,13 +21,13 @@ __all__ = ['HostAnomaliesArgs', 'HostAnomalies']
 @pulumi.input_type
 class HostAnomaliesArgs:
     def __init__(__self__, *,
-                 connections: Optional[pulumi.Input['HostAnomaliesConnectionsArgs']] = None,
-                 cpu: Optional[pulumi.Input['HostAnomaliesCpuArgs']] = None,
-                 disks: Optional[pulumi.Input['HostAnomaliesDisksArgs']] = None,
-                 gc: Optional[pulumi.Input['HostAnomaliesGcArgs']] = None,
-                 java: Optional[pulumi.Input['HostAnomaliesJavaArgs']] = None,
-                 memory: Optional[pulumi.Input['HostAnomaliesMemoryArgs']] = None,
-                 network: Optional[pulumi.Input['HostAnomaliesNetworkArgs']] = None):
+                 connections: pulumi.Input[Optional['HostAnomaliesConnectionsArgs']] = None,
+                 cpu: pulumi.Input[Optional['HostAnomaliesCpuArgs']] = None,
+                 disks: pulumi.Input[Optional['HostAnomaliesDisksArgs']] = None,
+                 gc: pulumi.Input[Optional['HostAnomaliesGcArgs']] = None,
+                 java: pulumi.Input[Optional['HostAnomaliesJavaArgs']] = None,
+                 memory: pulumi.Input[Optional['HostAnomaliesMemoryArgs']] = None,
+                 network: pulumi.Input[Optional['HostAnomaliesNetworkArgs']] = None):
         """
         The set of arguments for constructing a HostAnomalies resource.
 
@@ -56,99 +56,99 @@ class HostAnomaliesArgs:
 
     @_builtins.property
     @pulumi.getter
-    def connections(self) -> Optional[pulumi.Input['HostAnomaliesConnectionsArgs']]:
+    def connections(self) -> pulumi.Input[Optional['HostAnomaliesConnectionsArgs']]:
         """
         Configuration of lost connection detection
         """
         return pulumi.get(self, "connections")
 
     @connections.setter
-    def connections(self, value: Optional[pulumi.Input['HostAnomaliesConnectionsArgs']]):
+    def connections(self, value: pulumi.Input[Optional['HostAnomaliesConnectionsArgs']]):
         pulumi.set(self, "connections", value)
 
     @_builtins.property
     @pulumi.getter
-    def cpu(self) -> Optional[pulumi.Input['HostAnomaliesCpuArgs']]:
+    def cpu(self) -> pulumi.Input[Optional['HostAnomaliesCpuArgs']]:
         """
         Configuration of high CPU saturation detection
         """
         return pulumi.get(self, "cpu")
 
     @cpu.setter
-    def cpu(self, value: Optional[pulumi.Input['HostAnomaliesCpuArgs']]):
+    def cpu(self, value: pulumi.Input[Optional['HostAnomaliesCpuArgs']]):
         pulumi.set(self, "cpu", value)
 
     @_builtins.property
     @pulumi.getter
-    def disks(self) -> Optional[pulumi.Input['HostAnomaliesDisksArgs']]:
+    def disks(self) -> pulumi.Input[Optional['HostAnomaliesDisksArgs']]:
         """
         Configuration of disk related anomalies
         """
         return pulumi.get(self, "disks")
 
     @disks.setter
-    def disks(self, value: Optional[pulumi.Input['HostAnomaliesDisksArgs']]):
+    def disks(self, value: pulumi.Input[Optional['HostAnomaliesDisksArgs']]):
         pulumi.set(self, "disks", value)
 
     @_builtins.property
     @pulumi.getter
-    def gc(self) -> Optional[pulumi.Input['HostAnomaliesGcArgs']]:
+    def gc(self) -> pulumi.Input[Optional['HostAnomaliesGcArgs']]:
         """
         Configuration of high Garbage Collector activity detection
         """
         return pulumi.get(self, "gc")
 
     @gc.setter
-    def gc(self, value: Optional[pulumi.Input['HostAnomaliesGcArgs']]):
+    def gc(self, value: pulumi.Input[Optional['HostAnomaliesGcArgs']]):
         pulumi.set(self, "gc", value)
 
     @_builtins.property
     @pulumi.getter
-    def java(self) -> Optional[pulumi.Input['HostAnomaliesJavaArgs']]:
+    def java(self) -> pulumi.Input[Optional['HostAnomaliesJavaArgs']]:
         """
         Configuration of Java related anomalies
         """
         return pulumi.get(self, "java")
 
     @java.setter
-    def java(self, value: Optional[pulumi.Input['HostAnomaliesJavaArgs']]):
+    def java(self, value: pulumi.Input[Optional['HostAnomaliesJavaArgs']]):
         pulumi.set(self, "java", value)
 
     @_builtins.property
     @pulumi.getter
-    def memory(self) -> Optional[pulumi.Input['HostAnomaliesMemoryArgs']]:
+    def memory(self) -> pulumi.Input[Optional['HostAnomaliesMemoryArgs']]:
         """
         Configuration of high memory usage detection
         """
         return pulumi.get(self, "memory")
 
     @memory.setter
-    def memory(self, value: Optional[pulumi.Input['HostAnomaliesMemoryArgs']]):
+    def memory(self, value: pulumi.Input[Optional['HostAnomaliesMemoryArgs']]):
         pulumi.set(self, "memory", value)
 
     @_builtins.property
     @pulumi.getter
-    def network(self) -> Optional[pulumi.Input['HostAnomaliesNetworkArgs']]:
+    def network(self) -> pulumi.Input[Optional['HostAnomaliesNetworkArgs']]:
         """
         Configuration of network related anomalies
         """
         return pulumi.get(self, "network")
 
     @network.setter
-    def network(self, value: Optional[pulumi.Input['HostAnomaliesNetworkArgs']]):
+    def network(self, value: pulumi.Input[Optional['HostAnomaliesNetworkArgs']]):
         pulumi.set(self, "network", value)
 
 
 @pulumi.input_type
 class _HostAnomaliesState:
     def __init__(__self__, *,
-                 connections: Optional[pulumi.Input['HostAnomaliesConnectionsArgs']] = None,
-                 cpu: Optional[pulumi.Input['HostAnomaliesCpuArgs']] = None,
-                 disks: Optional[pulumi.Input['HostAnomaliesDisksArgs']] = None,
-                 gc: Optional[pulumi.Input['HostAnomaliesGcArgs']] = None,
-                 java: Optional[pulumi.Input['HostAnomaliesJavaArgs']] = None,
-                 memory: Optional[pulumi.Input['HostAnomaliesMemoryArgs']] = None,
-                 network: Optional[pulumi.Input['HostAnomaliesNetworkArgs']] = None):
+                 connections: pulumi.Input[Optional['HostAnomaliesConnectionsArgs']] = None,
+                 cpu: pulumi.Input[Optional['HostAnomaliesCpuArgs']] = None,
+                 disks: pulumi.Input[Optional['HostAnomaliesDisksArgs']] = None,
+                 gc: pulumi.Input[Optional['HostAnomaliesGcArgs']] = None,
+                 java: pulumi.Input[Optional['HostAnomaliesJavaArgs']] = None,
+                 memory: pulumi.Input[Optional['HostAnomaliesMemoryArgs']] = None,
+                 network: pulumi.Input[Optional['HostAnomaliesNetworkArgs']] = None):
         """
         Input properties used for looking up and filtering HostAnomalies resources.
 
@@ -177,86 +177,86 @@ class _HostAnomaliesState:
 
     @_builtins.property
     @pulumi.getter
-    def connections(self) -> Optional[pulumi.Input['HostAnomaliesConnectionsArgs']]:
+    def connections(self) -> pulumi.Input[Optional['HostAnomaliesConnectionsArgs']]:
         """
         Configuration of lost connection detection
         """
         return pulumi.get(self, "connections")
 
     @connections.setter
-    def connections(self, value: Optional[pulumi.Input['HostAnomaliesConnectionsArgs']]):
+    def connections(self, value: pulumi.Input[Optional['HostAnomaliesConnectionsArgs']]):
         pulumi.set(self, "connections", value)
 
     @_builtins.property
     @pulumi.getter
-    def cpu(self) -> Optional[pulumi.Input['HostAnomaliesCpuArgs']]:
+    def cpu(self) -> pulumi.Input[Optional['HostAnomaliesCpuArgs']]:
         """
         Configuration of high CPU saturation detection
         """
         return pulumi.get(self, "cpu")
 
     @cpu.setter
-    def cpu(self, value: Optional[pulumi.Input['HostAnomaliesCpuArgs']]):
+    def cpu(self, value: pulumi.Input[Optional['HostAnomaliesCpuArgs']]):
         pulumi.set(self, "cpu", value)
 
     @_builtins.property
     @pulumi.getter
-    def disks(self) -> Optional[pulumi.Input['HostAnomaliesDisksArgs']]:
+    def disks(self) -> pulumi.Input[Optional['HostAnomaliesDisksArgs']]:
         """
         Configuration of disk related anomalies
         """
         return pulumi.get(self, "disks")
 
     @disks.setter
-    def disks(self, value: Optional[pulumi.Input['HostAnomaliesDisksArgs']]):
+    def disks(self, value: pulumi.Input[Optional['HostAnomaliesDisksArgs']]):
         pulumi.set(self, "disks", value)
 
     @_builtins.property
     @pulumi.getter
-    def gc(self) -> Optional[pulumi.Input['HostAnomaliesGcArgs']]:
+    def gc(self) -> pulumi.Input[Optional['HostAnomaliesGcArgs']]:
         """
         Configuration of high Garbage Collector activity detection
         """
         return pulumi.get(self, "gc")
 
     @gc.setter
-    def gc(self, value: Optional[pulumi.Input['HostAnomaliesGcArgs']]):
+    def gc(self, value: pulumi.Input[Optional['HostAnomaliesGcArgs']]):
         pulumi.set(self, "gc", value)
 
     @_builtins.property
     @pulumi.getter
-    def java(self) -> Optional[pulumi.Input['HostAnomaliesJavaArgs']]:
+    def java(self) -> pulumi.Input[Optional['HostAnomaliesJavaArgs']]:
         """
         Configuration of Java related anomalies
         """
         return pulumi.get(self, "java")
 
     @java.setter
-    def java(self, value: Optional[pulumi.Input['HostAnomaliesJavaArgs']]):
+    def java(self, value: pulumi.Input[Optional['HostAnomaliesJavaArgs']]):
         pulumi.set(self, "java", value)
 
     @_builtins.property
     @pulumi.getter
-    def memory(self) -> Optional[pulumi.Input['HostAnomaliesMemoryArgs']]:
+    def memory(self) -> pulumi.Input[Optional['HostAnomaliesMemoryArgs']]:
         """
         Configuration of high memory usage detection
         """
         return pulumi.get(self, "memory")
 
     @memory.setter
-    def memory(self, value: Optional[pulumi.Input['HostAnomaliesMemoryArgs']]):
+    def memory(self, value: pulumi.Input[Optional['HostAnomaliesMemoryArgs']]):
         pulumi.set(self, "memory", value)
 
     @_builtins.property
     @pulumi.getter
-    def network(self) -> Optional[pulumi.Input['HostAnomaliesNetworkArgs']]:
+    def network(self) -> pulumi.Input[Optional['HostAnomaliesNetworkArgs']]:
         """
         Configuration of network related anomalies
         """
         return pulumi.get(self, "network")
 
     @network.setter
-    def network(self, value: Optional[pulumi.Input['HostAnomaliesNetworkArgs']]):
+    def network(self, value: pulumi.Input[Optional['HostAnomaliesNetworkArgs']]):
         pulumi.set(self, "network", value)
 
 
@@ -266,13 +266,13 @@ class HostAnomalies(pulumi.CustomResource):
     def __init__(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 connections: Optional[pulumi.Input[Union['HostAnomaliesConnectionsArgs', 'HostAnomaliesConnectionsArgsDict']]] = None,
-                 cpu: Optional[pulumi.Input[Union['HostAnomaliesCpuArgs', 'HostAnomaliesCpuArgsDict']]] = None,
-                 disks: Optional[pulumi.Input[Union['HostAnomaliesDisksArgs', 'HostAnomaliesDisksArgsDict']]] = None,
-                 gc: Optional[pulumi.Input[Union['HostAnomaliesGcArgs', 'HostAnomaliesGcArgsDict']]] = None,
-                 java: Optional[pulumi.Input[Union['HostAnomaliesJavaArgs', 'HostAnomaliesJavaArgsDict']]] = None,
-                 memory: Optional[pulumi.Input[Union['HostAnomaliesMemoryArgs', 'HostAnomaliesMemoryArgsDict']]] = None,
-                 network: Optional[pulumi.Input[Union['HostAnomaliesNetworkArgs', 'HostAnomaliesNetworkArgsDict']]] = None,
+                 connections: pulumi.Input[Optional[Union['HostAnomaliesConnectionsArgs', 'HostAnomaliesConnectionsArgsDict']]] = None,
+                 cpu: pulumi.Input[Optional[Union['HostAnomaliesCpuArgs', 'HostAnomaliesCpuArgsDict']]] = None,
+                 disks: pulumi.Input[Optional[Union['HostAnomaliesDisksArgs', 'HostAnomaliesDisksArgsDict']]] = None,
+                 gc: pulumi.Input[Optional[Union['HostAnomaliesGcArgs', 'HostAnomaliesGcArgsDict']]] = None,
+                 java: pulumi.Input[Optional[Union['HostAnomaliesJavaArgs', 'HostAnomaliesJavaArgsDict']]] = None,
+                 memory: pulumi.Input[Optional[Union['HostAnomaliesMemoryArgs', 'HostAnomaliesMemoryArgsDict']]] = None,
+                 network: pulumi.Input[Optional[Union['HostAnomaliesNetworkArgs', 'HostAnomaliesNetworkArgsDict']]] = None,
                  __props__=None):
         """
         !> This resource is utilizing an older API endpoint, please use HostAnomaliesV2 instead.
@@ -341,13 +341,13 @@ class HostAnomalies(pulumi.CustomResource):
     def _internal_init(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 connections: Optional[pulumi.Input[Union['HostAnomaliesConnectionsArgs', 'HostAnomaliesConnectionsArgsDict']]] = None,
-                 cpu: Optional[pulumi.Input[Union['HostAnomaliesCpuArgs', 'HostAnomaliesCpuArgsDict']]] = None,
-                 disks: Optional[pulumi.Input[Union['HostAnomaliesDisksArgs', 'HostAnomaliesDisksArgsDict']]] = None,
-                 gc: Optional[pulumi.Input[Union['HostAnomaliesGcArgs', 'HostAnomaliesGcArgsDict']]] = None,
-                 java: Optional[pulumi.Input[Union['HostAnomaliesJavaArgs', 'HostAnomaliesJavaArgsDict']]] = None,
-                 memory: Optional[pulumi.Input[Union['HostAnomaliesMemoryArgs', 'HostAnomaliesMemoryArgsDict']]] = None,
-                 network: Optional[pulumi.Input[Union['HostAnomaliesNetworkArgs', 'HostAnomaliesNetworkArgsDict']]] = None,
+                 connections: pulumi.Input[Optional[Union['HostAnomaliesConnectionsArgs', 'HostAnomaliesConnectionsArgsDict']]] = None,
+                 cpu: pulumi.Input[Optional[Union['HostAnomaliesCpuArgs', 'HostAnomaliesCpuArgsDict']]] = None,
+                 disks: pulumi.Input[Optional[Union['HostAnomaliesDisksArgs', 'HostAnomaliesDisksArgsDict']]] = None,
+                 gc: pulumi.Input[Optional[Union['HostAnomaliesGcArgs', 'HostAnomaliesGcArgsDict']]] = None,
+                 java: pulumi.Input[Optional[Union['HostAnomaliesJavaArgs', 'HostAnomaliesJavaArgsDict']]] = None,
+                 memory: pulumi.Input[Optional[Union['HostAnomaliesMemoryArgs', 'HostAnomaliesMemoryArgsDict']]] = None,
+                 network: pulumi.Input[Optional[Union['HostAnomaliesNetworkArgs', 'HostAnomaliesNetworkArgsDict']]] = None,
                  __props__=None):
         opts = pulumi.ResourceOptions.merge(_utilities.get_resource_opts_defaults(), opts)
         if not isinstance(opts, pulumi.ResourceOptions):
@@ -374,13 +374,13 @@ class HostAnomalies(pulumi.CustomResource):
     def get(resource_name: str,
             id: pulumi.Input[str],
             opts: Optional[pulumi.ResourceOptions] = None,
-            connections: Optional[pulumi.Input[Union['HostAnomaliesConnectionsArgs', 'HostAnomaliesConnectionsArgsDict']]] = None,
-            cpu: Optional[pulumi.Input[Union['HostAnomaliesCpuArgs', 'HostAnomaliesCpuArgsDict']]] = None,
-            disks: Optional[pulumi.Input[Union['HostAnomaliesDisksArgs', 'HostAnomaliesDisksArgsDict']]] = None,
-            gc: Optional[pulumi.Input[Union['HostAnomaliesGcArgs', 'HostAnomaliesGcArgsDict']]] = None,
-            java: Optional[pulumi.Input[Union['HostAnomaliesJavaArgs', 'HostAnomaliesJavaArgsDict']]] = None,
-            memory: Optional[pulumi.Input[Union['HostAnomaliesMemoryArgs', 'HostAnomaliesMemoryArgsDict']]] = None,
-            network: Optional[pulumi.Input[Union['HostAnomaliesNetworkArgs', 'HostAnomaliesNetworkArgsDict']]] = None) -> 'HostAnomalies':
+            connections: pulumi.Input[Optional[Union['HostAnomaliesConnectionsArgs', 'HostAnomaliesConnectionsArgsDict']]] = None,
+            cpu: pulumi.Input[Optional[Union['HostAnomaliesCpuArgs', 'HostAnomaliesCpuArgsDict']]] = None,
+            disks: pulumi.Input[Optional[Union['HostAnomaliesDisksArgs', 'HostAnomaliesDisksArgsDict']]] = None,
+            gc: pulumi.Input[Optional[Union['HostAnomaliesGcArgs', 'HostAnomaliesGcArgsDict']]] = None,
+            java: pulumi.Input[Optional[Union['HostAnomaliesJavaArgs', 'HostAnomaliesJavaArgsDict']]] = None,
+            memory: pulumi.Input[Optional[Union['HostAnomaliesMemoryArgs', 'HostAnomaliesMemoryArgsDict']]] = None,
+            network: pulumi.Input[Optional[Union['HostAnomaliesNetworkArgs', 'HostAnomaliesNetworkArgsDict']]] = None) -> 'HostAnomalies':
         """
         Get an existing HostAnomalies resource's state with the given name, id, and optional extra
         properties used to qualify the lookup.

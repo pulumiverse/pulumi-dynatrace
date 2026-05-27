@@ -178,61 +178,61 @@ export interface SloState {
     /**
      * The total count metric (the denominator in rate calculation)
      */
-    denominator?: pulumi.Input<string>;
+    denominator?: pulumi.Input<string | undefined>;
     /**
      * The custom description of the SLO (optional)
      */
-    description?: pulumi.Input<string>;
+    description?: pulumi.Input<string | undefined>;
     /**
      * The SLO is enabled (`false`) or disabled (`true`)
      */
-    disabled?: pulumi.Input<boolean>;
+    disabled?: pulumi.Input<boolean | undefined>;
     /**
      * Error budget burn rate configuration of a service-level objective (SLO).
      */
-    errorBudgetBurnRate?: pulumi.Input<inputs.SloErrorBudgetBurnRate>;
+    errorBudgetBurnRate?: pulumi.Input<inputs.SloErrorBudgetBurnRate | undefined>;
     /**
      * The evaluation type of the SLO. Currently only `AGGREGATE` is supported
      */
-    evaluation?: pulumi.Input<string>;
+    evaluation?: pulumi.Input<string | undefined>;
     /**
      * The entity filter for the SLO evaluation. Use the [syntax of entity selector](https://dt-url.net/entityselector)
      */
-    filter?: pulumi.Input<string>;
+    filter?: pulumi.Input<string | undefined>;
     /**
      * The percentage-based metric expression for the calculation of the SLO
      */
-    metricExpression?: pulumi.Input<string>;
+    metricExpression?: pulumi.Input<string | undefined>;
     /**
      * The name that is used to create SLO func metrics keys. Once created, metric name cannot be changed.
      */
-    metricName?: pulumi.Input<string>;
+    metricName?: pulumi.Input<string | undefined>;
     /**
      * The name of the rule
      */
-    name?: pulumi.Input<string>;
+    name?: pulumi.Input<string | undefined>;
     /**
      * The metric for the count of successes (the numerator in rate calculation)
      *
      * @deprecated `numerator` and `denominator` have been replaced by `metricExpression`
      */
-    numerator?: pulumi.Input<string>;
+    numerator?: pulumi.Input<string | undefined>;
     /**
      * The percentage-based metric for the calculation of the SLO
      */
-    rate?: pulumi.Input<string>;
+    rate?: pulumi.Input<string | undefined>;
     /**
      * The target value of the SLO
      */
-    target?: pulumi.Input<number>;
+    target?: pulumi.Input<number | undefined>;
     /**
      * The timeframe for the SLO evaluation. Use the syntax of the global timeframe selector
      */
-    timeframe?: pulumi.Input<string>;
+    timeframe?: pulumi.Input<string | undefined>;
     /**
      * The warning value of the SLO. At warning state the SLO is still fulfilled but is getting close to failure
      */
-    warning?: pulumi.Input<number>;
+    warning?: pulumi.Input<number | undefined>;
 }
 
 /**
@@ -242,19 +242,19 @@ export interface SloArgs {
     /**
      * The total count metric (the denominator in rate calculation)
      */
-    denominator?: pulumi.Input<string>;
+    denominator?: pulumi.Input<string | undefined>;
     /**
      * The custom description of the SLO (optional)
      */
-    description?: pulumi.Input<string>;
+    description?: pulumi.Input<string | undefined>;
     /**
      * The SLO is enabled (`false`) or disabled (`true`)
      */
-    disabled?: pulumi.Input<boolean>;
+    disabled?: pulumi.Input<boolean | undefined>;
     /**
      * Error budget burn rate configuration of a service-level objective (SLO).
      */
-    errorBudgetBurnRate?: pulumi.Input<inputs.SloErrorBudgetBurnRate>;
+    errorBudgetBurnRate?: pulumi.Input<inputs.SloErrorBudgetBurnRate | undefined>;
     /**
      * The evaluation type of the SLO. Currently only `AGGREGATE` is supported
      */
@@ -262,29 +262,29 @@ export interface SloArgs {
     /**
      * The entity filter for the SLO evaluation. Use the [syntax of entity selector](https://dt-url.net/entityselector)
      */
-    filter?: pulumi.Input<string>;
+    filter?: pulumi.Input<string | undefined>;
     /**
      * The percentage-based metric expression for the calculation of the SLO
      */
-    metricExpression?: pulumi.Input<string>;
+    metricExpression?: pulumi.Input<string | undefined>;
     /**
      * The name that is used to create SLO func metrics keys. Once created, metric name cannot be changed.
      */
-    metricName?: pulumi.Input<string>;
+    metricName?: pulumi.Input<string | undefined>;
     /**
      * The name of the rule
      */
-    name?: pulumi.Input<string>;
+    name?: pulumi.Input<string | undefined>;
     /**
      * The metric for the count of successes (the numerator in rate calculation)
      *
      * @deprecated `numerator` and `denominator` have been replaced by `metricExpression`
      */
-    numerator?: pulumi.Input<string>;
+    numerator?: pulumi.Input<string | undefined>;
     /**
      * The percentage-based metric for the calculation of the SLO
      */
-    rate?: pulumi.Input<string>;
+    rate?: pulumi.Input<string | undefined>;
     /**
      * The target value of the SLO
      */

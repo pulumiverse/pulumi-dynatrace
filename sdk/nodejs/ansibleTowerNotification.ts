@@ -149,16 +149,16 @@ export interface AnsibleTowerNotificationState {
     /**
      * This setting is enabled (`true`) or disabled (`false`)
      */
-    active?: pulumi.Input<boolean>;
+    active?: pulumi.Input<boolean | undefined>;
     /**
      * This message will be displayed in the Extra Variables **Message** field of your job template. Type '{' for placeholder suggestions.. #### Available placeholders
      * **{ImpactedEntities}**: Details about the entities impacted by the problem in form of a json array.
      */
-    customMessage?: pulumi.Input<string>;
+    customMessage?: pulumi.Input<string | undefined>;
     /**
      * Accept any SSL certificate (including self-signed and invalid certificates)
      */
-    insecure?: pulumi.Input<boolean>;
+    insecure?: pulumi.Input<boolean | undefined>;
     /**
      * The URL of the target job template.
      *
@@ -166,27 +166,27 @@ export interface AnsibleTowerNotificationState {
      *
      * **Note:** Be sure to select the **Prompt on Launch** option in the Extra Variables section of your job template configuration.
      */
-    jobTemplateUrl?: pulumi.Input<string>;
+    jobTemplateUrl?: pulumi.Input<string | undefined>;
     /**
      * The ID of these settings when referred to from resources requiring the REST API V1 keys
      */
-    legacyId?: pulumi.Input<string>;
+    legacyId?: pulumi.Input<string | undefined>;
     /**
      * The name of the notification configuration.
      */
-    name?: pulumi.Input<string>;
+    name?: pulumi.Input<string | undefined>;
     /**
      * Account password.
      */
-    password?: pulumi.Input<string>;
+    password?: pulumi.Input<string | undefined>;
     /**
      * The ID of the associated alerting profile.
      */
-    profile?: pulumi.Input<string>;
+    profile?: pulumi.Input<string | undefined>;
     /**
      * Account username.
      */
-    username?: pulumi.Input<string>;
+    username?: pulumi.Input<string | undefined>;
 }
 
 /**
@@ -196,7 +196,7 @@ export interface AnsibleTowerNotificationArgs {
     /**
      * This setting is enabled (`true`) or disabled (`false`)
      */
-    active?: pulumi.Input<boolean>;
+    active?: pulumi.Input<boolean | undefined>;
     /**
      * This message will be displayed in the Extra Variables **Message** field of your job template. Type '{' for placeholder suggestions.. #### Available placeholders
      * **{ImpactedEntities}**: Details about the entities impacted by the problem in form of a json array.
@@ -205,7 +205,7 @@ export interface AnsibleTowerNotificationArgs {
     /**
      * Accept any SSL certificate (including self-signed and invalid certificates)
      */
-    insecure?: pulumi.Input<boolean>;
+    insecure?: pulumi.Input<boolean | undefined>;
     /**
      * The URL of the target job template.
      *
@@ -217,15 +217,15 @@ export interface AnsibleTowerNotificationArgs {
     /**
      * The ID of these settings when referred to from resources requiring the REST API V1 keys
      */
-    legacyId?: pulumi.Input<string>;
+    legacyId?: pulumi.Input<string | undefined>;
     /**
      * The name of the notification configuration.
      */
-    name?: pulumi.Input<string>;
+    name?: pulumi.Input<string | undefined>;
     /**
      * Account password.
      */
-    password?: pulumi.Input<string>;
+    password?: pulumi.Input<string | undefined>;
     /**
      * The ID of the associated alerting profile.
      */

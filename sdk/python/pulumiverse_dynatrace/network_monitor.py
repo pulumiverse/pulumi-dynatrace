@@ -24,13 +24,13 @@ class NetworkMonitorArgs:
                  locations: pulumi.Input[Sequence[pulumi.Input[_builtins.str]]],
                  steps: pulumi.Input[Sequence[pulumi.Input['NetworkMonitorStepArgs']]],
                  type: pulumi.Input[_builtins.str],
-                 description: Optional[pulumi.Input[_builtins.str]] = None,
-                 enabled: Optional[pulumi.Input[_builtins.bool]] = None,
-                 frequency_min: Optional[pulumi.Input[_builtins.int]] = None,
-                 name: Optional[pulumi.Input[_builtins.str]] = None,
-                 outage_handling: Optional[pulumi.Input['NetworkMonitorOutageHandlingArgs']] = None,
-                 performance_thresholds: Optional[pulumi.Input['NetworkMonitorPerformanceThresholdsArgs']] = None,
-                 tags: Optional[pulumi.Input[Sequence[pulumi.Input['NetworkMonitorTagArgs']]]] = None):
+                 description: pulumi.Input[Optional[_builtins.str]] = None,
+                 enabled: pulumi.Input[Optional[_builtins.bool]] = None,
+                 frequency_min: pulumi.Input[Optional[_builtins.int]] = None,
+                 name: pulumi.Input[Optional[_builtins.str]] = None,
+                 outage_handling: pulumi.Input[Optional['NetworkMonitorOutageHandlingArgs']] = None,
+                 performance_thresholds: pulumi.Input[Optional['NetworkMonitorPerformanceThresholdsArgs']] = None,
+                 tags: pulumi.Input[Optional[Sequence[pulumi.Input['NetworkMonitorTagArgs']]]] = None):
         """
         The set of arguments for constructing a NetworkMonitor resource.
 
@@ -101,102 +101,102 @@ class NetworkMonitorArgs:
 
     @_builtins.property
     @pulumi.getter
-    def description(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def description(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Description of the monitor
         """
         return pulumi.get(self, "description")
 
     @description.setter
-    def description(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def description(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "description", value)
 
     @_builtins.property
     @pulumi.getter
-    def enabled(self) -> Optional[pulumi.Input[_builtins.bool]]:
+    def enabled(self) -> pulumi.Input[Optional[_builtins.bool]]:
         """
         If true, the monitor is enabled
         """
         return pulumi.get(self, "enabled")
 
     @enabled.setter
-    def enabled(self, value: Optional[pulumi.Input[_builtins.bool]]):
+    def enabled(self, value: pulumi.Input[Optional[_builtins.bool]]):
         pulumi.set(self, "enabled", value)
 
     @_builtins.property
     @pulumi.getter(name="frequencyMin")
-    def frequency_min(self) -> Optional[pulumi.Input[_builtins.int]]:
+    def frequency_min(self) -> pulumi.Input[Optional[_builtins.int]]:
         """
         Frequency of the monitor, in minutes
         """
         return pulumi.get(self, "frequency_min")
 
     @frequency_min.setter
-    def frequency_min(self, value: Optional[pulumi.Input[_builtins.int]]):
+    def frequency_min(self, value: pulumi.Input[Optional[_builtins.int]]):
         pulumi.set(self, "frequency_min", value)
 
     @_builtins.property
     @pulumi.getter
-    def name(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def name(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Name of the monitor
         """
         return pulumi.get(self, "name")
 
     @name.setter
-    def name(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def name(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "name", value)
 
     @_builtins.property
     @pulumi.getter(name="outageHandling")
-    def outage_handling(self) -> Optional[pulumi.Input['NetworkMonitorOutageHandlingArgs']]:
+    def outage_handling(self) -> pulumi.Input[Optional['NetworkMonitorOutageHandlingArgs']]:
         """
         Outage handling configuration
         """
         return pulumi.get(self, "outage_handling")
 
     @outage_handling.setter
-    def outage_handling(self, value: Optional[pulumi.Input['NetworkMonitorOutageHandlingArgs']]):
+    def outage_handling(self, value: pulumi.Input[Optional['NetworkMonitorOutageHandlingArgs']]):
         pulumi.set(self, "outage_handling", value)
 
     @_builtins.property
     @pulumi.getter(name="performanceThresholds")
-    def performance_thresholds(self) -> Optional[pulumi.Input['NetworkMonitorPerformanceThresholdsArgs']]:
+    def performance_thresholds(self) -> pulumi.Input[Optional['NetworkMonitorPerformanceThresholdsArgs']]:
         """
         Performance thresholds configuration
         """
         return pulumi.get(self, "performance_thresholds")
 
     @performance_thresholds.setter
-    def performance_thresholds(self, value: Optional[pulumi.Input['NetworkMonitorPerformanceThresholdsArgs']]):
+    def performance_thresholds(self, value: pulumi.Input[Optional['NetworkMonitorPerformanceThresholdsArgs']]):
         pulumi.set(self, "performance_thresholds", value)
 
     @_builtins.property
     @pulumi.getter
-    def tags(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['NetworkMonitorTagArgs']]]]:
+    def tags(self) -> pulumi.Input[Optional[Sequence[pulumi.Input['NetworkMonitorTagArgs']]]]:
         """
         A set of tags assigned to the monitor.
         """
         return pulumi.get(self, "tags")
 
     @tags.setter
-    def tags(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['NetworkMonitorTagArgs']]]]):
+    def tags(self, value: pulumi.Input[Optional[Sequence[pulumi.Input['NetworkMonitorTagArgs']]]]):
         pulumi.set(self, "tags", value)
 
 
 @pulumi.input_type
 class _NetworkMonitorState:
     def __init__(__self__, *,
-                 description: Optional[pulumi.Input[_builtins.str]] = None,
-                 enabled: Optional[pulumi.Input[_builtins.bool]] = None,
-                 frequency_min: Optional[pulumi.Input[_builtins.int]] = None,
-                 locations: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-                 name: Optional[pulumi.Input[_builtins.str]] = None,
-                 outage_handling: Optional[pulumi.Input['NetworkMonitorOutageHandlingArgs']] = None,
-                 performance_thresholds: Optional[pulumi.Input['NetworkMonitorPerformanceThresholdsArgs']] = None,
-                 steps: Optional[pulumi.Input[Sequence[pulumi.Input['NetworkMonitorStepArgs']]]] = None,
-                 tags: Optional[pulumi.Input[Sequence[pulumi.Input['NetworkMonitorTagArgs']]]] = None,
-                 type: Optional[pulumi.Input[_builtins.str]] = None):
+                 description: pulumi.Input[Optional[_builtins.str]] = None,
+                 enabled: pulumi.Input[Optional[_builtins.bool]] = None,
+                 frequency_min: pulumi.Input[Optional[_builtins.int]] = None,
+                 locations: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 name: pulumi.Input[Optional[_builtins.str]] = None,
+                 outage_handling: pulumi.Input[Optional['NetworkMonitorOutageHandlingArgs']] = None,
+                 performance_thresholds: pulumi.Input[Optional['NetworkMonitorPerformanceThresholdsArgs']] = None,
+                 steps: pulumi.Input[Optional[Sequence[pulumi.Input['NetworkMonitorStepArgs']]]] = None,
+                 tags: pulumi.Input[Optional[Sequence[pulumi.Input['NetworkMonitorTagArgs']]]] = None,
+                 type: pulumi.Input[Optional[_builtins.str]] = None):
         """
         Input properties used for looking up and filtering NetworkMonitor resources.
 
@@ -234,122 +234,122 @@ class _NetworkMonitorState:
 
     @_builtins.property
     @pulumi.getter
-    def description(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def description(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Description of the monitor
         """
         return pulumi.get(self, "description")
 
     @description.setter
-    def description(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def description(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "description", value)
 
     @_builtins.property
     @pulumi.getter
-    def enabled(self) -> Optional[pulumi.Input[_builtins.bool]]:
+    def enabled(self) -> pulumi.Input[Optional[_builtins.bool]]:
         """
         If true, the monitor is enabled
         """
         return pulumi.get(self, "enabled")
 
     @enabled.setter
-    def enabled(self, value: Optional[pulumi.Input[_builtins.bool]]):
+    def enabled(self, value: pulumi.Input[Optional[_builtins.bool]]):
         pulumi.set(self, "enabled", value)
 
     @_builtins.property
     @pulumi.getter(name="frequencyMin")
-    def frequency_min(self) -> Optional[pulumi.Input[_builtins.int]]:
+    def frequency_min(self) -> pulumi.Input[Optional[_builtins.int]]:
         """
         Frequency of the monitor, in minutes
         """
         return pulumi.get(self, "frequency_min")
 
     @frequency_min.setter
-    def frequency_min(self, value: Optional[pulumi.Input[_builtins.int]]):
+    def frequency_min(self, value: pulumi.Input[Optional[_builtins.int]]):
         pulumi.set(self, "frequency_min", value)
 
     @_builtins.property
     @pulumi.getter
-    def locations(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]:
+    def locations(self) -> pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]:
         """
         The locations to which the monitor is assigned
         """
         return pulumi.get(self, "locations")
 
     @locations.setter
-    def locations(self, value: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]):
+    def locations(self, value: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "locations", value)
 
     @_builtins.property
     @pulumi.getter
-    def name(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def name(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Name of the monitor
         """
         return pulumi.get(self, "name")
 
     @name.setter
-    def name(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def name(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "name", value)
 
     @_builtins.property
     @pulumi.getter(name="outageHandling")
-    def outage_handling(self) -> Optional[pulumi.Input['NetworkMonitorOutageHandlingArgs']]:
+    def outage_handling(self) -> pulumi.Input[Optional['NetworkMonitorOutageHandlingArgs']]:
         """
         Outage handling configuration
         """
         return pulumi.get(self, "outage_handling")
 
     @outage_handling.setter
-    def outage_handling(self, value: Optional[pulumi.Input['NetworkMonitorOutageHandlingArgs']]):
+    def outage_handling(self, value: pulumi.Input[Optional['NetworkMonitorOutageHandlingArgs']]):
         pulumi.set(self, "outage_handling", value)
 
     @_builtins.property
     @pulumi.getter(name="performanceThresholds")
-    def performance_thresholds(self) -> Optional[pulumi.Input['NetworkMonitorPerformanceThresholdsArgs']]:
+    def performance_thresholds(self) -> pulumi.Input[Optional['NetworkMonitorPerformanceThresholdsArgs']]:
         """
         Performance thresholds configuration
         """
         return pulumi.get(self, "performance_thresholds")
 
     @performance_thresholds.setter
-    def performance_thresholds(self, value: Optional[pulumi.Input['NetworkMonitorPerformanceThresholdsArgs']]):
+    def performance_thresholds(self, value: pulumi.Input[Optional['NetworkMonitorPerformanceThresholdsArgs']]):
         pulumi.set(self, "performance_thresholds", value)
 
     @_builtins.property
     @pulumi.getter
-    def steps(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['NetworkMonitorStepArgs']]]]:
+    def steps(self) -> pulumi.Input[Optional[Sequence[pulumi.Input['NetworkMonitorStepArgs']]]]:
         """
         The steps of the monitor
         """
         return pulumi.get(self, "steps")
 
     @steps.setter
-    def steps(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['NetworkMonitorStepArgs']]]]):
+    def steps(self, value: pulumi.Input[Optional[Sequence[pulumi.Input['NetworkMonitorStepArgs']]]]):
         pulumi.set(self, "steps", value)
 
     @_builtins.property
     @pulumi.getter
-    def tags(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['NetworkMonitorTagArgs']]]]:
+    def tags(self) -> pulumi.Input[Optional[Sequence[pulumi.Input['NetworkMonitorTagArgs']]]]:
         """
         A set of tags assigned to the monitor.
         """
         return pulumi.get(self, "tags")
 
     @tags.setter
-    def tags(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['NetworkMonitorTagArgs']]]]):
+    def tags(self, value: pulumi.Input[Optional[Sequence[pulumi.Input['NetworkMonitorTagArgs']]]]):
         pulumi.set(self, "tags", value)
 
     @_builtins.property
     @pulumi.getter
-    def type(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def type(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Type of the monitor, possible values: `MULTI_PROTOCOL`
         """
         return pulumi.get(self, "type")
 
     @type.setter
-    def type(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def type(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "type", value)
 
 
@@ -359,16 +359,16 @@ class NetworkMonitor(pulumi.CustomResource):
     def __init__(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 description: Optional[pulumi.Input[_builtins.str]] = None,
-                 enabled: Optional[pulumi.Input[_builtins.bool]] = None,
-                 frequency_min: Optional[pulumi.Input[_builtins.int]] = None,
-                 locations: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-                 name: Optional[pulumi.Input[_builtins.str]] = None,
-                 outage_handling: Optional[pulumi.Input[Union['NetworkMonitorOutageHandlingArgs', 'NetworkMonitorOutageHandlingArgsDict']]] = None,
-                 performance_thresholds: Optional[pulumi.Input[Union['NetworkMonitorPerformanceThresholdsArgs', 'NetworkMonitorPerformanceThresholdsArgsDict']]] = None,
-                 steps: Optional[pulumi.Input[Sequence[pulumi.Input[Union['NetworkMonitorStepArgs', 'NetworkMonitorStepArgsDict']]]]] = None,
-                 tags: Optional[pulumi.Input[Sequence[pulumi.Input[Union['NetworkMonitorTagArgs', 'NetworkMonitorTagArgsDict']]]]] = None,
-                 type: Optional[pulumi.Input[_builtins.str]] = None,
+                 description: pulumi.Input[Optional[_builtins.str]] = None,
+                 enabled: pulumi.Input[Optional[_builtins.bool]] = None,
+                 frequency_min: pulumi.Input[Optional[_builtins.int]] = None,
+                 locations: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 name: pulumi.Input[Optional[_builtins.str]] = None,
+                 outage_handling: pulumi.Input[Optional[Union['NetworkMonitorOutageHandlingArgs', 'NetworkMonitorOutageHandlingArgsDict']]] = None,
+                 performance_thresholds: pulumi.Input[Optional[Union['NetworkMonitorPerformanceThresholdsArgs', 'NetworkMonitorPerformanceThresholdsArgsDict']]] = None,
+                 steps: pulumi.Input[Optional[Sequence[pulumi.Input[Union['NetworkMonitorStepArgs', 'NetworkMonitorStepArgsDict']]]]] = None,
+                 tags: pulumi.Input[Optional[Sequence[pulumi.Input[Union['NetworkMonitorTagArgs', 'NetworkMonitorTagArgsDict']]]]] = None,
+                 type: pulumi.Input[Optional[_builtins.str]] = None,
                  __props__=None):
         """
         > This resource requires the API token scopes **Read settings** (`settings.read`) and **Write settings** (`settings.write`)
@@ -584,16 +584,16 @@ class NetworkMonitor(pulumi.CustomResource):
     def _internal_init(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 description: Optional[pulumi.Input[_builtins.str]] = None,
-                 enabled: Optional[pulumi.Input[_builtins.bool]] = None,
-                 frequency_min: Optional[pulumi.Input[_builtins.int]] = None,
-                 locations: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-                 name: Optional[pulumi.Input[_builtins.str]] = None,
-                 outage_handling: Optional[pulumi.Input[Union['NetworkMonitorOutageHandlingArgs', 'NetworkMonitorOutageHandlingArgsDict']]] = None,
-                 performance_thresholds: Optional[pulumi.Input[Union['NetworkMonitorPerformanceThresholdsArgs', 'NetworkMonitorPerformanceThresholdsArgsDict']]] = None,
-                 steps: Optional[pulumi.Input[Sequence[pulumi.Input[Union['NetworkMonitorStepArgs', 'NetworkMonitorStepArgsDict']]]]] = None,
-                 tags: Optional[pulumi.Input[Sequence[pulumi.Input[Union['NetworkMonitorTagArgs', 'NetworkMonitorTagArgsDict']]]]] = None,
-                 type: Optional[pulumi.Input[_builtins.str]] = None,
+                 description: pulumi.Input[Optional[_builtins.str]] = None,
+                 enabled: pulumi.Input[Optional[_builtins.bool]] = None,
+                 frequency_min: pulumi.Input[Optional[_builtins.int]] = None,
+                 locations: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 name: pulumi.Input[Optional[_builtins.str]] = None,
+                 outage_handling: pulumi.Input[Optional[Union['NetworkMonitorOutageHandlingArgs', 'NetworkMonitorOutageHandlingArgsDict']]] = None,
+                 performance_thresholds: pulumi.Input[Optional[Union['NetworkMonitorPerformanceThresholdsArgs', 'NetworkMonitorPerformanceThresholdsArgsDict']]] = None,
+                 steps: pulumi.Input[Optional[Sequence[pulumi.Input[Union['NetworkMonitorStepArgs', 'NetworkMonitorStepArgsDict']]]]] = None,
+                 tags: pulumi.Input[Optional[Sequence[pulumi.Input[Union['NetworkMonitorTagArgs', 'NetworkMonitorTagArgsDict']]]]] = None,
+                 type: pulumi.Input[Optional[_builtins.str]] = None,
                  __props__=None):
         opts = pulumi.ResourceOptions.merge(_utilities.get_resource_opts_defaults(), opts)
         if not isinstance(opts, pulumi.ResourceOptions):
@@ -629,16 +629,16 @@ class NetworkMonitor(pulumi.CustomResource):
     def get(resource_name: str,
             id: pulumi.Input[str],
             opts: Optional[pulumi.ResourceOptions] = None,
-            description: Optional[pulumi.Input[_builtins.str]] = None,
-            enabled: Optional[pulumi.Input[_builtins.bool]] = None,
-            frequency_min: Optional[pulumi.Input[_builtins.int]] = None,
-            locations: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-            name: Optional[pulumi.Input[_builtins.str]] = None,
-            outage_handling: Optional[pulumi.Input[Union['NetworkMonitorOutageHandlingArgs', 'NetworkMonitorOutageHandlingArgsDict']]] = None,
-            performance_thresholds: Optional[pulumi.Input[Union['NetworkMonitorPerformanceThresholdsArgs', 'NetworkMonitorPerformanceThresholdsArgsDict']]] = None,
-            steps: Optional[pulumi.Input[Sequence[pulumi.Input[Union['NetworkMonitorStepArgs', 'NetworkMonitorStepArgsDict']]]]] = None,
-            tags: Optional[pulumi.Input[Sequence[pulumi.Input[Union['NetworkMonitorTagArgs', 'NetworkMonitorTagArgsDict']]]]] = None,
-            type: Optional[pulumi.Input[_builtins.str]] = None) -> 'NetworkMonitor':
+            description: pulumi.Input[Optional[_builtins.str]] = None,
+            enabled: pulumi.Input[Optional[_builtins.bool]] = None,
+            frequency_min: pulumi.Input[Optional[_builtins.int]] = None,
+            locations: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+            name: pulumi.Input[Optional[_builtins.str]] = None,
+            outage_handling: pulumi.Input[Optional[Union['NetworkMonitorOutageHandlingArgs', 'NetworkMonitorOutageHandlingArgsDict']]] = None,
+            performance_thresholds: pulumi.Input[Optional[Union['NetworkMonitorPerformanceThresholdsArgs', 'NetworkMonitorPerformanceThresholdsArgsDict']]] = None,
+            steps: pulumi.Input[Optional[Sequence[pulumi.Input[Union['NetworkMonitorStepArgs', 'NetworkMonitorStepArgsDict']]]]] = None,
+            tags: pulumi.Input[Optional[Sequence[pulumi.Input[Union['NetworkMonitorTagArgs', 'NetworkMonitorTagArgsDict']]]]] = None,
+            type: pulumi.Input[Optional[_builtins.str]] = None) -> 'NetworkMonitor':
         """
         Get an existing NetworkMonitor resource's state with the given name, id, and optional extra
         properties used to qualify the lookup.

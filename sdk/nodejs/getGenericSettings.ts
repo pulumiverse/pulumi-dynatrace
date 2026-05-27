@@ -103,13 +103,13 @@ export interface GetGenericSettingsOutputArgs {
     /**
      * Filter of the requested objects
      */
-    filter?: pulumi.Input<string>;
+    filter?: pulumi.Input<string | undefined>;
     /**
      * Schema IDs to which the requested objects belong
      */
-    schema?: pulumi.Input<string>;
+    schema?: pulumi.Input<string | undefined>;
     /**
      * Scope that the requested objects target
      */
-    scope?: pulumi.Input<string>;
+    scope?: pulumi.Input<string | undefined>;
 }

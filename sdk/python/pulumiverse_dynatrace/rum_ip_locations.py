@@ -21,11 +21,11 @@ class RumIpLocationsArgs:
     def __init__(__self__, *,
                  country_code: pulumi.Input[_builtins.str],
                  ip: pulumi.Input[_builtins.str],
-                 city: Optional[pulumi.Input[_builtins.str]] = None,
-                 ip_to: Optional[pulumi.Input[_builtins.str]] = None,
-                 latitude: Optional[pulumi.Input[_builtins.float]] = None,
-                 longitude: Optional[pulumi.Input[_builtins.float]] = None,
-                 region_code: Optional[pulumi.Input[_builtins.str]] = None):
+                 city: pulumi.Input[Optional[_builtins.str]] = None,
+                 ip_to: pulumi.Input[Optional[_builtins.str]] = None,
+                 latitude: pulumi.Input[Optional[_builtins.float]] = None,
+                 longitude: pulumi.Input[Optional[_builtins.float]] = None,
+                 region_code: pulumi.Input[Optional[_builtins.str]] = None):
         """
         The set of arguments for constructing a RumIpLocations resource.
 
@@ -80,55 +80,55 @@ class RumIpLocationsArgs:
 
     @_builtins.property
     @pulumi.getter
-    def city(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def city(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The city name of the location.
         """
         return pulumi.get(self, "city")
 
     @city.setter
-    def city(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def city(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "city", value)
 
     @_builtins.property
     @pulumi.getter(name="ipTo")
-    def ip_to(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def ip_to(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         IP range end
         """
         return pulumi.get(self, "ip_to")
 
     @ip_to.setter
-    def ip_to(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def ip_to(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "ip_to", value)
 
     @_builtins.property
     @pulumi.getter
-    def latitude(self) -> Optional[pulumi.Input[_builtins.float]]:
+    def latitude(self) -> pulumi.Input[Optional[_builtins.float]]:
         """
         Latitude
         """
         return pulumi.get(self, "latitude")
 
     @latitude.setter
-    def latitude(self, value: Optional[pulumi.Input[_builtins.float]]):
+    def latitude(self, value: pulumi.Input[Optional[_builtins.float]]):
         pulumi.set(self, "latitude", value)
 
     @_builtins.property
     @pulumi.getter
-    def longitude(self) -> Optional[pulumi.Input[_builtins.float]]:
+    def longitude(self) -> pulumi.Input[Optional[_builtins.float]]:
         """
         Longitude
         """
         return pulumi.get(self, "longitude")
 
     @longitude.setter
-    def longitude(self, value: Optional[pulumi.Input[_builtins.float]]):
+    def longitude(self, value: pulumi.Input[Optional[_builtins.float]]):
         pulumi.set(self, "longitude", value)
 
     @_builtins.property
     @pulumi.getter(name="regionCode")
-    def region_code(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def region_code(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The region code of the location. 
 
@@ -139,20 +139,20 @@ class RumIpLocationsArgs:
         return pulumi.get(self, "region_code")
 
     @region_code.setter
-    def region_code(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def region_code(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "region_code", value)
 
 
 @pulumi.input_type
 class _RumIpLocationsState:
     def __init__(__self__, *,
-                 city: Optional[pulumi.Input[_builtins.str]] = None,
-                 country_code: Optional[pulumi.Input[_builtins.str]] = None,
-                 ip: Optional[pulumi.Input[_builtins.str]] = None,
-                 ip_to: Optional[pulumi.Input[_builtins.str]] = None,
-                 latitude: Optional[pulumi.Input[_builtins.float]] = None,
-                 longitude: Optional[pulumi.Input[_builtins.float]] = None,
-                 region_code: Optional[pulumi.Input[_builtins.str]] = None):
+                 city: pulumi.Input[Optional[_builtins.str]] = None,
+                 country_code: pulumi.Input[Optional[_builtins.str]] = None,
+                 ip: pulumi.Input[Optional[_builtins.str]] = None,
+                 ip_to: pulumi.Input[Optional[_builtins.str]] = None,
+                 latitude: pulumi.Input[Optional[_builtins.float]] = None,
+                 longitude: pulumi.Input[Optional[_builtins.float]] = None,
+                 region_code: pulumi.Input[Optional[_builtins.str]] = None):
         """
         Input properties used for looking up and filtering RumIpLocations resources.
 
@@ -185,79 +185,79 @@ class _RumIpLocationsState:
 
     @_builtins.property
     @pulumi.getter
-    def city(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def city(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The city name of the location.
         """
         return pulumi.get(self, "city")
 
     @city.setter
-    def city(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def city(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "city", value)
 
     @_builtins.property
     @pulumi.getter(name="countryCode")
-    def country_code(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def country_code(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The country code of the location.
         """
         return pulumi.get(self, "country_code")
 
     @country_code.setter
-    def country_code(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def country_code(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "country_code", value)
 
     @_builtins.property
     @pulumi.getter
-    def ip(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def ip(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Single IP or IP range start address
         """
         return pulumi.get(self, "ip")
 
     @ip.setter
-    def ip(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def ip(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "ip", value)
 
     @_builtins.property
     @pulumi.getter(name="ipTo")
-    def ip_to(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def ip_to(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         IP range end
         """
         return pulumi.get(self, "ip_to")
 
     @ip_to.setter
-    def ip_to(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def ip_to(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "ip_to", value)
 
     @_builtins.property
     @pulumi.getter
-    def latitude(self) -> Optional[pulumi.Input[_builtins.float]]:
+    def latitude(self) -> pulumi.Input[Optional[_builtins.float]]:
         """
         Latitude
         """
         return pulumi.get(self, "latitude")
 
     @latitude.setter
-    def latitude(self, value: Optional[pulumi.Input[_builtins.float]]):
+    def latitude(self, value: pulumi.Input[Optional[_builtins.float]]):
         pulumi.set(self, "latitude", value)
 
     @_builtins.property
     @pulumi.getter
-    def longitude(self) -> Optional[pulumi.Input[_builtins.float]]:
+    def longitude(self) -> pulumi.Input[Optional[_builtins.float]]:
         """
         Longitude
         """
         return pulumi.get(self, "longitude")
 
     @longitude.setter
-    def longitude(self, value: Optional[pulumi.Input[_builtins.float]]):
+    def longitude(self, value: pulumi.Input[Optional[_builtins.float]]):
         pulumi.set(self, "longitude", value)
 
     @_builtins.property
     @pulumi.getter(name="regionCode")
-    def region_code(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def region_code(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The region code of the location. 
 
@@ -268,7 +268,7 @@ class _RumIpLocationsState:
         return pulumi.get(self, "region_code")
 
     @region_code.setter
-    def region_code(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def region_code(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "region_code", value)
 
 
@@ -278,13 +278,13 @@ class RumIpLocations(pulumi.CustomResource):
     def __init__(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 city: Optional[pulumi.Input[_builtins.str]] = None,
-                 country_code: Optional[pulumi.Input[_builtins.str]] = None,
-                 ip: Optional[pulumi.Input[_builtins.str]] = None,
-                 ip_to: Optional[pulumi.Input[_builtins.str]] = None,
-                 latitude: Optional[pulumi.Input[_builtins.float]] = None,
-                 longitude: Optional[pulumi.Input[_builtins.float]] = None,
-                 region_code: Optional[pulumi.Input[_builtins.str]] = None,
+                 city: pulumi.Input[Optional[_builtins.str]] = None,
+                 country_code: pulumi.Input[Optional[_builtins.str]] = None,
+                 ip: pulumi.Input[Optional[_builtins.str]] = None,
+                 ip_to: pulumi.Input[Optional[_builtins.str]] = None,
+                 latitude: pulumi.Input[Optional[_builtins.float]] = None,
+                 longitude: pulumi.Input[Optional[_builtins.float]] = None,
+                 region_code: pulumi.Input[Optional[_builtins.str]] = None,
                  __props__=None):
         """
         > This resource requires the API token scopes **Read settings** (`settings.read`) and **Write settings** (`settings.write`)
@@ -353,13 +353,13 @@ class RumIpLocations(pulumi.CustomResource):
     def _internal_init(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 city: Optional[pulumi.Input[_builtins.str]] = None,
-                 country_code: Optional[pulumi.Input[_builtins.str]] = None,
-                 ip: Optional[pulumi.Input[_builtins.str]] = None,
-                 ip_to: Optional[pulumi.Input[_builtins.str]] = None,
-                 latitude: Optional[pulumi.Input[_builtins.float]] = None,
-                 longitude: Optional[pulumi.Input[_builtins.float]] = None,
-                 region_code: Optional[pulumi.Input[_builtins.str]] = None,
+                 city: pulumi.Input[Optional[_builtins.str]] = None,
+                 country_code: pulumi.Input[Optional[_builtins.str]] = None,
+                 ip: pulumi.Input[Optional[_builtins.str]] = None,
+                 ip_to: pulumi.Input[Optional[_builtins.str]] = None,
+                 latitude: pulumi.Input[Optional[_builtins.float]] = None,
+                 longitude: pulumi.Input[Optional[_builtins.float]] = None,
+                 region_code: pulumi.Input[Optional[_builtins.str]] = None,
                  __props__=None):
         opts = pulumi.ResourceOptions.merge(_utilities.get_resource_opts_defaults(), opts)
         if not isinstance(opts, pulumi.ResourceOptions):
@@ -390,13 +390,13 @@ class RumIpLocations(pulumi.CustomResource):
     def get(resource_name: str,
             id: pulumi.Input[str],
             opts: Optional[pulumi.ResourceOptions] = None,
-            city: Optional[pulumi.Input[_builtins.str]] = None,
-            country_code: Optional[pulumi.Input[_builtins.str]] = None,
-            ip: Optional[pulumi.Input[_builtins.str]] = None,
-            ip_to: Optional[pulumi.Input[_builtins.str]] = None,
-            latitude: Optional[pulumi.Input[_builtins.float]] = None,
-            longitude: Optional[pulumi.Input[_builtins.float]] = None,
-            region_code: Optional[pulumi.Input[_builtins.str]] = None) -> 'RumIpLocations':
+            city: pulumi.Input[Optional[_builtins.str]] = None,
+            country_code: pulumi.Input[Optional[_builtins.str]] = None,
+            ip: pulumi.Input[Optional[_builtins.str]] = None,
+            ip_to: pulumi.Input[Optional[_builtins.str]] = None,
+            latitude: pulumi.Input[Optional[_builtins.float]] = None,
+            longitude: pulumi.Input[Optional[_builtins.float]] = None,
+            region_code: pulumi.Input[Optional[_builtins.str]] = None) -> 'RumIpLocations':
         """
         Get an existing RumIpLocations resource's state with the given name, id, and optional extra
         properties used to qualify the lookup.

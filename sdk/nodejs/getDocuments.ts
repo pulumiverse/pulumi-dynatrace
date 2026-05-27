@@ -97,5 +97,5 @@ export interface GetDocumentsOutputArgs {
     /**
      * The type of documents to query for. Leave empty if you want to query for all kinds of documents. Possible values are `dashboard` or `notebook`
      */
-    type?: pulumi.Input<string>;
+    type?: pulumi.Input<string | undefined>;
 }

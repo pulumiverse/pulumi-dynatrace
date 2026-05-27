@@ -132,20 +132,20 @@ export interface MgmzPermissionState {
     /**
      * The UUID of the environment
      */
-    environment?: pulumi.Input<string>;
+    environment?: pulumi.Input<string | undefined>;
     /**
      * The ID of the group the permissions are valid for. You may refer to the id of a resource `dynatrace.UserGroup` here
      */
-    group?: pulumi.Input<string>;
+    group?: pulumi.Input<string | undefined>;
     /**
      * The ID of the management zone the permissions are valid for. When referring to resource `dynatrace.ManagementZoneV2` or data source `dynatrace.ManagementZone` you need to refer to the attribute `legacyId`.
      */
-    managementZone?: pulumi.Input<string>;
+    managementZone?: pulumi.Input<string | undefined>;
     /**
      * The permissions to assign for that management zone. Allowed values are `DEMO_USER`, `LOG_VIEWER`, `MANAGE_SECURITY_PROBLEMS`, `MANAGE_SETTINGS`, `REPLAY_SESSION_DATA`, `REPLAY_SESSION_DATA_WITHOUT_MASKING`, `VIEWER`, `VIEW_SENSITIVE_REQUEST_DATA`.
      * Note: In order to produce non-empty plans specifying at least the permission `VIEWER` is recommended. Your Dynatrace Cluster will enforce that permission, regardless of whether it has been specified or not.
      */
-    permissions?: pulumi.Input<pulumi.Input<string>[]>;
+    permissions?: pulumi.Input<pulumi.Input<string>[] | undefined>;
 }
 
 /**

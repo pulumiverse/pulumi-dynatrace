@@ -100,15 +100,15 @@ export interface GrailSecurityContextState {
     /**
      * The case-sensitive name of a property of the destination type.
      */
-    destinationProperty?: pulumi.Input<string>;
+    destinationProperty?: pulumi.Input<string | undefined>;
     /**
      * Type of the entity whose security context to override.
      */
-    entityType?: pulumi.Input<string>;
+    entityType?: pulumi.Input<string | undefined>;
     /**
      * Because this resource allows for ordering you may specify the ID of the resource instance that comes before this instance regarding order. If not specified when creating the setting will be added to the end of the list. If not specified during update the order will remain untouched
      */
-    insertAfter?: pulumi.Input<string>;
+    insertAfter?: pulumi.Input<string | undefined>;
 }
 
 /**
@@ -126,5 +126,5 @@ export interface GrailSecurityContextArgs {
     /**
      * Because this resource allows for ordering you may specify the ID of the resource instance that comes before this instance regarding order. If not specified when creating the setting will be added to the end of the list. If not specified during update the order will remain untouched
      */
-    insertAfter?: pulumi.Input<string>;
+    insertAfter?: pulumi.Input<string | undefined>;
 }

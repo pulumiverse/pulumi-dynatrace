@@ -96,11 +96,11 @@ export interface SpanEventsState {
     /**
      * Key of the span event attribute to store
      */
-    key?: pulumi.Input<string>;
+    key?: pulumi.Input<string | undefined>;
     /**
      * Possible Values: `MASK_ENTIRE_VALUE`, `MASK_ONLY_CONFIDENTIAL_DATA`, `NOT_MASKED`
      */
-    masking?: pulumi.Input<string>;
+    masking?: pulumi.Input<string | undefined>;
 }
 
 /**

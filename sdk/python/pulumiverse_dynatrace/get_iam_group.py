@@ -87,7 +87,7 @@ def get_iam_group(name: Optional[_builtins.str] = None,
     return AwaitableGetIamGroupResult(
         id=pulumi.get(__ret__, 'id'),
         name=pulumi.get(__ret__, 'name'))
-def get_iam_group_output(name: Optional[pulumi.Input[_builtins.str]] = None,
+def get_iam_group_output(name: pulumi.Input[Optional[_builtins.str]] = None,
                          opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetIamGroupResult]:
     """
     > **Dynatrace SaaS only**

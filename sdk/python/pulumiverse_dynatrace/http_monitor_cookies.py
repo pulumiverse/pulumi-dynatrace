@@ -23,7 +23,7 @@ class HttpMonitorCookiesArgs:
     def __init__(__self__, *,
                  enabled: pulumi.Input[_builtins.bool],
                  scope: pulumi.Input[_builtins.str],
-                 cookies: Optional[pulumi.Input['HttpMonitorCookiesCookiesArgs']] = None):
+                 cookies: pulumi.Input[Optional['HttpMonitorCookiesCookiesArgs']] = None):
         """
         The set of arguments for constructing a HttpMonitorCookies resource.
 
@@ -62,23 +62,23 @@ class HttpMonitorCookiesArgs:
 
     @_builtins.property
     @pulumi.getter
-    def cookies(self) -> Optional[pulumi.Input['HttpMonitorCookiesCookiesArgs']]:
+    def cookies(self) -> pulumi.Input[Optional['HttpMonitorCookiesCookiesArgs']]:
         """
         no documentation available
         """
         return pulumi.get(self, "cookies")
 
     @cookies.setter
-    def cookies(self, value: Optional[pulumi.Input['HttpMonitorCookiesCookiesArgs']]):
+    def cookies(self, value: pulumi.Input[Optional['HttpMonitorCookiesCookiesArgs']]):
         pulumi.set(self, "cookies", value)
 
 
 @pulumi.input_type
 class _HttpMonitorCookiesState:
     def __init__(__self__, *,
-                 cookies: Optional[pulumi.Input['HttpMonitorCookiesCookiesArgs']] = None,
-                 enabled: Optional[pulumi.Input[_builtins.bool]] = None,
-                 scope: Optional[pulumi.Input[_builtins.str]] = None):
+                 cookies: pulumi.Input[Optional['HttpMonitorCookiesCookiesArgs']] = None,
+                 enabled: pulumi.Input[Optional[_builtins.bool]] = None,
+                 scope: pulumi.Input[Optional[_builtins.str]] = None):
         """
         Input properties used for looking up and filtering HttpMonitorCookies resources.
 
@@ -95,38 +95,38 @@ class _HttpMonitorCookiesState:
 
     @_builtins.property
     @pulumi.getter
-    def cookies(self) -> Optional[pulumi.Input['HttpMonitorCookiesCookiesArgs']]:
+    def cookies(self) -> pulumi.Input[Optional['HttpMonitorCookiesCookiesArgs']]:
         """
         no documentation available
         """
         return pulumi.get(self, "cookies")
 
     @cookies.setter
-    def cookies(self, value: Optional[pulumi.Input['HttpMonitorCookiesCookiesArgs']]):
+    def cookies(self, value: pulumi.Input[Optional['HttpMonitorCookiesCookiesArgs']]):
         pulumi.set(self, "cookies", value)
 
     @_builtins.property
     @pulumi.getter
-    def enabled(self) -> Optional[pulumi.Input[_builtins.bool]]:
+    def enabled(self) -> pulumi.Input[Optional[_builtins.bool]]:
         """
         This setting is enabled (`true`) or disabled (`false`)
         """
         return pulumi.get(self, "enabled")
 
     @enabled.setter
-    def enabled(self, value: Optional[pulumi.Input[_builtins.bool]]):
+    def enabled(self, value: pulumi.Input[Optional[_builtins.bool]]):
         pulumi.set(self, "enabled", value)
 
     @_builtins.property
     @pulumi.getter
-    def scope(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def scope(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The scope of this setting (HTTP_CHECK)
         """
         return pulumi.get(self, "scope")
 
     @scope.setter
-    def scope(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def scope(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "scope", value)
 
 
@@ -136,9 +136,9 @@ class HttpMonitorCookies(pulumi.CustomResource):
     def __init__(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 cookies: Optional[pulumi.Input[Union['HttpMonitorCookiesCookiesArgs', 'HttpMonitorCookiesCookiesArgsDict']]] = None,
-                 enabled: Optional[pulumi.Input[_builtins.bool]] = None,
-                 scope: Optional[pulumi.Input[_builtins.str]] = None,
+                 cookies: pulumi.Input[Optional[Union['HttpMonitorCookiesCookiesArgs', 'HttpMonitorCookiesCookiesArgsDict']]] = None,
+                 enabled: pulumi.Input[Optional[_builtins.bool]] = None,
+                 scope: pulumi.Input[Optional[_builtins.str]] = None,
                  __props__=None):
         """
         > This resource requires the API token scopes **Read settings** (`settings.read`) and **Write settings** (`settings.write`)
@@ -199,9 +199,9 @@ class HttpMonitorCookies(pulumi.CustomResource):
     def _internal_init(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 cookies: Optional[pulumi.Input[Union['HttpMonitorCookiesCookiesArgs', 'HttpMonitorCookiesCookiesArgsDict']]] = None,
-                 enabled: Optional[pulumi.Input[_builtins.bool]] = None,
-                 scope: Optional[pulumi.Input[_builtins.str]] = None,
+                 cookies: pulumi.Input[Optional[Union['HttpMonitorCookiesCookiesArgs', 'HttpMonitorCookiesCookiesArgsDict']]] = None,
+                 enabled: pulumi.Input[Optional[_builtins.bool]] = None,
+                 scope: pulumi.Input[Optional[_builtins.str]] = None,
                  __props__=None):
         opts = pulumi.ResourceOptions.merge(_utilities.get_resource_opts_defaults(), opts)
         if not isinstance(opts, pulumi.ResourceOptions):
@@ -228,9 +228,9 @@ class HttpMonitorCookies(pulumi.CustomResource):
     def get(resource_name: str,
             id: pulumi.Input[str],
             opts: Optional[pulumi.ResourceOptions] = None,
-            cookies: Optional[pulumi.Input[Union['HttpMonitorCookiesCookiesArgs', 'HttpMonitorCookiesCookiesArgsDict']]] = None,
-            enabled: Optional[pulumi.Input[_builtins.bool]] = None,
-            scope: Optional[pulumi.Input[_builtins.str]] = None) -> 'HttpMonitorCookies':
+            cookies: pulumi.Input[Optional[Union['HttpMonitorCookiesCookiesArgs', 'HttpMonitorCookiesCookiesArgsDict']]] = None,
+            enabled: pulumi.Input[Optional[_builtins.bool]] = None,
+            scope: pulumi.Input[Optional[_builtins.str]] = None) -> 'HttpMonitorCookies':
         """
         Get an existing HttpMonitorCookies resource's state with the given name, id, and optional extra
         properties used to qualify the lookup.

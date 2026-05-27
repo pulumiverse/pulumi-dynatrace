@@ -134,31 +134,31 @@ export interface AttackRulesState {
     /**
      * Step 1: Select attack protection behavior
      */
-    attackHandling?: pulumi.Input<inputs.AttackRulesAttackHandling>;
+    attackHandling?: pulumi.Input<inputs.AttackRulesAttackHandling | undefined>;
     /**
      * Step 2: Select attack type
      */
-    criteria?: pulumi.Input<inputs.AttackRulesCriteria>;
+    criteria?: pulumi.Input<inputs.AttackRulesCriteria | undefined>;
     /**
      * This setting is enabled (`true`) or disabled (`false`)
      */
-    enabled?: pulumi.Input<boolean>;
+    enabled?: pulumi.Input<boolean | undefined>;
     /**
      * Because this resource allows for ordering you may specify the ID of the resource instance that comes before this instance regarding order. If not specified when creating the setting will be added to the end of the list. If not specified during update the order will remain untouched
      */
-    insertAfter?: pulumi.Input<string>;
+    insertAfter?: pulumi.Input<string | undefined>;
     /**
      * Step 4: Leave comment (optional)
      */
-    metadata?: pulumi.Input<inputs.AttackRulesMetadata>;
+    metadata?: pulumi.Input<inputs.AttackRulesMetadata | undefined>;
     /**
      * If you add more than one condition, note that all conditions must be true simultaneously for the rule to apply.
      */
-    resourceAttributeConditions?: pulumi.Input<inputs.AttackRulesResourceAttributeConditions>;
+    resourceAttributeConditions?: pulumi.Input<inputs.AttackRulesResourceAttributeConditions | undefined>;
     /**
      * Rule name
      */
-    ruleName?: pulumi.Input<string>;
+    ruleName?: pulumi.Input<string | undefined>;
 }
 
 /**
@@ -180,7 +180,7 @@ export interface AttackRulesArgs {
     /**
      * Because this resource allows for ordering you may specify the ID of the resource instance that comes before this instance regarding order. If not specified when creating the setting will be added to the end of the list. If not specified during update the order will remain untouched
      */
-    insertAfter?: pulumi.Input<string>;
+    insertAfter?: pulumi.Input<string | undefined>;
     /**
      * Step 4: Leave comment (optional)
      */
@@ -188,9 +188,9 @@ export interface AttackRulesArgs {
     /**
      * If you add more than one condition, note that all conditions must be true simultaneously for the rule to apply.
      */
-    resourceAttributeConditions?: pulumi.Input<inputs.AttackRulesResourceAttributeConditions>;
+    resourceAttributeConditions?: pulumi.Input<inputs.AttackRulesResourceAttributeConditions | undefined>;
     /**
      * Rule name
      */
-    ruleName?: pulumi.Input<string>;
+    ruleName?: pulumi.Input<string | undefined>;
 }

@@ -120,15 +120,15 @@ export interface PagerdutyConnectionState {
     /**
      * The name of the PagerDuty connection
      */
-    name?: pulumi.Input<string>;
+    name?: pulumi.Input<string | undefined>;
     /**
      * Token for the PagerDuty API endpoint
      */
-    token?: pulumi.Input<string>;
+    token?: pulumi.Input<string | undefined>;
     /**
      * URL of the PagerDuty API endpoint
      */
-    url?: pulumi.Input<string>;
+    url?: pulumi.Input<string | undefined>;
 }
 
 /**
@@ -138,7 +138,7 @@ export interface PagerdutyConnectionArgs {
     /**
      * The name of the PagerDuty connection
      */
-    name?: pulumi.Input<string>;
+    name?: pulumi.Input<string | undefined>;
     /**
      * Token for the PagerDuty API endpoint
      */

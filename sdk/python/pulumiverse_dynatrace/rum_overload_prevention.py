@@ -43,7 +43,7 @@ class RumOverloadPreventionArgs:
 @pulumi.input_type
 class _RumOverloadPreventionState:
     def __init__(__self__, *,
-                 overload_prevention_limit: Optional[pulumi.Input[_builtins.int]] = None):
+                 overload_prevention_limit: pulumi.Input[Optional[_builtins.int]] = None):
         """
         Input properties used for looking up and filtering RumOverloadPrevention resources.
 
@@ -54,14 +54,14 @@ class _RumOverloadPreventionState:
 
     @_builtins.property
     @pulumi.getter(name="overloadPreventionLimit")
-    def overload_prevention_limit(self) -> Optional[pulumi.Input[_builtins.int]]:
+    def overload_prevention_limit(self) -> pulumi.Input[Optional[_builtins.int]]:
         """
         Once this limit is reached, Dynatrace [throttles the number of captured user sessions](https://dt-url.net/fm3v0p7g).
         """
         return pulumi.get(self, "overload_prevention_limit")
 
     @overload_prevention_limit.setter
-    def overload_prevention_limit(self, value: Optional[pulumi.Input[_builtins.int]]):
+    def overload_prevention_limit(self, value: pulumi.Input[Optional[_builtins.int]]):
         pulumi.set(self, "overload_prevention_limit", value)
 
 
@@ -71,7 +71,7 @@ class RumOverloadPrevention(pulumi.CustomResource):
     def __init__(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 overload_prevention_limit: Optional[pulumi.Input[_builtins.int]] = None,
+                 overload_prevention_limit: pulumi.Input[Optional[_builtins.int]] = None,
                  __props__=None):
         """
         > This resource requires the API token scopes **Read settings** (`settings.read`) and **Write settings** (`settings.write`)
@@ -130,7 +130,7 @@ class RumOverloadPrevention(pulumi.CustomResource):
     def _internal_init(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 overload_prevention_limit: Optional[pulumi.Input[_builtins.int]] = None,
+                 overload_prevention_limit: pulumi.Input[Optional[_builtins.int]] = None,
                  __props__=None):
         opts = pulumi.ResourceOptions.merge(_utilities.get_resource_opts_defaults(), opts)
         if not isinstance(opts, pulumi.ResourceOptions):
@@ -153,7 +153,7 @@ class RumOverloadPrevention(pulumi.CustomResource):
     def get(resource_name: str,
             id: pulumi.Input[str],
             opts: Optional[pulumi.ResourceOptions] = None,
-            overload_prevention_limit: Optional[pulumi.Input[_builtins.int]] = None) -> 'RumOverloadPrevention':
+            overload_prevention_limit: pulumi.Input[Optional[_builtins.int]] = None) -> 'RumOverloadPrevention':
         """
         Get an existing RumOverloadPrevention resource's state with the given name, id, and optional extra
         properties used to qualify the lookup.

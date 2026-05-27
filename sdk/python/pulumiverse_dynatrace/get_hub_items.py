@@ -117,7 +117,7 @@ def get_hub_items(type: Optional[_builtins.str] = None,
         id=pulumi.get(__ret__, 'id'),
         items=pulumi.get(__ret__, 'items'),
         type=pulumi.get(__ret__, 'type'))
-def get_hub_items_output(type: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
+def get_hub_items_output(type: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
                          opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetHubItemsResult]:
     """
     > This data source requires the API token scope `hub.read`)

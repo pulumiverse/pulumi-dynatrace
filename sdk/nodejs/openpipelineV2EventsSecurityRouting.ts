@@ -103,7 +103,7 @@ export interface OpenpipelineV2EventsSecurityRoutingState {
     /**
      * Routing for pipelines
      */
-    routingEntries?: pulumi.Input<inputs.OpenpipelineV2EventsSecurityRoutingRoutingEntries>;
+    routingEntries?: pulumi.Input<inputs.OpenpipelineV2EventsSecurityRoutingRoutingEntries | undefined>;
 }
 
 /**
@@ -113,5 +113,5 @@ export interface OpenpipelineV2EventsSecurityRoutingArgs {
     /**
      * Routing for pipelines
      */
-    routingEntries?: pulumi.Input<inputs.OpenpipelineV2EventsSecurityRoutingRoutingEntries>;
+    routingEntries?: pulumi.Input<inputs.OpenpipelineV2EventsSecurityRoutingRoutingEntries | undefined>;
 }

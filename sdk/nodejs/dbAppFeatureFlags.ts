@@ -111,23 +111,23 @@ export interface DbAppFeatureFlagsState {
     /**
      * State of boolean feature flag
      */
-    booleanValue?: pulumi.Input<boolean>;
+    booleanValue?: pulumi.Input<boolean | undefined>;
     /**
      * Name of the feature
      */
-    name?: pulumi.Input<string>;
+    name?: pulumi.Input<string | undefined>;
     /**
      * State of numeric feature flag
      */
-    numberValue?: pulumi.Input<number>;
+    numberValue?: pulumi.Input<number | undefined>;
     /**
      * State of textual feature flag
      */
-    stringValue?: pulumi.Input<string>;
+    stringValue?: pulumi.Input<string | undefined>;
     /**
      * Possible Values: `Boolean`, `Number`, `String`
      */
-    type?: pulumi.Input<string>;
+    type?: pulumi.Input<string | undefined>;
 }
 
 /**
@@ -137,19 +137,19 @@ export interface DbAppFeatureFlagsArgs {
     /**
      * State of boolean feature flag
      */
-    booleanValue?: pulumi.Input<boolean>;
+    booleanValue?: pulumi.Input<boolean | undefined>;
     /**
      * Name of the feature
      */
-    name?: pulumi.Input<string>;
+    name?: pulumi.Input<string | undefined>;
     /**
      * State of numeric feature flag
      */
-    numberValue?: pulumi.Input<number>;
+    numberValue?: pulumi.Input<number | undefined>;
     /**
      * State of textual feature flag
      */
-    stringValue?: pulumi.Input<string>;
+    stringValue?: pulumi.Input<string | undefined>;
     /**
      * Possible Values: `Boolean`, `Number`, `String`
      */

@@ -93,11 +93,11 @@ export interface DashboardsGeneralState {
     /**
      * Configure home dashboard for selected user group. The selected preset dashboard will be loaded as default landing page for this environment.
      */
-    defaultDashboardList?: pulumi.Input<inputs.DashboardsGeneralDefaultDashboardList>;
+    defaultDashboardList?: pulumi.Input<inputs.DashboardsGeneralDefaultDashboardList | undefined>;
     /**
      * Allow users to grant anonymous access to dashboards. No sign-in will be required to view those dashboards read-only.
      */
-    enablePublicSharing?: pulumi.Input<boolean>;
+    enablePublicSharing?: pulumi.Input<boolean | undefined>;
 }
 
 /**
@@ -107,7 +107,7 @@ export interface DashboardsGeneralArgs {
     /**
      * Configure home dashboard for selected user group. The selected preset dashboard will be loaded as default landing page for this environment.
      */
-    defaultDashboardList?: pulumi.Input<inputs.DashboardsGeneralDefaultDashboardList>;
+    defaultDashboardList?: pulumi.Input<inputs.DashboardsGeneralDefaultDashboardList | undefined>;
     /**
      * Allow users to grant anonymous access to dashboards. No sign-in will be required to view those dashboards read-only.
      */

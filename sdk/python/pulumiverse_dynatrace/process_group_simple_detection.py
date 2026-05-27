@@ -23,8 +23,8 @@ class ProcessGroupSimpleDetectionArgs:
                  group_identifier: pulumi.Input[_builtins.str],
                  instance_identifier: pulumi.Input[_builtins.str],
                  rule_type: pulumi.Input[_builtins.str],
-                 insert_after: Optional[pulumi.Input[_builtins.str]] = None,
-                 process_type: Optional[pulumi.Input[_builtins.str]] = None):
+                 insert_after: pulumi.Input[Optional[_builtins.str]] = None,
+                 process_type: pulumi.Input[Optional[_builtins.str]] = None):
         """
         The set of arguments for constructing a ProcessGroupSimpleDetection resource.
 
@@ -94,38 +94,38 @@ class ProcessGroupSimpleDetectionArgs:
 
     @_builtins.property
     @pulumi.getter(name="insertAfter")
-    def insert_after(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def insert_after(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Because this resource allows for ordering you may specify the ID of the resource instance that comes before this instance regarding order. If not specified when creating the setting will be added to the end of the list. If not specified during update the order will remain untouched
         """
         return pulumi.get(self, "insert_after")
 
     @insert_after.setter
-    def insert_after(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def insert_after(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "insert_after", value)
 
     @_builtins.property
     @pulumi.getter(name="processType")
-    def process_type(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def process_type(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Note: Not all types can be detected at startup.
         """
         return pulumi.get(self, "process_type")
 
     @process_type.setter
-    def process_type(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def process_type(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "process_type", value)
 
 
 @pulumi.input_type
 class _ProcessGroupSimpleDetectionState:
     def __init__(__self__, *,
-                 enabled: Optional[pulumi.Input[_builtins.bool]] = None,
-                 group_identifier: Optional[pulumi.Input[_builtins.str]] = None,
-                 insert_after: Optional[pulumi.Input[_builtins.str]] = None,
-                 instance_identifier: Optional[pulumi.Input[_builtins.str]] = None,
-                 process_type: Optional[pulumi.Input[_builtins.str]] = None,
-                 rule_type: Optional[pulumi.Input[_builtins.str]] = None):
+                 enabled: pulumi.Input[Optional[_builtins.bool]] = None,
+                 group_identifier: pulumi.Input[Optional[_builtins.str]] = None,
+                 insert_after: pulumi.Input[Optional[_builtins.str]] = None,
+                 instance_identifier: pulumi.Input[Optional[_builtins.str]] = None,
+                 process_type: pulumi.Input[Optional[_builtins.str]] = None,
+                 rule_type: pulumi.Input[Optional[_builtins.str]] = None):
         """
         Input properties used for looking up and filtering ProcessGroupSimpleDetection resources.
 
@@ -151,74 +151,74 @@ class _ProcessGroupSimpleDetectionState:
 
     @_builtins.property
     @pulumi.getter
-    def enabled(self) -> Optional[pulumi.Input[_builtins.bool]]:
+    def enabled(self) -> pulumi.Input[Optional[_builtins.bool]]:
         """
         This setting is enabled (`true`) or disabled (`false`)
         """
         return pulumi.get(self, "enabled")
 
     @enabled.setter
-    def enabled(self, value: Optional[pulumi.Input[_builtins.bool]]):
+    def enabled(self, value: pulumi.Input[Optional[_builtins.bool]]):
         pulumi.set(self, "enabled", value)
 
     @_builtins.property
     @pulumi.getter(name="groupIdentifier")
-    def group_identifier(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def group_identifier(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         If Dynatrace detects this property at startup of a process, it will use its value to identify process groups more granular.
         """
         return pulumi.get(self, "group_identifier")
 
     @group_identifier.setter
-    def group_identifier(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def group_identifier(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "group_identifier", value)
 
     @_builtins.property
     @pulumi.getter(name="insertAfter")
-    def insert_after(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def insert_after(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Because this resource allows for ordering you may specify the ID of the resource instance that comes before this instance regarding order. If not specified when creating the setting will be added to the end of the list. If not specified during update the order will remain untouched
         """
         return pulumi.get(self, "insert_after")
 
     @insert_after.setter
-    def insert_after(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def insert_after(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "insert_after", value)
 
     @_builtins.property
     @pulumi.getter(name="instanceIdentifier")
-    def instance_identifier(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def instance_identifier(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Use a variable to identify instances within a process group.
         """
         return pulumi.get(self, "instance_identifier")
 
     @instance_identifier.setter
-    def instance_identifier(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def instance_identifier(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "instance_identifier", value)
 
     @_builtins.property
     @pulumi.getter(name="processType")
-    def process_type(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def process_type(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Note: Not all types can be detected at startup.
         """
         return pulumi.get(self, "process_type")
 
     @process_type.setter
-    def process_type(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def process_type(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "process_type", value)
 
     @_builtins.property
     @pulumi.getter(name="ruleType")
-    def rule_type(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def rule_type(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Possible Values: `Prop`, `Env`
         """
         return pulumi.get(self, "rule_type")
 
     @rule_type.setter
-    def rule_type(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def rule_type(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "rule_type", value)
 
 
@@ -228,12 +228,12 @@ class ProcessGroupSimpleDetection(pulumi.CustomResource):
     def __init__(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 enabled: Optional[pulumi.Input[_builtins.bool]] = None,
-                 group_identifier: Optional[pulumi.Input[_builtins.str]] = None,
-                 insert_after: Optional[pulumi.Input[_builtins.str]] = None,
-                 instance_identifier: Optional[pulumi.Input[_builtins.str]] = None,
-                 process_type: Optional[pulumi.Input[_builtins.str]] = None,
-                 rule_type: Optional[pulumi.Input[_builtins.str]] = None,
+                 enabled: pulumi.Input[Optional[_builtins.bool]] = None,
+                 group_identifier: pulumi.Input[Optional[_builtins.str]] = None,
+                 insert_after: pulumi.Input[Optional[_builtins.str]] = None,
+                 instance_identifier: pulumi.Input[Optional[_builtins.str]] = None,
+                 process_type: pulumi.Input[Optional[_builtins.str]] = None,
+                 rule_type: pulumi.Input[Optional[_builtins.str]] = None,
                  __props__=None):
         """
         > This resource requires the API token scopes **Read settings** (`settings.read`) and **Write settings** (`settings.write`)
@@ -297,12 +297,12 @@ class ProcessGroupSimpleDetection(pulumi.CustomResource):
     def _internal_init(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 enabled: Optional[pulumi.Input[_builtins.bool]] = None,
-                 group_identifier: Optional[pulumi.Input[_builtins.str]] = None,
-                 insert_after: Optional[pulumi.Input[_builtins.str]] = None,
-                 instance_identifier: Optional[pulumi.Input[_builtins.str]] = None,
-                 process_type: Optional[pulumi.Input[_builtins.str]] = None,
-                 rule_type: Optional[pulumi.Input[_builtins.str]] = None,
+                 enabled: pulumi.Input[Optional[_builtins.bool]] = None,
+                 group_identifier: pulumi.Input[Optional[_builtins.str]] = None,
+                 insert_after: pulumi.Input[Optional[_builtins.str]] = None,
+                 instance_identifier: pulumi.Input[Optional[_builtins.str]] = None,
+                 process_type: pulumi.Input[Optional[_builtins.str]] = None,
+                 rule_type: pulumi.Input[Optional[_builtins.str]] = None,
                  __props__=None):
         opts = pulumi.ResourceOptions.merge(_utilities.get_resource_opts_defaults(), opts)
         if not isinstance(opts, pulumi.ResourceOptions):
@@ -336,12 +336,12 @@ class ProcessGroupSimpleDetection(pulumi.CustomResource):
     def get(resource_name: str,
             id: pulumi.Input[str],
             opts: Optional[pulumi.ResourceOptions] = None,
-            enabled: Optional[pulumi.Input[_builtins.bool]] = None,
-            group_identifier: Optional[pulumi.Input[_builtins.str]] = None,
-            insert_after: Optional[pulumi.Input[_builtins.str]] = None,
-            instance_identifier: Optional[pulumi.Input[_builtins.str]] = None,
-            process_type: Optional[pulumi.Input[_builtins.str]] = None,
-            rule_type: Optional[pulumi.Input[_builtins.str]] = None) -> 'ProcessGroupSimpleDetection':
+            enabled: pulumi.Input[Optional[_builtins.bool]] = None,
+            group_identifier: pulumi.Input[Optional[_builtins.str]] = None,
+            insert_after: pulumi.Input[Optional[_builtins.str]] = None,
+            instance_identifier: pulumi.Input[Optional[_builtins.str]] = None,
+            process_type: pulumi.Input[Optional[_builtins.str]] = None,
+            rule_type: pulumi.Input[Optional[_builtins.str]] = None) -> 'ProcessGroupSimpleDetection':
         """
         Get an existing ProcessGroupSimpleDetection resource's state with the given name, id, and optional extra
         properties used to qualify the lookup.

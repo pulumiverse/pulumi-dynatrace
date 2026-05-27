@@ -23,17 +23,17 @@ class CalculatedServiceMetricArgs:
     def __init__(__self__, *,
                  metric_key: pulumi.Input[_builtins.str],
                  unit: pulumi.Input[_builtins.str],
-                 conditions: Optional[pulumi.Input[Sequence[pulumi.Input['CalculatedServiceMetricConditionArgs']]]] = None,
-                 description: Optional[pulumi.Input[_builtins.str]] = None,
-                 dimension_definition: Optional[pulumi.Input['CalculatedServiceMetricDimensionDefinitionArgs']] = None,
-                 enabled: Optional[pulumi.Input[_builtins.bool]] = None,
-                 entity_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 ignore_muted_requests: Optional[pulumi.Input[_builtins.bool]] = None,
-                 management_zones: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-                 metric_definition: Optional[pulumi.Input['CalculatedServiceMetricMetricDefinitionArgs']] = None,
-                 name: Optional[pulumi.Input[_builtins.str]] = None,
-                 unit_display_name: Optional[pulumi.Input[_builtins.str]] = None,
-                 unknowns: Optional[pulumi.Input[_builtins.str]] = None):
+                 conditions: pulumi.Input[Optional[Sequence[pulumi.Input['CalculatedServiceMetricConditionArgs']]]] = None,
+                 description: pulumi.Input[Optional[_builtins.str]] = None,
+                 dimension_definition: pulumi.Input[Optional['CalculatedServiceMetricDimensionDefinitionArgs']] = None,
+                 enabled: pulumi.Input[Optional[_builtins.bool]] = None,
+                 entity_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 ignore_muted_requests: pulumi.Input[Optional[_builtins.bool]] = None,
+                 management_zones: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 metric_definition: pulumi.Input[Optional['CalculatedServiceMetricMetricDefinitionArgs']] = None,
+                 name: pulumi.Input[Optional[_builtins.str]] = None,
+                 unit_display_name: pulumi.Input[Optional[_builtins.str]] = None,
+                 unknowns: pulumi.Input[Optional[_builtins.str]] = None):
         """
         The set of arguments for constructing a CalculatedServiceMetric resource.
 
@@ -102,153 +102,153 @@ class CalculatedServiceMetricArgs:
 
     @_builtins.property
     @pulumi.getter
-    def conditions(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['CalculatedServiceMetricConditionArgs']]]]:
+    def conditions(self) -> pulumi.Input[Optional[Sequence[pulumi.Input['CalculatedServiceMetricConditionArgs']]]]:
         """
         The set of conditions for the metric usage. **All** the specified conditions must be fulfilled to use the metric
         """
         return pulumi.get(self, "conditions")
 
     @conditions.setter
-    def conditions(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['CalculatedServiceMetricConditionArgs']]]]):
+    def conditions(self, value: pulumi.Input[Optional[Sequence[pulumi.Input['CalculatedServiceMetricConditionArgs']]]]):
         pulumi.set(self, "conditions", value)
 
     @_builtins.property
     @pulumi.getter
-    def description(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def description(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The displayed description of the metric
         """
         return pulumi.get(self, "description")
 
     @description.setter
-    def description(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def description(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "description", value)
 
     @_builtins.property
     @pulumi.getter(name="dimensionDefinition")
-    def dimension_definition(self) -> Optional[pulumi.Input['CalculatedServiceMetricDimensionDefinitionArgs']]:
+    def dimension_definition(self) -> pulumi.Input[Optional['CalculatedServiceMetricDimensionDefinitionArgs']]:
         """
         Parameters of a definition of a calculated service metric
         """
         return pulumi.get(self, "dimension_definition")
 
     @dimension_definition.setter
-    def dimension_definition(self, value: Optional[pulumi.Input['CalculatedServiceMetricDimensionDefinitionArgs']]):
+    def dimension_definition(self, value: pulumi.Input[Optional['CalculatedServiceMetricDimensionDefinitionArgs']]):
         pulumi.set(self, "dimension_definition", value)
 
     @_builtins.property
     @pulumi.getter
-    def enabled(self) -> Optional[pulumi.Input[_builtins.bool]]:
+    def enabled(self) -> pulumi.Input[Optional[_builtins.bool]]:
         """
         The metric is enabled (`true`) or disabled (`false`)
         """
         return pulumi.get(self, "enabled")
 
     @enabled.setter
-    def enabled(self, value: Optional[pulumi.Input[_builtins.bool]]):
+    def enabled(self, value: pulumi.Input[Optional[_builtins.bool]]):
         pulumi.set(self, "enabled", value)
 
     @_builtins.property
     @pulumi.getter(name="entityId")
-    def entity_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def entity_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Restricts the metric usage to the specified service. This field is mutually exclusive with the `management_zones` field
         """
         return pulumi.get(self, "entity_id")
 
     @entity_id.setter
-    def entity_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def entity_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "entity_id", value)
 
     @_builtins.property
     @pulumi.getter(name="ignoreMutedRequests")
-    def ignore_muted_requests(self) -> Optional[pulumi.Input[_builtins.bool]]:
+    def ignore_muted_requests(self) -> pulumi.Input[Optional[_builtins.bool]]:
         """
         Metric should (true) or not (false) ignore muted requests.
         """
         return pulumi.get(self, "ignore_muted_requests")
 
     @ignore_muted_requests.setter
-    def ignore_muted_requests(self, value: Optional[pulumi.Input[_builtins.bool]]):
+    def ignore_muted_requests(self, value: pulumi.Input[Optional[_builtins.bool]]):
         pulumi.set(self, "ignore_muted_requests", value)
 
     @_builtins.property
     @pulumi.getter(name="managementZones")
-    def management_zones(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]:
+    def management_zones(self) -> pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]:
         """
         Restricts the metric usage to specified management zones. This field is mutually exclusive with the `entity_id` field
         """
         return pulumi.get(self, "management_zones")
 
     @management_zones.setter
-    def management_zones(self, value: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]):
+    def management_zones(self, value: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "management_zones", value)
 
     @_builtins.property
     @pulumi.getter(name="metricDefinition")
-    def metric_definition(self) -> Optional[pulumi.Input['CalculatedServiceMetricMetricDefinitionArgs']]:
+    def metric_definition(self) -> pulumi.Input[Optional['CalculatedServiceMetricMetricDefinitionArgs']]:
         """
         The definition of a calculated service metric
         """
         return pulumi.get(self, "metric_definition")
 
     @metric_definition.setter
-    def metric_definition(self, value: Optional[pulumi.Input['CalculatedServiceMetricMetricDefinitionArgs']]):
+    def metric_definition(self, value: pulumi.Input[Optional['CalculatedServiceMetricMetricDefinitionArgs']]):
         pulumi.set(self, "metric_definition", value)
 
     @_builtins.property
     @pulumi.getter
-    def name(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def name(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The displayed name of the metric
         """
         return pulumi.get(self, "name")
 
     @name.setter
-    def name(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def name(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "name", value)
 
     @_builtins.property
     @pulumi.getter(name="unitDisplayName")
-    def unit_display_name(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def unit_display_name(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The display name of the metric's unit. Only applicable when the **unit** parameter is set to `UNSPECIFIED`
         """
         return pulumi.get(self, "unit_display_name")
 
     @unit_display_name.setter
-    def unit_display_name(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def unit_display_name(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "unit_display_name", value)
 
     @_builtins.property
     @pulumi.getter
-    def unknowns(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def unknowns(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         allows for configuring properties that are not explicitly supported by the current version of this provider
         """
         return pulumi.get(self, "unknowns")
 
     @unknowns.setter
-    def unknowns(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def unknowns(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "unknowns", value)
 
 
 @pulumi.input_type
 class _CalculatedServiceMetricState:
     def __init__(__self__, *,
-                 conditions: Optional[pulumi.Input[Sequence[pulumi.Input['CalculatedServiceMetricConditionArgs']]]] = None,
-                 description: Optional[pulumi.Input[_builtins.str]] = None,
-                 dimension_definition: Optional[pulumi.Input['CalculatedServiceMetricDimensionDefinitionArgs']] = None,
-                 enabled: Optional[pulumi.Input[_builtins.bool]] = None,
-                 entity_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 ignore_muted_requests: Optional[pulumi.Input[_builtins.bool]] = None,
-                 management_zones: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-                 metric_definition: Optional[pulumi.Input['CalculatedServiceMetricMetricDefinitionArgs']] = None,
-                 metric_key: Optional[pulumi.Input[_builtins.str]] = None,
-                 name: Optional[pulumi.Input[_builtins.str]] = None,
-                 unit: Optional[pulumi.Input[_builtins.str]] = None,
-                 unit_display_name: Optional[pulumi.Input[_builtins.str]] = None,
-                 unknowns: Optional[pulumi.Input[_builtins.str]] = None):
+                 conditions: pulumi.Input[Optional[Sequence[pulumi.Input['CalculatedServiceMetricConditionArgs']]]] = None,
+                 description: pulumi.Input[Optional[_builtins.str]] = None,
+                 dimension_definition: pulumi.Input[Optional['CalculatedServiceMetricDimensionDefinitionArgs']] = None,
+                 enabled: pulumi.Input[Optional[_builtins.bool]] = None,
+                 entity_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 ignore_muted_requests: pulumi.Input[Optional[_builtins.bool]] = None,
+                 management_zones: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 metric_definition: pulumi.Input[Optional['CalculatedServiceMetricMetricDefinitionArgs']] = None,
+                 metric_key: pulumi.Input[Optional[_builtins.str]] = None,
+                 name: pulumi.Input[Optional[_builtins.str]] = None,
+                 unit: pulumi.Input[Optional[_builtins.str]] = None,
+                 unit_display_name: pulumi.Input[Optional[_builtins.str]] = None,
+                 unknowns: pulumi.Input[Optional[_builtins.str]] = None):
         """
         Input properties used for looking up and filtering CalculatedServiceMetric resources.
 
@@ -295,158 +295,158 @@ class _CalculatedServiceMetricState:
 
     @_builtins.property
     @pulumi.getter
-    def conditions(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['CalculatedServiceMetricConditionArgs']]]]:
+    def conditions(self) -> pulumi.Input[Optional[Sequence[pulumi.Input['CalculatedServiceMetricConditionArgs']]]]:
         """
         The set of conditions for the metric usage. **All** the specified conditions must be fulfilled to use the metric
         """
         return pulumi.get(self, "conditions")
 
     @conditions.setter
-    def conditions(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['CalculatedServiceMetricConditionArgs']]]]):
+    def conditions(self, value: pulumi.Input[Optional[Sequence[pulumi.Input['CalculatedServiceMetricConditionArgs']]]]):
         pulumi.set(self, "conditions", value)
 
     @_builtins.property
     @pulumi.getter
-    def description(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def description(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The displayed description of the metric
         """
         return pulumi.get(self, "description")
 
     @description.setter
-    def description(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def description(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "description", value)
 
     @_builtins.property
     @pulumi.getter(name="dimensionDefinition")
-    def dimension_definition(self) -> Optional[pulumi.Input['CalculatedServiceMetricDimensionDefinitionArgs']]:
+    def dimension_definition(self) -> pulumi.Input[Optional['CalculatedServiceMetricDimensionDefinitionArgs']]:
         """
         Parameters of a definition of a calculated service metric
         """
         return pulumi.get(self, "dimension_definition")
 
     @dimension_definition.setter
-    def dimension_definition(self, value: Optional[pulumi.Input['CalculatedServiceMetricDimensionDefinitionArgs']]):
+    def dimension_definition(self, value: pulumi.Input[Optional['CalculatedServiceMetricDimensionDefinitionArgs']]):
         pulumi.set(self, "dimension_definition", value)
 
     @_builtins.property
     @pulumi.getter
-    def enabled(self) -> Optional[pulumi.Input[_builtins.bool]]:
+    def enabled(self) -> pulumi.Input[Optional[_builtins.bool]]:
         """
         The metric is enabled (`true`) or disabled (`false`)
         """
         return pulumi.get(self, "enabled")
 
     @enabled.setter
-    def enabled(self, value: Optional[pulumi.Input[_builtins.bool]]):
+    def enabled(self, value: pulumi.Input[Optional[_builtins.bool]]):
         pulumi.set(self, "enabled", value)
 
     @_builtins.property
     @pulumi.getter(name="entityId")
-    def entity_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def entity_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Restricts the metric usage to the specified service. This field is mutually exclusive with the `management_zones` field
         """
         return pulumi.get(self, "entity_id")
 
     @entity_id.setter
-    def entity_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def entity_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "entity_id", value)
 
     @_builtins.property
     @pulumi.getter(name="ignoreMutedRequests")
-    def ignore_muted_requests(self) -> Optional[pulumi.Input[_builtins.bool]]:
+    def ignore_muted_requests(self) -> pulumi.Input[Optional[_builtins.bool]]:
         """
         Metric should (true) or not (false) ignore muted requests.
         """
         return pulumi.get(self, "ignore_muted_requests")
 
     @ignore_muted_requests.setter
-    def ignore_muted_requests(self, value: Optional[pulumi.Input[_builtins.bool]]):
+    def ignore_muted_requests(self, value: pulumi.Input[Optional[_builtins.bool]]):
         pulumi.set(self, "ignore_muted_requests", value)
 
     @_builtins.property
     @pulumi.getter(name="managementZones")
-    def management_zones(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]:
+    def management_zones(self) -> pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]:
         """
         Restricts the metric usage to specified management zones. This field is mutually exclusive with the `entity_id` field
         """
         return pulumi.get(self, "management_zones")
 
     @management_zones.setter
-    def management_zones(self, value: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]):
+    def management_zones(self, value: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "management_zones", value)
 
     @_builtins.property
     @pulumi.getter(name="metricDefinition")
-    def metric_definition(self) -> Optional[pulumi.Input['CalculatedServiceMetricMetricDefinitionArgs']]:
+    def metric_definition(self) -> pulumi.Input[Optional['CalculatedServiceMetricMetricDefinitionArgs']]:
         """
         The definition of a calculated service metric
         """
         return pulumi.get(self, "metric_definition")
 
     @metric_definition.setter
-    def metric_definition(self, value: Optional[pulumi.Input['CalculatedServiceMetricMetricDefinitionArgs']]):
+    def metric_definition(self, value: pulumi.Input[Optional['CalculatedServiceMetricMetricDefinitionArgs']]):
         pulumi.set(self, "metric_definition", value)
 
     @_builtins.property
     @pulumi.getter(name="metricKey")
-    def metric_key(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def metric_key(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The key of the calculated service metric
         """
         return pulumi.get(self, "metric_key")
 
     @metric_key.setter
-    def metric_key(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def metric_key(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "metric_key", value)
 
     @_builtins.property
     @pulumi.getter
-    def name(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def name(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The displayed name of the metric
         """
         return pulumi.get(self, "name")
 
     @name.setter
-    def name(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def name(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "name", value)
 
     @_builtins.property
     @pulumi.getter
-    def unit(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def unit(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The unit of the metric. Possible values are `BIT`, `BIT_PER_HOUR`, `BIT_PER_MINUTE`, `BIT_PER_SECOND`, `BYTE`, `BYTE_PER_HOUR`, `BYTE_PER_MINUTE`, `BYTE_PER_SECOND`, `CORES`, `COUNT`, `DAY`, `DECIBEL_MILLI_WATT`, `GIBI_BYTE`, `GIGA`, `GIGA_BYTE`, `HOUR`, `KIBI_BYTE`, `KIBI_BYTE_PER_HOUR`, `KIBI_BYTE_PER_MINUTE`, `KIBI_BYTE_PER_SECOND`, `KILO`, `KILO_BYTE`, `KILO_BYTE_PER_HOUR`, `KILO_BYTE_PER_MINUTE`, `KILO_BYTE_PER_SECOND`, `MEBI_BYTE`, `MEBI_BYTE_PER_HOUR`, `MEBI_BYTE_PER_MINUTE`, `MEBI_BYTE_PER_SECOND`, `MEGA`, `MEGA_BYTE`, `MEGA_BYTE_PER_HOUR`, `MEGA_BYTE_PER_MINUTE`, `MEGA_BYTE_PER_SECOND`, `MICRO_SECOND`, `MILLI_CORES`, `MILLI_SECOND`, `MILLI_SECOND_PER_MINUTE`, `MINUTE`, `MONTH`, `MSU`, `NANO_SECOND`, `NANO_SECOND_PER_MINUTE`, `NOT_APPLICABLE`, `PERCENT`, `PER_HOUR`, `PER_MINUTE`, `PER_SECOND`, `PIXEL`, `PROMILLE`, `RATIO`, `SECOND`, `STATE`, `UNSPECIFIED`, `WEEK` and `YEAR`
         """
         return pulumi.get(self, "unit")
 
     @unit.setter
-    def unit(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def unit(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "unit", value)
 
     @_builtins.property
     @pulumi.getter(name="unitDisplayName")
-    def unit_display_name(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def unit_display_name(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The display name of the metric's unit. Only applicable when the **unit** parameter is set to `UNSPECIFIED`
         """
         return pulumi.get(self, "unit_display_name")
 
     @unit_display_name.setter
-    def unit_display_name(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def unit_display_name(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "unit_display_name", value)
 
     @_builtins.property
     @pulumi.getter
-    def unknowns(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def unknowns(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         allows for configuring properties that are not explicitly supported by the current version of this provider
         """
         return pulumi.get(self, "unknowns")
 
     @unknowns.setter
-    def unknowns(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def unknowns(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "unknowns", value)
 
 
@@ -456,19 +456,19 @@ class CalculatedServiceMetric(pulumi.CustomResource):
     def __init__(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 conditions: Optional[pulumi.Input[Sequence[pulumi.Input[Union['CalculatedServiceMetricConditionArgs', 'CalculatedServiceMetricConditionArgsDict']]]]] = None,
-                 description: Optional[pulumi.Input[_builtins.str]] = None,
-                 dimension_definition: Optional[pulumi.Input[Union['CalculatedServiceMetricDimensionDefinitionArgs', 'CalculatedServiceMetricDimensionDefinitionArgsDict']]] = None,
-                 enabled: Optional[pulumi.Input[_builtins.bool]] = None,
-                 entity_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 ignore_muted_requests: Optional[pulumi.Input[_builtins.bool]] = None,
-                 management_zones: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-                 metric_definition: Optional[pulumi.Input[Union['CalculatedServiceMetricMetricDefinitionArgs', 'CalculatedServiceMetricMetricDefinitionArgsDict']]] = None,
-                 metric_key: Optional[pulumi.Input[_builtins.str]] = None,
-                 name: Optional[pulumi.Input[_builtins.str]] = None,
-                 unit: Optional[pulumi.Input[_builtins.str]] = None,
-                 unit_display_name: Optional[pulumi.Input[_builtins.str]] = None,
-                 unknowns: Optional[pulumi.Input[_builtins.str]] = None,
+                 conditions: pulumi.Input[Optional[Sequence[pulumi.Input[Union['CalculatedServiceMetricConditionArgs', 'CalculatedServiceMetricConditionArgsDict']]]]] = None,
+                 description: pulumi.Input[Optional[_builtins.str]] = None,
+                 dimension_definition: pulumi.Input[Optional[Union['CalculatedServiceMetricDimensionDefinitionArgs', 'CalculatedServiceMetricDimensionDefinitionArgsDict']]] = None,
+                 enabled: pulumi.Input[Optional[_builtins.bool]] = None,
+                 entity_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 ignore_muted_requests: pulumi.Input[Optional[_builtins.bool]] = None,
+                 management_zones: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 metric_definition: pulumi.Input[Optional[Union['CalculatedServiceMetricMetricDefinitionArgs', 'CalculatedServiceMetricMetricDefinitionArgsDict']]] = None,
+                 metric_key: pulumi.Input[Optional[_builtins.str]] = None,
+                 name: pulumi.Input[Optional[_builtins.str]] = None,
+                 unit: pulumi.Input[Optional[_builtins.str]] = None,
+                 unit_display_name: pulumi.Input[Optional[_builtins.str]] = None,
+                 unknowns: pulumi.Input[Optional[_builtins.str]] = None,
                  __props__=None):
         """
         > This resource requires the API token scopes **Read configuration** (`ReadConfig`) and **Write configuration** (`WriteConfig`)
@@ -539,19 +539,19 @@ class CalculatedServiceMetric(pulumi.CustomResource):
     def _internal_init(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 conditions: Optional[pulumi.Input[Sequence[pulumi.Input[Union['CalculatedServiceMetricConditionArgs', 'CalculatedServiceMetricConditionArgsDict']]]]] = None,
-                 description: Optional[pulumi.Input[_builtins.str]] = None,
-                 dimension_definition: Optional[pulumi.Input[Union['CalculatedServiceMetricDimensionDefinitionArgs', 'CalculatedServiceMetricDimensionDefinitionArgsDict']]] = None,
-                 enabled: Optional[pulumi.Input[_builtins.bool]] = None,
-                 entity_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 ignore_muted_requests: Optional[pulumi.Input[_builtins.bool]] = None,
-                 management_zones: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-                 metric_definition: Optional[pulumi.Input[Union['CalculatedServiceMetricMetricDefinitionArgs', 'CalculatedServiceMetricMetricDefinitionArgsDict']]] = None,
-                 metric_key: Optional[pulumi.Input[_builtins.str]] = None,
-                 name: Optional[pulumi.Input[_builtins.str]] = None,
-                 unit: Optional[pulumi.Input[_builtins.str]] = None,
-                 unit_display_name: Optional[pulumi.Input[_builtins.str]] = None,
-                 unknowns: Optional[pulumi.Input[_builtins.str]] = None,
+                 conditions: pulumi.Input[Optional[Sequence[pulumi.Input[Union['CalculatedServiceMetricConditionArgs', 'CalculatedServiceMetricConditionArgsDict']]]]] = None,
+                 description: pulumi.Input[Optional[_builtins.str]] = None,
+                 dimension_definition: pulumi.Input[Optional[Union['CalculatedServiceMetricDimensionDefinitionArgs', 'CalculatedServiceMetricDimensionDefinitionArgsDict']]] = None,
+                 enabled: pulumi.Input[Optional[_builtins.bool]] = None,
+                 entity_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 ignore_muted_requests: pulumi.Input[Optional[_builtins.bool]] = None,
+                 management_zones: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 metric_definition: pulumi.Input[Optional[Union['CalculatedServiceMetricMetricDefinitionArgs', 'CalculatedServiceMetricMetricDefinitionArgsDict']]] = None,
+                 metric_key: pulumi.Input[Optional[_builtins.str]] = None,
+                 name: pulumi.Input[Optional[_builtins.str]] = None,
+                 unit: pulumi.Input[Optional[_builtins.str]] = None,
+                 unit_display_name: pulumi.Input[Optional[_builtins.str]] = None,
+                 unknowns: pulumi.Input[Optional[_builtins.str]] = None,
                  __props__=None):
         opts = pulumi.ResourceOptions.merge(_utilities.get_resource_opts_defaults(), opts)
         if not isinstance(opts, pulumi.ResourceOptions):
@@ -588,19 +588,19 @@ class CalculatedServiceMetric(pulumi.CustomResource):
     def get(resource_name: str,
             id: pulumi.Input[str],
             opts: Optional[pulumi.ResourceOptions] = None,
-            conditions: Optional[pulumi.Input[Sequence[pulumi.Input[Union['CalculatedServiceMetricConditionArgs', 'CalculatedServiceMetricConditionArgsDict']]]]] = None,
-            description: Optional[pulumi.Input[_builtins.str]] = None,
-            dimension_definition: Optional[pulumi.Input[Union['CalculatedServiceMetricDimensionDefinitionArgs', 'CalculatedServiceMetricDimensionDefinitionArgsDict']]] = None,
-            enabled: Optional[pulumi.Input[_builtins.bool]] = None,
-            entity_id: Optional[pulumi.Input[_builtins.str]] = None,
-            ignore_muted_requests: Optional[pulumi.Input[_builtins.bool]] = None,
-            management_zones: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-            metric_definition: Optional[pulumi.Input[Union['CalculatedServiceMetricMetricDefinitionArgs', 'CalculatedServiceMetricMetricDefinitionArgsDict']]] = None,
-            metric_key: Optional[pulumi.Input[_builtins.str]] = None,
-            name: Optional[pulumi.Input[_builtins.str]] = None,
-            unit: Optional[pulumi.Input[_builtins.str]] = None,
-            unit_display_name: Optional[pulumi.Input[_builtins.str]] = None,
-            unknowns: Optional[pulumi.Input[_builtins.str]] = None) -> 'CalculatedServiceMetric':
+            conditions: pulumi.Input[Optional[Sequence[pulumi.Input[Union['CalculatedServiceMetricConditionArgs', 'CalculatedServiceMetricConditionArgsDict']]]]] = None,
+            description: pulumi.Input[Optional[_builtins.str]] = None,
+            dimension_definition: pulumi.Input[Optional[Union['CalculatedServiceMetricDimensionDefinitionArgs', 'CalculatedServiceMetricDimensionDefinitionArgsDict']]] = None,
+            enabled: pulumi.Input[Optional[_builtins.bool]] = None,
+            entity_id: pulumi.Input[Optional[_builtins.str]] = None,
+            ignore_muted_requests: pulumi.Input[Optional[_builtins.bool]] = None,
+            management_zones: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+            metric_definition: pulumi.Input[Optional[Union['CalculatedServiceMetricMetricDefinitionArgs', 'CalculatedServiceMetricMetricDefinitionArgsDict']]] = None,
+            metric_key: pulumi.Input[Optional[_builtins.str]] = None,
+            name: pulumi.Input[Optional[_builtins.str]] = None,
+            unit: pulumi.Input[Optional[_builtins.str]] = None,
+            unit_display_name: pulumi.Input[Optional[_builtins.str]] = None,
+            unknowns: pulumi.Input[Optional[_builtins.str]] = None) -> 'CalculatedServiceMetric':
         """
         Get an existing CalculatedServiceMetric resource's state with the given name, id, and optional extra
         properties used to qualify the lookup.

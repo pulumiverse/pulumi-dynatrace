@@ -24,14 +24,14 @@ class AwsCredentialsArgs:
                  authentication_data: pulumi.Input['AwsCredentialsAuthenticationDataArgs'],
                  partition_type: pulumi.Input[_builtins.str],
                  tagged_only: pulumi.Input[_builtins.bool],
-                 credentials_enabled: Optional[pulumi.Input[_builtins.bool]] = None,
-                 label: Optional[pulumi.Input[_builtins.str]] = None,
-                 remove_defaults: Optional[pulumi.Input[_builtins.bool]] = None,
-                 running_on_dynatrace_infrastructure: Optional[pulumi.Input[_builtins.bool]] = None,
-                 supporting_services_managed_in_dynatrace: Optional[pulumi.Input[_builtins.bool]] = None,
-                 supporting_services_to_monitors: Optional[pulumi.Input[Sequence[pulumi.Input['AwsCredentialsSupportingServicesToMonitorArgs']]]] = None,
-                 tags_to_monitors: Optional[pulumi.Input[Sequence[pulumi.Input['AwsCredentialsTagsToMonitorArgs']]]] = None,
-                 unknowns: Optional[pulumi.Input[_builtins.str]] = None):
+                 credentials_enabled: pulumi.Input[Optional[_builtins.bool]] = None,
+                 label: pulumi.Input[Optional[_builtins.str]] = None,
+                 remove_defaults: pulumi.Input[Optional[_builtins.bool]] = None,
+                 running_on_dynatrace_infrastructure: pulumi.Input[Optional[_builtins.bool]] = None,
+                 supporting_services_managed_in_dynatrace: pulumi.Input[Optional[_builtins.bool]] = None,
+                 supporting_services_to_monitors: pulumi.Input[Optional[Sequence[pulumi.Input['AwsCredentialsSupportingServicesToMonitorArgs']]]] = None,
+                 tags_to_monitors: pulumi.Input[Optional[Sequence[pulumi.Input['AwsCredentialsTagsToMonitorArgs']]]] = None,
+                 unknowns: pulumi.Input[Optional[_builtins.str]] = None):
         """
         The set of arguments for constructing a AwsCredentials resource.
 
@@ -112,31 +112,31 @@ class AwsCredentialsArgs:
 
     @_builtins.property
     @pulumi.getter(name="credentialsEnabled")
-    def credentials_enabled(self) -> Optional[pulumi.Input[_builtins.bool]]:
+    def credentials_enabled(self) -> pulumi.Input[Optional[_builtins.bool]]:
         """
         Enable monitoring of specified AWS credentials
         """
         return pulumi.get(self, "credentials_enabled")
 
     @credentials_enabled.setter
-    def credentials_enabled(self, value: Optional[pulumi.Input[_builtins.bool]]):
+    def credentials_enabled(self, value: pulumi.Input[Optional[_builtins.bool]]):
         pulumi.set(self, "credentials_enabled", value)
 
     @_builtins.property
     @pulumi.getter
-    def label(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def label(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The name of the credentials
         """
         return pulumi.get(self, "label")
 
     @label.setter
-    def label(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def label(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "label", value)
 
     @_builtins.property
     @pulumi.getter(name="removeDefaults")
-    def remove_defaults(self) -> Optional[pulumi.Input[_builtins.bool]]:
+    def remove_defaults(self) -> pulumi.Input[Optional[_builtins.bool]]:
         """
         Instructs the provider to remove the supporting services Dynatrace applies by default to newly created AWS Credentials. Supporting Services applied by via `AwsService` subsequently won't get touched.
         Note: This attribute is only getting considered during creation of the resource. Changing it afterwards won't have an effect
@@ -144,86 +144,86 @@ class AwsCredentialsArgs:
         return pulumi.get(self, "remove_defaults")
 
     @remove_defaults.setter
-    def remove_defaults(self, value: Optional[pulumi.Input[_builtins.bool]]):
+    def remove_defaults(self, value: pulumi.Input[Optional[_builtins.bool]]):
         pulumi.set(self, "remove_defaults", value)
 
     @_builtins.property
     @pulumi.getter(name="runningOnDynatraceInfrastructure")
-    def running_on_dynatrace_infrastructure(self) -> Optional[pulumi.Input[_builtins.bool]]:
+    def running_on_dynatrace_infrastructure(self) -> pulumi.Input[Optional[_builtins.bool]]:
         """
         Run credentials on Dynatrace infrastructure
         """
         return pulumi.get(self, "running_on_dynatrace_infrastructure")
 
     @running_on_dynatrace_infrastructure.setter
-    def running_on_dynatrace_infrastructure(self, value: Optional[pulumi.Input[_builtins.bool]]):
+    def running_on_dynatrace_infrastructure(self, value: pulumi.Input[Optional[_builtins.bool]]):
         pulumi.set(self, "running_on_dynatrace_infrastructure", value)
 
     @_builtins.property
     @pulumi.getter(name="supportingServicesManagedInDynatrace")
     @_utilities.deprecated("""Supporting Services are no longer getting managed via this resource. Regardless of the value set here, this resource won't affect the supporting services during updates""")
-    def supporting_services_managed_in_dynatrace(self) -> Optional[pulumi.Input[_builtins.bool]]:
+    def supporting_services_managed_in_dynatrace(self) -> pulumi.Input[Optional[_builtins.bool]]:
         """
         If enabled (`true`) the attribute `supporting_services` will not get synchronized with Dynatrace. You will be able to manage them via WebUI without interference by Terraform.
         """
         return pulumi.get(self, "supporting_services_managed_in_dynatrace")
 
     @supporting_services_managed_in_dynatrace.setter
-    def supporting_services_managed_in_dynatrace(self, value: Optional[pulumi.Input[_builtins.bool]]):
+    def supporting_services_managed_in_dynatrace(self, value: pulumi.Input[Optional[_builtins.bool]]):
         pulumi.set(self, "supporting_services_managed_in_dynatrace", value)
 
     @_builtins.property
     @pulumi.getter(name="supportingServicesToMonitors")
     @_utilities.deprecated("""Managing supporting services directly within AWS Credentials has been deprecated within the REST API. This attribute just exists for backwards compatibility. It no longer has an effect. For managing services use the resource `AwsService`""")
-    def supporting_services_to_monitors(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['AwsCredentialsSupportingServicesToMonitorArgs']]]]:
+    def supporting_services_to_monitors(self) -> pulumi.Input[Optional[Sequence[pulumi.Input['AwsCredentialsSupportingServicesToMonitorArgs']]]]:
         """
         supporting services to be monitored
         """
         return pulumi.get(self, "supporting_services_to_monitors")
 
     @supporting_services_to_monitors.setter
-    def supporting_services_to_monitors(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['AwsCredentialsSupportingServicesToMonitorArgs']]]]):
+    def supporting_services_to_monitors(self, value: pulumi.Input[Optional[Sequence[pulumi.Input['AwsCredentialsSupportingServicesToMonitorArgs']]]]):
         pulumi.set(self, "supporting_services_to_monitors", value)
 
     @_builtins.property
     @pulumi.getter(name="tagsToMonitors")
-    def tags_to_monitors(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['AwsCredentialsTagsToMonitorArgs']]]]:
+    def tags_to_monitors(self) -> pulumi.Input[Optional[Sequence[pulumi.Input['AwsCredentialsTagsToMonitorArgs']]]]:
         """
         AWS tags to be monitored. You can specify up to 10 tags. Only applicable when the **tagged_only** parameter is set to `true`
         """
         return pulumi.get(self, "tags_to_monitors")
 
     @tags_to_monitors.setter
-    def tags_to_monitors(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['AwsCredentialsTagsToMonitorArgs']]]]):
+    def tags_to_monitors(self, value: pulumi.Input[Optional[Sequence[pulumi.Input['AwsCredentialsTagsToMonitorArgs']]]]):
         pulumi.set(self, "tags_to_monitors", value)
 
     @_builtins.property
     @pulumi.getter
-    def unknowns(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def unknowns(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Any attributes that aren't yet supported by this provider
         """
         return pulumi.get(self, "unknowns")
 
     @unknowns.setter
-    def unknowns(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def unknowns(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "unknowns", value)
 
 
 @pulumi.input_type
 class _AwsCredentialsState:
     def __init__(__self__, *,
-                 authentication_data: Optional[pulumi.Input['AwsCredentialsAuthenticationDataArgs']] = None,
-                 credentials_enabled: Optional[pulumi.Input[_builtins.bool]] = None,
-                 label: Optional[pulumi.Input[_builtins.str]] = None,
-                 partition_type: Optional[pulumi.Input[_builtins.str]] = None,
-                 remove_defaults: Optional[pulumi.Input[_builtins.bool]] = None,
-                 running_on_dynatrace_infrastructure: Optional[pulumi.Input[_builtins.bool]] = None,
-                 supporting_services_managed_in_dynatrace: Optional[pulumi.Input[_builtins.bool]] = None,
-                 supporting_services_to_monitors: Optional[pulumi.Input[Sequence[pulumi.Input['AwsCredentialsSupportingServicesToMonitorArgs']]]] = None,
-                 tagged_only: Optional[pulumi.Input[_builtins.bool]] = None,
-                 tags_to_monitors: Optional[pulumi.Input[Sequence[pulumi.Input['AwsCredentialsTagsToMonitorArgs']]]] = None,
-                 unknowns: Optional[pulumi.Input[_builtins.str]] = None):
+                 authentication_data: pulumi.Input[Optional['AwsCredentialsAuthenticationDataArgs']] = None,
+                 credentials_enabled: pulumi.Input[Optional[_builtins.bool]] = None,
+                 label: pulumi.Input[Optional[_builtins.str]] = None,
+                 partition_type: pulumi.Input[Optional[_builtins.str]] = None,
+                 remove_defaults: pulumi.Input[Optional[_builtins.bool]] = None,
+                 running_on_dynatrace_infrastructure: pulumi.Input[Optional[_builtins.bool]] = None,
+                 supporting_services_managed_in_dynatrace: pulumi.Input[Optional[_builtins.bool]] = None,
+                 supporting_services_to_monitors: pulumi.Input[Optional[Sequence[pulumi.Input['AwsCredentialsSupportingServicesToMonitorArgs']]]] = None,
+                 tagged_only: pulumi.Input[Optional[_builtins.bool]] = None,
+                 tags_to_monitors: pulumi.Input[Optional[Sequence[pulumi.Input['AwsCredentialsTagsToMonitorArgs']]]] = None,
+                 unknowns: pulumi.Input[Optional[_builtins.str]] = None):
         """
         Input properties used for looking up and filtering AwsCredentials resources.
 
@@ -271,55 +271,55 @@ class _AwsCredentialsState:
 
     @_builtins.property
     @pulumi.getter(name="authenticationData")
-    def authentication_data(self) -> Optional[pulumi.Input['AwsCredentialsAuthenticationDataArgs']]:
+    def authentication_data(self) -> pulumi.Input[Optional['AwsCredentialsAuthenticationDataArgs']]:
         """
         credentials for the AWS authentication
         """
         return pulumi.get(self, "authentication_data")
 
     @authentication_data.setter
-    def authentication_data(self, value: Optional[pulumi.Input['AwsCredentialsAuthenticationDataArgs']]):
+    def authentication_data(self, value: pulumi.Input[Optional['AwsCredentialsAuthenticationDataArgs']]):
         pulumi.set(self, "authentication_data", value)
 
     @_builtins.property
     @pulumi.getter(name="credentialsEnabled")
-    def credentials_enabled(self) -> Optional[pulumi.Input[_builtins.bool]]:
+    def credentials_enabled(self) -> pulumi.Input[Optional[_builtins.bool]]:
         """
         Enable monitoring of specified AWS credentials
         """
         return pulumi.get(self, "credentials_enabled")
 
     @credentials_enabled.setter
-    def credentials_enabled(self, value: Optional[pulumi.Input[_builtins.bool]]):
+    def credentials_enabled(self, value: pulumi.Input[Optional[_builtins.bool]]):
         pulumi.set(self, "credentials_enabled", value)
 
     @_builtins.property
     @pulumi.getter
-    def label(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def label(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The name of the credentials
         """
         return pulumi.get(self, "label")
 
     @label.setter
-    def label(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def label(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "label", value)
 
     @_builtins.property
     @pulumi.getter(name="partitionType")
-    def partition_type(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def partition_type(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The type of the AWS partition
         """
         return pulumi.get(self, "partition_type")
 
     @partition_type.setter
-    def partition_type(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def partition_type(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "partition_type", value)
 
     @_builtins.property
     @pulumi.getter(name="removeDefaults")
-    def remove_defaults(self) -> Optional[pulumi.Input[_builtins.bool]]:
+    def remove_defaults(self) -> pulumi.Input[Optional[_builtins.bool]]:
         """
         Instructs the provider to remove the supporting services Dynatrace applies by default to newly created AWS Credentials. Supporting Services applied by via `AwsService` subsequently won't get touched.
         Note: This attribute is only getting considered during creation of the resource. Changing it afterwards won't have an effect
@@ -327,81 +327,81 @@ class _AwsCredentialsState:
         return pulumi.get(self, "remove_defaults")
 
     @remove_defaults.setter
-    def remove_defaults(self, value: Optional[pulumi.Input[_builtins.bool]]):
+    def remove_defaults(self, value: pulumi.Input[Optional[_builtins.bool]]):
         pulumi.set(self, "remove_defaults", value)
 
     @_builtins.property
     @pulumi.getter(name="runningOnDynatraceInfrastructure")
-    def running_on_dynatrace_infrastructure(self) -> Optional[pulumi.Input[_builtins.bool]]:
+    def running_on_dynatrace_infrastructure(self) -> pulumi.Input[Optional[_builtins.bool]]:
         """
         Run credentials on Dynatrace infrastructure
         """
         return pulumi.get(self, "running_on_dynatrace_infrastructure")
 
     @running_on_dynatrace_infrastructure.setter
-    def running_on_dynatrace_infrastructure(self, value: Optional[pulumi.Input[_builtins.bool]]):
+    def running_on_dynatrace_infrastructure(self, value: pulumi.Input[Optional[_builtins.bool]]):
         pulumi.set(self, "running_on_dynatrace_infrastructure", value)
 
     @_builtins.property
     @pulumi.getter(name="supportingServicesManagedInDynatrace")
     @_utilities.deprecated("""Supporting Services are no longer getting managed via this resource. Regardless of the value set here, this resource won't affect the supporting services during updates""")
-    def supporting_services_managed_in_dynatrace(self) -> Optional[pulumi.Input[_builtins.bool]]:
+    def supporting_services_managed_in_dynatrace(self) -> pulumi.Input[Optional[_builtins.bool]]:
         """
         If enabled (`true`) the attribute `supporting_services` will not get synchronized with Dynatrace. You will be able to manage them via WebUI without interference by Terraform.
         """
         return pulumi.get(self, "supporting_services_managed_in_dynatrace")
 
     @supporting_services_managed_in_dynatrace.setter
-    def supporting_services_managed_in_dynatrace(self, value: Optional[pulumi.Input[_builtins.bool]]):
+    def supporting_services_managed_in_dynatrace(self, value: pulumi.Input[Optional[_builtins.bool]]):
         pulumi.set(self, "supporting_services_managed_in_dynatrace", value)
 
     @_builtins.property
     @pulumi.getter(name="supportingServicesToMonitors")
     @_utilities.deprecated("""Managing supporting services directly within AWS Credentials has been deprecated within the REST API. This attribute just exists for backwards compatibility. It no longer has an effect. For managing services use the resource `AwsService`""")
-    def supporting_services_to_monitors(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['AwsCredentialsSupportingServicesToMonitorArgs']]]]:
+    def supporting_services_to_monitors(self) -> pulumi.Input[Optional[Sequence[pulumi.Input['AwsCredentialsSupportingServicesToMonitorArgs']]]]:
         """
         supporting services to be monitored
         """
         return pulumi.get(self, "supporting_services_to_monitors")
 
     @supporting_services_to_monitors.setter
-    def supporting_services_to_monitors(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['AwsCredentialsSupportingServicesToMonitorArgs']]]]):
+    def supporting_services_to_monitors(self, value: pulumi.Input[Optional[Sequence[pulumi.Input['AwsCredentialsSupportingServicesToMonitorArgs']]]]):
         pulumi.set(self, "supporting_services_to_monitors", value)
 
     @_builtins.property
     @pulumi.getter(name="taggedOnly")
-    def tagged_only(self) -> Optional[pulumi.Input[_builtins.bool]]:
+    def tagged_only(self) -> pulumi.Input[Optional[_builtins.bool]]:
         """
         Monitor only resources which have specified AWS tags (`true`) or all resources (`false`)
         """
         return pulumi.get(self, "tagged_only")
 
     @tagged_only.setter
-    def tagged_only(self, value: Optional[pulumi.Input[_builtins.bool]]):
+    def tagged_only(self, value: pulumi.Input[Optional[_builtins.bool]]):
         pulumi.set(self, "tagged_only", value)
 
     @_builtins.property
     @pulumi.getter(name="tagsToMonitors")
-    def tags_to_monitors(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['AwsCredentialsTagsToMonitorArgs']]]]:
+    def tags_to_monitors(self) -> pulumi.Input[Optional[Sequence[pulumi.Input['AwsCredentialsTagsToMonitorArgs']]]]:
         """
         AWS tags to be monitored. You can specify up to 10 tags. Only applicable when the **tagged_only** parameter is set to `true`
         """
         return pulumi.get(self, "tags_to_monitors")
 
     @tags_to_monitors.setter
-    def tags_to_monitors(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['AwsCredentialsTagsToMonitorArgs']]]]):
+    def tags_to_monitors(self, value: pulumi.Input[Optional[Sequence[pulumi.Input['AwsCredentialsTagsToMonitorArgs']]]]):
         pulumi.set(self, "tags_to_monitors", value)
 
     @_builtins.property
     @pulumi.getter
-    def unknowns(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def unknowns(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Any attributes that aren't yet supported by this provider
         """
         return pulumi.get(self, "unknowns")
 
     @unknowns.setter
-    def unknowns(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def unknowns(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "unknowns", value)
 
 
@@ -411,17 +411,17 @@ class AwsCredentials(pulumi.CustomResource):
     def __init__(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 authentication_data: Optional[pulumi.Input[Union['AwsCredentialsAuthenticationDataArgs', 'AwsCredentialsAuthenticationDataArgsDict']]] = None,
-                 credentials_enabled: Optional[pulumi.Input[_builtins.bool]] = None,
-                 label: Optional[pulumi.Input[_builtins.str]] = None,
-                 partition_type: Optional[pulumi.Input[_builtins.str]] = None,
-                 remove_defaults: Optional[pulumi.Input[_builtins.bool]] = None,
-                 running_on_dynatrace_infrastructure: Optional[pulumi.Input[_builtins.bool]] = None,
-                 supporting_services_managed_in_dynatrace: Optional[pulumi.Input[_builtins.bool]] = None,
-                 supporting_services_to_monitors: Optional[pulumi.Input[Sequence[pulumi.Input[Union['AwsCredentialsSupportingServicesToMonitorArgs', 'AwsCredentialsSupportingServicesToMonitorArgsDict']]]]] = None,
-                 tagged_only: Optional[pulumi.Input[_builtins.bool]] = None,
-                 tags_to_monitors: Optional[pulumi.Input[Sequence[pulumi.Input[Union['AwsCredentialsTagsToMonitorArgs', 'AwsCredentialsTagsToMonitorArgsDict']]]]] = None,
-                 unknowns: Optional[pulumi.Input[_builtins.str]] = None,
+                 authentication_data: pulumi.Input[Optional[Union['AwsCredentialsAuthenticationDataArgs', 'AwsCredentialsAuthenticationDataArgsDict']]] = None,
+                 credentials_enabled: pulumi.Input[Optional[_builtins.bool]] = None,
+                 label: pulumi.Input[Optional[_builtins.str]] = None,
+                 partition_type: pulumi.Input[Optional[_builtins.str]] = None,
+                 remove_defaults: pulumi.Input[Optional[_builtins.bool]] = None,
+                 running_on_dynatrace_infrastructure: pulumi.Input[Optional[_builtins.bool]] = None,
+                 supporting_services_managed_in_dynatrace: pulumi.Input[Optional[_builtins.bool]] = None,
+                 supporting_services_to_monitors: pulumi.Input[Optional[Sequence[pulumi.Input[Union['AwsCredentialsSupportingServicesToMonitorArgs', 'AwsCredentialsSupportingServicesToMonitorArgsDict']]]]] = None,
+                 tagged_only: pulumi.Input[Optional[_builtins.bool]] = None,
+                 tags_to_monitors: pulumi.Input[Optional[Sequence[pulumi.Input[Union['AwsCredentialsTagsToMonitorArgs', 'AwsCredentialsTagsToMonitorArgsDict']]]]] = None,
+                 unknowns: pulumi.Input[Optional[_builtins.str]] = None,
                  __props__=None):
         """
         > This resource requires the API token scopes **Read configuration** (`ReadConfig`) and **Write configuration** (`WriteConfig`)
@@ -491,17 +491,17 @@ class AwsCredentials(pulumi.CustomResource):
     def _internal_init(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 authentication_data: Optional[pulumi.Input[Union['AwsCredentialsAuthenticationDataArgs', 'AwsCredentialsAuthenticationDataArgsDict']]] = None,
-                 credentials_enabled: Optional[pulumi.Input[_builtins.bool]] = None,
-                 label: Optional[pulumi.Input[_builtins.str]] = None,
-                 partition_type: Optional[pulumi.Input[_builtins.str]] = None,
-                 remove_defaults: Optional[pulumi.Input[_builtins.bool]] = None,
-                 running_on_dynatrace_infrastructure: Optional[pulumi.Input[_builtins.bool]] = None,
-                 supporting_services_managed_in_dynatrace: Optional[pulumi.Input[_builtins.bool]] = None,
-                 supporting_services_to_monitors: Optional[pulumi.Input[Sequence[pulumi.Input[Union['AwsCredentialsSupportingServicesToMonitorArgs', 'AwsCredentialsSupportingServicesToMonitorArgsDict']]]]] = None,
-                 tagged_only: Optional[pulumi.Input[_builtins.bool]] = None,
-                 tags_to_monitors: Optional[pulumi.Input[Sequence[pulumi.Input[Union['AwsCredentialsTagsToMonitorArgs', 'AwsCredentialsTagsToMonitorArgsDict']]]]] = None,
-                 unknowns: Optional[pulumi.Input[_builtins.str]] = None,
+                 authentication_data: pulumi.Input[Optional[Union['AwsCredentialsAuthenticationDataArgs', 'AwsCredentialsAuthenticationDataArgsDict']]] = None,
+                 credentials_enabled: pulumi.Input[Optional[_builtins.bool]] = None,
+                 label: pulumi.Input[Optional[_builtins.str]] = None,
+                 partition_type: pulumi.Input[Optional[_builtins.str]] = None,
+                 remove_defaults: pulumi.Input[Optional[_builtins.bool]] = None,
+                 running_on_dynatrace_infrastructure: pulumi.Input[Optional[_builtins.bool]] = None,
+                 supporting_services_managed_in_dynatrace: pulumi.Input[Optional[_builtins.bool]] = None,
+                 supporting_services_to_monitors: pulumi.Input[Optional[Sequence[pulumi.Input[Union['AwsCredentialsSupportingServicesToMonitorArgs', 'AwsCredentialsSupportingServicesToMonitorArgsDict']]]]] = None,
+                 tagged_only: pulumi.Input[Optional[_builtins.bool]] = None,
+                 tags_to_monitors: pulumi.Input[Optional[Sequence[pulumi.Input[Union['AwsCredentialsTagsToMonitorArgs', 'AwsCredentialsTagsToMonitorArgsDict']]]]] = None,
+                 unknowns: pulumi.Input[Optional[_builtins.str]] = None,
                  __props__=None):
         opts = pulumi.ResourceOptions.merge(_utilities.get_resource_opts_defaults(), opts)
         if not isinstance(opts, pulumi.ResourceOptions):
@@ -538,17 +538,17 @@ class AwsCredentials(pulumi.CustomResource):
     def get(resource_name: str,
             id: pulumi.Input[str],
             opts: Optional[pulumi.ResourceOptions] = None,
-            authentication_data: Optional[pulumi.Input[Union['AwsCredentialsAuthenticationDataArgs', 'AwsCredentialsAuthenticationDataArgsDict']]] = None,
-            credentials_enabled: Optional[pulumi.Input[_builtins.bool]] = None,
-            label: Optional[pulumi.Input[_builtins.str]] = None,
-            partition_type: Optional[pulumi.Input[_builtins.str]] = None,
-            remove_defaults: Optional[pulumi.Input[_builtins.bool]] = None,
-            running_on_dynatrace_infrastructure: Optional[pulumi.Input[_builtins.bool]] = None,
-            supporting_services_managed_in_dynatrace: Optional[pulumi.Input[_builtins.bool]] = None,
-            supporting_services_to_monitors: Optional[pulumi.Input[Sequence[pulumi.Input[Union['AwsCredentialsSupportingServicesToMonitorArgs', 'AwsCredentialsSupportingServicesToMonitorArgsDict']]]]] = None,
-            tagged_only: Optional[pulumi.Input[_builtins.bool]] = None,
-            tags_to_monitors: Optional[pulumi.Input[Sequence[pulumi.Input[Union['AwsCredentialsTagsToMonitorArgs', 'AwsCredentialsTagsToMonitorArgsDict']]]]] = None,
-            unknowns: Optional[pulumi.Input[_builtins.str]] = None) -> 'AwsCredentials':
+            authentication_data: pulumi.Input[Optional[Union['AwsCredentialsAuthenticationDataArgs', 'AwsCredentialsAuthenticationDataArgsDict']]] = None,
+            credentials_enabled: pulumi.Input[Optional[_builtins.bool]] = None,
+            label: pulumi.Input[Optional[_builtins.str]] = None,
+            partition_type: pulumi.Input[Optional[_builtins.str]] = None,
+            remove_defaults: pulumi.Input[Optional[_builtins.bool]] = None,
+            running_on_dynatrace_infrastructure: pulumi.Input[Optional[_builtins.bool]] = None,
+            supporting_services_managed_in_dynatrace: pulumi.Input[Optional[_builtins.bool]] = None,
+            supporting_services_to_monitors: pulumi.Input[Optional[Sequence[pulumi.Input[Union['AwsCredentialsSupportingServicesToMonitorArgs', 'AwsCredentialsSupportingServicesToMonitorArgsDict']]]]] = None,
+            tagged_only: pulumi.Input[Optional[_builtins.bool]] = None,
+            tags_to_monitors: pulumi.Input[Optional[Sequence[pulumi.Input[Union['AwsCredentialsTagsToMonitorArgs', 'AwsCredentialsTagsToMonitorArgsDict']]]]] = None,
+            unknowns: pulumi.Input[Optional[_builtins.str]] = None) -> 'AwsCredentials':
         """
         Get an existing AwsCredentials resource's state with the given name, id, and optional extra
         properties used to qualify the lookup.

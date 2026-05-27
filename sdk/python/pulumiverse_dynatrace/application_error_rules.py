@@ -21,12 +21,12 @@ __all__ = ['ApplicationErrorRulesArgs', 'ApplicationErrorRules']
 @pulumi.input_type
 class ApplicationErrorRulesArgs:
     def __init__(__self__, *,
-                 custom_errors: Optional[pulumi.Input['ApplicationErrorRulesCustomErrorsArgs']] = None,
-                 http_errors: Optional[pulumi.Input['ApplicationErrorRulesHttpErrorsArgs']] = None,
-                 ignore_custom_errors_apdex: Optional[pulumi.Input[_builtins.bool]] = None,
-                 ignore_http_errors_apdex: Optional[pulumi.Input[_builtins.bool]] = None,
-                 ignore_js_errors_apdex: Optional[pulumi.Input[_builtins.bool]] = None,
-                 web_application_id: Optional[pulumi.Input[_builtins.str]] = None):
+                 custom_errors: pulumi.Input[Optional['ApplicationErrorRulesCustomErrorsArgs']] = None,
+                 http_errors: pulumi.Input[Optional['ApplicationErrorRulesHttpErrorsArgs']] = None,
+                 ignore_custom_errors_apdex: pulumi.Input[Optional[_builtins.bool]] = None,
+                 ignore_http_errors_apdex: pulumi.Input[Optional[_builtins.bool]] = None,
+                 ignore_js_errors_apdex: pulumi.Input[Optional[_builtins.bool]] = None,
+                 web_application_id: pulumi.Input[Optional[_builtins.str]] = None):
         """
         The set of arguments for constructing a ApplicationErrorRules resource.
 
@@ -54,19 +54,19 @@ class ApplicationErrorRulesArgs:
 
     @_builtins.property
     @pulumi.getter(name="customErrors")
-    def custom_errors(self) -> Optional[pulumi.Input['ApplicationErrorRulesCustomErrorsArgs']]:
+    def custom_errors(self) -> pulumi.Input[Optional['ApplicationErrorRulesCustomErrorsArgs']]:
         """
         (Field has overlap with `WebAppCustomErrors`) An ordered list of HTTP errors.
         """
         return pulumi.get(self, "custom_errors")
 
     @custom_errors.setter
-    def custom_errors(self, value: Optional[pulumi.Input['ApplicationErrorRulesCustomErrorsArgs']]):
+    def custom_errors(self, value: pulumi.Input[Optional['ApplicationErrorRulesCustomErrorsArgs']]):
         pulumi.set(self, "custom_errors", value)
 
     @_builtins.property
     @pulumi.getter(name="httpErrors")
-    def http_errors(self) -> Optional[pulumi.Input['ApplicationErrorRulesHttpErrorsArgs']]:
+    def http_errors(self) -> pulumi.Input[Optional['ApplicationErrorRulesHttpErrorsArgs']]:
         """
         (Field has overlap with `WebAppRequestErrors`) An ordered list of HTTP errors.
 
@@ -75,67 +75,67 @@ class ApplicationErrorRulesArgs:
         return pulumi.get(self, "http_errors")
 
     @http_errors.setter
-    def http_errors(self, value: Optional[pulumi.Input['ApplicationErrorRulesHttpErrorsArgs']]):
+    def http_errors(self, value: pulumi.Input[Optional['ApplicationErrorRulesHttpErrorsArgs']]):
         pulumi.set(self, "http_errors", value)
 
     @_builtins.property
     @pulumi.getter(name="ignoreCustomErrorsApdex")
-    def ignore_custom_errors_apdex(self) -> Optional[pulumi.Input[_builtins.bool]]:
+    def ignore_custom_errors_apdex(self) -> pulumi.Input[Optional[_builtins.bool]]:
         """
         (Field has overlap with `WebAppCustomErrors`) Exclude (`true`) or include (`false`) custom errors listed in **customErrorRules** in Apdex calculation
         """
         return pulumi.get(self, "ignore_custom_errors_apdex")
 
     @ignore_custom_errors_apdex.setter
-    def ignore_custom_errors_apdex(self, value: Optional[pulumi.Input[_builtins.bool]]):
+    def ignore_custom_errors_apdex(self, value: pulumi.Input[Optional[_builtins.bool]]):
         pulumi.set(self, "ignore_custom_errors_apdex", value)
 
     @_builtins.property
     @pulumi.getter(name="ignoreHttpErrorsApdex")
-    def ignore_http_errors_apdex(self) -> Optional[pulumi.Input[_builtins.bool]]:
+    def ignore_http_errors_apdex(self) -> pulumi.Input[Optional[_builtins.bool]]:
         """
         (Field has overlap with `WebAppRequestErrors`) Exclude (`true`) or include (`false`) HTTP errors listed in **httpErrorRules** in Apdex calculation
         """
         return pulumi.get(self, "ignore_http_errors_apdex")
 
     @ignore_http_errors_apdex.setter
-    def ignore_http_errors_apdex(self, value: Optional[pulumi.Input[_builtins.bool]]):
+    def ignore_http_errors_apdex(self, value: pulumi.Input[Optional[_builtins.bool]]):
         pulumi.set(self, "ignore_http_errors_apdex", value)
 
     @_builtins.property
     @pulumi.getter(name="ignoreJsErrorsApdex")
-    def ignore_js_errors_apdex(self) -> Optional[pulumi.Input[_builtins.bool]]:
+    def ignore_js_errors_apdex(self) -> pulumi.Input[Optional[_builtins.bool]]:
         """
         Exclude (`true`) or include (`false`) JavaScript errors in Apdex calculation
         """
         return pulumi.get(self, "ignore_js_errors_apdex")
 
     @ignore_js_errors_apdex.setter
-    def ignore_js_errors_apdex(self, value: Optional[pulumi.Input[_builtins.bool]]):
+    def ignore_js_errors_apdex(self, value: pulumi.Input[Optional[_builtins.bool]]):
         pulumi.set(self, "ignore_js_errors_apdex", value)
 
     @_builtins.property
     @pulumi.getter(name="webApplicationId")
-    def web_application_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def web_application_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The EntityID of the the WebApplication
         """
         return pulumi.get(self, "web_application_id")
 
     @web_application_id.setter
-    def web_application_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def web_application_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "web_application_id", value)
 
 
 @pulumi.input_type
 class _ApplicationErrorRulesState:
     def __init__(__self__, *,
-                 custom_errors: Optional[pulumi.Input['ApplicationErrorRulesCustomErrorsArgs']] = None,
-                 http_errors: Optional[pulumi.Input['ApplicationErrorRulesHttpErrorsArgs']] = None,
-                 ignore_custom_errors_apdex: Optional[pulumi.Input[_builtins.bool]] = None,
-                 ignore_http_errors_apdex: Optional[pulumi.Input[_builtins.bool]] = None,
-                 ignore_js_errors_apdex: Optional[pulumi.Input[_builtins.bool]] = None,
-                 web_application_id: Optional[pulumi.Input[_builtins.str]] = None):
+                 custom_errors: pulumi.Input[Optional['ApplicationErrorRulesCustomErrorsArgs']] = None,
+                 http_errors: pulumi.Input[Optional['ApplicationErrorRulesHttpErrorsArgs']] = None,
+                 ignore_custom_errors_apdex: pulumi.Input[Optional[_builtins.bool]] = None,
+                 ignore_http_errors_apdex: pulumi.Input[Optional[_builtins.bool]] = None,
+                 ignore_js_errors_apdex: pulumi.Input[Optional[_builtins.bool]] = None,
+                 web_application_id: pulumi.Input[Optional[_builtins.str]] = None):
         """
         Input properties used for looking up and filtering ApplicationErrorRules resources.
 
@@ -163,19 +163,19 @@ class _ApplicationErrorRulesState:
 
     @_builtins.property
     @pulumi.getter(name="customErrors")
-    def custom_errors(self) -> Optional[pulumi.Input['ApplicationErrorRulesCustomErrorsArgs']]:
+    def custom_errors(self) -> pulumi.Input[Optional['ApplicationErrorRulesCustomErrorsArgs']]:
         """
         (Field has overlap with `WebAppCustomErrors`) An ordered list of HTTP errors.
         """
         return pulumi.get(self, "custom_errors")
 
     @custom_errors.setter
-    def custom_errors(self, value: Optional[pulumi.Input['ApplicationErrorRulesCustomErrorsArgs']]):
+    def custom_errors(self, value: pulumi.Input[Optional['ApplicationErrorRulesCustomErrorsArgs']]):
         pulumi.set(self, "custom_errors", value)
 
     @_builtins.property
     @pulumi.getter(name="httpErrors")
-    def http_errors(self) -> Optional[pulumi.Input['ApplicationErrorRulesHttpErrorsArgs']]:
+    def http_errors(self) -> pulumi.Input[Optional['ApplicationErrorRulesHttpErrorsArgs']]:
         """
         (Field has overlap with `WebAppRequestErrors`) An ordered list of HTTP errors.
 
@@ -184,55 +184,55 @@ class _ApplicationErrorRulesState:
         return pulumi.get(self, "http_errors")
 
     @http_errors.setter
-    def http_errors(self, value: Optional[pulumi.Input['ApplicationErrorRulesHttpErrorsArgs']]):
+    def http_errors(self, value: pulumi.Input[Optional['ApplicationErrorRulesHttpErrorsArgs']]):
         pulumi.set(self, "http_errors", value)
 
     @_builtins.property
     @pulumi.getter(name="ignoreCustomErrorsApdex")
-    def ignore_custom_errors_apdex(self) -> Optional[pulumi.Input[_builtins.bool]]:
+    def ignore_custom_errors_apdex(self) -> pulumi.Input[Optional[_builtins.bool]]:
         """
         (Field has overlap with `WebAppCustomErrors`) Exclude (`true`) or include (`false`) custom errors listed in **customErrorRules** in Apdex calculation
         """
         return pulumi.get(self, "ignore_custom_errors_apdex")
 
     @ignore_custom_errors_apdex.setter
-    def ignore_custom_errors_apdex(self, value: Optional[pulumi.Input[_builtins.bool]]):
+    def ignore_custom_errors_apdex(self, value: pulumi.Input[Optional[_builtins.bool]]):
         pulumi.set(self, "ignore_custom_errors_apdex", value)
 
     @_builtins.property
     @pulumi.getter(name="ignoreHttpErrorsApdex")
-    def ignore_http_errors_apdex(self) -> Optional[pulumi.Input[_builtins.bool]]:
+    def ignore_http_errors_apdex(self) -> pulumi.Input[Optional[_builtins.bool]]:
         """
         (Field has overlap with `WebAppRequestErrors`) Exclude (`true`) or include (`false`) HTTP errors listed in **httpErrorRules** in Apdex calculation
         """
         return pulumi.get(self, "ignore_http_errors_apdex")
 
     @ignore_http_errors_apdex.setter
-    def ignore_http_errors_apdex(self, value: Optional[pulumi.Input[_builtins.bool]]):
+    def ignore_http_errors_apdex(self, value: pulumi.Input[Optional[_builtins.bool]]):
         pulumi.set(self, "ignore_http_errors_apdex", value)
 
     @_builtins.property
     @pulumi.getter(name="ignoreJsErrorsApdex")
-    def ignore_js_errors_apdex(self) -> Optional[pulumi.Input[_builtins.bool]]:
+    def ignore_js_errors_apdex(self) -> pulumi.Input[Optional[_builtins.bool]]:
         """
         Exclude (`true`) or include (`false`) JavaScript errors in Apdex calculation
         """
         return pulumi.get(self, "ignore_js_errors_apdex")
 
     @ignore_js_errors_apdex.setter
-    def ignore_js_errors_apdex(self, value: Optional[pulumi.Input[_builtins.bool]]):
+    def ignore_js_errors_apdex(self, value: pulumi.Input[Optional[_builtins.bool]]):
         pulumi.set(self, "ignore_js_errors_apdex", value)
 
     @_builtins.property
     @pulumi.getter(name="webApplicationId")
-    def web_application_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def web_application_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The EntityID of the the WebApplication
         """
         return pulumi.get(self, "web_application_id")
 
     @web_application_id.setter
-    def web_application_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def web_application_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "web_application_id", value)
 
 
@@ -242,12 +242,12 @@ class ApplicationErrorRules(pulumi.CustomResource):
     def __init__(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 custom_errors: Optional[pulumi.Input[Union['ApplicationErrorRulesCustomErrorsArgs', 'ApplicationErrorRulesCustomErrorsArgsDict']]] = None,
-                 http_errors: Optional[pulumi.Input[Union['ApplicationErrorRulesHttpErrorsArgs', 'ApplicationErrorRulesHttpErrorsArgsDict']]] = None,
-                 ignore_custom_errors_apdex: Optional[pulumi.Input[_builtins.bool]] = None,
-                 ignore_http_errors_apdex: Optional[pulumi.Input[_builtins.bool]] = None,
-                 ignore_js_errors_apdex: Optional[pulumi.Input[_builtins.bool]] = None,
-                 web_application_id: Optional[pulumi.Input[_builtins.str]] = None,
+                 custom_errors: pulumi.Input[Optional[Union['ApplicationErrorRulesCustomErrorsArgs', 'ApplicationErrorRulesCustomErrorsArgsDict']]] = None,
+                 http_errors: pulumi.Input[Optional[Union['ApplicationErrorRulesHttpErrorsArgs', 'ApplicationErrorRulesHttpErrorsArgsDict']]] = None,
+                 ignore_custom_errors_apdex: pulumi.Input[Optional[_builtins.bool]] = None,
+                 ignore_http_errors_apdex: pulumi.Input[Optional[_builtins.bool]] = None,
+                 ignore_js_errors_apdex: pulumi.Input[Optional[_builtins.bool]] = None,
+                 web_application_id: pulumi.Input[Optional[_builtins.str]] = None,
                  __props__=None):
         """
         > This resource requires the API token scopes **Read configuration** (`ReadConfig`) and **Write configuration** (`WriteConfig`)
@@ -313,12 +313,12 @@ class ApplicationErrorRules(pulumi.CustomResource):
     def _internal_init(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 custom_errors: Optional[pulumi.Input[Union['ApplicationErrorRulesCustomErrorsArgs', 'ApplicationErrorRulesCustomErrorsArgsDict']]] = None,
-                 http_errors: Optional[pulumi.Input[Union['ApplicationErrorRulesHttpErrorsArgs', 'ApplicationErrorRulesHttpErrorsArgsDict']]] = None,
-                 ignore_custom_errors_apdex: Optional[pulumi.Input[_builtins.bool]] = None,
-                 ignore_http_errors_apdex: Optional[pulumi.Input[_builtins.bool]] = None,
-                 ignore_js_errors_apdex: Optional[pulumi.Input[_builtins.bool]] = None,
-                 web_application_id: Optional[pulumi.Input[_builtins.str]] = None,
+                 custom_errors: pulumi.Input[Optional[Union['ApplicationErrorRulesCustomErrorsArgs', 'ApplicationErrorRulesCustomErrorsArgsDict']]] = None,
+                 http_errors: pulumi.Input[Optional[Union['ApplicationErrorRulesHttpErrorsArgs', 'ApplicationErrorRulesHttpErrorsArgsDict']]] = None,
+                 ignore_custom_errors_apdex: pulumi.Input[Optional[_builtins.bool]] = None,
+                 ignore_http_errors_apdex: pulumi.Input[Optional[_builtins.bool]] = None,
+                 ignore_js_errors_apdex: pulumi.Input[Optional[_builtins.bool]] = None,
+                 web_application_id: pulumi.Input[Optional[_builtins.str]] = None,
                  __props__=None):
         opts = pulumi.ResourceOptions.merge(_utilities.get_resource_opts_defaults(), opts)
         if not isinstance(opts, pulumi.ResourceOptions):
@@ -344,12 +344,12 @@ class ApplicationErrorRules(pulumi.CustomResource):
     def get(resource_name: str,
             id: pulumi.Input[str],
             opts: Optional[pulumi.ResourceOptions] = None,
-            custom_errors: Optional[pulumi.Input[Union['ApplicationErrorRulesCustomErrorsArgs', 'ApplicationErrorRulesCustomErrorsArgsDict']]] = None,
-            http_errors: Optional[pulumi.Input[Union['ApplicationErrorRulesHttpErrorsArgs', 'ApplicationErrorRulesHttpErrorsArgsDict']]] = None,
-            ignore_custom_errors_apdex: Optional[pulumi.Input[_builtins.bool]] = None,
-            ignore_http_errors_apdex: Optional[pulumi.Input[_builtins.bool]] = None,
-            ignore_js_errors_apdex: Optional[pulumi.Input[_builtins.bool]] = None,
-            web_application_id: Optional[pulumi.Input[_builtins.str]] = None) -> 'ApplicationErrorRules':
+            custom_errors: pulumi.Input[Optional[Union['ApplicationErrorRulesCustomErrorsArgs', 'ApplicationErrorRulesCustomErrorsArgsDict']]] = None,
+            http_errors: pulumi.Input[Optional[Union['ApplicationErrorRulesHttpErrorsArgs', 'ApplicationErrorRulesHttpErrorsArgsDict']]] = None,
+            ignore_custom_errors_apdex: pulumi.Input[Optional[_builtins.bool]] = None,
+            ignore_http_errors_apdex: pulumi.Input[Optional[_builtins.bool]] = None,
+            ignore_js_errors_apdex: pulumi.Input[Optional[_builtins.bool]] = None,
+            web_application_id: pulumi.Input[Optional[_builtins.str]] = None) -> 'ApplicationErrorRules':
         """
         Get an existing ApplicationErrorRules resource's state with the given name, id, and optional extra
         properties used to qualify the lookup.

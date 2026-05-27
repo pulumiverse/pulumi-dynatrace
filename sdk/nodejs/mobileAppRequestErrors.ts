@@ -95,11 +95,11 @@ export interface MobileAppRequestErrorsState {
     /**
      * no documentation available
      */
-    errorRules?: pulumi.Input<inputs.MobileAppRequestErrorsErrorRules>;
+    errorRules?: pulumi.Input<inputs.MobileAppRequestErrorsErrorRules | undefined>;
     /**
      * The scope of this setting (MOBILE*APPLICATION, CUSTOM*APPLICATION)
      */
-    scope?: pulumi.Input<string>;
+    scope?: pulumi.Input<string | undefined>;
 }
 
 /**
@@ -109,7 +109,7 @@ export interface MobileAppRequestErrorsArgs {
     /**
      * no documentation available
      */
-    errorRules?: pulumi.Input<inputs.MobileAppRequestErrorsErrorRules>;
+    errorRules?: pulumi.Input<inputs.MobileAppRequestErrorsErrorRules | undefined>;
     /**
      * The scope of this setting (MOBILE*APPLICATION, CUSTOM*APPLICATION)
      */

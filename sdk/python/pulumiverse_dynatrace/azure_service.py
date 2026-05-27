@@ -22,9 +22,9 @@ __all__ = ['AzureServiceArgs', 'AzureService']
 class AzureServiceArgs:
     def __init__(__self__, *,
                  credentials_id: pulumi.Input[_builtins.str],
-                 metrics: Optional[pulumi.Input[Sequence[pulumi.Input['AzureServiceMetricArgs']]]] = None,
-                 name: Optional[pulumi.Input[_builtins.str]] = None,
-                 use_recommended_metrics: Optional[pulumi.Input[_builtins.bool]] = None):
+                 metrics: pulumi.Input[Optional[Sequence[pulumi.Input['AzureServiceMetricArgs']]]] = None,
+                 name: pulumi.Input[Optional[_builtins.str]] = None,
+                 use_recommended_metrics: pulumi.Input[Optional[_builtins.bool]] = None):
         """
         The set of arguments for constructing a AzureService resource.
 
@@ -55,50 +55,50 @@ class AzureServiceArgs:
 
     @_builtins.property
     @pulumi.getter
-    def metrics(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['AzureServiceMetricArgs']]]]:
+    def metrics(self) -> pulumi.Input[Optional[Sequence[pulumi.Input['AzureServiceMetricArgs']]]]:
         """
         A list of metrics to be monitored for this service. Depending on the service Dynatrace insists on a set of recommended metrics to be configured for that service. If any of these recommended metrics is missing here, the Terraform Provider will automatically add them during `pulumi up`. This usually results in a non-empty plan, until all of the recommended metrics are present within your configuration. For services considered `built-in` by Dynatrace any metrics specified here will be ignored - Dynatrace enforces a fixed set of metrics for these services.
         """
         return pulumi.get(self, "metrics")
 
     @metrics.setter
-    def metrics(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['AzureServiceMetricArgs']]]]):
+    def metrics(self, value: pulumi.Input[Optional[Sequence[pulumi.Input['AzureServiceMetricArgs']]]]):
         pulumi.set(self, "metrics", value)
 
     @_builtins.property
     @pulumi.getter
-    def name(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def name(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The name of the supporting service.
         """
         return pulumi.get(self, "name")
 
     @name.setter
-    def name(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def name(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "name", value)
 
     @_builtins.property
     @pulumi.getter(name="useRecommendedMetrics")
-    def use_recommended_metrics(self) -> Optional[pulumi.Input[_builtins.bool]]:
+    def use_recommended_metrics(self) -> pulumi.Input[Optional[_builtins.bool]]:
         """
         If `true` Terraform will negotiate with the Dynatrace API about the recommended/enforced metrics to be applied. Any `metric` specified will be therefore ignored.
         """
         return pulumi.get(self, "use_recommended_metrics")
 
     @use_recommended_metrics.setter
-    def use_recommended_metrics(self, value: Optional[pulumi.Input[_builtins.bool]]):
+    def use_recommended_metrics(self, value: pulumi.Input[Optional[_builtins.bool]]):
         pulumi.set(self, "use_recommended_metrics", value)
 
 
 @pulumi.input_type
 class _AzureServiceState:
     def __init__(__self__, *,
-                 built_in: Optional[pulumi.Input[_builtins.bool]] = None,
-                 credentials_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 metrics: Optional[pulumi.Input[Sequence[pulumi.Input['AzureServiceMetricArgs']]]] = None,
-                 name: Optional[pulumi.Input[_builtins.str]] = None,
-                 required_metrics: Optional[pulumi.Input[_builtins.str]] = None,
-                 use_recommended_metrics: Optional[pulumi.Input[_builtins.bool]] = None):
+                 built_in: pulumi.Input[Optional[_builtins.bool]] = None,
+                 credentials_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 metrics: pulumi.Input[Optional[Sequence[pulumi.Input['AzureServiceMetricArgs']]]] = None,
+                 name: pulumi.Input[Optional[_builtins.str]] = None,
+                 required_metrics: pulumi.Input[Optional[_builtins.str]] = None,
+                 use_recommended_metrics: pulumi.Input[Optional[_builtins.bool]] = None):
         """
         Input properties used for looking up and filtering AzureService resources.
 
@@ -124,74 +124,74 @@ class _AzureServiceState:
 
     @_builtins.property
     @pulumi.getter(name="builtIn")
-    def built_in(self) -> Optional[pulumi.Input[_builtins.bool]]:
+    def built_in(self) -> pulumi.Input[Optional[_builtins.bool]]:
         """
         This attribute is automatically set to `true` if Dynatrace considers the supporting service with the given name to be a built-in service
         """
         return pulumi.get(self, "built_in")
 
     @built_in.setter
-    def built_in(self, value: Optional[pulumi.Input[_builtins.bool]]):
+    def built_in(self, value: pulumi.Input[Optional[_builtins.bool]]):
         pulumi.set(self, "built_in", value)
 
     @_builtins.property
     @pulumi.getter(name="credentialsId")
-    def credentials_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def credentials_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         the ID of the Azure credentials this supported service belongs to
         """
         return pulumi.get(self, "credentials_id")
 
     @credentials_id.setter
-    def credentials_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def credentials_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "credentials_id", value)
 
     @_builtins.property
     @pulumi.getter
-    def metrics(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['AzureServiceMetricArgs']]]]:
+    def metrics(self) -> pulumi.Input[Optional[Sequence[pulumi.Input['AzureServiceMetricArgs']]]]:
         """
         A list of metrics to be monitored for this service. Depending on the service Dynatrace insists on a set of recommended metrics to be configured for that service. If any of these recommended metrics is missing here, the Terraform Provider will automatically add them during `pulumi up`. This usually results in a non-empty plan, until all of the recommended metrics are present within your configuration. For services considered `built-in` by Dynatrace any metrics specified here will be ignored - Dynatrace enforces a fixed set of metrics for these services.
         """
         return pulumi.get(self, "metrics")
 
     @metrics.setter
-    def metrics(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['AzureServiceMetricArgs']]]]):
+    def metrics(self, value: pulumi.Input[Optional[Sequence[pulumi.Input['AzureServiceMetricArgs']]]]):
         pulumi.set(self, "metrics", value)
 
     @_builtins.property
     @pulumi.getter
-    def name(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def name(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The name of the supporting service.
         """
         return pulumi.get(self, "name")
 
     @name.setter
-    def name(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def name(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "name", value)
 
     @_builtins.property
     @pulumi.getter(name="requiredMetrics")
-    def required_metrics(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def required_metrics(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Used internally by the Terraform Provider in order to remember the metrics enforced by Dynatrace
         """
         return pulumi.get(self, "required_metrics")
 
     @required_metrics.setter
-    def required_metrics(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def required_metrics(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "required_metrics", value)
 
     @_builtins.property
     @pulumi.getter(name="useRecommendedMetrics")
-    def use_recommended_metrics(self) -> Optional[pulumi.Input[_builtins.bool]]:
+    def use_recommended_metrics(self) -> pulumi.Input[Optional[_builtins.bool]]:
         """
         If `true` Terraform will negotiate with the Dynatrace API about the recommended/enforced metrics to be applied. Any `metric` specified will be therefore ignored.
         """
         return pulumi.get(self, "use_recommended_metrics")
 
     @use_recommended_metrics.setter
-    def use_recommended_metrics(self, value: Optional[pulumi.Input[_builtins.bool]]):
+    def use_recommended_metrics(self, value: pulumi.Input[Optional[_builtins.bool]]):
         pulumi.set(self, "use_recommended_metrics", value)
 
 
@@ -201,10 +201,10 @@ class AzureService(pulumi.CustomResource):
     def __init__(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 credentials_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 metrics: Optional[pulumi.Input[Sequence[pulumi.Input[Union['AzureServiceMetricArgs', 'AzureServiceMetricArgsDict']]]]] = None,
-                 name: Optional[pulumi.Input[_builtins.str]] = None,
-                 use_recommended_metrics: Optional[pulumi.Input[_builtins.bool]] = None,
+                 credentials_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 metrics: pulumi.Input[Optional[Sequence[pulumi.Input[Union['AzureServiceMetricArgs', 'AzureServiceMetricArgsDict']]]]] = None,
+                 name: pulumi.Input[Optional[_builtins.str]] = None,
+                 use_recommended_metrics: pulumi.Input[Optional[_builtins.bool]] = None,
                  __props__=None):
         """
         > This resource is excluded by default in the export utility.
@@ -406,10 +406,10 @@ class AzureService(pulumi.CustomResource):
     def _internal_init(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 credentials_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 metrics: Optional[pulumi.Input[Sequence[pulumi.Input[Union['AzureServiceMetricArgs', 'AzureServiceMetricArgsDict']]]]] = None,
-                 name: Optional[pulumi.Input[_builtins.str]] = None,
-                 use_recommended_metrics: Optional[pulumi.Input[_builtins.bool]] = None,
+                 credentials_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 metrics: pulumi.Input[Optional[Sequence[pulumi.Input[Union['AzureServiceMetricArgs', 'AzureServiceMetricArgsDict']]]]] = None,
+                 name: pulumi.Input[Optional[_builtins.str]] = None,
+                 use_recommended_metrics: pulumi.Input[Optional[_builtins.bool]] = None,
                  __props__=None):
         opts = pulumi.ResourceOptions.merge(_utilities.get_resource_opts_defaults(), opts)
         if not isinstance(opts, pulumi.ResourceOptions):
@@ -437,12 +437,12 @@ class AzureService(pulumi.CustomResource):
     def get(resource_name: str,
             id: pulumi.Input[str],
             opts: Optional[pulumi.ResourceOptions] = None,
-            built_in: Optional[pulumi.Input[_builtins.bool]] = None,
-            credentials_id: Optional[pulumi.Input[_builtins.str]] = None,
-            metrics: Optional[pulumi.Input[Sequence[pulumi.Input[Union['AzureServiceMetricArgs', 'AzureServiceMetricArgsDict']]]]] = None,
-            name: Optional[pulumi.Input[_builtins.str]] = None,
-            required_metrics: Optional[pulumi.Input[_builtins.str]] = None,
-            use_recommended_metrics: Optional[pulumi.Input[_builtins.bool]] = None) -> 'AzureService':
+            built_in: pulumi.Input[Optional[_builtins.bool]] = None,
+            credentials_id: pulumi.Input[Optional[_builtins.str]] = None,
+            metrics: pulumi.Input[Optional[Sequence[pulumi.Input[Union['AzureServiceMetricArgs', 'AzureServiceMetricArgsDict']]]]] = None,
+            name: pulumi.Input[Optional[_builtins.str]] = None,
+            required_metrics: pulumi.Input[Optional[_builtins.str]] = None,
+            use_recommended_metrics: pulumi.Input[Optional[_builtins.bool]] = None) -> 'AzureService':
         """
         Get an existing AzureService resource's state with the given name, id, and optional extra
         properties used to qualify the lookup.

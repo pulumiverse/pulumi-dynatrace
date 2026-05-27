@@ -133,27 +133,27 @@ export interface ManagedInternetProxyState {
     /**
      * Definition of hosts for which proxy won't be used. You can define multiple hosts. Each host can start or end with wildcard '*' for instance to match whole domain.
      */
-    nonProxyHosts?: pulumi.Input<pulumi.Input<string>[]>;
+    nonProxyHosts?: pulumi.Input<pulumi.Input<string>[] | undefined>;
     /**
      * Password of proxy server, null means do not change previous value
      */
-    password?: pulumi.Input<string>;
+    password?: pulumi.Input<string | undefined>;
     /**
      * Port of proxy server
      */
-    port?: pulumi.Input<number>;
+    port?: pulumi.Input<number | undefined>;
     /**
      * Protocol which proxy server uses
      */
-    scheme?: pulumi.Input<string>;
+    scheme?: pulumi.Input<string | undefined>;
     /**
      * Address (either IP or Hostname) of proxy server
      */
-    server?: pulumi.Input<string>;
+    server?: pulumi.Input<string | undefined>;
     /**
      * User of proxy server, null means do not change previous value
      */
-    user?: pulumi.Input<string>;
+    user?: pulumi.Input<string | undefined>;
 }
 
 /**
@@ -163,11 +163,11 @@ export interface ManagedInternetProxyArgs {
     /**
      * Definition of hosts for which proxy won't be used. You can define multiple hosts. Each host can start or end with wildcard '*' for instance to match whole domain.
      */
-    nonProxyHosts?: pulumi.Input<pulumi.Input<string>[]>;
+    nonProxyHosts?: pulumi.Input<pulumi.Input<string>[] | undefined>;
     /**
      * Password of proxy server, null means do not change previous value
      */
-    password?: pulumi.Input<string>;
+    password?: pulumi.Input<string | undefined>;
     /**
      * Port of proxy server
      */
@@ -183,5 +183,5 @@ export interface ManagedInternetProxyArgs {
     /**
      * User of proxy server, null means do not change previous value
      */
-    user?: pulumi.Input<string>;
+    user?: pulumi.Input<string | undefined>;
 }

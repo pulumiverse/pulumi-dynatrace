@@ -24,21 +24,21 @@ class KubernetesArgs:
                  cluster_id_enabled: pulumi.Input[_builtins.bool],
                  enabled: pulumi.Input[_builtins.bool],
                  label: pulumi.Input[_builtins.str],
-                 active_gate_group: Optional[pulumi.Input[_builtins.str]] = None,
-                 auth_token: Optional[pulumi.Input[_builtins.str]] = None,
-                 certificate_check_enabled: Optional[pulumi.Input[_builtins.bool]] = None,
-                 cloud_application_pipeline_enabled: Optional[pulumi.Input[_builtins.bool]] = None,
-                 cluster_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 endpoint_url: Optional[pulumi.Input[_builtins.str]] = None,
-                 event_patterns: Optional[pulumi.Input['KubernetesEventPatternsArgs']] = None,
-                 event_processing_active: Optional[pulumi.Input[_builtins.bool]] = None,
-                 filter_events: Optional[pulumi.Input[_builtins.bool]] = None,
-                 hostname_verification_enabled: Optional[pulumi.Input[_builtins.bool]] = None,
-                 include_all_fdi_events: Optional[pulumi.Input[_builtins.bool]] = None,
-                 open_metrics_builtin_enabled: Optional[pulumi.Input[_builtins.bool]] = None,
-                 open_metrics_pipeline_enabled: Optional[pulumi.Input[_builtins.bool]] = None,
-                 pvc_monitoring_enabled: Optional[pulumi.Input[_builtins.bool]] = None,
-                 scope: Optional[pulumi.Input[_builtins.str]] = None):
+                 active_gate_group: pulumi.Input[Optional[_builtins.str]] = None,
+                 auth_token: pulumi.Input[Optional[_builtins.str]] = None,
+                 certificate_check_enabled: pulumi.Input[Optional[_builtins.bool]] = None,
+                 cloud_application_pipeline_enabled: pulumi.Input[Optional[_builtins.bool]] = None,
+                 cluster_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 endpoint_url: pulumi.Input[Optional[_builtins.str]] = None,
+                 event_patterns: pulumi.Input[Optional['KubernetesEventPatternsArgs']] = None,
+                 event_processing_active: pulumi.Input[Optional[_builtins.bool]] = None,
+                 filter_events: pulumi.Input[Optional[_builtins.bool]] = None,
+                 hostname_verification_enabled: pulumi.Input[Optional[_builtins.bool]] = None,
+                 include_all_fdi_events: pulumi.Input[Optional[_builtins.bool]] = None,
+                 open_metrics_builtin_enabled: pulumi.Input[Optional[_builtins.bool]] = None,
+                 open_metrics_pipeline_enabled: pulumi.Input[Optional[_builtins.bool]] = None,
+                 pvc_monitoring_enabled: pulumi.Input[Optional[_builtins.bool]] = None,
+                 scope: pulumi.Input[Optional[_builtins.str]] = None):
         """
         The set of arguments for constructing a Kubernetes resource.
 
@@ -157,214 +157,214 @@ class KubernetesArgs:
 
     @_builtins.property
     @pulumi.getter(name="activeGateGroup")
-    def active_gate_group(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def active_gate_group(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         ActiveGate Group
         """
         return pulumi.get(self, "active_gate_group")
 
     @active_gate_group.setter
-    def active_gate_group(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def active_gate_group(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "active_gate_group", value)
 
     @_builtins.property
     @pulumi.getter(name="authToken")
-    def auth_token(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def auth_token(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Create a bearer token for [Kubernetes](https://dt-url.net/og43szq) or [OpenShift](https://dt-url.net/7l43xtp).
         """
         return pulumi.get(self, "auth_token")
 
     @auth_token.setter
-    def auth_token(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def auth_token(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "auth_token", value)
 
     @_builtins.property
     @pulumi.getter(name="certificateCheckEnabled")
-    def certificate_check_enabled(self) -> Optional[pulumi.Input[_builtins.bool]]:
+    def certificate_check_enabled(self) -> pulumi.Input[Optional[_builtins.bool]]:
         """
         Require valid certificates for communication with API server (recommended)
         """
         return pulumi.get(self, "certificate_check_enabled")
 
     @certificate_check_enabled.setter
-    def certificate_check_enabled(self, value: Optional[pulumi.Input[_builtins.bool]]):
+    def certificate_check_enabled(self, value: pulumi.Input[Optional[_builtins.bool]]):
         pulumi.set(self, "certificate_check_enabled", value)
 
     @_builtins.property
     @pulumi.getter(name="cloudApplicationPipelineEnabled")
     @_utilities.deprecated("""This field has been moved to a new schema, please utilize the resource `K8sMonitoring` to configure this field.""")
-    def cloud_application_pipeline_enabled(self) -> Optional[pulumi.Input[_builtins.bool]]:
+    def cloud_application_pipeline_enabled(self) -> pulumi.Input[Optional[_builtins.bool]]:
         """
         Monitor Kubernetes namespaces, services, workloads, and pods
         """
         return pulumi.get(self, "cloud_application_pipeline_enabled")
 
     @cloud_application_pipeline_enabled.setter
-    def cloud_application_pipeline_enabled(self, value: Optional[pulumi.Input[_builtins.bool]]):
+    def cloud_application_pipeline_enabled(self, value: pulumi.Input[Optional[_builtins.bool]]):
         pulumi.set(self, "cloud_application_pipeline_enabled", value)
 
     @_builtins.property
     @pulumi.getter(name="clusterId")
-    def cluster_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def cluster_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Unique ID of the cluster, the containerized ActiveGate is deployed to. Defaults to the UUID of the kube-system namespace. The cluster ID of containerized ActiveGates is shown on the Deployment status screen.
         """
         return pulumi.get(self, "cluster_id")
 
     @cluster_id.setter
-    def cluster_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def cluster_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "cluster_id", value)
 
     @_builtins.property
     @pulumi.getter(name="endpointUrl")
-    def endpoint_url(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def endpoint_url(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Get the API URL for [Kubernetes](https://dt-url.net/kz23snj) or [OpenShift](https://dt-url.net/d623xgw).
         """
         return pulumi.get(self, "endpoint_url")
 
     @endpoint_url.setter
-    def endpoint_url(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def endpoint_url(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "endpoint_url", value)
 
     @_builtins.property
     @pulumi.getter(name="eventPatterns")
     @_utilities.deprecated("""This field has been moved to a new schema, please utilize the resource `K8sMonitoring` to configure this field.""")
-    def event_patterns(self) -> Optional[pulumi.Input['KubernetesEventPatternsArgs']]:
+    def event_patterns(self) -> pulumi.Input[Optional['KubernetesEventPatternsArgs']]:
         """
         Define Kubernetes event filters to ingest events into your environment. For more details, see the [documentation](https://dt-url.net/2201p0u).
         """
         return pulumi.get(self, "event_patterns")
 
     @event_patterns.setter
-    def event_patterns(self, value: Optional[pulumi.Input['KubernetesEventPatternsArgs']]):
+    def event_patterns(self, value: pulumi.Input[Optional['KubernetesEventPatternsArgs']]):
         pulumi.set(self, "event_patterns", value)
 
     @_builtins.property
     @pulumi.getter(name="eventProcessingActive")
     @_utilities.deprecated("""This field has been moved to a new schema, please utilize the resource `K8sMonitoring` to configure this field.""")
-    def event_processing_active(self) -> Optional[pulumi.Input[_builtins.bool]]:
+    def event_processing_active(self) -> pulumi.Input[Optional[_builtins.bool]]:
         """
         All events are monitored by default unless event filters are specified.
         """
         return pulumi.get(self, "event_processing_active")
 
     @event_processing_active.setter
-    def event_processing_active(self, value: Optional[pulumi.Input[_builtins.bool]]):
+    def event_processing_active(self, value: pulumi.Input[Optional[_builtins.bool]]):
         pulumi.set(self, "event_processing_active", value)
 
     @_builtins.property
     @pulumi.getter(name="filterEvents")
     @_utilities.deprecated("""This field has been moved to a new schema, please utilize the resource `K8sMonitoring` to configure this field.""")
-    def filter_events(self) -> Optional[pulumi.Input[_builtins.bool]]:
+    def filter_events(self) -> pulumi.Input[Optional[_builtins.bool]]:
         """
         Include only events specified by Events Field Selectors
         """
         return pulumi.get(self, "filter_events")
 
     @filter_events.setter
-    def filter_events(self, value: Optional[pulumi.Input[_builtins.bool]]):
+    def filter_events(self, value: pulumi.Input[Optional[_builtins.bool]]):
         pulumi.set(self, "filter_events", value)
 
     @_builtins.property
     @pulumi.getter(name="hostnameVerificationEnabled")
-    def hostname_verification_enabled(self) -> Optional[pulumi.Input[_builtins.bool]]:
+    def hostname_verification_enabled(self) -> pulumi.Input[Optional[_builtins.bool]]:
         """
         Verify hostname in certificate against Kubernetes API URL
         """
         return pulumi.get(self, "hostname_verification_enabled")
 
     @hostname_verification_enabled.setter
-    def hostname_verification_enabled(self, value: Optional[pulumi.Input[_builtins.bool]]):
+    def hostname_verification_enabled(self, value: pulumi.Input[Optional[_builtins.bool]]):
         pulumi.set(self, "hostname_verification_enabled", value)
 
     @_builtins.property
     @pulumi.getter(name="includeAllFdiEvents")
     @_utilities.deprecated("""This field has been moved to a new schema, please utilize the resource `K8sMonitoring` to configure this field.""")
-    def include_all_fdi_events(self) -> Optional[pulumi.Input[_builtins.bool]]:
+    def include_all_fdi_events(self) -> pulumi.Input[Optional[_builtins.bool]]:
         """
         For a list of included events, see the [documentation](https://dt-url.net/l61d02no).
         """
         return pulumi.get(self, "include_all_fdi_events")
 
     @include_all_fdi_events.setter
-    def include_all_fdi_events(self, value: Optional[pulumi.Input[_builtins.bool]]):
+    def include_all_fdi_events(self, value: pulumi.Input[Optional[_builtins.bool]]):
         pulumi.set(self, "include_all_fdi_events", value)
 
     @_builtins.property
     @pulumi.getter(name="openMetricsBuiltinEnabled")
     @_utilities.deprecated("""This field has been moved to a new schema, please utilize the resource `K8sMonitoring` to configure this field.""")
-    def open_metrics_builtin_enabled(self) -> Optional[pulumi.Input[_builtins.bool]]:
+    def open_metrics_builtin_enabled(self) -> pulumi.Input[Optional[_builtins.bool]]:
         """
         The workload resource metrics are based on a subset of cAdvisor metrics. Depending on your Kubernetes cluster size, this may increase the CPU/memory resource consumption of your ActiveGate.
         """
         return pulumi.get(self, "open_metrics_builtin_enabled")
 
     @open_metrics_builtin_enabled.setter
-    def open_metrics_builtin_enabled(self, value: Optional[pulumi.Input[_builtins.bool]]):
+    def open_metrics_builtin_enabled(self, value: pulumi.Input[Optional[_builtins.bool]]):
         pulumi.set(self, "open_metrics_builtin_enabled", value)
 
     @_builtins.property
     @pulumi.getter(name="openMetricsPipelineEnabled")
     @_utilities.deprecated("""This field has been moved to a new schema, please utilize the resource `K8sMonitoring` to configure this field.""")
-    def open_metrics_pipeline_enabled(self) -> Optional[pulumi.Input[_builtins.bool]]:
+    def open_metrics_pipeline_enabled(self) -> pulumi.Input[Optional[_builtins.bool]]:
         """
         For annotation guidance, see the [documentation](https://dt-url.net/g42i0ppw).
         """
         return pulumi.get(self, "open_metrics_pipeline_enabled")
 
     @open_metrics_pipeline_enabled.setter
-    def open_metrics_pipeline_enabled(self, value: Optional[pulumi.Input[_builtins.bool]]):
+    def open_metrics_pipeline_enabled(self, value: pulumi.Input[Optional[_builtins.bool]]):
         pulumi.set(self, "open_metrics_pipeline_enabled", value)
 
     @_builtins.property
     @pulumi.getter(name="pvcMonitoringEnabled")
     @_utilities.deprecated("""This field has been moved to a new schema, please utilize the resource `K8sMonitoring` to configure this field.""")
-    def pvc_monitoring_enabled(self) -> Optional[pulumi.Input[_builtins.bool]]:
+    def pvc_monitoring_enabled(self) -> pulumi.Input[Optional[_builtins.bool]]:
         """
         To enable dashboards and alerts, add the Kubernetes persistent volume claims extension to your environment.
         """
         return pulumi.get(self, "pvc_monitoring_enabled")
 
     @pvc_monitoring_enabled.setter
-    def pvc_monitoring_enabled(self, value: Optional[pulumi.Input[_builtins.bool]]):
+    def pvc_monitoring_enabled(self, value: pulumi.Input[Optional[_builtins.bool]]):
         pulumi.set(self, "pvc_monitoring_enabled", value)
 
     @_builtins.property
     @pulumi.getter
-    def scope(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def scope(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The scope of this setting (KUBERNETES_CLUSTER)
         """
         return pulumi.get(self, "scope")
 
     @scope.setter
-    def scope(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def scope(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "scope", value)
 
 
 @pulumi.input_type
 class _KubernetesState:
     def __init__(__self__, *,
-                 active_gate_group: Optional[pulumi.Input[_builtins.str]] = None,
-                 auth_token: Optional[pulumi.Input[_builtins.str]] = None,
-                 certificate_check_enabled: Optional[pulumi.Input[_builtins.bool]] = None,
-                 cloud_application_pipeline_enabled: Optional[pulumi.Input[_builtins.bool]] = None,
-                 cluster_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 cluster_id_enabled: Optional[pulumi.Input[_builtins.bool]] = None,
-                 enabled: Optional[pulumi.Input[_builtins.bool]] = None,
-                 endpoint_url: Optional[pulumi.Input[_builtins.str]] = None,
-                 event_patterns: Optional[pulumi.Input['KubernetesEventPatternsArgs']] = None,
-                 event_processing_active: Optional[pulumi.Input[_builtins.bool]] = None,
-                 filter_events: Optional[pulumi.Input[_builtins.bool]] = None,
-                 hostname_verification_enabled: Optional[pulumi.Input[_builtins.bool]] = None,
-                 include_all_fdi_events: Optional[pulumi.Input[_builtins.bool]] = None,
-                 label: Optional[pulumi.Input[_builtins.str]] = None,
-                 open_metrics_builtin_enabled: Optional[pulumi.Input[_builtins.bool]] = None,
-                 open_metrics_pipeline_enabled: Optional[pulumi.Input[_builtins.bool]] = None,
-                 pvc_monitoring_enabled: Optional[pulumi.Input[_builtins.bool]] = None,
-                 scope: Optional[pulumi.Input[_builtins.str]] = None):
+                 active_gate_group: pulumi.Input[Optional[_builtins.str]] = None,
+                 auth_token: pulumi.Input[Optional[_builtins.str]] = None,
+                 certificate_check_enabled: pulumi.Input[Optional[_builtins.bool]] = None,
+                 cloud_application_pipeline_enabled: pulumi.Input[Optional[_builtins.bool]] = None,
+                 cluster_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 cluster_id_enabled: pulumi.Input[Optional[_builtins.bool]] = None,
+                 enabled: pulumi.Input[Optional[_builtins.bool]] = None,
+                 endpoint_url: pulumi.Input[Optional[_builtins.str]] = None,
+                 event_patterns: pulumi.Input[Optional['KubernetesEventPatternsArgs']] = None,
+                 event_processing_active: pulumi.Input[Optional[_builtins.bool]] = None,
+                 filter_events: pulumi.Input[Optional[_builtins.bool]] = None,
+                 hostname_verification_enabled: pulumi.Input[Optional[_builtins.bool]] = None,
+                 include_all_fdi_events: pulumi.Input[Optional[_builtins.bool]] = None,
+                 label: pulumi.Input[Optional[_builtins.str]] = None,
+                 open_metrics_builtin_enabled: pulumi.Input[Optional[_builtins.bool]] = None,
+                 open_metrics_pipeline_enabled: pulumi.Input[Optional[_builtins.bool]] = None,
+                 pvc_monitoring_enabled: pulumi.Input[Optional[_builtins.bool]] = None,
+                 scope: pulumi.Input[Optional[_builtins.str]] = None):
         """
         Input properties used for looking up and filtering Kubernetes resources.
 
@@ -450,226 +450,226 @@ class _KubernetesState:
 
     @_builtins.property
     @pulumi.getter(name="activeGateGroup")
-    def active_gate_group(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def active_gate_group(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         ActiveGate Group
         """
         return pulumi.get(self, "active_gate_group")
 
     @active_gate_group.setter
-    def active_gate_group(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def active_gate_group(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "active_gate_group", value)
 
     @_builtins.property
     @pulumi.getter(name="authToken")
-    def auth_token(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def auth_token(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Create a bearer token for [Kubernetes](https://dt-url.net/og43szq) or [OpenShift](https://dt-url.net/7l43xtp).
         """
         return pulumi.get(self, "auth_token")
 
     @auth_token.setter
-    def auth_token(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def auth_token(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "auth_token", value)
 
     @_builtins.property
     @pulumi.getter(name="certificateCheckEnabled")
-    def certificate_check_enabled(self) -> Optional[pulumi.Input[_builtins.bool]]:
+    def certificate_check_enabled(self) -> pulumi.Input[Optional[_builtins.bool]]:
         """
         Require valid certificates for communication with API server (recommended)
         """
         return pulumi.get(self, "certificate_check_enabled")
 
     @certificate_check_enabled.setter
-    def certificate_check_enabled(self, value: Optional[pulumi.Input[_builtins.bool]]):
+    def certificate_check_enabled(self, value: pulumi.Input[Optional[_builtins.bool]]):
         pulumi.set(self, "certificate_check_enabled", value)
 
     @_builtins.property
     @pulumi.getter(name="cloudApplicationPipelineEnabled")
     @_utilities.deprecated("""This field has been moved to a new schema, please utilize the resource `K8sMonitoring` to configure this field.""")
-    def cloud_application_pipeline_enabled(self) -> Optional[pulumi.Input[_builtins.bool]]:
+    def cloud_application_pipeline_enabled(self) -> pulumi.Input[Optional[_builtins.bool]]:
         """
         Monitor Kubernetes namespaces, services, workloads, and pods
         """
         return pulumi.get(self, "cloud_application_pipeline_enabled")
 
     @cloud_application_pipeline_enabled.setter
-    def cloud_application_pipeline_enabled(self, value: Optional[pulumi.Input[_builtins.bool]]):
+    def cloud_application_pipeline_enabled(self, value: pulumi.Input[Optional[_builtins.bool]]):
         pulumi.set(self, "cloud_application_pipeline_enabled", value)
 
     @_builtins.property
     @pulumi.getter(name="clusterId")
-    def cluster_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def cluster_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Unique ID of the cluster, the containerized ActiveGate is deployed to. Defaults to the UUID of the kube-system namespace. The cluster ID of containerized ActiveGates is shown on the Deployment status screen.
         """
         return pulumi.get(self, "cluster_id")
 
     @cluster_id.setter
-    def cluster_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def cluster_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "cluster_id", value)
 
     @_builtins.property
     @pulumi.getter(name="clusterIdEnabled")
-    def cluster_id_enabled(self) -> Optional[pulumi.Input[_builtins.bool]]:
+    def cluster_id_enabled(self) -> pulumi.Input[Optional[_builtins.bool]]:
         """
         For more information on local Kubernetes API monitoring, see the [documentation](https://dt-url.net/6q62uep).
         """
         return pulumi.get(self, "cluster_id_enabled")
 
     @cluster_id_enabled.setter
-    def cluster_id_enabled(self, value: Optional[pulumi.Input[_builtins.bool]]):
+    def cluster_id_enabled(self, value: pulumi.Input[Optional[_builtins.bool]]):
         pulumi.set(self, "cluster_id_enabled", value)
 
     @_builtins.property
     @pulumi.getter
-    def enabled(self) -> Optional[pulumi.Input[_builtins.bool]]:
+    def enabled(self) -> pulumi.Input[Optional[_builtins.bool]]:
         """
         This setting is enabled (`true`) or disabled (`false`)
         """
         return pulumi.get(self, "enabled")
 
     @enabled.setter
-    def enabled(self, value: Optional[pulumi.Input[_builtins.bool]]):
+    def enabled(self, value: pulumi.Input[Optional[_builtins.bool]]):
         pulumi.set(self, "enabled", value)
 
     @_builtins.property
     @pulumi.getter(name="endpointUrl")
-    def endpoint_url(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def endpoint_url(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Get the API URL for [Kubernetes](https://dt-url.net/kz23snj) or [OpenShift](https://dt-url.net/d623xgw).
         """
         return pulumi.get(self, "endpoint_url")
 
     @endpoint_url.setter
-    def endpoint_url(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def endpoint_url(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "endpoint_url", value)
 
     @_builtins.property
     @pulumi.getter(name="eventPatterns")
     @_utilities.deprecated("""This field has been moved to a new schema, please utilize the resource `K8sMonitoring` to configure this field.""")
-    def event_patterns(self) -> Optional[pulumi.Input['KubernetesEventPatternsArgs']]:
+    def event_patterns(self) -> pulumi.Input[Optional['KubernetesEventPatternsArgs']]:
         """
         Define Kubernetes event filters to ingest events into your environment. For more details, see the [documentation](https://dt-url.net/2201p0u).
         """
         return pulumi.get(self, "event_patterns")
 
     @event_patterns.setter
-    def event_patterns(self, value: Optional[pulumi.Input['KubernetesEventPatternsArgs']]):
+    def event_patterns(self, value: pulumi.Input[Optional['KubernetesEventPatternsArgs']]):
         pulumi.set(self, "event_patterns", value)
 
     @_builtins.property
     @pulumi.getter(name="eventProcessingActive")
     @_utilities.deprecated("""This field has been moved to a new schema, please utilize the resource `K8sMonitoring` to configure this field.""")
-    def event_processing_active(self) -> Optional[pulumi.Input[_builtins.bool]]:
+    def event_processing_active(self) -> pulumi.Input[Optional[_builtins.bool]]:
         """
         All events are monitored by default unless event filters are specified.
         """
         return pulumi.get(self, "event_processing_active")
 
     @event_processing_active.setter
-    def event_processing_active(self, value: Optional[pulumi.Input[_builtins.bool]]):
+    def event_processing_active(self, value: pulumi.Input[Optional[_builtins.bool]]):
         pulumi.set(self, "event_processing_active", value)
 
     @_builtins.property
     @pulumi.getter(name="filterEvents")
     @_utilities.deprecated("""This field has been moved to a new schema, please utilize the resource `K8sMonitoring` to configure this field.""")
-    def filter_events(self) -> Optional[pulumi.Input[_builtins.bool]]:
+    def filter_events(self) -> pulumi.Input[Optional[_builtins.bool]]:
         """
         Include only events specified by Events Field Selectors
         """
         return pulumi.get(self, "filter_events")
 
     @filter_events.setter
-    def filter_events(self, value: Optional[pulumi.Input[_builtins.bool]]):
+    def filter_events(self, value: pulumi.Input[Optional[_builtins.bool]]):
         pulumi.set(self, "filter_events", value)
 
     @_builtins.property
     @pulumi.getter(name="hostnameVerificationEnabled")
-    def hostname_verification_enabled(self) -> Optional[pulumi.Input[_builtins.bool]]:
+    def hostname_verification_enabled(self) -> pulumi.Input[Optional[_builtins.bool]]:
         """
         Verify hostname in certificate against Kubernetes API URL
         """
         return pulumi.get(self, "hostname_verification_enabled")
 
     @hostname_verification_enabled.setter
-    def hostname_verification_enabled(self, value: Optional[pulumi.Input[_builtins.bool]]):
+    def hostname_verification_enabled(self, value: pulumi.Input[Optional[_builtins.bool]]):
         pulumi.set(self, "hostname_verification_enabled", value)
 
     @_builtins.property
     @pulumi.getter(name="includeAllFdiEvents")
     @_utilities.deprecated("""This field has been moved to a new schema, please utilize the resource `K8sMonitoring` to configure this field.""")
-    def include_all_fdi_events(self) -> Optional[pulumi.Input[_builtins.bool]]:
+    def include_all_fdi_events(self) -> pulumi.Input[Optional[_builtins.bool]]:
         """
         For a list of included events, see the [documentation](https://dt-url.net/l61d02no).
         """
         return pulumi.get(self, "include_all_fdi_events")
 
     @include_all_fdi_events.setter
-    def include_all_fdi_events(self, value: Optional[pulumi.Input[_builtins.bool]]):
+    def include_all_fdi_events(self, value: pulumi.Input[Optional[_builtins.bool]]):
         pulumi.set(self, "include_all_fdi_events", value)
 
     @_builtins.property
     @pulumi.getter
-    def label(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def label(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Renaming the cluster breaks configurations that are based on its name (e.g., management zones, and alerting).
         """
         return pulumi.get(self, "label")
 
     @label.setter
-    def label(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def label(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "label", value)
 
     @_builtins.property
     @pulumi.getter(name="openMetricsBuiltinEnabled")
     @_utilities.deprecated("""This field has been moved to a new schema, please utilize the resource `K8sMonitoring` to configure this field.""")
-    def open_metrics_builtin_enabled(self) -> Optional[pulumi.Input[_builtins.bool]]:
+    def open_metrics_builtin_enabled(self) -> pulumi.Input[Optional[_builtins.bool]]:
         """
         The workload resource metrics are based on a subset of cAdvisor metrics. Depending on your Kubernetes cluster size, this may increase the CPU/memory resource consumption of your ActiveGate.
         """
         return pulumi.get(self, "open_metrics_builtin_enabled")
 
     @open_metrics_builtin_enabled.setter
-    def open_metrics_builtin_enabled(self, value: Optional[pulumi.Input[_builtins.bool]]):
+    def open_metrics_builtin_enabled(self, value: pulumi.Input[Optional[_builtins.bool]]):
         pulumi.set(self, "open_metrics_builtin_enabled", value)
 
     @_builtins.property
     @pulumi.getter(name="openMetricsPipelineEnabled")
     @_utilities.deprecated("""This field has been moved to a new schema, please utilize the resource `K8sMonitoring` to configure this field.""")
-    def open_metrics_pipeline_enabled(self) -> Optional[pulumi.Input[_builtins.bool]]:
+    def open_metrics_pipeline_enabled(self) -> pulumi.Input[Optional[_builtins.bool]]:
         """
         For annotation guidance, see the [documentation](https://dt-url.net/g42i0ppw).
         """
         return pulumi.get(self, "open_metrics_pipeline_enabled")
 
     @open_metrics_pipeline_enabled.setter
-    def open_metrics_pipeline_enabled(self, value: Optional[pulumi.Input[_builtins.bool]]):
+    def open_metrics_pipeline_enabled(self, value: pulumi.Input[Optional[_builtins.bool]]):
         pulumi.set(self, "open_metrics_pipeline_enabled", value)
 
     @_builtins.property
     @pulumi.getter(name="pvcMonitoringEnabled")
     @_utilities.deprecated("""This field has been moved to a new schema, please utilize the resource `K8sMonitoring` to configure this field.""")
-    def pvc_monitoring_enabled(self) -> Optional[pulumi.Input[_builtins.bool]]:
+    def pvc_monitoring_enabled(self) -> pulumi.Input[Optional[_builtins.bool]]:
         """
         To enable dashboards and alerts, add the Kubernetes persistent volume claims extension to your environment.
         """
         return pulumi.get(self, "pvc_monitoring_enabled")
 
     @pvc_monitoring_enabled.setter
-    def pvc_monitoring_enabled(self, value: Optional[pulumi.Input[_builtins.bool]]):
+    def pvc_monitoring_enabled(self, value: pulumi.Input[Optional[_builtins.bool]]):
         pulumi.set(self, "pvc_monitoring_enabled", value)
 
     @_builtins.property
     @pulumi.getter
-    def scope(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def scope(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The scope of this setting (KUBERNETES_CLUSTER)
         """
         return pulumi.get(self, "scope")
 
     @scope.setter
-    def scope(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def scope(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "scope", value)
 
 
@@ -679,24 +679,24 @@ class Kubernetes(pulumi.CustomResource):
     def __init__(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 active_gate_group: Optional[pulumi.Input[_builtins.str]] = None,
-                 auth_token: Optional[pulumi.Input[_builtins.str]] = None,
-                 certificate_check_enabled: Optional[pulumi.Input[_builtins.bool]] = None,
-                 cloud_application_pipeline_enabled: Optional[pulumi.Input[_builtins.bool]] = None,
-                 cluster_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 cluster_id_enabled: Optional[pulumi.Input[_builtins.bool]] = None,
-                 enabled: Optional[pulumi.Input[_builtins.bool]] = None,
-                 endpoint_url: Optional[pulumi.Input[_builtins.str]] = None,
-                 event_patterns: Optional[pulumi.Input[Union['KubernetesEventPatternsArgs', 'KubernetesEventPatternsArgsDict']]] = None,
-                 event_processing_active: Optional[pulumi.Input[_builtins.bool]] = None,
-                 filter_events: Optional[pulumi.Input[_builtins.bool]] = None,
-                 hostname_verification_enabled: Optional[pulumi.Input[_builtins.bool]] = None,
-                 include_all_fdi_events: Optional[pulumi.Input[_builtins.bool]] = None,
-                 label: Optional[pulumi.Input[_builtins.str]] = None,
-                 open_metrics_builtin_enabled: Optional[pulumi.Input[_builtins.bool]] = None,
-                 open_metrics_pipeline_enabled: Optional[pulumi.Input[_builtins.bool]] = None,
-                 pvc_monitoring_enabled: Optional[pulumi.Input[_builtins.bool]] = None,
-                 scope: Optional[pulumi.Input[_builtins.str]] = None,
+                 active_gate_group: pulumi.Input[Optional[_builtins.str]] = None,
+                 auth_token: pulumi.Input[Optional[_builtins.str]] = None,
+                 certificate_check_enabled: pulumi.Input[Optional[_builtins.bool]] = None,
+                 cloud_application_pipeline_enabled: pulumi.Input[Optional[_builtins.bool]] = None,
+                 cluster_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 cluster_id_enabled: pulumi.Input[Optional[_builtins.bool]] = None,
+                 enabled: pulumi.Input[Optional[_builtins.bool]] = None,
+                 endpoint_url: pulumi.Input[Optional[_builtins.str]] = None,
+                 event_patterns: pulumi.Input[Optional[Union['KubernetesEventPatternsArgs', 'KubernetesEventPatternsArgsDict']]] = None,
+                 event_processing_active: pulumi.Input[Optional[_builtins.bool]] = None,
+                 filter_events: pulumi.Input[Optional[_builtins.bool]] = None,
+                 hostname_verification_enabled: pulumi.Input[Optional[_builtins.bool]] = None,
+                 include_all_fdi_events: pulumi.Input[Optional[_builtins.bool]] = None,
+                 label: pulumi.Input[Optional[_builtins.str]] = None,
+                 open_metrics_builtin_enabled: pulumi.Input[Optional[_builtins.bool]] = None,
+                 open_metrics_pipeline_enabled: pulumi.Input[Optional[_builtins.bool]] = None,
+                 pvc_monitoring_enabled: pulumi.Input[Optional[_builtins.bool]] = None,
+                 scope: pulumi.Input[Optional[_builtins.str]] = None,
                  __props__=None):
         """
         > This resource requires the API token scopes **Read settings** (`settings.read`) and **Write settings** (`settings.write`)
@@ -772,24 +772,24 @@ class Kubernetes(pulumi.CustomResource):
     def _internal_init(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 active_gate_group: Optional[pulumi.Input[_builtins.str]] = None,
-                 auth_token: Optional[pulumi.Input[_builtins.str]] = None,
-                 certificate_check_enabled: Optional[pulumi.Input[_builtins.bool]] = None,
-                 cloud_application_pipeline_enabled: Optional[pulumi.Input[_builtins.bool]] = None,
-                 cluster_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 cluster_id_enabled: Optional[pulumi.Input[_builtins.bool]] = None,
-                 enabled: Optional[pulumi.Input[_builtins.bool]] = None,
-                 endpoint_url: Optional[pulumi.Input[_builtins.str]] = None,
-                 event_patterns: Optional[pulumi.Input[Union['KubernetesEventPatternsArgs', 'KubernetesEventPatternsArgsDict']]] = None,
-                 event_processing_active: Optional[pulumi.Input[_builtins.bool]] = None,
-                 filter_events: Optional[pulumi.Input[_builtins.bool]] = None,
-                 hostname_verification_enabled: Optional[pulumi.Input[_builtins.bool]] = None,
-                 include_all_fdi_events: Optional[pulumi.Input[_builtins.bool]] = None,
-                 label: Optional[pulumi.Input[_builtins.str]] = None,
-                 open_metrics_builtin_enabled: Optional[pulumi.Input[_builtins.bool]] = None,
-                 open_metrics_pipeline_enabled: Optional[pulumi.Input[_builtins.bool]] = None,
-                 pvc_monitoring_enabled: Optional[pulumi.Input[_builtins.bool]] = None,
-                 scope: Optional[pulumi.Input[_builtins.str]] = None,
+                 active_gate_group: pulumi.Input[Optional[_builtins.str]] = None,
+                 auth_token: pulumi.Input[Optional[_builtins.str]] = None,
+                 certificate_check_enabled: pulumi.Input[Optional[_builtins.bool]] = None,
+                 cloud_application_pipeline_enabled: pulumi.Input[Optional[_builtins.bool]] = None,
+                 cluster_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 cluster_id_enabled: pulumi.Input[Optional[_builtins.bool]] = None,
+                 enabled: pulumi.Input[Optional[_builtins.bool]] = None,
+                 endpoint_url: pulumi.Input[Optional[_builtins.str]] = None,
+                 event_patterns: pulumi.Input[Optional[Union['KubernetesEventPatternsArgs', 'KubernetesEventPatternsArgsDict']]] = None,
+                 event_processing_active: pulumi.Input[Optional[_builtins.bool]] = None,
+                 filter_events: pulumi.Input[Optional[_builtins.bool]] = None,
+                 hostname_verification_enabled: pulumi.Input[Optional[_builtins.bool]] = None,
+                 include_all_fdi_events: pulumi.Input[Optional[_builtins.bool]] = None,
+                 label: pulumi.Input[Optional[_builtins.str]] = None,
+                 open_metrics_builtin_enabled: pulumi.Input[Optional[_builtins.bool]] = None,
+                 open_metrics_pipeline_enabled: pulumi.Input[Optional[_builtins.bool]] = None,
+                 pvc_monitoring_enabled: pulumi.Input[Optional[_builtins.bool]] = None,
+                 scope: pulumi.Input[Optional[_builtins.str]] = None,
                  __props__=None):
         opts = pulumi.ResourceOptions.merge(_utilities.get_resource_opts_defaults(), opts)
         if not isinstance(opts, pulumi.ResourceOptions):
@@ -835,24 +835,24 @@ class Kubernetes(pulumi.CustomResource):
     def get(resource_name: str,
             id: pulumi.Input[str],
             opts: Optional[pulumi.ResourceOptions] = None,
-            active_gate_group: Optional[pulumi.Input[_builtins.str]] = None,
-            auth_token: Optional[pulumi.Input[_builtins.str]] = None,
-            certificate_check_enabled: Optional[pulumi.Input[_builtins.bool]] = None,
-            cloud_application_pipeline_enabled: Optional[pulumi.Input[_builtins.bool]] = None,
-            cluster_id: Optional[pulumi.Input[_builtins.str]] = None,
-            cluster_id_enabled: Optional[pulumi.Input[_builtins.bool]] = None,
-            enabled: Optional[pulumi.Input[_builtins.bool]] = None,
-            endpoint_url: Optional[pulumi.Input[_builtins.str]] = None,
-            event_patterns: Optional[pulumi.Input[Union['KubernetesEventPatternsArgs', 'KubernetesEventPatternsArgsDict']]] = None,
-            event_processing_active: Optional[pulumi.Input[_builtins.bool]] = None,
-            filter_events: Optional[pulumi.Input[_builtins.bool]] = None,
-            hostname_verification_enabled: Optional[pulumi.Input[_builtins.bool]] = None,
-            include_all_fdi_events: Optional[pulumi.Input[_builtins.bool]] = None,
-            label: Optional[pulumi.Input[_builtins.str]] = None,
-            open_metrics_builtin_enabled: Optional[pulumi.Input[_builtins.bool]] = None,
-            open_metrics_pipeline_enabled: Optional[pulumi.Input[_builtins.bool]] = None,
-            pvc_monitoring_enabled: Optional[pulumi.Input[_builtins.bool]] = None,
-            scope: Optional[pulumi.Input[_builtins.str]] = None) -> 'Kubernetes':
+            active_gate_group: pulumi.Input[Optional[_builtins.str]] = None,
+            auth_token: pulumi.Input[Optional[_builtins.str]] = None,
+            certificate_check_enabled: pulumi.Input[Optional[_builtins.bool]] = None,
+            cloud_application_pipeline_enabled: pulumi.Input[Optional[_builtins.bool]] = None,
+            cluster_id: pulumi.Input[Optional[_builtins.str]] = None,
+            cluster_id_enabled: pulumi.Input[Optional[_builtins.bool]] = None,
+            enabled: pulumi.Input[Optional[_builtins.bool]] = None,
+            endpoint_url: pulumi.Input[Optional[_builtins.str]] = None,
+            event_patterns: pulumi.Input[Optional[Union['KubernetesEventPatternsArgs', 'KubernetesEventPatternsArgsDict']]] = None,
+            event_processing_active: pulumi.Input[Optional[_builtins.bool]] = None,
+            filter_events: pulumi.Input[Optional[_builtins.bool]] = None,
+            hostname_verification_enabled: pulumi.Input[Optional[_builtins.bool]] = None,
+            include_all_fdi_events: pulumi.Input[Optional[_builtins.bool]] = None,
+            label: pulumi.Input[Optional[_builtins.str]] = None,
+            open_metrics_builtin_enabled: pulumi.Input[Optional[_builtins.bool]] = None,
+            open_metrics_pipeline_enabled: pulumi.Input[Optional[_builtins.bool]] = None,
+            pvc_monitoring_enabled: pulumi.Input[Optional[_builtins.bool]] = None,
+            scope: pulumi.Input[Optional[_builtins.str]] = None) -> 'Kubernetes':
         """
         Get an existing Kubernetes resource's state with the given name, id, and optional extra
         properties used to qualify the lookup.

@@ -100,15 +100,15 @@ export interface AixExtensionState {
     /**
      * This setting is enabled (`true`) or disabled (`false`)
      */
-    enabled?: pulumi.Input<boolean>;
+    enabled?: pulumi.Input<boolean | undefined>;
     /**
      * The scope of this settings. If the settings should cover the whole environment, just don't specify any scope.
      */
-    hostId?: pulumi.Input<string>;
+    hostId?: pulumi.Input<string | undefined>;
     /**
      * Use global settings
      */
-    useGlobalSettings?: pulumi.Input<boolean>;
+    useGlobalSettings?: pulumi.Input<boolean | undefined>;
 }
 
 /**
@@ -118,7 +118,7 @@ export interface AixExtensionArgs {
     /**
      * This setting is enabled (`true`) or disabled (`false`)
      */
-    enabled?: pulumi.Input<boolean>;
+    enabled?: pulumi.Input<boolean | undefined>;
     /**
      * The scope of this settings. If the settings should cover the whole environment, just don't specify any scope.
      */

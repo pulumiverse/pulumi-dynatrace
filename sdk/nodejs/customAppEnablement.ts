@@ -95,11 +95,11 @@ export interface CustomAppEnablementState {
     /**
      * Capture and analyze all user actions within your application. Enable [Real User Monitoring (RUM)](https://dt-url.net/1n2b0prq) to monitor and improve your application's performance, identify errors, and gain insight into your user's behavior and experience.
      */
-    rum?: pulumi.Input<inputs.CustomAppEnablementRum>;
+    rum?: pulumi.Input<inputs.CustomAppEnablementRum | undefined>;
     /**
      * The scope of this setting (CUSTOM_APPLICATION). Omit this property if you want to cover the whole environment.
      */
-    scope?: pulumi.Input<string>;
+    scope?: pulumi.Input<string | undefined>;
 }
 
 /**
@@ -113,5 +113,5 @@ export interface CustomAppEnablementArgs {
     /**
      * The scope of this setting (CUSTOM_APPLICATION). Omit this property if you want to cover the whole environment.
      */
-    scope?: pulumi.Input<string>;
+    scope?: pulumi.Input<string | undefined>;
 }

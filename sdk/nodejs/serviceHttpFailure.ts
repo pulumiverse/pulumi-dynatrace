@@ -108,19 +108,19 @@ export interface ServiceHttpFailureState {
     /**
      * HTTP 404 response codes are thrown when a web server can't find a certain page. 404s are classified as broken links on the client side and therefore aren't considered to be service failures. By enabling this setting, you can have 404s treated as server-side service failures.
      */
-    brokenLinks?: pulumi.Input<inputs.ServiceHttpFailureBrokenLinks>;
+    brokenLinks?: pulumi.Input<inputs.ServiceHttpFailureBrokenLinks | undefined>;
     /**
      * This setting is enabled (`true`) or disabled (`false`)
      */
-    enabled?: pulumi.Input<boolean>;
+    enabled?: pulumi.Input<boolean | undefined>;
     /**
      * HTTP response codes
      */
-    httpResponseCodes?: pulumi.Input<inputs.ServiceHttpFailureHttpResponseCodes>;
+    httpResponseCodes?: pulumi.Input<inputs.ServiceHttpFailureHttpResponseCodes | undefined>;
     /**
      * The scope of this settings. If the settings should cover the whole environment, just don't specify any scope.
      */
-    serviceId?: pulumi.Input<string>;
+    serviceId?: pulumi.Input<string | undefined>;
 }
 
 /**
@@ -130,7 +130,7 @@ export interface ServiceHttpFailureArgs {
     /**
      * HTTP 404 response codes are thrown when a web server can't find a certain page. 404s are classified as broken links on the client side and therefore aren't considered to be service failures. By enabling this setting, you can have 404s treated as server-side service failures.
      */
-    brokenLinks?: pulumi.Input<inputs.ServiceHttpFailureBrokenLinks>;
+    brokenLinks?: pulumi.Input<inputs.ServiceHttpFailureBrokenLinks | undefined>;
     /**
      * This setting is enabled (`true`) or disabled (`false`)
      */
@@ -138,7 +138,7 @@ export interface ServiceHttpFailureArgs {
     /**
      * HTTP response codes
      */
-    httpResponseCodes?: pulumi.Input<inputs.ServiceHttpFailureHttpResponseCodes>;
+    httpResponseCodes?: pulumi.Input<inputs.ServiceHttpFailureHttpResponseCodes | undefined>;
     /**
      * The scope of this settings. If the settings should cover the whole environment, just don't specify any scope.
      */

@@ -25,7 +25,7 @@ class ServiceAnomaliesV2Args:
                  load_drops: pulumi.Input['ServiceAnomaliesV2LoadDropsArgs'],
                  load_spikes: pulumi.Input['ServiceAnomaliesV2LoadSpikesArgs'],
                  response_time: pulumi.Input['ServiceAnomaliesV2ResponseTimeArgs'],
-                 scope: Optional[pulumi.Input[_builtins.str]] = None):
+                 scope: pulumi.Input[Optional[_builtins.str]] = None):
         """
         The set of arguments for constructing a ServiceAnomaliesV2 resource.
 
@@ -92,25 +92,25 @@ class ServiceAnomaliesV2Args:
 
     @_builtins.property
     @pulumi.getter
-    def scope(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def scope(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The scope of this setting (SERVICE*METHOD, SERVICE, HOST*GROUP). Omit this property if you want to cover the whole environment.
         """
         return pulumi.get(self, "scope")
 
     @scope.setter
-    def scope(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def scope(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "scope", value)
 
 
 @pulumi.input_type
 class _ServiceAnomaliesV2State:
     def __init__(__self__, *,
-                 failure_rate: Optional[pulumi.Input['ServiceAnomaliesV2FailureRateArgs']] = None,
-                 load_drops: Optional[pulumi.Input['ServiceAnomaliesV2LoadDropsArgs']] = None,
-                 load_spikes: Optional[pulumi.Input['ServiceAnomaliesV2LoadSpikesArgs']] = None,
-                 response_time: Optional[pulumi.Input['ServiceAnomaliesV2ResponseTimeArgs']] = None,
-                 scope: Optional[pulumi.Input[_builtins.str]] = None):
+                 failure_rate: pulumi.Input[Optional['ServiceAnomaliesV2FailureRateArgs']] = None,
+                 load_drops: pulumi.Input[Optional['ServiceAnomaliesV2LoadDropsArgs']] = None,
+                 load_spikes: pulumi.Input[Optional['ServiceAnomaliesV2LoadSpikesArgs']] = None,
+                 response_time: pulumi.Input[Optional['ServiceAnomaliesV2ResponseTimeArgs']] = None,
+                 scope: pulumi.Input[Optional[_builtins.str]] = None):
         """
         Input properties used for looking up and filtering ServiceAnomaliesV2 resources.
 
@@ -133,62 +133,62 @@ class _ServiceAnomaliesV2State:
 
     @_builtins.property
     @pulumi.getter(name="failureRate")
-    def failure_rate(self) -> Optional[pulumi.Input['ServiceAnomaliesV2FailureRateArgs']]:
+    def failure_rate(self) -> pulumi.Input[Optional['ServiceAnomaliesV2FailureRateArgs']]:
         """
         Failure rate
         """
         return pulumi.get(self, "failure_rate")
 
     @failure_rate.setter
-    def failure_rate(self, value: Optional[pulumi.Input['ServiceAnomaliesV2FailureRateArgs']]):
+    def failure_rate(self, value: pulumi.Input[Optional['ServiceAnomaliesV2FailureRateArgs']]):
         pulumi.set(self, "failure_rate", value)
 
     @_builtins.property
     @pulumi.getter(name="loadDrops")
-    def load_drops(self) -> Optional[pulumi.Input['ServiceAnomaliesV2LoadDropsArgs']]:
+    def load_drops(self) -> pulumi.Input[Optional['ServiceAnomaliesV2LoadDropsArgs']]:
         """
         Alert if the observed load is lower than the expected load by a specified margin for a specified amount of time:
         """
         return pulumi.get(self, "load_drops")
 
     @load_drops.setter
-    def load_drops(self, value: Optional[pulumi.Input['ServiceAnomaliesV2LoadDropsArgs']]):
+    def load_drops(self, value: pulumi.Input[Optional['ServiceAnomaliesV2LoadDropsArgs']]):
         pulumi.set(self, "load_drops", value)
 
     @_builtins.property
     @pulumi.getter(name="loadSpikes")
-    def load_spikes(self) -> Optional[pulumi.Input['ServiceAnomaliesV2LoadSpikesArgs']]:
+    def load_spikes(self) -> pulumi.Input[Optional['ServiceAnomaliesV2LoadSpikesArgs']]:
         """
         Alert if the observed load exceeds the expected load by a specified margin for a specified amount of time:
         """
         return pulumi.get(self, "load_spikes")
 
     @load_spikes.setter
-    def load_spikes(self, value: Optional[pulumi.Input['ServiceAnomaliesV2LoadSpikesArgs']]):
+    def load_spikes(self, value: pulumi.Input[Optional['ServiceAnomaliesV2LoadSpikesArgs']]):
         pulumi.set(self, "load_spikes", value)
 
     @_builtins.property
     @pulumi.getter(name="responseTime")
-    def response_time(self) -> Optional[pulumi.Input['ServiceAnomaliesV2ResponseTimeArgs']]:
+    def response_time(self) -> pulumi.Input[Optional['ServiceAnomaliesV2ResponseTimeArgs']]:
         """
         Response time
         """
         return pulumi.get(self, "response_time")
 
     @response_time.setter
-    def response_time(self, value: Optional[pulumi.Input['ServiceAnomaliesV2ResponseTimeArgs']]):
+    def response_time(self, value: pulumi.Input[Optional['ServiceAnomaliesV2ResponseTimeArgs']]):
         pulumi.set(self, "response_time", value)
 
     @_builtins.property
     @pulumi.getter
-    def scope(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def scope(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The scope of this setting (SERVICE*METHOD, SERVICE, HOST*GROUP). Omit this property if you want to cover the whole environment.
         """
         return pulumi.get(self, "scope")
 
     @scope.setter
-    def scope(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def scope(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "scope", value)
 
 
@@ -198,11 +198,11 @@ class ServiceAnomaliesV2(pulumi.CustomResource):
     def __init__(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 failure_rate: Optional[pulumi.Input[Union['ServiceAnomaliesV2FailureRateArgs', 'ServiceAnomaliesV2FailureRateArgsDict']]] = None,
-                 load_drops: Optional[pulumi.Input[Union['ServiceAnomaliesV2LoadDropsArgs', 'ServiceAnomaliesV2LoadDropsArgsDict']]] = None,
-                 load_spikes: Optional[pulumi.Input[Union['ServiceAnomaliesV2LoadSpikesArgs', 'ServiceAnomaliesV2LoadSpikesArgsDict']]] = None,
-                 response_time: Optional[pulumi.Input[Union['ServiceAnomaliesV2ResponseTimeArgs', 'ServiceAnomaliesV2ResponseTimeArgsDict']]] = None,
-                 scope: Optional[pulumi.Input[_builtins.str]] = None,
+                 failure_rate: pulumi.Input[Optional[Union['ServiceAnomaliesV2FailureRateArgs', 'ServiceAnomaliesV2FailureRateArgsDict']]] = None,
+                 load_drops: pulumi.Input[Optional[Union['ServiceAnomaliesV2LoadDropsArgs', 'ServiceAnomaliesV2LoadDropsArgsDict']]] = None,
+                 load_spikes: pulumi.Input[Optional[Union['ServiceAnomaliesV2LoadSpikesArgs', 'ServiceAnomaliesV2LoadSpikesArgsDict']]] = None,
+                 response_time: pulumi.Input[Optional[Union['ServiceAnomaliesV2ResponseTimeArgs', 'ServiceAnomaliesV2ResponseTimeArgsDict']]] = None,
+                 scope: pulumi.Input[Optional[_builtins.str]] = None,
                  __props__=None):
         """
         > This resource requires the API token scopes **Read settings** (`settings.read`) and **Write settings** (`settings.write`)
@@ -265,11 +265,11 @@ class ServiceAnomaliesV2(pulumi.CustomResource):
     def _internal_init(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 failure_rate: Optional[pulumi.Input[Union['ServiceAnomaliesV2FailureRateArgs', 'ServiceAnomaliesV2FailureRateArgsDict']]] = None,
-                 load_drops: Optional[pulumi.Input[Union['ServiceAnomaliesV2LoadDropsArgs', 'ServiceAnomaliesV2LoadDropsArgsDict']]] = None,
-                 load_spikes: Optional[pulumi.Input[Union['ServiceAnomaliesV2LoadSpikesArgs', 'ServiceAnomaliesV2LoadSpikesArgsDict']]] = None,
-                 response_time: Optional[pulumi.Input[Union['ServiceAnomaliesV2ResponseTimeArgs', 'ServiceAnomaliesV2ResponseTimeArgsDict']]] = None,
-                 scope: Optional[pulumi.Input[_builtins.str]] = None,
+                 failure_rate: pulumi.Input[Optional[Union['ServiceAnomaliesV2FailureRateArgs', 'ServiceAnomaliesV2FailureRateArgsDict']]] = None,
+                 load_drops: pulumi.Input[Optional[Union['ServiceAnomaliesV2LoadDropsArgs', 'ServiceAnomaliesV2LoadDropsArgsDict']]] = None,
+                 load_spikes: pulumi.Input[Optional[Union['ServiceAnomaliesV2LoadSpikesArgs', 'ServiceAnomaliesV2LoadSpikesArgsDict']]] = None,
+                 response_time: pulumi.Input[Optional[Union['ServiceAnomaliesV2ResponseTimeArgs', 'ServiceAnomaliesV2ResponseTimeArgsDict']]] = None,
+                 scope: pulumi.Input[Optional[_builtins.str]] = None,
                  __props__=None):
         opts = pulumi.ResourceOptions.merge(_utilities.get_resource_opts_defaults(), opts)
         if not isinstance(opts, pulumi.ResourceOptions):
@@ -302,11 +302,11 @@ class ServiceAnomaliesV2(pulumi.CustomResource):
     def get(resource_name: str,
             id: pulumi.Input[str],
             opts: Optional[pulumi.ResourceOptions] = None,
-            failure_rate: Optional[pulumi.Input[Union['ServiceAnomaliesV2FailureRateArgs', 'ServiceAnomaliesV2FailureRateArgsDict']]] = None,
-            load_drops: Optional[pulumi.Input[Union['ServiceAnomaliesV2LoadDropsArgs', 'ServiceAnomaliesV2LoadDropsArgsDict']]] = None,
-            load_spikes: Optional[pulumi.Input[Union['ServiceAnomaliesV2LoadSpikesArgs', 'ServiceAnomaliesV2LoadSpikesArgsDict']]] = None,
-            response_time: Optional[pulumi.Input[Union['ServiceAnomaliesV2ResponseTimeArgs', 'ServiceAnomaliesV2ResponseTimeArgsDict']]] = None,
-            scope: Optional[pulumi.Input[_builtins.str]] = None) -> 'ServiceAnomaliesV2':
+            failure_rate: pulumi.Input[Optional[Union['ServiceAnomaliesV2FailureRateArgs', 'ServiceAnomaliesV2FailureRateArgsDict']]] = None,
+            load_drops: pulumi.Input[Optional[Union['ServiceAnomaliesV2LoadDropsArgs', 'ServiceAnomaliesV2LoadDropsArgsDict']]] = None,
+            load_spikes: pulumi.Input[Optional[Union['ServiceAnomaliesV2LoadSpikesArgs', 'ServiceAnomaliesV2LoadSpikesArgsDict']]] = None,
+            response_time: pulumi.Input[Optional[Union['ServiceAnomaliesV2ResponseTimeArgs', 'ServiceAnomaliesV2ResponseTimeArgsDict']]] = None,
+            scope: pulumi.Input[Optional[_builtins.str]] = None) -> 'ServiceAnomaliesV2':
         """
         Get an existing ServiceAnomaliesV2 resource's state with the given name, id, and optional extra
         properties used to qualify the lookup.

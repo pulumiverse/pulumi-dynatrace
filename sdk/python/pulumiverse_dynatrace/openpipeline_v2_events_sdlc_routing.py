@@ -21,7 +21,7 @@ __all__ = ['OpenpipelineV2EventsSdlcRoutingArgs', 'OpenpipelineV2EventsSdlcRouti
 @pulumi.input_type
 class OpenpipelineV2EventsSdlcRoutingArgs:
     def __init__(__self__, *,
-                 routing_entries: Optional[pulumi.Input['OpenpipelineV2EventsSdlcRoutingRoutingEntriesArgs']] = None):
+                 routing_entries: pulumi.Input[Optional['OpenpipelineV2EventsSdlcRoutingRoutingEntriesArgs']] = None):
         """
         The set of arguments for constructing a OpenpipelineV2EventsSdlcRouting resource.
 
@@ -32,21 +32,21 @@ class OpenpipelineV2EventsSdlcRoutingArgs:
 
     @_builtins.property
     @pulumi.getter(name="routingEntries")
-    def routing_entries(self) -> Optional[pulumi.Input['OpenpipelineV2EventsSdlcRoutingRoutingEntriesArgs']]:
+    def routing_entries(self) -> pulumi.Input[Optional['OpenpipelineV2EventsSdlcRoutingRoutingEntriesArgs']]:
         """
         Routing for pipelines
         """
         return pulumi.get(self, "routing_entries")
 
     @routing_entries.setter
-    def routing_entries(self, value: Optional[pulumi.Input['OpenpipelineV2EventsSdlcRoutingRoutingEntriesArgs']]):
+    def routing_entries(self, value: pulumi.Input[Optional['OpenpipelineV2EventsSdlcRoutingRoutingEntriesArgs']]):
         pulumi.set(self, "routing_entries", value)
 
 
 @pulumi.input_type
 class _OpenpipelineV2EventsSdlcRoutingState:
     def __init__(__self__, *,
-                 routing_entries: Optional[pulumi.Input['OpenpipelineV2EventsSdlcRoutingRoutingEntriesArgs']] = None):
+                 routing_entries: pulumi.Input[Optional['OpenpipelineV2EventsSdlcRoutingRoutingEntriesArgs']] = None):
         """
         Input properties used for looking up and filtering OpenpipelineV2EventsSdlcRouting resources.
 
@@ -57,14 +57,14 @@ class _OpenpipelineV2EventsSdlcRoutingState:
 
     @_builtins.property
     @pulumi.getter(name="routingEntries")
-    def routing_entries(self) -> Optional[pulumi.Input['OpenpipelineV2EventsSdlcRoutingRoutingEntriesArgs']]:
+    def routing_entries(self) -> pulumi.Input[Optional['OpenpipelineV2EventsSdlcRoutingRoutingEntriesArgs']]:
         """
         Routing for pipelines
         """
         return pulumi.get(self, "routing_entries")
 
     @routing_entries.setter
-    def routing_entries(self, value: Optional[pulumi.Input['OpenpipelineV2EventsSdlcRoutingRoutingEntriesArgs']]):
+    def routing_entries(self, value: pulumi.Input[Optional['OpenpipelineV2EventsSdlcRoutingRoutingEntriesArgs']]):
         pulumi.set(self, "routing_entries", value)
 
 
@@ -74,7 +74,7 @@ class OpenpipelineV2EventsSdlcRouting(pulumi.CustomResource):
     def __init__(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 routing_entries: Optional[pulumi.Input[Union['OpenpipelineV2EventsSdlcRoutingRoutingEntriesArgs', 'OpenpipelineV2EventsSdlcRoutingRoutingEntriesArgsDict']]] = None,
+                 routing_entries: pulumi.Input[Optional[Union['OpenpipelineV2EventsSdlcRoutingRoutingEntriesArgs', 'OpenpipelineV2EventsSdlcRoutingRoutingEntriesArgsDict']]] = None,
                  __props__=None):
         """
         !> Deploying an OpenPipeline routing configuration will overwrite the existing one of the same kind, causing any manual changes made in the web UI or other routing configurations managed by Terraform or Monaco to be lost. Ensure all routing configurations of the same kind are defined within a single Terraform or Monaco configuration to prevent data loss.
@@ -171,7 +171,7 @@ class OpenpipelineV2EventsSdlcRouting(pulumi.CustomResource):
     def _internal_init(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 routing_entries: Optional[pulumi.Input[Union['OpenpipelineV2EventsSdlcRoutingRoutingEntriesArgs', 'OpenpipelineV2EventsSdlcRoutingRoutingEntriesArgsDict']]] = None,
+                 routing_entries: pulumi.Input[Optional[Union['OpenpipelineV2EventsSdlcRoutingRoutingEntriesArgs', 'OpenpipelineV2EventsSdlcRoutingRoutingEntriesArgsDict']]] = None,
                  __props__=None):
         opts = pulumi.ResourceOptions.merge(_utilities.get_resource_opts_defaults(), opts)
         if not isinstance(opts, pulumi.ResourceOptions):
@@ -192,7 +192,7 @@ class OpenpipelineV2EventsSdlcRouting(pulumi.CustomResource):
     def get(resource_name: str,
             id: pulumi.Input[str],
             opts: Optional[pulumi.ResourceOptions] = None,
-            routing_entries: Optional[pulumi.Input[Union['OpenpipelineV2EventsSdlcRoutingRoutingEntriesArgs', 'OpenpipelineV2EventsSdlcRoutingRoutingEntriesArgsDict']]] = None) -> 'OpenpipelineV2EventsSdlcRouting':
+            routing_entries: pulumi.Input[Optional[Union['OpenpipelineV2EventsSdlcRoutingRoutingEntriesArgs', 'OpenpipelineV2EventsSdlcRoutingRoutingEntriesArgsDict']]] = None) -> 'OpenpipelineV2EventsSdlcRouting':
         """
         Get an existing OpenpipelineV2EventsSdlcRouting resource's state with the given name, id, and optional extra
         properties used to qualify the lookup.

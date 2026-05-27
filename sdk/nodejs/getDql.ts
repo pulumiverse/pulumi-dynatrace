@@ -223,35 +223,35 @@ export interface GetDqlOutputArgs {
     /**
      * In case not specified in the DQL string, the sampling ratio defined here is applied. Note that this is only applicable to log queries
      */
-    defaultSamplingRatio?: pulumi.Input<number>;
+    defaultSamplingRatio?: pulumi.Input<number | undefined>;
     /**
      * Limit in gigabytes for the amount data that will be scanned during read
      */
-    defaultScanLimitGbytes?: pulumi.Input<number>;
+    defaultScanLimitGbytes?: pulumi.Input<number | undefined>;
     /**
      * The query timeframe 'end' timestamp in ISO-8601 or RFC3339 format. If the timeframe 'start' parameter is missing, the whole timeframe is ignored. Note that if a timeframe is specified within the query string (query) then it has precedence over this query request parameter
      */
-    defaultTimeframeEnd?: pulumi.Input<string>;
+    defaultTimeframeEnd?: pulumi.Input<string | undefined>;
     /**
      * The query timeframe 'start' timestamp in ISO-8601 or RFC3339 format. If the timeframe 'end' parameter is missing, the whole timeframe is ignored. Note that if a timeframe is specified within the query string (query) then it has precedence over this query request parameter
      */
-    defaultTimeframeStart?: pulumi.Input<string>;
+    defaultTimeframeStart?: pulumi.Input<string | undefined>;
     /**
      * The query will stop reading data after reaching the fetch-timeout. The query execution will continue, providing a partial result based on the read data
      */
-    fetchTimeoutSeconds?: pulumi.Input<number>;
+    fetchTimeoutSeconds?: pulumi.Input<number | undefined>;
     /**
      * The query locale. If none specified, then a language/country neutral locale is chosen. The input values take the ISO-639 Language code with an optional ISO-3166 country code appended to it with an underscore. For instance, both values are valid 'en' or 'en_US'
      */
-    locale?: pulumi.Input<string>;
+    locale?: pulumi.Input<string | undefined>;
     /**
      * The maximum number of result bytes that this query will return
      */
-    maxResultBytes?: pulumi.Input<number>;
+    maxResultBytes?: pulumi.Input<number | undefined>;
     /**
      * The maximum number of result records that this query will return
      */
-    maxResultRecords?: pulumi.Input<number>;
+    maxResultRecords?: pulumi.Input<number | undefined>;
     /**
      * example: fetch events | filter event.type == "davis" AND davis.status != "CLOSED" | fields timestamp, davis.title, davis.underMaintenance, davis.status | sort timestamp | limit 10
      */
@@ -259,5 +259,5 @@ export interface GetDqlOutputArgs {
     /**
      * The query timezone. If none is specified, UTC is used as fallback. The list of valid input values matches that of the IANA Time Zone Database (TZDB). It accepts values in their canonical names like 'Europe/Paris', the abbreviated version like CET or the UTC offset format like '+01:00'
      */
-    timezone?: pulumi.Input<string>;
+    timezone?: pulumi.Input<string | undefined>;
 }

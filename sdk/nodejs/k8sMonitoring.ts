@@ -146,41 +146,41 @@ export interface K8sMonitoringState {
     /**
      * Monitor Kubernetes namespaces, services, workloads, and pods
      */
-    cloudApplicationPipelineEnabled?: pulumi.Input<boolean>;
+    cloudApplicationPipelineEnabled?: pulumi.Input<boolean | undefined>;
     /**
      * Define Kubernetes event filters to ingest events into your environment. For more details, see the [documentation](https://dt-url.net/2201p0u).
      */
-    eventPatterns?: pulumi.Input<inputs.K8sMonitoringEventPatterns>;
+    eventPatterns?: pulumi.Input<inputs.K8sMonitoringEventPatterns | undefined>;
     /**
      * All events are monitored unless event filters are specified. All ingested events are subject to licensing by default.
      */
-    eventProcessingActive?: pulumi.Input<boolean>;
+    eventProcessingActive?: pulumi.Input<boolean | undefined>;
     /**
      * Include only events specified by Events Field Selectors
      */
-    filterEvents?: pulumi.Input<boolean>;
+    filterEvents?: pulumi.Input<boolean | undefined>;
     /**
      * For a list of included events, see the [documentation](https://dt-url.net/l61d02no).
      */
-    includeAllFdiEvents?: pulumi.Input<boolean>;
+    includeAllFdiEvents?: pulumi.Input<boolean | undefined>;
     /**
      * Workload and node resource metrics are based on a subset of cAdvisor metrics. Depending on your Kubernetes cluster size, this may increase the CPU/memory resource consumption of your ActiveGate.
      */
-    openMetricsBuiltinEnabled?: pulumi.Input<boolean>;
+    openMetricsBuiltinEnabled?: pulumi.Input<boolean | undefined>;
     /**
      * For annotation guidance, see the [documentation](https://dt-url.net/g42i0ppw).
      */
-    openMetricsPipelineEnabled?: pulumi.Input<boolean>;
+    openMetricsPipelineEnabled?: pulumi.Input<boolean | undefined>;
     /**
      * To enable dashboards and alerts, add the Kubernetes persistent volume claims extension to your environment.
      *
      * @deprecated This attribute is deprecated, see [this community guide](https://dt-url.net/v2200u4m) for details.
      */
-    pvcMonitoringEnabled?: pulumi.Input<boolean>;
+    pvcMonitoringEnabled?: pulumi.Input<boolean | undefined>;
     /**
      * The scope of this setting (KUBERNETES_CLUSTER). Omit this property if you want to cover the whole environment.
      */
-    scope?: pulumi.Input<string>;
+    scope?: pulumi.Input<string | undefined>;
 }
 
 /**
@@ -194,7 +194,7 @@ export interface K8sMonitoringArgs {
     /**
      * Define Kubernetes event filters to ingest events into your environment. For more details, see the [documentation](https://dt-url.net/2201p0u).
      */
-    eventPatterns?: pulumi.Input<inputs.K8sMonitoringEventPatterns>;
+    eventPatterns?: pulumi.Input<inputs.K8sMonitoringEventPatterns | undefined>;
     /**
      * All events are monitored unless event filters are specified. All ingested events are subject to licensing by default.
      */
@@ -202,11 +202,11 @@ export interface K8sMonitoringArgs {
     /**
      * Include only events specified by Events Field Selectors
      */
-    filterEvents?: pulumi.Input<boolean>;
+    filterEvents?: pulumi.Input<boolean | undefined>;
     /**
      * For a list of included events, see the [documentation](https://dt-url.net/l61d02no).
      */
-    includeAllFdiEvents?: pulumi.Input<boolean>;
+    includeAllFdiEvents?: pulumi.Input<boolean | undefined>;
     /**
      * Workload and node resource metrics are based on a subset of cAdvisor metrics. Depending on your Kubernetes cluster size, this may increase the CPU/memory resource consumption of your ActiveGate.
      */
@@ -220,9 +220,9 @@ export interface K8sMonitoringArgs {
      *
      * @deprecated This attribute is deprecated, see [this community guide](https://dt-url.net/v2200u4m) for details.
      */
-    pvcMonitoringEnabled?: pulumi.Input<boolean>;
+    pvcMonitoringEnabled?: pulumi.Input<boolean | undefined>;
     /**
      * The scope of this setting (KUBERNETES_CLUSTER). Omit this property if you want to cover the whole environment.
      */
-    scope?: pulumi.Input<string>;
+    scope?: pulumi.Input<string | undefined>;
 }

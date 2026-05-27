@@ -25,16 +25,16 @@ class OsServicesArgs:
                  enabled: pulumi.Input[_builtins.bool],
                  monitoring: pulumi.Input[_builtins.bool],
                  system: pulumi.Input[_builtins.str],
-                 alert_activation_duration: Optional[pulumi.Input[_builtins.int]] = None,
-                 detection_conditions_linux: Optional[pulumi.Input['OsServicesDetectionConditionsLinuxArgs']] = None,
-                 detection_conditions_windows: Optional[pulumi.Input['OsServicesDetectionConditionsWindowsArgs']] = None,
-                 insert_after: Optional[pulumi.Input[_builtins.str]] = None,
-                 metadata: Optional[pulumi.Input['OsServicesMetadataArgs']] = None,
-                 name: Optional[pulumi.Input[_builtins.str]] = None,
-                 not_installed_alerting: Optional[pulumi.Input[_builtins.bool]] = None,
-                 scope: Optional[pulumi.Input[_builtins.str]] = None,
-                 status_condition_linux: Optional[pulumi.Input[_builtins.str]] = None,
-                 status_condition_windows: Optional[pulumi.Input[_builtins.str]] = None):
+                 alert_activation_duration: pulumi.Input[Optional[_builtins.int]] = None,
+                 detection_conditions_linux: pulumi.Input[Optional['OsServicesDetectionConditionsLinuxArgs']] = None,
+                 detection_conditions_windows: pulumi.Input[Optional['OsServicesDetectionConditionsWindowsArgs']] = None,
+                 insert_after: pulumi.Input[Optional[_builtins.str]] = None,
+                 metadata: pulumi.Input[Optional['OsServicesMetadataArgs']] = None,
+                 name: pulumi.Input[Optional[_builtins.str]] = None,
+                 not_installed_alerting: pulumi.Input[Optional[_builtins.bool]] = None,
+                 scope: pulumi.Input[Optional[_builtins.str]] = None,
+                 status_condition_linux: pulumi.Input[Optional[_builtins.str]] = None,
+                 status_condition_windows: pulumi.Input[Optional[_builtins.str]] = None):
         """
         The set of arguments for constructing a OsServices resource.
 
@@ -144,115 +144,115 @@ class OsServicesArgs:
 
     @_builtins.property
     @pulumi.getter(name="alertActivationDuration")
-    def alert_activation_duration(self) -> Optional[pulumi.Input[_builtins.int]]:
+    def alert_activation_duration(self) -> pulumi.Input[Optional[_builtins.int]]:
         """
         The number of **10-second measurement cycles** before alerting is triggered
         """
         return pulumi.get(self, "alert_activation_duration")
 
     @alert_activation_duration.setter
-    def alert_activation_duration(self, value: Optional[pulumi.Input[_builtins.int]]):
+    def alert_activation_duration(self, value: pulumi.Input[Optional[_builtins.int]]):
         pulumi.set(self, "alert_activation_duration", value)
 
     @_builtins.property
     @pulumi.getter(name="detectionConditionsLinux")
-    def detection_conditions_linux(self) -> Optional[pulumi.Input['OsServicesDetectionConditionsLinuxArgs']]:
+    def detection_conditions_linux(self) -> pulumi.Input[Optional['OsServicesDetectionConditionsLinuxArgs']]:
         """
         Detection rules
         """
         return pulumi.get(self, "detection_conditions_linux")
 
     @detection_conditions_linux.setter
-    def detection_conditions_linux(self, value: Optional[pulumi.Input['OsServicesDetectionConditionsLinuxArgs']]):
+    def detection_conditions_linux(self, value: pulumi.Input[Optional['OsServicesDetectionConditionsLinuxArgs']]):
         pulumi.set(self, "detection_conditions_linux", value)
 
     @_builtins.property
     @pulumi.getter(name="detectionConditionsWindows")
-    def detection_conditions_windows(self) -> Optional[pulumi.Input['OsServicesDetectionConditionsWindowsArgs']]:
+    def detection_conditions_windows(self) -> pulumi.Input[Optional['OsServicesDetectionConditionsWindowsArgs']]:
         """
         Detection rules
         """
         return pulumi.get(self, "detection_conditions_windows")
 
     @detection_conditions_windows.setter
-    def detection_conditions_windows(self, value: Optional[pulumi.Input['OsServicesDetectionConditionsWindowsArgs']]):
+    def detection_conditions_windows(self, value: pulumi.Input[Optional['OsServicesDetectionConditionsWindowsArgs']]):
         pulumi.set(self, "detection_conditions_windows", value)
 
     @_builtins.property
     @pulumi.getter(name="insertAfter")
-    def insert_after(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def insert_after(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Because this resource allows for ordering you may specify the ID of the resource instance that comes before this instance regarding order. If not specified when creating the setting will be added to the end of the list. If not specified during update the order will remain untouched
         """
         return pulumi.get(self, "insert_after")
 
     @insert_after.setter
-    def insert_after(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def insert_after(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "insert_after", value)
 
     @_builtins.property
     @pulumi.getter
-    def metadata(self) -> Optional[pulumi.Input['OsServicesMetadataArgs']]:
+    def metadata(self) -> pulumi.Input[Optional['OsServicesMetadataArgs']]:
         """
         Set of additional key-value properties to be attached to the triggered event. You can retrieve the available property keys using the [Events API v2](https://dt-url.net/9622g1w). Additionally any Host resource attribute can be dynamically substituted (agent 1.325+).
         """
         return pulumi.get(self, "metadata")
 
     @metadata.setter
-    def metadata(self, value: Optional[pulumi.Input['OsServicesMetadataArgs']]):
+    def metadata(self, value: pulumi.Input[Optional['OsServicesMetadataArgs']]):
         pulumi.set(self, "metadata", value)
 
     @_builtins.property
     @pulumi.getter
-    def name(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def name(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Rule name
         """
         return pulumi.get(self, "name")
 
     @name.setter
-    def name(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def name(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "name", value)
 
     @_builtins.property
     @pulumi.getter(name="notInstalledAlerting")
-    def not_installed_alerting(self) -> Optional[pulumi.Input[_builtins.bool]]:
+    def not_installed_alerting(self) -> pulumi.Input[Optional[_builtins.bool]]:
         """
         By default, Dynatrace does not alert if the service is not installed. Toggle the switch to enable or disable this feature
         """
         return pulumi.get(self, "not_installed_alerting")
 
     @not_installed_alerting.setter
-    def not_installed_alerting(self, value: Optional[pulumi.Input[_builtins.bool]]):
+    def not_installed_alerting(self, value: pulumi.Input[Optional[_builtins.bool]]):
         pulumi.set(self, "not_installed_alerting", value)
 
     @_builtins.property
     @pulumi.getter
-    def scope(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def scope(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The scope of this setting (HOST, HOST_GROUP). Omit this property if you want to cover the whole environment.
         """
         return pulumi.get(self, "scope")
 
     @scope.setter
-    def scope(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def scope(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "scope", value)
 
     @_builtins.property
     @pulumi.getter(name="statusConditionLinux")
-    def status_condition_linux(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def status_condition_linux(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         This string has to match a required format. See [OS services monitoring](https://dt-url.net/vl03xzk).
         """
         return pulumi.get(self, "status_condition_linux")
 
     @status_condition_linux.setter
-    def status_condition_linux(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def status_condition_linux(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "status_condition_linux", value)
 
     @_builtins.property
     @pulumi.getter(name="statusConditionWindows")
-    def status_condition_windows(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def status_condition_windows(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         This string has to match a required format. See [OS services monitoring](https://dt-url.net/vl03xzk).
 
@@ -275,27 +275,27 @@ class OsServicesArgs:
         return pulumi.get(self, "status_condition_windows")
 
     @status_condition_windows.setter
-    def status_condition_windows(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def status_condition_windows(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "status_condition_windows", value)
 
 
 @pulumi.input_type
 class _OsServicesState:
     def __init__(__self__, *,
-                 alert_activation_duration: Optional[pulumi.Input[_builtins.int]] = None,
-                 alerting: Optional[pulumi.Input[_builtins.bool]] = None,
-                 detection_conditions_linux: Optional[pulumi.Input['OsServicesDetectionConditionsLinuxArgs']] = None,
-                 detection_conditions_windows: Optional[pulumi.Input['OsServicesDetectionConditionsWindowsArgs']] = None,
-                 enabled: Optional[pulumi.Input[_builtins.bool]] = None,
-                 insert_after: Optional[pulumi.Input[_builtins.str]] = None,
-                 metadata: Optional[pulumi.Input['OsServicesMetadataArgs']] = None,
-                 monitoring: Optional[pulumi.Input[_builtins.bool]] = None,
-                 name: Optional[pulumi.Input[_builtins.str]] = None,
-                 not_installed_alerting: Optional[pulumi.Input[_builtins.bool]] = None,
-                 scope: Optional[pulumi.Input[_builtins.str]] = None,
-                 status_condition_linux: Optional[pulumi.Input[_builtins.str]] = None,
-                 status_condition_windows: Optional[pulumi.Input[_builtins.str]] = None,
-                 system: Optional[pulumi.Input[_builtins.str]] = None):
+                 alert_activation_duration: pulumi.Input[Optional[_builtins.int]] = None,
+                 alerting: pulumi.Input[Optional[_builtins.bool]] = None,
+                 detection_conditions_linux: pulumi.Input[Optional['OsServicesDetectionConditionsLinuxArgs']] = None,
+                 detection_conditions_windows: pulumi.Input[Optional['OsServicesDetectionConditionsWindowsArgs']] = None,
+                 enabled: pulumi.Input[Optional[_builtins.bool]] = None,
+                 insert_after: pulumi.Input[Optional[_builtins.str]] = None,
+                 metadata: pulumi.Input[Optional['OsServicesMetadataArgs']] = None,
+                 monitoring: pulumi.Input[Optional[_builtins.bool]] = None,
+                 name: pulumi.Input[Optional[_builtins.str]] = None,
+                 not_installed_alerting: pulumi.Input[Optional[_builtins.bool]] = None,
+                 scope: pulumi.Input[Optional[_builtins.str]] = None,
+                 status_condition_linux: pulumi.Input[Optional[_builtins.str]] = None,
+                 status_condition_windows: pulumi.Input[Optional[_builtins.str]] = None,
+                 system: pulumi.Input[Optional[_builtins.str]] = None):
         """
         Input properties used for looking up and filtering OsServices resources.
 
@@ -361,151 +361,151 @@ class _OsServicesState:
 
     @_builtins.property
     @pulumi.getter(name="alertActivationDuration")
-    def alert_activation_duration(self) -> Optional[pulumi.Input[_builtins.int]]:
+    def alert_activation_duration(self) -> pulumi.Input[Optional[_builtins.int]]:
         """
         The number of **10-second measurement cycles** before alerting is triggered
         """
         return pulumi.get(self, "alert_activation_duration")
 
     @alert_activation_duration.setter
-    def alert_activation_duration(self, value: Optional[pulumi.Input[_builtins.int]]):
+    def alert_activation_duration(self, value: pulumi.Input[Optional[_builtins.int]]):
         pulumi.set(self, "alert_activation_duration", value)
 
     @_builtins.property
     @pulumi.getter
-    def alerting(self) -> Optional[pulumi.Input[_builtins.bool]]:
+    def alerting(self) -> pulumi.Input[Optional[_builtins.bool]]:
         """
         Toggle the switch in order to enable or disable alerting for this policy
         """
         return pulumi.get(self, "alerting")
 
     @alerting.setter
-    def alerting(self, value: Optional[pulumi.Input[_builtins.bool]]):
+    def alerting(self, value: pulumi.Input[Optional[_builtins.bool]]):
         pulumi.set(self, "alerting", value)
 
     @_builtins.property
     @pulumi.getter(name="detectionConditionsLinux")
-    def detection_conditions_linux(self) -> Optional[pulumi.Input['OsServicesDetectionConditionsLinuxArgs']]:
+    def detection_conditions_linux(self) -> pulumi.Input[Optional['OsServicesDetectionConditionsLinuxArgs']]:
         """
         Detection rules
         """
         return pulumi.get(self, "detection_conditions_linux")
 
     @detection_conditions_linux.setter
-    def detection_conditions_linux(self, value: Optional[pulumi.Input['OsServicesDetectionConditionsLinuxArgs']]):
+    def detection_conditions_linux(self, value: pulumi.Input[Optional['OsServicesDetectionConditionsLinuxArgs']]):
         pulumi.set(self, "detection_conditions_linux", value)
 
     @_builtins.property
     @pulumi.getter(name="detectionConditionsWindows")
-    def detection_conditions_windows(self) -> Optional[pulumi.Input['OsServicesDetectionConditionsWindowsArgs']]:
+    def detection_conditions_windows(self) -> pulumi.Input[Optional['OsServicesDetectionConditionsWindowsArgs']]:
         """
         Detection rules
         """
         return pulumi.get(self, "detection_conditions_windows")
 
     @detection_conditions_windows.setter
-    def detection_conditions_windows(self, value: Optional[pulumi.Input['OsServicesDetectionConditionsWindowsArgs']]):
+    def detection_conditions_windows(self, value: pulumi.Input[Optional['OsServicesDetectionConditionsWindowsArgs']]):
         pulumi.set(self, "detection_conditions_windows", value)
 
     @_builtins.property
     @pulumi.getter
-    def enabled(self) -> Optional[pulumi.Input[_builtins.bool]]:
+    def enabled(self) -> pulumi.Input[Optional[_builtins.bool]]:
         """
         This setting is enabled (`true`) or disabled (`false`)
         """
         return pulumi.get(self, "enabled")
 
     @enabled.setter
-    def enabled(self, value: Optional[pulumi.Input[_builtins.bool]]):
+    def enabled(self, value: pulumi.Input[Optional[_builtins.bool]]):
         pulumi.set(self, "enabled", value)
 
     @_builtins.property
     @pulumi.getter(name="insertAfter")
-    def insert_after(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def insert_after(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Because this resource allows for ordering you may specify the ID of the resource instance that comes before this instance regarding order. If not specified when creating the setting will be added to the end of the list. If not specified during update the order will remain untouched
         """
         return pulumi.get(self, "insert_after")
 
     @insert_after.setter
-    def insert_after(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def insert_after(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "insert_after", value)
 
     @_builtins.property
     @pulumi.getter
-    def metadata(self) -> Optional[pulumi.Input['OsServicesMetadataArgs']]:
+    def metadata(self) -> pulumi.Input[Optional['OsServicesMetadataArgs']]:
         """
         Set of additional key-value properties to be attached to the triggered event. You can retrieve the available property keys using the [Events API v2](https://dt-url.net/9622g1w). Additionally any Host resource attribute can be dynamically substituted (agent 1.325+).
         """
         return pulumi.get(self, "metadata")
 
     @metadata.setter
-    def metadata(self, value: Optional[pulumi.Input['OsServicesMetadataArgs']]):
+    def metadata(self, value: pulumi.Input[Optional['OsServicesMetadataArgs']]):
         pulumi.set(self, "metadata", value)
 
     @_builtins.property
     @pulumi.getter
-    def monitoring(self) -> Optional[pulumi.Input[_builtins.bool]]:
+    def monitoring(self) -> pulumi.Input[Optional[_builtins.bool]]:
         """
         Toggle the switch in order to enable or disable availability metric monitoring for this policy. Availability metrics produce custom metrics. Refer to [documentation](https://dt-url.net/vl03xzk) for consumption examples. Each monitored service consumes one custom metric.
         """
         return pulumi.get(self, "monitoring")
 
     @monitoring.setter
-    def monitoring(self, value: Optional[pulumi.Input[_builtins.bool]]):
+    def monitoring(self, value: pulumi.Input[Optional[_builtins.bool]]):
         pulumi.set(self, "monitoring", value)
 
     @_builtins.property
     @pulumi.getter
-    def name(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def name(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Rule name
         """
         return pulumi.get(self, "name")
 
     @name.setter
-    def name(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def name(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "name", value)
 
     @_builtins.property
     @pulumi.getter(name="notInstalledAlerting")
-    def not_installed_alerting(self) -> Optional[pulumi.Input[_builtins.bool]]:
+    def not_installed_alerting(self) -> pulumi.Input[Optional[_builtins.bool]]:
         """
         By default, Dynatrace does not alert if the service is not installed. Toggle the switch to enable or disable this feature
         """
         return pulumi.get(self, "not_installed_alerting")
 
     @not_installed_alerting.setter
-    def not_installed_alerting(self, value: Optional[pulumi.Input[_builtins.bool]]):
+    def not_installed_alerting(self, value: pulumi.Input[Optional[_builtins.bool]]):
         pulumi.set(self, "not_installed_alerting", value)
 
     @_builtins.property
     @pulumi.getter
-    def scope(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def scope(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The scope of this setting (HOST, HOST_GROUP). Omit this property if you want to cover the whole environment.
         """
         return pulumi.get(self, "scope")
 
     @scope.setter
-    def scope(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def scope(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "scope", value)
 
     @_builtins.property
     @pulumi.getter(name="statusConditionLinux")
-    def status_condition_linux(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def status_condition_linux(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         This string has to match a required format. See [OS services monitoring](https://dt-url.net/vl03xzk).
         """
         return pulumi.get(self, "status_condition_linux")
 
     @status_condition_linux.setter
-    def status_condition_linux(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def status_condition_linux(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "status_condition_linux", value)
 
     @_builtins.property
     @pulumi.getter(name="statusConditionWindows")
-    def status_condition_windows(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def status_condition_windows(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         This string has to match a required format. See [OS services monitoring](https://dt-url.net/vl03xzk).
 
@@ -528,19 +528,19 @@ class _OsServicesState:
         return pulumi.get(self, "status_condition_windows")
 
     @status_condition_windows.setter
-    def status_condition_windows(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def status_condition_windows(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "status_condition_windows", value)
 
     @_builtins.property
     @pulumi.getter
-    def system(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def system(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Possible Values: `LINUX`, `WINDOWS`
         """
         return pulumi.get(self, "system")
 
     @system.setter
-    def system(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def system(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "system", value)
 
 
@@ -550,20 +550,20 @@ class OsServices(pulumi.CustomResource):
     def __init__(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 alert_activation_duration: Optional[pulumi.Input[_builtins.int]] = None,
-                 alerting: Optional[pulumi.Input[_builtins.bool]] = None,
-                 detection_conditions_linux: Optional[pulumi.Input[Union['OsServicesDetectionConditionsLinuxArgs', 'OsServicesDetectionConditionsLinuxArgsDict']]] = None,
-                 detection_conditions_windows: Optional[pulumi.Input[Union['OsServicesDetectionConditionsWindowsArgs', 'OsServicesDetectionConditionsWindowsArgsDict']]] = None,
-                 enabled: Optional[pulumi.Input[_builtins.bool]] = None,
-                 insert_after: Optional[pulumi.Input[_builtins.str]] = None,
-                 metadata: Optional[pulumi.Input[Union['OsServicesMetadataArgs', 'OsServicesMetadataArgsDict']]] = None,
-                 monitoring: Optional[pulumi.Input[_builtins.bool]] = None,
-                 name: Optional[pulumi.Input[_builtins.str]] = None,
-                 not_installed_alerting: Optional[pulumi.Input[_builtins.bool]] = None,
-                 scope: Optional[pulumi.Input[_builtins.str]] = None,
-                 status_condition_linux: Optional[pulumi.Input[_builtins.str]] = None,
-                 status_condition_windows: Optional[pulumi.Input[_builtins.str]] = None,
-                 system: Optional[pulumi.Input[_builtins.str]] = None,
+                 alert_activation_duration: pulumi.Input[Optional[_builtins.int]] = None,
+                 alerting: pulumi.Input[Optional[_builtins.bool]] = None,
+                 detection_conditions_linux: pulumi.Input[Optional[Union['OsServicesDetectionConditionsLinuxArgs', 'OsServicesDetectionConditionsLinuxArgsDict']]] = None,
+                 detection_conditions_windows: pulumi.Input[Optional[Union['OsServicesDetectionConditionsWindowsArgs', 'OsServicesDetectionConditionsWindowsArgsDict']]] = None,
+                 enabled: pulumi.Input[Optional[_builtins.bool]] = None,
+                 insert_after: pulumi.Input[Optional[_builtins.str]] = None,
+                 metadata: pulumi.Input[Optional[Union['OsServicesMetadataArgs', 'OsServicesMetadataArgsDict']]] = None,
+                 monitoring: pulumi.Input[Optional[_builtins.bool]] = None,
+                 name: pulumi.Input[Optional[_builtins.str]] = None,
+                 not_installed_alerting: pulumi.Input[Optional[_builtins.bool]] = None,
+                 scope: pulumi.Input[Optional[_builtins.str]] = None,
+                 status_condition_linux: pulumi.Input[Optional[_builtins.str]] = None,
+                 status_condition_windows: pulumi.Input[Optional[_builtins.str]] = None,
+                 system: pulumi.Input[Optional[_builtins.str]] = None,
                  __props__=None):
         """
         > This resource requires the API token scopes **Read settings** (`settings.read`) and **Write settings** (`settings.write`)
@@ -651,20 +651,20 @@ class OsServices(pulumi.CustomResource):
     def _internal_init(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 alert_activation_duration: Optional[pulumi.Input[_builtins.int]] = None,
-                 alerting: Optional[pulumi.Input[_builtins.bool]] = None,
-                 detection_conditions_linux: Optional[pulumi.Input[Union['OsServicesDetectionConditionsLinuxArgs', 'OsServicesDetectionConditionsLinuxArgsDict']]] = None,
-                 detection_conditions_windows: Optional[pulumi.Input[Union['OsServicesDetectionConditionsWindowsArgs', 'OsServicesDetectionConditionsWindowsArgsDict']]] = None,
-                 enabled: Optional[pulumi.Input[_builtins.bool]] = None,
-                 insert_after: Optional[pulumi.Input[_builtins.str]] = None,
-                 metadata: Optional[pulumi.Input[Union['OsServicesMetadataArgs', 'OsServicesMetadataArgsDict']]] = None,
-                 monitoring: Optional[pulumi.Input[_builtins.bool]] = None,
-                 name: Optional[pulumi.Input[_builtins.str]] = None,
-                 not_installed_alerting: Optional[pulumi.Input[_builtins.bool]] = None,
-                 scope: Optional[pulumi.Input[_builtins.str]] = None,
-                 status_condition_linux: Optional[pulumi.Input[_builtins.str]] = None,
-                 status_condition_windows: Optional[pulumi.Input[_builtins.str]] = None,
-                 system: Optional[pulumi.Input[_builtins.str]] = None,
+                 alert_activation_duration: pulumi.Input[Optional[_builtins.int]] = None,
+                 alerting: pulumi.Input[Optional[_builtins.bool]] = None,
+                 detection_conditions_linux: pulumi.Input[Optional[Union['OsServicesDetectionConditionsLinuxArgs', 'OsServicesDetectionConditionsLinuxArgsDict']]] = None,
+                 detection_conditions_windows: pulumi.Input[Optional[Union['OsServicesDetectionConditionsWindowsArgs', 'OsServicesDetectionConditionsWindowsArgsDict']]] = None,
+                 enabled: pulumi.Input[Optional[_builtins.bool]] = None,
+                 insert_after: pulumi.Input[Optional[_builtins.str]] = None,
+                 metadata: pulumi.Input[Optional[Union['OsServicesMetadataArgs', 'OsServicesMetadataArgsDict']]] = None,
+                 monitoring: pulumi.Input[Optional[_builtins.bool]] = None,
+                 name: pulumi.Input[Optional[_builtins.str]] = None,
+                 not_installed_alerting: pulumi.Input[Optional[_builtins.bool]] = None,
+                 scope: pulumi.Input[Optional[_builtins.str]] = None,
+                 status_condition_linux: pulumi.Input[Optional[_builtins.str]] = None,
+                 status_condition_windows: pulumi.Input[Optional[_builtins.str]] = None,
+                 system: pulumi.Input[Optional[_builtins.str]] = None,
                  __props__=None):
         opts = pulumi.ResourceOptions.merge(_utilities.get_resource_opts_defaults(), opts)
         if not isinstance(opts, pulumi.ResourceOptions):
@@ -706,20 +706,20 @@ class OsServices(pulumi.CustomResource):
     def get(resource_name: str,
             id: pulumi.Input[str],
             opts: Optional[pulumi.ResourceOptions] = None,
-            alert_activation_duration: Optional[pulumi.Input[_builtins.int]] = None,
-            alerting: Optional[pulumi.Input[_builtins.bool]] = None,
-            detection_conditions_linux: Optional[pulumi.Input[Union['OsServicesDetectionConditionsLinuxArgs', 'OsServicesDetectionConditionsLinuxArgsDict']]] = None,
-            detection_conditions_windows: Optional[pulumi.Input[Union['OsServicesDetectionConditionsWindowsArgs', 'OsServicesDetectionConditionsWindowsArgsDict']]] = None,
-            enabled: Optional[pulumi.Input[_builtins.bool]] = None,
-            insert_after: Optional[pulumi.Input[_builtins.str]] = None,
-            metadata: Optional[pulumi.Input[Union['OsServicesMetadataArgs', 'OsServicesMetadataArgsDict']]] = None,
-            monitoring: Optional[pulumi.Input[_builtins.bool]] = None,
-            name: Optional[pulumi.Input[_builtins.str]] = None,
-            not_installed_alerting: Optional[pulumi.Input[_builtins.bool]] = None,
-            scope: Optional[pulumi.Input[_builtins.str]] = None,
-            status_condition_linux: Optional[pulumi.Input[_builtins.str]] = None,
-            status_condition_windows: Optional[pulumi.Input[_builtins.str]] = None,
-            system: Optional[pulumi.Input[_builtins.str]] = None) -> 'OsServices':
+            alert_activation_duration: pulumi.Input[Optional[_builtins.int]] = None,
+            alerting: pulumi.Input[Optional[_builtins.bool]] = None,
+            detection_conditions_linux: pulumi.Input[Optional[Union['OsServicesDetectionConditionsLinuxArgs', 'OsServicesDetectionConditionsLinuxArgsDict']]] = None,
+            detection_conditions_windows: pulumi.Input[Optional[Union['OsServicesDetectionConditionsWindowsArgs', 'OsServicesDetectionConditionsWindowsArgsDict']]] = None,
+            enabled: pulumi.Input[Optional[_builtins.bool]] = None,
+            insert_after: pulumi.Input[Optional[_builtins.str]] = None,
+            metadata: pulumi.Input[Optional[Union['OsServicesMetadataArgs', 'OsServicesMetadataArgsDict']]] = None,
+            monitoring: pulumi.Input[Optional[_builtins.bool]] = None,
+            name: pulumi.Input[Optional[_builtins.str]] = None,
+            not_installed_alerting: pulumi.Input[Optional[_builtins.bool]] = None,
+            scope: pulumi.Input[Optional[_builtins.str]] = None,
+            status_condition_linux: pulumi.Input[Optional[_builtins.str]] = None,
+            status_condition_windows: pulumi.Input[Optional[_builtins.str]] = None,
+            system: pulumi.Input[Optional[_builtins.str]] = None) -> 'OsServices':
         """
         Get an existing OsServices resource's state with the given name, id, and optional extra
         properties used to qualify the lookup.

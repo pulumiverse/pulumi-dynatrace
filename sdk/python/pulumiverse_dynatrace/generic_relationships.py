@@ -27,8 +27,8 @@ class GenericRelationshipsArgs:
                  sources: pulumi.Input['GenericRelationshipsSourcesArgs'],
                  to_type: pulumi.Input[_builtins.str],
                  type_of_relation: pulumi.Input[_builtins.str],
-                 from_role: Optional[pulumi.Input[_builtins.str]] = None,
-                 to_role: Optional[pulumi.Input[_builtins.str]] = None):
+                 from_role: pulumi.Input[Optional[_builtins.str]] = None,
+                 to_role: pulumi.Input[Optional[_builtins.str]] = None):
         """
         The set of arguments for constructing a GenericRelationships resource.
 
@@ -126,40 +126,40 @@ class GenericRelationshipsArgs:
 
     @_builtins.property
     @pulumi.getter(name="fromRole")
-    def from_role(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def from_role(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Specify a role for the source entity. If both source and destination type are the same, referring different roles will allow identification of a relationships direction. If role is left blank, any role of the source type is considered for the relationship.
         """
         return pulumi.get(self, "from_role")
 
     @from_role.setter
-    def from_role(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def from_role(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "from_role", value)
 
     @_builtins.property
     @pulumi.getter(name="toRole")
-    def to_role(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def to_role(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Specify a role for the destination entity. If both source and destination type are the same, referring different roles will allow identification of a relationships direction. If role is left blank, any role of the destination type is considered for the relationship.
         """
         return pulumi.get(self, "to_role")
 
     @to_role.setter
-    def to_role(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def to_role(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "to_role", value)
 
 
 @pulumi.input_type
 class _GenericRelationshipsState:
     def __init__(__self__, *,
-                 created_by: Optional[pulumi.Input[_builtins.str]] = None,
-                 enabled: Optional[pulumi.Input[_builtins.bool]] = None,
-                 from_role: Optional[pulumi.Input[_builtins.str]] = None,
-                 from_type: Optional[pulumi.Input[_builtins.str]] = None,
-                 sources: Optional[pulumi.Input['GenericRelationshipsSourcesArgs']] = None,
-                 to_role: Optional[pulumi.Input[_builtins.str]] = None,
-                 to_type: Optional[pulumi.Input[_builtins.str]] = None,
-                 type_of_relation: Optional[pulumi.Input[_builtins.str]] = None):
+                 created_by: pulumi.Input[Optional[_builtins.str]] = None,
+                 enabled: pulumi.Input[Optional[_builtins.bool]] = None,
+                 from_role: pulumi.Input[Optional[_builtins.str]] = None,
+                 from_type: pulumi.Input[Optional[_builtins.str]] = None,
+                 sources: pulumi.Input[Optional['GenericRelationshipsSourcesArgs']] = None,
+                 to_role: pulumi.Input[Optional[_builtins.str]] = None,
+                 to_type: pulumi.Input[Optional[_builtins.str]] = None,
+                 type_of_relation: pulumi.Input[Optional[_builtins.str]] = None):
         """
         Input properties used for looking up and filtering GenericRelationships resources.
 
@@ -191,98 +191,98 @@ class _GenericRelationshipsState:
 
     @_builtins.property
     @pulumi.getter(name="createdBy")
-    def created_by(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def created_by(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The user or extension that created this relationship.
         """
         return pulumi.get(self, "created_by")
 
     @created_by.setter
-    def created_by(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def created_by(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "created_by", value)
 
     @_builtins.property
     @pulumi.getter
-    def enabled(self) -> Optional[pulumi.Input[_builtins.bool]]:
+    def enabled(self) -> pulumi.Input[Optional[_builtins.bool]]:
         """
         This setting is enabled (`true`) or disabled (`false`)
         """
         return pulumi.get(self, "enabled")
 
     @enabled.setter
-    def enabled(self, value: Optional[pulumi.Input[_builtins.bool]]):
+    def enabled(self, value: pulumi.Input[Optional[_builtins.bool]]):
         pulumi.set(self, "enabled", value)
 
     @_builtins.property
     @pulumi.getter(name="fromRole")
-    def from_role(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def from_role(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Specify a role for the source entity. If both source and destination type are the same, referring different roles will allow identification of a relationships direction. If role is left blank, any role of the source type is considered for the relationship.
         """
         return pulumi.get(self, "from_role")
 
     @from_role.setter
-    def from_role(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def from_role(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "from_role", value)
 
     @_builtins.property
     @pulumi.getter(name="fromType")
-    def from_type(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def from_type(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Define an entity type as the source of the relationship.
         """
         return pulumi.get(self, "from_type")
 
     @from_type.setter
-    def from_type(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def from_type(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "from_type", value)
 
     @_builtins.property
     @pulumi.getter
-    def sources(self) -> Optional[pulumi.Input['GenericRelationshipsSourcesArgs']]:
+    def sources(self) -> pulumi.Input[Optional['GenericRelationshipsSourcesArgs']]:
         """
         Specify all sources which should be evaluated for this relationship rule. The relationship is only created when any of the filters match.
         """
         return pulumi.get(self, "sources")
 
     @sources.setter
-    def sources(self, value: Optional[pulumi.Input['GenericRelationshipsSourcesArgs']]):
+    def sources(self, value: pulumi.Input[Optional['GenericRelationshipsSourcesArgs']]):
         pulumi.set(self, "sources", value)
 
     @_builtins.property
     @pulumi.getter(name="toRole")
-    def to_role(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def to_role(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Specify a role for the destination entity. If both source and destination type are the same, referring different roles will allow identification of a relationships direction. If role is left blank, any role of the destination type is considered for the relationship.
         """
         return pulumi.get(self, "to_role")
 
     @to_role.setter
-    def to_role(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def to_role(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "to_role", value)
 
     @_builtins.property
     @pulumi.getter(name="toType")
-    def to_type(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def to_type(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Define an entity type as the destination of the relationship. You can choose the same type as the source type. In this case you also may assign different roles for source and destination for having directed relationships.
         """
         return pulumi.get(self, "to_type")
 
     @to_type.setter
-    def to_type(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def to_type(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "to_type", value)
 
     @_builtins.property
     @pulumi.getter(name="typeOfRelation")
-    def type_of_relation(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def type_of_relation(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Type of the relationship between the Source Type and the Destination Type. Possible Values: `CALLS`, `CHILD_OF`, `INSTANCE_OF`, `PART_OF`, `RUNS_ON`, `SAME_AS`
         """
         return pulumi.get(self, "type_of_relation")
 
     @type_of_relation.setter
-    def type_of_relation(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def type_of_relation(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "type_of_relation", value)
 
 
@@ -292,14 +292,14 @@ class GenericRelationships(pulumi.CustomResource):
     def __init__(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 created_by: Optional[pulumi.Input[_builtins.str]] = None,
-                 enabled: Optional[pulumi.Input[_builtins.bool]] = None,
-                 from_role: Optional[pulumi.Input[_builtins.str]] = None,
-                 from_type: Optional[pulumi.Input[_builtins.str]] = None,
-                 sources: Optional[pulumi.Input[Union['GenericRelationshipsSourcesArgs', 'GenericRelationshipsSourcesArgsDict']]] = None,
-                 to_role: Optional[pulumi.Input[_builtins.str]] = None,
-                 to_type: Optional[pulumi.Input[_builtins.str]] = None,
-                 type_of_relation: Optional[pulumi.Input[_builtins.str]] = None,
+                 created_by: pulumi.Input[Optional[_builtins.str]] = None,
+                 enabled: pulumi.Input[Optional[_builtins.bool]] = None,
+                 from_role: pulumi.Input[Optional[_builtins.str]] = None,
+                 from_type: pulumi.Input[Optional[_builtins.str]] = None,
+                 sources: pulumi.Input[Optional[Union['GenericRelationshipsSourcesArgs', 'GenericRelationshipsSourcesArgsDict']]] = None,
+                 to_role: pulumi.Input[Optional[_builtins.str]] = None,
+                 to_type: pulumi.Input[Optional[_builtins.str]] = None,
+                 type_of_relation: pulumi.Input[Optional[_builtins.str]] = None,
                  __props__=None):
         """
         > This resource requires the API token scopes **Read settings** (`settings.read`) and **Write settings** (`settings.write`)
@@ -365,14 +365,14 @@ class GenericRelationships(pulumi.CustomResource):
     def _internal_init(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 created_by: Optional[pulumi.Input[_builtins.str]] = None,
-                 enabled: Optional[pulumi.Input[_builtins.bool]] = None,
-                 from_role: Optional[pulumi.Input[_builtins.str]] = None,
-                 from_type: Optional[pulumi.Input[_builtins.str]] = None,
-                 sources: Optional[pulumi.Input[Union['GenericRelationshipsSourcesArgs', 'GenericRelationshipsSourcesArgsDict']]] = None,
-                 to_role: Optional[pulumi.Input[_builtins.str]] = None,
-                 to_type: Optional[pulumi.Input[_builtins.str]] = None,
-                 type_of_relation: Optional[pulumi.Input[_builtins.str]] = None,
+                 created_by: pulumi.Input[Optional[_builtins.str]] = None,
+                 enabled: pulumi.Input[Optional[_builtins.bool]] = None,
+                 from_role: pulumi.Input[Optional[_builtins.str]] = None,
+                 from_type: pulumi.Input[Optional[_builtins.str]] = None,
+                 sources: pulumi.Input[Optional[Union['GenericRelationshipsSourcesArgs', 'GenericRelationshipsSourcesArgsDict']]] = None,
+                 to_role: pulumi.Input[Optional[_builtins.str]] = None,
+                 to_type: pulumi.Input[Optional[_builtins.str]] = None,
+                 type_of_relation: pulumi.Input[Optional[_builtins.str]] = None,
                  __props__=None):
         opts = pulumi.ResourceOptions.merge(_utilities.get_resource_opts_defaults(), opts)
         if not isinstance(opts, pulumi.ResourceOptions):
@@ -412,14 +412,14 @@ class GenericRelationships(pulumi.CustomResource):
     def get(resource_name: str,
             id: pulumi.Input[str],
             opts: Optional[pulumi.ResourceOptions] = None,
-            created_by: Optional[pulumi.Input[_builtins.str]] = None,
-            enabled: Optional[pulumi.Input[_builtins.bool]] = None,
-            from_role: Optional[pulumi.Input[_builtins.str]] = None,
-            from_type: Optional[pulumi.Input[_builtins.str]] = None,
-            sources: Optional[pulumi.Input[Union['GenericRelationshipsSourcesArgs', 'GenericRelationshipsSourcesArgsDict']]] = None,
-            to_role: Optional[pulumi.Input[_builtins.str]] = None,
-            to_type: Optional[pulumi.Input[_builtins.str]] = None,
-            type_of_relation: Optional[pulumi.Input[_builtins.str]] = None) -> 'GenericRelationships':
+            created_by: pulumi.Input[Optional[_builtins.str]] = None,
+            enabled: pulumi.Input[Optional[_builtins.bool]] = None,
+            from_role: pulumi.Input[Optional[_builtins.str]] = None,
+            from_type: pulumi.Input[Optional[_builtins.str]] = None,
+            sources: pulumi.Input[Optional[Union['GenericRelationshipsSourcesArgs', 'GenericRelationshipsSourcesArgsDict']]] = None,
+            to_role: pulumi.Input[Optional[_builtins.str]] = None,
+            to_type: pulumi.Input[Optional[_builtins.str]] = None,
+            type_of_relation: pulumi.Input[Optional[_builtins.str]] = None) -> 'GenericRelationships':
         """
         Get an existing GenericRelationships resource's state with the given name, id, and optional extra
         properties used to qualify the lookup.

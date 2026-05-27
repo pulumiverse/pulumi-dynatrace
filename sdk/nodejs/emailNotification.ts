@@ -170,36 +170,36 @@ export interface EmailNotificationState {
     /**
      * This setting is enabled (`true`) or disabled (`false`)
      */
-    active?: pulumi.Input<boolean>;
+    active?: pulumi.Input<boolean | undefined>;
     /**
      * BCC
      */
-    bccs?: pulumi.Input<pulumi.Input<string>[]>;
+    bccs?: pulumi.Input<pulumi.Input<string>[] | undefined>;
     /**
      * The template of the email notifications. Type '{' for placeholder suggestions.. #### Available placeholders
      * **{ImpactedEntities}**: Details about the entities impacted by the problem in form of a json array.
      */
-    body?: pulumi.Input<string>;
+    body?: pulumi.Input<string | undefined>;
     /**
      * CC
      */
-    ccs?: pulumi.Input<pulumi.Input<string>[]>;
+    ccs?: pulumi.Input<pulumi.Input<string>[] | undefined>;
     /**
      * The ID of these settings when referred to from resources requiring the REST API V1 keys
      */
-    legacyId?: pulumi.Input<string>;
+    legacyId?: pulumi.Input<string | undefined>;
     /**
      * The name of the notification configuration.
      */
-    name?: pulumi.Input<string>;
+    name?: pulumi.Input<string | undefined>;
     /**
      * Send email if problem is closed
      */
-    notifyClosedProblems?: pulumi.Input<boolean>;
+    notifyClosedProblems?: pulumi.Input<boolean | undefined>;
     /**
      * The ID of the associated alerting profile
      */
-    profile?: pulumi.Input<string>;
+    profile?: pulumi.Input<string | undefined>;
     /**
      * The subject of the email notifications. Type '{' for placeholder suggestions.. #### Available placeholders
      * **{ImpactedEntity}**: A short description of the problem and impacted entity (or multiple impacted entities).
@@ -224,11 +224,11 @@ export interface EmailNotificationState {
      *
      * **{Tags}**: Comma separated list of tags that are defined for all impacted entities. To refer to the value of a specific tag, specify the tag's key in square brackets: **{Tags[key]}**. If the tag does not have any assigned value, the placeholder will be replaced by an empty string. The placeholder will not be replaced if the tag key does not exist.
      */
-    subject?: pulumi.Input<string>;
+    subject?: pulumi.Input<string | undefined>;
     /**
      * To
      */
-    tos?: pulumi.Input<pulumi.Input<string>[]>;
+    tos?: pulumi.Input<pulumi.Input<string>[] | undefined>;
 }
 
 /**
@@ -238,11 +238,11 @@ export interface EmailNotificationArgs {
     /**
      * This setting is enabled (`true`) or disabled (`false`)
      */
-    active?: pulumi.Input<boolean>;
+    active?: pulumi.Input<boolean | undefined>;
     /**
      * BCC
      */
-    bccs?: pulumi.Input<pulumi.Input<string>[]>;
+    bccs?: pulumi.Input<pulumi.Input<string>[] | undefined>;
     /**
      * The template of the email notifications. Type '{' for placeholder suggestions.. #### Available placeholders
      * **{ImpactedEntities}**: Details about the entities impacted by the problem in form of a json array.
@@ -251,19 +251,19 @@ export interface EmailNotificationArgs {
     /**
      * CC
      */
-    ccs?: pulumi.Input<pulumi.Input<string>[]>;
+    ccs?: pulumi.Input<pulumi.Input<string>[] | undefined>;
     /**
      * The ID of these settings when referred to from resources requiring the REST API V1 keys
      */
-    legacyId?: pulumi.Input<string>;
+    legacyId?: pulumi.Input<string | undefined>;
     /**
      * The name of the notification configuration.
      */
-    name?: pulumi.Input<string>;
+    name?: pulumi.Input<string | undefined>;
     /**
      * Send email if problem is closed
      */
-    notifyClosedProblems?: pulumi.Input<boolean>;
+    notifyClosedProblems?: pulumi.Input<boolean | undefined>;
     /**
      * The ID of the associated alerting profile
      */

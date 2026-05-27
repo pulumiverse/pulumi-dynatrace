@@ -23,13 +23,13 @@ class OpenpipelineV2SecurityEventsIngestsourcesArgs:
     def __init__(__self__, *,
                  display_name: pulumi.Input[_builtins.str],
                  enabled: pulumi.Input[_builtins.bool],
-                 default_bucket: Optional[pulumi.Input[_builtins.str]] = None,
-                 metadata_list: Optional[pulumi.Input['OpenpipelineV2SecurityEventsIngestsourcesMetadataListArgs']] = None,
-                 path_segment: Optional[pulumi.Input[_builtins.str]] = None,
-                 processing: Optional[pulumi.Input['OpenpipelineV2SecurityEventsIngestsourcesProcessingArgs']] = None,
-                 source: Optional[pulumi.Input[_builtins.str]] = None,
-                 source_type: Optional[pulumi.Input[_builtins.str]] = None,
-                 static_routing: Optional[pulumi.Input['OpenpipelineV2SecurityEventsIngestsourcesStaticRoutingArgs']] = None):
+                 default_bucket: pulumi.Input[Optional[_builtins.str]] = None,
+                 metadata_list: pulumi.Input[Optional['OpenpipelineV2SecurityEventsIngestsourcesMetadataListArgs']] = None,
+                 path_segment: pulumi.Input[Optional[_builtins.str]] = None,
+                 processing: pulumi.Input[Optional['OpenpipelineV2SecurityEventsIngestsourcesProcessingArgs']] = None,
+                 source: pulumi.Input[Optional[_builtins.str]] = None,
+                 source_type: pulumi.Input[Optional[_builtins.str]] = None,
+                 static_routing: pulumi.Input[Optional['OpenpipelineV2SecurityEventsIngestsourcesStaticRoutingArgs']] = None):
         """
         The set of arguments for constructing a OpenpipelineV2SecurityEventsIngestsources resource.
 
@@ -86,101 +86,101 @@ class OpenpipelineV2SecurityEventsIngestsourcesArgs:
 
     @_builtins.property
     @pulumi.getter(name="defaultBucket")
-    def default_bucket(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def default_bucket(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Default Bucket
         """
         return pulumi.get(self, "default_bucket")
 
     @default_bucket.setter
-    def default_bucket(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def default_bucket(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "default_bucket", value)
 
     @_builtins.property
     @pulumi.getter(name="metadataList")
-    def metadata_list(self) -> Optional[pulumi.Input['OpenpipelineV2SecurityEventsIngestsourcesMetadataListArgs']]:
+    def metadata_list(self) -> pulumi.Input[Optional['OpenpipelineV2SecurityEventsIngestsourcesMetadataListArgs']]:
         """
         Ingest source metadata list
         """
         return pulumi.get(self, "metadata_list")
 
     @metadata_list.setter
-    def metadata_list(self, value: Optional[pulumi.Input['OpenpipelineV2SecurityEventsIngestsourcesMetadataListArgs']]):
+    def metadata_list(self, value: pulumi.Input[Optional['OpenpipelineV2SecurityEventsIngestsourcesMetadataListArgs']]):
         pulumi.set(self, "metadata_list", value)
 
     @_builtins.property
     @pulumi.getter(name="pathSegment")
-    def path_segment(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def path_segment(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Endpoint segment
         """
         return pulumi.get(self, "path_segment")
 
     @path_segment.setter
-    def path_segment(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def path_segment(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "path_segment", value)
 
     @_builtins.property
     @pulumi.getter
-    def processing(self) -> Optional[pulumi.Input['OpenpipelineV2SecurityEventsIngestsourcesProcessingArgs']]:
+    def processing(self) -> pulumi.Input[Optional['OpenpipelineV2SecurityEventsIngestsourcesProcessingArgs']]:
         """
         Processing stage
         """
         return pulumi.get(self, "processing")
 
     @processing.setter
-    def processing(self, value: Optional[pulumi.Input['OpenpipelineV2SecurityEventsIngestsourcesProcessingArgs']]):
+    def processing(self, value: pulumi.Input[Optional['OpenpipelineV2SecurityEventsIngestsourcesProcessingArgs']]):
         pulumi.set(self, "processing", value)
 
     @_builtins.property
     @pulumi.getter
-    def source(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def source(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Source
         """
         return pulumi.get(self, "source")
 
     @source.setter
-    def source(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def source(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "source", value)
 
     @_builtins.property
     @pulumi.getter(name="sourceType")
-    def source_type(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def source_type(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Source Type. Possible Values: `extension`, `http`
         """
         return pulumi.get(self, "source_type")
 
     @source_type.setter
-    def source_type(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def source_type(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "source_type", value)
 
     @_builtins.property
     @pulumi.getter(name="staticRouting")
-    def static_routing(self) -> Optional[pulumi.Input['OpenpipelineV2SecurityEventsIngestsourcesStaticRoutingArgs']]:
+    def static_routing(self) -> pulumi.Input[Optional['OpenpipelineV2SecurityEventsIngestsourcesStaticRoutingArgs']]:
         """
         Static routing of endpoint
         """
         return pulumi.get(self, "static_routing")
 
     @static_routing.setter
-    def static_routing(self, value: Optional[pulumi.Input['OpenpipelineV2SecurityEventsIngestsourcesStaticRoutingArgs']]):
+    def static_routing(self, value: pulumi.Input[Optional['OpenpipelineV2SecurityEventsIngestsourcesStaticRoutingArgs']]):
         pulumi.set(self, "static_routing", value)
 
 
 @pulumi.input_type
 class _OpenpipelineV2SecurityEventsIngestsourcesState:
     def __init__(__self__, *,
-                 default_bucket: Optional[pulumi.Input[_builtins.str]] = None,
-                 display_name: Optional[pulumi.Input[_builtins.str]] = None,
-                 enabled: Optional[pulumi.Input[_builtins.bool]] = None,
-                 metadata_list: Optional[pulumi.Input['OpenpipelineV2SecurityEventsIngestsourcesMetadataListArgs']] = None,
-                 path_segment: Optional[pulumi.Input[_builtins.str]] = None,
-                 processing: Optional[pulumi.Input['OpenpipelineV2SecurityEventsIngestsourcesProcessingArgs']] = None,
-                 source: Optional[pulumi.Input[_builtins.str]] = None,
-                 source_type: Optional[pulumi.Input[_builtins.str]] = None,
-                 static_routing: Optional[pulumi.Input['OpenpipelineV2SecurityEventsIngestsourcesStaticRoutingArgs']] = None):
+                 default_bucket: pulumi.Input[Optional[_builtins.str]] = None,
+                 display_name: pulumi.Input[Optional[_builtins.str]] = None,
+                 enabled: pulumi.Input[Optional[_builtins.bool]] = None,
+                 metadata_list: pulumi.Input[Optional['OpenpipelineV2SecurityEventsIngestsourcesMetadataListArgs']] = None,
+                 path_segment: pulumi.Input[Optional[_builtins.str]] = None,
+                 processing: pulumi.Input[Optional['OpenpipelineV2SecurityEventsIngestsourcesProcessingArgs']] = None,
+                 source: pulumi.Input[Optional[_builtins.str]] = None,
+                 source_type: pulumi.Input[Optional[_builtins.str]] = None,
+                 static_routing: pulumi.Input[Optional['OpenpipelineV2SecurityEventsIngestsourcesStaticRoutingArgs']] = None):
         """
         Input properties used for looking up and filtering OpenpipelineV2SecurityEventsIngestsources resources.
 
@@ -215,110 +215,110 @@ class _OpenpipelineV2SecurityEventsIngestsourcesState:
 
     @_builtins.property
     @pulumi.getter(name="defaultBucket")
-    def default_bucket(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def default_bucket(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Default Bucket
         """
         return pulumi.get(self, "default_bucket")
 
     @default_bucket.setter
-    def default_bucket(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def default_bucket(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "default_bucket", value)
 
     @_builtins.property
     @pulumi.getter(name="displayName")
-    def display_name(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def display_name(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Endpoint display name
         """
         return pulumi.get(self, "display_name")
 
     @display_name.setter
-    def display_name(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def display_name(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "display_name", value)
 
     @_builtins.property
     @pulumi.getter
-    def enabled(self) -> Optional[pulumi.Input[_builtins.bool]]:
+    def enabled(self) -> pulumi.Input[Optional[_builtins.bool]]:
         """
         This setting is enabled (`true`) or disabled (`false`)
         """
         return pulumi.get(self, "enabled")
 
     @enabled.setter
-    def enabled(self, value: Optional[pulumi.Input[_builtins.bool]]):
+    def enabled(self, value: pulumi.Input[Optional[_builtins.bool]]):
         pulumi.set(self, "enabled", value)
 
     @_builtins.property
     @pulumi.getter(name="metadataList")
-    def metadata_list(self) -> Optional[pulumi.Input['OpenpipelineV2SecurityEventsIngestsourcesMetadataListArgs']]:
+    def metadata_list(self) -> pulumi.Input[Optional['OpenpipelineV2SecurityEventsIngestsourcesMetadataListArgs']]:
         """
         Ingest source metadata list
         """
         return pulumi.get(self, "metadata_list")
 
     @metadata_list.setter
-    def metadata_list(self, value: Optional[pulumi.Input['OpenpipelineV2SecurityEventsIngestsourcesMetadataListArgs']]):
+    def metadata_list(self, value: pulumi.Input[Optional['OpenpipelineV2SecurityEventsIngestsourcesMetadataListArgs']]):
         pulumi.set(self, "metadata_list", value)
 
     @_builtins.property
     @pulumi.getter(name="pathSegment")
-    def path_segment(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def path_segment(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Endpoint segment
         """
         return pulumi.get(self, "path_segment")
 
     @path_segment.setter
-    def path_segment(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def path_segment(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "path_segment", value)
 
     @_builtins.property
     @pulumi.getter
-    def processing(self) -> Optional[pulumi.Input['OpenpipelineV2SecurityEventsIngestsourcesProcessingArgs']]:
+    def processing(self) -> pulumi.Input[Optional['OpenpipelineV2SecurityEventsIngestsourcesProcessingArgs']]:
         """
         Processing stage
         """
         return pulumi.get(self, "processing")
 
     @processing.setter
-    def processing(self, value: Optional[pulumi.Input['OpenpipelineV2SecurityEventsIngestsourcesProcessingArgs']]):
+    def processing(self, value: pulumi.Input[Optional['OpenpipelineV2SecurityEventsIngestsourcesProcessingArgs']]):
         pulumi.set(self, "processing", value)
 
     @_builtins.property
     @pulumi.getter
-    def source(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def source(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Source
         """
         return pulumi.get(self, "source")
 
     @source.setter
-    def source(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def source(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "source", value)
 
     @_builtins.property
     @pulumi.getter(name="sourceType")
-    def source_type(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def source_type(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Source Type. Possible Values: `extension`, `http`
         """
         return pulumi.get(self, "source_type")
 
     @source_type.setter
-    def source_type(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def source_type(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "source_type", value)
 
     @_builtins.property
     @pulumi.getter(name="staticRouting")
-    def static_routing(self) -> Optional[pulumi.Input['OpenpipelineV2SecurityEventsIngestsourcesStaticRoutingArgs']]:
+    def static_routing(self) -> pulumi.Input[Optional['OpenpipelineV2SecurityEventsIngestsourcesStaticRoutingArgs']]:
         """
         Static routing of endpoint
         """
         return pulumi.get(self, "static_routing")
 
     @static_routing.setter
-    def static_routing(self, value: Optional[pulumi.Input['OpenpipelineV2SecurityEventsIngestsourcesStaticRoutingArgs']]):
+    def static_routing(self, value: pulumi.Input[Optional['OpenpipelineV2SecurityEventsIngestsourcesStaticRoutingArgs']]):
         pulumi.set(self, "static_routing", value)
 
 
@@ -328,15 +328,15 @@ class OpenpipelineV2SecurityEventsIngestsources(pulumi.CustomResource):
     def __init__(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 default_bucket: Optional[pulumi.Input[_builtins.str]] = None,
-                 display_name: Optional[pulumi.Input[_builtins.str]] = None,
-                 enabled: Optional[pulumi.Input[_builtins.bool]] = None,
-                 metadata_list: Optional[pulumi.Input[Union['OpenpipelineV2SecurityEventsIngestsourcesMetadataListArgs', 'OpenpipelineV2SecurityEventsIngestsourcesMetadataListArgsDict']]] = None,
-                 path_segment: Optional[pulumi.Input[_builtins.str]] = None,
-                 processing: Optional[pulumi.Input[Union['OpenpipelineV2SecurityEventsIngestsourcesProcessingArgs', 'OpenpipelineV2SecurityEventsIngestsourcesProcessingArgsDict']]] = None,
-                 source: Optional[pulumi.Input[_builtins.str]] = None,
-                 source_type: Optional[pulumi.Input[_builtins.str]] = None,
-                 static_routing: Optional[pulumi.Input[Union['OpenpipelineV2SecurityEventsIngestsourcesStaticRoutingArgs', 'OpenpipelineV2SecurityEventsIngestsourcesStaticRoutingArgsDict']]] = None,
+                 default_bucket: pulumi.Input[Optional[_builtins.str]] = None,
+                 display_name: pulumi.Input[Optional[_builtins.str]] = None,
+                 enabled: pulumi.Input[Optional[_builtins.bool]] = None,
+                 metadata_list: pulumi.Input[Optional[Union['OpenpipelineV2SecurityEventsIngestsourcesMetadataListArgs', 'OpenpipelineV2SecurityEventsIngestsourcesMetadataListArgsDict']]] = None,
+                 path_segment: pulumi.Input[Optional[_builtins.str]] = None,
+                 processing: pulumi.Input[Optional[Union['OpenpipelineV2SecurityEventsIngestsourcesProcessingArgs', 'OpenpipelineV2SecurityEventsIngestsourcesProcessingArgsDict']]] = None,
+                 source: pulumi.Input[Optional[_builtins.str]] = None,
+                 source_type: pulumi.Input[Optional[_builtins.str]] = None,
+                 static_routing: pulumi.Input[Optional[Union['OpenpipelineV2SecurityEventsIngestsourcesStaticRoutingArgs', 'OpenpipelineV2SecurityEventsIngestsourcesStaticRoutingArgsDict']]] = None,
                  __props__=None):
         """
         > This resource requires the API token scopes **Read settings** (`settings.read`) and **Write settings** (`settings.write`)
@@ -637,15 +637,15 @@ class OpenpipelineV2SecurityEventsIngestsources(pulumi.CustomResource):
     def _internal_init(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 default_bucket: Optional[pulumi.Input[_builtins.str]] = None,
-                 display_name: Optional[pulumi.Input[_builtins.str]] = None,
-                 enabled: Optional[pulumi.Input[_builtins.bool]] = None,
-                 metadata_list: Optional[pulumi.Input[Union['OpenpipelineV2SecurityEventsIngestsourcesMetadataListArgs', 'OpenpipelineV2SecurityEventsIngestsourcesMetadataListArgsDict']]] = None,
-                 path_segment: Optional[pulumi.Input[_builtins.str]] = None,
-                 processing: Optional[pulumi.Input[Union['OpenpipelineV2SecurityEventsIngestsourcesProcessingArgs', 'OpenpipelineV2SecurityEventsIngestsourcesProcessingArgsDict']]] = None,
-                 source: Optional[pulumi.Input[_builtins.str]] = None,
-                 source_type: Optional[pulumi.Input[_builtins.str]] = None,
-                 static_routing: Optional[pulumi.Input[Union['OpenpipelineV2SecurityEventsIngestsourcesStaticRoutingArgs', 'OpenpipelineV2SecurityEventsIngestsourcesStaticRoutingArgsDict']]] = None,
+                 default_bucket: pulumi.Input[Optional[_builtins.str]] = None,
+                 display_name: pulumi.Input[Optional[_builtins.str]] = None,
+                 enabled: pulumi.Input[Optional[_builtins.bool]] = None,
+                 metadata_list: pulumi.Input[Optional[Union['OpenpipelineV2SecurityEventsIngestsourcesMetadataListArgs', 'OpenpipelineV2SecurityEventsIngestsourcesMetadataListArgsDict']]] = None,
+                 path_segment: pulumi.Input[Optional[_builtins.str]] = None,
+                 processing: pulumi.Input[Optional[Union['OpenpipelineV2SecurityEventsIngestsourcesProcessingArgs', 'OpenpipelineV2SecurityEventsIngestsourcesProcessingArgsDict']]] = None,
+                 source: pulumi.Input[Optional[_builtins.str]] = None,
+                 source_type: pulumi.Input[Optional[_builtins.str]] = None,
+                 static_routing: pulumi.Input[Optional[Union['OpenpipelineV2SecurityEventsIngestsourcesStaticRoutingArgs', 'OpenpipelineV2SecurityEventsIngestsourcesStaticRoutingArgsDict']]] = None,
                  __props__=None):
         opts = pulumi.ResourceOptions.merge(_utilities.get_resource_opts_defaults(), opts)
         if not isinstance(opts, pulumi.ResourceOptions):
@@ -678,15 +678,15 @@ class OpenpipelineV2SecurityEventsIngestsources(pulumi.CustomResource):
     def get(resource_name: str,
             id: pulumi.Input[str],
             opts: Optional[pulumi.ResourceOptions] = None,
-            default_bucket: Optional[pulumi.Input[_builtins.str]] = None,
-            display_name: Optional[pulumi.Input[_builtins.str]] = None,
-            enabled: Optional[pulumi.Input[_builtins.bool]] = None,
-            metadata_list: Optional[pulumi.Input[Union['OpenpipelineV2SecurityEventsIngestsourcesMetadataListArgs', 'OpenpipelineV2SecurityEventsIngestsourcesMetadataListArgsDict']]] = None,
-            path_segment: Optional[pulumi.Input[_builtins.str]] = None,
-            processing: Optional[pulumi.Input[Union['OpenpipelineV2SecurityEventsIngestsourcesProcessingArgs', 'OpenpipelineV2SecurityEventsIngestsourcesProcessingArgsDict']]] = None,
-            source: Optional[pulumi.Input[_builtins.str]] = None,
-            source_type: Optional[pulumi.Input[_builtins.str]] = None,
-            static_routing: Optional[pulumi.Input[Union['OpenpipelineV2SecurityEventsIngestsourcesStaticRoutingArgs', 'OpenpipelineV2SecurityEventsIngestsourcesStaticRoutingArgsDict']]] = None) -> 'OpenpipelineV2SecurityEventsIngestsources':
+            default_bucket: pulumi.Input[Optional[_builtins.str]] = None,
+            display_name: pulumi.Input[Optional[_builtins.str]] = None,
+            enabled: pulumi.Input[Optional[_builtins.bool]] = None,
+            metadata_list: pulumi.Input[Optional[Union['OpenpipelineV2SecurityEventsIngestsourcesMetadataListArgs', 'OpenpipelineV2SecurityEventsIngestsourcesMetadataListArgsDict']]] = None,
+            path_segment: pulumi.Input[Optional[_builtins.str]] = None,
+            processing: pulumi.Input[Optional[Union['OpenpipelineV2SecurityEventsIngestsourcesProcessingArgs', 'OpenpipelineV2SecurityEventsIngestsourcesProcessingArgsDict']]] = None,
+            source: pulumi.Input[Optional[_builtins.str]] = None,
+            source_type: pulumi.Input[Optional[_builtins.str]] = None,
+            static_routing: pulumi.Input[Optional[Union['OpenpipelineV2SecurityEventsIngestsourcesStaticRoutingArgs', 'OpenpipelineV2SecurityEventsIngestsourcesStaticRoutingArgsDict']]] = None) -> 'OpenpipelineV2SecurityEventsIngestsources':
         """
         Get an existing OpenpipelineV2SecurityEventsIngestsources resource's state with the given name, id, and optional extra
         properties used to qualify the lookup.

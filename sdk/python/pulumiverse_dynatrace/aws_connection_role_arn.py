@@ -58,8 +58,8 @@ class AwsConnectionRoleArnArgs:
 @pulumi.input_type
 class _AwsConnectionRoleArnState:
     def __init__(__self__, *,
-                 aws_connection_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 role_arn: Optional[pulumi.Input[_builtins.str]] = None):
+                 aws_connection_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 role_arn: pulumi.Input[Optional[_builtins.str]] = None):
         """
         Input properties used for looking up and filtering AwsConnectionRoleArn resources.
 
@@ -73,26 +73,26 @@ class _AwsConnectionRoleArnState:
 
     @_builtins.property
     @pulumi.getter(name="awsConnectionId")
-    def aws_connection_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def aws_connection_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The ID of a `AwsConnection` resource instance for which to define the AWS Role ARN
         """
         return pulumi.get(self, "aws_connection_id")
 
     @aws_connection_id.setter
-    def aws_connection_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def aws_connection_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "aws_connection_id", value)
 
     @_builtins.property
     @pulumi.getter(name="roleArn")
-    def role_arn(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def role_arn(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The ARN of the AWS role that should be assumed.
         """
         return pulumi.get(self, "role_arn")
 
     @role_arn.setter
-    def role_arn(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def role_arn(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "role_arn", value)
 
 
@@ -102,8 +102,8 @@ class AwsConnectionRoleArn(pulumi.CustomResource):
     def __init__(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 aws_connection_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 role_arn: Optional[pulumi.Input[_builtins.str]] = None,
+                 aws_connection_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 role_arn: pulumi.Input[Optional[_builtins.str]] = None,
                  __props__=None):
         """
         > This resource requires the API token scopes **Read settings** (`settings.read`) and **Write settings** (`settings.write`)
@@ -317,8 +317,8 @@ class AwsConnectionRoleArn(pulumi.CustomResource):
     def _internal_init(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 aws_connection_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 role_arn: Optional[pulumi.Input[_builtins.str]] = None,
+                 aws_connection_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 role_arn: pulumi.Input[Optional[_builtins.str]] = None,
                  __props__=None):
         opts = pulumi.ResourceOptions.merge(_utilities.get_resource_opts_defaults(), opts)
         if not isinstance(opts, pulumi.ResourceOptions):
@@ -344,8 +344,8 @@ class AwsConnectionRoleArn(pulumi.CustomResource):
     def get(resource_name: str,
             id: pulumi.Input[str],
             opts: Optional[pulumi.ResourceOptions] = None,
-            aws_connection_id: Optional[pulumi.Input[_builtins.str]] = None,
-            role_arn: Optional[pulumi.Input[_builtins.str]] = None) -> 'AwsConnectionRoleArn':
+            aws_connection_id: pulumi.Input[Optional[_builtins.str]] = None,
+            role_arn: pulumi.Input[Optional[_builtins.str]] = None) -> 'AwsConnectionRoleArn':
         """
         Get an existing AwsConnectionRoleArn resource's state with the given name, id, and optional extra
         properties used to qualify the lookup.

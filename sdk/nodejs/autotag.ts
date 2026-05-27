@@ -110,23 +110,23 @@ export interface AutotagState {
     /**
      * The description of the auto-tag.
      */
-    description?: pulumi.Input<string>;
+    description?: pulumi.Input<string | undefined>;
     /**
      * A list of entity-selector based rules for management zone usage. If several rules are specified, the `or` logic applies
      */
-    entitySelectorBasedRules?: pulumi.Input<pulumi.Input<inputs.AutotagEntitySelectorBasedRule>[]>;
+    entitySelectorBasedRules?: pulumi.Input<pulumi.Input<inputs.AutotagEntitySelectorBasedRule>[] | undefined>;
     /**
      * The name of the auto-tag, which is applied to entities.  Additionally you can specify a **valueFormat** in the tag rule. In that case the tag is used in the `name:valueFormat` format.  For example you can extend the `Infrastructure` tag to `Infrastructure:Windows` and `Infrastructure:Linux`.
      */
-    name?: pulumi.Input<string>;
+    name?: pulumi.Input<string | undefined>;
     /**
      * A list of rules for management zone usage.  Each rule is evaluated independently of all other rules
      */
-    rules?: pulumi.Input<pulumi.Input<inputs.AutotagRule>[]>;
+    rules?: pulumi.Input<pulumi.Input<inputs.AutotagRule>[] | undefined>;
     /**
      * allows for configuring properties that are not explicitly supported by the current version of this provider
      */
-    unknowns?: pulumi.Input<string>;
+    unknowns?: pulumi.Input<string | undefined>;
 }
 
 /**
@@ -136,21 +136,21 @@ export interface AutotagArgs {
     /**
      * The description of the auto-tag.
      */
-    description?: pulumi.Input<string>;
+    description?: pulumi.Input<string | undefined>;
     /**
      * A list of entity-selector based rules for management zone usage. If several rules are specified, the `or` logic applies
      */
-    entitySelectorBasedRules?: pulumi.Input<pulumi.Input<inputs.AutotagEntitySelectorBasedRule>[]>;
+    entitySelectorBasedRules?: pulumi.Input<pulumi.Input<inputs.AutotagEntitySelectorBasedRule>[] | undefined>;
     /**
      * The name of the auto-tag, which is applied to entities.  Additionally you can specify a **valueFormat** in the tag rule. In that case the tag is used in the `name:valueFormat` format.  For example you can extend the `Infrastructure` tag to `Infrastructure:Windows` and `Infrastructure:Linux`.
      */
-    name?: pulumi.Input<string>;
+    name?: pulumi.Input<string | undefined>;
     /**
      * A list of rules for management zone usage.  Each rule is evaluated independently of all other rules
      */
-    rules?: pulumi.Input<pulumi.Input<inputs.AutotagRule>[]>;
+    rules?: pulumi.Input<pulumi.Input<inputs.AutotagRule>[] | undefined>;
     /**
      * allows for configuring properties that are not explicitly supported by the current version of this provider
      */
-    unknowns?: pulumi.Input<string>;
+    unknowns?: pulumi.Input<string | undefined>;
 }

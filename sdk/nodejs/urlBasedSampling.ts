@@ -149,43 +149,43 @@ export interface UrlBasedSamplingState {
     /**
      * This setting is enabled (`true`) or disabled (`false`)
      */
-    enabled?: pulumi.Input<boolean>;
+    enabled?: pulumi.Input<boolean | undefined>;
     /**
      * Select the scaling factor for the current sampling rate of the system. Possible values: `IncreaseCapturing128Times`, `IncreaseCapturing64Times`, `IncreaseCapturing32Times`, `IncreaseCapturing16Times`, `IncreaseCapturing8Times`, `IncreaseCapturing4Times`, `IncreaseCapturing2Times`, `ReduceCapturingByFactor2`, `ReduceCapturingByFactor4`, `ReduceCapturingByFactor8`, `ReduceCapturingByFactor16`, `ReduceCapturingByFactor32`, `ReduceCapturingByFactor64`, `ReduceCapturingByFactor128`
      */
-    factor?: pulumi.Input<string>;
+    factor?: pulumi.Input<string | undefined>;
     /**
      * The scaling factor for the defined URL will be applied to any HTTP method.
      */
-    httpMethodAny?: pulumi.Input<boolean>;
+    httpMethodAny?: pulumi.Input<boolean | undefined>;
     /**
      * Possible values: `GET`, `POST`, `PUT`, `DELETE`, `HEAD`, `CONNECT`, `OPTIONS`, `TRACE`, `PATCH`
      */
-    httpMethods?: pulumi.Input<pulumi.Input<string>[]>;
+    httpMethods?: pulumi.Input<pulumi.Input<string>[] | undefined>;
     /**
      * The matching URLs will always be ignored, also if Adaptive Traffic Management is not active.
      */
-    ignore?: pulumi.Input<boolean>;
+    ignore?: pulumi.Input<boolean | undefined>;
     /**
      * Because this resource allows for ordering you may specify the ID of the resource instance that comes before this instance regarding order. If not specified when creating the setting will be added to the end of the list. If not specified during update the order will remain untouched
      */
-    insertAfter?: pulumi.Input<string>;
+    insertAfter?: pulumi.Input<string | undefined>;
     /**
      * Path of the URL.
      */
-    path?: pulumi.Input<string>;
+    path?: pulumi.Input<string | undefined>;
     /**
      * Path comparison condition. Possible values: `EQUALS`, `DOES_NOT_EQUAL`, `CONTAINS`, `DOES_NOT_CONTAIN`, `STARTS_WITH`, `DOES_NOT_START_WITH`, `ENDS_WITH`, `DOES_NOT_END_WITH`
      */
-    pathComparisonType?: pulumi.Input<string>;
+    pathComparisonType?: pulumi.Input<string | undefined>;
     /**
      * Add URL parameters in any order. **All** specified parameters must be present in the query of an URL to get a match.
      */
-    queryParameters?: pulumi.Input<inputs.UrlBasedSamplingQueryParameters>;
+    queryParameters?: pulumi.Input<inputs.UrlBasedSamplingQueryParameters | undefined>;
     /**
      * The scope of this setting (PROCESS*GROUP*INSTANCE, PROCESS_GROUP). Omit this property if you want to cover the whole environment.
      */
-    scope?: pulumi.Input<string>;
+    scope?: pulumi.Input<string | undefined>;
 }
 
 /**
@@ -199,7 +199,7 @@ export interface UrlBasedSamplingArgs {
     /**
      * Select the scaling factor for the current sampling rate of the system. Possible values: `IncreaseCapturing128Times`, `IncreaseCapturing64Times`, `IncreaseCapturing32Times`, `IncreaseCapturing16Times`, `IncreaseCapturing8Times`, `IncreaseCapturing4Times`, `IncreaseCapturing2Times`, `ReduceCapturingByFactor2`, `ReduceCapturingByFactor4`, `ReduceCapturingByFactor8`, `ReduceCapturingByFactor16`, `ReduceCapturingByFactor32`, `ReduceCapturingByFactor64`, `ReduceCapturingByFactor128`
      */
-    factor?: pulumi.Input<string>;
+    factor?: pulumi.Input<string | undefined>;
     /**
      * The scaling factor for the defined URL will be applied to any HTTP method.
      */
@@ -207,7 +207,7 @@ export interface UrlBasedSamplingArgs {
     /**
      * Possible values: `GET`, `POST`, `PUT`, `DELETE`, `HEAD`, `CONNECT`, `OPTIONS`, `TRACE`, `PATCH`
      */
-    httpMethods?: pulumi.Input<pulumi.Input<string>[]>;
+    httpMethods?: pulumi.Input<pulumi.Input<string>[] | undefined>;
     /**
      * The matching URLs will always be ignored, also if Adaptive Traffic Management is not active.
      */
@@ -215,21 +215,21 @@ export interface UrlBasedSamplingArgs {
     /**
      * Because this resource allows for ordering you may specify the ID of the resource instance that comes before this instance regarding order. If not specified when creating the setting will be added to the end of the list. If not specified during update the order will remain untouched
      */
-    insertAfter?: pulumi.Input<string>;
+    insertAfter?: pulumi.Input<string | undefined>;
     /**
      * Path of the URL.
      */
-    path?: pulumi.Input<string>;
+    path?: pulumi.Input<string | undefined>;
     /**
      * Path comparison condition. Possible values: `EQUALS`, `DOES_NOT_EQUAL`, `CONTAINS`, `DOES_NOT_CONTAIN`, `STARTS_WITH`, `DOES_NOT_START_WITH`, `ENDS_WITH`, `DOES_NOT_END_WITH`
      */
-    pathComparisonType?: pulumi.Input<string>;
+    pathComparisonType?: pulumi.Input<string | undefined>;
     /**
      * Add URL parameters in any order. **All** specified parameters must be present in the query of an URL to get a match.
      */
-    queryParameters?: pulumi.Input<inputs.UrlBasedSamplingQueryParameters>;
+    queryParameters?: pulumi.Input<inputs.UrlBasedSamplingQueryParameters | undefined>;
     /**
      * The scope of this setting (PROCESS*GROUP*INSTANCE, PROCESS_GROUP). Omit this property if you want to cover the whole environment.
      */
-    scope?: pulumi.Input<string>;
+    scope?: pulumi.Input<string | undefined>;
 }

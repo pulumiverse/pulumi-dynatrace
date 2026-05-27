@@ -213,91 +213,91 @@ export interface KubernetesState {
     /**
      * ActiveGate Group
      */
-    activeGateGroup?: pulumi.Input<string>;
+    activeGateGroup?: pulumi.Input<string | undefined>;
     /**
      * Create a bearer token for [Kubernetes](https://dt-url.net/og43szq) or [OpenShift](https://dt-url.net/7l43xtp).
      */
-    authToken?: pulumi.Input<string>;
+    authToken?: pulumi.Input<string | undefined>;
     /**
      * Require valid certificates for communication with API server (recommended)
      */
-    certificateCheckEnabled?: pulumi.Input<boolean>;
+    certificateCheckEnabled?: pulumi.Input<boolean | undefined>;
     /**
      * Monitor Kubernetes namespaces, services, workloads, and pods
      *
      * @deprecated This field has been moved to a new schema, please utilize the resource `dynatrace.K8sMonitoring` to configure this field.
      */
-    cloudApplicationPipelineEnabled?: pulumi.Input<boolean>;
+    cloudApplicationPipelineEnabled?: pulumi.Input<boolean | undefined>;
     /**
      * Unique ID of the cluster, the containerized ActiveGate is deployed to. Defaults to the UUID of the kube-system namespace. The cluster ID of containerized ActiveGates is shown on the Deployment status screen.
      */
-    clusterId?: pulumi.Input<string>;
+    clusterId?: pulumi.Input<string | undefined>;
     /**
      * For more information on local Kubernetes API monitoring, see the [documentation](https://dt-url.net/6q62uep).
      */
-    clusterIdEnabled?: pulumi.Input<boolean>;
+    clusterIdEnabled?: pulumi.Input<boolean | undefined>;
     /**
      * This setting is enabled (`true`) or disabled (`false`)
      */
-    enabled?: pulumi.Input<boolean>;
+    enabled?: pulumi.Input<boolean | undefined>;
     /**
      * Get the API URL for [Kubernetes](https://dt-url.net/kz23snj) or [OpenShift](https://dt-url.net/d623xgw).
      */
-    endpointUrl?: pulumi.Input<string>;
+    endpointUrl?: pulumi.Input<string | undefined>;
     /**
      * Define Kubernetes event filters to ingest events into your environment. For more details, see the [documentation](https://dt-url.net/2201p0u).
      *
      * @deprecated This field has been moved to a new schema, please utilize the resource `dynatrace.K8sMonitoring` to configure this field.
      */
-    eventPatterns?: pulumi.Input<inputs.KubernetesEventPatterns>;
+    eventPatterns?: pulumi.Input<inputs.KubernetesEventPatterns | undefined>;
     /**
      * All events are monitored by default unless event filters are specified.
      *
      * @deprecated This field has been moved to a new schema, please utilize the resource `dynatrace.K8sMonitoring` to configure this field.
      */
-    eventProcessingActive?: pulumi.Input<boolean>;
+    eventProcessingActive?: pulumi.Input<boolean | undefined>;
     /**
      * Include only events specified by Events Field Selectors
      *
      * @deprecated This field has been moved to a new schema, please utilize the resource `dynatrace.K8sMonitoring` to configure this field.
      */
-    filterEvents?: pulumi.Input<boolean>;
+    filterEvents?: pulumi.Input<boolean | undefined>;
     /**
      * Verify hostname in certificate against Kubernetes API URL
      */
-    hostnameVerificationEnabled?: pulumi.Input<boolean>;
+    hostnameVerificationEnabled?: pulumi.Input<boolean | undefined>;
     /**
      * For a list of included events, see the [documentation](https://dt-url.net/l61d02no).
      *
      * @deprecated This field has been moved to a new schema, please utilize the resource `dynatrace.K8sMonitoring` to configure this field.
      */
-    includeAllFdiEvents?: pulumi.Input<boolean>;
+    includeAllFdiEvents?: pulumi.Input<boolean | undefined>;
     /**
      * Renaming the cluster breaks configurations that are based on its name (e.g., management zones, and alerting).
      */
-    label?: pulumi.Input<string>;
+    label?: pulumi.Input<string | undefined>;
     /**
      * The workload resource metrics are based on a subset of cAdvisor metrics. Depending on your Kubernetes cluster size, this may increase the CPU/memory resource consumption of your ActiveGate.
      *
      * @deprecated This field has been moved to a new schema, please utilize the resource `dynatrace.K8sMonitoring` to configure this field.
      */
-    openMetricsBuiltinEnabled?: pulumi.Input<boolean>;
+    openMetricsBuiltinEnabled?: pulumi.Input<boolean | undefined>;
     /**
      * For annotation guidance, see the [documentation](https://dt-url.net/g42i0ppw).
      *
      * @deprecated This field has been moved to a new schema, please utilize the resource `dynatrace.K8sMonitoring` to configure this field.
      */
-    openMetricsPipelineEnabled?: pulumi.Input<boolean>;
+    openMetricsPipelineEnabled?: pulumi.Input<boolean | undefined>;
     /**
      * To enable dashboards and alerts, add the Kubernetes persistent volume claims extension to your environment.
      *
      * @deprecated This field has been moved to a new schema, please utilize the resource `dynatrace.K8sMonitoring` to configure this field.
      */
-    pvcMonitoringEnabled?: pulumi.Input<boolean>;
+    pvcMonitoringEnabled?: pulumi.Input<boolean | undefined>;
     /**
      * The scope of this setting (KUBERNETES_CLUSTER)
      */
-    scope?: pulumi.Input<string>;
+    scope?: pulumi.Input<string | undefined>;
 }
 
 /**
@@ -307,25 +307,25 @@ export interface KubernetesArgs {
     /**
      * ActiveGate Group
      */
-    activeGateGroup?: pulumi.Input<string>;
+    activeGateGroup?: pulumi.Input<string | undefined>;
     /**
      * Create a bearer token for [Kubernetes](https://dt-url.net/og43szq) or [OpenShift](https://dt-url.net/7l43xtp).
      */
-    authToken?: pulumi.Input<string>;
+    authToken?: pulumi.Input<string | undefined>;
     /**
      * Require valid certificates for communication with API server (recommended)
      */
-    certificateCheckEnabled?: pulumi.Input<boolean>;
+    certificateCheckEnabled?: pulumi.Input<boolean | undefined>;
     /**
      * Monitor Kubernetes namespaces, services, workloads, and pods
      *
      * @deprecated This field has been moved to a new schema, please utilize the resource `dynatrace.K8sMonitoring` to configure this field.
      */
-    cloudApplicationPipelineEnabled?: pulumi.Input<boolean>;
+    cloudApplicationPipelineEnabled?: pulumi.Input<boolean | undefined>;
     /**
      * Unique ID of the cluster, the containerized ActiveGate is deployed to. Defaults to the UUID of the kube-system namespace. The cluster ID of containerized ActiveGates is shown on the Deployment status screen.
      */
-    clusterId?: pulumi.Input<string>;
+    clusterId?: pulumi.Input<string | undefined>;
     /**
      * For more information on local Kubernetes API monitoring, see the [documentation](https://dt-url.net/6q62uep).
      */
@@ -337,35 +337,35 @@ export interface KubernetesArgs {
     /**
      * Get the API URL for [Kubernetes](https://dt-url.net/kz23snj) or [OpenShift](https://dt-url.net/d623xgw).
      */
-    endpointUrl?: pulumi.Input<string>;
+    endpointUrl?: pulumi.Input<string | undefined>;
     /**
      * Define Kubernetes event filters to ingest events into your environment. For more details, see the [documentation](https://dt-url.net/2201p0u).
      *
      * @deprecated This field has been moved to a new schema, please utilize the resource `dynatrace.K8sMonitoring` to configure this field.
      */
-    eventPatterns?: pulumi.Input<inputs.KubernetesEventPatterns>;
+    eventPatterns?: pulumi.Input<inputs.KubernetesEventPatterns | undefined>;
     /**
      * All events are monitored by default unless event filters are specified.
      *
      * @deprecated This field has been moved to a new schema, please utilize the resource `dynatrace.K8sMonitoring` to configure this field.
      */
-    eventProcessingActive?: pulumi.Input<boolean>;
+    eventProcessingActive?: pulumi.Input<boolean | undefined>;
     /**
      * Include only events specified by Events Field Selectors
      *
      * @deprecated This field has been moved to a new schema, please utilize the resource `dynatrace.K8sMonitoring` to configure this field.
      */
-    filterEvents?: pulumi.Input<boolean>;
+    filterEvents?: pulumi.Input<boolean | undefined>;
     /**
      * Verify hostname in certificate against Kubernetes API URL
      */
-    hostnameVerificationEnabled?: pulumi.Input<boolean>;
+    hostnameVerificationEnabled?: pulumi.Input<boolean | undefined>;
     /**
      * For a list of included events, see the [documentation](https://dt-url.net/l61d02no).
      *
      * @deprecated This field has been moved to a new schema, please utilize the resource `dynatrace.K8sMonitoring` to configure this field.
      */
-    includeAllFdiEvents?: pulumi.Input<boolean>;
+    includeAllFdiEvents?: pulumi.Input<boolean | undefined>;
     /**
      * Renaming the cluster breaks configurations that are based on its name (e.g., management zones, and alerting).
      */
@@ -375,21 +375,21 @@ export interface KubernetesArgs {
      *
      * @deprecated This field has been moved to a new schema, please utilize the resource `dynatrace.K8sMonitoring` to configure this field.
      */
-    openMetricsBuiltinEnabled?: pulumi.Input<boolean>;
+    openMetricsBuiltinEnabled?: pulumi.Input<boolean | undefined>;
     /**
      * For annotation guidance, see the [documentation](https://dt-url.net/g42i0ppw).
      *
      * @deprecated This field has been moved to a new schema, please utilize the resource `dynatrace.K8sMonitoring` to configure this field.
      */
-    openMetricsPipelineEnabled?: pulumi.Input<boolean>;
+    openMetricsPipelineEnabled?: pulumi.Input<boolean | undefined>;
     /**
      * To enable dashboards and alerts, add the Kubernetes persistent volume claims extension to your environment.
      *
      * @deprecated This field has been moved to a new schema, please utilize the resource `dynatrace.K8sMonitoring` to configure this field.
      */
-    pvcMonitoringEnabled?: pulumi.Input<boolean>;
+    pvcMonitoringEnabled?: pulumi.Input<boolean | undefined>;
     /**
      * The scope of this setting (KUBERNETES_CLUSTER)
      */
-    scope?: pulumi.Input<string>;
+    scope?: pulumi.Input<string | undefined>;
 }

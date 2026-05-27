@@ -58,8 +58,8 @@ class HostMonitoringModeArgs:
 @pulumi.input_type
 class _HostMonitoringModeState:
     def __init__(__self__, *,
-                 host_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 monitoring_mode: Optional[pulumi.Input[_builtins.str]] = None):
+                 host_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 monitoring_mode: pulumi.Input[Optional[_builtins.str]] = None):
         """
         Input properties used for looking up and filtering HostMonitoringMode resources.
 
@@ -73,26 +73,26 @@ class _HostMonitoringModeState:
 
     @_builtins.property
     @pulumi.getter(name="hostId")
-    def host_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def host_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The scope of this settings. If the settings should cover the whole environment, just don't specify any scope.
         """
         return pulumi.get(self, "host_id")
 
     @host_id.setter
-    def host_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def host_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "host_id", value)
 
     @_builtins.property
     @pulumi.getter(name="monitoringMode")
-    def monitoring_mode(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def monitoring_mode(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Possible Values: `DISCOVERY`, `FULL_STACK`, `INFRA_ONLY`
         """
         return pulumi.get(self, "monitoring_mode")
 
     @monitoring_mode.setter
-    def monitoring_mode(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def monitoring_mode(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "monitoring_mode", value)
 
 
@@ -102,8 +102,8 @@ class HostMonitoringMode(pulumi.CustomResource):
     def __init__(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 host_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 monitoring_mode: Optional[pulumi.Input[_builtins.str]] = None,
+                 host_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 monitoring_mode: pulumi.Input[Optional[_builtins.str]] = None,
                  __props__=None):
         """
         > This resource requires the API token scopes **Read settings** (`settings.read`) and **Write settings** (`settings.write`)
@@ -171,8 +171,8 @@ class HostMonitoringMode(pulumi.CustomResource):
     def _internal_init(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 host_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 monitoring_mode: Optional[pulumi.Input[_builtins.str]] = None,
+                 host_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 monitoring_mode: pulumi.Input[Optional[_builtins.str]] = None,
                  __props__=None):
         opts = pulumi.ResourceOptions.merge(_utilities.get_resource_opts_defaults(), opts)
         if not isinstance(opts, pulumi.ResourceOptions):
@@ -198,8 +198,8 @@ class HostMonitoringMode(pulumi.CustomResource):
     def get(resource_name: str,
             id: pulumi.Input[str],
             opts: Optional[pulumi.ResourceOptions] = None,
-            host_id: Optional[pulumi.Input[_builtins.str]] = None,
-            monitoring_mode: Optional[pulumi.Input[_builtins.str]] = None) -> 'HostMonitoringMode':
+            host_id: pulumi.Input[Optional[_builtins.str]] = None,
+            monitoring_mode: pulumi.Input[Optional[_builtins.str]] = None) -> 'HostMonitoringMode':
         """
         Get an existing HostMonitoringMode resource's state with the given name, id, and optional extra
         properties used to qualify the lookup.

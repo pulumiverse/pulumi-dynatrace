@@ -85,7 +85,7 @@ def get_attack_alerting(name: Optional[_builtins.str] = None,
     return AwaitableGetAttackAlertingResult(
         id=pulumi.get(__ret__, 'id'),
         name=pulumi.get(__ret__, 'name'))
-def get_attack_alerting_output(name: Optional[pulumi.Input[_builtins.str]] = None,
+def get_attack_alerting_output(name: pulumi.Input[Optional[_builtins.str]] = None,
                                opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetAttackAlertingResult]:
     """
     The `AttackAlerting` data source allows the attack alerting profile ID to be retrieved by its name.

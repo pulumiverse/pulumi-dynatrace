@@ -90,11 +90,11 @@ export interface KubernetesEnrichmentState {
     /**
      * Dynatrace allows to use metadata defined on Kubernetes nodes, namespaces, and pods to set security and cost allocation attributes and dimensions for metrics, events, log, spans, and entities associated with the respective Kubernetes resource.
      */
-    rules?: pulumi.Input<inputs.KubernetesEnrichmentRules>;
+    rules?: pulumi.Input<inputs.KubernetesEnrichmentRules | undefined>;
     /**
      * The scope of this setting (KUBERNETES_CLUSTER). Omit this property if you want to cover the whole environment.
      */
-    scope?: pulumi.Input<string>;
+    scope?: pulumi.Input<string | undefined>;
 }
 
 /**
@@ -104,9 +104,9 @@ export interface KubernetesEnrichmentArgs {
     /**
      * Dynatrace allows to use metadata defined on Kubernetes nodes, namespaces, and pods to set security and cost allocation attributes and dimensions for metrics, events, log, spans, and entities associated with the respective Kubernetes resource.
      */
-    rules?: pulumi.Input<inputs.KubernetesEnrichmentRules>;
+    rules?: pulumi.Input<inputs.KubernetesEnrichmentRules | undefined>;
     /**
      * The scope of this setting (KUBERNETES_CLUSTER). Omit this property if you want to cover the whole environment.
      */
-    scope?: pulumi.Input<string>;
+    scope?: pulumi.Input<string | undefined>;
 }

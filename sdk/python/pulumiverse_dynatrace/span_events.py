@@ -58,8 +58,8 @@ class SpanEventsArgs:
 @pulumi.input_type
 class _SpanEventsState:
     def __init__(__self__, *,
-                 key: Optional[pulumi.Input[_builtins.str]] = None,
-                 masking: Optional[pulumi.Input[_builtins.str]] = None):
+                 key: pulumi.Input[Optional[_builtins.str]] = None,
+                 masking: pulumi.Input[Optional[_builtins.str]] = None):
         """
         Input properties used for looking up and filtering SpanEvents resources.
 
@@ -73,26 +73,26 @@ class _SpanEventsState:
 
     @_builtins.property
     @pulumi.getter
-    def key(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def key(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Key of the span event attribute to store
         """
         return pulumi.get(self, "key")
 
     @key.setter
-    def key(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def key(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "key", value)
 
     @_builtins.property
     @pulumi.getter
-    def masking(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def masking(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Possible Values: `MASK_ENTIRE_VALUE`, `MASK_ONLY_CONFIDENTIAL_DATA`, `NOT_MASKED`
         """
         return pulumi.get(self, "masking")
 
     @masking.setter
-    def masking(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def masking(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "masking", value)
 
 
@@ -102,8 +102,8 @@ class SpanEvents(pulumi.CustomResource):
     def __init__(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 key: Optional[pulumi.Input[_builtins.str]] = None,
-                 masking: Optional[pulumi.Input[_builtins.str]] = None,
+                 key: pulumi.Input[Optional[_builtins.str]] = None,
+                 masking: pulumi.Input[Optional[_builtins.str]] = None,
                  __props__=None):
         """
         > This resource requires the API token scopes **Read settings** (`settings.read`) and **Write settings** (`settings.write`)
@@ -167,8 +167,8 @@ class SpanEvents(pulumi.CustomResource):
     def _internal_init(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 key: Optional[pulumi.Input[_builtins.str]] = None,
-                 masking: Optional[pulumi.Input[_builtins.str]] = None,
+                 key: pulumi.Input[Optional[_builtins.str]] = None,
+                 masking: pulumi.Input[Optional[_builtins.str]] = None,
                  __props__=None):
         opts = pulumi.ResourceOptions.merge(_utilities.get_resource_opts_defaults(), opts)
         if not isinstance(opts, pulumi.ResourceOptions):
@@ -194,8 +194,8 @@ class SpanEvents(pulumi.CustomResource):
     def get(resource_name: str,
             id: pulumi.Input[str],
             opts: Optional[pulumi.ResourceOptions] = None,
-            key: Optional[pulumi.Input[_builtins.str]] = None,
-            masking: Optional[pulumi.Input[_builtins.str]] = None) -> 'SpanEvents':
+            key: pulumi.Input[Optional[_builtins.str]] = None,
+            masking: pulumi.Input[Optional[_builtins.str]] = None) -> 'SpanEvents':
         """
         Get an existing SpanEvents resource's state with the given name, id, and optional extra
         properties used to qualify the lookup.

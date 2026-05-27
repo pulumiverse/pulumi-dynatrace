@@ -25,7 +25,7 @@ class WebAppAnomaliesArgs:
                  response_time: pulumi.Input['WebAppAnomaliesResponseTimeArgs'],
                  traffic_drops: pulumi.Input['WebAppAnomaliesTrafficDropsArgs'],
                  traffic_spikes: pulumi.Input['WebAppAnomaliesTrafficSpikesArgs'],
-                 scope: Optional[pulumi.Input[_builtins.str]] = None):
+                 scope: pulumi.Input[Optional[_builtins.str]] = None):
         """
         The set of arguments for constructing a WebAppAnomalies resource.
 
@@ -92,25 +92,25 @@ class WebAppAnomaliesArgs:
 
     @_builtins.property
     @pulumi.getter
-    def scope(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def scope(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The scope of this setting (APPLICATION_METHOD, APPLICATION). Omit this property if you want to cover the whole environment.
         """
         return pulumi.get(self, "scope")
 
     @scope.setter
-    def scope(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def scope(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "scope", value)
 
 
 @pulumi.input_type
 class _WebAppAnomaliesState:
     def __init__(__self__, *,
-                 error_rate: Optional[pulumi.Input['WebAppAnomaliesErrorRateArgs']] = None,
-                 response_time: Optional[pulumi.Input['WebAppAnomaliesResponseTimeArgs']] = None,
-                 scope: Optional[pulumi.Input[_builtins.str]] = None,
-                 traffic_drops: Optional[pulumi.Input['WebAppAnomaliesTrafficDropsArgs']] = None,
-                 traffic_spikes: Optional[pulumi.Input['WebAppAnomaliesTrafficSpikesArgs']] = None):
+                 error_rate: pulumi.Input[Optional['WebAppAnomaliesErrorRateArgs']] = None,
+                 response_time: pulumi.Input[Optional['WebAppAnomaliesResponseTimeArgs']] = None,
+                 scope: pulumi.Input[Optional[_builtins.str]] = None,
+                 traffic_drops: pulumi.Input[Optional['WebAppAnomaliesTrafficDropsArgs']] = None,
+                 traffic_spikes: pulumi.Input[Optional['WebAppAnomaliesTrafficSpikesArgs']] = None):
         """
         Input properties used for looking up and filtering WebAppAnomalies resources.
 
@@ -133,62 +133,62 @@ class _WebAppAnomaliesState:
 
     @_builtins.property
     @pulumi.getter(name="errorRate")
-    def error_rate(self) -> Optional[pulumi.Input['WebAppAnomaliesErrorRateArgs']]:
+    def error_rate(self) -> pulumi.Input[Optional['WebAppAnomaliesErrorRateArgs']]:
         """
         Error rate
         """
         return pulumi.get(self, "error_rate")
 
     @error_rate.setter
-    def error_rate(self, value: Optional[pulumi.Input['WebAppAnomaliesErrorRateArgs']]):
+    def error_rate(self, value: pulumi.Input[Optional['WebAppAnomaliesErrorRateArgs']]):
         pulumi.set(self, "error_rate", value)
 
     @_builtins.property
     @pulumi.getter(name="responseTime")
-    def response_time(self) -> Optional[pulumi.Input['WebAppAnomaliesResponseTimeArgs']]:
+    def response_time(self) -> pulumi.Input[Optional['WebAppAnomaliesResponseTimeArgs']]:
         """
         Response time
         """
         return pulumi.get(self, "response_time")
 
     @response_time.setter
-    def response_time(self, value: Optional[pulumi.Input['WebAppAnomaliesResponseTimeArgs']]):
+    def response_time(self, value: pulumi.Input[Optional['WebAppAnomaliesResponseTimeArgs']]):
         pulumi.set(self, "response_time", value)
 
     @_builtins.property
     @pulumi.getter
-    def scope(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def scope(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The scope of this setting (APPLICATION_METHOD, APPLICATION). Omit this property if you want to cover the whole environment.
         """
         return pulumi.get(self, "scope")
 
     @scope.setter
-    def scope(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def scope(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "scope", value)
 
     @_builtins.property
     @pulumi.getter(name="trafficDrops")
-    def traffic_drops(self) -> Optional[pulumi.Input['WebAppAnomaliesTrafficDropsArgs']]:
+    def traffic_drops(self) -> pulumi.Input[Optional['WebAppAnomaliesTrafficDropsArgs']]:
         """
         Detect traffic drops
         """
         return pulumi.get(self, "traffic_drops")
 
     @traffic_drops.setter
-    def traffic_drops(self, value: Optional[pulumi.Input['WebAppAnomaliesTrafficDropsArgs']]):
+    def traffic_drops(self, value: pulumi.Input[Optional['WebAppAnomaliesTrafficDropsArgs']]):
         pulumi.set(self, "traffic_drops", value)
 
     @_builtins.property
     @pulumi.getter(name="trafficSpikes")
-    def traffic_spikes(self) -> Optional[pulumi.Input['WebAppAnomaliesTrafficSpikesArgs']]:
+    def traffic_spikes(self) -> pulumi.Input[Optional['WebAppAnomaliesTrafficSpikesArgs']]:
         """
         Detect traffic spikes
         """
         return pulumi.get(self, "traffic_spikes")
 
     @traffic_spikes.setter
-    def traffic_spikes(self, value: Optional[pulumi.Input['WebAppAnomaliesTrafficSpikesArgs']]):
+    def traffic_spikes(self, value: pulumi.Input[Optional['WebAppAnomaliesTrafficSpikesArgs']]):
         pulumi.set(self, "traffic_spikes", value)
 
 
@@ -198,11 +198,11 @@ class WebAppAnomalies(pulumi.CustomResource):
     def __init__(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 error_rate: Optional[pulumi.Input[Union['WebAppAnomaliesErrorRateArgs', 'WebAppAnomaliesErrorRateArgsDict']]] = None,
-                 response_time: Optional[pulumi.Input[Union['WebAppAnomaliesResponseTimeArgs', 'WebAppAnomaliesResponseTimeArgsDict']]] = None,
-                 scope: Optional[pulumi.Input[_builtins.str]] = None,
-                 traffic_drops: Optional[pulumi.Input[Union['WebAppAnomaliesTrafficDropsArgs', 'WebAppAnomaliesTrafficDropsArgsDict']]] = None,
-                 traffic_spikes: Optional[pulumi.Input[Union['WebAppAnomaliesTrafficSpikesArgs', 'WebAppAnomaliesTrafficSpikesArgsDict']]] = None,
+                 error_rate: pulumi.Input[Optional[Union['WebAppAnomaliesErrorRateArgs', 'WebAppAnomaliesErrorRateArgsDict']]] = None,
+                 response_time: pulumi.Input[Optional[Union['WebAppAnomaliesResponseTimeArgs', 'WebAppAnomaliesResponseTimeArgsDict']]] = None,
+                 scope: pulumi.Input[Optional[_builtins.str]] = None,
+                 traffic_drops: pulumi.Input[Optional[Union['WebAppAnomaliesTrafficDropsArgs', 'WebAppAnomaliesTrafficDropsArgsDict']]] = None,
+                 traffic_spikes: pulumi.Input[Optional[Union['WebAppAnomaliesTrafficSpikesArgs', 'WebAppAnomaliesTrafficSpikesArgsDict']]] = None,
                  __props__=None):
         """
         > This resource requires the API token scopes **Read settings** (`settings.read`) and **Write settings** (`settings.write`)
@@ -265,11 +265,11 @@ class WebAppAnomalies(pulumi.CustomResource):
     def _internal_init(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 error_rate: Optional[pulumi.Input[Union['WebAppAnomaliesErrorRateArgs', 'WebAppAnomaliesErrorRateArgsDict']]] = None,
-                 response_time: Optional[pulumi.Input[Union['WebAppAnomaliesResponseTimeArgs', 'WebAppAnomaliesResponseTimeArgsDict']]] = None,
-                 scope: Optional[pulumi.Input[_builtins.str]] = None,
-                 traffic_drops: Optional[pulumi.Input[Union['WebAppAnomaliesTrafficDropsArgs', 'WebAppAnomaliesTrafficDropsArgsDict']]] = None,
-                 traffic_spikes: Optional[pulumi.Input[Union['WebAppAnomaliesTrafficSpikesArgs', 'WebAppAnomaliesTrafficSpikesArgsDict']]] = None,
+                 error_rate: pulumi.Input[Optional[Union['WebAppAnomaliesErrorRateArgs', 'WebAppAnomaliesErrorRateArgsDict']]] = None,
+                 response_time: pulumi.Input[Optional[Union['WebAppAnomaliesResponseTimeArgs', 'WebAppAnomaliesResponseTimeArgsDict']]] = None,
+                 scope: pulumi.Input[Optional[_builtins.str]] = None,
+                 traffic_drops: pulumi.Input[Optional[Union['WebAppAnomaliesTrafficDropsArgs', 'WebAppAnomaliesTrafficDropsArgsDict']]] = None,
+                 traffic_spikes: pulumi.Input[Optional[Union['WebAppAnomaliesTrafficSpikesArgs', 'WebAppAnomaliesTrafficSpikesArgsDict']]] = None,
                  __props__=None):
         opts = pulumi.ResourceOptions.merge(_utilities.get_resource_opts_defaults(), opts)
         if not isinstance(opts, pulumi.ResourceOptions):
@@ -302,11 +302,11 @@ class WebAppAnomalies(pulumi.CustomResource):
     def get(resource_name: str,
             id: pulumi.Input[str],
             opts: Optional[pulumi.ResourceOptions] = None,
-            error_rate: Optional[pulumi.Input[Union['WebAppAnomaliesErrorRateArgs', 'WebAppAnomaliesErrorRateArgsDict']]] = None,
-            response_time: Optional[pulumi.Input[Union['WebAppAnomaliesResponseTimeArgs', 'WebAppAnomaliesResponseTimeArgsDict']]] = None,
-            scope: Optional[pulumi.Input[_builtins.str]] = None,
-            traffic_drops: Optional[pulumi.Input[Union['WebAppAnomaliesTrafficDropsArgs', 'WebAppAnomaliesTrafficDropsArgsDict']]] = None,
-            traffic_spikes: Optional[pulumi.Input[Union['WebAppAnomaliesTrafficSpikesArgs', 'WebAppAnomaliesTrafficSpikesArgsDict']]] = None) -> 'WebAppAnomalies':
+            error_rate: pulumi.Input[Optional[Union['WebAppAnomaliesErrorRateArgs', 'WebAppAnomaliesErrorRateArgsDict']]] = None,
+            response_time: pulumi.Input[Optional[Union['WebAppAnomaliesResponseTimeArgs', 'WebAppAnomaliesResponseTimeArgsDict']]] = None,
+            scope: pulumi.Input[Optional[_builtins.str]] = None,
+            traffic_drops: pulumi.Input[Optional[Union['WebAppAnomaliesTrafficDropsArgs', 'WebAppAnomaliesTrafficDropsArgsDict']]] = None,
+            traffic_spikes: pulumi.Input[Optional[Union['WebAppAnomaliesTrafficSpikesArgs', 'WebAppAnomaliesTrafficSpikesArgsDict']]] = None) -> 'WebAppAnomalies':
         """
         Get an existing WebAppAnomalies resource's state with the given name, id, and optional extra
         properties used to qualify the lookup.

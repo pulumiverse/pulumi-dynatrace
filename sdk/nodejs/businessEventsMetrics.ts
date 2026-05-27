@@ -127,27 +127,27 @@ export interface BusinessEventsMetricsState {
     /**
      * no documentation available
      */
-    dimensions?: pulumi.Input<pulumi.Input<string>[]>;
+    dimensions?: pulumi.Input<pulumi.Input<string>[] | undefined>;
     /**
      * This setting is enabled (`true`) or disabled (`false`)
      */
-    enabled?: pulumi.Input<boolean>;
+    enabled?: pulumi.Input<boolean | undefined>;
     /**
      * Key
      */
-    key?: pulumi.Input<string>;
+    key?: pulumi.Input<string | undefined>;
     /**
      * [See our documentation](https://dt-url.net/bp234rv)
      */
-    matcher?: pulumi.Input<string>;
+    matcher?: pulumi.Input<string | undefined>;
     /**
      * Possible Values: `ATTRIBUTE`, `OCCURRENCE`
      */
-    measure?: pulumi.Input<string>;
+    measure?: pulumi.Input<string | undefined>;
     /**
      * Attribute
      */
-    measureAttribute?: pulumi.Input<string>;
+    measureAttribute?: pulumi.Input<string | undefined>;
 }
 
 /**
@@ -157,7 +157,7 @@ export interface BusinessEventsMetricsArgs {
     /**
      * no documentation available
      */
-    dimensions?: pulumi.Input<pulumi.Input<string>[]>;
+    dimensions?: pulumi.Input<pulumi.Input<string>[] | undefined>;
     /**
      * This setting is enabled (`true`) or disabled (`false`)
      */
@@ -177,5 +177,5 @@ export interface BusinessEventsMetricsArgs {
     /**
      * Attribute
      */
-    measureAttribute?: pulumi.Input<string>;
+    measureAttribute?: pulumi.Input<string | undefined>;
 }

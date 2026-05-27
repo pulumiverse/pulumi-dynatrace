@@ -210,63 +210,63 @@ export interface K8sWorkloadAnomaliesState {
     /**
      * no documentation available
      */
-    containerRestarts?: pulumi.Input<inputs.K8sWorkloadAnomaliesContainerRestarts>;
+    containerRestarts?: pulumi.Input<inputs.K8sWorkloadAnomaliesContainerRestarts | undefined>;
     /**
      * no documentation available
      */
-    deploymentStuck?: pulumi.Input<inputs.K8sWorkloadAnomaliesDeploymentStuck>;
+    deploymentStuck?: pulumi.Input<inputs.K8sWorkloadAnomaliesDeploymentStuck | undefined>;
     /**
      * no documentation available
      */
-    highCpuThrottling?: pulumi.Input<inputs.K8sWorkloadAnomaliesHighCpuThrottling>;
+    highCpuThrottling?: pulumi.Input<inputs.K8sWorkloadAnomaliesHighCpuThrottling | undefined>;
     /**
      * no documentation available
      */
-    highCpuUsage?: pulumi.Input<inputs.K8sWorkloadAnomaliesHighCpuUsage>;
+    highCpuUsage?: pulumi.Input<inputs.K8sWorkloadAnomaliesHighCpuUsage | undefined>;
     /**
      * no documentation available
      */
-    highMemoryUsage?: pulumi.Input<inputs.K8sWorkloadAnomaliesHighMemoryUsage>;
+    highMemoryUsage?: pulumi.Input<inputs.K8sWorkloadAnomaliesHighMemoryUsage | undefined>;
     /**
      * no documentation available
      */
-    jobFailureEvents?: pulumi.Input<inputs.K8sWorkloadAnomaliesJobFailureEvents>;
+    jobFailureEvents?: pulumi.Input<inputs.K8sWorkloadAnomaliesJobFailureEvents | undefined>;
     /**
      * no documentation available
      */
-    notAllPodsReady?: pulumi.Input<inputs.K8sWorkloadAnomaliesNotAllPodsReady>;
+    notAllPodsReady?: pulumi.Input<inputs.K8sWorkloadAnomaliesNotAllPodsReady | undefined>;
     /**
      * no documentation available
      */
-    oomKills?: pulumi.Input<inputs.K8sWorkloadAnomaliesOomKills>;
+    oomKills?: pulumi.Input<inputs.K8sWorkloadAnomaliesOomKills | undefined>;
     /**
      * no documentation available
      */
-    pendingPods?: pulumi.Input<inputs.K8sWorkloadAnomaliesPendingPods>;
+    pendingPods?: pulumi.Input<inputs.K8sWorkloadAnomaliesPendingPods | undefined>;
     /**
      * no documentation available
      */
-    podBackoffEvents?: pulumi.Input<inputs.K8sWorkloadAnomaliesPodBackoffEvents>;
+    podBackoffEvents?: pulumi.Input<inputs.K8sWorkloadAnomaliesPodBackoffEvents | undefined>;
     /**
      * no documentation available
      */
-    podEvictionEvents?: pulumi.Input<inputs.K8sWorkloadAnomaliesPodEvictionEvents>;
+    podEvictionEvents?: pulumi.Input<inputs.K8sWorkloadAnomaliesPodEvictionEvents | undefined>;
     /**
      * no documentation available
      */
-    podPreemptionEvents?: pulumi.Input<inputs.K8sWorkloadAnomaliesPodPreemptionEvents>;
+    podPreemptionEvents?: pulumi.Input<inputs.K8sWorkloadAnomaliesPodPreemptionEvents | undefined>;
     /**
      * no documentation available
      */
-    podStuckInTerminating?: pulumi.Input<inputs.K8sWorkloadAnomaliesPodStuckInTerminating>;
+    podStuckInTerminating?: pulumi.Input<inputs.K8sWorkloadAnomaliesPodStuckInTerminating | undefined>;
     /**
      * The scope of this setting (CLOUD*APPLICATION*NAMESPACE, KUBERNETES_CLUSTER). Omit this property if you want to cover the whole environment.
      */
-    scope?: pulumi.Input<string>;
+    scope?: pulumi.Input<string | undefined>;
     /**
      * no documentation available
      */
-    workloadWithoutReadyPods?: pulumi.Input<inputs.K8sWorkloadAnomaliesWorkloadWithoutReadyPods>;
+    workloadWithoutReadyPods?: pulumi.Input<inputs.K8sWorkloadAnomaliesWorkloadWithoutReadyPods | undefined>;
 }
 
 /**
@@ -328,7 +328,7 @@ export interface K8sWorkloadAnomaliesArgs {
     /**
      * The scope of this setting (CLOUD*APPLICATION*NAMESPACE, KUBERNETES_CLUSTER). Omit this property if you want to cover the whole environment.
      */
-    scope?: pulumi.Input<string>;
+    scope?: pulumi.Input<string | undefined>;
     /**
      * no documentation available
      */

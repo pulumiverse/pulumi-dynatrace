@@ -164,14 +164,14 @@ def get_synthetic_location(cloud_platform: Optional[_builtins.str] = None,
         stage=pulumi.get(__ret__, 'stage'),
         status=pulumi.get(__ret__, 'status'),
         type=pulumi.get(__ret__, 'type'))
-def get_synthetic_location_output(cloud_platform: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                                  entity_id: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                                  geo_location_id: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                                  ips: Optional[pulumi.Input[Optional[Sequence[_builtins.str]]]] = None,
-                                  name: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                                  stage: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                                  status: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                                  type: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
+def get_synthetic_location_output(cloud_platform: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                                  entity_id: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                                  geo_location_id: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                                  ips: pulumi.Input[Optional[Optional[Sequence[_builtins.str]]]] = None,
+                                  name: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                                  stage: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                                  status: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                                  type: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
                                   opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetSyntheticLocationResult]:
     """
     The synthetic location data source allows the location ID to be retrieved based off of provided parameters.

@@ -21,10 +21,10 @@ __all__ = ['DatabaseAnomaliesArgs', 'DatabaseAnomalies']
 @pulumi.input_type
 class DatabaseAnomaliesArgs:
     def __init__(__self__, *,
-                 db_connect_failures: Optional[pulumi.Input['DatabaseAnomaliesDbConnectFailuresArgs']] = None,
-                 failure_rate: Optional[pulumi.Input['DatabaseAnomaliesFailureRateArgs']] = None,
-                 load: Optional[pulumi.Input['DatabaseAnomaliesLoadArgs']] = None,
-                 response_time: Optional[pulumi.Input['DatabaseAnomaliesResponseTimeArgs']] = None):
+                 db_connect_failures: pulumi.Input[Optional['DatabaseAnomaliesDbConnectFailuresArgs']] = None,
+                 failure_rate: pulumi.Input[Optional['DatabaseAnomaliesFailureRateArgs']] = None,
+                 load: pulumi.Input[Optional['DatabaseAnomaliesLoadArgs']] = None,
+                 response_time: pulumi.Input[Optional['DatabaseAnomaliesResponseTimeArgs']] = None):
         """
         The set of arguments for constructing a DatabaseAnomalies resource.
 
@@ -44,60 +44,60 @@ class DatabaseAnomaliesArgs:
 
     @_builtins.property
     @pulumi.getter(name="dbConnectFailures")
-    def db_connect_failures(self) -> Optional[pulumi.Input['DatabaseAnomaliesDbConnectFailuresArgs']]:
+    def db_connect_failures(self) -> pulumi.Input[Optional['DatabaseAnomaliesDbConnectFailuresArgs']]:
         """
         Parameters of the failed database connections detection.  The alert is triggered when failed connections number exceeds **connectionFailsCount** during any **timePeriodMinutes** minutes period
         """
         return pulumi.get(self, "db_connect_failures")
 
     @db_connect_failures.setter
-    def db_connect_failures(self, value: Optional[pulumi.Input['DatabaseAnomaliesDbConnectFailuresArgs']]):
+    def db_connect_failures(self, value: pulumi.Input[Optional['DatabaseAnomaliesDbConnectFailuresArgs']]):
         pulumi.set(self, "db_connect_failures", value)
 
     @_builtins.property
     @pulumi.getter(name="failureRate")
-    def failure_rate(self) -> Optional[pulumi.Input['DatabaseAnomaliesFailureRateArgs']]:
+    def failure_rate(self) -> pulumi.Input[Optional['DatabaseAnomaliesFailureRateArgs']]:
         """
         Configuration of failure rate increase detection
         """
         return pulumi.get(self, "failure_rate")
 
     @failure_rate.setter
-    def failure_rate(self, value: Optional[pulumi.Input['DatabaseAnomaliesFailureRateArgs']]):
+    def failure_rate(self, value: pulumi.Input[Optional['DatabaseAnomaliesFailureRateArgs']]):
         pulumi.set(self, "failure_rate", value)
 
     @_builtins.property
     @pulumi.getter
-    def load(self) -> Optional[pulumi.Input['DatabaseAnomaliesLoadArgs']]:
+    def load(self) -> pulumi.Input[Optional['DatabaseAnomaliesLoadArgs']]:
         """
         Configuration for anomalies regarding load drops and spikes
         """
         return pulumi.get(self, "load")
 
     @load.setter
-    def load(self, value: Optional[pulumi.Input['DatabaseAnomaliesLoadArgs']]):
+    def load(self, value: pulumi.Input[Optional['DatabaseAnomaliesLoadArgs']]):
         pulumi.set(self, "load", value)
 
     @_builtins.property
     @pulumi.getter(name="responseTime")
-    def response_time(self) -> Optional[pulumi.Input['DatabaseAnomaliesResponseTimeArgs']]:
+    def response_time(self) -> pulumi.Input[Optional['DatabaseAnomaliesResponseTimeArgs']]:
         """
         Configuration of response time degradation detection
         """
         return pulumi.get(self, "response_time")
 
     @response_time.setter
-    def response_time(self, value: Optional[pulumi.Input['DatabaseAnomaliesResponseTimeArgs']]):
+    def response_time(self, value: pulumi.Input[Optional['DatabaseAnomaliesResponseTimeArgs']]):
         pulumi.set(self, "response_time", value)
 
 
 @pulumi.input_type
 class _DatabaseAnomaliesState:
     def __init__(__self__, *,
-                 db_connect_failures: Optional[pulumi.Input['DatabaseAnomaliesDbConnectFailuresArgs']] = None,
-                 failure_rate: Optional[pulumi.Input['DatabaseAnomaliesFailureRateArgs']] = None,
-                 load: Optional[pulumi.Input['DatabaseAnomaliesLoadArgs']] = None,
-                 response_time: Optional[pulumi.Input['DatabaseAnomaliesResponseTimeArgs']] = None):
+                 db_connect_failures: pulumi.Input[Optional['DatabaseAnomaliesDbConnectFailuresArgs']] = None,
+                 failure_rate: pulumi.Input[Optional['DatabaseAnomaliesFailureRateArgs']] = None,
+                 load: pulumi.Input[Optional['DatabaseAnomaliesLoadArgs']] = None,
+                 response_time: pulumi.Input[Optional['DatabaseAnomaliesResponseTimeArgs']] = None):
         """
         Input properties used for looking up and filtering DatabaseAnomalies resources.
 
@@ -117,50 +117,50 @@ class _DatabaseAnomaliesState:
 
     @_builtins.property
     @pulumi.getter(name="dbConnectFailures")
-    def db_connect_failures(self) -> Optional[pulumi.Input['DatabaseAnomaliesDbConnectFailuresArgs']]:
+    def db_connect_failures(self) -> pulumi.Input[Optional['DatabaseAnomaliesDbConnectFailuresArgs']]:
         """
         Parameters of the failed database connections detection.  The alert is triggered when failed connections number exceeds **connectionFailsCount** during any **timePeriodMinutes** minutes period
         """
         return pulumi.get(self, "db_connect_failures")
 
     @db_connect_failures.setter
-    def db_connect_failures(self, value: Optional[pulumi.Input['DatabaseAnomaliesDbConnectFailuresArgs']]):
+    def db_connect_failures(self, value: pulumi.Input[Optional['DatabaseAnomaliesDbConnectFailuresArgs']]):
         pulumi.set(self, "db_connect_failures", value)
 
     @_builtins.property
     @pulumi.getter(name="failureRate")
-    def failure_rate(self) -> Optional[pulumi.Input['DatabaseAnomaliesFailureRateArgs']]:
+    def failure_rate(self) -> pulumi.Input[Optional['DatabaseAnomaliesFailureRateArgs']]:
         """
         Configuration of failure rate increase detection
         """
         return pulumi.get(self, "failure_rate")
 
     @failure_rate.setter
-    def failure_rate(self, value: Optional[pulumi.Input['DatabaseAnomaliesFailureRateArgs']]):
+    def failure_rate(self, value: pulumi.Input[Optional['DatabaseAnomaliesFailureRateArgs']]):
         pulumi.set(self, "failure_rate", value)
 
     @_builtins.property
     @pulumi.getter
-    def load(self) -> Optional[pulumi.Input['DatabaseAnomaliesLoadArgs']]:
+    def load(self) -> pulumi.Input[Optional['DatabaseAnomaliesLoadArgs']]:
         """
         Configuration for anomalies regarding load drops and spikes
         """
         return pulumi.get(self, "load")
 
     @load.setter
-    def load(self, value: Optional[pulumi.Input['DatabaseAnomaliesLoadArgs']]):
+    def load(self, value: pulumi.Input[Optional['DatabaseAnomaliesLoadArgs']]):
         pulumi.set(self, "load", value)
 
     @_builtins.property
     @pulumi.getter(name="responseTime")
-    def response_time(self) -> Optional[pulumi.Input['DatabaseAnomaliesResponseTimeArgs']]:
+    def response_time(self) -> pulumi.Input[Optional['DatabaseAnomaliesResponseTimeArgs']]:
         """
         Configuration of response time degradation detection
         """
         return pulumi.get(self, "response_time")
 
     @response_time.setter
-    def response_time(self, value: Optional[pulumi.Input['DatabaseAnomaliesResponseTimeArgs']]):
+    def response_time(self, value: pulumi.Input[Optional['DatabaseAnomaliesResponseTimeArgs']]):
         pulumi.set(self, "response_time", value)
 
 
@@ -170,10 +170,10 @@ class DatabaseAnomalies(pulumi.CustomResource):
     def __init__(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 db_connect_failures: Optional[pulumi.Input[Union['DatabaseAnomaliesDbConnectFailuresArgs', 'DatabaseAnomaliesDbConnectFailuresArgsDict']]] = None,
-                 failure_rate: Optional[pulumi.Input[Union['DatabaseAnomaliesFailureRateArgs', 'DatabaseAnomaliesFailureRateArgsDict']]] = None,
-                 load: Optional[pulumi.Input[Union['DatabaseAnomaliesLoadArgs', 'DatabaseAnomaliesLoadArgsDict']]] = None,
-                 response_time: Optional[pulumi.Input[Union['DatabaseAnomaliesResponseTimeArgs', 'DatabaseAnomaliesResponseTimeArgsDict']]] = None,
+                 db_connect_failures: pulumi.Input[Optional[Union['DatabaseAnomaliesDbConnectFailuresArgs', 'DatabaseAnomaliesDbConnectFailuresArgsDict']]] = None,
+                 failure_rate: pulumi.Input[Optional[Union['DatabaseAnomaliesFailureRateArgs', 'DatabaseAnomaliesFailureRateArgsDict']]] = None,
+                 load: pulumi.Input[Optional[Union['DatabaseAnomaliesLoadArgs', 'DatabaseAnomaliesLoadArgsDict']]] = None,
+                 response_time: pulumi.Input[Optional[Union['DatabaseAnomaliesResponseTimeArgs', 'DatabaseAnomaliesResponseTimeArgsDict']]] = None,
                  __props__=None):
         """
         !> This resource is utilizing an older API endpoint, please use DatabaseAnomaliesV2 instead.
@@ -239,10 +239,10 @@ class DatabaseAnomalies(pulumi.CustomResource):
     def _internal_init(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 db_connect_failures: Optional[pulumi.Input[Union['DatabaseAnomaliesDbConnectFailuresArgs', 'DatabaseAnomaliesDbConnectFailuresArgsDict']]] = None,
-                 failure_rate: Optional[pulumi.Input[Union['DatabaseAnomaliesFailureRateArgs', 'DatabaseAnomaliesFailureRateArgsDict']]] = None,
-                 load: Optional[pulumi.Input[Union['DatabaseAnomaliesLoadArgs', 'DatabaseAnomaliesLoadArgsDict']]] = None,
-                 response_time: Optional[pulumi.Input[Union['DatabaseAnomaliesResponseTimeArgs', 'DatabaseAnomaliesResponseTimeArgsDict']]] = None,
+                 db_connect_failures: pulumi.Input[Optional[Union['DatabaseAnomaliesDbConnectFailuresArgs', 'DatabaseAnomaliesDbConnectFailuresArgsDict']]] = None,
+                 failure_rate: pulumi.Input[Optional[Union['DatabaseAnomaliesFailureRateArgs', 'DatabaseAnomaliesFailureRateArgsDict']]] = None,
+                 load: pulumi.Input[Optional[Union['DatabaseAnomaliesLoadArgs', 'DatabaseAnomaliesLoadArgsDict']]] = None,
+                 response_time: pulumi.Input[Optional[Union['DatabaseAnomaliesResponseTimeArgs', 'DatabaseAnomaliesResponseTimeArgsDict']]] = None,
                  __props__=None):
         opts = pulumi.ResourceOptions.merge(_utilities.get_resource_opts_defaults(), opts)
         if not isinstance(opts, pulumi.ResourceOptions):
@@ -266,10 +266,10 @@ class DatabaseAnomalies(pulumi.CustomResource):
     def get(resource_name: str,
             id: pulumi.Input[str],
             opts: Optional[pulumi.ResourceOptions] = None,
-            db_connect_failures: Optional[pulumi.Input[Union['DatabaseAnomaliesDbConnectFailuresArgs', 'DatabaseAnomaliesDbConnectFailuresArgsDict']]] = None,
-            failure_rate: Optional[pulumi.Input[Union['DatabaseAnomaliesFailureRateArgs', 'DatabaseAnomaliesFailureRateArgsDict']]] = None,
-            load: Optional[pulumi.Input[Union['DatabaseAnomaliesLoadArgs', 'DatabaseAnomaliesLoadArgsDict']]] = None,
-            response_time: Optional[pulumi.Input[Union['DatabaseAnomaliesResponseTimeArgs', 'DatabaseAnomaliesResponseTimeArgsDict']]] = None) -> 'DatabaseAnomalies':
+            db_connect_failures: pulumi.Input[Optional[Union['DatabaseAnomaliesDbConnectFailuresArgs', 'DatabaseAnomaliesDbConnectFailuresArgsDict']]] = None,
+            failure_rate: pulumi.Input[Optional[Union['DatabaseAnomaliesFailureRateArgs', 'DatabaseAnomaliesFailureRateArgsDict']]] = None,
+            load: pulumi.Input[Optional[Union['DatabaseAnomaliesLoadArgs', 'DatabaseAnomaliesLoadArgsDict']]] = None,
+            response_time: pulumi.Input[Optional[Union['DatabaseAnomaliesResponseTimeArgs', 'DatabaseAnomaliesResponseTimeArgsDict']]] = None) -> 'DatabaseAnomalies':
         """
         Get an existing DatabaseAnomalies resource's state with the given name, id, and optional extra
         properties used to qualify the lookup.

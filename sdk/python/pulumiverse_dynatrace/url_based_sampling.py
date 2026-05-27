@@ -24,13 +24,13 @@ class UrlBasedSamplingArgs:
                  enabled: pulumi.Input[_builtins.bool],
                  http_method_any: pulumi.Input[_builtins.bool],
                  ignore: pulumi.Input[_builtins.bool],
-                 factor: Optional[pulumi.Input[_builtins.str]] = None,
-                 http_methods: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-                 insert_after: Optional[pulumi.Input[_builtins.str]] = None,
-                 path: Optional[pulumi.Input[_builtins.str]] = None,
-                 path_comparison_type: Optional[pulumi.Input[_builtins.str]] = None,
-                 query_parameters: Optional[pulumi.Input['UrlBasedSamplingQueryParametersArgs']] = None,
-                 scope: Optional[pulumi.Input[_builtins.str]] = None):
+                 factor: pulumi.Input[Optional[_builtins.str]] = None,
+                 http_methods: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 insert_after: pulumi.Input[Optional[_builtins.str]] = None,
+                 path: pulumi.Input[Optional[_builtins.str]] = None,
+                 path_comparison_type: pulumi.Input[Optional[_builtins.str]] = None,
+                 query_parameters: pulumi.Input[Optional['UrlBasedSamplingQueryParametersArgs']] = None,
+                 scope: pulumi.Input[Optional[_builtins.str]] = None):
         """
         The set of arguments for constructing a UrlBasedSampling resource.
 
@@ -101,102 +101,102 @@ class UrlBasedSamplingArgs:
 
     @_builtins.property
     @pulumi.getter
-    def factor(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def factor(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Select the scaling factor for the current sampling rate of the system. Possible values: `IncreaseCapturing128Times`, `IncreaseCapturing64Times`, `IncreaseCapturing32Times`, `IncreaseCapturing16Times`, `IncreaseCapturing8Times`, `IncreaseCapturing4Times`, `IncreaseCapturing2Times`, `ReduceCapturingByFactor2`, `ReduceCapturingByFactor4`, `ReduceCapturingByFactor8`, `ReduceCapturingByFactor16`, `ReduceCapturingByFactor32`, `ReduceCapturingByFactor64`, `ReduceCapturingByFactor128`
         """
         return pulumi.get(self, "factor")
 
     @factor.setter
-    def factor(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def factor(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "factor", value)
 
     @_builtins.property
     @pulumi.getter(name="httpMethods")
-    def http_methods(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]:
+    def http_methods(self) -> pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]:
         """
         Possible values: `GET`, `POST`, `PUT`, `DELETE`, `HEAD`, `CONNECT`, `OPTIONS`, `TRACE`, `PATCH`
         """
         return pulumi.get(self, "http_methods")
 
     @http_methods.setter
-    def http_methods(self, value: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]):
+    def http_methods(self, value: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "http_methods", value)
 
     @_builtins.property
     @pulumi.getter(name="insertAfter")
-    def insert_after(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def insert_after(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Because this resource allows for ordering you may specify the ID of the resource instance that comes before this instance regarding order. If not specified when creating the setting will be added to the end of the list. If not specified during update the order will remain untouched
         """
         return pulumi.get(self, "insert_after")
 
     @insert_after.setter
-    def insert_after(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def insert_after(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "insert_after", value)
 
     @_builtins.property
     @pulumi.getter
-    def path(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def path(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Path of the URL.
         """
         return pulumi.get(self, "path")
 
     @path.setter
-    def path(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def path(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "path", value)
 
     @_builtins.property
     @pulumi.getter(name="pathComparisonType")
-    def path_comparison_type(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def path_comparison_type(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Path comparison condition. Possible values: `EQUALS`, `DOES_NOT_EQUAL`, `CONTAINS`, `DOES_NOT_CONTAIN`, `STARTS_WITH`, `DOES_NOT_START_WITH`, `ENDS_WITH`, `DOES_NOT_END_WITH`
         """
         return pulumi.get(self, "path_comparison_type")
 
     @path_comparison_type.setter
-    def path_comparison_type(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def path_comparison_type(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "path_comparison_type", value)
 
     @_builtins.property
     @pulumi.getter(name="queryParameters")
-    def query_parameters(self) -> Optional[pulumi.Input['UrlBasedSamplingQueryParametersArgs']]:
+    def query_parameters(self) -> pulumi.Input[Optional['UrlBasedSamplingQueryParametersArgs']]:
         """
         Add URL parameters in any order. **All** specified parameters must be present in the query of an URL to get a match.
         """
         return pulumi.get(self, "query_parameters")
 
     @query_parameters.setter
-    def query_parameters(self, value: Optional[pulumi.Input['UrlBasedSamplingQueryParametersArgs']]):
+    def query_parameters(self, value: pulumi.Input[Optional['UrlBasedSamplingQueryParametersArgs']]):
         pulumi.set(self, "query_parameters", value)
 
     @_builtins.property
     @pulumi.getter
-    def scope(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def scope(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The scope of this setting (PROCESS*GROUP*INSTANCE, PROCESS_GROUP). Omit this property if you want to cover the whole environment.
         """
         return pulumi.get(self, "scope")
 
     @scope.setter
-    def scope(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def scope(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "scope", value)
 
 
 @pulumi.input_type
 class _UrlBasedSamplingState:
     def __init__(__self__, *,
-                 enabled: Optional[pulumi.Input[_builtins.bool]] = None,
-                 factor: Optional[pulumi.Input[_builtins.str]] = None,
-                 http_method_any: Optional[pulumi.Input[_builtins.bool]] = None,
-                 http_methods: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-                 ignore: Optional[pulumi.Input[_builtins.bool]] = None,
-                 insert_after: Optional[pulumi.Input[_builtins.str]] = None,
-                 path: Optional[pulumi.Input[_builtins.str]] = None,
-                 path_comparison_type: Optional[pulumi.Input[_builtins.str]] = None,
-                 query_parameters: Optional[pulumi.Input['UrlBasedSamplingQueryParametersArgs']] = None,
-                 scope: Optional[pulumi.Input[_builtins.str]] = None):
+                 enabled: pulumi.Input[Optional[_builtins.bool]] = None,
+                 factor: pulumi.Input[Optional[_builtins.str]] = None,
+                 http_method_any: pulumi.Input[Optional[_builtins.bool]] = None,
+                 http_methods: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 ignore: pulumi.Input[Optional[_builtins.bool]] = None,
+                 insert_after: pulumi.Input[Optional[_builtins.str]] = None,
+                 path: pulumi.Input[Optional[_builtins.str]] = None,
+                 path_comparison_type: pulumi.Input[Optional[_builtins.str]] = None,
+                 query_parameters: pulumi.Input[Optional['UrlBasedSamplingQueryParametersArgs']] = None,
+                 scope: pulumi.Input[Optional[_builtins.str]] = None):
         """
         Input properties used for looking up and filtering UrlBasedSampling resources.
 
@@ -234,122 +234,122 @@ class _UrlBasedSamplingState:
 
     @_builtins.property
     @pulumi.getter
-    def enabled(self) -> Optional[pulumi.Input[_builtins.bool]]:
+    def enabled(self) -> pulumi.Input[Optional[_builtins.bool]]:
         """
         This setting is enabled (`true`) or disabled (`false`)
         """
         return pulumi.get(self, "enabled")
 
     @enabled.setter
-    def enabled(self, value: Optional[pulumi.Input[_builtins.bool]]):
+    def enabled(self, value: pulumi.Input[Optional[_builtins.bool]]):
         pulumi.set(self, "enabled", value)
 
     @_builtins.property
     @pulumi.getter
-    def factor(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def factor(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Select the scaling factor for the current sampling rate of the system. Possible values: `IncreaseCapturing128Times`, `IncreaseCapturing64Times`, `IncreaseCapturing32Times`, `IncreaseCapturing16Times`, `IncreaseCapturing8Times`, `IncreaseCapturing4Times`, `IncreaseCapturing2Times`, `ReduceCapturingByFactor2`, `ReduceCapturingByFactor4`, `ReduceCapturingByFactor8`, `ReduceCapturingByFactor16`, `ReduceCapturingByFactor32`, `ReduceCapturingByFactor64`, `ReduceCapturingByFactor128`
         """
         return pulumi.get(self, "factor")
 
     @factor.setter
-    def factor(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def factor(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "factor", value)
 
     @_builtins.property
     @pulumi.getter(name="httpMethodAny")
-    def http_method_any(self) -> Optional[pulumi.Input[_builtins.bool]]:
+    def http_method_any(self) -> pulumi.Input[Optional[_builtins.bool]]:
         """
         The scaling factor for the defined URL will be applied to any HTTP method.
         """
         return pulumi.get(self, "http_method_any")
 
     @http_method_any.setter
-    def http_method_any(self, value: Optional[pulumi.Input[_builtins.bool]]):
+    def http_method_any(self, value: pulumi.Input[Optional[_builtins.bool]]):
         pulumi.set(self, "http_method_any", value)
 
     @_builtins.property
     @pulumi.getter(name="httpMethods")
-    def http_methods(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]:
+    def http_methods(self) -> pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]:
         """
         Possible values: `GET`, `POST`, `PUT`, `DELETE`, `HEAD`, `CONNECT`, `OPTIONS`, `TRACE`, `PATCH`
         """
         return pulumi.get(self, "http_methods")
 
     @http_methods.setter
-    def http_methods(self, value: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]):
+    def http_methods(self, value: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "http_methods", value)
 
     @_builtins.property
     @pulumi.getter
-    def ignore(self) -> Optional[pulumi.Input[_builtins.bool]]:
+    def ignore(self) -> pulumi.Input[Optional[_builtins.bool]]:
         """
         The matching URLs will always be ignored, also if Adaptive Traffic Management is not active.
         """
         return pulumi.get(self, "ignore")
 
     @ignore.setter
-    def ignore(self, value: Optional[pulumi.Input[_builtins.bool]]):
+    def ignore(self, value: pulumi.Input[Optional[_builtins.bool]]):
         pulumi.set(self, "ignore", value)
 
     @_builtins.property
     @pulumi.getter(name="insertAfter")
-    def insert_after(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def insert_after(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Because this resource allows for ordering you may specify the ID of the resource instance that comes before this instance regarding order. If not specified when creating the setting will be added to the end of the list. If not specified during update the order will remain untouched
         """
         return pulumi.get(self, "insert_after")
 
     @insert_after.setter
-    def insert_after(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def insert_after(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "insert_after", value)
 
     @_builtins.property
     @pulumi.getter
-    def path(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def path(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Path of the URL.
         """
         return pulumi.get(self, "path")
 
     @path.setter
-    def path(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def path(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "path", value)
 
     @_builtins.property
     @pulumi.getter(name="pathComparisonType")
-    def path_comparison_type(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def path_comparison_type(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Path comparison condition. Possible values: `EQUALS`, `DOES_NOT_EQUAL`, `CONTAINS`, `DOES_NOT_CONTAIN`, `STARTS_WITH`, `DOES_NOT_START_WITH`, `ENDS_WITH`, `DOES_NOT_END_WITH`
         """
         return pulumi.get(self, "path_comparison_type")
 
     @path_comparison_type.setter
-    def path_comparison_type(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def path_comparison_type(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "path_comparison_type", value)
 
     @_builtins.property
     @pulumi.getter(name="queryParameters")
-    def query_parameters(self) -> Optional[pulumi.Input['UrlBasedSamplingQueryParametersArgs']]:
+    def query_parameters(self) -> pulumi.Input[Optional['UrlBasedSamplingQueryParametersArgs']]:
         """
         Add URL parameters in any order. **All** specified parameters must be present in the query of an URL to get a match.
         """
         return pulumi.get(self, "query_parameters")
 
     @query_parameters.setter
-    def query_parameters(self, value: Optional[pulumi.Input['UrlBasedSamplingQueryParametersArgs']]):
+    def query_parameters(self, value: pulumi.Input[Optional['UrlBasedSamplingQueryParametersArgs']]):
         pulumi.set(self, "query_parameters", value)
 
     @_builtins.property
     @pulumi.getter
-    def scope(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def scope(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The scope of this setting (PROCESS*GROUP*INSTANCE, PROCESS_GROUP). Omit this property if you want to cover the whole environment.
         """
         return pulumi.get(self, "scope")
 
     @scope.setter
-    def scope(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def scope(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "scope", value)
 
 
@@ -359,16 +359,16 @@ class UrlBasedSampling(pulumi.CustomResource):
     def __init__(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 enabled: Optional[pulumi.Input[_builtins.bool]] = None,
-                 factor: Optional[pulumi.Input[_builtins.str]] = None,
-                 http_method_any: Optional[pulumi.Input[_builtins.bool]] = None,
-                 http_methods: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-                 ignore: Optional[pulumi.Input[_builtins.bool]] = None,
-                 insert_after: Optional[pulumi.Input[_builtins.str]] = None,
-                 path: Optional[pulumi.Input[_builtins.str]] = None,
-                 path_comparison_type: Optional[pulumi.Input[_builtins.str]] = None,
-                 query_parameters: Optional[pulumi.Input[Union['UrlBasedSamplingQueryParametersArgs', 'UrlBasedSamplingQueryParametersArgsDict']]] = None,
-                 scope: Optional[pulumi.Input[_builtins.str]] = None,
+                 enabled: pulumi.Input[Optional[_builtins.bool]] = None,
+                 factor: pulumi.Input[Optional[_builtins.str]] = None,
+                 http_method_any: pulumi.Input[Optional[_builtins.bool]] = None,
+                 http_methods: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 ignore: pulumi.Input[Optional[_builtins.bool]] = None,
+                 insert_after: pulumi.Input[Optional[_builtins.str]] = None,
+                 path: pulumi.Input[Optional[_builtins.str]] = None,
+                 path_comparison_type: pulumi.Input[Optional[_builtins.str]] = None,
+                 query_parameters: pulumi.Input[Optional[Union['UrlBasedSamplingQueryParametersArgs', 'UrlBasedSamplingQueryParametersArgsDict']]] = None,
+                 scope: pulumi.Input[Optional[_builtins.str]] = None,
                  __props__=None):
         """
         > This resource requires the API token scopes **Read settings** (`settings.read`) and **Write settings** (`settings.write`)
@@ -440,16 +440,16 @@ class UrlBasedSampling(pulumi.CustomResource):
     def _internal_init(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 enabled: Optional[pulumi.Input[_builtins.bool]] = None,
-                 factor: Optional[pulumi.Input[_builtins.str]] = None,
-                 http_method_any: Optional[pulumi.Input[_builtins.bool]] = None,
-                 http_methods: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-                 ignore: Optional[pulumi.Input[_builtins.bool]] = None,
-                 insert_after: Optional[pulumi.Input[_builtins.str]] = None,
-                 path: Optional[pulumi.Input[_builtins.str]] = None,
-                 path_comparison_type: Optional[pulumi.Input[_builtins.str]] = None,
-                 query_parameters: Optional[pulumi.Input[Union['UrlBasedSamplingQueryParametersArgs', 'UrlBasedSamplingQueryParametersArgsDict']]] = None,
-                 scope: Optional[pulumi.Input[_builtins.str]] = None,
+                 enabled: pulumi.Input[Optional[_builtins.bool]] = None,
+                 factor: pulumi.Input[Optional[_builtins.str]] = None,
+                 http_method_any: pulumi.Input[Optional[_builtins.bool]] = None,
+                 http_methods: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 ignore: pulumi.Input[Optional[_builtins.bool]] = None,
+                 insert_after: pulumi.Input[Optional[_builtins.str]] = None,
+                 path: pulumi.Input[Optional[_builtins.str]] = None,
+                 path_comparison_type: pulumi.Input[Optional[_builtins.str]] = None,
+                 query_parameters: pulumi.Input[Optional[Union['UrlBasedSamplingQueryParametersArgs', 'UrlBasedSamplingQueryParametersArgsDict']]] = None,
+                 scope: pulumi.Input[Optional[_builtins.str]] = None,
                  __props__=None):
         opts = pulumi.ResourceOptions.merge(_utilities.get_resource_opts_defaults(), opts)
         if not isinstance(opts, pulumi.ResourceOptions):
@@ -485,16 +485,16 @@ class UrlBasedSampling(pulumi.CustomResource):
     def get(resource_name: str,
             id: pulumi.Input[str],
             opts: Optional[pulumi.ResourceOptions] = None,
-            enabled: Optional[pulumi.Input[_builtins.bool]] = None,
-            factor: Optional[pulumi.Input[_builtins.str]] = None,
-            http_method_any: Optional[pulumi.Input[_builtins.bool]] = None,
-            http_methods: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-            ignore: Optional[pulumi.Input[_builtins.bool]] = None,
-            insert_after: Optional[pulumi.Input[_builtins.str]] = None,
-            path: Optional[pulumi.Input[_builtins.str]] = None,
-            path_comparison_type: Optional[pulumi.Input[_builtins.str]] = None,
-            query_parameters: Optional[pulumi.Input[Union['UrlBasedSamplingQueryParametersArgs', 'UrlBasedSamplingQueryParametersArgsDict']]] = None,
-            scope: Optional[pulumi.Input[_builtins.str]] = None) -> 'UrlBasedSampling':
+            enabled: pulumi.Input[Optional[_builtins.bool]] = None,
+            factor: pulumi.Input[Optional[_builtins.str]] = None,
+            http_method_any: pulumi.Input[Optional[_builtins.bool]] = None,
+            http_methods: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+            ignore: pulumi.Input[Optional[_builtins.bool]] = None,
+            insert_after: pulumi.Input[Optional[_builtins.str]] = None,
+            path: pulumi.Input[Optional[_builtins.str]] = None,
+            path_comparison_type: pulumi.Input[Optional[_builtins.str]] = None,
+            query_parameters: pulumi.Input[Optional[Union['UrlBasedSamplingQueryParametersArgs', 'UrlBasedSamplingQueryParametersArgsDict']]] = None,
+            scope: pulumi.Input[Optional[_builtins.str]] = None) -> 'UrlBasedSampling':
         """
         Get an existing UrlBasedSampling resource's state with the given name, id, and optional extra
         properties used to qualify the lookup.

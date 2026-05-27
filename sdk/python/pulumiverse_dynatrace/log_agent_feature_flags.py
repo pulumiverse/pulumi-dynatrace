@@ -20,9 +20,9 @@ __all__ = ['LogAgentFeatureFlagsArgs', 'LogAgentFeatureFlags']
 class LogAgentFeatureFlagsArgs:
     def __init__(__self__, *,
                  new_container_log_detector: pulumi.Input[_builtins.bool],
-                 journald_log_detector: Optional[pulumi.Input[_builtins.bool]] = None,
-                 scope: Optional[pulumi.Input[_builtins.str]] = None,
-                 user_and_event_data: Optional[pulumi.Input[_builtins.bool]] = None):
+                 journald_log_detector: pulumi.Input[Optional[_builtins.bool]] = None,
+                 scope: pulumi.Input[Optional[_builtins.str]] = None,
+                 user_and_event_data: pulumi.Input[Optional[_builtins.bool]] = None):
         """
         The set of arguments for constructing a LogAgentFeatureFlags resource.
 
@@ -69,7 +69,7 @@ class LogAgentFeatureFlagsArgs:
 
     @_builtins.property
     @pulumi.getter(name="journaldLogDetector")
-    def journald_log_detector(self) -> Optional[pulumi.Input[_builtins.bool]]:
+    def journald_log_detector(self) -> pulumi.Input[Optional[_builtins.bool]]:
         """
         Enable OneAgent to collect logs from Journald on Linux systems. 
         This setting enables:
@@ -78,41 +78,41 @@ class LogAgentFeatureFlagsArgs:
         return pulumi.get(self, "journald_log_detector")
 
     @journald_log_detector.setter
-    def journald_log_detector(self, value: Optional[pulumi.Input[_builtins.bool]]):
+    def journald_log_detector(self, value: pulumi.Input[Optional[_builtins.bool]]):
         pulumi.set(self, "journald_log_detector", value)
 
     @_builtins.property
     @pulumi.getter
-    def scope(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def scope(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The scope of this setting (HOST, KUBERNETES_CLUSTER, HOST_GROUP). Omit this property if you want to cover the whole environment.
         """
         return pulumi.get(self, "scope")
 
     @scope.setter
-    def scope(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def scope(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "scope", value)
 
     @_builtins.property
     @pulumi.getter(name="userAndEventData")
-    def user_and_event_data(self) -> Optional[pulumi.Input[_builtins.bool]]:
+    def user_and_event_data(self) -> pulumi.Input[Optional[_builtins.bool]]:
         """
         Enable OneAgent to collect data from Event Logs in the User Data and Event Data sections.
         """
         return pulumi.get(self, "user_and_event_data")
 
     @user_and_event_data.setter
-    def user_and_event_data(self, value: Optional[pulumi.Input[_builtins.bool]]):
+    def user_and_event_data(self, value: pulumi.Input[Optional[_builtins.bool]]):
         pulumi.set(self, "user_and_event_data", value)
 
 
 @pulumi.input_type
 class _LogAgentFeatureFlagsState:
     def __init__(__self__, *,
-                 journald_log_detector: Optional[pulumi.Input[_builtins.bool]] = None,
-                 new_container_log_detector: Optional[pulumi.Input[_builtins.bool]] = None,
-                 scope: Optional[pulumi.Input[_builtins.str]] = None,
-                 user_and_event_data: Optional[pulumi.Input[_builtins.bool]] = None):
+                 journald_log_detector: pulumi.Input[Optional[_builtins.bool]] = None,
+                 new_container_log_detector: pulumi.Input[Optional[_builtins.bool]] = None,
+                 scope: pulumi.Input[Optional[_builtins.str]] = None,
+                 user_and_event_data: pulumi.Input[Optional[_builtins.bool]] = None):
         """
         Input properties used for looking up and filtering LogAgentFeatureFlags resources.
 
@@ -141,7 +141,7 @@ class _LogAgentFeatureFlagsState:
 
     @_builtins.property
     @pulumi.getter(name="journaldLogDetector")
-    def journald_log_detector(self) -> Optional[pulumi.Input[_builtins.bool]]:
+    def journald_log_detector(self) -> pulumi.Input[Optional[_builtins.bool]]:
         """
         Enable OneAgent to collect logs from Journald on Linux systems. 
         This setting enables:
@@ -150,12 +150,12 @@ class _LogAgentFeatureFlagsState:
         return pulumi.get(self, "journald_log_detector")
 
     @journald_log_detector.setter
-    def journald_log_detector(self, value: Optional[pulumi.Input[_builtins.bool]]):
+    def journald_log_detector(self, value: pulumi.Input[Optional[_builtins.bool]]):
         pulumi.set(self, "journald_log_detector", value)
 
     @_builtins.property
     @pulumi.getter(name="newContainerLogDetector")
-    def new_container_log_detector(self) -> Optional[pulumi.Input[_builtins.bool]]:
+    def new_container_log_detector(self) -> pulumi.Input[Optional[_builtins.bool]]:
         """
         Enable OneAgent to collect all container logs in Kubernetes environments. 
         This setting enables:
@@ -169,31 +169,31 @@ class _LogAgentFeatureFlagsState:
         return pulumi.get(self, "new_container_log_detector")
 
     @new_container_log_detector.setter
-    def new_container_log_detector(self, value: Optional[pulumi.Input[_builtins.bool]]):
+    def new_container_log_detector(self, value: pulumi.Input[Optional[_builtins.bool]]):
         pulumi.set(self, "new_container_log_detector", value)
 
     @_builtins.property
     @pulumi.getter
-    def scope(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def scope(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The scope of this setting (HOST, KUBERNETES_CLUSTER, HOST_GROUP). Omit this property if you want to cover the whole environment.
         """
         return pulumi.get(self, "scope")
 
     @scope.setter
-    def scope(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def scope(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "scope", value)
 
     @_builtins.property
     @pulumi.getter(name="userAndEventData")
-    def user_and_event_data(self) -> Optional[pulumi.Input[_builtins.bool]]:
+    def user_and_event_data(self) -> pulumi.Input[Optional[_builtins.bool]]:
         """
         Enable OneAgent to collect data from Event Logs in the User Data and Event Data sections.
         """
         return pulumi.get(self, "user_and_event_data")
 
     @user_and_event_data.setter
-    def user_and_event_data(self, value: Optional[pulumi.Input[_builtins.bool]]):
+    def user_and_event_data(self, value: pulumi.Input[Optional[_builtins.bool]]):
         pulumi.set(self, "user_and_event_data", value)
 
 
@@ -203,10 +203,10 @@ class LogAgentFeatureFlags(pulumi.CustomResource):
     def __init__(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 journald_log_detector: Optional[pulumi.Input[_builtins.bool]] = None,
-                 new_container_log_detector: Optional[pulumi.Input[_builtins.bool]] = None,
-                 scope: Optional[pulumi.Input[_builtins.str]] = None,
-                 user_and_event_data: Optional[pulumi.Input[_builtins.bool]] = None,
+                 journald_log_detector: pulumi.Input[Optional[_builtins.bool]] = None,
+                 new_container_log_detector: pulumi.Input[Optional[_builtins.bool]] = None,
+                 scope: pulumi.Input[Optional[_builtins.str]] = None,
+                 user_and_event_data: pulumi.Input[Optional[_builtins.bool]] = None,
                  __props__=None):
         """
         > This resource requires the API token scopes **Read settings** (`settings.read`) and **Write settings** (`settings.write`)
@@ -277,10 +277,10 @@ class LogAgentFeatureFlags(pulumi.CustomResource):
     def _internal_init(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 journald_log_detector: Optional[pulumi.Input[_builtins.bool]] = None,
-                 new_container_log_detector: Optional[pulumi.Input[_builtins.bool]] = None,
-                 scope: Optional[pulumi.Input[_builtins.str]] = None,
-                 user_and_event_data: Optional[pulumi.Input[_builtins.bool]] = None,
+                 journald_log_detector: pulumi.Input[Optional[_builtins.bool]] = None,
+                 new_container_log_detector: pulumi.Input[Optional[_builtins.bool]] = None,
+                 scope: pulumi.Input[Optional[_builtins.str]] = None,
+                 user_and_event_data: pulumi.Input[Optional[_builtins.bool]] = None,
                  __props__=None):
         opts = pulumi.ResourceOptions.merge(_utilities.get_resource_opts_defaults(), opts)
         if not isinstance(opts, pulumi.ResourceOptions):
@@ -306,10 +306,10 @@ class LogAgentFeatureFlags(pulumi.CustomResource):
     def get(resource_name: str,
             id: pulumi.Input[str],
             opts: Optional[pulumi.ResourceOptions] = None,
-            journald_log_detector: Optional[pulumi.Input[_builtins.bool]] = None,
-            new_container_log_detector: Optional[pulumi.Input[_builtins.bool]] = None,
-            scope: Optional[pulumi.Input[_builtins.str]] = None,
-            user_and_event_data: Optional[pulumi.Input[_builtins.bool]] = None) -> 'LogAgentFeatureFlags':
+            journald_log_detector: pulumi.Input[Optional[_builtins.bool]] = None,
+            new_container_log_detector: pulumi.Input[Optional[_builtins.bool]] = None,
+            scope: pulumi.Input[Optional[_builtins.str]] = None,
+            user_and_event_data: pulumi.Input[Optional[_builtins.bool]] = None) -> 'LogAgentFeatureFlags':
         """
         Get an existing LogAgentFeatureFlags resource's state with the given name, id, and optional extra
         properties used to qualify the lookup.

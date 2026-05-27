@@ -135,31 +135,31 @@ export interface MetricEventsState {
     /**
      * This setting is enabled (`true`) or disabled (`false`)
      */
-    enabled?: pulumi.Input<boolean>;
+    enabled?: pulumi.Input<boolean | undefined>;
     /**
      * Controls the preferred entity type used for triggered events.
      */
-    eventEntityDimensionKey?: pulumi.Input<string>;
+    eventEntityDimensionKey?: pulumi.Input<string | undefined>;
     /**
      * Event template
      */
-    eventTemplate?: pulumi.Input<inputs.MetricEventsEventTemplate>;
+    eventTemplate?: pulumi.Input<inputs.MetricEventsEventTemplate | undefined>;
     /**
      * Config id
      */
-    legacyId?: pulumi.Input<string>;
+    legacyId?: pulumi.Input<string | undefined>;
     /**
      * Monitoring strategy
      */
-    modelProperties?: pulumi.Input<inputs.MetricEventsModelProperties>;
+    modelProperties?: pulumi.Input<inputs.MetricEventsModelProperties | undefined>;
     /**
      * Query definition
      */
-    queryDefinition?: pulumi.Input<inputs.MetricEventsQueryDefinition>;
+    queryDefinition?: pulumi.Input<inputs.MetricEventsQueryDefinition | undefined>;
     /**
      * The textual summary of the metric event entry
      */
-    summary?: pulumi.Input<string>;
+    summary?: pulumi.Input<string | undefined>;
 }
 
 /**
@@ -173,7 +173,7 @@ export interface MetricEventsArgs {
     /**
      * Controls the preferred entity type used for triggered events.
      */
-    eventEntityDimensionKey?: pulumi.Input<string>;
+    eventEntityDimensionKey?: pulumi.Input<string | undefined>;
     /**
      * Event template
      */
@@ -181,7 +181,7 @@ export interface MetricEventsArgs {
     /**
      * Config id
      */
-    legacyId?: pulumi.Input<string>;
+    legacyId?: pulumi.Input<string | undefined>;
     /**
      * Monitoring strategy
      */

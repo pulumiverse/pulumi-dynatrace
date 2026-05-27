@@ -118,24 +118,24 @@ export interface MaintenanceState {
     /**
      * This setting is enabled (`true`) or disabled (`false`)
      */
-    enabled?: pulumi.Input<boolean>;
+    enabled?: pulumi.Input<boolean | undefined>;
     /**
      * ## Filters
      * Add filters to limit the scope of maintenance to only select matching entities. If no filter is defined, the maintenance window is valid for the whole environment. Each filter is evaluated separately (**OR**).
      */
-    filters?: pulumi.Input<inputs.MaintenanceFilters>;
+    filters?: pulumi.Input<inputs.MaintenanceFilters | undefined>;
     /**
      * The general properties of the maintenance window
      */
-    generalProperties?: pulumi.Input<inputs.MaintenanceGeneralProperties>;
+    generalProperties?: pulumi.Input<inputs.MaintenanceGeneralProperties | undefined>;
     /**
      * The ID of this setting when referred to by the Config REST API V1
      */
-    legacyId?: pulumi.Input<string>;
+    legacyId?: pulumi.Input<string | undefined>;
     /**
      * The schedule of the maintenance window
      */
-    schedule?: pulumi.Input<inputs.MaintenanceSchedule>;
+    schedule?: pulumi.Input<inputs.MaintenanceSchedule | undefined>;
 }
 
 /**
@@ -150,7 +150,7 @@ export interface MaintenanceArgs {
      * ## Filters
      * Add filters to limit the scope of maintenance to only select matching entities. If no filter is defined, the maintenance window is valid for the whole environment. Each filter is evaluated separately (**OR**).
      */
-    filters?: pulumi.Input<inputs.MaintenanceFilters>;
+    filters?: pulumi.Input<inputs.MaintenanceFilters | undefined>;
     /**
      * The general properties of the maintenance window
      */
@@ -158,7 +158,7 @@ export interface MaintenanceArgs {
     /**
      * The ID of this setting when referred to by the Config REST API V1
      */
-    legacyId?: pulumi.Input<string>;
+    legacyId?: pulumi.Input<string | undefined>;
     /**
      * The schedule of the maintenance window
      */

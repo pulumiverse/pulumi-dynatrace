@@ -126,31 +126,31 @@ export interface ServiceExternalWebRequestState {
     /**
      * A list of conditions necessary for the rule to take effect. If multiple conditions are specified, they must **all** match a Request for the rule to apply. If there is no condition at all, the rule is always applied. Conditions are evaluated against attributes, but do not modify them.
      */
-    conditions?: pulumi.Input<inputs.ServiceExternalWebRequestConditions>;
+    conditions?: pulumi.Input<inputs.ServiceExternalWebRequestConditions | undefined>;
     /**
      * Description
      */
-    description?: pulumi.Input<string>;
+    description?: pulumi.Input<string | undefined>;
     /**
      * This setting is enabled (`true`) or disabled (`false`)
      */
-    enabled?: pulumi.Input<boolean>;
+    enabled?: pulumi.Input<boolean | undefined>;
     /**
      * Contributors to the Service Identifier calculation. All of the Contributors except for the port are always applied. You can exclude the port contribution by disabling the switch.
      */
-    idContributors?: pulumi.Input<inputs.ServiceExternalWebRequestIdContributors>;
+    idContributors?: pulumi.Input<inputs.ServiceExternalWebRequestIdContributors | undefined>;
     /**
      * Because this resource allows for ordering you may specify the ID of the resource instance that comes before this instance regarding order. If not specified when creating the setting will be added to the end of the list. If not specified during update the order will remain untouched
      */
-    insertAfter?: pulumi.Input<string>;
+    insertAfter?: pulumi.Input<string | undefined>;
     /**
      * Define a management zone of the process group for which this service detection rule should be created.  Note: in case of external requests/services the PG might not always be known. See [here](https://dt-url.net/9i03b79)
      */
-    managementZones?: pulumi.Input<pulumi.Input<string>[]>;
+    managementZones?: pulumi.Input<pulumi.Input<string>[] | undefined>;
     /**
      * Rule name
      */
-    name?: pulumi.Input<string>;
+    name?: pulumi.Input<string | undefined>;
 }
 
 /**
@@ -160,11 +160,11 @@ export interface ServiceExternalWebRequestArgs {
     /**
      * A list of conditions necessary for the rule to take effect. If multiple conditions are specified, they must **all** match a Request for the rule to apply. If there is no condition at all, the rule is always applied. Conditions are evaluated against attributes, but do not modify them.
      */
-    conditions?: pulumi.Input<inputs.ServiceExternalWebRequestConditions>;
+    conditions?: pulumi.Input<inputs.ServiceExternalWebRequestConditions | undefined>;
     /**
      * Description
      */
-    description?: pulumi.Input<string>;
+    description?: pulumi.Input<string | undefined>;
     /**
      * This setting is enabled (`true`) or disabled (`false`)
      */
@@ -176,13 +176,13 @@ export interface ServiceExternalWebRequestArgs {
     /**
      * Because this resource allows for ordering you may specify the ID of the resource instance that comes before this instance regarding order. If not specified when creating the setting will be added to the end of the list. If not specified during update the order will remain untouched
      */
-    insertAfter?: pulumi.Input<string>;
+    insertAfter?: pulumi.Input<string | undefined>;
     /**
      * Define a management zone of the process group for which this service detection rule should be created.  Note: in case of external requests/services the PG might not always be known. See [here](https://dt-url.net/9i03b79)
      */
-    managementZones?: pulumi.Input<pulumi.Input<string>[]>;
+    managementZones?: pulumi.Input<pulumi.Input<string>[] | undefined>;
     /**
      * Rule name
      */
-    name?: pulumi.Input<string>;
+    name?: pulumi.Input<string | undefined>;
 }

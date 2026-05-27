@@ -94,11 +94,11 @@ export interface MetricQueryState {
     /**
      * The scope of this setting (metric)
      */
-    metricId?: pulumi.Input<string>;
+    metricId?: pulumi.Input<string | undefined>;
     /**
      * Query
      */
-    metricSelector?: pulumi.Input<string>;
+    metricSelector?: pulumi.Input<string | undefined>;
 }
 
 /**

@@ -237,59 +237,59 @@ export interface MobileApplicationState {
     /**
      * Apdex configuration of a mobile application. A duration less than the **tolerable** threshold is considered satisfied
      */
-    apdex?: pulumi.Input<inputs.MobileApplicationApdex>;
+    apdex?: pulumi.Input<inputs.MobileApplicationApdex | undefined>;
     /**
      * The UUID of the application.
      */
-    applicationId?: pulumi.Input<string>;
+    applicationId?: pulumi.Input<string | undefined>;
     /**
      * The type of the application. Either `CUSTOM_APPLICATION` or `MOBILE_APPLICATION`.
      */
-    applicationType?: pulumi.Input<string>;
+    applicationType?: pulumi.Input<string | undefined>;
     /**
      * The type of the beacon endpoint. Possible values are `CLUSTER_ACTIVE_GATE`, `ENVIRONMENT_ACTIVE_GATE` and `INSTRUMENTED_WEB_SERVER`.
      */
-    beaconEndpointType?: pulumi.Input<string>;
+    beaconEndpointType?: pulumi.Input<string | undefined>;
     /**
      * The URL of the beacon endpoint.
      *
      * Only applicable when the **beacon_endpoint_type** is set to `ENVIRONMENT_ACTIVE_GATE` or `INSTRUMENTED_WEB_SERVER`
      */
-    beaconEndpointUrl?: pulumi.Input<string>;
+    beaconEndpointUrl?: pulumi.Input<string | undefined>;
     /**
      * Custom application icon. Mobile apps always use the mobile device icon, so this icon can only be set for custom apps.
      */
-    iconType?: pulumi.Input<string>;
+    iconType?: pulumi.Input<string | undefined>;
     /**
      * User Action names to be flagged as Key User Actions
      */
-    keyUserActions?: pulumi.Input<pulumi.Input<string>[]>;
+    keyUserActions?: pulumi.Input<pulumi.Input<string>[] | undefined>;
     /**
      * The name of the application
      */
-    name?: pulumi.Input<string>;
+    name?: pulumi.Input<string | undefined>;
     /**
      * The opt-in mode is enabled (`true`) or disabled (`false`)
      */
-    optInMode?: pulumi.Input<boolean>;
+    optInMode?: pulumi.Input<boolean | undefined>;
     /**
      * User Action and Session Properties
      */
-    properties?: pulumi.Input<inputs.MobileApplicationProperties>;
+    properties?: pulumi.Input<inputs.MobileApplicationProperties | undefined>;
     /**
      * (Field has overlap with `dynatrace.MobileAppEnablement`) The session replay is enabled (`true`) or disabled (`false`).
      */
-    sessionReplay?: pulumi.Input<boolean>;
+    sessionReplay?: pulumi.Input<boolean | undefined>;
     /**
      * The session replay on crash is enabled (`true`) or disabled (`false`). 
      *
      * Enabling requires both **sessionReplayEnabled** and **optInModeEnabled** values set to `true`.
      */
-    sessionReplayOnCrash?: pulumi.Input<boolean>;
+    sessionReplayOnCrash?: pulumi.Input<boolean | undefined>;
     /**
      * (Field has overlap with `dynatrace.MobileAppEnablement` for mobile and `dynatrace.CustomAppEnablement` for custom apps) The percentage of user sessions to be analyzed
      */
-    userSessionPercentage?: pulumi.Input<number>;
+    userSessionPercentage?: pulumi.Input<number | undefined>;
 }
 
 /**
@@ -303,11 +303,11 @@ export interface MobileApplicationArgs {
     /**
      * The UUID of the application.
      */
-    applicationId?: pulumi.Input<string>;
+    applicationId?: pulumi.Input<string | undefined>;
     /**
      * The type of the application. Either `CUSTOM_APPLICATION` or `MOBILE_APPLICATION`.
      */
-    applicationType?: pulumi.Input<string>;
+    applicationType?: pulumi.Input<string | undefined>;
     /**
      * The type of the beacon endpoint. Possible values are `CLUSTER_ACTIVE_GATE`, `ENVIRONMENT_ACTIVE_GATE` and `INSTRUMENTED_WEB_SERVER`.
      */
@@ -317,39 +317,39 @@ export interface MobileApplicationArgs {
      *
      * Only applicable when the **beacon_endpoint_type** is set to `ENVIRONMENT_ACTIVE_GATE` or `INSTRUMENTED_WEB_SERVER`
      */
-    beaconEndpointUrl?: pulumi.Input<string>;
+    beaconEndpointUrl?: pulumi.Input<string | undefined>;
     /**
      * Custom application icon. Mobile apps always use the mobile device icon, so this icon can only be set for custom apps.
      */
-    iconType?: pulumi.Input<string>;
+    iconType?: pulumi.Input<string | undefined>;
     /**
      * User Action names to be flagged as Key User Actions
      */
-    keyUserActions?: pulumi.Input<pulumi.Input<string>[]>;
+    keyUserActions?: pulumi.Input<pulumi.Input<string>[] | undefined>;
     /**
      * The name of the application
      */
-    name?: pulumi.Input<string>;
+    name?: pulumi.Input<string | undefined>;
     /**
      * The opt-in mode is enabled (`true`) or disabled (`false`)
      */
-    optInMode?: pulumi.Input<boolean>;
+    optInMode?: pulumi.Input<boolean | undefined>;
     /**
      * User Action and Session Properties
      */
-    properties?: pulumi.Input<inputs.MobileApplicationProperties>;
+    properties?: pulumi.Input<inputs.MobileApplicationProperties | undefined>;
     /**
      * (Field has overlap with `dynatrace.MobileAppEnablement`) The session replay is enabled (`true`) or disabled (`false`).
      */
-    sessionReplay?: pulumi.Input<boolean>;
+    sessionReplay?: pulumi.Input<boolean | undefined>;
     /**
      * The session replay on crash is enabled (`true`) or disabled (`false`). 
      *
      * Enabling requires both **sessionReplayEnabled** and **optInModeEnabled** values set to `true`.
      */
-    sessionReplayOnCrash?: pulumi.Input<boolean>;
+    sessionReplayOnCrash?: pulumi.Input<boolean | undefined>;
     /**
      * (Field has overlap with `dynatrace.MobileAppEnablement` for mobile and `dynatrace.CustomAppEnablement` for custom apps) The percentage of user sessions to be analyzed
      */
-    userSessionPercentage?: pulumi.Input<number>;
+    userSessionPercentage?: pulumi.Input<number | undefined>;
 }

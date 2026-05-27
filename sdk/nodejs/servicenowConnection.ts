@@ -144,31 +144,31 @@ export interface ServicenowConnectionState {
     /**
      * Client ID of the ServiceNow OAuth server
      */
-    clientId?: pulumi.Input<string>;
+    clientId?: pulumi.Input<string | undefined>;
     /**
      * Client secret of the ServiceNow OAuth server
      */
-    clientSecret?: pulumi.Input<string>;
+    clientSecret?: pulumi.Input<string | undefined>;
     /**
      * A unique and clearly identifiable connection name to your ServiceNow instance.
      */
-    name?: pulumi.Input<string>;
+    name?: pulumi.Input<string | undefined>;
     /**
      * Password of the ServiceNow user.
      */
-    password?: pulumi.Input<string>;
+    password?: pulumi.Input<string | undefined>;
     /**
      * Possible Values: `basic`, `client-credentials`
      */
-    type?: pulumi.Input<string>;
+    type?: pulumi.Input<string | undefined>;
     /**
      * URL of the ServiceNow instance.
      */
-    url?: pulumi.Input<string>;
+    url?: pulumi.Input<string | undefined>;
     /**
      * Username or Email address.
      */
-    user?: pulumi.Input<string>;
+    user?: pulumi.Input<string | undefined>;
 }
 
 /**
@@ -178,19 +178,19 @@ export interface ServicenowConnectionArgs {
     /**
      * Client ID of the ServiceNow OAuth server
      */
-    clientId?: pulumi.Input<string>;
+    clientId?: pulumi.Input<string | undefined>;
     /**
      * Client secret of the ServiceNow OAuth server
      */
-    clientSecret?: pulumi.Input<string>;
+    clientSecret?: pulumi.Input<string | undefined>;
     /**
      * A unique and clearly identifiable connection name to your ServiceNow instance.
      */
-    name?: pulumi.Input<string>;
+    name?: pulumi.Input<string | undefined>;
     /**
      * Password of the ServiceNow user.
      */
-    password?: pulumi.Input<string>;
+    password?: pulumi.Input<string | undefined>;
     /**
      * Possible Values: `basic`, `client-credentials`
      */
@@ -202,5 +202,5 @@ export interface ServicenowConnectionArgs {
     /**
      * Username or Email address.
      */
-    user?: pulumi.Input<string>;
+    user?: pulumi.Input<string | undefined>;
 }

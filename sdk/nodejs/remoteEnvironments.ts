@@ -111,19 +111,19 @@ export interface RemoteEnvironmentsState {
     /**
      * Name
      */
-    name?: pulumi.Input<string>;
+    name?: pulumi.Input<string | undefined>;
     /**
      * Possible Values: `CLUSTER`, `EXTERNAL`, `INTERNAL`
      */
-    networkScope?: pulumi.Input<string>;
+    networkScope?: pulumi.Input<string | undefined>;
     /**
      * Provide a valid token created on the remote environment.
      */
-    token?: pulumi.Input<string>;
+    token?: pulumi.Input<string | undefined>;
     /**
      * Specify the full URI to the remote environment. Your local environment will have to be able to connect this URI on a network level.
      */
-    uri?: pulumi.Input<string>;
+    uri?: pulumi.Input<string | undefined>;
 }
 
 /**
@@ -133,7 +133,7 @@ export interface RemoteEnvironmentsArgs {
     /**
      * Name
      */
-    name?: pulumi.Input<string>;
+    name?: pulumi.Input<string | undefined>;
     /**
      * Possible Values: `CLUSTER`, `EXTERNAL`, `INTERNAL`
      */

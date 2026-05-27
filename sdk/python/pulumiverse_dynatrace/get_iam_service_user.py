@@ -157,9 +157,9 @@ def get_iam_service_user(email: Optional[_builtins.str] = None,
         groups=pulumi.get(__ret__, 'groups'),
         id=pulumi.get(__ret__, 'id'),
         name=pulumi.get(__ret__, 'name'))
-def get_iam_service_user_output(email: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                                id: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                                name: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
+def get_iam_service_user_output(email: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                                id: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                                name: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
                                 opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetIamServiceUserResult]:
     """
     > **Dynatrace SaaS only**

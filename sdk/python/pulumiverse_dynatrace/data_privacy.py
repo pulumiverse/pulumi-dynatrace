@@ -25,7 +25,7 @@ class DataPrivacyArgs:
                  do_not_track: pulumi.Input['DataPrivacyDoNotTrackArgs'],
                  masking: pulumi.Input['DataPrivacyMaskingArgs'],
                  user_tracking: pulumi.Input['DataPrivacyUserTrackingArgs'],
-                 application_id: Optional[pulumi.Input[_builtins.str]] = None):
+                 application_id: pulumi.Input[Optional[_builtins.str]] = None):
         """
         The set of arguments for constructing a DataPrivacy resource.
 
@@ -92,25 +92,25 @@ class DataPrivacyArgs:
 
     @_builtins.property
     @pulumi.getter(name="applicationId")
-    def application_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def application_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The scope of this settings. If the settings should cover the whole environment, just don't specify any scope.
         """
         return pulumi.get(self, "application_id")
 
     @application_id.setter
-    def application_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def application_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "application_id", value)
 
 
 @pulumi.input_type
 class _DataPrivacyState:
     def __init__(__self__, *,
-                 application_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 data_collection: Optional[pulumi.Input['DataPrivacyDataCollectionArgs']] = None,
-                 do_not_track: Optional[pulumi.Input['DataPrivacyDoNotTrackArgs']] = None,
-                 masking: Optional[pulumi.Input['DataPrivacyMaskingArgs']] = None,
-                 user_tracking: Optional[pulumi.Input['DataPrivacyUserTrackingArgs']] = None):
+                 application_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 data_collection: pulumi.Input[Optional['DataPrivacyDataCollectionArgs']] = None,
+                 do_not_track: pulumi.Input[Optional['DataPrivacyDoNotTrackArgs']] = None,
+                 masking: pulumi.Input[Optional['DataPrivacyMaskingArgs']] = None,
+                 user_tracking: pulumi.Input[Optional['DataPrivacyUserTrackingArgs']] = None):
         """
         Input properties used for looking up and filtering DataPrivacy resources.
 
@@ -133,62 +133,62 @@ class _DataPrivacyState:
 
     @_builtins.property
     @pulumi.getter(name="applicationId")
-    def application_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def application_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The scope of this settings. If the settings should cover the whole environment, just don't specify any scope.
         """
         return pulumi.get(self, "application_id")
 
     @application_id.setter
-    def application_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def application_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "application_id", value)
 
     @_builtins.property
     @pulumi.getter(name="dataCollection")
-    def data_collection(self) -> Optional[pulumi.Input['DataPrivacyDataCollectionArgs']]:
+    def data_collection(self) -> pulumi.Input[Optional['DataPrivacyDataCollectionArgs']]:
         """
         To provide your end users with the ability to decide for themselves if their activities should be tracked to measure application performance and usage, enable opt-in mode.
         """
         return pulumi.get(self, "data_collection")
 
     @data_collection.setter
-    def data_collection(self, value: Optional[pulumi.Input['DataPrivacyDataCollectionArgs']]):
+    def data_collection(self, value: pulumi.Input[Optional['DataPrivacyDataCollectionArgs']]):
         pulumi.set(self, "data_collection", value)
 
     @_builtins.property
     @pulumi.getter(name="doNotTrack")
-    def do_not_track(self) -> Optional[pulumi.Input['DataPrivacyDoNotTrackArgs']]:
+    def do_not_track(self) -> pulumi.Input[Optional['DataPrivacyDoNotTrackArgs']]:
         """
         Most modern web browsers have a privacy feature called ["Do Not Track"](https://dt-url.net/sb3n0pnl) that individual users may have enabled on their devices. Customize how Dynatrace should behave when it encounters this setting.
         """
         return pulumi.get(self, "do_not_track")
 
     @do_not_track.setter
-    def do_not_track(self, value: Optional[pulumi.Input['DataPrivacyDoNotTrackArgs']]):
+    def do_not_track(self, value: pulumi.Input[Optional['DataPrivacyDoNotTrackArgs']]):
         pulumi.set(self, "do_not_track", value)
 
     @_builtins.property
     @pulumi.getter
-    def masking(self) -> Optional[pulumi.Input['DataPrivacyMaskingArgs']]:
+    def masking(self) -> pulumi.Input[Optional['DataPrivacyMaskingArgs']]:
         """
         no documentation available
         """
         return pulumi.get(self, "masking")
 
     @masking.setter
-    def masking(self, value: Optional[pulumi.Input['DataPrivacyMaskingArgs']]):
+    def masking(self, value: pulumi.Input[Optional['DataPrivacyMaskingArgs']]):
         pulumi.set(self, "masking", value)
 
     @_builtins.property
     @pulumi.getter(name="userTracking")
-    def user_tracking(self) -> Optional[pulumi.Input['DataPrivacyUserTrackingArgs']]:
+    def user_tracking(self) -> pulumi.Input[Optional['DataPrivacyUserTrackingArgs']]:
         """
         User tracking
         """
         return pulumi.get(self, "user_tracking")
 
     @user_tracking.setter
-    def user_tracking(self, value: Optional[pulumi.Input['DataPrivacyUserTrackingArgs']]):
+    def user_tracking(self, value: pulumi.Input[Optional['DataPrivacyUserTrackingArgs']]):
         pulumi.set(self, "user_tracking", value)
 
 
@@ -198,11 +198,11 @@ class DataPrivacy(pulumi.CustomResource):
     def __init__(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 application_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 data_collection: Optional[pulumi.Input[Union['DataPrivacyDataCollectionArgs', 'DataPrivacyDataCollectionArgsDict']]] = None,
-                 do_not_track: Optional[pulumi.Input[Union['DataPrivacyDoNotTrackArgs', 'DataPrivacyDoNotTrackArgsDict']]] = None,
-                 masking: Optional[pulumi.Input[Union['DataPrivacyMaskingArgs', 'DataPrivacyMaskingArgsDict']]] = None,
-                 user_tracking: Optional[pulumi.Input[Union['DataPrivacyUserTrackingArgs', 'DataPrivacyUserTrackingArgsDict']]] = None,
+                 application_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 data_collection: pulumi.Input[Optional[Union['DataPrivacyDataCollectionArgs', 'DataPrivacyDataCollectionArgsDict']]] = None,
+                 do_not_track: pulumi.Input[Optional[Union['DataPrivacyDoNotTrackArgs', 'DataPrivacyDoNotTrackArgsDict']]] = None,
+                 masking: pulumi.Input[Optional[Union['DataPrivacyMaskingArgs', 'DataPrivacyMaskingArgsDict']]] = None,
+                 user_tracking: pulumi.Input[Optional[Union['DataPrivacyUserTrackingArgs', 'DataPrivacyUserTrackingArgsDict']]] = None,
                  __props__=None):
         """
         > This resource requires the API token scopes **Read settings** (`settings.read`) and **Write settings** (`settings.write`)
@@ -265,11 +265,11 @@ class DataPrivacy(pulumi.CustomResource):
     def _internal_init(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 application_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 data_collection: Optional[pulumi.Input[Union['DataPrivacyDataCollectionArgs', 'DataPrivacyDataCollectionArgsDict']]] = None,
-                 do_not_track: Optional[pulumi.Input[Union['DataPrivacyDoNotTrackArgs', 'DataPrivacyDoNotTrackArgsDict']]] = None,
-                 masking: Optional[pulumi.Input[Union['DataPrivacyMaskingArgs', 'DataPrivacyMaskingArgsDict']]] = None,
-                 user_tracking: Optional[pulumi.Input[Union['DataPrivacyUserTrackingArgs', 'DataPrivacyUserTrackingArgsDict']]] = None,
+                 application_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 data_collection: pulumi.Input[Optional[Union['DataPrivacyDataCollectionArgs', 'DataPrivacyDataCollectionArgsDict']]] = None,
+                 do_not_track: pulumi.Input[Optional[Union['DataPrivacyDoNotTrackArgs', 'DataPrivacyDoNotTrackArgsDict']]] = None,
+                 masking: pulumi.Input[Optional[Union['DataPrivacyMaskingArgs', 'DataPrivacyMaskingArgsDict']]] = None,
+                 user_tracking: pulumi.Input[Optional[Union['DataPrivacyUserTrackingArgs', 'DataPrivacyUserTrackingArgsDict']]] = None,
                  __props__=None):
         opts = pulumi.ResourceOptions.merge(_utilities.get_resource_opts_defaults(), opts)
         if not isinstance(opts, pulumi.ResourceOptions):
@@ -302,11 +302,11 @@ class DataPrivacy(pulumi.CustomResource):
     def get(resource_name: str,
             id: pulumi.Input[str],
             opts: Optional[pulumi.ResourceOptions] = None,
-            application_id: Optional[pulumi.Input[_builtins.str]] = None,
-            data_collection: Optional[pulumi.Input[Union['DataPrivacyDataCollectionArgs', 'DataPrivacyDataCollectionArgsDict']]] = None,
-            do_not_track: Optional[pulumi.Input[Union['DataPrivacyDoNotTrackArgs', 'DataPrivacyDoNotTrackArgsDict']]] = None,
-            masking: Optional[pulumi.Input[Union['DataPrivacyMaskingArgs', 'DataPrivacyMaskingArgsDict']]] = None,
-            user_tracking: Optional[pulumi.Input[Union['DataPrivacyUserTrackingArgs', 'DataPrivacyUserTrackingArgsDict']]] = None) -> 'DataPrivacy':
+            application_id: pulumi.Input[Optional[_builtins.str]] = None,
+            data_collection: pulumi.Input[Optional[Union['DataPrivacyDataCollectionArgs', 'DataPrivacyDataCollectionArgsDict']]] = None,
+            do_not_track: pulumi.Input[Optional[Union['DataPrivacyDoNotTrackArgs', 'DataPrivacyDoNotTrackArgsDict']]] = None,
+            masking: pulumi.Input[Optional[Union['DataPrivacyMaskingArgs', 'DataPrivacyMaskingArgsDict']]] = None,
+            user_tracking: pulumi.Input[Optional[Union['DataPrivacyUserTrackingArgs', 'DataPrivacyUserTrackingArgsDict']]] = None) -> 'DataPrivacy':
         """
         Get an existing DataPrivacy resource's state with the given name, id, and optional extra
         properties used to qualify the lookup.

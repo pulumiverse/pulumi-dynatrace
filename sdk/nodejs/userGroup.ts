@@ -164,31 +164,31 @@ export interface UserGroupState {
     /**
      * If `true`, then the group has the access account rights
      */
-    accessAccount?: pulumi.Input<boolean>;
+    accessAccount?: pulumi.Input<boolean | undefined>;
     /**
      * If `true`, then the group has the cluster administrator rights
      */
-    clusterAdmin?: pulumi.Input<boolean>;
+    clusterAdmin?: pulumi.Input<boolean | undefined>;
     /**
      * LDAP group names
      */
-    ldapGroups?: pulumi.Input<pulumi.Input<string>[]>;
+    ldapGroups?: pulumi.Input<pulumi.Input<string>[] | undefined>;
     /**
      * If `true`, then the group has the manage account rights
      */
-    manageAccount?: pulumi.Input<boolean>;
+    manageAccount?: pulumi.Input<boolean | undefined>;
     /**
      * The name of the user group
      */
-    name?: pulumi.Input<string>;
+    name?: pulumi.Input<string | undefined>;
     /**
      * Permissions for environments
      */
-    permissions?: pulumi.Input<inputs.UserGroupPermissions>;
+    permissions?: pulumi.Input<inputs.UserGroupPermissions | undefined>;
     /**
      * SSO group names. If defined it's used to map SSO group name to Dynatrace group name, otherwise mapping is done by group name
      */
-    ssoGroups?: pulumi.Input<pulumi.Input<string>[]>;
+    ssoGroups?: pulumi.Input<pulumi.Input<string>[] | undefined>;
 }
 
 /**
@@ -198,29 +198,29 @@ export interface UserGroupArgs {
     /**
      * If `true`, then the group has the access account rights
      */
-    accessAccount?: pulumi.Input<boolean>;
+    accessAccount?: pulumi.Input<boolean | undefined>;
     /**
      * If `true`, then the group has the cluster administrator rights
      */
-    clusterAdmin?: pulumi.Input<boolean>;
+    clusterAdmin?: pulumi.Input<boolean | undefined>;
     /**
      * LDAP group names
      */
-    ldapGroups?: pulumi.Input<pulumi.Input<string>[]>;
+    ldapGroups?: pulumi.Input<pulumi.Input<string>[] | undefined>;
     /**
      * If `true`, then the group has the manage account rights
      */
-    manageAccount?: pulumi.Input<boolean>;
+    manageAccount?: pulumi.Input<boolean | undefined>;
     /**
      * The name of the user group
      */
-    name?: pulumi.Input<string>;
+    name?: pulumi.Input<string | undefined>;
     /**
      * Permissions for environments
      */
-    permissions?: pulumi.Input<inputs.UserGroupPermissions>;
+    permissions?: pulumi.Input<inputs.UserGroupPermissions | undefined>;
     /**
      * SSO group names. If defined it's used to map SSO group name to Dynatrace group name, otherwise mapping is done by group name
      */
-    ssoGroups?: pulumi.Input<pulumi.Input<string>[]>;
+    ssoGroups?: pulumi.Input<pulumi.Input<string>[] | undefined>;
 }

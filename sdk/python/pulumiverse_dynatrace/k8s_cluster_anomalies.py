@@ -26,7 +26,7 @@ class K8sClusterAnomaliesArgs:
                  monitoring_issues: pulumi.Input['K8sClusterAnomaliesMonitoringIssuesArgs'],
                  pods_saturation: pulumi.Input['K8sClusterAnomaliesPodsSaturationArgs'],
                  readiness_issues: pulumi.Input['K8sClusterAnomaliesReadinessIssuesArgs'],
-                 scope: Optional[pulumi.Input[_builtins.str]] = None):
+                 scope: pulumi.Input[Optional[_builtins.str]] = None):
         """
         The set of arguments for constructing a K8sClusterAnomalies resource.
 
@@ -107,26 +107,26 @@ class K8sClusterAnomaliesArgs:
 
     @_builtins.property
     @pulumi.getter
-    def scope(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def scope(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The scope of this setting (KUBERNETES_CLUSTER). Omit this property if you want to cover the whole environment.
         """
         return pulumi.get(self, "scope")
 
     @scope.setter
-    def scope(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def scope(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "scope", value)
 
 
 @pulumi.input_type
 class _K8sClusterAnomaliesState:
     def __init__(__self__, *,
-                 cpu_requests_saturation: Optional[pulumi.Input['K8sClusterAnomaliesCpuRequestsSaturationArgs']] = None,
-                 memory_requests_saturation: Optional[pulumi.Input['K8sClusterAnomaliesMemoryRequestsSaturationArgs']] = None,
-                 monitoring_issues: Optional[pulumi.Input['K8sClusterAnomaliesMonitoringIssuesArgs']] = None,
-                 pods_saturation: Optional[pulumi.Input['K8sClusterAnomaliesPodsSaturationArgs']] = None,
-                 readiness_issues: Optional[pulumi.Input['K8sClusterAnomaliesReadinessIssuesArgs']] = None,
-                 scope: Optional[pulumi.Input[_builtins.str]] = None):
+                 cpu_requests_saturation: pulumi.Input[Optional['K8sClusterAnomaliesCpuRequestsSaturationArgs']] = None,
+                 memory_requests_saturation: pulumi.Input[Optional['K8sClusterAnomaliesMemoryRequestsSaturationArgs']] = None,
+                 monitoring_issues: pulumi.Input[Optional['K8sClusterAnomaliesMonitoringIssuesArgs']] = None,
+                 pods_saturation: pulumi.Input[Optional['K8sClusterAnomaliesPodsSaturationArgs']] = None,
+                 readiness_issues: pulumi.Input[Optional['K8sClusterAnomaliesReadinessIssuesArgs']] = None,
+                 scope: pulumi.Input[Optional[_builtins.str]] = None):
         """
         Input properties used for looking up and filtering K8sClusterAnomalies resources.
 
@@ -152,74 +152,74 @@ class _K8sClusterAnomaliesState:
 
     @_builtins.property
     @pulumi.getter(name="cpuRequestsSaturation")
-    def cpu_requests_saturation(self) -> Optional[pulumi.Input['K8sClusterAnomaliesCpuRequestsSaturationArgs']]:
+    def cpu_requests_saturation(self) -> pulumi.Input[Optional['K8sClusterAnomaliesCpuRequestsSaturationArgs']]:
         """
         no documentation available
         """
         return pulumi.get(self, "cpu_requests_saturation")
 
     @cpu_requests_saturation.setter
-    def cpu_requests_saturation(self, value: Optional[pulumi.Input['K8sClusterAnomaliesCpuRequestsSaturationArgs']]):
+    def cpu_requests_saturation(self, value: pulumi.Input[Optional['K8sClusterAnomaliesCpuRequestsSaturationArgs']]):
         pulumi.set(self, "cpu_requests_saturation", value)
 
     @_builtins.property
     @pulumi.getter(name="memoryRequestsSaturation")
-    def memory_requests_saturation(self) -> Optional[pulumi.Input['K8sClusterAnomaliesMemoryRequestsSaturationArgs']]:
+    def memory_requests_saturation(self) -> pulumi.Input[Optional['K8sClusterAnomaliesMemoryRequestsSaturationArgs']]:
         """
         no documentation available
         """
         return pulumi.get(self, "memory_requests_saturation")
 
     @memory_requests_saturation.setter
-    def memory_requests_saturation(self, value: Optional[pulumi.Input['K8sClusterAnomaliesMemoryRequestsSaturationArgs']]):
+    def memory_requests_saturation(self, value: pulumi.Input[Optional['K8sClusterAnomaliesMemoryRequestsSaturationArgs']]):
         pulumi.set(self, "memory_requests_saturation", value)
 
     @_builtins.property
     @pulumi.getter(name="monitoringIssues")
-    def monitoring_issues(self) -> Optional[pulumi.Input['K8sClusterAnomaliesMonitoringIssuesArgs']]:
+    def monitoring_issues(self) -> pulumi.Input[Optional['K8sClusterAnomaliesMonitoringIssuesArgs']]:
         """
         no documentation available
         """
         return pulumi.get(self, "monitoring_issues")
 
     @monitoring_issues.setter
-    def monitoring_issues(self, value: Optional[pulumi.Input['K8sClusterAnomaliesMonitoringIssuesArgs']]):
+    def monitoring_issues(self, value: pulumi.Input[Optional['K8sClusterAnomaliesMonitoringIssuesArgs']]):
         pulumi.set(self, "monitoring_issues", value)
 
     @_builtins.property
     @pulumi.getter(name="podsSaturation")
-    def pods_saturation(self) -> Optional[pulumi.Input['K8sClusterAnomaliesPodsSaturationArgs']]:
+    def pods_saturation(self) -> pulumi.Input[Optional['K8sClusterAnomaliesPodsSaturationArgs']]:
         """
         no documentation available
         """
         return pulumi.get(self, "pods_saturation")
 
     @pods_saturation.setter
-    def pods_saturation(self, value: Optional[pulumi.Input['K8sClusterAnomaliesPodsSaturationArgs']]):
+    def pods_saturation(self, value: pulumi.Input[Optional['K8sClusterAnomaliesPodsSaturationArgs']]):
         pulumi.set(self, "pods_saturation", value)
 
     @_builtins.property
     @pulumi.getter(name="readinessIssues")
-    def readiness_issues(self) -> Optional[pulumi.Input['K8sClusterAnomaliesReadinessIssuesArgs']]:
+    def readiness_issues(self) -> pulumi.Input[Optional['K8sClusterAnomaliesReadinessIssuesArgs']]:
         """
         Alerts if cluster has not been ready for a given amount of time
         """
         return pulumi.get(self, "readiness_issues")
 
     @readiness_issues.setter
-    def readiness_issues(self, value: Optional[pulumi.Input['K8sClusterAnomaliesReadinessIssuesArgs']]):
+    def readiness_issues(self, value: pulumi.Input[Optional['K8sClusterAnomaliesReadinessIssuesArgs']]):
         pulumi.set(self, "readiness_issues", value)
 
     @_builtins.property
     @pulumi.getter
-    def scope(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def scope(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The scope of this setting (KUBERNETES_CLUSTER). Omit this property if you want to cover the whole environment.
         """
         return pulumi.get(self, "scope")
 
     @scope.setter
-    def scope(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def scope(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "scope", value)
 
 
@@ -229,12 +229,12 @@ class K8sClusterAnomalies(pulumi.CustomResource):
     def __init__(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 cpu_requests_saturation: Optional[pulumi.Input[Union['K8sClusterAnomaliesCpuRequestsSaturationArgs', 'K8sClusterAnomaliesCpuRequestsSaturationArgsDict']]] = None,
-                 memory_requests_saturation: Optional[pulumi.Input[Union['K8sClusterAnomaliesMemoryRequestsSaturationArgs', 'K8sClusterAnomaliesMemoryRequestsSaturationArgsDict']]] = None,
-                 monitoring_issues: Optional[pulumi.Input[Union['K8sClusterAnomaliesMonitoringIssuesArgs', 'K8sClusterAnomaliesMonitoringIssuesArgsDict']]] = None,
-                 pods_saturation: Optional[pulumi.Input[Union['K8sClusterAnomaliesPodsSaturationArgs', 'K8sClusterAnomaliesPodsSaturationArgsDict']]] = None,
-                 readiness_issues: Optional[pulumi.Input[Union['K8sClusterAnomaliesReadinessIssuesArgs', 'K8sClusterAnomaliesReadinessIssuesArgsDict']]] = None,
-                 scope: Optional[pulumi.Input[_builtins.str]] = None,
+                 cpu_requests_saturation: pulumi.Input[Optional[Union['K8sClusterAnomaliesCpuRequestsSaturationArgs', 'K8sClusterAnomaliesCpuRequestsSaturationArgsDict']]] = None,
+                 memory_requests_saturation: pulumi.Input[Optional[Union['K8sClusterAnomaliesMemoryRequestsSaturationArgs', 'K8sClusterAnomaliesMemoryRequestsSaturationArgsDict']]] = None,
+                 monitoring_issues: pulumi.Input[Optional[Union['K8sClusterAnomaliesMonitoringIssuesArgs', 'K8sClusterAnomaliesMonitoringIssuesArgsDict']]] = None,
+                 pods_saturation: pulumi.Input[Optional[Union['K8sClusterAnomaliesPodsSaturationArgs', 'K8sClusterAnomaliesPodsSaturationArgsDict']]] = None,
+                 readiness_issues: pulumi.Input[Optional[Union['K8sClusterAnomaliesReadinessIssuesArgs', 'K8sClusterAnomaliesReadinessIssuesArgsDict']]] = None,
+                 scope: pulumi.Input[Optional[_builtins.str]] = None,
                  __props__=None):
         """
         > This resource requires the API token scopes **Read settings** (`settings.read`) and **Write settings** (`settings.write`)
@@ -298,12 +298,12 @@ class K8sClusterAnomalies(pulumi.CustomResource):
     def _internal_init(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 cpu_requests_saturation: Optional[pulumi.Input[Union['K8sClusterAnomaliesCpuRequestsSaturationArgs', 'K8sClusterAnomaliesCpuRequestsSaturationArgsDict']]] = None,
-                 memory_requests_saturation: Optional[pulumi.Input[Union['K8sClusterAnomaliesMemoryRequestsSaturationArgs', 'K8sClusterAnomaliesMemoryRequestsSaturationArgsDict']]] = None,
-                 monitoring_issues: Optional[pulumi.Input[Union['K8sClusterAnomaliesMonitoringIssuesArgs', 'K8sClusterAnomaliesMonitoringIssuesArgsDict']]] = None,
-                 pods_saturation: Optional[pulumi.Input[Union['K8sClusterAnomaliesPodsSaturationArgs', 'K8sClusterAnomaliesPodsSaturationArgsDict']]] = None,
-                 readiness_issues: Optional[pulumi.Input[Union['K8sClusterAnomaliesReadinessIssuesArgs', 'K8sClusterAnomaliesReadinessIssuesArgsDict']]] = None,
-                 scope: Optional[pulumi.Input[_builtins.str]] = None,
+                 cpu_requests_saturation: pulumi.Input[Optional[Union['K8sClusterAnomaliesCpuRequestsSaturationArgs', 'K8sClusterAnomaliesCpuRequestsSaturationArgsDict']]] = None,
+                 memory_requests_saturation: pulumi.Input[Optional[Union['K8sClusterAnomaliesMemoryRequestsSaturationArgs', 'K8sClusterAnomaliesMemoryRequestsSaturationArgsDict']]] = None,
+                 monitoring_issues: pulumi.Input[Optional[Union['K8sClusterAnomaliesMonitoringIssuesArgs', 'K8sClusterAnomaliesMonitoringIssuesArgsDict']]] = None,
+                 pods_saturation: pulumi.Input[Optional[Union['K8sClusterAnomaliesPodsSaturationArgs', 'K8sClusterAnomaliesPodsSaturationArgsDict']]] = None,
+                 readiness_issues: pulumi.Input[Optional[Union['K8sClusterAnomaliesReadinessIssuesArgs', 'K8sClusterAnomaliesReadinessIssuesArgsDict']]] = None,
+                 scope: pulumi.Input[Optional[_builtins.str]] = None,
                  __props__=None):
         opts = pulumi.ResourceOptions.merge(_utilities.get_resource_opts_defaults(), opts)
         if not isinstance(opts, pulumi.ResourceOptions):
@@ -339,12 +339,12 @@ class K8sClusterAnomalies(pulumi.CustomResource):
     def get(resource_name: str,
             id: pulumi.Input[str],
             opts: Optional[pulumi.ResourceOptions] = None,
-            cpu_requests_saturation: Optional[pulumi.Input[Union['K8sClusterAnomaliesCpuRequestsSaturationArgs', 'K8sClusterAnomaliesCpuRequestsSaturationArgsDict']]] = None,
-            memory_requests_saturation: Optional[pulumi.Input[Union['K8sClusterAnomaliesMemoryRequestsSaturationArgs', 'K8sClusterAnomaliesMemoryRequestsSaturationArgsDict']]] = None,
-            monitoring_issues: Optional[pulumi.Input[Union['K8sClusterAnomaliesMonitoringIssuesArgs', 'K8sClusterAnomaliesMonitoringIssuesArgsDict']]] = None,
-            pods_saturation: Optional[pulumi.Input[Union['K8sClusterAnomaliesPodsSaturationArgs', 'K8sClusterAnomaliesPodsSaturationArgsDict']]] = None,
-            readiness_issues: Optional[pulumi.Input[Union['K8sClusterAnomaliesReadinessIssuesArgs', 'K8sClusterAnomaliesReadinessIssuesArgsDict']]] = None,
-            scope: Optional[pulumi.Input[_builtins.str]] = None) -> 'K8sClusterAnomalies':
+            cpu_requests_saturation: pulumi.Input[Optional[Union['K8sClusterAnomaliesCpuRequestsSaturationArgs', 'K8sClusterAnomaliesCpuRequestsSaturationArgsDict']]] = None,
+            memory_requests_saturation: pulumi.Input[Optional[Union['K8sClusterAnomaliesMemoryRequestsSaturationArgs', 'K8sClusterAnomaliesMemoryRequestsSaturationArgsDict']]] = None,
+            monitoring_issues: pulumi.Input[Optional[Union['K8sClusterAnomaliesMonitoringIssuesArgs', 'K8sClusterAnomaliesMonitoringIssuesArgsDict']]] = None,
+            pods_saturation: pulumi.Input[Optional[Union['K8sClusterAnomaliesPodsSaturationArgs', 'K8sClusterAnomaliesPodsSaturationArgsDict']]] = None,
+            readiness_issues: pulumi.Input[Optional[Union['K8sClusterAnomaliesReadinessIssuesArgs', 'K8sClusterAnomaliesReadinessIssuesArgsDict']]] = None,
+            scope: pulumi.Input[Optional[_builtins.str]] = None) -> 'K8sClusterAnomalies':
         """
         Get an existing K8sClusterAnomalies resource's state with the given name, id, and optional extra
         properties used to qualify the lookup.

@@ -26,10 +26,10 @@ class DiskAnomaliesArgs:
                  samples: pulumi.Input[_builtins.int],
                  threshold: pulumi.Input[_builtins.float],
                  violating_samples: pulumi.Input[_builtins.int],
-                 disk_name: Optional[pulumi.Input['DiskAnomaliesDiskNameArgs']] = None,
-                 host_group_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 name: Optional[pulumi.Input[_builtins.str]] = None,
-                 tags: Optional[pulumi.Input['DiskAnomaliesTagsArgs']] = None):
+                 disk_name: pulumi.Input[Optional['DiskAnomaliesDiskNameArgs']] = None,
+                 host_group_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 name: pulumi.Input[Optional[_builtins.str]] = None,
+                 tags: pulumi.Input[Optional['DiskAnomaliesTagsArgs']] = None):
         """
         The set of arguments for constructing a DiskAnomalies resource.
 
@@ -119,65 +119,65 @@ class DiskAnomaliesArgs:
 
     @_builtins.property
     @pulumi.getter(name="diskName")
-    def disk_name(self) -> Optional[pulumi.Input['DiskAnomaliesDiskNameArgs']]:
+    def disk_name(self) -> pulumi.Input[Optional['DiskAnomaliesDiskNameArgs']]:
         """
         Narrows the rule usage down to disks, matching the specified criteria
         """
         return pulumi.get(self, "disk_name")
 
     @disk_name.setter
-    def disk_name(self, value: Optional[pulumi.Input['DiskAnomaliesDiskNameArgs']]):
+    def disk_name(self, value: pulumi.Input[Optional['DiskAnomaliesDiskNameArgs']]):
         pulumi.set(self, "disk_name", value)
 
     @_builtins.property
     @pulumi.getter(name="hostGroupId")
-    def host_group_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def host_group_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Narrows the rule usage down to disks that run on hosts that themselves run on the specified host group
         """
         return pulumi.get(self, "host_group_id")
 
     @host_group_id.setter
-    def host_group_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def host_group_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "host_group_id", value)
 
     @_builtins.property
     @pulumi.getter
-    def name(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def name(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The name of the disk event rule
         """
         return pulumi.get(self, "name")
 
     @name.setter
-    def name(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def name(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "name", value)
 
     @_builtins.property
     @pulumi.getter
-    def tags(self) -> Optional[pulumi.Input['DiskAnomaliesTagsArgs']]:
+    def tags(self) -> pulumi.Input[Optional['DiskAnomaliesTagsArgs']]:
         """
         Narrows the rule usage down to the hosts matching the specified tags
         """
         return pulumi.get(self, "tags")
 
     @tags.setter
-    def tags(self, value: Optional[pulumi.Input['DiskAnomaliesTagsArgs']]):
+    def tags(self, value: pulumi.Input[Optional['DiskAnomaliesTagsArgs']]):
         pulumi.set(self, "tags", value)
 
 
 @pulumi.input_type
 class _DiskAnomaliesState:
     def __init__(__self__, *,
-                 disk_name: Optional[pulumi.Input['DiskAnomaliesDiskNameArgs']] = None,
-                 enabled: Optional[pulumi.Input[_builtins.bool]] = None,
-                 host_group_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 metric: Optional[pulumi.Input[_builtins.str]] = None,
-                 name: Optional[pulumi.Input[_builtins.str]] = None,
-                 samples: Optional[pulumi.Input[_builtins.int]] = None,
-                 tags: Optional[pulumi.Input['DiskAnomaliesTagsArgs']] = None,
-                 threshold: Optional[pulumi.Input[_builtins.float]] = None,
-                 violating_samples: Optional[pulumi.Input[_builtins.int]] = None):
+                 disk_name: pulumi.Input[Optional['DiskAnomaliesDiskNameArgs']] = None,
+                 enabled: pulumi.Input[Optional[_builtins.bool]] = None,
+                 host_group_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 metric: pulumi.Input[Optional[_builtins.str]] = None,
+                 name: pulumi.Input[Optional[_builtins.str]] = None,
+                 samples: pulumi.Input[Optional[_builtins.int]] = None,
+                 tags: pulumi.Input[Optional['DiskAnomaliesTagsArgs']] = None,
+                 threshold: pulumi.Input[Optional[_builtins.float]] = None,
+                 violating_samples: pulumi.Input[Optional[_builtins.int]] = None):
         """
         Input properties used for looking up and filtering DiskAnomalies resources.
 
@@ -212,110 +212,110 @@ class _DiskAnomaliesState:
 
     @_builtins.property
     @pulumi.getter(name="diskName")
-    def disk_name(self) -> Optional[pulumi.Input['DiskAnomaliesDiskNameArgs']]:
+    def disk_name(self) -> pulumi.Input[Optional['DiskAnomaliesDiskNameArgs']]:
         """
         Narrows the rule usage down to disks, matching the specified criteria
         """
         return pulumi.get(self, "disk_name")
 
     @disk_name.setter
-    def disk_name(self, value: Optional[pulumi.Input['DiskAnomaliesDiskNameArgs']]):
+    def disk_name(self, value: pulumi.Input[Optional['DiskAnomaliesDiskNameArgs']]):
         pulumi.set(self, "disk_name", value)
 
     @_builtins.property
     @pulumi.getter
-    def enabled(self) -> Optional[pulumi.Input[_builtins.bool]]:
+    def enabled(self) -> pulumi.Input[Optional[_builtins.bool]]:
         """
         Disk event rule enabled/disabled
         """
         return pulumi.get(self, "enabled")
 
     @enabled.setter
-    def enabled(self, value: Optional[pulumi.Input[_builtins.bool]]):
+    def enabled(self, value: pulumi.Input[Optional[_builtins.bool]]):
         pulumi.set(self, "enabled", value)
 
     @_builtins.property
     @pulumi.getter(name="hostGroupId")
-    def host_group_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def host_group_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Narrows the rule usage down to disks that run on hosts that themselves run on the specified host group
         """
         return pulumi.get(self, "host_group_id")
 
     @host_group_id.setter
-    def host_group_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def host_group_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "host_group_id", value)
 
     @_builtins.property
     @pulumi.getter
-    def metric(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def metric(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The metric to monitor. Possible values are: `LOW_DISK_SPACE`, `LOW_INODES`, `READ_TIME_EXCEEDING` and `WRITE_TIME_EXCEEDING`
         """
         return pulumi.get(self, "metric")
 
     @metric.setter
-    def metric(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def metric(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "metric", value)
 
     @_builtins.property
     @pulumi.getter
-    def name(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def name(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The name of the disk event rule
         """
         return pulumi.get(self, "name")
 
     @name.setter
-    def name(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def name(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "name", value)
 
     @_builtins.property
     @pulumi.getter
-    def samples(self) -> Optional[pulumi.Input[_builtins.int]]:
+    def samples(self) -> pulumi.Input[Optional[_builtins.int]]:
         """
         The number of samples to evaluate
         """
         return pulumi.get(self, "samples")
 
     @samples.setter
-    def samples(self, value: Optional[pulumi.Input[_builtins.int]]):
+    def samples(self, value: pulumi.Input[Optional[_builtins.int]]):
         pulumi.set(self, "samples", value)
 
     @_builtins.property
     @pulumi.getter
-    def tags(self) -> Optional[pulumi.Input['DiskAnomaliesTagsArgs']]:
+    def tags(self) -> pulumi.Input[Optional['DiskAnomaliesTagsArgs']]:
         """
         Narrows the rule usage down to the hosts matching the specified tags
         """
         return pulumi.get(self, "tags")
 
     @tags.setter
-    def tags(self, value: Optional[pulumi.Input['DiskAnomaliesTagsArgs']]):
+    def tags(self, value: pulumi.Input[Optional['DiskAnomaliesTagsArgs']]):
         pulumi.set(self, "tags", value)
 
     @_builtins.property
     @pulumi.getter
-    def threshold(self) -> Optional[pulumi.Input[_builtins.float]]:
+    def threshold(self) -> pulumi.Input[Optional[_builtins.float]]:
         """
         The threshold to trigger disk event.   * A percentage for `LowDiskSpace` or `LowInodes` metrics.   * In milliseconds for `ReadTimeExceeding` or `WriteTimeExceeding` metrics
         """
         return pulumi.get(self, "threshold")
 
     @threshold.setter
-    def threshold(self, value: Optional[pulumi.Input[_builtins.float]]):
+    def threshold(self, value: pulumi.Input[Optional[_builtins.float]]):
         pulumi.set(self, "threshold", value)
 
     @_builtins.property
     @pulumi.getter(name="violatingSamples")
-    def violating_samples(self) -> Optional[pulumi.Input[_builtins.int]]:
+    def violating_samples(self) -> pulumi.Input[Optional[_builtins.int]]:
         """
         The number of samples that must violate the threshold to trigger an event. Must not exceed the number of evaluated samples
         """
         return pulumi.get(self, "violating_samples")
 
     @violating_samples.setter
-    def violating_samples(self, value: Optional[pulumi.Input[_builtins.int]]):
+    def violating_samples(self, value: pulumi.Input[Optional[_builtins.int]]):
         pulumi.set(self, "violating_samples", value)
 
 
@@ -325,15 +325,15 @@ class DiskAnomalies(pulumi.CustomResource):
     def __init__(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 disk_name: Optional[pulumi.Input[Union['DiskAnomaliesDiskNameArgs', 'DiskAnomaliesDiskNameArgsDict']]] = None,
-                 enabled: Optional[pulumi.Input[_builtins.bool]] = None,
-                 host_group_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 metric: Optional[pulumi.Input[_builtins.str]] = None,
-                 name: Optional[pulumi.Input[_builtins.str]] = None,
-                 samples: Optional[pulumi.Input[_builtins.int]] = None,
-                 tags: Optional[pulumi.Input[Union['DiskAnomaliesTagsArgs', 'DiskAnomaliesTagsArgsDict']]] = None,
-                 threshold: Optional[pulumi.Input[_builtins.float]] = None,
-                 violating_samples: Optional[pulumi.Input[_builtins.int]] = None,
+                 disk_name: pulumi.Input[Optional[Union['DiskAnomaliesDiskNameArgs', 'DiskAnomaliesDiskNameArgsDict']]] = None,
+                 enabled: pulumi.Input[Optional[_builtins.bool]] = None,
+                 host_group_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 metric: pulumi.Input[Optional[_builtins.str]] = None,
+                 name: pulumi.Input[Optional[_builtins.str]] = None,
+                 samples: pulumi.Input[Optional[_builtins.int]] = None,
+                 tags: pulumi.Input[Optional[Union['DiskAnomaliesTagsArgs', 'DiskAnomaliesTagsArgsDict']]] = None,
+                 threshold: pulumi.Input[Optional[_builtins.float]] = None,
+                 violating_samples: pulumi.Input[Optional[_builtins.int]] = None,
                  __props__=None):
         """
         !> This resource is utilizing an older API endpoint, please use DiskAnomalyRules instead.
@@ -404,15 +404,15 @@ class DiskAnomalies(pulumi.CustomResource):
     def _internal_init(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 disk_name: Optional[pulumi.Input[Union['DiskAnomaliesDiskNameArgs', 'DiskAnomaliesDiskNameArgsDict']]] = None,
-                 enabled: Optional[pulumi.Input[_builtins.bool]] = None,
-                 host_group_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 metric: Optional[pulumi.Input[_builtins.str]] = None,
-                 name: Optional[pulumi.Input[_builtins.str]] = None,
-                 samples: Optional[pulumi.Input[_builtins.int]] = None,
-                 tags: Optional[pulumi.Input[Union['DiskAnomaliesTagsArgs', 'DiskAnomaliesTagsArgsDict']]] = None,
-                 threshold: Optional[pulumi.Input[_builtins.float]] = None,
-                 violating_samples: Optional[pulumi.Input[_builtins.int]] = None,
+                 disk_name: pulumi.Input[Optional[Union['DiskAnomaliesDiskNameArgs', 'DiskAnomaliesDiskNameArgsDict']]] = None,
+                 enabled: pulumi.Input[Optional[_builtins.bool]] = None,
+                 host_group_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 metric: pulumi.Input[Optional[_builtins.str]] = None,
+                 name: pulumi.Input[Optional[_builtins.str]] = None,
+                 samples: pulumi.Input[Optional[_builtins.int]] = None,
+                 tags: pulumi.Input[Optional[Union['DiskAnomaliesTagsArgs', 'DiskAnomaliesTagsArgsDict']]] = None,
+                 threshold: pulumi.Input[Optional[_builtins.float]] = None,
+                 violating_samples: pulumi.Input[Optional[_builtins.int]] = None,
                  __props__=None):
         opts = pulumi.ResourceOptions.merge(_utilities.get_resource_opts_defaults(), opts)
         if not isinstance(opts, pulumi.ResourceOptions):
@@ -451,15 +451,15 @@ class DiskAnomalies(pulumi.CustomResource):
     def get(resource_name: str,
             id: pulumi.Input[str],
             opts: Optional[pulumi.ResourceOptions] = None,
-            disk_name: Optional[pulumi.Input[Union['DiskAnomaliesDiskNameArgs', 'DiskAnomaliesDiskNameArgsDict']]] = None,
-            enabled: Optional[pulumi.Input[_builtins.bool]] = None,
-            host_group_id: Optional[pulumi.Input[_builtins.str]] = None,
-            metric: Optional[pulumi.Input[_builtins.str]] = None,
-            name: Optional[pulumi.Input[_builtins.str]] = None,
-            samples: Optional[pulumi.Input[_builtins.int]] = None,
-            tags: Optional[pulumi.Input[Union['DiskAnomaliesTagsArgs', 'DiskAnomaliesTagsArgsDict']]] = None,
-            threshold: Optional[pulumi.Input[_builtins.float]] = None,
-            violating_samples: Optional[pulumi.Input[_builtins.int]] = None) -> 'DiskAnomalies':
+            disk_name: pulumi.Input[Optional[Union['DiskAnomaliesDiskNameArgs', 'DiskAnomaliesDiskNameArgsDict']]] = None,
+            enabled: pulumi.Input[Optional[_builtins.bool]] = None,
+            host_group_id: pulumi.Input[Optional[_builtins.str]] = None,
+            metric: pulumi.Input[Optional[_builtins.str]] = None,
+            name: pulumi.Input[Optional[_builtins.str]] = None,
+            samples: pulumi.Input[Optional[_builtins.int]] = None,
+            tags: pulumi.Input[Optional[Union['DiskAnomaliesTagsArgs', 'DiskAnomaliesTagsArgsDict']]] = None,
+            threshold: pulumi.Input[Optional[_builtins.float]] = None,
+            violating_samples: pulumi.Input[Optional[_builtins.int]] = None) -> 'DiskAnomalies':
         """
         Get an existing DiskAnomalies resource's state with the given name, id, and optional extra
         properties used to qualify the lookup.

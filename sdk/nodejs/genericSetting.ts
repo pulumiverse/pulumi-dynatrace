@@ -130,10 +130,10 @@ export class GenericSetting extends pulumi.CustomResource {
  * Input properties used for looking up and filtering GenericSetting resources.
  */
 export interface GenericSettingState {
-    localStorage?: pulumi.Input<string>;
-    schema?: pulumi.Input<string>;
-    scope?: pulumi.Input<string>;
-    value?: pulumi.Input<string>;
+    localStorage?: pulumi.Input<string | undefined>;
+    schema?: pulumi.Input<string | undefined>;
+    scope?: pulumi.Input<string | undefined>;
+    value?: pulumi.Input<string | undefined>;
 }
 
 /**
@@ -141,6 +141,6 @@ export interface GenericSettingState {
  */
 export interface GenericSettingArgs {
     schema: pulumi.Input<string>;
-    scope?: pulumi.Input<string>;
+    scope?: pulumi.Input<string | undefined>;
     value: pulumi.Input<string>;
 }

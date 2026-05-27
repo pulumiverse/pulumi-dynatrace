@@ -128,15 +128,15 @@ export interface OpentelemetryMetricsState {
     /**
      * When enabled, the attributes defined in the list below will be added as dimensions to ingested OTLP metrics if they are present in the OpenTelemetry resource or in the instrumentation scope.
      */
-    additionalAttributes?: pulumi.Input<inputs.OpentelemetryMetricsAdditionalAttributes>;
+    additionalAttributes?: pulumi.Input<inputs.OpentelemetryMetricsAdditionalAttributes | undefined>;
     /**
      * Add the resource and scope attributes configured below as dimensions (Metrics Classic)
      */
-    additionalAttributesToDimensionEnabled?: pulumi.Input<boolean>;
+    additionalAttributesToDimensionEnabled?: pulumi.Input<boolean | undefined>;
     /**
      * When enabled, the Meter name (also referred to as InstrumentationScope or InstrumentationLibrary in OpenTelemetry SDKs) and version will be added as dimensions (`otel.scope.name` and `otel.scope.version`) to ingested OTLP metrics.
      */
-    meterNameToDimensionEnabled?: pulumi.Input<boolean>;
+    meterNameToDimensionEnabled?: pulumi.Input<boolean | undefined>;
     /**
      * Specifies whether the given attributes to enable (`additionalAttributes`) and the attributes to drop (`toDropAttributes`) will get applied explicitly (`EXPLICIT`) or additive (`ADDITIVE`).
      *
@@ -146,11 +146,11 @@ export interface OpentelemetryMetricsState {
      *
      * **Note:** Using `ADDITIVE` and `EXPLICIT` at the same time within differnt resource instances will lead to unexpected results.
      */
-    mode?: pulumi.Input<string>;
+    mode?: pulumi.Input<string | undefined>;
     /**
      * The scope of this setting (environment-default). Omit this property if you want to cover the whole environment.
      */
-    scope?: pulumi.Input<string>;
+    scope?: pulumi.Input<string | undefined>;
     /**
      * The attributes defined in the list below will be dropped from all ingested OTLP metrics.
      *
@@ -162,7 +162,7 @@ export interface OpentelemetryMetricsState {
      *
      * - Dynatrace does not recommend including attributes starting with "dt." to the deny list. Dynatrace leverages these attributes to [Enrich metrics](https://www.dynatrace.com/support/help/extend-dynatrace/extend-metrics/reference/enrich-metrics).
      */
-    toDropAttributes?: pulumi.Input<inputs.OpentelemetryMetricsToDropAttributes>;
+    toDropAttributes?: pulumi.Input<inputs.OpentelemetryMetricsToDropAttributes | undefined>;
 }
 
 /**
@@ -172,15 +172,15 @@ export interface OpentelemetryMetricsArgs {
     /**
      * When enabled, the attributes defined in the list below will be added as dimensions to ingested OTLP metrics if they are present in the OpenTelemetry resource or in the instrumentation scope.
      */
-    additionalAttributes?: pulumi.Input<inputs.OpentelemetryMetricsAdditionalAttributes>;
+    additionalAttributes?: pulumi.Input<inputs.OpentelemetryMetricsAdditionalAttributes | undefined>;
     /**
      * Add the resource and scope attributes configured below as dimensions (Metrics Classic)
      */
-    additionalAttributesToDimensionEnabled?: pulumi.Input<boolean>;
+    additionalAttributesToDimensionEnabled?: pulumi.Input<boolean | undefined>;
     /**
      * When enabled, the Meter name (also referred to as InstrumentationScope or InstrumentationLibrary in OpenTelemetry SDKs) and version will be added as dimensions (`otel.scope.name` and `otel.scope.version`) to ingested OTLP metrics.
      */
-    meterNameToDimensionEnabled?: pulumi.Input<boolean>;
+    meterNameToDimensionEnabled?: pulumi.Input<boolean | undefined>;
     /**
      * Specifies whether the given attributes to enable (`additionalAttributes`) and the attributes to drop (`toDropAttributes`) will get applied explicitly (`EXPLICIT`) or additive (`ADDITIVE`).
      *
@@ -190,11 +190,11 @@ export interface OpentelemetryMetricsArgs {
      *
      * **Note:** Using `ADDITIVE` and `EXPLICIT` at the same time within differnt resource instances will lead to unexpected results.
      */
-    mode?: pulumi.Input<string>;
+    mode?: pulumi.Input<string | undefined>;
     /**
      * The scope of this setting (environment-default). Omit this property if you want to cover the whole environment.
      */
-    scope?: pulumi.Input<string>;
+    scope?: pulumi.Input<string | undefined>;
     /**
      * The attributes defined in the list below will be dropped from all ingested OTLP metrics.
      *
@@ -206,5 +206,5 @@ export interface OpentelemetryMetricsArgs {
      *
      * - Dynatrace does not recommend including attributes starting with "dt." to the deny list. Dynatrace leverages these attributes to [Enrich metrics](https://www.dynatrace.com/support/help/extend-dynatrace/extend-metrics/reference/enrich-metrics).
      */
-    toDropAttributes?: pulumi.Input<inputs.OpentelemetryMetricsToDropAttributes>;
+    toDropAttributes?: pulumi.Input<inputs.OpentelemetryMetricsToDropAttributes | undefined>;
 }

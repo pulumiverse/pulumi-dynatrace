@@ -24,8 +24,8 @@ class MaintenanceArgs:
                  enabled: pulumi.Input[_builtins.bool],
                  general_properties: pulumi.Input['MaintenanceGeneralPropertiesArgs'],
                  schedule: pulumi.Input['MaintenanceScheduleArgs'],
-                 filters: Optional[pulumi.Input['MaintenanceFiltersArgs']] = None,
-                 legacy_id: Optional[pulumi.Input[_builtins.str]] = None):
+                 filters: pulumi.Input[Optional['MaintenanceFiltersArgs']] = None,
+                 legacy_id: pulumi.Input[Optional[_builtins.str]] = None):
         """
         The set of arguments for constructing a Maintenance resource.
 
@@ -82,7 +82,7 @@ class MaintenanceArgs:
 
     @_builtins.property
     @pulumi.getter
-    def filters(self) -> Optional[pulumi.Input['MaintenanceFiltersArgs']]:
+    def filters(self) -> pulumi.Input[Optional['MaintenanceFiltersArgs']]:
         """
         ## Filters
         Add filters to limit the scope of maintenance to only select matching entities. If no filter is defined, the maintenance window is valid for the whole environment. Each filter is evaluated separately (**OR**).
@@ -90,30 +90,30 @@ class MaintenanceArgs:
         return pulumi.get(self, "filters")
 
     @filters.setter
-    def filters(self, value: Optional[pulumi.Input['MaintenanceFiltersArgs']]):
+    def filters(self, value: pulumi.Input[Optional['MaintenanceFiltersArgs']]):
         pulumi.set(self, "filters", value)
 
     @_builtins.property
     @pulumi.getter(name="legacyId")
-    def legacy_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def legacy_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The ID of this setting when referred to by the Config REST API V1
         """
         return pulumi.get(self, "legacy_id")
 
     @legacy_id.setter
-    def legacy_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def legacy_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "legacy_id", value)
 
 
 @pulumi.input_type
 class _MaintenanceState:
     def __init__(__self__, *,
-                 enabled: Optional[pulumi.Input[_builtins.bool]] = None,
-                 filters: Optional[pulumi.Input['MaintenanceFiltersArgs']] = None,
-                 general_properties: Optional[pulumi.Input['MaintenanceGeneralPropertiesArgs']] = None,
-                 legacy_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 schedule: Optional[pulumi.Input['MaintenanceScheduleArgs']] = None):
+                 enabled: pulumi.Input[Optional[_builtins.bool]] = None,
+                 filters: pulumi.Input[Optional['MaintenanceFiltersArgs']] = None,
+                 general_properties: pulumi.Input[Optional['MaintenanceGeneralPropertiesArgs']] = None,
+                 legacy_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 schedule: pulumi.Input[Optional['MaintenanceScheduleArgs']] = None):
         """
         Input properties used for looking up and filtering Maintenance resources.
 
@@ -137,19 +137,19 @@ class _MaintenanceState:
 
     @_builtins.property
     @pulumi.getter
-    def enabled(self) -> Optional[pulumi.Input[_builtins.bool]]:
+    def enabled(self) -> pulumi.Input[Optional[_builtins.bool]]:
         """
         This setting is enabled (`true`) or disabled (`false`)
         """
         return pulumi.get(self, "enabled")
 
     @enabled.setter
-    def enabled(self, value: Optional[pulumi.Input[_builtins.bool]]):
+    def enabled(self, value: pulumi.Input[Optional[_builtins.bool]]):
         pulumi.set(self, "enabled", value)
 
     @_builtins.property
     @pulumi.getter
-    def filters(self) -> Optional[pulumi.Input['MaintenanceFiltersArgs']]:
+    def filters(self) -> pulumi.Input[Optional['MaintenanceFiltersArgs']]:
         """
         ## Filters
         Add filters to limit the scope of maintenance to only select matching entities. If no filter is defined, the maintenance window is valid for the whole environment. Each filter is evaluated separately (**OR**).
@@ -157,43 +157,43 @@ class _MaintenanceState:
         return pulumi.get(self, "filters")
 
     @filters.setter
-    def filters(self, value: Optional[pulumi.Input['MaintenanceFiltersArgs']]):
+    def filters(self, value: pulumi.Input[Optional['MaintenanceFiltersArgs']]):
         pulumi.set(self, "filters", value)
 
     @_builtins.property
     @pulumi.getter(name="generalProperties")
-    def general_properties(self) -> Optional[pulumi.Input['MaintenanceGeneralPropertiesArgs']]:
+    def general_properties(self) -> pulumi.Input[Optional['MaintenanceGeneralPropertiesArgs']]:
         """
         The general properties of the maintenance window
         """
         return pulumi.get(self, "general_properties")
 
     @general_properties.setter
-    def general_properties(self, value: Optional[pulumi.Input['MaintenanceGeneralPropertiesArgs']]):
+    def general_properties(self, value: pulumi.Input[Optional['MaintenanceGeneralPropertiesArgs']]):
         pulumi.set(self, "general_properties", value)
 
     @_builtins.property
     @pulumi.getter(name="legacyId")
-    def legacy_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def legacy_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The ID of this setting when referred to by the Config REST API V1
         """
         return pulumi.get(self, "legacy_id")
 
     @legacy_id.setter
-    def legacy_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def legacy_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "legacy_id", value)
 
     @_builtins.property
     @pulumi.getter
-    def schedule(self) -> Optional[pulumi.Input['MaintenanceScheduleArgs']]:
+    def schedule(self) -> pulumi.Input[Optional['MaintenanceScheduleArgs']]:
         """
         The schedule of the maintenance window
         """
         return pulumi.get(self, "schedule")
 
     @schedule.setter
-    def schedule(self, value: Optional[pulumi.Input['MaintenanceScheduleArgs']]):
+    def schedule(self, value: pulumi.Input[Optional['MaintenanceScheduleArgs']]):
         pulumi.set(self, "schedule", value)
 
 
@@ -203,11 +203,11 @@ class Maintenance(pulumi.CustomResource):
     def __init__(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 enabled: Optional[pulumi.Input[_builtins.bool]] = None,
-                 filters: Optional[pulumi.Input[Union['MaintenanceFiltersArgs', 'MaintenanceFiltersArgsDict']]] = None,
-                 general_properties: Optional[pulumi.Input[Union['MaintenanceGeneralPropertiesArgs', 'MaintenanceGeneralPropertiesArgsDict']]] = None,
-                 legacy_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 schedule: Optional[pulumi.Input[Union['MaintenanceScheduleArgs', 'MaintenanceScheduleArgsDict']]] = None,
+                 enabled: pulumi.Input[Optional[_builtins.bool]] = None,
+                 filters: pulumi.Input[Optional[Union['MaintenanceFiltersArgs', 'MaintenanceFiltersArgsDict']]] = None,
+                 general_properties: pulumi.Input[Optional[Union['MaintenanceGeneralPropertiesArgs', 'MaintenanceGeneralPropertiesArgsDict']]] = None,
+                 legacy_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 schedule: pulumi.Input[Optional[Union['MaintenanceScheduleArgs', 'MaintenanceScheduleArgsDict']]] = None,
                  __props__=None):
         """
         > This resource requires the API token scopes **Read settings** (`settings.read`) and **Write settings** (`settings.write`)
@@ -271,11 +271,11 @@ class Maintenance(pulumi.CustomResource):
     def _internal_init(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 enabled: Optional[pulumi.Input[_builtins.bool]] = None,
-                 filters: Optional[pulumi.Input[Union['MaintenanceFiltersArgs', 'MaintenanceFiltersArgsDict']]] = None,
-                 general_properties: Optional[pulumi.Input[Union['MaintenanceGeneralPropertiesArgs', 'MaintenanceGeneralPropertiesArgsDict']]] = None,
-                 legacy_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 schedule: Optional[pulumi.Input[Union['MaintenanceScheduleArgs', 'MaintenanceScheduleArgsDict']]] = None,
+                 enabled: pulumi.Input[Optional[_builtins.bool]] = None,
+                 filters: pulumi.Input[Optional[Union['MaintenanceFiltersArgs', 'MaintenanceFiltersArgsDict']]] = None,
+                 general_properties: pulumi.Input[Optional[Union['MaintenanceGeneralPropertiesArgs', 'MaintenanceGeneralPropertiesArgsDict']]] = None,
+                 legacy_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 schedule: pulumi.Input[Optional[Union['MaintenanceScheduleArgs', 'MaintenanceScheduleArgsDict']]] = None,
                  __props__=None):
         opts = pulumi.ResourceOptions.merge(_utilities.get_resource_opts_defaults(), opts)
         if not isinstance(opts, pulumi.ResourceOptions):
@@ -306,11 +306,11 @@ class Maintenance(pulumi.CustomResource):
     def get(resource_name: str,
             id: pulumi.Input[str],
             opts: Optional[pulumi.ResourceOptions] = None,
-            enabled: Optional[pulumi.Input[_builtins.bool]] = None,
-            filters: Optional[pulumi.Input[Union['MaintenanceFiltersArgs', 'MaintenanceFiltersArgsDict']]] = None,
-            general_properties: Optional[pulumi.Input[Union['MaintenanceGeneralPropertiesArgs', 'MaintenanceGeneralPropertiesArgsDict']]] = None,
-            legacy_id: Optional[pulumi.Input[_builtins.str]] = None,
-            schedule: Optional[pulumi.Input[Union['MaintenanceScheduleArgs', 'MaintenanceScheduleArgsDict']]] = None) -> 'Maintenance':
+            enabled: pulumi.Input[Optional[_builtins.bool]] = None,
+            filters: pulumi.Input[Optional[Union['MaintenanceFiltersArgs', 'MaintenanceFiltersArgsDict']]] = None,
+            general_properties: pulumi.Input[Optional[Union['MaintenanceGeneralPropertiesArgs', 'MaintenanceGeneralPropertiesArgsDict']]] = None,
+            legacy_id: pulumi.Input[Optional[_builtins.str]] = None,
+            schedule: pulumi.Input[Optional[Union['MaintenanceScheduleArgs', 'MaintenanceScheduleArgsDict']]] = None) -> 'Maintenance':
         """
         Get an existing Maintenance resource's state with the given name, id, and optional extra
         properties used to qualify the lookup.

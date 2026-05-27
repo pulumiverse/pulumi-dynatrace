@@ -102,15 +102,15 @@ export interface SpanAttributedState {
     /**
      * Key of the span attribute to store
      */
-    key?: pulumi.Input<string>;
+    key?: pulumi.Input<string | undefined>;
     /**
      * Possible Values: `MASK_ENTIRE_VALUE`, `MASK_ONLY_CONFIDENTIAL_DATA`, `NOT_MASKED`
      */
-    masking?: pulumi.Input<string>;
+    masking?: pulumi.Input<string | undefined>;
     /**
      * Prevents the Span Attribute from getting deleted when running `terraform destroy` - to be used for Span Attributes that are defined by default on every Dynatrace environment.
      */
-    persistent?: pulumi.Input<boolean>;
+    persistent?: pulumi.Input<boolean | undefined>;
 }
 
 /**
@@ -128,5 +128,5 @@ export interface SpanAttributedArgs {
     /**
      * Prevents the Span Attribute from getting deleted when running `terraform destroy` - to be used for Span Attributes that are defined by default on every Dynatrace environment.
      */
-    persistent?: pulumi.Input<boolean>;
+    persistent?: pulumi.Input<boolean | undefined>;
 }

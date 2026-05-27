@@ -24,17 +24,17 @@ class CustomAnomaliesArgs:
                  description: pulumi.Input[_builtins.str],
                  enabled: pulumi.Input[_builtins.bool],
                  strategy: pulumi.Input['CustomAnomaliesStrategyArgs'],
-                 aggregation_type: Optional[pulumi.Input[_builtins.str]] = None,
-                 dimensions: Optional[pulumi.Input[Sequence[pulumi.Input['CustomAnomaliesDimensionArgs']]]] = None,
-                 disabled_reason: Optional[pulumi.Input[_builtins.str]] = None,
-                 metric_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 metric_selector: Optional[pulumi.Input[_builtins.str]] = None,
-                 name: Optional[pulumi.Input[_builtins.str]] = None,
-                 primary_dimension_key: Optional[pulumi.Input[_builtins.str]] = None,
-                 scopes: Optional[pulumi.Input[Sequence[pulumi.Input['CustomAnomaliesScopeArgs']]]] = None,
-                 severity: Optional[pulumi.Input[_builtins.str]] = None,
-                 unknowns: Optional[pulumi.Input[_builtins.str]] = None,
-                 warning_reason: Optional[pulumi.Input[_builtins.str]] = None):
+                 aggregation_type: pulumi.Input[Optional[_builtins.str]] = None,
+                 dimensions: pulumi.Input[Optional[Sequence[pulumi.Input['CustomAnomaliesDimensionArgs']]]] = None,
+                 disabled_reason: pulumi.Input[Optional[_builtins.str]] = None,
+                 metric_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 metric_selector: pulumi.Input[Optional[_builtins.str]] = None,
+                 name: pulumi.Input[Optional[_builtins.str]] = None,
+                 primary_dimension_key: pulumi.Input[Optional[_builtins.str]] = None,
+                 scopes: pulumi.Input[Optional[Sequence[pulumi.Input['CustomAnomaliesScopeArgs']]]] = None,
+                 severity: pulumi.Input[Optional[_builtins.str]] = None,
+                 unknowns: pulumi.Input[Optional[_builtins.str]] = None,
+                 warning_reason: pulumi.Input[Optional[_builtins.str]] = None):
         """
         The set of arguments for constructing a CustomAnomalies resource.
 
@@ -123,156 +123,156 @@ class CustomAnomaliesArgs:
 
     @_builtins.property
     @pulumi.getter(name="aggregationType")
-    def aggregation_type(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def aggregation_type(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         How the metric data points are aggregated for the evaluation. The timeseries must support this aggregation
         """
         return pulumi.get(self, "aggregation_type")
 
     @aggregation_type.setter
-    def aggregation_type(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def aggregation_type(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "aggregation_type", value)
 
     @_builtins.property
     @pulumi.getter
-    def dimensions(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['CustomAnomaliesDimensionArgs']]]]:
+    def dimensions(self) -> pulumi.Input[Optional[Sequence[pulumi.Input['CustomAnomaliesDimensionArgs']]]]:
         """
         Defines the dimensions of the metric to alert on. The filters are combined by conjunction
         """
         return pulumi.get(self, "dimensions")
 
     @dimensions.setter
-    def dimensions(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['CustomAnomaliesDimensionArgs']]]]):
+    def dimensions(self, value: pulumi.Input[Optional[Sequence[pulumi.Input['CustomAnomaliesDimensionArgs']]]]):
         pulumi.set(self, "dimensions", value)
 
     @_builtins.property
     @pulumi.getter(name="disabledReason")
     @_utilities.deprecated("""This property is not meant to be configured from the outside. It will get removed completely in future versions""")
-    def disabled_reason(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def disabled_reason(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The reason of automatic disabling.  The `NONE` means config was not disabled automatically. Possible values are `METRIC_DEFINITION_INCONSISTENCY`, `NONE`, `TOO_MANY_DIMS` and `TOPX_FORCIBLY_DEACTIVATED`
         """
         return pulumi.get(self, "disabled_reason")
 
     @disabled_reason.setter
-    def disabled_reason(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def disabled_reason(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "disabled_reason", value)
 
     @_builtins.property
     @pulumi.getter(name="metricId")
-    def metric_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def metric_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The ID of the metric evaluated by the metric event
         """
         return pulumi.get(self, "metric_id")
 
     @metric_id.setter
-    def metric_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def metric_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "metric_id", value)
 
     @_builtins.property
     @pulumi.getter(name="metricSelector")
-    def metric_selector(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def metric_selector(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The metric selector that should be executed
         """
         return pulumi.get(self, "metric_selector")
 
     @metric_selector.setter
-    def metric_selector(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def metric_selector(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "metric_selector", value)
 
     @_builtins.property
     @pulumi.getter
-    def name(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def name(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The name of the metric event displayed in the UI
         """
         return pulumi.get(self, "name")
 
     @name.setter
-    def name(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def name(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "name", value)
 
     @_builtins.property
     @pulumi.getter(name="primaryDimensionKey")
-    def primary_dimension_key(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def primary_dimension_key(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Defines which dimension key should be used for the **alertingScope**
         """
         return pulumi.get(self, "primary_dimension_key")
 
     @primary_dimension_key.setter
-    def primary_dimension_key(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def primary_dimension_key(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "primary_dimension_key", value)
 
     @_builtins.property
     @pulumi.getter
-    def scopes(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['CustomAnomaliesScopeArgs']]]]:
+    def scopes(self) -> pulumi.Input[Optional[Sequence[pulumi.Input['CustomAnomaliesScopeArgs']]]]:
         """
         Defines the scope of the metric event. Only one filter is allowed per filter type, except for tags, where up to 3 are allowed. The filters are combined by conjunction
         """
         return pulumi.get(self, "scopes")
 
     @scopes.setter
-    def scopes(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['CustomAnomaliesScopeArgs']]]]):
+    def scopes(self, value: pulumi.Input[Optional[Sequence[pulumi.Input['CustomAnomaliesScopeArgs']]]]):
         pulumi.set(self, "scopes", value)
 
     @_builtins.property
     @pulumi.getter
-    def severity(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def severity(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The type of the event to trigger on the threshold violation.  The `CUSTOM_ALERT` type is not correlated with other alerts. The `INFO` type does not open a problem
         """
         return pulumi.get(self, "severity")
 
     @severity.setter
-    def severity(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def severity(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "severity", value)
 
     @_builtins.property
     @pulumi.getter
-    def unknowns(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def unknowns(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         allows for configuring properties that are not explicitly supported by the current version of this provider
         """
         return pulumi.get(self, "unknowns")
 
     @unknowns.setter
-    def unknowns(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def unknowns(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "unknowns", value)
 
     @_builtins.property
     @pulumi.getter(name="warningReason")
     @_utilities.deprecated("""This property is not meant to be configured from the outside. It will get removed completely in future versions""")
-    def warning_reason(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def warning_reason(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The reason of a warning set on the config. The `NONE` means config has no warnings. The other supported value is `TOO_MANY_DIMS`
         """
         return pulumi.get(self, "warning_reason")
 
     @warning_reason.setter
-    def warning_reason(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def warning_reason(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "warning_reason", value)
 
 
 @pulumi.input_type
 class _CustomAnomaliesState:
     def __init__(__self__, *,
-                 aggregation_type: Optional[pulumi.Input[_builtins.str]] = None,
-                 description: Optional[pulumi.Input[_builtins.str]] = None,
-                 dimensions: Optional[pulumi.Input[Sequence[pulumi.Input['CustomAnomaliesDimensionArgs']]]] = None,
-                 disabled_reason: Optional[pulumi.Input[_builtins.str]] = None,
-                 enabled: Optional[pulumi.Input[_builtins.bool]] = None,
-                 metric_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 metric_selector: Optional[pulumi.Input[_builtins.str]] = None,
-                 name: Optional[pulumi.Input[_builtins.str]] = None,
-                 primary_dimension_key: Optional[pulumi.Input[_builtins.str]] = None,
-                 scopes: Optional[pulumi.Input[Sequence[pulumi.Input['CustomAnomaliesScopeArgs']]]] = None,
-                 severity: Optional[pulumi.Input[_builtins.str]] = None,
-                 strategy: Optional[pulumi.Input['CustomAnomaliesStrategyArgs']] = None,
-                 unknowns: Optional[pulumi.Input[_builtins.str]] = None,
-                 warning_reason: Optional[pulumi.Input[_builtins.str]] = None):
+                 aggregation_type: pulumi.Input[Optional[_builtins.str]] = None,
+                 description: pulumi.Input[Optional[_builtins.str]] = None,
+                 dimensions: pulumi.Input[Optional[Sequence[pulumi.Input['CustomAnomaliesDimensionArgs']]]] = None,
+                 disabled_reason: pulumi.Input[Optional[_builtins.str]] = None,
+                 enabled: pulumi.Input[Optional[_builtins.bool]] = None,
+                 metric_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 metric_selector: pulumi.Input[Optional[_builtins.str]] = None,
+                 name: pulumi.Input[Optional[_builtins.str]] = None,
+                 primary_dimension_key: pulumi.Input[Optional[_builtins.str]] = None,
+                 scopes: pulumi.Input[Optional[Sequence[pulumi.Input['CustomAnomaliesScopeArgs']]]] = None,
+                 severity: pulumi.Input[Optional[_builtins.str]] = None,
+                 strategy: pulumi.Input[Optional['CustomAnomaliesStrategyArgs']] = None,
+                 unknowns: pulumi.Input[Optional[_builtins.str]] = None,
+                 warning_reason: pulumi.Input[Optional[_builtins.str]] = None):
         """
         Input properties used for looking up and filtering CustomAnomalies resources.
 
@@ -328,172 +328,172 @@ class _CustomAnomaliesState:
 
     @_builtins.property
     @pulumi.getter(name="aggregationType")
-    def aggregation_type(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def aggregation_type(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         How the metric data points are aggregated for the evaluation. The timeseries must support this aggregation
         """
         return pulumi.get(self, "aggregation_type")
 
     @aggregation_type.setter
-    def aggregation_type(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def aggregation_type(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "aggregation_type", value)
 
     @_builtins.property
     @pulumi.getter
-    def description(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def description(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The description of the metric event
         """
         return pulumi.get(self, "description")
 
     @description.setter
-    def description(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def description(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "description", value)
 
     @_builtins.property
     @pulumi.getter
-    def dimensions(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['CustomAnomaliesDimensionArgs']]]]:
+    def dimensions(self) -> pulumi.Input[Optional[Sequence[pulumi.Input['CustomAnomaliesDimensionArgs']]]]:
         """
         Defines the dimensions of the metric to alert on. The filters are combined by conjunction
         """
         return pulumi.get(self, "dimensions")
 
     @dimensions.setter
-    def dimensions(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['CustomAnomaliesDimensionArgs']]]]):
+    def dimensions(self, value: pulumi.Input[Optional[Sequence[pulumi.Input['CustomAnomaliesDimensionArgs']]]]):
         pulumi.set(self, "dimensions", value)
 
     @_builtins.property
     @pulumi.getter(name="disabledReason")
     @_utilities.deprecated("""This property is not meant to be configured from the outside. It will get removed completely in future versions""")
-    def disabled_reason(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def disabled_reason(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The reason of automatic disabling.  The `NONE` means config was not disabled automatically. Possible values are `METRIC_DEFINITION_INCONSISTENCY`, `NONE`, `TOO_MANY_DIMS` and `TOPX_FORCIBLY_DEACTIVATED`
         """
         return pulumi.get(self, "disabled_reason")
 
     @disabled_reason.setter
-    def disabled_reason(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def disabled_reason(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "disabled_reason", value)
 
     @_builtins.property
     @pulumi.getter
-    def enabled(self) -> Optional[pulumi.Input[_builtins.bool]]:
+    def enabled(self) -> pulumi.Input[Optional[_builtins.bool]]:
         """
         The metric event is enabled (`true`) or disabled (`false`)
         """
         return pulumi.get(self, "enabled")
 
     @enabled.setter
-    def enabled(self, value: Optional[pulumi.Input[_builtins.bool]]):
+    def enabled(self, value: pulumi.Input[Optional[_builtins.bool]]):
         pulumi.set(self, "enabled", value)
 
     @_builtins.property
     @pulumi.getter(name="metricId")
-    def metric_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def metric_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The ID of the metric evaluated by the metric event
         """
         return pulumi.get(self, "metric_id")
 
     @metric_id.setter
-    def metric_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def metric_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "metric_id", value)
 
     @_builtins.property
     @pulumi.getter(name="metricSelector")
-    def metric_selector(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def metric_selector(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The metric selector that should be executed
         """
         return pulumi.get(self, "metric_selector")
 
     @metric_selector.setter
-    def metric_selector(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def metric_selector(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "metric_selector", value)
 
     @_builtins.property
     @pulumi.getter
-    def name(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def name(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The name of the metric event displayed in the UI
         """
         return pulumi.get(self, "name")
 
     @name.setter
-    def name(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def name(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "name", value)
 
     @_builtins.property
     @pulumi.getter(name="primaryDimensionKey")
-    def primary_dimension_key(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def primary_dimension_key(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Defines which dimension key should be used for the **alertingScope**
         """
         return pulumi.get(self, "primary_dimension_key")
 
     @primary_dimension_key.setter
-    def primary_dimension_key(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def primary_dimension_key(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "primary_dimension_key", value)
 
     @_builtins.property
     @pulumi.getter
-    def scopes(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['CustomAnomaliesScopeArgs']]]]:
+    def scopes(self) -> pulumi.Input[Optional[Sequence[pulumi.Input['CustomAnomaliesScopeArgs']]]]:
         """
         Defines the scope of the metric event. Only one filter is allowed per filter type, except for tags, where up to 3 are allowed. The filters are combined by conjunction
         """
         return pulumi.get(self, "scopes")
 
     @scopes.setter
-    def scopes(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['CustomAnomaliesScopeArgs']]]]):
+    def scopes(self, value: pulumi.Input[Optional[Sequence[pulumi.Input['CustomAnomaliesScopeArgs']]]]):
         pulumi.set(self, "scopes", value)
 
     @_builtins.property
     @pulumi.getter
-    def severity(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def severity(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The type of the event to trigger on the threshold violation.  The `CUSTOM_ALERT` type is not correlated with other alerts. The `INFO` type does not open a problem
         """
         return pulumi.get(self, "severity")
 
     @severity.setter
-    def severity(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def severity(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "severity", value)
 
     @_builtins.property
     @pulumi.getter
-    def strategy(self) -> Optional[pulumi.Input['CustomAnomaliesStrategyArgs']]:
+    def strategy(self) -> pulumi.Input[Optional['CustomAnomaliesStrategyArgs']]:
         """
         A monitoring strategy for a metric event config. This is the base version of the monitoring strategy, depending on the type,  the actual JSON may contain additional fields
         """
         return pulumi.get(self, "strategy")
 
     @strategy.setter
-    def strategy(self, value: Optional[pulumi.Input['CustomAnomaliesStrategyArgs']]):
+    def strategy(self, value: pulumi.Input[Optional['CustomAnomaliesStrategyArgs']]):
         pulumi.set(self, "strategy", value)
 
     @_builtins.property
     @pulumi.getter
-    def unknowns(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def unknowns(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         allows for configuring properties that are not explicitly supported by the current version of this provider
         """
         return pulumi.get(self, "unknowns")
 
     @unknowns.setter
-    def unknowns(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def unknowns(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "unknowns", value)
 
     @_builtins.property
     @pulumi.getter(name="warningReason")
     @_utilities.deprecated("""This property is not meant to be configured from the outside. It will get removed completely in future versions""")
-    def warning_reason(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def warning_reason(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The reason of a warning set on the config. The `NONE` means config has no warnings. The other supported value is `TOO_MANY_DIMS`
         """
         return pulumi.get(self, "warning_reason")
 
     @warning_reason.setter
-    def warning_reason(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def warning_reason(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "warning_reason", value)
 
 
@@ -503,20 +503,20 @@ class CustomAnomalies(pulumi.CustomResource):
     def __init__(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 aggregation_type: Optional[pulumi.Input[_builtins.str]] = None,
-                 description: Optional[pulumi.Input[_builtins.str]] = None,
-                 dimensions: Optional[pulumi.Input[Sequence[pulumi.Input[Union['CustomAnomaliesDimensionArgs', 'CustomAnomaliesDimensionArgsDict']]]]] = None,
-                 disabled_reason: Optional[pulumi.Input[_builtins.str]] = None,
-                 enabled: Optional[pulumi.Input[_builtins.bool]] = None,
-                 metric_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 metric_selector: Optional[pulumi.Input[_builtins.str]] = None,
-                 name: Optional[pulumi.Input[_builtins.str]] = None,
-                 primary_dimension_key: Optional[pulumi.Input[_builtins.str]] = None,
-                 scopes: Optional[pulumi.Input[Sequence[pulumi.Input[Union['CustomAnomaliesScopeArgs', 'CustomAnomaliesScopeArgsDict']]]]] = None,
-                 severity: Optional[pulumi.Input[_builtins.str]] = None,
-                 strategy: Optional[pulumi.Input[Union['CustomAnomaliesStrategyArgs', 'CustomAnomaliesStrategyArgsDict']]] = None,
-                 unknowns: Optional[pulumi.Input[_builtins.str]] = None,
-                 warning_reason: Optional[pulumi.Input[_builtins.str]] = None,
+                 aggregation_type: pulumi.Input[Optional[_builtins.str]] = None,
+                 description: pulumi.Input[Optional[_builtins.str]] = None,
+                 dimensions: pulumi.Input[Optional[Sequence[pulumi.Input[Union['CustomAnomaliesDimensionArgs', 'CustomAnomaliesDimensionArgsDict']]]]] = None,
+                 disabled_reason: pulumi.Input[Optional[_builtins.str]] = None,
+                 enabled: pulumi.Input[Optional[_builtins.bool]] = None,
+                 metric_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 metric_selector: pulumi.Input[Optional[_builtins.str]] = None,
+                 name: pulumi.Input[Optional[_builtins.str]] = None,
+                 primary_dimension_key: pulumi.Input[Optional[_builtins.str]] = None,
+                 scopes: pulumi.Input[Optional[Sequence[pulumi.Input[Union['CustomAnomaliesScopeArgs', 'CustomAnomaliesScopeArgsDict']]]]] = None,
+                 severity: pulumi.Input[Optional[_builtins.str]] = None,
+                 strategy: pulumi.Input[Optional[Union['CustomAnomaliesStrategyArgs', 'CustomAnomaliesStrategyArgsDict']]] = None,
+                 unknowns: pulumi.Input[Optional[_builtins.str]] = None,
+                 warning_reason: pulumi.Input[Optional[_builtins.str]] = None,
                  __props__=None):
         """
         !> This resource API endpoint has been deprecated, please use MetricEvents instead.
@@ -592,20 +592,20 @@ class CustomAnomalies(pulumi.CustomResource):
     def _internal_init(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 aggregation_type: Optional[pulumi.Input[_builtins.str]] = None,
-                 description: Optional[pulumi.Input[_builtins.str]] = None,
-                 dimensions: Optional[pulumi.Input[Sequence[pulumi.Input[Union['CustomAnomaliesDimensionArgs', 'CustomAnomaliesDimensionArgsDict']]]]] = None,
-                 disabled_reason: Optional[pulumi.Input[_builtins.str]] = None,
-                 enabled: Optional[pulumi.Input[_builtins.bool]] = None,
-                 metric_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 metric_selector: Optional[pulumi.Input[_builtins.str]] = None,
-                 name: Optional[pulumi.Input[_builtins.str]] = None,
-                 primary_dimension_key: Optional[pulumi.Input[_builtins.str]] = None,
-                 scopes: Optional[pulumi.Input[Sequence[pulumi.Input[Union['CustomAnomaliesScopeArgs', 'CustomAnomaliesScopeArgsDict']]]]] = None,
-                 severity: Optional[pulumi.Input[_builtins.str]] = None,
-                 strategy: Optional[pulumi.Input[Union['CustomAnomaliesStrategyArgs', 'CustomAnomaliesStrategyArgsDict']]] = None,
-                 unknowns: Optional[pulumi.Input[_builtins.str]] = None,
-                 warning_reason: Optional[pulumi.Input[_builtins.str]] = None,
+                 aggregation_type: pulumi.Input[Optional[_builtins.str]] = None,
+                 description: pulumi.Input[Optional[_builtins.str]] = None,
+                 dimensions: pulumi.Input[Optional[Sequence[pulumi.Input[Union['CustomAnomaliesDimensionArgs', 'CustomAnomaliesDimensionArgsDict']]]]] = None,
+                 disabled_reason: pulumi.Input[Optional[_builtins.str]] = None,
+                 enabled: pulumi.Input[Optional[_builtins.bool]] = None,
+                 metric_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 metric_selector: pulumi.Input[Optional[_builtins.str]] = None,
+                 name: pulumi.Input[Optional[_builtins.str]] = None,
+                 primary_dimension_key: pulumi.Input[Optional[_builtins.str]] = None,
+                 scopes: pulumi.Input[Optional[Sequence[pulumi.Input[Union['CustomAnomaliesScopeArgs', 'CustomAnomaliesScopeArgsDict']]]]] = None,
+                 severity: pulumi.Input[Optional[_builtins.str]] = None,
+                 strategy: pulumi.Input[Optional[Union['CustomAnomaliesStrategyArgs', 'CustomAnomaliesStrategyArgsDict']]] = None,
+                 unknowns: pulumi.Input[Optional[_builtins.str]] = None,
+                 warning_reason: pulumi.Input[Optional[_builtins.str]] = None,
                  __props__=None):
         opts = pulumi.ResourceOptions.merge(_utilities.get_resource_opts_defaults(), opts)
         if not isinstance(opts, pulumi.ResourceOptions):
@@ -645,20 +645,20 @@ class CustomAnomalies(pulumi.CustomResource):
     def get(resource_name: str,
             id: pulumi.Input[str],
             opts: Optional[pulumi.ResourceOptions] = None,
-            aggregation_type: Optional[pulumi.Input[_builtins.str]] = None,
-            description: Optional[pulumi.Input[_builtins.str]] = None,
-            dimensions: Optional[pulumi.Input[Sequence[pulumi.Input[Union['CustomAnomaliesDimensionArgs', 'CustomAnomaliesDimensionArgsDict']]]]] = None,
-            disabled_reason: Optional[pulumi.Input[_builtins.str]] = None,
-            enabled: Optional[pulumi.Input[_builtins.bool]] = None,
-            metric_id: Optional[pulumi.Input[_builtins.str]] = None,
-            metric_selector: Optional[pulumi.Input[_builtins.str]] = None,
-            name: Optional[pulumi.Input[_builtins.str]] = None,
-            primary_dimension_key: Optional[pulumi.Input[_builtins.str]] = None,
-            scopes: Optional[pulumi.Input[Sequence[pulumi.Input[Union['CustomAnomaliesScopeArgs', 'CustomAnomaliesScopeArgsDict']]]]] = None,
-            severity: Optional[pulumi.Input[_builtins.str]] = None,
-            strategy: Optional[pulumi.Input[Union['CustomAnomaliesStrategyArgs', 'CustomAnomaliesStrategyArgsDict']]] = None,
-            unknowns: Optional[pulumi.Input[_builtins.str]] = None,
-            warning_reason: Optional[pulumi.Input[_builtins.str]] = None) -> 'CustomAnomalies':
+            aggregation_type: pulumi.Input[Optional[_builtins.str]] = None,
+            description: pulumi.Input[Optional[_builtins.str]] = None,
+            dimensions: pulumi.Input[Optional[Sequence[pulumi.Input[Union['CustomAnomaliesDimensionArgs', 'CustomAnomaliesDimensionArgsDict']]]]] = None,
+            disabled_reason: pulumi.Input[Optional[_builtins.str]] = None,
+            enabled: pulumi.Input[Optional[_builtins.bool]] = None,
+            metric_id: pulumi.Input[Optional[_builtins.str]] = None,
+            metric_selector: pulumi.Input[Optional[_builtins.str]] = None,
+            name: pulumi.Input[Optional[_builtins.str]] = None,
+            primary_dimension_key: pulumi.Input[Optional[_builtins.str]] = None,
+            scopes: pulumi.Input[Optional[Sequence[pulumi.Input[Union['CustomAnomaliesScopeArgs', 'CustomAnomaliesScopeArgsDict']]]]] = None,
+            severity: pulumi.Input[Optional[_builtins.str]] = None,
+            strategy: pulumi.Input[Optional[Union['CustomAnomaliesStrategyArgs', 'CustomAnomaliesStrategyArgsDict']]] = None,
+            unknowns: pulumi.Input[Optional[_builtins.str]] = None,
+            warning_reason: pulumi.Input[Optional[_builtins.str]] = None) -> 'CustomAnomalies':
         """
         Get an existing CustomAnomalies resource's state with the given name, id, and optional extra
         properties used to qualify the lookup.

@@ -21,13 +21,13 @@ __all__ = ['UserGroupArgs', 'UserGroup']
 @pulumi.input_type
 class UserGroupArgs:
     def __init__(__self__, *,
-                 access_account: Optional[pulumi.Input[_builtins.bool]] = None,
-                 cluster_admin: Optional[pulumi.Input[_builtins.bool]] = None,
-                 ldap_groups: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-                 manage_account: Optional[pulumi.Input[_builtins.bool]] = None,
-                 name: Optional[pulumi.Input[_builtins.str]] = None,
-                 permissions: Optional[pulumi.Input['UserGroupPermissionsArgs']] = None,
-                 sso_groups: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None):
+                 access_account: pulumi.Input[Optional[_builtins.bool]] = None,
+                 cluster_admin: pulumi.Input[Optional[_builtins.bool]] = None,
+                 ldap_groups: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 manage_account: pulumi.Input[Optional[_builtins.bool]] = None,
+                 name: pulumi.Input[Optional[_builtins.str]] = None,
+                 permissions: pulumi.Input[Optional['UserGroupPermissionsArgs']] = None,
+                 sso_groups: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None):
         """
         The set of arguments for constructing a UserGroup resource.
 
@@ -56,99 +56,99 @@ class UserGroupArgs:
 
     @_builtins.property
     @pulumi.getter(name="accessAccount")
-    def access_account(self) -> Optional[pulumi.Input[_builtins.bool]]:
+    def access_account(self) -> pulumi.Input[Optional[_builtins.bool]]:
         """
         If `true`, then the group has the access account rights
         """
         return pulumi.get(self, "access_account")
 
     @access_account.setter
-    def access_account(self, value: Optional[pulumi.Input[_builtins.bool]]):
+    def access_account(self, value: pulumi.Input[Optional[_builtins.bool]]):
         pulumi.set(self, "access_account", value)
 
     @_builtins.property
     @pulumi.getter(name="clusterAdmin")
-    def cluster_admin(self) -> Optional[pulumi.Input[_builtins.bool]]:
+    def cluster_admin(self) -> pulumi.Input[Optional[_builtins.bool]]:
         """
         If `true`, then the group has the cluster administrator rights
         """
         return pulumi.get(self, "cluster_admin")
 
     @cluster_admin.setter
-    def cluster_admin(self, value: Optional[pulumi.Input[_builtins.bool]]):
+    def cluster_admin(self, value: pulumi.Input[Optional[_builtins.bool]]):
         pulumi.set(self, "cluster_admin", value)
 
     @_builtins.property
     @pulumi.getter(name="ldapGroups")
-    def ldap_groups(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]:
+    def ldap_groups(self) -> pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]:
         """
         LDAP group names
         """
         return pulumi.get(self, "ldap_groups")
 
     @ldap_groups.setter
-    def ldap_groups(self, value: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]):
+    def ldap_groups(self, value: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "ldap_groups", value)
 
     @_builtins.property
     @pulumi.getter(name="manageAccount")
-    def manage_account(self) -> Optional[pulumi.Input[_builtins.bool]]:
+    def manage_account(self) -> pulumi.Input[Optional[_builtins.bool]]:
         """
         If `true`, then the group has the manage account rights
         """
         return pulumi.get(self, "manage_account")
 
     @manage_account.setter
-    def manage_account(self, value: Optional[pulumi.Input[_builtins.bool]]):
+    def manage_account(self, value: pulumi.Input[Optional[_builtins.bool]]):
         pulumi.set(self, "manage_account", value)
 
     @_builtins.property
     @pulumi.getter
-    def name(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def name(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The name of the user group
         """
         return pulumi.get(self, "name")
 
     @name.setter
-    def name(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def name(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "name", value)
 
     @_builtins.property
     @pulumi.getter
-    def permissions(self) -> Optional[pulumi.Input['UserGroupPermissionsArgs']]:
+    def permissions(self) -> pulumi.Input[Optional['UserGroupPermissionsArgs']]:
         """
         Permissions for environments
         """
         return pulumi.get(self, "permissions")
 
     @permissions.setter
-    def permissions(self, value: Optional[pulumi.Input['UserGroupPermissionsArgs']]):
+    def permissions(self, value: pulumi.Input[Optional['UserGroupPermissionsArgs']]):
         pulumi.set(self, "permissions", value)
 
     @_builtins.property
     @pulumi.getter(name="ssoGroups")
-    def sso_groups(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]:
+    def sso_groups(self) -> pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]:
         """
         SSO group names. If defined it's used to map SSO group name to Dynatrace group name, otherwise mapping is done by group name
         """
         return pulumi.get(self, "sso_groups")
 
     @sso_groups.setter
-    def sso_groups(self, value: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]):
+    def sso_groups(self, value: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "sso_groups", value)
 
 
 @pulumi.input_type
 class _UserGroupState:
     def __init__(__self__, *,
-                 access_account: Optional[pulumi.Input[_builtins.bool]] = None,
-                 cluster_admin: Optional[pulumi.Input[_builtins.bool]] = None,
-                 ldap_groups: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-                 manage_account: Optional[pulumi.Input[_builtins.bool]] = None,
-                 name: Optional[pulumi.Input[_builtins.str]] = None,
-                 permissions: Optional[pulumi.Input['UserGroupPermissionsArgs']] = None,
-                 sso_groups: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None):
+                 access_account: pulumi.Input[Optional[_builtins.bool]] = None,
+                 cluster_admin: pulumi.Input[Optional[_builtins.bool]] = None,
+                 ldap_groups: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 manage_account: pulumi.Input[Optional[_builtins.bool]] = None,
+                 name: pulumi.Input[Optional[_builtins.str]] = None,
+                 permissions: pulumi.Input[Optional['UserGroupPermissionsArgs']] = None,
+                 sso_groups: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None):
         """
         Input properties used for looking up and filtering UserGroup resources.
 
@@ -177,86 +177,86 @@ class _UserGroupState:
 
     @_builtins.property
     @pulumi.getter(name="accessAccount")
-    def access_account(self) -> Optional[pulumi.Input[_builtins.bool]]:
+    def access_account(self) -> pulumi.Input[Optional[_builtins.bool]]:
         """
         If `true`, then the group has the access account rights
         """
         return pulumi.get(self, "access_account")
 
     @access_account.setter
-    def access_account(self, value: Optional[pulumi.Input[_builtins.bool]]):
+    def access_account(self, value: pulumi.Input[Optional[_builtins.bool]]):
         pulumi.set(self, "access_account", value)
 
     @_builtins.property
     @pulumi.getter(name="clusterAdmin")
-    def cluster_admin(self) -> Optional[pulumi.Input[_builtins.bool]]:
+    def cluster_admin(self) -> pulumi.Input[Optional[_builtins.bool]]:
         """
         If `true`, then the group has the cluster administrator rights
         """
         return pulumi.get(self, "cluster_admin")
 
     @cluster_admin.setter
-    def cluster_admin(self, value: Optional[pulumi.Input[_builtins.bool]]):
+    def cluster_admin(self, value: pulumi.Input[Optional[_builtins.bool]]):
         pulumi.set(self, "cluster_admin", value)
 
     @_builtins.property
     @pulumi.getter(name="ldapGroups")
-    def ldap_groups(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]:
+    def ldap_groups(self) -> pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]:
         """
         LDAP group names
         """
         return pulumi.get(self, "ldap_groups")
 
     @ldap_groups.setter
-    def ldap_groups(self, value: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]):
+    def ldap_groups(self, value: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "ldap_groups", value)
 
     @_builtins.property
     @pulumi.getter(name="manageAccount")
-    def manage_account(self) -> Optional[pulumi.Input[_builtins.bool]]:
+    def manage_account(self) -> pulumi.Input[Optional[_builtins.bool]]:
         """
         If `true`, then the group has the manage account rights
         """
         return pulumi.get(self, "manage_account")
 
     @manage_account.setter
-    def manage_account(self, value: Optional[pulumi.Input[_builtins.bool]]):
+    def manage_account(self, value: pulumi.Input[Optional[_builtins.bool]]):
         pulumi.set(self, "manage_account", value)
 
     @_builtins.property
     @pulumi.getter
-    def name(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def name(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The name of the user group
         """
         return pulumi.get(self, "name")
 
     @name.setter
-    def name(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def name(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "name", value)
 
     @_builtins.property
     @pulumi.getter
-    def permissions(self) -> Optional[pulumi.Input['UserGroupPermissionsArgs']]:
+    def permissions(self) -> pulumi.Input[Optional['UserGroupPermissionsArgs']]:
         """
         Permissions for environments
         """
         return pulumi.get(self, "permissions")
 
     @permissions.setter
-    def permissions(self, value: Optional[pulumi.Input['UserGroupPermissionsArgs']]):
+    def permissions(self, value: pulumi.Input[Optional['UserGroupPermissionsArgs']]):
         pulumi.set(self, "permissions", value)
 
     @_builtins.property
     @pulumi.getter(name="ssoGroups")
-    def sso_groups(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]:
+    def sso_groups(self) -> pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]:
         """
         SSO group names. If defined it's used to map SSO group name to Dynatrace group name, otherwise mapping is done by group name
         """
         return pulumi.get(self, "sso_groups")
 
     @sso_groups.setter
-    def sso_groups(self, value: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]):
+    def sso_groups(self, value: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "sso_groups", value)
 
 
@@ -266,13 +266,13 @@ class UserGroup(pulumi.CustomResource):
     def __init__(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 access_account: Optional[pulumi.Input[_builtins.bool]] = None,
-                 cluster_admin: Optional[pulumi.Input[_builtins.bool]] = None,
-                 ldap_groups: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-                 manage_account: Optional[pulumi.Input[_builtins.bool]] = None,
-                 name: Optional[pulumi.Input[_builtins.str]] = None,
-                 permissions: Optional[pulumi.Input[Union['UserGroupPermissionsArgs', 'UserGroupPermissionsArgsDict']]] = None,
-                 sso_groups: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 access_account: pulumi.Input[Optional[_builtins.bool]] = None,
+                 cluster_admin: pulumi.Input[Optional[_builtins.bool]] = None,
+                 ldap_groups: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 manage_account: pulumi.Input[Optional[_builtins.bool]] = None,
+                 name: pulumi.Input[Optional[_builtins.str]] = None,
+                 permissions: pulumi.Input[Optional[Union['UserGroupPermissionsArgs', 'UserGroupPermissionsArgsDict']]] = None,
+                 sso_groups: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
                  __props__=None):
         """
         > **Dynatrace Managed only**
@@ -421,13 +421,13 @@ class UserGroup(pulumi.CustomResource):
     def _internal_init(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 access_account: Optional[pulumi.Input[_builtins.bool]] = None,
-                 cluster_admin: Optional[pulumi.Input[_builtins.bool]] = None,
-                 ldap_groups: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-                 manage_account: Optional[pulumi.Input[_builtins.bool]] = None,
-                 name: Optional[pulumi.Input[_builtins.str]] = None,
-                 permissions: Optional[pulumi.Input[Union['UserGroupPermissionsArgs', 'UserGroupPermissionsArgsDict']]] = None,
-                 sso_groups: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 access_account: pulumi.Input[Optional[_builtins.bool]] = None,
+                 cluster_admin: pulumi.Input[Optional[_builtins.bool]] = None,
+                 ldap_groups: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 manage_account: pulumi.Input[Optional[_builtins.bool]] = None,
+                 name: pulumi.Input[Optional[_builtins.str]] = None,
+                 permissions: pulumi.Input[Optional[Union['UserGroupPermissionsArgs', 'UserGroupPermissionsArgsDict']]] = None,
+                 sso_groups: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
                  __props__=None):
         opts = pulumi.ResourceOptions.merge(_utilities.get_resource_opts_defaults(), opts)
         if not isinstance(opts, pulumi.ResourceOptions):
@@ -454,13 +454,13 @@ class UserGroup(pulumi.CustomResource):
     def get(resource_name: str,
             id: pulumi.Input[str],
             opts: Optional[pulumi.ResourceOptions] = None,
-            access_account: Optional[pulumi.Input[_builtins.bool]] = None,
-            cluster_admin: Optional[pulumi.Input[_builtins.bool]] = None,
-            ldap_groups: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-            manage_account: Optional[pulumi.Input[_builtins.bool]] = None,
-            name: Optional[pulumi.Input[_builtins.str]] = None,
-            permissions: Optional[pulumi.Input[Union['UserGroupPermissionsArgs', 'UserGroupPermissionsArgsDict']]] = None,
-            sso_groups: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None) -> 'UserGroup':
+            access_account: pulumi.Input[Optional[_builtins.bool]] = None,
+            cluster_admin: pulumi.Input[Optional[_builtins.bool]] = None,
+            ldap_groups: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+            manage_account: pulumi.Input[Optional[_builtins.bool]] = None,
+            name: pulumi.Input[Optional[_builtins.str]] = None,
+            permissions: pulumi.Input[Optional[Union['UserGroupPermissionsArgs', 'UserGroupPermissionsArgsDict']]] = None,
+            sso_groups: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None) -> 'UserGroup':
         """
         Get an existing UserGroup resource's state with the given name, id, and optional extra
         properties used to qualify the lookup.

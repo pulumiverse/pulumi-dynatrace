@@ -23,13 +23,13 @@ class MetricMetadataArgs:
     def __init__(__self__, *,
                  metric_id: pulumi.Input[_builtins.str],
                  unit: pulumi.Input[_builtins.str],
-                 description: Optional[pulumi.Input[_builtins.str]] = None,
-                 dimensions: Optional[pulumi.Input['MetricMetadataDimensionsArgs']] = None,
-                 display_name: Optional[pulumi.Input[_builtins.str]] = None,
-                 metric_properties: Optional[pulumi.Input['MetricMetadataMetricPropertiesArgs']] = None,
-                 source_entity_type: Optional[pulumi.Input[_builtins.str]] = None,
-                 tags: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-                 unit_display_format: Optional[pulumi.Input[_builtins.str]] = None):
+                 description: pulumi.Input[Optional[_builtins.str]] = None,
+                 dimensions: pulumi.Input[Optional['MetricMetadataDimensionsArgs']] = None,
+                 display_name: pulumi.Input[Optional[_builtins.str]] = None,
+                 metric_properties: pulumi.Input[Optional['MetricMetadataMetricPropertiesArgs']] = None,
+                 source_entity_type: pulumi.Input[Optional[_builtins.str]] = None,
+                 tags: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 unit_display_format: pulumi.Input[Optional[_builtins.str]] = None):
         """
         The set of arguments for constructing a MetricMetadata resource.
 
@@ -86,101 +86,101 @@ class MetricMetadataArgs:
 
     @_builtins.property
     @pulumi.getter
-    def description(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def description(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Description
         """
         return pulumi.get(self, "description")
 
     @description.setter
-    def description(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def description(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "description", value)
 
     @_builtins.property
     @pulumi.getter
-    def dimensions(self) -> Optional[pulumi.Input['MetricMetadataDimensionsArgs']]:
+    def dimensions(self) -> pulumi.Input[Optional['MetricMetadataDimensionsArgs']]:
         """
         Define metadata per metric dimension.
         """
         return pulumi.get(self, "dimensions")
 
     @dimensions.setter
-    def dimensions(self, value: Optional[pulumi.Input['MetricMetadataDimensionsArgs']]):
+    def dimensions(self, value: pulumi.Input[Optional['MetricMetadataDimensionsArgs']]):
         pulumi.set(self, "dimensions", value)
 
     @_builtins.property
     @pulumi.getter(name="displayName")
-    def display_name(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def display_name(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Display name
         """
         return pulumi.get(self, "display_name")
 
     @display_name.setter
-    def display_name(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def display_name(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "display_name", value)
 
     @_builtins.property
     @pulumi.getter(name="metricProperties")
-    def metric_properties(self) -> Optional[pulumi.Input['MetricMetadataMetricPropertiesArgs']]:
+    def metric_properties(self) -> pulumi.Input[Optional['MetricMetadataMetricPropertiesArgs']]:
         """
         Metric properties
         """
         return pulumi.get(self, "metric_properties")
 
     @metric_properties.setter
-    def metric_properties(self, value: Optional[pulumi.Input['MetricMetadataMetricPropertiesArgs']]):
+    def metric_properties(self, value: pulumi.Input[Optional['MetricMetadataMetricPropertiesArgs']]):
         pulumi.set(self, "metric_properties", value)
 
     @_builtins.property
     @pulumi.getter(name="sourceEntityType")
-    def source_entity_type(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def source_entity_type(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Specifies which entity dimension should be used as the primary dimension. The property can only be configured for metrics ingested with the Metrics API.
         """
         return pulumi.get(self, "source_entity_type")
 
     @source_entity_type.setter
-    def source_entity_type(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def source_entity_type(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "source_entity_type", value)
 
     @_builtins.property
     @pulumi.getter
-    def tags(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]:
+    def tags(self) -> pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]:
         """
         Tags
         """
         return pulumi.get(self, "tags")
 
     @tags.setter
-    def tags(self, value: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]):
+    def tags(self, value: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "tags", value)
 
     @_builtins.property
     @pulumi.getter(name="unitDisplayFormat")
-    def unit_display_format(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def unit_display_format(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The raw value is stored in bits or bytes. The user interface can display it in these numeral systems:
         """
         return pulumi.get(self, "unit_display_format")
 
     @unit_display_format.setter
-    def unit_display_format(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def unit_display_format(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "unit_display_format", value)
 
 
 @pulumi.input_type
 class _MetricMetadataState:
     def __init__(__self__, *,
-                 description: Optional[pulumi.Input[_builtins.str]] = None,
-                 dimensions: Optional[pulumi.Input['MetricMetadataDimensionsArgs']] = None,
-                 display_name: Optional[pulumi.Input[_builtins.str]] = None,
-                 metric_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 metric_properties: Optional[pulumi.Input['MetricMetadataMetricPropertiesArgs']] = None,
-                 source_entity_type: Optional[pulumi.Input[_builtins.str]] = None,
-                 tags: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-                 unit: Optional[pulumi.Input[_builtins.str]] = None,
-                 unit_display_format: Optional[pulumi.Input[_builtins.str]] = None):
+                 description: pulumi.Input[Optional[_builtins.str]] = None,
+                 dimensions: pulumi.Input[Optional['MetricMetadataDimensionsArgs']] = None,
+                 display_name: pulumi.Input[Optional[_builtins.str]] = None,
+                 metric_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 metric_properties: pulumi.Input[Optional['MetricMetadataMetricPropertiesArgs']] = None,
+                 source_entity_type: pulumi.Input[Optional[_builtins.str]] = None,
+                 tags: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 unit: pulumi.Input[Optional[_builtins.str]] = None,
+                 unit_display_format: pulumi.Input[Optional[_builtins.str]] = None):
         """
         Input properties used for looking up and filtering MetricMetadata resources.
 
@@ -215,110 +215,110 @@ class _MetricMetadataState:
 
     @_builtins.property
     @pulumi.getter
-    def description(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def description(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Description
         """
         return pulumi.get(self, "description")
 
     @description.setter
-    def description(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def description(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "description", value)
 
     @_builtins.property
     @pulumi.getter
-    def dimensions(self) -> Optional[pulumi.Input['MetricMetadataDimensionsArgs']]:
+    def dimensions(self) -> pulumi.Input[Optional['MetricMetadataDimensionsArgs']]:
         """
         Define metadata per metric dimension.
         """
         return pulumi.get(self, "dimensions")
 
     @dimensions.setter
-    def dimensions(self, value: Optional[pulumi.Input['MetricMetadataDimensionsArgs']]):
+    def dimensions(self, value: pulumi.Input[Optional['MetricMetadataDimensionsArgs']]):
         pulumi.set(self, "dimensions", value)
 
     @_builtins.property
     @pulumi.getter(name="displayName")
-    def display_name(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def display_name(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Display name
         """
         return pulumi.get(self, "display_name")
 
     @display_name.setter
-    def display_name(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def display_name(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "display_name", value)
 
     @_builtins.property
     @pulumi.getter(name="metricId")
-    def metric_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def metric_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The scope of this setting (metric)
         """
         return pulumi.get(self, "metric_id")
 
     @metric_id.setter
-    def metric_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def metric_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "metric_id", value)
 
     @_builtins.property
     @pulumi.getter(name="metricProperties")
-    def metric_properties(self) -> Optional[pulumi.Input['MetricMetadataMetricPropertiesArgs']]:
+    def metric_properties(self) -> pulumi.Input[Optional['MetricMetadataMetricPropertiesArgs']]:
         """
         Metric properties
         """
         return pulumi.get(self, "metric_properties")
 
     @metric_properties.setter
-    def metric_properties(self, value: Optional[pulumi.Input['MetricMetadataMetricPropertiesArgs']]):
+    def metric_properties(self, value: pulumi.Input[Optional['MetricMetadataMetricPropertiesArgs']]):
         pulumi.set(self, "metric_properties", value)
 
     @_builtins.property
     @pulumi.getter(name="sourceEntityType")
-    def source_entity_type(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def source_entity_type(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Specifies which entity dimension should be used as the primary dimension. The property can only be configured for metrics ingested with the Metrics API.
         """
         return pulumi.get(self, "source_entity_type")
 
     @source_entity_type.setter
-    def source_entity_type(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def source_entity_type(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "source_entity_type", value)
 
     @_builtins.property
     @pulumi.getter
-    def tags(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]:
+    def tags(self) -> pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]:
         """
         Tags
         """
         return pulumi.get(self, "tags")
 
     @tags.setter
-    def tags(self, value: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]):
+    def tags(self, value: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "tags", value)
 
     @_builtins.property
     @pulumi.getter
-    def unit(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def unit(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Unit
         """
         return pulumi.get(self, "unit")
 
     @unit.setter
-    def unit(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def unit(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "unit", value)
 
     @_builtins.property
     @pulumi.getter(name="unitDisplayFormat")
-    def unit_display_format(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def unit_display_format(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The raw value is stored in bits or bytes. The user interface can display it in these numeral systems:
         """
         return pulumi.get(self, "unit_display_format")
 
     @unit_display_format.setter
-    def unit_display_format(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def unit_display_format(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "unit_display_format", value)
 
 
@@ -328,15 +328,15 @@ class MetricMetadata(pulumi.CustomResource):
     def __init__(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 description: Optional[pulumi.Input[_builtins.str]] = None,
-                 dimensions: Optional[pulumi.Input[Union['MetricMetadataDimensionsArgs', 'MetricMetadataDimensionsArgsDict']]] = None,
-                 display_name: Optional[pulumi.Input[_builtins.str]] = None,
-                 metric_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 metric_properties: Optional[pulumi.Input[Union['MetricMetadataMetricPropertiesArgs', 'MetricMetadataMetricPropertiesArgsDict']]] = None,
-                 source_entity_type: Optional[pulumi.Input[_builtins.str]] = None,
-                 tags: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-                 unit: Optional[pulumi.Input[_builtins.str]] = None,
-                 unit_display_format: Optional[pulumi.Input[_builtins.str]] = None,
+                 description: pulumi.Input[Optional[_builtins.str]] = None,
+                 dimensions: pulumi.Input[Optional[Union['MetricMetadataDimensionsArgs', 'MetricMetadataDimensionsArgsDict']]] = None,
+                 display_name: pulumi.Input[Optional[_builtins.str]] = None,
+                 metric_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 metric_properties: pulumi.Input[Optional[Union['MetricMetadataMetricPropertiesArgs', 'MetricMetadataMetricPropertiesArgsDict']]] = None,
+                 source_entity_type: pulumi.Input[Optional[_builtins.str]] = None,
+                 tags: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 unit: pulumi.Input[Optional[_builtins.str]] = None,
+                 unit_display_format: pulumi.Input[Optional[_builtins.str]] = None,
                  __props__=None):
         """
         > This resource requires the API token scopes **Read settings** (`settings.read`) and **Write settings** (`settings.write`)
@@ -403,15 +403,15 @@ class MetricMetadata(pulumi.CustomResource):
     def _internal_init(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 description: Optional[pulumi.Input[_builtins.str]] = None,
-                 dimensions: Optional[pulumi.Input[Union['MetricMetadataDimensionsArgs', 'MetricMetadataDimensionsArgsDict']]] = None,
-                 display_name: Optional[pulumi.Input[_builtins.str]] = None,
-                 metric_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 metric_properties: Optional[pulumi.Input[Union['MetricMetadataMetricPropertiesArgs', 'MetricMetadataMetricPropertiesArgsDict']]] = None,
-                 source_entity_type: Optional[pulumi.Input[_builtins.str]] = None,
-                 tags: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-                 unit: Optional[pulumi.Input[_builtins.str]] = None,
-                 unit_display_format: Optional[pulumi.Input[_builtins.str]] = None,
+                 description: pulumi.Input[Optional[_builtins.str]] = None,
+                 dimensions: pulumi.Input[Optional[Union['MetricMetadataDimensionsArgs', 'MetricMetadataDimensionsArgsDict']]] = None,
+                 display_name: pulumi.Input[Optional[_builtins.str]] = None,
+                 metric_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 metric_properties: pulumi.Input[Optional[Union['MetricMetadataMetricPropertiesArgs', 'MetricMetadataMetricPropertiesArgsDict']]] = None,
+                 source_entity_type: pulumi.Input[Optional[_builtins.str]] = None,
+                 tags: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 unit: pulumi.Input[Optional[_builtins.str]] = None,
+                 unit_display_format: pulumi.Input[Optional[_builtins.str]] = None,
                  __props__=None):
         opts = pulumi.ResourceOptions.merge(_utilities.get_resource_opts_defaults(), opts)
         if not isinstance(opts, pulumi.ResourceOptions):
@@ -444,15 +444,15 @@ class MetricMetadata(pulumi.CustomResource):
     def get(resource_name: str,
             id: pulumi.Input[str],
             opts: Optional[pulumi.ResourceOptions] = None,
-            description: Optional[pulumi.Input[_builtins.str]] = None,
-            dimensions: Optional[pulumi.Input[Union['MetricMetadataDimensionsArgs', 'MetricMetadataDimensionsArgsDict']]] = None,
-            display_name: Optional[pulumi.Input[_builtins.str]] = None,
-            metric_id: Optional[pulumi.Input[_builtins.str]] = None,
-            metric_properties: Optional[pulumi.Input[Union['MetricMetadataMetricPropertiesArgs', 'MetricMetadataMetricPropertiesArgsDict']]] = None,
-            source_entity_type: Optional[pulumi.Input[_builtins.str]] = None,
-            tags: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-            unit: Optional[pulumi.Input[_builtins.str]] = None,
-            unit_display_format: Optional[pulumi.Input[_builtins.str]] = None) -> 'MetricMetadata':
+            description: pulumi.Input[Optional[_builtins.str]] = None,
+            dimensions: pulumi.Input[Optional[Union['MetricMetadataDimensionsArgs', 'MetricMetadataDimensionsArgsDict']]] = None,
+            display_name: pulumi.Input[Optional[_builtins.str]] = None,
+            metric_id: pulumi.Input[Optional[_builtins.str]] = None,
+            metric_properties: pulumi.Input[Optional[Union['MetricMetadataMetricPropertiesArgs', 'MetricMetadataMetricPropertiesArgsDict']]] = None,
+            source_entity_type: pulumi.Input[Optional[_builtins.str]] = None,
+            tags: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+            unit: pulumi.Input[Optional[_builtins.str]] = None,
+            unit_display_format: pulumi.Input[Optional[_builtins.str]] = None) -> 'MetricMetadata':
         """
         Get an existing MetricMetadata resource's state with the given name, id, and optional extra
         properties used to qualify the lookup.

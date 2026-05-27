@@ -29,10 +29,10 @@ class SloV2Args:
                  metric_expression: pulumi.Input[_builtins.str],
                  target_success: pulumi.Input[_builtins.float],
                  target_warning: pulumi.Input[_builtins.float],
-                 custom_description: Optional[pulumi.Input[_builtins.str]] = None,
-                 legacy_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 metric_name: Optional[pulumi.Input[_builtins.str]] = None,
-                 name: Optional[pulumi.Input[_builtins.str]] = None):
+                 custom_description: pulumi.Input[Optional[_builtins.str]] = None,
+                 legacy_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 metric_name: pulumi.Input[Optional[_builtins.str]] = None,
+                 name: pulumi.Input[Optional[_builtins.str]] = None):
         """
         The set of arguments for constructing a SloV2 resource.
 
@@ -164,68 +164,68 @@ class SloV2Args:
 
     @_builtins.property
     @pulumi.getter(name="customDescription")
-    def custom_description(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def custom_description(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The description of the SLO
         """
         return pulumi.get(self, "custom_description")
 
     @custom_description.setter
-    def custom_description(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def custom_description(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "custom_description", value)
 
     @_builtins.property
     @pulumi.getter(name="legacyId")
-    def legacy_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def legacy_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The ID of this setting when referred to by the Config REST API V1
         """
         return pulumi.get(self, "legacy_id")
 
     @legacy_id.setter
-    def legacy_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def legacy_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "legacy_id", value)
 
     @_builtins.property
     @pulumi.getter(name="metricName")
-    def metric_name(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def metric_name(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Metric name
         """
         return pulumi.get(self, "metric_name")
 
     @metric_name.setter
-    def metric_name(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def metric_name(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "metric_name", value)
 
     @_builtins.property
     @pulumi.getter
-    def name(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def name(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         SLO name
         """
         return pulumi.get(self, "name")
 
     @name.setter
-    def name(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def name(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "name", value)
 
 
 @pulumi.input_type
 class _SloV2State:
     def __init__(__self__, *,
-                 custom_description: Optional[pulumi.Input[_builtins.str]] = None,
-                 enabled: Optional[pulumi.Input[_builtins.bool]] = None,
-                 error_budget_burn_rate: Optional[pulumi.Input['SloV2ErrorBudgetBurnRateArgs']] = None,
-                 evaluation_type: Optional[pulumi.Input[_builtins.str]] = None,
-                 evaluation_window: Optional[pulumi.Input[_builtins.str]] = None,
-                 filter: Optional[pulumi.Input[_builtins.str]] = None,
-                 legacy_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 metric_expression: Optional[pulumi.Input[_builtins.str]] = None,
-                 metric_name: Optional[pulumi.Input[_builtins.str]] = None,
-                 name: Optional[pulumi.Input[_builtins.str]] = None,
-                 target_success: Optional[pulumi.Input[_builtins.float]] = None,
-                 target_warning: Optional[pulumi.Input[_builtins.float]] = None):
+                 custom_description: pulumi.Input[Optional[_builtins.str]] = None,
+                 enabled: pulumi.Input[Optional[_builtins.bool]] = None,
+                 error_budget_burn_rate: pulumi.Input[Optional['SloV2ErrorBudgetBurnRateArgs']] = None,
+                 evaluation_type: pulumi.Input[Optional[_builtins.str]] = None,
+                 evaluation_window: pulumi.Input[Optional[_builtins.str]] = None,
+                 filter: pulumi.Input[Optional[_builtins.str]] = None,
+                 legacy_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 metric_expression: pulumi.Input[Optional[_builtins.str]] = None,
+                 metric_name: pulumi.Input[Optional[_builtins.str]] = None,
+                 name: pulumi.Input[Optional[_builtins.str]] = None,
+                 target_success: pulumi.Input[Optional[_builtins.float]] = None,
+                 target_warning: pulumi.Input[Optional[_builtins.float]] = None):
         """
         Input properties used for looking up and filtering SloV2 resources.
 
@@ -269,146 +269,146 @@ class _SloV2State:
 
     @_builtins.property
     @pulumi.getter(name="customDescription")
-    def custom_description(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def custom_description(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The description of the SLO
         """
         return pulumi.get(self, "custom_description")
 
     @custom_description.setter
-    def custom_description(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def custom_description(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "custom_description", value)
 
     @_builtins.property
     @pulumi.getter
-    def enabled(self) -> Optional[pulumi.Input[_builtins.bool]]:
+    def enabled(self) -> pulumi.Input[Optional[_builtins.bool]]:
         """
         This setting is enabled (`true`) or disabled (`false`)
         """
         return pulumi.get(self, "enabled")
 
     @enabled.setter
-    def enabled(self, value: Optional[pulumi.Input[_builtins.bool]]):
+    def enabled(self, value: pulumi.Input[Optional[_builtins.bool]]):
         pulumi.set(self, "enabled", value)
 
     @_builtins.property
     @pulumi.getter(name="errorBudgetBurnRate")
-    def error_budget_burn_rate(self) -> Optional[pulumi.Input['SloV2ErrorBudgetBurnRateArgs']]:
+    def error_budget_burn_rate(self) -> pulumi.Input[Optional['SloV2ErrorBudgetBurnRateArgs']]:
         """
         ### Error budget burn rate
         """
         return pulumi.get(self, "error_budget_burn_rate")
 
     @error_budget_burn_rate.setter
-    def error_budget_burn_rate(self, value: Optional[pulumi.Input['SloV2ErrorBudgetBurnRateArgs']]):
+    def error_budget_burn_rate(self, value: pulumi.Input[Optional['SloV2ErrorBudgetBurnRateArgs']]):
         pulumi.set(self, "error_budget_burn_rate", value)
 
     @_builtins.property
     @pulumi.getter(name="evaluationType")
-    def evaluation_type(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def evaluation_type(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Possible Values: `AGGREGATE`
         """
         return pulumi.get(self, "evaluation_type")
 
     @evaluation_type.setter
-    def evaluation_type(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def evaluation_type(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "evaluation_type", value)
 
     @_builtins.property
     @pulumi.getter(name="evaluationWindow")
-    def evaluation_window(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def evaluation_window(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Define the timeframe during which the SLO is to be evaluated. For the timeframe you can enter expressions like -1h (last hour), -1w (last week) or complex expressions like -2d to now (last two days), -1d/d to now/d (beginning of yesterday to beginning of today).
         """
         return pulumi.get(self, "evaluation_window")
 
     @evaluation_window.setter
-    def evaluation_window(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def evaluation_window(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "evaluation_window", value)
 
     @_builtins.property
     @pulumi.getter
-    def filter(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def filter(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Set a filter parameter (entitySelector) on any GET call to evaluate this SLO against specific services only (for example, type("SERVICE")).  For details, see the [Entity Selector documentation](https://dt-url.net/entityselector).
         """
         return pulumi.get(self, "filter")
 
     @filter.setter
-    def filter(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def filter(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "filter", value)
 
     @_builtins.property
     @pulumi.getter(name="legacyId")
-    def legacy_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def legacy_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The ID of this setting when referred to by the Config REST API V1
         """
         return pulumi.get(self, "legacy_id")
 
     @legacy_id.setter
-    def legacy_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def legacy_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "legacy_id", value)
 
     @_builtins.property
     @pulumi.getter(name="metricExpression")
-    def metric_expression(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def metric_expression(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         For details, see the [Metrics page](https://www.terraform.io/ui/metrics).
         """
         return pulumi.get(self, "metric_expression")
 
     @metric_expression.setter
-    def metric_expression(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def metric_expression(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "metric_expression", value)
 
     @_builtins.property
     @pulumi.getter(name="metricName")
-    def metric_name(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def metric_name(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Metric name
         """
         return pulumi.get(self, "metric_name")
 
     @metric_name.setter
-    def metric_name(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def metric_name(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "metric_name", value)
 
     @_builtins.property
     @pulumi.getter
-    def name(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def name(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         SLO name
         """
         return pulumi.get(self, "name")
 
     @name.setter
-    def name(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def name(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "name", value)
 
     @_builtins.property
     @pulumi.getter(name="targetSuccess")
-    def target_success(self) -> Optional[pulumi.Input[_builtins.float]]:
+    def target_success(self) -> pulumi.Input[Optional[_builtins.float]]:
         """
         Set the target value of the SLO. A percentage below this value indicates a failure.
         """
         return pulumi.get(self, "target_success")
 
     @target_success.setter
-    def target_success(self, value: Optional[pulumi.Input[_builtins.float]]):
+    def target_success(self, value: pulumi.Input[Optional[_builtins.float]]):
         pulumi.set(self, "target_success", value)
 
     @_builtins.property
     @pulumi.getter(name="targetWarning")
-    def target_warning(self) -> Optional[pulumi.Input[_builtins.float]]:
+    def target_warning(self) -> pulumi.Input[Optional[_builtins.float]]:
         """
         Set the warning value of the SLO. At the warning state the SLO is fulfilled. However, it is getting close to a failure.
         """
         return pulumi.get(self, "target_warning")
 
     @target_warning.setter
-    def target_warning(self, value: Optional[pulumi.Input[_builtins.float]]):
+    def target_warning(self, value: pulumi.Input[Optional[_builtins.float]]):
         pulumi.set(self, "target_warning", value)
 
 
@@ -418,18 +418,18 @@ class SloV2(pulumi.CustomResource):
     def __init__(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 custom_description: Optional[pulumi.Input[_builtins.str]] = None,
-                 enabled: Optional[pulumi.Input[_builtins.bool]] = None,
-                 error_budget_burn_rate: Optional[pulumi.Input[Union['SloV2ErrorBudgetBurnRateArgs', 'SloV2ErrorBudgetBurnRateArgsDict']]] = None,
-                 evaluation_type: Optional[pulumi.Input[_builtins.str]] = None,
-                 evaluation_window: Optional[pulumi.Input[_builtins.str]] = None,
-                 filter: Optional[pulumi.Input[_builtins.str]] = None,
-                 legacy_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 metric_expression: Optional[pulumi.Input[_builtins.str]] = None,
-                 metric_name: Optional[pulumi.Input[_builtins.str]] = None,
-                 name: Optional[pulumi.Input[_builtins.str]] = None,
-                 target_success: Optional[pulumi.Input[_builtins.float]] = None,
-                 target_warning: Optional[pulumi.Input[_builtins.float]] = None,
+                 custom_description: pulumi.Input[Optional[_builtins.str]] = None,
+                 enabled: pulumi.Input[Optional[_builtins.bool]] = None,
+                 error_budget_burn_rate: pulumi.Input[Optional[Union['SloV2ErrorBudgetBurnRateArgs', 'SloV2ErrorBudgetBurnRateArgsDict']]] = None,
+                 evaluation_type: pulumi.Input[Optional[_builtins.str]] = None,
+                 evaluation_window: pulumi.Input[Optional[_builtins.str]] = None,
+                 filter: pulumi.Input[Optional[_builtins.str]] = None,
+                 legacy_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 metric_expression: pulumi.Input[Optional[_builtins.str]] = None,
+                 metric_name: pulumi.Input[Optional[_builtins.str]] = None,
+                 name: pulumi.Input[Optional[_builtins.str]] = None,
+                 target_success: pulumi.Input[Optional[_builtins.float]] = None,
+                 target_warning: pulumi.Input[Optional[_builtins.float]] = None,
                  __props__=None):
         """
         > This resource requires the API token scopes  **Read SLO** (`slo.read`), **Write SLO** (`slo.write`), **Read settings** (`settings.read`) and **Write settings** (`settings.write`)
@@ -499,18 +499,18 @@ class SloV2(pulumi.CustomResource):
     def _internal_init(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 custom_description: Optional[pulumi.Input[_builtins.str]] = None,
-                 enabled: Optional[pulumi.Input[_builtins.bool]] = None,
-                 error_budget_burn_rate: Optional[pulumi.Input[Union['SloV2ErrorBudgetBurnRateArgs', 'SloV2ErrorBudgetBurnRateArgsDict']]] = None,
-                 evaluation_type: Optional[pulumi.Input[_builtins.str]] = None,
-                 evaluation_window: Optional[pulumi.Input[_builtins.str]] = None,
-                 filter: Optional[pulumi.Input[_builtins.str]] = None,
-                 legacy_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 metric_expression: Optional[pulumi.Input[_builtins.str]] = None,
-                 metric_name: Optional[pulumi.Input[_builtins.str]] = None,
-                 name: Optional[pulumi.Input[_builtins.str]] = None,
-                 target_success: Optional[pulumi.Input[_builtins.float]] = None,
-                 target_warning: Optional[pulumi.Input[_builtins.float]] = None,
+                 custom_description: pulumi.Input[Optional[_builtins.str]] = None,
+                 enabled: pulumi.Input[Optional[_builtins.bool]] = None,
+                 error_budget_burn_rate: pulumi.Input[Optional[Union['SloV2ErrorBudgetBurnRateArgs', 'SloV2ErrorBudgetBurnRateArgsDict']]] = None,
+                 evaluation_type: pulumi.Input[Optional[_builtins.str]] = None,
+                 evaluation_window: pulumi.Input[Optional[_builtins.str]] = None,
+                 filter: pulumi.Input[Optional[_builtins.str]] = None,
+                 legacy_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 metric_expression: pulumi.Input[Optional[_builtins.str]] = None,
+                 metric_name: pulumi.Input[Optional[_builtins.str]] = None,
+                 name: pulumi.Input[Optional[_builtins.str]] = None,
+                 target_success: pulumi.Input[Optional[_builtins.float]] = None,
+                 target_warning: pulumi.Input[Optional[_builtins.float]] = None,
                  __props__=None):
         opts = pulumi.ResourceOptions.merge(_utilities.get_resource_opts_defaults(), opts)
         if not isinstance(opts, pulumi.ResourceOptions):
@@ -558,18 +558,18 @@ class SloV2(pulumi.CustomResource):
     def get(resource_name: str,
             id: pulumi.Input[str],
             opts: Optional[pulumi.ResourceOptions] = None,
-            custom_description: Optional[pulumi.Input[_builtins.str]] = None,
-            enabled: Optional[pulumi.Input[_builtins.bool]] = None,
-            error_budget_burn_rate: Optional[pulumi.Input[Union['SloV2ErrorBudgetBurnRateArgs', 'SloV2ErrorBudgetBurnRateArgsDict']]] = None,
-            evaluation_type: Optional[pulumi.Input[_builtins.str]] = None,
-            evaluation_window: Optional[pulumi.Input[_builtins.str]] = None,
-            filter: Optional[pulumi.Input[_builtins.str]] = None,
-            legacy_id: Optional[pulumi.Input[_builtins.str]] = None,
-            metric_expression: Optional[pulumi.Input[_builtins.str]] = None,
-            metric_name: Optional[pulumi.Input[_builtins.str]] = None,
-            name: Optional[pulumi.Input[_builtins.str]] = None,
-            target_success: Optional[pulumi.Input[_builtins.float]] = None,
-            target_warning: Optional[pulumi.Input[_builtins.float]] = None) -> 'SloV2':
+            custom_description: pulumi.Input[Optional[_builtins.str]] = None,
+            enabled: pulumi.Input[Optional[_builtins.bool]] = None,
+            error_budget_burn_rate: pulumi.Input[Optional[Union['SloV2ErrorBudgetBurnRateArgs', 'SloV2ErrorBudgetBurnRateArgsDict']]] = None,
+            evaluation_type: pulumi.Input[Optional[_builtins.str]] = None,
+            evaluation_window: pulumi.Input[Optional[_builtins.str]] = None,
+            filter: pulumi.Input[Optional[_builtins.str]] = None,
+            legacy_id: pulumi.Input[Optional[_builtins.str]] = None,
+            metric_expression: pulumi.Input[Optional[_builtins.str]] = None,
+            metric_name: pulumi.Input[Optional[_builtins.str]] = None,
+            name: pulumi.Input[Optional[_builtins.str]] = None,
+            target_success: pulumi.Input[Optional[_builtins.float]] = None,
+            target_warning: pulumi.Input[Optional[_builtins.float]] = None) -> 'SloV2':
         """
         Get an existing SloV2 resource's state with the given name, id, and optional extra
         properties used to qualify the lookup.

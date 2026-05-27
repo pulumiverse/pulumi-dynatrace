@@ -115,27 +115,27 @@ export interface PlatformSloState {
     /**
      * Criteria of the SLO
      */
-    criteria?: pulumi.Input<inputs.PlatformSloCriteria>;
+    criteria?: pulumi.Input<inputs.PlatformSloCriteria | undefined>;
     /**
      * Custom SLI of the SLO
      */
-    customSli?: pulumi.Input<inputs.PlatformSloCustomSli>;
+    customSli?: pulumi.Input<inputs.PlatformSloCustomSli | undefined>;
     /**
      * Description of the SLO
      */
-    description?: pulumi.Input<string>;
+    description?: pulumi.Input<string | undefined>;
     /**
      * Name of the SLO
      */
-    name?: pulumi.Input<string>;
+    name?: pulumi.Input<string | undefined>;
     /**
      * SLI reference of the SLO
      */
-    sliReference?: pulumi.Input<inputs.PlatformSloSliReference>;
+    sliReference?: pulumi.Input<inputs.PlatformSloSliReference | undefined>;
     /**
      * Tags of the SLO. Example: `Stage:DEV`
      */
-    tags?: pulumi.Input<pulumi.Input<string>[]>;
+    tags?: pulumi.Input<pulumi.Input<string>[] | undefined>;
 }
 
 /**
@@ -149,21 +149,21 @@ export interface PlatformSloArgs {
     /**
      * Custom SLI of the SLO
      */
-    customSli?: pulumi.Input<inputs.PlatformSloCustomSli>;
+    customSli?: pulumi.Input<inputs.PlatformSloCustomSli | undefined>;
     /**
      * Description of the SLO
      */
-    description?: pulumi.Input<string>;
+    description?: pulumi.Input<string | undefined>;
     /**
      * Name of the SLO
      */
-    name?: pulumi.Input<string>;
+    name?: pulumi.Input<string | undefined>;
     /**
      * SLI reference of the SLO
      */
-    sliReference?: pulumi.Input<inputs.PlatformSloSliReference>;
+    sliReference?: pulumi.Input<inputs.PlatformSloSliReference | undefined>;
     /**
      * Tags of the SLO. Example: `Stage:DEV`
      */
-    tags?: pulumi.Input<pulumi.Input<string>[]>;
+    tags?: pulumi.Input<pulumi.Input<string>[] | undefined>;
 }

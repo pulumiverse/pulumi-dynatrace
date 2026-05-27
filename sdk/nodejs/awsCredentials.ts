@@ -158,52 +158,52 @@ export interface AwsCredentialsState {
     /**
      * credentials for the AWS authentication
      */
-    authenticationData?: pulumi.Input<inputs.AwsCredentialsAuthenticationData>;
+    authenticationData?: pulumi.Input<inputs.AwsCredentialsAuthenticationData | undefined>;
     /**
      * Enable monitoring of specified AWS credentials
      */
-    credentialsEnabled?: pulumi.Input<boolean>;
+    credentialsEnabled?: pulumi.Input<boolean | undefined>;
     /**
      * The name of the credentials
      */
-    label?: pulumi.Input<string>;
+    label?: pulumi.Input<string | undefined>;
     /**
      * The type of the AWS partition
      */
-    partitionType?: pulumi.Input<string>;
+    partitionType?: pulumi.Input<string | undefined>;
     /**
      * Instructs the provider to remove the supporting services Dynatrace applies by default to newly created AWS Credentials. Supporting Services applied by via `dynatrace.AwsService` subsequently won't get touched.
      * Note: This attribute is only getting considered during creation of the resource. Changing it afterwards won't have an effect
      */
-    removeDefaults?: pulumi.Input<boolean>;
+    removeDefaults?: pulumi.Input<boolean | undefined>;
     /**
      * Run credentials on Dynatrace infrastructure
      */
-    runningOnDynatraceInfrastructure?: pulumi.Input<boolean>;
+    runningOnDynatraceInfrastructure?: pulumi.Input<boolean | undefined>;
     /**
      * If enabled (`true`) the attribute `supportingServices` will not get synchronized with Dynatrace. You will be able to manage them via WebUI without interference by Terraform.
      *
      * @deprecated Supporting Services are no longer getting managed via this resource. Regardless of the value set here, this resource won't affect the supporting services during updates
      */
-    supportingServicesManagedInDynatrace?: pulumi.Input<boolean>;
+    supportingServicesManagedInDynatrace?: pulumi.Input<boolean | undefined>;
     /**
      * supporting services to be monitored
      *
      * @deprecated Managing supporting services directly within AWS Credentials has been deprecated within the REST API. This attribute just exists for backwards compatibility. It no longer has an effect. For managing services use the resource `dynatrace.AwsService`
      */
-    supportingServicesToMonitors?: pulumi.Input<pulumi.Input<inputs.AwsCredentialsSupportingServicesToMonitor>[]>;
+    supportingServicesToMonitors?: pulumi.Input<pulumi.Input<inputs.AwsCredentialsSupportingServicesToMonitor>[] | undefined>;
     /**
      * Monitor only resources which have specified AWS tags (`true`) or all resources (`false`)
      */
-    taggedOnly?: pulumi.Input<boolean>;
+    taggedOnly?: pulumi.Input<boolean | undefined>;
     /**
      * AWS tags to be monitored. You can specify up to 10 tags. Only applicable when the **tagged_only** parameter is set to `true`
      */
-    tagsToMonitors?: pulumi.Input<pulumi.Input<inputs.AwsCredentialsTagsToMonitor>[]>;
+    tagsToMonitors?: pulumi.Input<pulumi.Input<inputs.AwsCredentialsTagsToMonitor>[] | undefined>;
     /**
      * Any attributes that aren't yet supported by this provider
      */
-    unknowns?: pulumi.Input<string>;
+    unknowns?: pulumi.Input<string | undefined>;
 }
 
 /**
@@ -217,11 +217,11 @@ export interface AwsCredentialsArgs {
     /**
      * Enable monitoring of specified AWS credentials
      */
-    credentialsEnabled?: pulumi.Input<boolean>;
+    credentialsEnabled?: pulumi.Input<boolean | undefined>;
     /**
      * The name of the credentials
      */
-    label?: pulumi.Input<string>;
+    label?: pulumi.Input<string | undefined>;
     /**
      * The type of the AWS partition
      */
@@ -230,23 +230,23 @@ export interface AwsCredentialsArgs {
      * Instructs the provider to remove the supporting services Dynatrace applies by default to newly created AWS Credentials. Supporting Services applied by via `dynatrace.AwsService` subsequently won't get touched.
      * Note: This attribute is only getting considered during creation of the resource. Changing it afterwards won't have an effect
      */
-    removeDefaults?: pulumi.Input<boolean>;
+    removeDefaults?: pulumi.Input<boolean | undefined>;
     /**
      * Run credentials on Dynatrace infrastructure
      */
-    runningOnDynatraceInfrastructure?: pulumi.Input<boolean>;
+    runningOnDynatraceInfrastructure?: pulumi.Input<boolean | undefined>;
     /**
      * If enabled (`true`) the attribute `supportingServices` will not get synchronized with Dynatrace. You will be able to manage them via WebUI without interference by Terraform.
      *
      * @deprecated Supporting Services are no longer getting managed via this resource. Regardless of the value set here, this resource won't affect the supporting services during updates
      */
-    supportingServicesManagedInDynatrace?: pulumi.Input<boolean>;
+    supportingServicesManagedInDynatrace?: pulumi.Input<boolean | undefined>;
     /**
      * supporting services to be monitored
      *
      * @deprecated Managing supporting services directly within AWS Credentials has been deprecated within the REST API. This attribute just exists for backwards compatibility. It no longer has an effect. For managing services use the resource `dynatrace.AwsService`
      */
-    supportingServicesToMonitors?: pulumi.Input<pulumi.Input<inputs.AwsCredentialsSupportingServicesToMonitor>[]>;
+    supportingServicesToMonitors?: pulumi.Input<pulumi.Input<inputs.AwsCredentialsSupportingServicesToMonitor>[] | undefined>;
     /**
      * Monitor only resources which have specified AWS tags (`true`) or all resources (`false`)
      */
@@ -254,9 +254,9 @@ export interface AwsCredentialsArgs {
     /**
      * AWS tags to be monitored. You can specify up to 10 tags. Only applicable when the **tagged_only** parameter is set to `true`
      */
-    tagsToMonitors?: pulumi.Input<pulumi.Input<inputs.AwsCredentialsTagsToMonitor>[]>;
+    tagsToMonitors?: pulumi.Input<pulumi.Input<inputs.AwsCredentialsTagsToMonitor>[] | undefined>;
     /**
      * Any attributes that aren't yet supported by this provider
      */
-    unknowns?: pulumi.Input<string>;
+    unknowns?: pulumi.Input<string | undefined>;
 }

@@ -83,7 +83,7 @@ def get_calculated_service_metric(name: Optional[_builtins.str] = None,
     return AwaitableGetCalculatedServiceMetricResult(
         id=pulumi.get(__ret__, 'id'),
         name=pulumi.get(__ret__, 'name'))
-def get_calculated_service_metric_output(name: Optional[pulumi.Input[_builtins.str]] = None,
+def get_calculated_service_metric_output(name: pulumi.Input[Optional[_builtins.str]] = None,
                                          opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetCalculatedServiceMetricResult]:
     """
     The calculated service metric data source allows the metric ID to be retrieved by its name.

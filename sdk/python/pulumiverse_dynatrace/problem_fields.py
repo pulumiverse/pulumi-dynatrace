@@ -73,9 +73,9 @@ class ProblemFieldsArgs:
 @pulumi.input_type
 class _ProblemFieldsState:
     def __init__(__self__, *,
-                 enabled: Optional[pulumi.Input[_builtins.bool]] = None,
-                 event_field: Optional[pulumi.Input[_builtins.str]] = None,
-                 problem_field: Optional[pulumi.Input[_builtins.str]] = None):
+                 enabled: pulumi.Input[Optional[_builtins.bool]] = None,
+                 event_field: pulumi.Input[Optional[_builtins.str]] = None,
+                 problem_field: pulumi.Input[Optional[_builtins.str]] = None):
         """
         Input properties used for looking up and filtering ProblemFields resources.
 
@@ -92,38 +92,38 @@ class _ProblemFieldsState:
 
     @_builtins.property
     @pulumi.getter
-    def enabled(self) -> Optional[pulumi.Input[_builtins.bool]]:
+    def enabled(self) -> pulumi.Input[Optional[_builtins.bool]]:
         """
         This setting is enabled (`true`) or disabled (`false`)
         """
         return pulumi.get(self, "enabled")
 
     @enabled.setter
-    def enabled(self, value: Optional[pulumi.Input[_builtins.bool]]):
+    def enabled(self, value: pulumi.Input[Optional[_builtins.bool]]):
         pulumi.set(self, "enabled", value)
 
     @_builtins.property
     @pulumi.getter(name="eventField")
-    def event_field(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def event_field(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Field from the event that will be extracted.
         """
         return pulumi.get(self, "event_field")
 
     @event_field.setter
-    def event_field(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def event_field(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "event_field", value)
 
     @_builtins.property
     @pulumi.getter(name="problemField")
-    def problem_field(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def problem_field(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Field under which the extracted event data will be stored on the problem.
         """
         return pulumi.get(self, "problem_field")
 
     @problem_field.setter
-    def problem_field(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def problem_field(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "problem_field", value)
 
 
@@ -133,9 +133,9 @@ class ProblemFields(pulumi.CustomResource):
     def __init__(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 enabled: Optional[pulumi.Input[_builtins.bool]] = None,
-                 event_field: Optional[pulumi.Input[_builtins.str]] = None,
-                 problem_field: Optional[pulumi.Input[_builtins.str]] = None,
+                 enabled: pulumi.Input[Optional[_builtins.bool]] = None,
+                 event_field: pulumi.Input[Optional[_builtins.str]] = None,
+                 problem_field: pulumi.Input[Optional[_builtins.str]] = None,
                  __props__=None):
         """
         > This resource requires the API token scopes **Read settings** (`settings.read`) and **Write settings** (`settings.write`)
@@ -196,9 +196,9 @@ class ProblemFields(pulumi.CustomResource):
     def _internal_init(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 enabled: Optional[pulumi.Input[_builtins.bool]] = None,
-                 event_field: Optional[pulumi.Input[_builtins.str]] = None,
-                 problem_field: Optional[pulumi.Input[_builtins.str]] = None,
+                 enabled: pulumi.Input[Optional[_builtins.bool]] = None,
+                 event_field: pulumi.Input[Optional[_builtins.str]] = None,
+                 problem_field: pulumi.Input[Optional[_builtins.str]] = None,
                  __props__=None):
         opts = pulumi.ResourceOptions.merge(_utilities.get_resource_opts_defaults(), opts)
         if not isinstance(opts, pulumi.ResourceOptions):
@@ -227,9 +227,9 @@ class ProblemFields(pulumi.CustomResource):
     def get(resource_name: str,
             id: pulumi.Input[str],
             opts: Optional[pulumi.ResourceOptions] = None,
-            enabled: Optional[pulumi.Input[_builtins.bool]] = None,
-            event_field: Optional[pulumi.Input[_builtins.str]] = None,
-            problem_field: Optional[pulumi.Input[_builtins.str]] = None) -> 'ProblemFields':
+            enabled: pulumi.Input[Optional[_builtins.bool]] = None,
+            event_field: pulumi.Input[Optional[_builtins.str]] = None,
+            problem_field: pulumi.Input[Optional[_builtins.str]] = None) -> 'ProblemFields':
         """
         Get an existing ProblemFields resource's state with the given name, id, and optional extra
         properties used to qualify the lookup.

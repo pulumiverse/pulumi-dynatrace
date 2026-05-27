@@ -43,7 +43,7 @@ class WebAppJavascriptFilenameArgs:
 @pulumi.input_type
 class _WebAppJavascriptFilenameState:
     def __init__(__self__, *,
-                 filename: Optional[pulumi.Input[_builtins.str]] = None):
+                 filename: pulumi.Input[Optional[_builtins.str]] = None):
         """
         Input properties used for looking up and filtering WebAppJavascriptFilename resources.
 
@@ -54,14 +54,14 @@ class _WebAppJavascriptFilenameState:
 
     @_builtins.property
     @pulumi.getter
-    def filename(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def filename(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Custom filename prefix
         """
         return pulumi.get(self, "filename")
 
     @filename.setter
-    def filename(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def filename(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "filename", value)
 
 
@@ -71,7 +71,7 @@ class WebAppJavascriptFilename(pulumi.CustomResource):
     def __init__(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 filename: Optional[pulumi.Input[_builtins.str]] = None,
+                 filename: pulumi.Input[Optional[_builtins.str]] = None,
                  __props__=None):
         """
         > This resource requires the API token scopes **Read settings** (`settings.read`) and **Write settings** (`settings.write`)
@@ -118,7 +118,7 @@ class WebAppJavascriptFilename(pulumi.CustomResource):
     def _internal_init(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 filename: Optional[pulumi.Input[_builtins.str]] = None,
+                 filename: pulumi.Input[Optional[_builtins.str]] = None,
                  __props__=None):
         opts = pulumi.ResourceOptions.merge(_utilities.get_resource_opts_defaults(), opts)
         if not isinstance(opts, pulumi.ResourceOptions):
@@ -141,7 +141,7 @@ class WebAppJavascriptFilename(pulumi.CustomResource):
     def get(resource_name: str,
             id: pulumi.Input[str],
             opts: Optional[pulumi.ResourceOptions] = None,
-            filename: Optional[pulumi.Input[_builtins.str]] = None) -> 'WebAppJavascriptFilename':
+            filename: pulumi.Input[Optional[_builtins.str]] = None) -> 'WebAppJavascriptFilename':
         """
         Get an existing WebAppJavascriptFilename resource's state with the given name, id, and optional extra
         properties used to qualify the lookup.

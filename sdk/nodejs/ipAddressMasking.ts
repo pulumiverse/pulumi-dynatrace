@@ -97,15 +97,15 @@ export interface IpAddressMaskingState {
     /**
      * This setting is enabled (`true`) or disabled (`false`)
      */
-    enabled?: pulumi.Input<boolean>;
+    enabled?: pulumi.Input<boolean | undefined>;
     /**
      * The scope of this setting (MOBILE*APPLICATION, CUSTOM*APPLICATION, APPLICATION). Omit this property if you want to cover the whole environment.
      */
-    scope?: pulumi.Input<string>;
+    scope?: pulumi.Input<string | undefined>;
     /**
      * Possible Values: `all`, `public`
      */
-    type?: pulumi.Input<string>;
+    type?: pulumi.Input<string | undefined>;
 }
 
 /**
@@ -119,9 +119,9 @@ export interface IpAddressMaskingArgs {
     /**
      * The scope of this setting (MOBILE*APPLICATION, CUSTOM*APPLICATION, APPLICATION). Omit this property if you want to cover the whole environment.
      */
-    scope?: pulumi.Input<string>;
+    scope?: pulumi.Input<string | undefined>;
     /**
      * Possible Values: `all`, `public`
      */
-    type?: pulumi.Input<string>;
+    type?: pulumi.Input<string | undefined>;
 }

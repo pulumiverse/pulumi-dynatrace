@@ -126,29 +126,29 @@ export interface RequestNamingState {
      *
      *  You can specify several conditions. The request has to match **all** the specified conditions for the rule to trigger
      */
-    conditions?: pulumi.Input<inputs.RequestNamingConditions>;
+    conditions?: pulumi.Input<inputs.RequestNamingConditions | undefined>;
     /**
      * The rule is enabled (`true`) or disabled (`false`)
      */
-    enabled?: pulumi.Input<boolean>;
+    enabled?: pulumi.Input<boolean | undefined>;
     /**
      * Specifies the management zones for which this rule should be applied
      */
-    managementZones?: pulumi.Input<pulumi.Input<string>[]>;
+    managementZones?: pulumi.Input<pulumi.Input<string>[] | undefined>;
     /**
      * The name to be assigned to matching requests
      */
-    namingPattern?: pulumi.Input<string>;
+    namingPattern?: pulumi.Input<string | undefined>;
     /**
      * The list of custom placeholders to be used in the naming pattern. 
      *
      *  It enables you to extract a request attribute value or other request attribute and use it in the request naming pattern.
      */
-    placeholders?: pulumi.Input<inputs.RequestNamingPlaceholders>;
+    placeholders?: pulumi.Input<inputs.RequestNamingPlaceholders | undefined>;
     /**
      * allows for configuring properties that are not explicitly supported by the current version of this provider
      */
-    unknowns?: pulumi.Input<string>;
+    unknowns?: pulumi.Input<string | undefined>;
 }
 
 /**
@@ -164,11 +164,11 @@ export interface RequestNamingArgs {
     /**
      * The rule is enabled (`true`) or disabled (`false`)
      */
-    enabled?: pulumi.Input<boolean>;
+    enabled?: pulumi.Input<boolean | undefined>;
     /**
      * Specifies the management zones for which this rule should be applied
      */
-    managementZones?: pulumi.Input<pulumi.Input<string>[]>;
+    managementZones?: pulumi.Input<pulumi.Input<string>[] | undefined>;
     /**
      * The name to be assigned to matching requests
      */
@@ -178,9 +178,9 @@ export interface RequestNamingArgs {
      *
      *  It enables you to extract a request attribute value or other request attribute and use it in the request naming pattern.
      */
-    placeholders?: pulumi.Input<inputs.RequestNamingPlaceholders>;
+    placeholders?: pulumi.Input<inputs.RequestNamingPlaceholders | undefined>;
     /**
      * allows for configuring properties that are not explicitly supported by the current version of this provider
      */
-    unknowns?: pulumi.Input<string>;
+    unknowns?: pulumi.Input<string | undefined>;
 }

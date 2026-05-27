@@ -20,7 +20,7 @@ __all__ = ['ProcessMonitoringArgs', 'ProcessMonitoring']
 class ProcessMonitoringArgs:
     def __init__(__self__, *,
                  auto_monitoring: pulumi.Input[_builtins.bool],
-                 host_group_id: Optional[pulumi.Input[_builtins.str]] = None):
+                 host_group_id: pulumi.Input[Optional[_builtins.str]] = None):
         """
         The set of arguments for constructing a ProcessMonitoring resource.
 
@@ -47,22 +47,22 @@ class ProcessMonitoringArgs:
 
     @_builtins.property
     @pulumi.getter(name="hostGroupId")
-    def host_group_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def host_group_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The scope of this settings. If the settings should cover the whole environment, just don't specify any scope.
         """
         return pulumi.get(self, "host_group_id")
 
     @host_group_id.setter
-    def host_group_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def host_group_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "host_group_id", value)
 
 
 @pulumi.input_type
 class _ProcessMonitoringState:
     def __init__(__self__, *,
-                 auto_monitoring: Optional[pulumi.Input[_builtins.bool]] = None,
-                 host_group_id: Optional[pulumi.Input[_builtins.str]] = None):
+                 auto_monitoring: pulumi.Input[Optional[_builtins.bool]] = None,
+                 host_group_id: pulumi.Input[Optional[_builtins.str]] = None):
         """
         Input properties used for looking up and filtering ProcessMonitoring resources.
 
@@ -77,7 +77,7 @@ class _ProcessMonitoringState:
 
     @_builtins.property
     @pulumi.getter(name="autoMonitoring")
-    def auto_monitoring(self) -> Optional[pulumi.Input[_builtins.bool]]:
+    def auto_monitoring(self) -> pulumi.Input[Optional[_builtins.bool]]:
         """
         By disabling automatic deep monitoring the Dynatrace OneAgent will only deep monitor processes that are covered by a respective deep monitoring rule or where monitoring is enabled explicitly.
         Disabling only works if all installed Agents have version 1.123 or higher.
@@ -85,19 +85,19 @@ class _ProcessMonitoringState:
         return pulumi.get(self, "auto_monitoring")
 
     @auto_monitoring.setter
-    def auto_monitoring(self, value: Optional[pulumi.Input[_builtins.bool]]):
+    def auto_monitoring(self, value: pulumi.Input[Optional[_builtins.bool]]):
         pulumi.set(self, "auto_monitoring", value)
 
     @_builtins.property
     @pulumi.getter(name="hostGroupId")
-    def host_group_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def host_group_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The scope of this settings. If the settings should cover the whole environment, just don't specify any scope.
         """
         return pulumi.get(self, "host_group_id")
 
     @host_group_id.setter
-    def host_group_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def host_group_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "host_group_id", value)
 
 
@@ -107,8 +107,8 @@ class ProcessMonitoring(pulumi.CustomResource):
     def __init__(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 auto_monitoring: Optional[pulumi.Input[_builtins.bool]] = None,
-                 host_group_id: Optional[pulumi.Input[_builtins.str]] = None,
+                 auto_monitoring: pulumi.Input[Optional[_builtins.bool]] = None,
+                 host_group_id: pulumi.Input[Optional[_builtins.str]] = None,
                  __props__=None):
         """
         > This resource requires the API token scopes **Read settings** (`settings.read`) and **Write settings** (`settings.write`)
@@ -191,8 +191,8 @@ class ProcessMonitoring(pulumi.CustomResource):
     def _internal_init(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 auto_monitoring: Optional[pulumi.Input[_builtins.bool]] = None,
-                 host_group_id: Optional[pulumi.Input[_builtins.str]] = None,
+                 auto_monitoring: pulumi.Input[Optional[_builtins.bool]] = None,
+                 host_group_id: pulumi.Input[Optional[_builtins.str]] = None,
                  __props__=None):
         opts = pulumi.ResourceOptions.merge(_utilities.get_resource_opts_defaults(), opts)
         if not isinstance(opts, pulumi.ResourceOptions):
@@ -216,8 +216,8 @@ class ProcessMonitoring(pulumi.CustomResource):
     def get(resource_name: str,
             id: pulumi.Input[str],
             opts: Optional[pulumi.ResourceOptions] = None,
-            auto_monitoring: Optional[pulumi.Input[_builtins.bool]] = None,
-            host_group_id: Optional[pulumi.Input[_builtins.str]] = None) -> 'ProcessMonitoring':
+            auto_monitoring: pulumi.Input[Optional[_builtins.bool]] = None,
+            host_group_id: pulumi.Input[Optional[_builtins.str]] = None) -> 'ProcessMonitoring':
         """
         Get an existing ProcessMonitoring resource's state with the given name, id, and optional extra
         properties used to qualify the lookup.

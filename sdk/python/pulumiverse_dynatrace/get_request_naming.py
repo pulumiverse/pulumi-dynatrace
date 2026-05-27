@@ -85,7 +85,7 @@ def get_request_naming(name: Optional[_builtins.str] = None,
     return AwaitableGetRequestNamingResult(
         id=pulumi.get(__ret__, 'id'),
         name=pulumi.get(__ret__, 'name'))
-def get_request_naming_output(name: Optional[pulumi.Input[_builtins.str]] = None,
+def get_request_naming_output(name: pulumi.Input[Optional[_builtins.str]] = None,
                               opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetRequestNamingResult]:
     """
     The `RequestNaming` data source allows the request naming rule ID to be retrieved by its name.

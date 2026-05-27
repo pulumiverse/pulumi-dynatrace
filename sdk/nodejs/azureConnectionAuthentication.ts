@@ -171,15 +171,15 @@ export interface AzureConnectionAuthenticationState {
     /**
      * Application (client) ID of your app registered in Microsoft Azure App registrations
      */
-    applicationId?: pulumi.Input<string>;
+    applicationId?: pulumi.Input<string | undefined>;
     /**
      * The ID of a `dynatrace.AzureConnection` resource instance for which to define the Azure Authentication
      */
-    azureConnectionId?: pulumi.Input<string>;
+    azureConnectionId?: pulumi.Input<string | undefined>;
     /**
      * Directory (tenant) ID of Microsoft Entra ID
      */
-    directoryId?: pulumi.Input<string>;
+    directoryId?: pulumi.Input<string | undefined>;
 }
 
 /**

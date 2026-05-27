@@ -19,23 +19,23 @@ __all__ = ['ProviderArgs', 'Provider']
 @pulumi.input_type
 class ProviderArgs:
     def __init__(__self__, *,
-                 account_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 automation_client_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 automation_client_secret: Optional[pulumi.Input[_builtins.str]] = None,
-                 automation_env_url: Optional[pulumi.Input[_builtins.str]] = None,
-                 automation_token_url: Optional[pulumi.Input[_builtins.str]] = None,
-                 client_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 client_secret: Optional[pulumi.Input[_builtins.str]] = None,
-                 dt_api_token: Optional[pulumi.Input[_builtins.str]] = None,
-                 dt_cluster_api_token: Optional[pulumi.Input[_builtins.str]] = None,
-                 dt_cluster_url: Optional[pulumi.Input[_builtins.str]] = None,
-                 dt_env_url: Optional[pulumi.Input[_builtins.str]] = None,
-                 iam_account_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 iam_client_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 iam_client_secret: Optional[pulumi.Input[_builtins.str]] = None,
-                 iam_endpoint_url: Optional[pulumi.Input[_builtins.str]] = None,
-                 iam_token_url: Optional[pulumi.Input[_builtins.str]] = None,
-                 platform_token: Optional[pulumi.Input[_builtins.str]] = None):
+                 account_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 automation_client_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 automation_client_secret: pulumi.Input[Optional[_builtins.str]] = None,
+                 automation_env_url: pulumi.Input[Optional[_builtins.str]] = None,
+                 automation_token_url: pulumi.Input[Optional[_builtins.str]] = None,
+                 client_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 client_secret: pulumi.Input[Optional[_builtins.str]] = None,
+                 dt_api_token: pulumi.Input[Optional[_builtins.str]] = None,
+                 dt_cluster_api_token: pulumi.Input[Optional[_builtins.str]] = None,
+                 dt_cluster_url: pulumi.Input[Optional[_builtins.str]] = None,
+                 dt_env_url: pulumi.Input[Optional[_builtins.str]] = None,
+                 iam_account_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 iam_client_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 iam_client_secret: pulumi.Input[Optional[_builtins.str]] = None,
+                 iam_endpoint_url: pulumi.Input[Optional[_builtins.str]] = None,
+                 iam_token_url: pulumi.Input[Optional[_builtins.str]] = None,
+                 platform_token: pulumi.Input[Optional[_builtins.str]] = None):
         """
         The set of arguments for constructing a Provider resource.
 
@@ -88,164 +88,164 @@ class ProviderArgs:
 
     @_builtins.property
     @pulumi.getter(name="accountId")
-    def account_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def account_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         return pulumi.get(self, "account_id")
 
     @account_id.setter
-    def account_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def account_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "account_id", value)
 
     @_builtins.property
     @pulumi.getter(name="automationClientId")
-    def automation_client_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def automation_client_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         return pulumi.get(self, "automation_client_id")
 
     @automation_client_id.setter
-    def automation_client_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def automation_client_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "automation_client_id", value)
 
     @_builtins.property
     @pulumi.getter(name="automationClientSecret")
-    def automation_client_secret(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def automation_client_secret(self) -> pulumi.Input[Optional[_builtins.str]]:
         return pulumi.get(self, "automation_client_secret")
 
     @automation_client_secret.setter
-    def automation_client_secret(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def automation_client_secret(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "automation_client_secret", value)
 
     @_builtins.property
     @pulumi.getter(name="automationEnvUrl")
-    def automation_env_url(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def automation_env_url(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The URL of the Dynatrace Environment with Platform capabilities turned on (`https://#####.apps.dynatrace.com)`. This is optional configuration when `dt_env_url` already specifies a SaaS Environment like `https://#####.live.dynatrace.com` or `https://#####.apps.dynatrace.com`
         """
         return pulumi.get(self, "automation_env_url")
 
     @automation_env_url.setter
-    def automation_env_url(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def automation_env_url(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "automation_env_url", value)
 
     @_builtins.property
     @pulumi.getter(name="automationTokenUrl")
-    def automation_token_url(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def automation_token_url(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The URL that provides the Bearer tokens when accessing the Automation REST API. This is optional configuration when `dt_env_url` already specifies a SaaS Environment like `https://#####.live.dynatrace.com` or `https://#####.apps.dynatrace.com`
         """
         return pulumi.get(self, "automation_token_url")
 
     @automation_token_url.setter
-    def automation_token_url(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def automation_token_url(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "automation_token_url", value)
 
     @_builtins.property
     @pulumi.getter(name="clientId")
-    def client_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def client_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         return pulumi.get(self, "client_id")
 
     @client_id.setter
-    def client_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def client_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "client_id", value)
 
     @_builtins.property
     @pulumi.getter(name="clientSecret")
-    def client_secret(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def client_secret(self) -> pulumi.Input[Optional[_builtins.str]]:
         return pulumi.get(self, "client_secret")
 
     @client_secret.setter
-    def client_secret(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def client_secret(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "client_secret", value)
 
     @_builtins.property
     @pulumi.getter(name="dtApiToken")
-    def dt_api_token(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def dt_api_token(self) -> pulumi.Input[Optional[_builtins.str]]:
         return pulumi.get(self, "dt_api_token")
 
     @dt_api_token.setter
-    def dt_api_token(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def dt_api_token(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "dt_api_token", value)
 
     @_builtins.property
     @pulumi.getter(name="dtClusterApiToken")
-    def dt_cluster_api_token(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def dt_cluster_api_token(self) -> pulumi.Input[Optional[_builtins.str]]:
         return pulumi.get(self, "dt_cluster_api_token")
 
     @dt_cluster_api_token.setter
-    def dt_cluster_api_token(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def dt_cluster_api_token(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "dt_cluster_api_token", value)
 
     @_builtins.property
     @pulumi.getter(name="dtClusterUrl")
-    def dt_cluster_url(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def dt_cluster_url(self) -> pulumi.Input[Optional[_builtins.str]]:
         return pulumi.get(self, "dt_cluster_url")
 
     @dt_cluster_url.setter
-    def dt_cluster_url(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def dt_cluster_url(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "dt_cluster_url", value)
 
     @_builtins.property
     @pulumi.getter(name="dtEnvUrl")
-    def dt_env_url(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def dt_env_url(self) -> pulumi.Input[Optional[_builtins.str]]:
         return pulumi.get(self, "dt_env_url")
 
     @dt_env_url.setter
-    def dt_env_url(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def dt_env_url(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "dt_env_url", value)
 
     @_builtins.property
     @pulumi.getter(name="iamAccountId")
-    def iam_account_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def iam_account_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         return pulumi.get(self, "iam_account_id")
 
     @iam_account_id.setter
-    def iam_account_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def iam_account_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "iam_account_id", value)
 
     @_builtins.property
     @pulumi.getter(name="iamClientId")
-    def iam_client_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def iam_client_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         return pulumi.get(self, "iam_client_id")
 
     @iam_client_id.setter
-    def iam_client_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def iam_client_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "iam_client_id", value)
 
     @_builtins.property
     @pulumi.getter(name="iamClientSecret")
-    def iam_client_secret(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def iam_client_secret(self) -> pulumi.Input[Optional[_builtins.str]]:
         return pulumi.get(self, "iam_client_secret")
 
     @iam_client_secret.setter
-    def iam_client_secret(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def iam_client_secret(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "iam_client_secret", value)
 
     @_builtins.property
     @pulumi.getter(name="iamEndpointUrl")
-    def iam_endpoint_url(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def iam_endpoint_url(self) -> pulumi.Input[Optional[_builtins.str]]:
         return pulumi.get(self, "iam_endpoint_url")
 
     @iam_endpoint_url.setter
-    def iam_endpoint_url(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def iam_endpoint_url(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "iam_endpoint_url", value)
 
     @_builtins.property
     @pulumi.getter(name="iamTokenUrl")
-    def iam_token_url(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def iam_token_url(self) -> pulumi.Input[Optional[_builtins.str]]:
         return pulumi.get(self, "iam_token_url")
 
     @iam_token_url.setter
-    def iam_token_url(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def iam_token_url(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "iam_token_url", value)
 
     @_builtins.property
     @pulumi.getter(name="platformToken")
-    def platform_token(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def platform_token(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         A Dynatrace Platform Token. Specifying such a token allows for easy authentication against Platform resources. In such a case it supersedes `automation_client_id`, `automation_client_secret`, `automation_token_url` and `automation_env_url`
         """
         return pulumi.get(self, "platform_token")
 
     @platform_token.setter
-    def platform_token(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def platform_token(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "platform_token", value)
 
 
@@ -255,23 +255,23 @@ class Provider(pulumi.ProviderResource):
     def __init__(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 account_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 automation_client_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 automation_client_secret: Optional[pulumi.Input[_builtins.str]] = None,
-                 automation_env_url: Optional[pulumi.Input[_builtins.str]] = None,
-                 automation_token_url: Optional[pulumi.Input[_builtins.str]] = None,
-                 client_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 client_secret: Optional[pulumi.Input[_builtins.str]] = None,
-                 dt_api_token: Optional[pulumi.Input[_builtins.str]] = None,
-                 dt_cluster_api_token: Optional[pulumi.Input[_builtins.str]] = None,
-                 dt_cluster_url: Optional[pulumi.Input[_builtins.str]] = None,
-                 dt_env_url: Optional[pulumi.Input[_builtins.str]] = None,
-                 iam_account_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 iam_client_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 iam_client_secret: Optional[pulumi.Input[_builtins.str]] = None,
-                 iam_endpoint_url: Optional[pulumi.Input[_builtins.str]] = None,
-                 iam_token_url: Optional[pulumi.Input[_builtins.str]] = None,
-                 platform_token: Optional[pulumi.Input[_builtins.str]] = None,
+                 account_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 automation_client_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 automation_client_secret: pulumi.Input[Optional[_builtins.str]] = None,
+                 automation_env_url: pulumi.Input[Optional[_builtins.str]] = None,
+                 automation_token_url: pulumi.Input[Optional[_builtins.str]] = None,
+                 client_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 client_secret: pulumi.Input[Optional[_builtins.str]] = None,
+                 dt_api_token: pulumi.Input[Optional[_builtins.str]] = None,
+                 dt_cluster_api_token: pulumi.Input[Optional[_builtins.str]] = None,
+                 dt_cluster_url: pulumi.Input[Optional[_builtins.str]] = None,
+                 dt_env_url: pulumi.Input[Optional[_builtins.str]] = None,
+                 iam_account_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 iam_client_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 iam_client_secret: pulumi.Input[Optional[_builtins.str]] = None,
+                 iam_endpoint_url: pulumi.Input[Optional[_builtins.str]] = None,
+                 iam_token_url: pulumi.Input[Optional[_builtins.str]] = None,
+                 platform_token: pulumi.Input[Optional[_builtins.str]] = None,
                  __props__=None):
         """
         The provider type for the dynatrace package. By default, resources use package-wide configuration
@@ -314,23 +314,23 @@ class Provider(pulumi.ProviderResource):
     def _internal_init(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 account_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 automation_client_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 automation_client_secret: Optional[pulumi.Input[_builtins.str]] = None,
-                 automation_env_url: Optional[pulumi.Input[_builtins.str]] = None,
-                 automation_token_url: Optional[pulumi.Input[_builtins.str]] = None,
-                 client_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 client_secret: Optional[pulumi.Input[_builtins.str]] = None,
-                 dt_api_token: Optional[pulumi.Input[_builtins.str]] = None,
-                 dt_cluster_api_token: Optional[pulumi.Input[_builtins.str]] = None,
-                 dt_cluster_url: Optional[pulumi.Input[_builtins.str]] = None,
-                 dt_env_url: Optional[pulumi.Input[_builtins.str]] = None,
-                 iam_account_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 iam_client_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 iam_client_secret: Optional[pulumi.Input[_builtins.str]] = None,
-                 iam_endpoint_url: Optional[pulumi.Input[_builtins.str]] = None,
-                 iam_token_url: Optional[pulumi.Input[_builtins.str]] = None,
-                 platform_token: Optional[pulumi.Input[_builtins.str]] = None,
+                 account_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 automation_client_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 automation_client_secret: pulumi.Input[Optional[_builtins.str]] = None,
+                 automation_env_url: pulumi.Input[Optional[_builtins.str]] = None,
+                 automation_token_url: pulumi.Input[Optional[_builtins.str]] = None,
+                 client_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 client_secret: pulumi.Input[Optional[_builtins.str]] = None,
+                 dt_api_token: pulumi.Input[Optional[_builtins.str]] = None,
+                 dt_cluster_api_token: pulumi.Input[Optional[_builtins.str]] = None,
+                 dt_cluster_url: pulumi.Input[Optional[_builtins.str]] = None,
+                 dt_env_url: pulumi.Input[Optional[_builtins.str]] = None,
+                 iam_account_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 iam_client_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 iam_client_secret: pulumi.Input[Optional[_builtins.str]] = None,
+                 iam_endpoint_url: pulumi.Input[Optional[_builtins.str]] = None,
+                 iam_token_url: pulumi.Input[Optional[_builtins.str]] = None,
+                 platform_token: pulumi.Input[Optional[_builtins.str]] = None,
                  __props__=None):
         opts = pulumi.ResourceOptions.merge(_utilities.get_resource_opts_defaults(), opts)
         if not isinstance(opts, pulumi.ResourceOptions):

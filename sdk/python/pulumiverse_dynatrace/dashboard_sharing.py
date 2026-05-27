@@ -22,10 +22,10 @@ __all__ = ['DashboardSharingArgs', 'DashboardSharing']
 class DashboardSharingArgs:
     def __init__(__self__, *,
                  dashboard_id: pulumi.Input[_builtins.str],
-                 enabled: Optional[pulumi.Input[_builtins.bool]] = None,
-                 permissions: Optional[pulumi.Input['DashboardSharingPermissionsArgs']] = None,
-                 preset: Optional[pulumi.Input[_builtins.bool]] = None,
-                 public: Optional[pulumi.Input['DashboardSharingPublicArgs']] = None):
+                 enabled: pulumi.Input[Optional[_builtins.bool]] = None,
+                 permissions: pulumi.Input[Optional['DashboardSharingPermissionsArgs']] = None,
+                 preset: pulumi.Input[Optional[_builtins.bool]] = None,
+                 public: pulumi.Input[Optional['DashboardSharingPublicArgs']] = None):
         """
         The set of arguments for constructing a DashboardSharing resource.
 
@@ -59,62 +59,62 @@ class DashboardSharingArgs:
 
     @_builtins.property
     @pulumi.getter
-    def enabled(self) -> Optional[pulumi.Input[_builtins.bool]]:
+    def enabled(self) -> pulumi.Input[Optional[_builtins.bool]]:
         """
         The dashboard is shared (`true`) or private (`false`). Make sure that this value is aligned with the attribute `shared` of the resources `Dashboard` and `JsonDashboard`. Otherwise you will encounter non-empty plans.
         """
         return pulumi.get(self, "enabled")
 
     @enabled.setter
-    def enabled(self, value: Optional[pulumi.Input[_builtins.bool]]):
+    def enabled(self, value: pulumi.Input[Optional[_builtins.bool]]):
         pulumi.set(self, "enabled", value)
 
     @_builtins.property
     @pulumi.getter
-    def permissions(self) -> Optional[pulumi.Input['DashboardSharingPermissionsArgs']]:
+    def permissions(self) -> pulumi.Input[Optional['DashboardSharingPermissionsArgs']]:
         """
         Access permissions of the dashboard
         """
         return pulumi.get(self, "permissions")
 
     @permissions.setter
-    def permissions(self, value: Optional[pulumi.Input['DashboardSharingPermissionsArgs']]):
+    def permissions(self, value: pulumi.Input[Optional['DashboardSharingPermissionsArgs']]):
         pulumi.set(self, "permissions", value)
 
     @_builtins.property
     @pulumi.getter
-    def preset(self) -> Optional[pulumi.Input[_builtins.bool]]:
+    def preset(self) -> pulumi.Input[Optional[_builtins.bool]]:
         """
         If `true` the dashboard will be marked as preset. Setting this attribute to `true` will automatically enforce a specific set of permissions - Dashboards flagged as Preset are shared by default. Make sure that this value is aligned with the attribute `preset` of the resources `Dashboard` and `JsonDashboard`. Otherwise you will encounter non-empty plans.
         """
         return pulumi.get(self, "preset")
 
     @preset.setter
-    def preset(self, value: Optional[pulumi.Input[_builtins.bool]]):
+    def preset(self, value: pulumi.Input[Optional[_builtins.bool]]):
         pulumi.set(self, "preset", value)
 
     @_builtins.property
     @pulumi.getter
-    def public(self) -> Optional[pulumi.Input['DashboardSharingPublicArgs']]:
+    def public(self) -> pulumi.Input[Optional['DashboardSharingPublicArgs']]:
         """
         Configuration of the [anonymous access](https://dt-url.net/ov03sf1) to the dashboard
         """
         return pulumi.get(self, "public")
 
     @public.setter
-    def public(self, value: Optional[pulumi.Input['DashboardSharingPublicArgs']]):
+    def public(self, value: pulumi.Input[Optional['DashboardSharingPublicArgs']]):
         pulumi.set(self, "public", value)
 
 
 @pulumi.input_type
 class _DashboardSharingState:
     def __init__(__self__, *,
-                 dashboard_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 enabled: Optional[pulumi.Input[_builtins.bool]] = None,
-                 muted: Optional[pulumi.Input[_builtins.bool]] = None,
-                 permissions: Optional[pulumi.Input['DashboardSharingPermissionsArgs']] = None,
-                 preset: Optional[pulumi.Input[_builtins.bool]] = None,
-                 public: Optional[pulumi.Input['DashboardSharingPublicArgs']] = None):
+                 dashboard_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 enabled: pulumi.Input[Optional[_builtins.bool]] = None,
+                 muted: pulumi.Input[Optional[_builtins.bool]] = None,
+                 permissions: pulumi.Input[Optional['DashboardSharingPermissionsArgs']] = None,
+                 preset: pulumi.Input[Optional[_builtins.bool]] = None,
+                 public: pulumi.Input[Optional['DashboardSharingPublicArgs']] = None):
         """
         Input properties used for looking up and filtering DashboardSharing resources.
 
@@ -140,74 +140,74 @@ class _DashboardSharingState:
 
     @_builtins.property
     @pulumi.getter(name="dashboardId")
-    def dashboard_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def dashboard_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The Dynatrace entity ID of the dashboard
         """
         return pulumi.get(self, "dashboard_id")
 
     @dashboard_id.setter
-    def dashboard_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def dashboard_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "dashboard_id", value)
 
     @_builtins.property
     @pulumi.getter
-    def enabled(self) -> Optional[pulumi.Input[_builtins.bool]]:
+    def enabled(self) -> pulumi.Input[Optional[_builtins.bool]]:
         """
         The dashboard is shared (`true`) or private (`false`). Make sure that this value is aligned with the attribute `shared` of the resources `Dashboard` and `JsonDashboard`. Otherwise you will encounter non-empty plans.
         """
         return pulumi.get(self, "enabled")
 
     @enabled.setter
-    def enabled(self, value: Optional[pulumi.Input[_builtins.bool]]):
+    def enabled(self, value: pulumi.Input[Optional[_builtins.bool]]):
         pulumi.set(self, "enabled", value)
 
     @_builtins.property
     @pulumi.getter
-    def muted(self) -> Optional[pulumi.Input[_builtins.bool]]:
+    def muted(self) -> pulumi.Input[Optional[_builtins.bool]]:
         """
         Reserved for internal use by the provider
         """
         return pulumi.get(self, "muted")
 
     @muted.setter
-    def muted(self, value: Optional[pulumi.Input[_builtins.bool]]):
+    def muted(self, value: pulumi.Input[Optional[_builtins.bool]]):
         pulumi.set(self, "muted", value)
 
     @_builtins.property
     @pulumi.getter
-    def permissions(self) -> Optional[pulumi.Input['DashboardSharingPermissionsArgs']]:
+    def permissions(self) -> pulumi.Input[Optional['DashboardSharingPermissionsArgs']]:
         """
         Access permissions of the dashboard
         """
         return pulumi.get(self, "permissions")
 
     @permissions.setter
-    def permissions(self, value: Optional[pulumi.Input['DashboardSharingPermissionsArgs']]):
+    def permissions(self, value: pulumi.Input[Optional['DashboardSharingPermissionsArgs']]):
         pulumi.set(self, "permissions", value)
 
     @_builtins.property
     @pulumi.getter
-    def preset(self) -> Optional[pulumi.Input[_builtins.bool]]:
+    def preset(self) -> pulumi.Input[Optional[_builtins.bool]]:
         """
         If `true` the dashboard will be marked as preset. Setting this attribute to `true` will automatically enforce a specific set of permissions - Dashboards flagged as Preset are shared by default. Make sure that this value is aligned with the attribute `preset` of the resources `Dashboard` and `JsonDashboard`. Otherwise you will encounter non-empty plans.
         """
         return pulumi.get(self, "preset")
 
     @preset.setter
-    def preset(self, value: Optional[pulumi.Input[_builtins.bool]]):
+    def preset(self, value: pulumi.Input[Optional[_builtins.bool]]):
         pulumi.set(self, "preset", value)
 
     @_builtins.property
     @pulumi.getter
-    def public(self) -> Optional[pulumi.Input['DashboardSharingPublicArgs']]:
+    def public(self) -> pulumi.Input[Optional['DashboardSharingPublicArgs']]:
         """
         Configuration of the [anonymous access](https://dt-url.net/ov03sf1) to the dashboard
         """
         return pulumi.get(self, "public")
 
     @public.setter
-    def public(self, value: Optional[pulumi.Input['DashboardSharingPublicArgs']]):
+    def public(self, value: pulumi.Input[Optional['DashboardSharingPublicArgs']]):
         pulumi.set(self, "public", value)
 
 
@@ -217,11 +217,11 @@ class DashboardSharing(pulumi.CustomResource):
     def __init__(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 dashboard_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 enabled: Optional[pulumi.Input[_builtins.bool]] = None,
-                 permissions: Optional[pulumi.Input[Union['DashboardSharingPermissionsArgs', 'DashboardSharingPermissionsArgsDict']]] = None,
-                 preset: Optional[pulumi.Input[_builtins.bool]] = None,
-                 public: Optional[pulumi.Input[Union['DashboardSharingPublicArgs', 'DashboardSharingPublicArgsDict']]] = None,
+                 dashboard_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 enabled: pulumi.Input[Optional[_builtins.bool]] = None,
+                 permissions: pulumi.Input[Optional[Union['DashboardSharingPermissionsArgs', 'DashboardSharingPermissionsArgsDict']]] = None,
+                 preset: pulumi.Input[Optional[_builtins.bool]] = None,
+                 public: pulumi.Input[Optional[Union['DashboardSharingPublicArgs', 'DashboardSharingPublicArgsDict']]] = None,
                  __props__=None):
         """
         > This is a child resource of dynatrace_json_dashboard, therefore it is automatically retrieved with the dashboard.
@@ -276,11 +276,11 @@ class DashboardSharing(pulumi.CustomResource):
     def _internal_init(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 dashboard_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 enabled: Optional[pulumi.Input[_builtins.bool]] = None,
-                 permissions: Optional[pulumi.Input[Union['DashboardSharingPermissionsArgs', 'DashboardSharingPermissionsArgsDict']]] = None,
-                 preset: Optional[pulumi.Input[_builtins.bool]] = None,
-                 public: Optional[pulumi.Input[Union['DashboardSharingPublicArgs', 'DashboardSharingPublicArgsDict']]] = None,
+                 dashboard_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 enabled: pulumi.Input[Optional[_builtins.bool]] = None,
+                 permissions: pulumi.Input[Optional[Union['DashboardSharingPermissionsArgs', 'DashboardSharingPermissionsArgsDict']]] = None,
+                 preset: pulumi.Input[Optional[_builtins.bool]] = None,
+                 public: pulumi.Input[Optional[Union['DashboardSharingPublicArgs', 'DashboardSharingPublicArgsDict']]] = None,
                  __props__=None):
         opts = pulumi.ResourceOptions.merge(_utilities.get_resource_opts_defaults(), opts)
         if not isinstance(opts, pulumi.ResourceOptions):
@@ -308,12 +308,12 @@ class DashboardSharing(pulumi.CustomResource):
     def get(resource_name: str,
             id: pulumi.Input[str],
             opts: Optional[pulumi.ResourceOptions] = None,
-            dashboard_id: Optional[pulumi.Input[_builtins.str]] = None,
-            enabled: Optional[pulumi.Input[_builtins.bool]] = None,
-            muted: Optional[pulumi.Input[_builtins.bool]] = None,
-            permissions: Optional[pulumi.Input[Union['DashboardSharingPermissionsArgs', 'DashboardSharingPermissionsArgsDict']]] = None,
-            preset: Optional[pulumi.Input[_builtins.bool]] = None,
-            public: Optional[pulumi.Input[Union['DashboardSharingPublicArgs', 'DashboardSharingPublicArgsDict']]] = None) -> 'DashboardSharing':
+            dashboard_id: pulumi.Input[Optional[_builtins.str]] = None,
+            enabled: pulumi.Input[Optional[_builtins.bool]] = None,
+            muted: pulumi.Input[Optional[_builtins.bool]] = None,
+            permissions: pulumi.Input[Optional[Union['DashboardSharingPermissionsArgs', 'DashboardSharingPermissionsArgsDict']]] = None,
+            preset: pulumi.Input[Optional[_builtins.bool]] = None,
+            public: pulumi.Input[Optional[Union['DashboardSharingPublicArgs', 'DashboardSharingPublicArgsDict']]] = None) -> 'DashboardSharing':
         """
         Get an existing DashboardSharing resource's state with the given name, id, and optional extra
         properties used to qualify the lookup.

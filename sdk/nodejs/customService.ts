@@ -132,35 +132,35 @@ export interface CustomServiceState {
     /**
      * Custom service enabled/disabled
      */
-    enabled?: pulumi.Input<boolean>;
+    enabled?: pulumi.Input<boolean | undefined>;
     /**
      * The name of the custom service, displayed in the UI
      */
-    name?: pulumi.Input<string>;
+    name?: pulumi.Input<string | undefined>;
     /**
      * The list of process groups the custom service should belong to
      */
-    processGroups?: pulumi.Input<pulumi.Input<string>[]>;
+    processGroups?: pulumi.Input<pulumi.Input<string>[] | undefined>;
     /**
      * The queue entry point flag. Set to `true` for custom messaging services
      */
-    queueEntryPoint?: pulumi.Input<boolean>;
+    queueEntryPoint?: pulumi.Input<boolean | undefined>;
     /**
      * The queue entry point type (IBM*MQ, JMS, KAFKA, MSMQ or RABBIT*MQ)
      */
-    queueEntryPointType?: pulumi.Input<string>;
+    queueEntryPointType?: pulumi.Input<string | undefined>;
     /**
      * The list of rules defining the custom service
      */
-    rules?: pulumi.Input<pulumi.Input<inputs.CustomServiceRule>[]>;
+    rules?: pulumi.Input<pulumi.Input<inputs.CustomServiceRule>[] | undefined>;
     /**
      * Matcher applying to the file name (ENDS*WITH, EQUALS or STARTS*WITH). Default value is ENDS_WITH (if applicable)
      */
-    technology?: pulumi.Input<string>;
+    technology?: pulumi.Input<string | undefined>;
     /**
      * allows for configuring properties that are not explicitly supported by the current version of this provider
      */
-    unknowns?: pulumi.Input<string>;
+    unknowns?: pulumi.Input<string | undefined>;
 }
 
 /**
@@ -174,23 +174,23 @@ export interface CustomServiceArgs {
     /**
      * The name of the custom service, displayed in the UI
      */
-    name?: pulumi.Input<string>;
+    name?: pulumi.Input<string | undefined>;
     /**
      * The list of process groups the custom service should belong to
      */
-    processGroups?: pulumi.Input<pulumi.Input<string>[]>;
+    processGroups?: pulumi.Input<pulumi.Input<string>[] | undefined>;
     /**
      * The queue entry point flag. Set to `true` for custom messaging services
      */
-    queueEntryPoint?: pulumi.Input<boolean>;
+    queueEntryPoint?: pulumi.Input<boolean | undefined>;
     /**
      * The queue entry point type (IBM*MQ, JMS, KAFKA, MSMQ or RABBIT*MQ)
      */
-    queueEntryPointType?: pulumi.Input<string>;
+    queueEntryPointType?: pulumi.Input<string | undefined>;
     /**
      * The list of rules defining the custom service
      */
-    rules?: pulumi.Input<pulumi.Input<inputs.CustomServiceRule>[]>;
+    rules?: pulumi.Input<pulumi.Input<inputs.CustomServiceRule>[] | undefined>;
     /**
      * Matcher applying to the file name (ENDS*WITH, EQUALS or STARTS*WITH). Default value is ENDS_WITH (if applicable)
      */
@@ -198,5 +198,5 @@ export interface CustomServiceArgs {
     /**
      * allows for configuring properties that are not explicitly supported by the current version of this provider
      */
-    unknowns?: pulumi.Input<string>;
+    unknowns?: pulumi.Input<string | undefined>;
 }

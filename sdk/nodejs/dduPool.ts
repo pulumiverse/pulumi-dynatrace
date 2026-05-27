@@ -104,23 +104,23 @@ export interface DduPoolState {
     /**
      * DDU pool settings for Events
      */
-    events?: pulumi.Input<inputs.DduPoolEvents>;
+    events?: pulumi.Input<inputs.DduPoolEvents | undefined>;
     /**
      * DDU pool settings for Log Monitoring
      */
-    logMonitoring?: pulumi.Input<inputs.DduPoolLogMonitoring>;
+    logMonitoring?: pulumi.Input<inputs.DduPoolLogMonitoring | undefined>;
     /**
      * DDU pool settings for Metrics
      */
-    metrics?: pulumi.Input<inputs.DduPoolMetrics>;
+    metrics?: pulumi.Input<inputs.DduPoolMetrics | undefined>;
     /**
      * DDU pool settings for Serverless
      */
-    serverless?: pulumi.Input<inputs.DduPoolServerless>;
+    serverless?: pulumi.Input<inputs.DduPoolServerless | undefined>;
     /**
      * DDU pool settings for Traces
      */
-    traces?: pulumi.Input<inputs.DduPoolTraces>;
+    traces?: pulumi.Input<inputs.DduPoolTraces | undefined>;
 }
 
 /**
@@ -130,21 +130,21 @@ export interface DduPoolArgs {
     /**
      * DDU pool settings for Events
      */
-    events?: pulumi.Input<inputs.DduPoolEvents>;
+    events?: pulumi.Input<inputs.DduPoolEvents | undefined>;
     /**
      * DDU pool settings for Log Monitoring
      */
-    logMonitoring?: pulumi.Input<inputs.DduPoolLogMonitoring>;
+    logMonitoring?: pulumi.Input<inputs.DduPoolLogMonitoring | undefined>;
     /**
      * DDU pool settings for Metrics
      */
-    metrics?: pulumi.Input<inputs.DduPoolMetrics>;
+    metrics?: pulumi.Input<inputs.DduPoolMetrics | undefined>;
     /**
      * DDU pool settings for Serverless
      */
-    serverless?: pulumi.Input<inputs.DduPoolServerless>;
+    serverless?: pulumi.Input<inputs.DduPoolServerless | undefined>;
     /**
      * DDU pool settings for Traces
      */
-    traces?: pulumi.Input<inputs.DduPoolTraces>;
+    traces?: pulumi.Input<inputs.DduPoolTraces | undefined>;
 }

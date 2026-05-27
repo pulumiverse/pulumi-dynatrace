@@ -124,35 +124,35 @@ export interface NetworkZoneState {
     /**
      * A list of alternative network zones.
      */
-    alternativeZones?: pulumi.Input<pulumi.Input<string>[]>;
+    alternativeZones?: pulumi.Input<pulumi.Input<string>[] | undefined>;
     /**
      * A short description of the network zone
      */
-    description?: pulumi.Input<string>;
+    description?: pulumi.Input<string | undefined>;
     /**
      * The fallback mode of the network zone. Possible values: `ANY_ACTIVE_GATE`, `NONE`, `ONLY_DEFAULT_ZONE`
      */
-    fallbackMode?: pulumi.Input<string>;
+    fallbackMode?: pulumi.Input<string | undefined>;
     /**
      * Name of the network zone cannot be modified once created. Dynatrace stores the field in lowercase, allowed characters: alphanumeric, hyphen, underscore, dot
      */
-    name?: pulumi.Input<string>;
+    name?: pulumi.Input<string | undefined>;
     /**
      * The number of ActiveGates in the network zone.
      */
-    numOfConfiguredActivegates?: pulumi.Input<number>;
+    numOfConfiguredActivegates?: pulumi.Input<number | undefined>;
     /**
      * The number of OneAgents that are configured to use the network zone as primary.
      */
-    numOfConfiguredOneagents?: pulumi.Input<number>;
+    numOfConfiguredOneagents?: pulumi.Input<number | undefined>;
     /**
      * The number of OneAgents from other network zones that are using ActiveGates in the network zone.
      */
-    numOfOneagentsFromOtherZones?: pulumi.Input<number>;
+    numOfOneagentsFromOtherZones?: pulumi.Input<number | undefined>;
     /**
      * The number of OneAgents that are using ActiveGates in the network zone.
      */
-    numOfOneagentsUsing?: pulumi.Input<number>;
+    numOfOneagentsUsing?: pulumi.Input<number | undefined>;
 }
 
 /**
@@ -162,33 +162,33 @@ export interface NetworkZoneArgs {
     /**
      * A list of alternative network zones.
      */
-    alternativeZones?: pulumi.Input<pulumi.Input<string>[]>;
+    alternativeZones?: pulumi.Input<pulumi.Input<string>[] | undefined>;
     /**
      * A short description of the network zone
      */
-    description?: pulumi.Input<string>;
+    description?: pulumi.Input<string | undefined>;
     /**
      * The fallback mode of the network zone. Possible values: `ANY_ACTIVE_GATE`, `NONE`, `ONLY_DEFAULT_ZONE`
      */
-    fallbackMode?: pulumi.Input<string>;
+    fallbackMode?: pulumi.Input<string | undefined>;
     /**
      * Name of the network zone cannot be modified once created. Dynatrace stores the field in lowercase, allowed characters: alphanumeric, hyphen, underscore, dot
      */
-    name?: pulumi.Input<string>;
+    name?: pulumi.Input<string | undefined>;
     /**
      * The number of ActiveGates in the network zone.
      */
-    numOfConfiguredActivegates?: pulumi.Input<number>;
+    numOfConfiguredActivegates?: pulumi.Input<number | undefined>;
     /**
      * The number of OneAgents that are configured to use the network zone as primary.
      */
-    numOfConfiguredOneagents?: pulumi.Input<number>;
+    numOfConfiguredOneagents?: pulumi.Input<number | undefined>;
     /**
      * The number of OneAgents from other network zones that are using ActiveGates in the network zone.
      */
-    numOfOneagentsFromOtherZones?: pulumi.Input<number>;
+    numOfOneagentsFromOtherZones?: pulumi.Input<number | undefined>;
     /**
      * The number of OneAgents that are using ActiveGates in the network zone.
      */
-    numOfOneagentsUsing?: pulumi.Input<number>;
+    numOfOneagentsUsing?: pulumi.Input<number | undefined>;
 }

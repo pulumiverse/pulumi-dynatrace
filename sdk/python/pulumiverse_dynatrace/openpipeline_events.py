@@ -21,9 +21,9 @@ __all__ = ['OpenpipelineEventsArgs', 'OpenpipelineEvents']
 @pulumi.input_type
 class OpenpipelineEventsArgs:
     def __init__(__self__, *,
-                 endpoints: Optional[pulumi.Input['OpenpipelineEventsEndpointsArgs']] = None,
-                 pipelines: Optional[pulumi.Input['OpenpipelineEventsPipelinesArgs']] = None,
-                 routing: Optional[pulumi.Input['OpenpipelineEventsRoutingArgs']] = None):
+                 endpoints: pulumi.Input[Optional['OpenpipelineEventsEndpointsArgs']] = None,
+                 pipelines: pulumi.Input[Optional['OpenpipelineEventsPipelinesArgs']] = None,
+                 routing: pulumi.Input[Optional['OpenpipelineEventsRoutingArgs']] = None):
         """
         The set of arguments for constructing a OpenpipelineEvents resource.
 
@@ -40,47 +40,47 @@ class OpenpipelineEventsArgs:
 
     @_builtins.property
     @pulumi.getter
-    def endpoints(self) -> Optional[pulumi.Input['OpenpipelineEventsEndpointsArgs']]:
+    def endpoints(self) -> pulumi.Input[Optional['OpenpipelineEventsEndpointsArgs']]:
         """
         List of all ingest sources of the configuration
         """
         return pulumi.get(self, "endpoints")
 
     @endpoints.setter
-    def endpoints(self, value: Optional[pulumi.Input['OpenpipelineEventsEndpointsArgs']]):
+    def endpoints(self, value: pulumi.Input[Optional['OpenpipelineEventsEndpointsArgs']]):
         pulumi.set(self, "endpoints", value)
 
     @_builtins.property
     @pulumi.getter
-    def pipelines(self) -> Optional[pulumi.Input['OpenpipelineEventsPipelinesArgs']]:
+    def pipelines(self) -> pulumi.Input[Optional['OpenpipelineEventsPipelinesArgs']]:
         """
         List of all pipelines of the configuration
         """
         return pulumi.get(self, "pipelines")
 
     @pipelines.setter
-    def pipelines(self, value: Optional[pulumi.Input['OpenpipelineEventsPipelinesArgs']]):
+    def pipelines(self, value: pulumi.Input[Optional['OpenpipelineEventsPipelinesArgs']]):
         pulumi.set(self, "pipelines", value)
 
     @_builtins.property
     @pulumi.getter
-    def routing(self) -> Optional[pulumi.Input['OpenpipelineEventsRoutingArgs']]:
+    def routing(self) -> pulumi.Input[Optional['OpenpipelineEventsRoutingArgs']]:
         """
         Dynamic routing definition
         """
         return pulumi.get(self, "routing")
 
     @routing.setter
-    def routing(self, value: Optional[pulumi.Input['OpenpipelineEventsRoutingArgs']]):
+    def routing(self, value: pulumi.Input[Optional['OpenpipelineEventsRoutingArgs']]):
         pulumi.set(self, "routing", value)
 
 
 @pulumi.input_type
 class _OpenpipelineEventsState:
     def __init__(__self__, *,
-                 endpoints: Optional[pulumi.Input['OpenpipelineEventsEndpointsArgs']] = None,
-                 pipelines: Optional[pulumi.Input['OpenpipelineEventsPipelinesArgs']] = None,
-                 routing: Optional[pulumi.Input['OpenpipelineEventsRoutingArgs']] = None):
+                 endpoints: pulumi.Input[Optional['OpenpipelineEventsEndpointsArgs']] = None,
+                 pipelines: pulumi.Input[Optional['OpenpipelineEventsPipelinesArgs']] = None,
+                 routing: pulumi.Input[Optional['OpenpipelineEventsRoutingArgs']] = None):
         """
         Input properties used for looking up and filtering OpenpipelineEvents resources.
 
@@ -97,38 +97,38 @@ class _OpenpipelineEventsState:
 
     @_builtins.property
     @pulumi.getter
-    def endpoints(self) -> Optional[pulumi.Input['OpenpipelineEventsEndpointsArgs']]:
+    def endpoints(self) -> pulumi.Input[Optional['OpenpipelineEventsEndpointsArgs']]:
         """
         List of all ingest sources of the configuration
         """
         return pulumi.get(self, "endpoints")
 
     @endpoints.setter
-    def endpoints(self, value: Optional[pulumi.Input['OpenpipelineEventsEndpointsArgs']]):
+    def endpoints(self, value: pulumi.Input[Optional['OpenpipelineEventsEndpointsArgs']]):
         pulumi.set(self, "endpoints", value)
 
     @_builtins.property
     @pulumi.getter
-    def pipelines(self) -> Optional[pulumi.Input['OpenpipelineEventsPipelinesArgs']]:
+    def pipelines(self) -> pulumi.Input[Optional['OpenpipelineEventsPipelinesArgs']]:
         """
         List of all pipelines of the configuration
         """
         return pulumi.get(self, "pipelines")
 
     @pipelines.setter
-    def pipelines(self, value: Optional[pulumi.Input['OpenpipelineEventsPipelinesArgs']]):
+    def pipelines(self, value: pulumi.Input[Optional['OpenpipelineEventsPipelinesArgs']]):
         pulumi.set(self, "pipelines", value)
 
     @_builtins.property
     @pulumi.getter
-    def routing(self) -> Optional[pulumi.Input['OpenpipelineEventsRoutingArgs']]:
+    def routing(self) -> pulumi.Input[Optional['OpenpipelineEventsRoutingArgs']]:
         """
         Dynamic routing definition
         """
         return pulumi.get(self, "routing")
 
     @routing.setter
-    def routing(self, value: Optional[pulumi.Input['OpenpipelineEventsRoutingArgs']]):
+    def routing(self, value: pulumi.Input[Optional['OpenpipelineEventsRoutingArgs']]):
         pulumi.set(self, "routing", value)
 
 
@@ -138,9 +138,9 @@ class OpenpipelineEvents(pulumi.CustomResource):
     def __init__(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 endpoints: Optional[pulumi.Input[Union['OpenpipelineEventsEndpointsArgs', 'OpenpipelineEventsEndpointsArgsDict']]] = None,
-                 pipelines: Optional[pulumi.Input[Union['OpenpipelineEventsPipelinesArgs', 'OpenpipelineEventsPipelinesArgsDict']]] = None,
-                 routing: Optional[pulumi.Input[Union['OpenpipelineEventsRoutingArgs', 'OpenpipelineEventsRoutingArgsDict']]] = None,
+                 endpoints: pulumi.Input[Optional[Union['OpenpipelineEventsEndpointsArgs', 'OpenpipelineEventsEndpointsArgsDict']]] = None,
+                 pipelines: pulumi.Input[Optional[Union['OpenpipelineEventsPipelinesArgs', 'OpenpipelineEventsPipelinesArgsDict']]] = None,
+                 routing: pulumi.Input[Optional[Union['OpenpipelineEventsRoutingArgs', 'OpenpipelineEventsRoutingArgsDict']]] = None,
                  __props__=None):
         """
         !> This resource API endpoint has been deprecated, please migrate your OpenPipeline configurations and use `dynatrace_openpipeline_v2_events_*` instead.
@@ -771,9 +771,9 @@ class OpenpipelineEvents(pulumi.CustomResource):
     def _internal_init(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 endpoints: Optional[pulumi.Input[Union['OpenpipelineEventsEndpointsArgs', 'OpenpipelineEventsEndpointsArgsDict']]] = None,
-                 pipelines: Optional[pulumi.Input[Union['OpenpipelineEventsPipelinesArgs', 'OpenpipelineEventsPipelinesArgsDict']]] = None,
-                 routing: Optional[pulumi.Input[Union['OpenpipelineEventsRoutingArgs', 'OpenpipelineEventsRoutingArgsDict']]] = None,
+                 endpoints: pulumi.Input[Optional[Union['OpenpipelineEventsEndpointsArgs', 'OpenpipelineEventsEndpointsArgsDict']]] = None,
+                 pipelines: pulumi.Input[Optional[Union['OpenpipelineEventsPipelinesArgs', 'OpenpipelineEventsPipelinesArgsDict']]] = None,
+                 routing: pulumi.Input[Optional[Union['OpenpipelineEventsRoutingArgs', 'OpenpipelineEventsRoutingArgsDict']]] = None,
                  __props__=None):
         opts = pulumi.ResourceOptions.merge(_utilities.get_resource_opts_defaults(), opts)
         if not isinstance(opts, pulumi.ResourceOptions):
@@ -796,9 +796,9 @@ class OpenpipelineEvents(pulumi.CustomResource):
     def get(resource_name: str,
             id: pulumi.Input[str],
             opts: Optional[pulumi.ResourceOptions] = None,
-            endpoints: Optional[pulumi.Input[Union['OpenpipelineEventsEndpointsArgs', 'OpenpipelineEventsEndpointsArgsDict']]] = None,
-            pipelines: Optional[pulumi.Input[Union['OpenpipelineEventsPipelinesArgs', 'OpenpipelineEventsPipelinesArgsDict']]] = None,
-            routing: Optional[pulumi.Input[Union['OpenpipelineEventsRoutingArgs', 'OpenpipelineEventsRoutingArgsDict']]] = None) -> 'OpenpipelineEvents':
+            endpoints: pulumi.Input[Optional[Union['OpenpipelineEventsEndpointsArgs', 'OpenpipelineEventsEndpointsArgsDict']]] = None,
+            pipelines: pulumi.Input[Optional[Union['OpenpipelineEventsPipelinesArgs', 'OpenpipelineEventsPipelinesArgsDict']]] = None,
+            routing: pulumi.Input[Optional[Union['OpenpipelineEventsRoutingArgs', 'OpenpipelineEventsRoutingArgsDict']]] = None) -> 'OpenpipelineEvents':
         """
         Get an existing OpenpipelineEvents resource's state with the given name, id, and optional extra
         properties used to qualify the lookup.

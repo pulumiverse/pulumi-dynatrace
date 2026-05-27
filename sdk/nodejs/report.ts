@@ -102,19 +102,19 @@ export interface ReportState {
     /**
      * The ID of the associated dashboard
      */
-    dashboardId?: pulumi.Input<string>;
+    dashboardId?: pulumi.Input<string | undefined>;
     /**
      * The email notifications for the dashboard report are enabled (true) or disabled (false).
      */
-    emailNotifications?: pulumi.Input<boolean>;
+    emailNotifications?: pulumi.Input<boolean | undefined>;
     /**
      * A list of the report subscribers
      */
-    subscriptions?: pulumi.Input<inputs.ReportSubscriptions>;
+    subscriptions?: pulumi.Input<inputs.ReportSubscriptions | undefined>;
     /**
      * The type of report
      */
-    type?: pulumi.Input<string>;
+    type?: pulumi.Input<string | undefined>;
 }
 
 /**
@@ -128,11 +128,11 @@ export interface ReportArgs {
     /**
      * The email notifications for the dashboard report are enabled (true) or disabled (false).
      */
-    emailNotifications?: pulumi.Input<boolean>;
+    emailNotifications?: pulumi.Input<boolean | undefined>;
     /**
      * A list of the report subscribers
      */
-    subscriptions?: pulumi.Input<inputs.ReportSubscriptions>;
+    subscriptions?: pulumi.Input<inputs.ReportSubscriptions | undefined>;
     /**
      * The type of report
      */

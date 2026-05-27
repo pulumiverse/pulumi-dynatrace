@@ -81,7 +81,7 @@ def get_platform_slo_template(name: Optional[_builtins.str] = None,
     return AwaitableGetPlatformSloTemplateResult(
         id=pulumi.get(__ret__, 'id'),
         name=pulumi.get(__ret__, 'name'))
-def get_platform_slo_template_output(name: Optional[pulumi.Input[_builtins.str]] = None,
+def get_platform_slo_template_output(name: pulumi.Input[Optional[_builtins.str]] = None,
                                      opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetPlatformSloTemplateResult]:
     """
     > To utilize this data source, please define the environment variables `DT_CLIENT_ID`, `DT_CLIENT_SECRET`, `DT_ACCOUNT_ID` with an OAuth client including the following permissions: **View SLOs** (`slo:slos:read`) and **View SLO objective templates** (`slo:objective-templates:read`).

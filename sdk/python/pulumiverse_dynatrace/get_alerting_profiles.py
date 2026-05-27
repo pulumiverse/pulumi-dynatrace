@@ -82,7 +82,7 @@ def get_alerting_profiles(profiles: Optional[Mapping[str, _builtins.str]] = None
         id=pulumi.get(__ret__, 'id'),
         profiles=pulumi.get(__ret__, 'profiles'),
         values=pulumi.get(__ret__, 'values'))
-def get_alerting_profiles_output(profiles: Optional[pulumi.Input[Optional[Mapping[str, _builtins.str]]]] = None,
+def get_alerting_profiles_output(profiles: pulumi.Input[Optional[Optional[Mapping[str, _builtins.str]]]] = None,
                                  opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetAlertingProfilesResult]:
     """
     The alerting profiles data source allows retrieval of all alerting profiles.

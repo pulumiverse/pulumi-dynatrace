@@ -124,27 +124,27 @@ export interface ProcessGroupSimpleDetectionState {
     /**
      * This setting is enabled (`true`) or disabled (`false`)
      */
-    enabled?: pulumi.Input<boolean>;
+    enabled?: pulumi.Input<boolean | undefined>;
     /**
      * If Dynatrace detects this property at startup of a process, it will use its value to identify process groups more granular.
      */
-    groupIdentifier?: pulumi.Input<string>;
+    groupIdentifier?: pulumi.Input<string | undefined>;
     /**
      * Because this resource allows for ordering you may specify the ID of the resource instance that comes before this instance regarding order. If not specified when creating the setting will be added to the end of the list. If not specified during update the order will remain untouched
      */
-    insertAfter?: pulumi.Input<string>;
+    insertAfter?: pulumi.Input<string | undefined>;
     /**
      * Use a variable to identify instances within a process group.
      */
-    instanceIdentifier?: pulumi.Input<string>;
+    instanceIdentifier?: pulumi.Input<string | undefined>;
     /**
      * Note: Not all types can be detected at startup.
      */
-    processType?: pulumi.Input<string>;
+    processType?: pulumi.Input<string | undefined>;
     /**
      * Possible Values: `Prop`, `Env`
      */
-    ruleType?: pulumi.Input<string>;
+    ruleType?: pulumi.Input<string | undefined>;
 }
 
 /**
@@ -162,7 +162,7 @@ export interface ProcessGroupSimpleDetectionArgs {
     /**
      * Because this resource allows for ordering you may specify the ID of the resource instance that comes before this instance regarding order. If not specified when creating the setting will be added to the end of the list. If not specified during update the order will remain untouched
      */
-    insertAfter?: pulumi.Input<string>;
+    insertAfter?: pulumi.Input<string | undefined>;
     /**
      * Use a variable to identify instances within a process group.
      */
@@ -170,7 +170,7 @@ export interface ProcessGroupSimpleDetectionArgs {
     /**
      * Note: Not all types can be detected at startup.
      */
-    processType?: pulumi.Input<string>;
+    processType?: pulumi.Input<string | undefined>;
     /**
      * Possible Values: `Prop`, `Env`
      */

@@ -22,7 +22,7 @@ __all__ = ['LogSecurityContextArgs', 'LogSecurityContext']
 class LogSecurityContextArgs:
     def __init__(__self__, *,
                  security_context_rule: pulumi.Input['LogSecurityContextSecurityContextRuleArgs'],
-                 insert_after: Optional[pulumi.Input[_builtins.str]] = None):
+                 insert_after: pulumi.Input[Optional[_builtins.str]] = None):
         """
         The set of arguments for constructing a LogSecurityContext resource.
 
@@ -47,22 +47,22 @@ class LogSecurityContextArgs:
 
     @_builtins.property
     @pulumi.getter(name="insertAfter")
-    def insert_after(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def insert_after(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Because this resource allows for ordering you may specify the ID of the resource instance that comes before this instance regarding order. If not specified when creating the setting will be added to the end of the list. If not specified during update the order will remain untouched
         """
         return pulumi.get(self, "insert_after")
 
     @insert_after.setter
-    def insert_after(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def insert_after(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "insert_after", value)
 
 
 @pulumi.input_type
 class _LogSecurityContextState:
     def __init__(__self__, *,
-                 insert_after: Optional[pulumi.Input[_builtins.str]] = None,
-                 security_context_rule: Optional[pulumi.Input['LogSecurityContextSecurityContextRuleArgs']] = None):
+                 insert_after: pulumi.Input[Optional[_builtins.str]] = None,
+                 security_context_rule: pulumi.Input[Optional['LogSecurityContextSecurityContextRuleArgs']] = None):
         """
         Input properties used for looking up and filtering LogSecurityContext resources.
 
@@ -76,26 +76,26 @@ class _LogSecurityContextState:
 
     @_builtins.property
     @pulumi.getter(name="insertAfter")
-    def insert_after(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def insert_after(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Because this resource allows for ordering you may specify the ID of the resource instance that comes before this instance regarding order. If not specified when creating the setting will be added to the end of the list. If not specified during update the order will remain untouched
         """
         return pulumi.get(self, "insert_after")
 
     @insert_after.setter
-    def insert_after(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def insert_after(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "insert_after", value)
 
     @_builtins.property
     @pulumi.getter(name="securityContextRule")
-    def security_context_rule(self) -> Optional[pulumi.Input['LogSecurityContextSecurityContextRuleArgs']]:
+    def security_context_rule(self) -> pulumi.Input[Optional['LogSecurityContextSecurityContextRuleArgs']]:
         """
         no documentation available
         """
         return pulumi.get(self, "security_context_rule")
 
     @security_context_rule.setter
-    def security_context_rule(self, value: Optional[pulumi.Input['LogSecurityContextSecurityContextRuleArgs']]):
+    def security_context_rule(self, value: pulumi.Input[Optional['LogSecurityContextSecurityContextRuleArgs']]):
         pulumi.set(self, "security_context_rule", value)
 
 
@@ -105,8 +105,8 @@ class LogSecurityContext(pulumi.CustomResource):
     def __init__(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 insert_after: Optional[pulumi.Input[_builtins.str]] = None,
-                 security_context_rule: Optional[pulumi.Input[Union['LogSecurityContextSecurityContextRuleArgs', 'LogSecurityContextSecurityContextRuleArgsDict']]] = None,
+                 insert_after: pulumi.Input[Optional[_builtins.str]] = None,
+                 security_context_rule: pulumi.Input[Optional[Union['LogSecurityContextSecurityContextRuleArgs', 'LogSecurityContextSecurityContextRuleArgsDict']]] = None,
                  __props__=None):
         """
         > This resource requires the API token scopes **Read settings** (`settings.read`) and **Write settings** (`settings.write`)
@@ -166,8 +166,8 @@ class LogSecurityContext(pulumi.CustomResource):
     def _internal_init(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 insert_after: Optional[pulumi.Input[_builtins.str]] = None,
-                 security_context_rule: Optional[pulumi.Input[Union['LogSecurityContextSecurityContextRuleArgs', 'LogSecurityContextSecurityContextRuleArgsDict']]] = None,
+                 insert_after: pulumi.Input[Optional[_builtins.str]] = None,
+                 security_context_rule: pulumi.Input[Optional[Union['LogSecurityContextSecurityContextRuleArgs', 'LogSecurityContextSecurityContextRuleArgsDict']]] = None,
                  __props__=None):
         opts = pulumi.ResourceOptions.merge(_utilities.get_resource_opts_defaults(), opts)
         if not isinstance(opts, pulumi.ResourceOptions):
@@ -191,8 +191,8 @@ class LogSecurityContext(pulumi.CustomResource):
     def get(resource_name: str,
             id: pulumi.Input[str],
             opts: Optional[pulumi.ResourceOptions] = None,
-            insert_after: Optional[pulumi.Input[_builtins.str]] = None,
-            security_context_rule: Optional[pulumi.Input[Union['LogSecurityContextSecurityContextRuleArgs', 'LogSecurityContextSecurityContextRuleArgsDict']]] = None) -> 'LogSecurityContext':
+            insert_after: pulumi.Input[Optional[_builtins.str]] = None,
+            security_context_rule: pulumi.Input[Optional[Union['LogSecurityContextSecurityContextRuleArgs', 'LogSecurityContextSecurityContextRuleArgsDict']]] = None) -> 'LogSecurityContext':
         """
         Get an existing LogSecurityContext resource's state with the given name, id, and optional extra
         properties used to qualify the lookup.

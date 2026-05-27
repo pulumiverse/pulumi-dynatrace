@@ -94,11 +94,11 @@ export interface WebAppCustomConfigPropertiesState {
     /**
      * The scope of this setting
      */
-    applicationId?: pulumi.Input<string>;
+    applicationId?: pulumi.Input<string | undefined>;
     /**
      * Custom configuration property
      */
-    customProperty?: pulumi.Input<string>;
+    customProperty?: pulumi.Input<string | undefined>;
 }
 
 /**

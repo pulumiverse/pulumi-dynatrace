@@ -22,11 +22,11 @@ __all__ = ['PlatformSloArgs', 'PlatformSlo']
 class PlatformSloArgs:
     def __init__(__self__, *,
                  criteria: pulumi.Input['PlatformSloCriteriaArgs'],
-                 custom_sli: Optional[pulumi.Input['PlatformSloCustomSliArgs']] = None,
-                 description: Optional[pulumi.Input[_builtins.str]] = None,
-                 name: Optional[pulumi.Input[_builtins.str]] = None,
-                 sli_reference: Optional[pulumi.Input['PlatformSloSliReferenceArgs']] = None,
-                 tags: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None):
+                 custom_sli: pulumi.Input[Optional['PlatformSloCustomSliArgs']] = None,
+                 description: pulumi.Input[Optional[_builtins.str]] = None,
+                 name: pulumi.Input[Optional[_builtins.str]] = None,
+                 sli_reference: pulumi.Input[Optional['PlatformSloSliReferenceArgs']] = None,
+                 tags: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None):
         """
         The set of arguments for constructing a PlatformSlo resource.
 
@@ -63,74 +63,74 @@ class PlatformSloArgs:
 
     @_builtins.property
     @pulumi.getter(name="customSli")
-    def custom_sli(self) -> Optional[pulumi.Input['PlatformSloCustomSliArgs']]:
+    def custom_sli(self) -> pulumi.Input[Optional['PlatformSloCustomSliArgs']]:
         """
         Custom SLI of the SLO
         """
         return pulumi.get(self, "custom_sli")
 
     @custom_sli.setter
-    def custom_sli(self, value: Optional[pulumi.Input['PlatformSloCustomSliArgs']]):
+    def custom_sli(self, value: pulumi.Input[Optional['PlatformSloCustomSliArgs']]):
         pulumi.set(self, "custom_sli", value)
 
     @_builtins.property
     @pulumi.getter
-    def description(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def description(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Description of the SLO
         """
         return pulumi.get(self, "description")
 
     @description.setter
-    def description(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def description(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "description", value)
 
     @_builtins.property
     @pulumi.getter
-    def name(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def name(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Name of the SLO
         """
         return pulumi.get(self, "name")
 
     @name.setter
-    def name(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def name(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "name", value)
 
     @_builtins.property
     @pulumi.getter(name="sliReference")
-    def sli_reference(self) -> Optional[pulumi.Input['PlatformSloSliReferenceArgs']]:
+    def sli_reference(self) -> pulumi.Input[Optional['PlatformSloSliReferenceArgs']]:
         """
         SLI reference of the SLO
         """
         return pulumi.get(self, "sli_reference")
 
     @sli_reference.setter
-    def sli_reference(self, value: Optional[pulumi.Input['PlatformSloSliReferenceArgs']]):
+    def sli_reference(self, value: pulumi.Input[Optional['PlatformSloSliReferenceArgs']]):
         pulumi.set(self, "sli_reference", value)
 
     @_builtins.property
     @pulumi.getter
-    def tags(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]:
+    def tags(self) -> pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]:
         """
         Tags of the SLO. Example: `Stage:DEV`
         """
         return pulumi.get(self, "tags")
 
     @tags.setter
-    def tags(self, value: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]):
+    def tags(self, value: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "tags", value)
 
 
 @pulumi.input_type
 class _PlatformSloState:
     def __init__(__self__, *,
-                 criteria: Optional[pulumi.Input['PlatformSloCriteriaArgs']] = None,
-                 custom_sli: Optional[pulumi.Input['PlatformSloCustomSliArgs']] = None,
-                 description: Optional[pulumi.Input[_builtins.str]] = None,
-                 name: Optional[pulumi.Input[_builtins.str]] = None,
-                 sli_reference: Optional[pulumi.Input['PlatformSloSliReferenceArgs']] = None,
-                 tags: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None):
+                 criteria: pulumi.Input[Optional['PlatformSloCriteriaArgs']] = None,
+                 custom_sli: pulumi.Input[Optional['PlatformSloCustomSliArgs']] = None,
+                 description: pulumi.Input[Optional[_builtins.str]] = None,
+                 name: pulumi.Input[Optional[_builtins.str]] = None,
+                 sli_reference: pulumi.Input[Optional['PlatformSloSliReferenceArgs']] = None,
+                 tags: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None):
         """
         Input properties used for looking up and filtering PlatformSlo resources.
 
@@ -156,74 +156,74 @@ class _PlatformSloState:
 
     @_builtins.property
     @pulumi.getter
-    def criteria(self) -> Optional[pulumi.Input['PlatformSloCriteriaArgs']]:
+    def criteria(self) -> pulumi.Input[Optional['PlatformSloCriteriaArgs']]:
         """
         Criteria of the SLO
         """
         return pulumi.get(self, "criteria")
 
     @criteria.setter
-    def criteria(self, value: Optional[pulumi.Input['PlatformSloCriteriaArgs']]):
+    def criteria(self, value: pulumi.Input[Optional['PlatformSloCriteriaArgs']]):
         pulumi.set(self, "criteria", value)
 
     @_builtins.property
     @pulumi.getter(name="customSli")
-    def custom_sli(self) -> Optional[pulumi.Input['PlatformSloCustomSliArgs']]:
+    def custom_sli(self) -> pulumi.Input[Optional['PlatformSloCustomSliArgs']]:
         """
         Custom SLI of the SLO
         """
         return pulumi.get(self, "custom_sli")
 
     @custom_sli.setter
-    def custom_sli(self, value: Optional[pulumi.Input['PlatformSloCustomSliArgs']]):
+    def custom_sli(self, value: pulumi.Input[Optional['PlatformSloCustomSliArgs']]):
         pulumi.set(self, "custom_sli", value)
 
     @_builtins.property
     @pulumi.getter
-    def description(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def description(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Description of the SLO
         """
         return pulumi.get(self, "description")
 
     @description.setter
-    def description(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def description(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "description", value)
 
     @_builtins.property
     @pulumi.getter
-    def name(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def name(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Name of the SLO
         """
         return pulumi.get(self, "name")
 
     @name.setter
-    def name(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def name(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "name", value)
 
     @_builtins.property
     @pulumi.getter(name="sliReference")
-    def sli_reference(self) -> Optional[pulumi.Input['PlatformSloSliReferenceArgs']]:
+    def sli_reference(self) -> pulumi.Input[Optional['PlatformSloSliReferenceArgs']]:
         """
         SLI reference of the SLO
         """
         return pulumi.get(self, "sli_reference")
 
     @sli_reference.setter
-    def sli_reference(self, value: Optional[pulumi.Input['PlatformSloSliReferenceArgs']]):
+    def sli_reference(self, value: pulumi.Input[Optional['PlatformSloSliReferenceArgs']]):
         pulumi.set(self, "sli_reference", value)
 
     @_builtins.property
     @pulumi.getter
-    def tags(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]:
+    def tags(self) -> pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]:
         """
         Tags of the SLO. Example: `Stage:DEV`
         """
         return pulumi.get(self, "tags")
 
     @tags.setter
-    def tags(self, value: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]):
+    def tags(self, value: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "tags", value)
 
 
@@ -233,12 +233,12 @@ class PlatformSlo(pulumi.CustomResource):
     def __init__(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 criteria: Optional[pulumi.Input[Union['PlatformSloCriteriaArgs', 'PlatformSloCriteriaArgsDict']]] = None,
-                 custom_sli: Optional[pulumi.Input[Union['PlatformSloCustomSliArgs', 'PlatformSloCustomSliArgsDict']]] = None,
-                 description: Optional[pulumi.Input[_builtins.str]] = None,
-                 name: Optional[pulumi.Input[_builtins.str]] = None,
-                 sli_reference: Optional[pulumi.Input[Union['PlatformSloSliReferenceArgs', 'PlatformSloSliReferenceArgsDict']]] = None,
-                 tags: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 criteria: pulumi.Input[Optional[Union['PlatformSloCriteriaArgs', 'PlatformSloCriteriaArgsDict']]] = None,
+                 custom_sli: pulumi.Input[Optional[Union['PlatformSloCustomSliArgs', 'PlatformSloCustomSliArgsDict']]] = None,
+                 description: pulumi.Input[Optional[_builtins.str]] = None,
+                 name: pulumi.Input[Optional[_builtins.str]] = None,
+                 sli_reference: pulumi.Input[Optional[Union['PlatformSloSliReferenceArgs', 'PlatformSloSliReferenceArgsDict']]] = None,
+                 tags: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
                  __props__=None):
         """
         > **Dynatrace SaaS only**
@@ -298,12 +298,12 @@ class PlatformSlo(pulumi.CustomResource):
     def _internal_init(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 criteria: Optional[pulumi.Input[Union['PlatformSloCriteriaArgs', 'PlatformSloCriteriaArgsDict']]] = None,
-                 custom_sli: Optional[pulumi.Input[Union['PlatformSloCustomSliArgs', 'PlatformSloCustomSliArgsDict']]] = None,
-                 description: Optional[pulumi.Input[_builtins.str]] = None,
-                 name: Optional[pulumi.Input[_builtins.str]] = None,
-                 sli_reference: Optional[pulumi.Input[Union['PlatformSloSliReferenceArgs', 'PlatformSloSliReferenceArgsDict']]] = None,
-                 tags: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 criteria: pulumi.Input[Optional[Union['PlatformSloCriteriaArgs', 'PlatformSloCriteriaArgsDict']]] = None,
+                 custom_sli: pulumi.Input[Optional[Union['PlatformSloCustomSliArgs', 'PlatformSloCustomSliArgsDict']]] = None,
+                 description: pulumi.Input[Optional[_builtins.str]] = None,
+                 name: pulumi.Input[Optional[_builtins.str]] = None,
+                 sli_reference: pulumi.Input[Optional[Union['PlatformSloSliReferenceArgs', 'PlatformSloSliReferenceArgsDict']]] = None,
+                 tags: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
                  __props__=None):
         opts = pulumi.ResourceOptions.merge(_utilities.get_resource_opts_defaults(), opts)
         if not isinstance(opts, pulumi.ResourceOptions):
@@ -331,12 +331,12 @@ class PlatformSlo(pulumi.CustomResource):
     def get(resource_name: str,
             id: pulumi.Input[str],
             opts: Optional[pulumi.ResourceOptions] = None,
-            criteria: Optional[pulumi.Input[Union['PlatformSloCriteriaArgs', 'PlatformSloCriteriaArgsDict']]] = None,
-            custom_sli: Optional[pulumi.Input[Union['PlatformSloCustomSliArgs', 'PlatformSloCustomSliArgsDict']]] = None,
-            description: Optional[pulumi.Input[_builtins.str]] = None,
-            name: Optional[pulumi.Input[_builtins.str]] = None,
-            sli_reference: Optional[pulumi.Input[Union['PlatformSloSliReferenceArgs', 'PlatformSloSliReferenceArgsDict']]] = None,
-            tags: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None) -> 'PlatformSlo':
+            criteria: pulumi.Input[Optional[Union['PlatformSloCriteriaArgs', 'PlatformSloCriteriaArgsDict']]] = None,
+            custom_sli: pulumi.Input[Optional[Union['PlatformSloCustomSliArgs', 'PlatformSloCustomSliArgsDict']]] = None,
+            description: pulumi.Input[Optional[_builtins.str]] = None,
+            name: pulumi.Input[Optional[_builtins.str]] = None,
+            sli_reference: pulumi.Input[Optional[Union['PlatformSloSliReferenceArgs', 'PlatformSloSliReferenceArgsDict']]] = None,
+            tags: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None) -> 'PlatformSlo':
         """
         Get an existing PlatformSlo resource's state with the given name, id, and optional extra
         properties used to qualify the lookup.

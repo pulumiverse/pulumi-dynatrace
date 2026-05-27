@@ -23,13 +23,13 @@ class BrowserMonitorArgs:
     def __init__(__self__, *,
                  frequency: pulumi.Input[_builtins.int],
                  key_performance_metrics: pulumi.Input['BrowserMonitorKeyPerformanceMetricsArgs'],
-                 anomaly_detection: Optional[pulumi.Input['BrowserMonitorAnomalyDetectionArgs']] = None,
-                 enabled: Optional[pulumi.Input[_builtins.bool]] = None,
-                 locations: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-                 manually_assigned_apps: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-                 name: Optional[pulumi.Input[_builtins.str]] = None,
-                 script: Optional[pulumi.Input['BrowserMonitorScriptArgs']] = None,
-                 tags: Optional[pulumi.Input[Sequence[pulumi.Input['BrowserMonitorTagArgs']]]] = None):
+                 anomaly_detection: pulumi.Input[Optional['BrowserMonitorAnomalyDetectionArgs']] = None,
+                 enabled: pulumi.Input[Optional[_builtins.bool]] = None,
+                 locations: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 manually_assigned_apps: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 name: pulumi.Input[Optional[_builtins.str]] = None,
+                 script: pulumi.Input[Optional['BrowserMonitorScriptArgs']] = None,
+                 tags: pulumi.Input[Optional[Sequence[pulumi.Input['BrowserMonitorTagArgs']]]] = None):
         """
         The set of arguments for constructing a BrowserMonitor resource.
 
@@ -90,31 +90,31 @@ class BrowserMonitorArgs:
 
     @_builtins.property
     @pulumi.getter(name="anomalyDetection")
-    def anomaly_detection(self) -> Optional[pulumi.Input['BrowserMonitorAnomalyDetectionArgs']]:
+    def anomaly_detection(self) -> pulumi.Input[Optional['BrowserMonitorAnomalyDetectionArgs']]:
         """
         The anomaly detection configuration.
         """
         return pulumi.get(self, "anomaly_detection")
 
     @anomaly_detection.setter
-    def anomaly_detection(self, value: Optional[pulumi.Input['BrowserMonitorAnomalyDetectionArgs']]):
+    def anomaly_detection(self, value: pulumi.Input[Optional['BrowserMonitorAnomalyDetectionArgs']]):
         pulumi.set(self, "anomaly_detection", value)
 
     @_builtins.property
     @pulumi.getter
-    def enabled(self) -> Optional[pulumi.Input[_builtins.bool]]:
+    def enabled(self) -> pulumi.Input[Optional[_builtins.bool]]:
         """
         The monitor is enabled (`true`) or disabled (`false`).
         """
         return pulumi.get(self, "enabled")
 
     @enabled.setter
-    def enabled(self, value: Optional[pulumi.Input[_builtins.bool]]):
+    def enabled(self, value: pulumi.Input[Optional[_builtins.bool]]):
         pulumi.set(self, "enabled", value)
 
     @_builtins.property
     @pulumi.getter
-    def locations(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]:
+    def locations(self) -> pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]:
         """
         A list of locations from which the monitor is executed.
 
@@ -123,48 +123,48 @@ class BrowserMonitorArgs:
         return pulumi.get(self, "locations")
 
     @locations.setter
-    def locations(self, value: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]):
+    def locations(self, value: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "locations", value)
 
     @_builtins.property
     @pulumi.getter(name="manuallyAssignedApps")
-    def manually_assigned_apps(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]:
+    def manually_assigned_apps(self) -> pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]:
         """
         A set of manually assigned applications.
         """
         return pulumi.get(self, "manually_assigned_apps")
 
     @manually_assigned_apps.setter
-    def manually_assigned_apps(self, value: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]):
+    def manually_assigned_apps(self, value: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "manually_assigned_apps", value)
 
     @_builtins.property
     @pulumi.getter
-    def name(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def name(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The name of the monitor.
         """
         return pulumi.get(self, "name")
 
     @name.setter
-    def name(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def name(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "name", value)
 
     @_builtins.property
     @pulumi.getter
-    def script(self) -> Optional[pulumi.Input['BrowserMonitorScriptArgs']]:
+    def script(self) -> pulumi.Input[Optional['BrowserMonitorScriptArgs']]:
         """
         The Browser Script
         """
         return pulumi.get(self, "script")
 
     @script.setter
-    def script(self, value: Optional[pulumi.Input['BrowserMonitorScriptArgs']]):
+    def script(self, value: pulumi.Input[Optional['BrowserMonitorScriptArgs']]):
         pulumi.set(self, "script", value)
 
     @_builtins.property
     @pulumi.getter
-    def tags(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['BrowserMonitorTagArgs']]]]:
+    def tags(self) -> pulumi.Input[Optional[Sequence[pulumi.Input['BrowserMonitorTagArgs']]]]:
         """
         A set of tags assigned to the monitor.
 
@@ -173,22 +173,22 @@ class BrowserMonitorArgs:
         return pulumi.get(self, "tags")
 
     @tags.setter
-    def tags(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['BrowserMonitorTagArgs']]]]):
+    def tags(self, value: pulumi.Input[Optional[Sequence[pulumi.Input['BrowserMonitorTagArgs']]]]):
         pulumi.set(self, "tags", value)
 
 
 @pulumi.input_type
 class _BrowserMonitorState:
     def __init__(__self__, *,
-                 anomaly_detection: Optional[pulumi.Input['BrowserMonitorAnomalyDetectionArgs']] = None,
-                 enabled: Optional[pulumi.Input[_builtins.bool]] = None,
-                 frequency: Optional[pulumi.Input[_builtins.int]] = None,
-                 key_performance_metrics: Optional[pulumi.Input['BrowserMonitorKeyPerformanceMetricsArgs']] = None,
-                 locations: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-                 manually_assigned_apps: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-                 name: Optional[pulumi.Input[_builtins.str]] = None,
-                 script: Optional[pulumi.Input['BrowserMonitorScriptArgs']] = None,
-                 tags: Optional[pulumi.Input[Sequence[pulumi.Input['BrowserMonitorTagArgs']]]] = None):
+                 anomaly_detection: pulumi.Input[Optional['BrowserMonitorAnomalyDetectionArgs']] = None,
+                 enabled: pulumi.Input[Optional[_builtins.bool]] = None,
+                 frequency: pulumi.Input[Optional[_builtins.int]] = None,
+                 key_performance_metrics: pulumi.Input[Optional['BrowserMonitorKeyPerformanceMetricsArgs']] = None,
+                 locations: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 manually_assigned_apps: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 name: pulumi.Input[Optional[_builtins.str]] = None,
+                 script: pulumi.Input[Optional['BrowserMonitorScriptArgs']] = None,
+                 tags: pulumi.Input[Optional[Sequence[pulumi.Input['BrowserMonitorTagArgs']]]] = None):
         """
         Input properties used for looking up and filtering BrowserMonitor resources.
 
@@ -227,55 +227,55 @@ class _BrowserMonitorState:
 
     @_builtins.property
     @pulumi.getter(name="anomalyDetection")
-    def anomaly_detection(self) -> Optional[pulumi.Input['BrowserMonitorAnomalyDetectionArgs']]:
+    def anomaly_detection(self) -> pulumi.Input[Optional['BrowserMonitorAnomalyDetectionArgs']]:
         """
         The anomaly detection configuration.
         """
         return pulumi.get(self, "anomaly_detection")
 
     @anomaly_detection.setter
-    def anomaly_detection(self, value: Optional[pulumi.Input['BrowserMonitorAnomalyDetectionArgs']]):
+    def anomaly_detection(self, value: pulumi.Input[Optional['BrowserMonitorAnomalyDetectionArgs']]):
         pulumi.set(self, "anomaly_detection", value)
 
     @_builtins.property
     @pulumi.getter
-    def enabled(self) -> Optional[pulumi.Input[_builtins.bool]]:
+    def enabled(self) -> pulumi.Input[Optional[_builtins.bool]]:
         """
         The monitor is enabled (`true`) or disabled (`false`).
         """
         return pulumi.get(self, "enabled")
 
     @enabled.setter
-    def enabled(self, value: Optional[pulumi.Input[_builtins.bool]]):
+    def enabled(self, value: pulumi.Input[Optional[_builtins.bool]]):
         pulumi.set(self, "enabled", value)
 
     @_builtins.property
     @pulumi.getter
-    def frequency(self) -> Optional[pulumi.Input[_builtins.int]]:
+    def frequency(self) -> pulumi.Input[Optional[_builtins.int]]:
         """
         The frequency of the monitor, in minutes.
         """
         return pulumi.get(self, "frequency")
 
     @frequency.setter
-    def frequency(self, value: Optional[pulumi.Input[_builtins.int]]):
+    def frequency(self, value: pulumi.Input[Optional[_builtins.int]]):
         pulumi.set(self, "frequency", value)
 
     @_builtins.property
     @pulumi.getter(name="keyPerformanceMetrics")
-    def key_performance_metrics(self) -> Optional[pulumi.Input['BrowserMonitorKeyPerformanceMetricsArgs']]:
+    def key_performance_metrics(self) -> pulumi.Input[Optional['BrowserMonitorKeyPerformanceMetricsArgs']]:
         """
         The key performance metrics configuration
         """
         return pulumi.get(self, "key_performance_metrics")
 
     @key_performance_metrics.setter
-    def key_performance_metrics(self, value: Optional[pulumi.Input['BrowserMonitorKeyPerformanceMetricsArgs']]):
+    def key_performance_metrics(self, value: pulumi.Input[Optional['BrowserMonitorKeyPerformanceMetricsArgs']]):
         pulumi.set(self, "key_performance_metrics", value)
 
     @_builtins.property
     @pulumi.getter
-    def locations(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]:
+    def locations(self) -> pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]:
         """
         A list of locations from which the monitor is executed.
 
@@ -284,48 +284,48 @@ class _BrowserMonitorState:
         return pulumi.get(self, "locations")
 
     @locations.setter
-    def locations(self, value: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]):
+    def locations(self, value: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "locations", value)
 
     @_builtins.property
     @pulumi.getter(name="manuallyAssignedApps")
-    def manually_assigned_apps(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]:
+    def manually_assigned_apps(self) -> pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]:
         """
         A set of manually assigned applications.
         """
         return pulumi.get(self, "manually_assigned_apps")
 
     @manually_assigned_apps.setter
-    def manually_assigned_apps(self, value: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]):
+    def manually_assigned_apps(self, value: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "manually_assigned_apps", value)
 
     @_builtins.property
     @pulumi.getter
-    def name(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def name(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The name of the monitor.
         """
         return pulumi.get(self, "name")
 
     @name.setter
-    def name(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def name(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "name", value)
 
     @_builtins.property
     @pulumi.getter
-    def script(self) -> Optional[pulumi.Input['BrowserMonitorScriptArgs']]:
+    def script(self) -> pulumi.Input[Optional['BrowserMonitorScriptArgs']]:
         """
         The Browser Script
         """
         return pulumi.get(self, "script")
 
     @script.setter
-    def script(self, value: Optional[pulumi.Input['BrowserMonitorScriptArgs']]):
+    def script(self, value: pulumi.Input[Optional['BrowserMonitorScriptArgs']]):
         pulumi.set(self, "script", value)
 
     @_builtins.property
     @pulumi.getter
-    def tags(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['BrowserMonitorTagArgs']]]]:
+    def tags(self) -> pulumi.Input[Optional[Sequence[pulumi.Input['BrowserMonitorTagArgs']]]]:
         """
         A set of tags assigned to the monitor.
 
@@ -334,7 +334,7 @@ class _BrowserMonitorState:
         return pulumi.get(self, "tags")
 
     @tags.setter
-    def tags(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['BrowserMonitorTagArgs']]]]):
+    def tags(self, value: pulumi.Input[Optional[Sequence[pulumi.Input['BrowserMonitorTagArgs']]]]):
         pulumi.set(self, "tags", value)
 
 
@@ -344,15 +344,15 @@ class BrowserMonitor(pulumi.CustomResource):
     def __init__(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 anomaly_detection: Optional[pulumi.Input[Union['BrowserMonitorAnomalyDetectionArgs', 'BrowserMonitorAnomalyDetectionArgsDict']]] = None,
-                 enabled: Optional[pulumi.Input[_builtins.bool]] = None,
-                 frequency: Optional[pulumi.Input[_builtins.int]] = None,
-                 key_performance_metrics: Optional[pulumi.Input[Union['BrowserMonitorKeyPerformanceMetricsArgs', 'BrowserMonitorKeyPerformanceMetricsArgsDict']]] = None,
-                 locations: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-                 manually_assigned_apps: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-                 name: Optional[pulumi.Input[_builtins.str]] = None,
-                 script: Optional[pulumi.Input[Union['BrowserMonitorScriptArgs', 'BrowserMonitorScriptArgsDict']]] = None,
-                 tags: Optional[pulumi.Input[Sequence[pulumi.Input[Union['BrowserMonitorTagArgs', 'BrowserMonitorTagArgsDict']]]]] = None,
+                 anomaly_detection: pulumi.Input[Optional[Union['BrowserMonitorAnomalyDetectionArgs', 'BrowserMonitorAnomalyDetectionArgsDict']]] = None,
+                 enabled: pulumi.Input[Optional[_builtins.bool]] = None,
+                 frequency: pulumi.Input[Optional[_builtins.int]] = None,
+                 key_performance_metrics: pulumi.Input[Optional[Union['BrowserMonitorKeyPerformanceMetricsArgs', 'BrowserMonitorKeyPerformanceMetricsArgsDict']]] = None,
+                 locations: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 manually_assigned_apps: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 name: pulumi.Input[Optional[_builtins.str]] = None,
+                 script: pulumi.Input[Optional[Union['BrowserMonitorScriptArgs', 'BrowserMonitorScriptArgsDict']]] = None,
+                 tags: pulumi.Input[Optional[Sequence[pulumi.Input[Union['BrowserMonitorTagArgs', 'BrowserMonitorTagArgsDict']]]]] = None,
                  __props__=None):
         """
         > This resource requires the API token scope **Create and read synthetic monitors, locations, and nodes** (`ExternalSyntheticIntegration`)
@@ -423,15 +423,15 @@ class BrowserMonitor(pulumi.CustomResource):
     def _internal_init(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 anomaly_detection: Optional[pulumi.Input[Union['BrowserMonitorAnomalyDetectionArgs', 'BrowserMonitorAnomalyDetectionArgsDict']]] = None,
-                 enabled: Optional[pulumi.Input[_builtins.bool]] = None,
-                 frequency: Optional[pulumi.Input[_builtins.int]] = None,
-                 key_performance_metrics: Optional[pulumi.Input[Union['BrowserMonitorKeyPerformanceMetricsArgs', 'BrowserMonitorKeyPerformanceMetricsArgsDict']]] = None,
-                 locations: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-                 manually_assigned_apps: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-                 name: Optional[pulumi.Input[_builtins.str]] = None,
-                 script: Optional[pulumi.Input[Union['BrowserMonitorScriptArgs', 'BrowserMonitorScriptArgsDict']]] = None,
-                 tags: Optional[pulumi.Input[Sequence[pulumi.Input[Union['BrowserMonitorTagArgs', 'BrowserMonitorTagArgsDict']]]]] = None,
+                 anomaly_detection: pulumi.Input[Optional[Union['BrowserMonitorAnomalyDetectionArgs', 'BrowserMonitorAnomalyDetectionArgsDict']]] = None,
+                 enabled: pulumi.Input[Optional[_builtins.bool]] = None,
+                 frequency: pulumi.Input[Optional[_builtins.int]] = None,
+                 key_performance_metrics: pulumi.Input[Optional[Union['BrowserMonitorKeyPerformanceMetricsArgs', 'BrowserMonitorKeyPerformanceMetricsArgsDict']]] = None,
+                 locations: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 manually_assigned_apps: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 name: pulumi.Input[Optional[_builtins.str]] = None,
+                 script: pulumi.Input[Optional[Union['BrowserMonitorScriptArgs', 'BrowserMonitorScriptArgsDict']]] = None,
+                 tags: pulumi.Input[Optional[Sequence[pulumi.Input[Union['BrowserMonitorTagArgs', 'BrowserMonitorTagArgsDict']]]]] = None,
                  __props__=None):
         opts = pulumi.ResourceOptions.merge(_utilities.get_resource_opts_defaults(), opts)
         if not isinstance(opts, pulumi.ResourceOptions):
@@ -464,15 +464,15 @@ class BrowserMonitor(pulumi.CustomResource):
     def get(resource_name: str,
             id: pulumi.Input[str],
             opts: Optional[pulumi.ResourceOptions] = None,
-            anomaly_detection: Optional[pulumi.Input[Union['BrowserMonitorAnomalyDetectionArgs', 'BrowserMonitorAnomalyDetectionArgsDict']]] = None,
-            enabled: Optional[pulumi.Input[_builtins.bool]] = None,
-            frequency: Optional[pulumi.Input[_builtins.int]] = None,
-            key_performance_metrics: Optional[pulumi.Input[Union['BrowserMonitorKeyPerformanceMetricsArgs', 'BrowserMonitorKeyPerformanceMetricsArgsDict']]] = None,
-            locations: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-            manually_assigned_apps: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-            name: Optional[pulumi.Input[_builtins.str]] = None,
-            script: Optional[pulumi.Input[Union['BrowserMonitorScriptArgs', 'BrowserMonitorScriptArgsDict']]] = None,
-            tags: Optional[pulumi.Input[Sequence[pulumi.Input[Union['BrowserMonitorTagArgs', 'BrowserMonitorTagArgsDict']]]]] = None) -> 'BrowserMonitor':
+            anomaly_detection: pulumi.Input[Optional[Union['BrowserMonitorAnomalyDetectionArgs', 'BrowserMonitorAnomalyDetectionArgsDict']]] = None,
+            enabled: pulumi.Input[Optional[_builtins.bool]] = None,
+            frequency: pulumi.Input[Optional[_builtins.int]] = None,
+            key_performance_metrics: pulumi.Input[Optional[Union['BrowserMonitorKeyPerformanceMetricsArgs', 'BrowserMonitorKeyPerformanceMetricsArgsDict']]] = None,
+            locations: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+            manually_assigned_apps: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+            name: pulumi.Input[Optional[_builtins.str]] = None,
+            script: pulumi.Input[Optional[Union['BrowserMonitorScriptArgs', 'BrowserMonitorScriptArgsDict']]] = None,
+            tags: pulumi.Input[Optional[Sequence[pulumi.Input[Union['BrowserMonitorTagArgs', 'BrowserMonitorTagArgsDict']]]]] = None) -> 'BrowserMonitor':
         """
         Get an existing BrowserMonitor resource's state with the given name, id, and optional extra
         properties used to qualify the lookup.

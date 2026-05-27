@@ -241,7 +241,7 @@ def get_slo(name: Optional[_builtins.str] = None,
         name=pulumi.get(__ret__, 'name'),
         target_success=pulumi.get(__ret__, 'target_success'),
         target_warning=pulumi.get(__ret__, 'target_warning'))
-def get_slo_output(name: Optional[pulumi.Input[_builtins.str]] = None,
+def get_slo_output(name: pulumi.Input[Optional[_builtins.str]] = None,
                    opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetSloResult]:
     """
     The `Slo` data source allows the SLO ID to be retrieved by its name.

@@ -24,17 +24,17 @@ class WebhookNotificationArgs:
                  active: pulumi.Input[_builtins.bool],
                  payload: pulumi.Input[_builtins.str],
                  profile: pulumi.Input[_builtins.str],
-                 headers: Optional[pulumi.Input['WebhookNotificationHeadersArgs']] = None,
-                 insecure: Optional[pulumi.Input[_builtins.bool]] = None,
-                 legacy_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 name: Optional[pulumi.Input[_builtins.str]] = None,
-                 notify_closed_problems: Optional[pulumi.Input[_builtins.bool]] = None,
-                 notify_event_merges: Optional[pulumi.Input[_builtins.bool]] = None,
-                 oauth2_credentials: Optional[pulumi.Input['WebhookNotificationOauth2CredentialsArgs']] = None,
-                 secret_url: Optional[pulumi.Input[_builtins.str]] = None,
-                 url: Optional[pulumi.Input[_builtins.str]] = None,
-                 url_contains_secret: Optional[pulumi.Input[_builtins.bool]] = None,
-                 use_oauth2: Optional[pulumi.Input[_builtins.bool]] = None):
+                 headers: pulumi.Input[Optional['WebhookNotificationHeadersArgs']] = None,
+                 insecure: pulumi.Input[Optional[_builtins.bool]] = None,
+                 legacy_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 name: pulumi.Input[Optional[_builtins.str]] = None,
+                 notify_closed_problems: pulumi.Input[Optional[_builtins.bool]] = None,
+                 notify_event_merges: pulumi.Input[Optional[_builtins.bool]] = None,
+                 oauth2_credentials: pulumi.Input[Optional['WebhookNotificationOauth2CredentialsArgs']] = None,
+                 secret_url: pulumi.Input[Optional[_builtins.str]] = None,
+                 url: pulumi.Input[Optional[_builtins.str]] = None,
+                 url_contains_secret: pulumi.Input[Optional[_builtins.bool]] = None,
+                 use_oauth2: pulumi.Input[Optional[_builtins.bool]] = None):
         """
         The set of arguments for constructing a WebhookNotification resource.
 
@@ -121,79 +121,79 @@ class WebhookNotificationArgs:
 
     @_builtins.property
     @pulumi.getter
-    def headers(self) -> Optional[pulumi.Input['WebhookNotificationHeadersArgs']]:
+    def headers(self) -> pulumi.Input[Optional['WebhookNotificationHeadersArgs']]:
         """
         A list of the additional HTTP headers.
         """
         return pulumi.get(self, "headers")
 
     @headers.setter
-    def headers(self, value: Optional[pulumi.Input['WebhookNotificationHeadersArgs']]):
+    def headers(self, value: pulumi.Input[Optional['WebhookNotificationHeadersArgs']]):
         pulumi.set(self, "headers", value)
 
     @_builtins.property
     @pulumi.getter
-    def insecure(self) -> Optional[pulumi.Input[_builtins.bool]]:
+    def insecure(self) -> pulumi.Input[Optional[_builtins.bool]]:
         """
         Accept any SSL certificate (including self-signed and invalid certificates)
         """
         return pulumi.get(self, "insecure")
 
     @insecure.setter
-    def insecure(self, value: Optional[pulumi.Input[_builtins.bool]]):
+    def insecure(self, value: pulumi.Input[Optional[_builtins.bool]]):
         pulumi.set(self, "insecure", value)
 
     @_builtins.property
     @pulumi.getter(name="legacyId")
-    def legacy_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def legacy_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The ID of these settings when referred to from resources requiring the REST API V1 keys
         """
         return pulumi.get(self, "legacy_id")
 
     @legacy_id.setter
-    def legacy_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def legacy_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "legacy_id", value)
 
     @_builtins.property
     @pulumi.getter
-    def name(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def name(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The name of the notification configuration.
         """
         return pulumi.get(self, "name")
 
     @name.setter
-    def name(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def name(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "name", value)
 
     @_builtins.property
     @pulumi.getter(name="notifyClosedProblems")
-    def notify_closed_problems(self) -> Optional[pulumi.Input[_builtins.bool]]:
+    def notify_closed_problems(self) -> pulumi.Input[Optional[_builtins.bool]]:
         """
         Call webhook if problem is closed
         """
         return pulumi.get(self, "notify_closed_problems")
 
     @notify_closed_problems.setter
-    def notify_closed_problems(self, value: Optional[pulumi.Input[_builtins.bool]]):
+    def notify_closed_problems(self, value: pulumi.Input[Optional[_builtins.bool]]):
         pulumi.set(self, "notify_closed_problems", value)
 
     @_builtins.property
     @pulumi.getter(name="notifyEventMerges")
-    def notify_event_merges(self) -> Optional[pulumi.Input[_builtins.bool]]:
+    def notify_event_merges(self) -> pulumi.Input[Optional[_builtins.bool]]:
         """
         Call webhook if new events merge into existing problems
         """
         return pulumi.get(self, "notify_event_merges")
 
     @notify_event_merges.setter
-    def notify_event_merges(self, value: Optional[pulumi.Input[_builtins.bool]]):
+    def notify_event_merges(self, value: pulumi.Input[Optional[_builtins.bool]]):
         pulumi.set(self, "notify_event_merges", value)
 
     @_builtins.property
     @pulumi.getter(name="oauth2Credentials")
-    def oauth2_credentials(self) -> Optional[pulumi.Input['WebhookNotificationOauth2CredentialsArgs']]:
+    def oauth2_credentials(self) -> pulumi.Input[Optional['WebhookNotificationOauth2CredentialsArgs']]:
         """
         To authenticate your integration, the OAuth 2.0 *Client Credentials* Flow (Grant Type) is used. For details see [Client Credentials Flow](https://dt-url.net/ym22wsm)).
 
@@ -202,75 +202,75 @@ class WebhookNotificationArgs:
         return pulumi.get(self, "oauth2_credentials")
 
     @oauth2_credentials.setter
-    def oauth2_credentials(self, value: Optional[pulumi.Input['WebhookNotificationOauth2CredentialsArgs']]):
+    def oauth2_credentials(self, value: pulumi.Input[Optional['WebhookNotificationOauth2CredentialsArgs']]):
         pulumi.set(self, "oauth2_credentials", value)
 
     @_builtins.property
     @pulumi.getter(name="secretUrl")
-    def secret_url(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def secret_url(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The secret URL of the webhook endpoint.
         """
         return pulumi.get(self, "secret_url")
 
     @secret_url.setter
-    def secret_url(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def secret_url(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "secret_url", value)
 
     @_builtins.property
     @pulumi.getter
-    def url(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def url(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The URL of the webhook endpoint.
         """
         return pulumi.get(self, "url")
 
     @url.setter
-    def url(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def url(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "url", value)
 
     @_builtins.property
     @pulumi.getter(name="urlContainsSecret")
-    def url_contains_secret(self) -> Optional[pulumi.Input[_builtins.bool]]:
+    def url_contains_secret(self) -> pulumi.Input[Optional[_builtins.bool]]:
         """
         Secret webhook URL
         """
         return pulumi.get(self, "url_contains_secret")
 
     @url_contains_secret.setter
-    def url_contains_secret(self, value: Optional[pulumi.Input[_builtins.bool]]):
+    def url_contains_secret(self, value: pulumi.Input[Optional[_builtins.bool]]):
         pulumi.set(self, "url_contains_secret", value)
 
     @_builtins.property
     @pulumi.getter(name="useOauth2")
-    def use_oauth2(self) -> Optional[pulumi.Input[_builtins.bool]]:
+    def use_oauth2(self) -> pulumi.Input[Optional[_builtins.bool]]:
         """
         Use OAuth 2.0 for authentication
         """
         return pulumi.get(self, "use_oauth2")
 
     @use_oauth2.setter
-    def use_oauth2(self, value: Optional[pulumi.Input[_builtins.bool]]):
+    def use_oauth2(self, value: pulumi.Input[Optional[_builtins.bool]]):
         pulumi.set(self, "use_oauth2", value)
 
 
 @pulumi.input_type
 class _WebhookNotificationState:
     def __init__(__self__, *,
-                 active: Optional[pulumi.Input[_builtins.bool]] = None,
-                 headers: Optional[pulumi.Input['WebhookNotificationHeadersArgs']] = None,
-                 insecure: Optional[pulumi.Input[_builtins.bool]] = None,
-                 legacy_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 name: Optional[pulumi.Input[_builtins.str]] = None,
-                 notify_closed_problems: Optional[pulumi.Input[_builtins.bool]] = None,
-                 notify_event_merges: Optional[pulumi.Input[_builtins.bool]] = None,
-                 oauth2_credentials: Optional[pulumi.Input['WebhookNotificationOauth2CredentialsArgs']] = None,
-                 payload: Optional[pulumi.Input[_builtins.str]] = None,
-                 profile: Optional[pulumi.Input[_builtins.str]] = None,
-                 secret_url: Optional[pulumi.Input[_builtins.str]] = None,
-                 url: Optional[pulumi.Input[_builtins.str]] = None,
-                 url_contains_secret: Optional[pulumi.Input[_builtins.bool]] = None,
-                 use_oauth2: Optional[pulumi.Input[_builtins.bool]] = None):
+                 active: pulumi.Input[Optional[_builtins.bool]] = None,
+                 headers: pulumi.Input[Optional['WebhookNotificationHeadersArgs']] = None,
+                 insecure: pulumi.Input[Optional[_builtins.bool]] = None,
+                 legacy_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 name: pulumi.Input[Optional[_builtins.str]] = None,
+                 notify_closed_problems: pulumi.Input[Optional[_builtins.bool]] = None,
+                 notify_event_merges: pulumi.Input[Optional[_builtins.bool]] = None,
+                 oauth2_credentials: pulumi.Input[Optional['WebhookNotificationOauth2CredentialsArgs']] = None,
+                 payload: pulumi.Input[Optional[_builtins.str]] = None,
+                 profile: pulumi.Input[Optional[_builtins.str]] = None,
+                 secret_url: pulumi.Input[Optional[_builtins.str]] = None,
+                 url: pulumi.Input[Optional[_builtins.str]] = None,
+                 url_contains_secret: pulumi.Input[Optional[_builtins.bool]] = None,
+                 use_oauth2: pulumi.Input[Optional[_builtins.bool]] = None):
         """
         Input properties used for looking up and filtering WebhookNotification resources.
 
@@ -323,91 +323,91 @@ class _WebhookNotificationState:
 
     @_builtins.property
     @pulumi.getter
-    def active(self) -> Optional[pulumi.Input[_builtins.bool]]:
+    def active(self) -> pulumi.Input[Optional[_builtins.bool]]:
         """
         This setting is enabled (`true`) or disabled (`false`)
         """
         return pulumi.get(self, "active")
 
     @active.setter
-    def active(self, value: Optional[pulumi.Input[_builtins.bool]]):
+    def active(self, value: pulumi.Input[Optional[_builtins.bool]]):
         pulumi.set(self, "active", value)
 
     @_builtins.property
     @pulumi.getter
-    def headers(self) -> Optional[pulumi.Input['WebhookNotificationHeadersArgs']]:
+    def headers(self) -> pulumi.Input[Optional['WebhookNotificationHeadersArgs']]:
         """
         A list of the additional HTTP headers.
         """
         return pulumi.get(self, "headers")
 
     @headers.setter
-    def headers(self, value: Optional[pulumi.Input['WebhookNotificationHeadersArgs']]):
+    def headers(self, value: pulumi.Input[Optional['WebhookNotificationHeadersArgs']]):
         pulumi.set(self, "headers", value)
 
     @_builtins.property
     @pulumi.getter
-    def insecure(self) -> Optional[pulumi.Input[_builtins.bool]]:
+    def insecure(self) -> pulumi.Input[Optional[_builtins.bool]]:
         """
         Accept any SSL certificate (including self-signed and invalid certificates)
         """
         return pulumi.get(self, "insecure")
 
     @insecure.setter
-    def insecure(self, value: Optional[pulumi.Input[_builtins.bool]]):
+    def insecure(self, value: pulumi.Input[Optional[_builtins.bool]]):
         pulumi.set(self, "insecure", value)
 
     @_builtins.property
     @pulumi.getter(name="legacyId")
-    def legacy_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def legacy_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The ID of these settings when referred to from resources requiring the REST API V1 keys
         """
         return pulumi.get(self, "legacy_id")
 
     @legacy_id.setter
-    def legacy_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def legacy_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "legacy_id", value)
 
     @_builtins.property
     @pulumi.getter
-    def name(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def name(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The name of the notification configuration.
         """
         return pulumi.get(self, "name")
 
     @name.setter
-    def name(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def name(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "name", value)
 
     @_builtins.property
     @pulumi.getter(name="notifyClosedProblems")
-    def notify_closed_problems(self) -> Optional[pulumi.Input[_builtins.bool]]:
+    def notify_closed_problems(self) -> pulumi.Input[Optional[_builtins.bool]]:
         """
         Call webhook if problem is closed
         """
         return pulumi.get(self, "notify_closed_problems")
 
     @notify_closed_problems.setter
-    def notify_closed_problems(self, value: Optional[pulumi.Input[_builtins.bool]]):
+    def notify_closed_problems(self, value: pulumi.Input[Optional[_builtins.bool]]):
         pulumi.set(self, "notify_closed_problems", value)
 
     @_builtins.property
     @pulumi.getter(name="notifyEventMerges")
-    def notify_event_merges(self) -> Optional[pulumi.Input[_builtins.bool]]:
+    def notify_event_merges(self) -> pulumi.Input[Optional[_builtins.bool]]:
         """
         Call webhook if new events merge into existing problems
         """
         return pulumi.get(self, "notify_event_merges")
 
     @notify_event_merges.setter
-    def notify_event_merges(self, value: Optional[pulumi.Input[_builtins.bool]]):
+    def notify_event_merges(self, value: pulumi.Input[Optional[_builtins.bool]]):
         pulumi.set(self, "notify_event_merges", value)
 
     @_builtins.property
     @pulumi.getter(name="oauth2Credentials")
-    def oauth2_credentials(self) -> Optional[pulumi.Input['WebhookNotificationOauth2CredentialsArgs']]:
+    def oauth2_credentials(self) -> pulumi.Input[Optional['WebhookNotificationOauth2CredentialsArgs']]:
         """
         To authenticate your integration, the OAuth 2.0 *Client Credentials* Flow (Grant Type) is used. For details see [Client Credentials Flow](https://dt-url.net/ym22wsm)).
 
@@ -416,12 +416,12 @@ class _WebhookNotificationState:
         return pulumi.get(self, "oauth2_credentials")
 
     @oauth2_credentials.setter
-    def oauth2_credentials(self, value: Optional[pulumi.Input['WebhookNotificationOauth2CredentialsArgs']]):
+    def oauth2_credentials(self, value: pulumi.Input[Optional['WebhookNotificationOauth2CredentialsArgs']]):
         pulumi.set(self, "oauth2_credentials", value)
 
     @_builtins.property
     @pulumi.getter
-    def payload(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def payload(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The content of the notification message. Type '{' for placeholder suggestions.. #### Available placeholders
         **{ImpactedEntities}**: Details about the entities impacted by the problem in form of a json array.
@@ -429,67 +429,67 @@ class _WebhookNotificationState:
         return pulumi.get(self, "payload")
 
     @payload.setter
-    def payload(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def payload(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "payload", value)
 
     @_builtins.property
     @pulumi.getter
-    def profile(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def profile(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The ID of the associated alerting profile
         """
         return pulumi.get(self, "profile")
 
     @profile.setter
-    def profile(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def profile(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "profile", value)
 
     @_builtins.property
     @pulumi.getter(name="secretUrl")
-    def secret_url(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def secret_url(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The secret URL of the webhook endpoint.
         """
         return pulumi.get(self, "secret_url")
 
     @secret_url.setter
-    def secret_url(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def secret_url(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "secret_url", value)
 
     @_builtins.property
     @pulumi.getter
-    def url(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def url(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The URL of the webhook endpoint.
         """
         return pulumi.get(self, "url")
 
     @url.setter
-    def url(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def url(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "url", value)
 
     @_builtins.property
     @pulumi.getter(name="urlContainsSecret")
-    def url_contains_secret(self) -> Optional[pulumi.Input[_builtins.bool]]:
+    def url_contains_secret(self) -> pulumi.Input[Optional[_builtins.bool]]:
         """
         Secret webhook URL
         """
         return pulumi.get(self, "url_contains_secret")
 
     @url_contains_secret.setter
-    def url_contains_secret(self, value: Optional[pulumi.Input[_builtins.bool]]):
+    def url_contains_secret(self, value: pulumi.Input[Optional[_builtins.bool]]):
         pulumi.set(self, "url_contains_secret", value)
 
     @_builtins.property
     @pulumi.getter(name="useOauth2")
-    def use_oauth2(self) -> Optional[pulumi.Input[_builtins.bool]]:
+    def use_oauth2(self) -> pulumi.Input[Optional[_builtins.bool]]:
         """
         Use OAuth 2.0 for authentication
         """
         return pulumi.get(self, "use_oauth2")
 
     @use_oauth2.setter
-    def use_oauth2(self, value: Optional[pulumi.Input[_builtins.bool]]):
+    def use_oauth2(self, value: pulumi.Input[Optional[_builtins.bool]]):
         pulumi.set(self, "use_oauth2", value)
 
 
@@ -499,20 +499,20 @@ class WebhookNotification(pulumi.CustomResource):
     def __init__(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 active: Optional[pulumi.Input[_builtins.bool]] = None,
-                 headers: Optional[pulumi.Input[Union['WebhookNotificationHeadersArgs', 'WebhookNotificationHeadersArgsDict']]] = None,
-                 insecure: Optional[pulumi.Input[_builtins.bool]] = None,
-                 legacy_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 name: Optional[pulumi.Input[_builtins.str]] = None,
-                 notify_closed_problems: Optional[pulumi.Input[_builtins.bool]] = None,
-                 notify_event_merges: Optional[pulumi.Input[_builtins.bool]] = None,
-                 oauth2_credentials: Optional[pulumi.Input[Union['WebhookNotificationOauth2CredentialsArgs', 'WebhookNotificationOauth2CredentialsArgsDict']]] = None,
-                 payload: Optional[pulumi.Input[_builtins.str]] = None,
-                 profile: Optional[pulumi.Input[_builtins.str]] = None,
-                 secret_url: Optional[pulumi.Input[_builtins.str]] = None,
-                 url: Optional[pulumi.Input[_builtins.str]] = None,
-                 url_contains_secret: Optional[pulumi.Input[_builtins.bool]] = None,
-                 use_oauth2: Optional[pulumi.Input[_builtins.bool]] = None,
+                 active: pulumi.Input[Optional[_builtins.bool]] = None,
+                 headers: pulumi.Input[Optional[Union['WebhookNotificationHeadersArgs', 'WebhookNotificationHeadersArgsDict']]] = None,
+                 insecure: pulumi.Input[Optional[_builtins.bool]] = None,
+                 legacy_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 name: pulumi.Input[Optional[_builtins.str]] = None,
+                 notify_closed_problems: pulumi.Input[Optional[_builtins.bool]] = None,
+                 notify_event_merges: pulumi.Input[Optional[_builtins.bool]] = None,
+                 oauth2_credentials: pulumi.Input[Optional[Union['WebhookNotificationOauth2CredentialsArgs', 'WebhookNotificationOauth2CredentialsArgsDict']]] = None,
+                 payload: pulumi.Input[Optional[_builtins.str]] = None,
+                 profile: pulumi.Input[Optional[_builtins.str]] = None,
+                 secret_url: pulumi.Input[Optional[_builtins.str]] = None,
+                 url: pulumi.Input[Optional[_builtins.str]] = None,
+                 url_contains_secret: pulumi.Input[Optional[_builtins.bool]] = None,
+                 use_oauth2: pulumi.Input[Optional[_builtins.bool]] = None,
                  __props__=None):
         """
         > This resource requires the API token scopes **Read settings** (`settings.read`) and **Write settings** (`settings.write`)
@@ -587,20 +587,20 @@ class WebhookNotification(pulumi.CustomResource):
     def _internal_init(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 active: Optional[pulumi.Input[_builtins.bool]] = None,
-                 headers: Optional[pulumi.Input[Union['WebhookNotificationHeadersArgs', 'WebhookNotificationHeadersArgsDict']]] = None,
-                 insecure: Optional[pulumi.Input[_builtins.bool]] = None,
-                 legacy_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 name: Optional[pulumi.Input[_builtins.str]] = None,
-                 notify_closed_problems: Optional[pulumi.Input[_builtins.bool]] = None,
-                 notify_event_merges: Optional[pulumi.Input[_builtins.bool]] = None,
-                 oauth2_credentials: Optional[pulumi.Input[Union['WebhookNotificationOauth2CredentialsArgs', 'WebhookNotificationOauth2CredentialsArgsDict']]] = None,
-                 payload: Optional[pulumi.Input[_builtins.str]] = None,
-                 profile: Optional[pulumi.Input[_builtins.str]] = None,
-                 secret_url: Optional[pulumi.Input[_builtins.str]] = None,
-                 url: Optional[pulumi.Input[_builtins.str]] = None,
-                 url_contains_secret: Optional[pulumi.Input[_builtins.bool]] = None,
-                 use_oauth2: Optional[pulumi.Input[_builtins.bool]] = None,
+                 active: pulumi.Input[Optional[_builtins.bool]] = None,
+                 headers: pulumi.Input[Optional[Union['WebhookNotificationHeadersArgs', 'WebhookNotificationHeadersArgsDict']]] = None,
+                 insecure: pulumi.Input[Optional[_builtins.bool]] = None,
+                 legacy_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 name: pulumi.Input[Optional[_builtins.str]] = None,
+                 notify_closed_problems: pulumi.Input[Optional[_builtins.bool]] = None,
+                 notify_event_merges: pulumi.Input[Optional[_builtins.bool]] = None,
+                 oauth2_credentials: pulumi.Input[Optional[Union['WebhookNotificationOauth2CredentialsArgs', 'WebhookNotificationOauth2CredentialsArgsDict']]] = None,
+                 payload: pulumi.Input[Optional[_builtins.str]] = None,
+                 profile: pulumi.Input[Optional[_builtins.str]] = None,
+                 secret_url: pulumi.Input[Optional[_builtins.str]] = None,
+                 url: pulumi.Input[Optional[_builtins.str]] = None,
+                 url_contains_secret: pulumi.Input[Optional[_builtins.bool]] = None,
+                 use_oauth2: pulumi.Input[Optional[_builtins.bool]] = None,
                  __props__=None):
         opts = pulumi.ResourceOptions.merge(_utilities.get_resource_opts_defaults(), opts)
         if not isinstance(opts, pulumi.ResourceOptions):
@@ -642,20 +642,20 @@ class WebhookNotification(pulumi.CustomResource):
     def get(resource_name: str,
             id: pulumi.Input[str],
             opts: Optional[pulumi.ResourceOptions] = None,
-            active: Optional[pulumi.Input[_builtins.bool]] = None,
-            headers: Optional[pulumi.Input[Union['WebhookNotificationHeadersArgs', 'WebhookNotificationHeadersArgsDict']]] = None,
-            insecure: Optional[pulumi.Input[_builtins.bool]] = None,
-            legacy_id: Optional[pulumi.Input[_builtins.str]] = None,
-            name: Optional[pulumi.Input[_builtins.str]] = None,
-            notify_closed_problems: Optional[pulumi.Input[_builtins.bool]] = None,
-            notify_event_merges: Optional[pulumi.Input[_builtins.bool]] = None,
-            oauth2_credentials: Optional[pulumi.Input[Union['WebhookNotificationOauth2CredentialsArgs', 'WebhookNotificationOauth2CredentialsArgsDict']]] = None,
-            payload: Optional[pulumi.Input[_builtins.str]] = None,
-            profile: Optional[pulumi.Input[_builtins.str]] = None,
-            secret_url: Optional[pulumi.Input[_builtins.str]] = None,
-            url: Optional[pulumi.Input[_builtins.str]] = None,
-            url_contains_secret: Optional[pulumi.Input[_builtins.bool]] = None,
-            use_oauth2: Optional[pulumi.Input[_builtins.bool]] = None) -> 'WebhookNotification':
+            active: pulumi.Input[Optional[_builtins.bool]] = None,
+            headers: pulumi.Input[Optional[Union['WebhookNotificationHeadersArgs', 'WebhookNotificationHeadersArgsDict']]] = None,
+            insecure: pulumi.Input[Optional[_builtins.bool]] = None,
+            legacy_id: pulumi.Input[Optional[_builtins.str]] = None,
+            name: pulumi.Input[Optional[_builtins.str]] = None,
+            notify_closed_problems: pulumi.Input[Optional[_builtins.bool]] = None,
+            notify_event_merges: pulumi.Input[Optional[_builtins.bool]] = None,
+            oauth2_credentials: pulumi.Input[Optional[Union['WebhookNotificationOauth2CredentialsArgs', 'WebhookNotificationOauth2CredentialsArgsDict']]] = None,
+            payload: pulumi.Input[Optional[_builtins.str]] = None,
+            profile: pulumi.Input[Optional[_builtins.str]] = None,
+            secret_url: pulumi.Input[Optional[_builtins.str]] = None,
+            url: pulumi.Input[Optional[_builtins.str]] = None,
+            url_contains_secret: pulumi.Input[Optional[_builtins.bool]] = None,
+            use_oauth2: pulumi.Input[Optional[_builtins.bool]] = None) -> 'WebhookNotification':
         """
         Get an existing WebhookNotification resource's state with the given name, id, and optional extra
         properties used to qualify the lookup.

@@ -161,7 +161,7 @@ def get_api_token(name: Optional[_builtins.str] = None,
         owner=pulumi.get(__ret__, 'owner'),
         personal_access_token=pulumi.get(__ret__, 'personal_access_token'),
         scopes=pulumi.get(__ret__, 'scopes'))
-def get_api_token_output(name: Optional[pulumi.Input[_builtins.str]] = None,
+def get_api_token_output(name: pulumi.Input[Optional[_builtins.str]] = None,
                          opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetApiTokenResult]:
     """
     The API token data source allows a single access token to be retrieved by its name, note the token value is not included in the response.

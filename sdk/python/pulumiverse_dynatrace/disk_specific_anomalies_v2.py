@@ -25,9 +25,9 @@ class DiskSpecificAnomaliesV2Args:
                  override_disk_low_space_detection: pulumi.Input[_builtins.bool],
                  override_low_inodes_detection: pulumi.Input[_builtins.bool],
                  override_slow_writes_and_reads_detection: pulumi.Input[_builtins.bool],
-                 disk_low_inodes_detection: Optional[pulumi.Input['DiskSpecificAnomaliesV2DiskLowInodesDetectionArgs']] = None,
-                 disk_low_space_detection: Optional[pulumi.Input['DiskSpecificAnomaliesV2DiskLowSpaceDetectionArgs']] = None,
-                 disk_slow_writes_and_reads_detection: Optional[pulumi.Input['DiskSpecificAnomaliesV2DiskSlowWritesAndReadsDetectionArgs']] = None):
+                 disk_low_inodes_detection: pulumi.Input[Optional['DiskSpecificAnomaliesV2DiskLowInodesDetectionArgs']] = None,
+                 disk_low_space_detection: pulumi.Input[Optional['DiskSpecificAnomaliesV2DiskLowSpaceDetectionArgs']] = None,
+                 disk_slow_writes_and_reads_detection: pulumi.Input[Optional['DiskSpecificAnomaliesV2DiskSlowWritesAndReadsDetectionArgs']] = None):
         """
         The set of arguments for constructing a DiskSpecificAnomaliesV2 resource.
 
@@ -100,51 +100,51 @@ class DiskSpecificAnomaliesV2Args:
 
     @_builtins.property
     @pulumi.getter(name="diskLowInodesDetection")
-    def disk_low_inodes_detection(self) -> Optional[pulumi.Input['DiskSpecificAnomaliesV2DiskLowInodesDetectionArgs']]:
+    def disk_low_inodes_detection(self) -> pulumi.Input[Optional['DiskSpecificAnomaliesV2DiskLowInodesDetectionArgs']]:
         """
         no documentation available
         """
         return pulumi.get(self, "disk_low_inodes_detection")
 
     @disk_low_inodes_detection.setter
-    def disk_low_inodes_detection(self, value: Optional[pulumi.Input['DiskSpecificAnomaliesV2DiskLowInodesDetectionArgs']]):
+    def disk_low_inodes_detection(self, value: pulumi.Input[Optional['DiskSpecificAnomaliesV2DiskLowInodesDetectionArgs']]):
         pulumi.set(self, "disk_low_inodes_detection", value)
 
     @_builtins.property
     @pulumi.getter(name="diskLowSpaceDetection")
-    def disk_low_space_detection(self) -> Optional[pulumi.Input['DiskSpecificAnomaliesV2DiskLowSpaceDetectionArgs']]:
+    def disk_low_space_detection(self) -> pulumi.Input[Optional['DiskSpecificAnomaliesV2DiskLowSpaceDetectionArgs']]:
         """
         no documentation available
         """
         return pulumi.get(self, "disk_low_space_detection")
 
     @disk_low_space_detection.setter
-    def disk_low_space_detection(self, value: Optional[pulumi.Input['DiskSpecificAnomaliesV2DiskLowSpaceDetectionArgs']]):
+    def disk_low_space_detection(self, value: pulumi.Input[Optional['DiskSpecificAnomaliesV2DiskLowSpaceDetectionArgs']]):
         pulumi.set(self, "disk_low_space_detection", value)
 
     @_builtins.property
     @pulumi.getter(name="diskSlowWritesAndReadsDetection")
-    def disk_slow_writes_and_reads_detection(self) -> Optional[pulumi.Input['DiskSpecificAnomaliesV2DiskSlowWritesAndReadsDetectionArgs']]:
+    def disk_slow_writes_and_reads_detection(self) -> pulumi.Input[Optional['DiskSpecificAnomaliesV2DiskSlowWritesAndReadsDetectionArgs']]:
         """
         no documentation available
         """
         return pulumi.get(self, "disk_slow_writes_and_reads_detection")
 
     @disk_slow_writes_and_reads_detection.setter
-    def disk_slow_writes_and_reads_detection(self, value: Optional[pulumi.Input['DiskSpecificAnomaliesV2DiskSlowWritesAndReadsDetectionArgs']]):
+    def disk_slow_writes_and_reads_detection(self, value: pulumi.Input[Optional['DiskSpecificAnomaliesV2DiskSlowWritesAndReadsDetectionArgs']]):
         pulumi.set(self, "disk_slow_writes_and_reads_detection", value)
 
 
 @pulumi.input_type
 class _DiskSpecificAnomaliesV2State:
     def __init__(__self__, *,
-                 disk_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 disk_low_inodes_detection: Optional[pulumi.Input['DiskSpecificAnomaliesV2DiskLowInodesDetectionArgs']] = None,
-                 disk_low_space_detection: Optional[pulumi.Input['DiskSpecificAnomaliesV2DiskLowSpaceDetectionArgs']] = None,
-                 disk_slow_writes_and_reads_detection: Optional[pulumi.Input['DiskSpecificAnomaliesV2DiskSlowWritesAndReadsDetectionArgs']] = None,
-                 override_disk_low_space_detection: Optional[pulumi.Input[_builtins.bool]] = None,
-                 override_low_inodes_detection: Optional[pulumi.Input[_builtins.bool]] = None,
-                 override_slow_writes_and_reads_detection: Optional[pulumi.Input[_builtins.bool]] = None):
+                 disk_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 disk_low_inodes_detection: pulumi.Input[Optional['DiskSpecificAnomaliesV2DiskLowInodesDetectionArgs']] = None,
+                 disk_low_space_detection: pulumi.Input[Optional['DiskSpecificAnomaliesV2DiskLowSpaceDetectionArgs']] = None,
+                 disk_slow_writes_and_reads_detection: pulumi.Input[Optional['DiskSpecificAnomaliesV2DiskSlowWritesAndReadsDetectionArgs']] = None,
+                 override_disk_low_space_detection: pulumi.Input[Optional[_builtins.bool]] = None,
+                 override_low_inodes_detection: pulumi.Input[Optional[_builtins.bool]] = None,
+                 override_slow_writes_and_reads_detection: pulumi.Input[Optional[_builtins.bool]] = None):
         """
         Input properties used for looking up and filtering DiskSpecificAnomaliesV2 resources.
 
@@ -173,86 +173,86 @@ class _DiskSpecificAnomaliesV2State:
 
     @_builtins.property
     @pulumi.getter(name="diskId")
-    def disk_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def disk_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The id for the disk anomaly detection
         """
         return pulumi.get(self, "disk_id")
 
     @disk_id.setter
-    def disk_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def disk_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "disk_id", value)
 
     @_builtins.property
     @pulumi.getter(name="diskLowInodesDetection")
-    def disk_low_inodes_detection(self) -> Optional[pulumi.Input['DiskSpecificAnomaliesV2DiskLowInodesDetectionArgs']]:
+    def disk_low_inodes_detection(self) -> pulumi.Input[Optional['DiskSpecificAnomaliesV2DiskLowInodesDetectionArgs']]:
         """
         no documentation available
         """
         return pulumi.get(self, "disk_low_inodes_detection")
 
     @disk_low_inodes_detection.setter
-    def disk_low_inodes_detection(self, value: Optional[pulumi.Input['DiskSpecificAnomaliesV2DiskLowInodesDetectionArgs']]):
+    def disk_low_inodes_detection(self, value: pulumi.Input[Optional['DiskSpecificAnomaliesV2DiskLowInodesDetectionArgs']]):
         pulumi.set(self, "disk_low_inodes_detection", value)
 
     @_builtins.property
     @pulumi.getter(name="diskLowSpaceDetection")
-    def disk_low_space_detection(self) -> Optional[pulumi.Input['DiskSpecificAnomaliesV2DiskLowSpaceDetectionArgs']]:
+    def disk_low_space_detection(self) -> pulumi.Input[Optional['DiskSpecificAnomaliesV2DiskLowSpaceDetectionArgs']]:
         """
         no documentation available
         """
         return pulumi.get(self, "disk_low_space_detection")
 
     @disk_low_space_detection.setter
-    def disk_low_space_detection(self, value: Optional[pulumi.Input['DiskSpecificAnomaliesV2DiskLowSpaceDetectionArgs']]):
+    def disk_low_space_detection(self, value: pulumi.Input[Optional['DiskSpecificAnomaliesV2DiskLowSpaceDetectionArgs']]):
         pulumi.set(self, "disk_low_space_detection", value)
 
     @_builtins.property
     @pulumi.getter(name="diskSlowWritesAndReadsDetection")
-    def disk_slow_writes_and_reads_detection(self) -> Optional[pulumi.Input['DiskSpecificAnomaliesV2DiskSlowWritesAndReadsDetectionArgs']]:
+    def disk_slow_writes_and_reads_detection(self) -> pulumi.Input[Optional['DiskSpecificAnomaliesV2DiskSlowWritesAndReadsDetectionArgs']]:
         """
         no documentation available
         """
         return pulumi.get(self, "disk_slow_writes_and_reads_detection")
 
     @disk_slow_writes_and_reads_detection.setter
-    def disk_slow_writes_and_reads_detection(self, value: Optional[pulumi.Input['DiskSpecificAnomaliesV2DiskSlowWritesAndReadsDetectionArgs']]):
+    def disk_slow_writes_and_reads_detection(self, value: pulumi.Input[Optional['DiskSpecificAnomaliesV2DiskSlowWritesAndReadsDetectionArgs']]):
         pulumi.set(self, "disk_slow_writes_and_reads_detection", value)
 
     @_builtins.property
     @pulumi.getter(name="overrideDiskLowSpaceDetection")
-    def override_disk_low_space_detection(self) -> Optional[pulumi.Input[_builtins.bool]]:
+    def override_disk_low_space_detection(self) -> pulumi.Input[Optional[_builtins.bool]]:
         """
         Override low disk space detection settings
         """
         return pulumi.get(self, "override_disk_low_space_detection")
 
     @override_disk_low_space_detection.setter
-    def override_disk_low_space_detection(self, value: Optional[pulumi.Input[_builtins.bool]]):
+    def override_disk_low_space_detection(self, value: pulumi.Input[Optional[_builtins.bool]]):
         pulumi.set(self, "override_disk_low_space_detection", value)
 
     @_builtins.property
     @pulumi.getter(name="overrideLowInodesDetection")
-    def override_low_inodes_detection(self) -> Optional[pulumi.Input[_builtins.bool]]:
+    def override_low_inodes_detection(self) -> pulumi.Input[Optional[_builtins.bool]]:
         """
         Override low inodes detection settings
         """
         return pulumi.get(self, "override_low_inodes_detection")
 
     @override_low_inodes_detection.setter
-    def override_low_inodes_detection(self, value: Optional[pulumi.Input[_builtins.bool]]):
+    def override_low_inodes_detection(self, value: pulumi.Input[Optional[_builtins.bool]]):
         pulumi.set(self, "override_low_inodes_detection", value)
 
     @_builtins.property
     @pulumi.getter(name="overrideSlowWritesAndReadsDetection")
-    def override_slow_writes_and_reads_detection(self) -> Optional[pulumi.Input[_builtins.bool]]:
+    def override_slow_writes_and_reads_detection(self) -> pulumi.Input[Optional[_builtins.bool]]:
         """
         Override slow writes and reads detection settings
         """
         return pulumi.get(self, "override_slow_writes_and_reads_detection")
 
     @override_slow_writes_and_reads_detection.setter
-    def override_slow_writes_and_reads_detection(self, value: Optional[pulumi.Input[_builtins.bool]]):
+    def override_slow_writes_and_reads_detection(self, value: pulumi.Input[Optional[_builtins.bool]]):
         pulumi.set(self, "override_slow_writes_and_reads_detection", value)
 
 
@@ -262,13 +262,13 @@ class DiskSpecificAnomaliesV2(pulumi.CustomResource):
     def __init__(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 disk_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 disk_low_inodes_detection: Optional[pulumi.Input[Union['DiskSpecificAnomaliesV2DiskLowInodesDetectionArgs', 'DiskSpecificAnomaliesV2DiskLowInodesDetectionArgsDict']]] = None,
-                 disk_low_space_detection: Optional[pulumi.Input[Union['DiskSpecificAnomaliesV2DiskLowSpaceDetectionArgs', 'DiskSpecificAnomaliesV2DiskLowSpaceDetectionArgsDict']]] = None,
-                 disk_slow_writes_and_reads_detection: Optional[pulumi.Input[Union['DiskSpecificAnomaliesV2DiskSlowWritesAndReadsDetectionArgs', 'DiskSpecificAnomaliesV2DiskSlowWritesAndReadsDetectionArgsDict']]] = None,
-                 override_disk_low_space_detection: Optional[pulumi.Input[_builtins.bool]] = None,
-                 override_low_inodes_detection: Optional[pulumi.Input[_builtins.bool]] = None,
-                 override_slow_writes_and_reads_detection: Optional[pulumi.Input[_builtins.bool]] = None,
+                 disk_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 disk_low_inodes_detection: pulumi.Input[Optional[Union['DiskSpecificAnomaliesV2DiskLowInodesDetectionArgs', 'DiskSpecificAnomaliesV2DiskLowInodesDetectionArgsDict']]] = None,
+                 disk_low_space_detection: pulumi.Input[Optional[Union['DiskSpecificAnomaliesV2DiskLowSpaceDetectionArgs', 'DiskSpecificAnomaliesV2DiskLowSpaceDetectionArgsDict']]] = None,
+                 disk_slow_writes_and_reads_detection: pulumi.Input[Optional[Union['DiskSpecificAnomaliesV2DiskSlowWritesAndReadsDetectionArgs', 'DiskSpecificAnomaliesV2DiskSlowWritesAndReadsDetectionArgsDict']]] = None,
+                 override_disk_low_space_detection: pulumi.Input[Optional[_builtins.bool]] = None,
+                 override_low_inodes_detection: pulumi.Input[Optional[_builtins.bool]] = None,
+                 override_slow_writes_and_reads_detection: pulumi.Input[Optional[_builtins.bool]] = None,
                  __props__=None):
         """
         > This resource requires the API token scopes **Read settings** (`settings.read`) and **Write settings** (`settings.write`)
@@ -333,13 +333,13 @@ class DiskSpecificAnomaliesV2(pulumi.CustomResource):
     def _internal_init(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 disk_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 disk_low_inodes_detection: Optional[pulumi.Input[Union['DiskSpecificAnomaliesV2DiskLowInodesDetectionArgs', 'DiskSpecificAnomaliesV2DiskLowInodesDetectionArgsDict']]] = None,
-                 disk_low_space_detection: Optional[pulumi.Input[Union['DiskSpecificAnomaliesV2DiskLowSpaceDetectionArgs', 'DiskSpecificAnomaliesV2DiskLowSpaceDetectionArgsDict']]] = None,
-                 disk_slow_writes_and_reads_detection: Optional[pulumi.Input[Union['DiskSpecificAnomaliesV2DiskSlowWritesAndReadsDetectionArgs', 'DiskSpecificAnomaliesV2DiskSlowWritesAndReadsDetectionArgsDict']]] = None,
-                 override_disk_low_space_detection: Optional[pulumi.Input[_builtins.bool]] = None,
-                 override_low_inodes_detection: Optional[pulumi.Input[_builtins.bool]] = None,
-                 override_slow_writes_and_reads_detection: Optional[pulumi.Input[_builtins.bool]] = None,
+                 disk_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 disk_low_inodes_detection: pulumi.Input[Optional[Union['DiskSpecificAnomaliesV2DiskLowInodesDetectionArgs', 'DiskSpecificAnomaliesV2DiskLowInodesDetectionArgsDict']]] = None,
+                 disk_low_space_detection: pulumi.Input[Optional[Union['DiskSpecificAnomaliesV2DiskLowSpaceDetectionArgs', 'DiskSpecificAnomaliesV2DiskLowSpaceDetectionArgsDict']]] = None,
+                 disk_slow_writes_and_reads_detection: pulumi.Input[Optional[Union['DiskSpecificAnomaliesV2DiskSlowWritesAndReadsDetectionArgs', 'DiskSpecificAnomaliesV2DiskSlowWritesAndReadsDetectionArgsDict']]] = None,
+                 override_disk_low_space_detection: pulumi.Input[Optional[_builtins.bool]] = None,
+                 override_low_inodes_detection: pulumi.Input[Optional[_builtins.bool]] = None,
+                 override_slow_writes_and_reads_detection: pulumi.Input[Optional[_builtins.bool]] = None,
                  __props__=None):
         opts = pulumi.ResourceOptions.merge(_utilities.get_resource_opts_defaults(), opts)
         if not isinstance(opts, pulumi.ResourceOptions):
@@ -374,13 +374,13 @@ class DiskSpecificAnomaliesV2(pulumi.CustomResource):
     def get(resource_name: str,
             id: pulumi.Input[str],
             opts: Optional[pulumi.ResourceOptions] = None,
-            disk_id: Optional[pulumi.Input[_builtins.str]] = None,
-            disk_low_inodes_detection: Optional[pulumi.Input[Union['DiskSpecificAnomaliesV2DiskLowInodesDetectionArgs', 'DiskSpecificAnomaliesV2DiskLowInodesDetectionArgsDict']]] = None,
-            disk_low_space_detection: Optional[pulumi.Input[Union['DiskSpecificAnomaliesV2DiskLowSpaceDetectionArgs', 'DiskSpecificAnomaliesV2DiskLowSpaceDetectionArgsDict']]] = None,
-            disk_slow_writes_and_reads_detection: Optional[pulumi.Input[Union['DiskSpecificAnomaliesV2DiskSlowWritesAndReadsDetectionArgs', 'DiskSpecificAnomaliesV2DiskSlowWritesAndReadsDetectionArgsDict']]] = None,
-            override_disk_low_space_detection: Optional[pulumi.Input[_builtins.bool]] = None,
-            override_low_inodes_detection: Optional[pulumi.Input[_builtins.bool]] = None,
-            override_slow_writes_and_reads_detection: Optional[pulumi.Input[_builtins.bool]] = None) -> 'DiskSpecificAnomaliesV2':
+            disk_id: pulumi.Input[Optional[_builtins.str]] = None,
+            disk_low_inodes_detection: pulumi.Input[Optional[Union['DiskSpecificAnomaliesV2DiskLowInodesDetectionArgs', 'DiskSpecificAnomaliesV2DiskLowInodesDetectionArgsDict']]] = None,
+            disk_low_space_detection: pulumi.Input[Optional[Union['DiskSpecificAnomaliesV2DiskLowSpaceDetectionArgs', 'DiskSpecificAnomaliesV2DiskLowSpaceDetectionArgsDict']]] = None,
+            disk_slow_writes_and_reads_detection: pulumi.Input[Optional[Union['DiskSpecificAnomaliesV2DiskSlowWritesAndReadsDetectionArgs', 'DiskSpecificAnomaliesV2DiskSlowWritesAndReadsDetectionArgsDict']]] = None,
+            override_disk_low_space_detection: pulumi.Input[Optional[_builtins.bool]] = None,
+            override_low_inodes_detection: pulumi.Input[Optional[_builtins.bool]] = None,
+            override_slow_writes_and_reads_detection: pulumi.Input[Optional[_builtins.bool]] = None) -> 'DiskSpecificAnomaliesV2':
         """
         Get an existing DiskSpecificAnomaliesV2 resource's state with the given name, id, and optional extra
         properties used to qualify the lookup.

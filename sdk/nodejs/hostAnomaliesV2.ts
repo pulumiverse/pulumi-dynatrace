@@ -105,15 +105,15 @@ export interface HostAnomaliesV2State {
     /**
      * Hosts
      */
-    host?: pulumi.Input<inputs.HostAnomaliesV2Host>;
+    host?: pulumi.Input<inputs.HostAnomaliesV2Host | undefined>;
     /**
      * Network
      */
-    network?: pulumi.Input<inputs.HostAnomaliesV2Network>;
+    network?: pulumi.Input<inputs.HostAnomaliesV2Network | undefined>;
     /**
      * The scope of this setting (HOST HOST_GROUP environment)
      */
-    scope?: pulumi.Input<string>;
+    scope?: pulumi.Input<string | undefined>;
 }
 
 /**

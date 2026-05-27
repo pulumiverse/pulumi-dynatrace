@@ -96,11 +96,11 @@ export interface BusinessEventsSecurityContextState {
     /**
      * Because this resource allows for ordering you may specify the ID of the resource instance that comes before this instance regarding order. If not specified when creating the setting will be added to the end of the list. If not specified during update the order will remain untouched
      */
-    insertAfter?: pulumi.Input<string>;
+    insertAfter?: pulumi.Input<string | undefined>;
     /**
      * no documentation available
      */
-    securityContextRule?: pulumi.Input<inputs.BusinessEventsSecurityContextSecurityContextRule>;
+    securityContextRule?: pulumi.Input<inputs.BusinessEventsSecurityContextSecurityContextRule | undefined>;
 }
 
 /**
@@ -110,7 +110,7 @@ export interface BusinessEventsSecurityContextArgs {
     /**
      * Because this resource allows for ordering you may specify the ID of the resource instance that comes before this instance regarding order. If not specified when creating the setting will be added to the end of the list. If not specified during update the order will remain untouched
      */
-    insertAfter?: pulumi.Input<string>;
+    insertAfter?: pulumi.Input<string | undefined>;
     /**
      * no documentation available
      */

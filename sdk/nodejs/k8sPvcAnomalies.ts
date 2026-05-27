@@ -102,15 +102,15 @@ export interface K8sPvcAnomaliesState {
     /**
      * Alerts on low disk space in megabytes for a persistent volume claim.
      */
-    lowDiskSpaceCritical?: pulumi.Input<inputs.K8sPvcAnomaliesLowDiskSpaceCritical>;
+    lowDiskSpaceCritical?: pulumi.Input<inputs.K8sPvcAnomaliesLowDiskSpaceCritical | undefined>;
     /**
      * Alerts on low disk space in % for a persistent volume claim.
      */
-    lowDiskSpaceCriticalPercentage?: pulumi.Input<inputs.K8sPvcAnomaliesLowDiskSpaceCriticalPercentage>;
+    lowDiskSpaceCriticalPercentage?: pulumi.Input<inputs.K8sPvcAnomaliesLowDiskSpaceCriticalPercentage | undefined>;
     /**
      * The scope of this setting (CLOUD*APPLICATION*NAMESPACE, KUBERNETES_CLUSTER). Omit this property if you want to cover the whole environment.
      */
-    scope?: pulumi.Input<string>;
+    scope?: pulumi.Input<string | undefined>;
 }
 
 /**
@@ -128,5 +128,5 @@ export interface K8sPvcAnomaliesArgs {
     /**
      * The scope of this setting (CLOUD*APPLICATION*NAMESPACE, KUBERNETES_CLUSTER). Omit this property if you want to cover the whole environment.
      */
-    scope?: pulumi.Input<string>;
+    scope?: pulumi.Input<string | undefined>;
 }

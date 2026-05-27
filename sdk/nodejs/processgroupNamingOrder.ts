@@ -82,7 +82,7 @@ export interface ProcessgroupNamingOrderState {
     /**
      * The IDs of the naming rules to define the order for
      */
-    namingRuleIds?: pulumi.Input<pulumi.Input<string>[]>;
+    namingRuleIds?: pulumi.Input<pulumi.Input<string>[] | undefined>;
 }
 
 /**
@@ -92,5 +92,5 @@ export interface ProcessgroupNamingOrderArgs {
     /**
      * The IDs of the naming rules to define the order for
      */
-    namingRuleIds?: pulumi.Input<pulumi.Input<string>[]>;
+    namingRuleIds?: pulumi.Input<pulumi.Input<string>[] | undefined>;
 }

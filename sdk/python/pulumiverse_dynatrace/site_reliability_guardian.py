@@ -22,11 +22,11 @@ __all__ = ['SiteReliabilityGuardianArgs', 'SiteReliabilityGuardian']
 class SiteReliabilityGuardianArgs:
     def __init__(__self__, *,
                  objectives: pulumi.Input['SiteReliabilityGuardianObjectivesArgs'],
-                 description: Optional[pulumi.Input[_builtins.str]] = None,
-                 event_kind: Optional[pulumi.Input[_builtins.str]] = None,
-                 name: Optional[pulumi.Input[_builtins.str]] = None,
-                 tags: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-                 variables: Optional[pulumi.Input['SiteReliabilityGuardianVariablesArgs']] = None):
+                 description: pulumi.Input[Optional[_builtins.str]] = None,
+                 event_kind: pulumi.Input[Optional[_builtins.str]] = None,
+                 name: pulumi.Input[Optional[_builtins.str]] = None,
+                 tags: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 variables: pulumi.Input[Optional['SiteReliabilityGuardianVariablesArgs']] = None):
         """
         The set of arguments for constructing a SiteReliabilityGuardian resource.
 
@@ -63,74 +63,74 @@ class SiteReliabilityGuardianArgs:
 
     @_builtins.property
     @pulumi.getter
-    def description(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def description(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Description
         """
         return pulumi.get(self, "description")
 
     @description.setter
-    def description(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def description(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "description", value)
 
     @_builtins.property
     @pulumi.getter(name="eventKind")
-    def event_kind(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def event_kind(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         If set to null/'BIZ*EVENT' validation events stored as bizevents in Grail. If set to 'SDLC*EVENT' validation events stored as SDLC events
         """
         return pulumi.get(self, "event_kind")
 
     @event_kind.setter
-    def event_kind(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def event_kind(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "event_kind", value)
 
     @_builtins.property
     @pulumi.getter
-    def name(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def name(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Name
         """
         return pulumi.get(self, "name")
 
     @name.setter
-    def name(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def name(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "name", value)
 
     @_builtins.property
     @pulumi.getter
-    def tags(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]:
+    def tags(self) -> pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]:
         """
         Define key/value pairs that further describe this guardian.
         """
         return pulumi.get(self, "tags")
 
     @tags.setter
-    def tags(self, value: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]):
+    def tags(self, value: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "tags", value)
 
     @_builtins.property
     @pulumi.getter
-    def variables(self) -> Optional[pulumi.Input['SiteReliabilityGuardianVariablesArgs']]:
+    def variables(self) -> pulumi.Input[Optional['SiteReliabilityGuardianVariablesArgs']]:
         """
         Define variables for dynamically defining DQL queries
         """
         return pulumi.get(self, "variables")
 
     @variables.setter
-    def variables(self, value: Optional[pulumi.Input['SiteReliabilityGuardianVariablesArgs']]):
+    def variables(self, value: pulumi.Input[Optional['SiteReliabilityGuardianVariablesArgs']]):
         pulumi.set(self, "variables", value)
 
 
 @pulumi.input_type
 class _SiteReliabilityGuardianState:
     def __init__(__self__, *,
-                 description: Optional[pulumi.Input[_builtins.str]] = None,
-                 event_kind: Optional[pulumi.Input[_builtins.str]] = None,
-                 name: Optional[pulumi.Input[_builtins.str]] = None,
-                 objectives: Optional[pulumi.Input['SiteReliabilityGuardianObjectivesArgs']] = None,
-                 tags: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-                 variables: Optional[pulumi.Input['SiteReliabilityGuardianVariablesArgs']] = None):
+                 description: pulumi.Input[Optional[_builtins.str]] = None,
+                 event_kind: pulumi.Input[Optional[_builtins.str]] = None,
+                 name: pulumi.Input[Optional[_builtins.str]] = None,
+                 objectives: pulumi.Input[Optional['SiteReliabilityGuardianObjectivesArgs']] = None,
+                 tags: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 variables: pulumi.Input[Optional['SiteReliabilityGuardianVariablesArgs']] = None):
         """
         Input properties used for looking up and filtering SiteReliabilityGuardian resources.
 
@@ -156,74 +156,74 @@ class _SiteReliabilityGuardianState:
 
     @_builtins.property
     @pulumi.getter
-    def description(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def description(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Description
         """
         return pulumi.get(self, "description")
 
     @description.setter
-    def description(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def description(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "description", value)
 
     @_builtins.property
     @pulumi.getter(name="eventKind")
-    def event_kind(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def event_kind(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         If set to null/'BIZ*EVENT' validation events stored as bizevents in Grail. If set to 'SDLC*EVENT' validation events stored as SDLC events
         """
         return pulumi.get(self, "event_kind")
 
     @event_kind.setter
-    def event_kind(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def event_kind(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "event_kind", value)
 
     @_builtins.property
     @pulumi.getter
-    def name(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def name(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Name
         """
         return pulumi.get(self, "name")
 
     @name.setter
-    def name(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def name(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "name", value)
 
     @_builtins.property
     @pulumi.getter
-    def objectives(self) -> Optional[pulumi.Input['SiteReliabilityGuardianObjectivesArgs']]:
+    def objectives(self) -> pulumi.Input[Optional['SiteReliabilityGuardianObjectivesArgs']]:
         """
         Objectives
         """
         return pulumi.get(self, "objectives")
 
     @objectives.setter
-    def objectives(self, value: Optional[pulumi.Input['SiteReliabilityGuardianObjectivesArgs']]):
+    def objectives(self, value: pulumi.Input[Optional['SiteReliabilityGuardianObjectivesArgs']]):
         pulumi.set(self, "objectives", value)
 
     @_builtins.property
     @pulumi.getter
-    def tags(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]:
+    def tags(self) -> pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]:
         """
         Define key/value pairs that further describe this guardian.
         """
         return pulumi.get(self, "tags")
 
     @tags.setter
-    def tags(self, value: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]):
+    def tags(self, value: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "tags", value)
 
     @_builtins.property
     @pulumi.getter
-    def variables(self) -> Optional[pulumi.Input['SiteReliabilityGuardianVariablesArgs']]:
+    def variables(self) -> pulumi.Input[Optional['SiteReliabilityGuardianVariablesArgs']]:
         """
         Define variables for dynamically defining DQL queries
         """
         return pulumi.get(self, "variables")
 
     @variables.setter
-    def variables(self, value: Optional[pulumi.Input['SiteReliabilityGuardianVariablesArgs']]):
+    def variables(self, value: pulumi.Input[Optional['SiteReliabilityGuardianVariablesArgs']]):
         pulumi.set(self, "variables", value)
 
 
@@ -233,12 +233,12 @@ class SiteReliabilityGuardian(pulumi.CustomResource):
     def __init__(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 description: Optional[pulumi.Input[_builtins.str]] = None,
-                 event_kind: Optional[pulumi.Input[_builtins.str]] = None,
-                 name: Optional[pulumi.Input[_builtins.str]] = None,
-                 objectives: Optional[pulumi.Input[Union['SiteReliabilityGuardianObjectivesArgs', 'SiteReliabilityGuardianObjectivesArgsDict']]] = None,
-                 tags: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-                 variables: Optional[pulumi.Input[Union['SiteReliabilityGuardianVariablesArgs', 'SiteReliabilityGuardianVariablesArgsDict']]] = None,
+                 description: pulumi.Input[Optional[_builtins.str]] = None,
+                 event_kind: pulumi.Input[Optional[_builtins.str]] = None,
+                 name: pulumi.Input[Optional[_builtins.str]] = None,
+                 objectives: pulumi.Input[Optional[Union['SiteReliabilityGuardianObjectivesArgs', 'SiteReliabilityGuardianObjectivesArgsDict']]] = None,
+                 tags: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 variables: pulumi.Input[Optional[Union['SiteReliabilityGuardianVariablesArgs', 'SiteReliabilityGuardianVariablesArgsDict']]] = None,
                  __props__=None):
         """
         > This resource requires the `Site Reliability Guardian` app to be installed via the Dynatrace Hub.
@@ -306,12 +306,12 @@ class SiteReliabilityGuardian(pulumi.CustomResource):
     def _internal_init(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 description: Optional[pulumi.Input[_builtins.str]] = None,
-                 event_kind: Optional[pulumi.Input[_builtins.str]] = None,
-                 name: Optional[pulumi.Input[_builtins.str]] = None,
-                 objectives: Optional[pulumi.Input[Union['SiteReliabilityGuardianObjectivesArgs', 'SiteReliabilityGuardianObjectivesArgsDict']]] = None,
-                 tags: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-                 variables: Optional[pulumi.Input[Union['SiteReliabilityGuardianVariablesArgs', 'SiteReliabilityGuardianVariablesArgsDict']]] = None,
+                 description: pulumi.Input[Optional[_builtins.str]] = None,
+                 event_kind: pulumi.Input[Optional[_builtins.str]] = None,
+                 name: pulumi.Input[Optional[_builtins.str]] = None,
+                 objectives: pulumi.Input[Optional[Union['SiteReliabilityGuardianObjectivesArgs', 'SiteReliabilityGuardianObjectivesArgsDict']]] = None,
+                 tags: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 variables: pulumi.Input[Optional[Union['SiteReliabilityGuardianVariablesArgs', 'SiteReliabilityGuardianVariablesArgsDict']]] = None,
                  __props__=None):
         opts = pulumi.ResourceOptions.merge(_utilities.get_resource_opts_defaults(), opts)
         if not isinstance(opts, pulumi.ResourceOptions):
@@ -339,12 +339,12 @@ class SiteReliabilityGuardian(pulumi.CustomResource):
     def get(resource_name: str,
             id: pulumi.Input[str],
             opts: Optional[pulumi.ResourceOptions] = None,
-            description: Optional[pulumi.Input[_builtins.str]] = None,
-            event_kind: Optional[pulumi.Input[_builtins.str]] = None,
-            name: Optional[pulumi.Input[_builtins.str]] = None,
-            objectives: Optional[pulumi.Input[Union['SiteReliabilityGuardianObjectivesArgs', 'SiteReliabilityGuardianObjectivesArgsDict']]] = None,
-            tags: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-            variables: Optional[pulumi.Input[Union['SiteReliabilityGuardianVariablesArgs', 'SiteReliabilityGuardianVariablesArgsDict']]] = None) -> 'SiteReliabilityGuardian':
+            description: pulumi.Input[Optional[_builtins.str]] = None,
+            event_kind: pulumi.Input[Optional[_builtins.str]] = None,
+            name: pulumi.Input[Optional[_builtins.str]] = None,
+            objectives: pulumi.Input[Optional[Union['SiteReliabilityGuardianObjectivesArgs', 'SiteReliabilityGuardianObjectivesArgsDict']]] = None,
+            tags: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+            variables: pulumi.Input[Optional[Union['SiteReliabilityGuardianVariablesArgs', 'SiteReliabilityGuardianVariablesArgsDict']]] = None) -> 'SiteReliabilityGuardian':
         """
         Get an existing SiteReliabilityGuardian resource's state with the given name, id, and optional extra
         properties used to qualify the lookup.

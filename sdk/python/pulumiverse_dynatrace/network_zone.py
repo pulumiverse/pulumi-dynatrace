@@ -19,14 +19,14 @@ __all__ = ['NetworkZoneArgs', 'NetworkZone']
 @pulumi.input_type
 class NetworkZoneArgs:
     def __init__(__self__, *,
-                 alternative_zones: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-                 description: Optional[pulumi.Input[_builtins.str]] = None,
-                 fallback_mode: Optional[pulumi.Input[_builtins.str]] = None,
-                 name: Optional[pulumi.Input[_builtins.str]] = None,
-                 num_of_configured_activegates: Optional[pulumi.Input[_builtins.int]] = None,
-                 num_of_configured_oneagents: Optional[pulumi.Input[_builtins.int]] = None,
-                 num_of_oneagents_from_other_zones: Optional[pulumi.Input[_builtins.int]] = None,
-                 num_of_oneagents_using: Optional[pulumi.Input[_builtins.int]] = None):
+                 alternative_zones: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 description: pulumi.Input[Optional[_builtins.str]] = None,
+                 fallback_mode: pulumi.Input[Optional[_builtins.str]] = None,
+                 name: pulumi.Input[Optional[_builtins.str]] = None,
+                 num_of_configured_activegates: pulumi.Input[Optional[_builtins.int]] = None,
+                 num_of_configured_oneagents: pulumi.Input[Optional[_builtins.int]] = None,
+                 num_of_oneagents_from_other_zones: pulumi.Input[Optional[_builtins.int]] = None,
+                 num_of_oneagents_using: pulumi.Input[Optional[_builtins.int]] = None):
         """
         The set of arguments for constructing a NetworkZone resource.
 
@@ -58,112 +58,112 @@ class NetworkZoneArgs:
 
     @_builtins.property
     @pulumi.getter(name="alternativeZones")
-    def alternative_zones(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]:
+    def alternative_zones(self) -> pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]:
         """
         A list of alternative network zones.
         """
         return pulumi.get(self, "alternative_zones")
 
     @alternative_zones.setter
-    def alternative_zones(self, value: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]):
+    def alternative_zones(self, value: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "alternative_zones", value)
 
     @_builtins.property
     @pulumi.getter
-    def description(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def description(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         A short description of the network zone
         """
         return pulumi.get(self, "description")
 
     @description.setter
-    def description(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def description(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "description", value)
 
     @_builtins.property
     @pulumi.getter(name="fallbackMode")
-    def fallback_mode(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def fallback_mode(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The fallback mode of the network zone. Possible values: `ANY_ACTIVE_GATE`, `NONE`, `ONLY_DEFAULT_ZONE`
         """
         return pulumi.get(self, "fallback_mode")
 
     @fallback_mode.setter
-    def fallback_mode(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def fallback_mode(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "fallback_mode", value)
 
     @_builtins.property
     @pulumi.getter
-    def name(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def name(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Name of the network zone cannot be modified once created. Dynatrace stores the field in lowercase, allowed characters: alphanumeric, hyphen, underscore, dot
         """
         return pulumi.get(self, "name")
 
     @name.setter
-    def name(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def name(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "name", value)
 
     @_builtins.property
     @pulumi.getter(name="numOfConfiguredActivegates")
-    def num_of_configured_activegates(self) -> Optional[pulumi.Input[_builtins.int]]:
+    def num_of_configured_activegates(self) -> pulumi.Input[Optional[_builtins.int]]:
         """
         The number of ActiveGates in the network zone.
         """
         return pulumi.get(self, "num_of_configured_activegates")
 
     @num_of_configured_activegates.setter
-    def num_of_configured_activegates(self, value: Optional[pulumi.Input[_builtins.int]]):
+    def num_of_configured_activegates(self, value: pulumi.Input[Optional[_builtins.int]]):
         pulumi.set(self, "num_of_configured_activegates", value)
 
     @_builtins.property
     @pulumi.getter(name="numOfConfiguredOneagents")
-    def num_of_configured_oneagents(self) -> Optional[pulumi.Input[_builtins.int]]:
+    def num_of_configured_oneagents(self) -> pulumi.Input[Optional[_builtins.int]]:
         """
         The number of OneAgents that are configured to use the network zone as primary.
         """
         return pulumi.get(self, "num_of_configured_oneagents")
 
     @num_of_configured_oneagents.setter
-    def num_of_configured_oneagents(self, value: Optional[pulumi.Input[_builtins.int]]):
+    def num_of_configured_oneagents(self, value: pulumi.Input[Optional[_builtins.int]]):
         pulumi.set(self, "num_of_configured_oneagents", value)
 
     @_builtins.property
     @pulumi.getter(name="numOfOneagentsFromOtherZones")
-    def num_of_oneagents_from_other_zones(self) -> Optional[pulumi.Input[_builtins.int]]:
+    def num_of_oneagents_from_other_zones(self) -> pulumi.Input[Optional[_builtins.int]]:
         """
         The number of OneAgents from other network zones that are using ActiveGates in the network zone.
         """
         return pulumi.get(self, "num_of_oneagents_from_other_zones")
 
     @num_of_oneagents_from_other_zones.setter
-    def num_of_oneagents_from_other_zones(self, value: Optional[pulumi.Input[_builtins.int]]):
+    def num_of_oneagents_from_other_zones(self, value: pulumi.Input[Optional[_builtins.int]]):
         pulumi.set(self, "num_of_oneagents_from_other_zones", value)
 
     @_builtins.property
     @pulumi.getter(name="numOfOneagentsUsing")
-    def num_of_oneagents_using(self) -> Optional[pulumi.Input[_builtins.int]]:
+    def num_of_oneagents_using(self) -> pulumi.Input[Optional[_builtins.int]]:
         """
         The number of OneAgents that are using ActiveGates in the network zone.
         """
         return pulumi.get(self, "num_of_oneagents_using")
 
     @num_of_oneagents_using.setter
-    def num_of_oneagents_using(self, value: Optional[pulumi.Input[_builtins.int]]):
+    def num_of_oneagents_using(self, value: pulumi.Input[Optional[_builtins.int]]):
         pulumi.set(self, "num_of_oneagents_using", value)
 
 
 @pulumi.input_type
 class _NetworkZoneState:
     def __init__(__self__, *,
-                 alternative_zones: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-                 description: Optional[pulumi.Input[_builtins.str]] = None,
-                 fallback_mode: Optional[pulumi.Input[_builtins.str]] = None,
-                 name: Optional[pulumi.Input[_builtins.str]] = None,
-                 num_of_configured_activegates: Optional[pulumi.Input[_builtins.int]] = None,
-                 num_of_configured_oneagents: Optional[pulumi.Input[_builtins.int]] = None,
-                 num_of_oneagents_from_other_zones: Optional[pulumi.Input[_builtins.int]] = None,
-                 num_of_oneagents_using: Optional[pulumi.Input[_builtins.int]] = None):
+                 alternative_zones: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 description: pulumi.Input[Optional[_builtins.str]] = None,
+                 fallback_mode: pulumi.Input[Optional[_builtins.str]] = None,
+                 name: pulumi.Input[Optional[_builtins.str]] = None,
+                 num_of_configured_activegates: pulumi.Input[Optional[_builtins.int]] = None,
+                 num_of_configured_oneagents: pulumi.Input[Optional[_builtins.int]] = None,
+                 num_of_oneagents_from_other_zones: pulumi.Input[Optional[_builtins.int]] = None,
+                 num_of_oneagents_using: pulumi.Input[Optional[_builtins.int]] = None):
         """
         Input properties used for looking up and filtering NetworkZone resources.
 
@@ -195,98 +195,98 @@ class _NetworkZoneState:
 
     @_builtins.property
     @pulumi.getter(name="alternativeZones")
-    def alternative_zones(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]:
+    def alternative_zones(self) -> pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]:
         """
         A list of alternative network zones.
         """
         return pulumi.get(self, "alternative_zones")
 
     @alternative_zones.setter
-    def alternative_zones(self, value: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]):
+    def alternative_zones(self, value: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "alternative_zones", value)
 
     @_builtins.property
     @pulumi.getter
-    def description(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def description(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         A short description of the network zone
         """
         return pulumi.get(self, "description")
 
     @description.setter
-    def description(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def description(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "description", value)
 
     @_builtins.property
     @pulumi.getter(name="fallbackMode")
-    def fallback_mode(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def fallback_mode(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The fallback mode of the network zone. Possible values: `ANY_ACTIVE_GATE`, `NONE`, `ONLY_DEFAULT_ZONE`
         """
         return pulumi.get(self, "fallback_mode")
 
     @fallback_mode.setter
-    def fallback_mode(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def fallback_mode(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "fallback_mode", value)
 
     @_builtins.property
     @pulumi.getter
-    def name(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def name(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Name of the network zone cannot be modified once created. Dynatrace stores the field in lowercase, allowed characters: alphanumeric, hyphen, underscore, dot
         """
         return pulumi.get(self, "name")
 
     @name.setter
-    def name(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def name(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "name", value)
 
     @_builtins.property
     @pulumi.getter(name="numOfConfiguredActivegates")
-    def num_of_configured_activegates(self) -> Optional[pulumi.Input[_builtins.int]]:
+    def num_of_configured_activegates(self) -> pulumi.Input[Optional[_builtins.int]]:
         """
         The number of ActiveGates in the network zone.
         """
         return pulumi.get(self, "num_of_configured_activegates")
 
     @num_of_configured_activegates.setter
-    def num_of_configured_activegates(self, value: Optional[pulumi.Input[_builtins.int]]):
+    def num_of_configured_activegates(self, value: pulumi.Input[Optional[_builtins.int]]):
         pulumi.set(self, "num_of_configured_activegates", value)
 
     @_builtins.property
     @pulumi.getter(name="numOfConfiguredOneagents")
-    def num_of_configured_oneagents(self) -> Optional[pulumi.Input[_builtins.int]]:
+    def num_of_configured_oneagents(self) -> pulumi.Input[Optional[_builtins.int]]:
         """
         The number of OneAgents that are configured to use the network zone as primary.
         """
         return pulumi.get(self, "num_of_configured_oneagents")
 
     @num_of_configured_oneagents.setter
-    def num_of_configured_oneagents(self, value: Optional[pulumi.Input[_builtins.int]]):
+    def num_of_configured_oneagents(self, value: pulumi.Input[Optional[_builtins.int]]):
         pulumi.set(self, "num_of_configured_oneagents", value)
 
     @_builtins.property
     @pulumi.getter(name="numOfOneagentsFromOtherZones")
-    def num_of_oneagents_from_other_zones(self) -> Optional[pulumi.Input[_builtins.int]]:
+    def num_of_oneagents_from_other_zones(self) -> pulumi.Input[Optional[_builtins.int]]:
         """
         The number of OneAgents from other network zones that are using ActiveGates in the network zone.
         """
         return pulumi.get(self, "num_of_oneagents_from_other_zones")
 
     @num_of_oneagents_from_other_zones.setter
-    def num_of_oneagents_from_other_zones(self, value: Optional[pulumi.Input[_builtins.int]]):
+    def num_of_oneagents_from_other_zones(self, value: pulumi.Input[Optional[_builtins.int]]):
         pulumi.set(self, "num_of_oneagents_from_other_zones", value)
 
     @_builtins.property
     @pulumi.getter(name="numOfOneagentsUsing")
-    def num_of_oneagents_using(self) -> Optional[pulumi.Input[_builtins.int]]:
+    def num_of_oneagents_using(self) -> pulumi.Input[Optional[_builtins.int]]:
         """
         The number of OneAgents that are using ActiveGates in the network zone.
         """
         return pulumi.get(self, "num_of_oneagents_using")
 
     @num_of_oneagents_using.setter
-    def num_of_oneagents_using(self, value: Optional[pulumi.Input[_builtins.int]]):
+    def num_of_oneagents_using(self, value: pulumi.Input[Optional[_builtins.int]]):
         pulumi.set(self, "num_of_oneagents_using", value)
 
 
@@ -296,14 +296,14 @@ class NetworkZone(pulumi.CustomResource):
     def __init__(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 alternative_zones: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-                 description: Optional[pulumi.Input[_builtins.str]] = None,
-                 fallback_mode: Optional[pulumi.Input[_builtins.str]] = None,
-                 name: Optional[pulumi.Input[_builtins.str]] = None,
-                 num_of_configured_activegates: Optional[pulumi.Input[_builtins.int]] = None,
-                 num_of_configured_oneagents: Optional[pulumi.Input[_builtins.int]] = None,
-                 num_of_oneagents_from_other_zones: Optional[pulumi.Input[_builtins.int]] = None,
-                 num_of_oneagents_using: Optional[pulumi.Input[_builtins.int]] = None,
+                 alternative_zones: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 description: pulumi.Input[Optional[_builtins.str]] = None,
+                 fallback_mode: pulumi.Input[Optional[_builtins.str]] = None,
+                 name: pulumi.Input[Optional[_builtins.str]] = None,
+                 num_of_configured_activegates: pulumi.Input[Optional[_builtins.int]] = None,
+                 num_of_configured_oneagents: pulumi.Input[Optional[_builtins.int]] = None,
+                 num_of_oneagents_from_other_zones: pulumi.Input[Optional[_builtins.int]] = None,
+                 num_of_oneagents_using: pulumi.Input[Optional[_builtins.int]] = None,
                  __props__=None):
         """
         > This resource requires the API token scopes **Read network zones** (`networkZones.read`) and **Write network zones** (`networkZones.write`)
@@ -369,14 +369,14 @@ class NetworkZone(pulumi.CustomResource):
     def _internal_init(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 alternative_zones: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-                 description: Optional[pulumi.Input[_builtins.str]] = None,
-                 fallback_mode: Optional[pulumi.Input[_builtins.str]] = None,
-                 name: Optional[pulumi.Input[_builtins.str]] = None,
-                 num_of_configured_activegates: Optional[pulumi.Input[_builtins.int]] = None,
-                 num_of_configured_oneagents: Optional[pulumi.Input[_builtins.int]] = None,
-                 num_of_oneagents_from_other_zones: Optional[pulumi.Input[_builtins.int]] = None,
-                 num_of_oneagents_using: Optional[pulumi.Input[_builtins.int]] = None,
+                 alternative_zones: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 description: pulumi.Input[Optional[_builtins.str]] = None,
+                 fallback_mode: pulumi.Input[Optional[_builtins.str]] = None,
+                 name: pulumi.Input[Optional[_builtins.str]] = None,
+                 num_of_configured_activegates: pulumi.Input[Optional[_builtins.int]] = None,
+                 num_of_configured_oneagents: pulumi.Input[Optional[_builtins.int]] = None,
+                 num_of_oneagents_from_other_zones: pulumi.Input[Optional[_builtins.int]] = None,
+                 num_of_oneagents_using: pulumi.Input[Optional[_builtins.int]] = None,
                  __props__=None):
         opts = pulumi.ResourceOptions.merge(_utilities.get_resource_opts_defaults(), opts)
         if not isinstance(opts, pulumi.ResourceOptions):
@@ -404,14 +404,14 @@ class NetworkZone(pulumi.CustomResource):
     def get(resource_name: str,
             id: pulumi.Input[str],
             opts: Optional[pulumi.ResourceOptions] = None,
-            alternative_zones: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-            description: Optional[pulumi.Input[_builtins.str]] = None,
-            fallback_mode: Optional[pulumi.Input[_builtins.str]] = None,
-            name: Optional[pulumi.Input[_builtins.str]] = None,
-            num_of_configured_activegates: Optional[pulumi.Input[_builtins.int]] = None,
-            num_of_configured_oneagents: Optional[pulumi.Input[_builtins.int]] = None,
-            num_of_oneagents_from_other_zones: Optional[pulumi.Input[_builtins.int]] = None,
-            num_of_oneagents_using: Optional[pulumi.Input[_builtins.int]] = None) -> 'NetworkZone':
+            alternative_zones: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+            description: pulumi.Input[Optional[_builtins.str]] = None,
+            fallback_mode: pulumi.Input[Optional[_builtins.str]] = None,
+            name: pulumi.Input[Optional[_builtins.str]] = None,
+            num_of_configured_activegates: pulumi.Input[Optional[_builtins.int]] = None,
+            num_of_configured_oneagents: pulumi.Input[Optional[_builtins.int]] = None,
+            num_of_oneagents_from_other_zones: pulumi.Input[Optional[_builtins.int]] = None,
+            num_of_oneagents_using: pulumi.Input[Optional[_builtins.int]] = None) -> 'NetworkZone':
         """
         Get an existing NetworkZone resource's state with the given name, id, and optional extra
         properties used to qualify the lookup.

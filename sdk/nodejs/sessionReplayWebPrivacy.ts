@@ -108,19 +108,19 @@ export interface SessionReplayWebPrivacyState {
     /**
      * The scope of this settings. If the settings should cover the whole environment, just don't specify any scope.
      */
-    applicationId?: pulumi.Input<string>;
+    applicationId?: pulumi.Input<string | undefined>;
     /**
      * (Field has overlap with `dynatrace.ApplicationDataPrivacy`) When [Session Replay opt-in mode](https://dt-url.net/sr-opt-in-mode) is turned on, Session Replay is deactivated until explicitly activated via an API call.
      */
-    enableOptInMode?: pulumi.Input<boolean>;
+    enableOptInMode?: pulumi.Input<boolean | undefined>;
     /**
      * (Field has overlap with `dynatrace.ApplicationDataPrivacy`) To protect your end users' privacy, select or customize [predefined masking options](https://dt-url.net/sr-masking-preset-options) that suit your content recording and playback requirements.
      */
-    maskingPresets?: pulumi.Input<inputs.SessionReplayWebPrivacyMaskingPresets>;
+    maskingPresets?: pulumi.Input<inputs.SessionReplayWebPrivacyMaskingPresets | undefined>;
     /**
      * (Field has overlap with `dynatrace.ApplicationDataPrivacy`) Exclude webpages or views from Session Replay recording by adding [URL exclusion rules](https://dt-url.net/sr-url-exclusion)
      */
-    urlExclusionPatternLists?: pulumi.Input<pulumi.Input<string>[]>;
+    urlExclusionPatternLists?: pulumi.Input<pulumi.Input<string>[] | undefined>;
 }
 
 /**
@@ -130,7 +130,7 @@ export interface SessionReplayWebPrivacyArgs {
     /**
      * The scope of this settings. If the settings should cover the whole environment, just don't specify any scope.
      */
-    applicationId?: pulumi.Input<string>;
+    applicationId?: pulumi.Input<string | undefined>;
     /**
      * (Field has overlap with `dynatrace.ApplicationDataPrivacy`) When [Session Replay opt-in mode](https://dt-url.net/sr-opt-in-mode) is turned on, Session Replay is deactivated until explicitly activated via an API call.
      */
@@ -142,5 +142,5 @@ export interface SessionReplayWebPrivacyArgs {
     /**
      * (Field has overlap with `dynatrace.ApplicationDataPrivacy`) Exclude webpages or views from Session Replay recording by adding [URL exclusion rules](https://dt-url.net/sr-url-exclusion)
      */
-    urlExclusionPatternLists?: pulumi.Input<pulumi.Input<string>[]>;
+    urlExclusionPatternLists?: pulumi.Input<pulumi.Input<string>[] | undefined>;
 }

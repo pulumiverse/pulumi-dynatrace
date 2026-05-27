@@ -24,7 +24,7 @@ class CloudappWorkloaddetectionArgs:
                  cloud_foundry: pulumi.Input['CloudappWorkloaddetectionCloudFoundryArgs'],
                  docker: pulumi.Input['CloudappWorkloaddetectionDockerArgs'],
                  kubernetes: pulumi.Input['CloudappWorkloaddetectionKubernetesArgs'],
-                 serverless: Optional[pulumi.Input['CloudappWorkloaddetectionServerlessArgs']] = None):
+                 serverless: pulumi.Input[Optional['CloudappWorkloaddetectionServerlessArgs']] = None):
         """
         The set of arguments for constructing a CloudappWorkloaddetection resource.
 
@@ -97,7 +97,7 @@ class CloudappWorkloaddetectionArgs:
 
     @_builtins.property
     @pulumi.getter
-    def serverless(self) -> Optional[pulumi.Input['CloudappWorkloaddetectionServerlessArgs']]:
+    def serverless(self) -> pulumi.Input[Optional['CloudappWorkloaddetectionServerlessArgs']]:
         """
         Enable this setting to 
          * Detect containers based on captured cloud-vendor metadata such as e.g. AWS ECS / Fargate, Azure Container Apps, [and many more](https://dt-url.net/2m02q7b).
@@ -106,17 +106,17 @@ class CloudappWorkloaddetectionArgs:
         return pulumi.get(self, "serverless")
 
     @serverless.setter
-    def serverless(self, value: Optional[pulumi.Input['CloudappWorkloaddetectionServerlessArgs']]):
+    def serverless(self, value: pulumi.Input[Optional['CloudappWorkloaddetectionServerlessArgs']]):
         pulumi.set(self, "serverless", value)
 
 
 @pulumi.input_type
 class _CloudappWorkloaddetectionState:
     def __init__(__self__, *,
-                 cloud_foundry: Optional[pulumi.Input['CloudappWorkloaddetectionCloudFoundryArgs']] = None,
-                 docker: Optional[pulumi.Input['CloudappWorkloaddetectionDockerArgs']] = None,
-                 kubernetes: Optional[pulumi.Input['CloudappWorkloaddetectionKubernetesArgs']] = None,
-                 serverless: Optional[pulumi.Input['CloudappWorkloaddetectionServerlessArgs']] = None):
+                 cloud_foundry: pulumi.Input[Optional['CloudappWorkloaddetectionCloudFoundryArgs']] = None,
+                 docker: pulumi.Input[Optional['CloudappWorkloaddetectionDockerArgs']] = None,
+                 kubernetes: pulumi.Input[Optional['CloudappWorkloaddetectionKubernetesArgs']] = None,
+                 serverless: pulumi.Input[Optional['CloudappWorkloaddetectionServerlessArgs']] = None):
         """
         Input properties used for looking up and filtering CloudappWorkloaddetection resources.
 
@@ -147,7 +147,7 @@ class _CloudappWorkloaddetectionState:
 
     @_builtins.property
     @pulumi.getter(name="cloudFoundry")
-    def cloud_foundry(self) -> Optional[pulumi.Input['CloudappWorkloaddetectionCloudFoundryArgs']]:
+    def cloud_foundry(self) -> pulumi.Input[Optional['CloudappWorkloaddetectionCloudFoundryArgs']]:
         """
         Enable this setting to get 
          * Processes of Cloud Foundry application instances merged into process groups by Cloud Foundry application. 
@@ -156,12 +156,12 @@ class _CloudappWorkloaddetectionState:
         return pulumi.get(self, "cloud_foundry")
 
     @cloud_foundry.setter
-    def cloud_foundry(self, value: Optional[pulumi.Input['CloudappWorkloaddetectionCloudFoundryArgs']]):
+    def cloud_foundry(self, value: pulumi.Input[Optional['CloudappWorkloaddetectionCloudFoundryArgs']]):
         pulumi.set(self, "cloud_foundry", value)
 
     @_builtins.property
     @pulumi.getter
-    def docker(self) -> Optional[pulumi.Input['CloudappWorkloaddetectionDockerArgs']]:
+    def docker(self) -> pulumi.Input[Optional['CloudappWorkloaddetectionDockerArgs']]:
         """
         Enable this setting for plain Docker and Podman environments to get 
          * Container resource metrics (Container group instance entities) and [related screens](https://www.dynatrace.com/support/help/shortlink/container-groups). 
@@ -171,12 +171,12 @@ class _CloudappWorkloaddetectionState:
         return pulumi.get(self, "docker")
 
     @docker.setter
-    def docker(self, value: Optional[pulumi.Input['CloudappWorkloaddetectionDockerArgs']]):
+    def docker(self, value: pulumi.Input[Optional['CloudappWorkloaddetectionDockerArgs']]):
         pulumi.set(self, "docker", value)
 
     @_builtins.property
     @pulumi.getter
-    def kubernetes(self) -> Optional[pulumi.Input['CloudappWorkloaddetectionKubernetesArgs']]:
+    def kubernetes(self) -> pulumi.Input[Optional['CloudappWorkloaddetectionKubernetesArgs']]:
         """
         Enable this setting to get 
          * Insights into your Kubernetes namespaces, workloads and pods (cloud application namespace, cloud application and cloud application instance and entities). 
@@ -187,12 +187,12 @@ class _CloudappWorkloaddetectionState:
         return pulumi.get(self, "kubernetes")
 
     @kubernetes.setter
-    def kubernetes(self, value: Optional[pulumi.Input['CloudappWorkloaddetectionKubernetesArgs']]):
+    def kubernetes(self, value: pulumi.Input[Optional['CloudappWorkloaddetectionKubernetesArgs']]):
         pulumi.set(self, "kubernetes", value)
 
     @_builtins.property
     @pulumi.getter
-    def serverless(self) -> Optional[pulumi.Input['CloudappWorkloaddetectionServerlessArgs']]:
+    def serverless(self) -> pulumi.Input[Optional['CloudappWorkloaddetectionServerlessArgs']]:
         """
         Enable this setting to 
          * Detect containers based on captured cloud-vendor metadata such as e.g. AWS ECS / Fargate, Azure Container Apps, [and many more](https://dt-url.net/2m02q7b).
@@ -201,7 +201,7 @@ class _CloudappWorkloaddetectionState:
         return pulumi.get(self, "serverless")
 
     @serverless.setter
-    def serverless(self, value: Optional[pulumi.Input['CloudappWorkloaddetectionServerlessArgs']]):
+    def serverless(self, value: pulumi.Input[Optional['CloudappWorkloaddetectionServerlessArgs']]):
         pulumi.set(self, "serverless", value)
 
 
@@ -211,10 +211,10 @@ class CloudappWorkloaddetection(pulumi.CustomResource):
     def __init__(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 cloud_foundry: Optional[pulumi.Input[Union['CloudappWorkloaddetectionCloudFoundryArgs', 'CloudappWorkloaddetectionCloudFoundryArgsDict']]] = None,
-                 docker: Optional[pulumi.Input[Union['CloudappWorkloaddetectionDockerArgs', 'CloudappWorkloaddetectionDockerArgsDict']]] = None,
-                 kubernetes: Optional[pulumi.Input[Union['CloudappWorkloaddetectionKubernetesArgs', 'CloudappWorkloaddetectionKubernetesArgsDict']]] = None,
-                 serverless: Optional[pulumi.Input[Union['CloudappWorkloaddetectionServerlessArgs', 'CloudappWorkloaddetectionServerlessArgsDict']]] = None,
+                 cloud_foundry: pulumi.Input[Optional[Union['CloudappWorkloaddetectionCloudFoundryArgs', 'CloudappWorkloaddetectionCloudFoundryArgsDict']]] = None,
+                 docker: pulumi.Input[Optional[Union['CloudappWorkloaddetectionDockerArgs', 'CloudappWorkloaddetectionDockerArgsDict']]] = None,
+                 kubernetes: pulumi.Input[Optional[Union['CloudappWorkloaddetectionKubernetesArgs', 'CloudappWorkloaddetectionKubernetesArgsDict']]] = None,
+                 serverless: pulumi.Input[Optional[Union['CloudappWorkloaddetectionServerlessArgs', 'CloudappWorkloaddetectionServerlessArgsDict']]] = None,
                  __props__=None):
         """
         > This resource requires the API token scopes **Read settings** (`settings.read`) and **Write settings** (`settings.write`)
@@ -355,10 +355,10 @@ class CloudappWorkloaddetection(pulumi.CustomResource):
     def _internal_init(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 cloud_foundry: Optional[pulumi.Input[Union['CloudappWorkloaddetectionCloudFoundryArgs', 'CloudappWorkloaddetectionCloudFoundryArgsDict']]] = None,
-                 docker: Optional[pulumi.Input[Union['CloudappWorkloaddetectionDockerArgs', 'CloudappWorkloaddetectionDockerArgsDict']]] = None,
-                 kubernetes: Optional[pulumi.Input[Union['CloudappWorkloaddetectionKubernetesArgs', 'CloudappWorkloaddetectionKubernetesArgsDict']]] = None,
-                 serverless: Optional[pulumi.Input[Union['CloudappWorkloaddetectionServerlessArgs', 'CloudappWorkloaddetectionServerlessArgsDict']]] = None,
+                 cloud_foundry: pulumi.Input[Optional[Union['CloudappWorkloaddetectionCloudFoundryArgs', 'CloudappWorkloaddetectionCloudFoundryArgsDict']]] = None,
+                 docker: pulumi.Input[Optional[Union['CloudappWorkloaddetectionDockerArgs', 'CloudappWorkloaddetectionDockerArgsDict']]] = None,
+                 kubernetes: pulumi.Input[Optional[Union['CloudappWorkloaddetectionKubernetesArgs', 'CloudappWorkloaddetectionKubernetesArgsDict']]] = None,
+                 serverless: pulumi.Input[Optional[Union['CloudappWorkloaddetectionServerlessArgs', 'CloudappWorkloaddetectionServerlessArgsDict']]] = None,
                  __props__=None):
         opts = pulumi.ResourceOptions.merge(_utilities.get_resource_opts_defaults(), opts)
         if not isinstance(opts, pulumi.ResourceOptions):
@@ -388,10 +388,10 @@ class CloudappWorkloaddetection(pulumi.CustomResource):
     def get(resource_name: str,
             id: pulumi.Input[str],
             opts: Optional[pulumi.ResourceOptions] = None,
-            cloud_foundry: Optional[pulumi.Input[Union['CloudappWorkloaddetectionCloudFoundryArgs', 'CloudappWorkloaddetectionCloudFoundryArgsDict']]] = None,
-            docker: Optional[pulumi.Input[Union['CloudappWorkloaddetectionDockerArgs', 'CloudappWorkloaddetectionDockerArgsDict']]] = None,
-            kubernetes: Optional[pulumi.Input[Union['CloudappWorkloaddetectionKubernetesArgs', 'CloudappWorkloaddetectionKubernetesArgsDict']]] = None,
-            serverless: Optional[pulumi.Input[Union['CloudappWorkloaddetectionServerlessArgs', 'CloudappWorkloaddetectionServerlessArgsDict']]] = None) -> 'CloudappWorkloaddetection':
+            cloud_foundry: pulumi.Input[Optional[Union['CloudappWorkloaddetectionCloudFoundryArgs', 'CloudappWorkloaddetectionCloudFoundryArgsDict']]] = None,
+            docker: pulumi.Input[Optional[Union['CloudappWorkloaddetectionDockerArgs', 'CloudappWorkloaddetectionDockerArgsDict']]] = None,
+            kubernetes: pulumi.Input[Optional[Union['CloudappWorkloaddetectionKubernetesArgs', 'CloudappWorkloaddetectionKubernetesArgsDict']]] = None,
+            serverless: pulumi.Input[Optional[Union['CloudappWorkloaddetectionServerlessArgs', 'CloudappWorkloaddetectionServerlessArgsDict']]] = None) -> 'CloudappWorkloaddetection':
         """
         Get an existing CloudappWorkloaddetection resource's state with the given name, id, and optional extra
         properties used to qualify the lookup.

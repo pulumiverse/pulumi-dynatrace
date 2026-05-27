@@ -113,19 +113,19 @@ export interface ManagedPublicEndpointsState {
     /**
      * Additional web UI addresses
      */
-    additionalWebUiAddresses?: pulumi.Input<pulumi.Input<string>[]>;
+    additionalWebUiAddresses?: pulumi.Input<pulumi.Input<string>[] | undefined>;
     /**
      * Beacon forwarder address
      */
-    beaconForwarderAddress?: pulumi.Input<string>;
+    beaconForwarderAddress?: pulumi.Input<string | undefined>;
     /**
      * CDN address
      */
-    cdnAddress?: pulumi.Input<string>;
+    cdnAddress?: pulumi.Input<string | undefined>;
     /**
      * Web UI address
      */
-    webUiAddress?: pulumi.Input<string>;
+    webUiAddress?: pulumi.Input<string | undefined>;
 }
 
 /**
@@ -135,17 +135,17 @@ export interface ManagedPublicEndpointsArgs {
     /**
      * Additional web UI addresses
      */
-    additionalWebUiAddresses?: pulumi.Input<pulumi.Input<string>[]>;
+    additionalWebUiAddresses?: pulumi.Input<pulumi.Input<string>[] | undefined>;
     /**
      * Beacon forwarder address
      */
-    beaconForwarderAddress?: pulumi.Input<string>;
+    beaconForwarderAddress?: pulumi.Input<string | undefined>;
     /**
      * CDN address
      */
-    cdnAddress?: pulumi.Input<string>;
+    cdnAddress?: pulumi.Input<string | undefined>;
     /**
      * Web UI address
      */
-    webUiAddress?: pulumi.Input<string>;
+    webUiAddress?: pulumi.Input<string | undefined>;
 }

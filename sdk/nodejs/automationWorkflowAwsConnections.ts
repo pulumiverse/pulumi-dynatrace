@@ -120,15 +120,15 @@ export interface AutomationWorkflowAwsConnectionsState {
     /**
      * Name
      */
-    name?: pulumi.Input<string>;
+    name?: pulumi.Input<string | undefined>;
     /**
      * Possible Values: `WebIdentity`
      */
-    type?: pulumi.Input<string>;
+    type?: pulumi.Input<string | undefined>;
     /**
      * no documentation available
      */
-    webIdentity?: pulumi.Input<inputs.AutomationWorkflowAwsConnectionsWebIdentity>;
+    webIdentity?: pulumi.Input<inputs.AutomationWorkflowAwsConnectionsWebIdentity | undefined>;
 }
 
 /**
@@ -138,7 +138,7 @@ export interface AutomationWorkflowAwsConnectionsArgs {
     /**
      * Name
      */
-    name?: pulumi.Input<string>;
+    name?: pulumi.Input<string | undefined>;
     /**
      * Possible Values: `WebIdentity`
      */
@@ -146,5 +146,5 @@ export interface AutomationWorkflowAwsConnectionsArgs {
     /**
      * no documentation available
      */
-    webIdentity?: pulumi.Input<inputs.AutomationWorkflowAwsConnectionsWebIdentity>;
+    webIdentity?: pulumi.Input<inputs.AutomationWorkflowAwsConnectionsWebIdentity | undefined>;
 }

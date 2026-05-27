@@ -142,37 +142,37 @@ export interface AttackAllowlistState {
     /**
      * Step 1: Define attack control for chosen criteria
      */
-    attackHandling?: pulumi.Input<inputs.AttackAllowlistAttackHandling>;
+    attackHandling?: pulumi.Input<inputs.AttackAllowlistAttackHandling | undefined>;
     /**
      * Step 1: Define criteria. Please specify at least one of source IP or attack pattern.
      *
      * @deprecated The `criteria` attribute has been deprecated, please use the `rules` and `resourceAttributeConditions` attributes instead.
      */
-    criteria?: pulumi.Input<inputs.AttackAllowlistCriteria>;
+    criteria?: pulumi.Input<inputs.AttackAllowlistCriteria | undefined>;
     /**
      * This setting is enabled (`true`) or disabled (`false`)
      */
-    enabled?: pulumi.Input<boolean>;
+    enabled?: pulumi.Input<boolean | undefined>;
     /**
      * Because this resource allows for ordering you may specify the ID of the resource instance that comes before this instance regarding order. If not specified when creating the setting will be added to the end of the list. If not specified during update the order will remain untouched
      */
-    insertAfter?: pulumi.Input<string>;
+    insertAfter?: pulumi.Input<string | undefined>;
     /**
      * Step 4: Leave comment (optional)
      */
-    metadata?: pulumi.Input<inputs.AttackAllowlistMetadata>;
+    metadata?: pulumi.Input<inputs.AttackAllowlistMetadata | undefined>;
     /**
      * When you add multiple conditions, the rule applies if all conditions apply.
      */
-    resourceAttributeConditions?: pulumi.Input<inputs.AttackAllowlistResourceAttributeConditions>;
+    resourceAttributeConditions?: pulumi.Input<inputs.AttackAllowlistResourceAttributeConditions | undefined>;
     /**
      * Rule name
      */
-    ruleName?: pulumi.Input<string>;
+    ruleName?: pulumi.Input<string | undefined>;
     /**
      * Provide conditions that must be met by the detection finding you want to allowlist.
      */
-    rules?: pulumi.Input<inputs.AttackAllowlistRules>;
+    rules?: pulumi.Input<inputs.AttackAllowlistRules | undefined>;
 }
 
 /**
@@ -188,7 +188,7 @@ export interface AttackAllowlistArgs {
      *
      * @deprecated The `criteria` attribute has been deprecated, please use the `rules` and `resourceAttributeConditions` attributes instead.
      */
-    criteria?: pulumi.Input<inputs.AttackAllowlistCriteria>;
+    criteria?: pulumi.Input<inputs.AttackAllowlistCriteria | undefined>;
     /**
      * This setting is enabled (`true`) or disabled (`false`)
      */
@@ -196,7 +196,7 @@ export interface AttackAllowlistArgs {
     /**
      * Because this resource allows for ordering you may specify the ID of the resource instance that comes before this instance regarding order. If not specified when creating the setting will be added to the end of the list. If not specified during update the order will remain untouched
      */
-    insertAfter?: pulumi.Input<string>;
+    insertAfter?: pulumi.Input<string | undefined>;
     /**
      * Step 4: Leave comment (optional)
      */
@@ -204,11 +204,11 @@ export interface AttackAllowlistArgs {
     /**
      * When you add multiple conditions, the rule applies if all conditions apply.
      */
-    resourceAttributeConditions?: pulumi.Input<inputs.AttackAllowlistResourceAttributeConditions>;
+    resourceAttributeConditions?: pulumi.Input<inputs.AttackAllowlistResourceAttributeConditions | undefined>;
     /**
      * Rule name
      */
-    ruleName?: pulumi.Input<string>;
+    ruleName?: pulumi.Input<string | undefined>;
     /**
      * Provide conditions that must be met by the detection finding you want to allowlist.
      */

@@ -23,10 +23,10 @@ class EnvironmentArgs:
     def __init__(__self__, *,
                  state: pulumi.Input[_builtins.str],
                  storage: pulumi.Input['EnvironmentStorageArgs'],
-                 name: Optional[pulumi.Input[_builtins.str]] = None,
-                 quotas: Optional[pulumi.Input['EnvironmentQuotasArgs']] = None,
-                 tags: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-                 trial: Optional[pulumi.Input[_builtins.bool]] = None):
+                 name: pulumi.Input[Optional[_builtins.str]] = None,
+                 quotas: pulumi.Input[Optional['EnvironmentQuotasArgs']] = None,
+                 tags: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 trial: pulumi.Input[Optional[_builtins.bool]] = None):
         """
         The set of arguments for constructing a Environment resource.
 
@@ -74,62 +74,62 @@ class EnvironmentArgs:
 
     @_builtins.property
     @pulumi.getter
-    def name(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def name(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The display name of the environment
         """
         return pulumi.get(self, "name")
 
     @name.setter
-    def name(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def name(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "name", value)
 
     @_builtins.property
     @pulumi.getter
-    def quotas(self) -> Optional[pulumi.Input['EnvironmentQuotasArgs']]:
+    def quotas(self) -> pulumi.Input[Optional['EnvironmentQuotasArgs']]:
         """
         Environment level consumption and quotas information
         """
         return pulumi.get(self, "quotas")
 
     @quotas.setter
-    def quotas(self, value: Optional[pulumi.Input['EnvironmentQuotasArgs']]):
+    def quotas(self, value: pulumi.Input[Optional['EnvironmentQuotasArgs']]):
         pulumi.set(self, "quotas", value)
 
     @_builtins.property
     @pulumi.getter
-    def tags(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]:
+    def tags(self) -> pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]:
         """
         A set of tags that are assigned to this environment. Every tag can have a maximum length of 100 characters
         """
         return pulumi.get(self, "tags")
 
     @tags.setter
-    def tags(self, value: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]):
+    def tags(self, value: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "tags", value)
 
     @_builtins.property
     @pulumi.getter
-    def trial(self) -> Optional[pulumi.Input[_builtins.bool]]:
+    def trial(self) -> pulumi.Input[Optional[_builtins.bool]]:
         """
         Specifies whether the environment is a trial environment or a non-trial environment. Creating a trial environment is only possible if your license allows that. The default value is false (non-trial)
         """
         return pulumi.get(self, "trial")
 
     @trial.setter
-    def trial(self, value: Optional[pulumi.Input[_builtins.bool]]):
+    def trial(self, value: pulumi.Input[Optional[_builtins.bool]]):
         pulumi.set(self, "trial", value)
 
 
 @pulumi.input_type
 class _EnvironmentState:
     def __init__(__self__, *,
-                 name: Optional[pulumi.Input[_builtins.str]] = None,
-                 quotas: Optional[pulumi.Input['EnvironmentQuotasArgs']] = None,
-                 state: Optional[pulumi.Input[_builtins.str]] = None,
-                 storage: Optional[pulumi.Input['EnvironmentStorageArgs']] = None,
-                 tags: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-                 trial: Optional[pulumi.Input[_builtins.bool]] = None):
+                 name: pulumi.Input[Optional[_builtins.str]] = None,
+                 quotas: pulumi.Input[Optional['EnvironmentQuotasArgs']] = None,
+                 state: pulumi.Input[Optional[_builtins.str]] = None,
+                 storage: pulumi.Input[Optional['EnvironmentStorageArgs']] = None,
+                 tags: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 trial: pulumi.Input[Optional[_builtins.bool]] = None):
         """
         Input properties used for looking up and filtering Environment resources.
 
@@ -155,74 +155,74 @@ class _EnvironmentState:
 
     @_builtins.property
     @pulumi.getter
-    def name(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def name(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The display name of the environment
         """
         return pulumi.get(self, "name")
 
     @name.setter
-    def name(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def name(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "name", value)
 
     @_builtins.property
     @pulumi.getter
-    def quotas(self) -> Optional[pulumi.Input['EnvironmentQuotasArgs']]:
+    def quotas(self) -> pulumi.Input[Optional['EnvironmentQuotasArgs']]:
         """
         Environment level consumption and quotas information
         """
         return pulumi.get(self, "quotas")
 
     @quotas.setter
-    def quotas(self, value: Optional[pulumi.Input['EnvironmentQuotasArgs']]):
+    def quotas(self, value: pulumi.Input[Optional['EnvironmentQuotasArgs']]):
         pulumi.set(self, "quotas", value)
 
     @_builtins.property
     @pulumi.getter
-    def state(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def state(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Indicates whether the environment is enabled or disabled. Possible values are `ENABLED` and `DISABLED`. The default value is ENABLED
         """
         return pulumi.get(self, "state")
 
     @state.setter
-    def state(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def state(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "state", value)
 
     @_builtins.property
     @pulumi.getter
-    def storage(self) -> Optional[pulumi.Input['EnvironmentStorageArgs']]:
+    def storage(self) -> pulumi.Input[Optional['EnvironmentStorageArgs']]:
         """
         Environment level storage usage and limit information
         """
         return pulumi.get(self, "storage")
 
     @storage.setter
-    def storage(self, value: Optional[pulumi.Input['EnvironmentStorageArgs']]):
+    def storage(self, value: pulumi.Input[Optional['EnvironmentStorageArgs']]):
         pulumi.set(self, "storage", value)
 
     @_builtins.property
     @pulumi.getter
-    def tags(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]:
+    def tags(self) -> pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]:
         """
         A set of tags that are assigned to this environment. Every tag can have a maximum length of 100 characters
         """
         return pulumi.get(self, "tags")
 
     @tags.setter
-    def tags(self, value: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]):
+    def tags(self, value: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "tags", value)
 
     @_builtins.property
     @pulumi.getter
-    def trial(self) -> Optional[pulumi.Input[_builtins.bool]]:
+    def trial(self) -> pulumi.Input[Optional[_builtins.bool]]:
         """
         Specifies whether the environment is a trial environment or a non-trial environment. Creating a trial environment is only possible if your license allows that. The default value is false (non-trial)
         """
         return pulumi.get(self, "trial")
 
     @trial.setter
-    def trial(self, value: Optional[pulumi.Input[_builtins.bool]]):
+    def trial(self, value: pulumi.Input[Optional[_builtins.bool]]):
         pulumi.set(self, "trial", value)
 
 
@@ -232,12 +232,12 @@ class Environment(pulumi.CustomResource):
     def __init__(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 name: Optional[pulumi.Input[_builtins.str]] = None,
-                 quotas: Optional[pulumi.Input[Union['EnvironmentQuotasArgs', 'EnvironmentQuotasArgsDict']]] = None,
-                 state: Optional[pulumi.Input[_builtins.str]] = None,
-                 storage: Optional[pulumi.Input[Union['EnvironmentStorageArgs', 'EnvironmentStorageArgsDict']]] = None,
-                 tags: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-                 trial: Optional[pulumi.Input[_builtins.bool]] = None,
+                 name: pulumi.Input[Optional[_builtins.str]] = None,
+                 quotas: pulumi.Input[Optional[Union['EnvironmentQuotasArgs', 'EnvironmentQuotasArgsDict']]] = None,
+                 state: pulumi.Input[Optional[_builtins.str]] = None,
+                 storage: pulumi.Input[Optional[Union['EnvironmentStorageArgs', 'EnvironmentStorageArgsDict']]] = None,
+                 tags: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 trial: pulumi.Input[Optional[_builtins.bool]] = None,
                  __props__=None):
         """
         > This resource requires the cluster API token scope **Service Provider API** (`ServiceProviderAPI`)
@@ -289,12 +289,12 @@ class Environment(pulumi.CustomResource):
     def _internal_init(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 name: Optional[pulumi.Input[_builtins.str]] = None,
-                 quotas: Optional[pulumi.Input[Union['EnvironmentQuotasArgs', 'EnvironmentQuotasArgsDict']]] = None,
-                 state: Optional[pulumi.Input[_builtins.str]] = None,
-                 storage: Optional[pulumi.Input[Union['EnvironmentStorageArgs', 'EnvironmentStorageArgsDict']]] = None,
-                 tags: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-                 trial: Optional[pulumi.Input[_builtins.bool]] = None,
+                 name: pulumi.Input[Optional[_builtins.str]] = None,
+                 quotas: pulumi.Input[Optional[Union['EnvironmentQuotasArgs', 'EnvironmentQuotasArgsDict']]] = None,
+                 state: pulumi.Input[Optional[_builtins.str]] = None,
+                 storage: pulumi.Input[Optional[Union['EnvironmentStorageArgs', 'EnvironmentStorageArgsDict']]] = None,
+                 tags: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 trial: pulumi.Input[Optional[_builtins.bool]] = None,
                  __props__=None):
         opts = pulumi.ResourceOptions.merge(_utilities.get_resource_opts_defaults(), opts)
         if not isinstance(opts, pulumi.ResourceOptions):
@@ -324,12 +324,12 @@ class Environment(pulumi.CustomResource):
     def get(resource_name: str,
             id: pulumi.Input[str],
             opts: Optional[pulumi.ResourceOptions] = None,
-            name: Optional[pulumi.Input[_builtins.str]] = None,
-            quotas: Optional[pulumi.Input[Union['EnvironmentQuotasArgs', 'EnvironmentQuotasArgsDict']]] = None,
-            state: Optional[pulumi.Input[_builtins.str]] = None,
-            storage: Optional[pulumi.Input[Union['EnvironmentStorageArgs', 'EnvironmentStorageArgsDict']]] = None,
-            tags: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-            trial: Optional[pulumi.Input[_builtins.bool]] = None) -> 'Environment':
+            name: pulumi.Input[Optional[_builtins.str]] = None,
+            quotas: pulumi.Input[Optional[Union['EnvironmentQuotasArgs', 'EnvironmentQuotasArgsDict']]] = None,
+            state: pulumi.Input[Optional[_builtins.str]] = None,
+            storage: pulumi.Input[Optional[Union['EnvironmentStorageArgs', 'EnvironmentStorageArgsDict']]] = None,
+            tags: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+            trial: pulumi.Input[Optional[_builtins.bool]] = None) -> 'Environment':
         """
         Get an existing Environment resource's state with the given name, id, and optional extra
         properties used to qualify the lookup.

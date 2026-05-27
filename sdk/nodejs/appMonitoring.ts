@@ -99,15 +99,15 @@ export interface AppMonitoringState {
     /**
      * You can override the default monitoring setting for each app separately
      */
-    appMonitoring?: pulumi.Input<inputs.AppMonitoringAppMonitoring>;
+    appMonitoring?: pulumi.Input<inputs.AppMonitoringAppMonitoring | undefined>;
     /**
      * Possible Values: `debug`, `error`, `info`, `off`, `warn`
      */
-    defaultLogLevel?: pulumi.Input<string>;
+    defaultLogLevel?: pulumi.Input<string | undefined>;
     /**
      * Possible Values: `off`, `on`
      */
-    defaultTraceLevel?: pulumi.Input<string>;
+    defaultTraceLevel?: pulumi.Input<string | undefined>;
 }
 
 /**
@@ -117,7 +117,7 @@ export interface AppMonitoringArgs {
     /**
      * You can override the default monitoring setting for each app separately
      */
-    appMonitoring?: pulumi.Input<inputs.AppMonitoringAppMonitoring>;
+    appMonitoring?: pulumi.Input<inputs.AppMonitoringAppMonitoring | undefined>;
     /**
      * Possible Values: `debug`, `error`, `info`, `off`, `warn`
      */
@@ -125,5 +125,5 @@ export interface AppMonitoringArgs {
     /**
      * Possible Values: `off`, `on`
      */
-    defaultTraceLevel?: pulumi.Input<string>;
+    defaultTraceLevel?: pulumi.Input<string | undefined>;
 }

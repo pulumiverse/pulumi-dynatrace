@@ -21,11 +21,11 @@ __all__ = ['DduPoolArgs', 'DduPool']
 @pulumi.input_type
 class DduPoolArgs:
     def __init__(__self__, *,
-                 events: Optional[pulumi.Input['DduPoolEventsArgs']] = None,
-                 log_monitoring: Optional[pulumi.Input['DduPoolLogMonitoringArgs']] = None,
-                 metrics: Optional[pulumi.Input['DduPoolMetricsArgs']] = None,
-                 serverless: Optional[pulumi.Input['DduPoolServerlessArgs']] = None,
-                 traces: Optional[pulumi.Input['DduPoolTracesArgs']] = None):
+                 events: pulumi.Input[Optional['DduPoolEventsArgs']] = None,
+                 log_monitoring: pulumi.Input[Optional['DduPoolLogMonitoringArgs']] = None,
+                 metrics: pulumi.Input[Optional['DduPoolMetricsArgs']] = None,
+                 serverless: pulumi.Input[Optional['DduPoolServerlessArgs']] = None,
+                 traces: pulumi.Input[Optional['DduPoolTracesArgs']] = None):
         """
         The set of arguments for constructing a DduPool resource.
 
@@ -48,73 +48,73 @@ class DduPoolArgs:
 
     @_builtins.property
     @pulumi.getter
-    def events(self) -> Optional[pulumi.Input['DduPoolEventsArgs']]:
+    def events(self) -> pulumi.Input[Optional['DduPoolEventsArgs']]:
         """
         DDU pool settings for Events
         """
         return pulumi.get(self, "events")
 
     @events.setter
-    def events(self, value: Optional[pulumi.Input['DduPoolEventsArgs']]):
+    def events(self, value: pulumi.Input[Optional['DduPoolEventsArgs']]):
         pulumi.set(self, "events", value)
 
     @_builtins.property
     @pulumi.getter(name="logMonitoring")
-    def log_monitoring(self) -> Optional[pulumi.Input['DduPoolLogMonitoringArgs']]:
+    def log_monitoring(self) -> pulumi.Input[Optional['DduPoolLogMonitoringArgs']]:
         """
         DDU pool settings for Log Monitoring
         """
         return pulumi.get(self, "log_monitoring")
 
     @log_monitoring.setter
-    def log_monitoring(self, value: Optional[pulumi.Input['DduPoolLogMonitoringArgs']]):
+    def log_monitoring(self, value: pulumi.Input[Optional['DduPoolLogMonitoringArgs']]):
         pulumi.set(self, "log_monitoring", value)
 
     @_builtins.property
     @pulumi.getter
-    def metrics(self) -> Optional[pulumi.Input['DduPoolMetricsArgs']]:
+    def metrics(self) -> pulumi.Input[Optional['DduPoolMetricsArgs']]:
         """
         DDU pool settings for Metrics
         """
         return pulumi.get(self, "metrics")
 
     @metrics.setter
-    def metrics(self, value: Optional[pulumi.Input['DduPoolMetricsArgs']]):
+    def metrics(self, value: pulumi.Input[Optional['DduPoolMetricsArgs']]):
         pulumi.set(self, "metrics", value)
 
     @_builtins.property
     @pulumi.getter
-    def serverless(self) -> Optional[pulumi.Input['DduPoolServerlessArgs']]:
+    def serverless(self) -> pulumi.Input[Optional['DduPoolServerlessArgs']]:
         """
         DDU pool settings for Serverless
         """
         return pulumi.get(self, "serverless")
 
     @serverless.setter
-    def serverless(self, value: Optional[pulumi.Input['DduPoolServerlessArgs']]):
+    def serverless(self, value: pulumi.Input[Optional['DduPoolServerlessArgs']]):
         pulumi.set(self, "serverless", value)
 
     @_builtins.property
     @pulumi.getter
-    def traces(self) -> Optional[pulumi.Input['DduPoolTracesArgs']]:
+    def traces(self) -> pulumi.Input[Optional['DduPoolTracesArgs']]:
         """
         DDU pool settings for Traces
         """
         return pulumi.get(self, "traces")
 
     @traces.setter
-    def traces(self, value: Optional[pulumi.Input['DduPoolTracesArgs']]):
+    def traces(self, value: pulumi.Input[Optional['DduPoolTracesArgs']]):
         pulumi.set(self, "traces", value)
 
 
 @pulumi.input_type
 class _DduPoolState:
     def __init__(__self__, *,
-                 events: Optional[pulumi.Input['DduPoolEventsArgs']] = None,
-                 log_monitoring: Optional[pulumi.Input['DduPoolLogMonitoringArgs']] = None,
-                 metrics: Optional[pulumi.Input['DduPoolMetricsArgs']] = None,
-                 serverless: Optional[pulumi.Input['DduPoolServerlessArgs']] = None,
-                 traces: Optional[pulumi.Input['DduPoolTracesArgs']] = None):
+                 events: pulumi.Input[Optional['DduPoolEventsArgs']] = None,
+                 log_monitoring: pulumi.Input[Optional['DduPoolLogMonitoringArgs']] = None,
+                 metrics: pulumi.Input[Optional['DduPoolMetricsArgs']] = None,
+                 serverless: pulumi.Input[Optional['DduPoolServerlessArgs']] = None,
+                 traces: pulumi.Input[Optional['DduPoolTracesArgs']] = None):
         """
         Input properties used for looking up and filtering DduPool resources.
 
@@ -137,62 +137,62 @@ class _DduPoolState:
 
     @_builtins.property
     @pulumi.getter
-    def events(self) -> Optional[pulumi.Input['DduPoolEventsArgs']]:
+    def events(self) -> pulumi.Input[Optional['DduPoolEventsArgs']]:
         """
         DDU pool settings for Events
         """
         return pulumi.get(self, "events")
 
     @events.setter
-    def events(self, value: Optional[pulumi.Input['DduPoolEventsArgs']]):
+    def events(self, value: pulumi.Input[Optional['DduPoolEventsArgs']]):
         pulumi.set(self, "events", value)
 
     @_builtins.property
     @pulumi.getter(name="logMonitoring")
-    def log_monitoring(self) -> Optional[pulumi.Input['DduPoolLogMonitoringArgs']]:
+    def log_monitoring(self) -> pulumi.Input[Optional['DduPoolLogMonitoringArgs']]:
         """
         DDU pool settings for Log Monitoring
         """
         return pulumi.get(self, "log_monitoring")
 
     @log_monitoring.setter
-    def log_monitoring(self, value: Optional[pulumi.Input['DduPoolLogMonitoringArgs']]):
+    def log_monitoring(self, value: pulumi.Input[Optional['DduPoolLogMonitoringArgs']]):
         pulumi.set(self, "log_monitoring", value)
 
     @_builtins.property
     @pulumi.getter
-    def metrics(self) -> Optional[pulumi.Input['DduPoolMetricsArgs']]:
+    def metrics(self) -> pulumi.Input[Optional['DduPoolMetricsArgs']]:
         """
         DDU pool settings for Metrics
         """
         return pulumi.get(self, "metrics")
 
     @metrics.setter
-    def metrics(self, value: Optional[pulumi.Input['DduPoolMetricsArgs']]):
+    def metrics(self, value: pulumi.Input[Optional['DduPoolMetricsArgs']]):
         pulumi.set(self, "metrics", value)
 
     @_builtins.property
     @pulumi.getter
-    def serverless(self) -> Optional[pulumi.Input['DduPoolServerlessArgs']]:
+    def serverless(self) -> pulumi.Input[Optional['DduPoolServerlessArgs']]:
         """
         DDU pool settings for Serverless
         """
         return pulumi.get(self, "serverless")
 
     @serverless.setter
-    def serverless(self, value: Optional[pulumi.Input['DduPoolServerlessArgs']]):
+    def serverless(self, value: pulumi.Input[Optional['DduPoolServerlessArgs']]):
         pulumi.set(self, "serverless", value)
 
     @_builtins.property
     @pulumi.getter
-    def traces(self) -> Optional[pulumi.Input['DduPoolTracesArgs']]:
+    def traces(self) -> pulumi.Input[Optional['DduPoolTracesArgs']]:
         """
         DDU pool settings for Traces
         """
         return pulumi.get(self, "traces")
 
     @traces.setter
-    def traces(self, value: Optional[pulumi.Input['DduPoolTracesArgs']]):
+    def traces(self, value: pulumi.Input[Optional['DduPoolTracesArgs']]):
         pulumi.set(self, "traces", value)
 
 
@@ -202,11 +202,11 @@ class DduPool(pulumi.CustomResource):
     def __init__(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 events: Optional[pulumi.Input[Union['DduPoolEventsArgs', 'DduPoolEventsArgsDict']]] = None,
-                 log_monitoring: Optional[pulumi.Input[Union['DduPoolLogMonitoringArgs', 'DduPoolLogMonitoringArgsDict']]] = None,
-                 metrics: Optional[pulumi.Input[Union['DduPoolMetricsArgs', 'DduPoolMetricsArgsDict']]] = None,
-                 serverless: Optional[pulumi.Input[Union['DduPoolServerlessArgs', 'DduPoolServerlessArgsDict']]] = None,
-                 traces: Optional[pulumi.Input[Union['DduPoolTracesArgs', 'DduPoolTracesArgsDict']]] = None,
+                 events: pulumi.Input[Optional[Union['DduPoolEventsArgs', 'DduPoolEventsArgsDict']]] = None,
+                 log_monitoring: pulumi.Input[Optional[Union['DduPoolLogMonitoringArgs', 'DduPoolLogMonitoringArgsDict']]] = None,
+                 metrics: pulumi.Input[Optional[Union['DduPoolMetricsArgs', 'DduPoolMetricsArgsDict']]] = None,
+                 serverless: pulumi.Input[Optional[Union['DduPoolServerlessArgs', 'DduPoolServerlessArgsDict']]] = None,
+                 traces: pulumi.Input[Optional[Union['DduPoolTracesArgs', 'DduPoolTracesArgsDict']]] = None,
                  __props__=None):
         """
         !> This resource API endpoint has been deprecated.
@@ -261,11 +261,11 @@ class DduPool(pulumi.CustomResource):
     def _internal_init(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 events: Optional[pulumi.Input[Union['DduPoolEventsArgs', 'DduPoolEventsArgsDict']]] = None,
-                 log_monitoring: Optional[pulumi.Input[Union['DduPoolLogMonitoringArgs', 'DduPoolLogMonitoringArgsDict']]] = None,
-                 metrics: Optional[pulumi.Input[Union['DduPoolMetricsArgs', 'DduPoolMetricsArgsDict']]] = None,
-                 serverless: Optional[pulumi.Input[Union['DduPoolServerlessArgs', 'DduPoolServerlessArgsDict']]] = None,
-                 traces: Optional[pulumi.Input[Union['DduPoolTracesArgs', 'DduPoolTracesArgsDict']]] = None,
+                 events: pulumi.Input[Optional[Union['DduPoolEventsArgs', 'DduPoolEventsArgsDict']]] = None,
+                 log_monitoring: pulumi.Input[Optional[Union['DduPoolLogMonitoringArgs', 'DduPoolLogMonitoringArgsDict']]] = None,
+                 metrics: pulumi.Input[Optional[Union['DduPoolMetricsArgs', 'DduPoolMetricsArgsDict']]] = None,
+                 serverless: pulumi.Input[Optional[Union['DduPoolServerlessArgs', 'DduPoolServerlessArgsDict']]] = None,
+                 traces: pulumi.Input[Optional[Union['DduPoolTracesArgs', 'DduPoolTracesArgsDict']]] = None,
                  __props__=None):
         opts = pulumi.ResourceOptions.merge(_utilities.get_resource_opts_defaults(), opts)
         if not isinstance(opts, pulumi.ResourceOptions):
@@ -290,11 +290,11 @@ class DduPool(pulumi.CustomResource):
     def get(resource_name: str,
             id: pulumi.Input[str],
             opts: Optional[pulumi.ResourceOptions] = None,
-            events: Optional[pulumi.Input[Union['DduPoolEventsArgs', 'DduPoolEventsArgsDict']]] = None,
-            log_monitoring: Optional[pulumi.Input[Union['DduPoolLogMonitoringArgs', 'DduPoolLogMonitoringArgsDict']]] = None,
-            metrics: Optional[pulumi.Input[Union['DduPoolMetricsArgs', 'DduPoolMetricsArgsDict']]] = None,
-            serverless: Optional[pulumi.Input[Union['DduPoolServerlessArgs', 'DduPoolServerlessArgsDict']]] = None,
-            traces: Optional[pulumi.Input[Union['DduPoolTracesArgs', 'DduPoolTracesArgsDict']]] = None) -> 'DduPool':
+            events: pulumi.Input[Optional[Union['DduPoolEventsArgs', 'DduPoolEventsArgsDict']]] = None,
+            log_monitoring: pulumi.Input[Optional[Union['DduPoolLogMonitoringArgs', 'DduPoolLogMonitoringArgsDict']]] = None,
+            metrics: pulumi.Input[Optional[Union['DduPoolMetricsArgs', 'DduPoolMetricsArgsDict']]] = None,
+            serverless: pulumi.Input[Optional[Union['DduPoolServerlessArgs', 'DduPoolServerlessArgsDict']]] = None,
+            traces: pulumi.Input[Optional[Union['DduPoolTracesArgs', 'DduPoolTracesArgsDict']]] = None) -> 'DduPool':
         """
         Get an existing DduPool resource's state with the given name, id, and optional extra
         properties used to qualify the lookup.

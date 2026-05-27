@@ -98,15 +98,15 @@ export interface ApplicationAnomaliesState {
     /**
      * Configuration of failure rate increase detection
      */
-    failureRate?: pulumi.Input<inputs.ApplicationAnomaliesFailureRate>;
+    failureRate?: pulumi.Input<inputs.ApplicationAnomaliesFailureRate | undefined>;
     /**
      * Configuration of response time degradation detection
      */
-    responseTime?: pulumi.Input<inputs.ApplicationAnomaliesResponseTime>;
+    responseTime?: pulumi.Input<inputs.ApplicationAnomaliesResponseTime | undefined>;
     /**
      * Configuration for anomalies regarding traffic
      */
-    traffic?: pulumi.Input<inputs.ApplicationAnomaliesTraffic>;
+    traffic?: pulumi.Input<inputs.ApplicationAnomaliesTraffic | undefined>;
 }
 
 /**
@@ -116,13 +116,13 @@ export interface ApplicationAnomaliesArgs {
     /**
      * Configuration of failure rate increase detection
      */
-    failureRate?: pulumi.Input<inputs.ApplicationAnomaliesFailureRate>;
+    failureRate?: pulumi.Input<inputs.ApplicationAnomaliesFailureRate | undefined>;
     /**
      * Configuration of response time degradation detection
      */
-    responseTime?: pulumi.Input<inputs.ApplicationAnomaliesResponseTime>;
+    responseTime?: pulumi.Input<inputs.ApplicationAnomaliesResponseTime | undefined>;
     /**
      * Configuration for anomalies regarding traffic
      */
-    traffic?: pulumi.Input<inputs.ApplicationAnomaliesTraffic>;
+    traffic?: pulumi.Input<inputs.ApplicationAnomaliesTraffic | undefined>;
 }

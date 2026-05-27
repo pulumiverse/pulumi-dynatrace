@@ -21,21 +21,21 @@ __all__ = ['CredentialsArgs', 'Credentials']
 @pulumi.input_type
 class CredentialsArgs:
     def __init__(__self__, *,
-                 allow_contextless_requests: Optional[pulumi.Input[_builtins.bool]] = None,
-                 allowed_entities: Optional[pulumi.Input['CredentialsAllowedEntitiesArgs']] = None,
-                 certificate: Optional[pulumi.Input[_builtins.str]] = None,
-                 credential_usage_summaries: Optional[pulumi.Input[Sequence[pulumi.Input['CredentialsCredentialUsageSummaryArgs']]]] = None,
-                 description: Optional[pulumi.Input[_builtins.str]] = None,
-                 external: Optional[pulumi.Input['CredentialsExternalArgs']] = None,
-                 format: Optional[pulumi.Input[_builtins.str]] = None,
-                 name: Optional[pulumi.Input[_builtins.str]] = None,
-                 owner_access_only: Optional[pulumi.Input[_builtins.bool]] = None,
-                 password: Optional[pulumi.Input[_builtins.str]] = None,
-                 public: Optional[pulumi.Input[_builtins.bool]] = None,
-                 scope: Optional[pulumi.Input[_builtins.str]] = None,
-                 scopes: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-                 token: Optional[pulumi.Input[_builtins.str]] = None,
-                 username: Optional[pulumi.Input[_builtins.str]] = None):
+                 allow_contextless_requests: pulumi.Input[Optional[_builtins.bool]] = None,
+                 allowed_entities: pulumi.Input[Optional['CredentialsAllowedEntitiesArgs']] = None,
+                 certificate: pulumi.Input[Optional[_builtins.str]] = None,
+                 credential_usage_summaries: pulumi.Input[Optional[Sequence[pulumi.Input['CredentialsCredentialUsageSummaryArgs']]]] = None,
+                 description: pulumi.Input[Optional[_builtins.str]] = None,
+                 external: pulumi.Input[Optional['CredentialsExternalArgs']] = None,
+                 format: pulumi.Input[Optional[_builtins.str]] = None,
+                 name: pulumi.Input[Optional[_builtins.str]] = None,
+                 owner_access_only: pulumi.Input[Optional[_builtins.bool]] = None,
+                 password: pulumi.Input[Optional[_builtins.str]] = None,
+                 public: pulumi.Input[Optional[_builtins.bool]] = None,
+                 scope: pulumi.Input[Optional[_builtins.str]] = None,
+                 scopes: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 token: pulumi.Input[Optional[_builtins.str]] = None,
+                 username: pulumi.Input[Optional[_builtins.str]] = None):
         """
         The set of arguments for constructing a Credentials resource.
 
@@ -94,205 +94,205 @@ class CredentialsArgs:
 
     @_builtins.property
     @pulumi.getter(name="allowContextlessRequests")
-    def allow_contextless_requests(self) -> Optional[pulumi.Input[_builtins.bool]]:
+    def allow_contextless_requests(self) -> pulumi.Input[Optional[_builtins.bool]]:
         """
         Allow ad-hoc functions to access the credential details (requires the APP_ENGINE scope).
         """
         return pulumi.get(self, "allow_contextless_requests")
 
     @allow_contextless_requests.setter
-    def allow_contextless_requests(self, value: Optional[pulumi.Input[_builtins.bool]]):
+    def allow_contextless_requests(self, value: pulumi.Input[Optional[_builtins.bool]]):
         pulumi.set(self, "allow_contextless_requests", value)
 
     @_builtins.property
     @pulumi.getter(name="allowedEntities")
-    def allowed_entities(self) -> Optional[pulumi.Input['CredentialsAllowedEntitiesArgs']]:
+    def allowed_entities(self) -> pulumi.Input[Optional['CredentialsAllowedEntitiesArgs']]:
         """
         The set of entities allowed to use the credential.
         """
         return pulumi.get(self, "allowed_entities")
 
     @allowed_entities.setter
-    def allowed_entities(self, value: Optional[pulumi.Input['CredentialsAllowedEntitiesArgs']]):
+    def allowed_entities(self, value: pulumi.Input[Optional['CredentialsAllowedEntitiesArgs']]):
         pulumi.set(self, "allowed_entities", value)
 
     @_builtins.property
     @pulumi.getter
-    def certificate(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def certificate(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The certificate in the string format.
         """
         return pulumi.get(self, "certificate")
 
     @certificate.setter
-    def certificate(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def certificate(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "certificate", value)
 
     @_builtins.property
     @pulumi.getter(name="credentialUsageSummaries")
     @_utilities.deprecated("""`credential_usage_summary` will be removed in future versions. It's not getting filled anymore, because it's runtime data""")
-    def credential_usage_summaries(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['CredentialsCredentialUsageSummaryArgs']]]]:
+    def credential_usage_summaries(self) -> pulumi.Input[Optional[Sequence[pulumi.Input['CredentialsCredentialUsageSummaryArgs']]]]:
         """
         The list contains summary data related to the use of credentials
         """
         return pulumi.get(self, "credential_usage_summaries")
 
     @credential_usage_summaries.setter
-    def credential_usage_summaries(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['CredentialsCredentialUsageSummaryArgs']]]]):
+    def credential_usage_summaries(self, value: pulumi.Input[Optional[Sequence[pulumi.Input['CredentialsCredentialUsageSummaryArgs']]]]):
         pulumi.set(self, "credential_usage_summaries", value)
 
     @_builtins.property
     @pulumi.getter
-    def description(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def description(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         A short description of the credentials set
         """
         return pulumi.get(self, "description")
 
     @description.setter
-    def description(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def description(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "description", value)
 
     @_builtins.property
     @pulumi.getter
-    def external(self) -> Optional[pulumi.Input['CredentialsExternalArgs']]:
+    def external(self) -> pulumi.Input[Optional['CredentialsExternalArgs']]:
         """
         External Vault Configuration
         """
         return pulumi.get(self, "external")
 
     @external.setter
-    def external(self, value: Optional[pulumi.Input['CredentialsExternalArgs']]):
+    def external(self, value: pulumi.Input[Optional['CredentialsExternalArgs']]):
         pulumi.set(self, "external", value)
 
     @_builtins.property
     @pulumi.getter
-    def format(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def format(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The certificate format. Possible values are `PEM`, `PKCS12` and `UNKNOWN`.
         """
         return pulumi.get(self, "format")
 
     @format.setter
-    def format(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def format(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "format", value)
 
     @_builtins.property
     @pulumi.getter
-    def name(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def name(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The name of the credentials set
         """
         return pulumi.get(self, "name")
 
     @name.setter
-    def name(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def name(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "name", value)
 
     @_builtins.property
     @pulumi.getter(name="ownerAccessOnly")
-    def owner_access_only(self) -> Optional[pulumi.Input[_builtins.bool]]:
+    def owner_access_only(self) -> pulumi.Input[Optional[_builtins.bool]]:
         """
         The credentials set is available to every user (`false`) or to owner only (`true`)
         """
         return pulumi.get(self, "owner_access_only")
 
     @owner_access_only.setter
-    def owner_access_only(self, value: Optional[pulumi.Input[_builtins.bool]]):
+    def owner_access_only(self, value: pulumi.Input[Optional[_builtins.bool]]):
         pulumi.set(self, "owner_access_only", value)
 
     @_builtins.property
     @pulumi.getter
-    def password(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def password(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The password of the credential. Note: Terraform treats an empty string for a value as if the attribute was absent. If you want to set an empty password, use the value `--empty--`.
         """
         return pulumi.get(self, "password")
 
     @password.setter
-    def password(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def password(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "password", value)
 
     @_builtins.property
     @pulumi.getter
-    def public(self) -> Optional[pulumi.Input[_builtins.bool]]:
+    def public(self) -> pulumi.Input[Optional[_builtins.bool]]:
         """
         For certificate authentication specifies whether it's public certificate auth (`true`) or not (`false`).
         """
         return pulumi.get(self, "public")
 
     @public.setter
-    def public(self, value: Optional[pulumi.Input[_builtins.bool]]):
+    def public(self, value: pulumi.Input[Optional[_builtins.bool]]):
         pulumi.set(self, "public", value)
 
     @_builtins.property
     @pulumi.getter
     @_utilities.deprecated("""Deprecated(v279), please use `scopes` instead.""")
-    def scope(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def scope(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The scope of the credentials set. Possible values are `ALL`, `APP_ENGINE`, `EXTENSION` and `SYNTHETIC`
         """
         return pulumi.get(self, "scope")
 
     @scope.setter
-    def scope(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def scope(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "scope", value)
 
     @_builtins.property
     @pulumi.getter
-    def scopes(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]:
+    def scopes(self) -> pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]:
         """
         The set of scopes of the credentials set. Possible values are `APP_ENGINE` and `SYNTHETIC`
         """
         return pulumi.get(self, "scopes")
 
     @scopes.setter
-    def scopes(self, value: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]):
+    def scopes(self, value: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "scopes", value)
 
     @_builtins.property
     @pulumi.getter
-    def token(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def token(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Token in the string format. Specifying a token implies `Token Authentication`.
         """
         return pulumi.get(self, "token")
 
     @token.setter
-    def token(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def token(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "token", value)
 
     @_builtins.property
     @pulumi.getter
-    def username(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def username(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The username of the credentials set.
         """
         return pulumi.get(self, "username")
 
     @username.setter
-    def username(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def username(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "username", value)
 
 
 @pulumi.input_type
 class _CredentialsState:
     def __init__(__self__, *,
-                 allow_contextless_requests: Optional[pulumi.Input[_builtins.bool]] = None,
-                 allowed_entities: Optional[pulumi.Input['CredentialsAllowedEntitiesArgs']] = None,
-                 certificate: Optional[pulumi.Input[_builtins.str]] = None,
-                 credential_usage_summaries: Optional[pulumi.Input[Sequence[pulumi.Input['CredentialsCredentialUsageSummaryArgs']]]] = None,
-                 description: Optional[pulumi.Input[_builtins.str]] = None,
-                 external: Optional[pulumi.Input['CredentialsExternalArgs']] = None,
-                 format: Optional[pulumi.Input[_builtins.str]] = None,
-                 name: Optional[pulumi.Input[_builtins.str]] = None,
-                 owner_access_only: Optional[pulumi.Input[_builtins.bool]] = None,
-                 password: Optional[pulumi.Input[_builtins.str]] = None,
-                 public: Optional[pulumi.Input[_builtins.bool]] = None,
-                 scope: Optional[pulumi.Input[_builtins.str]] = None,
-                 scopes: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-                 token: Optional[pulumi.Input[_builtins.str]] = None,
-                 username: Optional[pulumi.Input[_builtins.str]] = None):
+                 allow_contextless_requests: pulumi.Input[Optional[_builtins.bool]] = None,
+                 allowed_entities: pulumi.Input[Optional['CredentialsAllowedEntitiesArgs']] = None,
+                 certificate: pulumi.Input[Optional[_builtins.str]] = None,
+                 credential_usage_summaries: pulumi.Input[Optional[Sequence[pulumi.Input['CredentialsCredentialUsageSummaryArgs']]]] = None,
+                 description: pulumi.Input[Optional[_builtins.str]] = None,
+                 external: pulumi.Input[Optional['CredentialsExternalArgs']] = None,
+                 format: pulumi.Input[Optional[_builtins.str]] = None,
+                 name: pulumi.Input[Optional[_builtins.str]] = None,
+                 owner_access_only: pulumi.Input[Optional[_builtins.bool]] = None,
+                 password: pulumi.Input[Optional[_builtins.str]] = None,
+                 public: pulumi.Input[Optional[_builtins.bool]] = None,
+                 scope: pulumi.Input[Optional[_builtins.str]] = None,
+                 scopes: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 token: pulumi.Input[Optional[_builtins.str]] = None,
+                 username: pulumi.Input[Optional[_builtins.str]] = None):
         """
         Input properties used for looking up and filtering Credentials resources.
 
@@ -351,184 +351,184 @@ class _CredentialsState:
 
     @_builtins.property
     @pulumi.getter(name="allowContextlessRequests")
-    def allow_contextless_requests(self) -> Optional[pulumi.Input[_builtins.bool]]:
+    def allow_contextless_requests(self) -> pulumi.Input[Optional[_builtins.bool]]:
         """
         Allow ad-hoc functions to access the credential details (requires the APP_ENGINE scope).
         """
         return pulumi.get(self, "allow_contextless_requests")
 
     @allow_contextless_requests.setter
-    def allow_contextless_requests(self, value: Optional[pulumi.Input[_builtins.bool]]):
+    def allow_contextless_requests(self, value: pulumi.Input[Optional[_builtins.bool]]):
         pulumi.set(self, "allow_contextless_requests", value)
 
     @_builtins.property
     @pulumi.getter(name="allowedEntities")
-    def allowed_entities(self) -> Optional[pulumi.Input['CredentialsAllowedEntitiesArgs']]:
+    def allowed_entities(self) -> pulumi.Input[Optional['CredentialsAllowedEntitiesArgs']]:
         """
         The set of entities allowed to use the credential.
         """
         return pulumi.get(self, "allowed_entities")
 
     @allowed_entities.setter
-    def allowed_entities(self, value: Optional[pulumi.Input['CredentialsAllowedEntitiesArgs']]):
+    def allowed_entities(self, value: pulumi.Input[Optional['CredentialsAllowedEntitiesArgs']]):
         pulumi.set(self, "allowed_entities", value)
 
     @_builtins.property
     @pulumi.getter
-    def certificate(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def certificate(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The certificate in the string format.
         """
         return pulumi.get(self, "certificate")
 
     @certificate.setter
-    def certificate(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def certificate(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "certificate", value)
 
     @_builtins.property
     @pulumi.getter(name="credentialUsageSummaries")
     @_utilities.deprecated("""`credential_usage_summary` will be removed in future versions. It's not getting filled anymore, because it's runtime data""")
-    def credential_usage_summaries(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['CredentialsCredentialUsageSummaryArgs']]]]:
+    def credential_usage_summaries(self) -> pulumi.Input[Optional[Sequence[pulumi.Input['CredentialsCredentialUsageSummaryArgs']]]]:
         """
         The list contains summary data related to the use of credentials
         """
         return pulumi.get(self, "credential_usage_summaries")
 
     @credential_usage_summaries.setter
-    def credential_usage_summaries(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['CredentialsCredentialUsageSummaryArgs']]]]):
+    def credential_usage_summaries(self, value: pulumi.Input[Optional[Sequence[pulumi.Input['CredentialsCredentialUsageSummaryArgs']]]]):
         pulumi.set(self, "credential_usage_summaries", value)
 
     @_builtins.property
     @pulumi.getter
-    def description(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def description(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         A short description of the credentials set
         """
         return pulumi.get(self, "description")
 
     @description.setter
-    def description(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def description(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "description", value)
 
     @_builtins.property
     @pulumi.getter
-    def external(self) -> Optional[pulumi.Input['CredentialsExternalArgs']]:
+    def external(self) -> pulumi.Input[Optional['CredentialsExternalArgs']]:
         """
         External Vault Configuration
         """
         return pulumi.get(self, "external")
 
     @external.setter
-    def external(self, value: Optional[pulumi.Input['CredentialsExternalArgs']]):
+    def external(self, value: pulumi.Input[Optional['CredentialsExternalArgs']]):
         pulumi.set(self, "external", value)
 
     @_builtins.property
     @pulumi.getter
-    def format(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def format(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The certificate format. Possible values are `PEM`, `PKCS12` and `UNKNOWN`.
         """
         return pulumi.get(self, "format")
 
     @format.setter
-    def format(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def format(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "format", value)
 
     @_builtins.property
     @pulumi.getter
-    def name(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def name(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The name of the credentials set
         """
         return pulumi.get(self, "name")
 
     @name.setter
-    def name(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def name(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "name", value)
 
     @_builtins.property
     @pulumi.getter(name="ownerAccessOnly")
-    def owner_access_only(self) -> Optional[pulumi.Input[_builtins.bool]]:
+    def owner_access_only(self) -> pulumi.Input[Optional[_builtins.bool]]:
         """
         The credentials set is available to every user (`false`) or to owner only (`true`)
         """
         return pulumi.get(self, "owner_access_only")
 
     @owner_access_only.setter
-    def owner_access_only(self, value: Optional[pulumi.Input[_builtins.bool]]):
+    def owner_access_only(self, value: pulumi.Input[Optional[_builtins.bool]]):
         pulumi.set(self, "owner_access_only", value)
 
     @_builtins.property
     @pulumi.getter
-    def password(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def password(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The password of the credential. Note: Terraform treats an empty string for a value as if the attribute was absent. If you want to set an empty password, use the value `--empty--`.
         """
         return pulumi.get(self, "password")
 
     @password.setter
-    def password(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def password(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "password", value)
 
     @_builtins.property
     @pulumi.getter
-    def public(self) -> Optional[pulumi.Input[_builtins.bool]]:
+    def public(self) -> pulumi.Input[Optional[_builtins.bool]]:
         """
         For certificate authentication specifies whether it's public certificate auth (`true`) or not (`false`).
         """
         return pulumi.get(self, "public")
 
     @public.setter
-    def public(self, value: Optional[pulumi.Input[_builtins.bool]]):
+    def public(self, value: pulumi.Input[Optional[_builtins.bool]]):
         pulumi.set(self, "public", value)
 
     @_builtins.property
     @pulumi.getter
     @_utilities.deprecated("""Deprecated(v279), please use `scopes` instead.""")
-    def scope(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def scope(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The scope of the credentials set. Possible values are `ALL`, `APP_ENGINE`, `EXTENSION` and `SYNTHETIC`
         """
         return pulumi.get(self, "scope")
 
     @scope.setter
-    def scope(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def scope(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "scope", value)
 
     @_builtins.property
     @pulumi.getter
-    def scopes(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]:
+    def scopes(self) -> pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]:
         """
         The set of scopes of the credentials set. Possible values are `APP_ENGINE` and `SYNTHETIC`
         """
         return pulumi.get(self, "scopes")
 
     @scopes.setter
-    def scopes(self, value: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]):
+    def scopes(self, value: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "scopes", value)
 
     @_builtins.property
     @pulumi.getter
-    def token(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def token(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Token in the string format. Specifying a token implies `Token Authentication`.
         """
         return pulumi.get(self, "token")
 
     @token.setter
-    def token(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def token(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "token", value)
 
     @_builtins.property
     @pulumi.getter
-    def username(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def username(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The username of the credentials set.
         """
         return pulumi.get(self, "username")
 
     @username.setter
-    def username(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def username(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "username", value)
 
 
@@ -538,21 +538,21 @@ class Credentials(pulumi.CustomResource):
     def __init__(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 allow_contextless_requests: Optional[pulumi.Input[_builtins.bool]] = None,
-                 allowed_entities: Optional[pulumi.Input[Union['CredentialsAllowedEntitiesArgs', 'CredentialsAllowedEntitiesArgsDict']]] = None,
-                 certificate: Optional[pulumi.Input[_builtins.str]] = None,
-                 credential_usage_summaries: Optional[pulumi.Input[Sequence[pulumi.Input[Union['CredentialsCredentialUsageSummaryArgs', 'CredentialsCredentialUsageSummaryArgsDict']]]]] = None,
-                 description: Optional[pulumi.Input[_builtins.str]] = None,
-                 external: Optional[pulumi.Input[Union['CredentialsExternalArgs', 'CredentialsExternalArgsDict']]] = None,
-                 format: Optional[pulumi.Input[_builtins.str]] = None,
-                 name: Optional[pulumi.Input[_builtins.str]] = None,
-                 owner_access_only: Optional[pulumi.Input[_builtins.bool]] = None,
-                 password: Optional[pulumi.Input[_builtins.str]] = None,
-                 public: Optional[pulumi.Input[_builtins.bool]] = None,
-                 scope: Optional[pulumi.Input[_builtins.str]] = None,
-                 scopes: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-                 token: Optional[pulumi.Input[_builtins.str]] = None,
-                 username: Optional[pulumi.Input[_builtins.str]] = None,
+                 allow_contextless_requests: pulumi.Input[Optional[_builtins.bool]] = None,
+                 allowed_entities: pulumi.Input[Optional[Union['CredentialsAllowedEntitiesArgs', 'CredentialsAllowedEntitiesArgsDict']]] = None,
+                 certificate: pulumi.Input[Optional[_builtins.str]] = None,
+                 credential_usage_summaries: pulumi.Input[Optional[Sequence[pulumi.Input[Union['CredentialsCredentialUsageSummaryArgs', 'CredentialsCredentialUsageSummaryArgsDict']]]]] = None,
+                 description: pulumi.Input[Optional[_builtins.str]] = None,
+                 external: pulumi.Input[Optional[Union['CredentialsExternalArgs', 'CredentialsExternalArgsDict']]] = None,
+                 format: pulumi.Input[Optional[_builtins.str]] = None,
+                 name: pulumi.Input[Optional[_builtins.str]] = None,
+                 owner_access_only: pulumi.Input[Optional[_builtins.bool]] = None,
+                 password: pulumi.Input[Optional[_builtins.str]] = None,
+                 public: pulumi.Input[Optional[_builtins.bool]] = None,
+                 scope: pulumi.Input[Optional[_builtins.str]] = None,
+                 scopes: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 token: pulumi.Input[Optional[_builtins.str]] = None,
+                 username: pulumi.Input[Optional[_builtins.str]] = None,
                  __props__=None):
         """
         > **Destroy Warning** Credentials **cannot be deleted** if they are still associated with active synthetic monitors.
@@ -673,21 +673,21 @@ class Credentials(pulumi.CustomResource):
     def _internal_init(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 allow_contextless_requests: Optional[pulumi.Input[_builtins.bool]] = None,
-                 allowed_entities: Optional[pulumi.Input[Union['CredentialsAllowedEntitiesArgs', 'CredentialsAllowedEntitiesArgsDict']]] = None,
-                 certificate: Optional[pulumi.Input[_builtins.str]] = None,
-                 credential_usage_summaries: Optional[pulumi.Input[Sequence[pulumi.Input[Union['CredentialsCredentialUsageSummaryArgs', 'CredentialsCredentialUsageSummaryArgsDict']]]]] = None,
-                 description: Optional[pulumi.Input[_builtins.str]] = None,
-                 external: Optional[pulumi.Input[Union['CredentialsExternalArgs', 'CredentialsExternalArgsDict']]] = None,
-                 format: Optional[pulumi.Input[_builtins.str]] = None,
-                 name: Optional[pulumi.Input[_builtins.str]] = None,
-                 owner_access_only: Optional[pulumi.Input[_builtins.bool]] = None,
-                 password: Optional[pulumi.Input[_builtins.str]] = None,
-                 public: Optional[pulumi.Input[_builtins.bool]] = None,
-                 scope: Optional[pulumi.Input[_builtins.str]] = None,
-                 scopes: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-                 token: Optional[pulumi.Input[_builtins.str]] = None,
-                 username: Optional[pulumi.Input[_builtins.str]] = None,
+                 allow_contextless_requests: pulumi.Input[Optional[_builtins.bool]] = None,
+                 allowed_entities: pulumi.Input[Optional[Union['CredentialsAllowedEntitiesArgs', 'CredentialsAllowedEntitiesArgsDict']]] = None,
+                 certificate: pulumi.Input[Optional[_builtins.str]] = None,
+                 credential_usage_summaries: pulumi.Input[Optional[Sequence[pulumi.Input[Union['CredentialsCredentialUsageSummaryArgs', 'CredentialsCredentialUsageSummaryArgsDict']]]]] = None,
+                 description: pulumi.Input[Optional[_builtins.str]] = None,
+                 external: pulumi.Input[Optional[Union['CredentialsExternalArgs', 'CredentialsExternalArgsDict']]] = None,
+                 format: pulumi.Input[Optional[_builtins.str]] = None,
+                 name: pulumi.Input[Optional[_builtins.str]] = None,
+                 owner_access_only: pulumi.Input[Optional[_builtins.bool]] = None,
+                 password: pulumi.Input[Optional[_builtins.str]] = None,
+                 public: pulumi.Input[Optional[_builtins.bool]] = None,
+                 scope: pulumi.Input[Optional[_builtins.str]] = None,
+                 scopes: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 token: pulumi.Input[Optional[_builtins.str]] = None,
+                 username: pulumi.Input[Optional[_builtins.str]] = None,
                  __props__=None):
         opts = pulumi.ResourceOptions.merge(_utilities.get_resource_opts_defaults(), opts)
         if not isinstance(opts, pulumi.ResourceOptions):
@@ -724,21 +724,21 @@ class Credentials(pulumi.CustomResource):
     def get(resource_name: str,
             id: pulumi.Input[str],
             opts: Optional[pulumi.ResourceOptions] = None,
-            allow_contextless_requests: Optional[pulumi.Input[_builtins.bool]] = None,
-            allowed_entities: Optional[pulumi.Input[Union['CredentialsAllowedEntitiesArgs', 'CredentialsAllowedEntitiesArgsDict']]] = None,
-            certificate: Optional[pulumi.Input[_builtins.str]] = None,
-            credential_usage_summaries: Optional[pulumi.Input[Sequence[pulumi.Input[Union['CredentialsCredentialUsageSummaryArgs', 'CredentialsCredentialUsageSummaryArgsDict']]]]] = None,
-            description: Optional[pulumi.Input[_builtins.str]] = None,
-            external: Optional[pulumi.Input[Union['CredentialsExternalArgs', 'CredentialsExternalArgsDict']]] = None,
-            format: Optional[pulumi.Input[_builtins.str]] = None,
-            name: Optional[pulumi.Input[_builtins.str]] = None,
-            owner_access_only: Optional[pulumi.Input[_builtins.bool]] = None,
-            password: Optional[pulumi.Input[_builtins.str]] = None,
-            public: Optional[pulumi.Input[_builtins.bool]] = None,
-            scope: Optional[pulumi.Input[_builtins.str]] = None,
-            scopes: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-            token: Optional[pulumi.Input[_builtins.str]] = None,
-            username: Optional[pulumi.Input[_builtins.str]] = None) -> 'Credentials':
+            allow_contextless_requests: pulumi.Input[Optional[_builtins.bool]] = None,
+            allowed_entities: pulumi.Input[Optional[Union['CredentialsAllowedEntitiesArgs', 'CredentialsAllowedEntitiesArgsDict']]] = None,
+            certificate: pulumi.Input[Optional[_builtins.str]] = None,
+            credential_usage_summaries: pulumi.Input[Optional[Sequence[pulumi.Input[Union['CredentialsCredentialUsageSummaryArgs', 'CredentialsCredentialUsageSummaryArgsDict']]]]] = None,
+            description: pulumi.Input[Optional[_builtins.str]] = None,
+            external: pulumi.Input[Optional[Union['CredentialsExternalArgs', 'CredentialsExternalArgsDict']]] = None,
+            format: pulumi.Input[Optional[_builtins.str]] = None,
+            name: pulumi.Input[Optional[_builtins.str]] = None,
+            owner_access_only: pulumi.Input[Optional[_builtins.bool]] = None,
+            password: pulumi.Input[Optional[_builtins.str]] = None,
+            public: pulumi.Input[Optional[_builtins.bool]] = None,
+            scope: pulumi.Input[Optional[_builtins.str]] = None,
+            scopes: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+            token: pulumi.Input[Optional[_builtins.str]] = None,
+            username: pulumi.Input[Optional[_builtins.str]] = None) -> 'Credentials':
         """
         Get an existing Credentials resource's state with the given name, id, and optional extra
         properties used to qualify the lookup.

@@ -123,27 +123,27 @@ export interface ApiDetectionState {
     /**
      * This color will be used to highlight APIs when viewing code level data, such as distributed traces or method hotspots.
      */
-    apiColor?: pulumi.Input<string>;
+    apiColor?: pulumi.Input<string | undefined>;
     /**
      * API name
      */
-    apiName?: pulumi.Input<string>;
+    apiName?: pulumi.Input<string | undefined>;
     /**
      * List of conditions
      */
-    conditions?: pulumi.Input<inputs.ApiDetectionConditions>;
+    conditions?: pulumi.Input<inputs.ApiDetectionConditions | undefined>;
     /**
      * Because this resource allows for ordering you may specify the ID of the resource instance that comes before this instance regarding order. If not specified when creating the setting will be added to the end of the list. If not specified during update the order will remain untouched
      */
-    insertAfter?: pulumi.Input<string>;
+    insertAfter?: pulumi.Input<string | undefined>;
     /**
      * Restrict this rule to a specific technology.
      */
-    technology?: pulumi.Input<string>;
+    technology?: pulumi.Input<string | undefined>;
     /**
      * This API defines a third party library
      */
-    thirdPartyApi?: pulumi.Input<boolean>;
+    thirdPartyApi?: pulumi.Input<boolean | undefined>;
 }
 
 /**
@@ -161,15 +161,15 @@ export interface ApiDetectionArgs {
     /**
      * List of conditions
      */
-    conditions?: pulumi.Input<inputs.ApiDetectionConditions>;
+    conditions?: pulumi.Input<inputs.ApiDetectionConditions | undefined>;
     /**
      * Because this resource allows for ordering you may specify the ID of the resource instance that comes before this instance regarding order. If not specified when creating the setting will be added to the end of the list. If not specified during update the order will remain untouched
      */
-    insertAfter?: pulumi.Input<string>;
+    insertAfter?: pulumi.Input<string | undefined>;
     /**
      * Restrict this rule to a specific technology.
      */
-    technology?: pulumi.Input<string>;
+    technology?: pulumi.Input<string | undefined>;
     /**
      * This API defines a third party library
      */

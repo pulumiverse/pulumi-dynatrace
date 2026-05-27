@@ -105,12 +105,12 @@ export interface UsabilityAnalyticsState {
     /**
      * The scope of this settings. If the settings should cover the whole environment, just don't specify any scope.
      */
-    applicationId?: pulumi.Input<string>;
+    applicationId?: pulumi.Input<string | undefined>;
     /**
      * Three or more rapid clicks within the same area of a web page are considered to be rage clicks. Rage clicks commonly reflect slow-loading or failed page resources. Rage click counts are compiled for each session and considered in the [User Experience Score](https://dt-url.net/39034wt) .
      * With this setting enabled, a rage click count is compiled for each monitored user session.
      */
-    detectRageClicks?: pulumi.Input<boolean>;
+    detectRageClicks?: pulumi.Input<boolean | undefined>;
 }
 
 /**
@@ -120,7 +120,7 @@ export interface UsabilityAnalyticsArgs {
     /**
      * The scope of this settings. If the settings should cover the whole environment, just don't specify any scope.
      */
-    applicationId?: pulumi.Input<string>;
+    applicationId?: pulumi.Input<string | undefined>;
     /**
      * Three or more rapid clicks within the same area of a web page are considered to be rage clicks. Rage clicks commonly reflect slow-loading or failed page resources. Rage click counts are compiled for each session and considered in the [User Experience Score](https://dt-url.net/39034wt) .
      * With this setting enabled, a rage click count is compiled for each monitored user session.

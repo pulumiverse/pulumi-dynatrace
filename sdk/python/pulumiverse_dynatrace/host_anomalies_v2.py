@@ -75,9 +75,9 @@ class HostAnomaliesV2Args:
 @pulumi.input_type
 class _HostAnomaliesV2State:
     def __init__(__self__, *,
-                 host: Optional[pulumi.Input['HostAnomaliesV2HostArgs']] = None,
-                 network: Optional[pulumi.Input['HostAnomaliesV2NetworkArgs']] = None,
-                 scope: Optional[pulumi.Input[_builtins.str]] = None):
+                 host: pulumi.Input[Optional['HostAnomaliesV2HostArgs']] = None,
+                 network: pulumi.Input[Optional['HostAnomaliesV2NetworkArgs']] = None,
+                 scope: pulumi.Input[Optional[_builtins.str]] = None):
         """
         Input properties used for looking up and filtering HostAnomaliesV2 resources.
 
@@ -94,38 +94,38 @@ class _HostAnomaliesV2State:
 
     @_builtins.property
     @pulumi.getter
-    def host(self) -> Optional[pulumi.Input['HostAnomaliesV2HostArgs']]:
+    def host(self) -> pulumi.Input[Optional['HostAnomaliesV2HostArgs']]:
         """
         Hosts
         """
         return pulumi.get(self, "host")
 
     @host.setter
-    def host(self, value: Optional[pulumi.Input['HostAnomaliesV2HostArgs']]):
+    def host(self, value: pulumi.Input[Optional['HostAnomaliesV2HostArgs']]):
         pulumi.set(self, "host", value)
 
     @_builtins.property
     @pulumi.getter
-    def network(self) -> Optional[pulumi.Input['HostAnomaliesV2NetworkArgs']]:
+    def network(self) -> pulumi.Input[Optional['HostAnomaliesV2NetworkArgs']]:
         """
         Network
         """
         return pulumi.get(self, "network")
 
     @network.setter
-    def network(self, value: Optional[pulumi.Input['HostAnomaliesV2NetworkArgs']]):
+    def network(self, value: pulumi.Input[Optional['HostAnomaliesV2NetworkArgs']]):
         pulumi.set(self, "network", value)
 
     @_builtins.property
     @pulumi.getter
-    def scope(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def scope(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The scope of this setting (HOST HOST_GROUP environment)
         """
         return pulumi.get(self, "scope")
 
     @scope.setter
-    def scope(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def scope(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "scope", value)
 
 
@@ -135,9 +135,9 @@ class HostAnomaliesV2(pulumi.CustomResource):
     def __init__(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 host: Optional[pulumi.Input[Union['HostAnomaliesV2HostArgs', 'HostAnomaliesV2HostArgsDict']]] = None,
-                 network: Optional[pulumi.Input[Union['HostAnomaliesV2NetworkArgs', 'HostAnomaliesV2NetworkArgsDict']]] = None,
-                 scope: Optional[pulumi.Input[_builtins.str]] = None,
+                 host: pulumi.Input[Optional[Union['HostAnomaliesV2HostArgs', 'HostAnomaliesV2HostArgsDict']]] = None,
+                 network: pulumi.Input[Optional[Union['HostAnomaliesV2NetworkArgs', 'HostAnomaliesV2NetworkArgsDict']]] = None,
+                 scope: pulumi.Input[Optional[_builtins.str]] = None,
                  __props__=None):
         """
         > This resource requires the API token scopes **Read settings** (`settings.read`) and **Write settings** (`settings.write`)
@@ -198,9 +198,9 @@ class HostAnomaliesV2(pulumi.CustomResource):
     def _internal_init(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 host: Optional[pulumi.Input[Union['HostAnomaliesV2HostArgs', 'HostAnomaliesV2HostArgsDict']]] = None,
-                 network: Optional[pulumi.Input[Union['HostAnomaliesV2NetworkArgs', 'HostAnomaliesV2NetworkArgsDict']]] = None,
-                 scope: Optional[pulumi.Input[_builtins.str]] = None,
+                 host: pulumi.Input[Optional[Union['HostAnomaliesV2HostArgs', 'HostAnomaliesV2HostArgsDict']]] = None,
+                 network: pulumi.Input[Optional[Union['HostAnomaliesV2NetworkArgs', 'HostAnomaliesV2NetworkArgsDict']]] = None,
+                 scope: pulumi.Input[Optional[_builtins.str]] = None,
                  __props__=None):
         opts = pulumi.ResourceOptions.merge(_utilities.get_resource_opts_defaults(), opts)
         if not isinstance(opts, pulumi.ResourceOptions):
@@ -229,9 +229,9 @@ class HostAnomaliesV2(pulumi.CustomResource):
     def get(resource_name: str,
             id: pulumi.Input[str],
             opts: Optional[pulumi.ResourceOptions] = None,
-            host: Optional[pulumi.Input[Union['HostAnomaliesV2HostArgs', 'HostAnomaliesV2HostArgsDict']]] = None,
-            network: Optional[pulumi.Input[Union['HostAnomaliesV2NetworkArgs', 'HostAnomaliesV2NetworkArgsDict']]] = None,
-            scope: Optional[pulumi.Input[_builtins.str]] = None) -> 'HostAnomaliesV2':
+            host: pulumi.Input[Optional[Union['HostAnomaliesV2HostArgs', 'HostAnomaliesV2HostArgsDict']]] = None,
+            network: pulumi.Input[Optional[Union['HostAnomaliesV2NetworkArgs', 'HostAnomaliesV2NetworkArgsDict']]] = None,
+            scope: pulumi.Input[Optional[_builtins.str]] = None) -> 'HostAnomaliesV2':
         """
         Get an existing HostAnomaliesV2 resource's state with the given name, id, and optional extra
         properties used to qualify the lookup.

@@ -23,7 +23,7 @@ class WebAppIpAddressExclusionArgs:
     def __init__(__self__, *,
                  application_id: pulumi.Input[_builtins.str],
                  ip_address_exclusion_include: pulumi.Input[_builtins.bool],
-                 ip_exclusion_list: Optional[pulumi.Input['WebAppIpAddressExclusionIpExclusionListArgs']] = None):
+                 ip_exclusion_list: pulumi.Input[Optional['WebAppIpAddressExclusionIpExclusionListArgs']] = None):
         """
         The set of arguments for constructing a WebAppIpAddressExclusion resource.
 
@@ -65,7 +65,7 @@ class WebAppIpAddressExclusionArgs:
 
     @_builtins.property
     @pulumi.getter(name="ipExclusionList")
-    def ip_exclusion_list(self) -> Optional[pulumi.Input['WebAppIpAddressExclusionIpExclusionListArgs']]:
+    def ip_exclusion_list(self) -> pulumi.Input[Optional['WebAppIpAddressExclusionIpExclusionListArgs']]:
         """
         **Examples:**
 
@@ -75,16 +75,16 @@ class WebAppIpAddressExclusionArgs:
         return pulumi.get(self, "ip_exclusion_list")
 
     @ip_exclusion_list.setter
-    def ip_exclusion_list(self, value: Optional[pulumi.Input['WebAppIpAddressExclusionIpExclusionListArgs']]):
+    def ip_exclusion_list(self, value: pulumi.Input[Optional['WebAppIpAddressExclusionIpExclusionListArgs']]):
         pulumi.set(self, "ip_exclusion_list", value)
 
 
 @pulumi.input_type
 class _WebAppIpAddressExclusionState:
     def __init__(__self__, *,
-                 application_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 ip_address_exclusion_include: Optional[pulumi.Input[_builtins.bool]] = None,
-                 ip_exclusion_list: Optional[pulumi.Input['WebAppIpAddressExclusionIpExclusionListArgs']] = None):
+                 application_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 ip_address_exclusion_include: pulumi.Input[Optional[_builtins.bool]] = None,
+                 ip_exclusion_list: pulumi.Input[Optional['WebAppIpAddressExclusionIpExclusionListArgs']] = None):
         """
         Input properties used for looking up and filtering WebAppIpAddressExclusion resources.
 
@@ -104,31 +104,31 @@ class _WebAppIpAddressExclusionState:
 
     @_builtins.property
     @pulumi.getter(name="applicationId")
-    def application_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def application_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The scope of this settings. If the settings should cover the whole environment, just don't specify any scope.
         """
         return pulumi.get(self, "application_id")
 
     @application_id.setter
-    def application_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def application_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "application_id", value)
 
     @_builtins.property
     @pulumi.getter(name="ipAddressExclusionInclude")
-    def ip_address_exclusion_include(self) -> Optional[pulumi.Input[_builtins.bool]]:
+    def ip_address_exclusion_include(self) -> pulumi.Input[Optional[_builtins.bool]]:
         """
         These are the only IP addresses that should be monitored
         """
         return pulumi.get(self, "ip_address_exclusion_include")
 
     @ip_address_exclusion_include.setter
-    def ip_address_exclusion_include(self, value: Optional[pulumi.Input[_builtins.bool]]):
+    def ip_address_exclusion_include(self, value: pulumi.Input[Optional[_builtins.bool]]):
         pulumi.set(self, "ip_address_exclusion_include", value)
 
     @_builtins.property
     @pulumi.getter(name="ipExclusionList")
-    def ip_exclusion_list(self) -> Optional[pulumi.Input['WebAppIpAddressExclusionIpExclusionListArgs']]:
+    def ip_exclusion_list(self) -> pulumi.Input[Optional['WebAppIpAddressExclusionIpExclusionListArgs']]:
         """
         **Examples:**
 
@@ -138,7 +138,7 @@ class _WebAppIpAddressExclusionState:
         return pulumi.get(self, "ip_exclusion_list")
 
     @ip_exclusion_list.setter
-    def ip_exclusion_list(self, value: Optional[pulumi.Input['WebAppIpAddressExclusionIpExclusionListArgs']]):
+    def ip_exclusion_list(self, value: pulumi.Input[Optional['WebAppIpAddressExclusionIpExclusionListArgs']]):
         pulumi.set(self, "ip_exclusion_list", value)
 
 
@@ -148,9 +148,9 @@ class WebAppIpAddressExclusion(pulumi.CustomResource):
     def __init__(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 application_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 ip_address_exclusion_include: Optional[pulumi.Input[_builtins.bool]] = None,
-                 ip_exclusion_list: Optional[pulumi.Input[Union['WebAppIpAddressExclusionIpExclusionListArgs', 'WebAppIpAddressExclusionIpExclusionListArgsDict']]] = None,
+                 application_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 ip_address_exclusion_include: pulumi.Input[Optional[_builtins.bool]] = None,
+                 ip_exclusion_list: pulumi.Input[Optional[Union['WebAppIpAddressExclusionIpExclusionListArgs', 'WebAppIpAddressExclusionIpExclusionListArgsDict']]] = None,
                  __props__=None):
         """
         > Configuration overlaps with dynatrace_web_application.
@@ -206,9 +206,9 @@ class WebAppIpAddressExclusion(pulumi.CustomResource):
     def _internal_init(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 application_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 ip_address_exclusion_include: Optional[pulumi.Input[_builtins.bool]] = None,
-                 ip_exclusion_list: Optional[pulumi.Input[Union['WebAppIpAddressExclusionIpExclusionListArgs', 'WebAppIpAddressExclusionIpExclusionListArgsDict']]] = None,
+                 application_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 ip_address_exclusion_include: pulumi.Input[Optional[_builtins.bool]] = None,
+                 ip_exclusion_list: pulumi.Input[Optional[Union['WebAppIpAddressExclusionIpExclusionListArgs', 'WebAppIpAddressExclusionIpExclusionListArgsDict']]] = None,
                  __props__=None):
         opts = pulumi.ResourceOptions.merge(_utilities.get_resource_opts_defaults(), opts)
         if not isinstance(opts, pulumi.ResourceOptions):
@@ -235,9 +235,9 @@ class WebAppIpAddressExclusion(pulumi.CustomResource):
     def get(resource_name: str,
             id: pulumi.Input[str],
             opts: Optional[pulumi.ResourceOptions] = None,
-            application_id: Optional[pulumi.Input[_builtins.str]] = None,
-            ip_address_exclusion_include: Optional[pulumi.Input[_builtins.bool]] = None,
-            ip_exclusion_list: Optional[pulumi.Input[Union['WebAppIpAddressExclusionIpExclusionListArgs', 'WebAppIpAddressExclusionIpExclusionListArgsDict']]] = None) -> 'WebAppIpAddressExclusion':
+            application_id: pulumi.Input[Optional[_builtins.str]] = None,
+            ip_address_exclusion_include: pulumi.Input[Optional[_builtins.bool]] = None,
+            ip_exclusion_list: pulumi.Input[Optional[Union['WebAppIpAddressExclusionIpExclusionListArgs', 'WebAppIpAddressExclusionIpExclusionListArgsDict']]] = None) -> 'WebAppIpAddressExclusion':
         """
         Get an existing WebAppIpAddressExclusion resource's state with the given name, id, and optional extra
         properties used to qualify the lookup.

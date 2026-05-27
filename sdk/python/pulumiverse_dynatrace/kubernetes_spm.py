@@ -20,7 +20,7 @@ __all__ = ['KubernetesSpmArgs', 'KubernetesSpm']
 class KubernetesSpmArgs:
     def __init__(__self__, *,
                  configuration_dataset_pipeline_enabled: pulumi.Input[_builtins.bool],
-                 scope: Optional[pulumi.Input[_builtins.str]] = None):
+                 scope: pulumi.Input[Optional[_builtins.str]] = None):
         """
         The set of arguments for constructing a KubernetesSpm resource.
 
@@ -45,22 +45,22 @@ class KubernetesSpmArgs:
 
     @_builtins.property
     @pulumi.getter
-    def scope(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def scope(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The scope of this setting (KUBERNETES_CLUSTER). Omit this property if you want to cover the whole environment.
         """
         return pulumi.get(self, "scope")
 
     @scope.setter
-    def scope(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def scope(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "scope", value)
 
 
 @pulumi.input_type
 class _KubernetesSpmState:
     def __init__(__self__, *,
-                 configuration_dataset_pipeline_enabled: Optional[pulumi.Input[_builtins.bool]] = None,
-                 scope: Optional[pulumi.Input[_builtins.str]] = None):
+                 configuration_dataset_pipeline_enabled: pulumi.Input[Optional[_builtins.bool]] = None,
+                 scope: pulumi.Input[Optional[_builtins.str]] = None):
         """
         Input properties used for looking up and filtering KubernetesSpm resources.
 
@@ -74,26 +74,26 @@ class _KubernetesSpmState:
 
     @_builtins.property
     @pulumi.getter(name="configurationDatasetPipelineEnabled")
-    def configuration_dataset_pipeline_enabled(self) -> Optional[pulumi.Input[_builtins.bool]]:
+    def configuration_dataset_pipeline_enabled(self) -> pulumi.Input[Optional[_builtins.bool]]:
         """
         Follow the [installation instructions](https://dt-url.net/4x23ut5) to deploy the Security Posture Management components.
         """
         return pulumi.get(self, "configuration_dataset_pipeline_enabled")
 
     @configuration_dataset_pipeline_enabled.setter
-    def configuration_dataset_pipeline_enabled(self, value: Optional[pulumi.Input[_builtins.bool]]):
+    def configuration_dataset_pipeline_enabled(self, value: pulumi.Input[Optional[_builtins.bool]]):
         pulumi.set(self, "configuration_dataset_pipeline_enabled", value)
 
     @_builtins.property
     @pulumi.getter
-    def scope(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def scope(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The scope of this setting (KUBERNETES_CLUSTER). Omit this property if you want to cover the whole environment.
         """
         return pulumi.get(self, "scope")
 
     @scope.setter
-    def scope(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def scope(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "scope", value)
 
 
@@ -103,8 +103,8 @@ class KubernetesSpm(pulumi.CustomResource):
     def __init__(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 configuration_dataset_pipeline_enabled: Optional[pulumi.Input[_builtins.bool]] = None,
-                 scope: Optional[pulumi.Input[_builtins.str]] = None,
+                 configuration_dataset_pipeline_enabled: pulumi.Input[Optional[_builtins.bool]] = None,
+                 scope: pulumi.Input[Optional[_builtins.str]] = None,
                  __props__=None):
         """
         > This resource requires the API token scopes **Read settings** (`settings.read`) and **Write settings** (`settings.write`)
@@ -164,8 +164,8 @@ class KubernetesSpm(pulumi.CustomResource):
     def _internal_init(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 configuration_dataset_pipeline_enabled: Optional[pulumi.Input[_builtins.bool]] = None,
-                 scope: Optional[pulumi.Input[_builtins.str]] = None,
+                 configuration_dataset_pipeline_enabled: pulumi.Input[Optional[_builtins.bool]] = None,
+                 scope: pulumi.Input[Optional[_builtins.str]] = None,
                  __props__=None):
         opts = pulumi.ResourceOptions.merge(_utilities.get_resource_opts_defaults(), opts)
         if not isinstance(opts, pulumi.ResourceOptions):
@@ -189,8 +189,8 @@ class KubernetesSpm(pulumi.CustomResource):
     def get(resource_name: str,
             id: pulumi.Input[str],
             opts: Optional[pulumi.ResourceOptions] = None,
-            configuration_dataset_pipeline_enabled: Optional[pulumi.Input[_builtins.bool]] = None,
-            scope: Optional[pulumi.Input[_builtins.str]] = None) -> 'KubernetesSpm':
+            configuration_dataset_pipeline_enabled: pulumi.Input[Optional[_builtins.bool]] = None,
+            scope: pulumi.Input[Optional[_builtins.str]] = None) -> 'KubernetesSpm':
         """
         Get an existing KubernetesSpm resource's state with the given name, id, and optional extra
         properties used to qualify the lookup.

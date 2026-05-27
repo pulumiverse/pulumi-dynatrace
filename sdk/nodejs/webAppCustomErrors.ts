@@ -104,15 +104,15 @@ export interface WebAppCustomErrorsState {
     /**
      * (Field has overlap with `dynatrace.ApplicationErrorRules`)
      */
-    errorRules?: pulumi.Input<inputs.WebAppCustomErrorsErrorRules>;
+    errorRules?: pulumi.Input<inputs.WebAppCustomErrorsErrorRules | undefined>;
     /**
      * (Field has overlap with `dynatrace.ApplicationErrorRules`) This setting overrides Apdex settings for individual rules listed below
      */
-    ignoreCustomErrorsInApdexCalculation?: pulumi.Input<boolean>;
+    ignoreCustomErrorsInApdexCalculation?: pulumi.Input<boolean | undefined>;
     /**
      * The scope of this setting (APPLICATION)
      */
-    scope?: pulumi.Input<string>;
+    scope?: pulumi.Input<string | undefined>;
 }
 
 /**
@@ -122,7 +122,7 @@ export interface WebAppCustomErrorsArgs {
     /**
      * (Field has overlap with `dynatrace.ApplicationErrorRules`)
      */
-    errorRules?: pulumi.Input<inputs.WebAppCustomErrorsErrorRules>;
+    errorRules?: pulumi.Input<inputs.WebAppCustomErrorsErrorRules | undefined>;
     /**
      * (Field has overlap with `dynatrace.ApplicationErrorRules`) This setting overrides Apdex settings for individual rules listed below
      */

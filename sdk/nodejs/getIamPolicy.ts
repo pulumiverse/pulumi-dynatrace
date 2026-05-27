@@ -120,11 +120,11 @@ export interface GetIamPolicyOutputArgs {
     /**
      * The account that policiy is defined for. Omit if the policy is not defined for an account but for an environment or is global
      */
-    account?: pulumi.Input<string>;
+    account?: pulumi.Input<string | undefined>;
     /**
      * The environment that policiy is defined for. Omit if the policy is not defined for an environment but for an account or is global
      */
-    environment?: pulumi.Input<string>;
+    environment?: pulumi.Input<string | undefined>;
     /**
      * The name of the policy
      */
@@ -132,5 +132,5 @@ export interface GetIamPolicyOutputArgs {
     /**
      * The UUID of the policy
      */
-    uuid?: pulumi.Input<string>;
+    uuid?: pulumi.Input<string | undefined>;
 }

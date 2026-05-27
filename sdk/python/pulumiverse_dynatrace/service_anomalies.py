@@ -21,10 +21,10 @@ __all__ = ['ServiceAnomaliesArgs', 'ServiceAnomalies']
 @pulumi.input_type
 class ServiceAnomaliesArgs:
     def __init__(__self__, *,
-                 failure_rates: Optional[pulumi.Input['ServiceAnomaliesFailureRatesArgs']] = None,
-                 load: Optional[pulumi.Input['ServiceAnomaliesLoadArgs']] = None,
-                 load_drops: Optional[pulumi.Input['ServiceAnomaliesLoadDropsArgs']] = None,
-                 response_times: Optional[pulumi.Input['ServiceAnomaliesResponseTimesArgs']] = None):
+                 failure_rates: pulumi.Input[Optional['ServiceAnomaliesFailureRatesArgs']] = None,
+                 load: pulumi.Input[Optional['ServiceAnomaliesLoadArgs']] = None,
+                 load_drops: pulumi.Input[Optional['ServiceAnomaliesLoadDropsArgs']] = None,
+                 response_times: pulumi.Input[Optional['ServiceAnomaliesResponseTimesArgs']] = None):
         """
         The set of arguments for constructing a ServiceAnomalies resource.
 
@@ -44,60 +44,60 @@ class ServiceAnomaliesArgs:
 
     @_builtins.property
     @pulumi.getter(name="failureRates")
-    def failure_rates(self) -> Optional[pulumi.Input['ServiceAnomaliesFailureRatesArgs']]:
+    def failure_rates(self) -> pulumi.Input[Optional['ServiceAnomaliesFailureRatesArgs']]:
         """
         Configuration of failure rate increase detection. Detecting failure rate increases will be disabled if this block is omitted.
         """
         return pulumi.get(self, "failure_rates")
 
     @failure_rates.setter
-    def failure_rates(self, value: Optional[pulumi.Input['ServiceAnomaliesFailureRatesArgs']]):
+    def failure_rates(self, value: pulumi.Input[Optional['ServiceAnomaliesFailureRatesArgs']]):
         pulumi.set(self, "failure_rates", value)
 
     @_builtins.property
     @pulumi.getter
-    def load(self) -> Optional[pulumi.Input['ServiceAnomaliesLoadArgs']]:
+    def load(self) -> pulumi.Input[Optional['ServiceAnomaliesLoadArgs']]:
         """
         The configuration of load spikes detection. Detecting load spikes will be disabled if this block is omitted.
         """
         return pulumi.get(self, "load")
 
     @load.setter
-    def load(self, value: Optional[pulumi.Input['ServiceAnomaliesLoadArgs']]):
+    def load(self, value: pulumi.Input[Optional['ServiceAnomaliesLoadArgs']]):
         pulumi.set(self, "load", value)
 
     @_builtins.property
     @pulumi.getter(name="loadDrops")
-    def load_drops(self) -> Optional[pulumi.Input['ServiceAnomaliesLoadDropsArgs']]:
+    def load_drops(self) -> pulumi.Input[Optional['ServiceAnomaliesLoadDropsArgs']]:
         """
         The configuration of load drops detection. Detecting load drops will be disabled if this block is omitted.
         """
         return pulumi.get(self, "load_drops")
 
     @load_drops.setter
-    def load_drops(self, value: Optional[pulumi.Input['ServiceAnomaliesLoadDropsArgs']]):
+    def load_drops(self, value: pulumi.Input[Optional['ServiceAnomaliesLoadDropsArgs']]):
         pulumi.set(self, "load_drops", value)
 
     @_builtins.property
     @pulumi.getter(name="responseTimes")
-    def response_times(self) -> Optional[pulumi.Input['ServiceAnomaliesResponseTimesArgs']]:
+    def response_times(self) -> pulumi.Input[Optional['ServiceAnomaliesResponseTimesArgs']]:
         """
         Configuration of response time degradation detection. Detecting response time degradation will be disabled if this block is omitted.
         """
         return pulumi.get(self, "response_times")
 
     @response_times.setter
-    def response_times(self, value: Optional[pulumi.Input['ServiceAnomaliesResponseTimesArgs']]):
+    def response_times(self, value: pulumi.Input[Optional['ServiceAnomaliesResponseTimesArgs']]):
         pulumi.set(self, "response_times", value)
 
 
 @pulumi.input_type
 class _ServiceAnomaliesState:
     def __init__(__self__, *,
-                 failure_rates: Optional[pulumi.Input['ServiceAnomaliesFailureRatesArgs']] = None,
-                 load: Optional[pulumi.Input['ServiceAnomaliesLoadArgs']] = None,
-                 load_drops: Optional[pulumi.Input['ServiceAnomaliesLoadDropsArgs']] = None,
-                 response_times: Optional[pulumi.Input['ServiceAnomaliesResponseTimesArgs']] = None):
+                 failure_rates: pulumi.Input[Optional['ServiceAnomaliesFailureRatesArgs']] = None,
+                 load: pulumi.Input[Optional['ServiceAnomaliesLoadArgs']] = None,
+                 load_drops: pulumi.Input[Optional['ServiceAnomaliesLoadDropsArgs']] = None,
+                 response_times: pulumi.Input[Optional['ServiceAnomaliesResponseTimesArgs']] = None):
         """
         Input properties used for looking up and filtering ServiceAnomalies resources.
 
@@ -117,50 +117,50 @@ class _ServiceAnomaliesState:
 
     @_builtins.property
     @pulumi.getter(name="failureRates")
-    def failure_rates(self) -> Optional[pulumi.Input['ServiceAnomaliesFailureRatesArgs']]:
+    def failure_rates(self) -> pulumi.Input[Optional['ServiceAnomaliesFailureRatesArgs']]:
         """
         Configuration of failure rate increase detection. Detecting failure rate increases will be disabled if this block is omitted.
         """
         return pulumi.get(self, "failure_rates")
 
     @failure_rates.setter
-    def failure_rates(self, value: Optional[pulumi.Input['ServiceAnomaliesFailureRatesArgs']]):
+    def failure_rates(self, value: pulumi.Input[Optional['ServiceAnomaliesFailureRatesArgs']]):
         pulumi.set(self, "failure_rates", value)
 
     @_builtins.property
     @pulumi.getter
-    def load(self) -> Optional[pulumi.Input['ServiceAnomaliesLoadArgs']]:
+    def load(self) -> pulumi.Input[Optional['ServiceAnomaliesLoadArgs']]:
         """
         The configuration of load spikes detection. Detecting load spikes will be disabled if this block is omitted.
         """
         return pulumi.get(self, "load")
 
     @load.setter
-    def load(self, value: Optional[pulumi.Input['ServiceAnomaliesLoadArgs']]):
+    def load(self, value: pulumi.Input[Optional['ServiceAnomaliesLoadArgs']]):
         pulumi.set(self, "load", value)
 
     @_builtins.property
     @pulumi.getter(name="loadDrops")
-    def load_drops(self) -> Optional[pulumi.Input['ServiceAnomaliesLoadDropsArgs']]:
+    def load_drops(self) -> pulumi.Input[Optional['ServiceAnomaliesLoadDropsArgs']]:
         """
         The configuration of load drops detection. Detecting load drops will be disabled if this block is omitted.
         """
         return pulumi.get(self, "load_drops")
 
     @load_drops.setter
-    def load_drops(self, value: Optional[pulumi.Input['ServiceAnomaliesLoadDropsArgs']]):
+    def load_drops(self, value: pulumi.Input[Optional['ServiceAnomaliesLoadDropsArgs']]):
         pulumi.set(self, "load_drops", value)
 
     @_builtins.property
     @pulumi.getter(name="responseTimes")
-    def response_times(self) -> Optional[pulumi.Input['ServiceAnomaliesResponseTimesArgs']]:
+    def response_times(self) -> pulumi.Input[Optional['ServiceAnomaliesResponseTimesArgs']]:
         """
         Configuration of response time degradation detection. Detecting response time degradation will be disabled if this block is omitted.
         """
         return pulumi.get(self, "response_times")
 
     @response_times.setter
-    def response_times(self, value: Optional[pulumi.Input['ServiceAnomaliesResponseTimesArgs']]):
+    def response_times(self, value: pulumi.Input[Optional['ServiceAnomaliesResponseTimesArgs']]):
         pulumi.set(self, "response_times", value)
 
 
@@ -170,10 +170,10 @@ class ServiceAnomalies(pulumi.CustomResource):
     def __init__(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 failure_rates: Optional[pulumi.Input[Union['ServiceAnomaliesFailureRatesArgs', 'ServiceAnomaliesFailureRatesArgsDict']]] = None,
-                 load: Optional[pulumi.Input[Union['ServiceAnomaliesLoadArgs', 'ServiceAnomaliesLoadArgsDict']]] = None,
-                 load_drops: Optional[pulumi.Input[Union['ServiceAnomaliesLoadDropsArgs', 'ServiceAnomaliesLoadDropsArgsDict']]] = None,
-                 response_times: Optional[pulumi.Input[Union['ServiceAnomaliesResponseTimesArgs', 'ServiceAnomaliesResponseTimesArgsDict']]] = None,
+                 failure_rates: pulumi.Input[Optional[Union['ServiceAnomaliesFailureRatesArgs', 'ServiceAnomaliesFailureRatesArgsDict']]] = None,
+                 load: pulumi.Input[Optional[Union['ServiceAnomaliesLoadArgs', 'ServiceAnomaliesLoadArgsDict']]] = None,
+                 load_drops: pulumi.Input[Optional[Union['ServiceAnomaliesLoadDropsArgs', 'ServiceAnomaliesLoadDropsArgsDict']]] = None,
+                 response_times: pulumi.Input[Optional[Union['ServiceAnomaliesResponseTimesArgs', 'ServiceAnomaliesResponseTimesArgsDict']]] = None,
                  __props__=None):
         """
         !> This resource is utilizing an older API endpoint, please use ServiceAnomaliesV2 instead.
@@ -239,10 +239,10 @@ class ServiceAnomalies(pulumi.CustomResource):
     def _internal_init(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 failure_rates: Optional[pulumi.Input[Union['ServiceAnomaliesFailureRatesArgs', 'ServiceAnomaliesFailureRatesArgsDict']]] = None,
-                 load: Optional[pulumi.Input[Union['ServiceAnomaliesLoadArgs', 'ServiceAnomaliesLoadArgsDict']]] = None,
-                 load_drops: Optional[pulumi.Input[Union['ServiceAnomaliesLoadDropsArgs', 'ServiceAnomaliesLoadDropsArgsDict']]] = None,
-                 response_times: Optional[pulumi.Input[Union['ServiceAnomaliesResponseTimesArgs', 'ServiceAnomaliesResponseTimesArgsDict']]] = None,
+                 failure_rates: pulumi.Input[Optional[Union['ServiceAnomaliesFailureRatesArgs', 'ServiceAnomaliesFailureRatesArgsDict']]] = None,
+                 load: pulumi.Input[Optional[Union['ServiceAnomaliesLoadArgs', 'ServiceAnomaliesLoadArgsDict']]] = None,
+                 load_drops: pulumi.Input[Optional[Union['ServiceAnomaliesLoadDropsArgs', 'ServiceAnomaliesLoadDropsArgsDict']]] = None,
+                 response_times: pulumi.Input[Optional[Union['ServiceAnomaliesResponseTimesArgs', 'ServiceAnomaliesResponseTimesArgsDict']]] = None,
                  __props__=None):
         opts = pulumi.ResourceOptions.merge(_utilities.get_resource_opts_defaults(), opts)
         if not isinstance(opts, pulumi.ResourceOptions):
@@ -266,10 +266,10 @@ class ServiceAnomalies(pulumi.CustomResource):
     def get(resource_name: str,
             id: pulumi.Input[str],
             opts: Optional[pulumi.ResourceOptions] = None,
-            failure_rates: Optional[pulumi.Input[Union['ServiceAnomaliesFailureRatesArgs', 'ServiceAnomaliesFailureRatesArgsDict']]] = None,
-            load: Optional[pulumi.Input[Union['ServiceAnomaliesLoadArgs', 'ServiceAnomaliesLoadArgsDict']]] = None,
-            load_drops: Optional[pulumi.Input[Union['ServiceAnomaliesLoadDropsArgs', 'ServiceAnomaliesLoadDropsArgsDict']]] = None,
-            response_times: Optional[pulumi.Input[Union['ServiceAnomaliesResponseTimesArgs', 'ServiceAnomaliesResponseTimesArgsDict']]] = None) -> 'ServiceAnomalies':
+            failure_rates: pulumi.Input[Optional[Union['ServiceAnomaliesFailureRatesArgs', 'ServiceAnomaliesFailureRatesArgsDict']]] = None,
+            load: pulumi.Input[Optional[Union['ServiceAnomaliesLoadArgs', 'ServiceAnomaliesLoadArgsDict']]] = None,
+            load_drops: pulumi.Input[Optional[Union['ServiceAnomaliesLoadDropsArgs', 'ServiceAnomaliesLoadDropsArgsDict']]] = None,
+            response_times: pulumi.Input[Optional[Union['ServiceAnomaliesResponseTimesArgs', 'ServiceAnomaliesResponseTimesArgsDict']]] = None) -> 'ServiceAnomalies':
         """
         Get an existing ServiceAnomalies resource's state with the given name, id, and optional extra
         properties used to qualify the lookup.

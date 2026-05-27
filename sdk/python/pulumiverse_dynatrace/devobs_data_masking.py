@@ -23,10 +23,10 @@ class DevobsDataMaskingArgs:
                  replacement_type: pulumi.Input[_builtins.str],
                  rule_name: pulumi.Input[_builtins.str],
                  rule_type: pulumi.Input[_builtins.str],
-                 insert_after: Optional[pulumi.Input[_builtins.str]] = None,
-                 replacement_pattern: Optional[pulumi.Input[_builtins.str]] = None,
-                 rule_regex: Optional[pulumi.Input[_builtins.str]] = None,
-                 rule_var_name: Optional[pulumi.Input[_builtins.str]] = None):
+                 insert_after: pulumi.Input[Optional[_builtins.str]] = None,
+                 replacement_pattern: pulumi.Input[Optional[_builtins.str]] = None,
+                 rule_regex: pulumi.Input[Optional[_builtins.str]] = None,
+                 rule_var_name: pulumi.Input[Optional[_builtins.str]] = None):
         """
         The set of arguments for constructing a DevobsDataMasking resource.
 
@@ -102,64 +102,64 @@ class DevobsDataMaskingArgs:
 
     @_builtins.property
     @pulumi.getter(name="insertAfter")
-    def insert_after(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def insert_after(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Because this resource allows for ordering you may specify the ID of the resource instance that comes before this instance regarding order. If not specified when creating the setting will be added to the end of the list. If not specified during update the order will remain untouched
         """
         return pulumi.get(self, "insert_after")
 
     @insert_after.setter
-    def insert_after(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def insert_after(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "insert_after", value)
 
     @_builtins.property
     @pulumi.getter(name="replacementPattern")
-    def replacement_pattern(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def replacement_pattern(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         no documentation available
         """
         return pulumi.get(self, "replacement_pattern")
 
     @replacement_pattern.setter
-    def replacement_pattern(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def replacement_pattern(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "replacement_pattern", value)
 
     @_builtins.property
     @pulumi.getter(name="ruleRegex")
-    def rule_regex(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def rule_regex(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         no documentation available
         """
         return pulumi.get(self, "rule_regex")
 
     @rule_regex.setter
-    def rule_regex(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def rule_regex(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "rule_regex", value)
 
     @_builtins.property
     @pulumi.getter(name="ruleVarName")
-    def rule_var_name(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def rule_var_name(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         no documentation available
         """
         return pulumi.get(self, "rule_var_name")
 
     @rule_var_name.setter
-    def rule_var_name(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def rule_var_name(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "rule_var_name", value)
 
 
 @pulumi.input_type
 class _DevobsDataMaskingState:
     def __init__(__self__, *,
-                 enabled: Optional[pulumi.Input[_builtins.bool]] = None,
-                 insert_after: Optional[pulumi.Input[_builtins.str]] = None,
-                 replacement_pattern: Optional[pulumi.Input[_builtins.str]] = None,
-                 replacement_type: Optional[pulumi.Input[_builtins.str]] = None,
-                 rule_name: Optional[pulumi.Input[_builtins.str]] = None,
-                 rule_regex: Optional[pulumi.Input[_builtins.str]] = None,
-                 rule_type: Optional[pulumi.Input[_builtins.str]] = None,
-                 rule_var_name: Optional[pulumi.Input[_builtins.str]] = None):
+                 enabled: pulumi.Input[Optional[_builtins.bool]] = None,
+                 insert_after: pulumi.Input[Optional[_builtins.str]] = None,
+                 replacement_pattern: pulumi.Input[Optional[_builtins.str]] = None,
+                 replacement_type: pulumi.Input[Optional[_builtins.str]] = None,
+                 rule_name: pulumi.Input[Optional[_builtins.str]] = None,
+                 rule_regex: pulumi.Input[Optional[_builtins.str]] = None,
+                 rule_type: pulumi.Input[Optional[_builtins.str]] = None,
+                 rule_var_name: pulumi.Input[Optional[_builtins.str]] = None):
         """
         Input properties used for looking up and filtering DevobsDataMasking resources.
 
@@ -191,98 +191,98 @@ class _DevobsDataMaskingState:
 
     @_builtins.property
     @pulumi.getter
-    def enabled(self) -> Optional[pulumi.Input[_builtins.bool]]:
+    def enabled(self) -> pulumi.Input[Optional[_builtins.bool]]:
         """
         This setting is enabled (`true`) or disabled (`false`)
         """
         return pulumi.get(self, "enabled")
 
     @enabled.setter
-    def enabled(self, value: Optional[pulumi.Input[_builtins.bool]]):
+    def enabled(self, value: pulumi.Input[Optional[_builtins.bool]]):
         pulumi.set(self, "enabled", value)
 
     @_builtins.property
     @pulumi.getter(name="insertAfter")
-    def insert_after(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def insert_after(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Because this resource allows for ordering you may specify the ID of the resource instance that comes before this instance regarding order. If not specified when creating the setting will be added to the end of the list. If not specified during update the order will remain untouched
         """
         return pulumi.get(self, "insert_after")
 
     @insert_after.setter
-    def insert_after(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def insert_after(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "insert_after", value)
 
     @_builtins.property
     @pulumi.getter(name="replacementPattern")
-    def replacement_pattern(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def replacement_pattern(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         no documentation available
         """
         return pulumi.get(self, "replacement_pattern")
 
     @replacement_pattern.setter
-    def replacement_pattern(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def replacement_pattern(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "replacement_pattern", value)
 
     @_builtins.property
     @pulumi.getter(name="replacementType")
-    def replacement_type(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def replacement_type(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Possible Values: `SHA256`, `STRING`
         """
         return pulumi.get(self, "replacement_type")
 
     @replacement_type.setter
-    def replacement_type(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def replacement_type(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "replacement_type", value)
 
     @_builtins.property
     @pulumi.getter(name="ruleName")
-    def rule_name(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def rule_name(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Rule Name
         """
         return pulumi.get(self, "rule_name")
 
     @rule_name.setter
-    def rule_name(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def rule_name(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "rule_name", value)
 
     @_builtins.property
     @pulumi.getter(name="ruleRegex")
-    def rule_regex(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def rule_regex(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         no documentation available
         """
         return pulumi.get(self, "rule_regex")
 
     @rule_regex.setter
-    def rule_regex(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def rule_regex(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "rule_regex", value)
 
     @_builtins.property
     @pulumi.getter(name="ruleType")
-    def rule_type(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def rule_type(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Possible Values: `REGEX`, `VAR_NAME`
         """
         return pulumi.get(self, "rule_type")
 
     @rule_type.setter
-    def rule_type(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def rule_type(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "rule_type", value)
 
     @_builtins.property
     @pulumi.getter(name="ruleVarName")
-    def rule_var_name(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def rule_var_name(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         no documentation available
         """
         return pulumi.get(self, "rule_var_name")
 
     @rule_var_name.setter
-    def rule_var_name(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def rule_var_name(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "rule_var_name", value)
 
 
@@ -292,14 +292,14 @@ class DevobsDataMasking(pulumi.CustomResource):
     def __init__(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 enabled: Optional[pulumi.Input[_builtins.bool]] = None,
-                 insert_after: Optional[pulumi.Input[_builtins.str]] = None,
-                 replacement_pattern: Optional[pulumi.Input[_builtins.str]] = None,
-                 replacement_type: Optional[pulumi.Input[_builtins.str]] = None,
-                 rule_name: Optional[pulumi.Input[_builtins.str]] = None,
-                 rule_regex: Optional[pulumi.Input[_builtins.str]] = None,
-                 rule_type: Optional[pulumi.Input[_builtins.str]] = None,
-                 rule_var_name: Optional[pulumi.Input[_builtins.str]] = None,
+                 enabled: pulumi.Input[Optional[_builtins.bool]] = None,
+                 insert_after: pulumi.Input[Optional[_builtins.str]] = None,
+                 replacement_pattern: pulumi.Input[Optional[_builtins.str]] = None,
+                 replacement_type: pulumi.Input[Optional[_builtins.str]] = None,
+                 rule_name: pulumi.Input[Optional[_builtins.str]] = None,
+                 rule_regex: pulumi.Input[Optional[_builtins.str]] = None,
+                 rule_type: pulumi.Input[Optional[_builtins.str]] = None,
+                 rule_var_name: pulumi.Input[Optional[_builtins.str]] = None,
                  __props__=None):
         """
         > This resource requires the API token scopes **Read settings** (`settings.read`) and **Write settings** (`settings.write`)
@@ -365,14 +365,14 @@ class DevobsDataMasking(pulumi.CustomResource):
     def _internal_init(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 enabled: Optional[pulumi.Input[_builtins.bool]] = None,
-                 insert_after: Optional[pulumi.Input[_builtins.str]] = None,
-                 replacement_pattern: Optional[pulumi.Input[_builtins.str]] = None,
-                 replacement_type: Optional[pulumi.Input[_builtins.str]] = None,
-                 rule_name: Optional[pulumi.Input[_builtins.str]] = None,
-                 rule_regex: Optional[pulumi.Input[_builtins.str]] = None,
-                 rule_type: Optional[pulumi.Input[_builtins.str]] = None,
-                 rule_var_name: Optional[pulumi.Input[_builtins.str]] = None,
+                 enabled: pulumi.Input[Optional[_builtins.bool]] = None,
+                 insert_after: pulumi.Input[Optional[_builtins.str]] = None,
+                 replacement_pattern: pulumi.Input[Optional[_builtins.str]] = None,
+                 replacement_type: pulumi.Input[Optional[_builtins.str]] = None,
+                 rule_name: pulumi.Input[Optional[_builtins.str]] = None,
+                 rule_regex: pulumi.Input[Optional[_builtins.str]] = None,
+                 rule_type: pulumi.Input[Optional[_builtins.str]] = None,
+                 rule_var_name: pulumi.Input[Optional[_builtins.str]] = None,
                  __props__=None):
         opts = pulumi.ResourceOptions.merge(_utilities.get_resource_opts_defaults(), opts)
         if not isinstance(opts, pulumi.ResourceOptions):
@@ -408,14 +408,14 @@ class DevobsDataMasking(pulumi.CustomResource):
     def get(resource_name: str,
             id: pulumi.Input[str],
             opts: Optional[pulumi.ResourceOptions] = None,
-            enabled: Optional[pulumi.Input[_builtins.bool]] = None,
-            insert_after: Optional[pulumi.Input[_builtins.str]] = None,
-            replacement_pattern: Optional[pulumi.Input[_builtins.str]] = None,
-            replacement_type: Optional[pulumi.Input[_builtins.str]] = None,
-            rule_name: Optional[pulumi.Input[_builtins.str]] = None,
-            rule_regex: Optional[pulumi.Input[_builtins.str]] = None,
-            rule_type: Optional[pulumi.Input[_builtins.str]] = None,
-            rule_var_name: Optional[pulumi.Input[_builtins.str]] = None) -> 'DevobsDataMasking':
+            enabled: pulumi.Input[Optional[_builtins.bool]] = None,
+            insert_after: pulumi.Input[Optional[_builtins.str]] = None,
+            replacement_pattern: pulumi.Input[Optional[_builtins.str]] = None,
+            replacement_type: pulumi.Input[Optional[_builtins.str]] = None,
+            rule_name: pulumi.Input[Optional[_builtins.str]] = None,
+            rule_regex: pulumi.Input[Optional[_builtins.str]] = None,
+            rule_type: pulumi.Input[Optional[_builtins.str]] = None,
+            rule_var_name: pulumi.Input[Optional[_builtins.str]] = None) -> 'DevobsDataMasking':
         """
         Get an existing DevobsDataMasking resource's state with the given name, id, and optional extra
         properties used to qualify the lookup.
