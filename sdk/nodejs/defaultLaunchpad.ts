@@ -20,6 +20,21 @@ import * as utilities from "./utilities";
  * - `terraform-provider-dynatrace -export dynatrace.DefaultLaunchpad` downloads all existing default Launchpads by user group configuration
  *
  * The full documentation of the export feature is available [here](https://dt-url.net/h203qmc).
+ *
+ * ## Resource Example Usage
+ *
+ * ```typescript
+ * import * as pulumi from "@pulumi/pulumi";
+ * import * as dynatrace from "@pulumiverse/dynatrace";
+ *
+ * const launchpad = new dynatrace.DefaultLaunchpad("launchpad", {groupLaunchpads: {
+ *     groupLaunchpads: [{
+ *         isEnabled: false,
+ *         launchpadId: "00000000-0000-0000-0000-000000000000",
+ *         userGroupId: "00000000-0000-0000-0000-000000000000",
+ *     }],
+ * }});
+ * ```
  */
 export class DefaultLaunchpad extends pulumi.CustomResource {
     /**

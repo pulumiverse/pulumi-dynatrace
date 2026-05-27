@@ -7,6 +7,9 @@ import * as utilities from "../utilities";
 declare var exports: any;
 const __config = new pulumi.Config("dynatrace");
 
+/**
+ * The Dynatrace account ID (UUID). Required for IAM (Account Management) resources. Also serves as a fallback for `iamAccountId`.
+ */
 export declare const accountId: string | undefined;
 Object.defineProperty(exports, "accountId", {
     get() {
@@ -15,6 +18,9 @@ Object.defineProperty(exports, "accountId", {
     enumerable: true,
 });
 
+/**
+ * The client ID of an OAuth client used for platform APIs. Falls back to `clientId` if not specified.
+ */
 export declare const automationClientId: string | undefined;
 Object.defineProperty(exports, "automationClientId", {
     get() {
@@ -23,6 +29,9 @@ Object.defineProperty(exports, "automationClientId", {
     enumerable: true,
 });
 
+/**
+ * The client secret of an OAuth client used for platform APIs. Falls back to `clientSecret` if not specified.
+ */
 export declare const automationClientSecret: string | undefined;
 Object.defineProperty(exports, "automationClientSecret", {
     get() {
@@ -32,7 +41,7 @@ Object.defineProperty(exports, "automationClientSecret", {
 });
 
 /**
- * The URL of the Dynatrace Environment with Platform capabilities turned on (`https://#####.apps.dynatrace.com)`. This is optional configuration when `dtEnvUrl` already specifies a SaaS Environment like `https://#####.live.dynatrace.com` or `https://#####.apps.dynatrace.com`
+ * The URL of the Dynatrace platform environment (`https://#####.apps.dynatrace.com`). Falls back to `dtEnvUrl` if not specified.
  */
 export declare const automationEnvUrl: string | undefined;
 Object.defineProperty(exports, "automationEnvUrl", {
@@ -43,7 +52,7 @@ Object.defineProperty(exports, "automationEnvUrl", {
 });
 
 /**
- * The URL that provides the Bearer tokens when accessing the Automation REST API. This is optional configuration when `dtEnvUrl` already specifies a SaaS Environment like `https://#####.live.dynatrace.com` or `https://#####.apps.dynatrace.com`
+ * The token URL for obtaining access tokens via OAuth for the platform APIs. Default: `https://sso.dynatrace.com/sso/oauth2/token`.
  */
 export declare const automationTokenUrl: string | undefined;
 Object.defineProperty(exports, "automationTokenUrl", {
@@ -53,6 +62,9 @@ Object.defineProperty(exports, "automationTokenUrl", {
     enumerable: true,
 });
 
+/**
+ * The client ID of an OAuth client used for  platform APIs. Also serves as a fallback for `iamClientId` and `automationClientId`.
+ */
 export declare const clientId: string | undefined;
 Object.defineProperty(exports, "clientId", {
     get() {
@@ -61,6 +73,9 @@ Object.defineProperty(exports, "clientId", {
     enumerable: true,
 });
 
+/**
+ * The client secret of an OAuth client used for platform APIs. Also serves as a fallback for `iamClientSecret` and `automationClientSecret`.
+ */
 export declare const clientSecret: string | undefined;
 Object.defineProperty(exports, "clientSecret", {
     get() {
@@ -69,6 +84,9 @@ Object.defineProperty(exports, "clientSecret", {
     enumerable: true,
 });
 
+/**
+ * The API token for classic Dynatrace APIs.
+ */
 export declare const dtApiToken: string | undefined;
 Object.defineProperty(exports, "dtApiToken", {
     get() {
@@ -77,6 +95,9 @@ Object.defineProperty(exports, "dtApiToken", {
     enumerable: true,
 });
 
+/**
+ * The API token for Dynatrace Managed cluster APIs.
+ */
 export declare const dtClusterApiToken: string | undefined;
 Object.defineProperty(exports, "dtClusterApiToken", {
     get() {
@@ -85,6 +106,9 @@ Object.defineProperty(exports, "dtClusterApiToken", {
     enumerable: true,
 });
 
+/**
+ * The URL of the Dynatrace Managed cluster.
+ */
 export declare const dtClusterUrl: string | undefined;
 Object.defineProperty(exports, "dtClusterUrl", {
     get() {
@@ -93,6 +117,9 @@ Object.defineProperty(exports, "dtClusterUrl", {
     enumerable: true,
 });
 
+/**
+ * The URL of the Dynatrace environment (e.g. `https://#####.live.dynatrace.com` or `https://#####.apps.dynatrace.com`).
+ */
 export declare const dtEnvUrl: string | undefined;
 Object.defineProperty(exports, "dtEnvUrl", {
     get() {
@@ -101,6 +128,9 @@ Object.defineProperty(exports, "dtEnvUrl", {
     enumerable: true,
 });
 
+/**
+ * The Dynatrace account ID (UUID). Required for IAM (Account Management) resources. Falls back to `accountId` if not specified.
+ */
 export declare const iamAccountId: string | undefined;
 Object.defineProperty(exports, "iamAccountId", {
     get() {
@@ -109,6 +139,9 @@ Object.defineProperty(exports, "iamAccountId", {
     enumerable: true,
 });
 
+/**
+ * The client ID of an OAuth client used for the IAM (Account Management) API. Falls back to `clientId` if not specified.
+ */
 export declare const iamClientId: string | undefined;
 Object.defineProperty(exports, "iamClientId", {
     get() {
@@ -117,6 +150,9 @@ Object.defineProperty(exports, "iamClientId", {
     enumerable: true,
 });
 
+/**
+ * The client secret of an OAuth client used for the IAM (Account Management) API. Falls back to `clientSecret` if not specified.
+ */
 export declare const iamClientSecret: string | undefined;
 Object.defineProperty(exports, "iamClientSecret", {
     get() {
@@ -125,6 +161,9 @@ Object.defineProperty(exports, "iamClientSecret", {
     enumerable: true,
 });
 
+/**
+ * The endpoint URL for the IAM (Account Management) API. Default: `https://api.dynatrace.com`.
+ */
 export declare const iamEndpointUrl: string | undefined;
 Object.defineProperty(exports, "iamEndpointUrl", {
     get() {
@@ -133,6 +172,9 @@ Object.defineProperty(exports, "iamEndpointUrl", {
     enumerable: true,
 });
 
+/**
+ * The token URL for obtaining access tokens via OAuth for the IAM (Account Management) API. Default: `https://sso.dynatrace.com/sso/oauth2/token`.
+ */
 export declare const iamTokenUrl: string | undefined;
 Object.defineProperty(exports, "iamTokenUrl", {
     get() {
@@ -142,7 +184,7 @@ Object.defineProperty(exports, "iamTokenUrl", {
 });
 
 /**
- * A Dynatrace Platform Token. Specifying such a token allows for easy authentication against Platform resources. In such a case it supersedes `automationClientId`, `automationClientSecret`, `automationTokenUrl` and `automationEnvUrl`
+ * The Dynatrace platform token used for platform APIs. When specified, it is used in preference to `clientId`, `clientSecret`, `automationClientId`, `automationClientSecret`, `automationTokenUrl`, and `automationEnvUrl` for platform requests. Platform tokens can't be used for IAM (Account Management) or classic resources.
  */
 export declare const platformToken: string | undefined;
 Object.defineProperty(exports, "platformToken", {

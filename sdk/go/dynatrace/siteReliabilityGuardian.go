@@ -32,7 +32,7 @@ type SiteReliabilityGuardian struct {
 
 	// Description
 	Description pulumi.StringPtrOutput `pulumi:"description"`
-	// If set to null/'BIZ*EVENT' validation events stored as bizevents in Grail. If set to 'SDLC*EVENT' validation events stored as SDLC events
+	// If set to null/'BIZ*EVENT' validation events stored as bizevents in Grail. If set to 'SDLC*EVENT' validation events stored as SDLC events. Possible values: `BIZ_EVENT`, `SDLC_EVENT`
 	EventKind pulumi.StringPtrOutput `pulumi:"eventKind"`
 	// Name
 	Name pulumi.StringOutput `pulumi:"name"`
@@ -79,7 +79,7 @@ func GetSiteReliabilityGuardian(ctx *pulumi.Context,
 type siteReliabilityGuardianState struct {
 	// Description
 	Description *string `pulumi:"description"`
-	// If set to null/'BIZ*EVENT' validation events stored as bizevents in Grail. If set to 'SDLC*EVENT' validation events stored as SDLC events
+	// If set to null/'BIZ*EVENT' validation events stored as bizevents in Grail. If set to 'SDLC*EVENT' validation events stored as SDLC events. Possible values: `BIZ_EVENT`, `SDLC_EVENT`
 	EventKind *string `pulumi:"eventKind"`
 	// Name
 	Name *string `pulumi:"name"`
@@ -94,7 +94,7 @@ type siteReliabilityGuardianState struct {
 type SiteReliabilityGuardianState struct {
 	// Description
 	Description pulumi.StringPtrInput
-	// If set to null/'BIZ*EVENT' validation events stored as bizevents in Grail. If set to 'SDLC*EVENT' validation events stored as SDLC events
+	// If set to null/'BIZ*EVENT' validation events stored as bizevents in Grail. If set to 'SDLC*EVENT' validation events stored as SDLC events. Possible values: `BIZ_EVENT`, `SDLC_EVENT`
 	EventKind pulumi.StringPtrInput
 	// Name
 	Name pulumi.StringPtrInput
@@ -113,7 +113,7 @@ func (SiteReliabilityGuardianState) ElementType() reflect.Type {
 type siteReliabilityGuardianArgs struct {
 	// Description
 	Description *string `pulumi:"description"`
-	// If set to null/'BIZ*EVENT' validation events stored as bizevents in Grail. If set to 'SDLC*EVENT' validation events stored as SDLC events
+	// If set to null/'BIZ*EVENT' validation events stored as bizevents in Grail. If set to 'SDLC*EVENT' validation events stored as SDLC events. Possible values: `BIZ_EVENT`, `SDLC_EVENT`
 	EventKind *string `pulumi:"eventKind"`
 	// Name
 	Name *string `pulumi:"name"`
@@ -129,7 +129,7 @@ type siteReliabilityGuardianArgs struct {
 type SiteReliabilityGuardianArgs struct {
 	// Description
 	Description pulumi.StringPtrInput
-	// If set to null/'BIZ*EVENT' validation events stored as bizevents in Grail. If set to 'SDLC*EVENT' validation events stored as SDLC events
+	// If set to null/'BIZ*EVENT' validation events stored as bizevents in Grail. If set to 'SDLC*EVENT' validation events stored as SDLC events. Possible values: `BIZ_EVENT`, `SDLC_EVENT`
 	EventKind pulumi.StringPtrInput
 	// Name
 	Name pulumi.StringPtrInput
@@ -233,7 +233,7 @@ func (o SiteReliabilityGuardianOutput) Description() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v *SiteReliabilityGuardian) pulumi.StringPtrOutput { return v.Description }).(pulumi.StringPtrOutput)
 }
 
-// If set to null/'BIZ*EVENT' validation events stored as bizevents in Grail. If set to 'SDLC*EVENT' validation events stored as SDLC events
+// If set to null/'BIZ*EVENT' validation events stored as bizevents in Grail. If set to 'SDLC*EVENT' validation events stored as SDLC events. Possible values: `BIZ_EVENT`, `SDLC_EVENT`
 func (o SiteReliabilityGuardianOutput) EventKind() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v *SiteReliabilityGuardian) pulumi.StringPtrOutput { return v.EventKind }).(pulumi.StringPtrOutput)
 }

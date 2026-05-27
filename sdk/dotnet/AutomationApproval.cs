@@ -18,10 +18,35 @@ namespace Pulumiverse.Dynatrace
     /// - Dynatrace Workflows - https://www.dynatrace.com/support/help/platform-modules/cloud-automation/workflows
     /// 
     /// - Settings API - https://www.dynatrace.com/support/help/dynatrace-api/environment-api/settings (schemaId: `builtin:automation.approval)
+    /// 
+    /// ## Resource Example Usage
+    /// 
+    /// ```csharp
+    /// using System.Collections.Generic;
+    /// using System.Linq;
+    /// using Pulumi;
+    /// using Dynatrace = Pulumiverse.Dynatrace;
+    /// 
+    /// return await Deployment.RunAsync(() =&gt; 
+    /// {
+    ///     var wfApproval = new Dynatrace.AutomationApproval("wf_approval", new()
+    ///     {
+    ///         WorkflowAppAccessApprovalEnabled = true,
+    ///         ExternalApprovalsEnabled = true,
+    ///     });
+    /// 
+    /// });
+    /// ```
     /// </summary>
     [DynatraceResourceType("dynatrace:index/automationApproval:AutomationApproval")]
     public partial class AutomationApproval : global::Pulumi.CustomResource
     {
+        /// <summary>
+        /// Allow external systems to trigger approval responses via webhook handlers.
+        /// </summary>
+        [Output("externalApprovalsEnabled")]
+        public Output<bool?> ExternalApprovalsEnabled { get; private set; } = null!;
+
         /// <summary>
         /// Allow on tenant level anyone with access to the app can respond to requests via an approval link.
         /// </summary>
@@ -76,6 +101,12 @@ namespace Pulumiverse.Dynatrace
     public sealed class AutomationApprovalArgs : global::Pulumi.ResourceArgs
     {
         /// <summary>
+        /// Allow external systems to trigger approval responses via webhook handlers.
+        /// </summary>
+        [Input("externalApprovalsEnabled")]
+        public Input<bool>? ExternalApprovalsEnabled { get; set; }
+
+        /// <summary>
         /// Allow on tenant level anyone with access to the app can respond to requests via an approval link.
         /// </summary>
         [Input("workflowAppAccessApprovalEnabled", required: true)]
@@ -89,6 +120,12 @@ namespace Pulumiverse.Dynatrace
 
     public sealed class AutomationApprovalState : global::Pulumi.ResourceArgs
     {
+        /// <summary>
+        /// Allow external systems to trigger approval responses via webhook handlers.
+        /// </summary>
+        [Input("externalApprovalsEnabled")]
+        public Input<bool>? ExternalApprovalsEnabled { get; set; }
+
         /// <summary>
         /// Allow on tenant level anyone with access to the app can respond to requests via an approval link.
         /// </summary>

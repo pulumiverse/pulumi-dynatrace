@@ -42,6 +42,28 @@ namespace Pulumiverse.Dynatrace
     /// - `terraform-provider-dynatrace -export dynatrace.EventDrivenAnsibleConnections` downloads all existing Red Hat event-driven Ansible connections
     /// 
     /// The full documentation of the export feature is available [here](https://dt-url.net/h203qmc).
+    /// 
+    /// ## Resource Example Usage
+    /// 
+    /// ```csharp
+    /// using System.Collections.Generic;
+    /// using System.Linq;
+    /// using Pulumi;
+    /// using Dynatrace = Pulumiverse.Dynatrace;
+    /// 
+    /// return await Deployment.RunAsync(() =&gt; 
+    /// {
+    ///     var connection = new Dynatrace.EventDrivenAnsibleConnections("connection", new()
+    ///     {
+    ///         EventStreamEnabled = true,
+    ///         Name = "#name#",
+    ///         Url = "https://www.example.com",
+    ///         Type = "api-token",
+    ///         Token = "######",
+    ///     });
+    /// 
+    /// });
+    /// ```
     /// </summary>
     [DynatraceResourceType("dynatrace:index/eventDrivenAnsibleConnections:EventDrivenAnsibleConnections")]
     public partial class EventDrivenAnsibleConnections : global::Pulumi.CustomResource

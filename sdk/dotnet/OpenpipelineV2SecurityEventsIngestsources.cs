@@ -227,7 +227,7 @@ namespace Pulumiverse.Dynatrace
         public Output<string?> Source { get; private set; } = null!;
 
         /// <summary>
-        /// Source Type. Possible Values: `Extension`, `Http`
+        /// Source Type. Possible values: `Extension`, `Http`
         /// </summary>
         [Output("sourceType")]
         public Output<string?> SourceType { get; private set; } = null!;
@@ -328,7 +328,7 @@ namespace Pulumiverse.Dynatrace
         public Input<string>? Source { get; set; }
 
         /// <summary>
-        /// Source Type. Possible Values: `Extension`, `Http`
+        /// Source Type. Possible values: `Extension`, `Http`
         /// </summary>
         [Input("sourceType")]
         public Input<string>? SourceType { get; set; }
@@ -390,7 +390,7 @@ namespace Pulumiverse.Dynatrace
         public Input<string>? Source { get; set; }
 
         /// <summary>
-        /// Source Type. Possible Values: `Extension`, `Http`
+        /// Source Type. Possible values: `Extension`, `Http`
         /// </summary>
         [Input("sourceType")]
         public Input<string>? SourceType { get; set; }

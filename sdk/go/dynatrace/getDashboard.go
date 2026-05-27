@@ -32,7 +32,7 @@ import (
 //
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
-//			example, err := dynatrace.LookupDashboard(ctx, &dynatrace.LookupDashboardArgs{
+//			example, err := dynatrace.GetDashboard(ctx, &dynatrace.LookupDashboardArgs{
 //				Name:  "Terraform",
 //				Owner: "Hashicorp",
 //			}, nil)

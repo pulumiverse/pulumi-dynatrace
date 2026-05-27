@@ -126,9 +126,11 @@ class ConnectivityAlerts(pulumi.CustomResource):
         import pulumi
         import pulumiverse_dynatrace as dynatrace
 
-        proces_s__grou_p_1234567890000000 = dynatrace.ConnectivityAlerts("PROCESS_GROUP-1234567890000000",
+        config = pulumi.Config()
+        proces_s__grou_p__id = config.require("PROCESS_GROUP_ID")
+        alert = dynatrace.ConnectivityAlerts("alert",
             connectivity_alerts=False,
-            process_group_id="PROCESS_GROUP-1234567890000000")
+            process_group_id=proces_s__grou_p__id)
         ```
 
 
@@ -164,9 +166,11 @@ class ConnectivityAlerts(pulumi.CustomResource):
         import pulumi
         import pulumiverse_dynatrace as dynatrace
 
-        proces_s__grou_p_1234567890000000 = dynatrace.ConnectivityAlerts("PROCESS_GROUP-1234567890000000",
+        config = pulumi.Config()
+        proces_s__grou_p__id = config.require("PROCESS_GROUP_ID")
+        alert = dynatrace.ConnectivityAlerts("alert",
             connectivity_alerts=False,
-            process_group_id="PROCESS_GROUP-1234567890000000")
+            process_group_id=proces_s__grou_p__id)
         ```
 
 

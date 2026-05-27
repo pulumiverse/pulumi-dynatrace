@@ -20,6 +20,65 @@ import * as utilities from "./utilities";
  * - `terraform-provider-dynatrace -export dynatrace.CalculatedSyntheticMetric` downloads all existing calculated synthetic metric configuration
  *
  * The full documentation of the export feature is available [here](https://dt-url.net/h203qmc).
+ *
+ * ## Resource Example Usage
+ *
+ * ```typescript
+ * import * as pulumi from "@pulumi/pulumi";
+ * import * as dynatrace from "@pulumiverse/dynatrace";
+ *
+ * const location = dynatrace.getSyntheticLocation({
+ *     name: "Location",
+ * });
+ * const monitor = new dynatrace.BrowserMonitor("monitor", {
+ *     name: "#name#",
+ *     frequency: 15,
+ *     locations: [location.then(location => location.id)],
+ *     keyPerformanceMetrics: {
+ *         loadActionKpm: "VISUALLY_COMPLETE",
+ *         xhrActionKpm: "VISUALLY_COMPLETE",
+ *     },
+ *     anomalyDetection: {
+ *         loadingTimeThresholds: [{
+ *             enabled: false,
+ *         }],
+ *         outageHandlings: [{
+ *             globalOutage: true,
+ *             localOutage: false,
+ *             retryOnError: true,
+ *             globalOutagePolicies: [{
+ *                 consecutiveRuns: 1,
+ *             }],
+ *         }],
+ *     },
+ *     script: {
+ *         type: "clickpath",
+ *         configuration: {
+ *             bypassCsp: true,
+ *             userAgent: "Mozilla",
+ *             device: {
+ *                 name: "Desktop",
+ *                 orientation: "landscape",
+ *             },
+ *         },
+ *         events: {
+ *             events: [{
+ *                 description: "my description",
+ *                 navigate: {
+ *                     url: "https://www.example.com",
+ *                 },
+ *             }],
+ *         },
+ *     },
+ * });
+ * const metric = new dynatrace.CalculatedSyntheticMetric("metric", {
+ *     name: "#name#",
+ *     enabled: true,
+ *     metric: "ResourceCount",
+ *     metricKey: "calc:synthetic.browser.#name#",
+ *     monitorIdentifier: monitor.id,
+ * });
+ * ```
  */
 export class CalculatedSyntheticMetric extends pulumi.CustomResource {
     /**

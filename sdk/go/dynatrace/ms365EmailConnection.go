@@ -43,6 +43,37 @@ import (
 // - `terraform-provider-dynatrace -export Ms365EmailConnection` downloads all existing Microsoft 365 email connections
 //
 // The full documentation of the export feature is available [here](https://dt-url.net/h203qmc).
+//
+// ## Resource Example Usage
+//
+// ```go
+// package main
+//
+// import (
+//
+//	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//	"github.com/pulumiverse/pulumi-dynatrace/sdk/go/dynatrace"
+//
+// )
+//
+//	func main() {
+//		pulumi.Run(func(ctx *pulumi.Context) error {
+//			_, err := dynatrace.NewMs365EmailConnection(ctx, "connection", &dynatrace.Ms365EmailConnectionArgs{
+//				Name:         pulumi.String("#name#"),
+//				Type:         pulumi.String("client_secret"),
+//				TenantId:     pulumi.String("00000000-0000-0000-0000-000000000000"),
+//				ClientId:     pulumi.String("00000000-0000-0000-0000-000000000000"),
+//				ClientSecret: pulumi.String("######"),
+//				FromAddress:  pulumi.String("random.email@terraform.com"),
+//			})
+//			if err != nil {
+//				return err
+//			}
+//			return nil
+//		})
+//	}
+//
+// ```
 type Ms365EmailConnection struct {
 	pulumi.CustomResourceState
 
@@ -56,7 +87,7 @@ type Ms365EmailConnection struct {
 	Name pulumi.StringOutput `pulumi:"name"`
 	// Directory (tenant) ID of your Azure Active Directory
 	TenantId pulumi.StringOutput `pulumi:"tenantId"`
-	// Possible Values: `clientSecret`
+	// Type of authentication method that should be used. Possible values: `clientSecret`
 	Type pulumi.StringOutput `pulumi:"type"`
 }
 
@@ -119,7 +150,7 @@ type ms365EmailConnectionState struct {
 	Name *string `pulumi:"name"`
 	// Directory (tenant) ID of your Azure Active Directory
 	TenantId *string `pulumi:"tenantId"`
-	// Possible Values: `clientSecret`
+	// Type of authentication method that should be used. Possible values: `clientSecret`
 	Type *string `pulumi:"type"`
 }
 
@@ -134,7 +165,7 @@ type Ms365EmailConnectionState struct {
 	Name pulumi.StringPtrInput
 	// Directory (tenant) ID of your Azure Active Directory
 	TenantId pulumi.StringPtrInput
-	// Possible Values: `clientSecret`
+	// Type of authentication method that should be used. Possible values: `clientSecret`
 	Type pulumi.StringPtrInput
 }
 
@@ -153,7 +184,7 @@ type ms365EmailConnectionArgs struct {
 	Name *string `pulumi:"name"`
 	// Directory (tenant) ID of your Azure Active Directory
 	TenantId string `pulumi:"tenantId"`
-	// Possible Values: `clientSecret`
+	// Type of authentication method that should be used. Possible values: `clientSecret`
 	Type string `pulumi:"type"`
 }
 
@@ -169,7 +200,7 @@ type Ms365EmailConnectionArgs struct {
 	Name pulumi.StringPtrInput
 	// Directory (tenant) ID of your Azure Active Directory
 	TenantId pulumi.StringInput
-	// Possible Values: `clientSecret`
+	// Type of authentication method that should be used. Possible values: `clientSecret`
 	Type pulumi.StringInput
 }
 
@@ -285,7 +316,7 @@ func (o Ms365EmailConnectionOutput) TenantId() pulumi.StringOutput {
 	return o.ApplyT(func(v *Ms365EmailConnection) pulumi.StringOutput { return v.TenantId }).(pulumi.StringOutput)
 }
 
-// Possible Values: `clientSecret`
+// Type of authentication method that should be used. Possible values: `clientSecret`
 func (o Ms365EmailConnectionOutput) Type() pulumi.StringOutput {
 	return o.ApplyT(func(v *Ms365EmailConnection) pulumi.StringOutput { return v.Type }).(pulumi.StringOutput)
 }

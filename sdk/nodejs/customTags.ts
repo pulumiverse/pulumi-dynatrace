@@ -20,6 +20,39 @@ import * as utilities from "./utilities";
  * - `terraform-provider-dynatrace -export dynatrace.CustomTags` downloads all existing custom tags configuration
  *
  * The full documentation of the export feature is available [here](https://dt-url.net/h203qmc).
+ *
+ * ## Resource Example Usage
+ *
+ * ```typescript
+ * import * as pulumi from "@pulumi/pulumi";
+ * import * as dynatrace from "@pulumiverse/dynatrace";
+ *
+ * const tags = new dynatrace.CustomTags("tags", {
+ *     entitySelector: "type(HOST)",
+ *     tags: {
+ *         filters: [
+ *             {
+ *                 context: "CONTEXTLESS",
+ *                 key: "KeyExampleA",
+ *             },
+ *             {
+ *                 context: "CONTEXTLESS",
+ *                 key: "KeyExampleA",
+ *                 value: "ValueExample1",
+ *             },
+ *             {
+ *                 context: "CONTEXTLESS",
+ *                 key: "KeyExampleB",
+ *             },
+ *             {
+ *                 context: "CONTEXTLESS",
+ *                 key: "KeyExampleC",
+ *                 value: "ValueExample2",
+ *             },
+ *         ],
+ *     },
+ * });
+ * ```
  */
 export class CustomTags extends pulumi.CustomResource {
     /**

@@ -41,7 +41,7 @@ import * as utilities from "./utilities";
  *     });
  *     const supportedServices = await dynatrace.getAwsSupportedServices({});
  *     const tERRAFORMSAMPLEServices: dynatrace.AwsService[] = [];
- *     for (const range of Object.entries(supportedServices.services).map(([k, v]) => ({key: k, value: v}))) {
+ *     for (const range of Object.entries(supportedServices.services).sort().map(([k, v]) => ({key: k, value: v}))) {
  *         tERRAFORMSAMPLEServices.push(new dynatrace.AwsService(`TERRAFORM_SAMPLE_services-${range.key}`, {
  *             credentialsId: TERRAFORM_SAMPLE.id,
  *             useRecommendedMetrics: true,

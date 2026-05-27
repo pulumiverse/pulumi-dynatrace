@@ -24,6 +24,33 @@ namespace Pulumiverse.Dynatrace
     /// - `terraform-provider-dynatrace -export dynatrace.ContainerBuiltinRule` downloads all existing builtin monitoring rules for containers
     /// 
     /// The full documentation of the export feature is available [here](https://dt-url.net/h203qmc).
+    /// 
+    /// ## Resource Example Usage
+    /// 
+    /// ```csharp
+    /// using System.Collections.Generic;
+    /// using System.Linq;
+    /// using Pulumi;
+    /// using Dynatrace = Pulumiverse.Dynatrace;
+    /// 
+    /// return await Deployment.RunAsync(() =&gt; 
+    /// {
+    ///     var rules = new Dynatrace.ContainerBuiltinRule("rules", new()
+    ///     {
+    ///         IgnoreDockerPauseContainer = false,
+    ///         IgnoreKubernetesPauseContainer = true,
+    ///         IgnoreOpenShiftBuildPodName = false,
+    ///         IgnoreOpenShiftSdnNamespace = true,
+    ///         IgnoreOpenShiftEtcdNamespace = false,
+    ///         IgnoreOpenShiftIngressCanaryNamespace = false,
+    ///         IgnoreOpenShiftKubeApiserverNamespace = false,
+    ///         IgnoreOpenShiftMachineConfigOperatorNamespace = false,
+    ///         IgnoreOpenShiftMonitoringNamespace = false,
+    ///         IgnoreOpenShiftOvnKubernetesNamespace = false,
+    ///     });
+    /// 
+    /// });
+    /// ```
     /// </summary>
     [DynatraceResourceType("dynatrace:index/containerBuiltinRule:ContainerBuiltinRule")]
     public partial class ContainerBuiltinRule : global::Pulumi.CustomResource
@@ -45,6 +72,42 @@ namespace Pulumiverse.Dynatrace
         /// </summary>
         [Output("ignoreOpenShiftBuildPodName")]
         public Output<bool> IgnoreOpenShiftBuildPodName { get; private set; } = null!;
+
+        /// <summary>
+        /// Disable monitoring of platform internal containers in the openshift-etcd namespace.
+        /// </summary>
+        [Output("ignoreOpenShiftEtcdNamespace")]
+        public Output<bool?> IgnoreOpenShiftEtcdNamespace { get; private set; } = null!;
+
+        /// <summary>
+        /// Disable monitoring of platform internal containers in the openshift-ingress-canary namespace.
+        /// </summary>
+        [Output("ignoreOpenShiftIngressCanaryNamespace")]
+        public Output<bool?> IgnoreOpenShiftIngressCanaryNamespace { get; private set; } = null!;
+
+        /// <summary>
+        /// Disable monitoring of platform internal containers in the openshift-kube-apiserver namespace.
+        /// </summary>
+        [Output("ignoreOpenShiftKubeApiserverNamespace")]
+        public Output<bool?> IgnoreOpenShiftKubeApiserverNamespace { get; private set; } = null!;
+
+        /// <summary>
+        /// Disable monitoring of platform internal containers in the openshift-machine-config-operator namespace.
+        /// </summary>
+        [Output("ignoreOpenShiftMachineConfigOperatorNamespace")]
+        public Output<bool?> IgnoreOpenShiftMachineConfigOperatorNamespace { get; private set; } = null!;
+
+        /// <summary>
+        /// Disable monitoring of platform internal containers in the openshift-monitoring namespace.
+        /// </summary>
+        [Output("ignoreOpenShiftMonitoringNamespace")]
+        public Output<bool?> IgnoreOpenShiftMonitoringNamespace { get; private set; } = null!;
+
+        /// <summary>
+        /// Disable monitoring of platform internal containers in the openshift-ovn-kubernetes namespace.
+        /// </summary>
+        [Output("ignoreOpenShiftOvnKubernetesNamespace")]
+        public Output<bool?> IgnoreOpenShiftOvnKubernetesNamespace { get; private set; } = null!;
 
         /// <summary>
         /// Disable monitoring of platform internal containers in the openshift-sdn namespace.
@@ -118,6 +181,42 @@ namespace Pulumiverse.Dynatrace
         public Input<bool> IgnoreOpenShiftBuildPodName { get; set; } = null!;
 
         /// <summary>
+        /// Disable monitoring of platform internal containers in the openshift-etcd namespace.
+        /// </summary>
+        [Input("ignoreOpenShiftEtcdNamespace")]
+        public Input<bool>? IgnoreOpenShiftEtcdNamespace { get; set; }
+
+        /// <summary>
+        /// Disable monitoring of platform internal containers in the openshift-ingress-canary namespace.
+        /// </summary>
+        [Input("ignoreOpenShiftIngressCanaryNamespace")]
+        public Input<bool>? IgnoreOpenShiftIngressCanaryNamespace { get; set; }
+
+        /// <summary>
+        /// Disable monitoring of platform internal containers in the openshift-kube-apiserver namespace.
+        /// </summary>
+        [Input("ignoreOpenShiftKubeApiserverNamespace")]
+        public Input<bool>? IgnoreOpenShiftKubeApiserverNamespace { get; set; }
+
+        /// <summary>
+        /// Disable monitoring of platform internal containers in the openshift-machine-config-operator namespace.
+        /// </summary>
+        [Input("ignoreOpenShiftMachineConfigOperatorNamespace")]
+        public Input<bool>? IgnoreOpenShiftMachineConfigOperatorNamespace { get; set; }
+
+        /// <summary>
+        /// Disable monitoring of platform internal containers in the openshift-monitoring namespace.
+        /// </summary>
+        [Input("ignoreOpenShiftMonitoringNamespace")]
+        public Input<bool>? IgnoreOpenShiftMonitoringNamespace { get; set; }
+
+        /// <summary>
+        /// Disable monitoring of platform internal containers in the openshift-ovn-kubernetes namespace.
+        /// </summary>
+        [Input("ignoreOpenShiftOvnKubernetesNamespace")]
+        public Input<bool>? IgnoreOpenShiftOvnKubernetesNamespace { get; set; }
+
+        /// <summary>
         /// Disable monitoring of platform internal containers in the openshift-sdn namespace.
         /// </summary>
         [Input("ignoreOpenShiftSdnNamespace", required: true)]
@@ -148,6 +247,42 @@ namespace Pulumiverse.Dynatrace
         /// </summary>
         [Input("ignoreOpenShiftBuildPodName")]
         public Input<bool>? IgnoreOpenShiftBuildPodName { get; set; }
+
+        /// <summary>
+        /// Disable monitoring of platform internal containers in the openshift-etcd namespace.
+        /// </summary>
+        [Input("ignoreOpenShiftEtcdNamespace")]
+        public Input<bool>? IgnoreOpenShiftEtcdNamespace { get; set; }
+
+        /// <summary>
+        /// Disable monitoring of platform internal containers in the openshift-ingress-canary namespace.
+        /// </summary>
+        [Input("ignoreOpenShiftIngressCanaryNamespace")]
+        public Input<bool>? IgnoreOpenShiftIngressCanaryNamespace { get; set; }
+
+        /// <summary>
+        /// Disable monitoring of platform internal containers in the openshift-kube-apiserver namespace.
+        /// </summary>
+        [Input("ignoreOpenShiftKubeApiserverNamespace")]
+        public Input<bool>? IgnoreOpenShiftKubeApiserverNamespace { get; set; }
+
+        /// <summary>
+        /// Disable monitoring of platform internal containers in the openshift-machine-config-operator namespace.
+        /// </summary>
+        [Input("ignoreOpenShiftMachineConfigOperatorNamespace")]
+        public Input<bool>? IgnoreOpenShiftMachineConfigOperatorNamespace { get; set; }
+
+        /// <summary>
+        /// Disable monitoring of platform internal containers in the openshift-monitoring namespace.
+        /// </summary>
+        [Input("ignoreOpenShiftMonitoringNamespace")]
+        public Input<bool>? IgnoreOpenShiftMonitoringNamespace { get; set; }
+
+        /// <summary>
+        /// Disable monitoring of platform internal containers in the openshift-ovn-kubernetes namespace.
+        /// </summary>
+        [Input("ignoreOpenShiftOvnKubernetesNamespace")]
+        public Input<bool>? IgnoreOpenShiftOvnKubernetesNamespace { get; set; }
 
         /// <summary>
         /// Disable monitoring of platform internal containers in the openshift-sdn namespace.

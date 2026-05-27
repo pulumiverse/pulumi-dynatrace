@@ -22,19 +22,20 @@ __all__ = ['DirectSharesArgs', 'DirectShares']
 class DirectSharesArgs:
     def __init__(__self__, *,
                  document_id: pulumi.Input[_builtins.str],
-                 recipients: pulumi.Input['DirectSharesRecipientsArgs'],
-                 access: pulumi.Input[Optional[_builtins.str]] = None):
+                 access: pulumi.Input[Optional[_builtins.str]] = None,
+                 recipients: pulumi.Input[Optional['DirectSharesRecipientsArgs']] = None):
         """
         The set of arguments for constructing a DirectShares resource.
 
         :param pulumi.Input[_builtins.str] document_id: Document ID
-        :param pulumi.Input['DirectSharesRecipientsArgs'] recipients: Recipients of the direct share
         :param pulumi.Input[_builtins.str] access: Access grants. Possible values are `read` and `read-write`
+        :param pulumi.Input['DirectSharesRecipientsArgs'] recipients: Recipients of the direct share
         """
         pulumi.set(__self__, "document_id", document_id)
-        pulumi.set(__self__, "recipients", recipients)
         if access is not None:
             pulumi.set(__self__, "access", access)
+        if recipients is not None:
+            pulumi.set(__self__, "recipients", recipients)
 
     @_builtins.property
     @pulumi.getter(name="documentId")
@@ -50,18 +51,6 @@ class DirectSharesArgs:
 
     @_builtins.property
     @pulumi.getter
-    def recipients(self) -> pulumi.Input['DirectSharesRecipientsArgs']:
-        """
-        Recipients of the direct share
-        """
-        return pulumi.get(self, "recipients")
-
-    @recipients.setter
-    def recipients(self, value: pulumi.Input['DirectSharesRecipientsArgs']):
-        pulumi.set(self, "recipients", value)
-
-    @_builtins.property
-    @pulumi.getter
     def access(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Access grants. Possible values are `read` and `read-write`
@@ -71,6 +60,18 @@ class DirectSharesArgs:
     @access.setter
     def access(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "access", value)
+
+    @_builtins.property
+    @pulumi.getter
+    def recipients(self) -> pulumi.Input[Optional['DirectSharesRecipientsArgs']]:
+        """
+        Recipients of the direct share
+        """
+        return pulumi.get(self, "recipients")
+
+    @recipients.setter
+    def recipients(self, value: pulumi.Input[Optional['DirectSharesRecipientsArgs']]):
+        pulumi.set(self, "recipients", value)
 
 
 @pulumi.input_type
@@ -145,11 +146,15 @@ class DirectShares(pulumi.CustomResource):
 
         > To utilize this resource, please define the environment variables `DT_CLIENT_ID`, `DT_CLIENT_SECRET`, `DT_ACCOUNT_ID` with an OAuth client including the following permissions: **Read direct-shares** (`document:direct-shares:read`), **Write direct-shares** (`document:direct-shares:write`), and **Delete direct-shares** (`document:direct-shares:delete`).
 
-        > This resource is currently not covered by the export utility.
+        > This resource is excluded by default in the export utility, please explicitly specify the resource to retrieve existing configuration.
 
         ## Dynatrace Documentation
 
         - Dynatrace Documents - https://########.apps.dynatrace.com/platform/swagger-ui/index.html?urls.primaryName=Document%20Service
+
+        ## Export Example Usage
+
+        - `terraform-provider-dynatrace -export DirectShares` downloads all existing direct shares configurations for documents.
 
         ## Resource Example Usage
 
@@ -162,112 +167,13 @@ class DirectShares(pulumi.CustomResource):
             type="dashboard",
             name="#name#",
             content=json.dumps({
-                "version": 13,
+                "version": 1,
                 "variables": [],
                 "tiles": {
                     "0": {
                         "type": "markdown",
                         "title": "",
-                        "content": "![Image of a Dashboard](https://dt-cdn.net/wp-content/uploads/2022/09/pic1____Dashboard-Preset___PNG.png)",
-                    },
-                    "1": {
-                        "type": "data",
-                        "title": "",
-                        "query": "timeseries avg(dt.host.cpu.user)",
-                        "queryConfig": {
-                            "additionalFilters": {},
-                            "version": "4.3.1",
-                            "datatype": "metrics",
-                            "metricKey": "dt.host.cpu.user",
-                            "aggregation": "avg",
-                            "by": [],
-                        },
-                        "subType": "dql-builder-metrics",
-                        "visualization": "lineChart",
-                        "visualizationSettings": {
-                            "thresholds": [],
-                            "chartSettings": {
-                                "gapPolicy": "connect",
-                                "circleChartSettings": {
-                                    "groupingThresholdType": "relative",
-                                    "groupingThresholdValue": 0,
-                                    "valueType": "relative",
-                                },
-                                "categoryOverrides": {},
-                                "fieldMapping": {
-                                    "timestamp": "timeframe",
-                                    "leftAxisValues": ["avg(dt.host.cpu.user)"],
-                                    "leftAxisDimensions": [],
-                                    "fields": [],
-                                    "values": [],
-                                },
-                            },
-                            "singleValue": {
-                                "showLabel": True,
-                                "label": "",
-                                "prefixIcon": "",
-                                "autoscale": True,
-                                "alignment": "center",
-                                "colorThresholdTarget": "value",
-                            },
-                            "table": {
-                                "rowDensity": "condensed",
-                                "enableSparklines": False,
-                                "hiddenColumns": [],
-                                "lineWrapIds": [],
-                                "columnWidths": {},
-                            },
-                        },
-                    },
-                    "2": {
-                        "type": "data",
-                        "title": "",
-                        "query": "timeseries avg(dt.host.memory.used)",
-                        "queryConfig": {
-                            "additionalFilters": {},
-                            "version": "4.3.1",
-                            "datatype": "metrics",
-                            "metricKey": "dt.host.memory.used",
-                            "aggregation": "avg",
-                            "by": [],
-                        },
-                        "subType": "dql-builder-metrics",
-                        "visualization": "lineChart",
-                        "visualizationSettings": {
-                            "thresholds": [],
-                            "chartSettings": {
-                                "gapPolicy": "connect",
-                                "circleChartSettings": {
-                                    "groupingThresholdType": "relative",
-                                    "groupingThresholdValue": 0,
-                                    "valueType": "relative",
-                                },
-                                "categoryOverrides": {},
-                                "fieldMapping": {
-                                    "timestamp": "timeframe",
-                                    "leftAxisValues": ["avg(dt.host.memory.used)"],
-                                    "leftAxisDimensions": [],
-                                    "fields": [],
-                                    "values": [],
-                                },
-                                "categoricalBarChartSettings": {},
-                            },
-                            "singleValue": {
-                                "showLabel": True,
-                                "label": "",
-                                "prefixIcon": "",
-                                "autoscale": True,
-                                "alignment": "center",
-                                "colorThresholdTarget": "value",
-                            },
-                            "table": {
-                                "rowDensity": "condensed",
-                                "enableSparklines": False,
-                                "hiddenColumns": [],
-                                "lineWrapIds": [],
-                                "columnWidths": {},
-                            },
-                        },
+                        "content": "Dashboard content",
                     },
                 },
                 "layouts": {
@@ -277,31 +183,25 @@ class DirectShares(pulumi.CustomResource):
                         "w": 24,
                         "h": 14,
                     },
-                    "1": {
-                        "x": 0,
-                        "y": 14,
-                        "w": 9,
-                        "h": 6,
-                    },
-                    "2": {
-                        "x": 15,
-                        "y": 14,
-                        "w": 9,
-                        "h": 6,
-                    },
                 },
             }))
+        sample_service_user = dynatrace.IamServiceUser("sample_service_user",
+            name="#name#",
+            description="Service user that can access the dashboard")
+        sample_group = dynatrace.IamGroup("sample_group",
+            name="#name#",
+            description="Group that can acccess the dashboard")
         this = dynatrace.DirectShares("this",
             document_id=this_document.id,
             access="read-write",
             recipients={
                 "recipients": [
                     {
-                        "id": "441664f0-23c9-40ef-b344-18c02c23d787",
+                        "id": sample_service_user.id,
                         "type": "user",
                     },
                     {
-                        "id": "441664f0-23c9-40ef-b344-18c02c23d788",
+                        "id": sample_group.id,
                         "type": "group",
                     },
                 ],
@@ -326,11 +226,15 @@ class DirectShares(pulumi.CustomResource):
 
         > To utilize this resource, please define the environment variables `DT_CLIENT_ID`, `DT_CLIENT_SECRET`, `DT_ACCOUNT_ID` with an OAuth client including the following permissions: **Read direct-shares** (`document:direct-shares:read`), **Write direct-shares** (`document:direct-shares:write`), and **Delete direct-shares** (`document:direct-shares:delete`).
 
-        > This resource is currently not covered by the export utility.
+        > This resource is excluded by default in the export utility, please explicitly specify the resource to retrieve existing configuration.
 
         ## Dynatrace Documentation
 
         - Dynatrace Documents - https://########.apps.dynatrace.com/platform/swagger-ui/index.html?urls.primaryName=Document%20Service
+
+        ## Export Example Usage
+
+        - `terraform-provider-dynatrace -export DirectShares` downloads all existing direct shares configurations for documents.
 
         ## Resource Example Usage
 
@@ -343,112 +247,13 @@ class DirectShares(pulumi.CustomResource):
             type="dashboard",
             name="#name#",
             content=json.dumps({
-                "version": 13,
+                "version": 1,
                 "variables": [],
                 "tiles": {
                     "0": {
                         "type": "markdown",
                         "title": "",
-                        "content": "![Image of a Dashboard](https://dt-cdn.net/wp-content/uploads/2022/09/pic1____Dashboard-Preset___PNG.png)",
-                    },
-                    "1": {
-                        "type": "data",
-                        "title": "",
-                        "query": "timeseries avg(dt.host.cpu.user)",
-                        "queryConfig": {
-                            "additionalFilters": {},
-                            "version": "4.3.1",
-                            "datatype": "metrics",
-                            "metricKey": "dt.host.cpu.user",
-                            "aggregation": "avg",
-                            "by": [],
-                        },
-                        "subType": "dql-builder-metrics",
-                        "visualization": "lineChart",
-                        "visualizationSettings": {
-                            "thresholds": [],
-                            "chartSettings": {
-                                "gapPolicy": "connect",
-                                "circleChartSettings": {
-                                    "groupingThresholdType": "relative",
-                                    "groupingThresholdValue": 0,
-                                    "valueType": "relative",
-                                },
-                                "categoryOverrides": {},
-                                "fieldMapping": {
-                                    "timestamp": "timeframe",
-                                    "leftAxisValues": ["avg(dt.host.cpu.user)"],
-                                    "leftAxisDimensions": [],
-                                    "fields": [],
-                                    "values": [],
-                                },
-                            },
-                            "singleValue": {
-                                "showLabel": True,
-                                "label": "",
-                                "prefixIcon": "",
-                                "autoscale": True,
-                                "alignment": "center",
-                                "colorThresholdTarget": "value",
-                            },
-                            "table": {
-                                "rowDensity": "condensed",
-                                "enableSparklines": False,
-                                "hiddenColumns": [],
-                                "lineWrapIds": [],
-                                "columnWidths": {},
-                            },
-                        },
-                    },
-                    "2": {
-                        "type": "data",
-                        "title": "",
-                        "query": "timeseries avg(dt.host.memory.used)",
-                        "queryConfig": {
-                            "additionalFilters": {},
-                            "version": "4.3.1",
-                            "datatype": "metrics",
-                            "metricKey": "dt.host.memory.used",
-                            "aggregation": "avg",
-                            "by": [],
-                        },
-                        "subType": "dql-builder-metrics",
-                        "visualization": "lineChart",
-                        "visualizationSettings": {
-                            "thresholds": [],
-                            "chartSettings": {
-                                "gapPolicy": "connect",
-                                "circleChartSettings": {
-                                    "groupingThresholdType": "relative",
-                                    "groupingThresholdValue": 0,
-                                    "valueType": "relative",
-                                },
-                                "categoryOverrides": {},
-                                "fieldMapping": {
-                                    "timestamp": "timeframe",
-                                    "leftAxisValues": ["avg(dt.host.memory.used)"],
-                                    "leftAxisDimensions": [],
-                                    "fields": [],
-                                    "values": [],
-                                },
-                                "categoricalBarChartSettings": {},
-                            },
-                            "singleValue": {
-                                "showLabel": True,
-                                "label": "",
-                                "prefixIcon": "",
-                                "autoscale": True,
-                                "alignment": "center",
-                                "colorThresholdTarget": "value",
-                            },
-                            "table": {
-                                "rowDensity": "condensed",
-                                "enableSparklines": False,
-                                "hiddenColumns": [],
-                                "lineWrapIds": [],
-                                "columnWidths": {},
-                            },
-                        },
+                        "content": "Dashboard content",
                     },
                 },
                 "layouts": {
@@ -458,31 +263,25 @@ class DirectShares(pulumi.CustomResource):
                         "w": 24,
                         "h": 14,
                     },
-                    "1": {
-                        "x": 0,
-                        "y": 14,
-                        "w": 9,
-                        "h": 6,
-                    },
-                    "2": {
-                        "x": 15,
-                        "y": 14,
-                        "w": 9,
-                        "h": 6,
-                    },
                 },
             }))
+        sample_service_user = dynatrace.IamServiceUser("sample_service_user",
+            name="#name#",
+            description="Service user that can access the dashboard")
+        sample_group = dynatrace.IamGroup("sample_group",
+            name="#name#",
+            description="Group that can acccess the dashboard")
         this = dynatrace.DirectShares("this",
             document_id=this_document.id,
             access="read-write",
             recipients={
                 "recipients": [
                     {
-                        "id": "441664f0-23c9-40ef-b344-18c02c23d787",
+                        "id": sample_service_user.id,
                         "type": "user",
                     },
                     {
-                        "id": "441664f0-23c9-40ef-b344-18c02c23d788",
+                        "id": sample_group.id,
                         "type": "group",
                     },
                 ],
@@ -521,8 +320,6 @@ class DirectShares(pulumi.CustomResource):
             if document_id is None and not opts.urn:
                 raise TypeError("Missing required property 'document_id'")
             __props__.__dict__["document_id"] = document_id
-            if recipients is None and not opts.urn:
-                raise TypeError("Missing required property 'recipients'")
             __props__.__dict__["recipients"] = recipients
         super(DirectShares, __self__).__init__(
             'dynatrace:index/directShares:DirectShares',
@@ -575,7 +372,7 @@ class DirectShares(pulumi.CustomResource):
 
     @_builtins.property
     @pulumi.getter
-    def recipients(self) -> pulumi.Output['outputs.DirectSharesRecipients']:
+    def recipients(self) -> pulumi.Output[Optional['outputs.DirectSharesRecipients']]:
         """
         Recipients of the direct share
         """

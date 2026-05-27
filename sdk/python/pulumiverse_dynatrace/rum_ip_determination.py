@@ -121,6 +121,15 @@ class RumIpDetermination(pulumi.CustomResource):
 
         The full documentation of the export feature is available [here](https://dt-url.net/h203qmc).
 
+        ## Resource Example Usage
+
+        ```python
+        import pulumi
+        import pulumiverse_dynatrace as dynatrace
+
+        determination = dynatrace.RumIpDetermination("determination", header_name="X-Header-#name#")
+        ```
+
 
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
@@ -147,6 +156,15 @@ class RumIpDetermination(pulumi.CustomResource):
         - `terraform-provider-dynatrace -export RumIpDetermination` downloads all existing client IP determination configuration
 
         The full documentation of the export feature is available [here](https://dt-url.net/h203qmc).
+
+        ## Resource Example Usage
+
+        ```python
+        import pulumi
+        import pulumiverse_dynatrace as dynatrace
+
+        determination = dynatrace.RumIpDetermination("determination", header_name="X-Header-#name#")
+        ```
 
 
         :param str resource_name: The name of the resource.

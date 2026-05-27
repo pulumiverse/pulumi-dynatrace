@@ -31,12 +31,12 @@ class DavisAnomalyDetectorsArgs:
         """
         The set of arguments for constructing a DavisAnomalyDetectors resource.
 
-        :param pulumi.Input['DavisAnomalyDetectorsAnalyzerArgs'] analyzer: Analyzer input
+        :param pulumi.Input['DavisAnomalyDetectorsAnalyzerArgs'] analyzer: Analyzer input to initialize the analyzer
         :param pulumi.Input[_builtins.str] description: The description of the anomaly detector
         :param pulumi.Input[_builtins.bool] enabled: This setting is enabled (`true`) or disabled (`false`)
-        :param pulumi.Input['DavisAnomalyDetectorsEventTemplateArgs'] event_template: Event template
-        :param pulumi.Input['DavisAnomalyDetectorsExecutionSettingsArgs'] execution_settings: Execution settings
-        :param pulumi.Input[_builtins.str] source: Source
+        :param pulumi.Input['DavisAnomalyDetectorsEventTemplateArgs'] event_template: Defines additional fields on the davis events triggered by the anomaly detector
+        :param pulumi.Input['DavisAnomalyDetectorsExecutionSettingsArgs'] execution_settings: Defines the configuration parameters that influence how and under what context a query or evaluation is executed.
+        :param pulumi.Input[_builtins.str] source: The source which created the anomaly detector
         :param pulumi.Input[_builtins.str] title: The title of the anomaly detector
         """
         pulumi.set(__self__, "analyzer", analyzer)
@@ -51,7 +51,7 @@ class DavisAnomalyDetectorsArgs:
     @pulumi.getter
     def analyzer(self) -> pulumi.Input['DavisAnomalyDetectorsAnalyzerArgs']:
         """
-        Analyzer input
+        Analyzer input to initialize the analyzer
         """
         return pulumi.get(self, "analyzer")
 
@@ -87,7 +87,7 @@ class DavisAnomalyDetectorsArgs:
     @pulumi.getter(name="eventTemplate")
     def event_template(self) -> pulumi.Input['DavisAnomalyDetectorsEventTemplateArgs']:
         """
-        Event template
+        Defines additional fields on the davis events triggered by the anomaly detector
         """
         return pulumi.get(self, "event_template")
 
@@ -99,7 +99,7 @@ class DavisAnomalyDetectorsArgs:
     @pulumi.getter(name="executionSettings")
     def execution_settings(self) -> pulumi.Input['DavisAnomalyDetectorsExecutionSettingsArgs']:
         """
-        Execution settings
+        Defines the configuration parameters that influence how and under what context a query or evaluation is executed.
         """
         return pulumi.get(self, "execution_settings")
 
@@ -111,7 +111,7 @@ class DavisAnomalyDetectorsArgs:
     @pulumi.getter
     def source(self) -> pulumi.Input[_builtins.str]:
         """
-        Source
+        The source which created the anomaly detector
         """
         return pulumi.get(self, "source")
 
@@ -145,12 +145,12 @@ class _DavisAnomalyDetectorsState:
         """
         Input properties used for looking up and filtering DavisAnomalyDetectors resources.
 
-        :param pulumi.Input['DavisAnomalyDetectorsAnalyzerArgs'] analyzer: Analyzer input
+        :param pulumi.Input['DavisAnomalyDetectorsAnalyzerArgs'] analyzer: Analyzer input to initialize the analyzer
         :param pulumi.Input[_builtins.str] description: The description of the anomaly detector
         :param pulumi.Input[_builtins.bool] enabled: This setting is enabled (`true`) or disabled (`false`)
-        :param pulumi.Input['DavisAnomalyDetectorsEventTemplateArgs'] event_template: Event template
-        :param pulumi.Input['DavisAnomalyDetectorsExecutionSettingsArgs'] execution_settings: Execution settings
-        :param pulumi.Input[_builtins.str] source: Source
+        :param pulumi.Input['DavisAnomalyDetectorsEventTemplateArgs'] event_template: Defines additional fields on the davis events triggered by the anomaly detector
+        :param pulumi.Input['DavisAnomalyDetectorsExecutionSettingsArgs'] execution_settings: Defines the configuration parameters that influence how and under what context a query or evaluation is executed.
+        :param pulumi.Input[_builtins.str] source: The source which created the anomaly detector
         :param pulumi.Input[_builtins.str] title: The title of the anomaly detector
         """
         if analyzer is not None:
@@ -172,7 +172,7 @@ class _DavisAnomalyDetectorsState:
     @pulumi.getter
     def analyzer(self) -> pulumi.Input[Optional['DavisAnomalyDetectorsAnalyzerArgs']]:
         """
-        Analyzer input
+        Analyzer input to initialize the analyzer
         """
         return pulumi.get(self, "analyzer")
 
@@ -208,7 +208,7 @@ class _DavisAnomalyDetectorsState:
     @pulumi.getter(name="eventTemplate")
     def event_template(self) -> pulumi.Input[Optional['DavisAnomalyDetectorsEventTemplateArgs']]:
         """
-        Event template
+        Defines additional fields on the davis events triggered by the anomaly detector
         """
         return pulumi.get(self, "event_template")
 
@@ -220,7 +220,7 @@ class _DavisAnomalyDetectorsState:
     @pulumi.getter(name="executionSettings")
     def execution_settings(self) -> pulumi.Input[Optional['DavisAnomalyDetectorsExecutionSettingsArgs']]:
         """
-        Execution settings
+        Defines the configuration parameters that influence how and under what context a query or evaluation is executed.
         """
         return pulumi.get(self, "execution_settings")
 
@@ -232,7 +232,7 @@ class _DavisAnomalyDetectorsState:
     @pulumi.getter
     def source(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
-        Source
+        The source which created the anomaly detector
         """
         return pulumi.get(self, "source")
 
@@ -273,6 +273,8 @@ class DavisAnomalyDetectors(pulumi.CustomResource):
         > This resource requires an OAuth client or platform token configured with the permissions outlined in the [Davis Anomaly Detection](https://docs.dynatrace.com/docs/shortlink/davis-ai-anomaly-detection-app#expand--prerequisites--1) app documentation.
         Please set the environment variables `DT_CLIENT_ID` and `DT_CLIENT_SECRET`, or alternatively `DT_PLATFORM_TOKEN`.
 
+        > Depending on the anomaly detector configuration, additional **storage permissions** may be required for DQL-related access (e.g. `storage:bizevents:read`, `storage:logs:read`, `storage:entities:read`).
+
         ## Dynatrace Documentation
 
         - Davis Anomaly Detection App - https://docs.dynatrace.com/docs/platform/davis-ai/anomaly-detection/anomaly-detection-app
@@ -288,12 +290,12 @@ class DavisAnomalyDetectors(pulumi.CustomResource):
 
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
-        :param pulumi.Input[Union['DavisAnomalyDetectorsAnalyzerArgs', 'DavisAnomalyDetectorsAnalyzerArgsDict']] analyzer: Analyzer input
+        :param pulumi.Input[Union['DavisAnomalyDetectorsAnalyzerArgs', 'DavisAnomalyDetectorsAnalyzerArgsDict']] analyzer: Analyzer input to initialize the analyzer
         :param pulumi.Input[_builtins.str] description: The description of the anomaly detector
         :param pulumi.Input[_builtins.bool] enabled: This setting is enabled (`true`) or disabled (`false`)
-        :param pulumi.Input[Union['DavisAnomalyDetectorsEventTemplateArgs', 'DavisAnomalyDetectorsEventTemplateArgsDict']] event_template: Event template
-        :param pulumi.Input[Union['DavisAnomalyDetectorsExecutionSettingsArgs', 'DavisAnomalyDetectorsExecutionSettingsArgsDict']] execution_settings: Execution settings
-        :param pulumi.Input[_builtins.str] source: Source
+        :param pulumi.Input[Union['DavisAnomalyDetectorsEventTemplateArgs', 'DavisAnomalyDetectorsEventTemplateArgsDict']] event_template: Defines additional fields on the davis events triggered by the anomaly detector
+        :param pulumi.Input[Union['DavisAnomalyDetectorsExecutionSettingsArgs', 'DavisAnomalyDetectorsExecutionSettingsArgsDict']] execution_settings: Defines the configuration parameters that influence how and under what context a query or evaluation is executed.
+        :param pulumi.Input[_builtins.str] source: The source which created the anomaly detector
         :param pulumi.Input[_builtins.str] title: The title of the anomaly detector
         """
         ...
@@ -307,6 +309,8 @@ class DavisAnomalyDetectors(pulumi.CustomResource):
 
         > This resource requires an OAuth client or platform token configured with the permissions outlined in the [Davis Anomaly Detection](https://docs.dynatrace.com/docs/shortlink/davis-ai-anomaly-detection-app#expand--prerequisites--1) app documentation.
         Please set the environment variables `DT_CLIENT_ID` and `DT_CLIENT_SECRET`, or alternatively `DT_PLATFORM_TOKEN`.
+
+        > Depending on the anomaly detector configuration, additional **storage permissions** may be required for DQL-related access (e.g. `storage:bizevents:read`, `storage:logs:read`, `storage:entities:read`).
 
         ## Dynatrace Documentation
 
@@ -397,12 +401,12 @@ class DavisAnomalyDetectors(pulumi.CustomResource):
         :param str resource_name: The unique name of the resulting resource.
         :param pulumi.Input[str] id: The unique provider ID of the resource to lookup.
         :param pulumi.ResourceOptions opts: Options for the resource.
-        :param pulumi.Input[Union['DavisAnomalyDetectorsAnalyzerArgs', 'DavisAnomalyDetectorsAnalyzerArgsDict']] analyzer: Analyzer input
+        :param pulumi.Input[Union['DavisAnomalyDetectorsAnalyzerArgs', 'DavisAnomalyDetectorsAnalyzerArgsDict']] analyzer: Analyzer input to initialize the analyzer
         :param pulumi.Input[_builtins.str] description: The description of the anomaly detector
         :param pulumi.Input[_builtins.bool] enabled: This setting is enabled (`true`) or disabled (`false`)
-        :param pulumi.Input[Union['DavisAnomalyDetectorsEventTemplateArgs', 'DavisAnomalyDetectorsEventTemplateArgsDict']] event_template: Event template
-        :param pulumi.Input[Union['DavisAnomalyDetectorsExecutionSettingsArgs', 'DavisAnomalyDetectorsExecutionSettingsArgsDict']] execution_settings: Execution settings
-        :param pulumi.Input[_builtins.str] source: Source
+        :param pulumi.Input[Union['DavisAnomalyDetectorsEventTemplateArgs', 'DavisAnomalyDetectorsEventTemplateArgsDict']] event_template: Defines additional fields on the davis events triggered by the anomaly detector
+        :param pulumi.Input[Union['DavisAnomalyDetectorsExecutionSettingsArgs', 'DavisAnomalyDetectorsExecutionSettingsArgsDict']] execution_settings: Defines the configuration parameters that influence how and under what context a query or evaluation is executed.
+        :param pulumi.Input[_builtins.str] source: The source which created the anomaly detector
         :param pulumi.Input[_builtins.str] title: The title of the anomaly detector
         """
         opts = pulumi.ResourceOptions.merge(opts, pulumi.ResourceOptions(id=id))
@@ -422,7 +426,7 @@ class DavisAnomalyDetectors(pulumi.CustomResource):
     @pulumi.getter
     def analyzer(self) -> pulumi.Output['outputs.DavisAnomalyDetectorsAnalyzer']:
         """
-        Analyzer input
+        Analyzer input to initialize the analyzer
         """
         return pulumi.get(self, "analyzer")
 
@@ -446,7 +450,7 @@ class DavisAnomalyDetectors(pulumi.CustomResource):
     @pulumi.getter(name="eventTemplate")
     def event_template(self) -> pulumi.Output['outputs.DavisAnomalyDetectorsEventTemplate']:
         """
-        Event template
+        Defines additional fields on the davis events triggered by the anomaly detector
         """
         return pulumi.get(self, "event_template")
 
@@ -454,7 +458,7 @@ class DavisAnomalyDetectors(pulumi.CustomResource):
     @pulumi.getter(name="executionSettings")
     def execution_settings(self) -> pulumi.Output['outputs.DavisAnomalyDetectorsExecutionSettings']:
         """
-        Execution settings
+        Defines the configuration parameters that influence how and under what context a query or evaluation is executed.
         """
         return pulumi.get(self, "execution_settings")
 
@@ -462,7 +466,7 @@ class DavisAnomalyDetectors(pulumi.CustomResource):
     @pulumi.getter
     def source(self) -> pulumi.Output[_builtins.str]:
         """
-        Source
+        The source which created the anomaly detector
         """
         return pulumi.get(self, "source")
 

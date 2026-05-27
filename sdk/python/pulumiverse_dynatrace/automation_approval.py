@@ -19,13 +19,17 @@ __all__ = ['AutomationApprovalArgs', 'AutomationApproval']
 @pulumi.input_type
 class AutomationApprovalArgs:
     def __init__(__self__, *,
-                 workflow_app_access_approval_enabled: pulumi.Input[_builtins.bool]):
+                 workflow_app_access_approval_enabled: pulumi.Input[_builtins.bool],
+                 external_approvals_enabled: pulumi.Input[Optional[_builtins.bool]] = None):
         """
         The set of arguments for constructing a AutomationApproval resource.
 
         :param pulumi.Input[_builtins.bool] workflow_app_access_approval_enabled: Allow on tenant level anyone with access to the app can respond to requests via an approval link.
+        :param pulumi.Input[_builtins.bool] external_approvals_enabled: Allow external systems to trigger approval responses via webhook handlers.
         """
         pulumi.set(__self__, "workflow_app_access_approval_enabled", workflow_app_access_approval_enabled)
+        if external_approvals_enabled is not None:
+            pulumi.set(__self__, "external_approvals_enabled", external_approvals_enabled)
 
     @_builtins.property
     @pulumi.getter(name="workflowAppAccessApprovalEnabled")
@@ -39,18 +43,46 @@ class AutomationApprovalArgs:
     def workflow_app_access_approval_enabled(self, value: pulumi.Input[_builtins.bool]):
         pulumi.set(self, "workflow_app_access_approval_enabled", value)
 
+    @_builtins.property
+    @pulumi.getter(name="externalApprovalsEnabled")
+    def external_approvals_enabled(self) -> pulumi.Input[Optional[_builtins.bool]]:
+        """
+        Allow external systems to trigger approval responses via webhook handlers.
+        """
+        return pulumi.get(self, "external_approvals_enabled")
+
+    @external_approvals_enabled.setter
+    def external_approvals_enabled(self, value: pulumi.Input[Optional[_builtins.bool]]):
+        pulumi.set(self, "external_approvals_enabled", value)
+
 
 @pulumi.input_type
 class _AutomationApprovalState:
     def __init__(__self__, *,
+                 external_approvals_enabled: pulumi.Input[Optional[_builtins.bool]] = None,
                  workflow_app_access_approval_enabled: pulumi.Input[Optional[_builtins.bool]] = None):
         """
         Input properties used for looking up and filtering AutomationApproval resources.
 
+        :param pulumi.Input[_builtins.bool] external_approvals_enabled: Allow external systems to trigger approval responses via webhook handlers.
         :param pulumi.Input[_builtins.bool] workflow_app_access_approval_enabled: Allow on tenant level anyone with access to the app can respond to requests via an approval link.
         """
+        if external_approvals_enabled is not None:
+            pulumi.set(__self__, "external_approvals_enabled", external_approvals_enabled)
         if workflow_app_access_approval_enabled is not None:
             pulumi.set(__self__, "workflow_app_access_approval_enabled", workflow_app_access_approval_enabled)
+
+    @_builtins.property
+    @pulumi.getter(name="externalApprovalsEnabled")
+    def external_approvals_enabled(self) -> pulumi.Input[Optional[_builtins.bool]]:
+        """
+        Allow external systems to trigger approval responses via webhook handlers.
+        """
+        return pulumi.get(self, "external_approvals_enabled")
+
+    @external_approvals_enabled.setter
+    def external_approvals_enabled(self, value: pulumi.Input[Optional[_builtins.bool]]):
+        pulumi.set(self, "external_approvals_enabled", value)
 
     @_builtins.property
     @pulumi.getter(name="workflowAppAccessApprovalEnabled")
@@ -71,6 +103,7 @@ class AutomationApproval(pulumi.CustomResource):
     def __init__(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
+                 external_approvals_enabled: pulumi.Input[Optional[_builtins.bool]] = None,
                  workflow_app_access_approval_enabled: pulumi.Input[Optional[_builtins.bool]] = None,
                  __props__=None):
         """
@@ -82,9 +115,21 @@ class AutomationApproval(pulumi.CustomResource):
 
         - Settings API - https://www.dynatrace.com/support/help/dynatrace-api/environment-api/settings (schemaId: `builtin:automation.approval)
 
+        ## Resource Example Usage
+
+        ```python
+        import pulumi
+        import pulumiverse_dynatrace as dynatrace
+
+        wf_approval = dynatrace.AutomationApproval("wf_approval",
+            workflow_app_access_approval_enabled=True,
+            external_approvals_enabled=True)
+        ```
+
 
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
+        :param pulumi.Input[_builtins.bool] external_approvals_enabled: Allow external systems to trigger approval responses via webhook handlers.
         :param pulumi.Input[_builtins.bool] workflow_app_access_approval_enabled: Allow on tenant level anyone with access to the app can respond to requests via an approval link.
         """
         ...
@@ -102,6 +147,17 @@ class AutomationApproval(pulumi.CustomResource):
 
         - Settings API - https://www.dynatrace.com/support/help/dynatrace-api/environment-api/settings (schemaId: `builtin:automation.approval)
 
+        ## Resource Example Usage
+
+        ```python
+        import pulumi
+        import pulumiverse_dynatrace as dynatrace
+
+        wf_approval = dynatrace.AutomationApproval("wf_approval",
+            workflow_app_access_approval_enabled=True,
+            external_approvals_enabled=True)
+        ```
+
 
         :param str resource_name: The name of the resource.
         :param AutomationApprovalArgs args: The arguments to use to populate this resource's properties.
@@ -118,6 +174,7 @@ class AutomationApproval(pulumi.CustomResource):
     def _internal_init(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
+                 external_approvals_enabled: pulumi.Input[Optional[_builtins.bool]] = None,
                  workflow_app_access_approval_enabled: pulumi.Input[Optional[_builtins.bool]] = None,
                  __props__=None):
         opts = pulumi.ResourceOptions.merge(_utilities.get_resource_opts_defaults(), opts)
@@ -128,6 +185,7 @@ class AutomationApproval(pulumi.CustomResource):
                 raise TypeError('__props__ is only valid when passed in combination with a valid opts.id to get an existing resource')
             __props__ = AutomationApprovalArgs.__new__(AutomationApprovalArgs)
 
+            __props__.__dict__["external_approvals_enabled"] = external_approvals_enabled
             if workflow_app_access_approval_enabled is None and not opts.urn:
                 raise TypeError("Missing required property 'workflow_app_access_approval_enabled'")
             __props__.__dict__["workflow_app_access_approval_enabled"] = workflow_app_access_approval_enabled
@@ -141,6 +199,7 @@ class AutomationApproval(pulumi.CustomResource):
     def get(resource_name: str,
             id: pulumi.Input[str],
             opts: Optional[pulumi.ResourceOptions] = None,
+            external_approvals_enabled: pulumi.Input[Optional[_builtins.bool]] = None,
             workflow_app_access_approval_enabled: pulumi.Input[Optional[_builtins.bool]] = None) -> 'AutomationApproval':
         """
         Get an existing AutomationApproval resource's state with the given name, id, and optional extra
@@ -149,14 +208,24 @@ class AutomationApproval(pulumi.CustomResource):
         :param str resource_name: The unique name of the resulting resource.
         :param pulumi.Input[str] id: The unique provider ID of the resource to lookup.
         :param pulumi.ResourceOptions opts: Options for the resource.
+        :param pulumi.Input[_builtins.bool] external_approvals_enabled: Allow external systems to trigger approval responses via webhook handlers.
         :param pulumi.Input[_builtins.bool] workflow_app_access_approval_enabled: Allow on tenant level anyone with access to the app can respond to requests via an approval link.
         """
         opts = pulumi.ResourceOptions.merge(opts, pulumi.ResourceOptions(id=id))
 
         __props__ = _AutomationApprovalState.__new__(_AutomationApprovalState)
 
+        __props__.__dict__["external_approvals_enabled"] = external_approvals_enabled
         __props__.__dict__["workflow_app_access_approval_enabled"] = workflow_app_access_approval_enabled
         return AutomationApproval(resource_name, opts=opts, __props__=__props__)
+
+    @_builtins.property
+    @pulumi.getter(name="externalApprovalsEnabled")
+    def external_approvals_enabled(self) -> pulumi.Output[Optional[_builtins.bool]]:
+        """
+        Allow external systems to trigger approval responses via webhook handlers.
+        """
+        return pulumi.get(self, "external_approvals_enabled")
 
     @_builtins.property
     @pulumi.getter(name="workflowAppAccessApprovalEnabled")

@@ -226,6 +226,7 @@ class AwsService(pulumi.CustomResource):
 
         ```python
         import pulumi
+        from typing import Any
         import pulumi_dynatrace as dynatrace
         import pulumiverse_dynatrace as dynatrace
 
@@ -239,7 +240,7 @@ class AwsService(pulumi.CustomResource):
             },
             remove_defaults=True)
         supported_services = dynatrace.get_aws_supported_services()
-        t_erraformsample_services = []
+        t_erraformsample_services: list[Any] = []
         for range in [{"key": k, "value": v} for [k, v] in enumerate(supported_services.services)]:
             t_erraformsample_services.append(dynatrace.AwsService(f"TERRAFORM_SAMPLE_services-{range['key']}",
                 credentials_id=terrafor_m__sample.id,
@@ -313,6 +314,7 @@ class AwsService(pulumi.CustomResource):
 
         ```python
         import pulumi
+        from typing import Any
         import pulumi_dynatrace as dynatrace
         import pulumiverse_dynatrace as dynatrace
 
@@ -326,7 +328,7 @@ class AwsService(pulumi.CustomResource):
             },
             remove_defaults=True)
         supported_services = dynatrace.get_aws_supported_services()
-        t_erraformsample_services = []
+        t_erraformsample_services: list[Any] = []
         for range in [{"key": k, "value": v} for [k, v] in enumerate(supported_services.services)]:
             t_erraformsample_services.append(dynatrace.AwsService(f"TERRAFORM_SAMPLE_services-{range['key']}",
                 credentials_id=terrafor_m__sample.id,

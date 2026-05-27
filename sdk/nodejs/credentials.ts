@@ -19,6 +19,8 @@ import * as utilities from "./utilities";
  *
  * - Credential vault API - https://www.dynatrace.com/support/help/dynatrace-api/environment-api/credential-vault
  *
+ * - External vault integration for Azure Key Vault, HashiCorp Vault, and CyberArk Vault - https://docs.dynatrace.com/docs/shortlink/external-vault-integration
+ *
  * ## Export Example Usage
  *
  * - `terraform-provider-dynatrace -export dynatrace.Credentials` downloads all existing credentials
@@ -30,14 +32,21 @@ import * as utilities from "./utilities";
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
  * import * as dynatrace from "@pulumiverse/dynatrace";
- * import * as std from "@pulumi/std";
  *
- * const name = new dynatrace.Credentials("name", {
- *     name: "name",
- *     scopes: ["SYNTHETIC"],
+ * const usernamePasswordCredentials = new dynatrace.Credentials("username_password_credentials", {
+ *     name: "#name#",
  *     username: "username",
  *     password: "password",
+ *     ownerAccessOnly: true,
+ *     scopes: ["SYNTHETIC"],
  * });
+ * ```
+ *
+ * ```typescript
+ * import * as pulumi from "@pulumi/pulumi";
+ * import * as dynatrace from "@pulumiverse/dynatrace";
+ * import * as std from "@pulumi/std";
+ *
  * const rootCertificate = new dynatrace.Credentials("root_certificate", {
  *     name: "Root Certificate",
  *     description: "Root certificate for validating Extension 2.0 signatures",
@@ -48,6 +57,69 @@ import * as utilities from "./utilities";
  *     })).then(invoke => invoke.result),
  *     format: "PEM",
  *     "public": true,
+ * });
+ * ```
+ *
+ * ### CyberArk Vault with username and password
+ *
+ * ```typescript
+ * import * as pulumi from "@pulumi/pulumi";
+ * import * as dynatrace from "@pulumiverse/dynatrace";
+ *
+ * const config = new pulumi.Config();
+ * const credentialsUsername = config.requireObject<any>("credentialsUsername");
+ * const credentialsPassword = config.requireObject<any>("credentialsPassword");
+ * const usernamePasswordCredentials = new dynatrace.Credentials("username_password_credentials", {
+ *     name: "#name#",
+ *     username: credentialsUsername,
+ *     password: credentialsPassword,
+ *     ownerAccessOnly: true,
+ *     scopes: ["SYNTHETIC"],
+ * });
+ * const cyberarkUsernamePassword = new dynatrace.Credentials("cyberark_username_password", {
+ *     name: "#name#",
+ *     ownerAccessOnly: true,
+ *     external: {
+ *         vaultUrl: "https://example.com",
+ *         applicationId: "my-application-id",
+ *         safeName: "my-safe-name",
+ *         folderName: "my-folder-name",
+ *         accountName: "my-account-name",
+ *         usernamePasswordForCpm: usernamePasswordCredentials.id,
+ *     },
+ *     scopes: ["SYNTHETIC"],
+ * });
+ * ```
+ *
+ * ### CyberArk Vault with allowed location
+ *
+ * ```typescript
+ * import * as pulumi from "@pulumi/pulumi";
+ * import * as dynatrace from "@pulumiverse/dynatrace";
+ *
+ * const config = new pulumi.Config();
+ * const certificate = config.requireObject<any>("certificate");
+ * const certificatePassword = config.requireObject<any>("certificatePassword");
+ * const certificateCredentials = new dynatrace.Credentials("certificate_credentials", {
+ *     name: "#name#",
+ *     certificate: certificate,
+ *     format: "PKCS12",
+ *     ownerAccessOnly: true,
+ *     password: certificatePassword,
+ *     scopes: ["SYNTHETIC"],
+ * });
+ * const cyberarkAllowedLocation = new dynatrace.Credentials("cyberark_allowed_location", {
+ *     name: "#name#",
+ *     ownerAccessOnly: true,
+ *     external: {
+ *         vaultUrl: "https://example.com",
+ *         applicationId: "my-application-id",
+ *         safeName: "my-safe-name",
+ *         folderName: "my-folder-name",
+ *         accountName: "my-account-name",
+ *         certificate: certificateCredentials.id,
+ *     },
+ *     scopes: ["SYNTHETIC"],
  * });
  * ```
  */

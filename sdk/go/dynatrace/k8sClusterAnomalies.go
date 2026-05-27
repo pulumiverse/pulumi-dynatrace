@@ -28,13 +28,13 @@ import (
 type K8sClusterAnomalies struct {
 	pulumi.CustomResourceState
 
-	// no documentation available
+	// No documentation available
 	CpuRequestsSaturation K8sClusterAnomaliesCpuRequestsSaturationOutput `pulumi:"cpuRequestsSaturation"`
-	// no documentation available
+	// No documentation available
 	MemoryRequestsSaturation K8sClusterAnomaliesMemoryRequestsSaturationOutput `pulumi:"memoryRequestsSaturation"`
-	// no documentation available
+	// No documentation available
 	MonitoringIssues K8sClusterAnomaliesMonitoringIssuesOutput `pulumi:"monitoringIssues"`
-	// no documentation available
+	// No documentation available
 	PodsSaturation K8sClusterAnomaliesPodsSaturationOutput `pulumi:"podsSaturation"`
 	// Alerts if cluster has not been ready for a given amount of time
 	ReadinessIssues K8sClusterAnomaliesReadinessIssuesOutput `pulumi:"readinessIssues"`
@@ -87,13 +87,13 @@ func GetK8sClusterAnomalies(ctx *pulumi.Context,
 
 // Input properties used for looking up and filtering K8sClusterAnomalies resources.
 type k8sClusterAnomaliesState struct {
-	// no documentation available
+	// No documentation available
 	CpuRequestsSaturation *K8sClusterAnomaliesCpuRequestsSaturation `pulumi:"cpuRequestsSaturation"`
-	// no documentation available
+	// No documentation available
 	MemoryRequestsSaturation *K8sClusterAnomaliesMemoryRequestsSaturation `pulumi:"memoryRequestsSaturation"`
-	// no documentation available
+	// No documentation available
 	MonitoringIssues *K8sClusterAnomaliesMonitoringIssues `pulumi:"monitoringIssues"`
-	// no documentation available
+	// No documentation available
 	PodsSaturation *K8sClusterAnomaliesPodsSaturation `pulumi:"podsSaturation"`
 	// Alerts if cluster has not been ready for a given amount of time
 	ReadinessIssues *K8sClusterAnomaliesReadinessIssues `pulumi:"readinessIssues"`
@@ -102,13 +102,13 @@ type k8sClusterAnomaliesState struct {
 }
 
 type K8sClusterAnomaliesState struct {
-	// no documentation available
+	// No documentation available
 	CpuRequestsSaturation K8sClusterAnomaliesCpuRequestsSaturationPtrInput
-	// no documentation available
+	// No documentation available
 	MemoryRequestsSaturation K8sClusterAnomaliesMemoryRequestsSaturationPtrInput
-	// no documentation available
+	// No documentation available
 	MonitoringIssues K8sClusterAnomaliesMonitoringIssuesPtrInput
-	// no documentation available
+	// No documentation available
 	PodsSaturation K8sClusterAnomaliesPodsSaturationPtrInput
 	// Alerts if cluster has not been ready for a given amount of time
 	ReadinessIssues K8sClusterAnomaliesReadinessIssuesPtrInput
@@ -121,13 +121,13 @@ func (K8sClusterAnomaliesState) ElementType() reflect.Type {
 }
 
 type k8sClusterAnomaliesArgs struct {
-	// no documentation available
+	// No documentation available
 	CpuRequestsSaturation K8sClusterAnomaliesCpuRequestsSaturation `pulumi:"cpuRequestsSaturation"`
-	// no documentation available
+	// No documentation available
 	MemoryRequestsSaturation K8sClusterAnomaliesMemoryRequestsSaturation `pulumi:"memoryRequestsSaturation"`
-	// no documentation available
+	// No documentation available
 	MonitoringIssues K8sClusterAnomaliesMonitoringIssues `pulumi:"monitoringIssues"`
-	// no documentation available
+	// No documentation available
 	PodsSaturation K8sClusterAnomaliesPodsSaturation `pulumi:"podsSaturation"`
 	// Alerts if cluster has not been ready for a given amount of time
 	ReadinessIssues K8sClusterAnomaliesReadinessIssues `pulumi:"readinessIssues"`
@@ -137,13 +137,13 @@ type k8sClusterAnomaliesArgs struct {
 
 // The set of arguments for constructing a K8sClusterAnomalies resource.
 type K8sClusterAnomaliesArgs struct {
-	// no documentation available
+	// No documentation available
 	CpuRequestsSaturation K8sClusterAnomaliesCpuRequestsSaturationInput
-	// no documentation available
+	// No documentation available
 	MemoryRequestsSaturation K8sClusterAnomaliesMemoryRequestsSaturationInput
-	// no documentation available
+	// No documentation available
 	MonitoringIssues K8sClusterAnomaliesMonitoringIssuesInput
-	// no documentation available
+	// No documentation available
 	PodsSaturation K8sClusterAnomaliesPodsSaturationInput
 	// Alerts if cluster has not been ready for a given amount of time
 	ReadinessIssues K8sClusterAnomaliesReadinessIssuesInput
@@ -238,26 +238,26 @@ func (o K8sClusterAnomaliesOutput) ToK8sClusterAnomaliesOutputWithContext(ctx co
 	return o
 }
 
-// no documentation available
+// No documentation available
 func (o K8sClusterAnomaliesOutput) CpuRequestsSaturation() K8sClusterAnomaliesCpuRequestsSaturationOutput {
 	return o.ApplyT(func(v *K8sClusterAnomalies) K8sClusterAnomaliesCpuRequestsSaturationOutput {
 		return v.CpuRequestsSaturation
 	}).(K8sClusterAnomaliesCpuRequestsSaturationOutput)
 }
 
-// no documentation available
+// No documentation available
 func (o K8sClusterAnomaliesOutput) MemoryRequestsSaturation() K8sClusterAnomaliesMemoryRequestsSaturationOutput {
 	return o.ApplyT(func(v *K8sClusterAnomalies) K8sClusterAnomaliesMemoryRequestsSaturationOutput {
 		return v.MemoryRequestsSaturation
 	}).(K8sClusterAnomaliesMemoryRequestsSaturationOutput)
 }
 
-// no documentation available
+// No documentation available
 func (o K8sClusterAnomaliesOutput) MonitoringIssues() K8sClusterAnomaliesMonitoringIssuesOutput {
 	return o.ApplyT(func(v *K8sClusterAnomalies) K8sClusterAnomaliesMonitoringIssuesOutput { return v.MonitoringIssues }).(K8sClusterAnomaliesMonitoringIssuesOutput)
 }
 
-// no documentation available
+// No documentation available
 func (o K8sClusterAnomaliesOutput) PodsSaturation() K8sClusterAnomaliesPodsSaturationOutput {
 	return o.ApplyT(func(v *K8sClusterAnomalies) K8sClusterAnomaliesPodsSaturationOutput { return v.PodsSaturation }).(K8sClusterAnomaliesPodsSaturationOutput)
 }

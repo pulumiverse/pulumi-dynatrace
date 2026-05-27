@@ -25,6 +25,41 @@ import (
 // - `terraform-provider-dynatrace -export ContainerBuiltinRule` downloads all existing builtin monitoring rules for containers
 //
 // The full documentation of the export feature is available [here](https://dt-url.net/h203qmc).
+//
+// ## Resource Example Usage
+//
+// ```go
+// package main
+//
+// import (
+//
+//	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//	"github.com/pulumiverse/pulumi-dynatrace/sdk/go/dynatrace"
+//
+// )
+//
+//	func main() {
+//		pulumi.Run(func(ctx *pulumi.Context) error {
+//			_, err := dynatrace.NewContainerBuiltinRule(ctx, "rules", &dynatrace.ContainerBuiltinRuleArgs{
+//				IgnoreDockerPauseContainer:                    pulumi.Bool(false),
+//				IgnoreKubernetesPauseContainer:                pulumi.Bool(true),
+//				IgnoreOpenShiftBuildPodName:                   pulumi.Bool(false),
+//				IgnoreOpenShiftSdnNamespace:                   pulumi.Bool(true),
+//				IgnoreOpenShiftEtcdNamespace:                  pulumi.Bool(false),
+//				IgnoreOpenShiftIngressCanaryNamespace:         pulumi.Bool(false),
+//				IgnoreOpenShiftKubeApiserverNamespace:         pulumi.Bool(false),
+//				IgnoreOpenShiftMachineConfigOperatorNamespace: pulumi.Bool(false),
+//				IgnoreOpenShiftMonitoringNamespace:            pulumi.Bool(false),
+//				IgnoreOpenShiftOvnKubernetesNamespace:         pulumi.Bool(false),
+//			})
+//			if err != nil {
+//				return err
+//			}
+//			return nil
+//		})
+//	}
+//
+// ```
 type ContainerBuiltinRule struct {
 	pulumi.CustomResourceState
 
@@ -34,6 +69,18 @@ type ContainerBuiltinRule struct {
 	IgnoreKubernetesPauseContainer pulumi.BoolOutput `pulumi:"ignoreKubernetesPauseContainer"`
 	// Disable monitoring of intermediate containers created during image build.
 	IgnoreOpenShiftBuildPodName pulumi.BoolOutput `pulumi:"ignoreOpenShiftBuildPodName"`
+	// Disable monitoring of platform internal containers in the openshift-etcd namespace.
+	IgnoreOpenShiftEtcdNamespace pulumi.BoolPtrOutput `pulumi:"ignoreOpenShiftEtcdNamespace"`
+	// Disable monitoring of platform internal containers in the openshift-ingress-canary namespace.
+	IgnoreOpenShiftIngressCanaryNamespace pulumi.BoolPtrOutput `pulumi:"ignoreOpenShiftIngressCanaryNamespace"`
+	// Disable monitoring of platform internal containers in the openshift-kube-apiserver namespace.
+	IgnoreOpenShiftKubeApiserverNamespace pulumi.BoolPtrOutput `pulumi:"ignoreOpenShiftKubeApiserverNamespace"`
+	// Disable monitoring of platform internal containers in the openshift-machine-config-operator namespace.
+	IgnoreOpenShiftMachineConfigOperatorNamespace pulumi.BoolPtrOutput `pulumi:"ignoreOpenShiftMachineConfigOperatorNamespace"`
+	// Disable monitoring of platform internal containers in the openshift-monitoring namespace.
+	IgnoreOpenShiftMonitoringNamespace pulumi.BoolPtrOutput `pulumi:"ignoreOpenShiftMonitoringNamespace"`
+	// Disable monitoring of platform internal containers in the openshift-ovn-kubernetes namespace.
+	IgnoreOpenShiftOvnKubernetesNamespace pulumi.BoolPtrOutput `pulumi:"ignoreOpenShiftOvnKubernetesNamespace"`
 	// Disable monitoring of platform internal containers in the openshift-sdn namespace.
 	IgnoreOpenShiftSdnNamespace pulumi.BoolOutput `pulumi:"ignoreOpenShiftSdnNamespace"`
 }
@@ -86,6 +133,18 @@ type containerBuiltinRuleState struct {
 	IgnoreKubernetesPauseContainer *bool `pulumi:"ignoreKubernetesPauseContainer"`
 	// Disable monitoring of intermediate containers created during image build.
 	IgnoreOpenShiftBuildPodName *bool `pulumi:"ignoreOpenShiftBuildPodName"`
+	// Disable monitoring of platform internal containers in the openshift-etcd namespace.
+	IgnoreOpenShiftEtcdNamespace *bool `pulumi:"ignoreOpenShiftEtcdNamespace"`
+	// Disable monitoring of platform internal containers in the openshift-ingress-canary namespace.
+	IgnoreOpenShiftIngressCanaryNamespace *bool `pulumi:"ignoreOpenShiftIngressCanaryNamespace"`
+	// Disable monitoring of platform internal containers in the openshift-kube-apiserver namespace.
+	IgnoreOpenShiftKubeApiserverNamespace *bool `pulumi:"ignoreOpenShiftKubeApiserverNamespace"`
+	// Disable monitoring of platform internal containers in the openshift-machine-config-operator namespace.
+	IgnoreOpenShiftMachineConfigOperatorNamespace *bool `pulumi:"ignoreOpenShiftMachineConfigOperatorNamespace"`
+	// Disable monitoring of platform internal containers in the openshift-monitoring namespace.
+	IgnoreOpenShiftMonitoringNamespace *bool `pulumi:"ignoreOpenShiftMonitoringNamespace"`
+	// Disable monitoring of platform internal containers in the openshift-ovn-kubernetes namespace.
+	IgnoreOpenShiftOvnKubernetesNamespace *bool `pulumi:"ignoreOpenShiftOvnKubernetesNamespace"`
 	// Disable monitoring of platform internal containers in the openshift-sdn namespace.
 	IgnoreOpenShiftSdnNamespace *bool `pulumi:"ignoreOpenShiftSdnNamespace"`
 }
@@ -97,6 +156,18 @@ type ContainerBuiltinRuleState struct {
 	IgnoreKubernetesPauseContainer pulumi.BoolPtrInput
 	// Disable monitoring of intermediate containers created during image build.
 	IgnoreOpenShiftBuildPodName pulumi.BoolPtrInput
+	// Disable monitoring of platform internal containers in the openshift-etcd namespace.
+	IgnoreOpenShiftEtcdNamespace pulumi.BoolPtrInput
+	// Disable monitoring of platform internal containers in the openshift-ingress-canary namespace.
+	IgnoreOpenShiftIngressCanaryNamespace pulumi.BoolPtrInput
+	// Disable monitoring of platform internal containers in the openshift-kube-apiserver namespace.
+	IgnoreOpenShiftKubeApiserverNamespace pulumi.BoolPtrInput
+	// Disable monitoring of platform internal containers in the openshift-machine-config-operator namespace.
+	IgnoreOpenShiftMachineConfigOperatorNamespace pulumi.BoolPtrInput
+	// Disable monitoring of platform internal containers in the openshift-monitoring namespace.
+	IgnoreOpenShiftMonitoringNamespace pulumi.BoolPtrInput
+	// Disable monitoring of platform internal containers in the openshift-ovn-kubernetes namespace.
+	IgnoreOpenShiftOvnKubernetesNamespace pulumi.BoolPtrInput
 	// Disable monitoring of platform internal containers in the openshift-sdn namespace.
 	IgnoreOpenShiftSdnNamespace pulumi.BoolPtrInput
 }
@@ -112,6 +183,18 @@ type containerBuiltinRuleArgs struct {
 	IgnoreKubernetesPauseContainer bool `pulumi:"ignoreKubernetesPauseContainer"`
 	// Disable monitoring of intermediate containers created during image build.
 	IgnoreOpenShiftBuildPodName bool `pulumi:"ignoreOpenShiftBuildPodName"`
+	// Disable monitoring of platform internal containers in the openshift-etcd namespace.
+	IgnoreOpenShiftEtcdNamespace *bool `pulumi:"ignoreOpenShiftEtcdNamespace"`
+	// Disable monitoring of platform internal containers in the openshift-ingress-canary namespace.
+	IgnoreOpenShiftIngressCanaryNamespace *bool `pulumi:"ignoreOpenShiftIngressCanaryNamespace"`
+	// Disable monitoring of platform internal containers in the openshift-kube-apiserver namespace.
+	IgnoreOpenShiftKubeApiserverNamespace *bool `pulumi:"ignoreOpenShiftKubeApiserverNamespace"`
+	// Disable monitoring of platform internal containers in the openshift-machine-config-operator namespace.
+	IgnoreOpenShiftMachineConfigOperatorNamespace *bool `pulumi:"ignoreOpenShiftMachineConfigOperatorNamespace"`
+	// Disable monitoring of platform internal containers in the openshift-monitoring namespace.
+	IgnoreOpenShiftMonitoringNamespace *bool `pulumi:"ignoreOpenShiftMonitoringNamespace"`
+	// Disable monitoring of platform internal containers in the openshift-ovn-kubernetes namespace.
+	IgnoreOpenShiftOvnKubernetesNamespace *bool `pulumi:"ignoreOpenShiftOvnKubernetesNamespace"`
 	// Disable monitoring of platform internal containers in the openshift-sdn namespace.
 	IgnoreOpenShiftSdnNamespace bool `pulumi:"ignoreOpenShiftSdnNamespace"`
 }
@@ -124,6 +207,18 @@ type ContainerBuiltinRuleArgs struct {
 	IgnoreKubernetesPauseContainer pulumi.BoolInput
 	// Disable monitoring of intermediate containers created during image build.
 	IgnoreOpenShiftBuildPodName pulumi.BoolInput
+	// Disable monitoring of platform internal containers in the openshift-etcd namespace.
+	IgnoreOpenShiftEtcdNamespace pulumi.BoolPtrInput
+	// Disable monitoring of platform internal containers in the openshift-ingress-canary namespace.
+	IgnoreOpenShiftIngressCanaryNamespace pulumi.BoolPtrInput
+	// Disable monitoring of platform internal containers in the openshift-kube-apiserver namespace.
+	IgnoreOpenShiftKubeApiserverNamespace pulumi.BoolPtrInput
+	// Disable monitoring of platform internal containers in the openshift-machine-config-operator namespace.
+	IgnoreOpenShiftMachineConfigOperatorNamespace pulumi.BoolPtrInput
+	// Disable monitoring of platform internal containers in the openshift-monitoring namespace.
+	IgnoreOpenShiftMonitoringNamespace pulumi.BoolPtrInput
+	// Disable monitoring of platform internal containers in the openshift-ovn-kubernetes namespace.
+	IgnoreOpenShiftOvnKubernetesNamespace pulumi.BoolPtrInput
 	// Disable monitoring of platform internal containers in the openshift-sdn namespace.
 	IgnoreOpenShiftSdnNamespace pulumi.BoolInput
 }
@@ -228,6 +323,38 @@ func (o ContainerBuiltinRuleOutput) IgnoreKubernetesPauseContainer() pulumi.Bool
 // Disable monitoring of intermediate containers created during image build.
 func (o ContainerBuiltinRuleOutput) IgnoreOpenShiftBuildPodName() pulumi.BoolOutput {
 	return o.ApplyT(func(v *ContainerBuiltinRule) pulumi.BoolOutput { return v.IgnoreOpenShiftBuildPodName }).(pulumi.BoolOutput)
+}
+
+// Disable monitoring of platform internal containers in the openshift-etcd namespace.
+func (o ContainerBuiltinRuleOutput) IgnoreOpenShiftEtcdNamespace() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v *ContainerBuiltinRule) pulumi.BoolPtrOutput { return v.IgnoreOpenShiftEtcdNamespace }).(pulumi.BoolPtrOutput)
+}
+
+// Disable monitoring of platform internal containers in the openshift-ingress-canary namespace.
+func (o ContainerBuiltinRuleOutput) IgnoreOpenShiftIngressCanaryNamespace() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v *ContainerBuiltinRule) pulumi.BoolPtrOutput { return v.IgnoreOpenShiftIngressCanaryNamespace }).(pulumi.BoolPtrOutput)
+}
+
+// Disable monitoring of platform internal containers in the openshift-kube-apiserver namespace.
+func (o ContainerBuiltinRuleOutput) IgnoreOpenShiftKubeApiserverNamespace() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v *ContainerBuiltinRule) pulumi.BoolPtrOutput { return v.IgnoreOpenShiftKubeApiserverNamespace }).(pulumi.BoolPtrOutput)
+}
+
+// Disable monitoring of platform internal containers in the openshift-machine-config-operator namespace.
+func (o ContainerBuiltinRuleOutput) IgnoreOpenShiftMachineConfigOperatorNamespace() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v *ContainerBuiltinRule) pulumi.BoolPtrOutput {
+		return v.IgnoreOpenShiftMachineConfigOperatorNamespace
+	}).(pulumi.BoolPtrOutput)
+}
+
+// Disable monitoring of platform internal containers in the openshift-monitoring namespace.
+func (o ContainerBuiltinRuleOutput) IgnoreOpenShiftMonitoringNamespace() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v *ContainerBuiltinRule) pulumi.BoolPtrOutput { return v.IgnoreOpenShiftMonitoringNamespace }).(pulumi.BoolPtrOutput)
+}
+
+// Disable monitoring of platform internal containers in the openshift-ovn-kubernetes namespace.
+func (o ContainerBuiltinRuleOutput) IgnoreOpenShiftOvnKubernetesNamespace() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v *ContainerBuiltinRule) pulumi.BoolPtrOutput { return v.IgnoreOpenShiftOvnKubernetesNamespace }).(pulumi.BoolPtrOutput)
 }
 
 // Disable monitoring of platform internal containers in the openshift-sdn namespace.

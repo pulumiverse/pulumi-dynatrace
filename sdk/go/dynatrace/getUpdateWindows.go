@@ -29,7 +29,7 @@ import (
 //
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
-//			example, err := dynatrace.LookupUpdateWindows(ctx, &dynatrace.LookupUpdateWindowsArgs{
+//			example, err := dynatrace.GetUpdateWindows(ctx, &dynatrace.LookupUpdateWindowsArgs{
 //				Name: "Terraform Example",
 //			}, nil)
 //			if err != nil {

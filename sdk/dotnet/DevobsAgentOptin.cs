@@ -24,6 +24,27 @@ namespace Pulumiverse.Dynatrace
     /// - `terraform-provider-dynatrace -export dynatrace.DevobsAgentOptin` downloads existing Developer Observability agent opt-in configuration
     /// 
     /// The full documentation of the export feature is available [here](https://dt-url.net/h203qmc).
+    /// 
+    /// ## Resource Example Usage
+    /// 
+    /// ```csharp
+    /// using System.Collections.Generic;
+    /// using System.Linq;
+    /// using Pulumi;
+    /// using Dynatrace = Pulumiverse.Dynatrace;
+    /// 
+    /// return await Deployment.RunAsync(() =&gt; 
+    /// {
+    ///     var config = new Config();
+    ///     var PROCESS_GROUP_ID = config.Require("PROCESS_GROUP_ID");
+    ///     var optin = new Dynatrace.DevobsAgentOptin("optin", new()
+    ///     {
+    ///         Scope = PROCESS_GROUP_ID,
+    ///         Enabled = false,
+    ///     });
+    /// 
+    /// });
+    /// ```
     /// </summary>
     [DynatraceResourceType("dynatrace:index/devobsAgentOptin:DevobsAgentOptin")]
     public partial class DevobsAgentOptin : global::Pulumi.CustomResource

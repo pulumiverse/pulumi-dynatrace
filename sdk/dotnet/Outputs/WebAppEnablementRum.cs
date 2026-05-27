@@ -23,7 +23,7 @@ namespace Pulumiverse.Dynatrace.Outputs
         /// </summary>
         public readonly bool Enabled;
         /// <summary>
-        /// Enable Real User Monitoring powered by Grail
+        /// Enable New Real User Monitoring Experience
         /// </summary>
         public readonly bool? EnabledOnGrail;
 

@@ -25,6 +25,36 @@ import (
 // - `terraform-provider-dynatrace -export ProcessGroupRum` downloads all real user monitoring configuration for process groups
 //
 // The full documentation of the export feature is available [here](https://dt-url.net/h203qmc).
+//
+// ## Resource Example Usage
+//
+// ```go
+// package main
+//
+// import (
+//
+//	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//	"github.com/pulumi/pulumi/sdk/v3/go/pulumi/config"
+//	"github.com/pulumiverse/pulumi-dynatrace/sdk/go/dynatrace"
+//
+// )
+//
+//	func main() {
+//		pulumi.Run(func(ctx *pulumi.Context) error {
+//			cfg := config.New(ctx, "")
+//			PROCESS_GROUP_ID := cfg.Require("PROCESS_GROUP_ID")
+//			_, err := dynatrace.NewProcessGroupRum(ctx, "rum", &dynatrace.ProcessGroupRumArgs{
+//				Enable:         pulumi.Bool(false),
+//				ProcessGroupId: pulumi.String(pulumi.String(PROCESS_GROUP_ID)),
+//			})
+//			if err != nil {
+//				return err
+//			}
+//			return nil
+//		})
+//	}
+//
+// ```
 type ProcessGroupRum struct {
 	pulumi.CustomResourceState
 

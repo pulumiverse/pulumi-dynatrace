@@ -173,7 +173,7 @@ type OpenpipelineV2MetricsIngestsources struct {
 	Processing OpenpipelineV2MetricsIngestsourcesProcessingPtrOutput `pulumi:"processing"`
 	// Source
 	Source pulumi.StringPtrOutput `pulumi:"source"`
-	// Source Type. Possible Values: `extension`, `http`
+	// Source Type. Possible values: `extension`, `http`
 	SourceType pulumi.StringPtrOutput `pulumi:"sourceType"`
 	// Static routing of endpoint
 	StaticRouting OpenpipelineV2MetricsIngestsourcesStaticRoutingPtrOutput `pulumi:"staticRouting"`
@@ -229,7 +229,7 @@ type openpipelineV2MetricsIngestsourcesState struct {
 	Processing *OpenpipelineV2MetricsIngestsourcesProcessing `pulumi:"processing"`
 	// Source
 	Source *string `pulumi:"source"`
-	// Source Type. Possible Values: `extension`, `http`
+	// Source Type. Possible values: `extension`, `http`
 	SourceType *string `pulumi:"sourceType"`
 	// Static routing of endpoint
 	StaticRouting *OpenpipelineV2MetricsIngestsourcesStaticRouting `pulumi:"staticRouting"`
@@ -250,7 +250,7 @@ type OpenpipelineV2MetricsIngestsourcesState struct {
 	Processing OpenpipelineV2MetricsIngestsourcesProcessingPtrInput
 	// Source
 	Source pulumi.StringPtrInput
-	// Source Type. Possible Values: `extension`, `http`
+	// Source Type. Possible values: `extension`, `http`
 	SourceType pulumi.StringPtrInput
 	// Static routing of endpoint
 	StaticRouting OpenpipelineV2MetricsIngestsourcesStaticRoutingPtrInput
@@ -275,7 +275,7 @@ type openpipelineV2MetricsIngestsourcesArgs struct {
 	Processing *OpenpipelineV2MetricsIngestsourcesProcessing `pulumi:"processing"`
 	// Source
 	Source *string `pulumi:"source"`
-	// Source Type. Possible Values: `extension`, `http`
+	// Source Type. Possible values: `extension`, `http`
 	SourceType *string `pulumi:"sourceType"`
 	// Static routing of endpoint
 	StaticRouting *OpenpipelineV2MetricsIngestsourcesStaticRouting `pulumi:"staticRouting"`
@@ -297,7 +297,7 @@ type OpenpipelineV2MetricsIngestsourcesArgs struct {
 	Processing OpenpipelineV2MetricsIngestsourcesProcessingPtrInput
 	// Source
 	Source pulumi.StringPtrInput
-	// Source Type. Possible Values: `extension`, `http`
+	// Source Type. Possible values: `extension`, `http`
 	SourceType pulumi.StringPtrInput
 	// Static routing of endpoint
 	StaticRouting OpenpipelineV2MetricsIngestsourcesStaticRoutingPtrInput
@@ -429,7 +429,7 @@ func (o OpenpipelineV2MetricsIngestsourcesOutput) Source() pulumi.StringPtrOutpu
 	return o.ApplyT(func(v *OpenpipelineV2MetricsIngestsources) pulumi.StringPtrOutput { return v.Source }).(pulumi.StringPtrOutput)
 }
 
-// Source Type. Possible Values: `extension`, `http`
+// Source Type. Possible values: `extension`, `http`
 func (o OpenpipelineV2MetricsIngestsourcesOutput) SourceType() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v *OpenpipelineV2MetricsIngestsources) pulumi.StringPtrOutput { return v.SourceType }).(pulumi.StringPtrOutput)
 }

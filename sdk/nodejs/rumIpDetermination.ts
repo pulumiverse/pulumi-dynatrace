@@ -18,6 +18,15 @@ import * as utilities from "./utilities";
  * - `terraform-provider-dynatrace -export dynatrace.RumIpDetermination` downloads all existing client IP determination configuration
  *
  * The full documentation of the export feature is available [here](https://dt-url.net/h203qmc).
+ *
+ * ## Resource Example Usage
+ *
+ * ```typescript
+ * import * as pulumi from "@pulumi/pulumi";
+ * import * as dynatrace from "@pulumiverse/dynatrace";
+ *
+ * const determination = new dynatrace.RumIpDetermination("determination", {headerName: "X-Header-#name#"});
+ * ```
  */
 export class RumIpDetermination extends pulumi.CustomResource {
     /**

@@ -22,6 +22,23 @@ import * as utilities from "./utilities";
  * - `terraform-provider-dynatrace -export dynatrace.PgAnomalies` downloads all existing process group detection configuration
  *
  * The full documentation of the export feature is available [here](https://dt-url.net/h203qmc).
+ *
+ * ## Resource Example Usage
+ *
+ * ```typescript
+ * import * as pulumi from "@pulumi/pulumi";
+ * import * as dynatrace from "@pulumiverse/dynatrace";
+ *
+ * const config = new pulumi.Config();
+ * const PROCESS_GROUP_ID = config.require("PROCESS_GROUP_ID");
+ * const anomaly = new dynatrace.PgAnomalies("anomaly", {
+ *     pgId: PROCESS_GROUP_ID,
+ *     availability: {
+ *         method: "OFF",
+ *         minimumThreshold: 0,
+ *     },
+ * });
+ * ```
  */
 export class PgAnomalies extends pulumi.CustomResource {
     /**

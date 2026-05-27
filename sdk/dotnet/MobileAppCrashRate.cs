@@ -24,6 +24,39 @@ namespace Pulumiverse.Dynatrace
     /// - `terraform-provider-dynatrace -export dynatrace.MobileAppCrashRate` downloads all existing mobile application crash rate increase configuration
     /// 
     /// The full documentation of the export feature is available [here](https://dt-url.net/h203qmc).
+    /// 
+    /// ## Resource Example Usage
+    /// 
+    /// ```csharp
+    /// using System.Collections.Generic;
+    /// using System.Linq;
+    /// using Pulumi;
+    /// using Dynatrace = Pulumiverse.Dynatrace;
+    /// 
+    /// return await Deployment.RunAsync(() =&gt; 
+    /// {
+    ///     var application = Dynatrace.GetMobileApplication.Invoke(new()
+    ///     {
+    ///         Name = "Application",
+    ///     });
+    /// 
+    ///     var crashRate = new Dynatrace.MobileAppCrashRate("crash_rate", new()
+    ///     {
+    ///         ApplicationId = application.Apply(getMobileApplicationResult =&gt; getMobileApplicationResult.Id),
+    ///         CrashRateIncrease = new Dynatrace.Inputs.MobileAppCrashRateCrashRateIncreaseArgs
+    ///         {
+    ///             Enabled = true,
+    ///             DetectionMode = "fixed",
+    ///             CrashRateIncreaseFixed = new Dynatrace.Inputs.MobileAppCrashRateCrashRateIncreaseCrashRateIncreaseFixedArgs
+    ///             {
+    ///                 AbsoluteCrashRate = 25,
+    ///                 ConcurrentUsers = 200,
+    ///             },
+    ///         },
+    ///     });
+    /// 
+    /// });
+    /// ```
     /// </summary>
     [DynatraceResourceType("dynatrace:index/mobileAppCrashRate:MobileAppCrashRate")]
     public partial class MobileAppCrashRate : global::Pulumi.CustomResource

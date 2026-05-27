@@ -56,7 +56,7 @@ export class SiteReliabilityGuardian extends pulumi.CustomResource {
      */
     declare public readonly description: pulumi.Output<string | undefined>;
     /**
-     * If set to null/'BIZ*EVENT' validation events stored as bizevents in Grail. If set to 'SDLC*EVENT' validation events stored as SDLC events
+     * If set to null/'BIZ*EVENT' validation events stored as bizevents in Grail. If set to 'SDLC*EVENT' validation events stored as SDLC events. Possible values: `BIZ_EVENT`, `SDLC_EVENT`
      */
     declare public readonly eventKind: pulumi.Output<string | undefined>;
     /**
@@ -121,7 +121,7 @@ export interface SiteReliabilityGuardianState {
      */
     description?: pulumi.Input<string | undefined>;
     /**
-     * If set to null/'BIZ*EVENT' validation events stored as bizevents in Grail. If set to 'SDLC*EVENT' validation events stored as SDLC events
+     * If set to null/'BIZ*EVENT' validation events stored as bizevents in Grail. If set to 'SDLC*EVENT' validation events stored as SDLC events. Possible values: `BIZ_EVENT`, `SDLC_EVENT`
      */
     eventKind?: pulumi.Input<string | undefined>;
     /**
@@ -151,7 +151,7 @@ export interface SiteReliabilityGuardianArgs {
      */
     description?: pulumi.Input<string | undefined>;
     /**
-     * If set to null/'BIZ*EVENT' validation events stored as bizevents in Grail. If set to 'SDLC*EVENT' validation events stored as SDLC events
+     * If set to null/'BIZ*EVENT' validation events stored as bizevents in Grail. If set to 'SDLC*EVENT' validation events stored as SDLC events. Possible values: `BIZ_EVENT`, `SDLC_EVENT`
      */
     eventKind?: pulumi.Input<string | undefined>;
     /**

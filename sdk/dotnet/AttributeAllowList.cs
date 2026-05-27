@@ -24,6 +24,25 @@ namespace Pulumiverse.Dynatrace
     /// - `terraform-provider-dynatrace -export dynatrace.AttributeAllowList` downloads all existing attribute allow-list configuration
     /// 
     /// The full documentation of the export feature is available [here](https://dt-url.net/h203qmc).
+    /// 
+    /// ## Resource Example Usage
+    /// 
+    /// ```csharp
+    /// using System.Collections.Generic;
+    /// using System.Linq;
+    /// using Pulumi;
+    /// using Dynatrace = Pulumiverse.Dynatrace;
+    /// 
+    /// return await Deployment.RunAsync(() =&gt; 
+    /// {
+    ///     var list = new Dynatrace.AttributeAllowList("list", new()
+    ///     {
+    ///         Enabled = true,
+    ///         Key = "attribute.#name#",
+    ///     });
+    /// 
+    /// });
+    /// ```
     /// </summary>
     [DynatraceResourceType("dynatrace:index/attributeAllowList:AttributeAllowList")]
     public partial class AttributeAllowList : global::Pulumi.CustomResource

@@ -47,13 +47,13 @@ namespace Pulumiverse.Dynatrace
         public Output<string> InsertAfter { get; private set; } = null!;
 
         /// <summary>
-        /// Monitored technology name
+        /// Note: Reported only in full-stack, infrastructure and discovery modes.
         /// </summary>
         [Output("name")]
         public Output<string> Name { get; private set; } = null!;
 
         /// <summary>
-        /// The scope of this setting (HOST, HOST_GROUP). Omit this property if you want to cover the whole environment.
+        /// The scope of this setting (HOST, KUBERNETES_CLUSTER, HOST_GROUP). Omit this property if you want to cover the whole environment.
         /// </summary>
         [Output("scope")]
         public Output<string?> Scope { get; private set; } = null!;
@@ -124,13 +124,13 @@ namespace Pulumiverse.Dynatrace
         public Input<string>? InsertAfter { get; set; }
 
         /// <summary>
-        /// Monitored technology name
+        /// Note: Reported only in full-stack, infrastructure and discovery modes.
         /// </summary>
         [Input("name")]
         public Input<string>? Name { get; set; }
 
         /// <summary>
-        /// The scope of this setting (HOST, HOST_GROUP). Omit this property if you want to cover the whole environment.
+        /// The scope of this setting (HOST, KUBERNETES_CLUSTER, HOST_GROUP). Omit this property if you want to cover the whole environment.
         /// </summary>
         [Input("scope")]
         public Input<string>? Scope { get; set; }
@@ -162,13 +162,13 @@ namespace Pulumiverse.Dynatrace
         public Input<string>? InsertAfter { get; set; }
 
         /// <summary>
-        /// Monitored technology name
+        /// Note: Reported only in full-stack, infrastructure and discovery modes.
         /// </summary>
         [Input("name")]
         public Input<string>? Name { get; set; }
 
         /// <summary>
-        /// The scope of this setting (HOST, HOST_GROUP). Omit this property if you want to cover the whole environment.
+        /// The scope of this setting (HOST, KUBERNETES_CLUSTER, HOST_GROUP). Omit this property if you want to cover the whole environment.
         /// </summary>
         [Input("scope")]
         public Input<string>? Scope { get; set; }

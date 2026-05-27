@@ -24,6 +24,344 @@ namespace Pulumiverse.Dynatrace
     /// - `terraform-provider-dynatrace -export dynatrace.BrowserMonitor` downloads all existing browser monitor configuration
     /// 
     /// The full documentation of the export feature is available [here](https://dt-url.net/h203qmc).
+    /// 
+    /// ## Resource Example Usage
+    /// 
+    /// ```csharp
+    /// using System.Collections.Generic;
+    /// using System.Linq;
+    /// using Pulumi;
+    /// using Dynatrace = Pulumiverse.Dynatrace;
+    /// using Time = Pulumiverse.Time;
+    /// 
+    /// return await Deployment.RunAsync(() =&gt; 
+    /// {
+    ///     var location = new Dynatrace.SyntheticLocation("location", new()
+    ///     {
+    ///         Name = "#name#",
+    ///         City = "San Francisco de Asis",
+    ///         CountryCode = "VE",
+    ///         RegionCode = "04",
+    ///         DeploymentType = "STANDARD",
+    ///         Latitude = 10.0756,
+    ///         LocationNodeOutageDelayInMinutes = 3,
+    ///         Longitude = -67.5442,
+    ///     });
+    /// 
+    ///     var application = new Dynatrace.WebApplication("application", new()
+    ///     {
+    ///         Name = "#name#",
+    ///         Type = "AUTO_INJECTED",
+    ///         CostControlUserSessionPercentage = 100,
+    ///         LoadActionKeyPerformanceMetric = "VISUALLY_COMPLETE",
+    ///         RealUserMonitoringEnabled = true,
+    ///         XhrActionKeyPerformanceMetric = "VISUALLY_COMPLETE",
+    ///         CustomActionApdexSettings = new Dynatrace.Inputs.WebApplicationCustomActionApdexSettingsArgs
+    ///         {
+    ///             FrustratingFallbackThreshold = 12000,
+    ///             FrustratingThreshold = 12000,
+    ///             ToleratedFallbackThreshold = 3000,
+    ///             ToleratedThreshold = 3000,
+    ///         },
+    ///         LoadActionApdexSettings = new Dynatrace.Inputs.WebApplicationLoadActionApdexSettingsArgs
+    ///         {
+    ///             FrustratingFallbackThreshold = 12000,
+    ///             FrustratingThreshold = 12000,
+    ///             ToleratedFallbackThreshold = 3000,
+    ///             ToleratedThreshold = 3000,
+    ///         },
+    ///         MonitoringSettings = new Dynatrace.Inputs.WebApplicationMonitoringSettingsArgs
+    ///         {
+    ///             AddCrossOriginAnonymousAttribute = true,
+    ///             CacheControlHeaderOptimizations = true,
+    ///             InjectionMode = "JAVASCRIPT_TAG",
+    ///             ScriptTagCacheDurationInHours = 1,
+    ///             AdvancedJavascriptTagSettings = new Dynatrace.Inputs.WebApplicationMonitoringSettingsAdvancedJavascriptTagSettingsArgs
+    ///             {
+    ///                 MaxActionNameLength = 100,
+    ///                 MaxErrorsToCapture = 10,
+    ///                 AdditionalEventHandlers = new Dynatrace.Inputs.WebApplicationMonitoringSettingsAdvancedJavascriptTagSettingsAdditionalEventHandlersArgs
+    ///                 {
+    ///                     MaxDomNodes = 5000,
+    ///                 },
+    ///             },
+    ///             ContentCapture = new Dynatrace.Inputs.WebApplicationMonitoringSettingsContentCaptureArgs
+    ///             {
+    ///                 ResourceTimingSettings = new Dynatrace.Inputs.WebApplicationMonitoringSettingsContentCaptureResourceTimingSettingsArgs
+    ///                 {
+    ///                     InstrumentationDelay = 53,
+    ///                     NonW3cResourceTimings = true,
+    ///                     W3cResourceTimings = true,
+    ///                 },
+    ///                 TimeoutSettings = new Dynatrace.Inputs.WebApplicationMonitoringSettingsContentCaptureTimeoutSettingsArgs
+    ///                 {
+    ///                     TemporaryActionLimit = 3,
+    ///                     TemporaryActionTotalTimeout = 100,
+    ///                     TimedActionSupport = true,
+    ///                 },
+    ///             },
+    ///         },
+    ///         UserActionNamingSettings = null,
+    ///         WaterfallSettings = new Dynatrace.Inputs.WebApplicationWaterfallSettingsArgs
+    ///         {
+    ///             ResourceBrowserCachingThreshold = 50,
+    ///             ResourcesThreshold = 100000,
+    ///             SlowCndResourcesThreshold = 200000,
+    ///             SlowFirstPartyResourcesThreshold = 200000,
+    ///             SlowThirdPartyResourcesThreshold = 200000,
+    ///             SpeedIndexVisuallyCompleteRatioThreshold = 50,
+    ///             UncompressedResourcesThreshold = 860,
+    ///         },
+    ///         XhrActionApdexSettings = new Dynatrace.Inputs.WebApplicationXhrActionApdexSettingsArgs
+    ///         {
+    ///             FrustratingFallbackThreshold = 12000,
+    ///             FrustratingThreshold = 12000,
+    ///             ToleratedFallbackThreshold = 3000,
+    ///             ToleratedThreshold = 3000,
+    ///         },
+    ///     });
+    /// 
+    ///     var credentialsVault = new Dynatrace.Credentials("credentials_vault", new()
+    ///     {
+    ///         Name = "#name#",
+    ///         Description = "my credentials vault",
+    ///         Scopes = new[]
+    ///         {
+    ///             "SYNTHETIC",
+    ///         },
+    ///         Username = "username",
+    ///         Password = "password",
+    ///     });
+    /// 
+    ///     var wait5Seconds = new Time.Sleep("wait_5_seconds", new()
+    ///     {
+    ///         CreateDuration = "5s",
+    ///     }, new CustomResourceOptions
+    ///     {
+    ///         DependsOn =
+    ///         {
+    ///             location,
+    ///             application,
+    ///             credentialsVault,
+    ///         },
+    ///     });
+    /// 
+    ///     var monitor = new Dynatrace.BrowserMonitor("monitor", new()
+    ///     {
+    ///         Name = "#name#",
+    ///         Frequency = 15,
+    ///         Locations = new[]
+    ///         {
+    ///             location.Id,
+    ///         },
+    ///         ManuallyAssignedApps = new[]
+    ///         {
+    ///             application.Id,
+    ///         },
+    ///         AnomalyDetection = new Dynatrace.Inputs.BrowserMonitorAnomalyDetectionArgs
+    ///         {
+    ///             LoadingTimeThresholds = new[]
+    ///             {
+    ///                 new Dynatrace.Inputs.BrowserMonitorAnomalyDetectionLoadingTimeThresholdArgs
+    ///                 {
+    ///                     Enabled = true,
+    ///                 },
+    ///             },
+    ///             OutageHandlings = new[]
+    ///             {
+    ///                 new Dynatrace.Inputs.BrowserMonitorAnomalyDetectionOutageHandlingArgs
+    ///                 {
+    ///                     GlobalOutage = true,
+    ///                     RetryOnError = true,
+    ///                     GlobalOutagePolicies = new[]
+    ///                     {
+    ///                         new Dynatrace.Inputs.BrowserMonitorAnomalyDetectionOutageHandlingGlobalOutagePolicyArgs
+    ///                         {
+    ///                             ConsecutiveRuns = 1,
+    ///                         },
+    ///                     },
+    ///                 },
+    ///             },
+    ///         },
+    ///         KeyPerformanceMetrics = new Dynatrace.Inputs.BrowserMonitorKeyPerformanceMetricsArgs
+    ///         {
+    ///             LoadActionKpm = "VISUALLY_COMPLETE",
+    ///             XhrActionKpm = "VISUALLY_COMPLETE",
+    ///         },
+    ///         Script = new Dynatrace.Inputs.BrowserMonitorScriptArgs
+    ///         {
+    ///             Type = "clickpath",
+    ///             Configuration = new Dynatrace.Inputs.BrowserMonitorScriptConfigurationArgs
+    ///             {
+    ///                 BypassCsp = true,
+    ///                 UserAgent = "Mozilla",
+    ///                 Bandwidth = new Dynatrace.Inputs.BrowserMonitorScriptConfigurationBandwidthArgs
+    ///                 {
+    ///                     NetworkType = "GPRS",
+    ///                 },
+    ///                 Device = new Dynatrace.Inputs.BrowserMonitorScriptConfigurationDeviceArgs
+    ///                 {
+    ///                     Name = "Apple iPhone 8",
+    ///                     Orientation = "landscape",
+    ///                 },
+    ///                 Headers = new Dynatrace.Inputs.BrowserMonitorScriptConfigurationHeadersArgs
+    ///                 {
+    ///                     Headers = new[]
+    ///                     {
+    ///                         new Dynatrace.Inputs.BrowserMonitorScriptConfigurationHeadersHeaderArgs
+    ///                         {
+    ///                             Name = "kjh",
+    ///                             Value = "kjh",
+    ///                         },
+    ///                     },
+    ///                 },
+    ///                 IgnoredErrorCodes = new Dynatrace.Inputs.BrowserMonitorScriptConfigurationIgnoredErrorCodesArgs
+    ///                 {
+    ///                     StatusCodes = "400",
+    ///                 },
+    ///                 JavascriptSetttings = new Dynatrace.Inputs.BrowserMonitorScriptConfigurationJavascriptSetttingsArgs
+    ///                 {
+    ///                     TimeoutSettings = new Dynatrace.Inputs.BrowserMonitorScriptConfigurationJavascriptSetttingsTimeoutSettingsArgs
+    ///                     {
+    ///                         ActionLimit = 3,
+    ///                         TotalTimeout = 100,
+    ///                     },
+    ///                     VisuallyCompleteOptions = new Dynatrace.Inputs.BrowserMonitorScriptConfigurationJavascriptSetttingsVisuallyCompleteOptionsArgs
+    ///                     {
+    ///                         ImageSizeThreshold = 0,
+    ///                         InactivityTimeout = 0,
+    ///                         MutationTimeout = 0,
+    ///                     },
+    ///                 },
+    ///             },
+    ///             Events = new Dynatrace.Inputs.BrowserMonitorScriptEventsArgs
+    ///             {
+    ///                 Events = new[]
+    ///                 {
+    ///                     new Dynatrace.Inputs.BrowserMonitorScriptEventsEventArgs
+    ///                     {
+    ///                         Description = "Loading of \"https://example.com\"",
+    ///                         Navigate = new Dynatrace.Inputs.BrowserMonitorScriptEventsEventNavigateArgs
+    ///                         {
+    ///                             Url = "https://example.com",
+    ///                             Authentication = new Dynatrace.Inputs.BrowserMonitorScriptEventsEventNavigateAuthenticationArgs
+    ///                             {
+    ///                                 Type = "http_authentication",
+    ///                                 Creds = credentialsVault.Id,
+    ///                             },
+    ///                             Wait = new Dynatrace.Inputs.BrowserMonitorScriptEventsEventNavigateWaitArgs
+    ///                             {
+    ///                                 WaitFor = "page_complete",
+    ///                             },
+    ///                         },
+    ///                     },
+    ///                     new Dynatrace.Inputs.BrowserMonitorScriptEventsEventArgs
+    ///                     {
+    ///                         Description = "jhjhjh",
+    ///                         Navigate = new Dynatrace.Inputs.BrowserMonitorScriptEventsEventNavigateArgs
+    ///                         {
+    ///                             Url = "https://example.com",
+    ///                             Authentication = new Dynatrace.Inputs.BrowserMonitorScriptEventsEventNavigateAuthenticationArgs
+    ///                             {
+    ///                                 Type = "http_authentication",
+    ///                                 Creds = credentialsVault.Id,
+    ///                             },
+    ///                             Validate = new Dynatrace.Inputs.BrowserMonitorScriptEventsEventNavigateValidateArgs
+    ///                             {
+    ///                                 Validations = new[]
+    ///                                 {
+    ///                                     new Dynatrace.Inputs.BrowserMonitorScriptEventsEventNavigateValidateValidationArgs
+    ///                                     {
+    ///                                         Type = "text_match",
+    ///                                         Match = "kkl",
+    ///                                         Regex = true,
+    ///                                         Target = new Dynatrace.Inputs.BrowserMonitorScriptEventsEventNavigateValidateValidationTargetArgs
+    ///                                         {
+    ///                                             Window = "k",
+    ///                                         },
+    ///                                     },
+    ///                                 },
+    ///                             },
+    ///                             Wait = new Dynatrace.Inputs.BrowserMonitorScriptEventsEventNavigateWaitArgs
+    ///                             {
+    ///                                 Timeout = 60000,
+    ///                                 WaitFor = "validation",
+    ///                                 Validation = new Dynatrace.Inputs.BrowserMonitorScriptEventsEventNavigateWaitValidationArgs
+    ///                                 {
+    ///                                     Type = "element_match",
+    ///                                     Match = "kjkj",
+    ///                                     Target = new Dynatrace.Inputs.BrowserMonitorScriptEventsEventNavigateWaitValidationTargetArgs
+    ///                                     {
+    ///                                         Locators = new[]
+    ///                                         {
+    ///                                             new Dynatrace.Inputs.BrowserMonitorScriptEventsEventNavigateWaitValidationTargetLocatorArgs
+    ///                                             {
+    ///                                                 Locators = new[]
+    ///                                                 {
+    ///                                                     new Dynatrace.Inputs.BrowserMonitorScriptEventsEventNavigateWaitValidationTargetLocatorLocatorArgs
+    ///                                                     {
+    ///                                                         Type = "css",
+    ///                                                         Value = "jjj",
+    ///                                                     },
+    ///                                                 },
+    ///                                             },
+    ///                                         },
+    ///                                     },
+    ///                                 },
+    ///                             },
+    ///                         },
+    ///                     },
+    ///                     new Dynatrace.Inputs.BrowserMonitorScriptEventsEventArgs
+    ///                     {
+    ///                         Description = "fvf",
+    ///                         Click = new Dynatrace.Inputs.BrowserMonitorScriptEventsEventClickArgs
+    ///                         {
+    ///                             Button = 0,
+    ///                             Validate = new Dynatrace.Inputs.BrowserMonitorScriptEventsEventClickValidateArgs
+    ///                             {
+    ///                                 Validations = new[]
+    ///                                 {
+    ///                                     new Dynatrace.Inputs.BrowserMonitorScriptEventsEventClickValidateValidationArgs
+    ///                                     {
+    ///                                         Type = "text_match",
+    ///                                     },
+    ///                                 },
+    ///                             },
+    ///                             Wait = new Dynatrace.Inputs.BrowserMonitorScriptEventsEventClickWaitArgs
+    ///                             {
+    ///                                 WaitFor = "page_complete",
+    ///                             },
+    ///                         },
+    ///                     },
+    ///                     new Dynatrace.Inputs.BrowserMonitorScriptEventsEventArgs
+    ///                     {
+    ///                         Description = "jsfoo",
+    ///                         Javascript = new Dynatrace.Inputs.BrowserMonitorScriptEventsEventJavascriptArgs
+    ///                         {
+    ///                             Code = @"let x = 3;
+    /// for (var i = 0; i &lt; x; x++) {
+    ///     console.log(\""asdf\"");
+    /// }
+    /// ",
+    ///                             Wait = new Dynatrace.Inputs.BrowserMonitorScriptEventsEventJavascriptWaitArgs
+    ///                             {
+    ///                                 WaitFor = "page_complete",
+    ///                             },
+    ///                         },
+    ///                     },
+    ///                 },
+    ///             },
+    ///         },
+    ///     }, new CustomResourceOptions
+    ///     {
+    ///         DependsOn =
+    ///         {
+    ///             wait5Seconds,
+    ///         },
+    ///     });
+    /// 
+    /// });
+    /// ```
     /// </summary>
     [DynatraceResourceType("dynatrace:index/browserMonitor:BrowserMonitor")]
     public partial class BrowserMonitor : global::Pulumi.CustomResource

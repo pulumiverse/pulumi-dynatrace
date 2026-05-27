@@ -29,11 +29,22 @@ import * as utilities from "./utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as dynatrace from "@pulumiverse/dynatrace";
  *
+ * const alert = new dynatrace.VulnerabilityAlerting("alert", {
+ *     name: "#name#",
+ *     enabled: true,
+ *     enabledRiskLevels: [
+ *         "LOW",
+ *         "MEDIUM",
+ *         "HIGH",
+ *         "CRITICAL",
+ *     ],
+ *     enabledTriggerEvents: ["SECURITY_PROBLEM_OPENED"],
+ * });
  * const terraformSecurityProblemWebhookTest = new dynatrace.AppsecNotification("Terraform_Security_Problem_Webhook_Test", {
  *     type: "WEBHOOK",
  *     enabled: true,
  *     displayName: "Terraform Security Problem Webhook Test",
- *     securityProblemBasedAlertingProfile: "vu9U3hXa3q0AAAABACxidWlsdGluOmFwcHNlYy5ub3RpZmljYXRpb24tYWxlcnRpbmctcHJvZmlsZQAGdGVuYW50AAZ0ZW5hbnQAJDMyMDhkNWMyLTFlZmYtMzk5My1iNjMwLWI0MjQ5N2U4MDQ2Nr7vVN4V2t6t",
+ *     securityProblemBasedAlertingProfile: alert.id,
  *     trigger: "SECURITY_PROBLEM",
  *     securityProblemBasedWebhookPayload: {
  *         payload: JSON.stringify({

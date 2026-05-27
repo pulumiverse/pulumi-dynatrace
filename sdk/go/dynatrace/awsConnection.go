@@ -136,11 +136,11 @@ import (
 type AwsConnection struct {
 	pulumi.CustomResourceState
 
-	// Name
+	// The name of the connection
 	Name pulumi.StringOutput `pulumi:"name"`
-	// Configuration required for authenticating via AWS Role Based Authentication
+	// No documentation available
 	RoleBasedAuth AwsConnectionRoleBasedAuthPtrOutput `pulumi:"roleBasedAuth"`
-	// Configuration required for authenticating via AWS Web Identity
+	// No documentation available
 	WebIdentity AwsConnectionWebIdentityPtrOutput `pulumi:"webIdentity"`
 }
 
@@ -174,20 +174,20 @@ func GetAwsConnection(ctx *pulumi.Context,
 
 // Input properties used for looking up and filtering AwsConnection resources.
 type awsConnectionState struct {
-	// Name
+	// The name of the connection
 	Name *string `pulumi:"name"`
-	// Configuration required for authenticating via AWS Role Based Authentication
+	// No documentation available
 	RoleBasedAuth *AwsConnectionRoleBasedAuth `pulumi:"roleBasedAuth"`
-	// Configuration required for authenticating via AWS Web Identity
+	// No documentation available
 	WebIdentity *AwsConnectionWebIdentity `pulumi:"webIdentity"`
 }
 
 type AwsConnectionState struct {
-	// Name
+	// The name of the connection
 	Name pulumi.StringPtrInput
-	// Configuration required for authenticating via AWS Role Based Authentication
+	// No documentation available
 	RoleBasedAuth AwsConnectionRoleBasedAuthPtrInput
-	// Configuration required for authenticating via AWS Web Identity
+	// No documentation available
 	WebIdentity AwsConnectionWebIdentityPtrInput
 }
 
@@ -196,21 +196,21 @@ func (AwsConnectionState) ElementType() reflect.Type {
 }
 
 type awsConnectionArgs struct {
-	// Name
+	// The name of the connection
 	Name *string `pulumi:"name"`
-	// Configuration required for authenticating via AWS Role Based Authentication
+	// No documentation available
 	RoleBasedAuth *AwsConnectionRoleBasedAuth `pulumi:"roleBasedAuth"`
-	// Configuration required for authenticating via AWS Web Identity
+	// No documentation available
 	WebIdentity *AwsConnectionWebIdentity `pulumi:"webIdentity"`
 }
 
 // The set of arguments for constructing a AwsConnection resource.
 type AwsConnectionArgs struct {
-	// Name
+	// The name of the connection
 	Name pulumi.StringPtrInput
-	// Configuration required for authenticating via AWS Role Based Authentication
+	// No documentation available
 	RoleBasedAuth AwsConnectionRoleBasedAuthPtrInput
-	// Configuration required for authenticating via AWS Web Identity
+	// No documentation available
 	WebIdentity AwsConnectionWebIdentityPtrInput
 }
 
@@ -301,17 +301,17 @@ func (o AwsConnectionOutput) ToAwsConnectionOutputWithContext(ctx context.Contex
 	return o
 }
 
-// Name
+// The name of the connection
 func (o AwsConnectionOutput) Name() pulumi.StringOutput {
 	return o.ApplyT(func(v *AwsConnection) pulumi.StringOutput { return v.Name }).(pulumi.StringOutput)
 }
 
-// Configuration required for authenticating via AWS Role Based Authentication
+// No documentation available
 func (o AwsConnectionOutput) RoleBasedAuth() AwsConnectionRoleBasedAuthPtrOutput {
 	return o.ApplyT(func(v *AwsConnection) AwsConnectionRoleBasedAuthPtrOutput { return v.RoleBasedAuth }).(AwsConnectionRoleBasedAuthPtrOutput)
 }
 
-// Configuration required for authenticating via AWS Web Identity
+// No documentation available
 func (o AwsConnectionOutput) WebIdentity() AwsConnectionWebIdentityPtrOutput {
 	return o.ApplyT(func(v *AwsConnection) AwsConnectionWebIdentityPtrOutput { return v.WebIdentity }).(AwsConnectionWebIdentityPtrOutput)
 }

@@ -27,6 +27,48 @@ import (
 // - `terraform-provider-dynatrace -export MobileAppRequestErrors` downloads all existing mobile application request error configuration
 //
 // The full documentation of the export feature is available [here](https://dt-url.net/h203qmc).
+//
+// ## Resource Example Usage
+//
+// ```go
+// package main
+//
+// import (
+//
+//	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//	"github.com/pulumiverse/pulumi-dynatrace/sdk/go/dynatrace"
+//
+// )
+//
+//	func main() {
+//		pulumi.Run(func(ctx *pulumi.Context) error {
+//			application, err := dynatrace.GetMobileApplication(ctx, &dynatrace.LookupMobileApplicationArgs{
+//				Name: "Application",
+//			}, nil)
+//			if err != nil {
+//				return err
+//			}
+//			_, err = dynatrace.NewMobileAppRequestErrors(ctx, "request_errors", &dynatrace.MobileAppRequestErrorsArgs{
+//				Scope: pulumi.String(pulumi.String(application.Id)),
+//				ErrorRules: &dynatrace.MobileAppRequestErrorsErrorRulesArgs{
+//					ErrorRules: dynatrace.MobileAppRequestErrorsErrorRulesErrorRuleArray{
+//						&dynatrace.MobileAppRequestErrorsErrorRulesErrorRuleArgs{
+//							ErrorCodes: pulumi.String("409"),
+//						},
+//						&dynatrace.MobileAppRequestErrorsErrorRulesErrorRuleArgs{
+//							ErrorCodes: pulumi.String("410"),
+//						},
+//					},
+//				},
+//			})
+//			if err != nil {
+//				return err
+//			}
+//			return nil
+//		})
+//	}
+//
+// ```
 type MobileAppRequestErrors struct {
 	pulumi.CustomResourceState
 

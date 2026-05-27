@@ -12,7 +12,7 @@ import (
 	"github.com/pulumiverse/pulumi-dynatrace/sdk/go/dynatrace/internal"
 )
 
-// > This resource requires the API token scopes **Read settings** (`settings.read`) and **Write settings** (`settings.write`)
+// > This resource requires the API token scopes **Read settings** (`settings.read`), **Write settings** (`settings.write`) and **Read entities** (`entities.read`).
 //
 // ## Dynatrace Documentation
 //

@@ -19,19 +19,19 @@ namespace Pulumiverse.Dynatrace.Outputs
         /// </summary>
         public readonly int? Count;
         /// <summary>
-        /// If specified, the schedule won't trigger executions before the given date
+        /// If specified, the schedule won't trigger executions before the given date. Format: `yyyy-MM-dd`
         /// </summary>
         public readonly string? EarliestStart;
         /// <summary>
-        /// If specified, the schedule won't trigger executions before the given time
+        /// If specified, the schedule won't trigger executions before the given time. Format: `HH:mm`
         /// </summary>
         public readonly string? EarliestStartTime;
         /// <summary>
-        /// If specified, the schedule won't trigger exeuctions on the given dates
+        /// If specified, the schedule won't trigger exeuctions on the given dates. Format: `yyyy-MM-dd`
         /// </summary>
         public readonly ImmutableArray<string> ExcludeDates;
         /// <summary>
-        /// If specified, the schedule will trigger executions on the given dates, even if the main configuration prohibits it
+        /// If specified, the schedule will trigger executions on the given dates, even if the main configuration prohibits it. Format: `yyyy-MM-dd`
         /// </summary>
         public readonly ImmutableArray<string> IncludeDates;
         /// <summary>

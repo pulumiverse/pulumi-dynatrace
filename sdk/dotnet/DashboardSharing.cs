@@ -20,6 +20,94 @@ namespace Pulumiverse.Dynatrace
     /// - Share Dynatrace dashboards - https://www.dynatrace.com/support/help/how-to-use-dynatrace/dashboards-and-charts/dashboards/share-dashboards
     /// 
     /// - Dashboards API - https://www.dynatrace.com/support/help/dynatrace-api/configuration-api/dashboards-api
+    /// 
+    /// ## Resource Example Usage
+    /// 
+    /// ```csharp
+    /// using System.Collections.Generic;
+    /// using System.Linq;
+    /// using Pulumi;
+    /// using Dynatrace = Pulumiverse.Dynatrace;
+    /// 
+    /// return await Deployment.RunAsync(() =&gt; 
+    /// {
+    ///     var dashboard = new Dynatrace.Dashboard("dashboard", new()
+    ///     {
+    ///         DashboardMetadata = new Dynatrace.Inputs.DashboardDashboardMetadataArgs
+    ///         {
+    ///             Name = "#name#",
+    ///             Owner = "Dynatrace",
+    ///             Tags = new[]
+    ///             {
+    ///                 "Kubernetes",
+    ///             },
+    ///             DynamicFilters = new Dynatrace.Inputs.DashboardDashboardMetadataDynamicFiltersArgs
+    ///             {
+    ///                 Filters = new[]
+    ///                 {
+    ///                     "KUBERNETES_CLUSTER",
+    ///                 },
+    ///             },
+    ///         },
+    ///         Tiles = new[]
+    ///         {
+    ///             new Dynatrace.Inputs.DashboardTileArgs
+    ///             {
+    ///                 Name = "Markdown",
+    ///                 TileType = "MARKDOWN",
+    ///                 Configured = true,
+    ///                 Bounds = new Dynatrace.Inputs.DashboardTileBoundsArgs
+    ///                 {
+    ///                     Top = 0,
+    ///                     Width = 684,
+    ///                     Height = 38,
+    ///                     Left = 0,
+    ///                 },
+    ///                 Markdown = "## Cluster resource overview",
+    ///             },
+    ///         },
+    ///     });
+    /// 
+    ///     var @group = new Dynatrace.IamGroup("group", new()
+    ///     {
+    ///         Name = "#name#",
+    ///     });
+    /// 
+    ///     var user = new Dynatrace.IamServiceUser("user", new()
+    ///     {
+    ///         Name = "#name#",
+    ///     });
+    /// 
+    ///     var sharing = new Dynatrace.DashboardSharing("sharing", new()
+    ///     {
+    ///         DashboardId = dashboard.Id,
+    ///         Permissions = new Dynatrace.Inputs.DashboardSharingPermissionsArgs
+    ///         {
+    ///             Permissions = new[]
+    ///             {
+    ///                 new Dynatrace.Inputs.DashboardSharingPermissionsPermissionArgs
+    ///                 {
+    ///                     Level = "VIEW",
+    ///                     Type = "ALL",
+    ///                 },
+    ///                 new Dynatrace.Inputs.DashboardSharingPermissionsPermissionArgs
+    ///                 {
+    ///                     Level = "EDIT",
+    ///                     Type = "GROUP",
+    ///                     Id = @group.Id,
+    ///                 },
+    ///                 new Dynatrace.Inputs.DashboardSharingPermissionsPermissionArgs
+    ///                 {
+    ///                     Level = "EDIT",
+    ///                     Type = "USER",
+    ///                     Id = user.Id,
+    ///                 },
+    ///             },
+    ///         },
+    ///     });
+    /// 
+    /// });
+    /// ```
     /// </summary>
     [DynatraceResourceType("dynatrace:index/dashboardSharing:DashboardSharing")]
     public partial class DashboardSharing : global::Pulumi.CustomResource

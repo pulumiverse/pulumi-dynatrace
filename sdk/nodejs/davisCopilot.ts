@@ -56,15 +56,19 @@ export class DavisCopilot extends pulumi.CustomResource {
      */
     declare public readonly blocklistEntries: pulumi.Output<outputs.DavisCopilotBlocklistEntries | undefined>;
     /**
-     * Please note that once enabled, you still need to [assign permissions](https://dt-url.net/rh22idn) to the relevant user groups.
+     * Please note that once agentic AI is enabled, the Dynatrace Assist interface is allowed to call tools and run Grail queries. You still need to [assign permissions](https://dt-url.net/agentic-ai) to the relevant user groups.
+     */
+    declare public readonly enableAgenticAi: pulumi.Output<boolean | undefined>;
+    /**
+     * Please note that once generative AI is enabled, you still need to [assign permissions](https://dt-url.net/rh22idn) to the relevant user groups.
      */
     declare public readonly enableCopilot: pulumi.Output<boolean>;
     /**
-     * By enabling document suggestions, Dynatrace AI can find similarities between Problems and existing Notebooks and Dashboards in order to suggest relevant troubleshooting guides. Learn more about [document suggestions](https://dt-url.net/xy02gpo).
+     * By enabling document suggestions, Dynatrace Intelligence can find similarities between Problems and existing Notebooks and Dashboards in order to suggest relevant troubleshooting guides. Learn more about [document suggestions](https://dt-url.net/xy02gpo).
      */
     declare public readonly enableDocumentSuggestion: pulumi.Output<boolean | undefined>;
     /**
-     * You can enrich Dynatrace Generative AI with your environment data. This lets you generate more accurate queries that identify and reference relevant entities, events, spans, logs, and metrics from your environment. Once enabled, Dynatrace AI periodically scans your Grail data to create its own semantic index. Please note, it can take up to 24 hours to reflect changes. Learn more about [environment-aware queries](https://dt-url.net/4g42iu7).
+     * You can enrich Dynatrace generative and agentic AI with your environment data. This lets you generate more accurate queries that identify and reference relevant entities, events, spans, logs, and metrics from your environment. Once enabled, Dynatrace Intelligence periodically scans your Grail data to create its own semantic index. Please note, it can take up to 24 hours to reflect changes. Learn more about [environment-aware queries](https://dt-url.net/4g42iu7).
      */
     declare public readonly enableTenantAwareDataMining: pulumi.Output<boolean | undefined>;
 
@@ -82,6 +86,7 @@ export class DavisCopilot extends pulumi.CustomResource {
         if (opts.id) {
             const state = argsOrState as DavisCopilotState | undefined;
             resourceInputs["blocklistEntries"] = state?.blocklistEntries;
+            resourceInputs["enableAgenticAi"] = state?.enableAgenticAi;
             resourceInputs["enableCopilot"] = state?.enableCopilot;
             resourceInputs["enableDocumentSuggestion"] = state?.enableDocumentSuggestion;
             resourceInputs["enableTenantAwareDataMining"] = state?.enableTenantAwareDataMining;
@@ -91,6 +96,7 @@ export class DavisCopilot extends pulumi.CustomResource {
                 throw new Error("Missing required property 'enableCopilot'");
             }
             resourceInputs["blocklistEntries"] = args?.blocklistEntries;
+            resourceInputs["enableAgenticAi"] = args?.enableAgenticAi;
             resourceInputs["enableCopilot"] = args?.enableCopilot;
             resourceInputs["enableDocumentSuggestion"] = args?.enableDocumentSuggestion;
             resourceInputs["enableTenantAwareDataMining"] = args?.enableTenantAwareDataMining;
@@ -109,15 +115,19 @@ export interface DavisCopilotState {
      */
     blocklistEntries?: pulumi.Input<inputs.DavisCopilotBlocklistEntries | undefined>;
     /**
-     * Please note that once enabled, you still need to [assign permissions](https://dt-url.net/rh22idn) to the relevant user groups.
+     * Please note that once agentic AI is enabled, the Dynatrace Assist interface is allowed to call tools and run Grail queries. You still need to [assign permissions](https://dt-url.net/agentic-ai) to the relevant user groups.
+     */
+    enableAgenticAi?: pulumi.Input<boolean | undefined>;
+    /**
+     * Please note that once generative AI is enabled, you still need to [assign permissions](https://dt-url.net/rh22idn) to the relevant user groups.
      */
     enableCopilot?: pulumi.Input<boolean | undefined>;
     /**
-     * By enabling document suggestions, Dynatrace AI can find similarities between Problems and existing Notebooks and Dashboards in order to suggest relevant troubleshooting guides. Learn more about [document suggestions](https://dt-url.net/xy02gpo).
+     * By enabling document suggestions, Dynatrace Intelligence can find similarities between Problems and existing Notebooks and Dashboards in order to suggest relevant troubleshooting guides. Learn more about [document suggestions](https://dt-url.net/xy02gpo).
      */
     enableDocumentSuggestion?: pulumi.Input<boolean | undefined>;
     /**
-     * You can enrich Dynatrace Generative AI with your environment data. This lets you generate more accurate queries that identify and reference relevant entities, events, spans, logs, and metrics from your environment. Once enabled, Dynatrace AI periodically scans your Grail data to create its own semantic index. Please note, it can take up to 24 hours to reflect changes. Learn more about [environment-aware queries](https://dt-url.net/4g42iu7).
+     * You can enrich Dynatrace generative and agentic AI with your environment data. This lets you generate more accurate queries that identify and reference relevant entities, events, spans, logs, and metrics from your environment. Once enabled, Dynatrace Intelligence periodically scans your Grail data to create its own semantic index. Please note, it can take up to 24 hours to reflect changes. Learn more about [environment-aware queries](https://dt-url.net/4g42iu7).
      */
     enableTenantAwareDataMining?: pulumi.Input<boolean | undefined>;
 }
@@ -131,15 +141,19 @@ export interface DavisCopilotArgs {
      */
     blocklistEntries?: pulumi.Input<inputs.DavisCopilotBlocklistEntries | undefined>;
     /**
-     * Please note that once enabled, you still need to [assign permissions](https://dt-url.net/rh22idn) to the relevant user groups.
+     * Please note that once agentic AI is enabled, the Dynatrace Assist interface is allowed to call tools and run Grail queries. You still need to [assign permissions](https://dt-url.net/agentic-ai) to the relevant user groups.
+     */
+    enableAgenticAi?: pulumi.Input<boolean | undefined>;
+    /**
+     * Please note that once generative AI is enabled, you still need to [assign permissions](https://dt-url.net/rh22idn) to the relevant user groups.
      */
     enableCopilot: pulumi.Input<boolean>;
     /**
-     * By enabling document suggestions, Dynatrace AI can find similarities between Problems and existing Notebooks and Dashboards in order to suggest relevant troubleshooting guides. Learn more about [document suggestions](https://dt-url.net/xy02gpo).
+     * By enabling document suggestions, Dynatrace Intelligence can find similarities between Problems and existing Notebooks and Dashboards in order to suggest relevant troubleshooting guides. Learn more about [document suggestions](https://dt-url.net/xy02gpo).
      */
     enableDocumentSuggestion?: pulumi.Input<boolean | undefined>;
     /**
-     * You can enrich Dynatrace Generative AI with your environment data. This lets you generate more accurate queries that identify and reference relevant entities, events, spans, logs, and metrics from your environment. Once enabled, Dynatrace AI periodically scans your Grail data to create its own semantic index. Please note, it can take up to 24 hours to reflect changes. Learn more about [environment-aware queries](https://dt-url.net/4g42iu7).
+     * You can enrich Dynatrace generative and agentic AI with your environment data. This lets you generate more accurate queries that identify and reference relevant entities, events, spans, logs, and metrics from your environment. Once enabled, Dynatrace Intelligence periodically scans your Grail data to create its own semantic index. Please note, it can take up to 24 hours to reflect changes. Learn more about [environment-aware queries](https://dt-url.net/4g42iu7).
      */
     enableTenantAwareDataMining?: pulumi.Input<boolean | undefined>;
 }

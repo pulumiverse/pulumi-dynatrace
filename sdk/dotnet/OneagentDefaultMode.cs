@@ -29,7 +29,7 @@ namespace Pulumiverse.Dynatrace
     public partial class OneagentDefaultMode : global::Pulumi.CustomResource
     {
         /// <summary>
-        /// Possible Values: `DISCOVERY`, `FULL_STACK`, `INFRASTRUCTURE`
+        /// OneAgent default monitoring mode. Possible values: `DISCOVERY`, `FULL_STACK`, `INFRASTRUCTURE`
         /// </summary>
         [Output("defaultMode")]
         public Output<string> DefaultMode { get; private set; } = null!;
@@ -82,7 +82,7 @@ namespace Pulumiverse.Dynatrace
     public sealed class OneagentDefaultModeArgs : global::Pulumi.ResourceArgs
     {
         /// <summary>
-        /// Possible Values: `DISCOVERY`, `FULL_STACK`, `INFRASTRUCTURE`
+        /// OneAgent default monitoring mode. Possible values: `DISCOVERY`, `FULL_STACK`, `INFRASTRUCTURE`
         /// </summary>
         [Input("defaultMode", required: true)]
         public Input<string> DefaultMode { get; set; } = null!;
@@ -96,7 +96,7 @@ namespace Pulumiverse.Dynatrace
     public sealed class OneagentDefaultModeState : global::Pulumi.ResourceArgs
     {
         /// <summary>
-        /// Possible Values: `DISCOVERY`, `FULL_STACK`, `INFRASTRUCTURE`
+        /// OneAgent default monitoring mode. Possible values: `DISCOVERY`, `FULL_STACK`, `INFRASTRUCTURE`
         /// </summary>
         [Input("defaultMode")]
         public Input<string>? DefaultMode { get; set; }

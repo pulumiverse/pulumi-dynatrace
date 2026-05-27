@@ -26,6 +26,126 @@ namespace Pulumiverse.Dynatrace
     /// - `terraform-provider-dynatrace -export dynatrace.BrowserMonitorPerformance` downloads all existing browser monitor performance thresholds configuration
     /// 
     /// The full documentation of the export feature is available [here](https://dt-url.net/h203qmc).
+    /// 
+    /// ## Resource Example Usage
+    /// 
+    /// ```csharp
+    /// using System.Collections.Generic;
+    /// using System.Linq;
+    /// using Pulumi;
+    /// using Dynatrace = Pulumiverse.Dynatrace;
+    /// 
+    /// return await Deployment.RunAsync(() =&gt; 
+    /// {
+    ///     var location = Dynatrace.GetSyntheticLocation.Invoke(new()
+    ///     {
+    ///         Name = "Location",
+    ///     });
+    /// 
+    ///     var monitor = new Dynatrace.BrowserMonitor("monitor", new()
+    ///     {
+    ///         Name = "#name#",
+    ///         Frequency = 15,
+    ///         Locations = new[]
+    ///         {
+    ///             location.Apply(getSyntheticLocationResult =&gt; getSyntheticLocationResult.Id),
+    ///         },
+    ///         KeyPerformanceMetrics = new Dynatrace.Inputs.BrowserMonitorKeyPerformanceMetricsArgs
+    ///         {
+    ///             LoadActionKpm = "VISUALLY_COMPLETE",
+    ///             XhrActionKpm = "VISUALLY_COMPLETE",
+    ///         },
+    ///         AnomalyDetection = new Dynatrace.Inputs.BrowserMonitorAnomalyDetectionArgs
+    ///         {
+    ///             LoadingTimeThresholds = new[]
+    ///             {
+    ///                 new Dynatrace.Inputs.BrowserMonitorAnomalyDetectionLoadingTimeThresholdArgs
+    ///                 {
+    ///                     Enabled = true,
+    ///                     Thresholds = new[]
+    ///                     {
+    ///                         new Dynatrace.Inputs.BrowserMonitorAnomalyDetectionLoadingTimeThresholdThresholdArgs
+    ///                         {
+    ///                             Thresholds = new[]
+    ///                             {
+    ///                                 new Dynatrace.Inputs.BrowserMonitorAnomalyDetectionLoadingTimeThresholdThresholdThresholdArgs
+    ///                                 {
+    ///                                     EventIndex = 0,
+    ///                                     RequestIndex = 0,
+    ///                                     Type = "TOTAL",
+    ///                                     ValueMs = 10000,
+    ///                                 },
+    ///                             },
+    ///                         },
+    ///                     },
+    ///                 },
+    ///             },
+    ///             OutageHandlings = new[]
+    ///             {
+    ///                 new Dynatrace.Inputs.BrowserMonitorAnomalyDetectionOutageHandlingArgs
+    ///                 {
+    ///                     GlobalOutage = true,
+    ///                     LocalOutage = false,
+    ///                     RetryOnError = true,
+    ///                     GlobalOutagePolicies = new[]
+    ///                     {
+    ///                         new Dynatrace.Inputs.BrowserMonitorAnomalyDetectionOutageHandlingGlobalOutagePolicyArgs
+    ///                         {
+    ///                             ConsecutiveRuns = 1,
+    ///                         },
+    ///                     },
+    ///                 },
+    ///             },
+    ///         },
+    ///         Script = new Dynatrace.Inputs.BrowserMonitorScriptArgs
+    ///         {
+    ///             Type = "clickpath",
+    ///             Configuration = new Dynatrace.Inputs.BrowserMonitorScriptConfigurationArgs
+    ///             {
+    ///                 BypassCsp = true,
+    ///                 UserAgent = "Mozilla",
+    ///                 Device = new Dynatrace.Inputs.BrowserMonitorScriptConfigurationDeviceArgs
+    ///                 {
+    ///                     Name = "Desktop",
+    ///                     Orientation = "landscape",
+    ///                 },
+    ///             },
+    ///             Events = new Dynatrace.Inputs.BrowserMonitorScriptEventsArgs
+    ///             {
+    ///                 Events = new[]
+    ///                 {
+    ///                     new Dynatrace.Inputs.BrowserMonitorScriptEventsEventArgs
+    ///                     {
+    ///                         Description = "my description",
+    ///                         Navigate = new Dynatrace.Inputs.BrowserMonitorScriptEventsEventNavigateArgs
+    ///                         {
+    ///                             Url = "https://www.example.com",
+    ///                         },
+    ///                     },
+    ///                 },
+    ///             },
+    ///         },
+    ///     });
+    /// 
+    ///     var performance = new Dynatrace.BrowserMonitorPerformance("performance", new()
+    ///     {
+    ///         Enabled = true,
+    ///         Scope = monitor.Id,
+    ///         Thresholds = new Dynatrace.Inputs.BrowserMonitorPerformanceThresholdsArgs
+    ///         {
+    ///             Thresholds = new[]
+    ///             {
+    ///                 new Dynatrace.Inputs.BrowserMonitorPerformanceThresholdsThresholdArgs
+    ///                 {
+    ///                     Event = monitor.Id,
+    ///                     Threshold = 10,
+    ///                 },
+    ///             },
+    ///         },
+    ///     });
+    /// 
+    /// });
+    /// ```
     /// </summary>
     [DynatraceResourceType("dynatrace:index/browserMonitorPerformance:BrowserMonitorPerformance")]
     public partial class BrowserMonitorPerformance : global::Pulumi.CustomResource

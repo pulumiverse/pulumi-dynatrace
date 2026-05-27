@@ -29,6 +29,12 @@ namespace Pulumiverse.Dynatrace
     public partial class DevobsDataMasking : global::Pulumi.CustomResource
     {
         /// <summary>
+        /// Select how the variable name should be matched. Possible values: `CONTAINS`, `ENDS_WITH`, `EQUALS`, `STARTS_WITH`
+        /// </summary>
+        [Output("comparisonType")]
+        public Output<string?> ComparisonType { get; private set; } = null!;
+
+        /// <summary>
         /// This setting is enabled (`True`) or disabled (`False`)
         /// </summary>
         [Output("enabled")]
@@ -41,13 +47,13 @@ namespace Pulumiverse.Dynatrace
         public Output<string> InsertAfter { get; private set; } = null!;
 
         /// <summary>
-        /// no documentation available
+        /// Replacement Pattern
         /// </summary>
         [Output("replacementPattern")]
         public Output<string?> ReplacementPattern { get; private set; } = null!;
 
         /// <summary>
-        /// Possible Values: `SHA256`, `STRING`
+        /// Choose how the sensitive data should be replaced. Possible values: `SHA256`, `STRING`
         /// </summary>
         [Output("replacementType")]
         public Output<string> ReplacementType { get; private set; } = null!;
@@ -59,19 +65,19 @@ namespace Pulumiverse.Dynatrace
         public Output<string> RuleName { get; private set; } = null!;
 
         /// <summary>
-        /// no documentation available
+        /// Regex Pattern
         /// </summary>
         [Output("ruleRegex")]
         public Output<string?> RuleRegex { get; private set; } = null!;
 
         /// <summary>
-        /// Possible Values: `REGEX`, `VAR_NAME`
+        /// Choose whether to redact by variable name or regex. Possible values: `REGEX`, `VAR_NAME`
         /// </summary>
         [Output("ruleType")]
         public Output<string> RuleType { get; private set; } = null!;
 
         /// <summary>
-        /// no documentation available
+        /// Variable Name
         /// </summary>
         [Output("ruleVarName")]
         public Output<string?> RuleVarName { get; private set; } = null!;
@@ -124,6 +130,12 @@ namespace Pulumiverse.Dynatrace
     public sealed class DevobsDataMaskingArgs : global::Pulumi.ResourceArgs
     {
         /// <summary>
+        /// Select how the variable name should be matched. Possible values: `CONTAINS`, `ENDS_WITH`, `EQUALS`, `STARTS_WITH`
+        /// </summary>
+        [Input("comparisonType")]
+        public Input<string>? ComparisonType { get; set; }
+
+        /// <summary>
         /// This setting is enabled (`True`) or disabled (`False`)
         /// </summary>
         [Input("enabled", required: true)]
@@ -136,13 +148,13 @@ namespace Pulumiverse.Dynatrace
         public Input<string>? InsertAfter { get; set; }
 
         /// <summary>
-        /// no documentation available
+        /// Replacement Pattern
         /// </summary>
         [Input("replacementPattern")]
         public Input<string>? ReplacementPattern { get; set; }
 
         /// <summary>
-        /// Possible Values: `SHA256`, `STRING`
+        /// Choose how the sensitive data should be replaced. Possible values: `SHA256`, `STRING`
         /// </summary>
         [Input("replacementType", required: true)]
         public Input<string> ReplacementType { get; set; } = null!;
@@ -154,19 +166,19 @@ namespace Pulumiverse.Dynatrace
         public Input<string> RuleName { get; set; } = null!;
 
         /// <summary>
-        /// no documentation available
+        /// Regex Pattern
         /// </summary>
         [Input("ruleRegex")]
         public Input<string>? RuleRegex { get; set; }
 
         /// <summary>
-        /// Possible Values: `REGEX`, `VAR_NAME`
+        /// Choose whether to redact by variable name or regex. Possible values: `REGEX`, `VAR_NAME`
         /// </summary>
         [Input("ruleType", required: true)]
         public Input<string> RuleType { get; set; } = null!;
 
         /// <summary>
-        /// no documentation available
+        /// Variable Name
         /// </summary>
         [Input("ruleVarName")]
         public Input<string>? RuleVarName { get; set; }
@@ -180,6 +192,12 @@ namespace Pulumiverse.Dynatrace
     public sealed class DevobsDataMaskingState : global::Pulumi.ResourceArgs
     {
         /// <summary>
+        /// Select how the variable name should be matched. Possible values: `CONTAINS`, `ENDS_WITH`, `EQUALS`, `STARTS_WITH`
+        /// </summary>
+        [Input("comparisonType")]
+        public Input<string>? ComparisonType { get; set; }
+
+        /// <summary>
         /// This setting is enabled (`True`) or disabled (`False`)
         /// </summary>
         [Input("enabled")]
@@ -192,13 +210,13 @@ namespace Pulumiverse.Dynatrace
         public Input<string>? InsertAfter { get; set; }
 
         /// <summary>
-        /// no documentation available
+        /// Replacement Pattern
         /// </summary>
         [Input("replacementPattern")]
         public Input<string>? ReplacementPattern { get; set; }
 
         /// <summary>
-        /// Possible Values: `SHA256`, `STRING`
+        /// Choose how the sensitive data should be replaced. Possible values: `SHA256`, `STRING`
         /// </summary>
         [Input("replacementType")]
         public Input<string>? ReplacementType { get; set; }
@@ -210,19 +228,19 @@ namespace Pulumiverse.Dynatrace
         public Input<string>? RuleName { get; set; }
 
         /// <summary>
-        /// no documentation available
+        /// Regex Pattern
         /// </summary>
         [Input("ruleRegex")]
         public Input<string>? RuleRegex { get; set; }
 
         /// <summary>
-        /// Possible Values: `REGEX`, `VAR_NAME`
+        /// Choose whether to redact by variable name or regex. Possible values: `REGEX`, `VAR_NAME`
         /// </summary>
         [Input("ruleType")]
         public Input<string>? RuleType { get; set; }
 
         /// <summary>
-        /// no documentation available
+        /// Variable Name
         /// </summary>
         [Input("ruleVarName")]
         public Input<string>? RuleVarName { get; set; }

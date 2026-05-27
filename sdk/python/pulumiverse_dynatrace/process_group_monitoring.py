@@ -120,6 +120,19 @@ class ProcessGroupMonitoring(pulumi.CustomResource):
 
         The full documentation of the export feature is available [here](https://dt-url.net/h203qmc).
 
+        ## Resource Example Usage
+
+        ```python
+        import pulumi
+        import pulumiverse_dynatrace as dynatrace
+
+        config = pulumi.Config()
+        proces_s__grou_p__id = config.require("PROCESS_GROUP_ID")
+        monitoring = dynatrace.ProcessGroupMonitoring("monitoring",
+            monitoring_state="MONITORING_ON",
+            process_group_id=proces_s__grou_p__id)
+        ```
+
 
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
@@ -146,6 +159,19 @@ class ProcessGroupMonitoring(pulumi.CustomResource):
         - `terraform-provider-dynatrace -export ProcessGroupMonitoring` downloads all existing process group monitoring configuration
 
         The full documentation of the export feature is available [here](https://dt-url.net/h203qmc).
+
+        ## Resource Example Usage
+
+        ```python
+        import pulumi
+        import pulumiverse_dynatrace as dynatrace
+
+        config = pulumi.Config()
+        proces_s__grou_p__id = config.require("PROCESS_GROUP_ID")
+        monitoring = dynatrace.ProcessGroupMonitoring("monitoring",
+            monitoring_state="MONITORING_ON",
+            process_group_id=proces_s__grou_p__id)
+        ```
 
 
         :param str resource_name: The name of the resource.

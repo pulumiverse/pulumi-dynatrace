@@ -123,6 +123,45 @@ class DashboardsPresets(pulumi.CustomResource):
 
         The full documentation of the export feature is available [here](https://dt-url.net/h203qmc).
 
+        ## Resource Example Usage
+
+        ```python
+        import pulumi
+        import pulumiverse_dynatrace as dynatrace
+
+        group = dynatrace.IamGroup("group", name="#name#")
+        dashboard = dynatrace.Dashboard("dashboard",
+            dashboard_metadata={
+                "preset": True,
+                "name": "#name#",
+                "owner": "Dynatrace",
+                "tags": ["Kubernetes"],
+                "dynamic_filters": {
+                    "filters": ["KUBERNETES_CLUSTER"],
+                },
+            },
+            tiles=[{
+                "name": "Markdown",
+                "tile_type": "MARKDOWN",
+                "configured": True,
+                "bounds": {
+                    "top": 0,
+                    "width": 684,
+                    "height": 38,
+                    "left": 0,
+                },
+                "markdown": "## Cluster resource overview",
+            }])
+        presets = dynatrace.DashboardsPresets("presets",
+            enable_dashboard_presets=True,
+            dashboard_presets_list={
+                "dashboard_presets": [{
+                    "dashboard_preset": dashboard.id,
+                    "user_group": group.id,
+                }],
+            })
+        ```
+
 
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
@@ -149,6 +188,45 @@ class DashboardsPresets(pulumi.CustomResource):
         - `terraform-provider-dynatrace -export DashboardsPresets` downloads all existing dashboard preset settings
 
         The full documentation of the export feature is available [here](https://dt-url.net/h203qmc).
+
+        ## Resource Example Usage
+
+        ```python
+        import pulumi
+        import pulumiverse_dynatrace as dynatrace
+
+        group = dynatrace.IamGroup("group", name="#name#")
+        dashboard = dynatrace.Dashboard("dashboard",
+            dashboard_metadata={
+                "preset": True,
+                "name": "#name#",
+                "owner": "Dynatrace",
+                "tags": ["Kubernetes"],
+                "dynamic_filters": {
+                    "filters": ["KUBERNETES_CLUSTER"],
+                },
+            },
+            tiles=[{
+                "name": "Markdown",
+                "tile_type": "MARKDOWN",
+                "configured": True,
+                "bounds": {
+                    "top": 0,
+                    "width": 684,
+                    "height": 38,
+                    "left": 0,
+                },
+                "markdown": "## Cluster resource overview",
+            }])
+        presets = dynatrace.DashboardsPresets("presets",
+            enable_dashboard_presets=True,
+            dashboard_presets_list={
+                "dashboard_presets": [{
+                    "dashboard_preset": dashboard.id,
+                    "user_group": group.id,
+                }],
+            })
+        ```
 
 
         :param str resource_name: The name of the resource.

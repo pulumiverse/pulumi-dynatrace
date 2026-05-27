@@ -24,6 +24,40 @@ import (
 // - `terraform-provider-dynatrace -export DefaultLaunchpad` downloads all existing default Launchpads by user group configuration
 //
 // The full documentation of the export feature is available [here](https://dt-url.net/h203qmc).
+//
+// ## Resource Example Usage
+//
+// ```go
+// package main
+//
+// import (
+//
+//	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//	"github.com/pulumiverse/pulumi-dynatrace/sdk/go/dynatrace"
+//
+// )
+//
+//	func main() {
+//		pulumi.Run(func(ctx *pulumi.Context) error {
+//			_, err := dynatrace.NewDefaultLaunchpad(ctx, "launchpad", &dynatrace.DefaultLaunchpadArgs{
+//				GroupLaunchpads: &dynatrace.DefaultLaunchpadGroupLaunchpadsArgs{
+//					GroupLaunchpads: dynatrace.DefaultLaunchpadGroupLaunchpadsGroupLaunchpadArray{
+//						&dynatrace.DefaultLaunchpadGroupLaunchpadsGroupLaunchpadArgs{
+//							IsEnabled:   pulumi.Bool(false),
+//							LaunchpadId: pulumi.String("00000000-0000-0000-0000-000000000000"),
+//							UserGroupId: pulumi.String("00000000-0000-0000-0000-000000000000"),
+//						},
+//					},
+//				},
+//			})
+//			if err != nil {
+//				return err
+//			}
+//			return nil
+//		})
+//	}
+//
+// ```
 type DefaultLaunchpad struct {
 	pulumi.CustomResourceState
 

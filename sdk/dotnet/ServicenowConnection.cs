@@ -42,6 +42,28 @@ namespace Pulumiverse.Dynatrace
     /// - `terraform-provider-dynatrace -export dynatrace.ServicenowConnection` downloads all existing ServiceNow connections
     /// 
     /// The full documentation of the export feature is available [here](https://dt-url.net/h203qmc).
+    /// 
+    /// ## Resource Example Usage
+    /// 
+    /// ```csharp
+    /// using System.Collections.Generic;
+    /// using System.Linq;
+    /// using Pulumi;
+    /// using Dynatrace = Pulumiverse.Dynatrace;
+    /// 
+    /// return await Deployment.RunAsync(() =&gt; 
+    /// {
+    ///     var userPassword = new Dynatrace.ServicenowConnection("user_password", new()
+    ///     {
+    ///         Name = "#name#",
+    ///         Url = "https://www.example.com",
+    ///         Type = "basic",
+    ///         User = "#name#",
+    ///         Password = "#######",
+    ///     });
+    /// 
+    /// });
+    /// ```
     /// </summary>
     [DynatraceResourceType("dynatrace:index/servicenowConnection:ServicenowConnection")]
     public partial class ServicenowConnection : global::Pulumi.CustomResource

@@ -91,6 +91,21 @@ class DefaultLaunchpad(pulumi.CustomResource):
 
         The full documentation of the export feature is available [here](https://dt-url.net/h203qmc).
 
+        ## Resource Example Usage
+
+        ```python
+        import pulumi
+        import pulumiverse_dynatrace as dynatrace
+
+        launchpad = dynatrace.DefaultLaunchpad("launchpad", group_launchpads={
+            "group_launchpads": [{
+                "is_enabled": False,
+                "launchpad_id": "00000000-0000-0000-0000-000000000000",
+                "user_group_id": "00000000-0000-0000-0000-000000000000",
+            }],
+        })
+        ```
+
 
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
@@ -116,6 +131,21 @@ class DefaultLaunchpad(pulumi.CustomResource):
         - `terraform-provider-dynatrace -export DefaultLaunchpad` downloads all existing default Launchpads by user group configuration
 
         The full documentation of the export feature is available [here](https://dt-url.net/h203qmc).
+
+        ## Resource Example Usage
+
+        ```python
+        import pulumi
+        import pulumiverse_dynatrace as dynatrace
+
+        launchpad = dynatrace.DefaultLaunchpad("launchpad", group_launchpads={
+            "group_launchpads": [{
+                "is_enabled": False,
+                "launchpad_id": "00000000-0000-0000-0000-000000000000",
+                "user_group_id": "00000000-0000-0000-0000-000000000000",
+            }],
+        })
+        ```
 
 
         :param str resource_name: The name of the resource.

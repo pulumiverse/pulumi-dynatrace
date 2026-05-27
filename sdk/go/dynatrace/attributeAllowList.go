@@ -25,6 +25,33 @@ import (
 // - `terraform-provider-dynatrace -export AttributeAllowList` downloads all existing attribute allow-list configuration
 //
 // The full documentation of the export feature is available [here](https://dt-url.net/h203qmc).
+//
+// ## Resource Example Usage
+//
+// ```go
+// package main
+//
+// import (
+//
+//	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//	"github.com/pulumiverse/pulumi-dynatrace/sdk/go/dynatrace"
+//
+// )
+//
+//	func main() {
+//		pulumi.Run(func(ctx *pulumi.Context) error {
+//			_, err := dynatrace.NewAttributeAllowList(ctx, "list", &dynatrace.AttributeAllowListArgs{
+//				Enabled: pulumi.Bool(true),
+//				Key:     pulumi.String("attribute.#name#"),
+//			})
+//			if err != nil {
+//				return err
+//			}
+//			return nil
+//		})
+//	}
+//
+// ```
 type AttributeAllowList struct {
 	pulumi.CustomResourceState
 

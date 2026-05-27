@@ -54,6 +54,10 @@ export class DiskEdgeAnomalyDetectors extends pulumi.CustomResource {
      */
     declare public readonly alerts: pulumi.Output<outputs.DiskEdgeAnomalyDetectorsAlerts | undefined>;
     /**
+     * Set of rules to scope which disks the policy applies to. Rules can match based on disk properties (total space, filesystem, disk type) or host resource attributes. Each disk property type can be defined at most once per policy.
+     */
+    declare public readonly detectionConditions: pulumi.Output<outputs.DiskEdgeAnomalyDetectorsDetectionConditions | undefined>;
+    /**
      * Disk will be included in this policy if **any** of the filters match
      */
     declare public readonly diskNameFilters: pulumi.Output<string[] | undefined>;
@@ -66,15 +70,11 @@ export class DiskEdgeAnomalyDetectors extends pulumi.CustomResource {
      */
     declare public readonly eventProperties: pulumi.Output<outputs.DiskEdgeAnomalyDetectorsEventProperties | undefined>;
     /**
-     * The policy will be enabled if **all** conditions are met
-     */
-    declare public readonly hostMetadataConditions: pulumi.Output<outputs.DiskEdgeAnomalyDetectorsHostMetadataConditions | undefined>;
-    /**
      * Because this resource allows for ordering you may specify the ID of the resource instance that comes before this instance regarding order. If not specified when creating the setting will be added to the end of the list. If not specified during update the order will remain untouched
      */
     declare public readonly insertAfter: pulumi.Output<string>;
     /**
-     * Select the operating systems on which policy should be applied
+     * Select the operating systems on which policy should be applied. Possible values: `AIX`, `LINUX`, `WINDOWS`
      */
     declare public readonly operatingSystems: pulumi.Output<string[] | undefined>;
     /**
@@ -100,10 +100,10 @@ export class DiskEdgeAnomalyDetectors extends pulumi.CustomResource {
         if (opts.id) {
             const state = argsOrState as DiskEdgeAnomalyDetectorsState | undefined;
             resourceInputs["alerts"] = state?.alerts;
+            resourceInputs["detectionConditions"] = state?.detectionConditions;
             resourceInputs["diskNameFilters"] = state?.diskNameFilters;
             resourceInputs["enabled"] = state?.enabled;
             resourceInputs["eventProperties"] = state?.eventProperties;
-            resourceInputs["hostMetadataConditions"] = state?.hostMetadataConditions;
             resourceInputs["insertAfter"] = state?.insertAfter;
             resourceInputs["operatingSystems"] = state?.operatingSystems;
             resourceInputs["policyName"] = state?.policyName;
@@ -117,10 +117,10 @@ export class DiskEdgeAnomalyDetectors extends pulumi.CustomResource {
                 throw new Error("Missing required property 'policyName'");
             }
             resourceInputs["alerts"] = args?.alerts;
+            resourceInputs["detectionConditions"] = args?.detectionConditions;
             resourceInputs["diskNameFilters"] = args?.diskNameFilters;
             resourceInputs["enabled"] = args?.enabled;
             resourceInputs["eventProperties"] = args?.eventProperties;
-            resourceInputs["hostMetadataConditions"] = args?.hostMetadataConditions;
             resourceInputs["insertAfter"] = args?.insertAfter;
             resourceInputs["operatingSystems"] = args?.operatingSystems;
             resourceInputs["policyName"] = args?.policyName;
@@ -140,6 +140,10 @@ export interface DiskEdgeAnomalyDetectorsState {
      */
     alerts?: pulumi.Input<inputs.DiskEdgeAnomalyDetectorsAlerts | undefined>;
     /**
+     * Set of rules to scope which disks the policy applies to. Rules can match based on disk properties (total space, filesystem, disk type) or host resource attributes. Each disk property type can be defined at most once per policy.
+     */
+    detectionConditions?: pulumi.Input<inputs.DiskEdgeAnomalyDetectorsDetectionConditions | undefined>;
+    /**
      * Disk will be included in this policy if **any** of the filters match
      */
     diskNameFilters?: pulumi.Input<pulumi.Input<string>[] | undefined>;
@@ -152,15 +156,11 @@ export interface DiskEdgeAnomalyDetectorsState {
      */
     eventProperties?: pulumi.Input<inputs.DiskEdgeAnomalyDetectorsEventProperties | undefined>;
     /**
-     * The policy will be enabled if **all** conditions are met
-     */
-    hostMetadataConditions?: pulumi.Input<inputs.DiskEdgeAnomalyDetectorsHostMetadataConditions | undefined>;
-    /**
      * Because this resource allows for ordering you may specify the ID of the resource instance that comes before this instance regarding order. If not specified when creating the setting will be added to the end of the list. If not specified during update the order will remain untouched
      */
     insertAfter?: pulumi.Input<string | undefined>;
     /**
-     * Select the operating systems on which policy should be applied
+     * Select the operating systems on which policy should be applied. Possible values: `AIX`, `LINUX`, `WINDOWS`
      */
     operatingSystems?: pulumi.Input<pulumi.Input<string>[] | undefined>;
     /**
@@ -182,6 +182,10 @@ export interface DiskEdgeAnomalyDetectorsArgs {
      */
     alerts?: pulumi.Input<inputs.DiskEdgeAnomalyDetectorsAlerts | undefined>;
     /**
+     * Set of rules to scope which disks the policy applies to. Rules can match based on disk properties (total space, filesystem, disk type) or host resource attributes. Each disk property type can be defined at most once per policy.
+     */
+    detectionConditions?: pulumi.Input<inputs.DiskEdgeAnomalyDetectorsDetectionConditions | undefined>;
+    /**
      * Disk will be included in this policy if **any** of the filters match
      */
     diskNameFilters?: pulumi.Input<pulumi.Input<string>[] | undefined>;
@@ -194,15 +198,11 @@ export interface DiskEdgeAnomalyDetectorsArgs {
      */
     eventProperties?: pulumi.Input<inputs.DiskEdgeAnomalyDetectorsEventProperties | undefined>;
     /**
-     * The policy will be enabled if **all** conditions are met
-     */
-    hostMetadataConditions?: pulumi.Input<inputs.DiskEdgeAnomalyDetectorsHostMetadataConditions | undefined>;
-    /**
      * Because this resource allows for ordering you may specify the ID of the resource instance that comes before this instance regarding order. If not specified when creating the setting will be added to the end of the list. If not specified during update the order will remain untouched
      */
     insertAfter?: pulumi.Input<string | undefined>;
     /**
-     * Select the operating systems on which policy should be applied
+     * Select the operating systems on which policy should be applied. Possible values: `AIX`, `LINUX`, `WINDOWS`
      */
     operatingSystems?: pulumi.Input<pulumi.Input<string>[] | undefined>;
     /**

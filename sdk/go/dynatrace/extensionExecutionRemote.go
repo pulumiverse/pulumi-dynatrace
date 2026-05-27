@@ -28,7 +28,7 @@ import (
 type ExtensionExecutionRemote struct {
 	pulumi.CustomResourceState
 
-	// Select performance profile for Extension Execution Controller [Documentation](https://www.dynatrace.com/support/help/shortlink/extensions-concepts#resource-consumption)
+	// Select performance profile for Extension Execution Controller [Documentation](https://www.dynatrace.com/support/help/shortlink/extensions-concepts#resource-consumption). Possible values: `DEDICATED`, `DEFAULT`, `HIGH`
 	PerformanceProfile pulumi.StringOutput `pulumi:"performanceProfile"`
 	// The scope of this setting (ENVIRONMENT*ACTIVE*GATE)
 	Scope pulumi.StringOutput `pulumi:"scope"`
@@ -70,14 +70,14 @@ func GetExtensionExecutionRemote(ctx *pulumi.Context,
 
 // Input properties used for looking up and filtering ExtensionExecutionRemote resources.
 type extensionExecutionRemoteState struct {
-	// Select performance profile for Extension Execution Controller [Documentation](https://www.dynatrace.com/support/help/shortlink/extensions-concepts#resource-consumption)
+	// Select performance profile for Extension Execution Controller [Documentation](https://www.dynatrace.com/support/help/shortlink/extensions-concepts#resource-consumption). Possible values: `DEDICATED`, `DEFAULT`, `HIGH`
 	PerformanceProfile *string `pulumi:"performanceProfile"`
 	// The scope of this setting (ENVIRONMENT*ACTIVE*GATE)
 	Scope *string `pulumi:"scope"`
 }
 
 type ExtensionExecutionRemoteState struct {
-	// Select performance profile for Extension Execution Controller [Documentation](https://www.dynatrace.com/support/help/shortlink/extensions-concepts#resource-consumption)
+	// Select performance profile for Extension Execution Controller [Documentation](https://www.dynatrace.com/support/help/shortlink/extensions-concepts#resource-consumption). Possible values: `DEDICATED`, `DEFAULT`, `HIGH`
 	PerformanceProfile pulumi.StringPtrInput
 	// The scope of this setting (ENVIRONMENT*ACTIVE*GATE)
 	Scope pulumi.StringPtrInput
@@ -88,7 +88,7 @@ func (ExtensionExecutionRemoteState) ElementType() reflect.Type {
 }
 
 type extensionExecutionRemoteArgs struct {
-	// Select performance profile for Extension Execution Controller [Documentation](https://www.dynatrace.com/support/help/shortlink/extensions-concepts#resource-consumption)
+	// Select performance profile for Extension Execution Controller [Documentation](https://www.dynatrace.com/support/help/shortlink/extensions-concepts#resource-consumption). Possible values: `DEDICATED`, `DEFAULT`, `HIGH`
 	PerformanceProfile string `pulumi:"performanceProfile"`
 	// The scope of this setting (ENVIRONMENT*ACTIVE*GATE)
 	Scope string `pulumi:"scope"`
@@ -96,7 +96,7 @@ type extensionExecutionRemoteArgs struct {
 
 // The set of arguments for constructing a ExtensionExecutionRemote resource.
 type ExtensionExecutionRemoteArgs struct {
-	// Select performance profile for Extension Execution Controller [Documentation](https://www.dynatrace.com/support/help/shortlink/extensions-concepts#resource-consumption)
+	// Select performance profile for Extension Execution Controller [Documentation](https://www.dynatrace.com/support/help/shortlink/extensions-concepts#resource-consumption). Possible values: `DEDICATED`, `DEFAULT`, `HIGH`
 	PerformanceProfile pulumi.StringInput
 	// The scope of this setting (ENVIRONMENT*ACTIVE*GATE)
 	Scope pulumi.StringInput
@@ -189,7 +189,7 @@ func (o ExtensionExecutionRemoteOutput) ToExtensionExecutionRemoteOutputWithCont
 	return o
 }
 
-// Select performance profile for Extension Execution Controller [Documentation](https://www.dynatrace.com/support/help/shortlink/extensions-concepts#resource-consumption)
+// Select performance profile for Extension Execution Controller [Documentation](https://www.dynatrace.com/support/help/shortlink/extensions-concepts#resource-consumption). Possible values: `DEDICATED`, `DEFAULT`, `HIGH`
 func (o ExtensionExecutionRemoteOutput) PerformanceProfile() pulumi.StringOutput {
 	return o.ApplyT(func(v *ExtensionExecutionRemote) pulumi.StringOutput { return v.PerformanceProfile }).(pulumi.StringOutput)
 }

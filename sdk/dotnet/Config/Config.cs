@@ -33,6 +33,9 @@ namespace Pulumiverse.Dynatrace
         private static readonly global::Pulumi.Config __config = new global::Pulumi.Config("dynatrace");
 
         private static readonly __Value<string?> _accountId = new __Value<string?>(() => __config.Get("accountId"));
+        /// <summary>
+        /// The Dynatrace account ID (UUID). Required for IAM (Account Management) resources. Also serves as a fallback for `IamAccountId`.
+        /// </summary>
         public static string? AccountId
         {
             get => _accountId.Get();
@@ -40,6 +43,9 @@ namespace Pulumiverse.Dynatrace
         }
 
         private static readonly __Value<string?> _automationClientId = new __Value<string?>(() => __config.Get("automationClientId"));
+        /// <summary>
+        /// The client ID of an OAuth client used for platform APIs. Falls back to `ClientId` if not specified.
+        /// </summary>
         public static string? AutomationClientId
         {
             get => _automationClientId.Get();
@@ -47,6 +53,9 @@ namespace Pulumiverse.Dynatrace
         }
 
         private static readonly __Value<string?> _automationClientSecret = new __Value<string?>(() => __config.Get("automationClientSecret"));
+        /// <summary>
+        /// The client secret of an OAuth client used for platform APIs. Falls back to `ClientSecret` if not specified.
+        /// </summary>
         public static string? AutomationClientSecret
         {
             get => _automationClientSecret.Get();
@@ -55,7 +64,7 @@ namespace Pulumiverse.Dynatrace
 
         private static readonly __Value<string?> _automationEnvUrl = new __Value<string?>(() => __config.Get("automationEnvUrl"));
         /// <summary>
-        /// The URL of the Dynatrace Environment with Platform capabilities turned on (`https://#####.apps.dynatrace.com)`. This is optional configuration when `DtEnvUrl` already specifies a SaaS Environment like `https://#####.live.dynatrace.com` or `https://#####.apps.dynatrace.com`
+        /// The URL of the Dynatrace platform environment (`https://#####.apps.dynatrace.com`). Falls back to `DtEnvUrl` if not specified.
         /// </summary>
         public static string? AutomationEnvUrl
         {
@@ -65,7 +74,7 @@ namespace Pulumiverse.Dynatrace
 
         private static readonly __Value<string?> _automationTokenUrl = new __Value<string?>(() => __config.Get("automationTokenUrl"));
         /// <summary>
-        /// The URL that provides the Bearer tokens when accessing the Automation REST API. This is optional configuration when `DtEnvUrl` already specifies a SaaS Environment like `https://#####.live.dynatrace.com` or `https://#####.apps.dynatrace.com`
+        /// The token URL for obtaining access tokens via OAuth for the platform APIs. Default: `https://sso.dynatrace.com/sso/oauth2/token`.
         /// </summary>
         public static string? AutomationTokenUrl
         {
@@ -74,6 +83,9 @@ namespace Pulumiverse.Dynatrace
         }
 
         private static readonly __Value<string?> _clientId = new __Value<string?>(() => __config.Get("clientId"));
+        /// <summary>
+        /// The client ID of an OAuth client used for  platform APIs. Also serves as a fallback for `IamClientId` and `AutomationClientId`.
+        /// </summary>
         public static string? ClientId
         {
             get => _clientId.Get();
@@ -81,6 +93,9 @@ namespace Pulumiverse.Dynatrace
         }
 
         private static readonly __Value<string?> _clientSecret = new __Value<string?>(() => __config.Get("clientSecret"));
+        /// <summary>
+        /// The client secret of an OAuth client used for platform APIs. Also serves as a fallback for `IamClientSecret` and `AutomationClientSecret`.
+        /// </summary>
         public static string? ClientSecret
         {
             get => _clientSecret.Get();
@@ -88,6 +103,9 @@ namespace Pulumiverse.Dynatrace
         }
 
         private static readonly __Value<string?> _dtApiToken = new __Value<string?>(() => __config.Get("dtApiToken") ?? Utilities.GetEnv("DYNATRACE_API_TOKEN", "DT_API_TOKEN"));
+        /// <summary>
+        /// The API token for classic Dynatrace APIs.
+        /// </summary>
         public static string? DtApiToken
         {
             get => _dtApiToken.Get();
@@ -95,6 +113,9 @@ namespace Pulumiverse.Dynatrace
         }
 
         private static readonly __Value<string?> _dtClusterApiToken = new __Value<string?>(() => __config.Get("dtClusterApiToken") ?? Utilities.GetEnv("DYNATRACE_CLUSTER_API_TOKEN", "DT_CLUSTER_API_TOKEN"));
+        /// <summary>
+        /// The API token for Dynatrace Managed cluster APIs.
+        /// </summary>
         public static string? DtClusterApiToken
         {
             get => _dtClusterApiToken.Get();
@@ -102,6 +123,9 @@ namespace Pulumiverse.Dynatrace
         }
 
         private static readonly __Value<string?> _dtClusterUrl = new __Value<string?>(() => __config.Get("dtClusterUrl") ?? Utilities.GetEnv("DYNATRACE_CLUSTER_URL", "DT_CLUSTER_URL"));
+        /// <summary>
+        /// The URL of the Dynatrace Managed cluster.
+        /// </summary>
         public static string? DtClusterUrl
         {
             get => _dtClusterUrl.Get();
@@ -109,6 +133,9 @@ namespace Pulumiverse.Dynatrace
         }
 
         private static readonly __Value<string?> _dtEnvUrl = new __Value<string?>(() => __config.Get("dtEnvUrl") ?? Utilities.GetEnv("DYNATRACE_ENV_URL", "DT_ENV_URL"));
+        /// <summary>
+        /// The URL of the Dynatrace environment (e.g. `https://#####.live.dynatrace.com` or `https://#####.apps.dynatrace.com`).
+        /// </summary>
         public static string? DtEnvUrl
         {
             get => _dtEnvUrl.Get();
@@ -116,6 +143,9 @@ namespace Pulumiverse.Dynatrace
         }
 
         private static readonly __Value<string?> _iamAccountId = new __Value<string?>(() => __config.Get("iamAccountId"));
+        /// <summary>
+        /// The Dynatrace account ID (UUID). Required for IAM (Account Management) resources. Falls back to `AccountId` if not specified.
+        /// </summary>
         public static string? IamAccountId
         {
             get => _iamAccountId.Get();
@@ -123,6 +153,9 @@ namespace Pulumiverse.Dynatrace
         }
 
         private static readonly __Value<string?> _iamClientId = new __Value<string?>(() => __config.Get("iamClientId"));
+        /// <summary>
+        /// The client ID of an OAuth client used for the IAM (Account Management) API. Falls back to `ClientId` if not specified.
+        /// </summary>
         public static string? IamClientId
         {
             get => _iamClientId.Get();
@@ -130,6 +163,9 @@ namespace Pulumiverse.Dynatrace
         }
 
         private static readonly __Value<string?> _iamClientSecret = new __Value<string?>(() => __config.Get("iamClientSecret"));
+        /// <summary>
+        /// The client secret of an OAuth client used for the IAM (Account Management) API. Falls back to `ClientSecret` if not specified.
+        /// </summary>
         public static string? IamClientSecret
         {
             get => _iamClientSecret.Get();
@@ -137,6 +173,9 @@ namespace Pulumiverse.Dynatrace
         }
 
         private static readonly __Value<string?> _iamEndpointUrl = new __Value<string?>(() => __config.Get("iamEndpointUrl"));
+        /// <summary>
+        /// The endpoint URL for the IAM (Account Management) API. Default: `https://api.dynatrace.com`.
+        /// </summary>
         public static string? IamEndpointUrl
         {
             get => _iamEndpointUrl.Get();
@@ -144,6 +183,9 @@ namespace Pulumiverse.Dynatrace
         }
 
         private static readonly __Value<string?> _iamTokenUrl = new __Value<string?>(() => __config.Get("iamTokenUrl"));
+        /// <summary>
+        /// The token URL for obtaining access tokens via OAuth for the IAM (Account Management) API. Default: `https://sso.dynatrace.com/sso/oauth2/token`.
+        /// </summary>
         public static string? IamTokenUrl
         {
             get => _iamTokenUrl.Get();
@@ -152,7 +194,7 @@ namespace Pulumiverse.Dynatrace
 
         private static readonly __Value<string?> _platformToken = new __Value<string?>(() => __config.Get("platformToken"));
         /// <summary>
-        /// A Dynatrace Platform Token. Specifying such a token allows for easy authentication against Platform resources. In such a case it supersedes `AutomationClientId`, `AutomationClientSecret`, `AutomationTokenUrl` and `AutomationEnvUrl`
+        /// The Dynatrace platform token used for platform APIs. When specified, it is used in preference to `ClientId`, `ClientSecret`, `AutomationClientId`, `AutomationClientSecret`, `AutomationTokenUrl`, and `AutomationEnvUrl` for platform requests. Platform tokens can't be used for IAM (Account Management) or classic resources.
         /// </summary>
         public static string? PlatformToken
         {

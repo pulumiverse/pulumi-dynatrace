@@ -272,6 +272,8 @@ class HubExtensionConfig(pulumi.CustomResource):
                  value: pulumi.Input[Optional[_builtins.str]] = None,
                  __props__=None):
         """
+        > This resource is deprecated by `HubExtensionV2Config` and will be removed in a future release. Please migrate to the new resource.
+
         > This resource requires the API token scopes `extensions.write`, `extension.read` and `hub.read`.
 
         This resource configures a monitoring configuration for the given extension with the specified version. In case the extension has not yet gotten installed for the specified version the installation happens automatically.
@@ -299,6 +301,9 @@ class HubExtensionConfig(pulumi.CustomResource):
         for `management_zone` and `active_gate_group` you are required to specify the **name** and not the ID.
 
         The `value` attribute differs depending on the Extension you want to configure. The expected format is JSON. We recommend to navigate via WebUI to the Dynatrace Hub and configure such an Extension there - the WebUI provides you with the correct JSON code to use.
+
+        > **Note:** Some extensions may reference IDs of other Dynatrace API resources (e.g. credentials, alerting profiles, and management zones) within the `value` attribute.
+        This type of cross-resource reference is **not automatically resolved or tracked** by this provider, and we're **unable to provide guidance on fully configuring this resource or its dependencies** in Terraform.
 
         For defining which version of a specific Extension should currently be active you can use the resource `HubExtensionActiveVersion`.
 
@@ -354,6 +359,8 @@ class HubExtensionConfig(pulumi.CustomResource):
                  args: HubExtensionConfigArgs,
                  opts: Optional[pulumi.ResourceOptions] = None):
         """
+        > This resource is deprecated by `HubExtensionV2Config` and will be removed in a future release. Please migrate to the new resource.
+
         > This resource requires the API token scopes `extensions.write`, `extension.read` and `hub.read`.
 
         This resource configures a monitoring configuration for the given extension with the specified version. In case the extension has not yet gotten installed for the specified version the installation happens automatically.
@@ -381,6 +388,9 @@ class HubExtensionConfig(pulumi.CustomResource):
         for `management_zone` and `active_gate_group` you are required to specify the **name** and not the ID.
 
         The `value` attribute differs depending on the Extension you want to configure. The expected format is JSON. We recommend to navigate via WebUI to the Dynatrace Hub and configure such an Extension there - the WebUI provides you with the correct JSON code to use.
+
+        > **Note:** Some extensions may reference IDs of other Dynatrace API resources (e.g. credentials, alerting profiles, and management zones) within the `value` attribute.
+        This type of cross-resource reference is **not automatically resolved or tracked** by this provider, and we're **unable to provide guidance on fully configuring this resource or its dependencies** in Terraform.
 
         For defining which version of a specific Extension should currently be active you can use the resource `HubExtensionActiveVersion`.
 

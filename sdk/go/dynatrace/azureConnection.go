@@ -91,7 +91,7 @@ import (
 //				ClientSecret: &dynatrace.AzureConnectionClientSecretArgs{
 //					ClientSecret:  exampleApplicationPassword.Value,
 //					ApplicationId: example.ClientId,
-//					DirectoryId:   pulumi.String(azureTenantId),
+//					DirectoryId:   pulumi.String(pulumi.String(azureTenantId)),
 //					Consumers: pulumi.StringArray{
 //						pulumi.String("DA"),
 //					},
@@ -157,7 +157,7 @@ import (
 //				Audiences: pulumi.StringArray{
 //					pulumi.Sprintf("%v/app-id/dynatrace.microsoft.azure.connector", dynatraceEnvironmentUrl),
 //				},
-//				Issuer: pulumi.String(dynatraceTokenIssuer),
+//				Issuer: pulumi.String(pulumi.String(dynatraceTokenIssuer)),
 //				Subject: exampleAzureConnection.ID().ApplyT(func(id string) (string, error) {
 //					return fmt.Sprintf("dt:connection-id/%v", id), nil
 //				}).(pulumi.StringOutput),
@@ -169,7 +169,7 @@ import (
 //			_, err = dynatrace.NewAzureConnectionAuthentication(ctx, "example", &dynatrace.AzureConnectionAuthenticationArgs{
 //				AzureConnectionId: exampleAzureConnection.ID(),
 //				ApplicationId:     example.ClientId,
-//				DirectoryId:       pulumi.String(azureTenantId),
+//				DirectoryId:       pulumi.String(pulumi.String(azureTenantId)),
 //			})
 //			if err != nil {
 //				return err
@@ -188,7 +188,7 @@ type AzureConnection struct {
 	FederatedIdentityCredential AzureConnectionFederatedIdentityCredentialPtrOutput `pulumi:"federatedIdentityCredential"`
 	// The name of the connection
 	Name pulumi.StringOutput `pulumi:"name"`
-	// Azure Authentication mechanism to be used by the connection. Possible Values: `clientSecret`, `federatedIdentityCredential`
+	// Azure Authentication mechanism to be used by the connection. Possible values: `clientSecret`, `federatedIdentityCredential`
 	Type pulumi.StringOutput `pulumi:"type"`
 }
 
@@ -231,7 +231,7 @@ type azureConnectionState struct {
 	FederatedIdentityCredential *AzureConnectionFederatedIdentityCredential `pulumi:"federatedIdentityCredential"`
 	// The name of the connection
 	Name *string `pulumi:"name"`
-	// Azure Authentication mechanism to be used by the connection. Possible Values: `clientSecret`, `federatedIdentityCredential`
+	// Azure Authentication mechanism to be used by the connection. Possible values: `clientSecret`, `federatedIdentityCredential`
 	Type *string `pulumi:"type"`
 }
 
@@ -242,7 +242,7 @@ type AzureConnectionState struct {
 	FederatedIdentityCredential AzureConnectionFederatedIdentityCredentialPtrInput
 	// The name of the connection
 	Name pulumi.StringPtrInput
-	// Azure Authentication mechanism to be used by the connection. Possible Values: `clientSecret`, `federatedIdentityCredential`
+	// Azure Authentication mechanism to be used by the connection. Possible values: `clientSecret`, `federatedIdentityCredential`
 	Type pulumi.StringPtrInput
 }
 
@@ -257,7 +257,7 @@ type azureConnectionArgs struct {
 	FederatedIdentityCredential *AzureConnectionFederatedIdentityCredential `pulumi:"federatedIdentityCredential"`
 	// The name of the connection
 	Name *string `pulumi:"name"`
-	// Azure Authentication mechanism to be used by the connection. Possible Values: `clientSecret`, `federatedIdentityCredential`
+	// Azure Authentication mechanism to be used by the connection. Possible values: `clientSecret`, `federatedIdentityCredential`
 	Type string `pulumi:"type"`
 }
 
@@ -269,7 +269,7 @@ type AzureConnectionArgs struct {
 	FederatedIdentityCredential AzureConnectionFederatedIdentityCredentialPtrInput
 	// The name of the connection
 	Name pulumi.StringPtrInput
-	// Azure Authentication mechanism to be used by the connection. Possible Values: `clientSecret`, `federatedIdentityCredential`
+	// Azure Authentication mechanism to be used by the connection. Possible values: `clientSecret`, `federatedIdentityCredential`
 	Type pulumi.StringInput
 }
 
@@ -377,7 +377,7 @@ func (o AzureConnectionOutput) Name() pulumi.StringOutput {
 	return o.ApplyT(func(v *AzureConnection) pulumi.StringOutput { return v.Name }).(pulumi.StringOutput)
 }
 
-// Azure Authentication mechanism to be used by the connection. Possible Values: `clientSecret`, `federatedIdentityCredential`
+// Azure Authentication mechanism to be used by the connection. Possible values: `clientSecret`, `federatedIdentityCredential`
 func (o AzureConnectionOutput) Type() pulumi.StringOutput {
 	return o.ApplyT(func(v *AzureConnection) pulumi.StringOutput { return v.Type }).(pulumi.StringOutput)
 }

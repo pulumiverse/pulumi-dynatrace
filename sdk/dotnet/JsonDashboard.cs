@@ -26,6 +26,681 @@ namespace Pulumiverse.Dynatrace
     /// - `terraform-provider-dynatrace -export dynatrace.JsonDashboard` downloads all existing dashboard configuration
     /// 
     /// The full documentation of the export feature is available [here](https://dt-url.net/h203qmc).
+    /// 
+    /// ## Resource Example Usage
+    /// 
+    /// ```csharp
+    /// using System.Collections.Generic;
+    /// using System.Linq;
+    /// using System.Text.Json;
+    /// using Pulumi;
+    /// using Dynatrace = Pulumiverse.Dynatrace;
+    /// 
+    /// return await Deployment.RunAsync(() =&gt; 
+    /// {
+    ///     var name = new Dynatrace.JsonDashboard("name", new()
+    ///     {
+    ///         Contents = JsonSerializer.Serialize(new Dictionary&lt;string, object?&gt;
+    ///         {
+    ///             ["dashboardMetadata"] = new Dictionary&lt;string, object?&gt;
+    ///             {
+    ///                 ["name"] = "Performance overview",
+    ///                 ["shared"] = true,
+    ///                 ["owner"] = "Dynatrace",
+    ///                 ["tags"] = new[]
+    ///                 {
+    ///                     "performance",
+    ///                 },
+    ///                 ["preset"] = true,
+    ///                 ["hasConsistentColors"] = false,
+    ///             },
+    ///             ["tiles"] = new[]
+    ///             {
+    ///                 new Dictionary&lt;string, object?&gt;
+    ///                 {
+    ///                     ["name"] = "Performance",
+    ///                     ["tileType"] = "HEADER",
+    ///                     ["configured"] = true,
+    ///                     ["bounds"] = new Dictionary&lt;string, object?&gt;
+    ///                     {
+    ///                         ["top"] = 0,
+    ///                         ["left"] = 38,
+    ///                         ["width"] = 1026,
+    ///                         ["height"] = 38,
+    ///                     },
+    ///                     ["tileFilter"] = new Dictionary&lt;string, object?&gt;
+    ///                     {
+    ///                     },
+    ///                     ["isAutoRefreshDisabled"] = true,
+    ///                 },
+    ///                 new Dictionary&lt;string, object?&gt;
+    ///                 {
+    ///                     ["name"] = "Failure rate by service",
+    ///                     ["tileType"] = "DATA_EXPLORER",
+    ///                     ["configured"] = true,
+    ///                     ["bounds"] = new Dictionary&lt;string, object?&gt;
+    ///                     {
+    ///                         ["top"] = 342,
+    ///                         ["left"] = 38,
+    ///                         ["width"] = 342,
+    ///                         ["height"] = 304,
+    ///                     },
+    ///                     ["tileFilter"] = new Dictionary&lt;string, object?&gt;
+    ///                     {
+    ///                     },
+    ///                     ["isAutoRefreshDisabled"] = true,
+    ///                     ["customName"] = "Successful calls by service instance",
+    ///                     ["queries"] = new[]
+    ///                     {
+    ///                         new Dictionary&lt;string, object?&gt;
+    ///                         {
+    ///                             ["id"] = "A",
+    ///                             ["metric"] = "builtin:service.errors.total.rate",
+    ///                             ["spaceAggregation"] = "AUTO",
+    ///                             ["timeAggregation"] = "DEFAULT",
+    ///                             ["splitBy"] = new[]
+    ///                             {
+    ///                                 "dt.entity.service",
+    ///                             },
+    ///                             ["sortBy"] = "DESC",
+    ///                             ["sortByDimension"] = "",
+    ///                             ["filterBy"] = new Dictionary&lt;string, object?&gt;
+    ///                             {
+    ///                                 ["nestedFilters"] = new[]
+    ///                                 {
+    ///                                 },
+    ///                                 ["criteria"] = new[]
+    ///                                 {
+    ///                                 },
+    ///                             },
+    ///                             ["limit"] = 20,
+    ///                             ["rate"] = "NONE",
+    ///                             ["enabled"] = true,
+    ///                         },
+    ///                     },
+    ///                     ["visualConfig"] = new Dictionary&lt;string, object?&gt;
+    ///                     {
+    ///                         ["type"] = "TOP_LIST",
+    ///                         ["global"] = new Dictionary&lt;string, object?&gt;
+    ///                         {
+    ///                             ["hideLegend"] = false,
+    ///                         },
+    ///                         ["rules"] = new[]
+    ///                         {
+    ///                             new Dictionary&lt;string, object?&gt;
+    ///                             {
+    ///                                 ["matcher"] = "A:",
+    ///                                 ["properties"] = new Dictionary&lt;string, object?&gt;
+    ///                                 {
+    ///                                     ["color"] = "DEFAULT",
+    ///                                 },
+    ///                                 ["seriesOverrides"] = new[]
+    ///                                 {
+    ///                                 },
+    ///                             },
+    ///                         },
+    ///                         ["axes"] = new Dictionary&lt;string, object?&gt;
+    ///                         {
+    ///                             ["xAxis"] = new Dictionary&lt;string, object?&gt;
+    ///                             {
+    ///                                 ["visible"] = true,
+    ///                             },
+    ///                             ["yAxes"] = new[]
+    ///                             {
+    ///                             },
+    ///                         },
+    ///                         ["heatmapSettings"] = new Dictionary&lt;string, object?&gt;
+    ///                         {
+    ///                             ["yAxis"] = "VALUE",
+    ///                         },
+    ///                         ["singleValueSettings"] = new Dictionary&lt;string, object?&gt;
+    ///                         {
+    ///                             ["showSparkLine"] = true,
+    ///                         },
+    ///                         ["thresholds"] = new[]
+    ///                         {
+    ///                             new Dictionary&lt;string, object?&gt;
+    ///                             {
+    ///                                 ["axisTarget"] = "LEFT",
+    ///                                 ["rules"] = new[]
+    ///                                 {
+    ///                                     new Dictionary&lt;string, object?&gt;
+    ///                                     {
+    ///                                         ["color"] = "#7dc540",
+    ///                                     },
+    ///                                     new Dictionary&lt;string, object?&gt;
+    ///                                     {
+    ///                                         ["color"] = "#f5d30f",
+    ///                                     },
+    ///                                     new Dictionary&lt;string, object?&gt;
+    ///                                     {
+    ///                                         ["color"] = "#dc172a",
+    ///                                     },
+    ///                                 },
+    ///                                 ["visible"] = true,
+    ///                             },
+    ///                         },
+    ///                         ["tableSettings"] = new Dictionary&lt;string, object?&gt;
+    ///                         {
+    ///                             ["hiddenColumns"] = new[]
+    ///                             {
+    ///                             },
+    ///                         },
+    ///                         ["graphChartSettings"] = new Dictionary&lt;string, object?&gt;
+    ///                         {
+    ///                             ["connectNulls"] = false,
+    ///                         },
+    ///                         ["honeycombSettings"] = new Dictionary&lt;string, object?&gt;
+    ///                         {
+    ///                             ["showHive"] = true,
+    ///                             ["showLegend"] = true,
+    ///                             ["showLabels"] = false,
+    ///                         },
+    ///                     },
+    ///                     ["queriesSettings"] = new Dictionary&lt;string, object?&gt;
+    ///                     {
+    ///                         ["resolution"] = "",
+    ///                     },
+    ///                     ["metricExpressions"] = new[]
+    ///                     {
+    ///                         "resolution=Inf&amp;(builtin:service.errors.total.rate:splitBy(\"dt.entity.service\"):sort(value(auto,descending)):limit(20)):limit(100):names",
+    ///                     },
+    ///                 },
+    ///                 new Dictionary&lt;string, object?&gt;
+    ///                 {
+    ///                     ["name"] = "Total calls",
+    ///                     ["tileType"] = "DATA_EXPLORER",
+    ///                     ["configured"] = true,
+    ///                     ["bounds"] = new Dictionary&lt;string, object?&gt;
+    ///                     {
+    ///                         ["top"] = 38,
+    ///                         ["left"] = 38,
+    ///                         ["width"] = 342,
+    ///                         ["height"] = 304,
+    ///                     },
+    ///                     ["tileFilter"] = new Dictionary&lt;string, object?&gt;
+    ///                     {
+    ///                     },
+    ///                     ["isAutoRefreshDisabled"] = true,
+    ///                     ["customName"] = "Total calls",
+    ///                     ["queries"] = new[]
+    ///                     {
+    ///                         new Dictionary&lt;string, object?&gt;
+    ///                         {
+    ///                             ["id"] = "A",
+    ///                             ["metric"] = "builtin:service.errors.total.successCount",
+    ///                             ["spaceAggregation"] = "SUM",
+    ///                             ["timeAggregation"] = "DEFAULT",
+    ///                             ["splitBy"] = new[]
+    ///                             {
+    ///                                 "dt.entity.service",
+    ///                             },
+    ///                             ["sortBy"] = "DESC",
+    ///                             ["sortByDimension"] = "",
+    ///                             ["filterBy"] = new Dictionary&lt;string, object?&gt;
+    ///                             {
+    ///                                 ["nestedFilters"] = new[]
+    ///                                 {
+    ///                                 },
+    ///                                 ["criteria"] = new[]
+    ///                                 {
+    ///                                 },
+    ///                             },
+    ///                             ["limit"] = 20,
+    ///                             ["rate"] = "NONE",
+    ///                             ["enabled"] = true,
+    ///                         },
+    ///                         new Dictionary&lt;string, object?&gt;
+    ///                         {
+    ///                             ["id"] = "B",
+    ///                             ["metric"] = "builtin:service.errors.fourxx.successCount",
+    ///                             ["spaceAggregation"] = "SUM",
+    ///                             ["timeAggregation"] = "DEFAULT",
+    ///                             ["splitBy"] = new[]
+    ///                             {
+    ///                                 "dt.entity.service",
+    ///                             },
+    ///                             ["sortBy"] = "DESC",
+    ///                             ["sortByDimension"] = "",
+    ///                             ["filterBy"] = new Dictionary&lt;string, object?&gt;
+    ///                             {
+    ///                                 ["nestedFilters"] = new[]
+    ///                                 {
+    ///                                 },
+    ///                                 ["criteria"] = new[]
+    ///                                 {
+    ///                                 },
+    ///                             },
+    ///                             ["limit"] = 20,
+    ///                             ["rate"] = "NONE",
+    ///                             ["enabled"] = true,
+    ///                         },
+    ///                         new Dictionary&lt;string, object?&gt;
+    ///                         {
+    ///                             ["id"] = "C",
+    ///                             ["metric"] = "builtin:service.errors.fivexx.successCount",
+    ///                             ["spaceAggregation"] = "SUM",
+    ///                             ["timeAggregation"] = "DEFAULT",
+    ///                             ["splitBy"] = new[]
+    ///                             {
+    ///                                 "dt.entity.service",
+    ///                             },
+    ///                             ["sortBy"] = "DESC",
+    ///                             ["sortByDimension"] = "",
+    ///                             ["filterBy"] = new Dictionary&lt;string, object?&gt;
+    ///                             {
+    ///                                 ["nestedFilters"] = new[]
+    ///                                 {
+    ///                                 },
+    ///                                 ["criteria"] = new[]
+    ///                                 {
+    ///                                 },
+    ///                             },
+    ///                             ["limit"] = 20,
+    ///                             ["rate"] = "NONE",
+    ///                             ["enabled"] = true,
+    ///                         },
+    ///                     },
+    ///                     ["visualConfig"] = new Dictionary&lt;string, object?&gt;
+    ///                     {
+    ///                         ["type"] = "STACKED_AREA",
+    ///                         ["global"] = new Dictionary&lt;string, object?&gt;
+    ///                         {
+    ///                             ["hideLegend"] = false,
+    ///                         },
+    ///                         ["rules"] = new[]
+    ///                         {
+    ///                             new Dictionary&lt;string, object?&gt;
+    ///                             {
+    ///                                 ["matcher"] = "A:",
+    ///                                 ["properties"] = new Dictionary&lt;string, object?&gt;
+    ///                                 {
+    ///                                     ["color"] = "DEFAULT",
+    ///                                 },
+    ///                                 ["seriesOverrides"] = new[]
+    ///                                 {
+    ///                                 },
+    ///                             },
+    ///                             new Dictionary&lt;string, object?&gt;
+    ///                             {
+    ///                                 ["matcher"] = "B:",
+    ///                                 ["properties"] = new Dictionary&lt;string, object?&gt;
+    ///                                 {
+    ///                                     ["color"] = "DEFAULT",
+    ///                                 },
+    ///                                 ["seriesOverrides"] = new[]
+    ///                                 {
+    ///                                 },
+    ///                             },
+    ///                             new Dictionary&lt;string, object?&gt;
+    ///                             {
+    ///                                 ["matcher"] = "C:",
+    ///                                 ["properties"] = new Dictionary&lt;string, object?&gt;
+    ///                                 {
+    ///                                     ["color"] = "DEFAULT",
+    ///                                 },
+    ///                                 ["seriesOverrides"] = new[]
+    ///                                 {
+    ///                                 },
+    ///                             },
+    ///                         },
+    ///                         ["axes"] = new Dictionary&lt;string, object?&gt;
+    ///                         {
+    ///                             ["xAxis"] = new Dictionary&lt;string, object?&gt;
+    ///                             {
+    ///                                 ["displayName"] = "",
+    ///                                 ["visible"] = true,
+    ///                             },
+    ///                             ["yAxes"] = new[]
+    ///                             {
+    ///                                 new Dictionary&lt;string, object?&gt;
+    ///                                 {
+    ///                                     ["displayName"] = "",
+    ///                                     ["visible"] = true,
+    ///                                     ["min"] = "AUTO",
+    ///                                     ["max"] = "AUTO",
+    ///                                     ["position"] = "LEFT",
+    ///                                     ["queryIds"] = new[]
+    ///                                     {
+    ///                                         "A",
+    ///                                         "B",
+    ///                                         "C",
+    ///                                     },
+    ///                                     ["defaultAxis"] = true,
+    ///                                 },
+    ///                             },
+    ///                         },
+    ///                         ["heatmapSettings"] = new Dictionary&lt;string, object?&gt;
+    ///                         {
+    ///                             ["yAxis"] = "VALUE",
+    ///                         },
+    ///                         ["singleValueSettings"] = new Dictionary&lt;string, object?&gt;
+    ///                         {
+    ///                             ["showSparkLine"] = true,
+    ///                         },
+    ///                         ["thresholds"] = new[]
+    ///                         {
+    ///                             new Dictionary&lt;string, object?&gt;
+    ///                             {
+    ///                                 ["axisTarget"] = "LEFT",
+    ///                                 ["rules"] = new[]
+    ///                                 {
+    ///                                     new Dictionary&lt;string, object?&gt;
+    ///                                     {
+    ///                                         ["color"] = "#7dc540",
+    ///                                     },
+    ///                                     new Dictionary&lt;string, object?&gt;
+    ///                                     {
+    ///                                         ["color"] = "#f5d30f",
+    ///                                     },
+    ///                                     new Dictionary&lt;string, object?&gt;
+    ///                                     {
+    ///                                         ["color"] = "#dc172a",
+    ///                                     },
+    ///                                 },
+    ///                                 ["visible"] = true,
+    ///                             },
+    ///                         },
+    ///                         ["tableSettings"] = new Dictionary&lt;string, object?&gt;
+    ///                         {
+    ///                             ["hiddenColumns"] = new[]
+    ///                             {
+    ///                             },
+    ///                         },
+    ///                         ["graphChartSettings"] = new Dictionary&lt;string, object?&gt;
+    ///                         {
+    ///                             ["connectNulls"] = false,
+    ///                         },
+    ///                         ["honeycombSettings"] = new Dictionary&lt;string, object?&gt;
+    ///                         {
+    ///                             ["showHive"] = true,
+    ///                             ["showLegend"] = true,
+    ///                             ["showLabels"] = false,
+    ///                         },
+    ///                     },
+    ///                     ["queriesSettings"] = new Dictionary&lt;string, object?&gt;
+    ///                     {
+    ///                         ["resolution"] = "",
+    ///                     },
+    ///                     ["metricExpressions"] = new[]
+    ///                     {
+    ///                         "resolution=null&amp;(builtin:service.errors.total.successCount:splitBy(\"dt.entity.service\"):sum:sort(value(sum,descending)):limit(20)):limit(100):names,(builtin:service.errors.fourxx.successCount:splitBy(\"dt.entity.service\"):sum:sort(value(sum,descending)):limit(20)):limit(100):names,(builtin:service.errors.fivexx.successCount:splitBy(\"dt.entity.service\"):sum:sort(value(sum,descending)):limit(20)):limit(100):names",
+    ///                     },
+    ///                 },
+    ///                 new Dictionary&lt;string, object?&gt;
+    ///                 {
+    ///                     ["name"] = "Total errors",
+    ///                     ["tileType"] = "DATA_EXPLORER",
+    ///                     ["configured"] = true,
+    ///                     ["bounds"] = new Dictionary&lt;string, object?&gt;
+    ///                     {
+    ///                         ["top"] = 38,
+    ///                         ["left"] = 380,
+    ///                         ["width"] = 342,
+    ///                         ["height"] = 304,
+    ///                     },
+    ///                     ["tileFilter"] = new Dictionary&lt;string, object?&gt;
+    ///                     {
+    ///                     },
+    ///                     ["isAutoRefreshDisabled"] = true,
+    ///                     ["customName"] = "Total errors",
+    ///                     ["queries"] = new[]
+    ///                     {
+    ///                         new Dictionary&lt;string, object?&gt;
+    ///                         {
+    ///                             ["id"] = "A",
+    ///                             ["metric"] = "builtin:service.errors.total.count",
+    ///                             ["spaceAggregation"] = "SUM",
+    ///                             ["timeAggregation"] = "DEFAULT",
+    ///                             ["splitBy"] = new[]
+    ///                             {
+    ///                             },
+    ///                             ["sortBy"] = "DESC",
+    ///                             ["sortByDimension"] = "",
+    ///                             ["filterBy"] = new Dictionary&lt;string, object?&gt;
+    ///                             {
+    ///                                 ["nestedFilters"] = new[]
+    ///                                 {
+    ///                                 },
+    ///                                 ["criteria"] = new[]
+    ///                                 {
+    ///                                 },
+    ///                             },
+    ///                             ["limit"] = 20,
+    ///                             ["rate"] = "NONE",
+    ///                             ["enabled"] = true,
+    ///                         },
+    ///                     },
+    ///                     ["visualConfig"] = new Dictionary&lt;string, object?&gt;
+    ///                     {
+    ///                         ["type"] = "SINGLE_VALUE",
+    ///                         ["global"] = new Dictionary&lt;string, object?&gt;
+    ///                         {
+    ///                             ["hideLegend"] = false,
+    ///                         },
+    ///                         ["rules"] = new[]
+    ///                         {
+    ///                             new Dictionary&lt;string, object?&gt;
+    ///                             {
+    ///                                 ["matcher"] = "A:",
+    ///                                 ["properties"] = new Dictionary&lt;string, object?&gt;
+    ///                                 {
+    ///                                     ["color"] = "DEFAULT",
+    ///                                 },
+    ///                                 ["seriesOverrides"] = new[]
+    ///                                 {
+    ///                                 },
+    ///                             },
+    ///                         },
+    ///                         ["axes"] = new Dictionary&lt;string, object?&gt;
+    ///                         {
+    ///                             ["xAxis"] = new Dictionary&lt;string, object?&gt;
+    ///                             {
+    ///                                 ["visible"] = true,
+    ///                             },
+    ///                             ["yAxes"] = new[]
+    ///                             {
+    ///                             },
+    ///                         },
+    ///                         ["heatmapSettings"] = new Dictionary&lt;string, object?&gt;
+    ///                         {
+    ///                             ["yAxis"] = "VALUE",
+    ///                         },
+    ///                         ["singleValueSettings"] = new Dictionary&lt;string, object?&gt;
+    ///                         {
+    ///                             ["showTrend"] = false,
+    ///                             ["showSparkLine"] = true,
+    ///                             ["linkTileColorToThreshold"] = false,
+    ///                         },
+    ///                         ["thresholds"] = new[]
+    ///                         {
+    ///                             new Dictionary&lt;string, object?&gt;
+    ///                             {
+    ///                                 ["axisTarget"] = "LEFT",
+    ///                                 ["rules"] = new[]
+    ///                                 {
+    ///                                     new Dictionary&lt;string, object?&gt;
+    ///                                     {
+    ///                                         ["color"] = "#7dc540",
+    ///                                     },
+    ///                                     new Dictionary&lt;string, object?&gt;
+    ///                                     {
+    ///                                         ["color"] = "#f5d30f",
+    ///                                     },
+    ///                                     new Dictionary&lt;string, object?&gt;
+    ///                                     {
+    ///                                         ["color"] = "#dc172a",
+    ///                                     },
+    ///                                 },
+    ///                                 ["visible"] = true,
+    ///                             },
+    ///                         },
+    ///                         ["tableSettings"] = new Dictionary&lt;string, object?&gt;
+    ///                         {
+    ///                             ["hiddenColumns"] = new[]
+    ///                             {
+    ///                             },
+    ///                         },
+    ///                         ["graphChartSettings"] = new Dictionary&lt;string, object?&gt;
+    ///                         {
+    ///                             ["connectNulls"] = false,
+    ///                         },
+    ///                         ["honeycombSettings"] = new Dictionary&lt;string, object?&gt;
+    ///                         {
+    ///                             ["showHive"] = true,
+    ///                             ["showLegend"] = true,
+    ///                             ["showLabels"] = false,
+    ///                         },
+    ///                     },
+    ///                     ["queriesSettings"] = new Dictionary&lt;string, object?&gt;
+    ///                     {
+    ///                         ["resolution"] = "",
+    ///                     },
+    ///                     ["metricExpressions"] = new[]
+    ///                     {
+    ///                         "resolution=Inf&amp;(builtin:service.errors.total.count:splitBy():sum:sort(value(sum,descending)):limit(20)):limit(100):names",
+    ///                         "resolution=null&amp;(builtin:service.errors.total.count:splitBy():sum:sort(value(sum,descending)):limit(20))",
+    ///                     },
+    ///                 },
+    ///                 new Dictionary&lt;string, object?&gt;
+    ///                 {
+    ///                     ["name"] = "Client side errors",
+    ///                     ["tileType"] = "DATA_EXPLORER",
+    ///                     ["configured"] = true,
+    ///                     ["bounds"] = new Dictionary&lt;string, object?&gt;
+    ///                     {
+    ///                         ["top"] = 38,
+    ///                         ["left"] = 722,
+    ///                         ["width"] = 342,
+    ///                         ["height"] = 304,
+    ///                     },
+    ///                     ["tileFilter"] = new Dictionary&lt;string, object?&gt;
+    ///                     {
+    ///                     },
+    ///                     ["isAutoRefreshDisabled"] = true,
+    ///                     ["customName"] = "Client &amp; server errors by operation",
+    ///                     ["queries"] = new[]
+    ///                     {
+    ///                         new Dictionary&lt;string, object?&gt;
+    ///                         {
+    ///                             ["id"] = "A",
+    ///                             ["metric"] = "builtin:service.errors.client.count",
+    ///                             ["spaceAggregation"] = "SUM",
+    ///                             ["timeAggregation"] = "DEFAULT",
+    ///                             ["splitBy"] = new[]
+    ///                             {
+    ///                             },
+    ///                             ["sortBy"] = "DESC",
+    ///                             ["sortByDimension"] = "",
+    ///                             ["filterBy"] = new Dictionary&lt;string, object?&gt;
+    ///                             {
+    ///                                 ["nestedFilters"] = new[]
+    ///                                 {
+    ///                                 },
+    ///                                 ["criteria"] = new[]
+    ///                                 {
+    ///                                 },
+    ///                             },
+    ///                             ["limit"] = 20,
+    ///                             ["rate"] = "NONE",
+    ///                             ["enabled"] = true,
+    ///                         },
+    ///                     },
+    ///                     ["visualConfig"] = new Dictionary&lt;string, object?&gt;
+    ///                     {
+    ///                         ["type"] = "SINGLE_VALUE",
+    ///                         ["global"] = new Dictionary&lt;string, object?&gt;
+    ///                         {
+    ///                             ["hideLegend"] = false,
+    ///                         },
+    ///                         ["rules"] = new[]
+    ///                         {
+    ///                             new Dictionary&lt;string, object?&gt;
+    ///                             {
+    ///                                 ["matcher"] = "A:",
+    ///                                 ["properties"] = new Dictionary&lt;string, object?&gt;
+    ///                                 {
+    ///                                     ["color"] = "DEFAULT",
+    ///                                 },
+    ///                                 ["seriesOverrides"] = new[]
+    ///                                 {
+    ///                                 },
+    ///                             },
+    ///                         },
+    ///                         ["axes"] = new Dictionary&lt;string, object?&gt;
+    ///                         {
+    ///                             ["xAxis"] = new Dictionary&lt;string, object?&gt;
+    ///                             {
+    ///                                 ["visible"] = true,
+    ///                             },
+    ///                             ["yAxes"] = new[]
+    ///                             {
+    ///                             },
+    ///                         },
+    ///                         ["heatmapSettings"] = new Dictionary&lt;string, object?&gt;
+    ///                         {
+    ///                             ["yAxis"] = "VALUE",
+    ///                         },
+    ///                         ["singleValueSettings"] = new Dictionary&lt;string, object?&gt;
+    ///                         {
+    ///                             ["showSparkLine"] = true,
+    ///                         },
+    ///                         ["thresholds"] = new[]
+    ///                         {
+    ///                             new Dictionary&lt;string, object?&gt;
+    ///                             {
+    ///                                 ["axisTarget"] = "LEFT",
+    ///                                 ["rules"] = new[]
+    ///                                 {
+    ///                                     new Dictionary&lt;string, object?&gt;
+    ///                                     {
+    ///                                         ["color"] = "#7dc540",
+    ///                                     },
+    ///                                     new Dictionary&lt;string, object?&gt;
+    ///                                     {
+    ///                                         ["color"] = "#f5d30f",
+    ///                                     },
+    ///                                     new Dictionary&lt;string, object?&gt;
+    ///                                     {
+    ///                                         ["color"] = "#dc172a",
+    ///                                     },
+    ///                                 },
+    ///                                 ["visible"] = true,
+    ///                             },
+    ///                         },
+    ///                         ["tableSettings"] = new Dictionary&lt;string, object?&gt;
+    ///                         {
+    ///                             ["hiddenColumns"] = new[]
+    ///                             {
+    ///                             },
+    ///                         },
+    ///                         ["graphChartSettings"] = new Dictionary&lt;string, object?&gt;
+    ///                         {
+    ///                             ["connectNulls"] = false,
+    ///                         },
+    ///                         ["honeycombSettings"] = new Dictionary&lt;string, object?&gt;
+    ///                         {
+    ///                             ["showHive"] = true,
+    ///                             ["showLegend"] = true,
+    ///                             ["showLabels"] = false,
+    ///                         },
+    ///                     },
+    ///                     ["queriesSettings"] = new Dictionary&lt;string, object?&gt;
+    ///                     {
+    ///                         ["resolution"] = "",
+    ///                     },
+    ///                     ["metricExpressions"] = new[]
+    ///                     {
+    ///                         "resolution=Inf&amp;(builtin:service.errors.client.count:splitBy():sum:sort(value(sum,descending)):limit(20)):limit(100):names",
+    ///                         "resolution=null&amp;(builtin:service.errors.client.count:splitBy():sum:sort(value(sum,descending)):limit(20))",
+    ///                     },
+    ///                 },
+    ///             },
+    ///         }),
+    ///     });
+    /// 
+    /// });
+    /// ```
     /// </summary>
     [DynatraceResourceType("dynatrace:index/jsonDashboard:JsonDashboard")]
     public partial class JsonDashboard : global::Pulumi.CustomResource

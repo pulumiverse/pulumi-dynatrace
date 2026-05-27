@@ -136,6 +136,19 @@ class ProcessGroupRum(pulumi.CustomResource):
 
         The full documentation of the export feature is available [here](https://dt-url.net/h203qmc).
 
+        ## Resource Example Usage
+
+        ```python
+        import pulumi
+        import pulumiverse_dynatrace as dynatrace
+
+        config = pulumi.Config()
+        proces_s__grou_p__id = config.require("PROCESS_GROUP_ID")
+        rum = dynatrace.ProcessGroupRum("rum",
+            enable=False,
+            process_group_id=proces_s__grou_p__id)
+        ```
+
 
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
@@ -166,6 +179,19 @@ class ProcessGroupRum(pulumi.CustomResource):
         - `terraform-provider-dynatrace -export ProcessGroupRum` downloads all real user monitoring configuration for process groups
 
         The full documentation of the export feature is available [here](https://dt-url.net/h203qmc).
+
+        ## Resource Example Usage
+
+        ```python
+        import pulumi
+        import pulumiverse_dynatrace as dynatrace
+
+        config = pulumi.Config()
+        proces_s__grou_p__id = config.require("PROCESS_GROUP_ID")
+        rum = dynatrace.ProcessGroupRum("rum",
+            enable=False,
+            process_group_id=proces_s__grou_p__id)
+        ```
 
 
         :param str resource_name: The name of the resource.

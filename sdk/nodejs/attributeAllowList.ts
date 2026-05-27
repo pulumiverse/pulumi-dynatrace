@@ -18,6 +18,18 @@ import * as utilities from "./utilities";
  * - `terraform-provider-dynatrace -export dynatrace.AttributeAllowList` downloads all existing attribute allow-list configuration
  *
  * The full documentation of the export feature is available [here](https://dt-url.net/h203qmc).
+ *
+ * ## Resource Example Usage
+ *
+ * ```typescript
+ * import * as pulumi from "@pulumi/pulumi";
+ * import * as dynatrace from "@pulumiverse/dynatrace";
+ *
+ * const list = new dynatrace.AttributeAllowList("list", {
+ *     enabled: true,
+ *     key: "attribute.#name#",
+ * });
+ * ```
  */
 export class AttributeAllowList extends pulumi.CustomResource {
     /**

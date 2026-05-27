@@ -38,12 +38,29 @@ namespace Pulumiverse.Dynatrace
     /// 
     /// return await Deployment.RunAsync(() =&gt; 
     /// {
+    ///     var alert = new Dynatrace.VulnerabilityAlerting("alert", new()
+    ///     {
+    ///         Name = "#name#",
+    ///         Enabled = true,
+    ///         EnabledRiskLevels = new[]
+    ///         {
+    ///             "LOW",
+    ///             "MEDIUM",
+    ///             "HIGH",
+    ///             "CRITICAL",
+    ///         },
+    ///         EnabledTriggerEvents = new[]
+    ///         {
+    ///             "SECURITY_PROBLEM_OPENED",
+    ///         },
+    ///     });
+    /// 
     ///     var terraformSecurityProblemWebhookTest = new Dynatrace.AppsecNotification("Terraform_Security_Problem_Webhook_Test", new()
     ///     {
     ///         Type = "WEBHOOK",
     ///         Enabled = true,
     ///         DisplayName = "Terraform Security Problem Webhook Test",
-    ///         SecurityProblemBasedAlertingProfile = "vu9U3hXa3q0AAAABACxidWlsdGluOmFwcHNlYy5ub3RpZmljYXRpb24tYWxlcnRpbmctcHJvZmlsZQAGdGVuYW50AAZ0ZW5hbnQAJDMyMDhkNWMyLTFlZmYtMzk5My1iNjMwLWI0MjQ5N2U4MDQ2Nr7vVN4V2t6t",
+    ///         SecurityProblemBasedAlertingProfile = alert.Id,
     ///         Trigger = "SECURITY_PROBLEM",
     ///         SecurityProblemBasedWebhookPayload = new Dynatrace.Inputs.AppsecNotificationSecurityProblemBasedWebhookPayloadArgs
     ///         {

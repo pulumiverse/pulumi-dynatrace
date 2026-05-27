@@ -62,11 +62,11 @@ export class DeclarativeGrouping extends pulumi.CustomResource {
      */
     declare public readonly insertAfter: pulumi.Output<string>;
     /**
-     * Monitored technology name
+     * Note: Reported only in full-stack, infrastructure and discovery modes.
      */
     declare public readonly name: pulumi.Output<string>;
     /**
-     * The scope of this setting (HOST, HOST_GROUP). Omit this property if you want to cover the whole environment.
+     * The scope of this setting (HOST, KUBERNETES_CLUSTER, HOST_GROUP). Omit this property if you want to cover the whole environment.
      */
     declare public readonly scope: pulumi.Output<string | undefined>;
 
@@ -124,11 +124,11 @@ export interface DeclarativeGroupingState {
      */
     insertAfter?: pulumi.Input<string | undefined>;
     /**
-     * Monitored technology name
+     * Note: Reported only in full-stack, infrastructure and discovery modes.
      */
     name?: pulumi.Input<string | undefined>;
     /**
-     * The scope of this setting (HOST, HOST_GROUP). Omit this property if you want to cover the whole environment.
+     * The scope of this setting (HOST, KUBERNETES_CLUSTER, HOST_GROUP). Omit this property if you want to cover the whole environment.
      */
     scope?: pulumi.Input<string | undefined>;
 }
@@ -150,11 +150,11 @@ export interface DeclarativeGroupingArgs {
      */
     insertAfter?: pulumi.Input<string | undefined>;
     /**
-     * Monitored technology name
+     * Note: Reported only in full-stack, infrastructure and discovery modes.
      */
     name?: pulumi.Input<string | undefined>;
     /**
-     * The scope of this setting (HOST, HOST_GROUP). Omit this property if you want to cover the whole environment.
+     * The scope of this setting (HOST, KUBERNETES_CLUSTER, HOST_GROUP). Omit this property if you want to cover the whole environment.
      */
     scope?: pulumi.Input<string | undefined>;
 }

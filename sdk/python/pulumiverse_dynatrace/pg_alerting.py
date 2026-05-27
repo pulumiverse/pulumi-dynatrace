@@ -186,6 +186,21 @@ class PgAlerting(pulumi.CustomResource):
 
         The full documentation of the export feature is available [here](https://dt-url.net/h203qmc).
 
+        ## Resource Example Usage
+
+        ```python
+        import pulumi
+        import pulumiverse_dynatrace as dynatrace
+
+        config = pulumi.Config()
+        proces_s__grou_p__id = config.require("PROCESS_GROUP_ID")
+        alert = dynatrace.PgAlerting("alert",
+            enabled=True,
+            alerting_mode="ON_INSTANCE_COUNT_VIOLATION",
+            minimum_instance_threshold=5,
+            process_group=proces_s__grou_p__id)
+        ```
+
 
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
@@ -214,6 +229,21 @@ class PgAlerting(pulumi.CustomResource):
         - `terraform-provider-dynatrace -export PgAlerting` downloads all existing process group availability monitoring configuration
 
         The full documentation of the export feature is available [here](https://dt-url.net/h203qmc).
+
+        ## Resource Example Usage
+
+        ```python
+        import pulumi
+        import pulumiverse_dynatrace as dynatrace
+
+        config = pulumi.Config()
+        proces_s__grou_p__id = config.require("PROCESS_GROUP_ID")
+        alert = dynatrace.PgAlerting("alert",
+            enabled=True,
+            alerting_mode="ON_INSTANCE_COUNT_VIOLATION",
+            minimum_instance_threshold=5,
+            process_group=proces_s__grou_p__id)
+        ```
 
 
         :param str resource_name: The name of the resource.

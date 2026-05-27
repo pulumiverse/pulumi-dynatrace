@@ -17,6 +17,8 @@ import (
 // > This resource requires an OAuth client or platform token configured with the permissions outlined in the [Davis Anomaly Detection](https://docs.dynatrace.com/docs/shortlink/davis-ai-anomaly-detection-app#expand--prerequisites--1) app documentation.
 // Please set the environment variables `DT_CLIENT_ID` and `DT_CLIENT_SECRET`, or alternatively `DT_PLATFORM_TOKEN`.
 //
+// > Depending on the anomaly detector configuration, additional **storage permissions** may be required for DQL-related access (e.g. `storage:bizevents:read`, `storage:logs:read`, `storage:entities:read`).
+//
 // ## Dynatrace Documentation
 //
 // - Davis Anomaly Detection App - https://docs.dynatrace.com/docs/platform/davis-ai/anomaly-detection/anomaly-detection-app
@@ -31,17 +33,17 @@ import (
 type DavisAnomalyDetectors struct {
 	pulumi.CustomResourceState
 
-	// Analyzer input
+	// Analyzer input to initialize the analyzer
 	Analyzer DavisAnomalyDetectorsAnalyzerOutput `pulumi:"analyzer"`
 	// The description of the anomaly detector
 	Description pulumi.StringOutput `pulumi:"description"`
 	// This setting is enabled (`true`) or disabled (`false`)
 	Enabled pulumi.BoolOutput `pulumi:"enabled"`
-	// Event template
+	// Defines additional fields on the davis events triggered by the anomaly detector
 	EventTemplate DavisAnomalyDetectorsEventTemplateOutput `pulumi:"eventTemplate"`
-	// Execution settings
+	// Defines the configuration parameters that influence how and under what context a query or evaluation is executed.
 	ExecutionSettings DavisAnomalyDetectorsExecutionSettingsOutput `pulumi:"executionSettings"`
-	// Source
+	// The source which created the anomaly detector
 	Source pulumi.StringOutput `pulumi:"source"`
 	// The title of the anomaly detector
 	Title pulumi.StringOutput `pulumi:"title"`
@@ -98,34 +100,34 @@ func GetDavisAnomalyDetectors(ctx *pulumi.Context,
 
 // Input properties used for looking up and filtering DavisAnomalyDetectors resources.
 type davisAnomalyDetectorsState struct {
-	// Analyzer input
+	// Analyzer input to initialize the analyzer
 	Analyzer *DavisAnomalyDetectorsAnalyzer `pulumi:"analyzer"`
 	// The description of the anomaly detector
 	Description *string `pulumi:"description"`
 	// This setting is enabled (`true`) or disabled (`false`)
 	Enabled *bool `pulumi:"enabled"`
-	// Event template
+	// Defines additional fields on the davis events triggered by the anomaly detector
 	EventTemplate *DavisAnomalyDetectorsEventTemplate `pulumi:"eventTemplate"`
-	// Execution settings
+	// Defines the configuration parameters that influence how and under what context a query or evaluation is executed.
 	ExecutionSettings *DavisAnomalyDetectorsExecutionSettings `pulumi:"executionSettings"`
-	// Source
+	// The source which created the anomaly detector
 	Source *string `pulumi:"source"`
 	// The title of the anomaly detector
 	Title *string `pulumi:"title"`
 }
 
 type DavisAnomalyDetectorsState struct {
-	// Analyzer input
+	// Analyzer input to initialize the analyzer
 	Analyzer DavisAnomalyDetectorsAnalyzerPtrInput
 	// The description of the anomaly detector
 	Description pulumi.StringPtrInput
 	// This setting is enabled (`true`) or disabled (`false`)
 	Enabled pulumi.BoolPtrInput
-	// Event template
+	// Defines additional fields on the davis events triggered by the anomaly detector
 	EventTemplate DavisAnomalyDetectorsEventTemplatePtrInput
-	// Execution settings
+	// Defines the configuration parameters that influence how and under what context a query or evaluation is executed.
 	ExecutionSettings DavisAnomalyDetectorsExecutionSettingsPtrInput
-	// Source
+	// The source which created the anomaly detector
 	Source pulumi.StringPtrInput
 	// The title of the anomaly detector
 	Title pulumi.StringPtrInput
@@ -136,17 +138,17 @@ func (DavisAnomalyDetectorsState) ElementType() reflect.Type {
 }
 
 type davisAnomalyDetectorsArgs struct {
-	// Analyzer input
+	// Analyzer input to initialize the analyzer
 	Analyzer DavisAnomalyDetectorsAnalyzer `pulumi:"analyzer"`
 	// The description of the anomaly detector
 	Description string `pulumi:"description"`
 	// This setting is enabled (`true`) or disabled (`false`)
 	Enabled bool `pulumi:"enabled"`
-	// Event template
+	// Defines additional fields on the davis events triggered by the anomaly detector
 	EventTemplate DavisAnomalyDetectorsEventTemplate `pulumi:"eventTemplate"`
-	// Execution settings
+	// Defines the configuration parameters that influence how and under what context a query or evaluation is executed.
 	ExecutionSettings DavisAnomalyDetectorsExecutionSettings `pulumi:"executionSettings"`
-	// Source
+	// The source which created the anomaly detector
 	Source string `pulumi:"source"`
 	// The title of the anomaly detector
 	Title string `pulumi:"title"`
@@ -154,17 +156,17 @@ type davisAnomalyDetectorsArgs struct {
 
 // The set of arguments for constructing a DavisAnomalyDetectors resource.
 type DavisAnomalyDetectorsArgs struct {
-	// Analyzer input
+	// Analyzer input to initialize the analyzer
 	Analyzer DavisAnomalyDetectorsAnalyzerInput
 	// The description of the anomaly detector
 	Description pulumi.StringInput
 	// This setting is enabled (`true`) or disabled (`false`)
 	Enabled pulumi.BoolInput
-	// Event template
+	// Defines additional fields on the davis events triggered by the anomaly detector
 	EventTemplate DavisAnomalyDetectorsEventTemplateInput
-	// Execution settings
+	// Defines the configuration parameters that influence how and under what context a query or evaluation is executed.
 	ExecutionSettings DavisAnomalyDetectorsExecutionSettingsInput
-	// Source
+	// The source which created the anomaly detector
 	Source pulumi.StringInput
 	// The title of the anomaly detector
 	Title pulumi.StringInput
@@ -257,7 +259,7 @@ func (o DavisAnomalyDetectorsOutput) ToDavisAnomalyDetectorsOutputWithContext(ct
 	return o
 }
 
-// Analyzer input
+// Analyzer input to initialize the analyzer
 func (o DavisAnomalyDetectorsOutput) Analyzer() DavisAnomalyDetectorsAnalyzerOutput {
 	return o.ApplyT(func(v *DavisAnomalyDetectors) DavisAnomalyDetectorsAnalyzerOutput { return v.Analyzer }).(DavisAnomalyDetectorsAnalyzerOutput)
 }
@@ -272,19 +274,19 @@ func (o DavisAnomalyDetectorsOutput) Enabled() pulumi.BoolOutput {
 	return o.ApplyT(func(v *DavisAnomalyDetectors) pulumi.BoolOutput { return v.Enabled }).(pulumi.BoolOutput)
 }
 
-// Event template
+// Defines additional fields on the davis events triggered by the anomaly detector
 func (o DavisAnomalyDetectorsOutput) EventTemplate() DavisAnomalyDetectorsEventTemplateOutput {
 	return o.ApplyT(func(v *DavisAnomalyDetectors) DavisAnomalyDetectorsEventTemplateOutput { return v.EventTemplate }).(DavisAnomalyDetectorsEventTemplateOutput)
 }
 
-// Execution settings
+// Defines the configuration parameters that influence how and under what context a query or evaluation is executed.
 func (o DavisAnomalyDetectorsOutput) ExecutionSettings() DavisAnomalyDetectorsExecutionSettingsOutput {
 	return o.ApplyT(func(v *DavisAnomalyDetectors) DavisAnomalyDetectorsExecutionSettingsOutput {
 		return v.ExecutionSettings
 	}).(DavisAnomalyDetectorsExecutionSettingsOutput)
 }
 
-// Source
+// The source which created the anomaly detector
 func (o DavisAnomalyDetectorsOutput) Source() pulumi.StringOutput {
 	return o.ApplyT(func(v *DavisAnomalyDetectors) pulumi.StringOutput { return v.Source }).(pulumi.StringOutput)
 }

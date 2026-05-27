@@ -20,13 +20,13 @@ namespace Pulumiverse.Dynatrace.Inputs
         public Input<int>? Count { get; set; }
 
         /// <summary>
-        /// If specified, the schedule won't trigger executions before the given date
+        /// If specified, the schedule won't trigger executions before the given date. Format: `yyyy-MM-dd`
         /// </summary>
         [Input("earliestStart")]
         public Input<string>? EarliestStart { get; set; }
 
         /// <summary>
-        /// If specified, the schedule won't trigger executions before the given time
+        /// If specified, the schedule won't trigger executions before the given time. Format: `HH:mm`
         /// </summary>
         [Input("earliestStartTime")]
         public Input<string>? EarliestStartTime { get; set; }
@@ -35,7 +35,7 @@ namespace Pulumiverse.Dynatrace.Inputs
         private InputList<string>? _excludeDates;
 
         /// <summary>
-        /// If specified, the schedule won't trigger exeuctions on the given dates
+        /// If specified, the schedule won't trigger exeuctions on the given dates. Format: `yyyy-MM-dd`
         /// </summary>
         public InputList<string> ExcludeDates
         {
@@ -47,7 +47,7 @@ namespace Pulumiverse.Dynatrace.Inputs
         private InputList<string>? _includeDates;
 
         /// <summary>
-        /// If specified, the schedule will trigger executions on the given dates, even if the main configuration prohibits it
+        /// If specified, the schedule will trigger executions on the given dates, even if the main configuration prohibits it. Format: `yyyy-MM-dd`
         /// </summary>
         public InputList<string> IncludeDates
         {

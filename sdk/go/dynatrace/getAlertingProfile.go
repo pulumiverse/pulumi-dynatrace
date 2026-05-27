@@ -28,7 +28,7 @@ import (
 //
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
-//			_default, err := dynatrace.LookupAlertingProfile(ctx, &dynatrace.LookupAlertingProfileArgs{
+//			_default, err := dynatrace.GetAlertingProfile(ctx, &dynatrace.LookupAlertingProfileArgs{
 //				Name: "Default",
 //			}, nil)
 //			if err != nil {
@@ -37,7 +37,7 @@ import (
 //			_, err = dynatrace.NewWebhookNotification(ctx, "my_webhook_notification", &dynatrace.WebhookNotificationArgs{
 //				Active:               pulumi.Bool(false),
 //				Name:                 pulumi.String("my_webhook_notification"),
-//				Profile:              pulumi.String(_default.Id),
+//				Profile:              pulumi.String(pulumi.String(_default.Id)),
 //				Url:                  pulumi.String("https://webhook.site/40bf4d43-1a50-4ebd-913d-bf50ce7c3a1e"),
 //				Insecure:             pulumi.Bool(true),
 //				NotifyEventMerges:    pulumi.Bool(true),

@@ -40,9 +40,9 @@ import * as utilities from "./utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as dynatrace from "@pulumiverse/dynatrace";
  *
- * const customComDynatraceExtensionPrometheus_cadvisor = new dynatrace.HubExtensionActiveVersion("custom_com_dynatrace_extension_prometheus-cadvisor", {
- *     name: "com.dynatrace.extension.active-directory-python",
- *     version: "3.1.6",
+ * const jmx_weblogic_cp = new dynatrace.HubExtensionActiveVersion("jmx-weblogic-cp", {
+ *     name: "com.dynatrace.extension.jmx-weblogic-cp",
+ *     version: "2.1.1",
  * });
  * ```
  */

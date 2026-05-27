@@ -23,6 +23,8 @@ import (
 //
 // - Credential vault API - https://www.dynatrace.com/support/help/dynatrace-api/environment-api/credential-vault
 //
+// - External vault integration for Azure Key Vault, HashiCorp Vault, and CyberArk Vault - https://docs.dynatrace.com/docs/shortlink/external-vault-integration
+//
 // ## Export Example Usage
 //
 // - `terraform-provider-dynatrace -export Credentials` downloads all existing credentials
@@ -30,6 +32,36 @@ import (
 // The full documentation of the export feature is available [here](https://dt-url.net/h203qmc).
 //
 // ## Resource Example Usage
+//
+// ```go
+// package main
+//
+// import (
+//
+//	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//	"github.com/pulumiverse/pulumi-dynatrace/sdk/go/dynatrace"
+//
+// )
+//
+//	func main() {
+//		pulumi.Run(func(ctx *pulumi.Context) error {
+//			_, err := dynatrace.NewCredentials(ctx, "username_password_credentials", &dynatrace.CredentialsArgs{
+//				Name:            pulumi.String("#name#"),
+//				Username:        pulumi.String("username"),
+//				Password:        pulumi.String("password"),
+//				OwnerAccessOnly: pulumi.Bool(true),
+//				Scopes: pulumi.StringArray{
+//					pulumi.String("SYNTHETIC"),
+//				},
+//			})
+//			if err != nil {
+//				return err
+//			}
+//			return nil
+//		})
+//	}
+//
+// ```
 //
 // ```go
 // package main
@@ -44,17 +76,6 @@ import (
 //
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
-//			_, err := dynatrace.NewCredentials(ctx, "name", &dynatrace.CredentialsArgs{
-//				Name: pulumi.String("name"),
-//				Scopes: pulumi.StringArray{
-//					pulumi.String("SYNTHETIC"),
-//				},
-//				Username: pulumi.String("username"),
-//				Password: pulumi.String("password"),
-//			})
-//			if err != nil {
-//				return err
-//			}
 //			invokeBase64encode, err := std.Base64encode(ctx, &std.Base64encodeArgs{
 //				Input: std.File(ctx, &std.FileArgs{
 //					Input: "certificate.pem",
@@ -69,6 +90,119 @@ import (
 //				Certificate: pulumi.String(invokeBase64encode.Result),
 //				Format:      pulumi.String("PEM"),
 //				Public:      pulumi.Bool(true),
+//			})
+//			if err != nil {
+//				return err
+//			}
+//			return nil
+//		})
+//	}
+//
+// ```
+//
+// ### CyberArk Vault with username and password
+//
+// ```go
+// package main
+//
+// import (
+//
+//	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//	"github.com/pulumi/pulumi/sdk/v3/go/pulumi/config"
+//	"github.com/pulumiverse/pulumi-dynatrace/sdk/go/dynatrace"
+//
+// )
+//
+//	func main() {
+//		pulumi.Run(func(ctx *pulumi.Context) error {
+//			cfg := config.New(ctx, "")
+//			var credentialsUsername interface{}
+//			cfg.RequireObject("credentialsUsername", &credentialsUsername)
+//			var credentialsPassword interface{}
+//			cfg.RequireObject("credentialsPassword", &credentialsPassword)
+//			usernamePasswordCredentials, err := dynatrace.NewCredentials(ctx, "username_password_credentials", &dynatrace.CredentialsArgs{
+//				Name:            pulumi.String("#name#"),
+//				Username:        pulumi.Any(credentialsUsername),
+//				Password:        pulumi.Any(credentialsPassword),
+//				OwnerAccessOnly: pulumi.Bool(true),
+//				Scopes: pulumi.StringArray{
+//					pulumi.String("SYNTHETIC"),
+//				},
+//			})
+//			if err != nil {
+//				return err
+//			}
+//			_, err = dynatrace.NewCredentials(ctx, "cyberark_username_password", &dynatrace.CredentialsArgs{
+//				Name:            pulumi.String("#name#"),
+//				OwnerAccessOnly: pulumi.Bool(true),
+//				External: &dynatrace.CredentialsExternalArgs{
+//					VaultUrl:               pulumi.String("https://example.com"),
+//					ApplicationId:          pulumi.String("my-application-id"),
+//					SafeName:               pulumi.String("my-safe-name"),
+//					FolderName:             pulumi.String("my-folder-name"),
+//					AccountName:            pulumi.String("my-account-name"),
+//					UsernamePasswordForCpm: usernamePasswordCredentials.ID(),
+//				},
+//				Scopes: pulumi.StringArray{
+//					pulumi.String("SYNTHETIC"),
+//				},
+//			})
+//			if err != nil {
+//				return err
+//			}
+//			return nil
+//		})
+//	}
+//
+// ```
+//
+// ### CyberArk Vault with allowed location
+//
+// ```go
+// package main
+//
+// import (
+//
+//	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//	"github.com/pulumi/pulumi/sdk/v3/go/pulumi/config"
+//	"github.com/pulumiverse/pulumi-dynatrace/sdk/go/dynatrace"
+//
+// )
+//
+//	func main() {
+//		pulumi.Run(func(ctx *pulumi.Context) error {
+//			cfg := config.New(ctx, "")
+//			var certificate interface{}
+//			cfg.RequireObject("certificate", &certificate)
+//			var certificatePassword interface{}
+//			cfg.RequireObject("certificatePassword", &certificatePassword)
+//			certificateCredentials, err := dynatrace.NewCredentials(ctx, "certificate_credentials", &dynatrace.CredentialsArgs{
+//				Name:            pulumi.String("#name#"),
+//				Certificate:     pulumi.Any(certificate),
+//				Format:          pulumi.String("PKCS12"),
+//				OwnerAccessOnly: pulumi.Bool(true),
+//				Password:        pulumi.Any(certificatePassword),
+//				Scopes: pulumi.StringArray{
+//					pulumi.String("SYNTHETIC"),
+//				},
+//			})
+//			if err != nil {
+//				return err
+//			}
+//			_, err = dynatrace.NewCredentials(ctx, "cyberark_allowed_location", &dynatrace.CredentialsArgs{
+//				Name:            pulumi.String("#name#"),
+//				OwnerAccessOnly: pulumi.Bool(true),
+//				External: &dynatrace.CredentialsExternalArgs{
+//					VaultUrl:      pulumi.String("https://example.com"),
+//					ApplicationId: pulumi.String("my-application-id"),
+//					SafeName:      pulumi.String("my-safe-name"),
+//					FolderName:    pulumi.String("my-folder-name"),
+//					AccountName:   pulumi.String("my-account-name"),
+//					Certificate:   certificateCredentials.ID(),
+//				},
+//				Scopes: pulumi.StringArray{
+//					pulumi.String("SYNTHETIC"),
+//				},
 //			})
 //			if err != nil {
 //				return err

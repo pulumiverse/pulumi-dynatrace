@@ -42,6 +42,27 @@ namespace Pulumiverse.Dynatrace
     /// - `terraform-provider-dynatrace -export dynatrace.JenkinsConnection` downloads all existing Jenkins connections
     /// 
     /// The full documentation of the export feature is available [here](https://dt-url.net/h203qmc).
+    /// 
+    /// ## Resource Example Usage
+    /// 
+    /// ```csharp
+    /// using System.Collections.Generic;
+    /// using System.Linq;
+    /// using Pulumi;
+    /// using Dynatrace = Pulumiverse.Dynatrace;
+    /// 
+    /// return await Deployment.RunAsync(() =&gt; 
+    /// {
+    ///     var connection = new Dynatrace.JenkinsConnection("connection", new()
+    ///     {
+    ///         Name = "#name#",
+    ///         Url = "https://www.example.com",
+    ///         Username = "#name#",
+    ///         Password = "#######",
+    ///     });
+    /// 
+    /// });
+    /// ```
     /// </summary>
     [DynatraceResourceType("dynatrace:index/jenkinsConnection:JenkinsConnection")]
     public partial class JenkinsConnection : global::Pulumi.CustomResource

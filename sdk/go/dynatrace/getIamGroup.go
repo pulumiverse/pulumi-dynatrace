@@ -33,7 +33,7 @@ import (
 //
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
-//			example, err := dynatrace.LookupIamGroup(ctx, &dynatrace.LookupIamGroupArgs{
+//			example, err := dynatrace.GetIamGroup(ctx, &dynatrace.LookupIamGroupArgs{
 //				Name: "Terraform Example",
 //			}, nil)
 //			if err != nil {

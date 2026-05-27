@@ -23,6 +23,8 @@ namespace Pulumiverse.Dynatrace
     /// 
     /// - Credential vault API - https://www.dynatrace.com/support/help/dynatrace-api/environment-api/credential-vault
     /// 
+    /// - External vault integration for Azure Key Vault, HashiCorp Vault, and CyberArk Vault - https://docs.dynatrace.com/docs/shortlink/external-vault-integration
+    /// 
     /// ## Export Example Usage
     /// 
     /// - `terraform-provider-dynatrace -export dynatrace.Credentials` downloads all existing credentials
@@ -36,21 +38,33 @@ namespace Pulumiverse.Dynatrace
     /// using System.Linq;
     /// using Pulumi;
     /// using Dynatrace = Pulumiverse.Dynatrace;
-    /// using Std = Pulumi.Std;
     /// 
     /// return await Deployment.RunAsync(() =&gt; 
     /// {
-    ///     var name = new Dynatrace.Credentials("name", new()
+    ///     var usernamePasswordCredentials = new Dynatrace.Credentials("username_password_credentials", new()
     ///     {
-    ///         Name = "name",
+    ///         Name = "#name#",
+    ///         Username = "username",
+    ///         Password = "password",
+    ///         OwnerAccessOnly = true,
     ///         Scopes = new[]
     ///         {
     ///             "SYNTHETIC",
     ///         },
-    ///         Username = "username",
-    ///         Password = "password",
     ///     });
     /// 
+    /// });
+    /// ```
+    /// 
+    /// ```csharp
+    /// using System.Collections.Generic;
+    /// using System.Linq;
+    /// using Pulumi;
+    /// using Dynatrace = Pulumiverse.Dynatrace;
+    /// using Std = Pulumi.Std;
+    /// 
+    /// return await Deployment.RunAsync(() =&gt; 
+    /// {
     ///     var rootCertificate = new Dynatrace.Credentials("root_certificate", new()
     ///     {
     ///         Name = "Root Certificate",
@@ -64,6 +78,101 @@ namespace Pulumiverse.Dynatrace
     ///         })).Apply(invoke =&gt; invoke.Result),
     ///         Format = "PEM",
     ///         Public = true,
+    ///     });
+    /// 
+    /// });
+    /// ```
+    /// 
+    /// ### CyberArk Vault with username and password
+    /// 
+    /// ```csharp
+    /// using System.Collections.Generic;
+    /// using System.Linq;
+    /// using Pulumi;
+    /// using Dynatrace = Pulumiverse.Dynatrace;
+    /// 
+    /// return await Deployment.RunAsync(() =&gt; 
+    /// {
+    ///     var config = new Config();
+    ///     var credentialsUsername = config.RequireObject&lt;dynamic&gt;("credentialsUsername");
+    ///     var credentialsPassword = config.RequireObject&lt;dynamic&gt;("credentialsPassword");
+    ///     var usernamePasswordCredentials = new Dynatrace.Credentials("username_password_credentials", new()
+    ///     {
+    ///         Name = "#name#",
+    ///         Username = credentialsUsername,
+    ///         Password = credentialsPassword,
+    ///         OwnerAccessOnly = true,
+    ///         Scopes = new[]
+    ///         {
+    ///             "SYNTHETIC",
+    ///         },
+    ///     });
+    /// 
+    ///     var cyberarkUsernamePassword = new Dynatrace.Credentials("cyberark_username_password", new()
+    ///     {
+    ///         Name = "#name#",
+    ///         OwnerAccessOnly = true,
+    ///         External = new Dynatrace.Inputs.CredentialsExternalArgs
+    ///         {
+    ///             VaultUrl = "https://example.com",
+    ///             ApplicationId = "my-application-id",
+    ///             SafeName = "my-safe-name",
+    ///             FolderName = "my-folder-name",
+    ///             AccountName = "my-account-name",
+    ///             UsernamePasswordForCpm = usernamePasswordCredentials.Id,
+    ///         },
+    ///         Scopes = new[]
+    ///         {
+    ///             "SYNTHETIC",
+    ///         },
+    ///     });
+    /// 
+    /// });
+    /// ```
+    /// 
+    /// ### CyberArk Vault with allowed location
+    /// 
+    /// ```csharp
+    /// using System.Collections.Generic;
+    /// using System.Linq;
+    /// using Pulumi;
+    /// using Dynatrace = Pulumiverse.Dynatrace;
+    /// 
+    /// return await Deployment.RunAsync(() =&gt; 
+    /// {
+    ///     var config = new Config();
+    ///     var certificate = config.RequireObject&lt;dynamic&gt;("certificate");
+    ///     var certificatePassword = config.RequireObject&lt;dynamic&gt;("certificatePassword");
+    ///     var certificateCredentials = new Dynatrace.Credentials("certificate_credentials", new()
+    ///     {
+    ///         Name = "#name#",
+    ///         Certificate = certificate,
+    ///         Format = "PKCS12",
+    ///         OwnerAccessOnly = true,
+    ///         Password = certificatePassword,
+    ///         Scopes = new[]
+    ///         {
+    ///             "SYNTHETIC",
+    ///         },
+    ///     });
+    /// 
+    ///     var cyberarkAllowedLocation = new Dynatrace.Credentials("cyberark_allowed_location", new()
+    ///     {
+    ///         Name = "#name#",
+    ///         OwnerAccessOnly = true,
+    ///         External = new Dynatrace.Inputs.CredentialsExternalArgs
+    ///         {
+    ///             VaultUrl = "https://example.com",
+    ///             ApplicationId = "my-application-id",
+    ///             SafeName = "my-safe-name",
+    ///             FolderName = "my-folder-name",
+    ///             AccountName = "my-account-name",
+    ///             Certificate = certificateCredentials.Id,
+    ///         },
+    ///         Scopes = new[]
+    ///         {
+    ///             "SYNTHETIC",
+    ///         },
     ///     });
     /// 
     /// });

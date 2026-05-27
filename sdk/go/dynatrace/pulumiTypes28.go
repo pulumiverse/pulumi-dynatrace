@@ -13,6 +13,8436 @@ import (
 
 var _ = internal.GetEnvOrDefault
 
+type VulnerabilityCodeMetadata struct {
+	// no documentation available
+	Comment string `pulumi:"comment"`
+}
+
+// VulnerabilityCodeMetadataInput is an input type that accepts VulnerabilityCodeMetadataArgs and VulnerabilityCodeMetadataOutput values.
+// You can construct a concrete instance of `VulnerabilityCodeMetadataInput` via:
+//
+//	VulnerabilityCodeMetadataArgs{...}
+type VulnerabilityCodeMetadataInput interface {
+	pulumi.Input
+
+	ToVulnerabilityCodeMetadataOutput() VulnerabilityCodeMetadataOutput
+	ToVulnerabilityCodeMetadataOutputWithContext(context.Context) VulnerabilityCodeMetadataOutput
+}
+
+type VulnerabilityCodeMetadataArgs struct {
+	// no documentation available
+	Comment pulumi.StringInput `pulumi:"comment"`
+}
+
+func (VulnerabilityCodeMetadataArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*VulnerabilityCodeMetadata)(nil)).Elem()
+}
+
+func (i VulnerabilityCodeMetadataArgs) ToVulnerabilityCodeMetadataOutput() VulnerabilityCodeMetadataOutput {
+	return i.ToVulnerabilityCodeMetadataOutputWithContext(context.Background())
+}
+
+func (i VulnerabilityCodeMetadataArgs) ToVulnerabilityCodeMetadataOutputWithContext(ctx context.Context) VulnerabilityCodeMetadataOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(VulnerabilityCodeMetadataOutput)
+}
+
+func (i VulnerabilityCodeMetadataArgs) ToVulnerabilityCodeMetadataPtrOutput() VulnerabilityCodeMetadataPtrOutput {
+	return i.ToVulnerabilityCodeMetadataPtrOutputWithContext(context.Background())
+}
+
+func (i VulnerabilityCodeMetadataArgs) ToVulnerabilityCodeMetadataPtrOutputWithContext(ctx context.Context) VulnerabilityCodeMetadataPtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(VulnerabilityCodeMetadataOutput).ToVulnerabilityCodeMetadataPtrOutputWithContext(ctx)
+}
+
+// VulnerabilityCodeMetadataPtrInput is an input type that accepts VulnerabilityCodeMetadataArgs, VulnerabilityCodeMetadataPtr and VulnerabilityCodeMetadataPtrOutput values.
+// You can construct a concrete instance of `VulnerabilityCodeMetadataPtrInput` via:
+//
+//	        VulnerabilityCodeMetadataArgs{...}
+//
+//	or:
+//
+//	        nil
+type VulnerabilityCodeMetadataPtrInput interface {
+	pulumi.Input
+
+	ToVulnerabilityCodeMetadataPtrOutput() VulnerabilityCodeMetadataPtrOutput
+	ToVulnerabilityCodeMetadataPtrOutputWithContext(context.Context) VulnerabilityCodeMetadataPtrOutput
+}
+
+type vulnerabilityCodeMetadataPtrType VulnerabilityCodeMetadataArgs
+
+func VulnerabilityCodeMetadataPtr(v *VulnerabilityCodeMetadataArgs) VulnerabilityCodeMetadataPtrInput {
+	return (*vulnerabilityCodeMetadataPtrType)(v)
+}
+
+func (*vulnerabilityCodeMetadataPtrType) ElementType() reflect.Type {
+	return reflect.TypeOf((**VulnerabilityCodeMetadata)(nil)).Elem()
+}
+
+func (i *vulnerabilityCodeMetadataPtrType) ToVulnerabilityCodeMetadataPtrOutput() VulnerabilityCodeMetadataPtrOutput {
+	return i.ToVulnerabilityCodeMetadataPtrOutputWithContext(context.Background())
+}
+
+func (i *vulnerabilityCodeMetadataPtrType) ToVulnerabilityCodeMetadataPtrOutputWithContext(ctx context.Context) VulnerabilityCodeMetadataPtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(VulnerabilityCodeMetadataPtrOutput)
+}
+
+type VulnerabilityCodeMetadataOutput struct{ *pulumi.OutputState }
+
+func (VulnerabilityCodeMetadataOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*VulnerabilityCodeMetadata)(nil)).Elem()
+}
+
+func (o VulnerabilityCodeMetadataOutput) ToVulnerabilityCodeMetadataOutput() VulnerabilityCodeMetadataOutput {
+	return o
+}
+
+func (o VulnerabilityCodeMetadataOutput) ToVulnerabilityCodeMetadataOutputWithContext(ctx context.Context) VulnerabilityCodeMetadataOutput {
+	return o
+}
+
+func (o VulnerabilityCodeMetadataOutput) ToVulnerabilityCodeMetadataPtrOutput() VulnerabilityCodeMetadataPtrOutput {
+	return o.ToVulnerabilityCodeMetadataPtrOutputWithContext(context.Background())
+}
+
+func (o VulnerabilityCodeMetadataOutput) ToVulnerabilityCodeMetadataPtrOutputWithContext(ctx context.Context) VulnerabilityCodeMetadataPtrOutput {
+	return o.ApplyTWithContext(ctx, func(_ context.Context, v VulnerabilityCodeMetadata) *VulnerabilityCodeMetadata {
+		return &v
+	}).(VulnerabilityCodeMetadataPtrOutput)
+}
+
+// no documentation available
+func (o VulnerabilityCodeMetadataOutput) Comment() pulumi.StringOutput {
+	return o.ApplyT(func(v VulnerabilityCodeMetadata) string { return v.Comment }).(pulumi.StringOutput)
+}
+
+type VulnerabilityCodeMetadataPtrOutput struct{ *pulumi.OutputState }
+
+func (VulnerabilityCodeMetadataPtrOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((**VulnerabilityCodeMetadata)(nil)).Elem()
+}
+
+func (o VulnerabilityCodeMetadataPtrOutput) ToVulnerabilityCodeMetadataPtrOutput() VulnerabilityCodeMetadataPtrOutput {
+	return o
+}
+
+func (o VulnerabilityCodeMetadataPtrOutput) ToVulnerabilityCodeMetadataPtrOutputWithContext(ctx context.Context) VulnerabilityCodeMetadataPtrOutput {
+	return o
+}
+
+func (o VulnerabilityCodeMetadataPtrOutput) Elem() VulnerabilityCodeMetadataOutput {
+	return o.ApplyT(func(v *VulnerabilityCodeMetadata) VulnerabilityCodeMetadata {
+		if v != nil {
+			return *v
+		}
+		var ret VulnerabilityCodeMetadata
+		return ret
+	}).(VulnerabilityCodeMetadataOutput)
+}
+
+// no documentation available
+func (o VulnerabilityCodeMetadataPtrOutput) Comment() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *VulnerabilityCodeMetadata) *string {
+		if v == nil {
+			return nil
+		}
+		return &v.Comment
+	}).(pulumi.StringPtrOutput)
+}
+
+type VulnerabilityCodeResourceAttributeConditions struct {
+	ResourceAttributeConditions []VulnerabilityCodeResourceAttributeConditionsResourceAttributeCondition `pulumi:"resourceAttributeConditions"`
+}
+
+// VulnerabilityCodeResourceAttributeConditionsInput is an input type that accepts VulnerabilityCodeResourceAttributeConditionsArgs and VulnerabilityCodeResourceAttributeConditionsOutput values.
+// You can construct a concrete instance of `VulnerabilityCodeResourceAttributeConditionsInput` via:
+//
+//	VulnerabilityCodeResourceAttributeConditionsArgs{...}
+type VulnerabilityCodeResourceAttributeConditionsInput interface {
+	pulumi.Input
+
+	ToVulnerabilityCodeResourceAttributeConditionsOutput() VulnerabilityCodeResourceAttributeConditionsOutput
+	ToVulnerabilityCodeResourceAttributeConditionsOutputWithContext(context.Context) VulnerabilityCodeResourceAttributeConditionsOutput
+}
+
+type VulnerabilityCodeResourceAttributeConditionsArgs struct {
+	ResourceAttributeConditions VulnerabilityCodeResourceAttributeConditionsResourceAttributeConditionArrayInput `pulumi:"resourceAttributeConditions"`
+}
+
+func (VulnerabilityCodeResourceAttributeConditionsArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*VulnerabilityCodeResourceAttributeConditions)(nil)).Elem()
+}
+
+func (i VulnerabilityCodeResourceAttributeConditionsArgs) ToVulnerabilityCodeResourceAttributeConditionsOutput() VulnerabilityCodeResourceAttributeConditionsOutput {
+	return i.ToVulnerabilityCodeResourceAttributeConditionsOutputWithContext(context.Background())
+}
+
+func (i VulnerabilityCodeResourceAttributeConditionsArgs) ToVulnerabilityCodeResourceAttributeConditionsOutputWithContext(ctx context.Context) VulnerabilityCodeResourceAttributeConditionsOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(VulnerabilityCodeResourceAttributeConditionsOutput)
+}
+
+func (i VulnerabilityCodeResourceAttributeConditionsArgs) ToVulnerabilityCodeResourceAttributeConditionsPtrOutput() VulnerabilityCodeResourceAttributeConditionsPtrOutput {
+	return i.ToVulnerabilityCodeResourceAttributeConditionsPtrOutputWithContext(context.Background())
+}
+
+func (i VulnerabilityCodeResourceAttributeConditionsArgs) ToVulnerabilityCodeResourceAttributeConditionsPtrOutputWithContext(ctx context.Context) VulnerabilityCodeResourceAttributeConditionsPtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(VulnerabilityCodeResourceAttributeConditionsOutput).ToVulnerabilityCodeResourceAttributeConditionsPtrOutputWithContext(ctx)
+}
+
+// VulnerabilityCodeResourceAttributeConditionsPtrInput is an input type that accepts VulnerabilityCodeResourceAttributeConditionsArgs, VulnerabilityCodeResourceAttributeConditionsPtr and VulnerabilityCodeResourceAttributeConditionsPtrOutput values.
+// You can construct a concrete instance of `VulnerabilityCodeResourceAttributeConditionsPtrInput` via:
+//
+//	        VulnerabilityCodeResourceAttributeConditionsArgs{...}
+//
+//	or:
+//
+//	        nil
+type VulnerabilityCodeResourceAttributeConditionsPtrInput interface {
+	pulumi.Input
+
+	ToVulnerabilityCodeResourceAttributeConditionsPtrOutput() VulnerabilityCodeResourceAttributeConditionsPtrOutput
+	ToVulnerabilityCodeResourceAttributeConditionsPtrOutputWithContext(context.Context) VulnerabilityCodeResourceAttributeConditionsPtrOutput
+}
+
+type vulnerabilityCodeResourceAttributeConditionsPtrType VulnerabilityCodeResourceAttributeConditionsArgs
+
+func VulnerabilityCodeResourceAttributeConditionsPtr(v *VulnerabilityCodeResourceAttributeConditionsArgs) VulnerabilityCodeResourceAttributeConditionsPtrInput {
+	return (*vulnerabilityCodeResourceAttributeConditionsPtrType)(v)
+}
+
+func (*vulnerabilityCodeResourceAttributeConditionsPtrType) ElementType() reflect.Type {
+	return reflect.TypeOf((**VulnerabilityCodeResourceAttributeConditions)(nil)).Elem()
+}
+
+func (i *vulnerabilityCodeResourceAttributeConditionsPtrType) ToVulnerabilityCodeResourceAttributeConditionsPtrOutput() VulnerabilityCodeResourceAttributeConditionsPtrOutput {
+	return i.ToVulnerabilityCodeResourceAttributeConditionsPtrOutputWithContext(context.Background())
+}
+
+func (i *vulnerabilityCodeResourceAttributeConditionsPtrType) ToVulnerabilityCodeResourceAttributeConditionsPtrOutputWithContext(ctx context.Context) VulnerabilityCodeResourceAttributeConditionsPtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(VulnerabilityCodeResourceAttributeConditionsPtrOutput)
+}
+
+type VulnerabilityCodeResourceAttributeConditionsOutput struct{ *pulumi.OutputState }
+
+func (VulnerabilityCodeResourceAttributeConditionsOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*VulnerabilityCodeResourceAttributeConditions)(nil)).Elem()
+}
+
+func (o VulnerabilityCodeResourceAttributeConditionsOutput) ToVulnerabilityCodeResourceAttributeConditionsOutput() VulnerabilityCodeResourceAttributeConditionsOutput {
+	return o
+}
+
+func (o VulnerabilityCodeResourceAttributeConditionsOutput) ToVulnerabilityCodeResourceAttributeConditionsOutputWithContext(ctx context.Context) VulnerabilityCodeResourceAttributeConditionsOutput {
+	return o
+}
+
+func (o VulnerabilityCodeResourceAttributeConditionsOutput) ToVulnerabilityCodeResourceAttributeConditionsPtrOutput() VulnerabilityCodeResourceAttributeConditionsPtrOutput {
+	return o.ToVulnerabilityCodeResourceAttributeConditionsPtrOutputWithContext(context.Background())
+}
+
+func (o VulnerabilityCodeResourceAttributeConditionsOutput) ToVulnerabilityCodeResourceAttributeConditionsPtrOutputWithContext(ctx context.Context) VulnerabilityCodeResourceAttributeConditionsPtrOutput {
+	return o.ApplyTWithContext(ctx, func(_ context.Context, v VulnerabilityCodeResourceAttributeConditions) *VulnerabilityCodeResourceAttributeConditions {
+		return &v
+	}).(VulnerabilityCodeResourceAttributeConditionsPtrOutput)
+}
+
+func (o VulnerabilityCodeResourceAttributeConditionsOutput) ResourceAttributeConditions() VulnerabilityCodeResourceAttributeConditionsResourceAttributeConditionArrayOutput {
+	return o.ApplyT(func(v VulnerabilityCodeResourceAttributeConditions) []VulnerabilityCodeResourceAttributeConditionsResourceAttributeCondition {
+		return v.ResourceAttributeConditions
+	}).(VulnerabilityCodeResourceAttributeConditionsResourceAttributeConditionArrayOutput)
+}
+
+type VulnerabilityCodeResourceAttributeConditionsPtrOutput struct{ *pulumi.OutputState }
+
+func (VulnerabilityCodeResourceAttributeConditionsPtrOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((**VulnerabilityCodeResourceAttributeConditions)(nil)).Elem()
+}
+
+func (o VulnerabilityCodeResourceAttributeConditionsPtrOutput) ToVulnerabilityCodeResourceAttributeConditionsPtrOutput() VulnerabilityCodeResourceAttributeConditionsPtrOutput {
+	return o
+}
+
+func (o VulnerabilityCodeResourceAttributeConditionsPtrOutput) ToVulnerabilityCodeResourceAttributeConditionsPtrOutputWithContext(ctx context.Context) VulnerabilityCodeResourceAttributeConditionsPtrOutput {
+	return o
+}
+
+func (o VulnerabilityCodeResourceAttributeConditionsPtrOutput) Elem() VulnerabilityCodeResourceAttributeConditionsOutput {
+	return o.ApplyT(func(v *VulnerabilityCodeResourceAttributeConditions) VulnerabilityCodeResourceAttributeConditions {
+		if v != nil {
+			return *v
+		}
+		var ret VulnerabilityCodeResourceAttributeConditions
+		return ret
+	}).(VulnerabilityCodeResourceAttributeConditionsOutput)
+}
+
+func (o VulnerabilityCodeResourceAttributeConditionsPtrOutput) ResourceAttributeConditions() VulnerabilityCodeResourceAttributeConditionsResourceAttributeConditionArrayOutput {
+	return o.ApplyT(func(v *VulnerabilityCodeResourceAttributeConditions) []VulnerabilityCodeResourceAttributeConditionsResourceAttributeCondition {
+		if v == nil {
+			return nil
+		}
+		return v.ResourceAttributeConditions
+	}).(VulnerabilityCodeResourceAttributeConditionsResourceAttributeConditionArrayOutput)
+}
+
+type VulnerabilityCodeResourceAttributeConditionsResourceAttributeCondition struct {
+	// Possible Values: `CONTAINS`, `DOES_NOT_CONTAIN`, `DOES_NOT_END_WITH`, `DOES_NOT_EXIST`, `DOES_NOT_START_WITH`, `ENDS_WITH`, `EQUALS`, `EXISTS`, `NOT_EQUALS`, `STARTS_WITH`
+	Matcher string `pulumi:"matcher"`
+	// Resource attribute key
+	ResourceAttributeKey string `pulumi:"resourceAttributeKey"`
+	// Resource attribute value
+	ResourceAttributeValue *string `pulumi:"resourceAttributeValue"`
+}
+
+// VulnerabilityCodeResourceAttributeConditionsResourceAttributeConditionInput is an input type that accepts VulnerabilityCodeResourceAttributeConditionsResourceAttributeConditionArgs and VulnerabilityCodeResourceAttributeConditionsResourceAttributeConditionOutput values.
+// You can construct a concrete instance of `VulnerabilityCodeResourceAttributeConditionsResourceAttributeConditionInput` via:
+//
+//	VulnerabilityCodeResourceAttributeConditionsResourceAttributeConditionArgs{...}
+type VulnerabilityCodeResourceAttributeConditionsResourceAttributeConditionInput interface {
+	pulumi.Input
+
+	ToVulnerabilityCodeResourceAttributeConditionsResourceAttributeConditionOutput() VulnerabilityCodeResourceAttributeConditionsResourceAttributeConditionOutput
+	ToVulnerabilityCodeResourceAttributeConditionsResourceAttributeConditionOutputWithContext(context.Context) VulnerabilityCodeResourceAttributeConditionsResourceAttributeConditionOutput
+}
+
+type VulnerabilityCodeResourceAttributeConditionsResourceAttributeConditionArgs struct {
+	// Possible Values: `CONTAINS`, `DOES_NOT_CONTAIN`, `DOES_NOT_END_WITH`, `DOES_NOT_EXIST`, `DOES_NOT_START_WITH`, `ENDS_WITH`, `EQUALS`, `EXISTS`, `NOT_EQUALS`, `STARTS_WITH`
+	Matcher pulumi.StringInput `pulumi:"matcher"`
+	// Resource attribute key
+	ResourceAttributeKey pulumi.StringInput `pulumi:"resourceAttributeKey"`
+	// Resource attribute value
+	ResourceAttributeValue pulumi.StringPtrInput `pulumi:"resourceAttributeValue"`
+}
+
+func (VulnerabilityCodeResourceAttributeConditionsResourceAttributeConditionArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*VulnerabilityCodeResourceAttributeConditionsResourceAttributeCondition)(nil)).Elem()
+}
+
+func (i VulnerabilityCodeResourceAttributeConditionsResourceAttributeConditionArgs) ToVulnerabilityCodeResourceAttributeConditionsResourceAttributeConditionOutput() VulnerabilityCodeResourceAttributeConditionsResourceAttributeConditionOutput {
+	return i.ToVulnerabilityCodeResourceAttributeConditionsResourceAttributeConditionOutputWithContext(context.Background())
+}
+
+func (i VulnerabilityCodeResourceAttributeConditionsResourceAttributeConditionArgs) ToVulnerabilityCodeResourceAttributeConditionsResourceAttributeConditionOutputWithContext(ctx context.Context) VulnerabilityCodeResourceAttributeConditionsResourceAttributeConditionOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(VulnerabilityCodeResourceAttributeConditionsResourceAttributeConditionOutput)
+}
+
+// VulnerabilityCodeResourceAttributeConditionsResourceAttributeConditionArrayInput is an input type that accepts VulnerabilityCodeResourceAttributeConditionsResourceAttributeConditionArray and VulnerabilityCodeResourceAttributeConditionsResourceAttributeConditionArrayOutput values.
+// You can construct a concrete instance of `VulnerabilityCodeResourceAttributeConditionsResourceAttributeConditionArrayInput` via:
+//
+//	VulnerabilityCodeResourceAttributeConditionsResourceAttributeConditionArray{ VulnerabilityCodeResourceAttributeConditionsResourceAttributeConditionArgs{...} }
+type VulnerabilityCodeResourceAttributeConditionsResourceAttributeConditionArrayInput interface {
+	pulumi.Input
+
+	ToVulnerabilityCodeResourceAttributeConditionsResourceAttributeConditionArrayOutput() VulnerabilityCodeResourceAttributeConditionsResourceAttributeConditionArrayOutput
+	ToVulnerabilityCodeResourceAttributeConditionsResourceAttributeConditionArrayOutputWithContext(context.Context) VulnerabilityCodeResourceAttributeConditionsResourceAttributeConditionArrayOutput
+}
+
+type VulnerabilityCodeResourceAttributeConditionsResourceAttributeConditionArray []VulnerabilityCodeResourceAttributeConditionsResourceAttributeConditionInput
+
+func (VulnerabilityCodeResourceAttributeConditionsResourceAttributeConditionArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]VulnerabilityCodeResourceAttributeConditionsResourceAttributeCondition)(nil)).Elem()
+}
+
+func (i VulnerabilityCodeResourceAttributeConditionsResourceAttributeConditionArray) ToVulnerabilityCodeResourceAttributeConditionsResourceAttributeConditionArrayOutput() VulnerabilityCodeResourceAttributeConditionsResourceAttributeConditionArrayOutput {
+	return i.ToVulnerabilityCodeResourceAttributeConditionsResourceAttributeConditionArrayOutputWithContext(context.Background())
+}
+
+func (i VulnerabilityCodeResourceAttributeConditionsResourceAttributeConditionArray) ToVulnerabilityCodeResourceAttributeConditionsResourceAttributeConditionArrayOutputWithContext(ctx context.Context) VulnerabilityCodeResourceAttributeConditionsResourceAttributeConditionArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(VulnerabilityCodeResourceAttributeConditionsResourceAttributeConditionArrayOutput)
+}
+
+type VulnerabilityCodeResourceAttributeConditionsResourceAttributeConditionOutput struct{ *pulumi.OutputState }
+
+func (VulnerabilityCodeResourceAttributeConditionsResourceAttributeConditionOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*VulnerabilityCodeResourceAttributeConditionsResourceAttributeCondition)(nil)).Elem()
+}
+
+func (o VulnerabilityCodeResourceAttributeConditionsResourceAttributeConditionOutput) ToVulnerabilityCodeResourceAttributeConditionsResourceAttributeConditionOutput() VulnerabilityCodeResourceAttributeConditionsResourceAttributeConditionOutput {
+	return o
+}
+
+func (o VulnerabilityCodeResourceAttributeConditionsResourceAttributeConditionOutput) ToVulnerabilityCodeResourceAttributeConditionsResourceAttributeConditionOutputWithContext(ctx context.Context) VulnerabilityCodeResourceAttributeConditionsResourceAttributeConditionOutput {
+	return o
+}
+
+// Possible Values: `CONTAINS`, `DOES_NOT_CONTAIN`, `DOES_NOT_END_WITH`, `DOES_NOT_EXIST`, `DOES_NOT_START_WITH`, `ENDS_WITH`, `EQUALS`, `EXISTS`, `NOT_EQUALS`, `STARTS_WITH`
+func (o VulnerabilityCodeResourceAttributeConditionsResourceAttributeConditionOutput) Matcher() pulumi.StringOutput {
+	return o.ApplyT(func(v VulnerabilityCodeResourceAttributeConditionsResourceAttributeCondition) string {
+		return v.Matcher
+	}).(pulumi.StringOutput)
+}
+
+// Resource attribute key
+func (o VulnerabilityCodeResourceAttributeConditionsResourceAttributeConditionOutput) ResourceAttributeKey() pulumi.StringOutput {
+	return o.ApplyT(func(v VulnerabilityCodeResourceAttributeConditionsResourceAttributeCondition) string {
+		return v.ResourceAttributeKey
+	}).(pulumi.StringOutput)
+}
+
+// Resource attribute value
+func (o VulnerabilityCodeResourceAttributeConditionsResourceAttributeConditionOutput) ResourceAttributeValue() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v VulnerabilityCodeResourceAttributeConditionsResourceAttributeCondition) *string {
+		return v.ResourceAttributeValue
+	}).(pulumi.StringPtrOutput)
+}
+
+type VulnerabilityCodeResourceAttributeConditionsResourceAttributeConditionArrayOutput struct{ *pulumi.OutputState }
+
+func (VulnerabilityCodeResourceAttributeConditionsResourceAttributeConditionArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]VulnerabilityCodeResourceAttributeConditionsResourceAttributeCondition)(nil)).Elem()
+}
+
+func (o VulnerabilityCodeResourceAttributeConditionsResourceAttributeConditionArrayOutput) ToVulnerabilityCodeResourceAttributeConditionsResourceAttributeConditionArrayOutput() VulnerabilityCodeResourceAttributeConditionsResourceAttributeConditionArrayOutput {
+	return o
+}
+
+func (o VulnerabilityCodeResourceAttributeConditionsResourceAttributeConditionArrayOutput) ToVulnerabilityCodeResourceAttributeConditionsResourceAttributeConditionArrayOutputWithContext(ctx context.Context) VulnerabilityCodeResourceAttributeConditionsResourceAttributeConditionArrayOutput {
+	return o
+}
+
+func (o VulnerabilityCodeResourceAttributeConditionsResourceAttributeConditionArrayOutput) Index(i pulumi.IntInput) VulnerabilityCodeResourceAttributeConditionsResourceAttributeConditionOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) VulnerabilityCodeResourceAttributeConditionsResourceAttributeCondition {
+		return vs[0].([]VulnerabilityCodeResourceAttributeConditionsResourceAttributeCondition)[vs[1].(int)]
+	}).(VulnerabilityCodeResourceAttributeConditionsResourceAttributeConditionOutput)
+}
+
+type VulnerabilityCodeVulnerabilityDetectionControl struct {
+	// Possible Values: `MONITORING_OFF`, `MONITORING_ON`
+	MonitoringMode string `pulumi:"monitoringMode"`
+}
+
+// VulnerabilityCodeVulnerabilityDetectionControlInput is an input type that accepts VulnerabilityCodeVulnerabilityDetectionControlArgs and VulnerabilityCodeVulnerabilityDetectionControlOutput values.
+// You can construct a concrete instance of `VulnerabilityCodeVulnerabilityDetectionControlInput` via:
+//
+//	VulnerabilityCodeVulnerabilityDetectionControlArgs{...}
+type VulnerabilityCodeVulnerabilityDetectionControlInput interface {
+	pulumi.Input
+
+	ToVulnerabilityCodeVulnerabilityDetectionControlOutput() VulnerabilityCodeVulnerabilityDetectionControlOutput
+	ToVulnerabilityCodeVulnerabilityDetectionControlOutputWithContext(context.Context) VulnerabilityCodeVulnerabilityDetectionControlOutput
+}
+
+type VulnerabilityCodeVulnerabilityDetectionControlArgs struct {
+	// Possible Values: `MONITORING_OFF`, `MONITORING_ON`
+	MonitoringMode pulumi.StringInput `pulumi:"monitoringMode"`
+}
+
+func (VulnerabilityCodeVulnerabilityDetectionControlArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*VulnerabilityCodeVulnerabilityDetectionControl)(nil)).Elem()
+}
+
+func (i VulnerabilityCodeVulnerabilityDetectionControlArgs) ToVulnerabilityCodeVulnerabilityDetectionControlOutput() VulnerabilityCodeVulnerabilityDetectionControlOutput {
+	return i.ToVulnerabilityCodeVulnerabilityDetectionControlOutputWithContext(context.Background())
+}
+
+func (i VulnerabilityCodeVulnerabilityDetectionControlArgs) ToVulnerabilityCodeVulnerabilityDetectionControlOutputWithContext(ctx context.Context) VulnerabilityCodeVulnerabilityDetectionControlOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(VulnerabilityCodeVulnerabilityDetectionControlOutput)
+}
+
+func (i VulnerabilityCodeVulnerabilityDetectionControlArgs) ToVulnerabilityCodeVulnerabilityDetectionControlPtrOutput() VulnerabilityCodeVulnerabilityDetectionControlPtrOutput {
+	return i.ToVulnerabilityCodeVulnerabilityDetectionControlPtrOutputWithContext(context.Background())
+}
+
+func (i VulnerabilityCodeVulnerabilityDetectionControlArgs) ToVulnerabilityCodeVulnerabilityDetectionControlPtrOutputWithContext(ctx context.Context) VulnerabilityCodeVulnerabilityDetectionControlPtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(VulnerabilityCodeVulnerabilityDetectionControlOutput).ToVulnerabilityCodeVulnerabilityDetectionControlPtrOutputWithContext(ctx)
+}
+
+// VulnerabilityCodeVulnerabilityDetectionControlPtrInput is an input type that accepts VulnerabilityCodeVulnerabilityDetectionControlArgs, VulnerabilityCodeVulnerabilityDetectionControlPtr and VulnerabilityCodeVulnerabilityDetectionControlPtrOutput values.
+// You can construct a concrete instance of `VulnerabilityCodeVulnerabilityDetectionControlPtrInput` via:
+//
+//	        VulnerabilityCodeVulnerabilityDetectionControlArgs{...}
+//
+//	or:
+//
+//	        nil
+type VulnerabilityCodeVulnerabilityDetectionControlPtrInput interface {
+	pulumi.Input
+
+	ToVulnerabilityCodeVulnerabilityDetectionControlPtrOutput() VulnerabilityCodeVulnerabilityDetectionControlPtrOutput
+	ToVulnerabilityCodeVulnerabilityDetectionControlPtrOutputWithContext(context.Context) VulnerabilityCodeVulnerabilityDetectionControlPtrOutput
+}
+
+type vulnerabilityCodeVulnerabilityDetectionControlPtrType VulnerabilityCodeVulnerabilityDetectionControlArgs
+
+func VulnerabilityCodeVulnerabilityDetectionControlPtr(v *VulnerabilityCodeVulnerabilityDetectionControlArgs) VulnerabilityCodeVulnerabilityDetectionControlPtrInput {
+	return (*vulnerabilityCodeVulnerabilityDetectionControlPtrType)(v)
+}
+
+func (*vulnerabilityCodeVulnerabilityDetectionControlPtrType) ElementType() reflect.Type {
+	return reflect.TypeOf((**VulnerabilityCodeVulnerabilityDetectionControl)(nil)).Elem()
+}
+
+func (i *vulnerabilityCodeVulnerabilityDetectionControlPtrType) ToVulnerabilityCodeVulnerabilityDetectionControlPtrOutput() VulnerabilityCodeVulnerabilityDetectionControlPtrOutput {
+	return i.ToVulnerabilityCodeVulnerabilityDetectionControlPtrOutputWithContext(context.Background())
+}
+
+func (i *vulnerabilityCodeVulnerabilityDetectionControlPtrType) ToVulnerabilityCodeVulnerabilityDetectionControlPtrOutputWithContext(ctx context.Context) VulnerabilityCodeVulnerabilityDetectionControlPtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(VulnerabilityCodeVulnerabilityDetectionControlPtrOutput)
+}
+
+type VulnerabilityCodeVulnerabilityDetectionControlOutput struct{ *pulumi.OutputState }
+
+func (VulnerabilityCodeVulnerabilityDetectionControlOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*VulnerabilityCodeVulnerabilityDetectionControl)(nil)).Elem()
+}
+
+func (o VulnerabilityCodeVulnerabilityDetectionControlOutput) ToVulnerabilityCodeVulnerabilityDetectionControlOutput() VulnerabilityCodeVulnerabilityDetectionControlOutput {
+	return o
+}
+
+func (o VulnerabilityCodeVulnerabilityDetectionControlOutput) ToVulnerabilityCodeVulnerabilityDetectionControlOutputWithContext(ctx context.Context) VulnerabilityCodeVulnerabilityDetectionControlOutput {
+	return o
+}
+
+func (o VulnerabilityCodeVulnerabilityDetectionControlOutput) ToVulnerabilityCodeVulnerabilityDetectionControlPtrOutput() VulnerabilityCodeVulnerabilityDetectionControlPtrOutput {
+	return o.ToVulnerabilityCodeVulnerabilityDetectionControlPtrOutputWithContext(context.Background())
+}
+
+func (o VulnerabilityCodeVulnerabilityDetectionControlOutput) ToVulnerabilityCodeVulnerabilityDetectionControlPtrOutputWithContext(ctx context.Context) VulnerabilityCodeVulnerabilityDetectionControlPtrOutput {
+	return o.ApplyTWithContext(ctx, func(_ context.Context, v VulnerabilityCodeVulnerabilityDetectionControl) *VulnerabilityCodeVulnerabilityDetectionControl {
+		return &v
+	}).(VulnerabilityCodeVulnerabilityDetectionControlPtrOutput)
+}
+
+// Possible Values: `MONITORING_OFF`, `MONITORING_ON`
+func (o VulnerabilityCodeVulnerabilityDetectionControlOutput) MonitoringMode() pulumi.StringOutput {
+	return o.ApplyT(func(v VulnerabilityCodeVulnerabilityDetectionControl) string { return v.MonitoringMode }).(pulumi.StringOutput)
+}
+
+type VulnerabilityCodeVulnerabilityDetectionControlPtrOutput struct{ *pulumi.OutputState }
+
+func (VulnerabilityCodeVulnerabilityDetectionControlPtrOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((**VulnerabilityCodeVulnerabilityDetectionControl)(nil)).Elem()
+}
+
+func (o VulnerabilityCodeVulnerabilityDetectionControlPtrOutput) ToVulnerabilityCodeVulnerabilityDetectionControlPtrOutput() VulnerabilityCodeVulnerabilityDetectionControlPtrOutput {
+	return o
+}
+
+func (o VulnerabilityCodeVulnerabilityDetectionControlPtrOutput) ToVulnerabilityCodeVulnerabilityDetectionControlPtrOutputWithContext(ctx context.Context) VulnerabilityCodeVulnerabilityDetectionControlPtrOutput {
+	return o
+}
+
+func (o VulnerabilityCodeVulnerabilityDetectionControlPtrOutput) Elem() VulnerabilityCodeVulnerabilityDetectionControlOutput {
+	return o.ApplyT(func(v *VulnerabilityCodeVulnerabilityDetectionControl) VulnerabilityCodeVulnerabilityDetectionControl {
+		if v != nil {
+			return *v
+		}
+		var ret VulnerabilityCodeVulnerabilityDetectionControl
+		return ret
+	}).(VulnerabilityCodeVulnerabilityDetectionControlOutput)
+}
+
+// Possible Values: `MONITORING_OFF`, `MONITORING_ON`
+func (o VulnerabilityCodeVulnerabilityDetectionControlPtrOutput) MonitoringMode() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *VulnerabilityCodeVulnerabilityDetectionControl) *string {
+		if v == nil {
+			return nil
+		}
+		return &v.MonitoringMode
+	}).(pulumi.StringPtrOutput)
+}
+
+type VulnerabilitySettingsTechnologies struct {
+	// NET
+	EnableDotNet bool `pulumi:"enableDotNet"`
+	// NET runtimes
+	EnableDotNetRuntime *bool `pulumi:"enableDotNetRuntime"`
+	// Go
+	EnableGo bool `pulumi:"enableGo"`
+	// Java
+	EnableJava bool `pulumi:"enableJava"`
+	// Java runtimes
+	EnableJavaRuntime *bool `pulumi:"enableJavaRuntime"`
+	// Kubernetes
+	EnableKubernetes bool `pulumi:"enableKubernetes"`
+	// Node.js
+	EnableNodeJs bool `pulumi:"enableNodeJs"`
+	// Node.js runtimes
+	EnableNodeJsRuntime *bool `pulumi:"enableNodeJsRuntime"`
+	// PHP
+	EnablePhp bool `pulumi:"enablePhp"`
+	// Python
+	EnablePython *bool `pulumi:"enablePython"`
+	// Python runtimes
+	EnablePythonRuntime *bool `pulumi:"enablePythonRuntime"`
+}
+
+// VulnerabilitySettingsTechnologiesInput is an input type that accepts VulnerabilitySettingsTechnologiesArgs and VulnerabilitySettingsTechnologiesOutput values.
+// You can construct a concrete instance of `VulnerabilitySettingsTechnologiesInput` via:
+//
+//	VulnerabilitySettingsTechnologiesArgs{...}
+type VulnerabilitySettingsTechnologiesInput interface {
+	pulumi.Input
+
+	ToVulnerabilitySettingsTechnologiesOutput() VulnerabilitySettingsTechnologiesOutput
+	ToVulnerabilitySettingsTechnologiesOutputWithContext(context.Context) VulnerabilitySettingsTechnologiesOutput
+}
+
+type VulnerabilitySettingsTechnologiesArgs struct {
+	// NET
+	EnableDotNet pulumi.BoolInput `pulumi:"enableDotNet"`
+	// NET runtimes
+	EnableDotNetRuntime pulumi.BoolPtrInput `pulumi:"enableDotNetRuntime"`
+	// Go
+	EnableGo pulumi.BoolInput `pulumi:"enableGo"`
+	// Java
+	EnableJava pulumi.BoolInput `pulumi:"enableJava"`
+	// Java runtimes
+	EnableJavaRuntime pulumi.BoolPtrInput `pulumi:"enableJavaRuntime"`
+	// Kubernetes
+	EnableKubernetes pulumi.BoolInput `pulumi:"enableKubernetes"`
+	// Node.js
+	EnableNodeJs pulumi.BoolInput `pulumi:"enableNodeJs"`
+	// Node.js runtimes
+	EnableNodeJsRuntime pulumi.BoolPtrInput `pulumi:"enableNodeJsRuntime"`
+	// PHP
+	EnablePhp pulumi.BoolInput `pulumi:"enablePhp"`
+	// Python
+	EnablePython pulumi.BoolPtrInput `pulumi:"enablePython"`
+	// Python runtimes
+	EnablePythonRuntime pulumi.BoolPtrInput `pulumi:"enablePythonRuntime"`
+}
+
+func (VulnerabilitySettingsTechnologiesArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*VulnerabilitySettingsTechnologies)(nil)).Elem()
+}
+
+func (i VulnerabilitySettingsTechnologiesArgs) ToVulnerabilitySettingsTechnologiesOutput() VulnerabilitySettingsTechnologiesOutput {
+	return i.ToVulnerabilitySettingsTechnologiesOutputWithContext(context.Background())
+}
+
+func (i VulnerabilitySettingsTechnologiesArgs) ToVulnerabilitySettingsTechnologiesOutputWithContext(ctx context.Context) VulnerabilitySettingsTechnologiesOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(VulnerabilitySettingsTechnologiesOutput)
+}
+
+func (i VulnerabilitySettingsTechnologiesArgs) ToVulnerabilitySettingsTechnologiesPtrOutput() VulnerabilitySettingsTechnologiesPtrOutput {
+	return i.ToVulnerabilitySettingsTechnologiesPtrOutputWithContext(context.Background())
+}
+
+func (i VulnerabilitySettingsTechnologiesArgs) ToVulnerabilitySettingsTechnologiesPtrOutputWithContext(ctx context.Context) VulnerabilitySettingsTechnologiesPtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(VulnerabilitySettingsTechnologiesOutput).ToVulnerabilitySettingsTechnologiesPtrOutputWithContext(ctx)
+}
+
+// VulnerabilitySettingsTechnologiesPtrInput is an input type that accepts VulnerabilitySettingsTechnologiesArgs, VulnerabilitySettingsTechnologiesPtr and VulnerabilitySettingsTechnologiesPtrOutput values.
+// You can construct a concrete instance of `VulnerabilitySettingsTechnologiesPtrInput` via:
+//
+//	        VulnerabilitySettingsTechnologiesArgs{...}
+//
+//	or:
+//
+//	        nil
+type VulnerabilitySettingsTechnologiesPtrInput interface {
+	pulumi.Input
+
+	ToVulnerabilitySettingsTechnologiesPtrOutput() VulnerabilitySettingsTechnologiesPtrOutput
+	ToVulnerabilitySettingsTechnologiesPtrOutputWithContext(context.Context) VulnerabilitySettingsTechnologiesPtrOutput
+}
+
+type vulnerabilitySettingsTechnologiesPtrType VulnerabilitySettingsTechnologiesArgs
+
+func VulnerabilitySettingsTechnologiesPtr(v *VulnerabilitySettingsTechnologiesArgs) VulnerabilitySettingsTechnologiesPtrInput {
+	return (*vulnerabilitySettingsTechnologiesPtrType)(v)
+}
+
+func (*vulnerabilitySettingsTechnologiesPtrType) ElementType() reflect.Type {
+	return reflect.TypeOf((**VulnerabilitySettingsTechnologies)(nil)).Elem()
+}
+
+func (i *vulnerabilitySettingsTechnologiesPtrType) ToVulnerabilitySettingsTechnologiesPtrOutput() VulnerabilitySettingsTechnologiesPtrOutput {
+	return i.ToVulnerabilitySettingsTechnologiesPtrOutputWithContext(context.Background())
+}
+
+func (i *vulnerabilitySettingsTechnologiesPtrType) ToVulnerabilitySettingsTechnologiesPtrOutputWithContext(ctx context.Context) VulnerabilitySettingsTechnologiesPtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(VulnerabilitySettingsTechnologiesPtrOutput)
+}
+
+type VulnerabilitySettingsTechnologiesOutput struct{ *pulumi.OutputState }
+
+func (VulnerabilitySettingsTechnologiesOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*VulnerabilitySettingsTechnologies)(nil)).Elem()
+}
+
+func (o VulnerabilitySettingsTechnologiesOutput) ToVulnerabilitySettingsTechnologiesOutput() VulnerabilitySettingsTechnologiesOutput {
+	return o
+}
+
+func (o VulnerabilitySettingsTechnologiesOutput) ToVulnerabilitySettingsTechnologiesOutputWithContext(ctx context.Context) VulnerabilitySettingsTechnologiesOutput {
+	return o
+}
+
+func (o VulnerabilitySettingsTechnologiesOutput) ToVulnerabilitySettingsTechnologiesPtrOutput() VulnerabilitySettingsTechnologiesPtrOutput {
+	return o.ToVulnerabilitySettingsTechnologiesPtrOutputWithContext(context.Background())
+}
+
+func (o VulnerabilitySettingsTechnologiesOutput) ToVulnerabilitySettingsTechnologiesPtrOutputWithContext(ctx context.Context) VulnerabilitySettingsTechnologiesPtrOutput {
+	return o.ApplyTWithContext(ctx, func(_ context.Context, v VulnerabilitySettingsTechnologies) *VulnerabilitySettingsTechnologies {
+		return &v
+	}).(VulnerabilitySettingsTechnologiesPtrOutput)
+}
+
+// NET
+func (o VulnerabilitySettingsTechnologiesOutput) EnableDotNet() pulumi.BoolOutput {
+	return o.ApplyT(func(v VulnerabilitySettingsTechnologies) bool { return v.EnableDotNet }).(pulumi.BoolOutput)
+}
+
+// NET runtimes
+func (o VulnerabilitySettingsTechnologiesOutput) EnableDotNetRuntime() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v VulnerabilitySettingsTechnologies) *bool { return v.EnableDotNetRuntime }).(pulumi.BoolPtrOutput)
+}
+
+// Go
+func (o VulnerabilitySettingsTechnologiesOutput) EnableGo() pulumi.BoolOutput {
+	return o.ApplyT(func(v VulnerabilitySettingsTechnologies) bool { return v.EnableGo }).(pulumi.BoolOutput)
+}
+
+// Java
+func (o VulnerabilitySettingsTechnologiesOutput) EnableJava() pulumi.BoolOutput {
+	return o.ApplyT(func(v VulnerabilitySettingsTechnologies) bool { return v.EnableJava }).(pulumi.BoolOutput)
+}
+
+// Java runtimes
+func (o VulnerabilitySettingsTechnologiesOutput) EnableJavaRuntime() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v VulnerabilitySettingsTechnologies) *bool { return v.EnableJavaRuntime }).(pulumi.BoolPtrOutput)
+}
+
+// Kubernetes
+func (o VulnerabilitySettingsTechnologiesOutput) EnableKubernetes() pulumi.BoolOutput {
+	return o.ApplyT(func(v VulnerabilitySettingsTechnologies) bool { return v.EnableKubernetes }).(pulumi.BoolOutput)
+}
+
+// Node.js
+func (o VulnerabilitySettingsTechnologiesOutput) EnableNodeJs() pulumi.BoolOutput {
+	return o.ApplyT(func(v VulnerabilitySettingsTechnologies) bool { return v.EnableNodeJs }).(pulumi.BoolOutput)
+}
+
+// Node.js runtimes
+func (o VulnerabilitySettingsTechnologiesOutput) EnableNodeJsRuntime() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v VulnerabilitySettingsTechnologies) *bool { return v.EnableNodeJsRuntime }).(pulumi.BoolPtrOutput)
+}
+
+// PHP
+func (o VulnerabilitySettingsTechnologiesOutput) EnablePhp() pulumi.BoolOutput {
+	return o.ApplyT(func(v VulnerabilitySettingsTechnologies) bool { return v.EnablePhp }).(pulumi.BoolOutput)
+}
+
+// Python
+func (o VulnerabilitySettingsTechnologiesOutput) EnablePython() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v VulnerabilitySettingsTechnologies) *bool { return v.EnablePython }).(pulumi.BoolPtrOutput)
+}
+
+// Python runtimes
+func (o VulnerabilitySettingsTechnologiesOutput) EnablePythonRuntime() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v VulnerabilitySettingsTechnologies) *bool { return v.EnablePythonRuntime }).(pulumi.BoolPtrOutput)
+}
+
+type VulnerabilitySettingsTechnologiesPtrOutput struct{ *pulumi.OutputState }
+
+func (VulnerabilitySettingsTechnologiesPtrOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((**VulnerabilitySettingsTechnologies)(nil)).Elem()
+}
+
+func (o VulnerabilitySettingsTechnologiesPtrOutput) ToVulnerabilitySettingsTechnologiesPtrOutput() VulnerabilitySettingsTechnologiesPtrOutput {
+	return o
+}
+
+func (o VulnerabilitySettingsTechnologiesPtrOutput) ToVulnerabilitySettingsTechnologiesPtrOutputWithContext(ctx context.Context) VulnerabilitySettingsTechnologiesPtrOutput {
+	return o
+}
+
+func (o VulnerabilitySettingsTechnologiesPtrOutput) Elem() VulnerabilitySettingsTechnologiesOutput {
+	return o.ApplyT(func(v *VulnerabilitySettingsTechnologies) VulnerabilitySettingsTechnologies {
+		if v != nil {
+			return *v
+		}
+		var ret VulnerabilitySettingsTechnologies
+		return ret
+	}).(VulnerabilitySettingsTechnologiesOutput)
+}
+
+// NET
+func (o VulnerabilitySettingsTechnologiesPtrOutput) EnableDotNet() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v *VulnerabilitySettingsTechnologies) *bool {
+		if v == nil {
+			return nil
+		}
+		return &v.EnableDotNet
+	}).(pulumi.BoolPtrOutput)
+}
+
+// NET runtimes
+func (o VulnerabilitySettingsTechnologiesPtrOutput) EnableDotNetRuntime() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v *VulnerabilitySettingsTechnologies) *bool {
+		if v == nil {
+			return nil
+		}
+		return v.EnableDotNetRuntime
+	}).(pulumi.BoolPtrOutput)
+}
+
+// Go
+func (o VulnerabilitySettingsTechnologiesPtrOutput) EnableGo() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v *VulnerabilitySettingsTechnologies) *bool {
+		if v == nil {
+			return nil
+		}
+		return &v.EnableGo
+	}).(pulumi.BoolPtrOutput)
+}
+
+// Java
+func (o VulnerabilitySettingsTechnologiesPtrOutput) EnableJava() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v *VulnerabilitySettingsTechnologies) *bool {
+		if v == nil {
+			return nil
+		}
+		return &v.EnableJava
+	}).(pulumi.BoolPtrOutput)
+}
+
+// Java runtimes
+func (o VulnerabilitySettingsTechnologiesPtrOutput) EnableJavaRuntime() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v *VulnerabilitySettingsTechnologies) *bool {
+		if v == nil {
+			return nil
+		}
+		return v.EnableJavaRuntime
+	}).(pulumi.BoolPtrOutput)
+}
+
+// Kubernetes
+func (o VulnerabilitySettingsTechnologiesPtrOutput) EnableKubernetes() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v *VulnerabilitySettingsTechnologies) *bool {
+		if v == nil {
+			return nil
+		}
+		return &v.EnableKubernetes
+	}).(pulumi.BoolPtrOutput)
+}
+
+// Node.js
+func (o VulnerabilitySettingsTechnologiesPtrOutput) EnableNodeJs() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v *VulnerabilitySettingsTechnologies) *bool {
+		if v == nil {
+			return nil
+		}
+		return &v.EnableNodeJs
+	}).(pulumi.BoolPtrOutput)
+}
+
+// Node.js runtimes
+func (o VulnerabilitySettingsTechnologiesPtrOutput) EnableNodeJsRuntime() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v *VulnerabilitySettingsTechnologies) *bool {
+		if v == nil {
+			return nil
+		}
+		return v.EnableNodeJsRuntime
+	}).(pulumi.BoolPtrOutput)
+}
+
+// PHP
+func (o VulnerabilitySettingsTechnologiesPtrOutput) EnablePhp() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v *VulnerabilitySettingsTechnologies) *bool {
+		if v == nil {
+			return nil
+		}
+		return &v.EnablePhp
+	}).(pulumi.BoolPtrOutput)
+}
+
+// Python
+func (o VulnerabilitySettingsTechnologiesPtrOutput) EnablePython() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v *VulnerabilitySettingsTechnologies) *bool {
+		if v == nil {
+			return nil
+		}
+		return v.EnablePython
+	}).(pulumi.BoolPtrOutput)
+}
+
+// Python runtimes
+func (o VulnerabilitySettingsTechnologiesPtrOutput) EnablePythonRuntime() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v *VulnerabilitySettingsTechnologies) *bool {
+		if v == nil {
+			return nil
+		}
+		return v.EnablePythonRuntime
+	}).(pulumi.BoolPtrOutput)
+}
+
+type VulnerabilityThirdPartyAttrMetadata struct {
+	// no documentation available
+	Comment string `pulumi:"comment"`
+}
+
+// VulnerabilityThirdPartyAttrMetadataInput is an input type that accepts VulnerabilityThirdPartyAttrMetadataArgs and VulnerabilityThirdPartyAttrMetadataOutput values.
+// You can construct a concrete instance of `VulnerabilityThirdPartyAttrMetadataInput` via:
+//
+//	VulnerabilityThirdPartyAttrMetadataArgs{...}
+type VulnerabilityThirdPartyAttrMetadataInput interface {
+	pulumi.Input
+
+	ToVulnerabilityThirdPartyAttrMetadataOutput() VulnerabilityThirdPartyAttrMetadataOutput
+	ToVulnerabilityThirdPartyAttrMetadataOutputWithContext(context.Context) VulnerabilityThirdPartyAttrMetadataOutput
+}
+
+type VulnerabilityThirdPartyAttrMetadataArgs struct {
+	// no documentation available
+	Comment pulumi.StringInput `pulumi:"comment"`
+}
+
+func (VulnerabilityThirdPartyAttrMetadataArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*VulnerabilityThirdPartyAttrMetadata)(nil)).Elem()
+}
+
+func (i VulnerabilityThirdPartyAttrMetadataArgs) ToVulnerabilityThirdPartyAttrMetadataOutput() VulnerabilityThirdPartyAttrMetadataOutput {
+	return i.ToVulnerabilityThirdPartyAttrMetadataOutputWithContext(context.Background())
+}
+
+func (i VulnerabilityThirdPartyAttrMetadataArgs) ToVulnerabilityThirdPartyAttrMetadataOutputWithContext(ctx context.Context) VulnerabilityThirdPartyAttrMetadataOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(VulnerabilityThirdPartyAttrMetadataOutput)
+}
+
+func (i VulnerabilityThirdPartyAttrMetadataArgs) ToVulnerabilityThirdPartyAttrMetadataPtrOutput() VulnerabilityThirdPartyAttrMetadataPtrOutput {
+	return i.ToVulnerabilityThirdPartyAttrMetadataPtrOutputWithContext(context.Background())
+}
+
+func (i VulnerabilityThirdPartyAttrMetadataArgs) ToVulnerabilityThirdPartyAttrMetadataPtrOutputWithContext(ctx context.Context) VulnerabilityThirdPartyAttrMetadataPtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(VulnerabilityThirdPartyAttrMetadataOutput).ToVulnerabilityThirdPartyAttrMetadataPtrOutputWithContext(ctx)
+}
+
+// VulnerabilityThirdPartyAttrMetadataPtrInput is an input type that accepts VulnerabilityThirdPartyAttrMetadataArgs, VulnerabilityThirdPartyAttrMetadataPtr and VulnerabilityThirdPartyAttrMetadataPtrOutput values.
+// You can construct a concrete instance of `VulnerabilityThirdPartyAttrMetadataPtrInput` via:
+//
+//	        VulnerabilityThirdPartyAttrMetadataArgs{...}
+//
+//	or:
+//
+//	        nil
+type VulnerabilityThirdPartyAttrMetadataPtrInput interface {
+	pulumi.Input
+
+	ToVulnerabilityThirdPartyAttrMetadataPtrOutput() VulnerabilityThirdPartyAttrMetadataPtrOutput
+	ToVulnerabilityThirdPartyAttrMetadataPtrOutputWithContext(context.Context) VulnerabilityThirdPartyAttrMetadataPtrOutput
+}
+
+type vulnerabilityThirdPartyAttrMetadataPtrType VulnerabilityThirdPartyAttrMetadataArgs
+
+func VulnerabilityThirdPartyAttrMetadataPtr(v *VulnerabilityThirdPartyAttrMetadataArgs) VulnerabilityThirdPartyAttrMetadataPtrInput {
+	return (*vulnerabilityThirdPartyAttrMetadataPtrType)(v)
+}
+
+func (*vulnerabilityThirdPartyAttrMetadataPtrType) ElementType() reflect.Type {
+	return reflect.TypeOf((**VulnerabilityThirdPartyAttrMetadata)(nil)).Elem()
+}
+
+func (i *vulnerabilityThirdPartyAttrMetadataPtrType) ToVulnerabilityThirdPartyAttrMetadataPtrOutput() VulnerabilityThirdPartyAttrMetadataPtrOutput {
+	return i.ToVulnerabilityThirdPartyAttrMetadataPtrOutputWithContext(context.Background())
+}
+
+func (i *vulnerabilityThirdPartyAttrMetadataPtrType) ToVulnerabilityThirdPartyAttrMetadataPtrOutputWithContext(ctx context.Context) VulnerabilityThirdPartyAttrMetadataPtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(VulnerabilityThirdPartyAttrMetadataPtrOutput)
+}
+
+type VulnerabilityThirdPartyAttrMetadataOutput struct{ *pulumi.OutputState }
+
+func (VulnerabilityThirdPartyAttrMetadataOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*VulnerabilityThirdPartyAttrMetadata)(nil)).Elem()
+}
+
+func (o VulnerabilityThirdPartyAttrMetadataOutput) ToVulnerabilityThirdPartyAttrMetadataOutput() VulnerabilityThirdPartyAttrMetadataOutput {
+	return o
+}
+
+func (o VulnerabilityThirdPartyAttrMetadataOutput) ToVulnerabilityThirdPartyAttrMetadataOutputWithContext(ctx context.Context) VulnerabilityThirdPartyAttrMetadataOutput {
+	return o
+}
+
+func (o VulnerabilityThirdPartyAttrMetadataOutput) ToVulnerabilityThirdPartyAttrMetadataPtrOutput() VulnerabilityThirdPartyAttrMetadataPtrOutput {
+	return o.ToVulnerabilityThirdPartyAttrMetadataPtrOutputWithContext(context.Background())
+}
+
+func (o VulnerabilityThirdPartyAttrMetadataOutput) ToVulnerabilityThirdPartyAttrMetadataPtrOutputWithContext(ctx context.Context) VulnerabilityThirdPartyAttrMetadataPtrOutput {
+	return o.ApplyTWithContext(ctx, func(_ context.Context, v VulnerabilityThirdPartyAttrMetadata) *VulnerabilityThirdPartyAttrMetadata {
+		return &v
+	}).(VulnerabilityThirdPartyAttrMetadataPtrOutput)
+}
+
+// no documentation available
+func (o VulnerabilityThirdPartyAttrMetadataOutput) Comment() pulumi.StringOutput {
+	return o.ApplyT(func(v VulnerabilityThirdPartyAttrMetadata) string { return v.Comment }).(pulumi.StringOutput)
+}
+
+type VulnerabilityThirdPartyAttrMetadataPtrOutput struct{ *pulumi.OutputState }
+
+func (VulnerabilityThirdPartyAttrMetadataPtrOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((**VulnerabilityThirdPartyAttrMetadata)(nil)).Elem()
+}
+
+func (o VulnerabilityThirdPartyAttrMetadataPtrOutput) ToVulnerabilityThirdPartyAttrMetadataPtrOutput() VulnerabilityThirdPartyAttrMetadataPtrOutput {
+	return o
+}
+
+func (o VulnerabilityThirdPartyAttrMetadataPtrOutput) ToVulnerabilityThirdPartyAttrMetadataPtrOutputWithContext(ctx context.Context) VulnerabilityThirdPartyAttrMetadataPtrOutput {
+	return o
+}
+
+func (o VulnerabilityThirdPartyAttrMetadataPtrOutput) Elem() VulnerabilityThirdPartyAttrMetadataOutput {
+	return o.ApplyT(func(v *VulnerabilityThirdPartyAttrMetadata) VulnerabilityThirdPartyAttrMetadata {
+		if v != nil {
+			return *v
+		}
+		var ret VulnerabilityThirdPartyAttrMetadata
+		return ret
+	}).(VulnerabilityThirdPartyAttrMetadataOutput)
+}
+
+// no documentation available
+func (o VulnerabilityThirdPartyAttrMetadataPtrOutput) Comment() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *VulnerabilityThirdPartyAttrMetadata) *string {
+		if v == nil {
+			return nil
+		}
+		return &v.Comment
+	}).(pulumi.StringPtrOutput)
+}
+
+type VulnerabilityThirdPartyAttrResourceAttributeConditions struct {
+	ResourceAttributeConditions []VulnerabilityThirdPartyAttrResourceAttributeConditionsResourceAttributeCondition `pulumi:"resourceAttributeConditions"`
+}
+
+// VulnerabilityThirdPartyAttrResourceAttributeConditionsInput is an input type that accepts VulnerabilityThirdPartyAttrResourceAttributeConditionsArgs and VulnerabilityThirdPartyAttrResourceAttributeConditionsOutput values.
+// You can construct a concrete instance of `VulnerabilityThirdPartyAttrResourceAttributeConditionsInput` via:
+//
+//	VulnerabilityThirdPartyAttrResourceAttributeConditionsArgs{...}
+type VulnerabilityThirdPartyAttrResourceAttributeConditionsInput interface {
+	pulumi.Input
+
+	ToVulnerabilityThirdPartyAttrResourceAttributeConditionsOutput() VulnerabilityThirdPartyAttrResourceAttributeConditionsOutput
+	ToVulnerabilityThirdPartyAttrResourceAttributeConditionsOutputWithContext(context.Context) VulnerabilityThirdPartyAttrResourceAttributeConditionsOutput
+}
+
+type VulnerabilityThirdPartyAttrResourceAttributeConditionsArgs struct {
+	ResourceAttributeConditions VulnerabilityThirdPartyAttrResourceAttributeConditionsResourceAttributeConditionArrayInput `pulumi:"resourceAttributeConditions"`
+}
+
+func (VulnerabilityThirdPartyAttrResourceAttributeConditionsArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*VulnerabilityThirdPartyAttrResourceAttributeConditions)(nil)).Elem()
+}
+
+func (i VulnerabilityThirdPartyAttrResourceAttributeConditionsArgs) ToVulnerabilityThirdPartyAttrResourceAttributeConditionsOutput() VulnerabilityThirdPartyAttrResourceAttributeConditionsOutput {
+	return i.ToVulnerabilityThirdPartyAttrResourceAttributeConditionsOutputWithContext(context.Background())
+}
+
+func (i VulnerabilityThirdPartyAttrResourceAttributeConditionsArgs) ToVulnerabilityThirdPartyAttrResourceAttributeConditionsOutputWithContext(ctx context.Context) VulnerabilityThirdPartyAttrResourceAttributeConditionsOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(VulnerabilityThirdPartyAttrResourceAttributeConditionsOutput)
+}
+
+func (i VulnerabilityThirdPartyAttrResourceAttributeConditionsArgs) ToVulnerabilityThirdPartyAttrResourceAttributeConditionsPtrOutput() VulnerabilityThirdPartyAttrResourceAttributeConditionsPtrOutput {
+	return i.ToVulnerabilityThirdPartyAttrResourceAttributeConditionsPtrOutputWithContext(context.Background())
+}
+
+func (i VulnerabilityThirdPartyAttrResourceAttributeConditionsArgs) ToVulnerabilityThirdPartyAttrResourceAttributeConditionsPtrOutputWithContext(ctx context.Context) VulnerabilityThirdPartyAttrResourceAttributeConditionsPtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(VulnerabilityThirdPartyAttrResourceAttributeConditionsOutput).ToVulnerabilityThirdPartyAttrResourceAttributeConditionsPtrOutputWithContext(ctx)
+}
+
+// VulnerabilityThirdPartyAttrResourceAttributeConditionsPtrInput is an input type that accepts VulnerabilityThirdPartyAttrResourceAttributeConditionsArgs, VulnerabilityThirdPartyAttrResourceAttributeConditionsPtr and VulnerabilityThirdPartyAttrResourceAttributeConditionsPtrOutput values.
+// You can construct a concrete instance of `VulnerabilityThirdPartyAttrResourceAttributeConditionsPtrInput` via:
+//
+//	        VulnerabilityThirdPartyAttrResourceAttributeConditionsArgs{...}
+//
+//	or:
+//
+//	        nil
+type VulnerabilityThirdPartyAttrResourceAttributeConditionsPtrInput interface {
+	pulumi.Input
+
+	ToVulnerabilityThirdPartyAttrResourceAttributeConditionsPtrOutput() VulnerabilityThirdPartyAttrResourceAttributeConditionsPtrOutput
+	ToVulnerabilityThirdPartyAttrResourceAttributeConditionsPtrOutputWithContext(context.Context) VulnerabilityThirdPartyAttrResourceAttributeConditionsPtrOutput
+}
+
+type vulnerabilityThirdPartyAttrResourceAttributeConditionsPtrType VulnerabilityThirdPartyAttrResourceAttributeConditionsArgs
+
+func VulnerabilityThirdPartyAttrResourceAttributeConditionsPtr(v *VulnerabilityThirdPartyAttrResourceAttributeConditionsArgs) VulnerabilityThirdPartyAttrResourceAttributeConditionsPtrInput {
+	return (*vulnerabilityThirdPartyAttrResourceAttributeConditionsPtrType)(v)
+}
+
+func (*vulnerabilityThirdPartyAttrResourceAttributeConditionsPtrType) ElementType() reflect.Type {
+	return reflect.TypeOf((**VulnerabilityThirdPartyAttrResourceAttributeConditions)(nil)).Elem()
+}
+
+func (i *vulnerabilityThirdPartyAttrResourceAttributeConditionsPtrType) ToVulnerabilityThirdPartyAttrResourceAttributeConditionsPtrOutput() VulnerabilityThirdPartyAttrResourceAttributeConditionsPtrOutput {
+	return i.ToVulnerabilityThirdPartyAttrResourceAttributeConditionsPtrOutputWithContext(context.Background())
+}
+
+func (i *vulnerabilityThirdPartyAttrResourceAttributeConditionsPtrType) ToVulnerabilityThirdPartyAttrResourceAttributeConditionsPtrOutputWithContext(ctx context.Context) VulnerabilityThirdPartyAttrResourceAttributeConditionsPtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(VulnerabilityThirdPartyAttrResourceAttributeConditionsPtrOutput)
+}
+
+type VulnerabilityThirdPartyAttrResourceAttributeConditionsOutput struct{ *pulumi.OutputState }
+
+func (VulnerabilityThirdPartyAttrResourceAttributeConditionsOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*VulnerabilityThirdPartyAttrResourceAttributeConditions)(nil)).Elem()
+}
+
+func (o VulnerabilityThirdPartyAttrResourceAttributeConditionsOutput) ToVulnerabilityThirdPartyAttrResourceAttributeConditionsOutput() VulnerabilityThirdPartyAttrResourceAttributeConditionsOutput {
+	return o
+}
+
+func (o VulnerabilityThirdPartyAttrResourceAttributeConditionsOutput) ToVulnerabilityThirdPartyAttrResourceAttributeConditionsOutputWithContext(ctx context.Context) VulnerabilityThirdPartyAttrResourceAttributeConditionsOutput {
+	return o
+}
+
+func (o VulnerabilityThirdPartyAttrResourceAttributeConditionsOutput) ToVulnerabilityThirdPartyAttrResourceAttributeConditionsPtrOutput() VulnerabilityThirdPartyAttrResourceAttributeConditionsPtrOutput {
+	return o.ToVulnerabilityThirdPartyAttrResourceAttributeConditionsPtrOutputWithContext(context.Background())
+}
+
+func (o VulnerabilityThirdPartyAttrResourceAttributeConditionsOutput) ToVulnerabilityThirdPartyAttrResourceAttributeConditionsPtrOutputWithContext(ctx context.Context) VulnerabilityThirdPartyAttrResourceAttributeConditionsPtrOutput {
+	return o.ApplyTWithContext(ctx, func(_ context.Context, v VulnerabilityThirdPartyAttrResourceAttributeConditions) *VulnerabilityThirdPartyAttrResourceAttributeConditions {
+		return &v
+	}).(VulnerabilityThirdPartyAttrResourceAttributeConditionsPtrOutput)
+}
+
+func (o VulnerabilityThirdPartyAttrResourceAttributeConditionsOutput) ResourceAttributeConditions() VulnerabilityThirdPartyAttrResourceAttributeConditionsResourceAttributeConditionArrayOutput {
+	return o.ApplyT(func(v VulnerabilityThirdPartyAttrResourceAttributeConditions) []VulnerabilityThirdPartyAttrResourceAttributeConditionsResourceAttributeCondition {
+		return v.ResourceAttributeConditions
+	}).(VulnerabilityThirdPartyAttrResourceAttributeConditionsResourceAttributeConditionArrayOutput)
+}
+
+type VulnerabilityThirdPartyAttrResourceAttributeConditionsPtrOutput struct{ *pulumi.OutputState }
+
+func (VulnerabilityThirdPartyAttrResourceAttributeConditionsPtrOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((**VulnerabilityThirdPartyAttrResourceAttributeConditions)(nil)).Elem()
+}
+
+func (o VulnerabilityThirdPartyAttrResourceAttributeConditionsPtrOutput) ToVulnerabilityThirdPartyAttrResourceAttributeConditionsPtrOutput() VulnerabilityThirdPartyAttrResourceAttributeConditionsPtrOutput {
+	return o
+}
+
+func (o VulnerabilityThirdPartyAttrResourceAttributeConditionsPtrOutput) ToVulnerabilityThirdPartyAttrResourceAttributeConditionsPtrOutputWithContext(ctx context.Context) VulnerabilityThirdPartyAttrResourceAttributeConditionsPtrOutput {
+	return o
+}
+
+func (o VulnerabilityThirdPartyAttrResourceAttributeConditionsPtrOutput) Elem() VulnerabilityThirdPartyAttrResourceAttributeConditionsOutput {
+	return o.ApplyT(func(v *VulnerabilityThirdPartyAttrResourceAttributeConditions) VulnerabilityThirdPartyAttrResourceAttributeConditions {
+		if v != nil {
+			return *v
+		}
+		var ret VulnerabilityThirdPartyAttrResourceAttributeConditions
+		return ret
+	}).(VulnerabilityThirdPartyAttrResourceAttributeConditionsOutput)
+}
+
+func (o VulnerabilityThirdPartyAttrResourceAttributeConditionsPtrOutput) ResourceAttributeConditions() VulnerabilityThirdPartyAttrResourceAttributeConditionsResourceAttributeConditionArrayOutput {
+	return o.ApplyT(func(v *VulnerabilityThirdPartyAttrResourceAttributeConditions) []VulnerabilityThirdPartyAttrResourceAttributeConditionsResourceAttributeCondition {
+		if v == nil {
+			return nil
+		}
+		return v.ResourceAttributeConditions
+	}).(VulnerabilityThirdPartyAttrResourceAttributeConditionsResourceAttributeConditionArrayOutput)
+}
+
+type VulnerabilityThirdPartyAttrResourceAttributeConditionsResourceAttributeCondition struct {
+	// Possible Values: `CONTAINS`, `DOES_NOT_CONTAIN`, `DOES_NOT_END_WITH`, `DOES_NOT_EXIST`, `DOES_NOT_START_WITH`, `ENDS_WITH`, `EQUALS`, `EXISTS`, `NOT_EQUALS`, `STARTS_WITH`
+	Matcher string `pulumi:"matcher"`
+	// Resource attribute key
+	ResourceAttributeKey string `pulumi:"resourceAttributeKey"`
+	// Resource attribute value
+	ResourceAttributeValue *string `pulumi:"resourceAttributeValue"`
+}
+
+// VulnerabilityThirdPartyAttrResourceAttributeConditionsResourceAttributeConditionInput is an input type that accepts VulnerabilityThirdPartyAttrResourceAttributeConditionsResourceAttributeConditionArgs and VulnerabilityThirdPartyAttrResourceAttributeConditionsResourceAttributeConditionOutput values.
+// You can construct a concrete instance of `VulnerabilityThirdPartyAttrResourceAttributeConditionsResourceAttributeConditionInput` via:
+//
+//	VulnerabilityThirdPartyAttrResourceAttributeConditionsResourceAttributeConditionArgs{...}
+type VulnerabilityThirdPartyAttrResourceAttributeConditionsResourceAttributeConditionInput interface {
+	pulumi.Input
+
+	ToVulnerabilityThirdPartyAttrResourceAttributeConditionsResourceAttributeConditionOutput() VulnerabilityThirdPartyAttrResourceAttributeConditionsResourceAttributeConditionOutput
+	ToVulnerabilityThirdPartyAttrResourceAttributeConditionsResourceAttributeConditionOutputWithContext(context.Context) VulnerabilityThirdPartyAttrResourceAttributeConditionsResourceAttributeConditionOutput
+}
+
+type VulnerabilityThirdPartyAttrResourceAttributeConditionsResourceAttributeConditionArgs struct {
+	// Possible Values: `CONTAINS`, `DOES_NOT_CONTAIN`, `DOES_NOT_END_WITH`, `DOES_NOT_EXIST`, `DOES_NOT_START_WITH`, `ENDS_WITH`, `EQUALS`, `EXISTS`, `NOT_EQUALS`, `STARTS_WITH`
+	Matcher pulumi.StringInput `pulumi:"matcher"`
+	// Resource attribute key
+	ResourceAttributeKey pulumi.StringInput `pulumi:"resourceAttributeKey"`
+	// Resource attribute value
+	ResourceAttributeValue pulumi.StringPtrInput `pulumi:"resourceAttributeValue"`
+}
+
+func (VulnerabilityThirdPartyAttrResourceAttributeConditionsResourceAttributeConditionArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*VulnerabilityThirdPartyAttrResourceAttributeConditionsResourceAttributeCondition)(nil)).Elem()
+}
+
+func (i VulnerabilityThirdPartyAttrResourceAttributeConditionsResourceAttributeConditionArgs) ToVulnerabilityThirdPartyAttrResourceAttributeConditionsResourceAttributeConditionOutput() VulnerabilityThirdPartyAttrResourceAttributeConditionsResourceAttributeConditionOutput {
+	return i.ToVulnerabilityThirdPartyAttrResourceAttributeConditionsResourceAttributeConditionOutputWithContext(context.Background())
+}
+
+func (i VulnerabilityThirdPartyAttrResourceAttributeConditionsResourceAttributeConditionArgs) ToVulnerabilityThirdPartyAttrResourceAttributeConditionsResourceAttributeConditionOutputWithContext(ctx context.Context) VulnerabilityThirdPartyAttrResourceAttributeConditionsResourceAttributeConditionOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(VulnerabilityThirdPartyAttrResourceAttributeConditionsResourceAttributeConditionOutput)
+}
+
+// VulnerabilityThirdPartyAttrResourceAttributeConditionsResourceAttributeConditionArrayInput is an input type that accepts VulnerabilityThirdPartyAttrResourceAttributeConditionsResourceAttributeConditionArray and VulnerabilityThirdPartyAttrResourceAttributeConditionsResourceAttributeConditionArrayOutput values.
+// You can construct a concrete instance of `VulnerabilityThirdPartyAttrResourceAttributeConditionsResourceAttributeConditionArrayInput` via:
+//
+//	VulnerabilityThirdPartyAttrResourceAttributeConditionsResourceAttributeConditionArray{ VulnerabilityThirdPartyAttrResourceAttributeConditionsResourceAttributeConditionArgs{...} }
+type VulnerabilityThirdPartyAttrResourceAttributeConditionsResourceAttributeConditionArrayInput interface {
+	pulumi.Input
+
+	ToVulnerabilityThirdPartyAttrResourceAttributeConditionsResourceAttributeConditionArrayOutput() VulnerabilityThirdPartyAttrResourceAttributeConditionsResourceAttributeConditionArrayOutput
+	ToVulnerabilityThirdPartyAttrResourceAttributeConditionsResourceAttributeConditionArrayOutputWithContext(context.Context) VulnerabilityThirdPartyAttrResourceAttributeConditionsResourceAttributeConditionArrayOutput
+}
+
+type VulnerabilityThirdPartyAttrResourceAttributeConditionsResourceAttributeConditionArray []VulnerabilityThirdPartyAttrResourceAttributeConditionsResourceAttributeConditionInput
+
+func (VulnerabilityThirdPartyAttrResourceAttributeConditionsResourceAttributeConditionArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]VulnerabilityThirdPartyAttrResourceAttributeConditionsResourceAttributeCondition)(nil)).Elem()
+}
+
+func (i VulnerabilityThirdPartyAttrResourceAttributeConditionsResourceAttributeConditionArray) ToVulnerabilityThirdPartyAttrResourceAttributeConditionsResourceAttributeConditionArrayOutput() VulnerabilityThirdPartyAttrResourceAttributeConditionsResourceAttributeConditionArrayOutput {
+	return i.ToVulnerabilityThirdPartyAttrResourceAttributeConditionsResourceAttributeConditionArrayOutputWithContext(context.Background())
+}
+
+func (i VulnerabilityThirdPartyAttrResourceAttributeConditionsResourceAttributeConditionArray) ToVulnerabilityThirdPartyAttrResourceAttributeConditionsResourceAttributeConditionArrayOutputWithContext(ctx context.Context) VulnerabilityThirdPartyAttrResourceAttributeConditionsResourceAttributeConditionArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(VulnerabilityThirdPartyAttrResourceAttributeConditionsResourceAttributeConditionArrayOutput)
+}
+
+type VulnerabilityThirdPartyAttrResourceAttributeConditionsResourceAttributeConditionOutput struct{ *pulumi.OutputState }
+
+func (VulnerabilityThirdPartyAttrResourceAttributeConditionsResourceAttributeConditionOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*VulnerabilityThirdPartyAttrResourceAttributeConditionsResourceAttributeCondition)(nil)).Elem()
+}
+
+func (o VulnerabilityThirdPartyAttrResourceAttributeConditionsResourceAttributeConditionOutput) ToVulnerabilityThirdPartyAttrResourceAttributeConditionsResourceAttributeConditionOutput() VulnerabilityThirdPartyAttrResourceAttributeConditionsResourceAttributeConditionOutput {
+	return o
+}
+
+func (o VulnerabilityThirdPartyAttrResourceAttributeConditionsResourceAttributeConditionOutput) ToVulnerabilityThirdPartyAttrResourceAttributeConditionsResourceAttributeConditionOutputWithContext(ctx context.Context) VulnerabilityThirdPartyAttrResourceAttributeConditionsResourceAttributeConditionOutput {
+	return o
+}
+
+// Possible Values: `CONTAINS`, `DOES_NOT_CONTAIN`, `DOES_NOT_END_WITH`, `DOES_NOT_EXIST`, `DOES_NOT_START_WITH`, `ENDS_WITH`, `EQUALS`, `EXISTS`, `NOT_EQUALS`, `STARTS_WITH`
+func (o VulnerabilityThirdPartyAttrResourceAttributeConditionsResourceAttributeConditionOutput) Matcher() pulumi.StringOutput {
+	return o.ApplyT(func(v VulnerabilityThirdPartyAttrResourceAttributeConditionsResourceAttributeCondition) string {
+		return v.Matcher
+	}).(pulumi.StringOutput)
+}
+
+// Resource attribute key
+func (o VulnerabilityThirdPartyAttrResourceAttributeConditionsResourceAttributeConditionOutput) ResourceAttributeKey() pulumi.StringOutput {
+	return o.ApplyT(func(v VulnerabilityThirdPartyAttrResourceAttributeConditionsResourceAttributeCondition) string {
+		return v.ResourceAttributeKey
+	}).(pulumi.StringOutput)
+}
+
+// Resource attribute value
+func (o VulnerabilityThirdPartyAttrResourceAttributeConditionsResourceAttributeConditionOutput) ResourceAttributeValue() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v VulnerabilityThirdPartyAttrResourceAttributeConditionsResourceAttributeCondition) *string {
+		return v.ResourceAttributeValue
+	}).(pulumi.StringPtrOutput)
+}
+
+type VulnerabilityThirdPartyAttrResourceAttributeConditionsResourceAttributeConditionArrayOutput struct{ *pulumi.OutputState }
+
+func (VulnerabilityThirdPartyAttrResourceAttributeConditionsResourceAttributeConditionArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]VulnerabilityThirdPartyAttrResourceAttributeConditionsResourceAttributeCondition)(nil)).Elem()
+}
+
+func (o VulnerabilityThirdPartyAttrResourceAttributeConditionsResourceAttributeConditionArrayOutput) ToVulnerabilityThirdPartyAttrResourceAttributeConditionsResourceAttributeConditionArrayOutput() VulnerabilityThirdPartyAttrResourceAttributeConditionsResourceAttributeConditionArrayOutput {
+	return o
+}
+
+func (o VulnerabilityThirdPartyAttrResourceAttributeConditionsResourceAttributeConditionArrayOutput) ToVulnerabilityThirdPartyAttrResourceAttributeConditionsResourceAttributeConditionArrayOutputWithContext(ctx context.Context) VulnerabilityThirdPartyAttrResourceAttributeConditionsResourceAttributeConditionArrayOutput {
+	return o
+}
+
+func (o VulnerabilityThirdPartyAttrResourceAttributeConditionsResourceAttributeConditionArrayOutput) Index(i pulumi.IntInput) VulnerabilityThirdPartyAttrResourceAttributeConditionsResourceAttributeConditionOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) VulnerabilityThirdPartyAttrResourceAttributeConditionsResourceAttributeCondition {
+		return vs[0].([]VulnerabilityThirdPartyAttrResourceAttributeConditionsResourceAttributeCondition)[vs[1].(int)]
+	}).(VulnerabilityThirdPartyAttrResourceAttributeConditionsResourceAttributeConditionOutput)
+}
+
+type VulnerabilityThirdPartyAttrVulnerabilityDetectionControl struct {
+	// Possible Values: `MONITORING_OFF`, `MONITORING_ON`
+	MonitoringMode string `pulumi:"monitoringMode"`
+}
+
+// VulnerabilityThirdPartyAttrVulnerabilityDetectionControlInput is an input type that accepts VulnerabilityThirdPartyAttrVulnerabilityDetectionControlArgs and VulnerabilityThirdPartyAttrVulnerabilityDetectionControlOutput values.
+// You can construct a concrete instance of `VulnerabilityThirdPartyAttrVulnerabilityDetectionControlInput` via:
+//
+//	VulnerabilityThirdPartyAttrVulnerabilityDetectionControlArgs{...}
+type VulnerabilityThirdPartyAttrVulnerabilityDetectionControlInput interface {
+	pulumi.Input
+
+	ToVulnerabilityThirdPartyAttrVulnerabilityDetectionControlOutput() VulnerabilityThirdPartyAttrVulnerabilityDetectionControlOutput
+	ToVulnerabilityThirdPartyAttrVulnerabilityDetectionControlOutputWithContext(context.Context) VulnerabilityThirdPartyAttrVulnerabilityDetectionControlOutput
+}
+
+type VulnerabilityThirdPartyAttrVulnerabilityDetectionControlArgs struct {
+	// Possible Values: `MONITORING_OFF`, `MONITORING_ON`
+	MonitoringMode pulumi.StringInput `pulumi:"monitoringMode"`
+}
+
+func (VulnerabilityThirdPartyAttrVulnerabilityDetectionControlArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*VulnerabilityThirdPartyAttrVulnerabilityDetectionControl)(nil)).Elem()
+}
+
+func (i VulnerabilityThirdPartyAttrVulnerabilityDetectionControlArgs) ToVulnerabilityThirdPartyAttrVulnerabilityDetectionControlOutput() VulnerabilityThirdPartyAttrVulnerabilityDetectionControlOutput {
+	return i.ToVulnerabilityThirdPartyAttrVulnerabilityDetectionControlOutputWithContext(context.Background())
+}
+
+func (i VulnerabilityThirdPartyAttrVulnerabilityDetectionControlArgs) ToVulnerabilityThirdPartyAttrVulnerabilityDetectionControlOutputWithContext(ctx context.Context) VulnerabilityThirdPartyAttrVulnerabilityDetectionControlOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(VulnerabilityThirdPartyAttrVulnerabilityDetectionControlOutput)
+}
+
+func (i VulnerabilityThirdPartyAttrVulnerabilityDetectionControlArgs) ToVulnerabilityThirdPartyAttrVulnerabilityDetectionControlPtrOutput() VulnerabilityThirdPartyAttrVulnerabilityDetectionControlPtrOutput {
+	return i.ToVulnerabilityThirdPartyAttrVulnerabilityDetectionControlPtrOutputWithContext(context.Background())
+}
+
+func (i VulnerabilityThirdPartyAttrVulnerabilityDetectionControlArgs) ToVulnerabilityThirdPartyAttrVulnerabilityDetectionControlPtrOutputWithContext(ctx context.Context) VulnerabilityThirdPartyAttrVulnerabilityDetectionControlPtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(VulnerabilityThirdPartyAttrVulnerabilityDetectionControlOutput).ToVulnerabilityThirdPartyAttrVulnerabilityDetectionControlPtrOutputWithContext(ctx)
+}
+
+// VulnerabilityThirdPartyAttrVulnerabilityDetectionControlPtrInput is an input type that accepts VulnerabilityThirdPartyAttrVulnerabilityDetectionControlArgs, VulnerabilityThirdPartyAttrVulnerabilityDetectionControlPtr and VulnerabilityThirdPartyAttrVulnerabilityDetectionControlPtrOutput values.
+// You can construct a concrete instance of `VulnerabilityThirdPartyAttrVulnerabilityDetectionControlPtrInput` via:
+//
+//	        VulnerabilityThirdPartyAttrVulnerabilityDetectionControlArgs{...}
+//
+//	or:
+//
+//	        nil
+type VulnerabilityThirdPartyAttrVulnerabilityDetectionControlPtrInput interface {
+	pulumi.Input
+
+	ToVulnerabilityThirdPartyAttrVulnerabilityDetectionControlPtrOutput() VulnerabilityThirdPartyAttrVulnerabilityDetectionControlPtrOutput
+	ToVulnerabilityThirdPartyAttrVulnerabilityDetectionControlPtrOutputWithContext(context.Context) VulnerabilityThirdPartyAttrVulnerabilityDetectionControlPtrOutput
+}
+
+type vulnerabilityThirdPartyAttrVulnerabilityDetectionControlPtrType VulnerabilityThirdPartyAttrVulnerabilityDetectionControlArgs
+
+func VulnerabilityThirdPartyAttrVulnerabilityDetectionControlPtr(v *VulnerabilityThirdPartyAttrVulnerabilityDetectionControlArgs) VulnerabilityThirdPartyAttrVulnerabilityDetectionControlPtrInput {
+	return (*vulnerabilityThirdPartyAttrVulnerabilityDetectionControlPtrType)(v)
+}
+
+func (*vulnerabilityThirdPartyAttrVulnerabilityDetectionControlPtrType) ElementType() reflect.Type {
+	return reflect.TypeOf((**VulnerabilityThirdPartyAttrVulnerabilityDetectionControl)(nil)).Elem()
+}
+
+func (i *vulnerabilityThirdPartyAttrVulnerabilityDetectionControlPtrType) ToVulnerabilityThirdPartyAttrVulnerabilityDetectionControlPtrOutput() VulnerabilityThirdPartyAttrVulnerabilityDetectionControlPtrOutput {
+	return i.ToVulnerabilityThirdPartyAttrVulnerabilityDetectionControlPtrOutputWithContext(context.Background())
+}
+
+func (i *vulnerabilityThirdPartyAttrVulnerabilityDetectionControlPtrType) ToVulnerabilityThirdPartyAttrVulnerabilityDetectionControlPtrOutputWithContext(ctx context.Context) VulnerabilityThirdPartyAttrVulnerabilityDetectionControlPtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(VulnerabilityThirdPartyAttrVulnerabilityDetectionControlPtrOutput)
+}
+
+type VulnerabilityThirdPartyAttrVulnerabilityDetectionControlOutput struct{ *pulumi.OutputState }
+
+func (VulnerabilityThirdPartyAttrVulnerabilityDetectionControlOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*VulnerabilityThirdPartyAttrVulnerabilityDetectionControl)(nil)).Elem()
+}
+
+func (o VulnerabilityThirdPartyAttrVulnerabilityDetectionControlOutput) ToVulnerabilityThirdPartyAttrVulnerabilityDetectionControlOutput() VulnerabilityThirdPartyAttrVulnerabilityDetectionControlOutput {
+	return o
+}
+
+func (o VulnerabilityThirdPartyAttrVulnerabilityDetectionControlOutput) ToVulnerabilityThirdPartyAttrVulnerabilityDetectionControlOutputWithContext(ctx context.Context) VulnerabilityThirdPartyAttrVulnerabilityDetectionControlOutput {
+	return o
+}
+
+func (o VulnerabilityThirdPartyAttrVulnerabilityDetectionControlOutput) ToVulnerabilityThirdPartyAttrVulnerabilityDetectionControlPtrOutput() VulnerabilityThirdPartyAttrVulnerabilityDetectionControlPtrOutput {
+	return o.ToVulnerabilityThirdPartyAttrVulnerabilityDetectionControlPtrOutputWithContext(context.Background())
+}
+
+func (o VulnerabilityThirdPartyAttrVulnerabilityDetectionControlOutput) ToVulnerabilityThirdPartyAttrVulnerabilityDetectionControlPtrOutputWithContext(ctx context.Context) VulnerabilityThirdPartyAttrVulnerabilityDetectionControlPtrOutput {
+	return o.ApplyTWithContext(ctx, func(_ context.Context, v VulnerabilityThirdPartyAttrVulnerabilityDetectionControl) *VulnerabilityThirdPartyAttrVulnerabilityDetectionControl {
+		return &v
+	}).(VulnerabilityThirdPartyAttrVulnerabilityDetectionControlPtrOutput)
+}
+
+// Possible Values: `MONITORING_OFF`, `MONITORING_ON`
+func (o VulnerabilityThirdPartyAttrVulnerabilityDetectionControlOutput) MonitoringMode() pulumi.StringOutput {
+	return o.ApplyT(func(v VulnerabilityThirdPartyAttrVulnerabilityDetectionControl) string { return v.MonitoringMode }).(pulumi.StringOutput)
+}
+
+type VulnerabilityThirdPartyAttrVulnerabilityDetectionControlPtrOutput struct{ *pulumi.OutputState }
+
+func (VulnerabilityThirdPartyAttrVulnerabilityDetectionControlPtrOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((**VulnerabilityThirdPartyAttrVulnerabilityDetectionControl)(nil)).Elem()
+}
+
+func (o VulnerabilityThirdPartyAttrVulnerabilityDetectionControlPtrOutput) ToVulnerabilityThirdPartyAttrVulnerabilityDetectionControlPtrOutput() VulnerabilityThirdPartyAttrVulnerabilityDetectionControlPtrOutput {
+	return o
+}
+
+func (o VulnerabilityThirdPartyAttrVulnerabilityDetectionControlPtrOutput) ToVulnerabilityThirdPartyAttrVulnerabilityDetectionControlPtrOutputWithContext(ctx context.Context) VulnerabilityThirdPartyAttrVulnerabilityDetectionControlPtrOutput {
+	return o
+}
+
+func (o VulnerabilityThirdPartyAttrVulnerabilityDetectionControlPtrOutput) Elem() VulnerabilityThirdPartyAttrVulnerabilityDetectionControlOutput {
+	return o.ApplyT(func(v *VulnerabilityThirdPartyAttrVulnerabilityDetectionControl) VulnerabilityThirdPartyAttrVulnerabilityDetectionControl {
+		if v != nil {
+			return *v
+		}
+		var ret VulnerabilityThirdPartyAttrVulnerabilityDetectionControl
+		return ret
+	}).(VulnerabilityThirdPartyAttrVulnerabilityDetectionControlOutput)
+}
+
+// Possible Values: `MONITORING_OFF`, `MONITORING_ON`
+func (o VulnerabilityThirdPartyAttrVulnerabilityDetectionControlPtrOutput) MonitoringMode() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *VulnerabilityThirdPartyAttrVulnerabilityDetectionControl) *string {
+		if v == nil {
+			return nil
+		}
+		return &v.MonitoringMode
+	}).(pulumi.StringPtrOutput)
+}
+
+type VulnerabilityThirdPartyK8sKubernetesLabelConditions struct {
+	KubernetesLabelConditions []VulnerabilityThirdPartyK8sKubernetesLabelConditionsKubernetesLabelCondition `pulumi:"kubernetesLabelConditions"`
+}
+
+// VulnerabilityThirdPartyK8sKubernetesLabelConditionsInput is an input type that accepts VulnerabilityThirdPartyK8sKubernetesLabelConditionsArgs and VulnerabilityThirdPartyK8sKubernetesLabelConditionsOutput values.
+// You can construct a concrete instance of `VulnerabilityThirdPartyK8sKubernetesLabelConditionsInput` via:
+//
+//	VulnerabilityThirdPartyK8sKubernetesLabelConditionsArgs{...}
+type VulnerabilityThirdPartyK8sKubernetesLabelConditionsInput interface {
+	pulumi.Input
+
+	ToVulnerabilityThirdPartyK8sKubernetesLabelConditionsOutput() VulnerabilityThirdPartyK8sKubernetesLabelConditionsOutput
+	ToVulnerabilityThirdPartyK8sKubernetesLabelConditionsOutputWithContext(context.Context) VulnerabilityThirdPartyK8sKubernetesLabelConditionsOutput
+}
+
+type VulnerabilityThirdPartyK8sKubernetesLabelConditionsArgs struct {
+	KubernetesLabelConditions VulnerabilityThirdPartyK8sKubernetesLabelConditionsKubernetesLabelConditionArrayInput `pulumi:"kubernetesLabelConditions"`
+}
+
+func (VulnerabilityThirdPartyK8sKubernetesLabelConditionsArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*VulnerabilityThirdPartyK8sKubernetesLabelConditions)(nil)).Elem()
+}
+
+func (i VulnerabilityThirdPartyK8sKubernetesLabelConditionsArgs) ToVulnerabilityThirdPartyK8sKubernetesLabelConditionsOutput() VulnerabilityThirdPartyK8sKubernetesLabelConditionsOutput {
+	return i.ToVulnerabilityThirdPartyK8sKubernetesLabelConditionsOutputWithContext(context.Background())
+}
+
+func (i VulnerabilityThirdPartyK8sKubernetesLabelConditionsArgs) ToVulnerabilityThirdPartyK8sKubernetesLabelConditionsOutputWithContext(ctx context.Context) VulnerabilityThirdPartyK8sKubernetesLabelConditionsOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(VulnerabilityThirdPartyK8sKubernetesLabelConditionsOutput)
+}
+
+func (i VulnerabilityThirdPartyK8sKubernetesLabelConditionsArgs) ToVulnerabilityThirdPartyK8sKubernetesLabelConditionsPtrOutput() VulnerabilityThirdPartyK8sKubernetesLabelConditionsPtrOutput {
+	return i.ToVulnerabilityThirdPartyK8sKubernetesLabelConditionsPtrOutputWithContext(context.Background())
+}
+
+func (i VulnerabilityThirdPartyK8sKubernetesLabelConditionsArgs) ToVulnerabilityThirdPartyK8sKubernetesLabelConditionsPtrOutputWithContext(ctx context.Context) VulnerabilityThirdPartyK8sKubernetesLabelConditionsPtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(VulnerabilityThirdPartyK8sKubernetesLabelConditionsOutput).ToVulnerabilityThirdPartyK8sKubernetesLabelConditionsPtrOutputWithContext(ctx)
+}
+
+// VulnerabilityThirdPartyK8sKubernetesLabelConditionsPtrInput is an input type that accepts VulnerabilityThirdPartyK8sKubernetesLabelConditionsArgs, VulnerabilityThirdPartyK8sKubernetesLabelConditionsPtr and VulnerabilityThirdPartyK8sKubernetesLabelConditionsPtrOutput values.
+// You can construct a concrete instance of `VulnerabilityThirdPartyK8sKubernetesLabelConditionsPtrInput` via:
+//
+//	        VulnerabilityThirdPartyK8sKubernetesLabelConditionsArgs{...}
+//
+//	or:
+//
+//	        nil
+type VulnerabilityThirdPartyK8sKubernetesLabelConditionsPtrInput interface {
+	pulumi.Input
+
+	ToVulnerabilityThirdPartyK8sKubernetesLabelConditionsPtrOutput() VulnerabilityThirdPartyK8sKubernetesLabelConditionsPtrOutput
+	ToVulnerabilityThirdPartyK8sKubernetesLabelConditionsPtrOutputWithContext(context.Context) VulnerabilityThirdPartyK8sKubernetesLabelConditionsPtrOutput
+}
+
+type vulnerabilityThirdPartyK8sKubernetesLabelConditionsPtrType VulnerabilityThirdPartyK8sKubernetesLabelConditionsArgs
+
+func VulnerabilityThirdPartyK8sKubernetesLabelConditionsPtr(v *VulnerabilityThirdPartyK8sKubernetesLabelConditionsArgs) VulnerabilityThirdPartyK8sKubernetesLabelConditionsPtrInput {
+	return (*vulnerabilityThirdPartyK8sKubernetesLabelConditionsPtrType)(v)
+}
+
+func (*vulnerabilityThirdPartyK8sKubernetesLabelConditionsPtrType) ElementType() reflect.Type {
+	return reflect.TypeOf((**VulnerabilityThirdPartyK8sKubernetesLabelConditions)(nil)).Elem()
+}
+
+func (i *vulnerabilityThirdPartyK8sKubernetesLabelConditionsPtrType) ToVulnerabilityThirdPartyK8sKubernetesLabelConditionsPtrOutput() VulnerabilityThirdPartyK8sKubernetesLabelConditionsPtrOutput {
+	return i.ToVulnerabilityThirdPartyK8sKubernetesLabelConditionsPtrOutputWithContext(context.Background())
+}
+
+func (i *vulnerabilityThirdPartyK8sKubernetesLabelConditionsPtrType) ToVulnerabilityThirdPartyK8sKubernetesLabelConditionsPtrOutputWithContext(ctx context.Context) VulnerabilityThirdPartyK8sKubernetesLabelConditionsPtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(VulnerabilityThirdPartyK8sKubernetesLabelConditionsPtrOutput)
+}
+
+type VulnerabilityThirdPartyK8sKubernetesLabelConditionsOutput struct{ *pulumi.OutputState }
+
+func (VulnerabilityThirdPartyK8sKubernetesLabelConditionsOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*VulnerabilityThirdPartyK8sKubernetesLabelConditions)(nil)).Elem()
+}
+
+func (o VulnerabilityThirdPartyK8sKubernetesLabelConditionsOutput) ToVulnerabilityThirdPartyK8sKubernetesLabelConditionsOutput() VulnerabilityThirdPartyK8sKubernetesLabelConditionsOutput {
+	return o
+}
+
+func (o VulnerabilityThirdPartyK8sKubernetesLabelConditionsOutput) ToVulnerabilityThirdPartyK8sKubernetesLabelConditionsOutputWithContext(ctx context.Context) VulnerabilityThirdPartyK8sKubernetesLabelConditionsOutput {
+	return o
+}
+
+func (o VulnerabilityThirdPartyK8sKubernetesLabelConditionsOutput) ToVulnerabilityThirdPartyK8sKubernetesLabelConditionsPtrOutput() VulnerabilityThirdPartyK8sKubernetesLabelConditionsPtrOutput {
+	return o.ToVulnerabilityThirdPartyK8sKubernetesLabelConditionsPtrOutputWithContext(context.Background())
+}
+
+func (o VulnerabilityThirdPartyK8sKubernetesLabelConditionsOutput) ToVulnerabilityThirdPartyK8sKubernetesLabelConditionsPtrOutputWithContext(ctx context.Context) VulnerabilityThirdPartyK8sKubernetesLabelConditionsPtrOutput {
+	return o.ApplyTWithContext(ctx, func(_ context.Context, v VulnerabilityThirdPartyK8sKubernetesLabelConditions) *VulnerabilityThirdPartyK8sKubernetesLabelConditions {
+		return &v
+	}).(VulnerabilityThirdPartyK8sKubernetesLabelConditionsPtrOutput)
+}
+
+func (o VulnerabilityThirdPartyK8sKubernetesLabelConditionsOutput) KubernetesLabelConditions() VulnerabilityThirdPartyK8sKubernetesLabelConditionsKubernetesLabelConditionArrayOutput {
+	return o.ApplyT(func(v VulnerabilityThirdPartyK8sKubernetesLabelConditions) []VulnerabilityThirdPartyK8sKubernetesLabelConditionsKubernetesLabelCondition {
+		return v.KubernetesLabelConditions
+	}).(VulnerabilityThirdPartyK8sKubernetesLabelConditionsKubernetesLabelConditionArrayOutput)
+}
+
+type VulnerabilityThirdPartyK8sKubernetesLabelConditionsPtrOutput struct{ *pulumi.OutputState }
+
+func (VulnerabilityThirdPartyK8sKubernetesLabelConditionsPtrOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((**VulnerabilityThirdPartyK8sKubernetesLabelConditions)(nil)).Elem()
+}
+
+func (o VulnerabilityThirdPartyK8sKubernetesLabelConditionsPtrOutput) ToVulnerabilityThirdPartyK8sKubernetesLabelConditionsPtrOutput() VulnerabilityThirdPartyK8sKubernetesLabelConditionsPtrOutput {
+	return o
+}
+
+func (o VulnerabilityThirdPartyK8sKubernetesLabelConditionsPtrOutput) ToVulnerabilityThirdPartyK8sKubernetesLabelConditionsPtrOutputWithContext(ctx context.Context) VulnerabilityThirdPartyK8sKubernetesLabelConditionsPtrOutput {
+	return o
+}
+
+func (o VulnerabilityThirdPartyK8sKubernetesLabelConditionsPtrOutput) Elem() VulnerabilityThirdPartyK8sKubernetesLabelConditionsOutput {
+	return o.ApplyT(func(v *VulnerabilityThirdPartyK8sKubernetesLabelConditions) VulnerabilityThirdPartyK8sKubernetesLabelConditions {
+		if v != nil {
+			return *v
+		}
+		var ret VulnerabilityThirdPartyK8sKubernetesLabelConditions
+		return ret
+	}).(VulnerabilityThirdPartyK8sKubernetesLabelConditionsOutput)
+}
+
+func (o VulnerabilityThirdPartyK8sKubernetesLabelConditionsPtrOutput) KubernetesLabelConditions() VulnerabilityThirdPartyK8sKubernetesLabelConditionsKubernetesLabelConditionArrayOutput {
+	return o.ApplyT(func(v *VulnerabilityThirdPartyK8sKubernetesLabelConditions) []VulnerabilityThirdPartyK8sKubernetesLabelConditionsKubernetesLabelCondition {
+		if v == nil {
+			return nil
+		}
+		return v.KubernetesLabelConditions
+	}).(VulnerabilityThirdPartyK8sKubernetesLabelConditionsKubernetesLabelConditionArrayOutput)
+}
+
+type VulnerabilityThirdPartyK8sKubernetesLabelConditionsKubernetesLabelCondition struct {
+	// Kubernetes label key
+	KubernetesLabelKey string `pulumi:"kubernetesLabelKey"`
+	// Kubernetes label value
+	KubernetesLabelValue *string `pulumi:"kubernetesLabelValue"`
+	// Possible Values: `CONTAINS`, `DOES_NOT_CONTAIN`, `DOES_NOT_END_WITH`, `DOES_NOT_EXIST`, `DOES_NOT_START_WITH`, `ENDS_WITH`, `EQUALS`, `EXISTS`, `NOT_EQUALS`, `STARTS_WITH`
+	Matcher string `pulumi:"matcher"`
+}
+
+// VulnerabilityThirdPartyK8sKubernetesLabelConditionsKubernetesLabelConditionInput is an input type that accepts VulnerabilityThirdPartyK8sKubernetesLabelConditionsKubernetesLabelConditionArgs and VulnerabilityThirdPartyK8sKubernetesLabelConditionsKubernetesLabelConditionOutput values.
+// You can construct a concrete instance of `VulnerabilityThirdPartyK8sKubernetesLabelConditionsKubernetesLabelConditionInput` via:
+//
+//	VulnerabilityThirdPartyK8sKubernetesLabelConditionsKubernetesLabelConditionArgs{...}
+type VulnerabilityThirdPartyK8sKubernetesLabelConditionsKubernetesLabelConditionInput interface {
+	pulumi.Input
+
+	ToVulnerabilityThirdPartyK8sKubernetesLabelConditionsKubernetesLabelConditionOutput() VulnerabilityThirdPartyK8sKubernetesLabelConditionsKubernetesLabelConditionOutput
+	ToVulnerabilityThirdPartyK8sKubernetesLabelConditionsKubernetesLabelConditionOutputWithContext(context.Context) VulnerabilityThirdPartyK8sKubernetesLabelConditionsKubernetesLabelConditionOutput
+}
+
+type VulnerabilityThirdPartyK8sKubernetesLabelConditionsKubernetesLabelConditionArgs struct {
+	// Kubernetes label key
+	KubernetesLabelKey pulumi.StringInput `pulumi:"kubernetesLabelKey"`
+	// Kubernetes label value
+	KubernetesLabelValue pulumi.StringPtrInput `pulumi:"kubernetesLabelValue"`
+	// Possible Values: `CONTAINS`, `DOES_NOT_CONTAIN`, `DOES_NOT_END_WITH`, `DOES_NOT_EXIST`, `DOES_NOT_START_WITH`, `ENDS_WITH`, `EQUALS`, `EXISTS`, `NOT_EQUALS`, `STARTS_WITH`
+	Matcher pulumi.StringInput `pulumi:"matcher"`
+}
+
+func (VulnerabilityThirdPartyK8sKubernetesLabelConditionsKubernetesLabelConditionArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*VulnerabilityThirdPartyK8sKubernetesLabelConditionsKubernetesLabelCondition)(nil)).Elem()
+}
+
+func (i VulnerabilityThirdPartyK8sKubernetesLabelConditionsKubernetesLabelConditionArgs) ToVulnerabilityThirdPartyK8sKubernetesLabelConditionsKubernetesLabelConditionOutput() VulnerabilityThirdPartyK8sKubernetesLabelConditionsKubernetesLabelConditionOutput {
+	return i.ToVulnerabilityThirdPartyK8sKubernetesLabelConditionsKubernetesLabelConditionOutputWithContext(context.Background())
+}
+
+func (i VulnerabilityThirdPartyK8sKubernetesLabelConditionsKubernetesLabelConditionArgs) ToVulnerabilityThirdPartyK8sKubernetesLabelConditionsKubernetesLabelConditionOutputWithContext(ctx context.Context) VulnerabilityThirdPartyK8sKubernetesLabelConditionsKubernetesLabelConditionOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(VulnerabilityThirdPartyK8sKubernetesLabelConditionsKubernetesLabelConditionOutput)
+}
+
+// VulnerabilityThirdPartyK8sKubernetesLabelConditionsKubernetesLabelConditionArrayInput is an input type that accepts VulnerabilityThirdPartyK8sKubernetesLabelConditionsKubernetesLabelConditionArray and VulnerabilityThirdPartyK8sKubernetesLabelConditionsKubernetesLabelConditionArrayOutput values.
+// You can construct a concrete instance of `VulnerabilityThirdPartyK8sKubernetesLabelConditionsKubernetesLabelConditionArrayInput` via:
+//
+//	VulnerabilityThirdPartyK8sKubernetesLabelConditionsKubernetesLabelConditionArray{ VulnerabilityThirdPartyK8sKubernetesLabelConditionsKubernetesLabelConditionArgs{...} }
+type VulnerabilityThirdPartyK8sKubernetesLabelConditionsKubernetesLabelConditionArrayInput interface {
+	pulumi.Input
+
+	ToVulnerabilityThirdPartyK8sKubernetesLabelConditionsKubernetesLabelConditionArrayOutput() VulnerabilityThirdPartyK8sKubernetesLabelConditionsKubernetesLabelConditionArrayOutput
+	ToVulnerabilityThirdPartyK8sKubernetesLabelConditionsKubernetesLabelConditionArrayOutputWithContext(context.Context) VulnerabilityThirdPartyK8sKubernetesLabelConditionsKubernetesLabelConditionArrayOutput
+}
+
+type VulnerabilityThirdPartyK8sKubernetesLabelConditionsKubernetesLabelConditionArray []VulnerabilityThirdPartyK8sKubernetesLabelConditionsKubernetesLabelConditionInput
+
+func (VulnerabilityThirdPartyK8sKubernetesLabelConditionsKubernetesLabelConditionArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]VulnerabilityThirdPartyK8sKubernetesLabelConditionsKubernetesLabelCondition)(nil)).Elem()
+}
+
+func (i VulnerabilityThirdPartyK8sKubernetesLabelConditionsKubernetesLabelConditionArray) ToVulnerabilityThirdPartyK8sKubernetesLabelConditionsKubernetesLabelConditionArrayOutput() VulnerabilityThirdPartyK8sKubernetesLabelConditionsKubernetesLabelConditionArrayOutput {
+	return i.ToVulnerabilityThirdPartyK8sKubernetesLabelConditionsKubernetesLabelConditionArrayOutputWithContext(context.Background())
+}
+
+func (i VulnerabilityThirdPartyK8sKubernetesLabelConditionsKubernetesLabelConditionArray) ToVulnerabilityThirdPartyK8sKubernetesLabelConditionsKubernetesLabelConditionArrayOutputWithContext(ctx context.Context) VulnerabilityThirdPartyK8sKubernetesLabelConditionsKubernetesLabelConditionArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(VulnerabilityThirdPartyK8sKubernetesLabelConditionsKubernetesLabelConditionArrayOutput)
+}
+
+type VulnerabilityThirdPartyK8sKubernetesLabelConditionsKubernetesLabelConditionOutput struct{ *pulumi.OutputState }
+
+func (VulnerabilityThirdPartyK8sKubernetesLabelConditionsKubernetesLabelConditionOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*VulnerabilityThirdPartyK8sKubernetesLabelConditionsKubernetesLabelCondition)(nil)).Elem()
+}
+
+func (o VulnerabilityThirdPartyK8sKubernetesLabelConditionsKubernetesLabelConditionOutput) ToVulnerabilityThirdPartyK8sKubernetesLabelConditionsKubernetesLabelConditionOutput() VulnerabilityThirdPartyK8sKubernetesLabelConditionsKubernetesLabelConditionOutput {
+	return o
+}
+
+func (o VulnerabilityThirdPartyK8sKubernetesLabelConditionsKubernetesLabelConditionOutput) ToVulnerabilityThirdPartyK8sKubernetesLabelConditionsKubernetesLabelConditionOutputWithContext(ctx context.Context) VulnerabilityThirdPartyK8sKubernetesLabelConditionsKubernetesLabelConditionOutput {
+	return o
+}
+
+// Kubernetes label key
+func (o VulnerabilityThirdPartyK8sKubernetesLabelConditionsKubernetesLabelConditionOutput) KubernetesLabelKey() pulumi.StringOutput {
+	return o.ApplyT(func(v VulnerabilityThirdPartyK8sKubernetesLabelConditionsKubernetesLabelCondition) string {
+		return v.KubernetesLabelKey
+	}).(pulumi.StringOutput)
+}
+
+// Kubernetes label value
+func (o VulnerabilityThirdPartyK8sKubernetesLabelConditionsKubernetesLabelConditionOutput) KubernetesLabelValue() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v VulnerabilityThirdPartyK8sKubernetesLabelConditionsKubernetesLabelCondition) *string {
+		return v.KubernetesLabelValue
+	}).(pulumi.StringPtrOutput)
+}
+
+// Possible Values: `CONTAINS`, `DOES_NOT_CONTAIN`, `DOES_NOT_END_WITH`, `DOES_NOT_EXIST`, `DOES_NOT_START_WITH`, `ENDS_WITH`, `EQUALS`, `EXISTS`, `NOT_EQUALS`, `STARTS_WITH`
+func (o VulnerabilityThirdPartyK8sKubernetesLabelConditionsKubernetesLabelConditionOutput) Matcher() pulumi.StringOutput {
+	return o.ApplyT(func(v VulnerabilityThirdPartyK8sKubernetesLabelConditionsKubernetesLabelCondition) string {
+		return v.Matcher
+	}).(pulumi.StringOutput)
+}
+
+type VulnerabilityThirdPartyK8sKubernetesLabelConditionsKubernetesLabelConditionArrayOutput struct{ *pulumi.OutputState }
+
+func (VulnerabilityThirdPartyK8sKubernetesLabelConditionsKubernetesLabelConditionArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]VulnerabilityThirdPartyK8sKubernetesLabelConditionsKubernetesLabelCondition)(nil)).Elem()
+}
+
+func (o VulnerabilityThirdPartyK8sKubernetesLabelConditionsKubernetesLabelConditionArrayOutput) ToVulnerabilityThirdPartyK8sKubernetesLabelConditionsKubernetesLabelConditionArrayOutput() VulnerabilityThirdPartyK8sKubernetesLabelConditionsKubernetesLabelConditionArrayOutput {
+	return o
+}
+
+func (o VulnerabilityThirdPartyK8sKubernetesLabelConditionsKubernetesLabelConditionArrayOutput) ToVulnerabilityThirdPartyK8sKubernetesLabelConditionsKubernetesLabelConditionArrayOutputWithContext(ctx context.Context) VulnerabilityThirdPartyK8sKubernetesLabelConditionsKubernetesLabelConditionArrayOutput {
+	return o
+}
+
+func (o VulnerabilityThirdPartyK8sKubernetesLabelConditionsKubernetesLabelConditionArrayOutput) Index(i pulumi.IntInput) VulnerabilityThirdPartyK8sKubernetesLabelConditionsKubernetesLabelConditionOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) VulnerabilityThirdPartyK8sKubernetesLabelConditionsKubernetesLabelCondition {
+		return vs[0].([]VulnerabilityThirdPartyK8sKubernetesLabelConditionsKubernetesLabelCondition)[vs[1].(int)]
+	}).(VulnerabilityThirdPartyK8sKubernetesLabelConditionsKubernetesLabelConditionOutput)
+}
+
+type VulnerabilityThirdPartyK8sMetadata struct {
+	// no documentation available
+	Comment string `pulumi:"comment"`
+}
+
+// VulnerabilityThirdPartyK8sMetadataInput is an input type that accepts VulnerabilityThirdPartyK8sMetadataArgs and VulnerabilityThirdPartyK8sMetadataOutput values.
+// You can construct a concrete instance of `VulnerabilityThirdPartyK8sMetadataInput` via:
+//
+//	VulnerabilityThirdPartyK8sMetadataArgs{...}
+type VulnerabilityThirdPartyK8sMetadataInput interface {
+	pulumi.Input
+
+	ToVulnerabilityThirdPartyK8sMetadataOutput() VulnerabilityThirdPartyK8sMetadataOutput
+	ToVulnerabilityThirdPartyK8sMetadataOutputWithContext(context.Context) VulnerabilityThirdPartyK8sMetadataOutput
+}
+
+type VulnerabilityThirdPartyK8sMetadataArgs struct {
+	// no documentation available
+	Comment pulumi.StringInput `pulumi:"comment"`
+}
+
+func (VulnerabilityThirdPartyK8sMetadataArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*VulnerabilityThirdPartyK8sMetadata)(nil)).Elem()
+}
+
+func (i VulnerabilityThirdPartyK8sMetadataArgs) ToVulnerabilityThirdPartyK8sMetadataOutput() VulnerabilityThirdPartyK8sMetadataOutput {
+	return i.ToVulnerabilityThirdPartyK8sMetadataOutputWithContext(context.Background())
+}
+
+func (i VulnerabilityThirdPartyK8sMetadataArgs) ToVulnerabilityThirdPartyK8sMetadataOutputWithContext(ctx context.Context) VulnerabilityThirdPartyK8sMetadataOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(VulnerabilityThirdPartyK8sMetadataOutput)
+}
+
+func (i VulnerabilityThirdPartyK8sMetadataArgs) ToVulnerabilityThirdPartyK8sMetadataPtrOutput() VulnerabilityThirdPartyK8sMetadataPtrOutput {
+	return i.ToVulnerabilityThirdPartyK8sMetadataPtrOutputWithContext(context.Background())
+}
+
+func (i VulnerabilityThirdPartyK8sMetadataArgs) ToVulnerabilityThirdPartyK8sMetadataPtrOutputWithContext(ctx context.Context) VulnerabilityThirdPartyK8sMetadataPtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(VulnerabilityThirdPartyK8sMetadataOutput).ToVulnerabilityThirdPartyK8sMetadataPtrOutputWithContext(ctx)
+}
+
+// VulnerabilityThirdPartyK8sMetadataPtrInput is an input type that accepts VulnerabilityThirdPartyK8sMetadataArgs, VulnerabilityThirdPartyK8sMetadataPtr and VulnerabilityThirdPartyK8sMetadataPtrOutput values.
+// You can construct a concrete instance of `VulnerabilityThirdPartyK8sMetadataPtrInput` via:
+//
+//	        VulnerabilityThirdPartyK8sMetadataArgs{...}
+//
+//	or:
+//
+//	        nil
+type VulnerabilityThirdPartyK8sMetadataPtrInput interface {
+	pulumi.Input
+
+	ToVulnerabilityThirdPartyK8sMetadataPtrOutput() VulnerabilityThirdPartyK8sMetadataPtrOutput
+	ToVulnerabilityThirdPartyK8sMetadataPtrOutputWithContext(context.Context) VulnerabilityThirdPartyK8sMetadataPtrOutput
+}
+
+type vulnerabilityThirdPartyK8sMetadataPtrType VulnerabilityThirdPartyK8sMetadataArgs
+
+func VulnerabilityThirdPartyK8sMetadataPtr(v *VulnerabilityThirdPartyK8sMetadataArgs) VulnerabilityThirdPartyK8sMetadataPtrInput {
+	return (*vulnerabilityThirdPartyK8sMetadataPtrType)(v)
+}
+
+func (*vulnerabilityThirdPartyK8sMetadataPtrType) ElementType() reflect.Type {
+	return reflect.TypeOf((**VulnerabilityThirdPartyK8sMetadata)(nil)).Elem()
+}
+
+func (i *vulnerabilityThirdPartyK8sMetadataPtrType) ToVulnerabilityThirdPartyK8sMetadataPtrOutput() VulnerabilityThirdPartyK8sMetadataPtrOutput {
+	return i.ToVulnerabilityThirdPartyK8sMetadataPtrOutputWithContext(context.Background())
+}
+
+func (i *vulnerabilityThirdPartyK8sMetadataPtrType) ToVulnerabilityThirdPartyK8sMetadataPtrOutputWithContext(ctx context.Context) VulnerabilityThirdPartyK8sMetadataPtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(VulnerabilityThirdPartyK8sMetadataPtrOutput)
+}
+
+type VulnerabilityThirdPartyK8sMetadataOutput struct{ *pulumi.OutputState }
+
+func (VulnerabilityThirdPartyK8sMetadataOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*VulnerabilityThirdPartyK8sMetadata)(nil)).Elem()
+}
+
+func (o VulnerabilityThirdPartyK8sMetadataOutput) ToVulnerabilityThirdPartyK8sMetadataOutput() VulnerabilityThirdPartyK8sMetadataOutput {
+	return o
+}
+
+func (o VulnerabilityThirdPartyK8sMetadataOutput) ToVulnerabilityThirdPartyK8sMetadataOutputWithContext(ctx context.Context) VulnerabilityThirdPartyK8sMetadataOutput {
+	return o
+}
+
+func (o VulnerabilityThirdPartyK8sMetadataOutput) ToVulnerabilityThirdPartyK8sMetadataPtrOutput() VulnerabilityThirdPartyK8sMetadataPtrOutput {
+	return o.ToVulnerabilityThirdPartyK8sMetadataPtrOutputWithContext(context.Background())
+}
+
+func (o VulnerabilityThirdPartyK8sMetadataOutput) ToVulnerabilityThirdPartyK8sMetadataPtrOutputWithContext(ctx context.Context) VulnerabilityThirdPartyK8sMetadataPtrOutput {
+	return o.ApplyTWithContext(ctx, func(_ context.Context, v VulnerabilityThirdPartyK8sMetadata) *VulnerabilityThirdPartyK8sMetadata {
+		return &v
+	}).(VulnerabilityThirdPartyK8sMetadataPtrOutput)
+}
+
+// no documentation available
+func (o VulnerabilityThirdPartyK8sMetadataOutput) Comment() pulumi.StringOutput {
+	return o.ApplyT(func(v VulnerabilityThirdPartyK8sMetadata) string { return v.Comment }).(pulumi.StringOutput)
+}
+
+type VulnerabilityThirdPartyK8sMetadataPtrOutput struct{ *pulumi.OutputState }
+
+func (VulnerabilityThirdPartyK8sMetadataPtrOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((**VulnerabilityThirdPartyK8sMetadata)(nil)).Elem()
+}
+
+func (o VulnerabilityThirdPartyK8sMetadataPtrOutput) ToVulnerabilityThirdPartyK8sMetadataPtrOutput() VulnerabilityThirdPartyK8sMetadataPtrOutput {
+	return o
+}
+
+func (o VulnerabilityThirdPartyK8sMetadataPtrOutput) ToVulnerabilityThirdPartyK8sMetadataPtrOutputWithContext(ctx context.Context) VulnerabilityThirdPartyK8sMetadataPtrOutput {
+	return o
+}
+
+func (o VulnerabilityThirdPartyK8sMetadataPtrOutput) Elem() VulnerabilityThirdPartyK8sMetadataOutput {
+	return o.ApplyT(func(v *VulnerabilityThirdPartyK8sMetadata) VulnerabilityThirdPartyK8sMetadata {
+		if v != nil {
+			return *v
+		}
+		var ret VulnerabilityThirdPartyK8sMetadata
+		return ret
+	}).(VulnerabilityThirdPartyK8sMetadataOutput)
+}
+
+// no documentation available
+func (o VulnerabilityThirdPartyK8sMetadataPtrOutput) Comment() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *VulnerabilityThirdPartyK8sMetadata) *string {
+		if v == nil {
+			return nil
+		}
+		return &v.Comment
+	}).(pulumi.StringPtrOutput)
+}
+
+type VulnerabilityThirdPartyK8sVulnerabilityDetectionControl struct {
+	// Possible Values: `MONITORING_OFF`, `MONITORING_ON`
+	MonitoringMode string `pulumi:"monitoringMode"`
+}
+
+// VulnerabilityThirdPartyK8sVulnerabilityDetectionControlInput is an input type that accepts VulnerabilityThirdPartyK8sVulnerabilityDetectionControlArgs and VulnerabilityThirdPartyK8sVulnerabilityDetectionControlOutput values.
+// You can construct a concrete instance of `VulnerabilityThirdPartyK8sVulnerabilityDetectionControlInput` via:
+//
+//	VulnerabilityThirdPartyK8sVulnerabilityDetectionControlArgs{...}
+type VulnerabilityThirdPartyK8sVulnerabilityDetectionControlInput interface {
+	pulumi.Input
+
+	ToVulnerabilityThirdPartyK8sVulnerabilityDetectionControlOutput() VulnerabilityThirdPartyK8sVulnerabilityDetectionControlOutput
+	ToVulnerabilityThirdPartyK8sVulnerabilityDetectionControlOutputWithContext(context.Context) VulnerabilityThirdPartyK8sVulnerabilityDetectionControlOutput
+}
+
+type VulnerabilityThirdPartyK8sVulnerabilityDetectionControlArgs struct {
+	// Possible Values: `MONITORING_OFF`, `MONITORING_ON`
+	MonitoringMode pulumi.StringInput `pulumi:"monitoringMode"`
+}
+
+func (VulnerabilityThirdPartyK8sVulnerabilityDetectionControlArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*VulnerabilityThirdPartyK8sVulnerabilityDetectionControl)(nil)).Elem()
+}
+
+func (i VulnerabilityThirdPartyK8sVulnerabilityDetectionControlArgs) ToVulnerabilityThirdPartyK8sVulnerabilityDetectionControlOutput() VulnerabilityThirdPartyK8sVulnerabilityDetectionControlOutput {
+	return i.ToVulnerabilityThirdPartyK8sVulnerabilityDetectionControlOutputWithContext(context.Background())
+}
+
+func (i VulnerabilityThirdPartyK8sVulnerabilityDetectionControlArgs) ToVulnerabilityThirdPartyK8sVulnerabilityDetectionControlOutputWithContext(ctx context.Context) VulnerabilityThirdPartyK8sVulnerabilityDetectionControlOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(VulnerabilityThirdPartyK8sVulnerabilityDetectionControlOutput)
+}
+
+func (i VulnerabilityThirdPartyK8sVulnerabilityDetectionControlArgs) ToVulnerabilityThirdPartyK8sVulnerabilityDetectionControlPtrOutput() VulnerabilityThirdPartyK8sVulnerabilityDetectionControlPtrOutput {
+	return i.ToVulnerabilityThirdPartyK8sVulnerabilityDetectionControlPtrOutputWithContext(context.Background())
+}
+
+func (i VulnerabilityThirdPartyK8sVulnerabilityDetectionControlArgs) ToVulnerabilityThirdPartyK8sVulnerabilityDetectionControlPtrOutputWithContext(ctx context.Context) VulnerabilityThirdPartyK8sVulnerabilityDetectionControlPtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(VulnerabilityThirdPartyK8sVulnerabilityDetectionControlOutput).ToVulnerabilityThirdPartyK8sVulnerabilityDetectionControlPtrOutputWithContext(ctx)
+}
+
+// VulnerabilityThirdPartyK8sVulnerabilityDetectionControlPtrInput is an input type that accepts VulnerabilityThirdPartyK8sVulnerabilityDetectionControlArgs, VulnerabilityThirdPartyK8sVulnerabilityDetectionControlPtr and VulnerabilityThirdPartyK8sVulnerabilityDetectionControlPtrOutput values.
+// You can construct a concrete instance of `VulnerabilityThirdPartyK8sVulnerabilityDetectionControlPtrInput` via:
+//
+//	        VulnerabilityThirdPartyK8sVulnerabilityDetectionControlArgs{...}
+//
+//	or:
+//
+//	        nil
+type VulnerabilityThirdPartyK8sVulnerabilityDetectionControlPtrInput interface {
+	pulumi.Input
+
+	ToVulnerabilityThirdPartyK8sVulnerabilityDetectionControlPtrOutput() VulnerabilityThirdPartyK8sVulnerabilityDetectionControlPtrOutput
+	ToVulnerabilityThirdPartyK8sVulnerabilityDetectionControlPtrOutputWithContext(context.Context) VulnerabilityThirdPartyK8sVulnerabilityDetectionControlPtrOutput
+}
+
+type vulnerabilityThirdPartyK8sVulnerabilityDetectionControlPtrType VulnerabilityThirdPartyK8sVulnerabilityDetectionControlArgs
+
+func VulnerabilityThirdPartyK8sVulnerabilityDetectionControlPtr(v *VulnerabilityThirdPartyK8sVulnerabilityDetectionControlArgs) VulnerabilityThirdPartyK8sVulnerabilityDetectionControlPtrInput {
+	return (*vulnerabilityThirdPartyK8sVulnerabilityDetectionControlPtrType)(v)
+}
+
+func (*vulnerabilityThirdPartyK8sVulnerabilityDetectionControlPtrType) ElementType() reflect.Type {
+	return reflect.TypeOf((**VulnerabilityThirdPartyK8sVulnerabilityDetectionControl)(nil)).Elem()
+}
+
+func (i *vulnerabilityThirdPartyK8sVulnerabilityDetectionControlPtrType) ToVulnerabilityThirdPartyK8sVulnerabilityDetectionControlPtrOutput() VulnerabilityThirdPartyK8sVulnerabilityDetectionControlPtrOutput {
+	return i.ToVulnerabilityThirdPartyK8sVulnerabilityDetectionControlPtrOutputWithContext(context.Background())
+}
+
+func (i *vulnerabilityThirdPartyK8sVulnerabilityDetectionControlPtrType) ToVulnerabilityThirdPartyK8sVulnerabilityDetectionControlPtrOutputWithContext(ctx context.Context) VulnerabilityThirdPartyK8sVulnerabilityDetectionControlPtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(VulnerabilityThirdPartyK8sVulnerabilityDetectionControlPtrOutput)
+}
+
+type VulnerabilityThirdPartyK8sVulnerabilityDetectionControlOutput struct{ *pulumi.OutputState }
+
+func (VulnerabilityThirdPartyK8sVulnerabilityDetectionControlOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*VulnerabilityThirdPartyK8sVulnerabilityDetectionControl)(nil)).Elem()
+}
+
+func (o VulnerabilityThirdPartyK8sVulnerabilityDetectionControlOutput) ToVulnerabilityThirdPartyK8sVulnerabilityDetectionControlOutput() VulnerabilityThirdPartyK8sVulnerabilityDetectionControlOutput {
+	return o
+}
+
+func (o VulnerabilityThirdPartyK8sVulnerabilityDetectionControlOutput) ToVulnerabilityThirdPartyK8sVulnerabilityDetectionControlOutputWithContext(ctx context.Context) VulnerabilityThirdPartyK8sVulnerabilityDetectionControlOutput {
+	return o
+}
+
+func (o VulnerabilityThirdPartyK8sVulnerabilityDetectionControlOutput) ToVulnerabilityThirdPartyK8sVulnerabilityDetectionControlPtrOutput() VulnerabilityThirdPartyK8sVulnerabilityDetectionControlPtrOutput {
+	return o.ToVulnerabilityThirdPartyK8sVulnerabilityDetectionControlPtrOutputWithContext(context.Background())
+}
+
+func (o VulnerabilityThirdPartyK8sVulnerabilityDetectionControlOutput) ToVulnerabilityThirdPartyK8sVulnerabilityDetectionControlPtrOutputWithContext(ctx context.Context) VulnerabilityThirdPartyK8sVulnerabilityDetectionControlPtrOutput {
+	return o.ApplyTWithContext(ctx, func(_ context.Context, v VulnerabilityThirdPartyK8sVulnerabilityDetectionControl) *VulnerabilityThirdPartyK8sVulnerabilityDetectionControl {
+		return &v
+	}).(VulnerabilityThirdPartyK8sVulnerabilityDetectionControlPtrOutput)
+}
+
+// Possible Values: `MONITORING_OFF`, `MONITORING_ON`
+func (o VulnerabilityThirdPartyK8sVulnerabilityDetectionControlOutput) MonitoringMode() pulumi.StringOutput {
+	return o.ApplyT(func(v VulnerabilityThirdPartyK8sVulnerabilityDetectionControl) string { return v.MonitoringMode }).(pulumi.StringOutput)
+}
+
+type VulnerabilityThirdPartyK8sVulnerabilityDetectionControlPtrOutput struct{ *pulumi.OutputState }
+
+func (VulnerabilityThirdPartyK8sVulnerabilityDetectionControlPtrOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((**VulnerabilityThirdPartyK8sVulnerabilityDetectionControl)(nil)).Elem()
+}
+
+func (o VulnerabilityThirdPartyK8sVulnerabilityDetectionControlPtrOutput) ToVulnerabilityThirdPartyK8sVulnerabilityDetectionControlPtrOutput() VulnerabilityThirdPartyK8sVulnerabilityDetectionControlPtrOutput {
+	return o
+}
+
+func (o VulnerabilityThirdPartyK8sVulnerabilityDetectionControlPtrOutput) ToVulnerabilityThirdPartyK8sVulnerabilityDetectionControlPtrOutputWithContext(ctx context.Context) VulnerabilityThirdPartyK8sVulnerabilityDetectionControlPtrOutput {
+	return o
+}
+
+func (o VulnerabilityThirdPartyK8sVulnerabilityDetectionControlPtrOutput) Elem() VulnerabilityThirdPartyK8sVulnerabilityDetectionControlOutput {
+	return o.ApplyT(func(v *VulnerabilityThirdPartyK8sVulnerabilityDetectionControl) VulnerabilityThirdPartyK8sVulnerabilityDetectionControl {
+		if v != nil {
+			return *v
+		}
+		var ret VulnerabilityThirdPartyK8sVulnerabilityDetectionControl
+		return ret
+	}).(VulnerabilityThirdPartyK8sVulnerabilityDetectionControlOutput)
+}
+
+// Possible Values: `MONITORING_OFF`, `MONITORING_ON`
+func (o VulnerabilityThirdPartyK8sVulnerabilityDetectionControlPtrOutput) MonitoringMode() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *VulnerabilityThirdPartyK8sVulnerabilityDetectionControl) *string {
+		if v == nil {
+			return nil
+		}
+		return &v.MonitoringMode
+	}).(pulumi.StringPtrOutput)
+}
+
+type WebAppAnomaliesErrorRate struct {
+	// This setting is enabled (`true`) or disabled (`false`)
+	Enabled bool `pulumi:"enabled"`
+	// Alert if the percentage of failing user actions increases by **both** the absolute and relative thresholds:
+	ErrorRateAuto *WebAppAnomaliesErrorRateErrorRateAuto `pulumi:"errorRateAuto"`
+	// Possible Values: `Auto`, `Fixed`
+	ErrorRateDetectionMode *string `pulumi:"errorRateDetectionMode"`
+	// no documentation available
+	ErrorRateFixed *WebAppAnomaliesErrorRateErrorRateFixed `pulumi:"errorRateFixed"`
+}
+
+// WebAppAnomaliesErrorRateInput is an input type that accepts WebAppAnomaliesErrorRateArgs and WebAppAnomaliesErrorRateOutput values.
+// You can construct a concrete instance of `WebAppAnomaliesErrorRateInput` via:
+//
+//	WebAppAnomaliesErrorRateArgs{...}
+type WebAppAnomaliesErrorRateInput interface {
+	pulumi.Input
+
+	ToWebAppAnomaliesErrorRateOutput() WebAppAnomaliesErrorRateOutput
+	ToWebAppAnomaliesErrorRateOutputWithContext(context.Context) WebAppAnomaliesErrorRateOutput
+}
+
+type WebAppAnomaliesErrorRateArgs struct {
+	// This setting is enabled (`true`) or disabled (`false`)
+	Enabled pulumi.BoolInput `pulumi:"enabled"`
+	// Alert if the percentage of failing user actions increases by **both** the absolute and relative thresholds:
+	ErrorRateAuto WebAppAnomaliesErrorRateErrorRateAutoPtrInput `pulumi:"errorRateAuto"`
+	// Possible Values: `Auto`, `Fixed`
+	ErrorRateDetectionMode pulumi.StringPtrInput `pulumi:"errorRateDetectionMode"`
+	// no documentation available
+	ErrorRateFixed WebAppAnomaliesErrorRateErrorRateFixedPtrInput `pulumi:"errorRateFixed"`
+}
+
+func (WebAppAnomaliesErrorRateArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*WebAppAnomaliesErrorRate)(nil)).Elem()
+}
+
+func (i WebAppAnomaliesErrorRateArgs) ToWebAppAnomaliesErrorRateOutput() WebAppAnomaliesErrorRateOutput {
+	return i.ToWebAppAnomaliesErrorRateOutputWithContext(context.Background())
+}
+
+func (i WebAppAnomaliesErrorRateArgs) ToWebAppAnomaliesErrorRateOutputWithContext(ctx context.Context) WebAppAnomaliesErrorRateOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(WebAppAnomaliesErrorRateOutput)
+}
+
+func (i WebAppAnomaliesErrorRateArgs) ToWebAppAnomaliesErrorRatePtrOutput() WebAppAnomaliesErrorRatePtrOutput {
+	return i.ToWebAppAnomaliesErrorRatePtrOutputWithContext(context.Background())
+}
+
+func (i WebAppAnomaliesErrorRateArgs) ToWebAppAnomaliesErrorRatePtrOutputWithContext(ctx context.Context) WebAppAnomaliesErrorRatePtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(WebAppAnomaliesErrorRateOutput).ToWebAppAnomaliesErrorRatePtrOutputWithContext(ctx)
+}
+
+// WebAppAnomaliesErrorRatePtrInput is an input type that accepts WebAppAnomaliesErrorRateArgs, WebAppAnomaliesErrorRatePtr and WebAppAnomaliesErrorRatePtrOutput values.
+// You can construct a concrete instance of `WebAppAnomaliesErrorRatePtrInput` via:
+//
+//	        WebAppAnomaliesErrorRateArgs{...}
+//
+//	or:
+//
+//	        nil
+type WebAppAnomaliesErrorRatePtrInput interface {
+	pulumi.Input
+
+	ToWebAppAnomaliesErrorRatePtrOutput() WebAppAnomaliesErrorRatePtrOutput
+	ToWebAppAnomaliesErrorRatePtrOutputWithContext(context.Context) WebAppAnomaliesErrorRatePtrOutput
+}
+
+type webAppAnomaliesErrorRatePtrType WebAppAnomaliesErrorRateArgs
+
+func WebAppAnomaliesErrorRatePtr(v *WebAppAnomaliesErrorRateArgs) WebAppAnomaliesErrorRatePtrInput {
+	return (*webAppAnomaliesErrorRatePtrType)(v)
+}
+
+func (*webAppAnomaliesErrorRatePtrType) ElementType() reflect.Type {
+	return reflect.TypeOf((**WebAppAnomaliesErrorRate)(nil)).Elem()
+}
+
+func (i *webAppAnomaliesErrorRatePtrType) ToWebAppAnomaliesErrorRatePtrOutput() WebAppAnomaliesErrorRatePtrOutput {
+	return i.ToWebAppAnomaliesErrorRatePtrOutputWithContext(context.Background())
+}
+
+func (i *webAppAnomaliesErrorRatePtrType) ToWebAppAnomaliesErrorRatePtrOutputWithContext(ctx context.Context) WebAppAnomaliesErrorRatePtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(WebAppAnomaliesErrorRatePtrOutput)
+}
+
+type WebAppAnomaliesErrorRateOutput struct{ *pulumi.OutputState }
+
+func (WebAppAnomaliesErrorRateOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*WebAppAnomaliesErrorRate)(nil)).Elem()
+}
+
+func (o WebAppAnomaliesErrorRateOutput) ToWebAppAnomaliesErrorRateOutput() WebAppAnomaliesErrorRateOutput {
+	return o
+}
+
+func (o WebAppAnomaliesErrorRateOutput) ToWebAppAnomaliesErrorRateOutputWithContext(ctx context.Context) WebAppAnomaliesErrorRateOutput {
+	return o
+}
+
+func (o WebAppAnomaliesErrorRateOutput) ToWebAppAnomaliesErrorRatePtrOutput() WebAppAnomaliesErrorRatePtrOutput {
+	return o.ToWebAppAnomaliesErrorRatePtrOutputWithContext(context.Background())
+}
+
+func (o WebAppAnomaliesErrorRateOutput) ToWebAppAnomaliesErrorRatePtrOutputWithContext(ctx context.Context) WebAppAnomaliesErrorRatePtrOutput {
+	return o.ApplyTWithContext(ctx, func(_ context.Context, v WebAppAnomaliesErrorRate) *WebAppAnomaliesErrorRate {
+		return &v
+	}).(WebAppAnomaliesErrorRatePtrOutput)
+}
+
+// This setting is enabled (`true`) or disabled (`false`)
+func (o WebAppAnomaliesErrorRateOutput) Enabled() pulumi.BoolOutput {
+	return o.ApplyT(func(v WebAppAnomaliesErrorRate) bool { return v.Enabled }).(pulumi.BoolOutput)
+}
+
+// Alert if the percentage of failing user actions increases by **both** the absolute and relative thresholds:
+func (o WebAppAnomaliesErrorRateOutput) ErrorRateAuto() WebAppAnomaliesErrorRateErrorRateAutoPtrOutput {
+	return o.ApplyT(func(v WebAppAnomaliesErrorRate) *WebAppAnomaliesErrorRateErrorRateAuto { return v.ErrorRateAuto }).(WebAppAnomaliesErrorRateErrorRateAutoPtrOutput)
+}
+
+// Possible Values: `Auto`, `Fixed`
+func (o WebAppAnomaliesErrorRateOutput) ErrorRateDetectionMode() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v WebAppAnomaliesErrorRate) *string { return v.ErrorRateDetectionMode }).(pulumi.StringPtrOutput)
+}
+
+// no documentation available
+func (o WebAppAnomaliesErrorRateOutput) ErrorRateFixed() WebAppAnomaliesErrorRateErrorRateFixedPtrOutput {
+	return o.ApplyT(func(v WebAppAnomaliesErrorRate) *WebAppAnomaliesErrorRateErrorRateFixed { return v.ErrorRateFixed }).(WebAppAnomaliesErrorRateErrorRateFixedPtrOutput)
+}
+
+type WebAppAnomaliesErrorRatePtrOutput struct{ *pulumi.OutputState }
+
+func (WebAppAnomaliesErrorRatePtrOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((**WebAppAnomaliesErrorRate)(nil)).Elem()
+}
+
+func (o WebAppAnomaliesErrorRatePtrOutput) ToWebAppAnomaliesErrorRatePtrOutput() WebAppAnomaliesErrorRatePtrOutput {
+	return o
+}
+
+func (o WebAppAnomaliesErrorRatePtrOutput) ToWebAppAnomaliesErrorRatePtrOutputWithContext(ctx context.Context) WebAppAnomaliesErrorRatePtrOutput {
+	return o
+}
+
+func (o WebAppAnomaliesErrorRatePtrOutput) Elem() WebAppAnomaliesErrorRateOutput {
+	return o.ApplyT(func(v *WebAppAnomaliesErrorRate) WebAppAnomaliesErrorRate {
+		if v != nil {
+			return *v
+		}
+		var ret WebAppAnomaliesErrorRate
+		return ret
+	}).(WebAppAnomaliesErrorRateOutput)
+}
+
+// This setting is enabled (`true`) or disabled (`false`)
+func (o WebAppAnomaliesErrorRatePtrOutput) Enabled() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v *WebAppAnomaliesErrorRate) *bool {
+		if v == nil {
+			return nil
+		}
+		return &v.Enabled
+	}).(pulumi.BoolPtrOutput)
+}
+
+// Alert if the percentage of failing user actions increases by **both** the absolute and relative thresholds:
+func (o WebAppAnomaliesErrorRatePtrOutput) ErrorRateAuto() WebAppAnomaliesErrorRateErrorRateAutoPtrOutput {
+	return o.ApplyT(func(v *WebAppAnomaliesErrorRate) *WebAppAnomaliesErrorRateErrorRateAuto {
+		if v == nil {
+			return nil
+		}
+		return v.ErrorRateAuto
+	}).(WebAppAnomaliesErrorRateErrorRateAutoPtrOutput)
+}
+
+// Possible Values: `Auto`, `Fixed`
+func (o WebAppAnomaliesErrorRatePtrOutput) ErrorRateDetectionMode() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *WebAppAnomaliesErrorRate) *string {
+		if v == nil {
+			return nil
+		}
+		return v.ErrorRateDetectionMode
+	}).(pulumi.StringPtrOutput)
+}
+
+// no documentation available
+func (o WebAppAnomaliesErrorRatePtrOutput) ErrorRateFixed() WebAppAnomaliesErrorRateErrorRateFixedPtrOutput {
+	return o.ApplyT(func(v *WebAppAnomaliesErrorRate) *WebAppAnomaliesErrorRateErrorRateFixed {
+		if v == nil {
+			return nil
+		}
+		return v.ErrorRateFixed
+	}).(WebAppAnomaliesErrorRateErrorRateFixedPtrOutput)
+}
+
+type WebAppAnomaliesErrorRateErrorRateAuto struct {
+	// Absolute threshold
+	AbsoluteIncrease float64 `pulumi:"absoluteIncrease"`
+	// Avoid over-alerting
+	OverAlertingProtection WebAppAnomaliesErrorRateErrorRateAutoOverAlertingProtection `pulumi:"overAlertingProtection"`
+	// Relative threshold
+	RelativeIncrease float64 `pulumi:"relativeIncrease"`
+}
+
+// WebAppAnomaliesErrorRateErrorRateAutoInput is an input type that accepts WebAppAnomaliesErrorRateErrorRateAutoArgs and WebAppAnomaliesErrorRateErrorRateAutoOutput values.
+// You can construct a concrete instance of `WebAppAnomaliesErrorRateErrorRateAutoInput` via:
+//
+//	WebAppAnomaliesErrorRateErrorRateAutoArgs{...}
+type WebAppAnomaliesErrorRateErrorRateAutoInput interface {
+	pulumi.Input
+
+	ToWebAppAnomaliesErrorRateErrorRateAutoOutput() WebAppAnomaliesErrorRateErrorRateAutoOutput
+	ToWebAppAnomaliesErrorRateErrorRateAutoOutputWithContext(context.Context) WebAppAnomaliesErrorRateErrorRateAutoOutput
+}
+
+type WebAppAnomaliesErrorRateErrorRateAutoArgs struct {
+	// Absolute threshold
+	AbsoluteIncrease pulumi.Float64Input `pulumi:"absoluteIncrease"`
+	// Avoid over-alerting
+	OverAlertingProtection WebAppAnomaliesErrorRateErrorRateAutoOverAlertingProtectionInput `pulumi:"overAlertingProtection"`
+	// Relative threshold
+	RelativeIncrease pulumi.Float64Input `pulumi:"relativeIncrease"`
+}
+
+func (WebAppAnomaliesErrorRateErrorRateAutoArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*WebAppAnomaliesErrorRateErrorRateAuto)(nil)).Elem()
+}
+
+func (i WebAppAnomaliesErrorRateErrorRateAutoArgs) ToWebAppAnomaliesErrorRateErrorRateAutoOutput() WebAppAnomaliesErrorRateErrorRateAutoOutput {
+	return i.ToWebAppAnomaliesErrorRateErrorRateAutoOutputWithContext(context.Background())
+}
+
+func (i WebAppAnomaliesErrorRateErrorRateAutoArgs) ToWebAppAnomaliesErrorRateErrorRateAutoOutputWithContext(ctx context.Context) WebAppAnomaliesErrorRateErrorRateAutoOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(WebAppAnomaliesErrorRateErrorRateAutoOutput)
+}
+
+func (i WebAppAnomaliesErrorRateErrorRateAutoArgs) ToWebAppAnomaliesErrorRateErrorRateAutoPtrOutput() WebAppAnomaliesErrorRateErrorRateAutoPtrOutput {
+	return i.ToWebAppAnomaliesErrorRateErrorRateAutoPtrOutputWithContext(context.Background())
+}
+
+func (i WebAppAnomaliesErrorRateErrorRateAutoArgs) ToWebAppAnomaliesErrorRateErrorRateAutoPtrOutputWithContext(ctx context.Context) WebAppAnomaliesErrorRateErrorRateAutoPtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(WebAppAnomaliesErrorRateErrorRateAutoOutput).ToWebAppAnomaliesErrorRateErrorRateAutoPtrOutputWithContext(ctx)
+}
+
+// WebAppAnomaliesErrorRateErrorRateAutoPtrInput is an input type that accepts WebAppAnomaliesErrorRateErrorRateAutoArgs, WebAppAnomaliesErrorRateErrorRateAutoPtr and WebAppAnomaliesErrorRateErrorRateAutoPtrOutput values.
+// You can construct a concrete instance of `WebAppAnomaliesErrorRateErrorRateAutoPtrInput` via:
+//
+//	        WebAppAnomaliesErrorRateErrorRateAutoArgs{...}
+//
+//	or:
+//
+//	        nil
+type WebAppAnomaliesErrorRateErrorRateAutoPtrInput interface {
+	pulumi.Input
+
+	ToWebAppAnomaliesErrorRateErrorRateAutoPtrOutput() WebAppAnomaliesErrorRateErrorRateAutoPtrOutput
+	ToWebAppAnomaliesErrorRateErrorRateAutoPtrOutputWithContext(context.Context) WebAppAnomaliesErrorRateErrorRateAutoPtrOutput
+}
+
+type webAppAnomaliesErrorRateErrorRateAutoPtrType WebAppAnomaliesErrorRateErrorRateAutoArgs
+
+func WebAppAnomaliesErrorRateErrorRateAutoPtr(v *WebAppAnomaliesErrorRateErrorRateAutoArgs) WebAppAnomaliesErrorRateErrorRateAutoPtrInput {
+	return (*webAppAnomaliesErrorRateErrorRateAutoPtrType)(v)
+}
+
+func (*webAppAnomaliesErrorRateErrorRateAutoPtrType) ElementType() reflect.Type {
+	return reflect.TypeOf((**WebAppAnomaliesErrorRateErrorRateAuto)(nil)).Elem()
+}
+
+func (i *webAppAnomaliesErrorRateErrorRateAutoPtrType) ToWebAppAnomaliesErrorRateErrorRateAutoPtrOutput() WebAppAnomaliesErrorRateErrorRateAutoPtrOutput {
+	return i.ToWebAppAnomaliesErrorRateErrorRateAutoPtrOutputWithContext(context.Background())
+}
+
+func (i *webAppAnomaliesErrorRateErrorRateAutoPtrType) ToWebAppAnomaliesErrorRateErrorRateAutoPtrOutputWithContext(ctx context.Context) WebAppAnomaliesErrorRateErrorRateAutoPtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(WebAppAnomaliesErrorRateErrorRateAutoPtrOutput)
+}
+
+type WebAppAnomaliesErrorRateErrorRateAutoOutput struct{ *pulumi.OutputState }
+
+func (WebAppAnomaliesErrorRateErrorRateAutoOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*WebAppAnomaliesErrorRateErrorRateAuto)(nil)).Elem()
+}
+
+func (o WebAppAnomaliesErrorRateErrorRateAutoOutput) ToWebAppAnomaliesErrorRateErrorRateAutoOutput() WebAppAnomaliesErrorRateErrorRateAutoOutput {
+	return o
+}
+
+func (o WebAppAnomaliesErrorRateErrorRateAutoOutput) ToWebAppAnomaliesErrorRateErrorRateAutoOutputWithContext(ctx context.Context) WebAppAnomaliesErrorRateErrorRateAutoOutput {
+	return o
+}
+
+func (o WebAppAnomaliesErrorRateErrorRateAutoOutput) ToWebAppAnomaliesErrorRateErrorRateAutoPtrOutput() WebAppAnomaliesErrorRateErrorRateAutoPtrOutput {
+	return o.ToWebAppAnomaliesErrorRateErrorRateAutoPtrOutputWithContext(context.Background())
+}
+
+func (o WebAppAnomaliesErrorRateErrorRateAutoOutput) ToWebAppAnomaliesErrorRateErrorRateAutoPtrOutputWithContext(ctx context.Context) WebAppAnomaliesErrorRateErrorRateAutoPtrOutput {
+	return o.ApplyTWithContext(ctx, func(_ context.Context, v WebAppAnomaliesErrorRateErrorRateAuto) *WebAppAnomaliesErrorRateErrorRateAuto {
+		return &v
+	}).(WebAppAnomaliesErrorRateErrorRateAutoPtrOutput)
+}
+
+// Absolute threshold
+func (o WebAppAnomaliesErrorRateErrorRateAutoOutput) AbsoluteIncrease() pulumi.Float64Output {
+	return o.ApplyT(func(v WebAppAnomaliesErrorRateErrorRateAuto) float64 { return v.AbsoluteIncrease }).(pulumi.Float64Output)
+}
+
+// Avoid over-alerting
+func (o WebAppAnomaliesErrorRateErrorRateAutoOutput) OverAlertingProtection() WebAppAnomaliesErrorRateErrorRateAutoOverAlertingProtectionOutput {
+	return o.ApplyT(func(v WebAppAnomaliesErrorRateErrorRateAuto) WebAppAnomaliesErrorRateErrorRateAutoOverAlertingProtection {
+		return v.OverAlertingProtection
+	}).(WebAppAnomaliesErrorRateErrorRateAutoOverAlertingProtectionOutput)
+}
+
+// Relative threshold
+func (o WebAppAnomaliesErrorRateErrorRateAutoOutput) RelativeIncrease() pulumi.Float64Output {
+	return o.ApplyT(func(v WebAppAnomaliesErrorRateErrorRateAuto) float64 { return v.RelativeIncrease }).(pulumi.Float64Output)
+}
+
+type WebAppAnomaliesErrorRateErrorRateAutoPtrOutput struct{ *pulumi.OutputState }
+
+func (WebAppAnomaliesErrorRateErrorRateAutoPtrOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((**WebAppAnomaliesErrorRateErrorRateAuto)(nil)).Elem()
+}
+
+func (o WebAppAnomaliesErrorRateErrorRateAutoPtrOutput) ToWebAppAnomaliesErrorRateErrorRateAutoPtrOutput() WebAppAnomaliesErrorRateErrorRateAutoPtrOutput {
+	return o
+}
+
+func (o WebAppAnomaliesErrorRateErrorRateAutoPtrOutput) ToWebAppAnomaliesErrorRateErrorRateAutoPtrOutputWithContext(ctx context.Context) WebAppAnomaliesErrorRateErrorRateAutoPtrOutput {
+	return o
+}
+
+func (o WebAppAnomaliesErrorRateErrorRateAutoPtrOutput) Elem() WebAppAnomaliesErrorRateErrorRateAutoOutput {
+	return o.ApplyT(func(v *WebAppAnomaliesErrorRateErrorRateAuto) WebAppAnomaliesErrorRateErrorRateAuto {
+		if v != nil {
+			return *v
+		}
+		var ret WebAppAnomaliesErrorRateErrorRateAuto
+		return ret
+	}).(WebAppAnomaliesErrorRateErrorRateAutoOutput)
+}
+
+// Absolute threshold
+func (o WebAppAnomaliesErrorRateErrorRateAutoPtrOutput) AbsoluteIncrease() pulumi.Float64PtrOutput {
+	return o.ApplyT(func(v *WebAppAnomaliesErrorRateErrorRateAuto) *float64 {
+		if v == nil {
+			return nil
+		}
+		return &v.AbsoluteIncrease
+	}).(pulumi.Float64PtrOutput)
+}
+
+// Avoid over-alerting
+func (o WebAppAnomaliesErrorRateErrorRateAutoPtrOutput) OverAlertingProtection() WebAppAnomaliesErrorRateErrorRateAutoOverAlertingProtectionPtrOutput {
+	return o.ApplyT(func(v *WebAppAnomaliesErrorRateErrorRateAuto) *WebAppAnomaliesErrorRateErrorRateAutoOverAlertingProtection {
+		if v == nil {
+			return nil
+		}
+		return &v.OverAlertingProtection
+	}).(WebAppAnomaliesErrorRateErrorRateAutoOverAlertingProtectionPtrOutput)
+}
+
+// Relative threshold
+func (o WebAppAnomaliesErrorRateErrorRateAutoPtrOutput) RelativeIncrease() pulumi.Float64PtrOutput {
+	return o.ApplyT(func(v *WebAppAnomaliesErrorRateErrorRateAuto) *float64 {
+		if v == nil {
+			return nil
+		}
+		return &v.RelativeIncrease
+	}).(pulumi.Float64PtrOutput)
+}
+
+type WebAppAnomaliesErrorRateErrorRateAutoOverAlertingProtection struct {
+	// Only alert if there are at least
+	ActionsPerMinute float64 `pulumi:"actionsPerMinute"`
+	// Only alert if the abnormal state remains for at least
+	MinutesAbnormalState float64 `pulumi:"minutesAbnormalState"`
+}
+
+// WebAppAnomaliesErrorRateErrorRateAutoOverAlertingProtectionInput is an input type that accepts WebAppAnomaliesErrorRateErrorRateAutoOverAlertingProtectionArgs and WebAppAnomaliesErrorRateErrorRateAutoOverAlertingProtectionOutput values.
+// You can construct a concrete instance of `WebAppAnomaliesErrorRateErrorRateAutoOverAlertingProtectionInput` via:
+//
+//	WebAppAnomaliesErrorRateErrorRateAutoOverAlertingProtectionArgs{...}
+type WebAppAnomaliesErrorRateErrorRateAutoOverAlertingProtectionInput interface {
+	pulumi.Input
+
+	ToWebAppAnomaliesErrorRateErrorRateAutoOverAlertingProtectionOutput() WebAppAnomaliesErrorRateErrorRateAutoOverAlertingProtectionOutput
+	ToWebAppAnomaliesErrorRateErrorRateAutoOverAlertingProtectionOutputWithContext(context.Context) WebAppAnomaliesErrorRateErrorRateAutoOverAlertingProtectionOutput
+}
+
+type WebAppAnomaliesErrorRateErrorRateAutoOverAlertingProtectionArgs struct {
+	// Only alert if there are at least
+	ActionsPerMinute pulumi.Float64Input `pulumi:"actionsPerMinute"`
+	// Only alert if the abnormal state remains for at least
+	MinutesAbnormalState pulumi.Float64Input `pulumi:"minutesAbnormalState"`
+}
+
+func (WebAppAnomaliesErrorRateErrorRateAutoOverAlertingProtectionArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*WebAppAnomaliesErrorRateErrorRateAutoOverAlertingProtection)(nil)).Elem()
+}
+
+func (i WebAppAnomaliesErrorRateErrorRateAutoOverAlertingProtectionArgs) ToWebAppAnomaliesErrorRateErrorRateAutoOverAlertingProtectionOutput() WebAppAnomaliesErrorRateErrorRateAutoOverAlertingProtectionOutput {
+	return i.ToWebAppAnomaliesErrorRateErrorRateAutoOverAlertingProtectionOutputWithContext(context.Background())
+}
+
+func (i WebAppAnomaliesErrorRateErrorRateAutoOverAlertingProtectionArgs) ToWebAppAnomaliesErrorRateErrorRateAutoOverAlertingProtectionOutputWithContext(ctx context.Context) WebAppAnomaliesErrorRateErrorRateAutoOverAlertingProtectionOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(WebAppAnomaliesErrorRateErrorRateAutoOverAlertingProtectionOutput)
+}
+
+func (i WebAppAnomaliesErrorRateErrorRateAutoOverAlertingProtectionArgs) ToWebAppAnomaliesErrorRateErrorRateAutoOverAlertingProtectionPtrOutput() WebAppAnomaliesErrorRateErrorRateAutoOverAlertingProtectionPtrOutput {
+	return i.ToWebAppAnomaliesErrorRateErrorRateAutoOverAlertingProtectionPtrOutputWithContext(context.Background())
+}
+
+func (i WebAppAnomaliesErrorRateErrorRateAutoOverAlertingProtectionArgs) ToWebAppAnomaliesErrorRateErrorRateAutoOverAlertingProtectionPtrOutputWithContext(ctx context.Context) WebAppAnomaliesErrorRateErrorRateAutoOverAlertingProtectionPtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(WebAppAnomaliesErrorRateErrorRateAutoOverAlertingProtectionOutput).ToWebAppAnomaliesErrorRateErrorRateAutoOverAlertingProtectionPtrOutputWithContext(ctx)
+}
+
+// WebAppAnomaliesErrorRateErrorRateAutoOverAlertingProtectionPtrInput is an input type that accepts WebAppAnomaliesErrorRateErrorRateAutoOverAlertingProtectionArgs, WebAppAnomaliesErrorRateErrorRateAutoOverAlertingProtectionPtr and WebAppAnomaliesErrorRateErrorRateAutoOverAlertingProtectionPtrOutput values.
+// You can construct a concrete instance of `WebAppAnomaliesErrorRateErrorRateAutoOverAlertingProtectionPtrInput` via:
+//
+//	        WebAppAnomaliesErrorRateErrorRateAutoOverAlertingProtectionArgs{...}
+//
+//	or:
+//
+//	        nil
+type WebAppAnomaliesErrorRateErrorRateAutoOverAlertingProtectionPtrInput interface {
+	pulumi.Input
+
+	ToWebAppAnomaliesErrorRateErrorRateAutoOverAlertingProtectionPtrOutput() WebAppAnomaliesErrorRateErrorRateAutoOverAlertingProtectionPtrOutput
+	ToWebAppAnomaliesErrorRateErrorRateAutoOverAlertingProtectionPtrOutputWithContext(context.Context) WebAppAnomaliesErrorRateErrorRateAutoOverAlertingProtectionPtrOutput
+}
+
+type webAppAnomaliesErrorRateErrorRateAutoOverAlertingProtectionPtrType WebAppAnomaliesErrorRateErrorRateAutoOverAlertingProtectionArgs
+
+func WebAppAnomaliesErrorRateErrorRateAutoOverAlertingProtectionPtr(v *WebAppAnomaliesErrorRateErrorRateAutoOverAlertingProtectionArgs) WebAppAnomaliesErrorRateErrorRateAutoOverAlertingProtectionPtrInput {
+	return (*webAppAnomaliesErrorRateErrorRateAutoOverAlertingProtectionPtrType)(v)
+}
+
+func (*webAppAnomaliesErrorRateErrorRateAutoOverAlertingProtectionPtrType) ElementType() reflect.Type {
+	return reflect.TypeOf((**WebAppAnomaliesErrorRateErrorRateAutoOverAlertingProtection)(nil)).Elem()
+}
+
+func (i *webAppAnomaliesErrorRateErrorRateAutoOverAlertingProtectionPtrType) ToWebAppAnomaliesErrorRateErrorRateAutoOverAlertingProtectionPtrOutput() WebAppAnomaliesErrorRateErrorRateAutoOverAlertingProtectionPtrOutput {
+	return i.ToWebAppAnomaliesErrorRateErrorRateAutoOverAlertingProtectionPtrOutputWithContext(context.Background())
+}
+
+func (i *webAppAnomaliesErrorRateErrorRateAutoOverAlertingProtectionPtrType) ToWebAppAnomaliesErrorRateErrorRateAutoOverAlertingProtectionPtrOutputWithContext(ctx context.Context) WebAppAnomaliesErrorRateErrorRateAutoOverAlertingProtectionPtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(WebAppAnomaliesErrorRateErrorRateAutoOverAlertingProtectionPtrOutput)
+}
+
+type WebAppAnomaliesErrorRateErrorRateAutoOverAlertingProtectionOutput struct{ *pulumi.OutputState }
+
+func (WebAppAnomaliesErrorRateErrorRateAutoOverAlertingProtectionOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*WebAppAnomaliesErrorRateErrorRateAutoOverAlertingProtection)(nil)).Elem()
+}
+
+func (o WebAppAnomaliesErrorRateErrorRateAutoOverAlertingProtectionOutput) ToWebAppAnomaliesErrorRateErrorRateAutoOverAlertingProtectionOutput() WebAppAnomaliesErrorRateErrorRateAutoOverAlertingProtectionOutput {
+	return o
+}
+
+func (o WebAppAnomaliesErrorRateErrorRateAutoOverAlertingProtectionOutput) ToWebAppAnomaliesErrorRateErrorRateAutoOverAlertingProtectionOutputWithContext(ctx context.Context) WebAppAnomaliesErrorRateErrorRateAutoOverAlertingProtectionOutput {
+	return o
+}
+
+func (o WebAppAnomaliesErrorRateErrorRateAutoOverAlertingProtectionOutput) ToWebAppAnomaliesErrorRateErrorRateAutoOverAlertingProtectionPtrOutput() WebAppAnomaliesErrorRateErrorRateAutoOverAlertingProtectionPtrOutput {
+	return o.ToWebAppAnomaliesErrorRateErrorRateAutoOverAlertingProtectionPtrOutputWithContext(context.Background())
+}
+
+func (o WebAppAnomaliesErrorRateErrorRateAutoOverAlertingProtectionOutput) ToWebAppAnomaliesErrorRateErrorRateAutoOverAlertingProtectionPtrOutputWithContext(ctx context.Context) WebAppAnomaliesErrorRateErrorRateAutoOverAlertingProtectionPtrOutput {
+	return o.ApplyTWithContext(ctx, func(_ context.Context, v WebAppAnomaliesErrorRateErrorRateAutoOverAlertingProtection) *WebAppAnomaliesErrorRateErrorRateAutoOverAlertingProtection {
+		return &v
+	}).(WebAppAnomaliesErrorRateErrorRateAutoOverAlertingProtectionPtrOutput)
+}
+
+// Only alert if there are at least
+func (o WebAppAnomaliesErrorRateErrorRateAutoOverAlertingProtectionOutput) ActionsPerMinute() pulumi.Float64Output {
+	return o.ApplyT(func(v WebAppAnomaliesErrorRateErrorRateAutoOverAlertingProtection) float64 { return v.ActionsPerMinute }).(pulumi.Float64Output)
+}
+
+// Only alert if the abnormal state remains for at least
+func (o WebAppAnomaliesErrorRateErrorRateAutoOverAlertingProtectionOutput) MinutesAbnormalState() pulumi.Float64Output {
+	return o.ApplyT(func(v WebAppAnomaliesErrorRateErrorRateAutoOverAlertingProtection) float64 {
+		return v.MinutesAbnormalState
+	}).(pulumi.Float64Output)
+}
+
+type WebAppAnomaliesErrorRateErrorRateAutoOverAlertingProtectionPtrOutput struct{ *pulumi.OutputState }
+
+func (WebAppAnomaliesErrorRateErrorRateAutoOverAlertingProtectionPtrOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((**WebAppAnomaliesErrorRateErrorRateAutoOverAlertingProtection)(nil)).Elem()
+}
+
+func (o WebAppAnomaliesErrorRateErrorRateAutoOverAlertingProtectionPtrOutput) ToWebAppAnomaliesErrorRateErrorRateAutoOverAlertingProtectionPtrOutput() WebAppAnomaliesErrorRateErrorRateAutoOverAlertingProtectionPtrOutput {
+	return o
+}
+
+func (o WebAppAnomaliesErrorRateErrorRateAutoOverAlertingProtectionPtrOutput) ToWebAppAnomaliesErrorRateErrorRateAutoOverAlertingProtectionPtrOutputWithContext(ctx context.Context) WebAppAnomaliesErrorRateErrorRateAutoOverAlertingProtectionPtrOutput {
+	return o
+}
+
+func (o WebAppAnomaliesErrorRateErrorRateAutoOverAlertingProtectionPtrOutput) Elem() WebAppAnomaliesErrorRateErrorRateAutoOverAlertingProtectionOutput {
+	return o.ApplyT(func(v *WebAppAnomaliesErrorRateErrorRateAutoOverAlertingProtection) WebAppAnomaliesErrorRateErrorRateAutoOverAlertingProtection {
+		if v != nil {
+			return *v
+		}
+		var ret WebAppAnomaliesErrorRateErrorRateAutoOverAlertingProtection
+		return ret
+	}).(WebAppAnomaliesErrorRateErrorRateAutoOverAlertingProtectionOutput)
+}
+
+// Only alert if there are at least
+func (o WebAppAnomaliesErrorRateErrorRateAutoOverAlertingProtectionPtrOutput) ActionsPerMinute() pulumi.Float64PtrOutput {
+	return o.ApplyT(func(v *WebAppAnomaliesErrorRateErrorRateAutoOverAlertingProtection) *float64 {
+		if v == nil {
+			return nil
+		}
+		return &v.ActionsPerMinute
+	}).(pulumi.Float64PtrOutput)
+}
+
+// Only alert if the abnormal state remains for at least
+func (o WebAppAnomaliesErrorRateErrorRateAutoOverAlertingProtectionPtrOutput) MinutesAbnormalState() pulumi.Float64PtrOutput {
+	return o.ApplyT(func(v *WebAppAnomaliesErrorRateErrorRateAutoOverAlertingProtection) *float64 {
+		if v == nil {
+			return nil
+		}
+		return &v.MinutesAbnormalState
+	}).(pulumi.Float64PtrOutput)
+}
+
+type WebAppAnomaliesErrorRateErrorRateFixed struct {
+	// To avoid over-alerting for low traffic applications
+	ErrorRateReqPerMin float64 `pulumi:"errorRateReqPerMin"`
+	// Possible Values: `Low`, `Medium`, `High`
+	ErrorRateSensitivity string `pulumi:"errorRateSensitivity"`
+	// Alert if this custom error rate threshold is exceeded during any 5-minute-period
+	MaxFailureRateIncrease float64 `pulumi:"maxFailureRateIncrease"`
+	// Amount of minutes the observed traffic has to stay in abnormal state before alert
+	MinutesAbnormalState float64 `pulumi:"minutesAbnormalState"`
+}
+
+// WebAppAnomaliesErrorRateErrorRateFixedInput is an input type that accepts WebAppAnomaliesErrorRateErrorRateFixedArgs and WebAppAnomaliesErrorRateErrorRateFixedOutput values.
+// You can construct a concrete instance of `WebAppAnomaliesErrorRateErrorRateFixedInput` via:
+//
+//	WebAppAnomaliesErrorRateErrorRateFixedArgs{...}
+type WebAppAnomaliesErrorRateErrorRateFixedInput interface {
+	pulumi.Input
+
+	ToWebAppAnomaliesErrorRateErrorRateFixedOutput() WebAppAnomaliesErrorRateErrorRateFixedOutput
+	ToWebAppAnomaliesErrorRateErrorRateFixedOutputWithContext(context.Context) WebAppAnomaliesErrorRateErrorRateFixedOutput
+}
+
+type WebAppAnomaliesErrorRateErrorRateFixedArgs struct {
+	// To avoid over-alerting for low traffic applications
+	ErrorRateReqPerMin pulumi.Float64Input `pulumi:"errorRateReqPerMin"`
+	// Possible Values: `Low`, `Medium`, `High`
+	ErrorRateSensitivity pulumi.StringInput `pulumi:"errorRateSensitivity"`
+	// Alert if this custom error rate threshold is exceeded during any 5-minute-period
+	MaxFailureRateIncrease pulumi.Float64Input `pulumi:"maxFailureRateIncrease"`
+	// Amount of minutes the observed traffic has to stay in abnormal state before alert
+	MinutesAbnormalState pulumi.Float64Input `pulumi:"minutesAbnormalState"`
+}
+
+func (WebAppAnomaliesErrorRateErrorRateFixedArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*WebAppAnomaliesErrorRateErrorRateFixed)(nil)).Elem()
+}
+
+func (i WebAppAnomaliesErrorRateErrorRateFixedArgs) ToWebAppAnomaliesErrorRateErrorRateFixedOutput() WebAppAnomaliesErrorRateErrorRateFixedOutput {
+	return i.ToWebAppAnomaliesErrorRateErrorRateFixedOutputWithContext(context.Background())
+}
+
+func (i WebAppAnomaliesErrorRateErrorRateFixedArgs) ToWebAppAnomaliesErrorRateErrorRateFixedOutputWithContext(ctx context.Context) WebAppAnomaliesErrorRateErrorRateFixedOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(WebAppAnomaliesErrorRateErrorRateFixedOutput)
+}
+
+func (i WebAppAnomaliesErrorRateErrorRateFixedArgs) ToWebAppAnomaliesErrorRateErrorRateFixedPtrOutput() WebAppAnomaliesErrorRateErrorRateFixedPtrOutput {
+	return i.ToWebAppAnomaliesErrorRateErrorRateFixedPtrOutputWithContext(context.Background())
+}
+
+func (i WebAppAnomaliesErrorRateErrorRateFixedArgs) ToWebAppAnomaliesErrorRateErrorRateFixedPtrOutputWithContext(ctx context.Context) WebAppAnomaliesErrorRateErrorRateFixedPtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(WebAppAnomaliesErrorRateErrorRateFixedOutput).ToWebAppAnomaliesErrorRateErrorRateFixedPtrOutputWithContext(ctx)
+}
+
+// WebAppAnomaliesErrorRateErrorRateFixedPtrInput is an input type that accepts WebAppAnomaliesErrorRateErrorRateFixedArgs, WebAppAnomaliesErrorRateErrorRateFixedPtr and WebAppAnomaliesErrorRateErrorRateFixedPtrOutput values.
+// You can construct a concrete instance of `WebAppAnomaliesErrorRateErrorRateFixedPtrInput` via:
+//
+//	        WebAppAnomaliesErrorRateErrorRateFixedArgs{...}
+//
+//	or:
+//
+//	        nil
+type WebAppAnomaliesErrorRateErrorRateFixedPtrInput interface {
+	pulumi.Input
+
+	ToWebAppAnomaliesErrorRateErrorRateFixedPtrOutput() WebAppAnomaliesErrorRateErrorRateFixedPtrOutput
+	ToWebAppAnomaliesErrorRateErrorRateFixedPtrOutputWithContext(context.Context) WebAppAnomaliesErrorRateErrorRateFixedPtrOutput
+}
+
+type webAppAnomaliesErrorRateErrorRateFixedPtrType WebAppAnomaliesErrorRateErrorRateFixedArgs
+
+func WebAppAnomaliesErrorRateErrorRateFixedPtr(v *WebAppAnomaliesErrorRateErrorRateFixedArgs) WebAppAnomaliesErrorRateErrorRateFixedPtrInput {
+	return (*webAppAnomaliesErrorRateErrorRateFixedPtrType)(v)
+}
+
+func (*webAppAnomaliesErrorRateErrorRateFixedPtrType) ElementType() reflect.Type {
+	return reflect.TypeOf((**WebAppAnomaliesErrorRateErrorRateFixed)(nil)).Elem()
+}
+
+func (i *webAppAnomaliesErrorRateErrorRateFixedPtrType) ToWebAppAnomaliesErrorRateErrorRateFixedPtrOutput() WebAppAnomaliesErrorRateErrorRateFixedPtrOutput {
+	return i.ToWebAppAnomaliesErrorRateErrorRateFixedPtrOutputWithContext(context.Background())
+}
+
+func (i *webAppAnomaliesErrorRateErrorRateFixedPtrType) ToWebAppAnomaliesErrorRateErrorRateFixedPtrOutputWithContext(ctx context.Context) WebAppAnomaliesErrorRateErrorRateFixedPtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(WebAppAnomaliesErrorRateErrorRateFixedPtrOutput)
+}
+
+type WebAppAnomaliesErrorRateErrorRateFixedOutput struct{ *pulumi.OutputState }
+
+func (WebAppAnomaliesErrorRateErrorRateFixedOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*WebAppAnomaliesErrorRateErrorRateFixed)(nil)).Elem()
+}
+
+func (o WebAppAnomaliesErrorRateErrorRateFixedOutput) ToWebAppAnomaliesErrorRateErrorRateFixedOutput() WebAppAnomaliesErrorRateErrorRateFixedOutput {
+	return o
+}
+
+func (o WebAppAnomaliesErrorRateErrorRateFixedOutput) ToWebAppAnomaliesErrorRateErrorRateFixedOutputWithContext(ctx context.Context) WebAppAnomaliesErrorRateErrorRateFixedOutput {
+	return o
+}
+
+func (o WebAppAnomaliesErrorRateErrorRateFixedOutput) ToWebAppAnomaliesErrorRateErrorRateFixedPtrOutput() WebAppAnomaliesErrorRateErrorRateFixedPtrOutput {
+	return o.ToWebAppAnomaliesErrorRateErrorRateFixedPtrOutputWithContext(context.Background())
+}
+
+func (o WebAppAnomaliesErrorRateErrorRateFixedOutput) ToWebAppAnomaliesErrorRateErrorRateFixedPtrOutputWithContext(ctx context.Context) WebAppAnomaliesErrorRateErrorRateFixedPtrOutput {
+	return o.ApplyTWithContext(ctx, func(_ context.Context, v WebAppAnomaliesErrorRateErrorRateFixed) *WebAppAnomaliesErrorRateErrorRateFixed {
+		return &v
+	}).(WebAppAnomaliesErrorRateErrorRateFixedPtrOutput)
+}
+
+// To avoid over-alerting for low traffic applications
+func (o WebAppAnomaliesErrorRateErrorRateFixedOutput) ErrorRateReqPerMin() pulumi.Float64Output {
+	return o.ApplyT(func(v WebAppAnomaliesErrorRateErrorRateFixed) float64 { return v.ErrorRateReqPerMin }).(pulumi.Float64Output)
+}
+
+// Possible Values: `Low`, `Medium`, `High`
+func (o WebAppAnomaliesErrorRateErrorRateFixedOutput) ErrorRateSensitivity() pulumi.StringOutput {
+	return o.ApplyT(func(v WebAppAnomaliesErrorRateErrorRateFixed) string { return v.ErrorRateSensitivity }).(pulumi.StringOutput)
+}
+
+// Alert if this custom error rate threshold is exceeded during any 5-minute-period
+func (o WebAppAnomaliesErrorRateErrorRateFixedOutput) MaxFailureRateIncrease() pulumi.Float64Output {
+	return o.ApplyT(func(v WebAppAnomaliesErrorRateErrorRateFixed) float64 { return v.MaxFailureRateIncrease }).(pulumi.Float64Output)
+}
+
+// Amount of minutes the observed traffic has to stay in abnormal state before alert
+func (o WebAppAnomaliesErrorRateErrorRateFixedOutput) MinutesAbnormalState() pulumi.Float64Output {
+	return o.ApplyT(func(v WebAppAnomaliesErrorRateErrorRateFixed) float64 { return v.MinutesAbnormalState }).(pulumi.Float64Output)
+}
+
+type WebAppAnomaliesErrorRateErrorRateFixedPtrOutput struct{ *pulumi.OutputState }
+
+func (WebAppAnomaliesErrorRateErrorRateFixedPtrOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((**WebAppAnomaliesErrorRateErrorRateFixed)(nil)).Elem()
+}
+
+func (o WebAppAnomaliesErrorRateErrorRateFixedPtrOutput) ToWebAppAnomaliesErrorRateErrorRateFixedPtrOutput() WebAppAnomaliesErrorRateErrorRateFixedPtrOutput {
+	return o
+}
+
+func (o WebAppAnomaliesErrorRateErrorRateFixedPtrOutput) ToWebAppAnomaliesErrorRateErrorRateFixedPtrOutputWithContext(ctx context.Context) WebAppAnomaliesErrorRateErrorRateFixedPtrOutput {
+	return o
+}
+
+func (o WebAppAnomaliesErrorRateErrorRateFixedPtrOutput) Elem() WebAppAnomaliesErrorRateErrorRateFixedOutput {
+	return o.ApplyT(func(v *WebAppAnomaliesErrorRateErrorRateFixed) WebAppAnomaliesErrorRateErrorRateFixed {
+		if v != nil {
+			return *v
+		}
+		var ret WebAppAnomaliesErrorRateErrorRateFixed
+		return ret
+	}).(WebAppAnomaliesErrorRateErrorRateFixedOutput)
+}
+
+// To avoid over-alerting for low traffic applications
+func (o WebAppAnomaliesErrorRateErrorRateFixedPtrOutput) ErrorRateReqPerMin() pulumi.Float64PtrOutput {
+	return o.ApplyT(func(v *WebAppAnomaliesErrorRateErrorRateFixed) *float64 {
+		if v == nil {
+			return nil
+		}
+		return &v.ErrorRateReqPerMin
+	}).(pulumi.Float64PtrOutput)
+}
+
+// Possible Values: `Low`, `Medium`, `High`
+func (o WebAppAnomaliesErrorRateErrorRateFixedPtrOutput) ErrorRateSensitivity() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *WebAppAnomaliesErrorRateErrorRateFixed) *string {
+		if v == nil {
+			return nil
+		}
+		return &v.ErrorRateSensitivity
+	}).(pulumi.StringPtrOutput)
+}
+
+// Alert if this custom error rate threshold is exceeded during any 5-minute-period
+func (o WebAppAnomaliesErrorRateErrorRateFixedPtrOutput) MaxFailureRateIncrease() pulumi.Float64PtrOutput {
+	return o.ApplyT(func(v *WebAppAnomaliesErrorRateErrorRateFixed) *float64 {
+		if v == nil {
+			return nil
+		}
+		return &v.MaxFailureRateIncrease
+	}).(pulumi.Float64PtrOutput)
+}
+
+// Amount of minutes the observed traffic has to stay in abnormal state before alert
+func (o WebAppAnomaliesErrorRateErrorRateFixedPtrOutput) MinutesAbnormalState() pulumi.Float64PtrOutput {
+	return o.ApplyT(func(v *WebAppAnomaliesErrorRateErrorRateFixed) *float64 {
+		if v == nil {
+			return nil
+		}
+		return &v.MinutesAbnormalState
+	}).(pulumi.Float64PtrOutput)
+}
+
+type WebAppAnomaliesResponseTime struct {
+	// Possible Values: `Auto`, `Fixed`
+	DetectionMode *string `pulumi:"detectionMode"`
+	// This setting is enabled (`true`) or disabled (`false`)
+	Enabled bool `pulumi:"enabled"`
+	// no documentation available
+	ResponseTimeAuto *WebAppAnomaliesResponseTimeResponseTimeAuto `pulumi:"responseTimeAuto"`
+	// no documentation available
+	ResponseTimeFixed *WebAppAnomaliesResponseTimeResponseTimeFixed `pulumi:"responseTimeFixed"`
+}
+
+// WebAppAnomaliesResponseTimeInput is an input type that accepts WebAppAnomaliesResponseTimeArgs and WebAppAnomaliesResponseTimeOutput values.
+// You can construct a concrete instance of `WebAppAnomaliesResponseTimeInput` via:
+//
+//	WebAppAnomaliesResponseTimeArgs{...}
+type WebAppAnomaliesResponseTimeInput interface {
+	pulumi.Input
+
+	ToWebAppAnomaliesResponseTimeOutput() WebAppAnomaliesResponseTimeOutput
+	ToWebAppAnomaliesResponseTimeOutputWithContext(context.Context) WebAppAnomaliesResponseTimeOutput
+}
+
+type WebAppAnomaliesResponseTimeArgs struct {
+	// Possible Values: `Auto`, `Fixed`
+	DetectionMode pulumi.StringPtrInput `pulumi:"detectionMode"`
+	// This setting is enabled (`true`) or disabled (`false`)
+	Enabled pulumi.BoolInput `pulumi:"enabled"`
+	// no documentation available
+	ResponseTimeAuto WebAppAnomaliesResponseTimeResponseTimeAutoPtrInput `pulumi:"responseTimeAuto"`
+	// no documentation available
+	ResponseTimeFixed WebAppAnomaliesResponseTimeResponseTimeFixedPtrInput `pulumi:"responseTimeFixed"`
+}
+
+func (WebAppAnomaliesResponseTimeArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*WebAppAnomaliesResponseTime)(nil)).Elem()
+}
+
+func (i WebAppAnomaliesResponseTimeArgs) ToWebAppAnomaliesResponseTimeOutput() WebAppAnomaliesResponseTimeOutput {
+	return i.ToWebAppAnomaliesResponseTimeOutputWithContext(context.Background())
+}
+
+func (i WebAppAnomaliesResponseTimeArgs) ToWebAppAnomaliesResponseTimeOutputWithContext(ctx context.Context) WebAppAnomaliesResponseTimeOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(WebAppAnomaliesResponseTimeOutput)
+}
+
+func (i WebAppAnomaliesResponseTimeArgs) ToWebAppAnomaliesResponseTimePtrOutput() WebAppAnomaliesResponseTimePtrOutput {
+	return i.ToWebAppAnomaliesResponseTimePtrOutputWithContext(context.Background())
+}
+
+func (i WebAppAnomaliesResponseTimeArgs) ToWebAppAnomaliesResponseTimePtrOutputWithContext(ctx context.Context) WebAppAnomaliesResponseTimePtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(WebAppAnomaliesResponseTimeOutput).ToWebAppAnomaliesResponseTimePtrOutputWithContext(ctx)
+}
+
+// WebAppAnomaliesResponseTimePtrInput is an input type that accepts WebAppAnomaliesResponseTimeArgs, WebAppAnomaliesResponseTimePtr and WebAppAnomaliesResponseTimePtrOutput values.
+// You can construct a concrete instance of `WebAppAnomaliesResponseTimePtrInput` via:
+//
+//	        WebAppAnomaliesResponseTimeArgs{...}
+//
+//	or:
+//
+//	        nil
+type WebAppAnomaliesResponseTimePtrInput interface {
+	pulumi.Input
+
+	ToWebAppAnomaliesResponseTimePtrOutput() WebAppAnomaliesResponseTimePtrOutput
+	ToWebAppAnomaliesResponseTimePtrOutputWithContext(context.Context) WebAppAnomaliesResponseTimePtrOutput
+}
+
+type webAppAnomaliesResponseTimePtrType WebAppAnomaliesResponseTimeArgs
+
+func WebAppAnomaliesResponseTimePtr(v *WebAppAnomaliesResponseTimeArgs) WebAppAnomaliesResponseTimePtrInput {
+	return (*webAppAnomaliesResponseTimePtrType)(v)
+}
+
+func (*webAppAnomaliesResponseTimePtrType) ElementType() reflect.Type {
+	return reflect.TypeOf((**WebAppAnomaliesResponseTime)(nil)).Elem()
+}
+
+func (i *webAppAnomaliesResponseTimePtrType) ToWebAppAnomaliesResponseTimePtrOutput() WebAppAnomaliesResponseTimePtrOutput {
+	return i.ToWebAppAnomaliesResponseTimePtrOutputWithContext(context.Background())
+}
+
+func (i *webAppAnomaliesResponseTimePtrType) ToWebAppAnomaliesResponseTimePtrOutputWithContext(ctx context.Context) WebAppAnomaliesResponseTimePtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(WebAppAnomaliesResponseTimePtrOutput)
+}
+
+type WebAppAnomaliesResponseTimeOutput struct{ *pulumi.OutputState }
+
+func (WebAppAnomaliesResponseTimeOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*WebAppAnomaliesResponseTime)(nil)).Elem()
+}
+
+func (o WebAppAnomaliesResponseTimeOutput) ToWebAppAnomaliesResponseTimeOutput() WebAppAnomaliesResponseTimeOutput {
+	return o
+}
+
+func (o WebAppAnomaliesResponseTimeOutput) ToWebAppAnomaliesResponseTimeOutputWithContext(ctx context.Context) WebAppAnomaliesResponseTimeOutput {
+	return o
+}
+
+func (o WebAppAnomaliesResponseTimeOutput) ToWebAppAnomaliesResponseTimePtrOutput() WebAppAnomaliesResponseTimePtrOutput {
+	return o.ToWebAppAnomaliesResponseTimePtrOutputWithContext(context.Background())
+}
+
+func (o WebAppAnomaliesResponseTimeOutput) ToWebAppAnomaliesResponseTimePtrOutputWithContext(ctx context.Context) WebAppAnomaliesResponseTimePtrOutput {
+	return o.ApplyTWithContext(ctx, func(_ context.Context, v WebAppAnomaliesResponseTime) *WebAppAnomaliesResponseTime {
+		return &v
+	}).(WebAppAnomaliesResponseTimePtrOutput)
+}
+
+// Possible Values: `Auto`, `Fixed`
+func (o WebAppAnomaliesResponseTimeOutput) DetectionMode() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v WebAppAnomaliesResponseTime) *string { return v.DetectionMode }).(pulumi.StringPtrOutput)
+}
+
+// This setting is enabled (`true`) or disabled (`false`)
+func (o WebAppAnomaliesResponseTimeOutput) Enabled() pulumi.BoolOutput {
+	return o.ApplyT(func(v WebAppAnomaliesResponseTime) bool { return v.Enabled }).(pulumi.BoolOutput)
+}
+
+// no documentation available
+func (o WebAppAnomaliesResponseTimeOutput) ResponseTimeAuto() WebAppAnomaliesResponseTimeResponseTimeAutoPtrOutput {
+	return o.ApplyT(func(v WebAppAnomaliesResponseTime) *WebAppAnomaliesResponseTimeResponseTimeAuto {
+		return v.ResponseTimeAuto
+	}).(WebAppAnomaliesResponseTimeResponseTimeAutoPtrOutput)
+}
+
+// no documentation available
+func (o WebAppAnomaliesResponseTimeOutput) ResponseTimeFixed() WebAppAnomaliesResponseTimeResponseTimeFixedPtrOutput {
+	return o.ApplyT(func(v WebAppAnomaliesResponseTime) *WebAppAnomaliesResponseTimeResponseTimeFixed {
+		return v.ResponseTimeFixed
+	}).(WebAppAnomaliesResponseTimeResponseTimeFixedPtrOutput)
+}
+
+type WebAppAnomaliesResponseTimePtrOutput struct{ *pulumi.OutputState }
+
+func (WebAppAnomaliesResponseTimePtrOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((**WebAppAnomaliesResponseTime)(nil)).Elem()
+}
+
+func (o WebAppAnomaliesResponseTimePtrOutput) ToWebAppAnomaliesResponseTimePtrOutput() WebAppAnomaliesResponseTimePtrOutput {
+	return o
+}
+
+func (o WebAppAnomaliesResponseTimePtrOutput) ToWebAppAnomaliesResponseTimePtrOutputWithContext(ctx context.Context) WebAppAnomaliesResponseTimePtrOutput {
+	return o
+}
+
+func (o WebAppAnomaliesResponseTimePtrOutput) Elem() WebAppAnomaliesResponseTimeOutput {
+	return o.ApplyT(func(v *WebAppAnomaliesResponseTime) WebAppAnomaliesResponseTime {
+		if v != nil {
+			return *v
+		}
+		var ret WebAppAnomaliesResponseTime
+		return ret
+	}).(WebAppAnomaliesResponseTimeOutput)
+}
+
+// Possible Values: `Auto`, `Fixed`
+func (o WebAppAnomaliesResponseTimePtrOutput) DetectionMode() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *WebAppAnomaliesResponseTime) *string {
+		if v == nil {
+			return nil
+		}
+		return v.DetectionMode
+	}).(pulumi.StringPtrOutput)
+}
+
+// This setting is enabled (`true`) or disabled (`false`)
+func (o WebAppAnomaliesResponseTimePtrOutput) Enabled() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v *WebAppAnomaliesResponseTime) *bool {
+		if v == nil {
+			return nil
+		}
+		return &v.Enabled
+	}).(pulumi.BoolPtrOutput)
+}
+
+// no documentation available
+func (o WebAppAnomaliesResponseTimePtrOutput) ResponseTimeAuto() WebAppAnomaliesResponseTimeResponseTimeAutoPtrOutput {
+	return o.ApplyT(func(v *WebAppAnomaliesResponseTime) *WebAppAnomaliesResponseTimeResponseTimeAuto {
+		if v == nil {
+			return nil
+		}
+		return v.ResponseTimeAuto
+	}).(WebAppAnomaliesResponseTimeResponseTimeAutoPtrOutput)
+}
+
+// no documentation available
+func (o WebAppAnomaliesResponseTimePtrOutput) ResponseTimeFixed() WebAppAnomaliesResponseTimeResponseTimeFixedPtrOutput {
+	return o.ApplyT(func(v *WebAppAnomaliesResponseTime) *WebAppAnomaliesResponseTimeResponseTimeFixed {
+		if v == nil {
+			return nil
+		}
+		return v.ResponseTimeFixed
+	}).(WebAppAnomaliesResponseTimeResponseTimeFixedPtrOutput)
+}
+
+type WebAppAnomaliesResponseTimeResponseTimeAuto struct {
+	// Avoid over-alerting
+	OverAlertingProtection WebAppAnomaliesResponseTimeResponseTimeAutoOverAlertingProtection `pulumi:"overAlertingProtection"`
+	// Alert if the median response time of all user actions degrades beyond **both** the absolute and relative thresholds:
+	ResponseTimeAll WebAppAnomaliesResponseTimeResponseTimeAutoResponseTimeAll `pulumi:"responseTimeAll"`
+	// Alert if the response time of the slowest 10% of requests degrades beyond **both** the absolute and relative thresholds:
+	ResponseTimeSlowest WebAppAnomaliesResponseTimeResponseTimeAutoResponseTimeSlowest `pulumi:"responseTimeSlowest"`
+}
+
+// WebAppAnomaliesResponseTimeResponseTimeAutoInput is an input type that accepts WebAppAnomaliesResponseTimeResponseTimeAutoArgs and WebAppAnomaliesResponseTimeResponseTimeAutoOutput values.
+// You can construct a concrete instance of `WebAppAnomaliesResponseTimeResponseTimeAutoInput` via:
+//
+//	WebAppAnomaliesResponseTimeResponseTimeAutoArgs{...}
+type WebAppAnomaliesResponseTimeResponseTimeAutoInput interface {
+	pulumi.Input
+
+	ToWebAppAnomaliesResponseTimeResponseTimeAutoOutput() WebAppAnomaliesResponseTimeResponseTimeAutoOutput
+	ToWebAppAnomaliesResponseTimeResponseTimeAutoOutputWithContext(context.Context) WebAppAnomaliesResponseTimeResponseTimeAutoOutput
+}
+
+type WebAppAnomaliesResponseTimeResponseTimeAutoArgs struct {
+	// Avoid over-alerting
+	OverAlertingProtection WebAppAnomaliesResponseTimeResponseTimeAutoOverAlertingProtectionInput `pulumi:"overAlertingProtection"`
+	// Alert if the median response time of all user actions degrades beyond **both** the absolute and relative thresholds:
+	ResponseTimeAll WebAppAnomaliesResponseTimeResponseTimeAutoResponseTimeAllInput `pulumi:"responseTimeAll"`
+	// Alert if the response time of the slowest 10% of requests degrades beyond **both** the absolute and relative thresholds:
+	ResponseTimeSlowest WebAppAnomaliesResponseTimeResponseTimeAutoResponseTimeSlowestInput `pulumi:"responseTimeSlowest"`
+}
+
+func (WebAppAnomaliesResponseTimeResponseTimeAutoArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*WebAppAnomaliesResponseTimeResponseTimeAuto)(nil)).Elem()
+}
+
+func (i WebAppAnomaliesResponseTimeResponseTimeAutoArgs) ToWebAppAnomaliesResponseTimeResponseTimeAutoOutput() WebAppAnomaliesResponseTimeResponseTimeAutoOutput {
+	return i.ToWebAppAnomaliesResponseTimeResponseTimeAutoOutputWithContext(context.Background())
+}
+
+func (i WebAppAnomaliesResponseTimeResponseTimeAutoArgs) ToWebAppAnomaliesResponseTimeResponseTimeAutoOutputWithContext(ctx context.Context) WebAppAnomaliesResponseTimeResponseTimeAutoOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(WebAppAnomaliesResponseTimeResponseTimeAutoOutput)
+}
+
+func (i WebAppAnomaliesResponseTimeResponseTimeAutoArgs) ToWebAppAnomaliesResponseTimeResponseTimeAutoPtrOutput() WebAppAnomaliesResponseTimeResponseTimeAutoPtrOutput {
+	return i.ToWebAppAnomaliesResponseTimeResponseTimeAutoPtrOutputWithContext(context.Background())
+}
+
+func (i WebAppAnomaliesResponseTimeResponseTimeAutoArgs) ToWebAppAnomaliesResponseTimeResponseTimeAutoPtrOutputWithContext(ctx context.Context) WebAppAnomaliesResponseTimeResponseTimeAutoPtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(WebAppAnomaliesResponseTimeResponseTimeAutoOutput).ToWebAppAnomaliesResponseTimeResponseTimeAutoPtrOutputWithContext(ctx)
+}
+
+// WebAppAnomaliesResponseTimeResponseTimeAutoPtrInput is an input type that accepts WebAppAnomaliesResponseTimeResponseTimeAutoArgs, WebAppAnomaliesResponseTimeResponseTimeAutoPtr and WebAppAnomaliesResponseTimeResponseTimeAutoPtrOutput values.
+// You can construct a concrete instance of `WebAppAnomaliesResponseTimeResponseTimeAutoPtrInput` via:
+//
+//	        WebAppAnomaliesResponseTimeResponseTimeAutoArgs{...}
+//
+//	or:
+//
+//	        nil
+type WebAppAnomaliesResponseTimeResponseTimeAutoPtrInput interface {
+	pulumi.Input
+
+	ToWebAppAnomaliesResponseTimeResponseTimeAutoPtrOutput() WebAppAnomaliesResponseTimeResponseTimeAutoPtrOutput
+	ToWebAppAnomaliesResponseTimeResponseTimeAutoPtrOutputWithContext(context.Context) WebAppAnomaliesResponseTimeResponseTimeAutoPtrOutput
+}
+
+type webAppAnomaliesResponseTimeResponseTimeAutoPtrType WebAppAnomaliesResponseTimeResponseTimeAutoArgs
+
+func WebAppAnomaliesResponseTimeResponseTimeAutoPtr(v *WebAppAnomaliesResponseTimeResponseTimeAutoArgs) WebAppAnomaliesResponseTimeResponseTimeAutoPtrInput {
+	return (*webAppAnomaliesResponseTimeResponseTimeAutoPtrType)(v)
+}
+
+func (*webAppAnomaliesResponseTimeResponseTimeAutoPtrType) ElementType() reflect.Type {
+	return reflect.TypeOf((**WebAppAnomaliesResponseTimeResponseTimeAuto)(nil)).Elem()
+}
+
+func (i *webAppAnomaliesResponseTimeResponseTimeAutoPtrType) ToWebAppAnomaliesResponseTimeResponseTimeAutoPtrOutput() WebAppAnomaliesResponseTimeResponseTimeAutoPtrOutput {
+	return i.ToWebAppAnomaliesResponseTimeResponseTimeAutoPtrOutputWithContext(context.Background())
+}
+
+func (i *webAppAnomaliesResponseTimeResponseTimeAutoPtrType) ToWebAppAnomaliesResponseTimeResponseTimeAutoPtrOutputWithContext(ctx context.Context) WebAppAnomaliesResponseTimeResponseTimeAutoPtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(WebAppAnomaliesResponseTimeResponseTimeAutoPtrOutput)
+}
+
+type WebAppAnomaliesResponseTimeResponseTimeAutoOutput struct{ *pulumi.OutputState }
+
+func (WebAppAnomaliesResponseTimeResponseTimeAutoOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*WebAppAnomaliesResponseTimeResponseTimeAuto)(nil)).Elem()
+}
+
+func (o WebAppAnomaliesResponseTimeResponseTimeAutoOutput) ToWebAppAnomaliesResponseTimeResponseTimeAutoOutput() WebAppAnomaliesResponseTimeResponseTimeAutoOutput {
+	return o
+}
+
+func (o WebAppAnomaliesResponseTimeResponseTimeAutoOutput) ToWebAppAnomaliesResponseTimeResponseTimeAutoOutputWithContext(ctx context.Context) WebAppAnomaliesResponseTimeResponseTimeAutoOutput {
+	return o
+}
+
+func (o WebAppAnomaliesResponseTimeResponseTimeAutoOutput) ToWebAppAnomaliesResponseTimeResponseTimeAutoPtrOutput() WebAppAnomaliesResponseTimeResponseTimeAutoPtrOutput {
+	return o.ToWebAppAnomaliesResponseTimeResponseTimeAutoPtrOutputWithContext(context.Background())
+}
+
+func (o WebAppAnomaliesResponseTimeResponseTimeAutoOutput) ToWebAppAnomaliesResponseTimeResponseTimeAutoPtrOutputWithContext(ctx context.Context) WebAppAnomaliesResponseTimeResponseTimeAutoPtrOutput {
+	return o.ApplyTWithContext(ctx, func(_ context.Context, v WebAppAnomaliesResponseTimeResponseTimeAuto) *WebAppAnomaliesResponseTimeResponseTimeAuto {
+		return &v
+	}).(WebAppAnomaliesResponseTimeResponseTimeAutoPtrOutput)
+}
+
+// Avoid over-alerting
+func (o WebAppAnomaliesResponseTimeResponseTimeAutoOutput) OverAlertingProtection() WebAppAnomaliesResponseTimeResponseTimeAutoOverAlertingProtectionOutput {
+	return o.ApplyT(func(v WebAppAnomaliesResponseTimeResponseTimeAuto) WebAppAnomaliesResponseTimeResponseTimeAutoOverAlertingProtection {
+		return v.OverAlertingProtection
+	}).(WebAppAnomaliesResponseTimeResponseTimeAutoOverAlertingProtectionOutput)
+}
+
+// Alert if the median response time of all user actions degrades beyond **both** the absolute and relative thresholds:
+func (o WebAppAnomaliesResponseTimeResponseTimeAutoOutput) ResponseTimeAll() WebAppAnomaliesResponseTimeResponseTimeAutoResponseTimeAllOutput {
+	return o.ApplyT(func(v WebAppAnomaliesResponseTimeResponseTimeAuto) WebAppAnomaliesResponseTimeResponseTimeAutoResponseTimeAll {
+		return v.ResponseTimeAll
+	}).(WebAppAnomaliesResponseTimeResponseTimeAutoResponseTimeAllOutput)
+}
+
+// Alert if the response time of the slowest 10% of requests degrades beyond **both** the absolute and relative thresholds:
+func (o WebAppAnomaliesResponseTimeResponseTimeAutoOutput) ResponseTimeSlowest() WebAppAnomaliesResponseTimeResponseTimeAutoResponseTimeSlowestOutput {
+	return o.ApplyT(func(v WebAppAnomaliesResponseTimeResponseTimeAuto) WebAppAnomaliesResponseTimeResponseTimeAutoResponseTimeSlowest {
+		return v.ResponseTimeSlowest
+	}).(WebAppAnomaliesResponseTimeResponseTimeAutoResponseTimeSlowestOutput)
+}
+
+type WebAppAnomaliesResponseTimeResponseTimeAutoPtrOutput struct{ *pulumi.OutputState }
+
+func (WebAppAnomaliesResponseTimeResponseTimeAutoPtrOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((**WebAppAnomaliesResponseTimeResponseTimeAuto)(nil)).Elem()
+}
+
+func (o WebAppAnomaliesResponseTimeResponseTimeAutoPtrOutput) ToWebAppAnomaliesResponseTimeResponseTimeAutoPtrOutput() WebAppAnomaliesResponseTimeResponseTimeAutoPtrOutput {
+	return o
+}
+
+func (o WebAppAnomaliesResponseTimeResponseTimeAutoPtrOutput) ToWebAppAnomaliesResponseTimeResponseTimeAutoPtrOutputWithContext(ctx context.Context) WebAppAnomaliesResponseTimeResponseTimeAutoPtrOutput {
+	return o
+}
+
+func (o WebAppAnomaliesResponseTimeResponseTimeAutoPtrOutput) Elem() WebAppAnomaliesResponseTimeResponseTimeAutoOutput {
+	return o.ApplyT(func(v *WebAppAnomaliesResponseTimeResponseTimeAuto) WebAppAnomaliesResponseTimeResponseTimeAuto {
+		if v != nil {
+			return *v
+		}
+		var ret WebAppAnomaliesResponseTimeResponseTimeAuto
+		return ret
+	}).(WebAppAnomaliesResponseTimeResponseTimeAutoOutput)
+}
+
+// Avoid over-alerting
+func (o WebAppAnomaliesResponseTimeResponseTimeAutoPtrOutput) OverAlertingProtection() WebAppAnomaliesResponseTimeResponseTimeAutoOverAlertingProtectionPtrOutput {
+	return o.ApplyT(func(v *WebAppAnomaliesResponseTimeResponseTimeAuto) *WebAppAnomaliesResponseTimeResponseTimeAutoOverAlertingProtection {
+		if v == nil {
+			return nil
+		}
+		return &v.OverAlertingProtection
+	}).(WebAppAnomaliesResponseTimeResponseTimeAutoOverAlertingProtectionPtrOutput)
+}
+
+// Alert if the median response time of all user actions degrades beyond **both** the absolute and relative thresholds:
+func (o WebAppAnomaliesResponseTimeResponseTimeAutoPtrOutput) ResponseTimeAll() WebAppAnomaliesResponseTimeResponseTimeAutoResponseTimeAllPtrOutput {
+	return o.ApplyT(func(v *WebAppAnomaliesResponseTimeResponseTimeAuto) *WebAppAnomaliesResponseTimeResponseTimeAutoResponseTimeAll {
+		if v == nil {
+			return nil
+		}
+		return &v.ResponseTimeAll
+	}).(WebAppAnomaliesResponseTimeResponseTimeAutoResponseTimeAllPtrOutput)
+}
+
+// Alert if the response time of the slowest 10% of requests degrades beyond **both** the absolute and relative thresholds:
+func (o WebAppAnomaliesResponseTimeResponseTimeAutoPtrOutput) ResponseTimeSlowest() WebAppAnomaliesResponseTimeResponseTimeAutoResponseTimeSlowestPtrOutput {
+	return o.ApplyT(func(v *WebAppAnomaliesResponseTimeResponseTimeAuto) *WebAppAnomaliesResponseTimeResponseTimeAutoResponseTimeSlowest {
+		if v == nil {
+			return nil
+		}
+		return &v.ResponseTimeSlowest
+	}).(WebAppAnomaliesResponseTimeResponseTimeAutoResponseTimeSlowestPtrOutput)
+}
+
+type WebAppAnomaliesResponseTimeResponseTimeAutoOverAlertingProtection struct {
+	// Only alert if there are at least
+	ActionsPerMinute float64 `pulumi:"actionsPerMinute"`
+	// Only alert if the abnormal state remains for at least
+	MinutesAbnormalState float64 `pulumi:"minutesAbnormalState"`
+}
+
+// WebAppAnomaliesResponseTimeResponseTimeAutoOverAlertingProtectionInput is an input type that accepts WebAppAnomaliesResponseTimeResponseTimeAutoOverAlertingProtectionArgs and WebAppAnomaliesResponseTimeResponseTimeAutoOverAlertingProtectionOutput values.
+// You can construct a concrete instance of `WebAppAnomaliesResponseTimeResponseTimeAutoOverAlertingProtectionInput` via:
+//
+//	WebAppAnomaliesResponseTimeResponseTimeAutoOverAlertingProtectionArgs{...}
+type WebAppAnomaliesResponseTimeResponseTimeAutoOverAlertingProtectionInput interface {
+	pulumi.Input
+
+	ToWebAppAnomaliesResponseTimeResponseTimeAutoOverAlertingProtectionOutput() WebAppAnomaliesResponseTimeResponseTimeAutoOverAlertingProtectionOutput
+	ToWebAppAnomaliesResponseTimeResponseTimeAutoOverAlertingProtectionOutputWithContext(context.Context) WebAppAnomaliesResponseTimeResponseTimeAutoOverAlertingProtectionOutput
+}
+
+type WebAppAnomaliesResponseTimeResponseTimeAutoOverAlertingProtectionArgs struct {
+	// Only alert if there are at least
+	ActionsPerMinute pulumi.Float64Input `pulumi:"actionsPerMinute"`
+	// Only alert if the abnormal state remains for at least
+	MinutesAbnormalState pulumi.Float64Input `pulumi:"minutesAbnormalState"`
+}
+
+func (WebAppAnomaliesResponseTimeResponseTimeAutoOverAlertingProtectionArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*WebAppAnomaliesResponseTimeResponseTimeAutoOverAlertingProtection)(nil)).Elem()
+}
+
+func (i WebAppAnomaliesResponseTimeResponseTimeAutoOverAlertingProtectionArgs) ToWebAppAnomaliesResponseTimeResponseTimeAutoOverAlertingProtectionOutput() WebAppAnomaliesResponseTimeResponseTimeAutoOverAlertingProtectionOutput {
+	return i.ToWebAppAnomaliesResponseTimeResponseTimeAutoOverAlertingProtectionOutputWithContext(context.Background())
+}
+
+func (i WebAppAnomaliesResponseTimeResponseTimeAutoOverAlertingProtectionArgs) ToWebAppAnomaliesResponseTimeResponseTimeAutoOverAlertingProtectionOutputWithContext(ctx context.Context) WebAppAnomaliesResponseTimeResponseTimeAutoOverAlertingProtectionOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(WebAppAnomaliesResponseTimeResponseTimeAutoOverAlertingProtectionOutput)
+}
+
+func (i WebAppAnomaliesResponseTimeResponseTimeAutoOverAlertingProtectionArgs) ToWebAppAnomaliesResponseTimeResponseTimeAutoOverAlertingProtectionPtrOutput() WebAppAnomaliesResponseTimeResponseTimeAutoOverAlertingProtectionPtrOutput {
+	return i.ToWebAppAnomaliesResponseTimeResponseTimeAutoOverAlertingProtectionPtrOutputWithContext(context.Background())
+}
+
+func (i WebAppAnomaliesResponseTimeResponseTimeAutoOverAlertingProtectionArgs) ToWebAppAnomaliesResponseTimeResponseTimeAutoOverAlertingProtectionPtrOutputWithContext(ctx context.Context) WebAppAnomaliesResponseTimeResponseTimeAutoOverAlertingProtectionPtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(WebAppAnomaliesResponseTimeResponseTimeAutoOverAlertingProtectionOutput).ToWebAppAnomaliesResponseTimeResponseTimeAutoOverAlertingProtectionPtrOutputWithContext(ctx)
+}
+
+// WebAppAnomaliesResponseTimeResponseTimeAutoOverAlertingProtectionPtrInput is an input type that accepts WebAppAnomaliesResponseTimeResponseTimeAutoOverAlertingProtectionArgs, WebAppAnomaliesResponseTimeResponseTimeAutoOverAlertingProtectionPtr and WebAppAnomaliesResponseTimeResponseTimeAutoOverAlertingProtectionPtrOutput values.
+// You can construct a concrete instance of `WebAppAnomaliesResponseTimeResponseTimeAutoOverAlertingProtectionPtrInput` via:
+//
+//	        WebAppAnomaliesResponseTimeResponseTimeAutoOverAlertingProtectionArgs{...}
+//
+//	or:
+//
+//	        nil
+type WebAppAnomaliesResponseTimeResponseTimeAutoOverAlertingProtectionPtrInput interface {
+	pulumi.Input
+
+	ToWebAppAnomaliesResponseTimeResponseTimeAutoOverAlertingProtectionPtrOutput() WebAppAnomaliesResponseTimeResponseTimeAutoOverAlertingProtectionPtrOutput
+	ToWebAppAnomaliesResponseTimeResponseTimeAutoOverAlertingProtectionPtrOutputWithContext(context.Context) WebAppAnomaliesResponseTimeResponseTimeAutoOverAlertingProtectionPtrOutput
+}
+
+type webAppAnomaliesResponseTimeResponseTimeAutoOverAlertingProtectionPtrType WebAppAnomaliesResponseTimeResponseTimeAutoOverAlertingProtectionArgs
+
+func WebAppAnomaliesResponseTimeResponseTimeAutoOverAlertingProtectionPtr(v *WebAppAnomaliesResponseTimeResponseTimeAutoOverAlertingProtectionArgs) WebAppAnomaliesResponseTimeResponseTimeAutoOverAlertingProtectionPtrInput {
+	return (*webAppAnomaliesResponseTimeResponseTimeAutoOverAlertingProtectionPtrType)(v)
+}
+
+func (*webAppAnomaliesResponseTimeResponseTimeAutoOverAlertingProtectionPtrType) ElementType() reflect.Type {
+	return reflect.TypeOf((**WebAppAnomaliesResponseTimeResponseTimeAutoOverAlertingProtection)(nil)).Elem()
+}
+
+func (i *webAppAnomaliesResponseTimeResponseTimeAutoOverAlertingProtectionPtrType) ToWebAppAnomaliesResponseTimeResponseTimeAutoOverAlertingProtectionPtrOutput() WebAppAnomaliesResponseTimeResponseTimeAutoOverAlertingProtectionPtrOutput {
+	return i.ToWebAppAnomaliesResponseTimeResponseTimeAutoOverAlertingProtectionPtrOutputWithContext(context.Background())
+}
+
+func (i *webAppAnomaliesResponseTimeResponseTimeAutoOverAlertingProtectionPtrType) ToWebAppAnomaliesResponseTimeResponseTimeAutoOverAlertingProtectionPtrOutputWithContext(ctx context.Context) WebAppAnomaliesResponseTimeResponseTimeAutoOverAlertingProtectionPtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(WebAppAnomaliesResponseTimeResponseTimeAutoOverAlertingProtectionPtrOutput)
+}
+
+type WebAppAnomaliesResponseTimeResponseTimeAutoOverAlertingProtectionOutput struct{ *pulumi.OutputState }
+
+func (WebAppAnomaliesResponseTimeResponseTimeAutoOverAlertingProtectionOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*WebAppAnomaliesResponseTimeResponseTimeAutoOverAlertingProtection)(nil)).Elem()
+}
+
+func (o WebAppAnomaliesResponseTimeResponseTimeAutoOverAlertingProtectionOutput) ToWebAppAnomaliesResponseTimeResponseTimeAutoOverAlertingProtectionOutput() WebAppAnomaliesResponseTimeResponseTimeAutoOverAlertingProtectionOutput {
+	return o
+}
+
+func (o WebAppAnomaliesResponseTimeResponseTimeAutoOverAlertingProtectionOutput) ToWebAppAnomaliesResponseTimeResponseTimeAutoOverAlertingProtectionOutputWithContext(ctx context.Context) WebAppAnomaliesResponseTimeResponseTimeAutoOverAlertingProtectionOutput {
+	return o
+}
+
+func (o WebAppAnomaliesResponseTimeResponseTimeAutoOverAlertingProtectionOutput) ToWebAppAnomaliesResponseTimeResponseTimeAutoOverAlertingProtectionPtrOutput() WebAppAnomaliesResponseTimeResponseTimeAutoOverAlertingProtectionPtrOutput {
+	return o.ToWebAppAnomaliesResponseTimeResponseTimeAutoOverAlertingProtectionPtrOutputWithContext(context.Background())
+}
+
+func (o WebAppAnomaliesResponseTimeResponseTimeAutoOverAlertingProtectionOutput) ToWebAppAnomaliesResponseTimeResponseTimeAutoOverAlertingProtectionPtrOutputWithContext(ctx context.Context) WebAppAnomaliesResponseTimeResponseTimeAutoOverAlertingProtectionPtrOutput {
+	return o.ApplyTWithContext(ctx, func(_ context.Context, v WebAppAnomaliesResponseTimeResponseTimeAutoOverAlertingProtection) *WebAppAnomaliesResponseTimeResponseTimeAutoOverAlertingProtection {
+		return &v
+	}).(WebAppAnomaliesResponseTimeResponseTimeAutoOverAlertingProtectionPtrOutput)
+}
+
+// Only alert if there are at least
+func (o WebAppAnomaliesResponseTimeResponseTimeAutoOverAlertingProtectionOutput) ActionsPerMinute() pulumi.Float64Output {
+	return o.ApplyT(func(v WebAppAnomaliesResponseTimeResponseTimeAutoOverAlertingProtection) float64 {
+		return v.ActionsPerMinute
+	}).(pulumi.Float64Output)
+}
+
+// Only alert if the abnormal state remains for at least
+func (o WebAppAnomaliesResponseTimeResponseTimeAutoOverAlertingProtectionOutput) MinutesAbnormalState() pulumi.Float64Output {
+	return o.ApplyT(func(v WebAppAnomaliesResponseTimeResponseTimeAutoOverAlertingProtection) float64 {
+		return v.MinutesAbnormalState
+	}).(pulumi.Float64Output)
+}
+
+type WebAppAnomaliesResponseTimeResponseTimeAutoOverAlertingProtectionPtrOutput struct{ *pulumi.OutputState }
+
+func (WebAppAnomaliesResponseTimeResponseTimeAutoOverAlertingProtectionPtrOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((**WebAppAnomaliesResponseTimeResponseTimeAutoOverAlertingProtection)(nil)).Elem()
+}
+
+func (o WebAppAnomaliesResponseTimeResponseTimeAutoOverAlertingProtectionPtrOutput) ToWebAppAnomaliesResponseTimeResponseTimeAutoOverAlertingProtectionPtrOutput() WebAppAnomaliesResponseTimeResponseTimeAutoOverAlertingProtectionPtrOutput {
+	return o
+}
+
+func (o WebAppAnomaliesResponseTimeResponseTimeAutoOverAlertingProtectionPtrOutput) ToWebAppAnomaliesResponseTimeResponseTimeAutoOverAlertingProtectionPtrOutputWithContext(ctx context.Context) WebAppAnomaliesResponseTimeResponseTimeAutoOverAlertingProtectionPtrOutput {
+	return o
+}
+
+func (o WebAppAnomaliesResponseTimeResponseTimeAutoOverAlertingProtectionPtrOutput) Elem() WebAppAnomaliesResponseTimeResponseTimeAutoOverAlertingProtectionOutput {
+	return o.ApplyT(func(v *WebAppAnomaliesResponseTimeResponseTimeAutoOverAlertingProtection) WebAppAnomaliesResponseTimeResponseTimeAutoOverAlertingProtection {
+		if v != nil {
+			return *v
+		}
+		var ret WebAppAnomaliesResponseTimeResponseTimeAutoOverAlertingProtection
+		return ret
+	}).(WebAppAnomaliesResponseTimeResponseTimeAutoOverAlertingProtectionOutput)
+}
+
+// Only alert if there are at least
+func (o WebAppAnomaliesResponseTimeResponseTimeAutoOverAlertingProtectionPtrOutput) ActionsPerMinute() pulumi.Float64PtrOutput {
+	return o.ApplyT(func(v *WebAppAnomaliesResponseTimeResponseTimeAutoOverAlertingProtection) *float64 {
+		if v == nil {
+			return nil
+		}
+		return &v.ActionsPerMinute
+	}).(pulumi.Float64PtrOutput)
+}
+
+// Only alert if the abnormal state remains for at least
+func (o WebAppAnomaliesResponseTimeResponseTimeAutoOverAlertingProtectionPtrOutput) MinutesAbnormalState() pulumi.Float64PtrOutput {
+	return o.ApplyT(func(v *WebAppAnomaliesResponseTimeResponseTimeAutoOverAlertingProtection) *float64 {
+		if v == nil {
+			return nil
+		}
+		return &v.MinutesAbnormalState
+	}).(pulumi.Float64PtrOutput)
+}
+
+type WebAppAnomaliesResponseTimeResponseTimeAutoResponseTimeAll struct {
+	// Absolute threshold
+	DegradationMilliseconds float64 `pulumi:"degradationMilliseconds"`
+	// Relative threshold
+	DegradationPercent float64 `pulumi:"degradationPercent"`
+}
+
+// WebAppAnomaliesResponseTimeResponseTimeAutoResponseTimeAllInput is an input type that accepts WebAppAnomaliesResponseTimeResponseTimeAutoResponseTimeAllArgs and WebAppAnomaliesResponseTimeResponseTimeAutoResponseTimeAllOutput values.
+// You can construct a concrete instance of `WebAppAnomaliesResponseTimeResponseTimeAutoResponseTimeAllInput` via:
+//
+//	WebAppAnomaliesResponseTimeResponseTimeAutoResponseTimeAllArgs{...}
+type WebAppAnomaliesResponseTimeResponseTimeAutoResponseTimeAllInput interface {
+	pulumi.Input
+
+	ToWebAppAnomaliesResponseTimeResponseTimeAutoResponseTimeAllOutput() WebAppAnomaliesResponseTimeResponseTimeAutoResponseTimeAllOutput
+	ToWebAppAnomaliesResponseTimeResponseTimeAutoResponseTimeAllOutputWithContext(context.Context) WebAppAnomaliesResponseTimeResponseTimeAutoResponseTimeAllOutput
+}
+
+type WebAppAnomaliesResponseTimeResponseTimeAutoResponseTimeAllArgs struct {
+	// Absolute threshold
+	DegradationMilliseconds pulumi.Float64Input `pulumi:"degradationMilliseconds"`
+	// Relative threshold
+	DegradationPercent pulumi.Float64Input `pulumi:"degradationPercent"`
+}
+
+func (WebAppAnomaliesResponseTimeResponseTimeAutoResponseTimeAllArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*WebAppAnomaliesResponseTimeResponseTimeAutoResponseTimeAll)(nil)).Elem()
+}
+
+func (i WebAppAnomaliesResponseTimeResponseTimeAutoResponseTimeAllArgs) ToWebAppAnomaliesResponseTimeResponseTimeAutoResponseTimeAllOutput() WebAppAnomaliesResponseTimeResponseTimeAutoResponseTimeAllOutput {
+	return i.ToWebAppAnomaliesResponseTimeResponseTimeAutoResponseTimeAllOutputWithContext(context.Background())
+}
+
+func (i WebAppAnomaliesResponseTimeResponseTimeAutoResponseTimeAllArgs) ToWebAppAnomaliesResponseTimeResponseTimeAutoResponseTimeAllOutputWithContext(ctx context.Context) WebAppAnomaliesResponseTimeResponseTimeAutoResponseTimeAllOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(WebAppAnomaliesResponseTimeResponseTimeAutoResponseTimeAllOutput)
+}
+
+func (i WebAppAnomaliesResponseTimeResponseTimeAutoResponseTimeAllArgs) ToWebAppAnomaliesResponseTimeResponseTimeAutoResponseTimeAllPtrOutput() WebAppAnomaliesResponseTimeResponseTimeAutoResponseTimeAllPtrOutput {
+	return i.ToWebAppAnomaliesResponseTimeResponseTimeAutoResponseTimeAllPtrOutputWithContext(context.Background())
+}
+
+func (i WebAppAnomaliesResponseTimeResponseTimeAutoResponseTimeAllArgs) ToWebAppAnomaliesResponseTimeResponseTimeAutoResponseTimeAllPtrOutputWithContext(ctx context.Context) WebAppAnomaliesResponseTimeResponseTimeAutoResponseTimeAllPtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(WebAppAnomaliesResponseTimeResponseTimeAutoResponseTimeAllOutput).ToWebAppAnomaliesResponseTimeResponseTimeAutoResponseTimeAllPtrOutputWithContext(ctx)
+}
+
+// WebAppAnomaliesResponseTimeResponseTimeAutoResponseTimeAllPtrInput is an input type that accepts WebAppAnomaliesResponseTimeResponseTimeAutoResponseTimeAllArgs, WebAppAnomaliesResponseTimeResponseTimeAutoResponseTimeAllPtr and WebAppAnomaliesResponseTimeResponseTimeAutoResponseTimeAllPtrOutput values.
+// You can construct a concrete instance of `WebAppAnomaliesResponseTimeResponseTimeAutoResponseTimeAllPtrInput` via:
+//
+//	        WebAppAnomaliesResponseTimeResponseTimeAutoResponseTimeAllArgs{...}
+//
+//	or:
+//
+//	        nil
+type WebAppAnomaliesResponseTimeResponseTimeAutoResponseTimeAllPtrInput interface {
+	pulumi.Input
+
+	ToWebAppAnomaliesResponseTimeResponseTimeAutoResponseTimeAllPtrOutput() WebAppAnomaliesResponseTimeResponseTimeAutoResponseTimeAllPtrOutput
+	ToWebAppAnomaliesResponseTimeResponseTimeAutoResponseTimeAllPtrOutputWithContext(context.Context) WebAppAnomaliesResponseTimeResponseTimeAutoResponseTimeAllPtrOutput
+}
+
+type webAppAnomaliesResponseTimeResponseTimeAutoResponseTimeAllPtrType WebAppAnomaliesResponseTimeResponseTimeAutoResponseTimeAllArgs
+
+func WebAppAnomaliesResponseTimeResponseTimeAutoResponseTimeAllPtr(v *WebAppAnomaliesResponseTimeResponseTimeAutoResponseTimeAllArgs) WebAppAnomaliesResponseTimeResponseTimeAutoResponseTimeAllPtrInput {
+	return (*webAppAnomaliesResponseTimeResponseTimeAutoResponseTimeAllPtrType)(v)
+}
+
+func (*webAppAnomaliesResponseTimeResponseTimeAutoResponseTimeAllPtrType) ElementType() reflect.Type {
+	return reflect.TypeOf((**WebAppAnomaliesResponseTimeResponseTimeAutoResponseTimeAll)(nil)).Elem()
+}
+
+func (i *webAppAnomaliesResponseTimeResponseTimeAutoResponseTimeAllPtrType) ToWebAppAnomaliesResponseTimeResponseTimeAutoResponseTimeAllPtrOutput() WebAppAnomaliesResponseTimeResponseTimeAutoResponseTimeAllPtrOutput {
+	return i.ToWebAppAnomaliesResponseTimeResponseTimeAutoResponseTimeAllPtrOutputWithContext(context.Background())
+}
+
+func (i *webAppAnomaliesResponseTimeResponseTimeAutoResponseTimeAllPtrType) ToWebAppAnomaliesResponseTimeResponseTimeAutoResponseTimeAllPtrOutputWithContext(ctx context.Context) WebAppAnomaliesResponseTimeResponseTimeAutoResponseTimeAllPtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(WebAppAnomaliesResponseTimeResponseTimeAutoResponseTimeAllPtrOutput)
+}
+
+type WebAppAnomaliesResponseTimeResponseTimeAutoResponseTimeAllOutput struct{ *pulumi.OutputState }
+
+func (WebAppAnomaliesResponseTimeResponseTimeAutoResponseTimeAllOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*WebAppAnomaliesResponseTimeResponseTimeAutoResponseTimeAll)(nil)).Elem()
+}
+
+func (o WebAppAnomaliesResponseTimeResponseTimeAutoResponseTimeAllOutput) ToWebAppAnomaliesResponseTimeResponseTimeAutoResponseTimeAllOutput() WebAppAnomaliesResponseTimeResponseTimeAutoResponseTimeAllOutput {
+	return o
+}
+
+func (o WebAppAnomaliesResponseTimeResponseTimeAutoResponseTimeAllOutput) ToWebAppAnomaliesResponseTimeResponseTimeAutoResponseTimeAllOutputWithContext(ctx context.Context) WebAppAnomaliesResponseTimeResponseTimeAutoResponseTimeAllOutput {
+	return o
+}
+
+func (o WebAppAnomaliesResponseTimeResponseTimeAutoResponseTimeAllOutput) ToWebAppAnomaliesResponseTimeResponseTimeAutoResponseTimeAllPtrOutput() WebAppAnomaliesResponseTimeResponseTimeAutoResponseTimeAllPtrOutput {
+	return o.ToWebAppAnomaliesResponseTimeResponseTimeAutoResponseTimeAllPtrOutputWithContext(context.Background())
+}
+
+func (o WebAppAnomaliesResponseTimeResponseTimeAutoResponseTimeAllOutput) ToWebAppAnomaliesResponseTimeResponseTimeAutoResponseTimeAllPtrOutputWithContext(ctx context.Context) WebAppAnomaliesResponseTimeResponseTimeAutoResponseTimeAllPtrOutput {
+	return o.ApplyTWithContext(ctx, func(_ context.Context, v WebAppAnomaliesResponseTimeResponseTimeAutoResponseTimeAll) *WebAppAnomaliesResponseTimeResponseTimeAutoResponseTimeAll {
+		return &v
+	}).(WebAppAnomaliesResponseTimeResponseTimeAutoResponseTimeAllPtrOutput)
+}
+
+// Absolute threshold
+func (o WebAppAnomaliesResponseTimeResponseTimeAutoResponseTimeAllOutput) DegradationMilliseconds() pulumi.Float64Output {
+	return o.ApplyT(func(v WebAppAnomaliesResponseTimeResponseTimeAutoResponseTimeAll) float64 {
+		return v.DegradationMilliseconds
+	}).(pulumi.Float64Output)
+}
+
+// Relative threshold
+func (o WebAppAnomaliesResponseTimeResponseTimeAutoResponseTimeAllOutput) DegradationPercent() pulumi.Float64Output {
+	return o.ApplyT(func(v WebAppAnomaliesResponseTimeResponseTimeAutoResponseTimeAll) float64 {
+		return v.DegradationPercent
+	}).(pulumi.Float64Output)
+}
+
+type WebAppAnomaliesResponseTimeResponseTimeAutoResponseTimeAllPtrOutput struct{ *pulumi.OutputState }
+
+func (WebAppAnomaliesResponseTimeResponseTimeAutoResponseTimeAllPtrOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((**WebAppAnomaliesResponseTimeResponseTimeAutoResponseTimeAll)(nil)).Elem()
+}
+
+func (o WebAppAnomaliesResponseTimeResponseTimeAutoResponseTimeAllPtrOutput) ToWebAppAnomaliesResponseTimeResponseTimeAutoResponseTimeAllPtrOutput() WebAppAnomaliesResponseTimeResponseTimeAutoResponseTimeAllPtrOutput {
+	return o
+}
+
+func (o WebAppAnomaliesResponseTimeResponseTimeAutoResponseTimeAllPtrOutput) ToWebAppAnomaliesResponseTimeResponseTimeAutoResponseTimeAllPtrOutputWithContext(ctx context.Context) WebAppAnomaliesResponseTimeResponseTimeAutoResponseTimeAllPtrOutput {
+	return o
+}
+
+func (o WebAppAnomaliesResponseTimeResponseTimeAutoResponseTimeAllPtrOutput) Elem() WebAppAnomaliesResponseTimeResponseTimeAutoResponseTimeAllOutput {
+	return o.ApplyT(func(v *WebAppAnomaliesResponseTimeResponseTimeAutoResponseTimeAll) WebAppAnomaliesResponseTimeResponseTimeAutoResponseTimeAll {
+		if v != nil {
+			return *v
+		}
+		var ret WebAppAnomaliesResponseTimeResponseTimeAutoResponseTimeAll
+		return ret
+	}).(WebAppAnomaliesResponseTimeResponseTimeAutoResponseTimeAllOutput)
+}
+
+// Absolute threshold
+func (o WebAppAnomaliesResponseTimeResponseTimeAutoResponseTimeAllPtrOutput) DegradationMilliseconds() pulumi.Float64PtrOutput {
+	return o.ApplyT(func(v *WebAppAnomaliesResponseTimeResponseTimeAutoResponseTimeAll) *float64 {
+		if v == nil {
+			return nil
+		}
+		return &v.DegradationMilliseconds
+	}).(pulumi.Float64PtrOutput)
+}
+
+// Relative threshold
+func (o WebAppAnomaliesResponseTimeResponseTimeAutoResponseTimeAllPtrOutput) DegradationPercent() pulumi.Float64PtrOutput {
+	return o.ApplyT(func(v *WebAppAnomaliesResponseTimeResponseTimeAutoResponseTimeAll) *float64 {
+		if v == nil {
+			return nil
+		}
+		return &v.DegradationPercent
+	}).(pulumi.Float64PtrOutput)
+}
+
+type WebAppAnomaliesResponseTimeResponseTimeAutoResponseTimeSlowest struct {
+	// Absolute threshold
+	SlowestDegradationMilliseconds float64 `pulumi:"slowestDegradationMilliseconds"`
+	// Relative threshold
+	SlowestDegradationPercent float64 `pulumi:"slowestDegradationPercent"`
+}
+
+// WebAppAnomaliesResponseTimeResponseTimeAutoResponseTimeSlowestInput is an input type that accepts WebAppAnomaliesResponseTimeResponseTimeAutoResponseTimeSlowestArgs and WebAppAnomaliesResponseTimeResponseTimeAutoResponseTimeSlowestOutput values.
+// You can construct a concrete instance of `WebAppAnomaliesResponseTimeResponseTimeAutoResponseTimeSlowestInput` via:
+//
+//	WebAppAnomaliesResponseTimeResponseTimeAutoResponseTimeSlowestArgs{...}
+type WebAppAnomaliesResponseTimeResponseTimeAutoResponseTimeSlowestInput interface {
+	pulumi.Input
+
+	ToWebAppAnomaliesResponseTimeResponseTimeAutoResponseTimeSlowestOutput() WebAppAnomaliesResponseTimeResponseTimeAutoResponseTimeSlowestOutput
+	ToWebAppAnomaliesResponseTimeResponseTimeAutoResponseTimeSlowestOutputWithContext(context.Context) WebAppAnomaliesResponseTimeResponseTimeAutoResponseTimeSlowestOutput
+}
+
+type WebAppAnomaliesResponseTimeResponseTimeAutoResponseTimeSlowestArgs struct {
+	// Absolute threshold
+	SlowestDegradationMilliseconds pulumi.Float64Input `pulumi:"slowestDegradationMilliseconds"`
+	// Relative threshold
+	SlowestDegradationPercent pulumi.Float64Input `pulumi:"slowestDegradationPercent"`
+}
+
+func (WebAppAnomaliesResponseTimeResponseTimeAutoResponseTimeSlowestArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*WebAppAnomaliesResponseTimeResponseTimeAutoResponseTimeSlowest)(nil)).Elem()
+}
+
+func (i WebAppAnomaliesResponseTimeResponseTimeAutoResponseTimeSlowestArgs) ToWebAppAnomaliesResponseTimeResponseTimeAutoResponseTimeSlowestOutput() WebAppAnomaliesResponseTimeResponseTimeAutoResponseTimeSlowestOutput {
+	return i.ToWebAppAnomaliesResponseTimeResponseTimeAutoResponseTimeSlowestOutputWithContext(context.Background())
+}
+
+func (i WebAppAnomaliesResponseTimeResponseTimeAutoResponseTimeSlowestArgs) ToWebAppAnomaliesResponseTimeResponseTimeAutoResponseTimeSlowestOutputWithContext(ctx context.Context) WebAppAnomaliesResponseTimeResponseTimeAutoResponseTimeSlowestOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(WebAppAnomaliesResponseTimeResponseTimeAutoResponseTimeSlowestOutput)
+}
+
+func (i WebAppAnomaliesResponseTimeResponseTimeAutoResponseTimeSlowestArgs) ToWebAppAnomaliesResponseTimeResponseTimeAutoResponseTimeSlowestPtrOutput() WebAppAnomaliesResponseTimeResponseTimeAutoResponseTimeSlowestPtrOutput {
+	return i.ToWebAppAnomaliesResponseTimeResponseTimeAutoResponseTimeSlowestPtrOutputWithContext(context.Background())
+}
+
+func (i WebAppAnomaliesResponseTimeResponseTimeAutoResponseTimeSlowestArgs) ToWebAppAnomaliesResponseTimeResponseTimeAutoResponseTimeSlowestPtrOutputWithContext(ctx context.Context) WebAppAnomaliesResponseTimeResponseTimeAutoResponseTimeSlowestPtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(WebAppAnomaliesResponseTimeResponseTimeAutoResponseTimeSlowestOutput).ToWebAppAnomaliesResponseTimeResponseTimeAutoResponseTimeSlowestPtrOutputWithContext(ctx)
+}
+
+// WebAppAnomaliesResponseTimeResponseTimeAutoResponseTimeSlowestPtrInput is an input type that accepts WebAppAnomaliesResponseTimeResponseTimeAutoResponseTimeSlowestArgs, WebAppAnomaliesResponseTimeResponseTimeAutoResponseTimeSlowestPtr and WebAppAnomaliesResponseTimeResponseTimeAutoResponseTimeSlowestPtrOutput values.
+// You can construct a concrete instance of `WebAppAnomaliesResponseTimeResponseTimeAutoResponseTimeSlowestPtrInput` via:
+//
+//	        WebAppAnomaliesResponseTimeResponseTimeAutoResponseTimeSlowestArgs{...}
+//
+//	or:
+//
+//	        nil
+type WebAppAnomaliesResponseTimeResponseTimeAutoResponseTimeSlowestPtrInput interface {
+	pulumi.Input
+
+	ToWebAppAnomaliesResponseTimeResponseTimeAutoResponseTimeSlowestPtrOutput() WebAppAnomaliesResponseTimeResponseTimeAutoResponseTimeSlowestPtrOutput
+	ToWebAppAnomaliesResponseTimeResponseTimeAutoResponseTimeSlowestPtrOutputWithContext(context.Context) WebAppAnomaliesResponseTimeResponseTimeAutoResponseTimeSlowestPtrOutput
+}
+
+type webAppAnomaliesResponseTimeResponseTimeAutoResponseTimeSlowestPtrType WebAppAnomaliesResponseTimeResponseTimeAutoResponseTimeSlowestArgs
+
+func WebAppAnomaliesResponseTimeResponseTimeAutoResponseTimeSlowestPtr(v *WebAppAnomaliesResponseTimeResponseTimeAutoResponseTimeSlowestArgs) WebAppAnomaliesResponseTimeResponseTimeAutoResponseTimeSlowestPtrInput {
+	return (*webAppAnomaliesResponseTimeResponseTimeAutoResponseTimeSlowestPtrType)(v)
+}
+
+func (*webAppAnomaliesResponseTimeResponseTimeAutoResponseTimeSlowestPtrType) ElementType() reflect.Type {
+	return reflect.TypeOf((**WebAppAnomaliesResponseTimeResponseTimeAutoResponseTimeSlowest)(nil)).Elem()
+}
+
+func (i *webAppAnomaliesResponseTimeResponseTimeAutoResponseTimeSlowestPtrType) ToWebAppAnomaliesResponseTimeResponseTimeAutoResponseTimeSlowestPtrOutput() WebAppAnomaliesResponseTimeResponseTimeAutoResponseTimeSlowestPtrOutput {
+	return i.ToWebAppAnomaliesResponseTimeResponseTimeAutoResponseTimeSlowestPtrOutputWithContext(context.Background())
+}
+
+func (i *webAppAnomaliesResponseTimeResponseTimeAutoResponseTimeSlowestPtrType) ToWebAppAnomaliesResponseTimeResponseTimeAutoResponseTimeSlowestPtrOutputWithContext(ctx context.Context) WebAppAnomaliesResponseTimeResponseTimeAutoResponseTimeSlowestPtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(WebAppAnomaliesResponseTimeResponseTimeAutoResponseTimeSlowestPtrOutput)
+}
+
+type WebAppAnomaliesResponseTimeResponseTimeAutoResponseTimeSlowestOutput struct{ *pulumi.OutputState }
+
+func (WebAppAnomaliesResponseTimeResponseTimeAutoResponseTimeSlowestOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*WebAppAnomaliesResponseTimeResponseTimeAutoResponseTimeSlowest)(nil)).Elem()
+}
+
+func (o WebAppAnomaliesResponseTimeResponseTimeAutoResponseTimeSlowestOutput) ToWebAppAnomaliesResponseTimeResponseTimeAutoResponseTimeSlowestOutput() WebAppAnomaliesResponseTimeResponseTimeAutoResponseTimeSlowestOutput {
+	return o
+}
+
+func (o WebAppAnomaliesResponseTimeResponseTimeAutoResponseTimeSlowestOutput) ToWebAppAnomaliesResponseTimeResponseTimeAutoResponseTimeSlowestOutputWithContext(ctx context.Context) WebAppAnomaliesResponseTimeResponseTimeAutoResponseTimeSlowestOutput {
+	return o
+}
+
+func (o WebAppAnomaliesResponseTimeResponseTimeAutoResponseTimeSlowestOutput) ToWebAppAnomaliesResponseTimeResponseTimeAutoResponseTimeSlowestPtrOutput() WebAppAnomaliesResponseTimeResponseTimeAutoResponseTimeSlowestPtrOutput {
+	return o.ToWebAppAnomaliesResponseTimeResponseTimeAutoResponseTimeSlowestPtrOutputWithContext(context.Background())
+}
+
+func (o WebAppAnomaliesResponseTimeResponseTimeAutoResponseTimeSlowestOutput) ToWebAppAnomaliesResponseTimeResponseTimeAutoResponseTimeSlowestPtrOutputWithContext(ctx context.Context) WebAppAnomaliesResponseTimeResponseTimeAutoResponseTimeSlowestPtrOutput {
+	return o.ApplyTWithContext(ctx, func(_ context.Context, v WebAppAnomaliesResponseTimeResponseTimeAutoResponseTimeSlowest) *WebAppAnomaliesResponseTimeResponseTimeAutoResponseTimeSlowest {
+		return &v
+	}).(WebAppAnomaliesResponseTimeResponseTimeAutoResponseTimeSlowestPtrOutput)
+}
+
+// Absolute threshold
+func (o WebAppAnomaliesResponseTimeResponseTimeAutoResponseTimeSlowestOutput) SlowestDegradationMilliseconds() pulumi.Float64Output {
+	return o.ApplyT(func(v WebAppAnomaliesResponseTimeResponseTimeAutoResponseTimeSlowest) float64 {
+		return v.SlowestDegradationMilliseconds
+	}).(pulumi.Float64Output)
+}
+
+// Relative threshold
+func (o WebAppAnomaliesResponseTimeResponseTimeAutoResponseTimeSlowestOutput) SlowestDegradationPercent() pulumi.Float64Output {
+	return o.ApplyT(func(v WebAppAnomaliesResponseTimeResponseTimeAutoResponseTimeSlowest) float64 {
+		return v.SlowestDegradationPercent
+	}).(pulumi.Float64Output)
+}
+
+type WebAppAnomaliesResponseTimeResponseTimeAutoResponseTimeSlowestPtrOutput struct{ *pulumi.OutputState }
+
+func (WebAppAnomaliesResponseTimeResponseTimeAutoResponseTimeSlowestPtrOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((**WebAppAnomaliesResponseTimeResponseTimeAutoResponseTimeSlowest)(nil)).Elem()
+}
+
+func (o WebAppAnomaliesResponseTimeResponseTimeAutoResponseTimeSlowestPtrOutput) ToWebAppAnomaliesResponseTimeResponseTimeAutoResponseTimeSlowestPtrOutput() WebAppAnomaliesResponseTimeResponseTimeAutoResponseTimeSlowestPtrOutput {
+	return o
+}
+
+func (o WebAppAnomaliesResponseTimeResponseTimeAutoResponseTimeSlowestPtrOutput) ToWebAppAnomaliesResponseTimeResponseTimeAutoResponseTimeSlowestPtrOutputWithContext(ctx context.Context) WebAppAnomaliesResponseTimeResponseTimeAutoResponseTimeSlowestPtrOutput {
+	return o
+}
+
+func (o WebAppAnomaliesResponseTimeResponseTimeAutoResponseTimeSlowestPtrOutput) Elem() WebAppAnomaliesResponseTimeResponseTimeAutoResponseTimeSlowestOutput {
+	return o.ApplyT(func(v *WebAppAnomaliesResponseTimeResponseTimeAutoResponseTimeSlowest) WebAppAnomaliesResponseTimeResponseTimeAutoResponseTimeSlowest {
+		if v != nil {
+			return *v
+		}
+		var ret WebAppAnomaliesResponseTimeResponseTimeAutoResponseTimeSlowest
+		return ret
+	}).(WebAppAnomaliesResponseTimeResponseTimeAutoResponseTimeSlowestOutput)
+}
+
+// Absolute threshold
+func (o WebAppAnomaliesResponseTimeResponseTimeAutoResponseTimeSlowestPtrOutput) SlowestDegradationMilliseconds() pulumi.Float64PtrOutput {
+	return o.ApplyT(func(v *WebAppAnomaliesResponseTimeResponseTimeAutoResponseTimeSlowest) *float64 {
+		if v == nil {
+			return nil
+		}
+		return &v.SlowestDegradationMilliseconds
+	}).(pulumi.Float64PtrOutput)
+}
+
+// Relative threshold
+func (o WebAppAnomaliesResponseTimeResponseTimeAutoResponseTimeSlowestPtrOutput) SlowestDegradationPercent() pulumi.Float64PtrOutput {
+	return o.ApplyT(func(v *WebAppAnomaliesResponseTimeResponseTimeAutoResponseTimeSlowest) *float64 {
+		if v == nil {
+			return nil
+		}
+		return &v.SlowestDegradationPercent
+	}).(pulumi.Float64PtrOutput)
+}
+
+type WebAppAnomaliesResponseTimeResponseTimeFixed struct {
+	// Avoid over-alerting
+	OverAlertingProtection WebAppAnomaliesResponseTimeResponseTimeFixedOverAlertingProtection `pulumi:"overAlertingProtection"`
+	// Alert if the key performance metric of all requests degrades beyond this threshold:
+	ResponseTimeAll WebAppAnomaliesResponseTimeResponseTimeFixedResponseTimeAll `pulumi:"responseTimeAll"`
+	// Alert if the key performance metric of the slowest 10% of requests degrades beyond this threshold:
+	ResponseTimeSlowest WebAppAnomaliesResponseTimeResponseTimeFixedResponseTimeSlowest `pulumi:"responseTimeSlowest"`
+	// Possible Values: `Medium`, `High`, `Low`
+	Sensitivity string `pulumi:"sensitivity"`
+}
+
+// WebAppAnomaliesResponseTimeResponseTimeFixedInput is an input type that accepts WebAppAnomaliesResponseTimeResponseTimeFixedArgs and WebAppAnomaliesResponseTimeResponseTimeFixedOutput values.
+// You can construct a concrete instance of `WebAppAnomaliesResponseTimeResponseTimeFixedInput` via:
+//
+//	WebAppAnomaliesResponseTimeResponseTimeFixedArgs{...}
+type WebAppAnomaliesResponseTimeResponseTimeFixedInput interface {
+	pulumi.Input
+
+	ToWebAppAnomaliesResponseTimeResponseTimeFixedOutput() WebAppAnomaliesResponseTimeResponseTimeFixedOutput
+	ToWebAppAnomaliesResponseTimeResponseTimeFixedOutputWithContext(context.Context) WebAppAnomaliesResponseTimeResponseTimeFixedOutput
+}
+
+type WebAppAnomaliesResponseTimeResponseTimeFixedArgs struct {
+	// Avoid over-alerting
+	OverAlertingProtection WebAppAnomaliesResponseTimeResponseTimeFixedOverAlertingProtectionInput `pulumi:"overAlertingProtection"`
+	// Alert if the key performance metric of all requests degrades beyond this threshold:
+	ResponseTimeAll WebAppAnomaliesResponseTimeResponseTimeFixedResponseTimeAllInput `pulumi:"responseTimeAll"`
+	// Alert if the key performance metric of the slowest 10% of requests degrades beyond this threshold:
+	ResponseTimeSlowest WebAppAnomaliesResponseTimeResponseTimeFixedResponseTimeSlowestInput `pulumi:"responseTimeSlowest"`
+	// Possible Values: `Medium`, `High`, `Low`
+	Sensitivity pulumi.StringInput `pulumi:"sensitivity"`
+}
+
+func (WebAppAnomaliesResponseTimeResponseTimeFixedArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*WebAppAnomaliesResponseTimeResponseTimeFixed)(nil)).Elem()
+}
+
+func (i WebAppAnomaliesResponseTimeResponseTimeFixedArgs) ToWebAppAnomaliesResponseTimeResponseTimeFixedOutput() WebAppAnomaliesResponseTimeResponseTimeFixedOutput {
+	return i.ToWebAppAnomaliesResponseTimeResponseTimeFixedOutputWithContext(context.Background())
+}
+
+func (i WebAppAnomaliesResponseTimeResponseTimeFixedArgs) ToWebAppAnomaliesResponseTimeResponseTimeFixedOutputWithContext(ctx context.Context) WebAppAnomaliesResponseTimeResponseTimeFixedOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(WebAppAnomaliesResponseTimeResponseTimeFixedOutput)
+}
+
+func (i WebAppAnomaliesResponseTimeResponseTimeFixedArgs) ToWebAppAnomaliesResponseTimeResponseTimeFixedPtrOutput() WebAppAnomaliesResponseTimeResponseTimeFixedPtrOutput {
+	return i.ToWebAppAnomaliesResponseTimeResponseTimeFixedPtrOutputWithContext(context.Background())
+}
+
+func (i WebAppAnomaliesResponseTimeResponseTimeFixedArgs) ToWebAppAnomaliesResponseTimeResponseTimeFixedPtrOutputWithContext(ctx context.Context) WebAppAnomaliesResponseTimeResponseTimeFixedPtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(WebAppAnomaliesResponseTimeResponseTimeFixedOutput).ToWebAppAnomaliesResponseTimeResponseTimeFixedPtrOutputWithContext(ctx)
+}
+
+// WebAppAnomaliesResponseTimeResponseTimeFixedPtrInput is an input type that accepts WebAppAnomaliesResponseTimeResponseTimeFixedArgs, WebAppAnomaliesResponseTimeResponseTimeFixedPtr and WebAppAnomaliesResponseTimeResponseTimeFixedPtrOutput values.
+// You can construct a concrete instance of `WebAppAnomaliesResponseTimeResponseTimeFixedPtrInput` via:
+//
+//	        WebAppAnomaliesResponseTimeResponseTimeFixedArgs{...}
+//
+//	or:
+//
+//	        nil
+type WebAppAnomaliesResponseTimeResponseTimeFixedPtrInput interface {
+	pulumi.Input
+
+	ToWebAppAnomaliesResponseTimeResponseTimeFixedPtrOutput() WebAppAnomaliesResponseTimeResponseTimeFixedPtrOutput
+	ToWebAppAnomaliesResponseTimeResponseTimeFixedPtrOutputWithContext(context.Context) WebAppAnomaliesResponseTimeResponseTimeFixedPtrOutput
+}
+
+type webAppAnomaliesResponseTimeResponseTimeFixedPtrType WebAppAnomaliesResponseTimeResponseTimeFixedArgs
+
+func WebAppAnomaliesResponseTimeResponseTimeFixedPtr(v *WebAppAnomaliesResponseTimeResponseTimeFixedArgs) WebAppAnomaliesResponseTimeResponseTimeFixedPtrInput {
+	return (*webAppAnomaliesResponseTimeResponseTimeFixedPtrType)(v)
+}
+
+func (*webAppAnomaliesResponseTimeResponseTimeFixedPtrType) ElementType() reflect.Type {
+	return reflect.TypeOf((**WebAppAnomaliesResponseTimeResponseTimeFixed)(nil)).Elem()
+}
+
+func (i *webAppAnomaliesResponseTimeResponseTimeFixedPtrType) ToWebAppAnomaliesResponseTimeResponseTimeFixedPtrOutput() WebAppAnomaliesResponseTimeResponseTimeFixedPtrOutput {
+	return i.ToWebAppAnomaliesResponseTimeResponseTimeFixedPtrOutputWithContext(context.Background())
+}
+
+func (i *webAppAnomaliesResponseTimeResponseTimeFixedPtrType) ToWebAppAnomaliesResponseTimeResponseTimeFixedPtrOutputWithContext(ctx context.Context) WebAppAnomaliesResponseTimeResponseTimeFixedPtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(WebAppAnomaliesResponseTimeResponseTimeFixedPtrOutput)
+}
+
+type WebAppAnomaliesResponseTimeResponseTimeFixedOutput struct{ *pulumi.OutputState }
+
+func (WebAppAnomaliesResponseTimeResponseTimeFixedOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*WebAppAnomaliesResponseTimeResponseTimeFixed)(nil)).Elem()
+}
+
+func (o WebAppAnomaliesResponseTimeResponseTimeFixedOutput) ToWebAppAnomaliesResponseTimeResponseTimeFixedOutput() WebAppAnomaliesResponseTimeResponseTimeFixedOutput {
+	return o
+}
+
+func (o WebAppAnomaliesResponseTimeResponseTimeFixedOutput) ToWebAppAnomaliesResponseTimeResponseTimeFixedOutputWithContext(ctx context.Context) WebAppAnomaliesResponseTimeResponseTimeFixedOutput {
+	return o
+}
+
+func (o WebAppAnomaliesResponseTimeResponseTimeFixedOutput) ToWebAppAnomaliesResponseTimeResponseTimeFixedPtrOutput() WebAppAnomaliesResponseTimeResponseTimeFixedPtrOutput {
+	return o.ToWebAppAnomaliesResponseTimeResponseTimeFixedPtrOutputWithContext(context.Background())
+}
+
+func (o WebAppAnomaliesResponseTimeResponseTimeFixedOutput) ToWebAppAnomaliesResponseTimeResponseTimeFixedPtrOutputWithContext(ctx context.Context) WebAppAnomaliesResponseTimeResponseTimeFixedPtrOutput {
+	return o.ApplyTWithContext(ctx, func(_ context.Context, v WebAppAnomaliesResponseTimeResponseTimeFixed) *WebAppAnomaliesResponseTimeResponseTimeFixed {
+		return &v
+	}).(WebAppAnomaliesResponseTimeResponseTimeFixedPtrOutput)
+}
+
+// Avoid over-alerting
+func (o WebAppAnomaliesResponseTimeResponseTimeFixedOutput) OverAlertingProtection() WebAppAnomaliesResponseTimeResponseTimeFixedOverAlertingProtectionOutput {
+	return o.ApplyT(func(v WebAppAnomaliesResponseTimeResponseTimeFixed) WebAppAnomaliesResponseTimeResponseTimeFixedOverAlertingProtection {
+		return v.OverAlertingProtection
+	}).(WebAppAnomaliesResponseTimeResponseTimeFixedOverAlertingProtectionOutput)
+}
+
+// Alert if the key performance metric of all requests degrades beyond this threshold:
+func (o WebAppAnomaliesResponseTimeResponseTimeFixedOutput) ResponseTimeAll() WebAppAnomaliesResponseTimeResponseTimeFixedResponseTimeAllOutput {
+	return o.ApplyT(func(v WebAppAnomaliesResponseTimeResponseTimeFixed) WebAppAnomaliesResponseTimeResponseTimeFixedResponseTimeAll {
+		return v.ResponseTimeAll
+	}).(WebAppAnomaliesResponseTimeResponseTimeFixedResponseTimeAllOutput)
+}
+
+// Alert if the key performance metric of the slowest 10% of requests degrades beyond this threshold:
+func (o WebAppAnomaliesResponseTimeResponseTimeFixedOutput) ResponseTimeSlowest() WebAppAnomaliesResponseTimeResponseTimeFixedResponseTimeSlowestOutput {
+	return o.ApplyT(func(v WebAppAnomaliesResponseTimeResponseTimeFixed) WebAppAnomaliesResponseTimeResponseTimeFixedResponseTimeSlowest {
+		return v.ResponseTimeSlowest
+	}).(WebAppAnomaliesResponseTimeResponseTimeFixedResponseTimeSlowestOutput)
+}
+
+// Possible Values: `Medium`, `High`, `Low`
+func (o WebAppAnomaliesResponseTimeResponseTimeFixedOutput) Sensitivity() pulumi.StringOutput {
+	return o.ApplyT(func(v WebAppAnomaliesResponseTimeResponseTimeFixed) string { return v.Sensitivity }).(pulumi.StringOutput)
+}
+
+type WebAppAnomaliesResponseTimeResponseTimeFixedPtrOutput struct{ *pulumi.OutputState }
+
+func (WebAppAnomaliesResponseTimeResponseTimeFixedPtrOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((**WebAppAnomaliesResponseTimeResponseTimeFixed)(nil)).Elem()
+}
+
+func (o WebAppAnomaliesResponseTimeResponseTimeFixedPtrOutput) ToWebAppAnomaliesResponseTimeResponseTimeFixedPtrOutput() WebAppAnomaliesResponseTimeResponseTimeFixedPtrOutput {
+	return o
+}
+
+func (o WebAppAnomaliesResponseTimeResponseTimeFixedPtrOutput) ToWebAppAnomaliesResponseTimeResponseTimeFixedPtrOutputWithContext(ctx context.Context) WebAppAnomaliesResponseTimeResponseTimeFixedPtrOutput {
+	return o
+}
+
+func (o WebAppAnomaliesResponseTimeResponseTimeFixedPtrOutput) Elem() WebAppAnomaliesResponseTimeResponseTimeFixedOutput {
+	return o.ApplyT(func(v *WebAppAnomaliesResponseTimeResponseTimeFixed) WebAppAnomaliesResponseTimeResponseTimeFixed {
+		if v != nil {
+			return *v
+		}
+		var ret WebAppAnomaliesResponseTimeResponseTimeFixed
+		return ret
+	}).(WebAppAnomaliesResponseTimeResponseTimeFixedOutput)
+}
+
+// Avoid over-alerting
+func (o WebAppAnomaliesResponseTimeResponseTimeFixedPtrOutput) OverAlertingProtection() WebAppAnomaliesResponseTimeResponseTimeFixedOverAlertingProtectionPtrOutput {
+	return o.ApplyT(func(v *WebAppAnomaliesResponseTimeResponseTimeFixed) *WebAppAnomaliesResponseTimeResponseTimeFixedOverAlertingProtection {
+		if v == nil {
+			return nil
+		}
+		return &v.OverAlertingProtection
+	}).(WebAppAnomaliesResponseTimeResponseTimeFixedOverAlertingProtectionPtrOutput)
+}
+
+// Alert if the key performance metric of all requests degrades beyond this threshold:
+func (o WebAppAnomaliesResponseTimeResponseTimeFixedPtrOutput) ResponseTimeAll() WebAppAnomaliesResponseTimeResponseTimeFixedResponseTimeAllPtrOutput {
+	return o.ApplyT(func(v *WebAppAnomaliesResponseTimeResponseTimeFixed) *WebAppAnomaliesResponseTimeResponseTimeFixedResponseTimeAll {
+		if v == nil {
+			return nil
+		}
+		return &v.ResponseTimeAll
+	}).(WebAppAnomaliesResponseTimeResponseTimeFixedResponseTimeAllPtrOutput)
+}
+
+// Alert if the key performance metric of the slowest 10% of requests degrades beyond this threshold:
+func (o WebAppAnomaliesResponseTimeResponseTimeFixedPtrOutput) ResponseTimeSlowest() WebAppAnomaliesResponseTimeResponseTimeFixedResponseTimeSlowestPtrOutput {
+	return o.ApplyT(func(v *WebAppAnomaliesResponseTimeResponseTimeFixed) *WebAppAnomaliesResponseTimeResponseTimeFixedResponseTimeSlowest {
+		if v == nil {
+			return nil
+		}
+		return &v.ResponseTimeSlowest
+	}).(WebAppAnomaliesResponseTimeResponseTimeFixedResponseTimeSlowestPtrOutput)
+}
+
+// Possible Values: `Medium`, `High`, `Low`
+func (o WebAppAnomaliesResponseTimeResponseTimeFixedPtrOutput) Sensitivity() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *WebAppAnomaliesResponseTimeResponseTimeFixed) *string {
+		if v == nil {
+			return nil
+		}
+		return &v.Sensitivity
+	}).(pulumi.StringPtrOutput)
+}
+
+type WebAppAnomaliesResponseTimeResponseTimeFixedOverAlertingProtection struct {
+	// Only alert if there are at least
+	ActionsPerMinute float64 `pulumi:"actionsPerMinute"`
+	// Only alert if the abnormal state remains for at least
+	MinutesAbnormalState float64 `pulumi:"minutesAbnormalState"`
+}
+
+// WebAppAnomaliesResponseTimeResponseTimeFixedOverAlertingProtectionInput is an input type that accepts WebAppAnomaliesResponseTimeResponseTimeFixedOverAlertingProtectionArgs and WebAppAnomaliesResponseTimeResponseTimeFixedOverAlertingProtectionOutput values.
+// You can construct a concrete instance of `WebAppAnomaliesResponseTimeResponseTimeFixedOverAlertingProtectionInput` via:
+//
+//	WebAppAnomaliesResponseTimeResponseTimeFixedOverAlertingProtectionArgs{...}
+type WebAppAnomaliesResponseTimeResponseTimeFixedOverAlertingProtectionInput interface {
+	pulumi.Input
+
+	ToWebAppAnomaliesResponseTimeResponseTimeFixedOverAlertingProtectionOutput() WebAppAnomaliesResponseTimeResponseTimeFixedOverAlertingProtectionOutput
+	ToWebAppAnomaliesResponseTimeResponseTimeFixedOverAlertingProtectionOutputWithContext(context.Context) WebAppAnomaliesResponseTimeResponseTimeFixedOverAlertingProtectionOutput
+}
+
+type WebAppAnomaliesResponseTimeResponseTimeFixedOverAlertingProtectionArgs struct {
+	// Only alert if there are at least
+	ActionsPerMinute pulumi.Float64Input `pulumi:"actionsPerMinute"`
+	// Only alert if the abnormal state remains for at least
+	MinutesAbnormalState pulumi.Float64Input `pulumi:"minutesAbnormalState"`
+}
+
+func (WebAppAnomaliesResponseTimeResponseTimeFixedOverAlertingProtectionArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*WebAppAnomaliesResponseTimeResponseTimeFixedOverAlertingProtection)(nil)).Elem()
+}
+
+func (i WebAppAnomaliesResponseTimeResponseTimeFixedOverAlertingProtectionArgs) ToWebAppAnomaliesResponseTimeResponseTimeFixedOverAlertingProtectionOutput() WebAppAnomaliesResponseTimeResponseTimeFixedOverAlertingProtectionOutput {
+	return i.ToWebAppAnomaliesResponseTimeResponseTimeFixedOverAlertingProtectionOutputWithContext(context.Background())
+}
+
+func (i WebAppAnomaliesResponseTimeResponseTimeFixedOverAlertingProtectionArgs) ToWebAppAnomaliesResponseTimeResponseTimeFixedOverAlertingProtectionOutputWithContext(ctx context.Context) WebAppAnomaliesResponseTimeResponseTimeFixedOverAlertingProtectionOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(WebAppAnomaliesResponseTimeResponseTimeFixedOverAlertingProtectionOutput)
+}
+
+func (i WebAppAnomaliesResponseTimeResponseTimeFixedOverAlertingProtectionArgs) ToWebAppAnomaliesResponseTimeResponseTimeFixedOverAlertingProtectionPtrOutput() WebAppAnomaliesResponseTimeResponseTimeFixedOverAlertingProtectionPtrOutput {
+	return i.ToWebAppAnomaliesResponseTimeResponseTimeFixedOverAlertingProtectionPtrOutputWithContext(context.Background())
+}
+
+func (i WebAppAnomaliesResponseTimeResponseTimeFixedOverAlertingProtectionArgs) ToWebAppAnomaliesResponseTimeResponseTimeFixedOverAlertingProtectionPtrOutputWithContext(ctx context.Context) WebAppAnomaliesResponseTimeResponseTimeFixedOverAlertingProtectionPtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(WebAppAnomaliesResponseTimeResponseTimeFixedOverAlertingProtectionOutput).ToWebAppAnomaliesResponseTimeResponseTimeFixedOverAlertingProtectionPtrOutputWithContext(ctx)
+}
+
+// WebAppAnomaliesResponseTimeResponseTimeFixedOverAlertingProtectionPtrInput is an input type that accepts WebAppAnomaliesResponseTimeResponseTimeFixedOverAlertingProtectionArgs, WebAppAnomaliesResponseTimeResponseTimeFixedOverAlertingProtectionPtr and WebAppAnomaliesResponseTimeResponseTimeFixedOverAlertingProtectionPtrOutput values.
+// You can construct a concrete instance of `WebAppAnomaliesResponseTimeResponseTimeFixedOverAlertingProtectionPtrInput` via:
+//
+//	        WebAppAnomaliesResponseTimeResponseTimeFixedOverAlertingProtectionArgs{...}
+//
+//	or:
+//
+//	        nil
+type WebAppAnomaliesResponseTimeResponseTimeFixedOverAlertingProtectionPtrInput interface {
+	pulumi.Input
+
+	ToWebAppAnomaliesResponseTimeResponseTimeFixedOverAlertingProtectionPtrOutput() WebAppAnomaliesResponseTimeResponseTimeFixedOverAlertingProtectionPtrOutput
+	ToWebAppAnomaliesResponseTimeResponseTimeFixedOverAlertingProtectionPtrOutputWithContext(context.Context) WebAppAnomaliesResponseTimeResponseTimeFixedOverAlertingProtectionPtrOutput
+}
+
+type webAppAnomaliesResponseTimeResponseTimeFixedOverAlertingProtectionPtrType WebAppAnomaliesResponseTimeResponseTimeFixedOverAlertingProtectionArgs
+
+func WebAppAnomaliesResponseTimeResponseTimeFixedOverAlertingProtectionPtr(v *WebAppAnomaliesResponseTimeResponseTimeFixedOverAlertingProtectionArgs) WebAppAnomaliesResponseTimeResponseTimeFixedOverAlertingProtectionPtrInput {
+	return (*webAppAnomaliesResponseTimeResponseTimeFixedOverAlertingProtectionPtrType)(v)
+}
+
+func (*webAppAnomaliesResponseTimeResponseTimeFixedOverAlertingProtectionPtrType) ElementType() reflect.Type {
+	return reflect.TypeOf((**WebAppAnomaliesResponseTimeResponseTimeFixedOverAlertingProtection)(nil)).Elem()
+}
+
+func (i *webAppAnomaliesResponseTimeResponseTimeFixedOverAlertingProtectionPtrType) ToWebAppAnomaliesResponseTimeResponseTimeFixedOverAlertingProtectionPtrOutput() WebAppAnomaliesResponseTimeResponseTimeFixedOverAlertingProtectionPtrOutput {
+	return i.ToWebAppAnomaliesResponseTimeResponseTimeFixedOverAlertingProtectionPtrOutputWithContext(context.Background())
+}
+
+func (i *webAppAnomaliesResponseTimeResponseTimeFixedOverAlertingProtectionPtrType) ToWebAppAnomaliesResponseTimeResponseTimeFixedOverAlertingProtectionPtrOutputWithContext(ctx context.Context) WebAppAnomaliesResponseTimeResponseTimeFixedOverAlertingProtectionPtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(WebAppAnomaliesResponseTimeResponseTimeFixedOverAlertingProtectionPtrOutput)
+}
+
+type WebAppAnomaliesResponseTimeResponseTimeFixedOverAlertingProtectionOutput struct{ *pulumi.OutputState }
+
+func (WebAppAnomaliesResponseTimeResponseTimeFixedOverAlertingProtectionOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*WebAppAnomaliesResponseTimeResponseTimeFixedOverAlertingProtection)(nil)).Elem()
+}
+
+func (o WebAppAnomaliesResponseTimeResponseTimeFixedOverAlertingProtectionOutput) ToWebAppAnomaliesResponseTimeResponseTimeFixedOverAlertingProtectionOutput() WebAppAnomaliesResponseTimeResponseTimeFixedOverAlertingProtectionOutput {
+	return o
+}
+
+func (o WebAppAnomaliesResponseTimeResponseTimeFixedOverAlertingProtectionOutput) ToWebAppAnomaliesResponseTimeResponseTimeFixedOverAlertingProtectionOutputWithContext(ctx context.Context) WebAppAnomaliesResponseTimeResponseTimeFixedOverAlertingProtectionOutput {
+	return o
+}
+
+func (o WebAppAnomaliesResponseTimeResponseTimeFixedOverAlertingProtectionOutput) ToWebAppAnomaliesResponseTimeResponseTimeFixedOverAlertingProtectionPtrOutput() WebAppAnomaliesResponseTimeResponseTimeFixedOverAlertingProtectionPtrOutput {
+	return o.ToWebAppAnomaliesResponseTimeResponseTimeFixedOverAlertingProtectionPtrOutputWithContext(context.Background())
+}
+
+func (o WebAppAnomaliesResponseTimeResponseTimeFixedOverAlertingProtectionOutput) ToWebAppAnomaliesResponseTimeResponseTimeFixedOverAlertingProtectionPtrOutputWithContext(ctx context.Context) WebAppAnomaliesResponseTimeResponseTimeFixedOverAlertingProtectionPtrOutput {
+	return o.ApplyTWithContext(ctx, func(_ context.Context, v WebAppAnomaliesResponseTimeResponseTimeFixedOverAlertingProtection) *WebAppAnomaliesResponseTimeResponseTimeFixedOverAlertingProtection {
+		return &v
+	}).(WebAppAnomaliesResponseTimeResponseTimeFixedOverAlertingProtectionPtrOutput)
+}
+
+// Only alert if there are at least
+func (o WebAppAnomaliesResponseTimeResponseTimeFixedOverAlertingProtectionOutput) ActionsPerMinute() pulumi.Float64Output {
+	return o.ApplyT(func(v WebAppAnomaliesResponseTimeResponseTimeFixedOverAlertingProtection) float64 {
+		return v.ActionsPerMinute
+	}).(pulumi.Float64Output)
+}
+
+// Only alert if the abnormal state remains for at least
+func (o WebAppAnomaliesResponseTimeResponseTimeFixedOverAlertingProtectionOutput) MinutesAbnormalState() pulumi.Float64Output {
+	return o.ApplyT(func(v WebAppAnomaliesResponseTimeResponseTimeFixedOverAlertingProtection) float64 {
+		return v.MinutesAbnormalState
+	}).(pulumi.Float64Output)
+}
+
+type WebAppAnomaliesResponseTimeResponseTimeFixedOverAlertingProtectionPtrOutput struct{ *pulumi.OutputState }
+
+func (WebAppAnomaliesResponseTimeResponseTimeFixedOverAlertingProtectionPtrOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((**WebAppAnomaliesResponseTimeResponseTimeFixedOverAlertingProtection)(nil)).Elem()
+}
+
+func (o WebAppAnomaliesResponseTimeResponseTimeFixedOverAlertingProtectionPtrOutput) ToWebAppAnomaliesResponseTimeResponseTimeFixedOverAlertingProtectionPtrOutput() WebAppAnomaliesResponseTimeResponseTimeFixedOverAlertingProtectionPtrOutput {
+	return o
+}
+
+func (o WebAppAnomaliesResponseTimeResponseTimeFixedOverAlertingProtectionPtrOutput) ToWebAppAnomaliesResponseTimeResponseTimeFixedOverAlertingProtectionPtrOutputWithContext(ctx context.Context) WebAppAnomaliesResponseTimeResponseTimeFixedOverAlertingProtectionPtrOutput {
+	return o
+}
+
+func (o WebAppAnomaliesResponseTimeResponseTimeFixedOverAlertingProtectionPtrOutput) Elem() WebAppAnomaliesResponseTimeResponseTimeFixedOverAlertingProtectionOutput {
+	return o.ApplyT(func(v *WebAppAnomaliesResponseTimeResponseTimeFixedOverAlertingProtection) WebAppAnomaliesResponseTimeResponseTimeFixedOverAlertingProtection {
+		if v != nil {
+			return *v
+		}
+		var ret WebAppAnomaliesResponseTimeResponseTimeFixedOverAlertingProtection
+		return ret
+	}).(WebAppAnomaliesResponseTimeResponseTimeFixedOverAlertingProtectionOutput)
+}
+
+// Only alert if there are at least
+func (o WebAppAnomaliesResponseTimeResponseTimeFixedOverAlertingProtectionPtrOutput) ActionsPerMinute() pulumi.Float64PtrOutput {
+	return o.ApplyT(func(v *WebAppAnomaliesResponseTimeResponseTimeFixedOverAlertingProtection) *float64 {
+		if v == nil {
+			return nil
+		}
+		return &v.ActionsPerMinute
+	}).(pulumi.Float64PtrOutput)
+}
+
+// Only alert if the abnormal state remains for at least
+func (o WebAppAnomaliesResponseTimeResponseTimeFixedOverAlertingProtectionPtrOutput) MinutesAbnormalState() pulumi.Float64PtrOutput {
+	return o.ApplyT(func(v *WebAppAnomaliesResponseTimeResponseTimeFixedOverAlertingProtection) *float64 {
+		if v == nil {
+			return nil
+		}
+		return &v.MinutesAbnormalState
+	}).(pulumi.Float64PtrOutput)
+}
+
+type WebAppAnomaliesResponseTimeResponseTimeFixedResponseTimeAll struct {
+	// Alert if the key performance metric degrades beyond this many ms within an observation period of 5 minutes
+	DegradationMilliseconds float64 `pulumi:"degradationMilliseconds"`
+}
+
+// WebAppAnomaliesResponseTimeResponseTimeFixedResponseTimeAllInput is an input type that accepts WebAppAnomaliesResponseTimeResponseTimeFixedResponseTimeAllArgs and WebAppAnomaliesResponseTimeResponseTimeFixedResponseTimeAllOutput values.
+// You can construct a concrete instance of `WebAppAnomaliesResponseTimeResponseTimeFixedResponseTimeAllInput` via:
+//
+//	WebAppAnomaliesResponseTimeResponseTimeFixedResponseTimeAllArgs{...}
+type WebAppAnomaliesResponseTimeResponseTimeFixedResponseTimeAllInput interface {
+	pulumi.Input
+
+	ToWebAppAnomaliesResponseTimeResponseTimeFixedResponseTimeAllOutput() WebAppAnomaliesResponseTimeResponseTimeFixedResponseTimeAllOutput
+	ToWebAppAnomaliesResponseTimeResponseTimeFixedResponseTimeAllOutputWithContext(context.Context) WebAppAnomaliesResponseTimeResponseTimeFixedResponseTimeAllOutput
+}
+
+type WebAppAnomaliesResponseTimeResponseTimeFixedResponseTimeAllArgs struct {
+	// Alert if the key performance metric degrades beyond this many ms within an observation period of 5 minutes
+	DegradationMilliseconds pulumi.Float64Input `pulumi:"degradationMilliseconds"`
+}
+
+func (WebAppAnomaliesResponseTimeResponseTimeFixedResponseTimeAllArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*WebAppAnomaliesResponseTimeResponseTimeFixedResponseTimeAll)(nil)).Elem()
+}
+
+func (i WebAppAnomaliesResponseTimeResponseTimeFixedResponseTimeAllArgs) ToWebAppAnomaliesResponseTimeResponseTimeFixedResponseTimeAllOutput() WebAppAnomaliesResponseTimeResponseTimeFixedResponseTimeAllOutput {
+	return i.ToWebAppAnomaliesResponseTimeResponseTimeFixedResponseTimeAllOutputWithContext(context.Background())
+}
+
+func (i WebAppAnomaliesResponseTimeResponseTimeFixedResponseTimeAllArgs) ToWebAppAnomaliesResponseTimeResponseTimeFixedResponseTimeAllOutputWithContext(ctx context.Context) WebAppAnomaliesResponseTimeResponseTimeFixedResponseTimeAllOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(WebAppAnomaliesResponseTimeResponseTimeFixedResponseTimeAllOutput)
+}
+
+func (i WebAppAnomaliesResponseTimeResponseTimeFixedResponseTimeAllArgs) ToWebAppAnomaliesResponseTimeResponseTimeFixedResponseTimeAllPtrOutput() WebAppAnomaliesResponseTimeResponseTimeFixedResponseTimeAllPtrOutput {
+	return i.ToWebAppAnomaliesResponseTimeResponseTimeFixedResponseTimeAllPtrOutputWithContext(context.Background())
+}
+
+func (i WebAppAnomaliesResponseTimeResponseTimeFixedResponseTimeAllArgs) ToWebAppAnomaliesResponseTimeResponseTimeFixedResponseTimeAllPtrOutputWithContext(ctx context.Context) WebAppAnomaliesResponseTimeResponseTimeFixedResponseTimeAllPtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(WebAppAnomaliesResponseTimeResponseTimeFixedResponseTimeAllOutput).ToWebAppAnomaliesResponseTimeResponseTimeFixedResponseTimeAllPtrOutputWithContext(ctx)
+}
+
+// WebAppAnomaliesResponseTimeResponseTimeFixedResponseTimeAllPtrInput is an input type that accepts WebAppAnomaliesResponseTimeResponseTimeFixedResponseTimeAllArgs, WebAppAnomaliesResponseTimeResponseTimeFixedResponseTimeAllPtr and WebAppAnomaliesResponseTimeResponseTimeFixedResponseTimeAllPtrOutput values.
+// You can construct a concrete instance of `WebAppAnomaliesResponseTimeResponseTimeFixedResponseTimeAllPtrInput` via:
+//
+//	        WebAppAnomaliesResponseTimeResponseTimeFixedResponseTimeAllArgs{...}
+//
+//	or:
+//
+//	        nil
+type WebAppAnomaliesResponseTimeResponseTimeFixedResponseTimeAllPtrInput interface {
+	pulumi.Input
+
+	ToWebAppAnomaliesResponseTimeResponseTimeFixedResponseTimeAllPtrOutput() WebAppAnomaliesResponseTimeResponseTimeFixedResponseTimeAllPtrOutput
+	ToWebAppAnomaliesResponseTimeResponseTimeFixedResponseTimeAllPtrOutputWithContext(context.Context) WebAppAnomaliesResponseTimeResponseTimeFixedResponseTimeAllPtrOutput
+}
+
+type webAppAnomaliesResponseTimeResponseTimeFixedResponseTimeAllPtrType WebAppAnomaliesResponseTimeResponseTimeFixedResponseTimeAllArgs
+
+func WebAppAnomaliesResponseTimeResponseTimeFixedResponseTimeAllPtr(v *WebAppAnomaliesResponseTimeResponseTimeFixedResponseTimeAllArgs) WebAppAnomaliesResponseTimeResponseTimeFixedResponseTimeAllPtrInput {
+	return (*webAppAnomaliesResponseTimeResponseTimeFixedResponseTimeAllPtrType)(v)
+}
+
+func (*webAppAnomaliesResponseTimeResponseTimeFixedResponseTimeAllPtrType) ElementType() reflect.Type {
+	return reflect.TypeOf((**WebAppAnomaliesResponseTimeResponseTimeFixedResponseTimeAll)(nil)).Elem()
+}
+
+func (i *webAppAnomaliesResponseTimeResponseTimeFixedResponseTimeAllPtrType) ToWebAppAnomaliesResponseTimeResponseTimeFixedResponseTimeAllPtrOutput() WebAppAnomaliesResponseTimeResponseTimeFixedResponseTimeAllPtrOutput {
+	return i.ToWebAppAnomaliesResponseTimeResponseTimeFixedResponseTimeAllPtrOutputWithContext(context.Background())
+}
+
+func (i *webAppAnomaliesResponseTimeResponseTimeFixedResponseTimeAllPtrType) ToWebAppAnomaliesResponseTimeResponseTimeFixedResponseTimeAllPtrOutputWithContext(ctx context.Context) WebAppAnomaliesResponseTimeResponseTimeFixedResponseTimeAllPtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(WebAppAnomaliesResponseTimeResponseTimeFixedResponseTimeAllPtrOutput)
+}
+
+type WebAppAnomaliesResponseTimeResponseTimeFixedResponseTimeAllOutput struct{ *pulumi.OutputState }
+
+func (WebAppAnomaliesResponseTimeResponseTimeFixedResponseTimeAllOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*WebAppAnomaliesResponseTimeResponseTimeFixedResponseTimeAll)(nil)).Elem()
+}
+
+func (o WebAppAnomaliesResponseTimeResponseTimeFixedResponseTimeAllOutput) ToWebAppAnomaliesResponseTimeResponseTimeFixedResponseTimeAllOutput() WebAppAnomaliesResponseTimeResponseTimeFixedResponseTimeAllOutput {
+	return o
+}
+
+func (o WebAppAnomaliesResponseTimeResponseTimeFixedResponseTimeAllOutput) ToWebAppAnomaliesResponseTimeResponseTimeFixedResponseTimeAllOutputWithContext(ctx context.Context) WebAppAnomaliesResponseTimeResponseTimeFixedResponseTimeAllOutput {
+	return o
+}
+
+func (o WebAppAnomaliesResponseTimeResponseTimeFixedResponseTimeAllOutput) ToWebAppAnomaliesResponseTimeResponseTimeFixedResponseTimeAllPtrOutput() WebAppAnomaliesResponseTimeResponseTimeFixedResponseTimeAllPtrOutput {
+	return o.ToWebAppAnomaliesResponseTimeResponseTimeFixedResponseTimeAllPtrOutputWithContext(context.Background())
+}
+
+func (o WebAppAnomaliesResponseTimeResponseTimeFixedResponseTimeAllOutput) ToWebAppAnomaliesResponseTimeResponseTimeFixedResponseTimeAllPtrOutputWithContext(ctx context.Context) WebAppAnomaliesResponseTimeResponseTimeFixedResponseTimeAllPtrOutput {
+	return o.ApplyTWithContext(ctx, func(_ context.Context, v WebAppAnomaliesResponseTimeResponseTimeFixedResponseTimeAll) *WebAppAnomaliesResponseTimeResponseTimeFixedResponseTimeAll {
+		return &v
+	}).(WebAppAnomaliesResponseTimeResponseTimeFixedResponseTimeAllPtrOutput)
+}
+
+// Alert if the key performance metric degrades beyond this many ms within an observation period of 5 minutes
+func (o WebAppAnomaliesResponseTimeResponseTimeFixedResponseTimeAllOutput) DegradationMilliseconds() pulumi.Float64Output {
+	return o.ApplyT(func(v WebAppAnomaliesResponseTimeResponseTimeFixedResponseTimeAll) float64 {
+		return v.DegradationMilliseconds
+	}).(pulumi.Float64Output)
+}
+
+type WebAppAnomaliesResponseTimeResponseTimeFixedResponseTimeAllPtrOutput struct{ *pulumi.OutputState }
+
+func (WebAppAnomaliesResponseTimeResponseTimeFixedResponseTimeAllPtrOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((**WebAppAnomaliesResponseTimeResponseTimeFixedResponseTimeAll)(nil)).Elem()
+}
+
+func (o WebAppAnomaliesResponseTimeResponseTimeFixedResponseTimeAllPtrOutput) ToWebAppAnomaliesResponseTimeResponseTimeFixedResponseTimeAllPtrOutput() WebAppAnomaliesResponseTimeResponseTimeFixedResponseTimeAllPtrOutput {
+	return o
+}
+
+func (o WebAppAnomaliesResponseTimeResponseTimeFixedResponseTimeAllPtrOutput) ToWebAppAnomaliesResponseTimeResponseTimeFixedResponseTimeAllPtrOutputWithContext(ctx context.Context) WebAppAnomaliesResponseTimeResponseTimeFixedResponseTimeAllPtrOutput {
+	return o
+}
+
+func (o WebAppAnomaliesResponseTimeResponseTimeFixedResponseTimeAllPtrOutput) Elem() WebAppAnomaliesResponseTimeResponseTimeFixedResponseTimeAllOutput {
+	return o.ApplyT(func(v *WebAppAnomaliesResponseTimeResponseTimeFixedResponseTimeAll) WebAppAnomaliesResponseTimeResponseTimeFixedResponseTimeAll {
+		if v != nil {
+			return *v
+		}
+		var ret WebAppAnomaliesResponseTimeResponseTimeFixedResponseTimeAll
+		return ret
+	}).(WebAppAnomaliesResponseTimeResponseTimeFixedResponseTimeAllOutput)
+}
+
+// Alert if the key performance metric degrades beyond this many ms within an observation period of 5 minutes
+func (o WebAppAnomaliesResponseTimeResponseTimeFixedResponseTimeAllPtrOutput) DegradationMilliseconds() pulumi.Float64PtrOutput {
+	return o.ApplyT(func(v *WebAppAnomaliesResponseTimeResponseTimeFixedResponseTimeAll) *float64 {
+		if v == nil {
+			return nil
+		}
+		return &v.DegradationMilliseconds
+	}).(pulumi.Float64PtrOutput)
+}
+
+type WebAppAnomaliesResponseTimeResponseTimeFixedResponseTimeSlowest struct {
+	// Alert if the key performance metric of the slowest 10% degrades beyond this many ms within an observation period of 5 minutes
+	SlowestDegradationMilliseconds float64 `pulumi:"slowestDegradationMilliseconds"`
+}
+
+// WebAppAnomaliesResponseTimeResponseTimeFixedResponseTimeSlowestInput is an input type that accepts WebAppAnomaliesResponseTimeResponseTimeFixedResponseTimeSlowestArgs and WebAppAnomaliesResponseTimeResponseTimeFixedResponseTimeSlowestOutput values.
+// You can construct a concrete instance of `WebAppAnomaliesResponseTimeResponseTimeFixedResponseTimeSlowestInput` via:
+//
+//	WebAppAnomaliesResponseTimeResponseTimeFixedResponseTimeSlowestArgs{...}
+type WebAppAnomaliesResponseTimeResponseTimeFixedResponseTimeSlowestInput interface {
+	pulumi.Input
+
+	ToWebAppAnomaliesResponseTimeResponseTimeFixedResponseTimeSlowestOutput() WebAppAnomaliesResponseTimeResponseTimeFixedResponseTimeSlowestOutput
+	ToWebAppAnomaliesResponseTimeResponseTimeFixedResponseTimeSlowestOutputWithContext(context.Context) WebAppAnomaliesResponseTimeResponseTimeFixedResponseTimeSlowestOutput
+}
+
+type WebAppAnomaliesResponseTimeResponseTimeFixedResponseTimeSlowestArgs struct {
+	// Alert if the key performance metric of the slowest 10% degrades beyond this many ms within an observation period of 5 minutes
+	SlowestDegradationMilliseconds pulumi.Float64Input `pulumi:"slowestDegradationMilliseconds"`
+}
+
+func (WebAppAnomaliesResponseTimeResponseTimeFixedResponseTimeSlowestArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*WebAppAnomaliesResponseTimeResponseTimeFixedResponseTimeSlowest)(nil)).Elem()
+}
+
+func (i WebAppAnomaliesResponseTimeResponseTimeFixedResponseTimeSlowestArgs) ToWebAppAnomaliesResponseTimeResponseTimeFixedResponseTimeSlowestOutput() WebAppAnomaliesResponseTimeResponseTimeFixedResponseTimeSlowestOutput {
+	return i.ToWebAppAnomaliesResponseTimeResponseTimeFixedResponseTimeSlowestOutputWithContext(context.Background())
+}
+
+func (i WebAppAnomaliesResponseTimeResponseTimeFixedResponseTimeSlowestArgs) ToWebAppAnomaliesResponseTimeResponseTimeFixedResponseTimeSlowestOutputWithContext(ctx context.Context) WebAppAnomaliesResponseTimeResponseTimeFixedResponseTimeSlowestOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(WebAppAnomaliesResponseTimeResponseTimeFixedResponseTimeSlowestOutput)
+}
+
+func (i WebAppAnomaliesResponseTimeResponseTimeFixedResponseTimeSlowestArgs) ToWebAppAnomaliesResponseTimeResponseTimeFixedResponseTimeSlowestPtrOutput() WebAppAnomaliesResponseTimeResponseTimeFixedResponseTimeSlowestPtrOutput {
+	return i.ToWebAppAnomaliesResponseTimeResponseTimeFixedResponseTimeSlowestPtrOutputWithContext(context.Background())
+}
+
+func (i WebAppAnomaliesResponseTimeResponseTimeFixedResponseTimeSlowestArgs) ToWebAppAnomaliesResponseTimeResponseTimeFixedResponseTimeSlowestPtrOutputWithContext(ctx context.Context) WebAppAnomaliesResponseTimeResponseTimeFixedResponseTimeSlowestPtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(WebAppAnomaliesResponseTimeResponseTimeFixedResponseTimeSlowestOutput).ToWebAppAnomaliesResponseTimeResponseTimeFixedResponseTimeSlowestPtrOutputWithContext(ctx)
+}
+
+// WebAppAnomaliesResponseTimeResponseTimeFixedResponseTimeSlowestPtrInput is an input type that accepts WebAppAnomaliesResponseTimeResponseTimeFixedResponseTimeSlowestArgs, WebAppAnomaliesResponseTimeResponseTimeFixedResponseTimeSlowestPtr and WebAppAnomaliesResponseTimeResponseTimeFixedResponseTimeSlowestPtrOutput values.
+// You can construct a concrete instance of `WebAppAnomaliesResponseTimeResponseTimeFixedResponseTimeSlowestPtrInput` via:
+//
+//	        WebAppAnomaliesResponseTimeResponseTimeFixedResponseTimeSlowestArgs{...}
+//
+//	or:
+//
+//	        nil
+type WebAppAnomaliesResponseTimeResponseTimeFixedResponseTimeSlowestPtrInput interface {
+	pulumi.Input
+
+	ToWebAppAnomaliesResponseTimeResponseTimeFixedResponseTimeSlowestPtrOutput() WebAppAnomaliesResponseTimeResponseTimeFixedResponseTimeSlowestPtrOutput
+	ToWebAppAnomaliesResponseTimeResponseTimeFixedResponseTimeSlowestPtrOutputWithContext(context.Context) WebAppAnomaliesResponseTimeResponseTimeFixedResponseTimeSlowestPtrOutput
+}
+
+type webAppAnomaliesResponseTimeResponseTimeFixedResponseTimeSlowestPtrType WebAppAnomaliesResponseTimeResponseTimeFixedResponseTimeSlowestArgs
+
+func WebAppAnomaliesResponseTimeResponseTimeFixedResponseTimeSlowestPtr(v *WebAppAnomaliesResponseTimeResponseTimeFixedResponseTimeSlowestArgs) WebAppAnomaliesResponseTimeResponseTimeFixedResponseTimeSlowestPtrInput {
+	return (*webAppAnomaliesResponseTimeResponseTimeFixedResponseTimeSlowestPtrType)(v)
+}
+
+func (*webAppAnomaliesResponseTimeResponseTimeFixedResponseTimeSlowestPtrType) ElementType() reflect.Type {
+	return reflect.TypeOf((**WebAppAnomaliesResponseTimeResponseTimeFixedResponseTimeSlowest)(nil)).Elem()
+}
+
+func (i *webAppAnomaliesResponseTimeResponseTimeFixedResponseTimeSlowestPtrType) ToWebAppAnomaliesResponseTimeResponseTimeFixedResponseTimeSlowestPtrOutput() WebAppAnomaliesResponseTimeResponseTimeFixedResponseTimeSlowestPtrOutput {
+	return i.ToWebAppAnomaliesResponseTimeResponseTimeFixedResponseTimeSlowestPtrOutputWithContext(context.Background())
+}
+
+func (i *webAppAnomaliesResponseTimeResponseTimeFixedResponseTimeSlowestPtrType) ToWebAppAnomaliesResponseTimeResponseTimeFixedResponseTimeSlowestPtrOutputWithContext(ctx context.Context) WebAppAnomaliesResponseTimeResponseTimeFixedResponseTimeSlowestPtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(WebAppAnomaliesResponseTimeResponseTimeFixedResponseTimeSlowestPtrOutput)
+}
+
+type WebAppAnomaliesResponseTimeResponseTimeFixedResponseTimeSlowestOutput struct{ *pulumi.OutputState }
+
+func (WebAppAnomaliesResponseTimeResponseTimeFixedResponseTimeSlowestOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*WebAppAnomaliesResponseTimeResponseTimeFixedResponseTimeSlowest)(nil)).Elem()
+}
+
+func (o WebAppAnomaliesResponseTimeResponseTimeFixedResponseTimeSlowestOutput) ToWebAppAnomaliesResponseTimeResponseTimeFixedResponseTimeSlowestOutput() WebAppAnomaliesResponseTimeResponseTimeFixedResponseTimeSlowestOutput {
+	return o
+}
+
+func (o WebAppAnomaliesResponseTimeResponseTimeFixedResponseTimeSlowestOutput) ToWebAppAnomaliesResponseTimeResponseTimeFixedResponseTimeSlowestOutputWithContext(ctx context.Context) WebAppAnomaliesResponseTimeResponseTimeFixedResponseTimeSlowestOutput {
+	return o
+}
+
+func (o WebAppAnomaliesResponseTimeResponseTimeFixedResponseTimeSlowestOutput) ToWebAppAnomaliesResponseTimeResponseTimeFixedResponseTimeSlowestPtrOutput() WebAppAnomaliesResponseTimeResponseTimeFixedResponseTimeSlowestPtrOutput {
+	return o.ToWebAppAnomaliesResponseTimeResponseTimeFixedResponseTimeSlowestPtrOutputWithContext(context.Background())
+}
+
+func (o WebAppAnomaliesResponseTimeResponseTimeFixedResponseTimeSlowestOutput) ToWebAppAnomaliesResponseTimeResponseTimeFixedResponseTimeSlowestPtrOutputWithContext(ctx context.Context) WebAppAnomaliesResponseTimeResponseTimeFixedResponseTimeSlowestPtrOutput {
+	return o.ApplyTWithContext(ctx, func(_ context.Context, v WebAppAnomaliesResponseTimeResponseTimeFixedResponseTimeSlowest) *WebAppAnomaliesResponseTimeResponseTimeFixedResponseTimeSlowest {
+		return &v
+	}).(WebAppAnomaliesResponseTimeResponseTimeFixedResponseTimeSlowestPtrOutput)
+}
+
+// Alert if the key performance metric of the slowest 10% degrades beyond this many ms within an observation period of 5 minutes
+func (o WebAppAnomaliesResponseTimeResponseTimeFixedResponseTimeSlowestOutput) SlowestDegradationMilliseconds() pulumi.Float64Output {
+	return o.ApplyT(func(v WebAppAnomaliesResponseTimeResponseTimeFixedResponseTimeSlowest) float64 {
+		return v.SlowestDegradationMilliseconds
+	}).(pulumi.Float64Output)
+}
+
+type WebAppAnomaliesResponseTimeResponseTimeFixedResponseTimeSlowestPtrOutput struct{ *pulumi.OutputState }
+
+func (WebAppAnomaliesResponseTimeResponseTimeFixedResponseTimeSlowestPtrOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((**WebAppAnomaliesResponseTimeResponseTimeFixedResponseTimeSlowest)(nil)).Elem()
+}
+
+func (o WebAppAnomaliesResponseTimeResponseTimeFixedResponseTimeSlowestPtrOutput) ToWebAppAnomaliesResponseTimeResponseTimeFixedResponseTimeSlowestPtrOutput() WebAppAnomaliesResponseTimeResponseTimeFixedResponseTimeSlowestPtrOutput {
+	return o
+}
+
+func (o WebAppAnomaliesResponseTimeResponseTimeFixedResponseTimeSlowestPtrOutput) ToWebAppAnomaliesResponseTimeResponseTimeFixedResponseTimeSlowestPtrOutputWithContext(ctx context.Context) WebAppAnomaliesResponseTimeResponseTimeFixedResponseTimeSlowestPtrOutput {
+	return o
+}
+
+func (o WebAppAnomaliesResponseTimeResponseTimeFixedResponseTimeSlowestPtrOutput) Elem() WebAppAnomaliesResponseTimeResponseTimeFixedResponseTimeSlowestOutput {
+	return o.ApplyT(func(v *WebAppAnomaliesResponseTimeResponseTimeFixedResponseTimeSlowest) WebAppAnomaliesResponseTimeResponseTimeFixedResponseTimeSlowest {
+		if v != nil {
+			return *v
+		}
+		var ret WebAppAnomaliesResponseTimeResponseTimeFixedResponseTimeSlowest
+		return ret
+	}).(WebAppAnomaliesResponseTimeResponseTimeFixedResponseTimeSlowestOutput)
+}
+
+// Alert if the key performance metric of the slowest 10% degrades beyond this many ms within an observation period of 5 minutes
+func (o WebAppAnomaliesResponseTimeResponseTimeFixedResponseTimeSlowestPtrOutput) SlowestDegradationMilliseconds() pulumi.Float64PtrOutput {
+	return o.ApplyT(func(v *WebAppAnomaliesResponseTimeResponseTimeFixedResponseTimeSlowest) *float64 {
+		if v == nil {
+			return nil
+		}
+		return &v.SlowestDegradationMilliseconds
+	}).(pulumi.Float64PtrOutput)
+}
+
+type WebAppAnomaliesTrafficDrops struct {
+	// This setting is enabled (`true`) or disabled (`false`)
+	Enabled bool `pulumi:"enabled"`
+	// Dynatrace learns your typical application traffic over an observation period of one week.
+	TrafficDrops *WebAppAnomaliesTrafficDropsTrafficDrops `pulumi:"trafficDrops"`
+}
+
+// WebAppAnomaliesTrafficDropsInput is an input type that accepts WebAppAnomaliesTrafficDropsArgs and WebAppAnomaliesTrafficDropsOutput values.
+// You can construct a concrete instance of `WebAppAnomaliesTrafficDropsInput` via:
+//
+//	WebAppAnomaliesTrafficDropsArgs{...}
+type WebAppAnomaliesTrafficDropsInput interface {
+	pulumi.Input
+
+	ToWebAppAnomaliesTrafficDropsOutput() WebAppAnomaliesTrafficDropsOutput
+	ToWebAppAnomaliesTrafficDropsOutputWithContext(context.Context) WebAppAnomaliesTrafficDropsOutput
+}
+
+type WebAppAnomaliesTrafficDropsArgs struct {
+	// This setting is enabled (`true`) or disabled (`false`)
+	Enabled pulumi.BoolInput `pulumi:"enabled"`
+	// Dynatrace learns your typical application traffic over an observation period of one week.
+	TrafficDrops WebAppAnomaliesTrafficDropsTrafficDropsPtrInput `pulumi:"trafficDrops"`
+}
+
+func (WebAppAnomaliesTrafficDropsArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*WebAppAnomaliesTrafficDrops)(nil)).Elem()
+}
+
+func (i WebAppAnomaliesTrafficDropsArgs) ToWebAppAnomaliesTrafficDropsOutput() WebAppAnomaliesTrafficDropsOutput {
+	return i.ToWebAppAnomaliesTrafficDropsOutputWithContext(context.Background())
+}
+
+func (i WebAppAnomaliesTrafficDropsArgs) ToWebAppAnomaliesTrafficDropsOutputWithContext(ctx context.Context) WebAppAnomaliesTrafficDropsOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(WebAppAnomaliesTrafficDropsOutput)
+}
+
+func (i WebAppAnomaliesTrafficDropsArgs) ToWebAppAnomaliesTrafficDropsPtrOutput() WebAppAnomaliesTrafficDropsPtrOutput {
+	return i.ToWebAppAnomaliesTrafficDropsPtrOutputWithContext(context.Background())
+}
+
+func (i WebAppAnomaliesTrafficDropsArgs) ToWebAppAnomaliesTrafficDropsPtrOutputWithContext(ctx context.Context) WebAppAnomaliesTrafficDropsPtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(WebAppAnomaliesTrafficDropsOutput).ToWebAppAnomaliesTrafficDropsPtrOutputWithContext(ctx)
+}
+
+// WebAppAnomaliesTrafficDropsPtrInput is an input type that accepts WebAppAnomaliesTrafficDropsArgs, WebAppAnomaliesTrafficDropsPtr and WebAppAnomaliesTrafficDropsPtrOutput values.
+// You can construct a concrete instance of `WebAppAnomaliesTrafficDropsPtrInput` via:
+//
+//	        WebAppAnomaliesTrafficDropsArgs{...}
+//
+//	or:
+//
+//	        nil
+type WebAppAnomaliesTrafficDropsPtrInput interface {
+	pulumi.Input
+
+	ToWebAppAnomaliesTrafficDropsPtrOutput() WebAppAnomaliesTrafficDropsPtrOutput
+	ToWebAppAnomaliesTrafficDropsPtrOutputWithContext(context.Context) WebAppAnomaliesTrafficDropsPtrOutput
+}
+
+type webAppAnomaliesTrafficDropsPtrType WebAppAnomaliesTrafficDropsArgs
+
+func WebAppAnomaliesTrafficDropsPtr(v *WebAppAnomaliesTrafficDropsArgs) WebAppAnomaliesTrafficDropsPtrInput {
+	return (*webAppAnomaliesTrafficDropsPtrType)(v)
+}
+
+func (*webAppAnomaliesTrafficDropsPtrType) ElementType() reflect.Type {
+	return reflect.TypeOf((**WebAppAnomaliesTrafficDrops)(nil)).Elem()
+}
+
+func (i *webAppAnomaliesTrafficDropsPtrType) ToWebAppAnomaliesTrafficDropsPtrOutput() WebAppAnomaliesTrafficDropsPtrOutput {
+	return i.ToWebAppAnomaliesTrafficDropsPtrOutputWithContext(context.Background())
+}
+
+func (i *webAppAnomaliesTrafficDropsPtrType) ToWebAppAnomaliesTrafficDropsPtrOutputWithContext(ctx context.Context) WebAppAnomaliesTrafficDropsPtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(WebAppAnomaliesTrafficDropsPtrOutput)
+}
+
+type WebAppAnomaliesTrafficDropsOutput struct{ *pulumi.OutputState }
+
+func (WebAppAnomaliesTrafficDropsOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*WebAppAnomaliesTrafficDrops)(nil)).Elem()
+}
+
+func (o WebAppAnomaliesTrafficDropsOutput) ToWebAppAnomaliesTrafficDropsOutput() WebAppAnomaliesTrafficDropsOutput {
+	return o
+}
+
+func (o WebAppAnomaliesTrafficDropsOutput) ToWebAppAnomaliesTrafficDropsOutputWithContext(ctx context.Context) WebAppAnomaliesTrafficDropsOutput {
+	return o
+}
+
+func (o WebAppAnomaliesTrafficDropsOutput) ToWebAppAnomaliesTrafficDropsPtrOutput() WebAppAnomaliesTrafficDropsPtrOutput {
+	return o.ToWebAppAnomaliesTrafficDropsPtrOutputWithContext(context.Background())
+}
+
+func (o WebAppAnomaliesTrafficDropsOutput) ToWebAppAnomaliesTrafficDropsPtrOutputWithContext(ctx context.Context) WebAppAnomaliesTrafficDropsPtrOutput {
+	return o.ApplyTWithContext(ctx, func(_ context.Context, v WebAppAnomaliesTrafficDrops) *WebAppAnomaliesTrafficDrops {
+		return &v
+	}).(WebAppAnomaliesTrafficDropsPtrOutput)
+}
+
+// This setting is enabled (`true`) or disabled (`false`)
+func (o WebAppAnomaliesTrafficDropsOutput) Enabled() pulumi.BoolOutput {
+	return o.ApplyT(func(v WebAppAnomaliesTrafficDrops) bool { return v.Enabled }).(pulumi.BoolOutput)
+}
+
+// Dynatrace learns your typical application traffic over an observation period of one week.
+func (o WebAppAnomaliesTrafficDropsOutput) TrafficDrops() WebAppAnomaliesTrafficDropsTrafficDropsPtrOutput {
+	return o.ApplyT(func(v WebAppAnomaliesTrafficDrops) *WebAppAnomaliesTrafficDropsTrafficDrops { return v.TrafficDrops }).(WebAppAnomaliesTrafficDropsTrafficDropsPtrOutput)
+}
+
+type WebAppAnomaliesTrafficDropsPtrOutput struct{ *pulumi.OutputState }
+
+func (WebAppAnomaliesTrafficDropsPtrOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((**WebAppAnomaliesTrafficDrops)(nil)).Elem()
+}
+
+func (o WebAppAnomaliesTrafficDropsPtrOutput) ToWebAppAnomaliesTrafficDropsPtrOutput() WebAppAnomaliesTrafficDropsPtrOutput {
+	return o
+}
+
+func (o WebAppAnomaliesTrafficDropsPtrOutput) ToWebAppAnomaliesTrafficDropsPtrOutputWithContext(ctx context.Context) WebAppAnomaliesTrafficDropsPtrOutput {
+	return o
+}
+
+func (o WebAppAnomaliesTrafficDropsPtrOutput) Elem() WebAppAnomaliesTrafficDropsOutput {
+	return o.ApplyT(func(v *WebAppAnomaliesTrafficDrops) WebAppAnomaliesTrafficDrops {
+		if v != nil {
+			return *v
+		}
+		var ret WebAppAnomaliesTrafficDrops
+		return ret
+	}).(WebAppAnomaliesTrafficDropsOutput)
+}
+
+// This setting is enabled (`true`) or disabled (`false`)
+func (o WebAppAnomaliesTrafficDropsPtrOutput) Enabled() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v *WebAppAnomaliesTrafficDrops) *bool {
+		if v == nil {
+			return nil
+		}
+		return &v.Enabled
+	}).(pulumi.BoolPtrOutput)
+}
+
+// Dynatrace learns your typical application traffic over an observation period of one week.
+func (o WebAppAnomaliesTrafficDropsPtrOutput) TrafficDrops() WebAppAnomaliesTrafficDropsTrafficDropsPtrOutput {
+	return o.ApplyT(func(v *WebAppAnomaliesTrafficDrops) *WebAppAnomaliesTrafficDropsTrafficDrops {
+		if v == nil {
+			return nil
+		}
+		return v.TrafficDrops
+	}).(WebAppAnomaliesTrafficDropsTrafficDropsPtrOutput)
+}
+
+type WebAppAnomaliesTrafficDropsTrafficDrops struct {
+	// Minutes the observed traffic has to stay in abnormal state before alert
+	AbnormalStateAbnormalState float64 `pulumi:"abnormalStateAbnormalState"`
+	// Alert if the observed traffic is less than this percentage of the expected value
+	TrafficDropPercentage float64 `pulumi:"trafficDropPercentage"`
+}
+
+// WebAppAnomaliesTrafficDropsTrafficDropsInput is an input type that accepts WebAppAnomaliesTrafficDropsTrafficDropsArgs and WebAppAnomaliesTrafficDropsTrafficDropsOutput values.
+// You can construct a concrete instance of `WebAppAnomaliesTrafficDropsTrafficDropsInput` via:
+//
+//	WebAppAnomaliesTrafficDropsTrafficDropsArgs{...}
+type WebAppAnomaliesTrafficDropsTrafficDropsInput interface {
+	pulumi.Input
+
+	ToWebAppAnomaliesTrafficDropsTrafficDropsOutput() WebAppAnomaliesTrafficDropsTrafficDropsOutput
+	ToWebAppAnomaliesTrafficDropsTrafficDropsOutputWithContext(context.Context) WebAppAnomaliesTrafficDropsTrafficDropsOutput
+}
+
+type WebAppAnomaliesTrafficDropsTrafficDropsArgs struct {
+	// Minutes the observed traffic has to stay in abnormal state before alert
+	AbnormalStateAbnormalState pulumi.Float64Input `pulumi:"abnormalStateAbnormalState"`
+	// Alert if the observed traffic is less than this percentage of the expected value
+	TrafficDropPercentage pulumi.Float64Input `pulumi:"trafficDropPercentage"`
+}
+
+func (WebAppAnomaliesTrafficDropsTrafficDropsArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*WebAppAnomaliesTrafficDropsTrafficDrops)(nil)).Elem()
+}
+
+func (i WebAppAnomaliesTrafficDropsTrafficDropsArgs) ToWebAppAnomaliesTrafficDropsTrafficDropsOutput() WebAppAnomaliesTrafficDropsTrafficDropsOutput {
+	return i.ToWebAppAnomaliesTrafficDropsTrafficDropsOutputWithContext(context.Background())
+}
+
+func (i WebAppAnomaliesTrafficDropsTrafficDropsArgs) ToWebAppAnomaliesTrafficDropsTrafficDropsOutputWithContext(ctx context.Context) WebAppAnomaliesTrafficDropsTrafficDropsOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(WebAppAnomaliesTrafficDropsTrafficDropsOutput)
+}
+
+func (i WebAppAnomaliesTrafficDropsTrafficDropsArgs) ToWebAppAnomaliesTrafficDropsTrafficDropsPtrOutput() WebAppAnomaliesTrafficDropsTrafficDropsPtrOutput {
+	return i.ToWebAppAnomaliesTrafficDropsTrafficDropsPtrOutputWithContext(context.Background())
+}
+
+func (i WebAppAnomaliesTrafficDropsTrafficDropsArgs) ToWebAppAnomaliesTrafficDropsTrafficDropsPtrOutputWithContext(ctx context.Context) WebAppAnomaliesTrafficDropsTrafficDropsPtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(WebAppAnomaliesTrafficDropsTrafficDropsOutput).ToWebAppAnomaliesTrafficDropsTrafficDropsPtrOutputWithContext(ctx)
+}
+
+// WebAppAnomaliesTrafficDropsTrafficDropsPtrInput is an input type that accepts WebAppAnomaliesTrafficDropsTrafficDropsArgs, WebAppAnomaliesTrafficDropsTrafficDropsPtr and WebAppAnomaliesTrafficDropsTrafficDropsPtrOutput values.
+// You can construct a concrete instance of `WebAppAnomaliesTrafficDropsTrafficDropsPtrInput` via:
+//
+//	        WebAppAnomaliesTrafficDropsTrafficDropsArgs{...}
+//
+//	or:
+//
+//	        nil
+type WebAppAnomaliesTrafficDropsTrafficDropsPtrInput interface {
+	pulumi.Input
+
+	ToWebAppAnomaliesTrafficDropsTrafficDropsPtrOutput() WebAppAnomaliesTrafficDropsTrafficDropsPtrOutput
+	ToWebAppAnomaliesTrafficDropsTrafficDropsPtrOutputWithContext(context.Context) WebAppAnomaliesTrafficDropsTrafficDropsPtrOutput
+}
+
+type webAppAnomaliesTrafficDropsTrafficDropsPtrType WebAppAnomaliesTrafficDropsTrafficDropsArgs
+
+func WebAppAnomaliesTrafficDropsTrafficDropsPtr(v *WebAppAnomaliesTrafficDropsTrafficDropsArgs) WebAppAnomaliesTrafficDropsTrafficDropsPtrInput {
+	return (*webAppAnomaliesTrafficDropsTrafficDropsPtrType)(v)
+}
+
+func (*webAppAnomaliesTrafficDropsTrafficDropsPtrType) ElementType() reflect.Type {
+	return reflect.TypeOf((**WebAppAnomaliesTrafficDropsTrafficDrops)(nil)).Elem()
+}
+
+func (i *webAppAnomaliesTrafficDropsTrafficDropsPtrType) ToWebAppAnomaliesTrafficDropsTrafficDropsPtrOutput() WebAppAnomaliesTrafficDropsTrafficDropsPtrOutput {
+	return i.ToWebAppAnomaliesTrafficDropsTrafficDropsPtrOutputWithContext(context.Background())
+}
+
+func (i *webAppAnomaliesTrafficDropsTrafficDropsPtrType) ToWebAppAnomaliesTrafficDropsTrafficDropsPtrOutputWithContext(ctx context.Context) WebAppAnomaliesTrafficDropsTrafficDropsPtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(WebAppAnomaliesTrafficDropsTrafficDropsPtrOutput)
+}
+
+type WebAppAnomaliesTrafficDropsTrafficDropsOutput struct{ *pulumi.OutputState }
+
+func (WebAppAnomaliesTrafficDropsTrafficDropsOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*WebAppAnomaliesTrafficDropsTrafficDrops)(nil)).Elem()
+}
+
+func (o WebAppAnomaliesTrafficDropsTrafficDropsOutput) ToWebAppAnomaliesTrafficDropsTrafficDropsOutput() WebAppAnomaliesTrafficDropsTrafficDropsOutput {
+	return o
+}
+
+func (o WebAppAnomaliesTrafficDropsTrafficDropsOutput) ToWebAppAnomaliesTrafficDropsTrafficDropsOutputWithContext(ctx context.Context) WebAppAnomaliesTrafficDropsTrafficDropsOutput {
+	return o
+}
+
+func (o WebAppAnomaliesTrafficDropsTrafficDropsOutput) ToWebAppAnomaliesTrafficDropsTrafficDropsPtrOutput() WebAppAnomaliesTrafficDropsTrafficDropsPtrOutput {
+	return o.ToWebAppAnomaliesTrafficDropsTrafficDropsPtrOutputWithContext(context.Background())
+}
+
+func (o WebAppAnomaliesTrafficDropsTrafficDropsOutput) ToWebAppAnomaliesTrafficDropsTrafficDropsPtrOutputWithContext(ctx context.Context) WebAppAnomaliesTrafficDropsTrafficDropsPtrOutput {
+	return o.ApplyTWithContext(ctx, func(_ context.Context, v WebAppAnomaliesTrafficDropsTrafficDrops) *WebAppAnomaliesTrafficDropsTrafficDrops {
+		return &v
+	}).(WebAppAnomaliesTrafficDropsTrafficDropsPtrOutput)
+}
+
+// Minutes the observed traffic has to stay in abnormal state before alert
+func (o WebAppAnomaliesTrafficDropsTrafficDropsOutput) AbnormalStateAbnormalState() pulumi.Float64Output {
+	return o.ApplyT(func(v WebAppAnomaliesTrafficDropsTrafficDrops) float64 { return v.AbnormalStateAbnormalState }).(pulumi.Float64Output)
+}
+
+// Alert if the observed traffic is less than this percentage of the expected value
+func (o WebAppAnomaliesTrafficDropsTrafficDropsOutput) TrafficDropPercentage() pulumi.Float64Output {
+	return o.ApplyT(func(v WebAppAnomaliesTrafficDropsTrafficDrops) float64 { return v.TrafficDropPercentage }).(pulumi.Float64Output)
+}
+
+type WebAppAnomaliesTrafficDropsTrafficDropsPtrOutput struct{ *pulumi.OutputState }
+
+func (WebAppAnomaliesTrafficDropsTrafficDropsPtrOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((**WebAppAnomaliesTrafficDropsTrafficDrops)(nil)).Elem()
+}
+
+func (o WebAppAnomaliesTrafficDropsTrafficDropsPtrOutput) ToWebAppAnomaliesTrafficDropsTrafficDropsPtrOutput() WebAppAnomaliesTrafficDropsTrafficDropsPtrOutput {
+	return o
+}
+
+func (o WebAppAnomaliesTrafficDropsTrafficDropsPtrOutput) ToWebAppAnomaliesTrafficDropsTrafficDropsPtrOutputWithContext(ctx context.Context) WebAppAnomaliesTrafficDropsTrafficDropsPtrOutput {
+	return o
+}
+
+func (o WebAppAnomaliesTrafficDropsTrafficDropsPtrOutput) Elem() WebAppAnomaliesTrafficDropsTrafficDropsOutput {
+	return o.ApplyT(func(v *WebAppAnomaliesTrafficDropsTrafficDrops) WebAppAnomaliesTrafficDropsTrafficDrops {
+		if v != nil {
+			return *v
+		}
+		var ret WebAppAnomaliesTrafficDropsTrafficDrops
+		return ret
+	}).(WebAppAnomaliesTrafficDropsTrafficDropsOutput)
+}
+
+// Minutes the observed traffic has to stay in abnormal state before alert
+func (o WebAppAnomaliesTrafficDropsTrafficDropsPtrOutput) AbnormalStateAbnormalState() pulumi.Float64PtrOutput {
+	return o.ApplyT(func(v *WebAppAnomaliesTrafficDropsTrafficDrops) *float64 {
+		if v == nil {
+			return nil
+		}
+		return &v.AbnormalStateAbnormalState
+	}).(pulumi.Float64PtrOutput)
+}
+
+// Alert if the observed traffic is less than this percentage of the expected value
+func (o WebAppAnomaliesTrafficDropsTrafficDropsPtrOutput) TrafficDropPercentage() pulumi.Float64PtrOutput {
+	return o.ApplyT(func(v *WebAppAnomaliesTrafficDropsTrafficDrops) *float64 {
+		if v == nil {
+			return nil
+		}
+		return &v.TrafficDropPercentage
+	}).(pulumi.Float64PtrOutput)
+}
+
+type WebAppAnomaliesTrafficSpikes struct {
+	// This setting is enabled (`true`) or disabled (`false`)
+	Enabled bool `pulumi:"enabled"`
+	// Dynatrace learns your typical application traffic over an observation period of one week.
+	TrafficSpikes *WebAppAnomaliesTrafficSpikesTrafficSpikes `pulumi:"trafficSpikes"`
+}
+
+// WebAppAnomaliesTrafficSpikesInput is an input type that accepts WebAppAnomaliesTrafficSpikesArgs and WebAppAnomaliesTrafficSpikesOutput values.
+// You can construct a concrete instance of `WebAppAnomaliesTrafficSpikesInput` via:
+//
+//	WebAppAnomaliesTrafficSpikesArgs{...}
+type WebAppAnomaliesTrafficSpikesInput interface {
+	pulumi.Input
+
+	ToWebAppAnomaliesTrafficSpikesOutput() WebAppAnomaliesTrafficSpikesOutput
+	ToWebAppAnomaliesTrafficSpikesOutputWithContext(context.Context) WebAppAnomaliesTrafficSpikesOutput
+}
+
+type WebAppAnomaliesTrafficSpikesArgs struct {
+	// This setting is enabled (`true`) or disabled (`false`)
+	Enabled pulumi.BoolInput `pulumi:"enabled"`
+	// Dynatrace learns your typical application traffic over an observation period of one week.
+	TrafficSpikes WebAppAnomaliesTrafficSpikesTrafficSpikesPtrInput `pulumi:"trafficSpikes"`
+}
+
+func (WebAppAnomaliesTrafficSpikesArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*WebAppAnomaliesTrafficSpikes)(nil)).Elem()
+}
+
+func (i WebAppAnomaliesTrafficSpikesArgs) ToWebAppAnomaliesTrafficSpikesOutput() WebAppAnomaliesTrafficSpikesOutput {
+	return i.ToWebAppAnomaliesTrafficSpikesOutputWithContext(context.Background())
+}
+
+func (i WebAppAnomaliesTrafficSpikesArgs) ToWebAppAnomaliesTrafficSpikesOutputWithContext(ctx context.Context) WebAppAnomaliesTrafficSpikesOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(WebAppAnomaliesTrafficSpikesOutput)
+}
+
+func (i WebAppAnomaliesTrafficSpikesArgs) ToWebAppAnomaliesTrafficSpikesPtrOutput() WebAppAnomaliesTrafficSpikesPtrOutput {
+	return i.ToWebAppAnomaliesTrafficSpikesPtrOutputWithContext(context.Background())
+}
+
+func (i WebAppAnomaliesTrafficSpikesArgs) ToWebAppAnomaliesTrafficSpikesPtrOutputWithContext(ctx context.Context) WebAppAnomaliesTrafficSpikesPtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(WebAppAnomaliesTrafficSpikesOutput).ToWebAppAnomaliesTrafficSpikesPtrOutputWithContext(ctx)
+}
+
+// WebAppAnomaliesTrafficSpikesPtrInput is an input type that accepts WebAppAnomaliesTrafficSpikesArgs, WebAppAnomaliesTrafficSpikesPtr and WebAppAnomaliesTrafficSpikesPtrOutput values.
+// You can construct a concrete instance of `WebAppAnomaliesTrafficSpikesPtrInput` via:
+//
+//	        WebAppAnomaliesTrafficSpikesArgs{...}
+//
+//	or:
+//
+//	        nil
+type WebAppAnomaliesTrafficSpikesPtrInput interface {
+	pulumi.Input
+
+	ToWebAppAnomaliesTrafficSpikesPtrOutput() WebAppAnomaliesTrafficSpikesPtrOutput
+	ToWebAppAnomaliesTrafficSpikesPtrOutputWithContext(context.Context) WebAppAnomaliesTrafficSpikesPtrOutput
+}
+
+type webAppAnomaliesTrafficSpikesPtrType WebAppAnomaliesTrafficSpikesArgs
+
+func WebAppAnomaliesTrafficSpikesPtr(v *WebAppAnomaliesTrafficSpikesArgs) WebAppAnomaliesTrafficSpikesPtrInput {
+	return (*webAppAnomaliesTrafficSpikesPtrType)(v)
+}
+
+func (*webAppAnomaliesTrafficSpikesPtrType) ElementType() reflect.Type {
+	return reflect.TypeOf((**WebAppAnomaliesTrafficSpikes)(nil)).Elem()
+}
+
+func (i *webAppAnomaliesTrafficSpikesPtrType) ToWebAppAnomaliesTrafficSpikesPtrOutput() WebAppAnomaliesTrafficSpikesPtrOutput {
+	return i.ToWebAppAnomaliesTrafficSpikesPtrOutputWithContext(context.Background())
+}
+
+func (i *webAppAnomaliesTrafficSpikesPtrType) ToWebAppAnomaliesTrafficSpikesPtrOutputWithContext(ctx context.Context) WebAppAnomaliesTrafficSpikesPtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(WebAppAnomaliesTrafficSpikesPtrOutput)
+}
+
+type WebAppAnomaliesTrafficSpikesOutput struct{ *pulumi.OutputState }
+
+func (WebAppAnomaliesTrafficSpikesOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*WebAppAnomaliesTrafficSpikes)(nil)).Elem()
+}
+
+func (o WebAppAnomaliesTrafficSpikesOutput) ToWebAppAnomaliesTrafficSpikesOutput() WebAppAnomaliesTrafficSpikesOutput {
+	return o
+}
+
+func (o WebAppAnomaliesTrafficSpikesOutput) ToWebAppAnomaliesTrafficSpikesOutputWithContext(ctx context.Context) WebAppAnomaliesTrafficSpikesOutput {
+	return o
+}
+
+func (o WebAppAnomaliesTrafficSpikesOutput) ToWebAppAnomaliesTrafficSpikesPtrOutput() WebAppAnomaliesTrafficSpikesPtrOutput {
+	return o.ToWebAppAnomaliesTrafficSpikesPtrOutputWithContext(context.Background())
+}
+
+func (o WebAppAnomaliesTrafficSpikesOutput) ToWebAppAnomaliesTrafficSpikesPtrOutputWithContext(ctx context.Context) WebAppAnomaliesTrafficSpikesPtrOutput {
+	return o.ApplyTWithContext(ctx, func(_ context.Context, v WebAppAnomaliesTrafficSpikes) *WebAppAnomaliesTrafficSpikes {
+		return &v
+	}).(WebAppAnomaliesTrafficSpikesPtrOutput)
+}
+
+// This setting is enabled (`true`) or disabled (`false`)
+func (o WebAppAnomaliesTrafficSpikesOutput) Enabled() pulumi.BoolOutput {
+	return o.ApplyT(func(v WebAppAnomaliesTrafficSpikes) bool { return v.Enabled }).(pulumi.BoolOutput)
+}
+
+// Dynatrace learns your typical application traffic over an observation period of one week.
+func (o WebAppAnomaliesTrafficSpikesOutput) TrafficSpikes() WebAppAnomaliesTrafficSpikesTrafficSpikesPtrOutput {
+	return o.ApplyT(func(v WebAppAnomaliesTrafficSpikes) *WebAppAnomaliesTrafficSpikesTrafficSpikes {
+		return v.TrafficSpikes
+	}).(WebAppAnomaliesTrafficSpikesTrafficSpikesPtrOutput)
+}
+
+type WebAppAnomaliesTrafficSpikesPtrOutput struct{ *pulumi.OutputState }
+
+func (WebAppAnomaliesTrafficSpikesPtrOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((**WebAppAnomaliesTrafficSpikes)(nil)).Elem()
+}
+
+func (o WebAppAnomaliesTrafficSpikesPtrOutput) ToWebAppAnomaliesTrafficSpikesPtrOutput() WebAppAnomaliesTrafficSpikesPtrOutput {
+	return o
+}
+
+func (o WebAppAnomaliesTrafficSpikesPtrOutput) ToWebAppAnomaliesTrafficSpikesPtrOutputWithContext(ctx context.Context) WebAppAnomaliesTrafficSpikesPtrOutput {
+	return o
+}
+
+func (o WebAppAnomaliesTrafficSpikesPtrOutput) Elem() WebAppAnomaliesTrafficSpikesOutput {
+	return o.ApplyT(func(v *WebAppAnomaliesTrafficSpikes) WebAppAnomaliesTrafficSpikes {
+		if v != nil {
+			return *v
+		}
+		var ret WebAppAnomaliesTrafficSpikes
+		return ret
+	}).(WebAppAnomaliesTrafficSpikesOutput)
+}
+
+// This setting is enabled (`true`) or disabled (`false`)
+func (o WebAppAnomaliesTrafficSpikesPtrOutput) Enabled() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v *WebAppAnomaliesTrafficSpikes) *bool {
+		if v == nil {
+			return nil
+		}
+		return &v.Enabled
+	}).(pulumi.BoolPtrOutput)
+}
+
+// Dynatrace learns your typical application traffic over an observation period of one week.
+func (o WebAppAnomaliesTrafficSpikesPtrOutput) TrafficSpikes() WebAppAnomaliesTrafficSpikesTrafficSpikesPtrOutput {
+	return o.ApplyT(func(v *WebAppAnomaliesTrafficSpikes) *WebAppAnomaliesTrafficSpikesTrafficSpikes {
+		if v == nil {
+			return nil
+		}
+		return v.TrafficSpikes
+	}).(WebAppAnomaliesTrafficSpikesTrafficSpikesPtrOutput)
+}
+
+type WebAppAnomaliesTrafficSpikesTrafficSpikes struct {
+	// Minutes an application has to stay in abnormal state before alert
+	MinutesAbnormalState float64 `pulumi:"minutesAbnormalState"`
+	// Alert if the observed traffic is more than this percentage of the expected value
+	TrafficSpikePercentage float64 `pulumi:"trafficSpikePercentage"`
+}
+
+// WebAppAnomaliesTrafficSpikesTrafficSpikesInput is an input type that accepts WebAppAnomaliesTrafficSpikesTrafficSpikesArgs and WebAppAnomaliesTrafficSpikesTrafficSpikesOutput values.
+// You can construct a concrete instance of `WebAppAnomaliesTrafficSpikesTrafficSpikesInput` via:
+//
+//	WebAppAnomaliesTrafficSpikesTrafficSpikesArgs{...}
+type WebAppAnomaliesTrafficSpikesTrafficSpikesInput interface {
+	pulumi.Input
+
+	ToWebAppAnomaliesTrafficSpikesTrafficSpikesOutput() WebAppAnomaliesTrafficSpikesTrafficSpikesOutput
+	ToWebAppAnomaliesTrafficSpikesTrafficSpikesOutputWithContext(context.Context) WebAppAnomaliesTrafficSpikesTrafficSpikesOutput
+}
+
+type WebAppAnomaliesTrafficSpikesTrafficSpikesArgs struct {
+	// Minutes an application has to stay in abnormal state before alert
+	MinutesAbnormalState pulumi.Float64Input `pulumi:"minutesAbnormalState"`
+	// Alert if the observed traffic is more than this percentage of the expected value
+	TrafficSpikePercentage pulumi.Float64Input `pulumi:"trafficSpikePercentage"`
+}
+
+func (WebAppAnomaliesTrafficSpikesTrafficSpikesArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*WebAppAnomaliesTrafficSpikesTrafficSpikes)(nil)).Elem()
+}
+
+func (i WebAppAnomaliesTrafficSpikesTrafficSpikesArgs) ToWebAppAnomaliesTrafficSpikesTrafficSpikesOutput() WebAppAnomaliesTrafficSpikesTrafficSpikesOutput {
+	return i.ToWebAppAnomaliesTrafficSpikesTrafficSpikesOutputWithContext(context.Background())
+}
+
+func (i WebAppAnomaliesTrafficSpikesTrafficSpikesArgs) ToWebAppAnomaliesTrafficSpikesTrafficSpikesOutputWithContext(ctx context.Context) WebAppAnomaliesTrafficSpikesTrafficSpikesOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(WebAppAnomaliesTrafficSpikesTrafficSpikesOutput)
+}
+
+func (i WebAppAnomaliesTrafficSpikesTrafficSpikesArgs) ToWebAppAnomaliesTrafficSpikesTrafficSpikesPtrOutput() WebAppAnomaliesTrafficSpikesTrafficSpikesPtrOutput {
+	return i.ToWebAppAnomaliesTrafficSpikesTrafficSpikesPtrOutputWithContext(context.Background())
+}
+
+func (i WebAppAnomaliesTrafficSpikesTrafficSpikesArgs) ToWebAppAnomaliesTrafficSpikesTrafficSpikesPtrOutputWithContext(ctx context.Context) WebAppAnomaliesTrafficSpikesTrafficSpikesPtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(WebAppAnomaliesTrafficSpikesTrafficSpikesOutput).ToWebAppAnomaliesTrafficSpikesTrafficSpikesPtrOutputWithContext(ctx)
+}
+
+// WebAppAnomaliesTrafficSpikesTrafficSpikesPtrInput is an input type that accepts WebAppAnomaliesTrafficSpikesTrafficSpikesArgs, WebAppAnomaliesTrafficSpikesTrafficSpikesPtr and WebAppAnomaliesTrafficSpikesTrafficSpikesPtrOutput values.
+// You can construct a concrete instance of `WebAppAnomaliesTrafficSpikesTrafficSpikesPtrInput` via:
+//
+//	        WebAppAnomaliesTrafficSpikesTrafficSpikesArgs{...}
+//
+//	or:
+//
+//	        nil
+type WebAppAnomaliesTrafficSpikesTrafficSpikesPtrInput interface {
+	pulumi.Input
+
+	ToWebAppAnomaliesTrafficSpikesTrafficSpikesPtrOutput() WebAppAnomaliesTrafficSpikesTrafficSpikesPtrOutput
+	ToWebAppAnomaliesTrafficSpikesTrafficSpikesPtrOutputWithContext(context.Context) WebAppAnomaliesTrafficSpikesTrafficSpikesPtrOutput
+}
+
+type webAppAnomaliesTrafficSpikesTrafficSpikesPtrType WebAppAnomaliesTrafficSpikesTrafficSpikesArgs
+
+func WebAppAnomaliesTrafficSpikesTrafficSpikesPtr(v *WebAppAnomaliesTrafficSpikesTrafficSpikesArgs) WebAppAnomaliesTrafficSpikesTrafficSpikesPtrInput {
+	return (*webAppAnomaliesTrafficSpikesTrafficSpikesPtrType)(v)
+}
+
+func (*webAppAnomaliesTrafficSpikesTrafficSpikesPtrType) ElementType() reflect.Type {
+	return reflect.TypeOf((**WebAppAnomaliesTrafficSpikesTrafficSpikes)(nil)).Elem()
+}
+
+func (i *webAppAnomaliesTrafficSpikesTrafficSpikesPtrType) ToWebAppAnomaliesTrafficSpikesTrafficSpikesPtrOutput() WebAppAnomaliesTrafficSpikesTrafficSpikesPtrOutput {
+	return i.ToWebAppAnomaliesTrafficSpikesTrafficSpikesPtrOutputWithContext(context.Background())
+}
+
+func (i *webAppAnomaliesTrafficSpikesTrafficSpikesPtrType) ToWebAppAnomaliesTrafficSpikesTrafficSpikesPtrOutputWithContext(ctx context.Context) WebAppAnomaliesTrafficSpikesTrafficSpikesPtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(WebAppAnomaliesTrafficSpikesTrafficSpikesPtrOutput)
+}
+
+type WebAppAnomaliesTrafficSpikesTrafficSpikesOutput struct{ *pulumi.OutputState }
+
+func (WebAppAnomaliesTrafficSpikesTrafficSpikesOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*WebAppAnomaliesTrafficSpikesTrafficSpikes)(nil)).Elem()
+}
+
+func (o WebAppAnomaliesTrafficSpikesTrafficSpikesOutput) ToWebAppAnomaliesTrafficSpikesTrafficSpikesOutput() WebAppAnomaliesTrafficSpikesTrafficSpikesOutput {
+	return o
+}
+
+func (o WebAppAnomaliesTrafficSpikesTrafficSpikesOutput) ToWebAppAnomaliesTrafficSpikesTrafficSpikesOutputWithContext(ctx context.Context) WebAppAnomaliesTrafficSpikesTrafficSpikesOutput {
+	return o
+}
+
+func (o WebAppAnomaliesTrafficSpikesTrafficSpikesOutput) ToWebAppAnomaliesTrafficSpikesTrafficSpikesPtrOutput() WebAppAnomaliesTrafficSpikesTrafficSpikesPtrOutput {
+	return o.ToWebAppAnomaliesTrafficSpikesTrafficSpikesPtrOutputWithContext(context.Background())
+}
+
+func (o WebAppAnomaliesTrafficSpikesTrafficSpikesOutput) ToWebAppAnomaliesTrafficSpikesTrafficSpikesPtrOutputWithContext(ctx context.Context) WebAppAnomaliesTrafficSpikesTrafficSpikesPtrOutput {
+	return o.ApplyTWithContext(ctx, func(_ context.Context, v WebAppAnomaliesTrafficSpikesTrafficSpikes) *WebAppAnomaliesTrafficSpikesTrafficSpikes {
+		return &v
+	}).(WebAppAnomaliesTrafficSpikesTrafficSpikesPtrOutput)
+}
+
+// Minutes an application has to stay in abnormal state before alert
+func (o WebAppAnomaliesTrafficSpikesTrafficSpikesOutput) MinutesAbnormalState() pulumi.Float64Output {
+	return o.ApplyT(func(v WebAppAnomaliesTrafficSpikesTrafficSpikes) float64 { return v.MinutesAbnormalState }).(pulumi.Float64Output)
+}
+
+// Alert if the observed traffic is more than this percentage of the expected value
+func (o WebAppAnomaliesTrafficSpikesTrafficSpikesOutput) TrafficSpikePercentage() pulumi.Float64Output {
+	return o.ApplyT(func(v WebAppAnomaliesTrafficSpikesTrafficSpikes) float64 { return v.TrafficSpikePercentage }).(pulumi.Float64Output)
+}
+
+type WebAppAnomaliesTrafficSpikesTrafficSpikesPtrOutput struct{ *pulumi.OutputState }
+
+func (WebAppAnomaliesTrafficSpikesTrafficSpikesPtrOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((**WebAppAnomaliesTrafficSpikesTrafficSpikes)(nil)).Elem()
+}
+
+func (o WebAppAnomaliesTrafficSpikesTrafficSpikesPtrOutput) ToWebAppAnomaliesTrafficSpikesTrafficSpikesPtrOutput() WebAppAnomaliesTrafficSpikesTrafficSpikesPtrOutput {
+	return o
+}
+
+func (o WebAppAnomaliesTrafficSpikesTrafficSpikesPtrOutput) ToWebAppAnomaliesTrafficSpikesTrafficSpikesPtrOutputWithContext(ctx context.Context) WebAppAnomaliesTrafficSpikesTrafficSpikesPtrOutput {
+	return o
+}
+
+func (o WebAppAnomaliesTrafficSpikesTrafficSpikesPtrOutput) Elem() WebAppAnomaliesTrafficSpikesTrafficSpikesOutput {
+	return o.ApplyT(func(v *WebAppAnomaliesTrafficSpikesTrafficSpikes) WebAppAnomaliesTrafficSpikesTrafficSpikes {
+		if v != nil {
+			return *v
+		}
+		var ret WebAppAnomaliesTrafficSpikesTrafficSpikes
+		return ret
+	}).(WebAppAnomaliesTrafficSpikesTrafficSpikesOutput)
+}
+
+// Minutes an application has to stay in abnormal state before alert
+func (o WebAppAnomaliesTrafficSpikesTrafficSpikesPtrOutput) MinutesAbnormalState() pulumi.Float64PtrOutput {
+	return o.ApplyT(func(v *WebAppAnomaliesTrafficSpikesTrafficSpikes) *float64 {
+		if v == nil {
+			return nil
+		}
+		return &v.MinutesAbnormalState
+	}).(pulumi.Float64PtrOutput)
+}
+
+// Alert if the observed traffic is more than this percentage of the expected value
+func (o WebAppAnomaliesTrafficSpikesTrafficSpikesPtrOutput) TrafficSpikePercentage() pulumi.Float64PtrOutput {
+	return o.ApplyT(func(v *WebAppAnomaliesTrafficSpikesTrafficSpikes) *float64 {
+		if v == nil {
+			return nil
+		}
+		return &v.TrafficSpikePercentage
+	}).(pulumi.Float64PtrOutput)
+}
+
+type WebAppAutoInjectionCacheControlHeaders struct {
+	// [How to ensure timely configuration updates for automatic injection?](https://dt-url.net/m9039ea)
+	CacheControlHeaders bool `pulumi:"cacheControlHeaders"`
+}
+
+// WebAppAutoInjectionCacheControlHeadersInput is an input type that accepts WebAppAutoInjectionCacheControlHeadersArgs and WebAppAutoInjectionCacheControlHeadersOutput values.
+// You can construct a concrete instance of `WebAppAutoInjectionCacheControlHeadersInput` via:
+//
+//	WebAppAutoInjectionCacheControlHeadersArgs{...}
+type WebAppAutoInjectionCacheControlHeadersInput interface {
+	pulumi.Input
+
+	ToWebAppAutoInjectionCacheControlHeadersOutput() WebAppAutoInjectionCacheControlHeadersOutput
+	ToWebAppAutoInjectionCacheControlHeadersOutputWithContext(context.Context) WebAppAutoInjectionCacheControlHeadersOutput
+}
+
+type WebAppAutoInjectionCacheControlHeadersArgs struct {
+	// [How to ensure timely configuration updates for automatic injection?](https://dt-url.net/m9039ea)
+	CacheControlHeaders pulumi.BoolInput `pulumi:"cacheControlHeaders"`
+}
+
+func (WebAppAutoInjectionCacheControlHeadersArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*WebAppAutoInjectionCacheControlHeaders)(nil)).Elem()
+}
+
+func (i WebAppAutoInjectionCacheControlHeadersArgs) ToWebAppAutoInjectionCacheControlHeadersOutput() WebAppAutoInjectionCacheControlHeadersOutput {
+	return i.ToWebAppAutoInjectionCacheControlHeadersOutputWithContext(context.Background())
+}
+
+func (i WebAppAutoInjectionCacheControlHeadersArgs) ToWebAppAutoInjectionCacheControlHeadersOutputWithContext(ctx context.Context) WebAppAutoInjectionCacheControlHeadersOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(WebAppAutoInjectionCacheControlHeadersOutput)
+}
+
+func (i WebAppAutoInjectionCacheControlHeadersArgs) ToWebAppAutoInjectionCacheControlHeadersPtrOutput() WebAppAutoInjectionCacheControlHeadersPtrOutput {
+	return i.ToWebAppAutoInjectionCacheControlHeadersPtrOutputWithContext(context.Background())
+}
+
+func (i WebAppAutoInjectionCacheControlHeadersArgs) ToWebAppAutoInjectionCacheControlHeadersPtrOutputWithContext(ctx context.Context) WebAppAutoInjectionCacheControlHeadersPtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(WebAppAutoInjectionCacheControlHeadersOutput).ToWebAppAutoInjectionCacheControlHeadersPtrOutputWithContext(ctx)
+}
+
+// WebAppAutoInjectionCacheControlHeadersPtrInput is an input type that accepts WebAppAutoInjectionCacheControlHeadersArgs, WebAppAutoInjectionCacheControlHeadersPtr and WebAppAutoInjectionCacheControlHeadersPtrOutput values.
+// You can construct a concrete instance of `WebAppAutoInjectionCacheControlHeadersPtrInput` via:
+//
+//	        WebAppAutoInjectionCacheControlHeadersArgs{...}
+//
+//	or:
+//
+//	        nil
+type WebAppAutoInjectionCacheControlHeadersPtrInput interface {
+	pulumi.Input
+
+	ToWebAppAutoInjectionCacheControlHeadersPtrOutput() WebAppAutoInjectionCacheControlHeadersPtrOutput
+	ToWebAppAutoInjectionCacheControlHeadersPtrOutputWithContext(context.Context) WebAppAutoInjectionCacheControlHeadersPtrOutput
+}
+
+type webAppAutoInjectionCacheControlHeadersPtrType WebAppAutoInjectionCacheControlHeadersArgs
+
+func WebAppAutoInjectionCacheControlHeadersPtr(v *WebAppAutoInjectionCacheControlHeadersArgs) WebAppAutoInjectionCacheControlHeadersPtrInput {
+	return (*webAppAutoInjectionCacheControlHeadersPtrType)(v)
+}
+
+func (*webAppAutoInjectionCacheControlHeadersPtrType) ElementType() reflect.Type {
+	return reflect.TypeOf((**WebAppAutoInjectionCacheControlHeaders)(nil)).Elem()
+}
+
+func (i *webAppAutoInjectionCacheControlHeadersPtrType) ToWebAppAutoInjectionCacheControlHeadersPtrOutput() WebAppAutoInjectionCacheControlHeadersPtrOutput {
+	return i.ToWebAppAutoInjectionCacheControlHeadersPtrOutputWithContext(context.Background())
+}
+
+func (i *webAppAutoInjectionCacheControlHeadersPtrType) ToWebAppAutoInjectionCacheControlHeadersPtrOutputWithContext(ctx context.Context) WebAppAutoInjectionCacheControlHeadersPtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(WebAppAutoInjectionCacheControlHeadersPtrOutput)
+}
+
+type WebAppAutoInjectionCacheControlHeadersOutput struct{ *pulumi.OutputState }
+
+func (WebAppAutoInjectionCacheControlHeadersOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*WebAppAutoInjectionCacheControlHeaders)(nil)).Elem()
+}
+
+func (o WebAppAutoInjectionCacheControlHeadersOutput) ToWebAppAutoInjectionCacheControlHeadersOutput() WebAppAutoInjectionCacheControlHeadersOutput {
+	return o
+}
+
+func (o WebAppAutoInjectionCacheControlHeadersOutput) ToWebAppAutoInjectionCacheControlHeadersOutputWithContext(ctx context.Context) WebAppAutoInjectionCacheControlHeadersOutput {
+	return o
+}
+
+func (o WebAppAutoInjectionCacheControlHeadersOutput) ToWebAppAutoInjectionCacheControlHeadersPtrOutput() WebAppAutoInjectionCacheControlHeadersPtrOutput {
+	return o.ToWebAppAutoInjectionCacheControlHeadersPtrOutputWithContext(context.Background())
+}
+
+func (o WebAppAutoInjectionCacheControlHeadersOutput) ToWebAppAutoInjectionCacheControlHeadersPtrOutputWithContext(ctx context.Context) WebAppAutoInjectionCacheControlHeadersPtrOutput {
+	return o.ApplyTWithContext(ctx, func(_ context.Context, v WebAppAutoInjectionCacheControlHeaders) *WebAppAutoInjectionCacheControlHeaders {
+		return &v
+	}).(WebAppAutoInjectionCacheControlHeadersPtrOutput)
+}
+
+// [How to ensure timely configuration updates for automatic injection?](https://dt-url.net/m9039ea)
+func (o WebAppAutoInjectionCacheControlHeadersOutput) CacheControlHeaders() pulumi.BoolOutput {
+	return o.ApplyT(func(v WebAppAutoInjectionCacheControlHeaders) bool { return v.CacheControlHeaders }).(pulumi.BoolOutput)
+}
+
+type WebAppAutoInjectionCacheControlHeadersPtrOutput struct{ *pulumi.OutputState }
+
+func (WebAppAutoInjectionCacheControlHeadersPtrOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((**WebAppAutoInjectionCacheControlHeaders)(nil)).Elem()
+}
+
+func (o WebAppAutoInjectionCacheControlHeadersPtrOutput) ToWebAppAutoInjectionCacheControlHeadersPtrOutput() WebAppAutoInjectionCacheControlHeadersPtrOutput {
+	return o
+}
+
+func (o WebAppAutoInjectionCacheControlHeadersPtrOutput) ToWebAppAutoInjectionCacheControlHeadersPtrOutputWithContext(ctx context.Context) WebAppAutoInjectionCacheControlHeadersPtrOutput {
+	return o
+}
+
+func (o WebAppAutoInjectionCacheControlHeadersPtrOutput) Elem() WebAppAutoInjectionCacheControlHeadersOutput {
+	return o.ApplyT(func(v *WebAppAutoInjectionCacheControlHeaders) WebAppAutoInjectionCacheControlHeaders {
+		if v != nil {
+			return *v
+		}
+		var ret WebAppAutoInjectionCacheControlHeaders
+		return ret
+	}).(WebAppAutoInjectionCacheControlHeadersOutput)
+}
+
+// [How to ensure timely configuration updates for automatic injection?](https://dt-url.net/m9039ea)
+func (o WebAppAutoInjectionCacheControlHeadersPtrOutput) CacheControlHeaders() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v *WebAppAutoInjectionCacheControlHeaders) *bool {
+		if v == nil {
+			return nil
+		}
+		return &v.CacheControlHeaders
+	}).(pulumi.BoolPtrOutput)
+}
+
+type WebAppAutoInjectionMonitoringCodeSourceSection struct {
+	// Real User Monitoring code source
+	CodeSource string `pulumi:"codeSource"`
+	// Specify the source path for placement of your application's custom JavaScript library file. By default, this path is set to the root directory of your web server. A custom source path may be necessary if your server operates behind a firewall.
+	MonitoringCodePath *string `pulumi:"monitoringCodePath"`
+}
+
+// WebAppAutoInjectionMonitoringCodeSourceSectionInput is an input type that accepts WebAppAutoInjectionMonitoringCodeSourceSectionArgs and WebAppAutoInjectionMonitoringCodeSourceSectionOutput values.
+// You can construct a concrete instance of `WebAppAutoInjectionMonitoringCodeSourceSectionInput` via:
+//
+//	WebAppAutoInjectionMonitoringCodeSourceSectionArgs{...}
+type WebAppAutoInjectionMonitoringCodeSourceSectionInput interface {
+	pulumi.Input
+
+	ToWebAppAutoInjectionMonitoringCodeSourceSectionOutput() WebAppAutoInjectionMonitoringCodeSourceSectionOutput
+	ToWebAppAutoInjectionMonitoringCodeSourceSectionOutputWithContext(context.Context) WebAppAutoInjectionMonitoringCodeSourceSectionOutput
+}
+
+type WebAppAutoInjectionMonitoringCodeSourceSectionArgs struct {
+	// Real User Monitoring code source
+	CodeSource pulumi.StringInput `pulumi:"codeSource"`
+	// Specify the source path for placement of your application's custom JavaScript library file. By default, this path is set to the root directory of your web server. A custom source path may be necessary if your server operates behind a firewall.
+	MonitoringCodePath pulumi.StringPtrInput `pulumi:"monitoringCodePath"`
+}
+
+func (WebAppAutoInjectionMonitoringCodeSourceSectionArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*WebAppAutoInjectionMonitoringCodeSourceSection)(nil)).Elem()
+}
+
+func (i WebAppAutoInjectionMonitoringCodeSourceSectionArgs) ToWebAppAutoInjectionMonitoringCodeSourceSectionOutput() WebAppAutoInjectionMonitoringCodeSourceSectionOutput {
+	return i.ToWebAppAutoInjectionMonitoringCodeSourceSectionOutputWithContext(context.Background())
+}
+
+func (i WebAppAutoInjectionMonitoringCodeSourceSectionArgs) ToWebAppAutoInjectionMonitoringCodeSourceSectionOutputWithContext(ctx context.Context) WebAppAutoInjectionMonitoringCodeSourceSectionOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(WebAppAutoInjectionMonitoringCodeSourceSectionOutput)
+}
+
+func (i WebAppAutoInjectionMonitoringCodeSourceSectionArgs) ToWebAppAutoInjectionMonitoringCodeSourceSectionPtrOutput() WebAppAutoInjectionMonitoringCodeSourceSectionPtrOutput {
+	return i.ToWebAppAutoInjectionMonitoringCodeSourceSectionPtrOutputWithContext(context.Background())
+}
+
+func (i WebAppAutoInjectionMonitoringCodeSourceSectionArgs) ToWebAppAutoInjectionMonitoringCodeSourceSectionPtrOutputWithContext(ctx context.Context) WebAppAutoInjectionMonitoringCodeSourceSectionPtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(WebAppAutoInjectionMonitoringCodeSourceSectionOutput).ToWebAppAutoInjectionMonitoringCodeSourceSectionPtrOutputWithContext(ctx)
+}
+
+// WebAppAutoInjectionMonitoringCodeSourceSectionPtrInput is an input type that accepts WebAppAutoInjectionMonitoringCodeSourceSectionArgs, WebAppAutoInjectionMonitoringCodeSourceSectionPtr and WebAppAutoInjectionMonitoringCodeSourceSectionPtrOutput values.
+// You can construct a concrete instance of `WebAppAutoInjectionMonitoringCodeSourceSectionPtrInput` via:
+//
+//	        WebAppAutoInjectionMonitoringCodeSourceSectionArgs{...}
+//
+//	or:
+//
+//	        nil
+type WebAppAutoInjectionMonitoringCodeSourceSectionPtrInput interface {
+	pulumi.Input
+
+	ToWebAppAutoInjectionMonitoringCodeSourceSectionPtrOutput() WebAppAutoInjectionMonitoringCodeSourceSectionPtrOutput
+	ToWebAppAutoInjectionMonitoringCodeSourceSectionPtrOutputWithContext(context.Context) WebAppAutoInjectionMonitoringCodeSourceSectionPtrOutput
+}
+
+type webAppAutoInjectionMonitoringCodeSourceSectionPtrType WebAppAutoInjectionMonitoringCodeSourceSectionArgs
+
+func WebAppAutoInjectionMonitoringCodeSourceSectionPtr(v *WebAppAutoInjectionMonitoringCodeSourceSectionArgs) WebAppAutoInjectionMonitoringCodeSourceSectionPtrInput {
+	return (*webAppAutoInjectionMonitoringCodeSourceSectionPtrType)(v)
+}
+
+func (*webAppAutoInjectionMonitoringCodeSourceSectionPtrType) ElementType() reflect.Type {
+	return reflect.TypeOf((**WebAppAutoInjectionMonitoringCodeSourceSection)(nil)).Elem()
+}
+
+func (i *webAppAutoInjectionMonitoringCodeSourceSectionPtrType) ToWebAppAutoInjectionMonitoringCodeSourceSectionPtrOutput() WebAppAutoInjectionMonitoringCodeSourceSectionPtrOutput {
+	return i.ToWebAppAutoInjectionMonitoringCodeSourceSectionPtrOutputWithContext(context.Background())
+}
+
+func (i *webAppAutoInjectionMonitoringCodeSourceSectionPtrType) ToWebAppAutoInjectionMonitoringCodeSourceSectionPtrOutputWithContext(ctx context.Context) WebAppAutoInjectionMonitoringCodeSourceSectionPtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(WebAppAutoInjectionMonitoringCodeSourceSectionPtrOutput)
+}
+
+type WebAppAutoInjectionMonitoringCodeSourceSectionOutput struct{ *pulumi.OutputState }
+
+func (WebAppAutoInjectionMonitoringCodeSourceSectionOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*WebAppAutoInjectionMonitoringCodeSourceSection)(nil)).Elem()
+}
+
+func (o WebAppAutoInjectionMonitoringCodeSourceSectionOutput) ToWebAppAutoInjectionMonitoringCodeSourceSectionOutput() WebAppAutoInjectionMonitoringCodeSourceSectionOutput {
+	return o
+}
+
+func (o WebAppAutoInjectionMonitoringCodeSourceSectionOutput) ToWebAppAutoInjectionMonitoringCodeSourceSectionOutputWithContext(ctx context.Context) WebAppAutoInjectionMonitoringCodeSourceSectionOutput {
+	return o
+}
+
+func (o WebAppAutoInjectionMonitoringCodeSourceSectionOutput) ToWebAppAutoInjectionMonitoringCodeSourceSectionPtrOutput() WebAppAutoInjectionMonitoringCodeSourceSectionPtrOutput {
+	return o.ToWebAppAutoInjectionMonitoringCodeSourceSectionPtrOutputWithContext(context.Background())
+}
+
+func (o WebAppAutoInjectionMonitoringCodeSourceSectionOutput) ToWebAppAutoInjectionMonitoringCodeSourceSectionPtrOutputWithContext(ctx context.Context) WebAppAutoInjectionMonitoringCodeSourceSectionPtrOutput {
+	return o.ApplyTWithContext(ctx, func(_ context.Context, v WebAppAutoInjectionMonitoringCodeSourceSection) *WebAppAutoInjectionMonitoringCodeSourceSection {
+		return &v
+	}).(WebAppAutoInjectionMonitoringCodeSourceSectionPtrOutput)
+}
+
+// Real User Monitoring code source
+func (o WebAppAutoInjectionMonitoringCodeSourceSectionOutput) CodeSource() pulumi.StringOutput {
+	return o.ApplyT(func(v WebAppAutoInjectionMonitoringCodeSourceSection) string { return v.CodeSource }).(pulumi.StringOutput)
+}
+
+// Specify the source path for placement of your application's custom JavaScript library file. By default, this path is set to the root directory of your web server. A custom source path may be necessary if your server operates behind a firewall.
+func (o WebAppAutoInjectionMonitoringCodeSourceSectionOutput) MonitoringCodePath() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v WebAppAutoInjectionMonitoringCodeSourceSection) *string { return v.MonitoringCodePath }).(pulumi.StringPtrOutput)
+}
+
+type WebAppAutoInjectionMonitoringCodeSourceSectionPtrOutput struct{ *pulumi.OutputState }
+
+func (WebAppAutoInjectionMonitoringCodeSourceSectionPtrOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((**WebAppAutoInjectionMonitoringCodeSourceSection)(nil)).Elem()
+}
+
+func (o WebAppAutoInjectionMonitoringCodeSourceSectionPtrOutput) ToWebAppAutoInjectionMonitoringCodeSourceSectionPtrOutput() WebAppAutoInjectionMonitoringCodeSourceSectionPtrOutput {
+	return o
+}
+
+func (o WebAppAutoInjectionMonitoringCodeSourceSectionPtrOutput) ToWebAppAutoInjectionMonitoringCodeSourceSectionPtrOutputWithContext(ctx context.Context) WebAppAutoInjectionMonitoringCodeSourceSectionPtrOutput {
+	return o
+}
+
+func (o WebAppAutoInjectionMonitoringCodeSourceSectionPtrOutput) Elem() WebAppAutoInjectionMonitoringCodeSourceSectionOutput {
+	return o.ApplyT(func(v *WebAppAutoInjectionMonitoringCodeSourceSection) WebAppAutoInjectionMonitoringCodeSourceSection {
+		if v != nil {
+			return *v
+		}
+		var ret WebAppAutoInjectionMonitoringCodeSourceSection
+		return ret
+	}).(WebAppAutoInjectionMonitoringCodeSourceSectionOutput)
+}
+
+// Real User Monitoring code source
+func (o WebAppAutoInjectionMonitoringCodeSourceSectionPtrOutput) CodeSource() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *WebAppAutoInjectionMonitoringCodeSourceSection) *string {
+		if v == nil {
+			return nil
+		}
+		return &v.CodeSource
+	}).(pulumi.StringPtrOutput)
+}
+
+// Specify the source path for placement of your application's custom JavaScript library file. By default, this path is set to the root directory of your web server. A custom source path may be necessary if your server operates behind a firewall.
+func (o WebAppAutoInjectionMonitoringCodeSourceSectionPtrOutput) MonitoringCodePath() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *WebAppAutoInjectionMonitoringCodeSourceSection) *string {
+		if v == nil {
+			return nil
+		}
+		return v.MonitoringCodePath
+	}).(pulumi.StringPtrOutput)
+}
+
+type WebAppAutoInjectionSnippetFormat struct {
+	// Possible Values: `DEFERRED`, `SYNCHRONOUSLY`
+	CodeSnippetType *string `pulumi:"codeSnippetType"`
+	// Possible Values: `async`, `defer`, `none`
+	ScriptExecutionAttribute *string `pulumi:"scriptExecutionAttribute"`
+	// Snippet format
+	SnippetFormat string `pulumi:"snippetFormat"`
+}
+
+// WebAppAutoInjectionSnippetFormatInput is an input type that accepts WebAppAutoInjectionSnippetFormatArgs and WebAppAutoInjectionSnippetFormatOutput values.
+// You can construct a concrete instance of `WebAppAutoInjectionSnippetFormatInput` via:
+//
+//	WebAppAutoInjectionSnippetFormatArgs{...}
+type WebAppAutoInjectionSnippetFormatInput interface {
+	pulumi.Input
+
+	ToWebAppAutoInjectionSnippetFormatOutput() WebAppAutoInjectionSnippetFormatOutput
+	ToWebAppAutoInjectionSnippetFormatOutputWithContext(context.Context) WebAppAutoInjectionSnippetFormatOutput
+}
+
+type WebAppAutoInjectionSnippetFormatArgs struct {
+	// Possible Values: `DEFERRED`, `SYNCHRONOUSLY`
+	CodeSnippetType pulumi.StringPtrInput `pulumi:"codeSnippetType"`
+	// Possible Values: `async`, `defer`, `none`
+	ScriptExecutionAttribute pulumi.StringPtrInput `pulumi:"scriptExecutionAttribute"`
+	// Snippet format
+	SnippetFormat pulumi.StringInput `pulumi:"snippetFormat"`
+}
+
+func (WebAppAutoInjectionSnippetFormatArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*WebAppAutoInjectionSnippetFormat)(nil)).Elem()
+}
+
+func (i WebAppAutoInjectionSnippetFormatArgs) ToWebAppAutoInjectionSnippetFormatOutput() WebAppAutoInjectionSnippetFormatOutput {
+	return i.ToWebAppAutoInjectionSnippetFormatOutputWithContext(context.Background())
+}
+
+func (i WebAppAutoInjectionSnippetFormatArgs) ToWebAppAutoInjectionSnippetFormatOutputWithContext(ctx context.Context) WebAppAutoInjectionSnippetFormatOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(WebAppAutoInjectionSnippetFormatOutput)
+}
+
+func (i WebAppAutoInjectionSnippetFormatArgs) ToWebAppAutoInjectionSnippetFormatPtrOutput() WebAppAutoInjectionSnippetFormatPtrOutput {
+	return i.ToWebAppAutoInjectionSnippetFormatPtrOutputWithContext(context.Background())
+}
+
+func (i WebAppAutoInjectionSnippetFormatArgs) ToWebAppAutoInjectionSnippetFormatPtrOutputWithContext(ctx context.Context) WebAppAutoInjectionSnippetFormatPtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(WebAppAutoInjectionSnippetFormatOutput).ToWebAppAutoInjectionSnippetFormatPtrOutputWithContext(ctx)
+}
+
+// WebAppAutoInjectionSnippetFormatPtrInput is an input type that accepts WebAppAutoInjectionSnippetFormatArgs, WebAppAutoInjectionSnippetFormatPtr and WebAppAutoInjectionSnippetFormatPtrOutput values.
+// You can construct a concrete instance of `WebAppAutoInjectionSnippetFormatPtrInput` via:
+//
+//	        WebAppAutoInjectionSnippetFormatArgs{...}
+//
+//	or:
+//
+//	        nil
+type WebAppAutoInjectionSnippetFormatPtrInput interface {
+	pulumi.Input
+
+	ToWebAppAutoInjectionSnippetFormatPtrOutput() WebAppAutoInjectionSnippetFormatPtrOutput
+	ToWebAppAutoInjectionSnippetFormatPtrOutputWithContext(context.Context) WebAppAutoInjectionSnippetFormatPtrOutput
+}
+
+type webAppAutoInjectionSnippetFormatPtrType WebAppAutoInjectionSnippetFormatArgs
+
+func WebAppAutoInjectionSnippetFormatPtr(v *WebAppAutoInjectionSnippetFormatArgs) WebAppAutoInjectionSnippetFormatPtrInput {
+	return (*webAppAutoInjectionSnippetFormatPtrType)(v)
+}
+
+func (*webAppAutoInjectionSnippetFormatPtrType) ElementType() reflect.Type {
+	return reflect.TypeOf((**WebAppAutoInjectionSnippetFormat)(nil)).Elem()
+}
+
+func (i *webAppAutoInjectionSnippetFormatPtrType) ToWebAppAutoInjectionSnippetFormatPtrOutput() WebAppAutoInjectionSnippetFormatPtrOutput {
+	return i.ToWebAppAutoInjectionSnippetFormatPtrOutputWithContext(context.Background())
+}
+
+func (i *webAppAutoInjectionSnippetFormatPtrType) ToWebAppAutoInjectionSnippetFormatPtrOutputWithContext(ctx context.Context) WebAppAutoInjectionSnippetFormatPtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(WebAppAutoInjectionSnippetFormatPtrOutput)
+}
+
+type WebAppAutoInjectionSnippetFormatOutput struct{ *pulumi.OutputState }
+
+func (WebAppAutoInjectionSnippetFormatOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*WebAppAutoInjectionSnippetFormat)(nil)).Elem()
+}
+
+func (o WebAppAutoInjectionSnippetFormatOutput) ToWebAppAutoInjectionSnippetFormatOutput() WebAppAutoInjectionSnippetFormatOutput {
+	return o
+}
+
+func (o WebAppAutoInjectionSnippetFormatOutput) ToWebAppAutoInjectionSnippetFormatOutputWithContext(ctx context.Context) WebAppAutoInjectionSnippetFormatOutput {
+	return o
+}
+
+func (o WebAppAutoInjectionSnippetFormatOutput) ToWebAppAutoInjectionSnippetFormatPtrOutput() WebAppAutoInjectionSnippetFormatPtrOutput {
+	return o.ToWebAppAutoInjectionSnippetFormatPtrOutputWithContext(context.Background())
+}
+
+func (o WebAppAutoInjectionSnippetFormatOutput) ToWebAppAutoInjectionSnippetFormatPtrOutputWithContext(ctx context.Context) WebAppAutoInjectionSnippetFormatPtrOutput {
+	return o.ApplyTWithContext(ctx, func(_ context.Context, v WebAppAutoInjectionSnippetFormat) *WebAppAutoInjectionSnippetFormat {
+		return &v
+	}).(WebAppAutoInjectionSnippetFormatPtrOutput)
+}
+
+// Possible Values: `DEFERRED`, `SYNCHRONOUSLY`
+func (o WebAppAutoInjectionSnippetFormatOutput) CodeSnippetType() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v WebAppAutoInjectionSnippetFormat) *string { return v.CodeSnippetType }).(pulumi.StringPtrOutput)
+}
+
+// Possible Values: `async`, `defer`, `none`
+func (o WebAppAutoInjectionSnippetFormatOutput) ScriptExecutionAttribute() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v WebAppAutoInjectionSnippetFormat) *string { return v.ScriptExecutionAttribute }).(pulumi.StringPtrOutput)
+}
+
+// Snippet format
+func (o WebAppAutoInjectionSnippetFormatOutput) SnippetFormat() pulumi.StringOutput {
+	return o.ApplyT(func(v WebAppAutoInjectionSnippetFormat) string { return v.SnippetFormat }).(pulumi.StringOutput)
+}
+
+type WebAppAutoInjectionSnippetFormatPtrOutput struct{ *pulumi.OutputState }
+
+func (WebAppAutoInjectionSnippetFormatPtrOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((**WebAppAutoInjectionSnippetFormat)(nil)).Elem()
+}
+
+func (o WebAppAutoInjectionSnippetFormatPtrOutput) ToWebAppAutoInjectionSnippetFormatPtrOutput() WebAppAutoInjectionSnippetFormatPtrOutput {
+	return o
+}
+
+func (o WebAppAutoInjectionSnippetFormatPtrOutput) ToWebAppAutoInjectionSnippetFormatPtrOutputWithContext(ctx context.Context) WebAppAutoInjectionSnippetFormatPtrOutput {
+	return o
+}
+
+func (o WebAppAutoInjectionSnippetFormatPtrOutput) Elem() WebAppAutoInjectionSnippetFormatOutput {
+	return o.ApplyT(func(v *WebAppAutoInjectionSnippetFormat) WebAppAutoInjectionSnippetFormat {
+		if v != nil {
+			return *v
+		}
+		var ret WebAppAutoInjectionSnippetFormat
+		return ret
+	}).(WebAppAutoInjectionSnippetFormatOutput)
+}
+
+// Possible Values: `DEFERRED`, `SYNCHRONOUSLY`
+func (o WebAppAutoInjectionSnippetFormatPtrOutput) CodeSnippetType() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *WebAppAutoInjectionSnippetFormat) *string {
+		if v == nil {
+			return nil
+		}
+		return v.CodeSnippetType
+	}).(pulumi.StringPtrOutput)
+}
+
+// Possible Values: `async`, `defer`, `none`
+func (o WebAppAutoInjectionSnippetFormatPtrOutput) ScriptExecutionAttribute() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *WebAppAutoInjectionSnippetFormat) *string {
+		if v == nil {
+			return nil
+		}
+		return v.ScriptExecutionAttribute
+	}).(pulumi.StringPtrOutput)
+}
+
+// Snippet format
+func (o WebAppAutoInjectionSnippetFormatPtrOutput) SnippetFormat() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *WebAppAutoInjectionSnippetFormat) *string {
+		if v == nil {
+			return nil
+		}
+		return &v.SnippetFormat
+	}).(pulumi.StringPtrOutput)
+}
+
+type WebAppCustomErrorsErrorRules struct {
+	ErrorRules []WebAppCustomErrorsErrorRulesErrorRule `pulumi:"errorRules"`
+}
+
+// WebAppCustomErrorsErrorRulesInput is an input type that accepts WebAppCustomErrorsErrorRulesArgs and WebAppCustomErrorsErrorRulesOutput values.
+// You can construct a concrete instance of `WebAppCustomErrorsErrorRulesInput` via:
+//
+//	WebAppCustomErrorsErrorRulesArgs{...}
+type WebAppCustomErrorsErrorRulesInput interface {
+	pulumi.Input
+
+	ToWebAppCustomErrorsErrorRulesOutput() WebAppCustomErrorsErrorRulesOutput
+	ToWebAppCustomErrorsErrorRulesOutputWithContext(context.Context) WebAppCustomErrorsErrorRulesOutput
+}
+
+type WebAppCustomErrorsErrorRulesArgs struct {
+	ErrorRules WebAppCustomErrorsErrorRulesErrorRuleArrayInput `pulumi:"errorRules"`
+}
+
+func (WebAppCustomErrorsErrorRulesArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*WebAppCustomErrorsErrorRules)(nil)).Elem()
+}
+
+func (i WebAppCustomErrorsErrorRulesArgs) ToWebAppCustomErrorsErrorRulesOutput() WebAppCustomErrorsErrorRulesOutput {
+	return i.ToWebAppCustomErrorsErrorRulesOutputWithContext(context.Background())
+}
+
+func (i WebAppCustomErrorsErrorRulesArgs) ToWebAppCustomErrorsErrorRulesOutputWithContext(ctx context.Context) WebAppCustomErrorsErrorRulesOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(WebAppCustomErrorsErrorRulesOutput)
+}
+
+func (i WebAppCustomErrorsErrorRulesArgs) ToWebAppCustomErrorsErrorRulesPtrOutput() WebAppCustomErrorsErrorRulesPtrOutput {
+	return i.ToWebAppCustomErrorsErrorRulesPtrOutputWithContext(context.Background())
+}
+
+func (i WebAppCustomErrorsErrorRulesArgs) ToWebAppCustomErrorsErrorRulesPtrOutputWithContext(ctx context.Context) WebAppCustomErrorsErrorRulesPtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(WebAppCustomErrorsErrorRulesOutput).ToWebAppCustomErrorsErrorRulesPtrOutputWithContext(ctx)
+}
+
+// WebAppCustomErrorsErrorRulesPtrInput is an input type that accepts WebAppCustomErrorsErrorRulesArgs, WebAppCustomErrorsErrorRulesPtr and WebAppCustomErrorsErrorRulesPtrOutput values.
+// You can construct a concrete instance of `WebAppCustomErrorsErrorRulesPtrInput` via:
+//
+//	        WebAppCustomErrorsErrorRulesArgs{...}
+//
+//	or:
+//
+//	        nil
+type WebAppCustomErrorsErrorRulesPtrInput interface {
+	pulumi.Input
+
+	ToWebAppCustomErrorsErrorRulesPtrOutput() WebAppCustomErrorsErrorRulesPtrOutput
+	ToWebAppCustomErrorsErrorRulesPtrOutputWithContext(context.Context) WebAppCustomErrorsErrorRulesPtrOutput
+}
+
+type webAppCustomErrorsErrorRulesPtrType WebAppCustomErrorsErrorRulesArgs
+
+func WebAppCustomErrorsErrorRulesPtr(v *WebAppCustomErrorsErrorRulesArgs) WebAppCustomErrorsErrorRulesPtrInput {
+	return (*webAppCustomErrorsErrorRulesPtrType)(v)
+}
+
+func (*webAppCustomErrorsErrorRulesPtrType) ElementType() reflect.Type {
+	return reflect.TypeOf((**WebAppCustomErrorsErrorRules)(nil)).Elem()
+}
+
+func (i *webAppCustomErrorsErrorRulesPtrType) ToWebAppCustomErrorsErrorRulesPtrOutput() WebAppCustomErrorsErrorRulesPtrOutput {
+	return i.ToWebAppCustomErrorsErrorRulesPtrOutputWithContext(context.Background())
+}
+
+func (i *webAppCustomErrorsErrorRulesPtrType) ToWebAppCustomErrorsErrorRulesPtrOutputWithContext(ctx context.Context) WebAppCustomErrorsErrorRulesPtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(WebAppCustomErrorsErrorRulesPtrOutput)
+}
+
+type WebAppCustomErrorsErrorRulesOutput struct{ *pulumi.OutputState }
+
+func (WebAppCustomErrorsErrorRulesOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*WebAppCustomErrorsErrorRules)(nil)).Elem()
+}
+
+func (o WebAppCustomErrorsErrorRulesOutput) ToWebAppCustomErrorsErrorRulesOutput() WebAppCustomErrorsErrorRulesOutput {
+	return o
+}
+
+func (o WebAppCustomErrorsErrorRulesOutput) ToWebAppCustomErrorsErrorRulesOutputWithContext(ctx context.Context) WebAppCustomErrorsErrorRulesOutput {
+	return o
+}
+
+func (o WebAppCustomErrorsErrorRulesOutput) ToWebAppCustomErrorsErrorRulesPtrOutput() WebAppCustomErrorsErrorRulesPtrOutput {
+	return o.ToWebAppCustomErrorsErrorRulesPtrOutputWithContext(context.Background())
+}
+
+func (o WebAppCustomErrorsErrorRulesOutput) ToWebAppCustomErrorsErrorRulesPtrOutputWithContext(ctx context.Context) WebAppCustomErrorsErrorRulesPtrOutput {
+	return o.ApplyTWithContext(ctx, func(_ context.Context, v WebAppCustomErrorsErrorRules) *WebAppCustomErrorsErrorRules {
+		return &v
+	}).(WebAppCustomErrorsErrorRulesPtrOutput)
+}
+
+func (o WebAppCustomErrorsErrorRulesOutput) ErrorRules() WebAppCustomErrorsErrorRulesErrorRuleArrayOutput {
+	return o.ApplyT(func(v WebAppCustomErrorsErrorRules) []WebAppCustomErrorsErrorRulesErrorRule { return v.ErrorRules }).(WebAppCustomErrorsErrorRulesErrorRuleArrayOutput)
+}
+
+type WebAppCustomErrorsErrorRulesPtrOutput struct{ *pulumi.OutputState }
+
+func (WebAppCustomErrorsErrorRulesPtrOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((**WebAppCustomErrorsErrorRules)(nil)).Elem()
+}
+
+func (o WebAppCustomErrorsErrorRulesPtrOutput) ToWebAppCustomErrorsErrorRulesPtrOutput() WebAppCustomErrorsErrorRulesPtrOutput {
+	return o
+}
+
+func (o WebAppCustomErrorsErrorRulesPtrOutput) ToWebAppCustomErrorsErrorRulesPtrOutputWithContext(ctx context.Context) WebAppCustomErrorsErrorRulesPtrOutput {
+	return o
+}
+
+func (o WebAppCustomErrorsErrorRulesPtrOutput) Elem() WebAppCustomErrorsErrorRulesOutput {
+	return o.ApplyT(func(v *WebAppCustomErrorsErrorRules) WebAppCustomErrorsErrorRules {
+		if v != nil {
+			return *v
+		}
+		var ret WebAppCustomErrorsErrorRules
+		return ret
+	}).(WebAppCustomErrorsErrorRulesOutput)
+}
+
+func (o WebAppCustomErrorsErrorRulesPtrOutput) ErrorRules() WebAppCustomErrorsErrorRulesErrorRuleArrayOutput {
+	return o.ApplyT(func(v *WebAppCustomErrorsErrorRules) []WebAppCustomErrorsErrorRulesErrorRule {
+		if v == nil {
+			return nil
+		}
+		return v.ErrorRules
+	}).(WebAppCustomErrorsErrorRulesErrorRuleArrayOutput)
+}
+
+type WebAppCustomErrorsErrorRulesErrorRule struct {
+	// Capture settings
+	CaptureSettings WebAppCustomErrorsErrorRulesErrorRuleCaptureSettings `pulumi:"captureSettings"`
+	// Possible Values: `ALL`, `BEGINS_WITH`, `CONTAINS`, `ENDS_WITH`, `EQUALS`
+	KeyMatcher string `pulumi:"keyMatcher"`
+	// A case-insensitive key pattern
+	KeyPattern *string `pulumi:"keyPattern"`
+	// Possible Values: `ALL`, `BEGINS_WITH`, `CONTAINS`, `ENDS_WITH`, `EQUALS`
+	ValueMatcher string `pulumi:"valueMatcher"`
+	// A case-insensitive value pattern
+	ValuePattern *string `pulumi:"valuePattern"`
+}
+
+// WebAppCustomErrorsErrorRulesErrorRuleInput is an input type that accepts WebAppCustomErrorsErrorRulesErrorRuleArgs and WebAppCustomErrorsErrorRulesErrorRuleOutput values.
+// You can construct a concrete instance of `WebAppCustomErrorsErrorRulesErrorRuleInput` via:
+//
+//	WebAppCustomErrorsErrorRulesErrorRuleArgs{...}
+type WebAppCustomErrorsErrorRulesErrorRuleInput interface {
+	pulumi.Input
+
+	ToWebAppCustomErrorsErrorRulesErrorRuleOutput() WebAppCustomErrorsErrorRulesErrorRuleOutput
+	ToWebAppCustomErrorsErrorRulesErrorRuleOutputWithContext(context.Context) WebAppCustomErrorsErrorRulesErrorRuleOutput
+}
+
+type WebAppCustomErrorsErrorRulesErrorRuleArgs struct {
+	// Capture settings
+	CaptureSettings WebAppCustomErrorsErrorRulesErrorRuleCaptureSettingsInput `pulumi:"captureSettings"`
+	// Possible Values: `ALL`, `BEGINS_WITH`, `CONTAINS`, `ENDS_WITH`, `EQUALS`
+	KeyMatcher pulumi.StringInput `pulumi:"keyMatcher"`
+	// A case-insensitive key pattern
+	KeyPattern pulumi.StringPtrInput `pulumi:"keyPattern"`
+	// Possible Values: `ALL`, `BEGINS_WITH`, `CONTAINS`, `ENDS_WITH`, `EQUALS`
+	ValueMatcher pulumi.StringInput `pulumi:"valueMatcher"`
+	// A case-insensitive value pattern
+	ValuePattern pulumi.StringPtrInput `pulumi:"valuePattern"`
+}
+
+func (WebAppCustomErrorsErrorRulesErrorRuleArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*WebAppCustomErrorsErrorRulesErrorRule)(nil)).Elem()
+}
+
+func (i WebAppCustomErrorsErrorRulesErrorRuleArgs) ToWebAppCustomErrorsErrorRulesErrorRuleOutput() WebAppCustomErrorsErrorRulesErrorRuleOutput {
+	return i.ToWebAppCustomErrorsErrorRulesErrorRuleOutputWithContext(context.Background())
+}
+
+func (i WebAppCustomErrorsErrorRulesErrorRuleArgs) ToWebAppCustomErrorsErrorRulesErrorRuleOutputWithContext(ctx context.Context) WebAppCustomErrorsErrorRulesErrorRuleOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(WebAppCustomErrorsErrorRulesErrorRuleOutput)
+}
+
+// WebAppCustomErrorsErrorRulesErrorRuleArrayInput is an input type that accepts WebAppCustomErrorsErrorRulesErrorRuleArray and WebAppCustomErrorsErrorRulesErrorRuleArrayOutput values.
+// You can construct a concrete instance of `WebAppCustomErrorsErrorRulesErrorRuleArrayInput` via:
+//
+//	WebAppCustomErrorsErrorRulesErrorRuleArray{ WebAppCustomErrorsErrorRulesErrorRuleArgs{...} }
+type WebAppCustomErrorsErrorRulesErrorRuleArrayInput interface {
+	pulumi.Input
+
+	ToWebAppCustomErrorsErrorRulesErrorRuleArrayOutput() WebAppCustomErrorsErrorRulesErrorRuleArrayOutput
+	ToWebAppCustomErrorsErrorRulesErrorRuleArrayOutputWithContext(context.Context) WebAppCustomErrorsErrorRulesErrorRuleArrayOutput
+}
+
+type WebAppCustomErrorsErrorRulesErrorRuleArray []WebAppCustomErrorsErrorRulesErrorRuleInput
+
+func (WebAppCustomErrorsErrorRulesErrorRuleArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]WebAppCustomErrorsErrorRulesErrorRule)(nil)).Elem()
+}
+
+func (i WebAppCustomErrorsErrorRulesErrorRuleArray) ToWebAppCustomErrorsErrorRulesErrorRuleArrayOutput() WebAppCustomErrorsErrorRulesErrorRuleArrayOutput {
+	return i.ToWebAppCustomErrorsErrorRulesErrorRuleArrayOutputWithContext(context.Background())
+}
+
+func (i WebAppCustomErrorsErrorRulesErrorRuleArray) ToWebAppCustomErrorsErrorRulesErrorRuleArrayOutputWithContext(ctx context.Context) WebAppCustomErrorsErrorRulesErrorRuleArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(WebAppCustomErrorsErrorRulesErrorRuleArrayOutput)
+}
+
+type WebAppCustomErrorsErrorRulesErrorRuleOutput struct{ *pulumi.OutputState }
+
+func (WebAppCustomErrorsErrorRulesErrorRuleOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*WebAppCustomErrorsErrorRulesErrorRule)(nil)).Elem()
+}
+
+func (o WebAppCustomErrorsErrorRulesErrorRuleOutput) ToWebAppCustomErrorsErrorRulesErrorRuleOutput() WebAppCustomErrorsErrorRulesErrorRuleOutput {
+	return o
+}
+
+func (o WebAppCustomErrorsErrorRulesErrorRuleOutput) ToWebAppCustomErrorsErrorRulesErrorRuleOutputWithContext(ctx context.Context) WebAppCustomErrorsErrorRulesErrorRuleOutput {
+	return o
+}
+
+// Capture settings
+func (o WebAppCustomErrorsErrorRulesErrorRuleOutput) CaptureSettings() WebAppCustomErrorsErrorRulesErrorRuleCaptureSettingsOutput {
+	return o.ApplyT(func(v WebAppCustomErrorsErrorRulesErrorRule) WebAppCustomErrorsErrorRulesErrorRuleCaptureSettings {
+		return v.CaptureSettings
+	}).(WebAppCustomErrorsErrorRulesErrorRuleCaptureSettingsOutput)
+}
+
+// Possible Values: `ALL`, `BEGINS_WITH`, `CONTAINS`, `ENDS_WITH`, `EQUALS`
+func (o WebAppCustomErrorsErrorRulesErrorRuleOutput) KeyMatcher() pulumi.StringOutput {
+	return o.ApplyT(func(v WebAppCustomErrorsErrorRulesErrorRule) string { return v.KeyMatcher }).(pulumi.StringOutput)
+}
+
+// A case-insensitive key pattern
+func (o WebAppCustomErrorsErrorRulesErrorRuleOutput) KeyPattern() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v WebAppCustomErrorsErrorRulesErrorRule) *string { return v.KeyPattern }).(pulumi.StringPtrOutput)
+}
+
+// Possible Values: `ALL`, `BEGINS_WITH`, `CONTAINS`, `ENDS_WITH`, `EQUALS`
+func (o WebAppCustomErrorsErrorRulesErrorRuleOutput) ValueMatcher() pulumi.StringOutput {
+	return o.ApplyT(func(v WebAppCustomErrorsErrorRulesErrorRule) string { return v.ValueMatcher }).(pulumi.StringOutput)
+}
+
+// A case-insensitive value pattern
+func (o WebAppCustomErrorsErrorRulesErrorRuleOutput) ValuePattern() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v WebAppCustomErrorsErrorRulesErrorRule) *string { return v.ValuePattern }).(pulumi.StringPtrOutput)
+}
+
+type WebAppCustomErrorsErrorRulesErrorRuleArrayOutput struct{ *pulumi.OutputState }
+
+func (WebAppCustomErrorsErrorRulesErrorRuleArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]WebAppCustomErrorsErrorRulesErrorRule)(nil)).Elem()
+}
+
+func (o WebAppCustomErrorsErrorRulesErrorRuleArrayOutput) ToWebAppCustomErrorsErrorRulesErrorRuleArrayOutput() WebAppCustomErrorsErrorRulesErrorRuleArrayOutput {
+	return o
+}
+
+func (o WebAppCustomErrorsErrorRulesErrorRuleArrayOutput) ToWebAppCustomErrorsErrorRulesErrorRuleArrayOutputWithContext(ctx context.Context) WebAppCustomErrorsErrorRulesErrorRuleArrayOutput {
+	return o
+}
+
+func (o WebAppCustomErrorsErrorRulesErrorRuleArrayOutput) Index(i pulumi.IntInput) WebAppCustomErrorsErrorRulesErrorRuleOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) WebAppCustomErrorsErrorRulesErrorRule {
+		return vs[0].([]WebAppCustomErrorsErrorRulesErrorRule)[vs[1].(int)]
+	}).(WebAppCustomErrorsErrorRulesErrorRuleOutput)
+}
+
+type WebAppCustomErrorsErrorRulesErrorRuleCaptureSettings struct {
+	// Capture this error
+	Capture bool `pulumi:"capture"`
+	// [View more details](https://dt-url.net/hd580p2k)
+	ConsiderForAi *bool `pulumi:"considerForAi"`
+	// Include error in Apdex calculations
+	ImpactApdex *bool `pulumi:"impactApdex"`
+}
+
+// WebAppCustomErrorsErrorRulesErrorRuleCaptureSettingsInput is an input type that accepts WebAppCustomErrorsErrorRulesErrorRuleCaptureSettingsArgs and WebAppCustomErrorsErrorRulesErrorRuleCaptureSettingsOutput values.
+// You can construct a concrete instance of `WebAppCustomErrorsErrorRulesErrorRuleCaptureSettingsInput` via:
+//
+//	WebAppCustomErrorsErrorRulesErrorRuleCaptureSettingsArgs{...}
+type WebAppCustomErrorsErrorRulesErrorRuleCaptureSettingsInput interface {
+	pulumi.Input
+
+	ToWebAppCustomErrorsErrorRulesErrorRuleCaptureSettingsOutput() WebAppCustomErrorsErrorRulesErrorRuleCaptureSettingsOutput
+	ToWebAppCustomErrorsErrorRulesErrorRuleCaptureSettingsOutputWithContext(context.Context) WebAppCustomErrorsErrorRulesErrorRuleCaptureSettingsOutput
+}
+
+type WebAppCustomErrorsErrorRulesErrorRuleCaptureSettingsArgs struct {
+	// Capture this error
+	Capture pulumi.BoolInput `pulumi:"capture"`
+	// [View more details](https://dt-url.net/hd580p2k)
+	ConsiderForAi pulumi.BoolPtrInput `pulumi:"considerForAi"`
+	// Include error in Apdex calculations
+	ImpactApdex pulumi.BoolPtrInput `pulumi:"impactApdex"`
+}
+
+func (WebAppCustomErrorsErrorRulesErrorRuleCaptureSettingsArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*WebAppCustomErrorsErrorRulesErrorRuleCaptureSettings)(nil)).Elem()
+}
+
+func (i WebAppCustomErrorsErrorRulesErrorRuleCaptureSettingsArgs) ToWebAppCustomErrorsErrorRulesErrorRuleCaptureSettingsOutput() WebAppCustomErrorsErrorRulesErrorRuleCaptureSettingsOutput {
+	return i.ToWebAppCustomErrorsErrorRulesErrorRuleCaptureSettingsOutputWithContext(context.Background())
+}
+
+func (i WebAppCustomErrorsErrorRulesErrorRuleCaptureSettingsArgs) ToWebAppCustomErrorsErrorRulesErrorRuleCaptureSettingsOutputWithContext(ctx context.Context) WebAppCustomErrorsErrorRulesErrorRuleCaptureSettingsOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(WebAppCustomErrorsErrorRulesErrorRuleCaptureSettingsOutput)
+}
+
+type WebAppCustomErrorsErrorRulesErrorRuleCaptureSettingsOutput struct{ *pulumi.OutputState }
+
+func (WebAppCustomErrorsErrorRulesErrorRuleCaptureSettingsOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*WebAppCustomErrorsErrorRulesErrorRuleCaptureSettings)(nil)).Elem()
+}
+
+func (o WebAppCustomErrorsErrorRulesErrorRuleCaptureSettingsOutput) ToWebAppCustomErrorsErrorRulesErrorRuleCaptureSettingsOutput() WebAppCustomErrorsErrorRulesErrorRuleCaptureSettingsOutput {
+	return o
+}
+
+func (o WebAppCustomErrorsErrorRulesErrorRuleCaptureSettingsOutput) ToWebAppCustomErrorsErrorRulesErrorRuleCaptureSettingsOutputWithContext(ctx context.Context) WebAppCustomErrorsErrorRulesErrorRuleCaptureSettingsOutput {
+	return o
+}
+
+// Capture this error
+func (o WebAppCustomErrorsErrorRulesErrorRuleCaptureSettingsOutput) Capture() pulumi.BoolOutput {
+	return o.ApplyT(func(v WebAppCustomErrorsErrorRulesErrorRuleCaptureSettings) bool { return v.Capture }).(pulumi.BoolOutput)
+}
+
+// [View more details](https://dt-url.net/hd580p2k)
+func (o WebAppCustomErrorsErrorRulesErrorRuleCaptureSettingsOutput) ConsiderForAi() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v WebAppCustomErrorsErrorRulesErrorRuleCaptureSettings) *bool { return v.ConsiderForAi }).(pulumi.BoolPtrOutput)
+}
+
+// Include error in Apdex calculations
+func (o WebAppCustomErrorsErrorRulesErrorRuleCaptureSettingsOutput) ImpactApdex() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v WebAppCustomErrorsErrorRulesErrorRuleCaptureSettings) *bool { return v.ImpactApdex }).(pulumi.BoolPtrOutput)
+}
+
+type WebAppCustomPropRestrictionsCustomEventPropertiesAllowList struct {
+	CustomSessionPropertiesAllows []WebAppCustomPropRestrictionsCustomEventPropertiesAllowListCustomSessionPropertiesAllow `pulumi:"customSessionPropertiesAllows"`
+}
+
+// WebAppCustomPropRestrictionsCustomEventPropertiesAllowListInput is an input type that accepts WebAppCustomPropRestrictionsCustomEventPropertiesAllowListArgs and WebAppCustomPropRestrictionsCustomEventPropertiesAllowListOutput values.
+// You can construct a concrete instance of `WebAppCustomPropRestrictionsCustomEventPropertiesAllowListInput` via:
+//
+//	WebAppCustomPropRestrictionsCustomEventPropertiesAllowListArgs{...}
+type WebAppCustomPropRestrictionsCustomEventPropertiesAllowListInput interface {
+	pulumi.Input
+
+	ToWebAppCustomPropRestrictionsCustomEventPropertiesAllowListOutput() WebAppCustomPropRestrictionsCustomEventPropertiesAllowListOutput
+	ToWebAppCustomPropRestrictionsCustomEventPropertiesAllowListOutputWithContext(context.Context) WebAppCustomPropRestrictionsCustomEventPropertiesAllowListOutput
+}
+
+type WebAppCustomPropRestrictionsCustomEventPropertiesAllowListArgs struct {
+	CustomSessionPropertiesAllows WebAppCustomPropRestrictionsCustomEventPropertiesAllowListCustomSessionPropertiesAllowArrayInput `pulumi:"customSessionPropertiesAllows"`
+}
+
+func (WebAppCustomPropRestrictionsCustomEventPropertiesAllowListArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*WebAppCustomPropRestrictionsCustomEventPropertiesAllowList)(nil)).Elem()
+}
+
+func (i WebAppCustomPropRestrictionsCustomEventPropertiesAllowListArgs) ToWebAppCustomPropRestrictionsCustomEventPropertiesAllowListOutput() WebAppCustomPropRestrictionsCustomEventPropertiesAllowListOutput {
+	return i.ToWebAppCustomPropRestrictionsCustomEventPropertiesAllowListOutputWithContext(context.Background())
+}
+
+func (i WebAppCustomPropRestrictionsCustomEventPropertiesAllowListArgs) ToWebAppCustomPropRestrictionsCustomEventPropertiesAllowListOutputWithContext(ctx context.Context) WebAppCustomPropRestrictionsCustomEventPropertiesAllowListOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(WebAppCustomPropRestrictionsCustomEventPropertiesAllowListOutput)
+}
+
+func (i WebAppCustomPropRestrictionsCustomEventPropertiesAllowListArgs) ToWebAppCustomPropRestrictionsCustomEventPropertiesAllowListPtrOutput() WebAppCustomPropRestrictionsCustomEventPropertiesAllowListPtrOutput {
+	return i.ToWebAppCustomPropRestrictionsCustomEventPropertiesAllowListPtrOutputWithContext(context.Background())
+}
+
+func (i WebAppCustomPropRestrictionsCustomEventPropertiesAllowListArgs) ToWebAppCustomPropRestrictionsCustomEventPropertiesAllowListPtrOutputWithContext(ctx context.Context) WebAppCustomPropRestrictionsCustomEventPropertiesAllowListPtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(WebAppCustomPropRestrictionsCustomEventPropertiesAllowListOutput).ToWebAppCustomPropRestrictionsCustomEventPropertiesAllowListPtrOutputWithContext(ctx)
+}
+
+// WebAppCustomPropRestrictionsCustomEventPropertiesAllowListPtrInput is an input type that accepts WebAppCustomPropRestrictionsCustomEventPropertiesAllowListArgs, WebAppCustomPropRestrictionsCustomEventPropertiesAllowListPtr and WebAppCustomPropRestrictionsCustomEventPropertiesAllowListPtrOutput values.
+// You can construct a concrete instance of `WebAppCustomPropRestrictionsCustomEventPropertiesAllowListPtrInput` via:
+//
+//	        WebAppCustomPropRestrictionsCustomEventPropertiesAllowListArgs{...}
+//
+//	or:
+//
+//	        nil
+type WebAppCustomPropRestrictionsCustomEventPropertiesAllowListPtrInput interface {
+	pulumi.Input
+
+	ToWebAppCustomPropRestrictionsCustomEventPropertiesAllowListPtrOutput() WebAppCustomPropRestrictionsCustomEventPropertiesAllowListPtrOutput
+	ToWebAppCustomPropRestrictionsCustomEventPropertiesAllowListPtrOutputWithContext(context.Context) WebAppCustomPropRestrictionsCustomEventPropertiesAllowListPtrOutput
+}
+
+type webAppCustomPropRestrictionsCustomEventPropertiesAllowListPtrType WebAppCustomPropRestrictionsCustomEventPropertiesAllowListArgs
+
+func WebAppCustomPropRestrictionsCustomEventPropertiesAllowListPtr(v *WebAppCustomPropRestrictionsCustomEventPropertiesAllowListArgs) WebAppCustomPropRestrictionsCustomEventPropertiesAllowListPtrInput {
+	return (*webAppCustomPropRestrictionsCustomEventPropertiesAllowListPtrType)(v)
+}
+
+func (*webAppCustomPropRestrictionsCustomEventPropertiesAllowListPtrType) ElementType() reflect.Type {
+	return reflect.TypeOf((**WebAppCustomPropRestrictionsCustomEventPropertiesAllowList)(nil)).Elem()
+}
+
+func (i *webAppCustomPropRestrictionsCustomEventPropertiesAllowListPtrType) ToWebAppCustomPropRestrictionsCustomEventPropertiesAllowListPtrOutput() WebAppCustomPropRestrictionsCustomEventPropertiesAllowListPtrOutput {
+	return i.ToWebAppCustomPropRestrictionsCustomEventPropertiesAllowListPtrOutputWithContext(context.Background())
+}
+
+func (i *webAppCustomPropRestrictionsCustomEventPropertiesAllowListPtrType) ToWebAppCustomPropRestrictionsCustomEventPropertiesAllowListPtrOutputWithContext(ctx context.Context) WebAppCustomPropRestrictionsCustomEventPropertiesAllowListPtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(WebAppCustomPropRestrictionsCustomEventPropertiesAllowListPtrOutput)
+}
+
+type WebAppCustomPropRestrictionsCustomEventPropertiesAllowListOutput struct{ *pulumi.OutputState }
+
+func (WebAppCustomPropRestrictionsCustomEventPropertiesAllowListOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*WebAppCustomPropRestrictionsCustomEventPropertiesAllowList)(nil)).Elem()
+}
+
+func (o WebAppCustomPropRestrictionsCustomEventPropertiesAllowListOutput) ToWebAppCustomPropRestrictionsCustomEventPropertiesAllowListOutput() WebAppCustomPropRestrictionsCustomEventPropertiesAllowListOutput {
+	return o
+}
+
+func (o WebAppCustomPropRestrictionsCustomEventPropertiesAllowListOutput) ToWebAppCustomPropRestrictionsCustomEventPropertiesAllowListOutputWithContext(ctx context.Context) WebAppCustomPropRestrictionsCustomEventPropertiesAllowListOutput {
+	return o
+}
+
+func (o WebAppCustomPropRestrictionsCustomEventPropertiesAllowListOutput) ToWebAppCustomPropRestrictionsCustomEventPropertiesAllowListPtrOutput() WebAppCustomPropRestrictionsCustomEventPropertiesAllowListPtrOutput {
+	return o.ToWebAppCustomPropRestrictionsCustomEventPropertiesAllowListPtrOutputWithContext(context.Background())
+}
+
+func (o WebAppCustomPropRestrictionsCustomEventPropertiesAllowListOutput) ToWebAppCustomPropRestrictionsCustomEventPropertiesAllowListPtrOutputWithContext(ctx context.Context) WebAppCustomPropRestrictionsCustomEventPropertiesAllowListPtrOutput {
+	return o.ApplyTWithContext(ctx, func(_ context.Context, v WebAppCustomPropRestrictionsCustomEventPropertiesAllowList) *WebAppCustomPropRestrictionsCustomEventPropertiesAllowList {
+		return &v
+	}).(WebAppCustomPropRestrictionsCustomEventPropertiesAllowListPtrOutput)
+}
+
+func (o WebAppCustomPropRestrictionsCustomEventPropertiesAllowListOutput) CustomSessionPropertiesAllows() WebAppCustomPropRestrictionsCustomEventPropertiesAllowListCustomSessionPropertiesAllowArrayOutput {
+	return o.ApplyT(func(v WebAppCustomPropRestrictionsCustomEventPropertiesAllowList) []WebAppCustomPropRestrictionsCustomEventPropertiesAllowListCustomSessionPropertiesAllow {
+		return v.CustomSessionPropertiesAllows
+	}).(WebAppCustomPropRestrictionsCustomEventPropertiesAllowListCustomSessionPropertiesAllowArrayOutput)
+}
+
+type WebAppCustomPropRestrictionsCustomEventPropertiesAllowListPtrOutput struct{ *pulumi.OutputState }
+
+func (WebAppCustomPropRestrictionsCustomEventPropertiesAllowListPtrOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((**WebAppCustomPropRestrictionsCustomEventPropertiesAllowList)(nil)).Elem()
+}
+
+func (o WebAppCustomPropRestrictionsCustomEventPropertiesAllowListPtrOutput) ToWebAppCustomPropRestrictionsCustomEventPropertiesAllowListPtrOutput() WebAppCustomPropRestrictionsCustomEventPropertiesAllowListPtrOutput {
+	return o
+}
+
+func (o WebAppCustomPropRestrictionsCustomEventPropertiesAllowListPtrOutput) ToWebAppCustomPropRestrictionsCustomEventPropertiesAllowListPtrOutputWithContext(ctx context.Context) WebAppCustomPropRestrictionsCustomEventPropertiesAllowListPtrOutput {
+	return o
+}
+
+func (o WebAppCustomPropRestrictionsCustomEventPropertiesAllowListPtrOutput) Elem() WebAppCustomPropRestrictionsCustomEventPropertiesAllowListOutput {
+	return o.ApplyT(func(v *WebAppCustomPropRestrictionsCustomEventPropertiesAllowList) WebAppCustomPropRestrictionsCustomEventPropertiesAllowList {
+		if v != nil {
+			return *v
+		}
+		var ret WebAppCustomPropRestrictionsCustomEventPropertiesAllowList
+		return ret
+	}).(WebAppCustomPropRestrictionsCustomEventPropertiesAllowListOutput)
+}
+
+func (o WebAppCustomPropRestrictionsCustomEventPropertiesAllowListPtrOutput) CustomSessionPropertiesAllows() WebAppCustomPropRestrictionsCustomEventPropertiesAllowListCustomSessionPropertiesAllowArrayOutput {
+	return o.ApplyT(func(v *WebAppCustomPropRestrictionsCustomEventPropertiesAllowList) []WebAppCustomPropRestrictionsCustomEventPropertiesAllowListCustomSessionPropertiesAllow {
+		if v == nil {
+			return nil
+		}
+		return v.CustomSessionPropertiesAllows
+	}).(WebAppCustomPropRestrictionsCustomEventPropertiesAllowListCustomSessionPropertiesAllowArrayOutput)
+}
+
+type WebAppCustomPropRestrictionsCustomEventPropertiesAllowListCustomSessionPropertiesAllow struct {
+	// Field name validation should be case-insensitive
+	CaseInsensitiveNamingEnabled *bool `pulumi:"caseInsensitiveNamingEnabled"`
+	// Datatype. Possible Values: `BOOLEAN`, `NUMBER`, `STRING`
+	FieldDataType string `pulumi:"fieldDataType"`
+	// Field name
+	FieldName string `pulumi:"fieldName"`
+}
+
+// WebAppCustomPropRestrictionsCustomEventPropertiesAllowListCustomSessionPropertiesAllowInput is an input type that accepts WebAppCustomPropRestrictionsCustomEventPropertiesAllowListCustomSessionPropertiesAllowArgs and WebAppCustomPropRestrictionsCustomEventPropertiesAllowListCustomSessionPropertiesAllowOutput values.
+// You can construct a concrete instance of `WebAppCustomPropRestrictionsCustomEventPropertiesAllowListCustomSessionPropertiesAllowInput` via:
+//
+//	WebAppCustomPropRestrictionsCustomEventPropertiesAllowListCustomSessionPropertiesAllowArgs{...}
+type WebAppCustomPropRestrictionsCustomEventPropertiesAllowListCustomSessionPropertiesAllowInput interface {
+	pulumi.Input
+
+	ToWebAppCustomPropRestrictionsCustomEventPropertiesAllowListCustomSessionPropertiesAllowOutput() WebAppCustomPropRestrictionsCustomEventPropertiesAllowListCustomSessionPropertiesAllowOutput
+	ToWebAppCustomPropRestrictionsCustomEventPropertiesAllowListCustomSessionPropertiesAllowOutputWithContext(context.Context) WebAppCustomPropRestrictionsCustomEventPropertiesAllowListCustomSessionPropertiesAllowOutput
+}
+
+type WebAppCustomPropRestrictionsCustomEventPropertiesAllowListCustomSessionPropertiesAllowArgs struct {
+	// Field name validation should be case-insensitive
+	CaseInsensitiveNamingEnabled pulumi.BoolPtrInput `pulumi:"caseInsensitiveNamingEnabled"`
+	// Datatype. Possible Values: `BOOLEAN`, `NUMBER`, `STRING`
+	FieldDataType pulumi.StringInput `pulumi:"fieldDataType"`
+	// Field name
+	FieldName pulumi.StringInput `pulumi:"fieldName"`
+}
+
+func (WebAppCustomPropRestrictionsCustomEventPropertiesAllowListCustomSessionPropertiesAllowArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*WebAppCustomPropRestrictionsCustomEventPropertiesAllowListCustomSessionPropertiesAllow)(nil)).Elem()
+}
+
+func (i WebAppCustomPropRestrictionsCustomEventPropertiesAllowListCustomSessionPropertiesAllowArgs) ToWebAppCustomPropRestrictionsCustomEventPropertiesAllowListCustomSessionPropertiesAllowOutput() WebAppCustomPropRestrictionsCustomEventPropertiesAllowListCustomSessionPropertiesAllowOutput {
+	return i.ToWebAppCustomPropRestrictionsCustomEventPropertiesAllowListCustomSessionPropertiesAllowOutputWithContext(context.Background())
+}
+
+func (i WebAppCustomPropRestrictionsCustomEventPropertiesAllowListCustomSessionPropertiesAllowArgs) ToWebAppCustomPropRestrictionsCustomEventPropertiesAllowListCustomSessionPropertiesAllowOutputWithContext(ctx context.Context) WebAppCustomPropRestrictionsCustomEventPropertiesAllowListCustomSessionPropertiesAllowOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(WebAppCustomPropRestrictionsCustomEventPropertiesAllowListCustomSessionPropertiesAllowOutput)
+}
+
+// WebAppCustomPropRestrictionsCustomEventPropertiesAllowListCustomSessionPropertiesAllowArrayInput is an input type that accepts WebAppCustomPropRestrictionsCustomEventPropertiesAllowListCustomSessionPropertiesAllowArray and WebAppCustomPropRestrictionsCustomEventPropertiesAllowListCustomSessionPropertiesAllowArrayOutput values.
+// You can construct a concrete instance of `WebAppCustomPropRestrictionsCustomEventPropertiesAllowListCustomSessionPropertiesAllowArrayInput` via:
+//
+//	WebAppCustomPropRestrictionsCustomEventPropertiesAllowListCustomSessionPropertiesAllowArray{ WebAppCustomPropRestrictionsCustomEventPropertiesAllowListCustomSessionPropertiesAllowArgs{...} }
+type WebAppCustomPropRestrictionsCustomEventPropertiesAllowListCustomSessionPropertiesAllowArrayInput interface {
+	pulumi.Input
+
+	ToWebAppCustomPropRestrictionsCustomEventPropertiesAllowListCustomSessionPropertiesAllowArrayOutput() WebAppCustomPropRestrictionsCustomEventPropertiesAllowListCustomSessionPropertiesAllowArrayOutput
+	ToWebAppCustomPropRestrictionsCustomEventPropertiesAllowListCustomSessionPropertiesAllowArrayOutputWithContext(context.Context) WebAppCustomPropRestrictionsCustomEventPropertiesAllowListCustomSessionPropertiesAllowArrayOutput
+}
+
+type WebAppCustomPropRestrictionsCustomEventPropertiesAllowListCustomSessionPropertiesAllowArray []WebAppCustomPropRestrictionsCustomEventPropertiesAllowListCustomSessionPropertiesAllowInput
+
+func (WebAppCustomPropRestrictionsCustomEventPropertiesAllowListCustomSessionPropertiesAllowArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]WebAppCustomPropRestrictionsCustomEventPropertiesAllowListCustomSessionPropertiesAllow)(nil)).Elem()
+}
+
+func (i WebAppCustomPropRestrictionsCustomEventPropertiesAllowListCustomSessionPropertiesAllowArray) ToWebAppCustomPropRestrictionsCustomEventPropertiesAllowListCustomSessionPropertiesAllowArrayOutput() WebAppCustomPropRestrictionsCustomEventPropertiesAllowListCustomSessionPropertiesAllowArrayOutput {
+	return i.ToWebAppCustomPropRestrictionsCustomEventPropertiesAllowListCustomSessionPropertiesAllowArrayOutputWithContext(context.Background())
+}
+
+func (i WebAppCustomPropRestrictionsCustomEventPropertiesAllowListCustomSessionPropertiesAllowArray) ToWebAppCustomPropRestrictionsCustomEventPropertiesAllowListCustomSessionPropertiesAllowArrayOutputWithContext(ctx context.Context) WebAppCustomPropRestrictionsCustomEventPropertiesAllowListCustomSessionPropertiesAllowArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(WebAppCustomPropRestrictionsCustomEventPropertiesAllowListCustomSessionPropertiesAllowArrayOutput)
+}
+
+type WebAppCustomPropRestrictionsCustomEventPropertiesAllowListCustomSessionPropertiesAllowOutput struct{ *pulumi.OutputState }
+
+func (WebAppCustomPropRestrictionsCustomEventPropertiesAllowListCustomSessionPropertiesAllowOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*WebAppCustomPropRestrictionsCustomEventPropertiesAllowListCustomSessionPropertiesAllow)(nil)).Elem()
+}
+
+func (o WebAppCustomPropRestrictionsCustomEventPropertiesAllowListCustomSessionPropertiesAllowOutput) ToWebAppCustomPropRestrictionsCustomEventPropertiesAllowListCustomSessionPropertiesAllowOutput() WebAppCustomPropRestrictionsCustomEventPropertiesAllowListCustomSessionPropertiesAllowOutput {
+	return o
+}
+
+func (o WebAppCustomPropRestrictionsCustomEventPropertiesAllowListCustomSessionPropertiesAllowOutput) ToWebAppCustomPropRestrictionsCustomEventPropertiesAllowListCustomSessionPropertiesAllowOutputWithContext(ctx context.Context) WebAppCustomPropRestrictionsCustomEventPropertiesAllowListCustomSessionPropertiesAllowOutput {
+	return o
+}
+
+// Field name validation should be case-insensitive
+func (o WebAppCustomPropRestrictionsCustomEventPropertiesAllowListCustomSessionPropertiesAllowOutput) CaseInsensitiveNamingEnabled() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v WebAppCustomPropRestrictionsCustomEventPropertiesAllowListCustomSessionPropertiesAllow) *bool {
+		return v.CaseInsensitiveNamingEnabled
+	}).(pulumi.BoolPtrOutput)
+}
+
+// Datatype. Possible Values: `BOOLEAN`, `NUMBER`, `STRING`
+func (o WebAppCustomPropRestrictionsCustomEventPropertiesAllowListCustomSessionPropertiesAllowOutput) FieldDataType() pulumi.StringOutput {
+	return o.ApplyT(func(v WebAppCustomPropRestrictionsCustomEventPropertiesAllowListCustomSessionPropertiesAllow) string {
+		return v.FieldDataType
+	}).(pulumi.StringOutput)
+}
+
+// Field name
+func (o WebAppCustomPropRestrictionsCustomEventPropertiesAllowListCustomSessionPropertiesAllowOutput) FieldName() pulumi.StringOutput {
+	return o.ApplyT(func(v WebAppCustomPropRestrictionsCustomEventPropertiesAllowListCustomSessionPropertiesAllow) string {
+		return v.FieldName
+	}).(pulumi.StringOutput)
+}
+
+type WebAppCustomPropRestrictionsCustomEventPropertiesAllowListCustomSessionPropertiesAllowArrayOutput struct{ *pulumi.OutputState }
+
+func (WebAppCustomPropRestrictionsCustomEventPropertiesAllowListCustomSessionPropertiesAllowArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]WebAppCustomPropRestrictionsCustomEventPropertiesAllowListCustomSessionPropertiesAllow)(nil)).Elem()
+}
+
+func (o WebAppCustomPropRestrictionsCustomEventPropertiesAllowListCustomSessionPropertiesAllowArrayOutput) ToWebAppCustomPropRestrictionsCustomEventPropertiesAllowListCustomSessionPropertiesAllowArrayOutput() WebAppCustomPropRestrictionsCustomEventPropertiesAllowListCustomSessionPropertiesAllowArrayOutput {
+	return o
+}
+
+func (o WebAppCustomPropRestrictionsCustomEventPropertiesAllowListCustomSessionPropertiesAllowArrayOutput) ToWebAppCustomPropRestrictionsCustomEventPropertiesAllowListCustomSessionPropertiesAllowArrayOutputWithContext(ctx context.Context) WebAppCustomPropRestrictionsCustomEventPropertiesAllowListCustomSessionPropertiesAllowArrayOutput {
+	return o
+}
+
+func (o WebAppCustomPropRestrictionsCustomEventPropertiesAllowListCustomSessionPropertiesAllowArrayOutput) Index(i pulumi.IntInput) WebAppCustomPropRestrictionsCustomEventPropertiesAllowListCustomSessionPropertiesAllowOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) WebAppCustomPropRestrictionsCustomEventPropertiesAllowListCustomSessionPropertiesAllow {
+		return vs[0].([]WebAppCustomPropRestrictionsCustomEventPropertiesAllowListCustomSessionPropertiesAllow)[vs[1].(int)]
+	}).(WebAppCustomPropRestrictionsCustomEventPropertiesAllowListCustomSessionPropertiesAllowOutput)
+}
+
+type WebAppCustomPropRestrictionsCustomSessionPropertiesAllowList struct {
+	CustomSessionPropertiesAllows []WebAppCustomPropRestrictionsCustomSessionPropertiesAllowListCustomSessionPropertiesAllow `pulumi:"customSessionPropertiesAllows"`
+}
+
+// WebAppCustomPropRestrictionsCustomSessionPropertiesAllowListInput is an input type that accepts WebAppCustomPropRestrictionsCustomSessionPropertiesAllowListArgs and WebAppCustomPropRestrictionsCustomSessionPropertiesAllowListOutput values.
+// You can construct a concrete instance of `WebAppCustomPropRestrictionsCustomSessionPropertiesAllowListInput` via:
+//
+//	WebAppCustomPropRestrictionsCustomSessionPropertiesAllowListArgs{...}
+type WebAppCustomPropRestrictionsCustomSessionPropertiesAllowListInput interface {
+	pulumi.Input
+
+	ToWebAppCustomPropRestrictionsCustomSessionPropertiesAllowListOutput() WebAppCustomPropRestrictionsCustomSessionPropertiesAllowListOutput
+	ToWebAppCustomPropRestrictionsCustomSessionPropertiesAllowListOutputWithContext(context.Context) WebAppCustomPropRestrictionsCustomSessionPropertiesAllowListOutput
+}
+
+type WebAppCustomPropRestrictionsCustomSessionPropertiesAllowListArgs struct {
+	CustomSessionPropertiesAllows WebAppCustomPropRestrictionsCustomSessionPropertiesAllowListCustomSessionPropertiesAllowArrayInput `pulumi:"customSessionPropertiesAllows"`
+}
+
+func (WebAppCustomPropRestrictionsCustomSessionPropertiesAllowListArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*WebAppCustomPropRestrictionsCustomSessionPropertiesAllowList)(nil)).Elem()
+}
+
+func (i WebAppCustomPropRestrictionsCustomSessionPropertiesAllowListArgs) ToWebAppCustomPropRestrictionsCustomSessionPropertiesAllowListOutput() WebAppCustomPropRestrictionsCustomSessionPropertiesAllowListOutput {
+	return i.ToWebAppCustomPropRestrictionsCustomSessionPropertiesAllowListOutputWithContext(context.Background())
+}
+
+func (i WebAppCustomPropRestrictionsCustomSessionPropertiesAllowListArgs) ToWebAppCustomPropRestrictionsCustomSessionPropertiesAllowListOutputWithContext(ctx context.Context) WebAppCustomPropRestrictionsCustomSessionPropertiesAllowListOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(WebAppCustomPropRestrictionsCustomSessionPropertiesAllowListOutput)
+}
+
+func (i WebAppCustomPropRestrictionsCustomSessionPropertiesAllowListArgs) ToWebAppCustomPropRestrictionsCustomSessionPropertiesAllowListPtrOutput() WebAppCustomPropRestrictionsCustomSessionPropertiesAllowListPtrOutput {
+	return i.ToWebAppCustomPropRestrictionsCustomSessionPropertiesAllowListPtrOutputWithContext(context.Background())
+}
+
+func (i WebAppCustomPropRestrictionsCustomSessionPropertiesAllowListArgs) ToWebAppCustomPropRestrictionsCustomSessionPropertiesAllowListPtrOutputWithContext(ctx context.Context) WebAppCustomPropRestrictionsCustomSessionPropertiesAllowListPtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(WebAppCustomPropRestrictionsCustomSessionPropertiesAllowListOutput).ToWebAppCustomPropRestrictionsCustomSessionPropertiesAllowListPtrOutputWithContext(ctx)
+}
+
+// WebAppCustomPropRestrictionsCustomSessionPropertiesAllowListPtrInput is an input type that accepts WebAppCustomPropRestrictionsCustomSessionPropertiesAllowListArgs, WebAppCustomPropRestrictionsCustomSessionPropertiesAllowListPtr and WebAppCustomPropRestrictionsCustomSessionPropertiesAllowListPtrOutput values.
+// You can construct a concrete instance of `WebAppCustomPropRestrictionsCustomSessionPropertiesAllowListPtrInput` via:
+//
+//	        WebAppCustomPropRestrictionsCustomSessionPropertiesAllowListArgs{...}
+//
+//	or:
+//
+//	        nil
+type WebAppCustomPropRestrictionsCustomSessionPropertiesAllowListPtrInput interface {
+	pulumi.Input
+
+	ToWebAppCustomPropRestrictionsCustomSessionPropertiesAllowListPtrOutput() WebAppCustomPropRestrictionsCustomSessionPropertiesAllowListPtrOutput
+	ToWebAppCustomPropRestrictionsCustomSessionPropertiesAllowListPtrOutputWithContext(context.Context) WebAppCustomPropRestrictionsCustomSessionPropertiesAllowListPtrOutput
+}
+
+type webAppCustomPropRestrictionsCustomSessionPropertiesAllowListPtrType WebAppCustomPropRestrictionsCustomSessionPropertiesAllowListArgs
+
+func WebAppCustomPropRestrictionsCustomSessionPropertiesAllowListPtr(v *WebAppCustomPropRestrictionsCustomSessionPropertiesAllowListArgs) WebAppCustomPropRestrictionsCustomSessionPropertiesAllowListPtrInput {
+	return (*webAppCustomPropRestrictionsCustomSessionPropertiesAllowListPtrType)(v)
+}
+
+func (*webAppCustomPropRestrictionsCustomSessionPropertiesAllowListPtrType) ElementType() reflect.Type {
+	return reflect.TypeOf((**WebAppCustomPropRestrictionsCustomSessionPropertiesAllowList)(nil)).Elem()
+}
+
+func (i *webAppCustomPropRestrictionsCustomSessionPropertiesAllowListPtrType) ToWebAppCustomPropRestrictionsCustomSessionPropertiesAllowListPtrOutput() WebAppCustomPropRestrictionsCustomSessionPropertiesAllowListPtrOutput {
+	return i.ToWebAppCustomPropRestrictionsCustomSessionPropertiesAllowListPtrOutputWithContext(context.Background())
+}
+
+func (i *webAppCustomPropRestrictionsCustomSessionPropertiesAllowListPtrType) ToWebAppCustomPropRestrictionsCustomSessionPropertiesAllowListPtrOutputWithContext(ctx context.Context) WebAppCustomPropRestrictionsCustomSessionPropertiesAllowListPtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(WebAppCustomPropRestrictionsCustomSessionPropertiesAllowListPtrOutput)
+}
+
+type WebAppCustomPropRestrictionsCustomSessionPropertiesAllowListOutput struct{ *pulumi.OutputState }
+
+func (WebAppCustomPropRestrictionsCustomSessionPropertiesAllowListOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*WebAppCustomPropRestrictionsCustomSessionPropertiesAllowList)(nil)).Elem()
+}
+
+func (o WebAppCustomPropRestrictionsCustomSessionPropertiesAllowListOutput) ToWebAppCustomPropRestrictionsCustomSessionPropertiesAllowListOutput() WebAppCustomPropRestrictionsCustomSessionPropertiesAllowListOutput {
+	return o
+}
+
+func (o WebAppCustomPropRestrictionsCustomSessionPropertiesAllowListOutput) ToWebAppCustomPropRestrictionsCustomSessionPropertiesAllowListOutputWithContext(ctx context.Context) WebAppCustomPropRestrictionsCustomSessionPropertiesAllowListOutput {
+	return o
+}
+
+func (o WebAppCustomPropRestrictionsCustomSessionPropertiesAllowListOutput) ToWebAppCustomPropRestrictionsCustomSessionPropertiesAllowListPtrOutput() WebAppCustomPropRestrictionsCustomSessionPropertiesAllowListPtrOutput {
+	return o.ToWebAppCustomPropRestrictionsCustomSessionPropertiesAllowListPtrOutputWithContext(context.Background())
+}
+
+func (o WebAppCustomPropRestrictionsCustomSessionPropertiesAllowListOutput) ToWebAppCustomPropRestrictionsCustomSessionPropertiesAllowListPtrOutputWithContext(ctx context.Context) WebAppCustomPropRestrictionsCustomSessionPropertiesAllowListPtrOutput {
+	return o.ApplyTWithContext(ctx, func(_ context.Context, v WebAppCustomPropRestrictionsCustomSessionPropertiesAllowList) *WebAppCustomPropRestrictionsCustomSessionPropertiesAllowList {
+		return &v
+	}).(WebAppCustomPropRestrictionsCustomSessionPropertiesAllowListPtrOutput)
+}
+
+func (o WebAppCustomPropRestrictionsCustomSessionPropertiesAllowListOutput) CustomSessionPropertiesAllows() WebAppCustomPropRestrictionsCustomSessionPropertiesAllowListCustomSessionPropertiesAllowArrayOutput {
+	return o.ApplyT(func(v WebAppCustomPropRestrictionsCustomSessionPropertiesAllowList) []WebAppCustomPropRestrictionsCustomSessionPropertiesAllowListCustomSessionPropertiesAllow {
+		return v.CustomSessionPropertiesAllows
+	}).(WebAppCustomPropRestrictionsCustomSessionPropertiesAllowListCustomSessionPropertiesAllowArrayOutput)
+}
+
+type WebAppCustomPropRestrictionsCustomSessionPropertiesAllowListPtrOutput struct{ *pulumi.OutputState }
+
+func (WebAppCustomPropRestrictionsCustomSessionPropertiesAllowListPtrOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((**WebAppCustomPropRestrictionsCustomSessionPropertiesAllowList)(nil)).Elem()
+}
+
+func (o WebAppCustomPropRestrictionsCustomSessionPropertiesAllowListPtrOutput) ToWebAppCustomPropRestrictionsCustomSessionPropertiesAllowListPtrOutput() WebAppCustomPropRestrictionsCustomSessionPropertiesAllowListPtrOutput {
+	return o
+}
+
+func (o WebAppCustomPropRestrictionsCustomSessionPropertiesAllowListPtrOutput) ToWebAppCustomPropRestrictionsCustomSessionPropertiesAllowListPtrOutputWithContext(ctx context.Context) WebAppCustomPropRestrictionsCustomSessionPropertiesAllowListPtrOutput {
+	return o
+}
+
+func (o WebAppCustomPropRestrictionsCustomSessionPropertiesAllowListPtrOutput) Elem() WebAppCustomPropRestrictionsCustomSessionPropertiesAllowListOutput {
+	return o.ApplyT(func(v *WebAppCustomPropRestrictionsCustomSessionPropertiesAllowList) WebAppCustomPropRestrictionsCustomSessionPropertiesAllowList {
+		if v != nil {
+			return *v
+		}
+		var ret WebAppCustomPropRestrictionsCustomSessionPropertiesAllowList
+		return ret
+	}).(WebAppCustomPropRestrictionsCustomSessionPropertiesAllowListOutput)
+}
+
+func (o WebAppCustomPropRestrictionsCustomSessionPropertiesAllowListPtrOutput) CustomSessionPropertiesAllows() WebAppCustomPropRestrictionsCustomSessionPropertiesAllowListCustomSessionPropertiesAllowArrayOutput {
+	return o.ApplyT(func(v *WebAppCustomPropRestrictionsCustomSessionPropertiesAllowList) []WebAppCustomPropRestrictionsCustomSessionPropertiesAllowListCustomSessionPropertiesAllow {
+		if v == nil {
+			return nil
+		}
+		return v.CustomSessionPropertiesAllows
+	}).(WebAppCustomPropRestrictionsCustomSessionPropertiesAllowListCustomSessionPropertiesAllowArrayOutput)
+}
+
+type WebAppCustomPropRestrictionsCustomSessionPropertiesAllowListCustomSessionPropertiesAllow struct {
+	// Field name validation should be case-insensitive
+	CaseInsensitiveNamingEnabled *bool `pulumi:"caseInsensitiveNamingEnabled"`
+	// Datatype. Possible Values: `BOOLEAN`, `NUMBER`, `STRING`
+	FieldDataType string `pulumi:"fieldDataType"`
+	// Field name
+	FieldName string `pulumi:"fieldName"`
+}
+
+// WebAppCustomPropRestrictionsCustomSessionPropertiesAllowListCustomSessionPropertiesAllowInput is an input type that accepts WebAppCustomPropRestrictionsCustomSessionPropertiesAllowListCustomSessionPropertiesAllowArgs and WebAppCustomPropRestrictionsCustomSessionPropertiesAllowListCustomSessionPropertiesAllowOutput values.
+// You can construct a concrete instance of `WebAppCustomPropRestrictionsCustomSessionPropertiesAllowListCustomSessionPropertiesAllowInput` via:
+//
+//	WebAppCustomPropRestrictionsCustomSessionPropertiesAllowListCustomSessionPropertiesAllowArgs{...}
+type WebAppCustomPropRestrictionsCustomSessionPropertiesAllowListCustomSessionPropertiesAllowInput interface {
+	pulumi.Input
+
+	ToWebAppCustomPropRestrictionsCustomSessionPropertiesAllowListCustomSessionPropertiesAllowOutput() WebAppCustomPropRestrictionsCustomSessionPropertiesAllowListCustomSessionPropertiesAllowOutput
+	ToWebAppCustomPropRestrictionsCustomSessionPropertiesAllowListCustomSessionPropertiesAllowOutputWithContext(context.Context) WebAppCustomPropRestrictionsCustomSessionPropertiesAllowListCustomSessionPropertiesAllowOutput
+}
+
+type WebAppCustomPropRestrictionsCustomSessionPropertiesAllowListCustomSessionPropertiesAllowArgs struct {
+	// Field name validation should be case-insensitive
+	CaseInsensitiveNamingEnabled pulumi.BoolPtrInput `pulumi:"caseInsensitiveNamingEnabled"`
+	// Datatype. Possible Values: `BOOLEAN`, `NUMBER`, `STRING`
+	FieldDataType pulumi.StringInput `pulumi:"fieldDataType"`
+	// Field name
+	FieldName pulumi.StringInput `pulumi:"fieldName"`
+}
+
+func (WebAppCustomPropRestrictionsCustomSessionPropertiesAllowListCustomSessionPropertiesAllowArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*WebAppCustomPropRestrictionsCustomSessionPropertiesAllowListCustomSessionPropertiesAllow)(nil)).Elem()
+}
+
+func (i WebAppCustomPropRestrictionsCustomSessionPropertiesAllowListCustomSessionPropertiesAllowArgs) ToWebAppCustomPropRestrictionsCustomSessionPropertiesAllowListCustomSessionPropertiesAllowOutput() WebAppCustomPropRestrictionsCustomSessionPropertiesAllowListCustomSessionPropertiesAllowOutput {
+	return i.ToWebAppCustomPropRestrictionsCustomSessionPropertiesAllowListCustomSessionPropertiesAllowOutputWithContext(context.Background())
+}
+
+func (i WebAppCustomPropRestrictionsCustomSessionPropertiesAllowListCustomSessionPropertiesAllowArgs) ToWebAppCustomPropRestrictionsCustomSessionPropertiesAllowListCustomSessionPropertiesAllowOutputWithContext(ctx context.Context) WebAppCustomPropRestrictionsCustomSessionPropertiesAllowListCustomSessionPropertiesAllowOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(WebAppCustomPropRestrictionsCustomSessionPropertiesAllowListCustomSessionPropertiesAllowOutput)
+}
+
+// WebAppCustomPropRestrictionsCustomSessionPropertiesAllowListCustomSessionPropertiesAllowArrayInput is an input type that accepts WebAppCustomPropRestrictionsCustomSessionPropertiesAllowListCustomSessionPropertiesAllowArray and WebAppCustomPropRestrictionsCustomSessionPropertiesAllowListCustomSessionPropertiesAllowArrayOutput values.
+// You can construct a concrete instance of `WebAppCustomPropRestrictionsCustomSessionPropertiesAllowListCustomSessionPropertiesAllowArrayInput` via:
+//
+//	WebAppCustomPropRestrictionsCustomSessionPropertiesAllowListCustomSessionPropertiesAllowArray{ WebAppCustomPropRestrictionsCustomSessionPropertiesAllowListCustomSessionPropertiesAllowArgs{...} }
+type WebAppCustomPropRestrictionsCustomSessionPropertiesAllowListCustomSessionPropertiesAllowArrayInput interface {
+	pulumi.Input
+
+	ToWebAppCustomPropRestrictionsCustomSessionPropertiesAllowListCustomSessionPropertiesAllowArrayOutput() WebAppCustomPropRestrictionsCustomSessionPropertiesAllowListCustomSessionPropertiesAllowArrayOutput
+	ToWebAppCustomPropRestrictionsCustomSessionPropertiesAllowListCustomSessionPropertiesAllowArrayOutputWithContext(context.Context) WebAppCustomPropRestrictionsCustomSessionPropertiesAllowListCustomSessionPropertiesAllowArrayOutput
+}
+
+type WebAppCustomPropRestrictionsCustomSessionPropertiesAllowListCustomSessionPropertiesAllowArray []WebAppCustomPropRestrictionsCustomSessionPropertiesAllowListCustomSessionPropertiesAllowInput
+
+func (WebAppCustomPropRestrictionsCustomSessionPropertiesAllowListCustomSessionPropertiesAllowArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]WebAppCustomPropRestrictionsCustomSessionPropertiesAllowListCustomSessionPropertiesAllow)(nil)).Elem()
+}
+
+func (i WebAppCustomPropRestrictionsCustomSessionPropertiesAllowListCustomSessionPropertiesAllowArray) ToWebAppCustomPropRestrictionsCustomSessionPropertiesAllowListCustomSessionPropertiesAllowArrayOutput() WebAppCustomPropRestrictionsCustomSessionPropertiesAllowListCustomSessionPropertiesAllowArrayOutput {
+	return i.ToWebAppCustomPropRestrictionsCustomSessionPropertiesAllowListCustomSessionPropertiesAllowArrayOutputWithContext(context.Background())
+}
+
+func (i WebAppCustomPropRestrictionsCustomSessionPropertiesAllowListCustomSessionPropertiesAllowArray) ToWebAppCustomPropRestrictionsCustomSessionPropertiesAllowListCustomSessionPropertiesAllowArrayOutputWithContext(ctx context.Context) WebAppCustomPropRestrictionsCustomSessionPropertiesAllowListCustomSessionPropertiesAllowArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(WebAppCustomPropRestrictionsCustomSessionPropertiesAllowListCustomSessionPropertiesAllowArrayOutput)
+}
+
+type WebAppCustomPropRestrictionsCustomSessionPropertiesAllowListCustomSessionPropertiesAllowOutput struct{ *pulumi.OutputState }
+
+func (WebAppCustomPropRestrictionsCustomSessionPropertiesAllowListCustomSessionPropertiesAllowOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*WebAppCustomPropRestrictionsCustomSessionPropertiesAllowListCustomSessionPropertiesAllow)(nil)).Elem()
+}
+
+func (o WebAppCustomPropRestrictionsCustomSessionPropertiesAllowListCustomSessionPropertiesAllowOutput) ToWebAppCustomPropRestrictionsCustomSessionPropertiesAllowListCustomSessionPropertiesAllowOutput() WebAppCustomPropRestrictionsCustomSessionPropertiesAllowListCustomSessionPropertiesAllowOutput {
+	return o
+}
+
+func (o WebAppCustomPropRestrictionsCustomSessionPropertiesAllowListCustomSessionPropertiesAllowOutput) ToWebAppCustomPropRestrictionsCustomSessionPropertiesAllowListCustomSessionPropertiesAllowOutputWithContext(ctx context.Context) WebAppCustomPropRestrictionsCustomSessionPropertiesAllowListCustomSessionPropertiesAllowOutput {
+	return o
+}
+
+// Field name validation should be case-insensitive
+func (o WebAppCustomPropRestrictionsCustomSessionPropertiesAllowListCustomSessionPropertiesAllowOutput) CaseInsensitiveNamingEnabled() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v WebAppCustomPropRestrictionsCustomSessionPropertiesAllowListCustomSessionPropertiesAllow) *bool {
+		return v.CaseInsensitiveNamingEnabled
+	}).(pulumi.BoolPtrOutput)
+}
+
+// Datatype. Possible Values: `BOOLEAN`, `NUMBER`, `STRING`
+func (o WebAppCustomPropRestrictionsCustomSessionPropertiesAllowListCustomSessionPropertiesAllowOutput) FieldDataType() pulumi.StringOutput {
+	return o.ApplyT(func(v WebAppCustomPropRestrictionsCustomSessionPropertiesAllowListCustomSessionPropertiesAllow) string {
+		return v.FieldDataType
+	}).(pulumi.StringOutput)
+}
+
+// Field name
+func (o WebAppCustomPropRestrictionsCustomSessionPropertiesAllowListCustomSessionPropertiesAllowOutput) FieldName() pulumi.StringOutput {
+	return o.ApplyT(func(v WebAppCustomPropRestrictionsCustomSessionPropertiesAllowListCustomSessionPropertiesAllow) string {
+		return v.FieldName
+	}).(pulumi.StringOutput)
+}
+
+type WebAppCustomPropRestrictionsCustomSessionPropertiesAllowListCustomSessionPropertiesAllowArrayOutput struct{ *pulumi.OutputState }
+
+func (WebAppCustomPropRestrictionsCustomSessionPropertiesAllowListCustomSessionPropertiesAllowArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]WebAppCustomPropRestrictionsCustomSessionPropertiesAllowListCustomSessionPropertiesAllow)(nil)).Elem()
+}
+
+func (o WebAppCustomPropRestrictionsCustomSessionPropertiesAllowListCustomSessionPropertiesAllowArrayOutput) ToWebAppCustomPropRestrictionsCustomSessionPropertiesAllowListCustomSessionPropertiesAllowArrayOutput() WebAppCustomPropRestrictionsCustomSessionPropertiesAllowListCustomSessionPropertiesAllowArrayOutput {
+	return o
+}
+
+func (o WebAppCustomPropRestrictionsCustomSessionPropertiesAllowListCustomSessionPropertiesAllowArrayOutput) ToWebAppCustomPropRestrictionsCustomSessionPropertiesAllowListCustomSessionPropertiesAllowArrayOutputWithContext(ctx context.Context) WebAppCustomPropRestrictionsCustomSessionPropertiesAllowListCustomSessionPropertiesAllowArrayOutput {
+	return o
+}
+
+func (o WebAppCustomPropRestrictionsCustomSessionPropertiesAllowListCustomSessionPropertiesAllowArrayOutput) Index(i pulumi.IntInput) WebAppCustomPropRestrictionsCustomSessionPropertiesAllowListCustomSessionPropertiesAllowOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) WebAppCustomPropRestrictionsCustomSessionPropertiesAllowListCustomSessionPropertiesAllow {
+		return vs[0].([]WebAppCustomPropRestrictionsCustomSessionPropertiesAllowListCustomSessionPropertiesAllow)[vs[1].(int)]
+	}).(WebAppCustomPropRestrictionsCustomSessionPropertiesAllowListCustomSessionPropertiesAllowOutput)
+}
+
+type WebAppEnablementExperienceAnalytics struct {
+	// This setting is enabled (`true`) or disabled (`false`)
+	Enabled bool `pulumi:"enabled"`
+}
+
+// WebAppEnablementExperienceAnalyticsInput is an input type that accepts WebAppEnablementExperienceAnalyticsArgs and WebAppEnablementExperienceAnalyticsOutput values.
+// You can construct a concrete instance of `WebAppEnablementExperienceAnalyticsInput` via:
+//
+//	WebAppEnablementExperienceAnalyticsArgs{...}
+type WebAppEnablementExperienceAnalyticsInput interface {
+	pulumi.Input
+
+	ToWebAppEnablementExperienceAnalyticsOutput() WebAppEnablementExperienceAnalyticsOutput
+	ToWebAppEnablementExperienceAnalyticsOutputWithContext(context.Context) WebAppEnablementExperienceAnalyticsOutput
+}
+
+type WebAppEnablementExperienceAnalyticsArgs struct {
+	// This setting is enabled (`true`) or disabled (`false`)
+	Enabled pulumi.BoolInput `pulumi:"enabled"`
+}
+
+func (WebAppEnablementExperienceAnalyticsArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*WebAppEnablementExperienceAnalytics)(nil)).Elem()
+}
+
+func (i WebAppEnablementExperienceAnalyticsArgs) ToWebAppEnablementExperienceAnalyticsOutput() WebAppEnablementExperienceAnalyticsOutput {
+	return i.ToWebAppEnablementExperienceAnalyticsOutputWithContext(context.Background())
+}
+
+func (i WebAppEnablementExperienceAnalyticsArgs) ToWebAppEnablementExperienceAnalyticsOutputWithContext(ctx context.Context) WebAppEnablementExperienceAnalyticsOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(WebAppEnablementExperienceAnalyticsOutput)
+}
+
+func (i WebAppEnablementExperienceAnalyticsArgs) ToWebAppEnablementExperienceAnalyticsPtrOutput() WebAppEnablementExperienceAnalyticsPtrOutput {
+	return i.ToWebAppEnablementExperienceAnalyticsPtrOutputWithContext(context.Background())
+}
+
+func (i WebAppEnablementExperienceAnalyticsArgs) ToWebAppEnablementExperienceAnalyticsPtrOutputWithContext(ctx context.Context) WebAppEnablementExperienceAnalyticsPtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(WebAppEnablementExperienceAnalyticsOutput).ToWebAppEnablementExperienceAnalyticsPtrOutputWithContext(ctx)
+}
+
+// WebAppEnablementExperienceAnalyticsPtrInput is an input type that accepts WebAppEnablementExperienceAnalyticsArgs, WebAppEnablementExperienceAnalyticsPtr and WebAppEnablementExperienceAnalyticsPtrOutput values.
+// You can construct a concrete instance of `WebAppEnablementExperienceAnalyticsPtrInput` via:
+//
+//	        WebAppEnablementExperienceAnalyticsArgs{...}
+//
+//	or:
+//
+//	        nil
+type WebAppEnablementExperienceAnalyticsPtrInput interface {
+	pulumi.Input
+
+	ToWebAppEnablementExperienceAnalyticsPtrOutput() WebAppEnablementExperienceAnalyticsPtrOutput
+	ToWebAppEnablementExperienceAnalyticsPtrOutputWithContext(context.Context) WebAppEnablementExperienceAnalyticsPtrOutput
+}
+
+type webAppEnablementExperienceAnalyticsPtrType WebAppEnablementExperienceAnalyticsArgs
+
+func WebAppEnablementExperienceAnalyticsPtr(v *WebAppEnablementExperienceAnalyticsArgs) WebAppEnablementExperienceAnalyticsPtrInput {
+	return (*webAppEnablementExperienceAnalyticsPtrType)(v)
+}
+
+func (*webAppEnablementExperienceAnalyticsPtrType) ElementType() reflect.Type {
+	return reflect.TypeOf((**WebAppEnablementExperienceAnalytics)(nil)).Elem()
+}
+
+func (i *webAppEnablementExperienceAnalyticsPtrType) ToWebAppEnablementExperienceAnalyticsPtrOutput() WebAppEnablementExperienceAnalyticsPtrOutput {
+	return i.ToWebAppEnablementExperienceAnalyticsPtrOutputWithContext(context.Background())
+}
+
+func (i *webAppEnablementExperienceAnalyticsPtrType) ToWebAppEnablementExperienceAnalyticsPtrOutputWithContext(ctx context.Context) WebAppEnablementExperienceAnalyticsPtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(WebAppEnablementExperienceAnalyticsPtrOutput)
+}
+
+type WebAppEnablementExperienceAnalyticsOutput struct{ *pulumi.OutputState }
+
+func (WebAppEnablementExperienceAnalyticsOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*WebAppEnablementExperienceAnalytics)(nil)).Elem()
+}
+
+func (o WebAppEnablementExperienceAnalyticsOutput) ToWebAppEnablementExperienceAnalyticsOutput() WebAppEnablementExperienceAnalyticsOutput {
+	return o
+}
+
+func (o WebAppEnablementExperienceAnalyticsOutput) ToWebAppEnablementExperienceAnalyticsOutputWithContext(ctx context.Context) WebAppEnablementExperienceAnalyticsOutput {
+	return o
+}
+
+func (o WebAppEnablementExperienceAnalyticsOutput) ToWebAppEnablementExperienceAnalyticsPtrOutput() WebAppEnablementExperienceAnalyticsPtrOutput {
+	return o.ToWebAppEnablementExperienceAnalyticsPtrOutputWithContext(context.Background())
+}
+
+func (o WebAppEnablementExperienceAnalyticsOutput) ToWebAppEnablementExperienceAnalyticsPtrOutputWithContext(ctx context.Context) WebAppEnablementExperienceAnalyticsPtrOutput {
+	return o.ApplyTWithContext(ctx, func(_ context.Context, v WebAppEnablementExperienceAnalytics) *WebAppEnablementExperienceAnalytics {
+		return &v
+	}).(WebAppEnablementExperienceAnalyticsPtrOutput)
+}
+
+// This setting is enabled (`true`) or disabled (`false`)
+func (o WebAppEnablementExperienceAnalyticsOutput) Enabled() pulumi.BoolOutput {
+	return o.ApplyT(func(v WebAppEnablementExperienceAnalytics) bool { return v.Enabled }).(pulumi.BoolOutput)
+}
+
+type WebAppEnablementExperienceAnalyticsPtrOutput struct{ *pulumi.OutputState }
+
+func (WebAppEnablementExperienceAnalyticsPtrOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((**WebAppEnablementExperienceAnalytics)(nil)).Elem()
+}
+
+func (o WebAppEnablementExperienceAnalyticsPtrOutput) ToWebAppEnablementExperienceAnalyticsPtrOutput() WebAppEnablementExperienceAnalyticsPtrOutput {
+	return o
+}
+
+func (o WebAppEnablementExperienceAnalyticsPtrOutput) ToWebAppEnablementExperienceAnalyticsPtrOutputWithContext(ctx context.Context) WebAppEnablementExperienceAnalyticsPtrOutput {
+	return o
+}
+
+func (o WebAppEnablementExperienceAnalyticsPtrOutput) Elem() WebAppEnablementExperienceAnalyticsOutput {
+	return o.ApplyT(func(v *WebAppEnablementExperienceAnalytics) WebAppEnablementExperienceAnalytics {
+		if v != nil {
+			return *v
+		}
+		var ret WebAppEnablementExperienceAnalytics
+		return ret
+	}).(WebAppEnablementExperienceAnalyticsOutput)
+}
+
+// This setting is enabled (`true`) or disabled (`false`)
+func (o WebAppEnablementExperienceAnalyticsPtrOutput) Enabled() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v *WebAppEnablementExperienceAnalytics) *bool {
+		if v == nil {
+			return nil
+		}
+		return &v.Enabled
+	}).(pulumi.BoolPtrOutput)
+}
+
+type WebAppEnablementRum struct {
+	// (Field has overlap with `WebApplication`) Percentage of user sessions captured and analyzed
+	CostAndTrafficControl int `pulumi:"costAndTrafficControl"`
+	// (Field has overlap with `WebApplication`) This setting is enabled (`true`) or disabled (`false`)
+	Enabled bool `pulumi:"enabled"`
+	// Enable New Real User Monitoring Experience
+	EnabledOnGrail *bool `pulumi:"enabledOnGrail"`
+}
+
+// WebAppEnablementRumInput is an input type that accepts WebAppEnablementRumArgs and WebAppEnablementRumOutput values.
+// You can construct a concrete instance of `WebAppEnablementRumInput` via:
+//
+//	WebAppEnablementRumArgs{...}
+type WebAppEnablementRumInput interface {
+	pulumi.Input
+
+	ToWebAppEnablementRumOutput() WebAppEnablementRumOutput
+	ToWebAppEnablementRumOutputWithContext(context.Context) WebAppEnablementRumOutput
+}
+
+type WebAppEnablementRumArgs struct {
+	// (Field has overlap with `WebApplication`) Percentage of user sessions captured and analyzed
+	CostAndTrafficControl pulumi.IntInput `pulumi:"costAndTrafficControl"`
+	// (Field has overlap with `WebApplication`) This setting is enabled (`true`) or disabled (`false`)
+	Enabled pulumi.BoolInput `pulumi:"enabled"`
+	// Enable New Real User Monitoring Experience
+	EnabledOnGrail pulumi.BoolPtrInput `pulumi:"enabledOnGrail"`
+}
+
+func (WebAppEnablementRumArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*WebAppEnablementRum)(nil)).Elem()
+}
+
+func (i WebAppEnablementRumArgs) ToWebAppEnablementRumOutput() WebAppEnablementRumOutput {
+	return i.ToWebAppEnablementRumOutputWithContext(context.Background())
+}
+
+func (i WebAppEnablementRumArgs) ToWebAppEnablementRumOutputWithContext(ctx context.Context) WebAppEnablementRumOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(WebAppEnablementRumOutput)
+}
+
+func (i WebAppEnablementRumArgs) ToWebAppEnablementRumPtrOutput() WebAppEnablementRumPtrOutput {
+	return i.ToWebAppEnablementRumPtrOutputWithContext(context.Background())
+}
+
+func (i WebAppEnablementRumArgs) ToWebAppEnablementRumPtrOutputWithContext(ctx context.Context) WebAppEnablementRumPtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(WebAppEnablementRumOutput).ToWebAppEnablementRumPtrOutputWithContext(ctx)
+}
+
+// WebAppEnablementRumPtrInput is an input type that accepts WebAppEnablementRumArgs, WebAppEnablementRumPtr and WebAppEnablementRumPtrOutput values.
+// You can construct a concrete instance of `WebAppEnablementRumPtrInput` via:
+//
+//	        WebAppEnablementRumArgs{...}
+//
+//	or:
+//
+//	        nil
+type WebAppEnablementRumPtrInput interface {
+	pulumi.Input
+
+	ToWebAppEnablementRumPtrOutput() WebAppEnablementRumPtrOutput
+	ToWebAppEnablementRumPtrOutputWithContext(context.Context) WebAppEnablementRumPtrOutput
+}
+
+type webAppEnablementRumPtrType WebAppEnablementRumArgs
+
+func WebAppEnablementRumPtr(v *WebAppEnablementRumArgs) WebAppEnablementRumPtrInput {
+	return (*webAppEnablementRumPtrType)(v)
+}
+
+func (*webAppEnablementRumPtrType) ElementType() reflect.Type {
+	return reflect.TypeOf((**WebAppEnablementRum)(nil)).Elem()
+}
+
+func (i *webAppEnablementRumPtrType) ToWebAppEnablementRumPtrOutput() WebAppEnablementRumPtrOutput {
+	return i.ToWebAppEnablementRumPtrOutputWithContext(context.Background())
+}
+
+func (i *webAppEnablementRumPtrType) ToWebAppEnablementRumPtrOutputWithContext(ctx context.Context) WebAppEnablementRumPtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(WebAppEnablementRumPtrOutput)
+}
+
+type WebAppEnablementRumOutput struct{ *pulumi.OutputState }
+
+func (WebAppEnablementRumOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*WebAppEnablementRum)(nil)).Elem()
+}
+
+func (o WebAppEnablementRumOutput) ToWebAppEnablementRumOutput() WebAppEnablementRumOutput {
+	return o
+}
+
+func (o WebAppEnablementRumOutput) ToWebAppEnablementRumOutputWithContext(ctx context.Context) WebAppEnablementRumOutput {
+	return o
+}
+
+func (o WebAppEnablementRumOutput) ToWebAppEnablementRumPtrOutput() WebAppEnablementRumPtrOutput {
+	return o.ToWebAppEnablementRumPtrOutputWithContext(context.Background())
+}
+
+func (o WebAppEnablementRumOutput) ToWebAppEnablementRumPtrOutputWithContext(ctx context.Context) WebAppEnablementRumPtrOutput {
+	return o.ApplyTWithContext(ctx, func(_ context.Context, v WebAppEnablementRum) *WebAppEnablementRum {
+		return &v
+	}).(WebAppEnablementRumPtrOutput)
+}
+
+// (Field has overlap with `WebApplication`) Percentage of user sessions captured and analyzed
+func (o WebAppEnablementRumOutput) CostAndTrafficControl() pulumi.IntOutput {
+	return o.ApplyT(func(v WebAppEnablementRum) int { return v.CostAndTrafficControl }).(pulumi.IntOutput)
+}
+
+// (Field has overlap with `WebApplication`) This setting is enabled (`true`) or disabled (`false`)
+func (o WebAppEnablementRumOutput) Enabled() pulumi.BoolOutput {
+	return o.ApplyT(func(v WebAppEnablementRum) bool { return v.Enabled }).(pulumi.BoolOutput)
+}
+
+// Enable New Real User Monitoring Experience
+func (o WebAppEnablementRumOutput) EnabledOnGrail() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v WebAppEnablementRum) *bool { return v.EnabledOnGrail }).(pulumi.BoolPtrOutput)
+}
+
+type WebAppEnablementRumPtrOutput struct{ *pulumi.OutputState }
+
+func (WebAppEnablementRumPtrOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((**WebAppEnablementRum)(nil)).Elem()
+}
+
+func (o WebAppEnablementRumPtrOutput) ToWebAppEnablementRumPtrOutput() WebAppEnablementRumPtrOutput {
+	return o
+}
+
+func (o WebAppEnablementRumPtrOutput) ToWebAppEnablementRumPtrOutputWithContext(ctx context.Context) WebAppEnablementRumPtrOutput {
+	return o
+}
+
+func (o WebAppEnablementRumPtrOutput) Elem() WebAppEnablementRumOutput {
+	return o.ApplyT(func(v *WebAppEnablementRum) WebAppEnablementRum {
+		if v != nil {
+			return *v
+		}
+		var ret WebAppEnablementRum
+		return ret
+	}).(WebAppEnablementRumOutput)
+}
+
+// (Field has overlap with `WebApplication`) Percentage of user sessions captured and analyzed
+func (o WebAppEnablementRumPtrOutput) CostAndTrafficControl() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v *WebAppEnablementRum) *int {
+		if v == nil {
+			return nil
+		}
+		return &v.CostAndTrafficControl
+	}).(pulumi.IntPtrOutput)
+}
+
+// (Field has overlap with `WebApplication`) This setting is enabled (`true`) or disabled (`false`)
+func (o WebAppEnablementRumPtrOutput) Enabled() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v *WebAppEnablementRum) *bool {
+		if v == nil {
+			return nil
+		}
+		return &v.Enabled
+	}).(pulumi.BoolPtrOutput)
+}
+
+// Enable New Real User Monitoring Experience
+func (o WebAppEnablementRumPtrOutput) EnabledOnGrail() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v *WebAppEnablementRum) *bool {
+		if v == nil {
+			return nil
+		}
+		return v.EnabledOnGrail
+	}).(pulumi.BoolPtrOutput)
+}
+
+type WebAppEnablementSessionReplay struct {
+	// (Field has overlap with `WebApplication`) [Percentage of user sessions recorded with Session Replay Classic](https://dt-url.net/sr-cost-traffic-control). For example, if you have 50% for RUM and 50% for Session Replay Classic, it results in 25% of sessions recorded with Session Replay Classic.
+	CostAndTrafficControl int `pulumi:"costAndTrafficControl"`
+	// (Field has overlap with `WebApplication`) This setting is enabled (`true`) or disabled (`false`)
+	Enabled bool `pulumi:"enabled"`
+}
+
+// WebAppEnablementSessionReplayInput is an input type that accepts WebAppEnablementSessionReplayArgs and WebAppEnablementSessionReplayOutput values.
+// You can construct a concrete instance of `WebAppEnablementSessionReplayInput` via:
+//
+//	WebAppEnablementSessionReplayArgs{...}
+type WebAppEnablementSessionReplayInput interface {
+	pulumi.Input
+
+	ToWebAppEnablementSessionReplayOutput() WebAppEnablementSessionReplayOutput
+	ToWebAppEnablementSessionReplayOutputWithContext(context.Context) WebAppEnablementSessionReplayOutput
+}
+
+type WebAppEnablementSessionReplayArgs struct {
+	// (Field has overlap with `WebApplication`) [Percentage of user sessions recorded with Session Replay Classic](https://dt-url.net/sr-cost-traffic-control). For example, if you have 50% for RUM and 50% for Session Replay Classic, it results in 25% of sessions recorded with Session Replay Classic.
+	CostAndTrafficControl pulumi.IntInput `pulumi:"costAndTrafficControl"`
+	// (Field has overlap with `WebApplication`) This setting is enabled (`true`) or disabled (`false`)
+	Enabled pulumi.BoolInput `pulumi:"enabled"`
+}
+
+func (WebAppEnablementSessionReplayArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*WebAppEnablementSessionReplay)(nil)).Elem()
+}
+
+func (i WebAppEnablementSessionReplayArgs) ToWebAppEnablementSessionReplayOutput() WebAppEnablementSessionReplayOutput {
+	return i.ToWebAppEnablementSessionReplayOutputWithContext(context.Background())
+}
+
+func (i WebAppEnablementSessionReplayArgs) ToWebAppEnablementSessionReplayOutputWithContext(ctx context.Context) WebAppEnablementSessionReplayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(WebAppEnablementSessionReplayOutput)
+}
+
+func (i WebAppEnablementSessionReplayArgs) ToWebAppEnablementSessionReplayPtrOutput() WebAppEnablementSessionReplayPtrOutput {
+	return i.ToWebAppEnablementSessionReplayPtrOutputWithContext(context.Background())
+}
+
+func (i WebAppEnablementSessionReplayArgs) ToWebAppEnablementSessionReplayPtrOutputWithContext(ctx context.Context) WebAppEnablementSessionReplayPtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(WebAppEnablementSessionReplayOutput).ToWebAppEnablementSessionReplayPtrOutputWithContext(ctx)
+}
+
+// WebAppEnablementSessionReplayPtrInput is an input type that accepts WebAppEnablementSessionReplayArgs, WebAppEnablementSessionReplayPtr and WebAppEnablementSessionReplayPtrOutput values.
+// You can construct a concrete instance of `WebAppEnablementSessionReplayPtrInput` via:
+//
+//	        WebAppEnablementSessionReplayArgs{...}
+//
+//	or:
+//
+//	        nil
+type WebAppEnablementSessionReplayPtrInput interface {
+	pulumi.Input
+
+	ToWebAppEnablementSessionReplayPtrOutput() WebAppEnablementSessionReplayPtrOutput
+	ToWebAppEnablementSessionReplayPtrOutputWithContext(context.Context) WebAppEnablementSessionReplayPtrOutput
+}
+
+type webAppEnablementSessionReplayPtrType WebAppEnablementSessionReplayArgs
+
+func WebAppEnablementSessionReplayPtr(v *WebAppEnablementSessionReplayArgs) WebAppEnablementSessionReplayPtrInput {
+	return (*webAppEnablementSessionReplayPtrType)(v)
+}
+
+func (*webAppEnablementSessionReplayPtrType) ElementType() reflect.Type {
+	return reflect.TypeOf((**WebAppEnablementSessionReplay)(nil)).Elem()
+}
+
+func (i *webAppEnablementSessionReplayPtrType) ToWebAppEnablementSessionReplayPtrOutput() WebAppEnablementSessionReplayPtrOutput {
+	return i.ToWebAppEnablementSessionReplayPtrOutputWithContext(context.Background())
+}
+
+func (i *webAppEnablementSessionReplayPtrType) ToWebAppEnablementSessionReplayPtrOutputWithContext(ctx context.Context) WebAppEnablementSessionReplayPtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(WebAppEnablementSessionReplayPtrOutput)
+}
+
+type WebAppEnablementSessionReplayOutput struct{ *pulumi.OutputState }
+
+func (WebAppEnablementSessionReplayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*WebAppEnablementSessionReplay)(nil)).Elem()
+}
+
+func (o WebAppEnablementSessionReplayOutput) ToWebAppEnablementSessionReplayOutput() WebAppEnablementSessionReplayOutput {
+	return o
+}
+
+func (o WebAppEnablementSessionReplayOutput) ToWebAppEnablementSessionReplayOutputWithContext(ctx context.Context) WebAppEnablementSessionReplayOutput {
+	return o
+}
+
+func (o WebAppEnablementSessionReplayOutput) ToWebAppEnablementSessionReplayPtrOutput() WebAppEnablementSessionReplayPtrOutput {
+	return o.ToWebAppEnablementSessionReplayPtrOutputWithContext(context.Background())
+}
+
+func (o WebAppEnablementSessionReplayOutput) ToWebAppEnablementSessionReplayPtrOutputWithContext(ctx context.Context) WebAppEnablementSessionReplayPtrOutput {
+	return o.ApplyTWithContext(ctx, func(_ context.Context, v WebAppEnablementSessionReplay) *WebAppEnablementSessionReplay {
+		return &v
+	}).(WebAppEnablementSessionReplayPtrOutput)
+}
+
+// (Field has overlap with `WebApplication`) [Percentage of user sessions recorded with Session Replay Classic](https://dt-url.net/sr-cost-traffic-control). For example, if you have 50% for RUM and 50% for Session Replay Classic, it results in 25% of sessions recorded with Session Replay Classic.
+func (o WebAppEnablementSessionReplayOutput) CostAndTrafficControl() pulumi.IntOutput {
+	return o.ApplyT(func(v WebAppEnablementSessionReplay) int { return v.CostAndTrafficControl }).(pulumi.IntOutput)
+}
+
+// (Field has overlap with `WebApplication`) This setting is enabled (`true`) or disabled (`false`)
+func (o WebAppEnablementSessionReplayOutput) Enabled() pulumi.BoolOutput {
+	return o.ApplyT(func(v WebAppEnablementSessionReplay) bool { return v.Enabled }).(pulumi.BoolOutput)
+}
+
+type WebAppEnablementSessionReplayPtrOutput struct{ *pulumi.OutputState }
+
+func (WebAppEnablementSessionReplayPtrOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((**WebAppEnablementSessionReplay)(nil)).Elem()
+}
+
+func (o WebAppEnablementSessionReplayPtrOutput) ToWebAppEnablementSessionReplayPtrOutput() WebAppEnablementSessionReplayPtrOutput {
+	return o
+}
+
+func (o WebAppEnablementSessionReplayPtrOutput) ToWebAppEnablementSessionReplayPtrOutputWithContext(ctx context.Context) WebAppEnablementSessionReplayPtrOutput {
+	return o
+}
+
+func (o WebAppEnablementSessionReplayPtrOutput) Elem() WebAppEnablementSessionReplayOutput {
+	return o.ApplyT(func(v *WebAppEnablementSessionReplay) WebAppEnablementSessionReplay {
+		if v != nil {
+			return *v
+		}
+		var ret WebAppEnablementSessionReplay
+		return ret
+	}).(WebAppEnablementSessionReplayOutput)
+}
+
+// (Field has overlap with `WebApplication`) [Percentage of user sessions recorded with Session Replay Classic](https://dt-url.net/sr-cost-traffic-control). For example, if you have 50% for RUM and 50% for Session Replay Classic, it results in 25% of sessions recorded with Session Replay Classic.
+func (o WebAppEnablementSessionReplayPtrOutput) CostAndTrafficControl() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v *WebAppEnablementSessionReplay) *int {
+		if v == nil {
+			return nil
+		}
+		return &v.CostAndTrafficControl
+	}).(pulumi.IntPtrOutput)
+}
+
+// (Field has overlap with `WebApplication`) This setting is enabled (`true`) or disabled (`false`)
+func (o WebAppEnablementSessionReplayPtrOutput) Enabled() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v *WebAppEnablementSessionReplay) *bool {
+		if v == nil {
+			return nil
+		}
+		return &v.Enabled
+	}).(pulumi.BoolPtrOutput)
+}
+
+type WebAppIpAddressExclusionIpExclusionList struct {
+	IpExclusions []WebAppIpAddressExclusionIpExclusionListIpExclusion `pulumi:"ipExclusions"`
+}
+
+// WebAppIpAddressExclusionIpExclusionListInput is an input type that accepts WebAppIpAddressExclusionIpExclusionListArgs and WebAppIpAddressExclusionIpExclusionListOutput values.
+// You can construct a concrete instance of `WebAppIpAddressExclusionIpExclusionListInput` via:
+//
+//	WebAppIpAddressExclusionIpExclusionListArgs{...}
+type WebAppIpAddressExclusionIpExclusionListInput interface {
+	pulumi.Input
+
+	ToWebAppIpAddressExclusionIpExclusionListOutput() WebAppIpAddressExclusionIpExclusionListOutput
+	ToWebAppIpAddressExclusionIpExclusionListOutputWithContext(context.Context) WebAppIpAddressExclusionIpExclusionListOutput
+}
+
+type WebAppIpAddressExclusionIpExclusionListArgs struct {
+	IpExclusions WebAppIpAddressExclusionIpExclusionListIpExclusionArrayInput `pulumi:"ipExclusions"`
+}
+
+func (WebAppIpAddressExclusionIpExclusionListArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*WebAppIpAddressExclusionIpExclusionList)(nil)).Elem()
+}
+
+func (i WebAppIpAddressExclusionIpExclusionListArgs) ToWebAppIpAddressExclusionIpExclusionListOutput() WebAppIpAddressExclusionIpExclusionListOutput {
+	return i.ToWebAppIpAddressExclusionIpExclusionListOutputWithContext(context.Background())
+}
+
+func (i WebAppIpAddressExclusionIpExclusionListArgs) ToWebAppIpAddressExclusionIpExclusionListOutputWithContext(ctx context.Context) WebAppIpAddressExclusionIpExclusionListOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(WebAppIpAddressExclusionIpExclusionListOutput)
+}
+
+func (i WebAppIpAddressExclusionIpExclusionListArgs) ToWebAppIpAddressExclusionIpExclusionListPtrOutput() WebAppIpAddressExclusionIpExclusionListPtrOutput {
+	return i.ToWebAppIpAddressExclusionIpExclusionListPtrOutputWithContext(context.Background())
+}
+
+func (i WebAppIpAddressExclusionIpExclusionListArgs) ToWebAppIpAddressExclusionIpExclusionListPtrOutputWithContext(ctx context.Context) WebAppIpAddressExclusionIpExclusionListPtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(WebAppIpAddressExclusionIpExclusionListOutput).ToWebAppIpAddressExclusionIpExclusionListPtrOutputWithContext(ctx)
+}
+
+// WebAppIpAddressExclusionIpExclusionListPtrInput is an input type that accepts WebAppIpAddressExclusionIpExclusionListArgs, WebAppIpAddressExclusionIpExclusionListPtr and WebAppIpAddressExclusionIpExclusionListPtrOutput values.
+// You can construct a concrete instance of `WebAppIpAddressExclusionIpExclusionListPtrInput` via:
+//
+//	        WebAppIpAddressExclusionIpExclusionListArgs{...}
+//
+//	or:
+//
+//	        nil
+type WebAppIpAddressExclusionIpExclusionListPtrInput interface {
+	pulumi.Input
+
+	ToWebAppIpAddressExclusionIpExclusionListPtrOutput() WebAppIpAddressExclusionIpExclusionListPtrOutput
+	ToWebAppIpAddressExclusionIpExclusionListPtrOutputWithContext(context.Context) WebAppIpAddressExclusionIpExclusionListPtrOutput
+}
+
+type webAppIpAddressExclusionIpExclusionListPtrType WebAppIpAddressExclusionIpExclusionListArgs
+
+func WebAppIpAddressExclusionIpExclusionListPtr(v *WebAppIpAddressExclusionIpExclusionListArgs) WebAppIpAddressExclusionIpExclusionListPtrInput {
+	return (*webAppIpAddressExclusionIpExclusionListPtrType)(v)
+}
+
+func (*webAppIpAddressExclusionIpExclusionListPtrType) ElementType() reflect.Type {
+	return reflect.TypeOf((**WebAppIpAddressExclusionIpExclusionList)(nil)).Elem()
+}
+
+func (i *webAppIpAddressExclusionIpExclusionListPtrType) ToWebAppIpAddressExclusionIpExclusionListPtrOutput() WebAppIpAddressExclusionIpExclusionListPtrOutput {
+	return i.ToWebAppIpAddressExclusionIpExclusionListPtrOutputWithContext(context.Background())
+}
+
+func (i *webAppIpAddressExclusionIpExclusionListPtrType) ToWebAppIpAddressExclusionIpExclusionListPtrOutputWithContext(ctx context.Context) WebAppIpAddressExclusionIpExclusionListPtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(WebAppIpAddressExclusionIpExclusionListPtrOutput)
+}
+
+type WebAppIpAddressExclusionIpExclusionListOutput struct{ *pulumi.OutputState }
+
+func (WebAppIpAddressExclusionIpExclusionListOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*WebAppIpAddressExclusionIpExclusionList)(nil)).Elem()
+}
+
+func (o WebAppIpAddressExclusionIpExclusionListOutput) ToWebAppIpAddressExclusionIpExclusionListOutput() WebAppIpAddressExclusionIpExclusionListOutput {
+	return o
+}
+
+func (o WebAppIpAddressExclusionIpExclusionListOutput) ToWebAppIpAddressExclusionIpExclusionListOutputWithContext(ctx context.Context) WebAppIpAddressExclusionIpExclusionListOutput {
+	return o
+}
+
+func (o WebAppIpAddressExclusionIpExclusionListOutput) ToWebAppIpAddressExclusionIpExclusionListPtrOutput() WebAppIpAddressExclusionIpExclusionListPtrOutput {
+	return o.ToWebAppIpAddressExclusionIpExclusionListPtrOutputWithContext(context.Background())
+}
+
+func (o WebAppIpAddressExclusionIpExclusionListOutput) ToWebAppIpAddressExclusionIpExclusionListPtrOutputWithContext(ctx context.Context) WebAppIpAddressExclusionIpExclusionListPtrOutput {
+	return o.ApplyTWithContext(ctx, func(_ context.Context, v WebAppIpAddressExclusionIpExclusionList) *WebAppIpAddressExclusionIpExclusionList {
+		return &v
+	}).(WebAppIpAddressExclusionIpExclusionListPtrOutput)
+}
+
+func (o WebAppIpAddressExclusionIpExclusionListOutput) IpExclusions() WebAppIpAddressExclusionIpExclusionListIpExclusionArrayOutput {
+	return o.ApplyT(func(v WebAppIpAddressExclusionIpExclusionList) []WebAppIpAddressExclusionIpExclusionListIpExclusion {
+		return v.IpExclusions
+	}).(WebAppIpAddressExclusionIpExclusionListIpExclusionArrayOutput)
+}
+
+type WebAppIpAddressExclusionIpExclusionListPtrOutput struct{ *pulumi.OutputState }
+
+func (WebAppIpAddressExclusionIpExclusionListPtrOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((**WebAppIpAddressExclusionIpExclusionList)(nil)).Elem()
+}
+
+func (o WebAppIpAddressExclusionIpExclusionListPtrOutput) ToWebAppIpAddressExclusionIpExclusionListPtrOutput() WebAppIpAddressExclusionIpExclusionListPtrOutput {
+	return o
+}
+
+func (o WebAppIpAddressExclusionIpExclusionListPtrOutput) ToWebAppIpAddressExclusionIpExclusionListPtrOutputWithContext(ctx context.Context) WebAppIpAddressExclusionIpExclusionListPtrOutput {
+	return o
+}
+
+func (o WebAppIpAddressExclusionIpExclusionListPtrOutput) Elem() WebAppIpAddressExclusionIpExclusionListOutput {
+	return o.ApplyT(func(v *WebAppIpAddressExclusionIpExclusionList) WebAppIpAddressExclusionIpExclusionList {
+		if v != nil {
+			return *v
+		}
+		var ret WebAppIpAddressExclusionIpExclusionList
+		return ret
+	}).(WebAppIpAddressExclusionIpExclusionListOutput)
+}
+
+func (o WebAppIpAddressExclusionIpExclusionListPtrOutput) IpExclusions() WebAppIpAddressExclusionIpExclusionListIpExclusionArrayOutput {
+	return o.ApplyT(func(v *WebAppIpAddressExclusionIpExclusionList) []WebAppIpAddressExclusionIpExclusionListIpExclusion {
+		if v == nil {
+			return nil
+		}
+		return v.IpExclusions
+	}).(WebAppIpAddressExclusionIpExclusionListIpExclusionArrayOutput)
+}
+
+type WebAppIpAddressExclusionIpExclusionListIpExclusion struct {
+	// Single IP or IP range start address
+	Ip string `pulumi:"ip"`
+	// IP range end
+	IpTo *string `pulumi:"ipTo"`
+}
+
+// WebAppIpAddressExclusionIpExclusionListIpExclusionInput is an input type that accepts WebAppIpAddressExclusionIpExclusionListIpExclusionArgs and WebAppIpAddressExclusionIpExclusionListIpExclusionOutput values.
+// You can construct a concrete instance of `WebAppIpAddressExclusionIpExclusionListIpExclusionInput` via:
+//
+//	WebAppIpAddressExclusionIpExclusionListIpExclusionArgs{...}
+type WebAppIpAddressExclusionIpExclusionListIpExclusionInput interface {
+	pulumi.Input
+
+	ToWebAppIpAddressExclusionIpExclusionListIpExclusionOutput() WebAppIpAddressExclusionIpExclusionListIpExclusionOutput
+	ToWebAppIpAddressExclusionIpExclusionListIpExclusionOutputWithContext(context.Context) WebAppIpAddressExclusionIpExclusionListIpExclusionOutput
+}
+
+type WebAppIpAddressExclusionIpExclusionListIpExclusionArgs struct {
+	// Single IP or IP range start address
+	Ip pulumi.StringInput `pulumi:"ip"`
+	// IP range end
+	IpTo pulumi.StringPtrInput `pulumi:"ipTo"`
+}
+
+func (WebAppIpAddressExclusionIpExclusionListIpExclusionArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*WebAppIpAddressExclusionIpExclusionListIpExclusion)(nil)).Elem()
+}
+
+func (i WebAppIpAddressExclusionIpExclusionListIpExclusionArgs) ToWebAppIpAddressExclusionIpExclusionListIpExclusionOutput() WebAppIpAddressExclusionIpExclusionListIpExclusionOutput {
+	return i.ToWebAppIpAddressExclusionIpExclusionListIpExclusionOutputWithContext(context.Background())
+}
+
+func (i WebAppIpAddressExclusionIpExclusionListIpExclusionArgs) ToWebAppIpAddressExclusionIpExclusionListIpExclusionOutputWithContext(ctx context.Context) WebAppIpAddressExclusionIpExclusionListIpExclusionOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(WebAppIpAddressExclusionIpExclusionListIpExclusionOutput)
+}
+
+// WebAppIpAddressExclusionIpExclusionListIpExclusionArrayInput is an input type that accepts WebAppIpAddressExclusionIpExclusionListIpExclusionArray and WebAppIpAddressExclusionIpExclusionListIpExclusionArrayOutput values.
+// You can construct a concrete instance of `WebAppIpAddressExclusionIpExclusionListIpExclusionArrayInput` via:
+//
+//	WebAppIpAddressExclusionIpExclusionListIpExclusionArray{ WebAppIpAddressExclusionIpExclusionListIpExclusionArgs{...} }
+type WebAppIpAddressExclusionIpExclusionListIpExclusionArrayInput interface {
+	pulumi.Input
+
+	ToWebAppIpAddressExclusionIpExclusionListIpExclusionArrayOutput() WebAppIpAddressExclusionIpExclusionListIpExclusionArrayOutput
+	ToWebAppIpAddressExclusionIpExclusionListIpExclusionArrayOutputWithContext(context.Context) WebAppIpAddressExclusionIpExclusionListIpExclusionArrayOutput
+}
+
+type WebAppIpAddressExclusionIpExclusionListIpExclusionArray []WebAppIpAddressExclusionIpExclusionListIpExclusionInput
+
+func (WebAppIpAddressExclusionIpExclusionListIpExclusionArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]WebAppIpAddressExclusionIpExclusionListIpExclusion)(nil)).Elem()
+}
+
+func (i WebAppIpAddressExclusionIpExclusionListIpExclusionArray) ToWebAppIpAddressExclusionIpExclusionListIpExclusionArrayOutput() WebAppIpAddressExclusionIpExclusionListIpExclusionArrayOutput {
+	return i.ToWebAppIpAddressExclusionIpExclusionListIpExclusionArrayOutputWithContext(context.Background())
+}
+
+func (i WebAppIpAddressExclusionIpExclusionListIpExclusionArray) ToWebAppIpAddressExclusionIpExclusionListIpExclusionArrayOutputWithContext(ctx context.Context) WebAppIpAddressExclusionIpExclusionListIpExclusionArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(WebAppIpAddressExclusionIpExclusionListIpExclusionArrayOutput)
+}
+
+type WebAppIpAddressExclusionIpExclusionListIpExclusionOutput struct{ *pulumi.OutputState }
+
+func (WebAppIpAddressExclusionIpExclusionListIpExclusionOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*WebAppIpAddressExclusionIpExclusionListIpExclusion)(nil)).Elem()
+}
+
+func (o WebAppIpAddressExclusionIpExclusionListIpExclusionOutput) ToWebAppIpAddressExclusionIpExclusionListIpExclusionOutput() WebAppIpAddressExclusionIpExclusionListIpExclusionOutput {
+	return o
+}
+
+func (o WebAppIpAddressExclusionIpExclusionListIpExclusionOutput) ToWebAppIpAddressExclusionIpExclusionListIpExclusionOutputWithContext(ctx context.Context) WebAppIpAddressExclusionIpExclusionListIpExclusionOutput {
+	return o
+}
+
+// Single IP or IP range start address
+func (o WebAppIpAddressExclusionIpExclusionListIpExclusionOutput) Ip() pulumi.StringOutput {
+	return o.ApplyT(func(v WebAppIpAddressExclusionIpExclusionListIpExclusion) string { return v.Ip }).(pulumi.StringOutput)
+}
+
+// IP range end
+func (o WebAppIpAddressExclusionIpExclusionListIpExclusionOutput) IpTo() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v WebAppIpAddressExclusionIpExclusionListIpExclusion) *string { return v.IpTo }).(pulumi.StringPtrOutput)
+}
+
+type WebAppIpAddressExclusionIpExclusionListIpExclusionArrayOutput struct{ *pulumi.OutputState }
+
+func (WebAppIpAddressExclusionIpExclusionListIpExclusionArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]WebAppIpAddressExclusionIpExclusionListIpExclusion)(nil)).Elem()
+}
+
+func (o WebAppIpAddressExclusionIpExclusionListIpExclusionArrayOutput) ToWebAppIpAddressExclusionIpExclusionListIpExclusionArrayOutput() WebAppIpAddressExclusionIpExclusionListIpExclusionArrayOutput {
+	return o
+}
+
+func (o WebAppIpAddressExclusionIpExclusionListIpExclusionArrayOutput) ToWebAppIpAddressExclusionIpExclusionListIpExclusionArrayOutputWithContext(ctx context.Context) WebAppIpAddressExclusionIpExclusionListIpExclusionArrayOutput {
+	return o
+}
+
+func (o WebAppIpAddressExclusionIpExclusionListIpExclusionArrayOutput) Index(i pulumi.IntInput) WebAppIpAddressExclusionIpExclusionListIpExclusionOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) WebAppIpAddressExclusionIpExclusionListIpExclusion {
+		return vs[0].([]WebAppIpAddressExclusionIpExclusionListIpExclusion)[vs[1].(int)]
+	}).(WebAppIpAddressExclusionIpExclusionListIpExclusionOutput)
+}
+
+type WebAppKeyPerformanceCustomThresholds struct {
+	// If **User action duration** is above this value, the action is assigned to the Frustrated performance zone.
+	FrustratingThresholdSeconds float64 `pulumi:"frustratingThresholdSeconds"`
+	// If **User action duration** is below this value, the action is assigned to the Satisfied performance zone.
+	ToleratedThresholdSeconds float64 `pulumi:"toleratedThresholdSeconds"`
+}
+
+// WebAppKeyPerformanceCustomThresholdsInput is an input type that accepts WebAppKeyPerformanceCustomThresholdsArgs and WebAppKeyPerformanceCustomThresholdsOutput values.
+// You can construct a concrete instance of `WebAppKeyPerformanceCustomThresholdsInput` via:
+//
+//	WebAppKeyPerformanceCustomThresholdsArgs{...}
+type WebAppKeyPerformanceCustomThresholdsInput interface {
+	pulumi.Input
+
+	ToWebAppKeyPerformanceCustomThresholdsOutput() WebAppKeyPerformanceCustomThresholdsOutput
+	ToWebAppKeyPerformanceCustomThresholdsOutputWithContext(context.Context) WebAppKeyPerformanceCustomThresholdsOutput
+}
+
+type WebAppKeyPerformanceCustomThresholdsArgs struct {
+	// If **User action duration** is above this value, the action is assigned to the Frustrated performance zone.
+	FrustratingThresholdSeconds pulumi.Float64Input `pulumi:"frustratingThresholdSeconds"`
+	// If **User action duration** is below this value, the action is assigned to the Satisfied performance zone.
+	ToleratedThresholdSeconds pulumi.Float64Input `pulumi:"toleratedThresholdSeconds"`
+}
+
+func (WebAppKeyPerformanceCustomThresholdsArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*WebAppKeyPerformanceCustomThresholds)(nil)).Elem()
+}
+
+func (i WebAppKeyPerformanceCustomThresholdsArgs) ToWebAppKeyPerformanceCustomThresholdsOutput() WebAppKeyPerformanceCustomThresholdsOutput {
+	return i.ToWebAppKeyPerformanceCustomThresholdsOutputWithContext(context.Background())
+}
+
+func (i WebAppKeyPerformanceCustomThresholdsArgs) ToWebAppKeyPerformanceCustomThresholdsOutputWithContext(ctx context.Context) WebAppKeyPerformanceCustomThresholdsOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(WebAppKeyPerformanceCustomThresholdsOutput)
+}
+
+func (i WebAppKeyPerformanceCustomThresholdsArgs) ToWebAppKeyPerformanceCustomThresholdsPtrOutput() WebAppKeyPerformanceCustomThresholdsPtrOutput {
+	return i.ToWebAppKeyPerformanceCustomThresholdsPtrOutputWithContext(context.Background())
+}
+
+func (i WebAppKeyPerformanceCustomThresholdsArgs) ToWebAppKeyPerformanceCustomThresholdsPtrOutputWithContext(ctx context.Context) WebAppKeyPerformanceCustomThresholdsPtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(WebAppKeyPerformanceCustomThresholdsOutput).ToWebAppKeyPerformanceCustomThresholdsPtrOutputWithContext(ctx)
+}
+
+// WebAppKeyPerformanceCustomThresholdsPtrInput is an input type that accepts WebAppKeyPerformanceCustomThresholdsArgs, WebAppKeyPerformanceCustomThresholdsPtr and WebAppKeyPerformanceCustomThresholdsPtrOutput values.
+// You can construct a concrete instance of `WebAppKeyPerformanceCustomThresholdsPtrInput` via:
+//
+//	        WebAppKeyPerformanceCustomThresholdsArgs{...}
+//
+//	or:
+//
+//	        nil
+type WebAppKeyPerformanceCustomThresholdsPtrInput interface {
+	pulumi.Input
+
+	ToWebAppKeyPerformanceCustomThresholdsPtrOutput() WebAppKeyPerformanceCustomThresholdsPtrOutput
+	ToWebAppKeyPerformanceCustomThresholdsPtrOutputWithContext(context.Context) WebAppKeyPerformanceCustomThresholdsPtrOutput
+}
+
+type webAppKeyPerformanceCustomThresholdsPtrType WebAppKeyPerformanceCustomThresholdsArgs
+
+func WebAppKeyPerformanceCustomThresholdsPtr(v *WebAppKeyPerformanceCustomThresholdsArgs) WebAppKeyPerformanceCustomThresholdsPtrInput {
+	return (*webAppKeyPerformanceCustomThresholdsPtrType)(v)
+}
+
+func (*webAppKeyPerformanceCustomThresholdsPtrType) ElementType() reflect.Type {
+	return reflect.TypeOf((**WebAppKeyPerformanceCustomThresholds)(nil)).Elem()
+}
+
+func (i *webAppKeyPerformanceCustomThresholdsPtrType) ToWebAppKeyPerformanceCustomThresholdsPtrOutput() WebAppKeyPerformanceCustomThresholdsPtrOutput {
+	return i.ToWebAppKeyPerformanceCustomThresholdsPtrOutputWithContext(context.Background())
+}
+
+func (i *webAppKeyPerformanceCustomThresholdsPtrType) ToWebAppKeyPerformanceCustomThresholdsPtrOutputWithContext(ctx context.Context) WebAppKeyPerformanceCustomThresholdsPtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(WebAppKeyPerformanceCustomThresholdsPtrOutput)
+}
+
+type WebAppKeyPerformanceCustomThresholdsOutput struct{ *pulumi.OutputState }
+
+func (WebAppKeyPerformanceCustomThresholdsOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*WebAppKeyPerformanceCustomThresholds)(nil)).Elem()
+}
+
+func (o WebAppKeyPerformanceCustomThresholdsOutput) ToWebAppKeyPerformanceCustomThresholdsOutput() WebAppKeyPerformanceCustomThresholdsOutput {
+	return o
+}
+
+func (o WebAppKeyPerformanceCustomThresholdsOutput) ToWebAppKeyPerformanceCustomThresholdsOutputWithContext(ctx context.Context) WebAppKeyPerformanceCustomThresholdsOutput {
+	return o
+}
+
+func (o WebAppKeyPerformanceCustomThresholdsOutput) ToWebAppKeyPerformanceCustomThresholdsPtrOutput() WebAppKeyPerformanceCustomThresholdsPtrOutput {
+	return o.ToWebAppKeyPerformanceCustomThresholdsPtrOutputWithContext(context.Background())
+}
+
+func (o WebAppKeyPerformanceCustomThresholdsOutput) ToWebAppKeyPerformanceCustomThresholdsPtrOutputWithContext(ctx context.Context) WebAppKeyPerformanceCustomThresholdsPtrOutput {
+	return o.ApplyTWithContext(ctx, func(_ context.Context, v WebAppKeyPerformanceCustomThresholds) *WebAppKeyPerformanceCustomThresholds {
+		return &v
+	}).(WebAppKeyPerformanceCustomThresholdsPtrOutput)
+}
+
+// If **User action duration** is above this value, the action is assigned to the Frustrated performance zone.
+func (o WebAppKeyPerformanceCustomThresholdsOutput) FrustratingThresholdSeconds() pulumi.Float64Output {
+	return o.ApplyT(func(v WebAppKeyPerformanceCustomThresholds) float64 { return v.FrustratingThresholdSeconds }).(pulumi.Float64Output)
+}
+
+// If **User action duration** is below this value, the action is assigned to the Satisfied performance zone.
+func (o WebAppKeyPerformanceCustomThresholdsOutput) ToleratedThresholdSeconds() pulumi.Float64Output {
+	return o.ApplyT(func(v WebAppKeyPerformanceCustomThresholds) float64 { return v.ToleratedThresholdSeconds }).(pulumi.Float64Output)
+}
+
+type WebAppKeyPerformanceCustomThresholdsPtrOutput struct{ *pulumi.OutputState }
+
+func (WebAppKeyPerformanceCustomThresholdsPtrOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((**WebAppKeyPerformanceCustomThresholds)(nil)).Elem()
+}
+
+func (o WebAppKeyPerformanceCustomThresholdsPtrOutput) ToWebAppKeyPerformanceCustomThresholdsPtrOutput() WebAppKeyPerformanceCustomThresholdsPtrOutput {
+	return o
+}
+
+func (o WebAppKeyPerformanceCustomThresholdsPtrOutput) ToWebAppKeyPerformanceCustomThresholdsPtrOutputWithContext(ctx context.Context) WebAppKeyPerformanceCustomThresholdsPtrOutput {
+	return o
+}
+
+func (o WebAppKeyPerformanceCustomThresholdsPtrOutput) Elem() WebAppKeyPerformanceCustomThresholdsOutput {
+	return o.ApplyT(func(v *WebAppKeyPerformanceCustomThresholds) WebAppKeyPerformanceCustomThresholds {
+		if v != nil {
+			return *v
+		}
+		var ret WebAppKeyPerformanceCustomThresholds
+		return ret
+	}).(WebAppKeyPerformanceCustomThresholdsOutput)
+}
+
+// If **User action duration** is above this value, the action is assigned to the Frustrated performance zone.
+func (o WebAppKeyPerformanceCustomThresholdsPtrOutput) FrustratingThresholdSeconds() pulumi.Float64PtrOutput {
+	return o.ApplyT(func(v *WebAppKeyPerformanceCustomThresholds) *float64 {
+		if v == nil {
+			return nil
+		}
+		return &v.FrustratingThresholdSeconds
+	}).(pulumi.Float64PtrOutput)
+}
+
+// If **User action duration** is below this value, the action is assigned to the Satisfied performance zone.
+func (o WebAppKeyPerformanceCustomThresholdsPtrOutput) ToleratedThresholdSeconds() pulumi.Float64PtrOutput {
+	return o.ApplyT(func(v *WebAppKeyPerformanceCustomThresholds) *float64 {
+		if v == nil {
+			return nil
+		}
+		return &v.ToleratedThresholdSeconds
+	}).(pulumi.Float64PtrOutput)
+}
+
+type WebAppKeyPerformanceLoadFallbackThresholds struct {
+	// If **User action duration** is above this value, the action is assigned to the Frustrated performance zone.
+	FrustratingFallbackThresholdSeconds float64 `pulumi:"frustratingFallbackThresholdSeconds"`
+	// If **User action duration** is below this value, the action is assigned to the Satisfied performance zone.
+	ToleratedFallbackThresholdSeconds float64 `pulumi:"toleratedFallbackThresholdSeconds"`
+}
+
+// WebAppKeyPerformanceLoadFallbackThresholdsInput is an input type that accepts WebAppKeyPerformanceLoadFallbackThresholdsArgs and WebAppKeyPerformanceLoadFallbackThresholdsOutput values.
+// You can construct a concrete instance of `WebAppKeyPerformanceLoadFallbackThresholdsInput` via:
+//
+//	WebAppKeyPerformanceLoadFallbackThresholdsArgs{...}
+type WebAppKeyPerformanceLoadFallbackThresholdsInput interface {
+	pulumi.Input
+
+	ToWebAppKeyPerformanceLoadFallbackThresholdsOutput() WebAppKeyPerformanceLoadFallbackThresholdsOutput
+	ToWebAppKeyPerformanceLoadFallbackThresholdsOutputWithContext(context.Context) WebAppKeyPerformanceLoadFallbackThresholdsOutput
+}
+
+type WebAppKeyPerformanceLoadFallbackThresholdsArgs struct {
+	// If **User action duration** is above this value, the action is assigned to the Frustrated performance zone.
+	FrustratingFallbackThresholdSeconds pulumi.Float64Input `pulumi:"frustratingFallbackThresholdSeconds"`
+	// If **User action duration** is below this value, the action is assigned to the Satisfied performance zone.
+	ToleratedFallbackThresholdSeconds pulumi.Float64Input `pulumi:"toleratedFallbackThresholdSeconds"`
+}
+
+func (WebAppKeyPerformanceLoadFallbackThresholdsArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*WebAppKeyPerformanceLoadFallbackThresholds)(nil)).Elem()
+}
+
+func (i WebAppKeyPerformanceLoadFallbackThresholdsArgs) ToWebAppKeyPerformanceLoadFallbackThresholdsOutput() WebAppKeyPerformanceLoadFallbackThresholdsOutput {
+	return i.ToWebAppKeyPerformanceLoadFallbackThresholdsOutputWithContext(context.Background())
+}
+
+func (i WebAppKeyPerformanceLoadFallbackThresholdsArgs) ToWebAppKeyPerformanceLoadFallbackThresholdsOutputWithContext(ctx context.Context) WebAppKeyPerformanceLoadFallbackThresholdsOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(WebAppKeyPerformanceLoadFallbackThresholdsOutput)
+}
+
+func (i WebAppKeyPerformanceLoadFallbackThresholdsArgs) ToWebAppKeyPerformanceLoadFallbackThresholdsPtrOutput() WebAppKeyPerformanceLoadFallbackThresholdsPtrOutput {
+	return i.ToWebAppKeyPerformanceLoadFallbackThresholdsPtrOutputWithContext(context.Background())
+}
+
+func (i WebAppKeyPerformanceLoadFallbackThresholdsArgs) ToWebAppKeyPerformanceLoadFallbackThresholdsPtrOutputWithContext(ctx context.Context) WebAppKeyPerformanceLoadFallbackThresholdsPtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(WebAppKeyPerformanceLoadFallbackThresholdsOutput).ToWebAppKeyPerformanceLoadFallbackThresholdsPtrOutputWithContext(ctx)
+}
+
+// WebAppKeyPerformanceLoadFallbackThresholdsPtrInput is an input type that accepts WebAppKeyPerformanceLoadFallbackThresholdsArgs, WebAppKeyPerformanceLoadFallbackThresholdsPtr and WebAppKeyPerformanceLoadFallbackThresholdsPtrOutput values.
+// You can construct a concrete instance of `WebAppKeyPerformanceLoadFallbackThresholdsPtrInput` via:
+//
+//	        WebAppKeyPerformanceLoadFallbackThresholdsArgs{...}
+//
+//	or:
+//
+//	        nil
+type WebAppKeyPerformanceLoadFallbackThresholdsPtrInput interface {
+	pulumi.Input
+
+	ToWebAppKeyPerformanceLoadFallbackThresholdsPtrOutput() WebAppKeyPerformanceLoadFallbackThresholdsPtrOutput
+	ToWebAppKeyPerformanceLoadFallbackThresholdsPtrOutputWithContext(context.Context) WebAppKeyPerformanceLoadFallbackThresholdsPtrOutput
+}
+
+type webAppKeyPerformanceLoadFallbackThresholdsPtrType WebAppKeyPerformanceLoadFallbackThresholdsArgs
+
+func WebAppKeyPerformanceLoadFallbackThresholdsPtr(v *WebAppKeyPerformanceLoadFallbackThresholdsArgs) WebAppKeyPerformanceLoadFallbackThresholdsPtrInput {
+	return (*webAppKeyPerformanceLoadFallbackThresholdsPtrType)(v)
+}
+
+func (*webAppKeyPerformanceLoadFallbackThresholdsPtrType) ElementType() reflect.Type {
+	return reflect.TypeOf((**WebAppKeyPerformanceLoadFallbackThresholds)(nil)).Elem()
+}
+
+func (i *webAppKeyPerformanceLoadFallbackThresholdsPtrType) ToWebAppKeyPerformanceLoadFallbackThresholdsPtrOutput() WebAppKeyPerformanceLoadFallbackThresholdsPtrOutput {
+	return i.ToWebAppKeyPerformanceLoadFallbackThresholdsPtrOutputWithContext(context.Background())
+}
+
+func (i *webAppKeyPerformanceLoadFallbackThresholdsPtrType) ToWebAppKeyPerformanceLoadFallbackThresholdsPtrOutputWithContext(ctx context.Context) WebAppKeyPerformanceLoadFallbackThresholdsPtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(WebAppKeyPerformanceLoadFallbackThresholdsPtrOutput)
+}
+
+type WebAppKeyPerformanceLoadFallbackThresholdsOutput struct{ *pulumi.OutputState }
+
+func (WebAppKeyPerformanceLoadFallbackThresholdsOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*WebAppKeyPerformanceLoadFallbackThresholds)(nil)).Elem()
+}
+
+func (o WebAppKeyPerformanceLoadFallbackThresholdsOutput) ToWebAppKeyPerformanceLoadFallbackThresholdsOutput() WebAppKeyPerformanceLoadFallbackThresholdsOutput {
+	return o
+}
+
+func (o WebAppKeyPerformanceLoadFallbackThresholdsOutput) ToWebAppKeyPerformanceLoadFallbackThresholdsOutputWithContext(ctx context.Context) WebAppKeyPerformanceLoadFallbackThresholdsOutput {
+	return o
+}
+
+func (o WebAppKeyPerformanceLoadFallbackThresholdsOutput) ToWebAppKeyPerformanceLoadFallbackThresholdsPtrOutput() WebAppKeyPerformanceLoadFallbackThresholdsPtrOutput {
+	return o.ToWebAppKeyPerformanceLoadFallbackThresholdsPtrOutputWithContext(context.Background())
+}
+
+func (o WebAppKeyPerformanceLoadFallbackThresholdsOutput) ToWebAppKeyPerformanceLoadFallbackThresholdsPtrOutputWithContext(ctx context.Context) WebAppKeyPerformanceLoadFallbackThresholdsPtrOutput {
+	return o.ApplyTWithContext(ctx, func(_ context.Context, v WebAppKeyPerformanceLoadFallbackThresholds) *WebAppKeyPerformanceLoadFallbackThresholds {
+		return &v
+	}).(WebAppKeyPerformanceLoadFallbackThresholdsPtrOutput)
+}
+
+// If **User action duration** is above this value, the action is assigned to the Frustrated performance zone.
+func (o WebAppKeyPerformanceLoadFallbackThresholdsOutput) FrustratingFallbackThresholdSeconds() pulumi.Float64Output {
+	return o.ApplyT(func(v WebAppKeyPerformanceLoadFallbackThresholds) float64 {
+		return v.FrustratingFallbackThresholdSeconds
+	}).(pulumi.Float64Output)
+}
+
+// If **User action duration** is below this value, the action is assigned to the Satisfied performance zone.
+func (o WebAppKeyPerformanceLoadFallbackThresholdsOutput) ToleratedFallbackThresholdSeconds() pulumi.Float64Output {
+	return o.ApplyT(func(v WebAppKeyPerformanceLoadFallbackThresholds) float64 { return v.ToleratedFallbackThresholdSeconds }).(pulumi.Float64Output)
+}
+
+type WebAppKeyPerformanceLoadFallbackThresholdsPtrOutput struct{ *pulumi.OutputState }
+
+func (WebAppKeyPerformanceLoadFallbackThresholdsPtrOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((**WebAppKeyPerformanceLoadFallbackThresholds)(nil)).Elem()
+}
+
+func (o WebAppKeyPerformanceLoadFallbackThresholdsPtrOutput) ToWebAppKeyPerformanceLoadFallbackThresholdsPtrOutput() WebAppKeyPerformanceLoadFallbackThresholdsPtrOutput {
+	return o
+}
+
+func (o WebAppKeyPerformanceLoadFallbackThresholdsPtrOutput) ToWebAppKeyPerformanceLoadFallbackThresholdsPtrOutputWithContext(ctx context.Context) WebAppKeyPerformanceLoadFallbackThresholdsPtrOutput {
+	return o
+}
+
+func (o WebAppKeyPerformanceLoadFallbackThresholdsPtrOutput) Elem() WebAppKeyPerformanceLoadFallbackThresholdsOutput {
+	return o.ApplyT(func(v *WebAppKeyPerformanceLoadFallbackThresholds) WebAppKeyPerformanceLoadFallbackThresholds {
+		if v != nil {
+			return *v
+		}
+		var ret WebAppKeyPerformanceLoadFallbackThresholds
+		return ret
+	}).(WebAppKeyPerformanceLoadFallbackThresholdsOutput)
+}
+
+// If **User action duration** is above this value, the action is assigned to the Frustrated performance zone.
+func (o WebAppKeyPerformanceLoadFallbackThresholdsPtrOutput) FrustratingFallbackThresholdSeconds() pulumi.Float64PtrOutput {
+	return o.ApplyT(func(v *WebAppKeyPerformanceLoadFallbackThresholds) *float64 {
+		if v == nil {
+			return nil
+		}
+		return &v.FrustratingFallbackThresholdSeconds
+	}).(pulumi.Float64PtrOutput)
+}
+
+// If **User action duration** is below this value, the action is assigned to the Satisfied performance zone.
+func (o WebAppKeyPerformanceLoadFallbackThresholdsPtrOutput) ToleratedFallbackThresholdSeconds() pulumi.Float64PtrOutput {
+	return o.ApplyT(func(v *WebAppKeyPerformanceLoadFallbackThresholds) *float64 {
+		if v == nil {
+			return nil
+		}
+		return &v.ToleratedFallbackThresholdSeconds
+	}).(pulumi.Float64PtrOutput)
+}
+
+type WebAppKeyPerformanceLoadThresholds struct {
+	// If the key performance metric is above this value, the action is assigned to the Frustrated performance zone.
+	FrustratingThresholdSeconds float64 `pulumi:"frustratingThresholdSeconds"`
+	// If the key performance metric is below this value, the action is assigned to the Satisfied performance zone.
+	ToleratedThresholdSeconds float64 `pulumi:"toleratedThresholdSeconds"`
+}
+
+// WebAppKeyPerformanceLoadThresholdsInput is an input type that accepts WebAppKeyPerformanceLoadThresholdsArgs and WebAppKeyPerformanceLoadThresholdsOutput values.
+// You can construct a concrete instance of `WebAppKeyPerformanceLoadThresholdsInput` via:
+//
+//	WebAppKeyPerformanceLoadThresholdsArgs{...}
+type WebAppKeyPerformanceLoadThresholdsInput interface {
+	pulumi.Input
+
+	ToWebAppKeyPerformanceLoadThresholdsOutput() WebAppKeyPerformanceLoadThresholdsOutput
+	ToWebAppKeyPerformanceLoadThresholdsOutputWithContext(context.Context) WebAppKeyPerformanceLoadThresholdsOutput
+}
+
+type WebAppKeyPerformanceLoadThresholdsArgs struct {
+	// If the key performance metric is above this value, the action is assigned to the Frustrated performance zone.
+	FrustratingThresholdSeconds pulumi.Float64Input `pulumi:"frustratingThresholdSeconds"`
+	// If the key performance metric is below this value, the action is assigned to the Satisfied performance zone.
+	ToleratedThresholdSeconds pulumi.Float64Input `pulumi:"toleratedThresholdSeconds"`
+}
+
+func (WebAppKeyPerformanceLoadThresholdsArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*WebAppKeyPerformanceLoadThresholds)(nil)).Elem()
+}
+
+func (i WebAppKeyPerformanceLoadThresholdsArgs) ToWebAppKeyPerformanceLoadThresholdsOutput() WebAppKeyPerformanceLoadThresholdsOutput {
+	return i.ToWebAppKeyPerformanceLoadThresholdsOutputWithContext(context.Background())
+}
+
+func (i WebAppKeyPerformanceLoadThresholdsArgs) ToWebAppKeyPerformanceLoadThresholdsOutputWithContext(ctx context.Context) WebAppKeyPerformanceLoadThresholdsOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(WebAppKeyPerformanceLoadThresholdsOutput)
+}
+
+func (i WebAppKeyPerformanceLoadThresholdsArgs) ToWebAppKeyPerformanceLoadThresholdsPtrOutput() WebAppKeyPerformanceLoadThresholdsPtrOutput {
+	return i.ToWebAppKeyPerformanceLoadThresholdsPtrOutputWithContext(context.Background())
+}
+
+func (i WebAppKeyPerformanceLoadThresholdsArgs) ToWebAppKeyPerformanceLoadThresholdsPtrOutputWithContext(ctx context.Context) WebAppKeyPerformanceLoadThresholdsPtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(WebAppKeyPerformanceLoadThresholdsOutput).ToWebAppKeyPerformanceLoadThresholdsPtrOutputWithContext(ctx)
+}
+
+// WebAppKeyPerformanceLoadThresholdsPtrInput is an input type that accepts WebAppKeyPerformanceLoadThresholdsArgs, WebAppKeyPerformanceLoadThresholdsPtr and WebAppKeyPerformanceLoadThresholdsPtrOutput values.
+// You can construct a concrete instance of `WebAppKeyPerformanceLoadThresholdsPtrInput` via:
+//
+//	        WebAppKeyPerformanceLoadThresholdsArgs{...}
+//
+//	or:
+//
+//	        nil
+type WebAppKeyPerformanceLoadThresholdsPtrInput interface {
+	pulumi.Input
+
+	ToWebAppKeyPerformanceLoadThresholdsPtrOutput() WebAppKeyPerformanceLoadThresholdsPtrOutput
+	ToWebAppKeyPerformanceLoadThresholdsPtrOutputWithContext(context.Context) WebAppKeyPerformanceLoadThresholdsPtrOutput
+}
+
+type webAppKeyPerformanceLoadThresholdsPtrType WebAppKeyPerformanceLoadThresholdsArgs
+
+func WebAppKeyPerformanceLoadThresholdsPtr(v *WebAppKeyPerformanceLoadThresholdsArgs) WebAppKeyPerformanceLoadThresholdsPtrInput {
+	return (*webAppKeyPerformanceLoadThresholdsPtrType)(v)
+}
+
+func (*webAppKeyPerformanceLoadThresholdsPtrType) ElementType() reflect.Type {
+	return reflect.TypeOf((**WebAppKeyPerformanceLoadThresholds)(nil)).Elem()
+}
+
+func (i *webAppKeyPerformanceLoadThresholdsPtrType) ToWebAppKeyPerformanceLoadThresholdsPtrOutput() WebAppKeyPerformanceLoadThresholdsPtrOutput {
+	return i.ToWebAppKeyPerformanceLoadThresholdsPtrOutputWithContext(context.Background())
+}
+
+func (i *webAppKeyPerformanceLoadThresholdsPtrType) ToWebAppKeyPerformanceLoadThresholdsPtrOutputWithContext(ctx context.Context) WebAppKeyPerformanceLoadThresholdsPtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(WebAppKeyPerformanceLoadThresholdsPtrOutput)
+}
+
+type WebAppKeyPerformanceLoadThresholdsOutput struct{ *pulumi.OutputState }
+
+func (WebAppKeyPerformanceLoadThresholdsOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*WebAppKeyPerformanceLoadThresholds)(nil)).Elem()
+}
+
+func (o WebAppKeyPerformanceLoadThresholdsOutput) ToWebAppKeyPerformanceLoadThresholdsOutput() WebAppKeyPerformanceLoadThresholdsOutput {
+	return o
+}
+
+func (o WebAppKeyPerformanceLoadThresholdsOutput) ToWebAppKeyPerformanceLoadThresholdsOutputWithContext(ctx context.Context) WebAppKeyPerformanceLoadThresholdsOutput {
+	return o
+}
+
+func (o WebAppKeyPerformanceLoadThresholdsOutput) ToWebAppKeyPerformanceLoadThresholdsPtrOutput() WebAppKeyPerformanceLoadThresholdsPtrOutput {
+	return o.ToWebAppKeyPerformanceLoadThresholdsPtrOutputWithContext(context.Background())
+}
+
+func (o WebAppKeyPerformanceLoadThresholdsOutput) ToWebAppKeyPerformanceLoadThresholdsPtrOutputWithContext(ctx context.Context) WebAppKeyPerformanceLoadThresholdsPtrOutput {
+	return o.ApplyTWithContext(ctx, func(_ context.Context, v WebAppKeyPerformanceLoadThresholds) *WebAppKeyPerformanceLoadThresholds {
+		return &v
+	}).(WebAppKeyPerformanceLoadThresholdsPtrOutput)
+}
+
+// If the key performance metric is above this value, the action is assigned to the Frustrated performance zone.
+func (o WebAppKeyPerformanceLoadThresholdsOutput) FrustratingThresholdSeconds() pulumi.Float64Output {
+	return o.ApplyT(func(v WebAppKeyPerformanceLoadThresholds) float64 { return v.FrustratingThresholdSeconds }).(pulumi.Float64Output)
+}
+
+// If the key performance metric is below this value, the action is assigned to the Satisfied performance zone.
+func (o WebAppKeyPerformanceLoadThresholdsOutput) ToleratedThresholdSeconds() pulumi.Float64Output {
+	return o.ApplyT(func(v WebAppKeyPerformanceLoadThresholds) float64 { return v.ToleratedThresholdSeconds }).(pulumi.Float64Output)
+}
+
+type WebAppKeyPerformanceLoadThresholdsPtrOutput struct{ *pulumi.OutputState }
+
+func (WebAppKeyPerformanceLoadThresholdsPtrOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((**WebAppKeyPerformanceLoadThresholds)(nil)).Elem()
+}
+
+func (o WebAppKeyPerformanceLoadThresholdsPtrOutput) ToWebAppKeyPerformanceLoadThresholdsPtrOutput() WebAppKeyPerformanceLoadThresholdsPtrOutput {
+	return o
+}
+
+func (o WebAppKeyPerformanceLoadThresholdsPtrOutput) ToWebAppKeyPerformanceLoadThresholdsPtrOutputWithContext(ctx context.Context) WebAppKeyPerformanceLoadThresholdsPtrOutput {
+	return o
+}
+
+func (o WebAppKeyPerformanceLoadThresholdsPtrOutput) Elem() WebAppKeyPerformanceLoadThresholdsOutput {
+	return o.ApplyT(func(v *WebAppKeyPerformanceLoadThresholds) WebAppKeyPerformanceLoadThresholds {
+		if v != nil {
+			return *v
+		}
+		var ret WebAppKeyPerformanceLoadThresholds
+		return ret
+	}).(WebAppKeyPerformanceLoadThresholdsOutput)
+}
+
+// If the key performance metric is above this value, the action is assigned to the Frustrated performance zone.
+func (o WebAppKeyPerformanceLoadThresholdsPtrOutput) FrustratingThresholdSeconds() pulumi.Float64PtrOutput {
+	return o.ApplyT(func(v *WebAppKeyPerformanceLoadThresholds) *float64 {
+		if v == nil {
+			return nil
+		}
+		return &v.FrustratingThresholdSeconds
+	}).(pulumi.Float64PtrOutput)
+}
+
+// If the key performance metric is below this value, the action is assigned to the Satisfied performance zone.
+func (o WebAppKeyPerformanceLoadThresholdsPtrOutput) ToleratedThresholdSeconds() pulumi.Float64PtrOutput {
+	return o.ApplyT(func(v *WebAppKeyPerformanceLoadThresholds) *float64 {
+		if v == nil {
+			return nil
+		}
+		return &v.ToleratedThresholdSeconds
+	}).(pulumi.Float64PtrOutput)
+}
+
+type WebAppKeyPerformanceXhrFallbackThresholds struct {
+	// If **User action duration** is above this value, the action is assigned to the Frustrated performance zone.
+	FrustratingFallbackThresholdSeconds float64 `pulumi:"frustratingFallbackThresholdSeconds"`
+	// If **User action duration** is below this value, the action is assigned to the Satisfied performance zone.
+	ToleratedFallbackThresholdSeconds float64 `pulumi:"toleratedFallbackThresholdSeconds"`
+}
+
+// WebAppKeyPerformanceXhrFallbackThresholdsInput is an input type that accepts WebAppKeyPerformanceXhrFallbackThresholdsArgs and WebAppKeyPerformanceXhrFallbackThresholdsOutput values.
+// You can construct a concrete instance of `WebAppKeyPerformanceXhrFallbackThresholdsInput` via:
+//
+//	WebAppKeyPerformanceXhrFallbackThresholdsArgs{...}
+type WebAppKeyPerformanceXhrFallbackThresholdsInput interface {
+	pulumi.Input
+
+	ToWebAppKeyPerformanceXhrFallbackThresholdsOutput() WebAppKeyPerformanceXhrFallbackThresholdsOutput
+	ToWebAppKeyPerformanceXhrFallbackThresholdsOutputWithContext(context.Context) WebAppKeyPerformanceXhrFallbackThresholdsOutput
+}
+
+type WebAppKeyPerformanceXhrFallbackThresholdsArgs struct {
+	// If **User action duration** is above this value, the action is assigned to the Frustrated performance zone.
+	FrustratingFallbackThresholdSeconds pulumi.Float64Input `pulumi:"frustratingFallbackThresholdSeconds"`
+	// If **User action duration** is below this value, the action is assigned to the Satisfied performance zone.
+	ToleratedFallbackThresholdSeconds pulumi.Float64Input `pulumi:"toleratedFallbackThresholdSeconds"`
+}
+
+func (WebAppKeyPerformanceXhrFallbackThresholdsArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*WebAppKeyPerformanceXhrFallbackThresholds)(nil)).Elem()
+}
+
+func (i WebAppKeyPerformanceXhrFallbackThresholdsArgs) ToWebAppKeyPerformanceXhrFallbackThresholdsOutput() WebAppKeyPerformanceXhrFallbackThresholdsOutput {
+	return i.ToWebAppKeyPerformanceXhrFallbackThresholdsOutputWithContext(context.Background())
+}
+
+func (i WebAppKeyPerformanceXhrFallbackThresholdsArgs) ToWebAppKeyPerformanceXhrFallbackThresholdsOutputWithContext(ctx context.Context) WebAppKeyPerformanceXhrFallbackThresholdsOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(WebAppKeyPerformanceXhrFallbackThresholdsOutput)
+}
+
+func (i WebAppKeyPerformanceXhrFallbackThresholdsArgs) ToWebAppKeyPerformanceXhrFallbackThresholdsPtrOutput() WebAppKeyPerformanceXhrFallbackThresholdsPtrOutput {
+	return i.ToWebAppKeyPerformanceXhrFallbackThresholdsPtrOutputWithContext(context.Background())
+}
+
+func (i WebAppKeyPerformanceXhrFallbackThresholdsArgs) ToWebAppKeyPerformanceXhrFallbackThresholdsPtrOutputWithContext(ctx context.Context) WebAppKeyPerformanceXhrFallbackThresholdsPtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(WebAppKeyPerformanceXhrFallbackThresholdsOutput).ToWebAppKeyPerformanceXhrFallbackThresholdsPtrOutputWithContext(ctx)
+}
+
+// WebAppKeyPerformanceXhrFallbackThresholdsPtrInput is an input type that accepts WebAppKeyPerformanceXhrFallbackThresholdsArgs, WebAppKeyPerformanceXhrFallbackThresholdsPtr and WebAppKeyPerformanceXhrFallbackThresholdsPtrOutput values.
+// You can construct a concrete instance of `WebAppKeyPerformanceXhrFallbackThresholdsPtrInput` via:
+//
+//	        WebAppKeyPerformanceXhrFallbackThresholdsArgs{...}
+//
+//	or:
+//
+//	        nil
+type WebAppKeyPerformanceXhrFallbackThresholdsPtrInput interface {
+	pulumi.Input
+
+	ToWebAppKeyPerformanceXhrFallbackThresholdsPtrOutput() WebAppKeyPerformanceXhrFallbackThresholdsPtrOutput
+	ToWebAppKeyPerformanceXhrFallbackThresholdsPtrOutputWithContext(context.Context) WebAppKeyPerformanceXhrFallbackThresholdsPtrOutput
+}
+
+type webAppKeyPerformanceXhrFallbackThresholdsPtrType WebAppKeyPerformanceXhrFallbackThresholdsArgs
+
+func WebAppKeyPerformanceXhrFallbackThresholdsPtr(v *WebAppKeyPerformanceXhrFallbackThresholdsArgs) WebAppKeyPerformanceXhrFallbackThresholdsPtrInput {
+	return (*webAppKeyPerformanceXhrFallbackThresholdsPtrType)(v)
+}
+
+func (*webAppKeyPerformanceXhrFallbackThresholdsPtrType) ElementType() reflect.Type {
+	return reflect.TypeOf((**WebAppKeyPerformanceXhrFallbackThresholds)(nil)).Elem()
+}
+
+func (i *webAppKeyPerformanceXhrFallbackThresholdsPtrType) ToWebAppKeyPerformanceXhrFallbackThresholdsPtrOutput() WebAppKeyPerformanceXhrFallbackThresholdsPtrOutput {
+	return i.ToWebAppKeyPerformanceXhrFallbackThresholdsPtrOutputWithContext(context.Background())
+}
+
+func (i *webAppKeyPerformanceXhrFallbackThresholdsPtrType) ToWebAppKeyPerformanceXhrFallbackThresholdsPtrOutputWithContext(ctx context.Context) WebAppKeyPerformanceXhrFallbackThresholdsPtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(WebAppKeyPerformanceXhrFallbackThresholdsPtrOutput)
+}
+
+type WebAppKeyPerformanceXhrFallbackThresholdsOutput struct{ *pulumi.OutputState }
+
+func (WebAppKeyPerformanceXhrFallbackThresholdsOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*WebAppKeyPerformanceXhrFallbackThresholds)(nil)).Elem()
+}
+
+func (o WebAppKeyPerformanceXhrFallbackThresholdsOutput) ToWebAppKeyPerformanceXhrFallbackThresholdsOutput() WebAppKeyPerformanceXhrFallbackThresholdsOutput {
+	return o
+}
+
+func (o WebAppKeyPerformanceXhrFallbackThresholdsOutput) ToWebAppKeyPerformanceXhrFallbackThresholdsOutputWithContext(ctx context.Context) WebAppKeyPerformanceXhrFallbackThresholdsOutput {
+	return o
+}
+
+func (o WebAppKeyPerformanceXhrFallbackThresholdsOutput) ToWebAppKeyPerformanceXhrFallbackThresholdsPtrOutput() WebAppKeyPerformanceXhrFallbackThresholdsPtrOutput {
+	return o.ToWebAppKeyPerformanceXhrFallbackThresholdsPtrOutputWithContext(context.Background())
+}
+
+func (o WebAppKeyPerformanceXhrFallbackThresholdsOutput) ToWebAppKeyPerformanceXhrFallbackThresholdsPtrOutputWithContext(ctx context.Context) WebAppKeyPerformanceXhrFallbackThresholdsPtrOutput {
+	return o.ApplyTWithContext(ctx, func(_ context.Context, v WebAppKeyPerformanceXhrFallbackThresholds) *WebAppKeyPerformanceXhrFallbackThresholds {
+		return &v
+	}).(WebAppKeyPerformanceXhrFallbackThresholdsPtrOutput)
+}
+
+// If **User action duration** is above this value, the action is assigned to the Frustrated performance zone.
+func (o WebAppKeyPerformanceXhrFallbackThresholdsOutput) FrustratingFallbackThresholdSeconds() pulumi.Float64Output {
+	return o.ApplyT(func(v WebAppKeyPerformanceXhrFallbackThresholds) float64 {
+		return v.FrustratingFallbackThresholdSeconds
+	}).(pulumi.Float64Output)
+}
+
+// If **User action duration** is below this value, the action is assigned to the Satisfied performance zone.
+func (o WebAppKeyPerformanceXhrFallbackThresholdsOutput) ToleratedFallbackThresholdSeconds() pulumi.Float64Output {
+	return o.ApplyT(func(v WebAppKeyPerformanceXhrFallbackThresholds) float64 { return v.ToleratedFallbackThresholdSeconds }).(pulumi.Float64Output)
+}
+
+type WebAppKeyPerformanceXhrFallbackThresholdsPtrOutput struct{ *pulumi.OutputState }
+
+func (WebAppKeyPerformanceXhrFallbackThresholdsPtrOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((**WebAppKeyPerformanceXhrFallbackThresholds)(nil)).Elem()
+}
+
+func (o WebAppKeyPerformanceXhrFallbackThresholdsPtrOutput) ToWebAppKeyPerformanceXhrFallbackThresholdsPtrOutput() WebAppKeyPerformanceXhrFallbackThresholdsPtrOutput {
+	return o
+}
+
+func (o WebAppKeyPerformanceXhrFallbackThresholdsPtrOutput) ToWebAppKeyPerformanceXhrFallbackThresholdsPtrOutputWithContext(ctx context.Context) WebAppKeyPerformanceXhrFallbackThresholdsPtrOutput {
+	return o
+}
+
+func (o WebAppKeyPerformanceXhrFallbackThresholdsPtrOutput) Elem() WebAppKeyPerformanceXhrFallbackThresholdsOutput {
+	return o.ApplyT(func(v *WebAppKeyPerformanceXhrFallbackThresholds) WebAppKeyPerformanceXhrFallbackThresholds {
+		if v != nil {
+			return *v
+		}
+		var ret WebAppKeyPerformanceXhrFallbackThresholds
+		return ret
+	}).(WebAppKeyPerformanceXhrFallbackThresholdsOutput)
+}
+
+// If **User action duration** is above this value, the action is assigned to the Frustrated performance zone.
+func (o WebAppKeyPerformanceXhrFallbackThresholdsPtrOutput) FrustratingFallbackThresholdSeconds() pulumi.Float64PtrOutput {
+	return o.ApplyT(func(v *WebAppKeyPerformanceXhrFallbackThresholds) *float64 {
+		if v == nil {
+			return nil
+		}
+		return &v.FrustratingFallbackThresholdSeconds
+	}).(pulumi.Float64PtrOutput)
+}
+
+// If **User action duration** is below this value, the action is assigned to the Satisfied performance zone.
+func (o WebAppKeyPerformanceXhrFallbackThresholdsPtrOutput) ToleratedFallbackThresholdSeconds() pulumi.Float64PtrOutput {
+	return o.ApplyT(func(v *WebAppKeyPerformanceXhrFallbackThresholds) *float64 {
+		if v == nil {
+			return nil
+		}
+		return &v.ToleratedFallbackThresholdSeconds
+	}).(pulumi.Float64PtrOutput)
+}
+
+type WebAppKeyPerformanceXhrThresholds struct {
+	// If the key performance metric is above this value, the action is assigned to the Frustrated performance zone.
+	FrustratingThresholdSeconds float64 `pulumi:"frustratingThresholdSeconds"`
+	// If the key performance metric is below this value, the action is assigned to the Satisfied performance zone.
+	ToleratedThresholdSeconds float64 `pulumi:"toleratedThresholdSeconds"`
+}
+
+// WebAppKeyPerformanceXhrThresholdsInput is an input type that accepts WebAppKeyPerformanceXhrThresholdsArgs and WebAppKeyPerformanceXhrThresholdsOutput values.
+// You can construct a concrete instance of `WebAppKeyPerformanceXhrThresholdsInput` via:
+//
+//	WebAppKeyPerformanceXhrThresholdsArgs{...}
+type WebAppKeyPerformanceXhrThresholdsInput interface {
+	pulumi.Input
+
+	ToWebAppKeyPerformanceXhrThresholdsOutput() WebAppKeyPerformanceXhrThresholdsOutput
+	ToWebAppKeyPerformanceXhrThresholdsOutputWithContext(context.Context) WebAppKeyPerformanceXhrThresholdsOutput
+}
+
+type WebAppKeyPerformanceXhrThresholdsArgs struct {
+	// If the key performance metric is above this value, the action is assigned to the Frustrated performance zone.
+	FrustratingThresholdSeconds pulumi.Float64Input `pulumi:"frustratingThresholdSeconds"`
+	// If the key performance metric is below this value, the action is assigned to the Satisfied performance zone.
+	ToleratedThresholdSeconds pulumi.Float64Input `pulumi:"toleratedThresholdSeconds"`
+}
+
+func (WebAppKeyPerformanceXhrThresholdsArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*WebAppKeyPerformanceXhrThresholds)(nil)).Elem()
+}
+
+func (i WebAppKeyPerformanceXhrThresholdsArgs) ToWebAppKeyPerformanceXhrThresholdsOutput() WebAppKeyPerformanceXhrThresholdsOutput {
+	return i.ToWebAppKeyPerformanceXhrThresholdsOutputWithContext(context.Background())
+}
+
+func (i WebAppKeyPerformanceXhrThresholdsArgs) ToWebAppKeyPerformanceXhrThresholdsOutputWithContext(ctx context.Context) WebAppKeyPerformanceXhrThresholdsOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(WebAppKeyPerformanceXhrThresholdsOutput)
+}
+
+func (i WebAppKeyPerformanceXhrThresholdsArgs) ToWebAppKeyPerformanceXhrThresholdsPtrOutput() WebAppKeyPerformanceXhrThresholdsPtrOutput {
+	return i.ToWebAppKeyPerformanceXhrThresholdsPtrOutputWithContext(context.Background())
+}
+
+func (i WebAppKeyPerformanceXhrThresholdsArgs) ToWebAppKeyPerformanceXhrThresholdsPtrOutputWithContext(ctx context.Context) WebAppKeyPerformanceXhrThresholdsPtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(WebAppKeyPerformanceXhrThresholdsOutput).ToWebAppKeyPerformanceXhrThresholdsPtrOutputWithContext(ctx)
+}
+
+// WebAppKeyPerformanceXhrThresholdsPtrInput is an input type that accepts WebAppKeyPerformanceXhrThresholdsArgs, WebAppKeyPerformanceXhrThresholdsPtr and WebAppKeyPerformanceXhrThresholdsPtrOutput values.
+// You can construct a concrete instance of `WebAppKeyPerformanceXhrThresholdsPtrInput` via:
+//
+//	        WebAppKeyPerformanceXhrThresholdsArgs{...}
+//
+//	or:
+//
+//	        nil
+type WebAppKeyPerformanceXhrThresholdsPtrInput interface {
+	pulumi.Input
+
+	ToWebAppKeyPerformanceXhrThresholdsPtrOutput() WebAppKeyPerformanceXhrThresholdsPtrOutput
+	ToWebAppKeyPerformanceXhrThresholdsPtrOutputWithContext(context.Context) WebAppKeyPerformanceXhrThresholdsPtrOutput
+}
+
+type webAppKeyPerformanceXhrThresholdsPtrType WebAppKeyPerformanceXhrThresholdsArgs
+
+func WebAppKeyPerformanceXhrThresholdsPtr(v *WebAppKeyPerformanceXhrThresholdsArgs) WebAppKeyPerformanceXhrThresholdsPtrInput {
+	return (*webAppKeyPerformanceXhrThresholdsPtrType)(v)
+}
+
+func (*webAppKeyPerformanceXhrThresholdsPtrType) ElementType() reflect.Type {
+	return reflect.TypeOf((**WebAppKeyPerformanceXhrThresholds)(nil)).Elem()
+}
+
+func (i *webAppKeyPerformanceXhrThresholdsPtrType) ToWebAppKeyPerformanceXhrThresholdsPtrOutput() WebAppKeyPerformanceXhrThresholdsPtrOutput {
+	return i.ToWebAppKeyPerformanceXhrThresholdsPtrOutputWithContext(context.Background())
+}
+
+func (i *webAppKeyPerformanceXhrThresholdsPtrType) ToWebAppKeyPerformanceXhrThresholdsPtrOutputWithContext(ctx context.Context) WebAppKeyPerformanceXhrThresholdsPtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(WebAppKeyPerformanceXhrThresholdsPtrOutput)
+}
+
+type WebAppKeyPerformanceXhrThresholdsOutput struct{ *pulumi.OutputState }
+
+func (WebAppKeyPerformanceXhrThresholdsOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*WebAppKeyPerformanceXhrThresholds)(nil)).Elem()
+}
+
+func (o WebAppKeyPerformanceXhrThresholdsOutput) ToWebAppKeyPerformanceXhrThresholdsOutput() WebAppKeyPerformanceXhrThresholdsOutput {
+	return o
+}
+
+func (o WebAppKeyPerformanceXhrThresholdsOutput) ToWebAppKeyPerformanceXhrThresholdsOutputWithContext(ctx context.Context) WebAppKeyPerformanceXhrThresholdsOutput {
+	return o
+}
+
+func (o WebAppKeyPerformanceXhrThresholdsOutput) ToWebAppKeyPerformanceXhrThresholdsPtrOutput() WebAppKeyPerformanceXhrThresholdsPtrOutput {
+	return o.ToWebAppKeyPerformanceXhrThresholdsPtrOutputWithContext(context.Background())
+}
+
+func (o WebAppKeyPerformanceXhrThresholdsOutput) ToWebAppKeyPerformanceXhrThresholdsPtrOutputWithContext(ctx context.Context) WebAppKeyPerformanceXhrThresholdsPtrOutput {
+	return o.ApplyTWithContext(ctx, func(_ context.Context, v WebAppKeyPerformanceXhrThresholds) *WebAppKeyPerformanceXhrThresholds {
+		return &v
+	}).(WebAppKeyPerformanceXhrThresholdsPtrOutput)
+}
+
+// If the key performance metric is above this value, the action is assigned to the Frustrated performance zone.
+func (o WebAppKeyPerformanceXhrThresholdsOutput) FrustratingThresholdSeconds() pulumi.Float64Output {
+	return o.ApplyT(func(v WebAppKeyPerformanceXhrThresholds) float64 { return v.FrustratingThresholdSeconds }).(pulumi.Float64Output)
+}
+
+// If the key performance metric is below this value, the action is assigned to the Satisfied performance zone.
+func (o WebAppKeyPerformanceXhrThresholdsOutput) ToleratedThresholdSeconds() pulumi.Float64Output {
+	return o.ApplyT(func(v WebAppKeyPerformanceXhrThresholds) float64 { return v.ToleratedThresholdSeconds }).(pulumi.Float64Output)
+}
+
+type WebAppKeyPerformanceXhrThresholdsPtrOutput struct{ *pulumi.OutputState }
+
+func (WebAppKeyPerformanceXhrThresholdsPtrOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((**WebAppKeyPerformanceXhrThresholds)(nil)).Elem()
+}
+
+func (o WebAppKeyPerformanceXhrThresholdsPtrOutput) ToWebAppKeyPerformanceXhrThresholdsPtrOutput() WebAppKeyPerformanceXhrThresholdsPtrOutput {
+	return o
+}
+
+func (o WebAppKeyPerformanceXhrThresholdsPtrOutput) ToWebAppKeyPerformanceXhrThresholdsPtrOutputWithContext(ctx context.Context) WebAppKeyPerformanceXhrThresholdsPtrOutput {
+	return o
+}
+
+func (o WebAppKeyPerformanceXhrThresholdsPtrOutput) Elem() WebAppKeyPerformanceXhrThresholdsOutput {
+	return o.ApplyT(func(v *WebAppKeyPerformanceXhrThresholds) WebAppKeyPerformanceXhrThresholds {
+		if v != nil {
+			return *v
+		}
+		var ret WebAppKeyPerformanceXhrThresholds
+		return ret
+	}).(WebAppKeyPerformanceXhrThresholdsOutput)
+}
+
+// If the key performance metric is above this value, the action is assigned to the Frustrated performance zone.
+func (o WebAppKeyPerformanceXhrThresholdsPtrOutput) FrustratingThresholdSeconds() pulumi.Float64PtrOutput {
+	return o.ApplyT(func(v *WebAppKeyPerformanceXhrThresholds) *float64 {
+		if v == nil {
+			return nil
+		}
+		return &v.FrustratingThresholdSeconds
+	}).(pulumi.Float64PtrOutput)
+}
+
+// If the key performance metric is below this value, the action is assigned to the Satisfied performance zone.
+func (o WebAppKeyPerformanceXhrThresholdsPtrOutput) ToleratedThresholdSeconds() pulumi.Float64PtrOutput {
+	return o.ApplyT(func(v *WebAppKeyPerformanceXhrThresholds) *float64 {
+		if v == nil {
+			return nil
+		}
+		return &v.ToleratedThresholdSeconds
+	}).(pulumi.Float64PtrOutput)
+}
+
+type WebAppManualInsertionCodeSnippet struct {
+	// Possible Values: `DEFERRED`, `SYNCHRONOUSLY`
+	CodeSnippetType string `pulumi:"codeSnippetType"`
+}
+
+// WebAppManualInsertionCodeSnippetInput is an input type that accepts WebAppManualInsertionCodeSnippetArgs and WebAppManualInsertionCodeSnippetOutput values.
+// You can construct a concrete instance of `WebAppManualInsertionCodeSnippetInput` via:
+//
+//	WebAppManualInsertionCodeSnippetArgs{...}
+type WebAppManualInsertionCodeSnippetInput interface {
+	pulumi.Input
+
+	ToWebAppManualInsertionCodeSnippetOutput() WebAppManualInsertionCodeSnippetOutput
+	ToWebAppManualInsertionCodeSnippetOutputWithContext(context.Context) WebAppManualInsertionCodeSnippetOutput
+}
+
+type WebAppManualInsertionCodeSnippetArgs struct {
+	// Possible Values: `DEFERRED`, `SYNCHRONOUSLY`
+	CodeSnippetType pulumi.StringInput `pulumi:"codeSnippetType"`
+}
+
+func (WebAppManualInsertionCodeSnippetArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*WebAppManualInsertionCodeSnippet)(nil)).Elem()
+}
+
+func (i WebAppManualInsertionCodeSnippetArgs) ToWebAppManualInsertionCodeSnippetOutput() WebAppManualInsertionCodeSnippetOutput {
+	return i.ToWebAppManualInsertionCodeSnippetOutputWithContext(context.Background())
+}
+
+func (i WebAppManualInsertionCodeSnippetArgs) ToWebAppManualInsertionCodeSnippetOutputWithContext(ctx context.Context) WebAppManualInsertionCodeSnippetOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(WebAppManualInsertionCodeSnippetOutput)
+}
+
+func (i WebAppManualInsertionCodeSnippetArgs) ToWebAppManualInsertionCodeSnippetPtrOutput() WebAppManualInsertionCodeSnippetPtrOutput {
+	return i.ToWebAppManualInsertionCodeSnippetPtrOutputWithContext(context.Background())
+}
+
+func (i WebAppManualInsertionCodeSnippetArgs) ToWebAppManualInsertionCodeSnippetPtrOutputWithContext(ctx context.Context) WebAppManualInsertionCodeSnippetPtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(WebAppManualInsertionCodeSnippetOutput).ToWebAppManualInsertionCodeSnippetPtrOutputWithContext(ctx)
+}
+
+// WebAppManualInsertionCodeSnippetPtrInput is an input type that accepts WebAppManualInsertionCodeSnippetArgs, WebAppManualInsertionCodeSnippetPtr and WebAppManualInsertionCodeSnippetPtrOutput values.
+// You can construct a concrete instance of `WebAppManualInsertionCodeSnippetPtrInput` via:
+//
+//	        WebAppManualInsertionCodeSnippetArgs{...}
+//
+//	or:
+//
+//	        nil
+type WebAppManualInsertionCodeSnippetPtrInput interface {
+	pulumi.Input
+
+	ToWebAppManualInsertionCodeSnippetPtrOutput() WebAppManualInsertionCodeSnippetPtrOutput
+	ToWebAppManualInsertionCodeSnippetPtrOutputWithContext(context.Context) WebAppManualInsertionCodeSnippetPtrOutput
+}
+
+type webAppManualInsertionCodeSnippetPtrType WebAppManualInsertionCodeSnippetArgs
+
+func WebAppManualInsertionCodeSnippetPtr(v *WebAppManualInsertionCodeSnippetArgs) WebAppManualInsertionCodeSnippetPtrInput {
+	return (*webAppManualInsertionCodeSnippetPtrType)(v)
+}
+
+func (*webAppManualInsertionCodeSnippetPtrType) ElementType() reflect.Type {
+	return reflect.TypeOf((**WebAppManualInsertionCodeSnippet)(nil)).Elem()
+}
+
+func (i *webAppManualInsertionCodeSnippetPtrType) ToWebAppManualInsertionCodeSnippetPtrOutput() WebAppManualInsertionCodeSnippetPtrOutput {
+	return i.ToWebAppManualInsertionCodeSnippetPtrOutputWithContext(context.Background())
+}
+
+func (i *webAppManualInsertionCodeSnippetPtrType) ToWebAppManualInsertionCodeSnippetPtrOutputWithContext(ctx context.Context) WebAppManualInsertionCodeSnippetPtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(WebAppManualInsertionCodeSnippetPtrOutput)
+}
+
+type WebAppManualInsertionCodeSnippetOutput struct{ *pulumi.OutputState }
+
+func (WebAppManualInsertionCodeSnippetOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*WebAppManualInsertionCodeSnippet)(nil)).Elem()
+}
+
+func (o WebAppManualInsertionCodeSnippetOutput) ToWebAppManualInsertionCodeSnippetOutput() WebAppManualInsertionCodeSnippetOutput {
+	return o
+}
+
+func (o WebAppManualInsertionCodeSnippetOutput) ToWebAppManualInsertionCodeSnippetOutputWithContext(ctx context.Context) WebAppManualInsertionCodeSnippetOutput {
+	return o
+}
+
+func (o WebAppManualInsertionCodeSnippetOutput) ToWebAppManualInsertionCodeSnippetPtrOutput() WebAppManualInsertionCodeSnippetPtrOutput {
+	return o.ToWebAppManualInsertionCodeSnippetPtrOutputWithContext(context.Background())
+}
+
+func (o WebAppManualInsertionCodeSnippetOutput) ToWebAppManualInsertionCodeSnippetPtrOutputWithContext(ctx context.Context) WebAppManualInsertionCodeSnippetPtrOutput {
+	return o.ApplyTWithContext(ctx, func(_ context.Context, v WebAppManualInsertionCodeSnippet) *WebAppManualInsertionCodeSnippet {
+		return &v
+	}).(WebAppManualInsertionCodeSnippetPtrOutput)
+}
+
+// Possible Values: `DEFERRED`, `SYNCHRONOUSLY`
+func (o WebAppManualInsertionCodeSnippetOutput) CodeSnippetType() pulumi.StringOutput {
+	return o.ApplyT(func(v WebAppManualInsertionCodeSnippet) string { return v.CodeSnippetType }).(pulumi.StringOutput)
+}
+
+type WebAppManualInsertionCodeSnippetPtrOutput struct{ *pulumi.OutputState }
+
+func (WebAppManualInsertionCodeSnippetPtrOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((**WebAppManualInsertionCodeSnippet)(nil)).Elem()
+}
+
+func (o WebAppManualInsertionCodeSnippetPtrOutput) ToWebAppManualInsertionCodeSnippetPtrOutput() WebAppManualInsertionCodeSnippetPtrOutput {
+	return o
+}
+
+func (o WebAppManualInsertionCodeSnippetPtrOutput) ToWebAppManualInsertionCodeSnippetPtrOutputWithContext(ctx context.Context) WebAppManualInsertionCodeSnippetPtrOutput {
+	return o
+}
+
+func (o WebAppManualInsertionCodeSnippetPtrOutput) Elem() WebAppManualInsertionCodeSnippetOutput {
+	return o.ApplyT(func(v *WebAppManualInsertionCodeSnippet) WebAppManualInsertionCodeSnippet {
+		if v != nil {
+			return *v
+		}
+		var ret WebAppManualInsertionCodeSnippet
+		return ret
+	}).(WebAppManualInsertionCodeSnippetOutput)
+}
+
+// Possible Values: `DEFERRED`, `SYNCHRONOUSLY`
+func (o WebAppManualInsertionCodeSnippetPtrOutput) CodeSnippetType() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *WebAppManualInsertionCodeSnippet) *string {
+		if v == nil {
+			return nil
+		}
+		return &v.CodeSnippetType
+	}).(pulumi.StringPtrOutput)
+}
+
+type WebAppManualInsertionJavascriptTag struct {
+	// Duration in hours, possible Values: `1`, `12`, `144`, `24`, `3`, `6`, `72`
+	CacheDuration string `pulumi:"cacheDuration"`
+	// Add the `crossorigin=anonymous` attribute to capture JavaScript error messages and W3C resource timings
+	CrossoriginAnonymous bool `pulumi:"crossoriginAnonymous"`
+	// Possible Values: `Async`, `Defer`, `None`
+	ScriptExecutionAttribute *string `pulumi:"scriptExecutionAttribute"`
+}
+
+// WebAppManualInsertionJavascriptTagInput is an input type that accepts WebAppManualInsertionJavascriptTagArgs and WebAppManualInsertionJavascriptTagOutput values.
+// You can construct a concrete instance of `WebAppManualInsertionJavascriptTagInput` via:
+//
+//	WebAppManualInsertionJavascriptTagArgs{...}
+type WebAppManualInsertionJavascriptTagInput interface {
+	pulumi.Input
+
+	ToWebAppManualInsertionJavascriptTagOutput() WebAppManualInsertionJavascriptTagOutput
+	ToWebAppManualInsertionJavascriptTagOutputWithContext(context.Context) WebAppManualInsertionJavascriptTagOutput
+}
+
+type WebAppManualInsertionJavascriptTagArgs struct {
+	// Duration in hours, possible Values: `1`, `12`, `144`, `24`, `3`, `6`, `72`
+	CacheDuration pulumi.StringInput `pulumi:"cacheDuration"`
+	// Add the `crossorigin=anonymous` attribute to capture JavaScript error messages and W3C resource timings
+	CrossoriginAnonymous pulumi.BoolInput `pulumi:"crossoriginAnonymous"`
+	// Possible Values: `Async`, `Defer`, `None`
+	ScriptExecutionAttribute pulumi.StringPtrInput `pulumi:"scriptExecutionAttribute"`
+}
+
+func (WebAppManualInsertionJavascriptTagArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*WebAppManualInsertionJavascriptTag)(nil)).Elem()
+}
+
+func (i WebAppManualInsertionJavascriptTagArgs) ToWebAppManualInsertionJavascriptTagOutput() WebAppManualInsertionJavascriptTagOutput {
+	return i.ToWebAppManualInsertionJavascriptTagOutputWithContext(context.Background())
+}
+
+func (i WebAppManualInsertionJavascriptTagArgs) ToWebAppManualInsertionJavascriptTagOutputWithContext(ctx context.Context) WebAppManualInsertionJavascriptTagOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(WebAppManualInsertionJavascriptTagOutput)
+}
+
+func (i WebAppManualInsertionJavascriptTagArgs) ToWebAppManualInsertionJavascriptTagPtrOutput() WebAppManualInsertionJavascriptTagPtrOutput {
+	return i.ToWebAppManualInsertionJavascriptTagPtrOutputWithContext(context.Background())
+}
+
+func (i WebAppManualInsertionJavascriptTagArgs) ToWebAppManualInsertionJavascriptTagPtrOutputWithContext(ctx context.Context) WebAppManualInsertionJavascriptTagPtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(WebAppManualInsertionJavascriptTagOutput).ToWebAppManualInsertionJavascriptTagPtrOutputWithContext(ctx)
+}
+
+// WebAppManualInsertionJavascriptTagPtrInput is an input type that accepts WebAppManualInsertionJavascriptTagArgs, WebAppManualInsertionJavascriptTagPtr and WebAppManualInsertionJavascriptTagPtrOutput values.
+// You can construct a concrete instance of `WebAppManualInsertionJavascriptTagPtrInput` via:
+//
+//	        WebAppManualInsertionJavascriptTagArgs{...}
+//
+//	or:
+//
+//	        nil
+type WebAppManualInsertionJavascriptTagPtrInput interface {
+	pulumi.Input
+
+	ToWebAppManualInsertionJavascriptTagPtrOutput() WebAppManualInsertionJavascriptTagPtrOutput
+	ToWebAppManualInsertionJavascriptTagPtrOutputWithContext(context.Context) WebAppManualInsertionJavascriptTagPtrOutput
+}
+
+type webAppManualInsertionJavascriptTagPtrType WebAppManualInsertionJavascriptTagArgs
+
+func WebAppManualInsertionJavascriptTagPtr(v *WebAppManualInsertionJavascriptTagArgs) WebAppManualInsertionJavascriptTagPtrInput {
+	return (*webAppManualInsertionJavascriptTagPtrType)(v)
+}
+
+func (*webAppManualInsertionJavascriptTagPtrType) ElementType() reflect.Type {
+	return reflect.TypeOf((**WebAppManualInsertionJavascriptTag)(nil)).Elem()
+}
+
+func (i *webAppManualInsertionJavascriptTagPtrType) ToWebAppManualInsertionJavascriptTagPtrOutput() WebAppManualInsertionJavascriptTagPtrOutput {
+	return i.ToWebAppManualInsertionJavascriptTagPtrOutputWithContext(context.Background())
+}
+
+func (i *webAppManualInsertionJavascriptTagPtrType) ToWebAppManualInsertionJavascriptTagPtrOutputWithContext(ctx context.Context) WebAppManualInsertionJavascriptTagPtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(WebAppManualInsertionJavascriptTagPtrOutput)
+}
+
+type WebAppManualInsertionJavascriptTagOutput struct{ *pulumi.OutputState }
+
+func (WebAppManualInsertionJavascriptTagOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*WebAppManualInsertionJavascriptTag)(nil)).Elem()
+}
+
+func (o WebAppManualInsertionJavascriptTagOutput) ToWebAppManualInsertionJavascriptTagOutput() WebAppManualInsertionJavascriptTagOutput {
+	return o
+}
+
+func (o WebAppManualInsertionJavascriptTagOutput) ToWebAppManualInsertionJavascriptTagOutputWithContext(ctx context.Context) WebAppManualInsertionJavascriptTagOutput {
+	return o
+}
+
+func (o WebAppManualInsertionJavascriptTagOutput) ToWebAppManualInsertionJavascriptTagPtrOutput() WebAppManualInsertionJavascriptTagPtrOutput {
+	return o.ToWebAppManualInsertionJavascriptTagPtrOutputWithContext(context.Background())
+}
+
+func (o WebAppManualInsertionJavascriptTagOutput) ToWebAppManualInsertionJavascriptTagPtrOutputWithContext(ctx context.Context) WebAppManualInsertionJavascriptTagPtrOutput {
+	return o.ApplyTWithContext(ctx, func(_ context.Context, v WebAppManualInsertionJavascriptTag) *WebAppManualInsertionJavascriptTag {
+		return &v
+	}).(WebAppManualInsertionJavascriptTagPtrOutput)
+}
+
+// Duration in hours, possible Values: `1`, `12`, `144`, `24`, `3`, `6`, `72`
+func (o WebAppManualInsertionJavascriptTagOutput) CacheDuration() pulumi.StringOutput {
+	return o.ApplyT(func(v WebAppManualInsertionJavascriptTag) string { return v.CacheDuration }).(pulumi.StringOutput)
+}
+
+// Add the `crossorigin=anonymous` attribute to capture JavaScript error messages and W3C resource timings
+func (o WebAppManualInsertionJavascriptTagOutput) CrossoriginAnonymous() pulumi.BoolOutput {
+	return o.ApplyT(func(v WebAppManualInsertionJavascriptTag) bool { return v.CrossoriginAnonymous }).(pulumi.BoolOutput)
+}
+
+// Possible Values: `Async`, `Defer`, `None`
+func (o WebAppManualInsertionJavascriptTagOutput) ScriptExecutionAttribute() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v WebAppManualInsertionJavascriptTag) *string { return v.ScriptExecutionAttribute }).(pulumi.StringPtrOutput)
+}
+
+type WebAppManualInsertionJavascriptTagPtrOutput struct{ *pulumi.OutputState }
+
+func (WebAppManualInsertionJavascriptTagPtrOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((**WebAppManualInsertionJavascriptTag)(nil)).Elem()
+}
+
+func (o WebAppManualInsertionJavascriptTagPtrOutput) ToWebAppManualInsertionJavascriptTagPtrOutput() WebAppManualInsertionJavascriptTagPtrOutput {
+	return o
+}
+
+func (o WebAppManualInsertionJavascriptTagPtrOutput) ToWebAppManualInsertionJavascriptTagPtrOutputWithContext(ctx context.Context) WebAppManualInsertionJavascriptTagPtrOutput {
+	return o
+}
+
+func (o WebAppManualInsertionJavascriptTagPtrOutput) Elem() WebAppManualInsertionJavascriptTagOutput {
+	return o.ApplyT(func(v *WebAppManualInsertionJavascriptTag) WebAppManualInsertionJavascriptTag {
+		if v != nil {
+			return *v
+		}
+		var ret WebAppManualInsertionJavascriptTag
+		return ret
+	}).(WebAppManualInsertionJavascriptTagOutput)
+}
+
+// Duration in hours, possible Values: `1`, `12`, `144`, `24`, `3`, `6`, `72`
+func (o WebAppManualInsertionJavascriptTagPtrOutput) CacheDuration() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *WebAppManualInsertionJavascriptTag) *string {
+		if v == nil {
+			return nil
+		}
+		return &v.CacheDuration
+	}).(pulumi.StringPtrOutput)
+}
+
+// Add the `crossorigin=anonymous` attribute to capture JavaScript error messages and W3C resource timings
+func (o WebAppManualInsertionJavascriptTagPtrOutput) CrossoriginAnonymous() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v *WebAppManualInsertionJavascriptTag) *bool {
+		if v == nil {
+			return nil
+		}
+		return &v.CrossoriginAnonymous
+	}).(pulumi.BoolPtrOutput)
+}
+
+// Possible Values: `Async`, `Defer`, `None`
+func (o WebAppManualInsertionJavascriptTagPtrOutput) ScriptExecutionAttribute() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *WebAppManualInsertionJavascriptTag) *string {
+		if v == nil {
+			return nil
+		}
+		return v.ScriptExecutionAttribute
+	}).(pulumi.StringPtrOutput)
+}
+
+type WebAppManualInsertionOneagentJavascriptTag struct {
+	// Possible Values: `Async`, `Defer`, `None`
+	ScriptExecutionAttribute *string `pulumi:"scriptExecutionAttribute"`
+}
+
+// WebAppManualInsertionOneagentJavascriptTagInput is an input type that accepts WebAppManualInsertionOneagentJavascriptTagArgs and WebAppManualInsertionOneagentJavascriptTagOutput values.
+// You can construct a concrete instance of `WebAppManualInsertionOneagentJavascriptTagInput` via:
+//
+//	WebAppManualInsertionOneagentJavascriptTagArgs{...}
+type WebAppManualInsertionOneagentJavascriptTagInput interface {
+	pulumi.Input
+
+	ToWebAppManualInsertionOneagentJavascriptTagOutput() WebAppManualInsertionOneagentJavascriptTagOutput
+	ToWebAppManualInsertionOneagentJavascriptTagOutputWithContext(context.Context) WebAppManualInsertionOneagentJavascriptTagOutput
+}
+
+type WebAppManualInsertionOneagentJavascriptTagArgs struct {
+	// Possible Values: `Async`, `Defer`, `None`
+	ScriptExecutionAttribute pulumi.StringPtrInput `pulumi:"scriptExecutionAttribute"`
+}
+
+func (WebAppManualInsertionOneagentJavascriptTagArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*WebAppManualInsertionOneagentJavascriptTag)(nil)).Elem()
+}
+
+func (i WebAppManualInsertionOneagentJavascriptTagArgs) ToWebAppManualInsertionOneagentJavascriptTagOutput() WebAppManualInsertionOneagentJavascriptTagOutput {
+	return i.ToWebAppManualInsertionOneagentJavascriptTagOutputWithContext(context.Background())
+}
+
+func (i WebAppManualInsertionOneagentJavascriptTagArgs) ToWebAppManualInsertionOneagentJavascriptTagOutputWithContext(ctx context.Context) WebAppManualInsertionOneagentJavascriptTagOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(WebAppManualInsertionOneagentJavascriptTagOutput)
+}
+
+func (i WebAppManualInsertionOneagentJavascriptTagArgs) ToWebAppManualInsertionOneagentJavascriptTagPtrOutput() WebAppManualInsertionOneagentJavascriptTagPtrOutput {
+	return i.ToWebAppManualInsertionOneagentJavascriptTagPtrOutputWithContext(context.Background())
+}
+
+func (i WebAppManualInsertionOneagentJavascriptTagArgs) ToWebAppManualInsertionOneagentJavascriptTagPtrOutputWithContext(ctx context.Context) WebAppManualInsertionOneagentJavascriptTagPtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(WebAppManualInsertionOneagentJavascriptTagOutput).ToWebAppManualInsertionOneagentJavascriptTagPtrOutputWithContext(ctx)
+}
+
+// WebAppManualInsertionOneagentJavascriptTagPtrInput is an input type that accepts WebAppManualInsertionOneagentJavascriptTagArgs, WebAppManualInsertionOneagentJavascriptTagPtr and WebAppManualInsertionOneagentJavascriptTagPtrOutput values.
+// You can construct a concrete instance of `WebAppManualInsertionOneagentJavascriptTagPtrInput` via:
+//
+//	        WebAppManualInsertionOneagentJavascriptTagArgs{...}
+//
+//	or:
+//
+//	        nil
+type WebAppManualInsertionOneagentJavascriptTagPtrInput interface {
+	pulumi.Input
+
+	ToWebAppManualInsertionOneagentJavascriptTagPtrOutput() WebAppManualInsertionOneagentJavascriptTagPtrOutput
+	ToWebAppManualInsertionOneagentJavascriptTagPtrOutputWithContext(context.Context) WebAppManualInsertionOneagentJavascriptTagPtrOutput
+}
+
+type webAppManualInsertionOneagentJavascriptTagPtrType WebAppManualInsertionOneagentJavascriptTagArgs
+
+func WebAppManualInsertionOneagentJavascriptTagPtr(v *WebAppManualInsertionOneagentJavascriptTagArgs) WebAppManualInsertionOneagentJavascriptTagPtrInput {
+	return (*webAppManualInsertionOneagentJavascriptTagPtrType)(v)
+}
+
+func (*webAppManualInsertionOneagentJavascriptTagPtrType) ElementType() reflect.Type {
+	return reflect.TypeOf((**WebAppManualInsertionOneagentJavascriptTag)(nil)).Elem()
+}
+
+func (i *webAppManualInsertionOneagentJavascriptTagPtrType) ToWebAppManualInsertionOneagentJavascriptTagPtrOutput() WebAppManualInsertionOneagentJavascriptTagPtrOutput {
+	return i.ToWebAppManualInsertionOneagentJavascriptTagPtrOutputWithContext(context.Background())
+}
+
+func (i *webAppManualInsertionOneagentJavascriptTagPtrType) ToWebAppManualInsertionOneagentJavascriptTagPtrOutputWithContext(ctx context.Context) WebAppManualInsertionOneagentJavascriptTagPtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(WebAppManualInsertionOneagentJavascriptTagPtrOutput)
+}
+
+type WebAppManualInsertionOneagentJavascriptTagOutput struct{ *pulumi.OutputState }
+
+func (WebAppManualInsertionOneagentJavascriptTagOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*WebAppManualInsertionOneagentJavascriptTag)(nil)).Elem()
+}
+
+func (o WebAppManualInsertionOneagentJavascriptTagOutput) ToWebAppManualInsertionOneagentJavascriptTagOutput() WebAppManualInsertionOneagentJavascriptTagOutput {
+	return o
+}
+
+func (o WebAppManualInsertionOneagentJavascriptTagOutput) ToWebAppManualInsertionOneagentJavascriptTagOutputWithContext(ctx context.Context) WebAppManualInsertionOneagentJavascriptTagOutput {
+	return o
+}
+
+func (o WebAppManualInsertionOneagentJavascriptTagOutput) ToWebAppManualInsertionOneagentJavascriptTagPtrOutput() WebAppManualInsertionOneagentJavascriptTagPtrOutput {
+	return o.ToWebAppManualInsertionOneagentJavascriptTagPtrOutputWithContext(context.Background())
+}
+
+func (o WebAppManualInsertionOneagentJavascriptTagOutput) ToWebAppManualInsertionOneagentJavascriptTagPtrOutputWithContext(ctx context.Context) WebAppManualInsertionOneagentJavascriptTagPtrOutput {
+	return o.ApplyTWithContext(ctx, func(_ context.Context, v WebAppManualInsertionOneagentJavascriptTag) *WebAppManualInsertionOneagentJavascriptTag {
+		return &v
+	}).(WebAppManualInsertionOneagentJavascriptTagPtrOutput)
+}
+
+// Possible Values: `Async`, `Defer`, `None`
+func (o WebAppManualInsertionOneagentJavascriptTagOutput) ScriptExecutionAttribute() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v WebAppManualInsertionOneagentJavascriptTag) *string { return v.ScriptExecutionAttribute }).(pulumi.StringPtrOutput)
+}
+
+type WebAppManualInsertionOneagentJavascriptTagPtrOutput struct{ *pulumi.OutputState }
+
+func (WebAppManualInsertionOneagentJavascriptTagPtrOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((**WebAppManualInsertionOneagentJavascriptTag)(nil)).Elem()
+}
+
+func (o WebAppManualInsertionOneagentJavascriptTagPtrOutput) ToWebAppManualInsertionOneagentJavascriptTagPtrOutput() WebAppManualInsertionOneagentJavascriptTagPtrOutput {
+	return o
+}
+
+func (o WebAppManualInsertionOneagentJavascriptTagPtrOutput) ToWebAppManualInsertionOneagentJavascriptTagPtrOutputWithContext(ctx context.Context) WebAppManualInsertionOneagentJavascriptTagPtrOutput {
+	return o
+}
+
+func (o WebAppManualInsertionOneagentJavascriptTagPtrOutput) Elem() WebAppManualInsertionOneagentJavascriptTagOutput {
+	return o.ApplyT(func(v *WebAppManualInsertionOneagentJavascriptTag) WebAppManualInsertionOneagentJavascriptTag {
+		if v != nil {
+			return *v
+		}
+		var ret WebAppManualInsertionOneagentJavascriptTag
+		return ret
+	}).(WebAppManualInsertionOneagentJavascriptTagOutput)
+}
+
+// Possible Values: `Async`, `Defer`, `None`
+func (o WebAppManualInsertionOneagentJavascriptTagPtrOutput) ScriptExecutionAttribute() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *WebAppManualInsertionOneagentJavascriptTag) *string {
+		if v == nil {
+			return nil
+		}
+		return v.ScriptExecutionAttribute
+	}).(pulumi.StringPtrOutput)
+}
+
+type WebAppManualInsertionOneagentJavascriptTagSri struct {
+	// Possible Values: `Async`, `Defer`, `None`
+	ScriptExecutionAttribute *string `pulumi:"scriptExecutionAttribute"`
+}
+
+// WebAppManualInsertionOneagentJavascriptTagSriInput is an input type that accepts WebAppManualInsertionOneagentJavascriptTagSriArgs and WebAppManualInsertionOneagentJavascriptTagSriOutput values.
+// You can construct a concrete instance of `WebAppManualInsertionOneagentJavascriptTagSriInput` via:
+//
+//	WebAppManualInsertionOneagentJavascriptTagSriArgs{...}
+type WebAppManualInsertionOneagentJavascriptTagSriInput interface {
+	pulumi.Input
+
+	ToWebAppManualInsertionOneagentJavascriptTagSriOutput() WebAppManualInsertionOneagentJavascriptTagSriOutput
+	ToWebAppManualInsertionOneagentJavascriptTagSriOutputWithContext(context.Context) WebAppManualInsertionOneagentJavascriptTagSriOutput
+}
+
+type WebAppManualInsertionOneagentJavascriptTagSriArgs struct {
+	// Possible Values: `Async`, `Defer`, `None`
+	ScriptExecutionAttribute pulumi.StringPtrInput `pulumi:"scriptExecutionAttribute"`
+}
+
+func (WebAppManualInsertionOneagentJavascriptTagSriArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*WebAppManualInsertionOneagentJavascriptTagSri)(nil)).Elem()
+}
+
+func (i WebAppManualInsertionOneagentJavascriptTagSriArgs) ToWebAppManualInsertionOneagentJavascriptTagSriOutput() WebAppManualInsertionOneagentJavascriptTagSriOutput {
+	return i.ToWebAppManualInsertionOneagentJavascriptTagSriOutputWithContext(context.Background())
+}
+
+func (i WebAppManualInsertionOneagentJavascriptTagSriArgs) ToWebAppManualInsertionOneagentJavascriptTagSriOutputWithContext(ctx context.Context) WebAppManualInsertionOneagentJavascriptTagSriOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(WebAppManualInsertionOneagentJavascriptTagSriOutput)
+}
+
+func (i WebAppManualInsertionOneagentJavascriptTagSriArgs) ToWebAppManualInsertionOneagentJavascriptTagSriPtrOutput() WebAppManualInsertionOneagentJavascriptTagSriPtrOutput {
+	return i.ToWebAppManualInsertionOneagentJavascriptTagSriPtrOutputWithContext(context.Background())
+}
+
+func (i WebAppManualInsertionOneagentJavascriptTagSriArgs) ToWebAppManualInsertionOneagentJavascriptTagSriPtrOutputWithContext(ctx context.Context) WebAppManualInsertionOneagentJavascriptTagSriPtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(WebAppManualInsertionOneagentJavascriptTagSriOutput).ToWebAppManualInsertionOneagentJavascriptTagSriPtrOutputWithContext(ctx)
+}
+
+// WebAppManualInsertionOneagentJavascriptTagSriPtrInput is an input type that accepts WebAppManualInsertionOneagentJavascriptTagSriArgs, WebAppManualInsertionOneagentJavascriptTagSriPtr and WebAppManualInsertionOneagentJavascriptTagSriPtrOutput values.
+// You can construct a concrete instance of `WebAppManualInsertionOneagentJavascriptTagSriPtrInput` via:
+//
+//	        WebAppManualInsertionOneagentJavascriptTagSriArgs{...}
+//
+//	or:
+//
+//	        nil
+type WebAppManualInsertionOneagentJavascriptTagSriPtrInput interface {
+	pulumi.Input
+
+	ToWebAppManualInsertionOneagentJavascriptTagSriPtrOutput() WebAppManualInsertionOneagentJavascriptTagSriPtrOutput
+	ToWebAppManualInsertionOneagentJavascriptTagSriPtrOutputWithContext(context.Context) WebAppManualInsertionOneagentJavascriptTagSriPtrOutput
+}
+
+type webAppManualInsertionOneagentJavascriptTagSriPtrType WebAppManualInsertionOneagentJavascriptTagSriArgs
+
+func WebAppManualInsertionOneagentJavascriptTagSriPtr(v *WebAppManualInsertionOneagentJavascriptTagSriArgs) WebAppManualInsertionOneagentJavascriptTagSriPtrInput {
+	return (*webAppManualInsertionOneagentJavascriptTagSriPtrType)(v)
+}
+
+func (*webAppManualInsertionOneagentJavascriptTagSriPtrType) ElementType() reflect.Type {
+	return reflect.TypeOf((**WebAppManualInsertionOneagentJavascriptTagSri)(nil)).Elem()
+}
+
+func (i *webAppManualInsertionOneagentJavascriptTagSriPtrType) ToWebAppManualInsertionOneagentJavascriptTagSriPtrOutput() WebAppManualInsertionOneagentJavascriptTagSriPtrOutput {
+	return i.ToWebAppManualInsertionOneagentJavascriptTagSriPtrOutputWithContext(context.Background())
+}
+
+func (i *webAppManualInsertionOneagentJavascriptTagSriPtrType) ToWebAppManualInsertionOneagentJavascriptTagSriPtrOutputWithContext(ctx context.Context) WebAppManualInsertionOneagentJavascriptTagSriPtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(WebAppManualInsertionOneagentJavascriptTagSriPtrOutput)
+}
+
+type WebAppManualInsertionOneagentJavascriptTagSriOutput struct{ *pulumi.OutputState }
+
+func (WebAppManualInsertionOneagentJavascriptTagSriOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*WebAppManualInsertionOneagentJavascriptTagSri)(nil)).Elem()
+}
+
+func (o WebAppManualInsertionOneagentJavascriptTagSriOutput) ToWebAppManualInsertionOneagentJavascriptTagSriOutput() WebAppManualInsertionOneagentJavascriptTagSriOutput {
+	return o
+}
+
+func (o WebAppManualInsertionOneagentJavascriptTagSriOutput) ToWebAppManualInsertionOneagentJavascriptTagSriOutputWithContext(ctx context.Context) WebAppManualInsertionOneagentJavascriptTagSriOutput {
+	return o
+}
+
+func (o WebAppManualInsertionOneagentJavascriptTagSriOutput) ToWebAppManualInsertionOneagentJavascriptTagSriPtrOutput() WebAppManualInsertionOneagentJavascriptTagSriPtrOutput {
+	return o.ToWebAppManualInsertionOneagentJavascriptTagSriPtrOutputWithContext(context.Background())
+}
+
+func (o WebAppManualInsertionOneagentJavascriptTagSriOutput) ToWebAppManualInsertionOneagentJavascriptTagSriPtrOutputWithContext(ctx context.Context) WebAppManualInsertionOneagentJavascriptTagSriPtrOutput {
+	return o.ApplyTWithContext(ctx, func(_ context.Context, v WebAppManualInsertionOneagentJavascriptTagSri) *WebAppManualInsertionOneagentJavascriptTagSri {
+		return &v
+	}).(WebAppManualInsertionOneagentJavascriptTagSriPtrOutput)
+}
+
+// Possible Values: `Async`, `Defer`, `None`
+func (o WebAppManualInsertionOneagentJavascriptTagSriOutput) ScriptExecutionAttribute() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v WebAppManualInsertionOneagentJavascriptTagSri) *string { return v.ScriptExecutionAttribute }).(pulumi.StringPtrOutput)
+}
+
+type WebAppManualInsertionOneagentJavascriptTagSriPtrOutput struct{ *pulumi.OutputState }
+
+func (WebAppManualInsertionOneagentJavascriptTagSriPtrOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((**WebAppManualInsertionOneagentJavascriptTagSri)(nil)).Elem()
+}
+
+func (o WebAppManualInsertionOneagentJavascriptTagSriPtrOutput) ToWebAppManualInsertionOneagentJavascriptTagSriPtrOutput() WebAppManualInsertionOneagentJavascriptTagSriPtrOutput {
+	return o
+}
+
+func (o WebAppManualInsertionOneagentJavascriptTagSriPtrOutput) ToWebAppManualInsertionOneagentJavascriptTagSriPtrOutputWithContext(ctx context.Context) WebAppManualInsertionOneagentJavascriptTagSriPtrOutput {
+	return o
+}
+
+func (o WebAppManualInsertionOneagentJavascriptTagSriPtrOutput) Elem() WebAppManualInsertionOneagentJavascriptTagSriOutput {
+	return o.ApplyT(func(v *WebAppManualInsertionOneagentJavascriptTagSri) WebAppManualInsertionOneagentJavascriptTagSri {
+		if v != nil {
+			return *v
+		}
+		var ret WebAppManualInsertionOneagentJavascriptTagSri
+		return ret
+	}).(WebAppManualInsertionOneagentJavascriptTagSriOutput)
+}
+
+// Possible Values: `Async`, `Defer`, `None`
+func (o WebAppManualInsertionOneagentJavascriptTagSriPtrOutput) ScriptExecutionAttribute() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *WebAppManualInsertionOneagentJavascriptTagSri) *string {
+		if v == nil {
+			return nil
+		}
+		return v.ScriptExecutionAttribute
+	}).(pulumi.StringPtrOutput)
+}
+
+type WebAppRequestErrorsErrorRules struct {
+	ErrorRules []WebAppRequestErrorsErrorRulesErrorRule `pulumi:"errorRules"`
+}
+
+// WebAppRequestErrorsErrorRulesInput is an input type that accepts WebAppRequestErrorsErrorRulesArgs and WebAppRequestErrorsErrorRulesOutput values.
+// You can construct a concrete instance of `WebAppRequestErrorsErrorRulesInput` via:
+//
+//	WebAppRequestErrorsErrorRulesArgs{...}
+type WebAppRequestErrorsErrorRulesInput interface {
+	pulumi.Input
+
+	ToWebAppRequestErrorsErrorRulesOutput() WebAppRequestErrorsErrorRulesOutput
+	ToWebAppRequestErrorsErrorRulesOutputWithContext(context.Context) WebAppRequestErrorsErrorRulesOutput
+}
+
+type WebAppRequestErrorsErrorRulesArgs struct {
+	ErrorRules WebAppRequestErrorsErrorRulesErrorRuleArrayInput `pulumi:"errorRules"`
+}
+
+func (WebAppRequestErrorsErrorRulesArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*WebAppRequestErrorsErrorRules)(nil)).Elem()
+}
+
+func (i WebAppRequestErrorsErrorRulesArgs) ToWebAppRequestErrorsErrorRulesOutput() WebAppRequestErrorsErrorRulesOutput {
+	return i.ToWebAppRequestErrorsErrorRulesOutputWithContext(context.Background())
+}
+
+func (i WebAppRequestErrorsErrorRulesArgs) ToWebAppRequestErrorsErrorRulesOutputWithContext(ctx context.Context) WebAppRequestErrorsErrorRulesOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(WebAppRequestErrorsErrorRulesOutput)
+}
+
+func (i WebAppRequestErrorsErrorRulesArgs) ToWebAppRequestErrorsErrorRulesPtrOutput() WebAppRequestErrorsErrorRulesPtrOutput {
+	return i.ToWebAppRequestErrorsErrorRulesPtrOutputWithContext(context.Background())
+}
+
+func (i WebAppRequestErrorsErrorRulesArgs) ToWebAppRequestErrorsErrorRulesPtrOutputWithContext(ctx context.Context) WebAppRequestErrorsErrorRulesPtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(WebAppRequestErrorsErrorRulesOutput).ToWebAppRequestErrorsErrorRulesPtrOutputWithContext(ctx)
+}
+
+// WebAppRequestErrorsErrorRulesPtrInput is an input type that accepts WebAppRequestErrorsErrorRulesArgs, WebAppRequestErrorsErrorRulesPtr and WebAppRequestErrorsErrorRulesPtrOutput values.
+// You can construct a concrete instance of `WebAppRequestErrorsErrorRulesPtrInput` via:
+//
+//	        WebAppRequestErrorsErrorRulesArgs{...}
+//
+//	or:
+//
+//	        nil
+type WebAppRequestErrorsErrorRulesPtrInput interface {
+	pulumi.Input
+
+	ToWebAppRequestErrorsErrorRulesPtrOutput() WebAppRequestErrorsErrorRulesPtrOutput
+	ToWebAppRequestErrorsErrorRulesPtrOutputWithContext(context.Context) WebAppRequestErrorsErrorRulesPtrOutput
+}
+
+type webAppRequestErrorsErrorRulesPtrType WebAppRequestErrorsErrorRulesArgs
+
+func WebAppRequestErrorsErrorRulesPtr(v *WebAppRequestErrorsErrorRulesArgs) WebAppRequestErrorsErrorRulesPtrInput {
+	return (*webAppRequestErrorsErrorRulesPtrType)(v)
+}
+
+func (*webAppRequestErrorsErrorRulesPtrType) ElementType() reflect.Type {
+	return reflect.TypeOf((**WebAppRequestErrorsErrorRules)(nil)).Elem()
+}
+
+func (i *webAppRequestErrorsErrorRulesPtrType) ToWebAppRequestErrorsErrorRulesPtrOutput() WebAppRequestErrorsErrorRulesPtrOutput {
+	return i.ToWebAppRequestErrorsErrorRulesPtrOutputWithContext(context.Background())
+}
+
+func (i *webAppRequestErrorsErrorRulesPtrType) ToWebAppRequestErrorsErrorRulesPtrOutputWithContext(ctx context.Context) WebAppRequestErrorsErrorRulesPtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(WebAppRequestErrorsErrorRulesPtrOutput)
+}
+
+type WebAppRequestErrorsErrorRulesOutput struct{ *pulumi.OutputState }
+
+func (WebAppRequestErrorsErrorRulesOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*WebAppRequestErrorsErrorRules)(nil)).Elem()
+}
+
+func (o WebAppRequestErrorsErrorRulesOutput) ToWebAppRequestErrorsErrorRulesOutput() WebAppRequestErrorsErrorRulesOutput {
+	return o
+}
+
+func (o WebAppRequestErrorsErrorRulesOutput) ToWebAppRequestErrorsErrorRulesOutputWithContext(ctx context.Context) WebAppRequestErrorsErrorRulesOutput {
+	return o
+}
+
+func (o WebAppRequestErrorsErrorRulesOutput) ToWebAppRequestErrorsErrorRulesPtrOutput() WebAppRequestErrorsErrorRulesPtrOutput {
+	return o.ToWebAppRequestErrorsErrorRulesPtrOutputWithContext(context.Background())
+}
+
+func (o WebAppRequestErrorsErrorRulesOutput) ToWebAppRequestErrorsErrorRulesPtrOutputWithContext(ctx context.Context) WebAppRequestErrorsErrorRulesPtrOutput {
+	return o.ApplyTWithContext(ctx, func(_ context.Context, v WebAppRequestErrorsErrorRules) *WebAppRequestErrorsErrorRules {
+		return &v
+	}).(WebAppRequestErrorsErrorRulesPtrOutput)
+}
+
+func (o WebAppRequestErrorsErrorRulesOutput) ErrorRules() WebAppRequestErrorsErrorRulesErrorRuleArrayOutput {
+	return o.ApplyT(func(v WebAppRequestErrorsErrorRules) []WebAppRequestErrorsErrorRulesErrorRule { return v.ErrorRules }).(WebAppRequestErrorsErrorRulesErrorRuleArrayOutput)
+}
+
+type WebAppRequestErrorsErrorRulesPtrOutput struct{ *pulumi.OutputState }
+
+func (WebAppRequestErrorsErrorRulesPtrOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((**WebAppRequestErrorsErrorRules)(nil)).Elem()
+}
+
+func (o WebAppRequestErrorsErrorRulesPtrOutput) ToWebAppRequestErrorsErrorRulesPtrOutput() WebAppRequestErrorsErrorRulesPtrOutput {
+	return o
+}
+
+func (o WebAppRequestErrorsErrorRulesPtrOutput) ToWebAppRequestErrorsErrorRulesPtrOutputWithContext(ctx context.Context) WebAppRequestErrorsErrorRulesPtrOutput {
+	return o
+}
+
+func (o WebAppRequestErrorsErrorRulesPtrOutput) Elem() WebAppRequestErrorsErrorRulesOutput {
+	return o.ApplyT(func(v *WebAppRequestErrorsErrorRules) WebAppRequestErrorsErrorRules {
+		if v != nil {
+			return *v
+		}
+		var ret WebAppRequestErrorsErrorRules
+		return ret
+	}).(WebAppRequestErrorsErrorRulesOutput)
+}
+
+func (o WebAppRequestErrorsErrorRulesPtrOutput) ErrorRules() WebAppRequestErrorsErrorRulesErrorRuleArrayOutput {
+	return o.ApplyT(func(v *WebAppRequestErrorsErrorRules) []WebAppRequestErrorsErrorRulesErrorRule {
+		if v == nil {
+			return nil
+		}
+		return v.ErrorRules
+	}).(WebAppRequestErrorsErrorRulesErrorRuleArrayOutput)
+}
+
+type WebAppRequestErrorsErrorRulesErrorRule struct {
+	// Capture settings
+	CaptureSettings WebAppRequestErrorsErrorRulesErrorRuleCaptureSettings `pulumi:"captureSettings"`
+	// Match by errors that have CSP violations
+	ConsiderCspViolations bool `pulumi:"considerCspViolations"`
+	// Match by errors that have failed image requests
+	ConsiderFailedImages bool `pulumi:"considerFailedImages"`
+	// Match by error code
+	ErrorCodes *string `pulumi:"errorCodes"`
+	// Filter settings
+	FilterSettings WebAppRequestErrorsErrorRulesErrorRuleFilterSettings `pulumi:"filterSettings"`
+}
+
+// WebAppRequestErrorsErrorRulesErrorRuleInput is an input type that accepts WebAppRequestErrorsErrorRulesErrorRuleArgs and WebAppRequestErrorsErrorRulesErrorRuleOutput values.
+// You can construct a concrete instance of `WebAppRequestErrorsErrorRulesErrorRuleInput` via:
+//
+//	WebAppRequestErrorsErrorRulesErrorRuleArgs{...}
+type WebAppRequestErrorsErrorRulesErrorRuleInput interface {
+	pulumi.Input
+
+	ToWebAppRequestErrorsErrorRulesErrorRuleOutput() WebAppRequestErrorsErrorRulesErrorRuleOutput
+	ToWebAppRequestErrorsErrorRulesErrorRuleOutputWithContext(context.Context) WebAppRequestErrorsErrorRulesErrorRuleOutput
+}
+
+type WebAppRequestErrorsErrorRulesErrorRuleArgs struct {
+	// Capture settings
+	CaptureSettings WebAppRequestErrorsErrorRulesErrorRuleCaptureSettingsInput `pulumi:"captureSettings"`
+	// Match by errors that have CSP violations
+	ConsiderCspViolations pulumi.BoolInput `pulumi:"considerCspViolations"`
+	// Match by errors that have failed image requests
+	ConsiderFailedImages pulumi.BoolInput `pulumi:"considerFailedImages"`
+	// Match by error code
+	ErrorCodes pulumi.StringPtrInput `pulumi:"errorCodes"`
+	// Filter settings
+	FilterSettings WebAppRequestErrorsErrorRulesErrorRuleFilterSettingsInput `pulumi:"filterSettings"`
+}
+
+func (WebAppRequestErrorsErrorRulesErrorRuleArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*WebAppRequestErrorsErrorRulesErrorRule)(nil)).Elem()
+}
+
+func (i WebAppRequestErrorsErrorRulesErrorRuleArgs) ToWebAppRequestErrorsErrorRulesErrorRuleOutput() WebAppRequestErrorsErrorRulesErrorRuleOutput {
+	return i.ToWebAppRequestErrorsErrorRulesErrorRuleOutputWithContext(context.Background())
+}
+
+func (i WebAppRequestErrorsErrorRulesErrorRuleArgs) ToWebAppRequestErrorsErrorRulesErrorRuleOutputWithContext(ctx context.Context) WebAppRequestErrorsErrorRulesErrorRuleOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(WebAppRequestErrorsErrorRulesErrorRuleOutput)
+}
+
+// WebAppRequestErrorsErrorRulesErrorRuleArrayInput is an input type that accepts WebAppRequestErrorsErrorRulesErrorRuleArray and WebAppRequestErrorsErrorRulesErrorRuleArrayOutput values.
+// You can construct a concrete instance of `WebAppRequestErrorsErrorRulesErrorRuleArrayInput` via:
+//
+//	WebAppRequestErrorsErrorRulesErrorRuleArray{ WebAppRequestErrorsErrorRulesErrorRuleArgs{...} }
+type WebAppRequestErrorsErrorRulesErrorRuleArrayInput interface {
+	pulumi.Input
+
+	ToWebAppRequestErrorsErrorRulesErrorRuleArrayOutput() WebAppRequestErrorsErrorRulesErrorRuleArrayOutput
+	ToWebAppRequestErrorsErrorRulesErrorRuleArrayOutputWithContext(context.Context) WebAppRequestErrorsErrorRulesErrorRuleArrayOutput
+}
+
+type WebAppRequestErrorsErrorRulesErrorRuleArray []WebAppRequestErrorsErrorRulesErrorRuleInput
+
+func (WebAppRequestErrorsErrorRulesErrorRuleArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]WebAppRequestErrorsErrorRulesErrorRule)(nil)).Elem()
+}
+
+func (i WebAppRequestErrorsErrorRulesErrorRuleArray) ToWebAppRequestErrorsErrorRulesErrorRuleArrayOutput() WebAppRequestErrorsErrorRulesErrorRuleArrayOutput {
+	return i.ToWebAppRequestErrorsErrorRulesErrorRuleArrayOutputWithContext(context.Background())
+}
+
+func (i WebAppRequestErrorsErrorRulesErrorRuleArray) ToWebAppRequestErrorsErrorRulesErrorRuleArrayOutputWithContext(ctx context.Context) WebAppRequestErrorsErrorRulesErrorRuleArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(WebAppRequestErrorsErrorRulesErrorRuleArrayOutput)
+}
+
+type WebAppRequestErrorsErrorRulesErrorRuleOutput struct{ *pulumi.OutputState }
+
+func (WebAppRequestErrorsErrorRulesErrorRuleOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*WebAppRequestErrorsErrorRulesErrorRule)(nil)).Elem()
+}
+
+func (o WebAppRequestErrorsErrorRulesErrorRuleOutput) ToWebAppRequestErrorsErrorRulesErrorRuleOutput() WebAppRequestErrorsErrorRulesErrorRuleOutput {
+	return o
+}
+
+func (o WebAppRequestErrorsErrorRulesErrorRuleOutput) ToWebAppRequestErrorsErrorRulesErrorRuleOutputWithContext(ctx context.Context) WebAppRequestErrorsErrorRulesErrorRuleOutput {
+	return o
+}
+
+// Capture settings
+func (o WebAppRequestErrorsErrorRulesErrorRuleOutput) CaptureSettings() WebAppRequestErrorsErrorRulesErrorRuleCaptureSettingsOutput {
+	return o.ApplyT(func(v WebAppRequestErrorsErrorRulesErrorRule) WebAppRequestErrorsErrorRulesErrorRuleCaptureSettings {
+		return v.CaptureSettings
+	}).(WebAppRequestErrorsErrorRulesErrorRuleCaptureSettingsOutput)
+}
+
+// Match by errors that have CSP violations
+func (o WebAppRequestErrorsErrorRulesErrorRuleOutput) ConsiderCspViolations() pulumi.BoolOutput {
+	return o.ApplyT(func(v WebAppRequestErrorsErrorRulesErrorRule) bool { return v.ConsiderCspViolations }).(pulumi.BoolOutput)
+}
+
+// Match by errors that have failed image requests
+func (o WebAppRequestErrorsErrorRulesErrorRuleOutput) ConsiderFailedImages() pulumi.BoolOutput {
+	return o.ApplyT(func(v WebAppRequestErrorsErrorRulesErrorRule) bool { return v.ConsiderFailedImages }).(pulumi.BoolOutput)
+}
+
+// Match by error code
+func (o WebAppRequestErrorsErrorRulesErrorRuleOutput) ErrorCodes() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v WebAppRequestErrorsErrorRulesErrorRule) *string { return v.ErrorCodes }).(pulumi.StringPtrOutput)
+}
+
+// Filter settings
+func (o WebAppRequestErrorsErrorRulesErrorRuleOutput) FilterSettings() WebAppRequestErrorsErrorRulesErrorRuleFilterSettingsOutput {
+	return o.ApplyT(func(v WebAppRequestErrorsErrorRulesErrorRule) WebAppRequestErrorsErrorRulesErrorRuleFilterSettings {
+		return v.FilterSettings
+	}).(WebAppRequestErrorsErrorRulesErrorRuleFilterSettingsOutput)
+}
+
+type WebAppRequestErrorsErrorRulesErrorRuleArrayOutput struct{ *pulumi.OutputState }
+
+func (WebAppRequestErrorsErrorRulesErrorRuleArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]WebAppRequestErrorsErrorRulesErrorRule)(nil)).Elem()
+}
+
+func (o WebAppRequestErrorsErrorRulesErrorRuleArrayOutput) ToWebAppRequestErrorsErrorRulesErrorRuleArrayOutput() WebAppRequestErrorsErrorRulesErrorRuleArrayOutput {
+	return o
+}
+
+func (o WebAppRequestErrorsErrorRulesErrorRuleArrayOutput) ToWebAppRequestErrorsErrorRulesErrorRuleArrayOutputWithContext(ctx context.Context) WebAppRequestErrorsErrorRulesErrorRuleArrayOutput {
+	return o
+}
+
+func (o WebAppRequestErrorsErrorRulesErrorRuleArrayOutput) Index(i pulumi.IntInput) WebAppRequestErrorsErrorRulesErrorRuleOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) WebAppRequestErrorsErrorRulesErrorRule {
+		return vs[0].([]WebAppRequestErrorsErrorRulesErrorRule)[vs[1].(int)]
+	}).(WebAppRequestErrorsErrorRulesErrorRuleOutput)
+}
+
 type WebAppRequestErrorsErrorRulesErrorRuleCaptureSettings struct {
 	// Capture this error
 	Capture bool `pulumi:"capture"`
@@ -13349,6 +21779,117 @@ func (o GetSyntheticNodesNodeArrayOutput) Index(i pulumi.IntInput) GetSyntheticN
 }
 
 func init() {
+	pulumi.RegisterInputType(reflect.TypeOf((*VulnerabilityCodeMetadataInput)(nil)).Elem(), VulnerabilityCodeMetadataArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*VulnerabilityCodeMetadataPtrInput)(nil)).Elem(), VulnerabilityCodeMetadataArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*VulnerabilityCodeResourceAttributeConditionsInput)(nil)).Elem(), VulnerabilityCodeResourceAttributeConditionsArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*VulnerabilityCodeResourceAttributeConditionsPtrInput)(nil)).Elem(), VulnerabilityCodeResourceAttributeConditionsArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*VulnerabilityCodeResourceAttributeConditionsResourceAttributeConditionInput)(nil)).Elem(), VulnerabilityCodeResourceAttributeConditionsResourceAttributeConditionArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*VulnerabilityCodeResourceAttributeConditionsResourceAttributeConditionArrayInput)(nil)).Elem(), VulnerabilityCodeResourceAttributeConditionsResourceAttributeConditionArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*VulnerabilityCodeVulnerabilityDetectionControlInput)(nil)).Elem(), VulnerabilityCodeVulnerabilityDetectionControlArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*VulnerabilityCodeVulnerabilityDetectionControlPtrInput)(nil)).Elem(), VulnerabilityCodeVulnerabilityDetectionControlArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*VulnerabilitySettingsTechnologiesInput)(nil)).Elem(), VulnerabilitySettingsTechnologiesArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*VulnerabilitySettingsTechnologiesPtrInput)(nil)).Elem(), VulnerabilitySettingsTechnologiesArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*VulnerabilityThirdPartyAttrMetadataInput)(nil)).Elem(), VulnerabilityThirdPartyAttrMetadataArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*VulnerabilityThirdPartyAttrMetadataPtrInput)(nil)).Elem(), VulnerabilityThirdPartyAttrMetadataArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*VulnerabilityThirdPartyAttrResourceAttributeConditionsInput)(nil)).Elem(), VulnerabilityThirdPartyAttrResourceAttributeConditionsArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*VulnerabilityThirdPartyAttrResourceAttributeConditionsPtrInput)(nil)).Elem(), VulnerabilityThirdPartyAttrResourceAttributeConditionsArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*VulnerabilityThirdPartyAttrResourceAttributeConditionsResourceAttributeConditionInput)(nil)).Elem(), VulnerabilityThirdPartyAttrResourceAttributeConditionsResourceAttributeConditionArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*VulnerabilityThirdPartyAttrResourceAttributeConditionsResourceAttributeConditionArrayInput)(nil)).Elem(), VulnerabilityThirdPartyAttrResourceAttributeConditionsResourceAttributeConditionArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*VulnerabilityThirdPartyAttrVulnerabilityDetectionControlInput)(nil)).Elem(), VulnerabilityThirdPartyAttrVulnerabilityDetectionControlArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*VulnerabilityThirdPartyAttrVulnerabilityDetectionControlPtrInput)(nil)).Elem(), VulnerabilityThirdPartyAttrVulnerabilityDetectionControlArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*VulnerabilityThirdPartyK8sKubernetesLabelConditionsInput)(nil)).Elem(), VulnerabilityThirdPartyK8sKubernetesLabelConditionsArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*VulnerabilityThirdPartyK8sKubernetesLabelConditionsPtrInput)(nil)).Elem(), VulnerabilityThirdPartyK8sKubernetesLabelConditionsArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*VulnerabilityThirdPartyK8sKubernetesLabelConditionsKubernetesLabelConditionInput)(nil)).Elem(), VulnerabilityThirdPartyK8sKubernetesLabelConditionsKubernetesLabelConditionArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*VulnerabilityThirdPartyK8sKubernetesLabelConditionsKubernetesLabelConditionArrayInput)(nil)).Elem(), VulnerabilityThirdPartyK8sKubernetesLabelConditionsKubernetesLabelConditionArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*VulnerabilityThirdPartyK8sMetadataInput)(nil)).Elem(), VulnerabilityThirdPartyK8sMetadataArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*VulnerabilityThirdPartyK8sMetadataPtrInput)(nil)).Elem(), VulnerabilityThirdPartyK8sMetadataArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*VulnerabilityThirdPartyK8sVulnerabilityDetectionControlInput)(nil)).Elem(), VulnerabilityThirdPartyK8sVulnerabilityDetectionControlArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*VulnerabilityThirdPartyK8sVulnerabilityDetectionControlPtrInput)(nil)).Elem(), VulnerabilityThirdPartyK8sVulnerabilityDetectionControlArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*WebAppAnomaliesErrorRateInput)(nil)).Elem(), WebAppAnomaliesErrorRateArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*WebAppAnomaliesErrorRatePtrInput)(nil)).Elem(), WebAppAnomaliesErrorRateArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*WebAppAnomaliesErrorRateErrorRateAutoInput)(nil)).Elem(), WebAppAnomaliesErrorRateErrorRateAutoArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*WebAppAnomaliesErrorRateErrorRateAutoPtrInput)(nil)).Elem(), WebAppAnomaliesErrorRateErrorRateAutoArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*WebAppAnomaliesErrorRateErrorRateAutoOverAlertingProtectionInput)(nil)).Elem(), WebAppAnomaliesErrorRateErrorRateAutoOverAlertingProtectionArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*WebAppAnomaliesErrorRateErrorRateAutoOverAlertingProtectionPtrInput)(nil)).Elem(), WebAppAnomaliesErrorRateErrorRateAutoOverAlertingProtectionArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*WebAppAnomaliesErrorRateErrorRateFixedInput)(nil)).Elem(), WebAppAnomaliesErrorRateErrorRateFixedArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*WebAppAnomaliesErrorRateErrorRateFixedPtrInput)(nil)).Elem(), WebAppAnomaliesErrorRateErrorRateFixedArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*WebAppAnomaliesResponseTimeInput)(nil)).Elem(), WebAppAnomaliesResponseTimeArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*WebAppAnomaliesResponseTimePtrInput)(nil)).Elem(), WebAppAnomaliesResponseTimeArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*WebAppAnomaliesResponseTimeResponseTimeAutoInput)(nil)).Elem(), WebAppAnomaliesResponseTimeResponseTimeAutoArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*WebAppAnomaliesResponseTimeResponseTimeAutoPtrInput)(nil)).Elem(), WebAppAnomaliesResponseTimeResponseTimeAutoArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*WebAppAnomaliesResponseTimeResponseTimeAutoOverAlertingProtectionInput)(nil)).Elem(), WebAppAnomaliesResponseTimeResponseTimeAutoOverAlertingProtectionArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*WebAppAnomaliesResponseTimeResponseTimeAutoOverAlertingProtectionPtrInput)(nil)).Elem(), WebAppAnomaliesResponseTimeResponseTimeAutoOverAlertingProtectionArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*WebAppAnomaliesResponseTimeResponseTimeAutoResponseTimeAllInput)(nil)).Elem(), WebAppAnomaliesResponseTimeResponseTimeAutoResponseTimeAllArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*WebAppAnomaliesResponseTimeResponseTimeAutoResponseTimeAllPtrInput)(nil)).Elem(), WebAppAnomaliesResponseTimeResponseTimeAutoResponseTimeAllArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*WebAppAnomaliesResponseTimeResponseTimeAutoResponseTimeSlowestInput)(nil)).Elem(), WebAppAnomaliesResponseTimeResponseTimeAutoResponseTimeSlowestArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*WebAppAnomaliesResponseTimeResponseTimeAutoResponseTimeSlowestPtrInput)(nil)).Elem(), WebAppAnomaliesResponseTimeResponseTimeAutoResponseTimeSlowestArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*WebAppAnomaliesResponseTimeResponseTimeFixedInput)(nil)).Elem(), WebAppAnomaliesResponseTimeResponseTimeFixedArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*WebAppAnomaliesResponseTimeResponseTimeFixedPtrInput)(nil)).Elem(), WebAppAnomaliesResponseTimeResponseTimeFixedArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*WebAppAnomaliesResponseTimeResponseTimeFixedOverAlertingProtectionInput)(nil)).Elem(), WebAppAnomaliesResponseTimeResponseTimeFixedOverAlertingProtectionArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*WebAppAnomaliesResponseTimeResponseTimeFixedOverAlertingProtectionPtrInput)(nil)).Elem(), WebAppAnomaliesResponseTimeResponseTimeFixedOverAlertingProtectionArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*WebAppAnomaliesResponseTimeResponseTimeFixedResponseTimeAllInput)(nil)).Elem(), WebAppAnomaliesResponseTimeResponseTimeFixedResponseTimeAllArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*WebAppAnomaliesResponseTimeResponseTimeFixedResponseTimeAllPtrInput)(nil)).Elem(), WebAppAnomaliesResponseTimeResponseTimeFixedResponseTimeAllArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*WebAppAnomaliesResponseTimeResponseTimeFixedResponseTimeSlowestInput)(nil)).Elem(), WebAppAnomaliesResponseTimeResponseTimeFixedResponseTimeSlowestArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*WebAppAnomaliesResponseTimeResponseTimeFixedResponseTimeSlowestPtrInput)(nil)).Elem(), WebAppAnomaliesResponseTimeResponseTimeFixedResponseTimeSlowestArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*WebAppAnomaliesTrafficDropsInput)(nil)).Elem(), WebAppAnomaliesTrafficDropsArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*WebAppAnomaliesTrafficDropsPtrInput)(nil)).Elem(), WebAppAnomaliesTrafficDropsArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*WebAppAnomaliesTrafficDropsTrafficDropsInput)(nil)).Elem(), WebAppAnomaliesTrafficDropsTrafficDropsArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*WebAppAnomaliesTrafficDropsTrafficDropsPtrInput)(nil)).Elem(), WebAppAnomaliesTrafficDropsTrafficDropsArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*WebAppAnomaliesTrafficSpikesInput)(nil)).Elem(), WebAppAnomaliesTrafficSpikesArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*WebAppAnomaliesTrafficSpikesPtrInput)(nil)).Elem(), WebAppAnomaliesTrafficSpikesArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*WebAppAnomaliesTrafficSpikesTrafficSpikesInput)(nil)).Elem(), WebAppAnomaliesTrafficSpikesTrafficSpikesArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*WebAppAnomaliesTrafficSpikesTrafficSpikesPtrInput)(nil)).Elem(), WebAppAnomaliesTrafficSpikesTrafficSpikesArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*WebAppAutoInjectionCacheControlHeadersInput)(nil)).Elem(), WebAppAutoInjectionCacheControlHeadersArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*WebAppAutoInjectionCacheControlHeadersPtrInput)(nil)).Elem(), WebAppAutoInjectionCacheControlHeadersArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*WebAppAutoInjectionMonitoringCodeSourceSectionInput)(nil)).Elem(), WebAppAutoInjectionMonitoringCodeSourceSectionArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*WebAppAutoInjectionMonitoringCodeSourceSectionPtrInput)(nil)).Elem(), WebAppAutoInjectionMonitoringCodeSourceSectionArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*WebAppAutoInjectionSnippetFormatInput)(nil)).Elem(), WebAppAutoInjectionSnippetFormatArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*WebAppAutoInjectionSnippetFormatPtrInput)(nil)).Elem(), WebAppAutoInjectionSnippetFormatArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*WebAppCustomErrorsErrorRulesInput)(nil)).Elem(), WebAppCustomErrorsErrorRulesArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*WebAppCustomErrorsErrorRulesPtrInput)(nil)).Elem(), WebAppCustomErrorsErrorRulesArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*WebAppCustomErrorsErrorRulesErrorRuleInput)(nil)).Elem(), WebAppCustomErrorsErrorRulesErrorRuleArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*WebAppCustomErrorsErrorRulesErrorRuleArrayInput)(nil)).Elem(), WebAppCustomErrorsErrorRulesErrorRuleArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*WebAppCustomErrorsErrorRulesErrorRuleCaptureSettingsInput)(nil)).Elem(), WebAppCustomErrorsErrorRulesErrorRuleCaptureSettingsArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*WebAppCustomPropRestrictionsCustomEventPropertiesAllowListInput)(nil)).Elem(), WebAppCustomPropRestrictionsCustomEventPropertiesAllowListArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*WebAppCustomPropRestrictionsCustomEventPropertiesAllowListPtrInput)(nil)).Elem(), WebAppCustomPropRestrictionsCustomEventPropertiesAllowListArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*WebAppCustomPropRestrictionsCustomEventPropertiesAllowListCustomSessionPropertiesAllowInput)(nil)).Elem(), WebAppCustomPropRestrictionsCustomEventPropertiesAllowListCustomSessionPropertiesAllowArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*WebAppCustomPropRestrictionsCustomEventPropertiesAllowListCustomSessionPropertiesAllowArrayInput)(nil)).Elem(), WebAppCustomPropRestrictionsCustomEventPropertiesAllowListCustomSessionPropertiesAllowArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*WebAppCustomPropRestrictionsCustomSessionPropertiesAllowListInput)(nil)).Elem(), WebAppCustomPropRestrictionsCustomSessionPropertiesAllowListArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*WebAppCustomPropRestrictionsCustomSessionPropertiesAllowListPtrInput)(nil)).Elem(), WebAppCustomPropRestrictionsCustomSessionPropertiesAllowListArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*WebAppCustomPropRestrictionsCustomSessionPropertiesAllowListCustomSessionPropertiesAllowInput)(nil)).Elem(), WebAppCustomPropRestrictionsCustomSessionPropertiesAllowListCustomSessionPropertiesAllowArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*WebAppCustomPropRestrictionsCustomSessionPropertiesAllowListCustomSessionPropertiesAllowArrayInput)(nil)).Elem(), WebAppCustomPropRestrictionsCustomSessionPropertiesAllowListCustomSessionPropertiesAllowArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*WebAppEnablementExperienceAnalyticsInput)(nil)).Elem(), WebAppEnablementExperienceAnalyticsArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*WebAppEnablementExperienceAnalyticsPtrInput)(nil)).Elem(), WebAppEnablementExperienceAnalyticsArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*WebAppEnablementRumInput)(nil)).Elem(), WebAppEnablementRumArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*WebAppEnablementRumPtrInput)(nil)).Elem(), WebAppEnablementRumArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*WebAppEnablementSessionReplayInput)(nil)).Elem(), WebAppEnablementSessionReplayArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*WebAppEnablementSessionReplayPtrInput)(nil)).Elem(), WebAppEnablementSessionReplayArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*WebAppIpAddressExclusionIpExclusionListInput)(nil)).Elem(), WebAppIpAddressExclusionIpExclusionListArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*WebAppIpAddressExclusionIpExclusionListPtrInput)(nil)).Elem(), WebAppIpAddressExclusionIpExclusionListArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*WebAppIpAddressExclusionIpExclusionListIpExclusionInput)(nil)).Elem(), WebAppIpAddressExclusionIpExclusionListIpExclusionArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*WebAppIpAddressExclusionIpExclusionListIpExclusionArrayInput)(nil)).Elem(), WebAppIpAddressExclusionIpExclusionListIpExclusionArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*WebAppKeyPerformanceCustomThresholdsInput)(nil)).Elem(), WebAppKeyPerformanceCustomThresholdsArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*WebAppKeyPerformanceCustomThresholdsPtrInput)(nil)).Elem(), WebAppKeyPerformanceCustomThresholdsArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*WebAppKeyPerformanceLoadFallbackThresholdsInput)(nil)).Elem(), WebAppKeyPerformanceLoadFallbackThresholdsArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*WebAppKeyPerformanceLoadFallbackThresholdsPtrInput)(nil)).Elem(), WebAppKeyPerformanceLoadFallbackThresholdsArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*WebAppKeyPerformanceLoadThresholdsInput)(nil)).Elem(), WebAppKeyPerformanceLoadThresholdsArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*WebAppKeyPerformanceLoadThresholdsPtrInput)(nil)).Elem(), WebAppKeyPerformanceLoadThresholdsArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*WebAppKeyPerformanceXhrFallbackThresholdsInput)(nil)).Elem(), WebAppKeyPerformanceXhrFallbackThresholdsArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*WebAppKeyPerformanceXhrFallbackThresholdsPtrInput)(nil)).Elem(), WebAppKeyPerformanceXhrFallbackThresholdsArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*WebAppKeyPerformanceXhrThresholdsInput)(nil)).Elem(), WebAppKeyPerformanceXhrThresholdsArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*WebAppKeyPerformanceXhrThresholdsPtrInput)(nil)).Elem(), WebAppKeyPerformanceXhrThresholdsArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*WebAppManualInsertionCodeSnippetInput)(nil)).Elem(), WebAppManualInsertionCodeSnippetArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*WebAppManualInsertionCodeSnippetPtrInput)(nil)).Elem(), WebAppManualInsertionCodeSnippetArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*WebAppManualInsertionJavascriptTagInput)(nil)).Elem(), WebAppManualInsertionJavascriptTagArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*WebAppManualInsertionJavascriptTagPtrInput)(nil)).Elem(), WebAppManualInsertionJavascriptTagArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*WebAppManualInsertionOneagentJavascriptTagInput)(nil)).Elem(), WebAppManualInsertionOneagentJavascriptTagArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*WebAppManualInsertionOneagentJavascriptTagPtrInput)(nil)).Elem(), WebAppManualInsertionOneagentJavascriptTagArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*WebAppManualInsertionOneagentJavascriptTagSriInput)(nil)).Elem(), WebAppManualInsertionOneagentJavascriptTagSriArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*WebAppManualInsertionOneagentJavascriptTagSriPtrInput)(nil)).Elem(), WebAppManualInsertionOneagentJavascriptTagSriArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*WebAppRequestErrorsErrorRulesInput)(nil)).Elem(), WebAppRequestErrorsErrorRulesArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*WebAppRequestErrorsErrorRulesPtrInput)(nil)).Elem(), WebAppRequestErrorsErrorRulesArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*WebAppRequestErrorsErrorRulesErrorRuleInput)(nil)).Elem(), WebAppRequestErrorsErrorRulesErrorRuleArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*WebAppRequestErrorsErrorRulesErrorRuleArrayInput)(nil)).Elem(), WebAppRequestErrorsErrorRulesErrorRuleArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*WebAppRequestErrorsErrorRulesErrorRuleCaptureSettingsInput)(nil)).Elem(), WebAppRequestErrorsErrorRulesErrorRuleCaptureSettingsArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*WebAppRequestErrorsErrorRulesErrorRuleFilterSettingsInput)(nil)).Elem(), WebAppRequestErrorsErrorRulesErrorRuleFilterSettingsArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*WebApplicationConversionGoalsInput)(nil)).Elem(), WebApplicationConversionGoalsArgs{})
@@ -13507,6 +22048,117 @@ func init() {
 	pulumi.RegisterInputType(reflect.TypeOf((*GetSyntheticLocationsLocationsPtrInput)(nil)).Elem(), GetSyntheticLocationsLocationsArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetSyntheticNodesNodeInput)(nil)).Elem(), GetSyntheticNodesNodeArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetSyntheticNodesNodeArrayInput)(nil)).Elem(), GetSyntheticNodesNodeArray{})
+	pulumi.RegisterOutputType(VulnerabilityCodeMetadataOutput{})
+	pulumi.RegisterOutputType(VulnerabilityCodeMetadataPtrOutput{})
+	pulumi.RegisterOutputType(VulnerabilityCodeResourceAttributeConditionsOutput{})
+	pulumi.RegisterOutputType(VulnerabilityCodeResourceAttributeConditionsPtrOutput{})
+	pulumi.RegisterOutputType(VulnerabilityCodeResourceAttributeConditionsResourceAttributeConditionOutput{})
+	pulumi.RegisterOutputType(VulnerabilityCodeResourceAttributeConditionsResourceAttributeConditionArrayOutput{})
+	pulumi.RegisterOutputType(VulnerabilityCodeVulnerabilityDetectionControlOutput{})
+	pulumi.RegisterOutputType(VulnerabilityCodeVulnerabilityDetectionControlPtrOutput{})
+	pulumi.RegisterOutputType(VulnerabilitySettingsTechnologiesOutput{})
+	pulumi.RegisterOutputType(VulnerabilitySettingsTechnologiesPtrOutput{})
+	pulumi.RegisterOutputType(VulnerabilityThirdPartyAttrMetadataOutput{})
+	pulumi.RegisterOutputType(VulnerabilityThirdPartyAttrMetadataPtrOutput{})
+	pulumi.RegisterOutputType(VulnerabilityThirdPartyAttrResourceAttributeConditionsOutput{})
+	pulumi.RegisterOutputType(VulnerabilityThirdPartyAttrResourceAttributeConditionsPtrOutput{})
+	pulumi.RegisterOutputType(VulnerabilityThirdPartyAttrResourceAttributeConditionsResourceAttributeConditionOutput{})
+	pulumi.RegisterOutputType(VulnerabilityThirdPartyAttrResourceAttributeConditionsResourceAttributeConditionArrayOutput{})
+	pulumi.RegisterOutputType(VulnerabilityThirdPartyAttrVulnerabilityDetectionControlOutput{})
+	pulumi.RegisterOutputType(VulnerabilityThirdPartyAttrVulnerabilityDetectionControlPtrOutput{})
+	pulumi.RegisterOutputType(VulnerabilityThirdPartyK8sKubernetesLabelConditionsOutput{})
+	pulumi.RegisterOutputType(VulnerabilityThirdPartyK8sKubernetesLabelConditionsPtrOutput{})
+	pulumi.RegisterOutputType(VulnerabilityThirdPartyK8sKubernetesLabelConditionsKubernetesLabelConditionOutput{})
+	pulumi.RegisterOutputType(VulnerabilityThirdPartyK8sKubernetesLabelConditionsKubernetesLabelConditionArrayOutput{})
+	pulumi.RegisterOutputType(VulnerabilityThirdPartyK8sMetadataOutput{})
+	pulumi.RegisterOutputType(VulnerabilityThirdPartyK8sMetadataPtrOutput{})
+	pulumi.RegisterOutputType(VulnerabilityThirdPartyK8sVulnerabilityDetectionControlOutput{})
+	pulumi.RegisterOutputType(VulnerabilityThirdPartyK8sVulnerabilityDetectionControlPtrOutput{})
+	pulumi.RegisterOutputType(WebAppAnomaliesErrorRateOutput{})
+	pulumi.RegisterOutputType(WebAppAnomaliesErrorRatePtrOutput{})
+	pulumi.RegisterOutputType(WebAppAnomaliesErrorRateErrorRateAutoOutput{})
+	pulumi.RegisterOutputType(WebAppAnomaliesErrorRateErrorRateAutoPtrOutput{})
+	pulumi.RegisterOutputType(WebAppAnomaliesErrorRateErrorRateAutoOverAlertingProtectionOutput{})
+	pulumi.RegisterOutputType(WebAppAnomaliesErrorRateErrorRateAutoOverAlertingProtectionPtrOutput{})
+	pulumi.RegisterOutputType(WebAppAnomaliesErrorRateErrorRateFixedOutput{})
+	pulumi.RegisterOutputType(WebAppAnomaliesErrorRateErrorRateFixedPtrOutput{})
+	pulumi.RegisterOutputType(WebAppAnomaliesResponseTimeOutput{})
+	pulumi.RegisterOutputType(WebAppAnomaliesResponseTimePtrOutput{})
+	pulumi.RegisterOutputType(WebAppAnomaliesResponseTimeResponseTimeAutoOutput{})
+	pulumi.RegisterOutputType(WebAppAnomaliesResponseTimeResponseTimeAutoPtrOutput{})
+	pulumi.RegisterOutputType(WebAppAnomaliesResponseTimeResponseTimeAutoOverAlertingProtectionOutput{})
+	pulumi.RegisterOutputType(WebAppAnomaliesResponseTimeResponseTimeAutoOverAlertingProtectionPtrOutput{})
+	pulumi.RegisterOutputType(WebAppAnomaliesResponseTimeResponseTimeAutoResponseTimeAllOutput{})
+	pulumi.RegisterOutputType(WebAppAnomaliesResponseTimeResponseTimeAutoResponseTimeAllPtrOutput{})
+	pulumi.RegisterOutputType(WebAppAnomaliesResponseTimeResponseTimeAutoResponseTimeSlowestOutput{})
+	pulumi.RegisterOutputType(WebAppAnomaliesResponseTimeResponseTimeAutoResponseTimeSlowestPtrOutput{})
+	pulumi.RegisterOutputType(WebAppAnomaliesResponseTimeResponseTimeFixedOutput{})
+	pulumi.RegisterOutputType(WebAppAnomaliesResponseTimeResponseTimeFixedPtrOutput{})
+	pulumi.RegisterOutputType(WebAppAnomaliesResponseTimeResponseTimeFixedOverAlertingProtectionOutput{})
+	pulumi.RegisterOutputType(WebAppAnomaliesResponseTimeResponseTimeFixedOverAlertingProtectionPtrOutput{})
+	pulumi.RegisterOutputType(WebAppAnomaliesResponseTimeResponseTimeFixedResponseTimeAllOutput{})
+	pulumi.RegisterOutputType(WebAppAnomaliesResponseTimeResponseTimeFixedResponseTimeAllPtrOutput{})
+	pulumi.RegisterOutputType(WebAppAnomaliesResponseTimeResponseTimeFixedResponseTimeSlowestOutput{})
+	pulumi.RegisterOutputType(WebAppAnomaliesResponseTimeResponseTimeFixedResponseTimeSlowestPtrOutput{})
+	pulumi.RegisterOutputType(WebAppAnomaliesTrafficDropsOutput{})
+	pulumi.RegisterOutputType(WebAppAnomaliesTrafficDropsPtrOutput{})
+	pulumi.RegisterOutputType(WebAppAnomaliesTrafficDropsTrafficDropsOutput{})
+	pulumi.RegisterOutputType(WebAppAnomaliesTrafficDropsTrafficDropsPtrOutput{})
+	pulumi.RegisterOutputType(WebAppAnomaliesTrafficSpikesOutput{})
+	pulumi.RegisterOutputType(WebAppAnomaliesTrafficSpikesPtrOutput{})
+	pulumi.RegisterOutputType(WebAppAnomaliesTrafficSpikesTrafficSpikesOutput{})
+	pulumi.RegisterOutputType(WebAppAnomaliesTrafficSpikesTrafficSpikesPtrOutput{})
+	pulumi.RegisterOutputType(WebAppAutoInjectionCacheControlHeadersOutput{})
+	pulumi.RegisterOutputType(WebAppAutoInjectionCacheControlHeadersPtrOutput{})
+	pulumi.RegisterOutputType(WebAppAutoInjectionMonitoringCodeSourceSectionOutput{})
+	pulumi.RegisterOutputType(WebAppAutoInjectionMonitoringCodeSourceSectionPtrOutput{})
+	pulumi.RegisterOutputType(WebAppAutoInjectionSnippetFormatOutput{})
+	pulumi.RegisterOutputType(WebAppAutoInjectionSnippetFormatPtrOutput{})
+	pulumi.RegisterOutputType(WebAppCustomErrorsErrorRulesOutput{})
+	pulumi.RegisterOutputType(WebAppCustomErrorsErrorRulesPtrOutput{})
+	pulumi.RegisterOutputType(WebAppCustomErrorsErrorRulesErrorRuleOutput{})
+	pulumi.RegisterOutputType(WebAppCustomErrorsErrorRulesErrorRuleArrayOutput{})
+	pulumi.RegisterOutputType(WebAppCustomErrorsErrorRulesErrorRuleCaptureSettingsOutput{})
+	pulumi.RegisterOutputType(WebAppCustomPropRestrictionsCustomEventPropertiesAllowListOutput{})
+	pulumi.RegisterOutputType(WebAppCustomPropRestrictionsCustomEventPropertiesAllowListPtrOutput{})
+	pulumi.RegisterOutputType(WebAppCustomPropRestrictionsCustomEventPropertiesAllowListCustomSessionPropertiesAllowOutput{})
+	pulumi.RegisterOutputType(WebAppCustomPropRestrictionsCustomEventPropertiesAllowListCustomSessionPropertiesAllowArrayOutput{})
+	pulumi.RegisterOutputType(WebAppCustomPropRestrictionsCustomSessionPropertiesAllowListOutput{})
+	pulumi.RegisterOutputType(WebAppCustomPropRestrictionsCustomSessionPropertiesAllowListPtrOutput{})
+	pulumi.RegisterOutputType(WebAppCustomPropRestrictionsCustomSessionPropertiesAllowListCustomSessionPropertiesAllowOutput{})
+	pulumi.RegisterOutputType(WebAppCustomPropRestrictionsCustomSessionPropertiesAllowListCustomSessionPropertiesAllowArrayOutput{})
+	pulumi.RegisterOutputType(WebAppEnablementExperienceAnalyticsOutput{})
+	pulumi.RegisterOutputType(WebAppEnablementExperienceAnalyticsPtrOutput{})
+	pulumi.RegisterOutputType(WebAppEnablementRumOutput{})
+	pulumi.RegisterOutputType(WebAppEnablementRumPtrOutput{})
+	pulumi.RegisterOutputType(WebAppEnablementSessionReplayOutput{})
+	pulumi.RegisterOutputType(WebAppEnablementSessionReplayPtrOutput{})
+	pulumi.RegisterOutputType(WebAppIpAddressExclusionIpExclusionListOutput{})
+	pulumi.RegisterOutputType(WebAppIpAddressExclusionIpExclusionListPtrOutput{})
+	pulumi.RegisterOutputType(WebAppIpAddressExclusionIpExclusionListIpExclusionOutput{})
+	pulumi.RegisterOutputType(WebAppIpAddressExclusionIpExclusionListIpExclusionArrayOutput{})
+	pulumi.RegisterOutputType(WebAppKeyPerformanceCustomThresholdsOutput{})
+	pulumi.RegisterOutputType(WebAppKeyPerformanceCustomThresholdsPtrOutput{})
+	pulumi.RegisterOutputType(WebAppKeyPerformanceLoadFallbackThresholdsOutput{})
+	pulumi.RegisterOutputType(WebAppKeyPerformanceLoadFallbackThresholdsPtrOutput{})
+	pulumi.RegisterOutputType(WebAppKeyPerformanceLoadThresholdsOutput{})
+	pulumi.RegisterOutputType(WebAppKeyPerformanceLoadThresholdsPtrOutput{})
+	pulumi.RegisterOutputType(WebAppKeyPerformanceXhrFallbackThresholdsOutput{})
+	pulumi.RegisterOutputType(WebAppKeyPerformanceXhrFallbackThresholdsPtrOutput{})
+	pulumi.RegisterOutputType(WebAppKeyPerformanceXhrThresholdsOutput{})
+	pulumi.RegisterOutputType(WebAppKeyPerformanceXhrThresholdsPtrOutput{})
+	pulumi.RegisterOutputType(WebAppManualInsertionCodeSnippetOutput{})
+	pulumi.RegisterOutputType(WebAppManualInsertionCodeSnippetPtrOutput{})
+	pulumi.RegisterOutputType(WebAppManualInsertionJavascriptTagOutput{})
+	pulumi.RegisterOutputType(WebAppManualInsertionJavascriptTagPtrOutput{})
+	pulumi.RegisterOutputType(WebAppManualInsertionOneagentJavascriptTagOutput{})
+	pulumi.RegisterOutputType(WebAppManualInsertionOneagentJavascriptTagPtrOutput{})
+	pulumi.RegisterOutputType(WebAppManualInsertionOneagentJavascriptTagSriOutput{})
+	pulumi.RegisterOutputType(WebAppManualInsertionOneagentJavascriptTagSriPtrOutput{})
+	pulumi.RegisterOutputType(WebAppRequestErrorsErrorRulesOutput{})
+	pulumi.RegisterOutputType(WebAppRequestErrorsErrorRulesPtrOutput{})
+	pulumi.RegisterOutputType(WebAppRequestErrorsErrorRulesErrorRuleOutput{})
+	pulumi.RegisterOutputType(WebAppRequestErrorsErrorRulesErrorRuleArrayOutput{})
 	pulumi.RegisterOutputType(WebAppRequestErrorsErrorRulesErrorRuleCaptureSettingsOutput{})
 	pulumi.RegisterOutputType(WebAppRequestErrorsErrorRulesErrorRuleFilterSettingsOutput{})
 	pulumi.RegisterOutputType(WebApplicationConversionGoalsOutput{})

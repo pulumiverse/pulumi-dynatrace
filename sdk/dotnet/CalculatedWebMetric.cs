@@ -24,6 +24,131 @@ namespace Pulumiverse.Dynatrace
     /// - `terraform-provider-dynatrace -export dynatrace.CalculatedWebMetric` downloads all existing calculated web app metric configuration
     /// 
     /// The full documentation of the export feature is available [here](https://dt-url.net/h203qmc).
+    /// 
+    /// ## Resource Example Usage
+    /// 
+    /// ```csharp
+    /// using System.Collections.Generic;
+    /// using System.Linq;
+    /// using Pulumi;
+    /// using Dynatrace = Pulumiverse.Dynatrace;
+    /// 
+    /// return await Deployment.RunAsync(() =&gt; 
+    /// {
+    ///     var location = Dynatrace.GetSyntheticLocation.Invoke(new()
+    ///     {
+    ///         Type = "PUBLIC",
+    ///         Name = "Sydney",
+    ///     });
+    /// 
+    ///     var application = new Dynatrace.WebApplication("application", new()
+    ///     {
+    ///         Name = "#name#",
+    ///         Type = "AUTO_INJECTED",
+    ///         CostControlUserSessionPercentage = 100,
+    ///         LoadActionKeyPerformanceMetric = "VISUALLY_COMPLETE",
+    ///         RealUserMonitoringEnabled = true,
+    ///         XhrActionKeyPerformanceMetric = "VISUALLY_COMPLETE",
+    ///         CustomActionApdexSettings = new Dynatrace.Inputs.WebApplicationCustomActionApdexSettingsArgs
+    ///         {
+    ///             FrustratingFallbackThreshold = 12000,
+    ///             FrustratingThreshold = 12000,
+    ///             ToleratedFallbackThreshold = 3000,
+    ///             ToleratedThreshold = 3000,
+    ///         },
+    ///         LoadActionApdexSettings = new Dynatrace.Inputs.WebApplicationLoadActionApdexSettingsArgs
+    ///         {
+    ///             FrustratingFallbackThreshold = 12000,
+    ///             FrustratingThreshold = 12000,
+    ///             ToleratedFallbackThreshold = 3000,
+    ///             ToleratedThreshold = 3000,
+    ///         },
+    ///         MonitoringSettings = new Dynatrace.Inputs.WebApplicationMonitoringSettingsArgs
+    ///         {
+    ///             AddCrossOriginAnonymousAttribute = true,
+    ///             CacheControlHeaderOptimizations = true,
+    ///             InjectionMode = "JAVASCRIPT_TAG",
+    ///             ScriptTagCacheDurationInHours = 1,
+    ///             AdvancedJavascriptTagSettings = new Dynatrace.Inputs.WebApplicationMonitoringSettingsAdvancedJavascriptTagSettingsArgs
+    ///             {
+    ///                 MaxActionNameLength = 100,
+    ///                 MaxErrorsToCapture = 10,
+    ///                 AdditionalEventHandlers = new Dynatrace.Inputs.WebApplicationMonitoringSettingsAdvancedJavascriptTagSettingsAdditionalEventHandlersArgs
+    ///                 {
+    ///                     MaxDomNodes = 5000,
+    ///                 },
+    ///             },
+    ///             ContentCapture = new Dynatrace.Inputs.WebApplicationMonitoringSettingsContentCaptureArgs
+    ///             {
+    ///                 ResourceTimingSettings = new Dynatrace.Inputs.WebApplicationMonitoringSettingsContentCaptureResourceTimingSettingsArgs
+    ///                 {
+    ///                     InstrumentationDelay = 53,
+    ///                     NonW3cResourceTimings = true,
+    ///                     W3cResourceTimings = true,
+    ///                 },
+    ///                 TimeoutSettings = new Dynatrace.Inputs.WebApplicationMonitoringSettingsContentCaptureTimeoutSettingsArgs
+    ///                 {
+    ///                     TemporaryActionLimit = 3,
+    ///                     TemporaryActionTotalTimeout = 100,
+    ///                     TimedActionSupport = true,
+    ///                 },
+    ///             },
+    ///         },
+    ///         UserActionNamingSettings = null,
+    ///         WaterfallSettings = new Dynatrace.Inputs.WebApplicationWaterfallSettingsArgs
+    ///         {
+    ///             ResourceBrowserCachingThreshold = 50,
+    ///             ResourcesThreshold = 100000,
+    ///             SlowCndResourcesThreshold = 200000,
+    ///             SlowFirstPartyResourcesThreshold = 200000,
+    ///             SlowThirdPartyResourcesThreshold = 200000,
+    ///             SpeedIndexVisuallyCompleteRatioThreshold = 50,
+    ///             UncompressedResourcesThreshold = 860,
+    ///         },
+    ///         XhrActionApdexSettings = new Dynatrace.Inputs.WebApplicationXhrActionApdexSettingsArgs
+    ///         {
+    ///             FrustratingFallbackThreshold = 12000,
+    ///             FrustratingThreshold = 12000,
+    ///             ToleratedFallbackThreshold = 3000,
+    ///             ToleratedThreshold = 3000,
+    ///         },
+    ///     });
+    /// 
+    ///     var metric = new Dynatrace.CalculatedWebMetric("metric", new()
+    ///     {
+    ///         Name = "#name#",
+    ///         Enabled = true,
+    ///         AppIdentifier = application.Id,
+    ///         MetricKey = "calc:apps.web.#name#",
+    ///         Dimensions = new[]
+    ///         {
+    ///             new Dynatrace.Inputs.CalculatedWebMetricDimensionArgs
+    ///             {
+    ///                 Dimensions = new[]
+    ///                 {
+    ///                     new Dynatrace.Inputs.CalculatedWebMetricDimensionDimensionArgs
+    ///                     {
+    ///                         Dimension = "StringProperty",
+    ///                         PropertyKey = "web_utm_campaign",
+    ///                         TopX = 10,
+    ///                     },
+    ///                 },
+    ///             },
+    ///         },
+    ///         MetricDefinition = new Dynatrace.Inputs.CalculatedWebMetricMetricDefinitionArgs
+    ///         {
+    ///             Metric = "VisuallyComplete",
+    ///         },
+    ///         UserActionFilter = new Dynatrace.Inputs.CalculatedWebMetricUserActionFilterArgs
+    ///         {
+    ///             Continent = location.Apply(getSyntheticLocationResult =&gt; getSyntheticLocationResult.GeoLocationId),
+    ///             TargetViewGroupNameMatchType = "Equals",
+    ///             TargetViewNameMatchType = "Equals",
+    ///         },
+    ///     });
+    /// 
+    /// });
+    /// ```
     /// </summary>
     [DynatraceResourceType("dynatrace:index/calculatedWebMetric:CalculatedWebMetric")]
     public partial class CalculatedWebMetric : global::Pulumi.CustomResource

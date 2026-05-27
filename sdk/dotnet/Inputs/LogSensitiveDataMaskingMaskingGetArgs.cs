@@ -20,13 +20,13 @@ namespace Pulumiverse.Dynatrace.Inputs
         public Input<string> Expression { get; set; } = null!;
 
         /// <summary>
-        /// The string to replace the masked expression with. Irrelevant if `Type` is `SHA1`.
+        /// no documentation available
         /// </summary>
         [Input("replacement")]
         public Input<string>? Replacement { get; set; }
 
         /// <summary>
-        /// Possible Values: `SHA1`, `STRING`
+        /// Masking type. Possible values: `SHA1`, `SHA256`, `STRING`
         /// </summary>
         [Input("type", required: true)]
         public Input<string> Type { get; set; } = null!;

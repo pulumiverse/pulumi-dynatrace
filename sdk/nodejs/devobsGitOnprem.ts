@@ -18,6 +18,18 @@ import * as utilities from "./utilities";
  * - `terraform-provider-dynatrace -export dynatrace.DevobsGitOnprem` downloads existing Developer Observability git on-premise server configuration
  *
  * The full documentation of the export feature is available [here](https://dt-url.net/h203qmc).
+ *
+ * ## Resource Example Usage
+ *
+ * ```typescript
+ * import * as pulumi from "@pulumi/pulumi";
+ * import * as dynatrace from "@pulumiverse/dynatrace";
+ *
+ * const onprem = new dynatrace.DevobsGitOnprem("onprem", {
+ *     gitProvider: "GithubOnPrem",
+ *     url: "https://example.com/test/#name#",
+ * });
+ * ```
  */
 export class DevobsGitOnprem extends pulumi.CustomResource {
     /**

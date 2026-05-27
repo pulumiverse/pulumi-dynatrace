@@ -65,7 +65,7 @@ import (
 //				__res, err := dynatrace.NewAwsService(ctx, fmt.Sprintf("TERRAFORM_SAMPLE_services-%v", key0), &dynatrace.AwsServiceArgs{
 //					CredentialsId:         TERRAFORM_SAMPLE.ID(),
 //					UseRecommendedMetrics: pulumi.Bool(true),
-//					Name:                  pulumi.String(key0),
+//					Name:                  pulumi.String(pulumi.String(key0)),
 //				})
 //				if err != nil {
 //					return err

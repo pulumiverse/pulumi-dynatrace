@@ -29,7 +29,7 @@ import (
 //
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
-//			example, err := dynatrace.LookupCalculatedServiceMetric(ctx, &dynatrace.LookupCalculatedServiceMetricArgs{
+//			example, err := dynatrace.GetCalculatedServiceMetric(ctx, &dynatrace.LookupCalculatedServiceMetricArgs{
 //				Name: "Terraform Example",
 //			}, nil)
 //			if err != nil {

@@ -196,7 +196,7 @@ export class OpenpipelineV2SystemEventsIngestsources extends pulumi.CustomResour
      */
     declare public readonly source: pulumi.Output<string | undefined>;
     /**
-     * Source Type. Possible Values: `extension`, `http`
+     * Source Type. Possible values: `extension`, `http`
      */
     declare public readonly sourceType: pulumi.Output<string | undefined>;
     /**
@@ -282,7 +282,7 @@ export interface OpenpipelineV2SystemEventsIngestsourcesState {
      */
     source?: pulumi.Input<string | undefined>;
     /**
-     * Source Type. Possible Values: `extension`, `http`
+     * Source Type. Possible values: `extension`, `http`
      */
     sourceType?: pulumi.Input<string | undefined>;
     /**
@@ -324,7 +324,7 @@ export interface OpenpipelineV2SystemEventsIngestsourcesArgs {
      */
     source?: pulumi.Input<string | undefined>;
     /**
-     * Source Type. Possible Values: `extension`, `http`
+     * Source Type. Possible values: `extension`, `http`
      */
     sourceType?: pulumi.Input<string | undefined>;
     /**

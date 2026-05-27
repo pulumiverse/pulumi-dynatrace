@@ -199,7 +199,7 @@ type OpenpipelineV2MetricsPipelines struct {
 	Davis OpenpipelineV2MetricsPipelinesDavisPtrOutput `pulumi:"davis"`
 	// Display name
 	DisplayName pulumi.StringOutput `pulumi:"displayName"`
-	// Group role. Possible Values: `compositionPipeline`, `memberPipeline`
+	// Group role. Possible values: `compositionPipeline`, `memberPipeline`
 	GroupRole pulumi.StringPtrOutput `pulumi:"groupRole"`
 	// Pipeline metadata list
 	MetadataList OpenpipelineV2MetricsPipelinesMetadataListPtrOutput `pulumi:"metadataList"`
@@ -209,7 +209,7 @@ type OpenpipelineV2MetricsPipelines struct {
 	Processing OpenpipelineV2MetricsPipelinesProcessingPtrOutput `pulumi:"processing"`
 	// Product allocation stage
 	ProductAllocation OpenpipelineV2MetricsPipelinesProductAllocationPtrOutput `pulumi:"productAllocation"`
-	// Routing. Possible Values: `notRoutable`, `routable`
+	// Routing. Possible values: `notRoutable`, `routable`
 	Routing pulumi.StringPtrOutput `pulumi:"routing"`
 	// Security context stage
 	SecurityContext OpenpipelineV2MetricsPipelinesSecurityContextPtrOutput `pulumi:"securityContext"`
@@ -267,7 +267,7 @@ type openpipelineV2MetricsPipelinesState struct {
 	Davis *OpenpipelineV2MetricsPipelinesDavis `pulumi:"davis"`
 	// Display name
 	DisplayName *string `pulumi:"displayName"`
-	// Group role. Possible Values: `compositionPipeline`, `memberPipeline`
+	// Group role. Possible values: `compositionPipeline`, `memberPipeline`
 	GroupRole *string `pulumi:"groupRole"`
 	// Pipeline metadata list
 	MetadataList *OpenpipelineV2MetricsPipelinesMetadataList `pulumi:"metadataList"`
@@ -277,7 +277,7 @@ type openpipelineV2MetricsPipelinesState struct {
 	Processing *OpenpipelineV2MetricsPipelinesProcessing `pulumi:"processing"`
 	// Product allocation stage
 	ProductAllocation *OpenpipelineV2MetricsPipelinesProductAllocation `pulumi:"productAllocation"`
-	// Routing. Possible Values: `notRoutable`, `routable`
+	// Routing. Possible values: `notRoutable`, `routable`
 	Routing *string `pulumi:"routing"`
 	// Security context stage
 	SecurityContext *OpenpipelineV2MetricsPipelinesSecurityContext `pulumi:"securityContext"`
@@ -300,7 +300,7 @@ type OpenpipelineV2MetricsPipelinesState struct {
 	Davis OpenpipelineV2MetricsPipelinesDavisPtrInput
 	// Display name
 	DisplayName pulumi.StringPtrInput
-	// Group role. Possible Values: `compositionPipeline`, `memberPipeline`
+	// Group role. Possible values: `compositionPipeline`, `memberPipeline`
 	GroupRole pulumi.StringPtrInput
 	// Pipeline metadata list
 	MetadataList OpenpipelineV2MetricsPipelinesMetadataListPtrInput
@@ -310,7 +310,7 @@ type OpenpipelineV2MetricsPipelinesState struct {
 	Processing OpenpipelineV2MetricsPipelinesProcessingPtrInput
 	// Product allocation stage
 	ProductAllocation OpenpipelineV2MetricsPipelinesProductAllocationPtrInput
-	// Routing. Possible Values: `notRoutable`, `routable`
+	// Routing. Possible values: `notRoutable`, `routable`
 	Routing pulumi.StringPtrInput
 	// Security context stage
 	SecurityContext OpenpipelineV2MetricsPipelinesSecurityContextPtrInput
@@ -337,7 +337,7 @@ type openpipelineV2MetricsPipelinesArgs struct {
 	Davis *OpenpipelineV2MetricsPipelinesDavis `pulumi:"davis"`
 	// Display name
 	DisplayName string `pulumi:"displayName"`
-	// Group role. Possible Values: `compositionPipeline`, `memberPipeline`
+	// Group role. Possible values: `compositionPipeline`, `memberPipeline`
 	GroupRole *string `pulumi:"groupRole"`
 	// Pipeline metadata list
 	MetadataList *OpenpipelineV2MetricsPipelinesMetadataList `pulumi:"metadataList"`
@@ -347,7 +347,7 @@ type openpipelineV2MetricsPipelinesArgs struct {
 	Processing *OpenpipelineV2MetricsPipelinesProcessing `pulumi:"processing"`
 	// Product allocation stage
 	ProductAllocation *OpenpipelineV2MetricsPipelinesProductAllocation `pulumi:"productAllocation"`
-	// Routing. Possible Values: `notRoutable`, `routable`
+	// Routing. Possible values: `notRoutable`, `routable`
 	Routing *string `pulumi:"routing"`
 	// Security context stage
 	SecurityContext *OpenpipelineV2MetricsPipelinesSecurityContext `pulumi:"securityContext"`
@@ -371,7 +371,7 @@ type OpenpipelineV2MetricsPipelinesArgs struct {
 	Davis OpenpipelineV2MetricsPipelinesDavisPtrInput
 	// Display name
 	DisplayName pulumi.StringInput
-	// Group role. Possible Values: `compositionPipeline`, `memberPipeline`
+	// Group role. Possible values: `compositionPipeline`, `memberPipeline`
 	GroupRole pulumi.StringPtrInput
 	// Pipeline metadata list
 	MetadataList OpenpipelineV2MetricsPipelinesMetadataListPtrInput
@@ -381,7 +381,7 @@ type OpenpipelineV2MetricsPipelinesArgs struct {
 	Processing OpenpipelineV2MetricsPipelinesProcessingPtrInput
 	// Product allocation stage
 	ProductAllocation OpenpipelineV2MetricsPipelinesProductAllocationPtrInput
-	// Routing. Possible Values: `notRoutable`, `routable`
+	// Routing. Possible values: `notRoutable`, `routable`
 	Routing pulumi.StringPtrInput
 	// Security context stage
 	SecurityContext OpenpipelineV2MetricsPipelinesSecurityContextPtrInput
@@ -509,7 +509,7 @@ func (o OpenpipelineV2MetricsPipelinesOutput) DisplayName() pulumi.StringOutput 
 	return o.ApplyT(func(v *OpenpipelineV2MetricsPipelines) pulumi.StringOutput { return v.DisplayName }).(pulumi.StringOutput)
 }
 
-// Group role. Possible Values: `compositionPipeline`, `memberPipeline`
+// Group role. Possible values: `compositionPipeline`, `memberPipeline`
 func (o OpenpipelineV2MetricsPipelinesOutput) GroupRole() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v *OpenpipelineV2MetricsPipelines) pulumi.StringPtrOutput { return v.GroupRole }).(pulumi.StringPtrOutput)
 }
@@ -542,7 +542,7 @@ func (o OpenpipelineV2MetricsPipelinesOutput) ProductAllocation() OpenpipelineV2
 	}).(OpenpipelineV2MetricsPipelinesProductAllocationPtrOutput)
 }
 
-// Routing. Possible Values: `notRoutable`, `routable`
+// Routing. Possible values: `notRoutable`, `routable`
 func (o OpenpipelineV2MetricsPipelinesOutput) Routing() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v *OpenpipelineV2MetricsPipelines) pulumi.StringPtrOutput { return v.Routing }).(pulumi.StringPtrOutput)
 }

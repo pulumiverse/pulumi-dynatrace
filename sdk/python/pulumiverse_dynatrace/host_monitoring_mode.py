@@ -124,6 +124,19 @@ class HostMonitoringMode(pulumi.CustomResource):
 
         The full documentation of the export feature is available [here](https://dt-url.net/h203qmc).
 
+        ## Resource Example Usage
+
+        ```python
+        import pulumi
+        import pulumi_dynatrace as dynatrace
+        import pulumiverse_dynatrace as dynatrace
+
+        hosts = dynatrace.get_entities(type="HOST")
+        mode = dynatrace.HostMonitoringMode("mode",
+            host_id=hosts.entities[0].entity_id,
+            monitoring_mode="FULL_STACK")
+        ```
+
 
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
@@ -154,6 +167,19 @@ class HostMonitoringMode(pulumi.CustomResource):
         > By default settings for Agents that are currently offline are not getting exported. You can change that by setting the environment variable `DYNATRACE_HOST_MONITORING_OFFLINE` to `true` before running the export. Be aware that you will get settings exported for every host that has been connected within the last 3 years that way.
 
         The full documentation of the export feature is available [here](https://dt-url.net/h203qmc).
+
+        ## Resource Example Usage
+
+        ```python
+        import pulumi
+        import pulumi_dynatrace as dynatrace
+        import pulumiverse_dynatrace as dynatrace
+
+        hosts = dynatrace.get_entities(type="HOST")
+        mode = dynatrace.HostMonitoringMode("mode",
+            host_id=hosts.entities[0].entity_id,
+            monitoring_mode="FULL_STACK")
+        ```
 
 
         :param str resource_name: The name of the resource.

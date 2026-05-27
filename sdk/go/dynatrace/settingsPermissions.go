@@ -81,7 +81,7 @@ import (
 //				return err
 //			}
 //			// because the UID is not returned for the resource, we need data
-//			user := dynatrace.LookupIamUserOutput(ctx, dynatrace.GetIamUserOutputArgs{
+//			user := dynatrace.GetIamUserOutput(ctx, dynatrace.GetIamUserOutputArgs{
 //				Email: userIamUser.ID(),
 //			}, nil)
 //			connection, err := dynatrace.NewGithubConnection(ctx, "connection", &dynatrace.GithubConnectionArgs{

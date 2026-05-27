@@ -15,11 +15,15 @@ namespace Pulumiverse.Dynatrace
     /// 
     /// &gt; To utilize this resource, please define the environment variables `DT_CLIENT_ID`, `DT_CLIENT_SECRET`, `DT_ACCOUNT_ID` with an OAuth client including the following permissions: **Read direct-shares** (`document:direct-shares:read`), **Write direct-shares** (`document:direct-shares:write`), and **Delete direct-shares** (`document:direct-shares:delete`).
     /// 
-    /// &gt; This resource is currently not covered by the export utility.
+    /// &gt; This resource is excluded by default in the export utility, please explicitly specify the resource to retrieve existing configuration.
     /// 
     /// ## Dynatrace Documentation
     /// 
     /// - Dynatrace Documents - https://########.apps.dynatrace.com/platform/swagger-ui/index.html?urls.primaryName=Document%20Service
+    /// 
+    /// ## Export Example Usage
+    /// 
+    /// - `terraform-provider-dynatrace -export dynatrace.DirectShares` downloads all existing direct shares configurations for documents.
     /// 
     /// ## Resource Example Usage
     /// 
@@ -38,7 +42,7 @@ namespace Pulumiverse.Dynatrace
     ///         Name = "#name#",
     ///         Content = JsonSerializer.Serialize(new Dictionary&lt;string, object?&gt;
     ///         {
-    ///             ["version"] = 13,
+    ///             ["version"] = 1,
     ///             ["variables"] = new[]
     ///             {
     ///             },
@@ -48,170 +52,7 @@ namespace Pulumiverse.Dynatrace
     ///                 {
     ///                     ["type"] = "markdown",
     ///                     ["title"] = "",
-    ///                     ["content"] = "![Image of a Dashboard](https://dt-cdn.net/wp-content/uploads/2022/09/pic1____Dashboard-Preset___PNG.png)",
-    ///                 },
-    ///                 ["1"] = new Dictionary&lt;string, object?&gt;
-    ///                 {
-    ///                     ["type"] = "data",
-    ///                     ["title"] = "",
-    ///                     ["query"] = "timeseries avg(dt.host.cpu.user)",
-    ///                     ["queryConfig"] = new Dictionary&lt;string, object?&gt;
-    ///                     {
-    ///                         ["additionalFilters"] = new Dictionary&lt;string, object?&gt;
-    ///                         {
-    ///                         },
-    ///                         ["version"] = "4.3.1",
-    ///                         ["datatype"] = "metrics",
-    ///                         ["metricKey"] = "dt.host.cpu.user",
-    ///                         ["aggregation"] = "avg",
-    ///                         ["by"] = new[]
-    ///                         {
-    ///                         },
-    ///                     },
-    ///                     ["subType"] = "dql-builder-metrics",
-    ///                     ["visualization"] = "lineChart",
-    ///                     ["visualizationSettings"] = new Dictionary&lt;string, object?&gt;
-    ///                     {
-    ///                         ["thresholds"] = new[]
-    ///                         {
-    ///                         },
-    ///                         ["chartSettings"] = new Dictionary&lt;string, object?&gt;
-    ///                         {
-    ///                             ["gapPolicy"] = "connect",
-    ///                             ["circleChartSettings"] = new Dictionary&lt;string, object?&gt;
-    ///                             {
-    ///                                 ["groupingThresholdType"] = "relative",
-    ///                                 ["groupingThresholdValue"] = 0,
-    ///                                 ["valueType"] = "relative",
-    ///                             },
-    ///                             ["categoryOverrides"] = new Dictionary&lt;string, object?&gt;
-    ///                             {
-    ///                             },
-    ///                             ["fieldMapping"] = new Dictionary&lt;string, object?&gt;
-    ///                             {
-    ///                                 ["timestamp"] = "timeframe",
-    ///                                 ["leftAxisValues"] = new[]
-    ///                                 {
-    ///                                     "avg(dt.host.cpu.user)",
-    ///                                 },
-    ///                                 ["leftAxisDimensions"] = new[]
-    ///                                 {
-    ///                                 },
-    ///                                 ["fields"] = new[]
-    ///                                 {
-    ///                                 },
-    ///                                 ["values"] = new[]
-    ///                                 {
-    ///                                 },
-    ///                             },
-    ///                         },
-    ///                         ["singleValue"] = new Dictionary&lt;string, object?&gt;
-    ///                         {
-    ///                             ["showLabel"] = true,
-    ///                             ["label"] = "",
-    ///                             ["prefixIcon"] = "",
-    ///                             ["autoscale"] = true,
-    ///                             ["alignment"] = "center",
-    ///                             ["colorThresholdTarget"] = "value",
-    ///                         },
-    ///                         ["table"] = new Dictionary&lt;string, object?&gt;
-    ///                         {
-    ///                             ["rowDensity"] = "condensed",
-    ///                             ["enableSparklines"] = false,
-    ///                             ["hiddenColumns"] = new[]
-    ///                             {
-    ///                             },
-    ///                             ["lineWrapIds"] = new[]
-    ///                             {
-    ///                             },
-    ///                             ["columnWidths"] = new Dictionary&lt;string, object?&gt;
-    ///                             {
-    ///                             },
-    ///                         },
-    ///                     },
-    ///                 },
-    ///                 ["2"] = new Dictionary&lt;string, object?&gt;
-    ///                 {
-    ///                     ["type"] = "data",
-    ///                     ["title"] = "",
-    ///                     ["query"] = "timeseries avg(dt.host.memory.used)",
-    ///                     ["queryConfig"] = new Dictionary&lt;string, object?&gt;
-    ///                     {
-    ///                         ["additionalFilters"] = new Dictionary&lt;string, object?&gt;
-    ///                         {
-    ///                         },
-    ///                         ["version"] = "4.3.1",
-    ///                         ["datatype"] = "metrics",
-    ///                         ["metricKey"] = "dt.host.memory.used",
-    ///                         ["aggregation"] = "avg",
-    ///                         ["by"] = new[]
-    ///                         {
-    ///                         },
-    ///                     },
-    ///                     ["subType"] = "dql-builder-metrics",
-    ///                     ["visualization"] = "lineChart",
-    ///                     ["visualizationSettings"] = new Dictionary&lt;string, object?&gt;
-    ///                     {
-    ///                         ["thresholds"] = new[]
-    ///                         {
-    ///                         },
-    ///                         ["chartSettings"] = new Dictionary&lt;string, object?&gt;
-    ///                         {
-    ///                             ["gapPolicy"] = "connect",
-    ///                             ["circleChartSettings"] = new Dictionary&lt;string, object?&gt;
-    ///                             {
-    ///                                 ["groupingThresholdType"] = "relative",
-    ///                                 ["groupingThresholdValue"] = 0,
-    ///                                 ["valueType"] = "relative",
-    ///                             },
-    ///                             ["categoryOverrides"] = new Dictionary&lt;string, object?&gt;
-    ///                             {
-    ///                             },
-    ///                             ["fieldMapping"] = new Dictionary&lt;string, object?&gt;
-    ///                             {
-    ///                                 ["timestamp"] = "timeframe",
-    ///                                 ["leftAxisValues"] = new[]
-    ///                                 {
-    ///                                     "avg(dt.host.memory.used)",
-    ///                                 },
-    ///                                 ["leftAxisDimensions"] = new[]
-    ///                                 {
-    ///                                 },
-    ///                                 ["fields"] = new[]
-    ///                                 {
-    ///                                 },
-    ///                                 ["values"] = new[]
-    ///                                 {
-    ///                                 },
-    ///                             },
-    ///                             ["categoricalBarChartSettings"] = new Dictionary&lt;string, object?&gt;
-    ///                             {
-    ///                             },
-    ///                         },
-    ///                         ["singleValue"] = new Dictionary&lt;string, object?&gt;
-    ///                         {
-    ///                             ["showLabel"] = true,
-    ///                             ["label"] = "",
-    ///                             ["prefixIcon"] = "",
-    ///                             ["autoscale"] = true,
-    ///                             ["alignment"] = "center",
-    ///                             ["colorThresholdTarget"] = "value",
-    ///                         },
-    ///                         ["table"] = new Dictionary&lt;string, object?&gt;
-    ///                         {
-    ///                             ["rowDensity"] = "condensed",
-    ///                             ["enableSparklines"] = false,
-    ///                             ["hiddenColumns"] = new[]
-    ///                             {
-    ///                             },
-    ///                             ["lineWrapIds"] = new[]
-    ///                             {
-    ///                             },
-    ///                             ["columnWidths"] = new Dictionary&lt;string, object?&gt;
-    ///                             {
-    ///                             },
-    ///                         },
-    ///                     },
+    ///                     ["content"] = "Dashboard content",
     ///                 },
     ///             },
     ///             ["layouts"] = new Dictionary&lt;string, object?&gt;
@@ -223,22 +64,20 @@ namespace Pulumiverse.Dynatrace
     ///                     ["w"] = 24,
     ///                     ["h"] = 14,
     ///                 },
-    ///                 ["1"] = new Dictionary&lt;string, object?&gt;
-    ///                 {
-    ///                     ["x"] = 0,
-    ///                     ["y"] = 14,
-    ///                     ["w"] = 9,
-    ///                     ["h"] = 6,
-    ///                 },
-    ///                 ["2"] = new Dictionary&lt;string, object?&gt;
-    ///                 {
-    ///                     ["x"] = 15,
-    ///                     ["y"] = 14,
-    ///                     ["w"] = 9,
-    ///                     ["h"] = 6,
-    ///                 },
     ///             },
     ///         }),
+    ///     });
+    /// 
+    ///     var sampleServiceUser = new Dynatrace.IamServiceUser("sample_service_user", new()
+    ///     {
+    ///         Name = "#name#",
+    ///         Description = "Service user that can access the dashboard",
+    ///     });
+    /// 
+    ///     var sampleGroup = new Dynatrace.IamGroup("sample_group", new()
+    ///     {
+    ///         Name = "#name#",
+    ///         Description = "Group that can acccess the dashboard",
     ///     });
     /// 
     ///     var @this = new Dynatrace.DirectShares("this", new()
@@ -251,12 +90,12 @@ namespace Pulumiverse.Dynatrace
     ///             {
     ///                 new Dynatrace.Inputs.DirectSharesRecipientsRecipientArgs
     ///                 {
-    ///                     Id = "441664f0-23c9-40ef-b344-18c02c23d787",
+    ///                     Id = sampleServiceUser.Id,
     ///                     Type = "user",
     ///                 },
     ///                 new Dynatrace.Inputs.DirectSharesRecipientsRecipientArgs
     ///                 {
-    ///                     Id = "441664f0-23c9-40ef-b344-18c02c23d788",
+    ///                     Id = sampleGroup.Id,
     ///                     Type = "group",
     ///                 },
     ///             },
@@ -285,7 +124,7 @@ namespace Pulumiverse.Dynatrace
         /// Recipients of the direct share
         /// </summary>
         [Output("recipients")]
-        public Output<Outputs.DirectSharesRecipients> Recipients { get; private set; } = null!;
+        public Output<Outputs.DirectSharesRecipients?> Recipients { get; private set; } = null!;
 
 
         /// <summary>
@@ -349,8 +188,8 @@ namespace Pulumiverse.Dynatrace
         /// <summary>
         /// Recipients of the direct share
         /// </summary>
-        [Input("recipients", required: true)]
-        public Input<Inputs.DirectSharesRecipientsArgs> Recipients { get; set; } = null!;
+        [Input("recipients")]
+        public Input<Inputs.DirectSharesRecipientsArgs>? Recipients { get; set; }
 
         public DirectSharesArgs()
         {

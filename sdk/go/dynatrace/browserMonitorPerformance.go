@@ -27,6 +27,113 @@ import (
 // - `terraform-provider-dynatrace -export BrowserMonitorPerformance` downloads all existing browser monitor performance thresholds configuration
 //
 // The full documentation of the export feature is available [here](https://dt-url.net/h203qmc).
+//
+// ## Resource Example Usage
+//
+// ```go
+// package main
+//
+// import (
+//
+//	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//	"github.com/pulumiverse/pulumi-dynatrace/sdk/go/dynatrace"
+//
+// )
+//
+//	func main() {
+//		pulumi.Run(func(ctx *pulumi.Context) error {
+//			location, err := dynatrace.GetSyntheticLocation(ctx, &dynatrace.LookupSyntheticLocationArgs{
+//				Name: pulumi.StringRef("Location"),
+//			}, nil)
+//			if err != nil {
+//				return err
+//			}
+//			monitor, err := dynatrace.NewBrowserMonitor(ctx, "monitor", &dynatrace.BrowserMonitorArgs{
+//				Name:      pulumi.String("#name#"),
+//				Frequency: pulumi.Int(15),
+//				Locations: pulumi.StringArray{
+//					pulumi.String(pulumi.String(location.Id)),
+//				},
+//				KeyPerformanceMetrics: &dynatrace.BrowserMonitorKeyPerformanceMetricsArgs{
+//					LoadActionKpm: pulumi.String("VISUALLY_COMPLETE"),
+//					XhrActionKpm:  pulumi.String("VISUALLY_COMPLETE"),
+//				},
+//				AnomalyDetection: &dynatrace.BrowserMonitorAnomalyDetectionArgs{
+//					LoadingTimeThresholds: dynatrace.BrowserMonitorAnomalyDetectionLoadingTimeThresholdArray{
+//						&dynatrace.BrowserMonitorAnomalyDetectionLoadingTimeThresholdArgs{
+//							Enabled: pulumi.Bool(true),
+//							Thresholds: dynatrace.BrowserMonitorAnomalyDetectionLoadingTimeThresholdThresholdArray{
+//								&dynatrace.BrowserMonitorAnomalyDetectionLoadingTimeThresholdThresholdArgs{
+//									Thresholds: dynatrace.BrowserMonitorAnomalyDetectionLoadingTimeThresholdThresholdThresholdArray{
+//										&dynatrace.BrowserMonitorAnomalyDetectionLoadingTimeThresholdThresholdThresholdArgs{
+//											EventIndex:   pulumi.Int(0),
+//											RequestIndex: pulumi.Int(0),
+//											Type:         pulumi.String("TOTAL"),
+//											ValueMs:      pulumi.Int(10000),
+//										},
+//									},
+//								},
+//							},
+//						},
+//					},
+//					OutageHandlings: dynatrace.BrowserMonitorAnomalyDetectionOutageHandlingArray{
+//						&dynatrace.BrowserMonitorAnomalyDetectionOutageHandlingArgs{
+//							GlobalOutage: pulumi.Bool(true),
+//							LocalOutage:  pulumi.Bool(false),
+//							RetryOnError: pulumi.Bool(true),
+//							GlobalOutagePolicies: dynatrace.BrowserMonitorAnomalyDetectionOutageHandlingGlobalOutagePolicyArray{
+//								&dynatrace.BrowserMonitorAnomalyDetectionOutageHandlingGlobalOutagePolicyArgs{
+//									ConsecutiveRuns: pulumi.Int(1),
+//								},
+//							},
+//						},
+//					},
+//				},
+//				Script: &dynatrace.BrowserMonitorScriptArgs{
+//					Type: pulumi.String("clickpath"),
+//					Configuration: &dynatrace.BrowserMonitorScriptConfigurationArgs{
+//						BypassCsp: pulumi.Bool(true),
+//						UserAgent: pulumi.String("Mozilla"),
+//						Device: &dynatrace.BrowserMonitorScriptConfigurationDeviceArgs{
+//							Name:        pulumi.String("Desktop"),
+//							Orientation: pulumi.String("landscape"),
+//						},
+//					},
+//					Events: &dynatrace.BrowserMonitorScriptEventsArgs{
+//						Events: dynatrace.BrowserMonitorScriptEventsEventArray{
+//							&dynatrace.BrowserMonitorScriptEventsEventArgs{
+//								Description: pulumi.String("my description"),
+//								Navigate: &dynatrace.BrowserMonitorScriptEventsEventNavigateArgs{
+//									Url: pulumi.String("https://www.example.com"),
+//								},
+//							},
+//						},
+//					},
+//				},
+//			})
+//			if err != nil {
+//				return err
+//			}
+//			_, err = dynatrace.NewBrowserMonitorPerformance(ctx, "performance", &dynatrace.BrowserMonitorPerformanceArgs{
+//				Enabled: pulumi.Bool(true),
+//				Scope:   monitor.ID(),
+//				Thresholds: &dynatrace.BrowserMonitorPerformanceThresholdsArgs{
+//					Thresholds: dynatrace.BrowserMonitorPerformanceThresholdsThresholdArray{
+//						&dynatrace.BrowserMonitorPerformanceThresholdsThresholdArgs{
+//							Event:     monitor.ID(),
+//							Threshold: pulumi.Float64(10),
+//						},
+//					},
+//				},
+//			})
+//			if err != nil {
+//				return err
+//			}
+//			return nil
+//		})
+//	}
+//
+// ```
 type BrowserMonitorPerformance struct {
 	pulumi.CustomResourceState
 

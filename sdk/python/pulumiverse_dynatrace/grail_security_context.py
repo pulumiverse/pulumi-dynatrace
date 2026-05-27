@@ -143,7 +143,7 @@ class GrailSecurityContext(pulumi.CustomResource):
 
         ## Dynatrace Documentation
 
-        - Security data on Grail - https://docs.dynatrace.com/docs/platform-modules/application-security/security-data-on-grail
+        - Permissions in Grail - https://docs.dynatrace.com/docs/platform/grail/organize-data/assign-permissions-in-grail
 
         - Settings API - https://www.dynatrace.com/support/help/dynatrace-api/environment-api/settings (schemaId: `builtin:monitoredentities.grail.security.context`)
 
@@ -171,7 +171,7 @@ class GrailSecurityContext(pulumi.CustomResource):
 
         ## Dynatrace Documentation
 
-        - Security data on Grail - https://docs.dynatrace.com/docs/platform-modules/application-security/security-data-on-grail
+        - Permissions in Grail - https://docs.dynatrace.com/docs/platform/grail/organize-data/assign-permissions-in-grail
 
         - Settings API - https://www.dynatrace.com/support/help/dynatrace-api/environment-api/settings (schemaId: `builtin:monitoredentities.grail.security.context`)
 

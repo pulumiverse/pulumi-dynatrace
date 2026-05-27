@@ -181,6 +181,10 @@ class IamPolicyBindingsV2(pulumi.CustomResource):
 
         > This resource is excluded by default in the export utility, please explicitly specify the resource to retrieve existing configuration.
 
+        > This resource re-assigns all policies bound to a group, so every policy that should remain bound must be specified in the configuration; otherwise, it will be unbound.
+        During this process, there is a brief window where the group has no policies assigned, which may temporarily cause permission issues for users in that group.
+        Locking out the OAuth client through this resource is theoretically possible but very unlikely, as managing policies and groups requires account-level permissions. If account permissions are set on a group, policy boundaries can still be managed even when no policies are assigned.
+
         ## Dynatrace Documentation
 
         - Dynatrace IAM Group Permissions - https://docs.dynatrace.com/docs/manage/identity-access-management/permission-management/manage-user-permissions-policies
@@ -207,6 +211,10 @@ class IamPolicyBindingsV2(pulumi.CustomResource):
         > To utilize this resource, please define the environment variables `DT_CLIENT_ID`, `DT_CLIENT_SECRET`, `DT_ACCOUNT_ID` with an OAuth client including the following permissions: **Allow IAM policy configuration for environments** (`iam-policies-management`) and **View environments** (`account-env-read`).
 
         > This resource is excluded by default in the export utility, please explicitly specify the resource to retrieve existing configuration.
+
+        > This resource re-assigns all policies bound to a group, so every policy that should remain bound must be specified in the configuration; otherwise, it will be unbound.
+        During this process, there is a brief window where the group has no policies assigned, which may temporarily cause permission issues for users in that group.
+        Locking out the OAuth client through this resource is theoretically possible but very unlikely, as managing policies and groups requires account-level permissions. If account permissions are set on a group, policy boundaries can still be managed even when no policies are assigned.
 
         ## Dynatrace Documentation
 

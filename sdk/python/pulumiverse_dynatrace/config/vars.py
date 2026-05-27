@@ -22,78 +22,120 @@ __config__ = pulumi.Config('dynatrace')
 class _ExportableConfig(types.ModuleType):
     @_builtins.property
     def account_id(self) -> Optional[str]:
+        """
+        The Dynatrace account ID (UUID). Required for IAM (Account Management) resources. Also serves as a fallback for `iam_account_id`.
+        """
         return __config__.get('accountId')
 
     @_builtins.property
     def automation_client_id(self) -> Optional[str]:
+        """
+        The client ID of an OAuth client used for platform APIs. Falls back to `client_id` if not specified.
+        """
         return __config__.get('automationClientId')
 
     @_builtins.property
     def automation_client_secret(self) -> Optional[str]:
+        """
+        The client secret of an OAuth client used for platform APIs. Falls back to `client_secret` if not specified.
+        """
         return __config__.get('automationClientSecret')
 
     @_builtins.property
     def automation_env_url(self) -> Optional[str]:
         """
-        The URL of the Dynatrace Environment with Platform capabilities turned on (`https://#####.apps.dynatrace.com)`. This is optional configuration when `dt_env_url` already specifies a SaaS Environment like `https://#####.live.dynatrace.com` or `https://#####.apps.dynatrace.com`
+        The URL of the Dynatrace platform environment (`https://#####.apps.dynatrace.com`). Falls back to `dt_env_url` if not specified.
         """
         return __config__.get('automationEnvUrl')
 
     @_builtins.property
     def automation_token_url(self) -> Optional[str]:
         """
-        The URL that provides the Bearer tokens when accessing the Automation REST API. This is optional configuration when `dt_env_url` already specifies a SaaS Environment like `https://#####.live.dynatrace.com` or `https://#####.apps.dynatrace.com`
+        The token URL for obtaining access tokens via OAuth for the platform APIs. Default: `https://sso.dynatrace.com/sso/oauth2/token`.
         """
         return __config__.get('automationTokenUrl')
 
     @_builtins.property
     def client_id(self) -> Optional[str]:
+        """
+        The client ID of an OAuth client used for  platform APIs. Also serves as a fallback for `iam_client_id` and `automation_client_id`.
+        """
         return __config__.get('clientId')
 
     @_builtins.property
     def client_secret(self) -> Optional[str]:
+        """
+        The client secret of an OAuth client used for platform APIs. Also serves as a fallback for `iam_client_secret` and `automation_client_secret`.
+        """
         return __config__.get('clientSecret')
 
     @_builtins.property
     def dt_api_token(self) -> Optional[str]:
+        """
+        The API token for classic Dynatrace APIs.
+        """
         return __config__.get('dtApiToken') or _utilities.get_env('DYNATRACE_API_TOKEN', 'DT_API_TOKEN')
 
     @_builtins.property
     def dt_cluster_api_token(self) -> Optional[str]:
+        """
+        The API token for Dynatrace Managed cluster APIs.
+        """
         return __config__.get('dtClusterApiToken') or _utilities.get_env('DYNATRACE_CLUSTER_API_TOKEN', 'DT_CLUSTER_API_TOKEN')
 
     @_builtins.property
     def dt_cluster_url(self) -> Optional[str]:
+        """
+        The URL of the Dynatrace Managed cluster.
+        """
         return __config__.get('dtClusterUrl') or _utilities.get_env('DYNATRACE_CLUSTER_URL', 'DT_CLUSTER_URL')
 
     @_builtins.property
     def dt_env_url(self) -> Optional[str]:
+        """
+        The URL of the Dynatrace environment (e.g. `https://#####.live.dynatrace.com` or `https://#####.apps.dynatrace.com`).
+        """
         return __config__.get('dtEnvUrl') or _utilities.get_env('DYNATRACE_ENV_URL', 'DT_ENV_URL')
 
     @_builtins.property
     def iam_account_id(self) -> Optional[str]:
+        """
+        The Dynatrace account ID (UUID). Required for IAM (Account Management) resources. Falls back to `account_id` if not specified.
+        """
         return __config__.get('iamAccountId')
 
     @_builtins.property
     def iam_client_id(self) -> Optional[str]:
+        """
+        The client ID of an OAuth client used for the IAM (Account Management) API. Falls back to `client_id` if not specified.
+        """
         return __config__.get('iamClientId')
 
     @_builtins.property
     def iam_client_secret(self) -> Optional[str]:
+        """
+        The client secret of an OAuth client used for the IAM (Account Management) API. Falls back to `client_secret` if not specified.
+        """
         return __config__.get('iamClientSecret')
 
     @_builtins.property
     def iam_endpoint_url(self) -> Optional[str]:
+        """
+        The endpoint URL for the IAM (Account Management) API. Default: `https://api.dynatrace.com`.
+        """
         return __config__.get('iamEndpointUrl')
 
     @_builtins.property
     def iam_token_url(self) -> Optional[str]:
+        """
+        The token URL for obtaining access tokens via OAuth for the IAM (Account Management) API. Default: `https://sso.dynatrace.com/sso/oauth2/token`.
+        """
         return __config__.get('iamTokenUrl')
 
     @_builtins.property
     def platform_token(self) -> Optional[str]:
         """
-        A Dynatrace Platform Token. Specifying such a token allows for easy authentication against Platform resources. In such a case it supersedes `automation_client_id`, `automation_client_secret`, `automation_token_url` and `automation_env_url`
+        The Dynatrace platform token used for platform APIs. When specified, it is used in preference to `client_id`, `client_secret`, `automation_client_id`, `automation_client_secret`, `automation_token_url`, and `automation_env_url` for platform requests. Platform tokens can't be used for IAM (Account Management) or classic resources.
         """
         return __config__.get('platformToken')
 

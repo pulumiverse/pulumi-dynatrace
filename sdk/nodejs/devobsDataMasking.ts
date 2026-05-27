@@ -48,6 +48,10 @@ export class DevobsDataMasking extends pulumi.CustomResource {
     }
 
     /**
+     * Select how the variable name should be matched. Possible values: `CONTAINS`, `ENDS_WITH`, `EQUALS`, `STARTS_WITH`
+     */
+    declare public readonly comparisonType: pulumi.Output<string | undefined>;
+    /**
      * This setting is enabled (`true`) or disabled (`false`)
      */
     declare public readonly enabled: pulumi.Output<boolean>;
@@ -56,11 +60,11 @@ export class DevobsDataMasking extends pulumi.CustomResource {
      */
     declare public readonly insertAfter: pulumi.Output<string>;
     /**
-     * no documentation available
+     * Replacement Pattern
      */
     declare public readonly replacementPattern: pulumi.Output<string | undefined>;
     /**
-     * Possible Values: `SHA256`, `STRING`
+     * Choose how the sensitive data should be replaced. Possible values: `SHA256`, `STRING`
      */
     declare public readonly replacementType: pulumi.Output<string>;
     /**
@@ -68,15 +72,15 @@ export class DevobsDataMasking extends pulumi.CustomResource {
      */
     declare public readonly ruleName: pulumi.Output<string>;
     /**
-     * no documentation available
+     * Regex Pattern
      */
     declare public readonly ruleRegex: pulumi.Output<string | undefined>;
     /**
-     * Possible Values: `REGEX`, `VAR_NAME`
+     * Choose whether to redact by variable name or regex. Possible values: `REGEX`, `VAR_NAME`
      */
     declare public readonly ruleType: pulumi.Output<string>;
     /**
-     * no documentation available
+     * Variable Name
      */
     declare public readonly ruleVarName: pulumi.Output<string | undefined>;
 
@@ -93,6 +97,7 @@ export class DevobsDataMasking extends pulumi.CustomResource {
         opts = opts || {};
         if (opts.id) {
             const state = argsOrState as DevobsDataMaskingState | undefined;
+            resourceInputs["comparisonType"] = state?.comparisonType;
             resourceInputs["enabled"] = state?.enabled;
             resourceInputs["insertAfter"] = state?.insertAfter;
             resourceInputs["replacementPattern"] = state?.replacementPattern;
@@ -115,6 +120,7 @@ export class DevobsDataMasking extends pulumi.CustomResource {
             if (args?.ruleType === undefined && !opts.urn) {
                 throw new Error("Missing required property 'ruleType'");
             }
+            resourceInputs["comparisonType"] = args?.comparisonType;
             resourceInputs["enabled"] = args?.enabled;
             resourceInputs["insertAfter"] = args?.insertAfter;
             resourceInputs["replacementPattern"] = args?.replacementPattern;
@@ -134,6 +140,10 @@ export class DevobsDataMasking extends pulumi.CustomResource {
  */
 export interface DevobsDataMaskingState {
     /**
+     * Select how the variable name should be matched. Possible values: `CONTAINS`, `ENDS_WITH`, `EQUALS`, `STARTS_WITH`
+     */
+    comparisonType?: pulumi.Input<string | undefined>;
+    /**
      * This setting is enabled (`true`) or disabled (`false`)
      */
     enabled?: pulumi.Input<boolean | undefined>;
@@ -142,11 +152,11 @@ export interface DevobsDataMaskingState {
      */
     insertAfter?: pulumi.Input<string | undefined>;
     /**
-     * no documentation available
+     * Replacement Pattern
      */
     replacementPattern?: pulumi.Input<string | undefined>;
     /**
-     * Possible Values: `SHA256`, `STRING`
+     * Choose how the sensitive data should be replaced. Possible values: `SHA256`, `STRING`
      */
     replacementType?: pulumi.Input<string | undefined>;
     /**
@@ -154,15 +164,15 @@ export interface DevobsDataMaskingState {
      */
     ruleName?: pulumi.Input<string | undefined>;
     /**
-     * no documentation available
+     * Regex Pattern
      */
     ruleRegex?: pulumi.Input<string | undefined>;
     /**
-     * Possible Values: `REGEX`, `VAR_NAME`
+     * Choose whether to redact by variable name or regex. Possible values: `REGEX`, `VAR_NAME`
      */
     ruleType?: pulumi.Input<string | undefined>;
     /**
-     * no documentation available
+     * Variable Name
      */
     ruleVarName?: pulumi.Input<string | undefined>;
 }
@@ -172,6 +182,10 @@ export interface DevobsDataMaskingState {
  */
 export interface DevobsDataMaskingArgs {
     /**
+     * Select how the variable name should be matched. Possible values: `CONTAINS`, `ENDS_WITH`, `EQUALS`, `STARTS_WITH`
+     */
+    comparisonType?: pulumi.Input<string | undefined>;
+    /**
      * This setting is enabled (`true`) or disabled (`false`)
      */
     enabled: pulumi.Input<boolean>;
@@ -180,11 +194,11 @@ export interface DevobsDataMaskingArgs {
      */
     insertAfter?: pulumi.Input<string | undefined>;
     /**
-     * no documentation available
+     * Replacement Pattern
      */
     replacementPattern?: pulumi.Input<string | undefined>;
     /**
-     * Possible Values: `SHA256`, `STRING`
+     * Choose how the sensitive data should be replaced. Possible values: `SHA256`, `STRING`
      */
     replacementType: pulumi.Input<string>;
     /**
@@ -192,15 +206,15 @@ export interface DevobsDataMaskingArgs {
      */
     ruleName: pulumi.Input<string>;
     /**
-     * no documentation available
+     * Regex Pattern
      */
     ruleRegex?: pulumi.Input<string | undefined>;
     /**
-     * Possible Values: `REGEX`, `VAR_NAME`
+     * Choose whether to redact by variable name or regex. Possible values: `REGEX`, `VAR_NAME`
      */
     ruleType: pulumi.Input<string>;
     /**
-     * no documentation available
+     * Variable Name
      */
     ruleVarName?: pulumi.Input<string | undefined>;
 }

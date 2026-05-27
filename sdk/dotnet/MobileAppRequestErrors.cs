@@ -26,6 +26,43 @@ namespace Pulumiverse.Dynatrace
     /// - `terraform-provider-dynatrace -export dynatrace.MobileAppRequestErrors` downloads all existing mobile application request error configuration
     /// 
     /// The full documentation of the export feature is available [here](https://dt-url.net/h203qmc).
+    /// 
+    /// ## Resource Example Usage
+    /// 
+    /// ```csharp
+    /// using System.Collections.Generic;
+    /// using System.Linq;
+    /// using Pulumi;
+    /// using Dynatrace = Pulumiverse.Dynatrace;
+    /// 
+    /// return await Deployment.RunAsync(() =&gt; 
+    /// {
+    ///     var application = Dynatrace.GetMobileApplication.Invoke(new()
+    ///     {
+    ///         Name = "Application",
+    ///     });
+    /// 
+    ///     var requestErrors = new Dynatrace.MobileAppRequestErrors("request_errors", new()
+    ///     {
+    ///         Scope = application.Apply(getMobileApplicationResult =&gt; getMobileApplicationResult.Id),
+    ///         ErrorRules = new Dynatrace.Inputs.MobileAppRequestErrorsErrorRulesArgs
+    ///         {
+    ///             ErrorRules = new[]
+    ///             {
+    ///                 new Dynatrace.Inputs.MobileAppRequestErrorsErrorRulesErrorRuleArgs
+    ///                 {
+    ///                     ErrorCodes = "409",
+    ///                 },
+    ///                 new Dynatrace.Inputs.MobileAppRequestErrorsErrorRulesErrorRuleArgs
+    ///                 {
+    ///                     ErrorCodes = "410",
+    ///                 },
+    ///             },
+    ///         },
+    ///     });
+    /// 
+    /// });
+    /// ```
     /// </summary>
     [DynatraceResourceType("dynatrace:index/mobileAppRequestErrors:MobileAppRequestErrors")]
     public partial class MobileAppRequestErrors : global::Pulumi.CustomResource

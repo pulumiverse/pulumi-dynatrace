@@ -42,6 +42,27 @@ namespace Pulumiverse.Dynatrace
     /// - `terraform-provider-dynatrace -export dynatrace.MsentraidConnection` downloads all existing Microsoft Entra ID connections
     /// 
     /// The full documentation of the export feature is available [here](https://dt-url.net/h203qmc).
+    /// 
+    /// ## Resource Example Usage
+    /// 
+    /// ```csharp
+    /// using System.Collections.Generic;
+    /// using System.Linq;
+    /// using Pulumi;
+    /// using Dynatrace = Pulumiverse.Dynatrace;
+    /// 
+    /// return await Deployment.RunAsync(() =&gt; 
+    /// {
+    ///     var connection = new Dynatrace.MsentraidConnection("connection", new()
+    ///     {
+    ///         Name = "#name#",
+    ///         DirectoryId = "00000000-0000-0000-0000-000000000000",
+    ///         ApplicationId = "00000000-0000-0000-0000-000000000000",
+    ///         ClientSecret = "#######",
+    ///     });
+    /// 
+    /// });
+    /// ```
     /// </summary>
     [DynatraceResourceType("dynatrace:index/msentraidConnection:MsentraidConnection")]
     public partial class MsentraidConnection : global::Pulumi.CustomResource

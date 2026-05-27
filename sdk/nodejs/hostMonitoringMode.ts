@@ -22,6 +22,21 @@ import * as utilities from "./utilities";
  * > By default settings for Agents that are currently offline are not getting exported. You can change that by setting the environment variable `DYNATRACE_HOST_MONITORING_OFFLINE` to `true` before running the export. Be aware that you will get settings exported for every host that has been connected within the last 3 years that way.
  *
  * The full documentation of the export feature is available [here](https://dt-url.net/h203qmc).
+ *
+ * ## Resource Example Usage
+ *
+ * ```typescript
+ * import * as pulumi from "@pulumi/pulumi";
+ * import * as dynatrace from "@pulumiverse/dynatrace";
+ *
+ * const hosts = dynatrace.getEntities({
+ *     type: "HOST",
+ * });
+ * const mode = new dynatrace.HostMonitoringMode("mode", {
+ *     hostId: hosts.then(hosts => hosts.entities?.[0]?.entityId),
+ *     monitoringMode: "FULL_STACK",
+ * });
+ * ```
  */
 export class HostMonitoringMode extends pulumi.CustomResource {
     /**

@@ -31,7 +31,7 @@ class Ms365EmailConnectionArgs:
         :param pulumi.Input[_builtins.str] client_id: Application (client) ID of your app registered in Microsoft Azure App registrations
         :param pulumi.Input[_builtins.str] from_address: The email address from which the messages will be sent
         :param pulumi.Input[_builtins.str] tenant_id: Directory (tenant) ID of your Azure Active Directory
-        :param pulumi.Input[_builtins.str] type: Possible Values: `client_secret`
+        :param pulumi.Input[_builtins.str] type: Type of authentication method that should be used. Possible values: `client_secret`
         :param pulumi.Input[_builtins.str] client_secret: Client secret of your app registered in Microsoft Azure App registrations
         :param pulumi.Input[_builtins.str] name: A unique name for the Microsoft 365 email connection
         """
@@ -84,7 +84,7 @@ class Ms365EmailConnectionArgs:
     @pulumi.getter
     def type(self) -> pulumi.Input[_builtins.str]:
         """
-        Possible Values: `client_secret`
+        Type of authentication method that should be used. Possible values: `client_secret`
         """
         return pulumi.get(self, "type")
 
@@ -134,7 +134,7 @@ class _Ms365EmailConnectionState:
         :param pulumi.Input[_builtins.str] from_address: The email address from which the messages will be sent
         :param pulumi.Input[_builtins.str] name: A unique name for the Microsoft 365 email connection
         :param pulumi.Input[_builtins.str] tenant_id: Directory (tenant) ID of your Azure Active Directory
-        :param pulumi.Input[_builtins.str] type: Possible Values: `client_secret`
+        :param pulumi.Input[_builtins.str] type: Type of authentication method that should be used. Possible values: `client_secret`
         """
         if client_id is not None:
             pulumi.set(__self__, "client_id", client_id)
@@ -213,7 +213,7 @@ class _Ms365EmailConnectionState:
     @pulumi.getter
     def type(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
-        Possible Values: `client_secret`
+        Type of authentication method that should be used. Possible values: `client_secret`
         """
         return pulumi.get(self, "type")
 
@@ -268,6 +268,21 @@ class Ms365EmailConnection(pulumi.CustomResource):
 
         The full documentation of the export feature is available [here](https://dt-url.net/h203qmc).
 
+        ## Resource Example Usage
+
+        ```python
+        import pulumi
+        import pulumiverse_dynatrace as dynatrace
+
+        connection = dynatrace.Ms365EmailConnection("connection",
+            name="#name#",
+            type="client_secret",
+            tenant_id="00000000-0000-0000-0000-000000000000",
+            client_id="00000000-0000-0000-0000-000000000000",
+            client_secret="######",
+            from_address="random.email@terraform.com")
+        ```
+
 
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
@@ -276,7 +291,7 @@ class Ms365EmailConnection(pulumi.CustomResource):
         :param pulumi.Input[_builtins.str] from_address: The email address from which the messages will be sent
         :param pulumi.Input[_builtins.str] name: A unique name for the Microsoft 365 email connection
         :param pulumi.Input[_builtins.str] tenant_id: Directory (tenant) ID of your Azure Active Directory
-        :param pulumi.Input[_builtins.str] type: Possible Values: `client_secret`
+        :param pulumi.Input[_builtins.str] type: Type of authentication method that should be used. Possible values: `client_secret`
         """
         ...
     @overload
@@ -316,6 +331,21 @@ class Ms365EmailConnection(pulumi.CustomResource):
         - `terraform-provider-dynatrace -export Ms365EmailConnection` downloads all existing Microsoft 365 email connections
 
         The full documentation of the export feature is available [here](https://dt-url.net/h203qmc).
+
+        ## Resource Example Usage
+
+        ```python
+        import pulumi
+        import pulumiverse_dynatrace as dynatrace
+
+        connection = dynatrace.Ms365EmailConnection("connection",
+            name="#name#",
+            type="client_secret",
+            tenant_id="00000000-0000-0000-0000-000000000000",
+            client_id="00000000-0000-0000-0000-000000000000",
+            client_secret="######",
+            from_address="random.email@terraform.com")
+        ```
 
 
         :param str resource_name: The name of the resource.
@@ -392,7 +422,7 @@ class Ms365EmailConnection(pulumi.CustomResource):
         :param pulumi.Input[_builtins.str] from_address: The email address from which the messages will be sent
         :param pulumi.Input[_builtins.str] name: A unique name for the Microsoft 365 email connection
         :param pulumi.Input[_builtins.str] tenant_id: Directory (tenant) ID of your Azure Active Directory
-        :param pulumi.Input[_builtins.str] type: Possible Values: `client_secret`
+        :param pulumi.Input[_builtins.str] type: Type of authentication method that should be used. Possible values: `client_secret`
         """
         opts = pulumi.ResourceOptions.merge(opts, pulumi.ResourceOptions(id=id))
 
@@ -450,7 +480,7 @@ class Ms365EmailConnection(pulumi.CustomResource):
     @pulumi.getter
     def type(self) -> pulumi.Output[_builtins.str]:
         """
-        Possible Values: `client_secret`
+        Type of authentication method that should be used. Possible values: `client_secret`
         """
         return pulumi.get(self, "type")
 

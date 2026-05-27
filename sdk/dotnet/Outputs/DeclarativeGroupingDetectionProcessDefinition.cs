@@ -15,15 +15,15 @@ namespace Pulumiverse.Dynatrace.Outputs
     public sealed class DeclarativeGroupingDetectionProcessDefinition
     {
         /// <summary>
-        /// Process group identifier
+        /// This identifier is used by Dynatrace to recognize this process group.
         /// </summary>
         public readonly string Id;
         /// <summary>
-        /// This identifier is used by Dynatrace to recognize this process group.
+        /// Process group display name
         /// </summary>
         public readonly string ProcessGroupName;
         /// <summary>
-        /// Possible Values: `Never`, `Always`, `highResourceUsage`
+        /// This property tells OneAgent a condition for reporting the created Process group to Dynatrace. Possible values: `Always`, `highResourceUsage`, `Never`
         /// </summary>
         public readonly string Report;
         /// <summary>

@@ -23,7 +23,7 @@ class OneagentDefaultModeArgs:
         """
         The set of arguments for constructing a OneagentDefaultMode resource.
 
-        :param pulumi.Input[_builtins.str] default_mode: Possible Values: `DISCOVERY`, `FULL_STACK`, `INFRASTRUCTURE`
+        :param pulumi.Input[_builtins.str] default_mode: OneAgent default monitoring mode. Possible values: `DISCOVERY`, `FULL_STACK`, `INFRASTRUCTURE`
         """
         pulumi.set(__self__, "default_mode", default_mode)
 
@@ -31,7 +31,7 @@ class OneagentDefaultModeArgs:
     @pulumi.getter(name="defaultMode")
     def default_mode(self) -> pulumi.Input[_builtins.str]:
         """
-        Possible Values: `DISCOVERY`, `FULL_STACK`, `INFRASTRUCTURE`
+        OneAgent default monitoring mode. Possible values: `DISCOVERY`, `FULL_STACK`, `INFRASTRUCTURE`
         """
         return pulumi.get(self, "default_mode")
 
@@ -47,7 +47,7 @@ class _OneagentDefaultModeState:
         """
         Input properties used for looking up and filtering OneagentDefaultMode resources.
 
-        :param pulumi.Input[_builtins.str] default_mode: Possible Values: `DISCOVERY`, `FULL_STACK`, `INFRASTRUCTURE`
+        :param pulumi.Input[_builtins.str] default_mode: OneAgent default monitoring mode. Possible values: `DISCOVERY`, `FULL_STACK`, `INFRASTRUCTURE`
         """
         if default_mode is not None:
             pulumi.set(__self__, "default_mode", default_mode)
@@ -56,7 +56,7 @@ class _OneagentDefaultModeState:
     @pulumi.getter(name="defaultMode")
     def default_mode(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
-        Possible Values: `DISCOVERY`, `FULL_STACK`, `INFRASTRUCTURE`
+        OneAgent default monitoring mode. Possible values: `DISCOVERY`, `FULL_STACK`, `INFRASTRUCTURE`
         """
         return pulumi.get(self, "default_mode")
 
@@ -91,7 +91,7 @@ class OneagentDefaultMode(pulumi.CustomResource):
 
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
-        :param pulumi.Input[_builtins.str] default_mode: Possible Values: `DISCOVERY`, `FULL_STACK`, `INFRASTRUCTURE`
+        :param pulumi.Input[_builtins.str] default_mode: OneAgent default monitoring mode. Possible values: `DISCOVERY`, `FULL_STACK`, `INFRASTRUCTURE`
         """
         ...
     @overload
@@ -161,7 +161,7 @@ class OneagentDefaultMode(pulumi.CustomResource):
         :param str resource_name: The unique name of the resulting resource.
         :param pulumi.Input[str] id: The unique provider ID of the resource to lookup.
         :param pulumi.ResourceOptions opts: Options for the resource.
-        :param pulumi.Input[_builtins.str] default_mode: Possible Values: `DISCOVERY`, `FULL_STACK`, `INFRASTRUCTURE`
+        :param pulumi.Input[_builtins.str] default_mode: OneAgent default monitoring mode. Possible values: `DISCOVERY`, `FULL_STACK`, `INFRASTRUCTURE`
         """
         opts = pulumi.ResourceOptions.merge(opts, pulumi.ResourceOptions(id=id))
 
@@ -174,7 +174,7 @@ class OneagentDefaultMode(pulumi.CustomResource):
     @pulumi.getter(name="defaultMode")
     def default_mode(self) -> pulumi.Output[_builtins.str]:
         """
-        Possible Values: `DISCOVERY`, `FULL_STACK`, `INFRASTRUCTURE`
+        OneAgent default monitoring mode. Possible values: `DISCOVERY`, `FULL_STACK`, `INFRASTRUCTURE`
         """
         return pulumi.get(self, "default_mode")
 

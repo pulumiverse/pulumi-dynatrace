@@ -14,13 +14,13 @@ namespace Pulumiverse.Dynatrace.Inputs
     public sealed class DavisAnomalyDetectorsEventTemplatePropertiesPropertyArgs : global::Pulumi.ResourceArgs
     {
         /// <summary>
-        /// no documentation available
+        /// Property key
         /// </summary>
         [Input("key", required: true)]
         public Input<string> Key { get; set; } = null!;
 
         /// <summary>
-        /// no documentation available
+        /// Property value. Supports substitution of placeholders placed in curly braces {}.
         /// </summary>
         [Input("value", required: true)]
         public Input<string> Value { get; set; } = null!;

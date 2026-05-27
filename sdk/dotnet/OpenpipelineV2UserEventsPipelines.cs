@@ -234,6 +234,12 @@ namespace Pulumiverse.Dynatrace
         public Output<string> DisplayName { get; private set; } = null!;
 
         /// <summary>
+        /// Group role. Possible values: `compositionPipeline`, `memberPipeline`
+        /// </summary>
+        [Output("groupRole")]
+        public Output<string?> GroupRole { get; private set; } = null!;
+
+        /// <summary>
         /// Pipeline metadata list
         /// </summary>
         [Output("metadataList")]
@@ -256,6 +262,12 @@ namespace Pulumiverse.Dynatrace
         /// </summary>
         [Output("productAllocation")]
         public Output<Outputs.OpenpipelineV2UserEventsPipelinesProductAllocation?> ProductAllocation { get; private set; } = null!;
+
+        /// <summary>
+        /// Routing. Possible values: `notRoutable`, `Routable`
+        /// </summary>
+        [Output("routing")]
+        public Output<string?> Routing { get; private set; } = null!;
 
         /// <summary>
         /// Security context stage
@@ -359,6 +371,12 @@ namespace Pulumiverse.Dynatrace
         public Input<string> DisplayName { get; set; } = null!;
 
         /// <summary>
+        /// Group role. Possible values: `compositionPipeline`, `memberPipeline`
+        /// </summary>
+        [Input("groupRole")]
+        public Input<string>? GroupRole { get; set; }
+
+        /// <summary>
         /// Pipeline metadata list
         /// </summary>
         [Input("metadataList")]
@@ -381,6 +399,12 @@ namespace Pulumiverse.Dynatrace
         /// </summary>
         [Input("productAllocation")]
         public Input<Inputs.OpenpipelineV2UserEventsPipelinesProductAllocationArgs>? ProductAllocation { get; set; }
+
+        /// <summary>
+        /// Routing. Possible values: `notRoutable`, `Routable`
+        /// </summary>
+        [Input("routing")]
+        public Input<string>? Routing { get; set; }
 
         /// <summary>
         /// Security context stage
@@ -445,6 +469,12 @@ namespace Pulumiverse.Dynatrace
         public Input<string>? DisplayName { get; set; }
 
         /// <summary>
+        /// Group role. Possible values: `compositionPipeline`, `memberPipeline`
+        /// </summary>
+        [Input("groupRole")]
+        public Input<string>? GroupRole { get; set; }
+
+        /// <summary>
         /// Pipeline metadata list
         /// </summary>
         [Input("metadataList")]
@@ -467,6 +497,12 @@ namespace Pulumiverse.Dynatrace
         /// </summary>
         [Input("productAllocation")]
         public Input<Inputs.OpenpipelineV2UserEventsPipelinesProductAllocationGetArgs>? ProductAllocation { get; set; }
+
+        /// <summary>
+        /// Routing. Possible values: `notRoutable`, `Routable`
+        /// </summary>
+        [Input("routing")]
+        public Input<string>? Routing { get; set; }
 
         /// <summary>
         /// Security context stage

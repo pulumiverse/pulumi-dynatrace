@@ -11,11 +11,15 @@ import * as utilities from "./utilities";
  *
  * > To utilize this resource, please define the environment variables `DT_CLIENT_ID`, `DT_CLIENT_SECRET`, `DT_ACCOUNT_ID` with an OAuth client including the following permissions: **Read direct-shares** (`document:direct-shares:read`), **Write direct-shares** (`document:direct-shares:write`), and **Delete direct-shares** (`document:direct-shares:delete`).
  *
- * > This resource is currently not covered by the export utility.
+ * > This resource is excluded by default in the export utility, please explicitly specify the resource to retrieve existing configuration.
  *
  * ## Dynatrace Documentation
  *
  * - Dynatrace Documents - https://########.apps.dynatrace.com/platform/swagger-ui/index.html?urls.primaryName=Document%20Service
+ *
+ * ## Export Example Usage
+ *
+ * - `terraform-provider-dynatrace -export dynatrace.DirectShares` downloads all existing direct shares configurations for documents.
  *
  * ## Resource Example Usage
  *
@@ -27,112 +31,13 @@ import * as utilities from "./utilities";
  *     type: "dashboard",
  *     name: "#name#",
  *     content: JSON.stringify({
- *         version: 13,
+ *         version: 1,
  *         variables: [],
  *         tiles: {
  *             "0": {
  *                 type: "markdown",
  *                 title: "",
- *                 content: "![Image of a Dashboard](https://dt-cdn.net/wp-content/uploads/2022/09/pic1____Dashboard-Preset___PNG.png)",
- *             },
- *             "1": {
- *                 type: "data",
- *                 title: "",
- *                 query: "timeseries avg(dt.host.cpu.user)",
- *                 queryConfig: {
- *                     additionalFilters: {},
- *                     version: "4.3.1",
- *                     datatype: "metrics",
- *                     metricKey: "dt.host.cpu.user",
- *                     aggregation: "avg",
- *                     by: [],
- *                 },
- *                 subType: "dql-builder-metrics",
- *                 visualization: "lineChart",
- *                 visualizationSettings: {
- *                     thresholds: [],
- *                     chartSettings: {
- *                         gapPolicy: "connect",
- *                         circleChartSettings: {
- *                             groupingThresholdType: "relative",
- *                             groupingThresholdValue: 0,
- *                             valueType: "relative",
- *                         },
- *                         categoryOverrides: {},
- *                         fieldMapping: {
- *                             timestamp: "timeframe",
- *                             leftAxisValues: ["avg(dt.host.cpu.user)"],
- *                             leftAxisDimensions: [],
- *                             fields: [],
- *                             values: [],
- *                         },
- *                     },
- *                     singleValue: {
- *                         showLabel: true,
- *                         label: "",
- *                         prefixIcon: "",
- *                         autoscale: true,
- *                         alignment: "center",
- *                         colorThresholdTarget: "value",
- *                     },
- *                     table: {
- *                         rowDensity: "condensed",
- *                         enableSparklines: false,
- *                         hiddenColumns: [],
- *                         lineWrapIds: [],
- *                         columnWidths: {},
- *                     },
- *                 },
- *             },
- *             "2": {
- *                 type: "data",
- *                 title: "",
- *                 query: "timeseries avg(dt.host.memory.used)",
- *                 queryConfig: {
- *                     additionalFilters: {},
- *                     version: "4.3.1",
- *                     datatype: "metrics",
- *                     metricKey: "dt.host.memory.used",
- *                     aggregation: "avg",
- *                     by: [],
- *                 },
- *                 subType: "dql-builder-metrics",
- *                 visualization: "lineChart",
- *                 visualizationSettings: {
- *                     thresholds: [],
- *                     chartSettings: {
- *                         gapPolicy: "connect",
- *                         circleChartSettings: {
- *                             groupingThresholdType: "relative",
- *                             groupingThresholdValue: 0,
- *                             valueType: "relative",
- *                         },
- *                         categoryOverrides: {},
- *                         fieldMapping: {
- *                             timestamp: "timeframe",
- *                             leftAxisValues: ["avg(dt.host.memory.used)"],
- *                             leftAxisDimensions: [],
- *                             fields: [],
- *                             values: [],
- *                         },
- *                         categoricalBarChartSettings: {},
- *                     },
- *                     singleValue: {
- *                         showLabel: true,
- *                         label: "",
- *                         prefixIcon: "",
- *                         autoscale: true,
- *                         alignment: "center",
- *                         colorThresholdTarget: "value",
- *                     },
- *                     table: {
- *                         rowDensity: "condensed",
- *                         enableSparklines: false,
- *                         hiddenColumns: [],
- *                         lineWrapIds: [],
- *                         columnWidths: {},
- *                     },
- *                 },
+ *                 content: "Dashboard content",
  *             },
  *         },
  *         layouts: {
@@ -142,20 +47,16 @@ import * as utilities from "./utilities";
  *                 w: 24,
  *                 h: 14,
  *             },
- *             "1": {
- *                 x: 0,
- *                 y: 14,
- *                 w: 9,
- *                 h: 6,
- *             },
- *             "2": {
- *                 x: 15,
- *                 y: 14,
- *                 w: 9,
- *                 h: 6,
- *             },
  *         },
  *     }),
+ * });
+ * const sampleServiceUser = new dynatrace.IamServiceUser("sample_service_user", {
+ *     name: "#name#",
+ *     description: "Service user that can access the dashboard",
+ * });
+ * const sampleGroup = new dynatrace.IamGroup("sample_group", {
+ *     name: "#name#",
+ *     description: "Group that can acccess the dashboard",
  * });
  * const _this = new dynatrace.DirectShares("this", {
  *     documentId: thisDocument.id,
@@ -163,11 +64,11 @@ import * as utilities from "./utilities";
  *     recipients: {
  *         recipients: [
  *             {
- *                 id: "441664f0-23c9-40ef-b344-18c02c23d787",
+ *                 id: sampleServiceUser.id,
  *                 type: "user",
  *             },
  *             {
- *                 id: "441664f0-23c9-40ef-b344-18c02c23d788",
+ *                 id: sampleGroup.id,
  *                 type: "group",
  *             },
  *         ],
@@ -214,7 +115,7 @@ export class DirectShares extends pulumi.CustomResource {
     /**
      * Recipients of the direct share
      */
-    declare public readonly recipients: pulumi.Output<outputs.DirectSharesRecipients>;
+    declare public readonly recipients: pulumi.Output<outputs.DirectSharesRecipients | undefined>;
 
     /**
      * Create a DirectShares resource with the given unique name, arguments, and options.
@@ -236,9 +137,6 @@ export class DirectShares extends pulumi.CustomResource {
             const args = argsOrState as DirectSharesArgs | undefined;
             if (args?.documentId === undefined && !opts.urn) {
                 throw new Error("Missing required property 'documentId'");
-            }
-            if (args?.recipients === undefined && !opts.urn) {
-                throw new Error("Missing required property 'recipients'");
             }
             resourceInputs["access"] = args?.access;
             resourceInputs["documentId"] = args?.documentId;
@@ -282,5 +180,5 @@ export interface DirectSharesArgs {
     /**
      * Recipients of the direct share
      */
-    recipients: pulumi.Input<inputs.DirectSharesRecipients>;
+    recipients?: pulumi.Input<inputs.DirectSharesRecipients | undefined>;
 }

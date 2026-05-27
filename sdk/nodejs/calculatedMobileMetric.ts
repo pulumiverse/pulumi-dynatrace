@@ -20,6 +20,30 @@ import * as utilities from "./utilities";
  * - `terraform-provider-dynatrace -export calculatedMobileMetric` downloads all existing calculated mobile/custom app metric configuration
  *
  * The full documentation of the export feature is available [here](https://dt-url.net/h203qmc).
+ *
+ * ## Resource Example Usage
+ *
+ * ```typescript
+ * import * as pulumi from "@pulumi/pulumi";
+ * import * as dynatrace from "@pulumiverse/dynatrace";
+ *
+ * const application = dynatrace.getMobileApplication({
+ *     name: "Application",
+ * });
+ * const metric = new dynatrace.CalculatedMobileMetric("metric", {
+ *     name: "#name#",
+ *     enabled: true,
+ *     appIdentifier: application.then(application => application.id),
+ *     metricKey: "calc:apps.mobile.#name#",
+ *     metricType: "USER_ACTION_DURATION",
+ *     dimensions: [{
+ *         dimensions: [{
+ *             dimension: "APP_VERSION",
+ *             topX: 10,
+ *         }],
+ *     }],
+ * });
+ * ```
  */
 export class CalculatedMobileMetric extends pulumi.CustomResource {
     /**

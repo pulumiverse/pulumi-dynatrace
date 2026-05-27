@@ -42,7 +42,6 @@ namespace Pulumiverse.Dynatrace
 
         /// <summary>
         /// ## Processor definition
-        /// Add a rule definition using our syntax. [In our documentation](https://dt-url.net/8k03xm2) you will find instructions and application [examples](https://dt-url.net/m24305t).
         /// </summary>
         [Output("processorDefinition")]
         public Output<Outputs.LogProcessingProcessorDefinition> ProcessorDefinition { get; private set; } = null!;
@@ -61,7 +60,7 @@ namespace Pulumiverse.Dynatrace
 
         /// <summary>
         /// ## Rule testing
-        /// ### 1. Paste a log / JSON sample
+        ///  ### 1. Paste a log / JSON sample
         /// </summary>
         [Output("ruleTesting")]
         public Output<Outputs.LogProcessingRuleTesting> RuleTesting { get; private set; } = null!;
@@ -127,7 +126,6 @@ namespace Pulumiverse.Dynatrace
 
         /// <summary>
         /// ## Processor definition
-        /// Add a rule definition using our syntax. [In our documentation](https://dt-url.net/8k03xm2) you will find instructions and application [examples](https://dt-url.net/m24305t).
         /// </summary>
         [Input("processorDefinition", required: true)]
         public Input<Inputs.LogProcessingProcessorDefinitionArgs> ProcessorDefinition { get; set; } = null!;
@@ -146,7 +144,7 @@ namespace Pulumiverse.Dynatrace
 
         /// <summary>
         /// ## Rule testing
-        /// ### 1. Paste a log / JSON sample
+        ///  ### 1. Paste a log / JSON sample
         /// </summary>
         [Input("ruleTesting", required: true)]
         public Input<Inputs.LogProcessingRuleTestingArgs> RuleTesting { get; set; } = null!;
@@ -173,7 +171,6 @@ namespace Pulumiverse.Dynatrace
 
         /// <summary>
         /// ## Processor definition
-        /// Add a rule definition using our syntax. [In our documentation](https://dt-url.net/8k03xm2) you will find instructions and application [examples](https://dt-url.net/m24305t).
         /// </summary>
         [Input("processorDefinition")]
         public Input<Inputs.LogProcessingProcessorDefinitionGetArgs>? ProcessorDefinition { get; set; }
@@ -192,7 +189,7 @@ namespace Pulumiverse.Dynatrace
 
         /// <summary>
         /// ## Rule testing
-        /// ### 1. Paste a log / JSON sample
+        ///  ### 1. Paste a log / JSON sample
         /// </summary>
         [Input("ruleTesting")]
         public Input<Inputs.LogProcessingRuleTestingGetArgs>? RuleTesting { get; set; }

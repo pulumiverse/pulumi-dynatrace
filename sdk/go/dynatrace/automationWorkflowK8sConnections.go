@@ -43,6 +43,35 @@ import (
 // - `terraform-provider-dynatrace -export AutomationWorkflowK8sConnections` downloads existing Kubernetes Automation for Workflows configuration
 //
 // The full documentation of the export feature is available [here](https://dt-url.net/h203qmc).
+//
+// ## Resource Example Usage
+//
+// ```go
+// package main
+//
+// import (
+//
+//	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//	"github.com/pulumiverse/pulumi-dynatrace/sdk/go/dynatrace"
+//
+// )
+//
+//	func main() {
+//		pulumi.Run(func(ctx *pulumi.Context) error {
+//			_, err := dynatrace.NewAutomationWorkflowK8sConnections(ctx, "connection", &dynatrace.AutomationWorkflowK8sConnectionsArgs{
+//				Name:      pulumi.String("#name#"),
+//				Uid:       pulumi.String("00000000-0000-0000-0000-000000000000"),
+//				Namespace: pulumi.String("terraform1"),
+//				Token:     pulumi.String("dt0e01.000000000000000000000000.0000000000000000000000000000000000000000000000000000000000000000"),
+//			})
+//			if err != nil {
+//				return err
+//			}
+//			return nil
+//		})
+//	}
+//
+// ```
 type AutomationWorkflowK8sConnections struct {
 	pulumi.CustomResourceState
 

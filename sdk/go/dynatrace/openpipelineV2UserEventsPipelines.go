@@ -188,6 +188,8 @@ type OpenpipelineV2UserEventsPipelines struct {
 	Davis OpenpipelineV2UserEventsPipelinesDavisPtrOutput `pulumi:"davis"`
 	// Display name
 	DisplayName pulumi.StringOutput `pulumi:"displayName"`
+	// Group role. Possible values: `compositionPipeline`, `memberPipeline`
+	GroupRole pulumi.StringPtrOutput `pulumi:"groupRole"`
 	// Pipeline metadata list
 	MetadataList OpenpipelineV2UserEventsPipelinesMetadataListPtrOutput `pulumi:"metadataList"`
 	// Metrics extraction stage
@@ -196,6 +198,8 @@ type OpenpipelineV2UserEventsPipelines struct {
 	Processing OpenpipelineV2UserEventsPipelinesProcessingPtrOutput `pulumi:"processing"`
 	// Product allocation stage
 	ProductAllocation OpenpipelineV2UserEventsPipelinesProductAllocationPtrOutput `pulumi:"productAllocation"`
+	// Routing. Possible values: `notRoutable`, `routable`
+	Routing pulumi.StringPtrOutput `pulumi:"routing"`
 	// Security context stage
 	SecurityContext OpenpipelineV2UserEventsPipelinesSecurityContextPtrOutput `pulumi:"securityContext"`
 	// Smartscape edge extraction stage
@@ -252,6 +256,8 @@ type openpipelineV2UserEventsPipelinesState struct {
 	Davis *OpenpipelineV2UserEventsPipelinesDavis `pulumi:"davis"`
 	// Display name
 	DisplayName *string `pulumi:"displayName"`
+	// Group role. Possible values: `compositionPipeline`, `memberPipeline`
+	GroupRole *string `pulumi:"groupRole"`
 	// Pipeline metadata list
 	MetadataList *OpenpipelineV2UserEventsPipelinesMetadataList `pulumi:"metadataList"`
 	// Metrics extraction stage
@@ -260,6 +266,8 @@ type openpipelineV2UserEventsPipelinesState struct {
 	Processing *OpenpipelineV2UserEventsPipelinesProcessing `pulumi:"processing"`
 	// Product allocation stage
 	ProductAllocation *OpenpipelineV2UserEventsPipelinesProductAllocation `pulumi:"productAllocation"`
+	// Routing. Possible values: `notRoutable`, `routable`
+	Routing *string `pulumi:"routing"`
 	// Security context stage
 	SecurityContext *OpenpipelineV2UserEventsPipelinesSecurityContext `pulumi:"securityContext"`
 	// Smartscape edge extraction stage
@@ -281,6 +289,8 @@ type OpenpipelineV2UserEventsPipelinesState struct {
 	Davis OpenpipelineV2UserEventsPipelinesDavisPtrInput
 	// Display name
 	DisplayName pulumi.StringPtrInput
+	// Group role. Possible values: `compositionPipeline`, `memberPipeline`
+	GroupRole pulumi.StringPtrInput
 	// Pipeline metadata list
 	MetadataList OpenpipelineV2UserEventsPipelinesMetadataListPtrInput
 	// Metrics extraction stage
@@ -289,6 +299,8 @@ type OpenpipelineV2UserEventsPipelinesState struct {
 	Processing OpenpipelineV2UserEventsPipelinesProcessingPtrInput
 	// Product allocation stage
 	ProductAllocation OpenpipelineV2UserEventsPipelinesProductAllocationPtrInput
+	// Routing. Possible values: `notRoutable`, `routable`
+	Routing pulumi.StringPtrInput
 	// Security context stage
 	SecurityContext OpenpipelineV2UserEventsPipelinesSecurityContextPtrInput
 	// Smartscape edge extraction stage
@@ -314,6 +326,8 @@ type openpipelineV2UserEventsPipelinesArgs struct {
 	Davis *OpenpipelineV2UserEventsPipelinesDavis `pulumi:"davis"`
 	// Display name
 	DisplayName string `pulumi:"displayName"`
+	// Group role. Possible values: `compositionPipeline`, `memberPipeline`
+	GroupRole *string `pulumi:"groupRole"`
 	// Pipeline metadata list
 	MetadataList *OpenpipelineV2UserEventsPipelinesMetadataList `pulumi:"metadataList"`
 	// Metrics extraction stage
@@ -322,6 +336,8 @@ type openpipelineV2UserEventsPipelinesArgs struct {
 	Processing *OpenpipelineV2UserEventsPipelinesProcessing `pulumi:"processing"`
 	// Product allocation stage
 	ProductAllocation *OpenpipelineV2UserEventsPipelinesProductAllocation `pulumi:"productAllocation"`
+	// Routing. Possible values: `notRoutable`, `routable`
+	Routing *string `pulumi:"routing"`
 	// Security context stage
 	SecurityContext *OpenpipelineV2UserEventsPipelinesSecurityContext `pulumi:"securityContext"`
 	// Smartscape edge extraction stage
@@ -344,6 +360,8 @@ type OpenpipelineV2UserEventsPipelinesArgs struct {
 	Davis OpenpipelineV2UserEventsPipelinesDavisPtrInput
 	// Display name
 	DisplayName pulumi.StringInput
+	// Group role. Possible values: `compositionPipeline`, `memberPipeline`
+	GroupRole pulumi.StringPtrInput
 	// Pipeline metadata list
 	MetadataList OpenpipelineV2UserEventsPipelinesMetadataListPtrInput
 	// Metrics extraction stage
@@ -352,6 +370,8 @@ type OpenpipelineV2UserEventsPipelinesArgs struct {
 	Processing OpenpipelineV2UserEventsPipelinesProcessingPtrInput
 	// Product allocation stage
 	ProductAllocation OpenpipelineV2UserEventsPipelinesProductAllocationPtrInput
+	// Routing. Possible values: `notRoutable`, `routable`
+	Routing pulumi.StringPtrInput
 	// Security context stage
 	SecurityContext OpenpipelineV2UserEventsPipelinesSecurityContextPtrInput
 	// Smartscape edge extraction stage
@@ -480,6 +500,11 @@ func (o OpenpipelineV2UserEventsPipelinesOutput) DisplayName() pulumi.StringOutp
 	return o.ApplyT(func(v *OpenpipelineV2UserEventsPipelines) pulumi.StringOutput { return v.DisplayName }).(pulumi.StringOutput)
 }
 
+// Group role. Possible values: `compositionPipeline`, `memberPipeline`
+func (o OpenpipelineV2UserEventsPipelinesOutput) GroupRole() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *OpenpipelineV2UserEventsPipelines) pulumi.StringPtrOutput { return v.GroupRole }).(pulumi.StringPtrOutput)
+}
+
 // Pipeline metadata list
 func (o OpenpipelineV2UserEventsPipelinesOutput) MetadataList() OpenpipelineV2UserEventsPipelinesMetadataListPtrOutput {
 	return o.ApplyT(func(v *OpenpipelineV2UserEventsPipelines) OpenpipelineV2UserEventsPipelinesMetadataListPtrOutput {
@@ -506,6 +531,11 @@ func (o OpenpipelineV2UserEventsPipelinesOutput) ProductAllocation() Openpipelin
 	return o.ApplyT(func(v *OpenpipelineV2UserEventsPipelines) OpenpipelineV2UserEventsPipelinesProductAllocationPtrOutput {
 		return v.ProductAllocation
 	}).(OpenpipelineV2UserEventsPipelinesProductAllocationPtrOutput)
+}
+
+// Routing. Possible values: `notRoutable`, `routable`
+func (o OpenpipelineV2UserEventsPipelinesOutput) Routing() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *OpenpipelineV2UserEventsPipelines) pulumi.StringPtrOutput { return v.Routing }).(pulumi.StringPtrOutput)
 }
 
 // Security context stage

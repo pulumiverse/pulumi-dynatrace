@@ -42,6 +42,27 @@ namespace Pulumiverse.Dynatrace
     /// - `terraform-provider-dynatrace -export dynatrace.AutomationWorkflowK8sConnections` downloads existing Kubernetes Automation for Workflows configuration
     /// 
     /// The full documentation of the export feature is available [here](https://dt-url.net/h203qmc).
+    /// 
+    /// ## Resource Example Usage
+    /// 
+    /// ```csharp
+    /// using System.Collections.Generic;
+    /// using System.Linq;
+    /// using Pulumi;
+    /// using Dynatrace = Pulumiverse.Dynatrace;
+    /// 
+    /// return await Deployment.RunAsync(() =&gt; 
+    /// {
+    ///     var connection = new Dynatrace.AutomationWorkflowK8sConnections("connection", new()
+    ///     {
+    ///         Name = "#name#",
+    ///         Uid = "00000000-0000-0000-0000-000000000000",
+    ///         Namespace = "terraform1",
+    ///         Token = "dt0e01.000000000000000000000000.0000000000000000000000000000000000000000000000000000000000000000",
+    ///     });
+    /// 
+    /// });
+    /// ```
     /// </summary>
     [DynatraceResourceType("dynatrace:index/automationWorkflowK8sConnections:AutomationWorkflowK8sConnections")]
     public partial class AutomationWorkflowK8sConnections : global::Pulumi.CustomResource

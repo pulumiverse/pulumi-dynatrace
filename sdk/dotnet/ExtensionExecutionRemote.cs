@@ -29,7 +29,7 @@ namespace Pulumiverse.Dynatrace
     public partial class ExtensionExecutionRemote : global::Pulumi.CustomResource
     {
         /// <summary>
-        /// Select performance profile for Extension Execution Controller [Documentation](https://www.dynatrace.com/support/help/shortlink/extensions-concepts#resource-consumption)
+        /// Select performance profile for Extension Execution Controller [Documentation](https://www.dynatrace.com/support/help/shortlink/extensions-concepts#resource-consumption). Possible values: `DEDICATED`, `DEFAULT`, `HIGH`
         /// </summary>
         [Output("performanceProfile")]
         public Output<string> PerformanceProfile { get; private set; } = null!;
@@ -88,7 +88,7 @@ namespace Pulumiverse.Dynatrace
     public sealed class ExtensionExecutionRemoteArgs : global::Pulumi.ResourceArgs
     {
         /// <summary>
-        /// Select performance profile for Extension Execution Controller [Documentation](https://www.dynatrace.com/support/help/shortlink/extensions-concepts#resource-consumption)
+        /// Select performance profile for Extension Execution Controller [Documentation](https://www.dynatrace.com/support/help/shortlink/extensions-concepts#resource-consumption). Possible values: `DEDICATED`, `DEFAULT`, `HIGH`
         /// </summary>
         [Input("performanceProfile", required: true)]
         public Input<string> PerformanceProfile { get; set; } = null!;
@@ -108,7 +108,7 @@ namespace Pulumiverse.Dynatrace
     public sealed class ExtensionExecutionRemoteState : global::Pulumi.ResourceArgs
     {
         /// <summary>
-        /// Select performance profile for Extension Execution Controller [Documentation](https://www.dynatrace.com/support/help/shortlink/extensions-concepts#resource-consumption)
+        /// Select performance profile for Extension Execution Controller [Documentation](https://www.dynatrace.com/support/help/shortlink/extensions-concepts#resource-consumption). Possible values: `DEDICATED`, `DEFAULT`, `HIGH`
         /// </summary>
         [Input("performanceProfile")]
         public Input<string>? PerformanceProfile { get; set; }

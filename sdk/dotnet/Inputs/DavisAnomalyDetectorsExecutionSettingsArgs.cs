@@ -20,6 +20,12 @@ namespace Pulumiverse.Dynatrace.Inputs
         public Input<string>? Actor { get; set; }
 
         /// <summary>
+        /// Fixed delay between executions (in seconds)
+        /// </summary>
+        [Input("delay")]
+        public Input<int>? Delay { get; set; }
+
+        /// <summary>
         /// Minute offset of sliding evaluation window for metrics with latency
         /// </summary>
         [Input("queryOffset")]

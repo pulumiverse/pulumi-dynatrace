@@ -20,6 +20,28 @@ import * as utilities from "./utilities";
  * - `terraform-provider-dynatrace -export dynatrace.MobileAppCrashRate` downloads all existing mobile application crash rate increase configuration
  *
  * The full documentation of the export feature is available [here](https://dt-url.net/h203qmc).
+ *
+ * ## Resource Example Usage
+ *
+ * ```typescript
+ * import * as pulumi from "@pulumi/pulumi";
+ * import * as dynatrace from "@pulumiverse/dynatrace";
+ *
+ * const application = dynatrace.getMobileApplication({
+ *     name: "Application",
+ * });
+ * const crashRate = new dynatrace.MobileAppCrashRate("crash_rate", {
+ *     applicationId: application.then(application => application.id),
+ *     crashRateIncrease: {
+ *         enabled: true,
+ *         detectionMode: "fixed",
+ *         crashRateIncreaseFixed: {
+ *             absoluteCrashRate: 25,
+ *             concurrentUsers: 200,
+ *         },
+ *     },
+ * });
+ * ```
  */
 export class MobileAppCrashRate extends pulumi.CustomResource {
     /**

@@ -35,6 +35,12 @@ namespace Pulumiverse.Dynatrace
         public Output<Outputs.DiskEdgeAnomalyDetectorsAlerts?> Alerts { get; private set; } = null!;
 
         /// <summary>
+        /// Set of rules to scope which disks the policy applies to. Rules can match based on disk properties (total space, filesystem, disk type) or host resource attributes. Each disk property type can be defined at most once per policy.
+        /// </summary>
+        [Output("detectionConditions")]
+        public Output<Outputs.DiskEdgeAnomalyDetectorsDetectionConditions?> DetectionConditions { get; private set; } = null!;
+
+        /// <summary>
         /// Disk will be included in this policy if **any** of the filters match
         /// </summary>
         [Output("diskNameFilters")]
@@ -53,19 +59,13 @@ namespace Pulumiverse.Dynatrace
         public Output<Outputs.DiskEdgeAnomalyDetectorsEventProperties?> EventProperties { get; private set; } = null!;
 
         /// <summary>
-        /// The policy will be enabled if **all** conditions are met
-        /// </summary>
-        [Output("hostMetadataConditions")]
-        public Output<Outputs.DiskEdgeAnomalyDetectorsHostMetadataConditions?> HostMetadataConditions { get; private set; } = null!;
-
-        /// <summary>
         /// Because this resource allows for ordering you may specify the ID of the resource instance that comes before this instance regarding order. If not specified when creating the setting will be added to the end of the list. If not specified during update the order will remain untouched
         /// </summary>
         [Output("insertAfter")]
         public Output<string> InsertAfter { get; private set; } = null!;
 
         /// <summary>
-        /// Select the operating systems on which policy should be applied
+        /// Select the operating systems on which policy should be applied. Possible values: `AIX`, `LINUX`, `WINDOWS`
         /// </summary>
         [Output("operatingSystems")]
         public Output<ImmutableArray<string>> OperatingSystems { get; private set; } = null!;
@@ -135,6 +135,12 @@ namespace Pulumiverse.Dynatrace
         [Input("alerts")]
         public Input<Inputs.DiskEdgeAnomalyDetectorsAlertsArgs>? Alerts { get; set; }
 
+        /// <summary>
+        /// Set of rules to scope which disks the policy applies to. Rules can match based on disk properties (total space, filesystem, disk type) or host resource attributes. Each disk property type can be defined at most once per policy.
+        /// </summary>
+        [Input("detectionConditions")]
+        public Input<Inputs.DiskEdgeAnomalyDetectorsDetectionConditionsArgs>? DetectionConditions { get; set; }
+
         [Input("diskNameFilters")]
         private InputList<string>? _diskNameFilters;
 
@@ -160,12 +166,6 @@ namespace Pulumiverse.Dynatrace
         public Input<Inputs.DiskEdgeAnomalyDetectorsEventPropertiesArgs>? EventProperties { get; set; }
 
         /// <summary>
-        /// The policy will be enabled if **all** conditions are met
-        /// </summary>
-        [Input("hostMetadataConditions")]
-        public Input<Inputs.DiskEdgeAnomalyDetectorsHostMetadataConditionsArgs>? HostMetadataConditions { get; set; }
-
-        /// <summary>
         /// Because this resource allows for ordering you may specify the ID of the resource instance that comes before this instance regarding order. If not specified when creating the setting will be added to the end of the list. If not specified during update the order will remain untouched
         /// </summary>
         [Input("insertAfter")]
@@ -175,7 +175,7 @@ namespace Pulumiverse.Dynatrace
         private InputList<string>? _operatingSystems;
 
         /// <summary>
-        /// Select the operating systems on which policy should be applied
+        /// Select the operating systems on which policy should be applied. Possible values: `AIX`, `LINUX`, `WINDOWS`
         /// </summary>
         public InputList<string> OperatingSystems
         {
@@ -209,6 +209,12 @@ namespace Pulumiverse.Dynatrace
         [Input("alerts")]
         public Input<Inputs.DiskEdgeAnomalyDetectorsAlertsGetArgs>? Alerts { get; set; }
 
+        /// <summary>
+        /// Set of rules to scope which disks the policy applies to. Rules can match based on disk properties (total space, filesystem, disk type) or host resource attributes. Each disk property type can be defined at most once per policy.
+        /// </summary>
+        [Input("detectionConditions")]
+        public Input<Inputs.DiskEdgeAnomalyDetectorsDetectionConditionsGetArgs>? DetectionConditions { get; set; }
+
         [Input("diskNameFilters")]
         private InputList<string>? _diskNameFilters;
 
@@ -234,12 +240,6 @@ namespace Pulumiverse.Dynatrace
         public Input<Inputs.DiskEdgeAnomalyDetectorsEventPropertiesGetArgs>? EventProperties { get; set; }
 
         /// <summary>
-        /// The policy will be enabled if **all** conditions are met
-        /// </summary>
-        [Input("hostMetadataConditions")]
-        public Input<Inputs.DiskEdgeAnomalyDetectorsHostMetadataConditionsGetArgs>? HostMetadataConditions { get; set; }
-
-        /// <summary>
         /// Because this resource allows for ordering you may specify the ID of the resource instance that comes before this instance regarding order. If not specified when creating the setting will be added to the end of the list. If not specified during update the order will remain untouched
         /// </summary>
         [Input("insertAfter")]
@@ -249,7 +249,7 @@ namespace Pulumiverse.Dynatrace
         private InputList<string>? _operatingSystems;
 
         /// <summary>
-        /// Select the operating systems on which policy should be applied
+        /// Select the operating systems on which policy should be applied. Possible values: `AIX`, `LINUX`, `WINDOWS`
         /// </summary>
         public InputList<string> OperatingSystems
         {

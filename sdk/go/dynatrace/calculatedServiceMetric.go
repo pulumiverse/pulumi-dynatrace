@@ -25,6 +25,120 @@ import (
 // - `terraform-provider-dynatrace -export CalculatedServiceMetric` downloads all existing calculated service metric configuration
 //
 // The full documentation of the export feature is available [here](https://dt-url.net/h203qmc).
+//
+// ## Resource Example Usage
+//
+// ```go
+// package main
+//
+// import (
+//
+//	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//	"github.com/pulumiverse/pulumi-dynatrace/sdk/go/dynatrace"
+//	"github.com/pulumiverse/pulumi-time/sdk/go/time"
+//
+// )
+//
+//	func main() {
+//		pulumi.Run(func(ctx *pulumi.Context) error {
+//			attribute, err := dynatrace.NewRequestAttribute(ctx, "attribute", &dynatrace.RequestAttributeArgs{
+//				Name:                    pulumi.String("#name#"),
+//				Enabled:                 pulumi.Bool(true),
+//				Aggregation:             pulumi.String("FIRST"),
+//				Confidential:            pulumi.Bool(false),
+//				DataType:                pulumi.String("INTEGER"),
+//				Normalization:           pulumi.String("ORIGINAL"),
+//				SkipPersonalDataMasking: pulumi.Bool(false),
+//				DataSources: dynatrace.RequestAttributeDataSourceArray{
+//					&dynatrace.RequestAttributeDataSourceArgs{
+//						Enabled:                  pulumi.Bool(true),
+//						Source:                   pulumi.String("SERVER_VARIABLE"),
+//						ServerVariableTechnology: pulumi.String("ASP_NET"),
+//						ParameterName:            pulumi.String("param"),
+//					},
+//				},
+//			})
+//			if err != nil {
+//				return err
+//			}
+//			mzone, err := dynatrace.NewManagementZoneV2(ctx, "mzone", &dynatrace.ManagementZoneV2Args{
+//				Name: pulumi.String("#name#"),
+//				Rules: &dynatrace.ManagementZoneV2RulesArgs{
+//					Rules: dynatrace.ManagementZoneV2RulesRuleArray{
+//						&dynatrace.ManagementZoneV2RulesRuleArgs{
+//							Type:           pulumi.String("ME"),
+//							Enabled:        pulumi.Bool(true),
+//							EntitySelector: pulumi.String(""),
+//							AttributeRule: &dynatrace.ManagementZoneV2RulesRuleAttributeRuleArgs{
+//								EntityType: pulumi.String("CLOUD_APPLICATION_NAMESPACE"),
+//								AttributeConditions: &dynatrace.ManagementZoneV2RulesRuleAttributeRuleAttributeConditionsArgs{
+//									Conditions: dynatrace.ManagementZoneV2RulesRuleAttributeRuleAttributeConditionsConditionArray{
+//										&dynatrace.ManagementZoneV2RulesRuleAttributeRuleAttributeConditionsConditionArgs{
+//											CaseSensitive: pulumi.Bool(false),
+//											Key:           pulumi.String("KUBERNETES_CLUSTER_NAME"),
+//											Operator:      pulumi.String("EQUALS"),
+//											StringValue:   pulumi.String("extensions"),
+//										},
+//									},
+//								},
+//							},
+//						},
+//					},
+//				},
+//			})
+//			if err != nil {
+//				return err
+//			}
+//			waitForRequestAttribute, err := time.NewSleep(ctx, "wait_for_request_attribute", &time.SleepArgs{
+//				CreateDuration: pulumi.String("10s"),
+//			}, pulumi.DependsOn([]pulumi.Resource{
+//				attribute,
+//			}))
+//			if err != nil {
+//				return err
+//			}
+//			_, err = dynatrace.NewCalculatedServiceMetric(ctx, "metric", &dynatrace.CalculatedServiceMetricArgs{
+//				Name:    pulumi.String("#name#"),
+//				Enabled: pulumi.Bool(true),
+//				ManagementZones: pulumi.StringArray{
+//					mzone.Name,
+//				},
+//				MetricKey: pulumi.String("calc:service.#name#"),
+//				Unit:      pulumi.String("MILLI_SECOND_PER_MINUTE"),
+//				Conditions: dynatrace.CalculatedServiceMetricConditionArray{
+//					&dynatrace.CalculatedServiceMetricConditionArgs{
+//						Conditions: dynatrace.CalculatedServiceMetricConditionConditionArray{
+//							&dynatrace.CalculatedServiceMetricConditionConditionArgs{
+//								Attribute: pulumi.String("HTTP_REQUEST_METHOD"),
+//								Comparison: &dynatrace.CalculatedServiceMetricConditionConditionComparisonArgs{
+//									Negate: pulumi.Bool(false),
+//									HttpMethod: &dynatrace.CalculatedServiceMetricConditionConditionComparisonHttpMethodArgs{
+//										Operator: pulumi.String("EQUALS_ANY_OF"),
+//										Values: pulumi.StringArray{
+//											pulumi.String("POST"),
+//											pulumi.String("GET"),
+//										},
+//									},
+//								},
+//							},
+//						},
+//					},
+//				},
+//				MetricDefinition: &dynatrace.CalculatedServiceMetricMetricDefinitionArgs{
+//					Metric:           pulumi.String("REQUEST_ATTRIBUTE"),
+//					RequestAttribute: attribute.Name,
+//				},
+//			}, pulumi.DependsOn([]pulumi.Resource{
+//				waitForRequestAttribute,
+//			}))
+//			if err != nil {
+//				return err
+//			}
+//			return nil
+//		})
+//	}
+//
+// ```
 type CalculatedServiceMetric struct {
 	pulumi.CustomResourceState
 

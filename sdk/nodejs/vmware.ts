@@ -53,10 +53,10 @@ export class Vmware extends pulumi.CustomResource {
     declare public readonly enabled: pulumi.Output<boolean>;
     /**
      * This string should have one of the following formats:
-     * - $prefix(parameter) - property value starting with 'parameter'
-     * - $eq(parameter) - property value exactly matching 'parameter'
-     * - $suffix(parameter) - property value ends with 'parameter'
-     * - $contains(parameter) - property value contains 'parameter'
+     *  - $prefix(parameter) - property value starting with 'parameter'
+     *  - $eq(parameter) - property value exactly matching 'parameter'
+     *  - $suffix(parameter) - property value ends with 'parameter'
+     *  - $contains(parameter) - property value contains 'parameter'
      */
     declare public readonly filter: pulumi.Output<string | undefined>;
     /**
@@ -136,10 +136,10 @@ export interface VmwareState {
     enabled?: pulumi.Input<boolean | undefined>;
     /**
      * This string should have one of the following formats:
-     * - $prefix(parameter) - property value starting with 'parameter'
-     * - $eq(parameter) - property value exactly matching 'parameter'
-     * - $suffix(parameter) - property value ends with 'parameter'
-     * - $contains(parameter) - property value contains 'parameter'
+     *  - $prefix(parameter) - property value starting with 'parameter'
+     *  - $eq(parameter) - property value exactly matching 'parameter'
+     *  - $suffix(parameter) - property value ends with 'parameter'
+     *  - $contains(parameter) - property value contains 'parameter'
      */
     filter?: pulumi.Input<string | undefined>;
     /**
@@ -170,10 +170,10 @@ export interface VmwareArgs {
     enabled: pulumi.Input<boolean>;
     /**
      * This string should have one of the following formats:
-     * - $prefix(parameter) - property value starting with 'parameter'
-     * - $eq(parameter) - property value exactly matching 'parameter'
-     * - $suffix(parameter) - property value ends with 'parameter'
-     * - $contains(parameter) - property value contains 'parameter'
+     *  - $prefix(parameter) - property value starting with 'parameter'
+     *  - $eq(parameter) - property value exactly matching 'parameter'
+     *  - $suffix(parameter) - property value ends with 'parameter'
+     *  - $contains(parameter) - property value contains 'parameter'
      */
     filter?: pulumi.Input<string | undefined>;
     /**

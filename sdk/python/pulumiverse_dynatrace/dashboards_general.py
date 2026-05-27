@@ -123,6 +123,44 @@ class DashboardsGeneral(pulumi.CustomResource):
 
         The full documentation of the export feature is available [here](https://dt-url.net/h203qmc).
 
+        ## Resource Example Usage
+
+        ```python
+        import pulumi
+        import pulumiverse_dynatrace as dynatrace
+
+        group = dynatrace.IamGroup("group", name="#name#")
+        dashboard = dynatrace.Dashboard("dashboard",
+            dashboard_metadata={
+                "name": "#name#",
+                "owner": "Dynatrace",
+                "tags": ["Kubernetes"],
+                "dynamic_filters": {
+                    "filters": ["KUBERNETES_CLUSTER"],
+                },
+            },
+            tiles=[{
+                "name": "Markdown",
+                "tile_type": "MARKDOWN",
+                "configured": True,
+                "bounds": {
+                    "top": 0,
+                    "width": 684,
+                    "height": 38,
+                    "left": 0,
+                },
+                "markdown": "## Cluster resource overview",
+            }])
+        general = dynatrace.DashboardsGeneral("general",
+            enable_public_sharing=False,
+            default_dashboard_list={
+                "default_dashboards": [{
+                    "dashboard": dashboard.id,
+                    "user_group": group.id,
+                }],
+            })
+        ```
+
 
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
@@ -149,6 +187,44 @@ class DashboardsGeneral(pulumi.CustomResource):
         - `terraform-provider-dynatrace -export DashboardsGeneral` downloads all existing general dashboard settings
 
         The full documentation of the export feature is available [here](https://dt-url.net/h203qmc).
+
+        ## Resource Example Usage
+
+        ```python
+        import pulumi
+        import pulumiverse_dynatrace as dynatrace
+
+        group = dynatrace.IamGroup("group", name="#name#")
+        dashboard = dynatrace.Dashboard("dashboard",
+            dashboard_metadata={
+                "name": "#name#",
+                "owner": "Dynatrace",
+                "tags": ["Kubernetes"],
+                "dynamic_filters": {
+                    "filters": ["KUBERNETES_CLUSTER"],
+                },
+            },
+            tiles=[{
+                "name": "Markdown",
+                "tile_type": "MARKDOWN",
+                "configured": True,
+                "bounds": {
+                    "top": 0,
+                    "width": 684,
+                    "height": 38,
+                    "left": 0,
+                },
+                "markdown": "## Cluster resource overview",
+            }])
+        general = dynatrace.DashboardsGeneral("general",
+            enable_public_sharing=False,
+            default_dashboard_list={
+                "default_dashboards": [{
+                    "dashboard": dashboard.id,
+                    "user_group": group.id,
+                }],
+            })
+        ```
 
 
         :param str resource_name: The name of the resource.

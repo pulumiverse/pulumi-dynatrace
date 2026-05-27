@@ -19,7 +19,7 @@ namespace Pulumiverse.Dynatrace.Outputs
         /// </summary>
         public readonly bool? AutoAdaptiveThresholdEnabled;
         /// <summary>
-        /// Possible Values: `GREATER_THAN_OR_EQUAL`, `LESS_THAN_OR_EQUAL`
+        /// Comparison operator. Possible values: `GREATER_THAN_OR_EQUAL`, `LESS_THAN_OR_EQUAL`
         /// </summary>
         public readonly string ComparisonOperator;
         /// <summary>
@@ -35,11 +35,15 @@ namespace Pulumiverse.Dynatrace.Outputs
         /// </summary>
         public readonly string? DqlQuery;
         /// <summary>
+        /// Fields for adding relevant links to this objective.
+        /// </summary>
+        public readonly Outputs.SiteReliabilityGuardianObjectivesObjectiveLinks? Links;
+        /// <summary>
         /// Objective name
         /// </summary>
         public readonly string Name;
         /// <summary>
-        /// Possible Values: `DQL`, `REFERENCE_SLO`
+        /// Objective type. Possible values: `DQL`, `REFERENCE_SLO`
         /// </summary>
         public readonly string ObjectiveType;
         /// <summary>
@@ -71,6 +75,8 @@ namespace Pulumiverse.Dynatrace.Outputs
 
             string? dqlQuery,
 
+            Outputs.SiteReliabilityGuardianObjectivesObjectiveLinks? links,
+
             string name,
 
             string objectiveType,
@@ -88,6 +94,7 @@ namespace Pulumiverse.Dynatrace.Outputs
             Description = description;
             DisplayUnit = displayUnit;
             DqlQuery = dqlQuery;
+            Links = links;
             Name = name;
             ObjectiveType = objectiveType;
             ReferenceSlo = referenceSlo;

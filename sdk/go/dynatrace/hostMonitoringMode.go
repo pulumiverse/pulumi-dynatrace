@@ -29,6 +29,39 @@ import (
 // > By default settings for Agents that are currently offline are not getting exported. You can change that by setting the environment variable `DYNATRACE_HOST_MONITORING_OFFLINE` to `true` before running the export. Be aware that you will get settings exported for every host that has been connected within the last 3 years that way.
 //
 // The full documentation of the export feature is available [here](https://dt-url.net/h203qmc).
+//
+// ## Resource Example Usage
+//
+// ```go
+// package main
+//
+// import (
+//
+//	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//	"github.com/pulumiverse/pulumi-dynatrace/sdk/go/dynatrace"
+//
+// )
+//
+//	func main() {
+//		pulumi.Run(func(ctx *pulumi.Context) error {
+//			hosts, err := dynatrace.GetEntities(ctx, &dynatrace.GetEntitiesArgs{
+//				Type: pulumi.StringRef("HOST"),
+//			}, nil)
+//			if err != nil {
+//				return err
+//			}
+//			_, err = dynatrace.NewHostMonitoringMode(ctx, "mode", &dynatrace.HostMonitoringModeArgs{
+//				HostId:         pulumi.String(pulumi.String(hosts.Entities[0].EntityId)),
+//				MonitoringMode: pulumi.String("FULL_STACK"),
+//			})
+//			if err != nil {
+//				return err
+//			}
+//			return nil
+//		})
+//	}
+//
+// ```
 type HostMonitoringMode struct {
 	pulumi.CustomResourceState
 

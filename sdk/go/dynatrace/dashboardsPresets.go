@@ -25,6 +25,78 @@ import (
 // - `terraform-provider-dynatrace -export DashboardsPresets` downloads all existing dashboard preset settings
 //
 // The full documentation of the export feature is available [here](https://dt-url.net/h203qmc).
+//
+// ## Resource Example Usage
+//
+// ```go
+// package main
+//
+// import (
+//
+//	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//	"github.com/pulumiverse/pulumi-dynatrace/sdk/go/dynatrace"
+//
+// )
+//
+//	func main() {
+//		pulumi.Run(func(ctx *pulumi.Context) error {
+//			group, err := dynatrace.NewIamGroup(ctx, "group", &dynatrace.IamGroupArgs{
+//				Name: pulumi.String("#name#"),
+//			})
+//			if err != nil {
+//				return err
+//			}
+//			dashboard, err := dynatrace.NewDashboard(ctx, "dashboard", &dynatrace.DashboardArgs{
+//				DashboardMetadata: &dynatrace.DashboardDashboardMetadataArgs{
+//					Preset: pulumi.Bool(true),
+//					Name:   pulumi.String("#name#"),
+//					Owner:  pulumi.String("Dynatrace"),
+//					Tags: pulumi.StringArray{
+//						pulumi.String("Kubernetes"),
+//					},
+//					DynamicFilters: &dynatrace.DashboardDashboardMetadataDynamicFiltersArgs{
+//						Filters: pulumi.StringArray{
+//							pulumi.String("KUBERNETES_CLUSTER"),
+//						},
+//					},
+//				},
+//				Tiles: dynatrace.DashboardTileArray{
+//					&dynatrace.DashboardTileArgs{
+//						Name:       pulumi.String("Markdown"),
+//						TileType:   pulumi.String("MARKDOWN"),
+//						Configured: pulumi.Bool(true),
+//						Bounds: &dynatrace.DashboardTileBoundsArgs{
+//							Top:    pulumi.Int(0),
+//							Width:  pulumi.Int(684),
+//							Height: pulumi.Int(38),
+//							Left:   pulumi.Int(0),
+//						},
+//						Markdown: pulumi.String("## Cluster resource overview"),
+//					},
+//				},
+//			})
+//			if err != nil {
+//				return err
+//			}
+//			_, err = dynatrace.NewDashboardsPresets(ctx, "presets", &dynatrace.DashboardsPresetsArgs{
+//				EnableDashboardPresets: pulumi.Bool(true),
+//				DashboardPresetsList: &dynatrace.DashboardsPresetsDashboardPresetsListArgs{
+//					DashboardPresets: dynatrace.DashboardsPresetsDashboardPresetsListDashboardPresetArray{
+//						&dynatrace.DashboardsPresetsDashboardPresetsListDashboardPresetArgs{
+//							DashboardPreset: dashboard.ID(),
+//							UserGroup:       group.ID(),
+//						},
+//					},
+//				},
+//			})
+//			if err != nil {
+//				return err
+//			}
+//			return nil
+//		})
+//	}
+//
+// ```
 type DashboardsPresets struct {
 	pulumi.CustomResourceState
 

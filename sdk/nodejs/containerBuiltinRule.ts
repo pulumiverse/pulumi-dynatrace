@@ -18,6 +18,26 @@ import * as utilities from "./utilities";
  * - `terraform-provider-dynatrace -export dynatrace.ContainerBuiltinRule` downloads all existing builtin monitoring rules for containers
  *
  * The full documentation of the export feature is available [here](https://dt-url.net/h203qmc).
+ *
+ * ## Resource Example Usage
+ *
+ * ```typescript
+ * import * as pulumi from "@pulumi/pulumi";
+ * import * as dynatrace from "@pulumiverse/dynatrace";
+ *
+ * const rules = new dynatrace.ContainerBuiltinRule("rules", {
+ *     ignoreDockerPauseContainer: false,
+ *     ignoreKubernetesPauseContainer: true,
+ *     ignoreOpenShiftBuildPodName: false,
+ *     ignoreOpenShiftSdnNamespace: true,
+ *     ignoreOpenShiftEtcdNamespace: false,
+ *     ignoreOpenShiftIngressCanaryNamespace: false,
+ *     ignoreOpenShiftKubeApiserverNamespace: false,
+ *     ignoreOpenShiftMachineConfigOperatorNamespace: false,
+ *     ignoreOpenShiftMonitoringNamespace: false,
+ *     ignoreOpenShiftOvnKubernetesNamespace: false,
+ * });
+ * ```
  */
 export class ContainerBuiltinRule extends pulumi.CustomResource {
     /**
@@ -60,6 +80,30 @@ export class ContainerBuiltinRule extends pulumi.CustomResource {
      */
     declare public readonly ignoreOpenShiftBuildPodName: pulumi.Output<boolean>;
     /**
+     * Disable monitoring of platform internal containers in the openshift-etcd namespace.
+     */
+    declare public readonly ignoreOpenShiftEtcdNamespace: pulumi.Output<boolean | undefined>;
+    /**
+     * Disable monitoring of platform internal containers in the openshift-ingress-canary namespace.
+     */
+    declare public readonly ignoreOpenShiftIngressCanaryNamespace: pulumi.Output<boolean | undefined>;
+    /**
+     * Disable monitoring of platform internal containers in the openshift-kube-apiserver namespace.
+     */
+    declare public readonly ignoreOpenShiftKubeApiserverNamespace: pulumi.Output<boolean | undefined>;
+    /**
+     * Disable monitoring of platform internal containers in the openshift-machine-config-operator namespace.
+     */
+    declare public readonly ignoreOpenShiftMachineConfigOperatorNamespace: pulumi.Output<boolean | undefined>;
+    /**
+     * Disable monitoring of platform internal containers in the openshift-monitoring namespace.
+     */
+    declare public readonly ignoreOpenShiftMonitoringNamespace: pulumi.Output<boolean | undefined>;
+    /**
+     * Disable monitoring of platform internal containers in the openshift-ovn-kubernetes namespace.
+     */
+    declare public readonly ignoreOpenShiftOvnKubernetesNamespace: pulumi.Output<boolean | undefined>;
+    /**
      * Disable monitoring of platform internal containers in the openshift-sdn namespace.
      */
     declare public readonly ignoreOpenShiftSdnNamespace: pulumi.Output<boolean>;
@@ -80,6 +124,12 @@ export class ContainerBuiltinRule extends pulumi.CustomResource {
             resourceInputs["ignoreDockerPauseContainer"] = state?.ignoreDockerPauseContainer;
             resourceInputs["ignoreKubernetesPauseContainer"] = state?.ignoreKubernetesPauseContainer;
             resourceInputs["ignoreOpenShiftBuildPodName"] = state?.ignoreOpenShiftBuildPodName;
+            resourceInputs["ignoreOpenShiftEtcdNamespace"] = state?.ignoreOpenShiftEtcdNamespace;
+            resourceInputs["ignoreOpenShiftIngressCanaryNamespace"] = state?.ignoreOpenShiftIngressCanaryNamespace;
+            resourceInputs["ignoreOpenShiftKubeApiserverNamespace"] = state?.ignoreOpenShiftKubeApiserverNamespace;
+            resourceInputs["ignoreOpenShiftMachineConfigOperatorNamespace"] = state?.ignoreOpenShiftMachineConfigOperatorNamespace;
+            resourceInputs["ignoreOpenShiftMonitoringNamespace"] = state?.ignoreOpenShiftMonitoringNamespace;
+            resourceInputs["ignoreOpenShiftOvnKubernetesNamespace"] = state?.ignoreOpenShiftOvnKubernetesNamespace;
             resourceInputs["ignoreOpenShiftSdnNamespace"] = state?.ignoreOpenShiftSdnNamespace;
         } else {
             const args = argsOrState as ContainerBuiltinRuleArgs | undefined;
@@ -98,6 +148,12 @@ export class ContainerBuiltinRule extends pulumi.CustomResource {
             resourceInputs["ignoreDockerPauseContainer"] = args?.ignoreDockerPauseContainer;
             resourceInputs["ignoreKubernetesPauseContainer"] = args?.ignoreKubernetesPauseContainer;
             resourceInputs["ignoreOpenShiftBuildPodName"] = args?.ignoreOpenShiftBuildPodName;
+            resourceInputs["ignoreOpenShiftEtcdNamespace"] = args?.ignoreOpenShiftEtcdNamespace;
+            resourceInputs["ignoreOpenShiftIngressCanaryNamespace"] = args?.ignoreOpenShiftIngressCanaryNamespace;
+            resourceInputs["ignoreOpenShiftKubeApiserverNamespace"] = args?.ignoreOpenShiftKubeApiserverNamespace;
+            resourceInputs["ignoreOpenShiftMachineConfigOperatorNamespace"] = args?.ignoreOpenShiftMachineConfigOperatorNamespace;
+            resourceInputs["ignoreOpenShiftMonitoringNamespace"] = args?.ignoreOpenShiftMonitoringNamespace;
+            resourceInputs["ignoreOpenShiftOvnKubernetesNamespace"] = args?.ignoreOpenShiftOvnKubernetesNamespace;
             resourceInputs["ignoreOpenShiftSdnNamespace"] = args?.ignoreOpenShiftSdnNamespace;
         }
         opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts);
@@ -122,6 +178,30 @@ export interface ContainerBuiltinRuleState {
      */
     ignoreOpenShiftBuildPodName?: pulumi.Input<boolean | undefined>;
     /**
+     * Disable monitoring of platform internal containers in the openshift-etcd namespace.
+     */
+    ignoreOpenShiftEtcdNamespace?: pulumi.Input<boolean | undefined>;
+    /**
+     * Disable monitoring of platform internal containers in the openshift-ingress-canary namespace.
+     */
+    ignoreOpenShiftIngressCanaryNamespace?: pulumi.Input<boolean | undefined>;
+    /**
+     * Disable monitoring of platform internal containers in the openshift-kube-apiserver namespace.
+     */
+    ignoreOpenShiftKubeApiserverNamespace?: pulumi.Input<boolean | undefined>;
+    /**
+     * Disable monitoring of platform internal containers in the openshift-machine-config-operator namespace.
+     */
+    ignoreOpenShiftMachineConfigOperatorNamespace?: pulumi.Input<boolean | undefined>;
+    /**
+     * Disable monitoring of platform internal containers in the openshift-monitoring namespace.
+     */
+    ignoreOpenShiftMonitoringNamespace?: pulumi.Input<boolean | undefined>;
+    /**
+     * Disable monitoring of platform internal containers in the openshift-ovn-kubernetes namespace.
+     */
+    ignoreOpenShiftOvnKubernetesNamespace?: pulumi.Input<boolean | undefined>;
+    /**
      * Disable monitoring of platform internal containers in the openshift-sdn namespace.
      */
     ignoreOpenShiftSdnNamespace?: pulumi.Input<boolean | undefined>;
@@ -143,6 +223,30 @@ export interface ContainerBuiltinRuleArgs {
      * Disable monitoring of intermediate containers created during image build.
      */
     ignoreOpenShiftBuildPodName: pulumi.Input<boolean>;
+    /**
+     * Disable monitoring of platform internal containers in the openshift-etcd namespace.
+     */
+    ignoreOpenShiftEtcdNamespace?: pulumi.Input<boolean | undefined>;
+    /**
+     * Disable monitoring of platform internal containers in the openshift-ingress-canary namespace.
+     */
+    ignoreOpenShiftIngressCanaryNamespace?: pulumi.Input<boolean | undefined>;
+    /**
+     * Disable monitoring of platform internal containers in the openshift-kube-apiserver namespace.
+     */
+    ignoreOpenShiftKubeApiserverNamespace?: pulumi.Input<boolean | undefined>;
+    /**
+     * Disable monitoring of platform internal containers in the openshift-machine-config-operator namespace.
+     */
+    ignoreOpenShiftMachineConfigOperatorNamespace?: pulumi.Input<boolean | undefined>;
+    /**
+     * Disable monitoring of platform internal containers in the openshift-monitoring namespace.
+     */
+    ignoreOpenShiftMonitoringNamespace?: pulumi.Input<boolean | undefined>;
+    /**
+     * Disable monitoring of platform internal containers in the openshift-ovn-kubernetes namespace.
+     */
+    ignoreOpenShiftOvnKubernetesNamespace?: pulumi.Input<boolean | undefined>;
     /**
      * Disable monitoring of platform internal containers in the openshift-sdn namespace.
      */

@@ -203,6 +203,10 @@ export class OpenpipelineV2UserEventsPipelines extends pulumi.CustomResource {
      */
     declare public readonly displayName: pulumi.Output<string>;
     /**
+     * Group role. Possible values: `compositionPipeline`, `memberPipeline`
+     */
+    declare public readonly groupRole: pulumi.Output<string | undefined>;
+    /**
      * Pipeline metadata list
      */
     declare public readonly metadataList: pulumi.Output<outputs.OpenpipelineV2UserEventsPipelinesMetadataList | undefined>;
@@ -218,6 +222,10 @@ export class OpenpipelineV2UserEventsPipelines extends pulumi.CustomResource {
      * Product allocation stage
      */
     declare public readonly productAllocation: pulumi.Output<outputs.OpenpipelineV2UserEventsPipelinesProductAllocation | undefined>;
+    /**
+     * Routing. Possible values: `notRoutable`, `routable`
+     */
+    declare public readonly routing: pulumi.Output<string | undefined>;
     /**
      * Security context stage
      */
@@ -253,10 +261,12 @@ export class OpenpipelineV2UserEventsPipelines extends pulumi.CustomResource {
             resourceInputs["dataExtraction"] = state?.dataExtraction;
             resourceInputs["davis"] = state?.davis;
             resourceInputs["displayName"] = state?.displayName;
+            resourceInputs["groupRole"] = state?.groupRole;
             resourceInputs["metadataList"] = state?.metadataList;
             resourceInputs["metricExtraction"] = state?.metricExtraction;
             resourceInputs["processing"] = state?.processing;
             resourceInputs["productAllocation"] = state?.productAllocation;
+            resourceInputs["routing"] = state?.routing;
             resourceInputs["securityContext"] = state?.securityContext;
             resourceInputs["smartscapeEdgeExtraction"] = state?.smartscapeEdgeExtraction;
             resourceInputs["smartscapeNodeExtraction"] = state?.smartscapeNodeExtraction;
@@ -274,10 +284,12 @@ export class OpenpipelineV2UserEventsPipelines extends pulumi.CustomResource {
             resourceInputs["dataExtraction"] = args?.dataExtraction;
             resourceInputs["davis"] = args?.davis;
             resourceInputs["displayName"] = args?.displayName;
+            resourceInputs["groupRole"] = args?.groupRole;
             resourceInputs["metadataList"] = args?.metadataList;
             resourceInputs["metricExtraction"] = args?.metricExtraction;
             resourceInputs["processing"] = args?.processing;
             resourceInputs["productAllocation"] = args?.productAllocation;
+            resourceInputs["routing"] = args?.routing;
             resourceInputs["securityContext"] = args?.securityContext;
             resourceInputs["smartscapeEdgeExtraction"] = args?.smartscapeEdgeExtraction;
             resourceInputs["smartscapeNodeExtraction"] = args?.smartscapeNodeExtraction;
@@ -313,6 +325,10 @@ export interface OpenpipelineV2UserEventsPipelinesState {
      */
     displayName?: pulumi.Input<string | undefined>;
     /**
+     * Group role. Possible values: `compositionPipeline`, `memberPipeline`
+     */
+    groupRole?: pulumi.Input<string | undefined>;
+    /**
      * Pipeline metadata list
      */
     metadataList?: pulumi.Input<inputs.OpenpipelineV2UserEventsPipelinesMetadataList | undefined>;
@@ -328,6 +344,10 @@ export interface OpenpipelineV2UserEventsPipelinesState {
      * Product allocation stage
      */
     productAllocation?: pulumi.Input<inputs.OpenpipelineV2UserEventsPipelinesProductAllocation | undefined>;
+    /**
+     * Routing. Possible values: `notRoutable`, `routable`
+     */
+    routing?: pulumi.Input<string | undefined>;
     /**
      * Security context stage
      */
@@ -371,6 +391,10 @@ export interface OpenpipelineV2UserEventsPipelinesArgs {
      */
     displayName: pulumi.Input<string>;
     /**
+     * Group role. Possible values: `compositionPipeline`, `memberPipeline`
+     */
+    groupRole?: pulumi.Input<string | undefined>;
+    /**
      * Pipeline metadata list
      */
     metadataList?: pulumi.Input<inputs.OpenpipelineV2UserEventsPipelinesMetadataList | undefined>;
@@ -386,6 +410,10 @@ export interface OpenpipelineV2UserEventsPipelinesArgs {
      * Product allocation stage
      */
     productAllocation?: pulumi.Input<inputs.OpenpipelineV2UserEventsPipelinesProductAllocation | undefined>;
+    /**
+     * Routing. Possible values: `notRoutable`, `routable`
+     */
+    routing?: pulumi.Input<string | undefined>;
     /**
      * Security context stage
      */

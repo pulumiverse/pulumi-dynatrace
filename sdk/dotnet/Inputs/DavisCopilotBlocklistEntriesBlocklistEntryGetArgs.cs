@@ -20,7 +20,7 @@ namespace Pulumiverse.Dynatrace.Inputs
         public Input<string> Name { get; set; } = null!;
 
         /// <summary>
-        /// Possible Values: `BUCKET`, `TABLE`
+        /// Possible values: `BUCKET`, `TABLE`
         /// </summary>
         [Input("type", required: true)]
         public Input<string> Type { get; set; } = null!;

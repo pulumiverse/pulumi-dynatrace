@@ -308,7 +308,7 @@ type OpenpipelineV2BizeventsPipelines struct {
 	Davis OpenpipelineV2BizeventsPipelinesDavisPtrOutput `pulumi:"davis"`
 	// Display name
 	DisplayName pulumi.StringOutput `pulumi:"displayName"`
-	// Group role. Possible Values: `compositionPipeline`, `memberPipeline`
+	// Group role. Possible values: `compositionPipeline`, `memberPipeline`
 	GroupRole pulumi.StringPtrOutput `pulumi:"groupRole"`
 	// Pipeline metadata list
 	MetadataList OpenpipelineV2BizeventsPipelinesMetadataListPtrOutput `pulumi:"metadataList"`
@@ -318,7 +318,7 @@ type OpenpipelineV2BizeventsPipelines struct {
 	Processing OpenpipelineV2BizeventsPipelinesProcessingPtrOutput `pulumi:"processing"`
 	// Product allocation stage
 	ProductAllocation OpenpipelineV2BizeventsPipelinesProductAllocationPtrOutput `pulumi:"productAllocation"`
-	// Routing. Possible Values: `notRoutable`, `routable`
+	// Routing. Possible values: `notRoutable`, `routable`
 	Routing pulumi.StringPtrOutput `pulumi:"routing"`
 	// Security context stage
 	SecurityContext OpenpipelineV2BizeventsPipelinesSecurityContextPtrOutput `pulumi:"securityContext"`
@@ -376,7 +376,7 @@ type openpipelineV2BizeventsPipelinesState struct {
 	Davis *OpenpipelineV2BizeventsPipelinesDavis `pulumi:"davis"`
 	// Display name
 	DisplayName *string `pulumi:"displayName"`
-	// Group role. Possible Values: `compositionPipeline`, `memberPipeline`
+	// Group role. Possible values: `compositionPipeline`, `memberPipeline`
 	GroupRole *string `pulumi:"groupRole"`
 	// Pipeline metadata list
 	MetadataList *OpenpipelineV2BizeventsPipelinesMetadataList `pulumi:"metadataList"`
@@ -386,7 +386,7 @@ type openpipelineV2BizeventsPipelinesState struct {
 	Processing *OpenpipelineV2BizeventsPipelinesProcessing `pulumi:"processing"`
 	// Product allocation stage
 	ProductAllocation *OpenpipelineV2BizeventsPipelinesProductAllocation `pulumi:"productAllocation"`
-	// Routing. Possible Values: `notRoutable`, `routable`
+	// Routing. Possible values: `notRoutable`, `routable`
 	Routing *string `pulumi:"routing"`
 	// Security context stage
 	SecurityContext *OpenpipelineV2BizeventsPipelinesSecurityContext `pulumi:"securityContext"`
@@ -409,7 +409,7 @@ type OpenpipelineV2BizeventsPipelinesState struct {
 	Davis OpenpipelineV2BizeventsPipelinesDavisPtrInput
 	// Display name
 	DisplayName pulumi.StringPtrInput
-	// Group role. Possible Values: `compositionPipeline`, `memberPipeline`
+	// Group role. Possible values: `compositionPipeline`, `memberPipeline`
 	GroupRole pulumi.StringPtrInput
 	// Pipeline metadata list
 	MetadataList OpenpipelineV2BizeventsPipelinesMetadataListPtrInput
@@ -419,7 +419,7 @@ type OpenpipelineV2BizeventsPipelinesState struct {
 	Processing OpenpipelineV2BizeventsPipelinesProcessingPtrInput
 	// Product allocation stage
 	ProductAllocation OpenpipelineV2BizeventsPipelinesProductAllocationPtrInput
-	// Routing. Possible Values: `notRoutable`, `routable`
+	// Routing. Possible values: `notRoutable`, `routable`
 	Routing pulumi.StringPtrInput
 	// Security context stage
 	SecurityContext OpenpipelineV2BizeventsPipelinesSecurityContextPtrInput
@@ -446,7 +446,7 @@ type openpipelineV2BizeventsPipelinesArgs struct {
 	Davis *OpenpipelineV2BizeventsPipelinesDavis `pulumi:"davis"`
 	// Display name
 	DisplayName string `pulumi:"displayName"`
-	// Group role. Possible Values: `compositionPipeline`, `memberPipeline`
+	// Group role. Possible values: `compositionPipeline`, `memberPipeline`
 	GroupRole *string `pulumi:"groupRole"`
 	// Pipeline metadata list
 	MetadataList *OpenpipelineV2BizeventsPipelinesMetadataList `pulumi:"metadataList"`
@@ -456,7 +456,7 @@ type openpipelineV2BizeventsPipelinesArgs struct {
 	Processing *OpenpipelineV2BizeventsPipelinesProcessing `pulumi:"processing"`
 	// Product allocation stage
 	ProductAllocation *OpenpipelineV2BizeventsPipelinesProductAllocation `pulumi:"productAllocation"`
-	// Routing. Possible Values: `notRoutable`, `routable`
+	// Routing. Possible values: `notRoutable`, `routable`
 	Routing *string `pulumi:"routing"`
 	// Security context stage
 	SecurityContext *OpenpipelineV2BizeventsPipelinesSecurityContext `pulumi:"securityContext"`
@@ -480,7 +480,7 @@ type OpenpipelineV2BizeventsPipelinesArgs struct {
 	Davis OpenpipelineV2BizeventsPipelinesDavisPtrInput
 	// Display name
 	DisplayName pulumi.StringInput
-	// Group role. Possible Values: `compositionPipeline`, `memberPipeline`
+	// Group role. Possible values: `compositionPipeline`, `memberPipeline`
 	GroupRole pulumi.StringPtrInput
 	// Pipeline metadata list
 	MetadataList OpenpipelineV2BizeventsPipelinesMetadataListPtrInput
@@ -490,7 +490,7 @@ type OpenpipelineV2BizeventsPipelinesArgs struct {
 	Processing OpenpipelineV2BizeventsPipelinesProcessingPtrInput
 	// Product allocation stage
 	ProductAllocation OpenpipelineV2BizeventsPipelinesProductAllocationPtrInput
-	// Routing. Possible Values: `notRoutable`, `routable`
+	// Routing. Possible values: `notRoutable`, `routable`
 	Routing pulumi.StringPtrInput
 	// Security context stage
 	SecurityContext OpenpipelineV2BizeventsPipelinesSecurityContextPtrInput
@@ -620,7 +620,7 @@ func (o OpenpipelineV2BizeventsPipelinesOutput) DisplayName() pulumi.StringOutpu
 	return o.ApplyT(func(v *OpenpipelineV2BizeventsPipelines) pulumi.StringOutput { return v.DisplayName }).(pulumi.StringOutput)
 }
 
-// Group role. Possible Values: `compositionPipeline`, `memberPipeline`
+// Group role. Possible values: `compositionPipeline`, `memberPipeline`
 func (o OpenpipelineV2BizeventsPipelinesOutput) GroupRole() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v *OpenpipelineV2BizeventsPipelines) pulumi.StringPtrOutput { return v.GroupRole }).(pulumi.StringPtrOutput)
 }
@@ -653,7 +653,7 @@ func (o OpenpipelineV2BizeventsPipelinesOutput) ProductAllocation() Openpipeline
 	}).(OpenpipelineV2BizeventsPipelinesProductAllocationPtrOutput)
 }
 
-// Routing. Possible Values: `notRoutable`, `routable`
+// Routing. Possible values: `notRoutable`, `routable`
 func (o OpenpipelineV2BizeventsPipelinesOutput) Routing() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v *OpenpipelineV2BizeventsPipelines) pulumi.StringPtrOutput { return v.Routing }).(pulumi.StringPtrOutput)
 }

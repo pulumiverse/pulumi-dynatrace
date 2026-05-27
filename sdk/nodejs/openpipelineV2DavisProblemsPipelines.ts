@@ -232,7 +232,7 @@ export class OpenpipelineV2DavisProblemsPipelines extends pulumi.CustomResource 
      */
     declare public readonly displayName: pulumi.Output<string>;
     /**
-     * Group role. Possible Values: `compositionPipeline`, `memberPipeline`
+     * Group role. Possible values: `compositionPipeline`, `memberPipeline`
      */
     declare public readonly groupRole: pulumi.Output<string | undefined>;
     /**
@@ -252,7 +252,7 @@ export class OpenpipelineV2DavisProblemsPipelines extends pulumi.CustomResource 
      */
     declare public readonly productAllocation: pulumi.Output<outputs.OpenpipelineV2DavisProblemsPipelinesProductAllocation | undefined>;
     /**
-     * Routing. Possible Values: `notRoutable`, `routable`
+     * Routing. Possible values: `notRoutable`, `routable`
      */
     declare public readonly routing: pulumi.Output<string | undefined>;
     /**
@@ -354,7 +354,7 @@ export interface OpenpipelineV2DavisProblemsPipelinesState {
      */
     displayName?: pulumi.Input<string | undefined>;
     /**
-     * Group role. Possible Values: `compositionPipeline`, `memberPipeline`
+     * Group role. Possible values: `compositionPipeline`, `memberPipeline`
      */
     groupRole?: pulumi.Input<string | undefined>;
     /**
@@ -374,7 +374,7 @@ export interface OpenpipelineV2DavisProblemsPipelinesState {
      */
     productAllocation?: pulumi.Input<inputs.OpenpipelineV2DavisProblemsPipelinesProductAllocation | undefined>;
     /**
-     * Routing. Possible Values: `notRoutable`, `routable`
+     * Routing. Possible values: `notRoutable`, `routable`
      */
     routing?: pulumi.Input<string | undefined>;
     /**
@@ -420,7 +420,7 @@ export interface OpenpipelineV2DavisProblemsPipelinesArgs {
      */
     displayName: pulumi.Input<string>;
     /**
-     * Group role. Possible Values: `compositionPipeline`, `memberPipeline`
+     * Group role. Possible values: `compositionPipeline`, `memberPipeline`
      */
     groupRole?: pulumi.Input<string | undefined>;
     /**
@@ -440,7 +440,7 @@ export interface OpenpipelineV2DavisProblemsPipelinesArgs {
      */
     productAllocation?: pulumi.Input<inputs.OpenpipelineV2DavisProblemsPipelinesProductAllocation | undefined>;
     /**
-     * Routing. Possible Values: `notRoutable`, `routable`
+     * Routing. Possible values: `notRoutable`, `routable`
      */
     routing?: pulumi.Input<string | undefined>;
     /**

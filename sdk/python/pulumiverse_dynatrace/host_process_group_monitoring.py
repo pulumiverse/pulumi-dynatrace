@@ -152,6 +152,20 @@ class HostProcessGroupMonitoring(pulumi.CustomResource):
 
         The full documentation of the export feature is available [here](https://dt-url.net/h203qmc).
 
+        ## Resource Example Usage
+
+        ```python
+        import pulumi
+        import pulumiverse_dynatrace as dynatrace
+
+        config = pulumi.Config()
+        proces_s__grou_p__id = config.require("PROCESS_GROUP_ID")
+        monitoring = dynatrace.HostProcessGroupMonitoring("monitoring",
+            host_id="HOST-1234567890000000",
+            monitoring_state="MONITORING_ON",
+            process_group=proces_s__grou_p__id)
+        ```
+
 
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
@@ -179,6 +193,20 @@ class HostProcessGroupMonitoring(pulumi.CustomResource):
         - `terraform-provider-dynatrace -export HostProcessGroupMonitoring` downloads all existing host level process group monitoring configuration
 
         The full documentation of the export feature is available [here](https://dt-url.net/h203qmc).
+
+        ## Resource Example Usage
+
+        ```python
+        import pulumi
+        import pulumiverse_dynatrace as dynatrace
+
+        config = pulumi.Config()
+        proces_s__grou_p__id = config.require("PROCESS_GROUP_ID")
+        monitoring = dynatrace.HostProcessGroupMonitoring("monitoring",
+            host_id="HOST-1234567890000000",
+            monitoring_state="MONITORING_ON",
+            process_group=proces_s__grou_p__id)
+        ```
 
 
         :param str resource_name: The name of the resource.

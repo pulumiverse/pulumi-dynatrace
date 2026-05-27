@@ -318,6 +318,28 @@ class CalculatedMobileMetric(pulumi.CustomResource):
 
         The full documentation of the export feature is available [here](https://dt-url.net/h203qmc).
 
+        ## Resource Example Usage
+
+        ```python
+        import pulumi
+        import pulumi_dynatrace as dynatrace
+        import pulumiverse_dynatrace as dynatrace
+
+        application = dynatrace.get_mobile_application(name="Application")
+        metric = dynatrace.CalculatedMobileMetric("metric",
+            name="#name#",
+            enabled=True,
+            app_identifier=application.id,
+            metric_key="calc:apps.mobile.#name#",
+            metric_type="USER_ACTION_DURATION",
+            dimensions=[{
+                "dimensions": [{
+                    "dimension": "APP_VERSION",
+                    "top_x": 10,
+                }],
+            }])
+        ```
+
 
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
@@ -350,6 +372,28 @@ class CalculatedMobileMetric(pulumi.CustomResource):
         - `terraform-provider-dynatrace -export calculated_mobile_metric` downloads all existing calculated mobile/custom app metric configuration
 
         The full documentation of the export feature is available [here](https://dt-url.net/h203qmc).
+
+        ## Resource Example Usage
+
+        ```python
+        import pulumi
+        import pulumi_dynatrace as dynatrace
+        import pulumiverse_dynatrace as dynatrace
+
+        application = dynatrace.get_mobile_application(name="Application")
+        metric = dynatrace.CalculatedMobileMetric("metric",
+            name="#name#",
+            enabled=True,
+            app_identifier=application.id,
+            metric_key="calc:apps.mobile.#name#",
+            metric_type="USER_ACTION_DURATION",
+            dimensions=[{
+                "dimensions": [{
+                    "dimension": "APP_VERSION",
+                    "top_x": 10,
+                }],
+            }])
+        ```
 
 
         :param str resource_name: The name of the resource.

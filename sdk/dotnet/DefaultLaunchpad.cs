@@ -24,6 +24,35 @@ namespace Pulumiverse.Dynatrace
     /// - `terraform-provider-dynatrace -export dynatrace.DefaultLaunchpad` downloads all existing default Launchpads by user group configuration
     /// 
     /// The full documentation of the export feature is available [here](https://dt-url.net/h203qmc).
+    /// 
+    /// ## Resource Example Usage
+    /// 
+    /// ```csharp
+    /// using System.Collections.Generic;
+    /// using System.Linq;
+    /// using Pulumi;
+    /// using Dynatrace = Pulumiverse.Dynatrace;
+    /// 
+    /// return await Deployment.RunAsync(() =&gt; 
+    /// {
+    ///     var launchpad = new Dynatrace.DefaultLaunchpad("launchpad", new()
+    ///     {
+    ///         GroupLaunchpads = new Dynatrace.Inputs.DefaultLaunchpadGroupLaunchpadsArgs
+    ///         {
+    ///             GroupLaunchpads = new[]
+    ///             {
+    ///                 new Dynatrace.Inputs.DefaultLaunchpadGroupLaunchpadsGroupLaunchpadArgs
+    ///                 {
+    ///                     IsEnabled = false,
+    ///                     LaunchpadId = "00000000-0000-0000-0000-000000000000",
+    ///                     UserGroupId = "00000000-0000-0000-0000-000000000000",
+    ///                 },
+    ///             },
+    ///         },
+    ///     });
+    /// 
+    /// });
+    /// ```
     /// </summary>
     [DynatraceResourceType("dynatrace:index/defaultLaunchpad:DefaultLaunchpad")]
     public partial class DefaultLaunchpad : global::Pulumi.CustomResource

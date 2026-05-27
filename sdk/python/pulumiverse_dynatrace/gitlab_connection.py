@@ -171,6 +171,18 @@ class GitlabConnection(pulumi.CustomResource):
 
         The full documentation of the export feature is available [here](https://dt-url.net/h203qmc).
 
+        ## Resource Example Usage
+
+        ```python
+        import pulumi
+        import pulumiverse_dynatrace as dynatrace
+
+        connection = dynatrace.GitlabConnection("connection",
+            name="#name#",
+            url="https://www.example.com",
+            token="#######")
+        ```
+
 
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
@@ -216,6 +228,18 @@ class GitlabConnection(pulumi.CustomResource):
         - `terraform-provider-dynatrace -export GitlabConnection` downloads all existing GitLab connections
 
         The full documentation of the export feature is available [here](https://dt-url.net/h203qmc).
+
+        ## Resource Example Usage
+
+        ```python
+        import pulumi
+        import pulumiverse_dynatrace as dynatrace
+
+        connection = dynatrace.GitlabConnection("connection",
+            name="#name#",
+            url="https://www.example.com",
+            token="#######")
+        ```
 
 
         :param str resource_name: The name of the resource.

@@ -19,6 +19,10 @@ namespace Pulumiverse.Dynatrace.Outputs
         /// </summary>
         public readonly string? Actor;
         /// <summary>
+        /// Fixed delay between executions (in seconds)
+        /// </summary>
+        public readonly int? Delay;
+        /// <summary>
         /// Minute offset of sliding evaluation window for metrics with latency
         /// </summary>
         public readonly int? QueryOffset;
@@ -27,9 +31,12 @@ namespace Pulumiverse.Dynatrace.Outputs
         private DavisAnomalyDetectorsExecutionSettings(
             string? actor,
 
+            int? delay,
+
             int? queryOffset)
         {
             Actor = actor;
+            Delay = delay;
             QueryOffset = queryOffset;
         }
     }

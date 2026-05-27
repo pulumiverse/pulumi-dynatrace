@@ -30,10 +30,10 @@ class K8sClusterAnomaliesArgs:
         """
         The set of arguments for constructing a K8sClusterAnomalies resource.
 
-        :param pulumi.Input['K8sClusterAnomaliesCpuRequestsSaturationArgs'] cpu_requests_saturation: no documentation available
-        :param pulumi.Input['K8sClusterAnomaliesMemoryRequestsSaturationArgs'] memory_requests_saturation: no documentation available
-        :param pulumi.Input['K8sClusterAnomaliesMonitoringIssuesArgs'] monitoring_issues: no documentation available
-        :param pulumi.Input['K8sClusterAnomaliesPodsSaturationArgs'] pods_saturation: no documentation available
+        :param pulumi.Input['K8sClusterAnomaliesCpuRequestsSaturationArgs'] cpu_requests_saturation: No documentation available
+        :param pulumi.Input['K8sClusterAnomaliesMemoryRequestsSaturationArgs'] memory_requests_saturation: No documentation available
+        :param pulumi.Input['K8sClusterAnomaliesMonitoringIssuesArgs'] monitoring_issues: No documentation available
+        :param pulumi.Input['K8sClusterAnomaliesPodsSaturationArgs'] pods_saturation: No documentation available
         :param pulumi.Input['K8sClusterAnomaliesReadinessIssuesArgs'] readiness_issues: Alerts if cluster has not been ready for a given amount of time
         :param pulumi.Input[_builtins.str] scope: The scope of this setting (KUBERNETES_CLUSTER). Omit this property if you want to cover the whole environment.
         """
@@ -49,7 +49,7 @@ class K8sClusterAnomaliesArgs:
     @pulumi.getter(name="cpuRequestsSaturation")
     def cpu_requests_saturation(self) -> pulumi.Input['K8sClusterAnomaliesCpuRequestsSaturationArgs']:
         """
-        no documentation available
+        No documentation available
         """
         return pulumi.get(self, "cpu_requests_saturation")
 
@@ -61,7 +61,7 @@ class K8sClusterAnomaliesArgs:
     @pulumi.getter(name="memoryRequestsSaturation")
     def memory_requests_saturation(self) -> pulumi.Input['K8sClusterAnomaliesMemoryRequestsSaturationArgs']:
         """
-        no documentation available
+        No documentation available
         """
         return pulumi.get(self, "memory_requests_saturation")
 
@@ -73,7 +73,7 @@ class K8sClusterAnomaliesArgs:
     @pulumi.getter(name="monitoringIssues")
     def monitoring_issues(self) -> pulumi.Input['K8sClusterAnomaliesMonitoringIssuesArgs']:
         """
-        no documentation available
+        No documentation available
         """
         return pulumi.get(self, "monitoring_issues")
 
@@ -85,7 +85,7 @@ class K8sClusterAnomaliesArgs:
     @pulumi.getter(name="podsSaturation")
     def pods_saturation(self) -> pulumi.Input['K8sClusterAnomaliesPodsSaturationArgs']:
         """
-        no documentation available
+        No documentation available
         """
         return pulumi.get(self, "pods_saturation")
 
@@ -130,10 +130,10 @@ class _K8sClusterAnomaliesState:
         """
         Input properties used for looking up and filtering K8sClusterAnomalies resources.
 
-        :param pulumi.Input['K8sClusterAnomaliesCpuRequestsSaturationArgs'] cpu_requests_saturation: no documentation available
-        :param pulumi.Input['K8sClusterAnomaliesMemoryRequestsSaturationArgs'] memory_requests_saturation: no documentation available
-        :param pulumi.Input['K8sClusterAnomaliesMonitoringIssuesArgs'] monitoring_issues: no documentation available
-        :param pulumi.Input['K8sClusterAnomaliesPodsSaturationArgs'] pods_saturation: no documentation available
+        :param pulumi.Input['K8sClusterAnomaliesCpuRequestsSaturationArgs'] cpu_requests_saturation: No documentation available
+        :param pulumi.Input['K8sClusterAnomaliesMemoryRequestsSaturationArgs'] memory_requests_saturation: No documentation available
+        :param pulumi.Input['K8sClusterAnomaliesMonitoringIssuesArgs'] monitoring_issues: No documentation available
+        :param pulumi.Input['K8sClusterAnomaliesPodsSaturationArgs'] pods_saturation: No documentation available
         :param pulumi.Input['K8sClusterAnomaliesReadinessIssuesArgs'] readiness_issues: Alerts if cluster has not been ready for a given amount of time
         :param pulumi.Input[_builtins.str] scope: The scope of this setting (KUBERNETES_CLUSTER). Omit this property if you want to cover the whole environment.
         """
@@ -154,7 +154,7 @@ class _K8sClusterAnomaliesState:
     @pulumi.getter(name="cpuRequestsSaturation")
     def cpu_requests_saturation(self) -> pulumi.Input[Optional['K8sClusterAnomaliesCpuRequestsSaturationArgs']]:
         """
-        no documentation available
+        No documentation available
         """
         return pulumi.get(self, "cpu_requests_saturation")
 
@@ -166,7 +166,7 @@ class _K8sClusterAnomaliesState:
     @pulumi.getter(name="memoryRequestsSaturation")
     def memory_requests_saturation(self) -> pulumi.Input[Optional['K8sClusterAnomaliesMemoryRequestsSaturationArgs']]:
         """
-        no documentation available
+        No documentation available
         """
         return pulumi.get(self, "memory_requests_saturation")
 
@@ -178,7 +178,7 @@ class _K8sClusterAnomaliesState:
     @pulumi.getter(name="monitoringIssues")
     def monitoring_issues(self) -> pulumi.Input[Optional['K8sClusterAnomaliesMonitoringIssuesArgs']]:
         """
-        no documentation available
+        No documentation available
         """
         return pulumi.get(self, "monitoring_issues")
 
@@ -190,7 +190,7 @@ class _K8sClusterAnomaliesState:
     @pulumi.getter(name="podsSaturation")
     def pods_saturation(self) -> pulumi.Input[Optional['K8sClusterAnomaliesPodsSaturationArgs']]:
         """
-        no documentation available
+        No documentation available
         """
         return pulumi.get(self, "pods_saturation")
 
@@ -254,10 +254,10 @@ class K8sClusterAnomalies(pulumi.CustomResource):
 
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
-        :param pulumi.Input[Union['K8sClusterAnomaliesCpuRequestsSaturationArgs', 'K8sClusterAnomaliesCpuRequestsSaturationArgsDict']] cpu_requests_saturation: no documentation available
-        :param pulumi.Input[Union['K8sClusterAnomaliesMemoryRequestsSaturationArgs', 'K8sClusterAnomaliesMemoryRequestsSaturationArgsDict']] memory_requests_saturation: no documentation available
-        :param pulumi.Input[Union['K8sClusterAnomaliesMonitoringIssuesArgs', 'K8sClusterAnomaliesMonitoringIssuesArgsDict']] monitoring_issues: no documentation available
-        :param pulumi.Input[Union['K8sClusterAnomaliesPodsSaturationArgs', 'K8sClusterAnomaliesPodsSaturationArgsDict']] pods_saturation: no documentation available
+        :param pulumi.Input[Union['K8sClusterAnomaliesCpuRequestsSaturationArgs', 'K8sClusterAnomaliesCpuRequestsSaturationArgsDict']] cpu_requests_saturation: No documentation available
+        :param pulumi.Input[Union['K8sClusterAnomaliesMemoryRequestsSaturationArgs', 'K8sClusterAnomaliesMemoryRequestsSaturationArgsDict']] memory_requests_saturation: No documentation available
+        :param pulumi.Input[Union['K8sClusterAnomaliesMonitoringIssuesArgs', 'K8sClusterAnomaliesMonitoringIssuesArgsDict']] monitoring_issues: No documentation available
+        :param pulumi.Input[Union['K8sClusterAnomaliesPodsSaturationArgs', 'K8sClusterAnomaliesPodsSaturationArgsDict']] pods_saturation: No documentation available
         :param pulumi.Input[Union['K8sClusterAnomaliesReadinessIssuesArgs', 'K8sClusterAnomaliesReadinessIssuesArgsDict']] readiness_issues: Alerts if cluster has not been ready for a given amount of time
         :param pulumi.Input[_builtins.str] scope: The scope of this setting (KUBERNETES_CLUSTER). Omit this property if you want to cover the whole environment.
         """
@@ -352,10 +352,10 @@ class K8sClusterAnomalies(pulumi.CustomResource):
         :param str resource_name: The unique name of the resulting resource.
         :param pulumi.Input[str] id: The unique provider ID of the resource to lookup.
         :param pulumi.ResourceOptions opts: Options for the resource.
-        :param pulumi.Input[Union['K8sClusterAnomaliesCpuRequestsSaturationArgs', 'K8sClusterAnomaliesCpuRequestsSaturationArgsDict']] cpu_requests_saturation: no documentation available
-        :param pulumi.Input[Union['K8sClusterAnomaliesMemoryRequestsSaturationArgs', 'K8sClusterAnomaliesMemoryRequestsSaturationArgsDict']] memory_requests_saturation: no documentation available
-        :param pulumi.Input[Union['K8sClusterAnomaliesMonitoringIssuesArgs', 'K8sClusterAnomaliesMonitoringIssuesArgsDict']] monitoring_issues: no documentation available
-        :param pulumi.Input[Union['K8sClusterAnomaliesPodsSaturationArgs', 'K8sClusterAnomaliesPodsSaturationArgsDict']] pods_saturation: no documentation available
+        :param pulumi.Input[Union['K8sClusterAnomaliesCpuRequestsSaturationArgs', 'K8sClusterAnomaliesCpuRequestsSaturationArgsDict']] cpu_requests_saturation: No documentation available
+        :param pulumi.Input[Union['K8sClusterAnomaliesMemoryRequestsSaturationArgs', 'K8sClusterAnomaliesMemoryRequestsSaturationArgsDict']] memory_requests_saturation: No documentation available
+        :param pulumi.Input[Union['K8sClusterAnomaliesMonitoringIssuesArgs', 'K8sClusterAnomaliesMonitoringIssuesArgsDict']] monitoring_issues: No documentation available
+        :param pulumi.Input[Union['K8sClusterAnomaliesPodsSaturationArgs', 'K8sClusterAnomaliesPodsSaturationArgsDict']] pods_saturation: No documentation available
         :param pulumi.Input[Union['K8sClusterAnomaliesReadinessIssuesArgs', 'K8sClusterAnomaliesReadinessIssuesArgsDict']] readiness_issues: Alerts if cluster has not been ready for a given amount of time
         :param pulumi.Input[_builtins.str] scope: The scope of this setting (KUBERNETES_CLUSTER). Omit this property if you want to cover the whole environment.
         """
@@ -375,7 +375,7 @@ class K8sClusterAnomalies(pulumi.CustomResource):
     @pulumi.getter(name="cpuRequestsSaturation")
     def cpu_requests_saturation(self) -> pulumi.Output['outputs.K8sClusterAnomaliesCpuRequestsSaturation']:
         """
-        no documentation available
+        No documentation available
         """
         return pulumi.get(self, "cpu_requests_saturation")
 
@@ -383,7 +383,7 @@ class K8sClusterAnomalies(pulumi.CustomResource):
     @pulumi.getter(name="memoryRequestsSaturation")
     def memory_requests_saturation(self) -> pulumi.Output['outputs.K8sClusterAnomaliesMemoryRequestsSaturation']:
         """
-        no documentation available
+        No documentation available
         """
         return pulumi.get(self, "memory_requests_saturation")
 
@@ -391,7 +391,7 @@ class K8sClusterAnomalies(pulumi.CustomResource):
     @pulumi.getter(name="monitoringIssues")
     def monitoring_issues(self) -> pulumi.Output['outputs.K8sClusterAnomaliesMonitoringIssues']:
         """
-        no documentation available
+        No documentation available
         """
         return pulumi.get(self, "monitoring_issues")
 
@@ -399,7 +399,7 @@ class K8sClusterAnomalies(pulumi.CustomResource):
     @pulumi.getter(name="podsSaturation")
     def pods_saturation(self) -> pulumi.Output['outputs.K8sClusterAnomaliesPodsSaturation']:
         """
-        no documentation available
+        No documentation available
         """
         return pulumi.get(self, "pods_saturation")
 

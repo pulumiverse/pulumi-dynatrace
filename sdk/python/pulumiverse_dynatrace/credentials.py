@@ -567,6 +567,8 @@ class Credentials(pulumi.CustomResource):
 
         - Credential vault API - https://www.dynatrace.com/support/help/dynatrace-api/environment-api/credential-vault
 
+        - External vault integration for Azure Key Vault, HashiCorp Vault, and CyberArk Vault - https://docs.dynatrace.com/docs/shortlink/external-vault-integration
+
         ## Export Example Usage
 
         - `terraform-provider-dynatrace -export Credentials` downloads all existing credentials
@@ -577,20 +579,86 @@ class Credentials(pulumi.CustomResource):
 
         ```python
         import pulumi
+        import pulumiverse_dynatrace as dynatrace
+
+        username_password_credentials = dynatrace.Credentials("username_password_credentials",
+            name="#name#",
+            username="username",
+            password="password",
+            owner_access_only=True,
+            scopes=["SYNTHETIC"])
+        ```
+
+        ```python
+        import pulumi
         import pulumi_std as std
         import pulumiverse_dynatrace as dynatrace
 
-        name = dynatrace.Credentials("name",
-            name="name",
-            scopes=["SYNTHETIC"],
-            username="username",
-            password="password")
         root_certificate = dynatrace.Credentials("root_certificate",
             name="Root Certificate",
             description="Root certificate for validating Extension 2.0 signatures",
             certificate=std.base64encode(input=std.file(input="certificate.pem").result).result,
             format="PEM",
             public=True)
+        ```
+
+        ### CyberArk Vault with username and password
+
+        ```python
+        import pulumi
+        import pulumiverse_dynatrace as dynatrace
+
+        config = pulumi.Config()
+        credentials_username = config.require_object("credentialsUsername")
+        credentials_password = config.require_object("credentialsPassword")
+        username_password_credentials = dynatrace.Credentials("username_password_credentials",
+            name="#name#",
+            username=credentials_username,
+            password=credentials_password,
+            owner_access_only=True,
+            scopes=["SYNTHETIC"])
+        cyberark_username_password = dynatrace.Credentials("cyberark_username_password",
+            name="#name#",
+            owner_access_only=True,
+            external={
+                "vault_url": "https://example.com",
+                "application_id": "my-application-id",
+                "safe_name": "my-safe-name",
+                "folder_name": "my-folder-name",
+                "account_name": "my-account-name",
+                "username_password_for_cpm": username_password_credentials.id,
+            },
+            scopes=["SYNTHETIC"])
+        ```
+
+        ### CyberArk Vault with allowed location
+
+        ```python
+        import pulumi
+        import pulumiverse_dynatrace as dynatrace
+
+        config = pulumi.Config()
+        certificate = config.require_object("certificate")
+        certificate_password = config.require_object("certificatePassword")
+        certificate_credentials = dynatrace.Credentials("certificate_credentials",
+            name="#name#",
+            certificate=certificate,
+            format="PKCS12",
+            owner_access_only=True,
+            password=certificate_password,
+            scopes=["SYNTHETIC"])
+        cyberark_allowed_location = dynatrace.Credentials("cyberark_allowed_location",
+            name="#name#",
+            owner_access_only=True,
+            external={
+                "vault_url": "https://example.com",
+                "application_id": "my-application-id",
+                "safe_name": "my-safe-name",
+                "folder_name": "my-folder-name",
+                "account_name": "my-account-name",
+                "certificate": certificate_credentials.id,
+            },
+            scopes=["SYNTHETIC"])
         ```
 
 
@@ -631,6 +699,8 @@ class Credentials(pulumi.CustomResource):
 
         - Credential vault API - https://www.dynatrace.com/support/help/dynatrace-api/environment-api/credential-vault
 
+        - External vault integration for Azure Key Vault, HashiCorp Vault, and CyberArk Vault - https://docs.dynatrace.com/docs/shortlink/external-vault-integration
+
         ## Export Example Usage
 
         - `terraform-provider-dynatrace -export Credentials` downloads all existing credentials
@@ -641,20 +711,86 @@ class Credentials(pulumi.CustomResource):
 
         ```python
         import pulumi
+        import pulumiverse_dynatrace as dynatrace
+
+        username_password_credentials = dynatrace.Credentials("username_password_credentials",
+            name="#name#",
+            username="username",
+            password="password",
+            owner_access_only=True,
+            scopes=["SYNTHETIC"])
+        ```
+
+        ```python
+        import pulumi
         import pulumi_std as std
         import pulumiverse_dynatrace as dynatrace
 
-        name = dynatrace.Credentials("name",
-            name="name",
-            scopes=["SYNTHETIC"],
-            username="username",
-            password="password")
         root_certificate = dynatrace.Credentials("root_certificate",
             name="Root Certificate",
             description="Root certificate for validating Extension 2.0 signatures",
             certificate=std.base64encode(input=std.file(input="certificate.pem").result).result,
             format="PEM",
             public=True)
+        ```
+
+        ### CyberArk Vault with username and password
+
+        ```python
+        import pulumi
+        import pulumiverse_dynatrace as dynatrace
+
+        config = pulumi.Config()
+        credentials_username = config.require_object("credentialsUsername")
+        credentials_password = config.require_object("credentialsPassword")
+        username_password_credentials = dynatrace.Credentials("username_password_credentials",
+            name="#name#",
+            username=credentials_username,
+            password=credentials_password,
+            owner_access_only=True,
+            scopes=["SYNTHETIC"])
+        cyberark_username_password = dynatrace.Credentials("cyberark_username_password",
+            name="#name#",
+            owner_access_only=True,
+            external={
+                "vault_url": "https://example.com",
+                "application_id": "my-application-id",
+                "safe_name": "my-safe-name",
+                "folder_name": "my-folder-name",
+                "account_name": "my-account-name",
+                "username_password_for_cpm": username_password_credentials.id,
+            },
+            scopes=["SYNTHETIC"])
+        ```
+
+        ### CyberArk Vault with allowed location
+
+        ```python
+        import pulumi
+        import pulumiverse_dynatrace as dynatrace
+
+        config = pulumi.Config()
+        certificate = config.require_object("certificate")
+        certificate_password = config.require_object("certificatePassword")
+        certificate_credentials = dynatrace.Credentials("certificate_credentials",
+            name="#name#",
+            certificate=certificate,
+            format="PKCS12",
+            owner_access_only=True,
+            password=certificate_password,
+            scopes=["SYNTHETIC"])
+        cyberark_allowed_location = dynatrace.Credentials("cyberark_allowed_location",
+            name="#name#",
+            owner_access_only=True,
+            external={
+                "vault_url": "https://example.com",
+                "application_id": "my-application-id",
+                "safe_name": "my-safe-name",
+                "folder_name": "my-folder-name",
+                "account_name": "my-account-name",
+                "certificate": certificate_credentials.id,
+            },
+            scopes=["SYNTHETIC"])
         ```
 
 

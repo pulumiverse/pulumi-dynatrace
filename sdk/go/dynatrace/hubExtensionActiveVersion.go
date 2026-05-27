@@ -70,9 +70,9 @@ import (
 //
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
-//			_, err := dynatrace.NewHubExtensionActiveVersion(ctx, "custom_com_dynatrace_extension_prometheus-cadvisor", &dynatrace.HubExtensionActiveVersionArgs{
-//				Name:    pulumi.String("com.dynatrace.extension.active-directory-python"),
-//				Version: pulumi.String("3.1.6"),
+//			_, err := dynatrace.NewHubExtensionActiveVersion(ctx, "jmx-weblogic-cp", &dynatrace.HubExtensionActiveVersionArgs{
+//				Name:    pulumi.String("com.dynatrace.extension.jmx-weblogic-cp"),
+//				Version: pulumi.String("2.1.1"),
 //			})
 //			if err != nil {
 //				return err

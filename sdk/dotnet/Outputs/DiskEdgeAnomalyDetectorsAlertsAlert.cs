@@ -15,31 +15,31 @@ namespace Pulumiverse.Dynatrace.Outputs
     public sealed class DiskEdgeAnomalyDetectorsAlertsAlert
     {
         /// <summary>
-        /// no documentation available
+        /// No documentation available
         /// </summary>
         public readonly Outputs.DiskEdgeAnomalyDetectorsAlertsAlertSampleCountThresholds? SampleCountThresholds;
         /// <summary>
-        /// no documentation available
+        /// No documentation available
         /// </summary>
         public readonly Outputs.DiskEdgeAnomalyDetectorsAlertsAlertSampleCountThresholdsImmediately? SampleCountThresholdsImmediately;
         /// <summary>
-        /// no documentation available
+        /// No documentation available
         /// </summary>
         public readonly double? ThresholdMebibytes;
         /// <summary>
-        /// no documentation available
+        /// No documentation available
         /// </summary>
         public readonly double? ThresholdMilliseconds;
         /// <summary>
-        /// no documentation available
+        /// No documentation available
         /// </summary>
         public readonly double? ThresholdNumber;
         /// <summary>
-        /// no documentation available
+        /// No documentation available
         /// </summary>
         public readonly double? ThresholdPercent;
         /// <summary>
-        /// Possible Values: `AVAILABLE_DISK_SPACE_MEBIBYTES_BELOW`, `AVAILABLE_DISK_SPACE_PERCENT_BELOW`, `AVAILABLE_INODES_NUMBER_BELOW`, `AVAILABLE_INODES_PERCENT_BELOW`, `READ_ONLY_FILE_SYSTEM`, `READ_TIME_EXCEEDING`, `WRITE_TIME_EXCEEDING`
+        /// Possible values: `AVAILABLE_DISK_SPACE_MEBIBYTES_BELOW`, `AVAILABLE_DISK_SPACE_PERCENT_BELOW`, `AVAILABLE_INODES_NUMBER_BELOW`, `AVAILABLE_INODES_PERCENT_BELOW`, `READ_ONLY_FILE_SYSTEM`, `READ_TIME_EXCEEDING`, `WRITE_TIME_EXCEEDING`
         /// </summary>
         public readonly string Trigger;
 

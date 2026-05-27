@@ -24,6 +24,25 @@ namespace Pulumiverse.Dynatrace
     /// - `terraform-provider-dynatrace -export dynatrace.DevobsGitOnprem` downloads existing Developer Observability git on-premise server configuration
     /// 
     /// The full documentation of the export feature is available [here](https://dt-url.net/h203qmc).
+    /// 
+    /// ## Resource Example Usage
+    /// 
+    /// ```csharp
+    /// using System.Collections.Generic;
+    /// using System.Linq;
+    /// using Pulumi;
+    /// using Dynatrace = Pulumiverse.Dynatrace;
+    /// 
+    /// return await Deployment.RunAsync(() =&gt; 
+    /// {
+    ///     var onprem = new Dynatrace.DevobsGitOnprem("onprem", new()
+    ///     {
+    ///         GitProvider = "GithubOnPrem",
+    ///         Url = "https://example.com/test/#name#",
+    ///     });
+    /// 
+    /// });
+    /// ```
     /// </summary>
     [DynatraceResourceType("dynatrace:index/devobsGitOnprem:DevobsGitOnprem")]
     public partial class DevobsGitOnprem : global::Pulumi.CustomResource

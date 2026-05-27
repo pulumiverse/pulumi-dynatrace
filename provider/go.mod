@@ -2,7 +2,7 @@ module github.com/pulumiverse/pulumi-dynatrace/provider
 
 go 1.26.2
 
-replace github.com/hashicorp/terraform-plugin-sdk/v2 => github.com/pulumi/terraform-plugin-sdk/v2 v2.0.0-20250530111747-935112552988
+replace github.com/hashicorp/terraform-plugin-sdk/v2 => github.com/pulumi/terraform-plugin-sdk/v2 v2.0.0-20260318212141-5525259d096b
 
 require (
 	github.com/dynatrace-oss/terraform-provider-dynatrace v1.96.0
@@ -48,7 +48,7 @@ require (
 	github.com/aws/aws-sdk-go-v2/service/internal/checksum v1.9.14 // indirect
 	github.com/aws/aws-sdk-go-v2/service/internal/presigned-url v1.13.22 // indirect
 	github.com/aws/aws-sdk-go-v2/service/internal/s3shared v1.19.22 // indirect
-	github.com/aws/aws-sdk-go-v2/service/s3 v1.100.0 // indirect
+	github.com/aws/aws-sdk-go-v2/service/s3 v1.99.1 // indirect
 	github.com/aws/aws-sdk-go-v2/service/signin v1.0.8 // indirect
 	github.com/aws/aws-sdk-go-v2/service/sso v1.30.13 // indirect
 	github.com/aws/aws-sdk-go-v2/service/ssooidc v1.35.17 // indirect
@@ -167,7 +167,7 @@ require (
 	github.com/pulumi/esc v0.24.0 // indirect
 	github.com/pulumi/inflector v0.2.1 // indirect
 	github.com/pulumi/pulumi-dotnet/pulumi-language-dotnet/v3 v3.106.1 // indirect
-	github.com/pulumi/pulumi-java/pkg v1.12.0 // indirect
+	github.com/pulumi/pulumi-java v1.26.1 // indirect
 	github.com/pulumi/pulumi-yaml v1.33.1 // indirect
 	github.com/pulumi/pulumi/pkg/v3 v3.242.0 // indirect
 	github.com/pulumi/terraform-diff-reader v0.0.2 // indirect

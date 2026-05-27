@@ -308,7 +308,7 @@ type OpenpipelineV2SpansPipelines struct {
 	Davis OpenpipelineV2SpansPipelinesDavisPtrOutput `pulumi:"davis"`
 	// Display name
 	DisplayName pulumi.StringOutput `pulumi:"displayName"`
-	// Group role. Possible Values: `compositionPipeline`, `memberPipeline`
+	// Group role. Possible values: `compositionPipeline`, `memberPipeline`
 	GroupRole pulumi.StringPtrOutput `pulumi:"groupRole"`
 	// Pipeline metadata list
 	MetadataList OpenpipelineV2SpansPipelinesMetadataListPtrOutput `pulumi:"metadataList"`
@@ -318,7 +318,7 @@ type OpenpipelineV2SpansPipelines struct {
 	Processing OpenpipelineV2SpansPipelinesProcessingPtrOutput `pulumi:"processing"`
 	// Product allocation stage
 	ProductAllocation OpenpipelineV2SpansPipelinesProductAllocationPtrOutput `pulumi:"productAllocation"`
-	// Routing. Possible Values: `notRoutable`, `routable`
+	// Routing. Possible values: `notRoutable`, `routable`
 	Routing pulumi.StringPtrOutput `pulumi:"routing"`
 	// Security context stage
 	SecurityContext OpenpipelineV2SpansPipelinesSecurityContextPtrOutput `pulumi:"securityContext"`
@@ -376,7 +376,7 @@ type openpipelineV2SpansPipelinesState struct {
 	Davis *OpenpipelineV2SpansPipelinesDavis `pulumi:"davis"`
 	// Display name
 	DisplayName *string `pulumi:"displayName"`
-	// Group role. Possible Values: `compositionPipeline`, `memberPipeline`
+	// Group role. Possible values: `compositionPipeline`, `memberPipeline`
 	GroupRole *string `pulumi:"groupRole"`
 	// Pipeline metadata list
 	MetadataList *OpenpipelineV2SpansPipelinesMetadataList `pulumi:"metadataList"`
@@ -386,7 +386,7 @@ type openpipelineV2SpansPipelinesState struct {
 	Processing *OpenpipelineV2SpansPipelinesProcessing `pulumi:"processing"`
 	// Product allocation stage
 	ProductAllocation *OpenpipelineV2SpansPipelinesProductAllocation `pulumi:"productAllocation"`
-	// Routing. Possible Values: `notRoutable`, `routable`
+	// Routing. Possible values: `notRoutable`, `routable`
 	Routing *string `pulumi:"routing"`
 	// Security context stage
 	SecurityContext *OpenpipelineV2SpansPipelinesSecurityContext `pulumi:"securityContext"`
@@ -409,7 +409,7 @@ type OpenpipelineV2SpansPipelinesState struct {
 	Davis OpenpipelineV2SpansPipelinesDavisPtrInput
 	// Display name
 	DisplayName pulumi.StringPtrInput
-	// Group role. Possible Values: `compositionPipeline`, `memberPipeline`
+	// Group role. Possible values: `compositionPipeline`, `memberPipeline`
 	GroupRole pulumi.StringPtrInput
 	// Pipeline metadata list
 	MetadataList OpenpipelineV2SpansPipelinesMetadataListPtrInput
@@ -419,7 +419,7 @@ type OpenpipelineV2SpansPipelinesState struct {
 	Processing OpenpipelineV2SpansPipelinesProcessingPtrInput
 	// Product allocation stage
 	ProductAllocation OpenpipelineV2SpansPipelinesProductAllocationPtrInput
-	// Routing. Possible Values: `notRoutable`, `routable`
+	// Routing. Possible values: `notRoutable`, `routable`
 	Routing pulumi.StringPtrInput
 	// Security context stage
 	SecurityContext OpenpipelineV2SpansPipelinesSecurityContextPtrInput
@@ -446,7 +446,7 @@ type openpipelineV2SpansPipelinesArgs struct {
 	Davis *OpenpipelineV2SpansPipelinesDavis `pulumi:"davis"`
 	// Display name
 	DisplayName string `pulumi:"displayName"`
-	// Group role. Possible Values: `compositionPipeline`, `memberPipeline`
+	// Group role. Possible values: `compositionPipeline`, `memberPipeline`
 	GroupRole *string `pulumi:"groupRole"`
 	// Pipeline metadata list
 	MetadataList *OpenpipelineV2SpansPipelinesMetadataList `pulumi:"metadataList"`
@@ -456,7 +456,7 @@ type openpipelineV2SpansPipelinesArgs struct {
 	Processing *OpenpipelineV2SpansPipelinesProcessing `pulumi:"processing"`
 	// Product allocation stage
 	ProductAllocation *OpenpipelineV2SpansPipelinesProductAllocation `pulumi:"productAllocation"`
-	// Routing. Possible Values: `notRoutable`, `routable`
+	// Routing. Possible values: `notRoutable`, `routable`
 	Routing *string `pulumi:"routing"`
 	// Security context stage
 	SecurityContext *OpenpipelineV2SpansPipelinesSecurityContext `pulumi:"securityContext"`
@@ -480,7 +480,7 @@ type OpenpipelineV2SpansPipelinesArgs struct {
 	Davis OpenpipelineV2SpansPipelinesDavisPtrInput
 	// Display name
 	DisplayName pulumi.StringInput
-	// Group role. Possible Values: `compositionPipeline`, `memberPipeline`
+	// Group role. Possible values: `compositionPipeline`, `memberPipeline`
 	GroupRole pulumi.StringPtrInput
 	// Pipeline metadata list
 	MetadataList OpenpipelineV2SpansPipelinesMetadataListPtrInput
@@ -490,7 +490,7 @@ type OpenpipelineV2SpansPipelinesArgs struct {
 	Processing OpenpipelineV2SpansPipelinesProcessingPtrInput
 	// Product allocation stage
 	ProductAllocation OpenpipelineV2SpansPipelinesProductAllocationPtrInput
-	// Routing. Possible Values: `notRoutable`, `routable`
+	// Routing. Possible values: `notRoutable`, `routable`
 	Routing pulumi.StringPtrInput
 	// Security context stage
 	SecurityContext OpenpipelineV2SpansPipelinesSecurityContextPtrInput
@@ -618,7 +618,7 @@ func (o OpenpipelineV2SpansPipelinesOutput) DisplayName() pulumi.StringOutput {
 	return o.ApplyT(func(v *OpenpipelineV2SpansPipelines) pulumi.StringOutput { return v.DisplayName }).(pulumi.StringOutput)
 }
 
-// Group role. Possible Values: `compositionPipeline`, `memberPipeline`
+// Group role. Possible values: `compositionPipeline`, `memberPipeline`
 func (o OpenpipelineV2SpansPipelinesOutput) GroupRole() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v *OpenpipelineV2SpansPipelines) pulumi.StringPtrOutput { return v.GroupRole }).(pulumi.StringPtrOutput)
 }
@@ -651,7 +651,7 @@ func (o OpenpipelineV2SpansPipelinesOutput) ProductAllocation() OpenpipelineV2Sp
 	}).(OpenpipelineV2SpansPipelinesProductAllocationPtrOutput)
 }
 
-// Routing. Possible Values: `notRoutable`, `routable`
+// Routing. Possible values: `notRoutable`, `routable`
 func (o OpenpipelineV2SpansPipelinesOutput) Routing() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v *OpenpipelineV2SpansPipelines) pulumi.StringPtrOutput { return v.Routing }).(pulumi.StringPtrOutput)
 }

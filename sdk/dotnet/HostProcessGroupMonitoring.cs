@@ -24,6 +24,28 @@ namespace Pulumiverse.Dynatrace
     /// - `terraform-provider-dynatrace -export dynatrace.HostProcessGroupMonitoring` downloads all existing host level process group monitoring configuration
     /// 
     /// The full documentation of the export feature is available [here](https://dt-url.net/h203qmc).
+    /// 
+    /// ## Resource Example Usage
+    /// 
+    /// ```csharp
+    /// using System.Collections.Generic;
+    /// using System.Linq;
+    /// using Pulumi;
+    /// using Dynatrace = Pulumiverse.Dynatrace;
+    /// 
+    /// return await Deployment.RunAsync(() =&gt; 
+    /// {
+    ///     var config = new Config();
+    ///     var PROCESS_GROUP_ID = config.Require("PROCESS_GROUP_ID");
+    ///     var monitoring = new Dynatrace.HostProcessGroupMonitoring("monitoring", new()
+    ///     {
+    ///         HostId = "HOST-1234567890000000",
+    ///         MonitoringState = "MONITORING_ON",
+    ///         ProcessGroup = PROCESS_GROUP_ID,
+    ///     });
+    /// 
+    /// });
+    /// ```
     /// </summary>
     [DynatraceResourceType("dynatrace:index/hostProcessGroupMonitoring:HostProcessGroupMonitoring")]
     public partial class HostProcessGroupMonitoring : global::Pulumi.CustomResource

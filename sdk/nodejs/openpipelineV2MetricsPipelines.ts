@@ -218,7 +218,7 @@ export class OpenpipelineV2MetricsPipelines extends pulumi.CustomResource {
      */
     declare public readonly displayName: pulumi.Output<string>;
     /**
-     * Group role. Possible Values: `compositionPipeline`, `memberPipeline`
+     * Group role. Possible values: `compositionPipeline`, `memberPipeline`
      */
     declare public readonly groupRole: pulumi.Output<string | undefined>;
     /**
@@ -238,7 +238,7 @@ export class OpenpipelineV2MetricsPipelines extends pulumi.CustomResource {
      */
     declare public readonly productAllocation: pulumi.Output<outputs.OpenpipelineV2MetricsPipelinesProductAllocation | undefined>;
     /**
-     * Routing. Possible Values: `notRoutable`, `routable`
+     * Routing. Possible values: `notRoutable`, `routable`
      */
     declare public readonly routing: pulumi.Output<string | undefined>;
     /**
@@ -340,7 +340,7 @@ export interface OpenpipelineV2MetricsPipelinesState {
      */
     displayName?: pulumi.Input<string | undefined>;
     /**
-     * Group role. Possible Values: `compositionPipeline`, `memberPipeline`
+     * Group role. Possible values: `compositionPipeline`, `memberPipeline`
      */
     groupRole?: pulumi.Input<string | undefined>;
     /**
@@ -360,7 +360,7 @@ export interface OpenpipelineV2MetricsPipelinesState {
      */
     productAllocation?: pulumi.Input<inputs.OpenpipelineV2MetricsPipelinesProductAllocation | undefined>;
     /**
-     * Routing. Possible Values: `notRoutable`, `routable`
+     * Routing. Possible values: `notRoutable`, `routable`
      */
     routing?: pulumi.Input<string | undefined>;
     /**
@@ -406,7 +406,7 @@ export interface OpenpipelineV2MetricsPipelinesArgs {
      */
     displayName: pulumi.Input<string>;
     /**
-     * Group role. Possible Values: `compositionPipeline`, `memberPipeline`
+     * Group role. Possible values: `compositionPipeline`, `memberPipeline`
      */
     groupRole?: pulumi.Input<string | undefined>;
     /**
@@ -426,7 +426,7 @@ export interface OpenpipelineV2MetricsPipelinesArgs {
      */
     productAllocation?: pulumi.Input<inputs.OpenpipelineV2MetricsPipelinesProductAllocation | undefined>;
     /**
-     * Routing. Possible Values: `notRoutable`, `routable`
+     * Routing. Possible values: `notRoutable`, `routable`
      */
     routing?: pulumi.Input<string | undefined>;
     /**

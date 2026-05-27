@@ -179,7 +179,7 @@ namespace Pulumiverse.Dynatrace
         public Output<string> Name { get; private set; } = null!;
 
         /// <summary>
-        /// Azure Authentication mechanism to be used by the connection. Possible Values: `clientSecret`, `federatedIdentityCredential`
+        /// Azure Authentication mechanism to be used by the connection. Possible values: `clientSecret`, `federatedIdentityCredential`
         /// </summary>
         [Output("type")]
         public Output<string> Type { get; private set; } = null!;
@@ -250,7 +250,7 @@ namespace Pulumiverse.Dynatrace
         public Input<string>? Name { get; set; }
 
         /// <summary>
-        /// Azure Authentication mechanism to be used by the connection. Possible Values: `clientSecret`, `federatedIdentityCredential`
+        /// Azure Authentication mechanism to be used by the connection. Possible values: `clientSecret`, `federatedIdentityCredential`
         /// </summary>
         [Input("type", required: true)]
         public Input<string> Type { get; set; } = null!;
@@ -282,7 +282,7 @@ namespace Pulumiverse.Dynatrace
         public Input<string>? Name { get; set; }
 
         /// <summary>
-        /// Azure Authentication mechanism to be used by the connection. Possible Values: `clientSecret`, `federatedIdentityCredential`
+        /// Azure Authentication mechanism to be used by the connection. Possible values: `clientSecret`, `federatedIdentityCredential`
         /// </summary>
         [Input("type")]
         public Input<string>? Type { get; set; }

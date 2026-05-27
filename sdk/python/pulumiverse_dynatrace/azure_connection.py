@@ -28,7 +28,7 @@ class AzureConnectionArgs:
         """
         The set of arguments for constructing a AzureConnection resource.
 
-        :param pulumi.Input[_builtins.str] type: Azure Authentication mechanism to be used by the connection. Possible Values: `clientSecret`, `federatedIdentityCredential`
+        :param pulumi.Input[_builtins.str] type: Azure Authentication mechanism to be used by the connection. Possible values: `clientSecret`, `federatedIdentityCredential`
         :param pulumi.Input['AzureConnectionClientSecretArgs'] client_secret: no documentation available
         :param pulumi.Input['AzureConnectionFederatedIdentityCredentialArgs'] federated_identity_credential: no documentation available
         :param pulumi.Input[_builtins.str] name: The name of the connection
@@ -45,7 +45,7 @@ class AzureConnectionArgs:
     @pulumi.getter
     def type(self) -> pulumi.Input[_builtins.str]:
         """
-        Azure Authentication mechanism to be used by the connection. Possible Values: `clientSecret`, `federatedIdentityCredential`
+        Azure Authentication mechanism to be used by the connection. Possible values: `clientSecret`, `federatedIdentityCredential`
         """
         return pulumi.get(self, "type")
 
@@ -103,7 +103,7 @@ class _AzureConnectionState:
         :param pulumi.Input['AzureConnectionClientSecretArgs'] client_secret: no documentation available
         :param pulumi.Input['AzureConnectionFederatedIdentityCredentialArgs'] federated_identity_credential: no documentation available
         :param pulumi.Input[_builtins.str] name: The name of the connection
-        :param pulumi.Input[_builtins.str] type: Azure Authentication mechanism to be used by the connection. Possible Values: `clientSecret`, `federatedIdentityCredential`
+        :param pulumi.Input[_builtins.str] type: Azure Authentication mechanism to be used by the connection. Possible values: `clientSecret`, `federatedIdentityCredential`
         """
         if client_secret is not None:
             pulumi.set(__self__, "client_secret", client_secret)
@@ -154,7 +154,7 @@ class _AzureConnectionState:
     @pulumi.getter
     def type(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
-        Azure Authentication mechanism to be used by the connection. Possible Values: `clientSecret`, `federatedIdentityCredential`
+        Azure Authentication mechanism to be used by the connection. Possible values: `clientSecret`, `federatedIdentityCredential`
         """
         return pulumi.get(self, "type")
 
@@ -282,7 +282,7 @@ class AzureConnection(pulumi.CustomResource):
         :param pulumi.Input[Union['AzureConnectionClientSecretArgs', 'AzureConnectionClientSecretArgsDict']] client_secret: no documentation available
         :param pulumi.Input[Union['AzureConnectionFederatedIdentityCredentialArgs', 'AzureConnectionFederatedIdentityCredentialArgsDict']] federated_identity_credential: no documentation available
         :param pulumi.Input[_builtins.str] name: The name of the connection
-        :param pulumi.Input[_builtins.str] type: Azure Authentication mechanism to be used by the connection. Possible Values: `clientSecret`, `federatedIdentityCredential`
+        :param pulumi.Input[_builtins.str] type: Azure Authentication mechanism to be used by the connection. Possible values: `clientSecret`, `federatedIdentityCredential`
         """
         ...
     @overload
@@ -451,7 +451,7 @@ class AzureConnection(pulumi.CustomResource):
         :param pulumi.Input[Union['AzureConnectionClientSecretArgs', 'AzureConnectionClientSecretArgsDict']] client_secret: no documentation available
         :param pulumi.Input[Union['AzureConnectionFederatedIdentityCredentialArgs', 'AzureConnectionFederatedIdentityCredentialArgsDict']] federated_identity_credential: no documentation available
         :param pulumi.Input[_builtins.str] name: The name of the connection
-        :param pulumi.Input[_builtins.str] type: Azure Authentication mechanism to be used by the connection. Possible Values: `clientSecret`, `federatedIdentityCredential`
+        :param pulumi.Input[_builtins.str] type: Azure Authentication mechanism to be used by the connection. Possible values: `clientSecret`, `federatedIdentityCredential`
         """
         opts = pulumi.ResourceOptions.merge(opts, pulumi.ResourceOptions(id=id))
 
@@ -491,7 +491,7 @@ class AzureConnection(pulumi.CustomResource):
     @pulumi.getter
     def type(self) -> pulumi.Output[_builtins.str]:
         """
-        Azure Authentication mechanism to be used by the connection. Possible Values: `clientSecret`, `federatedIdentityCredential`
+        Azure Authentication mechanism to be used by the connection. Possible values: `clientSecret`, `federatedIdentityCredential`
         """
         return pulumi.get(self, "type")
 
