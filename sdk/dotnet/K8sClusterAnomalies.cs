@@ -29,25 +29,25 @@ namespace Pulumiverse.Dynatrace
     public partial class K8sClusterAnomalies : global::Pulumi.CustomResource
     {
         /// <summary>
-        /// no documentation available
+        /// No documentation available
         /// </summary>
         [Output("cpuRequestsSaturation")]
         public Output<Outputs.K8sClusterAnomaliesCpuRequestsSaturation> CpuRequestsSaturation { get; private set; } = null!;
 
         /// <summary>
-        /// no documentation available
+        /// No documentation available
         /// </summary>
         [Output("memoryRequestsSaturation")]
         public Output<Outputs.K8sClusterAnomaliesMemoryRequestsSaturation> MemoryRequestsSaturation { get; private set; } = null!;
 
         /// <summary>
-        /// no documentation available
+        /// No documentation available
         /// </summary>
         [Output("monitoringIssues")]
         public Output<Outputs.K8sClusterAnomaliesMonitoringIssues> MonitoringIssues { get; private set; } = null!;
 
         /// <summary>
-        /// no documentation available
+        /// No documentation available
         /// </summary>
         [Output("podsSaturation")]
         public Output<Outputs.K8sClusterAnomaliesPodsSaturation> PodsSaturation { get; private set; } = null!;
@@ -112,25 +112,25 @@ namespace Pulumiverse.Dynatrace
     public sealed class K8sClusterAnomaliesArgs : global::Pulumi.ResourceArgs
     {
         /// <summary>
-        /// no documentation available
+        /// No documentation available
         /// </summary>
         [Input("cpuRequestsSaturation", required: true)]
         public Input<Inputs.K8sClusterAnomaliesCpuRequestsSaturationArgs> CpuRequestsSaturation { get; set; } = null!;
 
         /// <summary>
-        /// no documentation available
+        /// No documentation available
         /// </summary>
         [Input("memoryRequestsSaturation", required: true)]
         public Input<Inputs.K8sClusterAnomaliesMemoryRequestsSaturationArgs> MemoryRequestsSaturation { get; set; } = null!;
 
         /// <summary>
-        /// no documentation available
+        /// No documentation available
         /// </summary>
         [Input("monitoringIssues", required: true)]
         public Input<Inputs.K8sClusterAnomaliesMonitoringIssuesArgs> MonitoringIssues { get; set; } = null!;
 
         /// <summary>
-        /// no documentation available
+        /// No documentation available
         /// </summary>
         [Input("podsSaturation", required: true)]
         public Input<Inputs.K8sClusterAnomaliesPodsSaturationArgs> PodsSaturation { get; set; } = null!;
@@ -156,25 +156,25 @@ namespace Pulumiverse.Dynatrace
     public sealed class K8sClusterAnomaliesState : global::Pulumi.ResourceArgs
     {
         /// <summary>
-        /// no documentation available
+        /// No documentation available
         /// </summary>
         [Input("cpuRequestsSaturation")]
         public Input<Inputs.K8sClusterAnomaliesCpuRequestsSaturationGetArgs>? CpuRequestsSaturation { get; set; }
 
         /// <summary>
-        /// no documentation available
+        /// No documentation available
         /// </summary>
         [Input("memoryRequestsSaturation")]
         public Input<Inputs.K8sClusterAnomaliesMemoryRequestsSaturationGetArgs>? MemoryRequestsSaturation { get; set; }
 
         /// <summary>
-        /// no documentation available
+        /// No documentation available
         /// </summary>
         [Input("monitoringIssues")]
         public Input<Inputs.K8sClusterAnomaliesMonitoringIssuesGetArgs>? MonitoringIssues { get; set; }
 
         /// <summary>
-        /// no documentation available
+        /// No documentation available
         /// </summary>
         [Input("podsSaturation")]
         public Input<Inputs.K8sClusterAnomaliesPodsSaturationGetArgs>? PodsSaturation { get; set; }

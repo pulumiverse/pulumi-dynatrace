@@ -34,9 +34,9 @@ type DeclarativeGrouping struct {
 	Enabled pulumi.BoolOutput `pulumi:"enabled"`
 	// Because this resource allows for ordering you may specify the ID of the resource instance that comes before this instance regarding order. If not specified when creating the setting will be added to the end of the list. If not specified during update the order will remain untouched
 	InsertAfter pulumi.StringOutput `pulumi:"insertAfter"`
-	// Monitored technology name
+	// Note: Reported only in full-stack, infrastructure and discovery modes.
 	Name pulumi.StringOutput `pulumi:"name"`
-	// The scope of this setting (HOST, HOST_GROUP). Omit this property if you want to cover the whole environment.
+	// The scope of this setting (HOST, KUBERNETES_CLUSTER, HOST_GROUP). Omit this property if you want to cover the whole environment.
 	Scope pulumi.StringPtrOutput `pulumi:"scope"`
 }
 
@@ -82,9 +82,9 @@ type declarativeGroupingState struct {
 	Enabled *bool `pulumi:"enabled"`
 	// Because this resource allows for ordering you may specify the ID of the resource instance that comes before this instance regarding order. If not specified when creating the setting will be added to the end of the list. If not specified during update the order will remain untouched
 	InsertAfter *string `pulumi:"insertAfter"`
-	// Monitored technology name
+	// Note: Reported only in full-stack, infrastructure and discovery modes.
 	Name *string `pulumi:"name"`
-	// The scope of this setting (HOST, HOST_GROUP). Omit this property if you want to cover the whole environment.
+	// The scope of this setting (HOST, KUBERNETES_CLUSTER, HOST_GROUP). Omit this property if you want to cover the whole environment.
 	Scope *string `pulumi:"scope"`
 }
 
@@ -95,9 +95,9 @@ type DeclarativeGroupingState struct {
 	Enabled pulumi.BoolPtrInput
 	// Because this resource allows for ordering you may specify the ID of the resource instance that comes before this instance regarding order. If not specified when creating the setting will be added to the end of the list. If not specified during update the order will remain untouched
 	InsertAfter pulumi.StringPtrInput
-	// Monitored technology name
+	// Note: Reported only in full-stack, infrastructure and discovery modes.
 	Name pulumi.StringPtrInput
-	// The scope of this setting (HOST, HOST_GROUP). Omit this property if you want to cover the whole environment.
+	// The scope of this setting (HOST, KUBERNETES_CLUSTER, HOST_GROUP). Omit this property if you want to cover the whole environment.
 	Scope pulumi.StringPtrInput
 }
 
@@ -112,9 +112,9 @@ type declarativeGroupingArgs struct {
 	Enabled bool `pulumi:"enabled"`
 	// Because this resource allows for ordering you may specify the ID of the resource instance that comes before this instance regarding order. If not specified when creating the setting will be added to the end of the list. If not specified during update the order will remain untouched
 	InsertAfter *string `pulumi:"insertAfter"`
-	// Monitored technology name
+	// Note: Reported only in full-stack, infrastructure and discovery modes.
 	Name *string `pulumi:"name"`
-	// The scope of this setting (HOST, HOST_GROUP). Omit this property if you want to cover the whole environment.
+	// The scope of this setting (HOST, KUBERNETES_CLUSTER, HOST_GROUP). Omit this property if you want to cover the whole environment.
 	Scope *string `pulumi:"scope"`
 }
 
@@ -126,9 +126,9 @@ type DeclarativeGroupingArgs struct {
 	Enabled pulumi.BoolInput
 	// Because this resource allows for ordering you may specify the ID of the resource instance that comes before this instance regarding order. If not specified when creating the setting will be added to the end of the list. If not specified during update the order will remain untouched
 	InsertAfter pulumi.StringPtrInput
-	// Monitored technology name
+	// Note: Reported only in full-stack, infrastructure and discovery modes.
 	Name pulumi.StringPtrInput
-	// The scope of this setting (HOST, HOST_GROUP). Omit this property if you want to cover the whole environment.
+	// The scope of this setting (HOST, KUBERNETES_CLUSTER, HOST_GROUP). Omit this property if you want to cover the whole environment.
 	Scope pulumi.StringPtrInput
 }
 
@@ -234,12 +234,12 @@ func (o DeclarativeGroupingOutput) InsertAfter() pulumi.StringOutput {
 	return o.ApplyT(func(v *DeclarativeGrouping) pulumi.StringOutput { return v.InsertAfter }).(pulumi.StringOutput)
 }
 
-// Monitored technology name
+// Note: Reported only in full-stack, infrastructure and discovery modes.
 func (o DeclarativeGroupingOutput) Name() pulumi.StringOutput {
 	return o.ApplyT(func(v *DeclarativeGrouping) pulumi.StringOutput { return v.Name }).(pulumi.StringOutput)
 }
 
-// The scope of this setting (HOST, HOST_GROUP). Omit this property if you want to cover the whole environment.
+// The scope of this setting (HOST, KUBERNETES_CLUSTER, HOST_GROUP). Omit this property if you want to cover the whole environment.
 func (o DeclarativeGroupingOutput) Scope() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v *DeclarativeGrouping) pulumi.StringPtrOutput { return v.Scope }).(pulumi.StringPtrOutput)
 }

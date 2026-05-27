@@ -24,6 +24,24 @@ namespace Pulumiverse.Dynatrace
     /// - `terraform-provider-dynatrace -export dynatrace.RumIpDetermination` downloads all existing client IP determination configuration
     /// 
     /// The full documentation of the export feature is available [here](https://dt-url.net/h203qmc).
+    /// 
+    /// ## Resource Example Usage
+    /// 
+    /// ```csharp
+    /// using System.Collections.Generic;
+    /// using System.Linq;
+    /// using Pulumi;
+    /// using Dynatrace = Pulumiverse.Dynatrace;
+    /// 
+    /// return await Deployment.RunAsync(() =&gt; 
+    /// {
+    ///     var determination = new Dynatrace.RumIpDetermination("determination", new()
+    ///     {
+    ///         HeaderName = "X-Header-#name#",
+    ///     });
+    /// 
+    /// });
+    /// ```
     /// </summary>
     [DynatraceResourceType("dynatrace:index/rumIpDetermination:RumIpDetermination")]
     public partial class RumIpDetermination : global::Pulumi.CustomResource

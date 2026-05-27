@@ -20,7 +20,7 @@ namespace Pulumiverse.Dynatrace.Outputs
         /// </summary>
         public readonly string? Condition;
         /// <summary>
-        /// Possible Values: `BusinessEvents`, `Entities`, `Events`, `Logs`, `Metrics`, `Spans`, `Topology`
+        /// Specify the source type of the filter to identify which data source should be evaluated for ingest. Possible values: `Business Events`, `Entities`, `Events`, `Logs`, `Metrics`, `Spans`, `Topology`
         /// </summary>
         public readonly string SourceType;
 

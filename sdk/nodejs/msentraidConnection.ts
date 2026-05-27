@@ -36,6 +36,20 @@ import * as utilities from "./utilities";
  * - `terraform-provider-dynatrace -export dynatrace.MsentraidConnection` downloads all existing Microsoft Entra ID connections
  *
  * The full documentation of the export feature is available [here](https://dt-url.net/h203qmc).
+ *
+ * ## Resource Example Usage
+ *
+ * ```typescript
+ * import * as pulumi from "@pulumi/pulumi";
+ * import * as dynatrace from "@pulumiverse/dynatrace";
+ *
+ * const connection = new dynatrace.MsentraidConnection("connection", {
+ *     name: "#name#",
+ *     directoryId: "00000000-0000-0000-0000-000000000000",
+ *     applicationId: "00000000-0000-0000-0000-000000000000",
+ *     clientSecret: "#######",
+ * });
+ * ```
  */
 export class MsentraidConnection extends pulumi.CustomResource {
     /**

@@ -153,7 +153,7 @@ export class AzureConnection extends pulumi.CustomResource {
      */
     declare public readonly name: pulumi.Output<string>;
     /**
-     * Azure Authentication mechanism to be used by the connection. Possible Values: `clientSecret`, `federatedIdentityCredential`
+     * Azure Authentication mechanism to be used by the connection. Possible values: `clientSecret`, `federatedIdentityCredential`
      */
     declare public readonly type: pulumi.Output<string>;
 
@@ -206,7 +206,7 @@ export interface AzureConnectionState {
      */
     name?: pulumi.Input<string | undefined>;
     /**
-     * Azure Authentication mechanism to be used by the connection. Possible Values: `clientSecret`, `federatedIdentityCredential`
+     * Azure Authentication mechanism to be used by the connection. Possible values: `clientSecret`, `federatedIdentityCredential`
      */
     type?: pulumi.Input<string | undefined>;
 }
@@ -228,7 +228,7 @@ export interface AzureConnectionArgs {
      */
     name?: pulumi.Input<string | undefined>;
     /**
-     * Azure Authentication mechanism to be used by the connection. Possible Values: `clientSecret`, `federatedIdentityCredential`
+     * Azure Authentication mechanism to be used by the connection. Possible values: `clientSecret`, `federatedIdentityCredential`
      */
     type: pulumi.Input<string>;
 }

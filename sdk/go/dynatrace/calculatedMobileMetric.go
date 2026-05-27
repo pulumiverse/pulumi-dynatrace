@@ -25,6 +25,52 @@ import (
 // - `terraform-provider-dynatrace -export calculatedMobileMetric` downloads all existing calculated mobile/custom app metric configuration
 //
 // The full documentation of the export feature is available [here](https://dt-url.net/h203qmc).
+//
+// ## Resource Example Usage
+//
+// ```go
+// package main
+//
+// import (
+//
+//	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//	"github.com/pulumiverse/pulumi-dynatrace/sdk/go/dynatrace"
+//
+// )
+//
+//	func main() {
+//		pulumi.Run(func(ctx *pulumi.Context) error {
+//			application, err := dynatrace.GetMobileApplication(ctx, &dynatrace.LookupMobileApplicationArgs{
+//				Name: "Application",
+//			}, nil)
+//			if err != nil {
+//				return err
+//			}
+//			_, err = dynatrace.NewCalculatedMobileMetric(ctx, "metric", &dynatrace.CalculatedMobileMetricArgs{
+//				Name:          pulumi.String("#name#"),
+//				Enabled:       pulumi.Bool(true),
+//				AppIdentifier: pulumi.String(pulumi.String(application.Id)),
+//				MetricKey:     pulumi.String("calc:apps.mobile.#name#"),
+//				MetricType:    pulumi.String("USER_ACTION_DURATION"),
+//				Dimensions: dynatrace.CalculatedMobileMetricDimensionArray{
+//					&dynatrace.CalculatedMobileMetricDimensionArgs{
+//						Dimensions: dynatrace.CalculatedMobileMetricDimensionDimensionArray{
+//							&dynatrace.CalculatedMobileMetricDimensionDimensionArgs{
+//								Dimension: pulumi.String("APP_VERSION"),
+//								TopX:      pulumi.Int(10),
+//							},
+//						},
+//					},
+//				},
+//			})
+//			if err != nil {
+//				return err
+//			}
+//			return nil
+//		})
+//	}
+//
+// ```
 type CalculatedMobileMetric struct {
 	pulumi.CustomResourceState
 

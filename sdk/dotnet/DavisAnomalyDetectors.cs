@@ -16,6 +16,8 @@ namespace Pulumiverse.Dynatrace
     /// &gt; This resource requires an OAuth client or platform token configured with the permissions outlined in the [Davis Anomaly Detection](https://docs.dynatrace.com/docs/shortlink/davis-ai-anomaly-detection-app#expand--prerequisites--1) app documentation.
     /// Please set the environment variables `DT_CLIENT_ID` and `DT_CLIENT_SECRET`, or alternatively `DT_PLATFORM_TOKEN`.
     /// 
+    /// &gt; Depending on the anomaly detector configuration, additional **storage permissions** may be required for DQL-related access (e.g. `storage:bizevents:read`, `storage:logs:read`, `storage:entities:read`).
+    /// 
     /// ## Dynatrace Documentation
     /// 
     /// - Davis Anomaly Detection App - https://docs.dynatrace.com/docs/platform/davis-ai/anomaly-detection/anomaly-detection-app
@@ -32,7 +34,7 @@ namespace Pulumiverse.Dynatrace
     public partial class DavisAnomalyDetectors : global::Pulumi.CustomResource
     {
         /// <summary>
-        /// Analyzer input
+        /// Analyzer input to initialize the analyzer
         /// </summary>
         [Output("analyzer")]
         public Output<Outputs.DavisAnomalyDetectorsAnalyzer> Analyzer { get; private set; } = null!;
@@ -50,19 +52,19 @@ namespace Pulumiverse.Dynatrace
         public Output<bool> Enabled { get; private set; } = null!;
 
         /// <summary>
-        /// Event template
+        /// Defines additional fields on the davis events triggered by the anomaly detector
         /// </summary>
         [Output("eventTemplate")]
         public Output<Outputs.DavisAnomalyDetectorsEventTemplate> EventTemplate { get; private set; } = null!;
 
         /// <summary>
-        /// Execution settings
+        /// Defines the configuration parameters that influence how and under what context a query or evaluation is executed.
         /// </summary>
         [Output("executionSettings")]
         public Output<Outputs.DavisAnomalyDetectorsExecutionSettings> ExecutionSettings { get; private set; } = null!;
 
         /// <summary>
-        /// Source
+        /// The source which created the anomaly detector
         /// </summary>
         [Output("source")]
         public Output<string> Source { get; private set; } = null!;
@@ -121,7 +123,7 @@ namespace Pulumiverse.Dynatrace
     public sealed class DavisAnomalyDetectorsArgs : global::Pulumi.ResourceArgs
     {
         /// <summary>
-        /// Analyzer input
+        /// Analyzer input to initialize the analyzer
         /// </summary>
         [Input("analyzer", required: true)]
         public Input<Inputs.DavisAnomalyDetectorsAnalyzerArgs> Analyzer { get; set; } = null!;
@@ -139,19 +141,19 @@ namespace Pulumiverse.Dynatrace
         public Input<bool> Enabled { get; set; } = null!;
 
         /// <summary>
-        /// Event template
+        /// Defines additional fields on the davis events triggered by the anomaly detector
         /// </summary>
         [Input("eventTemplate", required: true)]
         public Input<Inputs.DavisAnomalyDetectorsEventTemplateArgs> EventTemplate { get; set; } = null!;
 
         /// <summary>
-        /// Execution settings
+        /// Defines the configuration parameters that influence how and under what context a query or evaluation is executed.
         /// </summary>
         [Input("executionSettings", required: true)]
         public Input<Inputs.DavisAnomalyDetectorsExecutionSettingsArgs> ExecutionSettings { get; set; } = null!;
 
         /// <summary>
-        /// Source
+        /// The source which created the anomaly detector
         /// </summary>
         [Input("source", required: true)]
         public Input<string> Source { get; set; } = null!;
@@ -171,7 +173,7 @@ namespace Pulumiverse.Dynatrace
     public sealed class DavisAnomalyDetectorsState : global::Pulumi.ResourceArgs
     {
         /// <summary>
-        /// Analyzer input
+        /// Analyzer input to initialize the analyzer
         /// </summary>
         [Input("analyzer")]
         public Input<Inputs.DavisAnomalyDetectorsAnalyzerGetArgs>? Analyzer { get; set; }
@@ -189,19 +191,19 @@ namespace Pulumiverse.Dynatrace
         public Input<bool>? Enabled { get; set; }
 
         /// <summary>
-        /// Event template
+        /// Defines additional fields on the davis events triggered by the anomaly detector
         /// </summary>
         [Input("eventTemplate")]
         public Input<Inputs.DavisAnomalyDetectorsEventTemplateGetArgs>? EventTemplate { get; set; }
 
         /// <summary>
-        /// Execution settings
+        /// Defines the configuration parameters that influence how and under what context a query or evaluation is executed.
         /// </summary>
         [Input("executionSettings")]
         public Input<Inputs.DavisAnomalyDetectorsExecutionSettingsGetArgs>? ExecutionSettings { get; set; }
 
         /// <summary>
-        /// Source
+        /// The source which created the anomaly detector
         /// </summary>
         [Input("source")]
         public Input<string>? Source { get; set; }

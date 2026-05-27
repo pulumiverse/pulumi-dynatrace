@@ -11,7 +11,7 @@ using Pulumi;
 namespace Pulumiverse.Dynatrace
 {
     /// <summary>
-    /// &gt; This resource requires the API token scopes **Read settings** (`settings.read`) and **Write settings** (`settings.write`)
+    /// &gt; This resource requires the API token scopes **Read settings** (`settings.read`), **Write settings** (`settings.write`) and **Read entities** (`entities.read`).
     /// 
     /// ## Dynatrace Documentation
     /// 

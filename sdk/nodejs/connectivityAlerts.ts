@@ -25,9 +25,11 @@ import * as utilities from "./utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as dynatrace from "@pulumiverse/dynatrace";
  *
- * const PROCESS_GROUP_1234567890000000 = new dynatrace.ConnectivityAlerts("PROCESS_GROUP-1234567890000000", {
+ * const config = new pulumi.Config();
+ * const PROCESS_GROUP_ID = config.require("PROCESS_GROUP_ID");
+ * const alert = new dynatrace.ConnectivityAlerts("alert", {
  *     connectivityAlerts: false,
- *     processGroupId: "PROCESS_GROUP-1234567890000000",
+ *     processGroupId: PROCESS_GROUP_ID,
  * });
  * ```
  */

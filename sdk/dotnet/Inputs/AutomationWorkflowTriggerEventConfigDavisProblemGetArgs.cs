@@ -13,6 +13,12 @@ namespace Pulumiverse.Dynatrace.Inputs
 
     public sealed class AutomationWorkflowTriggerEventConfigDavisProblemGetArgs : global::Pulumi.ResourceArgs
     {
+        /// <summary>
+        /// If set to `True`, the workflow will only be triggered after the initial root cause analysis run is completed
+        /// </summary>
+        [Input("analysisReady")]
+        public Input<bool>? AnalysisReady { get; set; }
+
         [Input("categories", required: true)]
         private InputList<Inputs.AutomationWorkflowTriggerEventConfigDavisProblemCategoryGetArgs>? _categories;
         public InputList<Inputs.AutomationWorkflowTriggerEventConfigDavisProblemCategoryGetArgs> Categories

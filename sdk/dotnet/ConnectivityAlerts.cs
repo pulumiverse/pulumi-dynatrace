@@ -35,10 +35,12 @@ namespace Pulumiverse.Dynatrace
     /// 
     /// return await Deployment.RunAsync(() =&gt; 
     /// {
-    ///     var PROCESS_GROUP_1234567890000000 = new Dynatrace.ConnectivityAlerts("PROCESS_GROUP-1234567890000000", new()
+    ///     var config = new Config();
+    ///     var PROCESS_GROUP_ID = config.Require("PROCESS_GROUP_ID");
+    ///     var alert = new Dynatrace.ConnectivityAlerts("alert", new()
     ///     {
     ///         EnableConnectivityAlerts = false,
-    ///         ProcessGroupId = "PROCESS_GROUP-1234567890000000",
+    ///         ProcessGroupId = PROCESS_GROUP_ID,
     ///     });
     /// 
     /// });

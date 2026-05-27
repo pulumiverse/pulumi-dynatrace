@@ -42,6 +42,29 @@ namespace Pulumiverse.Dynatrace
     /// - `terraform-provider-dynatrace -export dynatrace.Ms365EmailConnection` downloads all existing Microsoft 365 email connections
     /// 
     /// The full documentation of the export feature is available [here](https://dt-url.net/h203qmc).
+    /// 
+    /// ## Resource Example Usage
+    /// 
+    /// ```csharp
+    /// using System.Collections.Generic;
+    /// using System.Linq;
+    /// using Pulumi;
+    /// using Dynatrace = Pulumiverse.Dynatrace;
+    /// 
+    /// return await Deployment.RunAsync(() =&gt; 
+    /// {
+    ///     var connection = new Dynatrace.Ms365EmailConnection("connection", new()
+    ///     {
+    ///         Name = "#name#",
+    ///         Type = "client_secret",
+    ///         TenantId = "00000000-0000-0000-0000-000000000000",
+    ///         ClientId = "00000000-0000-0000-0000-000000000000",
+    ///         ClientSecret = "######",
+    ///         FromAddress = "random.email@terraform.com",
+    ///     });
+    /// 
+    /// });
+    /// ```
     /// </summary>
     [DynatraceResourceType("dynatrace:index/ms365EmailConnection:Ms365EmailConnection")]
     public partial class Ms365EmailConnection : global::Pulumi.CustomResource
@@ -77,7 +100,7 @@ namespace Pulumiverse.Dynatrace
         public Output<string> TenantId { get; private set; } = null!;
 
         /// <summary>
-        /// Possible Values: `ClientSecret`
+        /// Type of authentication method that should be used. Possible values: `ClientSecret`
         /// </summary>
         [Output("type")]
         public Output<string> Type { get; private set; } = null!;
@@ -174,7 +197,7 @@ namespace Pulumiverse.Dynatrace
         public Input<string> TenantId { get; set; } = null!;
 
         /// <summary>
-        /// Possible Values: `ClientSecret`
+        /// Type of authentication method that should be used. Possible values: `ClientSecret`
         /// </summary>
         [Input("type", required: true)]
         public Input<string> Type { get; set; } = null!;
@@ -228,7 +251,7 @@ namespace Pulumiverse.Dynatrace
         public Input<string>? TenantId { get; set; }
 
         /// <summary>
-        /// Possible Values: `ClientSecret`
+        /// Type of authentication method that should be used. Possible values: `ClientSecret`
         /// </summary>
         [Input("type")]
         public Input<string>? Type { get; set; }

@@ -15,6 +15,14 @@ namespace Pulumiverse.Dynatrace.Outputs
     public sealed class OpenpipelineV2LogsPipelinesDataExtractionProcessorsProcessorHistogramMetricDimensionsDimension
     {
         /// <summary>
+        /// Destination field name
+        /// </summary>
+        public readonly string? ConstantFieldName;
+        /// <summary>
+        /// Constant value to be assigned to field
+        /// </summary>
+        public readonly string? ConstantValue;
+        /// <summary>
         /// Default value
         /// </summary>
         public readonly string? DefaultValue;
@@ -23,20 +31,33 @@ namespace Pulumiverse.Dynatrace.Outputs
         /// </summary>
         public readonly string? DestinationFieldName;
         /// <summary>
+        /// Field value extraction type. Possible values: `Constant`, `Field`
+        /// </summary>
+        public readonly string? ExtractionType;
+        /// <summary>
         /// Source field name
         /// </summary>
-        public readonly string SourceFieldName;
+        public readonly string? SourceFieldName;
 
         [OutputConstructor]
         private OpenpipelineV2LogsPipelinesDataExtractionProcessorsProcessorHistogramMetricDimensionsDimension(
+            string? constantFieldName,
+
+            string? constantValue,
+
             string? defaultValue,
 
             string? destinationFieldName,
 
-            string sourceFieldName)
+            string? extractionType,
+
+            string? sourceFieldName)
         {
+            ConstantFieldName = constantFieldName;
+            ConstantValue = constantValue;
             DefaultValue = defaultValue;
             DestinationFieldName = destinationFieldName;
+            ExtractionType = extractionType;
             SourceFieldName = sourceFieldName;
         }
     }

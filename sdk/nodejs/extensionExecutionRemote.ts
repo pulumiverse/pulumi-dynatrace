@@ -48,7 +48,7 @@ export class ExtensionExecutionRemote extends pulumi.CustomResource {
     }
 
     /**
-     * Select performance profile for Extension Execution Controller [Documentation](https://www.dynatrace.com/support/help/shortlink/extensions-concepts#resource-consumption)
+     * Select performance profile for Extension Execution Controller [Documentation](https://www.dynatrace.com/support/help/shortlink/extensions-concepts#resource-consumption). Possible values: `DEDICATED`, `DEFAULT`, `HIGH`
      */
     declare public readonly performanceProfile: pulumi.Output<string>;
     /**
@@ -92,7 +92,7 @@ export class ExtensionExecutionRemote extends pulumi.CustomResource {
  */
 export interface ExtensionExecutionRemoteState {
     /**
-     * Select performance profile for Extension Execution Controller [Documentation](https://www.dynatrace.com/support/help/shortlink/extensions-concepts#resource-consumption)
+     * Select performance profile for Extension Execution Controller [Documentation](https://www.dynatrace.com/support/help/shortlink/extensions-concepts#resource-consumption). Possible values: `DEDICATED`, `DEFAULT`, `HIGH`
      */
     performanceProfile?: pulumi.Input<string | undefined>;
     /**
@@ -106,7 +106,7 @@ export interface ExtensionExecutionRemoteState {
  */
 export interface ExtensionExecutionRemoteArgs {
     /**
-     * Select performance profile for Extension Execution Controller [Documentation](https://www.dynatrace.com/support/help/shortlink/extensions-concepts#resource-consumption)
+     * Select performance profile for Extension Execution Controller [Documentation](https://www.dynatrace.com/support/help/shortlink/extensions-concepts#resource-consumption). Possible values: `DEDICATED`, `DEFAULT`, `HIGH`
      */
     performanceProfile: pulumi.Input<string>;
     /**

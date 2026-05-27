@@ -43,6 +43,36 @@ import (
 // - `terraform-provider-dynatrace -export EventDrivenAnsibleConnections` downloads all existing Red Hat event-driven Ansible connections
 //
 // The full documentation of the export feature is available [here](https://dt-url.net/h203qmc).
+//
+// ## Resource Example Usage
+//
+// ```go
+// package main
+//
+// import (
+//
+//	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//	"github.com/pulumiverse/pulumi-dynatrace/sdk/go/dynatrace"
+//
+// )
+//
+//	func main() {
+//		pulumi.Run(func(ctx *pulumi.Context) error {
+//			_, err := dynatrace.NewEventDrivenAnsibleConnections(ctx, "connection", &dynatrace.EventDrivenAnsibleConnectionsArgs{
+//				EventStreamEnabled: pulumi.Bool(true),
+//				Name:               pulumi.String("#name#"),
+//				Url:                pulumi.String("https://www.example.com"),
+//				Type:               pulumi.String("api-token"),
+//				Token:              pulumi.String("######"),
+//			})
+//			if err != nil {
+//				return err
+//			}
+//			return nil
+//		})
+//	}
+//
+// ```
 type EventDrivenAnsibleConnections struct {
 	pulumi.CustomResourceState
 

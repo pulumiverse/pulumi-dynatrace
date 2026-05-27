@@ -36,6 +36,20 @@ import * as utilities from "./utilities";
  * - `terraform-provider-dynatrace -export dynatrace.AutomationControllerConnections` downloads all existing Red Hat Ansible automation controller connections
  *
  * The full documentation of the export feature is available [here](https://dt-url.net/h203qmc).
+ *
+ * ## Resource Example Usage
+ *
+ * ```typescript
+ * import * as pulumi from "@pulumi/pulumi";
+ * import * as dynatrace from "@pulumiverse/dynatrace";
+ *
+ * const connection = new dynatrace.AutomationControllerConnections("connection", {
+ *     name: "#name#",
+ *     url: "https://www.example.com",
+ *     type: "api-token",
+ *     token: "#######",
+ * });
+ * ```
  */
 export class AutomationControllerConnections extends pulumi.CustomResource {
     /**

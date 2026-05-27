@@ -29,7 +29,7 @@ import (
 //
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
-//			example, err := dynatrace.LookupMobileApplication(ctx, &dynatrace.LookupMobileApplicationArgs{
+//			example, err := dynatrace.GetMobileApplication(ctx, &dynatrace.LookupMobileApplicationArgs{
 //				Name: "Terraform",
 //			}, nil)
 //			if err != nil {

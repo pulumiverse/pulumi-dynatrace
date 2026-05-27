@@ -20,6 +20,238 @@ import * as utilities from "./utilities";
  * - `terraform-provider-dynatrace -export dynatrace.BrowserMonitor` downloads all existing browser monitor configuration
  *
  * The full documentation of the export feature is available [here](https://dt-url.net/h203qmc).
+ *
+ * ## Resource Example Usage
+ *
+ * ```typescript
+ * import * as pulumi from "@pulumi/pulumi";
+ * import * as dynatrace from "@pulumiverse/dynatrace";
+ * import * as time from "@pulumiverse/time";
+ *
+ * const location = new dynatrace.SyntheticLocation("location", {
+ *     name: "#name#",
+ *     city: "San Francisco de Asis",
+ *     countryCode: "VE",
+ *     regionCode: "04",
+ *     deploymentType: "STANDARD",
+ *     latitude: 10.0756,
+ *     locationNodeOutageDelayInMinutes: 3,
+ *     longitude: -67.5442,
+ * });
+ * const application = new dynatrace.WebApplication("application", {
+ *     name: "#name#",
+ *     type: "AUTO_INJECTED",
+ *     costControlUserSessionPercentage: 100,
+ *     loadActionKeyPerformanceMetric: "VISUALLY_COMPLETE",
+ *     realUserMonitoringEnabled: true,
+ *     xhrActionKeyPerformanceMetric: "VISUALLY_COMPLETE",
+ *     customActionApdexSettings: {
+ *         frustratingFallbackThreshold: 12000,
+ *         frustratingThreshold: 12000,
+ *         toleratedFallbackThreshold: 3000,
+ *         toleratedThreshold: 3000,
+ *     },
+ *     loadActionApdexSettings: {
+ *         frustratingFallbackThreshold: 12000,
+ *         frustratingThreshold: 12000,
+ *         toleratedFallbackThreshold: 3000,
+ *         toleratedThreshold: 3000,
+ *     },
+ *     monitoringSettings: {
+ *         addCrossOriginAnonymousAttribute: true,
+ *         cacheControlHeaderOptimizations: true,
+ *         injectionMode: "JAVASCRIPT_TAG",
+ *         scriptTagCacheDurationInHours: 1,
+ *         advancedJavascriptTagSettings: {
+ *             maxActionNameLength: 100,
+ *             maxErrorsToCapture: 10,
+ *             additionalEventHandlers: {
+ *                 maxDomNodes: 5000,
+ *             },
+ *         },
+ *         contentCapture: {
+ *             resourceTimingSettings: {
+ *                 instrumentationDelay: 53,
+ *                 nonW3cResourceTimings: true,
+ *                 w3cResourceTimings: true,
+ *             },
+ *             timeoutSettings: {
+ *                 temporaryActionLimit: 3,
+ *                 temporaryActionTotalTimeout: 100,
+ *                 timedActionSupport: true,
+ *             },
+ *         },
+ *     },
+ *     userActionNamingSettings: {},
+ *     waterfallSettings: {
+ *         resourceBrowserCachingThreshold: 50,
+ *         resourcesThreshold: 100000,
+ *         slowCndResourcesThreshold: 200000,
+ *         slowFirstPartyResourcesThreshold: 200000,
+ *         slowThirdPartyResourcesThreshold: 200000,
+ *         speedIndexVisuallyCompleteRatioThreshold: 50,
+ *         uncompressedResourcesThreshold: 860,
+ *     },
+ *     xhrActionApdexSettings: {
+ *         frustratingFallbackThreshold: 12000,
+ *         frustratingThreshold: 12000,
+ *         toleratedFallbackThreshold: 3000,
+ *         toleratedThreshold: 3000,
+ *     },
+ * });
+ * const credentialsVault = new dynatrace.Credentials("credentials_vault", {
+ *     name: "#name#",
+ *     description: "my credentials vault",
+ *     scopes: ["SYNTHETIC"],
+ *     username: "username",
+ *     password: "password",
+ * });
+ * const wait5Seconds = new time.Sleep("wait_5_seconds", {createDuration: "5s"}, {
+ *     dependsOn: [
+ *         location,
+ *         application,
+ *         credentialsVault,
+ *     ],
+ * });
+ * const monitor = new dynatrace.BrowserMonitor("monitor", {
+ *     name: "#name#",
+ *     frequency: 15,
+ *     locations: [location.id],
+ *     manuallyAssignedApps: [application.id],
+ *     anomalyDetection: {
+ *         loadingTimeThresholds: [{
+ *             enabled: true,
+ *         }],
+ *         outageHandlings: [{
+ *             globalOutage: true,
+ *             retryOnError: true,
+ *             globalOutagePolicies: [{
+ *                 consecutiveRuns: 1,
+ *             }],
+ *         }],
+ *     },
+ *     keyPerformanceMetrics: {
+ *         loadActionKpm: "VISUALLY_COMPLETE",
+ *         xhrActionKpm: "VISUALLY_COMPLETE",
+ *     },
+ *     script: {
+ *         type: "clickpath",
+ *         configuration: {
+ *             bypassCsp: true,
+ *             userAgent: "Mozilla",
+ *             bandwidth: {
+ *                 networkType: "GPRS",
+ *             },
+ *             device: {
+ *                 name: "Apple iPhone 8",
+ *                 orientation: "landscape",
+ *             },
+ *             headers: {
+ *                 headers: [{
+ *                     name: "kjh",
+ *                     value: "kjh",
+ *                 }],
+ *             },
+ *             ignoredErrorCodes: {
+ *                 statusCodes: "400",
+ *             },
+ *             javascriptSetttings: {
+ *                 timeoutSettings: {
+ *                     actionLimit: 3,
+ *                     totalTimeout: 100,
+ *                 },
+ *                 visuallyCompleteOptions: {
+ *                     imageSizeThreshold: 0,
+ *                     inactivityTimeout: 0,
+ *                     mutationTimeout: 0,
+ *                 },
+ *             },
+ *         },
+ *         events: {
+ *             events: [
+ *                 {
+ *                     description: "Loading of \"https://example.com\"",
+ *                     navigate: {
+ *                         url: "https://example.com",
+ *                         authentication: {
+ *                             type: "http_authentication",
+ *                             creds: credentialsVault.id,
+ *                         },
+ *                         wait: {
+ *                             waitFor: "page_complete",
+ *                         },
+ *                     },
+ *                 },
+ *                 {
+ *                     description: "jhjhjh",
+ *                     navigate: {
+ *                         url: "https://example.com",
+ *                         authentication: {
+ *                             type: "http_authentication",
+ *                             creds: credentialsVault.id,
+ *                         },
+ *                         validate: {
+ *                             validations: [{
+ *                                 type: "text_match",
+ *                                 match: "kkl",
+ *                                 regex: true,
+ *                                 target: {
+ *                                     window: "k",
+ *                                 },
+ *                             }],
+ *                         },
+ *                         wait: {
+ *                             timeout: 60000,
+ *                             waitFor: "validation",
+ *                             validation: {
+ *                                 type: "element_match",
+ *                                 match: "kjkj",
+ *                                 target: {
+ *                                     locators: [{
+ *                                         locators: [{
+ *                                             type: "css",
+ *                                             value: "jjj",
+ *                                         }],
+ *                                     }],
+ *                                 },
+ *                             },
+ *                         },
+ *                     },
+ *                 },
+ *                 {
+ *                     description: "fvf",
+ *                     click: {
+ *                         button: 0,
+ *                         validate: {
+ *                             validations: [{
+ *                                 type: "text_match",
+ *                             }],
+ *                         },
+ *                         wait: {
+ *                             waitFor: "page_complete",
+ *                         },
+ *                     },
+ *                 },
+ *                 {
+ *                     description: "jsfoo",
+ *                     javascript: {
+ *                         code: `let x = 3;
+ * for (var i = 0; i < x; x++) {
+ *     console.log(\\"asdf\\");
+ * }
+ * `,
+ *                         wait: {
+ *                             waitFor: "page_complete",
+ *                         },
+ *                     },
+ *                 },
+ *             ],
+ *         },
+ *     },
+ * }, {
+ *     dependsOn: [wait5Seconds],
+ * });
+ * ```
  */
 export class BrowserMonitor extends pulumi.CustomResource {
     /**

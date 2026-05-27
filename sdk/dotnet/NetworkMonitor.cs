@@ -33,6 +33,11 @@ namespace Pulumiverse.Dynatrace
     /// 
     /// return await Deployment.RunAsync(() =&gt; 
     /// {
+    ///     var location = Dynatrace.GetSyntheticLocation.Invoke(new()
+    ///     {
+    ///         Name = "Location",
+    ///     });
+    /// 
     ///     var dNSTest = new Dynatrace.NetworkMonitor("DNS_Test", new()
     ///     {
     ///         Name = "DNS Test",
@@ -42,7 +47,7 @@ namespace Pulumiverse.Dynatrace
     ///         FrequencyMin = 15,
     ///         Locations = new[]
     ///         {
-    ///             "SYNTHETIC_LOCATION-39F97465BE7BF644",
+    ///             location.Apply(getSyntheticLocationResult =&gt; getSyntheticLocationResult.Id),
     ///         },
     ///         OutageHandling = new Dynatrace.Inputs.NetworkMonitorOutageHandlingArgs
     ///         {

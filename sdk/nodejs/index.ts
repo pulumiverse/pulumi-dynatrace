@@ -770,6 +770,16 @@ export const getHost: typeof import("./getHost").getHost = null as any;
 export const getHostOutput: typeof import("./getHost").getHostOutput = null as any;
 utilities.lazyLoad(exports, ["getHost","getHostOutput"], () => require("./getHost"));
 
+export { GetHubExtensionV2ActiveVersionArgs, GetHubExtensionV2ActiveVersionResult, GetHubExtensionV2ActiveVersionOutputArgs } from "./getHubExtensionV2ActiveVersion";
+export const getHubExtensionV2ActiveVersion: typeof import("./getHubExtensionV2ActiveVersion").getHubExtensionV2ActiveVersion = null as any;
+export const getHubExtensionV2ActiveVersionOutput: typeof import("./getHubExtensionV2ActiveVersion").getHubExtensionV2ActiveVersionOutput = null as any;
+utilities.lazyLoad(exports, ["getHubExtensionV2ActiveVersion","getHubExtensionV2ActiveVersionOutput"], () => require("./getHubExtensionV2ActiveVersion"));
+
+export { GetHubExtensionV2LatestVersionArgs, GetHubExtensionV2LatestVersionResult, GetHubExtensionV2LatestVersionOutputArgs } from "./getHubExtensionV2LatestVersion";
+export const getHubExtensionV2LatestVersion: typeof import("./getHubExtensionV2LatestVersion").getHubExtensionV2LatestVersion = null as any;
+export const getHubExtensionV2LatestVersionOutput: typeof import("./getHubExtensionV2LatestVersion").getHubExtensionV2LatestVersionOutput = null as any;
+utilities.lazyLoad(exports, ["getHubExtensionV2LatestVersion","getHubExtensionV2LatestVersionOutput"], () => require("./getHubExtensionV2LatestVersion"));
+
 export { GetHubItemsArgs, GetHubItemsResult, GetHubItemsOutputArgs } from "./getHubItems";
 export const getHubItems: typeof import("./getHubItems").getHubItems = null as any;
 export const getHubItemsOutput: typeof import("./getHubItems").getHubItemsOutput = null as any;
@@ -1019,6 +1029,11 @@ export { HubExtensionConfigArgs, HubExtensionConfigState } from "./hubExtensionC
 export type HubExtensionConfig = import("./hubExtensionConfig").HubExtensionConfig;
 export const HubExtensionConfig: typeof import("./hubExtensionConfig").HubExtensionConfig = null as any;
 utilities.lazyLoad(exports, ["HubExtensionConfig"], () => require("./hubExtensionConfig"));
+
+export { HubExtensionV2ConfigArgs, HubExtensionV2ConfigState } from "./hubExtensionV2Config";
+export type HubExtensionV2Config = import("./hubExtensionV2Config").HubExtensionV2Config;
+export const HubExtensionV2Config: typeof import("./hubExtensionV2Config").HubExtensionV2Config = null as any;
+utilities.lazyLoad(exports, ["HubExtensionV2Config"], () => require("./hubExtensionV2Config"));
 
 export { HubPermissionsArgs, HubPermissionsState } from "./hubPermissions";
 export type HubPermissions = import("./hubPermissions").HubPermissions;
@@ -1580,6 +1595,11 @@ export type OpenpipelineV2BizeventsIngestsources = import("./openpipelineV2Bizev
 export const OpenpipelineV2BizeventsIngestsources: typeof import("./openpipelineV2BizeventsIngestsources").OpenpipelineV2BizeventsIngestsources = null as any;
 utilities.lazyLoad(exports, ["OpenpipelineV2BizeventsIngestsources"], () => require("./openpipelineV2BizeventsIngestsources"));
 
+export { OpenpipelineV2BizeventsPipelinegroupsArgs, OpenpipelineV2BizeventsPipelinegroupsState } from "./openpipelineV2BizeventsPipelinegroups";
+export type OpenpipelineV2BizeventsPipelinegroups = import("./openpipelineV2BizeventsPipelinegroups").OpenpipelineV2BizeventsPipelinegroups;
+export const OpenpipelineV2BizeventsPipelinegroups: typeof import("./openpipelineV2BizeventsPipelinegroups").OpenpipelineV2BizeventsPipelinegroups = null as any;
+utilities.lazyLoad(exports, ["OpenpipelineV2BizeventsPipelinegroups"], () => require("./openpipelineV2BizeventsPipelinegroups"));
+
 export { OpenpipelineV2BizeventsPipelinesArgs, OpenpipelineV2BizeventsPipelinesState } from "./openpipelineV2BizeventsPipelines";
 export type OpenpipelineV2BizeventsPipelines = import("./openpipelineV2BizeventsPipelines").OpenpipelineV2BizeventsPipelines;
 export const OpenpipelineV2BizeventsPipelines: typeof import("./openpipelineV2BizeventsPipelines").OpenpipelineV2BizeventsPipelines = null as any;
@@ -1594,6 +1614,11 @@ export { OpenpipelineV2DavisEventsIngestsourcesArgs, OpenpipelineV2DavisEventsIn
 export type OpenpipelineV2DavisEventsIngestsources = import("./openpipelineV2DavisEventsIngestsources").OpenpipelineV2DavisEventsIngestsources;
 export const OpenpipelineV2DavisEventsIngestsources: typeof import("./openpipelineV2DavisEventsIngestsources").OpenpipelineV2DavisEventsIngestsources = null as any;
 utilities.lazyLoad(exports, ["OpenpipelineV2DavisEventsIngestsources"], () => require("./openpipelineV2DavisEventsIngestsources"));
+
+export { OpenpipelineV2DavisEventsPipelinegroupsArgs, OpenpipelineV2DavisEventsPipelinegroupsState } from "./openpipelineV2DavisEventsPipelinegroups";
+export type OpenpipelineV2DavisEventsPipelinegroups = import("./openpipelineV2DavisEventsPipelinegroups").OpenpipelineV2DavisEventsPipelinegroups;
+export const OpenpipelineV2DavisEventsPipelinegroups: typeof import("./openpipelineV2DavisEventsPipelinegroups").OpenpipelineV2DavisEventsPipelinegroups = null as any;
+utilities.lazyLoad(exports, ["OpenpipelineV2DavisEventsPipelinegroups"], () => require("./openpipelineV2DavisEventsPipelinegroups"));
 
 export { OpenpipelineV2DavisEventsPipelinesArgs, OpenpipelineV2DavisEventsPipelinesState } from "./openpipelineV2DavisEventsPipelines";
 export type OpenpipelineV2DavisEventsPipelines = import("./openpipelineV2DavisEventsPipelines").OpenpipelineV2DavisEventsPipelines;
@@ -1610,6 +1635,11 @@ export type OpenpipelineV2DavisProblemsIngestsources = import("./openpipelineV2D
 export const OpenpipelineV2DavisProblemsIngestsources: typeof import("./openpipelineV2DavisProblemsIngestsources").OpenpipelineV2DavisProblemsIngestsources = null as any;
 utilities.lazyLoad(exports, ["OpenpipelineV2DavisProblemsIngestsources"], () => require("./openpipelineV2DavisProblemsIngestsources"));
 
+export { OpenpipelineV2DavisProblemsPipelinegroupsArgs, OpenpipelineV2DavisProblemsPipelinegroupsState } from "./openpipelineV2DavisProblemsPipelinegroups";
+export type OpenpipelineV2DavisProblemsPipelinegroups = import("./openpipelineV2DavisProblemsPipelinegroups").OpenpipelineV2DavisProblemsPipelinegroups;
+export const OpenpipelineV2DavisProblemsPipelinegroups: typeof import("./openpipelineV2DavisProblemsPipelinegroups").OpenpipelineV2DavisProblemsPipelinegroups = null as any;
+utilities.lazyLoad(exports, ["OpenpipelineV2DavisProblemsPipelinegroups"], () => require("./openpipelineV2DavisProblemsPipelinegroups"));
+
 export { OpenpipelineV2DavisProblemsPipelinesArgs, OpenpipelineV2DavisProblemsPipelinesState } from "./openpipelineV2DavisProblemsPipelines";
 export type OpenpipelineV2DavisProblemsPipelines = import("./openpipelineV2DavisProblemsPipelines").OpenpipelineV2DavisProblemsPipelines;
 export const OpenpipelineV2DavisProblemsPipelines: typeof import("./openpipelineV2DavisProblemsPipelines").OpenpipelineV2DavisProblemsPipelines = null as any;
@@ -1624,6 +1654,11 @@ export { OpenpipelineV2EventsIngestsourcesArgs, OpenpipelineV2EventsIngestsource
 export type OpenpipelineV2EventsIngestsources = import("./openpipelineV2EventsIngestsources").OpenpipelineV2EventsIngestsources;
 export const OpenpipelineV2EventsIngestsources: typeof import("./openpipelineV2EventsIngestsources").OpenpipelineV2EventsIngestsources = null as any;
 utilities.lazyLoad(exports, ["OpenpipelineV2EventsIngestsources"], () => require("./openpipelineV2EventsIngestsources"));
+
+export { OpenpipelineV2EventsPipelinegroupsArgs, OpenpipelineV2EventsPipelinegroupsState } from "./openpipelineV2EventsPipelinegroups";
+export type OpenpipelineV2EventsPipelinegroups = import("./openpipelineV2EventsPipelinegroups").OpenpipelineV2EventsPipelinegroups;
+export const OpenpipelineV2EventsPipelinegroups: typeof import("./openpipelineV2EventsPipelinegroups").OpenpipelineV2EventsPipelinegroups = null as any;
+utilities.lazyLoad(exports, ["OpenpipelineV2EventsPipelinegroups"], () => require("./openpipelineV2EventsPipelinegroups"));
 
 export { OpenpipelineV2EventsPipelinesArgs, OpenpipelineV2EventsPipelinesState } from "./openpipelineV2EventsPipelines";
 export type OpenpipelineV2EventsPipelines = import("./openpipelineV2EventsPipelines").OpenpipelineV2EventsPipelines;
@@ -1640,6 +1675,11 @@ export type OpenpipelineV2EventsSdlcIngestsources = import("./openpipelineV2Even
 export const OpenpipelineV2EventsSdlcIngestsources: typeof import("./openpipelineV2EventsSdlcIngestsources").OpenpipelineV2EventsSdlcIngestsources = null as any;
 utilities.lazyLoad(exports, ["OpenpipelineV2EventsSdlcIngestsources"], () => require("./openpipelineV2EventsSdlcIngestsources"));
 
+export { OpenpipelineV2EventsSdlcPipelinegroupsArgs, OpenpipelineV2EventsSdlcPipelinegroupsState } from "./openpipelineV2EventsSdlcPipelinegroups";
+export type OpenpipelineV2EventsSdlcPipelinegroups = import("./openpipelineV2EventsSdlcPipelinegroups").OpenpipelineV2EventsSdlcPipelinegroups;
+export const OpenpipelineV2EventsSdlcPipelinegroups: typeof import("./openpipelineV2EventsSdlcPipelinegroups").OpenpipelineV2EventsSdlcPipelinegroups = null as any;
+utilities.lazyLoad(exports, ["OpenpipelineV2EventsSdlcPipelinegroups"], () => require("./openpipelineV2EventsSdlcPipelinegroups"));
+
 export { OpenpipelineV2EventsSdlcPipelinesArgs, OpenpipelineV2EventsSdlcPipelinesState } from "./openpipelineV2EventsSdlcPipelines";
 export type OpenpipelineV2EventsSdlcPipelines = import("./openpipelineV2EventsSdlcPipelines").OpenpipelineV2EventsSdlcPipelines;
 export const OpenpipelineV2EventsSdlcPipelines: typeof import("./openpipelineV2EventsSdlcPipelines").OpenpipelineV2EventsSdlcPipelines = null as any;
@@ -1654,6 +1694,11 @@ export { OpenpipelineV2EventsSecurityIngestsourcesArgs, OpenpipelineV2EventsSecu
 export type OpenpipelineV2EventsSecurityIngestsources = import("./openpipelineV2EventsSecurityIngestsources").OpenpipelineV2EventsSecurityIngestsources;
 export const OpenpipelineV2EventsSecurityIngestsources: typeof import("./openpipelineV2EventsSecurityIngestsources").OpenpipelineV2EventsSecurityIngestsources = null as any;
 utilities.lazyLoad(exports, ["OpenpipelineV2EventsSecurityIngestsources"], () => require("./openpipelineV2EventsSecurityIngestsources"));
+
+export { OpenpipelineV2EventsSecurityPipelinegroupsArgs, OpenpipelineV2EventsSecurityPipelinegroupsState } from "./openpipelineV2EventsSecurityPipelinegroups";
+export type OpenpipelineV2EventsSecurityPipelinegroups = import("./openpipelineV2EventsSecurityPipelinegroups").OpenpipelineV2EventsSecurityPipelinegroups;
+export const OpenpipelineV2EventsSecurityPipelinegroups: typeof import("./openpipelineV2EventsSecurityPipelinegroups").OpenpipelineV2EventsSecurityPipelinegroups = null as any;
+utilities.lazyLoad(exports, ["OpenpipelineV2EventsSecurityPipelinegroups"], () => require("./openpipelineV2EventsSecurityPipelinegroups"));
 
 export { OpenpipelineV2EventsSecurityPipelinesArgs, OpenpipelineV2EventsSecurityPipelinesState } from "./openpipelineV2EventsSecurityPipelines";
 export type OpenpipelineV2EventsSecurityPipelines = import("./openpipelineV2EventsSecurityPipelines").OpenpipelineV2EventsSecurityPipelines;
@@ -1670,6 +1715,11 @@ export type OpenpipelineV2LogsIngestsources = import("./openpipelineV2LogsIngest
 export const OpenpipelineV2LogsIngestsources: typeof import("./openpipelineV2LogsIngestsources").OpenpipelineV2LogsIngestsources = null as any;
 utilities.lazyLoad(exports, ["OpenpipelineV2LogsIngestsources"], () => require("./openpipelineV2LogsIngestsources"));
 
+export { OpenpipelineV2LogsPipelinegroupsArgs, OpenpipelineV2LogsPipelinegroupsState } from "./openpipelineV2LogsPipelinegroups";
+export type OpenpipelineV2LogsPipelinegroups = import("./openpipelineV2LogsPipelinegroups").OpenpipelineV2LogsPipelinegroups;
+export const OpenpipelineV2LogsPipelinegroups: typeof import("./openpipelineV2LogsPipelinegroups").OpenpipelineV2LogsPipelinegroups = null as any;
+utilities.lazyLoad(exports, ["OpenpipelineV2LogsPipelinegroups"], () => require("./openpipelineV2LogsPipelinegroups"));
+
 export { OpenpipelineV2LogsPipelinesArgs, OpenpipelineV2LogsPipelinesState } from "./openpipelineV2LogsPipelines";
 export type OpenpipelineV2LogsPipelines = import("./openpipelineV2LogsPipelines").OpenpipelineV2LogsPipelines;
 export const OpenpipelineV2LogsPipelines: typeof import("./openpipelineV2LogsPipelines").OpenpipelineV2LogsPipelines = null as any;
@@ -1684,6 +1734,11 @@ export { OpenpipelineV2MetricsIngestsourcesArgs, OpenpipelineV2MetricsIngestsour
 export type OpenpipelineV2MetricsIngestsources = import("./openpipelineV2MetricsIngestsources").OpenpipelineV2MetricsIngestsources;
 export const OpenpipelineV2MetricsIngestsources: typeof import("./openpipelineV2MetricsIngestsources").OpenpipelineV2MetricsIngestsources = null as any;
 utilities.lazyLoad(exports, ["OpenpipelineV2MetricsIngestsources"], () => require("./openpipelineV2MetricsIngestsources"));
+
+export { OpenpipelineV2MetricsPipelinegroupsArgs, OpenpipelineV2MetricsPipelinegroupsState } from "./openpipelineV2MetricsPipelinegroups";
+export type OpenpipelineV2MetricsPipelinegroups = import("./openpipelineV2MetricsPipelinegroups").OpenpipelineV2MetricsPipelinegroups;
+export const OpenpipelineV2MetricsPipelinegroups: typeof import("./openpipelineV2MetricsPipelinegroups").OpenpipelineV2MetricsPipelinegroups = null as any;
+utilities.lazyLoad(exports, ["OpenpipelineV2MetricsPipelinegroups"], () => require("./openpipelineV2MetricsPipelinegroups"));
 
 export { OpenpipelineV2MetricsPipelinesArgs, OpenpipelineV2MetricsPipelinesState } from "./openpipelineV2MetricsPipelines";
 export type OpenpipelineV2MetricsPipelines = import("./openpipelineV2MetricsPipelines").OpenpipelineV2MetricsPipelines;
@@ -1700,6 +1755,11 @@ export type OpenpipelineV2SecurityEventsIngestsources = import("./openpipelineV2
 export const OpenpipelineV2SecurityEventsIngestsources: typeof import("./openpipelineV2SecurityEventsIngestsources").OpenpipelineV2SecurityEventsIngestsources = null as any;
 utilities.lazyLoad(exports, ["OpenpipelineV2SecurityEventsIngestsources"], () => require("./openpipelineV2SecurityEventsIngestsources"));
 
+export { OpenpipelineV2SecurityEventsPipelinegroupsArgs, OpenpipelineV2SecurityEventsPipelinegroupsState } from "./openpipelineV2SecurityEventsPipelinegroups";
+export type OpenpipelineV2SecurityEventsPipelinegroups = import("./openpipelineV2SecurityEventsPipelinegroups").OpenpipelineV2SecurityEventsPipelinegroups;
+export const OpenpipelineV2SecurityEventsPipelinegroups: typeof import("./openpipelineV2SecurityEventsPipelinegroups").OpenpipelineV2SecurityEventsPipelinegroups = null as any;
+utilities.lazyLoad(exports, ["OpenpipelineV2SecurityEventsPipelinegroups"], () => require("./openpipelineV2SecurityEventsPipelinegroups"));
+
 export { OpenpipelineV2SecurityEventsPipelinesArgs, OpenpipelineV2SecurityEventsPipelinesState } from "./openpipelineV2SecurityEventsPipelines";
 export type OpenpipelineV2SecurityEventsPipelines = import("./openpipelineV2SecurityEventsPipelines").OpenpipelineV2SecurityEventsPipelines;
 export const OpenpipelineV2SecurityEventsPipelines: typeof import("./openpipelineV2SecurityEventsPipelines").OpenpipelineV2SecurityEventsPipelines = null as any;
@@ -1714,6 +1774,11 @@ export { OpenpipelineV2SpansIngestsourcesArgs, OpenpipelineV2SpansIngestsourcesS
 export type OpenpipelineV2SpansIngestsources = import("./openpipelineV2SpansIngestsources").OpenpipelineV2SpansIngestsources;
 export const OpenpipelineV2SpansIngestsources: typeof import("./openpipelineV2SpansIngestsources").OpenpipelineV2SpansIngestsources = null as any;
 utilities.lazyLoad(exports, ["OpenpipelineV2SpansIngestsources"], () => require("./openpipelineV2SpansIngestsources"));
+
+export { OpenpipelineV2SpansPipelinegroupsArgs, OpenpipelineV2SpansPipelinegroupsState } from "./openpipelineV2SpansPipelinegroups";
+export type OpenpipelineV2SpansPipelinegroups = import("./openpipelineV2SpansPipelinegroups").OpenpipelineV2SpansPipelinegroups;
+export const OpenpipelineV2SpansPipelinegroups: typeof import("./openpipelineV2SpansPipelinegroups").OpenpipelineV2SpansPipelinegroups = null as any;
+utilities.lazyLoad(exports, ["OpenpipelineV2SpansPipelinegroups"], () => require("./openpipelineV2SpansPipelinegroups"));
 
 export { OpenpipelineV2SpansPipelinesArgs, OpenpipelineV2SpansPipelinesState } from "./openpipelineV2SpansPipelines";
 export type OpenpipelineV2SpansPipelines = import("./openpipelineV2SpansPipelines").OpenpipelineV2SpansPipelines;
@@ -1730,6 +1795,11 @@ export type OpenpipelineV2SystemEventsIngestsources = import("./openpipelineV2Sy
 export const OpenpipelineV2SystemEventsIngestsources: typeof import("./openpipelineV2SystemEventsIngestsources").OpenpipelineV2SystemEventsIngestsources = null as any;
 utilities.lazyLoad(exports, ["OpenpipelineV2SystemEventsIngestsources"], () => require("./openpipelineV2SystemEventsIngestsources"));
 
+export { OpenpipelineV2SystemEventsPipelinegroupsArgs, OpenpipelineV2SystemEventsPipelinegroupsState } from "./openpipelineV2SystemEventsPipelinegroups";
+export type OpenpipelineV2SystemEventsPipelinegroups = import("./openpipelineV2SystemEventsPipelinegroups").OpenpipelineV2SystemEventsPipelinegroups;
+export const OpenpipelineV2SystemEventsPipelinegroups: typeof import("./openpipelineV2SystemEventsPipelinegroups").OpenpipelineV2SystemEventsPipelinegroups = null as any;
+utilities.lazyLoad(exports, ["OpenpipelineV2SystemEventsPipelinegroups"], () => require("./openpipelineV2SystemEventsPipelinegroups"));
+
 export { OpenpipelineV2SystemEventsPipelinesArgs, OpenpipelineV2SystemEventsPipelinesState } from "./openpipelineV2SystemEventsPipelines";
 export type OpenpipelineV2SystemEventsPipelines = import("./openpipelineV2SystemEventsPipelines").OpenpipelineV2SystemEventsPipelines;
 export const OpenpipelineV2SystemEventsPipelines: typeof import("./openpipelineV2SystemEventsPipelines").OpenpipelineV2SystemEventsPipelines = null as any;
@@ -1745,6 +1815,11 @@ export type OpenpipelineV2UserEventsIngestsources = import("./openpipelineV2User
 export const OpenpipelineV2UserEventsIngestsources: typeof import("./openpipelineV2UserEventsIngestsources").OpenpipelineV2UserEventsIngestsources = null as any;
 utilities.lazyLoad(exports, ["OpenpipelineV2UserEventsIngestsources"], () => require("./openpipelineV2UserEventsIngestsources"));
 
+export { OpenpipelineV2UserEventsPipelinegroupsArgs, OpenpipelineV2UserEventsPipelinegroupsState } from "./openpipelineV2UserEventsPipelinegroups";
+export type OpenpipelineV2UserEventsPipelinegroups = import("./openpipelineV2UserEventsPipelinegroups").OpenpipelineV2UserEventsPipelinegroups;
+export const OpenpipelineV2UserEventsPipelinegroups: typeof import("./openpipelineV2UserEventsPipelinegroups").OpenpipelineV2UserEventsPipelinegroups = null as any;
+utilities.lazyLoad(exports, ["OpenpipelineV2UserEventsPipelinegroups"], () => require("./openpipelineV2UserEventsPipelinegroups"));
+
 export { OpenpipelineV2UserEventsPipelinesArgs, OpenpipelineV2UserEventsPipelinesState } from "./openpipelineV2UserEventsPipelines";
 export type OpenpipelineV2UserEventsPipelines = import("./openpipelineV2UserEventsPipelines").OpenpipelineV2UserEventsPipelines;
 export const OpenpipelineV2UserEventsPipelines: typeof import("./openpipelineV2UserEventsPipelines").OpenpipelineV2UserEventsPipelines = null as any;
@@ -1759,6 +1834,11 @@ export { OpenpipelineV2UsersessionsIngestsourcesArgs, OpenpipelineV2Usersessions
 export type OpenpipelineV2UsersessionsIngestsources = import("./openpipelineV2UsersessionsIngestsources").OpenpipelineV2UsersessionsIngestsources;
 export const OpenpipelineV2UsersessionsIngestsources: typeof import("./openpipelineV2UsersessionsIngestsources").OpenpipelineV2UsersessionsIngestsources = null as any;
 utilities.lazyLoad(exports, ["OpenpipelineV2UsersessionsIngestsources"], () => require("./openpipelineV2UsersessionsIngestsources"));
+
+export { OpenpipelineV2UsersessionsPipelinegroupsArgs, OpenpipelineV2UsersessionsPipelinegroupsState } from "./openpipelineV2UsersessionsPipelinegroups";
+export type OpenpipelineV2UsersessionsPipelinegroups = import("./openpipelineV2UsersessionsPipelinegroups").OpenpipelineV2UsersessionsPipelinegroups;
+export const OpenpipelineV2UsersessionsPipelinegroups: typeof import("./openpipelineV2UsersessionsPipelinegroups").OpenpipelineV2UsersessionsPipelinegroups = null as any;
+utilities.lazyLoad(exports, ["OpenpipelineV2UsersessionsPipelinegroups"], () => require("./openpipelineV2UsersessionsPipelinegroups"));
 
 export { OpenpipelineV2UsersessionsPipelinesArgs, OpenpipelineV2UsersessionsPipelinesState } from "./openpipelineV2UsersessionsPipelines";
 export type OpenpipelineV2UsersessionsPipelines = import("./openpipelineV2UsersessionsPipelines").OpenpipelineV2UsersessionsPipelines;
@@ -2678,6 +2758,8 @@ const _module = {
                 return new HubExtensionActiveVersion(name, <any>undefined, { urn })
             case "dynatrace:index/hubExtensionConfig:HubExtensionConfig":
                 return new HubExtensionConfig(name, <any>undefined, { urn })
+            case "dynatrace:index/hubExtensionV2Config:HubExtensionV2Config":
+                return new HubExtensionV2Config(name, <any>undefined, { urn })
             case "dynatrace:index/hubPermissions:HubPermissions":
                 return new HubPermissions(name, <any>undefined, { urn })
             case "dynatrace:index/hubSubscriptions:HubSubscriptions":
@@ -2902,78 +2984,104 @@ const _module = {
                 return new OpenpipelineUserSessions(name, <any>undefined, { urn })
             case "dynatrace:index/openpipelineV2BizeventsIngestsources:OpenpipelineV2BizeventsIngestsources":
                 return new OpenpipelineV2BizeventsIngestsources(name, <any>undefined, { urn })
+            case "dynatrace:index/openpipelineV2BizeventsPipelinegroups:OpenpipelineV2BizeventsPipelinegroups":
+                return new OpenpipelineV2BizeventsPipelinegroups(name, <any>undefined, { urn })
             case "dynatrace:index/openpipelineV2BizeventsPipelines:OpenpipelineV2BizeventsPipelines":
                 return new OpenpipelineV2BizeventsPipelines(name, <any>undefined, { urn })
             case "dynatrace:index/openpipelineV2BizeventsRouting:OpenpipelineV2BizeventsRouting":
                 return new OpenpipelineV2BizeventsRouting(name, <any>undefined, { urn })
             case "dynatrace:index/openpipelineV2DavisEventsIngestsources:OpenpipelineV2DavisEventsIngestsources":
                 return new OpenpipelineV2DavisEventsIngestsources(name, <any>undefined, { urn })
+            case "dynatrace:index/openpipelineV2DavisEventsPipelinegroups:OpenpipelineV2DavisEventsPipelinegroups":
+                return new OpenpipelineV2DavisEventsPipelinegroups(name, <any>undefined, { urn })
             case "dynatrace:index/openpipelineV2DavisEventsPipelines:OpenpipelineV2DavisEventsPipelines":
                 return new OpenpipelineV2DavisEventsPipelines(name, <any>undefined, { urn })
             case "dynatrace:index/openpipelineV2DavisEventsRouting:OpenpipelineV2DavisEventsRouting":
                 return new OpenpipelineV2DavisEventsRouting(name, <any>undefined, { urn })
             case "dynatrace:index/openpipelineV2DavisProblemsIngestsources:OpenpipelineV2DavisProblemsIngestsources":
                 return new OpenpipelineV2DavisProblemsIngestsources(name, <any>undefined, { urn })
+            case "dynatrace:index/openpipelineV2DavisProblemsPipelinegroups:OpenpipelineV2DavisProblemsPipelinegroups":
+                return new OpenpipelineV2DavisProblemsPipelinegroups(name, <any>undefined, { urn })
             case "dynatrace:index/openpipelineV2DavisProblemsPipelines:OpenpipelineV2DavisProblemsPipelines":
                 return new OpenpipelineV2DavisProblemsPipelines(name, <any>undefined, { urn })
             case "dynatrace:index/openpipelineV2DavisProblemsRouting:OpenpipelineV2DavisProblemsRouting":
                 return new OpenpipelineV2DavisProblemsRouting(name, <any>undefined, { urn })
             case "dynatrace:index/openpipelineV2EventsIngestsources:OpenpipelineV2EventsIngestsources":
                 return new OpenpipelineV2EventsIngestsources(name, <any>undefined, { urn })
+            case "dynatrace:index/openpipelineV2EventsPipelinegroups:OpenpipelineV2EventsPipelinegroups":
+                return new OpenpipelineV2EventsPipelinegroups(name, <any>undefined, { urn })
             case "dynatrace:index/openpipelineV2EventsPipelines:OpenpipelineV2EventsPipelines":
                 return new OpenpipelineV2EventsPipelines(name, <any>undefined, { urn })
             case "dynatrace:index/openpipelineV2EventsRouting:OpenpipelineV2EventsRouting":
                 return new OpenpipelineV2EventsRouting(name, <any>undefined, { urn })
             case "dynatrace:index/openpipelineV2EventsSdlcIngestsources:OpenpipelineV2EventsSdlcIngestsources":
                 return new OpenpipelineV2EventsSdlcIngestsources(name, <any>undefined, { urn })
+            case "dynatrace:index/openpipelineV2EventsSdlcPipelinegroups:OpenpipelineV2EventsSdlcPipelinegroups":
+                return new OpenpipelineV2EventsSdlcPipelinegroups(name, <any>undefined, { urn })
             case "dynatrace:index/openpipelineV2EventsSdlcPipelines:OpenpipelineV2EventsSdlcPipelines":
                 return new OpenpipelineV2EventsSdlcPipelines(name, <any>undefined, { urn })
             case "dynatrace:index/openpipelineV2EventsSdlcRouting:OpenpipelineV2EventsSdlcRouting":
                 return new OpenpipelineV2EventsSdlcRouting(name, <any>undefined, { urn })
             case "dynatrace:index/openpipelineV2EventsSecurityIngestsources:OpenpipelineV2EventsSecurityIngestsources":
                 return new OpenpipelineV2EventsSecurityIngestsources(name, <any>undefined, { urn })
+            case "dynatrace:index/openpipelineV2EventsSecurityPipelinegroups:OpenpipelineV2EventsSecurityPipelinegroups":
+                return new OpenpipelineV2EventsSecurityPipelinegroups(name, <any>undefined, { urn })
             case "dynatrace:index/openpipelineV2EventsSecurityPipelines:OpenpipelineV2EventsSecurityPipelines":
                 return new OpenpipelineV2EventsSecurityPipelines(name, <any>undefined, { urn })
             case "dynatrace:index/openpipelineV2EventsSecurityRouting:OpenpipelineV2EventsSecurityRouting":
                 return new OpenpipelineV2EventsSecurityRouting(name, <any>undefined, { urn })
             case "dynatrace:index/openpipelineV2LogsIngestsources:OpenpipelineV2LogsIngestsources":
                 return new OpenpipelineV2LogsIngestsources(name, <any>undefined, { urn })
+            case "dynatrace:index/openpipelineV2LogsPipelinegroups:OpenpipelineV2LogsPipelinegroups":
+                return new OpenpipelineV2LogsPipelinegroups(name, <any>undefined, { urn })
             case "dynatrace:index/openpipelineV2LogsPipelines:OpenpipelineV2LogsPipelines":
                 return new OpenpipelineV2LogsPipelines(name, <any>undefined, { urn })
             case "dynatrace:index/openpipelineV2LogsRouting:OpenpipelineV2LogsRouting":
                 return new OpenpipelineV2LogsRouting(name, <any>undefined, { urn })
             case "dynatrace:index/openpipelineV2MetricsIngestsources:OpenpipelineV2MetricsIngestsources":
                 return new OpenpipelineV2MetricsIngestsources(name, <any>undefined, { urn })
+            case "dynatrace:index/openpipelineV2MetricsPipelinegroups:OpenpipelineV2MetricsPipelinegroups":
+                return new OpenpipelineV2MetricsPipelinegroups(name, <any>undefined, { urn })
             case "dynatrace:index/openpipelineV2MetricsPipelines:OpenpipelineV2MetricsPipelines":
                 return new OpenpipelineV2MetricsPipelines(name, <any>undefined, { urn })
             case "dynatrace:index/openpipelineV2MetricsRouting:OpenpipelineV2MetricsRouting":
                 return new OpenpipelineV2MetricsRouting(name, <any>undefined, { urn })
             case "dynatrace:index/openpipelineV2SecurityEventsIngestsources:OpenpipelineV2SecurityEventsIngestsources":
                 return new OpenpipelineV2SecurityEventsIngestsources(name, <any>undefined, { urn })
+            case "dynatrace:index/openpipelineV2SecurityEventsPipelinegroups:OpenpipelineV2SecurityEventsPipelinegroups":
+                return new OpenpipelineV2SecurityEventsPipelinegroups(name, <any>undefined, { urn })
             case "dynatrace:index/openpipelineV2SecurityEventsPipelines:OpenpipelineV2SecurityEventsPipelines":
                 return new OpenpipelineV2SecurityEventsPipelines(name, <any>undefined, { urn })
             case "dynatrace:index/openpipelineV2SecurityEventsRouting:OpenpipelineV2SecurityEventsRouting":
                 return new OpenpipelineV2SecurityEventsRouting(name, <any>undefined, { urn })
             case "dynatrace:index/openpipelineV2SpansIngestsources:OpenpipelineV2SpansIngestsources":
                 return new OpenpipelineV2SpansIngestsources(name, <any>undefined, { urn })
+            case "dynatrace:index/openpipelineV2SpansPipelinegroups:OpenpipelineV2SpansPipelinegroups":
+                return new OpenpipelineV2SpansPipelinegroups(name, <any>undefined, { urn })
             case "dynatrace:index/openpipelineV2SpansPipelines:OpenpipelineV2SpansPipelines":
                 return new OpenpipelineV2SpansPipelines(name, <any>undefined, { urn })
             case "dynatrace:index/openpipelineV2SpansRouting:OpenpipelineV2SpansRouting":
                 return new OpenpipelineV2SpansRouting(name, <any>undefined, { urn })
             case "dynatrace:index/openpipelineV2SystemEventsIngestsources:OpenpipelineV2SystemEventsIngestsources":
                 return new OpenpipelineV2SystemEventsIngestsources(name, <any>undefined, { urn })
+            case "dynatrace:index/openpipelineV2SystemEventsPipelinegroups:OpenpipelineV2SystemEventsPipelinegroups":
+                return new OpenpipelineV2SystemEventsPipelinegroups(name, <any>undefined, { urn })
             case "dynatrace:index/openpipelineV2SystemEventsPipelines:OpenpipelineV2SystemEventsPipelines":
                 return new OpenpipelineV2SystemEventsPipelines(name, <any>undefined, { urn })
             case "dynatrace:index/openpipelineV2SystemEventsRouting:OpenpipelineV2SystemEventsRouting":
                 return new OpenpipelineV2SystemEventsRouting(name, <any>undefined, { urn })
             case "dynatrace:index/openpipelineV2UserEventsIngestsources:OpenpipelineV2UserEventsIngestsources":
                 return new OpenpipelineV2UserEventsIngestsources(name, <any>undefined, { urn })
+            case "dynatrace:index/openpipelineV2UserEventsPipelinegroups:OpenpipelineV2UserEventsPipelinegroups":
+                return new OpenpipelineV2UserEventsPipelinegroups(name, <any>undefined, { urn })
             case "dynatrace:index/openpipelineV2UserEventsPipelines:OpenpipelineV2UserEventsPipelines":
                 return new OpenpipelineV2UserEventsPipelines(name, <any>undefined, { urn })
             case "dynatrace:index/openpipelineV2UserEventsRouting:OpenpipelineV2UserEventsRouting":
                 return new OpenpipelineV2UserEventsRouting(name, <any>undefined, { urn })
             case "dynatrace:index/openpipelineV2UsersessionsIngestsources:OpenpipelineV2UsersessionsIngestsources":
                 return new OpenpipelineV2UsersessionsIngestsources(name, <any>undefined, { urn })
+            case "dynatrace:index/openpipelineV2UsersessionsPipelinegroups:OpenpipelineV2UsersessionsPipelinegroups":
+                return new OpenpipelineV2UsersessionsPipelinegroups(name, <any>undefined, { urn })
             case "dynatrace:index/openpipelineV2UsersessionsPipelines:OpenpipelineV2UsersessionsPipelines":
                 return new OpenpipelineV2UsersessionsPipelines(name, <any>undefined, { urn })
             case "dynatrace:index/openpipelineV2UsersessionsRouting:OpenpipelineV2UsersessionsRouting":
@@ -3369,6 +3477,7 @@ pulumi.runtime.registerResourceModule("dynatrace", "index/httpMonitorPerformance
 pulumi.runtime.registerResourceModule("dynatrace", "index/httpMonitorScript", _module)
 pulumi.runtime.registerResourceModule("dynatrace", "index/hubExtensionActiveVersion", _module)
 pulumi.runtime.registerResourceModule("dynatrace", "index/hubExtensionConfig", _module)
+pulumi.runtime.registerResourceModule("dynatrace", "index/hubExtensionV2Config", _module)
 pulumi.runtime.registerResourceModule("dynatrace", "index/hubPermissions", _module)
 pulumi.runtime.registerResourceModule("dynatrace", "index/hubSubscriptions", _module)
 pulumi.runtime.registerResourceModule("dynatrace", "index/iamGroup", _module)
@@ -3481,42 +3590,55 @@ pulumi.runtime.registerResourceModule("dynatrace", "index/openpipelineSystemEven
 pulumi.runtime.registerResourceModule("dynatrace", "index/openpipelineUserEvents", _module)
 pulumi.runtime.registerResourceModule("dynatrace", "index/openpipelineUserSessions", _module)
 pulumi.runtime.registerResourceModule("dynatrace", "index/openpipelineV2BizeventsIngestsources", _module)
+pulumi.runtime.registerResourceModule("dynatrace", "index/openpipelineV2BizeventsPipelinegroups", _module)
 pulumi.runtime.registerResourceModule("dynatrace", "index/openpipelineV2BizeventsPipelines", _module)
 pulumi.runtime.registerResourceModule("dynatrace", "index/openpipelineV2BizeventsRouting", _module)
 pulumi.runtime.registerResourceModule("dynatrace", "index/openpipelineV2DavisEventsIngestsources", _module)
+pulumi.runtime.registerResourceModule("dynatrace", "index/openpipelineV2DavisEventsPipelinegroups", _module)
 pulumi.runtime.registerResourceModule("dynatrace", "index/openpipelineV2DavisEventsPipelines", _module)
 pulumi.runtime.registerResourceModule("dynatrace", "index/openpipelineV2DavisEventsRouting", _module)
 pulumi.runtime.registerResourceModule("dynatrace", "index/openpipelineV2DavisProblemsIngestsources", _module)
+pulumi.runtime.registerResourceModule("dynatrace", "index/openpipelineV2DavisProblemsPipelinegroups", _module)
 pulumi.runtime.registerResourceModule("dynatrace", "index/openpipelineV2DavisProblemsPipelines", _module)
 pulumi.runtime.registerResourceModule("dynatrace", "index/openpipelineV2DavisProblemsRouting", _module)
 pulumi.runtime.registerResourceModule("dynatrace", "index/openpipelineV2EventsIngestsources", _module)
+pulumi.runtime.registerResourceModule("dynatrace", "index/openpipelineV2EventsPipelinegroups", _module)
 pulumi.runtime.registerResourceModule("dynatrace", "index/openpipelineV2EventsPipelines", _module)
 pulumi.runtime.registerResourceModule("dynatrace", "index/openpipelineV2EventsRouting", _module)
 pulumi.runtime.registerResourceModule("dynatrace", "index/openpipelineV2EventsSdlcIngestsources", _module)
+pulumi.runtime.registerResourceModule("dynatrace", "index/openpipelineV2EventsSdlcPipelinegroups", _module)
 pulumi.runtime.registerResourceModule("dynatrace", "index/openpipelineV2EventsSdlcPipelines", _module)
 pulumi.runtime.registerResourceModule("dynatrace", "index/openpipelineV2EventsSdlcRouting", _module)
 pulumi.runtime.registerResourceModule("dynatrace", "index/openpipelineV2EventsSecurityIngestsources", _module)
+pulumi.runtime.registerResourceModule("dynatrace", "index/openpipelineV2EventsSecurityPipelinegroups", _module)
 pulumi.runtime.registerResourceModule("dynatrace", "index/openpipelineV2EventsSecurityPipelines", _module)
 pulumi.runtime.registerResourceModule("dynatrace", "index/openpipelineV2EventsSecurityRouting", _module)
 pulumi.runtime.registerResourceModule("dynatrace", "index/openpipelineV2LogsIngestsources", _module)
+pulumi.runtime.registerResourceModule("dynatrace", "index/openpipelineV2LogsPipelinegroups", _module)
 pulumi.runtime.registerResourceModule("dynatrace", "index/openpipelineV2LogsPipelines", _module)
 pulumi.runtime.registerResourceModule("dynatrace", "index/openpipelineV2LogsRouting", _module)
 pulumi.runtime.registerResourceModule("dynatrace", "index/openpipelineV2MetricsIngestsources", _module)
+pulumi.runtime.registerResourceModule("dynatrace", "index/openpipelineV2MetricsPipelinegroups", _module)
 pulumi.runtime.registerResourceModule("dynatrace", "index/openpipelineV2MetricsPipelines", _module)
 pulumi.runtime.registerResourceModule("dynatrace", "index/openpipelineV2MetricsRouting", _module)
 pulumi.runtime.registerResourceModule("dynatrace", "index/openpipelineV2SecurityEventsIngestsources", _module)
+pulumi.runtime.registerResourceModule("dynatrace", "index/openpipelineV2SecurityEventsPipelinegroups", _module)
 pulumi.runtime.registerResourceModule("dynatrace", "index/openpipelineV2SecurityEventsPipelines", _module)
 pulumi.runtime.registerResourceModule("dynatrace", "index/openpipelineV2SecurityEventsRouting", _module)
 pulumi.runtime.registerResourceModule("dynatrace", "index/openpipelineV2SpansIngestsources", _module)
+pulumi.runtime.registerResourceModule("dynatrace", "index/openpipelineV2SpansPipelinegroups", _module)
 pulumi.runtime.registerResourceModule("dynatrace", "index/openpipelineV2SpansPipelines", _module)
 pulumi.runtime.registerResourceModule("dynatrace", "index/openpipelineV2SpansRouting", _module)
 pulumi.runtime.registerResourceModule("dynatrace", "index/openpipelineV2SystemEventsIngestsources", _module)
+pulumi.runtime.registerResourceModule("dynatrace", "index/openpipelineV2SystemEventsPipelinegroups", _module)
 pulumi.runtime.registerResourceModule("dynatrace", "index/openpipelineV2SystemEventsPipelines", _module)
 pulumi.runtime.registerResourceModule("dynatrace", "index/openpipelineV2SystemEventsRouting", _module)
 pulumi.runtime.registerResourceModule("dynatrace", "index/openpipelineV2UserEventsIngestsources", _module)
+pulumi.runtime.registerResourceModule("dynatrace", "index/openpipelineV2UserEventsPipelinegroups", _module)
 pulumi.runtime.registerResourceModule("dynatrace", "index/openpipelineV2UserEventsPipelines", _module)
 pulumi.runtime.registerResourceModule("dynatrace", "index/openpipelineV2UserEventsRouting", _module)
 pulumi.runtime.registerResourceModule("dynatrace", "index/openpipelineV2UsersessionsIngestsources", _module)
+pulumi.runtime.registerResourceModule("dynatrace", "index/openpipelineV2UsersessionsPipelinegroups", _module)
 pulumi.runtime.registerResourceModule("dynatrace", "index/openpipelineV2UsersessionsPipelines", _module)
 pulumi.runtime.registerResourceModule("dynatrace", "index/openpipelineV2UsersessionsRouting", _module)
 pulumi.runtime.registerResourceModule("dynatrace", "index/opentelemetryMetrics", _module)

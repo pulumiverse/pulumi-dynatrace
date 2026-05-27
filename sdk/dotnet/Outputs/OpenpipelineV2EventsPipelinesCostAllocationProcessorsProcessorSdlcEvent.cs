@@ -29,7 +29,7 @@ namespace Pulumiverse.Dynatrace.Outputs
         /// <summary>
         /// Event type
         /// </summary>
-        public readonly Outputs.OpenpipelineV2EventsPipelinesCostAllocationProcessorsProcessorSdlcEventEventType? EventType;
+        public readonly Outputs.OpenpipelineV2EventsPipelinesCostAllocationProcessorsProcessorSdlcEventEventType EventType;
         /// <summary>
         /// Field extraction
         /// </summary>
@@ -43,7 +43,7 @@ namespace Pulumiverse.Dynatrace.Outputs
 
             Outputs.OpenpipelineV2EventsPipelinesCostAllocationProcessorsProcessorSdlcEventEventStatus eventStatus,
 
-            Outputs.OpenpipelineV2EventsPipelinesCostAllocationProcessorsProcessorSdlcEventEventType? eventType,
+            Outputs.OpenpipelineV2EventsPipelinesCostAllocationProcessorsProcessorSdlcEventEventType eventType,
 
             Outputs.OpenpipelineV2EventsPipelinesCostAllocationProcessorsProcessorSdlcEventFieldExtraction fieldExtraction)
         {

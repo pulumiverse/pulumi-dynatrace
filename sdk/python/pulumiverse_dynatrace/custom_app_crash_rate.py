@@ -135,7 +135,7 @@ class CustomAppCrashRate(pulumi.CustomResource):
                 "enabled": True,
                 "detection_mode": "fixed",
                 "crash_rate_increase_fixed": {
-                    "absolute_crash_rate": 25,
+                    "absolute_crash_rate": float(25),
                     "concurrent_users": 200,
                 },
             })
@@ -180,7 +180,7 @@ class CustomAppCrashRate(pulumi.CustomResource):
                 "enabled": True,
                 "detection_mode": "fixed",
                 "crash_rate_increase_fixed": {
-                    "absolute_crash_rate": 25,
+                    "absolute_crash_rate": float(25),
                     "concurrent_users": 200,
                 },
             })

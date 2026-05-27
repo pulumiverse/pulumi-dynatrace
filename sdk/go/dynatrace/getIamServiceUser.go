@@ -32,7 +32,7 @@ import (
 //
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
-//			testServiceUser, err := dynatrace.LookupIamServiceUser(ctx, &dynatrace.LookupIamServiceUserArgs{
+//			testServiceUser, err := dynatrace.GetIamServiceUser(ctx, &dynatrace.LookupIamServiceUserArgs{
 //				Name: pulumi.StringRef("test"),
 //			}, nil)
 //			if err != nil {
@@ -58,7 +58,7 @@ import (
 //
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
-//			testServiceUser, err := dynatrace.LookupIamServiceUser(ctx, &dynatrace.LookupIamServiceUserArgs{
+//			testServiceUser, err := dynatrace.GetIamServiceUser(ctx, &dynatrace.LookupIamServiceUserArgs{
 //				Id: pulumi.StringRef("12345678-90ab-cdef-1234-567890abcdef"),
 //			}, nil)
 //			if err != nil {
@@ -84,7 +84,7 @@ import (
 //
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
-//			testServiceUser, err := dynatrace.LookupIamServiceUser(ctx, &dynatrace.LookupIamServiceUserArgs{
+//			testServiceUser, err := dynatrace.GetIamServiceUser(ctx, &dynatrace.LookupIamServiceUserArgs{
 //				Email: pulumi.StringRef("12345678-90ab-cdef-1234-567890abcdef@service.sso.dynatrace.com"),
 //			}, nil)
 //			if err != nil {

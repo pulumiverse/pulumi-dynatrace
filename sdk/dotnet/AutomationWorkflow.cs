@@ -32,13 +32,18 @@ namespace Pulumiverse.Dynatrace
     /// 
     /// return await Deployment.RunAsync(() =&gt; 
     /// {
-    ///     var sampleWorklowTF = new Dynatrace.AutomationWorkflow("Sample_Worklow_TF", new()
+    ///     var wfUser = new Dynatrace.IamServiceUser("wf_user", new()
+    ///     {
+    ///         Name = "#name#",
+    ///     });
+    /// 
+    ///     var workflowWithDavisEventTrigger = new Dynatrace.AutomationWorkflow("workflow_with_davis_event_trigger", new()
     ///     {
     ///         Description = "Desc",
-    ///         Actor = "########-####-####-####-############",
-    ///         Title = "Sample Worklow TF1",
-    ///         Owner = "########-####-####-####-############",
-    ///         Private = true,
+    ///         Actor = wfUser.Id,
+    ///         Owner = wfUser.Id,
+    ///         Private = false,
+    ///         Title = "#name#",
     ///         Tasks = new Dynatrace.Inputs.AutomationWorkflowTasksArgs
     ///         {
     ///             Tasks = new[]
@@ -52,12 +57,18 @@ namespace Pulumiverse.Dynatrace
     ///                     Input = JsonSerializer.Serialize(new Dictionary&lt;string, object?&gt;
     ///                     {
     ///                         ["method"] = "GET",
-    ///                         ["url"] = "https://www.google.at/",
+    ///                         ["url"] = "https://www.example.com/",
     ///                     }),
     ///                     Position = new Dynatrace.Inputs.AutomationWorkflowTasksTaskPositionArgs
     ///                     {
     ///                         X = 0,
     ///                         Y = 1,
+    ///                     },
+    ///                     Retry = new Dynatrace.Inputs.AutomationWorkflowTasksTaskRetryArgs
+    ///                     {
+    ///                         Count = "3",
+    ///                         Delay = "1000",
+    ///                         FailedLoopIterationsOnly = false,
     ///                     },
     ///                 },
     ///                 new Dynatrace.Inputs.AutomationWorkflowTasksTaskArgs
@@ -66,26 +77,26 @@ namespace Pulumiverse.Dynatrace
     ///                     Description = "Issue an HTTP request to any API",
     ///                     Action = "dynatrace.automations:http-function",
     ///                     Active = false,
+    ///                     Timeout = "50000",
     ///                     Input = JsonSerializer.Serialize(new Dictionary&lt;string, object?&gt;
     ///                     {
     ///                         ["method"] = "GET",
-    ///                         ["url"] = "https://www.second-task.com/",
+    ///                         ["url"] = "https://www.example.com/",
     ///                     }),
     ///                     Conditions = new Dynatrace.Inputs.AutomationWorkflowTasksTaskConditionsArgs
     ///                     {
+    ///                         Custom = "",
     ///                         States = 
     ///                         {
     ///                             { "http_request_1", "SUCCESS" },
     ///                             { "run_javascript_1", "OK" },
     ///                         },
-    ///                         Custom = "",
     ///                     },
     ///                     Position = new Dynatrace.Inputs.AutomationWorkflowTasksTaskPositionArgs
     ///                     {
     ///                         X = -1,
     ///                         Y = 2,
     ///                     },
-    ///                     Timeout = "50000",
     ///                 },
     ///                 new Dynatrace.Inputs.AutomationWorkflowTasksTaskArgs
     ///                 {
@@ -96,15 +107,15 @@ namespace Pulumiverse.Dynatrace
     ///                     Input = JsonSerializer.Serialize(new Dictionary&lt;string, object?&gt;
     ///                     {
     ///                         ["method"] = "GET",
-    ///                         ["url"] = "https://www.third-task.com",
+    ///                         ["url"] = "https://www.example.com",
     ///                     }),
     ///                     Conditions = new Dynatrace.Inputs.AutomationWorkflowTasksTaskConditionsArgs
     ///                     {
+    ///                         Custom = "{{http_request_1}}",
     ///                         States = 
     ///                         {
     ///                             { "http_request_2", "OK" },
     ///                         },
-    ///                         Custom = "{{http_request_1}}",
     ///                     },
     ///                     Position = new Dynatrace.Inputs.AutomationWorkflowTasksTaskPositionArgs
     ///                     {
@@ -149,11 +160,11 @@ namespace Pulumiverse.Dynatrace
     ///                 {
     ///                     DavisEvent = new Dynatrace.Inputs.AutomationWorkflowTriggerEventConfigDavisEventArgs
     ///                     {
-    ///                         EntityTagsMatch = "all",
     ///                         EntityTags = 
     ///                         {
     ///                             { "asdf", "" },
     ///                         },
+    ///                         EntityTagsMatch = "all",
     ///                         OnProblemClose = false,
     ///                         CustomFilter = "matchesPhrase(custom.event.type, \"DEPLOY\")",
     ///                     },
@@ -181,16 +192,52 @@ namespace Pulumiverse.Dynatrace
         public Output<string?> Description { get; private set; } = null!;
 
         /// <summary>
+        /// Informational guide text for the workflow
+        /// </summary>
+        [Output("guide")]
+        public Output<string?> Guide { get; private set; } = null!;
+
+        /// <summary>
+        /// Maximum number of executions per hour. Default is `1000`
+        /// </summary>
+        [Output("hourlyExecutionLimit")]
+        public Output<int?> HourlyExecutionLimit { get; private set; } = null!;
+
+        /// <summary>
+        /// Workflow-level input parameters as JSON. These parameters are available to all tasks in the workflow
+        /// </summary>
+        [Output("input")]
+        public Output<string?> Input { get; private set; } = null!;
+
+        /// <summary>
+        /// Defines whether this workflow is deployed and active, or kept as a draft. An undeployed workflow is not billed and its automatic trigger will not be running. Default is `True`
+        /// </summary>
+        [Output("isDeployed")]
+        public Output<bool?> IsDeployed { get; private set; } = null!;
+
+        /// <summary>
         /// The ID of the owner of this workflow
         /// </summary>
         [Output("owner")]
         public Output<string?> Owner { get; private set; } = null!;
 
         /// <summary>
+        /// The type of the owner. Possible values are `USER` and `GROUP`
+        /// </summary>
+        [Output("ownerType")]
+        public Output<string?> OwnerType { get; private set; } = null!;
+
+        /// <summary>
         /// Defines whether this workflow is private to the owner or not. Default is `True`
         /// </summary>
         [Output("private")]
         public Output<bool?> Private { get; private set; } = null!;
+
+        /// <summary>
+        /// The result of the workflow
+        /// </summary>
+        [Output("result")]
+        public Output<string?> Result { get; private set; } = null!;
 
         /// <summary>
         /// The tasks to run for every execution of this workflow
@@ -276,16 +323,52 @@ namespace Pulumiverse.Dynatrace
         public Input<string>? Description { get; set; }
 
         /// <summary>
+        /// Informational guide text for the workflow
+        /// </summary>
+        [Input("guide")]
+        public Input<string>? Guide { get; set; }
+
+        /// <summary>
+        /// Maximum number of executions per hour. Default is `1000`
+        /// </summary>
+        [Input("hourlyExecutionLimit")]
+        public Input<int>? HourlyExecutionLimit { get; set; }
+
+        /// <summary>
+        /// Workflow-level input parameters as JSON. These parameters are available to all tasks in the workflow
+        /// </summary>
+        [Input("input")]
+        public Input<string>? Input { get; set; }
+
+        /// <summary>
+        /// Defines whether this workflow is deployed and active, or kept as a draft. An undeployed workflow is not billed and its automatic trigger will not be running. Default is `True`
+        /// </summary>
+        [Input("isDeployed")]
+        public Input<bool>? IsDeployed { get; set; }
+
+        /// <summary>
         /// The ID of the owner of this workflow
         /// </summary>
         [Input("owner")]
         public Input<string>? Owner { get; set; }
 
         /// <summary>
+        /// The type of the owner. Possible values are `USER` and `GROUP`
+        /// </summary>
+        [Input("ownerType")]
+        public Input<string>? OwnerType { get; set; }
+
+        /// <summary>
         /// Defines whether this workflow is private to the owner or not. Default is `True`
         /// </summary>
         [Input("private")]
         public Input<bool>? Private { get; set; }
+
+        /// <summary>
+        /// The result of the workflow
+        /// </summary>
+        [Input("result")]
+        public Input<string>? Result { get; set; }
 
         /// <summary>
         /// The tasks to run for every execution of this workflow
@@ -332,16 +415,52 @@ namespace Pulumiverse.Dynatrace
         public Input<string>? Description { get; set; }
 
         /// <summary>
+        /// Informational guide text for the workflow
+        /// </summary>
+        [Input("guide")]
+        public Input<string>? Guide { get; set; }
+
+        /// <summary>
+        /// Maximum number of executions per hour. Default is `1000`
+        /// </summary>
+        [Input("hourlyExecutionLimit")]
+        public Input<int>? HourlyExecutionLimit { get; set; }
+
+        /// <summary>
+        /// Workflow-level input parameters as JSON. These parameters are available to all tasks in the workflow
+        /// </summary>
+        [Input("input")]
+        public Input<string>? Input { get; set; }
+
+        /// <summary>
+        /// Defines whether this workflow is deployed and active, or kept as a draft. An undeployed workflow is not billed and its automatic trigger will not be running. Default is `True`
+        /// </summary>
+        [Input("isDeployed")]
+        public Input<bool>? IsDeployed { get; set; }
+
+        /// <summary>
         /// The ID of the owner of this workflow
         /// </summary>
         [Input("owner")]
         public Input<string>? Owner { get; set; }
 
         /// <summary>
+        /// The type of the owner. Possible values are `USER` and `GROUP`
+        /// </summary>
+        [Input("ownerType")]
+        public Input<string>? OwnerType { get; set; }
+
+        /// <summary>
         /// Defines whether this workflow is private to the owner or not. Default is `True`
         /// </summary>
         [Input("private")]
         public Input<bool>? Private { get; set; }
+
+        /// <summary>
+        /// The result of the workflow
+        /// </summary>
+        [Input("result")]
+        public Input<string>? Result { get; set; }
 
         /// <summary>
         /// The tasks to run for every execution of this workflow

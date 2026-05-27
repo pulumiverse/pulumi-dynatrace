@@ -27,6 +27,86 @@ import (
 // - `terraform-provider-dynatrace -export HttpMonitorScript` downloads all existing HTTP monitor script configuration
 //
 // The full documentation of the export feature is available [here](https://dt-url.net/h203qmc).
+//
+// ## Resource Example Usage
+//
+// ```go
+// package main
+//
+// import (
+//
+//	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//	"github.com/pulumiverse/pulumi-dynatrace/sdk/go/dynatrace"
+//
+// )
+//
+//	func main() {
+//		pulumi.Run(func(ctx *pulumi.Context) error {
+//			location, err := dynatrace.GetSyntheticLocation(ctx, &dynatrace.LookupSyntheticLocationArgs{
+//				Name: pulumi.StringRef("Location"),
+//			}, nil)
+//			if err != nil {
+//				return err
+//			}
+//			monitor, err := dynatrace.NewHttpMonitor(ctx, "monitor", &dynatrace.HttpMonitorArgs{
+//				AnomalyDetections: dynatrace.HttpMonitorAnomalyDetectionArray{
+//					&dynatrace.HttpMonitorAnomalyDetectionArgs{
+//						LoadingTimeThresholds: dynatrace.HttpMonitorAnomalyDetectionLoadingTimeThresholdArray{
+//							&dynatrace.HttpMonitorAnomalyDetectionLoadingTimeThresholdArgs{},
+//						},
+//						OutageHandlings: dynatrace.HttpMonitorAnomalyDetectionOutageHandlingArray{
+//							&dynatrace.HttpMonitorAnomalyDetectionOutageHandlingArgs{
+//								GlobalOutage: pulumi.Bool(true),
+//								GlobalOutagePolicies: dynatrace.HttpMonitorAnomalyDetectionOutageHandlingGlobalOutagePolicyArray{
+//									&dynatrace.HttpMonitorAnomalyDetectionOutageHandlingGlobalOutagePolicyArgs{
+//										ConsecutiveRuns: pulumi.Int(1),
+//									},
+//								},
+//							},
+//						},
+//					},
+//				},
+//				Name:      pulumi.String("#name#"),
+//				Frequency: pulumi.Int(1),
+//				Locations: pulumi.StringArray{
+//					pulumi.String(pulumi.String(location.Id)),
+//				},
+//				NoScript: pulumi.Bool(true),
+//			})
+//			if err != nil {
+//				return err
+//			}
+//			_, err = dynatrace.NewHttpMonitorScript(ctx, "script", &dynatrace.HttpMonitorScriptArgs{
+//				HttpId: monitor.ID(),
+//				Script: &dynatrace.HttpMonitorScriptScriptArgs{
+//					Requests: dynatrace.HttpMonitorScriptScriptRequestArray{
+//						&dynatrace.HttpMonitorScriptScriptRequestArgs{
+//							Description: pulumi.String("request1"),
+//							Method:      pulumi.String("GET"),
+//							Url:         pulumi.String("https://example.com"),
+//							Configuration: &dynatrace.HttpMonitorScriptScriptRequestConfigurationArgs{
+//								AcceptAnyCertificate: pulumi.Bool(true),
+//							},
+//						},
+//						&dynatrace.HttpMonitorScriptScriptRequestArgs{
+//							Description: pulumi.String("request2"),
+//							Method:      pulumi.String("GET"),
+//							Url:         pulumi.String("https://example.com"),
+//							Configuration: &dynatrace.HttpMonitorScriptScriptRequestConfigurationArgs{
+//								AcceptAnyCertificate: pulumi.Bool(true),
+//							},
+//						},
+//					},
+//				},
+//			})
+//			if err != nil {
+//				return err
+//			}
+//			return nil
+//		})
+//	}
+//
+// ```
 type HttpMonitorScript struct {
 	pulumi.CustomResourceState
 

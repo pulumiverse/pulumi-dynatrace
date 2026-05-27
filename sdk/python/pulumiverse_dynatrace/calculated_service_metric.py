@@ -485,6 +485,77 @@ class CalculatedServiceMetric(pulumi.CustomResource):
 
         The full documentation of the export feature is available [here](https://dt-url.net/h203qmc).
 
+        ## Resource Example Usage
+
+        ```python
+        import pulumi
+        import pulumiverse_dynatrace as dynatrace
+        import pulumiverse_time as time
+
+        attribute = dynatrace.RequestAttribute("attribute",
+            name="#name#",
+            enabled=True,
+            aggregation="FIRST",
+            confidential=False,
+            data_type="INTEGER",
+            normalization="ORIGINAL",
+            skip_personal_data_masking=False,
+            data_sources=[{
+                "enabled": True,
+                "source": "SERVER_VARIABLE",
+                "server_variable_technology": "ASP_NET",
+                "parameter_name": "param",
+            }])
+        mzone = dynatrace.ManagementZoneV2("mzone",
+            name="#name#",
+            rules={
+                "rules": [{
+                    "type": "ME",
+                    "enabled": True,
+                    "entity_selector": "",
+                    "attribute_rule": {
+                        "entity_type": "CLOUD_APPLICATION_NAMESPACE",
+                        "attribute_conditions": {
+                            "conditions": [{
+                                "case_sensitive": False,
+                                "key": "KUBERNETES_CLUSTER_NAME",
+                                "operator": "EQUALS",
+                                "string_value": "extensions",
+                            }],
+                        },
+                    },
+                }],
+            })
+        wait_for_request_attribute = time.Sleep("wait_for_request_attribute", create_duration="10s",
+        opts = pulumi.ResourceOptions(depends_on=[attribute]))
+        metric = dynatrace.CalculatedServiceMetric("metric",
+            name="#name#",
+            enabled=True,
+            management_zones=[mzone.name],
+            metric_key="calc:service.#name#",
+            unit="MILLI_SECOND_PER_MINUTE",
+            conditions=[{
+                "conditions": [{
+                    "attribute": "HTTP_REQUEST_METHOD",
+                    "comparison": {
+                        "negate": False,
+                        "http_method": {
+                            "operator": "EQUALS_ANY_OF",
+                            "values": [
+                                "POST",
+                                "GET",
+                            ],
+                        },
+                    },
+                }],
+            }],
+            metric_definition={
+                "metric": "REQUEST_ATTRIBUTE",
+                "request_attribute": attribute.name,
+            },
+            opts = pulumi.ResourceOptions(depends_on=[wait_for_request_attribute]))
+        ```
+
 
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
@@ -522,6 +593,77 @@ class CalculatedServiceMetric(pulumi.CustomResource):
         - `terraform-provider-dynatrace -export CalculatedServiceMetric` downloads all existing calculated service metric configuration
 
         The full documentation of the export feature is available [here](https://dt-url.net/h203qmc).
+
+        ## Resource Example Usage
+
+        ```python
+        import pulumi
+        import pulumiverse_dynatrace as dynatrace
+        import pulumiverse_time as time
+
+        attribute = dynatrace.RequestAttribute("attribute",
+            name="#name#",
+            enabled=True,
+            aggregation="FIRST",
+            confidential=False,
+            data_type="INTEGER",
+            normalization="ORIGINAL",
+            skip_personal_data_masking=False,
+            data_sources=[{
+                "enabled": True,
+                "source": "SERVER_VARIABLE",
+                "server_variable_technology": "ASP_NET",
+                "parameter_name": "param",
+            }])
+        mzone = dynatrace.ManagementZoneV2("mzone",
+            name="#name#",
+            rules={
+                "rules": [{
+                    "type": "ME",
+                    "enabled": True,
+                    "entity_selector": "",
+                    "attribute_rule": {
+                        "entity_type": "CLOUD_APPLICATION_NAMESPACE",
+                        "attribute_conditions": {
+                            "conditions": [{
+                                "case_sensitive": False,
+                                "key": "KUBERNETES_CLUSTER_NAME",
+                                "operator": "EQUALS",
+                                "string_value": "extensions",
+                            }],
+                        },
+                    },
+                }],
+            })
+        wait_for_request_attribute = time.Sleep("wait_for_request_attribute", create_duration="10s",
+        opts = pulumi.ResourceOptions(depends_on=[attribute]))
+        metric = dynatrace.CalculatedServiceMetric("metric",
+            name="#name#",
+            enabled=True,
+            management_zones=[mzone.name],
+            metric_key="calc:service.#name#",
+            unit="MILLI_SECOND_PER_MINUTE",
+            conditions=[{
+                "conditions": [{
+                    "attribute": "HTTP_REQUEST_METHOD",
+                    "comparison": {
+                        "negate": False,
+                        "http_method": {
+                            "operator": "EQUALS_ANY_OF",
+                            "values": [
+                                "POST",
+                                "GET",
+                            ],
+                        },
+                    },
+                }],
+            }],
+            metric_definition={
+                "metric": "REQUEST_ATTRIBUTE",
+                "request_attribute": attribute.name,
+            },
+            opts = pulumi.ResourceOptions(depends_on=[wait_for_request_attribute]))
+        ```
 
 
         :param str resource_name: The name of the resource.

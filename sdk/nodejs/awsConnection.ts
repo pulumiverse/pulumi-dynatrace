@@ -116,15 +116,15 @@ export class AwsConnection extends pulumi.CustomResource {
     }
 
     /**
-     * Name
+     * The name of the connection
      */
     declare public readonly name: pulumi.Output<string>;
     /**
-     * Configuration required for authenticating via AWS Role Based Authentication
+     * No documentation available
      */
     declare public readonly roleBasedAuth: pulumi.Output<outputs.AwsConnectionRoleBasedAuth | undefined>;
     /**
-     * Configuration required for authenticating via AWS Web Identity
+     * No documentation available
      */
     declare public readonly webIdentity: pulumi.Output<outputs.AwsConnectionWebIdentity | undefined>;
 
@@ -160,15 +160,15 @@ export class AwsConnection extends pulumi.CustomResource {
  */
 export interface AwsConnectionState {
     /**
-     * Name
+     * The name of the connection
      */
     name?: pulumi.Input<string | undefined>;
     /**
-     * Configuration required for authenticating via AWS Role Based Authentication
+     * No documentation available
      */
     roleBasedAuth?: pulumi.Input<inputs.AwsConnectionRoleBasedAuth | undefined>;
     /**
-     * Configuration required for authenticating via AWS Web Identity
+     * No documentation available
      */
     webIdentity?: pulumi.Input<inputs.AwsConnectionWebIdentity | undefined>;
 }
@@ -178,15 +178,15 @@ export interface AwsConnectionState {
  */
 export interface AwsConnectionArgs {
     /**
-     * Name
+     * The name of the connection
      */
     name?: pulumi.Input<string | undefined>;
     /**
-     * Configuration required for authenticating via AWS Role Based Authentication
+     * No documentation available
      */
     roleBasedAuth?: pulumi.Input<inputs.AwsConnectionRoleBasedAuth | undefined>;
     /**
-     * Configuration required for authenticating via AWS Web Identity
+     * No documentation available
      */
     webIdentity?: pulumi.Input<inputs.AwsConnectionWebIdentity | undefined>;
 }

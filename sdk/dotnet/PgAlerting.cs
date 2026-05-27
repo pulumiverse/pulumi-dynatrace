@@ -24,6 +24,29 @@ namespace Pulumiverse.Dynatrace
     /// - `terraform-provider-dynatrace -export dynatrace.PgAlerting` downloads all existing process group availability monitoring configuration
     /// 
     /// The full documentation of the export feature is available [here](https://dt-url.net/h203qmc).
+    /// 
+    /// ## Resource Example Usage
+    /// 
+    /// ```csharp
+    /// using System.Collections.Generic;
+    /// using System.Linq;
+    /// using Pulumi;
+    /// using Dynatrace = Pulumiverse.Dynatrace;
+    /// 
+    /// return await Deployment.RunAsync(() =&gt; 
+    /// {
+    ///     var config = new Config();
+    ///     var PROCESS_GROUP_ID = config.Require("PROCESS_GROUP_ID");
+    ///     var alert = new Dynatrace.PgAlerting("alert", new()
+    ///     {
+    ///         Enabled = true,
+    ///         AlertingMode = "ON_INSTANCE_COUNT_VIOLATION",
+    ///         MinimumInstanceThreshold = 5,
+    ///         ProcessGroup = PROCESS_GROUP_ID,
+    ///     });
+    /// 
+    /// });
+    /// ```
     /// </summary>
     [DynatraceResourceType("dynatrace:index/pgAlerting:PgAlerting")]
     public partial class PgAlerting : global::Pulumi.CustomResource

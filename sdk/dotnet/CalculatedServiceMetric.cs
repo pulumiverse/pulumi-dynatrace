@@ -24,6 +24,135 @@ namespace Pulumiverse.Dynatrace
     /// - `terraform-provider-dynatrace -export dynatrace.CalculatedServiceMetric` downloads all existing calculated service metric configuration
     /// 
     /// The full documentation of the export feature is available [here](https://dt-url.net/h203qmc).
+    /// 
+    /// ## Resource Example Usage
+    /// 
+    /// ```csharp
+    /// using System.Collections.Generic;
+    /// using System.Linq;
+    /// using Pulumi;
+    /// using Dynatrace = Pulumiverse.Dynatrace;
+    /// using Time = Pulumiverse.Time;
+    /// 
+    /// return await Deployment.RunAsync(() =&gt; 
+    /// {
+    ///     var attribute = new Dynatrace.RequestAttribute("attribute", new()
+    ///     {
+    ///         Name = "#name#",
+    ///         Enabled = true,
+    ///         Aggregation = "FIRST",
+    ///         Confidential = false,
+    ///         DataType = "INTEGER",
+    ///         Normalization = "ORIGINAL",
+    ///         SkipPersonalDataMasking = false,
+    ///         DataSources = new[]
+    ///         {
+    ///             new Dynatrace.Inputs.RequestAttributeDataSourceArgs
+    ///             {
+    ///                 Enabled = true,
+    ///                 Source = "SERVER_VARIABLE",
+    ///                 ServerVariableTechnology = "ASP_NET",
+    ///                 ParameterName = "param",
+    ///             },
+    ///         },
+    ///     });
+    /// 
+    ///     var mzone = new Dynatrace.ManagementZoneV2("mzone", new()
+    ///     {
+    ///         Name = "#name#",
+    ///         Rules = new Dynatrace.Inputs.ManagementZoneV2RulesArgs
+    ///         {
+    ///             Rules = new[]
+    ///             {
+    ///                 new Dynatrace.Inputs.ManagementZoneV2RulesRuleArgs
+    ///                 {
+    ///                     Type = "ME",
+    ///                     Enabled = true,
+    ///                     EntitySelector = "",
+    ///                     AttributeRule = new Dynatrace.Inputs.ManagementZoneV2RulesRuleAttributeRuleArgs
+    ///                     {
+    ///                         EntityType = "CLOUD_APPLICATION_NAMESPACE",
+    ///                         AttributeConditions = new Dynatrace.Inputs.ManagementZoneV2RulesRuleAttributeRuleAttributeConditionsArgs
+    ///                         {
+    ///                             Conditions = new[]
+    ///                             {
+    ///                                 new Dynatrace.Inputs.ManagementZoneV2RulesRuleAttributeRuleAttributeConditionsConditionArgs
+    ///                                 {
+    ///                                     CaseSensitive = false,
+    ///                                     Key = "KUBERNETES_CLUSTER_NAME",
+    ///                                     Operator = "EQUALS",
+    ///                                     StringValue = "extensions",
+    ///                                 },
+    ///                             },
+    ///                         },
+    ///                     },
+    ///                 },
+    ///             },
+    ///         },
+    ///     });
+    /// 
+    ///     var waitForRequestAttribute = new Time.Sleep("wait_for_request_attribute", new()
+    ///     {
+    ///         CreateDuration = "10s",
+    ///     }, new CustomResourceOptions
+    ///     {
+    ///         DependsOn =
+    ///         {
+    ///             attribute,
+    ///         },
+    ///     });
+    /// 
+    ///     var metric = new Dynatrace.CalculatedServiceMetric("metric", new()
+    ///     {
+    ///         Name = "#name#",
+    ///         Enabled = true,
+    ///         ManagementZones = new[]
+    ///         {
+    ///             mzone.Name,
+    ///         },
+    ///         MetricKey = "calc:service.#name#",
+    ///         Unit = "MILLI_SECOND_PER_MINUTE",
+    ///         Conditions = new[]
+    ///         {
+    ///             new Dynatrace.Inputs.CalculatedServiceMetricConditionArgs
+    ///             {
+    ///                 Conditions = new[]
+    ///                 {
+    ///                     new Dynatrace.Inputs.CalculatedServiceMetricConditionConditionArgs
+    ///                     {
+    ///                         Attribute = "HTTP_REQUEST_METHOD",
+    ///                         Comparison = new Dynatrace.Inputs.CalculatedServiceMetricConditionConditionComparisonArgs
+    ///                         {
+    ///                             Negate = false,
+    ///                             HttpMethod = new Dynatrace.Inputs.CalculatedServiceMetricConditionConditionComparisonHttpMethodArgs
+    ///                             {
+    ///                                 Operator = "EQUALS_ANY_OF",
+    ///                                 Values = new[]
+    ///                                 {
+    ///                                     "POST",
+    ///                                     "GET",
+    ///                                 },
+    ///                             },
+    ///                         },
+    ///                     },
+    ///                 },
+    ///             },
+    ///         },
+    ///         MetricDefinition = new Dynatrace.Inputs.CalculatedServiceMetricMetricDefinitionArgs
+    ///         {
+    ///             Metric = "REQUEST_ATTRIBUTE",
+    ///             RequestAttribute = attribute.Name,
+    ///         },
+    ///     }, new CustomResourceOptions
+    ///     {
+    ///         DependsOn =
+    ///         {
+    ///             waitForRequestAttribute,
+    ///         },
+    ///     });
+    /// 
+    /// });
+    /// ```
     /// </summary>
     [DynatraceResourceType("dynatrace:index/calculatedServiceMetric:CalculatedServiceMetric")]
     public partial class CalculatedServiceMetric : global::Pulumi.CustomResource

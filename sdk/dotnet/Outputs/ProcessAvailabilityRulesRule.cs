@@ -16,27 +16,27 @@ namespace Pulumiverse.Dynatrace.Outputs
     {
         /// <summary>
         /// - $contains(svc) – Matches if svc appears anywhere in the process property value.
-        /// - $eq(svc.exe) – Matches if svc.exe matches the process property value exactly.
-        /// - $prefix(svc) – Matches if app matches the prefix of the process property value.
-        /// - $suffix(svc.py) – Matches if svc.py matches the suffix of the process property value.
+        ///  - $eq(svc.exe) – Matches if svc.exe matches the process property value exactly.
+        ///  - $prefix(svc) – Matches if app matches the prefix of the process property value.
+        ///  - $suffix(svc.py) – Matches if svc.py matches the suffix of the process property value.
         /// 
-        /// For example, $suffix(svc.py) would detect processes named loyaltysvc.py and paymentssvc.py.
+        ///   For example, $suffix(svc.py) would detect processes named loyaltysvc.py and paymentssvc.py.
         /// 
-        /// For more details, see [Process availability](https://dt-url.net/v923x37).
+        ///   For more details, see [Process availability](https://dt-url.net/v923x37).
         /// </summary>
         public readonly string? Condition;
         /// <summary>
         /// Host resource attributes are dimensions enriching the host including custom metadata which are user-defined key-value pairs that you can assign to hosts monitored by Dynatrace.
         /// 
-        /// By defining custom metadata, you can enrich the monitoring data with context specific to your organization's needs, such as environment names, team ownership, application versions, or any other relevant details.
+        ///   By defining custom metadata, you can enrich the monitoring data with context specific to your organization's needs, such as environment names, team ownership, application versions, or any other relevant details.
         /// 
-        /// See [Define tags and metadata for hosts](https://dt-url.net/w3hv0kbw).
+        ///   See [Define tags and metadata for hosts](https://dt-url.net/w3hv0kbw).
         /// 
-        /// Note: Starting from version 1.325 host resource attributes are supported in addition to host custom metadata.
+        ///   Note: Starting from version 1.325 host resource attributes are supported in addition to host custom metadata.
         /// </summary>
         public readonly Outputs.ProcessAvailabilityRulesRuleHostMetadataCondition? HostMetadataCondition;
         /// <summary>
-        /// Select process property. Possible Values: `commandLine`, `Executable`, `executablePath`, `User`
+        /// Select process property. Possible values: `commandLine`, `Executable`, `executablePath`, `fullCommandLine`, `User`
         /// </summary>
         public readonly string? Property;
         /// <summary>

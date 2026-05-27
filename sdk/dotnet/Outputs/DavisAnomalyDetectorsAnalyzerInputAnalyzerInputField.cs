@@ -15,11 +15,11 @@ namespace Pulumiverse.Dynatrace.Outputs
     public sealed class DavisAnomalyDetectorsAnalyzerInputAnalyzerInputField
     {
         /// <summary>
-        /// no documentation available
+        /// Analyzer input field key
         /// </summary>
         public readonly string Key;
         /// <summary>
-        /// no documentation available
+        /// Analyzer input field value
         /// </summary>
         public readonly string Value;
 

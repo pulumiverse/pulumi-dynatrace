@@ -28,7 +28,7 @@ import (
 type OneagentDefaultMode struct {
 	pulumi.CustomResourceState
 
-	// Possible Values: `DISCOVERY`, `FULL_STACK`, `INFRASTRUCTURE`
+	// OneAgent default monitoring mode. Possible values: `DISCOVERY`, `FULL_STACK`, `INFRASTRUCTURE`
 	DefaultMode pulumi.StringOutput `pulumi:"defaultMode"`
 }
 
@@ -65,12 +65,12 @@ func GetOneagentDefaultMode(ctx *pulumi.Context,
 
 // Input properties used for looking up and filtering OneagentDefaultMode resources.
 type oneagentDefaultModeState struct {
-	// Possible Values: `DISCOVERY`, `FULL_STACK`, `INFRASTRUCTURE`
+	// OneAgent default monitoring mode. Possible values: `DISCOVERY`, `FULL_STACK`, `INFRASTRUCTURE`
 	DefaultMode *string `pulumi:"defaultMode"`
 }
 
 type OneagentDefaultModeState struct {
-	// Possible Values: `DISCOVERY`, `FULL_STACK`, `INFRASTRUCTURE`
+	// OneAgent default monitoring mode. Possible values: `DISCOVERY`, `FULL_STACK`, `INFRASTRUCTURE`
 	DefaultMode pulumi.StringPtrInput
 }
 
@@ -79,13 +79,13 @@ func (OneagentDefaultModeState) ElementType() reflect.Type {
 }
 
 type oneagentDefaultModeArgs struct {
-	// Possible Values: `DISCOVERY`, `FULL_STACK`, `INFRASTRUCTURE`
+	// OneAgent default monitoring mode. Possible values: `DISCOVERY`, `FULL_STACK`, `INFRASTRUCTURE`
 	DefaultMode string `pulumi:"defaultMode"`
 }
 
 // The set of arguments for constructing a OneagentDefaultMode resource.
 type OneagentDefaultModeArgs struct {
-	// Possible Values: `DISCOVERY`, `FULL_STACK`, `INFRASTRUCTURE`
+	// OneAgent default monitoring mode. Possible values: `DISCOVERY`, `FULL_STACK`, `INFRASTRUCTURE`
 	DefaultMode pulumi.StringInput
 }
 
@@ -176,7 +176,7 @@ func (o OneagentDefaultModeOutput) ToOneagentDefaultModeOutputWithContext(ctx co
 	return o
 }
 
-// Possible Values: `DISCOVERY`, `FULL_STACK`, `INFRASTRUCTURE`
+// OneAgent default monitoring mode. Possible values: `DISCOVERY`, `FULL_STACK`, `INFRASTRUCTURE`
 func (o OneagentDefaultModeOutput) DefaultMode() pulumi.StringOutput {
 	return o.ApplyT(func(v *OneagentDefaultMode) pulumi.StringOutput { return v.DefaultMode }).(pulumi.StringOutput)
 }

@@ -19,7 +19,7 @@ namespace Pulumiverse.Dynatrace.Outputs
         /// </summary>
         public readonly string Name;
         /// <summary>
-        /// Possible Values: `BUCKET`, `TABLE`
+        /// Possible values: `BUCKET`, `TABLE`
         /// </summary>
         public readonly string Type;
 

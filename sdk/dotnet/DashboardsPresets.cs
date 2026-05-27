@@ -24,6 +24,78 @@ namespace Pulumiverse.Dynatrace
     /// - `terraform-provider-dynatrace -export dynatrace.DashboardsPresets` downloads all existing dashboard preset settings
     /// 
     /// The full documentation of the export feature is available [here](https://dt-url.net/h203qmc).
+    /// 
+    /// ## Resource Example Usage
+    /// 
+    /// ```csharp
+    /// using System.Collections.Generic;
+    /// using System.Linq;
+    /// using Pulumi;
+    /// using Dynatrace = Pulumiverse.Dynatrace;
+    /// 
+    /// return await Deployment.RunAsync(() =&gt; 
+    /// {
+    ///     var @group = new Dynatrace.IamGroup("group", new()
+    ///     {
+    ///         Name = "#name#",
+    ///     });
+    /// 
+    ///     var dashboard = new Dynatrace.Dashboard("dashboard", new()
+    ///     {
+    ///         DashboardMetadata = new Dynatrace.Inputs.DashboardDashboardMetadataArgs
+    ///         {
+    ///             Preset = true,
+    ///             Name = "#name#",
+    ///             Owner = "Dynatrace",
+    ///             Tags = new[]
+    ///             {
+    ///                 "Kubernetes",
+    ///             },
+    ///             DynamicFilters = new Dynatrace.Inputs.DashboardDashboardMetadataDynamicFiltersArgs
+    ///             {
+    ///                 Filters = new[]
+    ///                 {
+    ///                     "KUBERNETES_CLUSTER",
+    ///                 },
+    ///             },
+    ///         },
+    ///         Tiles = new[]
+    ///         {
+    ///             new Dynatrace.Inputs.DashboardTileArgs
+    ///             {
+    ///                 Name = "Markdown",
+    ///                 TileType = "MARKDOWN",
+    ///                 Configured = true,
+    ///                 Bounds = new Dynatrace.Inputs.DashboardTileBoundsArgs
+    ///                 {
+    ///                     Top = 0,
+    ///                     Width = 684,
+    ///                     Height = 38,
+    ///                     Left = 0,
+    ///                 },
+    ///                 Markdown = "## Cluster resource overview",
+    ///             },
+    ///         },
+    ///     });
+    /// 
+    ///     var presets = new Dynatrace.DashboardsPresets("presets", new()
+    ///     {
+    ///         EnableDashboardPresets = true,
+    ///         DashboardPresetsList = new Dynatrace.Inputs.DashboardsPresetsDashboardPresetsListArgs
+    ///         {
+    ///             DashboardPresets = new[]
+    ///             {
+    ///                 new Dynatrace.Inputs.DashboardsPresetsDashboardPresetsListDashboardPresetArgs
+    ///                 {
+    ///                     DashboardPreset = dashboard.Id,
+    ///                     UserGroup = @group.Id,
+    ///                 },
+    ///             },
+    ///         },
+    ///     });
+    /// 
+    /// });
+    /// ```
     /// </summary>
     [DynatraceResourceType("dynatrace:index/dashboardsPresets:DashboardsPresets")]
     public partial class DashboardsPresets : global::Pulumi.CustomResource

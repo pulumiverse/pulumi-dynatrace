@@ -18,6 +18,20 @@ import * as utilities from "./utilities";
  * - `terraform-provider-dynatrace -export dynatrace.ProcessGroupRum` downloads all real user monitoring configuration for process groups
  *
  * The full documentation of the export feature is available [here](https://dt-url.net/h203qmc).
+ *
+ * ## Resource Example Usage
+ *
+ * ```typescript
+ * import * as pulumi from "@pulumi/pulumi";
+ * import * as dynatrace from "@pulumiverse/dynatrace";
+ *
+ * const config = new pulumi.Config();
+ * const PROCESS_GROUP_ID = config.require("PROCESS_GROUP_ID");
+ * const rum = new dynatrace.ProcessGroupRum("rum", {
+ *     enable: false,
+ *     processGroupId: PROCESS_GROUP_ID,
+ * });
+ * ```
  */
 export class ProcessGroupRum extends pulumi.CustomResource {
     /**

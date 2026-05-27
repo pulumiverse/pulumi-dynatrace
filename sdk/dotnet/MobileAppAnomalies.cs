@@ -24,6 +24,69 @@ namespace Pulumiverse.Dynatrace
     /// - `terraform-provider-dynatrace -export dynatrace.MobileAppAnomalies` downloads all existing mobile application anomaly detection configuration
     /// 
     /// The full documentation of the export feature is available [here](https://dt-url.net/h203qmc).
+    /// 
+    /// ## Resource Example Usage
+    /// 
+    /// ```csharp
+    /// using System.Collections.Generic;
+    /// using System.Linq;
+    /// using Pulumi;
+    /// using Dynatrace = Pulumiverse.Dynatrace;
+    /// 
+    /// return await Deployment.RunAsync(() =&gt; 
+    /// {
+    ///     var application = Dynatrace.GetMobileApplication.Invoke(new()
+    ///     {
+    ///         Name = "Application",
+    ///     });
+    /// 
+    ///     var anomalies = new Dynatrace.MobileAppAnomalies("anomalies", new()
+    ///     {
+    ///         Scope = application.Apply(getMobileApplicationResult =&gt; getMobileApplicationResult.Id),
+    ///         ErrorRateIncrease = new Dynatrace.Inputs.MobileAppAnomaliesErrorRateIncreaseArgs
+    ///         {
+    ///             Enabled = true,
+    ///             DetectionMode = "fixed",
+    ///             ErrorRateIncreaseFixed = new Dynatrace.Inputs.MobileAppAnomaliesErrorRateIncreaseErrorRateIncreaseFixedArgs
+    ///             {
+    ///                 Sensitivity = "medium",
+    ///                 ThresholdAbsolute = 6,
+    ///             },
+    ///         },
+    ///         SlowUserActions = new Dynatrace.Inputs.MobileAppAnomaliesSlowUserActionsArgs
+    ///         {
+    ///             Enabled = true,
+    ///             DetectionMode = "fixed",
+    ///             SlowUserActionsFixed = new Dynatrace.Inputs.MobileAppAnomaliesSlowUserActionsSlowUserActionsFixedArgs
+    ///             {
+    ///                 Sensitivity = "high",
+    ///                 DurationAvoidOveralerting = new Dynatrace.Inputs.MobileAppAnomaliesSlowUserActionsSlowUserActionsFixedDurationAvoidOveralertingArgs
+    ///                 {
+    ///                     MinActionRate = 12,
+    ///                 },
+    ///                 DurationThresholdAllFixed = new Dynatrace.Inputs.MobileAppAnomaliesSlowUserActionsSlowUserActionsFixedDurationThresholdAllFixedArgs
+    ///                 {
+    ///                     DurationThreshold = 200,
+    ///                 },
+    ///                 DurationThresholdSlowest = new Dynatrace.Inputs.MobileAppAnomaliesSlowUserActionsSlowUserActionsFixedDurationThresholdSlowestArgs
+    ///                 {
+    ///                     DurationThreshold = 900,
+    ///                 },
+    ///             },
+    ///         },
+    ///         UnexpectedHighLoad = new Dynatrace.Inputs.MobileAppAnomaliesUnexpectedHighLoadArgs
+    ///         {
+    ///             Enabled = true,
+    ///             ThresholdPercentage = 300,
+    ///         },
+    ///         UnexpectedLowLoad = new Dynatrace.Inputs.MobileAppAnomaliesUnexpectedLowLoadArgs
+    ///         {
+    ///             Enabled = false,
+    ///         },
+    ///     });
+    /// 
+    /// });
+    /// ```
     /// </summary>
     [DynatraceResourceType("dynatrace:index/mobileAppAnomalies:MobileAppAnomalies")]
     public partial class MobileAppAnomalies : global::Pulumi.CustomResource

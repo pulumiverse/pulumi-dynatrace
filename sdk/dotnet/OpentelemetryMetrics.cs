@@ -41,6 +41,12 @@ namespace Pulumiverse.Dynatrace
         public Output<bool> AdditionalAttributesToDimensionEnabled { get; private set; } = null!;
 
         /// <summary>
+        /// Enable advanced OpenTelemetry metric capabilities with Grail, including primary field enrichment, flexible dimensions, enhanced routing, cost allocation, and support for high-cardinality queries. For more details about this and its effect on enrichment with the `dt.entity.service` dimension, please see [this post](https://dt-url.net/otlp-metrics-advanced).
+        /// </summary>
+        [Output("enableMintV2Ingest")]
+        public Output<bool?> EnableMintV2Ingest { get; private set; } = null!;
+
+        /// <summary>
         /// When enabled, the Meter name (also referred to as InstrumentationScope or InstrumentationLibrary in OpenTelemetry SDKs) and version will be added as dimensions (`otel.scope.name` and `otel.scope.version`) to ingested OTLP metrics.
         /// </summary>
         [Output("meterNameToDimensionEnabled")]
@@ -67,13 +73,13 @@ namespace Pulumiverse.Dynatrace
         /// <summary>
         /// The attributes defined in the list below will be dropped from all ingested OTLP metrics.
         /// 
-        /// **Notes:**
+        ///   **Notes:**
         /// 
-        /// - Attributes **must** be added in their **original format**, as exported to Dynatrace by the telemetry source. For example, if the attribute is in `PascalCase`, the same case must be used when adding the attribute to the list.
+        ///   - Attributes **must** be added in their **original format**, as exported to Dynatrace by the telemetry source. For example, if the attribute is in `PascalCase`, the same case must be used when adding the attribute to the list.
         /// 
-        /// - Wildcards are only supported in Metrics powered by Grail.
+        ///   - Wildcards are only supported in Metrics powered by Grail.
         /// 
-        /// - Dynatrace does not recommend including attributes starting with "dt." to the deny list. Dynatrace leverages these attributes to [Enrich metrics](https://www.dynatrace.com/support/help/extend-dynatrace/extend-metrics/reference/enrich-metrics).
+        ///   - Dynatrace does not recommend including attributes starting with "dt." to the deny list. Dynatrace leverages these attributes to [Enrich metrics](https://www.dynatrace.com/support/help/extend-dynatrace/extend-metrics/reference/enrich-metrics).
         /// </summary>
         [Output("toDropAttributes")]
         public Output<Outputs.OpentelemetryMetricsToDropAttributes?> ToDropAttributes { get; private set; } = null!;
@@ -138,6 +144,12 @@ namespace Pulumiverse.Dynatrace
         public Input<bool>? AdditionalAttributesToDimensionEnabled { get; set; }
 
         /// <summary>
+        /// Enable advanced OpenTelemetry metric capabilities with Grail, including primary field enrichment, flexible dimensions, enhanced routing, cost allocation, and support for high-cardinality queries. For more details about this and its effect on enrichment with the `dt.entity.service` dimension, please see [this post](https://dt-url.net/otlp-metrics-advanced).
+        /// </summary>
+        [Input("enableMintV2Ingest")]
+        public Input<bool>? EnableMintV2Ingest { get; set; }
+
+        /// <summary>
         /// When enabled, the Meter name (also referred to as InstrumentationScope or InstrumentationLibrary in OpenTelemetry SDKs) and version will be added as dimensions (`otel.scope.name` and `otel.scope.version`) to ingested OTLP metrics.
         /// </summary>
         [Input("meterNameToDimensionEnabled")]
@@ -164,13 +176,13 @@ namespace Pulumiverse.Dynatrace
         /// <summary>
         /// The attributes defined in the list below will be dropped from all ingested OTLP metrics.
         /// 
-        /// **Notes:**
+        ///   **Notes:**
         /// 
-        /// - Attributes **must** be added in their **original format**, as exported to Dynatrace by the telemetry source. For example, if the attribute is in `PascalCase`, the same case must be used when adding the attribute to the list.
+        ///   - Attributes **must** be added in their **original format**, as exported to Dynatrace by the telemetry source. For example, if the attribute is in `PascalCase`, the same case must be used when adding the attribute to the list.
         /// 
-        /// - Wildcards are only supported in Metrics powered by Grail.
+        ///   - Wildcards are only supported in Metrics powered by Grail.
         /// 
-        /// - Dynatrace does not recommend including attributes starting with "dt." to the deny list. Dynatrace leverages these attributes to [Enrich metrics](https://www.dynatrace.com/support/help/extend-dynatrace/extend-metrics/reference/enrich-metrics).
+        ///   - Dynatrace does not recommend including attributes starting with "dt." to the deny list. Dynatrace leverages these attributes to [Enrich metrics](https://www.dynatrace.com/support/help/extend-dynatrace/extend-metrics/reference/enrich-metrics).
         /// </summary>
         [Input("toDropAttributes")]
         public Input<Inputs.OpentelemetryMetricsToDropAttributesArgs>? ToDropAttributes { get; set; }
@@ -196,6 +208,12 @@ namespace Pulumiverse.Dynatrace
         public Input<bool>? AdditionalAttributesToDimensionEnabled { get; set; }
 
         /// <summary>
+        /// Enable advanced OpenTelemetry metric capabilities with Grail, including primary field enrichment, flexible dimensions, enhanced routing, cost allocation, and support for high-cardinality queries. For more details about this and its effect on enrichment with the `dt.entity.service` dimension, please see [this post](https://dt-url.net/otlp-metrics-advanced).
+        /// </summary>
+        [Input("enableMintV2Ingest")]
+        public Input<bool>? EnableMintV2Ingest { get; set; }
+
+        /// <summary>
         /// When enabled, the Meter name (also referred to as InstrumentationScope or InstrumentationLibrary in OpenTelemetry SDKs) and version will be added as dimensions (`otel.scope.name` and `otel.scope.version`) to ingested OTLP metrics.
         /// </summary>
         [Input("meterNameToDimensionEnabled")]
@@ -222,13 +240,13 @@ namespace Pulumiverse.Dynatrace
         /// <summary>
         /// The attributes defined in the list below will be dropped from all ingested OTLP metrics.
         /// 
-        /// **Notes:**
+        ///   **Notes:**
         /// 
-        /// - Attributes **must** be added in their **original format**, as exported to Dynatrace by the telemetry source. For example, if the attribute is in `PascalCase`, the same case must be used when adding the attribute to the list.
+        ///   - Attributes **must** be added in their **original format**, as exported to Dynatrace by the telemetry source. For example, if the attribute is in `PascalCase`, the same case must be used when adding the attribute to the list.
         /// 
-        /// - Wildcards are only supported in Metrics powered by Grail.
+        ///   - Wildcards are only supported in Metrics powered by Grail.
         /// 
-        /// - Dynatrace does not recommend including attributes starting with "dt." to the deny list. Dynatrace leverages these attributes to [Enrich metrics](https://www.dynatrace.com/support/help/extend-dynatrace/extend-metrics/reference/enrich-metrics).
+        ///   - Dynatrace does not recommend including attributes starting with "dt." to the deny list. Dynatrace leverages these attributes to [Enrich metrics](https://www.dynatrace.com/support/help/extend-dynatrace/extend-metrics/reference/enrich-metrics).
         /// </summary>
         [Input("toDropAttributes")]
         public Input<Inputs.OpentelemetryMetricsToDropAttributesGetArgs>? ToDropAttributes { get; set; }

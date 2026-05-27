@@ -120,6 +120,17 @@ class AttributeAllowList(pulumi.CustomResource):
 
         The full documentation of the export feature is available [here](https://dt-url.net/h203qmc).
 
+        ## Resource Example Usage
+
+        ```python
+        import pulumi
+        import pulumiverse_dynatrace as dynatrace
+
+        list = dynatrace.AttributeAllowList("list",
+            enabled=True,
+            key="attribute.#name#")
+        ```
+
 
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
@@ -146,6 +157,17 @@ class AttributeAllowList(pulumi.CustomResource):
         - `terraform-provider-dynatrace -export AttributeAllowList` downloads all existing attribute allow-list configuration
 
         The full documentation of the export feature is available [here](https://dt-url.net/h203qmc).
+
+        ## Resource Example Usage
+
+        ```python
+        import pulumi
+        import pulumiverse_dynatrace as dynatrace
+
+        list = dynatrace.AttributeAllowList("list",
+            enabled=True,
+            key="attribute.#name#")
+        ```
 
 
         :param str resource_name: The name of the resource.

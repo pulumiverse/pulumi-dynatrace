@@ -22,6 +22,55 @@ import * as utilities from "./utilities";
  * - `terraform-provider-dynatrace -export dynatrace.HttpMonitorScript` downloads all existing HTTP monitor script configuration
  *
  * The full documentation of the export feature is available [here](https://dt-url.net/h203qmc).
+ *
+ * ## Resource Example Usage
+ *
+ * ```typescript
+ * import * as pulumi from "@pulumi/pulumi";
+ * import * as dynatrace from "@pulumiverse/dynatrace";
+ *
+ * const location = dynatrace.getSyntheticLocation({
+ *     name: "Location",
+ * });
+ * const monitor = new dynatrace.HttpMonitor("monitor", {
+ *     anomalyDetections: [{
+ *         loadingTimeThresholds: [{}],
+ *         outageHandlings: [{
+ *             globalOutage: true,
+ *             globalOutagePolicies: [{
+ *                 consecutiveRuns: 1,
+ *             }],
+ *         }],
+ *     }],
+ *     name: "#name#",
+ *     frequency: 1,
+ *     locations: [location.then(location => location.id)],
+ *     noScript: true,
+ * });
+ * const script = new dynatrace.HttpMonitorScript("script", {
+ *     httpId: monitor.id,
+ *     script: {
+ *         requests: [
+ *             {
+ *                 description: "request1",
+ *                 method: "GET",
+ *                 url: "https://example.com",
+ *                 configuration: {
+ *                     acceptAnyCertificate: true,
+ *                 },
+ *             },
+ *             {
+ *                 description: "request2",
+ *                 method: "GET",
+ *                 url: "https://example.com",
+ *                 configuration: {
+ *                     acceptAnyCertificate: true,
+ *                 },
+ *             },
+ *         ],
+ *     },
+ * });
+ * ```
  */
 export class HttpMonitorScript extends pulumi.CustomResource {
     /**

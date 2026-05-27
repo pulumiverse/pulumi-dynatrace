@@ -23,12 +23,13 @@ import * as utilities from "./utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as dynatrace from "@pulumiverse/dynatrace";
  *
- * const sampleWorklowTF = new dynatrace.AutomationWorkflow("Sample_Worklow_TF", {
+ * const wfUser = new dynatrace.IamServiceUser("wf_user", {name: "#name#"});
+ * const workflowWithDavisEventTrigger = new dynatrace.AutomationWorkflow("workflow_with_davis_event_trigger", {
  *     description: "Desc",
- *     actor: "########-####-####-####-############",
- *     title: "Sample Worklow TF1",
- *     owner: "########-####-####-####-############",
- *     "private": true,
+ *     actor: wfUser.id,
+ *     owner: wfUser.id,
+ *     "private": false,
+ *     title: "#name#",
  *     tasks: {
  *         tasks: [
  *             {
@@ -38,11 +39,16 @@ import * as utilities from "./utilities";
  *                 active: true,
  *                 input: JSON.stringify({
  *                     method: "GET",
- *                     url: "https://www.google.at/",
+ *                     url: "https://www.example.com/",
  *                 }),
  *                 position: {
  *                     x: 0,
  *                     y: 1,
+ *                 },
+ *                 retry: {
+ *                     count: "3",
+ *                     delay: "1000",
+ *                     failedLoopIterationsOnly: false,
  *                 },
  *             },
  *             {
@@ -50,22 +56,22 @@ import * as utilities from "./utilities";
  *                 description: "Issue an HTTP request to any API",
  *                 action: "dynatrace.automations:http-function",
  *                 active: false,
+ *                 timeout: "50000",
  *                 input: JSON.stringify({
  *                     method: "GET",
- *                     url: "https://www.second-task.com/",
+ *                     url: "https://www.example.com/",
  *                 }),
  *                 conditions: {
+ *                     custom: "",
  *                     states: {
  *                         http_request_1: "SUCCESS",
  *                         run_javascript_1: "OK",
  *                     },
- *                     custom: "",
  *                 },
  *                 position: {
  *                     x: -1,
  *                     y: 2,
  *                 },
- *                 timeout: "50000",
  *             },
  *             {
  *                 name: "http_request_3",
@@ -74,13 +80,13 @@ import * as utilities from "./utilities";
  *                 active: false,
  *                 input: JSON.stringify({
  *                     method: "GET",
- *                     url: "https://www.third-task.com",
+ *                     url: "https://www.example.com",
  *                 }),
  *                 conditions: {
+ *                     custom: "{{http_request_1}}",
  *                     states: {
  *                         http_request_2: "OK",
  *                     },
- *                     custom: "{{http_request_1}}",
  *                 },
  *                 position: {
  *                     x: 0,
@@ -117,10 +123,10 @@ import * as utilities from "./utilities";
  *             active: false,
  *             config: {
  *                 davisEvent: {
- *                     entityTagsMatch: "all",
  *                     entityTags: {
  *                         asdf: "",
  *                     },
+ *                     entityTagsMatch: "all",
  *                     onProblemClose: false,
  *                     customFilter: "matchesPhrase(custom.event.type, \"DEPLOY\")",
  *                 },
@@ -167,13 +173,37 @@ export class AutomationWorkflow extends pulumi.CustomResource {
      */
     declare public readonly description: pulumi.Output<string | undefined>;
     /**
+     * Informational guide text for the workflow
+     */
+    declare public readonly guide: pulumi.Output<string | undefined>;
+    /**
+     * Maximum number of executions per hour. Default is `1000`
+     */
+    declare public readonly hourlyExecutionLimit: pulumi.Output<number | undefined>;
+    /**
+     * Workflow-level input parameters as JSON. These parameters are available to all tasks in the workflow
+     */
+    declare public readonly input: pulumi.Output<string | undefined>;
+    /**
+     * Defines whether this workflow is deployed and active, or kept as a draft. An undeployed workflow is not billed and its automatic trigger will not be running. Default is `true`
+     */
+    declare public readonly isDeployed: pulumi.Output<boolean | undefined>;
+    /**
      * The ID of the owner of this workflow
      */
     declare public readonly owner: pulumi.Output<string | undefined>;
     /**
+     * The type of the owner. Possible values are `USER` and `GROUP`
+     */
+    declare public readonly ownerType: pulumi.Output<string | undefined>;
+    /**
      * Defines whether this workflow is private to the owner or not. Default is `true`
      */
     declare public readonly private: pulumi.Output<boolean | undefined>;
+    /**
+     * The result of the workflow
+     */
+    declare public readonly result: pulumi.Output<string | undefined>;
     /**
      * The tasks to run for every execution of this workflow
      */
@@ -206,8 +236,14 @@ export class AutomationWorkflow extends pulumi.CustomResource {
             const state = argsOrState as AutomationWorkflowState | undefined;
             resourceInputs["actor"] = state?.actor;
             resourceInputs["description"] = state?.description;
+            resourceInputs["guide"] = state?.guide;
+            resourceInputs["hourlyExecutionLimit"] = state?.hourlyExecutionLimit;
+            resourceInputs["input"] = state?.input;
+            resourceInputs["isDeployed"] = state?.isDeployed;
             resourceInputs["owner"] = state?.owner;
+            resourceInputs["ownerType"] = state?.ownerType;
             resourceInputs["private"] = state?.private;
+            resourceInputs["result"] = state?.result;
             resourceInputs["tasks"] = state?.tasks;
             resourceInputs["title"] = state?.title;
             resourceInputs["trigger"] = state?.trigger;
@@ -222,8 +258,14 @@ export class AutomationWorkflow extends pulumi.CustomResource {
             }
             resourceInputs["actor"] = args?.actor;
             resourceInputs["description"] = args?.description;
+            resourceInputs["guide"] = args?.guide;
+            resourceInputs["hourlyExecutionLimit"] = args?.hourlyExecutionLimit;
+            resourceInputs["input"] = args?.input;
+            resourceInputs["isDeployed"] = args?.isDeployed;
             resourceInputs["owner"] = args?.owner;
+            resourceInputs["ownerType"] = args?.ownerType;
             resourceInputs["private"] = args?.private;
+            resourceInputs["result"] = args?.result;
             resourceInputs["tasks"] = args?.tasks;
             resourceInputs["title"] = args?.title;
             resourceInputs["trigger"] = args?.trigger;
@@ -247,13 +289,37 @@ export interface AutomationWorkflowState {
      */
     description?: pulumi.Input<string | undefined>;
     /**
+     * Informational guide text for the workflow
+     */
+    guide?: pulumi.Input<string | undefined>;
+    /**
+     * Maximum number of executions per hour. Default is `1000`
+     */
+    hourlyExecutionLimit?: pulumi.Input<number | undefined>;
+    /**
+     * Workflow-level input parameters as JSON. These parameters are available to all tasks in the workflow
+     */
+    input?: pulumi.Input<string | undefined>;
+    /**
+     * Defines whether this workflow is deployed and active, or kept as a draft. An undeployed workflow is not billed and its automatic trigger will not be running. Default is `true`
+     */
+    isDeployed?: pulumi.Input<boolean | undefined>;
+    /**
      * The ID of the owner of this workflow
      */
     owner?: pulumi.Input<string | undefined>;
     /**
+     * The type of the owner. Possible values are `USER` and `GROUP`
+     */
+    ownerType?: pulumi.Input<string | undefined>;
+    /**
      * Defines whether this workflow is private to the owner or not. Default is `true`
      */
     private?: pulumi.Input<boolean | undefined>;
+    /**
+     * The result of the workflow
+     */
+    result?: pulumi.Input<string | undefined>;
     /**
      * The tasks to run for every execution of this workflow
      */
@@ -285,13 +351,37 @@ export interface AutomationWorkflowArgs {
      */
     description?: pulumi.Input<string | undefined>;
     /**
+     * Informational guide text for the workflow
+     */
+    guide?: pulumi.Input<string | undefined>;
+    /**
+     * Maximum number of executions per hour. Default is `1000`
+     */
+    hourlyExecutionLimit?: pulumi.Input<number | undefined>;
+    /**
+     * Workflow-level input parameters as JSON. These parameters are available to all tasks in the workflow
+     */
+    input?: pulumi.Input<string | undefined>;
+    /**
+     * Defines whether this workflow is deployed and active, or kept as a draft. An undeployed workflow is not billed and its automatic trigger will not be running. Default is `true`
+     */
+    isDeployed?: pulumi.Input<boolean | undefined>;
+    /**
      * The ID of the owner of this workflow
      */
     owner?: pulumi.Input<string | undefined>;
     /**
+     * The type of the owner. Possible values are `USER` and `GROUP`
+     */
+    ownerType?: pulumi.Input<string | undefined>;
+    /**
      * Defines whether this workflow is private to the owner or not. Default is `true`
      */
     private?: pulumi.Input<boolean | undefined>;
+    /**
+     * The result of the workflow
+     */
+    result?: pulumi.Input<string | undefined>;
     /**
      * The tasks to run for every execution of this workflow
      */

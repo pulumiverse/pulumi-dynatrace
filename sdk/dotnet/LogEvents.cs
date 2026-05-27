@@ -41,7 +41,7 @@ namespace Pulumiverse.Dynatrace
         public Output<Outputs.LogEventsEventTemplate> EventTemplate { get; private set; } = null!;
 
         /// <summary>
-        /// Log query
+        /// Matcher
         /// </summary>
         [Output("query")]
         public Output<string> Query { get; private set; } = null!;
@@ -112,7 +112,7 @@ namespace Pulumiverse.Dynatrace
         public Input<Inputs.LogEventsEventTemplateArgs> EventTemplate { get; set; } = null!;
 
         /// <summary>
-        /// Log query
+        /// Matcher
         /// </summary>
         [Input("query", required: true)]
         public Input<string> Query { get; set; } = null!;
@@ -144,7 +144,7 @@ namespace Pulumiverse.Dynatrace
         public Input<Inputs.LogEventsEventTemplateGetArgs>? EventTemplate { get; set; }
 
         /// <summary>
-        /// Log query
+        /// Matcher
         /// </summary>
         [Input("query")]
         public Input<string>? Query { get; set; }

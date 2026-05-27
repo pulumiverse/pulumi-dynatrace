@@ -25,8 +25,14 @@ class AutomationWorkflowArgs:
                  title: pulumi.Input[_builtins.str],
                  actor: pulumi.Input[Optional[_builtins.str]] = None,
                  description: pulumi.Input[Optional[_builtins.str]] = None,
+                 guide: pulumi.Input[Optional[_builtins.str]] = None,
+                 hourly_execution_limit: pulumi.Input[Optional[_builtins.int]] = None,
+                 input: pulumi.Input[Optional[_builtins.str]] = None,
+                 is_deployed: pulumi.Input[Optional[_builtins.bool]] = None,
                  owner: pulumi.Input[Optional[_builtins.str]] = None,
+                 owner_type: pulumi.Input[Optional[_builtins.str]] = None,
                  private: pulumi.Input[Optional[_builtins.bool]] = None,
+                 result: pulumi.Input[Optional[_builtins.str]] = None,
                  trigger: pulumi.Input[Optional['AutomationWorkflowTriggerArgs']] = None,
                  type: pulumi.Input[Optional[_builtins.str]] = None):
         """
@@ -36,8 +42,14 @@ class AutomationWorkflowArgs:
         :param pulumi.Input[_builtins.str] title: The title / name of the workflow
         :param pulumi.Input[_builtins.str] actor: The user context the executions of the workflow will happen with
         :param pulumi.Input[_builtins.str] description: An optional description for the workflow
+        :param pulumi.Input[_builtins.str] guide: Informational guide text for the workflow
+        :param pulumi.Input[_builtins.int] hourly_execution_limit: Maximum number of executions per hour. Default is `1000`
+        :param pulumi.Input[_builtins.str] input: Workflow-level input parameters as JSON. These parameters are available to all tasks in the workflow
+        :param pulumi.Input[_builtins.bool] is_deployed: Defines whether this workflow is deployed and active, or kept as a draft. An undeployed workflow is not billed and its automatic trigger will not be running. Default is `true`
         :param pulumi.Input[_builtins.str] owner: The ID of the owner of this workflow
+        :param pulumi.Input[_builtins.str] owner_type: The type of the owner. Possible values are `USER` and `GROUP`
         :param pulumi.Input[_builtins.bool] private: Defines whether this workflow is private to the owner or not. Default is `true`
+        :param pulumi.Input[_builtins.str] result: The result of the workflow
         :param pulumi.Input['AutomationWorkflowTriggerArgs'] trigger: Configures how executions of the workflows are getting triggered. If no trigger is specified it means the workflow is getting manually triggered
         :param pulumi.Input[_builtins.str] type: The type of the workflow. Possible values are `STANDARD` and `SIMPLE`. Defaults to `STANDARD`. Workflows of type `SIMPLE` are allowed to contain only one action
         """
@@ -47,10 +59,22 @@ class AutomationWorkflowArgs:
             pulumi.set(__self__, "actor", actor)
         if description is not None:
             pulumi.set(__self__, "description", description)
+        if guide is not None:
+            pulumi.set(__self__, "guide", guide)
+        if hourly_execution_limit is not None:
+            pulumi.set(__self__, "hourly_execution_limit", hourly_execution_limit)
+        if input is not None:
+            pulumi.set(__self__, "input", input)
+        if is_deployed is not None:
+            pulumi.set(__self__, "is_deployed", is_deployed)
         if owner is not None:
             pulumi.set(__self__, "owner", owner)
+        if owner_type is not None:
+            pulumi.set(__self__, "owner_type", owner_type)
         if private is not None:
             pulumi.set(__self__, "private", private)
+        if result is not None:
+            pulumi.set(__self__, "result", result)
         if trigger is not None:
             pulumi.set(__self__, "trigger", trigger)
         if type is not None:
@@ -106,6 +130,54 @@ class AutomationWorkflowArgs:
 
     @_builtins.property
     @pulumi.getter
+    def guide(self) -> pulumi.Input[Optional[_builtins.str]]:
+        """
+        Informational guide text for the workflow
+        """
+        return pulumi.get(self, "guide")
+
+    @guide.setter
+    def guide(self, value: pulumi.Input[Optional[_builtins.str]]):
+        pulumi.set(self, "guide", value)
+
+    @_builtins.property
+    @pulumi.getter(name="hourlyExecutionLimit")
+    def hourly_execution_limit(self) -> pulumi.Input[Optional[_builtins.int]]:
+        """
+        Maximum number of executions per hour. Default is `1000`
+        """
+        return pulumi.get(self, "hourly_execution_limit")
+
+    @hourly_execution_limit.setter
+    def hourly_execution_limit(self, value: pulumi.Input[Optional[_builtins.int]]):
+        pulumi.set(self, "hourly_execution_limit", value)
+
+    @_builtins.property
+    @pulumi.getter
+    def input(self) -> pulumi.Input[Optional[_builtins.str]]:
+        """
+        Workflow-level input parameters as JSON. These parameters are available to all tasks in the workflow
+        """
+        return pulumi.get(self, "input")
+
+    @input.setter
+    def input(self, value: pulumi.Input[Optional[_builtins.str]]):
+        pulumi.set(self, "input", value)
+
+    @_builtins.property
+    @pulumi.getter(name="isDeployed")
+    def is_deployed(self) -> pulumi.Input[Optional[_builtins.bool]]:
+        """
+        Defines whether this workflow is deployed and active, or kept as a draft. An undeployed workflow is not billed and its automatic trigger will not be running. Default is `true`
+        """
+        return pulumi.get(self, "is_deployed")
+
+    @is_deployed.setter
+    def is_deployed(self, value: pulumi.Input[Optional[_builtins.bool]]):
+        pulumi.set(self, "is_deployed", value)
+
+    @_builtins.property
+    @pulumi.getter
     def owner(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The ID of the owner of this workflow
@@ -115,6 +187,18 @@ class AutomationWorkflowArgs:
     @owner.setter
     def owner(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "owner", value)
+
+    @_builtins.property
+    @pulumi.getter(name="ownerType")
+    def owner_type(self) -> pulumi.Input[Optional[_builtins.str]]:
+        """
+        The type of the owner. Possible values are `USER` and `GROUP`
+        """
+        return pulumi.get(self, "owner_type")
+
+    @owner_type.setter
+    def owner_type(self, value: pulumi.Input[Optional[_builtins.str]]):
+        pulumi.set(self, "owner_type", value)
 
     @_builtins.property
     @pulumi.getter
@@ -127,6 +211,18 @@ class AutomationWorkflowArgs:
     @private.setter
     def private(self, value: pulumi.Input[Optional[_builtins.bool]]):
         pulumi.set(self, "private", value)
+
+    @_builtins.property
+    @pulumi.getter
+    def result(self) -> pulumi.Input[Optional[_builtins.str]]:
+        """
+        The result of the workflow
+        """
+        return pulumi.get(self, "result")
+
+    @result.setter
+    def result(self, value: pulumi.Input[Optional[_builtins.str]]):
+        pulumi.set(self, "result", value)
 
     @_builtins.property
     @pulumi.getter
@@ -158,8 +254,14 @@ class _AutomationWorkflowState:
     def __init__(__self__, *,
                  actor: pulumi.Input[Optional[_builtins.str]] = None,
                  description: pulumi.Input[Optional[_builtins.str]] = None,
+                 guide: pulumi.Input[Optional[_builtins.str]] = None,
+                 hourly_execution_limit: pulumi.Input[Optional[_builtins.int]] = None,
+                 input: pulumi.Input[Optional[_builtins.str]] = None,
+                 is_deployed: pulumi.Input[Optional[_builtins.bool]] = None,
                  owner: pulumi.Input[Optional[_builtins.str]] = None,
+                 owner_type: pulumi.Input[Optional[_builtins.str]] = None,
                  private: pulumi.Input[Optional[_builtins.bool]] = None,
+                 result: pulumi.Input[Optional[_builtins.str]] = None,
                  tasks: pulumi.Input[Optional['AutomationWorkflowTasksArgs']] = None,
                  title: pulumi.Input[Optional[_builtins.str]] = None,
                  trigger: pulumi.Input[Optional['AutomationWorkflowTriggerArgs']] = None,
@@ -169,8 +271,14 @@ class _AutomationWorkflowState:
 
         :param pulumi.Input[_builtins.str] actor: The user context the executions of the workflow will happen with
         :param pulumi.Input[_builtins.str] description: An optional description for the workflow
+        :param pulumi.Input[_builtins.str] guide: Informational guide text for the workflow
+        :param pulumi.Input[_builtins.int] hourly_execution_limit: Maximum number of executions per hour. Default is `1000`
+        :param pulumi.Input[_builtins.str] input: Workflow-level input parameters as JSON. These parameters are available to all tasks in the workflow
+        :param pulumi.Input[_builtins.bool] is_deployed: Defines whether this workflow is deployed and active, or kept as a draft. An undeployed workflow is not billed and its automatic trigger will not be running. Default is `true`
         :param pulumi.Input[_builtins.str] owner: The ID of the owner of this workflow
+        :param pulumi.Input[_builtins.str] owner_type: The type of the owner. Possible values are `USER` and `GROUP`
         :param pulumi.Input[_builtins.bool] private: Defines whether this workflow is private to the owner or not. Default is `true`
+        :param pulumi.Input[_builtins.str] result: The result of the workflow
         :param pulumi.Input['AutomationWorkflowTasksArgs'] tasks: The tasks to run for every execution of this workflow
         :param pulumi.Input[_builtins.str] title: The title / name of the workflow
         :param pulumi.Input['AutomationWorkflowTriggerArgs'] trigger: Configures how executions of the workflows are getting triggered. If no trigger is specified it means the workflow is getting manually triggered
@@ -180,10 +288,22 @@ class _AutomationWorkflowState:
             pulumi.set(__self__, "actor", actor)
         if description is not None:
             pulumi.set(__self__, "description", description)
+        if guide is not None:
+            pulumi.set(__self__, "guide", guide)
+        if hourly_execution_limit is not None:
+            pulumi.set(__self__, "hourly_execution_limit", hourly_execution_limit)
+        if input is not None:
+            pulumi.set(__self__, "input", input)
+        if is_deployed is not None:
+            pulumi.set(__self__, "is_deployed", is_deployed)
         if owner is not None:
             pulumi.set(__self__, "owner", owner)
+        if owner_type is not None:
+            pulumi.set(__self__, "owner_type", owner_type)
         if private is not None:
             pulumi.set(__self__, "private", private)
+        if result is not None:
+            pulumi.set(__self__, "result", result)
         if tasks is not None:
             pulumi.set(__self__, "tasks", tasks)
         if title is not None:
@@ -219,6 +339,54 @@ class _AutomationWorkflowState:
 
     @_builtins.property
     @pulumi.getter
+    def guide(self) -> pulumi.Input[Optional[_builtins.str]]:
+        """
+        Informational guide text for the workflow
+        """
+        return pulumi.get(self, "guide")
+
+    @guide.setter
+    def guide(self, value: pulumi.Input[Optional[_builtins.str]]):
+        pulumi.set(self, "guide", value)
+
+    @_builtins.property
+    @pulumi.getter(name="hourlyExecutionLimit")
+    def hourly_execution_limit(self) -> pulumi.Input[Optional[_builtins.int]]:
+        """
+        Maximum number of executions per hour. Default is `1000`
+        """
+        return pulumi.get(self, "hourly_execution_limit")
+
+    @hourly_execution_limit.setter
+    def hourly_execution_limit(self, value: pulumi.Input[Optional[_builtins.int]]):
+        pulumi.set(self, "hourly_execution_limit", value)
+
+    @_builtins.property
+    @pulumi.getter
+    def input(self) -> pulumi.Input[Optional[_builtins.str]]:
+        """
+        Workflow-level input parameters as JSON. These parameters are available to all tasks in the workflow
+        """
+        return pulumi.get(self, "input")
+
+    @input.setter
+    def input(self, value: pulumi.Input[Optional[_builtins.str]]):
+        pulumi.set(self, "input", value)
+
+    @_builtins.property
+    @pulumi.getter(name="isDeployed")
+    def is_deployed(self) -> pulumi.Input[Optional[_builtins.bool]]:
+        """
+        Defines whether this workflow is deployed and active, or kept as a draft. An undeployed workflow is not billed and its automatic trigger will not be running. Default is `true`
+        """
+        return pulumi.get(self, "is_deployed")
+
+    @is_deployed.setter
+    def is_deployed(self, value: pulumi.Input[Optional[_builtins.bool]]):
+        pulumi.set(self, "is_deployed", value)
+
+    @_builtins.property
+    @pulumi.getter
     def owner(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The ID of the owner of this workflow
@@ -228,6 +396,18 @@ class _AutomationWorkflowState:
     @owner.setter
     def owner(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "owner", value)
+
+    @_builtins.property
+    @pulumi.getter(name="ownerType")
+    def owner_type(self) -> pulumi.Input[Optional[_builtins.str]]:
+        """
+        The type of the owner. Possible values are `USER` and `GROUP`
+        """
+        return pulumi.get(self, "owner_type")
+
+    @owner_type.setter
+    def owner_type(self, value: pulumi.Input[Optional[_builtins.str]]):
+        pulumi.set(self, "owner_type", value)
 
     @_builtins.property
     @pulumi.getter
@@ -240,6 +420,18 @@ class _AutomationWorkflowState:
     @private.setter
     def private(self, value: pulumi.Input[Optional[_builtins.bool]]):
         pulumi.set(self, "private", value)
+
+    @_builtins.property
+    @pulumi.getter
+    def result(self) -> pulumi.Input[Optional[_builtins.str]]:
+        """
+        The result of the workflow
+        """
+        return pulumi.get(self, "result")
+
+    @result.setter
+    def result(self, value: pulumi.Input[Optional[_builtins.str]]):
+        pulumi.set(self, "result", value)
 
     @_builtins.property
     @pulumi.getter
@@ -298,8 +490,14 @@ class AutomationWorkflow(pulumi.CustomResource):
                  opts: Optional[pulumi.ResourceOptions] = None,
                  actor: pulumi.Input[Optional[_builtins.str]] = None,
                  description: pulumi.Input[Optional[_builtins.str]] = None,
+                 guide: pulumi.Input[Optional[_builtins.str]] = None,
+                 hourly_execution_limit: pulumi.Input[Optional[_builtins.int]] = None,
+                 input: pulumi.Input[Optional[_builtins.str]] = None,
+                 is_deployed: pulumi.Input[Optional[_builtins.bool]] = None,
                  owner: pulumi.Input[Optional[_builtins.str]] = None,
+                 owner_type: pulumi.Input[Optional[_builtins.str]] = None,
                  private: pulumi.Input[Optional[_builtins.bool]] = None,
+                 result: pulumi.Input[Optional[_builtins.str]] = None,
                  tasks: pulumi.Input[Optional[Union['AutomationWorkflowTasksArgs', 'AutomationWorkflowTasksArgsDict']]] = None,
                  title: pulumi.Input[Optional[_builtins.str]] = None,
                  trigger: pulumi.Input[Optional[Union['AutomationWorkflowTriggerArgs', 'AutomationWorkflowTriggerArgsDict']]] = None,
@@ -323,12 +521,13 @@ class AutomationWorkflow(pulumi.CustomResource):
         import json
         import pulumiverse_dynatrace as dynatrace
 
-        sample_worklow_tf = dynatrace.AutomationWorkflow("Sample_Worklow_TF",
+        wf_user = dynatrace.IamServiceUser("wf_user", name="#name#")
+        workflow_with_davis_event_trigger = dynatrace.AutomationWorkflow("workflow_with_davis_event_trigger",
             description="Desc",
-            actor="########-####-####-####-############",
-            title="Sample Worklow TF1",
-            owner="########-####-####-####-############",
-            private=True,
+            actor=wf_user.id,
+            owner=wf_user.id,
+            private=False,
+            title="#name#",
             tasks={
                 "tasks": [
                     {
@@ -338,11 +537,16 @@ class AutomationWorkflow(pulumi.CustomResource):
                         "active": True,
                         "input": json.dumps({
                             "method": "GET",
-                            "url": "https://www.google.at/",
+                            "url": "https://www.example.com/",
                         }),
                         "position": {
                             "x": 0,
                             "y": 1,
+                        },
+                        "retry": {
+                            "count": "3",
+                            "delay": "1000",
+                            "failed_loop_iterations_only": False,
                         },
                     },
                     {
@@ -350,22 +554,22 @@ class AutomationWorkflow(pulumi.CustomResource):
                         "description": "Issue an HTTP request to any API",
                         "action": "dynatrace.automations:http-function",
                         "active": False,
+                        "timeout": "50000",
                         "input": json.dumps({
                             "method": "GET",
-                            "url": "https://www.second-task.com/",
+                            "url": "https://www.example.com/",
                         }),
                         "conditions": {
+                            "custom": "",
                             "states": {
                                 "http_request_1": "SUCCESS",
                                 "run_javascript_1": "OK",
                             },
-                            "custom": "",
                         },
                         "position": {
                             "x": -1,
                             "y": 2,
                         },
-                        "timeout": "50000",
                     },
                     {
                         "name": "http_request_3",
@@ -374,13 +578,13 @@ class AutomationWorkflow(pulumi.CustomResource):
                         "active": False,
                         "input": json.dumps({
                             "method": "GET",
-                            "url": "https://www.third-task.com",
+                            "url": "https://www.example.com",
                         }),
                         "conditions": {
+                            "custom": "{{http_request_1}}",
                             "states": {
                                 "http_request_2": "OK",
                             },
-                            "custom": "{{http_request_1}}",
                         },
                         "position": {
                             "x": 0,
@@ -417,10 +621,10 @@ class AutomationWorkflow(pulumi.CustomResource):
                     "active": False,
                     "config": {
                         "davis_event": {
-                            "entity_tags_match": "all",
                             "entity_tags": {
                                 "asdf": "",
                             },
+                            "entity_tags_match": "all",
                             "on_problem_close": False,
                             "custom_filter": "matchesPhrase(custom.event.type, \\"DEPLOY\\")",
                         },
@@ -434,8 +638,14 @@ class AutomationWorkflow(pulumi.CustomResource):
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[_builtins.str] actor: The user context the executions of the workflow will happen with
         :param pulumi.Input[_builtins.str] description: An optional description for the workflow
+        :param pulumi.Input[_builtins.str] guide: Informational guide text for the workflow
+        :param pulumi.Input[_builtins.int] hourly_execution_limit: Maximum number of executions per hour. Default is `1000`
+        :param pulumi.Input[_builtins.str] input: Workflow-level input parameters as JSON. These parameters are available to all tasks in the workflow
+        :param pulumi.Input[_builtins.bool] is_deployed: Defines whether this workflow is deployed and active, or kept as a draft. An undeployed workflow is not billed and its automatic trigger will not be running. Default is `true`
         :param pulumi.Input[_builtins.str] owner: The ID of the owner of this workflow
+        :param pulumi.Input[_builtins.str] owner_type: The type of the owner. Possible values are `USER` and `GROUP`
         :param pulumi.Input[_builtins.bool] private: Defines whether this workflow is private to the owner or not. Default is `true`
+        :param pulumi.Input[_builtins.str] result: The result of the workflow
         :param pulumi.Input[Union['AutomationWorkflowTasksArgs', 'AutomationWorkflowTasksArgsDict']] tasks: The tasks to run for every execution of this workflow
         :param pulumi.Input[_builtins.str] title: The title / name of the workflow
         :param pulumi.Input[Union['AutomationWorkflowTriggerArgs', 'AutomationWorkflowTriggerArgsDict']] trigger: Configures how executions of the workflows are getting triggered. If no trigger is specified it means the workflow is getting manually triggered
@@ -465,12 +675,13 @@ class AutomationWorkflow(pulumi.CustomResource):
         import json
         import pulumiverse_dynatrace as dynatrace
 
-        sample_worklow_tf = dynatrace.AutomationWorkflow("Sample_Worklow_TF",
+        wf_user = dynatrace.IamServiceUser("wf_user", name="#name#")
+        workflow_with_davis_event_trigger = dynatrace.AutomationWorkflow("workflow_with_davis_event_trigger",
             description="Desc",
-            actor="########-####-####-####-############",
-            title="Sample Worklow TF1",
-            owner="########-####-####-####-############",
-            private=True,
+            actor=wf_user.id,
+            owner=wf_user.id,
+            private=False,
+            title="#name#",
             tasks={
                 "tasks": [
                     {
@@ -480,11 +691,16 @@ class AutomationWorkflow(pulumi.CustomResource):
                         "active": True,
                         "input": json.dumps({
                             "method": "GET",
-                            "url": "https://www.google.at/",
+                            "url": "https://www.example.com/",
                         }),
                         "position": {
                             "x": 0,
                             "y": 1,
+                        },
+                        "retry": {
+                            "count": "3",
+                            "delay": "1000",
+                            "failed_loop_iterations_only": False,
                         },
                     },
                     {
@@ -492,22 +708,22 @@ class AutomationWorkflow(pulumi.CustomResource):
                         "description": "Issue an HTTP request to any API",
                         "action": "dynatrace.automations:http-function",
                         "active": False,
+                        "timeout": "50000",
                         "input": json.dumps({
                             "method": "GET",
-                            "url": "https://www.second-task.com/",
+                            "url": "https://www.example.com/",
                         }),
                         "conditions": {
+                            "custom": "",
                             "states": {
                                 "http_request_1": "SUCCESS",
                                 "run_javascript_1": "OK",
                             },
-                            "custom": "",
                         },
                         "position": {
                             "x": -1,
                             "y": 2,
                         },
-                        "timeout": "50000",
                     },
                     {
                         "name": "http_request_3",
@@ -516,13 +732,13 @@ class AutomationWorkflow(pulumi.CustomResource):
                         "active": False,
                         "input": json.dumps({
                             "method": "GET",
-                            "url": "https://www.third-task.com",
+                            "url": "https://www.example.com",
                         }),
                         "conditions": {
+                            "custom": "{{http_request_1}}",
                             "states": {
                                 "http_request_2": "OK",
                             },
-                            "custom": "{{http_request_1}}",
                         },
                         "position": {
                             "x": 0,
@@ -559,10 +775,10 @@ class AutomationWorkflow(pulumi.CustomResource):
                     "active": False,
                     "config": {
                         "davis_event": {
-                            "entity_tags_match": "all",
                             "entity_tags": {
                                 "asdf": "",
                             },
+                            "entity_tags_match": "all",
                             "on_problem_close": False,
                             "custom_filter": "matchesPhrase(custom.event.type, \\"DEPLOY\\")",
                         },
@@ -589,8 +805,14 @@ class AutomationWorkflow(pulumi.CustomResource):
                  opts: Optional[pulumi.ResourceOptions] = None,
                  actor: pulumi.Input[Optional[_builtins.str]] = None,
                  description: pulumi.Input[Optional[_builtins.str]] = None,
+                 guide: pulumi.Input[Optional[_builtins.str]] = None,
+                 hourly_execution_limit: pulumi.Input[Optional[_builtins.int]] = None,
+                 input: pulumi.Input[Optional[_builtins.str]] = None,
+                 is_deployed: pulumi.Input[Optional[_builtins.bool]] = None,
                  owner: pulumi.Input[Optional[_builtins.str]] = None,
+                 owner_type: pulumi.Input[Optional[_builtins.str]] = None,
                  private: pulumi.Input[Optional[_builtins.bool]] = None,
+                 result: pulumi.Input[Optional[_builtins.str]] = None,
                  tasks: pulumi.Input[Optional[Union['AutomationWorkflowTasksArgs', 'AutomationWorkflowTasksArgsDict']]] = None,
                  title: pulumi.Input[Optional[_builtins.str]] = None,
                  trigger: pulumi.Input[Optional[Union['AutomationWorkflowTriggerArgs', 'AutomationWorkflowTriggerArgsDict']]] = None,
@@ -606,8 +828,14 @@ class AutomationWorkflow(pulumi.CustomResource):
 
             __props__.__dict__["actor"] = actor
             __props__.__dict__["description"] = description
+            __props__.__dict__["guide"] = guide
+            __props__.__dict__["hourly_execution_limit"] = hourly_execution_limit
+            __props__.__dict__["input"] = input
+            __props__.__dict__["is_deployed"] = is_deployed
             __props__.__dict__["owner"] = owner
+            __props__.__dict__["owner_type"] = owner_type
             __props__.__dict__["private"] = private
+            __props__.__dict__["result"] = result
             if tasks is None and not opts.urn:
                 raise TypeError("Missing required property 'tasks'")
             __props__.__dict__["tasks"] = tasks
@@ -628,8 +856,14 @@ class AutomationWorkflow(pulumi.CustomResource):
             opts: Optional[pulumi.ResourceOptions] = None,
             actor: pulumi.Input[Optional[_builtins.str]] = None,
             description: pulumi.Input[Optional[_builtins.str]] = None,
+            guide: pulumi.Input[Optional[_builtins.str]] = None,
+            hourly_execution_limit: pulumi.Input[Optional[_builtins.int]] = None,
+            input: pulumi.Input[Optional[_builtins.str]] = None,
+            is_deployed: pulumi.Input[Optional[_builtins.bool]] = None,
             owner: pulumi.Input[Optional[_builtins.str]] = None,
+            owner_type: pulumi.Input[Optional[_builtins.str]] = None,
             private: pulumi.Input[Optional[_builtins.bool]] = None,
+            result: pulumi.Input[Optional[_builtins.str]] = None,
             tasks: pulumi.Input[Optional[Union['AutomationWorkflowTasksArgs', 'AutomationWorkflowTasksArgsDict']]] = None,
             title: pulumi.Input[Optional[_builtins.str]] = None,
             trigger: pulumi.Input[Optional[Union['AutomationWorkflowTriggerArgs', 'AutomationWorkflowTriggerArgsDict']]] = None,
@@ -643,8 +877,14 @@ class AutomationWorkflow(pulumi.CustomResource):
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[_builtins.str] actor: The user context the executions of the workflow will happen with
         :param pulumi.Input[_builtins.str] description: An optional description for the workflow
+        :param pulumi.Input[_builtins.str] guide: Informational guide text for the workflow
+        :param pulumi.Input[_builtins.int] hourly_execution_limit: Maximum number of executions per hour. Default is `1000`
+        :param pulumi.Input[_builtins.str] input: Workflow-level input parameters as JSON. These parameters are available to all tasks in the workflow
+        :param pulumi.Input[_builtins.bool] is_deployed: Defines whether this workflow is deployed and active, or kept as a draft. An undeployed workflow is not billed and its automatic trigger will not be running. Default is `true`
         :param pulumi.Input[_builtins.str] owner: The ID of the owner of this workflow
+        :param pulumi.Input[_builtins.str] owner_type: The type of the owner. Possible values are `USER` and `GROUP`
         :param pulumi.Input[_builtins.bool] private: Defines whether this workflow is private to the owner or not. Default is `true`
+        :param pulumi.Input[_builtins.str] result: The result of the workflow
         :param pulumi.Input[Union['AutomationWorkflowTasksArgs', 'AutomationWorkflowTasksArgsDict']] tasks: The tasks to run for every execution of this workflow
         :param pulumi.Input[_builtins.str] title: The title / name of the workflow
         :param pulumi.Input[Union['AutomationWorkflowTriggerArgs', 'AutomationWorkflowTriggerArgsDict']] trigger: Configures how executions of the workflows are getting triggered. If no trigger is specified it means the workflow is getting manually triggered
@@ -656,8 +896,14 @@ class AutomationWorkflow(pulumi.CustomResource):
 
         __props__.__dict__["actor"] = actor
         __props__.__dict__["description"] = description
+        __props__.__dict__["guide"] = guide
+        __props__.__dict__["hourly_execution_limit"] = hourly_execution_limit
+        __props__.__dict__["input"] = input
+        __props__.__dict__["is_deployed"] = is_deployed
         __props__.__dict__["owner"] = owner
+        __props__.__dict__["owner_type"] = owner_type
         __props__.__dict__["private"] = private
+        __props__.__dict__["result"] = result
         __props__.__dict__["tasks"] = tasks
         __props__.__dict__["title"] = title
         __props__.__dict__["trigger"] = trigger
@@ -682,11 +928,51 @@ class AutomationWorkflow(pulumi.CustomResource):
 
     @_builtins.property
     @pulumi.getter
+    def guide(self) -> pulumi.Output[Optional[_builtins.str]]:
+        """
+        Informational guide text for the workflow
+        """
+        return pulumi.get(self, "guide")
+
+    @_builtins.property
+    @pulumi.getter(name="hourlyExecutionLimit")
+    def hourly_execution_limit(self) -> pulumi.Output[Optional[_builtins.int]]:
+        """
+        Maximum number of executions per hour. Default is `1000`
+        """
+        return pulumi.get(self, "hourly_execution_limit")
+
+    @_builtins.property
+    @pulumi.getter
+    def input(self) -> pulumi.Output[Optional[_builtins.str]]:
+        """
+        Workflow-level input parameters as JSON. These parameters are available to all tasks in the workflow
+        """
+        return pulumi.get(self, "input")
+
+    @_builtins.property
+    @pulumi.getter(name="isDeployed")
+    def is_deployed(self) -> pulumi.Output[Optional[_builtins.bool]]:
+        """
+        Defines whether this workflow is deployed and active, or kept as a draft. An undeployed workflow is not billed and its automatic trigger will not be running. Default is `true`
+        """
+        return pulumi.get(self, "is_deployed")
+
+    @_builtins.property
+    @pulumi.getter
     def owner(self) -> pulumi.Output[Optional[_builtins.str]]:
         """
         The ID of the owner of this workflow
         """
         return pulumi.get(self, "owner")
+
+    @_builtins.property
+    @pulumi.getter(name="ownerType")
+    def owner_type(self) -> pulumi.Output[Optional[_builtins.str]]:
+        """
+        The type of the owner. Possible values are `USER` and `GROUP`
+        """
+        return pulumi.get(self, "owner_type")
 
     @_builtins.property
     @pulumi.getter
@@ -695,6 +981,14 @@ class AutomationWorkflow(pulumi.CustomResource):
         Defines whether this workflow is private to the owner or not. Default is `true`
         """
         return pulumi.get(self, "private")
+
+    @_builtins.property
+    @pulumi.getter
+    def result(self) -> pulumi.Output[Optional[_builtins.str]]:
+        """
+        The result of the workflow
+        """
+        return pulumi.get(self, "result")
 
     @_builtins.property
     @pulumi.getter

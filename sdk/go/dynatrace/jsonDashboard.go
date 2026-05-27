@@ -27,6 +27,510 @@ import (
 // - `terraform-provider-dynatrace -export JsonDashboard` downloads all existing dashboard configuration
 //
 // The full documentation of the export feature is available [here](https://dt-url.net/h203qmc).
+//
+// ## Resource Example Usage
+//
+// ```go
+// package main
+//
+// import (
+//
+//	"encoding/json"
+//
+//	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//	"github.com/pulumiverse/pulumi-dynatrace/sdk/go/dynatrace"
+//
+// )
+//
+//	func main() {
+//		pulumi.Run(func(ctx *pulumi.Context) error {
+//			tmpJSON0, err := json.Marshal(map[string]interface{}{
+//				"dashboardMetadata": map[string]interface{}{
+//					"name":   "Performance overview",
+//					"shared": true,
+//					"owner":  "Dynatrace",
+//					"tags": []string{
+//						"performance",
+//					},
+//					"preset":              true,
+//					"hasConsistentColors": false,
+//				},
+//				"tiles": []interface{}{
+//					map[string]interface{}{
+//						"name":       "Performance",
+//						"tileType":   "HEADER",
+//						"configured": true,
+//						"bounds": map[string]interface{}{
+//							"top":    0,
+//							"left":   38,
+//							"width":  1026,
+//							"height": 38,
+//						},
+//						"tileFilter":            map[string]interface{}{},
+//						"isAutoRefreshDisabled": true,
+//					},
+//					map[string]interface{}{
+//						"name":       "Failure rate by service",
+//						"tileType":   "DATA_EXPLORER",
+//						"configured": true,
+//						"bounds": map[string]interface{}{
+//							"top":    342,
+//							"left":   38,
+//							"width":  342,
+//							"height": 304,
+//						},
+//						"tileFilter":            map[string]interface{}{},
+//						"isAutoRefreshDisabled": true,
+//						"customName":            "Successful calls by service instance",
+//						"queries": []map[string]interface{}{
+//							map[string]interface{}{
+//								"id":               "A",
+//								"metric":           "builtin:service.errors.total.rate",
+//								"spaceAggregation": "AUTO",
+//								"timeAggregation":  "DEFAULT",
+//								"splitBy": []string{
+//									"dt.entity.service",
+//								},
+//								"sortBy":          "DESC",
+//								"sortByDimension": "",
+//								"filterBy": map[string]interface{}{
+//									"nestedFilters": []interface{}{},
+//									"criteria":      []interface{}{},
+//								},
+//								"limit":   20,
+//								"rate":    "NONE",
+//								"enabled": true,
+//							},
+//						},
+//						"visualConfig": map[string]interface{}{
+//							"type": "TOP_LIST",
+//							"global": map[string]interface{}{
+//								"hideLegend": false,
+//							},
+//							"rules": []map[string]interface{}{
+//								map[string]interface{}{
+//									"matcher": "A:",
+//									"properties": map[string]interface{}{
+//										"color": "DEFAULT",
+//									},
+//									"seriesOverrides": []interface{}{},
+//								},
+//							},
+//							"axes": map[string]interface{}{
+//								"xAxis": map[string]interface{}{
+//									"visible": true,
+//								},
+//								"yAxes": []interface{}{},
+//							},
+//							"heatmapSettings": map[string]interface{}{
+//								"yAxis": "VALUE",
+//							},
+//							"singleValueSettings": map[string]interface{}{
+//								"showSparkLine": true,
+//							},
+//							"thresholds": []map[string]interface{}{
+//								map[string]interface{}{
+//									"axisTarget": "LEFT",
+//									"rules": []map[string]interface{}{
+//										map[string]interface{}{
+//											"color": "#7dc540",
+//										},
+//										map[string]interface{}{
+//											"color": "#f5d30f",
+//										},
+//										map[string]interface{}{
+//											"color": "#dc172a",
+//										},
+//									},
+//									"visible": true,
+//								},
+//							},
+//							"tableSettings": map[string]interface{}{
+//								"hiddenColumns": []interface{}{},
+//							},
+//							"graphChartSettings": map[string]interface{}{
+//								"connectNulls": false,
+//							},
+//							"honeycombSettings": map[string]interface{}{
+//								"showHive":   true,
+//								"showLegend": true,
+//								"showLabels": false,
+//							},
+//						},
+//						"queriesSettings": map[string]interface{}{
+//							"resolution": "",
+//						},
+//						"metricExpressions": []string{
+//							"resolution=Inf&(builtin:service.errors.total.rate:splitBy(\"dt.entity.service\"):sort(value(auto,descending)):limit(20)):limit(100):names",
+//						},
+//					},
+//					map[string]interface{}{
+//						"name":       "Total calls",
+//						"tileType":   "DATA_EXPLORER",
+//						"configured": true,
+//						"bounds": map[string]interface{}{
+//							"top":    38,
+//							"left":   38,
+//							"width":  342,
+//							"height": 304,
+//						},
+//						"tileFilter":            map[string]interface{}{},
+//						"isAutoRefreshDisabled": true,
+//						"customName":            "Total calls",
+//						"queries": []map[string]interface{}{
+//							map[string]interface{}{
+//								"id":               "A",
+//								"metric":           "builtin:service.errors.total.successCount",
+//								"spaceAggregation": "SUM",
+//								"timeAggregation":  "DEFAULT",
+//								"splitBy": []string{
+//									"dt.entity.service",
+//								},
+//								"sortBy":          "DESC",
+//								"sortByDimension": "",
+//								"filterBy": map[string]interface{}{
+//									"nestedFilters": []interface{}{},
+//									"criteria":      []interface{}{},
+//								},
+//								"limit":   20,
+//								"rate":    "NONE",
+//								"enabled": true,
+//							},
+//							map[string]interface{}{
+//								"id":               "B",
+//								"metric":           "builtin:service.errors.fourxx.successCount",
+//								"spaceAggregation": "SUM",
+//								"timeAggregation":  "DEFAULT",
+//								"splitBy": []string{
+//									"dt.entity.service",
+//								},
+//								"sortBy":          "DESC",
+//								"sortByDimension": "",
+//								"filterBy": map[string]interface{}{
+//									"nestedFilters": []interface{}{},
+//									"criteria":      []interface{}{},
+//								},
+//								"limit":   20,
+//								"rate":    "NONE",
+//								"enabled": true,
+//							},
+//							map[string]interface{}{
+//								"id":               "C",
+//								"metric":           "builtin:service.errors.fivexx.successCount",
+//								"spaceAggregation": "SUM",
+//								"timeAggregation":  "DEFAULT",
+//								"splitBy": []string{
+//									"dt.entity.service",
+//								},
+//								"sortBy":          "DESC",
+//								"sortByDimension": "",
+//								"filterBy": map[string]interface{}{
+//									"nestedFilters": []interface{}{},
+//									"criteria":      []interface{}{},
+//								},
+//								"limit":   20,
+//								"rate":    "NONE",
+//								"enabled": true,
+//							},
+//						},
+//						"visualConfig": map[string]interface{}{
+//							"type": "STACKED_AREA",
+//							"global": map[string]interface{}{
+//								"hideLegend": false,
+//							},
+//							"rules": []map[string]interface{}{
+//								map[string]interface{}{
+//									"matcher": "A:",
+//									"properties": map[string]interface{}{
+//										"color": "DEFAULT",
+//									},
+//									"seriesOverrides": []interface{}{},
+//								},
+//								map[string]interface{}{
+//									"matcher": "B:",
+//									"properties": map[string]interface{}{
+//										"color": "DEFAULT",
+//									},
+//									"seriesOverrides": []interface{}{},
+//								},
+//								map[string]interface{}{
+//									"matcher": "C:",
+//									"properties": map[string]interface{}{
+//										"color": "DEFAULT",
+//									},
+//									"seriesOverrides": []interface{}{},
+//								},
+//							},
+//							"axes": map[string]interface{}{
+//								"xAxis": map[string]interface{}{
+//									"displayName": "",
+//									"visible":     true,
+//								},
+//								"yAxes": []map[string]interface{}{
+//									map[string]interface{}{
+//										"displayName": "",
+//										"visible":     true,
+//										"min":         "AUTO",
+//										"max":         "AUTO",
+//										"position":    "LEFT",
+//										"queryIds": []string{
+//											"A",
+//											"B",
+//											"C",
+//										},
+//										"defaultAxis": true,
+//									},
+//								},
+//							},
+//							"heatmapSettings": map[string]interface{}{
+//								"yAxis": "VALUE",
+//							},
+//							"singleValueSettings": map[string]interface{}{
+//								"showSparkLine": true,
+//							},
+//							"thresholds": []map[string]interface{}{
+//								map[string]interface{}{
+//									"axisTarget": "LEFT",
+//									"rules": []map[string]interface{}{
+//										map[string]interface{}{
+//											"color": "#7dc540",
+//										},
+//										map[string]interface{}{
+//											"color": "#f5d30f",
+//										},
+//										map[string]interface{}{
+//											"color": "#dc172a",
+//										},
+//									},
+//									"visible": true,
+//								},
+//							},
+//							"tableSettings": map[string]interface{}{
+//								"hiddenColumns": []interface{}{},
+//							},
+//							"graphChartSettings": map[string]interface{}{
+//								"connectNulls": false,
+//							},
+//							"honeycombSettings": map[string]interface{}{
+//								"showHive":   true,
+//								"showLegend": true,
+//								"showLabels": false,
+//							},
+//						},
+//						"queriesSettings": map[string]interface{}{
+//							"resolution": "",
+//						},
+//						"metricExpressions": []string{
+//							"resolution=null&(builtin:service.errors.total.successCount:splitBy(\"dt.entity.service\"):sum:sort(value(sum,descending)):limit(20)):limit(100):names,(builtin:service.errors.fourxx.successCount:splitBy(\"dt.entity.service\"):sum:sort(value(sum,descending)):limit(20)):limit(100):names,(builtin:service.errors.fivexx.successCount:splitBy(\"dt.entity.service\"):sum:sort(value(sum,descending)):limit(20)):limit(100):names",
+//						},
+//					},
+//					map[string]interface{}{
+//						"name":       "Total errors",
+//						"tileType":   "DATA_EXPLORER",
+//						"configured": true,
+//						"bounds": map[string]interface{}{
+//							"top":    38,
+//							"left":   380,
+//							"width":  342,
+//							"height": 304,
+//						},
+//						"tileFilter":            map[string]interface{}{},
+//						"isAutoRefreshDisabled": true,
+//						"customName":            "Total errors",
+//						"queries": []map[string]interface{}{
+//							map[string]interface{}{
+//								"id":               "A",
+//								"metric":           "builtin:service.errors.total.count",
+//								"spaceAggregation": "SUM",
+//								"timeAggregation":  "DEFAULT",
+//								"splitBy":          []interface{}{},
+//								"sortBy":           "DESC",
+//								"sortByDimension":  "",
+//								"filterBy": map[string]interface{}{
+//									"nestedFilters": []interface{}{},
+//									"criteria":      []interface{}{},
+//								},
+//								"limit":   20,
+//								"rate":    "NONE",
+//								"enabled": true,
+//							},
+//						},
+//						"visualConfig": map[string]interface{}{
+//							"type": "SINGLE_VALUE",
+//							"global": map[string]interface{}{
+//								"hideLegend": false,
+//							},
+//							"rules": []map[string]interface{}{
+//								map[string]interface{}{
+//									"matcher": "A:",
+//									"properties": map[string]interface{}{
+//										"color": "DEFAULT",
+//									},
+//									"seriesOverrides": []interface{}{},
+//								},
+//							},
+//							"axes": map[string]interface{}{
+//								"xAxis": map[string]interface{}{
+//									"visible": true,
+//								},
+//								"yAxes": []interface{}{},
+//							},
+//							"heatmapSettings": map[string]interface{}{
+//								"yAxis": "VALUE",
+//							},
+//							"singleValueSettings": map[string]interface{}{
+//								"showTrend":                false,
+//								"showSparkLine":            true,
+//								"linkTileColorToThreshold": false,
+//							},
+//							"thresholds": []map[string]interface{}{
+//								map[string]interface{}{
+//									"axisTarget": "LEFT",
+//									"rules": []map[string]interface{}{
+//										map[string]interface{}{
+//											"color": "#7dc540",
+//										},
+//										map[string]interface{}{
+//											"color": "#f5d30f",
+//										},
+//										map[string]interface{}{
+//											"color": "#dc172a",
+//										},
+//									},
+//									"visible": true,
+//								},
+//							},
+//							"tableSettings": map[string]interface{}{
+//								"hiddenColumns": []interface{}{},
+//							},
+//							"graphChartSettings": map[string]interface{}{
+//								"connectNulls": false,
+//							},
+//							"honeycombSettings": map[string]interface{}{
+//								"showHive":   true,
+//								"showLegend": true,
+//								"showLabels": false,
+//							},
+//						},
+//						"queriesSettings": map[string]interface{}{
+//							"resolution": "",
+//						},
+//						"metricExpressions": []string{
+//							"resolution=Inf&(builtin:service.errors.total.count:splitBy():sum:sort(value(sum,descending)):limit(20)):limit(100):names",
+//							"resolution=null&(builtin:service.errors.total.count:splitBy():sum:sort(value(sum,descending)):limit(20))",
+//						},
+//					},
+//					map[string]interface{}{
+//						"name":       "Client side errors",
+//						"tileType":   "DATA_EXPLORER",
+//						"configured": true,
+//						"bounds": map[string]interface{}{
+//							"top":    38,
+//							"left":   722,
+//							"width":  342,
+//							"height": 304,
+//						},
+//						"tileFilter":            map[string]interface{}{},
+//						"isAutoRefreshDisabled": true,
+//						"customName":            "Client & server errors by operation",
+//						"queries": []map[string]interface{}{
+//							map[string]interface{}{
+//								"id":               "A",
+//								"metric":           "builtin:service.errors.client.count",
+//								"spaceAggregation": "SUM",
+//								"timeAggregation":  "DEFAULT",
+//								"splitBy":          []interface{}{},
+//								"sortBy":           "DESC",
+//								"sortByDimension":  "",
+//								"filterBy": map[string]interface{}{
+//									"nestedFilters": []interface{}{},
+//									"criteria":      []interface{}{},
+//								},
+//								"limit":   20,
+//								"rate":    "NONE",
+//								"enabled": true,
+//							},
+//						},
+//						"visualConfig": map[string]interface{}{
+//							"type": "SINGLE_VALUE",
+//							"global": map[string]interface{}{
+//								"hideLegend": false,
+//							},
+//							"rules": []map[string]interface{}{
+//								map[string]interface{}{
+//									"matcher": "A:",
+//									"properties": map[string]interface{}{
+//										"color": "DEFAULT",
+//									},
+//									"seriesOverrides": []interface{}{},
+//								},
+//							},
+//							"axes": map[string]interface{}{
+//								"xAxis": map[string]interface{}{
+//									"visible": true,
+//								},
+//								"yAxes": []interface{}{},
+//							},
+//							"heatmapSettings": map[string]interface{}{
+//								"yAxis": "VALUE",
+//							},
+//							"singleValueSettings": map[string]interface{}{
+//								"showSparkLine": true,
+//							},
+//							"thresholds": []map[string]interface{}{
+//								map[string]interface{}{
+//									"axisTarget": "LEFT",
+//									"rules": []map[string]interface{}{
+//										map[string]interface{}{
+//											"color": "#7dc540",
+//										},
+//										map[string]interface{}{
+//											"color": "#f5d30f",
+//										},
+//										map[string]interface{}{
+//											"color": "#dc172a",
+//										},
+//									},
+//									"visible": true,
+//								},
+//							},
+//							"tableSettings": map[string]interface{}{
+//								"hiddenColumns": []interface{}{},
+//							},
+//							"graphChartSettings": map[string]interface{}{
+//								"connectNulls": false,
+//							},
+//							"honeycombSettings": map[string]interface{}{
+//								"showHive":   true,
+//								"showLegend": true,
+//								"showLabels": false,
+//							},
+//						},
+//						"queriesSettings": map[string]interface{}{
+//							"resolution": "",
+//						},
+//						"metricExpressions": []string{
+//							"resolution=Inf&(builtin:service.errors.client.count:splitBy():sum:sort(value(sum,descending)):limit(20)):limit(100):names",
+//							"resolution=null&(builtin:service.errors.client.count:splitBy():sum:sort(value(sum,descending)):limit(20))",
+//						},
+//					},
+//				},
+//			})
+//			if err != nil {
+//				return err
+//			}
+//			json0 := string(tmpJSON0)
+//			_, err = dynatrace.NewJsonDashboard(ctx, "name", &dynatrace.JsonDashboardArgs{
+//				Contents: pulumi.String(pulumi.String(json0)),
+//			})
+//			if err != nil {
+//				return err
+//			}
+//			return nil
+//		})
+//	}
+//
+// ```
 type JsonDashboard struct {
 	pulumi.CustomResourceState
 

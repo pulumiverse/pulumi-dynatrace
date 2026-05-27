@@ -19,62 +19,104 @@ namespace Pulumiverse.Dynatrace
     [DynatraceResourceType("pulumi:providers:dynatrace")]
     public partial class Provider : global::Pulumi.ProviderResource
     {
+        /// <summary>
+        /// The Dynatrace account ID (UUID). Required for IAM (Account Management) resources. Also serves as a fallback for `IamAccountId`.
+        /// </summary>
         [Output("accountId")]
         public Output<string?> AccountId { get; private set; } = null!;
 
+        /// <summary>
+        /// The client ID of an OAuth client used for platform APIs. Falls back to `ClientId` if not specified.
+        /// </summary>
         [Output("automationClientId")]
         public Output<string?> AutomationClientId { get; private set; } = null!;
 
+        /// <summary>
+        /// The client secret of an OAuth client used for platform APIs. Falls back to `ClientSecret` if not specified.
+        /// </summary>
         [Output("automationClientSecret")]
         public Output<string?> AutomationClientSecret { get; private set; } = null!;
 
         /// <summary>
-        /// The URL of the Dynatrace Environment with Platform capabilities turned on (`https://#####.apps.dynatrace.com)`. This is optional configuration when `DtEnvUrl` already specifies a SaaS Environment like `https://#####.live.dynatrace.com` or `https://#####.apps.dynatrace.com`
+        /// The URL of the Dynatrace platform environment (`https://#####.apps.dynatrace.com`). Falls back to `DtEnvUrl` if not specified.
         /// </summary>
         [Output("automationEnvUrl")]
         public Output<string?> AutomationEnvUrl { get; private set; } = null!;
 
         /// <summary>
-        /// The URL that provides the Bearer tokens when accessing the Automation REST API. This is optional configuration when `DtEnvUrl` already specifies a SaaS Environment like `https://#####.live.dynatrace.com` or `https://#####.apps.dynatrace.com`
+        /// The token URL for obtaining access tokens via OAuth for the platform APIs. Default: `https://sso.dynatrace.com/sso/oauth2/token`.
         /// </summary>
         [Output("automationTokenUrl")]
         public Output<string?> AutomationTokenUrl { get; private set; } = null!;
 
+        /// <summary>
+        /// The client ID of an OAuth client used for  platform APIs. Also serves as a fallback for `IamClientId` and `AutomationClientId`.
+        /// </summary>
         [Output("clientId")]
         public Output<string?> ClientId { get; private set; } = null!;
 
+        /// <summary>
+        /// The client secret of an OAuth client used for platform APIs. Also serves as a fallback for `IamClientSecret` and `AutomationClientSecret`.
+        /// </summary>
         [Output("clientSecret")]
         public Output<string?> ClientSecret { get; private set; } = null!;
 
+        /// <summary>
+        /// The API token for classic Dynatrace APIs.
+        /// </summary>
         [Output("dtApiToken")]
         public Output<string?> DtApiToken { get; private set; } = null!;
 
+        /// <summary>
+        /// The API token for Dynatrace Managed cluster APIs.
+        /// </summary>
         [Output("dtClusterApiToken")]
         public Output<string?> DtClusterApiToken { get; private set; } = null!;
 
+        /// <summary>
+        /// The URL of the Dynatrace Managed cluster.
+        /// </summary>
         [Output("dtClusterUrl")]
         public Output<string?> DtClusterUrl { get; private set; } = null!;
 
+        /// <summary>
+        /// The URL of the Dynatrace environment (e.g. `https://#####.live.dynatrace.com` or `https://#####.apps.dynatrace.com`).
+        /// </summary>
         [Output("dtEnvUrl")]
         public Output<string?> DtEnvUrl { get; private set; } = null!;
 
+        /// <summary>
+        /// The Dynatrace account ID (UUID). Required for IAM (Account Management) resources. Falls back to `AccountId` if not specified.
+        /// </summary>
         [Output("iamAccountId")]
         public Output<string?> IamAccountId { get; private set; } = null!;
 
+        /// <summary>
+        /// The client ID of an OAuth client used for the IAM (Account Management) API. Falls back to `ClientId` if not specified.
+        /// </summary>
         [Output("iamClientId")]
         public Output<string?> IamClientId { get; private set; } = null!;
 
+        /// <summary>
+        /// The client secret of an OAuth client used for the IAM (Account Management) API. Falls back to `ClientSecret` if not specified.
+        /// </summary>
         [Output("iamClientSecret")]
         public Output<string?> IamClientSecret { get; private set; } = null!;
 
+        /// <summary>
+        /// The endpoint URL for the IAM (Account Management) API. Default: `https://api.dynatrace.com`.
+        /// </summary>
         [Output("iamEndpointUrl")]
         public Output<string?> IamEndpointUrl { get; private set; } = null!;
 
+        /// <summary>
+        /// The token URL for obtaining access tokens via OAuth for the IAM (Account Management) API. Default: `https://sso.dynatrace.com/sso/oauth2/token`.
+        /// </summary>
         [Output("iamTokenUrl")]
         public Output<string?> IamTokenUrl { get; private set; } = null!;
 
         /// <summary>
-        /// A Dynatrace Platform Token. Specifying such a token allows for easy authentication against Platform resources. In such a case it supersedes `AutomationClientId`, `AutomationClientSecret`, `AutomationTokenUrl` and `AutomationEnvUrl`
+        /// The Dynatrace platform token used for platform APIs. When specified, it is used in preference to `ClientId`, `ClientSecret`, `AutomationClientId`, `AutomationClientSecret`, `AutomationTokenUrl`, and `AutomationEnvUrl` for platform requests. Platform tokens can't be used for IAM (Account Management) or classic resources.
         /// </summary>
         [Output("platformToken")]
         public Output<string?> PlatformToken { get; private set; } = null!;
@@ -132,6 +174,10 @@ namespace Pulumiverse.Dynatrace
     {
         [Input("accountId")]
         private Input<string>? _accountId;
+
+        /// <summary>
+        /// The Dynatrace account ID (UUID). Required for IAM (Account Management) resources. Also serves as a fallback for `IamAccountId`.
+        /// </summary>
         public Input<string>? AccountId
         {
             get => _accountId;
@@ -144,6 +190,10 @@ namespace Pulumiverse.Dynatrace
 
         [Input("automationClientId")]
         private Input<string>? _automationClientId;
+
+        /// <summary>
+        /// The client ID of an OAuth client used for platform APIs. Falls back to `ClientId` if not specified.
+        /// </summary>
         public Input<string>? AutomationClientId
         {
             get => _automationClientId;
@@ -156,6 +206,10 @@ namespace Pulumiverse.Dynatrace
 
         [Input("automationClientSecret")]
         private Input<string>? _automationClientSecret;
+
+        /// <summary>
+        /// The client secret of an OAuth client used for platform APIs. Falls back to `ClientSecret` if not specified.
+        /// </summary>
         public Input<string>? AutomationClientSecret
         {
             get => _automationClientSecret;
@@ -167,19 +221,23 @@ namespace Pulumiverse.Dynatrace
         }
 
         /// <summary>
-        /// The URL of the Dynatrace Environment with Platform capabilities turned on (`https://#####.apps.dynatrace.com)`. This is optional configuration when `DtEnvUrl` already specifies a SaaS Environment like `https://#####.live.dynatrace.com` or `https://#####.apps.dynatrace.com`
+        /// The URL of the Dynatrace platform environment (`https://#####.apps.dynatrace.com`). Falls back to `DtEnvUrl` if not specified.
         /// </summary>
         [Input("automationEnvUrl")]
         public Input<string>? AutomationEnvUrl { get; set; }
 
         /// <summary>
-        /// The URL that provides the Bearer tokens when accessing the Automation REST API. This is optional configuration when `DtEnvUrl` already specifies a SaaS Environment like `https://#####.live.dynatrace.com` or `https://#####.apps.dynatrace.com`
+        /// The token URL for obtaining access tokens via OAuth for the platform APIs. Default: `https://sso.dynatrace.com/sso/oauth2/token`.
         /// </summary>
         [Input("automationTokenUrl")]
         public Input<string>? AutomationTokenUrl { get; set; }
 
         [Input("clientId")]
         private Input<string>? _clientId;
+
+        /// <summary>
+        /// The client ID of an OAuth client used for  platform APIs. Also serves as a fallback for `IamClientId` and `AutomationClientId`.
+        /// </summary>
         public Input<string>? ClientId
         {
             get => _clientId;
@@ -192,6 +250,10 @@ namespace Pulumiverse.Dynatrace
 
         [Input("clientSecret")]
         private Input<string>? _clientSecret;
+
+        /// <summary>
+        /// The client secret of an OAuth client used for platform APIs. Also serves as a fallback for `IamClientSecret` and `AutomationClientSecret`.
+        /// </summary>
         public Input<string>? ClientSecret
         {
             get => _clientSecret;
@@ -204,6 +266,10 @@ namespace Pulumiverse.Dynatrace
 
         [Input("dtApiToken")]
         private Input<string>? _dtApiToken;
+
+        /// <summary>
+        /// The API token for classic Dynatrace APIs.
+        /// </summary>
         public Input<string>? DtApiToken
         {
             get => _dtApiToken;
@@ -216,6 +282,10 @@ namespace Pulumiverse.Dynatrace
 
         [Input("dtClusterApiToken")]
         private Input<string>? _dtClusterApiToken;
+
+        /// <summary>
+        /// The API token for Dynatrace Managed cluster APIs.
+        /// </summary>
         public Input<string>? DtClusterApiToken
         {
             get => _dtClusterApiToken;
@@ -228,6 +298,10 @@ namespace Pulumiverse.Dynatrace
 
         [Input("dtClusterUrl")]
         private Input<string>? _dtClusterUrl;
+
+        /// <summary>
+        /// The URL of the Dynatrace Managed cluster.
+        /// </summary>
         public Input<string>? DtClusterUrl
         {
             get => _dtClusterUrl;
@@ -238,11 +312,18 @@ namespace Pulumiverse.Dynatrace
             }
         }
 
+        /// <summary>
+        /// The URL of the Dynatrace environment (e.g. `https://#####.live.dynatrace.com` or `https://#####.apps.dynatrace.com`).
+        /// </summary>
         [Input("dtEnvUrl")]
         public Input<string>? DtEnvUrl { get; set; }
 
         [Input("iamAccountId")]
         private Input<string>? _iamAccountId;
+
+        /// <summary>
+        /// The Dynatrace account ID (UUID). Required for IAM (Account Management) resources. Falls back to `AccountId` if not specified.
+        /// </summary>
         public Input<string>? IamAccountId
         {
             get => _iamAccountId;
@@ -255,6 +336,10 @@ namespace Pulumiverse.Dynatrace
 
         [Input("iamClientId")]
         private Input<string>? _iamClientId;
+
+        /// <summary>
+        /// The client ID of an OAuth client used for the IAM (Account Management) API. Falls back to `ClientId` if not specified.
+        /// </summary>
         public Input<string>? IamClientId
         {
             get => _iamClientId;
@@ -267,6 +352,10 @@ namespace Pulumiverse.Dynatrace
 
         [Input("iamClientSecret")]
         private Input<string>? _iamClientSecret;
+
+        /// <summary>
+        /// The client secret of an OAuth client used for the IAM (Account Management) API. Falls back to `ClientSecret` if not specified.
+        /// </summary>
         public Input<string>? IamClientSecret
         {
             get => _iamClientSecret;
@@ -279,6 +368,10 @@ namespace Pulumiverse.Dynatrace
 
         [Input("iamEndpointUrl")]
         private Input<string>? _iamEndpointUrl;
+
+        /// <summary>
+        /// The endpoint URL for the IAM (Account Management) API. Default: `https://api.dynatrace.com`.
+        /// </summary>
         public Input<string>? IamEndpointUrl
         {
             get => _iamEndpointUrl;
@@ -291,6 +384,10 @@ namespace Pulumiverse.Dynatrace
 
         [Input("iamTokenUrl")]
         private Input<string>? _iamTokenUrl;
+
+        /// <summary>
+        /// The token URL for obtaining access tokens via OAuth for the IAM (Account Management) API. Default: `https://sso.dynatrace.com/sso/oauth2/token`.
+        /// </summary>
         public Input<string>? IamTokenUrl
         {
             get => _iamTokenUrl;
@@ -302,7 +399,7 @@ namespace Pulumiverse.Dynatrace
         }
 
         /// <summary>
-        /// A Dynatrace Platform Token. Specifying such a token allows for easy authentication against Platform resources. In such a case it supersedes `AutomationClientId`, `AutomationClientSecret`, `AutomationTokenUrl` and `AutomationEnvUrl`
+        /// The Dynatrace platform token used for platform APIs. When specified, it is used in preference to `ClientId`, `ClientSecret`, `AutomationClientId`, `AutomationClientSecret`, `AutomationTokenUrl`, and `AutomationEnvUrl` for platform requests. Platform tokens can't be used for IAM (Account Management) or classic resources.
         /// </summary>
         [Input("platformToken")]
         public Input<string>? PlatformToken { get; set; }

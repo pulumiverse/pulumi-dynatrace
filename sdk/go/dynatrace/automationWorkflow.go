@@ -38,9 +38,15 @@ import (
 //
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
+//			wfUser, err := dynatrace.NewIamServiceUser(ctx, "wf_user", &dynatrace.IamServiceUserArgs{
+//				Name: pulumi.String("#name#"),
+//			})
+//			if err != nil {
+//				return err
+//			}
 //			tmpJSON0, err := json.Marshal(map[string]interface{}{
 //				"method": "GET",
-//				"url":    "https://www.google.at/",
+//				"url":    "https://www.example.com/",
 //			})
 //			if err != nil {
 //				return err
@@ -48,7 +54,7 @@ import (
 //			json0 := string(tmpJSON0)
 //			tmpJSON1, err := json.Marshal(map[string]interface{}{
 //				"method": "GET",
-//				"url":    "https://www.second-task.com/",
+//				"url":    "https://www.example.com/",
 //			})
 //			if err != nil {
 //				return err
@@ -56,7 +62,7 @@ import (
 //			json1 := string(tmpJSON1)
 //			tmpJSON2, err := json.Marshal(map[string]interface{}{
 //				"method": "GET",
-//				"url":    "https://www.third-task.com",
+//				"url":    "https://www.example.com",
 //			})
 //			if err != nil {
 //				return err
@@ -81,12 +87,12 @@ import (
 //				return err
 //			}
 //			json3 := string(tmpJSON3)
-//			_, err = dynatrace.NewAutomationWorkflow(ctx, "Sample_Worklow_TF", &dynatrace.AutomationWorkflowArgs{
+//			_, err = dynatrace.NewAutomationWorkflow(ctx, "workflow_with_davis_event_trigger", &dynatrace.AutomationWorkflowArgs{
 //				Description: pulumi.String("Desc"),
-//				Actor:       pulumi.String("########-####-####-####-############"),
-//				Title:       pulumi.String("Sample Worklow TF1"),
-//				Owner:       pulumi.String("########-####-####-####-############"),
-//				Private:     pulumi.Bool(true),
+//				Actor:       wfUser.ID(),
+//				Owner:       wfUser.ID(),
+//				Private:     pulumi.Bool(false),
+//				Title:       pulumi.String("#name#"),
 //				Tasks: &dynatrace.AutomationWorkflowTasksArgs{
 //					Tasks: dynatrace.AutomationWorkflowTasksTaskArray{
 //						&dynatrace.AutomationWorkflowTasksTaskArgs{
@@ -94,10 +100,15 @@ import (
 //							Description: pulumi.String("Issue an HTTP request to any API"),
 //							Action:      pulumi.String("dynatrace.automations:http-function"),
 //							Active:      pulumi.Bool(true),
-//							Input:       pulumi.String(json0),
+//							Input:       pulumi.String(pulumi.String(json0)),
 //							Position: &dynatrace.AutomationWorkflowTasksTaskPositionArgs{
 //								X: pulumi.Int(0),
 //								Y: pulumi.Int(1),
+//							},
+//							Retry: &dynatrace.AutomationWorkflowTasksTaskRetryArgs{
+//								Count:                    pulumi.String("3"),
+//								Delay:                    pulumi.String("1000"),
+//								FailedLoopIterationsOnly: pulumi.Bool(false),
 //							},
 //						},
 //						&dynatrace.AutomationWorkflowTasksTaskArgs{
@@ -105,31 +116,31 @@ import (
 //							Description: pulumi.String("Issue an HTTP request to any API"),
 //							Action:      pulumi.String("dynatrace.automations:http-function"),
 //							Active:      pulumi.Bool(false),
-//							Input:       pulumi.String(json1),
+//							Timeout:     pulumi.String("50000"),
+//							Input:       pulumi.String(pulumi.String(json1)),
 //							Conditions: &dynatrace.AutomationWorkflowTasksTaskConditionsArgs{
+//								Custom: pulumi.String(""),
 //								States: pulumi.StringMap{
 //									"http_request_1":   pulumi.String("SUCCESS"),
 //									"run_javascript_1": pulumi.String("OK"),
 //								},
-//								Custom: pulumi.String(""),
 //							},
 //							Position: &dynatrace.AutomationWorkflowTasksTaskPositionArgs{
 //								X: pulumi.Int(-1),
 //								Y: pulumi.Int(2),
 //							},
-//							Timeout: pulumi.String("50000"),
 //						},
 //						&dynatrace.AutomationWorkflowTasksTaskArgs{
 //							Name:        pulumi.String("http_request_3"),
 //							Description: pulumi.String("Issue an HTTP request to any API"),
 //							Action:      pulumi.String("dynatrace.automations:http-function"),
 //							Active:      pulumi.Bool(false),
-//							Input:       pulumi.String(json2),
+//							Input:       pulumi.String(pulumi.String(json2)),
 //							Conditions: &dynatrace.AutomationWorkflowTasksTaskConditionsArgs{
+//								Custom: pulumi.String("{{http_request_1}}"),
 //								States: pulumi.StringMap{
 //									"http_request_2": pulumi.String("OK"),
 //								},
-//								Custom: pulumi.String("{{http_request_1}}"),
 //							},
 //							Position: &dynatrace.AutomationWorkflowTasksTaskPositionArgs{
 //								X: pulumi.Int(0),
@@ -141,7 +152,7 @@ import (
 //							Description: pulumi.String("Build a custom task running js Code"),
 //							Action:      pulumi.String("dynatrace.automations:run-javascript"),
 //							Active:      pulumi.Bool(false),
-//							Input:       pulumi.String(json3),
+//							Input:       pulumi.String(pulumi.String(json3)),
 //							Position: &dynatrace.AutomationWorkflowTasksTaskPositionArgs{
 //								X: pulumi.Int(-2),
 //								Y: pulumi.Int(1),
@@ -154,12 +165,12 @@ import (
 //						Active: pulumi.Bool(false),
 //						Config: &dynatrace.AutomationWorkflowTriggerEventConfigArgs{
 //							DavisEvent: &dynatrace.AutomationWorkflowTriggerEventConfigDavisEventArgs{
-//								EntityTagsMatch: pulumi.String("all"),
 //								EntityTags: pulumi.StringMap{
 //									"asdf": pulumi.String(""),
 //								},
-//								OnProblemClose: pulumi.Bool(false),
-//								CustomFilter:   pulumi.String("matchesPhrase(custom.event.type, \"DEPLOY\")"),
+//								EntityTagsMatch: pulumi.String("all"),
+//								OnProblemClose:  pulumi.Bool(false),
+//								CustomFilter:    pulumi.String("matchesPhrase(custom.event.type, \"DEPLOY\")"),
 //							},
 //						},
 //					},
@@ -180,10 +191,22 @@ type AutomationWorkflow struct {
 	Actor pulumi.StringPtrOutput `pulumi:"actor"`
 	// An optional description for the workflow
 	Description pulumi.StringPtrOutput `pulumi:"description"`
+	// Informational guide text for the workflow
+	Guide pulumi.StringPtrOutput `pulumi:"guide"`
+	// Maximum number of executions per hour. Default is `1000`
+	HourlyExecutionLimit pulumi.IntPtrOutput `pulumi:"hourlyExecutionLimit"`
+	// Workflow-level input parameters as JSON. These parameters are available to all tasks in the workflow
+	Input pulumi.StringPtrOutput `pulumi:"input"`
+	// Defines whether this workflow is deployed and active, or kept as a draft. An undeployed workflow is not billed and its automatic trigger will not be running. Default is `true`
+	IsDeployed pulumi.BoolPtrOutput `pulumi:"isDeployed"`
 	// The ID of the owner of this workflow
 	Owner pulumi.StringPtrOutput `pulumi:"owner"`
+	// The type of the owner. Possible values are `USER` and `GROUP`
+	OwnerType pulumi.StringPtrOutput `pulumi:"ownerType"`
 	// Defines whether this workflow is private to the owner or not. Default is `true`
 	Private pulumi.BoolPtrOutput `pulumi:"private"`
+	// The result of the workflow
+	Result pulumi.StringPtrOutput `pulumi:"result"`
 	// The tasks to run for every execution of this workflow
 	Tasks AutomationWorkflowTasksOutput `pulumi:"tasks"`
 	// The title / name of the workflow
@@ -234,10 +257,22 @@ type automationWorkflowState struct {
 	Actor *string `pulumi:"actor"`
 	// An optional description for the workflow
 	Description *string `pulumi:"description"`
+	// Informational guide text for the workflow
+	Guide *string `pulumi:"guide"`
+	// Maximum number of executions per hour. Default is `1000`
+	HourlyExecutionLimit *int `pulumi:"hourlyExecutionLimit"`
+	// Workflow-level input parameters as JSON. These parameters are available to all tasks in the workflow
+	Input *string `pulumi:"input"`
+	// Defines whether this workflow is deployed and active, or kept as a draft. An undeployed workflow is not billed and its automatic trigger will not be running. Default is `true`
+	IsDeployed *bool `pulumi:"isDeployed"`
 	// The ID of the owner of this workflow
 	Owner *string `pulumi:"owner"`
+	// The type of the owner. Possible values are `USER` and `GROUP`
+	OwnerType *string `pulumi:"ownerType"`
 	// Defines whether this workflow is private to the owner or not. Default is `true`
 	Private *bool `pulumi:"private"`
+	// The result of the workflow
+	Result *string `pulumi:"result"`
 	// The tasks to run for every execution of this workflow
 	Tasks *AutomationWorkflowTasks `pulumi:"tasks"`
 	// The title / name of the workflow
@@ -253,10 +288,22 @@ type AutomationWorkflowState struct {
 	Actor pulumi.StringPtrInput
 	// An optional description for the workflow
 	Description pulumi.StringPtrInput
+	// Informational guide text for the workflow
+	Guide pulumi.StringPtrInput
+	// Maximum number of executions per hour. Default is `1000`
+	HourlyExecutionLimit pulumi.IntPtrInput
+	// Workflow-level input parameters as JSON. These parameters are available to all tasks in the workflow
+	Input pulumi.StringPtrInput
+	// Defines whether this workflow is deployed and active, or kept as a draft. An undeployed workflow is not billed and its automatic trigger will not be running. Default is `true`
+	IsDeployed pulumi.BoolPtrInput
 	// The ID of the owner of this workflow
 	Owner pulumi.StringPtrInput
+	// The type of the owner. Possible values are `USER` and `GROUP`
+	OwnerType pulumi.StringPtrInput
 	// Defines whether this workflow is private to the owner or not. Default is `true`
 	Private pulumi.BoolPtrInput
+	// The result of the workflow
+	Result pulumi.StringPtrInput
 	// The tasks to run for every execution of this workflow
 	Tasks AutomationWorkflowTasksPtrInput
 	// The title / name of the workflow
@@ -276,10 +323,22 @@ type automationWorkflowArgs struct {
 	Actor *string `pulumi:"actor"`
 	// An optional description for the workflow
 	Description *string `pulumi:"description"`
+	// Informational guide text for the workflow
+	Guide *string `pulumi:"guide"`
+	// Maximum number of executions per hour. Default is `1000`
+	HourlyExecutionLimit *int `pulumi:"hourlyExecutionLimit"`
+	// Workflow-level input parameters as JSON. These parameters are available to all tasks in the workflow
+	Input *string `pulumi:"input"`
+	// Defines whether this workflow is deployed and active, or kept as a draft. An undeployed workflow is not billed and its automatic trigger will not be running. Default is `true`
+	IsDeployed *bool `pulumi:"isDeployed"`
 	// The ID of the owner of this workflow
 	Owner *string `pulumi:"owner"`
+	// The type of the owner. Possible values are `USER` and `GROUP`
+	OwnerType *string `pulumi:"ownerType"`
 	// Defines whether this workflow is private to the owner or not. Default is `true`
 	Private *bool `pulumi:"private"`
+	// The result of the workflow
+	Result *string `pulumi:"result"`
 	// The tasks to run for every execution of this workflow
 	Tasks AutomationWorkflowTasks `pulumi:"tasks"`
 	// The title / name of the workflow
@@ -296,10 +355,22 @@ type AutomationWorkflowArgs struct {
 	Actor pulumi.StringPtrInput
 	// An optional description for the workflow
 	Description pulumi.StringPtrInput
+	// Informational guide text for the workflow
+	Guide pulumi.StringPtrInput
+	// Maximum number of executions per hour. Default is `1000`
+	HourlyExecutionLimit pulumi.IntPtrInput
+	// Workflow-level input parameters as JSON. These parameters are available to all tasks in the workflow
+	Input pulumi.StringPtrInput
+	// Defines whether this workflow is deployed and active, or kept as a draft. An undeployed workflow is not billed and its automatic trigger will not be running. Default is `true`
+	IsDeployed pulumi.BoolPtrInput
 	// The ID of the owner of this workflow
 	Owner pulumi.StringPtrInput
+	// The type of the owner. Possible values are `USER` and `GROUP`
+	OwnerType pulumi.StringPtrInput
 	// Defines whether this workflow is private to the owner or not. Default is `true`
 	Private pulumi.BoolPtrInput
+	// The result of the workflow
+	Result pulumi.StringPtrInput
 	// The tasks to run for every execution of this workflow
 	Tasks AutomationWorkflowTasksInput
 	// The title / name of the workflow
@@ -407,14 +478,44 @@ func (o AutomationWorkflowOutput) Description() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v *AutomationWorkflow) pulumi.StringPtrOutput { return v.Description }).(pulumi.StringPtrOutput)
 }
 
+// Informational guide text for the workflow
+func (o AutomationWorkflowOutput) Guide() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *AutomationWorkflow) pulumi.StringPtrOutput { return v.Guide }).(pulumi.StringPtrOutput)
+}
+
+// Maximum number of executions per hour. Default is `1000`
+func (o AutomationWorkflowOutput) HourlyExecutionLimit() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v *AutomationWorkflow) pulumi.IntPtrOutput { return v.HourlyExecutionLimit }).(pulumi.IntPtrOutput)
+}
+
+// Workflow-level input parameters as JSON. These parameters are available to all tasks in the workflow
+func (o AutomationWorkflowOutput) Input() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *AutomationWorkflow) pulumi.StringPtrOutput { return v.Input }).(pulumi.StringPtrOutput)
+}
+
+// Defines whether this workflow is deployed and active, or kept as a draft. An undeployed workflow is not billed and its automatic trigger will not be running. Default is `true`
+func (o AutomationWorkflowOutput) IsDeployed() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v *AutomationWorkflow) pulumi.BoolPtrOutput { return v.IsDeployed }).(pulumi.BoolPtrOutput)
+}
+
 // The ID of the owner of this workflow
 func (o AutomationWorkflowOutput) Owner() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v *AutomationWorkflow) pulumi.StringPtrOutput { return v.Owner }).(pulumi.StringPtrOutput)
 }
 
+// The type of the owner. Possible values are `USER` and `GROUP`
+func (o AutomationWorkflowOutput) OwnerType() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *AutomationWorkflow) pulumi.StringPtrOutput { return v.OwnerType }).(pulumi.StringPtrOutput)
+}
+
 // Defines whether this workflow is private to the owner or not. Default is `true`
 func (o AutomationWorkflowOutput) Private() pulumi.BoolPtrOutput {
 	return o.ApplyT(func(v *AutomationWorkflow) pulumi.BoolPtrOutput { return v.Private }).(pulumi.BoolPtrOutput)
+}
+
+// The result of the workflow
+func (o AutomationWorkflowOutput) Result() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *AutomationWorkflow) pulumi.StringPtrOutput { return v.Result }).(pulumi.StringPtrOutput)
 }
 
 // The tasks to run for every execution of this workflow

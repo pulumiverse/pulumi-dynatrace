@@ -15,11 +15,11 @@ namespace Pulumiverse.Dynatrace.Outputs
     public sealed class AutomationWorkflowTriggerScheduleTrigger
     {
         /// <summary>
-        /// Triggers the schedule every n minutes within a given time frame - specifying the end time on any valid day in 24h format (e.g. 14:22:44). Conflicts with `Cron` and `Time`. Required with `IntervalMinutes` and `BetweenStart`
+        /// Triggers the schedule every n minutes within a given time frame - specifying the end time on any valid day in 24h format (e.g. 14:22). Conflicts with `Cron` and `Time`. Required with `IntervalMinutes` and `BetweenStart`
         /// </summary>
         public readonly string? BetweenEnd;
         /// <summary>
-        /// Triggers the schedule every n minutes within a given time frame - specifying the start time on any valid day in 24h format (e.g. 13:22:44). Conflicts with `Cron` and `Time`. Required with `IntervalMinutes` and `BetweenEnd`
+        /// Triggers the schedule every n minutes within a given time frame - specifying the start time on any valid day in 24h format (e.g. 13:22). Conflicts with `Cron` and `Time`. Required with `IntervalMinutes` and `BetweenEnd`
         /// </summary>
         public readonly string? BetweenStart;
         /// <summary>
@@ -31,7 +31,7 @@ namespace Pulumiverse.Dynatrace.Outputs
         /// </summary>
         public readonly int? IntervalMinutes;
         /// <summary>
-        /// Specifies a fixed time the schedule will trigger at in 24h format (e.g. `14:23:59`). Conflicts with `Cron`, `IntervalMinutes`, `BetweenStart` and `BetweenEnd`
+        /// Specifies a fixed time the schedule will trigger at in 24h format (e.g. `14:23`). Conflicts with `Cron`, `IntervalMinutes`, `BetweenStart` and `BetweenEnd`
         /// </summary>
         public readonly string? Time;
 

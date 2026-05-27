@@ -25,6 +25,32 @@ import (
 // - `terraform-provider-dynatrace -export RumIpDetermination` downloads all existing client IP determination configuration
 //
 // The full documentation of the export feature is available [here](https://dt-url.net/h203qmc).
+//
+// ## Resource Example Usage
+//
+// ```go
+// package main
+//
+// import (
+//
+//	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//	"github.com/pulumiverse/pulumi-dynatrace/sdk/go/dynatrace"
+//
+// )
+//
+//	func main() {
+//		pulumi.Run(func(ctx *pulumi.Context) error {
+//			_, err := dynatrace.NewRumIpDetermination(ctx, "determination", &dynatrace.RumIpDeterminationArgs{
+//				HeaderName: pulumi.String("X-Header-#name#"),
+//			})
+//			if err != nil {
+//				return err
+//			}
+//			return nil
+//		})
+//	}
+//
+// ```
 type RumIpDetermination struct {
 	pulumi.CustomResourceState
 

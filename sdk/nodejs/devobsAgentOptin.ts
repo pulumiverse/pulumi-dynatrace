@@ -18,6 +18,20 @@ import * as utilities from "./utilities";
  * - `terraform-provider-dynatrace -export dynatrace.DevobsAgentOptin` downloads existing Developer Observability agent opt-in configuration
  *
  * The full documentation of the export feature is available [here](https://dt-url.net/h203qmc).
+ *
+ * ## Resource Example Usage
+ *
+ * ```typescript
+ * import * as pulumi from "@pulumi/pulumi";
+ * import * as dynatrace from "@pulumiverse/dynatrace";
+ *
+ * const config = new pulumi.Config();
+ * const PROCESS_GROUP_ID = config.require("PROCESS_GROUP_ID");
+ * const optin = new dynatrace.DevobsAgentOptin("optin", {
+ *     scope: PROCESS_GROUP_ID,
+ *     enabled: false,
+ * });
+ * ```
  */
 export class DevobsAgentOptin extends pulumi.CustomResource {
     /**

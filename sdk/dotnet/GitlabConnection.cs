@@ -42,6 +42,26 @@ namespace Pulumiverse.Dynatrace
     /// - `terraform-provider-dynatrace -export dynatrace.GitlabConnection` downloads all existing GitLab connections
     /// 
     /// The full documentation of the export feature is available [here](https://dt-url.net/h203qmc).
+    /// 
+    /// ## Resource Example Usage
+    /// 
+    /// ```csharp
+    /// using System.Collections.Generic;
+    /// using System.Linq;
+    /// using Pulumi;
+    /// using Dynatrace = Pulumiverse.Dynatrace;
+    /// 
+    /// return await Deployment.RunAsync(() =&gt; 
+    /// {
+    ///     var connection = new Dynatrace.GitlabConnection("connection", new()
+    ///     {
+    ///         Name = "#name#",
+    ///         Url = "https://www.example.com",
+    ///         Token = "#######",
+    ///     });
+    /// 
+    /// });
+    /// ```
     /// </summary>
     [DynatraceResourceType("dynatrace:index/gitlabConnection:GitlabConnection")]
     public partial class GitlabConnection : global::Pulumi.CustomResource

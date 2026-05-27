@@ -26,6 +26,90 @@ namespace Pulumiverse.Dynatrace
     /// - `terraform-provider-dynatrace -export dynatrace.HttpMonitorScript` downloads all existing HTTP monitor script configuration
     /// 
     /// The full documentation of the export feature is available [here](https://dt-url.net/h203qmc).
+    /// 
+    /// ## Resource Example Usage
+    /// 
+    /// ```csharp
+    /// using System.Collections.Generic;
+    /// using System.Linq;
+    /// using Pulumi;
+    /// using Dynatrace = Pulumiverse.Dynatrace;
+    /// 
+    /// return await Deployment.RunAsync(() =&gt; 
+    /// {
+    ///     var location = Dynatrace.GetSyntheticLocation.Invoke(new()
+    ///     {
+    ///         Name = "Location",
+    ///     });
+    /// 
+    ///     var monitor = new Dynatrace.HttpMonitor("monitor", new()
+    ///     {
+    ///         AnomalyDetections = new[]
+    ///         {
+    ///             new Dynatrace.Inputs.HttpMonitorAnomalyDetectionArgs
+    ///             {
+    ///                 LoadingTimeThresholds = new[]
+    ///                 {
+    ///                     null,
+    ///                 },
+    ///                 OutageHandlings = new[]
+    ///                 {
+    ///                     new Dynatrace.Inputs.HttpMonitorAnomalyDetectionOutageHandlingArgs
+    ///                     {
+    ///                         GlobalOutage = true,
+    ///                         GlobalOutagePolicies = new[]
+    ///                         {
+    ///                             new Dynatrace.Inputs.HttpMonitorAnomalyDetectionOutageHandlingGlobalOutagePolicyArgs
+    ///                             {
+    ///                                 ConsecutiveRuns = 1,
+    ///                             },
+    ///                         },
+    ///                     },
+    ///                 },
+    ///             },
+    ///         },
+    ///         Name = "#name#",
+    ///         Frequency = 1,
+    ///         Locations = new[]
+    ///         {
+    ///             location.Apply(getSyntheticLocationResult =&gt; getSyntheticLocationResult.Id),
+    ///         },
+    ///         NoScript = true,
+    ///     });
+    /// 
+    ///     var script = new Dynatrace.HttpMonitorScript("script", new()
+    ///     {
+    ///         HttpId = monitor.Id,
+    ///         Script = new Dynatrace.Inputs.HttpMonitorScriptScriptArgs
+    ///         {
+    ///             Requests = new[]
+    ///             {
+    ///                 new Dynatrace.Inputs.HttpMonitorScriptScriptRequestArgs
+    ///                 {
+    ///                     Description = "request1",
+    ///                     Method = "GET",
+    ///                     Url = "https://example.com",
+    ///                     Configuration = new Dynatrace.Inputs.HttpMonitorScriptScriptRequestConfigurationArgs
+    ///                     {
+    ///                         AcceptAnyCertificate = true,
+    ///                     },
+    ///                 },
+    ///                 new Dynatrace.Inputs.HttpMonitorScriptScriptRequestArgs
+    ///                 {
+    ///                     Description = "request2",
+    ///                     Method = "GET",
+    ///                     Url = "https://example.com",
+    ///                     Configuration = new Dynatrace.Inputs.HttpMonitorScriptScriptRequestConfigurationArgs
+    ///                     {
+    ///                         AcceptAnyCertificate = true,
+    ///                     },
+    ///                 },
+    ///             },
+    ///         },
+    ///     });
+    /// 
+    /// });
+    /// ```
     /// </summary>
     [DynatraceResourceType("dynatrace:index/httpMonitorScript:HttpMonitorScript")]
     public partial class HttpMonitorScript : global::Pulumi.CustomResource

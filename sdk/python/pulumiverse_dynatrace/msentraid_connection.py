@@ -236,6 +236,19 @@ class MsentraidConnection(pulumi.CustomResource):
 
         The full documentation of the export feature is available [here](https://dt-url.net/h203qmc).
 
+        ## Resource Example Usage
+
+        ```python
+        import pulumi
+        import pulumiverse_dynatrace as dynatrace
+
+        connection = dynatrace.MsentraidConnection("connection",
+            name="#name#",
+            directory_id="00000000-0000-0000-0000-000000000000",
+            application_id="00000000-0000-0000-0000-000000000000",
+            client_secret="#######")
+        ```
+
 
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
@@ -283,6 +296,19 @@ class MsentraidConnection(pulumi.CustomResource):
         - `terraform-provider-dynatrace -export MsentraidConnection` downloads all existing Microsoft Entra ID connections
 
         The full documentation of the export feature is available [here](https://dt-url.net/h203qmc).
+
+        ## Resource Example Usage
+
+        ```python
+        import pulumi
+        import pulumiverse_dynatrace as dynatrace
+
+        connection = dynatrace.MsentraidConnection("connection",
+            name="#name#",
+            directory_id="00000000-0000-0000-0000-000000000000",
+            application_id="00000000-0000-0000-0000-000000000000",
+            client_secret="#######")
+        ```
 
 
         :param str resource_name: The name of the resource.

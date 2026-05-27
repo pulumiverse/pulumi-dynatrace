@@ -22,7 +22,13 @@ class ContainerBuiltinRuleArgs:
                  ignore_docker_pause_container: pulumi.Input[_builtins.bool],
                  ignore_kubernetes_pause_container: pulumi.Input[_builtins.bool],
                  ignore_open_shift_build_pod_name: pulumi.Input[_builtins.bool],
-                 ignore_open_shift_sdn_namespace: pulumi.Input[_builtins.bool]):
+                 ignore_open_shift_sdn_namespace: pulumi.Input[_builtins.bool],
+                 ignore_open_shift_etcd_namespace: pulumi.Input[Optional[_builtins.bool]] = None,
+                 ignore_open_shift_ingress_canary_namespace: pulumi.Input[Optional[_builtins.bool]] = None,
+                 ignore_open_shift_kube_apiserver_namespace: pulumi.Input[Optional[_builtins.bool]] = None,
+                 ignore_open_shift_machine_config_operator_namespace: pulumi.Input[Optional[_builtins.bool]] = None,
+                 ignore_open_shift_monitoring_namespace: pulumi.Input[Optional[_builtins.bool]] = None,
+                 ignore_open_shift_ovn_kubernetes_namespace: pulumi.Input[Optional[_builtins.bool]] = None):
         """
         The set of arguments for constructing a ContainerBuiltinRule resource.
 
@@ -30,11 +36,29 @@ class ContainerBuiltinRuleArgs:
         :param pulumi.Input[_builtins.bool] ignore_kubernetes_pause_container: Disable monitoring of platform internal pause containers in Kubernetes and OpenShift.
         :param pulumi.Input[_builtins.bool] ignore_open_shift_build_pod_name: Disable monitoring of intermediate containers created during image build.
         :param pulumi.Input[_builtins.bool] ignore_open_shift_sdn_namespace: Disable monitoring of platform internal containers in the openshift-sdn namespace.
+        :param pulumi.Input[_builtins.bool] ignore_open_shift_etcd_namespace: Disable monitoring of platform internal containers in the openshift-etcd namespace.
+        :param pulumi.Input[_builtins.bool] ignore_open_shift_ingress_canary_namespace: Disable monitoring of platform internal containers in the openshift-ingress-canary namespace.
+        :param pulumi.Input[_builtins.bool] ignore_open_shift_kube_apiserver_namespace: Disable monitoring of platform internal containers in the openshift-kube-apiserver namespace.
+        :param pulumi.Input[_builtins.bool] ignore_open_shift_machine_config_operator_namespace: Disable monitoring of platform internal containers in the openshift-machine-config-operator namespace.
+        :param pulumi.Input[_builtins.bool] ignore_open_shift_monitoring_namespace: Disable monitoring of platform internal containers in the openshift-monitoring namespace.
+        :param pulumi.Input[_builtins.bool] ignore_open_shift_ovn_kubernetes_namespace: Disable monitoring of platform internal containers in the openshift-ovn-kubernetes namespace.
         """
         pulumi.set(__self__, "ignore_docker_pause_container", ignore_docker_pause_container)
         pulumi.set(__self__, "ignore_kubernetes_pause_container", ignore_kubernetes_pause_container)
         pulumi.set(__self__, "ignore_open_shift_build_pod_name", ignore_open_shift_build_pod_name)
         pulumi.set(__self__, "ignore_open_shift_sdn_namespace", ignore_open_shift_sdn_namespace)
+        if ignore_open_shift_etcd_namespace is not None:
+            pulumi.set(__self__, "ignore_open_shift_etcd_namespace", ignore_open_shift_etcd_namespace)
+        if ignore_open_shift_ingress_canary_namespace is not None:
+            pulumi.set(__self__, "ignore_open_shift_ingress_canary_namespace", ignore_open_shift_ingress_canary_namespace)
+        if ignore_open_shift_kube_apiserver_namespace is not None:
+            pulumi.set(__self__, "ignore_open_shift_kube_apiserver_namespace", ignore_open_shift_kube_apiserver_namespace)
+        if ignore_open_shift_machine_config_operator_namespace is not None:
+            pulumi.set(__self__, "ignore_open_shift_machine_config_operator_namespace", ignore_open_shift_machine_config_operator_namespace)
+        if ignore_open_shift_monitoring_namespace is not None:
+            pulumi.set(__self__, "ignore_open_shift_monitoring_namespace", ignore_open_shift_monitoring_namespace)
+        if ignore_open_shift_ovn_kubernetes_namespace is not None:
+            pulumi.set(__self__, "ignore_open_shift_ovn_kubernetes_namespace", ignore_open_shift_ovn_kubernetes_namespace)
 
     @_builtins.property
     @pulumi.getter(name="ignoreDockerPauseContainer")
@@ -84,6 +108,78 @@ class ContainerBuiltinRuleArgs:
     def ignore_open_shift_sdn_namespace(self, value: pulumi.Input[_builtins.bool]):
         pulumi.set(self, "ignore_open_shift_sdn_namespace", value)
 
+    @_builtins.property
+    @pulumi.getter(name="ignoreOpenShiftEtcdNamespace")
+    def ignore_open_shift_etcd_namespace(self) -> pulumi.Input[Optional[_builtins.bool]]:
+        """
+        Disable monitoring of platform internal containers in the openshift-etcd namespace.
+        """
+        return pulumi.get(self, "ignore_open_shift_etcd_namespace")
+
+    @ignore_open_shift_etcd_namespace.setter
+    def ignore_open_shift_etcd_namespace(self, value: pulumi.Input[Optional[_builtins.bool]]):
+        pulumi.set(self, "ignore_open_shift_etcd_namespace", value)
+
+    @_builtins.property
+    @pulumi.getter(name="ignoreOpenShiftIngressCanaryNamespace")
+    def ignore_open_shift_ingress_canary_namespace(self) -> pulumi.Input[Optional[_builtins.bool]]:
+        """
+        Disable monitoring of platform internal containers in the openshift-ingress-canary namespace.
+        """
+        return pulumi.get(self, "ignore_open_shift_ingress_canary_namespace")
+
+    @ignore_open_shift_ingress_canary_namespace.setter
+    def ignore_open_shift_ingress_canary_namespace(self, value: pulumi.Input[Optional[_builtins.bool]]):
+        pulumi.set(self, "ignore_open_shift_ingress_canary_namespace", value)
+
+    @_builtins.property
+    @pulumi.getter(name="ignoreOpenShiftKubeApiserverNamespace")
+    def ignore_open_shift_kube_apiserver_namespace(self) -> pulumi.Input[Optional[_builtins.bool]]:
+        """
+        Disable monitoring of platform internal containers in the openshift-kube-apiserver namespace.
+        """
+        return pulumi.get(self, "ignore_open_shift_kube_apiserver_namespace")
+
+    @ignore_open_shift_kube_apiserver_namespace.setter
+    def ignore_open_shift_kube_apiserver_namespace(self, value: pulumi.Input[Optional[_builtins.bool]]):
+        pulumi.set(self, "ignore_open_shift_kube_apiserver_namespace", value)
+
+    @_builtins.property
+    @pulumi.getter(name="ignoreOpenShiftMachineConfigOperatorNamespace")
+    def ignore_open_shift_machine_config_operator_namespace(self) -> pulumi.Input[Optional[_builtins.bool]]:
+        """
+        Disable monitoring of platform internal containers in the openshift-machine-config-operator namespace.
+        """
+        return pulumi.get(self, "ignore_open_shift_machine_config_operator_namespace")
+
+    @ignore_open_shift_machine_config_operator_namespace.setter
+    def ignore_open_shift_machine_config_operator_namespace(self, value: pulumi.Input[Optional[_builtins.bool]]):
+        pulumi.set(self, "ignore_open_shift_machine_config_operator_namespace", value)
+
+    @_builtins.property
+    @pulumi.getter(name="ignoreOpenShiftMonitoringNamespace")
+    def ignore_open_shift_monitoring_namespace(self) -> pulumi.Input[Optional[_builtins.bool]]:
+        """
+        Disable monitoring of platform internal containers in the openshift-monitoring namespace.
+        """
+        return pulumi.get(self, "ignore_open_shift_monitoring_namespace")
+
+    @ignore_open_shift_monitoring_namespace.setter
+    def ignore_open_shift_monitoring_namespace(self, value: pulumi.Input[Optional[_builtins.bool]]):
+        pulumi.set(self, "ignore_open_shift_monitoring_namespace", value)
+
+    @_builtins.property
+    @pulumi.getter(name="ignoreOpenShiftOvnKubernetesNamespace")
+    def ignore_open_shift_ovn_kubernetes_namespace(self) -> pulumi.Input[Optional[_builtins.bool]]:
+        """
+        Disable monitoring of platform internal containers in the openshift-ovn-kubernetes namespace.
+        """
+        return pulumi.get(self, "ignore_open_shift_ovn_kubernetes_namespace")
+
+    @ignore_open_shift_ovn_kubernetes_namespace.setter
+    def ignore_open_shift_ovn_kubernetes_namespace(self, value: pulumi.Input[Optional[_builtins.bool]]):
+        pulumi.set(self, "ignore_open_shift_ovn_kubernetes_namespace", value)
+
 
 @pulumi.input_type
 class _ContainerBuiltinRuleState:
@@ -91,6 +187,12 @@ class _ContainerBuiltinRuleState:
                  ignore_docker_pause_container: pulumi.Input[Optional[_builtins.bool]] = None,
                  ignore_kubernetes_pause_container: pulumi.Input[Optional[_builtins.bool]] = None,
                  ignore_open_shift_build_pod_name: pulumi.Input[Optional[_builtins.bool]] = None,
+                 ignore_open_shift_etcd_namespace: pulumi.Input[Optional[_builtins.bool]] = None,
+                 ignore_open_shift_ingress_canary_namespace: pulumi.Input[Optional[_builtins.bool]] = None,
+                 ignore_open_shift_kube_apiserver_namespace: pulumi.Input[Optional[_builtins.bool]] = None,
+                 ignore_open_shift_machine_config_operator_namespace: pulumi.Input[Optional[_builtins.bool]] = None,
+                 ignore_open_shift_monitoring_namespace: pulumi.Input[Optional[_builtins.bool]] = None,
+                 ignore_open_shift_ovn_kubernetes_namespace: pulumi.Input[Optional[_builtins.bool]] = None,
                  ignore_open_shift_sdn_namespace: pulumi.Input[Optional[_builtins.bool]] = None):
         """
         Input properties used for looking up and filtering ContainerBuiltinRule resources.
@@ -98,6 +200,12 @@ class _ContainerBuiltinRuleState:
         :param pulumi.Input[_builtins.bool] ignore_docker_pause_container: Disable monitoring of platform internal pause containers in Kubernetes and OpenShift.
         :param pulumi.Input[_builtins.bool] ignore_kubernetes_pause_container: Disable monitoring of platform internal pause containers in Kubernetes and OpenShift.
         :param pulumi.Input[_builtins.bool] ignore_open_shift_build_pod_name: Disable monitoring of intermediate containers created during image build.
+        :param pulumi.Input[_builtins.bool] ignore_open_shift_etcd_namespace: Disable monitoring of platform internal containers in the openshift-etcd namespace.
+        :param pulumi.Input[_builtins.bool] ignore_open_shift_ingress_canary_namespace: Disable monitoring of platform internal containers in the openshift-ingress-canary namespace.
+        :param pulumi.Input[_builtins.bool] ignore_open_shift_kube_apiserver_namespace: Disable monitoring of platform internal containers in the openshift-kube-apiserver namespace.
+        :param pulumi.Input[_builtins.bool] ignore_open_shift_machine_config_operator_namespace: Disable monitoring of platform internal containers in the openshift-machine-config-operator namespace.
+        :param pulumi.Input[_builtins.bool] ignore_open_shift_monitoring_namespace: Disable monitoring of platform internal containers in the openshift-monitoring namespace.
+        :param pulumi.Input[_builtins.bool] ignore_open_shift_ovn_kubernetes_namespace: Disable monitoring of platform internal containers in the openshift-ovn-kubernetes namespace.
         :param pulumi.Input[_builtins.bool] ignore_open_shift_sdn_namespace: Disable monitoring of platform internal containers in the openshift-sdn namespace.
         """
         if ignore_docker_pause_container is not None:
@@ -106,6 +214,18 @@ class _ContainerBuiltinRuleState:
             pulumi.set(__self__, "ignore_kubernetes_pause_container", ignore_kubernetes_pause_container)
         if ignore_open_shift_build_pod_name is not None:
             pulumi.set(__self__, "ignore_open_shift_build_pod_name", ignore_open_shift_build_pod_name)
+        if ignore_open_shift_etcd_namespace is not None:
+            pulumi.set(__self__, "ignore_open_shift_etcd_namespace", ignore_open_shift_etcd_namespace)
+        if ignore_open_shift_ingress_canary_namespace is not None:
+            pulumi.set(__self__, "ignore_open_shift_ingress_canary_namespace", ignore_open_shift_ingress_canary_namespace)
+        if ignore_open_shift_kube_apiserver_namespace is not None:
+            pulumi.set(__self__, "ignore_open_shift_kube_apiserver_namespace", ignore_open_shift_kube_apiserver_namespace)
+        if ignore_open_shift_machine_config_operator_namespace is not None:
+            pulumi.set(__self__, "ignore_open_shift_machine_config_operator_namespace", ignore_open_shift_machine_config_operator_namespace)
+        if ignore_open_shift_monitoring_namespace is not None:
+            pulumi.set(__self__, "ignore_open_shift_monitoring_namespace", ignore_open_shift_monitoring_namespace)
+        if ignore_open_shift_ovn_kubernetes_namespace is not None:
+            pulumi.set(__self__, "ignore_open_shift_ovn_kubernetes_namespace", ignore_open_shift_ovn_kubernetes_namespace)
         if ignore_open_shift_sdn_namespace is not None:
             pulumi.set(__self__, "ignore_open_shift_sdn_namespace", ignore_open_shift_sdn_namespace)
 
@@ -146,6 +266,78 @@ class _ContainerBuiltinRuleState:
         pulumi.set(self, "ignore_open_shift_build_pod_name", value)
 
     @_builtins.property
+    @pulumi.getter(name="ignoreOpenShiftEtcdNamespace")
+    def ignore_open_shift_etcd_namespace(self) -> pulumi.Input[Optional[_builtins.bool]]:
+        """
+        Disable monitoring of platform internal containers in the openshift-etcd namespace.
+        """
+        return pulumi.get(self, "ignore_open_shift_etcd_namespace")
+
+    @ignore_open_shift_etcd_namespace.setter
+    def ignore_open_shift_etcd_namespace(self, value: pulumi.Input[Optional[_builtins.bool]]):
+        pulumi.set(self, "ignore_open_shift_etcd_namespace", value)
+
+    @_builtins.property
+    @pulumi.getter(name="ignoreOpenShiftIngressCanaryNamespace")
+    def ignore_open_shift_ingress_canary_namespace(self) -> pulumi.Input[Optional[_builtins.bool]]:
+        """
+        Disable monitoring of platform internal containers in the openshift-ingress-canary namespace.
+        """
+        return pulumi.get(self, "ignore_open_shift_ingress_canary_namespace")
+
+    @ignore_open_shift_ingress_canary_namespace.setter
+    def ignore_open_shift_ingress_canary_namespace(self, value: pulumi.Input[Optional[_builtins.bool]]):
+        pulumi.set(self, "ignore_open_shift_ingress_canary_namespace", value)
+
+    @_builtins.property
+    @pulumi.getter(name="ignoreOpenShiftKubeApiserverNamespace")
+    def ignore_open_shift_kube_apiserver_namespace(self) -> pulumi.Input[Optional[_builtins.bool]]:
+        """
+        Disable monitoring of platform internal containers in the openshift-kube-apiserver namespace.
+        """
+        return pulumi.get(self, "ignore_open_shift_kube_apiserver_namespace")
+
+    @ignore_open_shift_kube_apiserver_namespace.setter
+    def ignore_open_shift_kube_apiserver_namespace(self, value: pulumi.Input[Optional[_builtins.bool]]):
+        pulumi.set(self, "ignore_open_shift_kube_apiserver_namespace", value)
+
+    @_builtins.property
+    @pulumi.getter(name="ignoreOpenShiftMachineConfigOperatorNamespace")
+    def ignore_open_shift_machine_config_operator_namespace(self) -> pulumi.Input[Optional[_builtins.bool]]:
+        """
+        Disable monitoring of platform internal containers in the openshift-machine-config-operator namespace.
+        """
+        return pulumi.get(self, "ignore_open_shift_machine_config_operator_namespace")
+
+    @ignore_open_shift_machine_config_operator_namespace.setter
+    def ignore_open_shift_machine_config_operator_namespace(self, value: pulumi.Input[Optional[_builtins.bool]]):
+        pulumi.set(self, "ignore_open_shift_machine_config_operator_namespace", value)
+
+    @_builtins.property
+    @pulumi.getter(name="ignoreOpenShiftMonitoringNamespace")
+    def ignore_open_shift_monitoring_namespace(self) -> pulumi.Input[Optional[_builtins.bool]]:
+        """
+        Disable monitoring of platform internal containers in the openshift-monitoring namespace.
+        """
+        return pulumi.get(self, "ignore_open_shift_monitoring_namespace")
+
+    @ignore_open_shift_monitoring_namespace.setter
+    def ignore_open_shift_monitoring_namespace(self, value: pulumi.Input[Optional[_builtins.bool]]):
+        pulumi.set(self, "ignore_open_shift_monitoring_namespace", value)
+
+    @_builtins.property
+    @pulumi.getter(name="ignoreOpenShiftOvnKubernetesNamespace")
+    def ignore_open_shift_ovn_kubernetes_namespace(self) -> pulumi.Input[Optional[_builtins.bool]]:
+        """
+        Disable monitoring of platform internal containers in the openshift-ovn-kubernetes namespace.
+        """
+        return pulumi.get(self, "ignore_open_shift_ovn_kubernetes_namespace")
+
+    @ignore_open_shift_ovn_kubernetes_namespace.setter
+    def ignore_open_shift_ovn_kubernetes_namespace(self, value: pulumi.Input[Optional[_builtins.bool]]):
+        pulumi.set(self, "ignore_open_shift_ovn_kubernetes_namespace", value)
+
+    @_builtins.property
     @pulumi.getter(name="ignoreOpenShiftSdnNamespace")
     def ignore_open_shift_sdn_namespace(self) -> pulumi.Input[Optional[_builtins.bool]]:
         """
@@ -167,6 +359,12 @@ class ContainerBuiltinRule(pulumi.CustomResource):
                  ignore_docker_pause_container: pulumi.Input[Optional[_builtins.bool]] = None,
                  ignore_kubernetes_pause_container: pulumi.Input[Optional[_builtins.bool]] = None,
                  ignore_open_shift_build_pod_name: pulumi.Input[Optional[_builtins.bool]] = None,
+                 ignore_open_shift_etcd_namespace: pulumi.Input[Optional[_builtins.bool]] = None,
+                 ignore_open_shift_ingress_canary_namespace: pulumi.Input[Optional[_builtins.bool]] = None,
+                 ignore_open_shift_kube_apiserver_namespace: pulumi.Input[Optional[_builtins.bool]] = None,
+                 ignore_open_shift_machine_config_operator_namespace: pulumi.Input[Optional[_builtins.bool]] = None,
+                 ignore_open_shift_monitoring_namespace: pulumi.Input[Optional[_builtins.bool]] = None,
+                 ignore_open_shift_ovn_kubernetes_namespace: pulumi.Input[Optional[_builtins.bool]] = None,
                  ignore_open_shift_sdn_namespace: pulumi.Input[Optional[_builtins.bool]] = None,
                  __props__=None):
         """
@@ -184,12 +382,37 @@ class ContainerBuiltinRule(pulumi.CustomResource):
 
         The full documentation of the export feature is available [here](https://dt-url.net/h203qmc).
 
+        ## Resource Example Usage
+
+        ```python
+        import pulumi
+        import pulumiverse_dynatrace as dynatrace
+
+        rules = dynatrace.ContainerBuiltinRule("rules",
+            ignore_docker_pause_container=False,
+            ignore_kubernetes_pause_container=True,
+            ignore_open_shift_build_pod_name=False,
+            ignore_open_shift_sdn_namespace=True,
+            ignore_open_shift_etcd_namespace=False,
+            ignore_open_shift_ingress_canary_namespace=False,
+            ignore_open_shift_kube_apiserver_namespace=False,
+            ignore_open_shift_machine_config_operator_namespace=False,
+            ignore_open_shift_monitoring_namespace=False,
+            ignore_open_shift_ovn_kubernetes_namespace=False)
+        ```
+
 
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[_builtins.bool] ignore_docker_pause_container: Disable monitoring of platform internal pause containers in Kubernetes and OpenShift.
         :param pulumi.Input[_builtins.bool] ignore_kubernetes_pause_container: Disable monitoring of platform internal pause containers in Kubernetes and OpenShift.
         :param pulumi.Input[_builtins.bool] ignore_open_shift_build_pod_name: Disable monitoring of intermediate containers created during image build.
+        :param pulumi.Input[_builtins.bool] ignore_open_shift_etcd_namespace: Disable monitoring of platform internal containers in the openshift-etcd namespace.
+        :param pulumi.Input[_builtins.bool] ignore_open_shift_ingress_canary_namespace: Disable monitoring of platform internal containers in the openshift-ingress-canary namespace.
+        :param pulumi.Input[_builtins.bool] ignore_open_shift_kube_apiserver_namespace: Disable monitoring of platform internal containers in the openshift-kube-apiserver namespace.
+        :param pulumi.Input[_builtins.bool] ignore_open_shift_machine_config_operator_namespace: Disable monitoring of platform internal containers in the openshift-machine-config-operator namespace.
+        :param pulumi.Input[_builtins.bool] ignore_open_shift_monitoring_namespace: Disable monitoring of platform internal containers in the openshift-monitoring namespace.
+        :param pulumi.Input[_builtins.bool] ignore_open_shift_ovn_kubernetes_namespace: Disable monitoring of platform internal containers in the openshift-ovn-kubernetes namespace.
         :param pulumi.Input[_builtins.bool] ignore_open_shift_sdn_namespace: Disable monitoring of platform internal containers in the openshift-sdn namespace.
         """
         ...
@@ -213,6 +436,25 @@ class ContainerBuiltinRule(pulumi.CustomResource):
 
         The full documentation of the export feature is available [here](https://dt-url.net/h203qmc).
 
+        ## Resource Example Usage
+
+        ```python
+        import pulumi
+        import pulumiverse_dynatrace as dynatrace
+
+        rules = dynatrace.ContainerBuiltinRule("rules",
+            ignore_docker_pause_container=False,
+            ignore_kubernetes_pause_container=True,
+            ignore_open_shift_build_pod_name=False,
+            ignore_open_shift_sdn_namespace=True,
+            ignore_open_shift_etcd_namespace=False,
+            ignore_open_shift_ingress_canary_namespace=False,
+            ignore_open_shift_kube_apiserver_namespace=False,
+            ignore_open_shift_machine_config_operator_namespace=False,
+            ignore_open_shift_monitoring_namespace=False,
+            ignore_open_shift_ovn_kubernetes_namespace=False)
+        ```
+
 
         :param str resource_name: The name of the resource.
         :param ContainerBuiltinRuleArgs args: The arguments to use to populate this resource's properties.
@@ -232,6 +474,12 @@ class ContainerBuiltinRule(pulumi.CustomResource):
                  ignore_docker_pause_container: pulumi.Input[Optional[_builtins.bool]] = None,
                  ignore_kubernetes_pause_container: pulumi.Input[Optional[_builtins.bool]] = None,
                  ignore_open_shift_build_pod_name: pulumi.Input[Optional[_builtins.bool]] = None,
+                 ignore_open_shift_etcd_namespace: pulumi.Input[Optional[_builtins.bool]] = None,
+                 ignore_open_shift_ingress_canary_namespace: pulumi.Input[Optional[_builtins.bool]] = None,
+                 ignore_open_shift_kube_apiserver_namespace: pulumi.Input[Optional[_builtins.bool]] = None,
+                 ignore_open_shift_machine_config_operator_namespace: pulumi.Input[Optional[_builtins.bool]] = None,
+                 ignore_open_shift_monitoring_namespace: pulumi.Input[Optional[_builtins.bool]] = None,
+                 ignore_open_shift_ovn_kubernetes_namespace: pulumi.Input[Optional[_builtins.bool]] = None,
                  ignore_open_shift_sdn_namespace: pulumi.Input[Optional[_builtins.bool]] = None,
                  __props__=None):
         opts = pulumi.ResourceOptions.merge(_utilities.get_resource_opts_defaults(), opts)
@@ -251,6 +499,12 @@ class ContainerBuiltinRule(pulumi.CustomResource):
             if ignore_open_shift_build_pod_name is None and not opts.urn:
                 raise TypeError("Missing required property 'ignore_open_shift_build_pod_name'")
             __props__.__dict__["ignore_open_shift_build_pod_name"] = ignore_open_shift_build_pod_name
+            __props__.__dict__["ignore_open_shift_etcd_namespace"] = ignore_open_shift_etcd_namespace
+            __props__.__dict__["ignore_open_shift_ingress_canary_namespace"] = ignore_open_shift_ingress_canary_namespace
+            __props__.__dict__["ignore_open_shift_kube_apiserver_namespace"] = ignore_open_shift_kube_apiserver_namespace
+            __props__.__dict__["ignore_open_shift_machine_config_operator_namespace"] = ignore_open_shift_machine_config_operator_namespace
+            __props__.__dict__["ignore_open_shift_monitoring_namespace"] = ignore_open_shift_monitoring_namespace
+            __props__.__dict__["ignore_open_shift_ovn_kubernetes_namespace"] = ignore_open_shift_ovn_kubernetes_namespace
             if ignore_open_shift_sdn_namespace is None and not opts.urn:
                 raise TypeError("Missing required property 'ignore_open_shift_sdn_namespace'")
             __props__.__dict__["ignore_open_shift_sdn_namespace"] = ignore_open_shift_sdn_namespace
@@ -267,6 +521,12 @@ class ContainerBuiltinRule(pulumi.CustomResource):
             ignore_docker_pause_container: pulumi.Input[Optional[_builtins.bool]] = None,
             ignore_kubernetes_pause_container: pulumi.Input[Optional[_builtins.bool]] = None,
             ignore_open_shift_build_pod_name: pulumi.Input[Optional[_builtins.bool]] = None,
+            ignore_open_shift_etcd_namespace: pulumi.Input[Optional[_builtins.bool]] = None,
+            ignore_open_shift_ingress_canary_namespace: pulumi.Input[Optional[_builtins.bool]] = None,
+            ignore_open_shift_kube_apiserver_namespace: pulumi.Input[Optional[_builtins.bool]] = None,
+            ignore_open_shift_machine_config_operator_namespace: pulumi.Input[Optional[_builtins.bool]] = None,
+            ignore_open_shift_monitoring_namespace: pulumi.Input[Optional[_builtins.bool]] = None,
+            ignore_open_shift_ovn_kubernetes_namespace: pulumi.Input[Optional[_builtins.bool]] = None,
             ignore_open_shift_sdn_namespace: pulumi.Input[Optional[_builtins.bool]] = None) -> 'ContainerBuiltinRule':
         """
         Get an existing ContainerBuiltinRule resource's state with the given name, id, and optional extra
@@ -278,6 +538,12 @@ class ContainerBuiltinRule(pulumi.CustomResource):
         :param pulumi.Input[_builtins.bool] ignore_docker_pause_container: Disable monitoring of platform internal pause containers in Kubernetes and OpenShift.
         :param pulumi.Input[_builtins.bool] ignore_kubernetes_pause_container: Disable monitoring of platform internal pause containers in Kubernetes and OpenShift.
         :param pulumi.Input[_builtins.bool] ignore_open_shift_build_pod_name: Disable monitoring of intermediate containers created during image build.
+        :param pulumi.Input[_builtins.bool] ignore_open_shift_etcd_namespace: Disable monitoring of platform internal containers in the openshift-etcd namespace.
+        :param pulumi.Input[_builtins.bool] ignore_open_shift_ingress_canary_namespace: Disable monitoring of platform internal containers in the openshift-ingress-canary namespace.
+        :param pulumi.Input[_builtins.bool] ignore_open_shift_kube_apiserver_namespace: Disable monitoring of platform internal containers in the openshift-kube-apiserver namespace.
+        :param pulumi.Input[_builtins.bool] ignore_open_shift_machine_config_operator_namespace: Disable monitoring of platform internal containers in the openshift-machine-config-operator namespace.
+        :param pulumi.Input[_builtins.bool] ignore_open_shift_monitoring_namespace: Disable monitoring of platform internal containers in the openshift-monitoring namespace.
+        :param pulumi.Input[_builtins.bool] ignore_open_shift_ovn_kubernetes_namespace: Disable monitoring of platform internal containers in the openshift-ovn-kubernetes namespace.
         :param pulumi.Input[_builtins.bool] ignore_open_shift_sdn_namespace: Disable monitoring of platform internal containers in the openshift-sdn namespace.
         """
         opts = pulumi.ResourceOptions.merge(opts, pulumi.ResourceOptions(id=id))
@@ -287,6 +553,12 @@ class ContainerBuiltinRule(pulumi.CustomResource):
         __props__.__dict__["ignore_docker_pause_container"] = ignore_docker_pause_container
         __props__.__dict__["ignore_kubernetes_pause_container"] = ignore_kubernetes_pause_container
         __props__.__dict__["ignore_open_shift_build_pod_name"] = ignore_open_shift_build_pod_name
+        __props__.__dict__["ignore_open_shift_etcd_namespace"] = ignore_open_shift_etcd_namespace
+        __props__.__dict__["ignore_open_shift_ingress_canary_namespace"] = ignore_open_shift_ingress_canary_namespace
+        __props__.__dict__["ignore_open_shift_kube_apiserver_namespace"] = ignore_open_shift_kube_apiserver_namespace
+        __props__.__dict__["ignore_open_shift_machine_config_operator_namespace"] = ignore_open_shift_machine_config_operator_namespace
+        __props__.__dict__["ignore_open_shift_monitoring_namespace"] = ignore_open_shift_monitoring_namespace
+        __props__.__dict__["ignore_open_shift_ovn_kubernetes_namespace"] = ignore_open_shift_ovn_kubernetes_namespace
         __props__.__dict__["ignore_open_shift_sdn_namespace"] = ignore_open_shift_sdn_namespace
         return ContainerBuiltinRule(resource_name, opts=opts, __props__=__props__)
 
@@ -313,6 +585,54 @@ class ContainerBuiltinRule(pulumi.CustomResource):
         Disable monitoring of intermediate containers created during image build.
         """
         return pulumi.get(self, "ignore_open_shift_build_pod_name")
+
+    @_builtins.property
+    @pulumi.getter(name="ignoreOpenShiftEtcdNamespace")
+    def ignore_open_shift_etcd_namespace(self) -> pulumi.Output[Optional[_builtins.bool]]:
+        """
+        Disable monitoring of platform internal containers in the openshift-etcd namespace.
+        """
+        return pulumi.get(self, "ignore_open_shift_etcd_namespace")
+
+    @_builtins.property
+    @pulumi.getter(name="ignoreOpenShiftIngressCanaryNamespace")
+    def ignore_open_shift_ingress_canary_namespace(self) -> pulumi.Output[Optional[_builtins.bool]]:
+        """
+        Disable monitoring of platform internal containers in the openshift-ingress-canary namespace.
+        """
+        return pulumi.get(self, "ignore_open_shift_ingress_canary_namespace")
+
+    @_builtins.property
+    @pulumi.getter(name="ignoreOpenShiftKubeApiserverNamespace")
+    def ignore_open_shift_kube_apiserver_namespace(self) -> pulumi.Output[Optional[_builtins.bool]]:
+        """
+        Disable monitoring of platform internal containers in the openshift-kube-apiserver namespace.
+        """
+        return pulumi.get(self, "ignore_open_shift_kube_apiserver_namespace")
+
+    @_builtins.property
+    @pulumi.getter(name="ignoreOpenShiftMachineConfigOperatorNamespace")
+    def ignore_open_shift_machine_config_operator_namespace(self) -> pulumi.Output[Optional[_builtins.bool]]:
+        """
+        Disable monitoring of platform internal containers in the openshift-machine-config-operator namespace.
+        """
+        return pulumi.get(self, "ignore_open_shift_machine_config_operator_namespace")
+
+    @_builtins.property
+    @pulumi.getter(name="ignoreOpenShiftMonitoringNamespace")
+    def ignore_open_shift_monitoring_namespace(self) -> pulumi.Output[Optional[_builtins.bool]]:
+        """
+        Disable monitoring of platform internal containers in the openshift-monitoring namespace.
+        """
+        return pulumi.get(self, "ignore_open_shift_monitoring_namespace")
+
+    @_builtins.property
+    @pulumi.getter(name="ignoreOpenShiftOvnKubernetesNamespace")
+    def ignore_open_shift_ovn_kubernetes_namespace(self) -> pulumi.Output[Optional[_builtins.bool]]:
+        """
+        Disable monitoring of platform internal containers in the openshift-ovn-kubernetes namespace.
+        """
+        return pulumi.get(self, "ignore_open_shift_ovn_kubernetes_namespace")
 
     @_builtins.property
     @pulumi.getter(name="ignoreOpenShiftSdnNamespace")

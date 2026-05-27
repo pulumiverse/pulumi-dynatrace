@@ -32,7 +32,7 @@ type LogEvents struct {
 	Enabled pulumi.BoolOutput `pulumi:"enabled"`
 	// Event template
 	EventTemplate LogEventsEventTemplateOutput `pulumi:"eventTemplate"`
-	// Log query
+	// Matcher
 	Query pulumi.StringOutput `pulumi:"query"`
 	// The textual summary of the log event entry
 	Summary pulumi.StringOutput `pulumi:"summary"`
@@ -84,7 +84,7 @@ type logEventsState struct {
 	Enabled *bool `pulumi:"enabled"`
 	// Event template
 	EventTemplate *LogEventsEventTemplate `pulumi:"eventTemplate"`
-	// Log query
+	// Matcher
 	Query *string `pulumi:"query"`
 	// The textual summary of the log event entry
 	Summary *string `pulumi:"summary"`
@@ -95,7 +95,7 @@ type LogEventsState struct {
 	Enabled pulumi.BoolPtrInput
 	// Event template
 	EventTemplate LogEventsEventTemplatePtrInput
-	// Log query
+	// Matcher
 	Query pulumi.StringPtrInput
 	// The textual summary of the log event entry
 	Summary pulumi.StringPtrInput
@@ -110,7 +110,7 @@ type logEventsArgs struct {
 	Enabled bool `pulumi:"enabled"`
 	// Event template
 	EventTemplate LogEventsEventTemplate `pulumi:"eventTemplate"`
-	// Log query
+	// Matcher
 	Query string `pulumi:"query"`
 	// The textual summary of the log event entry
 	Summary string `pulumi:"summary"`
@@ -122,7 +122,7 @@ type LogEventsArgs struct {
 	Enabled pulumi.BoolInput
 	// Event template
 	EventTemplate LogEventsEventTemplateInput
-	// Log query
+	// Matcher
 	Query pulumi.StringInput
 	// The textual summary of the log event entry
 	Summary pulumi.StringInput
@@ -225,7 +225,7 @@ func (o LogEventsOutput) EventTemplate() LogEventsEventTemplateOutput {
 	return o.ApplyT(func(v *LogEvents) LogEventsEventTemplateOutput { return v.EventTemplate }).(LogEventsEventTemplateOutput)
 }
 
-// Log query
+// Matcher
 func (o LogEventsOutput) Query() pulumi.StringOutput {
 	return o.ApplyT(func(v *LogEvents) pulumi.StringOutput { return v.Query }).(pulumi.StringOutput)
 }

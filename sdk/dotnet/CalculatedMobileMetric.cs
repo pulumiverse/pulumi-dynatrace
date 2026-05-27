@@ -24,6 +24,47 @@ namespace Pulumiverse.Dynatrace
     /// - `terraform-provider-dynatrace -export CalculatedMobileMetric` downloads all existing calculated mobile/custom app metric configuration
     /// 
     /// The full documentation of the export feature is available [here](https://dt-url.net/h203qmc).
+    /// 
+    /// ## Resource Example Usage
+    /// 
+    /// ```csharp
+    /// using System.Collections.Generic;
+    /// using System.Linq;
+    /// using Pulumi;
+    /// using Dynatrace = Pulumiverse.Dynatrace;
+    /// 
+    /// return await Deployment.RunAsync(() =&gt; 
+    /// {
+    ///     var application = Dynatrace.GetMobileApplication.Invoke(new()
+    ///     {
+    ///         Name = "Application",
+    ///     });
+    /// 
+    ///     var metric = new Dynatrace.CalculatedMobileMetric("metric", new()
+    ///     {
+    ///         Name = "#name#",
+    ///         Enabled = true,
+    ///         AppIdentifier = application.Apply(getMobileApplicationResult =&gt; getMobileApplicationResult.Id),
+    ///         MetricKey = "calc:apps.mobile.#name#",
+    ///         MetricType = "USER_ACTION_DURATION",
+    ///         Dimensions = new[]
+    ///         {
+    ///             new Dynatrace.Inputs.CalculatedMobileMetricDimensionArgs
+    ///             {
+    ///                 Dimensions = new[]
+    ///                 {
+    ///                     new Dynatrace.Inputs.CalculatedMobileMetricDimensionDimensionArgs
+    ///                     {
+    ///                         Dimension = "APP_VERSION",
+    ///                         TopX = 10,
+    ///                     },
+    ///                 },
+    ///             },
+    ///         },
+    ///     });
+    /// 
+    /// });
+    /// ```
     /// </summary>
     [DynatraceResourceType("dynatrace:index/calculatedMobileMetric:CalculatedMobileMetric")]
     public partial class CalculatedMobileMetric : global::Pulumi.CustomResource

@@ -29,7 +29,7 @@ import (
 //
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
-//			example, err := dynatrace.LookupApiToken(ctx, &dynatrace.LookupApiTokenArgs{
+//			example, err := dynatrace.GetApiToken(ctx, &dynatrace.LookupApiTokenArgs{
 //				Name: "Terraform",
 //			}, nil)
 //			if err != nil {

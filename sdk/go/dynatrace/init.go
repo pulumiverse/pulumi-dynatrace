@@ -317,6 +317,8 @@ func (m *module) Construct(ctx *pulumi.Context, name, typ, urn string) (r pulumi
 		r = &HubExtensionActiveVersion{}
 	case "dynatrace:index/hubExtensionConfig:HubExtensionConfig":
 		r = &HubExtensionConfig{}
+	case "dynatrace:index/hubExtensionV2Config:HubExtensionV2Config":
+		r = &HubExtensionV2Config{}
 	case "dynatrace:index/hubPermissions:HubPermissions":
 		r = &HubPermissions{}
 	case "dynatrace:index/hubSubscriptions:HubSubscriptions":
@@ -541,78 +543,104 @@ func (m *module) Construct(ctx *pulumi.Context, name, typ, urn string) (r pulumi
 		r = &OpenpipelineUserSessions{}
 	case "dynatrace:index/openpipelineV2BizeventsIngestsources:OpenpipelineV2BizeventsIngestsources":
 		r = &OpenpipelineV2BizeventsIngestsources{}
+	case "dynatrace:index/openpipelineV2BizeventsPipelinegroups:OpenpipelineV2BizeventsPipelinegroups":
+		r = &OpenpipelineV2BizeventsPipelinegroups{}
 	case "dynatrace:index/openpipelineV2BizeventsPipelines:OpenpipelineV2BizeventsPipelines":
 		r = &OpenpipelineV2BizeventsPipelines{}
 	case "dynatrace:index/openpipelineV2BizeventsRouting:OpenpipelineV2BizeventsRouting":
 		r = &OpenpipelineV2BizeventsRouting{}
 	case "dynatrace:index/openpipelineV2DavisEventsIngestsources:OpenpipelineV2DavisEventsIngestsources":
 		r = &OpenpipelineV2DavisEventsIngestsources{}
+	case "dynatrace:index/openpipelineV2DavisEventsPipelinegroups:OpenpipelineV2DavisEventsPipelinegroups":
+		r = &OpenpipelineV2DavisEventsPipelinegroups{}
 	case "dynatrace:index/openpipelineV2DavisEventsPipelines:OpenpipelineV2DavisEventsPipelines":
 		r = &OpenpipelineV2DavisEventsPipelines{}
 	case "dynatrace:index/openpipelineV2DavisEventsRouting:OpenpipelineV2DavisEventsRouting":
 		r = &OpenpipelineV2DavisEventsRouting{}
 	case "dynatrace:index/openpipelineV2DavisProblemsIngestsources:OpenpipelineV2DavisProblemsIngestsources":
 		r = &OpenpipelineV2DavisProblemsIngestsources{}
+	case "dynatrace:index/openpipelineV2DavisProblemsPipelinegroups:OpenpipelineV2DavisProblemsPipelinegroups":
+		r = &OpenpipelineV2DavisProblemsPipelinegroups{}
 	case "dynatrace:index/openpipelineV2DavisProblemsPipelines:OpenpipelineV2DavisProblemsPipelines":
 		r = &OpenpipelineV2DavisProblemsPipelines{}
 	case "dynatrace:index/openpipelineV2DavisProblemsRouting:OpenpipelineV2DavisProblemsRouting":
 		r = &OpenpipelineV2DavisProblemsRouting{}
 	case "dynatrace:index/openpipelineV2EventsIngestsources:OpenpipelineV2EventsIngestsources":
 		r = &OpenpipelineV2EventsIngestsources{}
+	case "dynatrace:index/openpipelineV2EventsPipelinegroups:OpenpipelineV2EventsPipelinegroups":
+		r = &OpenpipelineV2EventsPipelinegroups{}
 	case "dynatrace:index/openpipelineV2EventsPipelines:OpenpipelineV2EventsPipelines":
 		r = &OpenpipelineV2EventsPipelines{}
 	case "dynatrace:index/openpipelineV2EventsRouting:OpenpipelineV2EventsRouting":
 		r = &OpenpipelineV2EventsRouting{}
 	case "dynatrace:index/openpipelineV2EventsSdlcIngestsources:OpenpipelineV2EventsSdlcIngestsources":
 		r = &OpenpipelineV2EventsSdlcIngestsources{}
+	case "dynatrace:index/openpipelineV2EventsSdlcPipelinegroups:OpenpipelineV2EventsSdlcPipelinegroups":
+		r = &OpenpipelineV2EventsSdlcPipelinegroups{}
 	case "dynatrace:index/openpipelineV2EventsSdlcPipelines:OpenpipelineV2EventsSdlcPipelines":
 		r = &OpenpipelineV2EventsSdlcPipelines{}
 	case "dynatrace:index/openpipelineV2EventsSdlcRouting:OpenpipelineV2EventsSdlcRouting":
 		r = &OpenpipelineV2EventsSdlcRouting{}
 	case "dynatrace:index/openpipelineV2EventsSecurityIngestsources:OpenpipelineV2EventsSecurityIngestsources":
 		r = &OpenpipelineV2EventsSecurityIngestsources{}
+	case "dynatrace:index/openpipelineV2EventsSecurityPipelinegroups:OpenpipelineV2EventsSecurityPipelinegroups":
+		r = &OpenpipelineV2EventsSecurityPipelinegroups{}
 	case "dynatrace:index/openpipelineV2EventsSecurityPipelines:OpenpipelineV2EventsSecurityPipelines":
 		r = &OpenpipelineV2EventsSecurityPipelines{}
 	case "dynatrace:index/openpipelineV2EventsSecurityRouting:OpenpipelineV2EventsSecurityRouting":
 		r = &OpenpipelineV2EventsSecurityRouting{}
 	case "dynatrace:index/openpipelineV2LogsIngestsources:OpenpipelineV2LogsIngestsources":
 		r = &OpenpipelineV2LogsIngestsources{}
+	case "dynatrace:index/openpipelineV2LogsPipelinegroups:OpenpipelineV2LogsPipelinegroups":
+		r = &OpenpipelineV2LogsPipelinegroups{}
 	case "dynatrace:index/openpipelineV2LogsPipelines:OpenpipelineV2LogsPipelines":
 		r = &OpenpipelineV2LogsPipelines{}
 	case "dynatrace:index/openpipelineV2LogsRouting:OpenpipelineV2LogsRouting":
 		r = &OpenpipelineV2LogsRouting{}
 	case "dynatrace:index/openpipelineV2MetricsIngestsources:OpenpipelineV2MetricsIngestsources":
 		r = &OpenpipelineV2MetricsIngestsources{}
+	case "dynatrace:index/openpipelineV2MetricsPipelinegroups:OpenpipelineV2MetricsPipelinegroups":
+		r = &OpenpipelineV2MetricsPipelinegroups{}
 	case "dynatrace:index/openpipelineV2MetricsPipelines:OpenpipelineV2MetricsPipelines":
 		r = &OpenpipelineV2MetricsPipelines{}
 	case "dynatrace:index/openpipelineV2MetricsRouting:OpenpipelineV2MetricsRouting":
 		r = &OpenpipelineV2MetricsRouting{}
 	case "dynatrace:index/openpipelineV2SecurityEventsIngestsources:OpenpipelineV2SecurityEventsIngestsources":
 		r = &OpenpipelineV2SecurityEventsIngestsources{}
+	case "dynatrace:index/openpipelineV2SecurityEventsPipelinegroups:OpenpipelineV2SecurityEventsPipelinegroups":
+		r = &OpenpipelineV2SecurityEventsPipelinegroups{}
 	case "dynatrace:index/openpipelineV2SecurityEventsPipelines:OpenpipelineV2SecurityEventsPipelines":
 		r = &OpenpipelineV2SecurityEventsPipelines{}
 	case "dynatrace:index/openpipelineV2SecurityEventsRouting:OpenpipelineV2SecurityEventsRouting":
 		r = &OpenpipelineV2SecurityEventsRouting{}
 	case "dynatrace:index/openpipelineV2SpansIngestsources:OpenpipelineV2SpansIngestsources":
 		r = &OpenpipelineV2SpansIngestsources{}
+	case "dynatrace:index/openpipelineV2SpansPipelinegroups:OpenpipelineV2SpansPipelinegroups":
+		r = &OpenpipelineV2SpansPipelinegroups{}
 	case "dynatrace:index/openpipelineV2SpansPipelines:OpenpipelineV2SpansPipelines":
 		r = &OpenpipelineV2SpansPipelines{}
 	case "dynatrace:index/openpipelineV2SpansRouting:OpenpipelineV2SpansRouting":
 		r = &OpenpipelineV2SpansRouting{}
 	case "dynatrace:index/openpipelineV2SystemEventsIngestsources:OpenpipelineV2SystemEventsIngestsources":
 		r = &OpenpipelineV2SystemEventsIngestsources{}
+	case "dynatrace:index/openpipelineV2SystemEventsPipelinegroups:OpenpipelineV2SystemEventsPipelinegroups":
+		r = &OpenpipelineV2SystemEventsPipelinegroups{}
 	case "dynatrace:index/openpipelineV2SystemEventsPipelines:OpenpipelineV2SystemEventsPipelines":
 		r = &OpenpipelineV2SystemEventsPipelines{}
 	case "dynatrace:index/openpipelineV2SystemEventsRouting:OpenpipelineV2SystemEventsRouting":
 		r = &OpenpipelineV2SystemEventsRouting{}
 	case "dynatrace:index/openpipelineV2UserEventsIngestsources:OpenpipelineV2UserEventsIngestsources":
 		r = &OpenpipelineV2UserEventsIngestsources{}
+	case "dynatrace:index/openpipelineV2UserEventsPipelinegroups:OpenpipelineV2UserEventsPipelinegroups":
+		r = &OpenpipelineV2UserEventsPipelinegroups{}
 	case "dynatrace:index/openpipelineV2UserEventsPipelines:OpenpipelineV2UserEventsPipelines":
 		r = &OpenpipelineV2UserEventsPipelines{}
 	case "dynatrace:index/openpipelineV2UserEventsRouting:OpenpipelineV2UserEventsRouting":
 		r = &OpenpipelineV2UserEventsRouting{}
 	case "dynatrace:index/openpipelineV2UsersessionsIngestsources:OpenpipelineV2UsersessionsIngestsources":
 		r = &OpenpipelineV2UsersessionsIngestsources{}
+	case "dynatrace:index/openpipelineV2UsersessionsPipelinegroups:OpenpipelineV2UsersessionsPipelinegroups":
+		r = &OpenpipelineV2UsersessionsPipelinegroups{}
 	case "dynatrace:index/openpipelineV2UsersessionsPipelines:OpenpipelineV2UsersessionsPipelines":
 		r = &OpenpipelineV2UsersessionsPipelines{}
 	case "dynatrace:index/openpipelineV2UsersessionsRouting:OpenpipelineV2UsersessionsRouting":
@@ -1628,6 +1656,11 @@ func init() {
 	)
 	pulumi.RegisterResourceModule(
 		"dynatrace",
+		"index/hubExtensionV2Config",
+		&module{version},
+	)
+	pulumi.RegisterResourceModule(
+		"dynatrace",
 		"index/hubPermissions",
 		&module{version},
 	)
@@ -2188,6 +2221,11 @@ func init() {
 	)
 	pulumi.RegisterResourceModule(
 		"dynatrace",
+		"index/openpipelineV2BizeventsPipelinegroups",
+		&module{version},
+	)
+	pulumi.RegisterResourceModule(
+		"dynatrace",
 		"index/openpipelineV2BizeventsPipelines",
 		&module{version},
 	)
@@ -2199,6 +2237,11 @@ func init() {
 	pulumi.RegisterResourceModule(
 		"dynatrace",
 		"index/openpipelineV2DavisEventsIngestsources",
+		&module{version},
+	)
+	pulumi.RegisterResourceModule(
+		"dynatrace",
+		"index/openpipelineV2DavisEventsPipelinegroups",
 		&module{version},
 	)
 	pulumi.RegisterResourceModule(
@@ -2218,6 +2261,11 @@ func init() {
 	)
 	pulumi.RegisterResourceModule(
 		"dynatrace",
+		"index/openpipelineV2DavisProblemsPipelinegroups",
+		&module{version},
+	)
+	pulumi.RegisterResourceModule(
+		"dynatrace",
 		"index/openpipelineV2DavisProblemsPipelines",
 		&module{version},
 	)
@@ -2229,6 +2277,11 @@ func init() {
 	pulumi.RegisterResourceModule(
 		"dynatrace",
 		"index/openpipelineV2EventsIngestsources",
+		&module{version},
+	)
+	pulumi.RegisterResourceModule(
+		"dynatrace",
+		"index/openpipelineV2EventsPipelinegroups",
 		&module{version},
 	)
 	pulumi.RegisterResourceModule(
@@ -2248,6 +2301,11 @@ func init() {
 	)
 	pulumi.RegisterResourceModule(
 		"dynatrace",
+		"index/openpipelineV2EventsSdlcPipelinegroups",
+		&module{version},
+	)
+	pulumi.RegisterResourceModule(
+		"dynatrace",
 		"index/openpipelineV2EventsSdlcPipelines",
 		&module{version},
 	)
@@ -2259,6 +2317,11 @@ func init() {
 	pulumi.RegisterResourceModule(
 		"dynatrace",
 		"index/openpipelineV2EventsSecurityIngestsources",
+		&module{version},
+	)
+	pulumi.RegisterResourceModule(
+		"dynatrace",
+		"index/openpipelineV2EventsSecurityPipelinegroups",
 		&module{version},
 	)
 	pulumi.RegisterResourceModule(
@@ -2278,6 +2341,11 @@ func init() {
 	)
 	pulumi.RegisterResourceModule(
 		"dynatrace",
+		"index/openpipelineV2LogsPipelinegroups",
+		&module{version},
+	)
+	pulumi.RegisterResourceModule(
+		"dynatrace",
 		"index/openpipelineV2LogsPipelines",
 		&module{version},
 	)
@@ -2289,6 +2357,11 @@ func init() {
 	pulumi.RegisterResourceModule(
 		"dynatrace",
 		"index/openpipelineV2MetricsIngestsources",
+		&module{version},
+	)
+	pulumi.RegisterResourceModule(
+		"dynatrace",
+		"index/openpipelineV2MetricsPipelinegroups",
 		&module{version},
 	)
 	pulumi.RegisterResourceModule(
@@ -2308,6 +2381,11 @@ func init() {
 	)
 	pulumi.RegisterResourceModule(
 		"dynatrace",
+		"index/openpipelineV2SecurityEventsPipelinegroups",
+		&module{version},
+	)
+	pulumi.RegisterResourceModule(
+		"dynatrace",
 		"index/openpipelineV2SecurityEventsPipelines",
 		&module{version},
 	)
@@ -2319,6 +2397,11 @@ func init() {
 	pulumi.RegisterResourceModule(
 		"dynatrace",
 		"index/openpipelineV2SpansIngestsources",
+		&module{version},
+	)
+	pulumi.RegisterResourceModule(
+		"dynatrace",
+		"index/openpipelineV2SpansPipelinegroups",
 		&module{version},
 	)
 	pulumi.RegisterResourceModule(
@@ -2338,6 +2421,11 @@ func init() {
 	)
 	pulumi.RegisterResourceModule(
 		"dynatrace",
+		"index/openpipelineV2SystemEventsPipelinegroups",
+		&module{version},
+	)
+	pulumi.RegisterResourceModule(
+		"dynatrace",
 		"index/openpipelineV2SystemEventsPipelines",
 		&module{version},
 	)
@@ -2353,6 +2441,11 @@ func init() {
 	)
 	pulumi.RegisterResourceModule(
 		"dynatrace",
+		"index/openpipelineV2UserEventsPipelinegroups",
+		&module{version},
+	)
+	pulumi.RegisterResourceModule(
+		"dynatrace",
 		"index/openpipelineV2UserEventsPipelines",
 		&module{version},
 	)
@@ -2364,6 +2457,11 @@ func init() {
 	pulumi.RegisterResourceModule(
 		"dynatrace",
 		"index/openpipelineV2UsersessionsIngestsources",
+		&module{version},
+	)
+	pulumi.RegisterResourceModule(
+		"dynatrace",
+		"index/openpipelineV2UsersessionsPipelinegroups",
 		&module{version},
 	)
 	pulumi.RegisterResourceModule(

@@ -281,7 +281,7 @@ namespace Pulumiverse.Dynatrace
         public Output<string> DisplayName { get; private set; } = null!;
 
         /// <summary>
-        /// Group role. Possible Values: `compositionPipeline`, `memberPipeline`
+        /// Group role. Possible values: `compositionPipeline`, `memberPipeline`
         /// </summary>
         [Output("groupRole")]
         public Output<string?> GroupRole { get; private set; } = null!;
@@ -311,7 +311,7 @@ namespace Pulumiverse.Dynatrace
         public Output<Outputs.OpenpipelineV2DavisEventsPipelinesProductAllocation?> ProductAllocation { get; private set; } = null!;
 
         /// <summary>
-        /// Routing. Possible Values: `notRoutable`, `Routable`
+        /// Routing. Possible values: `notRoutable`, `Routable`
         /// </summary>
         [Output("routing")]
         public Output<string?> Routing { get; private set; } = null!;
@@ -418,7 +418,7 @@ namespace Pulumiverse.Dynatrace
         public Input<string> DisplayName { get; set; } = null!;
 
         /// <summary>
-        /// Group role. Possible Values: `compositionPipeline`, `memberPipeline`
+        /// Group role. Possible values: `compositionPipeline`, `memberPipeline`
         /// </summary>
         [Input("groupRole")]
         public Input<string>? GroupRole { get; set; }
@@ -448,7 +448,7 @@ namespace Pulumiverse.Dynatrace
         public Input<Inputs.OpenpipelineV2DavisEventsPipelinesProductAllocationArgs>? ProductAllocation { get; set; }
 
         /// <summary>
-        /// Routing. Possible Values: `notRoutable`, `Routable`
+        /// Routing. Possible values: `notRoutable`, `Routable`
         /// </summary>
         [Input("routing")]
         public Input<string>? Routing { get; set; }
@@ -516,7 +516,7 @@ namespace Pulumiverse.Dynatrace
         public Input<string>? DisplayName { get; set; }
 
         /// <summary>
-        /// Group role. Possible Values: `compositionPipeline`, `memberPipeline`
+        /// Group role. Possible values: `compositionPipeline`, `memberPipeline`
         /// </summary>
         [Input("groupRole")]
         public Input<string>? GroupRole { get; set; }
@@ -546,7 +546,7 @@ namespace Pulumiverse.Dynatrace
         public Input<Inputs.OpenpipelineV2DavisEventsPipelinesProductAllocationGetArgs>? ProductAllocation { get; set; }
 
         /// <summary>
-        /// Routing. Possible Values: `notRoutable`, `Routable`
+        /// Routing. Possible values: `notRoutable`, `Routable`
         /// </summary>
         [Input("routing")]
         public Input<string>? Routing { get; set; }

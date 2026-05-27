@@ -28,6 +28,30 @@ namespace Pulumiverse.Dynatrace
     /// &gt; By default settings for Agents that are currently offline are not getting exported. You can change that by setting the environment variable `DYNATRACE_HOST_MONITORING_OFFLINE` to `True` before running the export. Be aware that you will get settings exported for every host that has been connected within the last 3 years that way.
     /// 
     /// The full documentation of the export feature is available [here](https://dt-url.net/h203qmc).
+    /// 
+    /// ## Resource Example Usage
+    /// 
+    /// ```csharp
+    /// using System.Collections.Generic;
+    /// using System.Linq;
+    /// using Pulumi;
+    /// using Dynatrace = Pulumiverse.Dynatrace;
+    /// 
+    /// return await Deployment.RunAsync(() =&gt; 
+    /// {
+    ///     var hosts = Dynatrace.GetEntities.Invoke(new()
+    ///     {
+    ///         Type = "HOST",
+    ///     });
+    /// 
+    ///     var mode = new Dynatrace.HostMonitoringMode("mode", new()
+    ///     {
+    ///         HostId = hosts.Apply(getEntitiesResult =&gt; getEntitiesResult.Entities[0]?.EntityId),
+    ///         MonitoringMode = "FULL_STACK",
+    ///     });
+    /// 
+    /// });
+    /// ```
     /// </summary>
     [DynatraceResourceType("dynatrace:index/hostMonitoringMode:HostMonitoringMode")]
     public partial class HostMonitoringMode : global::Pulumi.CustomResource

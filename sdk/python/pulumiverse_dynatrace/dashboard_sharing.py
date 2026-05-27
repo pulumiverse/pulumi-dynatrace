@@ -234,6 +234,57 @@ class DashboardSharing(pulumi.CustomResource):
 
         - Dashboards API - https://www.dynatrace.com/support/help/dynatrace-api/configuration-api/dashboards-api
 
+        ## Resource Example Usage
+
+        ```python
+        import pulumi
+        import pulumiverse_dynatrace as dynatrace
+
+        dashboard = dynatrace.Dashboard("dashboard",
+            dashboard_metadata={
+                "name": "#name#",
+                "owner": "Dynatrace",
+                "tags": ["Kubernetes"],
+                "dynamic_filters": {
+                    "filters": ["KUBERNETES_CLUSTER"],
+                },
+            },
+            tiles=[{
+                "name": "Markdown",
+                "tile_type": "MARKDOWN",
+                "configured": True,
+                "bounds": {
+                    "top": 0,
+                    "width": 684,
+                    "height": 38,
+                    "left": 0,
+                },
+                "markdown": "## Cluster resource overview",
+            }])
+        group = dynatrace.IamGroup("group", name="#name#")
+        user = dynatrace.IamServiceUser("user", name="#name#")
+        sharing = dynatrace.DashboardSharing("sharing",
+            dashboard_id=dashboard.id,
+            permissions={
+                "permissions": [
+                    {
+                        "level": "VIEW",
+                        "type": "ALL",
+                    },
+                    {
+                        "level": "EDIT",
+                        "type": "GROUP",
+                        "id": group.id,
+                    },
+                    {
+                        "level": "EDIT",
+                        "type": "USER",
+                        "id": user.id,
+                    },
+                ],
+            })
+        ```
+
 
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
@@ -259,6 +310,57 @@ class DashboardSharing(pulumi.CustomResource):
         - Share Dynatrace dashboards - https://www.dynatrace.com/support/help/how-to-use-dynatrace/dashboards-and-charts/dashboards/share-dashboards
 
         - Dashboards API - https://www.dynatrace.com/support/help/dynatrace-api/configuration-api/dashboards-api
+
+        ## Resource Example Usage
+
+        ```python
+        import pulumi
+        import pulumiverse_dynatrace as dynatrace
+
+        dashboard = dynatrace.Dashboard("dashboard",
+            dashboard_metadata={
+                "name": "#name#",
+                "owner": "Dynatrace",
+                "tags": ["Kubernetes"],
+                "dynamic_filters": {
+                    "filters": ["KUBERNETES_CLUSTER"],
+                },
+            },
+            tiles=[{
+                "name": "Markdown",
+                "tile_type": "MARKDOWN",
+                "configured": True,
+                "bounds": {
+                    "top": 0,
+                    "width": 684,
+                    "height": 38,
+                    "left": 0,
+                },
+                "markdown": "## Cluster resource overview",
+            }])
+        group = dynatrace.IamGroup("group", name="#name#")
+        user = dynatrace.IamServiceUser("user", name="#name#")
+        sharing = dynatrace.DashboardSharing("sharing",
+            dashboard_id=dashboard.id,
+            permissions={
+                "permissions": [
+                    {
+                        "level": "VIEW",
+                        "type": "ALL",
+                    },
+                    {
+                        "level": "EDIT",
+                        "type": "GROUP",
+                        "id": group.id,
+                    },
+                    {
+                        "level": "EDIT",
+                        "type": "USER",
+                        "id": user.id,
+                    },
+                ],
+            })
+        ```
 
 
         :param str resource_name: The name of the resource.

@@ -34,10 +34,10 @@ class VmwareArgs:
         :param pulumi.Input[_builtins.str] password: no documentation available
         :param pulumi.Input[_builtins.str] username: Provide user credentials for the vCenter or standalone ESXi host:
         :param pulumi.Input[_builtins.str] filter: This string should have one of the following formats:
-               - $prefix(parameter) - property value starting with 'parameter'
-               - $eq(parameter) - property value exactly matching 'parameter'
-               - $suffix(parameter) - property value ends with 'parameter'
-               - $contains(parameter) - property value contains 'parameter'
+                - $prefix(parameter) - property value starting with 'parameter'
+                - $eq(parameter) - property value exactly matching 'parameter'
+                - $suffix(parameter) - property value ends with 'parameter'
+                - $contains(parameter) - property value contains 'parameter'
         """
         pulumi.set(__self__, "enabled", enabled)
         pulumi.set(__self__, "ipaddress", ipaddress)
@@ -112,10 +112,10 @@ class VmwareArgs:
     def filter(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         This string should have one of the following formats:
-        - $prefix(parameter) - property value starting with 'parameter'
-        - $eq(parameter) - property value exactly matching 'parameter'
-        - $suffix(parameter) - property value ends with 'parameter'
-        - $contains(parameter) - property value contains 'parameter'
+         - $prefix(parameter) - property value starting with 'parameter'
+         - $eq(parameter) - property value exactly matching 'parameter'
+         - $suffix(parameter) - property value ends with 'parameter'
+         - $contains(parameter) - property value contains 'parameter'
         """
         return pulumi.get(self, "filter")
 
@@ -138,10 +138,10 @@ class _VmwareState:
 
         :param pulumi.Input[_builtins.bool] enabled: This setting is enabled (`true`) or disabled (`false`)
         :param pulumi.Input[_builtins.str] filter: This string should have one of the following formats:
-               - $prefix(parameter) - property value starting with 'parameter'
-               - $eq(parameter) - property value exactly matching 'parameter'
-               - $suffix(parameter) - property value ends with 'parameter'
-               - $contains(parameter) - property value contains 'parameter'
+                - $prefix(parameter) - property value starting with 'parameter'
+                - $eq(parameter) - property value exactly matching 'parameter'
+                - $suffix(parameter) - property value ends with 'parameter'
+                - $contains(parameter) - property value contains 'parameter'
         :param pulumi.Input[_builtins.str] ipaddress: Specify the IP address or name of the vCenter or standalone ESXi host:
         :param pulumi.Input[_builtins.str] label: Name this connection
         :param pulumi.Input[_builtins.str] password: no documentation available
@@ -177,10 +177,10 @@ class _VmwareState:
     def filter(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         This string should have one of the following formats:
-        - $prefix(parameter) - property value starting with 'parameter'
-        - $eq(parameter) - property value exactly matching 'parameter'
-        - $suffix(parameter) - property value ends with 'parameter'
-        - $contains(parameter) - property value contains 'parameter'
+         - $prefix(parameter) - property value starting with 'parameter'
+         - $eq(parameter) - property value exactly matching 'parameter'
+         - $suffix(parameter) - property value ends with 'parameter'
+         - $contains(parameter) - property value contains 'parameter'
         """
         return pulumi.get(self, "filter")
 
@@ -270,10 +270,10 @@ class Vmware(pulumi.CustomResource):
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[_builtins.bool] enabled: This setting is enabled (`true`) or disabled (`false`)
         :param pulumi.Input[_builtins.str] filter: This string should have one of the following formats:
-               - $prefix(parameter) - property value starting with 'parameter'
-               - $eq(parameter) - property value exactly matching 'parameter'
-               - $suffix(parameter) - property value ends with 'parameter'
-               - $contains(parameter) - property value contains 'parameter'
+                - $prefix(parameter) - property value starting with 'parameter'
+                - $eq(parameter) - property value exactly matching 'parameter'
+                - $suffix(parameter) - property value ends with 'parameter'
+                - $contains(parameter) - property value contains 'parameter'
         :param pulumi.Input[_builtins.str] ipaddress: Specify the IP address or name of the vCenter or standalone ESXi host:
         :param pulumi.Input[_builtins.str] label: Name this connection
         :param pulumi.Input[_builtins.str] password: no documentation available
@@ -374,10 +374,10 @@ class Vmware(pulumi.CustomResource):
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[_builtins.bool] enabled: This setting is enabled (`true`) or disabled (`false`)
         :param pulumi.Input[_builtins.str] filter: This string should have one of the following formats:
-               - $prefix(parameter) - property value starting with 'parameter'
-               - $eq(parameter) - property value exactly matching 'parameter'
-               - $suffix(parameter) - property value ends with 'parameter'
-               - $contains(parameter) - property value contains 'parameter'
+                - $prefix(parameter) - property value starting with 'parameter'
+                - $eq(parameter) - property value exactly matching 'parameter'
+                - $suffix(parameter) - property value ends with 'parameter'
+                - $contains(parameter) - property value contains 'parameter'
         :param pulumi.Input[_builtins.str] ipaddress: Specify the IP address or name of the vCenter or standalone ESXi host:
         :param pulumi.Input[_builtins.str] label: Name this connection
         :param pulumi.Input[_builtins.str] password: no documentation available
@@ -408,10 +408,10 @@ class Vmware(pulumi.CustomResource):
     def filter(self) -> pulumi.Output[Optional[_builtins.str]]:
         """
         This string should have one of the following formats:
-        - $prefix(parameter) - property value starting with 'parameter'
-        - $eq(parameter) - property value exactly matching 'parameter'
-        - $suffix(parameter) - property value ends with 'parameter'
-        - $contains(parameter) - property value contains 'parameter'
+         - $prefix(parameter) - property value starting with 'parameter'
+         - $eq(parameter) - property value exactly matching 'parameter'
+         - $suffix(parameter) - property value ends with 'parameter'
+         - $contains(parameter) - property value contains 'parameter'
         """
         return pulumi.get(self, "filter")
 

@@ -62,21 +62,30 @@ import (
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
 //			tmpJSON0, err := json.Marshal(map[string]interface{}{
-//				"client_id":     "asdfhh",
-//				"client_secret": "mysecret",
-//				"name":          "ABC",
-//				"tenant_id":     "asdf",
-//				"type":          "client_secret",
-//				"user_id":       "asdf",
+//				"name": "#name#",
+//				"tags": []string{
+//					"stage:staging",
+//				},
+//				"eventKind": "BIZ_EVENT",
+//				"objectives": []map[string]interface{}{
+//					map[string]interface{}{
+//						"name":               "Error rate",
+//						"comparisonOperator": "LESS_THAN_OR_EQUAL",
+//						"dqlQuery":           "fetch logs\n| fieldsAdd errors = toLong(loglevel == \\\"ERROR\\\")\n| summarize errorRate = sum(errors)/count() * 100\n",
+//						"objectiveType":      "DQL",
+//						"target":             8,
+//						"warning":            6,
+//					},
+//				},
 //			})
 //			if err != nil {
 //				return err
 //			}
 //			json0 := string(tmpJSON0)
 //			_, err = dynatrace.NewGenericSetting(ctx, "ABC", &dynatrace.GenericSettingArgs{
-//				Schema: pulumi.String("app:my.booking.analytics:connection"),
+//				Schema: pulumi.String("app:dynatrace.site.reliability.guardian:guardians"),
 //				Scope:  pulumi.String("environment"),
-//				Value:  pulumi.String(json0),
+//				Value:  pulumi.String(pulumi.String(json0)),
 //			})
 //			if err != nil {
 //				return err

@@ -159,6 +159,8 @@ from .get_geo_cities import *
 from .get_geo_countries import *
 from .get_geo_regions import *
 from .get_host import *
+from .get_hub_extension_v2_active_version import *
+from .get_hub_extension_v2_latest_version import *
 from .get_hub_items import *
 from .get_iam_environments import *
 from .get_iam_group import *
@@ -209,6 +211,7 @@ from .http_monitor_performance import *
 from .http_monitor_script import *
 from .hub_extension_active_version import *
 from .hub_extension_config import *
+from .hub_extension_v2_config import *
 from .hub_permissions import *
 from .hub_subscriptions import *
 from .iam_group import *
@@ -321,42 +324,55 @@ from .openpipeline_system_events import *
 from .openpipeline_user_events import *
 from .openpipeline_user_sessions import *
 from .openpipeline_v2_bizevents_ingestsources import *
+from .openpipeline_v2_bizevents_pipelinegroups import *
 from .openpipeline_v2_bizevents_pipelines import *
 from .openpipeline_v2_bizevents_routing import *
 from .openpipeline_v2_davis_events_ingestsources import *
+from .openpipeline_v2_davis_events_pipelinegroups import *
 from .openpipeline_v2_davis_events_pipelines import *
 from .openpipeline_v2_davis_events_routing import *
 from .openpipeline_v2_davis_problems_ingestsources import *
+from .openpipeline_v2_davis_problems_pipelinegroups import *
 from .openpipeline_v2_davis_problems_pipelines import *
 from .openpipeline_v2_davis_problems_routing import *
 from .openpipeline_v2_events_ingestsources import *
+from .openpipeline_v2_events_pipelinegroups import *
 from .openpipeline_v2_events_pipelines import *
 from .openpipeline_v2_events_routing import *
 from .openpipeline_v2_events_sdlc_ingestsources import *
+from .openpipeline_v2_events_sdlc_pipelinegroups import *
 from .openpipeline_v2_events_sdlc_pipelines import *
 from .openpipeline_v2_events_sdlc_routing import *
 from .openpipeline_v2_events_security_ingestsources import *
+from .openpipeline_v2_events_security_pipelinegroups import *
 from .openpipeline_v2_events_security_pipelines import *
 from .openpipeline_v2_events_security_routing import *
 from .openpipeline_v2_logs_ingestsources import *
+from .openpipeline_v2_logs_pipelinegroups import *
 from .openpipeline_v2_logs_pipelines import *
 from .openpipeline_v2_logs_routing import *
 from .openpipeline_v2_metrics_ingestsources import *
+from .openpipeline_v2_metrics_pipelinegroups import *
 from .openpipeline_v2_metrics_pipelines import *
 from .openpipeline_v2_metrics_routing import *
 from .openpipeline_v2_security_events_ingestsources import *
+from .openpipeline_v2_security_events_pipelinegroups import *
 from .openpipeline_v2_security_events_pipelines import *
 from .openpipeline_v2_security_events_routing import *
 from .openpipeline_v2_spans_ingestsources import *
+from .openpipeline_v2_spans_pipelinegroups import *
 from .openpipeline_v2_spans_pipelines import *
 from .openpipeline_v2_spans_routing import *
 from .openpipeline_v2_system_events_ingestsources import *
+from .openpipeline_v2_system_events_pipelinegroups import *
 from .openpipeline_v2_system_events_pipelines import *
 from .openpipeline_v2_system_events_routing import *
 from .openpipeline_v2_user_events_ingestsources import *
+from .openpipeline_v2_user_events_pipelinegroups import *
 from .openpipeline_v2_user_events_pipelines import *
 from .openpipeline_v2_user_events_routing import *
 from .openpipeline_v2_usersessions_ingestsources import *
+from .openpipeline_v2_usersessions_pipelinegroups import *
 from .openpipeline_v2_usersessions_pipelines import *
 from .openpipeline_v2_usersessions_routing import *
 from .opentelemetry_metrics import *
@@ -1678,6 +1694,14 @@ _utilities.register(
  },
  {
   "pkg": "dynatrace",
+  "mod": "index/hubExtensionV2Config",
+  "fqn": "pulumiverse_dynatrace",
+  "classes": {
+   "dynatrace:index/hubExtensionV2Config:HubExtensionV2Config": "HubExtensionV2Config"
+  }
+ },
+ {
+  "pkg": "dynatrace",
   "mod": "index/hubPermissions",
   "fqn": "pulumiverse_dynatrace",
   "classes": {
@@ -2574,6 +2598,14 @@ _utilities.register(
  },
  {
   "pkg": "dynatrace",
+  "mod": "index/openpipelineV2BizeventsPipelinegroups",
+  "fqn": "pulumiverse_dynatrace",
+  "classes": {
+   "dynatrace:index/openpipelineV2BizeventsPipelinegroups:OpenpipelineV2BizeventsPipelinegroups": "OpenpipelineV2BizeventsPipelinegroups"
+  }
+ },
+ {
+  "pkg": "dynatrace",
   "mod": "index/openpipelineV2BizeventsPipelines",
   "fqn": "pulumiverse_dynatrace",
   "classes": {
@@ -2594,6 +2626,14 @@ _utilities.register(
   "fqn": "pulumiverse_dynatrace",
   "classes": {
    "dynatrace:index/openpipelineV2DavisEventsIngestsources:OpenpipelineV2DavisEventsIngestsources": "OpenpipelineV2DavisEventsIngestsources"
+  }
+ },
+ {
+  "pkg": "dynatrace",
+  "mod": "index/openpipelineV2DavisEventsPipelinegroups",
+  "fqn": "pulumiverse_dynatrace",
+  "classes": {
+   "dynatrace:index/openpipelineV2DavisEventsPipelinegroups:OpenpipelineV2DavisEventsPipelinegroups": "OpenpipelineV2DavisEventsPipelinegroups"
   }
  },
  {
@@ -2622,6 +2662,14 @@ _utilities.register(
  },
  {
   "pkg": "dynatrace",
+  "mod": "index/openpipelineV2DavisProblemsPipelinegroups",
+  "fqn": "pulumiverse_dynatrace",
+  "classes": {
+   "dynatrace:index/openpipelineV2DavisProblemsPipelinegroups:OpenpipelineV2DavisProblemsPipelinegroups": "OpenpipelineV2DavisProblemsPipelinegroups"
+  }
+ },
+ {
+  "pkg": "dynatrace",
   "mod": "index/openpipelineV2DavisProblemsPipelines",
   "fqn": "pulumiverse_dynatrace",
   "classes": {
@@ -2642,6 +2690,14 @@ _utilities.register(
   "fqn": "pulumiverse_dynatrace",
   "classes": {
    "dynatrace:index/openpipelineV2EventsIngestsources:OpenpipelineV2EventsIngestsources": "OpenpipelineV2EventsIngestsources"
+  }
+ },
+ {
+  "pkg": "dynatrace",
+  "mod": "index/openpipelineV2EventsPipelinegroups",
+  "fqn": "pulumiverse_dynatrace",
+  "classes": {
+   "dynatrace:index/openpipelineV2EventsPipelinegroups:OpenpipelineV2EventsPipelinegroups": "OpenpipelineV2EventsPipelinegroups"
   }
  },
  {
@@ -2670,6 +2726,14 @@ _utilities.register(
  },
  {
   "pkg": "dynatrace",
+  "mod": "index/openpipelineV2EventsSdlcPipelinegroups",
+  "fqn": "pulumiverse_dynatrace",
+  "classes": {
+   "dynatrace:index/openpipelineV2EventsSdlcPipelinegroups:OpenpipelineV2EventsSdlcPipelinegroups": "OpenpipelineV2EventsSdlcPipelinegroups"
+  }
+ },
+ {
+  "pkg": "dynatrace",
   "mod": "index/openpipelineV2EventsSdlcPipelines",
   "fqn": "pulumiverse_dynatrace",
   "classes": {
@@ -2690,6 +2754,14 @@ _utilities.register(
   "fqn": "pulumiverse_dynatrace",
   "classes": {
    "dynatrace:index/openpipelineV2EventsSecurityIngestsources:OpenpipelineV2EventsSecurityIngestsources": "OpenpipelineV2EventsSecurityIngestsources"
+  }
+ },
+ {
+  "pkg": "dynatrace",
+  "mod": "index/openpipelineV2EventsSecurityPipelinegroups",
+  "fqn": "pulumiverse_dynatrace",
+  "classes": {
+   "dynatrace:index/openpipelineV2EventsSecurityPipelinegroups:OpenpipelineV2EventsSecurityPipelinegroups": "OpenpipelineV2EventsSecurityPipelinegroups"
   }
  },
  {
@@ -2718,6 +2790,14 @@ _utilities.register(
  },
  {
   "pkg": "dynatrace",
+  "mod": "index/openpipelineV2LogsPipelinegroups",
+  "fqn": "pulumiverse_dynatrace",
+  "classes": {
+   "dynatrace:index/openpipelineV2LogsPipelinegroups:OpenpipelineV2LogsPipelinegroups": "OpenpipelineV2LogsPipelinegroups"
+  }
+ },
+ {
+  "pkg": "dynatrace",
   "mod": "index/openpipelineV2LogsPipelines",
   "fqn": "pulumiverse_dynatrace",
   "classes": {
@@ -2738,6 +2818,14 @@ _utilities.register(
   "fqn": "pulumiverse_dynatrace",
   "classes": {
    "dynatrace:index/openpipelineV2MetricsIngestsources:OpenpipelineV2MetricsIngestsources": "OpenpipelineV2MetricsIngestsources"
+  }
+ },
+ {
+  "pkg": "dynatrace",
+  "mod": "index/openpipelineV2MetricsPipelinegroups",
+  "fqn": "pulumiverse_dynatrace",
+  "classes": {
+   "dynatrace:index/openpipelineV2MetricsPipelinegroups:OpenpipelineV2MetricsPipelinegroups": "OpenpipelineV2MetricsPipelinegroups"
   }
  },
  {
@@ -2766,6 +2854,14 @@ _utilities.register(
  },
  {
   "pkg": "dynatrace",
+  "mod": "index/openpipelineV2SecurityEventsPipelinegroups",
+  "fqn": "pulumiverse_dynatrace",
+  "classes": {
+   "dynatrace:index/openpipelineV2SecurityEventsPipelinegroups:OpenpipelineV2SecurityEventsPipelinegroups": "OpenpipelineV2SecurityEventsPipelinegroups"
+  }
+ },
+ {
+  "pkg": "dynatrace",
   "mod": "index/openpipelineV2SecurityEventsPipelines",
   "fqn": "pulumiverse_dynatrace",
   "classes": {
@@ -2786,6 +2882,14 @@ _utilities.register(
   "fqn": "pulumiverse_dynatrace",
   "classes": {
    "dynatrace:index/openpipelineV2SpansIngestsources:OpenpipelineV2SpansIngestsources": "OpenpipelineV2SpansIngestsources"
+  }
+ },
+ {
+  "pkg": "dynatrace",
+  "mod": "index/openpipelineV2SpansPipelinegroups",
+  "fqn": "pulumiverse_dynatrace",
+  "classes": {
+   "dynatrace:index/openpipelineV2SpansPipelinegroups:OpenpipelineV2SpansPipelinegroups": "OpenpipelineV2SpansPipelinegroups"
   }
  },
  {
@@ -2814,6 +2918,14 @@ _utilities.register(
  },
  {
   "pkg": "dynatrace",
+  "mod": "index/openpipelineV2SystemEventsPipelinegroups",
+  "fqn": "pulumiverse_dynatrace",
+  "classes": {
+   "dynatrace:index/openpipelineV2SystemEventsPipelinegroups:OpenpipelineV2SystemEventsPipelinegroups": "OpenpipelineV2SystemEventsPipelinegroups"
+  }
+ },
+ {
+  "pkg": "dynatrace",
   "mod": "index/openpipelineV2SystemEventsPipelines",
   "fqn": "pulumiverse_dynatrace",
   "classes": {
@@ -2838,6 +2950,14 @@ _utilities.register(
  },
  {
   "pkg": "dynatrace",
+  "mod": "index/openpipelineV2UserEventsPipelinegroups",
+  "fqn": "pulumiverse_dynatrace",
+  "classes": {
+   "dynatrace:index/openpipelineV2UserEventsPipelinegroups:OpenpipelineV2UserEventsPipelinegroups": "OpenpipelineV2UserEventsPipelinegroups"
+  }
+ },
+ {
+  "pkg": "dynatrace",
   "mod": "index/openpipelineV2UserEventsPipelines",
   "fqn": "pulumiverse_dynatrace",
   "classes": {
@@ -2858,6 +2978,14 @@ _utilities.register(
   "fqn": "pulumiverse_dynatrace",
   "classes": {
    "dynatrace:index/openpipelineV2UsersessionsIngestsources:OpenpipelineV2UsersessionsIngestsources": "OpenpipelineV2UsersessionsIngestsources"
+  }
+ },
+ {
+  "pkg": "dynatrace",
+  "mod": "index/openpipelineV2UsersessionsPipelinegroups",
+  "fqn": "pulumiverse_dynatrace",
+  "classes": {
+   "dynatrace:index/openpipelineV2UsersessionsPipelinegroups:OpenpipelineV2UsersessionsPipelinegroups": "OpenpipelineV2UsersessionsPipelinegroups"
   }
  },
  {

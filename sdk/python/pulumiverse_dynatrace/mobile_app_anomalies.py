@@ -219,6 +219,49 @@ class MobileAppAnomalies(pulumi.CustomResource):
 
         The full documentation of the export feature is available [here](https://dt-url.net/h203qmc).
 
+        ## Resource Example Usage
+
+        ```python
+        import pulumi
+        import pulumi_dynatrace as dynatrace
+        import pulumiverse_dynatrace as dynatrace
+
+        application = dynatrace.get_mobile_application(name="Application")
+        anomalies = dynatrace.MobileAppAnomalies("anomalies",
+            scope=application.id,
+            error_rate_increase={
+                "enabled": True,
+                "detection_mode": "fixed",
+                "error_rate_increase_fixed": {
+                    "sensitivity": "medium",
+                    "threshold_absolute": float(6),
+                },
+            },
+            slow_user_actions={
+                "enabled": True,
+                "detection_mode": "fixed",
+                "slow_user_actions_fixed": {
+                    "sensitivity": "high",
+                    "duration_avoid_overalerting": {
+                        "min_action_rate": 12,
+                    },
+                    "duration_threshold_all_fixed": {
+                        "duration_threshold": float(200),
+                    },
+                    "duration_threshold_slowest": {
+                        "duration_threshold": float(900),
+                    },
+                },
+            },
+            unexpected_high_load={
+                "enabled": True,
+                "threshold_percentage": float(300),
+            },
+            unexpected_low_load={
+                "enabled": False,
+            })
+        ```
+
 
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
@@ -248,6 +291,49 @@ class MobileAppAnomalies(pulumi.CustomResource):
         - `terraform-provider-dynatrace -export MobileAppAnomalies` downloads all existing mobile application anomaly detection configuration
 
         The full documentation of the export feature is available [here](https://dt-url.net/h203qmc).
+
+        ## Resource Example Usage
+
+        ```python
+        import pulumi
+        import pulumi_dynatrace as dynatrace
+        import pulumiverse_dynatrace as dynatrace
+
+        application = dynatrace.get_mobile_application(name="Application")
+        anomalies = dynatrace.MobileAppAnomalies("anomalies",
+            scope=application.id,
+            error_rate_increase={
+                "enabled": True,
+                "detection_mode": "fixed",
+                "error_rate_increase_fixed": {
+                    "sensitivity": "medium",
+                    "threshold_absolute": float(6),
+                },
+            },
+            slow_user_actions={
+                "enabled": True,
+                "detection_mode": "fixed",
+                "slow_user_actions_fixed": {
+                    "sensitivity": "high",
+                    "duration_avoid_overalerting": {
+                        "min_action_rate": 12,
+                    },
+                    "duration_threshold_all_fixed": {
+                        "duration_threshold": float(200),
+                    },
+                    "duration_threshold_slowest": {
+                        "duration_threshold": float(900),
+                    },
+                },
+            },
+            unexpected_high_load={
+                "enabled": True,
+                "threshold_percentage": float(300),
+            },
+            unexpected_low_load={
+                "enabled": False,
+            })
+        ```
 
 
         :param str resource_name: The name of the resource.

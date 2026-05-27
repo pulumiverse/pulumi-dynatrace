@@ -24,6 +24,52 @@ namespace Pulumiverse.Dynatrace
     /// - `terraform-provider-dynatrace -export dynatrace.CustomTags` downloads all existing custom tags configuration
     /// 
     /// The full documentation of the export feature is available [here](https://dt-url.net/h203qmc).
+    /// 
+    /// ## Resource Example Usage
+    /// 
+    /// ```csharp
+    /// using System.Collections.Generic;
+    /// using System.Linq;
+    /// using Pulumi;
+    /// using Dynatrace = Pulumiverse.Dynatrace;
+    /// 
+    /// return await Deployment.RunAsync(() =&gt; 
+    /// {
+    ///     var tags = new Dynatrace.CustomTags("tags", new()
+    ///     {
+    ///         EntitySelector = "type(HOST)",
+    ///         Tags = new Dynatrace.Inputs.CustomTagsTagsArgs
+    ///         {
+    ///             Filters = new[]
+    ///             {
+    ///                 new Dynatrace.Inputs.CustomTagsTagsFilterArgs
+    ///                 {
+    ///                     Context = "CONTEXTLESS",
+    ///                     Key = "KeyExampleA",
+    ///                 },
+    ///                 new Dynatrace.Inputs.CustomTagsTagsFilterArgs
+    ///                 {
+    ///                     Context = "CONTEXTLESS",
+    ///                     Key = "KeyExampleA",
+    ///                     Value = "ValueExample1",
+    ///                 },
+    ///                 new Dynatrace.Inputs.CustomTagsTagsFilterArgs
+    ///                 {
+    ///                     Context = "CONTEXTLESS",
+    ///                     Key = "KeyExampleB",
+    ///                 },
+    ///                 new Dynatrace.Inputs.CustomTagsTagsFilterArgs
+    ///                 {
+    ///                     Context = "CONTEXTLESS",
+    ///                     Key = "KeyExampleC",
+    ///                     Value = "ValueExample2",
+    ///                 },
+    ///             },
+    ///         },
+    ///     });
+    /// 
+    /// });
+    /// ```
     /// </summary>
     [DynatraceResourceType("dynatrace:index/customTags:CustomTags")]
     public partial class CustomTags : global::Pulumi.CustomResource

@@ -48,7 +48,7 @@ export class OneagentDefaultMode extends pulumi.CustomResource {
     }
 
     /**
-     * Possible Values: `DISCOVERY`, `FULL_STACK`, `INFRASTRUCTURE`
+     * OneAgent default monitoring mode. Possible values: `DISCOVERY`, `FULL_STACK`, `INFRASTRUCTURE`
      */
     declare public readonly defaultMode: pulumi.Output<string>;
 
@@ -83,7 +83,7 @@ export class OneagentDefaultMode extends pulumi.CustomResource {
  */
 export interface OneagentDefaultModeState {
     /**
-     * Possible Values: `DISCOVERY`, `FULL_STACK`, `INFRASTRUCTURE`
+     * OneAgent default monitoring mode. Possible values: `DISCOVERY`, `FULL_STACK`, `INFRASTRUCTURE`
      */
     defaultMode?: pulumi.Input<string | undefined>;
 }
@@ -93,7 +93,7 @@ export interface OneagentDefaultModeState {
  */
 export interface OneagentDefaultModeArgs {
     /**
-     * Possible Values: `DISCOVERY`, `FULL_STACK`, `INFRASTRUCTURE`
+     * OneAgent default monitoring mode. Possible values: `DISCOVERY`, `FULL_STACK`, `INFRASTRUCTURE`
      */
     defaultMode: pulumi.Input<string>;
 }

@@ -31,7 +31,7 @@ import (
 //
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
-//			example, err := dynatrace.LookupFailureDetectionParameters(ctx, &dynatrace.LookupFailureDetectionParametersArgs{
+//			example, err := dynatrace.GetFailureDetectionParameters(ctx, &dynatrace.LookupFailureDetectionParametersArgs{
 //				Name: "Terraform Example",
 //			}, nil)
 //			if err != nil {

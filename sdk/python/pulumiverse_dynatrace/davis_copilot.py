@@ -23,19 +23,23 @@ class DavisCopilotArgs:
     def __init__(__self__, *,
                  enable_copilot: pulumi.Input[_builtins.bool],
                  blocklist_entries: pulumi.Input[Optional['DavisCopilotBlocklistEntriesArgs']] = None,
+                 enable_agentic_ai: pulumi.Input[Optional[_builtins.bool]] = None,
                  enable_document_suggestion: pulumi.Input[Optional[_builtins.bool]] = None,
                  enable_tenant_aware_data_mining: pulumi.Input[Optional[_builtins.bool]] = None):
         """
         The set of arguments for constructing a DavisCopilot resource.
 
-        :param pulumi.Input[_builtins.bool] enable_copilot: Please note that once enabled, you still need to [assign permissions](https://dt-url.net/rh22idn) to the relevant user groups.
+        :param pulumi.Input[_builtins.bool] enable_copilot: Please note that once generative AI is enabled, you still need to [assign permissions](https://dt-url.net/rh22idn) to the relevant user groups.
         :param pulumi.Input['DavisCopilotBlocklistEntriesArgs'] blocklist_entries: You can exclude specific data buckets and tables from the semantic index. Learn more about [configuring data access](https://dt-url.net/lc62i1q).
-        :param pulumi.Input[_builtins.bool] enable_document_suggestion: By enabling document suggestions, Dynatrace AI can find similarities between Problems and existing Notebooks and Dashboards in order to suggest relevant troubleshooting guides. Learn more about [document suggestions](https://dt-url.net/xy02gpo).
-        :param pulumi.Input[_builtins.bool] enable_tenant_aware_data_mining: You can enrich Dynatrace Generative AI with your environment data. This lets you generate more accurate queries that identify and reference relevant entities, events, spans, logs, and metrics from your environment. Once enabled, Dynatrace AI periodically scans your Grail data to create its own semantic index. Please note, it can take up to 24 hours to reflect changes. Learn more about [environment-aware queries](https://dt-url.net/4g42iu7).
+        :param pulumi.Input[_builtins.bool] enable_agentic_ai: Please note that once agentic AI is enabled, the Dynatrace Assist interface is allowed to call tools and run Grail queries. You still need to [assign permissions](https://dt-url.net/agentic-ai) to the relevant user groups.
+        :param pulumi.Input[_builtins.bool] enable_document_suggestion: By enabling document suggestions, Dynatrace Intelligence can find similarities between Problems and existing Notebooks and Dashboards in order to suggest relevant troubleshooting guides. Learn more about [document suggestions](https://dt-url.net/xy02gpo).
+        :param pulumi.Input[_builtins.bool] enable_tenant_aware_data_mining: You can enrich Dynatrace generative and agentic AI with your environment data. This lets you generate more accurate queries that identify and reference relevant entities, events, spans, logs, and metrics from your environment. Once enabled, Dynatrace Intelligence periodically scans your Grail data to create its own semantic index. Please note, it can take up to 24 hours to reflect changes. Learn more about [environment-aware queries](https://dt-url.net/4g42iu7).
         """
         pulumi.set(__self__, "enable_copilot", enable_copilot)
         if blocklist_entries is not None:
             pulumi.set(__self__, "blocklist_entries", blocklist_entries)
+        if enable_agentic_ai is not None:
+            pulumi.set(__self__, "enable_agentic_ai", enable_agentic_ai)
         if enable_document_suggestion is not None:
             pulumi.set(__self__, "enable_document_suggestion", enable_document_suggestion)
         if enable_tenant_aware_data_mining is not None:
@@ -45,7 +49,7 @@ class DavisCopilotArgs:
     @pulumi.getter(name="enableCopilot")
     def enable_copilot(self) -> pulumi.Input[_builtins.bool]:
         """
-        Please note that once enabled, you still need to [assign permissions](https://dt-url.net/rh22idn) to the relevant user groups.
+        Please note that once generative AI is enabled, you still need to [assign permissions](https://dt-url.net/rh22idn) to the relevant user groups.
         """
         return pulumi.get(self, "enable_copilot")
 
@@ -66,10 +70,22 @@ class DavisCopilotArgs:
         pulumi.set(self, "blocklist_entries", value)
 
     @_builtins.property
+    @pulumi.getter(name="enableAgenticAi")
+    def enable_agentic_ai(self) -> pulumi.Input[Optional[_builtins.bool]]:
+        """
+        Please note that once agentic AI is enabled, the Dynatrace Assist interface is allowed to call tools and run Grail queries. You still need to [assign permissions](https://dt-url.net/agentic-ai) to the relevant user groups.
+        """
+        return pulumi.get(self, "enable_agentic_ai")
+
+    @enable_agentic_ai.setter
+    def enable_agentic_ai(self, value: pulumi.Input[Optional[_builtins.bool]]):
+        pulumi.set(self, "enable_agentic_ai", value)
+
+    @_builtins.property
     @pulumi.getter(name="enableDocumentSuggestion")
     def enable_document_suggestion(self) -> pulumi.Input[Optional[_builtins.bool]]:
         """
-        By enabling document suggestions, Dynatrace AI can find similarities between Problems and existing Notebooks and Dashboards in order to suggest relevant troubleshooting guides. Learn more about [document suggestions](https://dt-url.net/xy02gpo).
+        By enabling document suggestions, Dynatrace Intelligence can find similarities between Problems and existing Notebooks and Dashboards in order to suggest relevant troubleshooting guides. Learn more about [document suggestions](https://dt-url.net/xy02gpo).
         """
         return pulumi.get(self, "enable_document_suggestion")
 
@@ -81,7 +97,7 @@ class DavisCopilotArgs:
     @pulumi.getter(name="enableTenantAwareDataMining")
     def enable_tenant_aware_data_mining(self) -> pulumi.Input[Optional[_builtins.bool]]:
         """
-        You can enrich Dynatrace Generative AI with your environment data. This lets you generate more accurate queries that identify and reference relevant entities, events, spans, logs, and metrics from your environment. Once enabled, Dynatrace AI periodically scans your Grail data to create its own semantic index. Please note, it can take up to 24 hours to reflect changes. Learn more about [environment-aware queries](https://dt-url.net/4g42iu7).
+        You can enrich Dynatrace generative and agentic AI with your environment data. This lets you generate more accurate queries that identify and reference relevant entities, events, spans, logs, and metrics from your environment. Once enabled, Dynatrace Intelligence periodically scans your Grail data to create its own semantic index. Please note, it can take up to 24 hours to reflect changes. Learn more about [environment-aware queries](https://dt-url.net/4g42iu7).
         """
         return pulumi.get(self, "enable_tenant_aware_data_mining")
 
@@ -94,6 +110,7 @@ class DavisCopilotArgs:
 class _DavisCopilotState:
     def __init__(__self__, *,
                  blocklist_entries: pulumi.Input[Optional['DavisCopilotBlocklistEntriesArgs']] = None,
+                 enable_agentic_ai: pulumi.Input[Optional[_builtins.bool]] = None,
                  enable_copilot: pulumi.Input[Optional[_builtins.bool]] = None,
                  enable_document_suggestion: pulumi.Input[Optional[_builtins.bool]] = None,
                  enable_tenant_aware_data_mining: pulumi.Input[Optional[_builtins.bool]] = None):
@@ -101,12 +118,15 @@ class _DavisCopilotState:
         Input properties used for looking up and filtering DavisCopilot resources.
 
         :param pulumi.Input['DavisCopilotBlocklistEntriesArgs'] blocklist_entries: You can exclude specific data buckets and tables from the semantic index. Learn more about [configuring data access](https://dt-url.net/lc62i1q).
-        :param pulumi.Input[_builtins.bool] enable_copilot: Please note that once enabled, you still need to [assign permissions](https://dt-url.net/rh22idn) to the relevant user groups.
-        :param pulumi.Input[_builtins.bool] enable_document_suggestion: By enabling document suggestions, Dynatrace AI can find similarities between Problems and existing Notebooks and Dashboards in order to suggest relevant troubleshooting guides. Learn more about [document suggestions](https://dt-url.net/xy02gpo).
-        :param pulumi.Input[_builtins.bool] enable_tenant_aware_data_mining: You can enrich Dynatrace Generative AI with your environment data. This lets you generate more accurate queries that identify and reference relevant entities, events, spans, logs, and metrics from your environment. Once enabled, Dynatrace AI periodically scans your Grail data to create its own semantic index. Please note, it can take up to 24 hours to reflect changes. Learn more about [environment-aware queries](https://dt-url.net/4g42iu7).
+        :param pulumi.Input[_builtins.bool] enable_agentic_ai: Please note that once agentic AI is enabled, the Dynatrace Assist interface is allowed to call tools and run Grail queries. You still need to [assign permissions](https://dt-url.net/agentic-ai) to the relevant user groups.
+        :param pulumi.Input[_builtins.bool] enable_copilot: Please note that once generative AI is enabled, you still need to [assign permissions](https://dt-url.net/rh22idn) to the relevant user groups.
+        :param pulumi.Input[_builtins.bool] enable_document_suggestion: By enabling document suggestions, Dynatrace Intelligence can find similarities between Problems and existing Notebooks and Dashboards in order to suggest relevant troubleshooting guides. Learn more about [document suggestions](https://dt-url.net/xy02gpo).
+        :param pulumi.Input[_builtins.bool] enable_tenant_aware_data_mining: You can enrich Dynatrace generative and agentic AI with your environment data. This lets you generate more accurate queries that identify and reference relevant entities, events, spans, logs, and metrics from your environment. Once enabled, Dynatrace Intelligence periodically scans your Grail data to create its own semantic index. Please note, it can take up to 24 hours to reflect changes. Learn more about [environment-aware queries](https://dt-url.net/4g42iu7).
         """
         if blocklist_entries is not None:
             pulumi.set(__self__, "blocklist_entries", blocklist_entries)
+        if enable_agentic_ai is not None:
+            pulumi.set(__self__, "enable_agentic_ai", enable_agentic_ai)
         if enable_copilot is not None:
             pulumi.set(__self__, "enable_copilot", enable_copilot)
         if enable_document_suggestion is not None:
@@ -127,10 +147,22 @@ class _DavisCopilotState:
         pulumi.set(self, "blocklist_entries", value)
 
     @_builtins.property
+    @pulumi.getter(name="enableAgenticAi")
+    def enable_agentic_ai(self) -> pulumi.Input[Optional[_builtins.bool]]:
+        """
+        Please note that once agentic AI is enabled, the Dynatrace Assist interface is allowed to call tools and run Grail queries. You still need to [assign permissions](https://dt-url.net/agentic-ai) to the relevant user groups.
+        """
+        return pulumi.get(self, "enable_agentic_ai")
+
+    @enable_agentic_ai.setter
+    def enable_agentic_ai(self, value: pulumi.Input[Optional[_builtins.bool]]):
+        pulumi.set(self, "enable_agentic_ai", value)
+
+    @_builtins.property
     @pulumi.getter(name="enableCopilot")
     def enable_copilot(self) -> pulumi.Input[Optional[_builtins.bool]]:
         """
-        Please note that once enabled, you still need to [assign permissions](https://dt-url.net/rh22idn) to the relevant user groups.
+        Please note that once generative AI is enabled, you still need to [assign permissions](https://dt-url.net/rh22idn) to the relevant user groups.
         """
         return pulumi.get(self, "enable_copilot")
 
@@ -142,7 +174,7 @@ class _DavisCopilotState:
     @pulumi.getter(name="enableDocumentSuggestion")
     def enable_document_suggestion(self) -> pulumi.Input[Optional[_builtins.bool]]:
         """
-        By enabling document suggestions, Dynatrace AI can find similarities between Problems and existing Notebooks and Dashboards in order to suggest relevant troubleshooting guides. Learn more about [document suggestions](https://dt-url.net/xy02gpo).
+        By enabling document suggestions, Dynatrace Intelligence can find similarities between Problems and existing Notebooks and Dashboards in order to suggest relevant troubleshooting guides. Learn more about [document suggestions](https://dt-url.net/xy02gpo).
         """
         return pulumi.get(self, "enable_document_suggestion")
 
@@ -154,7 +186,7 @@ class _DavisCopilotState:
     @pulumi.getter(name="enableTenantAwareDataMining")
     def enable_tenant_aware_data_mining(self) -> pulumi.Input[Optional[_builtins.bool]]:
         """
-        You can enrich Dynatrace Generative AI with your environment data. This lets you generate more accurate queries that identify and reference relevant entities, events, spans, logs, and metrics from your environment. Once enabled, Dynatrace AI periodically scans your Grail data to create its own semantic index. Please note, it can take up to 24 hours to reflect changes. Learn more about [environment-aware queries](https://dt-url.net/4g42iu7).
+        You can enrich Dynatrace generative and agentic AI with your environment data. This lets you generate more accurate queries that identify and reference relevant entities, events, spans, logs, and metrics from your environment. Once enabled, Dynatrace Intelligence periodically scans your Grail data to create its own semantic index. Please note, it can take up to 24 hours to reflect changes. Learn more about [environment-aware queries](https://dt-url.net/4g42iu7).
         """
         return pulumi.get(self, "enable_tenant_aware_data_mining")
 
@@ -170,6 +202,7 @@ class DavisCopilot(pulumi.CustomResource):
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
                  blocklist_entries: pulumi.Input[Optional[Union['DavisCopilotBlocklistEntriesArgs', 'DavisCopilotBlocklistEntriesArgsDict']]] = None,
+                 enable_agentic_ai: pulumi.Input[Optional[_builtins.bool]] = None,
                  enable_copilot: pulumi.Input[Optional[_builtins.bool]] = None,
                  enable_document_suggestion: pulumi.Input[Optional[_builtins.bool]] = None,
                  enable_tenant_aware_data_mining: pulumi.Input[Optional[_builtins.bool]] = None,
@@ -195,9 +228,10 @@ class DavisCopilot(pulumi.CustomResource):
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[Union['DavisCopilotBlocklistEntriesArgs', 'DavisCopilotBlocklistEntriesArgsDict']] blocklist_entries: You can exclude specific data buckets and tables from the semantic index. Learn more about [configuring data access](https://dt-url.net/lc62i1q).
-        :param pulumi.Input[_builtins.bool] enable_copilot: Please note that once enabled, you still need to [assign permissions](https://dt-url.net/rh22idn) to the relevant user groups.
-        :param pulumi.Input[_builtins.bool] enable_document_suggestion: By enabling document suggestions, Dynatrace AI can find similarities between Problems and existing Notebooks and Dashboards in order to suggest relevant troubleshooting guides. Learn more about [document suggestions](https://dt-url.net/xy02gpo).
-        :param pulumi.Input[_builtins.bool] enable_tenant_aware_data_mining: You can enrich Dynatrace Generative AI with your environment data. This lets you generate more accurate queries that identify and reference relevant entities, events, spans, logs, and metrics from your environment. Once enabled, Dynatrace AI periodically scans your Grail data to create its own semantic index. Please note, it can take up to 24 hours to reflect changes. Learn more about [environment-aware queries](https://dt-url.net/4g42iu7).
+        :param pulumi.Input[_builtins.bool] enable_agentic_ai: Please note that once agentic AI is enabled, the Dynatrace Assist interface is allowed to call tools and run Grail queries. You still need to [assign permissions](https://dt-url.net/agentic-ai) to the relevant user groups.
+        :param pulumi.Input[_builtins.bool] enable_copilot: Please note that once generative AI is enabled, you still need to [assign permissions](https://dt-url.net/rh22idn) to the relevant user groups.
+        :param pulumi.Input[_builtins.bool] enable_document_suggestion: By enabling document suggestions, Dynatrace Intelligence can find similarities between Problems and existing Notebooks and Dashboards in order to suggest relevant troubleshooting guides. Learn more about [document suggestions](https://dt-url.net/xy02gpo).
+        :param pulumi.Input[_builtins.bool] enable_tenant_aware_data_mining: You can enrich Dynatrace generative and agentic AI with your environment data. This lets you generate more accurate queries that identify and reference relevant entities, events, spans, logs, and metrics from your environment. Once enabled, Dynatrace Intelligence periodically scans your Grail data to create its own semantic index. Please note, it can take up to 24 hours to reflect changes. Learn more about [environment-aware queries](https://dt-url.net/4g42iu7).
         """
         ...
     @overload
@@ -239,6 +273,7 @@ class DavisCopilot(pulumi.CustomResource):
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
                  blocklist_entries: pulumi.Input[Optional[Union['DavisCopilotBlocklistEntriesArgs', 'DavisCopilotBlocklistEntriesArgsDict']]] = None,
+                 enable_agentic_ai: pulumi.Input[Optional[_builtins.bool]] = None,
                  enable_copilot: pulumi.Input[Optional[_builtins.bool]] = None,
                  enable_document_suggestion: pulumi.Input[Optional[_builtins.bool]] = None,
                  enable_tenant_aware_data_mining: pulumi.Input[Optional[_builtins.bool]] = None,
@@ -252,6 +287,7 @@ class DavisCopilot(pulumi.CustomResource):
             __props__ = DavisCopilotArgs.__new__(DavisCopilotArgs)
 
             __props__.__dict__["blocklist_entries"] = blocklist_entries
+            __props__.__dict__["enable_agentic_ai"] = enable_agentic_ai
             if enable_copilot is None and not opts.urn:
                 raise TypeError("Missing required property 'enable_copilot'")
             __props__.__dict__["enable_copilot"] = enable_copilot
@@ -268,6 +304,7 @@ class DavisCopilot(pulumi.CustomResource):
             id: pulumi.Input[str],
             opts: Optional[pulumi.ResourceOptions] = None,
             blocklist_entries: pulumi.Input[Optional[Union['DavisCopilotBlocklistEntriesArgs', 'DavisCopilotBlocklistEntriesArgsDict']]] = None,
+            enable_agentic_ai: pulumi.Input[Optional[_builtins.bool]] = None,
             enable_copilot: pulumi.Input[Optional[_builtins.bool]] = None,
             enable_document_suggestion: pulumi.Input[Optional[_builtins.bool]] = None,
             enable_tenant_aware_data_mining: pulumi.Input[Optional[_builtins.bool]] = None) -> 'DavisCopilot':
@@ -279,15 +316,17 @@ class DavisCopilot(pulumi.CustomResource):
         :param pulumi.Input[str] id: The unique provider ID of the resource to lookup.
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[Union['DavisCopilotBlocklistEntriesArgs', 'DavisCopilotBlocklistEntriesArgsDict']] blocklist_entries: You can exclude specific data buckets and tables from the semantic index. Learn more about [configuring data access](https://dt-url.net/lc62i1q).
-        :param pulumi.Input[_builtins.bool] enable_copilot: Please note that once enabled, you still need to [assign permissions](https://dt-url.net/rh22idn) to the relevant user groups.
-        :param pulumi.Input[_builtins.bool] enable_document_suggestion: By enabling document suggestions, Dynatrace AI can find similarities between Problems and existing Notebooks and Dashboards in order to suggest relevant troubleshooting guides. Learn more about [document suggestions](https://dt-url.net/xy02gpo).
-        :param pulumi.Input[_builtins.bool] enable_tenant_aware_data_mining: You can enrich Dynatrace Generative AI with your environment data. This lets you generate more accurate queries that identify and reference relevant entities, events, spans, logs, and metrics from your environment. Once enabled, Dynatrace AI periodically scans your Grail data to create its own semantic index. Please note, it can take up to 24 hours to reflect changes. Learn more about [environment-aware queries](https://dt-url.net/4g42iu7).
+        :param pulumi.Input[_builtins.bool] enable_agentic_ai: Please note that once agentic AI is enabled, the Dynatrace Assist interface is allowed to call tools and run Grail queries. You still need to [assign permissions](https://dt-url.net/agentic-ai) to the relevant user groups.
+        :param pulumi.Input[_builtins.bool] enable_copilot: Please note that once generative AI is enabled, you still need to [assign permissions](https://dt-url.net/rh22idn) to the relevant user groups.
+        :param pulumi.Input[_builtins.bool] enable_document_suggestion: By enabling document suggestions, Dynatrace Intelligence can find similarities between Problems and existing Notebooks and Dashboards in order to suggest relevant troubleshooting guides. Learn more about [document suggestions](https://dt-url.net/xy02gpo).
+        :param pulumi.Input[_builtins.bool] enable_tenant_aware_data_mining: You can enrich Dynatrace generative and agentic AI with your environment data. This lets you generate more accurate queries that identify and reference relevant entities, events, spans, logs, and metrics from your environment. Once enabled, Dynatrace Intelligence periodically scans your Grail data to create its own semantic index. Please note, it can take up to 24 hours to reflect changes. Learn more about [environment-aware queries](https://dt-url.net/4g42iu7).
         """
         opts = pulumi.ResourceOptions.merge(opts, pulumi.ResourceOptions(id=id))
 
         __props__ = _DavisCopilotState.__new__(_DavisCopilotState)
 
         __props__.__dict__["blocklist_entries"] = blocklist_entries
+        __props__.__dict__["enable_agentic_ai"] = enable_agentic_ai
         __props__.__dict__["enable_copilot"] = enable_copilot
         __props__.__dict__["enable_document_suggestion"] = enable_document_suggestion
         __props__.__dict__["enable_tenant_aware_data_mining"] = enable_tenant_aware_data_mining
@@ -302,10 +341,18 @@ class DavisCopilot(pulumi.CustomResource):
         return pulumi.get(self, "blocklist_entries")
 
     @_builtins.property
+    @pulumi.getter(name="enableAgenticAi")
+    def enable_agentic_ai(self) -> pulumi.Output[Optional[_builtins.bool]]:
+        """
+        Please note that once agentic AI is enabled, the Dynatrace Assist interface is allowed to call tools and run Grail queries. You still need to [assign permissions](https://dt-url.net/agentic-ai) to the relevant user groups.
+        """
+        return pulumi.get(self, "enable_agentic_ai")
+
+    @_builtins.property
     @pulumi.getter(name="enableCopilot")
     def enable_copilot(self) -> pulumi.Output[_builtins.bool]:
         """
-        Please note that once enabled, you still need to [assign permissions](https://dt-url.net/rh22idn) to the relevant user groups.
+        Please note that once generative AI is enabled, you still need to [assign permissions](https://dt-url.net/rh22idn) to the relevant user groups.
         """
         return pulumi.get(self, "enable_copilot")
 
@@ -313,7 +360,7 @@ class DavisCopilot(pulumi.CustomResource):
     @pulumi.getter(name="enableDocumentSuggestion")
     def enable_document_suggestion(self) -> pulumi.Output[Optional[_builtins.bool]]:
         """
-        By enabling document suggestions, Dynatrace AI can find similarities between Problems and existing Notebooks and Dashboards in order to suggest relevant troubleshooting guides. Learn more about [document suggestions](https://dt-url.net/xy02gpo).
+        By enabling document suggestions, Dynatrace Intelligence can find similarities between Problems and existing Notebooks and Dashboards in order to suggest relevant troubleshooting guides. Learn more about [document suggestions](https://dt-url.net/xy02gpo).
         """
         return pulumi.get(self, "enable_document_suggestion")
 
@@ -321,7 +368,7 @@ class DavisCopilot(pulumi.CustomResource):
     @pulumi.getter(name="enableTenantAwareDataMining")
     def enable_tenant_aware_data_mining(self) -> pulumi.Output[Optional[_builtins.bool]]:
         """
-        You can enrich Dynatrace Generative AI with your environment data. This lets you generate more accurate queries that identify and reference relevant entities, events, spans, logs, and metrics from your environment. Once enabled, Dynatrace AI periodically scans your Grail data to create its own semantic index. Please note, it can take up to 24 hours to reflect changes. Learn more about [environment-aware queries](https://dt-url.net/4g42iu7).
+        You can enrich Dynatrace generative and agentic AI with your environment data. This lets you generate more accurate queries that identify and reference relevant entities, events, spans, logs, and metrics from your environment. Once enabled, Dynatrace Intelligence periodically scans your Grail data to create its own semantic index. Please note, it can take up to 24 hours to reflect changes. Learn more about [environment-aware queries](https://dt-url.net/4g42iu7).
         """
         return pulumi.get(self, "enable_tenant_aware_data_mining")
 

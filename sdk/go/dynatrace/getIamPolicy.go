@@ -31,7 +31,7 @@ import (
 //
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
-//			appengineadmin, err := dynatrace.LookupIamPolicy(ctx, &dynatrace.LookupIamPolicyArgs{
+//			appengineadmin, err := dynatrace.GetIamPolicy(ctx, &dynatrace.LookupIamPolicyArgs{
 //				Name: "AppEngine - Admin",
 //			}, nil)
 //			if err != nil {

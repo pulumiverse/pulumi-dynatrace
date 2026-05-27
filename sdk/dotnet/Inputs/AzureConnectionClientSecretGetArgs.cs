@@ -39,7 +39,7 @@ namespace Pulumiverse.Dynatrace.Inputs
         private InputList<string>? _consumers;
 
         /// <summary>
-        /// Dynatrace integrations that can use this connection. Possible Values: `DA`, `NONE`, `SVC:com.dynatrace.da`
+        /// Dynatrace integrations that can use this connection. Possible values: `DA`, `NONE`, `SVC:com.dynatrace.da`
         /// </summary>
         public InputList<string> Consumers
         {

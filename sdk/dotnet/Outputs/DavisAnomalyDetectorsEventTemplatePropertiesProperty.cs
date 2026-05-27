@@ -15,11 +15,11 @@ namespace Pulumiverse.Dynatrace.Outputs
     public sealed class DavisAnomalyDetectorsEventTemplatePropertiesProperty
     {
         /// <summary>
-        /// no documentation available
+        /// Property key
         /// </summary>
         public readonly string Key;
         /// <summary>
-        /// no documentation available
+        /// Property value. Supports substitution of placeholders placed in curly braces {}.
         /// </summary>
         public readonly string Value;
 

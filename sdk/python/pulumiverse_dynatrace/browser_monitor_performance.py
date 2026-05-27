@@ -157,6 +157,73 @@ class BrowserMonitorPerformance(pulumi.CustomResource):
 
         The full documentation of the export feature is available [here](https://dt-url.net/h203qmc).
 
+        ## Resource Example Usage
+
+        ```python
+        import pulumi
+        import pulumi_dynatrace as dynatrace
+        import pulumiverse_dynatrace as dynatrace
+
+        location = dynatrace.get_synthetic_location(name="Location")
+        monitor = dynatrace.BrowserMonitor("monitor",
+            name="#name#",
+            frequency=15,
+            locations=[location.id],
+            key_performance_metrics={
+                "load_action_kpm": "VISUALLY_COMPLETE",
+                "xhr_action_kpm": "VISUALLY_COMPLETE",
+            },
+            anomaly_detection={
+                "loading_time_thresholds": [{
+                    "enabled": True,
+                    "thresholds": [{
+                        "thresholds": [{
+                            "event_index": 0,
+                            "request_index": 0,
+                            "type": "TOTAL",
+                            "value_ms": 10000,
+                        }],
+                    }],
+                }],
+                "outage_handlings": [{
+                    "global_outage": True,
+                    "local_outage": False,
+                    "retry_on_error": True,
+                    "global_outage_policies": [{
+                        "consecutive_runs": 1,
+                    }],
+                }],
+            },
+            script={
+                "type": "clickpath",
+                "configuration": {
+                    "bypass_csp": True,
+                    "user_agent": "Mozilla",
+                    "device": {
+                        "name": "Desktop",
+                        "orientation": "landscape",
+                    },
+                },
+                "events": {
+                    "events": [{
+                        "description": "my description",
+                        "navigate": {
+                            "url": "https://www.example.com",
+                        },
+                    }],
+                },
+            })
+        performance = dynatrace.BrowserMonitorPerformance("performance",
+            enabled=True,
+            scope=monitor.id,
+            thresholds={
+                "thresholds": [{
+                    "event": monitor.id,
+                    "threshold": float(10),
+                }],
+            })
+        ```
+
 
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
@@ -186,6 +253,73 @@ class BrowserMonitorPerformance(pulumi.CustomResource):
         - `terraform-provider-dynatrace -export BrowserMonitorPerformance` downloads all existing browser monitor performance thresholds configuration
 
         The full documentation of the export feature is available [here](https://dt-url.net/h203qmc).
+
+        ## Resource Example Usage
+
+        ```python
+        import pulumi
+        import pulumi_dynatrace as dynatrace
+        import pulumiverse_dynatrace as dynatrace
+
+        location = dynatrace.get_synthetic_location(name="Location")
+        monitor = dynatrace.BrowserMonitor("monitor",
+            name="#name#",
+            frequency=15,
+            locations=[location.id],
+            key_performance_metrics={
+                "load_action_kpm": "VISUALLY_COMPLETE",
+                "xhr_action_kpm": "VISUALLY_COMPLETE",
+            },
+            anomaly_detection={
+                "loading_time_thresholds": [{
+                    "enabled": True,
+                    "thresholds": [{
+                        "thresholds": [{
+                            "event_index": 0,
+                            "request_index": 0,
+                            "type": "TOTAL",
+                            "value_ms": 10000,
+                        }],
+                    }],
+                }],
+                "outage_handlings": [{
+                    "global_outage": True,
+                    "local_outage": False,
+                    "retry_on_error": True,
+                    "global_outage_policies": [{
+                        "consecutive_runs": 1,
+                    }],
+                }],
+            },
+            script={
+                "type": "clickpath",
+                "configuration": {
+                    "bypass_csp": True,
+                    "user_agent": "Mozilla",
+                    "device": {
+                        "name": "Desktop",
+                        "orientation": "landscape",
+                    },
+                },
+                "events": {
+                    "events": [{
+                        "description": "my description",
+                        "navigate": {
+                            "url": "https://www.example.com",
+                        },
+                    }],
+                },
+            })
+        performance = dynatrace.BrowserMonitorPerformance("performance",
+            enabled=True,
+            scope=monitor.id,
+            thresholds={
+                "thresholds": [{
+                    "event": monitor.id,
+                    "threshold": float(10),
+                }],
+            })
+        ```
 
 
         :param str resource_name: The name of the resource.

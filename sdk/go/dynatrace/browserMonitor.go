@@ -25,6 +25,283 @@ import (
 // - `terraform-provider-dynatrace -export BrowserMonitor` downloads all existing browser monitor configuration
 //
 // The full documentation of the export feature is available [here](https://dt-url.net/h203qmc).
+//
+// ## Resource Example Usage
+//
+// ```go
+// package main
+//
+// import (
+//
+//	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//	"github.com/pulumiverse/pulumi-dynatrace/sdk/go/dynatrace"
+//	"github.com/pulumiverse/pulumi-time/sdk/go/time"
+//
+// )
+//
+//	func main() {
+//		pulumi.Run(func(ctx *pulumi.Context) error {
+//			location, err := dynatrace.NewSyntheticLocation(ctx, "location", &dynatrace.SyntheticLocationArgs{
+//				Name:                             pulumi.String("#name#"),
+//				City:                             pulumi.String("San Francisco de Asis"),
+//				CountryCode:                      pulumi.String("VE"),
+//				RegionCode:                       pulumi.String("04"),
+//				DeploymentType:                   pulumi.String("STANDARD"),
+//				Latitude:                         pulumi.Float64(10.0756),
+//				LocationNodeOutageDelayInMinutes: pulumi.Int(3),
+//				Longitude:                        pulumi.Float64(-67.5442),
+//			})
+//			if err != nil {
+//				return err
+//			}
+//			application, err := dynatrace.NewWebApplication(ctx, "application", &dynatrace.WebApplicationArgs{
+//				Name:                             pulumi.String("#name#"),
+//				Type:                             pulumi.String("AUTO_INJECTED"),
+//				CostControlUserSessionPercentage: pulumi.Int(100),
+//				LoadActionKeyPerformanceMetric:   pulumi.String("VISUALLY_COMPLETE"),
+//				RealUserMonitoringEnabled:        pulumi.Bool(true),
+//				XhrActionKeyPerformanceMetric:    pulumi.String("VISUALLY_COMPLETE"),
+//				CustomActionApdexSettings: &dynatrace.WebApplicationCustomActionApdexSettingsArgs{
+//					FrustratingFallbackThreshold: pulumi.Int(12000),
+//					FrustratingThreshold:         pulumi.Int(12000),
+//					ToleratedFallbackThreshold:   pulumi.Int(3000),
+//					ToleratedThreshold:           pulumi.Int(3000),
+//				},
+//				LoadActionApdexSettings: &dynatrace.WebApplicationLoadActionApdexSettingsArgs{
+//					FrustratingFallbackThreshold: pulumi.Int(12000),
+//					FrustratingThreshold:         pulumi.Int(12000),
+//					ToleratedFallbackThreshold:   pulumi.Int(3000),
+//					ToleratedThreshold:           pulumi.Int(3000),
+//				},
+//				MonitoringSettings: &dynatrace.WebApplicationMonitoringSettingsArgs{
+//					AddCrossOriginAnonymousAttribute: pulumi.Bool(true),
+//					CacheControlHeaderOptimizations:  pulumi.Bool(true),
+//					InjectionMode:                    pulumi.String("JAVASCRIPT_TAG"),
+//					ScriptTagCacheDurationInHours:    pulumi.Int(1),
+//					AdvancedJavascriptTagSettings: &dynatrace.WebApplicationMonitoringSettingsAdvancedJavascriptTagSettingsArgs{
+//						MaxActionNameLength: pulumi.Int(100),
+//						MaxErrorsToCapture:  pulumi.Int(10),
+//						AdditionalEventHandlers: &dynatrace.WebApplicationMonitoringSettingsAdvancedJavascriptTagSettingsAdditionalEventHandlersArgs{
+//							MaxDomNodes: pulumi.Int(5000),
+//						},
+//					},
+//					ContentCapture: &dynatrace.WebApplicationMonitoringSettingsContentCaptureArgs{
+//						ResourceTimingSettings: &dynatrace.WebApplicationMonitoringSettingsContentCaptureResourceTimingSettingsArgs{
+//							InstrumentationDelay:  pulumi.Int(53),
+//							NonW3cResourceTimings: pulumi.Bool(true),
+//							W3cResourceTimings:    pulumi.Bool(true),
+//						},
+//						TimeoutSettings: &dynatrace.WebApplicationMonitoringSettingsContentCaptureTimeoutSettingsArgs{
+//							TemporaryActionLimit:        pulumi.Int(3),
+//							TemporaryActionTotalTimeout: pulumi.Int(100),
+//							TimedActionSupport:          pulumi.Bool(true),
+//						},
+//					},
+//				},
+//				UserActionNamingSettings: &dynatrace.WebApplicationUserActionNamingSettingsArgs{},
+//				WaterfallSettings: &dynatrace.WebApplicationWaterfallSettingsArgs{
+//					ResourceBrowserCachingThreshold:          pulumi.Int(50),
+//					ResourcesThreshold:                       pulumi.Int(100000),
+//					SlowCndResourcesThreshold:                pulumi.Int(200000),
+//					SlowFirstPartyResourcesThreshold:         pulumi.Int(200000),
+//					SlowThirdPartyResourcesThreshold:         pulumi.Int(200000),
+//					SpeedIndexVisuallyCompleteRatioThreshold: pulumi.Int(50),
+//					UncompressedResourcesThreshold:           pulumi.Int(860),
+//				},
+//				XhrActionApdexSettings: &dynatrace.WebApplicationXhrActionApdexSettingsArgs{
+//					FrustratingFallbackThreshold: pulumi.Int(12000),
+//					FrustratingThreshold:         pulumi.Int(12000),
+//					ToleratedFallbackThreshold:   pulumi.Int(3000),
+//					ToleratedThreshold:           pulumi.Int(3000),
+//				},
+//			})
+//			if err != nil {
+//				return err
+//			}
+//			credentialsVault, err := dynatrace.NewCredentials(ctx, "credentials_vault", &dynatrace.CredentialsArgs{
+//				Name:        pulumi.String("#name#"),
+//				Description: pulumi.String("my credentials vault"),
+//				Scopes: pulumi.StringArray{
+//					pulumi.String("SYNTHETIC"),
+//				},
+//				Username: pulumi.String("username"),
+//				Password: pulumi.String("password"),
+//			})
+//			if err != nil {
+//				return err
+//			}
+//			wait5Seconds, err := time.NewSleep(ctx, "wait_5_seconds", &time.SleepArgs{
+//				CreateDuration: pulumi.String("5s"),
+//			}, pulumi.DependsOn([]pulumi.Resource{
+//				location,
+//				application,
+//				credentialsVault,
+//			}))
+//			if err != nil {
+//				return err
+//			}
+//			_, err = dynatrace.NewBrowserMonitor(ctx, "monitor", &dynatrace.BrowserMonitorArgs{
+//				Name:      pulumi.String("#name#"),
+//				Frequency: pulumi.Int(15),
+//				Locations: pulumi.StringArray{
+//					location.ID(),
+//				},
+//				ManuallyAssignedApps: pulumi.StringArray{
+//					application.ID(),
+//				},
+//				AnomalyDetection: &dynatrace.BrowserMonitorAnomalyDetectionArgs{
+//					LoadingTimeThresholds: dynatrace.BrowserMonitorAnomalyDetectionLoadingTimeThresholdArray{
+//						&dynatrace.BrowserMonitorAnomalyDetectionLoadingTimeThresholdArgs{
+//							Enabled: pulumi.Bool(true),
+//						},
+//					},
+//					OutageHandlings: dynatrace.BrowserMonitorAnomalyDetectionOutageHandlingArray{
+//						&dynatrace.BrowserMonitorAnomalyDetectionOutageHandlingArgs{
+//							GlobalOutage: pulumi.Bool(true),
+//							RetryOnError: pulumi.Bool(true),
+//							GlobalOutagePolicies: dynatrace.BrowserMonitorAnomalyDetectionOutageHandlingGlobalOutagePolicyArray{
+//								&dynatrace.BrowserMonitorAnomalyDetectionOutageHandlingGlobalOutagePolicyArgs{
+//									ConsecutiveRuns: pulumi.Int(1),
+//								},
+//							},
+//						},
+//					},
+//				},
+//				KeyPerformanceMetrics: &dynatrace.BrowserMonitorKeyPerformanceMetricsArgs{
+//					LoadActionKpm: pulumi.String("VISUALLY_COMPLETE"),
+//					XhrActionKpm:  pulumi.String("VISUALLY_COMPLETE"),
+//				},
+//				Script: &dynatrace.BrowserMonitorScriptArgs{
+//					Type: pulumi.String("clickpath"),
+//					Configuration: &dynatrace.BrowserMonitorScriptConfigurationArgs{
+//						BypassCsp: pulumi.Bool(true),
+//						UserAgent: pulumi.String("Mozilla"),
+//						Bandwidth: &dynatrace.BrowserMonitorScriptConfigurationBandwidthArgs{
+//							NetworkType: pulumi.String("GPRS"),
+//						},
+//						Device: &dynatrace.BrowserMonitorScriptConfigurationDeviceArgs{
+//							Name:        pulumi.String("Apple iPhone 8"),
+//							Orientation: pulumi.String("landscape"),
+//						},
+//						Headers: &dynatrace.BrowserMonitorScriptConfigurationHeadersArgs{
+//							Headers: dynatrace.BrowserMonitorScriptConfigurationHeadersHeaderArray{
+//								&dynatrace.BrowserMonitorScriptConfigurationHeadersHeaderArgs{
+//									Name:  pulumi.String("kjh"),
+//									Value: pulumi.String("kjh"),
+//								},
+//							},
+//						},
+//						IgnoredErrorCodes: &dynatrace.BrowserMonitorScriptConfigurationIgnoredErrorCodesArgs{
+//							StatusCodes: pulumi.String("400"),
+//						},
+//						JavascriptSetttings: &dynatrace.BrowserMonitorScriptConfigurationJavascriptSetttingsArgs{
+//							TimeoutSettings: &dynatrace.BrowserMonitorScriptConfigurationJavascriptSetttingsTimeoutSettingsArgs{
+//								ActionLimit:  pulumi.Int(3),
+//								TotalTimeout: pulumi.Int(100),
+//							},
+//							VisuallyCompleteOptions: &dynatrace.BrowserMonitorScriptConfigurationJavascriptSetttingsVisuallyCompleteOptionsArgs{
+//								ImageSizeThreshold: pulumi.Int(0),
+//								InactivityTimeout:  pulumi.Int(0),
+//								MutationTimeout:    pulumi.Int(0),
+//							},
+//						},
+//					},
+//					Events: &dynatrace.BrowserMonitorScriptEventsArgs{
+//						Events: dynatrace.BrowserMonitorScriptEventsEventArray{
+//							&dynatrace.BrowserMonitorScriptEventsEventArgs{
+//								Description: pulumi.String("Loading of \"https://example.com\""),
+//								Navigate: &dynatrace.BrowserMonitorScriptEventsEventNavigateArgs{
+//									Url: pulumi.String("https://example.com"),
+//									Authentication: &dynatrace.BrowserMonitorScriptEventsEventNavigateAuthenticationArgs{
+//										Type:  pulumi.String("http_authentication"),
+//										Creds: credentialsVault.ID(),
+//									},
+//									Wait: &dynatrace.BrowserMonitorScriptEventsEventNavigateWaitArgs{
+//										WaitFor: pulumi.String("page_complete"),
+//									},
+//								},
+//							},
+//							&dynatrace.BrowserMonitorScriptEventsEventArgs{
+//								Description: pulumi.String("jhjhjh"),
+//								Navigate: &dynatrace.BrowserMonitorScriptEventsEventNavigateArgs{
+//									Url: pulumi.String("https://example.com"),
+//									Authentication: &dynatrace.BrowserMonitorScriptEventsEventNavigateAuthenticationArgs{
+//										Type:  pulumi.String("http_authentication"),
+//										Creds: credentialsVault.ID(),
+//									},
+//									Validate: &dynatrace.BrowserMonitorScriptEventsEventNavigateValidateArgs{
+//										Validations: dynatrace.BrowserMonitorScriptEventsEventNavigateValidateValidationArray{
+//											&dynatrace.BrowserMonitorScriptEventsEventNavigateValidateValidationArgs{
+//												Type:  pulumi.String("text_match"),
+//												Match: pulumi.String("kkl"),
+//												Regex: pulumi.Bool(true),
+//												Target: &dynatrace.BrowserMonitorScriptEventsEventNavigateValidateValidationTargetArgs{
+//													Window: pulumi.String("k"),
+//												},
+//											},
+//										},
+//									},
+//									Wait: &dynatrace.BrowserMonitorScriptEventsEventNavigateWaitArgs{
+//										Timeout: pulumi.Int(60000),
+//										WaitFor: pulumi.String("validation"),
+//										Validation: &dynatrace.BrowserMonitorScriptEventsEventNavigateWaitValidationArgs{
+//											Type:  pulumi.String("element_match"),
+//											Match: pulumi.String("kjkj"),
+//											Target: &dynatrace.BrowserMonitorScriptEventsEventNavigateWaitValidationTargetArgs{
+//												Locators: dynatrace.BrowserMonitorScriptEventsEventNavigateWaitValidationTargetLocatorArray{
+//													&dynatrace.BrowserMonitorScriptEventsEventNavigateWaitValidationTargetLocatorArgs{
+//														Locators: dynatrace.BrowserMonitorScriptEventsEventNavigateWaitValidationTargetLocatorLocatorArray{
+//															&dynatrace.BrowserMonitorScriptEventsEventNavigateWaitValidationTargetLocatorLocatorArgs{
+//																Type:  pulumi.String("css"),
+//																Value: pulumi.String("jjj"),
+//															},
+//														},
+//													},
+//												},
+//											},
+//										},
+//									},
+//								},
+//							},
+//							&dynatrace.BrowserMonitorScriptEventsEventArgs{
+//								Description: pulumi.String("fvf"),
+//								Click: &dynatrace.BrowserMonitorScriptEventsEventClickArgs{
+//									Button: pulumi.Int(0),
+//									Validate: &dynatrace.BrowserMonitorScriptEventsEventClickValidateArgs{
+//										Validations: dynatrace.BrowserMonitorScriptEventsEventClickValidateValidationArray{
+//											&dynatrace.BrowserMonitorScriptEventsEventClickValidateValidationArgs{
+//												Type: pulumi.String("text_match"),
+//											},
+//										},
+//									},
+//									Wait: &dynatrace.BrowserMonitorScriptEventsEventClickWaitArgs{
+//										WaitFor: pulumi.String("page_complete"),
+//									},
+//								},
+//							},
+//							&dynatrace.BrowserMonitorScriptEventsEventArgs{
+//								Description: pulumi.String("jsfoo"),
+//								Javascript: &dynatrace.BrowserMonitorScriptEventsEventJavascriptArgs{
+//									Code: pulumi.String("let x = 3;\nfor (var i = 0; i < x; x++) {\n    console.log(\\\"asdf\\\");\n}\n"),
+//									Wait: &dynatrace.BrowserMonitorScriptEventsEventJavascriptWaitArgs{
+//										WaitFor: pulumi.String("page_complete"),
+//									},
+//								},
+//							},
+//						},
+//					},
+//				},
+//			}, pulumi.DependsOn([]pulumi.Resource{
+//				wait5Seconds,
+//			}))
+//			if err != nil {
+//				return err
+//			}
+//			return nil
+//		})
+//	}
+//
+// ```
 type BrowserMonitor struct {
 	pulumi.CustomResourceState
 

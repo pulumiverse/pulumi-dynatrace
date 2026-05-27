@@ -20,6 +20,51 @@ import * as utilities from "./utilities";
  * - `terraform-provider-dynatrace -export dynatrace.MobileAppAnomalies` downloads all existing mobile application anomaly detection configuration
  *
  * The full documentation of the export feature is available [here](https://dt-url.net/h203qmc).
+ *
+ * ## Resource Example Usage
+ *
+ * ```typescript
+ * import * as pulumi from "@pulumi/pulumi";
+ * import * as dynatrace from "@pulumiverse/dynatrace";
+ *
+ * const application = dynatrace.getMobileApplication({
+ *     name: "Application",
+ * });
+ * const anomalies = new dynatrace.MobileAppAnomalies("anomalies", {
+ *     scope: application.then(application => application.id),
+ *     errorRateIncrease: {
+ *         enabled: true,
+ *         detectionMode: "fixed",
+ *         errorRateIncreaseFixed: {
+ *             sensitivity: "medium",
+ *             thresholdAbsolute: 6,
+ *         },
+ *     },
+ *     slowUserActions: {
+ *         enabled: true,
+ *         detectionMode: "fixed",
+ *         slowUserActionsFixed: {
+ *             sensitivity: "high",
+ *             durationAvoidOveralerting: {
+ *                 minActionRate: 12,
+ *             },
+ *             durationThresholdAllFixed: {
+ *                 durationThreshold: 200,
+ *             },
+ *             durationThresholdSlowest: {
+ *                 durationThreshold: 900,
+ *             },
+ *         },
+ *     },
+ *     unexpectedHighLoad: {
+ *         enabled: true,
+ *         thresholdPercentage: 300,
+ *     },
+ *     unexpectedLowLoad: {
+ *         enabled: false,
+ *     },
+ * });
+ * ```
  */
 export class MobileAppAnomalies extends pulumi.CustomResource {
     /**

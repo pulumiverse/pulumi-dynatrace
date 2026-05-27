@@ -14,6 +14,10 @@ namespace Pulumiverse.Dynatrace.Outputs
     [OutputType]
     public sealed class AutomationWorkflowTriggerEventConfigDavisProblem
     {
+        /// <summary>
+        /// If set to `True`, the workflow will only be triggered after the initial root cause analysis run is completed
+        /// </summary>
+        public readonly bool? AnalysisReady;
         public readonly ImmutableArray<Outputs.AutomationWorkflowTriggerEventConfigDavisProblemCategory> Categories;
         /// <summary>
         /// Additional DQL matcher expression to further filter events to match
@@ -34,6 +38,8 @@ namespace Pulumiverse.Dynatrace.Outputs
 
         [OutputConstructor]
         private AutomationWorkflowTriggerEventConfigDavisProblem(
+            bool? analysisReady,
+
             ImmutableArray<Outputs.AutomationWorkflowTriggerEventConfigDavisProblemCategory> categories,
 
             string? customFilter,
@@ -44,6 +50,7 @@ namespace Pulumiverse.Dynatrace.Outputs
 
             bool? onProblemClose)
         {
+            AnalysisReady = analysisReady;
             Categories = categories;
             CustomFilter = customFilter;
             EntityTags = entityTags;

@@ -59,7 +59,7 @@ namespace Pulumiverse.Dynatrace
         public Output<string> Name { get; private set; } = null!;
 
         /// <summary>
-        /// Select the operating systems on which the monitoring rule should be applied. Possible Values: `AIX`, `LINUX`, `WINDOWS`
+        /// Select the operating systems on which the monitoring rule should be applied. Possible values: `AIX`, `LINUX`, `WINDOWS`
         /// </summary>
         [Output("operatingSystems")]
         public Output<ImmutableArray<string>> OperatingSystems { get; private set; } = null!;
@@ -157,7 +157,7 @@ namespace Pulumiverse.Dynatrace
         private InputList<string>? _operatingSystems;
 
         /// <summary>
-        /// Select the operating systems on which the monitoring rule should be applied. Possible Values: `AIX`, `LINUX`, `WINDOWS`
+        /// Select the operating systems on which the monitoring rule should be applied. Possible values: `AIX`, `LINUX`, `WINDOWS`
         /// </summary>
         public InputList<string> OperatingSystems
         {
@@ -219,7 +219,7 @@ namespace Pulumiverse.Dynatrace
         private InputList<string>? _operatingSystems;
 
         /// <summary>
-        /// Select the operating systems on which the monitoring rule should be applied. Possible Values: `AIX`, `LINUX`, `WINDOWS`
+        /// Select the operating systems on which the monitoring rule should be applied. Possible values: `AIX`, `LINUX`, `WINDOWS`
         /// </summary>
         public InputList<string> OperatingSystems
         {

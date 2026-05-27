@@ -20,6 +20,47 @@ import * as utilities from "./utilities";
  * - `terraform-provider-dynatrace -export dynatrace.DashboardsPresets` downloads all existing dashboard preset settings
  *
  * The full documentation of the export feature is available [here](https://dt-url.net/h203qmc).
+ *
+ * ## Resource Example Usage
+ *
+ * ```typescript
+ * import * as pulumi from "@pulumi/pulumi";
+ * import * as dynatrace from "@pulumiverse/dynatrace";
+ *
+ * const group = new dynatrace.IamGroup("group", {name: "#name#"});
+ * const dashboard = new dynatrace.Dashboard("dashboard", {
+ *     dashboardMetadata: {
+ *         preset: true,
+ *         name: "#name#",
+ *         owner: "Dynatrace",
+ *         tags: ["Kubernetes"],
+ *         dynamicFilters: {
+ *             filters: ["KUBERNETES_CLUSTER"],
+ *         },
+ *     },
+ *     tiles: [{
+ *         name: "Markdown",
+ *         tileType: "MARKDOWN",
+ *         configured: true,
+ *         bounds: {
+ *             top: 0,
+ *             width: 684,
+ *             height: 38,
+ *             left: 0,
+ *         },
+ *         markdown: "## Cluster resource overview",
+ *     }],
+ * });
+ * const presets = new dynatrace.DashboardsPresets("presets", {
+ *     enableDashboardPresets: true,
+ *     dashboardPresetsList: {
+ *         dashboardPresets: [{
+ *             dashboardPreset: dashboard.id,
+ *             userGroup: group.id,
+ *         }],
+ *     },
+ * });
+ * ```
  */
 export class DashboardsPresets extends pulumi.CustomResource {
     /**

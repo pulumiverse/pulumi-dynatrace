@@ -16,11 +16,15 @@ import (
 //
 // > To utilize this resource, please define the environment variables `DT_CLIENT_ID`, `DT_CLIENT_SECRET`, `DT_ACCOUNT_ID` with an OAuth client including the following permissions: **Read direct-shares** (`document:direct-shares:read`), **Write direct-shares** (`document:direct-shares:write`), and **Delete direct-shares** (`document:direct-shares:delete`).
 //
-// > This resource is currently not covered by the export utility.
+// > This resource is excluded by default in the export utility, please explicitly specify the resource to retrieve existing configuration.
 //
 // ## Dynatrace Documentation
 //
 // - Dynatrace Documents - https://########.apps.dynatrace.com/platform/swagger-ui/index.html?urls.primaryName=Document%20Service
+//
+// ## Export Example Usage
+//
+// - `terraform-provider-dynatrace -export DirectShares` downloads all existing direct shares configurations for documents.
 //
 // ## Resource Example Usage
 //
@@ -39,116 +43,13 @@ import (
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
 //			tmpJSON0, err := json.Marshal(map[string]interface{}{
-//				"version":   13,
+//				"version":   1,
 //				"variables": []interface{}{},
 //				"tiles": map[string]interface{}{
 //					"0": map[string]interface{}{
 //						"type":    "markdown",
 //						"title":   "",
-//						"content": "![Image of a Dashboard](https://dt-cdn.net/wp-content/uploads/2022/09/pic1____Dashboard-Preset___PNG.png)",
-//					},
-//					"1": map[string]interface{}{
-//						"type":  "data",
-//						"title": "",
-//						"query": "timeseries avg(dt.host.cpu.user)",
-//						"queryConfig": map[string]interface{}{
-//							"additionalFilters": map[string]interface{}{},
-//							"version":           "4.3.1",
-//							"datatype":          "metrics",
-//							"metricKey":         "dt.host.cpu.user",
-//							"aggregation":       "avg",
-//							"by":                []interface{}{},
-//						},
-//						"subType":       "dql-builder-metrics",
-//						"visualization": "lineChart",
-//						"visualizationSettings": map[string]interface{}{
-//							"thresholds": []interface{}{},
-//							"chartSettings": map[string]interface{}{
-//								"gapPolicy": "connect",
-//								"circleChartSettings": map[string]interface{}{
-//									"groupingThresholdType":  "relative",
-//									"groupingThresholdValue": 0,
-//									"valueType":              "relative",
-//								},
-//								"categoryOverrides": map[string]interface{}{},
-//								"fieldMapping": map[string]interface{}{
-//									"timestamp": "timeframe",
-//									"leftAxisValues": []string{
-//										"avg(dt.host.cpu.user)",
-//									},
-//									"leftAxisDimensions": []interface{}{},
-//									"fields":             []interface{}{},
-//									"values":             []interface{}{},
-//								},
-//							},
-//							"singleValue": map[string]interface{}{
-//								"showLabel":            true,
-//								"label":                "",
-//								"prefixIcon":           "",
-//								"autoscale":            true,
-//								"alignment":            "center",
-//								"colorThresholdTarget": "value",
-//							},
-//							"table": map[string]interface{}{
-//								"rowDensity":       "condensed",
-//								"enableSparklines": false,
-//								"hiddenColumns":    []interface{}{},
-//								"lineWrapIds":      []interface{}{},
-//								"columnWidths":     map[string]interface{}{},
-//							},
-//						},
-//					},
-//					"2": map[string]interface{}{
-//						"type":  "data",
-//						"title": "",
-//						"query": "timeseries avg(dt.host.memory.used)",
-//						"queryConfig": map[string]interface{}{
-//							"additionalFilters": map[string]interface{}{},
-//							"version":           "4.3.1",
-//							"datatype":          "metrics",
-//							"metricKey":         "dt.host.memory.used",
-//							"aggregation":       "avg",
-//							"by":                []interface{}{},
-//						},
-//						"subType":       "dql-builder-metrics",
-//						"visualization": "lineChart",
-//						"visualizationSettings": map[string]interface{}{
-//							"thresholds": []interface{}{},
-//							"chartSettings": map[string]interface{}{
-//								"gapPolicy": "connect",
-//								"circleChartSettings": map[string]interface{}{
-//									"groupingThresholdType":  "relative",
-//									"groupingThresholdValue": 0,
-//									"valueType":              "relative",
-//								},
-//								"categoryOverrides": map[string]interface{}{},
-//								"fieldMapping": map[string]interface{}{
-//									"timestamp": "timeframe",
-//									"leftAxisValues": []string{
-//										"avg(dt.host.memory.used)",
-//									},
-//									"leftAxisDimensions": []interface{}{},
-//									"fields":             []interface{}{},
-//									"values":             []interface{}{},
-//								},
-//								"categoricalBarChartSettings": map[string]interface{}{},
-//							},
-//							"singleValue": map[string]interface{}{
-//								"showLabel":            true,
-//								"label":                "",
-//								"prefixIcon":           "",
-//								"autoscale":            true,
-//								"alignment":            "center",
-//								"colorThresholdTarget": "value",
-//							},
-//							"table": map[string]interface{}{
-//								"rowDensity":       "condensed",
-//								"enableSparklines": false,
-//								"hiddenColumns":    []interface{}{},
-//								"lineWrapIds":      []interface{}{},
-//								"columnWidths":     map[string]interface{}{},
-//							},
-//						},
+//						"content": "Dashboard content",
 //					},
 //				},
 //				"layouts": map[string]interface{}{
@@ -157,18 +58,6 @@ import (
 //						"y": 0,
 //						"w": 24,
 //						"h": 14,
-//					},
-//					"1": map[string]interface{}{
-//						"x": 0,
-//						"y": 14,
-//						"w": 9,
-//						"h": 6,
-//					},
-//					"2": map[string]interface{}{
-//						"x": 15,
-//						"y": 14,
-//						"w": 9,
-//						"h": 6,
 //					},
 //				},
 //			})
@@ -179,7 +68,21 @@ import (
 //			thisDocument, err := dynatrace.NewDocument(ctx, "this", &dynatrace.DocumentArgs{
 //				Type:    pulumi.String("dashboard"),
 //				Name:    pulumi.String("#name#"),
-//				Content: pulumi.String(json0),
+//				Content: pulumi.String(pulumi.String(json0)),
+//			})
+//			if err != nil {
+//				return err
+//			}
+//			sampleServiceUser, err := dynatrace.NewIamServiceUser(ctx, "sample_service_user", &dynatrace.IamServiceUserArgs{
+//				Name:        pulumi.String("#name#"),
+//				Description: pulumi.String("Service user that can access the dashboard"),
+//			})
+//			if err != nil {
+//				return err
+//			}
+//			sampleGroup, err := dynatrace.NewIamGroup(ctx, "sample_group", &dynatrace.IamGroupArgs{
+//				Name:        pulumi.String("#name#"),
+//				Description: pulumi.String("Group that can acccess the dashboard"),
 //			})
 //			if err != nil {
 //				return err
@@ -190,11 +93,11 @@ import (
 //				Recipients: &dynatrace.DirectSharesRecipientsArgs{
 //					Recipients: dynatrace.DirectSharesRecipientsRecipientArray{
 //						&dynatrace.DirectSharesRecipientsRecipientArgs{
-//							Id:   pulumi.String("441664f0-23c9-40ef-b344-18c02c23d787"),
+//							Id:   sampleServiceUser.ID(),
 //							Type: pulumi.String("user"),
 //						},
 //						&dynatrace.DirectSharesRecipientsRecipientArgs{
-//							Id:   pulumi.String("441664f0-23c9-40ef-b344-18c02c23d788"),
+//							Id:   sampleGroup.ID(),
 //							Type: pulumi.String("group"),
 //						},
 //					},
@@ -216,7 +119,7 @@ type DirectShares struct {
 	// Document ID
 	DocumentId pulumi.StringOutput `pulumi:"documentId"`
 	// Recipients of the direct share
-	Recipients DirectSharesRecipientsOutput `pulumi:"recipients"`
+	Recipients DirectSharesRecipientsPtrOutput `pulumi:"recipients"`
 }
 
 // NewDirectShares registers a new resource with the given unique name, arguments, and options.
@@ -228,9 +131,6 @@ func NewDirectShares(ctx *pulumi.Context,
 
 	if args.DocumentId == nil {
 		return nil, errors.New("invalid value for required argument 'DocumentId'")
-	}
-	if args.Recipients == nil {
-		return nil, errors.New("invalid value for required argument 'Recipients'")
 	}
 	opts = internal.PkgResourceDefaultOpts(opts)
 	var resource DirectShares
@@ -282,7 +182,7 @@ type directSharesArgs struct {
 	// Document ID
 	DocumentId string `pulumi:"documentId"`
 	// Recipients of the direct share
-	Recipients DirectSharesRecipients `pulumi:"recipients"`
+	Recipients *DirectSharesRecipients `pulumi:"recipients"`
 }
 
 // The set of arguments for constructing a DirectShares resource.
@@ -292,7 +192,7 @@ type DirectSharesArgs struct {
 	// Document ID
 	DocumentId pulumi.StringInput
 	// Recipients of the direct share
-	Recipients DirectSharesRecipientsInput
+	Recipients DirectSharesRecipientsPtrInput
 }
 
 func (DirectSharesArgs) ElementType() reflect.Type {
@@ -393,8 +293,8 @@ func (o DirectSharesOutput) DocumentId() pulumi.StringOutput {
 }
 
 // Recipients of the direct share
-func (o DirectSharesOutput) Recipients() DirectSharesRecipientsOutput {
-	return o.ApplyT(func(v *DirectShares) DirectSharesRecipientsOutput { return v.Recipients }).(DirectSharesRecipientsOutput)
+func (o DirectSharesOutput) Recipients() DirectSharesRecipientsPtrOutput {
+	return o.ApplyT(func(v *DirectShares) DirectSharesRecipientsPtrOutput { return v.Recipients }).(DirectSharesRecipientsPtrOutput)
 }
 
 type DirectSharesArrayOutput struct{ *pulumi.OutputState }

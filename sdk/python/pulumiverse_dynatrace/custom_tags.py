@@ -188,6 +188,38 @@ class CustomTags(pulumi.CustomResource):
 
         The full documentation of the export feature is available [here](https://dt-url.net/h203qmc).
 
+        ## Resource Example Usage
+
+        ```python
+        import pulumi
+        import pulumiverse_dynatrace as dynatrace
+
+        tags = dynatrace.CustomTags("tags",
+            entity_selector="type(HOST)",
+            tags={
+                "filters": [
+                    {
+                        "context": "CONTEXTLESS",
+                        "key": "KeyExampleA",
+                    },
+                    {
+                        "context": "CONTEXTLESS",
+                        "key": "KeyExampleA",
+                        "value": "ValueExample1",
+                    },
+                    {
+                        "context": "CONTEXTLESS",
+                        "key": "KeyExampleB",
+                    },
+                    {
+                        "context": "CONTEXTLESS",
+                        "key": "KeyExampleC",
+                        "value": "ValueExample2",
+                    },
+                ],
+            })
+        ```
+
 
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
@@ -216,6 +248,38 @@ class CustomTags(pulumi.CustomResource):
         - `terraform-provider-dynatrace -export CustomTags` downloads all existing custom tags configuration
 
         The full documentation of the export feature is available [here](https://dt-url.net/h203qmc).
+
+        ## Resource Example Usage
+
+        ```python
+        import pulumi
+        import pulumiverse_dynatrace as dynatrace
+
+        tags = dynatrace.CustomTags("tags",
+            entity_selector="type(HOST)",
+            tags={
+                "filters": [
+                    {
+                        "context": "CONTEXTLESS",
+                        "key": "KeyExampleA",
+                    },
+                    {
+                        "context": "CONTEXTLESS",
+                        "key": "KeyExampleA",
+                        "value": "ValueExample1",
+                    },
+                    {
+                        "context": "CONTEXTLESS",
+                        "key": "KeyExampleB",
+                    },
+                    {
+                        "context": "CONTEXTLESS",
+                        "key": "KeyExampleC",
+                        "value": "ValueExample2",
+                    },
+                ],
+            })
+        ```
 
 
         :param str resource_name: The name of the resource.

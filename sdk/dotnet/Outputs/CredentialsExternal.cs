@@ -15,7 +15,15 @@ namespace Pulumiverse.Dynatrace.Outputs
     public sealed class CredentialsExternal
     {
         /// <summary>
-        /// Required for Hashicorp Certificate. The ID of Credentials within the Certificate Vault holding the certificate
+        /// The name of the object that stores the username and password to retrieve and synchronize with the Dynatrace credential vault; this is not the name of the account logged into CyberArk Central Credential Provider.
+        /// </summary>
+        public readonly string? AccountName;
+        /// <summary>
+        /// The application ID defined in CyberArk Vault
+        /// </summary>
+        public readonly string? ApplicationId;
+        /// <summary>
+        /// Required for Hashicorp Certificate, CyberArk username and password authentication, and CyberArk host-based authentication. The ID of Credentials within the Credentials Vault holding the certificate.
         /// </summary>
         public readonly string? Certificate;
         /// <summary>
@@ -31,6 +39,10 @@ namespace Pulumiverse.Dynatrace.Outputs
         /// </summary>
         public readonly ImmutableArray<string> CredentialsUsedForExternalSynchronizations;
         /// <summary>
+        /// The name of the folder where the credentials are stored in CyberArk Vault; the default folder name is `Root`.
+        /// </summary>
+        public readonly string? FolderName;
+        /// <summary>
         /// No documentation available
         /// </summary>
         public readonly string? PasswordSecretName;
@@ -43,6 +55,10 @@ namespace Pulumiverse.Dynatrace.Outputs
         /// </summary>
         public readonly string? Roleid;
         /// <summary>
+        /// Safe name connected to CyberArk Vault
+        /// </summary>
+        public readonly string? SafeName;
+        /// <summary>
         /// Required for Hashicorp App Role. The ID of Credentials within the Certificate Vault holding the secret id
         /// </summary>
         public readonly string? Secretid;
@@ -54,6 +70,10 @@ namespace Pulumiverse.Dynatrace.Outputs
         /// No documentation available
         /// </summary>
         public readonly string? TokenSecretName;
+        /// <summary>
+        /// Dynatrace credential ID of the username-password pair used for authentication to the CyberArk Central Credential Provider
+        /// </summary>
+        public readonly string? UsernamePasswordForCpm;
         /// <summary>
         /// No documentation available
         /// </summary>
@@ -69,6 +89,10 @@ namespace Pulumiverse.Dynatrace.Outputs
 
         [OutputConstructor]
         private CredentialsExternal(
+            string? accountName,
+
+            string? applicationId,
+
             string? certificate,
 
             string? clientSecret,
@@ -77,11 +101,15 @@ namespace Pulumiverse.Dynatrace.Outputs
 
             ImmutableArray<string> credentialsUsedForExternalSynchronizations,
 
+            string? folderName,
+
             string? passwordSecretName,
 
             string? pathToCredentials,
 
             string? roleid,
+
+            string? safeName,
 
             string? secretid,
 
@@ -89,22 +117,29 @@ namespace Pulumiverse.Dynatrace.Outputs
 
             string? tokenSecretName,
 
+            string? usernamePasswordForCpm,
+
             string? usernameSecretName,
 
             string? vaultNamespace,
 
             string? vaultUrl)
         {
+            AccountName = accountName;
+            ApplicationId = applicationId;
             Certificate = certificate;
             ClientSecret = clientSecret;
             Clientid = clientid;
             CredentialsUsedForExternalSynchronizations = credentialsUsedForExternalSynchronizations;
+            FolderName = folderName;
             PasswordSecretName = passwordSecretName;
             PathToCredentials = pathToCredentials;
             Roleid = roleid;
+            SafeName = safeName;
             Secretid = secretid;
             Tenantid = tenantid;
             TokenSecretName = tokenSecretName;
+            UsernamePasswordForCpm = usernamePasswordForCpm;
             UsernameSecretName = usernameSecretName;
             VaultNamespace = vaultNamespace;
             VaultUrl = vaultUrl;

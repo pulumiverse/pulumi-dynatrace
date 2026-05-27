@@ -15,45 +15,87 @@ else:
 from .. import _utilities
 
 accountId: Optional[str]
+"""
+The Dynatrace account ID (UUID). Required for IAM (Account Management) resources. Also serves as a fallback for `iam_account_id`.
+"""
 
 automationClientId: Optional[str]
+"""
+The client ID of an OAuth client used for platform APIs. Falls back to `client_id` if not specified.
+"""
 
 automationClientSecret: Optional[str]
+"""
+The client secret of an OAuth client used for platform APIs. Falls back to `client_secret` if not specified.
+"""
 
 automationEnvUrl: Optional[str]
 """
-The URL of the Dynatrace Environment with Platform capabilities turned on (`https://#####.apps.dynatrace.com)`. This is optional configuration when `dt_env_url` already specifies a SaaS Environment like `https://#####.live.dynatrace.com` or `https://#####.apps.dynatrace.com`
+The URL of the Dynatrace platform environment (`https://#####.apps.dynatrace.com`). Falls back to `dt_env_url` if not specified.
 """
 
 automationTokenUrl: Optional[str]
 """
-The URL that provides the Bearer tokens when accessing the Automation REST API. This is optional configuration when `dt_env_url` already specifies a SaaS Environment like `https://#####.live.dynatrace.com` or `https://#####.apps.dynatrace.com`
+The token URL for obtaining access tokens via OAuth for the platform APIs. Default: `https://sso.dynatrace.com/sso/oauth2/token`.
 """
 
 clientId: Optional[str]
+"""
+The client ID of an OAuth client used for  platform APIs. Also serves as a fallback for `iam_client_id` and `automation_client_id`.
+"""
 
 clientSecret: Optional[str]
+"""
+The client secret of an OAuth client used for platform APIs. Also serves as a fallback for `iam_client_secret` and `automation_client_secret`.
+"""
 
 dtApiToken: Optional[str]
+"""
+The API token for classic Dynatrace APIs.
+"""
 
 dtClusterApiToken: Optional[str]
+"""
+The API token for Dynatrace Managed cluster APIs.
+"""
 
 dtClusterUrl: Optional[str]
+"""
+The URL of the Dynatrace Managed cluster.
+"""
 
 dtEnvUrl: Optional[str]
+"""
+The URL of the Dynatrace environment (e.g. `https://#####.live.dynatrace.com` or `https://#####.apps.dynatrace.com`).
+"""
 
 iamAccountId: Optional[str]
+"""
+The Dynatrace account ID (UUID). Required for IAM (Account Management) resources. Falls back to `account_id` if not specified.
+"""
 
 iamClientId: Optional[str]
+"""
+The client ID of an OAuth client used for the IAM (Account Management) API. Falls back to `client_id` if not specified.
+"""
 
 iamClientSecret: Optional[str]
+"""
+The client secret of an OAuth client used for the IAM (Account Management) API. Falls back to `client_secret` if not specified.
+"""
 
 iamEndpointUrl: Optional[str]
+"""
+The endpoint URL for the IAM (Account Management) API. Default: `https://api.dynatrace.com`.
+"""
 
 iamTokenUrl: Optional[str]
+"""
+The token URL for obtaining access tokens via OAuth for the IAM (Account Management) API. Default: `https://sso.dynatrace.com/sso/oauth2/token`.
+"""
 
 platformToken: Optional[str]
 """
-A Dynatrace Platform Token. Specifying such a token allows for easy authentication against Platform resources. In such a case it supersedes `automation_client_id`, `automation_client_secret`, `automation_token_url` and `automation_env_url`
+The Dynatrace platform token used for platform APIs. When specified, it is used in preference to `client_id`, `client_secret`, `automation_client_id`, `automation_client_secret`, `automation_token_url`, and `automation_env_url` for platform requests. Platform tokens can't be used for IAM (Account Management) or classic resources.
 """
 

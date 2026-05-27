@@ -14,7 +14,7 @@ namespace Pulumiverse.Dynatrace.Inputs
     public sealed class AwsConnectionRoleBasedAuthArgs : global::Pulumi.ResourceArgs
     {
         /// <summary>
-        /// Dynatrace integrations that can use this connection. Possible Values: `APP:dynatrace.biz.carbon` (Cost &amp; Carbon Optimization), `DA` (Data Acquisition Deprecated), `SVC:com.dynatrace.bo` (Business Observability), `SVC:com.dynatrace.da` (Data Acquisition), `SVC:com.dynatrace.openpipeline` (OpenPipeline) and `NONE`
+        /// Dynatrace integrations that can use this connection. Possible values: `APP:dynatrace.biz.carbon`, `DA`, `NONE`, `SVC:com.dynatrace.bo`, `SVC:com.dynatrace.da`, `SVC:com.dynatrace.grail`, `SVC:com.dynatrace.openpipeline`
         /// </summary>
         [Input("consumers")]
         public Input<string>? Consumers { get; set; }

@@ -28,21 +28,23 @@ import (
 type DevobsDataMasking struct {
 	pulumi.CustomResourceState
 
+	// Select how the variable name should be matched. Possible values: `CONTAINS`, `ENDS_WITH`, `EQUALS`, `STARTS_WITH`
+	ComparisonType pulumi.StringPtrOutput `pulumi:"comparisonType"`
 	// This setting is enabled (`true`) or disabled (`false`)
 	Enabled pulumi.BoolOutput `pulumi:"enabled"`
 	// Because this resource allows for ordering you may specify the ID of the resource instance that comes before this instance regarding order. If not specified when creating the setting will be added to the end of the list. If not specified during update the order will remain untouched
 	InsertAfter pulumi.StringOutput `pulumi:"insertAfter"`
-	// no documentation available
+	// Replacement Pattern
 	ReplacementPattern pulumi.StringPtrOutput `pulumi:"replacementPattern"`
-	// Possible Values: `SHA256`, `STRING`
+	// Choose how the sensitive data should be replaced. Possible values: `SHA256`, `STRING`
 	ReplacementType pulumi.StringOutput `pulumi:"replacementType"`
 	// Rule Name
 	RuleName pulumi.StringOutput `pulumi:"ruleName"`
-	// no documentation available
+	// Regex Pattern
 	RuleRegex pulumi.StringPtrOutput `pulumi:"ruleRegex"`
-	// Possible Values: `REGEX`, `VAR_NAME`
+	// Choose whether to redact by variable name or regex. Possible values: `REGEX`, `VAR_NAME`
 	RuleType pulumi.StringOutput `pulumi:"ruleType"`
-	// no documentation available
+	// Variable Name
 	RuleVarName pulumi.StringPtrOutput `pulumi:"ruleVarName"`
 }
 
@@ -88,40 +90,44 @@ func GetDevobsDataMasking(ctx *pulumi.Context,
 
 // Input properties used for looking up and filtering DevobsDataMasking resources.
 type devobsDataMaskingState struct {
+	// Select how the variable name should be matched. Possible values: `CONTAINS`, `ENDS_WITH`, `EQUALS`, `STARTS_WITH`
+	ComparisonType *string `pulumi:"comparisonType"`
 	// This setting is enabled (`true`) or disabled (`false`)
 	Enabled *bool `pulumi:"enabled"`
 	// Because this resource allows for ordering you may specify the ID of the resource instance that comes before this instance regarding order. If not specified when creating the setting will be added to the end of the list. If not specified during update the order will remain untouched
 	InsertAfter *string `pulumi:"insertAfter"`
-	// no documentation available
+	// Replacement Pattern
 	ReplacementPattern *string `pulumi:"replacementPattern"`
-	// Possible Values: `SHA256`, `STRING`
+	// Choose how the sensitive data should be replaced. Possible values: `SHA256`, `STRING`
 	ReplacementType *string `pulumi:"replacementType"`
 	// Rule Name
 	RuleName *string `pulumi:"ruleName"`
-	// no documentation available
+	// Regex Pattern
 	RuleRegex *string `pulumi:"ruleRegex"`
-	// Possible Values: `REGEX`, `VAR_NAME`
+	// Choose whether to redact by variable name or regex. Possible values: `REGEX`, `VAR_NAME`
 	RuleType *string `pulumi:"ruleType"`
-	// no documentation available
+	// Variable Name
 	RuleVarName *string `pulumi:"ruleVarName"`
 }
 
 type DevobsDataMaskingState struct {
+	// Select how the variable name should be matched. Possible values: `CONTAINS`, `ENDS_WITH`, `EQUALS`, `STARTS_WITH`
+	ComparisonType pulumi.StringPtrInput
 	// This setting is enabled (`true`) or disabled (`false`)
 	Enabled pulumi.BoolPtrInput
 	// Because this resource allows for ordering you may specify the ID of the resource instance that comes before this instance regarding order. If not specified when creating the setting will be added to the end of the list. If not specified during update the order will remain untouched
 	InsertAfter pulumi.StringPtrInput
-	// no documentation available
+	// Replacement Pattern
 	ReplacementPattern pulumi.StringPtrInput
-	// Possible Values: `SHA256`, `STRING`
+	// Choose how the sensitive data should be replaced. Possible values: `SHA256`, `STRING`
 	ReplacementType pulumi.StringPtrInput
 	// Rule Name
 	RuleName pulumi.StringPtrInput
-	// no documentation available
+	// Regex Pattern
 	RuleRegex pulumi.StringPtrInput
-	// Possible Values: `REGEX`, `VAR_NAME`
+	// Choose whether to redact by variable name or regex. Possible values: `REGEX`, `VAR_NAME`
 	RuleType pulumi.StringPtrInput
-	// no documentation available
+	// Variable Name
 	RuleVarName pulumi.StringPtrInput
 }
 
@@ -130,41 +136,45 @@ func (DevobsDataMaskingState) ElementType() reflect.Type {
 }
 
 type devobsDataMaskingArgs struct {
+	// Select how the variable name should be matched. Possible values: `CONTAINS`, `ENDS_WITH`, `EQUALS`, `STARTS_WITH`
+	ComparisonType *string `pulumi:"comparisonType"`
 	// This setting is enabled (`true`) or disabled (`false`)
 	Enabled bool `pulumi:"enabled"`
 	// Because this resource allows for ordering you may specify the ID of the resource instance that comes before this instance regarding order. If not specified when creating the setting will be added to the end of the list. If not specified during update the order will remain untouched
 	InsertAfter *string `pulumi:"insertAfter"`
-	// no documentation available
+	// Replacement Pattern
 	ReplacementPattern *string `pulumi:"replacementPattern"`
-	// Possible Values: `SHA256`, `STRING`
+	// Choose how the sensitive data should be replaced. Possible values: `SHA256`, `STRING`
 	ReplacementType string `pulumi:"replacementType"`
 	// Rule Name
 	RuleName string `pulumi:"ruleName"`
-	// no documentation available
+	// Regex Pattern
 	RuleRegex *string `pulumi:"ruleRegex"`
-	// Possible Values: `REGEX`, `VAR_NAME`
+	// Choose whether to redact by variable name or regex. Possible values: `REGEX`, `VAR_NAME`
 	RuleType string `pulumi:"ruleType"`
-	// no documentation available
+	// Variable Name
 	RuleVarName *string `pulumi:"ruleVarName"`
 }
 
 // The set of arguments for constructing a DevobsDataMasking resource.
 type DevobsDataMaskingArgs struct {
+	// Select how the variable name should be matched. Possible values: `CONTAINS`, `ENDS_WITH`, `EQUALS`, `STARTS_WITH`
+	ComparisonType pulumi.StringPtrInput
 	// This setting is enabled (`true`) or disabled (`false`)
 	Enabled pulumi.BoolInput
 	// Because this resource allows for ordering you may specify the ID of the resource instance that comes before this instance regarding order. If not specified when creating the setting will be added to the end of the list. If not specified during update the order will remain untouched
 	InsertAfter pulumi.StringPtrInput
-	// no documentation available
+	// Replacement Pattern
 	ReplacementPattern pulumi.StringPtrInput
-	// Possible Values: `SHA256`, `STRING`
+	// Choose how the sensitive data should be replaced. Possible values: `SHA256`, `STRING`
 	ReplacementType pulumi.StringInput
 	// Rule Name
 	RuleName pulumi.StringInput
-	// no documentation available
+	// Regex Pattern
 	RuleRegex pulumi.StringPtrInput
-	// Possible Values: `REGEX`, `VAR_NAME`
+	// Choose whether to redact by variable name or regex. Possible values: `REGEX`, `VAR_NAME`
 	RuleType pulumi.StringInput
-	// no documentation available
+	// Variable Name
 	RuleVarName pulumi.StringPtrInput
 }
 
@@ -255,6 +265,11 @@ func (o DevobsDataMaskingOutput) ToDevobsDataMaskingOutputWithContext(ctx contex
 	return o
 }
 
+// Select how the variable name should be matched. Possible values: `CONTAINS`, `ENDS_WITH`, `EQUALS`, `STARTS_WITH`
+func (o DevobsDataMaskingOutput) ComparisonType() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *DevobsDataMasking) pulumi.StringPtrOutput { return v.ComparisonType }).(pulumi.StringPtrOutput)
+}
+
 // This setting is enabled (`true`) or disabled (`false`)
 func (o DevobsDataMaskingOutput) Enabled() pulumi.BoolOutput {
 	return o.ApplyT(func(v *DevobsDataMasking) pulumi.BoolOutput { return v.Enabled }).(pulumi.BoolOutput)
@@ -265,12 +280,12 @@ func (o DevobsDataMaskingOutput) InsertAfter() pulumi.StringOutput {
 	return o.ApplyT(func(v *DevobsDataMasking) pulumi.StringOutput { return v.InsertAfter }).(pulumi.StringOutput)
 }
 
-// no documentation available
+// Replacement Pattern
 func (o DevobsDataMaskingOutput) ReplacementPattern() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v *DevobsDataMasking) pulumi.StringPtrOutput { return v.ReplacementPattern }).(pulumi.StringPtrOutput)
 }
 
-// Possible Values: `SHA256`, `STRING`
+// Choose how the sensitive data should be replaced. Possible values: `SHA256`, `STRING`
 func (o DevobsDataMaskingOutput) ReplacementType() pulumi.StringOutput {
 	return o.ApplyT(func(v *DevobsDataMasking) pulumi.StringOutput { return v.ReplacementType }).(pulumi.StringOutput)
 }
@@ -280,17 +295,17 @@ func (o DevobsDataMaskingOutput) RuleName() pulumi.StringOutput {
 	return o.ApplyT(func(v *DevobsDataMasking) pulumi.StringOutput { return v.RuleName }).(pulumi.StringOutput)
 }
 
-// no documentation available
+// Regex Pattern
 func (o DevobsDataMaskingOutput) RuleRegex() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v *DevobsDataMasking) pulumi.StringPtrOutput { return v.RuleRegex }).(pulumi.StringPtrOutput)
 }
 
-// Possible Values: `REGEX`, `VAR_NAME`
+// Choose whether to redact by variable name or regex. Possible values: `REGEX`, `VAR_NAME`
 func (o DevobsDataMaskingOutput) RuleType() pulumi.StringOutput {
 	return o.ApplyT(func(v *DevobsDataMasking) pulumi.StringOutput { return v.RuleType }).(pulumi.StringOutput)
 }
 
-// no documentation available
+// Variable Name
 func (o DevobsDataMaskingOutput) RuleVarName() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v *DevobsDataMasking) pulumi.StringPtrOutput { return v.RuleVarName }).(pulumi.StringPtrOutput)
 }

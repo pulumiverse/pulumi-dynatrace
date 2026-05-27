@@ -25,6 +25,558 @@ import (
 // - `terraform-provider-dynatrace -export HttpMonitor` downloads all existing HTTP monitor configuration
 //
 // The full documentation of the export feature is available [here](https://dt-url.net/h203qmc).
+//
+// ## Resource Example Usage
+//
+// ```go
+// package main
+//
+// import (
+//
+//	"fmt"
+//
+//	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//	"github.com/pulumiverse/pulumi-dynatrace/sdk/go/dynatrace"
+//	"github.com/pulumiverse/pulumi-time/sdk/go/time"
+//
+// )
+//
+//	func main() {
+//		pulumi.Run(func(ctx *pulumi.Context) error {
+//			location, err := dynatrace.GetSyntheticLocation(ctx, &dynatrace.LookupSyntheticLocationArgs{
+//				Name: pulumi.StringRef("Location"),
+//			}, nil)
+//			if err != nil {
+//				return err
+//			}
+//			credentialsVault, err := dynatrace.NewCredentials(ctx, "credentials_vault", &dynatrace.CredentialsArgs{
+//				Name:        pulumi.String("#name#"),
+//				Description: pulumi.String("my credentials vault"),
+//				Scopes: pulumi.StringArray{
+//					pulumi.String("SYNTHETIC"),
+//				},
+//				Token: pulumi.String("my-token"),
+//			})
+//			if err != nil {
+//				return err
+//			}
+//			monitor, err := dynatrace.NewHttpMonitor(ctx, "monitor", &dynatrace.HttpMonitorArgs{
+//				AnomalyDetections: dynatrace.HttpMonitorAnomalyDetectionArray{
+//					&dynatrace.HttpMonitorAnomalyDetectionArgs{
+//						LoadingTimeThresholds: dynatrace.HttpMonitorAnomalyDetectionLoadingTimeThresholdArray{
+//							&dynatrace.HttpMonitorAnomalyDetectionLoadingTimeThresholdArgs{},
+//						},
+//						OutageHandlings: dynatrace.HttpMonitorAnomalyDetectionOutageHandlingArray{
+//							&dynatrace.HttpMonitorAnomalyDetectionOutageHandlingArgs{
+//								GlobalOutage: pulumi.Bool(true),
+//								GlobalOutagePolicies: dynatrace.HttpMonitorAnomalyDetectionOutageHandlingGlobalOutagePolicyArray{
+//									&dynatrace.HttpMonitorAnomalyDetectionOutageHandlingGlobalOutagePolicyArgs{
+//										ConsecutiveRuns: pulumi.Int(1),
+//									},
+//								},
+//							},
+//						},
+//					},
+//				},
+//				Name:      pulumi.String("#name#"),
+//				Frequency: pulumi.Int(1),
+//				Locations: pulumi.StringArray{
+//					pulumi.String(pulumi.String(location.Id)),
+//				},
+//				Script: &dynatrace.HttpMonitorScriptTypeArgs{
+//					Requests: dynatrace.HttpMonitorScriptRequestArray{
+//						&dynatrace.HttpMonitorScriptRequestArgs{
+//							Description: pulumi.String("getOffice365ActiveUserCounts"),
+//							Method:      pulumi.String("GET"),
+//							PostProcessing: pulumi.String(`if (response.getStatusCode() != 200) {
+//	    api.fail(\"HTTP error: \" + response.getStatusCode());
+//	}
+//
+//	var register = function(obj, key, value) {
+//	  if (key in obj) {
+//	      return;
+//	  }
+//	  value = value.trim();
+//	  if (value.length === 0) {
+//	      return;
+//	  }
+//	  var iValue = parseInt(value);
+//	  if (isNaN(iValue)) {
+//	      return;
+//	  }
+//	  obj[key] = iValue;
+//	};
+//
+// var lines = response.getResponseBody().trim().split(\"\
+// \");
+// var idx = 0;
+//
+// var counts = {};
+//
+//	for (idx = lines.length - 1; idx >= 0; idx--) {
+//	    var line = lines[idx].trim();
+//	    if (line.length === 0) {
+//	        continue;
+//	    }
+//	    if (line.startsWith(\"Report Refresh Date\")) {
+//	        continue;
+//	    }
+//	    var values = line.split(\",\");
+//	    register(counts, \"office365\", values[1]);
+//	    register(counts, \"exchange\", values[2]);
+//	    register(counts, \"onedrive\", values[3]);
+//	    register(counts, \"sharepoint\", values[4]);
+//	    register(counts, \"skype\", values[5]);
+//	    register(counts, \"yammer\", values[6]);
+//	    register(counts, \"teams\", values[7]);
+//	}
+//
+// if (\"office365\" in counts) api.setValue(\"office365\", counts.office365);
+// if (\"exchange\" in counts) api.setValue(\"exchange\", counts.exchange);
+// if (\"onedrive\" in counts) api.setValue(\"onedrive\", counts.onedrive);
+// if (\"sharepoint\" in counts) api.setValue(\"sharepoint\", counts.sharepoint);
+// if (\"skype\" in counts) api.setValue(\"skype\", counts.skype);
+// if (\"yammer\" in counts) api.setValue(\"yammer\", counts.yammer);
+// if (\"teams\" in counts) api.setValue(\"teams\", counts.teams);
+// `),
+//
+//							Url: pulumi.String("https://graph.microsoft.com/v1.0/reports/getOffice365ActiveUserCounts(period='D7')"),
+//							Configuration: &dynatrace.HttpMonitorScriptRequestConfigurationArgs{
+//								AcceptAnyCertificate: pulumi.Bool(true),
+//								FollowRedirects:      pulumi.Bool(true),
+//								Headers: &dynatrace.HttpMonitorScriptRequestConfigurationHeadersArgs{
+//									Headers: dynatrace.HttpMonitorScriptRequestConfigurationHeadersHeaderArray{
+//										&dynatrace.HttpMonitorScriptRequestConfigurationHeadersHeaderArgs{
+//											Name: pulumi.String("Authorization"),
+//											Value: credentialsVault.ID().ApplyT(func(id string) (string, error) {
+//												return fmt.Sprintf("Bearer {%v|token}", id), nil
+//											}).(pulumi.StringOutput),
+//										},
+//										&dynatrace.HttpMonitorScriptRequestConfigurationHeadersHeaderArgs{
+//											Name:  pulumi.String("Accept"),
+//											Value: pulumi.String("application/json"),
+//										},
+//									},
+//								},
+//							},
+//						},
+//						&dynatrace.HttpMonitorScriptRequestArgs{
+//							Description: pulumi.String("getMailboxUsageQuotaStatusMailboxCounts"),
+//							Method:      pulumi.String("GET"),
+//							PostProcessing: pulumi.String(`if (response.getStatusCode() != 200) {
+//	    api.fail(\"HTTP error: \" + response.getStatusCode());
+//	}
+//
+//	var register = function(obj, key, value) {
+//	  if (key in obj) {
+//	      return;
+//	  }
+//	  value = value.trim();
+//	  if (value.length === 0) {
+//	      return;
+//	  }
+//	  var iValue = parseInt(value);
+//	  if (isNaN(iValue)) {
+//	      return;
+//	  }
+//	  obj[key] = iValue;
+//	};
+//
+// var lines = response.getResponseBody().trim().split(\"\
+// \");
+// var idx = 0;
+//
+// var counts = {};
+//
+//	for (idx = lines.length - 1; idx >= 0; idx--) {
+//	    var line = lines[idx].trim();
+//	    if (line.length === 0) {
+//	        continue;
+//	    }
+//	    if (line.startsWith(\"Report Refresh Date\")) {
+//	        continue;
+//	    }
+//	    var values = line.split(\",\");
+//	    register(counts, \"under_limit\", values[1]);
+//	    register(counts, \"warning_issued\", values[2]);
+//	    register(counts, \"send_prohibited\", values[3]);
+//	    register(counts, \"send_receive_prohibited\", values[4]);
+//	    register(counts, \"indeterminate\", values[5]);
+//	}
+//
+// api.setValue(\"under_limit\", (\"under_limit\" in counts) ? counts.under_limit : 0);
+// api.setValue(\"warning_issued\", (\"warning_issued\" in counts) ? counts.warning_issued : 0);
+// api.setValue(\"send_prohibited\", (\"send_prohibited\" in counts) ? counts.send_prohibited : 0);
+// api.setValue(\"send_receive_prohibited\", (\"send_receive_prohibited\" in counts) ? counts.send_receive_prohibited : 0);
+// api.setValue(\"indeterminate\", (\"indeterminate\" in counts) ? counts.send_receive_prohibited : 0);
+// `),
+//
+//							Url: pulumi.String("https://graph.microsoft.com/v1.0/reports/getMailboxUsageQuotaStatusMailboxCounts(period='D7')"),
+//							Configuration: &dynatrace.HttpMonitorScriptRequestConfigurationArgs{
+//								AcceptAnyCertificate: pulumi.Bool(true),
+//								FollowRedirects:      pulumi.Bool(true),
+//								Headers: &dynatrace.HttpMonitorScriptRequestConfigurationHeadersArgs{
+//									Headers: dynatrace.HttpMonitorScriptRequestConfigurationHeadersHeaderArray{
+//										&dynatrace.HttpMonitorScriptRequestConfigurationHeadersHeaderArgs{
+//											Name: pulumi.String("Authorization"),
+//											Value: credentialsVault.ID().ApplyT(func(id string) (string, error) {
+//												return fmt.Sprintf("Bearer {%v|token}", id), nil
+//											}).(pulumi.StringOutput),
+//										},
+//									},
+//								},
+//							},
+//							Validation: &dynatrace.HttpMonitorScriptRequestValidationArgs{
+//								Rules: dynatrace.HttpMonitorScriptRequestValidationRuleArray{
+//									&dynatrace.HttpMonitorScriptRequestValidationRuleArgs{
+//										Type:  pulumi.String("httpStatusesList"),
+//										Value: pulumi.String(">=400"),
+//									},
+//								},
+//							},
+//						},
+//						&dynatrace.HttpMonitorScriptRequestArgs{
+//							Description: pulumi.String("getMailboxUsageStorage"),
+//							Method:      pulumi.String("GET"),
+//							PostProcessing: pulumi.String(`if (response.getStatusCode() != 200) {
+//	    api.fail(\"HTTP error: \" + response.getStatusCode());
+//	}
+//
+//	var register = function(obj, key, value) {
+//	  if (key in obj) {
+//	      return;
+//	  }
+//	  value = value.trim();
+//	  if (value.length === 0) {
+//	      return;
+//	  }
+//	  var iValue = parseInt(value);
+//	  if (isNaN(iValue)) {
+//	      return;
+//	  }
+//	  obj[key] = iValue;
+//	};
+//
+// var lines = response.getResponseBody().trim().split(\"\
+// \");
+// var idx = 0;
+//
+// var counts = {};
+//
+//	for (idx = lines.length - 1; idx >= 0; idx--) {
+//	    var line = lines[idx].trim();
+//	    if (line.length === 0) {
+//	        continue;
+//	    }
+//	    if (line.startsWith(\"Report Refresh Date\")) {
+//	        continue;
+//	    }
+//	    var values = line.split(\",\");
+//	    register(counts, \"storage_used\", values[1]);
+//	}
+//
+// api.setValue(\"storage_used\", (\"storage_used\" in counts) ? counts.storage_used / 1024 / 1024 / 1024 : 0);
+// api.setValue(\"storage_used_mailbox\", (\"storage_used\" in counts) ? counts.storage_used / 1024 / 1024 / 1024 : 0);
+// `),
+//
+//							Url: pulumi.String("https://graph.microsoft.com/v1.0/reports/getMailboxUsageStorage(period='D7')"),
+//							Configuration: &dynatrace.HttpMonitorScriptRequestConfigurationArgs{
+//								AcceptAnyCertificate: pulumi.Bool(true),
+//								FollowRedirects:      pulumi.Bool(true),
+//								Headers: &dynatrace.HttpMonitorScriptRequestConfigurationHeadersArgs{
+//									Headers: dynatrace.HttpMonitorScriptRequestConfigurationHeadersHeaderArray{
+//										&dynatrace.HttpMonitorScriptRequestConfigurationHeadersHeaderArgs{
+//											Name: pulumi.String("Authorization"),
+//											Value: credentialsVault.ID().ApplyT(func(id string) (string, error) {
+//												return fmt.Sprintf("Bearer {%v|token}", id), nil
+//											}).(pulumi.StringOutput),
+//										},
+//									},
+//								},
+//							},
+//							Validation: &dynatrace.HttpMonitorScriptRequestValidationArgs{
+//								Rules: dynatrace.HttpMonitorScriptRequestValidationRuleArray{
+//									&dynatrace.HttpMonitorScriptRequestValidationRuleArgs{
+//										Type:  pulumi.String("httpStatusesList"),
+//										Value: pulumi.String(">=400"),
+//									},
+//								},
+//							},
+//						},
+//						&dynatrace.HttpMonitorScriptRequestArgs{
+//							Description: pulumi.String("getSharePointSiteUsageStorage"),
+//							Method:      pulumi.String("GET"),
+//							PostProcessing: pulumi.String(`if (response.getStatusCode() != 200) {
+//	    api.fail(\"HTTP error: \" + response.getStatusCode());
+//	}
+//
+//	var register = function(obj, key, value) {
+//	  if (key in obj) {
+//	      return;
+//	  }
+//	  value = value.trim();
+//	  if (value.length === 0) {
+//	      return;
+//	  }
+//	  var iValue = parseInt(value);
+//	  if (isNaN(iValue)) {
+//	      return;
+//	  }
+//	  obj[key] = iValue;
+//	};
+//
+// var lines = response.getResponseBody().trim().split(\"\
+// \");
+// var idx = 0;
+//
+// var counts = {};
+//
+//	for (idx = lines.length - 1; idx >= 0; idx--) {
+//	    var line = lines[idx].trim();
+//	    if (line.length === 0) {
+//	        continue;
+//	    }
+//	    if (line.startsWith(\"Report Refresh Date\")) {
+//	        continue;
+//	    }
+//	    if (!line.includes(\",All,\")) {
+//	        continue;
+//	    }
+//	    var values = line.split(\",\");
+//	    register(counts, \"storage_used\", values[2]);
+//	}
+//
+// api.setValue(\"storage_used_sharepoint\", (\"storage_used\" in counts) ? counts.storage_used / 1024 / 1024 / 1024 : 0);
+// `),
+//
+//							Url: pulumi.String("https://graph.microsoft.com/v1.0/reports/getSharePointSiteUsageStorage(period='D7')"),
+//							Configuration: &dynatrace.HttpMonitorScriptRequestConfigurationArgs{
+//								AcceptAnyCertificate: pulumi.Bool(true),
+//								FollowRedirects:      pulumi.Bool(true),
+//								Headers: &dynatrace.HttpMonitorScriptRequestConfigurationHeadersArgs{
+//									Headers: dynatrace.HttpMonitorScriptRequestConfigurationHeadersHeaderArray{
+//										&dynatrace.HttpMonitorScriptRequestConfigurationHeadersHeaderArgs{
+//											Name: pulumi.String("Authorization"),
+//											Value: credentialsVault.ID().ApplyT(func(id string) (string, error) {
+//												return fmt.Sprintf("Bearer {%v|token}", id), nil
+//											}).(pulumi.StringOutput),
+//										},
+//									},
+//								},
+//							},
+//							Validation: &dynatrace.HttpMonitorScriptRequestValidationArgs{
+//								Rules: dynatrace.HttpMonitorScriptRequestValidationRuleArray{
+//									&dynatrace.HttpMonitorScriptRequestValidationRuleArgs{
+//										Type:  pulumi.String("httpStatusesList"),
+//										Value: pulumi.String(">=400"),
+//									},
+//								},
+//							},
+//						},
+//						&dynatrace.HttpMonitorScriptRequestArgs{
+//							Description: pulumi.String("getOneDriveUsageStorage"),
+//							Method:      pulumi.String("GET"),
+//							PostProcessing: pulumi.String(`if (response.getStatusCode() != 200) {
+//	    api.fail(\"HTTP error: \" + response.getStatusCode());
+//	}
+//
+//	var register = function(obj, key, value) {
+//	  if (key in obj) {
+//	      return;
+//	  }
+//	  value = value.trim();
+//	  if (value.length === 0) {
+//	      return;
+//	  }
+//	  var iValue = parseInt(value);
+//	  if (isNaN(iValue)) {
+//	      return;
+//	  }
+//	  obj[key] = iValue;
+//	};
+//
+// var lines = response.getResponseBody().trim().split(\"\
+// \");
+// var idx = 0;
+//
+// var counts = {};
+//
+//	for (idx = lines.length - 1; idx >= 0; idx--) {
+//	    var line = lines[idx].trim();
+//	    if (line.length === 0) {
+//	        continue;
+//	    }
+//	    if (line.startsWith(\"Report Refresh Date\")) {
+//	        continue;
+//	    }
+//	    if (!line.includes(\",All,\")) {
+//	        continue;
+//	    }
+//	    var values = line.split(\",\");
+//	    register(counts, \"storage_used\", values[2]);
+//	}
+//
+// api.setValue(\"storage_used_onedrive\", (\"storage_used\" in counts) ? counts.storage_used / 1024 / 1024 / 1024 : 0);
+// `),
+//
+//							Url: pulumi.String("https://graph.microsoft.com/v1.0/reports/getOneDriveUsageStorage(period='D7')"),
+//							Configuration: &dynatrace.HttpMonitorScriptRequestConfigurationArgs{
+//								AcceptAnyCertificate: pulumi.Bool(true),
+//								FollowRedirects:      pulumi.Bool(true),
+//								Headers: &dynatrace.HttpMonitorScriptRequestConfigurationHeadersArgs{
+//									Headers: dynatrace.HttpMonitorScriptRequestConfigurationHeadersHeaderArray{
+//										&dynatrace.HttpMonitorScriptRequestConfigurationHeadersHeaderArgs{
+//											Name: pulumi.String("Authorization"),
+//											Value: credentialsVault.ID().ApplyT(func(id string) (string, error) {
+//												return fmt.Sprintf("Bearer {%v|token}", id), nil
+//											}).(pulumi.StringOutput),
+//										},
+//									},
+//								},
+//							},
+//							Validation: &dynatrace.HttpMonitorScriptRequestValidationArgs{
+//								Rules: dynatrace.HttpMonitorScriptRequestValidationRuleArray{
+//									&dynatrace.HttpMonitorScriptRequestValidationRuleArgs{
+//										Type:  pulumi.String("httpStatusesList"),
+//										Value: pulumi.String(">=400"),
+//									},
+//								},
+//							},
+//						},
+//						&dynatrace.HttpMonitorScriptRequestArgs{
+//							Description: pulumi.String("ServiceComms/CurrentStatus"),
+//							Method:      pulumi.String("GET"),
+//							PostProcessing: pulumi.String(`var healthyStates = [
+//	    \"PostIncidentReviewPublished\",
+//	    \"ServiceRestored\",
+//	    \"ServiceOperational\",
+//	    \"FalsePositive\"
+//
+// ];
+// /* Work load status per https://docs.microsoft.com/en-us/office/office-365-management-api/office-365-service-communications-api-reference#status-definitions
+// Investigating
+// ServiceDegradation
+// ServiceInterruption
+// RestoringService
+// ExtendedRecovery
+// InvestigationSuspended
+// ServiceRestored
+// FalsePositive
+// PostIncidentReportPublished
+// ServiceOperational
+// */
+//
+// json = JSON.parse(response.getResponseBody());
+//
+// var payload = \"office365.service.status.queried 1\";
+//
+//	json.value.forEach(element => {
+//	    payload = payload + \"\
+//
+// office365.service.status,workload=\" + element.Workload + \",status=\" + element.Status + \",healthy=\" + (healthyStates.indexOf(element.Status) >= 0) + \" 1\";
+// });
+// api.setValue(\"service_status\", payload);
+// `),
+//
+//		Url: credentialsVault.ID().ApplyT(func(id string) (string, error) {
+//			return fmt.Sprintf("https://manage.office.com/api/v1.0/{%v|token}/ServiceComms/CurrentStatus", id), nil
+//		}).(pulumi.StringOutput),
+//		Configuration: &dynatrace.HttpMonitorScriptRequestConfigurationArgs{
+//			AcceptAnyCertificate: pulumi.Bool(true),
+//			FollowRedirects:      pulumi.Bool(true),
+//			Headers: &dynatrace.HttpMonitorScriptRequestConfigurationHeadersArgs{
+//				Headers: dynatrace.HttpMonitorScriptRequestConfigurationHeadersHeaderArray{
+//					&dynatrace.HttpMonitorScriptRequestConfigurationHeadersHeaderArgs{
+//						Name: pulumi.String("Authorization"),
+//						Value: credentialsVault.ID().ApplyT(func(id string) (string, error) {
+//							return fmt.Sprintf("Bearer {%v|token}", id), nil
+//						}).(pulumi.StringOutput),
+//					},
+//					&dynatrace.HttpMonitorScriptRequestConfigurationHeadersHeaderArgs{
+//						Name:  pulumi.String("Accept"),
+//						Value: pulumi.String("application/json"),
+//					},
+//				},
+//			},
+//		},
+//		Validation: &dynatrace.HttpMonitorScriptRequestValidationArgs{
+//			Rules: dynatrace.HttpMonitorScriptRequestValidationRuleArray{
+//				&dynatrace.HttpMonitorScriptRequestValidationRuleArgs{
+//					Type:  pulumi.String("httpStatusesList"),
+//					Value: pulumi.String(">=400"),
+//				},
+//			},
+//		},
+//	},
+//	&dynatrace.HttpMonitorScriptRequestArgs{
+//		Description: pulumi.String("api/v2/metrics/ingest"),
+//		Body: pulumi.String(`office365.user.count,product=sharepoint {sharepoint}
+//
+// office365.user.count,product=onedrive {onedrive}
+// office365.user.count,product=yammer {yammer}
+// office365.user.count,product=office365 {office365}
+// office365.user.count,product=skype {skype}
+// office365.user.count,product=exchange {exchange}
+// office365.user.count,product=teams {teams}
+// office365.mailbox.quota.count,category=under_limit {under_limit}
+// office365.mailbox.quota.count,category=warning_issued {warning_issued}
+// office365.mailbox.quota.count,category=send_prohibited {send_prohibited}
+// office365.mailbox.quota.count,category=send_receive_prohibited {send_receive_prohibited}
+// office365.mailbox.quota.count,category=indeterminate {indeterminate}
+// office365.storage.used.bytes,site=outlook {storage_used_mailbox}
+// office365.storage.used.bytes,site=sharepoint {storage_used_sharepoint}
+// office365.storage.used.bytes,site=onedrive {storage_used_onedrive}
+// {service_status}
+// `),
+//
+//							Method: pulumi.String("POST"),
+//							Url:    pulumi.String("https://siz65484.live.dynatrace.com/api/v2/metrics/ingest"),
+//							Configuration: &dynatrace.HttpMonitorScriptRequestConfigurationArgs{
+//								AcceptAnyCertificate: pulumi.Bool(true),
+//								FollowRedirects:      pulumi.Bool(true),
+//								Headers: &dynatrace.HttpMonitorScriptRequestConfigurationHeadersArgs{
+//									Headers: dynatrace.HttpMonitorScriptRequestConfigurationHeadersHeaderArray{
+//										&dynatrace.HttpMonitorScriptRequestConfigurationHeadersHeaderArgs{
+//											Name:  pulumi.String("Content-Type"),
+//											Value: pulumi.String("text/plain"),
+//										},
+//										&dynatrace.HttpMonitorScriptRequestConfigurationHeadersHeaderArgs{
+//											Name: pulumi.String("Authorization"),
+//											Value: credentialsVault.ID().ApplyT(func(id string) (string, error) {
+//												return fmt.Sprintf("Api-Token {%v|token}", id), nil
+//											}).(pulumi.StringOutput),
+//										},
+//									},
+//								},
+//							},
+//							Validation: &dynatrace.HttpMonitorScriptRequestValidationArgs{
+//								Rules: dynatrace.HttpMonitorScriptRequestValidationRuleArray{
+//									&dynatrace.HttpMonitorScriptRequestValidationRuleArgs{
+//										Type:  pulumi.String("httpStatusesList"),
+//										Value: pulumi.String(">=400"),
+//									},
+//								},
+//							},
+//						},
+//					},
+//				},
+//			})
+//			if err != nil {
+//				return err
+//			}
+//			_, err = time.NewSleep(ctx, "wait_to_be_consistent", &time.SleepArgs{
+//				CreateDuration: pulumi.String("10s"),
+//			}, pulumi.DependsOn([]pulumi.Resource{
+//				monitor,
+//			}))
+//			if err != nil {
+//				return err
+//			}
+//			return nil
+//		})
+//	}
+//
+// ```
 type HttpMonitor struct {
 	pulumi.CustomResourceState
 

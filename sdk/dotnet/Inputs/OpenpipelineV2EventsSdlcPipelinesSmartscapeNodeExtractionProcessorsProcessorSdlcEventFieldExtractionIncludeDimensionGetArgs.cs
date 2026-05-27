@@ -14,6 +14,18 @@ namespace Pulumiverse.Dynatrace.Inputs
     public sealed class OpenpipelineV2EventsSdlcPipelinesSmartscapeNodeExtractionProcessorsProcessorSdlcEventFieldExtractionIncludeDimensionGetArgs : global::Pulumi.ResourceArgs
     {
         /// <summary>
+        /// Destination field name
+        /// </summary>
+        [Input("constantFieldName")]
+        public Input<string>? ConstantFieldName { get; set; }
+
+        /// <summary>
+        /// Constant value to be assigned to field
+        /// </summary>
+        [Input("constantValue")]
+        public Input<string>? ConstantValue { get; set; }
+
+        /// <summary>
         /// Default value
         /// </summary>
         [Input("defaultValue")]
@@ -26,10 +38,16 @@ namespace Pulumiverse.Dynatrace.Inputs
         public Input<string>? DestinationFieldName { get; set; }
 
         /// <summary>
+        /// Field value extraction type. Possible values: `Constant`, `Field`
+        /// </summary>
+        [Input("extractionType")]
+        public Input<string>? ExtractionType { get; set; }
+
+        /// <summary>
         /// Source field name
         /// </summary>
-        [Input("sourceFieldName", required: true)]
-        public Input<string> SourceFieldName { get; set; } = null!;
+        [Input("sourceFieldName")]
+        public Input<string>? SourceFieldName { get; set; }
 
         public OpenpipelineV2EventsSdlcPipelinesSmartscapeNodeExtractionProcessorsProcessorSdlcEventFieldExtractionIncludeDimensionGetArgs()
         {

@@ -24,6 +24,102 @@ namespace Pulumiverse.Dynatrace
     /// - `terraform-provider-dynatrace -export dynatrace.CalculatedSyntheticMetric` downloads all existing calculated synthetic metric configuration
     /// 
     /// The full documentation of the export feature is available [here](https://dt-url.net/h203qmc).
+    /// 
+    /// ## Resource Example Usage
+    /// 
+    /// ```csharp
+    /// using System.Collections.Generic;
+    /// using System.Linq;
+    /// using Pulumi;
+    /// using Dynatrace = Pulumiverse.Dynatrace;
+    /// 
+    /// return await Deployment.RunAsync(() =&gt; 
+    /// {
+    ///     var location = Dynatrace.GetSyntheticLocation.Invoke(new()
+    ///     {
+    ///         Name = "Location",
+    ///     });
+    /// 
+    ///     var monitor = new Dynatrace.BrowserMonitor("monitor", new()
+    ///     {
+    ///         Name = "#name#",
+    ///         Frequency = 15,
+    ///         Locations = new[]
+    ///         {
+    ///             location.Apply(getSyntheticLocationResult =&gt; getSyntheticLocationResult.Id),
+    ///         },
+    ///         KeyPerformanceMetrics = new Dynatrace.Inputs.BrowserMonitorKeyPerformanceMetricsArgs
+    ///         {
+    ///             LoadActionKpm = "VISUALLY_COMPLETE",
+    ///             XhrActionKpm = "VISUALLY_COMPLETE",
+    ///         },
+    ///         AnomalyDetection = new Dynatrace.Inputs.BrowserMonitorAnomalyDetectionArgs
+    ///         {
+    ///             LoadingTimeThresholds = new[]
+    ///             {
+    ///                 new Dynatrace.Inputs.BrowserMonitorAnomalyDetectionLoadingTimeThresholdArgs
+    ///                 {
+    ///                     Enabled = false,
+    ///                 },
+    ///             },
+    ///             OutageHandlings = new[]
+    ///             {
+    ///                 new Dynatrace.Inputs.BrowserMonitorAnomalyDetectionOutageHandlingArgs
+    ///                 {
+    ///                     GlobalOutage = true,
+    ///                     LocalOutage = false,
+    ///                     RetryOnError = true,
+    ///                     GlobalOutagePolicies = new[]
+    ///                     {
+    ///                         new Dynatrace.Inputs.BrowserMonitorAnomalyDetectionOutageHandlingGlobalOutagePolicyArgs
+    ///                         {
+    ///                             ConsecutiveRuns = 1,
+    ///                         },
+    ///                     },
+    ///                 },
+    ///             },
+    ///         },
+    ///         Script = new Dynatrace.Inputs.BrowserMonitorScriptArgs
+    ///         {
+    ///             Type = "clickpath",
+    ///             Configuration = new Dynatrace.Inputs.BrowserMonitorScriptConfigurationArgs
+    ///             {
+    ///                 BypassCsp = true,
+    ///                 UserAgent = "Mozilla",
+    ///                 Device = new Dynatrace.Inputs.BrowserMonitorScriptConfigurationDeviceArgs
+    ///                 {
+    ///                     Name = "Desktop",
+    ///                     Orientation = "landscape",
+    ///                 },
+    ///             },
+    ///             Events = new Dynatrace.Inputs.BrowserMonitorScriptEventsArgs
+    ///             {
+    ///                 Events = new[]
+    ///                 {
+    ///                     new Dynatrace.Inputs.BrowserMonitorScriptEventsEventArgs
+    ///                     {
+    ///                         Description = "my description",
+    ///                         Navigate = new Dynatrace.Inputs.BrowserMonitorScriptEventsEventNavigateArgs
+    ///                         {
+    ///                             Url = "https://www.example.com",
+    ///                         },
+    ///                     },
+    ///                 },
+    ///             },
+    ///         },
+    ///     });
+    /// 
+    ///     var metric = new Dynatrace.CalculatedSyntheticMetric("metric", new()
+    ///     {
+    ///         Name = "#name#",
+    ///         Enabled = true,
+    ///         Metric = "ResourceCount",
+    ///         MetricKey = "calc:synthetic.browser.#name#",
+    ///         MonitorIdentifier = monitor.Id,
+    ///     });
+    /// 
+    /// });
+    /// ```
     /// </summary>
     [DynatraceResourceType("dynatrace:index/calculatedSyntheticMetric:CalculatedSyntheticMetric")]
     public partial class CalculatedSyntheticMetric : global::Pulumi.CustomResource

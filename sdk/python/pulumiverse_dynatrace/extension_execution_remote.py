@@ -24,7 +24,7 @@ class ExtensionExecutionRemoteArgs:
         """
         The set of arguments for constructing a ExtensionExecutionRemote resource.
 
-        :param pulumi.Input[_builtins.str] performance_profile: Select performance profile for Extension Execution Controller [Documentation](https://www.dynatrace.com/support/help/shortlink/extensions-concepts#resource-consumption)
+        :param pulumi.Input[_builtins.str] performance_profile: Select performance profile for Extension Execution Controller [Documentation](https://www.dynatrace.com/support/help/shortlink/extensions-concepts#resource-consumption). Possible values: `DEDICATED`, `DEFAULT`, `HIGH`
         :param pulumi.Input[_builtins.str] scope: The scope of this setting (ENVIRONMENT*ACTIVE*GATE)
         """
         pulumi.set(__self__, "performance_profile", performance_profile)
@@ -34,7 +34,7 @@ class ExtensionExecutionRemoteArgs:
     @pulumi.getter(name="performanceProfile")
     def performance_profile(self) -> pulumi.Input[_builtins.str]:
         """
-        Select performance profile for Extension Execution Controller [Documentation](https://www.dynatrace.com/support/help/shortlink/extensions-concepts#resource-consumption)
+        Select performance profile for Extension Execution Controller [Documentation](https://www.dynatrace.com/support/help/shortlink/extensions-concepts#resource-consumption). Possible values: `DEDICATED`, `DEFAULT`, `HIGH`
         """
         return pulumi.get(self, "performance_profile")
 
@@ -63,7 +63,7 @@ class _ExtensionExecutionRemoteState:
         """
         Input properties used for looking up and filtering ExtensionExecutionRemote resources.
 
-        :param pulumi.Input[_builtins.str] performance_profile: Select performance profile for Extension Execution Controller [Documentation](https://www.dynatrace.com/support/help/shortlink/extensions-concepts#resource-consumption)
+        :param pulumi.Input[_builtins.str] performance_profile: Select performance profile for Extension Execution Controller [Documentation](https://www.dynatrace.com/support/help/shortlink/extensions-concepts#resource-consumption). Possible values: `DEDICATED`, `DEFAULT`, `HIGH`
         :param pulumi.Input[_builtins.str] scope: The scope of this setting (ENVIRONMENT*ACTIVE*GATE)
         """
         if performance_profile is not None:
@@ -75,7 +75,7 @@ class _ExtensionExecutionRemoteState:
     @pulumi.getter(name="performanceProfile")
     def performance_profile(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
-        Select performance profile for Extension Execution Controller [Documentation](https://www.dynatrace.com/support/help/shortlink/extensions-concepts#resource-consumption)
+        Select performance profile for Extension Execution Controller [Documentation](https://www.dynatrace.com/support/help/shortlink/extensions-concepts#resource-consumption). Possible values: `DEDICATED`, `DEFAULT`, `HIGH`
         """
         return pulumi.get(self, "performance_profile")
 
@@ -123,7 +123,7 @@ class ExtensionExecutionRemote(pulumi.CustomResource):
 
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
-        :param pulumi.Input[_builtins.str] performance_profile: Select performance profile for Extension Execution Controller [Documentation](https://www.dynatrace.com/support/help/shortlink/extensions-concepts#resource-consumption)
+        :param pulumi.Input[_builtins.str] performance_profile: Select performance profile for Extension Execution Controller [Documentation](https://www.dynatrace.com/support/help/shortlink/extensions-concepts#resource-consumption). Possible values: `DEDICATED`, `DEFAULT`, `HIGH`
         :param pulumi.Input[_builtins.str] scope: The scope of this setting (ENVIRONMENT*ACTIVE*GATE)
         """
         ...
@@ -199,7 +199,7 @@ class ExtensionExecutionRemote(pulumi.CustomResource):
         :param str resource_name: The unique name of the resulting resource.
         :param pulumi.Input[str] id: The unique provider ID of the resource to lookup.
         :param pulumi.ResourceOptions opts: Options for the resource.
-        :param pulumi.Input[_builtins.str] performance_profile: Select performance profile for Extension Execution Controller [Documentation](https://www.dynatrace.com/support/help/shortlink/extensions-concepts#resource-consumption)
+        :param pulumi.Input[_builtins.str] performance_profile: Select performance profile for Extension Execution Controller [Documentation](https://www.dynatrace.com/support/help/shortlink/extensions-concepts#resource-consumption). Possible values: `DEDICATED`, `DEFAULT`, `HIGH`
         :param pulumi.Input[_builtins.str] scope: The scope of this setting (ENVIRONMENT*ACTIVE*GATE)
         """
         opts = pulumi.ResourceOptions.merge(opts, pulumi.ResourceOptions(id=id))
@@ -214,7 +214,7 @@ class ExtensionExecutionRemote(pulumi.CustomResource):
     @pulumi.getter(name="performanceProfile")
     def performance_profile(self) -> pulumi.Output[_builtins.str]:
         """
-        Select performance profile for Extension Execution Controller [Documentation](https://www.dynatrace.com/support/help/shortlink/extensions-concepts#resource-consumption)
+        Select performance profile for Extension Execution Controller [Documentation](https://www.dynatrace.com/support/help/shortlink/extensions-concepts#resource-consumption). Possible values: `DEDICATED`, `DEFAULT`, `HIGH`
         """
         return pulumi.get(self, "performance_profile")
 

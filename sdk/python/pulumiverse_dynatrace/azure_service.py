@@ -226,6 +226,7 @@ class AzureService(pulumi.CustomResource):
 
         ```python
         import pulumi
+        from typing import Any
         import pulumi_dynatrace as dynatrace
         import pulumiverse_dynatrace as dynatrace
 
@@ -242,7 +243,7 @@ class AzureService(pulumi.CustomResource):
                 "value": "string",
             }])
         supported_services = dynatrace.get_azure_supported_services(excepts=["AZURE_STORAGE_ACCOUNT"])
-        t_erraformsample_services = []
+        t_erraformsample_services: list[Any] = []
         for range in [{"key": k, "value": v} for [k, v] in enumerate(supported_services.services)]:
             t_erraformsample_services.append(dynatrace.AzureService(f"TERRAFORM_SAMPLE_services-{range['key']}",
                 credentials_id=terrafor_m__sample.id,
@@ -325,6 +326,7 @@ class AzureService(pulumi.CustomResource):
 
         ```python
         import pulumi
+        from typing import Any
         import pulumi_dynatrace as dynatrace
         import pulumiverse_dynatrace as dynatrace
 
@@ -341,7 +343,7 @@ class AzureService(pulumi.CustomResource):
                 "value": "string",
             }])
         supported_services = dynatrace.get_azure_supported_services(excepts=["AZURE_STORAGE_ACCOUNT"])
-        t_erraformsample_services = []
+        t_erraformsample_services: list[Any] = []
         for range in [{"key": k, "value": v} for [k, v] in enumerate(supported_services.services)]:
             t_erraformsample_services.append(dynatrace.AzureService(f"TERRAFORM_SAMPLE_services-{range['key']}",
                 credentials_id=terrafor_m__sample.id,

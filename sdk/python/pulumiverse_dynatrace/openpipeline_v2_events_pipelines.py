@@ -26,10 +26,12 @@ class OpenpipelineV2EventsPipelinesArgs:
                  cost_allocation: pulumi.Input[Optional['OpenpipelineV2EventsPipelinesCostAllocationArgs']] = None,
                  data_extraction: pulumi.Input[Optional['OpenpipelineV2EventsPipelinesDataExtractionArgs']] = None,
                  davis: pulumi.Input[Optional['OpenpipelineV2EventsPipelinesDavisArgs']] = None,
+                 group_role: pulumi.Input[Optional[_builtins.str]] = None,
                  metadata_list: pulumi.Input[Optional['OpenpipelineV2EventsPipelinesMetadataListArgs']] = None,
                  metric_extraction: pulumi.Input[Optional['OpenpipelineV2EventsPipelinesMetricExtractionArgs']] = None,
                  processing: pulumi.Input[Optional['OpenpipelineV2EventsPipelinesProcessingArgs']] = None,
                  product_allocation: pulumi.Input[Optional['OpenpipelineV2EventsPipelinesProductAllocationArgs']] = None,
+                 routing: pulumi.Input[Optional[_builtins.str]] = None,
                  security_context: pulumi.Input[Optional['OpenpipelineV2EventsPipelinesSecurityContextArgs']] = None,
                  smartscape_edge_extraction: pulumi.Input[Optional['OpenpipelineV2EventsPipelinesSmartscapeEdgeExtractionArgs']] = None,
                  smartscape_node_extraction: pulumi.Input[Optional['OpenpipelineV2EventsPipelinesSmartscapeNodeExtractionArgs']] = None,
@@ -42,10 +44,12 @@ class OpenpipelineV2EventsPipelinesArgs:
         :param pulumi.Input['OpenpipelineV2EventsPipelinesCostAllocationArgs'] cost_allocation: Cost allocation stage
         :param pulumi.Input['OpenpipelineV2EventsPipelinesDataExtractionArgs'] data_extraction: Data extraction stage
         :param pulumi.Input['OpenpipelineV2EventsPipelinesDavisArgs'] davis: Davis event extraction stage
+        :param pulumi.Input[_builtins.str] group_role: Group role. Possible values: `compositionPipeline`, `memberPipeline`
         :param pulumi.Input['OpenpipelineV2EventsPipelinesMetadataListArgs'] metadata_list: Pipeline metadata list
         :param pulumi.Input['OpenpipelineV2EventsPipelinesMetricExtractionArgs'] metric_extraction: Metrics extraction stage
         :param pulumi.Input['OpenpipelineV2EventsPipelinesProcessingArgs'] processing: Processing stage
         :param pulumi.Input['OpenpipelineV2EventsPipelinesProductAllocationArgs'] product_allocation: Product allocation stage
+        :param pulumi.Input[_builtins.str] routing: Routing. Possible values: `notRoutable`, `routable`
         :param pulumi.Input['OpenpipelineV2EventsPipelinesSecurityContextArgs'] security_context: Security context stage
         :param pulumi.Input['OpenpipelineV2EventsPipelinesSmartscapeEdgeExtractionArgs'] smartscape_edge_extraction: Smartscape edge extraction stage
         :param pulumi.Input['OpenpipelineV2EventsPipelinesSmartscapeNodeExtractionArgs'] smartscape_node_extraction: Smartscape node extraction stage
@@ -59,6 +63,8 @@ class OpenpipelineV2EventsPipelinesArgs:
             pulumi.set(__self__, "data_extraction", data_extraction)
         if davis is not None:
             pulumi.set(__self__, "davis", davis)
+        if group_role is not None:
+            pulumi.set(__self__, "group_role", group_role)
         if metadata_list is not None:
             pulumi.set(__self__, "metadata_list", metadata_list)
         if metric_extraction is not None:
@@ -67,6 +73,8 @@ class OpenpipelineV2EventsPipelinesArgs:
             pulumi.set(__self__, "processing", processing)
         if product_allocation is not None:
             pulumi.set(__self__, "product_allocation", product_allocation)
+        if routing is not None:
+            pulumi.set(__self__, "routing", routing)
         if security_context is not None:
             pulumi.set(__self__, "security_context", security_context)
         if smartscape_edge_extraction is not None:
@@ -137,6 +145,18 @@ class OpenpipelineV2EventsPipelinesArgs:
         pulumi.set(self, "davis", value)
 
     @_builtins.property
+    @pulumi.getter(name="groupRole")
+    def group_role(self) -> pulumi.Input[Optional[_builtins.str]]:
+        """
+        Group role. Possible values: `compositionPipeline`, `memberPipeline`
+        """
+        return pulumi.get(self, "group_role")
+
+    @group_role.setter
+    def group_role(self, value: pulumi.Input[Optional[_builtins.str]]):
+        pulumi.set(self, "group_role", value)
+
+    @_builtins.property
     @pulumi.getter(name="metadataList")
     def metadata_list(self) -> pulumi.Input[Optional['OpenpipelineV2EventsPipelinesMetadataListArgs']]:
         """
@@ -183,6 +203,18 @@ class OpenpipelineV2EventsPipelinesArgs:
     @product_allocation.setter
     def product_allocation(self, value: pulumi.Input[Optional['OpenpipelineV2EventsPipelinesProductAllocationArgs']]):
         pulumi.set(self, "product_allocation", value)
+
+    @_builtins.property
+    @pulumi.getter
+    def routing(self) -> pulumi.Input[Optional[_builtins.str]]:
+        """
+        Routing. Possible values: `notRoutable`, `routable`
+        """
+        return pulumi.get(self, "routing")
+
+    @routing.setter
+    def routing(self, value: pulumi.Input[Optional[_builtins.str]]):
+        pulumi.set(self, "routing", value)
 
     @_builtins.property
     @pulumi.getter(name="securityContext")
@@ -241,10 +273,12 @@ class _OpenpipelineV2EventsPipelinesState:
                  data_extraction: pulumi.Input[Optional['OpenpipelineV2EventsPipelinesDataExtractionArgs']] = None,
                  davis: pulumi.Input[Optional['OpenpipelineV2EventsPipelinesDavisArgs']] = None,
                  display_name: pulumi.Input[Optional[_builtins.str]] = None,
+                 group_role: pulumi.Input[Optional[_builtins.str]] = None,
                  metadata_list: pulumi.Input[Optional['OpenpipelineV2EventsPipelinesMetadataListArgs']] = None,
                  metric_extraction: pulumi.Input[Optional['OpenpipelineV2EventsPipelinesMetricExtractionArgs']] = None,
                  processing: pulumi.Input[Optional['OpenpipelineV2EventsPipelinesProcessingArgs']] = None,
                  product_allocation: pulumi.Input[Optional['OpenpipelineV2EventsPipelinesProductAllocationArgs']] = None,
+                 routing: pulumi.Input[Optional[_builtins.str]] = None,
                  security_context: pulumi.Input[Optional['OpenpipelineV2EventsPipelinesSecurityContextArgs']] = None,
                  smartscape_edge_extraction: pulumi.Input[Optional['OpenpipelineV2EventsPipelinesSmartscapeEdgeExtractionArgs']] = None,
                  smartscape_node_extraction: pulumi.Input[Optional['OpenpipelineV2EventsPipelinesSmartscapeNodeExtractionArgs']] = None,
@@ -257,10 +291,12 @@ class _OpenpipelineV2EventsPipelinesState:
         :param pulumi.Input['OpenpipelineV2EventsPipelinesDataExtractionArgs'] data_extraction: Data extraction stage
         :param pulumi.Input['OpenpipelineV2EventsPipelinesDavisArgs'] davis: Davis event extraction stage
         :param pulumi.Input[_builtins.str] display_name: Display name
+        :param pulumi.Input[_builtins.str] group_role: Group role. Possible values: `compositionPipeline`, `memberPipeline`
         :param pulumi.Input['OpenpipelineV2EventsPipelinesMetadataListArgs'] metadata_list: Pipeline metadata list
         :param pulumi.Input['OpenpipelineV2EventsPipelinesMetricExtractionArgs'] metric_extraction: Metrics extraction stage
         :param pulumi.Input['OpenpipelineV2EventsPipelinesProcessingArgs'] processing: Processing stage
         :param pulumi.Input['OpenpipelineV2EventsPipelinesProductAllocationArgs'] product_allocation: Product allocation stage
+        :param pulumi.Input[_builtins.str] routing: Routing. Possible values: `notRoutable`, `routable`
         :param pulumi.Input['OpenpipelineV2EventsPipelinesSecurityContextArgs'] security_context: Security context stage
         :param pulumi.Input['OpenpipelineV2EventsPipelinesSmartscapeEdgeExtractionArgs'] smartscape_edge_extraction: Smartscape edge extraction stage
         :param pulumi.Input['OpenpipelineV2EventsPipelinesSmartscapeNodeExtractionArgs'] smartscape_node_extraction: Smartscape node extraction stage
@@ -276,6 +312,8 @@ class _OpenpipelineV2EventsPipelinesState:
             pulumi.set(__self__, "davis", davis)
         if display_name is not None:
             pulumi.set(__self__, "display_name", display_name)
+        if group_role is not None:
+            pulumi.set(__self__, "group_role", group_role)
         if metadata_list is not None:
             pulumi.set(__self__, "metadata_list", metadata_list)
         if metric_extraction is not None:
@@ -284,6 +322,8 @@ class _OpenpipelineV2EventsPipelinesState:
             pulumi.set(__self__, "processing", processing)
         if product_allocation is not None:
             pulumi.set(__self__, "product_allocation", product_allocation)
+        if routing is not None:
+            pulumi.set(__self__, "routing", routing)
         if security_context is not None:
             pulumi.set(__self__, "security_context", security_context)
         if smartscape_edge_extraction is not None:
@@ -354,6 +394,18 @@ class _OpenpipelineV2EventsPipelinesState:
         pulumi.set(self, "display_name", value)
 
     @_builtins.property
+    @pulumi.getter(name="groupRole")
+    def group_role(self) -> pulumi.Input[Optional[_builtins.str]]:
+        """
+        Group role. Possible values: `compositionPipeline`, `memberPipeline`
+        """
+        return pulumi.get(self, "group_role")
+
+    @group_role.setter
+    def group_role(self, value: pulumi.Input[Optional[_builtins.str]]):
+        pulumi.set(self, "group_role", value)
+
+    @_builtins.property
     @pulumi.getter(name="metadataList")
     def metadata_list(self) -> pulumi.Input[Optional['OpenpipelineV2EventsPipelinesMetadataListArgs']]:
         """
@@ -400,6 +452,18 @@ class _OpenpipelineV2EventsPipelinesState:
     @product_allocation.setter
     def product_allocation(self, value: pulumi.Input[Optional['OpenpipelineV2EventsPipelinesProductAllocationArgs']]):
         pulumi.set(self, "product_allocation", value)
+
+    @_builtins.property
+    @pulumi.getter
+    def routing(self) -> pulumi.Input[Optional[_builtins.str]]:
+        """
+        Routing. Possible values: `notRoutable`, `routable`
+        """
+        return pulumi.get(self, "routing")
+
+    @routing.setter
+    def routing(self, value: pulumi.Input[Optional[_builtins.str]]):
+        pulumi.set(self, "routing", value)
 
     @_builtins.property
     @pulumi.getter(name="securityContext")
@@ -461,10 +525,12 @@ class OpenpipelineV2EventsPipelines(pulumi.CustomResource):
                  data_extraction: pulumi.Input[Optional[Union['OpenpipelineV2EventsPipelinesDataExtractionArgs', 'OpenpipelineV2EventsPipelinesDataExtractionArgsDict']]] = None,
                  davis: pulumi.Input[Optional[Union['OpenpipelineV2EventsPipelinesDavisArgs', 'OpenpipelineV2EventsPipelinesDavisArgsDict']]] = None,
                  display_name: pulumi.Input[Optional[_builtins.str]] = None,
+                 group_role: pulumi.Input[Optional[_builtins.str]] = None,
                  metadata_list: pulumi.Input[Optional[Union['OpenpipelineV2EventsPipelinesMetadataListArgs', 'OpenpipelineV2EventsPipelinesMetadataListArgsDict']]] = None,
                  metric_extraction: pulumi.Input[Optional[Union['OpenpipelineV2EventsPipelinesMetricExtractionArgs', 'OpenpipelineV2EventsPipelinesMetricExtractionArgsDict']]] = None,
                  processing: pulumi.Input[Optional[Union['OpenpipelineV2EventsPipelinesProcessingArgs', 'OpenpipelineV2EventsPipelinesProcessingArgsDict']]] = None,
                  product_allocation: pulumi.Input[Optional[Union['OpenpipelineV2EventsPipelinesProductAllocationArgs', 'OpenpipelineV2EventsPipelinesProductAllocationArgsDict']]] = None,
+                 routing: pulumi.Input[Optional[_builtins.str]] = None,
                  security_context: pulumi.Input[Optional[Union['OpenpipelineV2EventsPipelinesSecurityContextArgs', 'OpenpipelineV2EventsPipelinesSecurityContextArgsDict']]] = None,
                  smartscape_edge_extraction: pulumi.Input[Optional[Union['OpenpipelineV2EventsPipelinesSmartscapeEdgeExtractionArgs', 'OpenpipelineV2EventsPipelinesSmartscapeEdgeExtractionArgsDict']]] = None,
                  smartscape_node_extraction: pulumi.Input[Optional[Union['OpenpipelineV2EventsPipelinesSmartscapeNodeExtractionArgs', 'OpenpipelineV2EventsPipelinesSmartscapeNodeExtractionArgsDict']]] = None,
@@ -745,10 +811,12 @@ class OpenpipelineV2EventsPipelines(pulumi.CustomResource):
         :param pulumi.Input[Union['OpenpipelineV2EventsPipelinesDataExtractionArgs', 'OpenpipelineV2EventsPipelinesDataExtractionArgsDict']] data_extraction: Data extraction stage
         :param pulumi.Input[Union['OpenpipelineV2EventsPipelinesDavisArgs', 'OpenpipelineV2EventsPipelinesDavisArgsDict']] davis: Davis event extraction stage
         :param pulumi.Input[_builtins.str] display_name: Display name
+        :param pulumi.Input[_builtins.str] group_role: Group role. Possible values: `compositionPipeline`, `memberPipeline`
         :param pulumi.Input[Union['OpenpipelineV2EventsPipelinesMetadataListArgs', 'OpenpipelineV2EventsPipelinesMetadataListArgsDict']] metadata_list: Pipeline metadata list
         :param pulumi.Input[Union['OpenpipelineV2EventsPipelinesMetricExtractionArgs', 'OpenpipelineV2EventsPipelinesMetricExtractionArgsDict']] metric_extraction: Metrics extraction stage
         :param pulumi.Input[Union['OpenpipelineV2EventsPipelinesProcessingArgs', 'OpenpipelineV2EventsPipelinesProcessingArgsDict']] processing: Processing stage
         :param pulumi.Input[Union['OpenpipelineV2EventsPipelinesProductAllocationArgs', 'OpenpipelineV2EventsPipelinesProductAllocationArgsDict']] product_allocation: Product allocation stage
+        :param pulumi.Input[_builtins.str] routing: Routing. Possible values: `notRoutable`, `routable`
         :param pulumi.Input[Union['OpenpipelineV2EventsPipelinesSecurityContextArgs', 'OpenpipelineV2EventsPipelinesSecurityContextArgsDict']] security_context: Security context stage
         :param pulumi.Input[Union['OpenpipelineV2EventsPipelinesSmartscapeEdgeExtractionArgs', 'OpenpipelineV2EventsPipelinesSmartscapeEdgeExtractionArgsDict']] smartscape_edge_extraction: Smartscape edge extraction stage
         :param pulumi.Input[Union['OpenpipelineV2EventsPipelinesSmartscapeNodeExtractionArgs', 'OpenpipelineV2EventsPipelinesSmartscapeNodeExtractionArgsDict']] smartscape_node_extraction: Smartscape node extraction stage
@@ -1048,10 +1116,12 @@ class OpenpipelineV2EventsPipelines(pulumi.CustomResource):
                  data_extraction: pulumi.Input[Optional[Union['OpenpipelineV2EventsPipelinesDataExtractionArgs', 'OpenpipelineV2EventsPipelinesDataExtractionArgsDict']]] = None,
                  davis: pulumi.Input[Optional[Union['OpenpipelineV2EventsPipelinesDavisArgs', 'OpenpipelineV2EventsPipelinesDavisArgsDict']]] = None,
                  display_name: pulumi.Input[Optional[_builtins.str]] = None,
+                 group_role: pulumi.Input[Optional[_builtins.str]] = None,
                  metadata_list: pulumi.Input[Optional[Union['OpenpipelineV2EventsPipelinesMetadataListArgs', 'OpenpipelineV2EventsPipelinesMetadataListArgsDict']]] = None,
                  metric_extraction: pulumi.Input[Optional[Union['OpenpipelineV2EventsPipelinesMetricExtractionArgs', 'OpenpipelineV2EventsPipelinesMetricExtractionArgsDict']]] = None,
                  processing: pulumi.Input[Optional[Union['OpenpipelineV2EventsPipelinesProcessingArgs', 'OpenpipelineV2EventsPipelinesProcessingArgsDict']]] = None,
                  product_allocation: pulumi.Input[Optional[Union['OpenpipelineV2EventsPipelinesProductAllocationArgs', 'OpenpipelineV2EventsPipelinesProductAllocationArgsDict']]] = None,
+                 routing: pulumi.Input[Optional[_builtins.str]] = None,
                  security_context: pulumi.Input[Optional[Union['OpenpipelineV2EventsPipelinesSecurityContextArgs', 'OpenpipelineV2EventsPipelinesSecurityContextArgsDict']]] = None,
                  smartscape_edge_extraction: pulumi.Input[Optional[Union['OpenpipelineV2EventsPipelinesSmartscapeEdgeExtractionArgs', 'OpenpipelineV2EventsPipelinesSmartscapeEdgeExtractionArgsDict']]] = None,
                  smartscape_node_extraction: pulumi.Input[Optional[Union['OpenpipelineV2EventsPipelinesSmartscapeNodeExtractionArgs', 'OpenpipelineV2EventsPipelinesSmartscapeNodeExtractionArgsDict']]] = None,
@@ -1074,10 +1144,12 @@ class OpenpipelineV2EventsPipelines(pulumi.CustomResource):
             if display_name is None and not opts.urn:
                 raise TypeError("Missing required property 'display_name'")
             __props__.__dict__["display_name"] = display_name
+            __props__.__dict__["group_role"] = group_role
             __props__.__dict__["metadata_list"] = metadata_list
             __props__.__dict__["metric_extraction"] = metric_extraction
             __props__.__dict__["processing"] = processing
             __props__.__dict__["product_allocation"] = product_allocation
+            __props__.__dict__["routing"] = routing
             __props__.__dict__["security_context"] = security_context
             __props__.__dict__["smartscape_edge_extraction"] = smartscape_edge_extraction
             __props__.__dict__["smartscape_node_extraction"] = smartscape_node_extraction
@@ -1097,10 +1169,12 @@ class OpenpipelineV2EventsPipelines(pulumi.CustomResource):
             data_extraction: pulumi.Input[Optional[Union['OpenpipelineV2EventsPipelinesDataExtractionArgs', 'OpenpipelineV2EventsPipelinesDataExtractionArgsDict']]] = None,
             davis: pulumi.Input[Optional[Union['OpenpipelineV2EventsPipelinesDavisArgs', 'OpenpipelineV2EventsPipelinesDavisArgsDict']]] = None,
             display_name: pulumi.Input[Optional[_builtins.str]] = None,
+            group_role: pulumi.Input[Optional[_builtins.str]] = None,
             metadata_list: pulumi.Input[Optional[Union['OpenpipelineV2EventsPipelinesMetadataListArgs', 'OpenpipelineV2EventsPipelinesMetadataListArgsDict']]] = None,
             metric_extraction: pulumi.Input[Optional[Union['OpenpipelineV2EventsPipelinesMetricExtractionArgs', 'OpenpipelineV2EventsPipelinesMetricExtractionArgsDict']]] = None,
             processing: pulumi.Input[Optional[Union['OpenpipelineV2EventsPipelinesProcessingArgs', 'OpenpipelineV2EventsPipelinesProcessingArgsDict']]] = None,
             product_allocation: pulumi.Input[Optional[Union['OpenpipelineV2EventsPipelinesProductAllocationArgs', 'OpenpipelineV2EventsPipelinesProductAllocationArgsDict']]] = None,
+            routing: pulumi.Input[Optional[_builtins.str]] = None,
             security_context: pulumi.Input[Optional[Union['OpenpipelineV2EventsPipelinesSecurityContextArgs', 'OpenpipelineV2EventsPipelinesSecurityContextArgsDict']]] = None,
             smartscape_edge_extraction: pulumi.Input[Optional[Union['OpenpipelineV2EventsPipelinesSmartscapeEdgeExtractionArgs', 'OpenpipelineV2EventsPipelinesSmartscapeEdgeExtractionArgsDict']]] = None,
             smartscape_node_extraction: pulumi.Input[Optional[Union['OpenpipelineV2EventsPipelinesSmartscapeNodeExtractionArgs', 'OpenpipelineV2EventsPipelinesSmartscapeNodeExtractionArgsDict']]] = None,
@@ -1117,10 +1191,12 @@ class OpenpipelineV2EventsPipelines(pulumi.CustomResource):
         :param pulumi.Input[Union['OpenpipelineV2EventsPipelinesDataExtractionArgs', 'OpenpipelineV2EventsPipelinesDataExtractionArgsDict']] data_extraction: Data extraction stage
         :param pulumi.Input[Union['OpenpipelineV2EventsPipelinesDavisArgs', 'OpenpipelineV2EventsPipelinesDavisArgsDict']] davis: Davis event extraction stage
         :param pulumi.Input[_builtins.str] display_name: Display name
+        :param pulumi.Input[_builtins.str] group_role: Group role. Possible values: `compositionPipeline`, `memberPipeline`
         :param pulumi.Input[Union['OpenpipelineV2EventsPipelinesMetadataListArgs', 'OpenpipelineV2EventsPipelinesMetadataListArgsDict']] metadata_list: Pipeline metadata list
         :param pulumi.Input[Union['OpenpipelineV2EventsPipelinesMetricExtractionArgs', 'OpenpipelineV2EventsPipelinesMetricExtractionArgsDict']] metric_extraction: Metrics extraction stage
         :param pulumi.Input[Union['OpenpipelineV2EventsPipelinesProcessingArgs', 'OpenpipelineV2EventsPipelinesProcessingArgsDict']] processing: Processing stage
         :param pulumi.Input[Union['OpenpipelineV2EventsPipelinesProductAllocationArgs', 'OpenpipelineV2EventsPipelinesProductAllocationArgsDict']] product_allocation: Product allocation stage
+        :param pulumi.Input[_builtins.str] routing: Routing. Possible values: `notRoutable`, `routable`
         :param pulumi.Input[Union['OpenpipelineV2EventsPipelinesSecurityContextArgs', 'OpenpipelineV2EventsPipelinesSecurityContextArgsDict']] security_context: Security context stage
         :param pulumi.Input[Union['OpenpipelineV2EventsPipelinesSmartscapeEdgeExtractionArgs', 'OpenpipelineV2EventsPipelinesSmartscapeEdgeExtractionArgsDict']] smartscape_edge_extraction: Smartscape edge extraction stage
         :param pulumi.Input[Union['OpenpipelineV2EventsPipelinesSmartscapeNodeExtractionArgs', 'OpenpipelineV2EventsPipelinesSmartscapeNodeExtractionArgsDict']] smartscape_node_extraction: Smartscape node extraction stage
@@ -1135,10 +1211,12 @@ class OpenpipelineV2EventsPipelines(pulumi.CustomResource):
         __props__.__dict__["data_extraction"] = data_extraction
         __props__.__dict__["davis"] = davis
         __props__.__dict__["display_name"] = display_name
+        __props__.__dict__["group_role"] = group_role
         __props__.__dict__["metadata_list"] = metadata_list
         __props__.__dict__["metric_extraction"] = metric_extraction
         __props__.__dict__["processing"] = processing
         __props__.__dict__["product_allocation"] = product_allocation
+        __props__.__dict__["routing"] = routing
         __props__.__dict__["security_context"] = security_context
         __props__.__dict__["smartscape_edge_extraction"] = smartscape_edge_extraction
         __props__.__dict__["smartscape_node_extraction"] = smartscape_node_extraction
@@ -1186,6 +1264,14 @@ class OpenpipelineV2EventsPipelines(pulumi.CustomResource):
         return pulumi.get(self, "display_name")
 
     @_builtins.property
+    @pulumi.getter(name="groupRole")
+    def group_role(self) -> pulumi.Output[Optional[_builtins.str]]:
+        """
+        Group role. Possible values: `compositionPipeline`, `memberPipeline`
+        """
+        return pulumi.get(self, "group_role")
+
+    @_builtins.property
     @pulumi.getter(name="metadataList")
     def metadata_list(self) -> pulumi.Output[Optional['outputs.OpenpipelineV2EventsPipelinesMetadataList']]:
         """
@@ -1216,6 +1302,14 @@ class OpenpipelineV2EventsPipelines(pulumi.CustomResource):
         Product allocation stage
         """
         return pulumi.get(self, "product_allocation")
+
+    @_builtins.property
+    @pulumi.getter
+    def routing(self) -> pulumi.Output[Optional[_builtins.str]]:
+        """
+        Routing. Possible values: `notRoutable`, `routable`
+        """
+        return pulumi.get(self, "routing")
 
     @_builtins.property
     @pulumi.getter(name="securityContext")

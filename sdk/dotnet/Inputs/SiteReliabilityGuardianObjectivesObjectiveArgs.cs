@@ -20,7 +20,7 @@ namespace Pulumiverse.Dynatrace.Inputs
         public Input<bool>? AutoAdaptiveThresholdEnabled { get; set; }
 
         /// <summary>
-        /// Possible Values: `GREATER_THAN_OR_EQUAL`, `LESS_THAN_OR_EQUAL`
+        /// Comparison operator. Possible values: `GREATER_THAN_OR_EQUAL`, `LESS_THAN_OR_EQUAL`
         /// </summary>
         [Input("comparisonOperator", required: true)]
         public Input<string> ComparisonOperator { get; set; } = null!;
@@ -44,13 +44,19 @@ namespace Pulumiverse.Dynatrace.Inputs
         public Input<string>? DqlQuery { get; set; }
 
         /// <summary>
+        /// Fields for adding relevant links to this objective.
+        /// </summary>
+        [Input("links")]
+        public Input<Inputs.SiteReliabilityGuardianObjectivesObjectiveLinksArgs>? Links { get; set; }
+
+        /// <summary>
         /// Objective name
         /// </summary>
         [Input("name", required: true)]
         public Input<string> Name { get; set; } = null!;
 
         /// <summary>
-        /// Possible Values: `DQL`, `REFERENCE_SLO`
+        /// Objective type. Possible values: `DQL`, `REFERENCE_SLO`
         /// </summary>
         [Input("objectiveType", required: true)]
         public Input<string> ObjectiveType { get; set; } = null!;

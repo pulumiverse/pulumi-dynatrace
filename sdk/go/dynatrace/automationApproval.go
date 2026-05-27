@@ -19,9 +19,38 @@ import (
 // - Dynatrace Workflows - https://www.dynatrace.com/support/help/platform-modules/cloud-automation/workflows
 //
 // - Settings API - https://www.dynatrace.com/support/help/dynatrace-api/environment-api/settings (schemaId: `builtin:automation.approval)
+//
+// ## Resource Example Usage
+//
+// ```go
+// package main
+//
+// import (
+//
+//	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//	"github.com/pulumiverse/pulumi-dynatrace/sdk/go/dynatrace"
+//
+// )
+//
+//	func main() {
+//		pulumi.Run(func(ctx *pulumi.Context) error {
+//			_, err := dynatrace.NewAutomationApproval(ctx, "wf_approval", &dynatrace.AutomationApprovalArgs{
+//				WorkflowAppAccessApprovalEnabled: pulumi.Bool(true),
+//				ExternalApprovalsEnabled:         pulumi.Bool(true),
+//			})
+//			if err != nil {
+//				return err
+//			}
+//			return nil
+//		})
+//	}
+//
+// ```
 type AutomationApproval struct {
 	pulumi.CustomResourceState
 
+	// Allow external systems to trigger approval responses via webhook handlers.
+	ExternalApprovalsEnabled pulumi.BoolPtrOutput `pulumi:"externalApprovalsEnabled"`
 	// Allow on tenant level anyone with access to the app can respond to requests via an approval link.
 	WorkflowAppAccessApprovalEnabled pulumi.BoolOutput `pulumi:"workflowAppAccessApprovalEnabled"`
 }
@@ -59,11 +88,15 @@ func GetAutomationApproval(ctx *pulumi.Context,
 
 // Input properties used for looking up and filtering AutomationApproval resources.
 type automationApprovalState struct {
+	// Allow external systems to trigger approval responses via webhook handlers.
+	ExternalApprovalsEnabled *bool `pulumi:"externalApprovalsEnabled"`
 	// Allow on tenant level anyone with access to the app can respond to requests via an approval link.
 	WorkflowAppAccessApprovalEnabled *bool `pulumi:"workflowAppAccessApprovalEnabled"`
 }
 
 type AutomationApprovalState struct {
+	// Allow external systems to trigger approval responses via webhook handlers.
+	ExternalApprovalsEnabled pulumi.BoolPtrInput
 	// Allow on tenant level anyone with access to the app can respond to requests via an approval link.
 	WorkflowAppAccessApprovalEnabled pulumi.BoolPtrInput
 }
@@ -73,12 +106,16 @@ func (AutomationApprovalState) ElementType() reflect.Type {
 }
 
 type automationApprovalArgs struct {
+	// Allow external systems to trigger approval responses via webhook handlers.
+	ExternalApprovalsEnabled *bool `pulumi:"externalApprovalsEnabled"`
 	// Allow on tenant level anyone with access to the app can respond to requests via an approval link.
 	WorkflowAppAccessApprovalEnabled bool `pulumi:"workflowAppAccessApprovalEnabled"`
 }
 
 // The set of arguments for constructing a AutomationApproval resource.
 type AutomationApprovalArgs struct {
+	// Allow external systems to trigger approval responses via webhook handlers.
+	ExternalApprovalsEnabled pulumi.BoolPtrInput
 	// Allow on tenant level anyone with access to the app can respond to requests via an approval link.
 	WorkflowAppAccessApprovalEnabled pulumi.BoolInput
 }
@@ -168,6 +205,11 @@ func (o AutomationApprovalOutput) ToAutomationApprovalOutput() AutomationApprova
 
 func (o AutomationApprovalOutput) ToAutomationApprovalOutputWithContext(ctx context.Context) AutomationApprovalOutput {
 	return o
+}
+
+// Allow external systems to trigger approval responses via webhook handlers.
+func (o AutomationApprovalOutput) ExternalApprovalsEnabled() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v *AutomationApproval) pulumi.BoolPtrOutput { return v.ExternalApprovalsEnabled }).(pulumi.BoolPtrOutput)
 }
 
 // Allow on tenant level anyone with access to the app can respond to requests via an approval link.

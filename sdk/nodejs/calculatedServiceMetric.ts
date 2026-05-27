@@ -20,6 +20,82 @@ import * as utilities from "./utilities";
  * - `terraform-provider-dynatrace -export dynatrace.CalculatedServiceMetric` downloads all existing calculated service metric configuration
  *
  * The full documentation of the export feature is available [here](https://dt-url.net/h203qmc).
+ *
+ * ## Resource Example Usage
+ *
+ * ```typescript
+ * import * as pulumi from "@pulumi/pulumi";
+ * import * as dynatrace from "@pulumiverse/dynatrace";
+ * import * as time from "@pulumiverse/time";
+ *
+ * const attribute = new dynatrace.RequestAttribute("attribute", {
+ *     name: "#name#",
+ *     enabled: true,
+ *     aggregation: "FIRST",
+ *     confidential: false,
+ *     dataType: "INTEGER",
+ *     normalization: "ORIGINAL",
+ *     skipPersonalDataMasking: false,
+ *     dataSources: [{
+ *         enabled: true,
+ *         source: "SERVER_VARIABLE",
+ *         serverVariableTechnology: "ASP_NET",
+ *         parameterName: "param",
+ *     }],
+ * });
+ * const mzone = new dynatrace.ManagementZoneV2("mzone", {
+ *     name: "#name#",
+ *     rules: {
+ *         rules: [{
+ *             type: "ME",
+ *             enabled: true,
+ *             entitySelector: "",
+ *             attributeRule: {
+ *                 entityType: "CLOUD_APPLICATION_NAMESPACE",
+ *                 attributeConditions: {
+ *                     conditions: [{
+ *                         caseSensitive: false,
+ *                         key: "KUBERNETES_CLUSTER_NAME",
+ *                         operator: "EQUALS",
+ *                         stringValue: "extensions",
+ *                     }],
+ *                 },
+ *             },
+ *         }],
+ *     },
+ * });
+ * const waitForRequestAttribute = new time.Sleep("wait_for_request_attribute", {createDuration: "10s"}, {
+ *     dependsOn: [attribute],
+ * });
+ * const metric = new dynatrace.CalculatedServiceMetric("metric", {
+ *     name: "#name#",
+ *     enabled: true,
+ *     managementZones: [mzone.name],
+ *     metricKey: "calc:service.#name#",
+ *     unit: "MILLI_SECOND_PER_MINUTE",
+ *     conditions: [{
+ *         conditions: [{
+ *             attribute: "HTTP_REQUEST_METHOD",
+ *             comparison: {
+ *                 negate: false,
+ *                 httpMethod: {
+ *                     operator: "EQUALS_ANY_OF",
+ *                     values: [
+ *                         "POST",
+ *                         "GET",
+ *                     ],
+ *                 },
+ *             },
+ *         }],
+ *     }],
+ *     metricDefinition: {
+ *         metric: "REQUEST_ATTRIBUTE",
+ *         requestAttribute: attribute.name,
+ *     },
+ * }, {
+ *     dependsOn: [waitForRequestAttribute],
+ * });
+ * ```
  */
 export class CalculatedServiceMetric extends pulumi.CustomResource {
     /**

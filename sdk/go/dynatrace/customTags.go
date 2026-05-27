@@ -25,6 +25,54 @@ import (
 // - `terraform-provider-dynatrace -export CustomTags` downloads all existing custom tags configuration
 //
 // The full documentation of the export feature is available [here](https://dt-url.net/h203qmc).
+//
+// ## Resource Example Usage
+//
+// ```go
+// package main
+//
+// import (
+//
+//	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//	"github.com/pulumiverse/pulumi-dynatrace/sdk/go/dynatrace"
+//
+// )
+//
+//	func main() {
+//		pulumi.Run(func(ctx *pulumi.Context) error {
+//			_, err := dynatrace.NewCustomTags(ctx, "tags", &dynatrace.CustomTagsArgs{
+//				EntitySelector: pulumi.String("type(HOST)"),
+//				Tags: &dynatrace.CustomTagsTagsArgs{
+//					Filters: dynatrace.CustomTagsTagsFilterArray{
+//						&dynatrace.CustomTagsTagsFilterArgs{
+//							Context: pulumi.String("CONTEXTLESS"),
+//							Key:     pulumi.String("KeyExampleA"),
+//						},
+//						&dynatrace.CustomTagsTagsFilterArgs{
+//							Context: pulumi.String("CONTEXTLESS"),
+//							Key:     pulumi.String("KeyExampleA"),
+//							Value:   pulumi.String("ValueExample1"),
+//						},
+//						&dynatrace.CustomTagsTagsFilterArgs{
+//							Context: pulumi.String("CONTEXTLESS"),
+//							Key:     pulumi.String("KeyExampleB"),
+//						},
+//						&dynatrace.CustomTagsTagsFilterArgs{
+//							Context: pulumi.String("CONTEXTLESS"),
+//							Key:     pulumi.String("KeyExampleC"),
+//							Value:   pulumi.String("ValueExample2"),
+//						},
+//					},
+//				},
+//			})
+//			if err != nil {
+//				return err
+//			}
+//			return nil
+//		})
+//	}
+//
+// ```
 type CustomTags struct {
 	pulumi.CustomResourceState
 

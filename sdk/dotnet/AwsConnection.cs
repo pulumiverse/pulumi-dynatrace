@@ -127,19 +127,19 @@ namespace Pulumiverse.Dynatrace
     public partial class AwsConnection : global::Pulumi.CustomResource
     {
         /// <summary>
-        /// Name
+        /// The name of the connection
         /// </summary>
         [Output("name")]
         public Output<string> Name { get; private set; } = null!;
 
         /// <summary>
-        /// Configuration required for authenticating via AWS Role Based Authentication
+        /// No documentation available
         /// </summary>
         [Output("roleBasedAuth")]
         public Output<Outputs.AwsConnectionRoleBasedAuth?> RoleBasedAuth { get; private set; } = null!;
 
         /// <summary>
-        /// Configuration required for authenticating via AWS Web Identity
+        /// No documentation available
         /// </summary>
         [Output("webIdentity")]
         public Output<Outputs.AwsConnectionWebIdentity?> WebIdentity { get; private set; } = null!;
@@ -192,19 +192,19 @@ namespace Pulumiverse.Dynatrace
     public sealed class AwsConnectionArgs : global::Pulumi.ResourceArgs
     {
         /// <summary>
-        /// Name
+        /// The name of the connection
         /// </summary>
         [Input("name")]
         public Input<string>? Name { get; set; }
 
         /// <summary>
-        /// Configuration required for authenticating via AWS Role Based Authentication
+        /// No documentation available
         /// </summary>
         [Input("roleBasedAuth")]
         public Input<Inputs.AwsConnectionRoleBasedAuthArgs>? RoleBasedAuth { get; set; }
 
         /// <summary>
-        /// Configuration required for authenticating via AWS Web Identity
+        /// No documentation available
         /// </summary>
         [Input("webIdentity")]
         public Input<Inputs.AwsConnectionWebIdentityArgs>? WebIdentity { get; set; }
@@ -218,19 +218,19 @@ namespace Pulumiverse.Dynatrace
     public sealed class AwsConnectionState : global::Pulumi.ResourceArgs
     {
         /// <summary>
-        /// Name
+        /// The name of the connection
         /// </summary>
         [Input("name")]
         public Input<string>? Name { get; set; }
 
         /// <summary>
-        /// Configuration required for authenticating via AWS Role Based Authentication
+        /// No documentation available
         /// </summary>
         [Input("roleBasedAuth")]
         public Input<Inputs.AwsConnectionRoleBasedAuthGetArgs>? RoleBasedAuth { get; set; }
 
         /// <summary>
-        /// Configuration required for authenticating via AWS Web Identity
+        /// No documentation available
         /// </summary>
         [Input("webIdentity")]
         public Input<Inputs.AwsConnectionWebIdentityGetArgs>? WebIdentity { get; set; }

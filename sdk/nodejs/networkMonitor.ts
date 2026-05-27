@@ -25,13 +25,16 @@ import * as utilities from "./utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as dynatrace from "@pulumiverse/dynatrace";
  *
+ * const location = dynatrace.getSyntheticLocation({
+ *     name: "Location",
+ * });
  * const dNSTest = new dynatrace.NetworkMonitor("DNS_Test", {
  *     name: "DNS Test",
  *     description: "This is an example DNS test",
  *     type: "MULTI_PROTOCOL",
  *     enabled: false,
  *     frequencyMin: 15,
- *     locations: ["SYNTHETIC_LOCATION-39F97465BE7BF644"],
+ *     locations: [location.then(location => location.id)],
  *     outageHandling: {
  *         globalConsecutiveOutageCountThreshold: 1,
  *         globalOutages: true,

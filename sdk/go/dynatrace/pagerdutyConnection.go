@@ -43,6 +43,34 @@ import (
 // - `terraform-provider-dynatrace -export PagerdutyConnection` downloads all existing PagerDuty connections
 //
 // The full documentation of the export feature is available [here](https://dt-url.net/h203qmc).
+//
+// ## Resource Example Usage
+//
+// ```go
+// package main
+//
+// import (
+//
+//	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//	"github.com/pulumiverse/pulumi-dynatrace/sdk/go/dynatrace"
+//
+// )
+//
+//	func main() {
+//		pulumi.Run(func(ctx *pulumi.Context) error {
+//			_, err := dynatrace.NewPagerdutyConnection(ctx, "connection", &dynatrace.PagerdutyConnectionArgs{
+//				Name:  pulumi.String("#name#"),
+//				Url:   pulumi.String("https://www.example.com/"),
+//				Token: pulumi.String("#######"),
+//			})
+//			if err != nil {
+//				return err
+//			}
+//			return nil
+//		})
+//	}
+//
+// ```
 type PagerdutyConnection struct {
 	pulumi.CustomResourceState
 

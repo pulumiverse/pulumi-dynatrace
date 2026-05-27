@@ -32,8 +32,8 @@ class DeclarativeGroupingArgs:
         :param pulumi.Input['DeclarativeGroupingDetectionArgs'] detection: Enter a descriptive process group display name and a unique identifier that Dynatrace can use to recognize this process group.
         :param pulumi.Input[_builtins.bool] enabled: This setting is enabled (`true`) or disabled (`false`)
         :param pulumi.Input[_builtins.str] insert_after: Because this resource allows for ordering you may specify the ID of the resource instance that comes before this instance regarding order. If not specified when creating the setting will be added to the end of the list. If not specified during update the order will remain untouched
-        :param pulumi.Input[_builtins.str] name: Monitored technology name
-        :param pulumi.Input[_builtins.str] scope: The scope of this setting (HOST, HOST_GROUP). Omit this property if you want to cover the whole environment.
+        :param pulumi.Input[_builtins.str] name: Note: Reported only in full-stack, infrastructure and discovery modes.
+        :param pulumi.Input[_builtins.str] scope: The scope of this setting (HOST, KUBERNETES_CLUSTER, HOST_GROUP). Omit this property if you want to cover the whole environment.
         """
         pulumi.set(__self__, "detection", detection)
         pulumi.set(__self__, "enabled", enabled)
@@ -84,7 +84,7 @@ class DeclarativeGroupingArgs:
     @pulumi.getter
     def name(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
-        Monitored technology name
+        Note: Reported only in full-stack, infrastructure and discovery modes.
         """
         return pulumi.get(self, "name")
 
@@ -96,7 +96,7 @@ class DeclarativeGroupingArgs:
     @pulumi.getter
     def scope(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
-        The scope of this setting (HOST, HOST_GROUP). Omit this property if you want to cover the whole environment.
+        The scope of this setting (HOST, KUBERNETES_CLUSTER, HOST_GROUP). Omit this property if you want to cover the whole environment.
         """
         return pulumi.get(self, "scope")
 
@@ -119,8 +119,8 @@ class _DeclarativeGroupingState:
         :param pulumi.Input['DeclarativeGroupingDetectionArgs'] detection: Enter a descriptive process group display name and a unique identifier that Dynatrace can use to recognize this process group.
         :param pulumi.Input[_builtins.bool] enabled: This setting is enabled (`true`) or disabled (`false`)
         :param pulumi.Input[_builtins.str] insert_after: Because this resource allows for ordering you may specify the ID of the resource instance that comes before this instance regarding order. If not specified when creating the setting will be added to the end of the list. If not specified during update the order will remain untouched
-        :param pulumi.Input[_builtins.str] name: Monitored technology name
-        :param pulumi.Input[_builtins.str] scope: The scope of this setting (HOST, HOST_GROUP). Omit this property if you want to cover the whole environment.
+        :param pulumi.Input[_builtins.str] name: Note: Reported only in full-stack, infrastructure and discovery modes.
+        :param pulumi.Input[_builtins.str] scope: The scope of this setting (HOST, KUBERNETES_CLUSTER, HOST_GROUP). Omit this property if you want to cover the whole environment.
         """
         if detection is not None:
             pulumi.set(__self__, "detection", detection)
@@ -173,7 +173,7 @@ class _DeclarativeGroupingState:
     @pulumi.getter
     def name(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
-        Monitored technology name
+        Note: Reported only in full-stack, infrastructure and discovery modes.
         """
         return pulumi.get(self, "name")
 
@@ -185,7 +185,7 @@ class _DeclarativeGroupingState:
     @pulumi.getter
     def scope(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
-        The scope of this setting (HOST, HOST_GROUP). Omit this property if you want to cover the whole environment.
+        The scope of this setting (HOST, KUBERNETES_CLUSTER, HOST_GROUP). Omit this property if you want to cover the whole environment.
         """
         return pulumi.get(self, "scope")
 
@@ -227,8 +227,8 @@ class DeclarativeGrouping(pulumi.CustomResource):
         :param pulumi.Input[Union['DeclarativeGroupingDetectionArgs', 'DeclarativeGroupingDetectionArgsDict']] detection: Enter a descriptive process group display name and a unique identifier that Dynatrace can use to recognize this process group.
         :param pulumi.Input[_builtins.bool] enabled: This setting is enabled (`true`) or disabled (`false`)
         :param pulumi.Input[_builtins.str] insert_after: Because this resource allows for ordering you may specify the ID of the resource instance that comes before this instance regarding order. If not specified when creating the setting will be added to the end of the list. If not specified during update the order will remain untouched
-        :param pulumi.Input[_builtins.str] name: Monitored technology name
-        :param pulumi.Input[_builtins.str] scope: The scope of this setting (HOST, HOST_GROUP). Omit this property if you want to cover the whole environment.
+        :param pulumi.Input[_builtins.str] name: Note: Reported only in full-stack, infrastructure and discovery modes.
+        :param pulumi.Input[_builtins.str] scope: The scope of this setting (HOST, KUBERNETES_CLUSTER, HOST_GROUP). Omit this property if you want to cover the whole environment.
         """
         ...
     @overload
@@ -315,8 +315,8 @@ class DeclarativeGrouping(pulumi.CustomResource):
         :param pulumi.Input[Union['DeclarativeGroupingDetectionArgs', 'DeclarativeGroupingDetectionArgsDict']] detection: Enter a descriptive process group display name and a unique identifier that Dynatrace can use to recognize this process group.
         :param pulumi.Input[_builtins.bool] enabled: This setting is enabled (`true`) or disabled (`false`)
         :param pulumi.Input[_builtins.str] insert_after: Because this resource allows for ordering you may specify the ID of the resource instance that comes before this instance regarding order. If not specified when creating the setting will be added to the end of the list. If not specified during update the order will remain untouched
-        :param pulumi.Input[_builtins.str] name: Monitored technology name
-        :param pulumi.Input[_builtins.str] scope: The scope of this setting (HOST, HOST_GROUP). Omit this property if you want to cover the whole environment.
+        :param pulumi.Input[_builtins.str] name: Note: Reported only in full-stack, infrastructure and discovery modes.
+        :param pulumi.Input[_builtins.str] scope: The scope of this setting (HOST, KUBERNETES_CLUSTER, HOST_GROUP). Omit this property if you want to cover the whole environment.
         """
         opts = pulumi.ResourceOptions.merge(opts, pulumi.ResourceOptions(id=id))
 
@@ -357,7 +357,7 @@ class DeclarativeGrouping(pulumi.CustomResource):
     @pulumi.getter
     def name(self) -> pulumi.Output[_builtins.str]:
         """
-        Monitored technology name
+        Note: Reported only in full-stack, infrastructure and discovery modes.
         """
         return pulumi.get(self, "name")
 
@@ -365,7 +365,7 @@ class DeclarativeGrouping(pulumi.CustomResource):
     @pulumi.getter
     def scope(self) -> pulumi.Output[Optional[_builtins.str]]:
         """
-        The scope of this setting (HOST, HOST_GROUP). Omit this property if you want to cover the whole environment.
+        The scope of this setting (HOST, KUBERNETES_CLUSTER, HOST_GROUP). Omit this property if you want to cover the whole environment.
         """
         return pulumi.get(self, "scope")
 

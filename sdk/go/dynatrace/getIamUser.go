@@ -31,7 +31,7 @@ import (
 //
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
-//			userA, err := dynatrace.LookupIamUser(ctx, &dynatrace.LookupIamUserArgs{
+//			userA, err := dynatrace.GetIamUser(ctx, &dynatrace.LookupIamUserArgs{
 //				Email: "me@example.com",
 //			}, nil)
 //			if err != nil {

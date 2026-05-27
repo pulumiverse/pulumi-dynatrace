@@ -12,6 +12,8 @@ import * as utilities from "./utilities";
  * > This resource requires an OAuth client or platform token configured with the permissions outlined in the [Davis Anomaly Detection](https://docs.dynatrace.com/docs/shortlink/davis-ai-anomaly-detection-app#expand--prerequisites--1) app documentation.
  * Please set the environment variables `DT_CLIENT_ID` and `DT_CLIENT_SECRET`, or alternatively `DT_PLATFORM_TOKEN`.
  *
+ * > Depending on the anomaly detector configuration, additional **storage permissions** may be required for DQL-related access (e.g. `storage:bizevents:read`, `storage:logs:read`, `storage:entities:read`).
+ *
  * ## Dynatrace Documentation
  *
  * - Davis Anomaly Detection App - https://docs.dynatrace.com/docs/platform/davis-ai/anomaly-detection/anomaly-detection-app
@@ -53,7 +55,7 @@ export class DavisAnomalyDetectors extends pulumi.CustomResource {
     }
 
     /**
-     * Analyzer input
+     * Analyzer input to initialize the analyzer
      */
     declare public readonly analyzer: pulumi.Output<outputs.DavisAnomalyDetectorsAnalyzer>;
     /**
@@ -65,15 +67,15 @@ export class DavisAnomalyDetectors extends pulumi.CustomResource {
      */
     declare public readonly enabled: pulumi.Output<boolean>;
     /**
-     * Event template
+     * Defines additional fields on the davis events triggered by the anomaly detector
      */
     declare public readonly eventTemplate: pulumi.Output<outputs.DavisAnomalyDetectorsEventTemplate>;
     /**
-     * Execution settings
+     * Defines the configuration parameters that influence how and under what context a query or evaluation is executed.
      */
     declare public readonly executionSettings: pulumi.Output<outputs.DavisAnomalyDetectorsExecutionSettings>;
     /**
-     * Source
+     * The source which created the anomaly detector
      */
     declare public readonly source: pulumi.Output<string>;
     /**
@@ -142,7 +144,7 @@ export class DavisAnomalyDetectors extends pulumi.CustomResource {
  */
 export interface DavisAnomalyDetectorsState {
     /**
-     * Analyzer input
+     * Analyzer input to initialize the analyzer
      */
     analyzer?: pulumi.Input<inputs.DavisAnomalyDetectorsAnalyzer | undefined>;
     /**
@@ -154,15 +156,15 @@ export interface DavisAnomalyDetectorsState {
      */
     enabled?: pulumi.Input<boolean | undefined>;
     /**
-     * Event template
+     * Defines additional fields on the davis events triggered by the anomaly detector
      */
     eventTemplate?: pulumi.Input<inputs.DavisAnomalyDetectorsEventTemplate | undefined>;
     /**
-     * Execution settings
+     * Defines the configuration parameters that influence how and under what context a query or evaluation is executed.
      */
     executionSettings?: pulumi.Input<inputs.DavisAnomalyDetectorsExecutionSettings | undefined>;
     /**
-     * Source
+     * The source which created the anomaly detector
      */
     source?: pulumi.Input<string | undefined>;
     /**
@@ -176,7 +178,7 @@ export interface DavisAnomalyDetectorsState {
  */
 export interface DavisAnomalyDetectorsArgs {
     /**
-     * Analyzer input
+     * Analyzer input to initialize the analyzer
      */
     analyzer: pulumi.Input<inputs.DavisAnomalyDetectorsAnalyzer>;
     /**
@@ -188,15 +190,15 @@ export interface DavisAnomalyDetectorsArgs {
      */
     enabled: pulumi.Input<boolean>;
     /**
-     * Event template
+     * Defines additional fields on the davis events triggered by the anomaly detector
      */
     eventTemplate: pulumi.Input<inputs.DavisAnomalyDetectorsEventTemplate>;
     /**
-     * Execution settings
+     * Defines the configuration parameters that influence how and under what context a query or evaluation is executed.
      */
     executionSettings: pulumi.Input<inputs.DavisAnomalyDetectorsExecutionSettings>;
     /**
-     * Source
+     * The source which created the anomaly detector
      */
     source: pulumi.Input<string>;
     /**

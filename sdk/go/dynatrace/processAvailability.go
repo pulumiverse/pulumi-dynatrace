@@ -38,7 +38,7 @@ type ProcessAvailability struct {
 	MinimumProcesses pulumi.IntPtrOutput `pulumi:"minimumProcesses"`
 	// Monitoring rule name
 	Name pulumi.StringOutput `pulumi:"name"`
-	// Select the operating systems on which the monitoring rule should be applied. Possible Values: `AIX`, `LINUX`, `WINDOWS`
+	// Select the operating systems on which the monitoring rule should be applied. Possible values: `AIX`, `LINUX`, `WINDOWS`
 	OperatingSystems pulumi.StringArrayOutput `pulumi:"operatingSystems"`
 	// Define process detection rules by selecting a process property and a condition. Each monitoring rule can have multiple detection rules associated with it.
 	Rules ProcessAvailabilityRulesPtrOutput `pulumi:"rules"`
@@ -89,7 +89,7 @@ type processAvailabilityState struct {
 	MinimumProcesses *int `pulumi:"minimumProcesses"`
 	// Monitoring rule name
 	Name *string `pulumi:"name"`
-	// Select the operating systems on which the monitoring rule should be applied. Possible Values: `AIX`, `LINUX`, `WINDOWS`
+	// Select the operating systems on which the monitoring rule should be applied. Possible values: `AIX`, `LINUX`, `WINDOWS`
 	OperatingSystems []string `pulumi:"operatingSystems"`
 	// Define process detection rules by selecting a process property and a condition. Each monitoring rule can have multiple detection rules associated with it.
 	Rules *ProcessAvailabilityRules `pulumi:"rules"`
@@ -108,7 +108,7 @@ type ProcessAvailabilityState struct {
 	MinimumProcesses pulumi.IntPtrInput
 	// Monitoring rule name
 	Name pulumi.StringPtrInput
-	// Select the operating systems on which the monitoring rule should be applied. Possible Values: `AIX`, `LINUX`, `WINDOWS`
+	// Select the operating systems on which the monitoring rule should be applied. Possible values: `AIX`, `LINUX`, `WINDOWS`
 	OperatingSystems pulumi.StringArrayInput
 	// Define process detection rules by selecting a process property and a condition. Each monitoring rule can have multiple detection rules associated with it.
 	Rules ProcessAvailabilityRulesPtrInput
@@ -131,7 +131,7 @@ type processAvailabilityArgs struct {
 	MinimumProcesses *int `pulumi:"minimumProcesses"`
 	// Monitoring rule name
 	Name *string `pulumi:"name"`
-	// Select the operating systems on which the monitoring rule should be applied. Possible Values: `AIX`, `LINUX`, `WINDOWS`
+	// Select the operating systems on which the monitoring rule should be applied. Possible values: `AIX`, `LINUX`, `WINDOWS`
 	OperatingSystems []string `pulumi:"operatingSystems"`
 	// Define process detection rules by selecting a process property and a condition. Each monitoring rule can have multiple detection rules associated with it.
 	Rules *ProcessAvailabilityRules `pulumi:"rules"`
@@ -151,7 +151,7 @@ type ProcessAvailabilityArgs struct {
 	MinimumProcesses pulumi.IntPtrInput
 	// Monitoring rule name
 	Name pulumi.StringPtrInput
-	// Select the operating systems on which the monitoring rule should be applied. Possible Values: `AIX`, `LINUX`, `WINDOWS`
+	// Select the operating systems on which the monitoring rule should be applied. Possible values: `AIX`, `LINUX`, `WINDOWS`
 	OperatingSystems pulumi.StringArrayInput
 	// Define process detection rules by selecting a process property and a condition. Each monitoring rule can have multiple detection rules associated with it.
 	Rules ProcessAvailabilityRulesPtrInput
@@ -271,7 +271,7 @@ func (o ProcessAvailabilityOutput) Name() pulumi.StringOutput {
 	return o.ApplyT(func(v *ProcessAvailability) pulumi.StringOutput { return v.Name }).(pulumi.StringOutput)
 }
 
-// Select the operating systems on which the monitoring rule should be applied. Possible Values: `AIX`, `LINUX`, `WINDOWS`
+// Select the operating systems on which the monitoring rule should be applied. Possible values: `AIX`, `LINUX`, `WINDOWS`
 func (o ProcessAvailabilityOutput) OperatingSystems() pulumi.StringArrayOutput {
 	return o.ApplyT(func(v *ProcessAvailability) pulumi.StringArrayOutput { return v.OperatingSystems }).(pulumi.StringArrayOutput)
 }

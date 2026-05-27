@@ -50,19 +50,19 @@ export class K8sClusterAnomalies extends pulumi.CustomResource {
     }
 
     /**
-     * no documentation available
+     * No documentation available
      */
     declare public readonly cpuRequestsSaturation: pulumi.Output<outputs.K8sClusterAnomaliesCpuRequestsSaturation>;
     /**
-     * no documentation available
+     * No documentation available
      */
     declare public readonly memoryRequestsSaturation: pulumi.Output<outputs.K8sClusterAnomaliesMemoryRequestsSaturation>;
     /**
-     * no documentation available
+     * No documentation available
      */
     declare public readonly monitoringIssues: pulumi.Output<outputs.K8sClusterAnomaliesMonitoringIssues>;
     /**
-     * no documentation available
+     * No documentation available
      */
     declare public readonly podsSaturation: pulumi.Output<outputs.K8sClusterAnomaliesPodsSaturation>;
     /**
@@ -127,19 +127,19 @@ export class K8sClusterAnomalies extends pulumi.CustomResource {
  */
 export interface K8sClusterAnomaliesState {
     /**
-     * no documentation available
+     * No documentation available
      */
     cpuRequestsSaturation?: pulumi.Input<inputs.K8sClusterAnomaliesCpuRequestsSaturation | undefined>;
     /**
-     * no documentation available
+     * No documentation available
      */
     memoryRequestsSaturation?: pulumi.Input<inputs.K8sClusterAnomaliesMemoryRequestsSaturation | undefined>;
     /**
-     * no documentation available
+     * No documentation available
      */
     monitoringIssues?: pulumi.Input<inputs.K8sClusterAnomaliesMonitoringIssues | undefined>;
     /**
-     * no documentation available
+     * No documentation available
      */
     podsSaturation?: pulumi.Input<inputs.K8sClusterAnomaliesPodsSaturation | undefined>;
     /**
@@ -157,19 +157,19 @@ export interface K8sClusterAnomaliesState {
  */
 export interface K8sClusterAnomaliesArgs {
     /**
-     * no documentation available
+     * No documentation available
      */
     cpuRequestsSaturation: pulumi.Input<inputs.K8sClusterAnomaliesCpuRequestsSaturation>;
     /**
-     * no documentation available
+     * No documentation available
      */
     memoryRequestsSaturation: pulumi.Input<inputs.K8sClusterAnomaliesMemoryRequestsSaturation>;
     /**
-     * no documentation available
+     * No documentation available
      */
     monitoringIssues: pulumi.Input<inputs.K8sClusterAnomaliesMonitoringIssues>;
     /**
-     * no documentation available
+     * No documentation available
      */
     podsSaturation: pulumi.Input<inputs.K8sClusterAnomaliesPodsSaturation>;
     /**

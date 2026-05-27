@@ -21,7 +21,7 @@ namespace Pulumiverse.Dynatrace.Inputs
         public Input<string>? Condition { get; set; }
 
         /// <summary>
-        /// Possible Values: `BusinessEvents`, `Entities`, `Events`, `Logs`, `Metrics`, `Spans`, `Topology`
+        /// Specify the source type of the filter to identify which data source should be evaluated for ingest. Possible values: `Business Events`, `Entities`, `Events`, `Logs`, `Metrics`, `Spans`, `Topology`
         /// </summary>
         [Input("sourceType", required: true)]
         public Input<string> SourceType { get; set; } = null!;

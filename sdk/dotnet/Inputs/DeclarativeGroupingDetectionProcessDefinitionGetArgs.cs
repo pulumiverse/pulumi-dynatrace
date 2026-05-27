@@ -14,19 +14,19 @@ namespace Pulumiverse.Dynatrace.Inputs
     public sealed class DeclarativeGroupingDetectionProcessDefinitionGetArgs : global::Pulumi.ResourceArgs
     {
         /// <summary>
-        /// Process group identifier
+        /// This identifier is used by Dynatrace to recognize this process group.
         /// </summary>
         [Input("id", required: true)]
         public Input<string> Id { get; set; } = null!;
 
         /// <summary>
-        /// This identifier is used by Dynatrace to recognize this process group.
+        /// Process group display name
         /// </summary>
         [Input("processGroupName", required: true)]
         public Input<string> ProcessGroupName { get; set; } = null!;
 
         /// <summary>
-        /// Possible Values: `Never`, `Always`, `highResourceUsage`
+        /// This property tells OneAgent a condition for reporting the created Process group to Dynatrace. Possible values: `Always`, `highResourceUsage`, `Never`
         /// </summary>
         [Input("report", required: true)]
         public Input<string> Report { get; set; } = null!;

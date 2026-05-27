@@ -14,43 +14,43 @@ namespace Pulumiverse.Dynatrace.Inputs
     public sealed class DiskEdgeAnomalyDetectorsAlertsAlertGetArgs : global::Pulumi.ResourceArgs
     {
         /// <summary>
-        /// no documentation available
+        /// No documentation available
         /// </summary>
         [Input("sampleCountThresholds")]
         public Input<Inputs.DiskEdgeAnomalyDetectorsAlertsAlertSampleCountThresholdsGetArgs>? SampleCountThresholds { get; set; }
 
         /// <summary>
-        /// no documentation available
+        /// No documentation available
         /// </summary>
         [Input("sampleCountThresholdsImmediately")]
         public Input<Inputs.DiskEdgeAnomalyDetectorsAlertsAlertSampleCountThresholdsImmediatelyGetArgs>? SampleCountThresholdsImmediately { get; set; }
 
         /// <summary>
-        /// no documentation available
+        /// No documentation available
         /// </summary>
         [Input("thresholdMebibytes")]
         public Input<double>? ThresholdMebibytes { get; set; }
 
         /// <summary>
-        /// no documentation available
+        /// No documentation available
         /// </summary>
         [Input("thresholdMilliseconds")]
         public Input<double>? ThresholdMilliseconds { get; set; }
 
         /// <summary>
-        /// no documentation available
+        /// No documentation available
         /// </summary>
         [Input("thresholdNumber")]
         public Input<double>? ThresholdNumber { get; set; }
 
         /// <summary>
-        /// no documentation available
+        /// No documentation available
         /// </summary>
         [Input("thresholdPercent")]
         public Input<double>? ThresholdPercent { get; set; }
 
         /// <summary>
-        /// Possible Values: `AVAILABLE_DISK_SPACE_MEBIBYTES_BELOW`, `AVAILABLE_DISK_SPACE_PERCENT_BELOW`, `AVAILABLE_INODES_NUMBER_BELOW`, `AVAILABLE_INODES_PERCENT_BELOW`, `READ_ONLY_FILE_SYSTEM`, `READ_TIME_EXCEEDING`, `WRITE_TIME_EXCEEDING`
+        /// Possible values: `AVAILABLE_DISK_SPACE_MEBIBYTES_BELOW`, `AVAILABLE_DISK_SPACE_PERCENT_BELOW`, `AVAILABLE_INODES_NUMBER_BELOW`, `AVAILABLE_INODES_PERCENT_BELOW`, `READ_ONLY_FILE_SYSTEM`, `READ_TIME_EXCEEDING`, `WRITE_TIME_EXCEEDING`
         /// </summary>
         [Input("trigger", required: true)]
         public Input<string> Trigger { get; set; } = null!;

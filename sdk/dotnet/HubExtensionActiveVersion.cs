@@ -57,10 +57,10 @@ namespace Pulumiverse.Dynatrace
     /// 
     /// return await Deployment.RunAsync(() =&gt; 
     /// {
-    ///     var customComDynatraceExtensionPrometheus_cadvisor = new Dynatrace.HubExtensionActiveVersion("custom_com_dynatrace_extension_prometheus-cadvisor", new()
+    ///     var jmx_weblogic_cp = new Dynatrace.HubExtensionActiveVersion("jmx-weblogic-cp", new()
     ///     {
-    ///         Name = "com.dynatrace.extension.active-directory-python",
-    ///         Version = "3.1.6",
+    ///         Name = "com.dynatrace.extension.jmx-weblogic-cp",
+    ///         Version = "2.1.1",
     ///     });
     /// 
     /// });

@@ -32,7 +32,7 @@ class SiteReliabilityGuardianArgs:
 
         :param pulumi.Input['SiteReliabilityGuardianObjectivesArgs'] objectives: Objectives
         :param pulumi.Input[_builtins.str] description: Description
-        :param pulumi.Input[_builtins.str] event_kind: If set to null/'BIZ*EVENT' validation events stored as bizevents in Grail. If set to 'SDLC*EVENT' validation events stored as SDLC events
+        :param pulumi.Input[_builtins.str] event_kind: If set to null/'BIZ*EVENT' validation events stored as bizevents in Grail. If set to 'SDLC*EVENT' validation events stored as SDLC events. Possible values: `BIZ_EVENT`, `SDLC_EVENT`
         :param pulumi.Input[_builtins.str] name: Name
         :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] tags: Define key/value pairs that further describe this guardian.
         :param pulumi.Input['SiteReliabilityGuardianVariablesArgs'] variables: Define variables for dynamically defining DQL queries
@@ -77,7 +77,7 @@ class SiteReliabilityGuardianArgs:
     @pulumi.getter(name="eventKind")
     def event_kind(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
-        If set to null/'BIZ*EVENT' validation events stored as bizevents in Grail. If set to 'SDLC*EVENT' validation events stored as SDLC events
+        If set to null/'BIZ*EVENT' validation events stored as bizevents in Grail. If set to 'SDLC*EVENT' validation events stored as SDLC events. Possible values: `BIZ_EVENT`, `SDLC_EVENT`
         """
         return pulumi.get(self, "event_kind")
 
@@ -135,7 +135,7 @@ class _SiteReliabilityGuardianState:
         Input properties used for looking up and filtering SiteReliabilityGuardian resources.
 
         :param pulumi.Input[_builtins.str] description: Description
-        :param pulumi.Input[_builtins.str] event_kind: If set to null/'BIZ*EVENT' validation events stored as bizevents in Grail. If set to 'SDLC*EVENT' validation events stored as SDLC events
+        :param pulumi.Input[_builtins.str] event_kind: If set to null/'BIZ*EVENT' validation events stored as bizevents in Grail. If set to 'SDLC*EVENT' validation events stored as SDLC events. Possible values: `BIZ_EVENT`, `SDLC_EVENT`
         :param pulumi.Input[_builtins.str] name: Name
         :param pulumi.Input['SiteReliabilityGuardianObjectivesArgs'] objectives: Objectives
         :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] tags: Define key/value pairs that further describe this guardian.
@@ -170,7 +170,7 @@ class _SiteReliabilityGuardianState:
     @pulumi.getter(name="eventKind")
     def event_kind(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
-        If set to null/'BIZ*EVENT' validation events stored as bizevents in Grail. If set to 'SDLC*EVENT' validation events stored as SDLC events
+        If set to null/'BIZ*EVENT' validation events stored as bizevents in Grail. If set to 'SDLC*EVENT' validation events stored as SDLC events. Possible values: `BIZ_EVENT`, `SDLC_EVENT`
         """
         return pulumi.get(self, "event_kind")
 
@@ -261,7 +261,7 @@ class SiteReliabilityGuardian(pulumi.CustomResource):
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[_builtins.str] description: Description
-        :param pulumi.Input[_builtins.str] event_kind: If set to null/'BIZ*EVENT' validation events stored as bizevents in Grail. If set to 'SDLC*EVENT' validation events stored as SDLC events
+        :param pulumi.Input[_builtins.str] event_kind: If set to null/'BIZ*EVENT' validation events stored as bizevents in Grail. If set to 'SDLC*EVENT' validation events stored as SDLC events. Possible values: `BIZ_EVENT`, `SDLC_EVENT`
         :param pulumi.Input[_builtins.str] name: Name
         :param pulumi.Input[Union['SiteReliabilityGuardianObjectivesArgs', 'SiteReliabilityGuardianObjectivesArgsDict']] objectives: Objectives
         :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] tags: Define key/value pairs that further describe this guardian.
@@ -353,7 +353,7 @@ class SiteReliabilityGuardian(pulumi.CustomResource):
         :param pulumi.Input[str] id: The unique provider ID of the resource to lookup.
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[_builtins.str] description: Description
-        :param pulumi.Input[_builtins.str] event_kind: If set to null/'BIZ*EVENT' validation events stored as bizevents in Grail. If set to 'SDLC*EVENT' validation events stored as SDLC events
+        :param pulumi.Input[_builtins.str] event_kind: If set to null/'BIZ*EVENT' validation events stored as bizevents in Grail. If set to 'SDLC*EVENT' validation events stored as SDLC events. Possible values: `BIZ_EVENT`, `SDLC_EVENT`
         :param pulumi.Input[_builtins.str] name: Name
         :param pulumi.Input[Union['SiteReliabilityGuardianObjectivesArgs', 'SiteReliabilityGuardianObjectivesArgsDict']] objectives: Objectives
         :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] tags: Define key/value pairs that further describe this guardian.
@@ -383,7 +383,7 @@ class SiteReliabilityGuardian(pulumi.CustomResource):
     @pulumi.getter(name="eventKind")
     def event_kind(self) -> pulumi.Output[Optional[_builtins.str]]:
         """
-        If set to null/'BIZ*EVENT' validation events stored as bizevents in Grail. If set to 'SDLC*EVENT' validation events stored as SDLC events
+        If set to null/'BIZ*EVENT' validation events stored as bizevents in Grail. If set to 'SDLC*EVENT' validation events stored as SDLC events. Possible values: `BIZ_EVENT`, `SDLC_EVENT`
         """
         return pulumi.get(self, "event_kind")
 

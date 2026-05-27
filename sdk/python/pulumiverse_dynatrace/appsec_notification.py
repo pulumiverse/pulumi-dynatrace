@@ -558,11 +558,21 @@ class AppsecNotification(pulumi.CustomResource):
         import json
         import pulumiverse_dynatrace as dynatrace
 
+        alert = dynatrace.VulnerabilityAlerting("alert",
+            name="#name#",
+            enabled=True,
+            enabled_risk_levels=[
+                "LOW",
+                "MEDIUM",
+                "HIGH",
+                "CRITICAL",
+            ],
+            enabled_trigger_events=["SECURITY_PROBLEM_OPENED"])
         terraform_security_problem_webhook_test = dynatrace.AppsecNotification("Terraform_Security_Problem_Webhook_Test",
             type="WEBHOOK",
             enabled=True,
             display_name="Terraform Security Problem Webhook Test",
-            security_problem_based_alerting_profile="vu9U3hXa3q0AAAABACxidWlsdGluOmFwcHNlYy5ub3RpZmljYXRpb24tYWxlcnRpbmctcHJvZmlsZQAGdGVuYW50AAZ0ZW5hbnQAJDMyMDhkNWMyLTFlZmYtMzk5My1iNjMwLWI0MjQ5N2U4MDQ2Nr7vVN4V2t6t",
+            security_problem_based_alerting_profile=alert.id,
             trigger="SECURITY_PROBLEM",
             security_problem_based_webhook_payload={
                 "payload": json.dumps({
@@ -627,11 +637,21 @@ class AppsecNotification(pulumi.CustomResource):
         import json
         import pulumiverse_dynatrace as dynatrace
 
+        alert = dynatrace.VulnerabilityAlerting("alert",
+            name="#name#",
+            enabled=True,
+            enabled_risk_levels=[
+                "LOW",
+                "MEDIUM",
+                "HIGH",
+                "CRITICAL",
+            ],
+            enabled_trigger_events=["SECURITY_PROBLEM_OPENED"])
         terraform_security_problem_webhook_test = dynatrace.AppsecNotification("Terraform_Security_Problem_Webhook_Test",
             type="WEBHOOK",
             enabled=True,
             display_name="Terraform Security Problem Webhook Test",
-            security_problem_based_alerting_profile="vu9U3hXa3q0AAAABACxidWlsdGluOmFwcHNlYy5ub3RpZmljYXRpb24tYWxlcnRpbmctcHJvZmlsZQAGdGVuYW50AAZ0ZW5hbnQAJDMyMDhkNWMyLTFlZmYtMzk5My1iNjMwLWI0MjQ5N2U4MDQ2Nr7vVN4V2t6t",
+            security_problem_based_alerting_profile=alert.id,
             trigger="SECURITY_PROBLEM",
             security_problem_based_webhook_payload={
                 "payload": json.dumps({

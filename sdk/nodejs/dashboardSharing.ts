@@ -16,6 +16,59 @@ import * as utilities from "./utilities";
  * - Share Dynatrace dashboards - https://www.dynatrace.com/support/help/how-to-use-dynatrace/dashboards-and-charts/dashboards/share-dashboards
  *
  * - Dashboards API - https://www.dynatrace.com/support/help/dynatrace-api/configuration-api/dashboards-api
+ *
+ * ## Resource Example Usage
+ *
+ * ```typescript
+ * import * as pulumi from "@pulumi/pulumi";
+ * import * as dynatrace from "@pulumiverse/dynatrace";
+ *
+ * const dashboard = new dynatrace.Dashboard("dashboard", {
+ *     dashboardMetadata: {
+ *         name: "#name#",
+ *         owner: "Dynatrace",
+ *         tags: ["Kubernetes"],
+ *         dynamicFilters: {
+ *             filters: ["KUBERNETES_CLUSTER"],
+ *         },
+ *     },
+ *     tiles: [{
+ *         name: "Markdown",
+ *         tileType: "MARKDOWN",
+ *         configured: true,
+ *         bounds: {
+ *             top: 0,
+ *             width: 684,
+ *             height: 38,
+ *             left: 0,
+ *         },
+ *         markdown: "## Cluster resource overview",
+ *     }],
+ * });
+ * const group = new dynatrace.IamGroup("group", {name: "#name#"});
+ * const user = new dynatrace.IamServiceUser("user", {name: "#name#"});
+ * const sharing = new dynatrace.DashboardSharing("sharing", {
+ *     dashboardId: dashboard.id,
+ *     permissions: {
+ *         permissions: [
+ *             {
+ *                 level: "VIEW",
+ *                 type: "ALL",
+ *             },
+ *             {
+ *                 level: "EDIT",
+ *                 type: "GROUP",
+ *                 id: group.id,
+ *             },
+ *             {
+ *                 level: "EDIT",
+ *                 type: "USER",
+ *                 id: user.id,
+ *             },
+ *         ],
+ *     },
+ * });
+ * ```
  */
 export class DashboardSharing extends pulumi.CustomResource {
     /**

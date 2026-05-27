@@ -58,7 +58,7 @@ export class LogEvents extends pulumi.CustomResource {
      */
     declare public readonly eventTemplate: pulumi.Output<outputs.LogEventsEventTemplate>;
     /**
-     * Log query
+     * Matcher
      */
     declare public readonly query: pulumi.Output<string>;
     /**
@@ -120,7 +120,7 @@ export interface LogEventsState {
      */
     eventTemplate?: pulumi.Input<inputs.LogEventsEventTemplate | undefined>;
     /**
-     * Log query
+     * Matcher
      */
     query?: pulumi.Input<string | undefined>;
     /**
@@ -142,7 +142,7 @@ export interface LogEventsArgs {
      */
     eventTemplate: pulumi.Input<inputs.LogEventsEventTemplate>;
     /**
-     * Log query
+     * Matcher
      */
     query: pulumi.Input<string>;
     /**

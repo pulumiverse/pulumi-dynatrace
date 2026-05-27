@@ -140,9 +140,9 @@ class HubExtensionActiveVersion(pulumi.CustomResource):
         import pulumi
         import pulumiverse_dynatrace as dynatrace
 
-        custom_com_dynatrace_extension_prometheus_cadvisor = dynatrace.HubExtensionActiveVersion("custom_com_dynatrace_extension_prometheus-cadvisor",
-            name="com.dynatrace.extension.active-directory-python",
-            version="3.1.6")
+        jmx_weblogic_cp = dynatrace.HubExtensionActiveVersion("jmx-weblogic-cp",
+            name="com.dynatrace.extension.jmx-weblogic-cp",
+            version="2.1.1")
         ```
 
 
@@ -191,9 +191,9 @@ class HubExtensionActiveVersion(pulumi.CustomResource):
         import pulumi
         import pulumiverse_dynatrace as dynatrace
 
-        custom_com_dynatrace_extension_prometheus_cadvisor = dynatrace.HubExtensionActiveVersion("custom_com_dynatrace_extension_prometheus-cadvisor",
-            name="com.dynatrace.extension.active-directory-python",
-            version="3.1.6")
+        jmx_weblogic_cp = dynatrace.HubExtensionActiveVersion("jmx-weblogic-cp",
+            name="com.dynatrace.extension.jmx-weblogic-cp",
+            version="2.1.1")
         ```
 
 

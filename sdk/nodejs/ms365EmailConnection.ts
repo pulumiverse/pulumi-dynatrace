@@ -36,6 +36,22 @@ import * as utilities from "./utilities";
  * - `terraform-provider-dynatrace -export dynatrace.Ms365EmailConnection` downloads all existing Microsoft 365 email connections
  *
  * The full documentation of the export feature is available [here](https://dt-url.net/h203qmc).
+ *
+ * ## Resource Example Usage
+ *
+ * ```typescript
+ * import * as pulumi from "@pulumi/pulumi";
+ * import * as dynatrace from "@pulumiverse/dynatrace";
+ *
+ * const connection = new dynatrace.Ms365EmailConnection("connection", {
+ *     name: "#name#",
+ *     type: "client_secret",
+ *     tenantId: "00000000-0000-0000-0000-000000000000",
+ *     clientId: "00000000-0000-0000-0000-000000000000",
+ *     clientSecret: "######",
+ *     fromAddress: "random.email@terraform.com",
+ * });
+ * ```
  */
 export class Ms365EmailConnection extends pulumi.CustomResource {
     /**
@@ -86,7 +102,7 @@ export class Ms365EmailConnection extends pulumi.CustomResource {
      */
     declare public readonly tenantId: pulumi.Output<string>;
     /**
-     * Possible Values: `clientSecret`
+     * Type of authentication method that should be used. Possible values: `clientSecret`
      */
     declare public readonly type: pulumi.Output<string>;
 
@@ -162,7 +178,7 @@ export interface Ms365EmailConnectionState {
      */
     tenantId?: pulumi.Input<string | undefined>;
     /**
-     * Possible Values: `clientSecret`
+     * Type of authentication method that should be used. Possible values: `clientSecret`
      */
     type?: pulumi.Input<string | undefined>;
 }
@@ -192,7 +208,7 @@ export interface Ms365EmailConnectionArgs {
      */
     tenantId: pulumi.Input<string>;
     /**
-     * Possible Values: `clientSecret`
+     * Type of authentication method that should be used. Possible values: `clientSecret`
      */
     type: pulumi.Input<string>;
 }

@@ -14,7 +14,19 @@ namespace Pulumiverse.Dynatrace.Inputs
     public sealed class CredentialsExternalArgs : global::Pulumi.ResourceArgs
     {
         /// <summary>
-        /// Required for Hashicorp Certificate. The ID of Credentials within the Certificate Vault holding the certificate
+        /// The name of the object that stores the username and password to retrieve and synchronize with the Dynatrace credential vault; this is not the name of the account logged into CyberArk Central Credential Provider.
+        /// </summary>
+        [Input("accountName")]
+        public Input<string>? AccountName { get; set; }
+
+        /// <summary>
+        /// The application ID defined in CyberArk Vault
+        /// </summary>
+        [Input("applicationId")]
+        public Input<string>? ApplicationId { get; set; }
+
+        /// <summary>
+        /// Required for Hashicorp Certificate, CyberArk username and password authentication, and CyberArk host-based authentication. The ID of Credentials within the Credentials Vault holding the certificate.
         /// </summary>
         [Input("certificate")]
         public Input<string>? Certificate { get; set; }
@@ -44,6 +56,12 @@ namespace Pulumiverse.Dynatrace.Inputs
         }
 
         /// <summary>
+        /// The name of the folder where the credentials are stored in CyberArk Vault; the default folder name is `Root`.
+        /// </summary>
+        [Input("folderName")]
+        public Input<string>? FolderName { get; set; }
+
+        /// <summary>
         /// No documentation available
         /// </summary>
         [Input("passwordSecretName")]
@@ -62,6 +80,12 @@ namespace Pulumiverse.Dynatrace.Inputs
         public Input<string>? Roleid { get; set; }
 
         /// <summary>
+        /// Safe name connected to CyberArk Vault
+        /// </summary>
+        [Input("safeName")]
+        public Input<string>? SafeName { get; set; }
+
+        /// <summary>
         /// Required for Hashicorp App Role. The ID of Credentials within the Certificate Vault holding the secret id
         /// </summary>
         [Input("secretid")]
@@ -78,6 +102,12 @@ namespace Pulumiverse.Dynatrace.Inputs
         /// </summary>
         [Input("tokenSecretName")]
         public Input<string>? TokenSecretName { get; set; }
+
+        /// <summary>
+        /// Dynatrace credential ID of the username-password pair used for authentication to the CyberArk Central Credential Provider
+        /// </summary>
+        [Input("usernamePasswordForCpm")]
+        public Input<string>? UsernamePasswordForCpm { get; set; }
 
         /// <summary>
         /// No documentation available

@@ -25,6 +25,69 @@ import (
 // - `terraform-provider-dynatrace -export MobileAppAnomalies` downloads all existing mobile application anomaly detection configuration
 //
 // The full documentation of the export feature is available [here](https://dt-url.net/h203qmc).
+//
+// ## Resource Example Usage
+//
+// ```go
+// package main
+//
+// import (
+//
+//	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//	"github.com/pulumiverse/pulumi-dynatrace/sdk/go/dynatrace"
+//
+// )
+//
+//	func main() {
+//		pulumi.Run(func(ctx *pulumi.Context) error {
+//			application, err := dynatrace.GetMobileApplication(ctx, &dynatrace.LookupMobileApplicationArgs{
+//				Name: "Application",
+//			}, nil)
+//			if err != nil {
+//				return err
+//			}
+//			_, err = dynatrace.NewMobileAppAnomalies(ctx, "anomalies", &dynatrace.MobileAppAnomaliesArgs{
+//				Scope: pulumi.String(pulumi.String(application.Id)),
+//				ErrorRateIncrease: &dynatrace.MobileAppAnomaliesErrorRateIncreaseArgs{
+//					Enabled:       pulumi.Bool(true),
+//					DetectionMode: pulumi.String("fixed"),
+//					ErrorRateIncreaseFixed: &dynatrace.MobileAppAnomaliesErrorRateIncreaseErrorRateIncreaseFixedArgs{
+//						Sensitivity:       pulumi.String("medium"),
+//						ThresholdAbsolute: pulumi.Float64(6),
+//					},
+//				},
+//				SlowUserActions: &dynatrace.MobileAppAnomaliesSlowUserActionsArgs{
+//					Enabled:       pulumi.Bool(true),
+//					DetectionMode: pulumi.String("fixed"),
+//					SlowUserActionsFixed: &dynatrace.MobileAppAnomaliesSlowUserActionsSlowUserActionsFixedArgs{
+//						Sensitivity: pulumi.String("high"),
+//						DurationAvoidOveralerting: &dynatrace.MobileAppAnomaliesSlowUserActionsSlowUserActionsFixedDurationAvoidOveralertingArgs{
+//							MinActionRate: pulumi.Int(12),
+//						},
+//						DurationThresholdAllFixed: &dynatrace.MobileAppAnomaliesSlowUserActionsSlowUserActionsFixedDurationThresholdAllFixedArgs{
+//							DurationThreshold: pulumi.Float64(200),
+//						},
+//						DurationThresholdSlowest: &dynatrace.MobileAppAnomaliesSlowUserActionsSlowUserActionsFixedDurationThresholdSlowestArgs{
+//							DurationThreshold: pulumi.Float64(900),
+//						},
+//					},
+//				},
+//				UnexpectedHighLoad: &dynatrace.MobileAppAnomaliesUnexpectedHighLoadArgs{
+//					Enabled:             pulumi.Bool(true),
+//					ThresholdPercentage: pulumi.Float64(300),
+//				},
+//				UnexpectedLowLoad: &dynatrace.MobileAppAnomaliesUnexpectedLowLoadArgs{
+//					Enabled: pulumi.Bool(false),
+//				},
+//			})
+//			if err != nil {
+//				return err
+//			}
+//			return nil
+//		})
+//	}
+//
+// ```
 type MobileAppAnomalies struct {
 	pulumi.CustomResourceState
 

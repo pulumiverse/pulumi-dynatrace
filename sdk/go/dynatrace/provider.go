@@ -18,25 +18,39 @@ import (
 type Provider struct {
 	pulumi.ProviderResourceState
 
-	AccountId              pulumi.StringPtrOutput `pulumi:"accountId"`
-	AutomationClientId     pulumi.StringPtrOutput `pulumi:"automationClientId"`
+	// The Dynatrace account ID (UUID). Required for IAM (Account Management) resources. Also serves as a fallback for `iamAccountId`.
+	AccountId pulumi.StringPtrOutput `pulumi:"accountId"`
+	// The client ID of an OAuth client used for platform APIs. Falls back to `clientId` if not specified.
+	AutomationClientId pulumi.StringPtrOutput `pulumi:"automationClientId"`
+	// The client secret of an OAuth client used for platform APIs. Falls back to `clientSecret` if not specified.
 	AutomationClientSecret pulumi.StringPtrOutput `pulumi:"automationClientSecret"`
-	// The URL of the Dynatrace Environment with Platform capabilities turned on (`https://#####.apps.dynatrace.com)`. This is optional configuration when `dtEnvUrl` already specifies a SaaS Environment like `https://#####.live.dynatrace.com` or `https://#####.apps.dynatrace.com`
+	// The URL of the Dynatrace platform environment (`https://#####.apps.dynatrace.com`). Falls back to `dtEnvUrl` if not specified.
 	AutomationEnvUrl pulumi.StringPtrOutput `pulumi:"automationEnvUrl"`
-	// The URL that provides the Bearer tokens when accessing the Automation REST API. This is optional configuration when `dtEnvUrl` already specifies a SaaS Environment like `https://#####.live.dynatrace.com` or `https://#####.apps.dynatrace.com`
+	// The token URL for obtaining access tokens via OAuth for the platform APIs. Default: `https://sso.dynatrace.com/sso/oauth2/token`.
 	AutomationTokenUrl pulumi.StringPtrOutput `pulumi:"automationTokenUrl"`
-	ClientId           pulumi.StringPtrOutput `pulumi:"clientId"`
-	ClientSecret       pulumi.StringPtrOutput `pulumi:"clientSecret"`
-	DtApiToken         pulumi.StringPtrOutput `pulumi:"dtApiToken"`
-	DtClusterApiToken  pulumi.StringPtrOutput `pulumi:"dtClusterApiToken"`
-	DtClusterUrl       pulumi.StringPtrOutput `pulumi:"dtClusterUrl"`
-	DtEnvUrl           pulumi.StringPtrOutput `pulumi:"dtEnvUrl"`
-	IamAccountId       pulumi.StringPtrOutput `pulumi:"iamAccountId"`
-	IamClientId        pulumi.StringPtrOutput `pulumi:"iamClientId"`
-	IamClientSecret    pulumi.StringPtrOutput `pulumi:"iamClientSecret"`
-	IamEndpointUrl     pulumi.StringPtrOutput `pulumi:"iamEndpointUrl"`
-	IamTokenUrl        pulumi.StringPtrOutput `pulumi:"iamTokenUrl"`
-	// A Dynatrace Platform Token. Specifying such a token allows for easy authentication against Platform resources. In such a case it supersedes `automationClientId`, `automationClientSecret`, `automationTokenUrl` and `automationEnvUrl`
+	// The client ID of an OAuth client used for  platform APIs. Also serves as a fallback for `iamClientId` and `automationClientId`.
+	ClientId pulumi.StringPtrOutput `pulumi:"clientId"`
+	// The client secret of an OAuth client used for platform APIs. Also serves as a fallback for `iamClientSecret` and `automationClientSecret`.
+	ClientSecret pulumi.StringPtrOutput `pulumi:"clientSecret"`
+	// The API token for classic Dynatrace APIs.
+	DtApiToken pulumi.StringPtrOutput `pulumi:"dtApiToken"`
+	// The API token for Dynatrace Managed cluster APIs.
+	DtClusterApiToken pulumi.StringPtrOutput `pulumi:"dtClusterApiToken"`
+	// The URL of the Dynatrace Managed cluster.
+	DtClusterUrl pulumi.StringPtrOutput `pulumi:"dtClusterUrl"`
+	// The URL of the Dynatrace environment (e.g. `https://#####.live.dynatrace.com` or `https://#####.apps.dynatrace.com`).
+	DtEnvUrl pulumi.StringPtrOutput `pulumi:"dtEnvUrl"`
+	// The Dynatrace account ID (UUID). Required for IAM (Account Management) resources. Falls back to `accountId` if not specified.
+	IamAccountId pulumi.StringPtrOutput `pulumi:"iamAccountId"`
+	// The client ID of an OAuth client used for the IAM (Account Management) API. Falls back to `clientId` if not specified.
+	IamClientId pulumi.StringPtrOutput `pulumi:"iamClientId"`
+	// The client secret of an OAuth client used for the IAM (Account Management) API. Falls back to `clientSecret` if not specified.
+	IamClientSecret pulumi.StringPtrOutput `pulumi:"iamClientSecret"`
+	// The endpoint URL for the IAM (Account Management) API. Default: `https://api.dynatrace.com`.
+	IamEndpointUrl pulumi.StringPtrOutput `pulumi:"iamEndpointUrl"`
+	// The token URL for obtaining access tokens via OAuth for the IAM (Account Management) API. Default: `https://sso.dynatrace.com/sso/oauth2/token`.
+	IamTokenUrl pulumi.StringPtrOutput `pulumi:"iamTokenUrl"`
+	// The Dynatrace platform token used for platform APIs. When specified, it is used in preference to `clientId`, `clientSecret`, `automationClientId`, `automationClientSecret`, `automationTokenUrl`, and `automationEnvUrl` for platform requests. Platform tokens can't be used for IAM (Account Management) or classic resources.
 	PlatformToken pulumi.StringPtrOutput `pulumi:"platformToken"`
 }
 
@@ -132,49 +146,77 @@ func NewProvider(ctx *pulumi.Context,
 }
 
 type providerArgs struct {
-	AccountId              *string `pulumi:"accountId"`
-	AutomationClientId     *string `pulumi:"automationClientId"`
+	// The Dynatrace account ID (UUID). Required for IAM (Account Management) resources. Also serves as a fallback for `iamAccountId`.
+	AccountId *string `pulumi:"accountId"`
+	// The client ID of an OAuth client used for platform APIs. Falls back to `clientId` if not specified.
+	AutomationClientId *string `pulumi:"automationClientId"`
+	// The client secret of an OAuth client used for platform APIs. Falls back to `clientSecret` if not specified.
 	AutomationClientSecret *string `pulumi:"automationClientSecret"`
-	// The URL of the Dynatrace Environment with Platform capabilities turned on (`https://#####.apps.dynatrace.com)`. This is optional configuration when `dtEnvUrl` already specifies a SaaS Environment like `https://#####.live.dynatrace.com` or `https://#####.apps.dynatrace.com`
+	// The URL of the Dynatrace platform environment (`https://#####.apps.dynatrace.com`). Falls back to `dtEnvUrl` if not specified.
 	AutomationEnvUrl *string `pulumi:"automationEnvUrl"`
-	// The URL that provides the Bearer tokens when accessing the Automation REST API. This is optional configuration when `dtEnvUrl` already specifies a SaaS Environment like `https://#####.live.dynatrace.com` or `https://#####.apps.dynatrace.com`
+	// The token URL for obtaining access tokens via OAuth for the platform APIs. Default: `https://sso.dynatrace.com/sso/oauth2/token`.
 	AutomationTokenUrl *string `pulumi:"automationTokenUrl"`
-	ClientId           *string `pulumi:"clientId"`
-	ClientSecret       *string `pulumi:"clientSecret"`
-	DtApiToken         *string `pulumi:"dtApiToken"`
-	DtClusterApiToken  *string `pulumi:"dtClusterApiToken"`
-	DtClusterUrl       *string `pulumi:"dtClusterUrl"`
-	DtEnvUrl           *string `pulumi:"dtEnvUrl"`
-	IamAccountId       *string `pulumi:"iamAccountId"`
-	IamClientId        *string `pulumi:"iamClientId"`
-	IamClientSecret    *string `pulumi:"iamClientSecret"`
-	IamEndpointUrl     *string `pulumi:"iamEndpointUrl"`
-	IamTokenUrl        *string `pulumi:"iamTokenUrl"`
-	// A Dynatrace Platform Token. Specifying such a token allows for easy authentication against Platform resources. In such a case it supersedes `automationClientId`, `automationClientSecret`, `automationTokenUrl` and `automationEnvUrl`
+	// The client ID of an OAuth client used for  platform APIs. Also serves as a fallback for `iamClientId` and `automationClientId`.
+	ClientId *string `pulumi:"clientId"`
+	// The client secret of an OAuth client used for platform APIs. Also serves as a fallback for `iamClientSecret` and `automationClientSecret`.
+	ClientSecret *string `pulumi:"clientSecret"`
+	// The API token for classic Dynatrace APIs.
+	DtApiToken *string `pulumi:"dtApiToken"`
+	// The API token for Dynatrace Managed cluster APIs.
+	DtClusterApiToken *string `pulumi:"dtClusterApiToken"`
+	// The URL of the Dynatrace Managed cluster.
+	DtClusterUrl *string `pulumi:"dtClusterUrl"`
+	// The URL of the Dynatrace environment (e.g. `https://#####.live.dynatrace.com` or `https://#####.apps.dynatrace.com`).
+	DtEnvUrl *string `pulumi:"dtEnvUrl"`
+	// The Dynatrace account ID (UUID). Required for IAM (Account Management) resources. Falls back to `accountId` if not specified.
+	IamAccountId *string `pulumi:"iamAccountId"`
+	// The client ID of an OAuth client used for the IAM (Account Management) API. Falls back to `clientId` if not specified.
+	IamClientId *string `pulumi:"iamClientId"`
+	// The client secret of an OAuth client used for the IAM (Account Management) API. Falls back to `clientSecret` if not specified.
+	IamClientSecret *string `pulumi:"iamClientSecret"`
+	// The endpoint URL for the IAM (Account Management) API. Default: `https://api.dynatrace.com`.
+	IamEndpointUrl *string `pulumi:"iamEndpointUrl"`
+	// The token URL for obtaining access tokens via OAuth for the IAM (Account Management) API. Default: `https://sso.dynatrace.com/sso/oauth2/token`.
+	IamTokenUrl *string `pulumi:"iamTokenUrl"`
+	// The Dynatrace platform token used for platform APIs. When specified, it is used in preference to `clientId`, `clientSecret`, `automationClientId`, `automationClientSecret`, `automationTokenUrl`, and `automationEnvUrl` for platform requests. Platform tokens can't be used for IAM (Account Management) or classic resources.
 	PlatformToken *string `pulumi:"platformToken"`
 }
 
 // The set of arguments for constructing a Provider resource.
 type ProviderArgs struct {
-	AccountId              pulumi.StringPtrInput
-	AutomationClientId     pulumi.StringPtrInput
+	// The Dynatrace account ID (UUID). Required for IAM (Account Management) resources. Also serves as a fallback for `iamAccountId`.
+	AccountId pulumi.StringPtrInput
+	// The client ID of an OAuth client used for platform APIs. Falls back to `clientId` if not specified.
+	AutomationClientId pulumi.StringPtrInput
+	// The client secret of an OAuth client used for platform APIs. Falls back to `clientSecret` if not specified.
 	AutomationClientSecret pulumi.StringPtrInput
-	// The URL of the Dynatrace Environment with Platform capabilities turned on (`https://#####.apps.dynatrace.com)`. This is optional configuration when `dtEnvUrl` already specifies a SaaS Environment like `https://#####.live.dynatrace.com` or `https://#####.apps.dynatrace.com`
+	// The URL of the Dynatrace platform environment (`https://#####.apps.dynatrace.com`). Falls back to `dtEnvUrl` if not specified.
 	AutomationEnvUrl pulumi.StringPtrInput
-	// The URL that provides the Bearer tokens when accessing the Automation REST API. This is optional configuration when `dtEnvUrl` already specifies a SaaS Environment like `https://#####.live.dynatrace.com` or `https://#####.apps.dynatrace.com`
+	// The token URL for obtaining access tokens via OAuth for the platform APIs. Default: `https://sso.dynatrace.com/sso/oauth2/token`.
 	AutomationTokenUrl pulumi.StringPtrInput
-	ClientId           pulumi.StringPtrInput
-	ClientSecret       pulumi.StringPtrInput
-	DtApiToken         pulumi.StringPtrInput
-	DtClusterApiToken  pulumi.StringPtrInput
-	DtClusterUrl       pulumi.StringPtrInput
-	DtEnvUrl           pulumi.StringPtrInput
-	IamAccountId       pulumi.StringPtrInput
-	IamClientId        pulumi.StringPtrInput
-	IamClientSecret    pulumi.StringPtrInput
-	IamEndpointUrl     pulumi.StringPtrInput
-	IamTokenUrl        pulumi.StringPtrInput
-	// A Dynatrace Platform Token. Specifying such a token allows for easy authentication against Platform resources. In such a case it supersedes `automationClientId`, `automationClientSecret`, `automationTokenUrl` and `automationEnvUrl`
+	// The client ID of an OAuth client used for  platform APIs. Also serves as a fallback for `iamClientId` and `automationClientId`.
+	ClientId pulumi.StringPtrInput
+	// The client secret of an OAuth client used for platform APIs. Also serves as a fallback for `iamClientSecret` and `automationClientSecret`.
+	ClientSecret pulumi.StringPtrInput
+	// The API token for classic Dynatrace APIs.
+	DtApiToken pulumi.StringPtrInput
+	// The API token for Dynatrace Managed cluster APIs.
+	DtClusterApiToken pulumi.StringPtrInput
+	// The URL of the Dynatrace Managed cluster.
+	DtClusterUrl pulumi.StringPtrInput
+	// The URL of the Dynatrace environment (e.g. `https://#####.live.dynatrace.com` or `https://#####.apps.dynatrace.com`).
+	DtEnvUrl pulumi.StringPtrInput
+	// The Dynatrace account ID (UUID). Required for IAM (Account Management) resources. Falls back to `accountId` if not specified.
+	IamAccountId pulumi.StringPtrInput
+	// The client ID of an OAuth client used for the IAM (Account Management) API. Falls back to `clientId` if not specified.
+	IamClientId pulumi.StringPtrInput
+	// The client secret of an OAuth client used for the IAM (Account Management) API. Falls back to `clientSecret` if not specified.
+	IamClientSecret pulumi.StringPtrInput
+	// The endpoint URL for the IAM (Account Management) API. Default: `https://api.dynatrace.com`.
+	IamEndpointUrl pulumi.StringPtrInput
+	// The token URL for obtaining access tokens via OAuth for the IAM (Account Management) API. Default: `https://sso.dynatrace.com/sso/oauth2/token`.
+	IamTokenUrl pulumi.StringPtrInput
+	// The Dynatrace platform token used for platform APIs. When specified, it is used in preference to `clientId`, `clientSecret`, `automationClientId`, `automationClientSecret`, `automationTokenUrl`, and `automationEnvUrl` for platform requests. Platform tokens can't be used for IAM (Account Management) or classic resources.
 	PlatformToken pulumi.StringPtrInput
 }
 
@@ -238,73 +280,87 @@ func (o ProviderOutput) ToProviderOutputWithContext(ctx context.Context) Provide
 	return o
 }
 
+// The Dynatrace account ID (UUID). Required for IAM (Account Management) resources. Also serves as a fallback for `iamAccountId`.
 func (o ProviderOutput) AccountId() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v *Provider) pulumi.StringPtrOutput { return v.AccountId }).(pulumi.StringPtrOutput)
 }
 
+// The client ID of an OAuth client used for platform APIs. Falls back to `clientId` if not specified.
 func (o ProviderOutput) AutomationClientId() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v *Provider) pulumi.StringPtrOutput { return v.AutomationClientId }).(pulumi.StringPtrOutput)
 }
 
+// The client secret of an OAuth client used for platform APIs. Falls back to `clientSecret` if not specified.
 func (o ProviderOutput) AutomationClientSecret() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v *Provider) pulumi.StringPtrOutput { return v.AutomationClientSecret }).(pulumi.StringPtrOutput)
 }
 
-// The URL of the Dynatrace Environment with Platform capabilities turned on (`https://#####.apps.dynatrace.com)`. This is optional configuration when `dtEnvUrl` already specifies a SaaS Environment like `https://#####.live.dynatrace.com` or `https://#####.apps.dynatrace.com`
+// The URL of the Dynatrace platform environment (`https://#####.apps.dynatrace.com`). Falls back to `dtEnvUrl` if not specified.
 func (o ProviderOutput) AutomationEnvUrl() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v *Provider) pulumi.StringPtrOutput { return v.AutomationEnvUrl }).(pulumi.StringPtrOutput)
 }
 
-// The URL that provides the Bearer tokens when accessing the Automation REST API. This is optional configuration when `dtEnvUrl` already specifies a SaaS Environment like `https://#####.live.dynatrace.com` or `https://#####.apps.dynatrace.com`
+// The token URL for obtaining access tokens via OAuth for the platform APIs. Default: `https://sso.dynatrace.com/sso/oauth2/token`.
 func (o ProviderOutput) AutomationTokenUrl() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v *Provider) pulumi.StringPtrOutput { return v.AutomationTokenUrl }).(pulumi.StringPtrOutput)
 }
 
+// The client ID of an OAuth client used for  platform APIs. Also serves as a fallback for `iamClientId` and `automationClientId`.
 func (o ProviderOutput) ClientId() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v *Provider) pulumi.StringPtrOutput { return v.ClientId }).(pulumi.StringPtrOutput)
 }
 
+// The client secret of an OAuth client used for platform APIs. Also serves as a fallback for `iamClientSecret` and `automationClientSecret`.
 func (o ProviderOutput) ClientSecret() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v *Provider) pulumi.StringPtrOutput { return v.ClientSecret }).(pulumi.StringPtrOutput)
 }
 
+// The API token for classic Dynatrace APIs.
 func (o ProviderOutput) DtApiToken() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v *Provider) pulumi.StringPtrOutput { return v.DtApiToken }).(pulumi.StringPtrOutput)
 }
 
+// The API token for Dynatrace Managed cluster APIs.
 func (o ProviderOutput) DtClusterApiToken() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v *Provider) pulumi.StringPtrOutput { return v.DtClusterApiToken }).(pulumi.StringPtrOutput)
 }
 
+// The URL of the Dynatrace Managed cluster.
 func (o ProviderOutput) DtClusterUrl() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v *Provider) pulumi.StringPtrOutput { return v.DtClusterUrl }).(pulumi.StringPtrOutput)
 }
 
+// The URL of the Dynatrace environment (e.g. `https://#####.live.dynatrace.com` or `https://#####.apps.dynatrace.com`).
 func (o ProviderOutput) DtEnvUrl() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v *Provider) pulumi.StringPtrOutput { return v.DtEnvUrl }).(pulumi.StringPtrOutput)
 }
 
+// The Dynatrace account ID (UUID). Required for IAM (Account Management) resources. Falls back to `accountId` if not specified.
 func (o ProviderOutput) IamAccountId() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v *Provider) pulumi.StringPtrOutput { return v.IamAccountId }).(pulumi.StringPtrOutput)
 }
 
+// The client ID of an OAuth client used for the IAM (Account Management) API. Falls back to `clientId` if not specified.
 func (o ProviderOutput) IamClientId() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v *Provider) pulumi.StringPtrOutput { return v.IamClientId }).(pulumi.StringPtrOutput)
 }
 
+// The client secret of an OAuth client used for the IAM (Account Management) API. Falls back to `clientSecret` if not specified.
 func (o ProviderOutput) IamClientSecret() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v *Provider) pulumi.StringPtrOutput { return v.IamClientSecret }).(pulumi.StringPtrOutput)
 }
 
+// The endpoint URL for the IAM (Account Management) API. Default: `https://api.dynatrace.com`.
 func (o ProviderOutput) IamEndpointUrl() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v *Provider) pulumi.StringPtrOutput { return v.IamEndpointUrl }).(pulumi.StringPtrOutput)
 }
 
+// The token URL for obtaining access tokens via OAuth for the IAM (Account Management) API. Default: `https://sso.dynatrace.com/sso/oauth2/token`.
 func (o ProviderOutput) IamTokenUrl() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v *Provider) pulumi.StringPtrOutput { return v.IamTokenUrl }).(pulumi.StringPtrOutput)
 }
 
-// A Dynatrace Platform Token. Specifying such a token allows for easy authentication against Platform resources. In such a case it supersedes `automationClientId`, `automationClientSecret`, `automationTokenUrl` and `automationEnvUrl`
+// The Dynatrace platform token used for platform APIs. When specified, it is used in preference to `clientId`, `clientSecret`, `automationClientId`, `automationClientSecret`, `automationTokenUrl`, and `automationEnvUrl` for platform requests. Platform tokens can't be used for IAM (Account Management) or classic resources.
 func (o ProviderOutput) PlatformToken() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v *Provider) pulumi.StringPtrOutput { return v.PlatformToken }).(pulumi.StringPtrOutput)
 }

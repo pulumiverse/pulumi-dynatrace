@@ -387,15 +387,17 @@ class NetworkMonitor(pulumi.CustomResource):
 
         ```python
         import pulumi
+        import pulumi_dynatrace as dynatrace
         import pulumiverse_dynatrace as dynatrace
 
+        location = dynatrace.get_synthetic_location(name="Location")
         d_ns_test = dynatrace.NetworkMonitor("DNS_Test",
             name="DNS Test",
             description="This is an example DNS test",
             type="MULTI_PROTOCOL",
             enabled=False,
             frequency_min=15,
-            locations=["SYNTHETIC_LOCATION-39F97465BE7BF644"],
+            locations=[location.id],
             outage_handling={
                 "global_consecutive_outage_count_threshold": 1,
                 "global_outages": True,
@@ -408,7 +410,7 @@ class NetworkMonitor(pulumi.CustomResource):
                         "dealerting_samples": 5,
                         "samples": 5,
                         "step_index": 0,
-                        "threshold": 100,
+                        "threshold": float(100),
                         "violating_samples": 3,
                     }],
                 },
@@ -496,15 +498,17 @@ class NetworkMonitor(pulumi.CustomResource):
 
         ```python
         import pulumi
+        import pulumi_dynatrace as dynatrace
         import pulumiverse_dynatrace as dynatrace
 
+        location = dynatrace.get_synthetic_location(name="Location")
         d_ns_test = dynatrace.NetworkMonitor("DNS_Test",
             name="DNS Test",
             description="This is an example DNS test",
             type="MULTI_PROTOCOL",
             enabled=False,
             frequency_min=15,
-            locations=["SYNTHETIC_LOCATION-39F97465BE7BF644"],
+            locations=[location.id],
             outage_handling={
                 "global_consecutive_outage_count_threshold": 1,
                 "global_outages": True,
@@ -517,7 +521,7 @@ class NetworkMonitor(pulumi.CustomResource):
                         "dealerting_samples": 5,
                         "samples": 5,
                         "step_index": 0,
-                        "threshold": 100,
+                        "threshold": float(100),
                         "violating_samples": 3,
                     }],
                 },

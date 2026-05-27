@@ -124,6 +124,52 @@ class HttpMonitorScript(pulumi.CustomResource):
 
         The full documentation of the export feature is available [here](https://dt-url.net/h203qmc).
 
+        ## Resource Example Usage
+
+        ```python
+        import pulumi
+        import pulumi_dynatrace as dynatrace
+        import pulumiverse_dynatrace as dynatrace
+
+        location = dynatrace.get_synthetic_location(name="Location")
+        monitor = dynatrace.HttpMonitor("monitor",
+            anomaly_detections=[{
+                "loading_time_thresholds": [{}],
+                "outage_handlings": [{
+                    "global_outage": True,
+                    "global_outage_policies": [{
+                        "consecutive_runs": 1,
+                    }],
+                }],
+            }],
+            name="#name#",
+            frequency=1,
+            locations=[location.id],
+            no_script=True)
+        script = dynatrace.HttpMonitorScript("script",
+            http_id=monitor.id,
+            script={
+                "requests": [
+                    {
+                        "description": "request1",
+                        "method": "GET",
+                        "url": "https://example.com",
+                        "configuration": {
+                            "accept_any_certificate": True,
+                        },
+                    },
+                    {
+                        "description": "request2",
+                        "method": "GET",
+                        "url": "https://example.com",
+                        "configuration": {
+                            "accept_any_certificate": True,
+                        },
+                    },
+                ],
+            })
+        ```
+
 
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
@@ -152,6 +198,52 @@ class HttpMonitorScript(pulumi.CustomResource):
         - `terraform-provider-dynatrace -export HttpMonitorScript` downloads all existing HTTP monitor script configuration
 
         The full documentation of the export feature is available [here](https://dt-url.net/h203qmc).
+
+        ## Resource Example Usage
+
+        ```python
+        import pulumi
+        import pulumi_dynatrace as dynatrace
+        import pulumiverse_dynatrace as dynatrace
+
+        location = dynatrace.get_synthetic_location(name="Location")
+        monitor = dynatrace.HttpMonitor("monitor",
+            anomaly_detections=[{
+                "loading_time_thresholds": [{}],
+                "outage_handlings": [{
+                    "global_outage": True,
+                    "global_outage_policies": [{
+                        "consecutive_runs": 1,
+                    }],
+                }],
+            }],
+            name="#name#",
+            frequency=1,
+            locations=[location.id],
+            no_script=True)
+        script = dynatrace.HttpMonitorScript("script",
+            http_id=monitor.id,
+            script={
+                "requests": [
+                    {
+                        "description": "request1",
+                        "method": "GET",
+                        "url": "https://example.com",
+                        "configuration": {
+                            "accept_any_certificate": True,
+                        },
+                    },
+                    {
+                        "description": "request2",
+                        "method": "GET",
+                        "url": "https://example.com",
+                        "configuration": {
+                            "accept_any_certificate": True,
+                        },
+                    },
+                ],
+            })
+        ```
 
 
         :param str resource_name: The name of the resource.

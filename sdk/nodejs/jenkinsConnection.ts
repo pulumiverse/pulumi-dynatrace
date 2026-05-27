@@ -36,6 +36,20 @@ import * as utilities from "./utilities";
  * - `terraform-provider-dynatrace -export dynatrace.JenkinsConnection` downloads all existing Jenkins connections
  *
  * The full documentation of the export feature is available [here](https://dt-url.net/h203qmc).
+ *
+ * ## Resource Example Usage
+ *
+ * ```typescript
+ * import * as pulumi from "@pulumi/pulumi";
+ * import * as dynatrace from "@pulumiverse/dynatrace";
+ *
+ * const connection = new dynatrace.JenkinsConnection("connection", {
+ *     name: "#name#",
+ *     url: "https://www.example.com",
+ *     username: "#name#",
+ *     password: "#######",
+ * });
+ * ```
  */
 export class JenkinsConnection extends pulumi.CustomResource {
     /**

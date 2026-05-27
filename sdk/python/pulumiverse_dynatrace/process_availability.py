@@ -37,7 +37,7 @@ class ProcessAvailabilityArgs:
         :param pulumi.Input['ProcessAvailabilityMetadataArgs'] metadata: Set of additional key-value properties to be attached to the triggered event. You can retrieve the available property keys using the [Events API v2](https://dt-url.net/9622g1w). Additionally any Host resource attribute can be dynamically substituted (agent 1.325+).
         :param pulumi.Input[_builtins.int] minimum_processes: Specify a minimum number of processes matching the monitoring rule. An alert is triggered if any host falls below this threshold.
         :param pulumi.Input[_builtins.str] name: Monitoring rule name
-        :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] operating_systems: Select the operating systems on which the monitoring rule should be applied. Possible Values: `AIX`, `LINUX`, `WINDOWS`
+        :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] operating_systems: Select the operating systems on which the monitoring rule should be applied. Possible values: `AIX`, `LINUX`, `WINDOWS`
         :param pulumi.Input['ProcessAvailabilityRulesArgs'] rules: Define process detection rules by selecting a process property and a condition. Each monitoring rule can have multiple detection rules associated with it.
         :param pulumi.Input[_builtins.str] scope: The scope of this setting (HOST, HOST_GROUP). Omit this property if you want to cover the whole environment.
         """
@@ -121,7 +121,7 @@ class ProcessAvailabilityArgs:
     @pulumi.getter(name="operatingSystems")
     def operating_systems(self) -> pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]:
         """
-        Select the operating systems on which the monitoring rule should be applied. Possible Values: `AIX`, `LINUX`, `WINDOWS`
+        Select the operating systems on which the monitoring rule should be applied. Possible values: `AIX`, `LINUX`, `WINDOWS`
         """
         return pulumi.get(self, "operating_systems")
 
@@ -173,7 +173,7 @@ class _ProcessAvailabilityState:
         :param pulumi.Input['ProcessAvailabilityMetadataArgs'] metadata: Set of additional key-value properties to be attached to the triggered event. You can retrieve the available property keys using the [Events API v2](https://dt-url.net/9622g1w). Additionally any Host resource attribute can be dynamically substituted (agent 1.325+).
         :param pulumi.Input[_builtins.int] minimum_processes: Specify a minimum number of processes matching the monitoring rule. An alert is triggered if any host falls below this threshold.
         :param pulumi.Input[_builtins.str] name: Monitoring rule name
-        :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] operating_systems: Select the operating systems on which the monitoring rule should be applied. Possible Values: `AIX`, `LINUX`, `WINDOWS`
+        :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] operating_systems: Select the operating systems on which the monitoring rule should be applied. Possible values: `AIX`, `LINUX`, `WINDOWS`
         :param pulumi.Input['ProcessAvailabilityRulesArgs'] rules: Define process detection rules by selecting a process property and a condition. Each monitoring rule can have multiple detection rules associated with it.
         :param pulumi.Input[_builtins.str] scope: The scope of this setting (HOST, HOST_GROUP). Omit this property if you want to cover the whole environment.
         """
@@ -258,7 +258,7 @@ class _ProcessAvailabilityState:
     @pulumi.getter(name="operatingSystems")
     def operating_systems(self) -> pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]:
         """
-        Select the operating systems on which the monitoring rule should be applied. Possible Values: `AIX`, `LINUX`, `WINDOWS`
+        Select the operating systems on which the monitoring rule should be applied. Possible values: `AIX`, `LINUX`, `WINDOWS`
         """
         return pulumi.get(self, "operating_systems")
 
@@ -329,7 +329,7 @@ class ProcessAvailability(pulumi.CustomResource):
         :param pulumi.Input[Union['ProcessAvailabilityMetadataArgs', 'ProcessAvailabilityMetadataArgsDict']] metadata: Set of additional key-value properties to be attached to the triggered event. You can retrieve the available property keys using the [Events API v2](https://dt-url.net/9622g1w). Additionally any Host resource attribute can be dynamically substituted (agent 1.325+).
         :param pulumi.Input[_builtins.int] minimum_processes: Specify a minimum number of processes matching the monitoring rule. An alert is triggered if any host falls below this threshold.
         :param pulumi.Input[_builtins.str] name: Monitoring rule name
-        :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] operating_systems: Select the operating systems on which the monitoring rule should be applied. Possible Values: `AIX`, `LINUX`, `WINDOWS`
+        :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] operating_systems: Select the operating systems on which the monitoring rule should be applied. Possible values: `AIX`, `LINUX`, `WINDOWS`
         :param pulumi.Input[Union['ProcessAvailabilityRulesArgs', 'ProcessAvailabilityRulesArgsDict']] rules: Define process detection rules by selecting a process property and a condition. Each monitoring rule can have multiple detection rules associated with it.
         :param pulumi.Input[_builtins.str] scope: The scope of this setting (HOST, HOST_GROUP). Omit this property if you want to cover the whole environment.
         """
@@ -427,7 +427,7 @@ class ProcessAvailability(pulumi.CustomResource):
         :param pulumi.Input[Union['ProcessAvailabilityMetadataArgs', 'ProcessAvailabilityMetadataArgsDict']] metadata: Set of additional key-value properties to be attached to the triggered event. You can retrieve the available property keys using the [Events API v2](https://dt-url.net/9622g1w). Additionally any Host resource attribute can be dynamically substituted (agent 1.325+).
         :param pulumi.Input[_builtins.int] minimum_processes: Specify a minimum number of processes matching the monitoring rule. An alert is triggered if any host falls below this threshold.
         :param pulumi.Input[_builtins.str] name: Monitoring rule name
-        :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] operating_systems: Select the operating systems on which the monitoring rule should be applied. Possible Values: `AIX`, `LINUX`, `WINDOWS`
+        :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] operating_systems: Select the operating systems on which the monitoring rule should be applied. Possible values: `AIX`, `LINUX`, `WINDOWS`
         :param pulumi.Input[Union['ProcessAvailabilityRulesArgs', 'ProcessAvailabilityRulesArgsDict']] rules: Define process detection rules by selecting a process property and a condition. Each monitoring rule can have multiple detection rules associated with it.
         :param pulumi.Input[_builtins.str] scope: The scope of this setting (HOST, HOST_GROUP). Omit this property if you want to cover the whole environment.
         """
@@ -489,7 +489,7 @@ class ProcessAvailability(pulumi.CustomResource):
     @pulumi.getter(name="operatingSystems")
     def operating_systems(self) -> pulumi.Output[Optional[Sequence[_builtins.str]]]:
         """
-        Select the operating systems on which the monitoring rule should be applied. Possible Values: `AIX`, `LINUX`, `WINDOWS`
+        Select the operating systems on which the monitoring rule should be applied. Possible values: `AIX`, `LINUX`, `WINDOWS`
         """
         return pulumi.get(self, "operating_systems")
 

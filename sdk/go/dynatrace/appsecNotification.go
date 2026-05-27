@@ -44,6 +44,22 @@ import (
 //
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
+//			alert, err := dynatrace.NewVulnerabilityAlerting(ctx, "alert", &dynatrace.VulnerabilityAlertingArgs{
+//				Name:    pulumi.String("#name#"),
+//				Enabled: pulumi.Bool(true),
+//				EnabledRiskLevels: pulumi.StringArray{
+//					pulumi.String("LOW"),
+//					pulumi.String("MEDIUM"),
+//					pulumi.String("HIGH"),
+//					pulumi.String("CRITICAL"),
+//				},
+//				EnabledTriggerEvents: pulumi.StringArray{
+//					pulumi.String("SECURITY_PROBLEM_OPENED"),
+//				},
+//			})
+//			if err != nil {
+//				return err
+//			}
 //			tmpJSON0, err := json.Marshal(map[string]interface{}{
 //				"DavisSecurityScore": "{DavisSecurityScore}",
 //				"SecurityProblemId":  "{SecurityProblemId}",
@@ -58,10 +74,10 @@ import (
 //				Type:                                pulumi.String("WEBHOOK"),
 //				Enabled:                             pulumi.Bool(true),
 //				DisplayName:                         pulumi.String("Terraform Security Problem Webhook Test"),
-//				SecurityProblemBasedAlertingProfile: pulumi.String("vu9U3hXa3q0AAAABACxidWlsdGluOmFwcHNlYy5ub3RpZmljYXRpb24tYWxlcnRpbmctcHJvZmlsZQAGdGVuYW50AAZ0ZW5hbnQAJDMyMDhkNWMyLTFlZmYtMzk5My1iNjMwLWI0MjQ5N2U4MDQ2Nr7vVN4V2t6t"),
+//				SecurityProblemBasedAlertingProfile: alert.ID(),
 //				Trigger:                             pulumi.String("SECURITY_PROBLEM"),
 //				SecurityProblemBasedWebhookPayload: &dynatrace.AppsecNotificationSecurityProblemBasedWebhookPayloadArgs{
-//					Payload: pulumi.String(json0),
+//					Payload: pulumi.String(pulumi.String(json0)),
 //				},
 //				WebhookConfiguration: &dynatrace.AppsecNotificationWebhookConfigurationArgs{
 //					AcceptAnyCertificate: pulumi.Bool(false),

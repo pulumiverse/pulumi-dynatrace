@@ -27,9 +27,9 @@ class AwsConnectionArgs:
         """
         The set of arguments for constructing a AwsConnection resource.
 
-        :param pulumi.Input[_builtins.str] name: Name
-        :param pulumi.Input['AwsConnectionRoleBasedAuthArgs'] role_based_auth: Configuration required for authenticating via AWS Role Based Authentication
-        :param pulumi.Input['AwsConnectionWebIdentityArgs'] web_identity: Configuration required for authenticating via AWS Web Identity
+        :param pulumi.Input[_builtins.str] name: The name of the connection
+        :param pulumi.Input['AwsConnectionRoleBasedAuthArgs'] role_based_auth: No documentation available
+        :param pulumi.Input['AwsConnectionWebIdentityArgs'] web_identity: No documentation available
         """
         if name is not None:
             pulumi.set(__self__, "name", name)
@@ -42,7 +42,7 @@ class AwsConnectionArgs:
     @pulumi.getter
     def name(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
-        Name
+        The name of the connection
         """
         return pulumi.get(self, "name")
 
@@ -54,7 +54,7 @@ class AwsConnectionArgs:
     @pulumi.getter(name="roleBasedAuth")
     def role_based_auth(self) -> pulumi.Input[Optional['AwsConnectionRoleBasedAuthArgs']]:
         """
-        Configuration required for authenticating via AWS Role Based Authentication
+        No documentation available
         """
         return pulumi.get(self, "role_based_auth")
 
@@ -66,7 +66,7 @@ class AwsConnectionArgs:
     @pulumi.getter(name="webIdentity")
     def web_identity(self) -> pulumi.Input[Optional['AwsConnectionWebIdentityArgs']]:
         """
-        Configuration required for authenticating via AWS Web Identity
+        No documentation available
         """
         return pulumi.get(self, "web_identity")
 
@@ -84,9 +84,9 @@ class _AwsConnectionState:
         """
         Input properties used for looking up and filtering AwsConnection resources.
 
-        :param pulumi.Input[_builtins.str] name: Name
-        :param pulumi.Input['AwsConnectionRoleBasedAuthArgs'] role_based_auth: Configuration required for authenticating via AWS Role Based Authentication
-        :param pulumi.Input['AwsConnectionWebIdentityArgs'] web_identity: Configuration required for authenticating via AWS Web Identity
+        :param pulumi.Input[_builtins.str] name: The name of the connection
+        :param pulumi.Input['AwsConnectionRoleBasedAuthArgs'] role_based_auth: No documentation available
+        :param pulumi.Input['AwsConnectionWebIdentityArgs'] web_identity: No documentation available
         """
         if name is not None:
             pulumi.set(__self__, "name", name)
@@ -99,7 +99,7 @@ class _AwsConnectionState:
     @pulumi.getter
     def name(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
-        Name
+        The name of the connection
         """
         return pulumi.get(self, "name")
 
@@ -111,7 +111,7 @@ class _AwsConnectionState:
     @pulumi.getter(name="roleBasedAuth")
     def role_based_auth(self) -> pulumi.Input[Optional['AwsConnectionRoleBasedAuthArgs']]:
         """
-        Configuration required for authenticating via AWS Role Based Authentication
+        No documentation available
         """
         return pulumi.get(self, "role_based_auth")
 
@@ -123,7 +123,7 @@ class _AwsConnectionState:
     @pulumi.getter(name="webIdentity")
     def web_identity(self) -> pulumi.Input[Optional['AwsConnectionWebIdentityArgs']]:
         """
-        Configuration required for authenticating via AWS Web Identity
+        No documentation available
         """
         return pulumi.get(self, "web_identity")
 
@@ -228,9 +228,9 @@ class AwsConnection(pulumi.CustomResource):
 
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
-        :param pulumi.Input[_builtins.str] name: Name
-        :param pulumi.Input[Union['AwsConnectionRoleBasedAuthArgs', 'AwsConnectionRoleBasedAuthArgsDict']] role_based_auth: Configuration required for authenticating via AWS Role Based Authentication
-        :param pulumi.Input[Union['AwsConnectionWebIdentityArgs', 'AwsConnectionWebIdentityArgsDict']] web_identity: Configuration required for authenticating via AWS Web Identity
+        :param pulumi.Input[_builtins.str] name: The name of the connection
+        :param pulumi.Input[Union['AwsConnectionRoleBasedAuthArgs', 'AwsConnectionRoleBasedAuthArgsDict']] role_based_auth: No documentation available
+        :param pulumi.Input[Union['AwsConnectionWebIdentityArgs', 'AwsConnectionWebIdentityArgsDict']] web_identity: No documentation available
         """
         ...
     @overload
@@ -372,9 +372,9 @@ class AwsConnection(pulumi.CustomResource):
         :param str resource_name: The unique name of the resulting resource.
         :param pulumi.Input[str] id: The unique provider ID of the resource to lookup.
         :param pulumi.ResourceOptions opts: Options for the resource.
-        :param pulumi.Input[_builtins.str] name: Name
-        :param pulumi.Input[Union['AwsConnectionRoleBasedAuthArgs', 'AwsConnectionRoleBasedAuthArgsDict']] role_based_auth: Configuration required for authenticating via AWS Role Based Authentication
-        :param pulumi.Input[Union['AwsConnectionWebIdentityArgs', 'AwsConnectionWebIdentityArgsDict']] web_identity: Configuration required for authenticating via AWS Web Identity
+        :param pulumi.Input[_builtins.str] name: The name of the connection
+        :param pulumi.Input[Union['AwsConnectionRoleBasedAuthArgs', 'AwsConnectionRoleBasedAuthArgsDict']] role_based_auth: No documentation available
+        :param pulumi.Input[Union['AwsConnectionWebIdentityArgs', 'AwsConnectionWebIdentityArgsDict']] web_identity: No documentation available
         """
         opts = pulumi.ResourceOptions.merge(opts, pulumi.ResourceOptions(id=id))
 
@@ -389,7 +389,7 @@ class AwsConnection(pulumi.CustomResource):
     @pulumi.getter
     def name(self) -> pulumi.Output[_builtins.str]:
         """
-        Name
+        The name of the connection
         """
         return pulumi.get(self, "name")
 
@@ -397,7 +397,7 @@ class AwsConnection(pulumi.CustomResource):
     @pulumi.getter(name="roleBasedAuth")
     def role_based_auth(self) -> pulumi.Output[Optional['outputs.AwsConnectionRoleBasedAuth']]:
         """
-        Configuration required for authenticating via AWS Role Based Authentication
+        No documentation available
         """
         return pulumi.get(self, "role_based_auth")
 
@@ -405,7 +405,7 @@ class AwsConnection(pulumi.CustomResource):
     @pulumi.getter(name="webIdentity")
     def web_identity(self) -> pulumi.Output[Optional['outputs.AwsConnectionWebIdentity']]:
         """
-        Configuration required for authenticating via AWS Web Identity
+        No documentation available
         """
         return pulumi.get(self, "web_identity")
 

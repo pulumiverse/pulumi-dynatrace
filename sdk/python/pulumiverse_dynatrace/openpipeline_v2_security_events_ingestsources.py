@@ -40,7 +40,7 @@ class OpenpipelineV2SecurityEventsIngestsourcesArgs:
         :param pulumi.Input[_builtins.str] path_segment: Endpoint segment
         :param pulumi.Input['OpenpipelineV2SecurityEventsIngestsourcesProcessingArgs'] processing: Processing stage
         :param pulumi.Input[_builtins.str] source: Source
-        :param pulumi.Input[_builtins.str] source_type: Source Type. Possible Values: `extension`, `http`
+        :param pulumi.Input[_builtins.str] source_type: Source Type. Possible values: `extension`, `http`
         :param pulumi.Input['OpenpipelineV2SecurityEventsIngestsourcesStaticRoutingArgs'] static_routing: Static routing of endpoint
         """
         pulumi.set(__self__, "display_name", display_name)
@@ -148,7 +148,7 @@ class OpenpipelineV2SecurityEventsIngestsourcesArgs:
     @pulumi.getter(name="sourceType")
     def source_type(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
-        Source Type. Possible Values: `extension`, `http`
+        Source Type. Possible values: `extension`, `http`
         """
         return pulumi.get(self, "source_type")
 
@@ -191,7 +191,7 @@ class _OpenpipelineV2SecurityEventsIngestsourcesState:
         :param pulumi.Input[_builtins.str] path_segment: Endpoint segment
         :param pulumi.Input['OpenpipelineV2SecurityEventsIngestsourcesProcessingArgs'] processing: Processing stage
         :param pulumi.Input[_builtins.str] source: Source
-        :param pulumi.Input[_builtins.str] source_type: Source Type. Possible Values: `extension`, `http`
+        :param pulumi.Input[_builtins.str] source_type: Source Type. Possible values: `extension`, `http`
         :param pulumi.Input['OpenpipelineV2SecurityEventsIngestsourcesStaticRoutingArgs'] static_routing: Static routing of endpoint
         """
         if default_bucket is not None:
@@ -301,7 +301,7 @@ class _OpenpipelineV2SecurityEventsIngestsourcesState:
     @pulumi.getter(name="sourceType")
     def source_type(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
-        Source Type. Possible Values: `extension`, `http`
+        Source Type. Possible values: `extension`, `http`
         """
         return pulumi.get(self, "source_type")
 
@@ -480,7 +480,7 @@ class OpenpipelineV2SecurityEventsIngestsources(pulumi.CustomResource):
         :param pulumi.Input[_builtins.str] path_segment: Endpoint segment
         :param pulumi.Input[Union['OpenpipelineV2SecurityEventsIngestsourcesProcessingArgs', 'OpenpipelineV2SecurityEventsIngestsourcesProcessingArgsDict']] processing: Processing stage
         :param pulumi.Input[_builtins.str] source: Source
-        :param pulumi.Input[_builtins.str] source_type: Source Type. Possible Values: `extension`, `http`
+        :param pulumi.Input[_builtins.str] source_type: Source Type. Possible values: `extension`, `http`
         :param pulumi.Input[Union['OpenpipelineV2SecurityEventsIngestsourcesStaticRoutingArgs', 'OpenpipelineV2SecurityEventsIngestsourcesStaticRoutingArgsDict']] static_routing: Static routing of endpoint
         """
         ...
@@ -701,7 +701,7 @@ class OpenpipelineV2SecurityEventsIngestsources(pulumi.CustomResource):
         :param pulumi.Input[_builtins.str] path_segment: Endpoint segment
         :param pulumi.Input[Union['OpenpipelineV2SecurityEventsIngestsourcesProcessingArgs', 'OpenpipelineV2SecurityEventsIngestsourcesProcessingArgsDict']] processing: Processing stage
         :param pulumi.Input[_builtins.str] source: Source
-        :param pulumi.Input[_builtins.str] source_type: Source Type. Possible Values: `extension`, `http`
+        :param pulumi.Input[_builtins.str] source_type: Source Type. Possible values: `extension`, `http`
         :param pulumi.Input[Union['OpenpipelineV2SecurityEventsIngestsourcesStaticRoutingArgs', 'OpenpipelineV2SecurityEventsIngestsourcesStaticRoutingArgsDict']] static_routing: Static routing of endpoint
         """
         opts = pulumi.ResourceOptions.merge(opts, pulumi.ResourceOptions(id=id))
@@ -779,7 +779,7 @@ class OpenpipelineV2SecurityEventsIngestsources(pulumi.CustomResource):
     @pulumi.getter(name="sourceType")
     def source_type(self) -> pulumi.Output[Optional[_builtins.str]]:
         """
-        Source Type. Possible Values: `extension`, `http`
+        Source Type. Possible values: `extension`, `http`
         """
         return pulumi.get(self, "source_type")
 

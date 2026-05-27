@@ -14,13 +14,13 @@ namespace Pulumiverse.Dynatrace.Inputs
     public sealed class DavisAnomalyDetectorsAnalyzerInputAnalyzerInputFieldArgs : global::Pulumi.ResourceArgs
     {
         /// <summary>
-        /// no documentation available
+        /// Analyzer input field key
         /// </summary>
         [Input("key", required: true)]
         public Input<string> Key { get; set; } = null!;
 
         /// <summary>
-        /// no documentation available
+        /// Analyzer input field value
         /// </summary>
         [Input("value", required: true)]
         public Input<string> Value { get; set; } = null!;

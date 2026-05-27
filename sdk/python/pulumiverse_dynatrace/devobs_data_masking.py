@@ -23,6 +23,7 @@ class DevobsDataMaskingArgs:
                  replacement_type: pulumi.Input[_builtins.str],
                  rule_name: pulumi.Input[_builtins.str],
                  rule_type: pulumi.Input[_builtins.str],
+                 comparison_type: pulumi.Input[Optional[_builtins.str]] = None,
                  insert_after: pulumi.Input[Optional[_builtins.str]] = None,
                  replacement_pattern: pulumi.Input[Optional[_builtins.str]] = None,
                  rule_regex: pulumi.Input[Optional[_builtins.str]] = None,
@@ -31,18 +32,21 @@ class DevobsDataMaskingArgs:
         The set of arguments for constructing a DevobsDataMasking resource.
 
         :param pulumi.Input[_builtins.bool] enabled: This setting is enabled (`true`) or disabled (`false`)
-        :param pulumi.Input[_builtins.str] replacement_type: Possible Values: `SHA256`, `STRING`
+        :param pulumi.Input[_builtins.str] replacement_type: Choose how the sensitive data should be replaced. Possible values: `SHA256`, `STRING`
         :param pulumi.Input[_builtins.str] rule_name: Rule Name
-        :param pulumi.Input[_builtins.str] rule_type: Possible Values: `REGEX`, `VAR_NAME`
+        :param pulumi.Input[_builtins.str] rule_type: Choose whether to redact by variable name or regex. Possible values: `REGEX`, `VAR_NAME`
+        :param pulumi.Input[_builtins.str] comparison_type: Select how the variable name should be matched. Possible values: `CONTAINS`, `ENDS_WITH`, `EQUALS`, `STARTS_WITH`
         :param pulumi.Input[_builtins.str] insert_after: Because this resource allows for ordering you may specify the ID of the resource instance that comes before this instance regarding order. If not specified when creating the setting will be added to the end of the list. If not specified during update the order will remain untouched
-        :param pulumi.Input[_builtins.str] replacement_pattern: no documentation available
-        :param pulumi.Input[_builtins.str] rule_regex: no documentation available
-        :param pulumi.Input[_builtins.str] rule_var_name: no documentation available
+        :param pulumi.Input[_builtins.str] replacement_pattern: Replacement Pattern
+        :param pulumi.Input[_builtins.str] rule_regex: Regex Pattern
+        :param pulumi.Input[_builtins.str] rule_var_name: Variable Name
         """
         pulumi.set(__self__, "enabled", enabled)
         pulumi.set(__self__, "replacement_type", replacement_type)
         pulumi.set(__self__, "rule_name", rule_name)
         pulumi.set(__self__, "rule_type", rule_type)
+        if comparison_type is not None:
+            pulumi.set(__self__, "comparison_type", comparison_type)
         if insert_after is not None:
             pulumi.set(__self__, "insert_after", insert_after)
         if replacement_pattern is not None:
@@ -68,7 +72,7 @@ class DevobsDataMaskingArgs:
     @pulumi.getter(name="replacementType")
     def replacement_type(self) -> pulumi.Input[_builtins.str]:
         """
-        Possible Values: `SHA256`, `STRING`
+        Choose how the sensitive data should be replaced. Possible values: `SHA256`, `STRING`
         """
         return pulumi.get(self, "replacement_type")
 
@@ -92,13 +96,25 @@ class DevobsDataMaskingArgs:
     @pulumi.getter(name="ruleType")
     def rule_type(self) -> pulumi.Input[_builtins.str]:
         """
-        Possible Values: `REGEX`, `VAR_NAME`
+        Choose whether to redact by variable name or regex. Possible values: `REGEX`, `VAR_NAME`
         """
         return pulumi.get(self, "rule_type")
 
     @rule_type.setter
     def rule_type(self, value: pulumi.Input[_builtins.str]):
         pulumi.set(self, "rule_type", value)
+
+    @_builtins.property
+    @pulumi.getter(name="comparisonType")
+    def comparison_type(self) -> pulumi.Input[Optional[_builtins.str]]:
+        """
+        Select how the variable name should be matched. Possible values: `CONTAINS`, `ENDS_WITH`, `EQUALS`, `STARTS_WITH`
+        """
+        return pulumi.get(self, "comparison_type")
+
+    @comparison_type.setter
+    def comparison_type(self, value: pulumi.Input[Optional[_builtins.str]]):
+        pulumi.set(self, "comparison_type", value)
 
     @_builtins.property
     @pulumi.getter(name="insertAfter")
@@ -116,7 +132,7 @@ class DevobsDataMaskingArgs:
     @pulumi.getter(name="replacementPattern")
     def replacement_pattern(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
-        no documentation available
+        Replacement Pattern
         """
         return pulumi.get(self, "replacement_pattern")
 
@@ -128,7 +144,7 @@ class DevobsDataMaskingArgs:
     @pulumi.getter(name="ruleRegex")
     def rule_regex(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
-        no documentation available
+        Regex Pattern
         """
         return pulumi.get(self, "rule_regex")
 
@@ -140,7 +156,7 @@ class DevobsDataMaskingArgs:
     @pulumi.getter(name="ruleVarName")
     def rule_var_name(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
-        no documentation available
+        Variable Name
         """
         return pulumi.get(self, "rule_var_name")
 
@@ -152,6 +168,7 @@ class DevobsDataMaskingArgs:
 @pulumi.input_type
 class _DevobsDataMaskingState:
     def __init__(__self__, *,
+                 comparison_type: pulumi.Input[Optional[_builtins.str]] = None,
                  enabled: pulumi.Input[Optional[_builtins.bool]] = None,
                  insert_after: pulumi.Input[Optional[_builtins.str]] = None,
                  replacement_pattern: pulumi.Input[Optional[_builtins.str]] = None,
@@ -163,15 +180,18 @@ class _DevobsDataMaskingState:
         """
         Input properties used for looking up and filtering DevobsDataMasking resources.
 
+        :param pulumi.Input[_builtins.str] comparison_type: Select how the variable name should be matched. Possible values: `CONTAINS`, `ENDS_WITH`, `EQUALS`, `STARTS_WITH`
         :param pulumi.Input[_builtins.bool] enabled: This setting is enabled (`true`) or disabled (`false`)
         :param pulumi.Input[_builtins.str] insert_after: Because this resource allows for ordering you may specify the ID of the resource instance that comes before this instance regarding order. If not specified when creating the setting will be added to the end of the list. If not specified during update the order will remain untouched
-        :param pulumi.Input[_builtins.str] replacement_pattern: no documentation available
-        :param pulumi.Input[_builtins.str] replacement_type: Possible Values: `SHA256`, `STRING`
+        :param pulumi.Input[_builtins.str] replacement_pattern: Replacement Pattern
+        :param pulumi.Input[_builtins.str] replacement_type: Choose how the sensitive data should be replaced. Possible values: `SHA256`, `STRING`
         :param pulumi.Input[_builtins.str] rule_name: Rule Name
-        :param pulumi.Input[_builtins.str] rule_regex: no documentation available
-        :param pulumi.Input[_builtins.str] rule_type: Possible Values: `REGEX`, `VAR_NAME`
-        :param pulumi.Input[_builtins.str] rule_var_name: no documentation available
+        :param pulumi.Input[_builtins.str] rule_regex: Regex Pattern
+        :param pulumi.Input[_builtins.str] rule_type: Choose whether to redact by variable name or regex. Possible values: `REGEX`, `VAR_NAME`
+        :param pulumi.Input[_builtins.str] rule_var_name: Variable Name
         """
+        if comparison_type is not None:
+            pulumi.set(__self__, "comparison_type", comparison_type)
         if enabled is not None:
             pulumi.set(__self__, "enabled", enabled)
         if insert_after is not None:
@@ -188,6 +208,18 @@ class _DevobsDataMaskingState:
             pulumi.set(__self__, "rule_type", rule_type)
         if rule_var_name is not None:
             pulumi.set(__self__, "rule_var_name", rule_var_name)
+
+    @_builtins.property
+    @pulumi.getter(name="comparisonType")
+    def comparison_type(self) -> pulumi.Input[Optional[_builtins.str]]:
+        """
+        Select how the variable name should be matched. Possible values: `CONTAINS`, `ENDS_WITH`, `EQUALS`, `STARTS_WITH`
+        """
+        return pulumi.get(self, "comparison_type")
+
+    @comparison_type.setter
+    def comparison_type(self, value: pulumi.Input[Optional[_builtins.str]]):
+        pulumi.set(self, "comparison_type", value)
 
     @_builtins.property
     @pulumi.getter
@@ -217,7 +249,7 @@ class _DevobsDataMaskingState:
     @pulumi.getter(name="replacementPattern")
     def replacement_pattern(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
-        no documentation available
+        Replacement Pattern
         """
         return pulumi.get(self, "replacement_pattern")
 
@@ -229,7 +261,7 @@ class _DevobsDataMaskingState:
     @pulumi.getter(name="replacementType")
     def replacement_type(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
-        Possible Values: `SHA256`, `STRING`
+        Choose how the sensitive data should be replaced. Possible values: `SHA256`, `STRING`
         """
         return pulumi.get(self, "replacement_type")
 
@@ -253,7 +285,7 @@ class _DevobsDataMaskingState:
     @pulumi.getter(name="ruleRegex")
     def rule_regex(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
-        no documentation available
+        Regex Pattern
         """
         return pulumi.get(self, "rule_regex")
 
@@ -265,7 +297,7 @@ class _DevobsDataMaskingState:
     @pulumi.getter(name="ruleType")
     def rule_type(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
-        Possible Values: `REGEX`, `VAR_NAME`
+        Choose whether to redact by variable name or regex. Possible values: `REGEX`, `VAR_NAME`
         """
         return pulumi.get(self, "rule_type")
 
@@ -277,7 +309,7 @@ class _DevobsDataMaskingState:
     @pulumi.getter(name="ruleVarName")
     def rule_var_name(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
-        no documentation available
+        Variable Name
         """
         return pulumi.get(self, "rule_var_name")
 
@@ -292,6 +324,7 @@ class DevobsDataMasking(pulumi.CustomResource):
     def __init__(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
+                 comparison_type: pulumi.Input[Optional[_builtins.str]] = None,
                  enabled: pulumi.Input[Optional[_builtins.bool]] = None,
                  insert_after: pulumi.Input[Optional[_builtins.str]] = None,
                  replacement_pattern: pulumi.Input[Optional[_builtins.str]] = None,
@@ -319,14 +352,15 @@ class DevobsDataMasking(pulumi.CustomResource):
 
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
+        :param pulumi.Input[_builtins.str] comparison_type: Select how the variable name should be matched. Possible values: `CONTAINS`, `ENDS_WITH`, `EQUALS`, `STARTS_WITH`
         :param pulumi.Input[_builtins.bool] enabled: This setting is enabled (`true`) or disabled (`false`)
         :param pulumi.Input[_builtins.str] insert_after: Because this resource allows for ordering you may specify the ID of the resource instance that comes before this instance regarding order. If not specified when creating the setting will be added to the end of the list. If not specified during update the order will remain untouched
-        :param pulumi.Input[_builtins.str] replacement_pattern: no documentation available
-        :param pulumi.Input[_builtins.str] replacement_type: Possible Values: `SHA256`, `STRING`
+        :param pulumi.Input[_builtins.str] replacement_pattern: Replacement Pattern
+        :param pulumi.Input[_builtins.str] replacement_type: Choose how the sensitive data should be replaced. Possible values: `SHA256`, `STRING`
         :param pulumi.Input[_builtins.str] rule_name: Rule Name
-        :param pulumi.Input[_builtins.str] rule_regex: no documentation available
-        :param pulumi.Input[_builtins.str] rule_type: Possible Values: `REGEX`, `VAR_NAME`
-        :param pulumi.Input[_builtins.str] rule_var_name: no documentation available
+        :param pulumi.Input[_builtins.str] rule_regex: Regex Pattern
+        :param pulumi.Input[_builtins.str] rule_type: Choose whether to redact by variable name or regex. Possible values: `REGEX`, `VAR_NAME`
+        :param pulumi.Input[_builtins.str] rule_var_name: Variable Name
         """
         ...
     @overload
@@ -365,6 +399,7 @@ class DevobsDataMasking(pulumi.CustomResource):
     def _internal_init(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
+                 comparison_type: pulumi.Input[Optional[_builtins.str]] = None,
                  enabled: pulumi.Input[Optional[_builtins.bool]] = None,
                  insert_after: pulumi.Input[Optional[_builtins.str]] = None,
                  replacement_pattern: pulumi.Input[Optional[_builtins.str]] = None,
@@ -382,6 +417,7 @@ class DevobsDataMasking(pulumi.CustomResource):
                 raise TypeError('__props__ is only valid when passed in combination with a valid opts.id to get an existing resource')
             __props__ = DevobsDataMaskingArgs.__new__(DevobsDataMaskingArgs)
 
+            __props__.__dict__["comparison_type"] = comparison_type
             if enabled is None and not opts.urn:
                 raise TypeError("Missing required property 'enabled'")
             __props__.__dict__["enabled"] = enabled
@@ -408,6 +444,7 @@ class DevobsDataMasking(pulumi.CustomResource):
     def get(resource_name: str,
             id: pulumi.Input[str],
             opts: Optional[pulumi.ResourceOptions] = None,
+            comparison_type: pulumi.Input[Optional[_builtins.str]] = None,
             enabled: pulumi.Input[Optional[_builtins.bool]] = None,
             insert_after: pulumi.Input[Optional[_builtins.str]] = None,
             replacement_pattern: pulumi.Input[Optional[_builtins.str]] = None,
@@ -423,19 +460,21 @@ class DevobsDataMasking(pulumi.CustomResource):
         :param str resource_name: The unique name of the resulting resource.
         :param pulumi.Input[str] id: The unique provider ID of the resource to lookup.
         :param pulumi.ResourceOptions opts: Options for the resource.
+        :param pulumi.Input[_builtins.str] comparison_type: Select how the variable name should be matched. Possible values: `CONTAINS`, `ENDS_WITH`, `EQUALS`, `STARTS_WITH`
         :param pulumi.Input[_builtins.bool] enabled: This setting is enabled (`true`) or disabled (`false`)
         :param pulumi.Input[_builtins.str] insert_after: Because this resource allows for ordering you may specify the ID of the resource instance that comes before this instance regarding order. If not specified when creating the setting will be added to the end of the list. If not specified during update the order will remain untouched
-        :param pulumi.Input[_builtins.str] replacement_pattern: no documentation available
-        :param pulumi.Input[_builtins.str] replacement_type: Possible Values: `SHA256`, `STRING`
+        :param pulumi.Input[_builtins.str] replacement_pattern: Replacement Pattern
+        :param pulumi.Input[_builtins.str] replacement_type: Choose how the sensitive data should be replaced. Possible values: `SHA256`, `STRING`
         :param pulumi.Input[_builtins.str] rule_name: Rule Name
-        :param pulumi.Input[_builtins.str] rule_regex: no documentation available
-        :param pulumi.Input[_builtins.str] rule_type: Possible Values: `REGEX`, `VAR_NAME`
-        :param pulumi.Input[_builtins.str] rule_var_name: no documentation available
+        :param pulumi.Input[_builtins.str] rule_regex: Regex Pattern
+        :param pulumi.Input[_builtins.str] rule_type: Choose whether to redact by variable name or regex. Possible values: `REGEX`, `VAR_NAME`
+        :param pulumi.Input[_builtins.str] rule_var_name: Variable Name
         """
         opts = pulumi.ResourceOptions.merge(opts, pulumi.ResourceOptions(id=id))
 
         __props__ = _DevobsDataMaskingState.__new__(_DevobsDataMaskingState)
 
+        __props__.__dict__["comparison_type"] = comparison_type
         __props__.__dict__["enabled"] = enabled
         __props__.__dict__["insert_after"] = insert_after
         __props__.__dict__["replacement_pattern"] = replacement_pattern
@@ -445,6 +484,14 @@ class DevobsDataMasking(pulumi.CustomResource):
         __props__.__dict__["rule_type"] = rule_type
         __props__.__dict__["rule_var_name"] = rule_var_name
         return DevobsDataMasking(resource_name, opts=opts, __props__=__props__)
+
+    @_builtins.property
+    @pulumi.getter(name="comparisonType")
+    def comparison_type(self) -> pulumi.Output[Optional[_builtins.str]]:
+        """
+        Select how the variable name should be matched. Possible values: `CONTAINS`, `ENDS_WITH`, `EQUALS`, `STARTS_WITH`
+        """
+        return pulumi.get(self, "comparison_type")
 
     @_builtins.property
     @pulumi.getter
@@ -466,7 +513,7 @@ class DevobsDataMasking(pulumi.CustomResource):
     @pulumi.getter(name="replacementPattern")
     def replacement_pattern(self) -> pulumi.Output[Optional[_builtins.str]]:
         """
-        no documentation available
+        Replacement Pattern
         """
         return pulumi.get(self, "replacement_pattern")
 
@@ -474,7 +521,7 @@ class DevobsDataMasking(pulumi.CustomResource):
     @pulumi.getter(name="replacementType")
     def replacement_type(self) -> pulumi.Output[_builtins.str]:
         """
-        Possible Values: `SHA256`, `STRING`
+        Choose how the sensitive data should be replaced. Possible values: `SHA256`, `STRING`
         """
         return pulumi.get(self, "replacement_type")
 
@@ -490,7 +537,7 @@ class DevobsDataMasking(pulumi.CustomResource):
     @pulumi.getter(name="ruleRegex")
     def rule_regex(self) -> pulumi.Output[Optional[_builtins.str]]:
         """
-        no documentation available
+        Regex Pattern
         """
         return pulumi.get(self, "rule_regex")
 
@@ -498,7 +545,7 @@ class DevobsDataMasking(pulumi.CustomResource):
     @pulumi.getter(name="ruleType")
     def rule_type(self) -> pulumi.Output[_builtins.str]:
         """
-        Possible Values: `REGEX`, `VAR_NAME`
+        Choose whether to redact by variable name or regex. Possible values: `REGEX`, `VAR_NAME`
         """
         return pulumi.get(self, "rule_type")
 
@@ -506,7 +553,7 @@ class DevobsDataMasking(pulumi.CustomResource):
     @pulumi.getter(name="ruleVarName")
     def rule_var_name(self) -> pulumi.Output[Optional[_builtins.str]]:
         """
-        no documentation available
+        Variable Name
         """
         return pulumi.get(self, "rule_var_name")
 

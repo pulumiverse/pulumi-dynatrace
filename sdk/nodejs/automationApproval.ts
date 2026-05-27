@@ -12,6 +12,18 @@ import * as utilities from "./utilities";
  * - Dynatrace Workflows - https://www.dynatrace.com/support/help/platform-modules/cloud-automation/workflows
  *
  * - Settings API - https://www.dynatrace.com/support/help/dynatrace-api/environment-api/settings (schemaId: `builtin:automation.approval)
+ *
+ * ## Resource Example Usage
+ *
+ * ```typescript
+ * import * as pulumi from "@pulumi/pulumi";
+ * import * as dynatrace from "@pulumiverse/dynatrace";
+ *
+ * const wfApproval = new dynatrace.AutomationApproval("wf_approval", {
+ *     workflowAppAccessApprovalEnabled: true,
+ *     externalApprovalsEnabled: true,
+ * });
+ * ```
  */
 export class AutomationApproval extends pulumi.CustomResource {
     /**
@@ -42,6 +54,10 @@ export class AutomationApproval extends pulumi.CustomResource {
     }
 
     /**
+     * Allow external systems to trigger approval responses via webhook handlers.
+     */
+    declare public readonly externalApprovalsEnabled: pulumi.Output<boolean | undefined>;
+    /**
      * Allow on tenant level anyone with access to the app can respond to requests via an approval link.
      */
     declare public readonly workflowAppAccessApprovalEnabled: pulumi.Output<boolean>;
@@ -59,12 +75,14 @@ export class AutomationApproval extends pulumi.CustomResource {
         opts = opts || {};
         if (opts.id) {
             const state = argsOrState as AutomationApprovalState | undefined;
+            resourceInputs["externalApprovalsEnabled"] = state?.externalApprovalsEnabled;
             resourceInputs["workflowAppAccessApprovalEnabled"] = state?.workflowAppAccessApprovalEnabled;
         } else {
             const args = argsOrState as AutomationApprovalArgs | undefined;
             if (args?.workflowAppAccessApprovalEnabled === undefined && !opts.urn) {
                 throw new Error("Missing required property 'workflowAppAccessApprovalEnabled'");
             }
+            resourceInputs["externalApprovalsEnabled"] = args?.externalApprovalsEnabled;
             resourceInputs["workflowAppAccessApprovalEnabled"] = args?.workflowAppAccessApprovalEnabled;
         }
         opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts);
@@ -77,6 +95,10 @@ export class AutomationApproval extends pulumi.CustomResource {
  */
 export interface AutomationApprovalState {
     /**
+     * Allow external systems to trigger approval responses via webhook handlers.
+     */
+    externalApprovalsEnabled?: pulumi.Input<boolean | undefined>;
+    /**
      * Allow on tenant level anyone with access to the app can respond to requests via an approval link.
      */
     workflowAppAccessApprovalEnabled?: pulumi.Input<boolean | undefined>;
@@ -86,6 +108,10 @@ export interface AutomationApprovalState {
  * The set of arguments for constructing a AutomationApproval resource.
  */
 export interface AutomationApprovalArgs {
+    /**
+     * Allow external systems to trigger approval responses via webhook handlers.
+     */
+    externalApprovalsEnabled?: pulumi.Input<boolean | undefined>;
     /**
      * Allow on tenant level anyone with access to the app can respond to requests via an approval link.
      */

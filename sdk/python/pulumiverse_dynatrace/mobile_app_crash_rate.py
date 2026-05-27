@@ -123,6 +123,26 @@ class MobileAppCrashRate(pulumi.CustomResource):
 
         The full documentation of the export feature is available [here](https://dt-url.net/h203qmc).
 
+        ## Resource Example Usage
+
+        ```python
+        import pulumi
+        import pulumi_dynatrace as dynatrace
+        import pulumiverse_dynatrace as dynatrace
+
+        application = dynatrace.get_mobile_application(name="Application")
+        crash_rate = dynatrace.MobileAppCrashRate("crash_rate",
+            application_id=application.id,
+            crash_rate_increase={
+                "enabled": True,
+                "detection_mode": "fixed",
+                "crash_rate_increase_fixed": {
+                    "absolute_crash_rate": float(25),
+                    "concurrent_users": 200,
+                },
+            })
+        ```
+
 
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
@@ -149,6 +169,26 @@ class MobileAppCrashRate(pulumi.CustomResource):
         - `terraform-provider-dynatrace -export MobileAppCrashRate` downloads all existing mobile application crash rate increase configuration
 
         The full documentation of the export feature is available [here](https://dt-url.net/h203qmc).
+
+        ## Resource Example Usage
+
+        ```python
+        import pulumi
+        import pulumi_dynatrace as dynatrace
+        import pulumiverse_dynatrace as dynatrace
+
+        application = dynatrace.get_mobile_application(name="Application")
+        crash_rate = dynatrace.MobileAppCrashRate("crash_rate",
+            application_id=application.id,
+            crash_rate_increase={
+                "enabled": True,
+                "detection_mode": "fixed",
+                "crash_rate_increase_fixed": {
+                    "absolute_crash_rate": float(25),
+                    "concurrent_users": 200,
+                },
+            })
+        ```
 
 
         :param str resource_name: The name of the resource.

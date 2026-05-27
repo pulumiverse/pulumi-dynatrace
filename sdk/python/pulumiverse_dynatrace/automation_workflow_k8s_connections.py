@@ -244,6 +244,19 @@ class AutomationWorkflowK8sConnections(pulumi.CustomResource):
 
         The full documentation of the export feature is available [here](https://dt-url.net/h203qmc).
 
+        ## Resource Example Usage
+
+        ```python
+        import pulumi
+        import pulumiverse_dynatrace as dynatrace
+
+        connection = dynatrace.AutomationWorkflowK8sConnections("connection",
+            name="#name#",
+            uid="00000000-0000-0000-0000-000000000000",
+            namespace="terraform1",
+            token="dt0e01.000000000000000000000000.0000000000000000000000000000000000000000000000000000000000000000")
+        ```
+
 
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
@@ -291,6 +304,19 @@ class AutomationWorkflowK8sConnections(pulumi.CustomResource):
         - `terraform-provider-dynatrace -export AutomationWorkflowK8sConnections` downloads existing Kubernetes Automation for Workflows configuration
 
         The full documentation of the export feature is available [here](https://dt-url.net/h203qmc).
+
+        ## Resource Example Usage
+
+        ```python
+        import pulumi
+        import pulumiverse_dynatrace as dynatrace
+
+        connection = dynatrace.AutomationWorkflowK8sConnections("connection",
+            name="#name#",
+            uid="00000000-0000-0000-0000-000000000000",
+            namespace="terraform1",
+            token="dt0e01.000000000000000000000000.0000000000000000000000000000000000000000000000000000000000000000")
+        ```
 
 
         :param str resource_name: The name of the resource.

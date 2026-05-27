@@ -125,6 +125,28 @@ class MobileAppRequestErrors(pulumi.CustomResource):
 
         The full documentation of the export feature is available [here](https://dt-url.net/h203qmc).
 
+        ## Resource Example Usage
+
+        ```python
+        import pulumi
+        import pulumi_dynatrace as dynatrace
+        import pulumiverse_dynatrace as dynatrace
+
+        application = dynatrace.get_mobile_application(name="Application")
+        request_errors = dynatrace.MobileAppRequestErrors("request_errors",
+            scope=application.id,
+            error_rules={
+                "error_rules": [
+                    {
+                        "error_codes": "409",
+                    },
+                    {
+                        "error_codes": "410",
+                    },
+                ],
+            })
+        ```
+
 
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
@@ -153,6 +175,28 @@ class MobileAppRequestErrors(pulumi.CustomResource):
         - `terraform-provider-dynatrace -export MobileAppRequestErrors` downloads all existing mobile application request error configuration
 
         The full documentation of the export feature is available [here](https://dt-url.net/h203qmc).
+
+        ## Resource Example Usage
+
+        ```python
+        import pulumi
+        import pulumi_dynatrace as dynatrace
+        import pulumiverse_dynatrace as dynatrace
+
+        application = dynatrace.get_mobile_application(name="Application")
+        request_errors = dynatrace.MobileAppRequestErrors("request_errors",
+            scope=application.id,
+            error_rules={
+                "error_rules": [
+                    {
+                        "error_codes": "409",
+                    },
+                    {
+                        "error_codes": "410",
+                    },
+                ],
+            })
+        ```
 
 
         :param str resource_name: The name of the resource.

@@ -33,7 +33,6 @@ type LogProcessing struct {
 	// Because this resource allows for ordering you may specify the ID of the resource instance that comes before this instance regarding order. If not specified when creating the setting will be added to the end of the list. If not specified during update the order will remain untouched
 	InsertAfter pulumi.StringOutput `pulumi:"insertAfter"`
 	// ## Processor definition
-	// Add a rule definition using our syntax. [In our documentation](https://dt-url.net/8k03xm2) you will find instructions and application [examples](https://dt-url.net/m24305t).
 	ProcessorDefinition LogProcessingProcessorDefinitionOutput `pulumi:"processorDefinition"`
 	// Matcher
 	Query pulumi.StringOutput `pulumi:"query"`
@@ -94,7 +93,6 @@ type logProcessingState struct {
 	// Because this resource allows for ordering you may specify the ID of the resource instance that comes before this instance regarding order. If not specified when creating the setting will be added to the end of the list. If not specified during update the order will remain untouched
 	InsertAfter *string `pulumi:"insertAfter"`
 	// ## Processor definition
-	// Add a rule definition using our syntax. [In our documentation](https://dt-url.net/8k03xm2) you will find instructions and application [examples](https://dt-url.net/m24305t).
 	ProcessorDefinition *LogProcessingProcessorDefinition `pulumi:"processorDefinition"`
 	// Matcher
 	Query *string `pulumi:"query"`
@@ -111,7 +109,6 @@ type LogProcessingState struct {
 	// Because this resource allows for ordering you may specify the ID of the resource instance that comes before this instance regarding order. If not specified when creating the setting will be added to the end of the list. If not specified during update the order will remain untouched
 	InsertAfter pulumi.StringPtrInput
 	// ## Processor definition
-	// Add a rule definition using our syntax. [In our documentation](https://dt-url.net/8k03xm2) you will find instructions and application [examples](https://dt-url.net/m24305t).
 	ProcessorDefinition LogProcessingProcessorDefinitionPtrInput
 	// Matcher
 	Query pulumi.StringPtrInput
@@ -132,7 +129,6 @@ type logProcessingArgs struct {
 	// Because this resource allows for ordering you may specify the ID of the resource instance that comes before this instance regarding order. If not specified when creating the setting will be added to the end of the list. If not specified during update the order will remain untouched
 	InsertAfter *string `pulumi:"insertAfter"`
 	// ## Processor definition
-	// Add a rule definition using our syntax. [In our documentation](https://dt-url.net/8k03xm2) you will find instructions and application [examples](https://dt-url.net/m24305t).
 	ProcessorDefinition LogProcessingProcessorDefinition `pulumi:"processorDefinition"`
 	// Matcher
 	Query string `pulumi:"query"`
@@ -150,7 +146,6 @@ type LogProcessingArgs struct {
 	// Because this resource allows for ordering you may specify the ID of the resource instance that comes before this instance regarding order. If not specified when creating the setting will be added to the end of the list. If not specified during update the order will remain untouched
 	InsertAfter pulumi.StringPtrInput
 	// ## Processor definition
-	// Add a rule definition using our syntax. [In our documentation](https://dt-url.net/8k03xm2) you will find instructions and application [examples](https://dt-url.net/m24305t).
 	ProcessorDefinition LogProcessingProcessorDefinitionInput
 	// Matcher
 	Query pulumi.StringInput
@@ -259,7 +254,6 @@ func (o LogProcessingOutput) InsertAfter() pulumi.StringOutput {
 }
 
 // ## Processor definition
-// Add a rule definition using our syntax. [In our documentation](https://dt-url.net/8k03xm2) you will find instructions and application [examples](https://dt-url.net/m24305t).
 func (o LogProcessingOutput) ProcessorDefinition() LogProcessingProcessorDefinitionOutput {
 	return o.ApplyT(func(v *LogProcessing) LogProcessingProcessorDefinitionOutput { return v.ProcessorDefinition }).(LogProcessingProcessorDefinitionOutput)
 }

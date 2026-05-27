@@ -25,6 +25,46 @@ import (
 // - `terraform-provider-dynatrace -export MobileAppCrashRate` downloads all existing mobile application crash rate increase configuration
 //
 // The full documentation of the export feature is available [here](https://dt-url.net/h203qmc).
+//
+// ## Resource Example Usage
+//
+// ```go
+// package main
+//
+// import (
+//
+//	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//	"github.com/pulumiverse/pulumi-dynatrace/sdk/go/dynatrace"
+//
+// )
+//
+//	func main() {
+//		pulumi.Run(func(ctx *pulumi.Context) error {
+//			application, err := dynatrace.GetMobileApplication(ctx, &dynatrace.LookupMobileApplicationArgs{
+//				Name: "Application",
+//			}, nil)
+//			if err != nil {
+//				return err
+//			}
+//			_, err = dynatrace.NewMobileAppCrashRate(ctx, "crash_rate", &dynatrace.MobileAppCrashRateArgs{
+//				ApplicationId: pulumi.String(pulumi.String(application.Id)),
+//				CrashRateIncrease: &dynatrace.MobileAppCrashRateCrashRateIncreaseArgs{
+//					Enabled:       pulumi.Bool(true),
+//					DetectionMode: pulumi.String("fixed"),
+//					CrashRateIncreaseFixed: &dynatrace.MobileAppCrashRateCrashRateIncreaseCrashRateIncreaseFixedArgs{
+//						AbsoluteCrashRate: pulumi.Float64(25),
+//						ConcurrentUsers:   pulumi.Int(200),
+//					},
+//				},
+//			})
+//			if err != nil {
+//				return err
+//			}
+//			return nil
+//		})
+//	}
+//
+// ```
 type MobileAppCrashRate struct {
 	pulumi.CustomResourceState
 

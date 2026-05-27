@@ -57,16 +57,31 @@ namespace Pulumiverse.Dynatrace
     /// {
     ///     var ABC = new Dynatrace.GenericSetting("ABC", new()
     ///     {
-    ///         Schema = "app:my.booking.analytics:connection",
+    ///         Schema = "app:dynatrace.site.reliability.guardian:guardians",
     ///         Scope = "environment",
     ///         Value = JsonSerializer.Serialize(new Dictionary&lt;string, object?&gt;
     ///         {
-    ///             ["client_id"] = "asdfhh",
-    ///             ["client_secret"] = "mysecret",
-    ///             ["name"] = "ABC",
-    ///             ["tenant_id"] = "asdf",
-    ///             ["type"] = "client_secret",
-    ///             ["user_id"] = "asdf",
+    ///             ["name"] = "#name#",
+    ///             ["tags"] = new[]
+    ///             {
+    ///                 "stage:staging",
+    ///             },
+    ///             ["eventKind"] = "BIZ_EVENT",
+    ///             ["objectives"] = new[]
+    ///             {
+    ///                 new Dictionary&lt;string, object?&gt;
+    ///                 {
+    ///                     ["name"] = "Error rate",
+    ///                     ["comparisonOperator"] = "LESS_THAN_OR_EQUAL",
+    ///                     ["dqlQuery"] = @"fetch logs
+    /// | fieldsAdd errors = toLong(loglevel == \""ERROR\"")
+    /// | summarize errorRate = sum(errors)/count() * 100
+    /// ",
+    ///                     ["objectiveType"] = "DQL",
+    ///                     ["target"] = 8,
+    ///                     ["warning"] = 6,
+    ///                 },
+    ///             },
     ///         }),
     ///     });
     /// 

@@ -38,14 +38,20 @@ import (
 //
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
-//			_, err := dynatrace.NewNetworkMonitor(ctx, "DNS_Test", &dynatrace.NetworkMonitorArgs{
+//			location, err := dynatrace.GetSyntheticLocation(ctx, &dynatrace.LookupSyntheticLocationArgs{
+//				Name: pulumi.StringRef("Location"),
+//			}, nil)
+//			if err != nil {
+//				return err
+//			}
+//			_, err = dynatrace.NewNetworkMonitor(ctx, "DNS_Test", &dynatrace.NetworkMonitorArgs{
 //				Name:         pulumi.String("DNS Test"),
 //				Description:  pulumi.String("This is an example DNS test"),
 //				Type:         pulumi.String("MULTI_PROTOCOL"),
 //				Enabled:      pulumi.Bool(false),
 //				FrequencyMin: pulumi.Int(15),
 //				Locations: pulumi.StringArray{
-//					pulumi.String("SYNTHETIC_LOCATION-39F97465BE7BF644"),
+//					pulumi.String(pulumi.String(location.Id)),
 //				},
 //				OutageHandling: &dynatrace.NetworkMonitorOutageHandlingArgs{
 //					GlobalConsecutiveOutageCountThreshold: pulumi.Int(1),

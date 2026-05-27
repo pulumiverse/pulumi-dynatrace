@@ -70,7 +70,7 @@ export class ProcessAvailability extends pulumi.CustomResource {
      */
     declare public readonly name: pulumi.Output<string>;
     /**
-     * Select the operating systems on which the monitoring rule should be applied. Possible Values: `AIX`, `LINUX`, `WINDOWS`
+     * Select the operating systems on which the monitoring rule should be applied. Possible values: `AIX`, `LINUX`, `WINDOWS`
      */
     declare public readonly operatingSystems: pulumi.Output<string[] | undefined>;
     /**
@@ -147,7 +147,7 @@ export interface ProcessAvailabilityState {
      */
     name?: pulumi.Input<string | undefined>;
     /**
-     * Select the operating systems on which the monitoring rule should be applied. Possible Values: `AIX`, `LINUX`, `WINDOWS`
+     * Select the operating systems on which the monitoring rule should be applied. Possible values: `AIX`, `LINUX`, `WINDOWS`
      */
     operatingSystems?: pulumi.Input<pulumi.Input<string>[] | undefined>;
     /**
@@ -185,7 +185,7 @@ export interface ProcessAvailabilityArgs {
      */
     name?: pulumi.Input<string | undefined>;
     /**
-     * Select the operating systems on which the monitoring rule should be applied. Possible Values: `AIX`, `LINUX`, `WINDOWS`
+     * Select the operating systems on which the monitoring rule should be applied. Possible values: `AIX`, `LINUX`, `WINDOWS`
      */
     operatingSystems?: pulumi.Input<pulumi.Input<string>[] | undefined>;
     /**

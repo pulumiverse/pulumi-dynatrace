@@ -188,7 +188,7 @@ class HostMonitoring(pulumi.CustomResource):
                  host_id: pulumi.Input[Optional[_builtins.str]] = None,
                  __props__=None):
         """
-        > This resource requires the API token scopes **Read settings** (`settings.read`) and **Write settings** (`settings.write`)
+        > This resource requires the API token scopes **Read settings** (`settings.read`), **Write settings** (`settings.write`) and **Read entities** (`entities.read`).
 
         ## Dynatrace Documentation
 
@@ -217,7 +217,7 @@ class HostMonitoring(pulumi.CustomResource):
                  args: HostMonitoringArgs,
                  opts: Optional[pulumi.ResourceOptions] = None):
         """
-        > This resource requires the API token scopes **Read settings** (`settings.read`) and **Write settings** (`settings.write`)
+        > This resource requires the API token scopes **Read settings** (`settings.read`), **Write settings** (`settings.write`) and **Read entities** (`entities.read`).
 
         ## Dynatrace Documentation
 

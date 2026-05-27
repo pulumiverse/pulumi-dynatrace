@@ -369,6 +369,232 @@ class BrowserMonitor(pulumi.CustomResource):
 
         The full documentation of the export feature is available [here](https://dt-url.net/h203qmc).
 
+        ## Resource Example Usage
+
+        ```python
+        import pulumi
+        import pulumiverse_dynatrace as dynatrace
+        import pulumiverse_time as time
+
+        location = dynatrace.SyntheticLocation("location",
+            name="#name#",
+            city="San Francisco de Asis",
+            country_code="VE",
+            region_code="04",
+            deployment_type="STANDARD",
+            latitude=10.0756,
+            location_node_outage_delay_in_minutes=3,
+            longitude=-67.5442)
+        application = dynatrace.WebApplication("application",
+            name="#name#",
+            type="AUTO_INJECTED",
+            cost_control_user_session_percentage=100,
+            load_action_key_performance_metric="VISUALLY_COMPLETE",
+            real_user_monitoring_enabled=True,
+            xhr_action_key_performance_metric="VISUALLY_COMPLETE",
+            custom_action_apdex_settings={
+                "frustrating_fallback_threshold": 12000,
+                "frustrating_threshold": 12000,
+                "tolerated_fallback_threshold": 3000,
+                "tolerated_threshold": 3000,
+            },
+            load_action_apdex_settings={
+                "frustrating_fallback_threshold": 12000,
+                "frustrating_threshold": 12000,
+                "tolerated_fallback_threshold": 3000,
+                "tolerated_threshold": 3000,
+            },
+            monitoring_settings={
+                "add_cross_origin_anonymous_attribute": True,
+                "cache_control_header_optimizations": True,
+                "injection_mode": "JAVASCRIPT_TAG",
+                "script_tag_cache_duration_in_hours": 1,
+                "advanced_javascript_tag_settings": {
+                    "max_action_name_length": 100,
+                    "max_errors_to_capture": 10,
+                    "additional_event_handlers": {
+                        "max_dom_nodes": 5000,
+                    },
+                },
+                "content_capture": {
+                    "resource_timing_settings": {
+                        "instrumentation_delay": 53,
+                        "non_w3c_resource_timings": True,
+                        "w3c_resource_timings": True,
+                    },
+                    "timeout_settings": {
+                        "temporary_action_limit": 3,
+                        "temporary_action_total_timeout": 100,
+                        "timed_action_support": True,
+                    },
+                },
+            },
+            user_action_naming_settings={},
+            waterfall_settings={
+                "resource_browser_caching_threshold": 50,
+                "resources_threshold": 100000,
+                "slow_cnd_resources_threshold": 200000,
+                "slow_first_party_resources_threshold": 200000,
+                "slow_third_party_resources_threshold": 200000,
+                "speed_index_visually_complete_ratio_threshold": 50,
+                "uncompressed_resources_threshold": 860,
+            },
+            xhr_action_apdex_settings={
+                "frustrating_fallback_threshold": 12000,
+                "frustrating_threshold": 12000,
+                "tolerated_fallback_threshold": 3000,
+                "tolerated_threshold": 3000,
+            })
+        credentials_vault = dynatrace.Credentials("credentials_vault",
+            name="#name#",
+            description="my credentials vault",
+            scopes=["SYNTHETIC"],
+            username="username",
+            password="password")
+        wait5_seconds = time.Sleep("wait_5_seconds", create_duration="5s",
+        opts = pulumi.ResourceOptions(depends_on=[
+                location,
+                application,
+                credentials_vault,
+            ]))
+        monitor = dynatrace.BrowserMonitor("monitor",
+            name="#name#",
+            frequency=15,
+            locations=[location.id],
+            manually_assigned_apps=[application.id],
+            anomaly_detection={
+                "loading_time_thresholds": [{
+                    "enabled": True,
+                }],
+                "outage_handlings": [{
+                    "global_outage": True,
+                    "retry_on_error": True,
+                    "global_outage_policies": [{
+                        "consecutive_runs": 1,
+                    }],
+                }],
+            },
+            key_performance_metrics={
+                "load_action_kpm": "VISUALLY_COMPLETE",
+                "xhr_action_kpm": "VISUALLY_COMPLETE",
+            },
+            script={
+                "type": "clickpath",
+                "configuration": {
+                    "bypass_csp": True,
+                    "user_agent": "Mozilla",
+                    "bandwidth": {
+                        "network_type": "GPRS",
+                    },
+                    "device": {
+                        "name": "Apple iPhone 8",
+                        "orientation": "landscape",
+                    },
+                    "headers": {
+                        "headers": [{
+                            "name": "kjh",
+                            "value": "kjh",
+                        }],
+                    },
+                    "ignored_error_codes": {
+                        "status_codes": "400",
+                    },
+                    "javascript_setttings": {
+                        "timeout_settings": {
+                            "action_limit": 3,
+                            "total_timeout": 100,
+                        },
+                        "visually_complete_options": {
+                            "image_size_threshold": 0,
+                            "inactivity_timeout": 0,
+                            "mutation_timeout": 0,
+                        },
+                    },
+                },
+                "events": {
+                    "events": [
+                        {
+                            "description": "Loading of \\"https://example.com\\"",
+                            "navigate": {
+                                "url": "https://example.com",
+                                "authentication": {
+                                    "type": "http_authentication",
+                                    "creds": credentials_vault.id,
+                                },
+                                "wait": {
+                                    "wait_for": "page_complete",
+                                },
+                            },
+                        },
+                        {
+                            "description": "jhjhjh",
+                            "navigate": {
+                                "url": "https://example.com",
+                                "authentication": {
+                                    "type": "http_authentication",
+                                    "creds": credentials_vault.id,
+                                },
+                                "validate": {
+                                    "validations": [{
+                                        "type": "text_match",
+                                        "match": "kkl",
+                                        "regex": True,
+                                        "target": {
+                                            "window": "k",
+                                        },
+                                    }],
+                                },
+                                "wait": {
+                                    "timeout": 60000,
+                                    "wait_for": "validation",
+                                    "validation": {
+                                        "type": "element_match",
+                                        "match": "kjkj",
+                                        "target": {
+                                            "locators": [{
+                                                "locators": [{
+                                                    "type": "css",
+                                                    "value": "jjj",
+                                                }],
+                                            }],
+                                        },
+                                    },
+                                },
+                            },
+                        },
+                        {
+                            "description": "fvf",
+                            "click": {
+                                "button": 0,
+                                "validate": {
+                                    "validations": [{
+                                        "type": "text_match",
+                                    }],
+                                },
+                                "wait": {
+                                    "wait_for": "page_complete",
+                                },
+                            },
+                        },
+                        {
+                            "description": "jsfoo",
+                            "javascript": {
+                                "code": \"\"\"let x = 3;
+        for (var i = 0; i < x; x++) {
+            console.log(\\"asdf\\");
+        }
+        \"\"\",
+                                "wait": {
+                                    "wait_for": "page_complete",
+                                },
+                            },
+                        },
+                    ],
+                },
+            },
+            opts = pulumi.ResourceOptions(depends_on=[wait5_seconds]))
+        ```
+
 
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
@@ -406,6 +632,232 @@ class BrowserMonitor(pulumi.CustomResource):
         - `terraform-provider-dynatrace -export BrowserMonitor` downloads all existing browser monitor configuration
 
         The full documentation of the export feature is available [here](https://dt-url.net/h203qmc).
+
+        ## Resource Example Usage
+
+        ```python
+        import pulumi
+        import pulumiverse_dynatrace as dynatrace
+        import pulumiverse_time as time
+
+        location = dynatrace.SyntheticLocation("location",
+            name="#name#",
+            city="San Francisco de Asis",
+            country_code="VE",
+            region_code="04",
+            deployment_type="STANDARD",
+            latitude=10.0756,
+            location_node_outage_delay_in_minutes=3,
+            longitude=-67.5442)
+        application = dynatrace.WebApplication("application",
+            name="#name#",
+            type="AUTO_INJECTED",
+            cost_control_user_session_percentage=100,
+            load_action_key_performance_metric="VISUALLY_COMPLETE",
+            real_user_monitoring_enabled=True,
+            xhr_action_key_performance_metric="VISUALLY_COMPLETE",
+            custom_action_apdex_settings={
+                "frustrating_fallback_threshold": 12000,
+                "frustrating_threshold": 12000,
+                "tolerated_fallback_threshold": 3000,
+                "tolerated_threshold": 3000,
+            },
+            load_action_apdex_settings={
+                "frustrating_fallback_threshold": 12000,
+                "frustrating_threshold": 12000,
+                "tolerated_fallback_threshold": 3000,
+                "tolerated_threshold": 3000,
+            },
+            monitoring_settings={
+                "add_cross_origin_anonymous_attribute": True,
+                "cache_control_header_optimizations": True,
+                "injection_mode": "JAVASCRIPT_TAG",
+                "script_tag_cache_duration_in_hours": 1,
+                "advanced_javascript_tag_settings": {
+                    "max_action_name_length": 100,
+                    "max_errors_to_capture": 10,
+                    "additional_event_handlers": {
+                        "max_dom_nodes": 5000,
+                    },
+                },
+                "content_capture": {
+                    "resource_timing_settings": {
+                        "instrumentation_delay": 53,
+                        "non_w3c_resource_timings": True,
+                        "w3c_resource_timings": True,
+                    },
+                    "timeout_settings": {
+                        "temporary_action_limit": 3,
+                        "temporary_action_total_timeout": 100,
+                        "timed_action_support": True,
+                    },
+                },
+            },
+            user_action_naming_settings={},
+            waterfall_settings={
+                "resource_browser_caching_threshold": 50,
+                "resources_threshold": 100000,
+                "slow_cnd_resources_threshold": 200000,
+                "slow_first_party_resources_threshold": 200000,
+                "slow_third_party_resources_threshold": 200000,
+                "speed_index_visually_complete_ratio_threshold": 50,
+                "uncompressed_resources_threshold": 860,
+            },
+            xhr_action_apdex_settings={
+                "frustrating_fallback_threshold": 12000,
+                "frustrating_threshold": 12000,
+                "tolerated_fallback_threshold": 3000,
+                "tolerated_threshold": 3000,
+            })
+        credentials_vault = dynatrace.Credentials("credentials_vault",
+            name="#name#",
+            description="my credentials vault",
+            scopes=["SYNTHETIC"],
+            username="username",
+            password="password")
+        wait5_seconds = time.Sleep("wait_5_seconds", create_duration="5s",
+        opts = pulumi.ResourceOptions(depends_on=[
+                location,
+                application,
+                credentials_vault,
+            ]))
+        monitor = dynatrace.BrowserMonitor("monitor",
+            name="#name#",
+            frequency=15,
+            locations=[location.id],
+            manually_assigned_apps=[application.id],
+            anomaly_detection={
+                "loading_time_thresholds": [{
+                    "enabled": True,
+                }],
+                "outage_handlings": [{
+                    "global_outage": True,
+                    "retry_on_error": True,
+                    "global_outage_policies": [{
+                        "consecutive_runs": 1,
+                    }],
+                }],
+            },
+            key_performance_metrics={
+                "load_action_kpm": "VISUALLY_COMPLETE",
+                "xhr_action_kpm": "VISUALLY_COMPLETE",
+            },
+            script={
+                "type": "clickpath",
+                "configuration": {
+                    "bypass_csp": True,
+                    "user_agent": "Mozilla",
+                    "bandwidth": {
+                        "network_type": "GPRS",
+                    },
+                    "device": {
+                        "name": "Apple iPhone 8",
+                        "orientation": "landscape",
+                    },
+                    "headers": {
+                        "headers": [{
+                            "name": "kjh",
+                            "value": "kjh",
+                        }],
+                    },
+                    "ignored_error_codes": {
+                        "status_codes": "400",
+                    },
+                    "javascript_setttings": {
+                        "timeout_settings": {
+                            "action_limit": 3,
+                            "total_timeout": 100,
+                        },
+                        "visually_complete_options": {
+                            "image_size_threshold": 0,
+                            "inactivity_timeout": 0,
+                            "mutation_timeout": 0,
+                        },
+                    },
+                },
+                "events": {
+                    "events": [
+                        {
+                            "description": "Loading of \\"https://example.com\\"",
+                            "navigate": {
+                                "url": "https://example.com",
+                                "authentication": {
+                                    "type": "http_authentication",
+                                    "creds": credentials_vault.id,
+                                },
+                                "wait": {
+                                    "wait_for": "page_complete",
+                                },
+                            },
+                        },
+                        {
+                            "description": "jhjhjh",
+                            "navigate": {
+                                "url": "https://example.com",
+                                "authentication": {
+                                    "type": "http_authentication",
+                                    "creds": credentials_vault.id,
+                                },
+                                "validate": {
+                                    "validations": [{
+                                        "type": "text_match",
+                                        "match": "kkl",
+                                        "regex": True,
+                                        "target": {
+                                            "window": "k",
+                                        },
+                                    }],
+                                },
+                                "wait": {
+                                    "timeout": 60000,
+                                    "wait_for": "validation",
+                                    "validation": {
+                                        "type": "element_match",
+                                        "match": "kjkj",
+                                        "target": {
+                                            "locators": [{
+                                                "locators": [{
+                                                    "type": "css",
+                                                    "value": "jjj",
+                                                }],
+                                            }],
+                                        },
+                                    },
+                                },
+                            },
+                        },
+                        {
+                            "description": "fvf",
+                            "click": {
+                                "button": 0,
+                                "validate": {
+                                    "validations": [{
+                                        "type": "text_match",
+                                    }],
+                                },
+                                "wait": {
+                                    "wait_for": "page_complete",
+                                },
+                            },
+                        },
+                        {
+                            "description": "jsfoo",
+                            "javascript": {
+                                "code": \"\"\"let x = 3;
+        for (var i = 0; i < x; x++) {
+            console.log(\\"asdf\\");
+        }
+        \"\"\",
+                                "wait": {
+                                    "wait_for": "page_complete",
+                                },
+                            },
+                        },
+                    ],
+                },
+            },
+            opts = pulumi.ResourceOptions(depends_on=[wait5_seconds]))
+        ```
 
 
         :param str resource_name: The name of the resource.

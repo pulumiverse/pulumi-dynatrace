@@ -29,7 +29,7 @@ import (
 //
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
-//			example, err := dynatrace.LookupGenericSetting(ctx, &dynatrace.LookupGenericSettingArgs{
+//			example, err := dynatrace.GetGenericSetting(ctx, &dynatrace.LookupGenericSettingArgs{
 //				Schema: pulumi.StringRef("builtin:alerting.maintenance-window"),
 //				Filter: pulumi.StringRef("value.generalProperties.name = 'Terraform Example'"),
 //			}, nil)

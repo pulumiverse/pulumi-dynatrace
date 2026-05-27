@@ -32,7 +32,7 @@ namespace Pulumiverse.Dynatrace.Inputs
         public Input<Inputs.OpenpipelineV2SystemEventsPipelinesSmartscapeNodeExtractionProcessorsProcessorAzureLogForwardingFieldExtractionIncludeArgs>? Include { get; set; }
 
         /// <summary>
-        /// Fields Extraction type. Possible Values: `Exclude`, `Include`, `includeAll`
+        /// Fields Extraction type. Possible values: `Exclude`, `Include`, `includeAll`
         /// </summary>
         [Input("type", required: true)]
         public Input<string> Type { get; set; } = null!;

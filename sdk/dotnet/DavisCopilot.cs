@@ -37,19 +37,25 @@ namespace Pulumiverse.Dynatrace
         public Output<Outputs.DavisCopilotBlocklistEntries?> BlocklistEntries { get; private set; } = null!;
 
         /// <summary>
-        /// Please note that once enabled, you still need to [assign permissions](https://dt-url.net/rh22idn) to the relevant user groups.
+        /// Please note that once agentic AI is enabled, the Dynatrace Assist interface is allowed to call tools and run Grail queries. You still need to [assign permissions](https://dt-url.net/agentic-ai) to the relevant user groups.
+        /// </summary>
+        [Output("enableAgenticAi")]
+        public Output<bool?> EnableAgenticAi { get; private set; } = null!;
+
+        /// <summary>
+        /// Please note that once generative AI is enabled, you still need to [assign permissions](https://dt-url.net/rh22idn) to the relevant user groups.
         /// </summary>
         [Output("enableCopilot")]
         public Output<bool> EnableCopilot { get; private set; } = null!;
 
         /// <summary>
-        /// By enabling document suggestions, Dynatrace AI can find similarities between Problems and existing Notebooks and Dashboards in order to suggest relevant troubleshooting guides. Learn more about [document suggestions](https://dt-url.net/xy02gpo).
+        /// By enabling document suggestions, Dynatrace Intelligence can find similarities between Problems and existing Notebooks and Dashboards in order to suggest relevant troubleshooting guides. Learn more about [document suggestions](https://dt-url.net/xy02gpo).
         /// </summary>
         [Output("enableDocumentSuggestion")]
         public Output<bool?> EnableDocumentSuggestion { get; private set; } = null!;
 
         /// <summary>
-        /// You can enrich Dynatrace Generative AI with your environment data. This lets you generate more accurate queries that identify and reference relevant entities, events, spans, logs, and metrics from your environment. Once enabled, Dynatrace AI periodically scans your Grail data to create its own semantic index. Please note, it can take up to 24 hours to reflect changes. Learn more about [environment-aware queries](https://dt-url.net/4g42iu7).
+        /// You can enrich Dynatrace generative and agentic AI with your environment data. This lets you generate more accurate queries that identify and reference relevant entities, events, spans, logs, and metrics from your environment. Once enabled, Dynatrace Intelligence periodically scans your Grail data to create its own semantic index. Please note, it can take up to 24 hours to reflect changes. Learn more about [environment-aware queries](https://dt-url.net/4g42iu7).
         /// </summary>
         [Output("enableTenantAwareDataMining")]
         public Output<bool?> EnableTenantAwareDataMining { get; private set; } = null!;
@@ -108,19 +114,25 @@ namespace Pulumiverse.Dynatrace
         public Input<Inputs.DavisCopilotBlocklistEntriesArgs>? BlocklistEntries { get; set; }
 
         /// <summary>
-        /// Please note that once enabled, you still need to [assign permissions](https://dt-url.net/rh22idn) to the relevant user groups.
+        /// Please note that once agentic AI is enabled, the Dynatrace Assist interface is allowed to call tools and run Grail queries. You still need to [assign permissions](https://dt-url.net/agentic-ai) to the relevant user groups.
+        /// </summary>
+        [Input("enableAgenticAi")]
+        public Input<bool>? EnableAgenticAi { get; set; }
+
+        /// <summary>
+        /// Please note that once generative AI is enabled, you still need to [assign permissions](https://dt-url.net/rh22idn) to the relevant user groups.
         /// </summary>
         [Input("enableCopilot", required: true)]
         public Input<bool> EnableCopilot { get; set; } = null!;
 
         /// <summary>
-        /// By enabling document suggestions, Dynatrace AI can find similarities between Problems and existing Notebooks and Dashboards in order to suggest relevant troubleshooting guides. Learn more about [document suggestions](https://dt-url.net/xy02gpo).
+        /// By enabling document suggestions, Dynatrace Intelligence can find similarities between Problems and existing Notebooks and Dashboards in order to suggest relevant troubleshooting guides. Learn more about [document suggestions](https://dt-url.net/xy02gpo).
         /// </summary>
         [Input("enableDocumentSuggestion")]
         public Input<bool>? EnableDocumentSuggestion { get; set; }
 
         /// <summary>
-        /// You can enrich Dynatrace Generative AI with your environment data. This lets you generate more accurate queries that identify and reference relevant entities, events, spans, logs, and metrics from your environment. Once enabled, Dynatrace AI periodically scans your Grail data to create its own semantic index. Please note, it can take up to 24 hours to reflect changes. Learn more about [environment-aware queries](https://dt-url.net/4g42iu7).
+        /// You can enrich Dynatrace generative and agentic AI with your environment data. This lets you generate more accurate queries that identify and reference relevant entities, events, spans, logs, and metrics from your environment. Once enabled, Dynatrace Intelligence periodically scans your Grail data to create its own semantic index. Please note, it can take up to 24 hours to reflect changes. Learn more about [environment-aware queries](https://dt-url.net/4g42iu7).
         /// </summary>
         [Input("enableTenantAwareDataMining")]
         public Input<bool>? EnableTenantAwareDataMining { get; set; }
@@ -140,19 +152,25 @@ namespace Pulumiverse.Dynatrace
         public Input<Inputs.DavisCopilotBlocklistEntriesGetArgs>? BlocklistEntries { get; set; }
 
         /// <summary>
-        /// Please note that once enabled, you still need to [assign permissions](https://dt-url.net/rh22idn) to the relevant user groups.
+        /// Please note that once agentic AI is enabled, the Dynatrace Assist interface is allowed to call tools and run Grail queries. You still need to [assign permissions](https://dt-url.net/agentic-ai) to the relevant user groups.
+        /// </summary>
+        [Input("enableAgenticAi")]
+        public Input<bool>? EnableAgenticAi { get; set; }
+
+        /// <summary>
+        /// Please note that once generative AI is enabled, you still need to [assign permissions](https://dt-url.net/rh22idn) to the relevant user groups.
         /// </summary>
         [Input("enableCopilot")]
         public Input<bool>? EnableCopilot { get; set; }
 
         /// <summary>
-        /// By enabling document suggestions, Dynatrace AI can find similarities between Problems and existing Notebooks and Dashboards in order to suggest relevant troubleshooting guides. Learn more about [document suggestions](https://dt-url.net/xy02gpo).
+        /// By enabling document suggestions, Dynatrace Intelligence can find similarities between Problems and existing Notebooks and Dashboards in order to suggest relevant troubleshooting guides. Learn more about [document suggestions](https://dt-url.net/xy02gpo).
         /// </summary>
         [Input("enableDocumentSuggestion")]
         public Input<bool>? EnableDocumentSuggestion { get; set; }
 
         /// <summary>
-        /// You can enrich Dynatrace Generative AI with your environment data. This lets you generate more accurate queries that identify and reference relevant entities, events, spans, logs, and metrics from your environment. Once enabled, Dynatrace AI periodically scans your Grail data to create its own semantic index. Please note, it can take up to 24 hours to reflect changes. Learn more about [environment-aware queries](https://dt-url.net/4g42iu7).
+        /// You can enrich Dynatrace generative and agentic AI with your environment data. This lets you generate more accurate queries that identify and reference relevant entities, events, spans, logs, and metrics from your environment. Once enabled, Dynatrace Intelligence periodically scans your Grail data to create its own semantic index. Please note, it can take up to 24 hours to reflect changes. Learn more about [environment-aware queries](https://dt-url.net/4g42iu7).
         /// </summary>
         [Input("enableTenantAwareDataMining")]
         public Input<bool>? EnableTenantAwareDataMining { get; set; }

@@ -30,17 +30,17 @@ type DiskEdgeAnomalyDetectors struct {
 
 	// Alerts
 	Alerts DiskEdgeAnomalyDetectorsAlertsPtrOutput `pulumi:"alerts"`
+	// Set of rules to scope which disks the policy applies to. Rules can match based on disk properties (total space, filesystem, disk type) or host resource attributes. Each disk property type can be defined at most once per policy.
+	DetectionConditions DiskEdgeAnomalyDetectorsDetectionConditionsPtrOutput `pulumi:"detectionConditions"`
 	// Disk will be included in this policy if **any** of the filters match
 	DiskNameFilters pulumi.StringArrayOutput `pulumi:"diskNameFilters"`
 	// This setting is enabled (`true`) or disabled (`false`)
 	Enabled pulumi.BoolOutput `pulumi:"enabled"`
 	// Set of additional key-value properties to be attached to the triggered event. You can retrieve the available property keys using the [Events API v2](https://dt-url.net/9622g1w). Additionally any Host resource attribute can be dynamically substituted (agent 1.325+)
 	EventProperties DiskEdgeAnomalyDetectorsEventPropertiesPtrOutput `pulumi:"eventProperties"`
-	// The policy will be enabled if **all** conditions are met
-	HostMetadataConditions DiskEdgeAnomalyDetectorsHostMetadataConditionsPtrOutput `pulumi:"hostMetadataConditions"`
 	// Because this resource allows for ordering you may specify the ID of the resource instance that comes before this instance regarding order. If not specified when creating the setting will be added to the end of the list. If not specified during update the order will remain untouched
 	InsertAfter pulumi.StringOutput `pulumi:"insertAfter"`
-	// Select the operating systems on which policy should be applied
+	// Select the operating systems on which policy should be applied. Possible values: `AIX`, `LINUX`, `WINDOWS`
 	OperatingSystems pulumi.StringArrayOutput `pulumi:"operatingSystems"`
 	// Policy name
 	PolicyName pulumi.StringOutput `pulumi:"policyName"`
@@ -86,17 +86,17 @@ func GetDiskEdgeAnomalyDetectors(ctx *pulumi.Context,
 type diskEdgeAnomalyDetectorsState struct {
 	// Alerts
 	Alerts *DiskEdgeAnomalyDetectorsAlerts `pulumi:"alerts"`
+	// Set of rules to scope which disks the policy applies to. Rules can match based on disk properties (total space, filesystem, disk type) or host resource attributes. Each disk property type can be defined at most once per policy.
+	DetectionConditions *DiskEdgeAnomalyDetectorsDetectionConditions `pulumi:"detectionConditions"`
 	// Disk will be included in this policy if **any** of the filters match
 	DiskNameFilters []string `pulumi:"diskNameFilters"`
 	// This setting is enabled (`true`) or disabled (`false`)
 	Enabled *bool `pulumi:"enabled"`
 	// Set of additional key-value properties to be attached to the triggered event. You can retrieve the available property keys using the [Events API v2](https://dt-url.net/9622g1w). Additionally any Host resource attribute can be dynamically substituted (agent 1.325+)
 	EventProperties *DiskEdgeAnomalyDetectorsEventProperties `pulumi:"eventProperties"`
-	// The policy will be enabled if **all** conditions are met
-	HostMetadataConditions *DiskEdgeAnomalyDetectorsHostMetadataConditions `pulumi:"hostMetadataConditions"`
 	// Because this resource allows for ordering you may specify the ID of the resource instance that comes before this instance regarding order. If not specified when creating the setting will be added to the end of the list. If not specified during update the order will remain untouched
 	InsertAfter *string `pulumi:"insertAfter"`
-	// Select the operating systems on which policy should be applied
+	// Select the operating systems on which policy should be applied. Possible values: `AIX`, `LINUX`, `WINDOWS`
 	OperatingSystems []string `pulumi:"operatingSystems"`
 	// Policy name
 	PolicyName *string `pulumi:"policyName"`
@@ -107,17 +107,17 @@ type diskEdgeAnomalyDetectorsState struct {
 type DiskEdgeAnomalyDetectorsState struct {
 	// Alerts
 	Alerts DiskEdgeAnomalyDetectorsAlertsPtrInput
+	// Set of rules to scope which disks the policy applies to. Rules can match based on disk properties (total space, filesystem, disk type) or host resource attributes. Each disk property type can be defined at most once per policy.
+	DetectionConditions DiskEdgeAnomalyDetectorsDetectionConditionsPtrInput
 	// Disk will be included in this policy if **any** of the filters match
 	DiskNameFilters pulumi.StringArrayInput
 	// This setting is enabled (`true`) or disabled (`false`)
 	Enabled pulumi.BoolPtrInput
 	// Set of additional key-value properties to be attached to the triggered event. You can retrieve the available property keys using the [Events API v2](https://dt-url.net/9622g1w). Additionally any Host resource attribute can be dynamically substituted (agent 1.325+)
 	EventProperties DiskEdgeAnomalyDetectorsEventPropertiesPtrInput
-	// The policy will be enabled if **all** conditions are met
-	HostMetadataConditions DiskEdgeAnomalyDetectorsHostMetadataConditionsPtrInput
 	// Because this resource allows for ordering you may specify the ID of the resource instance that comes before this instance regarding order. If not specified when creating the setting will be added to the end of the list. If not specified during update the order will remain untouched
 	InsertAfter pulumi.StringPtrInput
-	// Select the operating systems on which policy should be applied
+	// Select the operating systems on which policy should be applied. Possible values: `AIX`, `LINUX`, `WINDOWS`
 	OperatingSystems pulumi.StringArrayInput
 	// Policy name
 	PolicyName pulumi.StringPtrInput
@@ -132,17 +132,17 @@ func (DiskEdgeAnomalyDetectorsState) ElementType() reflect.Type {
 type diskEdgeAnomalyDetectorsArgs struct {
 	// Alerts
 	Alerts *DiskEdgeAnomalyDetectorsAlerts `pulumi:"alerts"`
+	// Set of rules to scope which disks the policy applies to. Rules can match based on disk properties (total space, filesystem, disk type) or host resource attributes. Each disk property type can be defined at most once per policy.
+	DetectionConditions *DiskEdgeAnomalyDetectorsDetectionConditions `pulumi:"detectionConditions"`
 	// Disk will be included in this policy if **any** of the filters match
 	DiskNameFilters []string `pulumi:"diskNameFilters"`
 	// This setting is enabled (`true`) or disabled (`false`)
 	Enabled bool `pulumi:"enabled"`
 	// Set of additional key-value properties to be attached to the triggered event. You can retrieve the available property keys using the [Events API v2](https://dt-url.net/9622g1w). Additionally any Host resource attribute can be dynamically substituted (agent 1.325+)
 	EventProperties *DiskEdgeAnomalyDetectorsEventProperties `pulumi:"eventProperties"`
-	// The policy will be enabled if **all** conditions are met
-	HostMetadataConditions *DiskEdgeAnomalyDetectorsHostMetadataConditions `pulumi:"hostMetadataConditions"`
 	// Because this resource allows for ordering you may specify the ID of the resource instance that comes before this instance regarding order. If not specified when creating the setting will be added to the end of the list. If not specified during update the order will remain untouched
 	InsertAfter *string `pulumi:"insertAfter"`
-	// Select the operating systems on which policy should be applied
+	// Select the operating systems on which policy should be applied. Possible values: `AIX`, `LINUX`, `WINDOWS`
 	OperatingSystems []string `pulumi:"operatingSystems"`
 	// Policy name
 	PolicyName string `pulumi:"policyName"`
@@ -154,17 +154,17 @@ type diskEdgeAnomalyDetectorsArgs struct {
 type DiskEdgeAnomalyDetectorsArgs struct {
 	// Alerts
 	Alerts DiskEdgeAnomalyDetectorsAlertsPtrInput
+	// Set of rules to scope which disks the policy applies to. Rules can match based on disk properties (total space, filesystem, disk type) or host resource attributes. Each disk property type can be defined at most once per policy.
+	DetectionConditions DiskEdgeAnomalyDetectorsDetectionConditionsPtrInput
 	// Disk will be included in this policy if **any** of the filters match
 	DiskNameFilters pulumi.StringArrayInput
 	// This setting is enabled (`true`) or disabled (`false`)
 	Enabled pulumi.BoolInput
 	// Set of additional key-value properties to be attached to the triggered event. You can retrieve the available property keys using the [Events API v2](https://dt-url.net/9622g1w). Additionally any Host resource attribute can be dynamically substituted (agent 1.325+)
 	EventProperties DiskEdgeAnomalyDetectorsEventPropertiesPtrInput
-	// The policy will be enabled if **all** conditions are met
-	HostMetadataConditions DiskEdgeAnomalyDetectorsHostMetadataConditionsPtrInput
 	// Because this resource allows for ordering you may specify the ID of the resource instance that comes before this instance regarding order. If not specified when creating the setting will be added to the end of the list. If not specified during update the order will remain untouched
 	InsertAfter pulumi.StringPtrInput
-	// Select the operating systems on which policy should be applied
+	// Select the operating systems on which policy should be applied. Possible values: `AIX`, `LINUX`, `WINDOWS`
 	OperatingSystems pulumi.StringArrayInput
 	// Policy name
 	PolicyName pulumi.StringInput
@@ -264,6 +264,13 @@ func (o DiskEdgeAnomalyDetectorsOutput) Alerts() DiskEdgeAnomalyDetectorsAlertsP
 	return o.ApplyT(func(v *DiskEdgeAnomalyDetectors) DiskEdgeAnomalyDetectorsAlertsPtrOutput { return v.Alerts }).(DiskEdgeAnomalyDetectorsAlertsPtrOutput)
 }
 
+// Set of rules to scope which disks the policy applies to. Rules can match based on disk properties (total space, filesystem, disk type) or host resource attributes. Each disk property type can be defined at most once per policy.
+func (o DiskEdgeAnomalyDetectorsOutput) DetectionConditions() DiskEdgeAnomalyDetectorsDetectionConditionsPtrOutput {
+	return o.ApplyT(func(v *DiskEdgeAnomalyDetectors) DiskEdgeAnomalyDetectorsDetectionConditionsPtrOutput {
+		return v.DetectionConditions
+	}).(DiskEdgeAnomalyDetectorsDetectionConditionsPtrOutput)
+}
+
 // Disk will be included in this policy if **any** of the filters match
 func (o DiskEdgeAnomalyDetectorsOutput) DiskNameFilters() pulumi.StringArrayOutput {
 	return o.ApplyT(func(v *DiskEdgeAnomalyDetectors) pulumi.StringArrayOutput { return v.DiskNameFilters }).(pulumi.StringArrayOutput)
@@ -281,19 +288,12 @@ func (o DiskEdgeAnomalyDetectorsOutput) EventProperties() DiskEdgeAnomalyDetecto
 	}).(DiskEdgeAnomalyDetectorsEventPropertiesPtrOutput)
 }
 
-// The policy will be enabled if **all** conditions are met
-func (o DiskEdgeAnomalyDetectorsOutput) HostMetadataConditions() DiskEdgeAnomalyDetectorsHostMetadataConditionsPtrOutput {
-	return o.ApplyT(func(v *DiskEdgeAnomalyDetectors) DiskEdgeAnomalyDetectorsHostMetadataConditionsPtrOutput {
-		return v.HostMetadataConditions
-	}).(DiskEdgeAnomalyDetectorsHostMetadataConditionsPtrOutput)
-}
-
 // Because this resource allows for ordering you may specify the ID of the resource instance that comes before this instance regarding order. If not specified when creating the setting will be added to the end of the list. If not specified during update the order will remain untouched
 func (o DiskEdgeAnomalyDetectorsOutput) InsertAfter() pulumi.StringOutput {
 	return o.ApplyT(func(v *DiskEdgeAnomalyDetectors) pulumi.StringOutput { return v.InsertAfter }).(pulumi.StringOutput)
 }
 
-// Select the operating systems on which policy should be applied
+// Select the operating systems on which policy should be applied. Possible values: `AIX`, `LINUX`, `WINDOWS`
 func (o DiskEdgeAnomalyDetectorsOutput) OperatingSystems() pulumi.StringArrayOutput {
 	return o.ApplyT(func(v *DiskEdgeAnomalyDetectors) pulumi.StringArrayOutput { return v.OperatingSystems }).(pulumi.StringArrayOutput)
 }

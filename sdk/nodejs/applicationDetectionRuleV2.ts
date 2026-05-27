@@ -20,6 +20,80 @@ import * as utilities from "./utilities";
  * - `terraform-provider-dynatrace -export dynatrace.ApplicationDetectionRuleV2` downloads all existing application detection rule configuration
  *
  * The full documentation of the export feature is available [here](https://dt-url.net/h203qmc).
+ *
+ * ## Resource Example Usage
+ *
+ * ```typescript
+ * import * as pulumi from "@pulumi/pulumi";
+ * import * as dynatrace from "@pulumiverse/dynatrace";
+ *
+ * const application = new dynatrace.WebApplication("application", {
+ *     name: "#name#",
+ *     type: "AUTO_INJECTED",
+ *     costControlUserSessionPercentage: 100,
+ *     loadActionKeyPerformanceMetric: "VISUALLY_COMPLETE",
+ *     realUserMonitoringEnabled: true,
+ *     xhrActionKeyPerformanceMetric: "VISUALLY_COMPLETE",
+ *     customActionApdexSettings: {
+ *         frustratingFallbackThreshold: 12000,
+ *         frustratingThreshold: 12000,
+ *         toleratedFallbackThreshold: 3000,
+ *         toleratedThreshold: 3000,
+ *     },
+ *     loadActionApdexSettings: {
+ *         frustratingFallbackThreshold: 12000,
+ *         frustratingThreshold: 12000,
+ *         toleratedFallbackThreshold: 3000,
+ *         toleratedThreshold: 3000,
+ *     },
+ *     monitoringSettings: {
+ *         addCrossOriginAnonymousAttribute: true,
+ *         cacheControlHeaderOptimizations: true,
+ *         injectionMode: "JAVASCRIPT_TAG",
+ *         scriptTagCacheDurationInHours: 1,
+ *         advancedJavascriptTagSettings: {
+ *             maxActionNameLength: 100,
+ *             maxErrorsToCapture: 10,
+ *             additionalEventHandlers: {
+ *                 maxDomNodes: 5000,
+ *             },
+ *         },
+ *         contentCapture: {
+ *             resourceTimingSettings: {
+ *                 instrumentationDelay: 53,
+ *                 nonW3cResourceTimings: true,
+ *                 w3cResourceTimings: true,
+ *             },
+ *             timeoutSettings: {
+ *                 temporaryActionLimit: 3,
+ *                 temporaryActionTotalTimeout: 100,
+ *                 timedActionSupport: true,
+ *             },
+ *         },
+ *     },
+ *     userActionNamingSettings: {},
+ *     waterfallSettings: {
+ *         resourceBrowserCachingThreshold: 50,
+ *         resourcesThreshold: 100000,
+ *         slowCndResourcesThreshold: 200000,
+ *         slowFirstPartyResourcesThreshold: 200000,
+ *         slowThirdPartyResourcesThreshold: 200000,
+ *         speedIndexVisuallyCompleteRatioThreshold: 50,
+ *         uncompressedResourcesThreshold: 860,
+ *     },
+ *     xhrActionApdexSettings: {
+ *         frustratingFallbackThreshold: 12000,
+ *         frustratingThreshold: 12000,
+ *         toleratedFallbackThreshold: 3000,
+ *         toleratedThreshold: 3000,
+ *     },
+ * });
+ * const detectionRule = new dynatrace.ApplicationDetectionRuleV2("detection_rule", {
+ *     applicationId: application.id,
+ *     matcher: "DOMAIN_MATCHES",
+ *     pattern: "TerraformTest",
+ * });
+ * ```
  */
 export class ApplicationDetectionRuleV2 extends pulumi.CustomResource {
     /**
