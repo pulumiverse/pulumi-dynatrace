@@ -3,19 +3,10 @@ permissions:
   id-token: write
 env:
   GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-  NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
-  NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
-  NUGET_PUBLISH_KEY: ${{ secrets.NUGET_PUBLISH_KEY }}
   PROVIDER: dynatrace
-  PULUMI_ACCESS_TOKEN: ${{ secrets.PULUMI_ACCESS_TOKEN }}
-  PULUMI_API: https://api.pulumi.com
   PULUMI_GO_DEP_ROOT: ${{ github.workspace }}/..
   PULUMI_LOCAL_NUGET: ${{ github.workspace }}/nuget
   PULUMI_TEST_OWNER: "pulumiverse"
-  PYPI_PASSWORD: ${{ secrets.PYPI_API_TOKEN }}
-  PYPI_USERNAME: "__token__"
-  TRAVIS_OS_NAME: linux
-  NUGET_FEED_URL: https://api.nuget.org/v3/index.json
   PUBLISH_PYPI: true
   PUBLISH_NPM: true
   PUBLISH_NUGET: true
@@ -51,7 +42,6 @@ jobs:
       uses: actions/setup-node@v6
       with:
         node-version: ${{matrix.nodeversion}}
-        registry-url: https://registry.npmjs.org
     - name: Setup DotNet
       uses: actions/setup-dotnet@v5
       with:
@@ -89,16 +79,16 @@ jobs:
       fail-fast: true
       matrix:
         dotnetversion:
-        - 8.0.x
+        - 10.0.201
         goversion:
-        - 1.24.x
+        - 1.26.x
         language:
         - nodejs
         - python
         - dotnet
         - go
         nodeversion:
-        - 20.x
+        - 24.x
         pythonversion:
         - "3.11"
   prerequisites:
@@ -162,11 +152,11 @@ jobs:
       fail-fast: true
       matrix:
         dotnetversion:
-        - 8.0.x
+        - 10.0.201
         goversion:
-        - 1.24.x
+        - 1.26.x
         nodeversion:
-        - 20.x
+        - 24.x
         pythonversion:
         - "3.11"
   publish:
@@ -228,7 +218,6 @@ jobs:
       uses: actions/setup-node@v6
       with:
         node-version: ${{matrix.nodeversion}}
-        registry-url: https://registry.npmjs.org
     - name: Setup DotNet
       uses: actions/setup-dotnet@v5
       with:
@@ -267,21 +256,21 @@ jobs:
       name: Publish package to PyPI
       uses: pypa/gh-action-pypi-publish@v1.14.0
       with:
-        user: ${{ env.PYPI_USERNAME }}
-        password: ${{ env.PYPI_PASSWORD }}
         packages_dir: ${{github.workspace}}/sdk/python/bin/dist
     - if: ${{ matrix.language == 'nodejs' && env.PUBLISH_NPM == 'true' }}
-      uses: JS-DevTools/npm-publish@v4.1.5
-      with:
-        access: "public"
-        token: ${{ env.NPM_TOKEN }}
-        package: ${{github.workspace}}/sdk/nodejs/bin/package.json
-        provenance: true
+      name: Publish NPM package
+      run: npm publish --access public
     - if: ${{ matrix.language == 'dotnet' && env.PUBLISH_NUGET == 'true' }}
-      name: publish nuget package
-      run: |
-        dotnet nuget push ${{github.workspace}}/sdk/dotnet/bin/Debug/*.nupkg -s ${{ env.NUGET_FEED_URL }} -k ${{ env.NUGET_PUBLISH_KEY }}
-        echo "done publishing packages"
+      name: Login to Nuget
+      uses: NuGet/login@v1
+      id: login
+      with: 
+        user: pierspulumi
+    - if: ${{ matrix.language == 'dotnet' && env.PUBLISH_NUGET == 'true' }}
+      name: Publish Nuget package
+      env: 
+        NUGET_PUBLISH_KEY: ${{ steps.login.outputs.NUGET_API_KEY }}
+      run: find "${{github.workspace}}/sdk/dotnet/bin/Debug/" -name 'PiersKarsenbarg.*.nupkg' -exec dotnet nuget push -k "${NUGET_PUBLISH_KEY}" -s https://api.nuget.org/v3/index.json {} ';'
     strategy:
       fail-fast: true
       matrix:
