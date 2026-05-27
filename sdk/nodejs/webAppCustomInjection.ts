@@ -146,31 +146,31 @@ export interface WebAppCustomInjectionState {
     /**
      * The scope of this settings. If the settings should cover the whole environment, just don't specify any scope.
      */
-    applicationId?: pulumi.Input<string>;
+    applicationId?: pulumi.Input<string | undefined>;
     /**
      * This setting is enabled (`true`) or disabled (`false`)
      */
-    enabled?: pulumi.Input<boolean>;
+    enabled?: pulumi.Input<boolean | undefined>;
     /**
      * no documentation available
      */
-    htmlPattern?: pulumi.Input<string>;
+    htmlPattern?: pulumi.Input<string | undefined>;
     /**
      * Because this resource allows for ordering you may specify the ID of the resource instance that comes before this instance regarding order. If not specified when creating the setting will be added to the end of the list. If not specified during update the order will remain untouched
      */
-    insertAfter?: pulumi.Input<string>;
+    insertAfter?: pulumi.Input<string | undefined>;
     /**
      * Possible Values: `AllPages`, `Contains`, `Ends`, `Equals`, `Starts`
      */
-    operator?: pulumi.Input<string>;
+    operator?: pulumi.Input<string | undefined>;
     /**
      * Possible Values: `AfterSpecificHtml`, `Automatic`, `BeforeSpecificHtml`, `DoNotInject`
      */
-    rule?: pulumi.Input<string>;
+    rule?: pulumi.Input<string | undefined>;
     /**
      * URL pattern
      */
-    urlPattern?: pulumi.Input<string>;
+    urlPattern?: pulumi.Input<string | undefined>;
 }
 
 /**
@@ -188,11 +188,11 @@ export interface WebAppCustomInjectionArgs {
     /**
      * no documentation available
      */
-    htmlPattern?: pulumi.Input<string>;
+    htmlPattern?: pulumi.Input<string | undefined>;
     /**
      * Because this resource allows for ordering you may specify the ID of the resource instance that comes before this instance regarding order. If not specified when creating the setting will be added to the end of the list. If not specified during update the order will remain untouched
      */
-    insertAfter?: pulumi.Input<string>;
+    insertAfter?: pulumi.Input<string | undefined>;
     /**
      * Possible Values: `AllPages`, `Contains`, `Ends`, `Equals`, `Starts`
      */
@@ -204,5 +204,5 @@ export interface WebAppCustomInjectionArgs {
     /**
      * URL pattern
      */
-    urlPattern?: pulumi.Input<string>;
+    urlPattern?: pulumi.Input<string | undefined>;
 }

@@ -87,7 +87,7 @@ export interface OwnershipConfigState {
     /**
      * Tags and metadata are key-value pairs. Define keys for tags and metadata that are considered for ownership. If a tag or any metadata starts with a key defined below, the value of the tag or metadata is considered a team identifier.
      */
-    ownershipIdentifiers?: pulumi.Input<inputs.OwnershipConfigOwnershipIdentifiers>;
+    ownershipIdentifiers?: pulumi.Input<inputs.OwnershipConfigOwnershipIdentifiers | undefined>;
 }
 
 /**

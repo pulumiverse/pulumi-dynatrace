@@ -114,23 +114,23 @@ export interface DeclarativeGroupingState {
     /**
      * Enter a descriptive process group display name and a unique identifier that Dynatrace can use to recognize this process group.
      */
-    detection?: pulumi.Input<inputs.DeclarativeGroupingDetection>;
+    detection?: pulumi.Input<inputs.DeclarativeGroupingDetection | undefined>;
     /**
      * This setting is enabled (`true`) or disabled (`false`)
      */
-    enabled?: pulumi.Input<boolean>;
+    enabled?: pulumi.Input<boolean | undefined>;
     /**
      * Because this resource allows for ordering you may specify the ID of the resource instance that comes before this instance regarding order. If not specified when creating the setting will be added to the end of the list. If not specified during update the order will remain untouched
      */
-    insertAfter?: pulumi.Input<string>;
+    insertAfter?: pulumi.Input<string | undefined>;
     /**
      * Monitored technology name
      */
-    name?: pulumi.Input<string>;
+    name?: pulumi.Input<string | undefined>;
     /**
      * The scope of this setting (HOST, HOST_GROUP). Omit this property if you want to cover the whole environment.
      */
-    scope?: pulumi.Input<string>;
+    scope?: pulumi.Input<string | undefined>;
 }
 
 /**
@@ -148,13 +148,13 @@ export interface DeclarativeGroupingArgs {
     /**
      * Because this resource allows for ordering you may specify the ID of the resource instance that comes before this instance regarding order. If not specified when creating the setting will be added to the end of the list. If not specified during update the order will remain untouched
      */
-    insertAfter?: pulumi.Input<string>;
+    insertAfter?: pulumi.Input<string | undefined>;
     /**
      * Monitored technology name
      */
-    name?: pulumi.Input<string>;
+    name?: pulumi.Input<string | undefined>;
     /**
      * The scope of this setting (HOST, HOST_GROUP). Omit this property if you want to cover the whole environment.
      */
-    scope?: pulumi.Input<string>;
+    scope?: pulumi.Input<string | undefined>;
 }

@@ -90,10 +90,10 @@ class LogEventsArgs:
 @pulumi.input_type
 class _LogEventsState:
     def __init__(__self__, *,
-                 enabled: Optional[pulumi.Input[_builtins.bool]] = None,
-                 event_template: Optional[pulumi.Input['LogEventsEventTemplateArgs']] = None,
-                 query: Optional[pulumi.Input[_builtins.str]] = None,
-                 summary: Optional[pulumi.Input[_builtins.str]] = None):
+                 enabled: pulumi.Input[Optional[_builtins.bool]] = None,
+                 event_template: pulumi.Input[Optional['LogEventsEventTemplateArgs']] = None,
+                 query: pulumi.Input[Optional[_builtins.str]] = None,
+                 summary: pulumi.Input[Optional[_builtins.str]] = None):
         """
         Input properties used for looking up and filtering LogEvents resources.
 
@@ -113,50 +113,50 @@ class _LogEventsState:
 
     @_builtins.property
     @pulumi.getter
-    def enabled(self) -> Optional[pulumi.Input[_builtins.bool]]:
+    def enabled(self) -> pulumi.Input[Optional[_builtins.bool]]:
         """
         This setting is enabled (`true`) or disabled (`false`)
         """
         return pulumi.get(self, "enabled")
 
     @enabled.setter
-    def enabled(self, value: Optional[pulumi.Input[_builtins.bool]]):
+    def enabled(self, value: pulumi.Input[Optional[_builtins.bool]]):
         pulumi.set(self, "enabled", value)
 
     @_builtins.property
     @pulumi.getter(name="eventTemplate")
-    def event_template(self) -> Optional[pulumi.Input['LogEventsEventTemplateArgs']]:
+    def event_template(self) -> pulumi.Input[Optional['LogEventsEventTemplateArgs']]:
         """
         Event template
         """
         return pulumi.get(self, "event_template")
 
     @event_template.setter
-    def event_template(self, value: Optional[pulumi.Input['LogEventsEventTemplateArgs']]):
+    def event_template(self, value: pulumi.Input[Optional['LogEventsEventTemplateArgs']]):
         pulumi.set(self, "event_template", value)
 
     @_builtins.property
     @pulumi.getter
-    def query(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def query(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Log query
         """
         return pulumi.get(self, "query")
 
     @query.setter
-    def query(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def query(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "query", value)
 
     @_builtins.property
     @pulumi.getter
-    def summary(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def summary(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The textual summary of the log event entry
         """
         return pulumi.get(self, "summary")
 
     @summary.setter
-    def summary(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def summary(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "summary", value)
 
 
@@ -166,10 +166,10 @@ class LogEvents(pulumi.CustomResource):
     def __init__(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 enabled: Optional[pulumi.Input[_builtins.bool]] = None,
-                 event_template: Optional[pulumi.Input[Union['LogEventsEventTemplateArgs', 'LogEventsEventTemplateArgsDict']]] = None,
-                 query: Optional[pulumi.Input[_builtins.str]] = None,
-                 summary: Optional[pulumi.Input[_builtins.str]] = None,
+                 enabled: pulumi.Input[Optional[_builtins.bool]] = None,
+                 event_template: pulumi.Input[Optional[Union['LogEventsEventTemplateArgs', 'LogEventsEventTemplateArgsDict']]] = None,
+                 query: pulumi.Input[Optional[_builtins.str]] = None,
+                 summary: pulumi.Input[Optional[_builtins.str]] = None,
                  __props__=None):
         """
         > This resource requires the API token scopes **Read settings** (`settings.read`) and **Write settings** (`settings.write`)
@@ -231,10 +231,10 @@ class LogEvents(pulumi.CustomResource):
     def _internal_init(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 enabled: Optional[pulumi.Input[_builtins.bool]] = None,
-                 event_template: Optional[pulumi.Input[Union['LogEventsEventTemplateArgs', 'LogEventsEventTemplateArgsDict']]] = None,
-                 query: Optional[pulumi.Input[_builtins.str]] = None,
-                 summary: Optional[pulumi.Input[_builtins.str]] = None,
+                 enabled: pulumi.Input[Optional[_builtins.bool]] = None,
+                 event_template: pulumi.Input[Optional[Union['LogEventsEventTemplateArgs', 'LogEventsEventTemplateArgsDict']]] = None,
+                 query: pulumi.Input[Optional[_builtins.str]] = None,
+                 summary: pulumi.Input[Optional[_builtins.str]] = None,
                  __props__=None):
         opts = pulumi.ResourceOptions.merge(_utilities.get_resource_opts_defaults(), opts)
         if not isinstance(opts, pulumi.ResourceOptions):
@@ -266,10 +266,10 @@ class LogEvents(pulumi.CustomResource):
     def get(resource_name: str,
             id: pulumi.Input[str],
             opts: Optional[pulumi.ResourceOptions] = None,
-            enabled: Optional[pulumi.Input[_builtins.bool]] = None,
-            event_template: Optional[pulumi.Input[Union['LogEventsEventTemplateArgs', 'LogEventsEventTemplateArgsDict']]] = None,
-            query: Optional[pulumi.Input[_builtins.str]] = None,
-            summary: Optional[pulumi.Input[_builtins.str]] = None) -> 'LogEvents':
+            enabled: pulumi.Input[Optional[_builtins.bool]] = None,
+            event_template: pulumi.Input[Optional[Union['LogEventsEventTemplateArgs', 'LogEventsEventTemplateArgsDict']]] = None,
+            query: pulumi.Input[Optional[_builtins.str]] = None,
+            summary: pulumi.Input[Optional[_builtins.str]] = None) -> 'LogEvents':
         """
         Get an existing LogEvents resource's state with the given name, id, and optional extra
         properties used to qualify the lookup.

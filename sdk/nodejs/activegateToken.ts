@@ -94,11 +94,11 @@ export interface ActivegateTokenState {
     /**
      * Manually enforce ActiveGate token authentication
      */
-    authTokenEnforcementManuallyEnabled?: pulumi.Input<boolean>;
+    authTokenEnforcementManuallyEnabled?: pulumi.Input<boolean | undefined>;
     /**
      * Note: ActiveGate tokens notifications are sent only when you deployed ActiveGate tokens with expiration dates in your environment and notifications are defined ([see notification settings](https://www.terraform.io/ui/settings/builtin:problem.notifications))
      */
-    expiringTokenNotificationsEnabled?: pulumi.Input<boolean>;
+    expiringTokenNotificationsEnabled?: pulumi.Input<boolean | undefined>;
 }
 
 /**

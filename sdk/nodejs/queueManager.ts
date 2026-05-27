@@ -108,23 +108,23 @@ export interface QueueManagerState {
     /**
      * The alias queues in the queue manager
      */
-    aliasQueues?: pulumi.Input<pulumi.Input<inputs.QueueManagerAliasQueue>[]>;
+    aliasQueues?: pulumi.Input<pulumi.Input<inputs.QueueManagerAliasQueue>[] | undefined>;
     /**
      * The alias queues in the queue manager
      */
-    clusterQueues?: pulumi.Input<pulumi.Input<inputs.QueueManagerClusterQueue>[]>;
+    clusterQueues?: pulumi.Input<pulumi.Input<inputs.QueueManagerClusterQueue>[] | undefined>;
     /**
      * Name of the cluster(s) this queue manager is part of
      */
-    clusters?: pulumi.Input<pulumi.Input<string>[]>;
+    clusters?: pulumi.Input<pulumi.Input<string>[] | undefined>;
     /**
      * The name of the queue manager
      */
-    name?: pulumi.Input<string>;
+    name?: pulumi.Input<string | undefined>;
     /**
      * The alias queues in the queue manager
      */
-    remoteQueues?: pulumi.Input<pulumi.Input<inputs.QueueManagerRemoteQueue>[]>;
+    remoteQueues?: pulumi.Input<pulumi.Input<inputs.QueueManagerRemoteQueue>[] | undefined>;
 }
 
 /**
@@ -134,21 +134,21 @@ export interface QueueManagerArgs {
     /**
      * The alias queues in the queue manager
      */
-    aliasQueues?: pulumi.Input<pulumi.Input<inputs.QueueManagerAliasQueue>[]>;
+    aliasQueues?: pulumi.Input<pulumi.Input<inputs.QueueManagerAliasQueue>[] | undefined>;
     /**
      * The alias queues in the queue manager
      */
-    clusterQueues?: pulumi.Input<pulumi.Input<inputs.QueueManagerClusterQueue>[]>;
+    clusterQueues?: pulumi.Input<pulumi.Input<inputs.QueueManagerClusterQueue>[] | undefined>;
     /**
      * Name of the cluster(s) this queue manager is part of
      */
-    clusters?: pulumi.Input<pulumi.Input<string>[]>;
+    clusters?: pulumi.Input<pulumi.Input<string>[] | undefined>;
     /**
      * The name of the queue manager
      */
-    name?: pulumi.Input<string>;
+    name?: pulumi.Input<string | undefined>;
     /**
      * The alias queues in the queue manager
      */
-    remoteQueues?: pulumi.Input<pulumi.Input<inputs.QueueManagerRemoteQueue>[]>;
+    remoteQueues?: pulumi.Input<pulumi.Input<inputs.QueueManagerRemoteQueue>[] | undefined>;
 }

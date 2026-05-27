@@ -21,9 +21,9 @@ __all__ = ['OpenpipelineDavisEventsArgs', 'OpenpipelineDavisEvents']
 @pulumi.input_type
 class OpenpipelineDavisEventsArgs:
     def __init__(__self__, *,
-                 endpoints: Optional[pulumi.Input['OpenpipelineDavisEventsEndpointsArgs']] = None,
-                 pipelines: Optional[pulumi.Input['OpenpipelineDavisEventsPipelinesArgs']] = None,
-                 routing: Optional[pulumi.Input['OpenpipelineDavisEventsRoutingArgs']] = None):
+                 endpoints: pulumi.Input[Optional['OpenpipelineDavisEventsEndpointsArgs']] = None,
+                 pipelines: pulumi.Input[Optional['OpenpipelineDavisEventsPipelinesArgs']] = None,
+                 routing: pulumi.Input[Optional['OpenpipelineDavisEventsRoutingArgs']] = None):
         """
         The set of arguments for constructing a OpenpipelineDavisEvents resource.
 
@@ -40,47 +40,47 @@ class OpenpipelineDavisEventsArgs:
 
     @_builtins.property
     @pulumi.getter
-    def endpoints(self) -> Optional[pulumi.Input['OpenpipelineDavisEventsEndpointsArgs']]:
+    def endpoints(self) -> pulumi.Input[Optional['OpenpipelineDavisEventsEndpointsArgs']]:
         """
         List of all ingest sources of the configuration
         """
         return pulumi.get(self, "endpoints")
 
     @endpoints.setter
-    def endpoints(self, value: Optional[pulumi.Input['OpenpipelineDavisEventsEndpointsArgs']]):
+    def endpoints(self, value: pulumi.Input[Optional['OpenpipelineDavisEventsEndpointsArgs']]):
         pulumi.set(self, "endpoints", value)
 
     @_builtins.property
     @pulumi.getter
-    def pipelines(self) -> Optional[pulumi.Input['OpenpipelineDavisEventsPipelinesArgs']]:
+    def pipelines(self) -> pulumi.Input[Optional['OpenpipelineDavisEventsPipelinesArgs']]:
         """
         List of all pipelines of the configuration
         """
         return pulumi.get(self, "pipelines")
 
     @pipelines.setter
-    def pipelines(self, value: Optional[pulumi.Input['OpenpipelineDavisEventsPipelinesArgs']]):
+    def pipelines(self, value: pulumi.Input[Optional['OpenpipelineDavisEventsPipelinesArgs']]):
         pulumi.set(self, "pipelines", value)
 
     @_builtins.property
     @pulumi.getter
-    def routing(self) -> Optional[pulumi.Input['OpenpipelineDavisEventsRoutingArgs']]:
+    def routing(self) -> pulumi.Input[Optional['OpenpipelineDavisEventsRoutingArgs']]:
         """
         Dynamic routing definition
         """
         return pulumi.get(self, "routing")
 
     @routing.setter
-    def routing(self, value: Optional[pulumi.Input['OpenpipelineDavisEventsRoutingArgs']]):
+    def routing(self, value: pulumi.Input[Optional['OpenpipelineDavisEventsRoutingArgs']]):
         pulumi.set(self, "routing", value)
 
 
 @pulumi.input_type
 class _OpenpipelineDavisEventsState:
     def __init__(__self__, *,
-                 endpoints: Optional[pulumi.Input['OpenpipelineDavisEventsEndpointsArgs']] = None,
-                 pipelines: Optional[pulumi.Input['OpenpipelineDavisEventsPipelinesArgs']] = None,
-                 routing: Optional[pulumi.Input['OpenpipelineDavisEventsRoutingArgs']] = None):
+                 endpoints: pulumi.Input[Optional['OpenpipelineDavisEventsEndpointsArgs']] = None,
+                 pipelines: pulumi.Input[Optional['OpenpipelineDavisEventsPipelinesArgs']] = None,
+                 routing: pulumi.Input[Optional['OpenpipelineDavisEventsRoutingArgs']] = None):
         """
         Input properties used for looking up and filtering OpenpipelineDavisEvents resources.
 
@@ -97,38 +97,38 @@ class _OpenpipelineDavisEventsState:
 
     @_builtins.property
     @pulumi.getter
-    def endpoints(self) -> Optional[pulumi.Input['OpenpipelineDavisEventsEndpointsArgs']]:
+    def endpoints(self) -> pulumi.Input[Optional['OpenpipelineDavisEventsEndpointsArgs']]:
         """
         List of all ingest sources of the configuration
         """
         return pulumi.get(self, "endpoints")
 
     @endpoints.setter
-    def endpoints(self, value: Optional[pulumi.Input['OpenpipelineDavisEventsEndpointsArgs']]):
+    def endpoints(self, value: pulumi.Input[Optional['OpenpipelineDavisEventsEndpointsArgs']]):
         pulumi.set(self, "endpoints", value)
 
     @_builtins.property
     @pulumi.getter
-    def pipelines(self) -> Optional[pulumi.Input['OpenpipelineDavisEventsPipelinesArgs']]:
+    def pipelines(self) -> pulumi.Input[Optional['OpenpipelineDavisEventsPipelinesArgs']]:
         """
         List of all pipelines of the configuration
         """
         return pulumi.get(self, "pipelines")
 
     @pipelines.setter
-    def pipelines(self, value: Optional[pulumi.Input['OpenpipelineDavisEventsPipelinesArgs']]):
+    def pipelines(self, value: pulumi.Input[Optional['OpenpipelineDavisEventsPipelinesArgs']]):
         pulumi.set(self, "pipelines", value)
 
     @_builtins.property
     @pulumi.getter
-    def routing(self) -> Optional[pulumi.Input['OpenpipelineDavisEventsRoutingArgs']]:
+    def routing(self) -> pulumi.Input[Optional['OpenpipelineDavisEventsRoutingArgs']]:
         """
         Dynamic routing definition
         """
         return pulumi.get(self, "routing")
 
     @routing.setter
-    def routing(self, value: Optional[pulumi.Input['OpenpipelineDavisEventsRoutingArgs']]):
+    def routing(self, value: pulumi.Input[Optional['OpenpipelineDavisEventsRoutingArgs']]):
         pulumi.set(self, "routing", value)
 
 
@@ -138,9 +138,9 @@ class OpenpipelineDavisEvents(pulumi.CustomResource):
     def __init__(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 endpoints: Optional[pulumi.Input[Union['OpenpipelineDavisEventsEndpointsArgs', 'OpenpipelineDavisEventsEndpointsArgsDict']]] = None,
-                 pipelines: Optional[pulumi.Input[Union['OpenpipelineDavisEventsPipelinesArgs', 'OpenpipelineDavisEventsPipelinesArgsDict']]] = None,
-                 routing: Optional[pulumi.Input[Union['OpenpipelineDavisEventsRoutingArgs', 'OpenpipelineDavisEventsRoutingArgsDict']]] = None,
+                 endpoints: pulumi.Input[Optional[Union['OpenpipelineDavisEventsEndpointsArgs', 'OpenpipelineDavisEventsEndpointsArgsDict']]] = None,
+                 pipelines: pulumi.Input[Optional[Union['OpenpipelineDavisEventsPipelinesArgs', 'OpenpipelineDavisEventsPipelinesArgsDict']]] = None,
+                 routing: pulumi.Input[Optional[Union['OpenpipelineDavisEventsRoutingArgs', 'OpenpipelineDavisEventsRoutingArgsDict']]] = None,
                  __props__=None):
         """
         !> This resource API endpoint has been deprecated, please migrate your OpenPipeline configurations and use `dynatrace_openpipeline_v2_davis_events_*` instead.
@@ -261,9 +261,9 @@ class OpenpipelineDavisEvents(pulumi.CustomResource):
     def _internal_init(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 endpoints: Optional[pulumi.Input[Union['OpenpipelineDavisEventsEndpointsArgs', 'OpenpipelineDavisEventsEndpointsArgsDict']]] = None,
-                 pipelines: Optional[pulumi.Input[Union['OpenpipelineDavisEventsPipelinesArgs', 'OpenpipelineDavisEventsPipelinesArgsDict']]] = None,
-                 routing: Optional[pulumi.Input[Union['OpenpipelineDavisEventsRoutingArgs', 'OpenpipelineDavisEventsRoutingArgsDict']]] = None,
+                 endpoints: pulumi.Input[Optional[Union['OpenpipelineDavisEventsEndpointsArgs', 'OpenpipelineDavisEventsEndpointsArgsDict']]] = None,
+                 pipelines: pulumi.Input[Optional[Union['OpenpipelineDavisEventsPipelinesArgs', 'OpenpipelineDavisEventsPipelinesArgsDict']]] = None,
+                 routing: pulumi.Input[Optional[Union['OpenpipelineDavisEventsRoutingArgs', 'OpenpipelineDavisEventsRoutingArgsDict']]] = None,
                  __props__=None):
         opts = pulumi.ResourceOptions.merge(_utilities.get_resource_opts_defaults(), opts)
         if not isinstance(opts, pulumi.ResourceOptions):
@@ -286,9 +286,9 @@ class OpenpipelineDavisEvents(pulumi.CustomResource):
     def get(resource_name: str,
             id: pulumi.Input[str],
             opts: Optional[pulumi.ResourceOptions] = None,
-            endpoints: Optional[pulumi.Input[Union['OpenpipelineDavisEventsEndpointsArgs', 'OpenpipelineDavisEventsEndpointsArgsDict']]] = None,
-            pipelines: Optional[pulumi.Input[Union['OpenpipelineDavisEventsPipelinesArgs', 'OpenpipelineDavisEventsPipelinesArgsDict']]] = None,
-            routing: Optional[pulumi.Input[Union['OpenpipelineDavisEventsRoutingArgs', 'OpenpipelineDavisEventsRoutingArgsDict']]] = None) -> 'OpenpipelineDavisEvents':
+            endpoints: pulumi.Input[Optional[Union['OpenpipelineDavisEventsEndpointsArgs', 'OpenpipelineDavisEventsEndpointsArgsDict']]] = None,
+            pipelines: pulumi.Input[Optional[Union['OpenpipelineDavisEventsPipelinesArgs', 'OpenpipelineDavisEventsPipelinesArgsDict']]] = None,
+            routing: pulumi.Input[Optional[Union['OpenpipelineDavisEventsRoutingArgs', 'OpenpipelineDavisEventsRoutingArgsDict']]] = None) -> 'OpenpipelineDavisEvents':
         """
         Get an existing OpenpipelineDavisEvents resource's state with the given name, id, and optional extra
         properties used to qualify the lookup.

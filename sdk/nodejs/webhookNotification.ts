@@ -176,62 +176,62 @@ export interface WebhookNotificationState {
     /**
      * This setting is enabled (`true`) or disabled (`false`)
      */
-    active?: pulumi.Input<boolean>;
+    active?: pulumi.Input<boolean | undefined>;
     /**
      * A list of the additional HTTP headers.
      */
-    headers?: pulumi.Input<inputs.WebhookNotificationHeaders>;
+    headers?: pulumi.Input<inputs.WebhookNotificationHeaders | undefined>;
     /**
      * Accept any SSL certificate (including self-signed and invalid certificates)
      */
-    insecure?: pulumi.Input<boolean>;
+    insecure?: pulumi.Input<boolean | undefined>;
     /**
      * The ID of these settings when referred to from resources requiring the REST API V1 keys
      */
-    legacyId?: pulumi.Input<string>;
+    legacyId?: pulumi.Input<string | undefined>;
     /**
      * The name of the notification configuration.
      */
-    name?: pulumi.Input<string>;
+    name?: pulumi.Input<string | undefined>;
     /**
      * Call webhook if problem is closed
      */
-    notifyClosedProblems?: pulumi.Input<boolean>;
+    notifyClosedProblems?: pulumi.Input<boolean | undefined>;
     /**
      * Call webhook if new events merge into existing problems
      */
-    notifyEventMerges?: pulumi.Input<boolean>;
+    notifyEventMerges?: pulumi.Input<boolean | undefined>;
     /**
      * To authenticate your integration, the OAuth 2.0 *Client Credentials* Flow (Grant Type) is used. For details see [Client Credentials Flow](https://dt-url.net/ym22wsm)).
      *
      * The obtained Access Token is subsequently provided in the *Authorization* header of the request carrying the notification payload.
      */
-    oauth2Credentials?: pulumi.Input<inputs.WebhookNotificationOauth2Credentials>;
+    oauth2Credentials?: pulumi.Input<inputs.WebhookNotificationOauth2Credentials | undefined>;
     /**
      * The content of the notification message. Type '{' for placeholder suggestions.. #### Available placeholders
      * **{ImpactedEntities}**: Details about the entities impacted by the problem in form of a json array.
      */
-    payload?: pulumi.Input<string>;
+    payload?: pulumi.Input<string | undefined>;
     /**
      * The ID of the associated alerting profile
      */
-    profile?: pulumi.Input<string>;
+    profile?: pulumi.Input<string | undefined>;
     /**
      * The secret URL of the webhook endpoint.
      */
-    secretUrl?: pulumi.Input<string>;
+    secretUrl?: pulumi.Input<string | undefined>;
     /**
      * The URL of the webhook endpoint.
      */
-    url?: pulumi.Input<string>;
+    url?: pulumi.Input<string | undefined>;
     /**
      * Secret webhook URL
      */
-    urlContainsSecret?: pulumi.Input<boolean>;
+    urlContainsSecret?: pulumi.Input<boolean | undefined>;
     /**
      * Use OAuth 2.0 for authentication
      */
-    useOauth2?: pulumi.Input<boolean>;
+    useOauth2?: pulumi.Input<boolean | undefined>;
 }
 
 /**
@@ -245,33 +245,33 @@ export interface WebhookNotificationArgs {
     /**
      * A list of the additional HTTP headers.
      */
-    headers?: pulumi.Input<inputs.WebhookNotificationHeaders>;
+    headers?: pulumi.Input<inputs.WebhookNotificationHeaders | undefined>;
     /**
      * Accept any SSL certificate (including self-signed and invalid certificates)
      */
-    insecure?: pulumi.Input<boolean>;
+    insecure?: pulumi.Input<boolean | undefined>;
     /**
      * The ID of these settings when referred to from resources requiring the REST API V1 keys
      */
-    legacyId?: pulumi.Input<string>;
+    legacyId?: pulumi.Input<string | undefined>;
     /**
      * The name of the notification configuration.
      */
-    name?: pulumi.Input<string>;
+    name?: pulumi.Input<string | undefined>;
     /**
      * Call webhook if problem is closed
      */
-    notifyClosedProblems?: pulumi.Input<boolean>;
+    notifyClosedProblems?: pulumi.Input<boolean | undefined>;
     /**
      * Call webhook if new events merge into existing problems
      */
-    notifyEventMerges?: pulumi.Input<boolean>;
+    notifyEventMerges?: pulumi.Input<boolean | undefined>;
     /**
      * To authenticate your integration, the OAuth 2.0 *Client Credentials* Flow (Grant Type) is used. For details see [Client Credentials Flow](https://dt-url.net/ym22wsm)).
      *
      * The obtained Access Token is subsequently provided in the *Authorization* header of the request carrying the notification payload.
      */
-    oauth2Credentials?: pulumi.Input<inputs.WebhookNotificationOauth2Credentials>;
+    oauth2Credentials?: pulumi.Input<inputs.WebhookNotificationOauth2Credentials | undefined>;
     /**
      * The content of the notification message. Type '{' for placeholder suggestions.. #### Available placeholders
      * **{ImpactedEntities}**: Details about the entities impacted by the problem in form of a json array.
@@ -284,17 +284,17 @@ export interface WebhookNotificationArgs {
     /**
      * The secret URL of the webhook endpoint.
      */
-    secretUrl?: pulumi.Input<string>;
+    secretUrl?: pulumi.Input<string | undefined>;
     /**
      * The URL of the webhook endpoint.
      */
-    url?: pulumi.Input<string>;
+    url?: pulumi.Input<string | undefined>;
     /**
      * Secret webhook URL
      */
-    urlContainsSecret?: pulumi.Input<boolean>;
+    urlContainsSecret?: pulumi.Input<boolean | undefined>;
     /**
      * Use OAuth 2.0 for authentication
      */
-    useOauth2?: pulumi.Input<boolean>;
+    useOauth2?: pulumi.Input<boolean | undefined>;
 }

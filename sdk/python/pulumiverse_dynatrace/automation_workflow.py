@@ -23,12 +23,12 @@ class AutomationWorkflowArgs:
     def __init__(__self__, *,
                  tasks: pulumi.Input['AutomationWorkflowTasksArgs'],
                  title: pulumi.Input[_builtins.str],
-                 actor: Optional[pulumi.Input[_builtins.str]] = None,
-                 description: Optional[pulumi.Input[_builtins.str]] = None,
-                 owner: Optional[pulumi.Input[_builtins.str]] = None,
-                 private: Optional[pulumi.Input[_builtins.bool]] = None,
-                 trigger: Optional[pulumi.Input['AutomationWorkflowTriggerArgs']] = None,
-                 type: Optional[pulumi.Input[_builtins.str]] = None):
+                 actor: pulumi.Input[Optional[_builtins.str]] = None,
+                 description: pulumi.Input[Optional[_builtins.str]] = None,
+                 owner: pulumi.Input[Optional[_builtins.str]] = None,
+                 private: pulumi.Input[Optional[_builtins.bool]] = None,
+                 trigger: pulumi.Input[Optional['AutomationWorkflowTriggerArgs']] = None,
+                 type: pulumi.Input[Optional[_builtins.str]] = None):
         """
         The set of arguments for constructing a AutomationWorkflow resource.
 
@@ -82,88 +82,88 @@ class AutomationWorkflowArgs:
 
     @_builtins.property
     @pulumi.getter
-    def actor(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def actor(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The user context the executions of the workflow will happen with
         """
         return pulumi.get(self, "actor")
 
     @actor.setter
-    def actor(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def actor(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "actor", value)
 
     @_builtins.property
     @pulumi.getter
-    def description(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def description(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         An optional description for the workflow
         """
         return pulumi.get(self, "description")
 
     @description.setter
-    def description(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def description(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "description", value)
 
     @_builtins.property
     @pulumi.getter
-    def owner(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def owner(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The ID of the owner of this workflow
         """
         return pulumi.get(self, "owner")
 
     @owner.setter
-    def owner(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def owner(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "owner", value)
 
     @_builtins.property
     @pulumi.getter
-    def private(self) -> Optional[pulumi.Input[_builtins.bool]]:
+    def private(self) -> pulumi.Input[Optional[_builtins.bool]]:
         """
         Defines whether this workflow is private to the owner or not. Default is `true`
         """
         return pulumi.get(self, "private")
 
     @private.setter
-    def private(self, value: Optional[pulumi.Input[_builtins.bool]]):
+    def private(self, value: pulumi.Input[Optional[_builtins.bool]]):
         pulumi.set(self, "private", value)
 
     @_builtins.property
     @pulumi.getter
-    def trigger(self) -> Optional[pulumi.Input['AutomationWorkflowTriggerArgs']]:
+    def trigger(self) -> pulumi.Input[Optional['AutomationWorkflowTriggerArgs']]:
         """
         Configures how executions of the workflows are getting triggered. If no trigger is specified it means the workflow is getting manually triggered
         """
         return pulumi.get(self, "trigger")
 
     @trigger.setter
-    def trigger(self, value: Optional[pulumi.Input['AutomationWorkflowTriggerArgs']]):
+    def trigger(self, value: pulumi.Input[Optional['AutomationWorkflowTriggerArgs']]):
         pulumi.set(self, "trigger", value)
 
     @_builtins.property
     @pulumi.getter
-    def type(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def type(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The type of the workflow. Possible values are `STANDARD` and `SIMPLE`. Defaults to `STANDARD`. Workflows of type `SIMPLE` are allowed to contain only one action
         """
         return pulumi.get(self, "type")
 
     @type.setter
-    def type(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def type(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "type", value)
 
 
 @pulumi.input_type
 class _AutomationWorkflowState:
     def __init__(__self__, *,
-                 actor: Optional[pulumi.Input[_builtins.str]] = None,
-                 description: Optional[pulumi.Input[_builtins.str]] = None,
-                 owner: Optional[pulumi.Input[_builtins.str]] = None,
-                 private: Optional[pulumi.Input[_builtins.bool]] = None,
-                 tasks: Optional[pulumi.Input['AutomationWorkflowTasksArgs']] = None,
-                 title: Optional[pulumi.Input[_builtins.str]] = None,
-                 trigger: Optional[pulumi.Input['AutomationWorkflowTriggerArgs']] = None,
-                 type: Optional[pulumi.Input[_builtins.str]] = None):
+                 actor: pulumi.Input[Optional[_builtins.str]] = None,
+                 description: pulumi.Input[Optional[_builtins.str]] = None,
+                 owner: pulumi.Input[Optional[_builtins.str]] = None,
+                 private: pulumi.Input[Optional[_builtins.bool]] = None,
+                 tasks: pulumi.Input[Optional['AutomationWorkflowTasksArgs']] = None,
+                 title: pulumi.Input[Optional[_builtins.str]] = None,
+                 trigger: pulumi.Input[Optional['AutomationWorkflowTriggerArgs']] = None,
+                 type: pulumi.Input[Optional[_builtins.str]] = None):
         """
         Input properties used for looking up and filtering AutomationWorkflow resources.
 
@@ -195,98 +195,98 @@ class _AutomationWorkflowState:
 
     @_builtins.property
     @pulumi.getter
-    def actor(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def actor(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The user context the executions of the workflow will happen with
         """
         return pulumi.get(self, "actor")
 
     @actor.setter
-    def actor(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def actor(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "actor", value)
 
     @_builtins.property
     @pulumi.getter
-    def description(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def description(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         An optional description for the workflow
         """
         return pulumi.get(self, "description")
 
     @description.setter
-    def description(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def description(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "description", value)
 
     @_builtins.property
     @pulumi.getter
-    def owner(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def owner(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The ID of the owner of this workflow
         """
         return pulumi.get(self, "owner")
 
     @owner.setter
-    def owner(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def owner(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "owner", value)
 
     @_builtins.property
     @pulumi.getter
-    def private(self) -> Optional[pulumi.Input[_builtins.bool]]:
+    def private(self) -> pulumi.Input[Optional[_builtins.bool]]:
         """
         Defines whether this workflow is private to the owner or not. Default is `true`
         """
         return pulumi.get(self, "private")
 
     @private.setter
-    def private(self, value: Optional[pulumi.Input[_builtins.bool]]):
+    def private(self, value: pulumi.Input[Optional[_builtins.bool]]):
         pulumi.set(self, "private", value)
 
     @_builtins.property
     @pulumi.getter
-    def tasks(self) -> Optional[pulumi.Input['AutomationWorkflowTasksArgs']]:
+    def tasks(self) -> pulumi.Input[Optional['AutomationWorkflowTasksArgs']]:
         """
         The tasks to run for every execution of this workflow
         """
         return pulumi.get(self, "tasks")
 
     @tasks.setter
-    def tasks(self, value: Optional[pulumi.Input['AutomationWorkflowTasksArgs']]):
+    def tasks(self, value: pulumi.Input[Optional['AutomationWorkflowTasksArgs']]):
         pulumi.set(self, "tasks", value)
 
     @_builtins.property
     @pulumi.getter
-    def title(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def title(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The title / name of the workflow
         """
         return pulumi.get(self, "title")
 
     @title.setter
-    def title(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def title(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "title", value)
 
     @_builtins.property
     @pulumi.getter
-    def trigger(self) -> Optional[pulumi.Input['AutomationWorkflowTriggerArgs']]:
+    def trigger(self) -> pulumi.Input[Optional['AutomationWorkflowTriggerArgs']]:
         """
         Configures how executions of the workflows are getting triggered. If no trigger is specified it means the workflow is getting manually triggered
         """
         return pulumi.get(self, "trigger")
 
     @trigger.setter
-    def trigger(self, value: Optional[pulumi.Input['AutomationWorkflowTriggerArgs']]):
+    def trigger(self, value: pulumi.Input[Optional['AutomationWorkflowTriggerArgs']]):
         pulumi.set(self, "trigger", value)
 
     @_builtins.property
     @pulumi.getter
-    def type(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def type(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The type of the workflow. Possible values are `STANDARD` and `SIMPLE`. Defaults to `STANDARD`. Workflows of type `SIMPLE` are allowed to contain only one action
         """
         return pulumi.get(self, "type")
 
     @type.setter
-    def type(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def type(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "type", value)
 
 
@@ -296,14 +296,14 @@ class AutomationWorkflow(pulumi.CustomResource):
     def __init__(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 actor: Optional[pulumi.Input[_builtins.str]] = None,
-                 description: Optional[pulumi.Input[_builtins.str]] = None,
-                 owner: Optional[pulumi.Input[_builtins.str]] = None,
-                 private: Optional[pulumi.Input[_builtins.bool]] = None,
-                 tasks: Optional[pulumi.Input[Union['AutomationWorkflowTasksArgs', 'AutomationWorkflowTasksArgsDict']]] = None,
-                 title: Optional[pulumi.Input[_builtins.str]] = None,
-                 trigger: Optional[pulumi.Input[Union['AutomationWorkflowTriggerArgs', 'AutomationWorkflowTriggerArgsDict']]] = None,
-                 type: Optional[pulumi.Input[_builtins.str]] = None,
+                 actor: pulumi.Input[Optional[_builtins.str]] = None,
+                 description: pulumi.Input[Optional[_builtins.str]] = None,
+                 owner: pulumi.Input[Optional[_builtins.str]] = None,
+                 private: pulumi.Input[Optional[_builtins.bool]] = None,
+                 tasks: pulumi.Input[Optional[Union['AutomationWorkflowTasksArgs', 'AutomationWorkflowTasksArgsDict']]] = None,
+                 title: pulumi.Input[Optional[_builtins.str]] = None,
+                 trigger: pulumi.Input[Optional[Union['AutomationWorkflowTriggerArgs', 'AutomationWorkflowTriggerArgsDict']]] = None,
+                 type: pulumi.Input[Optional[_builtins.str]] = None,
                  __props__=None):
         """
         > **Dynatrace SaaS only**
@@ -587,14 +587,14 @@ class AutomationWorkflow(pulumi.CustomResource):
     def _internal_init(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 actor: Optional[pulumi.Input[_builtins.str]] = None,
-                 description: Optional[pulumi.Input[_builtins.str]] = None,
-                 owner: Optional[pulumi.Input[_builtins.str]] = None,
-                 private: Optional[pulumi.Input[_builtins.bool]] = None,
-                 tasks: Optional[pulumi.Input[Union['AutomationWorkflowTasksArgs', 'AutomationWorkflowTasksArgsDict']]] = None,
-                 title: Optional[pulumi.Input[_builtins.str]] = None,
-                 trigger: Optional[pulumi.Input[Union['AutomationWorkflowTriggerArgs', 'AutomationWorkflowTriggerArgsDict']]] = None,
-                 type: Optional[pulumi.Input[_builtins.str]] = None,
+                 actor: pulumi.Input[Optional[_builtins.str]] = None,
+                 description: pulumi.Input[Optional[_builtins.str]] = None,
+                 owner: pulumi.Input[Optional[_builtins.str]] = None,
+                 private: pulumi.Input[Optional[_builtins.bool]] = None,
+                 tasks: pulumi.Input[Optional[Union['AutomationWorkflowTasksArgs', 'AutomationWorkflowTasksArgsDict']]] = None,
+                 title: pulumi.Input[Optional[_builtins.str]] = None,
+                 trigger: pulumi.Input[Optional[Union['AutomationWorkflowTriggerArgs', 'AutomationWorkflowTriggerArgsDict']]] = None,
+                 type: pulumi.Input[Optional[_builtins.str]] = None,
                  __props__=None):
         opts = pulumi.ResourceOptions.merge(_utilities.get_resource_opts_defaults(), opts)
         if not isinstance(opts, pulumi.ResourceOptions):
@@ -626,14 +626,14 @@ class AutomationWorkflow(pulumi.CustomResource):
     def get(resource_name: str,
             id: pulumi.Input[str],
             opts: Optional[pulumi.ResourceOptions] = None,
-            actor: Optional[pulumi.Input[_builtins.str]] = None,
-            description: Optional[pulumi.Input[_builtins.str]] = None,
-            owner: Optional[pulumi.Input[_builtins.str]] = None,
-            private: Optional[pulumi.Input[_builtins.bool]] = None,
-            tasks: Optional[pulumi.Input[Union['AutomationWorkflowTasksArgs', 'AutomationWorkflowTasksArgsDict']]] = None,
-            title: Optional[pulumi.Input[_builtins.str]] = None,
-            trigger: Optional[pulumi.Input[Union['AutomationWorkflowTriggerArgs', 'AutomationWorkflowTriggerArgsDict']]] = None,
-            type: Optional[pulumi.Input[_builtins.str]] = None) -> 'AutomationWorkflow':
+            actor: pulumi.Input[Optional[_builtins.str]] = None,
+            description: pulumi.Input[Optional[_builtins.str]] = None,
+            owner: pulumi.Input[Optional[_builtins.str]] = None,
+            private: pulumi.Input[Optional[_builtins.bool]] = None,
+            tasks: pulumi.Input[Optional[Union['AutomationWorkflowTasksArgs', 'AutomationWorkflowTasksArgsDict']]] = None,
+            title: pulumi.Input[Optional[_builtins.str]] = None,
+            trigger: pulumi.Input[Optional[Union['AutomationWorkflowTriggerArgs', 'AutomationWorkflowTriggerArgsDict']]] = None,
+            type: pulumi.Input[Optional[_builtins.str]] = None) -> 'AutomationWorkflow':
         """
         Get an existing AutomationWorkflow resource's state with the given name, id, and optional extra
         properties used to qualify the lookup.

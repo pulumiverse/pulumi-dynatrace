@@ -58,8 +58,8 @@ class WebAppCustomConfigPropertiesArgs:
 @pulumi.input_type
 class _WebAppCustomConfigPropertiesState:
     def __init__(__self__, *,
-                 application_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 custom_property: Optional[pulumi.Input[_builtins.str]] = None):
+                 application_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 custom_property: pulumi.Input[Optional[_builtins.str]] = None):
         """
         Input properties used for looking up and filtering WebAppCustomConfigProperties resources.
 
@@ -73,26 +73,26 @@ class _WebAppCustomConfigPropertiesState:
 
     @_builtins.property
     @pulumi.getter(name="applicationId")
-    def application_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def application_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The scope of this setting
         """
         return pulumi.get(self, "application_id")
 
     @application_id.setter
-    def application_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def application_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "application_id", value)
 
     @_builtins.property
     @pulumi.getter(name="customProperty")
-    def custom_property(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def custom_property(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Custom configuration property
         """
         return pulumi.get(self, "custom_property")
 
     @custom_property.setter
-    def custom_property(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def custom_property(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "custom_property", value)
 
 
@@ -102,8 +102,8 @@ class WebAppCustomConfigProperties(pulumi.CustomResource):
     def __init__(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 application_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 custom_property: Optional[pulumi.Input[_builtins.str]] = None,
+                 application_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 custom_property: pulumi.Input[Optional[_builtins.str]] = None,
                  __props__=None):
         """
         > This resource requires the API token scopes **Read settings** (`settings.read`) and **Write settings** (`settings.write`)
@@ -163,8 +163,8 @@ class WebAppCustomConfigProperties(pulumi.CustomResource):
     def _internal_init(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 application_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 custom_property: Optional[pulumi.Input[_builtins.str]] = None,
+                 application_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 custom_property: pulumi.Input[Optional[_builtins.str]] = None,
                  __props__=None):
         opts = pulumi.ResourceOptions.merge(_utilities.get_resource_opts_defaults(), opts)
         if not isinstance(opts, pulumi.ResourceOptions):
@@ -190,8 +190,8 @@ class WebAppCustomConfigProperties(pulumi.CustomResource):
     def get(resource_name: str,
             id: pulumi.Input[str],
             opts: Optional[pulumi.ResourceOptions] = None,
-            application_id: Optional[pulumi.Input[_builtins.str]] = None,
-            custom_property: Optional[pulumi.Input[_builtins.str]] = None) -> 'WebAppCustomConfigProperties':
+            application_id: pulumi.Input[Optional[_builtins.str]] = None,
+            custom_property: pulumi.Input[Optional[_builtins.str]] = None) -> 'WebAppCustomConfigProperties':
         """
         Get an existing WebAppCustomConfigProperties resource's state with the given name, id, and optional extra
         properties used to qualify the lookup.

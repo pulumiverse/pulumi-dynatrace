@@ -131,29 +131,29 @@ export interface LogProcessingState {
     /**
      * This setting is enabled (`true`) or disabled (`false`)
      */
-    enabled?: pulumi.Input<boolean>;
+    enabled?: pulumi.Input<boolean | undefined>;
     /**
      * Because this resource allows for ordering you may specify the ID of the resource instance that comes before this instance regarding order. If not specified when creating the setting will be added to the end of the list. If not specified during update the order will remain untouched
      */
-    insertAfter?: pulumi.Input<string>;
+    insertAfter?: pulumi.Input<string | undefined>;
     /**
      * ## Processor definition
      * Add a rule definition using our syntax. [In our documentation](https://dt-url.net/8k03xm2) you will find instructions and application [examples](https://dt-url.net/m24305t).
      */
-    processorDefinition?: pulumi.Input<inputs.LogProcessingProcessorDefinition>;
+    processorDefinition?: pulumi.Input<inputs.LogProcessingProcessorDefinition | undefined>;
     /**
      * Matcher
      */
-    query?: pulumi.Input<string>;
+    query?: pulumi.Input<string | undefined>;
     /**
      * Rule name
      */
-    ruleName?: pulumi.Input<string>;
+    ruleName?: pulumi.Input<string | undefined>;
     /**
      * ## Rule testing
      * ### 1. Paste a log / JSON sample
      */
-    ruleTesting?: pulumi.Input<inputs.LogProcessingRuleTesting>;
+    ruleTesting?: pulumi.Input<inputs.LogProcessingRuleTesting | undefined>;
 }
 
 /**
@@ -167,7 +167,7 @@ export interface LogProcessingArgs {
     /**
      * Because this resource allows for ordering you may specify the ID of the resource instance that comes before this instance regarding order. If not specified when creating the setting will be added to the end of the list. If not specified during update the order will remain untouched
      */
-    insertAfter?: pulumi.Input<string>;
+    insertAfter?: pulumi.Input<string | undefined>;
     /**
      * ## Processor definition
      * Add a rule definition using our syntax. [In our documentation](https://dt-url.net/8k03xm2) you will find instructions and application [examples](https://dt-url.net/m24305t).

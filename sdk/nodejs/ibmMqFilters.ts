@@ -112,27 +112,27 @@ export interface IbmMqFiltersState {
     /**
      * CICS: Excluded MQ queues
      */
-    cicsMqQueueIdExcludes?: pulumi.Input<pulumi.Input<string>[]>;
+    cicsMqQueueIdExcludes?: pulumi.Input<pulumi.Input<string>[] | undefined>;
     /**
      * CICS: Included MQ queues
      */
-    cicsMqQueueIdIncludes?: pulumi.Input<pulumi.Input<string>[]>;
+    cicsMqQueueIdIncludes?: pulumi.Input<pulumi.Input<string>[] | undefined>;
     /**
      * When you add a transaction ID to the exclude list remaining transactions are still monitored.
      */
-    imsCrTrnIdExcludes?: pulumi.Input<pulumi.Input<string>[]>;
+    imsCrTrnIdExcludes?: pulumi.Input<pulumi.Input<string>[] | undefined>;
     /**
      * When you add a transaction ID to the include list, all the remaining transactions are ignored.
      */
-    imsCrTrnIdIncludes?: pulumi.Input<pulumi.Input<string>[]>;
+    imsCrTrnIdIncludes?: pulumi.Input<pulumi.Input<string>[] | undefined>;
     /**
      * IMS: Excluded MQ queues
      */
-    imsMqQueueIdExcludes?: pulumi.Input<pulumi.Input<string>[]>;
+    imsMqQueueIdExcludes?: pulumi.Input<pulumi.Input<string>[] | undefined>;
     /**
      * IMS: Included MQ queues
      */
-    imsMqQueueIdIncludes?: pulumi.Input<pulumi.Input<string>[]>;
+    imsMqQueueIdIncludes?: pulumi.Input<pulumi.Input<string>[] | undefined>;
 }
 
 /**
@@ -142,25 +142,25 @@ export interface IbmMqFiltersArgs {
     /**
      * CICS: Excluded MQ queues
      */
-    cicsMqQueueIdExcludes?: pulumi.Input<pulumi.Input<string>[]>;
+    cicsMqQueueIdExcludes?: pulumi.Input<pulumi.Input<string>[] | undefined>;
     /**
      * CICS: Included MQ queues
      */
-    cicsMqQueueIdIncludes?: pulumi.Input<pulumi.Input<string>[]>;
+    cicsMqQueueIdIncludes?: pulumi.Input<pulumi.Input<string>[] | undefined>;
     /**
      * When you add a transaction ID to the exclude list remaining transactions are still monitored.
      */
-    imsCrTrnIdExcludes?: pulumi.Input<pulumi.Input<string>[]>;
+    imsCrTrnIdExcludes?: pulumi.Input<pulumi.Input<string>[] | undefined>;
     /**
      * When you add a transaction ID to the include list, all the remaining transactions are ignored.
      */
-    imsCrTrnIdIncludes?: pulumi.Input<pulumi.Input<string>[]>;
+    imsCrTrnIdIncludes?: pulumi.Input<pulumi.Input<string>[] | undefined>;
     /**
      * IMS: Excluded MQ queues
      */
-    imsMqQueueIdExcludes?: pulumi.Input<pulumi.Input<string>[]>;
+    imsMqQueueIdExcludes?: pulumi.Input<pulumi.Input<string>[] | undefined>;
     /**
      * IMS: Included MQ queues
      */
-    imsMqQueueIdIncludes?: pulumi.Input<pulumi.Input<string>[]>;
+    imsMqQueueIdIncludes?: pulumi.Input<pulumi.Input<string>[] | undefined>;
 }

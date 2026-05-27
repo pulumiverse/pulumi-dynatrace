@@ -91,11 +91,11 @@ export interface WebAppJavascriptUpdatesState {
     /**
      * The scope of this settings. If the settings should cover the whole environment, just don't specify any scope.
      */
-    applicationId?: pulumi.Input<string>;
+    applicationId?: pulumi.Input<string | undefined>;
     /**
      * Possible Values: `CUSTOM`, `LATEST_IE7_10_SUPPORTED`, `LATEST_STABLE`, `PREVIOUS_STABLE`
      */
-    javascriptVersion?: pulumi.Input<string>;
+    javascriptVersion?: pulumi.Input<string | undefined>;
 }
 
 /**
@@ -105,7 +105,7 @@ export interface WebAppJavascriptUpdatesArgs {
     /**
      * The scope of this settings. If the settings should cover the whole environment, just don't specify any scope.
      */
-    applicationId?: pulumi.Input<string>;
+    applicationId?: pulumi.Input<string | undefined>;
     /**
      * Possible Values: `CUSTOM`, `LATEST_IE7_10_SUPPORTED`, `LATEST_STABLE`, `PREVIOUS_STABLE`
      */

@@ -23,8 +23,8 @@ class BusinessEventsMetricsArgs:
                  key: pulumi.Input[_builtins.str],
                  matcher: pulumi.Input[_builtins.str],
                  measure: pulumi.Input[_builtins.str],
-                 dimensions: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-                 measure_attribute: Optional[pulumi.Input[_builtins.str]] = None):
+                 dimensions: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 measure_attribute: pulumi.Input[Optional[_builtins.str]] = None):
         """
         The set of arguments for constructing a BusinessEventsMetrics resource.
 
@@ -94,38 +94,38 @@ class BusinessEventsMetricsArgs:
 
     @_builtins.property
     @pulumi.getter
-    def dimensions(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]:
+    def dimensions(self) -> pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]:
         """
         no documentation available
         """
         return pulumi.get(self, "dimensions")
 
     @dimensions.setter
-    def dimensions(self, value: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]):
+    def dimensions(self, value: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "dimensions", value)
 
     @_builtins.property
     @pulumi.getter(name="measureAttribute")
-    def measure_attribute(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def measure_attribute(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Attribute
         """
         return pulumi.get(self, "measure_attribute")
 
     @measure_attribute.setter
-    def measure_attribute(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def measure_attribute(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "measure_attribute", value)
 
 
 @pulumi.input_type
 class _BusinessEventsMetricsState:
     def __init__(__self__, *,
-                 dimensions: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-                 enabled: Optional[pulumi.Input[_builtins.bool]] = None,
-                 key: Optional[pulumi.Input[_builtins.str]] = None,
-                 matcher: Optional[pulumi.Input[_builtins.str]] = None,
-                 measure: Optional[pulumi.Input[_builtins.str]] = None,
-                 measure_attribute: Optional[pulumi.Input[_builtins.str]] = None):
+                 dimensions: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 enabled: pulumi.Input[Optional[_builtins.bool]] = None,
+                 key: pulumi.Input[Optional[_builtins.str]] = None,
+                 matcher: pulumi.Input[Optional[_builtins.str]] = None,
+                 measure: pulumi.Input[Optional[_builtins.str]] = None,
+                 measure_attribute: pulumi.Input[Optional[_builtins.str]] = None):
         """
         Input properties used for looking up and filtering BusinessEventsMetrics resources.
 
@@ -151,74 +151,74 @@ class _BusinessEventsMetricsState:
 
     @_builtins.property
     @pulumi.getter
-    def dimensions(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]:
+    def dimensions(self) -> pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]:
         """
         no documentation available
         """
         return pulumi.get(self, "dimensions")
 
     @dimensions.setter
-    def dimensions(self, value: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]):
+    def dimensions(self, value: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "dimensions", value)
 
     @_builtins.property
     @pulumi.getter
-    def enabled(self) -> Optional[pulumi.Input[_builtins.bool]]:
+    def enabled(self) -> pulumi.Input[Optional[_builtins.bool]]:
         """
         This setting is enabled (`true`) or disabled (`false`)
         """
         return pulumi.get(self, "enabled")
 
     @enabled.setter
-    def enabled(self, value: Optional[pulumi.Input[_builtins.bool]]):
+    def enabled(self, value: pulumi.Input[Optional[_builtins.bool]]):
         pulumi.set(self, "enabled", value)
 
     @_builtins.property
     @pulumi.getter
-    def key(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def key(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Key
         """
         return pulumi.get(self, "key")
 
     @key.setter
-    def key(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def key(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "key", value)
 
     @_builtins.property
     @pulumi.getter
-    def matcher(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def matcher(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         [See our documentation](https://dt-url.net/bp234rv)
         """
         return pulumi.get(self, "matcher")
 
     @matcher.setter
-    def matcher(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def matcher(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "matcher", value)
 
     @_builtins.property
     @pulumi.getter
-    def measure(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def measure(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Possible Values: `ATTRIBUTE`, `OCCURRENCE`
         """
         return pulumi.get(self, "measure")
 
     @measure.setter
-    def measure(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def measure(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "measure", value)
 
     @_builtins.property
     @pulumi.getter(name="measureAttribute")
-    def measure_attribute(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def measure_attribute(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Attribute
         """
         return pulumi.get(self, "measure_attribute")
 
     @measure_attribute.setter
-    def measure_attribute(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def measure_attribute(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "measure_attribute", value)
 
 
@@ -228,12 +228,12 @@ class BusinessEventsMetrics(pulumi.CustomResource):
     def __init__(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 dimensions: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-                 enabled: Optional[pulumi.Input[_builtins.bool]] = None,
-                 key: Optional[pulumi.Input[_builtins.str]] = None,
-                 matcher: Optional[pulumi.Input[_builtins.str]] = None,
-                 measure: Optional[pulumi.Input[_builtins.str]] = None,
-                 measure_attribute: Optional[pulumi.Input[_builtins.str]] = None,
+                 dimensions: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 enabled: pulumi.Input[Optional[_builtins.bool]] = None,
+                 key: pulumi.Input[Optional[_builtins.str]] = None,
+                 matcher: pulumi.Input[Optional[_builtins.str]] = None,
+                 measure: pulumi.Input[Optional[_builtins.str]] = None,
+                 measure_attribute: pulumi.Input[Optional[_builtins.str]] = None,
                  __props__=None):
         """
         > **Warning** This resource has been deprecated in favor of OpenPipeline.
@@ -303,12 +303,12 @@ class BusinessEventsMetrics(pulumi.CustomResource):
     def _internal_init(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 dimensions: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-                 enabled: Optional[pulumi.Input[_builtins.bool]] = None,
-                 key: Optional[pulumi.Input[_builtins.str]] = None,
-                 matcher: Optional[pulumi.Input[_builtins.str]] = None,
-                 measure: Optional[pulumi.Input[_builtins.str]] = None,
-                 measure_attribute: Optional[pulumi.Input[_builtins.str]] = None,
+                 dimensions: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 enabled: pulumi.Input[Optional[_builtins.bool]] = None,
+                 key: pulumi.Input[Optional[_builtins.str]] = None,
+                 matcher: pulumi.Input[Optional[_builtins.str]] = None,
+                 measure: pulumi.Input[Optional[_builtins.str]] = None,
+                 measure_attribute: pulumi.Input[Optional[_builtins.str]] = None,
                  __props__=None):
         opts = pulumi.ResourceOptions.merge(_utilities.get_resource_opts_defaults(), opts)
         if not isinstance(opts, pulumi.ResourceOptions):
@@ -342,12 +342,12 @@ class BusinessEventsMetrics(pulumi.CustomResource):
     def get(resource_name: str,
             id: pulumi.Input[str],
             opts: Optional[pulumi.ResourceOptions] = None,
-            dimensions: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-            enabled: Optional[pulumi.Input[_builtins.bool]] = None,
-            key: Optional[pulumi.Input[_builtins.str]] = None,
-            matcher: Optional[pulumi.Input[_builtins.str]] = None,
-            measure: Optional[pulumi.Input[_builtins.str]] = None,
-            measure_attribute: Optional[pulumi.Input[_builtins.str]] = None) -> 'BusinessEventsMetrics':
+            dimensions: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+            enabled: pulumi.Input[Optional[_builtins.bool]] = None,
+            key: pulumi.Input[Optional[_builtins.str]] = None,
+            matcher: pulumi.Input[Optional[_builtins.str]] = None,
+            measure: pulumi.Input[Optional[_builtins.str]] = None,
+            measure_attribute: pulumi.Input[Optional[_builtins.str]] = None) -> 'BusinessEventsMetrics':
         """
         Get an existing BusinessEventsMetrics resource's state with the given name, id, and optional extra
         properties used to qualify the lookup.

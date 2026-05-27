@@ -111,23 +111,23 @@ export interface WebAppManualInsertionState {
     /**
      * The scope of this settings. If the settings should cover the whole environment, just don't specify any scope.
      */
-    applicationId?: pulumi.Input<string>;
+    applicationId?: pulumi.Input<string | undefined>;
     /**
      * Code snippet is a piece of inline code that implements basic functionality and loads the full functionality either synchronously or deferred. Even though it implements an update mechanism, regular updates are still required to guarantee compatibility.
      */
-    codeSnippet?: pulumi.Input<inputs.WebAppManualInsertionCodeSnippet>;
+    codeSnippet?: pulumi.Input<inputs.WebAppManualInsertionCodeSnippet | undefined>;
     /**
      * JavaScript tag references an external file containing monitoring code and configuration. Due to its dynamic update mechanism, it is recommended for most use cases.
      */
-    javascriptTag?: pulumi.Input<inputs.WebAppManualInsertionJavascriptTag>;
+    javascriptTag?: pulumi.Input<inputs.WebAppManualInsertionJavascriptTag | undefined>;
     /**
      * OneAgent JavaScript tag includes configuration and a reference to an external file containing the monitoring code. It needs to be updated after configuration changes and monitoring code updates.
      */
-    oneagentJavascriptTag?: pulumi.Input<inputs.WebAppManualInsertionOneagentJavascriptTag>;
+    oneagentJavascriptTag?: pulumi.Input<inputs.WebAppManualInsertionOneagentJavascriptTag | undefined>;
     /**
      * OneAgent JavaScript tag with SRI includes configuration, a reference to an external file containing the monitoring code, and a hash that allows the browser to verify the integrity of the monitoring code before executing it. It needs to be updated after configuration changes and monitoring code updates.
      */
-    oneagentJavascriptTagSri?: pulumi.Input<inputs.WebAppManualInsertionOneagentJavascriptTagSri>;
+    oneagentJavascriptTagSri?: pulumi.Input<inputs.WebAppManualInsertionOneagentJavascriptTagSri | undefined>;
 }
 
 /**
@@ -149,9 +149,9 @@ export interface WebAppManualInsertionArgs {
     /**
      * OneAgent JavaScript tag includes configuration and a reference to an external file containing the monitoring code. It needs to be updated after configuration changes and monitoring code updates.
      */
-    oneagentJavascriptTag?: pulumi.Input<inputs.WebAppManualInsertionOneagentJavascriptTag>;
+    oneagentJavascriptTag?: pulumi.Input<inputs.WebAppManualInsertionOneagentJavascriptTag | undefined>;
     /**
      * OneAgent JavaScript tag with SRI includes configuration, a reference to an external file containing the monitoring code, and a hash that allows the browser to verify the integrity of the monitoring code before executing it. It needs to be updated after configuration changes and monitoring code updates.
      */
-    oneagentJavascriptTagSri?: pulumi.Input<inputs.WebAppManualInsertionOneagentJavascriptTagSri>;
+    oneagentJavascriptTagSri?: pulumi.Input<inputs.WebAppManualInsertionOneagentJavascriptTagSri | undefined>;
 }

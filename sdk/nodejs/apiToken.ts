@@ -151,47 +151,47 @@ export interface ApiTokenState {
     /**
      * Token creation date in ISO 8601 format (yyyy-MM-dd'T'HH:mm:ss.SSS'Z')
      */
-    creationDate?: pulumi.Input<string>;
+    creationDate?: pulumi.Input<string | undefined>;
     /**
      * The token is enabled (true) or disabled (false), default disabled (false).
      */
-    enabled?: pulumi.Input<boolean>;
+    enabled?: pulumi.Input<boolean | undefined>;
     /**
      * The expiration date of the token.
      */
-    expirationDate?: pulumi.Input<string>;
+    expirationDate?: pulumi.Input<string | undefined>;
     /**
      * Token last used date in ISO 8601 format (yyyy-MM-dd'T'HH:mm:ss.SSS'Z')
      */
-    lastUsedDate?: pulumi.Input<string>;
+    lastUsedDate?: pulumi.Input<string | undefined>;
     /**
      * Token last used IP address.
      */
-    lastUsedIpAddress?: pulumi.Input<string>;
+    lastUsedIpAddress?: pulumi.Input<string | undefined>;
     /**
      * Token last modified date in ISO 8601 format (yyyy-MM-dd'T'HH:mm:ss.SSS'Z').
      */
-    modifiedDate?: pulumi.Input<string>;
+    modifiedDate?: pulumi.Input<string | undefined>;
     /**
      * The name of the token.
      */
-    name?: pulumi.Input<string>;
+    name?: pulumi.Input<string | undefined>;
     /**
      * The owner of the token
      */
-    owner?: pulumi.Input<string>;
+    owner?: pulumi.Input<string | undefined>;
     /**
      * The token is a personal access token (true) or an API token (false).
      */
-    personalAccessToken?: pulumi.Input<boolean>;
+    personalAccessToken?: pulumi.Input<boolean | undefined>;
     /**
      * A list of the scopes to be assigned to the token.
      */
-    scopes?: pulumi.Input<pulumi.Input<string>[]>;
+    scopes?: pulumi.Input<pulumi.Input<string>[] | undefined>;
     /**
      * The secret of the token.
      */
-    token?: pulumi.Input<string>;
+    token?: pulumi.Input<string | undefined>;
 }
 
 /**
@@ -201,39 +201,39 @@ export interface ApiTokenArgs {
     /**
      * Token creation date in ISO 8601 format (yyyy-MM-dd'T'HH:mm:ss.SSS'Z')
      */
-    creationDate?: pulumi.Input<string>;
+    creationDate?: pulumi.Input<string | undefined>;
     /**
      * The token is enabled (true) or disabled (false), default disabled (false).
      */
-    enabled?: pulumi.Input<boolean>;
+    enabled?: pulumi.Input<boolean | undefined>;
     /**
      * The expiration date of the token.
      */
-    expirationDate?: pulumi.Input<string>;
+    expirationDate?: pulumi.Input<string | undefined>;
     /**
      * Token last used date in ISO 8601 format (yyyy-MM-dd'T'HH:mm:ss.SSS'Z')
      */
-    lastUsedDate?: pulumi.Input<string>;
+    lastUsedDate?: pulumi.Input<string | undefined>;
     /**
      * Token last used IP address.
      */
-    lastUsedIpAddress?: pulumi.Input<string>;
+    lastUsedIpAddress?: pulumi.Input<string | undefined>;
     /**
      * Token last modified date in ISO 8601 format (yyyy-MM-dd'T'HH:mm:ss.SSS'Z').
      */
-    modifiedDate?: pulumi.Input<string>;
+    modifiedDate?: pulumi.Input<string | undefined>;
     /**
      * The name of the token.
      */
-    name?: pulumi.Input<string>;
+    name?: pulumi.Input<string | undefined>;
     /**
      * The owner of the token
      */
-    owner?: pulumi.Input<string>;
+    owner?: pulumi.Input<string | undefined>;
     /**
      * The token is a personal access token (true) or an API token (false).
      */
-    personalAccessToken?: pulumi.Input<boolean>;
+    personalAccessToken?: pulumi.Input<boolean | undefined>;
     /**
      * A list of the scopes to be assigned to the token.
      */

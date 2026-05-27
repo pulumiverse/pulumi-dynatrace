@@ -112,19 +112,19 @@ export interface ContainerBuiltinRuleState {
     /**
      * Disable monitoring of platform internal pause containers in Kubernetes and OpenShift.
      */
-    ignoreDockerPauseContainer?: pulumi.Input<boolean>;
+    ignoreDockerPauseContainer?: pulumi.Input<boolean | undefined>;
     /**
      * Disable monitoring of platform internal pause containers in Kubernetes and OpenShift.
      */
-    ignoreKubernetesPauseContainer?: pulumi.Input<boolean>;
+    ignoreKubernetesPauseContainer?: pulumi.Input<boolean | undefined>;
     /**
      * Disable monitoring of intermediate containers created during image build.
      */
-    ignoreOpenShiftBuildPodName?: pulumi.Input<boolean>;
+    ignoreOpenShiftBuildPodName?: pulumi.Input<boolean | undefined>;
     /**
      * Disable monitoring of platform internal containers in the openshift-sdn namespace.
      */
-    ignoreOpenShiftSdnNamespace?: pulumi.Input<boolean>;
+    ignoreOpenShiftSdnNamespace?: pulumi.Input<boolean | undefined>;
 }
 
 /**

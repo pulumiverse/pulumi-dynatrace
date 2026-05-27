@@ -85,7 +85,7 @@ export interface OneagentDefaultModeState {
     /**
      * Possible Values: `DISCOVERY`, `FULL_STACK`, `INFRASTRUCTURE`
      */
-    defaultMode?: pulumi.Input<string>;
+    defaultMode?: pulumi.Input<string | undefined>;
 }
 
 /**

@@ -22,7 +22,7 @@ __all__ = ['KubernetesAppArgs', 'KubernetesApp']
 class KubernetesAppArgs:
     def __init__(__self__, *,
                  kubernetes_app_options: pulumi.Input['KubernetesAppKubernetesAppOptionsArgs'],
-                 scope: Optional[pulumi.Input[_builtins.str]] = None):
+                 scope: pulumi.Input[Optional[_builtins.str]] = None):
         """
         The set of arguments for constructing a KubernetesApp resource.
 
@@ -47,22 +47,22 @@ class KubernetesAppArgs:
 
     @_builtins.property
     @pulumi.getter
-    def scope(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def scope(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The scope of this setting (KUBERNETES_CLUSTER). Omit this property if you want to cover the whole environment.
         """
         return pulumi.get(self, "scope")
 
     @scope.setter
-    def scope(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def scope(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "scope", value)
 
 
 @pulumi.input_type
 class _KubernetesAppState:
     def __init__(__self__, *,
-                 kubernetes_app_options: Optional[pulumi.Input['KubernetesAppKubernetesAppOptionsArgs']] = None,
-                 scope: Optional[pulumi.Input[_builtins.str]] = None):
+                 kubernetes_app_options: pulumi.Input[Optional['KubernetesAppKubernetesAppOptionsArgs']] = None,
+                 scope: pulumi.Input[Optional[_builtins.str]] = None):
         """
         Input properties used for looking up and filtering KubernetesApp resources.
 
@@ -76,26 +76,26 @@ class _KubernetesAppState:
 
     @_builtins.property
     @pulumi.getter(name="kubernetesAppOptions")
-    def kubernetes_app_options(self) -> Optional[pulumi.Input['KubernetesAppKubernetesAppOptionsArgs']]:
+    def kubernetes_app_options(self) -> pulumi.Input[Optional['KubernetesAppKubernetesAppOptionsArgs']]:
         """
         no documentation available
         """
         return pulumi.get(self, "kubernetes_app_options")
 
     @kubernetes_app_options.setter
-    def kubernetes_app_options(self, value: Optional[pulumi.Input['KubernetesAppKubernetesAppOptionsArgs']]):
+    def kubernetes_app_options(self, value: pulumi.Input[Optional['KubernetesAppKubernetesAppOptionsArgs']]):
         pulumi.set(self, "kubernetes_app_options", value)
 
     @_builtins.property
     @pulumi.getter
-    def scope(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def scope(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The scope of this setting (KUBERNETES_CLUSTER). Omit this property if you want to cover the whole environment.
         """
         return pulumi.get(self, "scope")
 
     @scope.setter
-    def scope(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def scope(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "scope", value)
 
 
@@ -105,8 +105,8 @@ class KubernetesApp(pulumi.CustomResource):
     def __init__(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 kubernetes_app_options: Optional[pulumi.Input[Union['KubernetesAppKubernetesAppOptionsArgs', 'KubernetesAppKubernetesAppOptionsArgsDict']]] = None,
-                 scope: Optional[pulumi.Input[_builtins.str]] = None,
+                 kubernetes_app_options: pulumi.Input[Optional[Union['KubernetesAppKubernetesAppOptionsArgs', 'KubernetesAppKubernetesAppOptionsArgsDict']]] = None,
+                 scope: pulumi.Input[Optional[_builtins.str]] = None,
                  __props__=None):
         """
         > This resource requires the API token scopes **Read settings** (`settings.read`) and **Write settings** (`settings.write`)
@@ -166,8 +166,8 @@ class KubernetesApp(pulumi.CustomResource):
     def _internal_init(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 kubernetes_app_options: Optional[pulumi.Input[Union['KubernetesAppKubernetesAppOptionsArgs', 'KubernetesAppKubernetesAppOptionsArgsDict']]] = None,
-                 scope: Optional[pulumi.Input[_builtins.str]] = None,
+                 kubernetes_app_options: pulumi.Input[Optional[Union['KubernetesAppKubernetesAppOptionsArgs', 'KubernetesAppKubernetesAppOptionsArgsDict']]] = None,
+                 scope: pulumi.Input[Optional[_builtins.str]] = None,
                  __props__=None):
         opts = pulumi.ResourceOptions.merge(_utilities.get_resource_opts_defaults(), opts)
         if not isinstance(opts, pulumi.ResourceOptions):
@@ -191,8 +191,8 @@ class KubernetesApp(pulumi.CustomResource):
     def get(resource_name: str,
             id: pulumi.Input[str],
             opts: Optional[pulumi.ResourceOptions] = None,
-            kubernetes_app_options: Optional[pulumi.Input[Union['KubernetesAppKubernetesAppOptionsArgs', 'KubernetesAppKubernetesAppOptionsArgsDict']]] = None,
-            scope: Optional[pulumi.Input[_builtins.str]] = None) -> 'KubernetesApp':
+            kubernetes_app_options: pulumi.Input[Optional[Union['KubernetesAppKubernetesAppOptionsArgs', 'KubernetesAppKubernetesAppOptionsArgsDict']]] = None,
+            scope: pulumi.Input[Optional[_builtins.str]] = None) -> 'KubernetesApp':
         """
         Get an existing KubernetesApp resource's state with the given name, id, and optional extra
         properties used to qualify the lookup.

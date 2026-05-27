@@ -183,13 +183,13 @@ def get_lambda_agent_version(collector: Optional[_builtins.str] = None,
         nodejs_with_collector=pulumi.get(__ret__, 'nodejs_with_collector'),
         python=pulumi.get(__ret__, 'python'),
         python_with_collector=pulumi.get(__ret__, 'python_with_collector'))
-def get_lambda_agent_version_output(collector: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                                    java: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                                    java_with_collector: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                                    nodejs: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                                    nodejs_with_collector: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                                    python: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                                    python_with_collector: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
+def get_lambda_agent_version_output(collector: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                                    java: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                                    java_with_collector: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                                    nodejs: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                                    nodejs_with_collector: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                                    python: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                                    python_with_collector: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
                                     opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetLambdaAgentVersionResult]:
     """
     The AWS Lambda agent version data source retrieves the latest version names of OneAgent code modules for the Java, Node.js, and Python runtimes, also including names for layers that are combined with the log collector, as well as for the standalone log collector layer.

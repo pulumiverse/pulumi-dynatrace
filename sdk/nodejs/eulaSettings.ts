@@ -91,11 +91,11 @@ export interface EulaSettingsState {
     /**
      * Display end user terms to new users logging in to the environment
      */
-    enableEula?: pulumi.Input<boolean>;
+    enableEula?: pulumi.Input<boolean | undefined>;
     /**
      * The scope of this setting (environment)
      */
-    scope?: pulumi.Input<string>;
+    scope?: pulumi.Input<string | undefined>;
 }
 
 /**
@@ -109,5 +109,5 @@ export interface EulaSettingsArgs {
     /**
      * The scope of this setting (environment)
      */
-    scope?: pulumi.Input<string>;
+    scope?: pulumi.Input<string | undefined>;
 }

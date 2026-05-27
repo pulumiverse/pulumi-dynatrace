@@ -88,10 +88,10 @@ class ContainerBuiltinRuleArgs:
 @pulumi.input_type
 class _ContainerBuiltinRuleState:
     def __init__(__self__, *,
-                 ignore_docker_pause_container: Optional[pulumi.Input[_builtins.bool]] = None,
-                 ignore_kubernetes_pause_container: Optional[pulumi.Input[_builtins.bool]] = None,
-                 ignore_open_shift_build_pod_name: Optional[pulumi.Input[_builtins.bool]] = None,
-                 ignore_open_shift_sdn_namespace: Optional[pulumi.Input[_builtins.bool]] = None):
+                 ignore_docker_pause_container: pulumi.Input[Optional[_builtins.bool]] = None,
+                 ignore_kubernetes_pause_container: pulumi.Input[Optional[_builtins.bool]] = None,
+                 ignore_open_shift_build_pod_name: pulumi.Input[Optional[_builtins.bool]] = None,
+                 ignore_open_shift_sdn_namespace: pulumi.Input[Optional[_builtins.bool]] = None):
         """
         Input properties used for looking up and filtering ContainerBuiltinRule resources.
 
@@ -111,50 +111,50 @@ class _ContainerBuiltinRuleState:
 
     @_builtins.property
     @pulumi.getter(name="ignoreDockerPauseContainer")
-    def ignore_docker_pause_container(self) -> Optional[pulumi.Input[_builtins.bool]]:
+    def ignore_docker_pause_container(self) -> pulumi.Input[Optional[_builtins.bool]]:
         """
         Disable monitoring of platform internal pause containers in Kubernetes and OpenShift.
         """
         return pulumi.get(self, "ignore_docker_pause_container")
 
     @ignore_docker_pause_container.setter
-    def ignore_docker_pause_container(self, value: Optional[pulumi.Input[_builtins.bool]]):
+    def ignore_docker_pause_container(self, value: pulumi.Input[Optional[_builtins.bool]]):
         pulumi.set(self, "ignore_docker_pause_container", value)
 
     @_builtins.property
     @pulumi.getter(name="ignoreKubernetesPauseContainer")
-    def ignore_kubernetes_pause_container(self) -> Optional[pulumi.Input[_builtins.bool]]:
+    def ignore_kubernetes_pause_container(self) -> pulumi.Input[Optional[_builtins.bool]]:
         """
         Disable monitoring of platform internal pause containers in Kubernetes and OpenShift.
         """
         return pulumi.get(self, "ignore_kubernetes_pause_container")
 
     @ignore_kubernetes_pause_container.setter
-    def ignore_kubernetes_pause_container(self, value: Optional[pulumi.Input[_builtins.bool]]):
+    def ignore_kubernetes_pause_container(self, value: pulumi.Input[Optional[_builtins.bool]]):
         pulumi.set(self, "ignore_kubernetes_pause_container", value)
 
     @_builtins.property
     @pulumi.getter(name="ignoreOpenShiftBuildPodName")
-    def ignore_open_shift_build_pod_name(self) -> Optional[pulumi.Input[_builtins.bool]]:
+    def ignore_open_shift_build_pod_name(self) -> pulumi.Input[Optional[_builtins.bool]]:
         """
         Disable monitoring of intermediate containers created during image build.
         """
         return pulumi.get(self, "ignore_open_shift_build_pod_name")
 
     @ignore_open_shift_build_pod_name.setter
-    def ignore_open_shift_build_pod_name(self, value: Optional[pulumi.Input[_builtins.bool]]):
+    def ignore_open_shift_build_pod_name(self, value: pulumi.Input[Optional[_builtins.bool]]):
         pulumi.set(self, "ignore_open_shift_build_pod_name", value)
 
     @_builtins.property
     @pulumi.getter(name="ignoreOpenShiftSdnNamespace")
-    def ignore_open_shift_sdn_namespace(self) -> Optional[pulumi.Input[_builtins.bool]]:
+    def ignore_open_shift_sdn_namespace(self) -> pulumi.Input[Optional[_builtins.bool]]:
         """
         Disable monitoring of platform internal containers in the openshift-sdn namespace.
         """
         return pulumi.get(self, "ignore_open_shift_sdn_namespace")
 
     @ignore_open_shift_sdn_namespace.setter
-    def ignore_open_shift_sdn_namespace(self, value: Optional[pulumi.Input[_builtins.bool]]):
+    def ignore_open_shift_sdn_namespace(self, value: pulumi.Input[Optional[_builtins.bool]]):
         pulumi.set(self, "ignore_open_shift_sdn_namespace", value)
 
 
@@ -164,10 +164,10 @@ class ContainerBuiltinRule(pulumi.CustomResource):
     def __init__(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 ignore_docker_pause_container: Optional[pulumi.Input[_builtins.bool]] = None,
-                 ignore_kubernetes_pause_container: Optional[pulumi.Input[_builtins.bool]] = None,
-                 ignore_open_shift_build_pod_name: Optional[pulumi.Input[_builtins.bool]] = None,
-                 ignore_open_shift_sdn_namespace: Optional[pulumi.Input[_builtins.bool]] = None,
+                 ignore_docker_pause_container: pulumi.Input[Optional[_builtins.bool]] = None,
+                 ignore_kubernetes_pause_container: pulumi.Input[Optional[_builtins.bool]] = None,
+                 ignore_open_shift_build_pod_name: pulumi.Input[Optional[_builtins.bool]] = None,
+                 ignore_open_shift_sdn_namespace: pulumi.Input[Optional[_builtins.bool]] = None,
                  __props__=None):
         """
         > This resource requires the API token scopes **Read settings** (`settings.read`) and **Write settings** (`settings.write`)
@@ -229,10 +229,10 @@ class ContainerBuiltinRule(pulumi.CustomResource):
     def _internal_init(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 ignore_docker_pause_container: Optional[pulumi.Input[_builtins.bool]] = None,
-                 ignore_kubernetes_pause_container: Optional[pulumi.Input[_builtins.bool]] = None,
-                 ignore_open_shift_build_pod_name: Optional[pulumi.Input[_builtins.bool]] = None,
-                 ignore_open_shift_sdn_namespace: Optional[pulumi.Input[_builtins.bool]] = None,
+                 ignore_docker_pause_container: pulumi.Input[Optional[_builtins.bool]] = None,
+                 ignore_kubernetes_pause_container: pulumi.Input[Optional[_builtins.bool]] = None,
+                 ignore_open_shift_build_pod_name: pulumi.Input[Optional[_builtins.bool]] = None,
+                 ignore_open_shift_sdn_namespace: pulumi.Input[Optional[_builtins.bool]] = None,
                  __props__=None):
         opts = pulumi.ResourceOptions.merge(_utilities.get_resource_opts_defaults(), opts)
         if not isinstance(opts, pulumi.ResourceOptions):
@@ -264,10 +264,10 @@ class ContainerBuiltinRule(pulumi.CustomResource):
     def get(resource_name: str,
             id: pulumi.Input[str],
             opts: Optional[pulumi.ResourceOptions] = None,
-            ignore_docker_pause_container: Optional[pulumi.Input[_builtins.bool]] = None,
-            ignore_kubernetes_pause_container: Optional[pulumi.Input[_builtins.bool]] = None,
-            ignore_open_shift_build_pod_name: Optional[pulumi.Input[_builtins.bool]] = None,
-            ignore_open_shift_sdn_namespace: Optional[pulumi.Input[_builtins.bool]] = None) -> 'ContainerBuiltinRule':
+            ignore_docker_pause_container: pulumi.Input[Optional[_builtins.bool]] = None,
+            ignore_kubernetes_pause_container: pulumi.Input[Optional[_builtins.bool]] = None,
+            ignore_open_shift_build_pod_name: pulumi.Input[Optional[_builtins.bool]] = None,
+            ignore_open_shift_sdn_namespace: pulumi.Input[Optional[_builtins.bool]] = None) -> 'ContainerBuiltinRule':
         """
         Get an existing ContainerBuiltinRule resource's state with the given name, id, and optional extra
         properties used to qualify the lookup.

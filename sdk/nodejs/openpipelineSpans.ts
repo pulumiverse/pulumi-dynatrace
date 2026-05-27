@@ -185,15 +185,15 @@ export interface OpenpipelineSpansState {
     /**
      * List of all ingest sources of the configuration
      */
-    endpoints?: pulumi.Input<inputs.OpenpipelineSpansEndpoints>;
+    endpoints?: pulumi.Input<inputs.OpenpipelineSpansEndpoints | undefined>;
     /**
      * List of all pipelines of the configuration
      */
-    pipelines?: pulumi.Input<inputs.OpenpipelineSpansPipelines>;
+    pipelines?: pulumi.Input<inputs.OpenpipelineSpansPipelines | undefined>;
     /**
      * Dynamic routing definition
      */
-    routing?: pulumi.Input<inputs.OpenpipelineSpansRouting>;
+    routing?: pulumi.Input<inputs.OpenpipelineSpansRouting | undefined>;
 }
 
 /**
@@ -203,13 +203,13 @@ export interface OpenpipelineSpansArgs {
     /**
      * List of all ingest sources of the configuration
      */
-    endpoints?: pulumi.Input<inputs.OpenpipelineSpansEndpoints>;
+    endpoints?: pulumi.Input<inputs.OpenpipelineSpansEndpoints | undefined>;
     /**
      * List of all pipelines of the configuration
      */
-    pipelines?: pulumi.Input<inputs.OpenpipelineSpansPipelines>;
+    pipelines?: pulumi.Input<inputs.OpenpipelineSpansPipelines | undefined>;
     /**
      * Dynamic routing definition
      */
-    routing?: pulumi.Input<inputs.OpenpipelineSpansRouting>;
+    routing?: pulumi.Input<inputs.OpenpipelineSpansRouting | undefined>;
 }

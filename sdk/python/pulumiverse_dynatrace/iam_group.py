@@ -21,10 +21,10 @@ __all__ = ['IamGroupArgs', 'IamGroup']
 @pulumi.input_type
 class IamGroupArgs:
     def __init__(__self__, *,
-                 description: Optional[pulumi.Input[_builtins.str]] = None,
-                 federated_attribute_values: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-                 name: Optional[pulumi.Input[_builtins.str]] = None,
-                 permissions: Optional[pulumi.Input['IamGroupPermissionsArgs']] = None):
+                 description: pulumi.Input[Optional[_builtins.str]] = None,
+                 federated_attribute_values: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 name: pulumi.Input[Optional[_builtins.str]] = None,
+                 permissions: pulumi.Input[Optional['IamGroupPermissionsArgs']] = None):
         """
         The set of arguments for constructing a IamGroup resource.
         """
@@ -42,49 +42,49 @@ class IamGroupArgs:
 
     @_builtins.property
     @pulumi.getter
-    def description(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def description(self) -> pulumi.Input[Optional[_builtins.str]]:
         return pulumi.get(self, "description")
 
     @description.setter
-    def description(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def description(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "description", value)
 
     @_builtins.property
     @pulumi.getter(name="federatedAttributeValues")
-    def federated_attribute_values(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]:
+    def federated_attribute_values(self) -> pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]:
         return pulumi.get(self, "federated_attribute_values")
 
     @federated_attribute_values.setter
-    def federated_attribute_values(self, value: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]):
+    def federated_attribute_values(self, value: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "federated_attribute_values", value)
 
     @_builtins.property
     @pulumi.getter
-    def name(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def name(self) -> pulumi.Input[Optional[_builtins.str]]:
         return pulumi.get(self, "name")
 
     @name.setter
-    def name(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def name(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "name", value)
 
     @_builtins.property
     @pulumi.getter
     @_utilities.deprecated("""Assigning permissions directly when creating a group is deprecated. Use the resource `IamPermission` instead.""")
-    def permissions(self) -> Optional[pulumi.Input['IamGroupPermissionsArgs']]:
+    def permissions(self) -> pulumi.Input[Optional['IamGroupPermissionsArgs']]:
         return pulumi.get(self, "permissions")
 
     @permissions.setter
-    def permissions(self, value: Optional[pulumi.Input['IamGroupPermissionsArgs']]):
+    def permissions(self, value: pulumi.Input[Optional['IamGroupPermissionsArgs']]):
         pulumi.set(self, "permissions", value)
 
 
 @pulumi.input_type
 class _IamGroupState:
     def __init__(__self__, *,
-                 description: Optional[pulumi.Input[_builtins.str]] = None,
-                 federated_attribute_values: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-                 name: Optional[pulumi.Input[_builtins.str]] = None,
-                 permissions: Optional[pulumi.Input['IamGroupPermissionsArgs']] = None):
+                 description: pulumi.Input[Optional[_builtins.str]] = None,
+                 federated_attribute_values: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 name: pulumi.Input[Optional[_builtins.str]] = None,
+                 permissions: pulumi.Input[Optional['IamGroupPermissionsArgs']] = None):
         """
         Input properties used for looking up and filtering IamGroup resources.
         """
@@ -102,39 +102,39 @@ class _IamGroupState:
 
     @_builtins.property
     @pulumi.getter
-    def description(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def description(self) -> pulumi.Input[Optional[_builtins.str]]:
         return pulumi.get(self, "description")
 
     @description.setter
-    def description(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def description(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "description", value)
 
     @_builtins.property
     @pulumi.getter(name="federatedAttributeValues")
-    def federated_attribute_values(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]:
+    def federated_attribute_values(self) -> pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]:
         return pulumi.get(self, "federated_attribute_values")
 
     @federated_attribute_values.setter
-    def federated_attribute_values(self, value: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]):
+    def federated_attribute_values(self, value: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "federated_attribute_values", value)
 
     @_builtins.property
     @pulumi.getter
-    def name(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def name(self) -> pulumi.Input[Optional[_builtins.str]]:
         return pulumi.get(self, "name")
 
     @name.setter
-    def name(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def name(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "name", value)
 
     @_builtins.property
     @pulumi.getter
     @_utilities.deprecated("""Assigning permissions directly when creating a group is deprecated. Use the resource `IamPermission` instead.""")
-    def permissions(self) -> Optional[pulumi.Input['IamGroupPermissionsArgs']]:
+    def permissions(self) -> pulumi.Input[Optional['IamGroupPermissionsArgs']]:
         return pulumi.get(self, "permissions")
 
     @permissions.setter
-    def permissions(self, value: Optional[pulumi.Input['IamGroupPermissionsArgs']]):
+    def permissions(self, value: pulumi.Input[Optional['IamGroupPermissionsArgs']]):
         pulumi.set(self, "permissions", value)
 
 
@@ -144,10 +144,10 @@ class IamGroup(pulumi.CustomResource):
     def __init__(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 description: Optional[pulumi.Input[_builtins.str]] = None,
-                 federated_attribute_values: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-                 name: Optional[pulumi.Input[_builtins.str]] = None,
-                 permissions: Optional[pulumi.Input[Union['IamGroupPermissionsArgs', 'IamGroupPermissionsArgsDict']]] = None,
+                 description: pulumi.Input[Optional[_builtins.str]] = None,
+                 federated_attribute_values: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 name: pulumi.Input[Optional[_builtins.str]] = None,
+                 permissions: pulumi.Input[Optional[Union['IamGroupPermissionsArgs', 'IamGroupPermissionsArgsDict']]] = None,
                  __props__=None):
         """
         > **Dynatrace SaaS only**
@@ -259,10 +259,10 @@ class IamGroup(pulumi.CustomResource):
     def _internal_init(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 description: Optional[pulumi.Input[_builtins.str]] = None,
-                 federated_attribute_values: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-                 name: Optional[pulumi.Input[_builtins.str]] = None,
-                 permissions: Optional[pulumi.Input[Union['IamGroupPermissionsArgs', 'IamGroupPermissionsArgsDict']]] = None,
+                 description: pulumi.Input[Optional[_builtins.str]] = None,
+                 federated_attribute_values: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 name: pulumi.Input[Optional[_builtins.str]] = None,
+                 permissions: pulumi.Input[Optional[Union['IamGroupPermissionsArgs', 'IamGroupPermissionsArgsDict']]] = None,
                  __props__=None):
         opts = pulumi.ResourceOptions.merge(_utilities.get_resource_opts_defaults(), opts)
         if not isinstance(opts, pulumi.ResourceOptions):
@@ -286,10 +286,10 @@ class IamGroup(pulumi.CustomResource):
     def get(resource_name: str,
             id: pulumi.Input[str],
             opts: Optional[pulumi.ResourceOptions] = None,
-            description: Optional[pulumi.Input[_builtins.str]] = None,
-            federated_attribute_values: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-            name: Optional[pulumi.Input[_builtins.str]] = None,
-            permissions: Optional[pulumi.Input[Union['IamGroupPermissionsArgs', 'IamGroupPermissionsArgsDict']]] = None) -> 'IamGroup':
+            description: pulumi.Input[Optional[_builtins.str]] = None,
+            federated_attribute_values: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+            name: pulumi.Input[Optional[_builtins.str]] = None,
+            permissions: pulumi.Input[Optional[Union['IamGroupPermissionsArgs', 'IamGroupPermissionsArgsDict']]] = None) -> 'IamGroup':
         """
         Get an existing IamGroup resource's state with the given name, id, and optional extra
         properties used to qualify the lookup.

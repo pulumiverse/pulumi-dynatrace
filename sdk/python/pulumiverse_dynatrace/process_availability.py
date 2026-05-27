@@ -22,13 +22,13 @@ __all__ = ['ProcessAvailabilityArgs', 'ProcessAvailability']
 class ProcessAvailabilityArgs:
     def __init__(__self__, *,
                  enabled: pulumi.Input[_builtins.bool],
-                 insert_after: Optional[pulumi.Input[_builtins.str]] = None,
-                 metadata: Optional[pulumi.Input['ProcessAvailabilityMetadataArgs']] = None,
-                 minimum_processes: Optional[pulumi.Input[_builtins.int]] = None,
-                 name: Optional[pulumi.Input[_builtins.str]] = None,
-                 operating_systems: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-                 rules: Optional[pulumi.Input['ProcessAvailabilityRulesArgs']] = None,
-                 scope: Optional[pulumi.Input[_builtins.str]] = None):
+                 insert_after: pulumi.Input[Optional[_builtins.str]] = None,
+                 metadata: pulumi.Input[Optional['ProcessAvailabilityMetadataArgs']] = None,
+                 minimum_processes: pulumi.Input[Optional[_builtins.int]] = None,
+                 name: pulumi.Input[Optional[_builtins.str]] = None,
+                 operating_systems: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 rules: pulumi.Input[Optional['ProcessAvailabilityRulesArgs']] = None,
+                 scope: pulumi.Input[Optional[_builtins.str]] = None):
         """
         The set of arguments for constructing a ProcessAvailability resource.
 
@@ -71,100 +71,100 @@ class ProcessAvailabilityArgs:
 
     @_builtins.property
     @pulumi.getter(name="insertAfter")
-    def insert_after(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def insert_after(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Because this resource allows for ordering you may specify the ID of the resource instance that comes before this instance regarding order. If not specified when creating the setting will be added to the end of the list. If not specified during update the order will remain untouched
         """
         return pulumi.get(self, "insert_after")
 
     @insert_after.setter
-    def insert_after(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def insert_after(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "insert_after", value)
 
     @_builtins.property
     @pulumi.getter
-    def metadata(self) -> Optional[pulumi.Input['ProcessAvailabilityMetadataArgs']]:
+    def metadata(self) -> pulumi.Input[Optional['ProcessAvailabilityMetadataArgs']]:
         """
         Set of additional key-value properties to be attached to the triggered event. You can retrieve the available property keys using the [Events API v2](https://dt-url.net/9622g1w). Additionally any Host resource attribute can be dynamically substituted (agent 1.325+).
         """
         return pulumi.get(self, "metadata")
 
     @metadata.setter
-    def metadata(self, value: Optional[pulumi.Input['ProcessAvailabilityMetadataArgs']]):
+    def metadata(self, value: pulumi.Input[Optional['ProcessAvailabilityMetadataArgs']]):
         pulumi.set(self, "metadata", value)
 
     @_builtins.property
     @pulumi.getter(name="minimumProcesses")
-    def minimum_processes(self) -> Optional[pulumi.Input[_builtins.int]]:
+    def minimum_processes(self) -> pulumi.Input[Optional[_builtins.int]]:
         """
         Specify a minimum number of processes matching the monitoring rule. An alert is triggered if any host falls below this threshold.
         """
         return pulumi.get(self, "minimum_processes")
 
     @minimum_processes.setter
-    def minimum_processes(self, value: Optional[pulumi.Input[_builtins.int]]):
+    def minimum_processes(self, value: pulumi.Input[Optional[_builtins.int]]):
         pulumi.set(self, "minimum_processes", value)
 
     @_builtins.property
     @pulumi.getter
-    def name(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def name(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Monitoring rule name
         """
         return pulumi.get(self, "name")
 
     @name.setter
-    def name(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def name(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "name", value)
 
     @_builtins.property
     @pulumi.getter(name="operatingSystems")
-    def operating_systems(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]:
+    def operating_systems(self) -> pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]:
         """
         Select the operating systems on which the monitoring rule should be applied. Possible Values: `AIX`, `LINUX`, `WINDOWS`
         """
         return pulumi.get(self, "operating_systems")
 
     @operating_systems.setter
-    def operating_systems(self, value: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]):
+    def operating_systems(self, value: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "operating_systems", value)
 
     @_builtins.property
     @pulumi.getter
-    def rules(self) -> Optional[pulumi.Input['ProcessAvailabilityRulesArgs']]:
+    def rules(self) -> pulumi.Input[Optional['ProcessAvailabilityRulesArgs']]:
         """
         Define process detection rules by selecting a process property and a condition. Each monitoring rule can have multiple detection rules associated with it.
         """
         return pulumi.get(self, "rules")
 
     @rules.setter
-    def rules(self, value: Optional[pulumi.Input['ProcessAvailabilityRulesArgs']]):
+    def rules(self, value: pulumi.Input[Optional['ProcessAvailabilityRulesArgs']]):
         pulumi.set(self, "rules", value)
 
     @_builtins.property
     @pulumi.getter
-    def scope(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def scope(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The scope of this setting (HOST, HOST_GROUP). Omit this property if you want to cover the whole environment.
         """
         return pulumi.get(self, "scope")
 
     @scope.setter
-    def scope(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def scope(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "scope", value)
 
 
 @pulumi.input_type
 class _ProcessAvailabilityState:
     def __init__(__self__, *,
-                 enabled: Optional[pulumi.Input[_builtins.bool]] = None,
-                 insert_after: Optional[pulumi.Input[_builtins.str]] = None,
-                 metadata: Optional[pulumi.Input['ProcessAvailabilityMetadataArgs']] = None,
-                 minimum_processes: Optional[pulumi.Input[_builtins.int]] = None,
-                 name: Optional[pulumi.Input[_builtins.str]] = None,
-                 operating_systems: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-                 rules: Optional[pulumi.Input['ProcessAvailabilityRulesArgs']] = None,
-                 scope: Optional[pulumi.Input[_builtins.str]] = None):
+                 enabled: pulumi.Input[Optional[_builtins.bool]] = None,
+                 insert_after: pulumi.Input[Optional[_builtins.str]] = None,
+                 metadata: pulumi.Input[Optional['ProcessAvailabilityMetadataArgs']] = None,
+                 minimum_processes: pulumi.Input[Optional[_builtins.int]] = None,
+                 name: pulumi.Input[Optional[_builtins.str]] = None,
+                 operating_systems: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 rules: pulumi.Input[Optional['ProcessAvailabilityRulesArgs']] = None,
+                 scope: pulumi.Input[Optional[_builtins.str]] = None):
         """
         Input properties used for looking up and filtering ProcessAvailability resources.
 
@@ -196,98 +196,98 @@ class _ProcessAvailabilityState:
 
     @_builtins.property
     @pulumi.getter
-    def enabled(self) -> Optional[pulumi.Input[_builtins.bool]]:
+    def enabled(self) -> pulumi.Input[Optional[_builtins.bool]]:
         """
         This setting is enabled (`true`) or disabled (`false`)
         """
         return pulumi.get(self, "enabled")
 
     @enabled.setter
-    def enabled(self, value: Optional[pulumi.Input[_builtins.bool]]):
+    def enabled(self, value: pulumi.Input[Optional[_builtins.bool]]):
         pulumi.set(self, "enabled", value)
 
     @_builtins.property
     @pulumi.getter(name="insertAfter")
-    def insert_after(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def insert_after(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Because this resource allows for ordering you may specify the ID of the resource instance that comes before this instance regarding order. If not specified when creating the setting will be added to the end of the list. If not specified during update the order will remain untouched
         """
         return pulumi.get(self, "insert_after")
 
     @insert_after.setter
-    def insert_after(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def insert_after(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "insert_after", value)
 
     @_builtins.property
     @pulumi.getter
-    def metadata(self) -> Optional[pulumi.Input['ProcessAvailabilityMetadataArgs']]:
+    def metadata(self) -> pulumi.Input[Optional['ProcessAvailabilityMetadataArgs']]:
         """
         Set of additional key-value properties to be attached to the triggered event. You can retrieve the available property keys using the [Events API v2](https://dt-url.net/9622g1w). Additionally any Host resource attribute can be dynamically substituted (agent 1.325+).
         """
         return pulumi.get(self, "metadata")
 
     @metadata.setter
-    def metadata(self, value: Optional[pulumi.Input['ProcessAvailabilityMetadataArgs']]):
+    def metadata(self, value: pulumi.Input[Optional['ProcessAvailabilityMetadataArgs']]):
         pulumi.set(self, "metadata", value)
 
     @_builtins.property
     @pulumi.getter(name="minimumProcesses")
-    def minimum_processes(self) -> Optional[pulumi.Input[_builtins.int]]:
+    def minimum_processes(self) -> pulumi.Input[Optional[_builtins.int]]:
         """
         Specify a minimum number of processes matching the monitoring rule. An alert is triggered if any host falls below this threshold.
         """
         return pulumi.get(self, "minimum_processes")
 
     @minimum_processes.setter
-    def minimum_processes(self, value: Optional[pulumi.Input[_builtins.int]]):
+    def minimum_processes(self, value: pulumi.Input[Optional[_builtins.int]]):
         pulumi.set(self, "minimum_processes", value)
 
     @_builtins.property
     @pulumi.getter
-    def name(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def name(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Monitoring rule name
         """
         return pulumi.get(self, "name")
 
     @name.setter
-    def name(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def name(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "name", value)
 
     @_builtins.property
     @pulumi.getter(name="operatingSystems")
-    def operating_systems(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]:
+    def operating_systems(self) -> pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]:
         """
         Select the operating systems on which the monitoring rule should be applied. Possible Values: `AIX`, `LINUX`, `WINDOWS`
         """
         return pulumi.get(self, "operating_systems")
 
     @operating_systems.setter
-    def operating_systems(self, value: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]):
+    def operating_systems(self, value: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "operating_systems", value)
 
     @_builtins.property
     @pulumi.getter
-    def rules(self) -> Optional[pulumi.Input['ProcessAvailabilityRulesArgs']]:
+    def rules(self) -> pulumi.Input[Optional['ProcessAvailabilityRulesArgs']]:
         """
         Define process detection rules by selecting a process property and a condition. Each monitoring rule can have multiple detection rules associated with it.
         """
         return pulumi.get(self, "rules")
 
     @rules.setter
-    def rules(self, value: Optional[pulumi.Input['ProcessAvailabilityRulesArgs']]):
+    def rules(self, value: pulumi.Input[Optional['ProcessAvailabilityRulesArgs']]):
         pulumi.set(self, "rules", value)
 
     @_builtins.property
     @pulumi.getter
-    def scope(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def scope(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The scope of this setting (HOST, HOST_GROUP). Omit this property if you want to cover the whole environment.
         """
         return pulumi.get(self, "scope")
 
     @scope.setter
-    def scope(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def scope(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "scope", value)
 
 
@@ -297,14 +297,14 @@ class ProcessAvailability(pulumi.CustomResource):
     def __init__(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 enabled: Optional[pulumi.Input[_builtins.bool]] = None,
-                 insert_after: Optional[pulumi.Input[_builtins.str]] = None,
-                 metadata: Optional[pulumi.Input[Union['ProcessAvailabilityMetadataArgs', 'ProcessAvailabilityMetadataArgsDict']]] = None,
-                 minimum_processes: Optional[pulumi.Input[_builtins.int]] = None,
-                 name: Optional[pulumi.Input[_builtins.str]] = None,
-                 operating_systems: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-                 rules: Optional[pulumi.Input[Union['ProcessAvailabilityRulesArgs', 'ProcessAvailabilityRulesArgsDict']]] = None,
-                 scope: Optional[pulumi.Input[_builtins.str]] = None,
+                 enabled: pulumi.Input[Optional[_builtins.bool]] = None,
+                 insert_after: pulumi.Input[Optional[_builtins.str]] = None,
+                 metadata: pulumi.Input[Optional[Union['ProcessAvailabilityMetadataArgs', 'ProcessAvailabilityMetadataArgsDict']]] = None,
+                 minimum_processes: pulumi.Input[Optional[_builtins.int]] = None,
+                 name: pulumi.Input[Optional[_builtins.str]] = None,
+                 operating_systems: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 rules: pulumi.Input[Optional[Union['ProcessAvailabilityRulesArgs', 'ProcessAvailabilityRulesArgsDict']]] = None,
+                 scope: pulumi.Input[Optional[_builtins.str]] = None,
                  __props__=None):
         """
         > This resource requires the API token scopes **Read settings** (`settings.read`) and **Write settings** (`settings.write`)
@@ -370,14 +370,14 @@ class ProcessAvailability(pulumi.CustomResource):
     def _internal_init(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 enabled: Optional[pulumi.Input[_builtins.bool]] = None,
-                 insert_after: Optional[pulumi.Input[_builtins.str]] = None,
-                 metadata: Optional[pulumi.Input[Union['ProcessAvailabilityMetadataArgs', 'ProcessAvailabilityMetadataArgsDict']]] = None,
-                 minimum_processes: Optional[pulumi.Input[_builtins.int]] = None,
-                 name: Optional[pulumi.Input[_builtins.str]] = None,
-                 operating_systems: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-                 rules: Optional[pulumi.Input[Union['ProcessAvailabilityRulesArgs', 'ProcessAvailabilityRulesArgsDict']]] = None,
-                 scope: Optional[pulumi.Input[_builtins.str]] = None,
+                 enabled: pulumi.Input[Optional[_builtins.bool]] = None,
+                 insert_after: pulumi.Input[Optional[_builtins.str]] = None,
+                 metadata: pulumi.Input[Optional[Union['ProcessAvailabilityMetadataArgs', 'ProcessAvailabilityMetadataArgsDict']]] = None,
+                 minimum_processes: pulumi.Input[Optional[_builtins.int]] = None,
+                 name: pulumi.Input[Optional[_builtins.str]] = None,
+                 operating_systems: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 rules: pulumi.Input[Optional[Union['ProcessAvailabilityRulesArgs', 'ProcessAvailabilityRulesArgsDict']]] = None,
+                 scope: pulumi.Input[Optional[_builtins.str]] = None,
                  __props__=None):
         opts = pulumi.ResourceOptions.merge(_utilities.get_resource_opts_defaults(), opts)
         if not isinstance(opts, pulumi.ResourceOptions):
@@ -407,14 +407,14 @@ class ProcessAvailability(pulumi.CustomResource):
     def get(resource_name: str,
             id: pulumi.Input[str],
             opts: Optional[pulumi.ResourceOptions] = None,
-            enabled: Optional[pulumi.Input[_builtins.bool]] = None,
-            insert_after: Optional[pulumi.Input[_builtins.str]] = None,
-            metadata: Optional[pulumi.Input[Union['ProcessAvailabilityMetadataArgs', 'ProcessAvailabilityMetadataArgsDict']]] = None,
-            minimum_processes: Optional[pulumi.Input[_builtins.int]] = None,
-            name: Optional[pulumi.Input[_builtins.str]] = None,
-            operating_systems: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-            rules: Optional[pulumi.Input[Union['ProcessAvailabilityRulesArgs', 'ProcessAvailabilityRulesArgsDict']]] = None,
-            scope: Optional[pulumi.Input[_builtins.str]] = None) -> 'ProcessAvailability':
+            enabled: pulumi.Input[Optional[_builtins.bool]] = None,
+            insert_after: pulumi.Input[Optional[_builtins.str]] = None,
+            metadata: pulumi.Input[Optional[Union['ProcessAvailabilityMetadataArgs', 'ProcessAvailabilityMetadataArgsDict']]] = None,
+            minimum_processes: pulumi.Input[Optional[_builtins.int]] = None,
+            name: pulumi.Input[Optional[_builtins.str]] = None,
+            operating_systems: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+            rules: pulumi.Input[Optional[Union['ProcessAvailabilityRulesArgs', 'ProcessAvailabilityRulesArgsDict']]] = None,
+            scope: pulumi.Input[Optional[_builtins.str]] = None) -> 'ProcessAvailability':
         """
         Get an existing ProcessAvailability resource's state with the given name, id, and optional extra
         properties used to qualify the lookup.

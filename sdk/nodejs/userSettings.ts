@@ -145,39 +145,39 @@ export interface UserSettingsState {
     /**
      * Language - use browser default
      */
-    autoLanguage?: pulumi.Input<boolean>;
+    autoLanguage?: pulumi.Input<boolean | undefined>;
     /**
      * Region - use browser default
      */
-    autoRegion?: pulumi.Input<boolean>;
+    autoRegion?: pulumi.Input<boolean | undefined>;
     /**
      * Theme - use browser default
      */
-    autoTheme?: pulumi.Input<boolean>;
+    autoTheme?: pulumi.Input<boolean | undefined>;
     /**
      * Timezone - use browser default
      */
-    autoTimezone?: pulumi.Input<boolean>;
+    autoTimezone?: pulumi.Input<boolean | undefined>;
     /**
      * Possible Values: `En`, `Ja`
      */
-    language?: pulumi.Input<string>;
+    language?: pulumi.Input<string | undefined>;
     /**
      * Region
      */
-    region?: pulumi.Input<string>;
+    region?: pulumi.Input<string | undefined>;
     /**
      * The scope of this setting (user, userdefaults)
      */
-    scope?: pulumi.Input<string>;
+    scope?: pulumi.Input<string | undefined>;
     /**
      * Possible Values: `Dark`, `Light`
      */
-    theme?: pulumi.Input<string>;
+    theme?: pulumi.Input<string | undefined>;
     /**
      * Timezone
      */
-    timezone?: pulumi.Input<string>;
+    timezone?: pulumi.Input<string | undefined>;
 }
 
 /**
@@ -203,11 +203,11 @@ export interface UserSettingsArgs {
     /**
      * Possible Values: `En`, `Ja`
      */
-    language?: pulumi.Input<string>;
+    language?: pulumi.Input<string | undefined>;
     /**
      * Region
      */
-    region?: pulumi.Input<string>;
+    region?: pulumi.Input<string | undefined>;
     /**
      * The scope of this setting (user, userdefaults)
      */
@@ -215,9 +215,9 @@ export interface UserSettingsArgs {
     /**
      * Possible Values: `Dark`, `Light`
      */
-    theme?: pulumi.Input<string>;
+    theme?: pulumi.Input<string | undefined>;
     /**
      * Timezone
      */
-    timezone?: pulumi.Input<string>;
+    timezone?: pulumi.Input<string | undefined>;
 }

@@ -97,15 +97,15 @@ export interface MonitoredTechnologiesDotnetState {
     /**
      * This setting is enabled (`true`) or disabled (`false`)
      */
-    enabled?: pulumi.Input<boolean>;
+    enabled?: pulumi.Input<boolean | undefined>;
     /**
      * Requires Dynatrace OneAgent version 1.117 or later on Windows and version 1.127 or later on Linux and .NET monitoring enabled
      */
-    enabledDotNetCore?: pulumi.Input<boolean>;
+    enabledDotNetCore?: pulumi.Input<boolean | undefined>;
     /**
      * The scope of this settings. If the settings should cover the whole environment, just don't specify any scope.
      */
-    hostId?: pulumi.Input<string>;
+    hostId?: pulumi.Input<string | undefined>;
 }
 
 /**
@@ -119,9 +119,9 @@ export interface MonitoredTechnologiesDotnetArgs {
     /**
      * Requires Dynatrace OneAgent version 1.117 or later on Windows and version 1.127 or later on Linux and .NET monitoring enabled
      */
-    enabledDotNetCore?: pulumi.Input<boolean>;
+    enabledDotNetCore?: pulumi.Input<boolean | undefined>;
     /**
      * The scope of this settings. If the settings should cover the whole environment, just don't specify any scope.
      */
-    hostId?: pulumi.Input<string>;
+    hostId?: pulumi.Input<string | undefined>;
 }

@@ -22,10 +22,10 @@ __all__ = ['OneagentUpdatesArgs', 'OneagentUpdates']
 class OneagentUpdatesArgs:
     def __init__(__self__, *,
                  update_mode: pulumi.Input[_builtins.str],
-                 maintenance_windows: Optional[pulumi.Input['OneagentUpdatesMaintenanceWindowsArgs']] = None,
-                 revision: Optional[pulumi.Input[_builtins.str]] = None,
-                 scope: Optional[pulumi.Input[_builtins.str]] = None,
-                 target_version: Optional[pulumi.Input[_builtins.str]] = None):
+                 maintenance_windows: pulumi.Input[Optional['OneagentUpdatesMaintenanceWindowsArgs']] = None,
+                 revision: pulumi.Input[Optional[_builtins.str]] = None,
+                 scope: pulumi.Input[Optional[_builtins.str]] = None,
+                 target_version: pulumi.Input[Optional[_builtins.str]] = None):
         """
         The set of arguments for constructing a OneagentUpdates resource.
 
@@ -59,61 +59,61 @@ class OneagentUpdatesArgs:
 
     @_builtins.property
     @pulumi.getter(name="maintenanceWindows")
-    def maintenance_windows(self) -> Optional[pulumi.Input['OneagentUpdatesMaintenanceWindowsArgs']]:
+    def maintenance_windows(self) -> pulumi.Input[Optional['OneagentUpdatesMaintenanceWindowsArgs']]:
         """
         Maintenance windows
         """
         return pulumi.get(self, "maintenance_windows")
 
     @maintenance_windows.setter
-    def maintenance_windows(self, value: Optional[pulumi.Input['OneagentUpdatesMaintenanceWindowsArgs']]):
+    def maintenance_windows(self, value: pulumi.Input[Optional['OneagentUpdatesMaintenanceWindowsArgs']]):
         pulumi.set(self, "maintenance_windows", value)
 
     @_builtins.property
     @pulumi.getter
-    def revision(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def revision(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Revision
         """
         return pulumi.get(self, "revision")
 
     @revision.setter
-    def revision(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def revision(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "revision", value)
 
     @_builtins.property
     @pulumi.getter
-    def scope(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def scope(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The scope of this setting (HOST, HOST_GROUP). Omit this property if you want to cover the whole environment.
         """
         return pulumi.get(self, "scope")
 
     @scope.setter
-    def scope(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def scope(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "scope", value)
 
     @_builtins.property
     @pulumi.getter(name="targetVersion")
-    def target_version(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def target_version(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Target version
         """
         return pulumi.get(self, "target_version")
 
     @target_version.setter
-    def target_version(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def target_version(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "target_version", value)
 
 
 @pulumi.input_type
 class _OneagentUpdatesState:
     def __init__(__self__, *,
-                 maintenance_windows: Optional[pulumi.Input['OneagentUpdatesMaintenanceWindowsArgs']] = None,
-                 revision: Optional[pulumi.Input[_builtins.str]] = None,
-                 scope: Optional[pulumi.Input[_builtins.str]] = None,
-                 target_version: Optional[pulumi.Input[_builtins.str]] = None,
-                 update_mode: Optional[pulumi.Input[_builtins.str]] = None):
+                 maintenance_windows: pulumi.Input[Optional['OneagentUpdatesMaintenanceWindowsArgs']] = None,
+                 revision: pulumi.Input[Optional[_builtins.str]] = None,
+                 scope: pulumi.Input[Optional[_builtins.str]] = None,
+                 target_version: pulumi.Input[Optional[_builtins.str]] = None,
+                 update_mode: pulumi.Input[Optional[_builtins.str]] = None):
         """
         Input properties used for looking up and filtering OneagentUpdates resources.
 
@@ -136,62 +136,62 @@ class _OneagentUpdatesState:
 
     @_builtins.property
     @pulumi.getter(name="maintenanceWindows")
-    def maintenance_windows(self) -> Optional[pulumi.Input['OneagentUpdatesMaintenanceWindowsArgs']]:
+    def maintenance_windows(self) -> pulumi.Input[Optional['OneagentUpdatesMaintenanceWindowsArgs']]:
         """
         Maintenance windows
         """
         return pulumi.get(self, "maintenance_windows")
 
     @maintenance_windows.setter
-    def maintenance_windows(self, value: Optional[pulumi.Input['OneagentUpdatesMaintenanceWindowsArgs']]):
+    def maintenance_windows(self, value: pulumi.Input[Optional['OneagentUpdatesMaintenanceWindowsArgs']]):
         pulumi.set(self, "maintenance_windows", value)
 
     @_builtins.property
     @pulumi.getter
-    def revision(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def revision(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Revision
         """
         return pulumi.get(self, "revision")
 
     @revision.setter
-    def revision(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def revision(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "revision", value)
 
     @_builtins.property
     @pulumi.getter
-    def scope(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def scope(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The scope of this setting (HOST, HOST_GROUP). Omit this property if you want to cover the whole environment.
         """
         return pulumi.get(self, "scope")
 
     @scope.setter
-    def scope(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def scope(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "scope", value)
 
     @_builtins.property
     @pulumi.getter(name="targetVersion")
-    def target_version(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def target_version(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Target version
         """
         return pulumi.get(self, "target_version")
 
     @target_version.setter
-    def target_version(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def target_version(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "target_version", value)
 
     @_builtins.property
     @pulumi.getter(name="updateMode")
-    def update_mode(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def update_mode(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Possible Values: `AUTOMATIC`, `AUTOMATIC_DURING_MW`, `MANUAL`
         """
         return pulumi.get(self, "update_mode")
 
     @update_mode.setter
-    def update_mode(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def update_mode(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "update_mode", value)
 
 
@@ -201,11 +201,11 @@ class OneagentUpdates(pulumi.CustomResource):
     def __init__(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 maintenance_windows: Optional[pulumi.Input[Union['OneagentUpdatesMaintenanceWindowsArgs', 'OneagentUpdatesMaintenanceWindowsArgsDict']]] = None,
-                 revision: Optional[pulumi.Input[_builtins.str]] = None,
-                 scope: Optional[pulumi.Input[_builtins.str]] = None,
-                 target_version: Optional[pulumi.Input[_builtins.str]] = None,
-                 update_mode: Optional[pulumi.Input[_builtins.str]] = None,
+                 maintenance_windows: pulumi.Input[Optional[Union['OneagentUpdatesMaintenanceWindowsArgs', 'OneagentUpdatesMaintenanceWindowsArgsDict']]] = None,
+                 revision: pulumi.Input[Optional[_builtins.str]] = None,
+                 scope: pulumi.Input[Optional[_builtins.str]] = None,
+                 target_version: pulumi.Input[Optional[_builtins.str]] = None,
+                 update_mode: pulumi.Input[Optional[_builtins.str]] = None,
                  __props__=None):
         """
         > This resource requires the API token scopes **Read settings** (`settings.read`) and **Write settings** (`settings.write`)
@@ -268,11 +268,11 @@ class OneagentUpdates(pulumi.CustomResource):
     def _internal_init(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 maintenance_windows: Optional[pulumi.Input[Union['OneagentUpdatesMaintenanceWindowsArgs', 'OneagentUpdatesMaintenanceWindowsArgsDict']]] = None,
-                 revision: Optional[pulumi.Input[_builtins.str]] = None,
-                 scope: Optional[pulumi.Input[_builtins.str]] = None,
-                 target_version: Optional[pulumi.Input[_builtins.str]] = None,
-                 update_mode: Optional[pulumi.Input[_builtins.str]] = None,
+                 maintenance_windows: pulumi.Input[Optional[Union['OneagentUpdatesMaintenanceWindowsArgs', 'OneagentUpdatesMaintenanceWindowsArgsDict']]] = None,
+                 revision: pulumi.Input[Optional[_builtins.str]] = None,
+                 scope: pulumi.Input[Optional[_builtins.str]] = None,
+                 target_version: pulumi.Input[Optional[_builtins.str]] = None,
+                 update_mode: pulumi.Input[Optional[_builtins.str]] = None,
                  __props__=None):
         opts = pulumi.ResourceOptions.merge(_utilities.get_resource_opts_defaults(), opts)
         if not isinstance(opts, pulumi.ResourceOptions):
@@ -299,11 +299,11 @@ class OneagentUpdates(pulumi.CustomResource):
     def get(resource_name: str,
             id: pulumi.Input[str],
             opts: Optional[pulumi.ResourceOptions] = None,
-            maintenance_windows: Optional[pulumi.Input[Union['OneagentUpdatesMaintenanceWindowsArgs', 'OneagentUpdatesMaintenanceWindowsArgsDict']]] = None,
-            revision: Optional[pulumi.Input[_builtins.str]] = None,
-            scope: Optional[pulumi.Input[_builtins.str]] = None,
-            target_version: Optional[pulumi.Input[_builtins.str]] = None,
-            update_mode: Optional[pulumi.Input[_builtins.str]] = None) -> 'OneagentUpdates':
+            maintenance_windows: pulumi.Input[Optional[Union['OneagentUpdatesMaintenanceWindowsArgs', 'OneagentUpdatesMaintenanceWindowsArgsDict']]] = None,
+            revision: pulumi.Input[Optional[_builtins.str]] = None,
+            scope: pulumi.Input[Optional[_builtins.str]] = None,
+            target_version: pulumi.Input[Optional[_builtins.str]] = None,
+            update_mode: pulumi.Input[Optional[_builtins.str]] = None) -> 'OneagentUpdates':
         """
         Get an existing OneagentUpdates resource's state with the given name, id, and optional extra
         properties used to qualify the lookup.

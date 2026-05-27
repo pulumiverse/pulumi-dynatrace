@@ -22,7 +22,7 @@ __all__ = ['DashboardsGeneralArgs', 'DashboardsGeneral']
 class DashboardsGeneralArgs:
     def __init__(__self__, *,
                  enable_public_sharing: pulumi.Input[_builtins.bool],
-                 default_dashboard_list: Optional[pulumi.Input['DashboardsGeneralDefaultDashboardListArgs']] = None):
+                 default_dashboard_list: pulumi.Input[Optional['DashboardsGeneralDefaultDashboardListArgs']] = None):
         """
         The set of arguments for constructing a DashboardsGeneral resource.
 
@@ -47,22 +47,22 @@ class DashboardsGeneralArgs:
 
     @_builtins.property
     @pulumi.getter(name="defaultDashboardList")
-    def default_dashboard_list(self) -> Optional[pulumi.Input['DashboardsGeneralDefaultDashboardListArgs']]:
+    def default_dashboard_list(self) -> pulumi.Input[Optional['DashboardsGeneralDefaultDashboardListArgs']]:
         """
         Configure home dashboard for selected user group. The selected preset dashboard will be loaded as default landing page for this environment.
         """
         return pulumi.get(self, "default_dashboard_list")
 
     @default_dashboard_list.setter
-    def default_dashboard_list(self, value: Optional[pulumi.Input['DashboardsGeneralDefaultDashboardListArgs']]):
+    def default_dashboard_list(self, value: pulumi.Input[Optional['DashboardsGeneralDefaultDashboardListArgs']]):
         pulumi.set(self, "default_dashboard_list", value)
 
 
 @pulumi.input_type
 class _DashboardsGeneralState:
     def __init__(__self__, *,
-                 default_dashboard_list: Optional[pulumi.Input['DashboardsGeneralDefaultDashboardListArgs']] = None,
-                 enable_public_sharing: Optional[pulumi.Input[_builtins.bool]] = None):
+                 default_dashboard_list: pulumi.Input[Optional['DashboardsGeneralDefaultDashboardListArgs']] = None,
+                 enable_public_sharing: pulumi.Input[Optional[_builtins.bool]] = None):
         """
         Input properties used for looking up and filtering DashboardsGeneral resources.
 
@@ -76,26 +76,26 @@ class _DashboardsGeneralState:
 
     @_builtins.property
     @pulumi.getter(name="defaultDashboardList")
-    def default_dashboard_list(self) -> Optional[pulumi.Input['DashboardsGeneralDefaultDashboardListArgs']]:
+    def default_dashboard_list(self) -> pulumi.Input[Optional['DashboardsGeneralDefaultDashboardListArgs']]:
         """
         Configure home dashboard for selected user group. The selected preset dashboard will be loaded as default landing page for this environment.
         """
         return pulumi.get(self, "default_dashboard_list")
 
     @default_dashboard_list.setter
-    def default_dashboard_list(self, value: Optional[pulumi.Input['DashboardsGeneralDefaultDashboardListArgs']]):
+    def default_dashboard_list(self, value: pulumi.Input[Optional['DashboardsGeneralDefaultDashboardListArgs']]):
         pulumi.set(self, "default_dashboard_list", value)
 
     @_builtins.property
     @pulumi.getter(name="enablePublicSharing")
-    def enable_public_sharing(self) -> Optional[pulumi.Input[_builtins.bool]]:
+    def enable_public_sharing(self) -> pulumi.Input[Optional[_builtins.bool]]:
         """
         Allow users to grant anonymous access to dashboards. No sign-in will be required to view those dashboards read-only.
         """
         return pulumi.get(self, "enable_public_sharing")
 
     @enable_public_sharing.setter
-    def enable_public_sharing(self, value: Optional[pulumi.Input[_builtins.bool]]):
+    def enable_public_sharing(self, value: pulumi.Input[Optional[_builtins.bool]]):
         pulumi.set(self, "enable_public_sharing", value)
 
 
@@ -105,8 +105,8 @@ class DashboardsGeneral(pulumi.CustomResource):
     def __init__(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 default_dashboard_list: Optional[pulumi.Input[Union['DashboardsGeneralDefaultDashboardListArgs', 'DashboardsGeneralDefaultDashboardListArgsDict']]] = None,
-                 enable_public_sharing: Optional[pulumi.Input[_builtins.bool]] = None,
+                 default_dashboard_list: pulumi.Input[Optional[Union['DashboardsGeneralDefaultDashboardListArgs', 'DashboardsGeneralDefaultDashboardListArgsDict']]] = None,
+                 enable_public_sharing: pulumi.Input[Optional[_builtins.bool]] = None,
                  __props__=None):
         """
         > This resource requires the API token scopes **Read settings** (`settings.read`) and **Write settings** (`settings.write`)
@@ -166,8 +166,8 @@ class DashboardsGeneral(pulumi.CustomResource):
     def _internal_init(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 default_dashboard_list: Optional[pulumi.Input[Union['DashboardsGeneralDefaultDashboardListArgs', 'DashboardsGeneralDefaultDashboardListArgsDict']]] = None,
-                 enable_public_sharing: Optional[pulumi.Input[_builtins.bool]] = None,
+                 default_dashboard_list: pulumi.Input[Optional[Union['DashboardsGeneralDefaultDashboardListArgs', 'DashboardsGeneralDefaultDashboardListArgsDict']]] = None,
+                 enable_public_sharing: pulumi.Input[Optional[_builtins.bool]] = None,
                  __props__=None):
         opts = pulumi.ResourceOptions.merge(_utilities.get_resource_opts_defaults(), opts)
         if not isinstance(opts, pulumi.ResourceOptions):
@@ -191,8 +191,8 @@ class DashboardsGeneral(pulumi.CustomResource):
     def get(resource_name: str,
             id: pulumi.Input[str],
             opts: Optional[pulumi.ResourceOptions] = None,
-            default_dashboard_list: Optional[pulumi.Input[Union['DashboardsGeneralDefaultDashboardListArgs', 'DashboardsGeneralDefaultDashboardListArgsDict']]] = None,
-            enable_public_sharing: Optional[pulumi.Input[_builtins.bool]] = None) -> 'DashboardsGeneral':
+            default_dashboard_list: pulumi.Input[Optional[Union['DashboardsGeneralDefaultDashboardListArgs', 'DashboardsGeneralDefaultDashboardListArgsDict']]] = None,
+            enable_public_sharing: pulumi.Input[Optional[_builtins.bool]] = None) -> 'DashboardsGeneral':
         """
         Get an existing DashboardsGeneral resource's state with the given name, id, and optional extra
         properties used to qualify the lookup.

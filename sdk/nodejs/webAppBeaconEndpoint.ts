@@ -106,19 +106,19 @@ export interface WebAppBeaconEndpointState {
     /**
      * The scope of this setting
      */
-    applicationId?: pulumi.Input<string>;
+    applicationId?: pulumi.Input<string | undefined>;
     /**
      * Possible Values: `ACTIVEGATE`, `DEFAULT_CONFIG`, `ONEAGENT`
      */
-    type?: pulumi.Input<string>;
+    type?: pulumi.Input<string | undefined>;
     /**
      * You can specify either path segments or an absolute URL.
      */
-    url?: pulumi.Input<string>;
+    url?: pulumi.Input<string | undefined>;
     /**
      * Learn more about [sending beacon data via CORS](https://dt-url.net/r7038sa)
      */
-    useCors?: pulumi.Input<boolean>;
+    useCors?: pulumi.Input<boolean | undefined>;
 }
 
 /**
@@ -136,9 +136,9 @@ export interface WebAppBeaconEndpointArgs {
     /**
      * You can specify either path segments or an absolute URL.
      */
-    url?: pulumi.Input<string>;
+    url?: pulumi.Input<string | undefined>;
     /**
      * Learn more about [sending beacon data via CORS](https://dt-url.net/r7038sa)
      */
-    useCors?: pulumi.Input<boolean>;
+    useCors?: pulumi.Input<boolean | undefined>;
 }

@@ -21,8 +21,8 @@ __all__ = ['KubernetesEnrichmentArgs', 'KubernetesEnrichment']
 @pulumi.input_type
 class KubernetesEnrichmentArgs:
     def __init__(__self__, *,
-                 rules: Optional[pulumi.Input['KubernetesEnrichmentRulesArgs']] = None,
-                 scope: Optional[pulumi.Input[_builtins.str]] = None):
+                 rules: pulumi.Input[Optional['KubernetesEnrichmentRulesArgs']] = None,
+                 scope: pulumi.Input[Optional[_builtins.str]] = None):
         """
         The set of arguments for constructing a KubernetesEnrichment resource.
 
@@ -36,34 +36,34 @@ class KubernetesEnrichmentArgs:
 
     @_builtins.property
     @pulumi.getter
-    def rules(self) -> Optional[pulumi.Input['KubernetesEnrichmentRulesArgs']]:
+    def rules(self) -> pulumi.Input[Optional['KubernetesEnrichmentRulesArgs']]:
         """
         Dynatrace allows to use metadata defined on Kubernetes nodes, namespaces, and pods to set security and cost allocation attributes and dimensions for metrics, events, log, spans, and entities associated with the respective Kubernetes resource.
         """
         return pulumi.get(self, "rules")
 
     @rules.setter
-    def rules(self, value: Optional[pulumi.Input['KubernetesEnrichmentRulesArgs']]):
+    def rules(self, value: pulumi.Input[Optional['KubernetesEnrichmentRulesArgs']]):
         pulumi.set(self, "rules", value)
 
     @_builtins.property
     @pulumi.getter
-    def scope(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def scope(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The scope of this setting (KUBERNETES_CLUSTER). Omit this property if you want to cover the whole environment.
         """
         return pulumi.get(self, "scope")
 
     @scope.setter
-    def scope(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def scope(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "scope", value)
 
 
 @pulumi.input_type
 class _KubernetesEnrichmentState:
     def __init__(__self__, *,
-                 rules: Optional[pulumi.Input['KubernetesEnrichmentRulesArgs']] = None,
-                 scope: Optional[pulumi.Input[_builtins.str]] = None):
+                 rules: pulumi.Input[Optional['KubernetesEnrichmentRulesArgs']] = None,
+                 scope: pulumi.Input[Optional[_builtins.str]] = None):
         """
         Input properties used for looking up and filtering KubernetesEnrichment resources.
 
@@ -77,26 +77,26 @@ class _KubernetesEnrichmentState:
 
     @_builtins.property
     @pulumi.getter
-    def rules(self) -> Optional[pulumi.Input['KubernetesEnrichmentRulesArgs']]:
+    def rules(self) -> pulumi.Input[Optional['KubernetesEnrichmentRulesArgs']]:
         """
         Dynatrace allows to use metadata defined on Kubernetes nodes, namespaces, and pods to set security and cost allocation attributes and dimensions for metrics, events, log, spans, and entities associated with the respective Kubernetes resource.
         """
         return pulumi.get(self, "rules")
 
     @rules.setter
-    def rules(self, value: Optional[pulumi.Input['KubernetesEnrichmentRulesArgs']]):
+    def rules(self, value: pulumi.Input[Optional['KubernetesEnrichmentRulesArgs']]):
         pulumi.set(self, "rules", value)
 
     @_builtins.property
     @pulumi.getter
-    def scope(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def scope(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The scope of this setting (KUBERNETES_CLUSTER). Omit this property if you want to cover the whole environment.
         """
         return pulumi.get(self, "scope")
 
     @scope.setter
-    def scope(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def scope(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "scope", value)
 
 
@@ -106,8 +106,8 @@ class KubernetesEnrichment(pulumi.CustomResource):
     def __init__(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 rules: Optional[pulumi.Input[Union['KubernetesEnrichmentRulesArgs', 'KubernetesEnrichmentRulesArgsDict']]] = None,
-                 scope: Optional[pulumi.Input[_builtins.str]] = None,
+                 rules: pulumi.Input[Optional[Union['KubernetesEnrichmentRulesArgs', 'KubernetesEnrichmentRulesArgsDict']]] = None,
+                 scope: pulumi.Input[Optional[_builtins.str]] = None,
                  __props__=None):
         """
         > This resource requires the API token scopes **Read settings** (`settings.read`) and **Write settings** (`settings.write`)
@@ -167,8 +167,8 @@ class KubernetesEnrichment(pulumi.CustomResource):
     def _internal_init(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 rules: Optional[pulumi.Input[Union['KubernetesEnrichmentRulesArgs', 'KubernetesEnrichmentRulesArgsDict']]] = None,
-                 scope: Optional[pulumi.Input[_builtins.str]] = None,
+                 rules: pulumi.Input[Optional[Union['KubernetesEnrichmentRulesArgs', 'KubernetesEnrichmentRulesArgsDict']]] = None,
+                 scope: pulumi.Input[Optional[_builtins.str]] = None,
                  __props__=None):
         opts = pulumi.ResourceOptions.merge(_utilities.get_resource_opts_defaults(), opts)
         if not isinstance(opts, pulumi.ResourceOptions):
@@ -190,8 +190,8 @@ class KubernetesEnrichment(pulumi.CustomResource):
     def get(resource_name: str,
             id: pulumi.Input[str],
             opts: Optional[pulumi.ResourceOptions] = None,
-            rules: Optional[pulumi.Input[Union['KubernetesEnrichmentRulesArgs', 'KubernetesEnrichmentRulesArgsDict']]] = None,
-            scope: Optional[pulumi.Input[_builtins.str]] = None) -> 'KubernetesEnrichment':
+            rules: pulumi.Input[Optional[Union['KubernetesEnrichmentRulesArgs', 'KubernetesEnrichmentRulesArgsDict']]] = None,
+            scope: pulumi.Input[Optional[_builtins.str]] = None) -> 'KubernetesEnrichment':
         """
         Get an existing KubernetesEnrichment resource's state with the given name, id, and optional extra
         properties used to qualify the lookup.

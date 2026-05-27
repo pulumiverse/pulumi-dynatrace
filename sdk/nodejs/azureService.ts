@@ -195,27 +195,27 @@ export interface AzureServiceState {
     /**
      * This attribute is automatically set to `true` if Dynatrace considers the supporting service with the given name to be a built-in service
      */
-    builtIn?: pulumi.Input<boolean>;
+    builtIn?: pulumi.Input<boolean | undefined>;
     /**
      * the ID of the Azure credentials this supported service belongs to
      */
-    credentialsId?: pulumi.Input<string>;
+    credentialsId?: pulumi.Input<string | undefined>;
     /**
      * A list of metrics to be monitored for this service. Depending on the service Dynatrace insists on a set of recommended metrics to be configured for that service. If any of these recommended metrics is missing here, the Terraform Provider will automatically add them during `pulumi up`. This usually results in a non-empty plan, until all of the recommended metrics are present within your configuration. For services considered `built-in` by Dynatrace any metrics specified here will be ignored - Dynatrace enforces a fixed set of metrics for these services.
      */
-    metrics?: pulumi.Input<pulumi.Input<inputs.AzureServiceMetric>[]>;
+    metrics?: pulumi.Input<pulumi.Input<inputs.AzureServiceMetric>[] | undefined>;
     /**
      * The name of the supporting service.
      */
-    name?: pulumi.Input<string>;
+    name?: pulumi.Input<string | undefined>;
     /**
      * Used internally by the Terraform Provider in order to remember the metrics enforced by Dynatrace
      */
-    requiredMetrics?: pulumi.Input<string>;
+    requiredMetrics?: pulumi.Input<string | undefined>;
     /**
      * If `true` Terraform will negotiate with the Dynatrace API about the recommended/enforced metrics to be applied. Any `metric` specified will be therefore ignored.
      */
-    useRecommendedMetrics?: pulumi.Input<boolean>;
+    useRecommendedMetrics?: pulumi.Input<boolean | undefined>;
 }
 
 /**
@@ -229,13 +229,13 @@ export interface AzureServiceArgs {
     /**
      * A list of metrics to be monitored for this service. Depending on the service Dynatrace insists on a set of recommended metrics to be configured for that service. If any of these recommended metrics is missing here, the Terraform Provider will automatically add them during `pulumi up`. This usually results in a non-empty plan, until all of the recommended metrics are present within your configuration. For services considered `built-in` by Dynatrace any metrics specified here will be ignored - Dynatrace enforces a fixed set of metrics for these services.
      */
-    metrics?: pulumi.Input<pulumi.Input<inputs.AzureServiceMetric>[]>;
+    metrics?: pulumi.Input<pulumi.Input<inputs.AzureServiceMetric>[] | undefined>;
     /**
      * The name of the supporting service.
      */
-    name?: pulumi.Input<string>;
+    name?: pulumi.Input<string | undefined>;
     /**
      * If `true` Terraform will negotiate with the Dynatrace API about the recommended/enforced metrics to be applied. Any `metric` specified will be therefore ignored.
      */
-    useRecommendedMetrics?: pulumi.Input<boolean>;
+    useRecommendedMetrics?: pulumi.Input<boolean | undefined>;
 }

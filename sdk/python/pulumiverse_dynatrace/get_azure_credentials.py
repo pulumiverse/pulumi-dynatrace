@@ -75,7 +75,7 @@ def get_azure_credentials(label: Optional[_builtins.str] = None,
     return AwaitableGetAzureCredentialsResult(
         id=pulumi.get(__ret__, 'id'),
         label=pulumi.get(__ret__, 'label'))
-def get_azure_credentials_output(label: Optional[pulumi.Input[_builtins.str]] = None,
+def get_azure_credentials_output(label: pulumi.Input[Optional[_builtins.str]] = None,
                                  opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetAzureCredentialsResult]:
     """
     The `AzureCredentials` data source allows the Azure credential ID to be retrieved by its label.

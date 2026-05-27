@@ -45,7 +45,7 @@ class LimitOutboundConnectionsArgs:
 @pulumi.input_type
 class _LimitOutboundConnectionsState:
     def __init__(__self__, *,
-                 allowed_outbound_connections: Optional[pulumi.Input['LimitOutboundConnectionsAllowedOutboundConnectionsArgs']] = None):
+                 allowed_outbound_connections: pulumi.Input[Optional['LimitOutboundConnectionsAllowedOutboundConnectionsArgs']] = None):
         """
         Input properties used for looking up and filtering LimitOutboundConnections resources.
 
@@ -56,14 +56,14 @@ class _LimitOutboundConnectionsState:
 
     @_builtins.property
     @pulumi.getter(name="allowedOutboundConnections")
-    def allowed_outbound_connections(self) -> Optional[pulumi.Input['LimitOutboundConnectionsAllowedOutboundConnectionsArgs']]:
+    def allowed_outbound_connections(self) -> pulumi.Input[Optional['LimitOutboundConnectionsAllowedOutboundConnectionsArgs']]:
         """
         no documentation available
         """
         return pulumi.get(self, "allowed_outbound_connections")
 
     @allowed_outbound_connections.setter
-    def allowed_outbound_connections(self, value: Optional[pulumi.Input['LimitOutboundConnectionsAllowedOutboundConnectionsArgs']]):
+    def allowed_outbound_connections(self, value: pulumi.Input[Optional['LimitOutboundConnectionsAllowedOutboundConnectionsArgs']]):
         pulumi.set(self, "allowed_outbound_connections", value)
 
 
@@ -73,7 +73,7 @@ class LimitOutboundConnections(pulumi.CustomResource):
     def __init__(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 allowed_outbound_connections: Optional[pulumi.Input[Union['LimitOutboundConnectionsAllowedOutboundConnectionsArgs', 'LimitOutboundConnectionsAllowedOutboundConnectionsArgsDict']]] = None,
+                 allowed_outbound_connections: pulumi.Input[Optional[Union['LimitOutboundConnectionsAllowedOutboundConnectionsArgs', 'LimitOutboundConnectionsAllowedOutboundConnectionsArgsDict']]] = None,
                  __props__=None):
         """
         > This resource requires the API token scopes **Read settings** (`settings.read`) and **Write settings** (`settings.write`)
@@ -132,7 +132,7 @@ class LimitOutboundConnections(pulumi.CustomResource):
     def _internal_init(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 allowed_outbound_connections: Optional[pulumi.Input[Union['LimitOutboundConnectionsAllowedOutboundConnectionsArgs', 'LimitOutboundConnectionsAllowedOutboundConnectionsArgsDict']]] = None,
+                 allowed_outbound_connections: pulumi.Input[Optional[Union['LimitOutboundConnectionsAllowedOutboundConnectionsArgs', 'LimitOutboundConnectionsAllowedOutboundConnectionsArgsDict']]] = None,
                  __props__=None):
         opts = pulumi.ResourceOptions.merge(_utilities.get_resource_opts_defaults(), opts)
         if not isinstance(opts, pulumi.ResourceOptions):
@@ -155,7 +155,7 @@ class LimitOutboundConnections(pulumi.CustomResource):
     def get(resource_name: str,
             id: pulumi.Input[str],
             opts: Optional[pulumi.ResourceOptions] = None,
-            allowed_outbound_connections: Optional[pulumi.Input[Union['LimitOutboundConnectionsAllowedOutboundConnectionsArgs', 'LimitOutboundConnectionsAllowedOutboundConnectionsArgsDict']]] = None) -> 'LimitOutboundConnections':
+            allowed_outbound_connections: pulumi.Input[Optional[Union['LimitOutboundConnectionsAllowedOutboundConnectionsArgs', 'LimitOutboundConnectionsAllowedOutboundConnectionsArgsDict']]] = None) -> 'LimitOutboundConnections':
         """
         Get an existing LimitOutboundConnections resource's state with the given name, id, and optional extra
         properties used to qualify the lookup.

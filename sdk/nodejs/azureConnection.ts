@@ -196,19 +196,19 @@ export interface AzureConnectionState {
     /**
      * no documentation available
      */
-    clientSecret?: pulumi.Input<inputs.AzureConnectionClientSecret>;
+    clientSecret?: pulumi.Input<inputs.AzureConnectionClientSecret | undefined>;
     /**
      * no documentation available
      */
-    federatedIdentityCredential?: pulumi.Input<inputs.AzureConnectionFederatedIdentityCredential>;
+    federatedIdentityCredential?: pulumi.Input<inputs.AzureConnectionFederatedIdentityCredential | undefined>;
     /**
      * The name of the connection
      */
-    name?: pulumi.Input<string>;
+    name?: pulumi.Input<string | undefined>;
     /**
      * Azure Authentication mechanism to be used by the connection. Possible Values: `clientSecret`, `federatedIdentityCredential`
      */
-    type?: pulumi.Input<string>;
+    type?: pulumi.Input<string | undefined>;
 }
 
 /**
@@ -218,15 +218,15 @@ export interface AzureConnectionArgs {
     /**
      * no documentation available
      */
-    clientSecret?: pulumi.Input<inputs.AzureConnectionClientSecret>;
+    clientSecret?: pulumi.Input<inputs.AzureConnectionClientSecret | undefined>;
     /**
      * no documentation available
      */
-    federatedIdentityCredential?: pulumi.Input<inputs.AzureConnectionFederatedIdentityCredential>;
+    federatedIdentityCredential?: pulumi.Input<inputs.AzureConnectionFederatedIdentityCredential | undefined>;
     /**
      * The name of the connection
      */
-    name?: pulumi.Input<string>;
+    name?: pulumi.Input<string | undefined>;
     /**
      * Azure Authentication mechanism to be used by the connection. Possible Values: `clientSecret`, `federatedIdentityCredential`
      */

@@ -21,7 +21,7 @@ class SpanAttributedArgs:
     def __init__(__self__, *,
                  key: pulumi.Input[_builtins.str],
                  masking: pulumi.Input[_builtins.str],
-                 persistent: Optional[pulumi.Input[_builtins.bool]] = None):
+                 persistent: pulumi.Input[Optional[_builtins.bool]] = None):
         """
         The set of arguments for constructing a SpanAttributed resource.
 
@@ -60,23 +60,23 @@ class SpanAttributedArgs:
 
     @_builtins.property
     @pulumi.getter
-    def persistent(self) -> Optional[pulumi.Input[_builtins.bool]]:
+    def persistent(self) -> pulumi.Input[Optional[_builtins.bool]]:
         """
         Prevents the Span Attribute from getting deleted when running `terraform destroy` - to be used for Span Attributes that are defined by default on every Dynatrace environment.
         """
         return pulumi.get(self, "persistent")
 
     @persistent.setter
-    def persistent(self, value: Optional[pulumi.Input[_builtins.bool]]):
+    def persistent(self, value: pulumi.Input[Optional[_builtins.bool]]):
         pulumi.set(self, "persistent", value)
 
 
 @pulumi.input_type
 class _SpanAttributedState:
     def __init__(__self__, *,
-                 key: Optional[pulumi.Input[_builtins.str]] = None,
-                 masking: Optional[pulumi.Input[_builtins.str]] = None,
-                 persistent: Optional[pulumi.Input[_builtins.bool]] = None):
+                 key: pulumi.Input[Optional[_builtins.str]] = None,
+                 masking: pulumi.Input[Optional[_builtins.str]] = None,
+                 persistent: pulumi.Input[Optional[_builtins.bool]] = None):
         """
         Input properties used for looking up and filtering SpanAttributed resources.
 
@@ -93,38 +93,38 @@ class _SpanAttributedState:
 
     @_builtins.property
     @pulumi.getter
-    def key(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def key(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Key of the span attribute to store
         """
         return pulumi.get(self, "key")
 
     @key.setter
-    def key(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def key(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "key", value)
 
     @_builtins.property
     @pulumi.getter
-    def masking(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def masking(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Possible Values: `MASK_ENTIRE_VALUE`, `MASK_ONLY_CONFIDENTIAL_DATA`, `NOT_MASKED`
         """
         return pulumi.get(self, "masking")
 
     @masking.setter
-    def masking(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def masking(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "masking", value)
 
     @_builtins.property
     @pulumi.getter
-    def persistent(self) -> Optional[pulumi.Input[_builtins.bool]]:
+    def persistent(self) -> pulumi.Input[Optional[_builtins.bool]]:
         """
         Prevents the Span Attribute from getting deleted when running `terraform destroy` - to be used for Span Attributes that are defined by default on every Dynatrace environment.
         """
         return pulumi.get(self, "persistent")
 
     @persistent.setter
-    def persistent(self, value: Optional[pulumi.Input[_builtins.bool]]):
+    def persistent(self, value: pulumi.Input[Optional[_builtins.bool]]):
         pulumi.set(self, "persistent", value)
 
 
@@ -134,9 +134,9 @@ class SpanAttributed(pulumi.CustomResource):
     def __init__(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 key: Optional[pulumi.Input[_builtins.str]] = None,
-                 masking: Optional[pulumi.Input[_builtins.str]] = None,
-                 persistent: Optional[pulumi.Input[_builtins.bool]] = None,
+                 key: pulumi.Input[Optional[_builtins.str]] = None,
+                 masking: pulumi.Input[Optional[_builtins.str]] = None,
+                 persistent: pulumi.Input[Optional[_builtins.bool]] = None,
                  __props__=None):
         """
         !> This resource API endpoint has been deprecated, please use AttributeAllowList and AttributeMasking instead.
@@ -201,9 +201,9 @@ class SpanAttributed(pulumi.CustomResource):
     def _internal_init(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 key: Optional[pulumi.Input[_builtins.str]] = None,
-                 masking: Optional[pulumi.Input[_builtins.str]] = None,
-                 persistent: Optional[pulumi.Input[_builtins.bool]] = None,
+                 key: pulumi.Input[Optional[_builtins.str]] = None,
+                 masking: pulumi.Input[Optional[_builtins.str]] = None,
+                 persistent: pulumi.Input[Optional[_builtins.bool]] = None,
                  __props__=None):
         opts = pulumi.ResourceOptions.merge(_utilities.get_resource_opts_defaults(), opts)
         if not isinstance(opts, pulumi.ResourceOptions):
@@ -230,9 +230,9 @@ class SpanAttributed(pulumi.CustomResource):
     def get(resource_name: str,
             id: pulumi.Input[str],
             opts: Optional[pulumi.ResourceOptions] = None,
-            key: Optional[pulumi.Input[_builtins.str]] = None,
-            masking: Optional[pulumi.Input[_builtins.str]] = None,
-            persistent: Optional[pulumi.Input[_builtins.bool]] = None) -> 'SpanAttributed':
+            key: pulumi.Input[Optional[_builtins.str]] = None,
+            masking: pulumi.Input[Optional[_builtins.str]] = None,
+            persistent: pulumi.Input[Optional[_builtins.bool]] = None) -> 'SpanAttributed':
         """
         Get an existing SpanAttributed resource's state with the given name, id, and optional extra
         properties used to qualify the lookup.

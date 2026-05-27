@@ -95,9 +95,9 @@ export class IamUser extends pulumi.CustomResource {
  * Input properties used for looking up and filtering IamUser resources.
  */
 export interface IamUserState {
-    email?: pulumi.Input<string>;
-    groups?: pulumi.Input<pulumi.Input<string>[]>;
-    uid?: pulumi.Input<string>;
+    email?: pulumi.Input<string | undefined>;
+    groups?: pulumi.Input<pulumi.Input<string>[] | undefined>;
+    uid?: pulumi.Input<string | undefined>;
 }
 
 /**
@@ -105,5 +105,5 @@ export interface IamUserState {
  */
 export interface IamUserArgs {
     email: pulumi.Input<string>;
-    groups?: pulumi.Input<pulumi.Input<string>[]>;
+    groups?: pulumi.Input<pulumi.Input<string>[] | undefined>;
 }

@@ -115,23 +115,23 @@ export interface BusinessEventsCapturingVariantsState {
     /**
      * Possible Values: `CONTAINS`, `ENDS_WITH`, `EQUALS`, `STARTS_WITH`
      */
-    contentTypeMatcher?: pulumi.Input<string>;
+    contentTypeMatcher?: pulumi.Input<string | undefined>;
     /**
      * Content-type match value
      */
-    contentTypeValue?: pulumi.Input<string>;
+    contentTypeValue?: pulumi.Input<string | undefined>;
     /**
      * Because this resource allows for ordering you may specify the ID of the resource instance that comes before this instance regarding order. If not specified when creating the setting will be added to the end of the list. If not specified during update the order will remain untouched
      */
-    insertAfter?: pulumi.Input<string>;
+    insertAfter?: pulumi.Input<string | undefined>;
     /**
      * Possible Values: `JSON`, `Raw`, `Text`, `URLencoded`, `XML`
      */
-    parser?: pulumi.Input<string>;
+    parser?: pulumi.Input<string | undefined>;
     /**
      * The scope of this setting (HOST, HOST_GROUP). Omit this property if you want to cover the whole environment.
      */
-    scope?: pulumi.Input<string>;
+    scope?: pulumi.Input<string | undefined>;
 }
 
 /**
@@ -149,7 +149,7 @@ export interface BusinessEventsCapturingVariantsArgs {
     /**
      * Because this resource allows for ordering you may specify the ID of the resource instance that comes before this instance regarding order. If not specified when creating the setting will be added to the end of the list. If not specified during update the order will remain untouched
      */
-    insertAfter?: pulumi.Input<string>;
+    insertAfter?: pulumi.Input<string | undefined>;
     /**
      * Possible Values: `JSON`, `Raw`, `Text`, `URLencoded`, `XML`
      */
@@ -157,5 +157,5 @@ export interface BusinessEventsCapturingVariantsArgs {
     /**
      * The scope of this setting (HOST, HOST_GROUP). Omit this property if you want to cover the whole environment.
      */
-    scope?: pulumi.Input<string>;
+    scope?: pulumi.Input<string | undefined>;
 }

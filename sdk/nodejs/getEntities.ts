@@ -90,8 +90,8 @@ export function getEntitiesOutput(args?: GetEntitiesOutputArgs, opts?: pulumi.In
  * A collection of arguments for invoking getEntities.
  */
 export interface GetEntitiesOutputArgs {
-    entitySelector?: pulumi.Input<string>;
-    from?: pulumi.Input<string>;
-    to?: pulumi.Input<string>;
-    type?: pulumi.Input<string>;
+    entitySelector?: pulumi.Input<string | undefined>;
+    from?: pulumi.Input<string | undefined>;
+    to?: pulumi.Input<string | undefined>;
+    type?: pulumi.Input<string | undefined>;
 }

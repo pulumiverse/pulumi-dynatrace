@@ -120,19 +120,19 @@ export interface TransactionStartFiltersState {
     /**
      * You can use * as wildcard. For example use A* to trace all transaction IDs that start with A.
      */
-    cicsTerminalTransactionIds?: pulumi.Input<pulumi.Input<string>[]>;
+    cicsTerminalTransactionIds?: pulumi.Input<pulumi.Input<string>[] | undefined>;
     /**
      * You can use * as wildcard. For example use A* to trace all transaction IDs that start with A.
      */
-    cicsTransactionIds?: pulumi.Input<pulumi.Input<string>[]>;
+    cicsTransactionIds?: pulumi.Input<pulumi.Input<string>[] | undefined>;
     /**
      * You can use * as wildcard. For example use A* to trace all transaction IDs that start with A.
      */
-    imsTerminalTransactionIds?: pulumi.Input<pulumi.Input<string>[]>;
+    imsTerminalTransactionIds?: pulumi.Input<pulumi.Input<string>[] | undefined>;
     /**
      * You can use * as wildcard. For example use A* to trace all transaction IDs that start with A.
      */
-    imsTransactionIds?: pulumi.Input<pulumi.Input<string>[]>;
+    imsTransactionIds?: pulumi.Input<pulumi.Input<string>[] | undefined>;
 }
 
 /**
@@ -142,17 +142,17 @@ export interface TransactionStartFiltersArgs {
     /**
      * You can use * as wildcard. For example use A* to trace all transaction IDs that start with A.
      */
-    cicsTerminalTransactionIds?: pulumi.Input<pulumi.Input<string>[]>;
+    cicsTerminalTransactionIds?: pulumi.Input<pulumi.Input<string>[] | undefined>;
     /**
      * You can use * as wildcard. For example use A* to trace all transaction IDs that start with A.
      */
-    cicsTransactionIds?: pulumi.Input<pulumi.Input<string>[]>;
+    cicsTransactionIds?: pulumi.Input<pulumi.Input<string>[] | undefined>;
     /**
      * You can use * as wildcard. For example use A* to trace all transaction IDs that start with A.
      */
-    imsTerminalTransactionIds?: pulumi.Input<pulumi.Input<string>[]>;
+    imsTerminalTransactionIds?: pulumi.Input<pulumi.Input<string>[] | undefined>;
     /**
      * You can use * as wildcard. For example use A* to trace all transaction IDs that start with A.
      */
-    imsTransactionIds?: pulumi.Input<pulumi.Input<string>[]>;
+    imsTransactionIds?: pulumi.Input<pulumi.Input<string>[] | undefined>;
 }

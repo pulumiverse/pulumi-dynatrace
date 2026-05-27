@@ -145,11 +145,11 @@ def get_entity(entity_selector: Optional[_builtins.str] = None,
         properties=pulumi.get(__ret__, 'properties'),
         to=pulumi.get(__ret__, 'to'),
         type=pulumi.get(__ret__, 'type'))
-def get_entity_output(entity_selector: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                      from_: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                      name: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                      to: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                      type: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
+def get_entity_output(entity_selector: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                      from_: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                      name: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                      to: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                      type: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
                       opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetEntityResult]:
     """
     The entity data source allows the entity ID to be retrieved by its name and type.

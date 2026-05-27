@@ -22,7 +22,7 @@ __all__ = ['PgAnomaliesArgs', 'PgAnomalies']
 class PgAnomaliesArgs:
     def __init__(__self__, *,
                  pg_id: pulumi.Input[_builtins.str],
-                 availability: Optional[pulumi.Input['PgAnomaliesAvailabilityArgs']] = None):
+                 availability: pulumi.Input[Optional['PgAnomaliesAvailabilityArgs']] = None):
         """
         The set of arguments for constructing a PgAnomalies resource.
 
@@ -47,22 +47,22 @@ class PgAnomaliesArgs:
 
     @_builtins.property
     @pulumi.getter
-    def availability(self) -> Optional[pulumi.Input['PgAnomaliesAvailabilityArgs']]:
+    def availability(self) -> pulumi.Input[Optional['PgAnomaliesAvailabilityArgs']]:
         """
         Configuration of the availability monitoring for the process group.
         """
         return pulumi.get(self, "availability")
 
     @availability.setter
-    def availability(self, value: Optional[pulumi.Input['PgAnomaliesAvailabilityArgs']]):
+    def availability(self, value: pulumi.Input[Optional['PgAnomaliesAvailabilityArgs']]):
         pulumi.set(self, "availability", value)
 
 
 @pulumi.input_type
 class _PgAnomaliesState:
     def __init__(__self__, *,
-                 availability: Optional[pulumi.Input['PgAnomaliesAvailabilityArgs']] = None,
-                 pg_id: Optional[pulumi.Input[_builtins.str]] = None):
+                 availability: pulumi.Input[Optional['PgAnomaliesAvailabilityArgs']] = None,
+                 pg_id: pulumi.Input[Optional[_builtins.str]] = None):
         """
         Input properties used for looking up and filtering PgAnomalies resources.
 
@@ -76,26 +76,26 @@ class _PgAnomaliesState:
 
     @_builtins.property
     @pulumi.getter
-    def availability(self) -> Optional[pulumi.Input['PgAnomaliesAvailabilityArgs']]:
+    def availability(self) -> pulumi.Input[Optional['PgAnomaliesAvailabilityArgs']]:
         """
         Configuration of the availability monitoring for the process group.
         """
         return pulumi.get(self, "availability")
 
     @availability.setter
-    def availability(self, value: Optional[pulumi.Input['PgAnomaliesAvailabilityArgs']]):
+    def availability(self, value: pulumi.Input[Optional['PgAnomaliesAvailabilityArgs']]):
         pulumi.set(self, "availability", value)
 
     @_builtins.property
     @pulumi.getter(name="pgId")
-    def pg_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def pg_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The ID of the process group
         """
         return pulumi.get(self, "pg_id")
 
     @pg_id.setter
-    def pg_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def pg_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "pg_id", value)
 
 
@@ -105,8 +105,8 @@ class PgAnomalies(pulumi.CustomResource):
     def __init__(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 availability: Optional[pulumi.Input[Union['PgAnomaliesAvailabilityArgs', 'PgAnomaliesAvailabilityArgsDict']]] = None,
-                 pg_id: Optional[pulumi.Input[_builtins.str]] = None,
+                 availability: pulumi.Input[Optional[Union['PgAnomaliesAvailabilityArgs', 'PgAnomaliesAvailabilityArgsDict']]] = None,
+                 pg_id: pulumi.Input[Optional[_builtins.str]] = None,
                  __props__=None):
         """
         !> This resource is utilizing an older API endpoint, please use PgAlerting instead.
@@ -170,8 +170,8 @@ class PgAnomalies(pulumi.CustomResource):
     def _internal_init(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 availability: Optional[pulumi.Input[Union['PgAnomaliesAvailabilityArgs', 'PgAnomaliesAvailabilityArgsDict']]] = None,
-                 pg_id: Optional[pulumi.Input[_builtins.str]] = None,
+                 availability: pulumi.Input[Optional[Union['PgAnomaliesAvailabilityArgs', 'PgAnomaliesAvailabilityArgsDict']]] = None,
+                 pg_id: pulumi.Input[Optional[_builtins.str]] = None,
                  __props__=None):
         opts = pulumi.ResourceOptions.merge(_utilities.get_resource_opts_defaults(), opts)
         if not isinstance(opts, pulumi.ResourceOptions):
@@ -195,8 +195,8 @@ class PgAnomalies(pulumi.CustomResource):
     def get(resource_name: str,
             id: pulumi.Input[str],
             opts: Optional[pulumi.ResourceOptions] = None,
-            availability: Optional[pulumi.Input[Union['PgAnomaliesAvailabilityArgs', 'PgAnomaliesAvailabilityArgsDict']]] = None,
-            pg_id: Optional[pulumi.Input[_builtins.str]] = None) -> 'PgAnomalies':
+            availability: pulumi.Input[Optional[Union['PgAnomaliesAvailabilityArgs', 'PgAnomaliesAvailabilityArgsDict']]] = None,
+            pg_id: pulumi.Input[Optional[_builtins.str]] = None) -> 'PgAnomalies':
         """
         Get an existing PgAnomalies resource's state with the given name, id, and optional extra
         properties used to qualify the lookup.

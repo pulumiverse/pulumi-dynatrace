@@ -222,43 +222,43 @@ export interface NetworkMonitorState {
     /**
      * Description of the monitor
      */
-    description?: pulumi.Input<string>;
+    description?: pulumi.Input<string | undefined>;
     /**
      * If true, the monitor is enabled
      */
-    enabled?: pulumi.Input<boolean>;
+    enabled?: pulumi.Input<boolean | undefined>;
     /**
      * Frequency of the monitor, in minutes
      */
-    frequencyMin?: pulumi.Input<number>;
+    frequencyMin?: pulumi.Input<number | undefined>;
     /**
      * The locations to which the monitor is assigned
      */
-    locations?: pulumi.Input<pulumi.Input<string>[]>;
+    locations?: pulumi.Input<pulumi.Input<string>[] | undefined>;
     /**
      * Name of the monitor
      */
-    name?: pulumi.Input<string>;
+    name?: pulumi.Input<string | undefined>;
     /**
      * Outage handling configuration
      */
-    outageHandling?: pulumi.Input<inputs.NetworkMonitorOutageHandling>;
+    outageHandling?: pulumi.Input<inputs.NetworkMonitorOutageHandling | undefined>;
     /**
      * Performance thresholds configuration
      */
-    performanceThresholds?: pulumi.Input<inputs.NetworkMonitorPerformanceThresholds>;
+    performanceThresholds?: pulumi.Input<inputs.NetworkMonitorPerformanceThresholds | undefined>;
     /**
      * The steps of the monitor
      */
-    steps?: pulumi.Input<pulumi.Input<inputs.NetworkMonitorStep>[]>;
+    steps?: pulumi.Input<pulumi.Input<inputs.NetworkMonitorStep>[] | undefined>;
     /**
      * A set of tags assigned to the monitor.
      */
-    tags?: pulumi.Input<pulumi.Input<inputs.NetworkMonitorTag>[]>;
+    tags?: pulumi.Input<pulumi.Input<inputs.NetworkMonitorTag>[] | undefined>;
     /**
      * Type of the monitor, possible values: `MULTI_PROTOCOL`
      */
-    type?: pulumi.Input<string>;
+    type?: pulumi.Input<string | undefined>;
 }
 
 /**
@@ -268,15 +268,15 @@ export interface NetworkMonitorArgs {
     /**
      * Description of the monitor
      */
-    description?: pulumi.Input<string>;
+    description?: pulumi.Input<string | undefined>;
     /**
      * If true, the monitor is enabled
      */
-    enabled?: pulumi.Input<boolean>;
+    enabled?: pulumi.Input<boolean | undefined>;
     /**
      * Frequency of the monitor, in minutes
      */
-    frequencyMin?: pulumi.Input<number>;
+    frequencyMin?: pulumi.Input<number | undefined>;
     /**
      * The locations to which the monitor is assigned
      */
@@ -284,15 +284,15 @@ export interface NetworkMonitorArgs {
     /**
      * Name of the monitor
      */
-    name?: pulumi.Input<string>;
+    name?: pulumi.Input<string | undefined>;
     /**
      * Outage handling configuration
      */
-    outageHandling?: pulumi.Input<inputs.NetworkMonitorOutageHandling>;
+    outageHandling?: pulumi.Input<inputs.NetworkMonitorOutageHandling | undefined>;
     /**
      * Performance thresholds configuration
      */
-    performanceThresholds?: pulumi.Input<inputs.NetworkMonitorPerformanceThresholds>;
+    performanceThresholds?: pulumi.Input<inputs.NetworkMonitorPerformanceThresholds | undefined>;
     /**
      * The steps of the monitor
      */
@@ -300,7 +300,7 @@ export interface NetworkMonitorArgs {
     /**
      * A set of tags assigned to the monitor.
      */
-    tags?: pulumi.Input<pulumi.Input<inputs.NetworkMonitorTag>[]>;
+    tags?: pulumi.Input<pulumi.Input<inputs.NetworkMonitorTag>[] | undefined>;
     /**
      * Type of the monitor, possible values: `MULTI_PROTOCOL`
      */

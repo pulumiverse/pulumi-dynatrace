@@ -85,7 +85,7 @@ export interface RumOverloadPreventionState {
     /**
      * Once this limit is reached, Dynatrace [throttles the number of captured user sessions](https://dt-url.net/fm3v0p7g).
      */
-    overloadPreventionLimit?: pulumi.Input<number>;
+    overloadPreventionLimit?: pulumi.Input<number | undefined>;
 }
 
 /**

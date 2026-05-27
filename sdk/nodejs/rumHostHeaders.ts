@@ -91,11 +91,11 @@ export interface RumHostHeadersState {
     /**
      * HTTP header format
      */
-    headerName?: pulumi.Input<string>;
+    headerName?: pulumi.Input<string | undefined>;
     /**
      * Because this resource allows for ordering you may specify the ID of the resource instance that comes before this instance regarding order. If not specified when creating the setting will be added to the end of the list. If not specified during update the order will remain untouched
      */
-    insertAfter?: pulumi.Input<string>;
+    insertAfter?: pulumi.Input<string | undefined>;
 }
 
 /**
@@ -109,5 +109,5 @@ export interface RumHostHeadersArgs {
     /**
      * Because this resource allows for ordering you may specify the ID of the resource instance that comes before this instance regarding order. If not specified when creating the setting will be added to the end of the list. If not specified during update the order will remain untouched
      */
-    insertAfter?: pulumi.Input<string>;
+    insertAfter?: pulumi.Input<string | undefined>;
 }

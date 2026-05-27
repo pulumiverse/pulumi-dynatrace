@@ -99,15 +99,15 @@ export interface NetworkTrafficState {
     /**
      * Providing a host IP address, you will exclude network traffic only in calculating connectivity (other metrics will still be calculated).
      */
-    excludeIp?: pulumi.Input<inputs.NetworkTrafficExcludeIp>;
+    excludeIp?: pulumi.Input<inputs.NetworkTrafficExcludeIp | undefined>;
     /**
      * Selecting a network interface, you will exclude all network traffic on that interface from being monitored. You can select from the list below what to not monitor, or input it manually using the "other one" option.
      */
-    excludeNic?: pulumi.Input<inputs.NetworkTrafficExcludeNic>;
+    excludeNic?: pulumi.Input<inputs.NetworkTrafficExcludeNic | undefined>;
     /**
      * The scope of this settings. If the settings should cover the whole environment, just don't specify any scope.
      */
-    hostId?: pulumi.Input<string>;
+    hostId?: pulumi.Input<string | undefined>;
 }
 
 /**
@@ -117,11 +117,11 @@ export interface NetworkTrafficArgs {
     /**
      * Providing a host IP address, you will exclude network traffic only in calculating connectivity (other metrics will still be calculated).
      */
-    excludeIp?: pulumi.Input<inputs.NetworkTrafficExcludeIp>;
+    excludeIp?: pulumi.Input<inputs.NetworkTrafficExcludeIp | undefined>;
     /**
      * Selecting a network interface, you will exclude all network traffic on that interface from being monitored. You can select from the list below what to not monitor, or input it manually using the "other one" option.
      */
-    excludeNic?: pulumi.Input<inputs.NetworkTrafficExcludeNic>;
+    excludeNic?: pulumi.Input<inputs.NetworkTrafficExcludeNic | undefined>;
     /**
      * The scope of this settings. If the settings should cover the whole environment, just don't specify any scope.
      */

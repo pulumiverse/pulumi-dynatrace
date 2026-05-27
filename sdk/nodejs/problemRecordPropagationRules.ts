@@ -103,15 +103,15 @@ export interface ProblemRecordPropagationRulesState {
     /**
      * This setting is enabled (`true`) or disabled (`false`)
      */
-    enabled?: pulumi.Input<boolean>;
+    enabled?: pulumi.Input<boolean | undefined>;
     /**
      * Attribute key from the event that will be propagated.
      */
-    sourceAttributeKey?: pulumi.Input<string>;
+    sourceAttributeKey?: pulumi.Input<string | undefined>;
     /**
      * Attribute key under which the propagated event data will be stored on the problem.
      */
-    targetAttributeKey?: pulumi.Input<string>;
+    targetAttributeKey?: pulumi.Input<string | undefined>;
 }
 
 /**

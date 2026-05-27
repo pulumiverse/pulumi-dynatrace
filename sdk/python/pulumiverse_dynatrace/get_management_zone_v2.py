@@ -95,7 +95,7 @@ def get_management_zone_v2(name: Optional[_builtins.str] = None,
         legacy_id=pulumi.get(__ret__, 'legacy_id'),
         name=pulumi.get(__ret__, 'name'),
         settings20_id=pulumi.get(__ret__, 'settings20_id'))
-def get_management_zone_v2_output(name: Optional[pulumi.Input[_builtins.str]] = None,
+def get_management_zone_v2_output(name: pulumi.Input[Optional[_builtins.str]] = None,
                                   opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetManagementZoneV2Result]:
     """
     The management zone data source allows the management zone ID to be retrieved by its name.

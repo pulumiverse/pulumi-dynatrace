@@ -169,59 +169,59 @@ export interface K8sCredentialsState {
     /**
      * Monitoring is enabled (`true`) or disabled (`false`) for given credentials configuration.  If not set on creation, the `true` value is used.  If the field is omitted during an update, the old value remains unaffected.
      */
-    active?: pulumi.Input<boolean>;
+    active?: pulumi.Input<boolean | undefined>;
     /**
      * Active Gate group to filter active gates for this credentials.
      */
-    activeGateGroup?: pulumi.Input<string>;
+    activeGateGroup?: pulumi.Input<string | undefined>;
     /**
      * The service account bearer token for the Kubernetes API server.  Submit your token on creation or update of the configuration. For security reasons, GET requests return this field as `null`.  If the field is omitted during an update, the old value remains unaffected.
      */
-    authToken?: pulumi.Input<string>;
+    authToken?: pulumi.Input<string | undefined>;
     /**
      * The check of SSL certificates is enabled (`true`) or disabled (`false`) for the Kubernetes cluster.  If not set on creation, the `true` value is used.  If the field is omitted during an update, the old value remains unaffected.
      */
-    certificateCheckEnabled?: pulumi.Input<boolean>;
+    certificateCheckEnabled?: pulumi.Input<boolean | undefined>;
     /**
      * Inclusion of all Davis relevant events is enabled (`true`) or disabled (`false`) for the Kubernetes cluster. If the field is omitted during an update, the old value remains unaffected
      */
-    davisEventsIntegrationEnabled?: pulumi.Input<boolean>;
+    davisEventsIntegrationEnabled?: pulumi.Input<boolean | undefined>;
     /**
      * The URL of the Kubernetes API server.  It must be unique within a Dynatrace environment.  The URL must valid according to RFC 2396. Leading or trailing whitespaces are not allowed.
      */
-    endpointUrl?: pulumi.Input<string>;
+    endpointUrl?: pulumi.Input<string | undefined>;
     /**
      * Event analysis and alerting is (`true`) or disabled (`false`) for the Kubernetes cluster. If the field is omitted during an update, the old value remains unaffected.
      */
-    eventAnalysisAndAlertingEnabled?: pulumi.Input<boolean>;
+    eventAnalysisAndAlertingEnabled?: pulumi.Input<boolean | undefined>;
     /**
      * Kubernetes event filters based on field-selectors. If set to `null` on creation, no events field selectors are subscribed. If set to `null` on update, no change of stored events field selectors is applied. Set an empty list to clear all events field selectors.
      */
-    eventsFieldSelectors?: pulumi.Input<pulumi.Input<inputs.K8sCredentialsEventsFieldSelector>[]>;
+    eventsFieldSelectors?: pulumi.Input<pulumi.Input<inputs.K8sCredentialsEventsFieldSelector>[] | undefined>;
     /**
      * Monitoring of events is enabled (`true`) or disabled (`false`) for the Kubernetes cluster. Event monitoring depends on the active state of this configuration to be true.  If not set on creation, the `false` value is used.  If the field is omitted during an update, the old value remains unaffected.
      */
-    eventsIntegrationEnabled?: pulumi.Input<boolean>;
+    eventsIntegrationEnabled?: pulumi.Input<boolean | undefined>;
     /**
      * Verify hostname in certificate against Kubernetes API URL
      */
-    hostnameVerification?: pulumi.Input<boolean>;
+    hostnameVerification?: pulumi.Input<boolean | undefined>;
     /**
      * The name of the Kubernetes credentials configuration.  Allowed characters are letters, numbers, whitespaces, and the following characters: `.+-_`. Leading or trailing whitespace is not allowed.
      */
-    label?: pulumi.Input<string>;
+    label?: pulumi.Input<string | undefined>;
     /**
      * Prometheus exporters integration is enabled (`true`) or disabled (`false`) for the Kubernetes cluster.If the field is omitted during an update, the old value remains unaffected
      */
-    prometheusExporters?: pulumi.Input<boolean>;
+    prometheusExporters?: pulumi.Input<boolean | undefined>;
     /**
      * Any attributes that aren't yet supported by this provider
      */
-    unknowns?: pulumi.Input<string>;
+    unknowns?: pulumi.Input<string | undefined>;
     /**
      * Workload and cloud application processing is enabled (`true`) or disabled (`false`) for the Kubernetes cluster. If the field is omitted during an update, the old value remains unaffected.
      */
-    workloadIntegrationEnabled?: pulumi.Input<boolean>;
+    workloadIntegrationEnabled?: pulumi.Input<boolean | undefined>;
 }
 
 /**
@@ -231,43 +231,43 @@ export interface K8sCredentialsArgs {
     /**
      * Monitoring is enabled (`true`) or disabled (`false`) for given credentials configuration.  If not set on creation, the `true` value is used.  If the field is omitted during an update, the old value remains unaffected.
      */
-    active?: pulumi.Input<boolean>;
+    active?: pulumi.Input<boolean | undefined>;
     /**
      * Active Gate group to filter active gates for this credentials.
      */
-    activeGateGroup?: pulumi.Input<string>;
+    activeGateGroup?: pulumi.Input<string | undefined>;
     /**
      * The service account bearer token for the Kubernetes API server.  Submit your token on creation or update of the configuration. For security reasons, GET requests return this field as `null`.  If the field is omitted during an update, the old value remains unaffected.
      */
-    authToken?: pulumi.Input<string>;
+    authToken?: pulumi.Input<string | undefined>;
     /**
      * The check of SSL certificates is enabled (`true`) or disabled (`false`) for the Kubernetes cluster.  If not set on creation, the `true` value is used.  If the field is omitted during an update, the old value remains unaffected.
      */
-    certificateCheckEnabled?: pulumi.Input<boolean>;
+    certificateCheckEnabled?: pulumi.Input<boolean | undefined>;
     /**
      * Inclusion of all Davis relevant events is enabled (`true`) or disabled (`false`) for the Kubernetes cluster. If the field is omitted during an update, the old value remains unaffected
      */
-    davisEventsIntegrationEnabled?: pulumi.Input<boolean>;
+    davisEventsIntegrationEnabled?: pulumi.Input<boolean | undefined>;
     /**
      * The URL of the Kubernetes API server.  It must be unique within a Dynatrace environment.  The URL must valid according to RFC 2396. Leading or trailing whitespaces are not allowed.
      */
-    endpointUrl?: pulumi.Input<string>;
+    endpointUrl?: pulumi.Input<string | undefined>;
     /**
      * Event analysis and alerting is (`true`) or disabled (`false`) for the Kubernetes cluster. If the field is omitted during an update, the old value remains unaffected.
      */
-    eventAnalysisAndAlertingEnabled?: pulumi.Input<boolean>;
+    eventAnalysisAndAlertingEnabled?: pulumi.Input<boolean | undefined>;
     /**
      * Kubernetes event filters based on field-selectors. If set to `null` on creation, no events field selectors are subscribed. If set to `null` on update, no change of stored events field selectors is applied. Set an empty list to clear all events field selectors.
      */
-    eventsFieldSelectors?: pulumi.Input<pulumi.Input<inputs.K8sCredentialsEventsFieldSelector>[]>;
+    eventsFieldSelectors?: pulumi.Input<pulumi.Input<inputs.K8sCredentialsEventsFieldSelector>[] | undefined>;
     /**
      * Monitoring of events is enabled (`true`) or disabled (`false`) for the Kubernetes cluster. Event monitoring depends on the active state of this configuration to be true.  If not set on creation, the `false` value is used.  If the field is omitted during an update, the old value remains unaffected.
      */
-    eventsIntegrationEnabled?: pulumi.Input<boolean>;
+    eventsIntegrationEnabled?: pulumi.Input<boolean | undefined>;
     /**
      * Verify hostname in certificate against Kubernetes API URL
      */
-    hostnameVerification?: pulumi.Input<boolean>;
+    hostnameVerification?: pulumi.Input<boolean | undefined>;
     /**
      * The name of the Kubernetes credentials configuration.  Allowed characters are letters, numbers, whitespaces, and the following characters: `.+-_`. Leading or trailing whitespace is not allowed.
      */
@@ -275,13 +275,13 @@ export interface K8sCredentialsArgs {
     /**
      * Prometheus exporters integration is enabled (`true`) or disabled (`false`) for the Kubernetes cluster.If the field is omitted during an update, the old value remains unaffected
      */
-    prometheusExporters?: pulumi.Input<boolean>;
+    prometheusExporters?: pulumi.Input<boolean | undefined>;
     /**
      * Any attributes that aren't yet supported by this provider
      */
-    unknowns?: pulumi.Input<string>;
+    unknowns?: pulumi.Input<string | undefined>;
     /**
      * Workload and cloud application processing is enabled (`true`) or disabled (`false`) for the Kubernetes cluster. If the field is omitted during an update, the old value remains unaffected.
      */
-    workloadIntegrationEnabled?: pulumi.Input<boolean>;
+    workloadIntegrationEnabled?: pulumi.Input<boolean | undefined>;
 }

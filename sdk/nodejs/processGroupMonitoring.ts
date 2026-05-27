@@ -94,11 +94,11 @@ export interface ProcessGroupMonitoringState {
     /**
      * Possible Values: `DEFAULT`, `MONITORING_OFF`, `MONITORING_ON`
      */
-    monitoringState?: pulumi.Input<string>;
+    monitoringState?: pulumi.Input<string | undefined>;
     /**
      * The scope of this settings. If the settings should cover the whole environment, just don't specify any scope.
      */
-    processGroupId?: pulumi.Input<string>;
+    processGroupId?: pulumi.Input<string | undefined>;
 }
 
 /**

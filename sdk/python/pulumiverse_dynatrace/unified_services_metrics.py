@@ -20,7 +20,7 @@ __all__ = ['UnifiedServicesMetricsArgs', 'UnifiedServicesMetrics']
 class UnifiedServicesMetricsArgs:
     def __init__(__self__, *,
                  enable_endpoint_metrics: pulumi.Input[_builtins.bool],
-                 service_id: Optional[pulumi.Input[_builtins.str]] = None):
+                 service_id: pulumi.Input[Optional[_builtins.str]] = None):
         """
         The set of arguments for constructing a UnifiedServicesMetrics resource.
 
@@ -45,22 +45,22 @@ class UnifiedServicesMetricsArgs:
 
     @_builtins.property
     @pulumi.getter(name="serviceId")
-    def service_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def service_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The scope of this settings. If the settings should cover the whole environment, just don't specify any scope.
         """
         return pulumi.get(self, "service_id")
 
     @service_id.setter
-    def service_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def service_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "service_id", value)
 
 
 @pulumi.input_type
 class _UnifiedServicesMetricsState:
     def __init__(__self__, *,
-                 enable_endpoint_metrics: Optional[pulumi.Input[_builtins.bool]] = None,
-                 service_id: Optional[pulumi.Input[_builtins.str]] = None):
+                 enable_endpoint_metrics: pulumi.Input[Optional[_builtins.bool]] = None,
+                 service_id: pulumi.Input[Optional[_builtins.str]] = None):
         """
         Input properties used for looking up and filtering UnifiedServicesMetrics resources.
 
@@ -74,26 +74,26 @@ class _UnifiedServicesMetricsState:
 
     @_builtins.property
     @pulumi.getter(name="enableEndpointMetrics")
-    def enable_endpoint_metrics(self) -> Optional[pulumi.Input[_builtins.bool]]:
+    def enable_endpoint_metrics(self) -> pulumi.Input[Optional[_builtins.bool]]:
         """
         Should metrics be written for endpoints? Please be aware that this setting has billing implications. Check out this [documentation](https://dt-url.net/td23cgh) for further details.
         """
         return pulumi.get(self, "enable_endpoint_metrics")
 
     @enable_endpoint_metrics.setter
-    def enable_endpoint_metrics(self, value: Optional[pulumi.Input[_builtins.bool]]):
+    def enable_endpoint_metrics(self, value: pulumi.Input[Optional[_builtins.bool]]):
         pulumi.set(self, "enable_endpoint_metrics", value)
 
     @_builtins.property
     @pulumi.getter(name="serviceId")
-    def service_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def service_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The scope of this settings. If the settings should cover the whole environment, just don't specify any scope.
         """
         return pulumi.get(self, "service_id")
 
     @service_id.setter
-    def service_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def service_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "service_id", value)
 
 
@@ -103,8 +103,8 @@ class UnifiedServicesMetrics(pulumi.CustomResource):
     def __init__(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 enable_endpoint_metrics: Optional[pulumi.Input[_builtins.bool]] = None,
-                 service_id: Optional[pulumi.Input[_builtins.str]] = None,
+                 enable_endpoint_metrics: pulumi.Input[Optional[_builtins.bool]] = None,
+                 service_id: pulumi.Input[Optional[_builtins.str]] = None,
                  __props__=None):
         """
         > This resource requires the API token scopes **Read settings** (`settings.read`) and **Write settings** (`settings.write`)
@@ -164,8 +164,8 @@ class UnifiedServicesMetrics(pulumi.CustomResource):
     def _internal_init(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 enable_endpoint_metrics: Optional[pulumi.Input[_builtins.bool]] = None,
-                 service_id: Optional[pulumi.Input[_builtins.str]] = None,
+                 enable_endpoint_metrics: pulumi.Input[Optional[_builtins.bool]] = None,
+                 service_id: pulumi.Input[Optional[_builtins.str]] = None,
                  __props__=None):
         opts = pulumi.ResourceOptions.merge(_utilities.get_resource_opts_defaults(), opts)
         if not isinstance(opts, pulumi.ResourceOptions):
@@ -189,8 +189,8 @@ class UnifiedServicesMetrics(pulumi.CustomResource):
     def get(resource_name: str,
             id: pulumi.Input[str],
             opts: Optional[pulumi.ResourceOptions] = None,
-            enable_endpoint_metrics: Optional[pulumi.Input[_builtins.bool]] = None,
-            service_id: Optional[pulumi.Input[_builtins.str]] = None) -> 'UnifiedServicesMetrics':
+            enable_endpoint_metrics: pulumi.Input[Optional[_builtins.bool]] = None,
+            service_id: pulumi.Input[Optional[_builtins.str]] = None) -> 'UnifiedServicesMetrics':
         """
         Get an existing UnifiedServicesMetrics resource's state with the given name, id, and optional extra
         properties used to qualify the lookup.

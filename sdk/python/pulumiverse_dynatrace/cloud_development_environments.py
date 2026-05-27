@@ -19,7 +19,7 @@ __all__ = ['CloudDevelopmentEnvironmentsArgs', 'CloudDevelopmentEnvironments']
 @pulumi.input_type
 class CloudDevelopmentEnvironmentsArgs:
     def __init__(__self__, *,
-                 cloud_development_environments: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None):
+                 cloud_development_environments: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None):
         """
         The set of arguments for constructing a CloudDevelopmentEnvironments resource.
 
@@ -30,21 +30,21 @@ class CloudDevelopmentEnvironmentsArgs:
 
     @_builtins.property
     @pulumi.getter(name="cloudDevelopmentEnvironments")
-    def cloud_development_environments(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]:
+    def cloud_development_environments(self) -> pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]:
         """
         The URL to allow app development from. E.g. `https://*.my-company.my-cde-provider.com`.
         """
         return pulumi.get(self, "cloud_development_environments")
 
     @cloud_development_environments.setter
-    def cloud_development_environments(self, value: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]):
+    def cloud_development_environments(self, value: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "cloud_development_environments", value)
 
 
 @pulumi.input_type
 class _CloudDevelopmentEnvironmentsState:
     def __init__(__self__, *,
-                 cloud_development_environments: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None):
+                 cloud_development_environments: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None):
         """
         Input properties used for looking up and filtering CloudDevelopmentEnvironments resources.
 
@@ -55,14 +55,14 @@ class _CloudDevelopmentEnvironmentsState:
 
     @_builtins.property
     @pulumi.getter(name="cloudDevelopmentEnvironments")
-    def cloud_development_environments(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]:
+    def cloud_development_environments(self) -> pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]:
         """
         The URL to allow app development from. E.g. `https://*.my-company.my-cde-provider.com`.
         """
         return pulumi.get(self, "cloud_development_environments")
 
     @cloud_development_environments.setter
-    def cloud_development_environments(self, value: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]):
+    def cloud_development_environments(self, value: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "cloud_development_environments", value)
 
 
@@ -72,7 +72,7 @@ class CloudDevelopmentEnvironments(pulumi.CustomResource):
     def __init__(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 cloud_development_environments: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 cloud_development_environments: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
                  __props__=None):
         """
         > This resource requires the API token scopes **Read settings** (`settings.read`) and **Write settings** (`settings.write`)
@@ -131,7 +131,7 @@ class CloudDevelopmentEnvironments(pulumi.CustomResource):
     def _internal_init(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 cloud_development_environments: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 cloud_development_environments: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
                  __props__=None):
         opts = pulumi.ResourceOptions.merge(_utilities.get_resource_opts_defaults(), opts)
         if not isinstance(opts, pulumi.ResourceOptions):
@@ -152,7 +152,7 @@ class CloudDevelopmentEnvironments(pulumi.CustomResource):
     def get(resource_name: str,
             id: pulumi.Input[str],
             opts: Optional[pulumi.ResourceOptions] = None,
-            cloud_development_environments: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None) -> 'CloudDevelopmentEnvironments':
+            cloud_development_environments: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None) -> 'CloudDevelopmentEnvironments':
         """
         Get an existing CloudDevelopmentEnvironments resource's state with the given name, id, and optional extra
         properties used to qualify the lookup.

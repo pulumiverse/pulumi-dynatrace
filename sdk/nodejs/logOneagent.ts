@@ -208,63 +208,63 @@ export interface LogOneagentState {
     /**
      * Enables automatic detection of timezone in container's logs if it is not explicitly defined in content or configured.
      */
-    containerTimezoneHeuristicEnabled?: pulumi.Input<boolean>;
+    containerTimezoneHeuristicEnabled?: pulumi.Input<boolean | undefined>;
     /**
      * Allows detection of log messages written to the containerized application's stdout/stderr streams.
      */
-    containersLogsDetectionEnabled?: pulumi.Input<boolean>;
+    containersLogsDetectionEnabled?: pulumi.Input<boolean | undefined>;
     /**
      * Defines the number of characters in every log line (starting from the first character in the line) where the timestamp is searched.
      */
-    dateSearchLimitBytes?: pulumi.Input<number>;
+    dateSearchLimitBytes?: pulumi.Input<number | undefined>;
     /**
      * Default timezone for agent if more specific configurations is not defined.
      */
-    defaultTimezone?: pulumi.Input<string>;
+    defaultTimezone?: pulumi.Input<string | undefined>;
     /**
      * Defines the maximum timeout value, in seconds, for the query extracting Windows Event Logs
      */
-    eventLogQueryTimeoutSec?: pulumi.Input<number>;
+    eventLogQueryTimeoutSec?: pulumi.Input<number | undefined>;
     /**
      * Allows detection of logs and event logs written by IIS server.
      */
-    iisdetectionEnabled?: pulumi.Input<boolean>;
+    iisdetectionEnabled?: pulumi.Input<boolean | undefined>;
     /**
      * Allows detection of logs written to mounted network storage drives. Applies only to Linux hosts. For other OSes it's always enabled.
      */
-    logScannerLinuxNfsEnabled?: pulumi.Input<boolean>;
+    logScannerLinuxNfsEnabled?: pulumi.Input<boolean | undefined>;
     /**
      * Defines the maximum number of log group instances per entity after which, the new automatic ones wouldn't be added.
      */
-    maxLgisPerEntityCount?: pulumi.Input<number>;
+    maxLgisPerEntityCount?: pulumi.Input<number | undefined>;
     /**
      * Defines the minimum number of bytes in log file required for binary detection.
      */
-    minBinaryDetectionLimitBytes?: pulumi.Input<number>;
+    minBinaryDetectionLimitBytes?: pulumi.Input<number | undefined>;
     /**
      * Enabling this option may affect your licensing costs. For more details, see [documentation](https://dt-url.net/4l02yi8).
      */
-    monitorOwnLogsEnabled?: pulumi.Input<boolean>;
+    monitorOwnLogsEnabled?: pulumi.Input<boolean | undefined>;
     /**
      * Automatically detect logs written by important processes. For more details, check our [documentation](https://dt-url.net/7v02z76)
      */
-    openLogFilesDetectionEnabled?: pulumi.Input<boolean>;
+    openLogFilesDetectionEnabled?: pulumi.Input<boolean | undefined>;
     /**
      * The scope of this setting (HOST, KUBERNETES*CLUSTER, HOST*GROUP). Omit this property if you want to cover the whole environment.
      */
-    scope?: pulumi.Input<string>;
+    scope?: pulumi.Input<string | undefined>;
     /**
      * Defines the number of characters in every log line (starting from the first character in the line) where severity is searched.
      */
-    severityDetectionLimitBytes?: pulumi.Input<number>;
+    severityDetectionLimitBytes?: pulumi.Input<number | undefined>;
     /**
      * Defines the number of the first lines of every log entry where severity is searched.
      */
-    severityDetectionLinesLimit?: pulumi.Input<number>;
+    severityDetectionLinesLimit?: pulumi.Input<number | undefined>;
     /**
      * Linux: syslog, message log Windows: system, application, security event logs
      */
-    systemLogsDetectionEnabled?: pulumi.Input<boolean>;
+    systemLogsDetectionEnabled?: pulumi.Input<boolean | undefined>;
 }
 
 /**
@@ -318,7 +318,7 @@ export interface LogOneagentArgs {
     /**
      * The scope of this setting (HOST, KUBERNETES*CLUSTER, HOST*GROUP). Omit this property if you want to cover the whole environment.
      */
-    scope?: pulumi.Input<string>;
+    scope?: pulumi.Input<string | undefined>;
     /**
      * Defines the number of characters in every log line (starting from the first character in the line) where severity is searched.
      */

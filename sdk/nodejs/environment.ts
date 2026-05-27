@@ -114,27 +114,27 @@ export interface EnvironmentState {
     /**
      * The display name of the environment
      */
-    name?: pulumi.Input<string>;
+    name?: pulumi.Input<string | undefined>;
     /**
      * Environment level consumption and quotas information
      */
-    quotas?: pulumi.Input<inputs.EnvironmentQuotas>;
+    quotas?: pulumi.Input<inputs.EnvironmentQuotas | undefined>;
     /**
      * Indicates whether the environment is enabled or disabled. Possible values are `ENABLED` and `DISABLED`. The default value is ENABLED
      */
-    state?: pulumi.Input<string>;
+    state?: pulumi.Input<string | undefined>;
     /**
      * Environment level storage usage and limit information
      */
-    storage?: pulumi.Input<inputs.EnvironmentStorage>;
+    storage?: pulumi.Input<inputs.EnvironmentStorage | undefined>;
     /**
      * A set of tags that are assigned to this environment. Every tag can have a maximum length of 100 characters
      */
-    tags?: pulumi.Input<pulumi.Input<string>[]>;
+    tags?: pulumi.Input<pulumi.Input<string>[] | undefined>;
     /**
      * Specifies whether the environment is a trial environment or a non-trial environment. Creating a trial environment is only possible if your license allows that. The default value is false (non-trial)
      */
-    trial?: pulumi.Input<boolean>;
+    trial?: pulumi.Input<boolean | undefined>;
 }
 
 /**
@@ -144,11 +144,11 @@ export interface EnvironmentArgs {
     /**
      * The display name of the environment
      */
-    name?: pulumi.Input<string>;
+    name?: pulumi.Input<string | undefined>;
     /**
      * Environment level consumption and quotas information
      */
-    quotas?: pulumi.Input<inputs.EnvironmentQuotas>;
+    quotas?: pulumi.Input<inputs.EnvironmentQuotas | undefined>;
     /**
      * Indicates whether the environment is enabled or disabled. Possible values are `ENABLED` and `DISABLED`. The default value is ENABLED
      */
@@ -160,9 +160,9 @@ export interface EnvironmentArgs {
     /**
      * A set of tags that are assigned to this environment. Every tag can have a maximum length of 100 characters
      */
-    tags?: pulumi.Input<pulumi.Input<string>[]>;
+    tags?: pulumi.Input<pulumi.Input<string>[] | undefined>;
     /**
      * Specifies whether the environment is a trial environment or a non-trial environment. Creating a trial environment is only possible if your license allows that. The default value is false (non-trial)
      */
-    trial?: pulumi.Input<boolean>;
+    trial?: pulumi.Input<boolean | undefined>;
 }

@@ -209,63 +209,63 @@ export interface AppsecNotificationState {
     /**
      * For attack candidate alerts, select an [alerting profile](https://www.terraform.io/ui/settings/builtin:appsec.notification-attack-alerting-profile) to control the delivery of security notifications related to this integration.
      */
-    attackCandidateBasedAlertingProfile?: pulumi.Input<string>;
+    attackCandidateBasedAlertingProfile?: pulumi.Input<string | undefined>;
     /**
      * Attack candidate based email payload, required when `trigger` equals `ATTACK_CANDIDATE` and `type` equals `EMAIL`
      */
-    attackCandidateBasedEmailPayload?: pulumi.Input<inputs.AppsecNotificationAttackCandidateBasedEmailPayload>;
+    attackCandidateBasedEmailPayload?: pulumi.Input<inputs.AppsecNotificationAttackCandidateBasedEmailPayload | undefined>;
     /**
      * Attack candidate based Jira payload, required when `trigger` equals `ATTACK_CANDIDATE` and `type` equals `JIRA`
      */
-    attackCandidateBasedJiraPayload?: pulumi.Input<inputs.AppsecNotificationAttackCandidateBasedJiraPayload>;
+    attackCandidateBasedJiraPayload?: pulumi.Input<inputs.AppsecNotificationAttackCandidateBasedJiraPayload | undefined>;
     /**
      * Attack candidate based webhook payload, required when `trigger` equals `ATTACK_CANDIDATE` and `type` equals `WEBHOOK`
      */
-    attackCandidateBasedWebhookPayload?: pulumi.Input<inputs.AppsecNotificationAttackCandidateBasedWebhookPayload>;
+    attackCandidateBasedWebhookPayload?: pulumi.Input<inputs.AppsecNotificationAttackCandidateBasedWebhookPayload | undefined>;
     /**
      * Display name of the security notification
      */
-    displayName?: pulumi.Input<string>;
+    displayName?: pulumi.Input<string | undefined>;
     /**
      * Email configuration, required when `type` equals `EMAIL`
      */
-    emailConfiguration?: pulumi.Input<inputs.AppsecNotificationEmailConfiguration>;
+    emailConfiguration?: pulumi.Input<inputs.AppsecNotificationEmailConfiguration | undefined>;
     /**
      * Enable/Disable the security notification, enabled (`true`) or disabled (`false`)
      */
-    enabled?: pulumi.Input<boolean>;
+    enabled?: pulumi.Input<boolean | undefined>;
     /**
      * Jira configuration, required when `type` equals `JIRA`
      */
-    jiraConfiguration?: pulumi.Input<inputs.AppsecNotificationJiraConfiguration>;
+    jiraConfiguration?: pulumi.Input<inputs.AppsecNotificationJiraConfiguration | undefined>;
     /**
      * For security problem alerts, select an [alerting profile](https://www.terraform.io/ui/settings/builtin:appsec.notification-alerting-profile) to control the delivery of security notifications related to this integration.
      */
-    securityProblemBasedAlertingProfile?: pulumi.Input<string>;
+    securityProblemBasedAlertingProfile?: pulumi.Input<string | undefined>;
     /**
      * Security problem based email payload, required when `trigger` equals `SECURITY_PROBLEM` and `type` equals `EMAIL`
      */
-    securityProblemBasedEmailPayload?: pulumi.Input<inputs.AppsecNotificationSecurityProblemBasedEmailPayload>;
+    securityProblemBasedEmailPayload?: pulumi.Input<inputs.AppsecNotificationSecurityProblemBasedEmailPayload | undefined>;
     /**
      * Security problem based Jira payload, required when `trigger` equals `SECURITY_PROBLEM` and `type` equals `JIRA`
      */
-    securityProblemBasedJiraPayload?: pulumi.Input<inputs.AppsecNotificationSecurityProblemBasedJiraPayload>;
+    securityProblemBasedJiraPayload?: pulumi.Input<inputs.AppsecNotificationSecurityProblemBasedJiraPayload | undefined>;
     /**
      * Security problem based webhook payload, required when `trigger` equals `SECURITY_PROBLEM` and `type` equals `WEBHOOK`
      */
-    securityProblemBasedWebhookPayload?: pulumi.Input<inputs.AppsecNotificationSecurityProblemBasedWebhookPayload>;
+    securityProblemBasedWebhookPayload?: pulumi.Input<inputs.AppsecNotificationSecurityProblemBasedWebhookPayload | undefined>;
     /**
      * Security alert type, possible Values: `ATTACK_CANDIDATE`, `SECURITY_PROBLEM`
      */
-    trigger?: pulumi.Input<string>;
+    trigger?: pulumi.Input<string | undefined>;
     /**
      * Notification type, possible Values: `EMAIL`, `JIRA`, `WEBHOOK`
      */
-    type?: pulumi.Input<string>;
+    type?: pulumi.Input<string | undefined>;
     /**
      * Webhook configuration, required when `type` equals `WEBHOOK`
      */
-    webhookConfiguration?: pulumi.Input<inputs.AppsecNotificationWebhookConfiguration>;
+    webhookConfiguration?: pulumi.Input<inputs.AppsecNotificationWebhookConfiguration | undefined>;
 }
 
 /**
@@ -275,19 +275,19 @@ export interface AppsecNotificationArgs {
     /**
      * For attack candidate alerts, select an [alerting profile](https://www.terraform.io/ui/settings/builtin:appsec.notification-attack-alerting-profile) to control the delivery of security notifications related to this integration.
      */
-    attackCandidateBasedAlertingProfile?: pulumi.Input<string>;
+    attackCandidateBasedAlertingProfile?: pulumi.Input<string | undefined>;
     /**
      * Attack candidate based email payload, required when `trigger` equals `ATTACK_CANDIDATE` and `type` equals `EMAIL`
      */
-    attackCandidateBasedEmailPayload?: pulumi.Input<inputs.AppsecNotificationAttackCandidateBasedEmailPayload>;
+    attackCandidateBasedEmailPayload?: pulumi.Input<inputs.AppsecNotificationAttackCandidateBasedEmailPayload | undefined>;
     /**
      * Attack candidate based Jira payload, required when `trigger` equals `ATTACK_CANDIDATE` and `type` equals `JIRA`
      */
-    attackCandidateBasedJiraPayload?: pulumi.Input<inputs.AppsecNotificationAttackCandidateBasedJiraPayload>;
+    attackCandidateBasedJiraPayload?: pulumi.Input<inputs.AppsecNotificationAttackCandidateBasedJiraPayload | undefined>;
     /**
      * Attack candidate based webhook payload, required when `trigger` equals `ATTACK_CANDIDATE` and `type` equals `WEBHOOK`
      */
-    attackCandidateBasedWebhookPayload?: pulumi.Input<inputs.AppsecNotificationAttackCandidateBasedWebhookPayload>;
+    attackCandidateBasedWebhookPayload?: pulumi.Input<inputs.AppsecNotificationAttackCandidateBasedWebhookPayload | undefined>;
     /**
      * Display name of the security notification
      */
@@ -295,7 +295,7 @@ export interface AppsecNotificationArgs {
     /**
      * Email configuration, required when `type` equals `EMAIL`
      */
-    emailConfiguration?: pulumi.Input<inputs.AppsecNotificationEmailConfiguration>;
+    emailConfiguration?: pulumi.Input<inputs.AppsecNotificationEmailConfiguration | undefined>;
     /**
      * Enable/Disable the security notification, enabled (`true`) or disabled (`false`)
      */
@@ -303,23 +303,23 @@ export interface AppsecNotificationArgs {
     /**
      * Jira configuration, required when `type` equals `JIRA`
      */
-    jiraConfiguration?: pulumi.Input<inputs.AppsecNotificationJiraConfiguration>;
+    jiraConfiguration?: pulumi.Input<inputs.AppsecNotificationJiraConfiguration | undefined>;
     /**
      * For security problem alerts, select an [alerting profile](https://www.terraform.io/ui/settings/builtin:appsec.notification-alerting-profile) to control the delivery of security notifications related to this integration.
      */
-    securityProblemBasedAlertingProfile?: pulumi.Input<string>;
+    securityProblemBasedAlertingProfile?: pulumi.Input<string | undefined>;
     /**
      * Security problem based email payload, required when `trigger` equals `SECURITY_PROBLEM` and `type` equals `EMAIL`
      */
-    securityProblemBasedEmailPayload?: pulumi.Input<inputs.AppsecNotificationSecurityProblemBasedEmailPayload>;
+    securityProblemBasedEmailPayload?: pulumi.Input<inputs.AppsecNotificationSecurityProblemBasedEmailPayload | undefined>;
     /**
      * Security problem based Jira payload, required when `trigger` equals `SECURITY_PROBLEM` and `type` equals `JIRA`
      */
-    securityProblemBasedJiraPayload?: pulumi.Input<inputs.AppsecNotificationSecurityProblemBasedJiraPayload>;
+    securityProblemBasedJiraPayload?: pulumi.Input<inputs.AppsecNotificationSecurityProblemBasedJiraPayload | undefined>;
     /**
      * Security problem based webhook payload, required when `trigger` equals `SECURITY_PROBLEM` and `type` equals `WEBHOOK`
      */
-    securityProblemBasedWebhookPayload?: pulumi.Input<inputs.AppsecNotificationSecurityProblemBasedWebhookPayload>;
+    securityProblemBasedWebhookPayload?: pulumi.Input<inputs.AppsecNotificationSecurityProblemBasedWebhookPayload | undefined>;
     /**
      * Security alert type, possible Values: `ATTACK_CANDIDATE`, `SECURITY_PROBLEM`
      */
@@ -331,5 +331,5 @@ export interface AppsecNotificationArgs {
     /**
      * Webhook configuration, required when `type` equals `WEBHOOK`
      */
-    webhookConfiguration?: pulumi.Input<inputs.AppsecNotificationWebhookConfiguration>;
+    webhookConfiguration?: pulumi.Input<inputs.AppsecNotificationWebhookConfiguration | undefined>;
 }

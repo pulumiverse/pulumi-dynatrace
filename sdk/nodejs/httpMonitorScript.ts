@@ -98,11 +98,11 @@ export interface HttpMonitorScriptState {
     /**
      * The ID of the HTTP monitor
      */
-    httpId?: pulumi.Input<string>;
+    httpId?: pulumi.Input<string | undefined>;
     /**
      * The HTTP Script
      */
-    script?: pulumi.Input<inputs.HttpMonitorScriptScript>;
+    script?: pulumi.Input<inputs.HttpMonitorScriptScript | undefined>;
 }
 
 /**

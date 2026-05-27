@@ -91,11 +91,11 @@ export interface UnifiedServicesMetricsState {
     /**
      * Should metrics be written for endpoints? Please be aware that this setting has billing implications. Check out this [documentation](https://dt-url.net/td23cgh) for further details.
      */
-    enableEndpointMetrics?: pulumi.Input<boolean>;
+    enableEndpointMetrics?: pulumi.Input<boolean | undefined>;
     /**
      * The scope of this settings. If the settings should cover the whole environment, just don't specify any scope.
      */
-    serviceId?: pulumi.Input<string>;
+    serviceId?: pulumi.Input<string | undefined>;
 }
 
 /**
@@ -109,5 +109,5 @@ export interface UnifiedServicesMetricsArgs {
     /**
      * The scope of this settings. If the settings should cover the whole environment, just don't specify any scope.
      */
-    serviceId?: pulumi.Input<string>;
+    serviceId?: pulumi.Input<string | undefined>;
 }

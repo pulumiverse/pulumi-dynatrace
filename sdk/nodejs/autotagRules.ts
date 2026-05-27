@@ -124,15 +124,15 @@ export interface AutotagRulesState {
     /**
      * Automatically applied tag ID
      */
-    autoTagId?: pulumi.Input<string>;
+    autoTagId?: pulumi.Input<string | undefined>;
     /**
      * For internal use: current state of rules in JSON format
      */
-    currentState?: pulumi.Input<string>;
+    currentState?: pulumi.Input<string | undefined>;
     /**
      * Rules
      */
-    rules?: pulumi.Input<inputs.AutotagRulesRules>;
+    rules?: pulumi.Input<inputs.AutotagRulesRules | undefined>;
 }
 
 /**
@@ -146,9 +146,9 @@ export interface AutotagRulesArgs {
     /**
      * For internal use: current state of rules in JSON format
      */
-    currentState?: pulumi.Input<string>;
+    currentState?: pulumi.Input<string | undefined>;
     /**
      * Rules
      */
-    rules?: pulumi.Input<inputs.AutotagRulesRules>;
+    rules?: pulumi.Input<inputs.AutotagRulesRules | undefined>;
 }

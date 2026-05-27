@@ -98,11 +98,11 @@ export interface AttackSettingsState {
     /**
      * Define global incoming attack control
      */
-    defaultAttackHandling?: pulumi.Input<inputs.AttackSettingsDefaultAttackHandling>;
+    defaultAttackHandling?: pulumi.Input<inputs.AttackSettingsDefaultAttackHandling | undefined>;
     /**
      * This setting is enabled (`true`) or disabled (`false`)
      */
-    enabled?: pulumi.Input<boolean>;
+    enabled?: pulumi.Input<boolean | undefined>;
 }
 
 /**

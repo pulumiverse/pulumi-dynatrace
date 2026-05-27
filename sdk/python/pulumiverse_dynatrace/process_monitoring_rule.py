@@ -24,8 +24,8 @@ class ProcessMonitoringRuleArgs:
                  condition: pulumi.Input['ProcessMonitoringRuleConditionArgs'],
                  enabled: pulumi.Input[_builtins.bool],
                  mode: pulumi.Input[_builtins.str],
-                 host_group_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 insert_after: Optional[pulumi.Input[_builtins.str]] = None):
+                 host_group_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 insert_after: pulumi.Input[Optional[_builtins.str]] = None):
         """
         The set of arguments for constructing a ProcessMonitoringRule resource.
 
@@ -81,37 +81,37 @@ class ProcessMonitoringRuleArgs:
 
     @_builtins.property
     @pulumi.getter(name="hostGroupId")
-    def host_group_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def host_group_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The scope of this settings. If the settings should cover the whole environment, just don't specify any scope
         """
         return pulumi.get(self, "host_group_id")
 
     @host_group_id.setter
-    def host_group_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def host_group_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "host_group_id", value)
 
     @_builtins.property
     @pulumi.getter(name="insertAfter")
-    def insert_after(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def insert_after(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Because this resource allows for ordering you may specify the ID of the resource instance that comes before this instance regarding order. If not specified when creating the setting will be added to the end of the list. If not specified during update the order will remain untouched
         """
         return pulumi.get(self, "insert_after")
 
     @insert_after.setter
-    def insert_after(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def insert_after(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "insert_after", value)
 
 
 @pulumi.input_type
 class _ProcessMonitoringRuleState:
     def __init__(__self__, *,
-                 condition: Optional[pulumi.Input['ProcessMonitoringRuleConditionArgs']] = None,
-                 enabled: Optional[pulumi.Input[_builtins.bool]] = None,
-                 host_group_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 insert_after: Optional[pulumi.Input[_builtins.str]] = None,
-                 mode: Optional[pulumi.Input[_builtins.str]] = None):
+                 condition: pulumi.Input[Optional['ProcessMonitoringRuleConditionArgs']] = None,
+                 enabled: pulumi.Input[Optional[_builtins.bool]] = None,
+                 host_group_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 insert_after: pulumi.Input[Optional[_builtins.str]] = None,
+                 mode: pulumi.Input[Optional[_builtins.str]] = None):
         """
         Input properties used for looking up and filtering ProcessMonitoringRule resources.
 
@@ -134,62 +134,62 @@ class _ProcessMonitoringRuleState:
 
     @_builtins.property
     @pulumi.getter
-    def condition(self) -> Optional[pulumi.Input['ProcessMonitoringRuleConditionArgs']]:
+    def condition(self) -> pulumi.Input[Optional['ProcessMonitoringRuleConditionArgs']]:
         """
         Condition
         """
         return pulumi.get(self, "condition")
 
     @condition.setter
-    def condition(self, value: Optional[pulumi.Input['ProcessMonitoringRuleConditionArgs']]):
+    def condition(self, value: pulumi.Input[Optional['ProcessMonitoringRuleConditionArgs']]):
         pulumi.set(self, "condition", value)
 
     @_builtins.property
     @pulumi.getter
-    def enabled(self) -> Optional[pulumi.Input[_builtins.bool]]:
+    def enabled(self) -> pulumi.Input[Optional[_builtins.bool]]:
         """
         This setting is enabled (`true`) or disabled (`false`)
         """
         return pulumi.get(self, "enabled")
 
     @enabled.setter
-    def enabled(self, value: Optional[pulumi.Input[_builtins.bool]]):
+    def enabled(self, value: pulumi.Input[Optional[_builtins.bool]]):
         pulumi.set(self, "enabled", value)
 
     @_builtins.property
     @pulumi.getter(name="hostGroupId")
-    def host_group_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def host_group_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The scope of this settings. If the settings should cover the whole environment, just don't specify any scope
         """
         return pulumi.get(self, "host_group_id")
 
     @host_group_id.setter
-    def host_group_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def host_group_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "host_group_id", value)
 
     @_builtins.property
     @pulumi.getter(name="insertAfter")
-    def insert_after(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def insert_after(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Because this resource allows for ordering you may specify the ID of the resource instance that comes before this instance regarding order. If not specified when creating the setting will be added to the end of the list. If not specified during update the order will remain untouched
         """
         return pulumi.get(self, "insert_after")
 
     @insert_after.setter
-    def insert_after(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def insert_after(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "insert_after", value)
 
     @_builtins.property
     @pulumi.getter
-    def mode(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def mode(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Possible Values: `MONITORING_ON`, `MONITORING_OFF`
         """
         return pulumi.get(self, "mode")
 
     @mode.setter
-    def mode(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def mode(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "mode", value)
 
 
@@ -199,11 +199,11 @@ class ProcessMonitoringRule(pulumi.CustomResource):
     def __init__(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 condition: Optional[pulumi.Input[Union['ProcessMonitoringRuleConditionArgs', 'ProcessMonitoringRuleConditionArgsDict']]] = None,
-                 enabled: Optional[pulumi.Input[_builtins.bool]] = None,
-                 host_group_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 insert_after: Optional[pulumi.Input[_builtins.str]] = None,
-                 mode: Optional[pulumi.Input[_builtins.str]] = None,
+                 condition: pulumi.Input[Optional[Union['ProcessMonitoringRuleConditionArgs', 'ProcessMonitoringRuleConditionArgsDict']]] = None,
+                 enabled: pulumi.Input[Optional[_builtins.bool]] = None,
+                 host_group_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 insert_after: pulumi.Input[Optional[_builtins.str]] = None,
+                 mode: pulumi.Input[Optional[_builtins.str]] = None,
                  __props__=None):
         """
         > This resource requires the API token scopes **Read settings** (`settings.read`) and **Write settings** (`settings.write`)
@@ -300,11 +300,11 @@ class ProcessMonitoringRule(pulumi.CustomResource):
     def _internal_init(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 condition: Optional[pulumi.Input[Union['ProcessMonitoringRuleConditionArgs', 'ProcessMonitoringRuleConditionArgsDict']]] = None,
-                 enabled: Optional[pulumi.Input[_builtins.bool]] = None,
-                 host_group_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 insert_after: Optional[pulumi.Input[_builtins.str]] = None,
-                 mode: Optional[pulumi.Input[_builtins.str]] = None,
+                 condition: pulumi.Input[Optional[Union['ProcessMonitoringRuleConditionArgs', 'ProcessMonitoringRuleConditionArgsDict']]] = None,
+                 enabled: pulumi.Input[Optional[_builtins.bool]] = None,
+                 host_group_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 insert_after: pulumi.Input[Optional[_builtins.str]] = None,
+                 mode: pulumi.Input[Optional[_builtins.str]] = None,
                  __props__=None):
         opts = pulumi.ResourceOptions.merge(_utilities.get_resource_opts_defaults(), opts)
         if not isinstance(opts, pulumi.ResourceOptions):
@@ -335,11 +335,11 @@ class ProcessMonitoringRule(pulumi.CustomResource):
     def get(resource_name: str,
             id: pulumi.Input[str],
             opts: Optional[pulumi.ResourceOptions] = None,
-            condition: Optional[pulumi.Input[Union['ProcessMonitoringRuleConditionArgs', 'ProcessMonitoringRuleConditionArgsDict']]] = None,
-            enabled: Optional[pulumi.Input[_builtins.bool]] = None,
-            host_group_id: Optional[pulumi.Input[_builtins.str]] = None,
-            insert_after: Optional[pulumi.Input[_builtins.str]] = None,
-            mode: Optional[pulumi.Input[_builtins.str]] = None) -> 'ProcessMonitoringRule':
+            condition: pulumi.Input[Optional[Union['ProcessMonitoringRuleConditionArgs', 'ProcessMonitoringRuleConditionArgsDict']]] = None,
+            enabled: pulumi.Input[Optional[_builtins.bool]] = None,
+            host_group_id: pulumi.Input[Optional[_builtins.str]] = None,
+            insert_after: pulumi.Input[Optional[_builtins.str]] = None,
+            mode: pulumi.Input[Optional[_builtins.str]] = None) -> 'ProcessMonitoringRule':
         """
         Get an existing ProcessMonitoringRule resource's state with the given name, id, and optional extra
         properties used to qualify the lookup.

@@ -120,23 +120,23 @@ export interface CustomAppAnomaliesState {
     /**
      * Error rate increase
      */
-    errorRateIncrease?: pulumi.Input<inputs.CustomAppAnomaliesErrorRateIncrease>;
+    errorRateIncrease?: pulumi.Input<inputs.CustomAppAnomaliesErrorRateIncrease | undefined>;
     /**
      * The scope of this setting (DEVICE*APPLICATION*METHOD CUSTOM_APPLICATION environment)
      */
-    scope?: pulumi.Input<string>;
+    scope?: pulumi.Input<string | undefined>;
     /**
      * Slow user actions
      */
-    slowUserActions?: pulumi.Input<inputs.CustomAppAnomaliesSlowUserActions>;
+    slowUserActions?: pulumi.Input<inputs.CustomAppAnomaliesSlowUserActions | undefined>;
     /**
      * Unexpected high load
      */
-    unexpectedHighLoad?: pulumi.Input<inputs.CustomAppAnomaliesUnexpectedHighLoad>;
+    unexpectedHighLoad?: pulumi.Input<inputs.CustomAppAnomaliesUnexpectedHighLoad | undefined>;
     /**
      * Unexpected low load
      */
-    unexpectedLowLoad?: pulumi.Input<inputs.CustomAppAnomaliesUnexpectedLowLoad>;
+    unexpectedLowLoad?: pulumi.Input<inputs.CustomAppAnomaliesUnexpectedLowLoad | undefined>;
 }
 
 /**
@@ -150,7 +150,7 @@ export interface CustomAppAnomaliesArgs {
     /**
      * The scope of this setting (DEVICE*APPLICATION*METHOD CUSTOM_APPLICATION environment)
      */
-    scope?: pulumi.Input<string>;
+    scope?: pulumi.Input<string | undefined>;
     /**
      * Slow user actions
      */

@@ -169,11 +169,11 @@ export interface AwsConnectionRoleArnState {
     /**
      * The ID of a `dynatrace.AwsConnection` resource instance for which to define the AWS Role ARN
      */
-    awsConnectionId?: pulumi.Input<string>;
+    awsConnectionId?: pulumi.Input<string | undefined>;
     /**
      * The ARN of the AWS role that should be assumed.
      */
-    roleArn?: pulumi.Input<string>;
+    roleArn?: pulumi.Input<string | undefined>;
 }
 
 /**

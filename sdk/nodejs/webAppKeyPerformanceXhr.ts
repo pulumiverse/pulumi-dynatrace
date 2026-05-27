@@ -111,19 +111,19 @@ export interface WebAppKeyPerformanceXhrState {
     /**
      * If the selected key performance metric is not detected, the **User action duration** metric is used instead.
      */
-    fallbackThresholds?: pulumi.Input<inputs.WebAppKeyPerformanceXhrFallbackThresholds>;
+    fallbackThresholds?: pulumi.Input<inputs.WebAppKeyPerformanceXhrFallbackThresholds | undefined>;
     /**
      * Possible Values: `RESPONSE_END`, `RESPONSE_START`, `USER_ACTION_DURATION`, `VISUALLY_COMPLETE`
      */
-    kpm?: pulumi.Input<string>;
+    kpm?: pulumi.Input<string | undefined>;
     /**
      * The scope of this setting (APPLICATION_METHOD, APPLICATION)
      */
-    scope?: pulumi.Input<string>;
+    scope?: pulumi.Input<string | undefined>;
     /**
      * Set the Tolerating and Frustrated performance thresholds for this action type.
      */
-    thresholds?: pulumi.Input<inputs.WebAppKeyPerformanceXhrThresholds>;
+    thresholds?: pulumi.Input<inputs.WebAppKeyPerformanceXhrThresholds | undefined>;
 }
 
 /**
@@ -133,7 +133,7 @@ export interface WebAppKeyPerformanceXhrArgs {
     /**
      * If the selected key performance metric is not detected, the **User action duration** metric is used instead.
      */
-    fallbackThresholds?: pulumi.Input<inputs.WebAppKeyPerformanceXhrFallbackThresholds>;
+    fallbackThresholds?: pulumi.Input<inputs.WebAppKeyPerformanceXhrFallbackThresholds | undefined>;
     /**
      * Possible Values: `RESPONSE_END`, `RESPONSE_START`, `USER_ACTION_DURATION`, `VISUALLY_COMPLETE`
      */

@@ -22,19 +22,19 @@ __all__ = ['K8sCredentialsArgs', 'K8sCredentials']
 class K8sCredentialsArgs:
     def __init__(__self__, *,
                  label: pulumi.Input[_builtins.str],
-                 active: Optional[pulumi.Input[_builtins.bool]] = None,
-                 active_gate_group: Optional[pulumi.Input[_builtins.str]] = None,
-                 auth_token: Optional[pulumi.Input[_builtins.str]] = None,
-                 certificate_check_enabled: Optional[pulumi.Input[_builtins.bool]] = None,
-                 davis_events_integration_enabled: Optional[pulumi.Input[_builtins.bool]] = None,
-                 endpoint_url: Optional[pulumi.Input[_builtins.str]] = None,
-                 event_analysis_and_alerting_enabled: Optional[pulumi.Input[_builtins.bool]] = None,
-                 events_field_selectors: Optional[pulumi.Input[Sequence[pulumi.Input['K8sCredentialsEventsFieldSelectorArgs']]]] = None,
-                 events_integration_enabled: Optional[pulumi.Input[_builtins.bool]] = None,
-                 hostname_verification: Optional[pulumi.Input[_builtins.bool]] = None,
-                 prometheus_exporters: Optional[pulumi.Input[_builtins.bool]] = None,
-                 unknowns: Optional[pulumi.Input[_builtins.str]] = None,
-                 workload_integration_enabled: Optional[pulumi.Input[_builtins.bool]] = None):
+                 active: pulumi.Input[Optional[_builtins.bool]] = None,
+                 active_gate_group: pulumi.Input[Optional[_builtins.str]] = None,
+                 auth_token: pulumi.Input[Optional[_builtins.str]] = None,
+                 certificate_check_enabled: pulumi.Input[Optional[_builtins.bool]] = None,
+                 davis_events_integration_enabled: pulumi.Input[Optional[_builtins.bool]] = None,
+                 endpoint_url: pulumi.Input[Optional[_builtins.str]] = None,
+                 event_analysis_and_alerting_enabled: pulumi.Input[Optional[_builtins.bool]] = None,
+                 events_field_selectors: pulumi.Input[Optional[Sequence[pulumi.Input['K8sCredentialsEventsFieldSelectorArgs']]]] = None,
+                 events_integration_enabled: pulumi.Input[Optional[_builtins.bool]] = None,
+                 hostname_verification: pulumi.Input[Optional[_builtins.bool]] = None,
+                 prometheus_exporters: pulumi.Input[Optional[_builtins.bool]] = None,
+                 unknowns: pulumi.Input[Optional[_builtins.str]] = None,
+                 workload_integration_enabled: pulumi.Input[Optional[_builtins.bool]] = None):
         """
         The set of arguments for constructing a K8sCredentials resource.
 
@@ -95,178 +95,178 @@ class K8sCredentialsArgs:
 
     @_builtins.property
     @pulumi.getter
-    def active(self) -> Optional[pulumi.Input[_builtins.bool]]:
+    def active(self) -> pulumi.Input[Optional[_builtins.bool]]:
         """
         Monitoring is enabled (`true`) or disabled (`false`) for given credentials configuration.  If not set on creation, the `true` value is used.  If the field is omitted during an update, the old value remains unaffected.
         """
         return pulumi.get(self, "active")
 
     @active.setter
-    def active(self, value: Optional[pulumi.Input[_builtins.bool]]):
+    def active(self, value: pulumi.Input[Optional[_builtins.bool]]):
         pulumi.set(self, "active", value)
 
     @_builtins.property
     @pulumi.getter(name="activeGateGroup")
-    def active_gate_group(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def active_gate_group(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Active Gate group to filter active gates for this credentials.
         """
         return pulumi.get(self, "active_gate_group")
 
     @active_gate_group.setter
-    def active_gate_group(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def active_gate_group(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "active_gate_group", value)
 
     @_builtins.property
     @pulumi.getter(name="authToken")
-    def auth_token(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def auth_token(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The service account bearer token for the Kubernetes API server.  Submit your token on creation or update of the configuration. For security reasons, GET requests return this field as `null`.  If the field is omitted during an update, the old value remains unaffected.
         """
         return pulumi.get(self, "auth_token")
 
     @auth_token.setter
-    def auth_token(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def auth_token(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "auth_token", value)
 
     @_builtins.property
     @pulumi.getter(name="certificateCheckEnabled")
-    def certificate_check_enabled(self) -> Optional[pulumi.Input[_builtins.bool]]:
+    def certificate_check_enabled(self) -> pulumi.Input[Optional[_builtins.bool]]:
         """
         The check of SSL certificates is enabled (`true`) or disabled (`false`) for the Kubernetes cluster.  If not set on creation, the `true` value is used.  If the field is omitted during an update, the old value remains unaffected.
         """
         return pulumi.get(self, "certificate_check_enabled")
 
     @certificate_check_enabled.setter
-    def certificate_check_enabled(self, value: Optional[pulumi.Input[_builtins.bool]]):
+    def certificate_check_enabled(self, value: pulumi.Input[Optional[_builtins.bool]]):
         pulumi.set(self, "certificate_check_enabled", value)
 
     @_builtins.property
     @pulumi.getter(name="davisEventsIntegrationEnabled")
-    def davis_events_integration_enabled(self) -> Optional[pulumi.Input[_builtins.bool]]:
+    def davis_events_integration_enabled(self) -> pulumi.Input[Optional[_builtins.bool]]:
         """
         Inclusion of all Davis relevant events is enabled (`true`) or disabled (`false`) for the Kubernetes cluster. If the field is omitted during an update, the old value remains unaffected
         """
         return pulumi.get(self, "davis_events_integration_enabled")
 
     @davis_events_integration_enabled.setter
-    def davis_events_integration_enabled(self, value: Optional[pulumi.Input[_builtins.bool]]):
+    def davis_events_integration_enabled(self, value: pulumi.Input[Optional[_builtins.bool]]):
         pulumi.set(self, "davis_events_integration_enabled", value)
 
     @_builtins.property
     @pulumi.getter(name="endpointUrl")
-    def endpoint_url(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def endpoint_url(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The URL of the Kubernetes API server.  It must be unique within a Dynatrace environment.  The URL must valid according to RFC 2396. Leading or trailing whitespaces are not allowed.
         """
         return pulumi.get(self, "endpoint_url")
 
     @endpoint_url.setter
-    def endpoint_url(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def endpoint_url(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "endpoint_url", value)
 
     @_builtins.property
     @pulumi.getter(name="eventAnalysisAndAlertingEnabled")
-    def event_analysis_and_alerting_enabled(self) -> Optional[pulumi.Input[_builtins.bool]]:
+    def event_analysis_and_alerting_enabled(self) -> pulumi.Input[Optional[_builtins.bool]]:
         """
         Event analysis and alerting is (`true`) or disabled (`false`) for the Kubernetes cluster. If the field is omitted during an update, the old value remains unaffected.
         """
         return pulumi.get(self, "event_analysis_and_alerting_enabled")
 
     @event_analysis_and_alerting_enabled.setter
-    def event_analysis_and_alerting_enabled(self, value: Optional[pulumi.Input[_builtins.bool]]):
+    def event_analysis_and_alerting_enabled(self, value: pulumi.Input[Optional[_builtins.bool]]):
         pulumi.set(self, "event_analysis_and_alerting_enabled", value)
 
     @_builtins.property
     @pulumi.getter(name="eventsFieldSelectors")
-    def events_field_selectors(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['K8sCredentialsEventsFieldSelectorArgs']]]]:
+    def events_field_selectors(self) -> pulumi.Input[Optional[Sequence[pulumi.Input['K8sCredentialsEventsFieldSelectorArgs']]]]:
         """
         Kubernetes event filters based on field-selectors. If set to `null` on creation, no events field selectors are subscribed. If set to `null` on update, no change of stored events field selectors is applied. Set an empty list to clear all events field selectors.
         """
         return pulumi.get(self, "events_field_selectors")
 
     @events_field_selectors.setter
-    def events_field_selectors(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['K8sCredentialsEventsFieldSelectorArgs']]]]):
+    def events_field_selectors(self, value: pulumi.Input[Optional[Sequence[pulumi.Input['K8sCredentialsEventsFieldSelectorArgs']]]]):
         pulumi.set(self, "events_field_selectors", value)
 
     @_builtins.property
     @pulumi.getter(name="eventsIntegrationEnabled")
-    def events_integration_enabled(self) -> Optional[pulumi.Input[_builtins.bool]]:
+    def events_integration_enabled(self) -> pulumi.Input[Optional[_builtins.bool]]:
         """
         Monitoring of events is enabled (`true`) or disabled (`false`) for the Kubernetes cluster. Event monitoring depends on the active state of this configuration to be true.  If not set on creation, the `false` value is used.  If the field is omitted during an update, the old value remains unaffected.
         """
         return pulumi.get(self, "events_integration_enabled")
 
     @events_integration_enabled.setter
-    def events_integration_enabled(self, value: Optional[pulumi.Input[_builtins.bool]]):
+    def events_integration_enabled(self, value: pulumi.Input[Optional[_builtins.bool]]):
         pulumi.set(self, "events_integration_enabled", value)
 
     @_builtins.property
     @pulumi.getter(name="hostnameVerification")
-    def hostname_verification(self) -> Optional[pulumi.Input[_builtins.bool]]:
+    def hostname_verification(self) -> pulumi.Input[Optional[_builtins.bool]]:
         """
         Verify hostname in certificate against Kubernetes API URL
         """
         return pulumi.get(self, "hostname_verification")
 
     @hostname_verification.setter
-    def hostname_verification(self, value: Optional[pulumi.Input[_builtins.bool]]):
+    def hostname_verification(self, value: pulumi.Input[Optional[_builtins.bool]]):
         pulumi.set(self, "hostname_verification", value)
 
     @_builtins.property
     @pulumi.getter(name="prometheusExporters")
-    def prometheus_exporters(self) -> Optional[pulumi.Input[_builtins.bool]]:
+    def prometheus_exporters(self) -> pulumi.Input[Optional[_builtins.bool]]:
         """
         Prometheus exporters integration is enabled (`true`) or disabled (`false`) for the Kubernetes cluster.If the field is omitted during an update, the old value remains unaffected
         """
         return pulumi.get(self, "prometheus_exporters")
 
     @prometheus_exporters.setter
-    def prometheus_exporters(self, value: Optional[pulumi.Input[_builtins.bool]]):
+    def prometheus_exporters(self, value: pulumi.Input[Optional[_builtins.bool]]):
         pulumi.set(self, "prometheus_exporters", value)
 
     @_builtins.property
     @pulumi.getter
-    def unknowns(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def unknowns(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Any attributes that aren't yet supported by this provider
         """
         return pulumi.get(self, "unknowns")
 
     @unknowns.setter
-    def unknowns(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def unknowns(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "unknowns", value)
 
     @_builtins.property
     @pulumi.getter(name="workloadIntegrationEnabled")
-    def workload_integration_enabled(self) -> Optional[pulumi.Input[_builtins.bool]]:
+    def workload_integration_enabled(self) -> pulumi.Input[Optional[_builtins.bool]]:
         """
         Workload and cloud application processing is enabled (`true`) or disabled (`false`) for the Kubernetes cluster. If the field is omitted during an update, the old value remains unaffected.
         """
         return pulumi.get(self, "workload_integration_enabled")
 
     @workload_integration_enabled.setter
-    def workload_integration_enabled(self, value: Optional[pulumi.Input[_builtins.bool]]):
+    def workload_integration_enabled(self, value: pulumi.Input[Optional[_builtins.bool]]):
         pulumi.set(self, "workload_integration_enabled", value)
 
 
 @pulumi.input_type
 class _K8sCredentialsState:
     def __init__(__self__, *,
-                 active: Optional[pulumi.Input[_builtins.bool]] = None,
-                 active_gate_group: Optional[pulumi.Input[_builtins.str]] = None,
-                 auth_token: Optional[pulumi.Input[_builtins.str]] = None,
-                 certificate_check_enabled: Optional[pulumi.Input[_builtins.bool]] = None,
-                 davis_events_integration_enabled: Optional[pulumi.Input[_builtins.bool]] = None,
-                 endpoint_url: Optional[pulumi.Input[_builtins.str]] = None,
-                 event_analysis_and_alerting_enabled: Optional[pulumi.Input[_builtins.bool]] = None,
-                 events_field_selectors: Optional[pulumi.Input[Sequence[pulumi.Input['K8sCredentialsEventsFieldSelectorArgs']]]] = None,
-                 events_integration_enabled: Optional[pulumi.Input[_builtins.bool]] = None,
-                 hostname_verification: Optional[pulumi.Input[_builtins.bool]] = None,
-                 label: Optional[pulumi.Input[_builtins.str]] = None,
-                 prometheus_exporters: Optional[pulumi.Input[_builtins.bool]] = None,
-                 unknowns: Optional[pulumi.Input[_builtins.str]] = None,
-                 workload_integration_enabled: Optional[pulumi.Input[_builtins.bool]] = None):
+                 active: pulumi.Input[Optional[_builtins.bool]] = None,
+                 active_gate_group: pulumi.Input[Optional[_builtins.str]] = None,
+                 auth_token: pulumi.Input[Optional[_builtins.str]] = None,
+                 certificate_check_enabled: pulumi.Input[Optional[_builtins.bool]] = None,
+                 davis_events_integration_enabled: pulumi.Input[Optional[_builtins.bool]] = None,
+                 endpoint_url: pulumi.Input[Optional[_builtins.str]] = None,
+                 event_analysis_and_alerting_enabled: pulumi.Input[Optional[_builtins.bool]] = None,
+                 events_field_selectors: pulumi.Input[Optional[Sequence[pulumi.Input['K8sCredentialsEventsFieldSelectorArgs']]]] = None,
+                 events_integration_enabled: pulumi.Input[Optional[_builtins.bool]] = None,
+                 hostname_verification: pulumi.Input[Optional[_builtins.bool]] = None,
+                 label: pulumi.Input[Optional[_builtins.str]] = None,
+                 prometheus_exporters: pulumi.Input[Optional[_builtins.bool]] = None,
+                 unknowns: pulumi.Input[Optional[_builtins.str]] = None,
+                 workload_integration_enabled: pulumi.Input[Optional[_builtins.bool]] = None):
         """
         Input properties used for looking up and filtering K8sCredentials resources.
 
@@ -316,170 +316,170 @@ class _K8sCredentialsState:
 
     @_builtins.property
     @pulumi.getter
-    def active(self) -> Optional[pulumi.Input[_builtins.bool]]:
+    def active(self) -> pulumi.Input[Optional[_builtins.bool]]:
         """
         Monitoring is enabled (`true`) or disabled (`false`) for given credentials configuration.  If not set on creation, the `true` value is used.  If the field is omitted during an update, the old value remains unaffected.
         """
         return pulumi.get(self, "active")
 
     @active.setter
-    def active(self, value: Optional[pulumi.Input[_builtins.bool]]):
+    def active(self, value: pulumi.Input[Optional[_builtins.bool]]):
         pulumi.set(self, "active", value)
 
     @_builtins.property
     @pulumi.getter(name="activeGateGroup")
-    def active_gate_group(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def active_gate_group(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Active Gate group to filter active gates for this credentials.
         """
         return pulumi.get(self, "active_gate_group")
 
     @active_gate_group.setter
-    def active_gate_group(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def active_gate_group(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "active_gate_group", value)
 
     @_builtins.property
     @pulumi.getter(name="authToken")
-    def auth_token(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def auth_token(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The service account bearer token for the Kubernetes API server.  Submit your token on creation or update of the configuration. For security reasons, GET requests return this field as `null`.  If the field is omitted during an update, the old value remains unaffected.
         """
         return pulumi.get(self, "auth_token")
 
     @auth_token.setter
-    def auth_token(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def auth_token(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "auth_token", value)
 
     @_builtins.property
     @pulumi.getter(name="certificateCheckEnabled")
-    def certificate_check_enabled(self) -> Optional[pulumi.Input[_builtins.bool]]:
+    def certificate_check_enabled(self) -> pulumi.Input[Optional[_builtins.bool]]:
         """
         The check of SSL certificates is enabled (`true`) or disabled (`false`) for the Kubernetes cluster.  If not set on creation, the `true` value is used.  If the field is omitted during an update, the old value remains unaffected.
         """
         return pulumi.get(self, "certificate_check_enabled")
 
     @certificate_check_enabled.setter
-    def certificate_check_enabled(self, value: Optional[pulumi.Input[_builtins.bool]]):
+    def certificate_check_enabled(self, value: pulumi.Input[Optional[_builtins.bool]]):
         pulumi.set(self, "certificate_check_enabled", value)
 
     @_builtins.property
     @pulumi.getter(name="davisEventsIntegrationEnabled")
-    def davis_events_integration_enabled(self) -> Optional[pulumi.Input[_builtins.bool]]:
+    def davis_events_integration_enabled(self) -> pulumi.Input[Optional[_builtins.bool]]:
         """
         Inclusion of all Davis relevant events is enabled (`true`) or disabled (`false`) for the Kubernetes cluster. If the field is omitted during an update, the old value remains unaffected
         """
         return pulumi.get(self, "davis_events_integration_enabled")
 
     @davis_events_integration_enabled.setter
-    def davis_events_integration_enabled(self, value: Optional[pulumi.Input[_builtins.bool]]):
+    def davis_events_integration_enabled(self, value: pulumi.Input[Optional[_builtins.bool]]):
         pulumi.set(self, "davis_events_integration_enabled", value)
 
     @_builtins.property
     @pulumi.getter(name="endpointUrl")
-    def endpoint_url(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def endpoint_url(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The URL of the Kubernetes API server.  It must be unique within a Dynatrace environment.  The URL must valid according to RFC 2396. Leading or trailing whitespaces are not allowed.
         """
         return pulumi.get(self, "endpoint_url")
 
     @endpoint_url.setter
-    def endpoint_url(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def endpoint_url(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "endpoint_url", value)
 
     @_builtins.property
     @pulumi.getter(name="eventAnalysisAndAlertingEnabled")
-    def event_analysis_and_alerting_enabled(self) -> Optional[pulumi.Input[_builtins.bool]]:
+    def event_analysis_and_alerting_enabled(self) -> pulumi.Input[Optional[_builtins.bool]]:
         """
         Event analysis and alerting is (`true`) or disabled (`false`) for the Kubernetes cluster. If the field is omitted during an update, the old value remains unaffected.
         """
         return pulumi.get(self, "event_analysis_and_alerting_enabled")
 
     @event_analysis_and_alerting_enabled.setter
-    def event_analysis_and_alerting_enabled(self, value: Optional[pulumi.Input[_builtins.bool]]):
+    def event_analysis_and_alerting_enabled(self, value: pulumi.Input[Optional[_builtins.bool]]):
         pulumi.set(self, "event_analysis_and_alerting_enabled", value)
 
     @_builtins.property
     @pulumi.getter(name="eventsFieldSelectors")
-    def events_field_selectors(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['K8sCredentialsEventsFieldSelectorArgs']]]]:
+    def events_field_selectors(self) -> pulumi.Input[Optional[Sequence[pulumi.Input['K8sCredentialsEventsFieldSelectorArgs']]]]:
         """
         Kubernetes event filters based on field-selectors. If set to `null` on creation, no events field selectors are subscribed. If set to `null` on update, no change of stored events field selectors is applied. Set an empty list to clear all events field selectors.
         """
         return pulumi.get(self, "events_field_selectors")
 
     @events_field_selectors.setter
-    def events_field_selectors(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['K8sCredentialsEventsFieldSelectorArgs']]]]):
+    def events_field_selectors(self, value: pulumi.Input[Optional[Sequence[pulumi.Input['K8sCredentialsEventsFieldSelectorArgs']]]]):
         pulumi.set(self, "events_field_selectors", value)
 
     @_builtins.property
     @pulumi.getter(name="eventsIntegrationEnabled")
-    def events_integration_enabled(self) -> Optional[pulumi.Input[_builtins.bool]]:
+    def events_integration_enabled(self) -> pulumi.Input[Optional[_builtins.bool]]:
         """
         Monitoring of events is enabled (`true`) or disabled (`false`) for the Kubernetes cluster. Event monitoring depends on the active state of this configuration to be true.  If not set on creation, the `false` value is used.  If the field is omitted during an update, the old value remains unaffected.
         """
         return pulumi.get(self, "events_integration_enabled")
 
     @events_integration_enabled.setter
-    def events_integration_enabled(self, value: Optional[pulumi.Input[_builtins.bool]]):
+    def events_integration_enabled(self, value: pulumi.Input[Optional[_builtins.bool]]):
         pulumi.set(self, "events_integration_enabled", value)
 
     @_builtins.property
     @pulumi.getter(name="hostnameVerification")
-    def hostname_verification(self) -> Optional[pulumi.Input[_builtins.bool]]:
+    def hostname_verification(self) -> pulumi.Input[Optional[_builtins.bool]]:
         """
         Verify hostname in certificate against Kubernetes API URL
         """
         return pulumi.get(self, "hostname_verification")
 
     @hostname_verification.setter
-    def hostname_verification(self, value: Optional[pulumi.Input[_builtins.bool]]):
+    def hostname_verification(self, value: pulumi.Input[Optional[_builtins.bool]]):
         pulumi.set(self, "hostname_verification", value)
 
     @_builtins.property
     @pulumi.getter
-    def label(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def label(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The name of the Kubernetes credentials configuration.  Allowed characters are letters, numbers, whitespaces, and the following characters: `.+-_`. Leading or trailing whitespace is not allowed.
         """
         return pulumi.get(self, "label")
 
     @label.setter
-    def label(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def label(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "label", value)
 
     @_builtins.property
     @pulumi.getter(name="prometheusExporters")
-    def prometheus_exporters(self) -> Optional[pulumi.Input[_builtins.bool]]:
+    def prometheus_exporters(self) -> pulumi.Input[Optional[_builtins.bool]]:
         """
         Prometheus exporters integration is enabled (`true`) or disabled (`false`) for the Kubernetes cluster.If the field is omitted during an update, the old value remains unaffected
         """
         return pulumi.get(self, "prometheus_exporters")
 
     @prometheus_exporters.setter
-    def prometheus_exporters(self, value: Optional[pulumi.Input[_builtins.bool]]):
+    def prometheus_exporters(self, value: pulumi.Input[Optional[_builtins.bool]]):
         pulumi.set(self, "prometheus_exporters", value)
 
     @_builtins.property
     @pulumi.getter
-    def unknowns(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def unknowns(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Any attributes that aren't yet supported by this provider
         """
         return pulumi.get(self, "unknowns")
 
     @unknowns.setter
-    def unknowns(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def unknowns(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "unknowns", value)
 
     @_builtins.property
     @pulumi.getter(name="workloadIntegrationEnabled")
-    def workload_integration_enabled(self) -> Optional[pulumi.Input[_builtins.bool]]:
+    def workload_integration_enabled(self) -> pulumi.Input[Optional[_builtins.bool]]:
         """
         Workload and cloud application processing is enabled (`true`) or disabled (`false`) for the Kubernetes cluster. If the field is omitted during an update, the old value remains unaffected.
         """
         return pulumi.get(self, "workload_integration_enabled")
 
     @workload_integration_enabled.setter
-    def workload_integration_enabled(self, value: Optional[pulumi.Input[_builtins.bool]]):
+    def workload_integration_enabled(self, value: pulumi.Input[Optional[_builtins.bool]]):
         pulumi.set(self, "workload_integration_enabled", value)
 
 
@@ -489,20 +489,20 @@ class K8sCredentials(pulumi.CustomResource):
     def __init__(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 active: Optional[pulumi.Input[_builtins.bool]] = None,
-                 active_gate_group: Optional[pulumi.Input[_builtins.str]] = None,
-                 auth_token: Optional[pulumi.Input[_builtins.str]] = None,
-                 certificate_check_enabled: Optional[pulumi.Input[_builtins.bool]] = None,
-                 davis_events_integration_enabled: Optional[pulumi.Input[_builtins.bool]] = None,
-                 endpoint_url: Optional[pulumi.Input[_builtins.str]] = None,
-                 event_analysis_and_alerting_enabled: Optional[pulumi.Input[_builtins.bool]] = None,
-                 events_field_selectors: Optional[pulumi.Input[Sequence[pulumi.Input[Union['K8sCredentialsEventsFieldSelectorArgs', 'K8sCredentialsEventsFieldSelectorArgsDict']]]]] = None,
-                 events_integration_enabled: Optional[pulumi.Input[_builtins.bool]] = None,
-                 hostname_verification: Optional[pulumi.Input[_builtins.bool]] = None,
-                 label: Optional[pulumi.Input[_builtins.str]] = None,
-                 prometheus_exporters: Optional[pulumi.Input[_builtins.bool]] = None,
-                 unknowns: Optional[pulumi.Input[_builtins.str]] = None,
-                 workload_integration_enabled: Optional[pulumi.Input[_builtins.bool]] = None,
+                 active: pulumi.Input[Optional[_builtins.bool]] = None,
+                 active_gate_group: pulumi.Input[Optional[_builtins.str]] = None,
+                 auth_token: pulumi.Input[Optional[_builtins.str]] = None,
+                 certificate_check_enabled: pulumi.Input[Optional[_builtins.bool]] = None,
+                 davis_events_integration_enabled: pulumi.Input[Optional[_builtins.bool]] = None,
+                 endpoint_url: pulumi.Input[Optional[_builtins.str]] = None,
+                 event_analysis_and_alerting_enabled: pulumi.Input[Optional[_builtins.bool]] = None,
+                 events_field_selectors: pulumi.Input[Optional[Sequence[pulumi.Input[Union['K8sCredentialsEventsFieldSelectorArgs', 'K8sCredentialsEventsFieldSelectorArgsDict']]]]] = None,
+                 events_integration_enabled: pulumi.Input[Optional[_builtins.bool]] = None,
+                 hostname_verification: pulumi.Input[Optional[_builtins.bool]] = None,
+                 label: pulumi.Input[Optional[_builtins.str]] = None,
+                 prometheus_exporters: pulumi.Input[Optional[_builtins.bool]] = None,
+                 unknowns: pulumi.Input[Optional[_builtins.str]] = None,
+                 workload_integration_enabled: pulumi.Input[Optional[_builtins.bool]] = None,
                  __props__=None):
         """
         !> This resource is utilizing an older API endpoint, please use Kubernetes instead.
@@ -578,20 +578,20 @@ class K8sCredentials(pulumi.CustomResource):
     def _internal_init(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 active: Optional[pulumi.Input[_builtins.bool]] = None,
-                 active_gate_group: Optional[pulumi.Input[_builtins.str]] = None,
-                 auth_token: Optional[pulumi.Input[_builtins.str]] = None,
-                 certificate_check_enabled: Optional[pulumi.Input[_builtins.bool]] = None,
-                 davis_events_integration_enabled: Optional[pulumi.Input[_builtins.bool]] = None,
-                 endpoint_url: Optional[pulumi.Input[_builtins.str]] = None,
-                 event_analysis_and_alerting_enabled: Optional[pulumi.Input[_builtins.bool]] = None,
-                 events_field_selectors: Optional[pulumi.Input[Sequence[pulumi.Input[Union['K8sCredentialsEventsFieldSelectorArgs', 'K8sCredentialsEventsFieldSelectorArgsDict']]]]] = None,
-                 events_integration_enabled: Optional[pulumi.Input[_builtins.bool]] = None,
-                 hostname_verification: Optional[pulumi.Input[_builtins.bool]] = None,
-                 label: Optional[pulumi.Input[_builtins.str]] = None,
-                 prometheus_exporters: Optional[pulumi.Input[_builtins.bool]] = None,
-                 unknowns: Optional[pulumi.Input[_builtins.str]] = None,
-                 workload_integration_enabled: Optional[pulumi.Input[_builtins.bool]] = None,
+                 active: pulumi.Input[Optional[_builtins.bool]] = None,
+                 active_gate_group: pulumi.Input[Optional[_builtins.str]] = None,
+                 auth_token: pulumi.Input[Optional[_builtins.str]] = None,
+                 certificate_check_enabled: pulumi.Input[Optional[_builtins.bool]] = None,
+                 davis_events_integration_enabled: pulumi.Input[Optional[_builtins.bool]] = None,
+                 endpoint_url: pulumi.Input[Optional[_builtins.str]] = None,
+                 event_analysis_and_alerting_enabled: pulumi.Input[Optional[_builtins.bool]] = None,
+                 events_field_selectors: pulumi.Input[Optional[Sequence[pulumi.Input[Union['K8sCredentialsEventsFieldSelectorArgs', 'K8sCredentialsEventsFieldSelectorArgsDict']]]]] = None,
+                 events_integration_enabled: pulumi.Input[Optional[_builtins.bool]] = None,
+                 hostname_verification: pulumi.Input[Optional[_builtins.bool]] = None,
+                 label: pulumi.Input[Optional[_builtins.str]] = None,
+                 prometheus_exporters: pulumi.Input[Optional[_builtins.bool]] = None,
+                 unknowns: pulumi.Input[Optional[_builtins.str]] = None,
+                 workload_integration_enabled: pulumi.Input[Optional[_builtins.bool]] = None,
                  __props__=None):
         opts = pulumi.ResourceOptions.merge(_utilities.get_resource_opts_defaults(), opts)
         if not isinstance(opts, pulumi.ResourceOptions):
@@ -629,20 +629,20 @@ class K8sCredentials(pulumi.CustomResource):
     def get(resource_name: str,
             id: pulumi.Input[str],
             opts: Optional[pulumi.ResourceOptions] = None,
-            active: Optional[pulumi.Input[_builtins.bool]] = None,
-            active_gate_group: Optional[pulumi.Input[_builtins.str]] = None,
-            auth_token: Optional[pulumi.Input[_builtins.str]] = None,
-            certificate_check_enabled: Optional[pulumi.Input[_builtins.bool]] = None,
-            davis_events_integration_enabled: Optional[pulumi.Input[_builtins.bool]] = None,
-            endpoint_url: Optional[pulumi.Input[_builtins.str]] = None,
-            event_analysis_and_alerting_enabled: Optional[pulumi.Input[_builtins.bool]] = None,
-            events_field_selectors: Optional[pulumi.Input[Sequence[pulumi.Input[Union['K8sCredentialsEventsFieldSelectorArgs', 'K8sCredentialsEventsFieldSelectorArgsDict']]]]] = None,
-            events_integration_enabled: Optional[pulumi.Input[_builtins.bool]] = None,
-            hostname_verification: Optional[pulumi.Input[_builtins.bool]] = None,
-            label: Optional[pulumi.Input[_builtins.str]] = None,
-            prometheus_exporters: Optional[pulumi.Input[_builtins.bool]] = None,
-            unknowns: Optional[pulumi.Input[_builtins.str]] = None,
-            workload_integration_enabled: Optional[pulumi.Input[_builtins.bool]] = None) -> 'K8sCredentials':
+            active: pulumi.Input[Optional[_builtins.bool]] = None,
+            active_gate_group: pulumi.Input[Optional[_builtins.str]] = None,
+            auth_token: pulumi.Input[Optional[_builtins.str]] = None,
+            certificate_check_enabled: pulumi.Input[Optional[_builtins.bool]] = None,
+            davis_events_integration_enabled: pulumi.Input[Optional[_builtins.bool]] = None,
+            endpoint_url: pulumi.Input[Optional[_builtins.str]] = None,
+            event_analysis_and_alerting_enabled: pulumi.Input[Optional[_builtins.bool]] = None,
+            events_field_selectors: pulumi.Input[Optional[Sequence[pulumi.Input[Union['K8sCredentialsEventsFieldSelectorArgs', 'K8sCredentialsEventsFieldSelectorArgsDict']]]]] = None,
+            events_integration_enabled: pulumi.Input[Optional[_builtins.bool]] = None,
+            hostname_verification: pulumi.Input[Optional[_builtins.bool]] = None,
+            label: pulumi.Input[Optional[_builtins.str]] = None,
+            prometheus_exporters: pulumi.Input[Optional[_builtins.bool]] = None,
+            unknowns: pulumi.Input[Optional[_builtins.str]] = None,
+            workload_integration_enabled: pulumi.Input[Optional[_builtins.bool]] = None) -> 'K8sCredentials':
         """
         Get an existing K8sCredentials resource's state with the given name, id, and optional extra
         properties used to qualify the lookup.

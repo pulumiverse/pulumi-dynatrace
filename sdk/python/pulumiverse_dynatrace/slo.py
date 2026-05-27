@@ -25,16 +25,16 @@ class SloArgs:
                  target: pulumi.Input[_builtins.float],
                  timeframe: pulumi.Input[_builtins.str],
                  warning: pulumi.Input[_builtins.float],
-                 denominator: Optional[pulumi.Input[_builtins.str]] = None,
-                 description: Optional[pulumi.Input[_builtins.str]] = None,
-                 disabled: Optional[pulumi.Input[_builtins.bool]] = None,
-                 error_budget_burn_rate: Optional[pulumi.Input['SloErrorBudgetBurnRateArgs']] = None,
-                 filter: Optional[pulumi.Input[_builtins.str]] = None,
-                 metric_expression: Optional[pulumi.Input[_builtins.str]] = None,
-                 metric_name: Optional[pulumi.Input[_builtins.str]] = None,
-                 name: Optional[pulumi.Input[_builtins.str]] = None,
-                 numerator: Optional[pulumi.Input[_builtins.str]] = None,
-                 rate: Optional[pulumi.Input[_builtins.str]] = None):
+                 denominator: pulumi.Input[Optional[_builtins.str]] = None,
+                 description: pulumi.Input[Optional[_builtins.str]] = None,
+                 disabled: pulumi.Input[Optional[_builtins.bool]] = None,
+                 error_budget_burn_rate: pulumi.Input[Optional['SloErrorBudgetBurnRateArgs']] = None,
+                 filter: pulumi.Input[Optional[_builtins.str]] = None,
+                 metric_expression: pulumi.Input[Optional[_builtins.str]] = None,
+                 metric_name: pulumi.Input[Optional[_builtins.str]] = None,
+                 name: pulumi.Input[Optional[_builtins.str]] = None,
+                 numerator: pulumi.Input[Optional[_builtins.str]] = None,
+                 rate: pulumi.Input[Optional[_builtins.str]] = None):
         """
         The set of arguments for constructing a Slo resource.
 
@@ -131,143 +131,143 @@ class SloArgs:
 
     @_builtins.property
     @pulumi.getter
-    def denominator(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def denominator(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The total count metric (the denominator in rate calculation)
         """
         return pulumi.get(self, "denominator")
 
     @denominator.setter
-    def denominator(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def denominator(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "denominator", value)
 
     @_builtins.property
     @pulumi.getter
-    def description(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def description(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The custom description of the SLO (optional)
         """
         return pulumi.get(self, "description")
 
     @description.setter
-    def description(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def description(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "description", value)
 
     @_builtins.property
     @pulumi.getter
-    def disabled(self) -> Optional[pulumi.Input[_builtins.bool]]:
+    def disabled(self) -> pulumi.Input[Optional[_builtins.bool]]:
         """
         The SLO is enabled (`false`) or disabled (`true`)
         """
         return pulumi.get(self, "disabled")
 
     @disabled.setter
-    def disabled(self, value: Optional[pulumi.Input[_builtins.bool]]):
+    def disabled(self, value: pulumi.Input[Optional[_builtins.bool]]):
         pulumi.set(self, "disabled", value)
 
     @_builtins.property
     @pulumi.getter(name="errorBudgetBurnRate")
-    def error_budget_burn_rate(self) -> Optional[pulumi.Input['SloErrorBudgetBurnRateArgs']]:
+    def error_budget_burn_rate(self) -> pulumi.Input[Optional['SloErrorBudgetBurnRateArgs']]:
         """
         Error budget burn rate configuration of a service-level objective (SLO).
         """
         return pulumi.get(self, "error_budget_burn_rate")
 
     @error_budget_burn_rate.setter
-    def error_budget_burn_rate(self, value: Optional[pulumi.Input['SloErrorBudgetBurnRateArgs']]):
+    def error_budget_burn_rate(self, value: pulumi.Input[Optional['SloErrorBudgetBurnRateArgs']]):
         pulumi.set(self, "error_budget_burn_rate", value)
 
     @_builtins.property
     @pulumi.getter
-    def filter(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def filter(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The entity filter for the SLO evaluation. Use the [syntax of entity selector](https://dt-url.net/entityselector)
         """
         return pulumi.get(self, "filter")
 
     @filter.setter
-    def filter(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def filter(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "filter", value)
 
     @_builtins.property
     @pulumi.getter(name="metricExpression")
-    def metric_expression(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def metric_expression(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The percentage-based metric expression for the calculation of the SLO
         """
         return pulumi.get(self, "metric_expression")
 
     @metric_expression.setter
-    def metric_expression(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def metric_expression(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "metric_expression", value)
 
     @_builtins.property
     @pulumi.getter(name="metricName")
-    def metric_name(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def metric_name(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The name that is used to create SLO func metrics keys. Once created, metric name cannot be changed.
         """
         return pulumi.get(self, "metric_name")
 
     @metric_name.setter
-    def metric_name(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def metric_name(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "metric_name", value)
 
     @_builtins.property
     @pulumi.getter
-    def name(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def name(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The name of the rule
         """
         return pulumi.get(self, "name")
 
     @name.setter
-    def name(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def name(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "name", value)
 
     @_builtins.property
     @pulumi.getter
     @_utilities.deprecated("""`numerator` and `denominator` have been replaced by `metric_expression`""")
-    def numerator(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def numerator(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The metric for the count of successes (the numerator in rate calculation)
         """
         return pulumi.get(self, "numerator")
 
     @numerator.setter
-    def numerator(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def numerator(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "numerator", value)
 
     @_builtins.property
     @pulumi.getter
-    def rate(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def rate(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The percentage-based metric for the calculation of the SLO
         """
         return pulumi.get(self, "rate")
 
     @rate.setter
-    def rate(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def rate(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "rate", value)
 
 
 @pulumi.input_type
 class _SloState:
     def __init__(__self__, *,
-                 denominator: Optional[pulumi.Input[_builtins.str]] = None,
-                 description: Optional[pulumi.Input[_builtins.str]] = None,
-                 disabled: Optional[pulumi.Input[_builtins.bool]] = None,
-                 error_budget_burn_rate: Optional[pulumi.Input['SloErrorBudgetBurnRateArgs']] = None,
-                 evaluation: Optional[pulumi.Input[_builtins.str]] = None,
-                 filter: Optional[pulumi.Input[_builtins.str]] = None,
-                 metric_expression: Optional[pulumi.Input[_builtins.str]] = None,
-                 metric_name: Optional[pulumi.Input[_builtins.str]] = None,
-                 name: Optional[pulumi.Input[_builtins.str]] = None,
-                 numerator: Optional[pulumi.Input[_builtins.str]] = None,
-                 rate: Optional[pulumi.Input[_builtins.str]] = None,
-                 target: Optional[pulumi.Input[_builtins.float]] = None,
-                 timeframe: Optional[pulumi.Input[_builtins.str]] = None,
-                 warning: Optional[pulumi.Input[_builtins.float]] = None):
+                 denominator: pulumi.Input[Optional[_builtins.str]] = None,
+                 description: pulumi.Input[Optional[_builtins.str]] = None,
+                 disabled: pulumi.Input[Optional[_builtins.bool]] = None,
+                 error_budget_burn_rate: pulumi.Input[Optional['SloErrorBudgetBurnRateArgs']] = None,
+                 evaluation: pulumi.Input[Optional[_builtins.str]] = None,
+                 filter: pulumi.Input[Optional[_builtins.str]] = None,
+                 metric_expression: pulumi.Input[Optional[_builtins.str]] = None,
+                 metric_name: pulumi.Input[Optional[_builtins.str]] = None,
+                 name: pulumi.Input[Optional[_builtins.str]] = None,
+                 numerator: pulumi.Input[Optional[_builtins.str]] = None,
+                 rate: pulumi.Input[Optional[_builtins.str]] = None,
+                 target: pulumi.Input[Optional[_builtins.float]] = None,
+                 timeframe: pulumi.Input[Optional[_builtins.str]] = None,
+                 warning: pulumi.Input[Optional[_builtins.float]] = None):
         """
         Input properties used for looking up and filtering Slo resources.
 
@@ -320,171 +320,171 @@ class _SloState:
 
     @_builtins.property
     @pulumi.getter
-    def denominator(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def denominator(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The total count metric (the denominator in rate calculation)
         """
         return pulumi.get(self, "denominator")
 
     @denominator.setter
-    def denominator(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def denominator(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "denominator", value)
 
     @_builtins.property
     @pulumi.getter
-    def description(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def description(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The custom description of the SLO (optional)
         """
         return pulumi.get(self, "description")
 
     @description.setter
-    def description(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def description(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "description", value)
 
     @_builtins.property
     @pulumi.getter
-    def disabled(self) -> Optional[pulumi.Input[_builtins.bool]]:
+    def disabled(self) -> pulumi.Input[Optional[_builtins.bool]]:
         """
         The SLO is enabled (`false`) or disabled (`true`)
         """
         return pulumi.get(self, "disabled")
 
     @disabled.setter
-    def disabled(self, value: Optional[pulumi.Input[_builtins.bool]]):
+    def disabled(self, value: pulumi.Input[Optional[_builtins.bool]]):
         pulumi.set(self, "disabled", value)
 
     @_builtins.property
     @pulumi.getter(name="errorBudgetBurnRate")
-    def error_budget_burn_rate(self) -> Optional[pulumi.Input['SloErrorBudgetBurnRateArgs']]:
+    def error_budget_burn_rate(self) -> pulumi.Input[Optional['SloErrorBudgetBurnRateArgs']]:
         """
         Error budget burn rate configuration of a service-level objective (SLO).
         """
         return pulumi.get(self, "error_budget_burn_rate")
 
     @error_budget_burn_rate.setter
-    def error_budget_burn_rate(self, value: Optional[pulumi.Input['SloErrorBudgetBurnRateArgs']]):
+    def error_budget_burn_rate(self, value: pulumi.Input[Optional['SloErrorBudgetBurnRateArgs']]):
         pulumi.set(self, "error_budget_burn_rate", value)
 
     @_builtins.property
     @pulumi.getter
-    def evaluation(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def evaluation(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The evaluation type of the SLO. Currently only `AGGREGATE` is supported
         """
         return pulumi.get(self, "evaluation")
 
     @evaluation.setter
-    def evaluation(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def evaluation(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "evaluation", value)
 
     @_builtins.property
     @pulumi.getter
-    def filter(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def filter(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The entity filter for the SLO evaluation. Use the [syntax of entity selector](https://dt-url.net/entityselector)
         """
         return pulumi.get(self, "filter")
 
     @filter.setter
-    def filter(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def filter(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "filter", value)
 
     @_builtins.property
     @pulumi.getter(name="metricExpression")
-    def metric_expression(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def metric_expression(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The percentage-based metric expression for the calculation of the SLO
         """
         return pulumi.get(self, "metric_expression")
 
     @metric_expression.setter
-    def metric_expression(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def metric_expression(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "metric_expression", value)
 
     @_builtins.property
     @pulumi.getter(name="metricName")
-    def metric_name(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def metric_name(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The name that is used to create SLO func metrics keys. Once created, metric name cannot be changed.
         """
         return pulumi.get(self, "metric_name")
 
     @metric_name.setter
-    def metric_name(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def metric_name(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "metric_name", value)
 
     @_builtins.property
     @pulumi.getter
-    def name(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def name(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The name of the rule
         """
         return pulumi.get(self, "name")
 
     @name.setter
-    def name(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def name(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "name", value)
 
     @_builtins.property
     @pulumi.getter
     @_utilities.deprecated("""`numerator` and `denominator` have been replaced by `metric_expression`""")
-    def numerator(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def numerator(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The metric for the count of successes (the numerator in rate calculation)
         """
         return pulumi.get(self, "numerator")
 
     @numerator.setter
-    def numerator(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def numerator(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "numerator", value)
 
     @_builtins.property
     @pulumi.getter
-    def rate(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def rate(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The percentage-based metric for the calculation of the SLO
         """
         return pulumi.get(self, "rate")
 
     @rate.setter
-    def rate(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def rate(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "rate", value)
 
     @_builtins.property
     @pulumi.getter
-    def target(self) -> Optional[pulumi.Input[_builtins.float]]:
+    def target(self) -> pulumi.Input[Optional[_builtins.float]]:
         """
         The target value of the SLO
         """
         return pulumi.get(self, "target")
 
     @target.setter
-    def target(self, value: Optional[pulumi.Input[_builtins.float]]):
+    def target(self, value: pulumi.Input[Optional[_builtins.float]]):
         pulumi.set(self, "target", value)
 
     @_builtins.property
     @pulumi.getter
-    def timeframe(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def timeframe(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The timeframe for the SLO evaluation. Use the syntax of the global timeframe selector
         """
         return pulumi.get(self, "timeframe")
 
     @timeframe.setter
-    def timeframe(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def timeframe(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "timeframe", value)
 
     @_builtins.property
     @pulumi.getter
-    def warning(self) -> Optional[pulumi.Input[_builtins.float]]:
+    def warning(self) -> pulumi.Input[Optional[_builtins.float]]:
         """
         The warning value of the SLO. At warning state the SLO is still fulfilled but is getting close to failure
         """
         return pulumi.get(self, "warning")
 
     @warning.setter
-    def warning(self, value: Optional[pulumi.Input[_builtins.float]]):
+    def warning(self, value: pulumi.Input[Optional[_builtins.float]]):
         pulumi.set(self, "warning", value)
 
 
@@ -494,20 +494,20 @@ class Slo(pulumi.CustomResource):
     def __init__(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 denominator: Optional[pulumi.Input[_builtins.str]] = None,
-                 description: Optional[pulumi.Input[_builtins.str]] = None,
-                 disabled: Optional[pulumi.Input[_builtins.bool]] = None,
-                 error_budget_burn_rate: Optional[pulumi.Input[Union['SloErrorBudgetBurnRateArgs', 'SloErrorBudgetBurnRateArgsDict']]] = None,
-                 evaluation: Optional[pulumi.Input[_builtins.str]] = None,
-                 filter: Optional[pulumi.Input[_builtins.str]] = None,
-                 metric_expression: Optional[pulumi.Input[_builtins.str]] = None,
-                 metric_name: Optional[pulumi.Input[_builtins.str]] = None,
-                 name: Optional[pulumi.Input[_builtins.str]] = None,
-                 numerator: Optional[pulumi.Input[_builtins.str]] = None,
-                 rate: Optional[pulumi.Input[_builtins.str]] = None,
-                 target: Optional[pulumi.Input[_builtins.float]] = None,
-                 timeframe: Optional[pulumi.Input[_builtins.str]] = None,
-                 warning: Optional[pulumi.Input[_builtins.float]] = None,
+                 denominator: pulumi.Input[Optional[_builtins.str]] = None,
+                 description: pulumi.Input[Optional[_builtins.str]] = None,
+                 disabled: pulumi.Input[Optional[_builtins.bool]] = None,
+                 error_budget_burn_rate: pulumi.Input[Optional[Union['SloErrorBudgetBurnRateArgs', 'SloErrorBudgetBurnRateArgsDict']]] = None,
+                 evaluation: pulumi.Input[Optional[_builtins.str]] = None,
+                 filter: pulumi.Input[Optional[_builtins.str]] = None,
+                 metric_expression: pulumi.Input[Optional[_builtins.str]] = None,
+                 metric_name: pulumi.Input[Optional[_builtins.str]] = None,
+                 name: pulumi.Input[Optional[_builtins.str]] = None,
+                 numerator: pulumi.Input[Optional[_builtins.str]] = None,
+                 rate: pulumi.Input[Optional[_builtins.str]] = None,
+                 target: pulumi.Input[Optional[_builtins.float]] = None,
+                 timeframe: pulumi.Input[Optional[_builtins.str]] = None,
+                 warning: pulumi.Input[Optional[_builtins.float]] = None,
                  __props__=None):
         """
         !> This resource API endpoint has been deprecated, please use SloV2 instead.
@@ -583,20 +583,20 @@ class Slo(pulumi.CustomResource):
     def _internal_init(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 denominator: Optional[pulumi.Input[_builtins.str]] = None,
-                 description: Optional[pulumi.Input[_builtins.str]] = None,
-                 disabled: Optional[pulumi.Input[_builtins.bool]] = None,
-                 error_budget_burn_rate: Optional[pulumi.Input[Union['SloErrorBudgetBurnRateArgs', 'SloErrorBudgetBurnRateArgsDict']]] = None,
-                 evaluation: Optional[pulumi.Input[_builtins.str]] = None,
-                 filter: Optional[pulumi.Input[_builtins.str]] = None,
-                 metric_expression: Optional[pulumi.Input[_builtins.str]] = None,
-                 metric_name: Optional[pulumi.Input[_builtins.str]] = None,
-                 name: Optional[pulumi.Input[_builtins.str]] = None,
-                 numerator: Optional[pulumi.Input[_builtins.str]] = None,
-                 rate: Optional[pulumi.Input[_builtins.str]] = None,
-                 target: Optional[pulumi.Input[_builtins.float]] = None,
-                 timeframe: Optional[pulumi.Input[_builtins.str]] = None,
-                 warning: Optional[pulumi.Input[_builtins.float]] = None,
+                 denominator: pulumi.Input[Optional[_builtins.str]] = None,
+                 description: pulumi.Input[Optional[_builtins.str]] = None,
+                 disabled: pulumi.Input[Optional[_builtins.bool]] = None,
+                 error_budget_burn_rate: pulumi.Input[Optional[Union['SloErrorBudgetBurnRateArgs', 'SloErrorBudgetBurnRateArgsDict']]] = None,
+                 evaluation: pulumi.Input[Optional[_builtins.str]] = None,
+                 filter: pulumi.Input[Optional[_builtins.str]] = None,
+                 metric_expression: pulumi.Input[Optional[_builtins.str]] = None,
+                 metric_name: pulumi.Input[Optional[_builtins.str]] = None,
+                 name: pulumi.Input[Optional[_builtins.str]] = None,
+                 numerator: pulumi.Input[Optional[_builtins.str]] = None,
+                 rate: pulumi.Input[Optional[_builtins.str]] = None,
+                 target: pulumi.Input[Optional[_builtins.float]] = None,
+                 timeframe: pulumi.Input[Optional[_builtins.str]] = None,
+                 warning: pulumi.Input[Optional[_builtins.float]] = None,
                  __props__=None):
         opts = pulumi.ResourceOptions.merge(_utilities.get_resource_opts_defaults(), opts)
         if not isinstance(opts, pulumi.ResourceOptions):
@@ -638,20 +638,20 @@ class Slo(pulumi.CustomResource):
     def get(resource_name: str,
             id: pulumi.Input[str],
             opts: Optional[pulumi.ResourceOptions] = None,
-            denominator: Optional[pulumi.Input[_builtins.str]] = None,
-            description: Optional[pulumi.Input[_builtins.str]] = None,
-            disabled: Optional[pulumi.Input[_builtins.bool]] = None,
-            error_budget_burn_rate: Optional[pulumi.Input[Union['SloErrorBudgetBurnRateArgs', 'SloErrorBudgetBurnRateArgsDict']]] = None,
-            evaluation: Optional[pulumi.Input[_builtins.str]] = None,
-            filter: Optional[pulumi.Input[_builtins.str]] = None,
-            metric_expression: Optional[pulumi.Input[_builtins.str]] = None,
-            metric_name: Optional[pulumi.Input[_builtins.str]] = None,
-            name: Optional[pulumi.Input[_builtins.str]] = None,
-            numerator: Optional[pulumi.Input[_builtins.str]] = None,
-            rate: Optional[pulumi.Input[_builtins.str]] = None,
-            target: Optional[pulumi.Input[_builtins.float]] = None,
-            timeframe: Optional[pulumi.Input[_builtins.str]] = None,
-            warning: Optional[pulumi.Input[_builtins.float]] = None) -> 'Slo':
+            denominator: pulumi.Input[Optional[_builtins.str]] = None,
+            description: pulumi.Input[Optional[_builtins.str]] = None,
+            disabled: pulumi.Input[Optional[_builtins.bool]] = None,
+            error_budget_burn_rate: pulumi.Input[Optional[Union['SloErrorBudgetBurnRateArgs', 'SloErrorBudgetBurnRateArgsDict']]] = None,
+            evaluation: pulumi.Input[Optional[_builtins.str]] = None,
+            filter: pulumi.Input[Optional[_builtins.str]] = None,
+            metric_expression: pulumi.Input[Optional[_builtins.str]] = None,
+            metric_name: pulumi.Input[Optional[_builtins.str]] = None,
+            name: pulumi.Input[Optional[_builtins.str]] = None,
+            numerator: pulumi.Input[Optional[_builtins.str]] = None,
+            rate: pulumi.Input[Optional[_builtins.str]] = None,
+            target: pulumi.Input[Optional[_builtins.float]] = None,
+            timeframe: pulumi.Input[Optional[_builtins.str]] = None,
+            warning: pulumi.Input[Optional[_builtins.float]] = None) -> 'Slo':
         """
         Get an existing Slo resource's state with the given name, id, and optional extra
         properties used to qualify the lookup.

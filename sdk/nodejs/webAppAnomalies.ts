@@ -120,23 +120,23 @@ export interface WebAppAnomaliesState {
     /**
      * Error rate
      */
-    errorRate?: pulumi.Input<inputs.WebAppAnomaliesErrorRate>;
+    errorRate?: pulumi.Input<inputs.WebAppAnomaliesErrorRate | undefined>;
     /**
      * Response time
      */
-    responseTime?: pulumi.Input<inputs.WebAppAnomaliesResponseTime>;
+    responseTime?: pulumi.Input<inputs.WebAppAnomaliesResponseTime | undefined>;
     /**
      * The scope of this setting (APPLICATION_METHOD, APPLICATION). Omit this property if you want to cover the whole environment.
      */
-    scope?: pulumi.Input<string>;
+    scope?: pulumi.Input<string | undefined>;
     /**
      * Detect traffic drops
      */
-    trafficDrops?: pulumi.Input<inputs.WebAppAnomaliesTrafficDrops>;
+    trafficDrops?: pulumi.Input<inputs.WebAppAnomaliesTrafficDrops | undefined>;
     /**
      * Detect traffic spikes
      */
-    trafficSpikes?: pulumi.Input<inputs.WebAppAnomaliesTrafficSpikes>;
+    trafficSpikes?: pulumi.Input<inputs.WebAppAnomaliesTrafficSpikes | undefined>;
 }
 
 /**
@@ -154,7 +154,7 @@ export interface WebAppAnomaliesArgs {
     /**
      * The scope of this setting (APPLICATION_METHOD, APPLICATION). Omit this property if you want to cover the whole environment.
      */
-    scope?: pulumi.Input<string>;
+    scope?: pulumi.Input<string | undefined>;
     /**
      * Detect traffic drops
      */

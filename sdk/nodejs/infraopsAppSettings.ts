@@ -112,23 +112,23 @@ export interface InfraopsAppSettingsState {
     /**
      * The threshold at which a network device interface is deemed to be saturated.
      */
-    interfaceSaturationThreshold?: pulumi.Input<number>;
+    interfaceSaturationThreshold?: pulumi.Input<number | undefined>;
     /**
      * Limit the number of results returned from Grail for Host, Network device, and Extensions entities.
      */
-    invexDqlQueryLimit?: pulumi.Input<number>;
+    invexDqlQueryLimit?: pulumi.Input<number | undefined>;
     /**
      * Limit for server-side sorting in Host, Network device and Extensions inventories. Sorting is disabled when the row count exceeds the configured threshold.
      */
-    invexDqlSortLimit?: pulumi.Input<number>;
+    invexDqlSortLimit?: pulumi.Input<number | undefined>;
     /**
      * When set to true, the app will display monitoring candidates in the Hosts table
      */
-    showMonitoringCandidates?: pulumi.Input<boolean>;
+    showMonitoringCandidates?: pulumi.Input<boolean | undefined>;
     /**
      * When set to true, the app will display app only hosts in the Hosts table
      */
-    showStandaloneHosts?: pulumi.Input<boolean>;
+    showStandaloneHosts?: pulumi.Input<boolean | undefined>;
 }
 
 /**
@@ -138,15 +138,15 @@ export interface InfraopsAppSettingsArgs {
     /**
      * The threshold at which a network device interface is deemed to be saturated.
      */
-    interfaceSaturationThreshold?: pulumi.Input<number>;
+    interfaceSaturationThreshold?: pulumi.Input<number | undefined>;
     /**
      * Limit the number of results returned from Grail for Host, Network device, and Extensions entities.
      */
-    invexDqlQueryLimit?: pulumi.Input<number>;
+    invexDqlQueryLimit?: pulumi.Input<number | undefined>;
     /**
      * Limit for server-side sorting in Host, Network device and Extensions inventories. Sorting is disabled when the row count exceeds the configured threshold.
      */
-    invexDqlSortLimit?: pulumi.Input<number>;
+    invexDqlSortLimit?: pulumi.Input<number | undefined>;
     /**
      * When set to true, the app will display monitoring candidates in the Hosts table
      */

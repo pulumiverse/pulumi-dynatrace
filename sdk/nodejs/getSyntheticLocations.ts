@@ -68,7 +68,7 @@ export interface GetSyntheticLocationsOutputArgs {
     /**
      * The ID of this resource.
      */
-    id?: pulumi.Input<string>;
-    locations?: pulumi.Input<inputs.GetSyntheticLocationsLocationsArgs>;
-    name?: pulumi.Input<string>;
+    id?: pulumi.Input<string | undefined>;
+    locations?: pulumi.Input<inputs.GetSyntheticLocationsLocationsArgs | undefined>;
+    name?: pulumi.Input<string | undefined>;
 }

@@ -75,9 +75,9 @@ class MobileAppKeyPerformanceArgs:
 @pulumi.input_type
 class _MobileAppKeyPerformanceState:
     def __init__(__self__, *,
-                 frustrating_if_reported_or_web_request_error: Optional[pulumi.Input[_builtins.bool]] = None,
-                 scope: Optional[pulumi.Input[_builtins.str]] = None,
-                 thresholds: Optional[pulumi.Input['MobileAppKeyPerformanceThresholdsArgs']] = None):
+                 frustrating_if_reported_or_web_request_error: pulumi.Input[Optional[_builtins.bool]] = None,
+                 scope: pulumi.Input[Optional[_builtins.str]] = None,
+                 thresholds: pulumi.Input[Optional['MobileAppKeyPerformanceThresholdsArgs']] = None):
         """
         Input properties used for looking up and filtering MobileAppKeyPerformance resources.
 
@@ -94,38 +94,38 @@ class _MobileAppKeyPerformanceState:
 
     @_builtins.property
     @pulumi.getter(name="frustratingIfReportedOrWebRequestError")
-    def frustrating_if_reported_or_web_request_error(self) -> Optional[pulumi.Input[_builtins.bool]]:
+    def frustrating_if_reported_or_web_request_error(self) -> pulumi.Input[Optional[_builtins.bool]]:
         """
         Treat user actions with reported errors or web request errors as erroneous and rate their performance as Frustrating. Turn off this setting if errors should not affect the Apdex rate.
         """
         return pulumi.get(self, "frustrating_if_reported_or_web_request_error")
 
     @frustrating_if_reported_or_web_request_error.setter
-    def frustrating_if_reported_or_web_request_error(self, value: Optional[pulumi.Input[_builtins.bool]]):
+    def frustrating_if_reported_or_web_request_error(self, value: pulumi.Input[Optional[_builtins.bool]]):
         pulumi.set(self, "frustrating_if_reported_or_web_request_error", value)
 
     @_builtins.property
     @pulumi.getter
-    def scope(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def scope(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The scope of this setting (DEVICE*APPLICATION*METHOD, MOBILE*APPLICATION, CUSTOM*APPLICATION)
         """
         return pulumi.get(self, "scope")
 
     @scope.setter
-    def scope(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def scope(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "scope", value)
 
     @_builtins.property
     @pulumi.getter
-    def thresholds(self) -> Optional[pulumi.Input['MobileAppKeyPerformanceThresholdsArgs']]:
+    def thresholds(self) -> pulumi.Input[Optional['MobileAppKeyPerformanceThresholdsArgs']]:
         """
         no documentation available
         """
         return pulumi.get(self, "thresholds")
 
     @thresholds.setter
-    def thresholds(self, value: Optional[pulumi.Input['MobileAppKeyPerformanceThresholdsArgs']]):
+    def thresholds(self, value: pulumi.Input[Optional['MobileAppKeyPerformanceThresholdsArgs']]):
         pulumi.set(self, "thresholds", value)
 
 
@@ -135,9 +135,9 @@ class MobileAppKeyPerformance(pulumi.CustomResource):
     def __init__(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 frustrating_if_reported_or_web_request_error: Optional[pulumi.Input[_builtins.bool]] = None,
-                 scope: Optional[pulumi.Input[_builtins.str]] = None,
-                 thresholds: Optional[pulumi.Input[Union['MobileAppKeyPerformanceThresholdsArgs', 'MobileAppKeyPerformanceThresholdsArgsDict']]] = None,
+                 frustrating_if_reported_or_web_request_error: pulumi.Input[Optional[_builtins.bool]] = None,
+                 scope: pulumi.Input[Optional[_builtins.str]] = None,
+                 thresholds: pulumi.Input[Optional[Union['MobileAppKeyPerformanceThresholdsArgs', 'MobileAppKeyPerformanceThresholdsArgsDict']]] = None,
                  __props__=None):
         """
         > Configuration of the mobile/custom application scope overlaps with dynatrace_mobile_application, but this resource in addition provides an option for a key user action scope.
@@ -202,9 +202,9 @@ class MobileAppKeyPerformance(pulumi.CustomResource):
     def _internal_init(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 frustrating_if_reported_or_web_request_error: Optional[pulumi.Input[_builtins.bool]] = None,
-                 scope: Optional[pulumi.Input[_builtins.str]] = None,
-                 thresholds: Optional[pulumi.Input[Union['MobileAppKeyPerformanceThresholdsArgs', 'MobileAppKeyPerformanceThresholdsArgsDict']]] = None,
+                 frustrating_if_reported_or_web_request_error: pulumi.Input[Optional[_builtins.bool]] = None,
+                 scope: pulumi.Input[Optional[_builtins.str]] = None,
+                 thresholds: pulumi.Input[Optional[Union['MobileAppKeyPerformanceThresholdsArgs', 'MobileAppKeyPerformanceThresholdsArgsDict']]] = None,
                  __props__=None):
         opts = pulumi.ResourceOptions.merge(_utilities.get_resource_opts_defaults(), opts)
         if not isinstance(opts, pulumi.ResourceOptions):
@@ -233,9 +233,9 @@ class MobileAppKeyPerformance(pulumi.CustomResource):
     def get(resource_name: str,
             id: pulumi.Input[str],
             opts: Optional[pulumi.ResourceOptions] = None,
-            frustrating_if_reported_or_web_request_error: Optional[pulumi.Input[_builtins.bool]] = None,
-            scope: Optional[pulumi.Input[_builtins.str]] = None,
-            thresholds: Optional[pulumi.Input[Union['MobileAppKeyPerformanceThresholdsArgs', 'MobileAppKeyPerformanceThresholdsArgsDict']]] = None) -> 'MobileAppKeyPerformance':
+            frustrating_if_reported_or_web_request_error: pulumi.Input[Optional[_builtins.bool]] = None,
+            scope: pulumi.Input[Optional[_builtins.str]] = None,
+            thresholds: pulumi.Input[Optional[Union['MobileAppKeyPerformanceThresholdsArgs', 'MobileAppKeyPerformanceThresholdsArgsDict']]] = None) -> 'MobileAppKeyPerformance':
         """
         Get an existing MobileAppKeyPerformance resource's state with the given name, id, and optional extra
         properties used to qualify the lookup.

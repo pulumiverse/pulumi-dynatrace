@@ -111,23 +111,23 @@ export interface OneagentUpdatesState {
     /**
      * Maintenance windows
      */
-    maintenanceWindows?: pulumi.Input<inputs.OneagentUpdatesMaintenanceWindows>;
+    maintenanceWindows?: pulumi.Input<inputs.OneagentUpdatesMaintenanceWindows | undefined>;
     /**
      * Revision
      */
-    revision?: pulumi.Input<string>;
+    revision?: pulumi.Input<string | undefined>;
     /**
      * The scope of this setting (HOST, HOST_GROUP). Omit this property if you want to cover the whole environment.
      */
-    scope?: pulumi.Input<string>;
+    scope?: pulumi.Input<string | undefined>;
     /**
      * Target version
      */
-    targetVersion?: pulumi.Input<string>;
+    targetVersion?: pulumi.Input<string | undefined>;
     /**
      * Possible Values: `AUTOMATIC`, `AUTOMATIC_DURING_MW`, `MANUAL`
      */
-    updateMode?: pulumi.Input<string>;
+    updateMode?: pulumi.Input<string | undefined>;
 }
 
 /**
@@ -137,19 +137,19 @@ export interface OneagentUpdatesArgs {
     /**
      * Maintenance windows
      */
-    maintenanceWindows?: pulumi.Input<inputs.OneagentUpdatesMaintenanceWindows>;
+    maintenanceWindows?: pulumi.Input<inputs.OneagentUpdatesMaintenanceWindows | undefined>;
     /**
      * Revision
      */
-    revision?: pulumi.Input<string>;
+    revision?: pulumi.Input<string | undefined>;
     /**
      * The scope of this setting (HOST, HOST_GROUP). Omit this property if you want to cover the whole environment.
      */
-    scope?: pulumi.Input<string>;
+    scope?: pulumi.Input<string | undefined>;
     /**
      * Target version
      */
-    targetVersion?: pulumi.Input<string>;
+    targetVersion?: pulumi.Input<string | undefined>;
     /**
      * Possible Values: `AUTOMATIC`, `AUTOMATIC_DURING_MW`, `MANUAL`
      */

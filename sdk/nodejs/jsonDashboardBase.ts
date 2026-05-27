@@ -71,7 +71,7 @@ export interface JsonDashboardBaseState {
     /**
      * This attribute exists for backwards compatibility. You do not have to define it.
      */
-    contents?: pulumi.Input<string>;
+    contents?: pulumi.Input<string | undefined>;
 }
 
 /**
@@ -81,5 +81,5 @@ export interface JsonDashboardBaseArgs {
     /**
      * This attribute exists for backwards compatibility. You do not have to define it.
      */
-    contents?: pulumi.Input<string>;
+    contents?: pulumi.Input<string | undefined>;
 }

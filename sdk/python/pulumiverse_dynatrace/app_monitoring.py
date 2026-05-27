@@ -22,8 +22,8 @@ __all__ = ['AppMonitoringArgs', 'AppMonitoring']
 class AppMonitoringArgs:
     def __init__(__self__, *,
                  default_log_level: pulumi.Input[_builtins.str],
-                 app_monitoring: Optional[pulumi.Input['AppMonitoringAppMonitoringArgs']] = None,
-                 default_trace_level: Optional[pulumi.Input[_builtins.str]] = None):
+                 app_monitoring: pulumi.Input[Optional['AppMonitoringAppMonitoringArgs']] = None,
+                 default_trace_level: pulumi.Input[Optional[_builtins.str]] = None):
         """
         The set of arguments for constructing a AppMonitoring resource.
 
@@ -51,35 +51,35 @@ class AppMonitoringArgs:
 
     @_builtins.property
     @pulumi.getter(name="appMonitoring")
-    def app_monitoring(self) -> Optional[pulumi.Input['AppMonitoringAppMonitoringArgs']]:
+    def app_monitoring(self) -> pulumi.Input[Optional['AppMonitoringAppMonitoringArgs']]:
         """
         You can override the default monitoring setting for each app separately
         """
         return pulumi.get(self, "app_monitoring")
 
     @app_monitoring.setter
-    def app_monitoring(self, value: Optional[pulumi.Input['AppMonitoringAppMonitoringArgs']]):
+    def app_monitoring(self, value: pulumi.Input[Optional['AppMonitoringAppMonitoringArgs']]):
         pulumi.set(self, "app_monitoring", value)
 
     @_builtins.property
     @pulumi.getter(name="defaultTraceLevel")
-    def default_trace_level(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def default_trace_level(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Possible Values: `off`, `on`
         """
         return pulumi.get(self, "default_trace_level")
 
     @default_trace_level.setter
-    def default_trace_level(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def default_trace_level(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "default_trace_level", value)
 
 
 @pulumi.input_type
 class _AppMonitoringState:
     def __init__(__self__, *,
-                 app_monitoring: Optional[pulumi.Input['AppMonitoringAppMonitoringArgs']] = None,
-                 default_log_level: Optional[pulumi.Input[_builtins.str]] = None,
-                 default_trace_level: Optional[pulumi.Input[_builtins.str]] = None):
+                 app_monitoring: pulumi.Input[Optional['AppMonitoringAppMonitoringArgs']] = None,
+                 default_log_level: pulumi.Input[Optional[_builtins.str]] = None,
+                 default_trace_level: pulumi.Input[Optional[_builtins.str]] = None):
         """
         Input properties used for looking up and filtering AppMonitoring resources.
 
@@ -96,38 +96,38 @@ class _AppMonitoringState:
 
     @_builtins.property
     @pulumi.getter(name="appMonitoring")
-    def app_monitoring(self) -> Optional[pulumi.Input['AppMonitoringAppMonitoringArgs']]:
+    def app_monitoring(self) -> pulumi.Input[Optional['AppMonitoringAppMonitoringArgs']]:
         """
         You can override the default monitoring setting for each app separately
         """
         return pulumi.get(self, "app_monitoring")
 
     @app_monitoring.setter
-    def app_monitoring(self, value: Optional[pulumi.Input['AppMonitoringAppMonitoringArgs']]):
+    def app_monitoring(self, value: pulumi.Input[Optional['AppMonitoringAppMonitoringArgs']]):
         pulumi.set(self, "app_monitoring", value)
 
     @_builtins.property
     @pulumi.getter(name="defaultLogLevel")
-    def default_log_level(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def default_log_level(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Possible Values: `debug`, `error`, `info`, `off`, `warn`
         """
         return pulumi.get(self, "default_log_level")
 
     @default_log_level.setter
-    def default_log_level(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def default_log_level(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "default_log_level", value)
 
     @_builtins.property
     @pulumi.getter(name="defaultTraceLevel")
-    def default_trace_level(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def default_trace_level(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Possible Values: `off`, `on`
         """
         return pulumi.get(self, "default_trace_level")
 
     @default_trace_level.setter
-    def default_trace_level(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def default_trace_level(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "default_trace_level", value)
 
 
@@ -137,9 +137,9 @@ class AppMonitoring(pulumi.CustomResource):
     def __init__(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 app_monitoring: Optional[pulumi.Input[Union['AppMonitoringAppMonitoringArgs', 'AppMonitoringAppMonitoringArgsDict']]] = None,
-                 default_log_level: Optional[pulumi.Input[_builtins.str]] = None,
-                 default_trace_level: Optional[pulumi.Input[_builtins.str]] = None,
+                 app_monitoring: pulumi.Input[Optional[Union['AppMonitoringAppMonitoringArgs', 'AppMonitoringAppMonitoringArgsDict']]] = None,
+                 default_log_level: pulumi.Input[Optional[_builtins.str]] = None,
+                 default_trace_level: pulumi.Input[Optional[_builtins.str]] = None,
                  __props__=None):
         """
         > This resource requires the API token scopes **Read settings** (`settings.read`) and **Write settings** (`settings.write`)
@@ -200,9 +200,9 @@ class AppMonitoring(pulumi.CustomResource):
     def _internal_init(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 app_monitoring: Optional[pulumi.Input[Union['AppMonitoringAppMonitoringArgs', 'AppMonitoringAppMonitoringArgsDict']]] = None,
-                 default_log_level: Optional[pulumi.Input[_builtins.str]] = None,
-                 default_trace_level: Optional[pulumi.Input[_builtins.str]] = None,
+                 app_monitoring: pulumi.Input[Optional[Union['AppMonitoringAppMonitoringArgs', 'AppMonitoringAppMonitoringArgsDict']]] = None,
+                 default_log_level: pulumi.Input[Optional[_builtins.str]] = None,
+                 default_trace_level: pulumi.Input[Optional[_builtins.str]] = None,
                  __props__=None):
         opts = pulumi.ResourceOptions.merge(_utilities.get_resource_opts_defaults(), opts)
         if not isinstance(opts, pulumi.ResourceOptions):
@@ -227,9 +227,9 @@ class AppMonitoring(pulumi.CustomResource):
     def get(resource_name: str,
             id: pulumi.Input[str],
             opts: Optional[pulumi.ResourceOptions] = None,
-            app_monitoring: Optional[pulumi.Input[Union['AppMonitoringAppMonitoringArgs', 'AppMonitoringAppMonitoringArgsDict']]] = None,
-            default_log_level: Optional[pulumi.Input[_builtins.str]] = None,
-            default_trace_level: Optional[pulumi.Input[_builtins.str]] = None) -> 'AppMonitoring':
+            app_monitoring: pulumi.Input[Optional[Union['AppMonitoringAppMonitoringArgs', 'AppMonitoringAppMonitoringArgsDict']]] = None,
+            default_log_level: pulumi.Input[Optional[_builtins.str]] = None,
+            default_trace_level: pulumi.Input[Optional[_builtins.str]] = None) -> 'AppMonitoring':
         """
         Get an existing AppMonitoring resource's state with the given name, id, and optional extra
         properties used to qualify the lookup.

@@ -90,10 +90,10 @@ class WebAppAutoInjectionArgs:
 @pulumi.input_type
 class _WebAppAutoInjectionState:
     def __init__(__self__, *,
-                 application_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 cache_control_headers: Optional[pulumi.Input['WebAppAutoInjectionCacheControlHeadersArgs']] = None,
-                 monitoring_code_source_section: Optional[pulumi.Input['WebAppAutoInjectionMonitoringCodeSourceSectionArgs']] = None,
-                 snippet_format: Optional[pulumi.Input['WebAppAutoInjectionSnippetFormatArgs']] = None):
+                 application_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 cache_control_headers: pulumi.Input[Optional['WebAppAutoInjectionCacheControlHeadersArgs']] = None,
+                 monitoring_code_source_section: pulumi.Input[Optional['WebAppAutoInjectionMonitoringCodeSourceSectionArgs']] = None,
+                 snippet_format: pulumi.Input[Optional['WebAppAutoInjectionSnippetFormatArgs']] = None):
         """
         Input properties used for looking up and filtering WebAppAutoInjection resources.
 
@@ -113,50 +113,50 @@ class _WebAppAutoInjectionState:
 
     @_builtins.property
     @pulumi.getter(name="applicationId")
-    def application_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def application_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The scope of this settings. If the settings should cover the whole environment, just don't specify any scope.
         """
         return pulumi.get(self, "application_id")
 
     @application_id.setter
-    def application_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def application_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "application_id", value)
 
     @_builtins.property
     @pulumi.getter(name="cacheControlHeaders")
-    def cache_control_headers(self) -> Optional[pulumi.Input['WebAppAutoInjectionCacheControlHeadersArgs']]:
+    def cache_control_headers(self) -> pulumi.Input[Optional['WebAppAutoInjectionCacheControlHeadersArgs']]:
         """
         Cache control headers
         """
         return pulumi.get(self, "cache_control_headers")
 
     @cache_control_headers.setter
-    def cache_control_headers(self, value: Optional[pulumi.Input['WebAppAutoInjectionCacheControlHeadersArgs']]):
+    def cache_control_headers(self, value: pulumi.Input[Optional['WebAppAutoInjectionCacheControlHeadersArgs']]):
         pulumi.set(self, "cache_control_headers", value)
 
     @_builtins.property
     @pulumi.getter(name="monitoringCodeSourceSection")
-    def monitoring_code_source_section(self) -> Optional[pulumi.Input['WebAppAutoInjectionMonitoringCodeSourceSectionArgs']]:
+    def monitoring_code_source_section(self) -> pulumi.Input[Optional['WebAppAutoInjectionMonitoringCodeSourceSectionArgs']]:
         """
         Real User Monitoring code source
         """
         return pulumi.get(self, "monitoring_code_source_section")
 
     @monitoring_code_source_section.setter
-    def monitoring_code_source_section(self, value: Optional[pulumi.Input['WebAppAutoInjectionMonitoringCodeSourceSectionArgs']]):
+    def monitoring_code_source_section(self, value: pulumi.Input[Optional['WebAppAutoInjectionMonitoringCodeSourceSectionArgs']]):
         pulumi.set(self, "monitoring_code_source_section", value)
 
     @_builtins.property
     @pulumi.getter(name="snippetFormat")
-    def snippet_format(self) -> Optional[pulumi.Input['WebAppAutoInjectionSnippetFormatArgs']]:
+    def snippet_format(self) -> pulumi.Input[Optional['WebAppAutoInjectionSnippetFormatArgs']]:
         """
         *Code Snippet:* OneAgent injects an inline script that initializes Dynatrace and dynamically downloads the monitoring code into your application. Use when you want to inject the monitoring code in deferred mode.
         """
         return pulumi.get(self, "snippet_format")
 
     @snippet_format.setter
-    def snippet_format(self, value: Optional[pulumi.Input['WebAppAutoInjectionSnippetFormatArgs']]):
+    def snippet_format(self, value: pulumi.Input[Optional['WebAppAutoInjectionSnippetFormatArgs']]):
         pulumi.set(self, "snippet_format", value)
 
 
@@ -166,10 +166,10 @@ class WebAppAutoInjection(pulumi.CustomResource):
     def __init__(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 application_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 cache_control_headers: Optional[pulumi.Input[Union['WebAppAutoInjectionCacheControlHeadersArgs', 'WebAppAutoInjectionCacheControlHeadersArgsDict']]] = None,
-                 monitoring_code_source_section: Optional[pulumi.Input[Union['WebAppAutoInjectionMonitoringCodeSourceSectionArgs', 'WebAppAutoInjectionMonitoringCodeSourceSectionArgsDict']]] = None,
-                 snippet_format: Optional[pulumi.Input[Union['WebAppAutoInjectionSnippetFormatArgs', 'WebAppAutoInjectionSnippetFormatArgsDict']]] = None,
+                 application_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 cache_control_headers: pulumi.Input[Optional[Union['WebAppAutoInjectionCacheControlHeadersArgs', 'WebAppAutoInjectionCacheControlHeadersArgsDict']]] = None,
+                 monitoring_code_source_section: pulumi.Input[Optional[Union['WebAppAutoInjectionMonitoringCodeSourceSectionArgs', 'WebAppAutoInjectionMonitoringCodeSourceSectionArgsDict']]] = None,
+                 snippet_format: pulumi.Input[Optional[Union['WebAppAutoInjectionSnippetFormatArgs', 'WebAppAutoInjectionSnippetFormatArgsDict']]] = None,
                  __props__=None):
         """
         > This resource requires the API token scopes **Read settings** (`settings.read`) and **Write settings** (`settings.write`)
@@ -231,10 +231,10 @@ class WebAppAutoInjection(pulumi.CustomResource):
     def _internal_init(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 application_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 cache_control_headers: Optional[pulumi.Input[Union['WebAppAutoInjectionCacheControlHeadersArgs', 'WebAppAutoInjectionCacheControlHeadersArgsDict']]] = None,
-                 monitoring_code_source_section: Optional[pulumi.Input[Union['WebAppAutoInjectionMonitoringCodeSourceSectionArgs', 'WebAppAutoInjectionMonitoringCodeSourceSectionArgsDict']]] = None,
-                 snippet_format: Optional[pulumi.Input[Union['WebAppAutoInjectionSnippetFormatArgs', 'WebAppAutoInjectionSnippetFormatArgsDict']]] = None,
+                 application_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 cache_control_headers: pulumi.Input[Optional[Union['WebAppAutoInjectionCacheControlHeadersArgs', 'WebAppAutoInjectionCacheControlHeadersArgsDict']]] = None,
+                 monitoring_code_source_section: pulumi.Input[Optional[Union['WebAppAutoInjectionMonitoringCodeSourceSectionArgs', 'WebAppAutoInjectionMonitoringCodeSourceSectionArgsDict']]] = None,
+                 snippet_format: pulumi.Input[Optional[Union['WebAppAutoInjectionSnippetFormatArgs', 'WebAppAutoInjectionSnippetFormatArgsDict']]] = None,
                  __props__=None):
         opts = pulumi.ResourceOptions.merge(_utilities.get_resource_opts_defaults(), opts)
         if not isinstance(opts, pulumi.ResourceOptions):
@@ -266,10 +266,10 @@ class WebAppAutoInjection(pulumi.CustomResource):
     def get(resource_name: str,
             id: pulumi.Input[str],
             opts: Optional[pulumi.ResourceOptions] = None,
-            application_id: Optional[pulumi.Input[_builtins.str]] = None,
-            cache_control_headers: Optional[pulumi.Input[Union['WebAppAutoInjectionCacheControlHeadersArgs', 'WebAppAutoInjectionCacheControlHeadersArgsDict']]] = None,
-            monitoring_code_source_section: Optional[pulumi.Input[Union['WebAppAutoInjectionMonitoringCodeSourceSectionArgs', 'WebAppAutoInjectionMonitoringCodeSourceSectionArgsDict']]] = None,
-            snippet_format: Optional[pulumi.Input[Union['WebAppAutoInjectionSnippetFormatArgs', 'WebAppAutoInjectionSnippetFormatArgsDict']]] = None) -> 'WebAppAutoInjection':
+            application_id: pulumi.Input[Optional[_builtins.str]] = None,
+            cache_control_headers: pulumi.Input[Optional[Union['WebAppAutoInjectionCacheControlHeadersArgs', 'WebAppAutoInjectionCacheControlHeadersArgsDict']]] = None,
+            monitoring_code_source_section: pulumi.Input[Optional[Union['WebAppAutoInjectionMonitoringCodeSourceSectionArgs', 'WebAppAutoInjectionMonitoringCodeSourceSectionArgsDict']]] = None,
+            snippet_format: pulumi.Input[Optional[Union['WebAppAutoInjectionSnippetFormatArgs', 'WebAppAutoInjectionSnippetFormatArgsDict']]] = None) -> 'WebAppAutoInjection':
         """
         Get an existing WebAppAutoInjection resource's state with the given name, id, and optional extra
         properties used to qualify the lookup.

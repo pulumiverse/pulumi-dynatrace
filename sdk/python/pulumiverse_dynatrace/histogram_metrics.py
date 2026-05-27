@@ -47,7 +47,7 @@ class HistogramMetricsArgs:
 @pulumi.input_type
 class _HistogramMetricsState:
     def __init__(__self__, *,
-                 enable_histogram_bucket_ingest: Optional[pulumi.Input[_builtins.bool]] = None):
+                 enable_histogram_bucket_ingest: pulumi.Input[Optional[_builtins.bool]] = None):
         """
         Input properties used for looking up and filtering HistogramMetrics resources.
 
@@ -60,7 +60,7 @@ class _HistogramMetricsState:
 
     @_builtins.property
     @pulumi.getter(name="enableHistogramBucketIngest")
-    def enable_histogram_bucket_ingest(self) -> Optional[pulumi.Input[_builtins.bool]]:
+    def enable_histogram_bucket_ingest(self) -> pulumi.Input[Optional[_builtins.bool]]:
         """
         When enabled, you can ingest the `le` dimension, representing explicit histogram buckets.\\
         Enable this if you are using OpenTelemetry histograms or Prometheus histogram metrics.\\
@@ -69,7 +69,7 @@ class _HistogramMetricsState:
         return pulumi.get(self, "enable_histogram_bucket_ingest")
 
     @enable_histogram_bucket_ingest.setter
-    def enable_histogram_bucket_ingest(self, value: Optional[pulumi.Input[_builtins.bool]]):
+    def enable_histogram_bucket_ingest(self, value: pulumi.Input[Optional[_builtins.bool]]):
         pulumi.set(self, "enable_histogram_bucket_ingest", value)
 
 
@@ -79,7 +79,7 @@ class HistogramMetrics(pulumi.CustomResource):
     def __init__(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 enable_histogram_bucket_ingest: Optional[pulumi.Input[_builtins.bool]] = None,
+                 enable_histogram_bucket_ingest: pulumi.Input[Optional[_builtins.bool]] = None,
                  __props__=None):
         """
         > This resource requires the API token scopes **Read settings** (`settings.read`) and **Write settings** (`settings.write`)
@@ -136,7 +136,7 @@ class HistogramMetrics(pulumi.CustomResource):
     def _internal_init(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 enable_histogram_bucket_ingest: Optional[pulumi.Input[_builtins.bool]] = None,
+                 enable_histogram_bucket_ingest: pulumi.Input[Optional[_builtins.bool]] = None,
                  __props__=None):
         opts = pulumi.ResourceOptions.merge(_utilities.get_resource_opts_defaults(), opts)
         if not isinstance(opts, pulumi.ResourceOptions):
@@ -159,7 +159,7 @@ class HistogramMetrics(pulumi.CustomResource):
     def get(resource_name: str,
             id: pulumi.Input[str],
             opts: Optional[pulumi.ResourceOptions] = None,
-            enable_histogram_bucket_ingest: Optional[pulumi.Input[_builtins.bool]] = None) -> 'HistogramMetrics':
+            enable_histogram_bucket_ingest: pulumi.Input[Optional[_builtins.bool]] = None) -> 'HistogramMetrics':
         """
         Get an existing HistogramMetrics resource's state with the given name, id, and optional extra
         properties used to qualify the lookup.

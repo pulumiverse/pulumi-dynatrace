@@ -19,10 +19,10 @@ __all__ = ['ManagedPublicEndpointsArgs', 'ManagedPublicEndpoints']
 @pulumi.input_type
 class ManagedPublicEndpointsArgs:
     def __init__(__self__, *,
-                 additional_web_ui_addresses: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-                 beacon_forwarder_address: Optional[pulumi.Input[_builtins.str]] = None,
-                 cdn_address: Optional[pulumi.Input[_builtins.str]] = None,
-                 web_ui_address: Optional[pulumi.Input[_builtins.str]] = None):
+                 additional_web_ui_addresses: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 beacon_forwarder_address: pulumi.Input[Optional[_builtins.str]] = None,
+                 cdn_address: pulumi.Input[Optional[_builtins.str]] = None,
+                 web_ui_address: pulumi.Input[Optional[_builtins.str]] = None):
         """
         The set of arguments for constructing a ManagedPublicEndpoints resource.
 
@@ -42,60 +42,60 @@ class ManagedPublicEndpointsArgs:
 
     @_builtins.property
     @pulumi.getter(name="additionalWebUiAddresses")
-    def additional_web_ui_addresses(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]:
+    def additional_web_ui_addresses(self) -> pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]:
         """
         Additional web UI addresses
         """
         return pulumi.get(self, "additional_web_ui_addresses")
 
     @additional_web_ui_addresses.setter
-    def additional_web_ui_addresses(self, value: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]):
+    def additional_web_ui_addresses(self, value: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "additional_web_ui_addresses", value)
 
     @_builtins.property
     @pulumi.getter(name="beaconForwarderAddress")
-    def beacon_forwarder_address(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def beacon_forwarder_address(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Beacon forwarder address
         """
         return pulumi.get(self, "beacon_forwarder_address")
 
     @beacon_forwarder_address.setter
-    def beacon_forwarder_address(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def beacon_forwarder_address(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "beacon_forwarder_address", value)
 
     @_builtins.property
     @pulumi.getter(name="cdnAddress")
-    def cdn_address(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def cdn_address(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         CDN address
         """
         return pulumi.get(self, "cdn_address")
 
     @cdn_address.setter
-    def cdn_address(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def cdn_address(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "cdn_address", value)
 
     @_builtins.property
     @pulumi.getter(name="webUiAddress")
-    def web_ui_address(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def web_ui_address(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Web UI address
         """
         return pulumi.get(self, "web_ui_address")
 
     @web_ui_address.setter
-    def web_ui_address(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def web_ui_address(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "web_ui_address", value)
 
 
 @pulumi.input_type
 class _ManagedPublicEndpointsState:
     def __init__(__self__, *,
-                 additional_web_ui_addresses: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-                 beacon_forwarder_address: Optional[pulumi.Input[_builtins.str]] = None,
-                 cdn_address: Optional[pulumi.Input[_builtins.str]] = None,
-                 web_ui_address: Optional[pulumi.Input[_builtins.str]] = None):
+                 additional_web_ui_addresses: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 beacon_forwarder_address: pulumi.Input[Optional[_builtins.str]] = None,
+                 cdn_address: pulumi.Input[Optional[_builtins.str]] = None,
+                 web_ui_address: pulumi.Input[Optional[_builtins.str]] = None):
         """
         Input properties used for looking up and filtering ManagedPublicEndpoints resources.
 
@@ -115,50 +115,50 @@ class _ManagedPublicEndpointsState:
 
     @_builtins.property
     @pulumi.getter(name="additionalWebUiAddresses")
-    def additional_web_ui_addresses(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]:
+    def additional_web_ui_addresses(self) -> pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]:
         """
         Additional web UI addresses
         """
         return pulumi.get(self, "additional_web_ui_addresses")
 
     @additional_web_ui_addresses.setter
-    def additional_web_ui_addresses(self, value: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]):
+    def additional_web_ui_addresses(self, value: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "additional_web_ui_addresses", value)
 
     @_builtins.property
     @pulumi.getter(name="beaconForwarderAddress")
-    def beacon_forwarder_address(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def beacon_forwarder_address(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Beacon forwarder address
         """
         return pulumi.get(self, "beacon_forwarder_address")
 
     @beacon_forwarder_address.setter
-    def beacon_forwarder_address(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def beacon_forwarder_address(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "beacon_forwarder_address", value)
 
     @_builtins.property
     @pulumi.getter(name="cdnAddress")
-    def cdn_address(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def cdn_address(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         CDN address
         """
         return pulumi.get(self, "cdn_address")
 
     @cdn_address.setter
-    def cdn_address(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def cdn_address(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "cdn_address", value)
 
     @_builtins.property
     @pulumi.getter(name="webUiAddress")
-    def web_ui_address(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def web_ui_address(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Web UI address
         """
         return pulumi.get(self, "web_ui_address")
 
     @web_ui_address.setter
-    def web_ui_address(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def web_ui_address(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "web_ui_address", value)
 
 
@@ -168,10 +168,10 @@ class ManagedPublicEndpoints(pulumi.CustomResource):
     def __init__(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 additional_web_ui_addresses: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-                 beacon_forwarder_address: Optional[pulumi.Input[_builtins.str]] = None,
-                 cdn_address: Optional[pulumi.Input[_builtins.str]] = None,
-                 web_ui_address: Optional[pulumi.Input[_builtins.str]] = None,
+                 additional_web_ui_addresses: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 beacon_forwarder_address: pulumi.Input[Optional[_builtins.str]] = None,
+                 cdn_address: pulumi.Input[Optional[_builtins.str]] = None,
+                 web_ui_address: pulumi.Input[Optional[_builtins.str]] = None,
                  __props__=None):
         """
         !> **HTTP DELETE method not available** Terraform will no longer manage this resource on `destroy` but the configuration will still be present on the Dynatrace cluster.
@@ -257,10 +257,10 @@ class ManagedPublicEndpoints(pulumi.CustomResource):
     def _internal_init(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 additional_web_ui_addresses: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-                 beacon_forwarder_address: Optional[pulumi.Input[_builtins.str]] = None,
-                 cdn_address: Optional[pulumi.Input[_builtins.str]] = None,
-                 web_ui_address: Optional[pulumi.Input[_builtins.str]] = None,
+                 additional_web_ui_addresses: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 beacon_forwarder_address: pulumi.Input[Optional[_builtins.str]] = None,
+                 cdn_address: pulumi.Input[Optional[_builtins.str]] = None,
+                 web_ui_address: pulumi.Input[Optional[_builtins.str]] = None,
                  __props__=None):
         opts = pulumi.ResourceOptions.merge(_utilities.get_resource_opts_defaults(), opts)
         if not isinstance(opts, pulumi.ResourceOptions):
@@ -284,10 +284,10 @@ class ManagedPublicEndpoints(pulumi.CustomResource):
     def get(resource_name: str,
             id: pulumi.Input[str],
             opts: Optional[pulumi.ResourceOptions] = None,
-            additional_web_ui_addresses: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-            beacon_forwarder_address: Optional[pulumi.Input[_builtins.str]] = None,
-            cdn_address: Optional[pulumi.Input[_builtins.str]] = None,
-            web_ui_address: Optional[pulumi.Input[_builtins.str]] = None) -> 'ManagedPublicEndpoints':
+            additional_web_ui_addresses: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+            beacon_forwarder_address: pulumi.Input[Optional[_builtins.str]] = None,
+            cdn_address: pulumi.Input[Optional[_builtins.str]] = None,
+            web_ui_address: pulumi.Input[Optional[_builtins.str]] = None) -> 'ManagedPublicEndpoints':
         """
         Get an existing ManagedPublicEndpoints resource's state with the given name, id, and optional extra
         properties used to qualify the lookup.

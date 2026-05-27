@@ -22,10 +22,10 @@ __all__ = ['SegmentArgs', 'Segment']
 class SegmentArgs:
     def __init__(__self__, *,
                  is_public: pulumi.Input[_builtins.bool],
-                 description: Optional[pulumi.Input[_builtins.str]] = None,
-                 includes: Optional[pulumi.Input['SegmentIncludesArgs']] = None,
-                 name: Optional[pulumi.Input[_builtins.str]] = None,
-                 variables: Optional[pulumi.Input['SegmentVariablesArgs']] = None):
+                 description: pulumi.Input[Optional[_builtins.str]] = None,
+                 includes: pulumi.Input[Optional['SegmentIncludesArgs']] = None,
+                 name: pulumi.Input[Optional[_builtins.str]] = None,
+                 variables: pulumi.Input[Optional['SegmentVariablesArgs']] = None):
         """
         The set of arguments for constructing a Segment resource.
 
@@ -59,61 +59,61 @@ class SegmentArgs:
 
     @_builtins.property
     @pulumi.getter
-    def description(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def description(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Description of the filter-segment
         """
         return pulumi.get(self, "description")
 
     @description.setter
-    def description(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def description(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "description", value)
 
     @_builtins.property
     @pulumi.getter
-    def includes(self) -> Optional[pulumi.Input['SegmentIncludesArgs']]:
+    def includes(self) -> pulumi.Input[Optional['SegmentIncludesArgs']]:
         """
         List of includes of the filter-segment
         """
         return pulumi.get(self, "includes")
 
     @includes.setter
-    def includes(self, value: Optional[pulumi.Input['SegmentIncludesArgs']]):
+    def includes(self, value: pulumi.Input[Optional['SegmentIncludesArgs']]):
         pulumi.set(self, "includes", value)
 
     @_builtins.property
     @pulumi.getter
-    def name(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def name(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Name of the filter-segment
         """
         return pulumi.get(self, "name")
 
     @name.setter
-    def name(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def name(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "name", value)
 
     @_builtins.property
     @pulumi.getter
-    def variables(self) -> Optional[pulumi.Input['SegmentVariablesArgs']]:
+    def variables(self) -> pulumi.Input[Optional['SegmentVariablesArgs']]:
         """
         Variables of the filter-segment
         """
         return pulumi.get(self, "variables")
 
     @variables.setter
-    def variables(self, value: Optional[pulumi.Input['SegmentVariablesArgs']]):
+    def variables(self, value: pulumi.Input[Optional['SegmentVariablesArgs']]):
         pulumi.set(self, "variables", value)
 
 
 @pulumi.input_type
 class _SegmentState:
     def __init__(__self__, *,
-                 description: Optional[pulumi.Input[_builtins.str]] = None,
-                 includes: Optional[pulumi.Input['SegmentIncludesArgs']] = None,
-                 is_public: Optional[pulumi.Input[_builtins.bool]] = None,
-                 name: Optional[pulumi.Input[_builtins.str]] = None,
-                 variables: Optional[pulumi.Input['SegmentVariablesArgs']] = None):
+                 description: pulumi.Input[Optional[_builtins.str]] = None,
+                 includes: pulumi.Input[Optional['SegmentIncludesArgs']] = None,
+                 is_public: pulumi.Input[Optional[_builtins.bool]] = None,
+                 name: pulumi.Input[Optional[_builtins.str]] = None,
+                 variables: pulumi.Input[Optional['SegmentVariablesArgs']] = None):
         """
         Input properties used for looking up and filtering Segment resources.
 
@@ -136,62 +136,62 @@ class _SegmentState:
 
     @_builtins.property
     @pulumi.getter
-    def description(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def description(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Description of the filter-segment
         """
         return pulumi.get(self, "description")
 
     @description.setter
-    def description(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def description(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "description", value)
 
     @_builtins.property
     @pulumi.getter
-    def includes(self) -> Optional[pulumi.Input['SegmentIncludesArgs']]:
+    def includes(self) -> pulumi.Input[Optional['SegmentIncludesArgs']]:
         """
         List of includes of the filter-segment
         """
         return pulumi.get(self, "includes")
 
     @includes.setter
-    def includes(self, value: Optional[pulumi.Input['SegmentIncludesArgs']]):
+    def includes(self, value: pulumi.Input[Optional['SegmentIncludesArgs']]):
         pulumi.set(self, "includes", value)
 
     @_builtins.property
     @pulumi.getter(name="isPublic")
-    def is_public(self) -> Optional[pulumi.Input[_builtins.bool]]:
+    def is_public(self) -> pulumi.Input[Optional[_builtins.bool]]:
         """
         Indicates if the filter-segment is publicly accessible within the tenant
         """
         return pulumi.get(self, "is_public")
 
     @is_public.setter
-    def is_public(self, value: Optional[pulumi.Input[_builtins.bool]]):
+    def is_public(self, value: pulumi.Input[Optional[_builtins.bool]]):
         pulumi.set(self, "is_public", value)
 
     @_builtins.property
     @pulumi.getter
-    def name(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def name(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Name of the filter-segment
         """
         return pulumi.get(self, "name")
 
     @name.setter
-    def name(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def name(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "name", value)
 
     @_builtins.property
     @pulumi.getter
-    def variables(self) -> Optional[pulumi.Input['SegmentVariablesArgs']]:
+    def variables(self) -> pulumi.Input[Optional['SegmentVariablesArgs']]:
         """
         Variables of the filter-segment
         """
         return pulumi.get(self, "variables")
 
     @variables.setter
-    def variables(self, value: Optional[pulumi.Input['SegmentVariablesArgs']]):
+    def variables(self, value: pulumi.Input[Optional['SegmentVariablesArgs']]):
         pulumi.set(self, "variables", value)
 
 
@@ -201,11 +201,11 @@ class Segment(pulumi.CustomResource):
     def __init__(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 description: Optional[pulumi.Input[_builtins.str]] = None,
-                 includes: Optional[pulumi.Input[Union['SegmentIncludesArgs', 'SegmentIncludesArgsDict']]] = None,
-                 is_public: Optional[pulumi.Input[_builtins.bool]] = None,
-                 name: Optional[pulumi.Input[_builtins.str]] = None,
-                 variables: Optional[pulumi.Input[Union['SegmentVariablesArgs', 'SegmentVariablesArgsDict']]] = None,
+                 description: pulumi.Input[Optional[_builtins.str]] = None,
+                 includes: pulumi.Input[Optional[Union['SegmentIncludesArgs', 'SegmentIncludesArgsDict']]] = None,
+                 is_public: pulumi.Input[Optional[_builtins.bool]] = None,
+                 name: pulumi.Input[Optional[_builtins.str]] = None,
+                 variables: pulumi.Input[Optional[Union['SegmentVariablesArgs', 'SegmentVariablesArgsDict']]] = None,
                  __props__=None):
         """
         > **Dynatrace SaaS only**
@@ -268,11 +268,11 @@ class Segment(pulumi.CustomResource):
     def _internal_init(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 description: Optional[pulumi.Input[_builtins.str]] = None,
-                 includes: Optional[pulumi.Input[Union['SegmentIncludesArgs', 'SegmentIncludesArgsDict']]] = None,
-                 is_public: Optional[pulumi.Input[_builtins.bool]] = None,
-                 name: Optional[pulumi.Input[_builtins.str]] = None,
-                 variables: Optional[pulumi.Input[Union['SegmentVariablesArgs', 'SegmentVariablesArgsDict']]] = None,
+                 description: pulumi.Input[Optional[_builtins.str]] = None,
+                 includes: pulumi.Input[Optional[Union['SegmentIncludesArgs', 'SegmentIncludesArgsDict']]] = None,
+                 is_public: pulumi.Input[Optional[_builtins.bool]] = None,
+                 name: pulumi.Input[Optional[_builtins.str]] = None,
+                 variables: pulumi.Input[Optional[Union['SegmentVariablesArgs', 'SegmentVariablesArgsDict']]] = None,
                  __props__=None):
         opts = pulumi.ResourceOptions.merge(_utilities.get_resource_opts_defaults(), opts)
         if not isinstance(opts, pulumi.ResourceOptions):
@@ -299,11 +299,11 @@ class Segment(pulumi.CustomResource):
     def get(resource_name: str,
             id: pulumi.Input[str],
             opts: Optional[pulumi.ResourceOptions] = None,
-            description: Optional[pulumi.Input[_builtins.str]] = None,
-            includes: Optional[pulumi.Input[Union['SegmentIncludesArgs', 'SegmentIncludesArgsDict']]] = None,
-            is_public: Optional[pulumi.Input[_builtins.bool]] = None,
-            name: Optional[pulumi.Input[_builtins.str]] = None,
-            variables: Optional[pulumi.Input[Union['SegmentVariablesArgs', 'SegmentVariablesArgsDict']]] = None) -> 'Segment':
+            description: pulumi.Input[Optional[_builtins.str]] = None,
+            includes: pulumi.Input[Optional[Union['SegmentIncludesArgs', 'SegmentIncludesArgsDict']]] = None,
+            is_public: pulumi.Input[Optional[_builtins.bool]] = None,
+            name: pulumi.Input[Optional[_builtins.str]] = None,
+            variables: pulumi.Input[Optional[Union['SegmentVariablesArgs', 'SegmentVariablesArgsDict']]] = None) -> 'Segment':
         """
         Get an existing Segment resource's state with the given name, id, and optional extra
         properties used to qualify the lookup.

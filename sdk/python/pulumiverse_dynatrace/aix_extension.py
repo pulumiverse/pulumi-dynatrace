@@ -21,7 +21,7 @@ class AixExtensionArgs:
     def __init__(__self__, *,
                  host_id: pulumi.Input[_builtins.str],
                  use_global_settings: pulumi.Input[_builtins.bool],
-                 enabled: Optional[pulumi.Input[_builtins.bool]] = None):
+                 enabled: pulumi.Input[Optional[_builtins.bool]] = None):
         """
         The set of arguments for constructing a AixExtension resource.
 
@@ -60,23 +60,23 @@ class AixExtensionArgs:
 
     @_builtins.property
     @pulumi.getter
-    def enabled(self) -> Optional[pulumi.Input[_builtins.bool]]:
+    def enabled(self) -> pulumi.Input[Optional[_builtins.bool]]:
         """
         This setting is enabled (`true`) or disabled (`false`)
         """
         return pulumi.get(self, "enabled")
 
     @enabled.setter
-    def enabled(self, value: Optional[pulumi.Input[_builtins.bool]]):
+    def enabled(self, value: pulumi.Input[Optional[_builtins.bool]]):
         pulumi.set(self, "enabled", value)
 
 
 @pulumi.input_type
 class _AixExtensionState:
     def __init__(__self__, *,
-                 enabled: Optional[pulumi.Input[_builtins.bool]] = None,
-                 host_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 use_global_settings: Optional[pulumi.Input[_builtins.bool]] = None):
+                 enabled: pulumi.Input[Optional[_builtins.bool]] = None,
+                 host_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 use_global_settings: pulumi.Input[Optional[_builtins.bool]] = None):
         """
         Input properties used for looking up and filtering AixExtension resources.
 
@@ -93,38 +93,38 @@ class _AixExtensionState:
 
     @_builtins.property
     @pulumi.getter
-    def enabled(self) -> Optional[pulumi.Input[_builtins.bool]]:
+    def enabled(self) -> pulumi.Input[Optional[_builtins.bool]]:
         """
         This setting is enabled (`true`) or disabled (`false`)
         """
         return pulumi.get(self, "enabled")
 
     @enabled.setter
-    def enabled(self, value: Optional[pulumi.Input[_builtins.bool]]):
+    def enabled(self, value: pulumi.Input[Optional[_builtins.bool]]):
         pulumi.set(self, "enabled", value)
 
     @_builtins.property
     @pulumi.getter(name="hostId")
-    def host_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def host_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The scope of this settings. If the settings should cover the whole environment, just don't specify any scope.
         """
         return pulumi.get(self, "host_id")
 
     @host_id.setter
-    def host_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def host_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "host_id", value)
 
     @_builtins.property
     @pulumi.getter(name="useGlobalSettings")
-    def use_global_settings(self) -> Optional[pulumi.Input[_builtins.bool]]:
+    def use_global_settings(self) -> pulumi.Input[Optional[_builtins.bool]]:
         """
         Use global settings
         """
         return pulumi.get(self, "use_global_settings")
 
     @use_global_settings.setter
-    def use_global_settings(self, value: Optional[pulumi.Input[_builtins.bool]]):
+    def use_global_settings(self, value: pulumi.Input[Optional[_builtins.bool]]):
         pulumi.set(self, "use_global_settings", value)
 
 
@@ -134,9 +134,9 @@ class AixExtension(pulumi.CustomResource):
     def __init__(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 enabled: Optional[pulumi.Input[_builtins.bool]] = None,
-                 host_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 use_global_settings: Optional[pulumi.Input[_builtins.bool]] = None,
+                 enabled: pulumi.Input[Optional[_builtins.bool]] = None,
+                 host_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 use_global_settings: pulumi.Input[Optional[_builtins.bool]] = None,
                  __props__=None):
         """
         > This resource requires the API token scopes **Read settings** (`settings.read`) and **Write settings** (`settings.write`)
@@ -197,9 +197,9 @@ class AixExtension(pulumi.CustomResource):
     def _internal_init(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 enabled: Optional[pulumi.Input[_builtins.bool]] = None,
-                 host_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 use_global_settings: Optional[pulumi.Input[_builtins.bool]] = None,
+                 enabled: pulumi.Input[Optional[_builtins.bool]] = None,
+                 host_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 use_global_settings: pulumi.Input[Optional[_builtins.bool]] = None,
                  __props__=None):
         opts = pulumi.ResourceOptions.merge(_utilities.get_resource_opts_defaults(), opts)
         if not isinstance(opts, pulumi.ResourceOptions):
@@ -226,9 +226,9 @@ class AixExtension(pulumi.CustomResource):
     def get(resource_name: str,
             id: pulumi.Input[str],
             opts: Optional[pulumi.ResourceOptions] = None,
-            enabled: Optional[pulumi.Input[_builtins.bool]] = None,
-            host_id: Optional[pulumi.Input[_builtins.str]] = None,
-            use_global_settings: Optional[pulumi.Input[_builtins.bool]] = None) -> 'AixExtension':
+            enabled: pulumi.Input[Optional[_builtins.bool]] = None,
+            host_id: pulumi.Input[Optional[_builtins.str]] = None,
+            use_global_settings: pulumi.Input[Optional[_builtins.bool]] = None) -> 'AixExtension':
         """
         Get an existing AixExtension resource's state with the given name, id, and optional extra
         properties used to qualify the lookup.

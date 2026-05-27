@@ -144,39 +144,39 @@ export interface DiskAnomalyRulesState {
     /**
      * Only apply to disks whose name matches
      */
-    diskNameFilter?: pulumi.Input<inputs.DiskAnomalyRulesDiskNameFilter>;
+    diskNameFilter?: pulumi.Input<inputs.DiskAnomalyRulesDiskNameFilter | undefined>;
     /**
      * This setting is enabled (`true`) or disabled (`false`)
      */
-    enabled?: pulumi.Input<boolean>;
+    enabled?: pulumi.Input<boolean | undefined>;
     /**
      * The scope of this settings. If the settings should cover the whole environment, just don't specify any scope.
      */
-    hostGroupId?: pulumi.Input<string>;
+    hostGroupId?: pulumi.Input<string | undefined>;
     /**
      * Possible Values: `LOW_DISK_SPACE`, `LOW_INODES`, `READ_TIME_EXCEEDING`, `WRITE_TIME_EXCEEDING`
      */
-    metric?: pulumi.Input<string>;
+    metric?: pulumi.Input<string | undefined>;
     /**
      * Name
      */
-    name?: pulumi.Input<string>;
+    name?: pulumi.Input<string | undefined>;
     /**
      * Only alert if the threshold was violated in at least *n* of the last *m* samples
      */
-    sampleLimit?: pulumi.Input<inputs.DiskAnomalyRulesSampleLimit>;
+    sampleLimit?: pulumi.Input<inputs.DiskAnomalyRulesSampleLimit | undefined>;
     /**
      * Only apply to hosts that have the following tags
      */
-    tagFilters?: pulumi.Input<pulumi.Input<string>[]>;
+    tagFilters?: pulumi.Input<pulumi.Input<string>[] | undefined>;
     /**
      * Alert if higher than
      */
-    thresholdMilliseconds?: pulumi.Input<number>;
+    thresholdMilliseconds?: pulumi.Input<number | undefined>;
     /**
      * Alert if lower than
      */
-    thresholdPercent?: pulumi.Input<number>;
+    thresholdPercent?: pulumi.Input<number | undefined>;
 }
 
 /**
@@ -194,7 +194,7 @@ export interface DiskAnomalyRulesArgs {
     /**
      * The scope of this settings. If the settings should cover the whole environment, just don't specify any scope.
      */
-    hostGroupId?: pulumi.Input<string>;
+    hostGroupId?: pulumi.Input<string | undefined>;
     /**
      * Possible Values: `LOW_DISK_SPACE`, `LOW_INODES`, `READ_TIME_EXCEEDING`, `WRITE_TIME_EXCEEDING`
      */
@@ -202,7 +202,7 @@ export interface DiskAnomalyRulesArgs {
     /**
      * Name
      */
-    name?: pulumi.Input<string>;
+    name?: pulumi.Input<string | undefined>;
     /**
      * Only alert if the threshold was violated in at least *n* of the last *m* samples
      */
@@ -210,13 +210,13 @@ export interface DiskAnomalyRulesArgs {
     /**
      * Only apply to hosts that have the following tags
      */
-    tagFilters?: pulumi.Input<pulumi.Input<string>[]>;
+    tagFilters?: pulumi.Input<pulumi.Input<string>[] | undefined>;
     /**
      * Alert if higher than
      */
-    thresholdMilliseconds?: pulumi.Input<number>;
+    thresholdMilliseconds?: pulumi.Input<number | undefined>;
     /**
      * Alert if lower than
      */
-    thresholdPercent?: pulumi.Input<number>;
+    thresholdPercent?: pulumi.Input<number | undefined>;
 }

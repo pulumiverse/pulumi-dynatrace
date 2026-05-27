@@ -73,5 +73,5 @@ export interface GetHostOutputArgs {
     /**
      * Required tags of the host to find
      */
-    tags?: pulumi.Input<pulumi.Input<string>[]>;
+    tags?: pulumi.Input<pulumi.Input<string>[] | undefined>;
 }

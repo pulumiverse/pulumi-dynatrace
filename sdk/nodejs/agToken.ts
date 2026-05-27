@@ -139,27 +139,27 @@ export interface AgTokenState {
      *       - M: months
      *       - y: years
      */
-    expirationDate?: pulumi.Input<string>;
+    expirationDate?: pulumi.Input<string | undefined>;
     /**
      * The name of the token.
      */
-    name?: pulumi.Input<string>;
+    name?: pulumi.Input<string | undefined>;
     /**
      * The token is a seed token (true) or an individual token (false). We recommend the individual token option (false)
      */
-    seed?: pulumi.Input<boolean>;
+    seed?: pulumi.Input<boolean | undefined>;
     /**
      * The tenant token. This information isn't directly related to the Active Gate Token. It's included for convenience. You require the permission `InstallerDownload` for that attribute to get populated
      */
-    tenantToken?: pulumi.Input<string>;
+    tenantToken?: pulumi.Input<string | undefined>;
     /**
      * The secret of the token.
      */
-    token?: pulumi.Input<string>;
+    token?: pulumi.Input<string | undefined>;
     /**
      * The type of the ActiveGate for which the token is valid. Possible values are `ENVIRONMENT` or `CLUSTER`
      */
-    type?: pulumi.Input<string>;
+    type?: pulumi.Input<string | undefined>;
 }
 
 /**
@@ -181,15 +181,15 @@ export interface AgTokenArgs {
      *       - M: months
      *       - y: years
      */
-    expirationDate?: pulumi.Input<string>;
+    expirationDate?: pulumi.Input<string | undefined>;
     /**
      * The name of the token.
      */
-    name?: pulumi.Input<string>;
+    name?: pulumi.Input<string | undefined>;
     /**
      * The token is a seed token (true) or an individual token (false). We recommend the individual token option (false)
      */
-    seed?: pulumi.Input<boolean>;
+    seed?: pulumi.Input<boolean | undefined>;
     /**
      * The type of the ActiveGate for which the token is valid. Possible values are `ENVIRONMENT` or `CLUSTER`
      */

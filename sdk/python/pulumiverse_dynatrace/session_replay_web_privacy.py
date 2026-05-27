@@ -23,8 +23,8 @@ class SessionReplayWebPrivacyArgs:
     def __init__(__self__, *,
                  enable_opt_in_mode: pulumi.Input[_builtins.bool],
                  masking_presets: pulumi.Input['SessionReplayWebPrivacyMaskingPresetsArgs'],
-                 application_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 url_exclusion_pattern_lists: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None):
+                 application_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 url_exclusion_pattern_lists: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None):
         """
         The set of arguments for constructing a SessionReplayWebPrivacy resource.
 
@@ -66,36 +66,36 @@ class SessionReplayWebPrivacyArgs:
 
     @_builtins.property
     @pulumi.getter(name="applicationId")
-    def application_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def application_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The scope of this settings. If the settings should cover the whole environment, just don't specify any scope.
         """
         return pulumi.get(self, "application_id")
 
     @application_id.setter
-    def application_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def application_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "application_id", value)
 
     @_builtins.property
     @pulumi.getter(name="urlExclusionPatternLists")
-    def url_exclusion_pattern_lists(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]:
+    def url_exclusion_pattern_lists(self) -> pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]:
         """
         (Field has overlap with `ApplicationDataPrivacy`) Exclude webpages or views from Session Replay recording by adding [URL exclusion rules](https://dt-url.net/sr-url-exclusion)
         """
         return pulumi.get(self, "url_exclusion_pattern_lists")
 
     @url_exclusion_pattern_lists.setter
-    def url_exclusion_pattern_lists(self, value: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]):
+    def url_exclusion_pattern_lists(self, value: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "url_exclusion_pattern_lists", value)
 
 
 @pulumi.input_type
 class _SessionReplayWebPrivacyState:
     def __init__(__self__, *,
-                 application_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 enable_opt_in_mode: Optional[pulumi.Input[_builtins.bool]] = None,
-                 masking_presets: Optional[pulumi.Input['SessionReplayWebPrivacyMaskingPresetsArgs']] = None,
-                 url_exclusion_pattern_lists: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None):
+                 application_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 enable_opt_in_mode: pulumi.Input[Optional[_builtins.bool]] = None,
+                 masking_presets: pulumi.Input[Optional['SessionReplayWebPrivacyMaskingPresetsArgs']] = None,
+                 url_exclusion_pattern_lists: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None):
         """
         Input properties used for looking up and filtering SessionReplayWebPrivacy resources.
 
@@ -115,50 +115,50 @@ class _SessionReplayWebPrivacyState:
 
     @_builtins.property
     @pulumi.getter(name="applicationId")
-    def application_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def application_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The scope of this settings. If the settings should cover the whole environment, just don't specify any scope.
         """
         return pulumi.get(self, "application_id")
 
     @application_id.setter
-    def application_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def application_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "application_id", value)
 
     @_builtins.property
     @pulumi.getter(name="enableOptInMode")
-    def enable_opt_in_mode(self) -> Optional[pulumi.Input[_builtins.bool]]:
+    def enable_opt_in_mode(self) -> pulumi.Input[Optional[_builtins.bool]]:
         """
         (Field has overlap with `ApplicationDataPrivacy`) When [Session Replay opt-in mode](https://dt-url.net/sr-opt-in-mode) is turned on, Session Replay is deactivated until explicitly activated via an API call.
         """
         return pulumi.get(self, "enable_opt_in_mode")
 
     @enable_opt_in_mode.setter
-    def enable_opt_in_mode(self, value: Optional[pulumi.Input[_builtins.bool]]):
+    def enable_opt_in_mode(self, value: pulumi.Input[Optional[_builtins.bool]]):
         pulumi.set(self, "enable_opt_in_mode", value)
 
     @_builtins.property
     @pulumi.getter(name="maskingPresets")
-    def masking_presets(self) -> Optional[pulumi.Input['SessionReplayWebPrivacyMaskingPresetsArgs']]:
+    def masking_presets(self) -> pulumi.Input[Optional['SessionReplayWebPrivacyMaskingPresetsArgs']]:
         """
         (Field has overlap with `ApplicationDataPrivacy`) To protect your end users' privacy, select or customize [predefined masking options](https://dt-url.net/sr-masking-preset-options) that suit your content recording and playback requirements.
         """
         return pulumi.get(self, "masking_presets")
 
     @masking_presets.setter
-    def masking_presets(self, value: Optional[pulumi.Input['SessionReplayWebPrivacyMaskingPresetsArgs']]):
+    def masking_presets(self, value: pulumi.Input[Optional['SessionReplayWebPrivacyMaskingPresetsArgs']]):
         pulumi.set(self, "masking_presets", value)
 
     @_builtins.property
     @pulumi.getter(name="urlExclusionPatternLists")
-    def url_exclusion_pattern_lists(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]:
+    def url_exclusion_pattern_lists(self) -> pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]:
         """
         (Field has overlap with `ApplicationDataPrivacy`) Exclude webpages or views from Session Replay recording by adding [URL exclusion rules](https://dt-url.net/sr-url-exclusion)
         """
         return pulumi.get(self, "url_exclusion_pattern_lists")
 
     @url_exclusion_pattern_lists.setter
-    def url_exclusion_pattern_lists(self, value: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]):
+    def url_exclusion_pattern_lists(self, value: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "url_exclusion_pattern_lists", value)
 
 
@@ -168,10 +168,10 @@ class SessionReplayWebPrivacy(pulumi.CustomResource):
     def __init__(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 application_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 enable_opt_in_mode: Optional[pulumi.Input[_builtins.bool]] = None,
-                 masking_presets: Optional[pulumi.Input[Union['SessionReplayWebPrivacyMaskingPresetsArgs', 'SessionReplayWebPrivacyMaskingPresetsArgsDict']]] = None,
-                 url_exclusion_pattern_lists: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 application_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 enable_opt_in_mode: pulumi.Input[Optional[_builtins.bool]] = None,
+                 masking_presets: pulumi.Input[Optional[Union['SessionReplayWebPrivacyMaskingPresetsArgs', 'SessionReplayWebPrivacyMaskingPresetsArgsDict']]] = None,
+                 url_exclusion_pattern_lists: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
                  __props__=None):
         """
         > This resource requires the API token scopes **Read settings** (`settings.read`) and **Write settings** (`settings.write`)
@@ -233,10 +233,10 @@ class SessionReplayWebPrivacy(pulumi.CustomResource):
     def _internal_init(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 application_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 enable_opt_in_mode: Optional[pulumi.Input[_builtins.bool]] = None,
-                 masking_presets: Optional[pulumi.Input[Union['SessionReplayWebPrivacyMaskingPresetsArgs', 'SessionReplayWebPrivacyMaskingPresetsArgsDict']]] = None,
-                 url_exclusion_pattern_lists: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 application_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 enable_opt_in_mode: pulumi.Input[Optional[_builtins.bool]] = None,
+                 masking_presets: pulumi.Input[Optional[Union['SessionReplayWebPrivacyMaskingPresetsArgs', 'SessionReplayWebPrivacyMaskingPresetsArgsDict']]] = None,
+                 url_exclusion_pattern_lists: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
                  __props__=None):
         opts = pulumi.ResourceOptions.merge(_utilities.get_resource_opts_defaults(), opts)
         if not isinstance(opts, pulumi.ResourceOptions):
@@ -264,10 +264,10 @@ class SessionReplayWebPrivacy(pulumi.CustomResource):
     def get(resource_name: str,
             id: pulumi.Input[str],
             opts: Optional[pulumi.ResourceOptions] = None,
-            application_id: Optional[pulumi.Input[_builtins.str]] = None,
-            enable_opt_in_mode: Optional[pulumi.Input[_builtins.bool]] = None,
-            masking_presets: Optional[pulumi.Input[Union['SessionReplayWebPrivacyMaskingPresetsArgs', 'SessionReplayWebPrivacyMaskingPresetsArgsDict']]] = None,
-            url_exclusion_pattern_lists: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None) -> 'SessionReplayWebPrivacy':
+            application_id: pulumi.Input[Optional[_builtins.str]] = None,
+            enable_opt_in_mode: pulumi.Input[Optional[_builtins.bool]] = None,
+            masking_presets: pulumi.Input[Optional[Union['SessionReplayWebPrivacyMaskingPresetsArgs', 'SessionReplayWebPrivacyMaskingPresetsArgsDict']]] = None,
+            url_exclusion_pattern_lists: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None) -> 'SessionReplayWebPrivacy':
         """
         Get an existing SessionReplayWebPrivacy resource's state with the given name, id, and optional extra
         properties used to qualify the lookup.

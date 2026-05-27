@@ -60,8 +60,8 @@ class AttackSettingsArgs:
 @pulumi.input_type
 class _AttackSettingsState:
     def __init__(__self__, *,
-                 default_attack_handling: Optional[pulumi.Input['AttackSettingsDefaultAttackHandlingArgs']] = None,
-                 enabled: Optional[pulumi.Input[_builtins.bool]] = None):
+                 default_attack_handling: pulumi.Input[Optional['AttackSettingsDefaultAttackHandlingArgs']] = None,
+                 enabled: pulumi.Input[Optional[_builtins.bool]] = None):
         """
         Input properties used for looking up and filtering AttackSettings resources.
 
@@ -75,26 +75,26 @@ class _AttackSettingsState:
 
     @_builtins.property
     @pulumi.getter(name="defaultAttackHandling")
-    def default_attack_handling(self) -> Optional[pulumi.Input['AttackSettingsDefaultAttackHandlingArgs']]:
+    def default_attack_handling(self) -> pulumi.Input[Optional['AttackSettingsDefaultAttackHandlingArgs']]:
         """
         Define global incoming attack control
         """
         return pulumi.get(self, "default_attack_handling")
 
     @default_attack_handling.setter
-    def default_attack_handling(self, value: Optional[pulumi.Input['AttackSettingsDefaultAttackHandlingArgs']]):
+    def default_attack_handling(self, value: pulumi.Input[Optional['AttackSettingsDefaultAttackHandlingArgs']]):
         pulumi.set(self, "default_attack_handling", value)
 
     @_builtins.property
     @pulumi.getter
-    def enabled(self) -> Optional[pulumi.Input[_builtins.bool]]:
+    def enabled(self) -> pulumi.Input[Optional[_builtins.bool]]:
         """
         This setting is enabled (`true`) or disabled (`false`)
         """
         return pulumi.get(self, "enabled")
 
     @enabled.setter
-    def enabled(self, value: Optional[pulumi.Input[_builtins.bool]]):
+    def enabled(self, value: pulumi.Input[Optional[_builtins.bool]]):
         pulumi.set(self, "enabled", value)
 
 
@@ -104,8 +104,8 @@ class AttackSettings(pulumi.CustomResource):
     def __init__(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 default_attack_handling: Optional[pulumi.Input[Union['AttackSettingsDefaultAttackHandlingArgs', 'AttackSettingsDefaultAttackHandlingArgsDict']]] = None,
-                 enabled: Optional[pulumi.Input[_builtins.bool]] = None,
+                 default_attack_handling: pulumi.Input[Optional[Union['AttackSettingsDefaultAttackHandlingArgs', 'AttackSettingsDefaultAttackHandlingArgsDict']]] = None,
+                 enabled: pulumi.Input[Optional[_builtins.bool]] = None,
                  __props__=None):
         """
         > This resource is excluded by default in the export utility since it requires the feature to be activated, please explicitly specify the resource to retrieve existing configuration.
@@ -169,8 +169,8 @@ class AttackSettings(pulumi.CustomResource):
     def _internal_init(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 default_attack_handling: Optional[pulumi.Input[Union['AttackSettingsDefaultAttackHandlingArgs', 'AttackSettingsDefaultAttackHandlingArgsDict']]] = None,
-                 enabled: Optional[pulumi.Input[_builtins.bool]] = None,
+                 default_attack_handling: pulumi.Input[Optional[Union['AttackSettingsDefaultAttackHandlingArgs', 'AttackSettingsDefaultAttackHandlingArgsDict']]] = None,
+                 enabled: pulumi.Input[Optional[_builtins.bool]] = None,
                  __props__=None):
         opts = pulumi.ResourceOptions.merge(_utilities.get_resource_opts_defaults(), opts)
         if not isinstance(opts, pulumi.ResourceOptions):
@@ -196,8 +196,8 @@ class AttackSettings(pulumi.CustomResource):
     def get(resource_name: str,
             id: pulumi.Input[str],
             opts: Optional[pulumi.ResourceOptions] = None,
-            default_attack_handling: Optional[pulumi.Input[Union['AttackSettingsDefaultAttackHandlingArgs', 'AttackSettingsDefaultAttackHandlingArgsDict']]] = None,
-            enabled: Optional[pulumi.Input[_builtins.bool]] = None) -> 'AttackSettings':
+            default_attack_handling: pulumi.Input[Optional[Union['AttackSettingsDefaultAttackHandlingArgs', 'AttackSettingsDefaultAttackHandlingArgsDict']]] = None,
+            enabled: pulumi.Input[Optional[_builtins.bool]] = None) -> 'AttackSettings':
         """
         Get an existing AttackSettings resource's state with the given name, id, and optional extra
         properties used to qualify the lookup.

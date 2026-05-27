@@ -21,9 +21,9 @@ __all__ = ['ApplicationAnomaliesArgs', 'ApplicationAnomalies']
 @pulumi.input_type
 class ApplicationAnomaliesArgs:
     def __init__(__self__, *,
-                 failure_rate: Optional[pulumi.Input['ApplicationAnomaliesFailureRateArgs']] = None,
-                 response_time: Optional[pulumi.Input['ApplicationAnomaliesResponseTimeArgs']] = None,
-                 traffic: Optional[pulumi.Input['ApplicationAnomaliesTrafficArgs']] = None):
+                 failure_rate: pulumi.Input[Optional['ApplicationAnomaliesFailureRateArgs']] = None,
+                 response_time: pulumi.Input[Optional['ApplicationAnomaliesResponseTimeArgs']] = None,
+                 traffic: pulumi.Input[Optional['ApplicationAnomaliesTrafficArgs']] = None):
         """
         The set of arguments for constructing a ApplicationAnomalies resource.
 
@@ -40,47 +40,47 @@ class ApplicationAnomaliesArgs:
 
     @_builtins.property
     @pulumi.getter(name="failureRate")
-    def failure_rate(self) -> Optional[pulumi.Input['ApplicationAnomaliesFailureRateArgs']]:
+    def failure_rate(self) -> pulumi.Input[Optional['ApplicationAnomaliesFailureRateArgs']]:
         """
         Configuration of failure rate increase detection
         """
         return pulumi.get(self, "failure_rate")
 
     @failure_rate.setter
-    def failure_rate(self, value: Optional[pulumi.Input['ApplicationAnomaliesFailureRateArgs']]):
+    def failure_rate(self, value: pulumi.Input[Optional['ApplicationAnomaliesFailureRateArgs']]):
         pulumi.set(self, "failure_rate", value)
 
     @_builtins.property
     @pulumi.getter(name="responseTime")
-    def response_time(self) -> Optional[pulumi.Input['ApplicationAnomaliesResponseTimeArgs']]:
+    def response_time(self) -> pulumi.Input[Optional['ApplicationAnomaliesResponseTimeArgs']]:
         """
         Configuration of response time degradation detection
         """
         return pulumi.get(self, "response_time")
 
     @response_time.setter
-    def response_time(self, value: Optional[pulumi.Input['ApplicationAnomaliesResponseTimeArgs']]):
+    def response_time(self, value: pulumi.Input[Optional['ApplicationAnomaliesResponseTimeArgs']]):
         pulumi.set(self, "response_time", value)
 
     @_builtins.property
     @pulumi.getter
-    def traffic(self) -> Optional[pulumi.Input['ApplicationAnomaliesTrafficArgs']]:
+    def traffic(self) -> pulumi.Input[Optional['ApplicationAnomaliesTrafficArgs']]:
         """
         Configuration for anomalies regarding traffic
         """
         return pulumi.get(self, "traffic")
 
     @traffic.setter
-    def traffic(self, value: Optional[pulumi.Input['ApplicationAnomaliesTrafficArgs']]):
+    def traffic(self, value: pulumi.Input[Optional['ApplicationAnomaliesTrafficArgs']]):
         pulumi.set(self, "traffic", value)
 
 
 @pulumi.input_type
 class _ApplicationAnomaliesState:
     def __init__(__self__, *,
-                 failure_rate: Optional[pulumi.Input['ApplicationAnomaliesFailureRateArgs']] = None,
-                 response_time: Optional[pulumi.Input['ApplicationAnomaliesResponseTimeArgs']] = None,
-                 traffic: Optional[pulumi.Input['ApplicationAnomaliesTrafficArgs']] = None):
+                 failure_rate: pulumi.Input[Optional['ApplicationAnomaliesFailureRateArgs']] = None,
+                 response_time: pulumi.Input[Optional['ApplicationAnomaliesResponseTimeArgs']] = None,
+                 traffic: pulumi.Input[Optional['ApplicationAnomaliesTrafficArgs']] = None):
         """
         Input properties used for looking up and filtering ApplicationAnomalies resources.
 
@@ -97,38 +97,38 @@ class _ApplicationAnomaliesState:
 
     @_builtins.property
     @pulumi.getter(name="failureRate")
-    def failure_rate(self) -> Optional[pulumi.Input['ApplicationAnomaliesFailureRateArgs']]:
+    def failure_rate(self) -> pulumi.Input[Optional['ApplicationAnomaliesFailureRateArgs']]:
         """
         Configuration of failure rate increase detection
         """
         return pulumi.get(self, "failure_rate")
 
     @failure_rate.setter
-    def failure_rate(self, value: Optional[pulumi.Input['ApplicationAnomaliesFailureRateArgs']]):
+    def failure_rate(self, value: pulumi.Input[Optional['ApplicationAnomaliesFailureRateArgs']]):
         pulumi.set(self, "failure_rate", value)
 
     @_builtins.property
     @pulumi.getter(name="responseTime")
-    def response_time(self) -> Optional[pulumi.Input['ApplicationAnomaliesResponseTimeArgs']]:
+    def response_time(self) -> pulumi.Input[Optional['ApplicationAnomaliesResponseTimeArgs']]:
         """
         Configuration of response time degradation detection
         """
         return pulumi.get(self, "response_time")
 
     @response_time.setter
-    def response_time(self, value: Optional[pulumi.Input['ApplicationAnomaliesResponseTimeArgs']]):
+    def response_time(self, value: pulumi.Input[Optional['ApplicationAnomaliesResponseTimeArgs']]):
         pulumi.set(self, "response_time", value)
 
     @_builtins.property
     @pulumi.getter
-    def traffic(self) -> Optional[pulumi.Input['ApplicationAnomaliesTrafficArgs']]:
+    def traffic(self) -> pulumi.Input[Optional['ApplicationAnomaliesTrafficArgs']]:
         """
         Configuration for anomalies regarding traffic
         """
         return pulumi.get(self, "traffic")
 
     @traffic.setter
-    def traffic(self, value: Optional[pulumi.Input['ApplicationAnomaliesTrafficArgs']]):
+    def traffic(self, value: pulumi.Input[Optional['ApplicationAnomaliesTrafficArgs']]):
         pulumi.set(self, "traffic", value)
 
 
@@ -138,9 +138,9 @@ class ApplicationAnomalies(pulumi.CustomResource):
     def __init__(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 failure_rate: Optional[pulumi.Input[Union['ApplicationAnomaliesFailureRateArgs', 'ApplicationAnomaliesFailureRateArgsDict']]] = None,
-                 response_time: Optional[pulumi.Input[Union['ApplicationAnomaliesResponseTimeArgs', 'ApplicationAnomaliesResponseTimeArgsDict']]] = None,
-                 traffic: Optional[pulumi.Input[Union['ApplicationAnomaliesTrafficArgs', 'ApplicationAnomaliesTrafficArgsDict']]] = None,
+                 failure_rate: pulumi.Input[Optional[Union['ApplicationAnomaliesFailureRateArgs', 'ApplicationAnomaliesFailureRateArgsDict']]] = None,
+                 response_time: pulumi.Input[Optional[Union['ApplicationAnomaliesResponseTimeArgs', 'ApplicationAnomaliesResponseTimeArgsDict']]] = None,
+                 traffic: pulumi.Input[Optional[Union['ApplicationAnomaliesTrafficArgs', 'ApplicationAnomaliesTrafficArgsDict']]] = None,
                  __props__=None):
         """
         !> This resource is utilizing an older API endpoint, please use WebAppAnomalies instead.
@@ -205,9 +205,9 @@ class ApplicationAnomalies(pulumi.CustomResource):
     def _internal_init(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 failure_rate: Optional[pulumi.Input[Union['ApplicationAnomaliesFailureRateArgs', 'ApplicationAnomaliesFailureRateArgsDict']]] = None,
-                 response_time: Optional[pulumi.Input[Union['ApplicationAnomaliesResponseTimeArgs', 'ApplicationAnomaliesResponseTimeArgsDict']]] = None,
-                 traffic: Optional[pulumi.Input[Union['ApplicationAnomaliesTrafficArgs', 'ApplicationAnomaliesTrafficArgsDict']]] = None,
+                 failure_rate: pulumi.Input[Optional[Union['ApplicationAnomaliesFailureRateArgs', 'ApplicationAnomaliesFailureRateArgsDict']]] = None,
+                 response_time: pulumi.Input[Optional[Union['ApplicationAnomaliesResponseTimeArgs', 'ApplicationAnomaliesResponseTimeArgsDict']]] = None,
+                 traffic: pulumi.Input[Optional[Union['ApplicationAnomaliesTrafficArgs', 'ApplicationAnomaliesTrafficArgsDict']]] = None,
                  __props__=None):
         opts = pulumi.ResourceOptions.merge(_utilities.get_resource_opts_defaults(), opts)
         if not isinstance(opts, pulumi.ResourceOptions):
@@ -230,9 +230,9 @@ class ApplicationAnomalies(pulumi.CustomResource):
     def get(resource_name: str,
             id: pulumi.Input[str],
             opts: Optional[pulumi.ResourceOptions] = None,
-            failure_rate: Optional[pulumi.Input[Union['ApplicationAnomaliesFailureRateArgs', 'ApplicationAnomaliesFailureRateArgsDict']]] = None,
-            response_time: Optional[pulumi.Input[Union['ApplicationAnomaliesResponseTimeArgs', 'ApplicationAnomaliesResponseTimeArgsDict']]] = None,
-            traffic: Optional[pulumi.Input[Union['ApplicationAnomaliesTrafficArgs', 'ApplicationAnomaliesTrafficArgsDict']]] = None) -> 'ApplicationAnomalies':
+            failure_rate: pulumi.Input[Optional[Union['ApplicationAnomaliesFailureRateArgs', 'ApplicationAnomaliesFailureRateArgsDict']]] = None,
+            response_time: pulumi.Input[Optional[Union['ApplicationAnomaliesResponseTimeArgs', 'ApplicationAnomaliesResponseTimeArgsDict']]] = None,
+            traffic: pulumi.Input[Optional[Union['ApplicationAnomaliesTrafficArgs', 'ApplicationAnomaliesTrafficArgsDict']]] = None) -> 'ApplicationAnomalies':
         """
         Get an existing ApplicationAnomalies resource's state with the given name, id, and optional extra
         properties used to qualify the lookup.

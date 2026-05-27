@@ -111,19 +111,19 @@ export interface WebAppKeyPerformanceLoadState {
     /**
      * If the selected key performance metric is not detected, the **User action duration** metric is used instead.
      */
-    fallbackThresholds?: pulumi.Input<inputs.WebAppKeyPerformanceLoadFallbackThresholds>;
+    fallbackThresholds?: pulumi.Input<inputs.WebAppKeyPerformanceLoadFallbackThresholds | undefined>;
     /**
      * Possible Values: `CUMULATIVE_LAYOUT_SHIFT`, `DOM_INTERACTIVE`, `FIRST_INPUT_DELAY`, `LARGEST_CONTENTFUL_PAINT`, `LOAD_EVENT_END`, `LOAD_EVENT_START`, `RESPONSE_END`, `RESPONSE_START`, `SPEED_INDEX`, `USER_ACTION_DURATION`, `VISUALLY_COMPLETE`
      */
-    kpm?: pulumi.Input<string>;
+    kpm?: pulumi.Input<string | undefined>;
     /**
      * The scope of this setting (APPLICATION_METHOD, APPLICATION)
      */
-    scope?: pulumi.Input<string>;
+    scope?: pulumi.Input<string | undefined>;
     /**
      * Set the Tolerating and Frustrated performance thresholds for this action type.
      */
-    thresholds?: pulumi.Input<inputs.WebAppKeyPerformanceLoadThresholds>;
+    thresholds?: pulumi.Input<inputs.WebAppKeyPerformanceLoadThresholds | undefined>;
 }
 
 /**
@@ -133,7 +133,7 @@ export interface WebAppKeyPerformanceLoadArgs {
     /**
      * If the selected key performance metric is not detected, the **User action duration** metric is used instead.
      */
-    fallbackThresholds?: pulumi.Input<inputs.WebAppKeyPerformanceLoadFallbackThresholds>;
+    fallbackThresholds?: pulumi.Input<inputs.WebAppKeyPerformanceLoadFallbackThresholds | undefined>;
     /**
      * Possible Values: `CUMULATIVE_LAYOUT_SHIFT`, `DOM_INTERACTIVE`, `FIRST_INPUT_DELAY`, `LARGEST_CONTENTFUL_PAINT`, `LOAD_EVENT_END`, `LOAD_EVENT_START`, `RESPONSE_END`, `RESPONSE_START`, `SPEED_INDEX`, `USER_ACTION_DURATION`, `VISUALLY_COMPLETE`
      */

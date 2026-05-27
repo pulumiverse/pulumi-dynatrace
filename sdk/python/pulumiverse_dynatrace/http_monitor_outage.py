@@ -21,10 +21,10 @@ class HttpMonitorOutageArgs:
     def __init__(__self__, *,
                  global_outages: pulumi.Input[_builtins.bool],
                  local_outages: pulumi.Input[_builtins.bool],
-                 global_consecutive_outage_count_threshold: Optional[pulumi.Input[_builtins.int]] = None,
-                 local_consecutive_outage_count_threshold: Optional[pulumi.Input[_builtins.int]] = None,
-                 local_location_outage_count_threshold: Optional[pulumi.Input[_builtins.int]] = None,
-                 scope: Optional[pulumi.Input[_builtins.str]] = None):
+                 global_consecutive_outage_count_threshold: pulumi.Input[Optional[_builtins.int]] = None,
+                 local_consecutive_outage_count_threshold: pulumi.Input[Optional[_builtins.int]] = None,
+                 local_location_outage_count_threshold: pulumi.Input[Optional[_builtins.int]] = None,
+                 scope: pulumi.Input[Optional[_builtins.str]] = None):
         """
         The set of arguments for constructing a HttpMonitorOutage resource.
 
@@ -72,62 +72,62 @@ class HttpMonitorOutageArgs:
 
     @_builtins.property
     @pulumi.getter(name="globalConsecutiveOutageCountThreshold")
-    def global_consecutive_outage_count_threshold(self) -> Optional[pulumi.Input[_builtins.int]]:
+    def global_consecutive_outage_count_threshold(self) -> pulumi.Input[Optional[_builtins.int]]:
         """
         (Field has overlap with `HttpMonitor`) Alert if all locations are unable to access my web application
         """
         return pulumi.get(self, "global_consecutive_outage_count_threshold")
 
     @global_consecutive_outage_count_threshold.setter
-    def global_consecutive_outage_count_threshold(self, value: Optional[pulumi.Input[_builtins.int]]):
+    def global_consecutive_outage_count_threshold(self, value: pulumi.Input[Optional[_builtins.int]]):
         pulumi.set(self, "global_consecutive_outage_count_threshold", value)
 
     @_builtins.property
     @pulumi.getter(name="localConsecutiveOutageCountThreshold")
-    def local_consecutive_outage_count_threshold(self) -> Optional[pulumi.Input[_builtins.int]]:
+    def local_consecutive_outage_count_threshold(self) -> pulumi.Input[Optional[_builtins.int]]:
         """
         (Field has overlap with `HttpMonitor`) are unable to access my web application
         """
         return pulumi.get(self, "local_consecutive_outage_count_threshold")
 
     @local_consecutive_outage_count_threshold.setter
-    def local_consecutive_outage_count_threshold(self, value: Optional[pulumi.Input[_builtins.int]]):
+    def local_consecutive_outage_count_threshold(self, value: pulumi.Input[Optional[_builtins.int]]):
         pulumi.set(self, "local_consecutive_outage_count_threshold", value)
 
     @_builtins.property
     @pulumi.getter(name="localLocationOutageCountThreshold")
-    def local_location_outage_count_threshold(self) -> Optional[pulumi.Input[_builtins.int]]:
+    def local_location_outage_count_threshold(self) -> pulumi.Input[Optional[_builtins.int]]:
         """
         (Field has overlap with `HttpMonitor`) Alert if at least
         """
         return pulumi.get(self, "local_location_outage_count_threshold")
 
     @local_location_outage_count_threshold.setter
-    def local_location_outage_count_threshold(self, value: Optional[pulumi.Input[_builtins.int]]):
+    def local_location_outage_count_threshold(self, value: pulumi.Input[Optional[_builtins.int]]):
         pulumi.set(self, "local_location_outage_count_threshold", value)
 
     @_builtins.property
     @pulumi.getter
-    def scope(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def scope(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The scope of this setting (HTTP_CHECK). Omit this property if you want to cover the whole environment.
         """
         return pulumi.get(self, "scope")
 
     @scope.setter
-    def scope(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def scope(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "scope", value)
 
 
 @pulumi.input_type
 class _HttpMonitorOutageState:
     def __init__(__self__, *,
-                 global_consecutive_outage_count_threshold: Optional[pulumi.Input[_builtins.int]] = None,
-                 global_outages: Optional[pulumi.Input[_builtins.bool]] = None,
-                 local_consecutive_outage_count_threshold: Optional[pulumi.Input[_builtins.int]] = None,
-                 local_location_outage_count_threshold: Optional[pulumi.Input[_builtins.int]] = None,
-                 local_outages: Optional[pulumi.Input[_builtins.bool]] = None,
-                 scope: Optional[pulumi.Input[_builtins.str]] = None):
+                 global_consecutive_outage_count_threshold: pulumi.Input[Optional[_builtins.int]] = None,
+                 global_outages: pulumi.Input[Optional[_builtins.bool]] = None,
+                 local_consecutive_outage_count_threshold: pulumi.Input[Optional[_builtins.int]] = None,
+                 local_location_outage_count_threshold: pulumi.Input[Optional[_builtins.int]] = None,
+                 local_outages: pulumi.Input[Optional[_builtins.bool]] = None,
+                 scope: pulumi.Input[Optional[_builtins.str]] = None):
         """
         Input properties used for looking up and filtering HttpMonitorOutage resources.
 
@@ -153,74 +153,74 @@ class _HttpMonitorOutageState:
 
     @_builtins.property
     @pulumi.getter(name="globalConsecutiveOutageCountThreshold")
-    def global_consecutive_outage_count_threshold(self) -> Optional[pulumi.Input[_builtins.int]]:
+    def global_consecutive_outage_count_threshold(self) -> pulumi.Input[Optional[_builtins.int]]:
         """
         (Field has overlap with `HttpMonitor`) Alert if all locations are unable to access my web application
         """
         return pulumi.get(self, "global_consecutive_outage_count_threshold")
 
     @global_consecutive_outage_count_threshold.setter
-    def global_consecutive_outage_count_threshold(self, value: Optional[pulumi.Input[_builtins.int]]):
+    def global_consecutive_outage_count_threshold(self, value: pulumi.Input[Optional[_builtins.int]]):
         pulumi.set(self, "global_consecutive_outage_count_threshold", value)
 
     @_builtins.property
     @pulumi.getter(name="globalOutages")
-    def global_outages(self) -> Optional[pulumi.Input[_builtins.bool]]:
+    def global_outages(self) -> pulumi.Input[Optional[_builtins.bool]]:
         """
         (Field has overlap with `HttpMonitor`) Generate a problem and send an alert when the monitor is unavailable at all configured locations.
         """
         return pulumi.get(self, "global_outages")
 
     @global_outages.setter
-    def global_outages(self, value: Optional[pulumi.Input[_builtins.bool]]):
+    def global_outages(self, value: pulumi.Input[Optional[_builtins.bool]]):
         pulumi.set(self, "global_outages", value)
 
     @_builtins.property
     @pulumi.getter(name="localConsecutiveOutageCountThreshold")
-    def local_consecutive_outage_count_threshold(self) -> Optional[pulumi.Input[_builtins.int]]:
+    def local_consecutive_outage_count_threshold(self) -> pulumi.Input[Optional[_builtins.int]]:
         """
         (Field has overlap with `HttpMonitor`) are unable to access my web application
         """
         return pulumi.get(self, "local_consecutive_outage_count_threshold")
 
     @local_consecutive_outage_count_threshold.setter
-    def local_consecutive_outage_count_threshold(self, value: Optional[pulumi.Input[_builtins.int]]):
+    def local_consecutive_outage_count_threshold(self, value: pulumi.Input[Optional[_builtins.int]]):
         pulumi.set(self, "local_consecutive_outage_count_threshold", value)
 
     @_builtins.property
     @pulumi.getter(name="localLocationOutageCountThreshold")
-    def local_location_outage_count_threshold(self) -> Optional[pulumi.Input[_builtins.int]]:
+    def local_location_outage_count_threshold(self) -> pulumi.Input[Optional[_builtins.int]]:
         """
         (Field has overlap with `HttpMonitor`) Alert if at least
         """
         return pulumi.get(self, "local_location_outage_count_threshold")
 
     @local_location_outage_count_threshold.setter
-    def local_location_outage_count_threshold(self, value: Optional[pulumi.Input[_builtins.int]]):
+    def local_location_outage_count_threshold(self, value: pulumi.Input[Optional[_builtins.int]]):
         pulumi.set(self, "local_location_outage_count_threshold", value)
 
     @_builtins.property
     @pulumi.getter(name="localOutages")
-    def local_outages(self) -> Optional[pulumi.Input[_builtins.bool]]:
+    def local_outages(self) -> pulumi.Input[Optional[_builtins.bool]]:
         """
         (Field has overlap with `HttpMonitor`) Generate a problem and send an alert when the monitor is unavailable for one or more consecutive runs at any location.
         """
         return pulumi.get(self, "local_outages")
 
     @local_outages.setter
-    def local_outages(self, value: Optional[pulumi.Input[_builtins.bool]]):
+    def local_outages(self, value: pulumi.Input[Optional[_builtins.bool]]):
         pulumi.set(self, "local_outages", value)
 
     @_builtins.property
     @pulumi.getter
-    def scope(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def scope(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The scope of this setting (HTTP_CHECK). Omit this property if you want to cover the whole environment.
         """
         return pulumi.get(self, "scope")
 
     @scope.setter
-    def scope(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def scope(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "scope", value)
 
 
@@ -230,12 +230,12 @@ class HttpMonitorOutage(pulumi.CustomResource):
     def __init__(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 global_consecutive_outage_count_threshold: Optional[pulumi.Input[_builtins.int]] = None,
-                 global_outages: Optional[pulumi.Input[_builtins.bool]] = None,
-                 local_consecutive_outage_count_threshold: Optional[pulumi.Input[_builtins.int]] = None,
-                 local_location_outage_count_threshold: Optional[pulumi.Input[_builtins.int]] = None,
-                 local_outages: Optional[pulumi.Input[_builtins.bool]] = None,
-                 scope: Optional[pulumi.Input[_builtins.str]] = None,
+                 global_consecutive_outage_count_threshold: pulumi.Input[Optional[_builtins.int]] = None,
+                 global_outages: pulumi.Input[Optional[_builtins.bool]] = None,
+                 local_consecutive_outage_count_threshold: pulumi.Input[Optional[_builtins.int]] = None,
+                 local_location_outage_count_threshold: pulumi.Input[Optional[_builtins.int]] = None,
+                 local_outages: pulumi.Input[Optional[_builtins.bool]] = None,
+                 scope: pulumi.Input[Optional[_builtins.str]] = None,
                  __props__=None):
         """
         > Configuration of the HTTP check scope overlaps with dynatrace_http_monitor, but this resource in addition provides an option for an environment scope.
@@ -303,12 +303,12 @@ class HttpMonitorOutage(pulumi.CustomResource):
     def _internal_init(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 global_consecutive_outage_count_threshold: Optional[pulumi.Input[_builtins.int]] = None,
-                 global_outages: Optional[pulumi.Input[_builtins.bool]] = None,
-                 local_consecutive_outage_count_threshold: Optional[pulumi.Input[_builtins.int]] = None,
-                 local_location_outage_count_threshold: Optional[pulumi.Input[_builtins.int]] = None,
-                 local_outages: Optional[pulumi.Input[_builtins.bool]] = None,
-                 scope: Optional[pulumi.Input[_builtins.str]] = None,
+                 global_consecutive_outage_count_threshold: pulumi.Input[Optional[_builtins.int]] = None,
+                 global_outages: pulumi.Input[Optional[_builtins.bool]] = None,
+                 local_consecutive_outage_count_threshold: pulumi.Input[Optional[_builtins.int]] = None,
+                 local_location_outage_count_threshold: pulumi.Input[Optional[_builtins.int]] = None,
+                 local_outages: pulumi.Input[Optional[_builtins.bool]] = None,
+                 scope: pulumi.Input[Optional[_builtins.str]] = None,
                  __props__=None):
         opts = pulumi.ResourceOptions.merge(_utilities.get_resource_opts_defaults(), opts)
         if not isinstance(opts, pulumi.ResourceOptions):
@@ -338,12 +338,12 @@ class HttpMonitorOutage(pulumi.CustomResource):
     def get(resource_name: str,
             id: pulumi.Input[str],
             opts: Optional[pulumi.ResourceOptions] = None,
-            global_consecutive_outage_count_threshold: Optional[pulumi.Input[_builtins.int]] = None,
-            global_outages: Optional[pulumi.Input[_builtins.bool]] = None,
-            local_consecutive_outage_count_threshold: Optional[pulumi.Input[_builtins.int]] = None,
-            local_location_outage_count_threshold: Optional[pulumi.Input[_builtins.int]] = None,
-            local_outages: Optional[pulumi.Input[_builtins.bool]] = None,
-            scope: Optional[pulumi.Input[_builtins.str]] = None) -> 'HttpMonitorOutage':
+            global_consecutive_outage_count_threshold: pulumi.Input[Optional[_builtins.int]] = None,
+            global_outages: pulumi.Input[Optional[_builtins.bool]] = None,
+            local_consecutive_outage_count_threshold: pulumi.Input[Optional[_builtins.int]] = None,
+            local_location_outage_count_threshold: pulumi.Input[Optional[_builtins.int]] = None,
+            local_outages: pulumi.Input[Optional[_builtins.bool]] = None,
+            scope: pulumi.Input[Optional[_builtins.str]] = None) -> 'HttpMonitorOutage':
         """
         Get an existing HttpMonitorOutage resource's state with the given name, id, and optional extra
         properties used to qualify the lookup.

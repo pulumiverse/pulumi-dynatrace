@@ -141,10 +141,10 @@ def get_iam_policy(account: Optional[_builtins.str] = None,
         id=pulumi.get(__ret__, 'id'),
         name=pulumi.get(__ret__, 'name'),
         uuid=pulumi.get(__ret__, 'uuid'))
-def get_iam_policy_output(account: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                          environment: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                          name: Optional[pulumi.Input[_builtins.str]] = None,
-                          uuid: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
+def get_iam_policy_output(account: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                          environment: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                          name: pulumi.Input[Optional[_builtins.str]] = None,
+                          uuid: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
                           opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetIamPolicyResult]:
     """
     > **Dynatrace SaaS only**

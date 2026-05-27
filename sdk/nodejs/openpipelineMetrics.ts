@@ -125,15 +125,15 @@ export interface OpenpipelineMetricsState {
     /**
      * List of all ingest sources of the configuration
      */
-    endpoints?: pulumi.Input<inputs.OpenpipelineMetricsEndpoints>;
+    endpoints?: pulumi.Input<inputs.OpenpipelineMetricsEndpoints | undefined>;
     /**
      * List of all pipelines of the configuration
      */
-    pipelines?: pulumi.Input<inputs.OpenpipelineMetricsPipelines>;
+    pipelines?: pulumi.Input<inputs.OpenpipelineMetricsPipelines | undefined>;
     /**
      * Dynamic routing definition
      */
-    routing?: pulumi.Input<inputs.OpenpipelineMetricsRouting>;
+    routing?: pulumi.Input<inputs.OpenpipelineMetricsRouting | undefined>;
 }
 
 /**
@@ -143,13 +143,13 @@ export interface OpenpipelineMetricsArgs {
     /**
      * List of all ingest sources of the configuration
      */
-    endpoints?: pulumi.Input<inputs.OpenpipelineMetricsEndpoints>;
+    endpoints?: pulumi.Input<inputs.OpenpipelineMetricsEndpoints | undefined>;
     /**
      * List of all pipelines of the configuration
      */
-    pipelines?: pulumi.Input<inputs.OpenpipelineMetricsPipelines>;
+    pipelines?: pulumi.Input<inputs.OpenpipelineMetricsPipelines | undefined>;
     /**
      * Dynamic routing definition
      */
-    routing?: pulumi.Input<inputs.OpenpipelineMetricsRouting>;
+    routing?: pulumi.Input<inputs.OpenpipelineMetricsRouting | undefined>;
 }

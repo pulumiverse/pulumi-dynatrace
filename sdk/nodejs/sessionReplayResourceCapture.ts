@@ -99,15 +99,15 @@ export interface SessionReplayResourceCaptureState {
     /**
      * The scope of this settings. If the settings should cover the whole environment, just don't specify any scope.
      */
-    applicationId?: pulumi.Input<string>;
+    applicationId?: pulumi.Input<string | undefined>;
     /**
      * (Field has overlap with `dynatrace.WebApplication`) When turned on, Dynatrace captures resources for up to 0.1% of user sessions recorded with Session Replay. For details, see [Resource capture](https://dt-url.net/sr-resource-capturing).
      */
-    enableResourceCapturing?: pulumi.Input<boolean>;
+    enableResourceCapturing?: pulumi.Input<boolean | undefined>;
     /**
      * (Field has overlap with `dynatrace.WebApplication`) Add exclusion rules to avoid the capture of resources from certain pages.
      */
-    resourceCaptureUrlExclusionPatternLists?: pulumi.Input<pulumi.Input<string>[]>;
+    resourceCaptureUrlExclusionPatternLists?: pulumi.Input<pulumi.Input<string>[] | undefined>;
 }
 
 /**
@@ -117,7 +117,7 @@ export interface SessionReplayResourceCaptureArgs {
     /**
      * The scope of this settings. If the settings should cover the whole environment, just don't specify any scope.
      */
-    applicationId?: pulumi.Input<string>;
+    applicationId?: pulumi.Input<string | undefined>;
     /**
      * (Field has overlap with `dynatrace.WebApplication`) When turned on, Dynatrace captures resources for up to 0.1% of user sessions recorded with Session Replay. For details, see [Resource capture](https://dt-url.net/sr-resource-capturing).
      */
@@ -125,5 +125,5 @@ export interface SessionReplayResourceCaptureArgs {
     /**
      * (Field has overlap with `dynatrace.WebApplication`) Add exclusion rules to avoid the capture of resources from certain pages.
      */
-    resourceCaptureUrlExclusionPatternLists?: pulumi.Input<pulumi.Input<string>[]>;
+    resourceCaptureUrlExclusionPatternLists?: pulumi.Input<pulumi.Input<string>[] | undefined>;
 }

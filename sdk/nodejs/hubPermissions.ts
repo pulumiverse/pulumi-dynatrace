@@ -96,11 +96,11 @@ export interface HubPermissionsState {
     /**
      * Name
      */
-    description?: pulumi.Input<string>;
+    description?: pulumi.Input<string | undefined>;
     /**
      * Contact Email
      */
-    email?: pulumi.Input<string>;
+    email?: pulumi.Input<string | undefined>;
 }
 
 /**

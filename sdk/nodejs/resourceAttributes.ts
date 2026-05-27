@@ -86,7 +86,7 @@ export interface ResourceAttributesState {
     /**
      * Attribute key allow-list
      */
-    keys?: pulumi.Input<inputs.ResourceAttributesKeys>;
+    keys?: pulumi.Input<inputs.ResourceAttributesKeys | undefined>;
 }
 
 /**
@@ -96,5 +96,5 @@ export interface ResourceAttributesArgs {
     /**
      * Attribute key allow-list
      */
-    keys?: pulumi.Input<inputs.ResourceAttributesKeys>;
+    keys?: pulumi.Input<inputs.ResourceAttributesKeys | undefined>;
 }

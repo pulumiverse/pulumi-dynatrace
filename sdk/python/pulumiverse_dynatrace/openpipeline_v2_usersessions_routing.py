@@ -21,7 +21,7 @@ __all__ = ['OpenpipelineV2UsersessionsRoutingArgs', 'OpenpipelineV2UsersessionsR
 @pulumi.input_type
 class OpenpipelineV2UsersessionsRoutingArgs:
     def __init__(__self__, *,
-                 routing_entries: Optional[pulumi.Input['OpenpipelineV2UsersessionsRoutingRoutingEntriesArgs']] = None):
+                 routing_entries: pulumi.Input[Optional['OpenpipelineV2UsersessionsRoutingRoutingEntriesArgs']] = None):
         """
         The set of arguments for constructing a OpenpipelineV2UsersessionsRouting resource.
 
@@ -32,21 +32,21 @@ class OpenpipelineV2UsersessionsRoutingArgs:
 
     @_builtins.property
     @pulumi.getter(name="routingEntries")
-    def routing_entries(self) -> Optional[pulumi.Input['OpenpipelineV2UsersessionsRoutingRoutingEntriesArgs']]:
+    def routing_entries(self) -> pulumi.Input[Optional['OpenpipelineV2UsersessionsRoutingRoutingEntriesArgs']]:
         """
         Routing for pipelines
         """
         return pulumi.get(self, "routing_entries")
 
     @routing_entries.setter
-    def routing_entries(self, value: Optional[pulumi.Input['OpenpipelineV2UsersessionsRoutingRoutingEntriesArgs']]):
+    def routing_entries(self, value: pulumi.Input[Optional['OpenpipelineV2UsersessionsRoutingRoutingEntriesArgs']]):
         pulumi.set(self, "routing_entries", value)
 
 
 @pulumi.input_type
 class _OpenpipelineV2UsersessionsRoutingState:
     def __init__(__self__, *,
-                 routing_entries: Optional[pulumi.Input['OpenpipelineV2UsersessionsRoutingRoutingEntriesArgs']] = None):
+                 routing_entries: pulumi.Input[Optional['OpenpipelineV2UsersessionsRoutingRoutingEntriesArgs']] = None):
         """
         Input properties used for looking up and filtering OpenpipelineV2UsersessionsRouting resources.
 
@@ -57,14 +57,14 @@ class _OpenpipelineV2UsersessionsRoutingState:
 
     @_builtins.property
     @pulumi.getter(name="routingEntries")
-    def routing_entries(self) -> Optional[pulumi.Input['OpenpipelineV2UsersessionsRoutingRoutingEntriesArgs']]:
+    def routing_entries(self) -> pulumi.Input[Optional['OpenpipelineV2UsersessionsRoutingRoutingEntriesArgs']]:
         """
         Routing for pipelines
         """
         return pulumi.get(self, "routing_entries")
 
     @routing_entries.setter
-    def routing_entries(self, value: Optional[pulumi.Input['OpenpipelineV2UsersessionsRoutingRoutingEntriesArgs']]):
+    def routing_entries(self, value: pulumi.Input[Optional['OpenpipelineV2UsersessionsRoutingRoutingEntriesArgs']]):
         pulumi.set(self, "routing_entries", value)
 
 
@@ -74,7 +74,7 @@ class OpenpipelineV2UsersessionsRouting(pulumi.CustomResource):
     def __init__(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 routing_entries: Optional[pulumi.Input[Union['OpenpipelineV2UsersessionsRoutingRoutingEntriesArgs', 'OpenpipelineV2UsersessionsRoutingRoutingEntriesArgsDict']]] = None,
+                 routing_entries: pulumi.Input[Optional[Union['OpenpipelineV2UsersessionsRoutingRoutingEntriesArgs', 'OpenpipelineV2UsersessionsRoutingRoutingEntriesArgsDict']]] = None,
                  __props__=None):
         """
         !> Deploying an OpenPipeline routing configuration will overwrite the existing one of the same kind, causing any manual changes made in the web UI or other routing configurations managed by Terraform or Monaco to be lost. Ensure all routing configurations of the same kind are defined within a single Terraform or Monaco configuration to prevent data loss.
@@ -171,7 +171,7 @@ class OpenpipelineV2UsersessionsRouting(pulumi.CustomResource):
     def _internal_init(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 routing_entries: Optional[pulumi.Input[Union['OpenpipelineV2UsersessionsRoutingRoutingEntriesArgs', 'OpenpipelineV2UsersessionsRoutingRoutingEntriesArgsDict']]] = None,
+                 routing_entries: pulumi.Input[Optional[Union['OpenpipelineV2UsersessionsRoutingRoutingEntriesArgs', 'OpenpipelineV2UsersessionsRoutingRoutingEntriesArgsDict']]] = None,
                  __props__=None):
         opts = pulumi.ResourceOptions.merge(_utilities.get_resource_opts_defaults(), opts)
         if not isinstance(opts, pulumi.ResourceOptions):
@@ -192,7 +192,7 @@ class OpenpipelineV2UsersessionsRouting(pulumi.CustomResource):
     def get(resource_name: str,
             id: pulumi.Input[str],
             opts: Optional[pulumi.ResourceOptions] = None,
-            routing_entries: Optional[pulumi.Input[Union['OpenpipelineV2UsersessionsRoutingRoutingEntriesArgs', 'OpenpipelineV2UsersessionsRoutingRoutingEntriesArgsDict']]] = None) -> 'OpenpipelineV2UsersessionsRouting':
+            routing_entries: pulumi.Input[Optional[Union['OpenpipelineV2UsersessionsRoutingRoutingEntriesArgs', 'OpenpipelineV2UsersessionsRoutingRoutingEntriesArgsDict']]] = None) -> 'OpenpipelineV2UsersessionsRouting':
         """
         Get an existing OpenpipelineV2UsersessionsRouting resource's state with the given name, id, and optional extra
         properties used to qualify the lookup.

@@ -23,7 +23,7 @@ class BrowserMonitorPerformanceArgs:
     def __init__(__self__, *,
                  enabled: pulumi.Input[_builtins.bool],
                  scope: pulumi.Input[_builtins.str],
-                 thresholds: Optional[pulumi.Input['BrowserMonitorPerformanceThresholdsArgs']] = None):
+                 thresholds: pulumi.Input[Optional['BrowserMonitorPerformanceThresholdsArgs']] = None):
         """
         The set of arguments for constructing a BrowserMonitorPerformance resource.
 
@@ -62,23 +62,23 @@ class BrowserMonitorPerformanceArgs:
 
     @_builtins.property
     @pulumi.getter
-    def thresholds(self) -> Optional[pulumi.Input['BrowserMonitorPerformanceThresholdsArgs']]:
+    def thresholds(self) -> pulumi.Input[Optional['BrowserMonitorPerformanceThresholdsArgs']]:
         """
         Performance thresholds
         """
         return pulumi.get(self, "thresholds")
 
     @thresholds.setter
-    def thresholds(self, value: Optional[pulumi.Input['BrowserMonitorPerformanceThresholdsArgs']]):
+    def thresholds(self, value: pulumi.Input[Optional['BrowserMonitorPerformanceThresholdsArgs']]):
         pulumi.set(self, "thresholds", value)
 
 
 @pulumi.input_type
 class _BrowserMonitorPerformanceState:
     def __init__(__self__, *,
-                 enabled: Optional[pulumi.Input[_builtins.bool]] = None,
-                 scope: Optional[pulumi.Input[_builtins.str]] = None,
-                 thresholds: Optional[pulumi.Input['BrowserMonitorPerformanceThresholdsArgs']] = None):
+                 enabled: pulumi.Input[Optional[_builtins.bool]] = None,
+                 scope: pulumi.Input[Optional[_builtins.str]] = None,
+                 thresholds: pulumi.Input[Optional['BrowserMonitorPerformanceThresholdsArgs']] = None):
         """
         Input properties used for looking up and filtering BrowserMonitorPerformance resources.
 
@@ -95,38 +95,38 @@ class _BrowserMonitorPerformanceState:
 
     @_builtins.property
     @pulumi.getter
-    def enabled(self) -> Optional[pulumi.Input[_builtins.bool]]:
+    def enabled(self) -> pulumi.Input[Optional[_builtins.bool]]:
         """
         This setting is enabled (`true`) or disabled (`false`)
         """
         return pulumi.get(self, "enabled")
 
     @enabled.setter
-    def enabled(self, value: Optional[pulumi.Input[_builtins.bool]]):
+    def enabled(self, value: pulumi.Input[Optional[_builtins.bool]]):
         pulumi.set(self, "enabled", value)
 
     @_builtins.property
     @pulumi.getter
-    def scope(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def scope(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The scope of this setting (SYNTHETIC_TEST)
         """
         return pulumi.get(self, "scope")
 
     @scope.setter
-    def scope(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def scope(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "scope", value)
 
     @_builtins.property
     @pulumi.getter
-    def thresholds(self) -> Optional[pulumi.Input['BrowserMonitorPerformanceThresholdsArgs']]:
+    def thresholds(self) -> pulumi.Input[Optional['BrowserMonitorPerformanceThresholdsArgs']]:
         """
         Performance thresholds
         """
         return pulumi.get(self, "thresholds")
 
     @thresholds.setter
-    def thresholds(self, value: Optional[pulumi.Input['BrowserMonitorPerformanceThresholdsArgs']]):
+    def thresholds(self, value: pulumi.Input[Optional['BrowserMonitorPerformanceThresholdsArgs']]):
         pulumi.set(self, "thresholds", value)
 
 
@@ -136,9 +136,9 @@ class BrowserMonitorPerformance(pulumi.CustomResource):
     def __init__(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 enabled: Optional[pulumi.Input[_builtins.bool]] = None,
-                 scope: Optional[pulumi.Input[_builtins.str]] = None,
-                 thresholds: Optional[pulumi.Input[Union['BrowserMonitorPerformanceThresholdsArgs', 'BrowserMonitorPerformanceThresholdsArgsDict']]] = None,
+                 enabled: pulumi.Input[Optional[_builtins.bool]] = None,
+                 scope: pulumi.Input[Optional[_builtins.str]] = None,
+                 thresholds: pulumi.Input[Optional[Union['BrowserMonitorPerformanceThresholdsArgs', 'BrowserMonitorPerformanceThresholdsArgsDict']]] = None,
                  __props__=None):
         """
         > Configuration of the synthetic test scope overlaps with dynatrace_browser_monitor, but this resource in addition provides an option for an environment scope.
@@ -203,9 +203,9 @@ class BrowserMonitorPerformance(pulumi.CustomResource):
     def _internal_init(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 enabled: Optional[pulumi.Input[_builtins.bool]] = None,
-                 scope: Optional[pulumi.Input[_builtins.str]] = None,
-                 thresholds: Optional[pulumi.Input[Union['BrowserMonitorPerformanceThresholdsArgs', 'BrowserMonitorPerformanceThresholdsArgsDict']]] = None,
+                 enabled: pulumi.Input[Optional[_builtins.bool]] = None,
+                 scope: pulumi.Input[Optional[_builtins.str]] = None,
+                 thresholds: pulumi.Input[Optional[Union['BrowserMonitorPerformanceThresholdsArgs', 'BrowserMonitorPerformanceThresholdsArgsDict']]] = None,
                  __props__=None):
         opts = pulumi.ResourceOptions.merge(_utilities.get_resource_opts_defaults(), opts)
         if not isinstance(opts, pulumi.ResourceOptions):
@@ -232,9 +232,9 @@ class BrowserMonitorPerformance(pulumi.CustomResource):
     def get(resource_name: str,
             id: pulumi.Input[str],
             opts: Optional[pulumi.ResourceOptions] = None,
-            enabled: Optional[pulumi.Input[_builtins.bool]] = None,
-            scope: Optional[pulumi.Input[_builtins.str]] = None,
-            thresholds: Optional[pulumi.Input[Union['BrowserMonitorPerformanceThresholdsArgs', 'BrowserMonitorPerformanceThresholdsArgsDict']]] = None) -> 'BrowserMonitorPerformance':
+            enabled: pulumi.Input[Optional[_builtins.bool]] = None,
+            scope: pulumi.Input[Optional[_builtins.str]] = None,
+            thresholds: pulumi.Input[Optional[Union['BrowserMonitorPerformanceThresholdsArgs', 'BrowserMonitorPerformanceThresholdsArgsDict']]] = None) -> 'BrowserMonitorPerformance':
         """
         Get an existing BrowserMonitorPerformance resource's state with the given name, id, and optional extra
         properties used to qualify the lookup.

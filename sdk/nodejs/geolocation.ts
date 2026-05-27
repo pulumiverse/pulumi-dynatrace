@@ -91,11 +91,11 @@ export interface GeolocationState {
     /**
      * Display the world map
      */
-    displayWorldmap?: pulumi.Input<boolean>;
+    displayWorldmap?: pulumi.Input<boolean | undefined>;
     /**
      * The scope of this setting (environment-default). Omit this property if you want to cover the whole environment.
      */
-    scope?: pulumi.Input<string>;
+    scope?: pulumi.Input<string | undefined>;
 }
 
 /**
@@ -109,5 +109,5 @@ export interface GeolocationArgs {
     /**
      * The scope of this setting (environment-default). Omit this property if you want to cover the whole environment.
      */
-    scope?: pulumi.Input<string>;
+    scope?: pulumi.Input<string | undefined>;
 }

@@ -123,19 +123,19 @@ export interface AutotagV2State {
     /**
      * Description
      */
-    description?: pulumi.Input<string>;
+    description?: pulumi.Input<string | undefined>;
     /**
      * Tag name
      */
-    name?: pulumi.Input<string>;
+    name?: pulumi.Input<string | undefined>;
     /**
      * Rules
      */
-    rules?: pulumi.Input<inputs.AutotagV2Rules>;
+    rules?: pulumi.Input<inputs.AutotagV2Rules | undefined>;
     /**
      * If `true` the specified rules are ignored with the assumption that they're maintained externally or via `dynatrace.AutotagRules`
      */
-    rulesMaintainedExternally?: pulumi.Input<boolean>;
+    rulesMaintainedExternally?: pulumi.Input<boolean | undefined>;
 }
 
 /**
@@ -145,17 +145,17 @@ export interface AutotagV2Args {
     /**
      * Description
      */
-    description?: pulumi.Input<string>;
+    description?: pulumi.Input<string | undefined>;
     /**
      * Tag name
      */
-    name?: pulumi.Input<string>;
+    name?: pulumi.Input<string | undefined>;
     /**
      * Rules
      */
-    rules?: pulumi.Input<inputs.AutotagV2Rules>;
+    rules?: pulumi.Input<inputs.AutotagV2Rules | undefined>;
     /**
      * If `true` the specified rules are ignored with the assumption that they're maintained externally or via `dynatrace.AutotagRules`
      */
-    rulesMaintainedExternally?: pulumi.Input<boolean>;
+    rulesMaintainedExternally?: pulumi.Input<boolean | undefined>;
 }

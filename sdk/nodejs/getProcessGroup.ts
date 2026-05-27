@@ -73,5 +73,5 @@ export interface GetProcessGroupOutputArgs {
     /**
      * Required tags of the process group to find
      */
-    tags?: pulumi.Input<pulumi.Input<string>[]>;
+    tags?: pulumi.Input<pulumi.Input<string>[] | undefined>;
 }

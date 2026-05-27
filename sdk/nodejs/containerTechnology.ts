@@ -213,7 +213,7 @@ export interface ContainerTechnologyState {
     /**
      * Platform: Cloud Foundry
      */
-    boshProcessManager?: pulumi.Input<boolean>;
+    boshProcessManager?: pulumi.Input<boolean | undefined>;
     /**
      * Platform: Kubernetes
      *
@@ -223,7 +223,7 @@ export interface ContainerTechnologyState {
      *
      * Min agent version: 1.169
      */
-    containerd?: pulumi.Input<boolean>;
+    containerd?: pulumi.Input<boolean | undefined>;
     /**
      * Platform: Kubernetes
      *
@@ -233,7 +233,7 @@ export interface ContainerTechnologyState {
      *
      * Min agent version: 1.163
      */
-    crio?: pulumi.Input<boolean>;
+    crio?: pulumi.Input<boolean | undefined>;
     /**
      * Platform: Docker and Kubernetes
      *
@@ -241,7 +241,7 @@ export interface ContainerTechnologyState {
      *
      * Operating system: Linux
      */
-    docker?: pulumi.Input<boolean>;
+    docker?: pulumi.Input<boolean | undefined>;
     /**
      * Platform: Docker
      *
@@ -251,7 +251,7 @@ export interface ContainerTechnologyState {
      *
      * Min agent version: 1.149
      */
-    dockerWindows?: pulumi.Input<boolean>;
+    dockerWindows?: pulumi.Input<boolean | undefined>;
     /**
      * Platform: Cloud Foundry
      *
@@ -261,7 +261,7 @@ export interface ContainerTechnologyState {
      *
      * Min agent version: 1.133
      */
-    garden?: pulumi.Input<boolean>;
+    garden?: pulumi.Input<boolean | undefined>;
     /**
      * Platform: Podman
      *
@@ -271,11 +271,11 @@ export interface ContainerTechnologyState {
      *
      * Min agent version: 1.267
      */
-    podman?: pulumi.Input<boolean>;
+    podman?: pulumi.Input<boolean | undefined>;
     /**
      * The scope of this setting (HOST, HOST_GROUP). Omit this property if you want to cover the whole environment.
      */
-    scope?: pulumi.Input<string>;
+    scope?: pulumi.Input<string | undefined>;
     /**
      * Platform: Cloud Foundry
      *
@@ -285,7 +285,7 @@ export interface ContainerTechnologyState {
      *
      * Min agent version: 1.175
      */
-    winc?: pulumi.Input<boolean>;
+    winc?: pulumi.Input<boolean | undefined>;
 }
 
 /**
@@ -357,7 +357,7 @@ export interface ContainerTechnologyArgs {
     /**
      * The scope of this setting (HOST, HOST_GROUP). Omit this property if you want to cover the whole environment.
      */
-    scope?: pulumi.Input<string>;
+    scope?: pulumi.Input<string | undefined>;
     /**
      * Platform: Cloud Foundry
      *

@@ -89,7 +89,7 @@ export interface ContainerRegistryState {
     /**
      * Typically set without protocol. Leave empty to use default configuration
      */
-    containerRegistry?: pulumi.Input<string>;
+    containerRegistry?: pulumi.Input<string | undefined>;
 }
 
 /**
@@ -99,5 +99,5 @@ export interface ContainerRegistryArgs {
     /**
      * Typically set without protocol. Leave empty to use default configuration
      */
-    containerRegistry?: pulumi.Input<string>;
+    containerRegistry?: pulumi.Input<string | undefined>;
 }

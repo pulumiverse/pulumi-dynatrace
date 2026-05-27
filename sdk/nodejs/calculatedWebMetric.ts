@@ -138,35 +138,35 @@ export interface CalculatedWebMetricState {
     /**
      * The Dynatrace entity ID of the application to which the metric belongs.
      */
-    appIdentifier?: pulumi.Input<string>;
+    appIdentifier?: pulumi.Input<string | undefined>;
     /**
      * Descriptor of a calculated web metric.
      */
-    description?: pulumi.Input<string>;
+    description?: pulumi.Input<string | undefined>;
     /**
      * Parameters of a definition of a calculated web metric.
      */
-    dimensions?: pulumi.Input<pulumi.Input<inputs.CalculatedWebMetricDimension>[]>;
+    dimensions?: pulumi.Input<pulumi.Input<inputs.CalculatedWebMetricDimension>[] | undefined>;
     /**
      * The metric is enabled (`true`) or disabled (`false`)
      */
-    enabled?: pulumi.Input<boolean>;
+    enabled?: pulumi.Input<boolean | undefined>;
     /**
      * The definition of a calculated web metric.
      */
-    metricDefinition?: pulumi.Input<inputs.CalculatedWebMetricMetricDefinition>;
+    metricDefinition?: pulumi.Input<inputs.CalculatedWebMetricMetricDefinition | undefined>;
     /**
      * The unique key of the calculated web metric.
      */
-    metricKey?: pulumi.Input<string>;
+    metricKey?: pulumi.Input<string | undefined>;
     /**
      * The displayed name of the metric.
      */
-    name?: pulumi.Input<string>;
+    name?: pulumi.Input<string | undefined>;
     /**
      * Parameters of a definition of a calculated web metric.
      */
-    userActionFilter?: pulumi.Input<inputs.CalculatedWebMetricUserActionFilter>;
+    userActionFilter?: pulumi.Input<inputs.CalculatedWebMetricUserActionFilter | undefined>;
 }
 
 /**
@@ -180,11 +180,11 @@ export interface CalculatedWebMetricArgs {
     /**
      * Descriptor of a calculated web metric.
      */
-    description?: pulumi.Input<string>;
+    description?: pulumi.Input<string | undefined>;
     /**
      * Parameters of a definition of a calculated web metric.
      */
-    dimensions?: pulumi.Input<pulumi.Input<inputs.CalculatedWebMetricDimension>[]>;
+    dimensions?: pulumi.Input<pulumi.Input<inputs.CalculatedWebMetricDimension>[] | undefined>;
     /**
      * The metric is enabled (`true`) or disabled (`false`)
      */
@@ -200,9 +200,9 @@ export interface CalculatedWebMetricArgs {
     /**
      * The displayed name of the metric.
      */
-    name?: pulumi.Input<string>;
+    name?: pulumi.Input<string | undefined>;
     /**
      * Parameters of a definition of a calculated web metric.
      */
-    userActionFilter?: pulumi.Input<inputs.CalculatedWebMetricUserActionFilter>;
+    userActionFilter?: pulumi.Input<inputs.CalculatedWebMetricUserActionFilter | undefined>;
 }

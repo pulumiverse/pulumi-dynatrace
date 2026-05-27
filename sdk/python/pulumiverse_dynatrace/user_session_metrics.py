@@ -24,8 +24,8 @@ class UserSessionMetricsArgs:
                  enabled: pulumi.Input[_builtins.bool],
                  metric_key: pulumi.Input[_builtins.str],
                  value: pulumi.Input['UserSessionMetricsValueArgs'],
-                 dimensions: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-                 filters: Optional[pulumi.Input['UserSessionMetricsFiltersArgs']] = None):
+                 dimensions: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 filters: pulumi.Input[Optional['UserSessionMetricsFiltersArgs']] = None):
         """
         The set of arguments for constructing a UserSessionMetrics resource.
 
@@ -81,37 +81,37 @@ class UserSessionMetricsArgs:
 
     @_builtins.property
     @pulumi.getter
-    def dimensions(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]:
+    def dimensions(self) -> pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]:
         """
         Defines the fields that are used as dimensions. A dimension is a collection of reference information about a metric data point that is of interest to your business. Dimensions are parameters like "browserFamily", "userType", "country". For example, using "userType" as a dimension allows you to split chart data based on user types.
         """
         return pulumi.get(self, "dimensions")
 
     @dimensions.setter
-    def dimensions(self, value: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]):
+    def dimensions(self, value: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "dimensions", value)
 
     @_builtins.property
     @pulumi.getter
-    def filters(self) -> Optional[pulumi.Input['UserSessionMetricsFiltersArgs']]:
+    def filters(self) -> pulumi.Input[Optional['UserSessionMetricsFiltersArgs']]:
         """
         Defines the filters for the user session. Filters apply at the moment of extracting the data and only sessions that satisfy the filtering criteria will be used to extract the custom metrics. You will not be able to modify these filters in the metric data explorer. For example, using "userType equals REAL_USER" will give you only data from real users, while forcing the synthetic sessions to be ignored.
         """
         return pulumi.get(self, "filters")
 
     @filters.setter
-    def filters(self, value: Optional[pulumi.Input['UserSessionMetricsFiltersArgs']]):
+    def filters(self, value: pulumi.Input[Optional['UserSessionMetricsFiltersArgs']]):
         pulumi.set(self, "filters", value)
 
 
 @pulumi.input_type
 class _UserSessionMetricsState:
     def __init__(__self__, *,
-                 dimensions: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-                 enabled: Optional[pulumi.Input[_builtins.bool]] = None,
-                 filters: Optional[pulumi.Input['UserSessionMetricsFiltersArgs']] = None,
-                 metric_key: Optional[pulumi.Input[_builtins.str]] = None,
-                 value: Optional[pulumi.Input['UserSessionMetricsValueArgs']] = None):
+                 dimensions: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 enabled: pulumi.Input[Optional[_builtins.bool]] = None,
+                 filters: pulumi.Input[Optional['UserSessionMetricsFiltersArgs']] = None,
+                 metric_key: pulumi.Input[Optional[_builtins.str]] = None,
+                 value: pulumi.Input[Optional['UserSessionMetricsValueArgs']] = None):
         """
         Input properties used for looking up and filtering UserSessionMetrics resources.
 
@@ -134,62 +134,62 @@ class _UserSessionMetricsState:
 
     @_builtins.property
     @pulumi.getter
-    def dimensions(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]:
+    def dimensions(self) -> pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]:
         """
         Defines the fields that are used as dimensions. A dimension is a collection of reference information about a metric data point that is of interest to your business. Dimensions are parameters like "browserFamily", "userType", "country". For example, using "userType" as a dimension allows you to split chart data based on user types.
         """
         return pulumi.get(self, "dimensions")
 
     @dimensions.setter
-    def dimensions(self, value: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]):
+    def dimensions(self, value: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "dimensions", value)
 
     @_builtins.property
     @pulumi.getter
-    def enabled(self) -> Optional[pulumi.Input[_builtins.bool]]:
+    def enabled(self) -> pulumi.Input[Optional[_builtins.bool]]:
         """
         This setting is enabled (`true`) or disabled (`false`)
         """
         return pulumi.get(self, "enabled")
 
     @enabled.setter
-    def enabled(self, value: Optional[pulumi.Input[_builtins.bool]]):
+    def enabled(self, value: pulumi.Input[Optional[_builtins.bool]]):
         pulumi.set(self, "enabled", value)
 
     @_builtins.property
     @pulumi.getter
-    def filters(self) -> Optional[pulumi.Input['UserSessionMetricsFiltersArgs']]:
+    def filters(self) -> pulumi.Input[Optional['UserSessionMetricsFiltersArgs']]:
         """
         Defines the filters for the user session. Filters apply at the moment of extracting the data and only sessions that satisfy the filtering criteria will be used to extract the custom metrics. You will not be able to modify these filters in the metric data explorer. For example, using "userType equals REAL_USER" will give you only data from real users, while forcing the synthetic sessions to be ignored.
         """
         return pulumi.get(self, "filters")
 
     @filters.setter
-    def filters(self, value: Optional[pulumi.Input['UserSessionMetricsFiltersArgs']]):
+    def filters(self, value: pulumi.Input[Optional['UserSessionMetricsFiltersArgs']]):
         pulumi.set(self, "filters", value)
 
     @_builtins.property
     @pulumi.getter(name="metricKey")
-    def metric_key(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def metric_key(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Metric key
         """
         return pulumi.get(self, "metric_key")
 
     @metric_key.setter
-    def metric_key(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def metric_key(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "metric_key", value)
 
     @_builtins.property
     @pulumi.getter
-    def value(self) -> Optional[pulumi.Input['UserSessionMetricsValueArgs']]:
+    def value(self) -> pulumi.Input[Optional['UserSessionMetricsValueArgs']]:
         """
         Defines the type of value to be extracted from the user session. When using **User session counter**, the number of user sessions is counted (similar to count(*) when using USQL). When using **User session field value**, the value of a user session field is extracted.
         """
         return pulumi.get(self, "value")
 
     @value.setter
-    def value(self, value: Optional[pulumi.Input['UserSessionMetricsValueArgs']]):
+    def value(self, value: pulumi.Input[Optional['UserSessionMetricsValueArgs']]):
         pulumi.set(self, "value", value)
 
 
@@ -199,11 +199,11 @@ class UserSessionMetrics(pulumi.CustomResource):
     def __init__(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 dimensions: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-                 enabled: Optional[pulumi.Input[_builtins.bool]] = None,
-                 filters: Optional[pulumi.Input[Union['UserSessionMetricsFiltersArgs', 'UserSessionMetricsFiltersArgsDict']]] = None,
-                 metric_key: Optional[pulumi.Input[_builtins.str]] = None,
-                 value: Optional[pulumi.Input[Union['UserSessionMetricsValueArgs', 'UserSessionMetricsValueArgsDict']]] = None,
+                 dimensions: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 enabled: pulumi.Input[Optional[_builtins.bool]] = None,
+                 filters: pulumi.Input[Optional[Union['UserSessionMetricsFiltersArgs', 'UserSessionMetricsFiltersArgsDict']]] = None,
+                 metric_key: pulumi.Input[Optional[_builtins.str]] = None,
+                 value: pulumi.Input[Optional[Union['UserSessionMetricsValueArgs', 'UserSessionMetricsValueArgsDict']]] = None,
                  __props__=None):
         """
         > This resource requires the API token scopes **Read settings** (`settings.read`) and **Write settings** (`settings.write`)
@@ -266,11 +266,11 @@ class UserSessionMetrics(pulumi.CustomResource):
     def _internal_init(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 dimensions: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-                 enabled: Optional[pulumi.Input[_builtins.bool]] = None,
-                 filters: Optional[pulumi.Input[Union['UserSessionMetricsFiltersArgs', 'UserSessionMetricsFiltersArgsDict']]] = None,
-                 metric_key: Optional[pulumi.Input[_builtins.str]] = None,
-                 value: Optional[pulumi.Input[Union['UserSessionMetricsValueArgs', 'UserSessionMetricsValueArgsDict']]] = None,
+                 dimensions: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 enabled: pulumi.Input[Optional[_builtins.bool]] = None,
+                 filters: pulumi.Input[Optional[Union['UserSessionMetricsFiltersArgs', 'UserSessionMetricsFiltersArgsDict']]] = None,
+                 metric_key: pulumi.Input[Optional[_builtins.str]] = None,
+                 value: pulumi.Input[Optional[Union['UserSessionMetricsValueArgs', 'UserSessionMetricsValueArgsDict']]] = None,
                  __props__=None):
         opts = pulumi.ResourceOptions.merge(_utilities.get_resource_opts_defaults(), opts)
         if not isinstance(opts, pulumi.ResourceOptions):
@@ -301,11 +301,11 @@ class UserSessionMetrics(pulumi.CustomResource):
     def get(resource_name: str,
             id: pulumi.Input[str],
             opts: Optional[pulumi.ResourceOptions] = None,
-            dimensions: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-            enabled: Optional[pulumi.Input[_builtins.bool]] = None,
-            filters: Optional[pulumi.Input[Union['UserSessionMetricsFiltersArgs', 'UserSessionMetricsFiltersArgsDict']]] = None,
-            metric_key: Optional[pulumi.Input[_builtins.str]] = None,
-            value: Optional[pulumi.Input[Union['UserSessionMetricsValueArgs', 'UserSessionMetricsValueArgsDict']]] = None) -> 'UserSessionMetrics':
+            dimensions: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+            enabled: pulumi.Input[Optional[_builtins.bool]] = None,
+            filters: pulumi.Input[Optional[Union['UserSessionMetricsFiltersArgs', 'UserSessionMetricsFiltersArgsDict']]] = None,
+            metric_key: pulumi.Input[Optional[_builtins.str]] = None,
+            value: pulumi.Input[Optional[Union['UserSessionMetricsValueArgs', 'UserSessionMetricsValueArgsDict']]] = None) -> 'UserSessionMetrics':
         """
         Get an existing UserSessionMetrics resource's state with the given name, id, and optional extra
         properties used to qualify the lookup.

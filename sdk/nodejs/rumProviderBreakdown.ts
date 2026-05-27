@@ -126,27 +126,27 @@ export interface RumProviderBreakdownState {
     /**
      * Domain name pattern
      */
-    domainNamePatternList?: pulumi.Input<inputs.RumProviderBreakdownDomainNamePatternList>;
+    domainNamePatternList?: pulumi.Input<inputs.RumProviderBreakdownDomainNamePatternList | undefined>;
     /**
      * Specify an URL for the provider's brand icon
      */
-    iconUrl?: pulumi.Input<string>;
+    iconUrl?: pulumi.Input<string | undefined>;
     /**
      * Because this resource allows for ordering you may specify the ID of the resource instance that comes before this instance regarding order. If not specified when creating the setting will be added to the end of the list. If not specified during update the order will remain untouched
      */
-    insertAfter?: pulumi.Input<string>;
+    insertAfter?: pulumi.Input<string | undefined>;
     /**
      * Send the patterns of this provider to Dynatrace to help us improve 3rd-party detection.
      */
-    reportPublicImprovement?: pulumi.Input<boolean>;
+    reportPublicImprovement?: pulumi.Input<boolean | undefined>;
     /**
      * Resource name
      */
-    resourceName?: pulumi.Input<string>;
+    resourceName?: pulumi.Input<string | undefined>;
     /**
      * Possible Values: `FirstParty`, `ThirdParty`, `Cdn`
      */
-    resourceType?: pulumi.Input<string>;
+    resourceType?: pulumi.Input<string | undefined>;
 }
 
 /**
@@ -160,11 +160,11 @@ export interface RumProviderBreakdownArgs {
     /**
      * Specify an URL for the provider's brand icon
      */
-    iconUrl?: pulumi.Input<string>;
+    iconUrl?: pulumi.Input<string | undefined>;
     /**
      * Because this resource allows for ordering you may specify the ID of the resource instance that comes before this instance regarding order. If not specified when creating the setting will be added to the end of the list. If not specified during update the order will remain untouched
      */
-    insertAfter?: pulumi.Input<string>;
+    insertAfter?: pulumi.Input<string | undefined>;
     /**
      * Send the patterns of this provider to Dynatrace to help us improve 3rd-party detection.
      */

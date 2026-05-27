@@ -21,7 +21,7 @@ __all__ = ['GrailMetricsAllowlistArgs', 'GrailMetricsAllowlist']
 @pulumi.input_type
 class GrailMetricsAllowlistArgs:
     def __init__(__self__, *,
-                 allow_rules: Optional[pulumi.Input['GrailMetricsAllowlistAllowRulesArgs']] = None):
+                 allow_rules: pulumi.Input[Optional['GrailMetricsAllowlistAllowRulesArgs']] = None):
         """
         The set of arguments for constructing a GrailMetricsAllowlist resource.
 
@@ -32,21 +32,21 @@ class GrailMetricsAllowlistArgs:
 
     @_builtins.property
     @pulumi.getter(name="allowRules")
-    def allow_rules(self) -> Optional[pulumi.Input['GrailMetricsAllowlistAllowRulesArgs']]:
+    def allow_rules(self) -> pulumi.Input[Optional['GrailMetricsAllowlistAllowRulesArgs']]:
         """
         Specify rules for forwarding metrics
         """
         return pulumi.get(self, "allow_rules")
 
     @allow_rules.setter
-    def allow_rules(self, value: Optional[pulumi.Input['GrailMetricsAllowlistAllowRulesArgs']]):
+    def allow_rules(self, value: pulumi.Input[Optional['GrailMetricsAllowlistAllowRulesArgs']]):
         pulumi.set(self, "allow_rules", value)
 
 
 @pulumi.input_type
 class _GrailMetricsAllowlistState:
     def __init__(__self__, *,
-                 allow_rules: Optional[pulumi.Input['GrailMetricsAllowlistAllowRulesArgs']] = None):
+                 allow_rules: pulumi.Input[Optional['GrailMetricsAllowlistAllowRulesArgs']] = None):
         """
         Input properties used for looking up and filtering GrailMetricsAllowlist resources.
 
@@ -57,14 +57,14 @@ class _GrailMetricsAllowlistState:
 
     @_builtins.property
     @pulumi.getter(name="allowRules")
-    def allow_rules(self) -> Optional[pulumi.Input['GrailMetricsAllowlistAllowRulesArgs']]:
+    def allow_rules(self) -> pulumi.Input[Optional['GrailMetricsAllowlistAllowRulesArgs']]:
         """
         Specify rules for forwarding metrics
         """
         return pulumi.get(self, "allow_rules")
 
     @allow_rules.setter
-    def allow_rules(self, value: Optional[pulumi.Input['GrailMetricsAllowlistAllowRulesArgs']]):
+    def allow_rules(self, value: pulumi.Input[Optional['GrailMetricsAllowlistAllowRulesArgs']]):
         pulumi.set(self, "allow_rules", value)
 
 
@@ -74,7 +74,7 @@ class GrailMetricsAllowlist(pulumi.CustomResource):
     def __init__(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 allow_rules: Optional[pulumi.Input[Union['GrailMetricsAllowlistAllowRulesArgs', 'GrailMetricsAllowlistAllowRulesArgsDict']]] = None,
+                 allow_rules: pulumi.Input[Optional[Union['GrailMetricsAllowlistAllowRulesArgs', 'GrailMetricsAllowlistAllowRulesArgsDict']]] = None,
                  __props__=None):
         """
         > This resource requires the API token scopes **Read settings** (`settings.read`) and **Write settings** (`settings.write`)
@@ -133,7 +133,7 @@ class GrailMetricsAllowlist(pulumi.CustomResource):
     def _internal_init(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 allow_rules: Optional[pulumi.Input[Union['GrailMetricsAllowlistAllowRulesArgs', 'GrailMetricsAllowlistAllowRulesArgsDict']]] = None,
+                 allow_rules: pulumi.Input[Optional[Union['GrailMetricsAllowlistAllowRulesArgs', 'GrailMetricsAllowlistAllowRulesArgsDict']]] = None,
                  __props__=None):
         opts = pulumi.ResourceOptions.merge(_utilities.get_resource_opts_defaults(), opts)
         if not isinstance(opts, pulumi.ResourceOptions):
@@ -154,7 +154,7 @@ class GrailMetricsAllowlist(pulumi.CustomResource):
     def get(resource_name: str,
             id: pulumi.Input[str],
             opts: Optional[pulumi.ResourceOptions] = None,
-            allow_rules: Optional[pulumi.Input[Union['GrailMetricsAllowlistAllowRulesArgs', 'GrailMetricsAllowlistAllowRulesArgsDict']]] = None) -> 'GrailMetricsAllowlist':
+            allow_rules: pulumi.Input[Optional[Union['GrailMetricsAllowlistAllowRulesArgs', 'GrailMetricsAllowlistAllowRulesArgsDict']]] = None) -> 'GrailMetricsAllowlist':
         """
         Get an existing GrailMetricsAllowlist resource's state with the given name, id, and optional extra
         properties used to qualify the lookup.

@@ -24,16 +24,16 @@ class AzureCredentialsArgs:
                  active: pulumi.Input[_builtins.bool],
                  label: pulumi.Input[_builtins.str],
                  monitor_only_tagged_entities: pulumi.Input[_builtins.bool],
-                 app_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 auto_tagging: Optional[pulumi.Input[_builtins.bool]] = None,
-                 directory_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 key: Optional[pulumi.Input[_builtins.str]] = None,
-                 monitor_only_excluding_tag_pairs: Optional[pulumi.Input[Sequence[pulumi.Input['AzureCredentialsMonitorOnlyExcludingTagPairArgs']]]] = None,
-                 monitor_only_tag_pairs: Optional[pulumi.Input[Sequence[pulumi.Input['AzureCredentialsMonitorOnlyTagPairArgs']]]] = None,
-                 remove_defaults: Optional[pulumi.Input[_builtins.bool]] = None,
-                 supporting_services: Optional[pulumi.Input[Sequence[pulumi.Input['AzureCredentialsSupportingServiceArgs']]]] = None,
-                 supporting_services_managed_in_dynatrace: Optional[pulumi.Input[_builtins.bool]] = None,
-                 unknowns: Optional[pulumi.Input[_builtins.str]] = None):
+                 app_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 auto_tagging: pulumi.Input[Optional[_builtins.bool]] = None,
+                 directory_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 key: pulumi.Input[Optional[_builtins.str]] = None,
+                 monitor_only_excluding_tag_pairs: pulumi.Input[Optional[Sequence[pulumi.Input['AzureCredentialsMonitorOnlyExcludingTagPairArgs']]]] = None,
+                 monitor_only_tag_pairs: pulumi.Input[Optional[Sequence[pulumi.Input['AzureCredentialsMonitorOnlyTagPairArgs']]]] = None,
+                 remove_defaults: pulumi.Input[Optional[_builtins.bool]] = None,
+                 supporting_services: pulumi.Input[Optional[Sequence[pulumi.Input['AzureCredentialsSupportingServiceArgs']]]] = None,
+                 supporting_services_managed_in_dynatrace: pulumi.Input[Optional[_builtins.bool]] = None,
+                 unknowns: pulumi.Input[Optional[_builtins.str]] = None):
         """
         The set of arguments for constructing a AzureCredentials resource.
 
@@ -119,143 +119,143 @@ class AzureCredentialsArgs:
 
     @_builtins.property
     @pulumi.getter(name="appId")
-    def app_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def app_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The Application ID (also referred to as Client ID)  The combination of Application ID and Directory ID must be unique
         """
         return pulumi.get(self, "app_id")
 
     @app_id.setter
-    def app_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def app_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "app_id", value)
 
     @_builtins.property
     @pulumi.getter(name="autoTagging")
-    def auto_tagging(self) -> Optional[pulumi.Input[_builtins.bool]]:
+    def auto_tagging(self) -> pulumi.Input[Optional[_builtins.bool]]:
         """
         The automatic capture of Azure tags is on (`true`) or off (`false`)
         """
         return pulumi.get(self, "auto_tagging")
 
     @auto_tagging.setter
-    def auto_tagging(self, value: Optional[pulumi.Input[_builtins.bool]]):
+    def auto_tagging(self, value: pulumi.Input[Optional[_builtins.bool]]):
         pulumi.set(self, "auto_tagging", value)
 
     @_builtins.property
     @pulumi.getter(name="directoryId")
-    def directory_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def directory_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The Directory ID (also referred to as Tenant ID)  The combination of Application ID and Directory ID must be unique
         """
         return pulumi.get(self, "directory_id")
 
     @directory_id.setter
-    def directory_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def directory_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "directory_id", value)
 
     @_builtins.property
     @pulumi.getter
-    def key(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def key(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The secret key associated with the Application ID.  For security reasons, GET requests return this field as `null`. Submit your key on creation or update of the configuration. If the field is omitted during an update, the old value remains unaffected.
         """
         return pulumi.get(self, "key")
 
     @key.setter
-    def key(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def key(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "key", value)
 
     @_builtins.property
     @pulumi.getter(name="monitorOnlyExcludingTagPairs")
-    def monitor_only_excluding_tag_pairs(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['AzureCredentialsMonitorOnlyExcludingTagPairArgs']]]]:
+    def monitor_only_excluding_tag_pairs(self) -> pulumi.Input[Optional[Sequence[pulumi.Input['AzureCredentialsMonitorOnlyExcludingTagPairArgs']]]]:
         """
         A list of Azure tags to be excluded from monitoring.  You can specify up to 20 tags. A resource tagged with *any* of the specified tags is monitored.  Only applicable when the **monitorOnlyTaggedEntities** parameter is set to `true`.
         """
         return pulumi.get(self, "monitor_only_excluding_tag_pairs")
 
     @monitor_only_excluding_tag_pairs.setter
-    def monitor_only_excluding_tag_pairs(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['AzureCredentialsMonitorOnlyExcludingTagPairArgs']]]]):
+    def monitor_only_excluding_tag_pairs(self, value: pulumi.Input[Optional[Sequence[pulumi.Input['AzureCredentialsMonitorOnlyExcludingTagPairArgs']]]]):
         pulumi.set(self, "monitor_only_excluding_tag_pairs", value)
 
     @_builtins.property
     @pulumi.getter(name="monitorOnlyTagPairs")
-    def monitor_only_tag_pairs(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['AzureCredentialsMonitorOnlyTagPairArgs']]]]:
+    def monitor_only_tag_pairs(self) -> pulumi.Input[Optional[Sequence[pulumi.Input['AzureCredentialsMonitorOnlyTagPairArgs']]]]:
         """
         A list of Azure tags to be monitored.  You can specify up to 20 tags. A resource tagged with *any* of the specified tags is monitored.  Only applicable when the **monitorOnlyTaggedEntities** parameter is set to `true`
         """
         return pulumi.get(self, "monitor_only_tag_pairs")
 
     @monitor_only_tag_pairs.setter
-    def monitor_only_tag_pairs(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['AzureCredentialsMonitorOnlyTagPairArgs']]]]):
+    def monitor_only_tag_pairs(self, value: pulumi.Input[Optional[Sequence[pulumi.Input['AzureCredentialsMonitorOnlyTagPairArgs']]]]):
         pulumi.set(self, "monitor_only_tag_pairs", value)
 
     @_builtins.property
     @pulumi.getter(name="removeDefaults")
-    def remove_defaults(self) -> Optional[pulumi.Input[_builtins.bool]]:
+    def remove_defaults(self) -> pulumi.Input[Optional[_builtins.bool]]:
         """
         Instructs the provider to remove the supporting services Dynatrace applies by default to newly created Azure Credentials. Supporting Services applied by via `AzureService` subsequently won't get touched.
         """
         return pulumi.get(self, "remove_defaults")
 
     @remove_defaults.setter
-    def remove_defaults(self, value: Optional[pulumi.Input[_builtins.bool]]):
+    def remove_defaults(self, value: pulumi.Input[Optional[_builtins.bool]]):
         pulumi.set(self, "remove_defaults", value)
 
     @_builtins.property
     @pulumi.getter(name="supportingServices")
     @_utilities.deprecated("""Assigning supported services directly when creating Azure Credentials is deprecated. Use the resource `AzureService` instead.""")
-    def supporting_services(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['AzureCredentialsSupportingServiceArgs']]]]:
+    def supporting_services(self) -> pulumi.Input[Optional[Sequence[pulumi.Input['AzureCredentialsSupportingServiceArgs']]]]:
         """
         A list of Azure supporting services to be monitored. For each service there's a sublist of its metrics and the metrics' dimensions that should be monitored. All of these elements (services, metrics, dimensions) must have corresponding static definitions on the server.
         """
         return pulumi.get(self, "supporting_services")
 
     @supporting_services.setter
-    def supporting_services(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['AzureCredentialsSupportingServiceArgs']]]]):
+    def supporting_services(self, value: pulumi.Input[Optional[Sequence[pulumi.Input['AzureCredentialsSupportingServiceArgs']]]]):
         pulumi.set(self, "supporting_services", value)
 
     @_builtins.property
     @pulumi.getter(name="supportingServicesManagedInDynatrace")
     @_utilities.deprecated("""This attribute is deprecated and has no effect any more. It always defaults to `true`.""")
-    def supporting_services_managed_in_dynatrace(self) -> Optional[pulumi.Input[_builtins.bool]]:
+    def supporting_services_managed_in_dynatrace(self) -> pulumi.Input[Optional[_builtins.bool]]:
         """
         If enabled (`true`) the attribute `supporting_services` will not get synchronized with Dynatrace. You will be able to manage them via WebUI without interference by Terraform.
         """
         return pulumi.get(self, "supporting_services_managed_in_dynatrace")
 
     @supporting_services_managed_in_dynatrace.setter
-    def supporting_services_managed_in_dynatrace(self, value: Optional[pulumi.Input[_builtins.bool]]):
+    def supporting_services_managed_in_dynatrace(self, value: pulumi.Input[Optional[_builtins.bool]]):
         pulumi.set(self, "supporting_services_managed_in_dynatrace", value)
 
     @_builtins.property
     @pulumi.getter
-    def unknowns(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def unknowns(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Any attributes that aren't yet supported by this provider
         """
         return pulumi.get(self, "unknowns")
 
     @unknowns.setter
-    def unknowns(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def unknowns(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "unknowns", value)
 
 
 @pulumi.input_type
 class _AzureCredentialsState:
     def __init__(__self__, *,
-                 active: Optional[pulumi.Input[_builtins.bool]] = None,
-                 app_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 auto_tagging: Optional[pulumi.Input[_builtins.bool]] = None,
-                 directory_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 key: Optional[pulumi.Input[_builtins.str]] = None,
-                 label: Optional[pulumi.Input[_builtins.str]] = None,
-                 monitor_only_excluding_tag_pairs: Optional[pulumi.Input[Sequence[pulumi.Input['AzureCredentialsMonitorOnlyExcludingTagPairArgs']]]] = None,
-                 monitor_only_tag_pairs: Optional[pulumi.Input[Sequence[pulumi.Input['AzureCredentialsMonitorOnlyTagPairArgs']]]] = None,
-                 monitor_only_tagged_entities: Optional[pulumi.Input[_builtins.bool]] = None,
-                 remove_defaults: Optional[pulumi.Input[_builtins.bool]] = None,
-                 supporting_services: Optional[pulumi.Input[Sequence[pulumi.Input['AzureCredentialsSupportingServiceArgs']]]] = None,
-                 supporting_services_managed_in_dynatrace: Optional[pulumi.Input[_builtins.bool]] = None,
-                 unknowns: Optional[pulumi.Input[_builtins.str]] = None):
+                 active: pulumi.Input[Optional[_builtins.bool]] = None,
+                 app_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 auto_tagging: pulumi.Input[Optional[_builtins.bool]] = None,
+                 directory_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 key: pulumi.Input[Optional[_builtins.str]] = None,
+                 label: pulumi.Input[Optional[_builtins.str]] = None,
+                 monitor_only_excluding_tag_pairs: pulumi.Input[Optional[Sequence[pulumi.Input['AzureCredentialsMonitorOnlyExcludingTagPairArgs']]]] = None,
+                 monitor_only_tag_pairs: pulumi.Input[Optional[Sequence[pulumi.Input['AzureCredentialsMonitorOnlyTagPairArgs']]]] = None,
+                 monitor_only_tagged_entities: pulumi.Input[Optional[_builtins.bool]] = None,
+                 remove_defaults: pulumi.Input[Optional[_builtins.bool]] = None,
+                 supporting_services: pulumi.Input[Optional[Sequence[pulumi.Input['AzureCredentialsSupportingServiceArgs']]]] = None,
+                 supporting_services_managed_in_dynatrace: pulumi.Input[Optional[_builtins.bool]] = None,
+                 unknowns: pulumi.Input[Optional[_builtins.str]] = None):
         """
         Input properties used for looking up and filtering AzureCredentials resources.
 
@@ -308,160 +308,160 @@ class _AzureCredentialsState:
 
     @_builtins.property
     @pulumi.getter
-    def active(self) -> Optional[pulumi.Input[_builtins.bool]]:
+    def active(self) -> pulumi.Input[Optional[_builtins.bool]]:
         """
         The monitoring is enabled (`true`) or disabled (`false`).  If not set on creation, the `true` value is used.  If the field is omitted during an update, the old value remains unaffected
         """
         return pulumi.get(self, "active")
 
     @active.setter
-    def active(self, value: Optional[pulumi.Input[_builtins.bool]]):
+    def active(self, value: pulumi.Input[Optional[_builtins.bool]]):
         pulumi.set(self, "active", value)
 
     @_builtins.property
     @pulumi.getter(name="appId")
-    def app_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def app_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The Application ID (also referred to as Client ID)  The combination of Application ID and Directory ID must be unique
         """
         return pulumi.get(self, "app_id")
 
     @app_id.setter
-    def app_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def app_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "app_id", value)
 
     @_builtins.property
     @pulumi.getter(name="autoTagging")
-    def auto_tagging(self) -> Optional[pulumi.Input[_builtins.bool]]:
+    def auto_tagging(self) -> pulumi.Input[Optional[_builtins.bool]]:
         """
         The automatic capture of Azure tags is on (`true`) or off (`false`)
         """
         return pulumi.get(self, "auto_tagging")
 
     @auto_tagging.setter
-    def auto_tagging(self, value: Optional[pulumi.Input[_builtins.bool]]):
+    def auto_tagging(self, value: pulumi.Input[Optional[_builtins.bool]]):
         pulumi.set(self, "auto_tagging", value)
 
     @_builtins.property
     @pulumi.getter(name="directoryId")
-    def directory_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def directory_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The Directory ID (also referred to as Tenant ID)  The combination of Application ID and Directory ID must be unique
         """
         return pulumi.get(self, "directory_id")
 
     @directory_id.setter
-    def directory_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def directory_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "directory_id", value)
 
     @_builtins.property
     @pulumi.getter
-    def key(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def key(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The secret key associated with the Application ID.  For security reasons, GET requests return this field as `null`. Submit your key on creation or update of the configuration. If the field is omitted during an update, the old value remains unaffected.
         """
         return pulumi.get(self, "key")
 
     @key.setter
-    def key(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def key(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "key", value)
 
     @_builtins.property
     @pulumi.getter
-    def label(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def label(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The unique name of the Azure credentials configuration.  Allowed characters are letters, numbers, and spaces. Also the special characters `.+-_` are allowed
         """
         return pulumi.get(self, "label")
 
     @label.setter
-    def label(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def label(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "label", value)
 
     @_builtins.property
     @pulumi.getter(name="monitorOnlyExcludingTagPairs")
-    def monitor_only_excluding_tag_pairs(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['AzureCredentialsMonitorOnlyExcludingTagPairArgs']]]]:
+    def monitor_only_excluding_tag_pairs(self) -> pulumi.Input[Optional[Sequence[pulumi.Input['AzureCredentialsMonitorOnlyExcludingTagPairArgs']]]]:
         """
         A list of Azure tags to be excluded from monitoring.  You can specify up to 20 tags. A resource tagged with *any* of the specified tags is monitored.  Only applicable when the **monitorOnlyTaggedEntities** parameter is set to `true`.
         """
         return pulumi.get(self, "monitor_only_excluding_tag_pairs")
 
     @monitor_only_excluding_tag_pairs.setter
-    def monitor_only_excluding_tag_pairs(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['AzureCredentialsMonitorOnlyExcludingTagPairArgs']]]]):
+    def monitor_only_excluding_tag_pairs(self, value: pulumi.Input[Optional[Sequence[pulumi.Input['AzureCredentialsMonitorOnlyExcludingTagPairArgs']]]]):
         pulumi.set(self, "monitor_only_excluding_tag_pairs", value)
 
     @_builtins.property
     @pulumi.getter(name="monitorOnlyTagPairs")
-    def monitor_only_tag_pairs(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['AzureCredentialsMonitorOnlyTagPairArgs']]]]:
+    def monitor_only_tag_pairs(self) -> pulumi.Input[Optional[Sequence[pulumi.Input['AzureCredentialsMonitorOnlyTagPairArgs']]]]:
         """
         A list of Azure tags to be monitored.  You can specify up to 20 tags. A resource tagged with *any* of the specified tags is monitored.  Only applicable when the **monitorOnlyTaggedEntities** parameter is set to `true`
         """
         return pulumi.get(self, "monitor_only_tag_pairs")
 
     @monitor_only_tag_pairs.setter
-    def monitor_only_tag_pairs(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['AzureCredentialsMonitorOnlyTagPairArgs']]]]):
+    def monitor_only_tag_pairs(self, value: pulumi.Input[Optional[Sequence[pulumi.Input['AzureCredentialsMonitorOnlyTagPairArgs']]]]):
         pulumi.set(self, "monitor_only_tag_pairs", value)
 
     @_builtins.property
     @pulumi.getter(name="monitorOnlyTaggedEntities")
-    def monitor_only_tagged_entities(self) -> Optional[pulumi.Input[_builtins.bool]]:
+    def monitor_only_tagged_entities(self) -> pulumi.Input[Optional[_builtins.bool]]:
         """
         Monitor only resources that have specified Azure tags (`true`) or all resources (`false`).
         """
         return pulumi.get(self, "monitor_only_tagged_entities")
 
     @monitor_only_tagged_entities.setter
-    def monitor_only_tagged_entities(self, value: Optional[pulumi.Input[_builtins.bool]]):
+    def monitor_only_tagged_entities(self, value: pulumi.Input[Optional[_builtins.bool]]):
         pulumi.set(self, "monitor_only_tagged_entities", value)
 
     @_builtins.property
     @pulumi.getter(name="removeDefaults")
-    def remove_defaults(self) -> Optional[pulumi.Input[_builtins.bool]]:
+    def remove_defaults(self) -> pulumi.Input[Optional[_builtins.bool]]:
         """
         Instructs the provider to remove the supporting services Dynatrace applies by default to newly created Azure Credentials. Supporting Services applied by via `AzureService` subsequently won't get touched.
         """
         return pulumi.get(self, "remove_defaults")
 
     @remove_defaults.setter
-    def remove_defaults(self, value: Optional[pulumi.Input[_builtins.bool]]):
+    def remove_defaults(self, value: pulumi.Input[Optional[_builtins.bool]]):
         pulumi.set(self, "remove_defaults", value)
 
     @_builtins.property
     @pulumi.getter(name="supportingServices")
     @_utilities.deprecated("""Assigning supported services directly when creating Azure Credentials is deprecated. Use the resource `AzureService` instead.""")
-    def supporting_services(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['AzureCredentialsSupportingServiceArgs']]]]:
+    def supporting_services(self) -> pulumi.Input[Optional[Sequence[pulumi.Input['AzureCredentialsSupportingServiceArgs']]]]:
         """
         A list of Azure supporting services to be monitored. For each service there's a sublist of its metrics and the metrics' dimensions that should be monitored. All of these elements (services, metrics, dimensions) must have corresponding static definitions on the server.
         """
         return pulumi.get(self, "supporting_services")
 
     @supporting_services.setter
-    def supporting_services(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['AzureCredentialsSupportingServiceArgs']]]]):
+    def supporting_services(self, value: pulumi.Input[Optional[Sequence[pulumi.Input['AzureCredentialsSupportingServiceArgs']]]]):
         pulumi.set(self, "supporting_services", value)
 
     @_builtins.property
     @pulumi.getter(name="supportingServicesManagedInDynatrace")
     @_utilities.deprecated("""This attribute is deprecated and has no effect any more. It always defaults to `true`.""")
-    def supporting_services_managed_in_dynatrace(self) -> Optional[pulumi.Input[_builtins.bool]]:
+    def supporting_services_managed_in_dynatrace(self) -> pulumi.Input[Optional[_builtins.bool]]:
         """
         If enabled (`true`) the attribute `supporting_services` will not get synchronized with Dynatrace. You will be able to manage them via WebUI without interference by Terraform.
         """
         return pulumi.get(self, "supporting_services_managed_in_dynatrace")
 
     @supporting_services_managed_in_dynatrace.setter
-    def supporting_services_managed_in_dynatrace(self, value: Optional[pulumi.Input[_builtins.bool]]):
+    def supporting_services_managed_in_dynatrace(self, value: pulumi.Input[Optional[_builtins.bool]]):
         pulumi.set(self, "supporting_services_managed_in_dynatrace", value)
 
     @_builtins.property
     @pulumi.getter
-    def unknowns(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def unknowns(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Any attributes that aren't yet supported by this provider
         """
         return pulumi.get(self, "unknowns")
 
     @unknowns.setter
-    def unknowns(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def unknowns(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "unknowns", value)
 
 
@@ -471,19 +471,19 @@ class AzureCredentials(pulumi.CustomResource):
     def __init__(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 active: Optional[pulumi.Input[_builtins.bool]] = None,
-                 app_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 auto_tagging: Optional[pulumi.Input[_builtins.bool]] = None,
-                 directory_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 key: Optional[pulumi.Input[_builtins.str]] = None,
-                 label: Optional[pulumi.Input[_builtins.str]] = None,
-                 monitor_only_excluding_tag_pairs: Optional[pulumi.Input[Sequence[pulumi.Input[Union['AzureCredentialsMonitorOnlyExcludingTagPairArgs', 'AzureCredentialsMonitorOnlyExcludingTagPairArgsDict']]]]] = None,
-                 monitor_only_tag_pairs: Optional[pulumi.Input[Sequence[pulumi.Input[Union['AzureCredentialsMonitorOnlyTagPairArgs', 'AzureCredentialsMonitorOnlyTagPairArgsDict']]]]] = None,
-                 monitor_only_tagged_entities: Optional[pulumi.Input[_builtins.bool]] = None,
-                 remove_defaults: Optional[pulumi.Input[_builtins.bool]] = None,
-                 supporting_services: Optional[pulumi.Input[Sequence[pulumi.Input[Union['AzureCredentialsSupportingServiceArgs', 'AzureCredentialsSupportingServiceArgsDict']]]]] = None,
-                 supporting_services_managed_in_dynatrace: Optional[pulumi.Input[_builtins.bool]] = None,
-                 unknowns: Optional[pulumi.Input[_builtins.str]] = None,
+                 active: pulumi.Input[Optional[_builtins.bool]] = None,
+                 app_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 auto_tagging: pulumi.Input[Optional[_builtins.bool]] = None,
+                 directory_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 key: pulumi.Input[Optional[_builtins.str]] = None,
+                 label: pulumi.Input[Optional[_builtins.str]] = None,
+                 monitor_only_excluding_tag_pairs: pulumi.Input[Optional[Sequence[pulumi.Input[Union['AzureCredentialsMonitorOnlyExcludingTagPairArgs', 'AzureCredentialsMonitorOnlyExcludingTagPairArgsDict']]]]] = None,
+                 monitor_only_tag_pairs: pulumi.Input[Optional[Sequence[pulumi.Input[Union['AzureCredentialsMonitorOnlyTagPairArgs', 'AzureCredentialsMonitorOnlyTagPairArgsDict']]]]] = None,
+                 monitor_only_tagged_entities: pulumi.Input[Optional[_builtins.bool]] = None,
+                 remove_defaults: pulumi.Input[Optional[_builtins.bool]] = None,
+                 supporting_services: pulumi.Input[Optional[Sequence[pulumi.Input[Union['AzureCredentialsSupportingServiceArgs', 'AzureCredentialsSupportingServiceArgsDict']]]]] = None,
+                 supporting_services_managed_in_dynatrace: pulumi.Input[Optional[_builtins.bool]] = None,
+                 unknowns: pulumi.Input[Optional[_builtins.str]] = None,
                  __props__=None):
         """
         > This resource requires the API token scopes **Read configuration** (`ReadConfig`) and **Write configuration** (`WriteConfig`)
@@ -554,19 +554,19 @@ class AzureCredentials(pulumi.CustomResource):
     def _internal_init(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 active: Optional[pulumi.Input[_builtins.bool]] = None,
-                 app_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 auto_tagging: Optional[pulumi.Input[_builtins.bool]] = None,
-                 directory_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 key: Optional[pulumi.Input[_builtins.str]] = None,
-                 label: Optional[pulumi.Input[_builtins.str]] = None,
-                 monitor_only_excluding_tag_pairs: Optional[pulumi.Input[Sequence[pulumi.Input[Union['AzureCredentialsMonitorOnlyExcludingTagPairArgs', 'AzureCredentialsMonitorOnlyExcludingTagPairArgsDict']]]]] = None,
-                 monitor_only_tag_pairs: Optional[pulumi.Input[Sequence[pulumi.Input[Union['AzureCredentialsMonitorOnlyTagPairArgs', 'AzureCredentialsMonitorOnlyTagPairArgsDict']]]]] = None,
-                 monitor_only_tagged_entities: Optional[pulumi.Input[_builtins.bool]] = None,
-                 remove_defaults: Optional[pulumi.Input[_builtins.bool]] = None,
-                 supporting_services: Optional[pulumi.Input[Sequence[pulumi.Input[Union['AzureCredentialsSupportingServiceArgs', 'AzureCredentialsSupportingServiceArgsDict']]]]] = None,
-                 supporting_services_managed_in_dynatrace: Optional[pulumi.Input[_builtins.bool]] = None,
-                 unknowns: Optional[pulumi.Input[_builtins.str]] = None,
+                 active: pulumi.Input[Optional[_builtins.bool]] = None,
+                 app_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 auto_tagging: pulumi.Input[Optional[_builtins.bool]] = None,
+                 directory_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 key: pulumi.Input[Optional[_builtins.str]] = None,
+                 label: pulumi.Input[Optional[_builtins.str]] = None,
+                 monitor_only_excluding_tag_pairs: pulumi.Input[Optional[Sequence[pulumi.Input[Union['AzureCredentialsMonitorOnlyExcludingTagPairArgs', 'AzureCredentialsMonitorOnlyExcludingTagPairArgsDict']]]]] = None,
+                 monitor_only_tag_pairs: pulumi.Input[Optional[Sequence[pulumi.Input[Union['AzureCredentialsMonitorOnlyTagPairArgs', 'AzureCredentialsMonitorOnlyTagPairArgsDict']]]]] = None,
+                 monitor_only_tagged_entities: pulumi.Input[Optional[_builtins.bool]] = None,
+                 remove_defaults: pulumi.Input[Optional[_builtins.bool]] = None,
+                 supporting_services: pulumi.Input[Optional[Sequence[pulumi.Input[Union['AzureCredentialsSupportingServiceArgs', 'AzureCredentialsSupportingServiceArgsDict']]]]] = None,
+                 supporting_services_managed_in_dynatrace: pulumi.Input[Optional[_builtins.bool]] = None,
+                 unknowns: pulumi.Input[Optional[_builtins.str]] = None,
                  __props__=None):
         opts = pulumi.ResourceOptions.merge(_utilities.get_resource_opts_defaults(), opts)
         if not isinstance(opts, pulumi.ResourceOptions):
@@ -607,19 +607,19 @@ class AzureCredentials(pulumi.CustomResource):
     def get(resource_name: str,
             id: pulumi.Input[str],
             opts: Optional[pulumi.ResourceOptions] = None,
-            active: Optional[pulumi.Input[_builtins.bool]] = None,
-            app_id: Optional[pulumi.Input[_builtins.str]] = None,
-            auto_tagging: Optional[pulumi.Input[_builtins.bool]] = None,
-            directory_id: Optional[pulumi.Input[_builtins.str]] = None,
-            key: Optional[pulumi.Input[_builtins.str]] = None,
-            label: Optional[pulumi.Input[_builtins.str]] = None,
-            monitor_only_excluding_tag_pairs: Optional[pulumi.Input[Sequence[pulumi.Input[Union['AzureCredentialsMonitorOnlyExcludingTagPairArgs', 'AzureCredentialsMonitorOnlyExcludingTagPairArgsDict']]]]] = None,
-            monitor_only_tag_pairs: Optional[pulumi.Input[Sequence[pulumi.Input[Union['AzureCredentialsMonitorOnlyTagPairArgs', 'AzureCredentialsMonitorOnlyTagPairArgsDict']]]]] = None,
-            monitor_only_tagged_entities: Optional[pulumi.Input[_builtins.bool]] = None,
-            remove_defaults: Optional[pulumi.Input[_builtins.bool]] = None,
-            supporting_services: Optional[pulumi.Input[Sequence[pulumi.Input[Union['AzureCredentialsSupportingServiceArgs', 'AzureCredentialsSupportingServiceArgsDict']]]]] = None,
-            supporting_services_managed_in_dynatrace: Optional[pulumi.Input[_builtins.bool]] = None,
-            unknowns: Optional[pulumi.Input[_builtins.str]] = None) -> 'AzureCredentials':
+            active: pulumi.Input[Optional[_builtins.bool]] = None,
+            app_id: pulumi.Input[Optional[_builtins.str]] = None,
+            auto_tagging: pulumi.Input[Optional[_builtins.bool]] = None,
+            directory_id: pulumi.Input[Optional[_builtins.str]] = None,
+            key: pulumi.Input[Optional[_builtins.str]] = None,
+            label: pulumi.Input[Optional[_builtins.str]] = None,
+            monitor_only_excluding_tag_pairs: pulumi.Input[Optional[Sequence[pulumi.Input[Union['AzureCredentialsMonitorOnlyExcludingTagPairArgs', 'AzureCredentialsMonitorOnlyExcludingTagPairArgsDict']]]]] = None,
+            monitor_only_tag_pairs: pulumi.Input[Optional[Sequence[pulumi.Input[Union['AzureCredentialsMonitorOnlyTagPairArgs', 'AzureCredentialsMonitorOnlyTagPairArgsDict']]]]] = None,
+            monitor_only_tagged_entities: pulumi.Input[Optional[_builtins.bool]] = None,
+            remove_defaults: pulumi.Input[Optional[_builtins.bool]] = None,
+            supporting_services: pulumi.Input[Optional[Sequence[pulumi.Input[Union['AzureCredentialsSupportingServiceArgs', 'AzureCredentialsSupportingServiceArgsDict']]]]] = None,
+            supporting_services_managed_in_dynatrace: pulumi.Input[Optional[_builtins.bool]] = None,
+            unknowns: pulumi.Input[Optional[_builtins.str]] = None) -> 'AzureCredentials':
         """
         Get an existing AzureCredentials resource's state with the given name, id, and optional extra
         properties used to qualify the lookup.

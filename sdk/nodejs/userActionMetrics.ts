@@ -117,23 +117,23 @@ export interface UserActionMetricsState {
     /**
      * Defines the fields that are used as dimensions. A dimension is a collection of reference information about a metric data point that is of interest to your business. Dimensions are parameters like "application", "type", "apdexCategory". For example, using "type" as a dimension allows you to split chart data based on the user action type.
      */
-    dimensions?: pulumi.Input<pulumi.Input<string>[]>;
+    dimensions?: pulumi.Input<pulumi.Input<string>[] | undefined>;
     /**
      * This setting is enabled (`true`) or disabled (`false`)
      */
-    enabled?: pulumi.Input<boolean>;
+    enabled?: pulumi.Input<boolean | undefined>;
     /**
      * Defines the filters for the user action. Filters apply at the moment of extracting the data and only sessions that satisfy the filtering criteria will be used to extract the custom metrics. You will not be able to modify these filters in the metric data explorer. For example, using "type equals Xhr" will give you only data from xhr actions, while forcing the rest of user actions of different types to be ignored.
      */
-    filters?: pulumi.Input<inputs.UserActionMetricsFilters>;
+    filters?: pulumi.Input<inputs.UserActionMetricsFilters | undefined>;
     /**
      * Metric key
      */
-    metricKey?: pulumi.Input<string>;
+    metricKey?: pulumi.Input<string | undefined>;
     /**
      * Defines the type of value to be extracted from the user action. When using **user action counter**, the number of user actions is counted (similar to count(*) when using USQL). When using **user action field value**, the value of a user action field is extracted.
      */
-    value?: pulumi.Input<inputs.UserActionMetricsValue>;
+    value?: pulumi.Input<inputs.UserActionMetricsValue | undefined>;
 }
 
 /**
@@ -143,7 +143,7 @@ export interface UserActionMetricsArgs {
     /**
      * Defines the fields that are used as dimensions. A dimension is a collection of reference information about a metric data point that is of interest to your business. Dimensions are parameters like "application", "type", "apdexCategory". For example, using "type" as a dimension allows you to split chart data based on the user action type.
      */
-    dimensions?: pulumi.Input<pulumi.Input<string>[]>;
+    dimensions?: pulumi.Input<pulumi.Input<string>[] | undefined>;
     /**
      * This setting is enabled (`true`) or disabled (`false`)
      */
@@ -151,7 +151,7 @@ export interface UserActionMetricsArgs {
     /**
      * Defines the filters for the user action. Filters apply at the moment of extracting the data and only sessions that satisfy the filtering criteria will be used to extract the custom metrics. You will not be able to modify these filters in the metric data explorer. For example, using "type equals Xhr" will give you only data from xhr actions, while forcing the rest of user actions of different types to be ignored.
      */
-    filters?: pulumi.Input<inputs.UserActionMetricsFilters>;
+    filters?: pulumi.Input<inputs.UserActionMetricsFilters | undefined>;
     /**
      * Metric key
      */

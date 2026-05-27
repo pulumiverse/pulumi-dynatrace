@@ -128,23 +128,23 @@ export interface ManagedRemoteAccessState {
     /**
      * Request reason description, cannot be changed once created
      */
-    reason?: pulumi.Input<string>;
+    reason?: pulumi.Input<string | undefined>;
     /**
      * For how many days access is requested, cannot be changed once created
      */
-    requestedDays?: pulumi.Input<number>;
+    requestedDays?: pulumi.Input<number | undefined>;
     /**
      * Requested role, cannot be changed once created
      */
-    role?: pulumi.Input<string>;
+    role?: pulumi.Input<string | undefined>;
     /**
      * Access request state. Automatically set as `ACCEPTED` on create, state can be changed in subsequent updates.
      */
-    state?: pulumi.Input<string>;
+    state?: pulumi.Input<string | undefined>;
     /**
      * User id, cannot be changed once created
      */
-    userId?: pulumi.Input<string>;
+    userId?: pulumi.Input<string | undefined>;
 }
 
 /**
@@ -166,7 +166,7 @@ export interface ManagedRemoteAccessArgs {
     /**
      * Access request state. Automatically set as `ACCEPTED` on create, state can be changed in subsequent updates.
      */
-    state?: pulumi.Input<string>;
+    state?: pulumi.Input<string | undefined>;
     /**
      * User id, cannot be changed once created
      */

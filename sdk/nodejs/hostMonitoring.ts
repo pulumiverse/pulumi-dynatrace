@@ -112,21 +112,21 @@ export interface HostMonitoringState {
      *
      * @deprecated This field has been moved to a new schema, please utilize the resource `dynatrace.HostMonitoringAdvanced` to configure this field.
      */
-    autoInjection?: pulumi.Input<boolean>;
+    autoInjection?: pulumi.Input<boolean | undefined>;
     /**
      * This setting is enabled (`true`) or disabled (`false`)
      */
-    enabled?: pulumi.Input<boolean>;
+    enabled?: pulumi.Input<boolean | undefined>;
     /**
      * Dynatrace uses full-stack monitoring by default, to monitor every aspect of your environment, including all processes, services, and applications detected on your hosts.
      *
      * @deprecated This attribute is not supported anymore by the Dynatrace API
      */
-    fullStack?: pulumi.Input<boolean>;
+    fullStack?: pulumi.Input<boolean | undefined>;
     /**
      * The scope of this settings. If the settings should cover the whole environment, just don't specify any scope.
      */
-    hostId?: pulumi.Input<string>;
+    hostId?: pulumi.Input<string | undefined>;
 }
 
 /**
@@ -138,7 +138,7 @@ export interface HostMonitoringArgs {
      *
      * @deprecated This field has been moved to a new schema, please utilize the resource `dynatrace.HostMonitoringAdvanced` to configure this field.
      */
-    autoInjection?: pulumi.Input<boolean>;
+    autoInjection?: pulumi.Input<boolean | undefined>;
     /**
      * This setting is enabled (`true`) or disabled (`false`)
      */
@@ -148,7 +148,7 @@ export interface HostMonitoringArgs {
      *
      * @deprecated This attribute is not supported anymore by the Dynatrace API
      */
-    fullStack?: pulumi.Input<boolean>;
+    fullStack?: pulumi.Input<boolean | undefined>;
     /**
      * The scope of this settings. If the settings should cover the whole environment, just don't specify any scope.
      */

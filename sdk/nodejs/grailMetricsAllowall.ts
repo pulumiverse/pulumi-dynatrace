@@ -85,7 +85,7 @@ export interface GrailMetricsAllowallState {
     /**
      * When enabled every custom metric will be ingested to Grail. Warning: this setting can cause [unexpected billing!](https://docs.dynatrace.com/docs/dynatrace-api/environment-api/metric-v2/best-practices#avoid-high-cardinality-limits)
      */
-    allowAll?: pulumi.Input<boolean>;
+    allowAll?: pulumi.Input<boolean | undefined>;
 }
 
 /**

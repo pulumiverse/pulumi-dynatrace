@@ -79,7 +79,7 @@ export interface WebAppJavascriptFilenameState {
     /**
      * Custom filename prefix
      */
-    filename?: pulumi.Input<string>;
+    filename?: pulumi.Input<string | undefined>;
 }
 
 /**

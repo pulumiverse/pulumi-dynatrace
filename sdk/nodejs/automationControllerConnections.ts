@@ -126,19 +126,19 @@ export interface AutomationControllerConnectionsState {
     /**
      * A unique and clearly identifiable connection name.
      */
-    name?: pulumi.Input<string>;
+    name?: pulumi.Input<string | undefined>;
     /**
      * API access token for the Ansible Automation Controller. Please note that this token is not refreshed and can expire.
      */
-    token?: pulumi.Input<string>;
+    token?: pulumi.Input<string | undefined>;
     /**
      * Possible Values: `Api_token`
      */
-    type?: pulumi.Input<string>;
+    type?: pulumi.Input<string | undefined>;
     /**
      * URL of the Ansible Automation Controller API endpoint. For example, https://ansible.yourdomain.com/api/v2/
      */
-    url?: pulumi.Input<string>;
+    url?: pulumi.Input<string | undefined>;
 }
 
 /**
@@ -148,11 +148,11 @@ export interface AutomationControllerConnectionsArgs {
     /**
      * A unique and clearly identifiable connection name.
      */
-    name?: pulumi.Input<string>;
+    name?: pulumi.Input<string | undefined>;
     /**
      * API access token for the Ansible Automation Controller. Please note that this token is not refreshed and can expire.
      */
-    token?: pulumi.Input<string>;
+    token?: pulumi.Input<string | undefined>;
     /**
      * Possible Values: `Api_token`
      */

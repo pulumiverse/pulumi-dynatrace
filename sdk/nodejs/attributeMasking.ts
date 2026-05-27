@@ -103,15 +103,15 @@ export interface AttributeMaskingState {
     /**
      * This setting is enabled (`true`) or disabled (`false`)
      */
-    enabled?: pulumi.Input<boolean>;
+    enabled?: pulumi.Input<boolean | undefined>;
     /**
      * Key of the attribute
      */
-    key?: pulumi.Input<string>;
+    key?: pulumi.Input<string | undefined>;
     /**
      * Possible Values: `MASK_ENTIRE_VALUE`, `MASK_ONLY_CONFIDENTIAL_DATA`
      */
-    masking?: pulumi.Input<string>;
+    masking?: pulumi.Input<string | undefined>;
 }
 
 /**

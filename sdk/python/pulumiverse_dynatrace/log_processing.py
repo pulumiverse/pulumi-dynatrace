@@ -26,7 +26,7 @@ class LogProcessingArgs:
                  query: pulumi.Input[_builtins.str],
                  rule_name: pulumi.Input[_builtins.str],
                  rule_testing: pulumi.Input['LogProcessingRuleTestingArgs'],
-                 insert_after: Optional[pulumi.Input[_builtins.str]] = None):
+                 insert_after: pulumi.Input[Optional[_builtins.str]] = None):
         """
         The set of arguments for constructing a LogProcessing resource.
 
@@ -111,26 +111,26 @@ class LogProcessingArgs:
 
     @_builtins.property
     @pulumi.getter(name="insertAfter")
-    def insert_after(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def insert_after(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Because this resource allows for ordering you may specify the ID of the resource instance that comes before this instance regarding order. If not specified when creating the setting will be added to the end of the list. If not specified during update the order will remain untouched
         """
         return pulumi.get(self, "insert_after")
 
     @insert_after.setter
-    def insert_after(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def insert_after(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "insert_after", value)
 
 
 @pulumi.input_type
 class _LogProcessingState:
     def __init__(__self__, *,
-                 enabled: Optional[pulumi.Input[_builtins.bool]] = None,
-                 insert_after: Optional[pulumi.Input[_builtins.str]] = None,
-                 processor_definition: Optional[pulumi.Input['LogProcessingProcessorDefinitionArgs']] = None,
-                 query: Optional[pulumi.Input[_builtins.str]] = None,
-                 rule_name: Optional[pulumi.Input[_builtins.str]] = None,
-                 rule_testing: Optional[pulumi.Input['LogProcessingRuleTestingArgs']] = None):
+                 enabled: pulumi.Input[Optional[_builtins.bool]] = None,
+                 insert_after: pulumi.Input[Optional[_builtins.str]] = None,
+                 processor_definition: pulumi.Input[Optional['LogProcessingProcessorDefinitionArgs']] = None,
+                 query: pulumi.Input[Optional[_builtins.str]] = None,
+                 rule_name: pulumi.Input[Optional[_builtins.str]] = None,
+                 rule_testing: pulumi.Input[Optional['LogProcessingRuleTestingArgs']] = None):
         """
         Input properties used for looking up and filtering LogProcessing resources.
 
@@ -158,31 +158,31 @@ class _LogProcessingState:
 
     @_builtins.property
     @pulumi.getter
-    def enabled(self) -> Optional[pulumi.Input[_builtins.bool]]:
+    def enabled(self) -> pulumi.Input[Optional[_builtins.bool]]:
         """
         This setting is enabled (`true`) or disabled (`false`)
         """
         return pulumi.get(self, "enabled")
 
     @enabled.setter
-    def enabled(self, value: Optional[pulumi.Input[_builtins.bool]]):
+    def enabled(self, value: pulumi.Input[Optional[_builtins.bool]]):
         pulumi.set(self, "enabled", value)
 
     @_builtins.property
     @pulumi.getter(name="insertAfter")
-    def insert_after(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def insert_after(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Because this resource allows for ordering you may specify the ID of the resource instance that comes before this instance regarding order. If not specified when creating the setting will be added to the end of the list. If not specified during update the order will remain untouched
         """
         return pulumi.get(self, "insert_after")
 
     @insert_after.setter
-    def insert_after(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def insert_after(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "insert_after", value)
 
     @_builtins.property
     @pulumi.getter(name="processorDefinition")
-    def processor_definition(self) -> Optional[pulumi.Input['LogProcessingProcessorDefinitionArgs']]:
+    def processor_definition(self) -> pulumi.Input[Optional['LogProcessingProcessorDefinitionArgs']]:
         """
         ## Processor definition
         Add a rule definition using our syntax. [In our documentation](https://dt-url.net/8k03xm2) you will find instructions and application [examples](https://dt-url.net/m24305t).
@@ -190,36 +190,36 @@ class _LogProcessingState:
         return pulumi.get(self, "processor_definition")
 
     @processor_definition.setter
-    def processor_definition(self, value: Optional[pulumi.Input['LogProcessingProcessorDefinitionArgs']]):
+    def processor_definition(self, value: pulumi.Input[Optional['LogProcessingProcessorDefinitionArgs']]):
         pulumi.set(self, "processor_definition", value)
 
     @_builtins.property
     @pulumi.getter
-    def query(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def query(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Matcher
         """
         return pulumi.get(self, "query")
 
     @query.setter
-    def query(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def query(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "query", value)
 
     @_builtins.property
     @pulumi.getter(name="ruleName")
-    def rule_name(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def rule_name(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Rule name
         """
         return pulumi.get(self, "rule_name")
 
     @rule_name.setter
-    def rule_name(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def rule_name(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "rule_name", value)
 
     @_builtins.property
     @pulumi.getter(name="ruleTesting")
-    def rule_testing(self) -> Optional[pulumi.Input['LogProcessingRuleTestingArgs']]:
+    def rule_testing(self) -> pulumi.Input[Optional['LogProcessingRuleTestingArgs']]:
         """
         ## Rule testing
         ### 1. Paste a log / JSON sample
@@ -227,7 +227,7 @@ class _LogProcessingState:
         return pulumi.get(self, "rule_testing")
 
     @rule_testing.setter
-    def rule_testing(self, value: Optional[pulumi.Input['LogProcessingRuleTestingArgs']]):
+    def rule_testing(self, value: pulumi.Input[Optional['LogProcessingRuleTestingArgs']]):
         pulumi.set(self, "rule_testing", value)
 
 
@@ -237,12 +237,12 @@ class LogProcessing(pulumi.CustomResource):
     def __init__(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 enabled: Optional[pulumi.Input[_builtins.bool]] = None,
-                 insert_after: Optional[pulumi.Input[_builtins.str]] = None,
-                 processor_definition: Optional[pulumi.Input[Union['LogProcessingProcessorDefinitionArgs', 'LogProcessingProcessorDefinitionArgsDict']]] = None,
-                 query: Optional[pulumi.Input[_builtins.str]] = None,
-                 rule_name: Optional[pulumi.Input[_builtins.str]] = None,
-                 rule_testing: Optional[pulumi.Input[Union['LogProcessingRuleTestingArgs', 'LogProcessingRuleTestingArgsDict']]] = None,
+                 enabled: pulumi.Input[Optional[_builtins.bool]] = None,
+                 insert_after: pulumi.Input[Optional[_builtins.str]] = None,
+                 processor_definition: pulumi.Input[Optional[Union['LogProcessingProcessorDefinitionArgs', 'LogProcessingProcessorDefinitionArgsDict']]] = None,
+                 query: pulumi.Input[Optional[_builtins.str]] = None,
+                 rule_name: pulumi.Input[Optional[_builtins.str]] = None,
+                 rule_testing: pulumi.Input[Optional[Union['LogProcessingRuleTestingArgs', 'LogProcessingRuleTestingArgsDict']]] = None,
                  __props__=None):
         """
         > This resource requires the API token scopes **Read settings** (`settings.read`) and **Write settings** (`settings.write`)
@@ -308,12 +308,12 @@ class LogProcessing(pulumi.CustomResource):
     def _internal_init(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 enabled: Optional[pulumi.Input[_builtins.bool]] = None,
-                 insert_after: Optional[pulumi.Input[_builtins.str]] = None,
-                 processor_definition: Optional[pulumi.Input[Union['LogProcessingProcessorDefinitionArgs', 'LogProcessingProcessorDefinitionArgsDict']]] = None,
-                 query: Optional[pulumi.Input[_builtins.str]] = None,
-                 rule_name: Optional[pulumi.Input[_builtins.str]] = None,
-                 rule_testing: Optional[pulumi.Input[Union['LogProcessingRuleTestingArgs', 'LogProcessingRuleTestingArgsDict']]] = None,
+                 enabled: pulumi.Input[Optional[_builtins.bool]] = None,
+                 insert_after: pulumi.Input[Optional[_builtins.str]] = None,
+                 processor_definition: pulumi.Input[Optional[Union['LogProcessingProcessorDefinitionArgs', 'LogProcessingProcessorDefinitionArgsDict']]] = None,
+                 query: pulumi.Input[Optional[_builtins.str]] = None,
+                 rule_name: pulumi.Input[Optional[_builtins.str]] = None,
+                 rule_testing: pulumi.Input[Optional[Union['LogProcessingRuleTestingArgs', 'LogProcessingRuleTestingArgsDict']]] = None,
                  __props__=None):
         opts = pulumi.ResourceOptions.merge(_utilities.get_resource_opts_defaults(), opts)
         if not isinstance(opts, pulumi.ResourceOptions):
@@ -349,12 +349,12 @@ class LogProcessing(pulumi.CustomResource):
     def get(resource_name: str,
             id: pulumi.Input[str],
             opts: Optional[pulumi.ResourceOptions] = None,
-            enabled: Optional[pulumi.Input[_builtins.bool]] = None,
-            insert_after: Optional[pulumi.Input[_builtins.str]] = None,
-            processor_definition: Optional[pulumi.Input[Union['LogProcessingProcessorDefinitionArgs', 'LogProcessingProcessorDefinitionArgsDict']]] = None,
-            query: Optional[pulumi.Input[_builtins.str]] = None,
-            rule_name: Optional[pulumi.Input[_builtins.str]] = None,
-            rule_testing: Optional[pulumi.Input[Union['LogProcessingRuleTestingArgs', 'LogProcessingRuleTestingArgsDict']]] = None) -> 'LogProcessing':
+            enabled: pulumi.Input[Optional[_builtins.bool]] = None,
+            insert_after: pulumi.Input[Optional[_builtins.str]] = None,
+            processor_definition: pulumi.Input[Optional[Union['LogProcessingProcessorDefinitionArgs', 'LogProcessingProcessorDefinitionArgsDict']]] = None,
+            query: pulumi.Input[Optional[_builtins.str]] = None,
+            rule_name: pulumi.Input[Optional[_builtins.str]] = None,
+            rule_testing: pulumi.Input[Optional[Union['LogProcessingRuleTestingArgs', 'LogProcessingRuleTestingArgsDict']]] = None) -> 'LogProcessing':
         """
         Get an existing LogProcessing resource's state with the given name, id, and optional extra
         properties used to qualify the lookup.

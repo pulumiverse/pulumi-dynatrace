@@ -22,14 +22,14 @@ __all__ = ['HttpMonitorArgs', 'HttpMonitor']
 class HttpMonitorArgs:
     def __init__(__self__, *,
                  frequency: pulumi.Input[_builtins.int],
-                 anomaly_detections: Optional[pulumi.Input[Sequence[pulumi.Input['HttpMonitorAnomalyDetectionArgs']]]] = None,
-                 enabled: Optional[pulumi.Input[_builtins.bool]] = None,
-                 locations: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-                 manually_assigned_apps: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-                 name: Optional[pulumi.Input[_builtins.str]] = None,
-                 no_script: Optional[pulumi.Input[_builtins.bool]] = None,
-                 script: Optional[pulumi.Input['HttpMonitorScriptArgs']] = None,
-                 tags: Optional[pulumi.Input[Sequence[pulumi.Input['HttpMonitorTagArgs']]]] = None):
+                 anomaly_detections: pulumi.Input[Optional[Sequence[pulumi.Input['HttpMonitorAnomalyDetectionArgs']]]] = None,
+                 enabled: pulumi.Input[Optional[_builtins.bool]] = None,
+                 locations: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 manually_assigned_apps: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 name: pulumi.Input[Optional[_builtins.str]] = None,
+                 no_script: pulumi.Input[Optional[_builtins.bool]] = None,
+                 script: pulumi.Input[Optional['HttpMonitorScriptArgs']] = None,
+                 tags: pulumi.Input[Optional[Sequence[pulumi.Input['HttpMonitorTagArgs']]]] = None):
         """
         The set of arguments for constructing a HttpMonitor resource.
 
@@ -79,31 +79,31 @@ class HttpMonitorArgs:
 
     @_builtins.property
     @pulumi.getter(name="anomalyDetections")
-    def anomaly_detections(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['HttpMonitorAnomalyDetectionArgs']]]]:
+    def anomaly_detections(self) -> pulumi.Input[Optional[Sequence[pulumi.Input['HttpMonitorAnomalyDetectionArgs']]]]:
         """
         The anomaly detection configuration.
         """
         return pulumi.get(self, "anomaly_detections")
 
     @anomaly_detections.setter
-    def anomaly_detections(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['HttpMonitorAnomalyDetectionArgs']]]]):
+    def anomaly_detections(self, value: pulumi.Input[Optional[Sequence[pulumi.Input['HttpMonitorAnomalyDetectionArgs']]]]):
         pulumi.set(self, "anomaly_detections", value)
 
     @_builtins.property
     @pulumi.getter
-    def enabled(self) -> Optional[pulumi.Input[_builtins.bool]]:
+    def enabled(self) -> pulumi.Input[Optional[_builtins.bool]]:
         """
         The monitor is enabled (`true`) or disabled (`false`).
         """
         return pulumi.get(self, "enabled")
 
     @enabled.setter
-    def enabled(self, value: Optional[pulumi.Input[_builtins.bool]]):
+    def enabled(self, value: pulumi.Input[Optional[_builtins.bool]]):
         pulumi.set(self, "enabled", value)
 
     @_builtins.property
     @pulumi.getter
-    def locations(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]:
+    def locations(self) -> pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]:
         """
         A list of locations from which the monitor is executed.
 
@@ -112,60 +112,60 @@ class HttpMonitorArgs:
         return pulumi.get(self, "locations")
 
     @locations.setter
-    def locations(self, value: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]):
+    def locations(self, value: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "locations", value)
 
     @_builtins.property
     @pulumi.getter(name="manuallyAssignedApps")
-    def manually_assigned_apps(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]:
+    def manually_assigned_apps(self) -> pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]:
         """
         A set of manually assigned applications.
         """
         return pulumi.get(self, "manually_assigned_apps")
 
     @manually_assigned_apps.setter
-    def manually_assigned_apps(self, value: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]):
+    def manually_assigned_apps(self, value: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "manually_assigned_apps", value)
 
     @_builtins.property
     @pulumi.getter
-    def name(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def name(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The name of the monitor.
         """
         return pulumi.get(self, "name")
 
     @name.setter
-    def name(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def name(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "name", value)
 
     @_builtins.property
     @pulumi.getter(name="noScript")
-    def no_script(self) -> Optional[pulumi.Input[_builtins.bool]]:
+    def no_script(self) -> pulumi.Input[Optional[_builtins.bool]]:
         """
         No script block - handle requests via `HttpMonitorScript` resource
         """
         return pulumi.get(self, "no_script")
 
     @no_script.setter
-    def no_script(self, value: Optional[pulumi.Input[_builtins.bool]]):
+    def no_script(self, value: pulumi.Input[Optional[_builtins.bool]]):
         pulumi.set(self, "no_script", value)
 
     @_builtins.property
     @pulumi.getter
-    def script(self) -> Optional[pulumi.Input['HttpMonitorScriptArgs']]:
+    def script(self) -> pulumi.Input[Optional['HttpMonitorScriptArgs']]:
         """
         The HTTP Script
         """
         return pulumi.get(self, "script")
 
     @script.setter
-    def script(self, value: Optional[pulumi.Input['HttpMonitorScriptArgs']]):
+    def script(self, value: pulumi.Input[Optional['HttpMonitorScriptArgs']]):
         pulumi.set(self, "script", value)
 
     @_builtins.property
     @pulumi.getter
-    def tags(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['HttpMonitorTagArgs']]]]:
+    def tags(self) -> pulumi.Input[Optional[Sequence[pulumi.Input['HttpMonitorTagArgs']]]]:
         """
         A set of tags assigned to the monitor.
 
@@ -174,22 +174,22 @@ class HttpMonitorArgs:
         return pulumi.get(self, "tags")
 
     @tags.setter
-    def tags(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['HttpMonitorTagArgs']]]]):
+    def tags(self, value: pulumi.Input[Optional[Sequence[pulumi.Input['HttpMonitorTagArgs']]]]):
         pulumi.set(self, "tags", value)
 
 
 @pulumi.input_type
 class _HttpMonitorState:
     def __init__(__self__, *,
-                 anomaly_detections: Optional[pulumi.Input[Sequence[pulumi.Input['HttpMonitorAnomalyDetectionArgs']]]] = None,
-                 enabled: Optional[pulumi.Input[_builtins.bool]] = None,
-                 frequency: Optional[pulumi.Input[_builtins.int]] = None,
-                 locations: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-                 manually_assigned_apps: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-                 name: Optional[pulumi.Input[_builtins.str]] = None,
-                 no_script: Optional[pulumi.Input[_builtins.bool]] = None,
-                 script: Optional[pulumi.Input['HttpMonitorScriptArgs']] = None,
-                 tags: Optional[pulumi.Input[Sequence[pulumi.Input['HttpMonitorTagArgs']]]] = None):
+                 anomaly_detections: pulumi.Input[Optional[Sequence[pulumi.Input['HttpMonitorAnomalyDetectionArgs']]]] = None,
+                 enabled: pulumi.Input[Optional[_builtins.bool]] = None,
+                 frequency: pulumi.Input[Optional[_builtins.int]] = None,
+                 locations: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 manually_assigned_apps: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 name: pulumi.Input[Optional[_builtins.str]] = None,
+                 no_script: pulumi.Input[Optional[_builtins.bool]] = None,
+                 script: pulumi.Input[Optional['HttpMonitorScriptArgs']] = None,
+                 tags: pulumi.Input[Optional[Sequence[pulumi.Input['HttpMonitorTagArgs']]]] = None):
         """
         Input properties used for looking up and filtering HttpMonitor resources.
 
@@ -228,43 +228,43 @@ class _HttpMonitorState:
 
     @_builtins.property
     @pulumi.getter(name="anomalyDetections")
-    def anomaly_detections(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['HttpMonitorAnomalyDetectionArgs']]]]:
+    def anomaly_detections(self) -> pulumi.Input[Optional[Sequence[pulumi.Input['HttpMonitorAnomalyDetectionArgs']]]]:
         """
         The anomaly detection configuration.
         """
         return pulumi.get(self, "anomaly_detections")
 
     @anomaly_detections.setter
-    def anomaly_detections(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['HttpMonitorAnomalyDetectionArgs']]]]):
+    def anomaly_detections(self, value: pulumi.Input[Optional[Sequence[pulumi.Input['HttpMonitorAnomalyDetectionArgs']]]]):
         pulumi.set(self, "anomaly_detections", value)
 
     @_builtins.property
     @pulumi.getter
-    def enabled(self) -> Optional[pulumi.Input[_builtins.bool]]:
+    def enabled(self) -> pulumi.Input[Optional[_builtins.bool]]:
         """
         The monitor is enabled (`true`) or disabled (`false`).
         """
         return pulumi.get(self, "enabled")
 
     @enabled.setter
-    def enabled(self, value: Optional[pulumi.Input[_builtins.bool]]):
+    def enabled(self, value: pulumi.Input[Optional[_builtins.bool]]):
         pulumi.set(self, "enabled", value)
 
     @_builtins.property
     @pulumi.getter
-    def frequency(self) -> Optional[pulumi.Input[_builtins.int]]:
+    def frequency(self) -> pulumi.Input[Optional[_builtins.int]]:
         """
         The frequency of the monitor, in minutes.
         """
         return pulumi.get(self, "frequency")
 
     @frequency.setter
-    def frequency(self, value: Optional[pulumi.Input[_builtins.int]]):
+    def frequency(self, value: pulumi.Input[Optional[_builtins.int]]):
         pulumi.set(self, "frequency", value)
 
     @_builtins.property
     @pulumi.getter
-    def locations(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]:
+    def locations(self) -> pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]:
         """
         A list of locations from which the monitor is executed.
 
@@ -273,60 +273,60 @@ class _HttpMonitorState:
         return pulumi.get(self, "locations")
 
     @locations.setter
-    def locations(self, value: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]):
+    def locations(self, value: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "locations", value)
 
     @_builtins.property
     @pulumi.getter(name="manuallyAssignedApps")
-    def manually_assigned_apps(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]:
+    def manually_assigned_apps(self) -> pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]:
         """
         A set of manually assigned applications.
         """
         return pulumi.get(self, "manually_assigned_apps")
 
     @manually_assigned_apps.setter
-    def manually_assigned_apps(self, value: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]):
+    def manually_assigned_apps(self, value: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "manually_assigned_apps", value)
 
     @_builtins.property
     @pulumi.getter
-    def name(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def name(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The name of the monitor.
         """
         return pulumi.get(self, "name")
 
     @name.setter
-    def name(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def name(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "name", value)
 
     @_builtins.property
     @pulumi.getter(name="noScript")
-    def no_script(self) -> Optional[pulumi.Input[_builtins.bool]]:
+    def no_script(self) -> pulumi.Input[Optional[_builtins.bool]]:
         """
         No script block - handle requests via `HttpMonitorScript` resource
         """
         return pulumi.get(self, "no_script")
 
     @no_script.setter
-    def no_script(self, value: Optional[pulumi.Input[_builtins.bool]]):
+    def no_script(self, value: pulumi.Input[Optional[_builtins.bool]]):
         pulumi.set(self, "no_script", value)
 
     @_builtins.property
     @pulumi.getter
-    def script(self) -> Optional[pulumi.Input['HttpMonitorScriptArgs']]:
+    def script(self) -> pulumi.Input[Optional['HttpMonitorScriptArgs']]:
         """
         The HTTP Script
         """
         return pulumi.get(self, "script")
 
     @script.setter
-    def script(self, value: Optional[pulumi.Input['HttpMonitorScriptArgs']]):
+    def script(self, value: pulumi.Input[Optional['HttpMonitorScriptArgs']]):
         pulumi.set(self, "script", value)
 
     @_builtins.property
     @pulumi.getter
-    def tags(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['HttpMonitorTagArgs']]]]:
+    def tags(self) -> pulumi.Input[Optional[Sequence[pulumi.Input['HttpMonitorTagArgs']]]]:
         """
         A set of tags assigned to the monitor.
 
@@ -335,7 +335,7 @@ class _HttpMonitorState:
         return pulumi.get(self, "tags")
 
     @tags.setter
-    def tags(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['HttpMonitorTagArgs']]]]):
+    def tags(self, value: pulumi.Input[Optional[Sequence[pulumi.Input['HttpMonitorTagArgs']]]]):
         pulumi.set(self, "tags", value)
 
 
@@ -345,15 +345,15 @@ class HttpMonitor(pulumi.CustomResource):
     def __init__(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 anomaly_detections: Optional[pulumi.Input[Sequence[pulumi.Input[Union['HttpMonitorAnomalyDetectionArgs', 'HttpMonitorAnomalyDetectionArgsDict']]]]] = None,
-                 enabled: Optional[pulumi.Input[_builtins.bool]] = None,
-                 frequency: Optional[pulumi.Input[_builtins.int]] = None,
-                 locations: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-                 manually_assigned_apps: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-                 name: Optional[pulumi.Input[_builtins.str]] = None,
-                 no_script: Optional[pulumi.Input[_builtins.bool]] = None,
-                 script: Optional[pulumi.Input[Union['HttpMonitorScriptArgs', 'HttpMonitorScriptArgsDict']]] = None,
-                 tags: Optional[pulumi.Input[Sequence[pulumi.Input[Union['HttpMonitorTagArgs', 'HttpMonitorTagArgsDict']]]]] = None,
+                 anomaly_detections: pulumi.Input[Optional[Sequence[pulumi.Input[Union['HttpMonitorAnomalyDetectionArgs', 'HttpMonitorAnomalyDetectionArgsDict']]]]] = None,
+                 enabled: pulumi.Input[Optional[_builtins.bool]] = None,
+                 frequency: pulumi.Input[Optional[_builtins.int]] = None,
+                 locations: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 manually_assigned_apps: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 name: pulumi.Input[Optional[_builtins.str]] = None,
+                 no_script: pulumi.Input[Optional[_builtins.bool]] = None,
+                 script: pulumi.Input[Optional[Union['HttpMonitorScriptArgs', 'HttpMonitorScriptArgsDict']]] = None,
+                 tags: pulumi.Input[Optional[Sequence[pulumi.Input[Union['HttpMonitorTagArgs', 'HttpMonitorTagArgsDict']]]]] = None,
                  __props__=None):
         """
         > This resource requires the API token scope **Create and read synthetic monitors, locations, and nodes** (`ExternalSyntheticIntegration`)
@@ -424,15 +424,15 @@ class HttpMonitor(pulumi.CustomResource):
     def _internal_init(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 anomaly_detections: Optional[pulumi.Input[Sequence[pulumi.Input[Union['HttpMonitorAnomalyDetectionArgs', 'HttpMonitorAnomalyDetectionArgsDict']]]]] = None,
-                 enabled: Optional[pulumi.Input[_builtins.bool]] = None,
-                 frequency: Optional[pulumi.Input[_builtins.int]] = None,
-                 locations: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-                 manually_assigned_apps: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-                 name: Optional[pulumi.Input[_builtins.str]] = None,
-                 no_script: Optional[pulumi.Input[_builtins.bool]] = None,
-                 script: Optional[pulumi.Input[Union['HttpMonitorScriptArgs', 'HttpMonitorScriptArgsDict']]] = None,
-                 tags: Optional[pulumi.Input[Sequence[pulumi.Input[Union['HttpMonitorTagArgs', 'HttpMonitorTagArgsDict']]]]] = None,
+                 anomaly_detections: pulumi.Input[Optional[Sequence[pulumi.Input[Union['HttpMonitorAnomalyDetectionArgs', 'HttpMonitorAnomalyDetectionArgsDict']]]]] = None,
+                 enabled: pulumi.Input[Optional[_builtins.bool]] = None,
+                 frequency: pulumi.Input[Optional[_builtins.int]] = None,
+                 locations: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 manually_assigned_apps: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 name: pulumi.Input[Optional[_builtins.str]] = None,
+                 no_script: pulumi.Input[Optional[_builtins.bool]] = None,
+                 script: pulumi.Input[Optional[Union['HttpMonitorScriptArgs', 'HttpMonitorScriptArgsDict']]] = None,
+                 tags: pulumi.Input[Optional[Sequence[pulumi.Input[Union['HttpMonitorTagArgs', 'HttpMonitorTagArgsDict']]]]] = None,
                  __props__=None):
         opts = pulumi.ResourceOptions.merge(_utilities.get_resource_opts_defaults(), opts)
         if not isinstance(opts, pulumi.ResourceOptions):
@@ -463,15 +463,15 @@ class HttpMonitor(pulumi.CustomResource):
     def get(resource_name: str,
             id: pulumi.Input[str],
             opts: Optional[pulumi.ResourceOptions] = None,
-            anomaly_detections: Optional[pulumi.Input[Sequence[pulumi.Input[Union['HttpMonitorAnomalyDetectionArgs', 'HttpMonitorAnomalyDetectionArgsDict']]]]] = None,
-            enabled: Optional[pulumi.Input[_builtins.bool]] = None,
-            frequency: Optional[pulumi.Input[_builtins.int]] = None,
-            locations: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-            manually_assigned_apps: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-            name: Optional[pulumi.Input[_builtins.str]] = None,
-            no_script: Optional[pulumi.Input[_builtins.bool]] = None,
-            script: Optional[pulumi.Input[Union['HttpMonitorScriptArgs', 'HttpMonitorScriptArgsDict']]] = None,
-            tags: Optional[pulumi.Input[Sequence[pulumi.Input[Union['HttpMonitorTagArgs', 'HttpMonitorTagArgsDict']]]]] = None) -> 'HttpMonitor':
+            anomaly_detections: pulumi.Input[Optional[Sequence[pulumi.Input[Union['HttpMonitorAnomalyDetectionArgs', 'HttpMonitorAnomalyDetectionArgsDict']]]]] = None,
+            enabled: pulumi.Input[Optional[_builtins.bool]] = None,
+            frequency: pulumi.Input[Optional[_builtins.int]] = None,
+            locations: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+            manually_assigned_apps: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+            name: pulumi.Input[Optional[_builtins.str]] = None,
+            no_script: pulumi.Input[Optional[_builtins.bool]] = None,
+            script: pulumi.Input[Optional[Union['HttpMonitorScriptArgs', 'HttpMonitorScriptArgsDict']]] = None,
+            tags: pulumi.Input[Optional[Sequence[pulumi.Input[Union['HttpMonitorTagArgs', 'HttpMonitorTagArgsDict']]]]] = None) -> 'HttpMonitor':
         """
         Get an existing HttpMonitor resource's state with the given name, id, and optional extra
         properties used to qualify the lookup.

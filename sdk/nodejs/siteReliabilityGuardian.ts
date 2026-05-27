@@ -119,27 +119,27 @@ export interface SiteReliabilityGuardianState {
     /**
      * Description
      */
-    description?: pulumi.Input<string>;
+    description?: pulumi.Input<string | undefined>;
     /**
      * If set to null/'BIZ*EVENT' validation events stored as bizevents in Grail. If set to 'SDLC*EVENT' validation events stored as SDLC events
      */
-    eventKind?: pulumi.Input<string>;
+    eventKind?: pulumi.Input<string | undefined>;
     /**
      * Name
      */
-    name?: pulumi.Input<string>;
+    name?: pulumi.Input<string | undefined>;
     /**
      * Objectives
      */
-    objectives?: pulumi.Input<inputs.SiteReliabilityGuardianObjectives>;
+    objectives?: pulumi.Input<inputs.SiteReliabilityGuardianObjectives | undefined>;
     /**
      * Define key/value pairs that further describe this guardian.
      */
-    tags?: pulumi.Input<pulumi.Input<string>[]>;
+    tags?: pulumi.Input<pulumi.Input<string>[] | undefined>;
     /**
      * Define variables for dynamically defining DQL queries
      */
-    variables?: pulumi.Input<inputs.SiteReliabilityGuardianVariables>;
+    variables?: pulumi.Input<inputs.SiteReliabilityGuardianVariables | undefined>;
 }
 
 /**
@@ -149,15 +149,15 @@ export interface SiteReliabilityGuardianArgs {
     /**
      * Description
      */
-    description?: pulumi.Input<string>;
+    description?: pulumi.Input<string | undefined>;
     /**
      * If set to null/'BIZ*EVENT' validation events stored as bizevents in Grail. If set to 'SDLC*EVENT' validation events stored as SDLC events
      */
-    eventKind?: pulumi.Input<string>;
+    eventKind?: pulumi.Input<string | undefined>;
     /**
      * Name
      */
-    name?: pulumi.Input<string>;
+    name?: pulumi.Input<string | undefined>;
     /**
      * Objectives
      */
@@ -165,9 +165,9 @@ export interface SiteReliabilityGuardianArgs {
     /**
      * Define key/value pairs that further describe this guardian.
      */
-    tags?: pulumi.Input<pulumi.Input<string>[]>;
+    tags?: pulumi.Input<pulumi.Input<string>[] | undefined>;
     /**
      * Define variables for dynamically defining DQL queries
      */
-    variables?: pulumi.Input<inputs.SiteReliabilityGuardianVariables>;
+    variables?: pulumi.Input<inputs.SiteReliabilityGuardianVariables | undefined>;
 }

@@ -106,19 +106,19 @@ export interface KeyUserActionState {
     /**
      * The ID of the WebApplication
      */
-    applicationId?: pulumi.Input<string>;
+    applicationId?: pulumi.Input<string | undefined>;
     /**
      * The domain where the action is performed
      */
-    domain?: pulumi.Input<string>;
+    domain?: pulumi.Input<string | undefined>;
     /**
      * The name of the action
      */
-    name?: pulumi.Input<string>;
+    name?: pulumi.Input<string | undefined>;
     /**
      * The type of the action. Possible values are `Custom`, `Load` and `Xhr`
      */
-    type?: pulumi.Input<string>;
+    type?: pulumi.Input<string | undefined>;
 }
 
 /**
@@ -132,11 +132,11 @@ export interface KeyUserActionArgs {
     /**
      * The domain where the action is performed
      */
-    domain?: pulumi.Input<string>;
+    domain?: pulumi.Input<string | undefined>;
     /**
      * The name of the action
      */
-    name?: pulumi.Input<string>;
+    name?: pulumi.Input<string | undefined>;
     /**
      * The type of the action. Possible values are `Custom`, `Load` and `Xhr`
      */

@@ -114,19 +114,19 @@ export interface LogEventsState {
     /**
      * This setting is enabled (`true`) or disabled (`false`)
      */
-    enabled?: pulumi.Input<boolean>;
+    enabled?: pulumi.Input<boolean | undefined>;
     /**
      * Event template
      */
-    eventTemplate?: pulumi.Input<inputs.LogEventsEventTemplate>;
+    eventTemplate?: pulumi.Input<inputs.LogEventsEventTemplate | undefined>;
     /**
      * Log query
      */
-    query?: pulumi.Input<string>;
+    query?: pulumi.Input<string | undefined>;
     /**
      * The textual summary of the log event entry
      */
-    summary?: pulumi.Input<string>;
+    summary?: pulumi.Input<string | undefined>;
 }
 
 /**

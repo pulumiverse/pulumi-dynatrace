@@ -120,27 +120,27 @@ export interface LogStorageState {
     /**
      * This setting is enabled (`true`) or disabled (`false`)
      */
-    enabled?: pulumi.Input<boolean>;
+    enabled?: pulumi.Input<boolean | undefined>;
     /**
      * Because this resource allows for ordering you may specify the ID of the resource instance that comes before this instance regarding order. If not specified when creating the setting will be added to the end of the list. If not specified during update the order will remain untouched
      */
-    insertAfter?: pulumi.Input<string>;
+    insertAfter?: pulumi.Input<string | undefined>;
     /**
      * no documentation available
      */
-    matchers?: pulumi.Input<inputs.LogStorageMatchers>;
+    matchers?: pulumi.Input<inputs.LogStorageMatchers | undefined>;
     /**
      * Name
      */
-    name?: pulumi.Input<string>;
+    name?: pulumi.Input<string | undefined>;
     /**
      * The scope of this setting (HOST, KUBERNETES*CLUSTER, HOST*GROUP). Omit this property if you want to cover the whole environment.
      */
-    scope?: pulumi.Input<string>;
+    scope?: pulumi.Input<string | undefined>;
     /**
      * If `true` matching logs will be included in storage. If `false` matching logs will be excluded from storage.
      */
-    sendToStorage?: pulumi.Input<boolean>;
+    sendToStorage?: pulumi.Input<boolean | undefined>;
 }
 
 /**
@@ -154,19 +154,19 @@ export interface LogStorageArgs {
     /**
      * Because this resource allows for ordering you may specify the ID of the resource instance that comes before this instance regarding order. If not specified when creating the setting will be added to the end of the list. If not specified during update the order will remain untouched
      */
-    insertAfter?: pulumi.Input<string>;
+    insertAfter?: pulumi.Input<string | undefined>;
     /**
      * no documentation available
      */
-    matchers?: pulumi.Input<inputs.LogStorageMatchers>;
+    matchers?: pulumi.Input<inputs.LogStorageMatchers | undefined>;
     /**
      * Name
      */
-    name?: pulumi.Input<string>;
+    name?: pulumi.Input<string | undefined>;
     /**
      * The scope of this setting (HOST, KUBERNETES*CLUSTER, HOST*GROUP). Omit this property if you want to cover the whole environment.
      */
-    scope?: pulumi.Input<string>;
+    scope?: pulumi.Input<string | undefined>;
     /**
      * If `true` matching logs will be included in storage. If `false` matching logs will be excluded from storage.
      */

@@ -133,13 +133,13 @@ class MainframeTransactionMonitoringArgs:
 @pulumi.input_type
 class _MainframeTransactionMonitoringState:
     def __init__(__self__, *,
-                 group_cics_regions: Optional[pulumi.Input[_builtins.bool]] = None,
-                 group_ims_regions: Optional[pulumi.Input[_builtins.bool]] = None,
-                 monitor_all_ctg_protocols: Optional[pulumi.Input[_builtins.bool]] = None,
-                 monitor_all_incoming_web_requests: Optional[pulumi.Input[_builtins.bool]] = None,
-                 node_limit: Optional[pulumi.Input[_builtins.int]] = None,
-                 zos_cics_service_detection_uses_transaction_id: Optional[pulumi.Input[_builtins.bool]] = None,
-                 zos_ims_service_detection_uses_transaction_id: Optional[pulumi.Input[_builtins.bool]] = None):
+                 group_cics_regions: pulumi.Input[Optional[_builtins.bool]] = None,
+                 group_ims_regions: pulumi.Input[Optional[_builtins.bool]] = None,
+                 monitor_all_ctg_protocols: pulumi.Input[Optional[_builtins.bool]] = None,
+                 monitor_all_incoming_web_requests: pulumi.Input[Optional[_builtins.bool]] = None,
+                 node_limit: pulumi.Input[Optional[_builtins.int]] = None,
+                 zos_cics_service_detection_uses_transaction_id: pulumi.Input[Optional[_builtins.bool]] = None,
+                 zos_ims_service_detection_uses_transaction_id: pulumi.Input[Optional[_builtins.bool]] = None):
         """
         Input properties used for looking up and filtering MainframeTransactionMonitoring resources.
 
@@ -168,86 +168,86 @@ class _MainframeTransactionMonitoringState:
 
     @_builtins.property
     @pulumi.getter(name="groupCicsRegions")
-    def group_cics_regions(self) -> Optional[pulumi.Input[_builtins.bool]]:
+    def group_cics_regions(self) -> pulumi.Input[Optional[_builtins.bool]]:
         """
         If enabled, CICS regions belonging to the same CICSPlex will be grouped into a single process group. If disabled, a process group will be created for each CICS region.
         """
         return pulumi.get(self, "group_cics_regions")
 
     @group_cics_regions.setter
-    def group_cics_regions(self, value: Optional[pulumi.Input[_builtins.bool]]):
+    def group_cics_regions(self, value: pulumi.Input[Optional[_builtins.bool]]):
         pulumi.set(self, "group_cics_regions", value)
 
     @_builtins.property
     @pulumi.getter(name="groupImsRegions")
-    def group_ims_regions(self) -> Optional[pulumi.Input[_builtins.bool]]:
+    def group_ims_regions(self) -> pulumi.Input[Optional[_builtins.bool]]:
         """
         If enabled, IMS regions belonging to the same subsystem will be grouped into a single process group. If disabled, a process group will be created for each IMS region.
         """
         return pulumi.get(self, "group_ims_regions")
 
     @group_ims_regions.setter
-    def group_ims_regions(self, value: Optional[pulumi.Input[_builtins.bool]]):
+    def group_ims_regions(self, value: pulumi.Input[Optional[_builtins.bool]]):
         pulumi.set(self, "group_ims_regions", value)
 
     @_builtins.property
     @pulumi.getter(name="monitorAllCtgProtocols")
-    def monitor_all_ctg_protocols(self) -> Optional[pulumi.Input[_builtins.bool]]:
+    def monitor_all_ctg_protocols(self) -> pulumi.Input[Optional[_builtins.bool]]:
         """
         If enabled, the CICS Transaction Gateway sensor will trace all EXCI requests including those that are using the TCP/IP or SNA protocol.
         """
         return pulumi.get(self, "monitor_all_ctg_protocols")
 
     @monitor_all_ctg_protocols.setter
-    def monitor_all_ctg_protocols(self, value: Optional[pulumi.Input[_builtins.bool]]):
+    def monitor_all_ctg_protocols(self, value: pulumi.Input[Optional[_builtins.bool]]):
         pulumi.set(self, "monitor_all_ctg_protocols", value)
 
     @_builtins.property
     @pulumi.getter(name="monitorAllIncomingWebRequests")
-    def monitor_all_incoming_web_requests(self) -> Optional[pulumi.Input[_builtins.bool]]:
+    def monitor_all_incoming_web_requests(self) -> pulumi.Input[Optional[_builtins.bool]]:
         """
         Dynatrace automatically traces incoming web requests when they are called by already-monitored services. Enable this setting to monitor all incoming web requests. We recommend enabling it only over a short period of time.
         """
         return pulumi.get(self, "monitor_all_incoming_web_requests")
 
     @monitor_all_incoming_web_requests.setter
-    def monitor_all_incoming_web_requests(self, value: Optional[pulumi.Input[_builtins.bool]]):
+    def monitor_all_incoming_web_requests(self, value: pulumi.Input[Optional[_builtins.bool]]):
         pulumi.set(self, "monitor_all_incoming_web_requests", value)
 
     @_builtins.property
     @pulumi.getter(name="nodeLimit")
-    def node_limit(self) -> Optional[pulumi.Input[_builtins.int]]:
+    def node_limit(self) -> pulumi.Input[Optional[_builtins.int]]:
         """
         We recommend the default limit of 500 nodes. The value 0 means unlimited number of nodes.
         """
         return pulumi.get(self, "node_limit")
 
     @node_limit.setter
-    def node_limit(self, value: Optional[pulumi.Input[_builtins.int]]):
+    def node_limit(self, value: pulumi.Input[Optional[_builtins.int]]):
         pulumi.set(self, "node_limit", value)
 
     @_builtins.property
     @pulumi.getter(name="zosCicsServiceDetectionUsesTransactionId")
-    def zos_cics_service_detection_uses_transaction_id(self) -> Optional[pulumi.Input[_builtins.bool]]:
+    def zos_cics_service_detection_uses_transaction_id(self) -> pulumi.Input[Optional[_builtins.bool]]:
         """
         If enabled, a CICS service will be created for each monitored transaction ID within a process group. If disabled, a CICS service will be created for each monitored CICS region within a process group. We recommend enabling it only when the CICS regions are grouped by their CICSPlex.
         """
         return pulumi.get(self, "zos_cics_service_detection_uses_transaction_id")
 
     @zos_cics_service_detection_uses_transaction_id.setter
-    def zos_cics_service_detection_uses_transaction_id(self, value: Optional[pulumi.Input[_builtins.bool]]):
+    def zos_cics_service_detection_uses_transaction_id(self, value: pulumi.Input[Optional[_builtins.bool]]):
         pulumi.set(self, "zos_cics_service_detection_uses_transaction_id", value)
 
     @_builtins.property
     @pulumi.getter(name="zosImsServiceDetectionUsesTransactionId")
-    def zos_ims_service_detection_uses_transaction_id(self) -> Optional[pulumi.Input[_builtins.bool]]:
+    def zos_ims_service_detection_uses_transaction_id(self) -> pulumi.Input[Optional[_builtins.bool]]:
         """
         If enabled, an IMS service will be created for each monitored transaction ID within a process group. If disabled, an IMS service will be created for each monitored IMS region within a process group. We recommend enabling it only when the IMS regions are grouped by their subsystem.
         """
         return pulumi.get(self, "zos_ims_service_detection_uses_transaction_id")
 
     @zos_ims_service_detection_uses_transaction_id.setter
-    def zos_ims_service_detection_uses_transaction_id(self, value: Optional[pulumi.Input[_builtins.bool]]):
+    def zos_ims_service_detection_uses_transaction_id(self, value: pulumi.Input[Optional[_builtins.bool]]):
         pulumi.set(self, "zos_ims_service_detection_uses_transaction_id", value)
 
 
@@ -257,13 +257,13 @@ class MainframeTransactionMonitoring(pulumi.CustomResource):
     def __init__(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 group_cics_regions: Optional[pulumi.Input[_builtins.bool]] = None,
-                 group_ims_regions: Optional[pulumi.Input[_builtins.bool]] = None,
-                 monitor_all_ctg_protocols: Optional[pulumi.Input[_builtins.bool]] = None,
-                 monitor_all_incoming_web_requests: Optional[pulumi.Input[_builtins.bool]] = None,
-                 node_limit: Optional[pulumi.Input[_builtins.int]] = None,
-                 zos_cics_service_detection_uses_transaction_id: Optional[pulumi.Input[_builtins.bool]] = None,
-                 zos_ims_service_detection_uses_transaction_id: Optional[pulumi.Input[_builtins.bool]] = None,
+                 group_cics_regions: pulumi.Input[Optional[_builtins.bool]] = None,
+                 group_ims_regions: pulumi.Input[Optional[_builtins.bool]] = None,
+                 monitor_all_ctg_protocols: pulumi.Input[Optional[_builtins.bool]] = None,
+                 monitor_all_incoming_web_requests: pulumi.Input[Optional[_builtins.bool]] = None,
+                 node_limit: pulumi.Input[Optional[_builtins.int]] = None,
+                 zos_cics_service_detection_uses_transaction_id: pulumi.Input[Optional[_builtins.bool]] = None,
+                 zos_ims_service_detection_uses_transaction_id: pulumi.Input[Optional[_builtins.bool]] = None,
                  __props__=None):
         """
         > This resource requires the API token scopes **Read settings** (`settings.read`) and **Write settings** (`settings.write`)
@@ -362,13 +362,13 @@ class MainframeTransactionMonitoring(pulumi.CustomResource):
     def _internal_init(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 group_cics_regions: Optional[pulumi.Input[_builtins.bool]] = None,
-                 group_ims_regions: Optional[pulumi.Input[_builtins.bool]] = None,
-                 monitor_all_ctg_protocols: Optional[pulumi.Input[_builtins.bool]] = None,
-                 monitor_all_incoming_web_requests: Optional[pulumi.Input[_builtins.bool]] = None,
-                 node_limit: Optional[pulumi.Input[_builtins.int]] = None,
-                 zos_cics_service_detection_uses_transaction_id: Optional[pulumi.Input[_builtins.bool]] = None,
-                 zos_ims_service_detection_uses_transaction_id: Optional[pulumi.Input[_builtins.bool]] = None,
+                 group_cics_regions: pulumi.Input[Optional[_builtins.bool]] = None,
+                 group_ims_regions: pulumi.Input[Optional[_builtins.bool]] = None,
+                 monitor_all_ctg_protocols: pulumi.Input[Optional[_builtins.bool]] = None,
+                 monitor_all_incoming_web_requests: pulumi.Input[Optional[_builtins.bool]] = None,
+                 node_limit: pulumi.Input[Optional[_builtins.int]] = None,
+                 zos_cics_service_detection_uses_transaction_id: pulumi.Input[Optional[_builtins.bool]] = None,
+                 zos_ims_service_detection_uses_transaction_id: pulumi.Input[Optional[_builtins.bool]] = None,
                  __props__=None):
         opts = pulumi.ResourceOptions.merge(_utilities.get_resource_opts_defaults(), opts)
         if not isinstance(opts, pulumi.ResourceOptions):
@@ -409,13 +409,13 @@ class MainframeTransactionMonitoring(pulumi.CustomResource):
     def get(resource_name: str,
             id: pulumi.Input[str],
             opts: Optional[pulumi.ResourceOptions] = None,
-            group_cics_regions: Optional[pulumi.Input[_builtins.bool]] = None,
-            group_ims_regions: Optional[pulumi.Input[_builtins.bool]] = None,
-            monitor_all_ctg_protocols: Optional[pulumi.Input[_builtins.bool]] = None,
-            monitor_all_incoming_web_requests: Optional[pulumi.Input[_builtins.bool]] = None,
-            node_limit: Optional[pulumi.Input[_builtins.int]] = None,
-            zos_cics_service_detection_uses_transaction_id: Optional[pulumi.Input[_builtins.bool]] = None,
-            zos_ims_service_detection_uses_transaction_id: Optional[pulumi.Input[_builtins.bool]] = None) -> 'MainframeTransactionMonitoring':
+            group_cics_regions: pulumi.Input[Optional[_builtins.bool]] = None,
+            group_ims_regions: pulumi.Input[Optional[_builtins.bool]] = None,
+            monitor_all_ctg_protocols: pulumi.Input[Optional[_builtins.bool]] = None,
+            monitor_all_incoming_web_requests: pulumi.Input[Optional[_builtins.bool]] = None,
+            node_limit: pulumi.Input[Optional[_builtins.int]] = None,
+            zos_cics_service_detection_uses_transaction_id: pulumi.Input[Optional[_builtins.bool]] = None,
+            zos_ims_service_detection_uses_transaction_id: pulumi.Input[Optional[_builtins.bool]] = None) -> 'MainframeTransactionMonitoring':
         """
         Get an existing MainframeTransactionMonitoring resource's state with the given name, id, and optional extra
         properties used to qualify the lookup.

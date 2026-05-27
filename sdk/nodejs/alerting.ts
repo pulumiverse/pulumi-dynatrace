@@ -108,23 +108,23 @@ export interface AlertingState {
     /**
      * The list of event filters.  For all filters that are *negated* inside of these event filters, that is all `Predefined` as well as `Custom` (Title and/or Description) ones the AND logic applies. For all *non-negated* ones the OR logic applies. Between these two groups, negated and non-negated, the AND logic applies.  If you specify both severity rule and event filter, the AND logic applies
      */
-    filters?: pulumi.Input<inputs.AlertingFilters>;
+    filters?: pulumi.Input<inputs.AlertingFilters | undefined>;
     /**
      * The ID of this setting when referred to by the Config REST API V1
      */
-    legacyId?: pulumi.Input<string>;
+    legacyId?: pulumi.Input<string | undefined>;
     /**
      * Entities which are part of the configured management zones will match this alerting profile. It is recommended to use manual tags instead.
      */
-    managementZone?: pulumi.Input<string>;
+    managementZone?: pulumi.Input<string | undefined>;
     /**
      * The name of the alerting profile, displayed in the UI
      */
-    name?: pulumi.Input<string>;
+    name?: pulumi.Input<string | undefined>;
     /**
      * A list of rules for management zone usage.  Each rule is evaluated independently of all other rules
      */
-    rules?: pulumi.Input<inputs.AlertingRules>;
+    rules?: pulumi.Input<inputs.AlertingRules | undefined>;
 }
 
 /**
@@ -134,21 +134,21 @@ export interface AlertingArgs {
     /**
      * The list of event filters.  For all filters that are *negated* inside of these event filters, that is all `Predefined` as well as `Custom` (Title and/or Description) ones the AND logic applies. For all *non-negated* ones the OR logic applies. Between these two groups, negated and non-negated, the AND logic applies.  If you specify both severity rule and event filter, the AND logic applies
      */
-    filters?: pulumi.Input<inputs.AlertingFilters>;
+    filters?: pulumi.Input<inputs.AlertingFilters | undefined>;
     /**
      * The ID of this setting when referred to by the Config REST API V1
      */
-    legacyId?: pulumi.Input<string>;
+    legacyId?: pulumi.Input<string | undefined>;
     /**
      * Entities which are part of the configured management zones will match this alerting profile. It is recommended to use manual tags instead.
      */
-    managementZone?: pulumi.Input<string>;
+    managementZone?: pulumi.Input<string | undefined>;
     /**
      * The name of the alerting profile, displayed in the UI
      */
-    name?: pulumi.Input<string>;
+    name?: pulumi.Input<string | undefined>;
     /**
      * A list of rules for management zone usage.  Each rule is evaluated independently of all other rules
      */
-    rules?: pulumi.Input<inputs.AlertingRules>;
+    rules?: pulumi.Input<inputs.AlertingRules | undefined>;
 }

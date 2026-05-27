@@ -21,11 +21,11 @@ __all__ = ['AlertingArgs', 'Alerting']
 @pulumi.input_type
 class AlertingArgs:
     def __init__(__self__, *,
-                 filters: Optional[pulumi.Input['AlertingFiltersArgs']] = None,
-                 legacy_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 management_zone: Optional[pulumi.Input[_builtins.str]] = None,
-                 name: Optional[pulumi.Input[_builtins.str]] = None,
-                 rules: Optional[pulumi.Input['AlertingRulesArgs']] = None):
+                 filters: pulumi.Input[Optional['AlertingFiltersArgs']] = None,
+                 legacy_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 management_zone: pulumi.Input[Optional[_builtins.str]] = None,
+                 name: pulumi.Input[Optional[_builtins.str]] = None,
+                 rules: pulumi.Input[Optional['AlertingRulesArgs']] = None):
         """
         The set of arguments for constructing a Alerting resource.
 
@@ -48,73 +48,73 @@ class AlertingArgs:
 
     @_builtins.property
     @pulumi.getter
-    def filters(self) -> Optional[pulumi.Input['AlertingFiltersArgs']]:
+    def filters(self) -> pulumi.Input[Optional['AlertingFiltersArgs']]:
         """
         The list of event filters.  For all filters that are *negated* inside of these event filters, that is all `Predefined` as well as `Custom` (Title and/or Description) ones the AND logic applies. For all *non-negated* ones the OR logic applies. Between these two groups, negated and non-negated, the AND logic applies.  If you specify both severity rule and event filter, the AND logic applies
         """
         return pulumi.get(self, "filters")
 
     @filters.setter
-    def filters(self, value: Optional[pulumi.Input['AlertingFiltersArgs']]):
+    def filters(self, value: pulumi.Input[Optional['AlertingFiltersArgs']]):
         pulumi.set(self, "filters", value)
 
     @_builtins.property
     @pulumi.getter(name="legacyId")
-    def legacy_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def legacy_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The ID of this setting when referred to by the Config REST API V1
         """
         return pulumi.get(self, "legacy_id")
 
     @legacy_id.setter
-    def legacy_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def legacy_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "legacy_id", value)
 
     @_builtins.property
     @pulumi.getter(name="managementZone")
-    def management_zone(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def management_zone(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Entities which are part of the configured management zones will match this alerting profile. It is recommended to use manual tags instead.
         """
         return pulumi.get(self, "management_zone")
 
     @management_zone.setter
-    def management_zone(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def management_zone(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "management_zone", value)
 
     @_builtins.property
     @pulumi.getter
-    def name(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def name(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The name of the alerting profile, displayed in the UI
         """
         return pulumi.get(self, "name")
 
     @name.setter
-    def name(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def name(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "name", value)
 
     @_builtins.property
     @pulumi.getter
-    def rules(self) -> Optional[pulumi.Input['AlertingRulesArgs']]:
+    def rules(self) -> pulumi.Input[Optional['AlertingRulesArgs']]:
         """
         A list of rules for management zone usage.  Each rule is evaluated independently of all other rules
         """
         return pulumi.get(self, "rules")
 
     @rules.setter
-    def rules(self, value: Optional[pulumi.Input['AlertingRulesArgs']]):
+    def rules(self, value: pulumi.Input[Optional['AlertingRulesArgs']]):
         pulumi.set(self, "rules", value)
 
 
 @pulumi.input_type
 class _AlertingState:
     def __init__(__self__, *,
-                 filters: Optional[pulumi.Input['AlertingFiltersArgs']] = None,
-                 legacy_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 management_zone: Optional[pulumi.Input[_builtins.str]] = None,
-                 name: Optional[pulumi.Input[_builtins.str]] = None,
-                 rules: Optional[pulumi.Input['AlertingRulesArgs']] = None):
+                 filters: pulumi.Input[Optional['AlertingFiltersArgs']] = None,
+                 legacy_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 management_zone: pulumi.Input[Optional[_builtins.str]] = None,
+                 name: pulumi.Input[Optional[_builtins.str]] = None,
+                 rules: pulumi.Input[Optional['AlertingRulesArgs']] = None):
         """
         Input properties used for looking up and filtering Alerting resources.
 
@@ -137,62 +137,62 @@ class _AlertingState:
 
     @_builtins.property
     @pulumi.getter
-    def filters(self) -> Optional[pulumi.Input['AlertingFiltersArgs']]:
+    def filters(self) -> pulumi.Input[Optional['AlertingFiltersArgs']]:
         """
         The list of event filters.  For all filters that are *negated* inside of these event filters, that is all `Predefined` as well as `Custom` (Title and/or Description) ones the AND logic applies. For all *non-negated* ones the OR logic applies. Between these two groups, negated and non-negated, the AND logic applies.  If you specify both severity rule and event filter, the AND logic applies
         """
         return pulumi.get(self, "filters")
 
     @filters.setter
-    def filters(self, value: Optional[pulumi.Input['AlertingFiltersArgs']]):
+    def filters(self, value: pulumi.Input[Optional['AlertingFiltersArgs']]):
         pulumi.set(self, "filters", value)
 
     @_builtins.property
     @pulumi.getter(name="legacyId")
-    def legacy_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def legacy_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The ID of this setting when referred to by the Config REST API V1
         """
         return pulumi.get(self, "legacy_id")
 
     @legacy_id.setter
-    def legacy_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def legacy_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "legacy_id", value)
 
     @_builtins.property
     @pulumi.getter(name="managementZone")
-    def management_zone(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def management_zone(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Entities which are part of the configured management zones will match this alerting profile. It is recommended to use manual tags instead.
         """
         return pulumi.get(self, "management_zone")
 
     @management_zone.setter
-    def management_zone(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def management_zone(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "management_zone", value)
 
     @_builtins.property
     @pulumi.getter
-    def name(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def name(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The name of the alerting profile, displayed in the UI
         """
         return pulumi.get(self, "name")
 
     @name.setter
-    def name(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def name(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "name", value)
 
     @_builtins.property
     @pulumi.getter
-    def rules(self) -> Optional[pulumi.Input['AlertingRulesArgs']]:
+    def rules(self) -> pulumi.Input[Optional['AlertingRulesArgs']]:
         """
         A list of rules for management zone usage.  Each rule is evaluated independently of all other rules
         """
         return pulumi.get(self, "rules")
 
     @rules.setter
-    def rules(self, value: Optional[pulumi.Input['AlertingRulesArgs']]):
+    def rules(self, value: pulumi.Input[Optional['AlertingRulesArgs']]):
         pulumi.set(self, "rules", value)
 
 
@@ -202,11 +202,11 @@ class Alerting(pulumi.CustomResource):
     def __init__(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 filters: Optional[pulumi.Input[Union['AlertingFiltersArgs', 'AlertingFiltersArgsDict']]] = None,
-                 legacy_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 management_zone: Optional[pulumi.Input[_builtins.str]] = None,
-                 name: Optional[pulumi.Input[_builtins.str]] = None,
-                 rules: Optional[pulumi.Input[Union['AlertingRulesArgs', 'AlertingRulesArgsDict']]] = None,
+                 filters: pulumi.Input[Optional[Union['AlertingFiltersArgs', 'AlertingFiltersArgsDict']]] = None,
+                 legacy_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 management_zone: pulumi.Input[Optional[_builtins.str]] = None,
+                 name: pulumi.Input[Optional[_builtins.str]] = None,
+                 rules: pulumi.Input[Optional[Union['AlertingRulesArgs', 'AlertingRulesArgsDict']]] = None,
                  __props__=None):
         """
         > This resource requires the API token scopes **Read settings** (`settings.read`) and **Write settings** (`settings.write`)
@@ -269,11 +269,11 @@ class Alerting(pulumi.CustomResource):
     def _internal_init(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 filters: Optional[pulumi.Input[Union['AlertingFiltersArgs', 'AlertingFiltersArgsDict']]] = None,
-                 legacy_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 management_zone: Optional[pulumi.Input[_builtins.str]] = None,
-                 name: Optional[pulumi.Input[_builtins.str]] = None,
-                 rules: Optional[pulumi.Input[Union['AlertingRulesArgs', 'AlertingRulesArgsDict']]] = None,
+                 filters: pulumi.Input[Optional[Union['AlertingFiltersArgs', 'AlertingFiltersArgsDict']]] = None,
+                 legacy_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 management_zone: pulumi.Input[Optional[_builtins.str]] = None,
+                 name: pulumi.Input[Optional[_builtins.str]] = None,
+                 rules: pulumi.Input[Optional[Union['AlertingRulesArgs', 'AlertingRulesArgsDict']]] = None,
                  __props__=None):
         opts = pulumi.ResourceOptions.merge(_utilities.get_resource_opts_defaults(), opts)
         if not isinstance(opts, pulumi.ResourceOptions):
@@ -298,11 +298,11 @@ class Alerting(pulumi.CustomResource):
     def get(resource_name: str,
             id: pulumi.Input[str],
             opts: Optional[pulumi.ResourceOptions] = None,
-            filters: Optional[pulumi.Input[Union['AlertingFiltersArgs', 'AlertingFiltersArgsDict']]] = None,
-            legacy_id: Optional[pulumi.Input[_builtins.str]] = None,
-            management_zone: Optional[pulumi.Input[_builtins.str]] = None,
-            name: Optional[pulumi.Input[_builtins.str]] = None,
-            rules: Optional[pulumi.Input[Union['AlertingRulesArgs', 'AlertingRulesArgsDict']]] = None) -> 'Alerting':
+            filters: pulumi.Input[Optional[Union['AlertingFiltersArgs', 'AlertingFiltersArgsDict']]] = None,
+            legacy_id: pulumi.Input[Optional[_builtins.str]] = None,
+            management_zone: pulumi.Input[Optional[_builtins.str]] = None,
+            name: pulumi.Input[Optional[_builtins.str]] = None,
+            rules: pulumi.Input[Optional[Union['AlertingRulesArgs', 'AlertingRulesArgsDict']]] = None) -> 'Alerting':
         """
         Get an existing Alerting resource's state with the given name, id, and optional extra
         properties used to qualify the lookup.

@@ -129,27 +129,27 @@ export interface K8sNamespaceAnomaliesState {
     /**
      * Alerts if almost no CPU-limit quota left in namespace
      */
-    cpuLimitsQuotaSaturation?: pulumi.Input<inputs.K8sNamespaceAnomaliesCpuLimitsQuotaSaturation>;
+    cpuLimitsQuotaSaturation?: pulumi.Input<inputs.K8sNamespaceAnomaliesCpuLimitsQuotaSaturation | undefined>;
     /**
      * Alerts if almost no CPU-request quota left in namespace
      */
-    cpuRequestsQuotaSaturation?: pulumi.Input<inputs.K8sNamespaceAnomaliesCpuRequestsQuotaSaturation>;
+    cpuRequestsQuotaSaturation?: pulumi.Input<inputs.K8sNamespaceAnomaliesCpuRequestsQuotaSaturation | undefined>;
     /**
      * Alerts if almost no memory-limit quota left in namespace
      */
-    memoryLimitsQuotaSaturation?: pulumi.Input<inputs.K8sNamespaceAnomaliesMemoryLimitsQuotaSaturation>;
+    memoryLimitsQuotaSaturation?: pulumi.Input<inputs.K8sNamespaceAnomaliesMemoryLimitsQuotaSaturation | undefined>;
     /**
      * Alerts if almost no memory-request quota left in namespace
      */
-    memoryRequestsQuotaSaturation?: pulumi.Input<inputs.K8sNamespaceAnomaliesMemoryRequestsQuotaSaturation>;
+    memoryRequestsQuotaSaturation?: pulumi.Input<inputs.K8sNamespaceAnomaliesMemoryRequestsQuotaSaturation | undefined>;
     /**
      * Alerts if almost no pod quota left in namespace
      */
-    podsQuotaSaturation?: pulumi.Input<inputs.K8sNamespaceAnomaliesPodsQuotaSaturation>;
+    podsQuotaSaturation?: pulumi.Input<inputs.K8sNamespaceAnomaliesPodsQuotaSaturation | undefined>;
     /**
      * The scope of this setting (CLOUD*APPLICATION*NAMESPACE, KUBERNETES_CLUSTER). Omit this property if you want to cover the whole environment.
      */
-    scope?: pulumi.Input<string>;
+    scope?: pulumi.Input<string | undefined>;
 }
 
 /**
@@ -179,5 +179,5 @@ export interface K8sNamespaceAnomaliesArgs {
     /**
      * The scope of this setting (CLOUD*APPLICATION*NAMESPACE, KUBERNETES_CLUSTER). Omit this property if you want to cover the whole environment.
      */
-    scope?: pulumi.Input<string>;
+    scope?: pulumi.Input<string | undefined>;
 }

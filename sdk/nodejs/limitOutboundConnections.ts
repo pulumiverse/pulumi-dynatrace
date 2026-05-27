@@ -87,7 +87,7 @@ export interface LimitOutboundConnectionsState {
     /**
      * no documentation available
      */
-    allowedOutboundConnections?: pulumi.Input<inputs.LimitOutboundConnectionsAllowedOutboundConnections>;
+    allowedOutboundConnections?: pulumi.Input<inputs.LimitOutboundConnectionsAllowedOutboundConnections | undefined>;
 }
 
 /**

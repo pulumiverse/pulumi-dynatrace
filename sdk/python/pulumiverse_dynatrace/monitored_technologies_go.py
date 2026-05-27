@@ -20,8 +20,8 @@ __all__ = ['MonitoredTechnologiesGoArgs', 'MonitoredTechnologiesGo']
 class MonitoredTechnologiesGoArgs:
     def __init__(__self__, *,
                  enabled: pulumi.Input[_builtins.bool],
-                 enabled_go_static_monitoring: Optional[pulumi.Input[_builtins.bool]] = None,
-                 host_id: Optional[pulumi.Input[_builtins.str]] = None):
+                 enabled_go_static_monitoring: pulumi.Input[Optional[_builtins.bool]] = None,
+                 host_id: pulumi.Input[Optional[_builtins.str]] = None):
         """
         The set of arguments for constructing a MonitoredTechnologiesGo resource.
 
@@ -49,35 +49,35 @@ class MonitoredTechnologiesGoArgs:
 
     @_builtins.property
     @pulumi.getter(name="enabledGoStaticMonitoring")
-    def enabled_go_static_monitoring(self) -> Optional[pulumi.Input[_builtins.bool]]:
+    def enabled_go_static_monitoring(self) -> pulumi.Input[Optional[_builtins.bool]]:
         """
         Learn more about the [known limitations for Go static monitoring](https://www.dynatrace.com/support/help/technology-support/application-software/go/support/go-known-limitations#limitations)
         """
         return pulumi.get(self, "enabled_go_static_monitoring")
 
     @enabled_go_static_monitoring.setter
-    def enabled_go_static_monitoring(self, value: Optional[pulumi.Input[_builtins.bool]]):
+    def enabled_go_static_monitoring(self, value: pulumi.Input[Optional[_builtins.bool]]):
         pulumi.set(self, "enabled_go_static_monitoring", value)
 
     @_builtins.property
     @pulumi.getter(name="hostId")
-    def host_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def host_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The scope of this settings. If the settings should cover the whole environment, just don't specify any scope.
         """
         return pulumi.get(self, "host_id")
 
     @host_id.setter
-    def host_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def host_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "host_id", value)
 
 
 @pulumi.input_type
 class _MonitoredTechnologiesGoState:
     def __init__(__self__, *,
-                 enabled: Optional[pulumi.Input[_builtins.bool]] = None,
-                 enabled_go_static_monitoring: Optional[pulumi.Input[_builtins.bool]] = None,
-                 host_id: Optional[pulumi.Input[_builtins.str]] = None):
+                 enabled: pulumi.Input[Optional[_builtins.bool]] = None,
+                 enabled_go_static_monitoring: pulumi.Input[Optional[_builtins.bool]] = None,
+                 host_id: pulumi.Input[Optional[_builtins.str]] = None):
         """
         Input properties used for looking up and filtering MonitoredTechnologiesGo resources.
 
@@ -94,38 +94,38 @@ class _MonitoredTechnologiesGoState:
 
     @_builtins.property
     @pulumi.getter
-    def enabled(self) -> Optional[pulumi.Input[_builtins.bool]]:
+    def enabled(self) -> pulumi.Input[Optional[_builtins.bool]]:
         """
         This setting is enabled (`true`) or disabled (`false`)
         """
         return pulumi.get(self, "enabled")
 
     @enabled.setter
-    def enabled(self, value: Optional[pulumi.Input[_builtins.bool]]):
+    def enabled(self, value: pulumi.Input[Optional[_builtins.bool]]):
         pulumi.set(self, "enabled", value)
 
     @_builtins.property
     @pulumi.getter(name="enabledGoStaticMonitoring")
-    def enabled_go_static_monitoring(self) -> Optional[pulumi.Input[_builtins.bool]]:
+    def enabled_go_static_monitoring(self) -> pulumi.Input[Optional[_builtins.bool]]:
         """
         Learn more about the [known limitations for Go static monitoring](https://www.dynatrace.com/support/help/technology-support/application-software/go/support/go-known-limitations#limitations)
         """
         return pulumi.get(self, "enabled_go_static_monitoring")
 
     @enabled_go_static_monitoring.setter
-    def enabled_go_static_monitoring(self, value: Optional[pulumi.Input[_builtins.bool]]):
+    def enabled_go_static_monitoring(self, value: pulumi.Input[Optional[_builtins.bool]]):
         pulumi.set(self, "enabled_go_static_monitoring", value)
 
     @_builtins.property
     @pulumi.getter(name="hostId")
-    def host_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def host_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The scope of this settings. If the settings should cover the whole environment, just don't specify any scope.
         """
         return pulumi.get(self, "host_id")
 
     @host_id.setter
-    def host_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def host_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "host_id", value)
 
 
@@ -135,9 +135,9 @@ class MonitoredTechnologiesGo(pulumi.CustomResource):
     def __init__(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 enabled: Optional[pulumi.Input[_builtins.bool]] = None,
-                 enabled_go_static_monitoring: Optional[pulumi.Input[_builtins.bool]] = None,
-                 host_id: Optional[pulumi.Input[_builtins.str]] = None,
+                 enabled: pulumi.Input[Optional[_builtins.bool]] = None,
+                 enabled_go_static_monitoring: pulumi.Input[Optional[_builtins.bool]] = None,
+                 host_id: pulumi.Input[Optional[_builtins.str]] = None,
                  __props__=None):
         """
         > This resource requires the API token scopes **Read settings** (`settings.read`) and **Write settings** (`settings.write`)
@@ -198,9 +198,9 @@ class MonitoredTechnologiesGo(pulumi.CustomResource):
     def _internal_init(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 enabled: Optional[pulumi.Input[_builtins.bool]] = None,
-                 enabled_go_static_monitoring: Optional[pulumi.Input[_builtins.bool]] = None,
-                 host_id: Optional[pulumi.Input[_builtins.str]] = None,
+                 enabled: pulumi.Input[Optional[_builtins.bool]] = None,
+                 enabled_go_static_monitoring: pulumi.Input[Optional[_builtins.bool]] = None,
+                 host_id: pulumi.Input[Optional[_builtins.str]] = None,
                  __props__=None):
         opts = pulumi.ResourceOptions.merge(_utilities.get_resource_opts_defaults(), opts)
         if not isinstance(opts, pulumi.ResourceOptions):
@@ -225,9 +225,9 @@ class MonitoredTechnologiesGo(pulumi.CustomResource):
     def get(resource_name: str,
             id: pulumi.Input[str],
             opts: Optional[pulumi.ResourceOptions] = None,
-            enabled: Optional[pulumi.Input[_builtins.bool]] = None,
-            enabled_go_static_monitoring: Optional[pulumi.Input[_builtins.bool]] = None,
-            host_id: Optional[pulumi.Input[_builtins.str]] = None) -> 'MonitoredTechnologiesGo':
+            enabled: pulumi.Input[Optional[_builtins.bool]] = None,
+            enabled_go_static_monitoring: pulumi.Input[Optional[_builtins.bool]] = None,
+            host_id: pulumi.Input[Optional[_builtins.str]] = None) -> 'MonitoredTechnologiesGo':
         """
         Get an existing MonitoredTechnologiesGo resource's state with the given name, id, and optional extra
         properties used to qualify the lookup.

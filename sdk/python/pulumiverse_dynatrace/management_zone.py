@@ -21,12 +21,12 @@ __all__ = ['ManagementZoneArgs', 'ManagementZone']
 @pulumi.input_type
 class ManagementZoneArgs:
     def __init__(__self__, *,
-                 description: Optional[pulumi.Input[_builtins.str]] = None,
-                 dimensional_rules: Optional[pulumi.Input[Sequence[pulumi.Input['ManagementZoneDimensionalRuleArgs']]]] = None,
-                 entity_selector_based_rules: Optional[pulumi.Input[Sequence[pulumi.Input['ManagementZoneEntitySelectorBasedRuleArgs']]]] = None,
-                 name: Optional[pulumi.Input[_builtins.str]] = None,
-                 rules: Optional[pulumi.Input[Sequence[pulumi.Input['ManagementZoneRuleArgs']]]] = None,
-                 unknowns: Optional[pulumi.Input[_builtins.str]] = None):
+                 description: pulumi.Input[Optional[_builtins.str]] = None,
+                 dimensional_rules: pulumi.Input[Optional[Sequence[pulumi.Input['ManagementZoneDimensionalRuleArgs']]]] = None,
+                 entity_selector_based_rules: pulumi.Input[Optional[Sequence[pulumi.Input['ManagementZoneEntitySelectorBasedRuleArgs']]]] = None,
+                 name: pulumi.Input[Optional[_builtins.str]] = None,
+                 rules: pulumi.Input[Optional[Sequence[pulumi.Input['ManagementZoneRuleArgs']]]] = None,
+                 unknowns: pulumi.Input[Optional[_builtins.str]] = None):
         """
         The set of arguments for constructing a ManagementZone resource.
 
@@ -52,86 +52,86 @@ class ManagementZoneArgs:
 
     @_builtins.property
     @pulumi.getter
-    def description(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def description(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The description of the management zone
         """
         return pulumi.get(self, "description")
 
     @description.setter
-    def description(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def description(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "description", value)
 
     @_builtins.property
     @pulumi.getter(name="dimensionalRules")
-    def dimensional_rules(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['ManagementZoneDimensionalRuleArgs']]]]:
+    def dimensional_rules(self) -> pulumi.Input[Optional[Sequence[pulumi.Input['ManagementZoneDimensionalRuleArgs']]]]:
         """
         A list of dimensional data rules for management zone usage. If several rules are specified, the `or` logic applies
         """
         return pulumi.get(self, "dimensional_rules")
 
     @dimensional_rules.setter
-    def dimensional_rules(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['ManagementZoneDimensionalRuleArgs']]]]):
+    def dimensional_rules(self, value: pulumi.Input[Optional[Sequence[pulumi.Input['ManagementZoneDimensionalRuleArgs']]]]):
         pulumi.set(self, "dimensional_rules", value)
 
     @_builtins.property
     @pulumi.getter(name="entitySelectorBasedRules")
-    def entity_selector_based_rules(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['ManagementZoneEntitySelectorBasedRuleArgs']]]]:
+    def entity_selector_based_rules(self) -> pulumi.Input[Optional[Sequence[pulumi.Input['ManagementZoneEntitySelectorBasedRuleArgs']]]]:
         """
         A list of entity-selector based rules for management zone usage. If several rules are specified, the `or` logic applies
         """
         return pulumi.get(self, "entity_selector_based_rules")
 
     @entity_selector_based_rules.setter
-    def entity_selector_based_rules(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['ManagementZoneEntitySelectorBasedRuleArgs']]]]):
+    def entity_selector_based_rules(self, value: pulumi.Input[Optional[Sequence[pulumi.Input['ManagementZoneEntitySelectorBasedRuleArgs']]]]):
         pulumi.set(self, "entity_selector_based_rules", value)
 
     @_builtins.property
     @pulumi.getter
-    def name(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def name(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The name of the management zone
         """
         return pulumi.get(self, "name")
 
     @name.setter
-    def name(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def name(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "name", value)
 
     @_builtins.property
     @pulumi.getter
-    def rules(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['ManagementZoneRuleArgs']]]]:
+    def rules(self) -> pulumi.Input[Optional[Sequence[pulumi.Input['ManagementZoneRuleArgs']]]]:
         """
         A list of rules for management zone usage.  Each rule is evaluated independently of all other rules
         """
         return pulumi.get(self, "rules")
 
     @rules.setter
-    def rules(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['ManagementZoneRuleArgs']]]]):
+    def rules(self, value: pulumi.Input[Optional[Sequence[pulumi.Input['ManagementZoneRuleArgs']]]]):
         pulumi.set(self, "rules", value)
 
     @_builtins.property
     @pulumi.getter
-    def unknowns(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def unknowns(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         allows for configuring properties that are not explicitly supported by the current version of this provider
         """
         return pulumi.get(self, "unknowns")
 
     @unknowns.setter
-    def unknowns(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def unknowns(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "unknowns", value)
 
 
 @pulumi.input_type
 class _ManagementZoneState:
     def __init__(__self__, *,
-                 description: Optional[pulumi.Input[_builtins.str]] = None,
-                 dimensional_rules: Optional[pulumi.Input[Sequence[pulumi.Input['ManagementZoneDimensionalRuleArgs']]]] = None,
-                 entity_selector_based_rules: Optional[pulumi.Input[Sequence[pulumi.Input['ManagementZoneEntitySelectorBasedRuleArgs']]]] = None,
-                 name: Optional[pulumi.Input[_builtins.str]] = None,
-                 rules: Optional[pulumi.Input[Sequence[pulumi.Input['ManagementZoneRuleArgs']]]] = None,
-                 unknowns: Optional[pulumi.Input[_builtins.str]] = None):
+                 description: pulumi.Input[Optional[_builtins.str]] = None,
+                 dimensional_rules: pulumi.Input[Optional[Sequence[pulumi.Input['ManagementZoneDimensionalRuleArgs']]]] = None,
+                 entity_selector_based_rules: pulumi.Input[Optional[Sequence[pulumi.Input['ManagementZoneEntitySelectorBasedRuleArgs']]]] = None,
+                 name: pulumi.Input[Optional[_builtins.str]] = None,
+                 rules: pulumi.Input[Optional[Sequence[pulumi.Input['ManagementZoneRuleArgs']]]] = None,
+                 unknowns: pulumi.Input[Optional[_builtins.str]] = None):
         """
         Input properties used for looking up and filtering ManagementZone resources.
 
@@ -157,74 +157,74 @@ class _ManagementZoneState:
 
     @_builtins.property
     @pulumi.getter
-    def description(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def description(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The description of the management zone
         """
         return pulumi.get(self, "description")
 
     @description.setter
-    def description(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def description(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "description", value)
 
     @_builtins.property
     @pulumi.getter(name="dimensionalRules")
-    def dimensional_rules(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['ManagementZoneDimensionalRuleArgs']]]]:
+    def dimensional_rules(self) -> pulumi.Input[Optional[Sequence[pulumi.Input['ManagementZoneDimensionalRuleArgs']]]]:
         """
         A list of dimensional data rules for management zone usage. If several rules are specified, the `or` logic applies
         """
         return pulumi.get(self, "dimensional_rules")
 
     @dimensional_rules.setter
-    def dimensional_rules(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['ManagementZoneDimensionalRuleArgs']]]]):
+    def dimensional_rules(self, value: pulumi.Input[Optional[Sequence[pulumi.Input['ManagementZoneDimensionalRuleArgs']]]]):
         pulumi.set(self, "dimensional_rules", value)
 
     @_builtins.property
     @pulumi.getter(name="entitySelectorBasedRules")
-    def entity_selector_based_rules(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['ManagementZoneEntitySelectorBasedRuleArgs']]]]:
+    def entity_selector_based_rules(self) -> pulumi.Input[Optional[Sequence[pulumi.Input['ManagementZoneEntitySelectorBasedRuleArgs']]]]:
         """
         A list of entity-selector based rules for management zone usage. If several rules are specified, the `or` logic applies
         """
         return pulumi.get(self, "entity_selector_based_rules")
 
     @entity_selector_based_rules.setter
-    def entity_selector_based_rules(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['ManagementZoneEntitySelectorBasedRuleArgs']]]]):
+    def entity_selector_based_rules(self, value: pulumi.Input[Optional[Sequence[pulumi.Input['ManagementZoneEntitySelectorBasedRuleArgs']]]]):
         pulumi.set(self, "entity_selector_based_rules", value)
 
     @_builtins.property
     @pulumi.getter
-    def name(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def name(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The name of the management zone
         """
         return pulumi.get(self, "name")
 
     @name.setter
-    def name(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def name(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "name", value)
 
     @_builtins.property
     @pulumi.getter
-    def rules(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['ManagementZoneRuleArgs']]]]:
+    def rules(self) -> pulumi.Input[Optional[Sequence[pulumi.Input['ManagementZoneRuleArgs']]]]:
         """
         A list of rules for management zone usage.  Each rule is evaluated independently of all other rules
         """
         return pulumi.get(self, "rules")
 
     @rules.setter
-    def rules(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['ManagementZoneRuleArgs']]]]):
+    def rules(self, value: pulumi.Input[Optional[Sequence[pulumi.Input['ManagementZoneRuleArgs']]]]):
         pulumi.set(self, "rules", value)
 
     @_builtins.property
     @pulumi.getter
-    def unknowns(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def unknowns(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         allows for configuring properties that are not explicitly supported by the current version of this provider
         """
         return pulumi.get(self, "unknowns")
 
     @unknowns.setter
-    def unknowns(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def unknowns(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "unknowns", value)
 
 
@@ -234,12 +234,12 @@ class ManagementZone(pulumi.CustomResource):
     def __init__(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 description: Optional[pulumi.Input[_builtins.str]] = None,
-                 dimensional_rules: Optional[pulumi.Input[Sequence[pulumi.Input[Union['ManagementZoneDimensionalRuleArgs', 'ManagementZoneDimensionalRuleArgsDict']]]]] = None,
-                 entity_selector_based_rules: Optional[pulumi.Input[Sequence[pulumi.Input[Union['ManagementZoneEntitySelectorBasedRuleArgs', 'ManagementZoneEntitySelectorBasedRuleArgsDict']]]]] = None,
-                 name: Optional[pulumi.Input[_builtins.str]] = None,
-                 rules: Optional[pulumi.Input[Sequence[pulumi.Input[Union['ManagementZoneRuleArgs', 'ManagementZoneRuleArgsDict']]]]] = None,
-                 unknowns: Optional[pulumi.Input[_builtins.str]] = None,
+                 description: pulumi.Input[Optional[_builtins.str]] = None,
+                 dimensional_rules: pulumi.Input[Optional[Sequence[pulumi.Input[Union['ManagementZoneDimensionalRuleArgs', 'ManagementZoneDimensionalRuleArgsDict']]]]] = None,
+                 entity_selector_based_rules: pulumi.Input[Optional[Sequence[pulumi.Input[Union['ManagementZoneEntitySelectorBasedRuleArgs', 'ManagementZoneEntitySelectorBasedRuleArgsDict']]]]] = None,
+                 name: pulumi.Input[Optional[_builtins.str]] = None,
+                 rules: pulumi.Input[Optional[Sequence[pulumi.Input[Union['ManagementZoneRuleArgs', 'ManagementZoneRuleArgsDict']]]]] = None,
+                 unknowns: pulumi.Input[Optional[_builtins.str]] = None,
                  __props__=None):
         """
         !> This resource API endpoint has been deprecated, please use ManagementZoneV2 instead.
@@ -307,12 +307,12 @@ class ManagementZone(pulumi.CustomResource):
     def _internal_init(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 description: Optional[pulumi.Input[_builtins.str]] = None,
-                 dimensional_rules: Optional[pulumi.Input[Sequence[pulumi.Input[Union['ManagementZoneDimensionalRuleArgs', 'ManagementZoneDimensionalRuleArgsDict']]]]] = None,
-                 entity_selector_based_rules: Optional[pulumi.Input[Sequence[pulumi.Input[Union['ManagementZoneEntitySelectorBasedRuleArgs', 'ManagementZoneEntitySelectorBasedRuleArgsDict']]]]] = None,
-                 name: Optional[pulumi.Input[_builtins.str]] = None,
-                 rules: Optional[pulumi.Input[Sequence[pulumi.Input[Union['ManagementZoneRuleArgs', 'ManagementZoneRuleArgsDict']]]]] = None,
-                 unknowns: Optional[pulumi.Input[_builtins.str]] = None,
+                 description: pulumi.Input[Optional[_builtins.str]] = None,
+                 dimensional_rules: pulumi.Input[Optional[Sequence[pulumi.Input[Union['ManagementZoneDimensionalRuleArgs', 'ManagementZoneDimensionalRuleArgsDict']]]]] = None,
+                 entity_selector_based_rules: pulumi.Input[Optional[Sequence[pulumi.Input[Union['ManagementZoneEntitySelectorBasedRuleArgs', 'ManagementZoneEntitySelectorBasedRuleArgsDict']]]]] = None,
+                 name: pulumi.Input[Optional[_builtins.str]] = None,
+                 rules: pulumi.Input[Optional[Sequence[pulumi.Input[Union['ManagementZoneRuleArgs', 'ManagementZoneRuleArgsDict']]]]] = None,
+                 unknowns: pulumi.Input[Optional[_builtins.str]] = None,
                  __props__=None):
         opts = pulumi.ResourceOptions.merge(_utilities.get_resource_opts_defaults(), opts)
         if not isinstance(opts, pulumi.ResourceOptions):
@@ -338,12 +338,12 @@ class ManagementZone(pulumi.CustomResource):
     def get(resource_name: str,
             id: pulumi.Input[str],
             opts: Optional[pulumi.ResourceOptions] = None,
-            description: Optional[pulumi.Input[_builtins.str]] = None,
-            dimensional_rules: Optional[pulumi.Input[Sequence[pulumi.Input[Union['ManagementZoneDimensionalRuleArgs', 'ManagementZoneDimensionalRuleArgsDict']]]]] = None,
-            entity_selector_based_rules: Optional[pulumi.Input[Sequence[pulumi.Input[Union['ManagementZoneEntitySelectorBasedRuleArgs', 'ManagementZoneEntitySelectorBasedRuleArgsDict']]]]] = None,
-            name: Optional[pulumi.Input[_builtins.str]] = None,
-            rules: Optional[pulumi.Input[Sequence[pulumi.Input[Union['ManagementZoneRuleArgs', 'ManagementZoneRuleArgsDict']]]]] = None,
-            unknowns: Optional[pulumi.Input[_builtins.str]] = None) -> 'ManagementZone':
+            description: pulumi.Input[Optional[_builtins.str]] = None,
+            dimensional_rules: pulumi.Input[Optional[Sequence[pulumi.Input[Union['ManagementZoneDimensionalRuleArgs', 'ManagementZoneDimensionalRuleArgsDict']]]]] = None,
+            entity_selector_based_rules: pulumi.Input[Optional[Sequence[pulumi.Input[Union['ManagementZoneEntitySelectorBasedRuleArgs', 'ManagementZoneEntitySelectorBasedRuleArgsDict']]]]] = None,
+            name: pulumi.Input[Optional[_builtins.str]] = None,
+            rules: pulumi.Input[Optional[Sequence[pulumi.Input[Union['ManagementZoneRuleArgs', 'ManagementZoneRuleArgsDict']]]]] = None,
+            unknowns: pulumi.Input[Optional[_builtins.str]] = None) -> 'ManagementZone':
         """
         Get an existing ManagementZone resource's state with the given name, id, and optional extra
         properties used to qualify the lookup.

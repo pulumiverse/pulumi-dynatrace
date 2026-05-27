@@ -76,7 +76,7 @@ export interface RequestNamingsState {
     /**
      * The IDs of the request namings in the order they should be taken into consideration
      */
-    ids?: pulumi.Input<pulumi.Input<string>[]>;
+    ids?: pulumi.Input<pulumi.Input<string>[] | undefined>;
 }
 
 /**
@@ -86,5 +86,5 @@ export interface RequestNamingsArgs {
     /**
      * The IDs of the request namings in the order they should be taken into consideration
      */
-    ids?: pulumi.Input<pulumi.Input<string>[]>;
+    ids?: pulumi.Input<pulumi.Input<string>[] | undefined>;
 }

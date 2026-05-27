@@ -23,10 +23,10 @@ class RequestNamingArgs:
     def __init__(__self__, *,
                  conditions: pulumi.Input['RequestNamingConditionsArgs'],
                  naming_pattern: pulumi.Input[_builtins.str],
-                 enabled: Optional[pulumi.Input[_builtins.bool]] = None,
-                 management_zones: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-                 placeholders: Optional[pulumi.Input['RequestNamingPlaceholdersArgs']] = None,
-                 unknowns: Optional[pulumi.Input[_builtins.str]] = None):
+                 enabled: pulumi.Input[Optional[_builtins.bool]] = None,
+                 management_zones: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 placeholders: pulumi.Input[Optional['RequestNamingPlaceholdersArgs']] = None,
+                 unknowns: pulumi.Input[Optional[_builtins.str]] = None):
         """
         The set of arguments for constructing a RequestNaming resource.
 
@@ -80,31 +80,31 @@ class RequestNamingArgs:
 
     @_builtins.property
     @pulumi.getter
-    def enabled(self) -> Optional[pulumi.Input[_builtins.bool]]:
+    def enabled(self) -> pulumi.Input[Optional[_builtins.bool]]:
         """
         The rule is enabled (`true`) or disabled (`false`)
         """
         return pulumi.get(self, "enabled")
 
     @enabled.setter
-    def enabled(self, value: Optional[pulumi.Input[_builtins.bool]]):
+    def enabled(self, value: pulumi.Input[Optional[_builtins.bool]]):
         pulumi.set(self, "enabled", value)
 
     @_builtins.property
     @pulumi.getter(name="managementZones")
-    def management_zones(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]:
+    def management_zones(self) -> pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]:
         """
         Specifies the management zones for which this rule should be applied
         """
         return pulumi.get(self, "management_zones")
 
     @management_zones.setter
-    def management_zones(self, value: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]):
+    def management_zones(self, value: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "management_zones", value)
 
     @_builtins.property
     @pulumi.getter
-    def placeholders(self) -> Optional[pulumi.Input['RequestNamingPlaceholdersArgs']]:
+    def placeholders(self) -> pulumi.Input[Optional['RequestNamingPlaceholdersArgs']]:
         """
         The list of custom placeholders to be used in the naming pattern. 
 
@@ -113,31 +113,31 @@ class RequestNamingArgs:
         return pulumi.get(self, "placeholders")
 
     @placeholders.setter
-    def placeholders(self, value: Optional[pulumi.Input['RequestNamingPlaceholdersArgs']]):
+    def placeholders(self, value: pulumi.Input[Optional['RequestNamingPlaceholdersArgs']]):
         pulumi.set(self, "placeholders", value)
 
     @_builtins.property
     @pulumi.getter
-    def unknowns(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def unknowns(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         allows for configuring properties that are not explicitly supported by the current version of this provider
         """
         return pulumi.get(self, "unknowns")
 
     @unknowns.setter
-    def unknowns(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def unknowns(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "unknowns", value)
 
 
 @pulumi.input_type
 class _RequestNamingState:
     def __init__(__self__, *,
-                 conditions: Optional[pulumi.Input['RequestNamingConditionsArgs']] = None,
-                 enabled: Optional[pulumi.Input[_builtins.bool]] = None,
-                 management_zones: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-                 naming_pattern: Optional[pulumi.Input[_builtins.str]] = None,
-                 placeholders: Optional[pulumi.Input['RequestNamingPlaceholdersArgs']] = None,
-                 unknowns: Optional[pulumi.Input[_builtins.str]] = None):
+                 conditions: pulumi.Input[Optional['RequestNamingConditionsArgs']] = None,
+                 enabled: pulumi.Input[Optional[_builtins.bool]] = None,
+                 management_zones: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 naming_pattern: pulumi.Input[Optional[_builtins.str]] = None,
+                 placeholders: pulumi.Input[Optional['RequestNamingPlaceholdersArgs']] = None,
+                 unknowns: pulumi.Input[Optional[_builtins.str]] = None):
         """
         Input properties used for looking up and filtering RequestNaming resources.
 
@@ -167,7 +167,7 @@ class _RequestNamingState:
 
     @_builtins.property
     @pulumi.getter
-    def conditions(self) -> Optional[pulumi.Input['RequestNamingConditionsArgs']]:
+    def conditions(self) -> pulumi.Input[Optional['RequestNamingConditionsArgs']]:
         """
         The set of conditions for the request naming rule usage. 
 
@@ -176,48 +176,48 @@ class _RequestNamingState:
         return pulumi.get(self, "conditions")
 
     @conditions.setter
-    def conditions(self, value: Optional[pulumi.Input['RequestNamingConditionsArgs']]):
+    def conditions(self, value: pulumi.Input[Optional['RequestNamingConditionsArgs']]):
         pulumi.set(self, "conditions", value)
 
     @_builtins.property
     @pulumi.getter
-    def enabled(self) -> Optional[pulumi.Input[_builtins.bool]]:
+    def enabled(self) -> pulumi.Input[Optional[_builtins.bool]]:
         """
         The rule is enabled (`true`) or disabled (`false`)
         """
         return pulumi.get(self, "enabled")
 
     @enabled.setter
-    def enabled(self, value: Optional[pulumi.Input[_builtins.bool]]):
+    def enabled(self, value: pulumi.Input[Optional[_builtins.bool]]):
         pulumi.set(self, "enabled", value)
 
     @_builtins.property
     @pulumi.getter(name="managementZones")
-    def management_zones(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]:
+    def management_zones(self) -> pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]:
         """
         Specifies the management zones for which this rule should be applied
         """
         return pulumi.get(self, "management_zones")
 
     @management_zones.setter
-    def management_zones(self, value: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]):
+    def management_zones(self, value: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "management_zones", value)
 
     @_builtins.property
     @pulumi.getter(name="namingPattern")
-    def naming_pattern(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def naming_pattern(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The name to be assigned to matching requests
         """
         return pulumi.get(self, "naming_pattern")
 
     @naming_pattern.setter
-    def naming_pattern(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def naming_pattern(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "naming_pattern", value)
 
     @_builtins.property
     @pulumi.getter
-    def placeholders(self) -> Optional[pulumi.Input['RequestNamingPlaceholdersArgs']]:
+    def placeholders(self) -> pulumi.Input[Optional['RequestNamingPlaceholdersArgs']]:
         """
         The list of custom placeholders to be used in the naming pattern. 
 
@@ -226,19 +226,19 @@ class _RequestNamingState:
         return pulumi.get(self, "placeholders")
 
     @placeholders.setter
-    def placeholders(self, value: Optional[pulumi.Input['RequestNamingPlaceholdersArgs']]):
+    def placeholders(self, value: pulumi.Input[Optional['RequestNamingPlaceholdersArgs']]):
         pulumi.set(self, "placeholders", value)
 
     @_builtins.property
     @pulumi.getter
-    def unknowns(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def unknowns(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         allows for configuring properties that are not explicitly supported by the current version of this provider
         """
         return pulumi.get(self, "unknowns")
 
     @unknowns.setter
-    def unknowns(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def unknowns(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "unknowns", value)
 
 
@@ -248,12 +248,12 @@ class RequestNaming(pulumi.CustomResource):
     def __init__(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 conditions: Optional[pulumi.Input[Union['RequestNamingConditionsArgs', 'RequestNamingConditionsArgsDict']]] = None,
-                 enabled: Optional[pulumi.Input[_builtins.bool]] = None,
-                 management_zones: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-                 naming_pattern: Optional[pulumi.Input[_builtins.str]] = None,
-                 placeholders: Optional[pulumi.Input[Union['RequestNamingPlaceholdersArgs', 'RequestNamingPlaceholdersArgsDict']]] = None,
-                 unknowns: Optional[pulumi.Input[_builtins.str]] = None,
+                 conditions: pulumi.Input[Optional[Union['RequestNamingConditionsArgs', 'RequestNamingConditionsArgsDict']]] = None,
+                 enabled: pulumi.Input[Optional[_builtins.bool]] = None,
+                 management_zones: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 naming_pattern: pulumi.Input[Optional[_builtins.str]] = None,
+                 placeholders: pulumi.Input[Optional[Union['RequestNamingPlaceholdersArgs', 'RequestNamingPlaceholdersArgsDict']]] = None,
+                 unknowns: pulumi.Input[Optional[_builtins.str]] = None,
                  __props__=None):
         """
         > This resource requires the API token scopes **Read configuration** (`ReadConfig`) and **Write configuration** (`WriteConfig`)
@@ -321,12 +321,12 @@ class RequestNaming(pulumi.CustomResource):
     def _internal_init(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 conditions: Optional[pulumi.Input[Union['RequestNamingConditionsArgs', 'RequestNamingConditionsArgsDict']]] = None,
-                 enabled: Optional[pulumi.Input[_builtins.bool]] = None,
-                 management_zones: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-                 naming_pattern: Optional[pulumi.Input[_builtins.str]] = None,
-                 placeholders: Optional[pulumi.Input[Union['RequestNamingPlaceholdersArgs', 'RequestNamingPlaceholdersArgsDict']]] = None,
-                 unknowns: Optional[pulumi.Input[_builtins.str]] = None,
+                 conditions: pulumi.Input[Optional[Union['RequestNamingConditionsArgs', 'RequestNamingConditionsArgsDict']]] = None,
+                 enabled: pulumi.Input[Optional[_builtins.bool]] = None,
+                 management_zones: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 naming_pattern: pulumi.Input[Optional[_builtins.str]] = None,
+                 placeholders: pulumi.Input[Optional[Union['RequestNamingPlaceholdersArgs', 'RequestNamingPlaceholdersArgsDict']]] = None,
+                 unknowns: pulumi.Input[Optional[_builtins.str]] = None,
                  __props__=None):
         opts = pulumi.ResourceOptions.merge(_utilities.get_resource_opts_defaults(), opts)
         if not isinstance(opts, pulumi.ResourceOptions):
@@ -356,12 +356,12 @@ class RequestNaming(pulumi.CustomResource):
     def get(resource_name: str,
             id: pulumi.Input[str],
             opts: Optional[pulumi.ResourceOptions] = None,
-            conditions: Optional[pulumi.Input[Union['RequestNamingConditionsArgs', 'RequestNamingConditionsArgsDict']]] = None,
-            enabled: Optional[pulumi.Input[_builtins.bool]] = None,
-            management_zones: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-            naming_pattern: Optional[pulumi.Input[_builtins.str]] = None,
-            placeholders: Optional[pulumi.Input[Union['RequestNamingPlaceholdersArgs', 'RequestNamingPlaceholdersArgsDict']]] = None,
-            unknowns: Optional[pulumi.Input[_builtins.str]] = None) -> 'RequestNaming':
+            conditions: pulumi.Input[Optional[Union['RequestNamingConditionsArgs', 'RequestNamingConditionsArgsDict']]] = None,
+            enabled: pulumi.Input[Optional[_builtins.bool]] = None,
+            management_zones: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+            naming_pattern: pulumi.Input[Optional[_builtins.str]] = None,
+            placeholders: pulumi.Input[Optional[Union['RequestNamingPlaceholdersArgs', 'RequestNamingPlaceholdersArgsDict']]] = None,
+            unknowns: pulumi.Input[Optional[_builtins.str]] = None) -> 'RequestNaming':
         """
         Get an existing RequestNaming resource's state with the given name, id, and optional extra
         properties used to qualify the lookup.

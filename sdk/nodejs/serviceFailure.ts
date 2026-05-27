@@ -102,15 +102,15 @@ export interface ServiceFailureState {
     /**
      * This setting is enabled (`true`) or disabled (`false`)
      */
-    enabled?: pulumi.Input<boolean>;
+    enabled?: pulumi.Input<boolean | undefined>;
     /**
      * Customize failure detection for specific exceptions and errors
      */
-    exceptionRules?: pulumi.Input<inputs.ServiceFailureExceptionRules>;
+    exceptionRules?: pulumi.Input<inputs.ServiceFailureExceptionRules | undefined>;
     /**
      * The scope of this settings. If the settings should cover the whole environment, just don't specify any scope.
      */
-    serviceId?: pulumi.Input<string>;
+    serviceId?: pulumi.Input<string | undefined>;
 }
 
 /**
@@ -124,7 +124,7 @@ export interface ServiceFailureArgs {
     /**
      * Customize failure detection for specific exceptions and errors
      */
-    exceptionRules?: pulumi.Input<inputs.ServiceFailureExceptionRules>;
+    exceptionRules?: pulumi.Input<inputs.ServiceFailureExceptionRules | undefined>;
     /**
      * The scope of this settings. If the settings should cover the whole environment, just don't specify any scope.
      */

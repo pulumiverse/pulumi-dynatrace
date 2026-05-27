@@ -84,7 +84,7 @@ export interface HubSubscriptionsState {
     /**
      * Subscriptions
      */
-    tokenSubscriptions?: pulumi.Input<inputs.HubSubscriptionsTokenSubscriptions>;
+    tokenSubscriptions?: pulumi.Input<inputs.HubSubscriptionsTokenSubscriptions | undefined>;
 }
 
 /**
@@ -94,5 +94,5 @@ export interface HubSubscriptionsArgs {
     /**
      * Subscriptions
      */
-    tokenSubscriptions?: pulumi.Input<inputs.HubSubscriptionsTokenSubscriptions>;
+    tokenSubscriptions?: pulumi.Input<inputs.HubSubscriptionsTokenSubscriptions | undefined>;
 }

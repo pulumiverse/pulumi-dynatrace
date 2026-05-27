@@ -115,11 +115,11 @@ export interface IamPolicyBoundaryState {
     /**
      * The name of the policy
      */
-    name?: pulumi.Input<string>;
+    name?: pulumi.Input<string | undefined>;
     /**
      * The boundary query
      */
-    query?: pulumi.Input<string>;
+    query?: pulumi.Input<string | undefined>;
 }
 
 /**
@@ -129,7 +129,7 @@ export interface IamPolicyBoundaryArgs {
     /**
      * The name of the policy
      */
-    name?: pulumi.Input<string>;
+    name?: pulumi.Input<string | undefined>;
     /**
      * The boundary query
      */

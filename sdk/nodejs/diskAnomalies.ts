@@ -149,39 +149,39 @@ export interface DiskAnomaliesState {
     /**
      * Narrows the rule usage down to disks, matching the specified criteria
      */
-    diskName?: pulumi.Input<inputs.DiskAnomaliesDiskName>;
+    diskName?: pulumi.Input<inputs.DiskAnomaliesDiskName | undefined>;
     /**
      * Disk event rule enabled/disabled
      */
-    enabled?: pulumi.Input<boolean>;
+    enabled?: pulumi.Input<boolean | undefined>;
     /**
      * Narrows the rule usage down to disks that run on hosts that themselves run on the specified host group
      */
-    hostGroupId?: pulumi.Input<string>;
+    hostGroupId?: pulumi.Input<string | undefined>;
     /**
      * The metric to monitor. Possible values are: `LOW_DISK_SPACE`, `LOW_INODES`, `READ_TIME_EXCEEDING` and `WRITE_TIME_EXCEEDING`
      */
-    metric?: pulumi.Input<string>;
+    metric?: pulumi.Input<string | undefined>;
     /**
      * The name of the disk event rule
      */
-    name?: pulumi.Input<string>;
+    name?: pulumi.Input<string | undefined>;
     /**
      * The number of samples to evaluate
      */
-    samples?: pulumi.Input<number>;
+    samples?: pulumi.Input<number | undefined>;
     /**
      * Narrows the rule usage down to the hosts matching the specified tags
      */
-    tags?: pulumi.Input<inputs.DiskAnomaliesTags>;
+    tags?: pulumi.Input<inputs.DiskAnomaliesTags | undefined>;
     /**
      * The threshold to trigger disk event.   * A percentage for `LowDiskSpace` or `LowInodes` metrics.   * In milliseconds for `ReadTimeExceeding` or `WriteTimeExceeding` metrics
      */
-    threshold?: pulumi.Input<number>;
+    threshold?: pulumi.Input<number | undefined>;
     /**
      * The number of samples that must violate the threshold to trigger an event. Must not exceed the number of evaluated samples
      */
-    violatingSamples?: pulumi.Input<number>;
+    violatingSamples?: pulumi.Input<number | undefined>;
 }
 
 /**
@@ -191,7 +191,7 @@ export interface DiskAnomaliesArgs {
     /**
      * Narrows the rule usage down to disks, matching the specified criteria
      */
-    diskName?: pulumi.Input<inputs.DiskAnomaliesDiskName>;
+    diskName?: pulumi.Input<inputs.DiskAnomaliesDiskName | undefined>;
     /**
      * Disk event rule enabled/disabled
      */
@@ -199,7 +199,7 @@ export interface DiskAnomaliesArgs {
     /**
      * Narrows the rule usage down to disks that run on hosts that themselves run on the specified host group
      */
-    hostGroupId?: pulumi.Input<string>;
+    hostGroupId?: pulumi.Input<string | undefined>;
     /**
      * The metric to monitor. Possible values are: `LOW_DISK_SPACE`, `LOW_INODES`, `READ_TIME_EXCEEDING` and `WRITE_TIME_EXCEEDING`
      */
@@ -207,7 +207,7 @@ export interface DiskAnomaliesArgs {
     /**
      * The name of the disk event rule
      */
-    name?: pulumi.Input<string>;
+    name?: pulumi.Input<string | undefined>;
     /**
      * The number of samples to evaluate
      */
@@ -215,7 +215,7 @@ export interface DiskAnomaliesArgs {
     /**
      * Narrows the rule usage down to the hosts matching the specified tags
      */
-    tags?: pulumi.Input<inputs.DiskAnomaliesTags>;
+    tags?: pulumi.Input<inputs.DiskAnomaliesTags | undefined>;
     /**
      * The threshold to trigger disk event.   * A percentage for `LowDiskSpace` or `LowInodes` metrics.   * In milliseconds for `ReadTimeExceeding` or `WriteTimeExceeding` metrics
      */

@@ -99,15 +99,15 @@ export interface AttackAlertingState {
     /**
      * This setting is enabled (`true`) or disabled (`false`)
      */
-    enabled?: pulumi.Input<boolean>;
+    enabled?: pulumi.Input<boolean | undefined>;
     /**
      * Attack State
      */
-    enabledAttackMitigations?: pulumi.Input<pulumi.Input<string>[]>;
+    enabledAttackMitigations?: pulumi.Input<pulumi.Input<string>[] | undefined>;
     /**
      * Name
      */
-    name?: pulumi.Input<string>;
+    name?: pulumi.Input<string | undefined>;
 }
 
 /**
@@ -121,9 +121,9 @@ export interface AttackAlertingArgs {
     /**
      * Attack State
      */
-    enabledAttackMitigations?: pulumi.Input<pulumi.Input<string>[]>;
+    enabledAttackMitigations?: pulumi.Input<pulumi.Input<string>[] | undefined>;
     /**
      * Name
      */
-    name?: pulumi.Input<string>;
+    name?: pulumi.Input<string | undefined>;
 }

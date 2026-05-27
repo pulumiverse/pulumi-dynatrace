@@ -43,7 +43,7 @@ class AttributesPreferencesArgs:
 @pulumi.input_type
 class _AttributesPreferencesState:
     def __init__(__self__, *,
-                 persistence_mode: Optional[pulumi.Input[_builtins.str]] = None):
+                 persistence_mode: pulumi.Input[Optional[_builtins.str]] = None):
         """
         Input properties used for looking up and filtering AttributesPreferences resources.
 
@@ -54,14 +54,14 @@ class _AttributesPreferencesState:
 
     @_builtins.property
     @pulumi.getter(name="persistenceMode")
-    def persistence_mode(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def persistence_mode(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Possible Values: `ALLOW_ALL_ATTRIBUTES`, `BLOCK_ALL_ATTRIBUTES`
         """
         return pulumi.get(self, "persistence_mode")
 
     @persistence_mode.setter
-    def persistence_mode(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def persistence_mode(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "persistence_mode", value)
 
 
@@ -71,7 +71,7 @@ class AttributesPreferences(pulumi.CustomResource):
     def __init__(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 persistence_mode: Optional[pulumi.Input[_builtins.str]] = None,
+                 persistence_mode: pulumi.Input[Optional[_builtins.str]] = None,
                  __props__=None):
         """
         > This resource requires the API token scopes **Read settings** (`settings.read`) and **Write settings** (`settings.write`)
@@ -130,7 +130,7 @@ class AttributesPreferences(pulumi.CustomResource):
     def _internal_init(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 persistence_mode: Optional[pulumi.Input[_builtins.str]] = None,
+                 persistence_mode: pulumi.Input[Optional[_builtins.str]] = None,
                  __props__=None):
         opts = pulumi.ResourceOptions.merge(_utilities.get_resource_opts_defaults(), opts)
         if not isinstance(opts, pulumi.ResourceOptions):
@@ -153,7 +153,7 @@ class AttributesPreferences(pulumi.CustomResource):
     def get(resource_name: str,
             id: pulumi.Input[str],
             opts: Optional[pulumi.ResourceOptions] = None,
-            persistence_mode: Optional[pulumi.Input[_builtins.str]] = None) -> 'AttributesPreferences':
+            persistence_mode: pulumi.Input[Optional[_builtins.str]] = None) -> 'AttributesPreferences':
         """
         Get an existing AttributesPreferences resource's state with the given name, id, and optional extra
         properties used to qualify the lookup.

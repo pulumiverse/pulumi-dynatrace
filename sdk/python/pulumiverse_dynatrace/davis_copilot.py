@@ -22,9 +22,9 @@ __all__ = ['DavisCopilotArgs', 'DavisCopilot']
 class DavisCopilotArgs:
     def __init__(__self__, *,
                  enable_copilot: pulumi.Input[_builtins.bool],
-                 blocklist_entries: Optional[pulumi.Input['DavisCopilotBlocklistEntriesArgs']] = None,
-                 enable_document_suggestion: Optional[pulumi.Input[_builtins.bool]] = None,
-                 enable_tenant_aware_data_mining: Optional[pulumi.Input[_builtins.bool]] = None):
+                 blocklist_entries: pulumi.Input[Optional['DavisCopilotBlocklistEntriesArgs']] = None,
+                 enable_document_suggestion: pulumi.Input[Optional[_builtins.bool]] = None,
+                 enable_tenant_aware_data_mining: pulumi.Input[Optional[_builtins.bool]] = None):
         """
         The set of arguments for constructing a DavisCopilot resource.
 
@@ -55,48 +55,48 @@ class DavisCopilotArgs:
 
     @_builtins.property
     @pulumi.getter(name="blocklistEntries")
-    def blocklist_entries(self) -> Optional[pulumi.Input['DavisCopilotBlocklistEntriesArgs']]:
+    def blocklist_entries(self) -> pulumi.Input[Optional['DavisCopilotBlocklistEntriesArgs']]:
         """
         You can exclude specific data buckets and tables from the semantic index. Learn more about [configuring data access](https://dt-url.net/lc62i1q).
         """
         return pulumi.get(self, "blocklist_entries")
 
     @blocklist_entries.setter
-    def blocklist_entries(self, value: Optional[pulumi.Input['DavisCopilotBlocklistEntriesArgs']]):
+    def blocklist_entries(self, value: pulumi.Input[Optional['DavisCopilotBlocklistEntriesArgs']]):
         pulumi.set(self, "blocklist_entries", value)
 
     @_builtins.property
     @pulumi.getter(name="enableDocumentSuggestion")
-    def enable_document_suggestion(self) -> Optional[pulumi.Input[_builtins.bool]]:
+    def enable_document_suggestion(self) -> pulumi.Input[Optional[_builtins.bool]]:
         """
         By enabling document suggestions, Dynatrace AI can find similarities between Problems and existing Notebooks and Dashboards in order to suggest relevant troubleshooting guides. Learn more about [document suggestions](https://dt-url.net/xy02gpo).
         """
         return pulumi.get(self, "enable_document_suggestion")
 
     @enable_document_suggestion.setter
-    def enable_document_suggestion(self, value: Optional[pulumi.Input[_builtins.bool]]):
+    def enable_document_suggestion(self, value: pulumi.Input[Optional[_builtins.bool]]):
         pulumi.set(self, "enable_document_suggestion", value)
 
     @_builtins.property
     @pulumi.getter(name="enableTenantAwareDataMining")
-    def enable_tenant_aware_data_mining(self) -> Optional[pulumi.Input[_builtins.bool]]:
+    def enable_tenant_aware_data_mining(self) -> pulumi.Input[Optional[_builtins.bool]]:
         """
         You can enrich Dynatrace Generative AI with your environment data. This lets you generate more accurate queries that identify and reference relevant entities, events, spans, logs, and metrics from your environment. Once enabled, Dynatrace AI periodically scans your Grail data to create its own semantic index. Please note, it can take up to 24 hours to reflect changes. Learn more about [environment-aware queries](https://dt-url.net/4g42iu7).
         """
         return pulumi.get(self, "enable_tenant_aware_data_mining")
 
     @enable_tenant_aware_data_mining.setter
-    def enable_tenant_aware_data_mining(self, value: Optional[pulumi.Input[_builtins.bool]]):
+    def enable_tenant_aware_data_mining(self, value: pulumi.Input[Optional[_builtins.bool]]):
         pulumi.set(self, "enable_tenant_aware_data_mining", value)
 
 
 @pulumi.input_type
 class _DavisCopilotState:
     def __init__(__self__, *,
-                 blocklist_entries: Optional[pulumi.Input['DavisCopilotBlocklistEntriesArgs']] = None,
-                 enable_copilot: Optional[pulumi.Input[_builtins.bool]] = None,
-                 enable_document_suggestion: Optional[pulumi.Input[_builtins.bool]] = None,
-                 enable_tenant_aware_data_mining: Optional[pulumi.Input[_builtins.bool]] = None):
+                 blocklist_entries: pulumi.Input[Optional['DavisCopilotBlocklistEntriesArgs']] = None,
+                 enable_copilot: pulumi.Input[Optional[_builtins.bool]] = None,
+                 enable_document_suggestion: pulumi.Input[Optional[_builtins.bool]] = None,
+                 enable_tenant_aware_data_mining: pulumi.Input[Optional[_builtins.bool]] = None):
         """
         Input properties used for looking up and filtering DavisCopilot resources.
 
@@ -116,50 +116,50 @@ class _DavisCopilotState:
 
     @_builtins.property
     @pulumi.getter(name="blocklistEntries")
-    def blocklist_entries(self) -> Optional[pulumi.Input['DavisCopilotBlocklistEntriesArgs']]:
+    def blocklist_entries(self) -> pulumi.Input[Optional['DavisCopilotBlocklistEntriesArgs']]:
         """
         You can exclude specific data buckets and tables from the semantic index. Learn more about [configuring data access](https://dt-url.net/lc62i1q).
         """
         return pulumi.get(self, "blocklist_entries")
 
     @blocklist_entries.setter
-    def blocklist_entries(self, value: Optional[pulumi.Input['DavisCopilotBlocklistEntriesArgs']]):
+    def blocklist_entries(self, value: pulumi.Input[Optional['DavisCopilotBlocklistEntriesArgs']]):
         pulumi.set(self, "blocklist_entries", value)
 
     @_builtins.property
     @pulumi.getter(name="enableCopilot")
-    def enable_copilot(self) -> Optional[pulumi.Input[_builtins.bool]]:
+    def enable_copilot(self) -> pulumi.Input[Optional[_builtins.bool]]:
         """
         Please note that once enabled, you still need to [assign permissions](https://dt-url.net/rh22idn) to the relevant user groups.
         """
         return pulumi.get(self, "enable_copilot")
 
     @enable_copilot.setter
-    def enable_copilot(self, value: Optional[pulumi.Input[_builtins.bool]]):
+    def enable_copilot(self, value: pulumi.Input[Optional[_builtins.bool]]):
         pulumi.set(self, "enable_copilot", value)
 
     @_builtins.property
     @pulumi.getter(name="enableDocumentSuggestion")
-    def enable_document_suggestion(self) -> Optional[pulumi.Input[_builtins.bool]]:
+    def enable_document_suggestion(self) -> pulumi.Input[Optional[_builtins.bool]]:
         """
         By enabling document suggestions, Dynatrace AI can find similarities between Problems and existing Notebooks and Dashboards in order to suggest relevant troubleshooting guides. Learn more about [document suggestions](https://dt-url.net/xy02gpo).
         """
         return pulumi.get(self, "enable_document_suggestion")
 
     @enable_document_suggestion.setter
-    def enable_document_suggestion(self, value: Optional[pulumi.Input[_builtins.bool]]):
+    def enable_document_suggestion(self, value: pulumi.Input[Optional[_builtins.bool]]):
         pulumi.set(self, "enable_document_suggestion", value)
 
     @_builtins.property
     @pulumi.getter(name="enableTenantAwareDataMining")
-    def enable_tenant_aware_data_mining(self) -> Optional[pulumi.Input[_builtins.bool]]:
+    def enable_tenant_aware_data_mining(self) -> pulumi.Input[Optional[_builtins.bool]]:
         """
         You can enrich Dynatrace Generative AI with your environment data. This lets you generate more accurate queries that identify and reference relevant entities, events, spans, logs, and metrics from your environment. Once enabled, Dynatrace AI periodically scans your Grail data to create its own semantic index. Please note, it can take up to 24 hours to reflect changes. Learn more about [environment-aware queries](https://dt-url.net/4g42iu7).
         """
         return pulumi.get(self, "enable_tenant_aware_data_mining")
 
     @enable_tenant_aware_data_mining.setter
-    def enable_tenant_aware_data_mining(self, value: Optional[pulumi.Input[_builtins.bool]]):
+    def enable_tenant_aware_data_mining(self, value: pulumi.Input[Optional[_builtins.bool]]):
         pulumi.set(self, "enable_tenant_aware_data_mining", value)
 
 
@@ -169,10 +169,10 @@ class DavisCopilot(pulumi.CustomResource):
     def __init__(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 blocklist_entries: Optional[pulumi.Input[Union['DavisCopilotBlocklistEntriesArgs', 'DavisCopilotBlocklistEntriesArgsDict']]] = None,
-                 enable_copilot: Optional[pulumi.Input[_builtins.bool]] = None,
-                 enable_document_suggestion: Optional[pulumi.Input[_builtins.bool]] = None,
-                 enable_tenant_aware_data_mining: Optional[pulumi.Input[_builtins.bool]] = None,
+                 blocklist_entries: pulumi.Input[Optional[Union['DavisCopilotBlocklistEntriesArgs', 'DavisCopilotBlocklistEntriesArgsDict']]] = None,
+                 enable_copilot: pulumi.Input[Optional[_builtins.bool]] = None,
+                 enable_document_suggestion: pulumi.Input[Optional[_builtins.bool]] = None,
+                 enable_tenant_aware_data_mining: pulumi.Input[Optional[_builtins.bool]] = None,
                  __props__=None):
         """
         > **This is in Preview** Davis CoPilot is currently in Preview and only accessible to selected customers. If you would like to share feedback or ideas, please join our dedicated Community user group, or reach out to your Customer Success Manager.
@@ -238,10 +238,10 @@ class DavisCopilot(pulumi.CustomResource):
     def _internal_init(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 blocklist_entries: Optional[pulumi.Input[Union['DavisCopilotBlocklistEntriesArgs', 'DavisCopilotBlocklistEntriesArgsDict']]] = None,
-                 enable_copilot: Optional[pulumi.Input[_builtins.bool]] = None,
-                 enable_document_suggestion: Optional[pulumi.Input[_builtins.bool]] = None,
-                 enable_tenant_aware_data_mining: Optional[pulumi.Input[_builtins.bool]] = None,
+                 blocklist_entries: pulumi.Input[Optional[Union['DavisCopilotBlocklistEntriesArgs', 'DavisCopilotBlocklistEntriesArgsDict']]] = None,
+                 enable_copilot: pulumi.Input[Optional[_builtins.bool]] = None,
+                 enable_document_suggestion: pulumi.Input[Optional[_builtins.bool]] = None,
+                 enable_tenant_aware_data_mining: pulumi.Input[Optional[_builtins.bool]] = None,
                  __props__=None):
         opts = pulumi.ResourceOptions.merge(_utilities.get_resource_opts_defaults(), opts)
         if not isinstance(opts, pulumi.ResourceOptions):
@@ -267,10 +267,10 @@ class DavisCopilot(pulumi.CustomResource):
     def get(resource_name: str,
             id: pulumi.Input[str],
             opts: Optional[pulumi.ResourceOptions] = None,
-            blocklist_entries: Optional[pulumi.Input[Union['DavisCopilotBlocklistEntriesArgs', 'DavisCopilotBlocklistEntriesArgsDict']]] = None,
-            enable_copilot: Optional[pulumi.Input[_builtins.bool]] = None,
-            enable_document_suggestion: Optional[pulumi.Input[_builtins.bool]] = None,
-            enable_tenant_aware_data_mining: Optional[pulumi.Input[_builtins.bool]] = None) -> 'DavisCopilot':
+            blocklist_entries: pulumi.Input[Optional[Union['DavisCopilotBlocklistEntriesArgs', 'DavisCopilotBlocklistEntriesArgsDict']]] = None,
+            enable_copilot: pulumi.Input[Optional[_builtins.bool]] = None,
+            enable_document_suggestion: pulumi.Input[Optional[_builtins.bool]] = None,
+            enable_tenant_aware_data_mining: pulumi.Input[Optional[_builtins.bool]] = None) -> 'DavisCopilot':
         """
         Get an existing DavisCopilot resource's state with the given name, id, and optional extra
         properties used to qualify the lookup.

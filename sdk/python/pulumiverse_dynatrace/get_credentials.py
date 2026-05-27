@@ -109,9 +109,9 @@ def get_credentials(name: Optional[_builtins.str] = None,
         name=pulumi.get(__ret__, 'name'),
         scope=pulumi.get(__ret__, 'scope'),
         type=pulumi.get(__ret__, 'type'))
-def get_credentials_output(name: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                           scope: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                           type: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
+def get_credentials_output(name: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                           scope: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                           type: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
                            opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetCredentialsResult]:
     """
     The `Credentials` data source queries for Credentials stored within the Credentials Vault using the properties `name`, `scope` and `type`. At least one of `name`, `scope` or `type` needs to be specified as a non empty value. Combinations of the three properties are also possible.

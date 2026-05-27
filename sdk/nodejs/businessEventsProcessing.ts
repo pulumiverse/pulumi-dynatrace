@@ -139,32 +139,32 @@ export interface BusinessEventsProcessingState {
     /**
      * This setting is enabled (`true`) or disabled (`false`)
      */
-    enabled?: pulumi.Input<boolean>;
+    enabled?: pulumi.Input<boolean | undefined>;
     /**
      * Because this resource allows for ordering you may specify the ID of the resource instance that comes before this instance regarding order. If not specified when creating the setting will be added to the end of the list. If not specified during update the order will remain untouched
      */
-    insertAfter?: pulumi.Input<string>;
+    insertAfter?: pulumi.Input<string | undefined>;
     /**
      * [See our documentation](https://dt-url.net/bp234rv)
      */
-    matcher?: pulumi.Input<string>;
+    matcher?: pulumi.Input<string | undefined>;
     /**
      * Rule name
      */
-    ruleName?: pulumi.Input<string>;
+    ruleName?: pulumi.Input<string | undefined>;
     /**
      * ## Rule testing
      * ### 1. Paste an event sample
      */
-    ruleTesting?: pulumi.Input<inputs.BusinessEventsProcessingRuleTesting>;
+    ruleTesting?: pulumi.Input<inputs.BusinessEventsProcessingRuleTesting | undefined>;
     /**
      * [See our documentation](https://dt-url.net/pz030w5)
      */
-    script?: pulumi.Input<string>;
+    script?: pulumi.Input<string | undefined>;
     /**
      * Transformation fields
      */
-    transformationFields?: pulumi.Input<inputs.BusinessEventsProcessingTransformationFields>;
+    transformationFields?: pulumi.Input<inputs.BusinessEventsProcessingTransformationFields | undefined>;
 }
 
 /**
@@ -178,7 +178,7 @@ export interface BusinessEventsProcessingArgs {
     /**
      * Because this resource allows for ordering you may specify the ID of the resource instance that comes before this instance regarding order. If not specified when creating the setting will be added to the end of the list. If not specified during update the order will remain untouched
      */
-    insertAfter?: pulumi.Input<string>;
+    insertAfter?: pulumi.Input<string | undefined>;
     /**
      * [See our documentation](https://dt-url.net/bp234rv)
      */
@@ -199,5 +199,5 @@ export interface BusinessEventsProcessingArgs {
     /**
      * Transformation fields
      */
-    transformationFields?: pulumi.Input<inputs.BusinessEventsProcessingTransformationFields>;
+    transformationFields?: pulumi.Input<inputs.BusinessEventsProcessingTransformationFields | undefined>;
 }

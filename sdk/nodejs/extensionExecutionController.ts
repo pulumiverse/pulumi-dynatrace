@@ -109,23 +109,23 @@ export interface ExtensionExecutionControllerState {
     /**
      * This setting is enabled (`true`) or disabled (`false`)
      */
-    enabled?: pulumi.Input<boolean>;
+    enabled?: pulumi.Input<boolean | undefined>;
     /**
      * Enable local HTTP Metric, Log and Event Ingest API
      */
-    ingestActive?: pulumi.Input<boolean>;
+    ingestActive?: pulumi.Input<boolean | undefined>;
     /**
      * Possible Values: `DEFAULT`, `HIGH`
      */
-    performanceProfile?: pulumi.Input<string>;
+    performanceProfile?: pulumi.Input<string | undefined>;
     /**
      * The scope of this setting (HOST, HOST_GROUP). Omit this property if you want to cover the whole environment.
      */
-    scope?: pulumi.Input<string>;
+    scope?: pulumi.Input<string | undefined>;
     /**
      * Enable Dynatrace StatsD
      */
-    statsdActive?: pulumi.Input<boolean>;
+    statsdActive?: pulumi.Input<boolean | undefined>;
 }
 
 /**
@@ -139,17 +139,17 @@ export interface ExtensionExecutionControllerArgs {
     /**
      * Enable local HTTP Metric, Log and Event Ingest API
      */
-    ingestActive?: pulumi.Input<boolean>;
+    ingestActive?: pulumi.Input<boolean | undefined>;
     /**
      * Possible Values: `DEFAULT`, `HIGH`
      */
-    performanceProfile?: pulumi.Input<string>;
+    performanceProfile?: pulumi.Input<string | undefined>;
     /**
      * The scope of this setting (HOST, HOST_GROUP). Omit this property if you want to cover the whole environment.
      */
-    scope?: pulumi.Input<string>;
+    scope?: pulumi.Input<string | undefined>;
     /**
      * Enable Dynatrace StatsD
      */
-    statsdActive?: pulumi.Input<boolean>;
+    statsdActive?: pulumi.Input<boolean | undefined>;
 }

@@ -146,13 +146,13 @@ export interface GetIamEnvironmentsOutputArgs {
     /**
      * Filter by active status of the environment
      */
-    active?: pulumi.Input<boolean>;
+    active?: pulumi.Input<boolean | undefined>;
     /**
      * Filter by ID of the environment
      */
-    envId?: pulumi.Input<string>;
+    envId?: pulumi.Input<string | undefined>;
     /**
      * Filter by friendly name of the environment
      */
-    name?: pulumi.Input<string>;
+    name?: pulumi.Input<string | undefined>;
 }

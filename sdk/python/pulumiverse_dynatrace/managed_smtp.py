@@ -23,11 +23,11 @@ class ManagedSmtpArgs:
                  password: pulumi.Input[_builtins.str],
                  sender_email_address: pulumi.Input[_builtins.str],
                  user_name: pulumi.Input[_builtins.str],
-                 allow_fallback_via_mission_control: Optional[pulumi.Input[_builtins.bool]] = None,
-                 connection_security: Optional[pulumi.Input[_builtins.str]] = None,
-                 is_password_configured: Optional[pulumi.Input[_builtins.bool]] = None,
-                 port: Optional[pulumi.Input[_builtins.int]] = None,
-                 use_smtp_server: Optional[pulumi.Input[_builtins.bool]] = None):
+                 allow_fallback_via_mission_control: pulumi.Input[Optional[_builtins.bool]] = None,
+                 connection_security: pulumi.Input[Optional[_builtins.str]] = None,
+                 is_password_configured: pulumi.Input[Optional[_builtins.bool]] = None,
+                 port: pulumi.Input[Optional[_builtins.int]] = None,
+                 use_smtp_server: pulumi.Input[Optional[_builtins.bool]] = None):
         """
         The set of arguments for constructing a ManagedSmtp resource.
 
@@ -106,77 +106,77 @@ class ManagedSmtpArgs:
 
     @_builtins.property
     @pulumi.getter(name="allowFallbackViaMissionControl")
-    def allow_fallback_via_mission_control(self) -> Optional[pulumi.Input[_builtins.bool]]:
+    def allow_fallback_via_mission_control(self) -> pulumi.Input[Optional[_builtins.bool]]:
         """
         If true, we will send e-mails via Mission Control in case of problems with SMTP server.
         """
         return pulumi.get(self, "allow_fallback_via_mission_control")
 
     @allow_fallback_via_mission_control.setter
-    def allow_fallback_via_mission_control(self, value: Optional[pulumi.Input[_builtins.bool]]):
+    def allow_fallback_via_mission_control(self, value: pulumi.Input[Optional[_builtins.bool]]):
         pulumi.set(self, "allow_fallback_via_mission_control", value)
 
     @_builtins.property
     @pulumi.getter(name="connectionSecurity")
-    def connection_security(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def connection_security(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Connection security, possible values: `NO_ENCRYPTION`, `OPTIONAL_STARTTLS`, `REQUIRE_STARTTLS`, `TLS`. Default: `NO_ENCRYPTION`
         """
         return pulumi.get(self, "connection_security")
 
     @connection_security.setter
-    def connection_security(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def connection_security(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "connection_security", value)
 
     @_builtins.property
     @pulumi.getter(name="isPasswordConfigured")
-    def is_password_configured(self) -> Optional[pulumi.Input[_builtins.bool]]:
+    def is_password_configured(self) -> pulumi.Input[Optional[_builtins.bool]]:
         """
         If true, a password has been configured. Default: `false`.
         """
         return pulumi.get(self, "is_password_configured")
 
     @is_password_configured.setter
-    def is_password_configured(self, value: Optional[pulumi.Input[_builtins.bool]]):
+    def is_password_configured(self, value: pulumi.Input[Optional[_builtins.bool]]):
         pulumi.set(self, "is_password_configured", value)
 
     @_builtins.property
     @pulumi.getter
-    def port(self) -> Optional[pulumi.Input[_builtins.int]]:
+    def port(self) -> pulumi.Input[Optional[_builtins.int]]:
         """
         Integer value of port. Default: `25`
         """
         return pulumi.get(self, "port")
 
     @port.setter
-    def port(self, value: Optional[pulumi.Input[_builtins.int]]):
+    def port(self, value: pulumi.Input[Optional[_builtins.int]]):
         pulumi.set(self, "port", value)
 
     @_builtins.property
     @pulumi.getter(name="useSmtpServer")
-    def use_smtp_server(self) -> Optional[pulumi.Input[_builtins.bool]]:
+    def use_smtp_server(self) -> pulumi.Input[Optional[_builtins.bool]]:
         """
         If true, we will send e-mails via SMTP server.
         """
         return pulumi.get(self, "use_smtp_server")
 
     @use_smtp_server.setter
-    def use_smtp_server(self, value: Optional[pulumi.Input[_builtins.bool]]):
+    def use_smtp_server(self, value: pulumi.Input[Optional[_builtins.bool]]):
         pulumi.set(self, "use_smtp_server", value)
 
 
 @pulumi.input_type
 class _ManagedSmtpState:
     def __init__(__self__, *,
-                 allow_fallback_via_mission_control: Optional[pulumi.Input[_builtins.bool]] = None,
-                 connection_security: Optional[pulumi.Input[_builtins.str]] = None,
-                 host_name: Optional[pulumi.Input[_builtins.str]] = None,
-                 is_password_configured: Optional[pulumi.Input[_builtins.bool]] = None,
-                 password: Optional[pulumi.Input[_builtins.str]] = None,
-                 port: Optional[pulumi.Input[_builtins.int]] = None,
-                 sender_email_address: Optional[pulumi.Input[_builtins.str]] = None,
-                 use_smtp_server: Optional[pulumi.Input[_builtins.bool]] = None,
-                 user_name: Optional[pulumi.Input[_builtins.str]] = None):
+                 allow_fallback_via_mission_control: pulumi.Input[Optional[_builtins.bool]] = None,
+                 connection_security: pulumi.Input[Optional[_builtins.str]] = None,
+                 host_name: pulumi.Input[Optional[_builtins.str]] = None,
+                 is_password_configured: pulumi.Input[Optional[_builtins.bool]] = None,
+                 password: pulumi.Input[Optional[_builtins.str]] = None,
+                 port: pulumi.Input[Optional[_builtins.int]] = None,
+                 sender_email_address: pulumi.Input[Optional[_builtins.str]] = None,
+                 use_smtp_server: pulumi.Input[Optional[_builtins.bool]] = None,
+                 user_name: pulumi.Input[Optional[_builtins.str]] = None):
         """
         Input properties used for looking up and filtering ManagedSmtp resources.
 
@@ -211,110 +211,110 @@ class _ManagedSmtpState:
 
     @_builtins.property
     @pulumi.getter(name="allowFallbackViaMissionControl")
-    def allow_fallback_via_mission_control(self) -> Optional[pulumi.Input[_builtins.bool]]:
+    def allow_fallback_via_mission_control(self) -> pulumi.Input[Optional[_builtins.bool]]:
         """
         If true, we will send e-mails via Mission Control in case of problems with SMTP server.
         """
         return pulumi.get(self, "allow_fallback_via_mission_control")
 
     @allow_fallback_via_mission_control.setter
-    def allow_fallback_via_mission_control(self, value: Optional[pulumi.Input[_builtins.bool]]):
+    def allow_fallback_via_mission_control(self, value: pulumi.Input[Optional[_builtins.bool]]):
         pulumi.set(self, "allow_fallback_via_mission_control", value)
 
     @_builtins.property
     @pulumi.getter(name="connectionSecurity")
-    def connection_security(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def connection_security(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Connection security, possible values: `NO_ENCRYPTION`, `OPTIONAL_STARTTLS`, `REQUIRE_STARTTLS`, `TLS`. Default: `NO_ENCRYPTION`
         """
         return pulumi.get(self, "connection_security")
 
     @connection_security.setter
-    def connection_security(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def connection_security(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "connection_security", value)
 
     @_builtins.property
     @pulumi.getter(name="hostName")
-    def host_name(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def host_name(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Host Name
         """
         return pulumi.get(self, "host_name")
 
     @host_name.setter
-    def host_name(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def host_name(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "host_name", value)
 
     @_builtins.property
     @pulumi.getter(name="isPasswordConfigured")
-    def is_password_configured(self) -> Optional[pulumi.Input[_builtins.bool]]:
+    def is_password_configured(self) -> pulumi.Input[Optional[_builtins.bool]]:
         """
         If true, a password has been configured. Default: `false`.
         """
         return pulumi.get(self, "is_password_configured")
 
     @is_password_configured.setter
-    def is_password_configured(self, value: Optional[pulumi.Input[_builtins.bool]]):
+    def is_password_configured(self, value: pulumi.Input[Optional[_builtins.bool]]):
         pulumi.set(self, "is_password_configured", value)
 
     @_builtins.property
     @pulumi.getter
-    def password(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def password(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Password
         """
         return pulumi.get(self, "password")
 
     @password.setter
-    def password(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def password(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "password", value)
 
     @_builtins.property
     @pulumi.getter
-    def port(self) -> Optional[pulumi.Input[_builtins.int]]:
+    def port(self) -> pulumi.Input[Optional[_builtins.int]]:
         """
         Integer value of port. Default: `25`
         """
         return pulumi.get(self, "port")
 
     @port.setter
-    def port(self, value: Optional[pulumi.Input[_builtins.int]]):
+    def port(self, value: pulumi.Input[Optional[_builtins.int]]):
         pulumi.set(self, "port", value)
 
     @_builtins.property
     @pulumi.getter(name="senderEmailAddress")
-    def sender_email_address(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def sender_email_address(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Sender email address
         """
         return pulumi.get(self, "sender_email_address")
 
     @sender_email_address.setter
-    def sender_email_address(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def sender_email_address(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "sender_email_address", value)
 
     @_builtins.property
     @pulumi.getter(name="useSmtpServer")
-    def use_smtp_server(self) -> Optional[pulumi.Input[_builtins.bool]]:
+    def use_smtp_server(self) -> pulumi.Input[Optional[_builtins.bool]]:
         """
         If true, we will send e-mails via SMTP server.
         """
         return pulumi.get(self, "use_smtp_server")
 
     @use_smtp_server.setter
-    def use_smtp_server(self, value: Optional[pulumi.Input[_builtins.bool]]):
+    def use_smtp_server(self, value: pulumi.Input[Optional[_builtins.bool]]):
         pulumi.set(self, "use_smtp_server", value)
 
     @_builtins.property
     @pulumi.getter(name="userName")
-    def user_name(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def user_name(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         User Name
         """
         return pulumi.get(self, "user_name")
 
     @user_name.setter
-    def user_name(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def user_name(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "user_name", value)
 
 
@@ -324,15 +324,15 @@ class ManagedSmtp(pulumi.CustomResource):
     def __init__(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 allow_fallback_via_mission_control: Optional[pulumi.Input[_builtins.bool]] = None,
-                 connection_security: Optional[pulumi.Input[_builtins.str]] = None,
-                 host_name: Optional[pulumi.Input[_builtins.str]] = None,
-                 is_password_configured: Optional[pulumi.Input[_builtins.bool]] = None,
-                 password: Optional[pulumi.Input[_builtins.str]] = None,
-                 port: Optional[pulumi.Input[_builtins.int]] = None,
-                 sender_email_address: Optional[pulumi.Input[_builtins.str]] = None,
-                 use_smtp_server: Optional[pulumi.Input[_builtins.bool]] = None,
-                 user_name: Optional[pulumi.Input[_builtins.str]] = None,
+                 allow_fallback_via_mission_control: pulumi.Input[Optional[_builtins.bool]] = None,
+                 connection_security: pulumi.Input[Optional[_builtins.str]] = None,
+                 host_name: pulumi.Input[Optional[_builtins.str]] = None,
+                 is_password_configured: pulumi.Input[Optional[_builtins.bool]] = None,
+                 password: pulumi.Input[Optional[_builtins.str]] = None,
+                 port: pulumi.Input[Optional[_builtins.int]] = None,
+                 sender_email_address: pulumi.Input[Optional[_builtins.str]] = None,
+                 use_smtp_server: pulumi.Input[Optional[_builtins.bool]] = None,
+                 user_name: pulumi.Input[Optional[_builtins.str]] = None,
                  __props__=None):
         """
         !> **HTTP DELETE method not available** Terraform will no longer manage this resource on `destroy` but the configuration will still be present on the Dynatrace cluster.
@@ -427,15 +427,15 @@ class ManagedSmtp(pulumi.CustomResource):
     def _internal_init(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 allow_fallback_via_mission_control: Optional[pulumi.Input[_builtins.bool]] = None,
-                 connection_security: Optional[pulumi.Input[_builtins.str]] = None,
-                 host_name: Optional[pulumi.Input[_builtins.str]] = None,
-                 is_password_configured: Optional[pulumi.Input[_builtins.bool]] = None,
-                 password: Optional[pulumi.Input[_builtins.str]] = None,
-                 port: Optional[pulumi.Input[_builtins.int]] = None,
-                 sender_email_address: Optional[pulumi.Input[_builtins.str]] = None,
-                 use_smtp_server: Optional[pulumi.Input[_builtins.bool]] = None,
-                 user_name: Optional[pulumi.Input[_builtins.str]] = None,
+                 allow_fallback_via_mission_control: pulumi.Input[Optional[_builtins.bool]] = None,
+                 connection_security: pulumi.Input[Optional[_builtins.str]] = None,
+                 host_name: pulumi.Input[Optional[_builtins.str]] = None,
+                 is_password_configured: pulumi.Input[Optional[_builtins.bool]] = None,
+                 password: pulumi.Input[Optional[_builtins.str]] = None,
+                 port: pulumi.Input[Optional[_builtins.int]] = None,
+                 sender_email_address: pulumi.Input[Optional[_builtins.str]] = None,
+                 use_smtp_server: pulumi.Input[Optional[_builtins.bool]] = None,
+                 user_name: pulumi.Input[Optional[_builtins.str]] = None,
                  __props__=None):
         opts = pulumi.ResourceOptions.merge(_utilities.get_resource_opts_defaults(), opts)
         if not isinstance(opts, pulumi.ResourceOptions):
@@ -474,15 +474,15 @@ class ManagedSmtp(pulumi.CustomResource):
     def get(resource_name: str,
             id: pulumi.Input[str],
             opts: Optional[pulumi.ResourceOptions] = None,
-            allow_fallback_via_mission_control: Optional[pulumi.Input[_builtins.bool]] = None,
-            connection_security: Optional[pulumi.Input[_builtins.str]] = None,
-            host_name: Optional[pulumi.Input[_builtins.str]] = None,
-            is_password_configured: Optional[pulumi.Input[_builtins.bool]] = None,
-            password: Optional[pulumi.Input[_builtins.str]] = None,
-            port: Optional[pulumi.Input[_builtins.int]] = None,
-            sender_email_address: Optional[pulumi.Input[_builtins.str]] = None,
-            use_smtp_server: Optional[pulumi.Input[_builtins.bool]] = None,
-            user_name: Optional[pulumi.Input[_builtins.str]] = None) -> 'ManagedSmtp':
+            allow_fallback_via_mission_control: pulumi.Input[Optional[_builtins.bool]] = None,
+            connection_security: pulumi.Input[Optional[_builtins.str]] = None,
+            host_name: pulumi.Input[Optional[_builtins.str]] = None,
+            is_password_configured: pulumi.Input[Optional[_builtins.bool]] = None,
+            password: pulumi.Input[Optional[_builtins.str]] = None,
+            port: pulumi.Input[Optional[_builtins.int]] = None,
+            sender_email_address: pulumi.Input[Optional[_builtins.str]] = None,
+            use_smtp_server: pulumi.Input[Optional[_builtins.bool]] = None,
+            user_name: pulumi.Input[Optional[_builtins.str]] = None) -> 'ManagedSmtp':
         """
         Get an existing ManagedSmtp resource's state with the given name, id, and optional extra
         properties used to qualify the lookup.

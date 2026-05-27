@@ -135,34 +135,34 @@ export interface VictorOpsNotificationState {
     /**
      * This setting is enabled (`true`) or disabled (`false`)
      */
-    active?: pulumi.Input<boolean>;
+    active?: pulumi.Input<boolean | undefined>;
     /**
      * The API key for the target Splunk On-Call account.
      *
      * Receive your Splunk On-Call API key by navigating to: Settings > Integrations > Rest Endpoint > Dynatrace.
      */
-    apiKey?: pulumi.Input<string>;
+    apiKey?: pulumi.Input<string | undefined>;
     /**
      * The ID of these settings when referred to from resources requiring the REST API V1 keys
      */
-    legacyId?: pulumi.Input<string>;
+    legacyId?: pulumi.Input<string | undefined>;
     /**
      * The content of the message. Type '{' for placeholder suggestions.. #### Available placeholders
      * **{ImpactedEntity}**: A short description of the problem and impacted entity (or multiple impacted entities).
      */
-    message?: pulumi.Input<string>;
+    message?: pulumi.Input<string | undefined>;
     /**
      * The name of the notification configuration.
      */
-    name?: pulumi.Input<string>;
+    name?: pulumi.Input<string | undefined>;
     /**
      * The ID of the associated alerting profile
      */
-    profile?: pulumi.Input<string>;
+    profile?: pulumi.Input<string | undefined>;
     /**
      * The routing key, defining the group to be notified.
      */
-    routingKey?: pulumi.Input<string>;
+    routingKey?: pulumi.Input<string | undefined>;
 }
 
 /**
@@ -178,11 +178,11 @@ export interface VictorOpsNotificationArgs {
      *
      * Receive your Splunk On-Call API key by navigating to: Settings > Integrations > Rest Endpoint > Dynatrace.
      */
-    apiKey?: pulumi.Input<string>;
+    apiKey?: pulumi.Input<string | undefined>;
     /**
      * The ID of these settings when referred to from resources requiring the REST API V1 keys
      */
-    legacyId?: pulumi.Input<string>;
+    legacyId?: pulumi.Input<string | undefined>;
     /**
      * The content of the message. Type '{' for placeholder suggestions.. #### Available placeholders
      * **{ImpactedEntity}**: A short description of the problem and impacted entity (or multiple impacted entities).
@@ -191,7 +191,7 @@ export interface VictorOpsNotificationArgs {
     /**
      * The name of the notification configuration.
      */
-    name?: pulumi.Input<string>;
+    name?: pulumi.Input<string | undefined>;
     /**
      * The ID of the associated alerting profile
      */

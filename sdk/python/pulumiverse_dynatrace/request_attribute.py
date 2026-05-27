@@ -24,12 +24,12 @@ class RequestAttributeArgs:
                  aggregation: pulumi.Input[_builtins.str],
                  data_type: pulumi.Input[_builtins.str],
                  normalization: pulumi.Input[_builtins.str],
-                 confidential: Optional[pulumi.Input[_builtins.bool]] = None,
-                 data_sources: Optional[pulumi.Input[Sequence[pulumi.Input['RequestAttributeDataSourceArgs']]]] = None,
-                 enabled: Optional[pulumi.Input[_builtins.bool]] = None,
-                 name: Optional[pulumi.Input[_builtins.str]] = None,
-                 skip_personal_data_masking: Optional[pulumi.Input[_builtins.bool]] = None,
-                 unknowns: Optional[pulumi.Input[_builtins.str]] = None):
+                 confidential: pulumi.Input[Optional[_builtins.bool]] = None,
+                 data_sources: pulumi.Input[Optional[Sequence[pulumi.Input['RequestAttributeDataSourceArgs']]]] = None,
+                 enabled: pulumi.Input[Optional[_builtins.bool]] = None,
+                 name: pulumi.Input[Optional[_builtins.str]] = None,
+                 skip_personal_data_masking: pulumi.Input[Optional[_builtins.bool]] = None,
+                 unknowns: pulumi.Input[Optional[_builtins.str]] = None):
         """
         The set of arguments for constructing a RequestAttribute resource.
 
@@ -97,89 +97,89 @@ class RequestAttributeArgs:
 
     @_builtins.property
     @pulumi.getter
-    def confidential(self) -> Optional[pulumi.Input[_builtins.bool]]:
+    def confidential(self) -> pulumi.Input[Optional[_builtins.bool]]:
         """
         Confidential data flag. Set `true` to treat the captured data as confidential
         """
         return pulumi.get(self, "confidential")
 
     @confidential.setter
-    def confidential(self, value: Optional[pulumi.Input[_builtins.bool]]):
+    def confidential(self, value: pulumi.Input[Optional[_builtins.bool]]):
         pulumi.set(self, "confidential", value)
 
     @_builtins.property
     @pulumi.getter(name="dataSources")
-    def data_sources(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['RequestAttributeDataSourceArgs']]]]:
+    def data_sources(self) -> pulumi.Input[Optional[Sequence[pulumi.Input['RequestAttributeDataSourceArgs']]]]:
         """
         The list of data sources
         """
         return pulumi.get(self, "data_sources")
 
     @data_sources.setter
-    def data_sources(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['RequestAttributeDataSourceArgs']]]]):
+    def data_sources(self, value: pulumi.Input[Optional[Sequence[pulumi.Input['RequestAttributeDataSourceArgs']]]]):
         pulumi.set(self, "data_sources", value)
 
     @_builtins.property
     @pulumi.getter
-    def enabled(self) -> Optional[pulumi.Input[_builtins.bool]]:
+    def enabled(self) -> pulumi.Input[Optional[_builtins.bool]]:
         """
         The request attribute is enabled (`true`) or disabled (`false`)
         """
         return pulumi.get(self, "enabled")
 
     @enabled.setter
-    def enabled(self, value: Optional[pulumi.Input[_builtins.bool]]):
+    def enabled(self, value: pulumi.Input[Optional[_builtins.bool]]):
         pulumi.set(self, "enabled", value)
 
     @_builtins.property
     @pulumi.getter
-    def name(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def name(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The name of the request attribute
         """
         return pulumi.get(self, "name")
 
     @name.setter
-    def name(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def name(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "name", value)
 
     @_builtins.property
     @pulumi.getter(name="skipPersonalDataMasking")
-    def skip_personal_data_masking(self) -> Optional[pulumi.Input[_builtins.bool]]:
+    def skip_personal_data_masking(self) -> pulumi.Input[Optional[_builtins.bool]]:
         """
         Personal data masking flag. Set `true` to skip masking.   Warning: This will potentially access personalized data
         """
         return pulumi.get(self, "skip_personal_data_masking")
 
     @skip_personal_data_masking.setter
-    def skip_personal_data_masking(self, value: Optional[pulumi.Input[_builtins.bool]]):
+    def skip_personal_data_masking(self, value: pulumi.Input[Optional[_builtins.bool]]):
         pulumi.set(self, "skip_personal_data_masking", value)
 
     @_builtins.property
     @pulumi.getter
-    def unknowns(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def unknowns(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         allows for configuring properties that are not explicitly supported by the current version of this provider
         """
         return pulumi.get(self, "unknowns")
 
     @unknowns.setter
-    def unknowns(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def unknowns(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "unknowns", value)
 
 
 @pulumi.input_type
 class _RequestAttributeState:
     def __init__(__self__, *,
-                 aggregation: Optional[pulumi.Input[_builtins.str]] = None,
-                 confidential: Optional[pulumi.Input[_builtins.bool]] = None,
-                 data_sources: Optional[pulumi.Input[Sequence[pulumi.Input['RequestAttributeDataSourceArgs']]]] = None,
-                 data_type: Optional[pulumi.Input[_builtins.str]] = None,
-                 enabled: Optional[pulumi.Input[_builtins.bool]] = None,
-                 name: Optional[pulumi.Input[_builtins.str]] = None,
-                 normalization: Optional[pulumi.Input[_builtins.str]] = None,
-                 skip_personal_data_masking: Optional[pulumi.Input[_builtins.bool]] = None,
-                 unknowns: Optional[pulumi.Input[_builtins.str]] = None):
+                 aggregation: pulumi.Input[Optional[_builtins.str]] = None,
+                 confidential: pulumi.Input[Optional[_builtins.bool]] = None,
+                 data_sources: pulumi.Input[Optional[Sequence[pulumi.Input['RequestAttributeDataSourceArgs']]]] = None,
+                 data_type: pulumi.Input[Optional[_builtins.str]] = None,
+                 enabled: pulumi.Input[Optional[_builtins.bool]] = None,
+                 name: pulumi.Input[Optional[_builtins.str]] = None,
+                 normalization: pulumi.Input[Optional[_builtins.str]] = None,
+                 skip_personal_data_masking: pulumi.Input[Optional[_builtins.bool]] = None,
+                 unknowns: pulumi.Input[Optional[_builtins.str]] = None):
         """
         Input properties used for looking up and filtering RequestAttribute resources.
 
@@ -214,110 +214,110 @@ class _RequestAttributeState:
 
     @_builtins.property
     @pulumi.getter
-    def aggregation(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def aggregation(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Aggregation type for the request values
         """
         return pulumi.get(self, "aggregation")
 
     @aggregation.setter
-    def aggregation(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def aggregation(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "aggregation", value)
 
     @_builtins.property
     @pulumi.getter
-    def confidential(self) -> Optional[pulumi.Input[_builtins.bool]]:
+    def confidential(self) -> pulumi.Input[Optional[_builtins.bool]]:
         """
         Confidential data flag. Set `true` to treat the captured data as confidential
         """
         return pulumi.get(self, "confidential")
 
     @confidential.setter
-    def confidential(self, value: Optional[pulumi.Input[_builtins.bool]]):
+    def confidential(self, value: pulumi.Input[Optional[_builtins.bool]]):
         pulumi.set(self, "confidential", value)
 
     @_builtins.property
     @pulumi.getter(name="dataSources")
-    def data_sources(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['RequestAttributeDataSourceArgs']]]]:
+    def data_sources(self) -> pulumi.Input[Optional[Sequence[pulumi.Input['RequestAttributeDataSourceArgs']]]]:
         """
         The list of data sources
         """
         return pulumi.get(self, "data_sources")
 
     @data_sources.setter
-    def data_sources(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['RequestAttributeDataSourceArgs']]]]):
+    def data_sources(self, value: pulumi.Input[Optional[Sequence[pulumi.Input['RequestAttributeDataSourceArgs']]]]):
         pulumi.set(self, "data_sources", value)
 
     @_builtins.property
     @pulumi.getter(name="dataType")
-    def data_type(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def data_type(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The data type of the request attribute
         """
         return pulumi.get(self, "data_type")
 
     @data_type.setter
-    def data_type(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def data_type(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "data_type", value)
 
     @_builtins.property
     @pulumi.getter
-    def enabled(self) -> Optional[pulumi.Input[_builtins.bool]]:
+    def enabled(self) -> pulumi.Input[Optional[_builtins.bool]]:
         """
         The request attribute is enabled (`true`) or disabled (`false`)
         """
         return pulumi.get(self, "enabled")
 
     @enabled.setter
-    def enabled(self, value: Optional[pulumi.Input[_builtins.bool]]):
+    def enabled(self, value: pulumi.Input[Optional[_builtins.bool]]):
         pulumi.set(self, "enabled", value)
 
     @_builtins.property
     @pulumi.getter
-    def name(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def name(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The name of the request attribute
         """
         return pulumi.get(self, "name")
 
     @name.setter
-    def name(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def name(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "name", value)
 
     @_builtins.property
     @pulumi.getter
-    def normalization(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def normalization(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         String values transformation.   If the **dataType** is not `string`, set the `Original` here
         """
         return pulumi.get(self, "normalization")
 
     @normalization.setter
-    def normalization(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def normalization(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "normalization", value)
 
     @_builtins.property
     @pulumi.getter(name="skipPersonalDataMasking")
-    def skip_personal_data_masking(self) -> Optional[pulumi.Input[_builtins.bool]]:
+    def skip_personal_data_masking(self) -> pulumi.Input[Optional[_builtins.bool]]:
         """
         Personal data masking flag. Set `true` to skip masking.   Warning: This will potentially access personalized data
         """
         return pulumi.get(self, "skip_personal_data_masking")
 
     @skip_personal_data_masking.setter
-    def skip_personal_data_masking(self, value: Optional[pulumi.Input[_builtins.bool]]):
+    def skip_personal_data_masking(self, value: pulumi.Input[Optional[_builtins.bool]]):
         pulumi.set(self, "skip_personal_data_masking", value)
 
     @_builtins.property
     @pulumi.getter
-    def unknowns(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def unknowns(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         allows for configuring properties that are not explicitly supported by the current version of this provider
         """
         return pulumi.get(self, "unknowns")
 
     @unknowns.setter
-    def unknowns(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def unknowns(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "unknowns", value)
 
 
@@ -327,15 +327,15 @@ class RequestAttribute(pulumi.CustomResource):
     def __init__(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 aggregation: Optional[pulumi.Input[_builtins.str]] = None,
-                 confidential: Optional[pulumi.Input[_builtins.bool]] = None,
-                 data_sources: Optional[pulumi.Input[Sequence[pulumi.Input[Union['RequestAttributeDataSourceArgs', 'RequestAttributeDataSourceArgsDict']]]]] = None,
-                 data_type: Optional[pulumi.Input[_builtins.str]] = None,
-                 enabled: Optional[pulumi.Input[_builtins.bool]] = None,
-                 name: Optional[pulumi.Input[_builtins.str]] = None,
-                 normalization: Optional[pulumi.Input[_builtins.str]] = None,
-                 skip_personal_data_masking: Optional[pulumi.Input[_builtins.bool]] = None,
-                 unknowns: Optional[pulumi.Input[_builtins.str]] = None,
+                 aggregation: pulumi.Input[Optional[_builtins.str]] = None,
+                 confidential: pulumi.Input[Optional[_builtins.bool]] = None,
+                 data_sources: pulumi.Input[Optional[Sequence[pulumi.Input[Union['RequestAttributeDataSourceArgs', 'RequestAttributeDataSourceArgsDict']]]]] = None,
+                 data_type: pulumi.Input[Optional[_builtins.str]] = None,
+                 enabled: pulumi.Input[Optional[_builtins.bool]] = None,
+                 name: pulumi.Input[Optional[_builtins.str]] = None,
+                 normalization: pulumi.Input[Optional[_builtins.str]] = None,
+                 skip_personal_data_masking: pulumi.Input[Optional[_builtins.bool]] = None,
+                 unknowns: pulumi.Input[Optional[_builtins.str]] = None,
                  __props__=None):
         """
         > This resource requires the API token scopes **Read configuration** (`ReadConfig`) and **Capture request data** (`CaptureRequestData`)
@@ -402,15 +402,15 @@ class RequestAttribute(pulumi.CustomResource):
     def _internal_init(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 aggregation: Optional[pulumi.Input[_builtins.str]] = None,
-                 confidential: Optional[pulumi.Input[_builtins.bool]] = None,
-                 data_sources: Optional[pulumi.Input[Sequence[pulumi.Input[Union['RequestAttributeDataSourceArgs', 'RequestAttributeDataSourceArgsDict']]]]] = None,
-                 data_type: Optional[pulumi.Input[_builtins.str]] = None,
-                 enabled: Optional[pulumi.Input[_builtins.bool]] = None,
-                 name: Optional[pulumi.Input[_builtins.str]] = None,
-                 normalization: Optional[pulumi.Input[_builtins.str]] = None,
-                 skip_personal_data_masking: Optional[pulumi.Input[_builtins.bool]] = None,
-                 unknowns: Optional[pulumi.Input[_builtins.str]] = None,
+                 aggregation: pulumi.Input[Optional[_builtins.str]] = None,
+                 confidential: pulumi.Input[Optional[_builtins.bool]] = None,
+                 data_sources: pulumi.Input[Optional[Sequence[pulumi.Input[Union['RequestAttributeDataSourceArgs', 'RequestAttributeDataSourceArgsDict']]]]] = None,
+                 data_type: pulumi.Input[Optional[_builtins.str]] = None,
+                 enabled: pulumi.Input[Optional[_builtins.bool]] = None,
+                 name: pulumi.Input[Optional[_builtins.str]] = None,
+                 normalization: pulumi.Input[Optional[_builtins.str]] = None,
+                 skip_personal_data_masking: pulumi.Input[Optional[_builtins.bool]] = None,
+                 unknowns: pulumi.Input[Optional[_builtins.str]] = None,
                  __props__=None):
         opts = pulumi.ResourceOptions.merge(_utilities.get_resource_opts_defaults(), opts)
         if not isinstance(opts, pulumi.ResourceOptions):
@@ -445,15 +445,15 @@ class RequestAttribute(pulumi.CustomResource):
     def get(resource_name: str,
             id: pulumi.Input[str],
             opts: Optional[pulumi.ResourceOptions] = None,
-            aggregation: Optional[pulumi.Input[_builtins.str]] = None,
-            confidential: Optional[pulumi.Input[_builtins.bool]] = None,
-            data_sources: Optional[pulumi.Input[Sequence[pulumi.Input[Union['RequestAttributeDataSourceArgs', 'RequestAttributeDataSourceArgsDict']]]]] = None,
-            data_type: Optional[pulumi.Input[_builtins.str]] = None,
-            enabled: Optional[pulumi.Input[_builtins.bool]] = None,
-            name: Optional[pulumi.Input[_builtins.str]] = None,
-            normalization: Optional[pulumi.Input[_builtins.str]] = None,
-            skip_personal_data_masking: Optional[pulumi.Input[_builtins.bool]] = None,
-            unknowns: Optional[pulumi.Input[_builtins.str]] = None) -> 'RequestAttribute':
+            aggregation: pulumi.Input[Optional[_builtins.str]] = None,
+            confidential: pulumi.Input[Optional[_builtins.bool]] = None,
+            data_sources: pulumi.Input[Optional[Sequence[pulumi.Input[Union['RequestAttributeDataSourceArgs', 'RequestAttributeDataSourceArgsDict']]]]] = None,
+            data_type: pulumi.Input[Optional[_builtins.str]] = None,
+            enabled: pulumi.Input[Optional[_builtins.bool]] = None,
+            name: pulumi.Input[Optional[_builtins.str]] = None,
+            normalization: pulumi.Input[Optional[_builtins.str]] = None,
+            skip_personal_data_masking: pulumi.Input[Optional[_builtins.bool]] = None,
+            unknowns: pulumi.Input[Optional[_builtins.str]] = None) -> 'RequestAttribute':
         """
         Get an existing RequestAttribute resource's state with the given name, id, and optional extra
         properties used to qualify the lookup.

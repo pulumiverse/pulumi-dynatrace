@@ -21,9 +21,9 @@ class OneagentFeaturesArgs:
     def __init__(__self__, *,
                  enabled: pulumi.Input[_builtins.bool],
                  key: pulumi.Input[_builtins.str],
-                 forcible: Optional[pulumi.Input[_builtins.bool]] = None,
-                 instrumentation: Optional[pulumi.Input[_builtins.bool]] = None,
-                 scope: Optional[pulumi.Input[_builtins.str]] = None):
+                 forcible: pulumi.Input[Optional[_builtins.bool]] = None,
+                 instrumentation: pulumi.Input[Optional[_builtins.bool]] = None,
+                 scope: pulumi.Input[Optional[_builtins.str]] = None):
         """
         The set of arguments for constructing a OneagentFeatures resource.
 
@@ -68,50 +68,50 @@ class OneagentFeaturesArgs:
 
     @_builtins.property
     @pulumi.getter
-    def forcible(self) -> Optional[pulumi.Input[_builtins.bool]]:
+    def forcible(self) -> pulumi.Input[Optional[_builtins.bool]]:
         """
         Activate this feature also in OneAgents only fulfilling the minimum Opt-In version
         """
         return pulumi.get(self, "forcible")
 
     @forcible.setter
-    def forcible(self, value: Optional[pulumi.Input[_builtins.bool]]):
+    def forcible(self, value: pulumi.Input[Optional[_builtins.bool]]):
         pulumi.set(self, "forcible", value)
 
     @_builtins.property
     @pulumi.getter
-    def instrumentation(self) -> Optional[pulumi.Input[_builtins.bool]]:
+    def instrumentation(self) -> pulumi.Input[Optional[_builtins.bool]]:
         """
         Instrumentation enabled (change needs a process restart)
         """
         return pulumi.get(self, "instrumentation")
 
     @instrumentation.setter
-    def instrumentation(self, value: Optional[pulumi.Input[_builtins.bool]]):
+    def instrumentation(self, value: pulumi.Input[Optional[_builtins.bool]]):
         pulumi.set(self, "instrumentation", value)
 
     @_builtins.property
     @pulumi.getter
-    def scope(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def scope(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The scope of this setting (PROCESS*GROUP*INSTANCE, PROCESS_GROUP). Omit this property if you want to cover the whole environment.
         """
         return pulumi.get(self, "scope")
 
     @scope.setter
-    def scope(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def scope(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "scope", value)
 
 
 @pulumi.input_type
 class _OneagentFeaturesState:
     def __init__(__self__, *,
-                 _restore_: Optional[pulumi.Input[_builtins.str]] = None,
-                 enabled: Optional[pulumi.Input[_builtins.bool]] = None,
-                 forcible: Optional[pulumi.Input[_builtins.bool]] = None,
-                 instrumentation: Optional[pulumi.Input[_builtins.bool]] = None,
-                 key: Optional[pulumi.Input[_builtins.str]] = None,
-                 scope: Optional[pulumi.Input[_builtins.str]] = None):
+                 _restore_: pulumi.Input[Optional[_builtins.str]] = None,
+                 enabled: pulumi.Input[Optional[_builtins.bool]] = None,
+                 forcible: pulumi.Input[Optional[_builtins.bool]] = None,
+                 instrumentation: pulumi.Input[Optional[_builtins.bool]] = None,
+                 key: pulumi.Input[Optional[_builtins.str]] = None,
+                 scope: pulumi.Input[Optional[_builtins.str]] = None):
         """
         Input properties used for looking up and filtering OneagentFeatures resources.
 
@@ -137,74 +137,74 @@ class _OneagentFeaturesState:
 
     @_builtins.property
     @pulumi.getter
-    def _restore_(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def _restore_(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Used internally by the terraform provider. Do not populate
         """
         return pulumi.get(self, "_restore_")
 
     @_restore_.setter
-    def _restore_(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def _restore_(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "_restore_", value)
 
     @_builtins.property
     @pulumi.getter
-    def enabled(self) -> Optional[pulumi.Input[_builtins.bool]]:
+    def enabled(self) -> pulumi.Input[Optional[_builtins.bool]]:
         """
         This setting is enabled (`true`) or disabled (`false`)
         """
         return pulumi.get(self, "enabled")
 
     @enabled.setter
-    def enabled(self, value: Optional[pulumi.Input[_builtins.bool]]):
+    def enabled(self, value: pulumi.Input[Optional[_builtins.bool]]):
         pulumi.set(self, "enabled", value)
 
     @_builtins.property
     @pulumi.getter
-    def forcible(self) -> Optional[pulumi.Input[_builtins.bool]]:
+    def forcible(self) -> pulumi.Input[Optional[_builtins.bool]]:
         """
         Activate this feature also in OneAgents only fulfilling the minimum Opt-In version
         """
         return pulumi.get(self, "forcible")
 
     @forcible.setter
-    def forcible(self, value: Optional[pulumi.Input[_builtins.bool]]):
+    def forcible(self, value: pulumi.Input[Optional[_builtins.bool]]):
         pulumi.set(self, "forcible", value)
 
     @_builtins.property
     @pulumi.getter
-    def instrumentation(self) -> Optional[pulumi.Input[_builtins.bool]]:
+    def instrumentation(self) -> pulumi.Input[Optional[_builtins.bool]]:
         """
         Instrumentation enabled (change needs a process restart)
         """
         return pulumi.get(self, "instrumentation")
 
     @instrumentation.setter
-    def instrumentation(self, value: Optional[pulumi.Input[_builtins.bool]]):
+    def instrumentation(self, value: pulumi.Input[Optional[_builtins.bool]]):
         pulumi.set(self, "instrumentation", value)
 
     @_builtins.property
     @pulumi.getter
-    def key(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def key(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Feature
         """
         return pulumi.get(self, "key")
 
     @key.setter
-    def key(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def key(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "key", value)
 
     @_builtins.property
     @pulumi.getter
-    def scope(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def scope(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The scope of this setting (PROCESS*GROUP*INSTANCE, PROCESS_GROUP). Omit this property if you want to cover the whole environment.
         """
         return pulumi.get(self, "scope")
 
     @scope.setter
-    def scope(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def scope(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "scope", value)
 
 
@@ -214,11 +214,11 @@ class OneagentFeatures(pulumi.CustomResource):
     def __init__(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 enabled: Optional[pulumi.Input[_builtins.bool]] = None,
-                 forcible: Optional[pulumi.Input[_builtins.bool]] = None,
-                 instrumentation: Optional[pulumi.Input[_builtins.bool]] = None,
-                 key: Optional[pulumi.Input[_builtins.str]] = None,
-                 scope: Optional[pulumi.Input[_builtins.str]] = None,
+                 enabled: pulumi.Input[Optional[_builtins.bool]] = None,
+                 forcible: pulumi.Input[Optional[_builtins.bool]] = None,
+                 instrumentation: pulumi.Input[Optional[_builtins.bool]] = None,
+                 key: pulumi.Input[Optional[_builtins.str]] = None,
+                 scope: pulumi.Input[Optional[_builtins.str]] = None,
                  __props__=None):
         """
         > This resource requires the API token scopes **Read settings** (`settings.read`) and **Write settings** (`settings.write`)
@@ -309,11 +309,11 @@ class OneagentFeatures(pulumi.CustomResource):
     def _internal_init(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 enabled: Optional[pulumi.Input[_builtins.bool]] = None,
-                 forcible: Optional[pulumi.Input[_builtins.bool]] = None,
-                 instrumentation: Optional[pulumi.Input[_builtins.bool]] = None,
-                 key: Optional[pulumi.Input[_builtins.str]] = None,
-                 scope: Optional[pulumi.Input[_builtins.str]] = None,
+                 enabled: pulumi.Input[Optional[_builtins.bool]] = None,
+                 forcible: pulumi.Input[Optional[_builtins.bool]] = None,
+                 instrumentation: pulumi.Input[Optional[_builtins.bool]] = None,
+                 key: pulumi.Input[Optional[_builtins.str]] = None,
+                 scope: pulumi.Input[Optional[_builtins.str]] = None,
                  __props__=None):
         opts = pulumi.ResourceOptions.merge(_utilities.get_resource_opts_defaults(), opts)
         if not isinstance(opts, pulumi.ResourceOptions):
@@ -343,12 +343,12 @@ class OneagentFeatures(pulumi.CustomResource):
     def get(resource_name: str,
             id: pulumi.Input[str],
             opts: Optional[pulumi.ResourceOptions] = None,
-            _restore_: Optional[pulumi.Input[_builtins.str]] = None,
-            enabled: Optional[pulumi.Input[_builtins.bool]] = None,
-            forcible: Optional[pulumi.Input[_builtins.bool]] = None,
-            instrumentation: Optional[pulumi.Input[_builtins.bool]] = None,
-            key: Optional[pulumi.Input[_builtins.str]] = None,
-            scope: Optional[pulumi.Input[_builtins.str]] = None) -> 'OneagentFeatures':
+            _restore_: pulumi.Input[Optional[_builtins.str]] = None,
+            enabled: pulumi.Input[Optional[_builtins.bool]] = None,
+            forcible: pulumi.Input[Optional[_builtins.bool]] = None,
+            instrumentation: pulumi.Input[Optional[_builtins.bool]] = None,
+            key: pulumi.Input[Optional[_builtins.str]] = None,
+            scope: pulumi.Input[Optional[_builtins.str]] = None) -> 'OneagentFeatures':
         """
         Get an existing OneagentFeatures resource's state with the given name, id, and optional extra
         properties used to qualify the lookup.

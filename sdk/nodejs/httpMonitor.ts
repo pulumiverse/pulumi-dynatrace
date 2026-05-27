@@ -139,43 +139,43 @@ export interface HttpMonitorState {
     /**
      * The anomaly detection configuration.
      */
-    anomalyDetections?: pulumi.Input<pulumi.Input<inputs.HttpMonitorAnomalyDetection>[]>;
+    anomalyDetections?: pulumi.Input<pulumi.Input<inputs.HttpMonitorAnomalyDetection>[] | undefined>;
     /**
      * The monitor is enabled (`true`) or disabled (`false`).
      */
-    enabled?: pulumi.Input<boolean>;
+    enabled?: pulumi.Input<boolean | undefined>;
     /**
      * The frequency of the monitor, in minutes.
      */
-    frequency?: pulumi.Input<number>;
+    frequency?: pulumi.Input<number | undefined>;
     /**
      * A list of locations from which the monitor is executed.
      *
      * To specify a location, use its entity ID.
      */
-    locations?: pulumi.Input<pulumi.Input<string>[]>;
+    locations?: pulumi.Input<pulumi.Input<string>[] | undefined>;
     /**
      * A set of manually assigned applications.
      */
-    manuallyAssignedApps?: pulumi.Input<pulumi.Input<string>[]>;
+    manuallyAssignedApps?: pulumi.Input<pulumi.Input<string>[] | undefined>;
     /**
      * The name of the monitor.
      */
-    name?: pulumi.Input<string>;
+    name?: pulumi.Input<string | undefined>;
     /**
      * No script block - handle requests via `dynatrace.HttpMonitorScript` resource
      */
-    noScript?: pulumi.Input<boolean>;
+    noScript?: pulumi.Input<boolean | undefined>;
     /**
      * The HTTP Script
      */
-    script?: pulumi.Input<inputs.HttpMonitorScript>;
+    script?: pulumi.Input<inputs.HttpMonitorScript | undefined>;
     /**
      * A set of tags assigned to the monitor.
      *
      * You can specify only the value of the tag here and the `CONTEXTLESS` context and source 'USER' will be added automatically.
      */
-    tags?: pulumi.Input<pulumi.Input<inputs.HttpMonitorTag>[]>;
+    tags?: pulumi.Input<pulumi.Input<inputs.HttpMonitorTag>[] | undefined>;
 }
 
 /**
@@ -185,11 +185,11 @@ export interface HttpMonitorArgs {
     /**
      * The anomaly detection configuration.
      */
-    anomalyDetections?: pulumi.Input<pulumi.Input<inputs.HttpMonitorAnomalyDetection>[]>;
+    anomalyDetections?: pulumi.Input<pulumi.Input<inputs.HttpMonitorAnomalyDetection>[] | undefined>;
     /**
      * The monitor is enabled (`true`) or disabled (`false`).
      */
-    enabled?: pulumi.Input<boolean>;
+    enabled?: pulumi.Input<boolean | undefined>;
     /**
      * The frequency of the monitor, in minutes.
      */
@@ -199,27 +199,27 @@ export interface HttpMonitorArgs {
      *
      * To specify a location, use its entity ID.
      */
-    locations?: pulumi.Input<pulumi.Input<string>[]>;
+    locations?: pulumi.Input<pulumi.Input<string>[] | undefined>;
     /**
      * A set of manually assigned applications.
      */
-    manuallyAssignedApps?: pulumi.Input<pulumi.Input<string>[]>;
+    manuallyAssignedApps?: pulumi.Input<pulumi.Input<string>[] | undefined>;
     /**
      * The name of the monitor.
      */
-    name?: pulumi.Input<string>;
+    name?: pulumi.Input<string | undefined>;
     /**
      * No script block - handle requests via `dynatrace.HttpMonitorScript` resource
      */
-    noScript?: pulumi.Input<boolean>;
+    noScript?: pulumi.Input<boolean | undefined>;
     /**
      * The HTTP Script
      */
-    script?: pulumi.Input<inputs.HttpMonitorScript>;
+    script?: pulumi.Input<inputs.HttpMonitorScript | undefined>;
     /**
      * A set of tags assigned to the monitor.
      *
      * You can specify only the value of the tag here and the `CONTEXTLESS` context and source 'USER' will be added automatically.
      */
-    tags?: pulumi.Input<pulumi.Input<inputs.HttpMonitorTag>[]>;
+    tags?: pulumi.Input<pulumi.Input<inputs.HttpMonitorTag>[] | undefined>;
 }

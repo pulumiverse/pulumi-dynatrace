@@ -120,12 +120,12 @@ class DatabaseAnomaliesV2Args:
 @pulumi.input_type
 class _DatabaseAnomaliesV2State:
     def __init__(__self__, *,
-                 database_connections: Optional[pulumi.Input['DatabaseAnomaliesV2DatabaseConnectionsArgs']] = None,
-                 failure_rate: Optional[pulumi.Input['DatabaseAnomaliesV2FailureRateArgs']] = None,
-                 load_drops: Optional[pulumi.Input['DatabaseAnomaliesV2LoadDropsArgs']] = None,
-                 load_spikes: Optional[pulumi.Input['DatabaseAnomaliesV2LoadSpikesArgs']] = None,
-                 response_time: Optional[pulumi.Input['DatabaseAnomaliesV2ResponseTimeArgs']] = None,
-                 scope: Optional[pulumi.Input[_builtins.str]] = None):
+                 database_connections: pulumi.Input[Optional['DatabaseAnomaliesV2DatabaseConnectionsArgs']] = None,
+                 failure_rate: pulumi.Input[Optional['DatabaseAnomaliesV2FailureRateArgs']] = None,
+                 load_drops: pulumi.Input[Optional['DatabaseAnomaliesV2LoadDropsArgs']] = None,
+                 load_spikes: pulumi.Input[Optional['DatabaseAnomaliesV2LoadSpikesArgs']] = None,
+                 response_time: pulumi.Input[Optional['DatabaseAnomaliesV2ResponseTimeArgs']] = None,
+                 scope: pulumi.Input[Optional[_builtins.str]] = None):
         """
         Input properties used for looking up and filtering DatabaseAnomaliesV2 resources.
 
@@ -151,74 +151,74 @@ class _DatabaseAnomaliesV2State:
 
     @_builtins.property
     @pulumi.getter(name="databaseConnections")
-    def database_connections(self) -> Optional[pulumi.Input['DatabaseAnomaliesV2DatabaseConnectionsArgs']]:
+    def database_connections(self) -> pulumi.Input[Optional['DatabaseAnomaliesV2DatabaseConnectionsArgs']]:
         """
         Alert if the number of failed database connects within the specified time exceeds the specified absolute threshold:
         """
         return pulumi.get(self, "database_connections")
 
     @database_connections.setter
-    def database_connections(self, value: Optional[pulumi.Input['DatabaseAnomaliesV2DatabaseConnectionsArgs']]):
+    def database_connections(self, value: pulumi.Input[Optional['DatabaseAnomaliesV2DatabaseConnectionsArgs']]):
         pulumi.set(self, "database_connections", value)
 
     @_builtins.property
     @pulumi.getter(name="failureRate")
-    def failure_rate(self) -> Optional[pulumi.Input['DatabaseAnomaliesV2FailureRateArgs']]:
+    def failure_rate(self) -> pulumi.Input[Optional['DatabaseAnomaliesV2FailureRateArgs']]:
         """
         Failure rate
         """
         return pulumi.get(self, "failure_rate")
 
     @failure_rate.setter
-    def failure_rate(self, value: Optional[pulumi.Input['DatabaseAnomaliesV2FailureRateArgs']]):
+    def failure_rate(self, value: pulumi.Input[Optional['DatabaseAnomaliesV2FailureRateArgs']]):
         pulumi.set(self, "failure_rate", value)
 
     @_builtins.property
     @pulumi.getter(name="loadDrops")
-    def load_drops(self) -> Optional[pulumi.Input['DatabaseAnomaliesV2LoadDropsArgs']]:
+    def load_drops(self) -> pulumi.Input[Optional['DatabaseAnomaliesV2LoadDropsArgs']]:
         """
         Alert if the observed load is lower than the expected load by a specified margin for a specified amount of time.
         """
         return pulumi.get(self, "load_drops")
 
     @load_drops.setter
-    def load_drops(self, value: Optional[pulumi.Input['DatabaseAnomaliesV2LoadDropsArgs']]):
+    def load_drops(self, value: pulumi.Input[Optional['DatabaseAnomaliesV2LoadDropsArgs']]):
         pulumi.set(self, "load_drops", value)
 
     @_builtins.property
     @pulumi.getter(name="loadSpikes")
-    def load_spikes(self) -> Optional[pulumi.Input['DatabaseAnomaliesV2LoadSpikesArgs']]:
+    def load_spikes(self) -> pulumi.Input[Optional['DatabaseAnomaliesV2LoadSpikesArgs']]:
         """
         Alert if the observed load exceeds the expected load by a specified margin for a specified amount of time.
         """
         return pulumi.get(self, "load_spikes")
 
     @load_spikes.setter
-    def load_spikes(self, value: Optional[pulumi.Input['DatabaseAnomaliesV2LoadSpikesArgs']]):
+    def load_spikes(self, value: pulumi.Input[Optional['DatabaseAnomaliesV2LoadSpikesArgs']]):
         pulumi.set(self, "load_spikes", value)
 
     @_builtins.property
     @pulumi.getter(name="responseTime")
-    def response_time(self) -> Optional[pulumi.Input['DatabaseAnomaliesV2ResponseTimeArgs']]:
+    def response_time(self) -> pulumi.Input[Optional['DatabaseAnomaliesV2ResponseTimeArgs']]:
         """
         Response time
         """
         return pulumi.get(self, "response_time")
 
     @response_time.setter
-    def response_time(self, value: Optional[pulumi.Input['DatabaseAnomaliesV2ResponseTimeArgs']]):
+    def response_time(self, value: pulumi.Input[Optional['DatabaseAnomaliesV2ResponseTimeArgs']]):
         pulumi.set(self, "response_time", value)
 
     @_builtins.property
     @pulumi.getter
-    def scope(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def scope(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The scope for the database anomaly detection
         """
         return pulumi.get(self, "scope")
 
     @scope.setter
-    def scope(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def scope(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "scope", value)
 
 
@@ -228,12 +228,12 @@ class DatabaseAnomaliesV2(pulumi.CustomResource):
     def __init__(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 database_connections: Optional[pulumi.Input[Union['DatabaseAnomaliesV2DatabaseConnectionsArgs', 'DatabaseAnomaliesV2DatabaseConnectionsArgsDict']]] = None,
-                 failure_rate: Optional[pulumi.Input[Union['DatabaseAnomaliesV2FailureRateArgs', 'DatabaseAnomaliesV2FailureRateArgsDict']]] = None,
-                 load_drops: Optional[pulumi.Input[Union['DatabaseAnomaliesV2LoadDropsArgs', 'DatabaseAnomaliesV2LoadDropsArgsDict']]] = None,
-                 load_spikes: Optional[pulumi.Input[Union['DatabaseAnomaliesV2LoadSpikesArgs', 'DatabaseAnomaliesV2LoadSpikesArgsDict']]] = None,
-                 response_time: Optional[pulumi.Input[Union['DatabaseAnomaliesV2ResponseTimeArgs', 'DatabaseAnomaliesV2ResponseTimeArgsDict']]] = None,
-                 scope: Optional[pulumi.Input[_builtins.str]] = None,
+                 database_connections: pulumi.Input[Optional[Union['DatabaseAnomaliesV2DatabaseConnectionsArgs', 'DatabaseAnomaliesV2DatabaseConnectionsArgsDict']]] = None,
+                 failure_rate: pulumi.Input[Optional[Union['DatabaseAnomaliesV2FailureRateArgs', 'DatabaseAnomaliesV2FailureRateArgsDict']]] = None,
+                 load_drops: pulumi.Input[Optional[Union['DatabaseAnomaliesV2LoadDropsArgs', 'DatabaseAnomaliesV2LoadDropsArgsDict']]] = None,
+                 load_spikes: pulumi.Input[Optional[Union['DatabaseAnomaliesV2LoadSpikesArgs', 'DatabaseAnomaliesV2LoadSpikesArgsDict']]] = None,
+                 response_time: pulumi.Input[Optional[Union['DatabaseAnomaliesV2ResponseTimeArgs', 'DatabaseAnomaliesV2ResponseTimeArgsDict']]] = None,
+                 scope: pulumi.Input[Optional[_builtins.str]] = None,
                  __props__=None):
         """
         > This resource requires the API token scopes **Read settings** (`settings.read`) and **Write settings** (`settings.write`)
@@ -297,12 +297,12 @@ class DatabaseAnomaliesV2(pulumi.CustomResource):
     def _internal_init(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 database_connections: Optional[pulumi.Input[Union['DatabaseAnomaliesV2DatabaseConnectionsArgs', 'DatabaseAnomaliesV2DatabaseConnectionsArgsDict']]] = None,
-                 failure_rate: Optional[pulumi.Input[Union['DatabaseAnomaliesV2FailureRateArgs', 'DatabaseAnomaliesV2FailureRateArgsDict']]] = None,
-                 load_drops: Optional[pulumi.Input[Union['DatabaseAnomaliesV2LoadDropsArgs', 'DatabaseAnomaliesV2LoadDropsArgsDict']]] = None,
-                 load_spikes: Optional[pulumi.Input[Union['DatabaseAnomaliesV2LoadSpikesArgs', 'DatabaseAnomaliesV2LoadSpikesArgsDict']]] = None,
-                 response_time: Optional[pulumi.Input[Union['DatabaseAnomaliesV2ResponseTimeArgs', 'DatabaseAnomaliesV2ResponseTimeArgsDict']]] = None,
-                 scope: Optional[pulumi.Input[_builtins.str]] = None,
+                 database_connections: pulumi.Input[Optional[Union['DatabaseAnomaliesV2DatabaseConnectionsArgs', 'DatabaseAnomaliesV2DatabaseConnectionsArgsDict']]] = None,
+                 failure_rate: pulumi.Input[Optional[Union['DatabaseAnomaliesV2FailureRateArgs', 'DatabaseAnomaliesV2FailureRateArgsDict']]] = None,
+                 load_drops: pulumi.Input[Optional[Union['DatabaseAnomaliesV2LoadDropsArgs', 'DatabaseAnomaliesV2LoadDropsArgsDict']]] = None,
+                 load_spikes: pulumi.Input[Optional[Union['DatabaseAnomaliesV2LoadSpikesArgs', 'DatabaseAnomaliesV2LoadSpikesArgsDict']]] = None,
+                 response_time: pulumi.Input[Optional[Union['DatabaseAnomaliesV2ResponseTimeArgs', 'DatabaseAnomaliesV2ResponseTimeArgsDict']]] = None,
+                 scope: pulumi.Input[Optional[_builtins.str]] = None,
                  __props__=None):
         opts = pulumi.ResourceOptions.merge(_utilities.get_resource_opts_defaults(), opts)
         if not isinstance(opts, pulumi.ResourceOptions):
@@ -340,12 +340,12 @@ class DatabaseAnomaliesV2(pulumi.CustomResource):
     def get(resource_name: str,
             id: pulumi.Input[str],
             opts: Optional[pulumi.ResourceOptions] = None,
-            database_connections: Optional[pulumi.Input[Union['DatabaseAnomaliesV2DatabaseConnectionsArgs', 'DatabaseAnomaliesV2DatabaseConnectionsArgsDict']]] = None,
-            failure_rate: Optional[pulumi.Input[Union['DatabaseAnomaliesV2FailureRateArgs', 'DatabaseAnomaliesV2FailureRateArgsDict']]] = None,
-            load_drops: Optional[pulumi.Input[Union['DatabaseAnomaliesV2LoadDropsArgs', 'DatabaseAnomaliesV2LoadDropsArgsDict']]] = None,
-            load_spikes: Optional[pulumi.Input[Union['DatabaseAnomaliesV2LoadSpikesArgs', 'DatabaseAnomaliesV2LoadSpikesArgsDict']]] = None,
-            response_time: Optional[pulumi.Input[Union['DatabaseAnomaliesV2ResponseTimeArgs', 'DatabaseAnomaliesV2ResponseTimeArgsDict']]] = None,
-            scope: Optional[pulumi.Input[_builtins.str]] = None) -> 'DatabaseAnomaliesV2':
+            database_connections: pulumi.Input[Optional[Union['DatabaseAnomaliesV2DatabaseConnectionsArgs', 'DatabaseAnomaliesV2DatabaseConnectionsArgsDict']]] = None,
+            failure_rate: pulumi.Input[Optional[Union['DatabaseAnomaliesV2FailureRateArgs', 'DatabaseAnomaliesV2FailureRateArgsDict']]] = None,
+            load_drops: pulumi.Input[Optional[Union['DatabaseAnomaliesV2LoadDropsArgs', 'DatabaseAnomaliesV2LoadDropsArgsDict']]] = None,
+            load_spikes: pulumi.Input[Optional[Union['DatabaseAnomaliesV2LoadSpikesArgs', 'DatabaseAnomaliesV2LoadSpikesArgsDict']]] = None,
+            response_time: pulumi.Input[Optional[Union['DatabaseAnomaliesV2ResponseTimeArgs', 'DatabaseAnomaliesV2ResponseTimeArgsDict']]] = None,
+            scope: pulumi.Input[Optional[_builtins.str]] = None) -> 'DatabaseAnomaliesV2':
         """
         Get an existing DatabaseAnomaliesV2 resource's state with the given name, id, and optional extra
         properties used to qualify the lookup.

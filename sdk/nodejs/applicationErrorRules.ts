@@ -116,29 +116,29 @@ export interface ApplicationErrorRulesState {
     /**
      * (Field has overlap with `dynatrace.WebAppCustomErrors`) An ordered list of HTTP errors.
      */
-    customErrors?: pulumi.Input<inputs.ApplicationErrorRulesCustomErrors>;
+    customErrors?: pulumi.Input<inputs.ApplicationErrorRulesCustomErrors | undefined>;
     /**
      * (Field has overlap with `dynatrace.WebAppRequestErrors`) An ordered list of HTTP errors.
      *
      *  Rules are evaluated from top to bottom; the first matching rule applies
      */
-    httpErrors?: pulumi.Input<inputs.ApplicationErrorRulesHttpErrors>;
+    httpErrors?: pulumi.Input<inputs.ApplicationErrorRulesHttpErrors | undefined>;
     /**
      * (Field has overlap with `dynatrace.WebAppCustomErrors`) Exclude (`true`) or include (`false`) custom errors listed in **customErrorRules** in Apdex calculation
      */
-    ignoreCustomErrorsApdex?: pulumi.Input<boolean>;
+    ignoreCustomErrorsApdex?: pulumi.Input<boolean | undefined>;
     /**
      * (Field has overlap with `dynatrace.WebAppRequestErrors`) Exclude (`true`) or include (`false`) HTTP errors listed in **httpErrorRules** in Apdex calculation
      */
-    ignoreHttpErrorsApdex?: pulumi.Input<boolean>;
+    ignoreHttpErrorsApdex?: pulumi.Input<boolean | undefined>;
     /**
      * Exclude (`true`) or include (`false`) JavaScript errors in Apdex calculation
      */
-    ignoreJsErrorsApdex?: pulumi.Input<boolean>;
+    ignoreJsErrorsApdex?: pulumi.Input<boolean | undefined>;
     /**
      * The EntityID of the the WebApplication
      */
-    webApplicationId?: pulumi.Input<string>;
+    webApplicationId?: pulumi.Input<string | undefined>;
 }
 
 /**
@@ -148,27 +148,27 @@ export interface ApplicationErrorRulesArgs {
     /**
      * (Field has overlap with `dynatrace.WebAppCustomErrors`) An ordered list of HTTP errors.
      */
-    customErrors?: pulumi.Input<inputs.ApplicationErrorRulesCustomErrors>;
+    customErrors?: pulumi.Input<inputs.ApplicationErrorRulesCustomErrors | undefined>;
     /**
      * (Field has overlap with `dynatrace.WebAppRequestErrors`) An ordered list of HTTP errors.
      *
      *  Rules are evaluated from top to bottom; the first matching rule applies
      */
-    httpErrors?: pulumi.Input<inputs.ApplicationErrorRulesHttpErrors>;
+    httpErrors?: pulumi.Input<inputs.ApplicationErrorRulesHttpErrors | undefined>;
     /**
      * (Field has overlap with `dynatrace.WebAppCustomErrors`) Exclude (`true`) or include (`false`) custom errors listed in **customErrorRules** in Apdex calculation
      */
-    ignoreCustomErrorsApdex?: pulumi.Input<boolean>;
+    ignoreCustomErrorsApdex?: pulumi.Input<boolean | undefined>;
     /**
      * (Field has overlap with `dynatrace.WebAppRequestErrors`) Exclude (`true`) or include (`false`) HTTP errors listed in **httpErrorRules** in Apdex calculation
      */
-    ignoreHttpErrorsApdex?: pulumi.Input<boolean>;
+    ignoreHttpErrorsApdex?: pulumi.Input<boolean | undefined>;
     /**
      * Exclude (`true`) or include (`false`) JavaScript errors in Apdex calculation
      */
-    ignoreJsErrorsApdex?: pulumi.Input<boolean>;
+    ignoreJsErrorsApdex?: pulumi.Input<boolean | undefined>;
     /**
      * The EntityID of the the WebApplication
      */
-    webApplicationId?: pulumi.Input<string>;
+    webApplicationId?: pulumi.Input<string | undefined>;
 }

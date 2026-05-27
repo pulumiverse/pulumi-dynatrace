@@ -82,7 +82,7 @@ export interface CloudDevelopmentEnvironmentsState {
     /**
      * The URL to allow app development from. E.g. `https://*.my-company.my-cde-provider.com`.
      */
-    cloudDevelopmentEnvironments?: pulumi.Input<pulumi.Input<string>[]>;
+    cloudDevelopmentEnvironments?: pulumi.Input<pulumi.Input<string>[] | undefined>;
 }
 
 /**
@@ -92,5 +92,5 @@ export interface CloudDevelopmentEnvironmentsArgs {
     /**
      * The URL to allow app development from. E.g. `https://*.my-company.my-cde-provider.com`.
      */
-    cloudDevelopmentEnvironments?: pulumi.Input<pulumi.Input<string>[]>;
+    cloudDevelopmentEnvironments?: pulumi.Input<pulumi.Input<string>[] | undefined>;
 }

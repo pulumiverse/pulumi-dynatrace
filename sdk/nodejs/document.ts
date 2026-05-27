@@ -263,31 +263,31 @@ export interface DocumentState {
     /**
      * Document content as JSON
      */
-    content?: pulumi.Input<string>;
+    content?: pulumi.Input<string | undefined>;
     /**
      * If provided, this will be the id of the document. If not provided, a system-generated id is used.
      */
-    customId?: pulumi.Input<string>;
+    customId?: pulumi.Input<string | undefined>;
     /**
      * The name/name of the document
      */
-    name?: pulumi.Input<string>;
+    name?: pulumi.Input<string | undefined>;
     /**
      * The ID of the owner of this document
      */
-    owner?: pulumi.Input<string>;
+    owner?: pulumi.Input<string | undefined>;
     /**
      * Specifies whether the document is private or readable by everybody
      */
-    private?: pulumi.Input<boolean>;
+    private?: pulumi.Input<boolean | undefined>;
     /**
      * Type of the document. Possible Values are `dashboard`, `launchpad` and `notebook`
      */
-    type?: pulumi.Input<string>;
+    type?: pulumi.Input<string | undefined>;
     /**
      * The version of the document
      */
-    version?: pulumi.Input<number>;
+    version?: pulumi.Input<number | undefined>;
 }
 
 /**
@@ -301,15 +301,15 @@ export interface DocumentArgs {
     /**
      * If provided, this will be the id of the document. If not provided, a system-generated id is used.
      */
-    customId?: pulumi.Input<string>;
+    customId?: pulumi.Input<string | undefined>;
     /**
      * The name/name of the document
      */
-    name?: pulumi.Input<string>;
+    name?: pulumi.Input<string | undefined>;
     /**
      * Specifies whether the document is private or readable by everybody
      */
-    private?: pulumi.Input<boolean>;
+    private?: pulumi.Input<boolean | undefined>;
     /**
      * Type of the document. Possible Values are `dashboard`, `launchpad` and `notebook`
      */

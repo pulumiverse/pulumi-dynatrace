@@ -35,7 +35,7 @@ class K8sWorkloadAnomaliesArgs:
                  pod_preemption_events: pulumi.Input['K8sWorkloadAnomaliesPodPreemptionEventsArgs'],
                  pod_stuck_in_terminating: pulumi.Input['K8sWorkloadAnomaliesPodStuckInTerminatingArgs'],
                  workload_without_ready_pods: pulumi.Input['K8sWorkloadAnomaliesWorkloadWithoutReadyPodsArgs'],
-                 scope: Optional[pulumi.Input[_builtins.str]] = None):
+                 scope: pulumi.Input[Optional[_builtins.str]] = None):
         """
         The set of arguments for constructing a K8sWorkloadAnomalies resource.
 
@@ -242,35 +242,35 @@ class K8sWorkloadAnomaliesArgs:
 
     @_builtins.property
     @pulumi.getter
-    def scope(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def scope(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The scope of this setting (CLOUD*APPLICATION*NAMESPACE, KUBERNETES_CLUSTER). Omit this property if you want to cover the whole environment.
         """
         return pulumi.get(self, "scope")
 
     @scope.setter
-    def scope(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def scope(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "scope", value)
 
 
 @pulumi.input_type
 class _K8sWorkloadAnomaliesState:
     def __init__(__self__, *,
-                 container_restarts: Optional[pulumi.Input['K8sWorkloadAnomaliesContainerRestartsArgs']] = None,
-                 deployment_stuck: Optional[pulumi.Input['K8sWorkloadAnomaliesDeploymentStuckArgs']] = None,
-                 high_cpu_throttling: Optional[pulumi.Input['K8sWorkloadAnomaliesHighCpuThrottlingArgs']] = None,
-                 high_cpu_usage: Optional[pulumi.Input['K8sWorkloadAnomaliesHighCpuUsageArgs']] = None,
-                 high_memory_usage: Optional[pulumi.Input['K8sWorkloadAnomaliesHighMemoryUsageArgs']] = None,
-                 job_failure_events: Optional[pulumi.Input['K8sWorkloadAnomaliesJobFailureEventsArgs']] = None,
-                 not_all_pods_ready: Optional[pulumi.Input['K8sWorkloadAnomaliesNotAllPodsReadyArgs']] = None,
-                 oom_kills: Optional[pulumi.Input['K8sWorkloadAnomaliesOomKillsArgs']] = None,
-                 pending_pods: Optional[pulumi.Input['K8sWorkloadAnomaliesPendingPodsArgs']] = None,
-                 pod_backoff_events: Optional[pulumi.Input['K8sWorkloadAnomaliesPodBackoffEventsArgs']] = None,
-                 pod_eviction_events: Optional[pulumi.Input['K8sWorkloadAnomaliesPodEvictionEventsArgs']] = None,
-                 pod_preemption_events: Optional[pulumi.Input['K8sWorkloadAnomaliesPodPreemptionEventsArgs']] = None,
-                 pod_stuck_in_terminating: Optional[pulumi.Input['K8sWorkloadAnomaliesPodStuckInTerminatingArgs']] = None,
-                 scope: Optional[pulumi.Input[_builtins.str]] = None,
-                 workload_without_ready_pods: Optional[pulumi.Input['K8sWorkloadAnomaliesWorkloadWithoutReadyPodsArgs']] = None):
+                 container_restarts: pulumi.Input[Optional['K8sWorkloadAnomaliesContainerRestartsArgs']] = None,
+                 deployment_stuck: pulumi.Input[Optional['K8sWorkloadAnomaliesDeploymentStuckArgs']] = None,
+                 high_cpu_throttling: pulumi.Input[Optional['K8sWorkloadAnomaliesHighCpuThrottlingArgs']] = None,
+                 high_cpu_usage: pulumi.Input[Optional['K8sWorkloadAnomaliesHighCpuUsageArgs']] = None,
+                 high_memory_usage: pulumi.Input[Optional['K8sWorkloadAnomaliesHighMemoryUsageArgs']] = None,
+                 job_failure_events: pulumi.Input[Optional['K8sWorkloadAnomaliesJobFailureEventsArgs']] = None,
+                 not_all_pods_ready: pulumi.Input[Optional['K8sWorkloadAnomaliesNotAllPodsReadyArgs']] = None,
+                 oom_kills: pulumi.Input[Optional['K8sWorkloadAnomaliesOomKillsArgs']] = None,
+                 pending_pods: pulumi.Input[Optional['K8sWorkloadAnomaliesPendingPodsArgs']] = None,
+                 pod_backoff_events: pulumi.Input[Optional['K8sWorkloadAnomaliesPodBackoffEventsArgs']] = None,
+                 pod_eviction_events: pulumi.Input[Optional['K8sWorkloadAnomaliesPodEvictionEventsArgs']] = None,
+                 pod_preemption_events: pulumi.Input[Optional['K8sWorkloadAnomaliesPodPreemptionEventsArgs']] = None,
+                 pod_stuck_in_terminating: pulumi.Input[Optional['K8sWorkloadAnomaliesPodStuckInTerminatingArgs']] = None,
+                 scope: pulumi.Input[Optional[_builtins.str]] = None,
+                 workload_without_ready_pods: pulumi.Input[Optional['K8sWorkloadAnomaliesWorkloadWithoutReadyPodsArgs']] = None):
         """
         Input properties used for looking up and filtering K8sWorkloadAnomalies resources.
 
@@ -323,182 +323,182 @@ class _K8sWorkloadAnomaliesState:
 
     @_builtins.property
     @pulumi.getter(name="containerRestarts")
-    def container_restarts(self) -> Optional[pulumi.Input['K8sWorkloadAnomaliesContainerRestartsArgs']]:
+    def container_restarts(self) -> pulumi.Input[Optional['K8sWorkloadAnomaliesContainerRestartsArgs']]:
         """
         no documentation available
         """
         return pulumi.get(self, "container_restarts")
 
     @container_restarts.setter
-    def container_restarts(self, value: Optional[pulumi.Input['K8sWorkloadAnomaliesContainerRestartsArgs']]):
+    def container_restarts(self, value: pulumi.Input[Optional['K8sWorkloadAnomaliesContainerRestartsArgs']]):
         pulumi.set(self, "container_restarts", value)
 
     @_builtins.property
     @pulumi.getter(name="deploymentStuck")
-    def deployment_stuck(self) -> Optional[pulumi.Input['K8sWorkloadAnomaliesDeploymentStuckArgs']]:
+    def deployment_stuck(self) -> pulumi.Input[Optional['K8sWorkloadAnomaliesDeploymentStuckArgs']]:
         """
         no documentation available
         """
         return pulumi.get(self, "deployment_stuck")
 
     @deployment_stuck.setter
-    def deployment_stuck(self, value: Optional[pulumi.Input['K8sWorkloadAnomaliesDeploymentStuckArgs']]):
+    def deployment_stuck(self, value: pulumi.Input[Optional['K8sWorkloadAnomaliesDeploymentStuckArgs']]):
         pulumi.set(self, "deployment_stuck", value)
 
     @_builtins.property
     @pulumi.getter(name="highCpuThrottling")
-    def high_cpu_throttling(self) -> Optional[pulumi.Input['K8sWorkloadAnomaliesHighCpuThrottlingArgs']]:
+    def high_cpu_throttling(self) -> pulumi.Input[Optional['K8sWorkloadAnomaliesHighCpuThrottlingArgs']]:
         """
         no documentation available
         """
         return pulumi.get(self, "high_cpu_throttling")
 
     @high_cpu_throttling.setter
-    def high_cpu_throttling(self, value: Optional[pulumi.Input['K8sWorkloadAnomaliesHighCpuThrottlingArgs']]):
+    def high_cpu_throttling(self, value: pulumi.Input[Optional['K8sWorkloadAnomaliesHighCpuThrottlingArgs']]):
         pulumi.set(self, "high_cpu_throttling", value)
 
     @_builtins.property
     @pulumi.getter(name="highCpuUsage")
-    def high_cpu_usage(self) -> Optional[pulumi.Input['K8sWorkloadAnomaliesHighCpuUsageArgs']]:
+    def high_cpu_usage(self) -> pulumi.Input[Optional['K8sWorkloadAnomaliesHighCpuUsageArgs']]:
         """
         no documentation available
         """
         return pulumi.get(self, "high_cpu_usage")
 
     @high_cpu_usage.setter
-    def high_cpu_usage(self, value: Optional[pulumi.Input['K8sWorkloadAnomaliesHighCpuUsageArgs']]):
+    def high_cpu_usage(self, value: pulumi.Input[Optional['K8sWorkloadAnomaliesHighCpuUsageArgs']]):
         pulumi.set(self, "high_cpu_usage", value)
 
     @_builtins.property
     @pulumi.getter(name="highMemoryUsage")
-    def high_memory_usage(self) -> Optional[pulumi.Input['K8sWorkloadAnomaliesHighMemoryUsageArgs']]:
+    def high_memory_usage(self) -> pulumi.Input[Optional['K8sWorkloadAnomaliesHighMemoryUsageArgs']]:
         """
         no documentation available
         """
         return pulumi.get(self, "high_memory_usage")
 
     @high_memory_usage.setter
-    def high_memory_usage(self, value: Optional[pulumi.Input['K8sWorkloadAnomaliesHighMemoryUsageArgs']]):
+    def high_memory_usage(self, value: pulumi.Input[Optional['K8sWorkloadAnomaliesHighMemoryUsageArgs']]):
         pulumi.set(self, "high_memory_usage", value)
 
     @_builtins.property
     @pulumi.getter(name="jobFailureEvents")
-    def job_failure_events(self) -> Optional[pulumi.Input['K8sWorkloadAnomaliesJobFailureEventsArgs']]:
+    def job_failure_events(self) -> pulumi.Input[Optional['K8sWorkloadAnomaliesJobFailureEventsArgs']]:
         """
         no documentation available
         """
         return pulumi.get(self, "job_failure_events")
 
     @job_failure_events.setter
-    def job_failure_events(self, value: Optional[pulumi.Input['K8sWorkloadAnomaliesJobFailureEventsArgs']]):
+    def job_failure_events(self, value: pulumi.Input[Optional['K8sWorkloadAnomaliesJobFailureEventsArgs']]):
         pulumi.set(self, "job_failure_events", value)
 
     @_builtins.property
     @pulumi.getter(name="notAllPodsReady")
-    def not_all_pods_ready(self) -> Optional[pulumi.Input['K8sWorkloadAnomaliesNotAllPodsReadyArgs']]:
+    def not_all_pods_ready(self) -> pulumi.Input[Optional['K8sWorkloadAnomaliesNotAllPodsReadyArgs']]:
         """
         no documentation available
         """
         return pulumi.get(self, "not_all_pods_ready")
 
     @not_all_pods_ready.setter
-    def not_all_pods_ready(self, value: Optional[pulumi.Input['K8sWorkloadAnomaliesNotAllPodsReadyArgs']]):
+    def not_all_pods_ready(self, value: pulumi.Input[Optional['K8sWorkloadAnomaliesNotAllPodsReadyArgs']]):
         pulumi.set(self, "not_all_pods_ready", value)
 
     @_builtins.property
     @pulumi.getter(name="oomKills")
-    def oom_kills(self) -> Optional[pulumi.Input['K8sWorkloadAnomaliesOomKillsArgs']]:
+    def oom_kills(self) -> pulumi.Input[Optional['K8sWorkloadAnomaliesOomKillsArgs']]:
         """
         no documentation available
         """
         return pulumi.get(self, "oom_kills")
 
     @oom_kills.setter
-    def oom_kills(self, value: Optional[pulumi.Input['K8sWorkloadAnomaliesOomKillsArgs']]):
+    def oom_kills(self, value: pulumi.Input[Optional['K8sWorkloadAnomaliesOomKillsArgs']]):
         pulumi.set(self, "oom_kills", value)
 
     @_builtins.property
     @pulumi.getter(name="pendingPods")
-    def pending_pods(self) -> Optional[pulumi.Input['K8sWorkloadAnomaliesPendingPodsArgs']]:
+    def pending_pods(self) -> pulumi.Input[Optional['K8sWorkloadAnomaliesPendingPodsArgs']]:
         """
         no documentation available
         """
         return pulumi.get(self, "pending_pods")
 
     @pending_pods.setter
-    def pending_pods(self, value: Optional[pulumi.Input['K8sWorkloadAnomaliesPendingPodsArgs']]):
+    def pending_pods(self, value: pulumi.Input[Optional['K8sWorkloadAnomaliesPendingPodsArgs']]):
         pulumi.set(self, "pending_pods", value)
 
     @_builtins.property
     @pulumi.getter(name="podBackoffEvents")
-    def pod_backoff_events(self) -> Optional[pulumi.Input['K8sWorkloadAnomaliesPodBackoffEventsArgs']]:
+    def pod_backoff_events(self) -> pulumi.Input[Optional['K8sWorkloadAnomaliesPodBackoffEventsArgs']]:
         """
         no documentation available
         """
         return pulumi.get(self, "pod_backoff_events")
 
     @pod_backoff_events.setter
-    def pod_backoff_events(self, value: Optional[pulumi.Input['K8sWorkloadAnomaliesPodBackoffEventsArgs']]):
+    def pod_backoff_events(self, value: pulumi.Input[Optional['K8sWorkloadAnomaliesPodBackoffEventsArgs']]):
         pulumi.set(self, "pod_backoff_events", value)
 
     @_builtins.property
     @pulumi.getter(name="podEvictionEvents")
-    def pod_eviction_events(self) -> Optional[pulumi.Input['K8sWorkloadAnomaliesPodEvictionEventsArgs']]:
+    def pod_eviction_events(self) -> pulumi.Input[Optional['K8sWorkloadAnomaliesPodEvictionEventsArgs']]:
         """
         no documentation available
         """
         return pulumi.get(self, "pod_eviction_events")
 
     @pod_eviction_events.setter
-    def pod_eviction_events(self, value: Optional[pulumi.Input['K8sWorkloadAnomaliesPodEvictionEventsArgs']]):
+    def pod_eviction_events(self, value: pulumi.Input[Optional['K8sWorkloadAnomaliesPodEvictionEventsArgs']]):
         pulumi.set(self, "pod_eviction_events", value)
 
     @_builtins.property
     @pulumi.getter(name="podPreemptionEvents")
-    def pod_preemption_events(self) -> Optional[pulumi.Input['K8sWorkloadAnomaliesPodPreemptionEventsArgs']]:
+    def pod_preemption_events(self) -> pulumi.Input[Optional['K8sWorkloadAnomaliesPodPreemptionEventsArgs']]:
         """
         no documentation available
         """
         return pulumi.get(self, "pod_preemption_events")
 
     @pod_preemption_events.setter
-    def pod_preemption_events(self, value: Optional[pulumi.Input['K8sWorkloadAnomaliesPodPreemptionEventsArgs']]):
+    def pod_preemption_events(self, value: pulumi.Input[Optional['K8sWorkloadAnomaliesPodPreemptionEventsArgs']]):
         pulumi.set(self, "pod_preemption_events", value)
 
     @_builtins.property
     @pulumi.getter(name="podStuckInTerminating")
-    def pod_stuck_in_terminating(self) -> Optional[pulumi.Input['K8sWorkloadAnomaliesPodStuckInTerminatingArgs']]:
+    def pod_stuck_in_terminating(self) -> pulumi.Input[Optional['K8sWorkloadAnomaliesPodStuckInTerminatingArgs']]:
         """
         no documentation available
         """
         return pulumi.get(self, "pod_stuck_in_terminating")
 
     @pod_stuck_in_terminating.setter
-    def pod_stuck_in_terminating(self, value: Optional[pulumi.Input['K8sWorkloadAnomaliesPodStuckInTerminatingArgs']]):
+    def pod_stuck_in_terminating(self, value: pulumi.Input[Optional['K8sWorkloadAnomaliesPodStuckInTerminatingArgs']]):
         pulumi.set(self, "pod_stuck_in_terminating", value)
 
     @_builtins.property
     @pulumi.getter
-    def scope(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def scope(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The scope of this setting (CLOUD*APPLICATION*NAMESPACE, KUBERNETES_CLUSTER). Omit this property if you want to cover the whole environment.
         """
         return pulumi.get(self, "scope")
 
     @scope.setter
-    def scope(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def scope(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "scope", value)
 
     @_builtins.property
     @pulumi.getter(name="workloadWithoutReadyPods")
-    def workload_without_ready_pods(self) -> Optional[pulumi.Input['K8sWorkloadAnomaliesWorkloadWithoutReadyPodsArgs']]:
+    def workload_without_ready_pods(self) -> pulumi.Input[Optional['K8sWorkloadAnomaliesWorkloadWithoutReadyPodsArgs']]:
         """
         no documentation available
         """
         return pulumi.get(self, "workload_without_ready_pods")
 
     @workload_without_ready_pods.setter
-    def workload_without_ready_pods(self, value: Optional[pulumi.Input['K8sWorkloadAnomaliesWorkloadWithoutReadyPodsArgs']]):
+    def workload_without_ready_pods(self, value: pulumi.Input[Optional['K8sWorkloadAnomaliesWorkloadWithoutReadyPodsArgs']]):
         pulumi.set(self, "workload_without_ready_pods", value)
 
 
@@ -508,21 +508,21 @@ class K8sWorkloadAnomalies(pulumi.CustomResource):
     def __init__(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 container_restarts: Optional[pulumi.Input[Union['K8sWorkloadAnomaliesContainerRestartsArgs', 'K8sWorkloadAnomaliesContainerRestartsArgsDict']]] = None,
-                 deployment_stuck: Optional[pulumi.Input[Union['K8sWorkloadAnomaliesDeploymentStuckArgs', 'K8sWorkloadAnomaliesDeploymentStuckArgsDict']]] = None,
-                 high_cpu_throttling: Optional[pulumi.Input[Union['K8sWorkloadAnomaliesHighCpuThrottlingArgs', 'K8sWorkloadAnomaliesHighCpuThrottlingArgsDict']]] = None,
-                 high_cpu_usage: Optional[pulumi.Input[Union['K8sWorkloadAnomaliesHighCpuUsageArgs', 'K8sWorkloadAnomaliesHighCpuUsageArgsDict']]] = None,
-                 high_memory_usage: Optional[pulumi.Input[Union['K8sWorkloadAnomaliesHighMemoryUsageArgs', 'K8sWorkloadAnomaliesHighMemoryUsageArgsDict']]] = None,
-                 job_failure_events: Optional[pulumi.Input[Union['K8sWorkloadAnomaliesJobFailureEventsArgs', 'K8sWorkloadAnomaliesJobFailureEventsArgsDict']]] = None,
-                 not_all_pods_ready: Optional[pulumi.Input[Union['K8sWorkloadAnomaliesNotAllPodsReadyArgs', 'K8sWorkloadAnomaliesNotAllPodsReadyArgsDict']]] = None,
-                 oom_kills: Optional[pulumi.Input[Union['K8sWorkloadAnomaliesOomKillsArgs', 'K8sWorkloadAnomaliesOomKillsArgsDict']]] = None,
-                 pending_pods: Optional[pulumi.Input[Union['K8sWorkloadAnomaliesPendingPodsArgs', 'K8sWorkloadAnomaliesPendingPodsArgsDict']]] = None,
-                 pod_backoff_events: Optional[pulumi.Input[Union['K8sWorkloadAnomaliesPodBackoffEventsArgs', 'K8sWorkloadAnomaliesPodBackoffEventsArgsDict']]] = None,
-                 pod_eviction_events: Optional[pulumi.Input[Union['K8sWorkloadAnomaliesPodEvictionEventsArgs', 'K8sWorkloadAnomaliesPodEvictionEventsArgsDict']]] = None,
-                 pod_preemption_events: Optional[pulumi.Input[Union['K8sWorkloadAnomaliesPodPreemptionEventsArgs', 'K8sWorkloadAnomaliesPodPreemptionEventsArgsDict']]] = None,
-                 pod_stuck_in_terminating: Optional[pulumi.Input[Union['K8sWorkloadAnomaliesPodStuckInTerminatingArgs', 'K8sWorkloadAnomaliesPodStuckInTerminatingArgsDict']]] = None,
-                 scope: Optional[pulumi.Input[_builtins.str]] = None,
-                 workload_without_ready_pods: Optional[pulumi.Input[Union['K8sWorkloadAnomaliesWorkloadWithoutReadyPodsArgs', 'K8sWorkloadAnomaliesWorkloadWithoutReadyPodsArgsDict']]] = None,
+                 container_restarts: pulumi.Input[Optional[Union['K8sWorkloadAnomaliesContainerRestartsArgs', 'K8sWorkloadAnomaliesContainerRestartsArgsDict']]] = None,
+                 deployment_stuck: pulumi.Input[Optional[Union['K8sWorkloadAnomaliesDeploymentStuckArgs', 'K8sWorkloadAnomaliesDeploymentStuckArgsDict']]] = None,
+                 high_cpu_throttling: pulumi.Input[Optional[Union['K8sWorkloadAnomaliesHighCpuThrottlingArgs', 'K8sWorkloadAnomaliesHighCpuThrottlingArgsDict']]] = None,
+                 high_cpu_usage: pulumi.Input[Optional[Union['K8sWorkloadAnomaliesHighCpuUsageArgs', 'K8sWorkloadAnomaliesHighCpuUsageArgsDict']]] = None,
+                 high_memory_usage: pulumi.Input[Optional[Union['K8sWorkloadAnomaliesHighMemoryUsageArgs', 'K8sWorkloadAnomaliesHighMemoryUsageArgsDict']]] = None,
+                 job_failure_events: pulumi.Input[Optional[Union['K8sWorkloadAnomaliesJobFailureEventsArgs', 'K8sWorkloadAnomaliesJobFailureEventsArgsDict']]] = None,
+                 not_all_pods_ready: pulumi.Input[Optional[Union['K8sWorkloadAnomaliesNotAllPodsReadyArgs', 'K8sWorkloadAnomaliesNotAllPodsReadyArgsDict']]] = None,
+                 oom_kills: pulumi.Input[Optional[Union['K8sWorkloadAnomaliesOomKillsArgs', 'K8sWorkloadAnomaliesOomKillsArgsDict']]] = None,
+                 pending_pods: pulumi.Input[Optional[Union['K8sWorkloadAnomaliesPendingPodsArgs', 'K8sWorkloadAnomaliesPendingPodsArgsDict']]] = None,
+                 pod_backoff_events: pulumi.Input[Optional[Union['K8sWorkloadAnomaliesPodBackoffEventsArgs', 'K8sWorkloadAnomaliesPodBackoffEventsArgsDict']]] = None,
+                 pod_eviction_events: pulumi.Input[Optional[Union['K8sWorkloadAnomaliesPodEvictionEventsArgs', 'K8sWorkloadAnomaliesPodEvictionEventsArgsDict']]] = None,
+                 pod_preemption_events: pulumi.Input[Optional[Union['K8sWorkloadAnomaliesPodPreemptionEventsArgs', 'K8sWorkloadAnomaliesPodPreemptionEventsArgsDict']]] = None,
+                 pod_stuck_in_terminating: pulumi.Input[Optional[Union['K8sWorkloadAnomaliesPodStuckInTerminatingArgs', 'K8sWorkloadAnomaliesPodStuckInTerminatingArgsDict']]] = None,
+                 scope: pulumi.Input[Optional[_builtins.str]] = None,
+                 workload_without_ready_pods: pulumi.Input[Optional[Union['K8sWorkloadAnomaliesWorkloadWithoutReadyPodsArgs', 'K8sWorkloadAnomaliesWorkloadWithoutReadyPodsArgsDict']]] = None,
                  __props__=None):
         """
         > This resource requires the API token scopes **Read settings** (`settings.read`) and **Write settings** (`settings.write`)
@@ -595,21 +595,21 @@ class K8sWorkloadAnomalies(pulumi.CustomResource):
     def _internal_init(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 container_restarts: Optional[pulumi.Input[Union['K8sWorkloadAnomaliesContainerRestartsArgs', 'K8sWorkloadAnomaliesContainerRestartsArgsDict']]] = None,
-                 deployment_stuck: Optional[pulumi.Input[Union['K8sWorkloadAnomaliesDeploymentStuckArgs', 'K8sWorkloadAnomaliesDeploymentStuckArgsDict']]] = None,
-                 high_cpu_throttling: Optional[pulumi.Input[Union['K8sWorkloadAnomaliesHighCpuThrottlingArgs', 'K8sWorkloadAnomaliesHighCpuThrottlingArgsDict']]] = None,
-                 high_cpu_usage: Optional[pulumi.Input[Union['K8sWorkloadAnomaliesHighCpuUsageArgs', 'K8sWorkloadAnomaliesHighCpuUsageArgsDict']]] = None,
-                 high_memory_usage: Optional[pulumi.Input[Union['K8sWorkloadAnomaliesHighMemoryUsageArgs', 'K8sWorkloadAnomaliesHighMemoryUsageArgsDict']]] = None,
-                 job_failure_events: Optional[pulumi.Input[Union['K8sWorkloadAnomaliesJobFailureEventsArgs', 'K8sWorkloadAnomaliesJobFailureEventsArgsDict']]] = None,
-                 not_all_pods_ready: Optional[pulumi.Input[Union['K8sWorkloadAnomaliesNotAllPodsReadyArgs', 'K8sWorkloadAnomaliesNotAllPodsReadyArgsDict']]] = None,
-                 oom_kills: Optional[pulumi.Input[Union['K8sWorkloadAnomaliesOomKillsArgs', 'K8sWorkloadAnomaliesOomKillsArgsDict']]] = None,
-                 pending_pods: Optional[pulumi.Input[Union['K8sWorkloadAnomaliesPendingPodsArgs', 'K8sWorkloadAnomaliesPendingPodsArgsDict']]] = None,
-                 pod_backoff_events: Optional[pulumi.Input[Union['K8sWorkloadAnomaliesPodBackoffEventsArgs', 'K8sWorkloadAnomaliesPodBackoffEventsArgsDict']]] = None,
-                 pod_eviction_events: Optional[pulumi.Input[Union['K8sWorkloadAnomaliesPodEvictionEventsArgs', 'K8sWorkloadAnomaliesPodEvictionEventsArgsDict']]] = None,
-                 pod_preemption_events: Optional[pulumi.Input[Union['K8sWorkloadAnomaliesPodPreemptionEventsArgs', 'K8sWorkloadAnomaliesPodPreemptionEventsArgsDict']]] = None,
-                 pod_stuck_in_terminating: Optional[pulumi.Input[Union['K8sWorkloadAnomaliesPodStuckInTerminatingArgs', 'K8sWorkloadAnomaliesPodStuckInTerminatingArgsDict']]] = None,
-                 scope: Optional[pulumi.Input[_builtins.str]] = None,
-                 workload_without_ready_pods: Optional[pulumi.Input[Union['K8sWorkloadAnomaliesWorkloadWithoutReadyPodsArgs', 'K8sWorkloadAnomaliesWorkloadWithoutReadyPodsArgsDict']]] = None,
+                 container_restarts: pulumi.Input[Optional[Union['K8sWorkloadAnomaliesContainerRestartsArgs', 'K8sWorkloadAnomaliesContainerRestartsArgsDict']]] = None,
+                 deployment_stuck: pulumi.Input[Optional[Union['K8sWorkloadAnomaliesDeploymentStuckArgs', 'K8sWorkloadAnomaliesDeploymentStuckArgsDict']]] = None,
+                 high_cpu_throttling: pulumi.Input[Optional[Union['K8sWorkloadAnomaliesHighCpuThrottlingArgs', 'K8sWorkloadAnomaliesHighCpuThrottlingArgsDict']]] = None,
+                 high_cpu_usage: pulumi.Input[Optional[Union['K8sWorkloadAnomaliesHighCpuUsageArgs', 'K8sWorkloadAnomaliesHighCpuUsageArgsDict']]] = None,
+                 high_memory_usage: pulumi.Input[Optional[Union['K8sWorkloadAnomaliesHighMemoryUsageArgs', 'K8sWorkloadAnomaliesHighMemoryUsageArgsDict']]] = None,
+                 job_failure_events: pulumi.Input[Optional[Union['K8sWorkloadAnomaliesJobFailureEventsArgs', 'K8sWorkloadAnomaliesJobFailureEventsArgsDict']]] = None,
+                 not_all_pods_ready: pulumi.Input[Optional[Union['K8sWorkloadAnomaliesNotAllPodsReadyArgs', 'K8sWorkloadAnomaliesNotAllPodsReadyArgsDict']]] = None,
+                 oom_kills: pulumi.Input[Optional[Union['K8sWorkloadAnomaliesOomKillsArgs', 'K8sWorkloadAnomaliesOomKillsArgsDict']]] = None,
+                 pending_pods: pulumi.Input[Optional[Union['K8sWorkloadAnomaliesPendingPodsArgs', 'K8sWorkloadAnomaliesPendingPodsArgsDict']]] = None,
+                 pod_backoff_events: pulumi.Input[Optional[Union['K8sWorkloadAnomaliesPodBackoffEventsArgs', 'K8sWorkloadAnomaliesPodBackoffEventsArgsDict']]] = None,
+                 pod_eviction_events: pulumi.Input[Optional[Union['K8sWorkloadAnomaliesPodEvictionEventsArgs', 'K8sWorkloadAnomaliesPodEvictionEventsArgsDict']]] = None,
+                 pod_preemption_events: pulumi.Input[Optional[Union['K8sWorkloadAnomaliesPodPreemptionEventsArgs', 'K8sWorkloadAnomaliesPodPreemptionEventsArgsDict']]] = None,
+                 pod_stuck_in_terminating: pulumi.Input[Optional[Union['K8sWorkloadAnomaliesPodStuckInTerminatingArgs', 'K8sWorkloadAnomaliesPodStuckInTerminatingArgsDict']]] = None,
+                 scope: pulumi.Input[Optional[_builtins.str]] = None,
+                 workload_without_ready_pods: pulumi.Input[Optional[Union['K8sWorkloadAnomaliesWorkloadWithoutReadyPodsArgs', 'K8sWorkloadAnomaliesWorkloadWithoutReadyPodsArgsDict']]] = None,
                  __props__=None):
         opts = pulumi.ResourceOptions.merge(_utilities.get_resource_opts_defaults(), opts)
         if not isinstance(opts, pulumi.ResourceOptions):
@@ -672,21 +672,21 @@ class K8sWorkloadAnomalies(pulumi.CustomResource):
     def get(resource_name: str,
             id: pulumi.Input[str],
             opts: Optional[pulumi.ResourceOptions] = None,
-            container_restarts: Optional[pulumi.Input[Union['K8sWorkloadAnomaliesContainerRestartsArgs', 'K8sWorkloadAnomaliesContainerRestartsArgsDict']]] = None,
-            deployment_stuck: Optional[pulumi.Input[Union['K8sWorkloadAnomaliesDeploymentStuckArgs', 'K8sWorkloadAnomaliesDeploymentStuckArgsDict']]] = None,
-            high_cpu_throttling: Optional[pulumi.Input[Union['K8sWorkloadAnomaliesHighCpuThrottlingArgs', 'K8sWorkloadAnomaliesHighCpuThrottlingArgsDict']]] = None,
-            high_cpu_usage: Optional[pulumi.Input[Union['K8sWorkloadAnomaliesHighCpuUsageArgs', 'K8sWorkloadAnomaliesHighCpuUsageArgsDict']]] = None,
-            high_memory_usage: Optional[pulumi.Input[Union['K8sWorkloadAnomaliesHighMemoryUsageArgs', 'K8sWorkloadAnomaliesHighMemoryUsageArgsDict']]] = None,
-            job_failure_events: Optional[pulumi.Input[Union['K8sWorkloadAnomaliesJobFailureEventsArgs', 'K8sWorkloadAnomaliesJobFailureEventsArgsDict']]] = None,
-            not_all_pods_ready: Optional[pulumi.Input[Union['K8sWorkloadAnomaliesNotAllPodsReadyArgs', 'K8sWorkloadAnomaliesNotAllPodsReadyArgsDict']]] = None,
-            oom_kills: Optional[pulumi.Input[Union['K8sWorkloadAnomaliesOomKillsArgs', 'K8sWorkloadAnomaliesOomKillsArgsDict']]] = None,
-            pending_pods: Optional[pulumi.Input[Union['K8sWorkloadAnomaliesPendingPodsArgs', 'K8sWorkloadAnomaliesPendingPodsArgsDict']]] = None,
-            pod_backoff_events: Optional[pulumi.Input[Union['K8sWorkloadAnomaliesPodBackoffEventsArgs', 'K8sWorkloadAnomaliesPodBackoffEventsArgsDict']]] = None,
-            pod_eviction_events: Optional[pulumi.Input[Union['K8sWorkloadAnomaliesPodEvictionEventsArgs', 'K8sWorkloadAnomaliesPodEvictionEventsArgsDict']]] = None,
-            pod_preemption_events: Optional[pulumi.Input[Union['K8sWorkloadAnomaliesPodPreemptionEventsArgs', 'K8sWorkloadAnomaliesPodPreemptionEventsArgsDict']]] = None,
-            pod_stuck_in_terminating: Optional[pulumi.Input[Union['K8sWorkloadAnomaliesPodStuckInTerminatingArgs', 'K8sWorkloadAnomaliesPodStuckInTerminatingArgsDict']]] = None,
-            scope: Optional[pulumi.Input[_builtins.str]] = None,
-            workload_without_ready_pods: Optional[pulumi.Input[Union['K8sWorkloadAnomaliesWorkloadWithoutReadyPodsArgs', 'K8sWorkloadAnomaliesWorkloadWithoutReadyPodsArgsDict']]] = None) -> 'K8sWorkloadAnomalies':
+            container_restarts: pulumi.Input[Optional[Union['K8sWorkloadAnomaliesContainerRestartsArgs', 'K8sWorkloadAnomaliesContainerRestartsArgsDict']]] = None,
+            deployment_stuck: pulumi.Input[Optional[Union['K8sWorkloadAnomaliesDeploymentStuckArgs', 'K8sWorkloadAnomaliesDeploymentStuckArgsDict']]] = None,
+            high_cpu_throttling: pulumi.Input[Optional[Union['K8sWorkloadAnomaliesHighCpuThrottlingArgs', 'K8sWorkloadAnomaliesHighCpuThrottlingArgsDict']]] = None,
+            high_cpu_usage: pulumi.Input[Optional[Union['K8sWorkloadAnomaliesHighCpuUsageArgs', 'K8sWorkloadAnomaliesHighCpuUsageArgsDict']]] = None,
+            high_memory_usage: pulumi.Input[Optional[Union['K8sWorkloadAnomaliesHighMemoryUsageArgs', 'K8sWorkloadAnomaliesHighMemoryUsageArgsDict']]] = None,
+            job_failure_events: pulumi.Input[Optional[Union['K8sWorkloadAnomaliesJobFailureEventsArgs', 'K8sWorkloadAnomaliesJobFailureEventsArgsDict']]] = None,
+            not_all_pods_ready: pulumi.Input[Optional[Union['K8sWorkloadAnomaliesNotAllPodsReadyArgs', 'K8sWorkloadAnomaliesNotAllPodsReadyArgsDict']]] = None,
+            oom_kills: pulumi.Input[Optional[Union['K8sWorkloadAnomaliesOomKillsArgs', 'K8sWorkloadAnomaliesOomKillsArgsDict']]] = None,
+            pending_pods: pulumi.Input[Optional[Union['K8sWorkloadAnomaliesPendingPodsArgs', 'K8sWorkloadAnomaliesPendingPodsArgsDict']]] = None,
+            pod_backoff_events: pulumi.Input[Optional[Union['K8sWorkloadAnomaliesPodBackoffEventsArgs', 'K8sWorkloadAnomaliesPodBackoffEventsArgsDict']]] = None,
+            pod_eviction_events: pulumi.Input[Optional[Union['K8sWorkloadAnomaliesPodEvictionEventsArgs', 'K8sWorkloadAnomaliesPodEvictionEventsArgsDict']]] = None,
+            pod_preemption_events: pulumi.Input[Optional[Union['K8sWorkloadAnomaliesPodPreemptionEventsArgs', 'K8sWorkloadAnomaliesPodPreemptionEventsArgsDict']]] = None,
+            pod_stuck_in_terminating: pulumi.Input[Optional[Union['K8sWorkloadAnomaliesPodStuckInTerminatingArgs', 'K8sWorkloadAnomaliesPodStuckInTerminatingArgsDict']]] = None,
+            scope: pulumi.Input[Optional[_builtins.str]] = None,
+            workload_without_ready_pods: pulumi.Input[Optional[Union['K8sWorkloadAnomaliesWorkloadWithoutReadyPodsArgs', 'K8sWorkloadAnomaliesWorkloadWithoutReadyPodsArgsDict']]] = None) -> 'K8sWorkloadAnomalies':
         """
         Get an existing K8sWorkloadAnomalies resource's state with the given name, id, and optional extra
         properties used to qualify the lookup.

@@ -21,23 +21,23 @@ class SyntheticLocationArgs:
     def __init__(__self__, *,
                  latitude: pulumi.Input[_builtins.float],
                  longitude: pulumi.Input[_builtins.float],
-                 auto_update_chromium: Optional[pulumi.Input[_builtins.bool]] = None,
-                 availability_location_outage: Optional[pulumi.Input[_builtins.bool]] = None,
-                 availability_node_outage: Optional[pulumi.Input[_builtins.bool]] = None,
-                 availability_notifications_enabled: Optional[pulumi.Input[_builtins.bool]] = None,
-                 city: Optional[pulumi.Input[_builtins.str]] = None,
-                 country_code: Optional[pulumi.Input[_builtins.str]] = None,
-                 deployment_type: Optional[pulumi.Input[_builtins.str]] = None,
-                 fips_mode: Optional[pulumi.Input[_builtins.str]] = None,
-                 location_node_outage_delay_in_minutes: Optional[pulumi.Input[_builtins.int]] = None,
-                 max_active_gate_count: Optional[pulumi.Input[_builtins.int]] = None,
-                 min_active_gate_count: Optional[pulumi.Input[_builtins.int]] = None,
-                 nam_execution_supported: Optional[pulumi.Input[_builtins.bool]] = None,
-                 name: Optional[pulumi.Input[_builtins.str]] = None,
-                 node_size: Optional[pulumi.Input[_builtins.str]] = None,
-                 nodes: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-                 region_code: Optional[pulumi.Input[_builtins.str]] = None,
-                 use_new_kubernetes_version: Optional[pulumi.Input[_builtins.bool]] = None):
+                 auto_update_chromium: pulumi.Input[Optional[_builtins.bool]] = None,
+                 availability_location_outage: pulumi.Input[Optional[_builtins.bool]] = None,
+                 availability_node_outage: pulumi.Input[Optional[_builtins.bool]] = None,
+                 availability_notifications_enabled: pulumi.Input[Optional[_builtins.bool]] = None,
+                 city: pulumi.Input[Optional[_builtins.str]] = None,
+                 country_code: pulumi.Input[Optional[_builtins.str]] = None,
+                 deployment_type: pulumi.Input[Optional[_builtins.str]] = None,
+                 fips_mode: pulumi.Input[Optional[_builtins.str]] = None,
+                 location_node_outage_delay_in_minutes: pulumi.Input[Optional[_builtins.int]] = None,
+                 max_active_gate_count: pulumi.Input[Optional[_builtins.int]] = None,
+                 min_active_gate_count: pulumi.Input[Optional[_builtins.int]] = None,
+                 nam_execution_supported: pulumi.Input[Optional[_builtins.bool]] = None,
+                 name: pulumi.Input[Optional[_builtins.str]] = None,
+                 node_size: pulumi.Input[Optional[_builtins.str]] = None,
+                 nodes: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 region_code: pulumi.Input[Optional[_builtins.str]] = None,
+                 use_new_kubernetes_version: pulumi.Input[Optional[_builtins.bool]] = None):
         """
         The set of arguments for constructing a SyntheticLocation resource.
 
@@ -135,67 +135,67 @@ class SyntheticLocationArgs:
 
     @_builtins.property
     @pulumi.getter(name="autoUpdateChromium")
-    def auto_update_chromium(self) -> Optional[pulumi.Input[_builtins.bool]]:
+    def auto_update_chromium(self) -> pulumi.Input[Optional[_builtins.bool]]:
         """
         Auto upgrade of Chromium is enabled (`true`) or disabled (`false`)
         """
         return pulumi.get(self, "auto_update_chromium")
 
     @auto_update_chromium.setter
-    def auto_update_chromium(self, value: Optional[pulumi.Input[_builtins.bool]]):
+    def auto_update_chromium(self, value: pulumi.Input[Optional[_builtins.bool]]):
         pulumi.set(self, "auto_update_chromium", value)
 
     @_builtins.property
     @pulumi.getter(name="availabilityLocationOutage")
-    def availability_location_outage(self) -> Optional[pulumi.Input[_builtins.bool]]:
+    def availability_location_outage(self) -> pulumi.Input[Optional[_builtins.bool]]:
         """
         The alerting of location outage is enabled (`true`) or disabled (`false`)
         """
         return pulumi.get(self, "availability_location_outage")
 
     @availability_location_outage.setter
-    def availability_location_outage(self, value: Optional[pulumi.Input[_builtins.bool]]):
+    def availability_location_outage(self, value: pulumi.Input[Optional[_builtins.bool]]):
         pulumi.set(self, "availability_location_outage", value)
 
     @_builtins.property
     @pulumi.getter(name="availabilityNodeOutage")
-    def availability_node_outage(self) -> Optional[pulumi.Input[_builtins.bool]]:
+    def availability_node_outage(self) -> pulumi.Input[Optional[_builtins.bool]]:
         """
         The alerting of node outage is enabled (`true`) or disabled (`false`).
         """
         return pulumi.get(self, "availability_node_outage")
 
     @availability_node_outage.setter
-    def availability_node_outage(self, value: Optional[pulumi.Input[_builtins.bool]]):
+    def availability_node_outage(self, value: pulumi.Input[Optional[_builtins.bool]]):
         pulumi.set(self, "availability_node_outage", value)
 
     @_builtins.property
     @pulumi.getter(name="availabilityNotificationsEnabled")
-    def availability_notifications_enabled(self) -> Optional[pulumi.Input[_builtins.bool]]:
+    def availability_notifications_enabled(self) -> pulumi.Input[Optional[_builtins.bool]]:
         """
         The notifications of location and node outage is enabled (`true`) or disabled (`false`)
         """
         return pulumi.get(self, "availability_notifications_enabled")
 
     @availability_notifications_enabled.setter
-    def availability_notifications_enabled(self, value: Optional[pulumi.Input[_builtins.bool]]):
+    def availability_notifications_enabled(self, value: pulumi.Input[Optional[_builtins.bool]]):
         pulumi.set(self, "availability_notifications_enabled", value)
 
     @_builtins.property
     @pulumi.getter
-    def city(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def city(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The city of the location
         """
         return pulumi.get(self, "city")
 
     @city.setter
-    def city(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def city(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "city", value)
 
     @_builtins.property
     @pulumi.getter(name="countryCode")
-    def country_code(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def country_code(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The country code of the location. 
 
@@ -204,12 +204,12 @@ class SyntheticLocationArgs:
         return pulumi.get(self, "country_code")
 
     @country_code.setter
-    def country_code(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def country_code(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "country_code", value)
 
     @_builtins.property
     @pulumi.getter(name="deploymentType")
-    def deployment_type(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def deployment_type(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The deployment type of the location: 
 
@@ -219,24 +219,24 @@ class SyntheticLocationArgs:
         return pulumi.get(self, "deployment_type")
 
     @deployment_type.setter
-    def deployment_type(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def deployment_type(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "deployment_type", value)
 
     @_builtins.property
     @pulumi.getter(name="fipsMode")
-    def fips_mode(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def fips_mode(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Containerized location property indicating whether FIPS mode is enabled on this location. Possible values: `DISABLED`, `ENABLED`, `ENABLED_WITH_CORPORATE_PROXY`
         """
         return pulumi.get(self, "fips_mode")
 
     @fips_mode.setter
-    def fips_mode(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def fips_mode(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "fips_mode", value)
 
     @_builtins.property
     @pulumi.getter(name="locationNodeOutageDelayInMinutes")
-    def location_node_outage_delay_in_minutes(self) -> Optional[pulumi.Input[_builtins.int]]:
+    def location_node_outage_delay_in_minutes(self) -> pulumi.Input[Optional[_builtins.int]]:
         """
         Alert if the location or node outage lasts longer than *X* minutes. 
 
@@ -245,72 +245,72 @@ class SyntheticLocationArgs:
         return pulumi.get(self, "location_node_outage_delay_in_minutes")
 
     @location_node_outage_delay_in_minutes.setter
-    def location_node_outage_delay_in_minutes(self, value: Optional[pulumi.Input[_builtins.int]]):
+    def location_node_outage_delay_in_minutes(self, value: pulumi.Input[Optional[_builtins.int]]):
         pulumi.set(self, "location_node_outage_delay_in_minutes", value)
 
     @_builtins.property
     @pulumi.getter(name="maxActiveGateCount")
-    def max_active_gate_count(self) -> Optional[pulumi.Input[_builtins.int]]:
+    def max_active_gate_count(self) -> pulumi.Input[Optional[_builtins.int]]:
         """
         The maximum number of Active Gates required for that location. Not required when `deployment_type` is set to `STANDARD`
         """
         return pulumi.get(self, "max_active_gate_count")
 
     @max_active_gate_count.setter
-    def max_active_gate_count(self, value: Optional[pulumi.Input[_builtins.int]]):
+    def max_active_gate_count(self, value: pulumi.Input[Optional[_builtins.int]]):
         pulumi.set(self, "max_active_gate_count", value)
 
     @_builtins.property
     @pulumi.getter(name="minActiveGateCount")
-    def min_active_gate_count(self) -> Optional[pulumi.Input[_builtins.int]]:
+    def min_active_gate_count(self) -> pulumi.Input[Optional[_builtins.int]]:
         """
         The minimum number of Active Gates required for that location. Not required when `deployment_type` is set to `STANDARD`
         """
         return pulumi.get(self, "min_active_gate_count")
 
     @min_active_gate_count.setter
-    def min_active_gate_count(self, value: Optional[pulumi.Input[_builtins.int]]):
+    def min_active_gate_count(self, value: pulumi.Input[Optional[_builtins.int]]):
         pulumi.set(self, "min_active_gate_count", value)
 
     @_builtins.property
     @pulumi.getter(name="namExecutionSupported")
-    def nam_execution_supported(self) -> Optional[pulumi.Input[_builtins.bool]]:
+    def nam_execution_supported(self) -> pulumi.Input[Optional[_builtins.bool]]:
         """
         Boolean value describes if icmp monitors will be executed on this location
         """
         return pulumi.get(self, "nam_execution_supported")
 
     @nam_execution_supported.setter
-    def nam_execution_supported(self, value: Optional[pulumi.Input[_builtins.bool]]):
+    def nam_execution_supported(self, value: pulumi.Input[Optional[_builtins.bool]]):
         pulumi.set(self, "nam_execution_supported", value)
 
     @_builtins.property
     @pulumi.getter
-    def name(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def name(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The name of the location
         """
         return pulumi.get(self, "name")
 
     @name.setter
-    def name(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def name(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "name", value)
 
     @_builtins.property
     @pulumi.getter(name="nodeSize")
-    def node_size(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def node_size(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Possible values: `UNSUPPORTED`, `XS`, `S` and `M`. Not required when `deployment_type` is set to `STANDARD`.
         """
         return pulumi.get(self, "node_size")
 
     @node_size.setter
-    def node_size(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def node_size(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "node_size", value)
 
     @_builtins.property
     @pulumi.getter
-    def nodes(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]:
+    def nodes(self) -> pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]:
         """
         A list of synthetic nodes belonging to the location. 
 
@@ -319,12 +319,12 @@ class SyntheticLocationArgs:
         return pulumi.get(self, "nodes")
 
     @nodes.setter
-    def nodes(self, value: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]):
+    def nodes(self, value: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "nodes", value)
 
     @_builtins.property
     @pulumi.getter(name="regionCode")
-    def region_code(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def region_code(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The region code of the location. 
 
@@ -333,44 +333,44 @@ class SyntheticLocationArgs:
         return pulumi.get(self, "region_code")
 
     @region_code.setter
-    def region_code(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def region_code(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "region_code", value)
 
     @_builtins.property
     @pulumi.getter(name="useNewKubernetesVersion")
-    def use_new_kubernetes_version(self) -> Optional[pulumi.Input[_builtins.bool]]:
+    def use_new_kubernetes_version(self) -> pulumi.Input[Optional[_builtins.bool]]:
         """
         Boolean value describes which kubernetes version will be used
         """
         return pulumi.get(self, "use_new_kubernetes_version")
 
     @use_new_kubernetes_version.setter
-    def use_new_kubernetes_version(self, value: Optional[pulumi.Input[_builtins.bool]]):
+    def use_new_kubernetes_version(self, value: pulumi.Input[Optional[_builtins.bool]]):
         pulumi.set(self, "use_new_kubernetes_version", value)
 
 
 @pulumi.input_type
 class _SyntheticLocationState:
     def __init__(__self__, *,
-                 auto_update_chromium: Optional[pulumi.Input[_builtins.bool]] = None,
-                 availability_location_outage: Optional[pulumi.Input[_builtins.bool]] = None,
-                 availability_node_outage: Optional[pulumi.Input[_builtins.bool]] = None,
-                 availability_notifications_enabled: Optional[pulumi.Input[_builtins.bool]] = None,
-                 city: Optional[pulumi.Input[_builtins.str]] = None,
-                 country_code: Optional[pulumi.Input[_builtins.str]] = None,
-                 deployment_type: Optional[pulumi.Input[_builtins.str]] = None,
-                 fips_mode: Optional[pulumi.Input[_builtins.str]] = None,
-                 latitude: Optional[pulumi.Input[_builtins.float]] = None,
-                 location_node_outage_delay_in_minutes: Optional[pulumi.Input[_builtins.int]] = None,
-                 longitude: Optional[pulumi.Input[_builtins.float]] = None,
-                 max_active_gate_count: Optional[pulumi.Input[_builtins.int]] = None,
-                 min_active_gate_count: Optional[pulumi.Input[_builtins.int]] = None,
-                 nam_execution_supported: Optional[pulumi.Input[_builtins.bool]] = None,
-                 name: Optional[pulumi.Input[_builtins.str]] = None,
-                 node_size: Optional[pulumi.Input[_builtins.str]] = None,
-                 nodes: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-                 region_code: Optional[pulumi.Input[_builtins.str]] = None,
-                 use_new_kubernetes_version: Optional[pulumi.Input[_builtins.bool]] = None):
+                 auto_update_chromium: pulumi.Input[Optional[_builtins.bool]] = None,
+                 availability_location_outage: pulumi.Input[Optional[_builtins.bool]] = None,
+                 availability_node_outage: pulumi.Input[Optional[_builtins.bool]] = None,
+                 availability_notifications_enabled: pulumi.Input[Optional[_builtins.bool]] = None,
+                 city: pulumi.Input[Optional[_builtins.str]] = None,
+                 country_code: pulumi.Input[Optional[_builtins.str]] = None,
+                 deployment_type: pulumi.Input[Optional[_builtins.str]] = None,
+                 fips_mode: pulumi.Input[Optional[_builtins.str]] = None,
+                 latitude: pulumi.Input[Optional[_builtins.float]] = None,
+                 location_node_outage_delay_in_minutes: pulumi.Input[Optional[_builtins.int]] = None,
+                 longitude: pulumi.Input[Optional[_builtins.float]] = None,
+                 max_active_gate_count: pulumi.Input[Optional[_builtins.int]] = None,
+                 min_active_gate_count: pulumi.Input[Optional[_builtins.int]] = None,
+                 nam_execution_supported: pulumi.Input[Optional[_builtins.bool]] = None,
+                 name: pulumi.Input[Optional[_builtins.str]] = None,
+                 node_size: pulumi.Input[Optional[_builtins.str]] = None,
+                 nodes: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 region_code: pulumi.Input[Optional[_builtins.str]] = None,
+                 use_new_kubernetes_version: pulumi.Input[Optional[_builtins.bool]] = None):
         """
         Input properties used for looking up and filtering SyntheticLocation resources.
 
@@ -446,67 +446,67 @@ class _SyntheticLocationState:
 
     @_builtins.property
     @pulumi.getter(name="autoUpdateChromium")
-    def auto_update_chromium(self) -> Optional[pulumi.Input[_builtins.bool]]:
+    def auto_update_chromium(self) -> pulumi.Input[Optional[_builtins.bool]]:
         """
         Auto upgrade of Chromium is enabled (`true`) or disabled (`false`)
         """
         return pulumi.get(self, "auto_update_chromium")
 
     @auto_update_chromium.setter
-    def auto_update_chromium(self, value: Optional[pulumi.Input[_builtins.bool]]):
+    def auto_update_chromium(self, value: pulumi.Input[Optional[_builtins.bool]]):
         pulumi.set(self, "auto_update_chromium", value)
 
     @_builtins.property
     @pulumi.getter(name="availabilityLocationOutage")
-    def availability_location_outage(self) -> Optional[pulumi.Input[_builtins.bool]]:
+    def availability_location_outage(self) -> pulumi.Input[Optional[_builtins.bool]]:
         """
         The alerting of location outage is enabled (`true`) or disabled (`false`)
         """
         return pulumi.get(self, "availability_location_outage")
 
     @availability_location_outage.setter
-    def availability_location_outage(self, value: Optional[pulumi.Input[_builtins.bool]]):
+    def availability_location_outage(self, value: pulumi.Input[Optional[_builtins.bool]]):
         pulumi.set(self, "availability_location_outage", value)
 
     @_builtins.property
     @pulumi.getter(name="availabilityNodeOutage")
-    def availability_node_outage(self) -> Optional[pulumi.Input[_builtins.bool]]:
+    def availability_node_outage(self) -> pulumi.Input[Optional[_builtins.bool]]:
         """
         The alerting of node outage is enabled (`true`) or disabled (`false`).
         """
         return pulumi.get(self, "availability_node_outage")
 
     @availability_node_outage.setter
-    def availability_node_outage(self, value: Optional[pulumi.Input[_builtins.bool]]):
+    def availability_node_outage(self, value: pulumi.Input[Optional[_builtins.bool]]):
         pulumi.set(self, "availability_node_outage", value)
 
     @_builtins.property
     @pulumi.getter(name="availabilityNotificationsEnabled")
-    def availability_notifications_enabled(self) -> Optional[pulumi.Input[_builtins.bool]]:
+    def availability_notifications_enabled(self) -> pulumi.Input[Optional[_builtins.bool]]:
         """
         The notifications of location and node outage is enabled (`true`) or disabled (`false`)
         """
         return pulumi.get(self, "availability_notifications_enabled")
 
     @availability_notifications_enabled.setter
-    def availability_notifications_enabled(self, value: Optional[pulumi.Input[_builtins.bool]]):
+    def availability_notifications_enabled(self, value: pulumi.Input[Optional[_builtins.bool]]):
         pulumi.set(self, "availability_notifications_enabled", value)
 
     @_builtins.property
     @pulumi.getter
-    def city(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def city(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The city of the location
         """
         return pulumi.get(self, "city")
 
     @city.setter
-    def city(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def city(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "city", value)
 
     @_builtins.property
     @pulumi.getter(name="countryCode")
-    def country_code(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def country_code(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The country code of the location. 
 
@@ -515,12 +515,12 @@ class _SyntheticLocationState:
         return pulumi.get(self, "country_code")
 
     @country_code.setter
-    def country_code(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def country_code(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "country_code", value)
 
     @_builtins.property
     @pulumi.getter(name="deploymentType")
-    def deployment_type(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def deployment_type(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The deployment type of the location: 
 
@@ -530,36 +530,36 @@ class _SyntheticLocationState:
         return pulumi.get(self, "deployment_type")
 
     @deployment_type.setter
-    def deployment_type(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def deployment_type(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "deployment_type", value)
 
     @_builtins.property
     @pulumi.getter(name="fipsMode")
-    def fips_mode(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def fips_mode(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Containerized location property indicating whether FIPS mode is enabled on this location. Possible values: `DISABLED`, `ENABLED`, `ENABLED_WITH_CORPORATE_PROXY`
         """
         return pulumi.get(self, "fips_mode")
 
     @fips_mode.setter
-    def fips_mode(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def fips_mode(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "fips_mode", value)
 
     @_builtins.property
     @pulumi.getter
-    def latitude(self) -> Optional[pulumi.Input[_builtins.float]]:
+    def latitude(self) -> pulumi.Input[Optional[_builtins.float]]:
         """
         The latitude of the location in `DDD.dddd` format
         """
         return pulumi.get(self, "latitude")
 
     @latitude.setter
-    def latitude(self, value: Optional[pulumi.Input[_builtins.float]]):
+    def latitude(self, value: pulumi.Input[Optional[_builtins.float]]):
         pulumi.set(self, "latitude", value)
 
     @_builtins.property
     @pulumi.getter(name="locationNodeOutageDelayInMinutes")
-    def location_node_outage_delay_in_minutes(self) -> Optional[pulumi.Input[_builtins.int]]:
+    def location_node_outage_delay_in_minutes(self) -> pulumi.Input[Optional[_builtins.int]]:
         """
         Alert if the location or node outage lasts longer than *X* minutes. 
 
@@ -568,84 +568,84 @@ class _SyntheticLocationState:
         return pulumi.get(self, "location_node_outage_delay_in_minutes")
 
     @location_node_outage_delay_in_minutes.setter
-    def location_node_outage_delay_in_minutes(self, value: Optional[pulumi.Input[_builtins.int]]):
+    def location_node_outage_delay_in_minutes(self, value: pulumi.Input[Optional[_builtins.int]]):
         pulumi.set(self, "location_node_outage_delay_in_minutes", value)
 
     @_builtins.property
     @pulumi.getter
-    def longitude(self) -> Optional[pulumi.Input[_builtins.float]]:
+    def longitude(self) -> pulumi.Input[Optional[_builtins.float]]:
         """
         The longitude of the location in `DDD.dddd` format
         """
         return pulumi.get(self, "longitude")
 
     @longitude.setter
-    def longitude(self, value: Optional[pulumi.Input[_builtins.float]]):
+    def longitude(self, value: pulumi.Input[Optional[_builtins.float]]):
         pulumi.set(self, "longitude", value)
 
     @_builtins.property
     @pulumi.getter(name="maxActiveGateCount")
-    def max_active_gate_count(self) -> Optional[pulumi.Input[_builtins.int]]:
+    def max_active_gate_count(self) -> pulumi.Input[Optional[_builtins.int]]:
         """
         The maximum number of Active Gates required for that location. Not required when `deployment_type` is set to `STANDARD`
         """
         return pulumi.get(self, "max_active_gate_count")
 
     @max_active_gate_count.setter
-    def max_active_gate_count(self, value: Optional[pulumi.Input[_builtins.int]]):
+    def max_active_gate_count(self, value: pulumi.Input[Optional[_builtins.int]]):
         pulumi.set(self, "max_active_gate_count", value)
 
     @_builtins.property
     @pulumi.getter(name="minActiveGateCount")
-    def min_active_gate_count(self) -> Optional[pulumi.Input[_builtins.int]]:
+    def min_active_gate_count(self) -> pulumi.Input[Optional[_builtins.int]]:
         """
         The minimum number of Active Gates required for that location. Not required when `deployment_type` is set to `STANDARD`
         """
         return pulumi.get(self, "min_active_gate_count")
 
     @min_active_gate_count.setter
-    def min_active_gate_count(self, value: Optional[pulumi.Input[_builtins.int]]):
+    def min_active_gate_count(self, value: pulumi.Input[Optional[_builtins.int]]):
         pulumi.set(self, "min_active_gate_count", value)
 
     @_builtins.property
     @pulumi.getter(name="namExecutionSupported")
-    def nam_execution_supported(self) -> Optional[pulumi.Input[_builtins.bool]]:
+    def nam_execution_supported(self) -> pulumi.Input[Optional[_builtins.bool]]:
         """
         Boolean value describes if icmp monitors will be executed on this location
         """
         return pulumi.get(self, "nam_execution_supported")
 
     @nam_execution_supported.setter
-    def nam_execution_supported(self, value: Optional[pulumi.Input[_builtins.bool]]):
+    def nam_execution_supported(self, value: pulumi.Input[Optional[_builtins.bool]]):
         pulumi.set(self, "nam_execution_supported", value)
 
     @_builtins.property
     @pulumi.getter
-    def name(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def name(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The name of the location
         """
         return pulumi.get(self, "name")
 
     @name.setter
-    def name(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def name(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "name", value)
 
     @_builtins.property
     @pulumi.getter(name="nodeSize")
-    def node_size(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def node_size(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Possible values: `UNSUPPORTED`, `XS`, `S` and `M`. Not required when `deployment_type` is set to `STANDARD`.
         """
         return pulumi.get(self, "node_size")
 
     @node_size.setter
-    def node_size(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def node_size(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "node_size", value)
 
     @_builtins.property
     @pulumi.getter
-    def nodes(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]:
+    def nodes(self) -> pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]:
         """
         A list of synthetic nodes belonging to the location. 
 
@@ -654,12 +654,12 @@ class _SyntheticLocationState:
         return pulumi.get(self, "nodes")
 
     @nodes.setter
-    def nodes(self, value: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]):
+    def nodes(self, value: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "nodes", value)
 
     @_builtins.property
     @pulumi.getter(name="regionCode")
-    def region_code(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def region_code(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The region code of the location. 
 
@@ -668,19 +668,19 @@ class _SyntheticLocationState:
         return pulumi.get(self, "region_code")
 
     @region_code.setter
-    def region_code(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def region_code(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "region_code", value)
 
     @_builtins.property
     @pulumi.getter(name="useNewKubernetesVersion")
-    def use_new_kubernetes_version(self) -> Optional[pulumi.Input[_builtins.bool]]:
+    def use_new_kubernetes_version(self) -> pulumi.Input[Optional[_builtins.bool]]:
         """
         Boolean value describes which kubernetes version will be used
         """
         return pulumi.get(self, "use_new_kubernetes_version")
 
     @use_new_kubernetes_version.setter
-    def use_new_kubernetes_version(self, value: Optional[pulumi.Input[_builtins.bool]]):
+    def use_new_kubernetes_version(self, value: pulumi.Input[Optional[_builtins.bool]]):
         pulumi.set(self, "use_new_kubernetes_version", value)
 
 
@@ -690,25 +690,25 @@ class SyntheticLocation(pulumi.CustomResource):
     def __init__(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 auto_update_chromium: Optional[pulumi.Input[_builtins.bool]] = None,
-                 availability_location_outage: Optional[pulumi.Input[_builtins.bool]] = None,
-                 availability_node_outage: Optional[pulumi.Input[_builtins.bool]] = None,
-                 availability_notifications_enabled: Optional[pulumi.Input[_builtins.bool]] = None,
-                 city: Optional[pulumi.Input[_builtins.str]] = None,
-                 country_code: Optional[pulumi.Input[_builtins.str]] = None,
-                 deployment_type: Optional[pulumi.Input[_builtins.str]] = None,
-                 fips_mode: Optional[pulumi.Input[_builtins.str]] = None,
-                 latitude: Optional[pulumi.Input[_builtins.float]] = None,
-                 location_node_outage_delay_in_minutes: Optional[pulumi.Input[_builtins.int]] = None,
-                 longitude: Optional[pulumi.Input[_builtins.float]] = None,
-                 max_active_gate_count: Optional[pulumi.Input[_builtins.int]] = None,
-                 min_active_gate_count: Optional[pulumi.Input[_builtins.int]] = None,
-                 nam_execution_supported: Optional[pulumi.Input[_builtins.bool]] = None,
-                 name: Optional[pulumi.Input[_builtins.str]] = None,
-                 node_size: Optional[pulumi.Input[_builtins.str]] = None,
-                 nodes: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-                 region_code: Optional[pulumi.Input[_builtins.str]] = None,
-                 use_new_kubernetes_version: Optional[pulumi.Input[_builtins.bool]] = None,
+                 auto_update_chromium: pulumi.Input[Optional[_builtins.bool]] = None,
+                 availability_location_outage: pulumi.Input[Optional[_builtins.bool]] = None,
+                 availability_node_outage: pulumi.Input[Optional[_builtins.bool]] = None,
+                 availability_notifications_enabled: pulumi.Input[Optional[_builtins.bool]] = None,
+                 city: pulumi.Input[Optional[_builtins.str]] = None,
+                 country_code: pulumi.Input[Optional[_builtins.str]] = None,
+                 deployment_type: pulumi.Input[Optional[_builtins.str]] = None,
+                 fips_mode: pulumi.Input[Optional[_builtins.str]] = None,
+                 latitude: pulumi.Input[Optional[_builtins.float]] = None,
+                 location_node_outage_delay_in_minutes: pulumi.Input[Optional[_builtins.int]] = None,
+                 longitude: pulumi.Input[Optional[_builtins.float]] = None,
+                 max_active_gate_count: pulumi.Input[Optional[_builtins.int]] = None,
+                 min_active_gate_count: pulumi.Input[Optional[_builtins.int]] = None,
+                 nam_execution_supported: pulumi.Input[Optional[_builtins.bool]] = None,
+                 name: pulumi.Input[Optional[_builtins.str]] = None,
+                 node_size: pulumi.Input[Optional[_builtins.str]] = None,
+                 nodes: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 region_code: pulumi.Input[Optional[_builtins.str]] = None,
+                 use_new_kubernetes_version: pulumi.Input[Optional[_builtins.bool]] = None,
                  __props__=None):
         """
         > This resource requires the API token scope **Create and read synthetic monitors, locations, and nodes** (`ExternalSyntheticIntegration`)
@@ -796,25 +796,25 @@ class SyntheticLocation(pulumi.CustomResource):
     def _internal_init(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 auto_update_chromium: Optional[pulumi.Input[_builtins.bool]] = None,
-                 availability_location_outage: Optional[pulumi.Input[_builtins.bool]] = None,
-                 availability_node_outage: Optional[pulumi.Input[_builtins.bool]] = None,
-                 availability_notifications_enabled: Optional[pulumi.Input[_builtins.bool]] = None,
-                 city: Optional[pulumi.Input[_builtins.str]] = None,
-                 country_code: Optional[pulumi.Input[_builtins.str]] = None,
-                 deployment_type: Optional[pulumi.Input[_builtins.str]] = None,
-                 fips_mode: Optional[pulumi.Input[_builtins.str]] = None,
-                 latitude: Optional[pulumi.Input[_builtins.float]] = None,
-                 location_node_outage_delay_in_minutes: Optional[pulumi.Input[_builtins.int]] = None,
-                 longitude: Optional[pulumi.Input[_builtins.float]] = None,
-                 max_active_gate_count: Optional[pulumi.Input[_builtins.int]] = None,
-                 min_active_gate_count: Optional[pulumi.Input[_builtins.int]] = None,
-                 nam_execution_supported: Optional[pulumi.Input[_builtins.bool]] = None,
-                 name: Optional[pulumi.Input[_builtins.str]] = None,
-                 node_size: Optional[pulumi.Input[_builtins.str]] = None,
-                 nodes: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-                 region_code: Optional[pulumi.Input[_builtins.str]] = None,
-                 use_new_kubernetes_version: Optional[pulumi.Input[_builtins.bool]] = None,
+                 auto_update_chromium: pulumi.Input[Optional[_builtins.bool]] = None,
+                 availability_location_outage: pulumi.Input[Optional[_builtins.bool]] = None,
+                 availability_node_outage: pulumi.Input[Optional[_builtins.bool]] = None,
+                 availability_notifications_enabled: pulumi.Input[Optional[_builtins.bool]] = None,
+                 city: pulumi.Input[Optional[_builtins.str]] = None,
+                 country_code: pulumi.Input[Optional[_builtins.str]] = None,
+                 deployment_type: pulumi.Input[Optional[_builtins.str]] = None,
+                 fips_mode: pulumi.Input[Optional[_builtins.str]] = None,
+                 latitude: pulumi.Input[Optional[_builtins.float]] = None,
+                 location_node_outage_delay_in_minutes: pulumi.Input[Optional[_builtins.int]] = None,
+                 longitude: pulumi.Input[Optional[_builtins.float]] = None,
+                 max_active_gate_count: pulumi.Input[Optional[_builtins.int]] = None,
+                 min_active_gate_count: pulumi.Input[Optional[_builtins.int]] = None,
+                 nam_execution_supported: pulumi.Input[Optional[_builtins.bool]] = None,
+                 name: pulumi.Input[Optional[_builtins.str]] = None,
+                 node_size: pulumi.Input[Optional[_builtins.str]] = None,
+                 nodes: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 region_code: pulumi.Input[Optional[_builtins.str]] = None,
+                 use_new_kubernetes_version: pulumi.Input[Optional[_builtins.bool]] = None,
                  __props__=None):
         opts = pulumi.ResourceOptions.merge(_utilities.get_resource_opts_defaults(), opts)
         if not isinstance(opts, pulumi.ResourceOptions):
@@ -857,25 +857,25 @@ class SyntheticLocation(pulumi.CustomResource):
     def get(resource_name: str,
             id: pulumi.Input[str],
             opts: Optional[pulumi.ResourceOptions] = None,
-            auto_update_chromium: Optional[pulumi.Input[_builtins.bool]] = None,
-            availability_location_outage: Optional[pulumi.Input[_builtins.bool]] = None,
-            availability_node_outage: Optional[pulumi.Input[_builtins.bool]] = None,
-            availability_notifications_enabled: Optional[pulumi.Input[_builtins.bool]] = None,
-            city: Optional[pulumi.Input[_builtins.str]] = None,
-            country_code: Optional[pulumi.Input[_builtins.str]] = None,
-            deployment_type: Optional[pulumi.Input[_builtins.str]] = None,
-            fips_mode: Optional[pulumi.Input[_builtins.str]] = None,
-            latitude: Optional[pulumi.Input[_builtins.float]] = None,
-            location_node_outage_delay_in_minutes: Optional[pulumi.Input[_builtins.int]] = None,
-            longitude: Optional[pulumi.Input[_builtins.float]] = None,
-            max_active_gate_count: Optional[pulumi.Input[_builtins.int]] = None,
-            min_active_gate_count: Optional[pulumi.Input[_builtins.int]] = None,
-            nam_execution_supported: Optional[pulumi.Input[_builtins.bool]] = None,
-            name: Optional[pulumi.Input[_builtins.str]] = None,
-            node_size: Optional[pulumi.Input[_builtins.str]] = None,
-            nodes: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-            region_code: Optional[pulumi.Input[_builtins.str]] = None,
-            use_new_kubernetes_version: Optional[pulumi.Input[_builtins.bool]] = None) -> 'SyntheticLocation':
+            auto_update_chromium: pulumi.Input[Optional[_builtins.bool]] = None,
+            availability_location_outage: pulumi.Input[Optional[_builtins.bool]] = None,
+            availability_node_outage: pulumi.Input[Optional[_builtins.bool]] = None,
+            availability_notifications_enabled: pulumi.Input[Optional[_builtins.bool]] = None,
+            city: pulumi.Input[Optional[_builtins.str]] = None,
+            country_code: pulumi.Input[Optional[_builtins.str]] = None,
+            deployment_type: pulumi.Input[Optional[_builtins.str]] = None,
+            fips_mode: pulumi.Input[Optional[_builtins.str]] = None,
+            latitude: pulumi.Input[Optional[_builtins.float]] = None,
+            location_node_outage_delay_in_minutes: pulumi.Input[Optional[_builtins.int]] = None,
+            longitude: pulumi.Input[Optional[_builtins.float]] = None,
+            max_active_gate_count: pulumi.Input[Optional[_builtins.int]] = None,
+            min_active_gate_count: pulumi.Input[Optional[_builtins.int]] = None,
+            nam_execution_supported: pulumi.Input[Optional[_builtins.bool]] = None,
+            name: pulumi.Input[Optional[_builtins.str]] = None,
+            node_size: pulumi.Input[Optional[_builtins.str]] = None,
+            nodes: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+            region_code: pulumi.Input[Optional[_builtins.str]] = None,
+            use_new_kubernetes_version: pulumi.Input[Optional[_builtins.bool]] = None) -> 'SyntheticLocation':
         """
         Get an existing SyntheticLocation resource's state with the given name, id, and optional extra
         properties used to qualify the lookup.

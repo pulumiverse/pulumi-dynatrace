@@ -112,11 +112,11 @@ export interface CustomAppCrashRateState {
     /**
      * Crash rate increase
      */
-    crashRateIncrease?: pulumi.Input<inputs.CustomAppCrashRateCrashRateIncrease>;
+    crashRateIncrease?: pulumi.Input<inputs.CustomAppCrashRateCrashRateIncrease | undefined>;
     /**
      * The scope of this setting (CUSTOM_APPLICATION environment)
      */
-    scope?: pulumi.Input<string>;
+    scope?: pulumi.Input<string | undefined>;
 }
 
 /**
@@ -130,5 +130,5 @@ export interface CustomAppCrashRateArgs {
     /**
      * The scope of this setting (CUSTOM_APPLICATION environment)
      */
-    scope?: pulumi.Input<string>;
+    scope?: pulumi.Input<string | undefined>;
 }

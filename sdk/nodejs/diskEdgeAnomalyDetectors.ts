@@ -138,39 +138,39 @@ export interface DiskEdgeAnomalyDetectorsState {
     /**
      * Alerts
      */
-    alerts?: pulumi.Input<inputs.DiskEdgeAnomalyDetectorsAlerts>;
+    alerts?: pulumi.Input<inputs.DiskEdgeAnomalyDetectorsAlerts | undefined>;
     /**
      * Disk will be included in this policy if **any** of the filters match
      */
-    diskNameFilters?: pulumi.Input<pulumi.Input<string>[]>;
+    diskNameFilters?: pulumi.Input<pulumi.Input<string>[] | undefined>;
     /**
      * This setting is enabled (`true`) or disabled (`false`)
      */
-    enabled?: pulumi.Input<boolean>;
+    enabled?: pulumi.Input<boolean | undefined>;
     /**
      * Set of additional key-value properties to be attached to the triggered event. You can retrieve the available property keys using the [Events API v2](https://dt-url.net/9622g1w). Additionally any Host resource attribute can be dynamically substituted (agent 1.325+)
      */
-    eventProperties?: pulumi.Input<inputs.DiskEdgeAnomalyDetectorsEventProperties>;
+    eventProperties?: pulumi.Input<inputs.DiskEdgeAnomalyDetectorsEventProperties | undefined>;
     /**
      * The policy will be enabled if **all** conditions are met
      */
-    hostMetadataConditions?: pulumi.Input<inputs.DiskEdgeAnomalyDetectorsHostMetadataConditions>;
+    hostMetadataConditions?: pulumi.Input<inputs.DiskEdgeAnomalyDetectorsHostMetadataConditions | undefined>;
     /**
      * Because this resource allows for ordering you may specify the ID of the resource instance that comes before this instance regarding order. If not specified when creating the setting will be added to the end of the list. If not specified during update the order will remain untouched
      */
-    insertAfter?: pulumi.Input<string>;
+    insertAfter?: pulumi.Input<string | undefined>;
     /**
      * Select the operating systems on which policy should be applied
      */
-    operatingSystems?: pulumi.Input<pulumi.Input<string>[]>;
+    operatingSystems?: pulumi.Input<pulumi.Input<string>[] | undefined>;
     /**
      * Policy name
      */
-    policyName?: pulumi.Input<string>;
+    policyName?: pulumi.Input<string | undefined>;
     /**
      * The scope of this setting (HOST, HOST_GROUP). Omit this property if you want to cover the whole environment.
      */
-    scope?: pulumi.Input<string>;
+    scope?: pulumi.Input<string | undefined>;
 }
 
 /**
@@ -180,11 +180,11 @@ export interface DiskEdgeAnomalyDetectorsArgs {
     /**
      * Alerts
      */
-    alerts?: pulumi.Input<inputs.DiskEdgeAnomalyDetectorsAlerts>;
+    alerts?: pulumi.Input<inputs.DiskEdgeAnomalyDetectorsAlerts | undefined>;
     /**
      * Disk will be included in this policy if **any** of the filters match
      */
-    diskNameFilters?: pulumi.Input<pulumi.Input<string>[]>;
+    diskNameFilters?: pulumi.Input<pulumi.Input<string>[] | undefined>;
     /**
      * This setting is enabled (`true`) or disabled (`false`)
      */
@@ -192,19 +192,19 @@ export interface DiskEdgeAnomalyDetectorsArgs {
     /**
      * Set of additional key-value properties to be attached to the triggered event. You can retrieve the available property keys using the [Events API v2](https://dt-url.net/9622g1w). Additionally any Host resource attribute can be dynamically substituted (agent 1.325+)
      */
-    eventProperties?: pulumi.Input<inputs.DiskEdgeAnomalyDetectorsEventProperties>;
+    eventProperties?: pulumi.Input<inputs.DiskEdgeAnomalyDetectorsEventProperties | undefined>;
     /**
      * The policy will be enabled if **all** conditions are met
      */
-    hostMetadataConditions?: pulumi.Input<inputs.DiskEdgeAnomalyDetectorsHostMetadataConditions>;
+    hostMetadataConditions?: pulumi.Input<inputs.DiskEdgeAnomalyDetectorsHostMetadataConditions | undefined>;
     /**
      * Because this resource allows for ordering you may specify the ID of the resource instance that comes before this instance regarding order. If not specified when creating the setting will be added to the end of the list. If not specified during update the order will remain untouched
      */
-    insertAfter?: pulumi.Input<string>;
+    insertAfter?: pulumi.Input<string | undefined>;
     /**
      * Select the operating systems on which policy should be applied
      */
-    operatingSystems?: pulumi.Input<pulumi.Input<string>[]>;
+    operatingSystems?: pulumi.Input<pulumi.Input<string>[] | undefined>;
     /**
      * Policy name
      */
@@ -212,5 +212,5 @@ export interface DiskEdgeAnomalyDetectorsArgs {
     /**
      * The scope of this setting (HOST, HOST_GROUP). Omit this property if you want to cover the whole environment.
      */
-    scope?: pulumi.Input<string>;
+    scope?: pulumi.Input<string | undefined>;
 }

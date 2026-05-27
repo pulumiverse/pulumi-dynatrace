@@ -22,8 +22,8 @@ __all__ = ['AutomationWorkflowAwsConnectionsArgs', 'AutomationWorkflowAwsConnect
 class AutomationWorkflowAwsConnectionsArgs:
     def __init__(__self__, *,
                  type: pulumi.Input[_builtins.str],
-                 name: Optional[pulumi.Input[_builtins.str]] = None,
-                 web_identity: Optional[pulumi.Input['AutomationWorkflowAwsConnectionsWebIdentityArgs']] = None):
+                 name: pulumi.Input[Optional[_builtins.str]] = None,
+                 web_identity: pulumi.Input[Optional['AutomationWorkflowAwsConnectionsWebIdentityArgs']] = None):
         """
         The set of arguments for constructing a AutomationWorkflowAwsConnections resource.
 
@@ -51,35 +51,35 @@ class AutomationWorkflowAwsConnectionsArgs:
 
     @_builtins.property
     @pulumi.getter
-    def name(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def name(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Name
         """
         return pulumi.get(self, "name")
 
     @name.setter
-    def name(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def name(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "name", value)
 
     @_builtins.property
     @pulumi.getter(name="webIdentity")
-    def web_identity(self) -> Optional[pulumi.Input['AutomationWorkflowAwsConnectionsWebIdentityArgs']]:
+    def web_identity(self) -> pulumi.Input[Optional['AutomationWorkflowAwsConnectionsWebIdentityArgs']]:
         """
         no documentation available
         """
         return pulumi.get(self, "web_identity")
 
     @web_identity.setter
-    def web_identity(self, value: Optional[pulumi.Input['AutomationWorkflowAwsConnectionsWebIdentityArgs']]):
+    def web_identity(self, value: pulumi.Input[Optional['AutomationWorkflowAwsConnectionsWebIdentityArgs']]):
         pulumi.set(self, "web_identity", value)
 
 
 @pulumi.input_type
 class _AutomationWorkflowAwsConnectionsState:
     def __init__(__self__, *,
-                 name: Optional[pulumi.Input[_builtins.str]] = None,
-                 type: Optional[pulumi.Input[_builtins.str]] = None,
-                 web_identity: Optional[pulumi.Input['AutomationWorkflowAwsConnectionsWebIdentityArgs']] = None):
+                 name: pulumi.Input[Optional[_builtins.str]] = None,
+                 type: pulumi.Input[Optional[_builtins.str]] = None,
+                 web_identity: pulumi.Input[Optional['AutomationWorkflowAwsConnectionsWebIdentityArgs']] = None):
         """
         Input properties used for looking up and filtering AutomationWorkflowAwsConnections resources.
 
@@ -96,38 +96,38 @@ class _AutomationWorkflowAwsConnectionsState:
 
     @_builtins.property
     @pulumi.getter
-    def name(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def name(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Name
         """
         return pulumi.get(self, "name")
 
     @name.setter
-    def name(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def name(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "name", value)
 
     @_builtins.property
     @pulumi.getter
-    def type(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def type(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Possible Values: `WebIdentity`
         """
         return pulumi.get(self, "type")
 
     @type.setter
-    def type(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def type(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "type", value)
 
     @_builtins.property
     @pulumi.getter(name="webIdentity")
-    def web_identity(self) -> Optional[pulumi.Input['AutomationWorkflowAwsConnectionsWebIdentityArgs']]:
+    def web_identity(self) -> pulumi.Input[Optional['AutomationWorkflowAwsConnectionsWebIdentityArgs']]:
         """
         no documentation available
         """
         return pulumi.get(self, "web_identity")
 
     @web_identity.setter
-    def web_identity(self, value: Optional[pulumi.Input['AutomationWorkflowAwsConnectionsWebIdentityArgs']]):
+    def web_identity(self, value: pulumi.Input[Optional['AutomationWorkflowAwsConnectionsWebIdentityArgs']]):
         pulumi.set(self, "web_identity", value)
 
 
@@ -137,9 +137,9 @@ class AutomationWorkflowAwsConnections(pulumi.CustomResource):
     def __init__(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 name: Optional[pulumi.Input[_builtins.str]] = None,
-                 type: Optional[pulumi.Input[_builtins.str]] = None,
-                 web_identity: Optional[pulumi.Input[Union['AutomationWorkflowAwsConnectionsWebIdentityArgs', 'AutomationWorkflowAwsConnectionsWebIdentityArgsDict']]] = None,
+                 name: pulumi.Input[Optional[_builtins.str]] = None,
+                 type: pulumi.Input[Optional[_builtins.str]] = None,
+                 web_identity: pulumi.Input[Optional[Union['AutomationWorkflowAwsConnectionsWebIdentityArgs', 'AutomationWorkflowAwsConnectionsWebIdentityArgsDict']]] = None,
                  __props__=None):
         """
         > **Warning** This resource is deprecated and will be removed in a future release.
@@ -242,9 +242,9 @@ class AutomationWorkflowAwsConnections(pulumi.CustomResource):
     def _internal_init(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 name: Optional[pulumi.Input[_builtins.str]] = None,
-                 type: Optional[pulumi.Input[_builtins.str]] = None,
-                 web_identity: Optional[pulumi.Input[Union['AutomationWorkflowAwsConnectionsWebIdentityArgs', 'AutomationWorkflowAwsConnectionsWebIdentityArgsDict']]] = None,
+                 name: pulumi.Input[Optional[_builtins.str]] = None,
+                 type: pulumi.Input[Optional[_builtins.str]] = None,
+                 web_identity: pulumi.Input[Optional[Union['AutomationWorkflowAwsConnectionsWebIdentityArgs', 'AutomationWorkflowAwsConnectionsWebIdentityArgsDict']]] = None,
                  __props__=None):
         opts = pulumi.ResourceOptions.merge(_utilities.get_resource_opts_defaults(), opts)
         if not isinstance(opts, pulumi.ResourceOptions):
@@ -269,9 +269,9 @@ class AutomationWorkflowAwsConnections(pulumi.CustomResource):
     def get(resource_name: str,
             id: pulumi.Input[str],
             opts: Optional[pulumi.ResourceOptions] = None,
-            name: Optional[pulumi.Input[_builtins.str]] = None,
-            type: Optional[pulumi.Input[_builtins.str]] = None,
-            web_identity: Optional[pulumi.Input[Union['AutomationWorkflowAwsConnectionsWebIdentityArgs', 'AutomationWorkflowAwsConnectionsWebIdentityArgsDict']]] = None) -> 'AutomationWorkflowAwsConnections':
+            name: pulumi.Input[Optional[_builtins.str]] = None,
+            type: pulumi.Input[Optional[_builtins.str]] = None,
+            web_identity: pulumi.Input[Optional[Union['AutomationWorkflowAwsConnectionsWebIdentityArgs', 'AutomationWorkflowAwsConnectionsWebIdentityArgsDict']]] = None) -> 'AutomationWorkflowAwsConnections':
         """
         Get an existing AutomationWorkflowAwsConnections resource's state with the given name, id, and optional extra
         properties used to qualify the lookup.

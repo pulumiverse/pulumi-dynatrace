@@ -94,11 +94,11 @@ export interface ExtensionExecutionRemoteState {
     /**
      * Select performance profile for Extension Execution Controller [Documentation](https://www.dynatrace.com/support/help/shortlink/extensions-concepts#resource-consumption)
      */
-    performanceProfile?: pulumi.Input<string>;
+    performanceProfile?: pulumi.Input<string | undefined>;
     /**
      * The scope of this setting (ENVIRONMENT*ACTIVE*GATE)
      */
-    scope?: pulumi.Input<string>;
+    scope?: pulumi.Input<string | undefined>;
 }
 
 /**

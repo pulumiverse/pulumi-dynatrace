@@ -68,5 +68,5 @@ export interface GetAwsSupportedServicesOutputArgs {
     /**
      * Services with the given names won't be included in the results
      */
-    excepts?: pulumi.Input<pulumi.Input<string>[]>;
+    excepts?: pulumi.Input<pulumi.Input<string>[] | undefined>;
 }

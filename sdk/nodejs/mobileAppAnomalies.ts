@@ -120,23 +120,23 @@ export interface MobileAppAnomaliesState {
     /**
      * Error rate increase
      */
-    errorRateIncrease?: pulumi.Input<inputs.MobileAppAnomaliesErrorRateIncrease>;
+    errorRateIncrease?: pulumi.Input<inputs.MobileAppAnomaliesErrorRateIncrease | undefined>;
     /**
      * The scope of this setting (DEVICE*APPLICATION*METHOD, MOBILE_APPLICATION). Omit this property if you want to cover the whole environment.
      */
-    scope?: pulumi.Input<string>;
+    scope?: pulumi.Input<string | undefined>;
     /**
      * Slow user actions
      */
-    slowUserActions?: pulumi.Input<inputs.MobileAppAnomaliesSlowUserActions>;
+    slowUserActions?: pulumi.Input<inputs.MobileAppAnomaliesSlowUserActions | undefined>;
     /**
      * Unexpected high load
      */
-    unexpectedHighLoad?: pulumi.Input<inputs.MobileAppAnomaliesUnexpectedHighLoad>;
+    unexpectedHighLoad?: pulumi.Input<inputs.MobileAppAnomaliesUnexpectedHighLoad | undefined>;
     /**
      * Unexpected low load
      */
-    unexpectedLowLoad?: pulumi.Input<inputs.MobileAppAnomaliesUnexpectedLowLoad>;
+    unexpectedLowLoad?: pulumi.Input<inputs.MobileAppAnomaliesUnexpectedLowLoad | undefined>;
 }
 
 /**
@@ -150,7 +150,7 @@ export interface MobileAppAnomaliesArgs {
     /**
      * The scope of this setting (DEVICE*APPLICATION*METHOD, MOBILE_APPLICATION). Omit this property if you want to cover the whole environment.
      */
-    scope?: pulumi.Input<string>;
+    scope?: pulumi.Input<string | undefined>;
     /**
      * Slow user actions
      */

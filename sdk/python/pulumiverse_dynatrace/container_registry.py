@@ -19,7 +19,7 @@ __all__ = ['ContainerRegistryArgs', 'ContainerRegistry']
 @pulumi.input_type
 class ContainerRegistryArgs:
     def __init__(__self__, *,
-                 container_registry: Optional[pulumi.Input[_builtins.str]] = None):
+                 container_registry: pulumi.Input[Optional[_builtins.str]] = None):
         """
         The set of arguments for constructing a ContainerRegistry resource.
 
@@ -30,21 +30,21 @@ class ContainerRegistryArgs:
 
     @_builtins.property
     @pulumi.getter(name="containerRegistry")
-    def container_registry(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def container_registry(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Typically set without protocol. Leave empty to use default configuration
         """
         return pulumi.get(self, "container_registry")
 
     @container_registry.setter
-    def container_registry(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def container_registry(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "container_registry", value)
 
 
 @pulumi.input_type
 class _ContainerRegistryState:
     def __init__(__self__, *,
-                 container_registry: Optional[pulumi.Input[_builtins.str]] = None):
+                 container_registry: pulumi.Input[Optional[_builtins.str]] = None):
         """
         Input properties used for looking up and filtering ContainerRegistry resources.
 
@@ -55,14 +55,14 @@ class _ContainerRegistryState:
 
     @_builtins.property
     @pulumi.getter(name="containerRegistry")
-    def container_registry(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def container_registry(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Typically set without protocol. Leave empty to use default configuration
         """
         return pulumi.get(self, "container_registry")
 
     @container_registry.setter
-    def container_registry(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def container_registry(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "container_registry", value)
 
 
@@ -72,7 +72,7 @@ class ContainerRegistry(pulumi.CustomResource):
     def __init__(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 container_registry: Optional[pulumi.Input[_builtins.str]] = None,
+                 container_registry: pulumi.Input[Optional[_builtins.str]] = None,
                  __props__=None):
         """
         > This resource requires the API token scopes **Read settings** (`settings.read`) and **Write settings** (`settings.write`)
@@ -145,7 +145,7 @@ class ContainerRegistry(pulumi.CustomResource):
     def _internal_init(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 container_registry: Optional[pulumi.Input[_builtins.str]] = None,
+                 container_registry: pulumi.Input[Optional[_builtins.str]] = None,
                  __props__=None):
         opts = pulumi.ResourceOptions.merge(_utilities.get_resource_opts_defaults(), opts)
         if not isinstance(opts, pulumi.ResourceOptions):
@@ -166,7 +166,7 @@ class ContainerRegistry(pulumi.CustomResource):
     def get(resource_name: str,
             id: pulumi.Input[str],
             opts: Optional[pulumi.ResourceOptions] = None,
-            container_registry: Optional[pulumi.Input[_builtins.str]] = None) -> 'ContainerRegistry':
+            container_registry: pulumi.Input[Optional[_builtins.str]] = None) -> 'ContainerRegistry':
         """
         Get an existing ContainerRegistry resource's state with the given name, id, and optional extra
         properties used to qualify the lookup.

@@ -100,15 +100,15 @@ export interface HostMonitoringAdvancedState {
     /**
      * Inject CodeModules in Discovery mode.
      */
-    codeModuleInjection?: pulumi.Input<boolean>;
+    codeModuleInjection?: pulumi.Input<boolean | undefined>;
     /**
      * The scope of this settings. If the settings should cover the whole environment, just don't specify any scope.
      */
-    hostId?: pulumi.Input<string>;
+    hostId?: pulumi.Input<string | undefined>;
     /**
      * Disabling this via [oneagentctl](https://dt-url.net/oneagentctl) takes precedence over this setting and cannot be changed from the Dynatrace web UI.
      */
-    processAgentInjection?: pulumi.Input<boolean>;
+    processAgentInjection?: pulumi.Input<boolean | undefined>;
 }
 
 /**
@@ -118,7 +118,7 @@ export interface HostMonitoringAdvancedArgs {
     /**
      * Inject CodeModules in Discovery mode.
      */
-    codeModuleInjection?: pulumi.Input<boolean>;
+    codeModuleInjection?: pulumi.Input<boolean | undefined>;
     /**
      * The scope of this settings. If the settings should cover the whole environment, just don't specify any scope.
      */

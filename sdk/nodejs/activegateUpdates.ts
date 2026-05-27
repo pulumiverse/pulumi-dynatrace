@@ -91,11 +91,11 @@ export interface ActivegateUpdatesState {
     /**
      * Automatic updates at earliest convenience
      */
-    autoUpdate?: pulumi.Input<boolean>;
+    autoUpdate?: pulumi.Input<boolean | undefined>;
     /**
      * The scope of this setting (ENVIRONMENT*ACTIVE*GATE). Omit this property if you want to cover the whole environment.
      */
-    scope?: pulumi.Input<string>;
+    scope?: pulumi.Input<string | undefined>;
 }
 
 /**
@@ -109,5 +109,5 @@ export interface ActivegateUpdatesArgs {
     /**
      * The scope of this setting (ENVIRONMENT*ACTIVE*GATE). Omit this property if you want to cover the whole environment.
      */
-    scope?: pulumi.Input<string>;
+    scope?: pulumi.Input<string | undefined>;
 }

@@ -115,29 +115,29 @@ export interface AlertingProfileState {
     /**
      * The name of the alerting profile, displayed in the UI
      */
-    displayName?: pulumi.Input<string>;
+    displayName?: pulumi.Input<string | undefined>;
     /**
      * The list of event filters.  For all filters that are *negated* inside of these event filters, that is all `Predefined` as well as `Custom` (Title and/or Description) ones the AND logic applies. For all *non-negated* ones the OR logic applies. Between these two groups, negated and non-negated, the AND logic applies.  If you specify both severity rule and event filter, the AND logic applies
      */
-    eventTypeFilters?: pulumi.Input<pulumi.Input<inputs.AlertingProfileEventTypeFilter>[]>;
+    eventTypeFilters?: pulumi.Input<pulumi.Input<inputs.AlertingProfileEventTypeFilter>[] | undefined>;
     /**
      * `metadata` exists for backwards compatibility but shouldn't get specified anymore
      *
      * @deprecated `metadata` exists for backwards compatibility but shouldn't get specified anymore
      */
-    metadata?: pulumi.Input<inputs.AlertingProfileMetadata>;
+    metadata?: pulumi.Input<inputs.AlertingProfileMetadata | undefined>;
     /**
      * The ID of the management zone to which the alerting profile applies
      */
-    mzId?: pulumi.Input<string>;
+    mzId?: pulumi.Input<string | undefined>;
     /**
      * A list of rules for management zone usage.  Each rule is evaluated independently of all other rules
      */
-    rules?: pulumi.Input<pulumi.Input<inputs.AlertingProfileRule>[]>;
+    rules?: pulumi.Input<pulumi.Input<inputs.AlertingProfileRule>[] | undefined>;
     /**
      * allows for configuring properties that are not explicitly supported by the current version of this provider
      */
-    unknowns?: pulumi.Input<string>;
+    unknowns?: pulumi.Input<string | undefined>;
 }
 
 /**
@@ -151,23 +151,23 @@ export interface AlertingProfileArgs {
     /**
      * The list of event filters.  For all filters that are *negated* inside of these event filters, that is all `Predefined` as well as `Custom` (Title and/or Description) ones the AND logic applies. For all *non-negated* ones the OR logic applies. Between these two groups, negated and non-negated, the AND logic applies.  If you specify both severity rule and event filter, the AND logic applies
      */
-    eventTypeFilters?: pulumi.Input<pulumi.Input<inputs.AlertingProfileEventTypeFilter>[]>;
+    eventTypeFilters?: pulumi.Input<pulumi.Input<inputs.AlertingProfileEventTypeFilter>[] | undefined>;
     /**
      * `metadata` exists for backwards compatibility but shouldn't get specified anymore
      *
      * @deprecated `metadata` exists for backwards compatibility but shouldn't get specified anymore
      */
-    metadata?: pulumi.Input<inputs.AlertingProfileMetadata>;
+    metadata?: pulumi.Input<inputs.AlertingProfileMetadata | undefined>;
     /**
      * The ID of the management zone to which the alerting profile applies
      */
-    mzId?: pulumi.Input<string>;
+    mzId?: pulumi.Input<string | undefined>;
     /**
      * A list of rules for management zone usage.  Each rule is evaluated independently of all other rules
      */
-    rules?: pulumi.Input<pulumi.Input<inputs.AlertingProfileRule>[]>;
+    rules?: pulumi.Input<pulumi.Input<inputs.AlertingProfileRule>[] | undefined>;
     /**
      * allows for configuring properties that are not explicitly supported by the current version of this provider
      */
-    unknowns?: pulumi.Input<string>;
+    unknowns?: pulumi.Input<string | undefined>;
 }

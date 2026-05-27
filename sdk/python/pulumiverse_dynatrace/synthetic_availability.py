@@ -43,7 +43,7 @@ class SyntheticAvailabilityArgs:
 @pulumi.input_type
 class _SyntheticAvailabilityState:
     def __init__(__self__, *,
-                 exclude_maintenance_windows: Optional[pulumi.Input[_builtins.bool]] = None):
+                 exclude_maintenance_windows: pulumi.Input[Optional[_builtins.bool]] = None):
         """
         Input properties used for looking up and filtering SyntheticAvailability resources.
 
@@ -54,14 +54,14 @@ class _SyntheticAvailabilityState:
 
     @_builtins.property
     @pulumi.getter(name="excludeMaintenanceWindows")
-    def exclude_maintenance_windows(self) -> Optional[pulumi.Input[_builtins.bool]]:
+    def exclude_maintenance_windows(self) -> pulumi.Input[Optional[_builtins.bool]]:
         """
         Exclude periods with maintenance windows from availability calculation
         """
         return pulumi.get(self, "exclude_maintenance_windows")
 
     @exclude_maintenance_windows.setter
-    def exclude_maintenance_windows(self, value: Optional[pulumi.Input[_builtins.bool]]):
+    def exclude_maintenance_windows(self, value: pulumi.Input[Optional[_builtins.bool]]):
         pulumi.set(self, "exclude_maintenance_windows", value)
 
 
@@ -71,7 +71,7 @@ class SyntheticAvailability(pulumi.CustomResource):
     def __init__(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 exclude_maintenance_windows: Optional[pulumi.Input[_builtins.bool]] = None,
+                 exclude_maintenance_windows: pulumi.Input[Optional[_builtins.bool]] = None,
                  __props__=None):
         """
         > This resource requires the API token scopes **Read settings** (`settings.read`) and **Write settings** (`settings.write`)
@@ -126,7 +126,7 @@ class SyntheticAvailability(pulumi.CustomResource):
     def _internal_init(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 exclude_maintenance_windows: Optional[pulumi.Input[_builtins.bool]] = None,
+                 exclude_maintenance_windows: pulumi.Input[Optional[_builtins.bool]] = None,
                  __props__=None):
         opts = pulumi.ResourceOptions.merge(_utilities.get_resource_opts_defaults(), opts)
         if not isinstance(opts, pulumi.ResourceOptions):
@@ -149,7 +149,7 @@ class SyntheticAvailability(pulumi.CustomResource):
     def get(resource_name: str,
             id: pulumi.Input[str],
             opts: Optional[pulumi.ResourceOptions] = None,
-            exclude_maintenance_windows: Optional[pulumi.Input[_builtins.bool]] = None) -> 'SyntheticAvailability':
+            exclude_maintenance_windows: pulumi.Input[Optional[_builtins.bool]] = None) -> 'SyntheticAvailability':
         """
         Get an existing SyntheticAvailability resource's state with the given name, id, and optional extra
         properties used to qualify the lookup.

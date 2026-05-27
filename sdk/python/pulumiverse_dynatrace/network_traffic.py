@@ -22,8 +22,8 @@ __all__ = ['NetworkTrafficArgs', 'NetworkTraffic']
 class NetworkTrafficArgs:
     def __init__(__self__, *,
                  host_id: pulumi.Input[_builtins.str],
-                 exclude_ip: Optional[pulumi.Input['NetworkTrafficExcludeIpArgs']] = None,
-                 exclude_nic: Optional[pulumi.Input['NetworkTrafficExcludeNicArgs']] = None):
+                 exclude_ip: pulumi.Input[Optional['NetworkTrafficExcludeIpArgs']] = None,
+                 exclude_nic: pulumi.Input[Optional['NetworkTrafficExcludeNicArgs']] = None):
         """
         The set of arguments for constructing a NetworkTraffic resource.
 
@@ -51,35 +51,35 @@ class NetworkTrafficArgs:
 
     @_builtins.property
     @pulumi.getter(name="excludeIp")
-    def exclude_ip(self) -> Optional[pulumi.Input['NetworkTrafficExcludeIpArgs']]:
+    def exclude_ip(self) -> pulumi.Input[Optional['NetworkTrafficExcludeIpArgs']]:
         """
         Providing a host IP address, you will exclude network traffic only in calculating connectivity (other metrics will still be calculated).
         """
         return pulumi.get(self, "exclude_ip")
 
     @exclude_ip.setter
-    def exclude_ip(self, value: Optional[pulumi.Input['NetworkTrafficExcludeIpArgs']]):
+    def exclude_ip(self, value: pulumi.Input[Optional['NetworkTrafficExcludeIpArgs']]):
         pulumi.set(self, "exclude_ip", value)
 
     @_builtins.property
     @pulumi.getter(name="excludeNic")
-    def exclude_nic(self) -> Optional[pulumi.Input['NetworkTrafficExcludeNicArgs']]:
+    def exclude_nic(self) -> pulumi.Input[Optional['NetworkTrafficExcludeNicArgs']]:
         """
         Selecting a network interface, you will exclude all network traffic on that interface from being monitored. You can select from the list below what to not monitor, or input it manually using the "other one" option.
         """
         return pulumi.get(self, "exclude_nic")
 
     @exclude_nic.setter
-    def exclude_nic(self, value: Optional[pulumi.Input['NetworkTrafficExcludeNicArgs']]):
+    def exclude_nic(self, value: pulumi.Input[Optional['NetworkTrafficExcludeNicArgs']]):
         pulumi.set(self, "exclude_nic", value)
 
 
 @pulumi.input_type
 class _NetworkTrafficState:
     def __init__(__self__, *,
-                 exclude_ip: Optional[pulumi.Input['NetworkTrafficExcludeIpArgs']] = None,
-                 exclude_nic: Optional[pulumi.Input['NetworkTrafficExcludeNicArgs']] = None,
-                 host_id: Optional[pulumi.Input[_builtins.str]] = None):
+                 exclude_ip: pulumi.Input[Optional['NetworkTrafficExcludeIpArgs']] = None,
+                 exclude_nic: pulumi.Input[Optional['NetworkTrafficExcludeNicArgs']] = None,
+                 host_id: pulumi.Input[Optional[_builtins.str]] = None):
         """
         Input properties used for looking up and filtering NetworkTraffic resources.
 
@@ -96,38 +96,38 @@ class _NetworkTrafficState:
 
     @_builtins.property
     @pulumi.getter(name="excludeIp")
-    def exclude_ip(self) -> Optional[pulumi.Input['NetworkTrafficExcludeIpArgs']]:
+    def exclude_ip(self) -> pulumi.Input[Optional['NetworkTrafficExcludeIpArgs']]:
         """
         Providing a host IP address, you will exclude network traffic only in calculating connectivity (other metrics will still be calculated).
         """
         return pulumi.get(self, "exclude_ip")
 
     @exclude_ip.setter
-    def exclude_ip(self, value: Optional[pulumi.Input['NetworkTrafficExcludeIpArgs']]):
+    def exclude_ip(self, value: pulumi.Input[Optional['NetworkTrafficExcludeIpArgs']]):
         pulumi.set(self, "exclude_ip", value)
 
     @_builtins.property
     @pulumi.getter(name="excludeNic")
-    def exclude_nic(self) -> Optional[pulumi.Input['NetworkTrafficExcludeNicArgs']]:
+    def exclude_nic(self) -> pulumi.Input[Optional['NetworkTrafficExcludeNicArgs']]:
         """
         Selecting a network interface, you will exclude all network traffic on that interface from being monitored. You can select from the list below what to not monitor, or input it manually using the "other one" option.
         """
         return pulumi.get(self, "exclude_nic")
 
     @exclude_nic.setter
-    def exclude_nic(self, value: Optional[pulumi.Input['NetworkTrafficExcludeNicArgs']]):
+    def exclude_nic(self, value: pulumi.Input[Optional['NetworkTrafficExcludeNicArgs']]):
         pulumi.set(self, "exclude_nic", value)
 
     @_builtins.property
     @pulumi.getter(name="hostId")
-    def host_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def host_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The scope of this settings. If the settings should cover the whole environment, just don't specify any scope.
         """
         return pulumi.get(self, "host_id")
 
     @host_id.setter
-    def host_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def host_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "host_id", value)
 
 
@@ -137,9 +137,9 @@ class NetworkTraffic(pulumi.CustomResource):
     def __init__(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 exclude_ip: Optional[pulumi.Input[Union['NetworkTrafficExcludeIpArgs', 'NetworkTrafficExcludeIpArgsDict']]] = None,
-                 exclude_nic: Optional[pulumi.Input[Union['NetworkTrafficExcludeNicArgs', 'NetworkTrafficExcludeNicArgsDict']]] = None,
-                 host_id: Optional[pulumi.Input[_builtins.str]] = None,
+                 exclude_ip: pulumi.Input[Optional[Union['NetworkTrafficExcludeIpArgs', 'NetworkTrafficExcludeIpArgsDict']]] = None,
+                 exclude_nic: pulumi.Input[Optional[Union['NetworkTrafficExcludeNicArgs', 'NetworkTrafficExcludeNicArgsDict']]] = None,
+                 host_id: pulumi.Input[Optional[_builtins.str]] = None,
                  __props__=None):
         """
         > This resource requires the API token scopes **Read settings** (`settings.read`) and **Write settings** (`settings.write`)
@@ -200,9 +200,9 @@ class NetworkTraffic(pulumi.CustomResource):
     def _internal_init(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 exclude_ip: Optional[pulumi.Input[Union['NetworkTrafficExcludeIpArgs', 'NetworkTrafficExcludeIpArgsDict']]] = None,
-                 exclude_nic: Optional[pulumi.Input[Union['NetworkTrafficExcludeNicArgs', 'NetworkTrafficExcludeNicArgsDict']]] = None,
-                 host_id: Optional[pulumi.Input[_builtins.str]] = None,
+                 exclude_ip: pulumi.Input[Optional[Union['NetworkTrafficExcludeIpArgs', 'NetworkTrafficExcludeIpArgsDict']]] = None,
+                 exclude_nic: pulumi.Input[Optional[Union['NetworkTrafficExcludeNicArgs', 'NetworkTrafficExcludeNicArgsDict']]] = None,
+                 host_id: pulumi.Input[Optional[_builtins.str]] = None,
                  __props__=None):
         opts = pulumi.ResourceOptions.merge(_utilities.get_resource_opts_defaults(), opts)
         if not isinstance(opts, pulumi.ResourceOptions):
@@ -227,9 +227,9 @@ class NetworkTraffic(pulumi.CustomResource):
     def get(resource_name: str,
             id: pulumi.Input[str],
             opts: Optional[pulumi.ResourceOptions] = None,
-            exclude_ip: Optional[pulumi.Input[Union['NetworkTrafficExcludeIpArgs', 'NetworkTrafficExcludeIpArgsDict']]] = None,
-            exclude_nic: Optional[pulumi.Input[Union['NetworkTrafficExcludeNicArgs', 'NetworkTrafficExcludeNicArgsDict']]] = None,
-            host_id: Optional[pulumi.Input[_builtins.str]] = None) -> 'NetworkTraffic':
+            exclude_ip: pulumi.Input[Optional[Union['NetworkTrafficExcludeIpArgs', 'NetworkTrafficExcludeIpArgsDict']]] = None,
+            exclude_nic: pulumi.Input[Optional[Union['NetworkTrafficExcludeNicArgs', 'NetworkTrafficExcludeNicArgsDict']]] = None,
+            host_id: pulumi.Input[Optional[_builtins.str]] = None) -> 'NetworkTraffic':
         """
         Get an existing NetworkTraffic resource's state with the given name, id, and optional extra
         properties used to qualify the lookup.

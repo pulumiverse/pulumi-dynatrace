@@ -157,31 +157,31 @@ export interface MainframeTransactionMonitoringState {
     /**
      * If enabled, CICS regions belonging to the same CICSPlex will be grouped into a single process group. If disabled, a process group will be created for each CICS region.
      */
-    groupCicsRegions?: pulumi.Input<boolean>;
+    groupCicsRegions?: pulumi.Input<boolean | undefined>;
     /**
      * If enabled, IMS regions belonging to the same subsystem will be grouped into a single process group. If disabled, a process group will be created for each IMS region.
      */
-    groupImsRegions?: pulumi.Input<boolean>;
+    groupImsRegions?: pulumi.Input<boolean | undefined>;
     /**
      * If enabled, the CICS Transaction Gateway sensor will trace all EXCI requests including those that are using the TCP/IP or SNA protocol.
      */
-    monitorAllCtgProtocols?: pulumi.Input<boolean>;
+    monitorAllCtgProtocols?: pulumi.Input<boolean | undefined>;
     /**
      * Dynatrace automatically traces incoming web requests when they are called by already-monitored services. Enable this setting to monitor all incoming web requests. We recommend enabling it only over a short period of time.
      */
-    monitorAllIncomingWebRequests?: pulumi.Input<boolean>;
+    monitorAllIncomingWebRequests?: pulumi.Input<boolean | undefined>;
     /**
      * We recommend the default limit of 500 nodes. The value 0 means unlimited number of nodes.
      */
-    nodeLimit?: pulumi.Input<number>;
+    nodeLimit?: pulumi.Input<number | undefined>;
     /**
      * If enabled, a CICS service will be created for each monitored transaction ID within a process group. If disabled, a CICS service will be created for each monitored CICS region within a process group. We recommend enabling it only when the CICS regions are grouped by their CICSPlex.
      */
-    zosCicsServiceDetectionUsesTransactionId?: pulumi.Input<boolean>;
+    zosCicsServiceDetectionUsesTransactionId?: pulumi.Input<boolean | undefined>;
     /**
      * If enabled, an IMS service will be created for each monitored transaction ID within a process group. If disabled, an IMS service will be created for each monitored IMS region within a process group. We recommend enabling it only when the IMS regions are grouped by their subsystem.
      */
-    zosImsServiceDetectionUsesTransactionId?: pulumi.Input<boolean>;
+    zosImsServiceDetectionUsesTransactionId?: pulumi.Input<boolean | undefined>;
 }
 
 /**

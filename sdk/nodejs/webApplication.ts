@@ -229,81 +229,81 @@ export interface WebApplicationState {
     /**
      * A list of conversion goals of the application
      */
-    conversionGoals?: pulumi.Input<inputs.WebApplicationConversionGoals>;
+    conversionGoals?: pulumi.Input<inputs.WebApplicationConversionGoals | undefined>;
     /**
      * (Field has overlap with `dynatrace.WebAppEnablement`) Analize *X*% of user sessions
      */
-    costControlUserSessionPercentage?: pulumi.Input<number>;
+    costControlUserSessionPercentage?: pulumi.Input<number | undefined>;
     /**
      * Defines the Custom Action Apdex settings of an application
      */
-    customActionApdexSettings?: pulumi.Input<inputs.WebApplicationCustomActionApdexSettings>;
+    customActionApdexSettings?: pulumi.Input<inputs.WebApplicationCustomActionApdexSettings | undefined>;
     /**
      * User Action names to be flagged as Key User Actions
      *
      * @deprecated Configuring Key User Actions within `dynatrace.WebApplication` is discouraged. Use the dedicated resource `dynatrace.KeyUserAction` instead.
      */
-    keyUserActions?: pulumi.Input<pulumi.Input<inputs.WebApplicationKeyUserAction>[]>;
+    keyUserActions?: pulumi.Input<pulumi.Input<inputs.WebApplicationKeyUserAction>[] | undefined>;
     /**
      * Defines the Load Action Apdex settings of an application
      */
-    loadActionApdexSettings?: pulumi.Input<inputs.WebApplicationLoadActionApdexSettings>;
+    loadActionApdexSettings?: pulumi.Input<inputs.WebApplicationLoadActionApdexSettings | undefined>;
     /**
      * The key performance metric of load actions. Possible values are `ACTION_DURATION`, `CUMULATIVE_LAYOUT_SHIFT`, `DOM_INTERACTIVE`, `FIRST_INPUT_DELAY`, `LARGEST_CONTENTFUL_PAINT`, `LOAD_EVENT_END`, `LOAD_EVENT_START`, `RESPONSE_END`, `RESPONSE_START`, `SPEED_INDEX` and `VISUALLY_COMPLETE`
      */
-    loadActionKeyPerformanceMetric?: pulumi.Input<string>;
+    loadActionKeyPerformanceMetric?: pulumi.Input<string | undefined>;
     /**
      * Java script agent meta data capture settings
      */
-    metaDataCaptureSettings?: pulumi.Input<inputs.WebApplicationMetaDataCaptureSettings>;
+    metaDataCaptureSettings?: pulumi.Input<inputs.WebApplicationMetaDataCaptureSettings | undefined>;
     /**
      * Real user monitoring settings
      */
-    monitoringSettings?: pulumi.Input<inputs.WebApplicationMonitoringSettings>;
+    monitoringSettings?: pulumi.Input<inputs.WebApplicationMonitoringSettings | undefined>;
     /**
      * The name of the web application, displayed in the UI
      */
-    name?: pulumi.Input<string>;
+    name?: pulumi.Input<string | undefined>;
     /**
      * (Field has overlap with `dynatrace.WebAppEnablement`) Real user monitoring enabled/disabled
      */
-    realUserMonitoringEnabled?: pulumi.Input<boolean>;
+    realUserMonitoringEnabled?: pulumi.Input<boolean | undefined>;
     /**
      * Settings regarding Session Replay
      */
-    sessionReplayConfig?: pulumi.Input<inputs.WebApplicationSessionReplayConfig>;
+    sessionReplayConfig?: pulumi.Input<inputs.WebApplicationSessionReplayConfig | undefined>;
     /**
      * The type of the web application. Possible values are `AUTO_INJECTED`, `BROWSER_EXTENSION_INJECTED` and `MANUALLY_INJECTED`
      */
-    type?: pulumi.Input<string>;
+    type?: pulumi.Input<string | undefined>;
     /**
      * URL injection pattern for manual web application
      */
-    urlInjectionPattern?: pulumi.Input<string>;
+    urlInjectionPattern?: pulumi.Input<string | undefined>;
     /**
      * User action and session properties settings
      */
-    userActionAndSessionProperties?: pulumi.Input<inputs.WebApplicationUserActionAndSessionProperties>;
+    userActionAndSessionProperties?: pulumi.Input<inputs.WebApplicationUserActionAndSessionProperties | undefined>;
     /**
      * The settings of user action naming
      */
-    userActionNamingSettings?: pulumi.Input<inputs.WebApplicationUserActionNamingSettings>;
+    userActionNamingSettings?: pulumi.Input<inputs.WebApplicationUserActionNamingSettings | undefined>;
     /**
      * User tags settings
      */
-    userTags?: pulumi.Input<inputs.WebApplicationUserTags>;
+    userTags?: pulumi.Input<inputs.WebApplicationUserTags | undefined>;
     /**
      * These settings influence the monitoring data you receive for 3rd party, CDN, and 1st party resources
      */
-    waterfallSettings?: pulumi.Input<inputs.WebApplicationWaterfallSettings>;
+    waterfallSettings?: pulumi.Input<inputs.WebApplicationWaterfallSettings | undefined>;
     /**
      * Defines the XHR Action Apdex settings of an application
      */
-    xhrActionApdexSettings?: pulumi.Input<inputs.WebApplicationXhrActionApdexSettings>;
+    xhrActionApdexSettings?: pulumi.Input<inputs.WebApplicationXhrActionApdexSettings | undefined>;
     /**
      * The key performance metric of XHR actions. Possible values are `ACTION_DURATION`, `RESPONSE_END`, `RESPONSE_START` and `VISUALLY_COMPLETE`.
      */
-    xhrActionKeyPerformanceMetric?: pulumi.Input<string>;
+    xhrActionKeyPerformanceMetric?: pulumi.Input<string | undefined>;
 }
 
 /**
@@ -313,7 +313,7 @@ export interface WebApplicationArgs {
     /**
      * A list of conversion goals of the application
      */
-    conversionGoals?: pulumi.Input<inputs.WebApplicationConversionGoals>;
+    conversionGoals?: pulumi.Input<inputs.WebApplicationConversionGoals | undefined>;
     /**
      * (Field has overlap with `dynatrace.WebAppEnablement`) Analize *X*% of user sessions
      */
@@ -327,7 +327,7 @@ export interface WebApplicationArgs {
      *
      * @deprecated Configuring Key User Actions within `dynatrace.WebApplication` is discouraged. Use the dedicated resource `dynatrace.KeyUserAction` instead.
      */
-    keyUserActions?: pulumi.Input<pulumi.Input<inputs.WebApplicationKeyUserAction>[]>;
+    keyUserActions?: pulumi.Input<pulumi.Input<inputs.WebApplicationKeyUserAction>[] | undefined>;
     /**
      * Defines the Load Action Apdex settings of an application
      */
@@ -339,7 +339,7 @@ export interface WebApplicationArgs {
     /**
      * Java script agent meta data capture settings
      */
-    metaDataCaptureSettings?: pulumi.Input<inputs.WebApplicationMetaDataCaptureSettings>;
+    metaDataCaptureSettings?: pulumi.Input<inputs.WebApplicationMetaDataCaptureSettings | undefined>;
     /**
      * Real user monitoring settings
      */
@@ -347,15 +347,15 @@ export interface WebApplicationArgs {
     /**
      * The name of the web application, displayed in the UI
      */
-    name?: pulumi.Input<string>;
+    name?: pulumi.Input<string | undefined>;
     /**
      * (Field has overlap with `dynatrace.WebAppEnablement`) Real user monitoring enabled/disabled
      */
-    realUserMonitoringEnabled?: pulumi.Input<boolean>;
+    realUserMonitoringEnabled?: pulumi.Input<boolean | undefined>;
     /**
      * Settings regarding Session Replay
      */
-    sessionReplayConfig?: pulumi.Input<inputs.WebApplicationSessionReplayConfig>;
+    sessionReplayConfig?: pulumi.Input<inputs.WebApplicationSessionReplayConfig | undefined>;
     /**
      * The type of the web application. Possible values are `AUTO_INJECTED`, `BROWSER_EXTENSION_INJECTED` and `MANUALLY_INJECTED`
      */
@@ -363,19 +363,19 @@ export interface WebApplicationArgs {
     /**
      * URL injection pattern for manual web application
      */
-    urlInjectionPattern?: pulumi.Input<string>;
+    urlInjectionPattern?: pulumi.Input<string | undefined>;
     /**
      * User action and session properties settings
      */
-    userActionAndSessionProperties?: pulumi.Input<inputs.WebApplicationUserActionAndSessionProperties>;
+    userActionAndSessionProperties?: pulumi.Input<inputs.WebApplicationUserActionAndSessionProperties | undefined>;
     /**
      * The settings of user action naming
      */
-    userActionNamingSettings?: pulumi.Input<inputs.WebApplicationUserActionNamingSettings>;
+    userActionNamingSettings?: pulumi.Input<inputs.WebApplicationUserActionNamingSettings | undefined>;
     /**
      * User tags settings
      */
-    userTags?: pulumi.Input<inputs.WebApplicationUserTags>;
+    userTags?: pulumi.Input<inputs.WebApplicationUserTags | undefined>;
     /**
      * These settings influence the monitoring data you receive for 3rd party, CDN, and 1st party resources
      */

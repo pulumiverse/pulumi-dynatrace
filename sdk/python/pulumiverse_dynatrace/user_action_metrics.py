@@ -24,8 +24,8 @@ class UserActionMetricsArgs:
                  enabled: pulumi.Input[_builtins.bool],
                  metric_key: pulumi.Input[_builtins.str],
                  value: pulumi.Input['UserActionMetricsValueArgs'],
-                 dimensions: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-                 filters: Optional[pulumi.Input['UserActionMetricsFiltersArgs']] = None):
+                 dimensions: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 filters: pulumi.Input[Optional['UserActionMetricsFiltersArgs']] = None):
         """
         The set of arguments for constructing a UserActionMetrics resource.
 
@@ -81,37 +81,37 @@ class UserActionMetricsArgs:
 
     @_builtins.property
     @pulumi.getter
-    def dimensions(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]:
+    def dimensions(self) -> pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]:
         """
         Defines the fields that are used as dimensions. A dimension is a collection of reference information about a metric data point that is of interest to your business. Dimensions are parameters like "application", "type", "apdexCategory". For example, using "type" as a dimension allows you to split chart data based on the user action type.
         """
         return pulumi.get(self, "dimensions")
 
     @dimensions.setter
-    def dimensions(self, value: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]):
+    def dimensions(self, value: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "dimensions", value)
 
     @_builtins.property
     @pulumi.getter
-    def filters(self) -> Optional[pulumi.Input['UserActionMetricsFiltersArgs']]:
+    def filters(self) -> pulumi.Input[Optional['UserActionMetricsFiltersArgs']]:
         """
         Defines the filters for the user action. Filters apply at the moment of extracting the data and only sessions that satisfy the filtering criteria will be used to extract the custom metrics. You will not be able to modify these filters in the metric data explorer. For example, using "type equals Xhr" will give you only data from xhr actions, while forcing the rest of user actions of different types to be ignored.
         """
         return pulumi.get(self, "filters")
 
     @filters.setter
-    def filters(self, value: Optional[pulumi.Input['UserActionMetricsFiltersArgs']]):
+    def filters(self, value: pulumi.Input[Optional['UserActionMetricsFiltersArgs']]):
         pulumi.set(self, "filters", value)
 
 
 @pulumi.input_type
 class _UserActionMetricsState:
     def __init__(__self__, *,
-                 dimensions: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-                 enabled: Optional[pulumi.Input[_builtins.bool]] = None,
-                 filters: Optional[pulumi.Input['UserActionMetricsFiltersArgs']] = None,
-                 metric_key: Optional[pulumi.Input[_builtins.str]] = None,
-                 value: Optional[pulumi.Input['UserActionMetricsValueArgs']] = None):
+                 dimensions: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 enabled: pulumi.Input[Optional[_builtins.bool]] = None,
+                 filters: pulumi.Input[Optional['UserActionMetricsFiltersArgs']] = None,
+                 metric_key: pulumi.Input[Optional[_builtins.str]] = None,
+                 value: pulumi.Input[Optional['UserActionMetricsValueArgs']] = None):
         """
         Input properties used for looking up and filtering UserActionMetrics resources.
 
@@ -134,62 +134,62 @@ class _UserActionMetricsState:
 
     @_builtins.property
     @pulumi.getter
-    def dimensions(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]:
+    def dimensions(self) -> pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]:
         """
         Defines the fields that are used as dimensions. A dimension is a collection of reference information about a metric data point that is of interest to your business. Dimensions are parameters like "application", "type", "apdexCategory". For example, using "type" as a dimension allows you to split chart data based on the user action type.
         """
         return pulumi.get(self, "dimensions")
 
     @dimensions.setter
-    def dimensions(self, value: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]):
+    def dimensions(self, value: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "dimensions", value)
 
     @_builtins.property
     @pulumi.getter
-    def enabled(self) -> Optional[pulumi.Input[_builtins.bool]]:
+    def enabled(self) -> pulumi.Input[Optional[_builtins.bool]]:
         """
         This setting is enabled (`true`) or disabled (`false`)
         """
         return pulumi.get(self, "enabled")
 
     @enabled.setter
-    def enabled(self, value: Optional[pulumi.Input[_builtins.bool]]):
+    def enabled(self, value: pulumi.Input[Optional[_builtins.bool]]):
         pulumi.set(self, "enabled", value)
 
     @_builtins.property
     @pulumi.getter
-    def filters(self) -> Optional[pulumi.Input['UserActionMetricsFiltersArgs']]:
+    def filters(self) -> pulumi.Input[Optional['UserActionMetricsFiltersArgs']]:
         """
         Defines the filters for the user action. Filters apply at the moment of extracting the data and only sessions that satisfy the filtering criteria will be used to extract the custom metrics. You will not be able to modify these filters in the metric data explorer. For example, using "type equals Xhr" will give you only data from xhr actions, while forcing the rest of user actions of different types to be ignored.
         """
         return pulumi.get(self, "filters")
 
     @filters.setter
-    def filters(self, value: Optional[pulumi.Input['UserActionMetricsFiltersArgs']]):
+    def filters(self, value: pulumi.Input[Optional['UserActionMetricsFiltersArgs']]):
         pulumi.set(self, "filters", value)
 
     @_builtins.property
     @pulumi.getter(name="metricKey")
-    def metric_key(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def metric_key(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Metric key
         """
         return pulumi.get(self, "metric_key")
 
     @metric_key.setter
-    def metric_key(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def metric_key(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "metric_key", value)
 
     @_builtins.property
     @pulumi.getter
-    def value(self) -> Optional[pulumi.Input['UserActionMetricsValueArgs']]:
+    def value(self) -> pulumi.Input[Optional['UserActionMetricsValueArgs']]:
         """
         Defines the type of value to be extracted from the user action. When using **user action counter**, the number of user actions is counted (similar to count(*) when using USQL). When using **user action field value**, the value of a user action field is extracted.
         """
         return pulumi.get(self, "value")
 
     @value.setter
-    def value(self, value: Optional[pulumi.Input['UserActionMetricsValueArgs']]):
+    def value(self, value: pulumi.Input[Optional['UserActionMetricsValueArgs']]):
         pulumi.set(self, "value", value)
 
 
@@ -199,11 +199,11 @@ class UserActionMetrics(pulumi.CustomResource):
     def __init__(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 dimensions: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-                 enabled: Optional[pulumi.Input[_builtins.bool]] = None,
-                 filters: Optional[pulumi.Input[Union['UserActionMetricsFiltersArgs', 'UserActionMetricsFiltersArgsDict']]] = None,
-                 metric_key: Optional[pulumi.Input[_builtins.str]] = None,
-                 value: Optional[pulumi.Input[Union['UserActionMetricsValueArgs', 'UserActionMetricsValueArgsDict']]] = None,
+                 dimensions: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 enabled: pulumi.Input[Optional[_builtins.bool]] = None,
+                 filters: pulumi.Input[Optional[Union['UserActionMetricsFiltersArgs', 'UserActionMetricsFiltersArgsDict']]] = None,
+                 metric_key: pulumi.Input[Optional[_builtins.str]] = None,
+                 value: pulumi.Input[Optional[Union['UserActionMetricsValueArgs', 'UserActionMetricsValueArgsDict']]] = None,
                  __props__=None):
         """
         > This resource requires the API token scopes **Read settings** (`settings.read`) and **Write settings** (`settings.write`)
@@ -266,11 +266,11 @@ class UserActionMetrics(pulumi.CustomResource):
     def _internal_init(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 dimensions: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-                 enabled: Optional[pulumi.Input[_builtins.bool]] = None,
-                 filters: Optional[pulumi.Input[Union['UserActionMetricsFiltersArgs', 'UserActionMetricsFiltersArgsDict']]] = None,
-                 metric_key: Optional[pulumi.Input[_builtins.str]] = None,
-                 value: Optional[pulumi.Input[Union['UserActionMetricsValueArgs', 'UserActionMetricsValueArgsDict']]] = None,
+                 dimensions: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 enabled: pulumi.Input[Optional[_builtins.bool]] = None,
+                 filters: pulumi.Input[Optional[Union['UserActionMetricsFiltersArgs', 'UserActionMetricsFiltersArgsDict']]] = None,
+                 metric_key: pulumi.Input[Optional[_builtins.str]] = None,
+                 value: pulumi.Input[Optional[Union['UserActionMetricsValueArgs', 'UserActionMetricsValueArgsDict']]] = None,
                  __props__=None):
         opts = pulumi.ResourceOptions.merge(_utilities.get_resource_opts_defaults(), opts)
         if not isinstance(opts, pulumi.ResourceOptions):
@@ -301,11 +301,11 @@ class UserActionMetrics(pulumi.CustomResource):
     def get(resource_name: str,
             id: pulumi.Input[str],
             opts: Optional[pulumi.ResourceOptions] = None,
-            dimensions: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-            enabled: Optional[pulumi.Input[_builtins.bool]] = None,
-            filters: Optional[pulumi.Input[Union['UserActionMetricsFiltersArgs', 'UserActionMetricsFiltersArgsDict']]] = None,
-            metric_key: Optional[pulumi.Input[_builtins.str]] = None,
-            value: Optional[pulumi.Input[Union['UserActionMetricsValueArgs', 'UserActionMetricsValueArgsDict']]] = None) -> 'UserActionMetrics':
+            dimensions: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+            enabled: pulumi.Input[Optional[_builtins.bool]] = None,
+            filters: pulumi.Input[Optional[Union['UserActionMetricsFiltersArgs', 'UserActionMetricsFiltersArgsDict']]] = None,
+            metric_key: pulumi.Input[Optional[_builtins.str]] = None,
+            value: pulumi.Input[Optional[Union['UserActionMetricsValueArgs', 'UserActionMetricsValueArgsDict']]] = None) -> 'UserActionMetrics':
         """
         Get an existing UserActionMetrics resource's state with the given name, id, and optional extra
         properties used to qualify the lookup.

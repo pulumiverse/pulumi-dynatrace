@@ -23,8 +23,8 @@ class WebAppEnablementArgs:
     def __init__(__self__, *,
                  rum: pulumi.Input['WebAppEnablementRumArgs'],
                  session_replay: pulumi.Input['WebAppEnablementSessionReplayArgs'],
-                 application_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 experience_analytics: Optional[pulumi.Input['WebAppEnablementExperienceAnalyticsArgs']] = None):
+                 application_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 experience_analytics: pulumi.Input[Optional['WebAppEnablementExperienceAnalyticsArgs']] = None):
         """
         The set of arguments for constructing a WebAppEnablement resource.
 
@@ -66,36 +66,36 @@ class WebAppEnablementArgs:
 
     @_builtins.property
     @pulumi.getter(name="applicationId")
-    def application_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def application_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The scope of this settings. If the settings should cover the whole environment, just don't specify any scope.
         """
         return pulumi.get(self, "application_id")
 
     @application_id.setter
-    def application_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def application_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "application_id", value)
 
     @_builtins.property
     @pulumi.getter(name="experienceAnalytics")
-    def experience_analytics(self) -> Optional[pulumi.Input['WebAppEnablementExperienceAnalyticsArgs']]:
+    def experience_analytics(self) -> pulumi.Input[Optional['WebAppEnablementExperienceAnalyticsArgs']]:
         """
         User Interactions
         """
         return pulumi.get(self, "experience_analytics")
 
     @experience_analytics.setter
-    def experience_analytics(self, value: Optional[pulumi.Input['WebAppEnablementExperienceAnalyticsArgs']]):
+    def experience_analytics(self, value: pulumi.Input[Optional['WebAppEnablementExperienceAnalyticsArgs']]):
         pulumi.set(self, "experience_analytics", value)
 
 
 @pulumi.input_type
 class _WebAppEnablementState:
     def __init__(__self__, *,
-                 application_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 experience_analytics: Optional[pulumi.Input['WebAppEnablementExperienceAnalyticsArgs']] = None,
-                 rum: Optional[pulumi.Input['WebAppEnablementRumArgs']] = None,
-                 session_replay: Optional[pulumi.Input['WebAppEnablementSessionReplayArgs']] = None):
+                 application_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 experience_analytics: pulumi.Input[Optional['WebAppEnablementExperienceAnalyticsArgs']] = None,
+                 rum: pulumi.Input[Optional['WebAppEnablementRumArgs']] = None,
+                 session_replay: pulumi.Input[Optional['WebAppEnablementSessionReplayArgs']] = None):
         """
         Input properties used for looking up and filtering WebAppEnablement resources.
 
@@ -115,50 +115,50 @@ class _WebAppEnablementState:
 
     @_builtins.property
     @pulumi.getter(name="applicationId")
-    def application_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def application_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The scope of this settings. If the settings should cover the whole environment, just don't specify any scope.
         """
         return pulumi.get(self, "application_id")
 
     @application_id.setter
-    def application_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def application_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "application_id", value)
 
     @_builtins.property
     @pulumi.getter(name="experienceAnalytics")
-    def experience_analytics(self) -> Optional[pulumi.Input['WebAppEnablementExperienceAnalyticsArgs']]:
+    def experience_analytics(self) -> pulumi.Input[Optional['WebAppEnablementExperienceAnalyticsArgs']]:
         """
         User Interactions
         """
         return pulumi.get(self, "experience_analytics")
 
     @experience_analytics.setter
-    def experience_analytics(self, value: Optional[pulumi.Input['WebAppEnablementExperienceAnalyticsArgs']]):
+    def experience_analytics(self, value: pulumi.Input[Optional['WebAppEnablementExperienceAnalyticsArgs']]):
         pulumi.set(self, "experience_analytics", value)
 
     @_builtins.property
     @pulumi.getter
-    def rum(self) -> Optional[pulumi.Input['WebAppEnablementRumArgs']]:
+    def rum(self) -> pulumi.Input[Optional['WebAppEnablementRumArgs']]:
         """
         Capture and analyze all user actions within your application. Enable [Real User Monitoring (RUM)](https://dt-url.net/1n2b0prq) to monitor and improve your application's performance, identify errors, and gain insight into your user's behavior and experience.
         """
         return pulumi.get(self, "rum")
 
     @rum.setter
-    def rum(self, value: Optional[pulumi.Input['WebAppEnablementRumArgs']]):
+    def rum(self, value: pulumi.Input[Optional['WebAppEnablementRumArgs']]):
         pulumi.set(self, "rum", value)
 
     @_builtins.property
     @pulumi.getter(name="sessionReplay")
-    def session_replay(self) -> Optional[pulumi.Input['WebAppEnablementSessionReplayArgs']]:
+    def session_replay(self) -> pulumi.Input[Optional['WebAppEnablementSessionReplayArgs']]:
         """
         [Session Replay](https://dt-url.net/session-replay) captures all user interactions within your application and replays them in a movie-like experience while providing [best-in-class security and data protection](https://dt-url.net/b303zxj).
         """
         return pulumi.get(self, "session_replay")
 
     @session_replay.setter
-    def session_replay(self, value: Optional[pulumi.Input['WebAppEnablementSessionReplayArgs']]):
+    def session_replay(self, value: pulumi.Input[Optional['WebAppEnablementSessionReplayArgs']]):
         pulumi.set(self, "session_replay", value)
 
 
@@ -168,10 +168,10 @@ class WebAppEnablement(pulumi.CustomResource):
     def __init__(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 application_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 experience_analytics: Optional[pulumi.Input[Union['WebAppEnablementExperienceAnalyticsArgs', 'WebAppEnablementExperienceAnalyticsArgsDict']]] = None,
-                 rum: Optional[pulumi.Input[Union['WebAppEnablementRumArgs', 'WebAppEnablementRumArgsDict']]] = None,
-                 session_replay: Optional[pulumi.Input[Union['WebAppEnablementSessionReplayArgs', 'WebAppEnablementSessionReplayArgsDict']]] = None,
+                 application_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 experience_analytics: pulumi.Input[Optional[Union['WebAppEnablementExperienceAnalyticsArgs', 'WebAppEnablementExperienceAnalyticsArgsDict']]] = None,
+                 rum: pulumi.Input[Optional[Union['WebAppEnablementRumArgs', 'WebAppEnablementRumArgsDict']]] = None,
+                 session_replay: pulumi.Input[Optional[Union['WebAppEnablementSessionReplayArgs', 'WebAppEnablementSessionReplayArgsDict']]] = None,
                  __props__=None):
         """
         > Configuration of the application scope overlaps with dynatrace_web_application, but this resource in addition provides an option for an environment scope.
@@ -237,10 +237,10 @@ class WebAppEnablement(pulumi.CustomResource):
     def _internal_init(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 application_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 experience_analytics: Optional[pulumi.Input[Union['WebAppEnablementExperienceAnalyticsArgs', 'WebAppEnablementExperienceAnalyticsArgsDict']]] = None,
-                 rum: Optional[pulumi.Input[Union['WebAppEnablementRumArgs', 'WebAppEnablementRumArgsDict']]] = None,
-                 session_replay: Optional[pulumi.Input[Union['WebAppEnablementSessionReplayArgs', 'WebAppEnablementSessionReplayArgsDict']]] = None,
+                 application_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 experience_analytics: pulumi.Input[Optional[Union['WebAppEnablementExperienceAnalyticsArgs', 'WebAppEnablementExperienceAnalyticsArgsDict']]] = None,
+                 rum: pulumi.Input[Optional[Union['WebAppEnablementRumArgs', 'WebAppEnablementRumArgsDict']]] = None,
+                 session_replay: pulumi.Input[Optional[Union['WebAppEnablementSessionReplayArgs', 'WebAppEnablementSessionReplayArgsDict']]] = None,
                  __props__=None):
         opts = pulumi.ResourceOptions.merge(_utilities.get_resource_opts_defaults(), opts)
         if not isinstance(opts, pulumi.ResourceOptions):
@@ -268,10 +268,10 @@ class WebAppEnablement(pulumi.CustomResource):
     def get(resource_name: str,
             id: pulumi.Input[str],
             opts: Optional[pulumi.ResourceOptions] = None,
-            application_id: Optional[pulumi.Input[_builtins.str]] = None,
-            experience_analytics: Optional[pulumi.Input[Union['WebAppEnablementExperienceAnalyticsArgs', 'WebAppEnablementExperienceAnalyticsArgsDict']]] = None,
-            rum: Optional[pulumi.Input[Union['WebAppEnablementRumArgs', 'WebAppEnablementRumArgsDict']]] = None,
-            session_replay: Optional[pulumi.Input[Union['WebAppEnablementSessionReplayArgs', 'WebAppEnablementSessionReplayArgsDict']]] = None) -> 'WebAppEnablement':
+            application_id: pulumi.Input[Optional[_builtins.str]] = None,
+            experience_analytics: pulumi.Input[Optional[Union['WebAppEnablementExperienceAnalyticsArgs', 'WebAppEnablementExperienceAnalyticsArgsDict']]] = None,
+            rum: pulumi.Input[Optional[Union['WebAppEnablementRumArgs', 'WebAppEnablementRumArgsDict']]] = None,
+            session_replay: pulumi.Input[Optional[Union['WebAppEnablementSessionReplayArgs', 'WebAppEnablementSessionReplayArgsDict']]] = None) -> 'WebAppEnablement':
         """
         Get an existing WebAppEnablement resource's state with the given name, id, and optional extra
         properties used to qualify the lookup.

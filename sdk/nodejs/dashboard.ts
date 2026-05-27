@@ -106,21 +106,21 @@ export interface DashboardState {
     /**
      * contains parameters of a dashboard
      */
-    dashboardMetadata?: pulumi.Input<inputs.DashboardDashboardMetadata>;
+    dashboardMetadata?: pulumi.Input<inputs.DashboardDashboardMetadata | undefined>;
     /**
      * `metadata` exists for backwards compatibility but shouldn't get specified anymore
      *
      * @deprecated `metadata` exists for backwards compatibility but shouldn't get specified anymore
      */
-    metadata?: pulumi.Input<inputs.DashboardMetadata>;
+    metadata?: pulumi.Input<inputs.DashboardMetadata | undefined>;
     /**
      * the tiles this Dashboard consist of
      */
-    tiles?: pulumi.Input<pulumi.Input<inputs.DashboardTile>[]>;
+    tiles?: pulumi.Input<pulumi.Input<inputs.DashboardTile>[] | undefined>;
     /**
      * allows for configuring properties that are not explicitly supported by the current version of this provider
      */
-    unknowns?: pulumi.Input<string>;
+    unknowns?: pulumi.Input<string | undefined>;
 }
 
 /**
@@ -130,19 +130,19 @@ export interface DashboardArgs {
     /**
      * contains parameters of a dashboard
      */
-    dashboardMetadata?: pulumi.Input<inputs.DashboardDashboardMetadata>;
+    dashboardMetadata?: pulumi.Input<inputs.DashboardDashboardMetadata | undefined>;
     /**
      * `metadata` exists for backwards compatibility but shouldn't get specified anymore
      *
      * @deprecated `metadata` exists for backwards compatibility but shouldn't get specified anymore
      */
-    metadata?: pulumi.Input<inputs.DashboardMetadata>;
+    metadata?: pulumi.Input<inputs.DashboardMetadata | undefined>;
     /**
      * the tiles this Dashboard consist of
      */
-    tiles?: pulumi.Input<pulumi.Input<inputs.DashboardTile>[]>;
+    tiles?: pulumi.Input<pulumi.Input<inputs.DashboardTile>[] | undefined>;
     /**
      * allows for configuring properties that are not explicitly supported by the current version of this provider
      */
-    unknowns?: pulumi.Input<string>;
+    unknowns?: pulumi.Input<string | undefined>;
 }

@@ -145,33 +145,33 @@ export interface IamPolicyState {
     /**
      * The UUID of the account (`urn:dtaccount:<account-uuid>`) in case the policy should be applied to all environments of this account. The prefix `urn:dtaccount:` MUST be omitted here.
      */
-    account?: pulumi.Input<string>;
+    account?: pulumi.Input<string | undefined>;
     /**
      * An optional description text for the policy
      */
-    description?: pulumi.Input<string>;
+    description?: pulumi.Input<string | undefined>;
     /**
      * The ID of the environment (https://\n\n.live.dynatrace.com) if the policy should be applied to a specific environment
      *
      * @deprecated Configuring policies on environment level has been deprecated by Dynatrace. Please consider creating an account wide policy instead
      */
-    environment?: pulumi.Input<string>;
+    environment?: pulumi.Input<string | undefined>;
     /**
      * The name of the policy
      */
-    name?: pulumi.Input<string>;
+    name?: pulumi.Input<string | undefined>;
     /**
      * The Statement Query of the policy
      */
-    statementQuery?: pulumi.Input<string>;
+    statementQuery?: pulumi.Input<string | undefined>;
     /**
      * Tags for this policy
      */
-    tags?: pulumi.Input<pulumi.Input<string>[]>;
+    tags?: pulumi.Input<pulumi.Input<string>[] | undefined>;
     /**
      * The ID of this resource is a concatenation of multiple pieces of information (policy UUID, accountID, environmentID, ...). There are use cases where you JUST need the UUID of the Policy, though
      */
-    uuid?: pulumi.Input<string>;
+    uuid?: pulumi.Input<string | undefined>;
 }
 
 /**
@@ -181,21 +181,21 @@ export interface IamPolicyArgs {
     /**
      * The UUID of the account (`urn:dtaccount:<account-uuid>`) in case the policy should be applied to all environments of this account. The prefix `urn:dtaccount:` MUST be omitted here.
      */
-    account?: pulumi.Input<string>;
+    account?: pulumi.Input<string | undefined>;
     /**
      * An optional description text for the policy
      */
-    description?: pulumi.Input<string>;
+    description?: pulumi.Input<string | undefined>;
     /**
      * The ID of the environment (https://\n\n.live.dynatrace.com) if the policy should be applied to a specific environment
      *
      * @deprecated Configuring policies on environment level has been deprecated by Dynatrace. Please consider creating an account wide policy instead
      */
-    environment?: pulumi.Input<string>;
+    environment?: pulumi.Input<string | undefined>;
     /**
      * The name of the policy
      */
-    name?: pulumi.Input<string>;
+    name?: pulumi.Input<string | undefined>;
     /**
      * The Statement Query of the policy
      */
@@ -203,5 +203,5 @@ export interface IamPolicyArgs {
     /**
      * Tags for this policy
      */
-    tags?: pulumi.Input<pulumi.Input<string>[]>;
+    tags?: pulumi.Input<pulumi.Input<string>[] | undefined>;
 }

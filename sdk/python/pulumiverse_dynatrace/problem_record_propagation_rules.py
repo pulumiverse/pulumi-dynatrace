@@ -73,9 +73,9 @@ class ProblemRecordPropagationRulesArgs:
 @pulumi.input_type
 class _ProblemRecordPropagationRulesState:
     def __init__(__self__, *,
-                 enabled: Optional[pulumi.Input[_builtins.bool]] = None,
-                 source_attribute_key: Optional[pulumi.Input[_builtins.str]] = None,
-                 target_attribute_key: Optional[pulumi.Input[_builtins.str]] = None):
+                 enabled: pulumi.Input[Optional[_builtins.bool]] = None,
+                 source_attribute_key: pulumi.Input[Optional[_builtins.str]] = None,
+                 target_attribute_key: pulumi.Input[Optional[_builtins.str]] = None):
         """
         Input properties used for looking up and filtering ProblemRecordPropagationRules resources.
 
@@ -92,38 +92,38 @@ class _ProblemRecordPropagationRulesState:
 
     @_builtins.property
     @pulumi.getter
-    def enabled(self) -> Optional[pulumi.Input[_builtins.bool]]:
+    def enabled(self) -> pulumi.Input[Optional[_builtins.bool]]:
         """
         This setting is enabled (`true`) or disabled (`false`)
         """
         return pulumi.get(self, "enabled")
 
     @enabled.setter
-    def enabled(self, value: Optional[pulumi.Input[_builtins.bool]]):
+    def enabled(self, value: pulumi.Input[Optional[_builtins.bool]]):
         pulumi.set(self, "enabled", value)
 
     @_builtins.property
     @pulumi.getter(name="sourceAttributeKey")
-    def source_attribute_key(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def source_attribute_key(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Attribute key from the event that will be propagated.
         """
         return pulumi.get(self, "source_attribute_key")
 
     @source_attribute_key.setter
-    def source_attribute_key(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def source_attribute_key(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "source_attribute_key", value)
 
     @_builtins.property
     @pulumi.getter(name="targetAttributeKey")
-    def target_attribute_key(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def target_attribute_key(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Attribute key under which the propagated event data will be stored on the problem.
         """
         return pulumi.get(self, "target_attribute_key")
 
     @target_attribute_key.setter
-    def target_attribute_key(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def target_attribute_key(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "target_attribute_key", value)
 
 
@@ -133,9 +133,9 @@ class ProblemRecordPropagationRules(pulumi.CustomResource):
     def __init__(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 enabled: Optional[pulumi.Input[_builtins.bool]] = None,
-                 source_attribute_key: Optional[pulumi.Input[_builtins.str]] = None,
-                 target_attribute_key: Optional[pulumi.Input[_builtins.str]] = None,
+                 enabled: pulumi.Input[Optional[_builtins.bool]] = None,
+                 source_attribute_key: pulumi.Input[Optional[_builtins.str]] = None,
+                 target_attribute_key: pulumi.Input[Optional[_builtins.str]] = None,
                  __props__=None):
         """
         > This resource requires the API token scopes **Read settings** (`settings.read`) and **Write settings** (`settings.write`)
@@ -196,9 +196,9 @@ class ProblemRecordPropagationRules(pulumi.CustomResource):
     def _internal_init(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 enabled: Optional[pulumi.Input[_builtins.bool]] = None,
-                 source_attribute_key: Optional[pulumi.Input[_builtins.str]] = None,
-                 target_attribute_key: Optional[pulumi.Input[_builtins.str]] = None,
+                 enabled: pulumi.Input[Optional[_builtins.bool]] = None,
+                 source_attribute_key: pulumi.Input[Optional[_builtins.str]] = None,
+                 target_attribute_key: pulumi.Input[Optional[_builtins.str]] = None,
                  __props__=None):
         opts = pulumi.ResourceOptions.merge(_utilities.get_resource_opts_defaults(), opts)
         if not isinstance(opts, pulumi.ResourceOptions):
@@ -227,9 +227,9 @@ class ProblemRecordPropagationRules(pulumi.CustomResource):
     def get(resource_name: str,
             id: pulumi.Input[str],
             opts: Optional[pulumi.ResourceOptions] = None,
-            enabled: Optional[pulumi.Input[_builtins.bool]] = None,
-            source_attribute_key: Optional[pulumi.Input[_builtins.str]] = None,
-            target_attribute_key: Optional[pulumi.Input[_builtins.str]] = None) -> 'ProblemRecordPropagationRules':
+            enabled: pulumi.Input[Optional[_builtins.bool]] = None,
+            source_attribute_key: pulumi.Input[Optional[_builtins.str]] = None,
+            target_attribute_key: pulumi.Input[Optional[_builtins.str]] = None) -> 'ProblemRecordPropagationRules':
         """
         Get an existing ProblemRecordPropagationRules resource's state with the given name, id, and optional extra
         properties used to qualify the lookup.

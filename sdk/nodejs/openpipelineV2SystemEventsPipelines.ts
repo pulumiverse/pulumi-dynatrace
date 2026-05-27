@@ -299,63 +299,63 @@ export interface OpenpipelineV2SystemEventsPipelinesState {
     /**
      * Cost allocation stage
      */
-    costAllocation?: pulumi.Input<inputs.OpenpipelineV2SystemEventsPipelinesCostAllocation>;
+    costAllocation?: pulumi.Input<inputs.OpenpipelineV2SystemEventsPipelinesCostAllocation | undefined>;
     /**
      * Custom pipeline id
      */
-    customId?: pulumi.Input<string>;
+    customId?: pulumi.Input<string | undefined>;
     /**
      * Data extraction stage
      */
-    dataExtraction?: pulumi.Input<inputs.OpenpipelineV2SystemEventsPipelinesDataExtraction>;
+    dataExtraction?: pulumi.Input<inputs.OpenpipelineV2SystemEventsPipelinesDataExtraction | undefined>;
     /**
      * Davis event extraction stage
      */
-    davis?: pulumi.Input<inputs.OpenpipelineV2SystemEventsPipelinesDavis>;
+    davis?: pulumi.Input<inputs.OpenpipelineV2SystemEventsPipelinesDavis | undefined>;
     /**
      * Display name
      */
-    displayName?: pulumi.Input<string>;
+    displayName?: pulumi.Input<string | undefined>;
     /**
      * Group role. Possible Values: `compositionPipeline`, `memberPipeline`
      */
-    groupRole?: pulumi.Input<string>;
+    groupRole?: pulumi.Input<string | undefined>;
     /**
      * Pipeline metadata list
      */
-    metadataList?: pulumi.Input<inputs.OpenpipelineV2SystemEventsPipelinesMetadataList>;
+    metadataList?: pulumi.Input<inputs.OpenpipelineV2SystemEventsPipelinesMetadataList | undefined>;
     /**
      * Metrics extraction stage
      */
-    metricExtraction?: pulumi.Input<inputs.OpenpipelineV2SystemEventsPipelinesMetricExtraction>;
+    metricExtraction?: pulumi.Input<inputs.OpenpipelineV2SystemEventsPipelinesMetricExtraction | undefined>;
     /**
      * Processing stage
      */
-    processing?: pulumi.Input<inputs.OpenpipelineV2SystemEventsPipelinesProcessing>;
+    processing?: pulumi.Input<inputs.OpenpipelineV2SystemEventsPipelinesProcessing | undefined>;
     /**
      * Product allocation stage
      */
-    productAllocation?: pulumi.Input<inputs.OpenpipelineV2SystemEventsPipelinesProductAllocation>;
+    productAllocation?: pulumi.Input<inputs.OpenpipelineV2SystemEventsPipelinesProductAllocation | undefined>;
     /**
      * Routing. Possible Values: `notRoutable`, `routable`
      */
-    routing?: pulumi.Input<string>;
+    routing?: pulumi.Input<string | undefined>;
     /**
      * Security context stage
      */
-    securityContext?: pulumi.Input<inputs.OpenpipelineV2SystemEventsPipelinesSecurityContext>;
+    securityContext?: pulumi.Input<inputs.OpenpipelineV2SystemEventsPipelinesSecurityContext | undefined>;
     /**
      * Smartscape edge extraction stage
      */
-    smartscapeEdgeExtraction?: pulumi.Input<inputs.OpenpipelineV2SystemEventsPipelinesSmartscapeEdgeExtraction>;
+    smartscapeEdgeExtraction?: pulumi.Input<inputs.OpenpipelineV2SystemEventsPipelinesSmartscapeEdgeExtraction | undefined>;
     /**
      * Smartscape node extraction stage
      */
-    smartscapeNodeExtraction?: pulumi.Input<inputs.OpenpipelineV2SystemEventsPipelinesSmartscapeNodeExtraction>;
+    smartscapeNodeExtraction?: pulumi.Input<inputs.OpenpipelineV2SystemEventsPipelinesSmartscapeNodeExtraction | undefined>;
     /**
      * Storage stage
      */
-    storage?: pulumi.Input<inputs.OpenpipelineV2SystemEventsPipelinesStorage>;
+    storage?: pulumi.Input<inputs.OpenpipelineV2SystemEventsPipelinesStorage | undefined>;
 }
 
 /**
@@ -365,7 +365,7 @@ export interface OpenpipelineV2SystemEventsPipelinesArgs {
     /**
      * Cost allocation stage
      */
-    costAllocation?: pulumi.Input<inputs.OpenpipelineV2SystemEventsPipelinesCostAllocation>;
+    costAllocation?: pulumi.Input<inputs.OpenpipelineV2SystemEventsPipelinesCostAllocation | undefined>;
     /**
      * Custom pipeline id
      */
@@ -373,11 +373,11 @@ export interface OpenpipelineV2SystemEventsPipelinesArgs {
     /**
      * Data extraction stage
      */
-    dataExtraction?: pulumi.Input<inputs.OpenpipelineV2SystemEventsPipelinesDataExtraction>;
+    dataExtraction?: pulumi.Input<inputs.OpenpipelineV2SystemEventsPipelinesDataExtraction | undefined>;
     /**
      * Davis event extraction stage
      */
-    davis?: pulumi.Input<inputs.OpenpipelineV2SystemEventsPipelinesDavis>;
+    davis?: pulumi.Input<inputs.OpenpipelineV2SystemEventsPipelinesDavis | undefined>;
     /**
      * Display name
      */
@@ -385,41 +385,41 @@ export interface OpenpipelineV2SystemEventsPipelinesArgs {
     /**
      * Group role. Possible Values: `compositionPipeline`, `memberPipeline`
      */
-    groupRole?: pulumi.Input<string>;
+    groupRole?: pulumi.Input<string | undefined>;
     /**
      * Pipeline metadata list
      */
-    metadataList?: pulumi.Input<inputs.OpenpipelineV2SystemEventsPipelinesMetadataList>;
+    metadataList?: pulumi.Input<inputs.OpenpipelineV2SystemEventsPipelinesMetadataList | undefined>;
     /**
      * Metrics extraction stage
      */
-    metricExtraction?: pulumi.Input<inputs.OpenpipelineV2SystemEventsPipelinesMetricExtraction>;
+    metricExtraction?: pulumi.Input<inputs.OpenpipelineV2SystemEventsPipelinesMetricExtraction | undefined>;
     /**
      * Processing stage
      */
-    processing?: pulumi.Input<inputs.OpenpipelineV2SystemEventsPipelinesProcessing>;
+    processing?: pulumi.Input<inputs.OpenpipelineV2SystemEventsPipelinesProcessing | undefined>;
     /**
      * Product allocation stage
      */
-    productAllocation?: pulumi.Input<inputs.OpenpipelineV2SystemEventsPipelinesProductAllocation>;
+    productAllocation?: pulumi.Input<inputs.OpenpipelineV2SystemEventsPipelinesProductAllocation | undefined>;
     /**
      * Routing. Possible Values: `notRoutable`, `routable`
      */
-    routing?: pulumi.Input<string>;
+    routing?: pulumi.Input<string | undefined>;
     /**
      * Security context stage
      */
-    securityContext?: pulumi.Input<inputs.OpenpipelineV2SystemEventsPipelinesSecurityContext>;
+    securityContext?: pulumi.Input<inputs.OpenpipelineV2SystemEventsPipelinesSecurityContext | undefined>;
     /**
      * Smartscape edge extraction stage
      */
-    smartscapeEdgeExtraction?: pulumi.Input<inputs.OpenpipelineV2SystemEventsPipelinesSmartscapeEdgeExtraction>;
+    smartscapeEdgeExtraction?: pulumi.Input<inputs.OpenpipelineV2SystemEventsPipelinesSmartscapeEdgeExtraction | undefined>;
     /**
      * Smartscape node extraction stage
      */
-    smartscapeNodeExtraction?: pulumi.Input<inputs.OpenpipelineV2SystemEventsPipelinesSmartscapeNodeExtraction>;
+    smartscapeNodeExtraction?: pulumi.Input<inputs.OpenpipelineV2SystemEventsPipelinesSmartscapeNodeExtraction | undefined>;
     /**
      * Storage stage
      */
-    storage?: pulumi.Input<inputs.OpenpipelineV2SystemEventsPipelinesStorage>;
+    storage?: pulumi.Input<inputs.OpenpipelineV2SystemEventsPipelinesStorage | undefined>;
 }

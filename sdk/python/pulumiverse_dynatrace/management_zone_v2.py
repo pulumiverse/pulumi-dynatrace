@@ -21,10 +21,10 @@ __all__ = ['ManagementZoneV2Args', 'ManagementZoneV2']
 @pulumi.input_type
 class ManagementZoneV2Args:
     def __init__(__self__, *,
-                 description: Optional[pulumi.Input[_builtins.str]] = None,
-                 legacy_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 name: Optional[pulumi.Input[_builtins.str]] = None,
-                 rules: Optional[pulumi.Input['ManagementZoneV2RulesArgs']] = None):
+                 description: pulumi.Input[Optional[_builtins.str]] = None,
+                 legacy_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 name: pulumi.Input[Optional[_builtins.str]] = None,
+                 rules: pulumi.Input[Optional['ManagementZoneV2RulesArgs']] = None):
         """
         The set of arguments for constructing a ManagementZoneV2 resource.
 
@@ -44,60 +44,60 @@ class ManagementZoneV2Args:
 
     @_builtins.property
     @pulumi.getter
-    def description(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def description(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Description
         """
         return pulumi.get(self, "description")
 
     @description.setter
-    def description(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def description(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "description", value)
 
     @_builtins.property
     @pulumi.getter(name="legacyId")
-    def legacy_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def legacy_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The ID of this setting when referred to by the Config REST API V1
         """
         return pulumi.get(self, "legacy_id")
 
     @legacy_id.setter
-    def legacy_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def legacy_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "legacy_id", value)
 
     @_builtins.property
     @pulumi.getter
-    def name(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def name(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         **Be careful when renaming** - if there are policies that are referencing this Management zone, they will need to be adapted to the new name!
         """
         return pulumi.get(self, "name")
 
     @name.setter
-    def name(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def name(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "name", value)
 
     @_builtins.property
     @pulumi.getter
-    def rules(self) -> Optional[pulumi.Input['ManagementZoneV2RulesArgs']]:
+    def rules(self) -> pulumi.Input[Optional['ManagementZoneV2RulesArgs']]:
         """
         Rules
         """
         return pulumi.get(self, "rules")
 
     @rules.setter
-    def rules(self, value: Optional[pulumi.Input['ManagementZoneV2RulesArgs']]):
+    def rules(self, value: pulumi.Input[Optional['ManagementZoneV2RulesArgs']]):
         pulumi.set(self, "rules", value)
 
 
 @pulumi.input_type
 class _ManagementZoneV2State:
     def __init__(__self__, *,
-                 description: Optional[pulumi.Input[_builtins.str]] = None,
-                 legacy_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 name: Optional[pulumi.Input[_builtins.str]] = None,
-                 rules: Optional[pulumi.Input['ManagementZoneV2RulesArgs']] = None):
+                 description: pulumi.Input[Optional[_builtins.str]] = None,
+                 legacy_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 name: pulumi.Input[Optional[_builtins.str]] = None,
+                 rules: pulumi.Input[Optional['ManagementZoneV2RulesArgs']] = None):
         """
         Input properties used for looking up and filtering ManagementZoneV2 resources.
 
@@ -117,50 +117,50 @@ class _ManagementZoneV2State:
 
     @_builtins.property
     @pulumi.getter
-    def description(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def description(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Description
         """
         return pulumi.get(self, "description")
 
     @description.setter
-    def description(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def description(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "description", value)
 
     @_builtins.property
     @pulumi.getter(name="legacyId")
-    def legacy_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def legacy_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The ID of this setting when referred to by the Config REST API V1
         """
         return pulumi.get(self, "legacy_id")
 
     @legacy_id.setter
-    def legacy_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def legacy_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "legacy_id", value)
 
     @_builtins.property
     @pulumi.getter
-    def name(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def name(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         **Be careful when renaming** - if there are policies that are referencing this Management zone, they will need to be adapted to the new name!
         """
         return pulumi.get(self, "name")
 
     @name.setter
-    def name(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def name(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "name", value)
 
     @_builtins.property
     @pulumi.getter
-    def rules(self) -> Optional[pulumi.Input['ManagementZoneV2RulesArgs']]:
+    def rules(self) -> pulumi.Input[Optional['ManagementZoneV2RulesArgs']]:
         """
         Rules
         """
         return pulumi.get(self, "rules")
 
     @rules.setter
-    def rules(self, value: Optional[pulumi.Input['ManagementZoneV2RulesArgs']]):
+    def rules(self, value: pulumi.Input[Optional['ManagementZoneV2RulesArgs']]):
         pulumi.set(self, "rules", value)
 
 
@@ -170,10 +170,10 @@ class ManagementZoneV2(pulumi.CustomResource):
     def __init__(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 description: Optional[pulumi.Input[_builtins.str]] = None,
-                 legacy_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 name: Optional[pulumi.Input[_builtins.str]] = None,
-                 rules: Optional[pulumi.Input[Union['ManagementZoneV2RulesArgs', 'ManagementZoneV2RulesArgsDict']]] = None,
+                 description: pulumi.Input[Optional[_builtins.str]] = None,
+                 legacy_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 name: pulumi.Input[Optional[_builtins.str]] = None,
+                 rules: pulumi.Input[Optional[Union['ManagementZoneV2RulesArgs', 'ManagementZoneV2RulesArgsDict']]] = None,
                  __props__=None):
         """
         > This resource requires the API token scopes **Read settings** (`settings.read`) and **Write settings** (`settings.write`)
@@ -253,10 +253,10 @@ class ManagementZoneV2(pulumi.CustomResource):
     def _internal_init(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 description: Optional[pulumi.Input[_builtins.str]] = None,
-                 legacy_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 name: Optional[pulumi.Input[_builtins.str]] = None,
-                 rules: Optional[pulumi.Input[Union['ManagementZoneV2RulesArgs', 'ManagementZoneV2RulesArgsDict']]] = None,
+                 description: pulumi.Input[Optional[_builtins.str]] = None,
+                 legacy_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 name: pulumi.Input[Optional[_builtins.str]] = None,
+                 rules: pulumi.Input[Optional[Union['ManagementZoneV2RulesArgs', 'ManagementZoneV2RulesArgsDict']]] = None,
                  __props__=None):
         opts = pulumi.ResourceOptions.merge(_utilities.get_resource_opts_defaults(), opts)
         if not isinstance(opts, pulumi.ResourceOptions):
@@ -280,10 +280,10 @@ class ManagementZoneV2(pulumi.CustomResource):
     def get(resource_name: str,
             id: pulumi.Input[str],
             opts: Optional[pulumi.ResourceOptions] = None,
-            description: Optional[pulumi.Input[_builtins.str]] = None,
-            legacy_id: Optional[pulumi.Input[_builtins.str]] = None,
-            name: Optional[pulumi.Input[_builtins.str]] = None,
-            rules: Optional[pulumi.Input[Union['ManagementZoneV2RulesArgs', 'ManagementZoneV2RulesArgsDict']]] = None) -> 'ManagementZoneV2':
+            description: pulumi.Input[Optional[_builtins.str]] = None,
+            legacy_id: pulumi.Input[Optional[_builtins.str]] = None,
+            name: pulumi.Input[Optional[_builtins.str]] = None,
+            rules: pulumi.Input[Optional[Union['ManagementZoneV2RulesArgs', 'ManagementZoneV2RulesArgsDict']]] = None) -> 'ManagementZoneV2':
         """
         Get an existing ManagementZoneV2 resource's state with the given name, id, and optional extra
         properties used to qualify the lookup.

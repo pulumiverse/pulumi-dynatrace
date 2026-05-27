@@ -103,7 +103,7 @@ export interface OpenpipelineV2DavisProblemsRoutingState {
     /**
      * Routing for pipelines
      */
-    routingEntries?: pulumi.Input<inputs.OpenpipelineV2DavisProblemsRoutingRoutingEntries>;
+    routingEntries?: pulumi.Input<inputs.OpenpipelineV2DavisProblemsRoutingRoutingEntries | undefined>;
 }
 
 /**
@@ -113,5 +113,5 @@ export interface OpenpipelineV2DavisProblemsRoutingArgs {
     /**
      * Routing for pipelines
      */
-    routingEntries?: pulumi.Input<inputs.OpenpipelineV2DavisProblemsRoutingRoutingEntries>;
+    routingEntries?: pulumi.Input<inputs.OpenpipelineV2DavisProblemsRoutingRoutingEntries | undefined>;
 }

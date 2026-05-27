@@ -150,35 +150,35 @@ export interface VmwareAnomaliesState {
     /**
      * no documentation available
      */
-    droppedPacketsDetection?: pulumi.Input<inputs.VmwareAnomaliesDroppedPacketsDetection>;
+    droppedPacketsDetection?: pulumi.Input<inputs.VmwareAnomaliesDroppedPacketsDetection | undefined>;
     /**
      * no documentation available
      */
-    esxiHighCpuDetection?: pulumi.Input<inputs.VmwareAnomaliesEsxiHighCpuDetection>;
+    esxiHighCpuDetection?: pulumi.Input<inputs.VmwareAnomaliesEsxiHighCpuDetection | undefined>;
     /**
      * no documentation available
      */
-    esxiHighMemoryDetection?: pulumi.Input<inputs.VmwareAnomaliesEsxiHighMemoryDetection>;
+    esxiHighMemoryDetection?: pulumi.Input<inputs.VmwareAnomaliesEsxiHighMemoryDetection | undefined>;
     /**
      * no documentation available
      */
-    guestCpuLimitDetection?: pulumi.Input<inputs.VmwareAnomaliesGuestCpuLimitDetection>;
+    guestCpuLimitDetection?: pulumi.Input<inputs.VmwareAnomaliesGuestCpuLimitDetection | undefined>;
     /**
      * no documentation available
      */
-    lowDatastoreSpaceDetection?: pulumi.Input<inputs.VmwareAnomaliesLowDatastoreSpaceDetection>;
+    lowDatastoreSpaceDetection?: pulumi.Input<inputs.VmwareAnomaliesLowDatastoreSpaceDetection | undefined>;
     /**
      * no documentation available
      */
-    overloadedStorageDetection?: pulumi.Input<inputs.VmwareAnomaliesOverloadedStorageDetection>;
+    overloadedStorageDetection?: pulumi.Input<inputs.VmwareAnomaliesOverloadedStorageDetection | undefined>;
     /**
      * no documentation available
      */
-    slowPhysicalStorageDetection?: pulumi.Input<inputs.VmwareAnomaliesSlowPhysicalStorageDetection>;
+    slowPhysicalStorageDetection?: pulumi.Input<inputs.VmwareAnomaliesSlowPhysicalStorageDetection | undefined>;
     /**
      * no documentation available
      */
-    undersizedStorageDetection?: pulumi.Input<inputs.VmwareAnomaliesUndersizedStorageDetection>;
+    undersizedStorageDetection?: pulumi.Input<inputs.VmwareAnomaliesUndersizedStorageDetection | undefined>;
 }
 
 /**

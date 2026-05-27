@@ -20,8 +20,8 @@ __all__ = ['MonitoredTechnologiesDotnetArgs', 'MonitoredTechnologiesDotnet']
 class MonitoredTechnologiesDotnetArgs:
     def __init__(__self__, *,
                  enabled: pulumi.Input[_builtins.bool],
-                 enabled_dot_net_core: Optional[pulumi.Input[_builtins.bool]] = None,
-                 host_id: Optional[pulumi.Input[_builtins.str]] = None):
+                 enabled_dot_net_core: pulumi.Input[Optional[_builtins.bool]] = None,
+                 host_id: pulumi.Input[Optional[_builtins.str]] = None):
         """
         The set of arguments for constructing a MonitoredTechnologiesDotnet resource.
 
@@ -49,35 +49,35 @@ class MonitoredTechnologiesDotnetArgs:
 
     @_builtins.property
     @pulumi.getter(name="enabledDotNetCore")
-    def enabled_dot_net_core(self) -> Optional[pulumi.Input[_builtins.bool]]:
+    def enabled_dot_net_core(self) -> pulumi.Input[Optional[_builtins.bool]]:
         """
         Requires Dynatrace OneAgent version 1.117 or later on Windows and version 1.127 or later on Linux and .NET monitoring enabled
         """
         return pulumi.get(self, "enabled_dot_net_core")
 
     @enabled_dot_net_core.setter
-    def enabled_dot_net_core(self, value: Optional[pulumi.Input[_builtins.bool]]):
+    def enabled_dot_net_core(self, value: pulumi.Input[Optional[_builtins.bool]]):
         pulumi.set(self, "enabled_dot_net_core", value)
 
     @_builtins.property
     @pulumi.getter(name="hostId")
-    def host_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def host_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The scope of this settings. If the settings should cover the whole environment, just don't specify any scope.
         """
         return pulumi.get(self, "host_id")
 
     @host_id.setter
-    def host_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def host_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "host_id", value)
 
 
 @pulumi.input_type
 class _MonitoredTechnologiesDotnetState:
     def __init__(__self__, *,
-                 enabled: Optional[pulumi.Input[_builtins.bool]] = None,
-                 enabled_dot_net_core: Optional[pulumi.Input[_builtins.bool]] = None,
-                 host_id: Optional[pulumi.Input[_builtins.str]] = None):
+                 enabled: pulumi.Input[Optional[_builtins.bool]] = None,
+                 enabled_dot_net_core: pulumi.Input[Optional[_builtins.bool]] = None,
+                 host_id: pulumi.Input[Optional[_builtins.str]] = None):
         """
         Input properties used for looking up and filtering MonitoredTechnologiesDotnet resources.
 
@@ -94,38 +94,38 @@ class _MonitoredTechnologiesDotnetState:
 
     @_builtins.property
     @pulumi.getter
-    def enabled(self) -> Optional[pulumi.Input[_builtins.bool]]:
+    def enabled(self) -> pulumi.Input[Optional[_builtins.bool]]:
         """
         This setting is enabled (`true`) or disabled (`false`)
         """
         return pulumi.get(self, "enabled")
 
     @enabled.setter
-    def enabled(self, value: Optional[pulumi.Input[_builtins.bool]]):
+    def enabled(self, value: pulumi.Input[Optional[_builtins.bool]]):
         pulumi.set(self, "enabled", value)
 
     @_builtins.property
     @pulumi.getter(name="enabledDotNetCore")
-    def enabled_dot_net_core(self) -> Optional[pulumi.Input[_builtins.bool]]:
+    def enabled_dot_net_core(self) -> pulumi.Input[Optional[_builtins.bool]]:
         """
         Requires Dynatrace OneAgent version 1.117 or later on Windows and version 1.127 or later on Linux and .NET monitoring enabled
         """
         return pulumi.get(self, "enabled_dot_net_core")
 
     @enabled_dot_net_core.setter
-    def enabled_dot_net_core(self, value: Optional[pulumi.Input[_builtins.bool]]):
+    def enabled_dot_net_core(self, value: pulumi.Input[Optional[_builtins.bool]]):
         pulumi.set(self, "enabled_dot_net_core", value)
 
     @_builtins.property
     @pulumi.getter(name="hostId")
-    def host_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def host_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The scope of this settings. If the settings should cover the whole environment, just don't specify any scope.
         """
         return pulumi.get(self, "host_id")
 
     @host_id.setter
-    def host_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def host_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "host_id", value)
 
 
@@ -135,9 +135,9 @@ class MonitoredTechnologiesDotnet(pulumi.CustomResource):
     def __init__(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 enabled: Optional[pulumi.Input[_builtins.bool]] = None,
-                 enabled_dot_net_core: Optional[pulumi.Input[_builtins.bool]] = None,
-                 host_id: Optional[pulumi.Input[_builtins.str]] = None,
+                 enabled: pulumi.Input[Optional[_builtins.bool]] = None,
+                 enabled_dot_net_core: pulumi.Input[Optional[_builtins.bool]] = None,
+                 host_id: pulumi.Input[Optional[_builtins.str]] = None,
                  __props__=None):
         """
         > This resource requires the API token scopes **Read settings** (`settings.read`) and **Write settings** (`settings.write`)
@@ -198,9 +198,9 @@ class MonitoredTechnologiesDotnet(pulumi.CustomResource):
     def _internal_init(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 enabled: Optional[pulumi.Input[_builtins.bool]] = None,
-                 enabled_dot_net_core: Optional[pulumi.Input[_builtins.bool]] = None,
-                 host_id: Optional[pulumi.Input[_builtins.str]] = None,
+                 enabled: pulumi.Input[Optional[_builtins.bool]] = None,
+                 enabled_dot_net_core: pulumi.Input[Optional[_builtins.bool]] = None,
+                 host_id: pulumi.Input[Optional[_builtins.str]] = None,
                  __props__=None):
         opts = pulumi.ResourceOptions.merge(_utilities.get_resource_opts_defaults(), opts)
         if not isinstance(opts, pulumi.ResourceOptions):
@@ -225,9 +225,9 @@ class MonitoredTechnologiesDotnet(pulumi.CustomResource):
     def get(resource_name: str,
             id: pulumi.Input[str],
             opts: Optional[pulumi.ResourceOptions] = None,
-            enabled: Optional[pulumi.Input[_builtins.bool]] = None,
-            enabled_dot_net_core: Optional[pulumi.Input[_builtins.bool]] = None,
-            host_id: Optional[pulumi.Input[_builtins.str]] = None) -> 'MonitoredTechnologiesDotnet':
+            enabled: pulumi.Input[Optional[_builtins.bool]] = None,
+            enabled_dot_net_core: pulumi.Input[Optional[_builtins.bool]] = None,
+            host_id: pulumi.Input[Optional[_builtins.str]] = None) -> 'MonitoredTechnologiesDotnet':
         """
         Get an existing MonitoredTechnologiesDotnet resource's state with the given name, id, and optional extra
         properties used to qualify the lookup.

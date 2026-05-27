@@ -146,23 +146,23 @@ export interface ProcessGroupDetectionState {
     /**
      * This setting is enabled (`true`) or disabled (`false`)
      */
-    enabled?: pulumi.Input<boolean>;
+    enabled?: pulumi.Input<boolean | undefined>;
     /**
      * You can define the properties that should be used to identify your process groups.
      */
-    groupExtraction?: pulumi.Input<inputs.ProcessGroupDetectionGroupExtraction>;
+    groupExtraction?: pulumi.Input<inputs.ProcessGroupDetectionGroupExtraction | undefined>;
     /**
      * Because this resource allows for ordering you may specify the ID of the resource instance that comes before this instance regarding order. If not specified when creating the setting will be added to the end of the list. If not specified during update the order will remain untouched
      */
-    insertAfter?: pulumi.Input<string>;
+    insertAfter?: pulumi.Input<string | undefined>;
     /**
      * You can define the properties that should be used to identify your process instances.
      */
-    instanceExtraction?: pulumi.Input<inputs.ProcessGroupDetectionInstanceExtraction>;
+    instanceExtraction?: pulumi.Input<inputs.ProcessGroupDetectionInstanceExtraction | undefined>;
     /**
      * Apply this rule to processes where the selected property contains the specified string.
      */
-    processDetection?: pulumi.Input<inputs.ProcessGroupDetectionProcessDetection>;
+    processDetection?: pulumi.Input<inputs.ProcessGroupDetectionProcessDetection | undefined>;
 }
 
 /**
@@ -180,11 +180,11 @@ export interface ProcessGroupDetectionArgs {
     /**
      * Because this resource allows for ordering you may specify the ID of the resource instance that comes before this instance regarding order. If not specified when creating the setting will be added to the end of the list. If not specified during update the order will remain untouched
      */
-    insertAfter?: pulumi.Input<string>;
+    insertAfter?: pulumi.Input<string | undefined>;
     /**
      * You can define the properties that should be used to identify your process instances.
      */
-    instanceExtraction?: pulumi.Input<inputs.ProcessGroupDetectionInstanceExtraction>;
+    instanceExtraction?: pulumi.Input<inputs.ProcessGroupDetectionInstanceExtraction | undefined>;
     /**
      * Apply this rule to processes where the selected property contains the specified string.
      */

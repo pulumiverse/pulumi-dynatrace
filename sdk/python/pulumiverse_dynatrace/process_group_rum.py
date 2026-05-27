@@ -66,8 +66,8 @@ class ProcessGroupRumArgs:
 @pulumi.input_type
 class _ProcessGroupRumState:
     def __init__(__self__, *,
-                 enable: Optional[pulumi.Input[_builtins.bool]] = None,
-                 process_group_id: Optional[pulumi.Input[_builtins.str]] = None):
+                 enable: pulumi.Input[Optional[_builtins.bool]] = None,
+                 process_group_id: pulumi.Input[Optional[_builtins.str]] = None):
         """
         Input properties used for looking up and filtering ProcessGroupRum resources.
 
@@ -85,7 +85,7 @@ class _ProcessGroupRumState:
 
     @_builtins.property
     @pulumi.getter
-    def enable(self) -> Optional[pulumi.Input[_builtins.bool]]:
+    def enable(self) -> pulumi.Input[Optional[_builtins.bool]]:
         """
         Allows OneAgent to:
         * automatically inject the RUM JavaScript tag into each page delivered by this process group
@@ -96,19 +96,19 @@ class _ProcessGroupRumState:
         return pulumi.get(self, "enable")
 
     @enable.setter
-    def enable(self, value: Optional[pulumi.Input[_builtins.bool]]):
+    def enable(self, value: pulumi.Input[Optional[_builtins.bool]]):
         pulumi.set(self, "enable", value)
 
     @_builtins.property
     @pulumi.getter(name="processGroupId")
-    def process_group_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def process_group_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The scope of this setting - PROCESS_GROUP-XXXXXXXXXXXXXXXX
         """
         return pulumi.get(self, "process_group_id")
 
     @process_group_id.setter
-    def process_group_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def process_group_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "process_group_id", value)
 
 
@@ -118,8 +118,8 @@ class ProcessGroupRum(pulumi.CustomResource):
     def __init__(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 enable: Optional[pulumi.Input[_builtins.bool]] = None,
-                 process_group_id: Optional[pulumi.Input[_builtins.str]] = None,
+                 enable: pulumi.Input[Optional[_builtins.bool]] = None,
+                 process_group_id: pulumi.Input[Optional[_builtins.str]] = None,
                  __props__=None):
         """
         > This resource requires the API token scopes **Read settings** (`settings.read`) and **Write settings** (`settings.write`)
@@ -183,8 +183,8 @@ class ProcessGroupRum(pulumi.CustomResource):
     def _internal_init(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 enable: Optional[pulumi.Input[_builtins.bool]] = None,
-                 process_group_id: Optional[pulumi.Input[_builtins.str]] = None,
+                 enable: pulumi.Input[Optional[_builtins.bool]] = None,
+                 process_group_id: pulumi.Input[Optional[_builtins.str]] = None,
                  __props__=None):
         opts = pulumi.ResourceOptions.merge(_utilities.get_resource_opts_defaults(), opts)
         if not isinstance(opts, pulumi.ResourceOptions):
@@ -210,8 +210,8 @@ class ProcessGroupRum(pulumi.CustomResource):
     def get(resource_name: str,
             id: pulumi.Input[str],
             opts: Optional[pulumi.ResourceOptions] = None,
-            enable: Optional[pulumi.Input[_builtins.bool]] = None,
-            process_group_id: Optional[pulumi.Input[_builtins.str]] = None) -> 'ProcessGroupRum':
+            enable: pulumi.Input[Optional[_builtins.bool]] = None,
+            process_group_id: pulumi.Input[Optional[_builtins.str]] = None) -> 'ProcessGroupRum':
         """
         Get an existing ProcessGroupRum resource's state with the given name, id, and optional extra
         properties used to qualify the lookup.

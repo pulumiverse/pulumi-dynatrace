@@ -160,47 +160,47 @@ export interface ManagedBackupState {
     /**
      * Cassandra backup bandwidth limit in Mbps
      */
-    bandwidthLimitMbits?: pulumi.Input<number>;
+    bandwidthLimitMbits?: pulumi.Input<number | undefined>;
     /**
      * Hour to start Cassandra backups each day.
      */
-    cassandraScheduledTime?: pulumi.Input<number>;
+    cassandraScheduledTime?: pulumi.Input<number | undefined>;
     /**
      * For internal use: current state of rules in JSON format
      */
-    currentState?: pulumi.Input<string>;
+    currentState?: pulumi.Input<string | undefined>;
     /**
      * Datacenter which will create backups
      */
-    datacenter?: pulumi.Input<string>;
+    datacenter?: pulumi.Input<string | undefined>;
     /**
      * Backups are enabled (true) or disabled (false).
      */
-    enabled?: pulumi.Input<boolean>;
+    enabled?: pulumi.Input<boolean | undefined>;
     /**
      * Include (true) or exclude (false) Log Monitoring v2 data
      */
-    includeLm20Data?: pulumi.Input<boolean>;
+    includeLm20Data?: pulumi.Input<boolean | undefined>;
     /**
      * Include user sessions (true) or GDPR compliance (false)
      */
-    includeRumData?: pulumi.Input<boolean>;
+    includeRumData?: pulumi.Input<boolean | undefined>;
     /**
      * Include time series metric-data (true) or retain configuration data only (false))
      */
-    includeTsMetricData?: pulumi.Input<boolean>;
+    includeTsMetricData?: pulumi.Input<boolean | undefined>;
     /**
      * Max number of Elasticsearch snapshots to clean. Elasticsearch snapshots won't be created anymore if there will be more backups to clean than this value.
      */
-    maxEsSnapshotsToClean?: pulumi.Input<number>;
+    maxEsSnapshotsToClean?: pulumi.Input<number | undefined>;
     /**
      * Pauses Elasticsearch and Cassandra backups. In comparison to enable/disable backup, this option does not modify any configuration like Elasticsearch properties.
      */
-    pauseBackups?: pulumi.Input<boolean>;
+    pauseBackups?: pulumi.Input<boolean | undefined>;
     /**
      * A full path to the backup archive
      */
-    storagePath?: pulumi.Input<string>;
+    storagePath?: pulumi.Input<string | undefined>;
 }
 
 /**
@@ -210,7 +210,7 @@ export interface ManagedBackupArgs {
     /**
      * Cassandra backup bandwidth limit in Mbps
      */
-    bandwidthLimitMbits?: pulumi.Input<number>;
+    bandwidthLimitMbits?: pulumi.Input<number | undefined>;
     /**
      * Hour to start Cassandra backups each day.
      */
@@ -218,37 +218,37 @@ export interface ManagedBackupArgs {
     /**
      * For internal use: current state of rules in JSON format
      */
-    currentState?: pulumi.Input<string>;
+    currentState?: pulumi.Input<string | undefined>;
     /**
      * Datacenter which will create backups
      */
-    datacenter?: pulumi.Input<string>;
+    datacenter?: pulumi.Input<string | undefined>;
     /**
      * Backups are enabled (true) or disabled (false).
      */
-    enabled?: pulumi.Input<boolean>;
+    enabled?: pulumi.Input<boolean | undefined>;
     /**
      * Include (true) or exclude (false) Log Monitoring v2 data
      */
-    includeLm20Data?: pulumi.Input<boolean>;
+    includeLm20Data?: pulumi.Input<boolean | undefined>;
     /**
      * Include user sessions (true) or GDPR compliance (false)
      */
-    includeRumData?: pulumi.Input<boolean>;
+    includeRumData?: pulumi.Input<boolean | undefined>;
     /**
      * Include time series metric-data (true) or retain configuration data only (false))
      */
-    includeTsMetricData?: pulumi.Input<boolean>;
+    includeTsMetricData?: pulumi.Input<boolean | undefined>;
     /**
      * Max number of Elasticsearch snapshots to clean. Elasticsearch snapshots won't be created anymore if there will be more backups to clean than this value.
      */
-    maxEsSnapshotsToClean?: pulumi.Input<number>;
+    maxEsSnapshotsToClean?: pulumi.Input<number | undefined>;
     /**
      * Pauses Elasticsearch and Cassandra backups. In comparison to enable/disable backup, this option does not modify any configuration like Elasticsearch properties.
      */
-    pauseBackups?: pulumi.Input<boolean>;
+    pauseBackups?: pulumi.Input<boolean | undefined>;
     /**
      * A full path to the backup archive
      */
-    storagePath?: pulumi.Input<string>;
+    storagePath?: pulumi.Input<string | undefined>;
 }

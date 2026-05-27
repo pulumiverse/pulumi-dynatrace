@@ -118,24 +118,24 @@ export class IamGroup extends pulumi.CustomResource {
  * Input properties used for looking up and filtering IamGroup resources.
  */
 export interface IamGroupState {
-    description?: pulumi.Input<string>;
-    federatedAttributeValues?: pulumi.Input<pulumi.Input<string>[]>;
-    name?: pulumi.Input<string>;
+    description?: pulumi.Input<string | undefined>;
+    federatedAttributeValues?: pulumi.Input<pulumi.Input<string>[] | undefined>;
+    name?: pulumi.Input<string | undefined>;
     /**
      * @deprecated Assigning permissions directly when creating a group is deprecated. Use the resource `dynatrace.IamPermission` instead.
      */
-    permissions?: pulumi.Input<inputs.IamGroupPermissions>;
+    permissions?: pulumi.Input<inputs.IamGroupPermissions | undefined>;
 }
 
 /**
  * The set of arguments for constructing a IamGroup resource.
  */
 export interface IamGroupArgs {
-    description?: pulumi.Input<string>;
-    federatedAttributeValues?: pulumi.Input<pulumi.Input<string>[]>;
-    name?: pulumi.Input<string>;
+    description?: pulumi.Input<string | undefined>;
+    federatedAttributeValues?: pulumi.Input<pulumi.Input<string>[] | undefined>;
+    name?: pulumi.Input<string | undefined>;
     /**
      * @deprecated Assigning permissions directly when creating a group is deprecated. Use the resource `dynatrace.IamPermission` instead.
      */
-    permissions?: pulumi.Input<inputs.IamGroupPermissions>;
+    permissions?: pulumi.Input<inputs.IamGroupPermissions | undefined>;
 }

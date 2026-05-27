@@ -23,7 +23,7 @@ class ServiceFailureArgs:
     def __init__(__self__, *,
                  enabled: pulumi.Input[_builtins.bool],
                  service_id: pulumi.Input[_builtins.str],
-                 exception_rules: Optional[pulumi.Input['ServiceFailureExceptionRulesArgs']] = None):
+                 exception_rules: pulumi.Input[Optional['ServiceFailureExceptionRulesArgs']] = None):
         """
         The set of arguments for constructing a ServiceFailure resource.
 
@@ -62,23 +62,23 @@ class ServiceFailureArgs:
 
     @_builtins.property
     @pulumi.getter(name="exceptionRules")
-    def exception_rules(self) -> Optional[pulumi.Input['ServiceFailureExceptionRulesArgs']]:
+    def exception_rules(self) -> pulumi.Input[Optional['ServiceFailureExceptionRulesArgs']]:
         """
         Customize failure detection for specific exceptions and errors
         """
         return pulumi.get(self, "exception_rules")
 
     @exception_rules.setter
-    def exception_rules(self, value: Optional[pulumi.Input['ServiceFailureExceptionRulesArgs']]):
+    def exception_rules(self, value: pulumi.Input[Optional['ServiceFailureExceptionRulesArgs']]):
         pulumi.set(self, "exception_rules", value)
 
 
 @pulumi.input_type
 class _ServiceFailureState:
     def __init__(__self__, *,
-                 enabled: Optional[pulumi.Input[_builtins.bool]] = None,
-                 exception_rules: Optional[pulumi.Input['ServiceFailureExceptionRulesArgs']] = None,
-                 service_id: Optional[pulumi.Input[_builtins.str]] = None):
+                 enabled: pulumi.Input[Optional[_builtins.bool]] = None,
+                 exception_rules: pulumi.Input[Optional['ServiceFailureExceptionRulesArgs']] = None,
+                 service_id: pulumi.Input[Optional[_builtins.str]] = None):
         """
         Input properties used for looking up and filtering ServiceFailure resources.
 
@@ -95,38 +95,38 @@ class _ServiceFailureState:
 
     @_builtins.property
     @pulumi.getter
-    def enabled(self) -> Optional[pulumi.Input[_builtins.bool]]:
+    def enabled(self) -> pulumi.Input[Optional[_builtins.bool]]:
         """
         This setting is enabled (`true`) or disabled (`false`)
         """
         return pulumi.get(self, "enabled")
 
     @enabled.setter
-    def enabled(self, value: Optional[pulumi.Input[_builtins.bool]]):
+    def enabled(self, value: pulumi.Input[Optional[_builtins.bool]]):
         pulumi.set(self, "enabled", value)
 
     @_builtins.property
     @pulumi.getter(name="exceptionRules")
-    def exception_rules(self) -> Optional[pulumi.Input['ServiceFailureExceptionRulesArgs']]:
+    def exception_rules(self) -> pulumi.Input[Optional['ServiceFailureExceptionRulesArgs']]:
         """
         Customize failure detection for specific exceptions and errors
         """
         return pulumi.get(self, "exception_rules")
 
     @exception_rules.setter
-    def exception_rules(self, value: Optional[pulumi.Input['ServiceFailureExceptionRulesArgs']]):
+    def exception_rules(self, value: pulumi.Input[Optional['ServiceFailureExceptionRulesArgs']]):
         pulumi.set(self, "exception_rules", value)
 
     @_builtins.property
     @pulumi.getter(name="serviceId")
-    def service_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def service_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The scope of this settings. If the settings should cover the whole environment, just don't specify any scope.
         """
         return pulumi.get(self, "service_id")
 
     @service_id.setter
-    def service_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def service_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "service_id", value)
 
 
@@ -136,9 +136,9 @@ class ServiceFailure(pulumi.CustomResource):
     def __init__(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 enabled: Optional[pulumi.Input[_builtins.bool]] = None,
-                 exception_rules: Optional[pulumi.Input[Union['ServiceFailureExceptionRulesArgs', 'ServiceFailureExceptionRulesArgsDict']]] = None,
-                 service_id: Optional[pulumi.Input[_builtins.str]] = None,
+                 enabled: pulumi.Input[Optional[_builtins.bool]] = None,
+                 exception_rules: pulumi.Input[Optional[Union['ServiceFailureExceptionRulesArgs', 'ServiceFailureExceptionRulesArgsDict']]] = None,
+                 service_id: pulumi.Input[Optional[_builtins.str]] = None,
                  __props__=None):
         """
         > This resource requires the API token scopes **Read settings** (`settings.read`) and **Write settings** (`settings.write`)
@@ -199,9 +199,9 @@ class ServiceFailure(pulumi.CustomResource):
     def _internal_init(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 enabled: Optional[pulumi.Input[_builtins.bool]] = None,
-                 exception_rules: Optional[pulumi.Input[Union['ServiceFailureExceptionRulesArgs', 'ServiceFailureExceptionRulesArgsDict']]] = None,
-                 service_id: Optional[pulumi.Input[_builtins.str]] = None,
+                 enabled: pulumi.Input[Optional[_builtins.bool]] = None,
+                 exception_rules: pulumi.Input[Optional[Union['ServiceFailureExceptionRulesArgs', 'ServiceFailureExceptionRulesArgsDict']]] = None,
+                 service_id: pulumi.Input[Optional[_builtins.str]] = None,
                  __props__=None):
         opts = pulumi.ResourceOptions.merge(_utilities.get_resource_opts_defaults(), opts)
         if not isinstance(opts, pulumi.ResourceOptions):
@@ -228,9 +228,9 @@ class ServiceFailure(pulumi.CustomResource):
     def get(resource_name: str,
             id: pulumi.Input[str],
             opts: Optional[pulumi.ResourceOptions] = None,
-            enabled: Optional[pulumi.Input[_builtins.bool]] = None,
-            exception_rules: Optional[pulumi.Input[Union['ServiceFailureExceptionRulesArgs', 'ServiceFailureExceptionRulesArgsDict']]] = None,
-            service_id: Optional[pulumi.Input[_builtins.str]] = None) -> 'ServiceFailure':
+            enabled: pulumi.Input[Optional[_builtins.bool]] = None,
+            exception_rules: pulumi.Input[Optional[Union['ServiceFailureExceptionRulesArgs', 'ServiceFailureExceptionRulesArgsDict']]] = None,
+            service_id: pulumi.Input[Optional[_builtins.str]] = None) -> 'ServiceFailure':
         """
         Get an existing ServiceFailure resource's state with the given name, id, and optional extra
         properties used to qualify the lookup.

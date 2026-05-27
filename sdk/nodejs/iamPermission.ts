@@ -132,23 +132,23 @@ export interface IamPermissionState {
     /**
      * The UUID of the account this permission is valid for
      */
-    account?: pulumi.Input<string>;
+    account?: pulumi.Input<string | undefined>;
     /**
      * The environment this permission is valid (`https://<environmentid>.live.dynatrace.com`). Also required in when trying to specify a management zone permission.
      */
-    environment?: pulumi.Input<string>;
+    environment?: pulumi.Input<string | undefined>;
     /**
      * The ID of the group this permission is valid for
      */
-    group?: pulumi.Input<string>;
+    group?: pulumi.Input<string | undefined>;
     /**
      * The management zone this permission is valid for. You need to use the attribute `legacyId` when referring to a resource `dynatrace.ManagementZoneV2` or a data source `dynatrace.ManagementZone`. The attribute `environment` is required to get specified also in order to identify the management zone uniquely.
      */
-    managementZone?: pulumi.Input<string>;
+    managementZone?: pulumi.Input<string | undefined>;
     /**
      * Possible values: `account-company-info`, `account-user-management`, `account-viewer`, `account-saml-flexible-federation`, `tenant-viewer`, `tenant-manage-settings`, `tenant-agent-install`, `tenant-logviewer`, `tenant-view-sensitive-request-data`, `tenant-configure-request-capture-data`, `tenant-replay-sessions-with-masking`, `tenant-replay-sessions-without-masking`, `tenant-manage-security-problems`, `tenant-view-security-problems`, `tenant-manage-support-tickets`
      */
-    name?: pulumi.Input<string>;
+    name?: pulumi.Input<string | undefined>;
 }
 
 /**
@@ -158,11 +158,11 @@ export interface IamPermissionArgs {
     /**
      * The UUID of the account this permission is valid for
      */
-    account?: pulumi.Input<string>;
+    account?: pulumi.Input<string | undefined>;
     /**
      * The environment this permission is valid (`https://<environmentid>.live.dynatrace.com`). Also required in when trying to specify a management zone permission.
      */
-    environment?: pulumi.Input<string>;
+    environment?: pulumi.Input<string | undefined>;
     /**
      * The ID of the group this permission is valid for
      */
@@ -170,9 +170,9 @@ export interface IamPermissionArgs {
     /**
      * The management zone this permission is valid for. You need to use the attribute `legacyId` when referring to a resource `dynatrace.ManagementZoneV2` or a data source `dynatrace.ManagementZone`. The attribute `environment` is required to get specified also in order to identify the management zone uniquely.
      */
-    managementZone?: pulumi.Input<string>;
+    managementZone?: pulumi.Input<string | undefined>;
     /**
      * Possible values: `account-company-info`, `account-user-management`, `account-viewer`, `account-saml-flexible-federation`, `tenant-viewer`, `tenant-manage-settings`, `tenant-agent-install`, `tenant-logviewer`, `tenant-view-sensitive-request-data`, `tenant-configure-request-capture-data`, `tenant-replay-sessions-with-masking`, `tenant-replay-sessions-without-masking`, `tenant-manage-security-problems`, `tenant-view-security-problems`, `tenant-manage-support-tickets`
      */
-    name?: pulumi.Input<string>;
+    name?: pulumi.Input<string | undefined>;
 }

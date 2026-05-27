@@ -84,7 +84,7 @@ export interface GrailMetricsAllowlistState {
     /**
      * Specify rules for forwarding metrics
      */
-    allowRules?: pulumi.Input<inputs.GrailMetricsAllowlistAllowRules>;
+    allowRules?: pulumi.Input<inputs.GrailMetricsAllowlistAllowRules | undefined>;
 }
 
 /**
@@ -94,5 +94,5 @@ export interface GrailMetricsAllowlistArgs {
     /**
      * Specify rules for forwarding metrics
      */
-    allowRules?: pulumi.Input<inputs.GrailMetricsAllowlistAllowRules>;
+    allowRules?: pulumi.Input<inputs.GrailMetricsAllowlistAllowRules | undefined>;
 }

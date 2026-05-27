@@ -138,31 +138,31 @@ export interface CloudFoundryState {
     /**
      * ActiveGate group
      */
-    activeGateGroup?: pulumi.Input<string>;
+    activeGateGroup?: pulumi.Input<string | undefined>;
     /**
      * Cloud Foundry API Target
      */
-    apiUrl?: pulumi.Input<string>;
+    apiUrl?: pulumi.Input<string | undefined>;
     /**
      * This setting is enabled (`true`) or disabled (`false`)
      */
-    enabled?: pulumi.Input<boolean>;
+    enabled?: pulumi.Input<boolean | undefined>;
     /**
      * Name this connection
      */
-    label?: pulumi.Input<string>;
+    label?: pulumi.Input<string | undefined>;
     /**
      * Cloud Foundry Authentication Endpoint
      */
-    loginUrl?: pulumi.Input<string>;
+    loginUrl?: pulumi.Input<string | undefined>;
     /**
      * Cloud Foundry Password
      */
-    password?: pulumi.Input<string>;
+    password?: pulumi.Input<string | undefined>;
     /**
      * Cloud Foundry Username
      */
-    username?: pulumi.Input<string>;
+    username?: pulumi.Input<string | undefined>;
 }
 
 /**
@@ -172,7 +172,7 @@ export interface CloudFoundryArgs {
     /**
      * ActiveGate group
      */
-    activeGateGroup?: pulumi.Input<string>;
+    activeGateGroup?: pulumi.Input<string | undefined>;
     /**
      * Cloud Foundry API Target
      */

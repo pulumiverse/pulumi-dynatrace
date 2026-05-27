@@ -20,7 +20,7 @@ __all__ = ['GeolocationArgs', 'Geolocation']
 class GeolocationArgs:
     def __init__(__self__, *,
                  display_worldmap: pulumi.Input[_builtins.bool],
-                 scope: Optional[pulumi.Input[_builtins.str]] = None):
+                 scope: pulumi.Input[Optional[_builtins.str]] = None):
         """
         The set of arguments for constructing a Geolocation resource.
 
@@ -45,22 +45,22 @@ class GeolocationArgs:
 
     @_builtins.property
     @pulumi.getter
-    def scope(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def scope(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The scope of this setting (environment-default). Omit this property if you want to cover the whole environment.
         """
         return pulumi.get(self, "scope")
 
     @scope.setter
-    def scope(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def scope(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "scope", value)
 
 
 @pulumi.input_type
 class _GeolocationState:
     def __init__(__self__, *,
-                 display_worldmap: Optional[pulumi.Input[_builtins.bool]] = None,
-                 scope: Optional[pulumi.Input[_builtins.str]] = None):
+                 display_worldmap: pulumi.Input[Optional[_builtins.bool]] = None,
+                 scope: pulumi.Input[Optional[_builtins.str]] = None):
         """
         Input properties used for looking up and filtering Geolocation resources.
 
@@ -74,26 +74,26 @@ class _GeolocationState:
 
     @_builtins.property
     @pulumi.getter(name="displayWorldmap")
-    def display_worldmap(self) -> Optional[pulumi.Input[_builtins.bool]]:
+    def display_worldmap(self) -> pulumi.Input[Optional[_builtins.bool]]:
         """
         Display the world map
         """
         return pulumi.get(self, "display_worldmap")
 
     @display_worldmap.setter
-    def display_worldmap(self, value: Optional[pulumi.Input[_builtins.bool]]):
+    def display_worldmap(self, value: pulumi.Input[Optional[_builtins.bool]]):
         pulumi.set(self, "display_worldmap", value)
 
     @_builtins.property
     @pulumi.getter
-    def scope(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def scope(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The scope of this setting (environment-default). Omit this property if you want to cover the whole environment.
         """
         return pulumi.get(self, "scope")
 
     @scope.setter
-    def scope(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def scope(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "scope", value)
 
 
@@ -103,8 +103,8 @@ class Geolocation(pulumi.CustomResource):
     def __init__(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 display_worldmap: Optional[pulumi.Input[_builtins.bool]] = None,
-                 scope: Optional[pulumi.Input[_builtins.str]] = None,
+                 display_worldmap: pulumi.Input[Optional[_builtins.bool]] = None,
+                 scope: pulumi.Input[Optional[_builtins.str]] = None,
                  __props__=None):
         """
         > This resource requires the API token scopes **Read settings** (`settings.read`) and **Write settings** (`settings.write`)
@@ -164,8 +164,8 @@ class Geolocation(pulumi.CustomResource):
     def _internal_init(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 display_worldmap: Optional[pulumi.Input[_builtins.bool]] = None,
-                 scope: Optional[pulumi.Input[_builtins.str]] = None,
+                 display_worldmap: pulumi.Input[Optional[_builtins.bool]] = None,
+                 scope: pulumi.Input[Optional[_builtins.str]] = None,
                  __props__=None):
         opts = pulumi.ResourceOptions.merge(_utilities.get_resource_opts_defaults(), opts)
         if not isinstance(opts, pulumi.ResourceOptions):
@@ -189,8 +189,8 @@ class Geolocation(pulumi.CustomResource):
     def get(resource_name: str,
             id: pulumi.Input[str],
             opts: Optional[pulumi.ResourceOptions] = None,
-            display_worldmap: Optional[pulumi.Input[_builtins.bool]] = None,
-            scope: Optional[pulumi.Input[_builtins.str]] = None) -> 'Geolocation':
+            display_worldmap: pulumi.Input[Optional[_builtins.bool]] = None,
+            scope: pulumi.Input[Optional[_builtins.str]] = None) -> 'Geolocation':
         """
         Get an existing Geolocation resource's state with the given name, id, and optional extra
         properties used to qualify the lookup.

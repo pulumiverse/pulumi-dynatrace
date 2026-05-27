@@ -26,8 +26,8 @@ class BusinessEventsProcessingArgs:
                  rule_name: pulumi.Input[_builtins.str],
                  rule_testing: pulumi.Input['BusinessEventsProcessingRuleTestingArgs'],
                  script: pulumi.Input[_builtins.str],
-                 insert_after: Optional[pulumi.Input[_builtins.str]] = None,
-                 transformation_fields: Optional[pulumi.Input['BusinessEventsProcessingTransformationFieldsArgs']] = None):
+                 insert_after: pulumi.Input[Optional[_builtins.str]] = None,
+                 transformation_fields: pulumi.Input[Optional['BusinessEventsProcessingTransformationFieldsArgs']] = None):
         """
         The set of arguments for constructing a BusinessEventsProcessing resource.
 
@@ -113,39 +113,39 @@ class BusinessEventsProcessingArgs:
 
     @_builtins.property
     @pulumi.getter(name="insertAfter")
-    def insert_after(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def insert_after(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Because this resource allows for ordering you may specify the ID of the resource instance that comes before this instance regarding order. If not specified when creating the setting will be added to the end of the list. If not specified during update the order will remain untouched
         """
         return pulumi.get(self, "insert_after")
 
     @insert_after.setter
-    def insert_after(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def insert_after(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "insert_after", value)
 
     @_builtins.property
     @pulumi.getter(name="transformationFields")
-    def transformation_fields(self) -> Optional[pulumi.Input['BusinessEventsProcessingTransformationFieldsArgs']]:
+    def transformation_fields(self) -> pulumi.Input[Optional['BusinessEventsProcessingTransformationFieldsArgs']]:
         """
         Transformation fields
         """
         return pulumi.get(self, "transformation_fields")
 
     @transformation_fields.setter
-    def transformation_fields(self, value: Optional[pulumi.Input['BusinessEventsProcessingTransformationFieldsArgs']]):
+    def transformation_fields(self, value: pulumi.Input[Optional['BusinessEventsProcessingTransformationFieldsArgs']]):
         pulumi.set(self, "transformation_fields", value)
 
 
 @pulumi.input_type
 class _BusinessEventsProcessingState:
     def __init__(__self__, *,
-                 enabled: Optional[pulumi.Input[_builtins.bool]] = None,
-                 insert_after: Optional[pulumi.Input[_builtins.str]] = None,
-                 matcher: Optional[pulumi.Input[_builtins.str]] = None,
-                 rule_name: Optional[pulumi.Input[_builtins.str]] = None,
-                 rule_testing: Optional[pulumi.Input['BusinessEventsProcessingRuleTestingArgs']] = None,
-                 script: Optional[pulumi.Input[_builtins.str]] = None,
-                 transformation_fields: Optional[pulumi.Input['BusinessEventsProcessingTransformationFieldsArgs']] = None):
+                 enabled: pulumi.Input[Optional[_builtins.bool]] = None,
+                 insert_after: pulumi.Input[Optional[_builtins.str]] = None,
+                 matcher: pulumi.Input[Optional[_builtins.str]] = None,
+                 rule_name: pulumi.Input[Optional[_builtins.str]] = None,
+                 rule_testing: pulumi.Input[Optional['BusinessEventsProcessingRuleTestingArgs']] = None,
+                 script: pulumi.Input[Optional[_builtins.str]] = None,
+                 transformation_fields: pulumi.Input[Optional['BusinessEventsProcessingTransformationFieldsArgs']] = None):
         """
         Input properties used for looking up and filtering BusinessEventsProcessing resources.
 
@@ -175,55 +175,55 @@ class _BusinessEventsProcessingState:
 
     @_builtins.property
     @pulumi.getter
-    def enabled(self) -> Optional[pulumi.Input[_builtins.bool]]:
+    def enabled(self) -> pulumi.Input[Optional[_builtins.bool]]:
         """
         This setting is enabled (`true`) or disabled (`false`)
         """
         return pulumi.get(self, "enabled")
 
     @enabled.setter
-    def enabled(self, value: Optional[pulumi.Input[_builtins.bool]]):
+    def enabled(self, value: pulumi.Input[Optional[_builtins.bool]]):
         pulumi.set(self, "enabled", value)
 
     @_builtins.property
     @pulumi.getter(name="insertAfter")
-    def insert_after(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def insert_after(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Because this resource allows for ordering you may specify the ID of the resource instance that comes before this instance regarding order. If not specified when creating the setting will be added to the end of the list. If not specified during update the order will remain untouched
         """
         return pulumi.get(self, "insert_after")
 
     @insert_after.setter
-    def insert_after(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def insert_after(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "insert_after", value)
 
     @_builtins.property
     @pulumi.getter
-    def matcher(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def matcher(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         [See our documentation](https://dt-url.net/bp234rv)
         """
         return pulumi.get(self, "matcher")
 
     @matcher.setter
-    def matcher(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def matcher(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "matcher", value)
 
     @_builtins.property
     @pulumi.getter(name="ruleName")
-    def rule_name(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def rule_name(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Rule name
         """
         return pulumi.get(self, "rule_name")
 
     @rule_name.setter
-    def rule_name(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def rule_name(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "rule_name", value)
 
     @_builtins.property
     @pulumi.getter(name="ruleTesting")
-    def rule_testing(self) -> Optional[pulumi.Input['BusinessEventsProcessingRuleTestingArgs']]:
+    def rule_testing(self) -> pulumi.Input[Optional['BusinessEventsProcessingRuleTestingArgs']]:
         """
         ## Rule testing
         ### 1. Paste an event sample
@@ -231,31 +231,31 @@ class _BusinessEventsProcessingState:
         return pulumi.get(self, "rule_testing")
 
     @rule_testing.setter
-    def rule_testing(self, value: Optional[pulumi.Input['BusinessEventsProcessingRuleTestingArgs']]):
+    def rule_testing(self, value: pulumi.Input[Optional['BusinessEventsProcessingRuleTestingArgs']]):
         pulumi.set(self, "rule_testing", value)
 
     @_builtins.property
     @pulumi.getter
-    def script(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def script(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         [See our documentation](https://dt-url.net/pz030w5)
         """
         return pulumi.get(self, "script")
 
     @script.setter
-    def script(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def script(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "script", value)
 
     @_builtins.property
     @pulumi.getter(name="transformationFields")
-    def transformation_fields(self) -> Optional[pulumi.Input['BusinessEventsProcessingTransformationFieldsArgs']]:
+    def transformation_fields(self) -> pulumi.Input[Optional['BusinessEventsProcessingTransformationFieldsArgs']]:
         """
         Transformation fields
         """
         return pulumi.get(self, "transformation_fields")
 
     @transformation_fields.setter
-    def transformation_fields(self, value: Optional[pulumi.Input['BusinessEventsProcessingTransformationFieldsArgs']]):
+    def transformation_fields(self, value: pulumi.Input[Optional['BusinessEventsProcessingTransformationFieldsArgs']]):
         pulumi.set(self, "transformation_fields", value)
 
 
@@ -265,13 +265,13 @@ class BusinessEventsProcessing(pulumi.CustomResource):
     def __init__(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 enabled: Optional[pulumi.Input[_builtins.bool]] = None,
-                 insert_after: Optional[pulumi.Input[_builtins.str]] = None,
-                 matcher: Optional[pulumi.Input[_builtins.str]] = None,
-                 rule_name: Optional[pulumi.Input[_builtins.str]] = None,
-                 rule_testing: Optional[pulumi.Input[Union['BusinessEventsProcessingRuleTestingArgs', 'BusinessEventsProcessingRuleTestingArgsDict']]] = None,
-                 script: Optional[pulumi.Input[_builtins.str]] = None,
-                 transformation_fields: Optional[pulumi.Input[Union['BusinessEventsProcessingTransformationFieldsArgs', 'BusinessEventsProcessingTransformationFieldsArgsDict']]] = None,
+                 enabled: pulumi.Input[Optional[_builtins.bool]] = None,
+                 insert_after: pulumi.Input[Optional[_builtins.str]] = None,
+                 matcher: pulumi.Input[Optional[_builtins.str]] = None,
+                 rule_name: pulumi.Input[Optional[_builtins.str]] = None,
+                 rule_testing: pulumi.Input[Optional[Union['BusinessEventsProcessingRuleTestingArgs', 'BusinessEventsProcessingRuleTestingArgsDict']]] = None,
+                 script: pulumi.Input[Optional[_builtins.str]] = None,
+                 transformation_fields: pulumi.Input[Optional[Union['BusinessEventsProcessingTransformationFieldsArgs', 'BusinessEventsProcessingTransformationFieldsArgsDict']]] = None,
                  __props__=None):
         """
         > **Warning** This resource has been deprecated in favor of OpenPipeline.
@@ -343,13 +343,13 @@ class BusinessEventsProcessing(pulumi.CustomResource):
     def _internal_init(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 enabled: Optional[pulumi.Input[_builtins.bool]] = None,
-                 insert_after: Optional[pulumi.Input[_builtins.str]] = None,
-                 matcher: Optional[pulumi.Input[_builtins.str]] = None,
-                 rule_name: Optional[pulumi.Input[_builtins.str]] = None,
-                 rule_testing: Optional[pulumi.Input[Union['BusinessEventsProcessingRuleTestingArgs', 'BusinessEventsProcessingRuleTestingArgsDict']]] = None,
-                 script: Optional[pulumi.Input[_builtins.str]] = None,
-                 transformation_fields: Optional[pulumi.Input[Union['BusinessEventsProcessingTransformationFieldsArgs', 'BusinessEventsProcessingTransformationFieldsArgsDict']]] = None,
+                 enabled: pulumi.Input[Optional[_builtins.bool]] = None,
+                 insert_after: pulumi.Input[Optional[_builtins.str]] = None,
+                 matcher: pulumi.Input[Optional[_builtins.str]] = None,
+                 rule_name: pulumi.Input[Optional[_builtins.str]] = None,
+                 rule_testing: pulumi.Input[Optional[Union['BusinessEventsProcessingRuleTestingArgs', 'BusinessEventsProcessingRuleTestingArgsDict']]] = None,
+                 script: pulumi.Input[Optional[_builtins.str]] = None,
+                 transformation_fields: pulumi.Input[Optional[Union['BusinessEventsProcessingTransformationFieldsArgs', 'BusinessEventsProcessingTransformationFieldsArgsDict']]] = None,
                  __props__=None):
         opts = pulumi.ResourceOptions.merge(_utilities.get_resource_opts_defaults(), opts)
         if not isinstance(opts, pulumi.ResourceOptions):
@@ -386,13 +386,13 @@ class BusinessEventsProcessing(pulumi.CustomResource):
     def get(resource_name: str,
             id: pulumi.Input[str],
             opts: Optional[pulumi.ResourceOptions] = None,
-            enabled: Optional[pulumi.Input[_builtins.bool]] = None,
-            insert_after: Optional[pulumi.Input[_builtins.str]] = None,
-            matcher: Optional[pulumi.Input[_builtins.str]] = None,
-            rule_name: Optional[pulumi.Input[_builtins.str]] = None,
-            rule_testing: Optional[pulumi.Input[Union['BusinessEventsProcessingRuleTestingArgs', 'BusinessEventsProcessingRuleTestingArgsDict']]] = None,
-            script: Optional[pulumi.Input[_builtins.str]] = None,
-            transformation_fields: Optional[pulumi.Input[Union['BusinessEventsProcessingTransformationFieldsArgs', 'BusinessEventsProcessingTransformationFieldsArgsDict']]] = None) -> 'BusinessEventsProcessing':
+            enabled: pulumi.Input[Optional[_builtins.bool]] = None,
+            insert_after: pulumi.Input[Optional[_builtins.str]] = None,
+            matcher: pulumi.Input[Optional[_builtins.str]] = None,
+            rule_name: pulumi.Input[Optional[_builtins.str]] = None,
+            rule_testing: pulumi.Input[Optional[Union['BusinessEventsProcessingRuleTestingArgs', 'BusinessEventsProcessingRuleTestingArgsDict']]] = None,
+            script: pulumi.Input[Optional[_builtins.str]] = None,
+            transformation_fields: pulumi.Input[Optional[Union['BusinessEventsProcessingTransformationFieldsArgs', 'BusinessEventsProcessingTransformationFieldsArgsDict']]] = None) -> 'BusinessEventsProcessing':
         """
         Get an existing BusinessEventsProcessing resource's state with the given name, id, and optional extra
         properties used to qualify the lookup.

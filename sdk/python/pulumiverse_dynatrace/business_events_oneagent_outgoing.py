@@ -25,8 +25,8 @@ class BusinessEventsOneagentOutgoingArgs:
                  event: pulumi.Input['BusinessEventsOneagentOutgoingEventArgs'],
                  rule_name: pulumi.Input[_builtins.str],
                  triggers: pulumi.Input['BusinessEventsOneagentOutgoingTriggersArgs'],
-                 insert_after: Optional[pulumi.Input[_builtins.str]] = None,
-                 scope: Optional[pulumi.Input[_builtins.str]] = None):
+                 insert_after: pulumi.Input[Optional[_builtins.str]] = None,
+                 scope: pulumi.Input[Optional[_builtins.str]] = None):
         """
         The set of arguments for constructing a BusinessEventsOneagentOutgoing resource.
 
@@ -96,38 +96,38 @@ class BusinessEventsOneagentOutgoingArgs:
 
     @_builtins.property
     @pulumi.getter(name="insertAfter")
-    def insert_after(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def insert_after(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Because this resource allows for ordering you may specify the ID of the resource instance that comes before this instance regarding order. If not specified when creating the setting will be added to the end of the list. If not specified during update the order will remain untouched
         """
         return pulumi.get(self, "insert_after")
 
     @insert_after.setter
-    def insert_after(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def insert_after(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "insert_after", value)
 
     @_builtins.property
     @pulumi.getter
-    def scope(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def scope(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The scope of this setting (HOST, HOST_GROUP). Omit this property if you want to cover the whole environment.
         """
         return pulumi.get(self, "scope")
 
     @scope.setter
-    def scope(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def scope(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "scope", value)
 
 
 @pulumi.input_type
 class _BusinessEventsOneagentOutgoingState:
     def __init__(__self__, *,
-                 enabled: Optional[pulumi.Input[_builtins.bool]] = None,
-                 event: Optional[pulumi.Input['BusinessEventsOneagentOutgoingEventArgs']] = None,
-                 insert_after: Optional[pulumi.Input[_builtins.str]] = None,
-                 rule_name: Optional[pulumi.Input[_builtins.str]] = None,
-                 scope: Optional[pulumi.Input[_builtins.str]] = None,
-                 triggers: Optional[pulumi.Input['BusinessEventsOneagentOutgoingTriggersArgs']] = None):
+                 enabled: pulumi.Input[Optional[_builtins.bool]] = None,
+                 event: pulumi.Input[Optional['BusinessEventsOneagentOutgoingEventArgs']] = None,
+                 insert_after: pulumi.Input[Optional[_builtins.str]] = None,
+                 rule_name: pulumi.Input[Optional[_builtins.str]] = None,
+                 scope: pulumi.Input[Optional[_builtins.str]] = None,
+                 triggers: pulumi.Input[Optional['BusinessEventsOneagentOutgoingTriggersArgs']] = None):
         """
         Input properties used for looking up and filtering BusinessEventsOneagentOutgoing resources.
 
@@ -153,74 +153,74 @@ class _BusinessEventsOneagentOutgoingState:
 
     @_builtins.property
     @pulumi.getter
-    def enabled(self) -> Optional[pulumi.Input[_builtins.bool]]:
+    def enabled(self) -> pulumi.Input[Optional[_builtins.bool]]:
         """
         This setting is enabled (`true`) or disabled (`false`)
         """
         return pulumi.get(self, "enabled")
 
     @enabled.setter
-    def enabled(self, value: Optional[pulumi.Input[_builtins.bool]]):
+    def enabled(self, value: pulumi.Input[Optional[_builtins.bool]]):
         pulumi.set(self, "enabled", value)
 
     @_builtins.property
     @pulumi.getter
-    def event(self) -> Optional[pulumi.Input['BusinessEventsOneagentOutgoingEventArgs']]:
+    def event(self) -> pulumi.Input[Optional['BusinessEventsOneagentOutgoingEventArgs']]:
         """
         Event meta data
         """
         return pulumi.get(self, "event")
 
     @event.setter
-    def event(self, value: Optional[pulumi.Input['BusinessEventsOneagentOutgoingEventArgs']]):
+    def event(self, value: pulumi.Input[Optional['BusinessEventsOneagentOutgoingEventArgs']]):
         pulumi.set(self, "event", value)
 
     @_builtins.property
     @pulumi.getter(name="insertAfter")
-    def insert_after(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def insert_after(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Because this resource allows for ordering you may specify the ID of the resource instance that comes before this instance regarding order. If not specified when creating the setting will be added to the end of the list. If not specified during update the order will remain untouched
         """
         return pulumi.get(self, "insert_after")
 
     @insert_after.setter
-    def insert_after(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def insert_after(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "insert_after", value)
 
     @_builtins.property
     @pulumi.getter(name="ruleName")
-    def rule_name(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def rule_name(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Rule name
         """
         return pulumi.get(self, "rule_name")
 
     @rule_name.setter
-    def rule_name(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def rule_name(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "rule_name", value)
 
     @_builtins.property
     @pulumi.getter
-    def scope(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def scope(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The scope of this setting (HOST, HOST_GROUP). Omit this property if you want to cover the whole environment.
         """
         return pulumi.get(self, "scope")
 
     @scope.setter
-    def scope(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def scope(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "scope", value)
 
     @_builtins.property
     @pulumi.getter
-    def triggers(self) -> Optional[pulumi.Input['BusinessEventsOneagentOutgoingTriggersArgs']]:
+    def triggers(self) -> pulumi.Input[Optional['BusinessEventsOneagentOutgoingTriggersArgs']]:
         """
         Define conditions to trigger business events from outgoing web requests. Triggers are connected by AND logic per capture rule. If you set multiple trigger rules, all of them need to be fulfilled to capture a business event.
         """
         return pulumi.get(self, "triggers")
 
     @triggers.setter
-    def triggers(self, value: Optional[pulumi.Input['BusinessEventsOneagentOutgoingTriggersArgs']]):
+    def triggers(self, value: pulumi.Input[Optional['BusinessEventsOneagentOutgoingTriggersArgs']]):
         pulumi.set(self, "triggers", value)
 
 
@@ -230,12 +230,12 @@ class BusinessEventsOneagentOutgoing(pulumi.CustomResource):
     def __init__(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 enabled: Optional[pulumi.Input[_builtins.bool]] = None,
-                 event: Optional[pulumi.Input[Union['BusinessEventsOneagentOutgoingEventArgs', 'BusinessEventsOneagentOutgoingEventArgsDict']]] = None,
-                 insert_after: Optional[pulumi.Input[_builtins.str]] = None,
-                 rule_name: Optional[pulumi.Input[_builtins.str]] = None,
-                 scope: Optional[pulumi.Input[_builtins.str]] = None,
-                 triggers: Optional[pulumi.Input[Union['BusinessEventsOneagentOutgoingTriggersArgs', 'BusinessEventsOneagentOutgoingTriggersArgsDict']]] = None,
+                 enabled: pulumi.Input[Optional[_builtins.bool]] = None,
+                 event: pulumi.Input[Optional[Union['BusinessEventsOneagentOutgoingEventArgs', 'BusinessEventsOneagentOutgoingEventArgsDict']]] = None,
+                 insert_after: pulumi.Input[Optional[_builtins.str]] = None,
+                 rule_name: pulumi.Input[Optional[_builtins.str]] = None,
+                 scope: pulumi.Input[Optional[_builtins.str]] = None,
+                 triggers: pulumi.Input[Optional[Union['BusinessEventsOneagentOutgoingTriggersArgs', 'BusinessEventsOneagentOutgoingTriggersArgsDict']]] = None,
                  __props__=None):
         """
         > This resource requires the API token scopes **Read settings** (`settings.read`) and **Write settings** (`settings.write`)
@@ -299,12 +299,12 @@ class BusinessEventsOneagentOutgoing(pulumi.CustomResource):
     def _internal_init(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 enabled: Optional[pulumi.Input[_builtins.bool]] = None,
-                 event: Optional[pulumi.Input[Union['BusinessEventsOneagentOutgoingEventArgs', 'BusinessEventsOneagentOutgoingEventArgsDict']]] = None,
-                 insert_after: Optional[pulumi.Input[_builtins.str]] = None,
-                 rule_name: Optional[pulumi.Input[_builtins.str]] = None,
-                 scope: Optional[pulumi.Input[_builtins.str]] = None,
-                 triggers: Optional[pulumi.Input[Union['BusinessEventsOneagentOutgoingTriggersArgs', 'BusinessEventsOneagentOutgoingTriggersArgsDict']]] = None,
+                 enabled: pulumi.Input[Optional[_builtins.bool]] = None,
+                 event: pulumi.Input[Optional[Union['BusinessEventsOneagentOutgoingEventArgs', 'BusinessEventsOneagentOutgoingEventArgsDict']]] = None,
+                 insert_after: pulumi.Input[Optional[_builtins.str]] = None,
+                 rule_name: pulumi.Input[Optional[_builtins.str]] = None,
+                 scope: pulumi.Input[Optional[_builtins.str]] = None,
+                 triggers: pulumi.Input[Optional[Union['BusinessEventsOneagentOutgoingTriggersArgs', 'BusinessEventsOneagentOutgoingTriggersArgsDict']]] = None,
                  __props__=None):
         opts = pulumi.ResourceOptions.merge(_utilities.get_resource_opts_defaults(), opts)
         if not isinstance(opts, pulumi.ResourceOptions):
@@ -338,12 +338,12 @@ class BusinessEventsOneagentOutgoing(pulumi.CustomResource):
     def get(resource_name: str,
             id: pulumi.Input[str],
             opts: Optional[pulumi.ResourceOptions] = None,
-            enabled: Optional[pulumi.Input[_builtins.bool]] = None,
-            event: Optional[pulumi.Input[Union['BusinessEventsOneagentOutgoingEventArgs', 'BusinessEventsOneagentOutgoingEventArgsDict']]] = None,
-            insert_after: Optional[pulumi.Input[_builtins.str]] = None,
-            rule_name: Optional[pulumi.Input[_builtins.str]] = None,
-            scope: Optional[pulumi.Input[_builtins.str]] = None,
-            triggers: Optional[pulumi.Input[Union['BusinessEventsOneagentOutgoingTriggersArgs', 'BusinessEventsOneagentOutgoingTriggersArgsDict']]] = None) -> 'BusinessEventsOneagentOutgoing':
+            enabled: pulumi.Input[Optional[_builtins.bool]] = None,
+            event: pulumi.Input[Optional[Union['BusinessEventsOneagentOutgoingEventArgs', 'BusinessEventsOneagentOutgoingEventArgsDict']]] = None,
+            insert_after: pulumi.Input[Optional[_builtins.str]] = None,
+            rule_name: pulumi.Input[Optional[_builtins.str]] = None,
+            scope: pulumi.Input[Optional[_builtins.str]] = None,
+            triggers: pulumi.Input[Optional[Union['BusinessEventsOneagentOutgoingTriggersArgs', 'BusinessEventsOneagentOutgoingTriggersArgsDict']]] = None) -> 'BusinessEventsOneagentOutgoing':
         """
         Get an existing BusinessEventsOneagentOutgoing resource's state with the given name, id, and optional extra
         properties used to qualify the lookup.

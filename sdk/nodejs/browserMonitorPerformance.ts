@@ -104,15 +104,15 @@ export interface BrowserMonitorPerformanceState {
     /**
      * This setting is enabled (`true`) or disabled (`false`)
      */
-    enabled?: pulumi.Input<boolean>;
+    enabled?: pulumi.Input<boolean | undefined>;
     /**
      * The scope of this setting (SYNTHETIC_TEST)
      */
-    scope?: pulumi.Input<string>;
+    scope?: pulumi.Input<string | undefined>;
     /**
      * Performance thresholds
      */
-    thresholds?: pulumi.Input<inputs.BrowserMonitorPerformanceThresholds>;
+    thresholds?: pulumi.Input<inputs.BrowserMonitorPerformanceThresholds | undefined>;
 }
 
 /**
@@ -130,5 +130,5 @@ export interface BrowserMonitorPerformanceArgs {
     /**
      * Performance thresholds
      */
-    thresholds?: pulumi.Input<inputs.BrowserMonitorPerformanceThresholds>;
+    thresholds?: pulumi.Input<inputs.BrowserMonitorPerformanceThresholds | undefined>;
 }

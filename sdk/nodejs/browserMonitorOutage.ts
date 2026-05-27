@@ -130,32 +130,32 @@ export interface BrowserMonitorOutageState {
     /**
      * (Field has overlap with `dynatrace.BrowserMonitor`) Alert if all locations are unable to access my web application
      */
-    globalConsecutiveOutageCountThreshold?: pulumi.Input<number>;
+    globalConsecutiveOutageCountThreshold?: pulumi.Input<number | undefined>;
     /**
      * (Field has overlap with `dynatrace.BrowserMonitor`) Generate a problem and send an alert when the monitor is unavailable at all configured locations.
      */
-    globalOutages?: pulumi.Input<boolean>;
+    globalOutages?: pulumi.Input<boolean | undefined>;
     /**
      * (Field has overlap with `dynatrace.BrowserMonitor`) are unable to access my web application
      */
-    localConsecutiveOutageCountThreshold?: pulumi.Input<number>;
+    localConsecutiveOutageCountThreshold?: pulumi.Input<number | undefined>;
     /**
      * (Field has overlap with `dynatrace.BrowserMonitor`) Alert if at least
      */
-    localLocationOutageCountThreshold?: pulumi.Input<number>;
+    localLocationOutageCountThreshold?: pulumi.Input<number | undefined>;
     /**
      * (Field has overlap with `dynatrace.BrowserMonitor`) Generate a problem and send an alert when the monitor is unavailable for one or more consecutive runs at any location.
      */
-    localOutages?: pulumi.Input<boolean>;
+    localOutages?: pulumi.Input<boolean | undefined>;
     /**
      * (Field has overlap with `dynatrace.BrowserMonitor`) When enabled, which is the default, failing monitor executions are retried immediately one time to avoid false positives and only the second result is used. When disabled, we use the first result right away.
      * Requires ActiveGate version 1.207+ for private locations.
      */
-    retryOnError?: pulumi.Input<boolean>;
+    retryOnError?: pulumi.Input<boolean | undefined>;
     /**
      * The scope of this setting (SYNTHETIC_TEST). Omit this property if you want to cover the whole environment.
      */
-    scope?: pulumi.Input<string>;
+    scope?: pulumi.Input<string | undefined>;
 }
 
 /**
@@ -165,7 +165,7 @@ export interface BrowserMonitorOutageArgs {
     /**
      * (Field has overlap with `dynatrace.BrowserMonitor`) Alert if all locations are unable to access my web application
      */
-    globalConsecutiveOutageCountThreshold?: pulumi.Input<number>;
+    globalConsecutiveOutageCountThreshold?: pulumi.Input<number | undefined>;
     /**
      * (Field has overlap with `dynatrace.BrowserMonitor`) Generate a problem and send an alert when the monitor is unavailable at all configured locations.
      */
@@ -173,11 +173,11 @@ export interface BrowserMonitorOutageArgs {
     /**
      * (Field has overlap with `dynatrace.BrowserMonitor`) are unable to access my web application
      */
-    localConsecutiveOutageCountThreshold?: pulumi.Input<number>;
+    localConsecutiveOutageCountThreshold?: pulumi.Input<number | undefined>;
     /**
      * (Field has overlap with `dynatrace.BrowserMonitor`) Alert if at least
      */
-    localLocationOutageCountThreshold?: pulumi.Input<number>;
+    localLocationOutageCountThreshold?: pulumi.Input<number | undefined>;
     /**
      * (Field has overlap with `dynatrace.BrowserMonitor`) Generate a problem and send an alert when the monitor is unavailable for one or more consecutive runs at any location.
      */
@@ -190,5 +190,5 @@ export interface BrowserMonitorOutageArgs {
     /**
      * The scope of this setting (SYNTHETIC_TEST). Omit this property if you want to cover the whole environment.
      */
-    scope?: pulumi.Input<string>;
+    scope?: pulumi.Input<string | undefined>;
 }

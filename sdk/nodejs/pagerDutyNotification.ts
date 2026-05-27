@@ -132,31 +132,31 @@ export interface PagerDutyNotificationState {
     /**
      * The name of the PagerDuty account.
      */
-    account?: pulumi.Input<string>;
+    account?: pulumi.Input<string | undefined>;
     /**
      * This setting is enabled (`true`) or disabled (`false`)
      */
-    active?: pulumi.Input<boolean>;
+    active?: pulumi.Input<boolean | undefined>;
     /**
      * The Events API key to access PagerDuty.
      */
-    apiKey?: pulumi.Input<string>;
+    apiKey?: pulumi.Input<string | undefined>;
     /**
      * The ID of these settings when referred to from resources requiring the REST API V1 keys
      */
-    legacyId?: pulumi.Input<string>;
+    legacyId?: pulumi.Input<string | undefined>;
     /**
      * The name of the notification configuration
      */
-    name?: pulumi.Input<string>;
+    name?: pulumi.Input<string | undefined>;
     /**
      * The ID of the associated alerting profile
      */
-    profile?: pulumi.Input<string>;
+    profile?: pulumi.Input<string | undefined>;
     /**
      * The name of the service.
      */
-    service?: pulumi.Input<string>;
+    service?: pulumi.Input<string | undefined>;
 }
 
 /**
@@ -174,15 +174,15 @@ export interface PagerDutyNotificationArgs {
     /**
      * The Events API key to access PagerDuty.
      */
-    apiKey?: pulumi.Input<string>;
+    apiKey?: pulumi.Input<string | undefined>;
     /**
      * The ID of these settings when referred to from resources requiring the REST API V1 keys
      */
-    legacyId?: pulumi.Input<string>;
+    legacyId?: pulumi.Input<string | undefined>;
     /**
      * The name of the notification configuration
      */
-    name?: pulumi.Input<string>;
+    name?: pulumi.Input<string | undefined>;
     /**
      * The ID of the associated alerting profile
      */

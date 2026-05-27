@@ -75,7 +75,7 @@ def get_aws_credentials(label: Optional[_builtins.str] = None,
     return AwaitableGetAwsCredentialsResult(
         id=pulumi.get(__ret__, 'id'),
         label=pulumi.get(__ret__, 'label'))
-def get_aws_credentials_output(label: Optional[pulumi.Input[_builtins.str]] = None,
+def get_aws_credentials_output(label: pulumi.Input[Optional[_builtins.str]] = None,
                                opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetAwsCredentialsResult]:
     """
     The `AwsCredentials` data source allows the AWS credential ID to be retrieved by its label.

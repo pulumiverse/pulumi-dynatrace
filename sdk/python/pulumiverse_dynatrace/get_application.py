@@ -73,7 +73,7 @@ def get_application(name: Optional[_builtins.str] = None,
     return AwaitableGetApplicationResult(
         id=pulumi.get(__ret__, 'id'),
         name=pulumi.get(__ret__, 'name'))
-def get_application_output(name: Optional[pulumi.Input[_builtins.str]] = None,
+def get_application_output(name: pulumi.Input[Optional[_builtins.str]] = None,
                            opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetApplicationResult]:
     """
     The application data source allows the application ID to be retrieved by its name.

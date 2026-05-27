@@ -25,12 +25,12 @@ class RpcBasedSamplingArgs:
                  remote_operation_name_comparison_type: pulumi.Input[_builtins.str],
                  remote_service_name_comparison_type: pulumi.Input[_builtins.str],
                  wire_protocol_type: pulumi.Input[_builtins.str],
-                 endpoint_name: Optional[pulumi.Input[_builtins.str]] = None,
-                 factor: Optional[pulumi.Input[_builtins.str]] = None,
-                 insert_after: Optional[pulumi.Input[_builtins.str]] = None,
-                 remote_operation_name: Optional[pulumi.Input[_builtins.str]] = None,
-                 remote_service_name: Optional[pulumi.Input[_builtins.str]] = None,
-                 scope: Optional[pulumi.Input[_builtins.str]] = None):
+                 endpoint_name: pulumi.Input[Optional[_builtins.str]] = None,
+                 factor: pulumi.Input[Optional[_builtins.str]] = None,
+                 insert_after: pulumi.Input[Optional[_builtins.str]] = None,
+                 remote_operation_name: pulumi.Input[Optional[_builtins.str]] = None,
+                 remote_service_name: pulumi.Input[Optional[_builtins.str]] = None,
+                 scope: pulumi.Input[Optional[_builtins.str]] = None):
         """
         The set of arguments for constructing a RpcBasedSampling resource.
 
@@ -208,19 +208,19 @@ class RpcBasedSamplingArgs:
 
     @_builtins.property
     @pulumi.getter(name="endpointName")
-    def endpoint_name(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def endpoint_name(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Specify the RPC endpoint name. If the endpoint name is empty, either remote operation name or remote service name must be specified that can be used for RPC matching.
         """
         return pulumi.get(self, "endpoint_name")
 
     @endpoint_name.setter
-    def endpoint_name(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def endpoint_name(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "endpoint_name", value)
 
     @_builtins.property
     @pulumi.getter
-    def factor(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def factor(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Possible Values: `0`, `1`, `2`, `3`, `4`, `5`, `6`, `8`, `9`, `10`, `11`, `12`, `13`, `14` 
 
@@ -255,73 +255,73 @@ class RpcBasedSamplingArgs:
         return pulumi.get(self, "factor")
 
     @factor.setter
-    def factor(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def factor(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "factor", value)
 
     @_builtins.property
     @pulumi.getter(name="insertAfter")
-    def insert_after(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def insert_after(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Because this resource allows for ordering you may specify the ID of the resource instance that comes before this instance regarding order. If not specified when creating the setting will be added to the end of the list. If not specified during update the order will remain untouched
         """
         return pulumi.get(self, "insert_after")
 
     @insert_after.setter
-    def insert_after(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def insert_after(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "insert_after", value)
 
     @_builtins.property
     @pulumi.getter(name="remoteOperationName")
-    def remote_operation_name(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def remote_operation_name(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Specify the RPC operation name. If the remote operation name is empty, either remote service name or endpoint name must be specified that can be used for RPC matching.
         """
         return pulumi.get(self, "remote_operation_name")
 
     @remote_operation_name.setter
-    def remote_operation_name(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def remote_operation_name(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "remote_operation_name", value)
 
     @_builtins.property
     @pulumi.getter(name="remoteServiceName")
-    def remote_service_name(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def remote_service_name(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Specify the RPC remote service name. If the remote service name is empty, either remote operation name or endpoint name must be specified that can be used for RPC matching.
         """
         return pulumi.get(self, "remote_service_name")
 
     @remote_service_name.setter
-    def remote_service_name(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def remote_service_name(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "remote_service_name", value)
 
     @_builtins.property
     @pulumi.getter
-    def scope(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def scope(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The scope of this setting (PROCESS_GROUP_INSTANCE, PROCESS_GROUP, CLOUD_APPLICATION, CLOUD_APPLICATION_NAMESPACE, KUBERNETES_CLUSTER, HOST_GROUP). Omit this property if you want to cover the whole environment.
         """
         return pulumi.get(self, "scope")
 
     @scope.setter
-    def scope(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def scope(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "scope", value)
 
 
 @pulumi.input_type
 class _RpcBasedSamplingState:
     def __init__(__self__, *,
-                 enabled: Optional[pulumi.Input[_builtins.bool]] = None,
-                 endpoint_name: Optional[pulumi.Input[_builtins.str]] = None,
-                 endpoint_name_comparison_type: Optional[pulumi.Input[_builtins.str]] = None,
-                 factor: Optional[pulumi.Input[_builtins.str]] = None,
-                 ignore: Optional[pulumi.Input[_builtins.bool]] = None,
-                 insert_after: Optional[pulumi.Input[_builtins.str]] = None,
-                 remote_operation_name: Optional[pulumi.Input[_builtins.str]] = None,
-                 remote_operation_name_comparison_type: Optional[pulumi.Input[_builtins.str]] = None,
-                 remote_service_name: Optional[pulumi.Input[_builtins.str]] = None,
-                 remote_service_name_comparison_type: Optional[pulumi.Input[_builtins.str]] = None,
-                 scope: Optional[pulumi.Input[_builtins.str]] = None,
-                 wire_protocol_type: Optional[pulumi.Input[_builtins.str]] = None):
+                 enabled: pulumi.Input[Optional[_builtins.bool]] = None,
+                 endpoint_name: pulumi.Input[Optional[_builtins.str]] = None,
+                 endpoint_name_comparison_type: pulumi.Input[Optional[_builtins.str]] = None,
+                 factor: pulumi.Input[Optional[_builtins.str]] = None,
+                 ignore: pulumi.Input[Optional[_builtins.bool]] = None,
+                 insert_after: pulumi.Input[Optional[_builtins.str]] = None,
+                 remote_operation_name: pulumi.Input[Optional[_builtins.str]] = None,
+                 remote_operation_name_comparison_type: pulumi.Input[Optional[_builtins.str]] = None,
+                 remote_service_name: pulumi.Input[Optional[_builtins.str]] = None,
+                 remote_service_name_comparison_type: pulumi.Input[Optional[_builtins.str]] = None,
+                 scope: pulumi.Input[Optional[_builtins.str]] = None,
+                 wire_protocol_type: pulumi.Input[Optional[_builtins.str]] = None):
         """
         Input properties used for looking up and filtering RpcBasedSampling resources.
 
@@ -413,43 +413,43 @@ class _RpcBasedSamplingState:
 
     @_builtins.property
     @pulumi.getter
-    def enabled(self) -> Optional[pulumi.Input[_builtins.bool]]:
+    def enabled(self) -> pulumi.Input[Optional[_builtins.bool]]:
         """
         This setting is enabled (`true`) or disabled (`false`)
         """
         return pulumi.get(self, "enabled")
 
     @enabled.setter
-    def enabled(self, value: Optional[pulumi.Input[_builtins.bool]]):
+    def enabled(self, value: pulumi.Input[Optional[_builtins.bool]]):
         pulumi.set(self, "enabled", value)
 
     @_builtins.property
     @pulumi.getter(name="endpointName")
-    def endpoint_name(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def endpoint_name(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Specify the RPC endpoint name. If the endpoint name is empty, either remote operation name or remote service name must be specified that can be used for RPC matching.
         """
         return pulumi.get(self, "endpoint_name")
 
     @endpoint_name.setter
-    def endpoint_name(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def endpoint_name(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "endpoint_name", value)
 
     @_builtins.property
     @pulumi.getter(name="endpointNameComparisonType")
-    def endpoint_name_comparison_type(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def endpoint_name_comparison_type(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Possible Values: `CONTAINS`, `DOES_NOT_CONTAIN`, `DOES_NOT_END_WITH`, `DOES_NOT_EQUAL`, `DOES_NOT_START_WITH`, `ENDS_WITH`, `EQUALS`, `STARTS_WITH`
         """
         return pulumi.get(self, "endpoint_name_comparison_type")
 
     @endpoint_name_comparison_type.setter
-    def endpoint_name_comparison_type(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def endpoint_name_comparison_type(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "endpoint_name_comparison_type", value)
 
     @_builtins.property
     @pulumi.getter
-    def factor(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def factor(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Possible Values: `0`, `1`, `2`, `3`, `4`, `5`, `6`, `8`, `9`, `10`, `11`, `12`, `13`, `14` 
 
@@ -484,96 +484,96 @@ class _RpcBasedSamplingState:
         return pulumi.get(self, "factor")
 
     @factor.setter
-    def factor(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def factor(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "factor", value)
 
     @_builtins.property
     @pulumi.getter
-    def ignore(self) -> Optional[pulumi.Input[_builtins.bool]]:
+    def ignore(self) -> pulumi.Input[Optional[_builtins.bool]]:
         """
         No Traces will be captured for matching RPC requests. This applies always, even if Adaptive Traffic Management is inactive.
         """
         return pulumi.get(self, "ignore")
 
     @ignore.setter
-    def ignore(self, value: Optional[pulumi.Input[_builtins.bool]]):
+    def ignore(self, value: pulumi.Input[Optional[_builtins.bool]]):
         pulumi.set(self, "ignore", value)
 
     @_builtins.property
     @pulumi.getter(name="insertAfter")
-    def insert_after(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def insert_after(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Because this resource allows for ordering you may specify the ID of the resource instance that comes before this instance regarding order. If not specified when creating the setting will be added to the end of the list. If not specified during update the order will remain untouched
         """
         return pulumi.get(self, "insert_after")
 
     @insert_after.setter
-    def insert_after(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def insert_after(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "insert_after", value)
 
     @_builtins.property
     @pulumi.getter(name="remoteOperationName")
-    def remote_operation_name(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def remote_operation_name(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Specify the RPC operation name. If the remote operation name is empty, either remote service name or endpoint name must be specified that can be used for RPC matching.
         """
         return pulumi.get(self, "remote_operation_name")
 
     @remote_operation_name.setter
-    def remote_operation_name(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def remote_operation_name(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "remote_operation_name", value)
 
     @_builtins.property
     @pulumi.getter(name="remoteOperationNameComparisonType")
-    def remote_operation_name_comparison_type(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def remote_operation_name_comparison_type(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Possible Values: `CONTAINS`, `DOES_NOT_CONTAIN`, `DOES_NOT_END_WITH`, `DOES_NOT_EQUAL`, `DOES_NOT_START_WITH`, `ENDS_WITH`, `EQUALS`, `STARTS_WITH`
         """
         return pulumi.get(self, "remote_operation_name_comparison_type")
 
     @remote_operation_name_comparison_type.setter
-    def remote_operation_name_comparison_type(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def remote_operation_name_comparison_type(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "remote_operation_name_comparison_type", value)
 
     @_builtins.property
     @pulumi.getter(name="remoteServiceName")
-    def remote_service_name(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def remote_service_name(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Specify the RPC remote service name. If the remote service name is empty, either remote operation name or endpoint name must be specified that can be used for RPC matching.
         """
         return pulumi.get(self, "remote_service_name")
 
     @remote_service_name.setter
-    def remote_service_name(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def remote_service_name(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "remote_service_name", value)
 
     @_builtins.property
     @pulumi.getter(name="remoteServiceNameComparisonType")
-    def remote_service_name_comparison_type(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def remote_service_name_comparison_type(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Possible Values: `CONTAINS`, `DOES_NOT_CONTAIN`, `DOES_NOT_END_WITH`, `DOES_NOT_EQUAL`, `DOES_NOT_START_WITH`, `ENDS_WITH`, `EQUALS`, `STARTS_WITH`
         """
         return pulumi.get(self, "remote_service_name_comparison_type")
 
     @remote_service_name_comparison_type.setter
-    def remote_service_name_comparison_type(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def remote_service_name_comparison_type(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "remote_service_name_comparison_type", value)
 
     @_builtins.property
     @pulumi.getter
-    def scope(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def scope(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The scope of this setting (PROCESS_GROUP_INSTANCE, PROCESS_GROUP, CLOUD_APPLICATION, CLOUD_APPLICATION_NAMESPACE, KUBERNETES_CLUSTER, HOST_GROUP). Omit this property if you want to cover the whole environment.
         """
         return pulumi.get(self, "scope")
 
     @scope.setter
-    def scope(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def scope(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "scope", value)
 
     @_builtins.property
     @pulumi.getter(name="wireProtocolType")
-    def wire_protocol_type(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def wire_protocol_type(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Possible Values: `1`, `2`, `3`, `4`, `5`, `6`, `7`, `8`, `9`, `10` 
 
@@ -600,7 +600,7 @@ class _RpcBasedSamplingState:
         return pulumi.get(self, "wire_protocol_type")
 
     @wire_protocol_type.setter
-    def wire_protocol_type(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def wire_protocol_type(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "wire_protocol_type", value)
 
 
@@ -610,18 +610,18 @@ class RpcBasedSampling(pulumi.CustomResource):
     def __init__(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 enabled: Optional[pulumi.Input[_builtins.bool]] = None,
-                 endpoint_name: Optional[pulumi.Input[_builtins.str]] = None,
-                 endpoint_name_comparison_type: Optional[pulumi.Input[_builtins.str]] = None,
-                 factor: Optional[pulumi.Input[_builtins.str]] = None,
-                 ignore: Optional[pulumi.Input[_builtins.bool]] = None,
-                 insert_after: Optional[pulumi.Input[_builtins.str]] = None,
-                 remote_operation_name: Optional[pulumi.Input[_builtins.str]] = None,
-                 remote_operation_name_comparison_type: Optional[pulumi.Input[_builtins.str]] = None,
-                 remote_service_name: Optional[pulumi.Input[_builtins.str]] = None,
-                 remote_service_name_comparison_type: Optional[pulumi.Input[_builtins.str]] = None,
-                 scope: Optional[pulumi.Input[_builtins.str]] = None,
-                 wire_protocol_type: Optional[pulumi.Input[_builtins.str]] = None,
+                 enabled: pulumi.Input[Optional[_builtins.bool]] = None,
+                 endpoint_name: pulumi.Input[Optional[_builtins.str]] = None,
+                 endpoint_name_comparison_type: pulumi.Input[Optional[_builtins.str]] = None,
+                 factor: pulumi.Input[Optional[_builtins.str]] = None,
+                 ignore: pulumi.Input[Optional[_builtins.bool]] = None,
+                 insert_after: pulumi.Input[Optional[_builtins.str]] = None,
+                 remote_operation_name: pulumi.Input[Optional[_builtins.str]] = None,
+                 remote_operation_name_comparison_type: pulumi.Input[Optional[_builtins.str]] = None,
+                 remote_service_name: pulumi.Input[Optional[_builtins.str]] = None,
+                 remote_service_name_comparison_type: pulumi.Input[Optional[_builtins.str]] = None,
+                 scope: pulumi.Input[Optional[_builtins.str]] = None,
+                 wire_protocol_type: pulumi.Input[Optional[_builtins.str]] = None,
                  __props__=None):
         """
         > This resource requires the API token scopes **Read settings** (`settings.read`) and **Write settings** (`settings.write`)
@@ -727,18 +727,18 @@ class RpcBasedSampling(pulumi.CustomResource):
     def _internal_init(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 enabled: Optional[pulumi.Input[_builtins.bool]] = None,
-                 endpoint_name: Optional[pulumi.Input[_builtins.str]] = None,
-                 endpoint_name_comparison_type: Optional[pulumi.Input[_builtins.str]] = None,
-                 factor: Optional[pulumi.Input[_builtins.str]] = None,
-                 ignore: Optional[pulumi.Input[_builtins.bool]] = None,
-                 insert_after: Optional[pulumi.Input[_builtins.str]] = None,
-                 remote_operation_name: Optional[pulumi.Input[_builtins.str]] = None,
-                 remote_operation_name_comparison_type: Optional[pulumi.Input[_builtins.str]] = None,
-                 remote_service_name: Optional[pulumi.Input[_builtins.str]] = None,
-                 remote_service_name_comparison_type: Optional[pulumi.Input[_builtins.str]] = None,
-                 scope: Optional[pulumi.Input[_builtins.str]] = None,
-                 wire_protocol_type: Optional[pulumi.Input[_builtins.str]] = None,
+                 enabled: pulumi.Input[Optional[_builtins.bool]] = None,
+                 endpoint_name: pulumi.Input[Optional[_builtins.str]] = None,
+                 endpoint_name_comparison_type: pulumi.Input[Optional[_builtins.str]] = None,
+                 factor: pulumi.Input[Optional[_builtins.str]] = None,
+                 ignore: pulumi.Input[Optional[_builtins.bool]] = None,
+                 insert_after: pulumi.Input[Optional[_builtins.str]] = None,
+                 remote_operation_name: pulumi.Input[Optional[_builtins.str]] = None,
+                 remote_operation_name_comparison_type: pulumi.Input[Optional[_builtins.str]] = None,
+                 remote_service_name: pulumi.Input[Optional[_builtins.str]] = None,
+                 remote_service_name_comparison_type: pulumi.Input[Optional[_builtins.str]] = None,
+                 scope: pulumi.Input[Optional[_builtins.str]] = None,
+                 wire_protocol_type: pulumi.Input[Optional[_builtins.str]] = None,
                  __props__=None):
         opts = pulumi.ResourceOptions.merge(_utilities.get_resource_opts_defaults(), opts)
         if not isinstance(opts, pulumi.ResourceOptions):
@@ -782,18 +782,18 @@ class RpcBasedSampling(pulumi.CustomResource):
     def get(resource_name: str,
             id: pulumi.Input[str],
             opts: Optional[pulumi.ResourceOptions] = None,
-            enabled: Optional[pulumi.Input[_builtins.bool]] = None,
-            endpoint_name: Optional[pulumi.Input[_builtins.str]] = None,
-            endpoint_name_comparison_type: Optional[pulumi.Input[_builtins.str]] = None,
-            factor: Optional[pulumi.Input[_builtins.str]] = None,
-            ignore: Optional[pulumi.Input[_builtins.bool]] = None,
-            insert_after: Optional[pulumi.Input[_builtins.str]] = None,
-            remote_operation_name: Optional[pulumi.Input[_builtins.str]] = None,
-            remote_operation_name_comparison_type: Optional[pulumi.Input[_builtins.str]] = None,
-            remote_service_name: Optional[pulumi.Input[_builtins.str]] = None,
-            remote_service_name_comparison_type: Optional[pulumi.Input[_builtins.str]] = None,
-            scope: Optional[pulumi.Input[_builtins.str]] = None,
-            wire_protocol_type: Optional[pulumi.Input[_builtins.str]] = None) -> 'RpcBasedSampling':
+            enabled: pulumi.Input[Optional[_builtins.bool]] = None,
+            endpoint_name: pulumi.Input[Optional[_builtins.str]] = None,
+            endpoint_name_comparison_type: pulumi.Input[Optional[_builtins.str]] = None,
+            factor: pulumi.Input[Optional[_builtins.str]] = None,
+            ignore: pulumi.Input[Optional[_builtins.bool]] = None,
+            insert_after: pulumi.Input[Optional[_builtins.str]] = None,
+            remote_operation_name: pulumi.Input[Optional[_builtins.str]] = None,
+            remote_operation_name_comparison_type: pulumi.Input[Optional[_builtins.str]] = None,
+            remote_service_name: pulumi.Input[Optional[_builtins.str]] = None,
+            remote_service_name_comparison_type: pulumi.Input[Optional[_builtins.str]] = None,
+            scope: pulumi.Input[Optional[_builtins.str]] = None,
+            wire_protocol_type: pulumi.Input[Optional[_builtins.str]] = None) -> 'RpcBasedSampling':
         """
         Get an existing RpcBasedSampling resource's state with the given name, id, and optional extra
         properties used to qualify the lookup.

@@ -120,27 +120,27 @@ export interface HttpMonitorOutageState {
     /**
      * (Field has overlap with `dynatrace.HttpMonitor`) Alert if all locations are unable to access my web application
      */
-    globalConsecutiveOutageCountThreshold?: pulumi.Input<number>;
+    globalConsecutiveOutageCountThreshold?: pulumi.Input<number | undefined>;
     /**
      * (Field has overlap with `dynatrace.HttpMonitor`) Generate a problem and send an alert when the monitor is unavailable at all configured locations.
      */
-    globalOutages?: pulumi.Input<boolean>;
+    globalOutages?: pulumi.Input<boolean | undefined>;
     /**
      * (Field has overlap with `dynatrace.HttpMonitor`) are unable to access my web application
      */
-    localConsecutiveOutageCountThreshold?: pulumi.Input<number>;
+    localConsecutiveOutageCountThreshold?: pulumi.Input<number | undefined>;
     /**
      * (Field has overlap with `dynatrace.HttpMonitor`) Alert if at least
      */
-    localLocationOutageCountThreshold?: pulumi.Input<number>;
+    localLocationOutageCountThreshold?: pulumi.Input<number | undefined>;
     /**
      * (Field has overlap with `dynatrace.HttpMonitor`) Generate a problem and send an alert when the monitor is unavailable for one or more consecutive runs at any location.
      */
-    localOutages?: pulumi.Input<boolean>;
+    localOutages?: pulumi.Input<boolean | undefined>;
     /**
      * The scope of this setting (HTTP_CHECK). Omit this property if you want to cover the whole environment.
      */
-    scope?: pulumi.Input<string>;
+    scope?: pulumi.Input<string | undefined>;
 }
 
 /**
@@ -150,7 +150,7 @@ export interface HttpMonitorOutageArgs {
     /**
      * (Field has overlap with `dynatrace.HttpMonitor`) Alert if all locations are unable to access my web application
      */
-    globalConsecutiveOutageCountThreshold?: pulumi.Input<number>;
+    globalConsecutiveOutageCountThreshold?: pulumi.Input<number | undefined>;
     /**
      * (Field has overlap with `dynatrace.HttpMonitor`) Generate a problem and send an alert when the monitor is unavailable at all configured locations.
      */
@@ -158,11 +158,11 @@ export interface HttpMonitorOutageArgs {
     /**
      * (Field has overlap with `dynatrace.HttpMonitor`) are unable to access my web application
      */
-    localConsecutiveOutageCountThreshold?: pulumi.Input<number>;
+    localConsecutiveOutageCountThreshold?: pulumi.Input<number | undefined>;
     /**
      * (Field has overlap with `dynatrace.HttpMonitor`) Alert if at least
      */
-    localLocationOutageCountThreshold?: pulumi.Input<number>;
+    localLocationOutageCountThreshold?: pulumi.Input<number | undefined>;
     /**
      * (Field has overlap with `dynatrace.HttpMonitor`) Generate a problem and send an alert when the monitor is unavailable for one or more consecutive runs at any location.
      */
@@ -170,5 +170,5 @@ export interface HttpMonitorOutageArgs {
     /**
      * The scope of this setting (HTTP_CHECK). Omit this property if you want to cover the whole environment.
      */
-    scope?: pulumi.Input<string>;
+    scope?: pulumi.Input<string | undefined>;
 }

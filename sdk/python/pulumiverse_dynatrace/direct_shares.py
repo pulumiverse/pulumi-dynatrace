@@ -23,7 +23,7 @@ class DirectSharesArgs:
     def __init__(__self__, *,
                  document_id: pulumi.Input[_builtins.str],
                  recipients: pulumi.Input['DirectSharesRecipientsArgs'],
-                 access: Optional[pulumi.Input[_builtins.str]] = None):
+                 access: pulumi.Input[Optional[_builtins.str]] = None):
         """
         The set of arguments for constructing a DirectShares resource.
 
@@ -62,23 +62,23 @@ class DirectSharesArgs:
 
     @_builtins.property
     @pulumi.getter
-    def access(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def access(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Access grants. Possible values are `read` and `read-write`
         """
         return pulumi.get(self, "access")
 
     @access.setter
-    def access(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def access(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "access", value)
 
 
 @pulumi.input_type
 class _DirectSharesState:
     def __init__(__self__, *,
-                 access: Optional[pulumi.Input[_builtins.str]] = None,
-                 document_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 recipients: Optional[pulumi.Input['DirectSharesRecipientsArgs']] = None):
+                 access: pulumi.Input[Optional[_builtins.str]] = None,
+                 document_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 recipients: pulumi.Input[Optional['DirectSharesRecipientsArgs']] = None):
         """
         Input properties used for looking up and filtering DirectShares resources.
 
@@ -95,38 +95,38 @@ class _DirectSharesState:
 
     @_builtins.property
     @pulumi.getter
-    def access(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def access(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Access grants. Possible values are `read` and `read-write`
         """
         return pulumi.get(self, "access")
 
     @access.setter
-    def access(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def access(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "access", value)
 
     @_builtins.property
     @pulumi.getter(name="documentId")
-    def document_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def document_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Document ID
         """
         return pulumi.get(self, "document_id")
 
     @document_id.setter
-    def document_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def document_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "document_id", value)
 
     @_builtins.property
     @pulumi.getter
-    def recipients(self) -> Optional[pulumi.Input['DirectSharesRecipientsArgs']]:
+    def recipients(self) -> pulumi.Input[Optional['DirectSharesRecipientsArgs']]:
         """
         Recipients of the direct share
         """
         return pulumi.get(self, "recipients")
 
     @recipients.setter
-    def recipients(self, value: Optional[pulumi.Input['DirectSharesRecipientsArgs']]):
+    def recipients(self, value: pulumi.Input[Optional['DirectSharesRecipientsArgs']]):
         pulumi.set(self, "recipients", value)
 
 
@@ -136,9 +136,9 @@ class DirectShares(pulumi.CustomResource):
     def __init__(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 access: Optional[pulumi.Input[_builtins.str]] = None,
-                 document_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 recipients: Optional[pulumi.Input[Union['DirectSharesRecipientsArgs', 'DirectSharesRecipientsArgsDict']]] = None,
+                 access: pulumi.Input[Optional[_builtins.str]] = None,
+                 document_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 recipients: pulumi.Input[Optional[Union['DirectSharesRecipientsArgs', 'DirectSharesRecipientsArgsDict']]] = None,
                  __props__=None):
         """
         > **Dynatrace SaaS only**
@@ -505,9 +505,9 @@ class DirectShares(pulumi.CustomResource):
     def _internal_init(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 access: Optional[pulumi.Input[_builtins.str]] = None,
-                 document_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 recipients: Optional[pulumi.Input[Union['DirectSharesRecipientsArgs', 'DirectSharesRecipientsArgsDict']]] = None,
+                 access: pulumi.Input[Optional[_builtins.str]] = None,
+                 document_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 recipients: pulumi.Input[Optional[Union['DirectSharesRecipientsArgs', 'DirectSharesRecipientsArgsDict']]] = None,
                  __props__=None):
         opts = pulumi.ResourceOptions.merge(_utilities.get_resource_opts_defaults(), opts)
         if not isinstance(opts, pulumi.ResourceOptions):
@@ -534,9 +534,9 @@ class DirectShares(pulumi.CustomResource):
     def get(resource_name: str,
             id: pulumi.Input[str],
             opts: Optional[pulumi.ResourceOptions] = None,
-            access: Optional[pulumi.Input[_builtins.str]] = None,
-            document_id: Optional[pulumi.Input[_builtins.str]] = None,
-            recipients: Optional[pulumi.Input[Union['DirectSharesRecipientsArgs', 'DirectSharesRecipientsArgsDict']]] = None) -> 'DirectShares':
+            access: pulumi.Input[Optional[_builtins.str]] = None,
+            document_id: pulumi.Input[Optional[_builtins.str]] = None,
+            recipients: pulumi.Input[Optional[Union['DirectSharesRecipientsArgs', 'DirectSharesRecipientsArgsDict']]] = None) -> 'DirectShares':
         """
         Get an existing DirectShares resource's state with the given name, id, and optional extra
         properties used to qualify the lookup.

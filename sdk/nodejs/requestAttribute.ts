@@ -141,39 +141,39 @@ export interface RequestAttributeState {
     /**
      * Aggregation type for the request values
      */
-    aggregation?: pulumi.Input<string>;
+    aggregation?: pulumi.Input<string | undefined>;
     /**
      * Confidential data flag. Set `true` to treat the captured data as confidential
      */
-    confidential?: pulumi.Input<boolean>;
+    confidential?: pulumi.Input<boolean | undefined>;
     /**
      * The list of data sources
      */
-    dataSources?: pulumi.Input<pulumi.Input<inputs.RequestAttributeDataSource>[]>;
+    dataSources?: pulumi.Input<pulumi.Input<inputs.RequestAttributeDataSource>[] | undefined>;
     /**
      * The data type of the request attribute
      */
-    dataType?: pulumi.Input<string>;
+    dataType?: pulumi.Input<string | undefined>;
     /**
      * The request attribute is enabled (`true`) or disabled (`false`)
      */
-    enabled?: pulumi.Input<boolean>;
+    enabled?: pulumi.Input<boolean | undefined>;
     /**
      * The name of the request attribute
      */
-    name?: pulumi.Input<string>;
+    name?: pulumi.Input<string | undefined>;
     /**
      * String values transformation.   If the **dataType** is not `string`, set the `Original` here
      */
-    normalization?: pulumi.Input<string>;
+    normalization?: pulumi.Input<string | undefined>;
     /**
      * Personal data masking flag. Set `true` to skip masking.   Warning: This will potentially access personalized data
      */
-    skipPersonalDataMasking?: pulumi.Input<boolean>;
+    skipPersonalDataMasking?: pulumi.Input<boolean | undefined>;
     /**
      * allows for configuring properties that are not explicitly supported by the current version of this provider
      */
-    unknowns?: pulumi.Input<string>;
+    unknowns?: pulumi.Input<string | undefined>;
 }
 
 /**
@@ -187,11 +187,11 @@ export interface RequestAttributeArgs {
     /**
      * Confidential data flag. Set `true` to treat the captured data as confidential
      */
-    confidential?: pulumi.Input<boolean>;
+    confidential?: pulumi.Input<boolean | undefined>;
     /**
      * The list of data sources
      */
-    dataSources?: pulumi.Input<pulumi.Input<inputs.RequestAttributeDataSource>[]>;
+    dataSources?: pulumi.Input<pulumi.Input<inputs.RequestAttributeDataSource>[] | undefined>;
     /**
      * The data type of the request attribute
      */
@@ -199,11 +199,11 @@ export interface RequestAttributeArgs {
     /**
      * The request attribute is enabled (`true`) or disabled (`false`)
      */
-    enabled?: pulumi.Input<boolean>;
+    enabled?: pulumi.Input<boolean | undefined>;
     /**
      * The name of the request attribute
      */
-    name?: pulumi.Input<string>;
+    name?: pulumi.Input<string | undefined>;
     /**
      * String values transformation.   If the **dataType** is not `string`, set the `Original` here
      */
@@ -211,9 +211,9 @@ export interface RequestAttributeArgs {
     /**
      * Personal data masking flag. Set `true` to skip masking.   Warning: This will potentially access personalized data
      */
-    skipPersonalDataMasking?: pulumi.Input<boolean>;
+    skipPersonalDataMasking?: pulumi.Input<boolean | undefined>;
     /**
      * allows for configuring properties that are not explicitly supported by the current version of this provider
      */
-    unknowns?: pulumi.Input<string>;
+    unknowns?: pulumi.Input<string | undefined>;
 }

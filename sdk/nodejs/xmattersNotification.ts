@@ -139,36 +139,36 @@ export interface XmattersNotificationState {
     /**
      * This setting is enabled (`true`) or disabled (`false`)
      */
-    active?: pulumi.Input<boolean>;
+    active?: pulumi.Input<boolean | undefined>;
     /**
      * A list of the additional HTTP headers.
      */
-    headers?: pulumi.Input<inputs.XmattersNotificationHeaders>;
+    headers?: pulumi.Input<inputs.XmattersNotificationHeaders | undefined>;
     /**
      * Accept any SSL certificate (including self-signed and invalid certificates)
      */
-    insecure?: pulumi.Input<boolean>;
+    insecure?: pulumi.Input<boolean | undefined>;
     /**
      * The ID of these settings when referred to from resources requiring the REST API V1 keys
      */
-    legacyId?: pulumi.Input<string>;
+    legacyId?: pulumi.Input<string | undefined>;
     /**
      * The name of the notification configuration.
      */
-    name?: pulumi.Input<string>;
+    name?: pulumi.Input<string | undefined>;
     /**
      * The content of the notification message. Type '{' for placeholder suggestions.. #### Available placeholders
      * **{ImpactedEntities}**: Details about the entities impacted by the problem in form of a json array.
      */
-    payload?: pulumi.Input<string>;
+    payload?: pulumi.Input<string | undefined>;
     /**
      * The ID of the associated alerting profile
      */
-    profile?: pulumi.Input<string>;
+    profile?: pulumi.Input<string | undefined>;
     /**
      * The URL of the xMatters webhook.
      */
-    url?: pulumi.Input<string>;
+    url?: pulumi.Input<string | undefined>;
 }
 
 /**
@@ -182,19 +182,19 @@ export interface XmattersNotificationArgs {
     /**
      * A list of the additional HTTP headers.
      */
-    headers?: pulumi.Input<inputs.XmattersNotificationHeaders>;
+    headers?: pulumi.Input<inputs.XmattersNotificationHeaders | undefined>;
     /**
      * Accept any SSL certificate (including self-signed and invalid certificates)
      */
-    insecure?: pulumi.Input<boolean>;
+    insecure?: pulumi.Input<boolean | undefined>;
     /**
      * The ID of these settings when referred to from resources requiring the REST API V1 keys
      */
-    legacyId?: pulumi.Input<string>;
+    legacyId?: pulumi.Input<string | undefined>;
     /**
      * The name of the notification configuration.
      */
-    name?: pulumi.Input<string>;
+    name?: pulumi.Input<string | undefined>;
     /**
      * The content of the notification message. Type '{' for placeholder suggestions.. #### Available placeholders
      * **{ImpactedEntities}**: Details about the entities impacted by the problem in form of a json array.

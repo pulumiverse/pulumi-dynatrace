@@ -23,13 +23,13 @@ class DiskEdgeAnomalyDetectorsArgs:
     def __init__(__self__, *,
                  enabled: pulumi.Input[_builtins.bool],
                  policy_name: pulumi.Input[_builtins.str],
-                 alerts: Optional[pulumi.Input['DiskEdgeAnomalyDetectorsAlertsArgs']] = None,
-                 disk_name_filters: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-                 event_properties: Optional[pulumi.Input['DiskEdgeAnomalyDetectorsEventPropertiesArgs']] = None,
-                 host_metadata_conditions: Optional[pulumi.Input['DiskEdgeAnomalyDetectorsHostMetadataConditionsArgs']] = None,
-                 insert_after: Optional[pulumi.Input[_builtins.str]] = None,
-                 operating_systems: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-                 scope: Optional[pulumi.Input[_builtins.str]] = None):
+                 alerts: pulumi.Input[Optional['DiskEdgeAnomalyDetectorsAlertsArgs']] = None,
+                 disk_name_filters: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 event_properties: pulumi.Input[Optional['DiskEdgeAnomalyDetectorsEventPropertiesArgs']] = None,
+                 host_metadata_conditions: pulumi.Input[Optional['DiskEdgeAnomalyDetectorsHostMetadataConditionsArgs']] = None,
+                 insert_after: pulumi.Input[Optional[_builtins.str]] = None,
+                 operating_systems: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 scope: pulumi.Input[Optional[_builtins.str]] = None):
         """
         The set of arguments for constructing a DiskEdgeAnomalyDetectors resource.
 
@@ -86,101 +86,101 @@ class DiskEdgeAnomalyDetectorsArgs:
 
     @_builtins.property
     @pulumi.getter
-    def alerts(self) -> Optional[pulumi.Input['DiskEdgeAnomalyDetectorsAlertsArgs']]:
+    def alerts(self) -> pulumi.Input[Optional['DiskEdgeAnomalyDetectorsAlertsArgs']]:
         """
         Alerts
         """
         return pulumi.get(self, "alerts")
 
     @alerts.setter
-    def alerts(self, value: Optional[pulumi.Input['DiskEdgeAnomalyDetectorsAlertsArgs']]):
+    def alerts(self, value: pulumi.Input[Optional['DiskEdgeAnomalyDetectorsAlertsArgs']]):
         pulumi.set(self, "alerts", value)
 
     @_builtins.property
     @pulumi.getter(name="diskNameFilters")
-    def disk_name_filters(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]:
+    def disk_name_filters(self) -> pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]:
         """
         Disk will be included in this policy if **any** of the filters match
         """
         return pulumi.get(self, "disk_name_filters")
 
     @disk_name_filters.setter
-    def disk_name_filters(self, value: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]):
+    def disk_name_filters(self, value: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "disk_name_filters", value)
 
     @_builtins.property
     @pulumi.getter(name="eventProperties")
-    def event_properties(self) -> Optional[pulumi.Input['DiskEdgeAnomalyDetectorsEventPropertiesArgs']]:
+    def event_properties(self) -> pulumi.Input[Optional['DiskEdgeAnomalyDetectorsEventPropertiesArgs']]:
         """
         Set of additional key-value properties to be attached to the triggered event. You can retrieve the available property keys using the [Events API v2](https://dt-url.net/9622g1w). Additionally any Host resource attribute can be dynamically substituted (agent 1.325+)
         """
         return pulumi.get(self, "event_properties")
 
     @event_properties.setter
-    def event_properties(self, value: Optional[pulumi.Input['DiskEdgeAnomalyDetectorsEventPropertiesArgs']]):
+    def event_properties(self, value: pulumi.Input[Optional['DiskEdgeAnomalyDetectorsEventPropertiesArgs']]):
         pulumi.set(self, "event_properties", value)
 
     @_builtins.property
     @pulumi.getter(name="hostMetadataConditions")
-    def host_metadata_conditions(self) -> Optional[pulumi.Input['DiskEdgeAnomalyDetectorsHostMetadataConditionsArgs']]:
+    def host_metadata_conditions(self) -> pulumi.Input[Optional['DiskEdgeAnomalyDetectorsHostMetadataConditionsArgs']]:
         """
         The policy will be enabled if **all** conditions are met
         """
         return pulumi.get(self, "host_metadata_conditions")
 
     @host_metadata_conditions.setter
-    def host_metadata_conditions(self, value: Optional[pulumi.Input['DiskEdgeAnomalyDetectorsHostMetadataConditionsArgs']]):
+    def host_metadata_conditions(self, value: pulumi.Input[Optional['DiskEdgeAnomalyDetectorsHostMetadataConditionsArgs']]):
         pulumi.set(self, "host_metadata_conditions", value)
 
     @_builtins.property
     @pulumi.getter(name="insertAfter")
-    def insert_after(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def insert_after(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Because this resource allows for ordering you may specify the ID of the resource instance that comes before this instance regarding order. If not specified when creating the setting will be added to the end of the list. If not specified during update the order will remain untouched
         """
         return pulumi.get(self, "insert_after")
 
     @insert_after.setter
-    def insert_after(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def insert_after(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "insert_after", value)
 
     @_builtins.property
     @pulumi.getter(name="operatingSystems")
-    def operating_systems(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]:
+    def operating_systems(self) -> pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]:
         """
         Select the operating systems on which policy should be applied
         """
         return pulumi.get(self, "operating_systems")
 
     @operating_systems.setter
-    def operating_systems(self, value: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]):
+    def operating_systems(self, value: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "operating_systems", value)
 
     @_builtins.property
     @pulumi.getter
-    def scope(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def scope(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The scope of this setting (HOST, HOST_GROUP). Omit this property if you want to cover the whole environment.
         """
         return pulumi.get(self, "scope")
 
     @scope.setter
-    def scope(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def scope(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "scope", value)
 
 
 @pulumi.input_type
 class _DiskEdgeAnomalyDetectorsState:
     def __init__(__self__, *,
-                 alerts: Optional[pulumi.Input['DiskEdgeAnomalyDetectorsAlertsArgs']] = None,
-                 disk_name_filters: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-                 enabled: Optional[pulumi.Input[_builtins.bool]] = None,
-                 event_properties: Optional[pulumi.Input['DiskEdgeAnomalyDetectorsEventPropertiesArgs']] = None,
-                 host_metadata_conditions: Optional[pulumi.Input['DiskEdgeAnomalyDetectorsHostMetadataConditionsArgs']] = None,
-                 insert_after: Optional[pulumi.Input[_builtins.str]] = None,
-                 operating_systems: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-                 policy_name: Optional[pulumi.Input[_builtins.str]] = None,
-                 scope: Optional[pulumi.Input[_builtins.str]] = None):
+                 alerts: pulumi.Input[Optional['DiskEdgeAnomalyDetectorsAlertsArgs']] = None,
+                 disk_name_filters: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 enabled: pulumi.Input[Optional[_builtins.bool]] = None,
+                 event_properties: pulumi.Input[Optional['DiskEdgeAnomalyDetectorsEventPropertiesArgs']] = None,
+                 host_metadata_conditions: pulumi.Input[Optional['DiskEdgeAnomalyDetectorsHostMetadataConditionsArgs']] = None,
+                 insert_after: pulumi.Input[Optional[_builtins.str]] = None,
+                 operating_systems: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 policy_name: pulumi.Input[Optional[_builtins.str]] = None,
+                 scope: pulumi.Input[Optional[_builtins.str]] = None):
         """
         Input properties used for looking up and filtering DiskEdgeAnomalyDetectors resources.
 
@@ -215,110 +215,110 @@ class _DiskEdgeAnomalyDetectorsState:
 
     @_builtins.property
     @pulumi.getter
-    def alerts(self) -> Optional[pulumi.Input['DiskEdgeAnomalyDetectorsAlertsArgs']]:
+    def alerts(self) -> pulumi.Input[Optional['DiskEdgeAnomalyDetectorsAlertsArgs']]:
         """
         Alerts
         """
         return pulumi.get(self, "alerts")
 
     @alerts.setter
-    def alerts(self, value: Optional[pulumi.Input['DiskEdgeAnomalyDetectorsAlertsArgs']]):
+    def alerts(self, value: pulumi.Input[Optional['DiskEdgeAnomalyDetectorsAlertsArgs']]):
         pulumi.set(self, "alerts", value)
 
     @_builtins.property
     @pulumi.getter(name="diskNameFilters")
-    def disk_name_filters(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]:
+    def disk_name_filters(self) -> pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]:
         """
         Disk will be included in this policy if **any** of the filters match
         """
         return pulumi.get(self, "disk_name_filters")
 
     @disk_name_filters.setter
-    def disk_name_filters(self, value: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]):
+    def disk_name_filters(self, value: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "disk_name_filters", value)
 
     @_builtins.property
     @pulumi.getter
-    def enabled(self) -> Optional[pulumi.Input[_builtins.bool]]:
+    def enabled(self) -> pulumi.Input[Optional[_builtins.bool]]:
         """
         This setting is enabled (`true`) or disabled (`false`)
         """
         return pulumi.get(self, "enabled")
 
     @enabled.setter
-    def enabled(self, value: Optional[pulumi.Input[_builtins.bool]]):
+    def enabled(self, value: pulumi.Input[Optional[_builtins.bool]]):
         pulumi.set(self, "enabled", value)
 
     @_builtins.property
     @pulumi.getter(name="eventProperties")
-    def event_properties(self) -> Optional[pulumi.Input['DiskEdgeAnomalyDetectorsEventPropertiesArgs']]:
+    def event_properties(self) -> pulumi.Input[Optional['DiskEdgeAnomalyDetectorsEventPropertiesArgs']]:
         """
         Set of additional key-value properties to be attached to the triggered event. You can retrieve the available property keys using the [Events API v2](https://dt-url.net/9622g1w). Additionally any Host resource attribute can be dynamically substituted (agent 1.325+)
         """
         return pulumi.get(self, "event_properties")
 
     @event_properties.setter
-    def event_properties(self, value: Optional[pulumi.Input['DiskEdgeAnomalyDetectorsEventPropertiesArgs']]):
+    def event_properties(self, value: pulumi.Input[Optional['DiskEdgeAnomalyDetectorsEventPropertiesArgs']]):
         pulumi.set(self, "event_properties", value)
 
     @_builtins.property
     @pulumi.getter(name="hostMetadataConditions")
-    def host_metadata_conditions(self) -> Optional[pulumi.Input['DiskEdgeAnomalyDetectorsHostMetadataConditionsArgs']]:
+    def host_metadata_conditions(self) -> pulumi.Input[Optional['DiskEdgeAnomalyDetectorsHostMetadataConditionsArgs']]:
         """
         The policy will be enabled if **all** conditions are met
         """
         return pulumi.get(self, "host_metadata_conditions")
 
     @host_metadata_conditions.setter
-    def host_metadata_conditions(self, value: Optional[pulumi.Input['DiskEdgeAnomalyDetectorsHostMetadataConditionsArgs']]):
+    def host_metadata_conditions(self, value: pulumi.Input[Optional['DiskEdgeAnomalyDetectorsHostMetadataConditionsArgs']]):
         pulumi.set(self, "host_metadata_conditions", value)
 
     @_builtins.property
     @pulumi.getter(name="insertAfter")
-    def insert_after(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def insert_after(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Because this resource allows for ordering you may specify the ID of the resource instance that comes before this instance regarding order. If not specified when creating the setting will be added to the end of the list. If not specified during update the order will remain untouched
         """
         return pulumi.get(self, "insert_after")
 
     @insert_after.setter
-    def insert_after(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def insert_after(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "insert_after", value)
 
     @_builtins.property
     @pulumi.getter(name="operatingSystems")
-    def operating_systems(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]:
+    def operating_systems(self) -> pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]:
         """
         Select the operating systems on which policy should be applied
         """
         return pulumi.get(self, "operating_systems")
 
     @operating_systems.setter
-    def operating_systems(self, value: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]):
+    def operating_systems(self, value: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "operating_systems", value)
 
     @_builtins.property
     @pulumi.getter(name="policyName")
-    def policy_name(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def policy_name(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Policy name
         """
         return pulumi.get(self, "policy_name")
 
     @policy_name.setter
-    def policy_name(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def policy_name(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "policy_name", value)
 
     @_builtins.property
     @pulumi.getter
-    def scope(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def scope(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The scope of this setting (HOST, HOST_GROUP). Omit this property if you want to cover the whole environment.
         """
         return pulumi.get(self, "scope")
 
     @scope.setter
-    def scope(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def scope(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "scope", value)
 
 
@@ -328,15 +328,15 @@ class DiskEdgeAnomalyDetectors(pulumi.CustomResource):
     def __init__(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 alerts: Optional[pulumi.Input[Union['DiskEdgeAnomalyDetectorsAlertsArgs', 'DiskEdgeAnomalyDetectorsAlertsArgsDict']]] = None,
-                 disk_name_filters: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-                 enabled: Optional[pulumi.Input[_builtins.bool]] = None,
-                 event_properties: Optional[pulumi.Input[Union['DiskEdgeAnomalyDetectorsEventPropertiesArgs', 'DiskEdgeAnomalyDetectorsEventPropertiesArgsDict']]] = None,
-                 host_metadata_conditions: Optional[pulumi.Input[Union['DiskEdgeAnomalyDetectorsHostMetadataConditionsArgs', 'DiskEdgeAnomalyDetectorsHostMetadataConditionsArgsDict']]] = None,
-                 insert_after: Optional[pulumi.Input[_builtins.str]] = None,
-                 operating_systems: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-                 policy_name: Optional[pulumi.Input[_builtins.str]] = None,
-                 scope: Optional[pulumi.Input[_builtins.str]] = None,
+                 alerts: pulumi.Input[Optional[Union['DiskEdgeAnomalyDetectorsAlertsArgs', 'DiskEdgeAnomalyDetectorsAlertsArgsDict']]] = None,
+                 disk_name_filters: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 enabled: pulumi.Input[Optional[_builtins.bool]] = None,
+                 event_properties: pulumi.Input[Optional[Union['DiskEdgeAnomalyDetectorsEventPropertiesArgs', 'DiskEdgeAnomalyDetectorsEventPropertiesArgsDict']]] = None,
+                 host_metadata_conditions: pulumi.Input[Optional[Union['DiskEdgeAnomalyDetectorsHostMetadataConditionsArgs', 'DiskEdgeAnomalyDetectorsHostMetadataConditionsArgsDict']]] = None,
+                 insert_after: pulumi.Input[Optional[_builtins.str]] = None,
+                 operating_systems: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 policy_name: pulumi.Input[Optional[_builtins.str]] = None,
+                 scope: pulumi.Input[Optional[_builtins.str]] = None,
                  __props__=None):
         """
         > This resource requires the API token scopes **Read settings** (`settings.read`) and **Write settings** (`settings.write`)
@@ -403,15 +403,15 @@ class DiskEdgeAnomalyDetectors(pulumi.CustomResource):
     def _internal_init(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 alerts: Optional[pulumi.Input[Union['DiskEdgeAnomalyDetectorsAlertsArgs', 'DiskEdgeAnomalyDetectorsAlertsArgsDict']]] = None,
-                 disk_name_filters: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-                 enabled: Optional[pulumi.Input[_builtins.bool]] = None,
-                 event_properties: Optional[pulumi.Input[Union['DiskEdgeAnomalyDetectorsEventPropertiesArgs', 'DiskEdgeAnomalyDetectorsEventPropertiesArgsDict']]] = None,
-                 host_metadata_conditions: Optional[pulumi.Input[Union['DiskEdgeAnomalyDetectorsHostMetadataConditionsArgs', 'DiskEdgeAnomalyDetectorsHostMetadataConditionsArgsDict']]] = None,
-                 insert_after: Optional[pulumi.Input[_builtins.str]] = None,
-                 operating_systems: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-                 policy_name: Optional[pulumi.Input[_builtins.str]] = None,
-                 scope: Optional[pulumi.Input[_builtins.str]] = None,
+                 alerts: pulumi.Input[Optional[Union['DiskEdgeAnomalyDetectorsAlertsArgs', 'DiskEdgeAnomalyDetectorsAlertsArgsDict']]] = None,
+                 disk_name_filters: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 enabled: pulumi.Input[Optional[_builtins.bool]] = None,
+                 event_properties: pulumi.Input[Optional[Union['DiskEdgeAnomalyDetectorsEventPropertiesArgs', 'DiskEdgeAnomalyDetectorsEventPropertiesArgsDict']]] = None,
+                 host_metadata_conditions: pulumi.Input[Optional[Union['DiskEdgeAnomalyDetectorsHostMetadataConditionsArgs', 'DiskEdgeAnomalyDetectorsHostMetadataConditionsArgsDict']]] = None,
+                 insert_after: pulumi.Input[Optional[_builtins.str]] = None,
+                 operating_systems: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 policy_name: pulumi.Input[Optional[_builtins.str]] = None,
+                 scope: pulumi.Input[Optional[_builtins.str]] = None,
                  __props__=None):
         opts = pulumi.ResourceOptions.merge(_utilities.get_resource_opts_defaults(), opts)
         if not isinstance(opts, pulumi.ResourceOptions):
@@ -444,15 +444,15 @@ class DiskEdgeAnomalyDetectors(pulumi.CustomResource):
     def get(resource_name: str,
             id: pulumi.Input[str],
             opts: Optional[pulumi.ResourceOptions] = None,
-            alerts: Optional[pulumi.Input[Union['DiskEdgeAnomalyDetectorsAlertsArgs', 'DiskEdgeAnomalyDetectorsAlertsArgsDict']]] = None,
-            disk_name_filters: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-            enabled: Optional[pulumi.Input[_builtins.bool]] = None,
-            event_properties: Optional[pulumi.Input[Union['DiskEdgeAnomalyDetectorsEventPropertiesArgs', 'DiskEdgeAnomalyDetectorsEventPropertiesArgsDict']]] = None,
-            host_metadata_conditions: Optional[pulumi.Input[Union['DiskEdgeAnomalyDetectorsHostMetadataConditionsArgs', 'DiskEdgeAnomalyDetectorsHostMetadataConditionsArgsDict']]] = None,
-            insert_after: Optional[pulumi.Input[_builtins.str]] = None,
-            operating_systems: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-            policy_name: Optional[pulumi.Input[_builtins.str]] = None,
-            scope: Optional[pulumi.Input[_builtins.str]] = None) -> 'DiskEdgeAnomalyDetectors':
+            alerts: pulumi.Input[Optional[Union['DiskEdgeAnomalyDetectorsAlertsArgs', 'DiskEdgeAnomalyDetectorsAlertsArgsDict']]] = None,
+            disk_name_filters: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+            enabled: pulumi.Input[Optional[_builtins.bool]] = None,
+            event_properties: pulumi.Input[Optional[Union['DiskEdgeAnomalyDetectorsEventPropertiesArgs', 'DiskEdgeAnomalyDetectorsEventPropertiesArgsDict']]] = None,
+            host_metadata_conditions: pulumi.Input[Optional[Union['DiskEdgeAnomalyDetectorsHostMetadataConditionsArgs', 'DiskEdgeAnomalyDetectorsHostMetadataConditionsArgsDict']]] = None,
+            insert_after: pulumi.Input[Optional[_builtins.str]] = None,
+            operating_systems: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+            policy_name: pulumi.Input[Optional[_builtins.str]] = None,
+            scope: pulumi.Input[Optional[_builtins.str]] = None) -> 'DiskEdgeAnomalyDetectors':
         """
         Get an existing DiskEdgeAnomalyDetectors resource's state with the given name, id, and optional extra
         properties used to qualify the lookup.

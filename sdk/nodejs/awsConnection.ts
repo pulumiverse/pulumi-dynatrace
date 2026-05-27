@@ -162,15 +162,15 @@ export interface AwsConnectionState {
     /**
      * Name
      */
-    name?: pulumi.Input<string>;
+    name?: pulumi.Input<string | undefined>;
     /**
      * Configuration required for authenticating via AWS Role Based Authentication
      */
-    roleBasedAuth?: pulumi.Input<inputs.AwsConnectionRoleBasedAuth>;
+    roleBasedAuth?: pulumi.Input<inputs.AwsConnectionRoleBasedAuth | undefined>;
     /**
      * Configuration required for authenticating via AWS Web Identity
      */
-    webIdentity?: pulumi.Input<inputs.AwsConnectionWebIdentity>;
+    webIdentity?: pulumi.Input<inputs.AwsConnectionWebIdentity | undefined>;
 }
 
 /**
@@ -180,13 +180,13 @@ export interface AwsConnectionArgs {
     /**
      * Name
      */
-    name?: pulumi.Input<string>;
+    name?: pulumi.Input<string | undefined>;
     /**
      * Configuration required for authenticating via AWS Role Based Authentication
      */
-    roleBasedAuth?: pulumi.Input<inputs.AwsConnectionRoleBasedAuth>;
+    roleBasedAuth?: pulumi.Input<inputs.AwsConnectionRoleBasedAuth | undefined>;
     /**
      * Configuration required for authenticating via AWS Web Identity
      */
-    webIdentity?: pulumi.Input<inputs.AwsConnectionWebIdentity>;
+    webIdentity?: pulumi.Input<inputs.AwsConnectionWebIdentity | undefined>;
 }

@@ -23,12 +23,12 @@ class CustomServiceArgs:
     def __init__(__self__, *,
                  enabled: pulumi.Input[_builtins.bool],
                  technology: pulumi.Input[_builtins.str],
-                 name: Optional[pulumi.Input[_builtins.str]] = None,
-                 process_groups: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-                 queue_entry_point: Optional[pulumi.Input[_builtins.bool]] = None,
-                 queue_entry_point_type: Optional[pulumi.Input[_builtins.str]] = None,
-                 rules: Optional[pulumi.Input[Sequence[pulumi.Input['CustomServiceRuleArgs']]]] = None,
-                 unknowns: Optional[pulumi.Input[_builtins.str]] = None):
+                 name: pulumi.Input[Optional[_builtins.str]] = None,
+                 process_groups: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 queue_entry_point: pulumi.Input[Optional[_builtins.bool]] = None,
+                 queue_entry_point_type: pulumi.Input[Optional[_builtins.str]] = None,
+                 rules: pulumi.Input[Optional[Sequence[pulumi.Input['CustomServiceRuleArgs']]]] = None,
+                 unknowns: pulumi.Input[Optional[_builtins.str]] = None):
         """
         The set of arguments for constructing a CustomService resource.
 
@@ -82,88 +82,88 @@ class CustomServiceArgs:
 
     @_builtins.property
     @pulumi.getter
-    def name(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def name(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The name of the custom service, displayed in the UI
         """
         return pulumi.get(self, "name")
 
     @name.setter
-    def name(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def name(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "name", value)
 
     @_builtins.property
     @pulumi.getter(name="processGroups")
-    def process_groups(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]:
+    def process_groups(self) -> pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]:
         """
         The list of process groups the custom service should belong to
         """
         return pulumi.get(self, "process_groups")
 
     @process_groups.setter
-    def process_groups(self, value: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]):
+    def process_groups(self, value: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "process_groups", value)
 
     @_builtins.property
     @pulumi.getter(name="queueEntryPoint")
-    def queue_entry_point(self) -> Optional[pulumi.Input[_builtins.bool]]:
+    def queue_entry_point(self) -> pulumi.Input[Optional[_builtins.bool]]:
         """
         The queue entry point flag. Set to `true` for custom messaging services
         """
         return pulumi.get(self, "queue_entry_point")
 
     @queue_entry_point.setter
-    def queue_entry_point(self, value: Optional[pulumi.Input[_builtins.bool]]):
+    def queue_entry_point(self, value: pulumi.Input[Optional[_builtins.bool]]):
         pulumi.set(self, "queue_entry_point", value)
 
     @_builtins.property
     @pulumi.getter(name="queueEntryPointType")
-    def queue_entry_point_type(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def queue_entry_point_type(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The queue entry point type (IBM*MQ, JMS, KAFKA, MSMQ or RABBIT*MQ)
         """
         return pulumi.get(self, "queue_entry_point_type")
 
     @queue_entry_point_type.setter
-    def queue_entry_point_type(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def queue_entry_point_type(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "queue_entry_point_type", value)
 
     @_builtins.property
     @pulumi.getter
-    def rules(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['CustomServiceRuleArgs']]]]:
+    def rules(self) -> pulumi.Input[Optional[Sequence[pulumi.Input['CustomServiceRuleArgs']]]]:
         """
         The list of rules defining the custom service
         """
         return pulumi.get(self, "rules")
 
     @rules.setter
-    def rules(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['CustomServiceRuleArgs']]]]):
+    def rules(self, value: pulumi.Input[Optional[Sequence[pulumi.Input['CustomServiceRuleArgs']]]]):
         pulumi.set(self, "rules", value)
 
     @_builtins.property
     @pulumi.getter
-    def unknowns(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def unknowns(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         allows for configuring properties that are not explicitly supported by the current version of this provider
         """
         return pulumi.get(self, "unknowns")
 
     @unknowns.setter
-    def unknowns(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def unknowns(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "unknowns", value)
 
 
 @pulumi.input_type
 class _CustomServiceState:
     def __init__(__self__, *,
-                 enabled: Optional[pulumi.Input[_builtins.bool]] = None,
-                 name: Optional[pulumi.Input[_builtins.str]] = None,
-                 process_groups: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-                 queue_entry_point: Optional[pulumi.Input[_builtins.bool]] = None,
-                 queue_entry_point_type: Optional[pulumi.Input[_builtins.str]] = None,
-                 rules: Optional[pulumi.Input[Sequence[pulumi.Input['CustomServiceRuleArgs']]]] = None,
-                 technology: Optional[pulumi.Input[_builtins.str]] = None,
-                 unknowns: Optional[pulumi.Input[_builtins.str]] = None):
+                 enabled: pulumi.Input[Optional[_builtins.bool]] = None,
+                 name: pulumi.Input[Optional[_builtins.str]] = None,
+                 process_groups: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 queue_entry_point: pulumi.Input[Optional[_builtins.bool]] = None,
+                 queue_entry_point_type: pulumi.Input[Optional[_builtins.str]] = None,
+                 rules: pulumi.Input[Optional[Sequence[pulumi.Input['CustomServiceRuleArgs']]]] = None,
+                 technology: pulumi.Input[Optional[_builtins.str]] = None,
+                 unknowns: pulumi.Input[Optional[_builtins.str]] = None):
         """
         Input properties used for looking up and filtering CustomService resources.
 
@@ -195,98 +195,98 @@ class _CustomServiceState:
 
     @_builtins.property
     @pulumi.getter
-    def enabled(self) -> Optional[pulumi.Input[_builtins.bool]]:
+    def enabled(self) -> pulumi.Input[Optional[_builtins.bool]]:
         """
         Custom service enabled/disabled
         """
         return pulumi.get(self, "enabled")
 
     @enabled.setter
-    def enabled(self, value: Optional[pulumi.Input[_builtins.bool]]):
+    def enabled(self, value: pulumi.Input[Optional[_builtins.bool]]):
         pulumi.set(self, "enabled", value)
 
     @_builtins.property
     @pulumi.getter
-    def name(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def name(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The name of the custom service, displayed in the UI
         """
         return pulumi.get(self, "name")
 
     @name.setter
-    def name(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def name(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "name", value)
 
     @_builtins.property
     @pulumi.getter(name="processGroups")
-    def process_groups(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]:
+    def process_groups(self) -> pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]:
         """
         The list of process groups the custom service should belong to
         """
         return pulumi.get(self, "process_groups")
 
     @process_groups.setter
-    def process_groups(self, value: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]):
+    def process_groups(self, value: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "process_groups", value)
 
     @_builtins.property
     @pulumi.getter(name="queueEntryPoint")
-    def queue_entry_point(self) -> Optional[pulumi.Input[_builtins.bool]]:
+    def queue_entry_point(self) -> pulumi.Input[Optional[_builtins.bool]]:
         """
         The queue entry point flag. Set to `true` for custom messaging services
         """
         return pulumi.get(self, "queue_entry_point")
 
     @queue_entry_point.setter
-    def queue_entry_point(self, value: Optional[pulumi.Input[_builtins.bool]]):
+    def queue_entry_point(self, value: pulumi.Input[Optional[_builtins.bool]]):
         pulumi.set(self, "queue_entry_point", value)
 
     @_builtins.property
     @pulumi.getter(name="queueEntryPointType")
-    def queue_entry_point_type(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def queue_entry_point_type(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The queue entry point type (IBM*MQ, JMS, KAFKA, MSMQ or RABBIT*MQ)
         """
         return pulumi.get(self, "queue_entry_point_type")
 
     @queue_entry_point_type.setter
-    def queue_entry_point_type(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def queue_entry_point_type(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "queue_entry_point_type", value)
 
     @_builtins.property
     @pulumi.getter
-    def rules(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['CustomServiceRuleArgs']]]]:
+    def rules(self) -> pulumi.Input[Optional[Sequence[pulumi.Input['CustomServiceRuleArgs']]]]:
         """
         The list of rules defining the custom service
         """
         return pulumi.get(self, "rules")
 
     @rules.setter
-    def rules(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['CustomServiceRuleArgs']]]]):
+    def rules(self, value: pulumi.Input[Optional[Sequence[pulumi.Input['CustomServiceRuleArgs']]]]):
         pulumi.set(self, "rules", value)
 
     @_builtins.property
     @pulumi.getter
-    def technology(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def technology(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Matcher applying to the file name (ENDS*WITH, EQUALS or STARTS*WITH). Default value is ENDS_WITH (if applicable)
         """
         return pulumi.get(self, "technology")
 
     @technology.setter
-    def technology(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def technology(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "technology", value)
 
     @_builtins.property
     @pulumi.getter
-    def unknowns(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def unknowns(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         allows for configuring properties that are not explicitly supported by the current version of this provider
         """
         return pulumi.get(self, "unknowns")
 
     @unknowns.setter
-    def unknowns(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def unknowns(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "unknowns", value)
 
 
@@ -296,14 +296,14 @@ class CustomService(pulumi.CustomResource):
     def __init__(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 enabled: Optional[pulumi.Input[_builtins.bool]] = None,
-                 name: Optional[pulumi.Input[_builtins.str]] = None,
-                 process_groups: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-                 queue_entry_point: Optional[pulumi.Input[_builtins.bool]] = None,
-                 queue_entry_point_type: Optional[pulumi.Input[_builtins.str]] = None,
-                 rules: Optional[pulumi.Input[Sequence[pulumi.Input[Union['CustomServiceRuleArgs', 'CustomServiceRuleArgsDict']]]]] = None,
-                 technology: Optional[pulumi.Input[_builtins.str]] = None,
-                 unknowns: Optional[pulumi.Input[_builtins.str]] = None,
+                 enabled: pulumi.Input[Optional[_builtins.bool]] = None,
+                 name: pulumi.Input[Optional[_builtins.str]] = None,
+                 process_groups: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 queue_entry_point: pulumi.Input[Optional[_builtins.bool]] = None,
+                 queue_entry_point_type: pulumi.Input[Optional[_builtins.str]] = None,
+                 rules: pulumi.Input[Optional[Sequence[pulumi.Input[Union['CustomServiceRuleArgs', 'CustomServiceRuleArgsDict']]]]] = None,
+                 technology: pulumi.Input[Optional[_builtins.str]] = None,
+                 unknowns: pulumi.Input[Optional[_builtins.str]] = None,
                  __props__=None):
         """
         > This resource requires the API token scopes **Read configuration** (`ReadConfig`) and **Write configuration** (`WriteConfig`)
@@ -369,14 +369,14 @@ class CustomService(pulumi.CustomResource):
     def _internal_init(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 enabled: Optional[pulumi.Input[_builtins.bool]] = None,
-                 name: Optional[pulumi.Input[_builtins.str]] = None,
-                 process_groups: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-                 queue_entry_point: Optional[pulumi.Input[_builtins.bool]] = None,
-                 queue_entry_point_type: Optional[pulumi.Input[_builtins.str]] = None,
-                 rules: Optional[pulumi.Input[Sequence[pulumi.Input[Union['CustomServiceRuleArgs', 'CustomServiceRuleArgsDict']]]]] = None,
-                 technology: Optional[pulumi.Input[_builtins.str]] = None,
-                 unknowns: Optional[pulumi.Input[_builtins.str]] = None,
+                 enabled: pulumi.Input[Optional[_builtins.bool]] = None,
+                 name: pulumi.Input[Optional[_builtins.str]] = None,
+                 process_groups: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 queue_entry_point: pulumi.Input[Optional[_builtins.bool]] = None,
+                 queue_entry_point_type: pulumi.Input[Optional[_builtins.str]] = None,
+                 rules: pulumi.Input[Optional[Sequence[pulumi.Input[Union['CustomServiceRuleArgs', 'CustomServiceRuleArgsDict']]]]] = None,
+                 technology: pulumi.Input[Optional[_builtins.str]] = None,
+                 unknowns: pulumi.Input[Optional[_builtins.str]] = None,
                  __props__=None):
         opts = pulumi.ResourceOptions.merge(_utilities.get_resource_opts_defaults(), opts)
         if not isinstance(opts, pulumi.ResourceOptions):
@@ -408,14 +408,14 @@ class CustomService(pulumi.CustomResource):
     def get(resource_name: str,
             id: pulumi.Input[str],
             opts: Optional[pulumi.ResourceOptions] = None,
-            enabled: Optional[pulumi.Input[_builtins.bool]] = None,
-            name: Optional[pulumi.Input[_builtins.str]] = None,
-            process_groups: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-            queue_entry_point: Optional[pulumi.Input[_builtins.bool]] = None,
-            queue_entry_point_type: Optional[pulumi.Input[_builtins.str]] = None,
-            rules: Optional[pulumi.Input[Sequence[pulumi.Input[Union['CustomServiceRuleArgs', 'CustomServiceRuleArgsDict']]]]] = None,
-            technology: Optional[pulumi.Input[_builtins.str]] = None,
-            unknowns: Optional[pulumi.Input[_builtins.str]] = None) -> 'CustomService':
+            enabled: pulumi.Input[Optional[_builtins.bool]] = None,
+            name: pulumi.Input[Optional[_builtins.str]] = None,
+            process_groups: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+            queue_entry_point: pulumi.Input[Optional[_builtins.bool]] = None,
+            queue_entry_point_type: pulumi.Input[Optional[_builtins.str]] = None,
+            rules: pulumi.Input[Optional[Sequence[pulumi.Input[Union['CustomServiceRuleArgs', 'CustomServiceRuleArgsDict']]]]] = None,
+            technology: pulumi.Input[Optional[_builtins.str]] = None,
+            unknowns: pulumi.Input[Optional[_builtins.str]] = None) -> 'CustomService':
         """
         Get an existing CustomService resource's state with the given name, id, and optional extra
         properties used to qualify the lookup.

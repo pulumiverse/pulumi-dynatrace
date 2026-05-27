@@ -93,11 +93,11 @@ export interface DashboardsPresetsState {
     /**
      * Show selected preset to respective user group only.
      */
-    dashboardPresetsList?: pulumi.Input<inputs.DashboardsPresetsDashboardPresetsList>;
+    dashboardPresetsList?: pulumi.Input<inputs.DashboardsPresetsDashboardPresetsList | undefined>;
     /**
      * Dashboard presets are visible to all users by default. For a pristine environment you may disable them entirely or opt to manually limit visibility to selected user groups.
      */
-    enableDashboardPresets?: pulumi.Input<boolean>;
+    enableDashboardPresets?: pulumi.Input<boolean | undefined>;
 }
 
 /**
@@ -107,7 +107,7 @@ export interface DashboardsPresetsArgs {
     /**
      * Show selected preset to respective user group only.
      */
-    dashboardPresetsList?: pulumi.Input<inputs.DashboardsPresetsDashboardPresetsList>;
+    dashboardPresetsList?: pulumi.Input<inputs.DashboardsPresetsDashboardPresetsList | undefined>;
     /**
      * Dashboard presets are visible to all users by default. For a pristine environment you may disable them entirely or opt to manually limit visibility to selected user groups.
      */

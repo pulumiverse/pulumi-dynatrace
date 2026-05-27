@@ -139,27 +139,27 @@ export interface PolicyState {
     /**
      * The UUID of the cluster in case the policy should be applied to all environments of this cluster.
      */
-    cluster?: pulumi.Input<string>;
+    cluster?: pulumi.Input<string | undefined>;
     /**
      * An optional description text for the policy
      */
-    description?: pulumi.Input<string>;
+    description?: pulumi.Input<string | undefined>;
     /**
      * The ID of the environment if the policy should be applied to a specific environment
      */
-    environment?: pulumi.Input<string>;
+    environment?: pulumi.Input<string | undefined>;
     /**
      * The name of the policy
      */
-    name?: pulumi.Input<string>;
+    name?: pulumi.Input<string | undefined>;
     /**
      * The Statement Query of the policy
      */
-    statementQuery?: pulumi.Input<string>;
+    statementQuery?: pulumi.Input<string | undefined>;
     /**
      * Tags for this policy
      */
-    tags?: pulumi.Input<pulumi.Input<string>[]>;
+    tags?: pulumi.Input<pulumi.Input<string>[] | undefined>;
 }
 
 /**
@@ -169,19 +169,19 @@ export interface PolicyArgs {
     /**
      * The UUID of the cluster in case the policy should be applied to all environments of this cluster.
      */
-    cluster?: pulumi.Input<string>;
+    cluster?: pulumi.Input<string | undefined>;
     /**
      * An optional description text for the policy
      */
-    description?: pulumi.Input<string>;
+    description?: pulumi.Input<string | undefined>;
     /**
      * The ID of the environment if the policy should be applied to a specific environment
      */
-    environment?: pulumi.Input<string>;
+    environment?: pulumi.Input<string | undefined>;
     /**
      * The name of the policy
      */
-    name?: pulumi.Input<string>;
+    name?: pulumi.Input<string | undefined>;
     /**
      * The Statement Query of the policy
      */
@@ -189,5 +189,5 @@ export interface PolicyArgs {
     /**
      * Tags for this policy
      */
-    tags?: pulumi.Input<pulumi.Input<string>[]>;
+    tags?: pulumi.Input<pulumi.Input<string>[] | undefined>;
 }

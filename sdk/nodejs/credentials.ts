@@ -204,67 +204,67 @@ export interface CredentialsState {
     /**
      * Allow ad-hoc functions to access the credential details (requires the APP_ENGINE scope).
      */
-    allowContextlessRequests?: pulumi.Input<boolean>;
+    allowContextlessRequests?: pulumi.Input<boolean | undefined>;
     /**
      * The set of entities allowed to use the credential.
      */
-    allowedEntities?: pulumi.Input<inputs.CredentialsAllowedEntities>;
+    allowedEntities?: pulumi.Input<inputs.CredentialsAllowedEntities | undefined>;
     /**
      * The certificate in the string format.
      */
-    certificate?: pulumi.Input<string>;
+    certificate?: pulumi.Input<string | undefined>;
     /**
      * The list contains summary data related to the use of credentials
      *
      * @deprecated `credentialUsageSummary` will be removed in future versions. It's not getting filled anymore, because it's runtime data
      */
-    credentialUsageSummaries?: pulumi.Input<pulumi.Input<inputs.CredentialsCredentialUsageSummary>[]>;
+    credentialUsageSummaries?: pulumi.Input<pulumi.Input<inputs.CredentialsCredentialUsageSummary>[] | undefined>;
     /**
      * A short description of the credentials set
      */
-    description?: pulumi.Input<string>;
+    description?: pulumi.Input<string | undefined>;
     /**
      * External Vault Configuration
      */
-    external?: pulumi.Input<inputs.CredentialsExternal>;
+    external?: pulumi.Input<inputs.CredentialsExternal | undefined>;
     /**
      * The certificate format. Possible values are `PEM`, `PKCS12` and `UNKNOWN`.
      */
-    format?: pulumi.Input<string>;
+    format?: pulumi.Input<string | undefined>;
     /**
      * The name of the credentials set
      */
-    name?: pulumi.Input<string>;
+    name?: pulumi.Input<string | undefined>;
     /**
      * The credentials set is available to every user (`false`) or to owner only (`true`)
      */
-    ownerAccessOnly?: pulumi.Input<boolean>;
+    ownerAccessOnly?: pulumi.Input<boolean | undefined>;
     /**
      * The password of the credential. Note: Terraform treats an empty string for a value as if the attribute was absent. If you want to set an empty password, use the value `--empty--`.
      */
-    password?: pulumi.Input<string>;
+    password?: pulumi.Input<string | undefined>;
     /**
      * For certificate authentication specifies whether it's public certificate auth (`true`) or not (`false`).
      */
-    public?: pulumi.Input<boolean>;
+    public?: pulumi.Input<boolean | undefined>;
     /**
      * The scope of the credentials set. Possible values are `ALL`, `APP_ENGINE`, `EXTENSION` and `SYNTHETIC`
      *
      * @deprecated Deprecated(v279), please use `scopes` instead.
      */
-    scope?: pulumi.Input<string>;
+    scope?: pulumi.Input<string | undefined>;
     /**
      * The set of scopes of the credentials set. Possible values are `APP_ENGINE` and `SYNTHETIC`
      */
-    scopes?: pulumi.Input<pulumi.Input<string>[]>;
+    scopes?: pulumi.Input<pulumi.Input<string>[] | undefined>;
     /**
      * Token in the string format. Specifying a token implies `Token Authentication`.
      */
-    token?: pulumi.Input<string>;
+    token?: pulumi.Input<string | undefined>;
     /**
      * The username of the credentials set.
      */
-    username?: pulumi.Input<string>;
+    username?: pulumi.Input<string | undefined>;
 }
 
 /**
@@ -274,65 +274,65 @@ export interface CredentialsArgs {
     /**
      * Allow ad-hoc functions to access the credential details (requires the APP_ENGINE scope).
      */
-    allowContextlessRequests?: pulumi.Input<boolean>;
+    allowContextlessRequests?: pulumi.Input<boolean | undefined>;
     /**
      * The set of entities allowed to use the credential.
      */
-    allowedEntities?: pulumi.Input<inputs.CredentialsAllowedEntities>;
+    allowedEntities?: pulumi.Input<inputs.CredentialsAllowedEntities | undefined>;
     /**
      * The certificate in the string format.
      */
-    certificate?: pulumi.Input<string>;
+    certificate?: pulumi.Input<string | undefined>;
     /**
      * The list contains summary data related to the use of credentials
      *
      * @deprecated `credentialUsageSummary` will be removed in future versions. It's not getting filled anymore, because it's runtime data
      */
-    credentialUsageSummaries?: pulumi.Input<pulumi.Input<inputs.CredentialsCredentialUsageSummary>[]>;
+    credentialUsageSummaries?: pulumi.Input<pulumi.Input<inputs.CredentialsCredentialUsageSummary>[] | undefined>;
     /**
      * A short description of the credentials set
      */
-    description?: pulumi.Input<string>;
+    description?: pulumi.Input<string | undefined>;
     /**
      * External Vault Configuration
      */
-    external?: pulumi.Input<inputs.CredentialsExternal>;
+    external?: pulumi.Input<inputs.CredentialsExternal | undefined>;
     /**
      * The certificate format. Possible values are `PEM`, `PKCS12` and `UNKNOWN`.
      */
-    format?: pulumi.Input<string>;
+    format?: pulumi.Input<string | undefined>;
     /**
      * The name of the credentials set
      */
-    name?: pulumi.Input<string>;
+    name?: pulumi.Input<string | undefined>;
     /**
      * The credentials set is available to every user (`false`) or to owner only (`true`)
      */
-    ownerAccessOnly?: pulumi.Input<boolean>;
+    ownerAccessOnly?: pulumi.Input<boolean | undefined>;
     /**
      * The password of the credential. Note: Terraform treats an empty string for a value as if the attribute was absent. If you want to set an empty password, use the value `--empty--`.
      */
-    password?: pulumi.Input<string>;
+    password?: pulumi.Input<string | undefined>;
     /**
      * For certificate authentication specifies whether it's public certificate auth (`true`) or not (`false`).
      */
-    public?: pulumi.Input<boolean>;
+    public?: pulumi.Input<boolean | undefined>;
     /**
      * The scope of the credentials set. Possible values are `ALL`, `APP_ENGINE`, `EXTENSION` and `SYNTHETIC`
      *
      * @deprecated Deprecated(v279), please use `scopes` instead.
      */
-    scope?: pulumi.Input<string>;
+    scope?: pulumi.Input<string | undefined>;
     /**
      * The set of scopes of the credentials set. Possible values are `APP_ENGINE` and `SYNTHETIC`
      */
-    scopes?: pulumi.Input<pulumi.Input<string>[]>;
+    scopes?: pulumi.Input<pulumi.Input<string>[] | undefined>;
     /**
      * Token in the string format. Specifying a token implies `Token Authentication`.
      */
-    token?: pulumi.Input<string>;
+    token?: pulumi.Input<string | undefined>;
     /**
      * The username of the credentials set.
      */
-    username?: pulumi.Input<string>;
+    username?: pulumi.Input<string | undefined>;
 }

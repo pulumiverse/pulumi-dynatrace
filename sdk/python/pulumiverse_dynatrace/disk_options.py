@@ -21,11 +21,11 @@ __all__ = ['DiskOptionsArgs', 'DiskOptions']
 @pulumi.input_type
 class DiskOptionsArgs:
     def __init__(__self__, *,
-                 disable_nfs_disk_monitoring: Optional[pulumi.Input[_builtins.bool]] = None,
-                 exclusions: Optional[pulumi.Input['DiskOptionsExclusionsArgs']] = None,
-                 monitor_tmpfs: Optional[pulumi.Input[_builtins.bool]] = None,
-                 nfs_show_all: Optional[pulumi.Input[_builtins.bool]] = None,
-                 scope: Optional[pulumi.Input[_builtins.str]] = None):
+                 disable_nfs_disk_monitoring: pulumi.Input[Optional[_builtins.bool]] = None,
+                 exclusions: pulumi.Input[Optional['DiskOptionsExclusionsArgs']] = None,
+                 monitor_tmpfs: pulumi.Input[Optional[_builtins.bool]] = None,
+                 nfs_show_all: pulumi.Input[Optional[_builtins.bool]] = None,
+                 scope: pulumi.Input[Optional[_builtins.str]] = None):
         """
         The set of arguments for constructing a DiskOptions resource.
 
@@ -48,73 +48,73 @@ class DiskOptionsArgs:
 
     @_builtins.property
     @pulumi.getter(name="disableNfsDiskMonitoring")
-    def disable_nfs_disk_monitoring(self) -> Optional[pulumi.Input[_builtins.bool]]:
+    def disable_nfs_disk_monitoring(self) -> pulumi.Input[Optional[_builtins.bool]]:
         """
         Deactivate NFS monitoring on all supported systems
         """
         return pulumi.get(self, "disable_nfs_disk_monitoring")
 
     @disable_nfs_disk_monitoring.setter
-    def disable_nfs_disk_monitoring(self, value: Optional[pulumi.Input[_builtins.bool]]):
+    def disable_nfs_disk_monitoring(self, value: pulumi.Input[Optional[_builtins.bool]]):
         pulumi.set(self, "disable_nfs_disk_monitoring", value)
 
     @_builtins.property
     @pulumi.getter
-    def exclusions(self) -> Optional[pulumi.Input['DiskOptionsExclusionsArgs']]:
+    def exclusions(self) -> pulumi.Input[Optional['DiskOptionsExclusionsArgs']]:
         """
         OneAgent automatically detects and monitors all your mount points, however you can create exception rules to remove disks from the monitoring list.
         """
         return pulumi.get(self, "exclusions")
 
     @exclusions.setter
-    def exclusions(self, value: Optional[pulumi.Input['DiskOptionsExclusionsArgs']]):
+    def exclusions(self, value: pulumi.Input[Optional['DiskOptionsExclusionsArgs']]):
         pulumi.set(self, "exclusions", value)
 
     @_builtins.property
     @pulumi.getter(name="monitorTmpfs")
-    def monitor_tmpfs(self) -> Optional[pulumi.Input[_builtins.bool]]:
+    def monitor_tmpfs(self) -> pulumi.Input[Optional[_builtins.bool]]:
         """
         Activate tmpfs monitoring on Linux systems
         """
         return pulumi.get(self, "monitor_tmpfs")
 
     @monitor_tmpfs.setter
-    def monitor_tmpfs(self, value: Optional[pulumi.Input[_builtins.bool]]):
+    def monitor_tmpfs(self, value: pulumi.Input[Optional[_builtins.bool]]):
         pulumi.set(self, "monitor_tmpfs", value)
 
     @_builtins.property
     @pulumi.getter(name="nfsShowAll")
-    def nfs_show_all(self) -> Optional[pulumi.Input[_builtins.bool]]:
+    def nfs_show_all(self) -> pulumi.Input[Optional[_builtins.bool]]:
         """
         When disabled OneAgent will try to deduplicate some of nfs mount points. Disabled by default, applies only to Linux hosts.
         """
         return pulumi.get(self, "nfs_show_all")
 
     @nfs_show_all.setter
-    def nfs_show_all(self, value: Optional[pulumi.Input[_builtins.bool]]):
+    def nfs_show_all(self, value: pulumi.Input[Optional[_builtins.bool]]):
         pulumi.set(self, "nfs_show_all", value)
 
     @_builtins.property
     @pulumi.getter
-    def scope(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def scope(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The scope of this setting (HOST, HOST_GROUP). Omit this property if you want to cover the whole environment.
         """
         return pulumi.get(self, "scope")
 
     @scope.setter
-    def scope(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def scope(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "scope", value)
 
 
 @pulumi.input_type
 class _DiskOptionsState:
     def __init__(__self__, *,
-                 disable_nfs_disk_monitoring: Optional[pulumi.Input[_builtins.bool]] = None,
-                 exclusions: Optional[pulumi.Input['DiskOptionsExclusionsArgs']] = None,
-                 monitor_tmpfs: Optional[pulumi.Input[_builtins.bool]] = None,
-                 nfs_show_all: Optional[pulumi.Input[_builtins.bool]] = None,
-                 scope: Optional[pulumi.Input[_builtins.str]] = None):
+                 disable_nfs_disk_monitoring: pulumi.Input[Optional[_builtins.bool]] = None,
+                 exclusions: pulumi.Input[Optional['DiskOptionsExclusionsArgs']] = None,
+                 monitor_tmpfs: pulumi.Input[Optional[_builtins.bool]] = None,
+                 nfs_show_all: pulumi.Input[Optional[_builtins.bool]] = None,
+                 scope: pulumi.Input[Optional[_builtins.str]] = None):
         """
         Input properties used for looking up and filtering DiskOptions resources.
 
@@ -137,62 +137,62 @@ class _DiskOptionsState:
 
     @_builtins.property
     @pulumi.getter(name="disableNfsDiskMonitoring")
-    def disable_nfs_disk_monitoring(self) -> Optional[pulumi.Input[_builtins.bool]]:
+    def disable_nfs_disk_monitoring(self) -> pulumi.Input[Optional[_builtins.bool]]:
         """
         Deactivate NFS monitoring on all supported systems
         """
         return pulumi.get(self, "disable_nfs_disk_monitoring")
 
     @disable_nfs_disk_monitoring.setter
-    def disable_nfs_disk_monitoring(self, value: Optional[pulumi.Input[_builtins.bool]]):
+    def disable_nfs_disk_monitoring(self, value: pulumi.Input[Optional[_builtins.bool]]):
         pulumi.set(self, "disable_nfs_disk_monitoring", value)
 
     @_builtins.property
     @pulumi.getter
-    def exclusions(self) -> Optional[pulumi.Input['DiskOptionsExclusionsArgs']]:
+    def exclusions(self) -> pulumi.Input[Optional['DiskOptionsExclusionsArgs']]:
         """
         OneAgent automatically detects and monitors all your mount points, however you can create exception rules to remove disks from the monitoring list.
         """
         return pulumi.get(self, "exclusions")
 
     @exclusions.setter
-    def exclusions(self, value: Optional[pulumi.Input['DiskOptionsExclusionsArgs']]):
+    def exclusions(self, value: pulumi.Input[Optional['DiskOptionsExclusionsArgs']]):
         pulumi.set(self, "exclusions", value)
 
     @_builtins.property
     @pulumi.getter(name="monitorTmpfs")
-    def monitor_tmpfs(self) -> Optional[pulumi.Input[_builtins.bool]]:
+    def monitor_tmpfs(self) -> pulumi.Input[Optional[_builtins.bool]]:
         """
         Activate tmpfs monitoring on Linux systems
         """
         return pulumi.get(self, "monitor_tmpfs")
 
     @monitor_tmpfs.setter
-    def monitor_tmpfs(self, value: Optional[pulumi.Input[_builtins.bool]]):
+    def monitor_tmpfs(self, value: pulumi.Input[Optional[_builtins.bool]]):
         pulumi.set(self, "monitor_tmpfs", value)
 
     @_builtins.property
     @pulumi.getter(name="nfsShowAll")
-    def nfs_show_all(self) -> Optional[pulumi.Input[_builtins.bool]]:
+    def nfs_show_all(self) -> pulumi.Input[Optional[_builtins.bool]]:
         """
         When disabled OneAgent will try to deduplicate some of nfs mount points. Disabled by default, applies only to Linux hosts.
         """
         return pulumi.get(self, "nfs_show_all")
 
     @nfs_show_all.setter
-    def nfs_show_all(self, value: Optional[pulumi.Input[_builtins.bool]]):
+    def nfs_show_all(self, value: pulumi.Input[Optional[_builtins.bool]]):
         pulumi.set(self, "nfs_show_all", value)
 
     @_builtins.property
     @pulumi.getter
-    def scope(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def scope(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The scope of this setting (HOST, HOST_GROUP). Omit this property if you want to cover the whole environment.
         """
         return pulumi.get(self, "scope")
 
     @scope.setter
-    def scope(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def scope(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "scope", value)
 
 
@@ -202,11 +202,11 @@ class DiskOptions(pulumi.CustomResource):
     def __init__(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 disable_nfs_disk_monitoring: Optional[pulumi.Input[_builtins.bool]] = None,
-                 exclusions: Optional[pulumi.Input[Union['DiskOptionsExclusionsArgs', 'DiskOptionsExclusionsArgsDict']]] = None,
-                 monitor_tmpfs: Optional[pulumi.Input[_builtins.bool]] = None,
-                 nfs_show_all: Optional[pulumi.Input[_builtins.bool]] = None,
-                 scope: Optional[pulumi.Input[_builtins.str]] = None,
+                 disable_nfs_disk_monitoring: pulumi.Input[Optional[_builtins.bool]] = None,
+                 exclusions: pulumi.Input[Optional[Union['DiskOptionsExclusionsArgs', 'DiskOptionsExclusionsArgsDict']]] = None,
+                 monitor_tmpfs: pulumi.Input[Optional[_builtins.bool]] = None,
+                 nfs_show_all: pulumi.Input[Optional[_builtins.bool]] = None,
+                 scope: pulumi.Input[Optional[_builtins.str]] = None,
                  __props__=None):
         """
         > This resource requires the API token scopes **Read settings** (`settings.read`) and **Write settings** (`settings.write`)
@@ -269,11 +269,11 @@ class DiskOptions(pulumi.CustomResource):
     def _internal_init(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 disable_nfs_disk_monitoring: Optional[pulumi.Input[_builtins.bool]] = None,
-                 exclusions: Optional[pulumi.Input[Union['DiskOptionsExclusionsArgs', 'DiskOptionsExclusionsArgsDict']]] = None,
-                 monitor_tmpfs: Optional[pulumi.Input[_builtins.bool]] = None,
-                 nfs_show_all: Optional[pulumi.Input[_builtins.bool]] = None,
-                 scope: Optional[pulumi.Input[_builtins.str]] = None,
+                 disable_nfs_disk_monitoring: pulumi.Input[Optional[_builtins.bool]] = None,
+                 exclusions: pulumi.Input[Optional[Union['DiskOptionsExclusionsArgs', 'DiskOptionsExclusionsArgsDict']]] = None,
+                 monitor_tmpfs: pulumi.Input[Optional[_builtins.bool]] = None,
+                 nfs_show_all: pulumi.Input[Optional[_builtins.bool]] = None,
+                 scope: pulumi.Input[Optional[_builtins.str]] = None,
                  __props__=None):
         opts = pulumi.ResourceOptions.merge(_utilities.get_resource_opts_defaults(), opts)
         if not isinstance(opts, pulumi.ResourceOptions):
@@ -298,11 +298,11 @@ class DiskOptions(pulumi.CustomResource):
     def get(resource_name: str,
             id: pulumi.Input[str],
             opts: Optional[pulumi.ResourceOptions] = None,
-            disable_nfs_disk_monitoring: Optional[pulumi.Input[_builtins.bool]] = None,
-            exclusions: Optional[pulumi.Input[Union['DiskOptionsExclusionsArgs', 'DiskOptionsExclusionsArgsDict']]] = None,
-            monitor_tmpfs: Optional[pulumi.Input[_builtins.bool]] = None,
-            nfs_show_all: Optional[pulumi.Input[_builtins.bool]] = None,
-            scope: Optional[pulumi.Input[_builtins.str]] = None) -> 'DiskOptions':
+            disable_nfs_disk_monitoring: pulumi.Input[Optional[_builtins.bool]] = None,
+            exclusions: pulumi.Input[Optional[Union['DiskOptionsExclusionsArgs', 'DiskOptionsExclusionsArgsDict']]] = None,
+            monitor_tmpfs: pulumi.Input[Optional[_builtins.bool]] = None,
+            nfs_show_all: pulumi.Input[Optional[_builtins.bool]] = None,
+            scope: pulumi.Input[Optional[_builtins.str]] = None) -> 'DiskOptions':
         """
         Get an existing DiskOptions resource's state with the given name, id, and optional extra
         properties used to qualify the lookup.

@@ -23,16 +23,16 @@ class ManagedPreferencesArgs:
                  support_send_billing: pulumi.Input[_builtins.bool],
                  support_send_cluster_health: pulumi.Input[_builtins.bool],
                  suppress_non_billing_relevant_data: pulumi.Input[_builtins.bool],
-                 certificate_management_enabled: Optional[pulumi.Input[_builtins.bool]] = None,
-                 certificate_management_possible: Optional[pulumi.Input[_builtins.bool]] = None,
-                 community_create_user: Optional[pulumi.Input[_builtins.bool]] = None,
-                 community_external_search: Optional[pulumi.Input[_builtins.bool]] = None,
-                 help_chat_enabled: Optional[pulumi.Input[_builtins.bool]] = None,
-                 read_only_remote_access_allowed: Optional[pulumi.Input[_builtins.bool]] = None,
-                 remote_access_on_demand_only: Optional[pulumi.Input[_builtins.bool]] = None,
-                 support_allow_remote_access: Optional[pulumi.Input[_builtins.bool]] = None,
-                 support_send_events: Optional[pulumi.Input[_builtins.bool]] = None,
-                 telemetry_sharing: Optional[pulumi.Input[_builtins.bool]] = None):
+                 certificate_management_enabled: pulumi.Input[Optional[_builtins.bool]] = None,
+                 certificate_management_possible: pulumi.Input[Optional[_builtins.bool]] = None,
+                 community_create_user: pulumi.Input[Optional[_builtins.bool]] = None,
+                 community_external_search: pulumi.Input[Optional[_builtins.bool]] = None,
+                 help_chat_enabled: pulumi.Input[Optional[_builtins.bool]] = None,
+                 read_only_remote_access_allowed: pulumi.Input[Optional[_builtins.bool]] = None,
+                 remote_access_on_demand_only: pulumi.Input[Optional[_builtins.bool]] = None,
+                 support_allow_remote_access: pulumi.Input[Optional[_builtins.bool]] = None,
+                 support_send_events: pulumi.Input[Optional[_builtins.bool]] = None,
+                 telemetry_sharing: pulumi.Input[Optional[_builtins.bool]] = None):
         """
         The set of arguments for constructing a ManagedPreferences resource.
 
@@ -126,142 +126,142 @@ class ManagedPreferencesArgs:
 
     @_builtins.property
     @pulumi.getter(name="certificateManagementEnabled")
-    def certificate_management_enabled(self) -> Optional[pulumi.Input[_builtins.bool]]:
+    def certificate_management_enabled(self) -> pulumi.Input[Optional[_builtins.bool]]:
         """
         Default: `false`
         """
         return pulumi.get(self, "certificate_management_enabled")
 
     @certificate_management_enabled.setter
-    def certificate_management_enabled(self, value: Optional[pulumi.Input[_builtins.bool]]):
+    def certificate_management_enabled(self, value: pulumi.Input[Optional[_builtins.bool]]):
         pulumi.set(self, "certificate_management_enabled", value)
 
     @_builtins.property
     @pulumi.getter(name="certificateManagementPossible")
-    def certificate_management_possible(self) -> Optional[pulumi.Input[_builtins.bool]]:
+    def certificate_management_possible(self) -> pulumi.Input[Optional[_builtins.bool]]:
         """
         Default: `true`
         """
         return pulumi.get(self, "certificate_management_possible")
 
     @certificate_management_possible.setter
-    def certificate_management_possible(self, value: Optional[pulumi.Input[_builtins.bool]]):
+    def certificate_management_possible(self, value: pulumi.Input[Optional[_builtins.bool]]):
         pulumi.set(self, "certificate_management_possible", value)
 
     @_builtins.property
     @pulumi.getter(name="communityCreateUser")
-    def community_create_user(self) -> Optional[pulumi.Input[_builtins.bool]]:
+    def community_create_user(self) -> pulumi.Input[Optional[_builtins.bool]]:
         """
         If true, each new user will get an invitation to set up a Dynatrace user account to access Dynatrace support resources user upon first login. Default: `false`
         """
         return pulumi.get(self, "community_create_user")
 
     @community_create_user.setter
-    def community_create_user(self, value: Optional[pulumi.Input[_builtins.bool]]):
+    def community_create_user(self, value: pulumi.Input[Optional[_builtins.bool]]):
         pulumi.set(self, "community_create_user", value)
 
     @_builtins.property
     @pulumi.getter(name="communityExternalSearch")
-    def community_external_search(self) -> Optional[pulumi.Input[_builtins.bool]]:
+    def community_external_search(self) -> pulumi.Input[Optional[_builtins.bool]]:
         """
         If true, results from Documentation are included in platform search. Default: `false`
         """
         return pulumi.get(self, "community_external_search")
 
     @community_external_search.setter
-    def community_external_search(self, value: Optional[pulumi.Input[_builtins.bool]]):
+    def community_external_search(self, value: pulumi.Input[Optional[_builtins.bool]]):
         pulumi.set(self, "community_external_search", value)
 
     @_builtins.property
     @pulumi.getter(name="helpChatEnabled")
-    def help_chat_enabled(self) -> Optional[pulumi.Input[_builtins.bool]]:
+    def help_chat_enabled(self) -> pulumi.Input[Optional[_builtins.bool]]:
         """
         If true, live, in-product assistance with our Product Experts is enabled. Default: `false`
         """
         return pulumi.get(self, "help_chat_enabled")
 
     @help_chat_enabled.setter
-    def help_chat_enabled(self, value: Optional[pulumi.Input[_builtins.bool]]):
+    def help_chat_enabled(self, value: pulumi.Input[Optional[_builtins.bool]]):
         pulumi.set(self, "help_chat_enabled", value)
 
     @_builtins.property
     @pulumi.getter(name="readOnlyRemoteAccessAllowed")
-    def read_only_remote_access_allowed(self) -> Optional[pulumi.Input[_builtins.bool]]:
+    def read_only_remote_access_allowed(self) -> pulumi.Input[Optional[_builtins.bool]]:
         """
         If true, audited, read-only remote access to your Dynatrace configuration settings is allowed. Default: `false`
         """
         return pulumi.get(self, "read_only_remote_access_allowed")
 
     @read_only_remote_access_allowed.setter
-    def read_only_remote_access_allowed(self, value: Optional[pulumi.Input[_builtins.bool]]):
+    def read_only_remote_access_allowed(self, value: pulumi.Input[Optional[_builtins.bool]]):
         pulumi.set(self, "read_only_remote_access_allowed", value)
 
     @_builtins.property
     @pulumi.getter(name="remoteAccessOnDemandOnly")
-    def remote_access_on_demand_only(self) -> Optional[pulumi.Input[_builtins.bool]]:
+    def remote_access_on_demand_only(self) -> pulumi.Input[Optional[_builtins.bool]]:
         """
         If true, audited access to your Dynatrace cluster is allowed by approved Dynatrace employees otherwise by privileged Dynatrace employees. Default: `false`
         """
         return pulumi.get(self, "remote_access_on_demand_only")
 
     @remote_access_on_demand_only.setter
-    def remote_access_on_demand_only(self, value: Optional[pulumi.Input[_builtins.bool]]):
+    def remote_access_on_demand_only(self, value: pulumi.Input[Optional[_builtins.bool]]):
         pulumi.set(self, "remote_access_on_demand_only", value)
 
     @_builtins.property
     @pulumi.getter(name="supportAllowRemoteAccess")
-    def support_allow_remote_access(self) -> Optional[pulumi.Input[_builtins.bool]]:
+    def support_allow_remote_access(self) -> pulumi.Input[Optional[_builtins.bool]]:
         """
         If true, audited remote-access to your Dynatrace configuration is allowed settings. Default: `true`
         """
         return pulumi.get(self, "support_allow_remote_access")
 
     @support_allow_remote_access.setter
-    def support_allow_remote_access(self, value: Optional[pulumi.Input[_builtins.bool]]):
+    def support_allow_remote_access(self, value: pulumi.Input[Optional[_builtins.bool]]):
         pulumi.set(self, "support_allow_remote_access", value)
 
     @_builtins.property
     @pulumi.getter(name="supportSendEvents")
-    def support_send_events(self) -> Optional[pulumi.Input[_builtins.bool]]:
+    def support_send_events(self) -> pulumi.Input[Optional[_builtins.bool]]:
         """
         If true, Dynatrace cluster health and OneAgent events will be reported. Default: `true`
         """
         return pulumi.get(self, "support_send_events")
 
     @support_send_events.setter
-    def support_send_events(self, value: Optional[pulumi.Input[_builtins.bool]]):
+    def support_send_events(self, value: pulumi.Input[Optional[_builtins.bool]]):
         pulumi.set(self, "support_send_events", value)
 
     @_builtins.property
     @pulumi.getter(name="telemetrySharing")
-    def telemetry_sharing(self) -> Optional[pulumi.Input[_builtins.bool]]:
+    def telemetry_sharing(self) -> pulumi.Input[Optional[_builtins.bool]]:
         """
         Default: `false`
         """
         return pulumi.get(self, "telemetry_sharing")
 
     @telemetry_sharing.setter
-    def telemetry_sharing(self, value: Optional[pulumi.Input[_builtins.bool]]):
+    def telemetry_sharing(self, value: pulumi.Input[Optional[_builtins.bool]]):
         pulumi.set(self, "telemetry_sharing", value)
 
 
 @pulumi.input_type
 class _ManagedPreferencesState:
     def __init__(__self__, *,
-                 certificate_management_enabled: Optional[pulumi.Input[_builtins.bool]] = None,
-                 certificate_management_possible: Optional[pulumi.Input[_builtins.bool]] = None,
-                 community_create_user: Optional[pulumi.Input[_builtins.bool]] = None,
-                 community_external_search: Optional[pulumi.Input[_builtins.bool]] = None,
-                 help_chat_enabled: Optional[pulumi.Input[_builtins.bool]] = None,
-                 read_only_remote_access_allowed: Optional[pulumi.Input[_builtins.bool]] = None,
-                 remote_access_on_demand_only: Optional[pulumi.Input[_builtins.bool]] = None,
-                 ruxit_monitors_ruxit: Optional[pulumi.Input[_builtins.bool]] = None,
-                 support_allow_remote_access: Optional[pulumi.Input[_builtins.bool]] = None,
-                 support_send_billing: Optional[pulumi.Input[_builtins.bool]] = None,
-                 support_send_cluster_health: Optional[pulumi.Input[_builtins.bool]] = None,
-                 support_send_events: Optional[pulumi.Input[_builtins.bool]] = None,
-                 suppress_non_billing_relevant_data: Optional[pulumi.Input[_builtins.bool]] = None,
-                 telemetry_sharing: Optional[pulumi.Input[_builtins.bool]] = None):
+                 certificate_management_enabled: pulumi.Input[Optional[_builtins.bool]] = None,
+                 certificate_management_possible: pulumi.Input[Optional[_builtins.bool]] = None,
+                 community_create_user: pulumi.Input[Optional[_builtins.bool]] = None,
+                 community_external_search: pulumi.Input[Optional[_builtins.bool]] = None,
+                 help_chat_enabled: pulumi.Input[Optional[_builtins.bool]] = None,
+                 read_only_remote_access_allowed: pulumi.Input[Optional[_builtins.bool]] = None,
+                 remote_access_on_demand_only: pulumi.Input[Optional[_builtins.bool]] = None,
+                 ruxit_monitors_ruxit: pulumi.Input[Optional[_builtins.bool]] = None,
+                 support_allow_remote_access: pulumi.Input[Optional[_builtins.bool]] = None,
+                 support_send_billing: pulumi.Input[Optional[_builtins.bool]] = None,
+                 support_send_cluster_health: pulumi.Input[Optional[_builtins.bool]] = None,
+                 support_send_events: pulumi.Input[Optional[_builtins.bool]] = None,
+                 suppress_non_billing_relevant_data: pulumi.Input[Optional[_builtins.bool]] = None,
+                 telemetry_sharing: pulumi.Input[Optional[_builtins.bool]] = None):
         """
         Input properties used for looking up and filtering ManagedPreferences resources.
 
@@ -311,170 +311,170 @@ class _ManagedPreferencesState:
 
     @_builtins.property
     @pulumi.getter(name="certificateManagementEnabled")
-    def certificate_management_enabled(self) -> Optional[pulumi.Input[_builtins.bool]]:
+    def certificate_management_enabled(self) -> pulumi.Input[Optional[_builtins.bool]]:
         """
         Default: `false`
         """
         return pulumi.get(self, "certificate_management_enabled")
 
     @certificate_management_enabled.setter
-    def certificate_management_enabled(self, value: Optional[pulumi.Input[_builtins.bool]]):
+    def certificate_management_enabled(self, value: pulumi.Input[Optional[_builtins.bool]]):
         pulumi.set(self, "certificate_management_enabled", value)
 
     @_builtins.property
     @pulumi.getter(name="certificateManagementPossible")
-    def certificate_management_possible(self) -> Optional[pulumi.Input[_builtins.bool]]:
+    def certificate_management_possible(self) -> pulumi.Input[Optional[_builtins.bool]]:
         """
         Default: `true`
         """
         return pulumi.get(self, "certificate_management_possible")
 
     @certificate_management_possible.setter
-    def certificate_management_possible(self, value: Optional[pulumi.Input[_builtins.bool]]):
+    def certificate_management_possible(self, value: pulumi.Input[Optional[_builtins.bool]]):
         pulumi.set(self, "certificate_management_possible", value)
 
     @_builtins.property
     @pulumi.getter(name="communityCreateUser")
-    def community_create_user(self) -> Optional[pulumi.Input[_builtins.bool]]:
+    def community_create_user(self) -> pulumi.Input[Optional[_builtins.bool]]:
         """
         If true, each new user will get an invitation to set up a Dynatrace user account to access Dynatrace support resources user upon first login. Default: `false`
         """
         return pulumi.get(self, "community_create_user")
 
     @community_create_user.setter
-    def community_create_user(self, value: Optional[pulumi.Input[_builtins.bool]]):
+    def community_create_user(self, value: pulumi.Input[Optional[_builtins.bool]]):
         pulumi.set(self, "community_create_user", value)
 
     @_builtins.property
     @pulumi.getter(name="communityExternalSearch")
-    def community_external_search(self) -> Optional[pulumi.Input[_builtins.bool]]:
+    def community_external_search(self) -> pulumi.Input[Optional[_builtins.bool]]:
         """
         If true, results from Documentation are included in platform search. Default: `false`
         """
         return pulumi.get(self, "community_external_search")
 
     @community_external_search.setter
-    def community_external_search(self, value: Optional[pulumi.Input[_builtins.bool]]):
+    def community_external_search(self, value: pulumi.Input[Optional[_builtins.bool]]):
         pulumi.set(self, "community_external_search", value)
 
     @_builtins.property
     @pulumi.getter(name="helpChatEnabled")
-    def help_chat_enabled(self) -> Optional[pulumi.Input[_builtins.bool]]:
+    def help_chat_enabled(self) -> pulumi.Input[Optional[_builtins.bool]]:
         """
         If true, live, in-product assistance with our Product Experts is enabled. Default: `false`
         """
         return pulumi.get(self, "help_chat_enabled")
 
     @help_chat_enabled.setter
-    def help_chat_enabled(self, value: Optional[pulumi.Input[_builtins.bool]]):
+    def help_chat_enabled(self, value: pulumi.Input[Optional[_builtins.bool]]):
         pulumi.set(self, "help_chat_enabled", value)
 
     @_builtins.property
     @pulumi.getter(name="readOnlyRemoteAccessAllowed")
-    def read_only_remote_access_allowed(self) -> Optional[pulumi.Input[_builtins.bool]]:
+    def read_only_remote_access_allowed(self) -> pulumi.Input[Optional[_builtins.bool]]:
         """
         If true, audited, read-only remote access to your Dynatrace configuration settings is allowed. Default: `false`
         """
         return pulumi.get(self, "read_only_remote_access_allowed")
 
     @read_only_remote_access_allowed.setter
-    def read_only_remote_access_allowed(self, value: Optional[pulumi.Input[_builtins.bool]]):
+    def read_only_remote_access_allowed(self, value: pulumi.Input[Optional[_builtins.bool]]):
         pulumi.set(self, "read_only_remote_access_allowed", value)
 
     @_builtins.property
     @pulumi.getter(name="remoteAccessOnDemandOnly")
-    def remote_access_on_demand_only(self) -> Optional[pulumi.Input[_builtins.bool]]:
+    def remote_access_on_demand_only(self) -> pulumi.Input[Optional[_builtins.bool]]:
         """
         If true, audited access to your Dynatrace cluster is allowed by approved Dynatrace employees otherwise by privileged Dynatrace employees. Default: `false`
         """
         return pulumi.get(self, "remote_access_on_demand_only")
 
     @remote_access_on_demand_only.setter
-    def remote_access_on_demand_only(self, value: Optional[pulumi.Input[_builtins.bool]]):
+    def remote_access_on_demand_only(self, value: pulumi.Input[Optional[_builtins.bool]]):
         pulumi.set(self, "remote_access_on_demand_only", value)
 
     @_builtins.property
     @pulumi.getter(name="ruxitMonitorsRuxit")
-    def ruxit_monitors_ruxit(self) -> Optional[pulumi.Input[_builtins.bool]]:
+    def ruxit_monitors_ruxit(self) -> pulumi.Input[Optional[_builtins.bool]]:
         """
         If true, Dynatrace OneAgent monitors Dynatrace. Default: `true`
         """
         return pulumi.get(self, "ruxit_monitors_ruxit")
 
     @ruxit_monitors_ruxit.setter
-    def ruxit_monitors_ruxit(self, value: Optional[pulumi.Input[_builtins.bool]]):
+    def ruxit_monitors_ruxit(self, value: pulumi.Input[Optional[_builtins.bool]]):
         pulumi.set(self, "ruxit_monitors_ruxit", value)
 
     @_builtins.property
     @pulumi.getter(name="supportAllowRemoteAccess")
-    def support_allow_remote_access(self) -> Optional[pulumi.Input[_builtins.bool]]:
+    def support_allow_remote_access(self) -> pulumi.Input[Optional[_builtins.bool]]:
         """
         If true, audited remote-access to your Dynatrace configuration is allowed settings. Default: `true`
         """
         return pulumi.get(self, "support_allow_remote_access")
 
     @support_allow_remote_access.setter
-    def support_allow_remote_access(self, value: Optional[pulumi.Input[_builtins.bool]]):
+    def support_allow_remote_access(self, value: pulumi.Input[Optional[_builtins.bool]]):
         pulumi.set(self, "support_allow_remote_access", value)
 
     @_builtins.property
     @pulumi.getter(name="supportSendBilling")
-    def support_send_billing(self) -> Optional[pulumi.Input[_builtins.bool]]:
+    def support_send_billing(self) -> pulumi.Input[Optional[_builtins.bool]]:
         """
         If true, usage and billing information will be reported.
         """
         return pulumi.get(self, "support_send_billing")
 
     @support_send_billing.setter
-    def support_send_billing(self, value: Optional[pulumi.Input[_builtins.bool]]):
+    def support_send_billing(self, value: pulumi.Input[Optional[_builtins.bool]]):
         pulumi.set(self, "support_send_billing", value)
 
     @_builtins.property
     @pulumi.getter(name="supportSendClusterHealth")
-    def support_send_cluster_health(self) -> Optional[pulumi.Input[_builtins.bool]]:
+    def support_send_cluster_health(self) -> pulumi.Input[Optional[_builtins.bool]]:
         """
         If true, Dynatrace cluster health will be reported.
         """
         return pulumi.get(self, "support_send_cluster_health")
 
     @support_send_cluster_health.setter
-    def support_send_cluster_health(self, value: Optional[pulumi.Input[_builtins.bool]]):
+    def support_send_cluster_health(self, value: pulumi.Input[Optional[_builtins.bool]]):
         pulumi.set(self, "support_send_cluster_health", value)
 
     @_builtins.property
     @pulumi.getter(name="supportSendEvents")
-    def support_send_events(self) -> Optional[pulumi.Input[_builtins.bool]]:
+    def support_send_events(self) -> pulumi.Input[Optional[_builtins.bool]]:
         """
         If true, Dynatrace cluster health and OneAgent events will be reported. Default: `true`
         """
         return pulumi.get(self, "support_send_events")
 
     @support_send_events.setter
-    def support_send_events(self, value: Optional[pulumi.Input[_builtins.bool]]):
+    def support_send_events(self, value: pulumi.Input[Optional[_builtins.bool]]):
         pulumi.set(self, "support_send_events", value)
 
     @_builtins.property
     @pulumi.getter(name="suppressNonBillingRelevantData")
-    def suppress_non_billing_relevant_data(self) -> Optional[pulumi.Input[_builtins.bool]]:
+    def suppress_non_billing_relevant_data(self) -> pulumi.Input[Optional[_builtins.bool]]:
         """
         If true, usage and billing information will NOT be reported.
         """
         return pulumi.get(self, "suppress_non_billing_relevant_data")
 
     @suppress_non_billing_relevant_data.setter
-    def suppress_non_billing_relevant_data(self, value: Optional[pulumi.Input[_builtins.bool]]):
+    def suppress_non_billing_relevant_data(self, value: pulumi.Input[Optional[_builtins.bool]]):
         pulumi.set(self, "suppress_non_billing_relevant_data", value)
 
     @_builtins.property
     @pulumi.getter(name="telemetrySharing")
-    def telemetry_sharing(self) -> Optional[pulumi.Input[_builtins.bool]]:
+    def telemetry_sharing(self) -> pulumi.Input[Optional[_builtins.bool]]:
         """
         Default: `false`
         """
         return pulumi.get(self, "telemetry_sharing")
 
     @telemetry_sharing.setter
-    def telemetry_sharing(self, value: Optional[pulumi.Input[_builtins.bool]]):
+    def telemetry_sharing(self, value: pulumi.Input[Optional[_builtins.bool]]):
         pulumi.set(self, "telemetry_sharing", value)
 
 
@@ -484,20 +484,20 @@ class ManagedPreferences(pulumi.CustomResource):
     def __init__(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 certificate_management_enabled: Optional[pulumi.Input[_builtins.bool]] = None,
-                 certificate_management_possible: Optional[pulumi.Input[_builtins.bool]] = None,
-                 community_create_user: Optional[pulumi.Input[_builtins.bool]] = None,
-                 community_external_search: Optional[pulumi.Input[_builtins.bool]] = None,
-                 help_chat_enabled: Optional[pulumi.Input[_builtins.bool]] = None,
-                 read_only_remote_access_allowed: Optional[pulumi.Input[_builtins.bool]] = None,
-                 remote_access_on_demand_only: Optional[pulumi.Input[_builtins.bool]] = None,
-                 ruxit_monitors_ruxit: Optional[pulumi.Input[_builtins.bool]] = None,
-                 support_allow_remote_access: Optional[pulumi.Input[_builtins.bool]] = None,
-                 support_send_billing: Optional[pulumi.Input[_builtins.bool]] = None,
-                 support_send_cluster_health: Optional[pulumi.Input[_builtins.bool]] = None,
-                 support_send_events: Optional[pulumi.Input[_builtins.bool]] = None,
-                 suppress_non_billing_relevant_data: Optional[pulumi.Input[_builtins.bool]] = None,
-                 telemetry_sharing: Optional[pulumi.Input[_builtins.bool]] = None,
+                 certificate_management_enabled: pulumi.Input[Optional[_builtins.bool]] = None,
+                 certificate_management_possible: pulumi.Input[Optional[_builtins.bool]] = None,
+                 community_create_user: pulumi.Input[Optional[_builtins.bool]] = None,
+                 community_external_search: pulumi.Input[Optional[_builtins.bool]] = None,
+                 help_chat_enabled: pulumi.Input[Optional[_builtins.bool]] = None,
+                 read_only_remote_access_allowed: pulumi.Input[Optional[_builtins.bool]] = None,
+                 remote_access_on_demand_only: pulumi.Input[Optional[_builtins.bool]] = None,
+                 ruxit_monitors_ruxit: pulumi.Input[Optional[_builtins.bool]] = None,
+                 support_allow_remote_access: pulumi.Input[Optional[_builtins.bool]] = None,
+                 support_send_billing: pulumi.Input[Optional[_builtins.bool]] = None,
+                 support_send_cluster_health: pulumi.Input[Optional[_builtins.bool]] = None,
+                 support_send_events: pulumi.Input[Optional[_builtins.bool]] = None,
+                 suppress_non_billing_relevant_data: pulumi.Input[Optional[_builtins.bool]] = None,
+                 telemetry_sharing: pulumi.Input[Optional[_builtins.bool]] = None,
                  __props__=None):
         """
         !> **HTTP DELETE method not available** Terraform will no longer manage this resource on `destroy` but the configuration will still be present on the Dynatrace cluster.
@@ -561,20 +561,20 @@ class ManagedPreferences(pulumi.CustomResource):
     def _internal_init(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 certificate_management_enabled: Optional[pulumi.Input[_builtins.bool]] = None,
-                 certificate_management_possible: Optional[pulumi.Input[_builtins.bool]] = None,
-                 community_create_user: Optional[pulumi.Input[_builtins.bool]] = None,
-                 community_external_search: Optional[pulumi.Input[_builtins.bool]] = None,
-                 help_chat_enabled: Optional[pulumi.Input[_builtins.bool]] = None,
-                 read_only_remote_access_allowed: Optional[pulumi.Input[_builtins.bool]] = None,
-                 remote_access_on_demand_only: Optional[pulumi.Input[_builtins.bool]] = None,
-                 ruxit_monitors_ruxit: Optional[pulumi.Input[_builtins.bool]] = None,
-                 support_allow_remote_access: Optional[pulumi.Input[_builtins.bool]] = None,
-                 support_send_billing: Optional[pulumi.Input[_builtins.bool]] = None,
-                 support_send_cluster_health: Optional[pulumi.Input[_builtins.bool]] = None,
-                 support_send_events: Optional[pulumi.Input[_builtins.bool]] = None,
-                 suppress_non_billing_relevant_data: Optional[pulumi.Input[_builtins.bool]] = None,
-                 telemetry_sharing: Optional[pulumi.Input[_builtins.bool]] = None,
+                 certificate_management_enabled: pulumi.Input[Optional[_builtins.bool]] = None,
+                 certificate_management_possible: pulumi.Input[Optional[_builtins.bool]] = None,
+                 community_create_user: pulumi.Input[Optional[_builtins.bool]] = None,
+                 community_external_search: pulumi.Input[Optional[_builtins.bool]] = None,
+                 help_chat_enabled: pulumi.Input[Optional[_builtins.bool]] = None,
+                 read_only_remote_access_allowed: pulumi.Input[Optional[_builtins.bool]] = None,
+                 remote_access_on_demand_only: pulumi.Input[Optional[_builtins.bool]] = None,
+                 ruxit_monitors_ruxit: pulumi.Input[Optional[_builtins.bool]] = None,
+                 support_allow_remote_access: pulumi.Input[Optional[_builtins.bool]] = None,
+                 support_send_billing: pulumi.Input[Optional[_builtins.bool]] = None,
+                 support_send_cluster_health: pulumi.Input[Optional[_builtins.bool]] = None,
+                 support_send_events: pulumi.Input[Optional[_builtins.bool]] = None,
+                 suppress_non_billing_relevant_data: pulumi.Input[Optional[_builtins.bool]] = None,
+                 telemetry_sharing: pulumi.Input[Optional[_builtins.bool]] = None,
                  __props__=None):
         opts = pulumi.ResourceOptions.merge(_utilities.get_resource_opts_defaults(), opts)
         if not isinstance(opts, pulumi.ResourceOptions):
@@ -616,20 +616,20 @@ class ManagedPreferences(pulumi.CustomResource):
     def get(resource_name: str,
             id: pulumi.Input[str],
             opts: Optional[pulumi.ResourceOptions] = None,
-            certificate_management_enabled: Optional[pulumi.Input[_builtins.bool]] = None,
-            certificate_management_possible: Optional[pulumi.Input[_builtins.bool]] = None,
-            community_create_user: Optional[pulumi.Input[_builtins.bool]] = None,
-            community_external_search: Optional[pulumi.Input[_builtins.bool]] = None,
-            help_chat_enabled: Optional[pulumi.Input[_builtins.bool]] = None,
-            read_only_remote_access_allowed: Optional[pulumi.Input[_builtins.bool]] = None,
-            remote_access_on_demand_only: Optional[pulumi.Input[_builtins.bool]] = None,
-            ruxit_monitors_ruxit: Optional[pulumi.Input[_builtins.bool]] = None,
-            support_allow_remote_access: Optional[pulumi.Input[_builtins.bool]] = None,
-            support_send_billing: Optional[pulumi.Input[_builtins.bool]] = None,
-            support_send_cluster_health: Optional[pulumi.Input[_builtins.bool]] = None,
-            support_send_events: Optional[pulumi.Input[_builtins.bool]] = None,
-            suppress_non_billing_relevant_data: Optional[pulumi.Input[_builtins.bool]] = None,
-            telemetry_sharing: Optional[pulumi.Input[_builtins.bool]] = None) -> 'ManagedPreferences':
+            certificate_management_enabled: pulumi.Input[Optional[_builtins.bool]] = None,
+            certificate_management_possible: pulumi.Input[Optional[_builtins.bool]] = None,
+            community_create_user: pulumi.Input[Optional[_builtins.bool]] = None,
+            community_external_search: pulumi.Input[Optional[_builtins.bool]] = None,
+            help_chat_enabled: pulumi.Input[Optional[_builtins.bool]] = None,
+            read_only_remote_access_allowed: pulumi.Input[Optional[_builtins.bool]] = None,
+            remote_access_on_demand_only: pulumi.Input[Optional[_builtins.bool]] = None,
+            ruxit_monitors_ruxit: pulumi.Input[Optional[_builtins.bool]] = None,
+            support_allow_remote_access: pulumi.Input[Optional[_builtins.bool]] = None,
+            support_send_billing: pulumi.Input[Optional[_builtins.bool]] = None,
+            support_send_cluster_health: pulumi.Input[Optional[_builtins.bool]] = None,
+            support_send_events: pulumi.Input[Optional[_builtins.bool]] = None,
+            suppress_non_billing_relevant_data: pulumi.Input[Optional[_builtins.bool]] = None,
+            telemetry_sharing: pulumi.Input[Optional[_builtins.bool]] = None) -> 'ManagedPreferences':
         """
         Get an existing ManagedPreferences resource's state with the given name, id, and optional extra
         properties used to qualify the lookup.

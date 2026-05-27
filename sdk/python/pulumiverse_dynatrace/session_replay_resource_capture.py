@@ -20,8 +20,8 @@ __all__ = ['SessionReplayResourceCaptureArgs', 'SessionReplayResourceCapture']
 class SessionReplayResourceCaptureArgs:
     def __init__(__self__, *,
                  enable_resource_capturing: pulumi.Input[_builtins.bool],
-                 application_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 resource_capture_url_exclusion_pattern_lists: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None):
+                 application_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 resource_capture_url_exclusion_pattern_lists: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None):
         """
         The set of arguments for constructing a SessionReplayResourceCapture resource.
 
@@ -49,35 +49,35 @@ class SessionReplayResourceCaptureArgs:
 
     @_builtins.property
     @pulumi.getter(name="applicationId")
-    def application_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def application_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The scope of this settings. If the settings should cover the whole environment, just don't specify any scope.
         """
         return pulumi.get(self, "application_id")
 
     @application_id.setter
-    def application_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def application_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "application_id", value)
 
     @_builtins.property
     @pulumi.getter(name="resourceCaptureUrlExclusionPatternLists")
-    def resource_capture_url_exclusion_pattern_lists(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]:
+    def resource_capture_url_exclusion_pattern_lists(self) -> pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]:
         """
         (Field has overlap with `WebApplication`) Add exclusion rules to avoid the capture of resources from certain pages.
         """
         return pulumi.get(self, "resource_capture_url_exclusion_pattern_lists")
 
     @resource_capture_url_exclusion_pattern_lists.setter
-    def resource_capture_url_exclusion_pattern_lists(self, value: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]):
+    def resource_capture_url_exclusion_pattern_lists(self, value: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "resource_capture_url_exclusion_pattern_lists", value)
 
 
 @pulumi.input_type
 class _SessionReplayResourceCaptureState:
     def __init__(__self__, *,
-                 application_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 enable_resource_capturing: Optional[pulumi.Input[_builtins.bool]] = None,
-                 resource_capture_url_exclusion_pattern_lists: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None):
+                 application_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 enable_resource_capturing: pulumi.Input[Optional[_builtins.bool]] = None,
+                 resource_capture_url_exclusion_pattern_lists: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None):
         """
         Input properties used for looking up and filtering SessionReplayResourceCapture resources.
 
@@ -94,38 +94,38 @@ class _SessionReplayResourceCaptureState:
 
     @_builtins.property
     @pulumi.getter(name="applicationId")
-    def application_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def application_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The scope of this settings. If the settings should cover the whole environment, just don't specify any scope.
         """
         return pulumi.get(self, "application_id")
 
     @application_id.setter
-    def application_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def application_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "application_id", value)
 
     @_builtins.property
     @pulumi.getter(name="enableResourceCapturing")
-    def enable_resource_capturing(self) -> Optional[pulumi.Input[_builtins.bool]]:
+    def enable_resource_capturing(self) -> pulumi.Input[Optional[_builtins.bool]]:
         """
         (Field has overlap with `WebApplication`) When turned on, Dynatrace captures resources for up to 0.1% of user sessions recorded with Session Replay. For details, see [Resource capture](https://dt-url.net/sr-resource-capturing).
         """
         return pulumi.get(self, "enable_resource_capturing")
 
     @enable_resource_capturing.setter
-    def enable_resource_capturing(self, value: Optional[pulumi.Input[_builtins.bool]]):
+    def enable_resource_capturing(self, value: pulumi.Input[Optional[_builtins.bool]]):
         pulumi.set(self, "enable_resource_capturing", value)
 
     @_builtins.property
     @pulumi.getter(name="resourceCaptureUrlExclusionPatternLists")
-    def resource_capture_url_exclusion_pattern_lists(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]:
+    def resource_capture_url_exclusion_pattern_lists(self) -> pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]:
         """
         (Field has overlap with `WebApplication`) Add exclusion rules to avoid the capture of resources from certain pages.
         """
         return pulumi.get(self, "resource_capture_url_exclusion_pattern_lists")
 
     @resource_capture_url_exclusion_pattern_lists.setter
-    def resource_capture_url_exclusion_pattern_lists(self, value: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]):
+    def resource_capture_url_exclusion_pattern_lists(self, value: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "resource_capture_url_exclusion_pattern_lists", value)
 
 
@@ -135,9 +135,9 @@ class SessionReplayResourceCapture(pulumi.CustomResource):
     def __init__(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 application_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 enable_resource_capturing: Optional[pulumi.Input[_builtins.bool]] = None,
-                 resource_capture_url_exclusion_pattern_lists: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 application_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 enable_resource_capturing: pulumi.Input[Optional[_builtins.bool]] = None,
+                 resource_capture_url_exclusion_pattern_lists: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
                  __props__=None):
         """
         > Configuration of the application scope overlaps with dynatrace_web_application, but this resource in addition provides an option for an environment scope.
@@ -202,9 +202,9 @@ class SessionReplayResourceCapture(pulumi.CustomResource):
     def _internal_init(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 application_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 enable_resource_capturing: Optional[pulumi.Input[_builtins.bool]] = None,
-                 resource_capture_url_exclusion_pattern_lists: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 application_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 enable_resource_capturing: pulumi.Input[Optional[_builtins.bool]] = None,
+                 resource_capture_url_exclusion_pattern_lists: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
                  __props__=None):
         opts = pulumi.ResourceOptions.merge(_utilities.get_resource_opts_defaults(), opts)
         if not isinstance(opts, pulumi.ResourceOptions):
@@ -229,9 +229,9 @@ class SessionReplayResourceCapture(pulumi.CustomResource):
     def get(resource_name: str,
             id: pulumi.Input[str],
             opts: Optional[pulumi.ResourceOptions] = None,
-            application_id: Optional[pulumi.Input[_builtins.str]] = None,
-            enable_resource_capturing: Optional[pulumi.Input[_builtins.bool]] = None,
-            resource_capture_url_exclusion_pattern_lists: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None) -> 'SessionReplayResourceCapture':
+            application_id: pulumi.Input[Optional[_builtins.str]] = None,
+            enable_resource_capturing: pulumi.Input[Optional[_builtins.bool]] = None,
+            resource_capture_url_exclusion_pattern_lists: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None) -> 'SessionReplayResourceCapture':
         """
         Get an existing SessionReplayResourceCapture resource's state with the given name, id, and optional extra
         properties used to qualify the lookup.

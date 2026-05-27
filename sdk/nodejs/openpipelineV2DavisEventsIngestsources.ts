@@ -256,39 +256,39 @@ export interface OpenpipelineV2DavisEventsIngestsourcesState {
     /**
      * Default Bucket
      */
-    defaultBucket?: pulumi.Input<string>;
+    defaultBucket?: pulumi.Input<string | undefined>;
     /**
      * Endpoint display name
      */
-    displayName?: pulumi.Input<string>;
+    displayName?: pulumi.Input<string | undefined>;
     /**
      * This setting is enabled (`true`) or disabled (`false`)
      */
-    enabled?: pulumi.Input<boolean>;
+    enabled?: pulumi.Input<boolean | undefined>;
     /**
      * Ingest source metadata list
      */
-    metadataList?: pulumi.Input<inputs.OpenpipelineV2DavisEventsIngestsourcesMetadataList>;
+    metadataList?: pulumi.Input<inputs.OpenpipelineV2DavisEventsIngestsourcesMetadataList | undefined>;
     /**
      * Endpoint segment
      */
-    pathSegment?: pulumi.Input<string>;
+    pathSegment?: pulumi.Input<string | undefined>;
     /**
      * Processing stage
      */
-    processing?: pulumi.Input<inputs.OpenpipelineV2DavisEventsIngestsourcesProcessing>;
+    processing?: pulumi.Input<inputs.OpenpipelineV2DavisEventsIngestsourcesProcessing | undefined>;
     /**
      * Source
      */
-    source?: pulumi.Input<string>;
+    source?: pulumi.Input<string | undefined>;
     /**
      * Source Type. Possible Values: `extension`, `http`
      */
-    sourceType?: pulumi.Input<string>;
+    sourceType?: pulumi.Input<string | undefined>;
     /**
      * Static routing of endpoint
      */
-    staticRouting?: pulumi.Input<inputs.OpenpipelineV2DavisEventsIngestsourcesStaticRouting>;
+    staticRouting?: pulumi.Input<inputs.OpenpipelineV2DavisEventsIngestsourcesStaticRouting | undefined>;
 }
 
 /**
@@ -298,7 +298,7 @@ export interface OpenpipelineV2DavisEventsIngestsourcesArgs {
     /**
      * Default Bucket
      */
-    defaultBucket?: pulumi.Input<string>;
+    defaultBucket?: pulumi.Input<string | undefined>;
     /**
      * Endpoint display name
      */
@@ -310,25 +310,25 @@ export interface OpenpipelineV2DavisEventsIngestsourcesArgs {
     /**
      * Ingest source metadata list
      */
-    metadataList?: pulumi.Input<inputs.OpenpipelineV2DavisEventsIngestsourcesMetadataList>;
+    metadataList?: pulumi.Input<inputs.OpenpipelineV2DavisEventsIngestsourcesMetadataList | undefined>;
     /**
      * Endpoint segment
      */
-    pathSegment?: pulumi.Input<string>;
+    pathSegment?: pulumi.Input<string | undefined>;
     /**
      * Processing stage
      */
-    processing?: pulumi.Input<inputs.OpenpipelineV2DavisEventsIngestsourcesProcessing>;
+    processing?: pulumi.Input<inputs.OpenpipelineV2DavisEventsIngestsourcesProcessing | undefined>;
     /**
      * Source
      */
-    source?: pulumi.Input<string>;
+    source?: pulumi.Input<string | undefined>;
     /**
      * Source Type. Possible Values: `extension`, `http`
      */
-    sourceType?: pulumi.Input<string>;
+    sourceType?: pulumi.Input<string | undefined>;
     /**
      * Static routing of endpoint
      */
-    staticRouting?: pulumi.Input<inputs.OpenpipelineV2DavisEventsIngestsourcesStaticRouting>;
+    staticRouting?: pulumi.Input<inputs.OpenpipelineV2DavisEventsIngestsourcesStaticRouting | undefined>;
 }

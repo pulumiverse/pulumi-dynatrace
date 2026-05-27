@@ -22,8 +22,8 @@ __all__ = ['AutotagRulesArgs', 'AutotagRules']
 class AutotagRulesArgs:
     def __init__(__self__, *,
                  auto_tag_id: pulumi.Input[_builtins.str],
-                 current_state: Optional[pulumi.Input[_builtins.str]] = None,
-                 rules: Optional[pulumi.Input['AutotagRulesRulesArgs']] = None):
+                 current_state: pulumi.Input[Optional[_builtins.str]] = None,
+                 rules: pulumi.Input[Optional['AutotagRulesRulesArgs']] = None):
         """
         The set of arguments for constructing a AutotagRules resource.
 
@@ -51,35 +51,35 @@ class AutotagRulesArgs:
 
     @_builtins.property
     @pulumi.getter(name="currentState")
-    def current_state(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def current_state(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         For internal use: current state of rules in JSON format
         """
         return pulumi.get(self, "current_state")
 
     @current_state.setter
-    def current_state(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def current_state(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "current_state", value)
 
     @_builtins.property
     @pulumi.getter
-    def rules(self) -> Optional[pulumi.Input['AutotagRulesRulesArgs']]:
+    def rules(self) -> pulumi.Input[Optional['AutotagRulesRulesArgs']]:
         """
         Rules
         """
         return pulumi.get(self, "rules")
 
     @rules.setter
-    def rules(self, value: Optional[pulumi.Input['AutotagRulesRulesArgs']]):
+    def rules(self, value: pulumi.Input[Optional['AutotagRulesRulesArgs']]):
         pulumi.set(self, "rules", value)
 
 
 @pulumi.input_type
 class _AutotagRulesState:
     def __init__(__self__, *,
-                 auto_tag_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 current_state: Optional[pulumi.Input[_builtins.str]] = None,
-                 rules: Optional[pulumi.Input['AutotagRulesRulesArgs']] = None):
+                 auto_tag_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 current_state: pulumi.Input[Optional[_builtins.str]] = None,
+                 rules: pulumi.Input[Optional['AutotagRulesRulesArgs']] = None):
         """
         Input properties used for looking up and filtering AutotagRules resources.
 
@@ -96,38 +96,38 @@ class _AutotagRulesState:
 
     @_builtins.property
     @pulumi.getter(name="autoTagId")
-    def auto_tag_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def auto_tag_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Automatically applied tag ID
         """
         return pulumi.get(self, "auto_tag_id")
 
     @auto_tag_id.setter
-    def auto_tag_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def auto_tag_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "auto_tag_id", value)
 
     @_builtins.property
     @pulumi.getter(name="currentState")
-    def current_state(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def current_state(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         For internal use: current state of rules in JSON format
         """
         return pulumi.get(self, "current_state")
 
     @current_state.setter
-    def current_state(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def current_state(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "current_state", value)
 
     @_builtins.property
     @pulumi.getter
-    def rules(self) -> Optional[pulumi.Input['AutotagRulesRulesArgs']]:
+    def rules(self) -> pulumi.Input[Optional['AutotagRulesRulesArgs']]:
         """
         Rules
         """
         return pulumi.get(self, "rules")
 
     @rules.setter
-    def rules(self, value: Optional[pulumi.Input['AutotagRulesRulesArgs']]):
+    def rules(self, value: pulumi.Input[Optional['AutotagRulesRulesArgs']]):
         pulumi.set(self, "rules", value)
 
 
@@ -137,9 +137,9 @@ class AutotagRules(pulumi.CustomResource):
     def __init__(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 auto_tag_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 current_state: Optional[pulumi.Input[_builtins.str]] = None,
-                 rules: Optional[pulumi.Input[Union['AutotagRulesRulesArgs', 'AutotagRulesRulesArgsDict']]] = None,
+                 auto_tag_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 current_state: pulumi.Input[Optional[_builtins.str]] = None,
+                 rules: pulumi.Input[Optional[Union['AutotagRulesRulesArgs', 'AutotagRulesRulesArgsDict']]] = None,
                  __props__=None):
         """
         > `AutotagV2` is the primary resource to manage auto tags. This particular resource allows you to manage a subset of tags of a given auto tag ID. The benefit of this is that it allows the flexibility of multiple users to manage the same automatically applied tag.
@@ -246,9 +246,9 @@ class AutotagRules(pulumi.CustomResource):
     def _internal_init(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 auto_tag_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 current_state: Optional[pulumi.Input[_builtins.str]] = None,
-                 rules: Optional[pulumi.Input[Union['AutotagRulesRulesArgs', 'AutotagRulesRulesArgsDict']]] = None,
+                 auto_tag_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 current_state: pulumi.Input[Optional[_builtins.str]] = None,
+                 rules: pulumi.Input[Optional[Union['AutotagRulesRulesArgs', 'AutotagRulesRulesArgsDict']]] = None,
                  __props__=None):
         opts = pulumi.ResourceOptions.merge(_utilities.get_resource_opts_defaults(), opts)
         if not isinstance(opts, pulumi.ResourceOptions):
@@ -273,9 +273,9 @@ class AutotagRules(pulumi.CustomResource):
     def get(resource_name: str,
             id: pulumi.Input[str],
             opts: Optional[pulumi.ResourceOptions] = None,
-            auto_tag_id: Optional[pulumi.Input[_builtins.str]] = None,
-            current_state: Optional[pulumi.Input[_builtins.str]] = None,
-            rules: Optional[pulumi.Input[Union['AutotagRulesRulesArgs', 'AutotagRulesRulesArgsDict']]] = None) -> 'AutotagRules':
+            auto_tag_id: pulumi.Input[Optional[_builtins.str]] = None,
+            current_state: pulumi.Input[Optional[_builtins.str]] = None,
+            rules: pulumi.Input[Optional[Union['AutotagRulesRulesArgs', 'AutotagRulesRulesArgsDict']]] = None) -> 'AutotagRules':
         """
         Get an existing AutotagRules resource's state with the given name, id, and optional extra
         properties used to qualify the lookup.

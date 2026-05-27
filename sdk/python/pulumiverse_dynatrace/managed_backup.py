@@ -20,16 +20,16 @@ __all__ = ['ManagedBackupArgs', 'ManagedBackup']
 class ManagedBackupArgs:
     def __init__(__self__, *,
                  cassandra_scheduled_time: pulumi.Input[_builtins.int],
-                 bandwidth_limit_mbits: Optional[pulumi.Input[_builtins.int]] = None,
-                 current_state: Optional[pulumi.Input[_builtins.str]] = None,
-                 datacenter: Optional[pulumi.Input[_builtins.str]] = None,
-                 enabled: Optional[pulumi.Input[_builtins.bool]] = None,
-                 include_lm20_data: Optional[pulumi.Input[_builtins.bool]] = None,
-                 include_rum_data: Optional[pulumi.Input[_builtins.bool]] = None,
-                 include_ts_metric_data: Optional[pulumi.Input[_builtins.bool]] = None,
-                 max_es_snapshots_to_clean: Optional[pulumi.Input[_builtins.int]] = None,
-                 pause_backups: Optional[pulumi.Input[_builtins.bool]] = None,
-                 storage_path: Optional[pulumi.Input[_builtins.str]] = None):
+                 bandwidth_limit_mbits: pulumi.Input[Optional[_builtins.int]] = None,
+                 current_state: pulumi.Input[Optional[_builtins.str]] = None,
+                 datacenter: pulumi.Input[Optional[_builtins.str]] = None,
+                 enabled: pulumi.Input[Optional[_builtins.bool]] = None,
+                 include_lm20_data: pulumi.Input[Optional[_builtins.bool]] = None,
+                 include_rum_data: pulumi.Input[Optional[_builtins.bool]] = None,
+                 include_ts_metric_data: pulumi.Input[Optional[_builtins.bool]] = None,
+                 max_es_snapshots_to_clean: pulumi.Input[Optional[_builtins.int]] = None,
+                 pause_backups: pulumi.Input[Optional[_builtins.bool]] = None,
+                 storage_path: pulumi.Input[Optional[_builtins.str]] = None):
         """
         The set of arguments for constructing a ManagedBackup resource.
 
@@ -81,139 +81,139 @@ class ManagedBackupArgs:
 
     @_builtins.property
     @pulumi.getter(name="bandwidthLimitMbits")
-    def bandwidth_limit_mbits(self) -> Optional[pulumi.Input[_builtins.int]]:
+    def bandwidth_limit_mbits(self) -> pulumi.Input[Optional[_builtins.int]]:
         """
         Cassandra backup bandwidth limit in Mbps
         """
         return pulumi.get(self, "bandwidth_limit_mbits")
 
     @bandwidth_limit_mbits.setter
-    def bandwidth_limit_mbits(self, value: Optional[pulumi.Input[_builtins.int]]):
+    def bandwidth_limit_mbits(self, value: pulumi.Input[Optional[_builtins.int]]):
         pulumi.set(self, "bandwidth_limit_mbits", value)
 
     @_builtins.property
     @pulumi.getter(name="currentState")
-    def current_state(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def current_state(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         For internal use: current state of rules in JSON format
         """
         return pulumi.get(self, "current_state")
 
     @current_state.setter
-    def current_state(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def current_state(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "current_state", value)
 
     @_builtins.property
     @pulumi.getter
-    def datacenter(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def datacenter(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Datacenter which will create backups
         """
         return pulumi.get(self, "datacenter")
 
     @datacenter.setter
-    def datacenter(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def datacenter(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "datacenter", value)
 
     @_builtins.property
     @pulumi.getter
-    def enabled(self) -> Optional[pulumi.Input[_builtins.bool]]:
+    def enabled(self) -> pulumi.Input[Optional[_builtins.bool]]:
         """
         Backups are enabled (true) or disabled (false).
         """
         return pulumi.get(self, "enabled")
 
     @enabled.setter
-    def enabled(self, value: Optional[pulumi.Input[_builtins.bool]]):
+    def enabled(self, value: pulumi.Input[Optional[_builtins.bool]]):
         pulumi.set(self, "enabled", value)
 
     @_builtins.property
     @pulumi.getter(name="includeLm20Data")
-    def include_lm20_data(self) -> Optional[pulumi.Input[_builtins.bool]]:
+    def include_lm20_data(self) -> pulumi.Input[Optional[_builtins.bool]]:
         """
         Include (true) or exclude (false) Log Monitoring v2 data
         """
         return pulumi.get(self, "include_lm20_data")
 
     @include_lm20_data.setter
-    def include_lm20_data(self, value: Optional[pulumi.Input[_builtins.bool]]):
+    def include_lm20_data(self, value: pulumi.Input[Optional[_builtins.bool]]):
         pulumi.set(self, "include_lm20_data", value)
 
     @_builtins.property
     @pulumi.getter(name="includeRumData")
-    def include_rum_data(self) -> Optional[pulumi.Input[_builtins.bool]]:
+    def include_rum_data(self) -> pulumi.Input[Optional[_builtins.bool]]:
         """
         Include user sessions (true) or GDPR compliance (false)
         """
         return pulumi.get(self, "include_rum_data")
 
     @include_rum_data.setter
-    def include_rum_data(self, value: Optional[pulumi.Input[_builtins.bool]]):
+    def include_rum_data(self, value: pulumi.Input[Optional[_builtins.bool]]):
         pulumi.set(self, "include_rum_data", value)
 
     @_builtins.property
     @pulumi.getter(name="includeTsMetricData")
-    def include_ts_metric_data(self) -> Optional[pulumi.Input[_builtins.bool]]:
+    def include_ts_metric_data(self) -> pulumi.Input[Optional[_builtins.bool]]:
         """
         Include time series metric-data (true) or retain configuration data only (false))
         """
         return pulumi.get(self, "include_ts_metric_data")
 
     @include_ts_metric_data.setter
-    def include_ts_metric_data(self, value: Optional[pulumi.Input[_builtins.bool]]):
+    def include_ts_metric_data(self, value: pulumi.Input[Optional[_builtins.bool]]):
         pulumi.set(self, "include_ts_metric_data", value)
 
     @_builtins.property
     @pulumi.getter(name="maxEsSnapshotsToClean")
-    def max_es_snapshots_to_clean(self) -> Optional[pulumi.Input[_builtins.int]]:
+    def max_es_snapshots_to_clean(self) -> pulumi.Input[Optional[_builtins.int]]:
         """
         Max number of Elasticsearch snapshots to clean. Elasticsearch snapshots won't be created anymore if there will be more backups to clean than this value.
         """
         return pulumi.get(self, "max_es_snapshots_to_clean")
 
     @max_es_snapshots_to_clean.setter
-    def max_es_snapshots_to_clean(self, value: Optional[pulumi.Input[_builtins.int]]):
+    def max_es_snapshots_to_clean(self, value: pulumi.Input[Optional[_builtins.int]]):
         pulumi.set(self, "max_es_snapshots_to_clean", value)
 
     @_builtins.property
     @pulumi.getter(name="pauseBackups")
-    def pause_backups(self) -> Optional[pulumi.Input[_builtins.bool]]:
+    def pause_backups(self) -> pulumi.Input[Optional[_builtins.bool]]:
         """
         Pauses Elasticsearch and Cassandra backups. In comparison to enable/disable backup, this option does not modify any configuration like Elasticsearch properties.
         """
         return pulumi.get(self, "pause_backups")
 
     @pause_backups.setter
-    def pause_backups(self, value: Optional[pulumi.Input[_builtins.bool]]):
+    def pause_backups(self, value: pulumi.Input[Optional[_builtins.bool]]):
         pulumi.set(self, "pause_backups", value)
 
     @_builtins.property
     @pulumi.getter(name="storagePath")
-    def storage_path(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def storage_path(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         A full path to the backup archive
         """
         return pulumi.get(self, "storage_path")
 
     @storage_path.setter
-    def storage_path(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def storage_path(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "storage_path", value)
 
 
 @pulumi.input_type
 class _ManagedBackupState:
     def __init__(__self__, *,
-                 bandwidth_limit_mbits: Optional[pulumi.Input[_builtins.int]] = None,
-                 cassandra_scheduled_time: Optional[pulumi.Input[_builtins.int]] = None,
-                 current_state: Optional[pulumi.Input[_builtins.str]] = None,
-                 datacenter: Optional[pulumi.Input[_builtins.str]] = None,
-                 enabled: Optional[pulumi.Input[_builtins.bool]] = None,
-                 include_lm20_data: Optional[pulumi.Input[_builtins.bool]] = None,
-                 include_rum_data: Optional[pulumi.Input[_builtins.bool]] = None,
-                 include_ts_metric_data: Optional[pulumi.Input[_builtins.bool]] = None,
-                 max_es_snapshots_to_clean: Optional[pulumi.Input[_builtins.int]] = None,
-                 pause_backups: Optional[pulumi.Input[_builtins.bool]] = None,
-                 storage_path: Optional[pulumi.Input[_builtins.str]] = None):
+                 bandwidth_limit_mbits: pulumi.Input[Optional[_builtins.int]] = None,
+                 cassandra_scheduled_time: pulumi.Input[Optional[_builtins.int]] = None,
+                 current_state: pulumi.Input[Optional[_builtins.str]] = None,
+                 datacenter: pulumi.Input[Optional[_builtins.str]] = None,
+                 enabled: pulumi.Input[Optional[_builtins.bool]] = None,
+                 include_lm20_data: pulumi.Input[Optional[_builtins.bool]] = None,
+                 include_rum_data: pulumi.Input[Optional[_builtins.bool]] = None,
+                 include_ts_metric_data: pulumi.Input[Optional[_builtins.bool]] = None,
+                 max_es_snapshots_to_clean: pulumi.Input[Optional[_builtins.int]] = None,
+                 pause_backups: pulumi.Input[Optional[_builtins.bool]] = None,
+                 storage_path: pulumi.Input[Optional[_builtins.str]] = None):
         """
         Input properties used for looking up and filtering ManagedBackup resources.
 
@@ -254,134 +254,134 @@ class _ManagedBackupState:
 
     @_builtins.property
     @pulumi.getter(name="bandwidthLimitMbits")
-    def bandwidth_limit_mbits(self) -> Optional[pulumi.Input[_builtins.int]]:
+    def bandwidth_limit_mbits(self) -> pulumi.Input[Optional[_builtins.int]]:
         """
         Cassandra backup bandwidth limit in Mbps
         """
         return pulumi.get(self, "bandwidth_limit_mbits")
 
     @bandwidth_limit_mbits.setter
-    def bandwidth_limit_mbits(self, value: Optional[pulumi.Input[_builtins.int]]):
+    def bandwidth_limit_mbits(self, value: pulumi.Input[Optional[_builtins.int]]):
         pulumi.set(self, "bandwidth_limit_mbits", value)
 
     @_builtins.property
     @pulumi.getter(name="cassandraScheduledTime")
-    def cassandra_scheduled_time(self) -> Optional[pulumi.Input[_builtins.int]]:
+    def cassandra_scheduled_time(self) -> pulumi.Input[Optional[_builtins.int]]:
         """
         Hour to start Cassandra backups each day.
         """
         return pulumi.get(self, "cassandra_scheduled_time")
 
     @cassandra_scheduled_time.setter
-    def cassandra_scheduled_time(self, value: Optional[pulumi.Input[_builtins.int]]):
+    def cassandra_scheduled_time(self, value: pulumi.Input[Optional[_builtins.int]]):
         pulumi.set(self, "cassandra_scheduled_time", value)
 
     @_builtins.property
     @pulumi.getter(name="currentState")
-    def current_state(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def current_state(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         For internal use: current state of rules in JSON format
         """
         return pulumi.get(self, "current_state")
 
     @current_state.setter
-    def current_state(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def current_state(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "current_state", value)
 
     @_builtins.property
     @pulumi.getter
-    def datacenter(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def datacenter(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Datacenter which will create backups
         """
         return pulumi.get(self, "datacenter")
 
     @datacenter.setter
-    def datacenter(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def datacenter(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "datacenter", value)
 
     @_builtins.property
     @pulumi.getter
-    def enabled(self) -> Optional[pulumi.Input[_builtins.bool]]:
+    def enabled(self) -> pulumi.Input[Optional[_builtins.bool]]:
         """
         Backups are enabled (true) or disabled (false).
         """
         return pulumi.get(self, "enabled")
 
     @enabled.setter
-    def enabled(self, value: Optional[pulumi.Input[_builtins.bool]]):
+    def enabled(self, value: pulumi.Input[Optional[_builtins.bool]]):
         pulumi.set(self, "enabled", value)
 
     @_builtins.property
     @pulumi.getter(name="includeLm20Data")
-    def include_lm20_data(self) -> Optional[pulumi.Input[_builtins.bool]]:
+    def include_lm20_data(self) -> pulumi.Input[Optional[_builtins.bool]]:
         """
         Include (true) or exclude (false) Log Monitoring v2 data
         """
         return pulumi.get(self, "include_lm20_data")
 
     @include_lm20_data.setter
-    def include_lm20_data(self, value: Optional[pulumi.Input[_builtins.bool]]):
+    def include_lm20_data(self, value: pulumi.Input[Optional[_builtins.bool]]):
         pulumi.set(self, "include_lm20_data", value)
 
     @_builtins.property
     @pulumi.getter(name="includeRumData")
-    def include_rum_data(self) -> Optional[pulumi.Input[_builtins.bool]]:
+    def include_rum_data(self) -> pulumi.Input[Optional[_builtins.bool]]:
         """
         Include user sessions (true) or GDPR compliance (false)
         """
         return pulumi.get(self, "include_rum_data")
 
     @include_rum_data.setter
-    def include_rum_data(self, value: Optional[pulumi.Input[_builtins.bool]]):
+    def include_rum_data(self, value: pulumi.Input[Optional[_builtins.bool]]):
         pulumi.set(self, "include_rum_data", value)
 
     @_builtins.property
     @pulumi.getter(name="includeTsMetricData")
-    def include_ts_metric_data(self) -> Optional[pulumi.Input[_builtins.bool]]:
+    def include_ts_metric_data(self) -> pulumi.Input[Optional[_builtins.bool]]:
         """
         Include time series metric-data (true) or retain configuration data only (false))
         """
         return pulumi.get(self, "include_ts_metric_data")
 
     @include_ts_metric_data.setter
-    def include_ts_metric_data(self, value: Optional[pulumi.Input[_builtins.bool]]):
+    def include_ts_metric_data(self, value: pulumi.Input[Optional[_builtins.bool]]):
         pulumi.set(self, "include_ts_metric_data", value)
 
     @_builtins.property
     @pulumi.getter(name="maxEsSnapshotsToClean")
-    def max_es_snapshots_to_clean(self) -> Optional[pulumi.Input[_builtins.int]]:
+    def max_es_snapshots_to_clean(self) -> pulumi.Input[Optional[_builtins.int]]:
         """
         Max number of Elasticsearch snapshots to clean. Elasticsearch snapshots won't be created anymore if there will be more backups to clean than this value.
         """
         return pulumi.get(self, "max_es_snapshots_to_clean")
 
     @max_es_snapshots_to_clean.setter
-    def max_es_snapshots_to_clean(self, value: Optional[pulumi.Input[_builtins.int]]):
+    def max_es_snapshots_to_clean(self, value: pulumi.Input[Optional[_builtins.int]]):
         pulumi.set(self, "max_es_snapshots_to_clean", value)
 
     @_builtins.property
     @pulumi.getter(name="pauseBackups")
-    def pause_backups(self) -> Optional[pulumi.Input[_builtins.bool]]:
+    def pause_backups(self) -> pulumi.Input[Optional[_builtins.bool]]:
         """
         Pauses Elasticsearch and Cassandra backups. In comparison to enable/disable backup, this option does not modify any configuration like Elasticsearch properties.
         """
         return pulumi.get(self, "pause_backups")
 
     @pause_backups.setter
-    def pause_backups(self, value: Optional[pulumi.Input[_builtins.bool]]):
+    def pause_backups(self, value: pulumi.Input[Optional[_builtins.bool]]):
         pulumi.set(self, "pause_backups", value)
 
     @_builtins.property
     @pulumi.getter(name="storagePath")
-    def storage_path(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def storage_path(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         A full path to the backup archive
         """
         return pulumi.get(self, "storage_path")
 
     @storage_path.setter
-    def storage_path(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def storage_path(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "storage_path", value)
 
 
@@ -391,17 +391,17 @@ class ManagedBackup(pulumi.CustomResource):
     def __init__(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 bandwidth_limit_mbits: Optional[pulumi.Input[_builtins.int]] = None,
-                 cassandra_scheduled_time: Optional[pulumi.Input[_builtins.int]] = None,
-                 current_state: Optional[pulumi.Input[_builtins.str]] = None,
-                 datacenter: Optional[pulumi.Input[_builtins.str]] = None,
-                 enabled: Optional[pulumi.Input[_builtins.bool]] = None,
-                 include_lm20_data: Optional[pulumi.Input[_builtins.bool]] = None,
-                 include_rum_data: Optional[pulumi.Input[_builtins.bool]] = None,
-                 include_ts_metric_data: Optional[pulumi.Input[_builtins.bool]] = None,
-                 max_es_snapshots_to_clean: Optional[pulumi.Input[_builtins.int]] = None,
-                 pause_backups: Optional[pulumi.Input[_builtins.bool]] = None,
-                 storage_path: Optional[pulumi.Input[_builtins.str]] = None,
+                 bandwidth_limit_mbits: pulumi.Input[Optional[_builtins.int]] = None,
+                 cassandra_scheduled_time: pulumi.Input[Optional[_builtins.int]] = None,
+                 current_state: pulumi.Input[Optional[_builtins.str]] = None,
+                 datacenter: pulumi.Input[Optional[_builtins.str]] = None,
+                 enabled: pulumi.Input[Optional[_builtins.bool]] = None,
+                 include_lm20_data: pulumi.Input[Optional[_builtins.bool]] = None,
+                 include_rum_data: pulumi.Input[Optional[_builtins.bool]] = None,
+                 include_ts_metric_data: pulumi.Input[Optional[_builtins.bool]] = None,
+                 max_es_snapshots_to_clean: pulumi.Input[Optional[_builtins.int]] = None,
+                 pause_backups: pulumi.Input[Optional[_builtins.bool]] = None,
+                 storage_path: pulumi.Input[Optional[_builtins.str]] = None,
                  __props__=None):
         """
         !> **HTTP DELETE method not available** Terraform will no longer manage this resource on `destroy` but the configuration will still be present on the Dynatrace cluster.
@@ -498,17 +498,17 @@ class ManagedBackup(pulumi.CustomResource):
     def _internal_init(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 bandwidth_limit_mbits: Optional[pulumi.Input[_builtins.int]] = None,
-                 cassandra_scheduled_time: Optional[pulumi.Input[_builtins.int]] = None,
-                 current_state: Optional[pulumi.Input[_builtins.str]] = None,
-                 datacenter: Optional[pulumi.Input[_builtins.str]] = None,
-                 enabled: Optional[pulumi.Input[_builtins.bool]] = None,
-                 include_lm20_data: Optional[pulumi.Input[_builtins.bool]] = None,
-                 include_rum_data: Optional[pulumi.Input[_builtins.bool]] = None,
-                 include_ts_metric_data: Optional[pulumi.Input[_builtins.bool]] = None,
-                 max_es_snapshots_to_clean: Optional[pulumi.Input[_builtins.int]] = None,
-                 pause_backups: Optional[pulumi.Input[_builtins.bool]] = None,
-                 storage_path: Optional[pulumi.Input[_builtins.str]] = None,
+                 bandwidth_limit_mbits: pulumi.Input[Optional[_builtins.int]] = None,
+                 cassandra_scheduled_time: pulumi.Input[Optional[_builtins.int]] = None,
+                 current_state: pulumi.Input[Optional[_builtins.str]] = None,
+                 datacenter: pulumi.Input[Optional[_builtins.str]] = None,
+                 enabled: pulumi.Input[Optional[_builtins.bool]] = None,
+                 include_lm20_data: pulumi.Input[Optional[_builtins.bool]] = None,
+                 include_rum_data: pulumi.Input[Optional[_builtins.bool]] = None,
+                 include_ts_metric_data: pulumi.Input[Optional[_builtins.bool]] = None,
+                 max_es_snapshots_to_clean: pulumi.Input[Optional[_builtins.int]] = None,
+                 pause_backups: pulumi.Input[Optional[_builtins.bool]] = None,
+                 storage_path: pulumi.Input[Optional[_builtins.str]] = None,
                  __props__=None):
         opts = pulumi.ResourceOptions.merge(_utilities.get_resource_opts_defaults(), opts)
         if not isinstance(opts, pulumi.ResourceOptions):
@@ -541,17 +541,17 @@ class ManagedBackup(pulumi.CustomResource):
     def get(resource_name: str,
             id: pulumi.Input[str],
             opts: Optional[pulumi.ResourceOptions] = None,
-            bandwidth_limit_mbits: Optional[pulumi.Input[_builtins.int]] = None,
-            cassandra_scheduled_time: Optional[pulumi.Input[_builtins.int]] = None,
-            current_state: Optional[pulumi.Input[_builtins.str]] = None,
-            datacenter: Optional[pulumi.Input[_builtins.str]] = None,
-            enabled: Optional[pulumi.Input[_builtins.bool]] = None,
-            include_lm20_data: Optional[pulumi.Input[_builtins.bool]] = None,
-            include_rum_data: Optional[pulumi.Input[_builtins.bool]] = None,
-            include_ts_metric_data: Optional[pulumi.Input[_builtins.bool]] = None,
-            max_es_snapshots_to_clean: Optional[pulumi.Input[_builtins.int]] = None,
-            pause_backups: Optional[pulumi.Input[_builtins.bool]] = None,
-            storage_path: Optional[pulumi.Input[_builtins.str]] = None) -> 'ManagedBackup':
+            bandwidth_limit_mbits: pulumi.Input[Optional[_builtins.int]] = None,
+            cassandra_scheduled_time: pulumi.Input[Optional[_builtins.int]] = None,
+            current_state: pulumi.Input[Optional[_builtins.str]] = None,
+            datacenter: pulumi.Input[Optional[_builtins.str]] = None,
+            enabled: pulumi.Input[Optional[_builtins.bool]] = None,
+            include_lm20_data: pulumi.Input[Optional[_builtins.bool]] = None,
+            include_rum_data: pulumi.Input[Optional[_builtins.bool]] = None,
+            include_ts_metric_data: pulumi.Input[Optional[_builtins.bool]] = None,
+            max_es_snapshots_to_clean: pulumi.Input[Optional[_builtins.int]] = None,
+            pause_backups: pulumi.Input[Optional[_builtins.bool]] = None,
+            storage_path: pulumi.Input[Optional[_builtins.str]] = None) -> 'ManagedBackup':
         """
         Get an existing ManagedBackup resource's state with the given name, id, and optional extra
         properties used to qualify the lookup.

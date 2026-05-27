@@ -34,9 +34,9 @@ class ProcessGroupDetectionFlagsArgs:
                  split_oracle_listener_pg: pulumi.Input[_builtins.bool],
                  use_catalina_base: pulumi.Input[_builtins.bool],
                  use_docker_container_name: pulumi.Input[_builtins.bool],
-                 scope: Optional[pulumi.Input[_builtins.str]] = None,
-                 security_software_detection_enabled: Optional[pulumi.Input[_builtins.bool]] = None,
-                 split_db2_grouping_by_instances: Optional[pulumi.Input[_builtins.bool]] = None):
+                 scope: pulumi.Input[Optional[_builtins.str]] = None,
+                 security_software_detection_enabled: pulumi.Input[Optional[_builtins.bool]] = None,
+                 split_db2_grouping_by_instances: pulumi.Input[Optional[_builtins.bool]] = None):
         """
         The set of arguments for constructing a ProcessGroupDetectionFlags resource.
 
@@ -263,62 +263,62 @@ class ProcessGroupDetectionFlagsArgs:
 
     @_builtins.property
     @pulumi.getter
-    def scope(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def scope(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The scope of this setting (HOST, HOST_GROUP). Omit this property if you want to cover the whole environment.
         """
         return pulumi.get(self, "scope")
 
     @scope.setter
-    def scope(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def scope(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "scope", value)
 
     @_builtins.property
     @pulumi.getter(name="securitySoftwareDetectionEnabled")
-    def security_software_detection_enabled(self) -> Optional[pulumi.Input[_builtins.bool]]:
+    def security_software_detection_enabled(self) -> pulumi.Input[Optional[_builtins.bool]]:
         """
         This flag enables the detection of security software such as anti-malware protection.
         """
         return pulumi.get(self, "security_software_detection_enabled")
 
     @security_software_detection_enabled.setter
-    def security_software_detection_enabled(self, value: Optional[pulumi.Input[_builtins.bool]]):
+    def security_software_detection_enabled(self, value: pulumi.Input[Optional[_builtins.bool]]):
         pulumi.set(self, "security_software_detection_enabled", value)
 
     @_builtins.property
     @pulumi.getter(name="splitDb2GroupingByInstances")
-    def split_db2_grouping_by_instances(self) -> Optional[pulumi.Input[_builtins.bool]]:
+    def split_db2_grouping_by_instances(self) -> pulumi.Input[Optional[_builtins.bool]]:
         """
         Enable to group and separately analyze the processes of each DB2 Instance. Each process receives a unique name based on the DB2 Instance name.
         """
         return pulumi.get(self, "split_db2_grouping_by_instances")
 
     @split_db2_grouping_by_instances.setter
-    def split_db2_grouping_by_instances(self, value: Optional[pulumi.Input[_builtins.bool]]):
+    def split_db2_grouping_by_instances(self, value: pulumi.Input[Optional[_builtins.bool]]):
         pulumi.set(self, "split_db2_grouping_by_instances", value)
 
 
 @pulumi.input_type
 class _ProcessGroupDetectionFlagsState:
     def __init__(__self__, *,
-                 add_node_js_script_name: Optional[pulumi.Input[_builtins.bool]] = None,
-                 auto_detect_cassandra_clusters: Optional[pulumi.Input[_builtins.bool]] = None,
-                 auto_detect_spring_boot: Optional[pulumi.Input[_builtins.bool]] = None,
-                 auto_detect_tibco_container_edition_engines: Optional[pulumi.Input[_builtins.bool]] = None,
-                 auto_detect_tibco_engines: Optional[pulumi.Input[_builtins.bool]] = None,
-                 auto_detect_web_methods_integration_server: Optional[pulumi.Input[_builtins.bool]] = None,
-                 auto_detect_web_sphere_liberty_application: Optional[pulumi.Input[_builtins.bool]] = None,
-                 group_ibmmqby_instance_name: Optional[pulumi.Input[_builtins.bool]] = None,
-                 identify_jboss_server_by_system_property: Optional[pulumi.Input[_builtins.bool]] = None,
-                 ignore_unique_identifiers: Optional[pulumi.Input[_builtins.bool]] = None,
-                 scope: Optional[pulumi.Input[_builtins.str]] = None,
-                 security_software_detection_enabled: Optional[pulumi.Input[_builtins.bool]] = None,
-                 short_lived_processes_monitoring: Optional[pulumi.Input[_builtins.bool]] = None,
-                 split_db2_grouping_by_instances: Optional[pulumi.Input[_builtins.bool]] = None,
-                 split_oracle_database_pg: Optional[pulumi.Input[_builtins.bool]] = None,
-                 split_oracle_listener_pg: Optional[pulumi.Input[_builtins.bool]] = None,
-                 use_catalina_base: Optional[pulumi.Input[_builtins.bool]] = None,
-                 use_docker_container_name: Optional[pulumi.Input[_builtins.bool]] = None):
+                 add_node_js_script_name: pulumi.Input[Optional[_builtins.bool]] = None,
+                 auto_detect_cassandra_clusters: pulumi.Input[Optional[_builtins.bool]] = None,
+                 auto_detect_spring_boot: pulumi.Input[Optional[_builtins.bool]] = None,
+                 auto_detect_tibco_container_edition_engines: pulumi.Input[Optional[_builtins.bool]] = None,
+                 auto_detect_tibco_engines: pulumi.Input[Optional[_builtins.bool]] = None,
+                 auto_detect_web_methods_integration_server: pulumi.Input[Optional[_builtins.bool]] = None,
+                 auto_detect_web_sphere_liberty_application: pulumi.Input[Optional[_builtins.bool]] = None,
+                 group_ibmmqby_instance_name: pulumi.Input[Optional[_builtins.bool]] = None,
+                 identify_jboss_server_by_system_property: pulumi.Input[Optional[_builtins.bool]] = None,
+                 ignore_unique_identifiers: pulumi.Input[Optional[_builtins.bool]] = None,
+                 scope: pulumi.Input[Optional[_builtins.str]] = None,
+                 security_software_detection_enabled: pulumi.Input[Optional[_builtins.bool]] = None,
+                 short_lived_processes_monitoring: pulumi.Input[Optional[_builtins.bool]] = None,
+                 split_db2_grouping_by_instances: pulumi.Input[Optional[_builtins.bool]] = None,
+                 split_oracle_database_pg: pulumi.Input[Optional[_builtins.bool]] = None,
+                 split_oracle_listener_pg: pulumi.Input[Optional[_builtins.bool]] = None,
+                 use_catalina_base: pulumi.Input[Optional[_builtins.bool]] = None,
+                 use_docker_container_name: pulumi.Input[Optional[_builtins.bool]] = None):
         """
         Input properties used for looking up and filtering ProcessGroupDetectionFlags resources.
 
@@ -380,218 +380,218 @@ class _ProcessGroupDetectionFlagsState:
 
     @_builtins.property
     @pulumi.getter(name="addNodeJsScriptName")
-    def add_node_js_script_name(self) -> Optional[pulumi.Input[_builtins.bool]]:
+    def add_node_js_script_name(self) -> pulumi.Input[Optional[_builtins.bool]]:
         """
         In older versions, Node.js applications were distinguished based on their directory name, omitting the script name. Changing this setting may change the general handling of Node.js process groups. Leave unchanged if in doubt.
         """
         return pulumi.get(self, "add_node_js_script_name")
 
     @add_node_js_script_name.setter
-    def add_node_js_script_name(self, value: Optional[pulumi.Input[_builtins.bool]]):
+    def add_node_js_script_name(self, value: pulumi.Input[Optional[_builtins.bool]]):
         pulumi.set(self, "add_node_js_script_name", value)
 
     @_builtins.property
     @pulumi.getter(name="autoDetectCassandraClusters")
-    def auto_detect_cassandra_clusters(self) -> Optional[pulumi.Input[_builtins.bool]]:
+    def auto_detect_cassandra_clusters(self) -> pulumi.Input[Optional[_builtins.bool]]:
         """
         Enabling this flag will detect separate Cassandra process groups based on the configured Cassandra cluster name.
         """
         return pulumi.get(self, "auto_detect_cassandra_clusters")
 
     @auto_detect_cassandra_clusters.setter
-    def auto_detect_cassandra_clusters(self, value: Optional[pulumi.Input[_builtins.bool]]):
+    def auto_detect_cassandra_clusters(self, value: pulumi.Input[Optional[_builtins.bool]]):
         pulumi.set(self, "auto_detect_cassandra_clusters", value)
 
     @_builtins.property
     @pulumi.getter(name="autoDetectSpringBoot")
-    def auto_detect_spring_boot(self) -> Optional[pulumi.Input[_builtins.bool]]:
+    def auto_detect_spring_boot(self) -> pulumi.Input[Optional[_builtins.bool]]:
         """
         Enabling this flag will detect Spring Boot process groups based on command line and applications' configuration files.
         """
         return pulumi.get(self, "auto_detect_spring_boot")
 
     @auto_detect_spring_boot.setter
-    def auto_detect_spring_boot(self, value: Optional[pulumi.Input[_builtins.bool]]):
+    def auto_detect_spring_boot(self, value: pulumi.Input[Optional[_builtins.bool]]):
         pulumi.set(self, "auto_detect_spring_boot", value)
 
     @_builtins.property
     @pulumi.getter(name="autoDetectTibcoContainerEditionEngines")
-    def auto_detect_tibco_container_edition_engines(self) -> Optional[pulumi.Input[_builtins.bool]]:
+    def auto_detect_tibco_container_edition_engines(self) -> pulumi.Input[Optional[_builtins.bool]]:
         """
         Enabling this flag will detect separate TIBCO BusinessWorks process groups per engine property file.
         """
         return pulumi.get(self, "auto_detect_tibco_container_edition_engines")
 
     @auto_detect_tibco_container_edition_engines.setter
-    def auto_detect_tibco_container_edition_engines(self, value: Optional[pulumi.Input[_builtins.bool]]):
+    def auto_detect_tibco_container_edition_engines(self, value: pulumi.Input[Optional[_builtins.bool]]):
         pulumi.set(self, "auto_detect_tibco_container_edition_engines", value)
 
     @_builtins.property
     @pulumi.getter(name="autoDetectTibcoEngines")
-    def auto_detect_tibco_engines(self) -> Optional[pulumi.Input[_builtins.bool]]:
+    def auto_detect_tibco_engines(self) -> pulumi.Input[Optional[_builtins.bool]]:
         """
         Enabling this flag will detect separate TIBCO BusinessWorks process groups per engine property file.
         """
         return pulumi.get(self, "auto_detect_tibco_engines")
 
     @auto_detect_tibco_engines.setter
-    def auto_detect_tibco_engines(self, value: Optional[pulumi.Input[_builtins.bool]]):
+    def auto_detect_tibco_engines(self, value: pulumi.Input[Optional[_builtins.bool]]):
         pulumi.set(self, "auto_detect_tibco_engines", value)
 
     @_builtins.property
     @pulumi.getter(name="autoDetectWebMethodsIntegrationServer")
-    def auto_detect_web_methods_integration_server(self) -> Optional[pulumi.Input[_builtins.bool]]:
+    def auto_detect_web_methods_integration_server(self) -> pulumi.Input[Optional[_builtins.bool]]:
         """
         Enabling this flag will detect webMethods Integration Server including specific properties like install root and product name.
         """
         return pulumi.get(self, "auto_detect_web_methods_integration_server")
 
     @auto_detect_web_methods_integration_server.setter
-    def auto_detect_web_methods_integration_server(self, value: Optional[pulumi.Input[_builtins.bool]]):
+    def auto_detect_web_methods_integration_server(self, value: pulumi.Input[Optional[_builtins.bool]]):
         pulumi.set(self, "auto_detect_web_methods_integration_server", value)
 
     @_builtins.property
     @pulumi.getter(name="autoDetectWebSphereLibertyApplication")
-    def auto_detect_web_sphere_liberty_application(self) -> Optional[pulumi.Input[_builtins.bool]]:
+    def auto_detect_web_sphere_liberty_application(self) -> pulumi.Input[Optional[_builtins.bool]]:
         """
         Enabling this flag will detect separate WebSphere Liberty process groups based on java command line.
         """
         return pulumi.get(self, "auto_detect_web_sphere_liberty_application")
 
     @auto_detect_web_sphere_liberty_application.setter
-    def auto_detect_web_sphere_liberty_application(self, value: Optional[pulumi.Input[_builtins.bool]]):
+    def auto_detect_web_sphere_liberty_application(self, value: pulumi.Input[Optional[_builtins.bool]]):
         pulumi.set(self, "auto_detect_web_sphere_liberty_application", value)
 
     @_builtins.property
     @pulumi.getter(name="groupIbmmqbyInstanceName")
-    def group_ibmmqby_instance_name(self) -> Optional[pulumi.Input[_builtins.bool]]:
+    def group_ibmmqby_instance_name(self) -> pulumi.Input[Optional[_builtins.bool]]:
         """
         Enable to group and separately analyze the processes of each IBM MQ Queue manager instance. Each process group receives a unique name based on the queue manager instance name.
         """
         return pulumi.get(self, "group_ibmmqby_instance_name")
 
     @group_ibmmqby_instance_name.setter
-    def group_ibmmqby_instance_name(self, value: Optional[pulumi.Input[_builtins.bool]]):
+    def group_ibmmqby_instance_name(self, value: pulumi.Input[Optional[_builtins.bool]]):
         pulumi.set(self, "group_ibmmqby_instance_name", value)
 
     @_builtins.property
     @pulumi.getter(name="identifyJbossServerBySystemProperty")
-    def identify_jboss_server_by_system_property(self) -> Optional[pulumi.Input[_builtins.bool]]:
+    def identify_jboss_server_by_system_property(self) -> pulumi.Input[Optional[_builtins.bool]]:
         """
         Enabling this flag will detect the JBoss server name from the system property jboss.server.name=\\n\\n, only if -D[Server:\\n\\n] is not set.
         """
         return pulumi.get(self, "identify_jboss_server_by_system_property")
 
     @identify_jboss_server_by_system_property.setter
-    def identify_jboss_server_by_system_property(self, value: Optional[pulumi.Input[_builtins.bool]]):
+    def identify_jboss_server_by_system_property(self, value: pulumi.Input[Optional[_builtins.bool]]):
         pulumi.set(self, "identify_jboss_server_by_system_property", value)
 
     @_builtins.property
     @pulumi.getter(name="ignoreUniqueIdentifiers")
-    def ignore_unique_identifiers(self) -> Optional[pulumi.Input[_builtins.bool]]:
+    def ignore_unique_identifiers(self) -> pulumi.Input[Optional[_builtins.bool]]:
         """
         To determine the unique identity of each detected process, and to generate a unique name for each detected process, Dynatrace evaluates the name of the directory that each process binary is contained within. For application containers like Tomcat and JBoss, Dynatrace evaluates important directories like CATALINA*HOME and JBOSS*HOME for this information. In some automated deployment scenarios such directory names are updated automatically with new version numbers, build numbers, dates, or GUIDs. Enable this setting to ensure that automated directory name changes don't result in Dynatrace registering pre-existing processes as new processes.
         """
         return pulumi.get(self, "ignore_unique_identifiers")
 
     @ignore_unique_identifiers.setter
-    def ignore_unique_identifiers(self, value: Optional[pulumi.Input[_builtins.bool]]):
+    def ignore_unique_identifiers(self, value: pulumi.Input[Optional[_builtins.bool]]):
         pulumi.set(self, "ignore_unique_identifiers", value)
 
     @_builtins.property
     @pulumi.getter
-    def scope(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def scope(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The scope of this setting (HOST, HOST_GROUP). Omit this property if you want to cover the whole environment.
         """
         return pulumi.get(self, "scope")
 
     @scope.setter
-    def scope(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def scope(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "scope", value)
 
     @_builtins.property
     @pulumi.getter(name="securitySoftwareDetectionEnabled")
-    def security_software_detection_enabled(self) -> Optional[pulumi.Input[_builtins.bool]]:
+    def security_software_detection_enabled(self) -> pulumi.Input[Optional[_builtins.bool]]:
         """
         This flag enables the detection of security software such as anti-malware protection.
         """
         return pulumi.get(self, "security_software_detection_enabled")
 
     @security_software_detection_enabled.setter
-    def security_software_detection_enabled(self, value: Optional[pulumi.Input[_builtins.bool]]):
+    def security_software_detection_enabled(self, value: pulumi.Input[Optional[_builtins.bool]]):
         pulumi.set(self, "security_software_detection_enabled", value)
 
     @_builtins.property
     @pulumi.getter(name="shortLivedProcessesMonitoring")
-    def short_lived_processes_monitoring(self) -> Optional[pulumi.Input[_builtins.bool]]:
+    def short_lived_processes_monitoring(self) -> pulumi.Input[Optional[_builtins.bool]]:
         """
         Enable to monitor CPU and memory usage of short lived processes, otherwise being lost by traditional monitoring. Disabling this flag blocks passing data to cluster only, it does not stop data collection and has no effect on performance.
         """
         return pulumi.get(self, "short_lived_processes_monitoring")
 
     @short_lived_processes_monitoring.setter
-    def short_lived_processes_monitoring(self, value: Optional[pulumi.Input[_builtins.bool]]):
+    def short_lived_processes_monitoring(self, value: pulumi.Input[Optional[_builtins.bool]]):
         pulumi.set(self, "short_lived_processes_monitoring", value)
 
     @_builtins.property
     @pulumi.getter(name="splitDb2GroupingByInstances")
-    def split_db2_grouping_by_instances(self) -> Optional[pulumi.Input[_builtins.bool]]:
+    def split_db2_grouping_by_instances(self) -> pulumi.Input[Optional[_builtins.bool]]:
         """
         Enable to group and separately analyze the processes of each DB2 Instance. Each process receives a unique name based on the DB2 Instance name.
         """
         return pulumi.get(self, "split_db2_grouping_by_instances")
 
     @split_db2_grouping_by_instances.setter
-    def split_db2_grouping_by_instances(self, value: Optional[pulumi.Input[_builtins.bool]]):
+    def split_db2_grouping_by_instances(self, value: pulumi.Input[Optional[_builtins.bool]]):
         pulumi.set(self, "split_db2_grouping_by_instances", value)
 
     @_builtins.property
     @pulumi.getter(name="splitOracleDatabasePg")
-    def split_oracle_database_pg(self) -> Optional[pulumi.Input[_builtins.bool]]:
+    def split_oracle_database_pg(self) -> pulumi.Input[Optional[_builtins.bool]]:
         """
         Enable to group and separately analyze the processes of each Oracle DB. Each process group receives a unique name based on the Oracle DB SID.
         """
         return pulumi.get(self, "split_oracle_database_pg")
 
     @split_oracle_database_pg.setter
-    def split_oracle_database_pg(self, value: Optional[pulumi.Input[_builtins.bool]]):
+    def split_oracle_database_pg(self, value: pulumi.Input[Optional[_builtins.bool]]):
         pulumi.set(self, "split_oracle_database_pg", value)
 
     @_builtins.property
     @pulumi.getter(name="splitOracleListenerPg")
-    def split_oracle_listener_pg(self) -> Optional[pulumi.Input[_builtins.bool]]:
+    def split_oracle_listener_pg(self) -> pulumi.Input[Optional[_builtins.bool]]:
         """
         Enable to group and separately analyze the processes of each Oracle Listener. Each process group receives a unique name based on the Oracle Listener name.
         """
         return pulumi.get(self, "split_oracle_listener_pg")
 
     @split_oracle_listener_pg.setter
-    def split_oracle_listener_pg(self, value: Optional[pulumi.Input[_builtins.bool]]):
+    def split_oracle_listener_pg(self, value: pulumi.Input[Optional[_builtins.bool]]):
         pulumi.set(self, "split_oracle_listener_pg", value)
 
     @_builtins.property
     @pulumi.getter(name="useCatalinaBase")
-    def use_catalina_base(self) -> Optional[pulumi.Input[_builtins.bool]]:
+    def use_catalina_base(self) -> pulumi.Input[Optional[_builtins.bool]]:
         """
         By default, Tomcat clusters are identified and named based on the CATALINA*HOME directory name. This setting results in the use of the CATALINA*BASE directory name to identify multiple Tomcat nodes within each Tomcat cluster. If this setting is not enabled, each CATALINA*HOME+CATALINA*BASE combination will be considered a separate Tomcat cluster. In other words, Tomcat clusters can't have multiple nodes on a single host.
         """
         return pulumi.get(self, "use_catalina_base")
 
     @use_catalina_base.setter
-    def use_catalina_base(self, value: Optional[pulumi.Input[_builtins.bool]]):
+    def use_catalina_base(self, value: pulumi.Input[Optional[_builtins.bool]]):
         pulumi.set(self, "use_catalina_base", value)
 
     @_builtins.property
     @pulumi.getter(name="useDockerContainerName")
-    def use_docker_container_name(self) -> Optional[pulumi.Input[_builtins.bool]]:
+    def use_docker_container_name(self) -> pulumi.Input[Optional[_builtins.bool]]:
         """
         By default, Dynatrace uses image names as identifiers for individual process groups, with one process-group instance per host. Normally Docker container names can't serve as stable identifiers of process group instances because they are variable and auto-generated. You can however manually assign proper container names to their Docker instances. Such manually-assigned container names can serve as reliable process-group instance identifiers. This flag instructs Dynatrace to use Docker-provided names to distinguish between multiple instances of the same image. If this flag is not applied and you run multiple containers of the same image on the same host, the resulting processes will be consolidated into a single process view. Use this flag with caution!
         """
         return pulumi.get(self, "use_docker_container_name")
 
     @use_docker_container_name.setter
-    def use_docker_container_name(self, value: Optional[pulumi.Input[_builtins.bool]]):
+    def use_docker_container_name(self, value: pulumi.Input[Optional[_builtins.bool]]):
         pulumi.set(self, "use_docker_container_name", value)
 
 
@@ -601,24 +601,24 @@ class ProcessGroupDetectionFlags(pulumi.CustomResource):
     def __init__(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 add_node_js_script_name: Optional[pulumi.Input[_builtins.bool]] = None,
-                 auto_detect_cassandra_clusters: Optional[pulumi.Input[_builtins.bool]] = None,
-                 auto_detect_spring_boot: Optional[pulumi.Input[_builtins.bool]] = None,
-                 auto_detect_tibco_container_edition_engines: Optional[pulumi.Input[_builtins.bool]] = None,
-                 auto_detect_tibco_engines: Optional[pulumi.Input[_builtins.bool]] = None,
-                 auto_detect_web_methods_integration_server: Optional[pulumi.Input[_builtins.bool]] = None,
-                 auto_detect_web_sphere_liberty_application: Optional[pulumi.Input[_builtins.bool]] = None,
-                 group_ibmmqby_instance_name: Optional[pulumi.Input[_builtins.bool]] = None,
-                 identify_jboss_server_by_system_property: Optional[pulumi.Input[_builtins.bool]] = None,
-                 ignore_unique_identifiers: Optional[pulumi.Input[_builtins.bool]] = None,
-                 scope: Optional[pulumi.Input[_builtins.str]] = None,
-                 security_software_detection_enabled: Optional[pulumi.Input[_builtins.bool]] = None,
-                 short_lived_processes_monitoring: Optional[pulumi.Input[_builtins.bool]] = None,
-                 split_db2_grouping_by_instances: Optional[pulumi.Input[_builtins.bool]] = None,
-                 split_oracle_database_pg: Optional[pulumi.Input[_builtins.bool]] = None,
-                 split_oracle_listener_pg: Optional[pulumi.Input[_builtins.bool]] = None,
-                 use_catalina_base: Optional[pulumi.Input[_builtins.bool]] = None,
-                 use_docker_container_name: Optional[pulumi.Input[_builtins.bool]] = None,
+                 add_node_js_script_name: pulumi.Input[Optional[_builtins.bool]] = None,
+                 auto_detect_cassandra_clusters: pulumi.Input[Optional[_builtins.bool]] = None,
+                 auto_detect_spring_boot: pulumi.Input[Optional[_builtins.bool]] = None,
+                 auto_detect_tibco_container_edition_engines: pulumi.Input[Optional[_builtins.bool]] = None,
+                 auto_detect_tibco_engines: pulumi.Input[Optional[_builtins.bool]] = None,
+                 auto_detect_web_methods_integration_server: pulumi.Input[Optional[_builtins.bool]] = None,
+                 auto_detect_web_sphere_liberty_application: pulumi.Input[Optional[_builtins.bool]] = None,
+                 group_ibmmqby_instance_name: pulumi.Input[Optional[_builtins.bool]] = None,
+                 identify_jboss_server_by_system_property: pulumi.Input[Optional[_builtins.bool]] = None,
+                 ignore_unique_identifiers: pulumi.Input[Optional[_builtins.bool]] = None,
+                 scope: pulumi.Input[Optional[_builtins.str]] = None,
+                 security_software_detection_enabled: pulumi.Input[Optional[_builtins.bool]] = None,
+                 short_lived_processes_monitoring: pulumi.Input[Optional[_builtins.bool]] = None,
+                 split_db2_grouping_by_instances: pulumi.Input[Optional[_builtins.bool]] = None,
+                 split_oracle_database_pg: pulumi.Input[Optional[_builtins.bool]] = None,
+                 split_oracle_listener_pg: pulumi.Input[Optional[_builtins.bool]] = None,
+                 use_catalina_base: pulumi.Input[Optional[_builtins.bool]] = None,
+                 use_docker_container_name: pulumi.Input[Optional[_builtins.bool]] = None,
                  __props__=None):
         """
         > This resource requires the API token scopes **Read settings** (`settings.read`) and **Write settings** (`settings.write`)
@@ -694,24 +694,24 @@ class ProcessGroupDetectionFlags(pulumi.CustomResource):
     def _internal_init(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 add_node_js_script_name: Optional[pulumi.Input[_builtins.bool]] = None,
-                 auto_detect_cassandra_clusters: Optional[pulumi.Input[_builtins.bool]] = None,
-                 auto_detect_spring_boot: Optional[pulumi.Input[_builtins.bool]] = None,
-                 auto_detect_tibco_container_edition_engines: Optional[pulumi.Input[_builtins.bool]] = None,
-                 auto_detect_tibco_engines: Optional[pulumi.Input[_builtins.bool]] = None,
-                 auto_detect_web_methods_integration_server: Optional[pulumi.Input[_builtins.bool]] = None,
-                 auto_detect_web_sphere_liberty_application: Optional[pulumi.Input[_builtins.bool]] = None,
-                 group_ibmmqby_instance_name: Optional[pulumi.Input[_builtins.bool]] = None,
-                 identify_jboss_server_by_system_property: Optional[pulumi.Input[_builtins.bool]] = None,
-                 ignore_unique_identifiers: Optional[pulumi.Input[_builtins.bool]] = None,
-                 scope: Optional[pulumi.Input[_builtins.str]] = None,
-                 security_software_detection_enabled: Optional[pulumi.Input[_builtins.bool]] = None,
-                 short_lived_processes_monitoring: Optional[pulumi.Input[_builtins.bool]] = None,
-                 split_db2_grouping_by_instances: Optional[pulumi.Input[_builtins.bool]] = None,
-                 split_oracle_database_pg: Optional[pulumi.Input[_builtins.bool]] = None,
-                 split_oracle_listener_pg: Optional[pulumi.Input[_builtins.bool]] = None,
-                 use_catalina_base: Optional[pulumi.Input[_builtins.bool]] = None,
-                 use_docker_container_name: Optional[pulumi.Input[_builtins.bool]] = None,
+                 add_node_js_script_name: pulumi.Input[Optional[_builtins.bool]] = None,
+                 auto_detect_cassandra_clusters: pulumi.Input[Optional[_builtins.bool]] = None,
+                 auto_detect_spring_boot: pulumi.Input[Optional[_builtins.bool]] = None,
+                 auto_detect_tibco_container_edition_engines: pulumi.Input[Optional[_builtins.bool]] = None,
+                 auto_detect_tibco_engines: pulumi.Input[Optional[_builtins.bool]] = None,
+                 auto_detect_web_methods_integration_server: pulumi.Input[Optional[_builtins.bool]] = None,
+                 auto_detect_web_sphere_liberty_application: pulumi.Input[Optional[_builtins.bool]] = None,
+                 group_ibmmqby_instance_name: pulumi.Input[Optional[_builtins.bool]] = None,
+                 identify_jboss_server_by_system_property: pulumi.Input[Optional[_builtins.bool]] = None,
+                 ignore_unique_identifiers: pulumi.Input[Optional[_builtins.bool]] = None,
+                 scope: pulumi.Input[Optional[_builtins.str]] = None,
+                 security_software_detection_enabled: pulumi.Input[Optional[_builtins.bool]] = None,
+                 short_lived_processes_monitoring: pulumi.Input[Optional[_builtins.bool]] = None,
+                 split_db2_grouping_by_instances: pulumi.Input[Optional[_builtins.bool]] = None,
+                 split_oracle_database_pg: pulumi.Input[Optional[_builtins.bool]] = None,
+                 split_oracle_listener_pg: pulumi.Input[Optional[_builtins.bool]] = None,
+                 use_catalina_base: pulumi.Input[Optional[_builtins.bool]] = None,
+                 use_docker_container_name: pulumi.Input[Optional[_builtins.bool]] = None,
                  __props__=None):
         opts = pulumi.ResourceOptions.merge(_utilities.get_resource_opts_defaults(), opts)
         if not isinstance(opts, pulumi.ResourceOptions):
@@ -779,24 +779,24 @@ class ProcessGroupDetectionFlags(pulumi.CustomResource):
     def get(resource_name: str,
             id: pulumi.Input[str],
             opts: Optional[pulumi.ResourceOptions] = None,
-            add_node_js_script_name: Optional[pulumi.Input[_builtins.bool]] = None,
-            auto_detect_cassandra_clusters: Optional[pulumi.Input[_builtins.bool]] = None,
-            auto_detect_spring_boot: Optional[pulumi.Input[_builtins.bool]] = None,
-            auto_detect_tibco_container_edition_engines: Optional[pulumi.Input[_builtins.bool]] = None,
-            auto_detect_tibco_engines: Optional[pulumi.Input[_builtins.bool]] = None,
-            auto_detect_web_methods_integration_server: Optional[pulumi.Input[_builtins.bool]] = None,
-            auto_detect_web_sphere_liberty_application: Optional[pulumi.Input[_builtins.bool]] = None,
-            group_ibmmqby_instance_name: Optional[pulumi.Input[_builtins.bool]] = None,
-            identify_jboss_server_by_system_property: Optional[pulumi.Input[_builtins.bool]] = None,
-            ignore_unique_identifiers: Optional[pulumi.Input[_builtins.bool]] = None,
-            scope: Optional[pulumi.Input[_builtins.str]] = None,
-            security_software_detection_enabled: Optional[pulumi.Input[_builtins.bool]] = None,
-            short_lived_processes_monitoring: Optional[pulumi.Input[_builtins.bool]] = None,
-            split_db2_grouping_by_instances: Optional[pulumi.Input[_builtins.bool]] = None,
-            split_oracle_database_pg: Optional[pulumi.Input[_builtins.bool]] = None,
-            split_oracle_listener_pg: Optional[pulumi.Input[_builtins.bool]] = None,
-            use_catalina_base: Optional[pulumi.Input[_builtins.bool]] = None,
-            use_docker_container_name: Optional[pulumi.Input[_builtins.bool]] = None) -> 'ProcessGroupDetectionFlags':
+            add_node_js_script_name: pulumi.Input[Optional[_builtins.bool]] = None,
+            auto_detect_cassandra_clusters: pulumi.Input[Optional[_builtins.bool]] = None,
+            auto_detect_spring_boot: pulumi.Input[Optional[_builtins.bool]] = None,
+            auto_detect_tibco_container_edition_engines: pulumi.Input[Optional[_builtins.bool]] = None,
+            auto_detect_tibco_engines: pulumi.Input[Optional[_builtins.bool]] = None,
+            auto_detect_web_methods_integration_server: pulumi.Input[Optional[_builtins.bool]] = None,
+            auto_detect_web_sphere_liberty_application: pulumi.Input[Optional[_builtins.bool]] = None,
+            group_ibmmqby_instance_name: pulumi.Input[Optional[_builtins.bool]] = None,
+            identify_jboss_server_by_system_property: pulumi.Input[Optional[_builtins.bool]] = None,
+            ignore_unique_identifiers: pulumi.Input[Optional[_builtins.bool]] = None,
+            scope: pulumi.Input[Optional[_builtins.str]] = None,
+            security_software_detection_enabled: pulumi.Input[Optional[_builtins.bool]] = None,
+            short_lived_processes_monitoring: pulumi.Input[Optional[_builtins.bool]] = None,
+            split_db2_grouping_by_instances: pulumi.Input[Optional[_builtins.bool]] = None,
+            split_oracle_database_pg: pulumi.Input[Optional[_builtins.bool]] = None,
+            split_oracle_listener_pg: pulumi.Input[Optional[_builtins.bool]] = None,
+            use_catalina_base: pulumi.Input[Optional[_builtins.bool]] = None,
+            use_docker_container_name: pulumi.Input[Optional[_builtins.bool]] = None) -> 'ProcessGroupDetectionFlags':
         """
         Get an existing ProcessGroupDetectionFlags resource's state with the given name, id, and optional extra
         properties used to qualify the lookup.

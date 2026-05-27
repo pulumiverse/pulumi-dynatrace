@@ -96,11 +96,11 @@ export interface DiskAnomaliesV2State {
     /**
      * Disk
      */
-    disk?: pulumi.Input<inputs.DiskAnomaliesV2Disk>;
+    disk?: pulumi.Input<inputs.DiskAnomaliesV2Disk | undefined>;
     /**
      * The scope for the disk anomaly detection
      */
-    scope?: pulumi.Input<string>;
+    scope?: pulumi.Input<string | undefined>;
 }
 
 /**

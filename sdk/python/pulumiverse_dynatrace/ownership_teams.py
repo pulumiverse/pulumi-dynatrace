@@ -23,13 +23,13 @@ class OwnershipTeamsArgs:
     def __init__(__self__, *,
                  identifier: pulumi.Input[_builtins.str],
                  responsibilities: pulumi.Input['OwnershipTeamsResponsibilitiesArgs'],
-                 additional_information: Optional[pulumi.Input['OwnershipTeamsAdditionalInformationArgs']] = None,
-                 contact_details: Optional[pulumi.Input['OwnershipTeamsContactDetailsArgs']] = None,
-                 description: Optional[pulumi.Input[_builtins.str]] = None,
-                 external_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 links: Optional[pulumi.Input['OwnershipTeamsLinksArgs']] = None,
-                 name: Optional[pulumi.Input[_builtins.str]] = None,
-                 supplementary_identifiers: Optional[pulumi.Input['OwnershipTeamsSupplementaryIdentifiersArgs']] = None):
+                 additional_information: pulumi.Input[Optional['OwnershipTeamsAdditionalInformationArgs']] = None,
+                 contact_details: pulumi.Input[Optional['OwnershipTeamsContactDetailsArgs']] = None,
+                 description: pulumi.Input[Optional[_builtins.str]] = None,
+                 external_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 links: pulumi.Input[Optional['OwnershipTeamsLinksArgs']] = None,
+                 name: pulumi.Input[Optional[_builtins.str]] = None,
+                 supplementary_identifiers: pulumi.Input[Optional['OwnershipTeamsSupplementaryIdentifiersArgs']] = None):
         """
         The set of arguments for constructing a OwnershipTeams resource.
 
@@ -86,101 +86,101 @@ class OwnershipTeamsArgs:
 
     @_builtins.property
     @pulumi.getter(name="additionalInformation")
-    def additional_information(self) -> Optional[pulumi.Input['OwnershipTeamsAdditionalInformationArgs']]:
+    def additional_information(self) -> pulumi.Input[Optional['OwnershipTeamsAdditionalInformationArgs']]:
         """
         Define key/value pairs that further describe this team — for example, cost center, solution type, or business unit assignments.
         """
         return pulumi.get(self, "additional_information")
 
     @additional_information.setter
-    def additional_information(self, value: Optional[pulumi.Input['OwnershipTeamsAdditionalInformationArgs']]):
+    def additional_information(self, value: pulumi.Input[Optional['OwnershipTeamsAdditionalInformationArgs']]):
         pulumi.set(self, "additional_information", value)
 
     @_builtins.property
     @pulumi.getter(name="contactDetails")
-    def contact_details(self) -> Optional[pulumi.Input['OwnershipTeamsContactDetailsArgs']]:
+    def contact_details(self) -> pulumi.Input[Optional['OwnershipTeamsContactDetailsArgs']]:
         """
         Define options for messaging integration or other means of contacting this team.
         """
         return pulumi.get(self, "contact_details")
 
     @contact_details.setter
-    def contact_details(self, value: Optional[pulumi.Input['OwnershipTeamsContactDetailsArgs']]):
+    def contact_details(self, value: pulumi.Input[Optional['OwnershipTeamsContactDetailsArgs']]):
         pulumi.set(self, "contact_details", value)
 
     @_builtins.property
     @pulumi.getter
-    def description(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def description(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Description
         """
         return pulumi.get(self, "description")
 
     @description.setter
-    def description(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def description(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "description", value)
 
     @_builtins.property
     @pulumi.getter(name="externalId")
-    def external_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def external_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         This field should only be used for the automation purpose when importing team information.
         """
         return pulumi.get(self, "external_id")
 
     @external_id.setter
-    def external_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def external_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "external_id", value)
 
     @_builtins.property
     @pulumi.getter
-    def links(self) -> Optional[pulumi.Input['OwnershipTeamsLinksArgs']]:
+    def links(self) -> pulumi.Input[Optional['OwnershipTeamsLinksArgs']]:
         """
         Include links to online resources where information relevant to this team’s responsibilities can be found.
         """
         return pulumi.get(self, "links")
 
     @links.setter
-    def links(self, value: Optional[pulumi.Input['OwnershipTeamsLinksArgs']]):
+    def links(self, value: pulumi.Input[Optional['OwnershipTeamsLinksArgs']]):
         pulumi.set(self, "links", value)
 
     @_builtins.property
     @pulumi.getter
-    def name(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def name(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Team name
         """
         return pulumi.get(self, "name")
 
     @name.setter
-    def name(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def name(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "name", value)
 
     @_builtins.property
     @pulumi.getter(name="supplementaryIdentifiers")
-    def supplementary_identifiers(self) -> Optional[pulumi.Input['OwnershipTeamsSupplementaryIdentifiersArgs']]:
+    def supplementary_identifiers(self) -> pulumi.Input[Optional['OwnershipTeamsSupplementaryIdentifiersArgs']]:
         """
         The supplementary team identifiers can be optionally used in addition to the main team identifier to reference this team from any entity in Dynatrace. Up to 3 supplementary identifiers are supported.
         """
         return pulumi.get(self, "supplementary_identifiers")
 
     @supplementary_identifiers.setter
-    def supplementary_identifiers(self, value: Optional[pulumi.Input['OwnershipTeamsSupplementaryIdentifiersArgs']]):
+    def supplementary_identifiers(self, value: pulumi.Input[Optional['OwnershipTeamsSupplementaryIdentifiersArgs']]):
         pulumi.set(self, "supplementary_identifiers", value)
 
 
 @pulumi.input_type
 class _OwnershipTeamsState:
     def __init__(__self__, *,
-                 additional_information: Optional[pulumi.Input['OwnershipTeamsAdditionalInformationArgs']] = None,
-                 contact_details: Optional[pulumi.Input['OwnershipTeamsContactDetailsArgs']] = None,
-                 description: Optional[pulumi.Input[_builtins.str]] = None,
-                 external_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 identifier: Optional[pulumi.Input[_builtins.str]] = None,
-                 links: Optional[pulumi.Input['OwnershipTeamsLinksArgs']] = None,
-                 name: Optional[pulumi.Input[_builtins.str]] = None,
-                 responsibilities: Optional[pulumi.Input['OwnershipTeamsResponsibilitiesArgs']] = None,
-                 supplementary_identifiers: Optional[pulumi.Input['OwnershipTeamsSupplementaryIdentifiersArgs']] = None):
+                 additional_information: pulumi.Input[Optional['OwnershipTeamsAdditionalInformationArgs']] = None,
+                 contact_details: pulumi.Input[Optional['OwnershipTeamsContactDetailsArgs']] = None,
+                 description: pulumi.Input[Optional[_builtins.str]] = None,
+                 external_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 identifier: pulumi.Input[Optional[_builtins.str]] = None,
+                 links: pulumi.Input[Optional['OwnershipTeamsLinksArgs']] = None,
+                 name: pulumi.Input[Optional[_builtins.str]] = None,
+                 responsibilities: pulumi.Input[Optional['OwnershipTeamsResponsibilitiesArgs']] = None,
+                 supplementary_identifiers: pulumi.Input[Optional['OwnershipTeamsSupplementaryIdentifiersArgs']] = None):
         """
         Input properties used for looking up and filtering OwnershipTeams resources.
 
@@ -215,110 +215,110 @@ class _OwnershipTeamsState:
 
     @_builtins.property
     @pulumi.getter(name="additionalInformation")
-    def additional_information(self) -> Optional[pulumi.Input['OwnershipTeamsAdditionalInformationArgs']]:
+    def additional_information(self) -> pulumi.Input[Optional['OwnershipTeamsAdditionalInformationArgs']]:
         """
         Define key/value pairs that further describe this team — for example, cost center, solution type, or business unit assignments.
         """
         return pulumi.get(self, "additional_information")
 
     @additional_information.setter
-    def additional_information(self, value: Optional[pulumi.Input['OwnershipTeamsAdditionalInformationArgs']]):
+    def additional_information(self, value: pulumi.Input[Optional['OwnershipTeamsAdditionalInformationArgs']]):
         pulumi.set(self, "additional_information", value)
 
     @_builtins.property
     @pulumi.getter(name="contactDetails")
-    def contact_details(self) -> Optional[pulumi.Input['OwnershipTeamsContactDetailsArgs']]:
+    def contact_details(self) -> pulumi.Input[Optional['OwnershipTeamsContactDetailsArgs']]:
         """
         Define options for messaging integration or other means of contacting this team.
         """
         return pulumi.get(self, "contact_details")
 
     @contact_details.setter
-    def contact_details(self, value: Optional[pulumi.Input['OwnershipTeamsContactDetailsArgs']]):
+    def contact_details(self, value: pulumi.Input[Optional['OwnershipTeamsContactDetailsArgs']]):
         pulumi.set(self, "contact_details", value)
 
     @_builtins.property
     @pulumi.getter
-    def description(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def description(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Description
         """
         return pulumi.get(self, "description")
 
     @description.setter
-    def description(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def description(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "description", value)
 
     @_builtins.property
     @pulumi.getter(name="externalId")
-    def external_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def external_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         This field should only be used for the automation purpose when importing team information.
         """
         return pulumi.get(self, "external_id")
 
     @external_id.setter
-    def external_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def external_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "external_id", value)
 
     @_builtins.property
     @pulumi.getter
-    def identifier(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def identifier(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The team identifier is used to reference the team from any entity in Dynatrace. If you are using Kubernetes labels, keep in mind the 63 character limit that they enforce.
         """
         return pulumi.get(self, "identifier")
 
     @identifier.setter
-    def identifier(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def identifier(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "identifier", value)
 
     @_builtins.property
     @pulumi.getter
-    def links(self) -> Optional[pulumi.Input['OwnershipTeamsLinksArgs']]:
+    def links(self) -> pulumi.Input[Optional['OwnershipTeamsLinksArgs']]:
         """
         Include links to online resources where information relevant to this team’s responsibilities can be found.
         """
         return pulumi.get(self, "links")
 
     @links.setter
-    def links(self, value: Optional[pulumi.Input['OwnershipTeamsLinksArgs']]):
+    def links(self, value: pulumi.Input[Optional['OwnershipTeamsLinksArgs']]):
         pulumi.set(self, "links", value)
 
     @_builtins.property
     @pulumi.getter
-    def name(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def name(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Team name
         """
         return pulumi.get(self, "name")
 
     @name.setter
-    def name(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def name(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "name", value)
 
     @_builtins.property
     @pulumi.getter
-    def responsibilities(self) -> Optional[pulumi.Input['OwnershipTeamsResponsibilitiesArgs']]:
+    def responsibilities(self) -> pulumi.Input[Optional['OwnershipTeamsResponsibilitiesArgs']]:
         """
         Turn on all responsibility assignments that apply to this team.
         """
         return pulumi.get(self, "responsibilities")
 
     @responsibilities.setter
-    def responsibilities(self, value: Optional[pulumi.Input['OwnershipTeamsResponsibilitiesArgs']]):
+    def responsibilities(self, value: pulumi.Input[Optional['OwnershipTeamsResponsibilitiesArgs']]):
         pulumi.set(self, "responsibilities", value)
 
     @_builtins.property
     @pulumi.getter(name="supplementaryIdentifiers")
-    def supplementary_identifiers(self) -> Optional[pulumi.Input['OwnershipTeamsSupplementaryIdentifiersArgs']]:
+    def supplementary_identifiers(self) -> pulumi.Input[Optional['OwnershipTeamsSupplementaryIdentifiersArgs']]:
         """
         The supplementary team identifiers can be optionally used in addition to the main team identifier to reference this team from any entity in Dynatrace. Up to 3 supplementary identifiers are supported.
         """
         return pulumi.get(self, "supplementary_identifiers")
 
     @supplementary_identifiers.setter
-    def supplementary_identifiers(self, value: Optional[pulumi.Input['OwnershipTeamsSupplementaryIdentifiersArgs']]):
+    def supplementary_identifiers(self, value: pulumi.Input[Optional['OwnershipTeamsSupplementaryIdentifiersArgs']]):
         pulumi.set(self, "supplementary_identifiers", value)
 
 
@@ -328,15 +328,15 @@ class OwnershipTeams(pulumi.CustomResource):
     def __init__(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 additional_information: Optional[pulumi.Input[Union['OwnershipTeamsAdditionalInformationArgs', 'OwnershipTeamsAdditionalInformationArgsDict']]] = None,
-                 contact_details: Optional[pulumi.Input[Union['OwnershipTeamsContactDetailsArgs', 'OwnershipTeamsContactDetailsArgsDict']]] = None,
-                 description: Optional[pulumi.Input[_builtins.str]] = None,
-                 external_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 identifier: Optional[pulumi.Input[_builtins.str]] = None,
-                 links: Optional[pulumi.Input[Union['OwnershipTeamsLinksArgs', 'OwnershipTeamsLinksArgsDict']]] = None,
-                 name: Optional[pulumi.Input[_builtins.str]] = None,
-                 responsibilities: Optional[pulumi.Input[Union['OwnershipTeamsResponsibilitiesArgs', 'OwnershipTeamsResponsibilitiesArgsDict']]] = None,
-                 supplementary_identifiers: Optional[pulumi.Input[Union['OwnershipTeamsSupplementaryIdentifiersArgs', 'OwnershipTeamsSupplementaryIdentifiersArgsDict']]] = None,
+                 additional_information: pulumi.Input[Optional[Union['OwnershipTeamsAdditionalInformationArgs', 'OwnershipTeamsAdditionalInformationArgsDict']]] = None,
+                 contact_details: pulumi.Input[Optional[Union['OwnershipTeamsContactDetailsArgs', 'OwnershipTeamsContactDetailsArgsDict']]] = None,
+                 description: pulumi.Input[Optional[_builtins.str]] = None,
+                 external_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 identifier: pulumi.Input[Optional[_builtins.str]] = None,
+                 links: pulumi.Input[Optional[Union['OwnershipTeamsLinksArgs', 'OwnershipTeamsLinksArgsDict']]] = None,
+                 name: pulumi.Input[Optional[_builtins.str]] = None,
+                 responsibilities: pulumi.Input[Optional[Union['OwnershipTeamsResponsibilitiesArgs', 'OwnershipTeamsResponsibilitiesArgsDict']]] = None,
+                 supplementary_identifiers: pulumi.Input[Optional[Union['OwnershipTeamsSupplementaryIdentifiersArgs', 'OwnershipTeamsSupplementaryIdentifiersArgsDict']]] = None,
                  __props__=None):
         """
         > This resource requires the API token scopes **Read settings** (`settings.read`) and **Write settings** (`settings.write`)
@@ -403,15 +403,15 @@ class OwnershipTeams(pulumi.CustomResource):
     def _internal_init(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 additional_information: Optional[pulumi.Input[Union['OwnershipTeamsAdditionalInformationArgs', 'OwnershipTeamsAdditionalInformationArgsDict']]] = None,
-                 contact_details: Optional[pulumi.Input[Union['OwnershipTeamsContactDetailsArgs', 'OwnershipTeamsContactDetailsArgsDict']]] = None,
-                 description: Optional[pulumi.Input[_builtins.str]] = None,
-                 external_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 identifier: Optional[pulumi.Input[_builtins.str]] = None,
-                 links: Optional[pulumi.Input[Union['OwnershipTeamsLinksArgs', 'OwnershipTeamsLinksArgsDict']]] = None,
-                 name: Optional[pulumi.Input[_builtins.str]] = None,
-                 responsibilities: Optional[pulumi.Input[Union['OwnershipTeamsResponsibilitiesArgs', 'OwnershipTeamsResponsibilitiesArgsDict']]] = None,
-                 supplementary_identifiers: Optional[pulumi.Input[Union['OwnershipTeamsSupplementaryIdentifiersArgs', 'OwnershipTeamsSupplementaryIdentifiersArgsDict']]] = None,
+                 additional_information: pulumi.Input[Optional[Union['OwnershipTeamsAdditionalInformationArgs', 'OwnershipTeamsAdditionalInformationArgsDict']]] = None,
+                 contact_details: pulumi.Input[Optional[Union['OwnershipTeamsContactDetailsArgs', 'OwnershipTeamsContactDetailsArgsDict']]] = None,
+                 description: pulumi.Input[Optional[_builtins.str]] = None,
+                 external_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 identifier: pulumi.Input[Optional[_builtins.str]] = None,
+                 links: pulumi.Input[Optional[Union['OwnershipTeamsLinksArgs', 'OwnershipTeamsLinksArgsDict']]] = None,
+                 name: pulumi.Input[Optional[_builtins.str]] = None,
+                 responsibilities: pulumi.Input[Optional[Union['OwnershipTeamsResponsibilitiesArgs', 'OwnershipTeamsResponsibilitiesArgsDict']]] = None,
+                 supplementary_identifiers: pulumi.Input[Optional[Union['OwnershipTeamsSupplementaryIdentifiersArgs', 'OwnershipTeamsSupplementaryIdentifiersArgsDict']]] = None,
                  __props__=None):
         opts = pulumi.ResourceOptions.merge(_utilities.get_resource_opts_defaults(), opts)
         if not isinstance(opts, pulumi.ResourceOptions):
@@ -444,15 +444,15 @@ class OwnershipTeams(pulumi.CustomResource):
     def get(resource_name: str,
             id: pulumi.Input[str],
             opts: Optional[pulumi.ResourceOptions] = None,
-            additional_information: Optional[pulumi.Input[Union['OwnershipTeamsAdditionalInformationArgs', 'OwnershipTeamsAdditionalInformationArgsDict']]] = None,
-            contact_details: Optional[pulumi.Input[Union['OwnershipTeamsContactDetailsArgs', 'OwnershipTeamsContactDetailsArgsDict']]] = None,
-            description: Optional[pulumi.Input[_builtins.str]] = None,
-            external_id: Optional[pulumi.Input[_builtins.str]] = None,
-            identifier: Optional[pulumi.Input[_builtins.str]] = None,
-            links: Optional[pulumi.Input[Union['OwnershipTeamsLinksArgs', 'OwnershipTeamsLinksArgsDict']]] = None,
-            name: Optional[pulumi.Input[_builtins.str]] = None,
-            responsibilities: Optional[pulumi.Input[Union['OwnershipTeamsResponsibilitiesArgs', 'OwnershipTeamsResponsibilitiesArgsDict']]] = None,
-            supplementary_identifiers: Optional[pulumi.Input[Union['OwnershipTeamsSupplementaryIdentifiersArgs', 'OwnershipTeamsSupplementaryIdentifiersArgsDict']]] = None) -> 'OwnershipTeams':
+            additional_information: pulumi.Input[Optional[Union['OwnershipTeamsAdditionalInformationArgs', 'OwnershipTeamsAdditionalInformationArgsDict']]] = None,
+            contact_details: pulumi.Input[Optional[Union['OwnershipTeamsContactDetailsArgs', 'OwnershipTeamsContactDetailsArgsDict']]] = None,
+            description: pulumi.Input[Optional[_builtins.str]] = None,
+            external_id: pulumi.Input[Optional[_builtins.str]] = None,
+            identifier: pulumi.Input[Optional[_builtins.str]] = None,
+            links: pulumi.Input[Optional[Union['OwnershipTeamsLinksArgs', 'OwnershipTeamsLinksArgsDict']]] = None,
+            name: pulumi.Input[Optional[_builtins.str]] = None,
+            responsibilities: pulumi.Input[Optional[Union['OwnershipTeamsResponsibilitiesArgs', 'OwnershipTeamsResponsibilitiesArgsDict']]] = None,
+            supplementary_identifiers: pulumi.Input[Optional[Union['OwnershipTeamsSupplementaryIdentifiersArgs', 'OwnershipTeamsSupplementaryIdentifiersArgsDict']]] = None) -> 'OwnershipTeams':
         """
         Get an existing OwnershipTeams resource's state with the given name, id, and optional extra
         properties used to qualify the lookup.

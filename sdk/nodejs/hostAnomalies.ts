@@ -122,31 +122,31 @@ export interface HostAnomaliesState {
     /**
      * Configuration of lost connection detection
      */
-    connections?: pulumi.Input<inputs.HostAnomaliesConnections>;
+    connections?: pulumi.Input<inputs.HostAnomaliesConnections | undefined>;
     /**
      * Configuration of high CPU saturation detection
      */
-    cpu?: pulumi.Input<inputs.HostAnomaliesCpu>;
+    cpu?: pulumi.Input<inputs.HostAnomaliesCpu | undefined>;
     /**
      * Configuration of disk related anomalies
      */
-    disks?: pulumi.Input<inputs.HostAnomaliesDisks>;
+    disks?: pulumi.Input<inputs.HostAnomaliesDisks | undefined>;
     /**
      * Configuration of high Garbage Collector activity detection
      */
-    gc?: pulumi.Input<inputs.HostAnomaliesGc>;
+    gc?: pulumi.Input<inputs.HostAnomaliesGc | undefined>;
     /**
      * Configuration of Java related anomalies
      */
-    java?: pulumi.Input<inputs.HostAnomaliesJava>;
+    java?: pulumi.Input<inputs.HostAnomaliesJava | undefined>;
     /**
      * Configuration of high memory usage detection
      */
-    memory?: pulumi.Input<inputs.HostAnomaliesMemory>;
+    memory?: pulumi.Input<inputs.HostAnomaliesMemory | undefined>;
     /**
      * Configuration of network related anomalies
      */
-    network?: pulumi.Input<inputs.HostAnomaliesNetwork>;
+    network?: pulumi.Input<inputs.HostAnomaliesNetwork | undefined>;
 }
 
 /**
@@ -156,29 +156,29 @@ export interface HostAnomaliesArgs {
     /**
      * Configuration of lost connection detection
      */
-    connections?: pulumi.Input<inputs.HostAnomaliesConnections>;
+    connections?: pulumi.Input<inputs.HostAnomaliesConnections | undefined>;
     /**
      * Configuration of high CPU saturation detection
      */
-    cpu?: pulumi.Input<inputs.HostAnomaliesCpu>;
+    cpu?: pulumi.Input<inputs.HostAnomaliesCpu | undefined>;
     /**
      * Configuration of disk related anomalies
      */
-    disks?: pulumi.Input<inputs.HostAnomaliesDisks>;
+    disks?: pulumi.Input<inputs.HostAnomaliesDisks | undefined>;
     /**
      * Configuration of high Garbage Collector activity detection
      */
-    gc?: pulumi.Input<inputs.HostAnomaliesGc>;
+    gc?: pulumi.Input<inputs.HostAnomaliesGc | undefined>;
     /**
      * Configuration of Java related anomalies
      */
-    java?: pulumi.Input<inputs.HostAnomaliesJava>;
+    java?: pulumi.Input<inputs.HostAnomaliesJava | undefined>;
     /**
      * Configuration of high memory usage detection
      */
-    memory?: pulumi.Input<inputs.HostAnomaliesMemory>;
+    memory?: pulumi.Input<inputs.HostAnomaliesMemory | undefined>;
     /**
      * Configuration of network related anomalies
      */
-    network?: pulumi.Input<inputs.HostAnomaliesNetwork>;
+    network?: pulumi.Input<inputs.HostAnomaliesNetwork | undefined>;
 }

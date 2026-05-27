@@ -102,15 +102,15 @@ export interface HttpMonitorCookiesState {
     /**
      * no documentation available
      */
-    cookies?: pulumi.Input<inputs.HttpMonitorCookiesCookies>;
+    cookies?: pulumi.Input<inputs.HttpMonitorCookiesCookies | undefined>;
     /**
      * This setting is enabled (`true`) or disabled (`false`)
      */
-    enabled?: pulumi.Input<boolean>;
+    enabled?: pulumi.Input<boolean | undefined>;
     /**
      * The scope of this setting (HTTP_CHECK)
      */
-    scope?: pulumi.Input<string>;
+    scope?: pulumi.Input<string | undefined>;
 }
 
 /**
@@ -120,7 +120,7 @@ export interface HttpMonitorCookiesArgs {
     /**
      * no documentation available
      */
-    cookies?: pulumi.Input<inputs.HttpMonitorCookiesCookies>;
+    cookies?: pulumi.Input<inputs.HttpMonitorCookiesCookies | undefined>;
     /**
      * This setting is enabled (`true`) or disabled (`false`)
      */

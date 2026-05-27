@@ -96,11 +96,11 @@ export interface DiscoveryDefaultRulesState {
     /**
      * Rule:
      */
-    rule?: pulumi.Input<inputs.DiscoveryDefaultRulesRule>;
+    rule?: pulumi.Input<inputs.DiscoveryDefaultRulesRule | undefined>;
     /**
      * Settings:
      */
-    settings?: pulumi.Input<inputs.DiscoveryDefaultRulesSettings>;
+    settings?: pulumi.Input<inputs.DiscoveryDefaultRulesSettings | undefined>;
 }
 
 /**

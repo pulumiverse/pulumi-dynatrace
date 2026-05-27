@@ -19,7 +19,7 @@ __all__ = ['WebAppJavascriptVersionArgs', 'WebAppJavascriptVersion']
 @pulumi.input_type
 class WebAppJavascriptVersionArgs:
     def __init__(__self__, *,
-                 custom_javascript_version: Optional[pulumi.Input[_builtins.str]] = None):
+                 custom_javascript_version: pulumi.Input[Optional[_builtins.str]] = None):
         """
         The set of arguments for constructing a WebAppJavascriptVersion resource.
 
@@ -30,21 +30,21 @@ class WebAppJavascriptVersionArgs:
 
     @_builtins.property
     @pulumi.getter(name="customJavascriptVersion")
-    def custom_javascript_version(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def custom_javascript_version(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Choose custom version
         """
         return pulumi.get(self, "custom_javascript_version")
 
     @custom_javascript_version.setter
-    def custom_javascript_version(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def custom_javascript_version(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "custom_javascript_version", value)
 
 
 @pulumi.input_type
 class _WebAppJavascriptVersionState:
     def __init__(__self__, *,
-                 custom_javascript_version: Optional[pulumi.Input[_builtins.str]] = None):
+                 custom_javascript_version: pulumi.Input[Optional[_builtins.str]] = None):
         """
         Input properties used for looking up and filtering WebAppJavascriptVersion resources.
 
@@ -55,14 +55,14 @@ class _WebAppJavascriptVersionState:
 
     @_builtins.property
     @pulumi.getter(name="customJavascriptVersion")
-    def custom_javascript_version(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def custom_javascript_version(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Choose custom version
         """
         return pulumi.get(self, "custom_javascript_version")
 
     @custom_javascript_version.setter
-    def custom_javascript_version(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def custom_javascript_version(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "custom_javascript_version", value)
 
 
@@ -72,7 +72,7 @@ class WebAppJavascriptVersion(pulumi.CustomResource):
     def __init__(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 custom_javascript_version: Optional[pulumi.Input[_builtins.str]] = None,
+                 custom_javascript_version: pulumi.Input[Optional[_builtins.str]] = None,
                  __props__=None):
         """
         > This resource requires the API token scopes **Read settings** (`settings.read`) and **Write settings** (`settings.write`)
@@ -131,7 +131,7 @@ class WebAppJavascriptVersion(pulumi.CustomResource):
     def _internal_init(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 custom_javascript_version: Optional[pulumi.Input[_builtins.str]] = None,
+                 custom_javascript_version: pulumi.Input[Optional[_builtins.str]] = None,
                  __props__=None):
         opts = pulumi.ResourceOptions.merge(_utilities.get_resource_opts_defaults(), opts)
         if not isinstance(opts, pulumi.ResourceOptions):
@@ -152,7 +152,7 @@ class WebAppJavascriptVersion(pulumi.CustomResource):
     def get(resource_name: str,
             id: pulumi.Input[str],
             opts: Optional[pulumi.ResourceOptions] = None,
-            custom_javascript_version: Optional[pulumi.Input[_builtins.str]] = None) -> 'WebAppJavascriptVersion':
+            custom_javascript_version: pulumi.Input[Optional[_builtins.str]] = None) -> 'WebAppJavascriptVersion':
         """
         Get an existing WebAppJavascriptVersion resource's state with the given name, id, and optional extra
         properties used to qualify the lookup.

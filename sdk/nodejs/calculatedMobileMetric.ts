@@ -138,35 +138,35 @@ export interface CalculatedMobileMetricState {
     /**
      * The Dynatrace entity ID of the application to which the metric belongs.
      */
-    appIdentifier?: pulumi.Input<string>;
+    appIdentifier?: pulumi.Input<string | undefined>;
     /**
      * Descriptor of a calculated mobile/custom app metric.
      */
-    description?: pulumi.Input<string>;
+    description?: pulumi.Input<string | undefined>;
     /**
      * Parameters of a definition of a calculated mobile/custom app metric.
      */
-    dimensions?: pulumi.Input<pulumi.Input<inputs.CalculatedMobileMetricDimension>[]>;
+    dimensions?: pulumi.Input<pulumi.Input<inputs.CalculatedMobileMetricDimension>[] | undefined>;
     /**
      * The metric is enabled (`true`) or disabled (`false`)
      */
-    enabled?: pulumi.Input<boolean>;
+    enabled?: pulumi.Input<boolean | undefined>;
     /**
      * The unique key of the calculated mobile/custom app metric.
      */
-    metricKey?: pulumi.Input<string>;
+    metricKey?: pulumi.Input<string | undefined>;
     /**
      * The type of the metric. Possible values: [ REPORTED*ERROR*COUNT, USER*ACTION*DURATION, WEB*REQUEST*COUNT, WEB*REQUEST*ERROR_COUNT ]
      */
-    metricType?: pulumi.Input<string>;
+    metricType?: pulumi.Input<string | undefined>;
     /**
      * The displayed name of the metric.
      */
-    name?: pulumi.Input<string>;
+    name?: pulumi.Input<string | undefined>;
     /**
      * Parameters of a definition of a calculated mobile/custom app metric.
      */
-    userActionFilter?: pulumi.Input<inputs.CalculatedMobileMetricUserActionFilter>;
+    userActionFilter?: pulumi.Input<inputs.CalculatedMobileMetricUserActionFilter | undefined>;
 }
 
 /**
@@ -180,11 +180,11 @@ export interface CalculatedMobileMetricArgs {
     /**
      * Descriptor of a calculated mobile/custom app metric.
      */
-    description?: pulumi.Input<string>;
+    description?: pulumi.Input<string | undefined>;
     /**
      * Parameters of a definition of a calculated mobile/custom app metric.
      */
-    dimensions?: pulumi.Input<pulumi.Input<inputs.CalculatedMobileMetricDimension>[]>;
+    dimensions?: pulumi.Input<pulumi.Input<inputs.CalculatedMobileMetricDimension>[] | undefined>;
     /**
      * The metric is enabled (`true`) or disabled (`false`)
      */
@@ -200,9 +200,9 @@ export interface CalculatedMobileMetricArgs {
     /**
      * The displayed name of the metric.
      */
-    name?: pulumi.Input<string>;
+    name?: pulumi.Input<string | undefined>;
     /**
      * Parameters of a definition of a calculated mobile/custom app metric.
      */
-    userActionFilter?: pulumi.Input<inputs.CalculatedMobileMetricUserActionFilter>;
+    userActionFilter?: pulumi.Input<inputs.CalculatedMobileMetricUserActionFilter | undefined>;
 }

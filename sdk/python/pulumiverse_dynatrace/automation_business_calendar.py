@@ -22,12 +22,12 @@ __all__ = ['AutomationBusinessCalendarArgs', 'AutomationBusinessCalendar']
 class AutomationBusinessCalendarArgs:
     def __init__(__self__, *,
                  title: pulumi.Input[_builtins.str],
-                 description: Optional[pulumi.Input[_builtins.str]] = None,
-                 holidays: Optional[pulumi.Input['AutomationBusinessCalendarHolidaysArgs']] = None,
-                 valid_from: Optional[pulumi.Input[_builtins.str]] = None,
-                 valid_to: Optional[pulumi.Input[_builtins.str]] = None,
-                 week_days: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.int]]]] = None,
-                 week_start: Optional[pulumi.Input[_builtins.int]] = None):
+                 description: pulumi.Input[Optional[_builtins.str]] = None,
+                 holidays: pulumi.Input[Optional['AutomationBusinessCalendarHolidaysArgs']] = None,
+                 valid_from: pulumi.Input[Optional[_builtins.str]] = None,
+                 valid_to: pulumi.Input[Optional[_builtins.str]] = None,
+                 week_days: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.int]]]] = None,
+                 week_start: pulumi.Input[Optional[_builtins.int]] = None):
         """
         The set of arguments for constructing a AutomationBusinessCalendar resource.
 
@@ -67,87 +67,87 @@ class AutomationBusinessCalendarArgs:
 
     @_builtins.property
     @pulumi.getter
-    def description(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def description(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         An optional description for the Business Calendar
         """
         return pulumi.get(self, "description")
 
     @description.setter
-    def description(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def description(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "description", value)
 
     @_builtins.property
     @pulumi.getter
-    def holidays(self) -> Optional[pulumi.Input['AutomationBusinessCalendarHolidaysArgs']]:
+    def holidays(self) -> pulumi.Input[Optional['AutomationBusinessCalendarHolidaysArgs']]:
         """
         A list of holidays valid in this calendar
         """
         return pulumi.get(self, "holidays")
 
     @holidays.setter
-    def holidays(self, value: Optional[pulumi.Input['AutomationBusinessCalendarHolidaysArgs']]):
+    def holidays(self, value: pulumi.Input[Optional['AutomationBusinessCalendarHolidaysArgs']]):
         pulumi.set(self, "holidays", value)
 
     @_builtins.property
     @pulumi.getter(name="validFrom")
-    def valid_from(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def valid_from(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The date from when on this calendar is valid from. Example: `2023-07-04` for July 4th 2023
         """
         return pulumi.get(self, "valid_from")
 
     @valid_from.setter
-    def valid_from(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def valid_from(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "valid_from", value)
 
     @_builtins.property
     @pulumi.getter(name="validTo")
-    def valid_to(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def valid_to(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The date until when on this calendar is valid to. Example: `2023-07-04` for July 4th 2023
         """
         return pulumi.get(self, "valid_to")
 
     @valid_to.setter
-    def valid_to(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def valid_to(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "valid_to", value)
 
     @_builtins.property
     @pulumi.getter(name="weekDays")
-    def week_days(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.int]]]]:
+    def week_days(self) -> pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.int]]]]:
         """
         The days to be considered week days in this calendar. `1' =`Monday`,`2`=`Tuesday`,`3`=`Wednesday`,`4`=`Thursday`,`5`=`Friday`,`6`=`Saturday`,`7`=`Sunday`
         """
         return pulumi.get(self, "week_days")
 
     @week_days.setter
-    def week_days(self, value: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.int]]]]):
+    def week_days(self, value: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.int]]]]):
         pulumi.set(self, "week_days", value)
 
     @_builtins.property
     @pulumi.getter(name="weekStart")
-    def week_start(self) -> Optional[pulumi.Input[_builtins.int]]:
+    def week_start(self) -> pulumi.Input[Optional[_builtins.int]]:
         """
         Specifies the day of the week that's considered to be the first day in the week. `1` for Monday, `7` for Sunday
         """
         return pulumi.get(self, "week_start")
 
     @week_start.setter
-    def week_start(self, value: Optional[pulumi.Input[_builtins.int]]):
+    def week_start(self, value: pulumi.Input[Optional[_builtins.int]]):
         pulumi.set(self, "week_start", value)
 
 
 @pulumi.input_type
 class _AutomationBusinessCalendarState:
     def __init__(__self__, *,
-                 description: Optional[pulumi.Input[_builtins.str]] = None,
-                 holidays: Optional[pulumi.Input['AutomationBusinessCalendarHolidaysArgs']] = None,
-                 title: Optional[pulumi.Input[_builtins.str]] = None,
-                 valid_from: Optional[pulumi.Input[_builtins.str]] = None,
-                 valid_to: Optional[pulumi.Input[_builtins.str]] = None,
-                 week_days: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.int]]]] = None,
-                 week_start: Optional[pulumi.Input[_builtins.int]] = None):
+                 description: pulumi.Input[Optional[_builtins.str]] = None,
+                 holidays: pulumi.Input[Optional['AutomationBusinessCalendarHolidaysArgs']] = None,
+                 title: pulumi.Input[Optional[_builtins.str]] = None,
+                 valid_from: pulumi.Input[Optional[_builtins.str]] = None,
+                 valid_to: pulumi.Input[Optional[_builtins.str]] = None,
+                 week_days: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.int]]]] = None,
+                 week_start: pulumi.Input[Optional[_builtins.int]] = None):
         """
         Input properties used for looking up and filtering AutomationBusinessCalendar resources.
 
@@ -176,86 +176,86 @@ class _AutomationBusinessCalendarState:
 
     @_builtins.property
     @pulumi.getter
-    def description(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def description(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         An optional description for the Business Calendar
         """
         return pulumi.get(self, "description")
 
     @description.setter
-    def description(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def description(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "description", value)
 
     @_builtins.property
     @pulumi.getter
-    def holidays(self) -> Optional[pulumi.Input['AutomationBusinessCalendarHolidaysArgs']]:
+    def holidays(self) -> pulumi.Input[Optional['AutomationBusinessCalendarHolidaysArgs']]:
         """
         A list of holidays valid in this calendar
         """
         return pulumi.get(self, "holidays")
 
     @holidays.setter
-    def holidays(self, value: Optional[pulumi.Input['AutomationBusinessCalendarHolidaysArgs']]):
+    def holidays(self, value: pulumi.Input[Optional['AutomationBusinessCalendarHolidaysArgs']]):
         pulumi.set(self, "holidays", value)
 
     @_builtins.property
     @pulumi.getter
-    def title(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def title(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The title / name of the Business Calendar
         """
         return pulumi.get(self, "title")
 
     @title.setter
-    def title(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def title(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "title", value)
 
     @_builtins.property
     @pulumi.getter(name="validFrom")
-    def valid_from(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def valid_from(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The date from when on this calendar is valid from. Example: `2023-07-04` for July 4th 2023
         """
         return pulumi.get(self, "valid_from")
 
     @valid_from.setter
-    def valid_from(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def valid_from(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "valid_from", value)
 
     @_builtins.property
     @pulumi.getter(name="validTo")
-    def valid_to(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def valid_to(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The date until when on this calendar is valid to. Example: `2023-07-04` for July 4th 2023
         """
         return pulumi.get(self, "valid_to")
 
     @valid_to.setter
-    def valid_to(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def valid_to(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "valid_to", value)
 
     @_builtins.property
     @pulumi.getter(name="weekDays")
-    def week_days(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.int]]]]:
+    def week_days(self) -> pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.int]]]]:
         """
         The days to be considered week days in this calendar. `1' =`Monday`,`2`=`Tuesday`,`3`=`Wednesday`,`4`=`Thursday`,`5`=`Friday`,`6`=`Saturday`,`7`=`Sunday`
         """
         return pulumi.get(self, "week_days")
 
     @week_days.setter
-    def week_days(self, value: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.int]]]]):
+    def week_days(self, value: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.int]]]]):
         pulumi.set(self, "week_days", value)
 
     @_builtins.property
     @pulumi.getter(name="weekStart")
-    def week_start(self) -> Optional[pulumi.Input[_builtins.int]]:
+    def week_start(self) -> pulumi.Input[Optional[_builtins.int]]:
         """
         Specifies the day of the week that's considered to be the first day in the week. `1` for Monday, `7` for Sunday
         """
         return pulumi.get(self, "week_start")
 
     @week_start.setter
-    def week_start(self, value: Optional[pulumi.Input[_builtins.int]]):
+    def week_start(self, value: pulumi.Input[Optional[_builtins.int]]):
         pulumi.set(self, "week_start", value)
 
 
@@ -265,13 +265,13 @@ class AutomationBusinessCalendar(pulumi.CustomResource):
     def __init__(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 description: Optional[pulumi.Input[_builtins.str]] = None,
-                 holidays: Optional[pulumi.Input[Union['AutomationBusinessCalendarHolidaysArgs', 'AutomationBusinessCalendarHolidaysArgsDict']]] = None,
-                 title: Optional[pulumi.Input[_builtins.str]] = None,
-                 valid_from: Optional[pulumi.Input[_builtins.str]] = None,
-                 valid_to: Optional[pulumi.Input[_builtins.str]] = None,
-                 week_days: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.int]]]] = None,
-                 week_start: Optional[pulumi.Input[_builtins.int]] = None,
+                 description: pulumi.Input[Optional[_builtins.str]] = None,
+                 holidays: pulumi.Input[Optional[Union['AutomationBusinessCalendarHolidaysArgs', 'AutomationBusinessCalendarHolidaysArgsDict']]] = None,
+                 title: pulumi.Input[Optional[_builtins.str]] = None,
+                 valid_from: pulumi.Input[Optional[_builtins.str]] = None,
+                 valid_to: pulumi.Input[Optional[_builtins.str]] = None,
+                 week_days: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.int]]]] = None,
+                 week_start: pulumi.Input[Optional[_builtins.int]] = None,
                  __props__=None):
         """
         > **Dynatrace SaaS only**
@@ -328,13 +328,13 @@ class AutomationBusinessCalendar(pulumi.CustomResource):
     def _internal_init(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 description: Optional[pulumi.Input[_builtins.str]] = None,
-                 holidays: Optional[pulumi.Input[Union['AutomationBusinessCalendarHolidaysArgs', 'AutomationBusinessCalendarHolidaysArgsDict']]] = None,
-                 title: Optional[pulumi.Input[_builtins.str]] = None,
-                 valid_from: Optional[pulumi.Input[_builtins.str]] = None,
-                 valid_to: Optional[pulumi.Input[_builtins.str]] = None,
-                 week_days: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.int]]]] = None,
-                 week_start: Optional[pulumi.Input[_builtins.int]] = None,
+                 description: pulumi.Input[Optional[_builtins.str]] = None,
+                 holidays: pulumi.Input[Optional[Union['AutomationBusinessCalendarHolidaysArgs', 'AutomationBusinessCalendarHolidaysArgsDict']]] = None,
+                 title: pulumi.Input[Optional[_builtins.str]] = None,
+                 valid_from: pulumi.Input[Optional[_builtins.str]] = None,
+                 valid_to: pulumi.Input[Optional[_builtins.str]] = None,
+                 week_days: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.int]]]] = None,
+                 week_start: pulumi.Input[Optional[_builtins.int]] = None,
                  __props__=None):
         opts = pulumi.ResourceOptions.merge(_utilities.get_resource_opts_defaults(), opts)
         if not isinstance(opts, pulumi.ResourceOptions):
@@ -363,13 +363,13 @@ class AutomationBusinessCalendar(pulumi.CustomResource):
     def get(resource_name: str,
             id: pulumi.Input[str],
             opts: Optional[pulumi.ResourceOptions] = None,
-            description: Optional[pulumi.Input[_builtins.str]] = None,
-            holidays: Optional[pulumi.Input[Union['AutomationBusinessCalendarHolidaysArgs', 'AutomationBusinessCalendarHolidaysArgsDict']]] = None,
-            title: Optional[pulumi.Input[_builtins.str]] = None,
-            valid_from: Optional[pulumi.Input[_builtins.str]] = None,
-            valid_to: Optional[pulumi.Input[_builtins.str]] = None,
-            week_days: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.int]]]] = None,
-            week_start: Optional[pulumi.Input[_builtins.int]] = None) -> 'AutomationBusinessCalendar':
+            description: pulumi.Input[Optional[_builtins.str]] = None,
+            holidays: pulumi.Input[Optional[Union['AutomationBusinessCalendarHolidaysArgs', 'AutomationBusinessCalendarHolidaysArgsDict']]] = None,
+            title: pulumi.Input[Optional[_builtins.str]] = None,
+            valid_from: pulumi.Input[Optional[_builtins.str]] = None,
+            valid_to: pulumi.Input[Optional[_builtins.str]] = None,
+            week_days: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.int]]]] = None,
+            week_start: pulumi.Input[Optional[_builtins.int]] = None) -> 'AutomationBusinessCalendar':
         """
         Get an existing AutomationBusinessCalendar resource's state with the given name, id, and optional extra
         properties used to qualify the lookup.

@@ -23,11 +23,11 @@ class ServiceFullWebServiceArgs:
     def __init__(__self__, *,
                  enabled: pulumi.Input[_builtins.bool],
                  id_contributors: pulumi.Input['ServiceFullWebServiceIdContributorsArgs'],
-                 conditions: Optional[pulumi.Input['ServiceFullWebServiceConditionsArgs']] = None,
-                 description: Optional[pulumi.Input[_builtins.str]] = None,
-                 insert_after: Optional[pulumi.Input[_builtins.str]] = None,
-                 management_zones: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-                 name: Optional[pulumi.Input[_builtins.str]] = None):
+                 conditions: pulumi.Input[Optional['ServiceFullWebServiceConditionsArgs']] = None,
+                 description: pulumi.Input[Optional[_builtins.str]] = None,
+                 insert_after: pulumi.Input[Optional[_builtins.str]] = None,
+                 management_zones: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 name: pulumi.Input[Optional[_builtins.str]] = None):
         """
         The set of arguments for constructing a ServiceFullWebService resource.
 
@@ -78,75 +78,75 @@ class ServiceFullWebServiceArgs:
 
     @_builtins.property
     @pulumi.getter
-    def conditions(self) -> Optional[pulumi.Input['ServiceFullWebServiceConditionsArgs']]:
+    def conditions(self) -> pulumi.Input[Optional['ServiceFullWebServiceConditionsArgs']]:
         """
         A list of conditions necessary for the rule to take effect. If multiple conditions are specified, they must **all** match a Request for the rule to apply. If there is no condition at all, the rule is always applied. Conditions are evaluated against attributes, but do not modify them.
         """
         return pulumi.get(self, "conditions")
 
     @conditions.setter
-    def conditions(self, value: Optional[pulumi.Input['ServiceFullWebServiceConditionsArgs']]):
+    def conditions(self, value: pulumi.Input[Optional['ServiceFullWebServiceConditionsArgs']]):
         pulumi.set(self, "conditions", value)
 
     @_builtins.property
     @pulumi.getter
-    def description(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def description(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Description
         """
         return pulumi.get(self, "description")
 
     @description.setter
-    def description(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def description(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "description", value)
 
     @_builtins.property
     @pulumi.getter(name="insertAfter")
-    def insert_after(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def insert_after(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Because this resource allows for ordering you may specify the ID of the resource instance that comes before this instance regarding order. If not specified when creating the setting will be added to the end of the list. If not specified during update the order will remain untouched
         """
         return pulumi.get(self, "insert_after")
 
     @insert_after.setter
-    def insert_after(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def insert_after(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "insert_after", value)
 
     @_builtins.property
     @pulumi.getter(name="managementZones")
-    def management_zones(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]:
+    def management_zones(self) -> pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]:
         """
         Define a management zone of the process group for which this service detection rule should be created.
         """
         return pulumi.get(self, "management_zones")
 
     @management_zones.setter
-    def management_zones(self, value: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]):
+    def management_zones(self, value: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "management_zones", value)
 
     @_builtins.property
     @pulumi.getter
-    def name(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def name(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Rule name
         """
         return pulumi.get(self, "name")
 
     @name.setter
-    def name(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def name(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "name", value)
 
 
 @pulumi.input_type
 class _ServiceFullWebServiceState:
     def __init__(__self__, *,
-                 conditions: Optional[pulumi.Input['ServiceFullWebServiceConditionsArgs']] = None,
-                 description: Optional[pulumi.Input[_builtins.str]] = None,
-                 enabled: Optional[pulumi.Input[_builtins.bool]] = None,
-                 id_contributors: Optional[pulumi.Input['ServiceFullWebServiceIdContributorsArgs']] = None,
-                 insert_after: Optional[pulumi.Input[_builtins.str]] = None,
-                 management_zones: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-                 name: Optional[pulumi.Input[_builtins.str]] = None):
+                 conditions: pulumi.Input[Optional['ServiceFullWebServiceConditionsArgs']] = None,
+                 description: pulumi.Input[Optional[_builtins.str]] = None,
+                 enabled: pulumi.Input[Optional[_builtins.bool]] = None,
+                 id_contributors: pulumi.Input[Optional['ServiceFullWebServiceIdContributorsArgs']] = None,
+                 insert_after: pulumi.Input[Optional[_builtins.str]] = None,
+                 management_zones: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 name: pulumi.Input[Optional[_builtins.str]] = None):
         """
         Input properties used for looking up and filtering ServiceFullWebService resources.
 
@@ -175,86 +175,86 @@ class _ServiceFullWebServiceState:
 
     @_builtins.property
     @pulumi.getter
-    def conditions(self) -> Optional[pulumi.Input['ServiceFullWebServiceConditionsArgs']]:
+    def conditions(self) -> pulumi.Input[Optional['ServiceFullWebServiceConditionsArgs']]:
         """
         A list of conditions necessary for the rule to take effect. If multiple conditions are specified, they must **all** match a Request for the rule to apply. If there is no condition at all, the rule is always applied. Conditions are evaluated against attributes, but do not modify them.
         """
         return pulumi.get(self, "conditions")
 
     @conditions.setter
-    def conditions(self, value: Optional[pulumi.Input['ServiceFullWebServiceConditionsArgs']]):
+    def conditions(self, value: pulumi.Input[Optional['ServiceFullWebServiceConditionsArgs']]):
         pulumi.set(self, "conditions", value)
 
     @_builtins.property
     @pulumi.getter
-    def description(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def description(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Description
         """
         return pulumi.get(self, "description")
 
     @description.setter
-    def description(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def description(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "description", value)
 
     @_builtins.property
     @pulumi.getter
-    def enabled(self) -> Optional[pulumi.Input[_builtins.bool]]:
+    def enabled(self) -> pulumi.Input[Optional[_builtins.bool]]:
         """
         This setting is enabled (`true`) or disabled (`false`)
         """
         return pulumi.get(self, "enabled")
 
     @enabled.setter
-    def enabled(self, value: Optional[pulumi.Input[_builtins.bool]]):
+    def enabled(self, value: pulumi.Input[Optional[_builtins.bool]]):
         pulumi.set(self, "enabled", value)
 
     @_builtins.property
     @pulumi.getter(name="idContributors")
-    def id_contributors(self) -> Optional[pulumi.Input['ServiceFullWebServiceIdContributorsArgs']]:
+    def id_contributors(self) -> pulumi.Input[Optional['ServiceFullWebServiceIdContributorsArgs']]:
         """
         Contributors to the Service Identifier calculation. All of the Contributors are always applied.
         """
         return pulumi.get(self, "id_contributors")
 
     @id_contributors.setter
-    def id_contributors(self, value: Optional[pulumi.Input['ServiceFullWebServiceIdContributorsArgs']]):
+    def id_contributors(self, value: pulumi.Input[Optional['ServiceFullWebServiceIdContributorsArgs']]):
         pulumi.set(self, "id_contributors", value)
 
     @_builtins.property
     @pulumi.getter(name="insertAfter")
-    def insert_after(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def insert_after(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Because this resource allows for ordering you may specify the ID of the resource instance that comes before this instance regarding order. If not specified when creating the setting will be added to the end of the list. If not specified during update the order will remain untouched
         """
         return pulumi.get(self, "insert_after")
 
     @insert_after.setter
-    def insert_after(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def insert_after(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "insert_after", value)
 
     @_builtins.property
     @pulumi.getter(name="managementZones")
-    def management_zones(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]:
+    def management_zones(self) -> pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]:
         """
         Define a management zone of the process group for which this service detection rule should be created.
         """
         return pulumi.get(self, "management_zones")
 
     @management_zones.setter
-    def management_zones(self, value: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]):
+    def management_zones(self, value: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "management_zones", value)
 
     @_builtins.property
     @pulumi.getter
-    def name(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def name(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Rule name
         """
         return pulumi.get(self, "name")
 
     @name.setter
-    def name(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def name(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "name", value)
 
 
@@ -264,13 +264,13 @@ class ServiceFullWebService(pulumi.CustomResource):
     def __init__(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 conditions: Optional[pulumi.Input[Union['ServiceFullWebServiceConditionsArgs', 'ServiceFullWebServiceConditionsArgsDict']]] = None,
-                 description: Optional[pulumi.Input[_builtins.str]] = None,
-                 enabled: Optional[pulumi.Input[_builtins.bool]] = None,
-                 id_contributors: Optional[pulumi.Input[Union['ServiceFullWebServiceIdContributorsArgs', 'ServiceFullWebServiceIdContributorsArgsDict']]] = None,
-                 insert_after: Optional[pulumi.Input[_builtins.str]] = None,
-                 management_zones: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-                 name: Optional[pulumi.Input[_builtins.str]] = None,
+                 conditions: pulumi.Input[Optional[Union['ServiceFullWebServiceConditionsArgs', 'ServiceFullWebServiceConditionsArgsDict']]] = None,
+                 description: pulumi.Input[Optional[_builtins.str]] = None,
+                 enabled: pulumi.Input[Optional[_builtins.bool]] = None,
+                 id_contributors: pulumi.Input[Optional[Union['ServiceFullWebServiceIdContributorsArgs', 'ServiceFullWebServiceIdContributorsArgsDict']]] = None,
+                 insert_after: pulumi.Input[Optional[_builtins.str]] = None,
+                 management_zones: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 name: pulumi.Input[Optional[_builtins.str]] = None,
                  __props__=None):
         """
         > This resource requires the API token scopes **Read settings** (`settings.read`) and **Write settings** (`settings.write`)
@@ -335,13 +335,13 @@ class ServiceFullWebService(pulumi.CustomResource):
     def _internal_init(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 conditions: Optional[pulumi.Input[Union['ServiceFullWebServiceConditionsArgs', 'ServiceFullWebServiceConditionsArgsDict']]] = None,
-                 description: Optional[pulumi.Input[_builtins.str]] = None,
-                 enabled: Optional[pulumi.Input[_builtins.bool]] = None,
-                 id_contributors: Optional[pulumi.Input[Union['ServiceFullWebServiceIdContributorsArgs', 'ServiceFullWebServiceIdContributorsArgsDict']]] = None,
-                 insert_after: Optional[pulumi.Input[_builtins.str]] = None,
-                 management_zones: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-                 name: Optional[pulumi.Input[_builtins.str]] = None,
+                 conditions: pulumi.Input[Optional[Union['ServiceFullWebServiceConditionsArgs', 'ServiceFullWebServiceConditionsArgsDict']]] = None,
+                 description: pulumi.Input[Optional[_builtins.str]] = None,
+                 enabled: pulumi.Input[Optional[_builtins.bool]] = None,
+                 id_contributors: pulumi.Input[Optional[Union['ServiceFullWebServiceIdContributorsArgs', 'ServiceFullWebServiceIdContributorsArgsDict']]] = None,
+                 insert_after: pulumi.Input[Optional[_builtins.str]] = None,
+                 management_zones: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 name: pulumi.Input[Optional[_builtins.str]] = None,
                  __props__=None):
         opts = pulumi.ResourceOptions.merge(_utilities.get_resource_opts_defaults(), opts)
         if not isinstance(opts, pulumi.ResourceOptions):
@@ -372,13 +372,13 @@ class ServiceFullWebService(pulumi.CustomResource):
     def get(resource_name: str,
             id: pulumi.Input[str],
             opts: Optional[pulumi.ResourceOptions] = None,
-            conditions: Optional[pulumi.Input[Union['ServiceFullWebServiceConditionsArgs', 'ServiceFullWebServiceConditionsArgsDict']]] = None,
-            description: Optional[pulumi.Input[_builtins.str]] = None,
-            enabled: Optional[pulumi.Input[_builtins.bool]] = None,
-            id_contributors: Optional[pulumi.Input[Union['ServiceFullWebServiceIdContributorsArgs', 'ServiceFullWebServiceIdContributorsArgsDict']]] = None,
-            insert_after: Optional[pulumi.Input[_builtins.str]] = None,
-            management_zones: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-            name: Optional[pulumi.Input[_builtins.str]] = None) -> 'ServiceFullWebService':
+            conditions: pulumi.Input[Optional[Union['ServiceFullWebServiceConditionsArgs', 'ServiceFullWebServiceConditionsArgsDict']]] = None,
+            description: pulumi.Input[Optional[_builtins.str]] = None,
+            enabled: pulumi.Input[Optional[_builtins.bool]] = None,
+            id_contributors: pulumi.Input[Optional[Union['ServiceFullWebServiceIdContributorsArgs', 'ServiceFullWebServiceIdContributorsArgsDict']]] = None,
+            insert_after: pulumi.Input[Optional[_builtins.str]] = None,
+            management_zones: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+            name: pulumi.Input[Optional[_builtins.str]] = None) -> 'ServiceFullWebService':
         """
         Get an existing ServiceFullWebService resource's state with the given name, id, and optional extra
         properties used to qualify the lookup.

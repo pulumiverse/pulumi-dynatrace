@@ -98,11 +98,11 @@ export interface HostMonitoringModeState {
     /**
      * The scope of this settings. If the settings should cover the whole environment, just don't specify any scope.
      */
-    hostId?: pulumi.Input<string>;
+    hostId?: pulumi.Input<string | undefined>;
     /**
      * Possible Values: `DISCOVERY`, `FULL_STACK`, `INFRA_ONLY`
      */
-    monitoringMode?: pulumi.Input<string>;
+    monitoringMode?: pulumi.Input<string | undefined>;
 }
 
 /**

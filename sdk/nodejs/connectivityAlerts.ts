@@ -106,11 +106,11 @@ export interface ConnectivityAlertsState {
     /**
      * TCP connectivity problems
      */
-    connectivityAlerts?: pulumi.Input<boolean>;
+    connectivityAlerts?: pulumi.Input<boolean | undefined>;
     /**
      * The scope of this settings
      */
-    processGroupId?: pulumi.Input<string>;
+    processGroupId?: pulumi.Input<string | undefined>;
 }
 
 /**

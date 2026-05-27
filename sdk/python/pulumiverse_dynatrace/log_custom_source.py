@@ -23,9 +23,9 @@ class LogCustomSourceArgs:
     def __init__(__self__, *,
                  custom_log_source: pulumi.Input['LogCustomSourceCustomLogSourceArgs'],
                  enabled: pulumi.Input[_builtins.bool],
-                 context: Optional[pulumi.Input['LogCustomSourceContextArgs']] = None,
-                 name: Optional[pulumi.Input[_builtins.str]] = None,
-                 scope: Optional[pulumi.Input[_builtins.str]] = None):
+                 context: pulumi.Input[Optional['LogCustomSourceContextArgs']] = None,
+                 name: pulumi.Input[Optional[_builtins.str]] = None,
+                 scope: pulumi.Input[Optional[_builtins.str]] = None):
         """
         The set of arguments for constructing a LogCustomSource resource.
 
@@ -70,49 +70,49 @@ class LogCustomSourceArgs:
 
     @_builtins.property
     @pulumi.getter
-    def context(self) -> Optional[pulumi.Input['LogCustomSourceContextArgs']]:
+    def context(self) -> pulumi.Input[Optional['LogCustomSourceContextArgs']]:
         """
         Define Custom Log Source only within context if provided
         """
         return pulumi.get(self, "context")
 
     @context.setter
-    def context(self, value: Optional[pulumi.Input['LogCustomSourceContextArgs']]):
+    def context(self, value: pulumi.Input[Optional['LogCustomSourceContextArgs']]):
         pulumi.set(self, "context", value)
 
     @_builtins.property
     @pulumi.getter
-    def name(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def name(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Name
         """
         return pulumi.get(self, "name")
 
     @name.setter
-    def name(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def name(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "name", value)
 
     @_builtins.property
     @pulumi.getter
-    def scope(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def scope(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The scope of this setting (HOST, KUBERNETES*CLUSTER, HOST*GROUP). Omit this property if you want to cover the whole environment.
         """
         return pulumi.get(self, "scope")
 
     @scope.setter
-    def scope(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def scope(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "scope", value)
 
 
 @pulumi.input_type
 class _LogCustomSourceState:
     def __init__(__self__, *,
-                 context: Optional[pulumi.Input['LogCustomSourceContextArgs']] = None,
-                 custom_log_source: Optional[pulumi.Input['LogCustomSourceCustomLogSourceArgs']] = None,
-                 enabled: Optional[pulumi.Input[_builtins.bool]] = None,
-                 name: Optional[pulumi.Input[_builtins.str]] = None,
-                 scope: Optional[pulumi.Input[_builtins.str]] = None):
+                 context: pulumi.Input[Optional['LogCustomSourceContextArgs']] = None,
+                 custom_log_source: pulumi.Input[Optional['LogCustomSourceCustomLogSourceArgs']] = None,
+                 enabled: pulumi.Input[Optional[_builtins.bool]] = None,
+                 name: pulumi.Input[Optional[_builtins.str]] = None,
+                 scope: pulumi.Input[Optional[_builtins.str]] = None):
         """
         Input properties used for looking up and filtering LogCustomSource resources.
 
@@ -135,62 +135,62 @@ class _LogCustomSourceState:
 
     @_builtins.property
     @pulumi.getter
-    def context(self) -> Optional[pulumi.Input['LogCustomSourceContextArgs']]:
+    def context(self) -> pulumi.Input[Optional['LogCustomSourceContextArgs']]:
         """
         Define Custom Log Source only within context if provided
         """
         return pulumi.get(self, "context")
 
     @context.setter
-    def context(self, value: Optional[pulumi.Input['LogCustomSourceContextArgs']]):
+    def context(self, value: pulumi.Input[Optional['LogCustomSourceContextArgs']]):
         pulumi.set(self, "context", value)
 
     @_builtins.property
     @pulumi.getter(name="customLogSource")
-    def custom_log_source(self) -> Optional[pulumi.Input['LogCustomSourceCustomLogSourceArgs']]:
+    def custom_log_source(self) -> pulumi.Input[Optional['LogCustomSourceCustomLogSourceArgs']]:
         """
         no documentation available
         """
         return pulumi.get(self, "custom_log_source")
 
     @custom_log_source.setter
-    def custom_log_source(self, value: Optional[pulumi.Input['LogCustomSourceCustomLogSourceArgs']]):
+    def custom_log_source(self, value: pulumi.Input[Optional['LogCustomSourceCustomLogSourceArgs']]):
         pulumi.set(self, "custom_log_source", value)
 
     @_builtins.property
     @pulumi.getter
-    def enabled(self) -> Optional[pulumi.Input[_builtins.bool]]:
+    def enabled(self) -> pulumi.Input[Optional[_builtins.bool]]:
         """
         This setting is enabled (`true`) or disabled (`false`)
         """
         return pulumi.get(self, "enabled")
 
     @enabled.setter
-    def enabled(self, value: Optional[pulumi.Input[_builtins.bool]]):
+    def enabled(self, value: pulumi.Input[Optional[_builtins.bool]]):
         pulumi.set(self, "enabled", value)
 
     @_builtins.property
     @pulumi.getter
-    def name(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def name(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Name
         """
         return pulumi.get(self, "name")
 
     @name.setter
-    def name(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def name(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "name", value)
 
     @_builtins.property
     @pulumi.getter
-    def scope(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def scope(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The scope of this setting (HOST, KUBERNETES*CLUSTER, HOST*GROUP). Omit this property if you want to cover the whole environment.
         """
         return pulumi.get(self, "scope")
 
     @scope.setter
-    def scope(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def scope(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "scope", value)
 
 
@@ -200,11 +200,11 @@ class LogCustomSource(pulumi.CustomResource):
     def __init__(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 context: Optional[pulumi.Input[Union['LogCustomSourceContextArgs', 'LogCustomSourceContextArgsDict']]] = None,
-                 custom_log_source: Optional[pulumi.Input[Union['LogCustomSourceCustomLogSourceArgs', 'LogCustomSourceCustomLogSourceArgsDict']]] = None,
-                 enabled: Optional[pulumi.Input[_builtins.bool]] = None,
-                 name: Optional[pulumi.Input[_builtins.str]] = None,
-                 scope: Optional[pulumi.Input[_builtins.str]] = None,
+                 context: pulumi.Input[Optional[Union['LogCustomSourceContextArgs', 'LogCustomSourceContextArgsDict']]] = None,
+                 custom_log_source: pulumi.Input[Optional[Union['LogCustomSourceCustomLogSourceArgs', 'LogCustomSourceCustomLogSourceArgsDict']]] = None,
+                 enabled: pulumi.Input[Optional[_builtins.bool]] = None,
+                 name: pulumi.Input[Optional[_builtins.str]] = None,
+                 scope: pulumi.Input[Optional[_builtins.str]] = None,
                  __props__=None):
         """
         > This resource requires the API token scopes **Read settings** (`settings.read`) and **Write settings** (`settings.write`)
@@ -267,11 +267,11 @@ class LogCustomSource(pulumi.CustomResource):
     def _internal_init(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 context: Optional[pulumi.Input[Union['LogCustomSourceContextArgs', 'LogCustomSourceContextArgsDict']]] = None,
-                 custom_log_source: Optional[pulumi.Input[Union['LogCustomSourceCustomLogSourceArgs', 'LogCustomSourceCustomLogSourceArgsDict']]] = None,
-                 enabled: Optional[pulumi.Input[_builtins.bool]] = None,
-                 name: Optional[pulumi.Input[_builtins.str]] = None,
-                 scope: Optional[pulumi.Input[_builtins.str]] = None,
+                 context: pulumi.Input[Optional[Union['LogCustomSourceContextArgs', 'LogCustomSourceContextArgsDict']]] = None,
+                 custom_log_source: pulumi.Input[Optional[Union['LogCustomSourceCustomLogSourceArgs', 'LogCustomSourceCustomLogSourceArgsDict']]] = None,
+                 enabled: pulumi.Input[Optional[_builtins.bool]] = None,
+                 name: pulumi.Input[Optional[_builtins.str]] = None,
+                 scope: pulumi.Input[Optional[_builtins.str]] = None,
                  __props__=None):
         opts = pulumi.ResourceOptions.merge(_utilities.get_resource_opts_defaults(), opts)
         if not isinstance(opts, pulumi.ResourceOptions):
@@ -300,11 +300,11 @@ class LogCustomSource(pulumi.CustomResource):
     def get(resource_name: str,
             id: pulumi.Input[str],
             opts: Optional[pulumi.ResourceOptions] = None,
-            context: Optional[pulumi.Input[Union['LogCustomSourceContextArgs', 'LogCustomSourceContextArgsDict']]] = None,
-            custom_log_source: Optional[pulumi.Input[Union['LogCustomSourceCustomLogSourceArgs', 'LogCustomSourceCustomLogSourceArgsDict']]] = None,
-            enabled: Optional[pulumi.Input[_builtins.bool]] = None,
-            name: Optional[pulumi.Input[_builtins.str]] = None,
-            scope: Optional[pulumi.Input[_builtins.str]] = None) -> 'LogCustomSource':
+            context: pulumi.Input[Optional[Union['LogCustomSourceContextArgs', 'LogCustomSourceContextArgsDict']]] = None,
+            custom_log_source: pulumi.Input[Optional[Union['LogCustomSourceCustomLogSourceArgs', 'LogCustomSourceCustomLogSourceArgsDict']]] = None,
+            enabled: pulumi.Input[Optional[_builtins.bool]] = None,
+            name: pulumi.Input[Optional[_builtins.str]] = None,
+            scope: pulumi.Input[Optional[_builtins.str]] = None) -> 'LogCustomSource':
         """
         Get an existing LogCustomSource resource's state with the given name, id, and optional extra
         properties used to qualify the lookup.

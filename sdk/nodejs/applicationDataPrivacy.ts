@@ -119,23 +119,23 @@ export interface ApplicationDataPrivacyState {
     /**
      * (Field has overlap with `dynatrace.DataPrivacy`) Set to `true` to disable data capture and cookies until JavaScriptAPI `dtrum.enable()` is called
      */
-    dataCaptureOptIn?: pulumi.Input<boolean>;
+    dataCaptureOptIn?: pulumi.Input<boolean | undefined>;
     /**
      * (Field has overlap with `dynatrace.DataPrivacy`) How to handle the "Do Not Track" header:
      */
-    doNotTrackBehaviour?: pulumi.Input<string>;
+    doNotTrackBehaviour?: pulumi.Input<string | undefined>;
     /**
      * (Field has overlap with `dynatrace.DataPrivacy`) Set to `true` to set persistent cookie in order to recognize returning devices
      */
-    persistentCookieForUserTracking?: pulumi.Input<boolean>;
+    persistentCookieForUserTracking?: pulumi.Input<boolean | undefined>;
     /**
      * (Field has overlap with `dynatrace.SessionReplayWebPrivacy`) Data privacy settings for Session Replay
      */
-    sessionReplayDataPrivacy?: pulumi.Input<inputs.ApplicationDataPrivacySessionReplayDataPrivacy>;
+    sessionReplayDataPrivacy?: pulumi.Input<inputs.ApplicationDataPrivacySessionReplayDataPrivacy | undefined>;
     /**
      * Dynatrace entity ID of the web application
      */
-    webApplicationId?: pulumi.Input<string>;
+    webApplicationId?: pulumi.Input<string | undefined>;
 }
 
 /**
@@ -145,7 +145,7 @@ export interface ApplicationDataPrivacyArgs {
     /**
      * (Field has overlap with `dynatrace.DataPrivacy`) Set to `true` to disable data capture and cookies until JavaScriptAPI `dtrum.enable()` is called
      */
-    dataCaptureOptIn?: pulumi.Input<boolean>;
+    dataCaptureOptIn?: pulumi.Input<boolean | undefined>;
     /**
      * (Field has overlap with `dynatrace.DataPrivacy`) How to handle the "Do Not Track" header:
      */
@@ -153,7 +153,7 @@ export interface ApplicationDataPrivacyArgs {
     /**
      * (Field has overlap with `dynatrace.DataPrivacy`) Set to `true` to set persistent cookie in order to recognize returning devices
      */
-    persistentCookieForUserTracking?: pulumi.Input<boolean>;
+    persistentCookieForUserTracking?: pulumi.Input<boolean | undefined>;
     /**
      * (Field has overlap with `dynatrace.SessionReplayWebPrivacy`) Data privacy settings for Session Replay
      */

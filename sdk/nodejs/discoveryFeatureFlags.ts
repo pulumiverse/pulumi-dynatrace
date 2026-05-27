@@ -109,23 +109,23 @@ export interface DiscoveryFeatureFlagsState {
     /**
      * State of boolean feature
      */
-    booleanValue?: pulumi.Input<boolean>;
+    booleanValue?: pulumi.Input<boolean | undefined>;
     /**
      * Name of the feature
      */
-    name?: pulumi.Input<string>;
+    name?: pulumi.Input<string | undefined>;
     /**
      * State of numeric feature
      */
-    numberValue?: pulumi.Input<number>;
+    numberValue?: pulumi.Input<number | undefined>;
     /**
      * State of textual feature
      */
-    stringValue?: pulumi.Input<string>;
+    stringValue?: pulumi.Input<string | undefined>;
     /**
      * Possible Values: `Boolean`, `Number`, `String`
      */
-    type?: pulumi.Input<string>;
+    type?: pulumi.Input<string | undefined>;
 }
 
 /**
@@ -135,19 +135,19 @@ export interface DiscoveryFeatureFlagsArgs {
     /**
      * State of boolean feature
      */
-    booleanValue?: pulumi.Input<boolean>;
+    booleanValue?: pulumi.Input<boolean | undefined>;
     /**
      * Name of the feature
      */
-    name?: pulumi.Input<string>;
+    name?: pulumi.Input<string | undefined>;
     /**
      * State of numeric feature
      */
-    numberValue?: pulumi.Input<number>;
+    numberValue?: pulumi.Input<number | undefined>;
     /**
      * State of textual feature
      */
-    stringValue?: pulumi.Input<string>;
+    stringValue?: pulumi.Input<string | undefined>;
     /**
      * Possible Values: `Boolean`, `Number`, `String`
      */

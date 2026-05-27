@@ -95,12 +95,12 @@ export interface TokenSettingsState {
     /**
      * Check out this [blog post](http://www.dynatrace.com/blog/further-increased-security-of-your-api-tokens-by-automating-token-protection/) to find out more about the new Dynatrace API token format.
      */
-    newTokenFormat?: pulumi.Input<boolean>;
+    newTokenFormat?: pulumi.Input<boolean | undefined>;
     /**
      * Allow users of this environment to generate personal access tokens based on user permissions.
      * Note that existing personal access tokens will become unusable while this setting is disabled.
      */
-    personalTokens?: pulumi.Input<boolean>;
+    personalTokens?: pulumi.Input<boolean | undefined>;
 }
 
 /**

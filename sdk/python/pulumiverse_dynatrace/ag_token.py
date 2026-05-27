@@ -20,9 +20,9 @@ __all__ = ['AgTokenArgs', 'AgToken']
 class AgTokenArgs:
     def __init__(__self__, *,
                  type: pulumi.Input[_builtins.str],
-                 expiration_date: Optional[pulumi.Input[_builtins.str]] = None,
-                 name: Optional[pulumi.Input[_builtins.str]] = None,
-                 seed: Optional[pulumi.Input[_builtins.bool]] = None):
+                 expiration_date: pulumi.Input[Optional[_builtins.str]] = None,
+                 name: pulumi.Input[Optional[_builtins.str]] = None,
+                 seed: pulumi.Input[Optional[_builtins.bool]] = None):
         """
         The set of arguments for constructing a AgToken resource.
 
@@ -65,7 +65,7 @@ class AgTokenArgs:
 
     @_builtins.property
     @pulumi.getter(name="expirationDate")
-    def expiration_date(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def expiration_date(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The expiration date of the token.
 
@@ -84,43 +84,43 @@ class AgTokenArgs:
         return pulumi.get(self, "expiration_date")
 
     @expiration_date.setter
-    def expiration_date(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def expiration_date(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "expiration_date", value)
 
     @_builtins.property
     @pulumi.getter
-    def name(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def name(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The name of the token.
         """
         return pulumi.get(self, "name")
 
     @name.setter
-    def name(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def name(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "name", value)
 
     @_builtins.property
     @pulumi.getter
-    def seed(self) -> Optional[pulumi.Input[_builtins.bool]]:
+    def seed(self) -> pulumi.Input[Optional[_builtins.bool]]:
         """
         The token is a seed token (true) or an individual token (false). We recommend the individual token option (false)
         """
         return pulumi.get(self, "seed")
 
     @seed.setter
-    def seed(self, value: Optional[pulumi.Input[_builtins.bool]]):
+    def seed(self, value: pulumi.Input[Optional[_builtins.bool]]):
         pulumi.set(self, "seed", value)
 
 
 @pulumi.input_type
 class _AgTokenState:
     def __init__(__self__, *,
-                 expiration_date: Optional[pulumi.Input[_builtins.str]] = None,
-                 name: Optional[pulumi.Input[_builtins.str]] = None,
-                 seed: Optional[pulumi.Input[_builtins.bool]] = None,
-                 tenant_token: Optional[pulumi.Input[_builtins.str]] = None,
-                 token: Optional[pulumi.Input[_builtins.str]] = None,
-                 type: Optional[pulumi.Input[_builtins.str]] = None):
+                 expiration_date: pulumi.Input[Optional[_builtins.str]] = None,
+                 name: pulumi.Input[Optional[_builtins.str]] = None,
+                 seed: pulumi.Input[Optional[_builtins.bool]] = None,
+                 tenant_token: pulumi.Input[Optional[_builtins.str]] = None,
+                 token: pulumi.Input[Optional[_builtins.str]] = None,
+                 type: pulumi.Input[Optional[_builtins.str]] = None):
         """
         Input properties used for looking up and filtering AgToken resources.
 
@@ -158,7 +158,7 @@ class _AgTokenState:
 
     @_builtins.property
     @pulumi.getter(name="expirationDate")
-    def expiration_date(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def expiration_date(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The expiration date of the token.
 
@@ -177,67 +177,67 @@ class _AgTokenState:
         return pulumi.get(self, "expiration_date")
 
     @expiration_date.setter
-    def expiration_date(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def expiration_date(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "expiration_date", value)
 
     @_builtins.property
     @pulumi.getter
-    def name(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def name(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The name of the token.
         """
         return pulumi.get(self, "name")
 
     @name.setter
-    def name(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def name(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "name", value)
 
     @_builtins.property
     @pulumi.getter
-    def seed(self) -> Optional[pulumi.Input[_builtins.bool]]:
+    def seed(self) -> pulumi.Input[Optional[_builtins.bool]]:
         """
         The token is a seed token (true) or an individual token (false). We recommend the individual token option (false)
         """
         return pulumi.get(self, "seed")
 
     @seed.setter
-    def seed(self, value: Optional[pulumi.Input[_builtins.bool]]):
+    def seed(self, value: pulumi.Input[Optional[_builtins.bool]]):
         pulumi.set(self, "seed", value)
 
     @_builtins.property
     @pulumi.getter(name="tenantToken")
-    def tenant_token(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def tenant_token(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The tenant token. This information isn't directly related to the Active Gate Token. It's included for convenience. You require the permission `InstallerDownload` for that attribute to get populated
         """
         return pulumi.get(self, "tenant_token")
 
     @tenant_token.setter
-    def tenant_token(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def tenant_token(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "tenant_token", value)
 
     @_builtins.property
     @pulumi.getter
-    def token(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def token(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The secret of the token.
         """
         return pulumi.get(self, "token")
 
     @token.setter
-    def token(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def token(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "token", value)
 
     @_builtins.property
     @pulumi.getter
-    def type(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def type(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The type of the ActiveGate for which the token is valid. Possible values are `ENVIRONMENT` or `CLUSTER`
         """
         return pulumi.get(self, "type")
 
     @type.setter
-    def type(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def type(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "type", value)
 
 
@@ -247,10 +247,10 @@ class AgToken(pulumi.CustomResource):
     def __init__(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 expiration_date: Optional[pulumi.Input[_builtins.str]] = None,
-                 name: Optional[pulumi.Input[_builtins.str]] = None,
-                 seed: Optional[pulumi.Input[_builtins.bool]] = None,
-                 type: Optional[pulumi.Input[_builtins.str]] = None,
+                 expiration_date: pulumi.Input[Optional[_builtins.str]] = None,
+                 name: pulumi.Input[Optional[_builtins.str]] = None,
+                 seed: pulumi.Input[Optional[_builtins.bool]] = None,
+                 type: pulumi.Input[Optional[_builtins.str]] = None,
                  __props__=None):
         """
         > The usage of `AgToken` will introduce sensitive data within your Terraform state. The `token` property is flagged as `sensitive`, but the field will be stored as plain-text. More information can be found here.
@@ -320,10 +320,10 @@ class AgToken(pulumi.CustomResource):
     def _internal_init(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 expiration_date: Optional[pulumi.Input[_builtins.str]] = None,
-                 name: Optional[pulumi.Input[_builtins.str]] = None,
-                 seed: Optional[pulumi.Input[_builtins.bool]] = None,
-                 type: Optional[pulumi.Input[_builtins.str]] = None,
+                 expiration_date: pulumi.Input[Optional[_builtins.str]] = None,
+                 name: pulumi.Input[Optional[_builtins.str]] = None,
+                 seed: pulumi.Input[Optional[_builtins.bool]] = None,
+                 type: pulumi.Input[Optional[_builtins.str]] = None,
                  __props__=None):
         opts = pulumi.ResourceOptions.merge(_utilities.get_resource_opts_defaults(), opts)
         if not isinstance(opts, pulumi.ResourceOptions):
@@ -353,12 +353,12 @@ class AgToken(pulumi.CustomResource):
     def get(resource_name: str,
             id: pulumi.Input[str],
             opts: Optional[pulumi.ResourceOptions] = None,
-            expiration_date: Optional[pulumi.Input[_builtins.str]] = None,
-            name: Optional[pulumi.Input[_builtins.str]] = None,
-            seed: Optional[pulumi.Input[_builtins.bool]] = None,
-            tenant_token: Optional[pulumi.Input[_builtins.str]] = None,
-            token: Optional[pulumi.Input[_builtins.str]] = None,
-            type: Optional[pulumi.Input[_builtins.str]] = None) -> 'AgToken':
+            expiration_date: pulumi.Input[Optional[_builtins.str]] = None,
+            name: pulumi.Input[Optional[_builtins.str]] = None,
+            seed: pulumi.Input[Optional[_builtins.bool]] = None,
+            tenant_token: pulumi.Input[Optional[_builtins.str]] = None,
+            token: pulumi.Input[Optional[_builtins.str]] = None,
+            type: pulumi.Input[Optional[_builtins.str]] = None) -> 'AgToken':
         """
         Get an existing AgToken resource's state with the given name, id, and optional extra
         properties used to qualify the lookup.

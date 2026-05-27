@@ -83,7 +83,7 @@ export interface SyntheticAvailabilityState {
     /**
      * Exclude periods with maintenance windows from availability calculation
      */
-    excludeMaintenanceWindows?: pulumi.Input<boolean>;
+    excludeMaintenanceWindows?: pulumi.Input<boolean | undefined>;
 }
 
 /**

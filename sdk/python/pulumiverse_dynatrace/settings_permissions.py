@@ -22,9 +22,9 @@ __all__ = ['SettingsPermissionsArgs', 'SettingsPermissions']
 class SettingsPermissionsArgs:
     def __init__(__self__, *,
                  settings_object_id: pulumi.Input[_builtins.str],
-                 all_users: Optional[pulumi.Input[_builtins.str]] = None,
-                 groups: Optional[pulumi.Input['SettingsPermissionsGroupsArgs']] = None,
-                 users: Optional[pulumi.Input['SettingsPermissionsUsersArgs']] = None):
+                 all_users: pulumi.Input[Optional[_builtins.str]] = None,
+                 groups: pulumi.Input[Optional['SettingsPermissionsGroupsArgs']] = None,
+                 users: pulumi.Input[Optional['SettingsPermissionsUsersArgs']] = None):
         """
         The set of arguments for constructing a SettingsPermissions resource.
 
@@ -53,42 +53,42 @@ class SettingsPermissionsArgs:
 
     @_builtins.property
     @pulumi.getter(name="allUsers")
-    def all_users(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def all_users(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Defines the default access level granted to all users in this environment. Allowed values are `read`, `write`, or `none`
         """
         return pulumi.get(self, "all_users")
 
     @all_users.setter
-    def all_users(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def all_users(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "all_users", value)
 
     @_builtins.property
     @pulumi.getter
-    def groups(self) -> Optional[pulumi.Input['SettingsPermissionsGroupsArgs']]:
+    def groups(self) -> pulumi.Input[Optional['SettingsPermissionsGroupsArgs']]:
         return pulumi.get(self, "groups")
 
     @groups.setter
-    def groups(self, value: Optional[pulumi.Input['SettingsPermissionsGroupsArgs']]):
+    def groups(self, value: pulumi.Input[Optional['SettingsPermissionsGroupsArgs']]):
         pulumi.set(self, "groups", value)
 
     @_builtins.property
     @pulumi.getter
-    def users(self) -> Optional[pulumi.Input['SettingsPermissionsUsersArgs']]:
+    def users(self) -> pulumi.Input[Optional['SettingsPermissionsUsersArgs']]:
         return pulumi.get(self, "users")
 
     @users.setter
-    def users(self, value: Optional[pulumi.Input['SettingsPermissionsUsersArgs']]):
+    def users(self, value: pulumi.Input[Optional['SettingsPermissionsUsersArgs']]):
         pulumi.set(self, "users", value)
 
 
 @pulumi.input_type
 class _SettingsPermissionsState:
     def __init__(__self__, *,
-                 all_users: Optional[pulumi.Input[_builtins.str]] = None,
-                 groups: Optional[pulumi.Input['SettingsPermissionsGroupsArgs']] = None,
-                 settings_object_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 users: Optional[pulumi.Input['SettingsPermissionsUsersArgs']] = None):
+                 all_users: pulumi.Input[Optional[_builtins.str]] = None,
+                 groups: pulumi.Input[Optional['SettingsPermissionsGroupsArgs']] = None,
+                 settings_object_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 users: pulumi.Input[Optional['SettingsPermissionsUsersArgs']] = None):
         """
         Input properties used for looking up and filtering SettingsPermissions resources.
 
@@ -106,44 +106,44 @@ class _SettingsPermissionsState:
 
     @_builtins.property
     @pulumi.getter(name="allUsers")
-    def all_users(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def all_users(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Defines the default access level granted to all users in this environment. Allowed values are `read`, `write`, or `none`
         """
         return pulumi.get(self, "all_users")
 
     @all_users.setter
-    def all_users(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def all_users(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "all_users", value)
 
     @_builtins.property
     @pulumi.getter
-    def groups(self) -> Optional[pulumi.Input['SettingsPermissionsGroupsArgs']]:
+    def groups(self) -> pulumi.Input[Optional['SettingsPermissionsGroupsArgs']]:
         return pulumi.get(self, "groups")
 
     @groups.setter
-    def groups(self, value: Optional[pulumi.Input['SettingsPermissionsGroupsArgs']]):
+    def groups(self, value: pulumi.Input[Optional['SettingsPermissionsGroupsArgs']]):
         pulumi.set(self, "groups", value)
 
     @_builtins.property
     @pulumi.getter(name="settingsObjectId")
-    def settings_object_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def settings_object_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The ID of the settings object for which access is to be granted. Here, you can use the `id` attribute of the respective settings object resource
         """
         return pulumi.get(self, "settings_object_id")
 
     @settings_object_id.setter
-    def settings_object_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def settings_object_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "settings_object_id", value)
 
     @_builtins.property
     @pulumi.getter
-    def users(self) -> Optional[pulumi.Input['SettingsPermissionsUsersArgs']]:
+    def users(self) -> pulumi.Input[Optional['SettingsPermissionsUsersArgs']]:
         return pulumi.get(self, "users")
 
     @users.setter
-    def users(self, value: Optional[pulumi.Input['SettingsPermissionsUsersArgs']]):
+    def users(self, value: pulumi.Input[Optional['SettingsPermissionsUsersArgs']]):
         pulumi.set(self, "users", value)
 
 
@@ -153,10 +153,10 @@ class SettingsPermissions(pulumi.CustomResource):
     def __init__(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 all_users: Optional[pulumi.Input[_builtins.str]] = None,
-                 groups: Optional[pulumi.Input[Union['SettingsPermissionsGroupsArgs', 'SettingsPermissionsGroupsArgsDict']]] = None,
-                 settings_object_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 users: Optional[pulumi.Input[Union['SettingsPermissionsUsersArgs', 'SettingsPermissionsUsersArgsDict']]] = None,
+                 all_users: pulumi.Input[Optional[_builtins.str]] = None,
+                 groups: pulumi.Input[Optional[Union['SettingsPermissionsGroupsArgs', 'SettingsPermissionsGroupsArgsDict']]] = None,
+                 settings_object_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 users: pulumi.Input[Optional[Union['SettingsPermissionsUsersArgs', 'SettingsPermissionsUsersArgsDict']]] = None,
                  __props__=None):
         """
         > **Dynatrace SaaS only**
@@ -334,10 +334,10 @@ class SettingsPermissions(pulumi.CustomResource):
     def _internal_init(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 all_users: Optional[pulumi.Input[_builtins.str]] = None,
-                 groups: Optional[pulumi.Input[Union['SettingsPermissionsGroupsArgs', 'SettingsPermissionsGroupsArgsDict']]] = None,
-                 settings_object_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 users: Optional[pulumi.Input[Union['SettingsPermissionsUsersArgs', 'SettingsPermissionsUsersArgsDict']]] = None,
+                 all_users: pulumi.Input[Optional[_builtins.str]] = None,
+                 groups: pulumi.Input[Optional[Union['SettingsPermissionsGroupsArgs', 'SettingsPermissionsGroupsArgsDict']]] = None,
+                 settings_object_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 users: pulumi.Input[Optional[Union['SettingsPermissionsUsersArgs', 'SettingsPermissionsUsersArgsDict']]] = None,
                  __props__=None):
         opts = pulumi.ResourceOptions.merge(_utilities.get_resource_opts_defaults(), opts)
         if not isinstance(opts, pulumi.ResourceOptions):
@@ -363,10 +363,10 @@ class SettingsPermissions(pulumi.CustomResource):
     def get(resource_name: str,
             id: pulumi.Input[str],
             opts: Optional[pulumi.ResourceOptions] = None,
-            all_users: Optional[pulumi.Input[_builtins.str]] = None,
-            groups: Optional[pulumi.Input[Union['SettingsPermissionsGroupsArgs', 'SettingsPermissionsGroupsArgsDict']]] = None,
-            settings_object_id: Optional[pulumi.Input[_builtins.str]] = None,
-            users: Optional[pulumi.Input[Union['SettingsPermissionsUsersArgs', 'SettingsPermissionsUsersArgsDict']]] = None) -> 'SettingsPermissions':
+            all_users: pulumi.Input[Optional[_builtins.str]] = None,
+            groups: pulumi.Input[Optional[Union['SettingsPermissionsGroupsArgs', 'SettingsPermissionsGroupsArgsDict']]] = None,
+            settings_object_id: pulumi.Input[Optional[_builtins.str]] = None,
+            users: pulumi.Input[Optional[Union['SettingsPermissionsUsersArgs', 'SettingsPermissionsUsersArgsDict']]] = None) -> 'SettingsPermissions':
         """
         Get an existing SettingsPermissions resource's state with the given name, id, and optional extra
         properties used to qualify the lookup.

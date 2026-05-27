@@ -87,7 +87,7 @@ export interface HistogramMetricsState {
      * Enable this if you are using OpenTelemetry histograms or Prometheus histogram metrics.\
      * When disabled, only your histograms' sum and count metrics will be ingested.
      */
-    enableHistogramBucketIngest?: pulumi.Input<boolean>;
+    enableHistogramBucketIngest?: pulumi.Input<boolean | undefined>;
 }
 
 /**

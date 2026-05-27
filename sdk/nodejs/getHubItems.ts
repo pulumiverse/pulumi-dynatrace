@@ -104,5 +104,5 @@ export interface GetHubItemsOutputArgs {
     /**
      * Represents the type of item. It can be `TECHNOLOGY`, `EXTENSION1` or `EXTENSION2`. If not specified, no restriction regarding type happens
      */
-    type?: pulumi.Input<string>;
+    type?: pulumi.Input<string | undefined>;
 }

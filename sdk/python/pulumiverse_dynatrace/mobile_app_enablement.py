@@ -23,8 +23,8 @@ class MobileAppEnablementArgs:
     def __init__(__self__, *,
                  rum: pulumi.Input['MobileAppEnablementRumArgs'],
                  session_replay: pulumi.Input['MobileAppEnablementSessionReplayArgs'],
-                 application_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 experience_analytics: Optional[pulumi.Input['MobileAppEnablementExperienceAnalyticsArgs']] = None):
+                 application_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 experience_analytics: pulumi.Input[Optional['MobileAppEnablementExperienceAnalyticsArgs']] = None):
         """
         The set of arguments for constructing a MobileAppEnablement resource.
 
@@ -66,36 +66,36 @@ class MobileAppEnablementArgs:
 
     @_builtins.property
     @pulumi.getter(name="applicationId")
-    def application_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def application_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The scope of this settings. If the settings should cover the whole environment, just don't specify any scope.
         """
         return pulumi.get(self, "application_id")
 
     @application_id.setter
-    def application_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def application_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "application_id", value)
 
     @_builtins.property
     @pulumi.getter(name="experienceAnalytics")
-    def experience_analytics(self) -> Optional[pulumi.Input['MobileAppEnablementExperienceAnalyticsArgs']]:
+    def experience_analytics(self) -> pulumi.Input[Optional['MobileAppEnablementExperienceAnalyticsArgs']]:
         """
         User Interactions
         """
         return pulumi.get(self, "experience_analytics")
 
     @experience_analytics.setter
-    def experience_analytics(self, value: Optional[pulumi.Input['MobileAppEnablementExperienceAnalyticsArgs']]):
+    def experience_analytics(self, value: pulumi.Input[Optional['MobileAppEnablementExperienceAnalyticsArgs']]):
         pulumi.set(self, "experience_analytics", value)
 
 
 @pulumi.input_type
 class _MobileAppEnablementState:
     def __init__(__self__, *,
-                 application_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 experience_analytics: Optional[pulumi.Input['MobileAppEnablementExperienceAnalyticsArgs']] = None,
-                 rum: Optional[pulumi.Input['MobileAppEnablementRumArgs']] = None,
-                 session_replay: Optional[pulumi.Input['MobileAppEnablementSessionReplayArgs']] = None):
+                 application_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 experience_analytics: pulumi.Input[Optional['MobileAppEnablementExperienceAnalyticsArgs']] = None,
+                 rum: pulumi.Input[Optional['MobileAppEnablementRumArgs']] = None,
+                 session_replay: pulumi.Input[Optional['MobileAppEnablementSessionReplayArgs']] = None):
         """
         Input properties used for looking up and filtering MobileAppEnablement resources.
 
@@ -115,50 +115,50 @@ class _MobileAppEnablementState:
 
     @_builtins.property
     @pulumi.getter(name="applicationId")
-    def application_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def application_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The scope of this settings. If the settings should cover the whole environment, just don't specify any scope.
         """
         return pulumi.get(self, "application_id")
 
     @application_id.setter
-    def application_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def application_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "application_id", value)
 
     @_builtins.property
     @pulumi.getter(name="experienceAnalytics")
-    def experience_analytics(self) -> Optional[pulumi.Input['MobileAppEnablementExperienceAnalyticsArgs']]:
+    def experience_analytics(self) -> pulumi.Input[Optional['MobileAppEnablementExperienceAnalyticsArgs']]:
         """
         User Interactions
         """
         return pulumi.get(self, "experience_analytics")
 
     @experience_analytics.setter
-    def experience_analytics(self, value: Optional[pulumi.Input['MobileAppEnablementExperienceAnalyticsArgs']]):
+    def experience_analytics(self, value: pulumi.Input[Optional['MobileAppEnablementExperienceAnalyticsArgs']]):
         pulumi.set(self, "experience_analytics", value)
 
     @_builtins.property
     @pulumi.getter
-    def rum(self) -> Optional[pulumi.Input['MobileAppEnablementRumArgs']]:
+    def rum(self) -> pulumi.Input[Optional['MobileAppEnablementRumArgs']]:
         """
         (Field has overlap with `MobileApplication`) Capture and analyze all user actions within your application. Enable [Real User Monitoring (RUM)](https://dt-url.net/1n2b0prq) to monitor and improve your application's performance, identify errors, and gain insight into your user's behavior and experience.
         """
         return pulumi.get(self, "rum")
 
     @rum.setter
-    def rum(self, value: Optional[pulumi.Input['MobileAppEnablementRumArgs']]):
+    def rum(self, value: pulumi.Input[Optional['MobileAppEnablementRumArgs']]):
         pulumi.set(self, "rum", value)
 
     @_builtins.property
     @pulumi.getter(name="sessionReplay")
-    def session_replay(self) -> Optional[pulumi.Input['MobileAppEnablementSessionReplayArgs']]:
+    def session_replay(self) -> pulumi.Input[Optional['MobileAppEnablementSessionReplayArgs']]:
         """
         (Field has overlap with `MobileApplication`) [Session Replay](https://dt-url.net/session-replay) captures all user interactions within your application and replays them in a movie-like experience while providing [best-in-class security and data protection](https://dt-url.net/b303zxj).
         """
         return pulumi.get(self, "session_replay")
 
     @session_replay.setter
-    def session_replay(self, value: Optional[pulumi.Input['MobileAppEnablementSessionReplayArgs']]):
+    def session_replay(self, value: pulumi.Input[Optional['MobileAppEnablementSessionReplayArgs']]):
         pulumi.set(self, "session_replay", value)
 
 
@@ -168,10 +168,10 @@ class MobileAppEnablement(pulumi.CustomResource):
     def __init__(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 application_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 experience_analytics: Optional[pulumi.Input[Union['MobileAppEnablementExperienceAnalyticsArgs', 'MobileAppEnablementExperienceAnalyticsArgsDict']]] = None,
-                 rum: Optional[pulumi.Input[Union['MobileAppEnablementRumArgs', 'MobileAppEnablementRumArgsDict']]] = None,
-                 session_replay: Optional[pulumi.Input[Union['MobileAppEnablementSessionReplayArgs', 'MobileAppEnablementSessionReplayArgsDict']]] = None,
+                 application_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 experience_analytics: pulumi.Input[Optional[Union['MobileAppEnablementExperienceAnalyticsArgs', 'MobileAppEnablementExperienceAnalyticsArgsDict']]] = None,
+                 rum: pulumi.Input[Optional[Union['MobileAppEnablementRumArgs', 'MobileAppEnablementRumArgsDict']]] = None,
+                 session_replay: pulumi.Input[Optional[Union['MobileAppEnablementSessionReplayArgs', 'MobileAppEnablementSessionReplayArgsDict']]] = None,
                  __props__=None):
         """
         > Configuration of the application scope overlaps with dynatrace_mobile_application, but this resource in addition provides an option for an environment scope.
@@ -237,10 +237,10 @@ class MobileAppEnablement(pulumi.CustomResource):
     def _internal_init(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 application_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 experience_analytics: Optional[pulumi.Input[Union['MobileAppEnablementExperienceAnalyticsArgs', 'MobileAppEnablementExperienceAnalyticsArgsDict']]] = None,
-                 rum: Optional[pulumi.Input[Union['MobileAppEnablementRumArgs', 'MobileAppEnablementRumArgsDict']]] = None,
-                 session_replay: Optional[pulumi.Input[Union['MobileAppEnablementSessionReplayArgs', 'MobileAppEnablementSessionReplayArgsDict']]] = None,
+                 application_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 experience_analytics: pulumi.Input[Optional[Union['MobileAppEnablementExperienceAnalyticsArgs', 'MobileAppEnablementExperienceAnalyticsArgsDict']]] = None,
+                 rum: pulumi.Input[Optional[Union['MobileAppEnablementRumArgs', 'MobileAppEnablementRumArgsDict']]] = None,
+                 session_replay: pulumi.Input[Optional[Union['MobileAppEnablementSessionReplayArgs', 'MobileAppEnablementSessionReplayArgsDict']]] = None,
                  __props__=None):
         opts = pulumi.ResourceOptions.merge(_utilities.get_resource_opts_defaults(), opts)
         if not isinstance(opts, pulumi.ResourceOptions):
@@ -268,10 +268,10 @@ class MobileAppEnablement(pulumi.CustomResource):
     def get(resource_name: str,
             id: pulumi.Input[str],
             opts: Optional[pulumi.ResourceOptions] = None,
-            application_id: Optional[pulumi.Input[_builtins.str]] = None,
-            experience_analytics: Optional[pulumi.Input[Union['MobileAppEnablementExperienceAnalyticsArgs', 'MobileAppEnablementExperienceAnalyticsArgsDict']]] = None,
-            rum: Optional[pulumi.Input[Union['MobileAppEnablementRumArgs', 'MobileAppEnablementRumArgsDict']]] = None,
-            session_replay: Optional[pulumi.Input[Union['MobileAppEnablementSessionReplayArgs', 'MobileAppEnablementSessionReplayArgsDict']]] = None) -> 'MobileAppEnablement':
+            application_id: pulumi.Input[Optional[_builtins.str]] = None,
+            experience_analytics: pulumi.Input[Optional[Union['MobileAppEnablementExperienceAnalyticsArgs', 'MobileAppEnablementExperienceAnalyticsArgsDict']]] = None,
+            rum: pulumi.Input[Optional[Union['MobileAppEnablementRumArgs', 'MobileAppEnablementRumArgsDict']]] = None,
+            session_replay: pulumi.Input[Optional[Union['MobileAppEnablementSessionReplayArgs', 'MobileAppEnablementSessionReplayArgsDict']]] = None) -> 'MobileAppEnablement':
         """
         Get an existing MobileAppEnablement resource's state with the given name, id, and optional extra
         properties used to qualify the lookup.

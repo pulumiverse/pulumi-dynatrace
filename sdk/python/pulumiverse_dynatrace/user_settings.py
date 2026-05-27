@@ -24,10 +24,10 @@ class UserSettingsArgs:
                  auto_theme: pulumi.Input[_builtins.bool],
                  auto_timezone: pulumi.Input[_builtins.bool],
                  scope: pulumi.Input[_builtins.str],
-                 language: Optional[pulumi.Input[_builtins.str]] = None,
-                 region: Optional[pulumi.Input[_builtins.str]] = None,
-                 theme: Optional[pulumi.Input[_builtins.str]] = None,
-                 timezone: Optional[pulumi.Input[_builtins.str]] = None):
+                 language: pulumi.Input[Optional[_builtins.str]] = None,
+                 region: pulumi.Input[Optional[_builtins.str]] = None,
+                 theme: pulumi.Input[Optional[_builtins.str]] = None,
+                 timezone: pulumi.Input[Optional[_builtins.str]] = None):
         """
         The set of arguments for constructing a UserSettings resource.
 
@@ -117,65 +117,65 @@ class UserSettingsArgs:
 
     @_builtins.property
     @pulumi.getter
-    def language(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def language(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Possible Values: `En`, `Ja`
         """
         return pulumi.get(self, "language")
 
     @language.setter
-    def language(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def language(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "language", value)
 
     @_builtins.property
     @pulumi.getter
-    def region(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def region(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Region
         """
         return pulumi.get(self, "region")
 
     @region.setter
-    def region(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def region(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "region", value)
 
     @_builtins.property
     @pulumi.getter
-    def theme(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def theme(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Possible Values: `Dark`, `Light`
         """
         return pulumi.get(self, "theme")
 
     @theme.setter
-    def theme(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def theme(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "theme", value)
 
     @_builtins.property
     @pulumi.getter
-    def timezone(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def timezone(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Timezone
         """
         return pulumi.get(self, "timezone")
 
     @timezone.setter
-    def timezone(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def timezone(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "timezone", value)
 
 
 @pulumi.input_type
 class _UserSettingsState:
     def __init__(__self__, *,
-                 auto_language: Optional[pulumi.Input[_builtins.bool]] = None,
-                 auto_region: Optional[pulumi.Input[_builtins.bool]] = None,
-                 auto_theme: Optional[pulumi.Input[_builtins.bool]] = None,
-                 auto_timezone: Optional[pulumi.Input[_builtins.bool]] = None,
-                 language: Optional[pulumi.Input[_builtins.str]] = None,
-                 region: Optional[pulumi.Input[_builtins.str]] = None,
-                 scope: Optional[pulumi.Input[_builtins.str]] = None,
-                 theme: Optional[pulumi.Input[_builtins.str]] = None,
-                 timezone: Optional[pulumi.Input[_builtins.str]] = None):
+                 auto_language: pulumi.Input[Optional[_builtins.bool]] = None,
+                 auto_region: pulumi.Input[Optional[_builtins.bool]] = None,
+                 auto_theme: pulumi.Input[Optional[_builtins.bool]] = None,
+                 auto_timezone: pulumi.Input[Optional[_builtins.bool]] = None,
+                 language: pulumi.Input[Optional[_builtins.str]] = None,
+                 region: pulumi.Input[Optional[_builtins.str]] = None,
+                 scope: pulumi.Input[Optional[_builtins.str]] = None,
+                 theme: pulumi.Input[Optional[_builtins.str]] = None,
+                 timezone: pulumi.Input[Optional[_builtins.str]] = None):
         """
         Input properties used for looking up and filtering UserSettings resources.
 
@@ -210,110 +210,110 @@ class _UserSettingsState:
 
     @_builtins.property
     @pulumi.getter(name="autoLanguage")
-    def auto_language(self) -> Optional[pulumi.Input[_builtins.bool]]:
+    def auto_language(self) -> pulumi.Input[Optional[_builtins.bool]]:
         """
         Language - use browser default
         """
         return pulumi.get(self, "auto_language")
 
     @auto_language.setter
-    def auto_language(self, value: Optional[pulumi.Input[_builtins.bool]]):
+    def auto_language(self, value: pulumi.Input[Optional[_builtins.bool]]):
         pulumi.set(self, "auto_language", value)
 
     @_builtins.property
     @pulumi.getter(name="autoRegion")
-    def auto_region(self) -> Optional[pulumi.Input[_builtins.bool]]:
+    def auto_region(self) -> pulumi.Input[Optional[_builtins.bool]]:
         """
         Region - use browser default
         """
         return pulumi.get(self, "auto_region")
 
     @auto_region.setter
-    def auto_region(self, value: Optional[pulumi.Input[_builtins.bool]]):
+    def auto_region(self, value: pulumi.Input[Optional[_builtins.bool]]):
         pulumi.set(self, "auto_region", value)
 
     @_builtins.property
     @pulumi.getter(name="autoTheme")
-    def auto_theme(self) -> Optional[pulumi.Input[_builtins.bool]]:
+    def auto_theme(self) -> pulumi.Input[Optional[_builtins.bool]]:
         """
         Theme - use browser default
         """
         return pulumi.get(self, "auto_theme")
 
     @auto_theme.setter
-    def auto_theme(self, value: Optional[pulumi.Input[_builtins.bool]]):
+    def auto_theme(self, value: pulumi.Input[Optional[_builtins.bool]]):
         pulumi.set(self, "auto_theme", value)
 
     @_builtins.property
     @pulumi.getter(name="autoTimezone")
-    def auto_timezone(self) -> Optional[pulumi.Input[_builtins.bool]]:
+    def auto_timezone(self) -> pulumi.Input[Optional[_builtins.bool]]:
         """
         Timezone - use browser default
         """
         return pulumi.get(self, "auto_timezone")
 
     @auto_timezone.setter
-    def auto_timezone(self, value: Optional[pulumi.Input[_builtins.bool]]):
+    def auto_timezone(self, value: pulumi.Input[Optional[_builtins.bool]]):
         pulumi.set(self, "auto_timezone", value)
 
     @_builtins.property
     @pulumi.getter
-    def language(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def language(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Possible Values: `En`, `Ja`
         """
         return pulumi.get(self, "language")
 
     @language.setter
-    def language(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def language(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "language", value)
 
     @_builtins.property
     @pulumi.getter
-    def region(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def region(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Region
         """
         return pulumi.get(self, "region")
 
     @region.setter
-    def region(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def region(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "region", value)
 
     @_builtins.property
     @pulumi.getter
-    def scope(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def scope(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The scope of this setting (user, userdefaults)
         """
         return pulumi.get(self, "scope")
 
     @scope.setter
-    def scope(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def scope(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "scope", value)
 
     @_builtins.property
     @pulumi.getter
-    def theme(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def theme(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Possible Values: `Dark`, `Light`
         """
         return pulumi.get(self, "theme")
 
     @theme.setter
-    def theme(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def theme(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "theme", value)
 
     @_builtins.property
     @pulumi.getter
-    def timezone(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def timezone(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Timezone
         """
         return pulumi.get(self, "timezone")
 
     @timezone.setter
-    def timezone(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def timezone(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "timezone", value)
 
 
@@ -323,15 +323,15 @@ class UserSettings(pulumi.CustomResource):
     def __init__(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 auto_language: Optional[pulumi.Input[_builtins.bool]] = None,
-                 auto_region: Optional[pulumi.Input[_builtins.bool]] = None,
-                 auto_theme: Optional[pulumi.Input[_builtins.bool]] = None,
-                 auto_timezone: Optional[pulumi.Input[_builtins.bool]] = None,
-                 language: Optional[pulumi.Input[_builtins.str]] = None,
-                 region: Optional[pulumi.Input[_builtins.str]] = None,
-                 scope: Optional[pulumi.Input[_builtins.str]] = None,
-                 theme: Optional[pulumi.Input[_builtins.str]] = None,
-                 timezone: Optional[pulumi.Input[_builtins.str]] = None,
+                 auto_language: pulumi.Input[Optional[_builtins.bool]] = None,
+                 auto_region: pulumi.Input[Optional[_builtins.bool]] = None,
+                 auto_theme: pulumi.Input[Optional[_builtins.bool]] = None,
+                 auto_timezone: pulumi.Input[Optional[_builtins.bool]] = None,
+                 language: pulumi.Input[Optional[_builtins.str]] = None,
+                 region: pulumi.Input[Optional[_builtins.str]] = None,
+                 scope: pulumi.Input[Optional[_builtins.str]] = None,
+                 theme: pulumi.Input[Optional[_builtins.str]] = None,
+                 timezone: pulumi.Input[Optional[_builtins.str]] = None,
                  __props__=None):
         """
         > This resource is excluded by default in the export utility since it is scoped for an individual user and requires a personal access token.
@@ -398,15 +398,15 @@ class UserSettings(pulumi.CustomResource):
     def _internal_init(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 auto_language: Optional[pulumi.Input[_builtins.bool]] = None,
-                 auto_region: Optional[pulumi.Input[_builtins.bool]] = None,
-                 auto_theme: Optional[pulumi.Input[_builtins.bool]] = None,
-                 auto_timezone: Optional[pulumi.Input[_builtins.bool]] = None,
-                 language: Optional[pulumi.Input[_builtins.str]] = None,
-                 region: Optional[pulumi.Input[_builtins.str]] = None,
-                 scope: Optional[pulumi.Input[_builtins.str]] = None,
-                 theme: Optional[pulumi.Input[_builtins.str]] = None,
-                 timezone: Optional[pulumi.Input[_builtins.str]] = None,
+                 auto_language: pulumi.Input[Optional[_builtins.bool]] = None,
+                 auto_region: pulumi.Input[Optional[_builtins.bool]] = None,
+                 auto_theme: pulumi.Input[Optional[_builtins.bool]] = None,
+                 auto_timezone: pulumi.Input[Optional[_builtins.bool]] = None,
+                 language: pulumi.Input[Optional[_builtins.str]] = None,
+                 region: pulumi.Input[Optional[_builtins.str]] = None,
+                 scope: pulumi.Input[Optional[_builtins.str]] = None,
+                 theme: pulumi.Input[Optional[_builtins.str]] = None,
+                 timezone: pulumi.Input[Optional[_builtins.str]] = None,
                  __props__=None):
         opts = pulumi.ResourceOptions.merge(_utilities.get_resource_opts_defaults(), opts)
         if not isinstance(opts, pulumi.ResourceOptions):
@@ -445,15 +445,15 @@ class UserSettings(pulumi.CustomResource):
     def get(resource_name: str,
             id: pulumi.Input[str],
             opts: Optional[pulumi.ResourceOptions] = None,
-            auto_language: Optional[pulumi.Input[_builtins.bool]] = None,
-            auto_region: Optional[pulumi.Input[_builtins.bool]] = None,
-            auto_theme: Optional[pulumi.Input[_builtins.bool]] = None,
-            auto_timezone: Optional[pulumi.Input[_builtins.bool]] = None,
-            language: Optional[pulumi.Input[_builtins.str]] = None,
-            region: Optional[pulumi.Input[_builtins.str]] = None,
-            scope: Optional[pulumi.Input[_builtins.str]] = None,
-            theme: Optional[pulumi.Input[_builtins.str]] = None,
-            timezone: Optional[pulumi.Input[_builtins.str]] = None) -> 'UserSettings':
+            auto_language: pulumi.Input[Optional[_builtins.bool]] = None,
+            auto_region: pulumi.Input[Optional[_builtins.bool]] = None,
+            auto_theme: pulumi.Input[Optional[_builtins.bool]] = None,
+            auto_timezone: pulumi.Input[Optional[_builtins.bool]] = None,
+            language: pulumi.Input[Optional[_builtins.str]] = None,
+            region: pulumi.Input[Optional[_builtins.str]] = None,
+            scope: pulumi.Input[Optional[_builtins.str]] = None,
+            theme: pulumi.Input[Optional[_builtins.str]] = None,
+            timezone: pulumi.Input[Optional[_builtins.str]] = None) -> 'UserSettings':
         """
         Get an existing UserSettings resource's state with the given name, id, and optional extra
         properties used to qualify the lookup.

@@ -144,31 +144,31 @@ export interface DavisAnomalyDetectorsState {
     /**
      * Analyzer input
      */
-    analyzer?: pulumi.Input<inputs.DavisAnomalyDetectorsAnalyzer>;
+    analyzer?: pulumi.Input<inputs.DavisAnomalyDetectorsAnalyzer | undefined>;
     /**
      * The description of the anomaly detector
      */
-    description?: pulumi.Input<string>;
+    description?: pulumi.Input<string | undefined>;
     /**
      * This setting is enabled (`true`) or disabled (`false`)
      */
-    enabled?: pulumi.Input<boolean>;
+    enabled?: pulumi.Input<boolean | undefined>;
     /**
      * Event template
      */
-    eventTemplate?: pulumi.Input<inputs.DavisAnomalyDetectorsEventTemplate>;
+    eventTemplate?: pulumi.Input<inputs.DavisAnomalyDetectorsEventTemplate | undefined>;
     /**
      * Execution settings
      */
-    executionSettings?: pulumi.Input<inputs.DavisAnomalyDetectorsExecutionSettings>;
+    executionSettings?: pulumi.Input<inputs.DavisAnomalyDetectorsExecutionSettings | undefined>;
     /**
      * Source
      */
-    source?: pulumi.Input<string>;
+    source?: pulumi.Input<string | undefined>;
     /**
      * The title of the anomaly detector
      */
-    title?: pulumi.Input<string>;
+    title?: pulumi.Input<string | undefined>;
 }
 
 /**

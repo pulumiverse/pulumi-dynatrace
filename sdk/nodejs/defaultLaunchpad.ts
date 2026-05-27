@@ -84,7 +84,7 @@ export interface DefaultLaunchpadState {
     /**
      * Set default launchpads for user groups. The highest ranked will be shown to the user of a group.
      */
-    groupLaunchpads?: pulumi.Input<inputs.DefaultLaunchpadGroupLaunchpads>;
+    groupLaunchpads?: pulumi.Input<inputs.DefaultLaunchpadGroupLaunchpads | undefined>;
 }
 
 /**
@@ -94,5 +94,5 @@ export interface DefaultLaunchpadArgs {
     /**
      * Set default launchpads for user groups. The highest ranked will be shown to the user of a group.
      */
-    groupLaunchpads?: pulumi.Input<inputs.DefaultLaunchpadGroupLaunchpads>;
+    groupLaunchpads?: pulumi.Input<inputs.DefaultLaunchpadGroupLaunchpads | undefined>;
 }

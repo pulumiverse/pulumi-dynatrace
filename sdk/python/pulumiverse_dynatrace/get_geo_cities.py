@@ -120,8 +120,8 @@ def get_geo_cities(country_code: Optional[_builtins.str] = None,
         country_code=pulumi.get(__ret__, 'country_code'),
         id=pulumi.get(__ret__, 'id'),
         region_code=pulumi.get(__ret__, 'region_code'))
-def get_geo_cities_output(country_code: Optional[pulumi.Input[_builtins.str]] = None,
-                          region_code: Optional[pulumi.Input[_builtins.str]] = None,
+def get_geo_cities_output(country_code: pulumi.Input[Optional[_builtins.str]] = None,
+                          region_code: pulumi.Input[Optional[_builtins.str]] = None,
                           opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetGeoCitiesResult]:
     """
     The `get_geo_cities` data source retrieves the list of cities and their codes based on country and region code.

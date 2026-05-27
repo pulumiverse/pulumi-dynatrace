@@ -60,8 +60,8 @@ class HttpMonitorScriptInitArgs:
 @pulumi.input_type
 class _HttpMonitorScriptState:
     def __init__(__self__, *,
-                 http_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 script: Optional[pulumi.Input['HttpMonitorScriptScriptArgs']] = None):
+                 http_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 script: pulumi.Input[Optional['HttpMonitorScriptScriptArgs']] = None):
         """
         Input properties used for looking up and filtering HttpMonitorScript resources.
 
@@ -75,26 +75,26 @@ class _HttpMonitorScriptState:
 
     @_builtins.property
     @pulumi.getter(name="httpId")
-    def http_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def http_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The ID of the HTTP monitor
         """
         return pulumi.get(self, "http_id")
 
     @http_id.setter
-    def http_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def http_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "http_id", value)
 
     @_builtins.property
     @pulumi.getter
-    def script(self) -> Optional[pulumi.Input['HttpMonitorScriptScriptArgs']]:
+    def script(self) -> pulumi.Input[Optional['HttpMonitorScriptScriptArgs']]:
         """
         The HTTP Script
         """
         return pulumi.get(self, "script")
 
     @script.setter
-    def script(self, value: Optional[pulumi.Input['HttpMonitorScriptScriptArgs']]):
+    def script(self, value: pulumi.Input[Optional['HttpMonitorScriptScriptArgs']]):
         pulumi.set(self, "script", value)
 
 
@@ -104,8 +104,8 @@ class HttpMonitorScript(pulumi.CustomResource):
     def __init__(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 http_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 script: Optional[pulumi.Input[Union['HttpMonitorScriptScriptArgs', 'HttpMonitorScriptScriptArgsDict']]] = None,
+                 http_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 script: pulumi.Input[Optional[Union['HttpMonitorScriptScriptArgs', 'HttpMonitorScriptScriptArgsDict']]] = None,
                  __props__=None):
         """
         > This resource allows you to manage the script of your HTTP monitor separately from the `HttpMonitor` resource. To utilize this resource, please omit the `script` block and set `no_script=true` in your `HttpMonitor` resource.
@@ -169,8 +169,8 @@ class HttpMonitorScript(pulumi.CustomResource):
     def _internal_init(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 http_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 script: Optional[pulumi.Input[Union['HttpMonitorScriptScriptArgs', 'HttpMonitorScriptScriptArgsDict']]] = None,
+                 http_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 script: pulumi.Input[Optional[Union['HttpMonitorScriptScriptArgs', 'HttpMonitorScriptScriptArgsDict']]] = None,
                  __props__=None):
         opts = pulumi.ResourceOptions.merge(_utilities.get_resource_opts_defaults(), opts)
         if not isinstance(opts, pulumi.ResourceOptions):
@@ -196,8 +196,8 @@ class HttpMonitorScript(pulumi.CustomResource):
     def get(resource_name: str,
             id: pulumi.Input[str],
             opts: Optional[pulumi.ResourceOptions] = None,
-            http_id: Optional[pulumi.Input[_builtins.str]] = None,
-            script: Optional[pulumi.Input[Union['HttpMonitorScriptScriptArgs', 'HttpMonitorScriptScriptArgsDict']]] = None) -> 'HttpMonitorScript':
+            http_id: pulumi.Input[Optional[_builtins.str]] = None,
+            script: pulumi.Input[Optional[Union['HttpMonitorScriptScriptArgs', 'HttpMonitorScriptScriptArgsDict']]] = None) -> 'HttpMonitorScript':
         """
         Get an existing HttpMonitorScript resource's state with the given name, id, and optional extra
         properties used to qualify the lookup.

@@ -142,43 +142,43 @@ export interface BrowserMonitorState {
     /**
      * The anomaly detection configuration.
      */
-    anomalyDetection?: pulumi.Input<inputs.BrowserMonitorAnomalyDetection>;
+    anomalyDetection?: pulumi.Input<inputs.BrowserMonitorAnomalyDetection | undefined>;
     /**
      * The monitor is enabled (`true`) or disabled (`false`).
      */
-    enabled?: pulumi.Input<boolean>;
+    enabled?: pulumi.Input<boolean | undefined>;
     /**
      * The frequency of the monitor, in minutes.
      */
-    frequency?: pulumi.Input<number>;
+    frequency?: pulumi.Input<number | undefined>;
     /**
      * The key performance metrics configuration
      */
-    keyPerformanceMetrics?: pulumi.Input<inputs.BrowserMonitorKeyPerformanceMetrics>;
+    keyPerformanceMetrics?: pulumi.Input<inputs.BrowserMonitorKeyPerformanceMetrics | undefined>;
     /**
      * A list of locations from which the monitor is executed.
      *
      * To specify a location, use its entity ID.
      */
-    locations?: pulumi.Input<pulumi.Input<string>[]>;
+    locations?: pulumi.Input<pulumi.Input<string>[] | undefined>;
     /**
      * A set of manually assigned applications.
      */
-    manuallyAssignedApps?: pulumi.Input<pulumi.Input<string>[]>;
+    manuallyAssignedApps?: pulumi.Input<pulumi.Input<string>[] | undefined>;
     /**
      * The name of the monitor.
      */
-    name?: pulumi.Input<string>;
+    name?: pulumi.Input<string | undefined>;
     /**
      * The Browser Script
      */
-    script?: pulumi.Input<inputs.BrowserMonitorScript>;
+    script?: pulumi.Input<inputs.BrowserMonitorScript | undefined>;
     /**
      * A set of tags assigned to the monitor.
      *
      * You can specify only the value of the tag here and the `CONTEXTLESS` context and source 'USER' will be added automatically.
      */
-    tags?: pulumi.Input<pulumi.Input<inputs.BrowserMonitorTag>[]>;
+    tags?: pulumi.Input<pulumi.Input<inputs.BrowserMonitorTag>[] | undefined>;
 }
 
 /**
@@ -188,11 +188,11 @@ export interface BrowserMonitorArgs {
     /**
      * The anomaly detection configuration.
      */
-    anomalyDetection?: pulumi.Input<inputs.BrowserMonitorAnomalyDetection>;
+    anomalyDetection?: pulumi.Input<inputs.BrowserMonitorAnomalyDetection | undefined>;
     /**
      * The monitor is enabled (`true`) or disabled (`false`).
      */
-    enabled?: pulumi.Input<boolean>;
+    enabled?: pulumi.Input<boolean | undefined>;
     /**
      * The frequency of the monitor, in minutes.
      */
@@ -206,23 +206,23 @@ export interface BrowserMonitorArgs {
      *
      * To specify a location, use its entity ID.
      */
-    locations?: pulumi.Input<pulumi.Input<string>[]>;
+    locations?: pulumi.Input<pulumi.Input<string>[] | undefined>;
     /**
      * A set of manually assigned applications.
      */
-    manuallyAssignedApps?: pulumi.Input<pulumi.Input<string>[]>;
+    manuallyAssignedApps?: pulumi.Input<pulumi.Input<string>[] | undefined>;
     /**
      * The name of the monitor.
      */
-    name?: pulumi.Input<string>;
+    name?: pulumi.Input<string | undefined>;
     /**
      * The Browser Script
      */
-    script?: pulumi.Input<inputs.BrowserMonitorScript>;
+    script?: pulumi.Input<inputs.BrowserMonitorScript | undefined>;
     /**
      * A set of tags assigned to the monitor.
      *
      * You can specify only the value of the tag here and the `CONTEXTLESS` context and source 'USER' will be added automatically.
      */
-    tags?: pulumi.Input<pulumi.Input<inputs.BrowserMonitorTag>[]>;
+    tags?: pulumi.Input<pulumi.Input<inputs.BrowserMonitorTag>[] | undefined>;
 }

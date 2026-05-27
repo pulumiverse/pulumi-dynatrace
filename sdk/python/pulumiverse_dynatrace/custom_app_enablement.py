@@ -22,7 +22,7 @@ __all__ = ['CustomAppEnablementArgs', 'CustomAppEnablement']
 class CustomAppEnablementArgs:
     def __init__(__self__, *,
                  rum: pulumi.Input['CustomAppEnablementRumArgs'],
-                 scope: Optional[pulumi.Input[_builtins.str]] = None):
+                 scope: pulumi.Input[Optional[_builtins.str]] = None):
         """
         The set of arguments for constructing a CustomAppEnablement resource.
 
@@ -47,22 +47,22 @@ class CustomAppEnablementArgs:
 
     @_builtins.property
     @pulumi.getter
-    def scope(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def scope(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The scope of this setting (CUSTOM_APPLICATION). Omit this property if you want to cover the whole environment.
         """
         return pulumi.get(self, "scope")
 
     @scope.setter
-    def scope(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def scope(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "scope", value)
 
 
 @pulumi.input_type
 class _CustomAppEnablementState:
     def __init__(__self__, *,
-                 rum: Optional[pulumi.Input['CustomAppEnablementRumArgs']] = None,
-                 scope: Optional[pulumi.Input[_builtins.str]] = None):
+                 rum: pulumi.Input[Optional['CustomAppEnablementRumArgs']] = None,
+                 scope: pulumi.Input[Optional[_builtins.str]] = None):
         """
         Input properties used for looking up and filtering CustomAppEnablement resources.
 
@@ -76,26 +76,26 @@ class _CustomAppEnablementState:
 
     @_builtins.property
     @pulumi.getter
-    def rum(self) -> Optional[pulumi.Input['CustomAppEnablementRumArgs']]:
+    def rum(self) -> pulumi.Input[Optional['CustomAppEnablementRumArgs']]:
         """
         Capture and analyze all user actions within your application. Enable [Real User Monitoring (RUM)](https://dt-url.net/1n2b0prq) to monitor and improve your application's performance, identify errors, and gain insight into your user's behavior and experience.
         """
         return pulumi.get(self, "rum")
 
     @rum.setter
-    def rum(self, value: Optional[pulumi.Input['CustomAppEnablementRumArgs']]):
+    def rum(self, value: pulumi.Input[Optional['CustomAppEnablementRumArgs']]):
         pulumi.set(self, "rum", value)
 
     @_builtins.property
     @pulumi.getter
-    def scope(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def scope(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The scope of this setting (CUSTOM_APPLICATION). Omit this property if you want to cover the whole environment.
         """
         return pulumi.get(self, "scope")
 
     @scope.setter
-    def scope(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def scope(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "scope", value)
 
 
@@ -105,8 +105,8 @@ class CustomAppEnablement(pulumi.CustomResource):
     def __init__(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 rum: Optional[pulumi.Input[Union['CustomAppEnablementRumArgs', 'CustomAppEnablementRumArgsDict']]] = None,
-                 scope: Optional[pulumi.Input[_builtins.str]] = None,
+                 rum: pulumi.Input[Optional[Union['CustomAppEnablementRumArgs', 'CustomAppEnablementRumArgsDict']]] = None,
+                 scope: pulumi.Input[Optional[_builtins.str]] = None,
                  __props__=None):
         """
         > Configuration of the application scope overlaps with dynatrace_mobile_application, but this resource in addition provides an option for an environment scope.
@@ -170,8 +170,8 @@ class CustomAppEnablement(pulumi.CustomResource):
     def _internal_init(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 rum: Optional[pulumi.Input[Union['CustomAppEnablementRumArgs', 'CustomAppEnablementRumArgsDict']]] = None,
-                 scope: Optional[pulumi.Input[_builtins.str]] = None,
+                 rum: pulumi.Input[Optional[Union['CustomAppEnablementRumArgs', 'CustomAppEnablementRumArgsDict']]] = None,
+                 scope: pulumi.Input[Optional[_builtins.str]] = None,
                  __props__=None):
         opts = pulumi.ResourceOptions.merge(_utilities.get_resource_opts_defaults(), opts)
         if not isinstance(opts, pulumi.ResourceOptions):
@@ -195,8 +195,8 @@ class CustomAppEnablement(pulumi.CustomResource):
     def get(resource_name: str,
             id: pulumi.Input[str],
             opts: Optional[pulumi.ResourceOptions] = None,
-            rum: Optional[pulumi.Input[Union['CustomAppEnablementRumArgs', 'CustomAppEnablementRumArgsDict']]] = None,
-            scope: Optional[pulumi.Input[_builtins.str]] = None) -> 'CustomAppEnablement':
+            rum: pulumi.Input[Optional[Union['CustomAppEnablementRumArgs', 'CustomAppEnablementRumArgsDict']]] = None,
+            scope: pulumi.Input[Optional[_builtins.str]] = None) -> 'CustomAppEnablement':
         """
         Get an existing CustomAppEnablement resource's state with the given name, id, and optional extra
         properties used to qualify the lookup.

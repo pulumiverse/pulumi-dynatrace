@@ -25,10 +25,10 @@ class CalculatedSyntheticMetricArgs:
                  metric: pulumi.Input[_builtins.str],
                  metric_key: pulumi.Input[_builtins.str],
                  monitor_identifier: pulumi.Input[_builtins.str],
-                 description: Optional[pulumi.Input[_builtins.str]] = None,
-                 dimensions: Optional[pulumi.Input[Sequence[pulumi.Input['CalculatedSyntheticMetricDimensionArgs']]]] = None,
-                 filter: Optional[pulumi.Input['CalculatedSyntheticMetricFilterArgs']] = None,
-                 name: Optional[pulumi.Input[_builtins.str]] = None):
+                 description: pulumi.Input[Optional[_builtins.str]] = None,
+                 dimensions: pulumi.Input[Optional[Sequence[pulumi.Input['CalculatedSyntheticMetricDimensionArgs']]]] = None,
+                 filter: pulumi.Input[Optional['CalculatedSyntheticMetricFilterArgs']] = None,
+                 name: pulumi.Input[Optional[_builtins.str]] = None):
         """
         The set of arguments for constructing a CalculatedSyntheticMetric resource.
 
@@ -104,64 +104,64 @@ class CalculatedSyntheticMetricArgs:
 
     @_builtins.property
     @pulumi.getter
-    def description(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def description(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Descriptor of a calculated synthetic metric.
         """
         return pulumi.get(self, "description")
 
     @description.setter
-    def description(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def description(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "description", value)
 
     @_builtins.property
     @pulumi.getter
-    def dimensions(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['CalculatedSyntheticMetricDimensionArgs']]]]:
+    def dimensions(self) -> pulumi.Input[Optional[Sequence[pulumi.Input['CalculatedSyntheticMetricDimensionArgs']]]]:
         """
         Dimension of the calculated synthetic metric.
         """
         return pulumi.get(self, "dimensions")
 
     @dimensions.setter
-    def dimensions(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['CalculatedSyntheticMetricDimensionArgs']]]]):
+    def dimensions(self, value: pulumi.Input[Optional[Sequence[pulumi.Input['CalculatedSyntheticMetricDimensionArgs']]]]):
         pulumi.set(self, "dimensions", value)
 
     @_builtins.property
     @pulumi.getter
-    def filter(self) -> Optional[pulumi.Input['CalculatedSyntheticMetricFilterArgs']]:
+    def filter(self) -> pulumi.Input[Optional['CalculatedSyntheticMetricFilterArgs']]:
         """
         Filter of the calculated synthetic metric.
         """
         return pulumi.get(self, "filter")
 
     @filter.setter
-    def filter(self, value: Optional[pulumi.Input['CalculatedSyntheticMetricFilterArgs']]):
+    def filter(self, value: pulumi.Input[Optional['CalculatedSyntheticMetricFilterArgs']]):
         pulumi.set(self, "filter", value)
 
     @_builtins.property
     @pulumi.getter
-    def name(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def name(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The displayed name of the metric.
         """
         return pulumi.get(self, "name")
 
     @name.setter
-    def name(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def name(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "name", value)
 
 
 @pulumi.input_type
 class _CalculatedSyntheticMetricState:
     def __init__(__self__, *,
-                 description: Optional[pulumi.Input[_builtins.str]] = None,
-                 dimensions: Optional[pulumi.Input[Sequence[pulumi.Input['CalculatedSyntheticMetricDimensionArgs']]]] = None,
-                 enabled: Optional[pulumi.Input[_builtins.bool]] = None,
-                 filter: Optional[pulumi.Input['CalculatedSyntheticMetricFilterArgs']] = None,
-                 metric: Optional[pulumi.Input[_builtins.str]] = None,
-                 metric_key: Optional[pulumi.Input[_builtins.str]] = None,
-                 monitor_identifier: Optional[pulumi.Input[_builtins.str]] = None,
-                 name: Optional[pulumi.Input[_builtins.str]] = None):
+                 description: pulumi.Input[Optional[_builtins.str]] = None,
+                 dimensions: pulumi.Input[Optional[Sequence[pulumi.Input['CalculatedSyntheticMetricDimensionArgs']]]] = None,
+                 enabled: pulumi.Input[Optional[_builtins.bool]] = None,
+                 filter: pulumi.Input[Optional['CalculatedSyntheticMetricFilterArgs']] = None,
+                 metric: pulumi.Input[Optional[_builtins.str]] = None,
+                 metric_key: pulumi.Input[Optional[_builtins.str]] = None,
+                 monitor_identifier: pulumi.Input[Optional[_builtins.str]] = None,
+                 name: pulumi.Input[Optional[_builtins.str]] = None):
         """
         Input properties used for looking up and filtering CalculatedSyntheticMetric resources.
 
@@ -193,98 +193,98 @@ class _CalculatedSyntheticMetricState:
 
     @_builtins.property
     @pulumi.getter
-    def description(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def description(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Descriptor of a calculated synthetic metric.
         """
         return pulumi.get(self, "description")
 
     @description.setter
-    def description(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def description(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "description", value)
 
     @_builtins.property
     @pulumi.getter
-    def dimensions(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['CalculatedSyntheticMetricDimensionArgs']]]]:
+    def dimensions(self) -> pulumi.Input[Optional[Sequence[pulumi.Input['CalculatedSyntheticMetricDimensionArgs']]]]:
         """
         Dimension of the calculated synthetic metric.
         """
         return pulumi.get(self, "dimensions")
 
     @dimensions.setter
-    def dimensions(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['CalculatedSyntheticMetricDimensionArgs']]]]):
+    def dimensions(self, value: pulumi.Input[Optional[Sequence[pulumi.Input['CalculatedSyntheticMetricDimensionArgs']]]]):
         pulumi.set(self, "dimensions", value)
 
     @_builtins.property
     @pulumi.getter
-    def enabled(self) -> Optional[pulumi.Input[_builtins.bool]]:
+    def enabled(self) -> pulumi.Input[Optional[_builtins.bool]]:
         """
         The metric is enabled (`true`) or disabled (`false`)
         """
         return pulumi.get(self, "enabled")
 
     @enabled.setter
-    def enabled(self, value: Optional[pulumi.Input[_builtins.bool]]):
+    def enabled(self, value: pulumi.Input[Optional[_builtins.bool]]):
         pulumi.set(self, "enabled", value)
 
     @_builtins.property
     @pulumi.getter
-    def filter(self) -> Optional[pulumi.Input['CalculatedSyntheticMetricFilterArgs']]:
+    def filter(self) -> pulumi.Input[Optional['CalculatedSyntheticMetricFilterArgs']]:
         """
         Filter of the calculated synthetic metric.
         """
         return pulumi.get(self, "filter")
 
     @filter.setter
-    def filter(self, value: Optional[pulumi.Input['CalculatedSyntheticMetricFilterArgs']]):
+    def filter(self, value: pulumi.Input[Optional['CalculatedSyntheticMetricFilterArgs']]):
         pulumi.set(self, "filter", value)
 
     @_builtins.property
     @pulumi.getter
-    def metric(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def metric(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The type of the synthetic metric. Possible values: [ ApplicationCache, Callback, CumulativeLayoutShift, DNSLookup, DOMComplete, DOMContentLoaded, DOMInteractive, FailedRequestsResources, FirstContentfulPaint, FirstInputDelay, FirstInputStart, FirstPaint, HTMLDownloaded, HttpErrors, JavaScriptErrors, LargestContentfulPaint, LoadEventEnd, LoadEventStart, LongTasks, NavigationStart, OnDOMContentLoaded, OnLoad, Processing, RedirectTime, Request, RequestStart, ResourceCount, Response, SecureConnect, SpeedIndex, TCPConnect, TimeToFirstByte, TotalDuration, TransferSize, UserActionDuration, VisuallyComplete ]
         """
         return pulumi.get(self, "metric")
 
     @metric.setter
-    def metric(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def metric(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "metric", value)
 
     @_builtins.property
     @pulumi.getter(name="metricKey")
-    def metric_key(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def metric_key(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The unique key of the calculated synthetic metric.
         """
         return pulumi.get(self, "metric_key")
 
     @metric_key.setter
-    def metric_key(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def metric_key(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "metric_key", value)
 
     @_builtins.property
     @pulumi.getter(name="monitorIdentifier")
-    def monitor_identifier(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def monitor_identifier(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The Dynatrace entity ID of the monitor to which the metric belongs.
         """
         return pulumi.get(self, "monitor_identifier")
 
     @monitor_identifier.setter
-    def monitor_identifier(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def monitor_identifier(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "monitor_identifier", value)
 
     @_builtins.property
     @pulumi.getter
-    def name(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def name(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The displayed name of the metric.
         """
         return pulumi.get(self, "name")
 
     @name.setter
-    def name(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def name(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "name", value)
 
 
@@ -294,14 +294,14 @@ class CalculatedSyntheticMetric(pulumi.CustomResource):
     def __init__(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 description: Optional[pulumi.Input[_builtins.str]] = None,
-                 dimensions: Optional[pulumi.Input[Sequence[pulumi.Input[Union['CalculatedSyntheticMetricDimensionArgs', 'CalculatedSyntheticMetricDimensionArgsDict']]]]] = None,
-                 enabled: Optional[pulumi.Input[_builtins.bool]] = None,
-                 filter: Optional[pulumi.Input[Union['CalculatedSyntheticMetricFilterArgs', 'CalculatedSyntheticMetricFilterArgsDict']]] = None,
-                 metric: Optional[pulumi.Input[_builtins.str]] = None,
-                 metric_key: Optional[pulumi.Input[_builtins.str]] = None,
-                 monitor_identifier: Optional[pulumi.Input[_builtins.str]] = None,
-                 name: Optional[pulumi.Input[_builtins.str]] = None,
+                 description: pulumi.Input[Optional[_builtins.str]] = None,
+                 dimensions: pulumi.Input[Optional[Sequence[pulumi.Input[Union['CalculatedSyntheticMetricDimensionArgs', 'CalculatedSyntheticMetricDimensionArgsDict']]]]] = None,
+                 enabled: pulumi.Input[Optional[_builtins.bool]] = None,
+                 filter: pulumi.Input[Optional[Union['CalculatedSyntheticMetricFilterArgs', 'CalculatedSyntheticMetricFilterArgsDict']]] = None,
+                 metric: pulumi.Input[Optional[_builtins.str]] = None,
+                 metric_key: pulumi.Input[Optional[_builtins.str]] = None,
+                 monitor_identifier: pulumi.Input[Optional[_builtins.str]] = None,
+                 name: pulumi.Input[Optional[_builtins.str]] = None,
                  __props__=None):
         """
         > This resource requires the API token scopes **Read configuration** (`ReadConfig`) and **Write configuration** (`WriteConfig`)
@@ -367,14 +367,14 @@ class CalculatedSyntheticMetric(pulumi.CustomResource):
     def _internal_init(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 description: Optional[pulumi.Input[_builtins.str]] = None,
-                 dimensions: Optional[pulumi.Input[Sequence[pulumi.Input[Union['CalculatedSyntheticMetricDimensionArgs', 'CalculatedSyntheticMetricDimensionArgsDict']]]]] = None,
-                 enabled: Optional[pulumi.Input[_builtins.bool]] = None,
-                 filter: Optional[pulumi.Input[Union['CalculatedSyntheticMetricFilterArgs', 'CalculatedSyntheticMetricFilterArgsDict']]] = None,
-                 metric: Optional[pulumi.Input[_builtins.str]] = None,
-                 metric_key: Optional[pulumi.Input[_builtins.str]] = None,
-                 monitor_identifier: Optional[pulumi.Input[_builtins.str]] = None,
-                 name: Optional[pulumi.Input[_builtins.str]] = None,
+                 description: pulumi.Input[Optional[_builtins.str]] = None,
+                 dimensions: pulumi.Input[Optional[Sequence[pulumi.Input[Union['CalculatedSyntheticMetricDimensionArgs', 'CalculatedSyntheticMetricDimensionArgsDict']]]]] = None,
+                 enabled: pulumi.Input[Optional[_builtins.bool]] = None,
+                 filter: pulumi.Input[Optional[Union['CalculatedSyntheticMetricFilterArgs', 'CalculatedSyntheticMetricFilterArgsDict']]] = None,
+                 metric: pulumi.Input[Optional[_builtins.str]] = None,
+                 metric_key: pulumi.Input[Optional[_builtins.str]] = None,
+                 monitor_identifier: pulumi.Input[Optional[_builtins.str]] = None,
+                 name: pulumi.Input[Optional[_builtins.str]] = None,
                  __props__=None):
         opts = pulumi.ResourceOptions.merge(_utilities.get_resource_opts_defaults(), opts)
         if not isinstance(opts, pulumi.ResourceOptions):
@@ -410,14 +410,14 @@ class CalculatedSyntheticMetric(pulumi.CustomResource):
     def get(resource_name: str,
             id: pulumi.Input[str],
             opts: Optional[pulumi.ResourceOptions] = None,
-            description: Optional[pulumi.Input[_builtins.str]] = None,
-            dimensions: Optional[pulumi.Input[Sequence[pulumi.Input[Union['CalculatedSyntheticMetricDimensionArgs', 'CalculatedSyntheticMetricDimensionArgsDict']]]]] = None,
-            enabled: Optional[pulumi.Input[_builtins.bool]] = None,
-            filter: Optional[pulumi.Input[Union['CalculatedSyntheticMetricFilterArgs', 'CalculatedSyntheticMetricFilterArgsDict']]] = None,
-            metric: Optional[pulumi.Input[_builtins.str]] = None,
-            metric_key: Optional[pulumi.Input[_builtins.str]] = None,
-            monitor_identifier: Optional[pulumi.Input[_builtins.str]] = None,
-            name: Optional[pulumi.Input[_builtins.str]] = None) -> 'CalculatedSyntheticMetric':
+            description: pulumi.Input[Optional[_builtins.str]] = None,
+            dimensions: pulumi.Input[Optional[Sequence[pulumi.Input[Union['CalculatedSyntheticMetricDimensionArgs', 'CalculatedSyntheticMetricDimensionArgsDict']]]]] = None,
+            enabled: pulumi.Input[Optional[_builtins.bool]] = None,
+            filter: pulumi.Input[Optional[Union['CalculatedSyntheticMetricFilterArgs', 'CalculatedSyntheticMetricFilterArgsDict']]] = None,
+            metric: pulumi.Input[Optional[_builtins.str]] = None,
+            metric_key: pulumi.Input[Optional[_builtins.str]] = None,
+            monitor_identifier: pulumi.Input[Optional[_builtins.str]] = None,
+            name: pulumi.Input[Optional[_builtins.str]] = None) -> 'CalculatedSyntheticMetric':
         """
         Get an existing CalculatedSyntheticMetric resource's state with the given name, id, and optional extra
         properties used to qualify the lookup.

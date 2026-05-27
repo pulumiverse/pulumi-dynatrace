@@ -111,19 +111,19 @@ export interface ManagementZoneV2State {
     /**
      * Description
      */
-    description?: pulumi.Input<string>;
+    description?: pulumi.Input<string | undefined>;
     /**
      * The ID of this setting when referred to by the Config REST API V1
      */
-    legacyId?: pulumi.Input<string>;
+    legacyId?: pulumi.Input<string | undefined>;
     /**
      * **Be careful when renaming** - if there are policies that are referencing this Management zone, they will need to be adapted to the new name!
      */
-    name?: pulumi.Input<string>;
+    name?: pulumi.Input<string | undefined>;
     /**
      * Rules
      */
-    rules?: pulumi.Input<inputs.ManagementZoneV2Rules>;
+    rules?: pulumi.Input<inputs.ManagementZoneV2Rules | undefined>;
 }
 
 /**
@@ -133,17 +133,17 @@ export interface ManagementZoneV2Args {
     /**
      * Description
      */
-    description?: pulumi.Input<string>;
+    description?: pulumi.Input<string | undefined>;
     /**
      * The ID of this setting when referred to by the Config REST API V1
      */
-    legacyId?: pulumi.Input<string>;
+    legacyId?: pulumi.Input<string | undefined>;
     /**
      * **Be careful when renaming** - if there are policies that are referencing this Management zone, they will need to be adapted to the new name!
      */
-    name?: pulumi.Input<string>;
+    name?: pulumi.Input<string | undefined>;
     /**
      * Rules
      */
-    rules?: pulumi.Input<inputs.ManagementZoneV2Rules>;
+    rules?: pulumi.Input<inputs.ManagementZoneV2Rules | undefined>;
 }

@@ -28,8 +28,8 @@ class TrelloNotificationArgs:
                  profile: pulumi.Input[_builtins.str],
                  resolved_list_id: pulumi.Input[_builtins.str],
                  text: pulumi.Input[_builtins.str],
-                 legacy_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 name: Optional[pulumi.Input[_builtins.str]] = None):
+                 legacy_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 name: pulumi.Input[Optional[_builtins.str]] = None):
         """
         The set of arguments for constructing a TrelloNotification resource.
 
@@ -257,43 +257,43 @@ class TrelloNotificationArgs:
 
     @_builtins.property
     @pulumi.getter(name="legacyId")
-    def legacy_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def legacy_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The ID of these settings when referred to from resources requiring the REST API V1 keys
         """
         return pulumi.get(self, "legacy_id")
 
     @legacy_id.setter
-    def legacy_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def legacy_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "legacy_id", value)
 
     @_builtins.property
     @pulumi.getter
-    def name(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def name(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The name of the notification configuration.
         """
         return pulumi.get(self, "name")
 
     @name.setter
-    def name(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def name(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "name", value)
 
 
 @pulumi.input_type
 class _TrelloNotificationState:
     def __init__(__self__, *,
-                 active: Optional[pulumi.Input[_builtins.bool]] = None,
-                 application_key: Optional[pulumi.Input[_builtins.str]] = None,
-                 authorization_token: Optional[pulumi.Input[_builtins.str]] = None,
-                 board_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 description: Optional[pulumi.Input[_builtins.str]] = None,
-                 legacy_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 list_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 name: Optional[pulumi.Input[_builtins.str]] = None,
-                 profile: Optional[pulumi.Input[_builtins.str]] = None,
-                 resolved_list_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 text: Optional[pulumi.Input[_builtins.str]] = None):
+                 active: pulumi.Input[Optional[_builtins.bool]] = None,
+                 application_key: pulumi.Input[Optional[_builtins.str]] = None,
+                 authorization_token: pulumi.Input[Optional[_builtins.str]] = None,
+                 board_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 description: pulumi.Input[Optional[_builtins.str]] = None,
+                 legacy_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 list_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 name: pulumi.Input[Optional[_builtins.str]] = None,
+                 profile: pulumi.Input[Optional[_builtins.str]] = None,
+                 resolved_list_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 text: pulumi.Input[Optional[_builtins.str]] = None):
         """
         Input properties used for looking up and filtering TrelloNotification resources.
 
@@ -378,55 +378,55 @@ class _TrelloNotificationState:
 
     @_builtins.property
     @pulumi.getter
-    def active(self) -> Optional[pulumi.Input[_builtins.bool]]:
+    def active(self) -> pulumi.Input[Optional[_builtins.bool]]:
         """
         This setting is enabled (`true`) or disabled (`false`)
         """
         return pulumi.get(self, "active")
 
     @active.setter
-    def active(self, value: Optional[pulumi.Input[_builtins.bool]]):
+    def active(self, value: pulumi.Input[Optional[_builtins.bool]]):
         pulumi.set(self, "active", value)
 
     @_builtins.property
     @pulumi.getter(name="applicationKey")
-    def application_key(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def application_key(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The application key for the Trello account.
         """
         return pulumi.get(self, "application_key")
 
     @application_key.setter
-    def application_key(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def application_key(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "application_key", value)
 
     @_builtins.property
     @pulumi.getter(name="authorizationToken")
-    def authorization_token(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def authorization_token(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The authorization token for the Trello account.
         """
         return pulumi.get(self, "authorization_token")
 
     @authorization_token.setter
-    def authorization_token(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def authorization_token(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "authorization_token", value)
 
     @_builtins.property
     @pulumi.getter(name="boardId")
-    def board_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def board_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Trello board ID problem cards should be assigned to
         """
         return pulumi.get(self, "board_id")
 
     @board_id.setter
-    def board_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def board_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "board_id", value)
 
     @_builtins.property
     @pulumi.getter
-    def description(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def description(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The description of the Trello card. Type '{' for placeholder suggestions.. #### Available placeholders
         **{ImpactedEntity}**: A short description of the problem and impacted entity (or multiple impacted entities).
@@ -456,72 +456,72 @@ class _TrelloNotificationState:
         return pulumi.get(self, "description")
 
     @description.setter
-    def description(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def description(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "description", value)
 
     @_builtins.property
     @pulumi.getter(name="legacyId")
-    def legacy_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def legacy_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The ID of these settings when referred to from resources requiring the REST API V1 keys
         """
         return pulumi.get(self, "legacy_id")
 
     @legacy_id.setter
-    def legacy_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def legacy_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "legacy_id", value)
 
     @_builtins.property
     @pulumi.getter(name="listId")
-    def list_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def list_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Trello list ID new problem cards should be assigned to
         """
         return pulumi.get(self, "list_id")
 
     @list_id.setter
-    def list_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def list_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "list_id", value)
 
     @_builtins.property
     @pulumi.getter
-    def name(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def name(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The name of the notification configuration.
         """
         return pulumi.get(self, "name")
 
     @name.setter
-    def name(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def name(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "name", value)
 
     @_builtins.property
     @pulumi.getter
-    def profile(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def profile(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The ID of the associated alerting profile
         """
         return pulumi.get(self, "profile")
 
     @profile.setter
-    def profile(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def profile(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "profile", value)
 
     @_builtins.property
     @pulumi.getter(name="resolvedListId")
-    def resolved_list_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def resolved_list_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Trello list ID resolved problem cards should be assigned to
         """
         return pulumi.get(self, "resolved_list_id")
 
     @resolved_list_id.setter
-    def resolved_list_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def resolved_list_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "resolved_list_id", value)
 
     @_builtins.property
     @pulumi.getter
-    def text(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def text(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The card text and problem placeholders to appear on new problem cards. Type '{' for placeholder suggestions.. #### Available placeholders
         **{ImpactedEntity}**: A short description of the problem and impacted entity (or multiple impacted entities).
@@ -549,7 +549,7 @@ class _TrelloNotificationState:
         return pulumi.get(self, "text")
 
     @text.setter
-    def text(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def text(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "text", value)
 
 
@@ -559,17 +559,17 @@ class TrelloNotification(pulumi.CustomResource):
     def __init__(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 active: Optional[pulumi.Input[_builtins.bool]] = None,
-                 application_key: Optional[pulumi.Input[_builtins.str]] = None,
-                 authorization_token: Optional[pulumi.Input[_builtins.str]] = None,
-                 board_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 description: Optional[pulumi.Input[_builtins.str]] = None,
-                 legacy_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 list_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 name: Optional[pulumi.Input[_builtins.str]] = None,
-                 profile: Optional[pulumi.Input[_builtins.str]] = None,
-                 resolved_list_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 text: Optional[pulumi.Input[_builtins.str]] = None,
+                 active: pulumi.Input[Optional[_builtins.bool]] = None,
+                 application_key: pulumi.Input[Optional[_builtins.str]] = None,
+                 authorization_token: pulumi.Input[Optional[_builtins.str]] = None,
+                 board_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 description: pulumi.Input[Optional[_builtins.str]] = None,
+                 legacy_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 list_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 name: pulumi.Input[Optional[_builtins.str]] = None,
+                 profile: pulumi.Input[Optional[_builtins.str]] = None,
+                 resolved_list_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 text: pulumi.Input[Optional[_builtins.str]] = None,
                  __props__=None):
         """
         > This resource requires the API token scopes **Read settings** (`settings.read`) and **Write settings** (`settings.write`)
@@ -682,17 +682,17 @@ class TrelloNotification(pulumi.CustomResource):
     def _internal_init(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 active: Optional[pulumi.Input[_builtins.bool]] = None,
-                 application_key: Optional[pulumi.Input[_builtins.str]] = None,
-                 authorization_token: Optional[pulumi.Input[_builtins.str]] = None,
-                 board_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 description: Optional[pulumi.Input[_builtins.str]] = None,
-                 legacy_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 list_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 name: Optional[pulumi.Input[_builtins.str]] = None,
-                 profile: Optional[pulumi.Input[_builtins.str]] = None,
-                 resolved_list_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 text: Optional[pulumi.Input[_builtins.str]] = None,
+                 active: pulumi.Input[Optional[_builtins.bool]] = None,
+                 application_key: pulumi.Input[Optional[_builtins.str]] = None,
+                 authorization_token: pulumi.Input[Optional[_builtins.str]] = None,
+                 board_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 description: pulumi.Input[Optional[_builtins.str]] = None,
+                 legacy_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 list_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 name: pulumi.Input[Optional[_builtins.str]] = None,
+                 profile: pulumi.Input[Optional[_builtins.str]] = None,
+                 resolved_list_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 text: pulumi.Input[Optional[_builtins.str]] = None,
                  __props__=None):
         opts = pulumi.ResourceOptions.merge(_utilities.get_resource_opts_defaults(), opts)
         if not isinstance(opts, pulumi.ResourceOptions):
@@ -743,17 +743,17 @@ class TrelloNotification(pulumi.CustomResource):
     def get(resource_name: str,
             id: pulumi.Input[str],
             opts: Optional[pulumi.ResourceOptions] = None,
-            active: Optional[pulumi.Input[_builtins.bool]] = None,
-            application_key: Optional[pulumi.Input[_builtins.str]] = None,
-            authorization_token: Optional[pulumi.Input[_builtins.str]] = None,
-            board_id: Optional[pulumi.Input[_builtins.str]] = None,
-            description: Optional[pulumi.Input[_builtins.str]] = None,
-            legacy_id: Optional[pulumi.Input[_builtins.str]] = None,
-            list_id: Optional[pulumi.Input[_builtins.str]] = None,
-            name: Optional[pulumi.Input[_builtins.str]] = None,
-            profile: Optional[pulumi.Input[_builtins.str]] = None,
-            resolved_list_id: Optional[pulumi.Input[_builtins.str]] = None,
-            text: Optional[pulumi.Input[_builtins.str]] = None) -> 'TrelloNotification':
+            active: pulumi.Input[Optional[_builtins.bool]] = None,
+            application_key: pulumi.Input[Optional[_builtins.str]] = None,
+            authorization_token: pulumi.Input[Optional[_builtins.str]] = None,
+            board_id: pulumi.Input[Optional[_builtins.str]] = None,
+            description: pulumi.Input[Optional[_builtins.str]] = None,
+            legacy_id: pulumi.Input[Optional[_builtins.str]] = None,
+            list_id: pulumi.Input[Optional[_builtins.str]] = None,
+            name: pulumi.Input[Optional[_builtins.str]] = None,
+            profile: pulumi.Input[Optional[_builtins.str]] = None,
+            resolved_list_id: pulumi.Input[Optional[_builtins.str]] = None,
+            text: pulumi.Input[Optional[_builtins.str]] = None) -> 'TrelloNotification':
         """
         Get an existing TrelloNotification resource's state with the given name, id, and optional extra
         properties used to qualify the lookup.

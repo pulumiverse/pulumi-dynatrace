@@ -132,23 +132,23 @@ export interface EventDrivenAnsibleConnectionsState {
     /**
      * Flag if Red Hat Event Stream is use for Event-Driven Ansible
      */
-    eventStreamEnabled?: pulumi.Input<boolean>;
+    eventStreamEnabled?: pulumi.Input<boolean | undefined>;
     /**
      * A unique and clearly identifiable connection name.
      */
-    name?: pulumi.Input<string>;
+    name?: pulumi.Input<string | undefined>;
     /**
      * API access token for the Event-Driven Ansible Controller. Please note that this token is not refreshed and can expire.
      */
-    token?: pulumi.Input<string>;
+    token?: pulumi.Input<string | undefined>;
     /**
      * Possible Values: `Api_token`
      */
-    type?: pulumi.Input<string>;
+    type?: pulumi.Input<string | undefined>;
     /**
      * URL of the Event-Driven Ansible source plugin webhook. For example, https://eda.yourdomain.com:5010
      */
-    url?: pulumi.Input<string>;
+    url?: pulumi.Input<string | undefined>;
 }
 
 /**
@@ -158,15 +158,15 @@ export interface EventDrivenAnsibleConnectionsArgs {
     /**
      * Flag if Red Hat Event Stream is use for Event-Driven Ansible
      */
-    eventStreamEnabled?: pulumi.Input<boolean>;
+    eventStreamEnabled?: pulumi.Input<boolean | undefined>;
     /**
      * A unique and clearly identifiable connection name.
      */
-    name?: pulumi.Input<string>;
+    name?: pulumi.Input<string | undefined>;
     /**
      * API access token for the Event-Driven Ansible Controller. Please note that this token is not refreshed and can expire.
      */
-    token?: pulumi.Input<string>;
+    token?: pulumi.Input<string | undefined>;
     /**
      * Possible Values: `Api_token`
      */

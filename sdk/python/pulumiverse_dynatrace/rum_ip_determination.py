@@ -20,7 +20,7 @@ __all__ = ['RumIpDeterminationArgs', 'RumIpDetermination']
 class RumIpDeterminationArgs:
     def __init__(__self__, *,
                  header_name: pulumi.Input[_builtins.str],
-                 insert_after: Optional[pulumi.Input[_builtins.str]] = None):
+                 insert_after: pulumi.Input[Optional[_builtins.str]] = None):
         """
         The set of arguments for constructing a RumIpDetermination resource.
 
@@ -45,22 +45,22 @@ class RumIpDeterminationArgs:
 
     @_builtins.property
     @pulumi.getter(name="insertAfter")
-    def insert_after(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def insert_after(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Because this resource allows for ordering you may specify the ID of the resource instance that comes before this instance regarding order. If not specified when creating the setting will be added to the end of the list. If not specified during update the order will remain untouched
         """
         return pulumi.get(self, "insert_after")
 
     @insert_after.setter
-    def insert_after(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def insert_after(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "insert_after", value)
 
 
 @pulumi.input_type
 class _RumIpDeterminationState:
     def __init__(__self__, *,
-                 header_name: Optional[pulumi.Input[_builtins.str]] = None,
-                 insert_after: Optional[pulumi.Input[_builtins.str]] = None):
+                 header_name: pulumi.Input[Optional[_builtins.str]] = None,
+                 insert_after: pulumi.Input[Optional[_builtins.str]] = None):
         """
         Input properties used for looking up and filtering RumIpDetermination resources.
 
@@ -74,26 +74,26 @@ class _RumIpDeterminationState:
 
     @_builtins.property
     @pulumi.getter(name="headerName")
-    def header_name(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def header_name(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Client IP header name
         """
         return pulumi.get(self, "header_name")
 
     @header_name.setter
-    def header_name(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def header_name(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "header_name", value)
 
     @_builtins.property
     @pulumi.getter(name="insertAfter")
-    def insert_after(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def insert_after(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Because this resource allows for ordering you may specify the ID of the resource instance that comes before this instance regarding order. If not specified when creating the setting will be added to the end of the list. If not specified during update the order will remain untouched
         """
         return pulumi.get(self, "insert_after")
 
     @insert_after.setter
-    def insert_after(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def insert_after(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "insert_after", value)
 
 
@@ -103,8 +103,8 @@ class RumIpDetermination(pulumi.CustomResource):
     def __init__(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 header_name: Optional[pulumi.Input[_builtins.str]] = None,
-                 insert_after: Optional[pulumi.Input[_builtins.str]] = None,
+                 header_name: pulumi.Input[Optional[_builtins.str]] = None,
+                 insert_after: pulumi.Input[Optional[_builtins.str]] = None,
                  __props__=None):
         """
         > This resource requires the API token scopes **Read settings** (`settings.read`) and **Write settings** (`settings.write`)
@@ -164,8 +164,8 @@ class RumIpDetermination(pulumi.CustomResource):
     def _internal_init(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 header_name: Optional[pulumi.Input[_builtins.str]] = None,
-                 insert_after: Optional[pulumi.Input[_builtins.str]] = None,
+                 header_name: pulumi.Input[Optional[_builtins.str]] = None,
+                 insert_after: pulumi.Input[Optional[_builtins.str]] = None,
                  __props__=None):
         opts = pulumi.ResourceOptions.merge(_utilities.get_resource_opts_defaults(), opts)
         if not isinstance(opts, pulumi.ResourceOptions):
@@ -189,8 +189,8 @@ class RumIpDetermination(pulumi.CustomResource):
     def get(resource_name: str,
             id: pulumi.Input[str],
             opts: Optional[pulumi.ResourceOptions] = None,
-            header_name: Optional[pulumi.Input[_builtins.str]] = None,
-            insert_after: Optional[pulumi.Input[_builtins.str]] = None) -> 'RumIpDetermination':
+            header_name: pulumi.Input[Optional[_builtins.str]] = None,
+            insert_after: pulumi.Input[Optional[_builtins.str]] = None) -> 'RumIpDetermination':
         """
         Get an existing RumIpDetermination resource's state with the given name, id, and optional extra
         properties used to qualify the lookup.

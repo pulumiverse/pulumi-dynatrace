@@ -147,9 +147,9 @@ def get_iam_environments(active: Optional[_builtins.bool] = None,
         environments=pulumi.get(__ret__, 'environments'),
         id=pulumi.get(__ret__, 'id'),
         name=pulumi.get(__ret__, 'name'))
-def get_iam_environments_output(active: Optional[pulumi.Input[Optional[_builtins.bool]]] = None,
-                                env_id: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                                name: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
+def get_iam_environments_output(active: pulumi.Input[Optional[Optional[_builtins.bool]]] = None,
+                                env_id: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                                name: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
                                 opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetIamEnvironmentsResult]:
     """
     > **Dynatrace SaaS only**

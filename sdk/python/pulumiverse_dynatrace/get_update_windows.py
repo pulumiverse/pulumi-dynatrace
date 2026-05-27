@@ -83,7 +83,7 @@ def get_update_windows(name: Optional[_builtins.str] = None,
     return AwaitableGetUpdateWindowsResult(
         id=pulumi.get(__ret__, 'id'),
         name=pulumi.get(__ret__, 'name'))
-def get_update_windows_output(name: Optional[pulumi.Input[_builtins.str]] = None,
+def get_update_windows_output(name: pulumi.Input[Optional[_builtins.str]] = None,
                               opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetUpdateWindowsResult]:
     """
     The `UpdateWindows` data source allows the OneAgent update maintenance window ID to be retrieved by its name.

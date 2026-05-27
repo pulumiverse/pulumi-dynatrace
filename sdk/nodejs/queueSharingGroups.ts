@@ -94,15 +94,15 @@ export interface QueueSharingGroupsState {
     /**
      * Queue sharing group name
      */
-    name?: pulumi.Input<string>;
+    name?: pulumi.Input<string | undefined>;
     /**
      * Queue managers
      */
-    queueManagers?: pulumi.Input<pulumi.Input<string>[]>;
+    queueManagers?: pulumi.Input<pulumi.Input<string>[] | undefined>;
     /**
      * Shared queues
      */
-    sharedQueues?: pulumi.Input<pulumi.Input<string>[]>;
+    sharedQueues?: pulumi.Input<pulumi.Input<string>[] | undefined>;
 }
 
 /**
@@ -112,13 +112,13 @@ export interface QueueSharingGroupsArgs {
     /**
      * Queue sharing group name
      */
-    name?: pulumi.Input<string>;
+    name?: pulumi.Input<string | undefined>;
     /**
      * Queue managers
      */
-    queueManagers?: pulumi.Input<pulumi.Input<string>[]>;
+    queueManagers?: pulumi.Input<pulumi.Input<string>[] | undefined>;
     /**
      * Shared queues
      */
-    sharedQueues?: pulumi.Input<pulumi.Input<string>[]>;
+    sharedQueues?: pulumi.Input<pulumi.Input<string>[] | undefined>;
 }

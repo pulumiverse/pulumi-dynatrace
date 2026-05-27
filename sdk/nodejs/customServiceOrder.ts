@@ -106,23 +106,23 @@ export interface CustomServiceOrderState {
     /**
      * The IDs of Custom Services for .Net in the desired order
      */
-    dotnets?: pulumi.Input<pulumi.Input<string>[]>;
+    dotnets?: pulumi.Input<pulumi.Input<string>[] | undefined>;
     /**
      * The IDs of Custom Services for Golang in the desired order
      */
-    golangs?: pulumi.Input<pulumi.Input<string>[]>;
+    golangs?: pulumi.Input<pulumi.Input<string>[] | undefined>;
     /**
      * The IDs of Custom Services for Java in the desired order
      */
-    javas?: pulumi.Input<pulumi.Input<string>[]>;
+    javas?: pulumi.Input<pulumi.Input<string>[] | undefined>;
     /**
      * The IDs of Custom Services for NodeJS in the desired order
      */
-    nodejs?: pulumi.Input<pulumi.Input<string>[]>;
+    nodejs?: pulumi.Input<pulumi.Input<string>[] | undefined>;
     /**
      * The IDs of Custom Services for PHP in the desired order
      */
-    phps?: pulumi.Input<pulumi.Input<string>[]>;
+    phps?: pulumi.Input<pulumi.Input<string>[] | undefined>;
 }
 
 /**
@@ -132,21 +132,21 @@ export interface CustomServiceOrderArgs {
     /**
      * The IDs of Custom Services for .Net in the desired order
      */
-    dotnets?: pulumi.Input<pulumi.Input<string>[]>;
+    dotnets?: pulumi.Input<pulumi.Input<string>[] | undefined>;
     /**
      * The IDs of Custom Services for Golang in the desired order
      */
-    golangs?: pulumi.Input<pulumi.Input<string>[]>;
+    golangs?: pulumi.Input<pulumi.Input<string>[] | undefined>;
     /**
      * The IDs of Custom Services for Java in the desired order
      */
-    javas?: pulumi.Input<pulumi.Input<string>[]>;
+    javas?: pulumi.Input<pulumi.Input<string>[] | undefined>;
     /**
      * The IDs of Custom Services for NodeJS in the desired order
      */
-    nodejs?: pulumi.Input<pulumi.Input<string>[]>;
+    nodejs?: pulumi.Input<pulumi.Input<string>[] | undefined>;
     /**
      * The IDs of Custom Services for PHP in the desired order
      */
-    phps?: pulumi.Input<pulumi.Input<string>[]>;
+    phps?: pulumi.Input<pulumi.Input<string>[] | undefined>;
 }

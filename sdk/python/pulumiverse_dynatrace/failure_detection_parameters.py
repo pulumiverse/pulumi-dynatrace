@@ -24,8 +24,8 @@ class FailureDetectionParametersArgs:
                  broken_links: pulumi.Input['FailureDetectionParametersBrokenLinksArgs'],
                  exception_rules: pulumi.Input['FailureDetectionParametersExceptionRulesArgs'],
                  http_response_codes: pulumi.Input['FailureDetectionParametersHttpResponseCodesArgs'],
-                 description: Optional[pulumi.Input[_builtins.str]] = None,
-                 name: Optional[pulumi.Input[_builtins.str]] = None):
+                 description: pulumi.Input[Optional[_builtins.str]] = None,
+                 name: pulumi.Input[Optional[_builtins.str]] = None):
         """
         The set of arguments for constructing a FailureDetectionParameters resource.
 
@@ -81,37 +81,37 @@ class FailureDetectionParametersArgs:
 
     @_builtins.property
     @pulumi.getter
-    def description(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def description(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Description
         """
         return pulumi.get(self, "description")
 
     @description.setter
-    def description(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def description(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "description", value)
 
     @_builtins.property
     @pulumi.getter
-    def name(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def name(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Name
         """
         return pulumi.get(self, "name")
 
     @name.setter
-    def name(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def name(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "name", value)
 
 
 @pulumi.input_type
 class _FailureDetectionParametersState:
     def __init__(__self__, *,
-                 broken_links: Optional[pulumi.Input['FailureDetectionParametersBrokenLinksArgs']] = None,
-                 description: Optional[pulumi.Input[_builtins.str]] = None,
-                 exception_rules: Optional[pulumi.Input['FailureDetectionParametersExceptionRulesArgs']] = None,
-                 http_response_codes: Optional[pulumi.Input['FailureDetectionParametersHttpResponseCodesArgs']] = None,
-                 name: Optional[pulumi.Input[_builtins.str]] = None):
+                 broken_links: pulumi.Input[Optional['FailureDetectionParametersBrokenLinksArgs']] = None,
+                 description: pulumi.Input[Optional[_builtins.str]] = None,
+                 exception_rules: pulumi.Input[Optional['FailureDetectionParametersExceptionRulesArgs']] = None,
+                 http_response_codes: pulumi.Input[Optional['FailureDetectionParametersHttpResponseCodesArgs']] = None,
+                 name: pulumi.Input[Optional[_builtins.str]] = None):
         """
         Input properties used for looking up and filtering FailureDetectionParameters resources.
 
@@ -134,62 +134,62 @@ class _FailureDetectionParametersState:
 
     @_builtins.property
     @pulumi.getter(name="brokenLinks")
-    def broken_links(self) -> Optional[pulumi.Input['FailureDetectionParametersBrokenLinksArgs']]:
+    def broken_links(self) -> pulumi.Input[Optional['FailureDetectionParametersBrokenLinksArgs']]:
         """
         HTTP 404 response codes are thrown when a web server can't find a certain page. 404s are classified as broken links on the client side and therefore aren't considered to be service failures. By enabling this setting, you can have 404s treated as server-side service failures.
         """
         return pulumi.get(self, "broken_links")
 
     @broken_links.setter
-    def broken_links(self, value: Optional[pulumi.Input['FailureDetectionParametersBrokenLinksArgs']]):
+    def broken_links(self, value: pulumi.Input[Optional['FailureDetectionParametersBrokenLinksArgs']]):
         pulumi.set(self, "broken_links", value)
 
     @_builtins.property
     @pulumi.getter
-    def description(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def description(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Description
         """
         return pulumi.get(self, "description")
 
     @description.setter
-    def description(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def description(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "description", value)
 
     @_builtins.property
     @pulumi.getter(name="exceptionRules")
-    def exception_rules(self) -> Optional[pulumi.Input['FailureDetectionParametersExceptionRulesArgs']]:
+    def exception_rules(self) -> pulumi.Input[Optional['FailureDetectionParametersExceptionRulesArgs']]:
         """
         Customize failure detection for specific exceptions and errors
         """
         return pulumi.get(self, "exception_rules")
 
     @exception_rules.setter
-    def exception_rules(self, value: Optional[pulumi.Input['FailureDetectionParametersExceptionRulesArgs']]):
+    def exception_rules(self, value: pulumi.Input[Optional['FailureDetectionParametersExceptionRulesArgs']]):
         pulumi.set(self, "exception_rules", value)
 
     @_builtins.property
     @pulumi.getter(name="httpResponseCodes")
-    def http_response_codes(self) -> Optional[pulumi.Input['FailureDetectionParametersHttpResponseCodesArgs']]:
+    def http_response_codes(self) -> pulumi.Input[Optional['FailureDetectionParametersHttpResponseCodesArgs']]:
         """
         HTTP response codes
         """
         return pulumi.get(self, "http_response_codes")
 
     @http_response_codes.setter
-    def http_response_codes(self, value: Optional[pulumi.Input['FailureDetectionParametersHttpResponseCodesArgs']]):
+    def http_response_codes(self, value: pulumi.Input[Optional['FailureDetectionParametersHttpResponseCodesArgs']]):
         pulumi.set(self, "http_response_codes", value)
 
     @_builtins.property
     @pulumi.getter
-    def name(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def name(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Name
         """
         return pulumi.get(self, "name")
 
     @name.setter
-    def name(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def name(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "name", value)
 
 
@@ -199,11 +199,11 @@ class FailureDetectionParameters(pulumi.CustomResource):
     def __init__(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 broken_links: Optional[pulumi.Input[Union['FailureDetectionParametersBrokenLinksArgs', 'FailureDetectionParametersBrokenLinksArgsDict']]] = None,
-                 description: Optional[pulumi.Input[_builtins.str]] = None,
-                 exception_rules: Optional[pulumi.Input[Union['FailureDetectionParametersExceptionRulesArgs', 'FailureDetectionParametersExceptionRulesArgsDict']]] = None,
-                 http_response_codes: Optional[pulumi.Input[Union['FailureDetectionParametersHttpResponseCodesArgs', 'FailureDetectionParametersHttpResponseCodesArgsDict']]] = None,
-                 name: Optional[pulumi.Input[_builtins.str]] = None,
+                 broken_links: pulumi.Input[Optional[Union['FailureDetectionParametersBrokenLinksArgs', 'FailureDetectionParametersBrokenLinksArgsDict']]] = None,
+                 description: pulumi.Input[Optional[_builtins.str]] = None,
+                 exception_rules: pulumi.Input[Optional[Union['FailureDetectionParametersExceptionRulesArgs', 'FailureDetectionParametersExceptionRulesArgsDict']]] = None,
+                 http_response_codes: pulumi.Input[Optional[Union['FailureDetectionParametersHttpResponseCodesArgs', 'FailureDetectionParametersHttpResponseCodesArgsDict']]] = None,
+                 name: pulumi.Input[Optional[_builtins.str]] = None,
                  __props__=None):
         """
         > This resource requires the API token scopes **Read settings** (`settings.read`) and **Write settings** (`settings.write`)
@@ -266,11 +266,11 @@ class FailureDetectionParameters(pulumi.CustomResource):
     def _internal_init(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 broken_links: Optional[pulumi.Input[Union['FailureDetectionParametersBrokenLinksArgs', 'FailureDetectionParametersBrokenLinksArgsDict']]] = None,
-                 description: Optional[pulumi.Input[_builtins.str]] = None,
-                 exception_rules: Optional[pulumi.Input[Union['FailureDetectionParametersExceptionRulesArgs', 'FailureDetectionParametersExceptionRulesArgsDict']]] = None,
-                 http_response_codes: Optional[pulumi.Input[Union['FailureDetectionParametersHttpResponseCodesArgs', 'FailureDetectionParametersHttpResponseCodesArgsDict']]] = None,
-                 name: Optional[pulumi.Input[_builtins.str]] = None,
+                 broken_links: pulumi.Input[Optional[Union['FailureDetectionParametersBrokenLinksArgs', 'FailureDetectionParametersBrokenLinksArgsDict']]] = None,
+                 description: pulumi.Input[Optional[_builtins.str]] = None,
+                 exception_rules: pulumi.Input[Optional[Union['FailureDetectionParametersExceptionRulesArgs', 'FailureDetectionParametersExceptionRulesArgsDict']]] = None,
+                 http_response_codes: pulumi.Input[Optional[Union['FailureDetectionParametersHttpResponseCodesArgs', 'FailureDetectionParametersHttpResponseCodesArgsDict']]] = None,
+                 name: pulumi.Input[Optional[_builtins.str]] = None,
                  __props__=None):
         opts = pulumi.ResourceOptions.merge(_utilities.get_resource_opts_defaults(), opts)
         if not isinstance(opts, pulumi.ResourceOptions):
@@ -301,11 +301,11 @@ class FailureDetectionParameters(pulumi.CustomResource):
     def get(resource_name: str,
             id: pulumi.Input[str],
             opts: Optional[pulumi.ResourceOptions] = None,
-            broken_links: Optional[pulumi.Input[Union['FailureDetectionParametersBrokenLinksArgs', 'FailureDetectionParametersBrokenLinksArgsDict']]] = None,
-            description: Optional[pulumi.Input[_builtins.str]] = None,
-            exception_rules: Optional[pulumi.Input[Union['FailureDetectionParametersExceptionRulesArgs', 'FailureDetectionParametersExceptionRulesArgsDict']]] = None,
-            http_response_codes: Optional[pulumi.Input[Union['FailureDetectionParametersHttpResponseCodesArgs', 'FailureDetectionParametersHttpResponseCodesArgsDict']]] = None,
-            name: Optional[pulumi.Input[_builtins.str]] = None) -> 'FailureDetectionParameters':
+            broken_links: pulumi.Input[Optional[Union['FailureDetectionParametersBrokenLinksArgs', 'FailureDetectionParametersBrokenLinksArgsDict']]] = None,
+            description: pulumi.Input[Optional[_builtins.str]] = None,
+            exception_rules: pulumi.Input[Optional[Union['FailureDetectionParametersExceptionRulesArgs', 'FailureDetectionParametersExceptionRulesArgsDict']]] = None,
+            http_response_codes: pulumi.Input[Optional[Union['FailureDetectionParametersHttpResponseCodesArgs', 'FailureDetectionParametersHttpResponseCodesArgsDict']]] = None,
+            name: pulumi.Input[Optional[_builtins.str]] = None) -> 'FailureDetectionParameters':
         """
         Get an existing FailureDetectionParameters resource's state with the given name, id, and optional extra
         properties used to qualify the lookup.

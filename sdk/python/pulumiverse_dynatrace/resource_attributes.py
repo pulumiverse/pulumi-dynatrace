@@ -21,7 +21,7 @@ __all__ = ['ResourceAttributesArgs', 'ResourceAttributes']
 @pulumi.input_type
 class ResourceAttributesArgs:
     def __init__(__self__, *,
-                 keys: Optional[pulumi.Input['ResourceAttributesKeysArgs']] = None):
+                 keys: pulumi.Input[Optional['ResourceAttributesKeysArgs']] = None):
         """
         The set of arguments for constructing a ResourceAttributes resource.
 
@@ -32,21 +32,21 @@ class ResourceAttributesArgs:
 
     @_builtins.property
     @pulumi.getter
-    def keys(self) -> Optional[pulumi.Input['ResourceAttributesKeysArgs']]:
+    def keys(self) -> pulumi.Input[Optional['ResourceAttributesKeysArgs']]:
         """
         Attribute key allow-list
         """
         return pulumi.get(self, "keys")
 
     @keys.setter
-    def keys(self, value: Optional[pulumi.Input['ResourceAttributesKeysArgs']]):
+    def keys(self, value: pulumi.Input[Optional['ResourceAttributesKeysArgs']]):
         pulumi.set(self, "keys", value)
 
 
 @pulumi.input_type
 class _ResourceAttributesState:
     def __init__(__self__, *,
-                 keys: Optional[pulumi.Input['ResourceAttributesKeysArgs']] = None):
+                 keys: pulumi.Input[Optional['ResourceAttributesKeysArgs']] = None):
         """
         Input properties used for looking up and filtering ResourceAttributes resources.
 
@@ -57,14 +57,14 @@ class _ResourceAttributesState:
 
     @_builtins.property
     @pulumi.getter
-    def keys(self) -> Optional[pulumi.Input['ResourceAttributesKeysArgs']]:
+    def keys(self) -> pulumi.Input[Optional['ResourceAttributesKeysArgs']]:
         """
         Attribute key allow-list
         """
         return pulumi.get(self, "keys")
 
     @keys.setter
-    def keys(self, value: Optional[pulumi.Input['ResourceAttributesKeysArgs']]):
+    def keys(self, value: pulumi.Input[Optional['ResourceAttributesKeysArgs']]):
         pulumi.set(self, "keys", value)
 
 
@@ -74,7 +74,7 @@ class ResourceAttributes(pulumi.CustomResource):
     def __init__(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 keys: Optional[pulumi.Input[Union['ResourceAttributesKeysArgs', 'ResourceAttributesKeysArgsDict']]] = None,
+                 keys: pulumi.Input[Optional[Union['ResourceAttributesKeysArgs', 'ResourceAttributesKeysArgsDict']]] = None,
                  __props__=None):
         """
         !> This resource API endpoint has been deprecated, please use AttributeAllowList and AttributeMasking instead.
@@ -137,7 +137,7 @@ class ResourceAttributes(pulumi.CustomResource):
     def _internal_init(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 keys: Optional[pulumi.Input[Union['ResourceAttributesKeysArgs', 'ResourceAttributesKeysArgsDict']]] = None,
+                 keys: pulumi.Input[Optional[Union['ResourceAttributesKeysArgs', 'ResourceAttributesKeysArgsDict']]] = None,
                  __props__=None):
         opts = pulumi.ResourceOptions.merge(_utilities.get_resource_opts_defaults(), opts)
         if not isinstance(opts, pulumi.ResourceOptions):
@@ -158,7 +158,7 @@ class ResourceAttributes(pulumi.CustomResource):
     def get(resource_name: str,
             id: pulumi.Input[str],
             opts: Optional[pulumi.ResourceOptions] = None,
-            keys: Optional[pulumi.Input[Union['ResourceAttributesKeysArgs', 'ResourceAttributesKeysArgsDict']]] = None) -> 'ResourceAttributes':
+            keys: pulumi.Input[Optional[Union['ResourceAttributesKeysArgs', 'ResourceAttributesKeysArgsDict']]] = None) -> 'ResourceAttributes':
         """
         Get an existing ResourceAttributes resource's state with the given name, id, and optional extra
         properties used to qualify the lookup.

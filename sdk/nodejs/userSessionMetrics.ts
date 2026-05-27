@@ -117,23 +117,23 @@ export interface UserSessionMetricsState {
     /**
      * Defines the fields that are used as dimensions. A dimension is a collection of reference information about a metric data point that is of interest to your business. Dimensions are parameters like "browserFamily", "userType", "country". For example, using "userType" as a dimension allows you to split chart data based on user types.
      */
-    dimensions?: pulumi.Input<pulumi.Input<string>[]>;
+    dimensions?: pulumi.Input<pulumi.Input<string>[] | undefined>;
     /**
      * This setting is enabled (`true`) or disabled (`false`)
      */
-    enabled?: pulumi.Input<boolean>;
+    enabled?: pulumi.Input<boolean | undefined>;
     /**
      * Defines the filters for the user session. Filters apply at the moment of extracting the data and only sessions that satisfy the filtering criteria will be used to extract the custom metrics. You will not be able to modify these filters in the metric data explorer. For example, using "userType equals REAL_USER" will give you only data from real users, while forcing the synthetic sessions to be ignored.
      */
-    filters?: pulumi.Input<inputs.UserSessionMetricsFilters>;
+    filters?: pulumi.Input<inputs.UserSessionMetricsFilters | undefined>;
     /**
      * Metric key
      */
-    metricKey?: pulumi.Input<string>;
+    metricKey?: pulumi.Input<string | undefined>;
     /**
      * Defines the type of value to be extracted from the user session. When using **User session counter**, the number of user sessions is counted (similar to count(*) when using USQL). When using **User session field value**, the value of a user session field is extracted.
      */
-    value?: pulumi.Input<inputs.UserSessionMetricsValue>;
+    value?: pulumi.Input<inputs.UserSessionMetricsValue | undefined>;
 }
 
 /**
@@ -143,7 +143,7 @@ export interface UserSessionMetricsArgs {
     /**
      * Defines the fields that are used as dimensions. A dimension is a collection of reference information about a metric data point that is of interest to your business. Dimensions are parameters like "browserFamily", "userType", "country". For example, using "userType" as a dimension allows you to split chart data based on user types.
      */
-    dimensions?: pulumi.Input<pulumi.Input<string>[]>;
+    dimensions?: pulumi.Input<pulumi.Input<string>[] | undefined>;
     /**
      * This setting is enabled (`true`) or disabled (`false`)
      */
@@ -151,7 +151,7 @@ export interface UserSessionMetricsArgs {
     /**
      * Defines the filters for the user session. Filters apply at the moment of extracting the data and only sessions that satisfy the filtering criteria will be used to extract the custom metrics. You will not be able to modify these filters in the metric data explorer. For example, using "userType equals REAL_USER" will give you only data from real users, while forcing the synthetic sessions to be ignored.
      */
-    filters?: pulumi.Input<inputs.UserSessionMetricsFilters>;
+    filters?: pulumi.Input<inputs.UserSessionMetricsFilters | undefined>;
     /**
      * Metric key
      */

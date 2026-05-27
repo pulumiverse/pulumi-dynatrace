@@ -132,31 +132,31 @@ export interface DiskSpecificAnomaliesV2State {
     /**
      * The id for the disk anomaly detection
      */
-    diskId?: pulumi.Input<string>;
+    diskId?: pulumi.Input<string | undefined>;
     /**
      * no documentation available
      */
-    diskLowInodesDetection?: pulumi.Input<inputs.DiskSpecificAnomaliesV2DiskLowInodesDetection>;
+    diskLowInodesDetection?: pulumi.Input<inputs.DiskSpecificAnomaliesV2DiskLowInodesDetection | undefined>;
     /**
      * no documentation available
      */
-    diskLowSpaceDetection?: pulumi.Input<inputs.DiskSpecificAnomaliesV2DiskLowSpaceDetection>;
+    diskLowSpaceDetection?: pulumi.Input<inputs.DiskSpecificAnomaliesV2DiskLowSpaceDetection | undefined>;
     /**
      * no documentation available
      */
-    diskSlowWritesAndReadsDetection?: pulumi.Input<inputs.DiskSpecificAnomaliesV2DiskSlowWritesAndReadsDetection>;
+    diskSlowWritesAndReadsDetection?: pulumi.Input<inputs.DiskSpecificAnomaliesV2DiskSlowWritesAndReadsDetection | undefined>;
     /**
      * Override low disk space detection settings
      */
-    overrideDiskLowSpaceDetection?: pulumi.Input<boolean>;
+    overrideDiskLowSpaceDetection?: pulumi.Input<boolean | undefined>;
     /**
      * Override low inodes detection settings
      */
-    overrideLowInodesDetection?: pulumi.Input<boolean>;
+    overrideLowInodesDetection?: pulumi.Input<boolean | undefined>;
     /**
      * Override slow writes and reads detection settings
      */
-    overrideSlowWritesAndReadsDetection?: pulumi.Input<boolean>;
+    overrideSlowWritesAndReadsDetection?: pulumi.Input<boolean | undefined>;
 }
 
 /**
@@ -170,15 +170,15 @@ export interface DiskSpecificAnomaliesV2Args {
     /**
      * no documentation available
      */
-    diskLowInodesDetection?: pulumi.Input<inputs.DiskSpecificAnomaliesV2DiskLowInodesDetection>;
+    diskLowInodesDetection?: pulumi.Input<inputs.DiskSpecificAnomaliesV2DiskLowInodesDetection | undefined>;
     /**
      * no documentation available
      */
-    diskLowSpaceDetection?: pulumi.Input<inputs.DiskSpecificAnomaliesV2DiskLowSpaceDetection>;
+    diskLowSpaceDetection?: pulumi.Input<inputs.DiskSpecificAnomaliesV2DiskLowSpaceDetection | undefined>;
     /**
      * no documentation available
      */
-    diskSlowWritesAndReadsDetection?: pulumi.Input<inputs.DiskSpecificAnomaliesV2DiskSlowWritesAndReadsDetection>;
+    diskSlowWritesAndReadsDetection?: pulumi.Input<inputs.DiskSpecificAnomaliesV2DiskSlowWritesAndReadsDetection | undefined>;
     /**
      * Override low disk space detection settings
      */

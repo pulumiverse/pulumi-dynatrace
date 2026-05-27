@@ -207,90 +207,90 @@ export interface SyntheticLocationState {
     /**
      * Auto upgrade of Chromium is enabled (`true`) or disabled (`false`)
      */
-    autoUpdateChromium?: pulumi.Input<boolean>;
+    autoUpdateChromium?: pulumi.Input<boolean | undefined>;
     /**
      * The alerting of location outage is enabled (`true`) or disabled (`false`)
      */
-    availabilityLocationOutage?: pulumi.Input<boolean>;
+    availabilityLocationOutage?: pulumi.Input<boolean | undefined>;
     /**
      * The alerting of node outage is enabled (`true`) or disabled (`false`).
      */
-    availabilityNodeOutage?: pulumi.Input<boolean>;
+    availabilityNodeOutage?: pulumi.Input<boolean | undefined>;
     /**
      * The notifications of location and node outage is enabled (`true`) or disabled (`false`)
      */
-    availabilityNotificationsEnabled?: pulumi.Input<boolean>;
+    availabilityNotificationsEnabled?: pulumi.Input<boolean | undefined>;
     /**
      * The city of the location
      */
-    city?: pulumi.Input<string>;
+    city?: pulumi.Input<string | undefined>;
     /**
      * The country code of the location. 
      *
      *  To fetch the list of available country codes, use the [GET all countries](https://dt-url.net/37030go) request
      */
-    countryCode?: pulumi.Input<string>;
+    countryCode?: pulumi.Input<string | undefined>;
     /**
      * The deployment type of the location: 
      *
      * * `STANDARD`: The location is deployed on Windows or Linux.
      * * `KUBERNETES`: The location is deployed on Kubernetes
      */
-    deploymentType?: pulumi.Input<string>;
+    deploymentType?: pulumi.Input<string | undefined>;
     /**
      * Containerized location property indicating whether FIPS mode is enabled on this location. Possible values: `DISABLED`, `ENABLED`, `ENABLED_WITH_CORPORATE_PROXY`
      */
-    fipsMode?: pulumi.Input<string>;
+    fipsMode?: pulumi.Input<string | undefined>;
     /**
      * The latitude of the location in `DDD.dddd` format
      */
-    latitude?: pulumi.Input<number>;
+    latitude?: pulumi.Input<number | undefined>;
     /**
      * Alert if the location or node outage lasts longer than *X* minutes. 
      *
      *  Only applicable when **availability_location_outage** or **availability_node_outage** is set to `true`
      */
-    locationNodeOutageDelayInMinutes?: pulumi.Input<number>;
+    locationNodeOutageDelayInMinutes?: pulumi.Input<number | undefined>;
     /**
      * The longitude of the location in `DDD.dddd` format
      */
-    longitude?: pulumi.Input<number>;
+    longitude?: pulumi.Input<number | undefined>;
     /**
      * The maximum number of Active Gates required for that location. Not required when `deploymentType` is set to `STANDARD`
      */
-    maxActiveGateCount?: pulumi.Input<number>;
+    maxActiveGateCount?: pulumi.Input<number | undefined>;
     /**
      * The minimum number of Active Gates required for that location. Not required when `deploymentType` is set to `STANDARD`
      */
-    minActiveGateCount?: pulumi.Input<number>;
+    minActiveGateCount?: pulumi.Input<number | undefined>;
     /**
      * Boolean value describes if icmp monitors will be executed on this location
      */
-    namExecutionSupported?: pulumi.Input<boolean>;
+    namExecutionSupported?: pulumi.Input<boolean | undefined>;
     /**
      * The name of the location
      */
-    name?: pulumi.Input<string>;
+    name?: pulumi.Input<string | undefined>;
     /**
      * Possible values: `UNSUPPORTED`, `XS`, `S` and `M`. Not required when `deploymentType` is set to `STANDARD`.
      */
-    nodeSize?: pulumi.Input<string>;
+    nodeSize?: pulumi.Input<string | undefined>;
     /**
      * A list of synthetic nodes belonging to the location. 
      *
      *  You can retrieve the list of available nodes with the [GET all nodes](https://dt-url.net/miy3rpl) call
      */
-    nodes?: pulumi.Input<pulumi.Input<string>[]>;
+    nodes?: pulumi.Input<pulumi.Input<string>[] | undefined>;
     /**
      * The region code of the location. 
      *
      *  To fetch the list of available region codes, use the [GET regions of the country](https://dt-url.net/az230x0) request
      */
-    regionCode?: pulumi.Input<string>;
+    regionCode?: pulumi.Input<string | undefined>;
     /**
      * Boolean value describes which kubernetes version will be used
      */
-    useNewKubernetesVersion?: pulumi.Input<boolean>;
+    useNewKubernetesVersion?: pulumi.Input<boolean | undefined>;
 }
 
 /**
@@ -300,40 +300,40 @@ export interface SyntheticLocationArgs {
     /**
      * Auto upgrade of Chromium is enabled (`true`) or disabled (`false`)
      */
-    autoUpdateChromium?: pulumi.Input<boolean>;
+    autoUpdateChromium?: pulumi.Input<boolean | undefined>;
     /**
      * The alerting of location outage is enabled (`true`) or disabled (`false`)
      */
-    availabilityLocationOutage?: pulumi.Input<boolean>;
+    availabilityLocationOutage?: pulumi.Input<boolean | undefined>;
     /**
      * The alerting of node outage is enabled (`true`) or disabled (`false`).
      */
-    availabilityNodeOutage?: pulumi.Input<boolean>;
+    availabilityNodeOutage?: pulumi.Input<boolean | undefined>;
     /**
      * The notifications of location and node outage is enabled (`true`) or disabled (`false`)
      */
-    availabilityNotificationsEnabled?: pulumi.Input<boolean>;
+    availabilityNotificationsEnabled?: pulumi.Input<boolean | undefined>;
     /**
      * The city of the location
      */
-    city?: pulumi.Input<string>;
+    city?: pulumi.Input<string | undefined>;
     /**
      * The country code of the location. 
      *
      *  To fetch the list of available country codes, use the [GET all countries](https://dt-url.net/37030go) request
      */
-    countryCode?: pulumi.Input<string>;
+    countryCode?: pulumi.Input<string | undefined>;
     /**
      * The deployment type of the location: 
      *
      * * `STANDARD`: The location is deployed on Windows or Linux.
      * * `KUBERNETES`: The location is deployed on Kubernetes
      */
-    deploymentType?: pulumi.Input<string>;
+    deploymentType?: pulumi.Input<string | undefined>;
     /**
      * Containerized location property indicating whether FIPS mode is enabled on this location. Possible values: `DISABLED`, `ENABLED`, `ENABLED_WITH_CORPORATE_PROXY`
      */
-    fipsMode?: pulumi.Input<string>;
+    fipsMode?: pulumi.Input<string | undefined>;
     /**
      * The latitude of the location in `DDD.dddd` format
      */
@@ -343,7 +343,7 @@ export interface SyntheticLocationArgs {
      *
      *  Only applicable when **availability_location_outage** or **availability_node_outage** is set to `true`
      */
-    locationNodeOutageDelayInMinutes?: pulumi.Input<number>;
+    locationNodeOutageDelayInMinutes?: pulumi.Input<number | undefined>;
     /**
      * The longitude of the location in `DDD.dddd` format
      */
@@ -351,37 +351,37 @@ export interface SyntheticLocationArgs {
     /**
      * The maximum number of Active Gates required for that location. Not required when `deploymentType` is set to `STANDARD`
      */
-    maxActiveGateCount?: pulumi.Input<number>;
+    maxActiveGateCount?: pulumi.Input<number | undefined>;
     /**
      * The minimum number of Active Gates required for that location. Not required when `deploymentType` is set to `STANDARD`
      */
-    minActiveGateCount?: pulumi.Input<number>;
+    minActiveGateCount?: pulumi.Input<number | undefined>;
     /**
      * Boolean value describes if icmp monitors will be executed on this location
      */
-    namExecutionSupported?: pulumi.Input<boolean>;
+    namExecutionSupported?: pulumi.Input<boolean | undefined>;
     /**
      * The name of the location
      */
-    name?: pulumi.Input<string>;
+    name?: pulumi.Input<string | undefined>;
     /**
      * Possible values: `UNSUPPORTED`, `XS`, `S` and `M`. Not required when `deploymentType` is set to `STANDARD`.
      */
-    nodeSize?: pulumi.Input<string>;
+    nodeSize?: pulumi.Input<string | undefined>;
     /**
      * A list of synthetic nodes belonging to the location. 
      *
      *  You can retrieve the list of available nodes with the [GET all nodes](https://dt-url.net/miy3rpl) call
      */
-    nodes?: pulumi.Input<pulumi.Input<string>[]>;
+    nodes?: pulumi.Input<pulumi.Input<string>[] | undefined>;
     /**
      * The region code of the location. 
      *
      *  To fetch the list of available region codes, use the [GET regions of the country](https://dt-url.net/az230x0) request
      */
-    regionCode?: pulumi.Input<string>;
+    regionCode?: pulumi.Input<string | undefined>;
     /**
      * Boolean value describes which kubernetes version will be used
      */
-    useNewKubernetesVersion?: pulumi.Input<boolean>;
+    useNewKubernetesVersion?: pulumi.Input<boolean | undefined>;
 }

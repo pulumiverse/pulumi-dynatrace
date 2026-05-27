@@ -111,23 +111,23 @@ export interface SegmentState {
     /**
      * Description of the filter-segment
      */
-    description?: pulumi.Input<string>;
+    description?: pulumi.Input<string | undefined>;
     /**
      * List of includes of the filter-segment
      */
-    includes?: pulumi.Input<inputs.SegmentIncludes>;
+    includes?: pulumi.Input<inputs.SegmentIncludes | undefined>;
     /**
      * Indicates if the filter-segment is publicly accessible within the tenant
      */
-    isPublic?: pulumi.Input<boolean>;
+    isPublic?: pulumi.Input<boolean | undefined>;
     /**
      * Name of the filter-segment
      */
-    name?: pulumi.Input<string>;
+    name?: pulumi.Input<string | undefined>;
     /**
      * Variables of the filter-segment
      */
-    variables?: pulumi.Input<inputs.SegmentVariables>;
+    variables?: pulumi.Input<inputs.SegmentVariables | undefined>;
 }
 
 /**
@@ -137,11 +137,11 @@ export interface SegmentArgs {
     /**
      * Description of the filter-segment
      */
-    description?: pulumi.Input<string>;
+    description?: pulumi.Input<string | undefined>;
     /**
      * List of includes of the filter-segment
      */
-    includes?: pulumi.Input<inputs.SegmentIncludes>;
+    includes?: pulumi.Input<inputs.SegmentIncludes | undefined>;
     /**
      * Indicates if the filter-segment is publicly accessible within the tenant
      */
@@ -149,9 +149,9 @@ export interface SegmentArgs {
     /**
      * Name of the filter-segment
      */
-    name?: pulumi.Input<string>;
+    name?: pulumi.Input<string | undefined>;
     /**
      * Variables of the filter-segment
      */
-    variables?: pulumi.Input<inputs.SegmentVariables>;
+    variables?: pulumi.Input<inputs.SegmentVariables | undefined>;
 }

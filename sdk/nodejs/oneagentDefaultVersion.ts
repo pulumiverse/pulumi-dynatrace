@@ -79,11 +79,11 @@ export interface OneagentDefaultVersionState {
     /**
      * Default version
      */
-    defaultVersion?: pulumi.Input<string>;
+    defaultVersion?: pulumi.Input<string | undefined>;
     /**
      * Revision
      */
-    revision?: pulumi.Input<string>;
+    revision?: pulumi.Input<string | undefined>;
 }
 
 /**
@@ -97,5 +97,5 @@ export interface OneagentDefaultVersionArgs {
     /**
      * Revision
      */
-    revision?: pulumi.Input<string>;
+    revision?: pulumi.Input<string | undefined>;
 }

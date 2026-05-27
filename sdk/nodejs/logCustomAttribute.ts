@@ -94,11 +94,11 @@ export interface LogCustomAttributeState {
     /**
      * The attribute key is case sensitive in log data ingestion.
      */
-    key?: pulumi.Input<string>;
+    key?: pulumi.Input<string | undefined>;
     /**
      * Show attribute values in side bar
      */
-    sidebar?: pulumi.Input<boolean>;
+    sidebar?: pulumi.Input<boolean | undefined>;
 }
 
 /**

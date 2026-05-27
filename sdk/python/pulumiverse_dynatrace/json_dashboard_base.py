@@ -19,7 +19,7 @@ __all__ = ['JsonDashboardBaseArgs', 'JsonDashboardBase']
 @pulumi.input_type
 class JsonDashboardBaseArgs:
     def __init__(__self__, *,
-                 contents: Optional[pulumi.Input[_builtins.str]] = None):
+                 contents: pulumi.Input[Optional[_builtins.str]] = None):
         """
         The set of arguments for constructing a JsonDashboardBase resource.
 
@@ -30,21 +30,21 @@ class JsonDashboardBaseArgs:
 
     @_builtins.property
     @pulumi.getter
-    def contents(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def contents(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         This attribute exists for backwards compatibility. You do not have to define it.
         """
         return pulumi.get(self, "contents")
 
     @contents.setter
-    def contents(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def contents(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "contents", value)
 
 
 @pulumi.input_type
 class _JsonDashboardBaseState:
     def __init__(__self__, *,
-                 contents: Optional[pulumi.Input[_builtins.str]] = None):
+                 contents: pulumi.Input[Optional[_builtins.str]] = None):
         """
         Input properties used for looking up and filtering JsonDashboardBase resources.
 
@@ -55,14 +55,14 @@ class _JsonDashboardBaseState:
 
     @_builtins.property
     @pulumi.getter
-    def contents(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def contents(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         This attribute exists for backwards compatibility. You do not have to define it.
         """
         return pulumi.get(self, "contents")
 
     @contents.setter
-    def contents(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def contents(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "contents", value)
 
 
@@ -72,7 +72,7 @@ class JsonDashboardBase(pulumi.CustomResource):
     def __init__(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 contents: Optional[pulumi.Input[_builtins.str]] = None,
+                 contents: pulumi.Input[Optional[_builtins.str]] = None,
                  __props__=None):
         """
         The resource `JsonDashboardBase` doesn't contain any attributes itself. It acts as some sort of anchor resource that defines the eventual `ID` of a Dashboard - without having to
@@ -109,7 +109,7 @@ class JsonDashboardBase(pulumi.CustomResource):
     def _internal_init(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 contents: Optional[pulumi.Input[_builtins.str]] = None,
+                 contents: pulumi.Input[Optional[_builtins.str]] = None,
                  __props__=None):
         opts = pulumi.ResourceOptions.merge(_utilities.get_resource_opts_defaults(), opts)
         if not isinstance(opts, pulumi.ResourceOptions):
@@ -130,7 +130,7 @@ class JsonDashboardBase(pulumi.CustomResource):
     def get(resource_name: str,
             id: pulumi.Input[str],
             opts: Optional[pulumi.ResourceOptions] = None,
-            contents: Optional[pulumi.Input[_builtins.str]] = None) -> 'JsonDashboardBase':
+            contents: pulumi.Input[Optional[_builtins.str]] = None) -> 'JsonDashboardBase':
         """
         Get an existing JsonDashboardBase resource's state with the given name, id, and optional extra
         properties used to qualify the lookup.

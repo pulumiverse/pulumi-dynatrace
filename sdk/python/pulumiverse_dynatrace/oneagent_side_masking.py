@@ -23,7 +23,7 @@ class OneagentSideMaskingArgs:
                  is_financial_masking_enabled: pulumi.Input[_builtins.bool],
                  is_numbers_masking_enabled: pulumi.Input[_builtins.bool],
                  is_query_masking_enabled: pulumi.Input[_builtins.bool],
-                 process_group_id: Optional[pulumi.Input[_builtins.str]] = None):
+                 process_group_id: pulumi.Input[Optional[_builtins.str]] = None):
         """
         The set of arguments for constructing a OneagentSideMasking resource.
 
@@ -90,25 +90,25 @@ class OneagentSideMaskingArgs:
 
     @_builtins.property
     @pulumi.getter(name="processGroupId")
-    def process_group_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def process_group_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The scope of this setting (PROCESS*GROUP, CLOUD*APPLICATION, CLOUD*APPLICATION*NAMESPACE, KUBERNETES*CLUSTER, HOST*GROUP). Omit this property if you want to cover the whole environment.
         """
         return pulumi.get(self, "process_group_id")
 
     @process_group_id.setter
-    def process_group_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def process_group_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "process_group_id", value)
 
 
 @pulumi.input_type
 class _OneagentSideMaskingState:
     def __init__(__self__, *,
-                 is_email_masking_enabled: Optional[pulumi.Input[_builtins.bool]] = None,
-                 is_financial_masking_enabled: Optional[pulumi.Input[_builtins.bool]] = None,
-                 is_numbers_masking_enabled: Optional[pulumi.Input[_builtins.bool]] = None,
-                 is_query_masking_enabled: Optional[pulumi.Input[_builtins.bool]] = None,
-                 process_group_id: Optional[pulumi.Input[_builtins.str]] = None):
+                 is_email_masking_enabled: pulumi.Input[Optional[_builtins.bool]] = None,
+                 is_financial_masking_enabled: pulumi.Input[Optional[_builtins.bool]] = None,
+                 is_numbers_masking_enabled: pulumi.Input[Optional[_builtins.bool]] = None,
+                 is_query_masking_enabled: pulumi.Input[Optional[_builtins.bool]] = None,
+                 process_group_id: pulumi.Input[Optional[_builtins.str]] = None):
         """
         Input properties used for looking up and filtering OneagentSideMasking resources.
 
@@ -131,62 +131,62 @@ class _OneagentSideMaskingState:
 
     @_builtins.property
     @pulumi.getter(name="isEmailMaskingEnabled")
-    def is_email_masking_enabled(self) -> Optional[pulumi.Input[_builtins.bool]]:
+    def is_email_masking_enabled(self) -> pulumi.Input[Optional[_builtins.bool]]:
         """
         Exclude email addresses from URLs and exceptions
         """
         return pulumi.get(self, "is_email_masking_enabled")
 
     @is_email_masking_enabled.setter
-    def is_email_masking_enabled(self, value: Optional[pulumi.Input[_builtins.bool]]):
+    def is_email_masking_enabled(self, value: pulumi.Input[Optional[_builtins.bool]]):
         pulumi.set(self, "is_email_masking_enabled", value)
 
     @_builtins.property
     @pulumi.getter(name="isFinancialMaskingEnabled")
-    def is_financial_masking_enabled(self) -> Optional[pulumi.Input[_builtins.bool]]:
+    def is_financial_masking_enabled(self) -> pulumi.Input[Optional[_builtins.bool]]:
         """
         Exclude IBANs and payment card numbers from URLs and exceptions
         """
         return pulumi.get(self, "is_financial_masking_enabled")
 
     @is_financial_masking_enabled.setter
-    def is_financial_masking_enabled(self, value: Optional[pulumi.Input[_builtins.bool]]):
+    def is_financial_masking_enabled(self, value: pulumi.Input[Optional[_builtins.bool]]):
         pulumi.set(self, "is_financial_masking_enabled", value)
 
     @_builtins.property
     @pulumi.getter(name="isNumbersMaskingEnabled")
-    def is_numbers_masking_enabled(self) -> Optional[pulumi.Input[_builtins.bool]]:
+    def is_numbers_masking_enabled(self) -> pulumi.Input[Optional[_builtins.bool]]:
         """
         Exclude hexadecimal IDs and consecutive numbers above 5 digits from URLs and exceptions
         """
         return pulumi.get(self, "is_numbers_masking_enabled")
 
     @is_numbers_masking_enabled.setter
-    def is_numbers_masking_enabled(self, value: Optional[pulumi.Input[_builtins.bool]]):
+    def is_numbers_masking_enabled(self, value: pulumi.Input[Optional[_builtins.bool]]):
         pulumi.set(self, "is_numbers_masking_enabled", value)
 
     @_builtins.property
     @pulumi.getter(name="isQueryMaskingEnabled")
-    def is_query_masking_enabled(self) -> Optional[pulumi.Input[_builtins.bool]]:
+    def is_query_masking_enabled(self) -> pulumi.Input[Optional[_builtins.bool]]:
         """
         Exclude query parameters from URLs and web requests
         """
         return pulumi.get(self, "is_query_masking_enabled")
 
     @is_query_masking_enabled.setter
-    def is_query_masking_enabled(self, value: Optional[pulumi.Input[_builtins.bool]]):
+    def is_query_masking_enabled(self, value: pulumi.Input[Optional[_builtins.bool]]):
         pulumi.set(self, "is_query_masking_enabled", value)
 
     @_builtins.property
     @pulumi.getter(name="processGroupId")
-    def process_group_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def process_group_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The scope of this setting (PROCESS*GROUP, CLOUD*APPLICATION, CLOUD*APPLICATION*NAMESPACE, KUBERNETES*CLUSTER, HOST*GROUP). Omit this property if you want to cover the whole environment.
         """
         return pulumi.get(self, "process_group_id")
 
     @process_group_id.setter
-    def process_group_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def process_group_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "process_group_id", value)
 
 
@@ -196,11 +196,11 @@ class OneagentSideMasking(pulumi.CustomResource):
     def __init__(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 is_email_masking_enabled: Optional[pulumi.Input[_builtins.bool]] = None,
-                 is_financial_masking_enabled: Optional[pulumi.Input[_builtins.bool]] = None,
-                 is_numbers_masking_enabled: Optional[pulumi.Input[_builtins.bool]] = None,
-                 is_query_masking_enabled: Optional[pulumi.Input[_builtins.bool]] = None,
-                 process_group_id: Optional[pulumi.Input[_builtins.str]] = None,
+                 is_email_masking_enabled: pulumi.Input[Optional[_builtins.bool]] = None,
+                 is_financial_masking_enabled: pulumi.Input[Optional[_builtins.bool]] = None,
+                 is_numbers_masking_enabled: pulumi.Input[Optional[_builtins.bool]] = None,
+                 is_query_masking_enabled: pulumi.Input[Optional[_builtins.bool]] = None,
+                 process_group_id: pulumi.Input[Optional[_builtins.str]] = None,
                  __props__=None):
         """
         > This resource requires the API token scopes **Read settings** (`settings.read`) and **Write settings** (`settings.write`)
@@ -263,11 +263,11 @@ class OneagentSideMasking(pulumi.CustomResource):
     def _internal_init(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 is_email_masking_enabled: Optional[pulumi.Input[_builtins.bool]] = None,
-                 is_financial_masking_enabled: Optional[pulumi.Input[_builtins.bool]] = None,
-                 is_numbers_masking_enabled: Optional[pulumi.Input[_builtins.bool]] = None,
-                 is_query_masking_enabled: Optional[pulumi.Input[_builtins.bool]] = None,
-                 process_group_id: Optional[pulumi.Input[_builtins.str]] = None,
+                 is_email_masking_enabled: pulumi.Input[Optional[_builtins.bool]] = None,
+                 is_financial_masking_enabled: pulumi.Input[Optional[_builtins.bool]] = None,
+                 is_numbers_masking_enabled: pulumi.Input[Optional[_builtins.bool]] = None,
+                 is_query_masking_enabled: pulumi.Input[Optional[_builtins.bool]] = None,
+                 process_group_id: pulumi.Input[Optional[_builtins.str]] = None,
                  __props__=None):
         opts = pulumi.ResourceOptions.merge(_utilities.get_resource_opts_defaults(), opts)
         if not isinstance(opts, pulumi.ResourceOptions):
@@ -300,11 +300,11 @@ class OneagentSideMasking(pulumi.CustomResource):
     def get(resource_name: str,
             id: pulumi.Input[str],
             opts: Optional[pulumi.ResourceOptions] = None,
-            is_email_masking_enabled: Optional[pulumi.Input[_builtins.bool]] = None,
-            is_financial_masking_enabled: Optional[pulumi.Input[_builtins.bool]] = None,
-            is_numbers_masking_enabled: Optional[pulumi.Input[_builtins.bool]] = None,
-            is_query_masking_enabled: Optional[pulumi.Input[_builtins.bool]] = None,
-            process_group_id: Optional[pulumi.Input[_builtins.str]] = None) -> 'OneagentSideMasking':
+            is_email_masking_enabled: pulumi.Input[Optional[_builtins.bool]] = None,
+            is_financial_masking_enabled: pulumi.Input[Optional[_builtins.bool]] = None,
+            is_numbers_masking_enabled: pulumi.Input[Optional[_builtins.bool]] = None,
+            is_query_masking_enabled: pulumi.Input[Optional[_builtins.bool]] = None,
+            process_group_id: pulumi.Input[Optional[_builtins.str]] = None) -> 'OneagentSideMasking':
         """
         Get an existing OneagentSideMasking resource's state with the given name, id, and optional extra
         properties used to qualify the lookup.

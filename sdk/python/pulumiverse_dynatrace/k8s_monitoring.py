@@ -25,11 +25,11 @@ class K8sMonitoringArgs:
                  event_processing_active: pulumi.Input[_builtins.bool],
                  open_metrics_builtin_enabled: pulumi.Input[_builtins.bool],
                  open_metrics_pipeline_enabled: pulumi.Input[_builtins.bool],
-                 event_patterns: Optional[pulumi.Input['K8sMonitoringEventPatternsArgs']] = None,
-                 filter_events: Optional[pulumi.Input[_builtins.bool]] = None,
-                 include_all_fdi_events: Optional[pulumi.Input[_builtins.bool]] = None,
-                 pvc_monitoring_enabled: Optional[pulumi.Input[_builtins.bool]] = None,
-                 scope: Optional[pulumi.Input[_builtins.str]] = None):
+                 event_patterns: pulumi.Input[Optional['K8sMonitoringEventPatternsArgs']] = None,
+                 filter_events: pulumi.Input[Optional[_builtins.bool]] = None,
+                 include_all_fdi_events: pulumi.Input[Optional[_builtins.bool]] = None,
+                 pvc_monitoring_enabled: pulumi.Input[Optional[_builtins.bool]] = None,
+                 scope: pulumi.Input[Optional[_builtins.str]] = None):
         """
         The set of arguments for constructing a K8sMonitoring resource.
 
@@ -111,78 +111,78 @@ class K8sMonitoringArgs:
 
     @_builtins.property
     @pulumi.getter(name="eventPatterns")
-    def event_patterns(self) -> Optional[pulumi.Input['K8sMonitoringEventPatternsArgs']]:
+    def event_patterns(self) -> pulumi.Input[Optional['K8sMonitoringEventPatternsArgs']]:
         """
         Define Kubernetes event filters to ingest events into your environment. For more details, see the [documentation](https://dt-url.net/2201p0u).
         """
         return pulumi.get(self, "event_patterns")
 
     @event_patterns.setter
-    def event_patterns(self, value: Optional[pulumi.Input['K8sMonitoringEventPatternsArgs']]):
+    def event_patterns(self, value: pulumi.Input[Optional['K8sMonitoringEventPatternsArgs']]):
         pulumi.set(self, "event_patterns", value)
 
     @_builtins.property
     @pulumi.getter(name="filterEvents")
-    def filter_events(self) -> Optional[pulumi.Input[_builtins.bool]]:
+    def filter_events(self) -> pulumi.Input[Optional[_builtins.bool]]:
         """
         Include only events specified by Events Field Selectors
         """
         return pulumi.get(self, "filter_events")
 
     @filter_events.setter
-    def filter_events(self, value: Optional[pulumi.Input[_builtins.bool]]):
+    def filter_events(self, value: pulumi.Input[Optional[_builtins.bool]]):
         pulumi.set(self, "filter_events", value)
 
     @_builtins.property
     @pulumi.getter(name="includeAllFdiEvents")
-    def include_all_fdi_events(self) -> Optional[pulumi.Input[_builtins.bool]]:
+    def include_all_fdi_events(self) -> pulumi.Input[Optional[_builtins.bool]]:
         """
         For a list of included events, see the [documentation](https://dt-url.net/l61d02no).
         """
         return pulumi.get(self, "include_all_fdi_events")
 
     @include_all_fdi_events.setter
-    def include_all_fdi_events(self, value: Optional[pulumi.Input[_builtins.bool]]):
+    def include_all_fdi_events(self, value: pulumi.Input[Optional[_builtins.bool]]):
         pulumi.set(self, "include_all_fdi_events", value)
 
     @_builtins.property
     @pulumi.getter(name="pvcMonitoringEnabled")
     @_utilities.deprecated("""This attribute is deprecated, see [this community guide](https://dt-url.net/v2200u4m) for details.""")
-    def pvc_monitoring_enabled(self) -> Optional[pulumi.Input[_builtins.bool]]:
+    def pvc_monitoring_enabled(self) -> pulumi.Input[Optional[_builtins.bool]]:
         """
         To enable dashboards and alerts, add the Kubernetes persistent volume claims extension to your environment.
         """
         return pulumi.get(self, "pvc_monitoring_enabled")
 
     @pvc_monitoring_enabled.setter
-    def pvc_monitoring_enabled(self, value: Optional[pulumi.Input[_builtins.bool]]):
+    def pvc_monitoring_enabled(self, value: pulumi.Input[Optional[_builtins.bool]]):
         pulumi.set(self, "pvc_monitoring_enabled", value)
 
     @_builtins.property
     @pulumi.getter
-    def scope(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def scope(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The scope of this setting (KUBERNETES_CLUSTER). Omit this property if you want to cover the whole environment.
         """
         return pulumi.get(self, "scope")
 
     @scope.setter
-    def scope(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def scope(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "scope", value)
 
 
 @pulumi.input_type
 class _K8sMonitoringState:
     def __init__(__self__, *,
-                 cloud_application_pipeline_enabled: Optional[pulumi.Input[_builtins.bool]] = None,
-                 event_patterns: Optional[pulumi.Input['K8sMonitoringEventPatternsArgs']] = None,
-                 event_processing_active: Optional[pulumi.Input[_builtins.bool]] = None,
-                 filter_events: Optional[pulumi.Input[_builtins.bool]] = None,
-                 include_all_fdi_events: Optional[pulumi.Input[_builtins.bool]] = None,
-                 open_metrics_builtin_enabled: Optional[pulumi.Input[_builtins.bool]] = None,
-                 open_metrics_pipeline_enabled: Optional[pulumi.Input[_builtins.bool]] = None,
-                 pvc_monitoring_enabled: Optional[pulumi.Input[_builtins.bool]] = None,
-                 scope: Optional[pulumi.Input[_builtins.str]] = None):
+                 cloud_application_pipeline_enabled: pulumi.Input[Optional[_builtins.bool]] = None,
+                 event_patterns: pulumi.Input[Optional['K8sMonitoringEventPatternsArgs']] = None,
+                 event_processing_active: pulumi.Input[Optional[_builtins.bool]] = None,
+                 filter_events: pulumi.Input[Optional[_builtins.bool]] = None,
+                 include_all_fdi_events: pulumi.Input[Optional[_builtins.bool]] = None,
+                 open_metrics_builtin_enabled: pulumi.Input[Optional[_builtins.bool]] = None,
+                 open_metrics_pipeline_enabled: pulumi.Input[Optional[_builtins.bool]] = None,
+                 pvc_monitoring_enabled: pulumi.Input[Optional[_builtins.bool]] = None,
+                 scope: pulumi.Input[Optional[_builtins.str]] = None):
         """
         Input properties used for looking up and filtering K8sMonitoring resources.
 
@@ -220,111 +220,111 @@ class _K8sMonitoringState:
 
     @_builtins.property
     @pulumi.getter(name="cloudApplicationPipelineEnabled")
-    def cloud_application_pipeline_enabled(self) -> Optional[pulumi.Input[_builtins.bool]]:
+    def cloud_application_pipeline_enabled(self) -> pulumi.Input[Optional[_builtins.bool]]:
         """
         Monitor Kubernetes namespaces, services, workloads, and pods
         """
         return pulumi.get(self, "cloud_application_pipeline_enabled")
 
     @cloud_application_pipeline_enabled.setter
-    def cloud_application_pipeline_enabled(self, value: Optional[pulumi.Input[_builtins.bool]]):
+    def cloud_application_pipeline_enabled(self, value: pulumi.Input[Optional[_builtins.bool]]):
         pulumi.set(self, "cloud_application_pipeline_enabled", value)
 
     @_builtins.property
     @pulumi.getter(name="eventPatterns")
-    def event_patterns(self) -> Optional[pulumi.Input['K8sMonitoringEventPatternsArgs']]:
+    def event_patterns(self) -> pulumi.Input[Optional['K8sMonitoringEventPatternsArgs']]:
         """
         Define Kubernetes event filters to ingest events into your environment. For more details, see the [documentation](https://dt-url.net/2201p0u).
         """
         return pulumi.get(self, "event_patterns")
 
     @event_patterns.setter
-    def event_patterns(self, value: Optional[pulumi.Input['K8sMonitoringEventPatternsArgs']]):
+    def event_patterns(self, value: pulumi.Input[Optional['K8sMonitoringEventPatternsArgs']]):
         pulumi.set(self, "event_patterns", value)
 
     @_builtins.property
     @pulumi.getter(name="eventProcessingActive")
-    def event_processing_active(self) -> Optional[pulumi.Input[_builtins.bool]]:
+    def event_processing_active(self) -> pulumi.Input[Optional[_builtins.bool]]:
         """
         All events are monitored unless event filters are specified. All ingested events are subject to licensing by default.
         """
         return pulumi.get(self, "event_processing_active")
 
     @event_processing_active.setter
-    def event_processing_active(self, value: Optional[pulumi.Input[_builtins.bool]]):
+    def event_processing_active(self, value: pulumi.Input[Optional[_builtins.bool]]):
         pulumi.set(self, "event_processing_active", value)
 
     @_builtins.property
     @pulumi.getter(name="filterEvents")
-    def filter_events(self) -> Optional[pulumi.Input[_builtins.bool]]:
+    def filter_events(self) -> pulumi.Input[Optional[_builtins.bool]]:
         """
         Include only events specified by Events Field Selectors
         """
         return pulumi.get(self, "filter_events")
 
     @filter_events.setter
-    def filter_events(self, value: Optional[pulumi.Input[_builtins.bool]]):
+    def filter_events(self, value: pulumi.Input[Optional[_builtins.bool]]):
         pulumi.set(self, "filter_events", value)
 
     @_builtins.property
     @pulumi.getter(name="includeAllFdiEvents")
-    def include_all_fdi_events(self) -> Optional[pulumi.Input[_builtins.bool]]:
+    def include_all_fdi_events(self) -> pulumi.Input[Optional[_builtins.bool]]:
         """
         For a list of included events, see the [documentation](https://dt-url.net/l61d02no).
         """
         return pulumi.get(self, "include_all_fdi_events")
 
     @include_all_fdi_events.setter
-    def include_all_fdi_events(self, value: Optional[pulumi.Input[_builtins.bool]]):
+    def include_all_fdi_events(self, value: pulumi.Input[Optional[_builtins.bool]]):
         pulumi.set(self, "include_all_fdi_events", value)
 
     @_builtins.property
     @pulumi.getter(name="openMetricsBuiltinEnabled")
-    def open_metrics_builtin_enabled(self) -> Optional[pulumi.Input[_builtins.bool]]:
+    def open_metrics_builtin_enabled(self) -> pulumi.Input[Optional[_builtins.bool]]:
         """
         Workload and node resource metrics are based on a subset of cAdvisor metrics. Depending on your Kubernetes cluster size, this may increase the CPU/memory resource consumption of your ActiveGate.
         """
         return pulumi.get(self, "open_metrics_builtin_enabled")
 
     @open_metrics_builtin_enabled.setter
-    def open_metrics_builtin_enabled(self, value: Optional[pulumi.Input[_builtins.bool]]):
+    def open_metrics_builtin_enabled(self, value: pulumi.Input[Optional[_builtins.bool]]):
         pulumi.set(self, "open_metrics_builtin_enabled", value)
 
     @_builtins.property
     @pulumi.getter(name="openMetricsPipelineEnabled")
-    def open_metrics_pipeline_enabled(self) -> Optional[pulumi.Input[_builtins.bool]]:
+    def open_metrics_pipeline_enabled(self) -> pulumi.Input[Optional[_builtins.bool]]:
         """
         For annotation guidance, see the [documentation](https://dt-url.net/g42i0ppw).
         """
         return pulumi.get(self, "open_metrics_pipeline_enabled")
 
     @open_metrics_pipeline_enabled.setter
-    def open_metrics_pipeline_enabled(self, value: Optional[pulumi.Input[_builtins.bool]]):
+    def open_metrics_pipeline_enabled(self, value: pulumi.Input[Optional[_builtins.bool]]):
         pulumi.set(self, "open_metrics_pipeline_enabled", value)
 
     @_builtins.property
     @pulumi.getter(name="pvcMonitoringEnabled")
     @_utilities.deprecated("""This attribute is deprecated, see [this community guide](https://dt-url.net/v2200u4m) for details.""")
-    def pvc_monitoring_enabled(self) -> Optional[pulumi.Input[_builtins.bool]]:
+    def pvc_monitoring_enabled(self) -> pulumi.Input[Optional[_builtins.bool]]:
         """
         To enable dashboards and alerts, add the Kubernetes persistent volume claims extension to your environment.
         """
         return pulumi.get(self, "pvc_monitoring_enabled")
 
     @pvc_monitoring_enabled.setter
-    def pvc_monitoring_enabled(self, value: Optional[pulumi.Input[_builtins.bool]]):
+    def pvc_monitoring_enabled(self, value: pulumi.Input[Optional[_builtins.bool]]):
         pulumi.set(self, "pvc_monitoring_enabled", value)
 
     @_builtins.property
     @pulumi.getter
-    def scope(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def scope(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The scope of this setting (KUBERNETES_CLUSTER). Omit this property if you want to cover the whole environment.
         """
         return pulumi.get(self, "scope")
 
     @scope.setter
-    def scope(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def scope(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "scope", value)
 
 
@@ -334,15 +334,15 @@ class K8sMonitoring(pulumi.CustomResource):
     def __init__(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 cloud_application_pipeline_enabled: Optional[pulumi.Input[_builtins.bool]] = None,
-                 event_patterns: Optional[pulumi.Input[Union['K8sMonitoringEventPatternsArgs', 'K8sMonitoringEventPatternsArgsDict']]] = None,
-                 event_processing_active: Optional[pulumi.Input[_builtins.bool]] = None,
-                 filter_events: Optional[pulumi.Input[_builtins.bool]] = None,
-                 include_all_fdi_events: Optional[pulumi.Input[_builtins.bool]] = None,
-                 open_metrics_builtin_enabled: Optional[pulumi.Input[_builtins.bool]] = None,
-                 open_metrics_pipeline_enabled: Optional[pulumi.Input[_builtins.bool]] = None,
-                 pvc_monitoring_enabled: Optional[pulumi.Input[_builtins.bool]] = None,
-                 scope: Optional[pulumi.Input[_builtins.str]] = None,
+                 cloud_application_pipeline_enabled: pulumi.Input[Optional[_builtins.bool]] = None,
+                 event_patterns: pulumi.Input[Optional[Union['K8sMonitoringEventPatternsArgs', 'K8sMonitoringEventPatternsArgsDict']]] = None,
+                 event_processing_active: pulumi.Input[Optional[_builtins.bool]] = None,
+                 filter_events: pulumi.Input[Optional[_builtins.bool]] = None,
+                 include_all_fdi_events: pulumi.Input[Optional[_builtins.bool]] = None,
+                 open_metrics_builtin_enabled: pulumi.Input[Optional[_builtins.bool]] = None,
+                 open_metrics_pipeline_enabled: pulumi.Input[Optional[_builtins.bool]] = None,
+                 pvc_monitoring_enabled: pulumi.Input[Optional[_builtins.bool]] = None,
+                 scope: pulumi.Input[Optional[_builtins.str]] = None,
                  __props__=None):
         """
         > This resource requires the API token scopes **Read settings** (`settings.read`) and **Write settings** (`settings.write`)
@@ -409,15 +409,15 @@ class K8sMonitoring(pulumi.CustomResource):
     def _internal_init(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 cloud_application_pipeline_enabled: Optional[pulumi.Input[_builtins.bool]] = None,
-                 event_patterns: Optional[pulumi.Input[Union['K8sMonitoringEventPatternsArgs', 'K8sMonitoringEventPatternsArgsDict']]] = None,
-                 event_processing_active: Optional[pulumi.Input[_builtins.bool]] = None,
-                 filter_events: Optional[pulumi.Input[_builtins.bool]] = None,
-                 include_all_fdi_events: Optional[pulumi.Input[_builtins.bool]] = None,
-                 open_metrics_builtin_enabled: Optional[pulumi.Input[_builtins.bool]] = None,
-                 open_metrics_pipeline_enabled: Optional[pulumi.Input[_builtins.bool]] = None,
-                 pvc_monitoring_enabled: Optional[pulumi.Input[_builtins.bool]] = None,
-                 scope: Optional[pulumi.Input[_builtins.str]] = None,
+                 cloud_application_pipeline_enabled: pulumi.Input[Optional[_builtins.bool]] = None,
+                 event_patterns: pulumi.Input[Optional[Union['K8sMonitoringEventPatternsArgs', 'K8sMonitoringEventPatternsArgsDict']]] = None,
+                 event_processing_active: pulumi.Input[Optional[_builtins.bool]] = None,
+                 filter_events: pulumi.Input[Optional[_builtins.bool]] = None,
+                 include_all_fdi_events: pulumi.Input[Optional[_builtins.bool]] = None,
+                 open_metrics_builtin_enabled: pulumi.Input[Optional[_builtins.bool]] = None,
+                 open_metrics_pipeline_enabled: pulumi.Input[Optional[_builtins.bool]] = None,
+                 pvc_monitoring_enabled: pulumi.Input[Optional[_builtins.bool]] = None,
+                 scope: pulumi.Input[Optional[_builtins.str]] = None,
                  __props__=None):
         opts = pulumi.ResourceOptions.merge(_utilities.get_resource_opts_defaults(), opts)
         if not isinstance(opts, pulumi.ResourceOptions):
@@ -454,15 +454,15 @@ class K8sMonitoring(pulumi.CustomResource):
     def get(resource_name: str,
             id: pulumi.Input[str],
             opts: Optional[pulumi.ResourceOptions] = None,
-            cloud_application_pipeline_enabled: Optional[pulumi.Input[_builtins.bool]] = None,
-            event_patterns: Optional[pulumi.Input[Union['K8sMonitoringEventPatternsArgs', 'K8sMonitoringEventPatternsArgsDict']]] = None,
-            event_processing_active: Optional[pulumi.Input[_builtins.bool]] = None,
-            filter_events: Optional[pulumi.Input[_builtins.bool]] = None,
-            include_all_fdi_events: Optional[pulumi.Input[_builtins.bool]] = None,
-            open_metrics_builtin_enabled: Optional[pulumi.Input[_builtins.bool]] = None,
-            open_metrics_pipeline_enabled: Optional[pulumi.Input[_builtins.bool]] = None,
-            pvc_monitoring_enabled: Optional[pulumi.Input[_builtins.bool]] = None,
-            scope: Optional[pulumi.Input[_builtins.str]] = None) -> 'K8sMonitoring':
+            cloud_application_pipeline_enabled: pulumi.Input[Optional[_builtins.bool]] = None,
+            event_patterns: pulumi.Input[Optional[Union['K8sMonitoringEventPatternsArgs', 'K8sMonitoringEventPatternsArgsDict']]] = None,
+            event_processing_active: pulumi.Input[Optional[_builtins.bool]] = None,
+            filter_events: pulumi.Input[Optional[_builtins.bool]] = None,
+            include_all_fdi_events: pulumi.Input[Optional[_builtins.bool]] = None,
+            open_metrics_builtin_enabled: pulumi.Input[Optional[_builtins.bool]] = None,
+            open_metrics_pipeline_enabled: pulumi.Input[Optional[_builtins.bool]] = None,
+            pvc_monitoring_enabled: pulumi.Input[Optional[_builtins.bool]] = None,
+            scope: pulumi.Input[Optional[_builtins.str]] = None) -> 'K8sMonitoring':
         """
         Get an existing K8sMonitoring resource's state with the given name, id, and optional extra
         properties used to qualify the lookup.

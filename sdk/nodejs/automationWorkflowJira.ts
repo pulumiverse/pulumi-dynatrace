@@ -148,31 +148,31 @@ export interface AutomationWorkflowJiraState {
      *
      * @deprecated This resource is no longer ordered, please remove this attribute from the configuration
      */
-    insertAfter?: pulumi.Input<string>;
+    insertAfter?: pulumi.Input<string | undefined>;
     /**
      * The name of the Jira connection
      */
-    name?: pulumi.Input<string>;
+    name?: pulumi.Input<string | undefined>;
     /**
      * Password of the Jira user
      */
-    password?: pulumi.Input<string>;
+    password?: pulumi.Input<string | undefined>;
     /**
      * Token for the selected authentication type
      */
-    token?: pulumi.Input<string>;
+    token?: pulumi.Input<string | undefined>;
     /**
      * Possible Values: `Basic`, `Cloud_token`, `Pat`
      */
-    type?: pulumi.Input<string>;
+    type?: pulumi.Input<string | undefined>;
     /**
      * URL of the Jira server
      */
-    url?: pulumi.Input<string>;
+    url?: pulumi.Input<string | undefined>;
     /**
      * Username or E-Mail address
      */
-    user?: pulumi.Input<string>;
+    user?: pulumi.Input<string | undefined>;
 }
 
 /**
@@ -184,19 +184,19 @@ export interface AutomationWorkflowJiraArgs {
      *
      * @deprecated This resource is no longer ordered, please remove this attribute from the configuration
      */
-    insertAfter?: pulumi.Input<string>;
+    insertAfter?: pulumi.Input<string | undefined>;
     /**
      * The name of the Jira connection
      */
-    name?: pulumi.Input<string>;
+    name?: pulumi.Input<string | undefined>;
     /**
      * Password of the Jira user
      */
-    password?: pulumi.Input<string>;
+    password?: pulumi.Input<string | undefined>;
     /**
      * Token for the selected authentication type
      */
-    token?: pulumi.Input<string>;
+    token?: pulumi.Input<string | undefined>;
     /**
      * Possible Values: `Basic`, `Cloud_token`, `Pat`
      */
@@ -208,5 +208,5 @@ export interface AutomationWorkflowJiraArgs {
     /**
      * Username or E-Mail address
      */
-    user?: pulumi.Input<string>;
+    user?: pulumi.Input<string | undefined>;
 }

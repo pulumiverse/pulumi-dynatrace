@@ -21,7 +21,7 @@ __all__ = ['DefaultLaunchpadArgs', 'DefaultLaunchpad']
 @pulumi.input_type
 class DefaultLaunchpadArgs:
     def __init__(__self__, *,
-                 group_launchpads: Optional[pulumi.Input['DefaultLaunchpadGroupLaunchpadsArgs']] = None):
+                 group_launchpads: pulumi.Input[Optional['DefaultLaunchpadGroupLaunchpadsArgs']] = None):
         """
         The set of arguments for constructing a DefaultLaunchpad resource.
 
@@ -32,21 +32,21 @@ class DefaultLaunchpadArgs:
 
     @_builtins.property
     @pulumi.getter(name="groupLaunchpads")
-    def group_launchpads(self) -> Optional[pulumi.Input['DefaultLaunchpadGroupLaunchpadsArgs']]:
+    def group_launchpads(self) -> pulumi.Input[Optional['DefaultLaunchpadGroupLaunchpadsArgs']]:
         """
         Set default launchpads for user groups. The highest ranked will be shown to the user of a group.
         """
         return pulumi.get(self, "group_launchpads")
 
     @group_launchpads.setter
-    def group_launchpads(self, value: Optional[pulumi.Input['DefaultLaunchpadGroupLaunchpadsArgs']]):
+    def group_launchpads(self, value: pulumi.Input[Optional['DefaultLaunchpadGroupLaunchpadsArgs']]):
         pulumi.set(self, "group_launchpads", value)
 
 
 @pulumi.input_type
 class _DefaultLaunchpadState:
     def __init__(__self__, *,
-                 group_launchpads: Optional[pulumi.Input['DefaultLaunchpadGroupLaunchpadsArgs']] = None):
+                 group_launchpads: pulumi.Input[Optional['DefaultLaunchpadGroupLaunchpadsArgs']] = None):
         """
         Input properties used for looking up and filtering DefaultLaunchpad resources.
 
@@ -57,14 +57,14 @@ class _DefaultLaunchpadState:
 
     @_builtins.property
     @pulumi.getter(name="groupLaunchpads")
-    def group_launchpads(self) -> Optional[pulumi.Input['DefaultLaunchpadGroupLaunchpadsArgs']]:
+    def group_launchpads(self) -> pulumi.Input[Optional['DefaultLaunchpadGroupLaunchpadsArgs']]:
         """
         Set default launchpads for user groups. The highest ranked will be shown to the user of a group.
         """
         return pulumi.get(self, "group_launchpads")
 
     @group_launchpads.setter
-    def group_launchpads(self, value: Optional[pulumi.Input['DefaultLaunchpadGroupLaunchpadsArgs']]):
+    def group_launchpads(self, value: pulumi.Input[Optional['DefaultLaunchpadGroupLaunchpadsArgs']]):
         pulumi.set(self, "group_launchpads", value)
 
 
@@ -74,7 +74,7 @@ class DefaultLaunchpad(pulumi.CustomResource):
     def __init__(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 group_launchpads: Optional[pulumi.Input[Union['DefaultLaunchpadGroupLaunchpadsArgs', 'DefaultLaunchpadGroupLaunchpadsArgsDict']]] = None,
+                 group_launchpads: pulumi.Input[Optional[Union['DefaultLaunchpadGroupLaunchpadsArgs', 'DefaultLaunchpadGroupLaunchpadsArgsDict']]] = None,
                  __props__=None):
         """
         > This resource requires the API token scopes **Read settings** (`settings.read`) and **Write settings** (`settings.write`)
@@ -133,7 +133,7 @@ class DefaultLaunchpad(pulumi.CustomResource):
     def _internal_init(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 group_launchpads: Optional[pulumi.Input[Union['DefaultLaunchpadGroupLaunchpadsArgs', 'DefaultLaunchpadGroupLaunchpadsArgsDict']]] = None,
+                 group_launchpads: pulumi.Input[Optional[Union['DefaultLaunchpadGroupLaunchpadsArgs', 'DefaultLaunchpadGroupLaunchpadsArgsDict']]] = None,
                  __props__=None):
         opts = pulumi.ResourceOptions.merge(_utilities.get_resource_opts_defaults(), opts)
         if not isinstance(opts, pulumi.ResourceOptions):
@@ -154,7 +154,7 @@ class DefaultLaunchpad(pulumi.CustomResource):
     def get(resource_name: str,
             id: pulumi.Input[str],
             opts: Optional[pulumi.ResourceOptions] = None,
-            group_launchpads: Optional[pulumi.Input[Union['DefaultLaunchpadGroupLaunchpadsArgs', 'DefaultLaunchpadGroupLaunchpadsArgsDict']]] = None) -> 'DefaultLaunchpad':
+            group_launchpads: pulumi.Input[Optional[Union['DefaultLaunchpadGroupLaunchpadsArgs', 'DefaultLaunchpadGroupLaunchpadsArgsDict']]] = None) -> 'DefaultLaunchpad':
         """
         Get an existing DefaultLaunchpad resource's state with the given name, id, and optional extra
         properties used to qualify the lookup.

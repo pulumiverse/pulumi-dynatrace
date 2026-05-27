@@ -21,9 +21,9 @@ __all__ = ['OpenpipelineSpansArgs', 'OpenpipelineSpans']
 @pulumi.input_type
 class OpenpipelineSpansArgs:
     def __init__(__self__, *,
-                 endpoints: Optional[pulumi.Input['OpenpipelineSpansEndpointsArgs']] = None,
-                 pipelines: Optional[pulumi.Input['OpenpipelineSpansPipelinesArgs']] = None,
-                 routing: Optional[pulumi.Input['OpenpipelineSpansRoutingArgs']] = None):
+                 endpoints: pulumi.Input[Optional['OpenpipelineSpansEndpointsArgs']] = None,
+                 pipelines: pulumi.Input[Optional['OpenpipelineSpansPipelinesArgs']] = None,
+                 routing: pulumi.Input[Optional['OpenpipelineSpansRoutingArgs']] = None):
         """
         The set of arguments for constructing a OpenpipelineSpans resource.
 
@@ -40,47 +40,47 @@ class OpenpipelineSpansArgs:
 
     @_builtins.property
     @pulumi.getter
-    def endpoints(self) -> Optional[pulumi.Input['OpenpipelineSpansEndpointsArgs']]:
+    def endpoints(self) -> pulumi.Input[Optional['OpenpipelineSpansEndpointsArgs']]:
         """
         List of all ingest sources of the configuration
         """
         return pulumi.get(self, "endpoints")
 
     @endpoints.setter
-    def endpoints(self, value: Optional[pulumi.Input['OpenpipelineSpansEndpointsArgs']]):
+    def endpoints(self, value: pulumi.Input[Optional['OpenpipelineSpansEndpointsArgs']]):
         pulumi.set(self, "endpoints", value)
 
     @_builtins.property
     @pulumi.getter
-    def pipelines(self) -> Optional[pulumi.Input['OpenpipelineSpansPipelinesArgs']]:
+    def pipelines(self) -> pulumi.Input[Optional['OpenpipelineSpansPipelinesArgs']]:
         """
         List of all pipelines of the configuration
         """
         return pulumi.get(self, "pipelines")
 
     @pipelines.setter
-    def pipelines(self, value: Optional[pulumi.Input['OpenpipelineSpansPipelinesArgs']]):
+    def pipelines(self, value: pulumi.Input[Optional['OpenpipelineSpansPipelinesArgs']]):
         pulumi.set(self, "pipelines", value)
 
     @_builtins.property
     @pulumi.getter
-    def routing(self) -> Optional[pulumi.Input['OpenpipelineSpansRoutingArgs']]:
+    def routing(self) -> pulumi.Input[Optional['OpenpipelineSpansRoutingArgs']]:
         """
         Dynamic routing definition
         """
         return pulumi.get(self, "routing")
 
     @routing.setter
-    def routing(self, value: Optional[pulumi.Input['OpenpipelineSpansRoutingArgs']]):
+    def routing(self, value: pulumi.Input[Optional['OpenpipelineSpansRoutingArgs']]):
         pulumi.set(self, "routing", value)
 
 
 @pulumi.input_type
 class _OpenpipelineSpansState:
     def __init__(__self__, *,
-                 endpoints: Optional[pulumi.Input['OpenpipelineSpansEndpointsArgs']] = None,
-                 pipelines: Optional[pulumi.Input['OpenpipelineSpansPipelinesArgs']] = None,
-                 routing: Optional[pulumi.Input['OpenpipelineSpansRoutingArgs']] = None):
+                 endpoints: pulumi.Input[Optional['OpenpipelineSpansEndpointsArgs']] = None,
+                 pipelines: pulumi.Input[Optional['OpenpipelineSpansPipelinesArgs']] = None,
+                 routing: pulumi.Input[Optional['OpenpipelineSpansRoutingArgs']] = None):
         """
         Input properties used for looking up and filtering OpenpipelineSpans resources.
 
@@ -97,38 +97,38 @@ class _OpenpipelineSpansState:
 
     @_builtins.property
     @pulumi.getter
-    def endpoints(self) -> Optional[pulumi.Input['OpenpipelineSpansEndpointsArgs']]:
+    def endpoints(self) -> pulumi.Input[Optional['OpenpipelineSpansEndpointsArgs']]:
         """
         List of all ingest sources of the configuration
         """
         return pulumi.get(self, "endpoints")
 
     @endpoints.setter
-    def endpoints(self, value: Optional[pulumi.Input['OpenpipelineSpansEndpointsArgs']]):
+    def endpoints(self, value: pulumi.Input[Optional['OpenpipelineSpansEndpointsArgs']]):
         pulumi.set(self, "endpoints", value)
 
     @_builtins.property
     @pulumi.getter
-    def pipelines(self) -> Optional[pulumi.Input['OpenpipelineSpansPipelinesArgs']]:
+    def pipelines(self) -> pulumi.Input[Optional['OpenpipelineSpansPipelinesArgs']]:
         """
         List of all pipelines of the configuration
         """
         return pulumi.get(self, "pipelines")
 
     @pipelines.setter
-    def pipelines(self, value: Optional[pulumi.Input['OpenpipelineSpansPipelinesArgs']]):
+    def pipelines(self, value: pulumi.Input[Optional['OpenpipelineSpansPipelinesArgs']]):
         pulumi.set(self, "pipelines", value)
 
     @_builtins.property
     @pulumi.getter
-    def routing(self) -> Optional[pulumi.Input['OpenpipelineSpansRoutingArgs']]:
+    def routing(self) -> pulumi.Input[Optional['OpenpipelineSpansRoutingArgs']]:
         """
         Dynamic routing definition
         """
         return pulumi.get(self, "routing")
 
     @routing.setter
-    def routing(self, value: Optional[pulumi.Input['OpenpipelineSpansRoutingArgs']]):
+    def routing(self, value: pulumi.Input[Optional['OpenpipelineSpansRoutingArgs']]):
         pulumi.set(self, "routing", value)
 
 
@@ -138,9 +138,9 @@ class OpenpipelineSpans(pulumi.CustomResource):
     def __init__(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 endpoints: Optional[pulumi.Input[Union['OpenpipelineSpansEndpointsArgs', 'OpenpipelineSpansEndpointsArgsDict']]] = None,
-                 pipelines: Optional[pulumi.Input[Union['OpenpipelineSpansPipelinesArgs', 'OpenpipelineSpansPipelinesArgsDict']]] = None,
-                 routing: Optional[pulumi.Input[Union['OpenpipelineSpansRoutingArgs', 'OpenpipelineSpansRoutingArgsDict']]] = None,
+                 endpoints: pulumi.Input[Optional[Union['OpenpipelineSpansEndpointsArgs', 'OpenpipelineSpansEndpointsArgsDict']]] = None,
+                 pipelines: pulumi.Input[Optional[Union['OpenpipelineSpansPipelinesArgs', 'OpenpipelineSpansPipelinesArgsDict']]] = None,
+                 routing: pulumi.Input[Optional[Union['OpenpipelineSpansRoutingArgs', 'OpenpipelineSpansRoutingArgsDict']]] = None,
                  __props__=None):
         """
         !> This resource API endpoint has been deprecated, please migrate your OpenPipeline configurations and use `dynatrace_openpipeline_v2_spans_*` instead.
@@ -379,9 +379,9 @@ class OpenpipelineSpans(pulumi.CustomResource):
     def _internal_init(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 endpoints: Optional[pulumi.Input[Union['OpenpipelineSpansEndpointsArgs', 'OpenpipelineSpansEndpointsArgsDict']]] = None,
-                 pipelines: Optional[pulumi.Input[Union['OpenpipelineSpansPipelinesArgs', 'OpenpipelineSpansPipelinesArgsDict']]] = None,
-                 routing: Optional[pulumi.Input[Union['OpenpipelineSpansRoutingArgs', 'OpenpipelineSpansRoutingArgsDict']]] = None,
+                 endpoints: pulumi.Input[Optional[Union['OpenpipelineSpansEndpointsArgs', 'OpenpipelineSpansEndpointsArgsDict']]] = None,
+                 pipelines: pulumi.Input[Optional[Union['OpenpipelineSpansPipelinesArgs', 'OpenpipelineSpansPipelinesArgsDict']]] = None,
+                 routing: pulumi.Input[Optional[Union['OpenpipelineSpansRoutingArgs', 'OpenpipelineSpansRoutingArgsDict']]] = None,
                  __props__=None):
         opts = pulumi.ResourceOptions.merge(_utilities.get_resource_opts_defaults(), opts)
         if not isinstance(opts, pulumi.ResourceOptions):
@@ -404,9 +404,9 @@ class OpenpipelineSpans(pulumi.CustomResource):
     def get(resource_name: str,
             id: pulumi.Input[str],
             opts: Optional[pulumi.ResourceOptions] = None,
-            endpoints: Optional[pulumi.Input[Union['OpenpipelineSpansEndpointsArgs', 'OpenpipelineSpansEndpointsArgsDict']]] = None,
-            pipelines: Optional[pulumi.Input[Union['OpenpipelineSpansPipelinesArgs', 'OpenpipelineSpansPipelinesArgsDict']]] = None,
-            routing: Optional[pulumi.Input[Union['OpenpipelineSpansRoutingArgs', 'OpenpipelineSpansRoutingArgsDict']]] = None) -> 'OpenpipelineSpans':
+            endpoints: pulumi.Input[Optional[Union['OpenpipelineSpansEndpointsArgs', 'OpenpipelineSpansEndpointsArgsDict']]] = None,
+            pipelines: pulumi.Input[Optional[Union['OpenpipelineSpansPipelinesArgs', 'OpenpipelineSpansPipelinesArgsDict']]] = None,
+            routing: pulumi.Input[Optional[Union['OpenpipelineSpansRoutingArgs', 'OpenpipelineSpansRoutingArgsDict']]] = None) -> 'OpenpipelineSpans':
         """
         Get an existing OpenpipelineSpans resource's state with the given name, id, and optional extra
         properties used to qualify the lookup.

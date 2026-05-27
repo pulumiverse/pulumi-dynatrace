@@ -24,9 +24,9 @@ class ApiDetectionArgs:
                  api_color: pulumi.Input[_builtins.str],
                  api_name: pulumi.Input[_builtins.str],
                  third_party_api: pulumi.Input[_builtins.bool],
-                 conditions: Optional[pulumi.Input['ApiDetectionConditionsArgs']] = None,
-                 insert_after: Optional[pulumi.Input[_builtins.str]] = None,
-                 technology: Optional[pulumi.Input[_builtins.str]] = None):
+                 conditions: pulumi.Input[Optional['ApiDetectionConditionsArgs']] = None,
+                 insert_after: pulumi.Input[Optional[_builtins.str]] = None,
+                 technology: pulumi.Input[Optional[_builtins.str]] = None):
         """
         The set of arguments for constructing a ApiDetection resource.
 
@@ -85,50 +85,50 @@ class ApiDetectionArgs:
 
     @_builtins.property
     @pulumi.getter
-    def conditions(self) -> Optional[pulumi.Input['ApiDetectionConditionsArgs']]:
+    def conditions(self) -> pulumi.Input[Optional['ApiDetectionConditionsArgs']]:
         """
         List of conditions
         """
         return pulumi.get(self, "conditions")
 
     @conditions.setter
-    def conditions(self, value: Optional[pulumi.Input['ApiDetectionConditionsArgs']]):
+    def conditions(self, value: pulumi.Input[Optional['ApiDetectionConditionsArgs']]):
         pulumi.set(self, "conditions", value)
 
     @_builtins.property
     @pulumi.getter(name="insertAfter")
-    def insert_after(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def insert_after(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Because this resource allows for ordering you may specify the ID of the resource instance that comes before this instance regarding order. If not specified when creating the setting will be added to the end of the list. If not specified during update the order will remain untouched
         """
         return pulumi.get(self, "insert_after")
 
     @insert_after.setter
-    def insert_after(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def insert_after(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "insert_after", value)
 
     @_builtins.property
     @pulumi.getter
-    def technology(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def technology(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Restrict this rule to a specific technology.
         """
         return pulumi.get(self, "technology")
 
     @technology.setter
-    def technology(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def technology(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "technology", value)
 
 
 @pulumi.input_type
 class _ApiDetectionState:
     def __init__(__self__, *,
-                 api_color: Optional[pulumi.Input[_builtins.str]] = None,
-                 api_name: Optional[pulumi.Input[_builtins.str]] = None,
-                 conditions: Optional[pulumi.Input['ApiDetectionConditionsArgs']] = None,
-                 insert_after: Optional[pulumi.Input[_builtins.str]] = None,
-                 technology: Optional[pulumi.Input[_builtins.str]] = None,
-                 third_party_api: Optional[pulumi.Input[_builtins.bool]] = None):
+                 api_color: pulumi.Input[Optional[_builtins.str]] = None,
+                 api_name: pulumi.Input[Optional[_builtins.str]] = None,
+                 conditions: pulumi.Input[Optional['ApiDetectionConditionsArgs']] = None,
+                 insert_after: pulumi.Input[Optional[_builtins.str]] = None,
+                 technology: pulumi.Input[Optional[_builtins.str]] = None,
+                 third_party_api: pulumi.Input[Optional[_builtins.bool]] = None):
         """
         Input properties used for looking up and filtering ApiDetection resources.
 
@@ -154,74 +154,74 @@ class _ApiDetectionState:
 
     @_builtins.property
     @pulumi.getter(name="apiColor")
-    def api_color(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def api_color(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         This color will be used to highlight APIs when viewing code level data, such as distributed traces or method hotspots.
         """
         return pulumi.get(self, "api_color")
 
     @api_color.setter
-    def api_color(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def api_color(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "api_color", value)
 
     @_builtins.property
     @pulumi.getter(name="apiName")
-    def api_name(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def api_name(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         API name
         """
         return pulumi.get(self, "api_name")
 
     @api_name.setter
-    def api_name(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def api_name(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "api_name", value)
 
     @_builtins.property
     @pulumi.getter
-    def conditions(self) -> Optional[pulumi.Input['ApiDetectionConditionsArgs']]:
+    def conditions(self) -> pulumi.Input[Optional['ApiDetectionConditionsArgs']]:
         """
         List of conditions
         """
         return pulumi.get(self, "conditions")
 
     @conditions.setter
-    def conditions(self, value: Optional[pulumi.Input['ApiDetectionConditionsArgs']]):
+    def conditions(self, value: pulumi.Input[Optional['ApiDetectionConditionsArgs']]):
         pulumi.set(self, "conditions", value)
 
     @_builtins.property
     @pulumi.getter(name="insertAfter")
-    def insert_after(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def insert_after(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Because this resource allows for ordering you may specify the ID of the resource instance that comes before this instance regarding order. If not specified when creating the setting will be added to the end of the list. If not specified during update the order will remain untouched
         """
         return pulumi.get(self, "insert_after")
 
     @insert_after.setter
-    def insert_after(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def insert_after(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "insert_after", value)
 
     @_builtins.property
     @pulumi.getter
-    def technology(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def technology(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Restrict this rule to a specific technology.
         """
         return pulumi.get(self, "technology")
 
     @technology.setter
-    def technology(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def technology(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "technology", value)
 
     @_builtins.property
     @pulumi.getter(name="thirdPartyApi")
-    def third_party_api(self) -> Optional[pulumi.Input[_builtins.bool]]:
+    def third_party_api(self) -> pulumi.Input[Optional[_builtins.bool]]:
         """
         This API defines a third party library
         """
         return pulumi.get(self, "third_party_api")
 
     @third_party_api.setter
-    def third_party_api(self, value: Optional[pulumi.Input[_builtins.bool]]):
+    def third_party_api(self, value: pulumi.Input[Optional[_builtins.bool]]):
         pulumi.set(self, "third_party_api", value)
 
 
@@ -231,12 +231,12 @@ class ApiDetection(pulumi.CustomResource):
     def __init__(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 api_color: Optional[pulumi.Input[_builtins.str]] = None,
-                 api_name: Optional[pulumi.Input[_builtins.str]] = None,
-                 conditions: Optional[pulumi.Input[Union['ApiDetectionConditionsArgs', 'ApiDetectionConditionsArgsDict']]] = None,
-                 insert_after: Optional[pulumi.Input[_builtins.str]] = None,
-                 technology: Optional[pulumi.Input[_builtins.str]] = None,
-                 third_party_api: Optional[pulumi.Input[_builtins.bool]] = None,
+                 api_color: pulumi.Input[Optional[_builtins.str]] = None,
+                 api_name: pulumi.Input[Optional[_builtins.str]] = None,
+                 conditions: pulumi.Input[Optional[Union['ApiDetectionConditionsArgs', 'ApiDetectionConditionsArgsDict']]] = None,
+                 insert_after: pulumi.Input[Optional[_builtins.str]] = None,
+                 technology: pulumi.Input[Optional[_builtins.str]] = None,
+                 third_party_api: pulumi.Input[Optional[_builtins.bool]] = None,
                  __props__=None):
         """
         > This resource requires the API token scopes **Read settings** (`settings.read`) and **Write settings** (`settings.write`)
@@ -300,12 +300,12 @@ class ApiDetection(pulumi.CustomResource):
     def _internal_init(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 api_color: Optional[pulumi.Input[_builtins.str]] = None,
-                 api_name: Optional[pulumi.Input[_builtins.str]] = None,
-                 conditions: Optional[pulumi.Input[Union['ApiDetectionConditionsArgs', 'ApiDetectionConditionsArgsDict']]] = None,
-                 insert_after: Optional[pulumi.Input[_builtins.str]] = None,
-                 technology: Optional[pulumi.Input[_builtins.str]] = None,
-                 third_party_api: Optional[pulumi.Input[_builtins.bool]] = None,
+                 api_color: pulumi.Input[Optional[_builtins.str]] = None,
+                 api_name: pulumi.Input[Optional[_builtins.str]] = None,
+                 conditions: pulumi.Input[Optional[Union['ApiDetectionConditionsArgs', 'ApiDetectionConditionsArgsDict']]] = None,
+                 insert_after: pulumi.Input[Optional[_builtins.str]] = None,
+                 technology: pulumi.Input[Optional[_builtins.str]] = None,
+                 third_party_api: pulumi.Input[Optional[_builtins.bool]] = None,
                  __props__=None):
         opts = pulumi.ResourceOptions.merge(_utilities.get_resource_opts_defaults(), opts)
         if not isinstance(opts, pulumi.ResourceOptions):
@@ -337,12 +337,12 @@ class ApiDetection(pulumi.CustomResource):
     def get(resource_name: str,
             id: pulumi.Input[str],
             opts: Optional[pulumi.ResourceOptions] = None,
-            api_color: Optional[pulumi.Input[_builtins.str]] = None,
-            api_name: Optional[pulumi.Input[_builtins.str]] = None,
-            conditions: Optional[pulumi.Input[Union['ApiDetectionConditionsArgs', 'ApiDetectionConditionsArgsDict']]] = None,
-            insert_after: Optional[pulumi.Input[_builtins.str]] = None,
-            technology: Optional[pulumi.Input[_builtins.str]] = None,
-            third_party_api: Optional[pulumi.Input[_builtins.bool]] = None) -> 'ApiDetection':
+            api_color: pulumi.Input[Optional[_builtins.str]] = None,
+            api_name: pulumi.Input[Optional[_builtins.str]] = None,
+            conditions: pulumi.Input[Optional[Union['ApiDetectionConditionsArgs', 'ApiDetectionConditionsArgsDict']]] = None,
+            insert_after: pulumi.Input[Optional[_builtins.str]] = None,
+            technology: pulumi.Input[Optional[_builtins.str]] = None,
+            third_party_api: pulumi.Input[Optional[_builtins.bool]] = None) -> 'ApiDetection':
         """
         Get an existing ApiDetection resource's state with the given name, id, and optional extra
         properties used to qualify the lookup.

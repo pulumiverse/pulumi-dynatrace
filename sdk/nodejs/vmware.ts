@@ -133,7 +133,7 @@ export interface VmwareState {
     /**
      * This setting is enabled (`true`) or disabled (`false`)
      */
-    enabled?: pulumi.Input<boolean>;
+    enabled?: pulumi.Input<boolean | undefined>;
     /**
      * This string should have one of the following formats:
      * - $prefix(parameter) - property value starting with 'parameter'
@@ -141,23 +141,23 @@ export interface VmwareState {
      * - $suffix(parameter) - property value ends with 'parameter'
      * - $contains(parameter) - property value contains 'parameter'
      */
-    filter?: pulumi.Input<string>;
+    filter?: pulumi.Input<string | undefined>;
     /**
      * Specify the IP address or name of the vCenter or standalone ESXi host:
      */
-    ipaddress?: pulumi.Input<string>;
+    ipaddress?: pulumi.Input<string | undefined>;
     /**
      * Name this connection
      */
-    label?: pulumi.Input<string>;
+    label?: pulumi.Input<string | undefined>;
     /**
      * no documentation available
      */
-    password?: pulumi.Input<string>;
+    password?: pulumi.Input<string | undefined>;
     /**
      * Provide user credentials for the vCenter or standalone ESXi host:
      */
-    username?: pulumi.Input<string>;
+    username?: pulumi.Input<string | undefined>;
 }
 
 /**
@@ -175,7 +175,7 @@ export interface VmwareArgs {
      * - $suffix(parameter) - property value ends with 'parameter'
      * - $contains(parameter) - property value contains 'parameter'
      */
-    filter?: pulumi.Input<string>;
+    filter?: pulumi.Input<string | undefined>;
     /**
      * Specify the IP address or name of the vCenter or standalone ESXi host:
      */

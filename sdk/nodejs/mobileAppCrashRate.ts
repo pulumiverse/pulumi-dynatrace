@@ -93,11 +93,11 @@ export interface MobileAppCrashRateState {
     /**
      * The scope of this settings. If the settings should cover the whole environment, just don't specify any scope.
      */
-    applicationId?: pulumi.Input<string>;
+    applicationId?: pulumi.Input<string | undefined>;
     /**
      * Crash rate increase
      */
-    crashRateIncrease?: pulumi.Input<inputs.MobileAppCrashRateCrashRateIncrease>;
+    crashRateIncrease?: pulumi.Input<inputs.MobileAppCrashRateCrashRateIncrease | undefined>;
 }
 
 /**
@@ -107,7 +107,7 @@ export interface MobileAppCrashRateArgs {
     /**
      * The scope of this settings. If the settings should cover the whole environment, just don't specify any scope.
      */
-    applicationId?: pulumi.Input<string>;
+    applicationId?: pulumi.Input<string | undefined>;
     /**
      * Crash rate increase
      */

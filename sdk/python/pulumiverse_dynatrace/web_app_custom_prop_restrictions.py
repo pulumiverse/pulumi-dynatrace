@@ -22,8 +22,8 @@ __all__ = ['WebAppCustomPropRestrictionsArgs', 'WebAppCustomPropRestrictions']
 class WebAppCustomPropRestrictionsArgs:
     def __init__(__self__, *,
                  application_id: pulumi.Input[_builtins.str],
-                 custom_event_properties_allow_list: Optional[pulumi.Input['WebAppCustomPropRestrictionsCustomEventPropertiesAllowListArgs']] = None,
-                 custom_session_properties_allow_list: Optional[pulumi.Input['WebAppCustomPropRestrictionsCustomSessionPropertiesAllowListArgs']] = None):
+                 custom_event_properties_allow_list: pulumi.Input[Optional['WebAppCustomPropRestrictionsCustomEventPropertiesAllowListArgs']] = None,
+                 custom_session_properties_allow_list: pulumi.Input[Optional['WebAppCustomPropRestrictionsCustomSessionPropertiesAllowListArgs']] = None):
         """
         The set of arguments for constructing a WebAppCustomPropRestrictions resource.
 
@@ -51,35 +51,35 @@ class WebAppCustomPropRestrictionsArgs:
 
     @_builtins.property
     @pulumi.getter(name="customEventPropertiesAllowList")
-    def custom_event_properties_allow_list(self) -> Optional[pulumi.Input['WebAppCustomPropRestrictionsCustomEventPropertiesAllowListArgs']]:
+    def custom_event_properties_allow_list(self) -> pulumi.Input[Optional['WebAppCustomPropRestrictionsCustomEventPropertiesAllowListArgs']]:
         """
         List of allowed custom event properties
         """
         return pulumi.get(self, "custom_event_properties_allow_list")
 
     @custom_event_properties_allow_list.setter
-    def custom_event_properties_allow_list(self, value: Optional[pulumi.Input['WebAppCustomPropRestrictionsCustomEventPropertiesAllowListArgs']]):
+    def custom_event_properties_allow_list(self, value: pulumi.Input[Optional['WebAppCustomPropRestrictionsCustomEventPropertiesAllowListArgs']]):
         pulumi.set(self, "custom_event_properties_allow_list", value)
 
     @_builtins.property
     @pulumi.getter(name="customSessionPropertiesAllowList")
-    def custom_session_properties_allow_list(self) -> Optional[pulumi.Input['WebAppCustomPropRestrictionsCustomSessionPropertiesAllowListArgs']]:
+    def custom_session_properties_allow_list(self) -> pulumi.Input[Optional['WebAppCustomPropRestrictionsCustomSessionPropertiesAllowListArgs']]:
         """
         List of allowed custom session properties
         """
         return pulumi.get(self, "custom_session_properties_allow_list")
 
     @custom_session_properties_allow_list.setter
-    def custom_session_properties_allow_list(self, value: Optional[pulumi.Input['WebAppCustomPropRestrictionsCustomSessionPropertiesAllowListArgs']]):
+    def custom_session_properties_allow_list(self, value: pulumi.Input[Optional['WebAppCustomPropRestrictionsCustomSessionPropertiesAllowListArgs']]):
         pulumi.set(self, "custom_session_properties_allow_list", value)
 
 
 @pulumi.input_type
 class _WebAppCustomPropRestrictionsState:
     def __init__(__self__, *,
-                 application_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 custom_event_properties_allow_list: Optional[pulumi.Input['WebAppCustomPropRestrictionsCustomEventPropertiesAllowListArgs']] = None,
-                 custom_session_properties_allow_list: Optional[pulumi.Input['WebAppCustomPropRestrictionsCustomSessionPropertiesAllowListArgs']] = None):
+                 application_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 custom_event_properties_allow_list: pulumi.Input[Optional['WebAppCustomPropRestrictionsCustomEventPropertiesAllowListArgs']] = None,
+                 custom_session_properties_allow_list: pulumi.Input[Optional['WebAppCustomPropRestrictionsCustomSessionPropertiesAllowListArgs']] = None):
         """
         Input properties used for looking up and filtering WebAppCustomPropRestrictions resources.
 
@@ -96,38 +96,38 @@ class _WebAppCustomPropRestrictionsState:
 
     @_builtins.property
     @pulumi.getter(name="applicationId")
-    def application_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def application_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The scope of this settings. If the settings should cover the whole environment, just don't specify any scope.
         """
         return pulumi.get(self, "application_id")
 
     @application_id.setter
-    def application_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def application_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "application_id", value)
 
     @_builtins.property
     @pulumi.getter(name="customEventPropertiesAllowList")
-    def custom_event_properties_allow_list(self) -> Optional[pulumi.Input['WebAppCustomPropRestrictionsCustomEventPropertiesAllowListArgs']]:
+    def custom_event_properties_allow_list(self) -> pulumi.Input[Optional['WebAppCustomPropRestrictionsCustomEventPropertiesAllowListArgs']]:
         """
         List of allowed custom event properties
         """
         return pulumi.get(self, "custom_event_properties_allow_list")
 
     @custom_event_properties_allow_list.setter
-    def custom_event_properties_allow_list(self, value: Optional[pulumi.Input['WebAppCustomPropRestrictionsCustomEventPropertiesAllowListArgs']]):
+    def custom_event_properties_allow_list(self, value: pulumi.Input[Optional['WebAppCustomPropRestrictionsCustomEventPropertiesAllowListArgs']]):
         pulumi.set(self, "custom_event_properties_allow_list", value)
 
     @_builtins.property
     @pulumi.getter(name="customSessionPropertiesAllowList")
-    def custom_session_properties_allow_list(self) -> Optional[pulumi.Input['WebAppCustomPropRestrictionsCustomSessionPropertiesAllowListArgs']]:
+    def custom_session_properties_allow_list(self) -> pulumi.Input[Optional['WebAppCustomPropRestrictionsCustomSessionPropertiesAllowListArgs']]:
         """
         List of allowed custom session properties
         """
         return pulumi.get(self, "custom_session_properties_allow_list")
 
     @custom_session_properties_allow_list.setter
-    def custom_session_properties_allow_list(self, value: Optional[pulumi.Input['WebAppCustomPropRestrictionsCustomSessionPropertiesAllowListArgs']]):
+    def custom_session_properties_allow_list(self, value: pulumi.Input[Optional['WebAppCustomPropRestrictionsCustomSessionPropertiesAllowListArgs']]):
         pulumi.set(self, "custom_session_properties_allow_list", value)
 
 
@@ -137,9 +137,9 @@ class WebAppCustomPropRestrictions(pulumi.CustomResource):
     def __init__(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 application_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 custom_event_properties_allow_list: Optional[pulumi.Input[Union['WebAppCustomPropRestrictionsCustomEventPropertiesAllowListArgs', 'WebAppCustomPropRestrictionsCustomEventPropertiesAllowListArgsDict']]] = None,
-                 custom_session_properties_allow_list: Optional[pulumi.Input[Union['WebAppCustomPropRestrictionsCustomSessionPropertiesAllowListArgs', 'WebAppCustomPropRestrictionsCustomSessionPropertiesAllowListArgsDict']]] = None,
+                 application_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 custom_event_properties_allow_list: pulumi.Input[Optional[Union['WebAppCustomPropRestrictionsCustomEventPropertiesAllowListArgs', 'WebAppCustomPropRestrictionsCustomEventPropertiesAllowListArgsDict']]] = None,
+                 custom_session_properties_allow_list: pulumi.Input[Optional[Union['WebAppCustomPropRestrictionsCustomSessionPropertiesAllowListArgs', 'WebAppCustomPropRestrictionsCustomSessionPropertiesAllowListArgsDict']]] = None,
                  __props__=None):
         """
         > This resource requires the API token scopes **Read settings** (`settings.read`) and **Write settings** (`settings.write`)
@@ -188,9 +188,9 @@ class WebAppCustomPropRestrictions(pulumi.CustomResource):
     def _internal_init(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 application_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 custom_event_properties_allow_list: Optional[pulumi.Input[Union['WebAppCustomPropRestrictionsCustomEventPropertiesAllowListArgs', 'WebAppCustomPropRestrictionsCustomEventPropertiesAllowListArgsDict']]] = None,
-                 custom_session_properties_allow_list: Optional[pulumi.Input[Union['WebAppCustomPropRestrictionsCustomSessionPropertiesAllowListArgs', 'WebAppCustomPropRestrictionsCustomSessionPropertiesAllowListArgsDict']]] = None,
+                 application_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 custom_event_properties_allow_list: pulumi.Input[Optional[Union['WebAppCustomPropRestrictionsCustomEventPropertiesAllowListArgs', 'WebAppCustomPropRestrictionsCustomEventPropertiesAllowListArgsDict']]] = None,
+                 custom_session_properties_allow_list: pulumi.Input[Optional[Union['WebAppCustomPropRestrictionsCustomSessionPropertiesAllowListArgs', 'WebAppCustomPropRestrictionsCustomSessionPropertiesAllowListArgsDict']]] = None,
                  __props__=None):
         opts = pulumi.ResourceOptions.merge(_utilities.get_resource_opts_defaults(), opts)
         if not isinstance(opts, pulumi.ResourceOptions):
@@ -215,9 +215,9 @@ class WebAppCustomPropRestrictions(pulumi.CustomResource):
     def get(resource_name: str,
             id: pulumi.Input[str],
             opts: Optional[pulumi.ResourceOptions] = None,
-            application_id: Optional[pulumi.Input[_builtins.str]] = None,
-            custom_event_properties_allow_list: Optional[pulumi.Input[Union['WebAppCustomPropRestrictionsCustomEventPropertiesAllowListArgs', 'WebAppCustomPropRestrictionsCustomEventPropertiesAllowListArgsDict']]] = None,
-            custom_session_properties_allow_list: Optional[pulumi.Input[Union['WebAppCustomPropRestrictionsCustomSessionPropertiesAllowListArgs', 'WebAppCustomPropRestrictionsCustomSessionPropertiesAllowListArgsDict']]] = None) -> 'WebAppCustomPropRestrictions':
+            application_id: pulumi.Input[Optional[_builtins.str]] = None,
+            custom_event_properties_allow_list: pulumi.Input[Optional[Union['WebAppCustomPropRestrictionsCustomEventPropertiesAllowListArgs', 'WebAppCustomPropRestrictionsCustomEventPropertiesAllowListArgsDict']]] = None,
+            custom_session_properties_allow_list: pulumi.Input[Optional[Union['WebAppCustomPropRestrictionsCustomSessionPropertiesAllowListArgs', 'WebAppCustomPropRestrictionsCustomSessionPropertiesAllowListArgsDict']]] = None) -> 'WebAppCustomPropRestrictions':
         """
         Get an existing WebAppCustomPropRestrictions resource's state with the given name, id, and optional extra
         properties used to qualify the lookup.

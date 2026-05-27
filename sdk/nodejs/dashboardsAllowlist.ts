@@ -84,7 +84,7 @@ export interface DashboardsAllowlistState {
     /**
      * List of URL pattern matchers
      */
-    allowlist?: pulumi.Input<inputs.DashboardsAllowlistAllowlist>;
+    allowlist?: pulumi.Input<inputs.DashboardsAllowlistAllowlist | undefined>;
 }
 
 /**
@@ -94,5 +94,5 @@ export interface DashboardsAllowlistArgs {
     /**
      * List of URL pattern matchers
      */
-    allowlist?: pulumi.Input<inputs.DashboardsAllowlistAllowlist>;
+    allowlist?: pulumi.Input<inputs.DashboardsAllowlistAllowlist | undefined>;
 }

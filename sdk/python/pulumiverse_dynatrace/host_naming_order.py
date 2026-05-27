@@ -19,7 +19,7 @@ __all__ = ['HostNamingOrderArgs', 'HostNamingOrder']
 @pulumi.input_type
 class HostNamingOrderArgs:
     def __init__(__self__, *,
-                 naming_rule_ids: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None):
+                 naming_rule_ids: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None):
         """
         The set of arguments for constructing a HostNamingOrder resource.
 
@@ -30,21 +30,21 @@ class HostNamingOrderArgs:
 
     @_builtins.property
     @pulumi.getter(name="namingRuleIds")
-    def naming_rule_ids(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]:
+    def naming_rule_ids(self) -> pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]:
         """
         The IDs of the naming rules to define the order for
         """
         return pulumi.get(self, "naming_rule_ids")
 
     @naming_rule_ids.setter
-    def naming_rule_ids(self, value: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]):
+    def naming_rule_ids(self, value: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "naming_rule_ids", value)
 
 
 @pulumi.input_type
 class _HostNamingOrderState:
     def __init__(__self__, *,
-                 naming_rule_ids: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None):
+                 naming_rule_ids: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None):
         """
         Input properties used for looking up and filtering HostNamingOrder resources.
 
@@ -55,14 +55,14 @@ class _HostNamingOrderState:
 
     @_builtins.property
     @pulumi.getter(name="namingRuleIds")
-    def naming_rule_ids(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]:
+    def naming_rule_ids(self) -> pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]:
         """
         The IDs of the naming rules to define the order for
         """
         return pulumi.get(self, "naming_rule_ids")
 
     @naming_rule_ids.setter
-    def naming_rule_ids(self, value: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]):
+    def naming_rule_ids(self, value: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "naming_rule_ids", value)
 
 
@@ -72,7 +72,7 @@ class HostNamingOrder(pulumi.CustomResource):
     def __init__(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 naming_rule_ids: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 naming_rule_ids: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
                  __props__=None):
         """
         > This resource requires the API token scopes **Read configuration** (`ReadConfig`) and **Write configuration** (`WriteConfig`)
@@ -131,7 +131,7 @@ class HostNamingOrder(pulumi.CustomResource):
     def _internal_init(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 naming_rule_ids: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 naming_rule_ids: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
                  __props__=None):
         opts = pulumi.ResourceOptions.merge(_utilities.get_resource_opts_defaults(), opts)
         if not isinstance(opts, pulumi.ResourceOptions):
@@ -152,7 +152,7 @@ class HostNamingOrder(pulumi.CustomResource):
     def get(resource_name: str,
             id: pulumi.Input[str],
             opts: Optional[pulumi.ResourceOptions] = None,
-            naming_rule_ids: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None) -> 'HostNamingOrder':
+            naming_rule_ids: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None) -> 'HostNamingOrder':
         """
         Get an existing HostNamingOrder resource's state with the given name, id, and optional extra
         properties used to qualify the lookup.

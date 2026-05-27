@@ -112,19 +112,19 @@ export interface UserExperienceScoreState {
     /**
      * If last user action in a session is classified as Frustrating, classify the entire session as Frustrating
      */
-    considerLastAction?: pulumi.Input<boolean>;
+    considerLastAction?: pulumi.Input<boolean | undefined>;
     /**
      * Consider rage clicks / rage taps in score calculation
      */
-    considerRageClick?: pulumi.Input<boolean>;
+    considerRageClick?: pulumi.Input<boolean | undefined>;
     /**
      * User experience is considered Frustrating when the selected percentage or more of the user actions in a session are rated as Frustrating.
      */
-    maxFrustratedUserActionsThreshold?: pulumi.Input<number>;
+    maxFrustratedUserActionsThreshold?: pulumi.Input<number | undefined>;
     /**
      * User experience is considered Satisfying when at least the selected percentage of the user actions in a session are rated as Satisfying.
      */
-    minSatisfiedUserActionsThreshold?: pulumi.Input<number>;
+    minSatisfiedUserActionsThreshold?: pulumi.Input<number | undefined>;
 }
 
 /**

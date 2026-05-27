@@ -58,8 +58,8 @@ class LogGrailArgs:
 @pulumi.input_type
 class _LogGrailState:
     def __init__(__self__, *,
-                 activated: Optional[pulumi.Input[_builtins.bool]] = None,
-                 parallel_ingest_period: Optional[pulumi.Input[_builtins.str]] = None):
+                 activated: pulumi.Input[Optional[_builtins.bool]] = None,
+                 parallel_ingest_period: pulumi.Input[Optional[_builtins.str]] = None):
         """
         Input properties used for looking up and filtering LogGrail resources.
 
@@ -73,26 +73,26 @@ class _LogGrailState:
 
     @_builtins.property
     @pulumi.getter
-    def activated(self) -> Optional[pulumi.Input[_builtins.bool]]:
+    def activated(self) -> pulumi.Input[Optional[_builtins.bool]]:
         """
         Activate logs powered by Grail.
         """
         return pulumi.get(self, "activated")
 
     @activated.setter
-    def activated(self, value: Optional[pulumi.Input[_builtins.bool]]):
+    def activated(self, value: pulumi.Input[Optional[_builtins.bool]]):
         pulumi.set(self, "activated", value)
 
     @_builtins.property
     @pulumi.getter(name="parallelIngestPeriod")
-    def parallel_ingest_period(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def parallel_ingest_period(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Possible Values: `NONE`, `SEVEN_DAYS`, `THIRTY_FIVE_DAYS`
         """
         return pulumi.get(self, "parallel_ingest_period")
 
     @parallel_ingest_period.setter
-    def parallel_ingest_period(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def parallel_ingest_period(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "parallel_ingest_period", value)
 
 
@@ -102,8 +102,8 @@ class LogGrail(pulumi.CustomResource):
     def __init__(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 activated: Optional[pulumi.Input[_builtins.bool]] = None,
-                 parallel_ingest_period: Optional[pulumi.Input[_builtins.str]] = None,
+                 activated: pulumi.Input[Optional[_builtins.bool]] = None,
+                 parallel_ingest_period: pulumi.Input[Optional[_builtins.str]] = None,
                  __props__=None):
         """
         !> This resource API endpoint has been deprecated since it is only meant to be used for the initial Logs powered by Grail activation.
@@ -167,8 +167,8 @@ class LogGrail(pulumi.CustomResource):
     def _internal_init(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 activated: Optional[pulumi.Input[_builtins.bool]] = None,
-                 parallel_ingest_period: Optional[pulumi.Input[_builtins.str]] = None,
+                 activated: pulumi.Input[Optional[_builtins.bool]] = None,
+                 parallel_ingest_period: pulumi.Input[Optional[_builtins.str]] = None,
                  __props__=None):
         opts = pulumi.ResourceOptions.merge(_utilities.get_resource_opts_defaults(), opts)
         if not isinstance(opts, pulumi.ResourceOptions):
@@ -194,8 +194,8 @@ class LogGrail(pulumi.CustomResource):
     def get(resource_name: str,
             id: pulumi.Input[str],
             opts: Optional[pulumi.ResourceOptions] = None,
-            activated: Optional[pulumi.Input[_builtins.bool]] = None,
-            parallel_ingest_period: Optional[pulumi.Input[_builtins.str]] = None) -> 'LogGrail':
+            activated: pulumi.Input[Optional[_builtins.bool]] = None,
+            parallel_ingest_period: pulumi.Input[Optional[_builtins.str]] = None) -> 'LogGrail':
         """
         Get an existing LogGrail resource's state with the given name, id, and optional extra
         properties used to qualify the lookup.

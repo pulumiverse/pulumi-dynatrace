@@ -58,8 +58,8 @@ class CrashdumpAnalyticsArgs:
 @pulumi.input_type
 class _CrashdumpAnalyticsState:
     def __init__(__self__, *,
-                 enable_crash_dump_analytics: Optional[pulumi.Input[_builtins.bool]] = None,
-                 host_id: Optional[pulumi.Input[_builtins.str]] = None):
+                 enable_crash_dump_analytics: pulumi.Input[Optional[_builtins.bool]] = None,
+                 host_id: pulumi.Input[Optional[_builtins.str]] = None):
         """
         Input properties used for looking up and filtering CrashdumpAnalytics resources.
 
@@ -73,26 +73,26 @@ class _CrashdumpAnalyticsState:
 
     @_builtins.property
     @pulumi.getter(name="enableCrashDumpAnalytics")
-    def enable_crash_dump_analytics(self) -> Optional[pulumi.Input[_builtins.bool]]:
+    def enable_crash_dump_analytics(self) -> pulumi.Input[Optional[_builtins.bool]]:
         """
         Disable the feature to stop receiving information about crash details and potential problems. We recommend keeping the feature enabled.
         """
         return pulumi.get(self, "enable_crash_dump_analytics")
 
     @enable_crash_dump_analytics.setter
-    def enable_crash_dump_analytics(self, value: Optional[pulumi.Input[_builtins.bool]]):
+    def enable_crash_dump_analytics(self, value: pulumi.Input[Optional[_builtins.bool]]):
         pulumi.set(self, "enable_crash_dump_analytics", value)
 
     @_builtins.property
     @pulumi.getter(name="hostId")
-    def host_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def host_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The scope of this setting (HOST HOST_GROUP environment)
         """
         return pulumi.get(self, "host_id")
 
     @host_id.setter
-    def host_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def host_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "host_id", value)
 
 
@@ -102,8 +102,8 @@ class CrashdumpAnalytics(pulumi.CustomResource):
     def __init__(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 enable_crash_dump_analytics: Optional[pulumi.Input[_builtins.bool]] = None,
-                 host_id: Optional[pulumi.Input[_builtins.str]] = None,
+                 enable_crash_dump_analytics: pulumi.Input[Optional[_builtins.bool]] = None,
+                 host_id: pulumi.Input[Optional[_builtins.str]] = None,
                  __props__=None):
         """
         > This resource requires the API token scopes **Read settings** (`settings.read`) and **Write settings** (`settings.write`)
@@ -163,8 +163,8 @@ class CrashdumpAnalytics(pulumi.CustomResource):
     def _internal_init(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 enable_crash_dump_analytics: Optional[pulumi.Input[_builtins.bool]] = None,
-                 host_id: Optional[pulumi.Input[_builtins.str]] = None,
+                 enable_crash_dump_analytics: pulumi.Input[Optional[_builtins.bool]] = None,
+                 host_id: pulumi.Input[Optional[_builtins.str]] = None,
                  __props__=None):
         opts = pulumi.ResourceOptions.merge(_utilities.get_resource_opts_defaults(), opts)
         if not isinstance(opts, pulumi.ResourceOptions):
@@ -190,8 +190,8 @@ class CrashdumpAnalytics(pulumi.CustomResource):
     def get(resource_name: str,
             id: pulumi.Input[str],
             opts: Optional[pulumi.ResourceOptions] = None,
-            enable_crash_dump_analytics: Optional[pulumi.Input[_builtins.bool]] = None,
-            host_id: Optional[pulumi.Input[_builtins.str]] = None) -> 'CrashdumpAnalytics':
+            enable_crash_dump_analytics: pulumi.Input[Optional[_builtins.bool]] = None,
+            host_id: pulumi.Input[Optional[_builtins.str]] = None) -> 'CrashdumpAnalytics':
         """
         Get an existing CrashdumpAnalytics resource's state with the given name, id, and optional extra
         properties used to qualify the lookup.

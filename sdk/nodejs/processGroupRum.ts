@@ -102,11 +102,11 @@ export interface ProcessGroupRumState {
      * * forward beacons to the cluster
      * * deliver the monitoring code
      */
-    enable?: pulumi.Input<boolean>;
+    enable?: pulumi.Input<boolean | undefined>;
     /**
      * The scope of this setting - PROCESS_GROUP-XXXXXXXXXXXXXXXX
      */
-    processGroupId?: pulumi.Input<string>;
+    processGroupId?: pulumi.Input<string | undefined>;
 }
 
 /**

@@ -128,27 +128,27 @@ export interface RumIpLocationsState {
     /**
      * The city name of the location.
      */
-    city?: pulumi.Input<string>;
+    city?: pulumi.Input<string | undefined>;
     /**
      * The country code of the location.
      */
-    countryCode?: pulumi.Input<string>;
+    countryCode?: pulumi.Input<string | undefined>;
     /**
      * Single IP or IP range start address
      */
-    ip?: pulumi.Input<string>;
+    ip?: pulumi.Input<string | undefined>;
     /**
      * IP range end
      */
-    ipTo?: pulumi.Input<string>;
+    ipTo?: pulumi.Input<string | undefined>;
     /**
      * Latitude
      */
-    latitude?: pulumi.Input<number>;
+    latitude?: pulumi.Input<number | undefined>;
     /**
      * Longitude
      */
-    longitude?: pulumi.Input<number>;
+    longitude?: pulumi.Input<number | undefined>;
     /**
      * The region code of the location. 
      *
@@ -156,7 +156,7 @@ export interface RumIpLocationsState {
      *
      *  For the rest of the world use [FIPS 10-4 codes](https://dt-url.net/fipscodes) without country prefix.
      */
-    regionCode?: pulumi.Input<string>;
+    regionCode?: pulumi.Input<string | undefined>;
 }
 
 /**
@@ -166,7 +166,7 @@ export interface RumIpLocationsArgs {
     /**
      * The city name of the location.
      */
-    city?: pulumi.Input<string>;
+    city?: pulumi.Input<string | undefined>;
     /**
      * The country code of the location.
      */
@@ -178,15 +178,15 @@ export interface RumIpLocationsArgs {
     /**
      * IP range end
      */
-    ipTo?: pulumi.Input<string>;
+    ipTo?: pulumi.Input<string | undefined>;
     /**
      * Latitude
      */
-    latitude?: pulumi.Input<number>;
+    latitude?: pulumi.Input<number | undefined>;
     /**
      * Longitude
      */
-    longitude?: pulumi.Input<number>;
+    longitude?: pulumi.Input<number | undefined>;
     /**
      * The region code of the location. 
      *
@@ -194,5 +194,5 @@ export interface RumIpLocationsArgs {
      *
      *  For the rest of the world use [FIPS 10-4 codes](https://dt-url.net/fipscodes) without country prefix.
      */
-    regionCode?: pulumi.Input<string>;
+    regionCode?: pulumi.Input<string | undefined>;
 }

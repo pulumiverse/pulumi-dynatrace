@@ -21,7 +21,7 @@ __all__ = ['HubSubscriptionsArgs', 'HubSubscriptions']
 @pulumi.input_type
 class HubSubscriptionsArgs:
     def __init__(__self__, *,
-                 token_subscriptions: Optional[pulumi.Input['HubSubscriptionsTokenSubscriptionsArgs']] = None):
+                 token_subscriptions: pulumi.Input[Optional['HubSubscriptionsTokenSubscriptionsArgs']] = None):
         """
         The set of arguments for constructing a HubSubscriptions resource.
 
@@ -32,21 +32,21 @@ class HubSubscriptionsArgs:
 
     @_builtins.property
     @pulumi.getter(name="tokenSubscriptions")
-    def token_subscriptions(self) -> Optional[pulumi.Input['HubSubscriptionsTokenSubscriptionsArgs']]:
+    def token_subscriptions(self) -> pulumi.Input[Optional['HubSubscriptionsTokenSubscriptionsArgs']]:
         """
         Subscriptions
         """
         return pulumi.get(self, "token_subscriptions")
 
     @token_subscriptions.setter
-    def token_subscriptions(self, value: Optional[pulumi.Input['HubSubscriptionsTokenSubscriptionsArgs']]):
+    def token_subscriptions(self, value: pulumi.Input[Optional['HubSubscriptionsTokenSubscriptionsArgs']]):
         pulumi.set(self, "token_subscriptions", value)
 
 
 @pulumi.input_type
 class _HubSubscriptionsState:
     def __init__(__self__, *,
-                 token_subscriptions: Optional[pulumi.Input['HubSubscriptionsTokenSubscriptionsArgs']] = None):
+                 token_subscriptions: pulumi.Input[Optional['HubSubscriptionsTokenSubscriptionsArgs']] = None):
         """
         Input properties used for looking up and filtering HubSubscriptions resources.
 
@@ -57,14 +57,14 @@ class _HubSubscriptionsState:
 
     @_builtins.property
     @pulumi.getter(name="tokenSubscriptions")
-    def token_subscriptions(self) -> Optional[pulumi.Input['HubSubscriptionsTokenSubscriptionsArgs']]:
+    def token_subscriptions(self) -> pulumi.Input[Optional['HubSubscriptionsTokenSubscriptionsArgs']]:
         """
         Subscriptions
         """
         return pulumi.get(self, "token_subscriptions")
 
     @token_subscriptions.setter
-    def token_subscriptions(self, value: Optional[pulumi.Input['HubSubscriptionsTokenSubscriptionsArgs']]):
+    def token_subscriptions(self, value: pulumi.Input[Optional['HubSubscriptionsTokenSubscriptionsArgs']]):
         pulumi.set(self, "token_subscriptions", value)
 
 
@@ -74,7 +74,7 @@ class HubSubscriptions(pulumi.CustomResource):
     def __init__(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 token_subscriptions: Optional[pulumi.Input[Union['HubSubscriptionsTokenSubscriptionsArgs', 'HubSubscriptionsTokenSubscriptionsArgsDict']]] = None,
+                 token_subscriptions: pulumi.Input[Optional[Union['HubSubscriptionsTokenSubscriptionsArgs', 'HubSubscriptionsTokenSubscriptionsArgsDict']]] = None,
                  __props__=None):
         """
         > This resource requires the API token scopes **Read settings** (`settings.read`) and **Write settings** (`settings.write`)
@@ -133,7 +133,7 @@ class HubSubscriptions(pulumi.CustomResource):
     def _internal_init(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 token_subscriptions: Optional[pulumi.Input[Union['HubSubscriptionsTokenSubscriptionsArgs', 'HubSubscriptionsTokenSubscriptionsArgsDict']]] = None,
+                 token_subscriptions: pulumi.Input[Optional[Union['HubSubscriptionsTokenSubscriptionsArgs', 'HubSubscriptionsTokenSubscriptionsArgsDict']]] = None,
                  __props__=None):
         opts = pulumi.ResourceOptions.merge(_utilities.get_resource_opts_defaults(), opts)
         if not isinstance(opts, pulumi.ResourceOptions):
@@ -154,7 +154,7 @@ class HubSubscriptions(pulumi.CustomResource):
     def get(resource_name: str,
             id: pulumi.Input[str],
             opts: Optional[pulumi.ResourceOptions] = None,
-            token_subscriptions: Optional[pulumi.Input[Union['HubSubscriptionsTokenSubscriptionsArgs', 'HubSubscriptionsTokenSubscriptionsArgsDict']]] = None) -> 'HubSubscriptions':
+            token_subscriptions: pulumi.Input[Optional[Union['HubSubscriptionsTokenSubscriptionsArgs', 'HubSubscriptionsTokenSubscriptionsArgsDict']]] = None) -> 'HubSubscriptions':
         """
         Get an existing HubSubscriptions resource's state with the given name, id, and optional extra
         properties used to qualify the lookup.

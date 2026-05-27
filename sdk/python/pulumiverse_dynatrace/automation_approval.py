@@ -43,7 +43,7 @@ class AutomationApprovalArgs:
 @pulumi.input_type
 class _AutomationApprovalState:
     def __init__(__self__, *,
-                 workflow_app_access_approval_enabled: Optional[pulumi.Input[_builtins.bool]] = None):
+                 workflow_app_access_approval_enabled: pulumi.Input[Optional[_builtins.bool]] = None):
         """
         Input properties used for looking up and filtering AutomationApproval resources.
 
@@ -54,14 +54,14 @@ class _AutomationApprovalState:
 
     @_builtins.property
     @pulumi.getter(name="workflowAppAccessApprovalEnabled")
-    def workflow_app_access_approval_enabled(self) -> Optional[pulumi.Input[_builtins.bool]]:
+    def workflow_app_access_approval_enabled(self) -> pulumi.Input[Optional[_builtins.bool]]:
         """
         Allow on tenant level anyone with access to the app can respond to requests via an approval link.
         """
         return pulumi.get(self, "workflow_app_access_approval_enabled")
 
     @workflow_app_access_approval_enabled.setter
-    def workflow_app_access_approval_enabled(self, value: Optional[pulumi.Input[_builtins.bool]]):
+    def workflow_app_access_approval_enabled(self, value: pulumi.Input[Optional[_builtins.bool]]):
         pulumi.set(self, "workflow_app_access_approval_enabled", value)
 
 
@@ -71,7 +71,7 @@ class AutomationApproval(pulumi.CustomResource):
     def __init__(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 workflow_app_access_approval_enabled: Optional[pulumi.Input[_builtins.bool]] = None,
+                 workflow_app_access_approval_enabled: pulumi.Input[Optional[_builtins.bool]] = None,
                  __props__=None):
         """
         > This resource requires the API token scopes **Read settings** (`settings.read`) and **Write settings** (`settings.write`)
@@ -118,7 +118,7 @@ class AutomationApproval(pulumi.CustomResource):
     def _internal_init(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 workflow_app_access_approval_enabled: Optional[pulumi.Input[_builtins.bool]] = None,
+                 workflow_app_access_approval_enabled: pulumi.Input[Optional[_builtins.bool]] = None,
                  __props__=None):
         opts = pulumi.ResourceOptions.merge(_utilities.get_resource_opts_defaults(), opts)
         if not isinstance(opts, pulumi.ResourceOptions):
@@ -141,7 +141,7 @@ class AutomationApproval(pulumi.CustomResource):
     def get(resource_name: str,
             id: pulumi.Input[str],
             opts: Optional[pulumi.ResourceOptions] = None,
-            workflow_app_access_approval_enabled: Optional[pulumi.Input[_builtins.bool]] = None) -> 'AutomationApproval':
+            workflow_app_access_approval_enabled: pulumi.Input[Optional[_builtins.bool]] = None) -> 'AutomationApproval':
         """
         Get an existing AutomationApproval resource's state with the given name, id, and optional extra
         properties used to qualify the lookup.

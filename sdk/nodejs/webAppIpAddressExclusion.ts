@@ -101,18 +101,18 @@ export interface WebAppIpAddressExclusionState {
     /**
      * The scope of this settings. If the settings should cover the whole environment, just don't specify any scope.
      */
-    applicationId?: pulumi.Input<string>;
+    applicationId?: pulumi.Input<string | undefined>;
     /**
      * These are the only IP addresses that should be monitored
      */
-    ipAddressExclusionInclude?: pulumi.Input<boolean>;
+    ipAddressExclusionInclude?: pulumi.Input<boolean | undefined>;
     /**
      * **Examples:**
      *
      *    - 84.112.10.5
      *    - fe80::10a1:c6b2:5f68:785d
      */
-    ipExclusionList?: pulumi.Input<inputs.WebAppIpAddressExclusionIpExclusionList>;
+    ipExclusionList?: pulumi.Input<inputs.WebAppIpAddressExclusionIpExclusionList | undefined>;
 }
 
 /**
@@ -133,5 +133,5 @@ export interface WebAppIpAddressExclusionArgs {
      *    - 84.112.10.5
      *    - fe80::10a1:c6b2:5f68:785d
      */
-    ipExclusionList?: pulumi.Input<inputs.WebAppIpAddressExclusionIpExclusionList>;
+    ipExclusionList?: pulumi.Input<inputs.WebAppIpAddressExclusionIpExclusionList | undefined>;
 }

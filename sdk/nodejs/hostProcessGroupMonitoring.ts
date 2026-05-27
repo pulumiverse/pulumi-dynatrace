@@ -103,15 +103,15 @@ export interface HostProcessGroupMonitoringState {
     /**
      * The scope of this settings. If the settings should cover the whole environment, just don't specify any scope.
      */
-    hostId?: pulumi.Input<string>;
+    hostId?: pulumi.Input<string | undefined>;
     /**
      * Possible Values: `DEFAULT`, `MONITORING_OFF`, `MONITORING_ON`
      */
-    monitoringState?: pulumi.Input<string>;
+    monitoringState?: pulumi.Input<string | undefined>;
     /**
      * Process group
      */
-    processGroup?: pulumi.Input<string>;
+    processGroup?: pulumi.Input<string | undefined>;
 }
 
 /**

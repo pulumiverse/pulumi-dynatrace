@@ -108,23 +108,23 @@ export interface DiskOptionsState {
     /**
      * Deactivate NFS monitoring on all supported systems
      */
-    disableNfsDiskMonitoring?: pulumi.Input<boolean>;
+    disableNfsDiskMonitoring?: pulumi.Input<boolean | undefined>;
     /**
      * OneAgent automatically detects and monitors all your mount points, however you can create exception rules to remove disks from the monitoring list.
      */
-    exclusions?: pulumi.Input<inputs.DiskOptionsExclusions>;
+    exclusions?: pulumi.Input<inputs.DiskOptionsExclusions | undefined>;
     /**
      * Activate tmpfs monitoring on Linux systems
      */
-    monitorTmpfs?: pulumi.Input<boolean>;
+    monitorTmpfs?: pulumi.Input<boolean | undefined>;
     /**
      * When disabled OneAgent will try to deduplicate some of nfs mount points. Disabled by default, applies only to Linux hosts.
      */
-    nfsShowAll?: pulumi.Input<boolean>;
+    nfsShowAll?: pulumi.Input<boolean | undefined>;
     /**
      * The scope of this setting (HOST, HOST_GROUP). Omit this property if you want to cover the whole environment.
      */
-    scope?: pulumi.Input<string>;
+    scope?: pulumi.Input<string | undefined>;
 }
 
 /**
@@ -134,21 +134,21 @@ export interface DiskOptionsArgs {
     /**
      * Deactivate NFS monitoring on all supported systems
      */
-    disableNfsDiskMonitoring?: pulumi.Input<boolean>;
+    disableNfsDiskMonitoring?: pulumi.Input<boolean | undefined>;
     /**
      * OneAgent automatically detects and monitors all your mount points, however you can create exception rules to remove disks from the monitoring list.
      */
-    exclusions?: pulumi.Input<inputs.DiskOptionsExclusions>;
+    exclusions?: pulumi.Input<inputs.DiskOptionsExclusions | undefined>;
     /**
      * Activate tmpfs monitoring on Linux systems
      */
-    monitorTmpfs?: pulumi.Input<boolean>;
+    monitorTmpfs?: pulumi.Input<boolean | undefined>;
     /**
      * When disabled OneAgent will try to deduplicate some of nfs mount points. Disabled by default, applies only to Linux hosts.
      */
-    nfsShowAll?: pulumi.Input<boolean>;
+    nfsShowAll?: pulumi.Input<boolean | undefined>;
     /**
      * The scope of this setting (HOST, HOST_GROUP). Omit this property if you want to cover the whole environment.
      */
-    scope?: pulumi.Input<string>;
+    scope?: pulumi.Input<string | undefined>;
 }

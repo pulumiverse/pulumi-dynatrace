@@ -19,106 +19,106 @@ __all__ = ['GoldenStateArgs', 'GoldenState']
 @pulumi.input_type
 class GoldenStateArgs:
     def __init__(__self__, *,
-                 dynatrace_aix_extensions: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-                 dynatrace_alertings: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-                 dynatrace_ansible_tower_notifications: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-                 dynatrace_application_detection_rules: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-                 dynatrace_application_error_rules: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-                 dynatrace_autotag_v2s: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-                 dynatrace_aws_credentials: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-                 dynatrace_azure_credentials: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-                 dynatrace_browser_monitors: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-                 dynatrace_calculated_mobile_metrics: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-                 dynatrace_calculated_service_metrics: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-                 dynatrace_calculated_synthetic_metrics: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-                 dynatrace_calculated_web_metrics: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-                 dynatrace_credentials: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-                 dynatrace_custom_app_anomalies: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-                 dynatrace_custom_app_crash_rates: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-                 dynatrace_custom_app_enablements: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-                 dynatrace_custom_services: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-                 dynatrace_data_privacies: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-                 dynatrace_database_anomalies_v2s: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-                 dynatrace_declarative_groupings: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-                 dynatrace_disk_anomalies_v2s: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-                 dynatrace_disk_options: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-                 dynatrace_disk_specific_anomalies_v2s: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-                 dynatrace_email_notifications: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-                 dynatrace_extension_execution_controllers: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-                 dynatrace_generic_types: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-                 dynatrace_host_anomalies_v2s: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-                 dynatrace_host_namings: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-                 dynatrace_host_process_group_monitorings: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-                 dynatrace_http_monitors: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-                 dynatrace_ims_bridges: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-                 dynatrace_jira_notifications: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-                 dynatrace_k8s_namespace_anomalies: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-                 dynatrace_key_requests: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-                 dynatrace_log_metrics: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-                 dynatrace_maintenances: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-                 dynatrace_management_zone_v2s: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-                 dynatrace_metric_events: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-                 dynatrace_mobile_app_anomalies: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-                 dynatrace_mobile_app_crash_rates: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-                 dynatrace_mobile_app_enablements: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-                 dynatrace_mobile_applications: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-                 dynatrace_monitored_technologies_apaches: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-                 dynatrace_monitored_technologies_dotnets: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-                 dynatrace_monitored_technologies_gos: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-                 dynatrace_monitored_technologies_iis: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-                 dynatrace_monitored_technologies_javas: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-                 dynatrace_monitored_technologies_nginxes: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-                 dynatrace_monitored_technologies_nodejs: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-                 dynatrace_monitored_technologies_opentracings: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-                 dynatrace_monitored_technologies_phps: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-                 dynatrace_monitored_technologies_varnishes: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-                 dynatrace_monitored_technologies_wsmbs: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-                 dynatrace_muted_requests: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-                 dynatrace_nettracers: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-                 dynatrace_oneagent_features: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-                 dynatrace_ops_genie_notifications: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-                 dynatrace_pager_duty_notifications: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-                 dynatrace_pg_alertings: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-                 dynatrace_process_availabilities: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-                 dynatrace_process_group_detection_flags: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-                 dynatrace_process_group_detections: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-                 dynatrace_process_group_monitorings: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-                 dynatrace_process_group_rums: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-                 dynatrace_process_group_simple_detections: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-                 dynatrace_process_monitoring_rules: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-                 dynatrace_process_monitorings: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-                 dynatrace_process_visibilities: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-                 dynatrace_processgroup_namings: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-                 dynatrace_queue_managers: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-                 dynatrace_queue_sharing_groups: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-                 dynatrace_request_attributes: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-                 dynatrace_request_namings: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-                 dynatrace_rum_advanced_correlations: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-                 dynatrace_rum_ip_locations: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-                 dynatrace_rum_provider_breakdowns: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-                 dynatrace_service_failures: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-                 dynatrace_service_http_failures: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-                 dynatrace_service_namings: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-                 dynatrace_service_now_notifications: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-                 dynatrace_session_replay_web_privacies: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-                 dynatrace_slack_notifications: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-                 dynatrace_slo_v2s: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-                 dynatrace_span_capture_rules: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-                 dynatrace_span_context_propagations: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-                 dynatrace_synthetic_locations: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-                 dynatrace_trello_notifications: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-                 dynatrace_update_windows: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-                 dynatrace_usability_analytics: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-                 dynatrace_victor_ops_notifications: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-                 dynatrace_web_app_anomalies: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-                 dynatrace_web_app_beacon_origins: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-                 dynatrace_web_app_enablements: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-                 dynatrace_web_app_resource_cleanups: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-                 dynatrace_web_app_resource_types: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-                 dynatrace_web_applications: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-                 dynatrace_webhook_notifications: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-                 dynatrace_xmatters_notifications: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-                 mode: Optional[pulumi.Input[_builtins.str]] = None):
+                 dynatrace_aix_extensions: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 dynatrace_alertings: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 dynatrace_ansible_tower_notifications: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 dynatrace_application_detection_rules: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 dynatrace_application_error_rules: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 dynatrace_autotag_v2s: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 dynatrace_aws_credentials: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 dynatrace_azure_credentials: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 dynatrace_browser_monitors: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 dynatrace_calculated_mobile_metrics: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 dynatrace_calculated_service_metrics: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 dynatrace_calculated_synthetic_metrics: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 dynatrace_calculated_web_metrics: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 dynatrace_credentials: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 dynatrace_custom_app_anomalies: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 dynatrace_custom_app_crash_rates: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 dynatrace_custom_app_enablements: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 dynatrace_custom_services: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 dynatrace_data_privacies: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 dynatrace_database_anomalies_v2s: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 dynatrace_declarative_groupings: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 dynatrace_disk_anomalies_v2s: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 dynatrace_disk_options: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 dynatrace_disk_specific_anomalies_v2s: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 dynatrace_email_notifications: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 dynatrace_extension_execution_controllers: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 dynatrace_generic_types: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 dynatrace_host_anomalies_v2s: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 dynatrace_host_namings: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 dynatrace_host_process_group_monitorings: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 dynatrace_http_monitors: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 dynatrace_ims_bridges: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 dynatrace_jira_notifications: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 dynatrace_k8s_namespace_anomalies: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 dynatrace_key_requests: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 dynatrace_log_metrics: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 dynatrace_maintenances: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 dynatrace_management_zone_v2s: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 dynatrace_metric_events: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 dynatrace_mobile_app_anomalies: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 dynatrace_mobile_app_crash_rates: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 dynatrace_mobile_app_enablements: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 dynatrace_mobile_applications: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 dynatrace_monitored_technologies_apaches: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 dynatrace_monitored_technologies_dotnets: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 dynatrace_monitored_technologies_gos: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 dynatrace_monitored_technologies_iis: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 dynatrace_monitored_technologies_javas: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 dynatrace_monitored_technologies_nginxes: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 dynatrace_monitored_technologies_nodejs: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 dynatrace_monitored_technologies_opentracings: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 dynatrace_monitored_technologies_phps: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 dynatrace_monitored_technologies_varnishes: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 dynatrace_monitored_technologies_wsmbs: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 dynatrace_muted_requests: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 dynatrace_nettracers: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 dynatrace_oneagent_features: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 dynatrace_ops_genie_notifications: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 dynatrace_pager_duty_notifications: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 dynatrace_pg_alertings: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 dynatrace_process_availabilities: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 dynatrace_process_group_detection_flags: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 dynatrace_process_group_detections: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 dynatrace_process_group_monitorings: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 dynatrace_process_group_rums: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 dynatrace_process_group_simple_detections: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 dynatrace_process_monitoring_rules: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 dynatrace_process_monitorings: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 dynatrace_process_visibilities: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 dynatrace_processgroup_namings: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 dynatrace_queue_managers: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 dynatrace_queue_sharing_groups: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 dynatrace_request_attributes: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 dynatrace_request_namings: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 dynatrace_rum_advanced_correlations: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 dynatrace_rum_ip_locations: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 dynatrace_rum_provider_breakdowns: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 dynatrace_service_failures: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 dynatrace_service_http_failures: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 dynatrace_service_namings: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 dynatrace_service_now_notifications: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 dynatrace_session_replay_web_privacies: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 dynatrace_slack_notifications: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 dynatrace_slo_v2s: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 dynatrace_span_capture_rules: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 dynatrace_span_context_propagations: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 dynatrace_synthetic_locations: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 dynatrace_trello_notifications: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 dynatrace_update_windows: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 dynatrace_usability_analytics: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 dynatrace_victor_ops_notifications: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 dynatrace_web_app_anomalies: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 dynatrace_web_app_beacon_origins: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 dynatrace_web_app_enablements: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 dynatrace_web_app_resource_cleanups: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 dynatrace_web_app_resource_types: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 dynatrace_web_applications: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 dynatrace_webhook_notifications: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 dynatrace_xmatters_notifications: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 mode: pulumi.Input[Optional[_builtins.str]] = None):
         """
         The set of arguments for constructing a GoldenState resource.
 
@@ -428,1195 +428,1195 @@ class GoldenStateArgs:
 
     @_builtins.property
     @pulumi.getter(name="dynatraceAixExtensions")
-    def dynatrace_aix_extensions(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]:
+    def dynatrace_aix_extensions(self) -> pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]:
         """
         The IDs for resource of type `AixExtension` this `GoldenState` should ignore (and therefore neither warn about their existence nor attempt to delete them). Specify `[]` if you expect no such resources to exist in Dynatrace. Omit this attribute if you don't care about these kinds of resources regarding the golden state of the environment.
         """
         return pulumi.get(self, "dynatrace_aix_extensions")
 
     @dynatrace_aix_extensions.setter
-    def dynatrace_aix_extensions(self, value: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]):
+    def dynatrace_aix_extensions(self, value: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "dynatrace_aix_extensions", value)
 
     @_builtins.property
     @pulumi.getter(name="dynatraceAlertings")
-    def dynatrace_alertings(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]:
+    def dynatrace_alertings(self) -> pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]:
         """
         The IDs for resource of type `Alerting` this `GoldenState` should ignore (and therefore neither warn about their existence nor attempt to delete them). Specify `[]` if you expect no such resources to exist in Dynatrace. Omit this attribute if you don't care about these kinds of resources regarding the golden state of the environment.
         """
         return pulumi.get(self, "dynatrace_alertings")
 
     @dynatrace_alertings.setter
-    def dynatrace_alertings(self, value: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]):
+    def dynatrace_alertings(self, value: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "dynatrace_alertings", value)
 
     @_builtins.property
     @pulumi.getter(name="dynatraceAnsibleTowerNotifications")
-    def dynatrace_ansible_tower_notifications(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]:
+    def dynatrace_ansible_tower_notifications(self) -> pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]:
         """
         The IDs for resource of type `AnsibleTowerNotification` this `GoldenState` should ignore (and therefore neither warn about their existence nor attempt to delete them). Specify `[]` if you expect no such resources to exist in Dynatrace. Omit this attribute if you don't care about these kinds of resources regarding the golden state of the environment.
         """
         return pulumi.get(self, "dynatrace_ansible_tower_notifications")
 
     @dynatrace_ansible_tower_notifications.setter
-    def dynatrace_ansible_tower_notifications(self, value: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]):
+    def dynatrace_ansible_tower_notifications(self, value: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "dynatrace_ansible_tower_notifications", value)
 
     @_builtins.property
     @pulumi.getter(name="dynatraceApplicationDetectionRules")
-    def dynatrace_application_detection_rules(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]:
+    def dynatrace_application_detection_rules(self) -> pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]:
         """
         The IDs for resource of type `ApplicationDetectionRule` this `GoldenState` should ignore (and therefore neither warn about their existence nor attempt to delete them). Specify `[]` if you expect no such resources to exist in Dynatrace. Omit this attribute if you don't care about these kinds of resources regarding the golden state of the environment.
         """
         return pulumi.get(self, "dynatrace_application_detection_rules")
 
     @dynatrace_application_detection_rules.setter
-    def dynatrace_application_detection_rules(self, value: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]):
+    def dynatrace_application_detection_rules(self, value: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "dynatrace_application_detection_rules", value)
 
     @_builtins.property
     @pulumi.getter(name="dynatraceApplicationErrorRules")
-    def dynatrace_application_error_rules(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]:
+    def dynatrace_application_error_rules(self) -> pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]:
         """
         The IDs for resource of type `ApplicationErrorRules` this `GoldenState` should ignore (and therefore neither warn about their existence nor attempt to delete them). Specify `[]` if you expect no such resources to exist in Dynatrace. Omit this attribute if you don't care about these kinds of resources regarding the golden state of the environment.
         """
         return pulumi.get(self, "dynatrace_application_error_rules")
 
     @dynatrace_application_error_rules.setter
-    def dynatrace_application_error_rules(self, value: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]):
+    def dynatrace_application_error_rules(self, value: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "dynatrace_application_error_rules", value)
 
     @_builtins.property
     @pulumi.getter(name="dynatraceAutotagV2s")
-    def dynatrace_autotag_v2s(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]:
+    def dynatrace_autotag_v2s(self) -> pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]:
         """
         The IDs for resource of type `AutotagV2` this `GoldenState` should ignore (and therefore neither warn about their existence nor attempt to delete them). Specify `[]` if you expect no such resources to exist in Dynatrace. Omit this attribute if you don't care about these kinds of resources regarding the golden state of the environment.
         """
         return pulumi.get(self, "dynatrace_autotag_v2s")
 
     @dynatrace_autotag_v2s.setter
-    def dynatrace_autotag_v2s(self, value: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]):
+    def dynatrace_autotag_v2s(self, value: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "dynatrace_autotag_v2s", value)
 
     @_builtins.property
     @pulumi.getter(name="dynatraceAwsCredentials")
-    def dynatrace_aws_credentials(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]:
+    def dynatrace_aws_credentials(self) -> pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]:
         """
         The IDs for resource of type `AwsCredentials` this `GoldenState` should ignore (and therefore neither warn about their existence nor attempt to delete them). Specify `[]` if you expect no such resources to exist in Dynatrace. Omit this attribute if you don't care about these kinds of resources regarding the golden state of the environment.
         """
         return pulumi.get(self, "dynatrace_aws_credentials")
 
     @dynatrace_aws_credentials.setter
-    def dynatrace_aws_credentials(self, value: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]):
+    def dynatrace_aws_credentials(self, value: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "dynatrace_aws_credentials", value)
 
     @_builtins.property
     @pulumi.getter(name="dynatraceAzureCredentials")
-    def dynatrace_azure_credentials(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]:
+    def dynatrace_azure_credentials(self) -> pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]:
         """
         The IDs for resource of type `AzureCredentials` this `GoldenState` should ignore (and therefore neither warn about their existence nor attempt to delete them). Specify `[]` if you expect no such resources to exist in Dynatrace. Omit this attribute if you don't care about these kinds of resources regarding the golden state of the environment.
         """
         return pulumi.get(self, "dynatrace_azure_credentials")
 
     @dynatrace_azure_credentials.setter
-    def dynatrace_azure_credentials(self, value: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]):
+    def dynatrace_azure_credentials(self, value: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "dynatrace_azure_credentials", value)
 
     @_builtins.property
     @pulumi.getter(name="dynatraceBrowserMonitors")
-    def dynatrace_browser_monitors(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]:
+    def dynatrace_browser_monitors(self) -> pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]:
         """
         The IDs for resource of type `BrowserMonitor` this `GoldenState` should ignore (and therefore neither warn about their existence nor attempt to delete them). Specify `[]` if you expect no such resources to exist in Dynatrace. Omit this attribute if you don't care about these kinds of resources regarding the golden state of the environment.
         """
         return pulumi.get(self, "dynatrace_browser_monitors")
 
     @dynatrace_browser_monitors.setter
-    def dynatrace_browser_monitors(self, value: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]):
+    def dynatrace_browser_monitors(self, value: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "dynatrace_browser_monitors", value)
 
     @_builtins.property
     @pulumi.getter(name="dynatraceCalculatedMobileMetrics")
-    def dynatrace_calculated_mobile_metrics(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]:
+    def dynatrace_calculated_mobile_metrics(self) -> pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]:
         """
         The IDs for resource of type `CalculatedMobileMetric` this `GoldenState` should ignore (and therefore neither warn about their existence nor attempt to delete them). Specify `[]` if you expect no such resources to exist in Dynatrace. Omit this attribute if you don't care about these kinds of resources regarding the golden state of the environment.
         """
         return pulumi.get(self, "dynatrace_calculated_mobile_metrics")
 
     @dynatrace_calculated_mobile_metrics.setter
-    def dynatrace_calculated_mobile_metrics(self, value: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]):
+    def dynatrace_calculated_mobile_metrics(self, value: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "dynatrace_calculated_mobile_metrics", value)
 
     @_builtins.property
     @pulumi.getter(name="dynatraceCalculatedServiceMetrics")
-    def dynatrace_calculated_service_metrics(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]:
+    def dynatrace_calculated_service_metrics(self) -> pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]:
         """
         The IDs for resource of type `CalculatedServiceMetric` this `GoldenState` should ignore (and therefore neither warn about their existence nor attempt to delete them). Specify `[]` if you expect no such resources to exist in Dynatrace. Omit this attribute if you don't care about these kinds of resources regarding the golden state of the environment.
         """
         return pulumi.get(self, "dynatrace_calculated_service_metrics")
 
     @dynatrace_calculated_service_metrics.setter
-    def dynatrace_calculated_service_metrics(self, value: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]):
+    def dynatrace_calculated_service_metrics(self, value: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "dynatrace_calculated_service_metrics", value)
 
     @_builtins.property
     @pulumi.getter(name="dynatraceCalculatedSyntheticMetrics")
-    def dynatrace_calculated_synthetic_metrics(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]:
+    def dynatrace_calculated_synthetic_metrics(self) -> pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]:
         """
         The IDs for resource of type `CalculatedSyntheticMetric` this `GoldenState` should ignore (and therefore neither warn about their existence nor attempt to delete them). Specify `[]` if you expect no such resources to exist in Dynatrace. Omit this attribute if you don't care about these kinds of resources regarding the golden state of the environment.
         """
         return pulumi.get(self, "dynatrace_calculated_synthetic_metrics")
 
     @dynatrace_calculated_synthetic_metrics.setter
-    def dynatrace_calculated_synthetic_metrics(self, value: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]):
+    def dynatrace_calculated_synthetic_metrics(self, value: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "dynatrace_calculated_synthetic_metrics", value)
 
     @_builtins.property
     @pulumi.getter(name="dynatraceCalculatedWebMetrics")
-    def dynatrace_calculated_web_metrics(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]:
+    def dynatrace_calculated_web_metrics(self) -> pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]:
         """
         The IDs for resource of type `CalculatedWebMetric` this `GoldenState` should ignore (and therefore neither warn about their existence nor attempt to delete them). Specify `[]` if you expect no such resources to exist in Dynatrace. Omit this attribute if you don't care about these kinds of resources regarding the golden state of the environment.
         """
         return pulumi.get(self, "dynatrace_calculated_web_metrics")
 
     @dynatrace_calculated_web_metrics.setter
-    def dynatrace_calculated_web_metrics(self, value: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]):
+    def dynatrace_calculated_web_metrics(self, value: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "dynatrace_calculated_web_metrics", value)
 
     @_builtins.property
     @pulumi.getter(name="dynatraceCredentials")
-    def dynatrace_credentials(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]:
+    def dynatrace_credentials(self) -> pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]:
         """
         The IDs for resource of type `Credentials` this `GoldenState` should ignore (and therefore neither warn about their existence nor attempt to delete them). Specify `[]` if you expect no such resources to exist in Dynatrace. Omit this attribute if you don't care about these kinds of resources regarding the golden state of the environment.
         """
         return pulumi.get(self, "dynatrace_credentials")
 
     @dynatrace_credentials.setter
-    def dynatrace_credentials(self, value: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]):
+    def dynatrace_credentials(self, value: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "dynatrace_credentials", value)
 
     @_builtins.property
     @pulumi.getter(name="dynatraceCustomAppAnomalies")
-    def dynatrace_custom_app_anomalies(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]:
+    def dynatrace_custom_app_anomalies(self) -> pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]:
         """
         The IDs for resource of type `CustomAppAnomalies` this `GoldenState` should ignore (and therefore neither warn about their existence nor attempt to delete them). Specify `[]` if you expect no such resources to exist in Dynatrace. Omit this attribute if you don't care about these kinds of resources regarding the golden state of the environment.
         """
         return pulumi.get(self, "dynatrace_custom_app_anomalies")
 
     @dynatrace_custom_app_anomalies.setter
-    def dynatrace_custom_app_anomalies(self, value: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]):
+    def dynatrace_custom_app_anomalies(self, value: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "dynatrace_custom_app_anomalies", value)
 
     @_builtins.property
     @pulumi.getter(name="dynatraceCustomAppCrashRates")
-    def dynatrace_custom_app_crash_rates(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]:
+    def dynatrace_custom_app_crash_rates(self) -> pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]:
         """
         The IDs for resource of type `CustomAppCrashRate` this `GoldenState` should ignore (and therefore neither warn about their existence nor attempt to delete them). Specify `[]` if you expect no such resources to exist in Dynatrace. Omit this attribute if you don't care about these kinds of resources regarding the golden state of the environment.
         """
         return pulumi.get(self, "dynatrace_custom_app_crash_rates")
 
     @dynatrace_custom_app_crash_rates.setter
-    def dynatrace_custom_app_crash_rates(self, value: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]):
+    def dynatrace_custom_app_crash_rates(self, value: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "dynatrace_custom_app_crash_rates", value)
 
     @_builtins.property
     @pulumi.getter(name="dynatraceCustomAppEnablements")
-    def dynatrace_custom_app_enablements(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]:
+    def dynatrace_custom_app_enablements(self) -> pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]:
         """
         The IDs for resource of type `CustomAppEnablement` this `GoldenState` should ignore (and therefore neither warn about their existence nor attempt to delete them). Specify `[]` if you expect no such resources to exist in Dynatrace. Omit this attribute if you don't care about these kinds of resources regarding the golden state of the environment.
         """
         return pulumi.get(self, "dynatrace_custom_app_enablements")
 
     @dynatrace_custom_app_enablements.setter
-    def dynatrace_custom_app_enablements(self, value: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]):
+    def dynatrace_custom_app_enablements(self, value: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "dynatrace_custom_app_enablements", value)
 
     @_builtins.property
     @pulumi.getter(name="dynatraceCustomServices")
-    def dynatrace_custom_services(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]:
+    def dynatrace_custom_services(self) -> pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]:
         """
         The IDs for resource of type `CustomService` this `GoldenState` should ignore (and therefore neither warn about their existence nor attempt to delete them). Specify `[]` if you expect no such resources to exist in Dynatrace. Omit this attribute if you don't care about these kinds of resources regarding the golden state of the environment.
         """
         return pulumi.get(self, "dynatrace_custom_services")
 
     @dynatrace_custom_services.setter
-    def dynatrace_custom_services(self, value: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]):
+    def dynatrace_custom_services(self, value: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "dynatrace_custom_services", value)
 
     @_builtins.property
     @pulumi.getter(name="dynatraceDataPrivacies")
-    def dynatrace_data_privacies(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]:
+    def dynatrace_data_privacies(self) -> pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]:
         """
         The IDs for resource of type `DataPrivacy` this `GoldenState` should ignore (and therefore neither warn about their existence nor attempt to delete them). Specify `[]` if you expect no such resources to exist in Dynatrace. Omit this attribute if you don't care about these kinds of resources regarding the golden state of the environment.
         """
         return pulumi.get(self, "dynatrace_data_privacies")
 
     @dynatrace_data_privacies.setter
-    def dynatrace_data_privacies(self, value: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]):
+    def dynatrace_data_privacies(self, value: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "dynatrace_data_privacies", value)
 
     @_builtins.property
     @pulumi.getter(name="dynatraceDatabaseAnomaliesV2s")
-    def dynatrace_database_anomalies_v2s(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]:
+    def dynatrace_database_anomalies_v2s(self) -> pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]:
         """
         The IDs for resource of type `DatabaseAnomaliesV2` this `GoldenState` should ignore (and therefore neither warn about their existence nor attempt to delete them). Specify `[]` if you expect no such resources to exist in Dynatrace. Omit this attribute if you don't care about these kinds of resources regarding the golden state of the environment.
         """
         return pulumi.get(self, "dynatrace_database_anomalies_v2s")
 
     @dynatrace_database_anomalies_v2s.setter
-    def dynatrace_database_anomalies_v2s(self, value: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]):
+    def dynatrace_database_anomalies_v2s(self, value: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "dynatrace_database_anomalies_v2s", value)
 
     @_builtins.property
     @pulumi.getter(name="dynatraceDeclarativeGroupings")
-    def dynatrace_declarative_groupings(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]:
+    def dynatrace_declarative_groupings(self) -> pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]:
         """
         The IDs for resource of type `DeclarativeGrouping` this `GoldenState` should ignore (and therefore neither warn about their existence nor attempt to delete them). Specify `[]` if you expect no such resources to exist in Dynatrace. Omit this attribute if you don't care about these kinds of resources regarding the golden state of the environment.
         """
         return pulumi.get(self, "dynatrace_declarative_groupings")
 
     @dynatrace_declarative_groupings.setter
-    def dynatrace_declarative_groupings(self, value: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]):
+    def dynatrace_declarative_groupings(self, value: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "dynatrace_declarative_groupings", value)
 
     @_builtins.property
     @pulumi.getter(name="dynatraceDiskAnomaliesV2s")
-    def dynatrace_disk_anomalies_v2s(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]:
+    def dynatrace_disk_anomalies_v2s(self) -> pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]:
         """
         The IDs for resource of type `DiskAnomaliesV2` this `GoldenState` should ignore (and therefore neither warn about their existence nor attempt to delete them). Specify `[]` if you expect no such resources to exist in Dynatrace. Omit this attribute if you don't care about these kinds of resources regarding the golden state of the environment.
         """
         return pulumi.get(self, "dynatrace_disk_anomalies_v2s")
 
     @dynatrace_disk_anomalies_v2s.setter
-    def dynatrace_disk_anomalies_v2s(self, value: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]):
+    def dynatrace_disk_anomalies_v2s(self, value: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "dynatrace_disk_anomalies_v2s", value)
 
     @_builtins.property
     @pulumi.getter(name="dynatraceDiskOptions")
-    def dynatrace_disk_options(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]:
+    def dynatrace_disk_options(self) -> pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]:
         """
         The IDs for resource of type `DiskOptions` this `GoldenState` should ignore (and therefore neither warn about their existence nor attempt to delete them). Specify `[]` if you expect no such resources to exist in Dynatrace. Omit this attribute if you don't care about these kinds of resources regarding the golden state of the environment.
         """
         return pulumi.get(self, "dynatrace_disk_options")
 
     @dynatrace_disk_options.setter
-    def dynatrace_disk_options(self, value: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]):
+    def dynatrace_disk_options(self, value: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "dynatrace_disk_options", value)
 
     @_builtins.property
     @pulumi.getter(name="dynatraceDiskSpecificAnomaliesV2s")
-    def dynatrace_disk_specific_anomalies_v2s(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]:
+    def dynatrace_disk_specific_anomalies_v2s(self) -> pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]:
         """
         The IDs for resource of type `DiskSpecificAnomaliesV2` this `GoldenState` should ignore (and therefore neither warn about their existence nor attempt to delete them). Specify `[]` if you expect no such resources to exist in Dynatrace. Omit this attribute if you don't care about these kinds of resources regarding the golden state of the environment.
         """
         return pulumi.get(self, "dynatrace_disk_specific_anomalies_v2s")
 
     @dynatrace_disk_specific_anomalies_v2s.setter
-    def dynatrace_disk_specific_anomalies_v2s(self, value: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]):
+    def dynatrace_disk_specific_anomalies_v2s(self, value: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "dynatrace_disk_specific_anomalies_v2s", value)
 
     @_builtins.property
     @pulumi.getter(name="dynatraceEmailNotifications")
-    def dynatrace_email_notifications(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]:
+    def dynatrace_email_notifications(self) -> pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]:
         """
         The IDs for resource of type `EmailNotification` this `GoldenState` should ignore (and therefore neither warn about their existence nor attempt to delete them). Specify `[]` if you expect no such resources to exist in Dynatrace. Omit this attribute if you don't care about these kinds of resources regarding the golden state of the environment.
         """
         return pulumi.get(self, "dynatrace_email_notifications")
 
     @dynatrace_email_notifications.setter
-    def dynatrace_email_notifications(self, value: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]):
+    def dynatrace_email_notifications(self, value: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "dynatrace_email_notifications", value)
 
     @_builtins.property
     @pulumi.getter(name="dynatraceExtensionExecutionControllers")
-    def dynatrace_extension_execution_controllers(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]:
+    def dynatrace_extension_execution_controllers(self) -> pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]:
         """
         The IDs for resource of type `ExtensionExecutionController` this `GoldenState` should ignore (and therefore neither warn about their existence nor attempt to delete them). Specify `[]` if you expect no such resources to exist in Dynatrace. Omit this attribute if you don't care about these kinds of resources regarding the golden state of the environment.
         """
         return pulumi.get(self, "dynatrace_extension_execution_controllers")
 
     @dynatrace_extension_execution_controllers.setter
-    def dynatrace_extension_execution_controllers(self, value: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]):
+    def dynatrace_extension_execution_controllers(self, value: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "dynatrace_extension_execution_controllers", value)
 
     @_builtins.property
     @pulumi.getter(name="dynatraceGenericTypes")
-    def dynatrace_generic_types(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]:
+    def dynatrace_generic_types(self) -> pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]:
         """
         The IDs for resource of type `GenericTypes` this `GoldenState` should ignore (and therefore neither warn about their existence nor attempt to delete them). Specify `[]` if you expect no such resources to exist in Dynatrace. Omit this attribute if you don't care about these kinds of resources regarding the golden state of the environment.
         """
         return pulumi.get(self, "dynatrace_generic_types")
 
     @dynatrace_generic_types.setter
-    def dynatrace_generic_types(self, value: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]):
+    def dynatrace_generic_types(self, value: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "dynatrace_generic_types", value)
 
     @_builtins.property
     @pulumi.getter(name="dynatraceHostAnomaliesV2s")
-    def dynatrace_host_anomalies_v2s(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]:
+    def dynatrace_host_anomalies_v2s(self) -> pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]:
         """
         The IDs for resource of type `HostAnomaliesV2` this `GoldenState` should ignore (and therefore neither warn about their existence nor attempt to delete them). Specify `[]` if you expect no such resources to exist in Dynatrace. Omit this attribute if you don't care about these kinds of resources regarding the golden state of the environment.
         """
         return pulumi.get(self, "dynatrace_host_anomalies_v2s")
 
     @dynatrace_host_anomalies_v2s.setter
-    def dynatrace_host_anomalies_v2s(self, value: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]):
+    def dynatrace_host_anomalies_v2s(self, value: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "dynatrace_host_anomalies_v2s", value)
 
     @_builtins.property
     @pulumi.getter(name="dynatraceHostNamings")
-    def dynatrace_host_namings(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]:
+    def dynatrace_host_namings(self) -> pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]:
         """
         The IDs for resource of type `HostNaming` this `GoldenState` should ignore (and therefore neither warn about their existence nor attempt to delete them). Specify `[]` if you expect no such resources to exist in Dynatrace. Omit this attribute if you don't care about these kinds of resources regarding the golden state of the environment.
         """
         return pulumi.get(self, "dynatrace_host_namings")
 
     @dynatrace_host_namings.setter
-    def dynatrace_host_namings(self, value: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]):
+    def dynatrace_host_namings(self, value: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "dynatrace_host_namings", value)
 
     @_builtins.property
     @pulumi.getter(name="dynatraceHostProcessGroupMonitorings")
-    def dynatrace_host_process_group_monitorings(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]:
+    def dynatrace_host_process_group_monitorings(self) -> pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]:
         """
         The IDs for resource of type `HostProcessGroupMonitoring` this `GoldenState` should ignore (and therefore neither warn about their existence nor attempt to delete them). Specify `[]` if you expect no such resources to exist in Dynatrace. Omit this attribute if you don't care about these kinds of resources regarding the golden state of the environment.
         """
         return pulumi.get(self, "dynatrace_host_process_group_monitorings")
 
     @dynatrace_host_process_group_monitorings.setter
-    def dynatrace_host_process_group_monitorings(self, value: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]):
+    def dynatrace_host_process_group_monitorings(self, value: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "dynatrace_host_process_group_monitorings", value)
 
     @_builtins.property
     @pulumi.getter(name="dynatraceHttpMonitors")
-    def dynatrace_http_monitors(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]:
+    def dynatrace_http_monitors(self) -> pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]:
         """
         The IDs for resource of type `HttpMonitor` this `GoldenState` should ignore (and therefore neither warn about their existence nor attempt to delete them). Specify `[]` if you expect no such resources to exist in Dynatrace. Omit this attribute if you don't care about these kinds of resources regarding the golden state of the environment.
         """
         return pulumi.get(self, "dynatrace_http_monitors")
 
     @dynatrace_http_monitors.setter
-    def dynatrace_http_monitors(self, value: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]):
+    def dynatrace_http_monitors(self, value: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "dynatrace_http_monitors", value)
 
     @_builtins.property
     @pulumi.getter(name="dynatraceImsBridges")
-    def dynatrace_ims_bridges(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]:
+    def dynatrace_ims_bridges(self) -> pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]:
         """
         The IDs for resource of type `ImsBridges` this `GoldenState` should ignore (and therefore neither warn about their existence nor attempt to delete them). Specify `[]` if you expect no such resources to exist in Dynatrace. Omit this attribute if you don't care about these kinds of resources regarding the golden state of the environment.
         """
         return pulumi.get(self, "dynatrace_ims_bridges")
 
     @dynatrace_ims_bridges.setter
-    def dynatrace_ims_bridges(self, value: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]):
+    def dynatrace_ims_bridges(self, value: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "dynatrace_ims_bridges", value)
 
     @_builtins.property
     @pulumi.getter(name="dynatraceJiraNotifications")
-    def dynatrace_jira_notifications(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]:
+    def dynatrace_jira_notifications(self) -> pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]:
         """
         The IDs for resource of type `JiraNotification` this `GoldenState` should ignore (and therefore neither warn about their existence nor attempt to delete them). Specify `[]` if you expect no such resources to exist in Dynatrace. Omit this attribute if you don't care about these kinds of resources regarding the golden state of the environment.
         """
         return pulumi.get(self, "dynatrace_jira_notifications")
 
     @dynatrace_jira_notifications.setter
-    def dynatrace_jira_notifications(self, value: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]):
+    def dynatrace_jira_notifications(self, value: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "dynatrace_jira_notifications", value)
 
     @_builtins.property
     @pulumi.getter(name="dynatraceK8sNamespaceAnomalies")
-    def dynatrace_k8s_namespace_anomalies(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]:
+    def dynatrace_k8s_namespace_anomalies(self) -> pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]:
         """
         The IDs for resource of type `K8sNamespaceAnomalies` this `GoldenState` should ignore (and therefore neither warn about their existence nor attempt to delete them). Specify `[]` if you expect no such resources to exist in Dynatrace. Omit this attribute if you don't care about these kinds of resources regarding the golden state of the environment.
         """
         return pulumi.get(self, "dynatrace_k8s_namespace_anomalies")
 
     @dynatrace_k8s_namespace_anomalies.setter
-    def dynatrace_k8s_namespace_anomalies(self, value: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]):
+    def dynatrace_k8s_namespace_anomalies(self, value: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "dynatrace_k8s_namespace_anomalies", value)
 
     @_builtins.property
     @pulumi.getter(name="dynatraceKeyRequests")
-    def dynatrace_key_requests(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]:
+    def dynatrace_key_requests(self) -> pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]:
         """
         The IDs for resource of type `KeyRequests` this `GoldenState` should ignore (and therefore neither warn about their existence nor attempt to delete them). Specify `[]` if you expect no such resources to exist in Dynatrace. Omit this attribute if you don't care about these kinds of resources regarding the golden state of the environment.
         """
         return pulumi.get(self, "dynatrace_key_requests")
 
     @dynatrace_key_requests.setter
-    def dynatrace_key_requests(self, value: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]):
+    def dynatrace_key_requests(self, value: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "dynatrace_key_requests", value)
 
     @_builtins.property
     @pulumi.getter(name="dynatraceLogMetrics")
-    def dynatrace_log_metrics(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]:
+    def dynatrace_log_metrics(self) -> pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]:
         """
         The IDs for resource of type `LogMetrics` this `GoldenState` should ignore (and therefore neither warn about their existence nor attempt to delete them). Specify `[]` if you expect no such resources to exist in Dynatrace. Omit this attribute if you don't care about these kinds of resources regarding the golden state of the environment.
         """
         return pulumi.get(self, "dynatrace_log_metrics")
 
     @dynatrace_log_metrics.setter
-    def dynatrace_log_metrics(self, value: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]):
+    def dynatrace_log_metrics(self, value: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "dynatrace_log_metrics", value)
 
     @_builtins.property
     @pulumi.getter(name="dynatraceMaintenances")
-    def dynatrace_maintenances(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]:
+    def dynatrace_maintenances(self) -> pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]:
         """
         The IDs for resource of type `Maintenance` this `GoldenState` should ignore (and therefore neither warn about their existence nor attempt to delete them). Specify `[]` if you expect no such resources to exist in Dynatrace. Omit this attribute if you don't care about these kinds of resources regarding the golden state of the environment.
         """
         return pulumi.get(self, "dynatrace_maintenances")
 
     @dynatrace_maintenances.setter
-    def dynatrace_maintenances(self, value: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]):
+    def dynatrace_maintenances(self, value: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "dynatrace_maintenances", value)
 
     @_builtins.property
     @pulumi.getter(name="dynatraceManagementZoneV2s")
-    def dynatrace_management_zone_v2s(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]:
+    def dynatrace_management_zone_v2s(self) -> pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]:
         """
         The IDs for resource of type `ManagementZoneV2` this `GoldenState` should ignore (and therefore neither warn about their existence nor attempt to delete them). Specify `[]` if you expect no such resources to exist in Dynatrace. Omit this attribute if you don't care about these kinds of resources regarding the golden state of the environment.
         """
         return pulumi.get(self, "dynatrace_management_zone_v2s")
 
     @dynatrace_management_zone_v2s.setter
-    def dynatrace_management_zone_v2s(self, value: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]):
+    def dynatrace_management_zone_v2s(self, value: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "dynatrace_management_zone_v2s", value)
 
     @_builtins.property
     @pulumi.getter(name="dynatraceMetricEvents")
-    def dynatrace_metric_events(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]:
+    def dynatrace_metric_events(self) -> pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]:
         """
         The IDs for resource of type `MetricEvents` this `GoldenState` should ignore (and therefore neither warn about their existence nor attempt to delete them). Specify `[]` if you expect no such resources to exist in Dynatrace. Omit this attribute if you don't care about these kinds of resources regarding the golden state of the environment.
         """
         return pulumi.get(self, "dynatrace_metric_events")
 
     @dynatrace_metric_events.setter
-    def dynatrace_metric_events(self, value: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]):
+    def dynatrace_metric_events(self, value: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "dynatrace_metric_events", value)
 
     @_builtins.property
     @pulumi.getter(name="dynatraceMobileAppAnomalies")
-    def dynatrace_mobile_app_anomalies(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]:
+    def dynatrace_mobile_app_anomalies(self) -> pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]:
         """
         The IDs for resource of type `MobileAppAnomalies` this `GoldenState` should ignore (and therefore neither warn about their existence nor attempt to delete them). Specify `[]` if you expect no such resources to exist in Dynatrace. Omit this attribute if you don't care about these kinds of resources regarding the golden state of the environment.
         """
         return pulumi.get(self, "dynatrace_mobile_app_anomalies")
 
     @dynatrace_mobile_app_anomalies.setter
-    def dynatrace_mobile_app_anomalies(self, value: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]):
+    def dynatrace_mobile_app_anomalies(self, value: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "dynatrace_mobile_app_anomalies", value)
 
     @_builtins.property
     @pulumi.getter(name="dynatraceMobileAppCrashRates")
-    def dynatrace_mobile_app_crash_rates(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]:
+    def dynatrace_mobile_app_crash_rates(self) -> pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]:
         """
         The IDs for resource of type `MobileAppCrashRate` this `GoldenState` should ignore (and therefore neither warn about their existence nor attempt to delete them). Specify `[]` if you expect no such resources to exist in Dynatrace. Omit this attribute if you don't care about these kinds of resources regarding the golden state of the environment.
         """
         return pulumi.get(self, "dynatrace_mobile_app_crash_rates")
 
     @dynatrace_mobile_app_crash_rates.setter
-    def dynatrace_mobile_app_crash_rates(self, value: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]):
+    def dynatrace_mobile_app_crash_rates(self, value: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "dynatrace_mobile_app_crash_rates", value)
 
     @_builtins.property
     @pulumi.getter(name="dynatraceMobileAppEnablements")
-    def dynatrace_mobile_app_enablements(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]:
+    def dynatrace_mobile_app_enablements(self) -> pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]:
         """
         The IDs for resource of type `MobileAppEnablement` this `GoldenState` should ignore (and therefore neither warn about their existence nor attempt to delete them). Specify `[]` if you expect no such resources to exist in Dynatrace. Omit this attribute if you don't care about these kinds of resources regarding the golden state of the environment.
         """
         return pulumi.get(self, "dynatrace_mobile_app_enablements")
 
     @dynatrace_mobile_app_enablements.setter
-    def dynatrace_mobile_app_enablements(self, value: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]):
+    def dynatrace_mobile_app_enablements(self, value: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "dynatrace_mobile_app_enablements", value)
 
     @_builtins.property
     @pulumi.getter(name="dynatraceMobileApplications")
-    def dynatrace_mobile_applications(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]:
+    def dynatrace_mobile_applications(self) -> pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]:
         """
         The IDs for resource of type `MobileApplication` this `GoldenState` should ignore (and therefore neither warn about their existence nor attempt to delete them). Specify `[]` if you expect no such resources to exist in Dynatrace. Omit this attribute if you don't care about these kinds of resources regarding the golden state of the environment.
         """
         return pulumi.get(self, "dynatrace_mobile_applications")
 
     @dynatrace_mobile_applications.setter
-    def dynatrace_mobile_applications(self, value: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]):
+    def dynatrace_mobile_applications(self, value: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "dynatrace_mobile_applications", value)
 
     @_builtins.property
     @pulumi.getter(name="dynatraceMonitoredTechnologiesApaches")
-    def dynatrace_monitored_technologies_apaches(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]:
+    def dynatrace_monitored_technologies_apaches(self) -> pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]:
         """
         The IDs for resource of type `MonitoredTechnologiesApache` this `GoldenState` should ignore (and therefore neither warn about their existence nor attempt to delete them). Specify `[]` if you expect no such resources to exist in Dynatrace. Omit this attribute if you don't care about these kinds of resources regarding the golden state of the environment.
         """
         return pulumi.get(self, "dynatrace_monitored_technologies_apaches")
 
     @dynatrace_monitored_technologies_apaches.setter
-    def dynatrace_monitored_technologies_apaches(self, value: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]):
+    def dynatrace_monitored_technologies_apaches(self, value: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "dynatrace_monitored_technologies_apaches", value)
 
     @_builtins.property
     @pulumi.getter(name="dynatraceMonitoredTechnologiesDotnets")
-    def dynatrace_monitored_technologies_dotnets(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]:
+    def dynatrace_monitored_technologies_dotnets(self) -> pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]:
         """
         The IDs for resource of type `MonitoredTechnologiesDotnet` this `GoldenState` should ignore (and therefore neither warn about their existence nor attempt to delete them). Specify `[]` if you expect no such resources to exist in Dynatrace. Omit this attribute if you don't care about these kinds of resources regarding the golden state of the environment.
         """
         return pulumi.get(self, "dynatrace_monitored_technologies_dotnets")
 
     @dynatrace_monitored_technologies_dotnets.setter
-    def dynatrace_monitored_technologies_dotnets(self, value: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]):
+    def dynatrace_monitored_technologies_dotnets(self, value: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "dynatrace_monitored_technologies_dotnets", value)
 
     @_builtins.property
     @pulumi.getter(name="dynatraceMonitoredTechnologiesGos")
-    def dynatrace_monitored_technologies_gos(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]:
+    def dynatrace_monitored_technologies_gos(self) -> pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]:
         """
         The IDs for resource of type `MonitoredTechnologiesGo` this `GoldenState` should ignore (and therefore neither warn about their existence nor attempt to delete them). Specify `[]` if you expect no such resources to exist in Dynatrace. Omit this attribute if you don't care about these kinds of resources regarding the golden state of the environment.
         """
         return pulumi.get(self, "dynatrace_monitored_technologies_gos")
 
     @dynatrace_monitored_technologies_gos.setter
-    def dynatrace_monitored_technologies_gos(self, value: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]):
+    def dynatrace_monitored_technologies_gos(self, value: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "dynatrace_monitored_technologies_gos", value)
 
     @_builtins.property
     @pulumi.getter(name="dynatraceMonitoredTechnologiesIis")
-    def dynatrace_monitored_technologies_iis(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]:
+    def dynatrace_monitored_technologies_iis(self) -> pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]:
         """
         The IDs for resource of type `MonitoredTechnologiesIis` this `GoldenState` should ignore (and therefore neither warn about their existence nor attempt to delete them). Specify `[]` if you expect no such resources to exist in Dynatrace. Omit this attribute if you don't care about these kinds of resources regarding the golden state of the environment.
         """
         return pulumi.get(self, "dynatrace_monitored_technologies_iis")
 
     @dynatrace_monitored_technologies_iis.setter
-    def dynatrace_monitored_technologies_iis(self, value: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]):
+    def dynatrace_monitored_technologies_iis(self, value: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "dynatrace_monitored_technologies_iis", value)
 
     @_builtins.property
     @pulumi.getter(name="dynatraceMonitoredTechnologiesJavas")
-    def dynatrace_monitored_technologies_javas(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]:
+    def dynatrace_monitored_technologies_javas(self) -> pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]:
         """
         The IDs for resource of type `MonitoredTechnologiesJava` this `GoldenState` should ignore (and therefore neither warn about their existence nor attempt to delete them). Specify `[]` if you expect no such resources to exist in Dynatrace. Omit this attribute if you don't care about these kinds of resources regarding the golden state of the environment.
         """
         return pulumi.get(self, "dynatrace_monitored_technologies_javas")
 
     @dynatrace_monitored_technologies_javas.setter
-    def dynatrace_monitored_technologies_javas(self, value: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]):
+    def dynatrace_monitored_technologies_javas(self, value: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "dynatrace_monitored_technologies_javas", value)
 
     @_builtins.property
     @pulumi.getter(name="dynatraceMonitoredTechnologiesNginxes")
-    def dynatrace_monitored_technologies_nginxes(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]:
+    def dynatrace_monitored_technologies_nginxes(self) -> pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]:
         """
         The IDs for resource of type `MonitoredTechnologiesNginx` this `GoldenState` should ignore (and therefore neither warn about their existence nor attempt to delete them). Specify `[]` if you expect no such resources to exist in Dynatrace. Omit this attribute if you don't care about these kinds of resources regarding the golden state of the environment.
         """
         return pulumi.get(self, "dynatrace_monitored_technologies_nginxes")
 
     @dynatrace_monitored_technologies_nginxes.setter
-    def dynatrace_monitored_technologies_nginxes(self, value: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]):
+    def dynatrace_monitored_technologies_nginxes(self, value: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "dynatrace_monitored_technologies_nginxes", value)
 
     @_builtins.property
     @pulumi.getter(name="dynatraceMonitoredTechnologiesNodejs")
-    def dynatrace_monitored_technologies_nodejs(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]:
+    def dynatrace_monitored_technologies_nodejs(self) -> pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]:
         """
         The IDs for resource of type `MonitoredTechnologiesNodejs` this `GoldenState` should ignore (and therefore neither warn about their existence nor attempt to delete them). Specify `[]` if you expect no such resources to exist in Dynatrace. Omit this attribute if you don't care about these kinds of resources regarding the golden state of the environment.
         """
         return pulumi.get(self, "dynatrace_monitored_technologies_nodejs")
 
     @dynatrace_monitored_technologies_nodejs.setter
-    def dynatrace_monitored_technologies_nodejs(self, value: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]):
+    def dynatrace_monitored_technologies_nodejs(self, value: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "dynatrace_monitored_technologies_nodejs", value)
 
     @_builtins.property
     @pulumi.getter(name="dynatraceMonitoredTechnologiesOpentracings")
-    def dynatrace_monitored_technologies_opentracings(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]:
+    def dynatrace_monitored_technologies_opentracings(self) -> pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]:
         """
         The IDs for resource of type `MonitoredTechnologiesOpentracing` this `GoldenState` should ignore (and therefore neither warn about their existence nor attempt to delete them). Specify `[]` if you expect no such resources to exist in Dynatrace. Omit this attribute if you don't care about these kinds of resources regarding the golden state of the environment.
         """
         return pulumi.get(self, "dynatrace_monitored_technologies_opentracings")
 
     @dynatrace_monitored_technologies_opentracings.setter
-    def dynatrace_monitored_technologies_opentracings(self, value: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]):
+    def dynatrace_monitored_technologies_opentracings(self, value: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "dynatrace_monitored_technologies_opentracings", value)
 
     @_builtins.property
     @pulumi.getter(name="dynatraceMonitoredTechnologiesPhps")
-    def dynatrace_monitored_technologies_phps(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]:
+    def dynatrace_monitored_technologies_phps(self) -> pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]:
         """
         The IDs for resource of type `MonitoredTechnologiesPhp` this `GoldenState` should ignore (and therefore neither warn about their existence nor attempt to delete them). Specify `[]` if you expect no such resources to exist in Dynatrace. Omit this attribute if you don't care about these kinds of resources regarding the golden state of the environment.
         """
         return pulumi.get(self, "dynatrace_monitored_technologies_phps")
 
     @dynatrace_monitored_technologies_phps.setter
-    def dynatrace_monitored_technologies_phps(self, value: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]):
+    def dynatrace_monitored_technologies_phps(self, value: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "dynatrace_monitored_technologies_phps", value)
 
     @_builtins.property
     @pulumi.getter(name="dynatraceMonitoredTechnologiesVarnishes")
-    def dynatrace_monitored_technologies_varnishes(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]:
+    def dynatrace_monitored_technologies_varnishes(self) -> pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]:
         """
         The IDs for resource of type `MonitoredTechnologiesVarnish` this `GoldenState` should ignore (and therefore neither warn about their existence nor attempt to delete them). Specify `[]` if you expect no such resources to exist in Dynatrace. Omit this attribute if you don't care about these kinds of resources regarding the golden state of the environment.
         """
         return pulumi.get(self, "dynatrace_monitored_technologies_varnishes")
 
     @dynatrace_monitored_technologies_varnishes.setter
-    def dynatrace_monitored_technologies_varnishes(self, value: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]):
+    def dynatrace_monitored_technologies_varnishes(self, value: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "dynatrace_monitored_technologies_varnishes", value)
 
     @_builtins.property
     @pulumi.getter(name="dynatraceMonitoredTechnologiesWsmbs")
-    def dynatrace_monitored_technologies_wsmbs(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]:
+    def dynatrace_monitored_technologies_wsmbs(self) -> pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]:
         """
         The IDs for resource of type `MonitoredTechnologiesWsmb` this `GoldenState` should ignore (and therefore neither warn about their existence nor attempt to delete them). Specify `[]` if you expect no such resources to exist in Dynatrace. Omit this attribute if you don't care about these kinds of resources regarding the golden state of the environment.
         """
         return pulumi.get(self, "dynatrace_monitored_technologies_wsmbs")
 
     @dynatrace_monitored_technologies_wsmbs.setter
-    def dynatrace_monitored_technologies_wsmbs(self, value: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]):
+    def dynatrace_monitored_technologies_wsmbs(self, value: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "dynatrace_monitored_technologies_wsmbs", value)
 
     @_builtins.property
     @pulumi.getter(name="dynatraceMutedRequests")
-    def dynatrace_muted_requests(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]:
+    def dynatrace_muted_requests(self) -> pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]:
         """
         The IDs for resource of type `MutedRequests` this `GoldenState` should ignore (and therefore neither warn about their existence nor attempt to delete them). Specify `[]` if you expect no such resources to exist in Dynatrace. Omit this attribute if you don't care about these kinds of resources regarding the golden state of the environment.
         """
         return pulumi.get(self, "dynatrace_muted_requests")
 
     @dynatrace_muted_requests.setter
-    def dynatrace_muted_requests(self, value: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]):
+    def dynatrace_muted_requests(self, value: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "dynatrace_muted_requests", value)
 
     @_builtins.property
     @pulumi.getter(name="dynatraceNettracers")
-    def dynatrace_nettracers(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]:
+    def dynatrace_nettracers(self) -> pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]:
         """
         The IDs for resource of type `Nettracer` this `GoldenState` should ignore (and therefore neither warn about their existence nor attempt to delete them). Specify `[]` if you expect no such resources to exist in Dynatrace. Omit this attribute if you don't care about these kinds of resources regarding the golden state of the environment.
         """
         return pulumi.get(self, "dynatrace_nettracers")
 
     @dynatrace_nettracers.setter
-    def dynatrace_nettracers(self, value: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]):
+    def dynatrace_nettracers(self, value: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "dynatrace_nettracers", value)
 
     @_builtins.property
     @pulumi.getter(name="dynatraceOneagentFeatures")
-    def dynatrace_oneagent_features(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]:
+    def dynatrace_oneagent_features(self) -> pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]:
         """
         The IDs for resource of type `OneagentFeatures` this `GoldenState` should ignore (and therefore neither warn about their existence nor attempt to delete them). Specify `[]` if you expect no such resources to exist in Dynatrace. Omit this attribute if you don't care about these kinds of resources regarding the golden state of the environment.
         """
         return pulumi.get(self, "dynatrace_oneagent_features")
 
     @dynatrace_oneagent_features.setter
-    def dynatrace_oneagent_features(self, value: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]):
+    def dynatrace_oneagent_features(self, value: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "dynatrace_oneagent_features", value)
 
     @_builtins.property
     @pulumi.getter(name="dynatraceOpsGenieNotifications")
-    def dynatrace_ops_genie_notifications(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]:
+    def dynatrace_ops_genie_notifications(self) -> pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]:
         """
         The IDs for resource of type `OpsGenieNotification` this `GoldenState` should ignore (and therefore neither warn about their existence nor attempt to delete them). Specify `[]` if you expect no such resources to exist in Dynatrace. Omit this attribute if you don't care about these kinds of resources regarding the golden state of the environment.
         """
         return pulumi.get(self, "dynatrace_ops_genie_notifications")
 
     @dynatrace_ops_genie_notifications.setter
-    def dynatrace_ops_genie_notifications(self, value: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]):
+    def dynatrace_ops_genie_notifications(self, value: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "dynatrace_ops_genie_notifications", value)
 
     @_builtins.property
     @pulumi.getter(name="dynatracePagerDutyNotifications")
-    def dynatrace_pager_duty_notifications(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]:
+    def dynatrace_pager_duty_notifications(self) -> pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]:
         """
         The IDs for resource of type `PagerDutyNotification` this `GoldenState` should ignore (and therefore neither warn about their existence nor attempt to delete them). Specify `[]` if you expect no such resources to exist in Dynatrace. Omit this attribute if you don't care about these kinds of resources regarding the golden state of the environment.
         """
         return pulumi.get(self, "dynatrace_pager_duty_notifications")
 
     @dynatrace_pager_duty_notifications.setter
-    def dynatrace_pager_duty_notifications(self, value: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]):
+    def dynatrace_pager_duty_notifications(self, value: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "dynatrace_pager_duty_notifications", value)
 
     @_builtins.property
     @pulumi.getter(name="dynatracePgAlertings")
-    def dynatrace_pg_alertings(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]:
+    def dynatrace_pg_alertings(self) -> pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]:
         """
         The IDs for resource of type `PgAlerting` this `GoldenState` should ignore (and therefore neither warn about their existence nor attempt to delete them). Specify `[]` if you expect no such resources to exist in Dynatrace. Omit this attribute if you don't care about these kinds of resources regarding the golden state of the environment.
         """
         return pulumi.get(self, "dynatrace_pg_alertings")
 
     @dynatrace_pg_alertings.setter
-    def dynatrace_pg_alertings(self, value: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]):
+    def dynatrace_pg_alertings(self, value: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "dynatrace_pg_alertings", value)
 
     @_builtins.property
     @pulumi.getter(name="dynatraceProcessAvailabilities")
-    def dynatrace_process_availabilities(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]:
+    def dynatrace_process_availabilities(self) -> pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]:
         """
         The IDs for resource of type `ProcessAvailability` this `GoldenState` should ignore (and therefore neither warn about their existence nor attempt to delete them). Specify `[]` if you expect no such resources to exist in Dynatrace. Omit this attribute if you don't care about these kinds of resources regarding the golden state of the environment.
         """
         return pulumi.get(self, "dynatrace_process_availabilities")
 
     @dynatrace_process_availabilities.setter
-    def dynatrace_process_availabilities(self, value: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]):
+    def dynatrace_process_availabilities(self, value: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "dynatrace_process_availabilities", value)
 
     @_builtins.property
     @pulumi.getter(name="dynatraceProcessGroupDetectionFlags")
-    def dynatrace_process_group_detection_flags(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]:
+    def dynatrace_process_group_detection_flags(self) -> pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]:
         """
         The IDs for resource of type `ProcessGroupDetectionFlags` this `GoldenState` should ignore (and therefore neither warn about their existence nor attempt to delete them). Specify `[]` if you expect no such resources to exist in Dynatrace. Omit this attribute if you don't care about these kinds of resources regarding the golden state of the environment.
         """
         return pulumi.get(self, "dynatrace_process_group_detection_flags")
 
     @dynatrace_process_group_detection_flags.setter
-    def dynatrace_process_group_detection_flags(self, value: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]):
+    def dynatrace_process_group_detection_flags(self, value: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "dynatrace_process_group_detection_flags", value)
 
     @_builtins.property
     @pulumi.getter(name="dynatraceProcessGroupDetections")
-    def dynatrace_process_group_detections(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]:
+    def dynatrace_process_group_detections(self) -> pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]:
         """
         The IDs for resource of type `ProcessGroupDetection` this `GoldenState` should ignore (and therefore neither warn about their existence nor attempt to delete them). Specify `[]` if you expect no such resources to exist in Dynatrace. Omit this attribute if you don't care about these kinds of resources regarding the golden state of the environment.
         """
         return pulumi.get(self, "dynatrace_process_group_detections")
 
     @dynatrace_process_group_detections.setter
-    def dynatrace_process_group_detections(self, value: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]):
+    def dynatrace_process_group_detections(self, value: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "dynatrace_process_group_detections", value)
 
     @_builtins.property
     @pulumi.getter(name="dynatraceProcessGroupMonitorings")
-    def dynatrace_process_group_monitorings(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]:
+    def dynatrace_process_group_monitorings(self) -> pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]:
         """
         The IDs for resource of type `ProcessGroupMonitoring` this `GoldenState` should ignore (and therefore neither warn about their existence nor attempt to delete them). Specify `[]` if you expect no such resources to exist in Dynatrace. Omit this attribute if you don't care about these kinds of resources regarding the golden state of the environment.
         """
         return pulumi.get(self, "dynatrace_process_group_monitorings")
 
     @dynatrace_process_group_monitorings.setter
-    def dynatrace_process_group_monitorings(self, value: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]):
+    def dynatrace_process_group_monitorings(self, value: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "dynatrace_process_group_monitorings", value)
 
     @_builtins.property
     @pulumi.getter(name="dynatraceProcessGroupRums")
-    def dynatrace_process_group_rums(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]:
+    def dynatrace_process_group_rums(self) -> pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]:
         """
         The IDs for resource of type `ProcessGroupRum` this `GoldenState` should ignore (and therefore neither warn about their existence nor attempt to delete them). Specify `[]` if you expect no such resources to exist in Dynatrace. Omit this attribute if you don't care about these kinds of resources regarding the golden state of the environment.
         """
         return pulumi.get(self, "dynatrace_process_group_rums")
 
     @dynatrace_process_group_rums.setter
-    def dynatrace_process_group_rums(self, value: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]):
+    def dynatrace_process_group_rums(self, value: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "dynatrace_process_group_rums", value)
 
     @_builtins.property
     @pulumi.getter(name="dynatraceProcessGroupSimpleDetections")
-    def dynatrace_process_group_simple_detections(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]:
+    def dynatrace_process_group_simple_detections(self) -> pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]:
         """
         The IDs for resource of type `ProcessGroupSimpleDetection` this `GoldenState` should ignore (and therefore neither warn about their existence nor attempt to delete them). Specify `[]` if you expect no such resources to exist in Dynatrace. Omit this attribute if you don't care about these kinds of resources regarding the golden state of the environment.
         """
         return pulumi.get(self, "dynatrace_process_group_simple_detections")
 
     @dynatrace_process_group_simple_detections.setter
-    def dynatrace_process_group_simple_detections(self, value: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]):
+    def dynatrace_process_group_simple_detections(self, value: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "dynatrace_process_group_simple_detections", value)
 
     @_builtins.property
     @pulumi.getter(name="dynatraceProcessMonitoringRules")
-    def dynatrace_process_monitoring_rules(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]:
+    def dynatrace_process_monitoring_rules(self) -> pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]:
         """
         The IDs for resource of type `ProcessMonitoringRule` this `GoldenState` should ignore (and therefore neither warn about their existence nor attempt to delete them). Specify `[]` if you expect no such resources to exist in Dynatrace. Omit this attribute if you don't care about these kinds of resources regarding the golden state of the environment.
         """
         return pulumi.get(self, "dynatrace_process_monitoring_rules")
 
     @dynatrace_process_monitoring_rules.setter
-    def dynatrace_process_monitoring_rules(self, value: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]):
+    def dynatrace_process_monitoring_rules(self, value: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "dynatrace_process_monitoring_rules", value)
 
     @_builtins.property
     @pulumi.getter(name="dynatraceProcessMonitorings")
-    def dynatrace_process_monitorings(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]:
+    def dynatrace_process_monitorings(self) -> pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]:
         """
         The IDs for resource of type `ProcessMonitoring` this `GoldenState` should ignore (and therefore neither warn about their existence nor attempt to delete them). Specify `[]` if you expect no such resources to exist in Dynatrace. Omit this attribute if you don't care about these kinds of resources regarding the golden state of the environment.
         """
         return pulumi.get(self, "dynatrace_process_monitorings")
 
     @dynatrace_process_monitorings.setter
-    def dynatrace_process_monitorings(self, value: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]):
+    def dynatrace_process_monitorings(self, value: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "dynatrace_process_monitorings", value)
 
     @_builtins.property
     @pulumi.getter(name="dynatraceProcessVisibilities")
-    def dynatrace_process_visibilities(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]:
+    def dynatrace_process_visibilities(self) -> pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]:
         """
         The IDs for resource of type `ProcessVisibility` this `GoldenState` should ignore (and therefore neither warn about their existence nor attempt to delete them). Specify `[]` if you expect no such resources to exist in Dynatrace. Omit this attribute if you don't care about these kinds of resources regarding the golden state of the environment.
         """
         return pulumi.get(self, "dynatrace_process_visibilities")
 
     @dynatrace_process_visibilities.setter
-    def dynatrace_process_visibilities(self, value: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]):
+    def dynatrace_process_visibilities(self, value: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "dynatrace_process_visibilities", value)
 
     @_builtins.property
     @pulumi.getter(name="dynatraceProcessgroupNamings")
-    def dynatrace_processgroup_namings(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]:
+    def dynatrace_processgroup_namings(self) -> pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]:
         """
         The IDs for resource of type `ProcessgroupNaming` this `GoldenState` should ignore (and therefore neither warn about their existence nor attempt to delete them). Specify `[]` if you expect no such resources to exist in Dynatrace. Omit this attribute if you don't care about these kinds of resources regarding the golden state of the environment.
         """
         return pulumi.get(self, "dynatrace_processgroup_namings")
 
     @dynatrace_processgroup_namings.setter
-    def dynatrace_processgroup_namings(self, value: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]):
+    def dynatrace_processgroup_namings(self, value: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "dynatrace_processgroup_namings", value)
 
     @_builtins.property
     @pulumi.getter(name="dynatraceQueueManagers")
-    def dynatrace_queue_managers(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]:
+    def dynatrace_queue_managers(self) -> pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]:
         """
         The IDs for resource of type `QueueManager` this `GoldenState` should ignore (and therefore neither warn about their existence nor attempt to delete them). Specify `[]` if you expect no such resources to exist in Dynatrace. Omit this attribute if you don't care about these kinds of resources regarding the golden state of the environment.
         """
         return pulumi.get(self, "dynatrace_queue_managers")
 
     @dynatrace_queue_managers.setter
-    def dynatrace_queue_managers(self, value: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]):
+    def dynatrace_queue_managers(self, value: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "dynatrace_queue_managers", value)
 
     @_builtins.property
     @pulumi.getter(name="dynatraceQueueSharingGroups")
-    def dynatrace_queue_sharing_groups(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]:
+    def dynatrace_queue_sharing_groups(self) -> pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]:
         """
         The IDs for resource of type `QueueSharingGroups` this `GoldenState` should ignore (and therefore neither warn about their existence nor attempt to delete them). Specify `[]` if you expect no such resources to exist in Dynatrace. Omit this attribute if you don't care about these kinds of resources regarding the golden state of the environment.
         """
         return pulumi.get(self, "dynatrace_queue_sharing_groups")
 
     @dynatrace_queue_sharing_groups.setter
-    def dynatrace_queue_sharing_groups(self, value: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]):
+    def dynatrace_queue_sharing_groups(self, value: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "dynatrace_queue_sharing_groups", value)
 
     @_builtins.property
     @pulumi.getter(name="dynatraceRequestAttributes")
-    def dynatrace_request_attributes(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]:
+    def dynatrace_request_attributes(self) -> pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]:
         """
         The IDs for resource of type `RequestAttribute` this `GoldenState` should ignore (and therefore neither warn about their existence nor attempt to delete them). Specify `[]` if you expect no such resources to exist in Dynatrace. Omit this attribute if you don't care about these kinds of resources regarding the golden state of the environment.
         """
         return pulumi.get(self, "dynatrace_request_attributes")
 
     @dynatrace_request_attributes.setter
-    def dynatrace_request_attributes(self, value: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]):
+    def dynatrace_request_attributes(self, value: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "dynatrace_request_attributes", value)
 
     @_builtins.property
     @pulumi.getter(name="dynatraceRequestNamings")
-    def dynatrace_request_namings(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]:
+    def dynatrace_request_namings(self) -> pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]:
         """
         The IDs for resource of type `RequestNaming` this `GoldenState` should ignore (and therefore neither warn about their existence nor attempt to delete them). Specify `[]` if you expect no such resources to exist in Dynatrace. Omit this attribute if you don't care about these kinds of resources regarding the golden state of the environment.
         """
         return pulumi.get(self, "dynatrace_request_namings")
 
     @dynatrace_request_namings.setter
-    def dynatrace_request_namings(self, value: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]):
+    def dynatrace_request_namings(self, value: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "dynatrace_request_namings", value)
 
     @_builtins.property
     @pulumi.getter(name="dynatraceRumAdvancedCorrelations")
-    def dynatrace_rum_advanced_correlations(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]:
+    def dynatrace_rum_advanced_correlations(self) -> pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]:
         """
         The IDs for resource of type `RumAdvancedCorrelation` this `GoldenState` should ignore (and therefore neither warn about their existence nor attempt to delete them). Specify `[]` if you expect no such resources to exist in Dynatrace. Omit this attribute if you don't care about these kinds of resources regarding the golden state of the environment.
         """
         return pulumi.get(self, "dynatrace_rum_advanced_correlations")
 
     @dynatrace_rum_advanced_correlations.setter
-    def dynatrace_rum_advanced_correlations(self, value: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]):
+    def dynatrace_rum_advanced_correlations(self, value: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "dynatrace_rum_advanced_correlations", value)
 
     @_builtins.property
     @pulumi.getter(name="dynatraceRumIpLocations")
-    def dynatrace_rum_ip_locations(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]:
+    def dynatrace_rum_ip_locations(self) -> pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]:
         """
         The IDs for resource of type `RumIpLocations` this `GoldenState` should ignore (and therefore neither warn about their existence nor attempt to delete them). Specify `[]` if you expect no such resources to exist in Dynatrace. Omit this attribute if you don't care about these kinds of resources regarding the golden state of the environment.
         """
         return pulumi.get(self, "dynatrace_rum_ip_locations")
 
     @dynatrace_rum_ip_locations.setter
-    def dynatrace_rum_ip_locations(self, value: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]):
+    def dynatrace_rum_ip_locations(self, value: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "dynatrace_rum_ip_locations", value)
 
     @_builtins.property
     @pulumi.getter(name="dynatraceRumProviderBreakdowns")
-    def dynatrace_rum_provider_breakdowns(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]:
+    def dynatrace_rum_provider_breakdowns(self) -> pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]:
         """
         The IDs for resource of type `RumProviderBreakdown` this `GoldenState` should ignore (and therefore neither warn about their existence nor attempt to delete them). Specify `[]` if you expect no such resources to exist in Dynatrace. Omit this attribute if you don't care about these kinds of resources regarding the golden state of the environment.
         """
         return pulumi.get(self, "dynatrace_rum_provider_breakdowns")
 
     @dynatrace_rum_provider_breakdowns.setter
-    def dynatrace_rum_provider_breakdowns(self, value: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]):
+    def dynatrace_rum_provider_breakdowns(self, value: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "dynatrace_rum_provider_breakdowns", value)
 
     @_builtins.property
     @pulumi.getter(name="dynatraceServiceFailures")
-    def dynatrace_service_failures(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]:
+    def dynatrace_service_failures(self) -> pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]:
         """
         The IDs for resource of type `ServiceFailure` this `GoldenState` should ignore (and therefore neither warn about their existence nor attempt to delete them). Specify `[]` if you expect no such resources to exist in Dynatrace. Omit this attribute if you don't care about these kinds of resources regarding the golden state of the environment.
         """
         return pulumi.get(self, "dynatrace_service_failures")
 
     @dynatrace_service_failures.setter
-    def dynatrace_service_failures(self, value: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]):
+    def dynatrace_service_failures(self, value: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "dynatrace_service_failures", value)
 
     @_builtins.property
     @pulumi.getter(name="dynatraceServiceHttpFailures")
-    def dynatrace_service_http_failures(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]:
+    def dynatrace_service_http_failures(self) -> pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]:
         """
         The IDs for resource of type `ServiceHttpFailure` this `GoldenState` should ignore (and therefore neither warn about their existence nor attempt to delete them). Specify `[]` if you expect no such resources to exist in Dynatrace. Omit this attribute if you don't care about these kinds of resources regarding the golden state of the environment.
         """
         return pulumi.get(self, "dynatrace_service_http_failures")
 
     @dynatrace_service_http_failures.setter
-    def dynatrace_service_http_failures(self, value: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]):
+    def dynatrace_service_http_failures(self, value: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "dynatrace_service_http_failures", value)
 
     @_builtins.property
     @pulumi.getter(name="dynatraceServiceNamings")
-    def dynatrace_service_namings(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]:
+    def dynatrace_service_namings(self) -> pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]:
         """
         The IDs for resource of type `ServiceNaming` this `GoldenState` should ignore (and therefore neither warn about their existence nor attempt to delete them). Specify `[]` if you expect no such resources to exist in Dynatrace. Omit this attribute if you don't care about these kinds of resources regarding the golden state of the environment.
         """
         return pulumi.get(self, "dynatrace_service_namings")
 
     @dynatrace_service_namings.setter
-    def dynatrace_service_namings(self, value: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]):
+    def dynatrace_service_namings(self, value: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "dynatrace_service_namings", value)
 
     @_builtins.property
     @pulumi.getter(name="dynatraceServiceNowNotifications")
-    def dynatrace_service_now_notifications(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]:
+    def dynatrace_service_now_notifications(self) -> pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]:
         """
         The IDs for resource of type `ServiceNowNotification` this `GoldenState` should ignore (and therefore neither warn about their existence nor attempt to delete them). Specify `[]` if you expect no such resources to exist in Dynatrace. Omit this attribute if you don't care about these kinds of resources regarding the golden state of the environment.
         """
         return pulumi.get(self, "dynatrace_service_now_notifications")
 
     @dynatrace_service_now_notifications.setter
-    def dynatrace_service_now_notifications(self, value: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]):
+    def dynatrace_service_now_notifications(self, value: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "dynatrace_service_now_notifications", value)
 
     @_builtins.property
     @pulumi.getter(name="dynatraceSessionReplayWebPrivacies")
-    def dynatrace_session_replay_web_privacies(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]:
+    def dynatrace_session_replay_web_privacies(self) -> pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]:
         """
         The IDs for resource of type `SessionReplayWebPrivacy` this `GoldenState` should ignore (and therefore neither warn about their existence nor attempt to delete them). Specify `[]` if you expect no such resources to exist in Dynatrace. Omit this attribute if you don't care about these kinds of resources regarding the golden state of the environment.
         """
         return pulumi.get(self, "dynatrace_session_replay_web_privacies")
 
     @dynatrace_session_replay_web_privacies.setter
-    def dynatrace_session_replay_web_privacies(self, value: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]):
+    def dynatrace_session_replay_web_privacies(self, value: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "dynatrace_session_replay_web_privacies", value)
 
     @_builtins.property
     @pulumi.getter(name="dynatraceSlackNotifications")
-    def dynatrace_slack_notifications(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]:
+    def dynatrace_slack_notifications(self) -> pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]:
         """
         The IDs for resource of type `SlackNotification` this `GoldenState` should ignore (and therefore neither warn about their existence nor attempt to delete them). Specify `[]` if you expect no such resources to exist in Dynatrace. Omit this attribute if you don't care about these kinds of resources regarding the golden state of the environment.
         """
         return pulumi.get(self, "dynatrace_slack_notifications")
 
     @dynatrace_slack_notifications.setter
-    def dynatrace_slack_notifications(self, value: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]):
+    def dynatrace_slack_notifications(self, value: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "dynatrace_slack_notifications", value)
 
     @_builtins.property
     @pulumi.getter(name="dynatraceSloV2s")
-    def dynatrace_slo_v2s(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]:
+    def dynatrace_slo_v2s(self) -> pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]:
         """
         The IDs for resource of type `SloV2` this `GoldenState` should ignore (and therefore neither warn about their existence nor attempt to delete them). Specify `[]` if you expect no such resources to exist in Dynatrace. Omit this attribute if you don't care about these kinds of resources regarding the golden state of the environment.
         """
         return pulumi.get(self, "dynatrace_slo_v2s")
 
     @dynatrace_slo_v2s.setter
-    def dynatrace_slo_v2s(self, value: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]):
+    def dynatrace_slo_v2s(self, value: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "dynatrace_slo_v2s", value)
 
     @_builtins.property
     @pulumi.getter(name="dynatraceSpanCaptureRules")
-    def dynatrace_span_capture_rules(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]:
+    def dynatrace_span_capture_rules(self) -> pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]:
         """
         The IDs for resource of type `SpanCaptureRule` this `GoldenState` should ignore (and therefore neither warn about their existence nor attempt to delete them). Specify `[]` if you expect no such resources to exist in Dynatrace. Omit this attribute if you don't care about these kinds of resources regarding the golden state of the environment.
         """
         return pulumi.get(self, "dynatrace_span_capture_rules")
 
     @dynatrace_span_capture_rules.setter
-    def dynatrace_span_capture_rules(self, value: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]):
+    def dynatrace_span_capture_rules(self, value: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "dynatrace_span_capture_rules", value)
 
     @_builtins.property
     @pulumi.getter(name="dynatraceSpanContextPropagations")
-    def dynatrace_span_context_propagations(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]:
+    def dynatrace_span_context_propagations(self) -> pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]:
         """
         The IDs for resource of type `SpanContextPropagation` this `GoldenState` should ignore (and therefore neither warn about their existence nor attempt to delete them). Specify `[]` if you expect no such resources to exist in Dynatrace. Omit this attribute if you don't care about these kinds of resources regarding the golden state of the environment.
         """
         return pulumi.get(self, "dynatrace_span_context_propagations")
 
     @dynatrace_span_context_propagations.setter
-    def dynatrace_span_context_propagations(self, value: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]):
+    def dynatrace_span_context_propagations(self, value: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "dynatrace_span_context_propagations", value)
 
     @_builtins.property
     @pulumi.getter(name="dynatraceSyntheticLocations")
-    def dynatrace_synthetic_locations(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]:
+    def dynatrace_synthetic_locations(self) -> pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]:
         """
         The IDs for resource of type `SyntheticLocation` this `GoldenState` should ignore (and therefore neither warn about their existence nor attempt to delete them). Specify `[]` if you expect no such resources to exist in Dynatrace. Omit this attribute if you don't care about these kinds of resources regarding the golden state of the environment.
         """
         return pulumi.get(self, "dynatrace_synthetic_locations")
 
     @dynatrace_synthetic_locations.setter
-    def dynatrace_synthetic_locations(self, value: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]):
+    def dynatrace_synthetic_locations(self, value: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "dynatrace_synthetic_locations", value)
 
     @_builtins.property
     @pulumi.getter(name="dynatraceTrelloNotifications")
-    def dynatrace_trello_notifications(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]:
+    def dynatrace_trello_notifications(self) -> pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]:
         """
         The IDs for resource of type `TrelloNotification` this `GoldenState` should ignore (and therefore neither warn about their existence nor attempt to delete them). Specify `[]` if you expect no such resources to exist in Dynatrace. Omit this attribute if you don't care about these kinds of resources regarding the golden state of the environment.
         """
         return pulumi.get(self, "dynatrace_trello_notifications")
 
     @dynatrace_trello_notifications.setter
-    def dynatrace_trello_notifications(self, value: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]):
+    def dynatrace_trello_notifications(self, value: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "dynatrace_trello_notifications", value)
 
     @_builtins.property
     @pulumi.getter(name="dynatraceUpdateWindows")
-    def dynatrace_update_windows(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]:
+    def dynatrace_update_windows(self) -> pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]:
         """
         The IDs for resource of type `UpdateWindows` this `GoldenState` should ignore (and therefore neither warn about their existence nor attempt to delete them). Specify `[]` if you expect no such resources to exist in Dynatrace. Omit this attribute if you don't care about these kinds of resources regarding the golden state of the environment.
         """
         return pulumi.get(self, "dynatrace_update_windows")
 
     @dynatrace_update_windows.setter
-    def dynatrace_update_windows(self, value: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]):
+    def dynatrace_update_windows(self, value: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "dynatrace_update_windows", value)
 
     @_builtins.property
     @pulumi.getter(name="dynatraceUsabilityAnalytics")
-    def dynatrace_usability_analytics(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]:
+    def dynatrace_usability_analytics(self) -> pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]:
         """
         The IDs for resource of type `UsabilityAnalytics` this `GoldenState` should ignore (and therefore neither warn about their existence nor attempt to delete them). Specify `[]` if you expect no such resources to exist in Dynatrace. Omit this attribute if you don't care about these kinds of resources regarding the golden state of the environment.
         """
         return pulumi.get(self, "dynatrace_usability_analytics")
 
     @dynatrace_usability_analytics.setter
-    def dynatrace_usability_analytics(self, value: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]):
+    def dynatrace_usability_analytics(self, value: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "dynatrace_usability_analytics", value)
 
     @_builtins.property
     @pulumi.getter(name="dynatraceVictorOpsNotifications")
-    def dynatrace_victor_ops_notifications(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]:
+    def dynatrace_victor_ops_notifications(self) -> pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]:
         """
         The IDs for resource of type `VictorOpsNotification` this `GoldenState` should ignore (and therefore neither warn about their existence nor attempt to delete them). Specify `[]` if you expect no such resources to exist in Dynatrace. Omit this attribute if you don't care about these kinds of resources regarding the golden state of the environment.
         """
         return pulumi.get(self, "dynatrace_victor_ops_notifications")
 
     @dynatrace_victor_ops_notifications.setter
-    def dynatrace_victor_ops_notifications(self, value: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]):
+    def dynatrace_victor_ops_notifications(self, value: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "dynatrace_victor_ops_notifications", value)
 
     @_builtins.property
     @pulumi.getter(name="dynatraceWebAppAnomalies")
-    def dynatrace_web_app_anomalies(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]:
+    def dynatrace_web_app_anomalies(self) -> pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]:
         """
         The IDs for resource of type `WebAppAnomalies` this `GoldenState` should ignore (and therefore neither warn about their existence nor attempt to delete them). Specify `[]` if you expect no such resources to exist in Dynatrace. Omit this attribute if you don't care about these kinds of resources regarding the golden state of the environment.
         """
         return pulumi.get(self, "dynatrace_web_app_anomalies")
 
     @dynatrace_web_app_anomalies.setter
-    def dynatrace_web_app_anomalies(self, value: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]):
+    def dynatrace_web_app_anomalies(self, value: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "dynatrace_web_app_anomalies", value)
 
     @_builtins.property
     @pulumi.getter(name="dynatraceWebAppBeaconOrigins")
-    def dynatrace_web_app_beacon_origins(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]:
+    def dynatrace_web_app_beacon_origins(self) -> pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]:
         """
         The IDs for resource of type `WebAppBeaconOrigins` this `GoldenState` should ignore (and therefore neither warn about their existence nor attempt to delete them). Specify `[]` if you expect no such resources to exist in Dynatrace. Omit this attribute if you don't care about these kinds of resources regarding the golden state of the environment.
         """
         return pulumi.get(self, "dynatrace_web_app_beacon_origins")
 
     @dynatrace_web_app_beacon_origins.setter
-    def dynatrace_web_app_beacon_origins(self, value: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]):
+    def dynatrace_web_app_beacon_origins(self, value: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "dynatrace_web_app_beacon_origins", value)
 
     @_builtins.property
     @pulumi.getter(name="dynatraceWebAppEnablements")
-    def dynatrace_web_app_enablements(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]:
+    def dynatrace_web_app_enablements(self) -> pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]:
         """
         The IDs for resource of type `WebAppEnablement` this `GoldenState` should ignore (and therefore neither warn about their existence nor attempt to delete them). Specify `[]` if you expect no such resources to exist in Dynatrace. Omit this attribute if you don't care about these kinds of resources regarding the golden state of the environment.
         """
         return pulumi.get(self, "dynatrace_web_app_enablements")
 
     @dynatrace_web_app_enablements.setter
-    def dynatrace_web_app_enablements(self, value: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]):
+    def dynatrace_web_app_enablements(self, value: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "dynatrace_web_app_enablements", value)
 
     @_builtins.property
     @pulumi.getter(name="dynatraceWebAppResourceCleanups")
-    def dynatrace_web_app_resource_cleanups(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]:
+    def dynatrace_web_app_resource_cleanups(self) -> pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]:
         """
         The IDs for resource of type `WebAppResourceCleanup` this `GoldenState` should ignore (and therefore neither warn about their existence nor attempt to delete them). Specify `[]` if you expect no such resources to exist in Dynatrace. Omit this attribute if you don't care about these kinds of resources regarding the golden state of the environment.
         """
         return pulumi.get(self, "dynatrace_web_app_resource_cleanups")
 
     @dynatrace_web_app_resource_cleanups.setter
-    def dynatrace_web_app_resource_cleanups(self, value: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]):
+    def dynatrace_web_app_resource_cleanups(self, value: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "dynatrace_web_app_resource_cleanups", value)
 
     @_builtins.property
     @pulumi.getter(name="dynatraceWebAppResourceTypes")
-    def dynatrace_web_app_resource_types(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]:
+    def dynatrace_web_app_resource_types(self) -> pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]:
         """
         The IDs for resource of type `WebAppResourceTypes` this `GoldenState` should ignore (and therefore neither warn about their existence nor attempt to delete them). Specify `[]` if you expect no such resources to exist in Dynatrace. Omit this attribute if you don't care about these kinds of resources regarding the golden state of the environment.
         """
         return pulumi.get(self, "dynatrace_web_app_resource_types")
 
     @dynatrace_web_app_resource_types.setter
-    def dynatrace_web_app_resource_types(self, value: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]):
+    def dynatrace_web_app_resource_types(self, value: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "dynatrace_web_app_resource_types", value)
 
     @_builtins.property
     @pulumi.getter(name="dynatraceWebApplications")
-    def dynatrace_web_applications(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]:
+    def dynatrace_web_applications(self) -> pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]:
         """
         The IDs for resource of type `WebApplication` this `GoldenState` should ignore (and therefore neither warn about their existence nor attempt to delete them). Specify `[]` if you expect no such resources to exist in Dynatrace. Omit this attribute if you don't care about these kinds of resources regarding the golden state of the environment.
         """
         return pulumi.get(self, "dynatrace_web_applications")
 
     @dynatrace_web_applications.setter
-    def dynatrace_web_applications(self, value: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]):
+    def dynatrace_web_applications(self, value: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "dynatrace_web_applications", value)
 
     @_builtins.property
     @pulumi.getter(name="dynatraceWebhookNotifications")
-    def dynatrace_webhook_notifications(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]:
+    def dynatrace_webhook_notifications(self) -> pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]:
         """
         The IDs for resource of type `WebhookNotification` this `GoldenState` should ignore (and therefore neither warn about their existence nor attempt to delete them). Specify `[]` if you expect no such resources to exist in Dynatrace. Omit this attribute if you don't care about these kinds of resources regarding the golden state of the environment.
         """
         return pulumi.get(self, "dynatrace_webhook_notifications")
 
     @dynatrace_webhook_notifications.setter
-    def dynatrace_webhook_notifications(self, value: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]):
+    def dynatrace_webhook_notifications(self, value: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "dynatrace_webhook_notifications", value)
 
     @_builtins.property
     @pulumi.getter(name="dynatraceXmattersNotifications")
-    def dynatrace_xmatters_notifications(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]:
+    def dynatrace_xmatters_notifications(self) -> pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]:
         """
         The IDs for resource of type `XmattersNotification` this `GoldenState` should ignore (and therefore neither warn about their existence nor attempt to delete them). Specify `[]` if you expect no such resources to exist in Dynatrace. Omit this attribute if you don't care about these kinds of resources regarding the golden state of the environment.
         """
         return pulumi.get(self, "dynatrace_xmatters_notifications")
 
     @dynatrace_xmatters_notifications.setter
-    def dynatrace_xmatters_notifications(self, value: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]):
+    def dynatrace_xmatters_notifications(self, value: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "dynatrace_xmatters_notifications", value)
 
     @_builtins.property
     @pulumi.getter
-    def mode(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def mode(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Possible values are:
         * `DELETE` if you want resources to automatally get deleted`n* `WARN` if you want to get notified about resources that aren't managed by Terraform via a warning message from this resource`
@@ -1625,113 +1625,113 @@ class GoldenStateArgs:
         return pulumi.get(self, "mode")
 
     @mode.setter
-    def mode(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def mode(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "mode", value)
 
 
 @pulumi.input_type
 class _GoldenStateState:
     def __init__(__self__, *,
-                 dynatrace_aix_extensions: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-                 dynatrace_alertings: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-                 dynatrace_ansible_tower_notifications: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-                 dynatrace_application_detection_rules: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-                 dynatrace_application_error_rules: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-                 dynatrace_autotag_v2s: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-                 dynatrace_aws_credentials: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-                 dynatrace_azure_credentials: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-                 dynatrace_browser_monitors: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-                 dynatrace_calculated_mobile_metrics: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-                 dynatrace_calculated_service_metrics: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-                 dynatrace_calculated_synthetic_metrics: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-                 dynatrace_calculated_web_metrics: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-                 dynatrace_credentials: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-                 dynatrace_custom_app_anomalies: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-                 dynatrace_custom_app_crash_rates: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-                 dynatrace_custom_app_enablements: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-                 dynatrace_custom_services: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-                 dynatrace_data_privacies: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-                 dynatrace_database_anomalies_v2s: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-                 dynatrace_declarative_groupings: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-                 dynatrace_disk_anomalies_v2s: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-                 dynatrace_disk_options: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-                 dynatrace_disk_specific_anomalies_v2s: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-                 dynatrace_email_notifications: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-                 dynatrace_extension_execution_controllers: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-                 dynatrace_generic_types: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-                 dynatrace_host_anomalies_v2s: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-                 dynatrace_host_namings: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-                 dynatrace_host_process_group_monitorings: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-                 dynatrace_http_monitors: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-                 dynatrace_ims_bridges: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-                 dynatrace_jira_notifications: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-                 dynatrace_k8s_namespace_anomalies: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-                 dynatrace_key_requests: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-                 dynatrace_log_metrics: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-                 dynatrace_maintenances: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-                 dynatrace_management_zone_v2s: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-                 dynatrace_metric_events: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-                 dynatrace_mobile_app_anomalies: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-                 dynatrace_mobile_app_crash_rates: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-                 dynatrace_mobile_app_enablements: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-                 dynatrace_mobile_applications: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-                 dynatrace_monitored_technologies_apaches: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-                 dynatrace_monitored_technologies_dotnets: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-                 dynatrace_monitored_technologies_gos: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-                 dynatrace_monitored_technologies_iis: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-                 dynatrace_monitored_technologies_javas: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-                 dynatrace_monitored_technologies_nginxes: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-                 dynatrace_monitored_technologies_nodejs: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-                 dynatrace_monitored_technologies_opentracings: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-                 dynatrace_monitored_technologies_phps: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-                 dynatrace_monitored_technologies_varnishes: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-                 dynatrace_monitored_technologies_wsmbs: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-                 dynatrace_muted_requests: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-                 dynatrace_nettracers: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-                 dynatrace_oneagent_features: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-                 dynatrace_ops_genie_notifications: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-                 dynatrace_pager_duty_notifications: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-                 dynatrace_pg_alertings: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-                 dynatrace_process_availabilities: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-                 dynatrace_process_group_detection_flags: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-                 dynatrace_process_group_detections: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-                 dynatrace_process_group_monitorings: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-                 dynatrace_process_group_rums: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-                 dynatrace_process_group_simple_detections: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-                 dynatrace_process_monitoring_rules: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-                 dynatrace_process_monitorings: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-                 dynatrace_process_visibilities: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-                 dynatrace_processgroup_namings: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-                 dynatrace_queue_managers: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-                 dynatrace_queue_sharing_groups: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-                 dynatrace_request_attributes: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-                 dynatrace_request_namings: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-                 dynatrace_rum_advanced_correlations: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-                 dynatrace_rum_ip_locations: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-                 dynatrace_rum_provider_breakdowns: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-                 dynatrace_service_failures: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-                 dynatrace_service_http_failures: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-                 dynatrace_service_namings: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-                 dynatrace_service_now_notifications: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-                 dynatrace_session_replay_web_privacies: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-                 dynatrace_slack_notifications: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-                 dynatrace_slo_v2s: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-                 dynatrace_span_capture_rules: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-                 dynatrace_span_context_propagations: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-                 dynatrace_synthetic_locations: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-                 dynatrace_trello_notifications: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-                 dynatrace_update_windows: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-                 dynatrace_usability_analytics: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-                 dynatrace_victor_ops_notifications: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-                 dynatrace_web_app_anomalies: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-                 dynatrace_web_app_beacon_origins: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-                 dynatrace_web_app_enablements: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-                 dynatrace_web_app_resource_cleanups: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-                 dynatrace_web_app_resource_types: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-                 dynatrace_web_applications: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-                 dynatrace_webhook_notifications: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-                 dynatrace_xmatters_notifications: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-                 mode: Optional[pulumi.Input[_builtins.str]] = None):
+                 dynatrace_aix_extensions: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 dynatrace_alertings: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 dynatrace_ansible_tower_notifications: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 dynatrace_application_detection_rules: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 dynatrace_application_error_rules: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 dynatrace_autotag_v2s: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 dynatrace_aws_credentials: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 dynatrace_azure_credentials: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 dynatrace_browser_monitors: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 dynatrace_calculated_mobile_metrics: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 dynatrace_calculated_service_metrics: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 dynatrace_calculated_synthetic_metrics: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 dynatrace_calculated_web_metrics: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 dynatrace_credentials: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 dynatrace_custom_app_anomalies: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 dynatrace_custom_app_crash_rates: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 dynatrace_custom_app_enablements: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 dynatrace_custom_services: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 dynatrace_data_privacies: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 dynatrace_database_anomalies_v2s: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 dynatrace_declarative_groupings: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 dynatrace_disk_anomalies_v2s: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 dynatrace_disk_options: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 dynatrace_disk_specific_anomalies_v2s: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 dynatrace_email_notifications: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 dynatrace_extension_execution_controllers: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 dynatrace_generic_types: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 dynatrace_host_anomalies_v2s: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 dynatrace_host_namings: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 dynatrace_host_process_group_monitorings: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 dynatrace_http_monitors: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 dynatrace_ims_bridges: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 dynatrace_jira_notifications: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 dynatrace_k8s_namespace_anomalies: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 dynatrace_key_requests: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 dynatrace_log_metrics: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 dynatrace_maintenances: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 dynatrace_management_zone_v2s: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 dynatrace_metric_events: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 dynatrace_mobile_app_anomalies: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 dynatrace_mobile_app_crash_rates: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 dynatrace_mobile_app_enablements: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 dynatrace_mobile_applications: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 dynatrace_monitored_technologies_apaches: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 dynatrace_monitored_technologies_dotnets: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 dynatrace_monitored_technologies_gos: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 dynatrace_monitored_technologies_iis: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 dynatrace_monitored_technologies_javas: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 dynatrace_monitored_technologies_nginxes: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 dynatrace_monitored_technologies_nodejs: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 dynatrace_monitored_technologies_opentracings: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 dynatrace_monitored_technologies_phps: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 dynatrace_monitored_technologies_varnishes: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 dynatrace_monitored_technologies_wsmbs: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 dynatrace_muted_requests: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 dynatrace_nettracers: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 dynatrace_oneagent_features: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 dynatrace_ops_genie_notifications: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 dynatrace_pager_duty_notifications: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 dynatrace_pg_alertings: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 dynatrace_process_availabilities: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 dynatrace_process_group_detection_flags: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 dynatrace_process_group_detections: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 dynatrace_process_group_monitorings: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 dynatrace_process_group_rums: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 dynatrace_process_group_simple_detections: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 dynatrace_process_monitoring_rules: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 dynatrace_process_monitorings: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 dynatrace_process_visibilities: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 dynatrace_processgroup_namings: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 dynatrace_queue_managers: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 dynatrace_queue_sharing_groups: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 dynatrace_request_attributes: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 dynatrace_request_namings: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 dynatrace_rum_advanced_correlations: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 dynatrace_rum_ip_locations: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 dynatrace_rum_provider_breakdowns: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 dynatrace_service_failures: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 dynatrace_service_http_failures: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 dynatrace_service_namings: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 dynatrace_service_now_notifications: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 dynatrace_session_replay_web_privacies: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 dynatrace_slack_notifications: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 dynatrace_slo_v2s: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 dynatrace_span_capture_rules: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 dynatrace_span_context_propagations: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 dynatrace_synthetic_locations: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 dynatrace_trello_notifications: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 dynatrace_update_windows: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 dynatrace_usability_analytics: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 dynatrace_victor_ops_notifications: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 dynatrace_web_app_anomalies: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 dynatrace_web_app_beacon_origins: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 dynatrace_web_app_enablements: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 dynatrace_web_app_resource_cleanups: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 dynatrace_web_app_resource_types: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 dynatrace_web_applications: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 dynatrace_webhook_notifications: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 dynatrace_xmatters_notifications: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 mode: pulumi.Input[Optional[_builtins.str]] = None):
         """
         Input properties used for looking up and filtering GoldenState resources.
 
@@ -2041,1195 +2041,1195 @@ class _GoldenStateState:
 
     @_builtins.property
     @pulumi.getter(name="dynatraceAixExtensions")
-    def dynatrace_aix_extensions(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]:
+    def dynatrace_aix_extensions(self) -> pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]:
         """
         The IDs for resource of type `AixExtension` this `GoldenState` should ignore (and therefore neither warn about their existence nor attempt to delete them). Specify `[]` if you expect no such resources to exist in Dynatrace. Omit this attribute if you don't care about these kinds of resources regarding the golden state of the environment.
         """
         return pulumi.get(self, "dynatrace_aix_extensions")
 
     @dynatrace_aix_extensions.setter
-    def dynatrace_aix_extensions(self, value: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]):
+    def dynatrace_aix_extensions(self, value: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "dynatrace_aix_extensions", value)
 
     @_builtins.property
     @pulumi.getter(name="dynatraceAlertings")
-    def dynatrace_alertings(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]:
+    def dynatrace_alertings(self) -> pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]:
         """
         The IDs for resource of type `Alerting` this `GoldenState` should ignore (and therefore neither warn about their existence nor attempt to delete them). Specify `[]` if you expect no such resources to exist in Dynatrace. Omit this attribute if you don't care about these kinds of resources regarding the golden state of the environment.
         """
         return pulumi.get(self, "dynatrace_alertings")
 
     @dynatrace_alertings.setter
-    def dynatrace_alertings(self, value: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]):
+    def dynatrace_alertings(self, value: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "dynatrace_alertings", value)
 
     @_builtins.property
     @pulumi.getter(name="dynatraceAnsibleTowerNotifications")
-    def dynatrace_ansible_tower_notifications(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]:
+    def dynatrace_ansible_tower_notifications(self) -> pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]:
         """
         The IDs for resource of type `AnsibleTowerNotification` this `GoldenState` should ignore (and therefore neither warn about their existence nor attempt to delete them). Specify `[]` if you expect no such resources to exist in Dynatrace. Omit this attribute if you don't care about these kinds of resources regarding the golden state of the environment.
         """
         return pulumi.get(self, "dynatrace_ansible_tower_notifications")
 
     @dynatrace_ansible_tower_notifications.setter
-    def dynatrace_ansible_tower_notifications(self, value: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]):
+    def dynatrace_ansible_tower_notifications(self, value: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "dynatrace_ansible_tower_notifications", value)
 
     @_builtins.property
     @pulumi.getter(name="dynatraceApplicationDetectionRules")
-    def dynatrace_application_detection_rules(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]:
+    def dynatrace_application_detection_rules(self) -> pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]:
         """
         The IDs for resource of type `ApplicationDetectionRule` this `GoldenState` should ignore (and therefore neither warn about their existence nor attempt to delete them). Specify `[]` if you expect no such resources to exist in Dynatrace. Omit this attribute if you don't care about these kinds of resources regarding the golden state of the environment.
         """
         return pulumi.get(self, "dynatrace_application_detection_rules")
 
     @dynatrace_application_detection_rules.setter
-    def dynatrace_application_detection_rules(self, value: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]):
+    def dynatrace_application_detection_rules(self, value: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "dynatrace_application_detection_rules", value)
 
     @_builtins.property
     @pulumi.getter(name="dynatraceApplicationErrorRules")
-    def dynatrace_application_error_rules(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]:
+    def dynatrace_application_error_rules(self) -> pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]:
         """
         The IDs for resource of type `ApplicationErrorRules` this `GoldenState` should ignore (and therefore neither warn about their existence nor attempt to delete them). Specify `[]` if you expect no such resources to exist in Dynatrace. Omit this attribute if you don't care about these kinds of resources regarding the golden state of the environment.
         """
         return pulumi.get(self, "dynatrace_application_error_rules")
 
     @dynatrace_application_error_rules.setter
-    def dynatrace_application_error_rules(self, value: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]):
+    def dynatrace_application_error_rules(self, value: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "dynatrace_application_error_rules", value)
 
     @_builtins.property
     @pulumi.getter(name="dynatraceAutotagV2s")
-    def dynatrace_autotag_v2s(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]:
+    def dynatrace_autotag_v2s(self) -> pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]:
         """
         The IDs for resource of type `AutotagV2` this `GoldenState` should ignore (and therefore neither warn about their existence nor attempt to delete them). Specify `[]` if you expect no such resources to exist in Dynatrace. Omit this attribute if you don't care about these kinds of resources regarding the golden state of the environment.
         """
         return pulumi.get(self, "dynatrace_autotag_v2s")
 
     @dynatrace_autotag_v2s.setter
-    def dynatrace_autotag_v2s(self, value: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]):
+    def dynatrace_autotag_v2s(self, value: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "dynatrace_autotag_v2s", value)
 
     @_builtins.property
     @pulumi.getter(name="dynatraceAwsCredentials")
-    def dynatrace_aws_credentials(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]:
+    def dynatrace_aws_credentials(self) -> pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]:
         """
         The IDs for resource of type `AwsCredentials` this `GoldenState` should ignore (and therefore neither warn about their existence nor attempt to delete them). Specify `[]` if you expect no such resources to exist in Dynatrace. Omit this attribute if you don't care about these kinds of resources regarding the golden state of the environment.
         """
         return pulumi.get(self, "dynatrace_aws_credentials")
 
     @dynatrace_aws_credentials.setter
-    def dynatrace_aws_credentials(self, value: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]):
+    def dynatrace_aws_credentials(self, value: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "dynatrace_aws_credentials", value)
 
     @_builtins.property
     @pulumi.getter(name="dynatraceAzureCredentials")
-    def dynatrace_azure_credentials(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]:
+    def dynatrace_azure_credentials(self) -> pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]:
         """
         The IDs for resource of type `AzureCredentials` this `GoldenState` should ignore (and therefore neither warn about their existence nor attempt to delete them). Specify `[]` if you expect no such resources to exist in Dynatrace. Omit this attribute if you don't care about these kinds of resources regarding the golden state of the environment.
         """
         return pulumi.get(self, "dynatrace_azure_credentials")
 
     @dynatrace_azure_credentials.setter
-    def dynatrace_azure_credentials(self, value: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]):
+    def dynatrace_azure_credentials(self, value: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "dynatrace_azure_credentials", value)
 
     @_builtins.property
     @pulumi.getter(name="dynatraceBrowserMonitors")
-    def dynatrace_browser_monitors(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]:
+    def dynatrace_browser_monitors(self) -> pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]:
         """
         The IDs for resource of type `BrowserMonitor` this `GoldenState` should ignore (and therefore neither warn about their existence nor attempt to delete them). Specify `[]` if you expect no such resources to exist in Dynatrace. Omit this attribute if you don't care about these kinds of resources regarding the golden state of the environment.
         """
         return pulumi.get(self, "dynatrace_browser_monitors")
 
     @dynatrace_browser_monitors.setter
-    def dynatrace_browser_monitors(self, value: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]):
+    def dynatrace_browser_monitors(self, value: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "dynatrace_browser_monitors", value)
 
     @_builtins.property
     @pulumi.getter(name="dynatraceCalculatedMobileMetrics")
-    def dynatrace_calculated_mobile_metrics(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]:
+    def dynatrace_calculated_mobile_metrics(self) -> pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]:
         """
         The IDs for resource of type `CalculatedMobileMetric` this `GoldenState` should ignore (and therefore neither warn about their existence nor attempt to delete them). Specify `[]` if you expect no such resources to exist in Dynatrace. Omit this attribute if you don't care about these kinds of resources regarding the golden state of the environment.
         """
         return pulumi.get(self, "dynatrace_calculated_mobile_metrics")
 
     @dynatrace_calculated_mobile_metrics.setter
-    def dynatrace_calculated_mobile_metrics(self, value: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]):
+    def dynatrace_calculated_mobile_metrics(self, value: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "dynatrace_calculated_mobile_metrics", value)
 
     @_builtins.property
     @pulumi.getter(name="dynatraceCalculatedServiceMetrics")
-    def dynatrace_calculated_service_metrics(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]:
+    def dynatrace_calculated_service_metrics(self) -> pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]:
         """
         The IDs for resource of type `CalculatedServiceMetric` this `GoldenState` should ignore (and therefore neither warn about their existence nor attempt to delete them). Specify `[]` if you expect no such resources to exist in Dynatrace. Omit this attribute if you don't care about these kinds of resources regarding the golden state of the environment.
         """
         return pulumi.get(self, "dynatrace_calculated_service_metrics")
 
     @dynatrace_calculated_service_metrics.setter
-    def dynatrace_calculated_service_metrics(self, value: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]):
+    def dynatrace_calculated_service_metrics(self, value: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "dynatrace_calculated_service_metrics", value)
 
     @_builtins.property
     @pulumi.getter(name="dynatraceCalculatedSyntheticMetrics")
-    def dynatrace_calculated_synthetic_metrics(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]:
+    def dynatrace_calculated_synthetic_metrics(self) -> pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]:
         """
         The IDs for resource of type `CalculatedSyntheticMetric` this `GoldenState` should ignore (and therefore neither warn about their existence nor attempt to delete them). Specify `[]` if you expect no such resources to exist in Dynatrace. Omit this attribute if you don't care about these kinds of resources regarding the golden state of the environment.
         """
         return pulumi.get(self, "dynatrace_calculated_synthetic_metrics")
 
     @dynatrace_calculated_synthetic_metrics.setter
-    def dynatrace_calculated_synthetic_metrics(self, value: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]):
+    def dynatrace_calculated_synthetic_metrics(self, value: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "dynatrace_calculated_synthetic_metrics", value)
 
     @_builtins.property
     @pulumi.getter(name="dynatraceCalculatedWebMetrics")
-    def dynatrace_calculated_web_metrics(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]:
+    def dynatrace_calculated_web_metrics(self) -> pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]:
         """
         The IDs for resource of type `CalculatedWebMetric` this `GoldenState` should ignore (and therefore neither warn about their existence nor attempt to delete them). Specify `[]` if you expect no such resources to exist in Dynatrace. Omit this attribute if you don't care about these kinds of resources regarding the golden state of the environment.
         """
         return pulumi.get(self, "dynatrace_calculated_web_metrics")
 
     @dynatrace_calculated_web_metrics.setter
-    def dynatrace_calculated_web_metrics(self, value: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]):
+    def dynatrace_calculated_web_metrics(self, value: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "dynatrace_calculated_web_metrics", value)
 
     @_builtins.property
     @pulumi.getter(name="dynatraceCredentials")
-    def dynatrace_credentials(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]:
+    def dynatrace_credentials(self) -> pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]:
         """
         The IDs for resource of type `Credentials` this `GoldenState` should ignore (and therefore neither warn about their existence nor attempt to delete them). Specify `[]` if you expect no such resources to exist in Dynatrace. Omit this attribute if you don't care about these kinds of resources regarding the golden state of the environment.
         """
         return pulumi.get(self, "dynatrace_credentials")
 
     @dynatrace_credentials.setter
-    def dynatrace_credentials(self, value: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]):
+    def dynatrace_credentials(self, value: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "dynatrace_credentials", value)
 
     @_builtins.property
     @pulumi.getter(name="dynatraceCustomAppAnomalies")
-    def dynatrace_custom_app_anomalies(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]:
+    def dynatrace_custom_app_anomalies(self) -> pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]:
         """
         The IDs for resource of type `CustomAppAnomalies` this `GoldenState` should ignore (and therefore neither warn about their existence nor attempt to delete them). Specify `[]` if you expect no such resources to exist in Dynatrace. Omit this attribute if you don't care about these kinds of resources regarding the golden state of the environment.
         """
         return pulumi.get(self, "dynatrace_custom_app_anomalies")
 
     @dynatrace_custom_app_anomalies.setter
-    def dynatrace_custom_app_anomalies(self, value: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]):
+    def dynatrace_custom_app_anomalies(self, value: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "dynatrace_custom_app_anomalies", value)
 
     @_builtins.property
     @pulumi.getter(name="dynatraceCustomAppCrashRates")
-    def dynatrace_custom_app_crash_rates(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]:
+    def dynatrace_custom_app_crash_rates(self) -> pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]:
         """
         The IDs for resource of type `CustomAppCrashRate` this `GoldenState` should ignore (and therefore neither warn about their existence nor attempt to delete them). Specify `[]` if you expect no such resources to exist in Dynatrace. Omit this attribute if you don't care about these kinds of resources regarding the golden state of the environment.
         """
         return pulumi.get(self, "dynatrace_custom_app_crash_rates")
 
     @dynatrace_custom_app_crash_rates.setter
-    def dynatrace_custom_app_crash_rates(self, value: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]):
+    def dynatrace_custom_app_crash_rates(self, value: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "dynatrace_custom_app_crash_rates", value)
 
     @_builtins.property
     @pulumi.getter(name="dynatraceCustomAppEnablements")
-    def dynatrace_custom_app_enablements(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]:
+    def dynatrace_custom_app_enablements(self) -> pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]:
         """
         The IDs for resource of type `CustomAppEnablement` this `GoldenState` should ignore (and therefore neither warn about their existence nor attempt to delete them). Specify `[]` if you expect no such resources to exist in Dynatrace. Omit this attribute if you don't care about these kinds of resources regarding the golden state of the environment.
         """
         return pulumi.get(self, "dynatrace_custom_app_enablements")
 
     @dynatrace_custom_app_enablements.setter
-    def dynatrace_custom_app_enablements(self, value: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]):
+    def dynatrace_custom_app_enablements(self, value: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "dynatrace_custom_app_enablements", value)
 
     @_builtins.property
     @pulumi.getter(name="dynatraceCustomServices")
-    def dynatrace_custom_services(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]:
+    def dynatrace_custom_services(self) -> pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]:
         """
         The IDs for resource of type `CustomService` this `GoldenState` should ignore (and therefore neither warn about their existence nor attempt to delete them). Specify `[]` if you expect no such resources to exist in Dynatrace. Omit this attribute if you don't care about these kinds of resources regarding the golden state of the environment.
         """
         return pulumi.get(self, "dynatrace_custom_services")
 
     @dynatrace_custom_services.setter
-    def dynatrace_custom_services(self, value: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]):
+    def dynatrace_custom_services(self, value: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "dynatrace_custom_services", value)
 
     @_builtins.property
     @pulumi.getter(name="dynatraceDataPrivacies")
-    def dynatrace_data_privacies(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]:
+    def dynatrace_data_privacies(self) -> pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]:
         """
         The IDs for resource of type `DataPrivacy` this `GoldenState` should ignore (and therefore neither warn about their existence nor attempt to delete them). Specify `[]` if you expect no such resources to exist in Dynatrace. Omit this attribute if you don't care about these kinds of resources regarding the golden state of the environment.
         """
         return pulumi.get(self, "dynatrace_data_privacies")
 
     @dynatrace_data_privacies.setter
-    def dynatrace_data_privacies(self, value: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]):
+    def dynatrace_data_privacies(self, value: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "dynatrace_data_privacies", value)
 
     @_builtins.property
     @pulumi.getter(name="dynatraceDatabaseAnomaliesV2s")
-    def dynatrace_database_anomalies_v2s(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]:
+    def dynatrace_database_anomalies_v2s(self) -> pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]:
         """
         The IDs for resource of type `DatabaseAnomaliesV2` this `GoldenState` should ignore (and therefore neither warn about their existence nor attempt to delete them). Specify `[]` if you expect no such resources to exist in Dynatrace. Omit this attribute if you don't care about these kinds of resources regarding the golden state of the environment.
         """
         return pulumi.get(self, "dynatrace_database_anomalies_v2s")
 
     @dynatrace_database_anomalies_v2s.setter
-    def dynatrace_database_anomalies_v2s(self, value: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]):
+    def dynatrace_database_anomalies_v2s(self, value: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "dynatrace_database_anomalies_v2s", value)
 
     @_builtins.property
     @pulumi.getter(name="dynatraceDeclarativeGroupings")
-    def dynatrace_declarative_groupings(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]:
+    def dynatrace_declarative_groupings(self) -> pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]:
         """
         The IDs for resource of type `DeclarativeGrouping` this `GoldenState` should ignore (and therefore neither warn about their existence nor attempt to delete them). Specify `[]` if you expect no such resources to exist in Dynatrace. Omit this attribute if you don't care about these kinds of resources regarding the golden state of the environment.
         """
         return pulumi.get(self, "dynatrace_declarative_groupings")
 
     @dynatrace_declarative_groupings.setter
-    def dynatrace_declarative_groupings(self, value: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]):
+    def dynatrace_declarative_groupings(self, value: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "dynatrace_declarative_groupings", value)
 
     @_builtins.property
     @pulumi.getter(name="dynatraceDiskAnomaliesV2s")
-    def dynatrace_disk_anomalies_v2s(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]:
+    def dynatrace_disk_anomalies_v2s(self) -> pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]:
         """
         The IDs for resource of type `DiskAnomaliesV2` this `GoldenState` should ignore (and therefore neither warn about their existence nor attempt to delete them). Specify `[]` if you expect no such resources to exist in Dynatrace. Omit this attribute if you don't care about these kinds of resources regarding the golden state of the environment.
         """
         return pulumi.get(self, "dynatrace_disk_anomalies_v2s")
 
     @dynatrace_disk_anomalies_v2s.setter
-    def dynatrace_disk_anomalies_v2s(self, value: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]):
+    def dynatrace_disk_anomalies_v2s(self, value: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "dynatrace_disk_anomalies_v2s", value)
 
     @_builtins.property
     @pulumi.getter(name="dynatraceDiskOptions")
-    def dynatrace_disk_options(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]:
+    def dynatrace_disk_options(self) -> pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]:
         """
         The IDs for resource of type `DiskOptions` this `GoldenState` should ignore (and therefore neither warn about their existence nor attempt to delete them). Specify `[]` if you expect no such resources to exist in Dynatrace. Omit this attribute if you don't care about these kinds of resources regarding the golden state of the environment.
         """
         return pulumi.get(self, "dynatrace_disk_options")
 
     @dynatrace_disk_options.setter
-    def dynatrace_disk_options(self, value: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]):
+    def dynatrace_disk_options(self, value: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "dynatrace_disk_options", value)
 
     @_builtins.property
     @pulumi.getter(name="dynatraceDiskSpecificAnomaliesV2s")
-    def dynatrace_disk_specific_anomalies_v2s(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]:
+    def dynatrace_disk_specific_anomalies_v2s(self) -> pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]:
         """
         The IDs for resource of type `DiskSpecificAnomaliesV2` this `GoldenState` should ignore (and therefore neither warn about their existence nor attempt to delete them). Specify `[]` if you expect no such resources to exist in Dynatrace. Omit this attribute if you don't care about these kinds of resources regarding the golden state of the environment.
         """
         return pulumi.get(self, "dynatrace_disk_specific_anomalies_v2s")
 
     @dynatrace_disk_specific_anomalies_v2s.setter
-    def dynatrace_disk_specific_anomalies_v2s(self, value: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]):
+    def dynatrace_disk_specific_anomalies_v2s(self, value: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "dynatrace_disk_specific_anomalies_v2s", value)
 
     @_builtins.property
     @pulumi.getter(name="dynatraceEmailNotifications")
-    def dynatrace_email_notifications(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]:
+    def dynatrace_email_notifications(self) -> pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]:
         """
         The IDs for resource of type `EmailNotification` this `GoldenState` should ignore (and therefore neither warn about their existence nor attempt to delete them). Specify `[]` if you expect no such resources to exist in Dynatrace. Omit this attribute if you don't care about these kinds of resources regarding the golden state of the environment.
         """
         return pulumi.get(self, "dynatrace_email_notifications")
 
     @dynatrace_email_notifications.setter
-    def dynatrace_email_notifications(self, value: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]):
+    def dynatrace_email_notifications(self, value: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "dynatrace_email_notifications", value)
 
     @_builtins.property
     @pulumi.getter(name="dynatraceExtensionExecutionControllers")
-    def dynatrace_extension_execution_controllers(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]:
+    def dynatrace_extension_execution_controllers(self) -> pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]:
         """
         The IDs for resource of type `ExtensionExecutionController` this `GoldenState` should ignore (and therefore neither warn about their existence nor attempt to delete them). Specify `[]` if you expect no such resources to exist in Dynatrace. Omit this attribute if you don't care about these kinds of resources regarding the golden state of the environment.
         """
         return pulumi.get(self, "dynatrace_extension_execution_controllers")
 
     @dynatrace_extension_execution_controllers.setter
-    def dynatrace_extension_execution_controllers(self, value: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]):
+    def dynatrace_extension_execution_controllers(self, value: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "dynatrace_extension_execution_controllers", value)
 
     @_builtins.property
     @pulumi.getter(name="dynatraceGenericTypes")
-    def dynatrace_generic_types(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]:
+    def dynatrace_generic_types(self) -> pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]:
         """
         The IDs for resource of type `GenericTypes` this `GoldenState` should ignore (and therefore neither warn about their existence nor attempt to delete them). Specify `[]` if you expect no such resources to exist in Dynatrace. Omit this attribute if you don't care about these kinds of resources regarding the golden state of the environment.
         """
         return pulumi.get(self, "dynatrace_generic_types")
 
     @dynatrace_generic_types.setter
-    def dynatrace_generic_types(self, value: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]):
+    def dynatrace_generic_types(self, value: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "dynatrace_generic_types", value)
 
     @_builtins.property
     @pulumi.getter(name="dynatraceHostAnomaliesV2s")
-    def dynatrace_host_anomalies_v2s(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]:
+    def dynatrace_host_anomalies_v2s(self) -> pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]:
         """
         The IDs for resource of type `HostAnomaliesV2` this `GoldenState` should ignore (and therefore neither warn about their existence nor attempt to delete them). Specify `[]` if you expect no such resources to exist in Dynatrace. Omit this attribute if you don't care about these kinds of resources regarding the golden state of the environment.
         """
         return pulumi.get(self, "dynatrace_host_anomalies_v2s")
 
     @dynatrace_host_anomalies_v2s.setter
-    def dynatrace_host_anomalies_v2s(self, value: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]):
+    def dynatrace_host_anomalies_v2s(self, value: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "dynatrace_host_anomalies_v2s", value)
 
     @_builtins.property
     @pulumi.getter(name="dynatraceHostNamings")
-    def dynatrace_host_namings(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]:
+    def dynatrace_host_namings(self) -> pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]:
         """
         The IDs for resource of type `HostNaming` this `GoldenState` should ignore (and therefore neither warn about their existence nor attempt to delete them). Specify `[]` if you expect no such resources to exist in Dynatrace. Omit this attribute if you don't care about these kinds of resources regarding the golden state of the environment.
         """
         return pulumi.get(self, "dynatrace_host_namings")
 
     @dynatrace_host_namings.setter
-    def dynatrace_host_namings(self, value: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]):
+    def dynatrace_host_namings(self, value: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "dynatrace_host_namings", value)
 
     @_builtins.property
     @pulumi.getter(name="dynatraceHostProcessGroupMonitorings")
-    def dynatrace_host_process_group_monitorings(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]:
+    def dynatrace_host_process_group_monitorings(self) -> pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]:
         """
         The IDs for resource of type `HostProcessGroupMonitoring` this `GoldenState` should ignore (and therefore neither warn about their existence nor attempt to delete them). Specify `[]` if you expect no such resources to exist in Dynatrace. Omit this attribute if you don't care about these kinds of resources regarding the golden state of the environment.
         """
         return pulumi.get(self, "dynatrace_host_process_group_monitorings")
 
     @dynatrace_host_process_group_monitorings.setter
-    def dynatrace_host_process_group_monitorings(self, value: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]):
+    def dynatrace_host_process_group_monitorings(self, value: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "dynatrace_host_process_group_monitorings", value)
 
     @_builtins.property
     @pulumi.getter(name="dynatraceHttpMonitors")
-    def dynatrace_http_monitors(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]:
+    def dynatrace_http_monitors(self) -> pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]:
         """
         The IDs for resource of type `HttpMonitor` this `GoldenState` should ignore (and therefore neither warn about their existence nor attempt to delete them). Specify `[]` if you expect no such resources to exist in Dynatrace. Omit this attribute if you don't care about these kinds of resources regarding the golden state of the environment.
         """
         return pulumi.get(self, "dynatrace_http_monitors")
 
     @dynatrace_http_monitors.setter
-    def dynatrace_http_monitors(self, value: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]):
+    def dynatrace_http_monitors(self, value: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "dynatrace_http_monitors", value)
 
     @_builtins.property
     @pulumi.getter(name="dynatraceImsBridges")
-    def dynatrace_ims_bridges(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]:
+    def dynatrace_ims_bridges(self) -> pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]:
         """
         The IDs for resource of type `ImsBridges` this `GoldenState` should ignore (and therefore neither warn about their existence nor attempt to delete them). Specify `[]` if you expect no such resources to exist in Dynatrace. Omit this attribute if you don't care about these kinds of resources regarding the golden state of the environment.
         """
         return pulumi.get(self, "dynatrace_ims_bridges")
 
     @dynatrace_ims_bridges.setter
-    def dynatrace_ims_bridges(self, value: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]):
+    def dynatrace_ims_bridges(self, value: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "dynatrace_ims_bridges", value)
 
     @_builtins.property
     @pulumi.getter(name="dynatraceJiraNotifications")
-    def dynatrace_jira_notifications(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]:
+    def dynatrace_jira_notifications(self) -> pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]:
         """
         The IDs for resource of type `JiraNotification` this `GoldenState` should ignore (and therefore neither warn about their existence nor attempt to delete them). Specify `[]` if you expect no such resources to exist in Dynatrace. Omit this attribute if you don't care about these kinds of resources regarding the golden state of the environment.
         """
         return pulumi.get(self, "dynatrace_jira_notifications")
 
     @dynatrace_jira_notifications.setter
-    def dynatrace_jira_notifications(self, value: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]):
+    def dynatrace_jira_notifications(self, value: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "dynatrace_jira_notifications", value)
 
     @_builtins.property
     @pulumi.getter(name="dynatraceK8sNamespaceAnomalies")
-    def dynatrace_k8s_namespace_anomalies(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]:
+    def dynatrace_k8s_namespace_anomalies(self) -> pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]:
         """
         The IDs for resource of type `K8sNamespaceAnomalies` this `GoldenState` should ignore (and therefore neither warn about their existence nor attempt to delete them). Specify `[]` if you expect no such resources to exist in Dynatrace. Omit this attribute if you don't care about these kinds of resources regarding the golden state of the environment.
         """
         return pulumi.get(self, "dynatrace_k8s_namespace_anomalies")
 
     @dynatrace_k8s_namespace_anomalies.setter
-    def dynatrace_k8s_namespace_anomalies(self, value: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]):
+    def dynatrace_k8s_namespace_anomalies(self, value: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "dynatrace_k8s_namespace_anomalies", value)
 
     @_builtins.property
     @pulumi.getter(name="dynatraceKeyRequests")
-    def dynatrace_key_requests(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]:
+    def dynatrace_key_requests(self) -> pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]:
         """
         The IDs for resource of type `KeyRequests` this `GoldenState` should ignore (and therefore neither warn about their existence nor attempt to delete them). Specify `[]` if you expect no such resources to exist in Dynatrace. Omit this attribute if you don't care about these kinds of resources regarding the golden state of the environment.
         """
         return pulumi.get(self, "dynatrace_key_requests")
 
     @dynatrace_key_requests.setter
-    def dynatrace_key_requests(self, value: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]):
+    def dynatrace_key_requests(self, value: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "dynatrace_key_requests", value)
 
     @_builtins.property
     @pulumi.getter(name="dynatraceLogMetrics")
-    def dynatrace_log_metrics(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]:
+    def dynatrace_log_metrics(self) -> pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]:
         """
         The IDs for resource of type `LogMetrics` this `GoldenState` should ignore (and therefore neither warn about their existence nor attempt to delete them). Specify `[]` if you expect no such resources to exist in Dynatrace. Omit this attribute if you don't care about these kinds of resources regarding the golden state of the environment.
         """
         return pulumi.get(self, "dynatrace_log_metrics")
 
     @dynatrace_log_metrics.setter
-    def dynatrace_log_metrics(self, value: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]):
+    def dynatrace_log_metrics(self, value: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "dynatrace_log_metrics", value)
 
     @_builtins.property
     @pulumi.getter(name="dynatraceMaintenances")
-    def dynatrace_maintenances(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]:
+    def dynatrace_maintenances(self) -> pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]:
         """
         The IDs for resource of type `Maintenance` this `GoldenState` should ignore (and therefore neither warn about their existence nor attempt to delete them). Specify `[]` if you expect no such resources to exist in Dynatrace. Omit this attribute if you don't care about these kinds of resources regarding the golden state of the environment.
         """
         return pulumi.get(self, "dynatrace_maintenances")
 
     @dynatrace_maintenances.setter
-    def dynatrace_maintenances(self, value: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]):
+    def dynatrace_maintenances(self, value: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "dynatrace_maintenances", value)
 
     @_builtins.property
     @pulumi.getter(name="dynatraceManagementZoneV2s")
-    def dynatrace_management_zone_v2s(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]:
+    def dynatrace_management_zone_v2s(self) -> pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]:
         """
         The IDs for resource of type `ManagementZoneV2` this `GoldenState` should ignore (and therefore neither warn about their existence nor attempt to delete them). Specify `[]` if you expect no such resources to exist in Dynatrace. Omit this attribute if you don't care about these kinds of resources regarding the golden state of the environment.
         """
         return pulumi.get(self, "dynatrace_management_zone_v2s")
 
     @dynatrace_management_zone_v2s.setter
-    def dynatrace_management_zone_v2s(self, value: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]):
+    def dynatrace_management_zone_v2s(self, value: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "dynatrace_management_zone_v2s", value)
 
     @_builtins.property
     @pulumi.getter(name="dynatraceMetricEvents")
-    def dynatrace_metric_events(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]:
+    def dynatrace_metric_events(self) -> pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]:
         """
         The IDs for resource of type `MetricEvents` this `GoldenState` should ignore (and therefore neither warn about their existence nor attempt to delete them). Specify `[]` if you expect no such resources to exist in Dynatrace. Omit this attribute if you don't care about these kinds of resources regarding the golden state of the environment.
         """
         return pulumi.get(self, "dynatrace_metric_events")
 
     @dynatrace_metric_events.setter
-    def dynatrace_metric_events(self, value: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]):
+    def dynatrace_metric_events(self, value: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "dynatrace_metric_events", value)
 
     @_builtins.property
     @pulumi.getter(name="dynatraceMobileAppAnomalies")
-    def dynatrace_mobile_app_anomalies(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]:
+    def dynatrace_mobile_app_anomalies(self) -> pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]:
         """
         The IDs for resource of type `MobileAppAnomalies` this `GoldenState` should ignore (and therefore neither warn about their existence nor attempt to delete them). Specify `[]` if you expect no such resources to exist in Dynatrace. Omit this attribute if you don't care about these kinds of resources regarding the golden state of the environment.
         """
         return pulumi.get(self, "dynatrace_mobile_app_anomalies")
 
     @dynatrace_mobile_app_anomalies.setter
-    def dynatrace_mobile_app_anomalies(self, value: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]):
+    def dynatrace_mobile_app_anomalies(self, value: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "dynatrace_mobile_app_anomalies", value)
 
     @_builtins.property
     @pulumi.getter(name="dynatraceMobileAppCrashRates")
-    def dynatrace_mobile_app_crash_rates(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]:
+    def dynatrace_mobile_app_crash_rates(self) -> pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]:
         """
         The IDs for resource of type `MobileAppCrashRate` this `GoldenState` should ignore (and therefore neither warn about their existence nor attempt to delete them). Specify `[]` if you expect no such resources to exist in Dynatrace. Omit this attribute if you don't care about these kinds of resources regarding the golden state of the environment.
         """
         return pulumi.get(self, "dynatrace_mobile_app_crash_rates")
 
     @dynatrace_mobile_app_crash_rates.setter
-    def dynatrace_mobile_app_crash_rates(self, value: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]):
+    def dynatrace_mobile_app_crash_rates(self, value: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "dynatrace_mobile_app_crash_rates", value)
 
     @_builtins.property
     @pulumi.getter(name="dynatraceMobileAppEnablements")
-    def dynatrace_mobile_app_enablements(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]:
+    def dynatrace_mobile_app_enablements(self) -> pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]:
         """
         The IDs for resource of type `MobileAppEnablement` this `GoldenState` should ignore (and therefore neither warn about their existence nor attempt to delete them). Specify `[]` if you expect no such resources to exist in Dynatrace. Omit this attribute if you don't care about these kinds of resources regarding the golden state of the environment.
         """
         return pulumi.get(self, "dynatrace_mobile_app_enablements")
 
     @dynatrace_mobile_app_enablements.setter
-    def dynatrace_mobile_app_enablements(self, value: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]):
+    def dynatrace_mobile_app_enablements(self, value: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "dynatrace_mobile_app_enablements", value)
 
     @_builtins.property
     @pulumi.getter(name="dynatraceMobileApplications")
-    def dynatrace_mobile_applications(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]:
+    def dynatrace_mobile_applications(self) -> pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]:
         """
         The IDs for resource of type `MobileApplication` this `GoldenState` should ignore (and therefore neither warn about their existence nor attempt to delete them). Specify `[]` if you expect no such resources to exist in Dynatrace. Omit this attribute if you don't care about these kinds of resources regarding the golden state of the environment.
         """
         return pulumi.get(self, "dynatrace_mobile_applications")
 
     @dynatrace_mobile_applications.setter
-    def dynatrace_mobile_applications(self, value: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]):
+    def dynatrace_mobile_applications(self, value: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "dynatrace_mobile_applications", value)
 
     @_builtins.property
     @pulumi.getter(name="dynatraceMonitoredTechnologiesApaches")
-    def dynatrace_monitored_technologies_apaches(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]:
+    def dynatrace_monitored_technologies_apaches(self) -> pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]:
         """
         The IDs for resource of type `MonitoredTechnologiesApache` this `GoldenState` should ignore (and therefore neither warn about their existence nor attempt to delete them). Specify `[]` if you expect no such resources to exist in Dynatrace. Omit this attribute if you don't care about these kinds of resources regarding the golden state of the environment.
         """
         return pulumi.get(self, "dynatrace_monitored_technologies_apaches")
 
     @dynatrace_monitored_technologies_apaches.setter
-    def dynatrace_monitored_technologies_apaches(self, value: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]):
+    def dynatrace_monitored_technologies_apaches(self, value: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "dynatrace_monitored_technologies_apaches", value)
 
     @_builtins.property
     @pulumi.getter(name="dynatraceMonitoredTechnologiesDotnets")
-    def dynatrace_monitored_technologies_dotnets(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]:
+    def dynatrace_monitored_technologies_dotnets(self) -> pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]:
         """
         The IDs for resource of type `MonitoredTechnologiesDotnet` this `GoldenState` should ignore (and therefore neither warn about their existence nor attempt to delete them). Specify `[]` if you expect no such resources to exist in Dynatrace. Omit this attribute if you don't care about these kinds of resources regarding the golden state of the environment.
         """
         return pulumi.get(self, "dynatrace_monitored_technologies_dotnets")
 
     @dynatrace_monitored_technologies_dotnets.setter
-    def dynatrace_monitored_technologies_dotnets(self, value: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]):
+    def dynatrace_monitored_technologies_dotnets(self, value: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "dynatrace_monitored_technologies_dotnets", value)
 
     @_builtins.property
     @pulumi.getter(name="dynatraceMonitoredTechnologiesGos")
-    def dynatrace_monitored_technologies_gos(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]:
+    def dynatrace_monitored_technologies_gos(self) -> pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]:
         """
         The IDs for resource of type `MonitoredTechnologiesGo` this `GoldenState` should ignore (and therefore neither warn about their existence nor attempt to delete them). Specify `[]` if you expect no such resources to exist in Dynatrace. Omit this attribute if you don't care about these kinds of resources regarding the golden state of the environment.
         """
         return pulumi.get(self, "dynatrace_monitored_technologies_gos")
 
     @dynatrace_monitored_technologies_gos.setter
-    def dynatrace_monitored_technologies_gos(self, value: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]):
+    def dynatrace_monitored_technologies_gos(self, value: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "dynatrace_monitored_technologies_gos", value)
 
     @_builtins.property
     @pulumi.getter(name="dynatraceMonitoredTechnologiesIis")
-    def dynatrace_monitored_technologies_iis(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]:
+    def dynatrace_monitored_technologies_iis(self) -> pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]:
         """
         The IDs for resource of type `MonitoredTechnologiesIis` this `GoldenState` should ignore (and therefore neither warn about their existence nor attempt to delete them). Specify `[]` if you expect no such resources to exist in Dynatrace. Omit this attribute if you don't care about these kinds of resources regarding the golden state of the environment.
         """
         return pulumi.get(self, "dynatrace_monitored_technologies_iis")
 
     @dynatrace_monitored_technologies_iis.setter
-    def dynatrace_monitored_technologies_iis(self, value: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]):
+    def dynatrace_monitored_technologies_iis(self, value: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "dynatrace_monitored_technologies_iis", value)
 
     @_builtins.property
     @pulumi.getter(name="dynatraceMonitoredTechnologiesJavas")
-    def dynatrace_monitored_technologies_javas(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]:
+    def dynatrace_monitored_technologies_javas(self) -> pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]:
         """
         The IDs for resource of type `MonitoredTechnologiesJava` this `GoldenState` should ignore (and therefore neither warn about their existence nor attempt to delete them). Specify `[]` if you expect no such resources to exist in Dynatrace. Omit this attribute if you don't care about these kinds of resources regarding the golden state of the environment.
         """
         return pulumi.get(self, "dynatrace_monitored_technologies_javas")
 
     @dynatrace_monitored_technologies_javas.setter
-    def dynatrace_monitored_technologies_javas(self, value: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]):
+    def dynatrace_monitored_technologies_javas(self, value: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "dynatrace_monitored_technologies_javas", value)
 
     @_builtins.property
     @pulumi.getter(name="dynatraceMonitoredTechnologiesNginxes")
-    def dynatrace_monitored_technologies_nginxes(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]:
+    def dynatrace_monitored_technologies_nginxes(self) -> pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]:
         """
         The IDs for resource of type `MonitoredTechnologiesNginx` this `GoldenState` should ignore (and therefore neither warn about their existence nor attempt to delete them). Specify `[]` if you expect no such resources to exist in Dynatrace. Omit this attribute if you don't care about these kinds of resources regarding the golden state of the environment.
         """
         return pulumi.get(self, "dynatrace_monitored_technologies_nginxes")
 
     @dynatrace_monitored_technologies_nginxes.setter
-    def dynatrace_monitored_technologies_nginxes(self, value: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]):
+    def dynatrace_monitored_technologies_nginxes(self, value: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "dynatrace_monitored_technologies_nginxes", value)
 
     @_builtins.property
     @pulumi.getter(name="dynatraceMonitoredTechnologiesNodejs")
-    def dynatrace_monitored_technologies_nodejs(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]:
+    def dynatrace_monitored_technologies_nodejs(self) -> pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]:
         """
         The IDs for resource of type `MonitoredTechnologiesNodejs` this `GoldenState` should ignore (and therefore neither warn about their existence nor attempt to delete them). Specify `[]` if you expect no such resources to exist in Dynatrace. Omit this attribute if you don't care about these kinds of resources regarding the golden state of the environment.
         """
         return pulumi.get(self, "dynatrace_monitored_technologies_nodejs")
 
     @dynatrace_monitored_technologies_nodejs.setter
-    def dynatrace_monitored_technologies_nodejs(self, value: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]):
+    def dynatrace_monitored_technologies_nodejs(self, value: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "dynatrace_monitored_technologies_nodejs", value)
 
     @_builtins.property
     @pulumi.getter(name="dynatraceMonitoredTechnologiesOpentracings")
-    def dynatrace_monitored_technologies_opentracings(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]:
+    def dynatrace_monitored_technologies_opentracings(self) -> pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]:
         """
         The IDs for resource of type `MonitoredTechnologiesOpentracing` this `GoldenState` should ignore (and therefore neither warn about their existence nor attempt to delete them). Specify `[]` if you expect no such resources to exist in Dynatrace. Omit this attribute if you don't care about these kinds of resources regarding the golden state of the environment.
         """
         return pulumi.get(self, "dynatrace_monitored_technologies_opentracings")
 
     @dynatrace_monitored_technologies_opentracings.setter
-    def dynatrace_monitored_technologies_opentracings(self, value: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]):
+    def dynatrace_monitored_technologies_opentracings(self, value: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "dynatrace_monitored_technologies_opentracings", value)
 
     @_builtins.property
     @pulumi.getter(name="dynatraceMonitoredTechnologiesPhps")
-    def dynatrace_monitored_technologies_phps(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]:
+    def dynatrace_monitored_technologies_phps(self) -> pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]:
         """
         The IDs for resource of type `MonitoredTechnologiesPhp` this `GoldenState` should ignore (and therefore neither warn about their existence nor attempt to delete them). Specify `[]` if you expect no such resources to exist in Dynatrace. Omit this attribute if you don't care about these kinds of resources regarding the golden state of the environment.
         """
         return pulumi.get(self, "dynatrace_monitored_technologies_phps")
 
     @dynatrace_monitored_technologies_phps.setter
-    def dynatrace_monitored_technologies_phps(self, value: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]):
+    def dynatrace_monitored_technologies_phps(self, value: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "dynatrace_monitored_technologies_phps", value)
 
     @_builtins.property
     @pulumi.getter(name="dynatraceMonitoredTechnologiesVarnishes")
-    def dynatrace_monitored_technologies_varnishes(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]:
+    def dynatrace_monitored_technologies_varnishes(self) -> pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]:
         """
         The IDs for resource of type `MonitoredTechnologiesVarnish` this `GoldenState` should ignore (and therefore neither warn about their existence nor attempt to delete them). Specify `[]` if you expect no such resources to exist in Dynatrace. Omit this attribute if you don't care about these kinds of resources regarding the golden state of the environment.
         """
         return pulumi.get(self, "dynatrace_monitored_technologies_varnishes")
 
     @dynatrace_monitored_technologies_varnishes.setter
-    def dynatrace_monitored_technologies_varnishes(self, value: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]):
+    def dynatrace_monitored_technologies_varnishes(self, value: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "dynatrace_monitored_technologies_varnishes", value)
 
     @_builtins.property
     @pulumi.getter(name="dynatraceMonitoredTechnologiesWsmbs")
-    def dynatrace_monitored_technologies_wsmbs(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]:
+    def dynatrace_monitored_technologies_wsmbs(self) -> pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]:
         """
         The IDs for resource of type `MonitoredTechnologiesWsmb` this `GoldenState` should ignore (and therefore neither warn about their existence nor attempt to delete them). Specify `[]` if you expect no such resources to exist in Dynatrace. Omit this attribute if you don't care about these kinds of resources regarding the golden state of the environment.
         """
         return pulumi.get(self, "dynatrace_monitored_technologies_wsmbs")
 
     @dynatrace_monitored_technologies_wsmbs.setter
-    def dynatrace_monitored_technologies_wsmbs(self, value: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]):
+    def dynatrace_monitored_technologies_wsmbs(self, value: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "dynatrace_monitored_technologies_wsmbs", value)
 
     @_builtins.property
     @pulumi.getter(name="dynatraceMutedRequests")
-    def dynatrace_muted_requests(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]:
+    def dynatrace_muted_requests(self) -> pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]:
         """
         The IDs for resource of type `MutedRequests` this `GoldenState` should ignore (and therefore neither warn about their existence nor attempt to delete them). Specify `[]` if you expect no such resources to exist in Dynatrace. Omit this attribute if you don't care about these kinds of resources regarding the golden state of the environment.
         """
         return pulumi.get(self, "dynatrace_muted_requests")
 
     @dynatrace_muted_requests.setter
-    def dynatrace_muted_requests(self, value: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]):
+    def dynatrace_muted_requests(self, value: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "dynatrace_muted_requests", value)
 
     @_builtins.property
     @pulumi.getter(name="dynatraceNettracers")
-    def dynatrace_nettracers(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]:
+    def dynatrace_nettracers(self) -> pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]:
         """
         The IDs for resource of type `Nettracer` this `GoldenState` should ignore (and therefore neither warn about their existence nor attempt to delete them). Specify `[]` if you expect no such resources to exist in Dynatrace. Omit this attribute if you don't care about these kinds of resources regarding the golden state of the environment.
         """
         return pulumi.get(self, "dynatrace_nettracers")
 
     @dynatrace_nettracers.setter
-    def dynatrace_nettracers(self, value: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]):
+    def dynatrace_nettracers(self, value: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "dynatrace_nettracers", value)
 
     @_builtins.property
     @pulumi.getter(name="dynatraceOneagentFeatures")
-    def dynatrace_oneagent_features(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]:
+    def dynatrace_oneagent_features(self) -> pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]:
         """
         The IDs for resource of type `OneagentFeatures` this `GoldenState` should ignore (and therefore neither warn about their existence nor attempt to delete them). Specify `[]` if you expect no such resources to exist in Dynatrace. Omit this attribute if you don't care about these kinds of resources regarding the golden state of the environment.
         """
         return pulumi.get(self, "dynatrace_oneagent_features")
 
     @dynatrace_oneagent_features.setter
-    def dynatrace_oneagent_features(self, value: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]):
+    def dynatrace_oneagent_features(self, value: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "dynatrace_oneagent_features", value)
 
     @_builtins.property
     @pulumi.getter(name="dynatraceOpsGenieNotifications")
-    def dynatrace_ops_genie_notifications(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]:
+    def dynatrace_ops_genie_notifications(self) -> pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]:
         """
         The IDs for resource of type `OpsGenieNotification` this `GoldenState` should ignore (and therefore neither warn about their existence nor attempt to delete them). Specify `[]` if you expect no such resources to exist in Dynatrace. Omit this attribute if you don't care about these kinds of resources regarding the golden state of the environment.
         """
         return pulumi.get(self, "dynatrace_ops_genie_notifications")
 
     @dynatrace_ops_genie_notifications.setter
-    def dynatrace_ops_genie_notifications(self, value: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]):
+    def dynatrace_ops_genie_notifications(self, value: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "dynatrace_ops_genie_notifications", value)
 
     @_builtins.property
     @pulumi.getter(name="dynatracePagerDutyNotifications")
-    def dynatrace_pager_duty_notifications(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]:
+    def dynatrace_pager_duty_notifications(self) -> pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]:
         """
         The IDs for resource of type `PagerDutyNotification` this `GoldenState` should ignore (and therefore neither warn about their existence nor attempt to delete them). Specify `[]` if you expect no such resources to exist in Dynatrace. Omit this attribute if you don't care about these kinds of resources regarding the golden state of the environment.
         """
         return pulumi.get(self, "dynatrace_pager_duty_notifications")
 
     @dynatrace_pager_duty_notifications.setter
-    def dynatrace_pager_duty_notifications(self, value: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]):
+    def dynatrace_pager_duty_notifications(self, value: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "dynatrace_pager_duty_notifications", value)
 
     @_builtins.property
     @pulumi.getter(name="dynatracePgAlertings")
-    def dynatrace_pg_alertings(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]:
+    def dynatrace_pg_alertings(self) -> pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]:
         """
         The IDs for resource of type `PgAlerting` this `GoldenState` should ignore (and therefore neither warn about their existence nor attempt to delete them). Specify `[]` if you expect no such resources to exist in Dynatrace. Omit this attribute if you don't care about these kinds of resources regarding the golden state of the environment.
         """
         return pulumi.get(self, "dynatrace_pg_alertings")
 
     @dynatrace_pg_alertings.setter
-    def dynatrace_pg_alertings(self, value: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]):
+    def dynatrace_pg_alertings(self, value: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "dynatrace_pg_alertings", value)
 
     @_builtins.property
     @pulumi.getter(name="dynatraceProcessAvailabilities")
-    def dynatrace_process_availabilities(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]:
+    def dynatrace_process_availabilities(self) -> pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]:
         """
         The IDs for resource of type `ProcessAvailability` this `GoldenState` should ignore (and therefore neither warn about their existence nor attempt to delete them). Specify `[]` if you expect no such resources to exist in Dynatrace. Omit this attribute if you don't care about these kinds of resources regarding the golden state of the environment.
         """
         return pulumi.get(self, "dynatrace_process_availabilities")
 
     @dynatrace_process_availabilities.setter
-    def dynatrace_process_availabilities(self, value: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]):
+    def dynatrace_process_availabilities(self, value: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "dynatrace_process_availabilities", value)
 
     @_builtins.property
     @pulumi.getter(name="dynatraceProcessGroupDetectionFlags")
-    def dynatrace_process_group_detection_flags(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]:
+    def dynatrace_process_group_detection_flags(self) -> pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]:
         """
         The IDs for resource of type `ProcessGroupDetectionFlags` this `GoldenState` should ignore (and therefore neither warn about their existence nor attempt to delete them). Specify `[]` if you expect no such resources to exist in Dynatrace. Omit this attribute if you don't care about these kinds of resources regarding the golden state of the environment.
         """
         return pulumi.get(self, "dynatrace_process_group_detection_flags")
 
     @dynatrace_process_group_detection_flags.setter
-    def dynatrace_process_group_detection_flags(self, value: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]):
+    def dynatrace_process_group_detection_flags(self, value: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "dynatrace_process_group_detection_flags", value)
 
     @_builtins.property
     @pulumi.getter(name="dynatraceProcessGroupDetections")
-    def dynatrace_process_group_detections(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]:
+    def dynatrace_process_group_detections(self) -> pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]:
         """
         The IDs for resource of type `ProcessGroupDetection` this `GoldenState` should ignore (and therefore neither warn about their existence nor attempt to delete them). Specify `[]` if you expect no such resources to exist in Dynatrace. Omit this attribute if you don't care about these kinds of resources regarding the golden state of the environment.
         """
         return pulumi.get(self, "dynatrace_process_group_detections")
 
     @dynatrace_process_group_detections.setter
-    def dynatrace_process_group_detections(self, value: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]):
+    def dynatrace_process_group_detections(self, value: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "dynatrace_process_group_detections", value)
 
     @_builtins.property
     @pulumi.getter(name="dynatraceProcessGroupMonitorings")
-    def dynatrace_process_group_monitorings(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]:
+    def dynatrace_process_group_monitorings(self) -> pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]:
         """
         The IDs for resource of type `ProcessGroupMonitoring` this `GoldenState` should ignore (and therefore neither warn about their existence nor attempt to delete them). Specify `[]` if you expect no such resources to exist in Dynatrace. Omit this attribute if you don't care about these kinds of resources regarding the golden state of the environment.
         """
         return pulumi.get(self, "dynatrace_process_group_monitorings")
 
     @dynatrace_process_group_monitorings.setter
-    def dynatrace_process_group_monitorings(self, value: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]):
+    def dynatrace_process_group_monitorings(self, value: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "dynatrace_process_group_monitorings", value)
 
     @_builtins.property
     @pulumi.getter(name="dynatraceProcessGroupRums")
-    def dynatrace_process_group_rums(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]:
+    def dynatrace_process_group_rums(self) -> pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]:
         """
         The IDs for resource of type `ProcessGroupRum` this `GoldenState` should ignore (and therefore neither warn about their existence nor attempt to delete them). Specify `[]` if you expect no such resources to exist in Dynatrace. Omit this attribute if you don't care about these kinds of resources regarding the golden state of the environment.
         """
         return pulumi.get(self, "dynatrace_process_group_rums")
 
     @dynatrace_process_group_rums.setter
-    def dynatrace_process_group_rums(self, value: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]):
+    def dynatrace_process_group_rums(self, value: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "dynatrace_process_group_rums", value)
 
     @_builtins.property
     @pulumi.getter(name="dynatraceProcessGroupSimpleDetections")
-    def dynatrace_process_group_simple_detections(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]:
+    def dynatrace_process_group_simple_detections(self) -> pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]:
         """
         The IDs for resource of type `ProcessGroupSimpleDetection` this `GoldenState` should ignore (and therefore neither warn about their existence nor attempt to delete them). Specify `[]` if you expect no such resources to exist in Dynatrace. Omit this attribute if you don't care about these kinds of resources regarding the golden state of the environment.
         """
         return pulumi.get(self, "dynatrace_process_group_simple_detections")
 
     @dynatrace_process_group_simple_detections.setter
-    def dynatrace_process_group_simple_detections(self, value: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]):
+    def dynatrace_process_group_simple_detections(self, value: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "dynatrace_process_group_simple_detections", value)
 
     @_builtins.property
     @pulumi.getter(name="dynatraceProcessMonitoringRules")
-    def dynatrace_process_monitoring_rules(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]:
+    def dynatrace_process_monitoring_rules(self) -> pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]:
         """
         The IDs for resource of type `ProcessMonitoringRule` this `GoldenState` should ignore (and therefore neither warn about their existence nor attempt to delete them). Specify `[]` if you expect no such resources to exist in Dynatrace. Omit this attribute if you don't care about these kinds of resources regarding the golden state of the environment.
         """
         return pulumi.get(self, "dynatrace_process_monitoring_rules")
 
     @dynatrace_process_monitoring_rules.setter
-    def dynatrace_process_monitoring_rules(self, value: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]):
+    def dynatrace_process_monitoring_rules(self, value: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "dynatrace_process_monitoring_rules", value)
 
     @_builtins.property
     @pulumi.getter(name="dynatraceProcessMonitorings")
-    def dynatrace_process_monitorings(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]:
+    def dynatrace_process_monitorings(self) -> pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]:
         """
         The IDs for resource of type `ProcessMonitoring` this `GoldenState` should ignore (and therefore neither warn about their existence nor attempt to delete them). Specify `[]` if you expect no such resources to exist in Dynatrace. Omit this attribute if you don't care about these kinds of resources regarding the golden state of the environment.
         """
         return pulumi.get(self, "dynatrace_process_monitorings")
 
     @dynatrace_process_monitorings.setter
-    def dynatrace_process_monitorings(self, value: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]):
+    def dynatrace_process_monitorings(self, value: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "dynatrace_process_monitorings", value)
 
     @_builtins.property
     @pulumi.getter(name="dynatraceProcessVisibilities")
-    def dynatrace_process_visibilities(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]:
+    def dynatrace_process_visibilities(self) -> pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]:
         """
         The IDs for resource of type `ProcessVisibility` this `GoldenState` should ignore (and therefore neither warn about their existence nor attempt to delete them). Specify `[]` if you expect no such resources to exist in Dynatrace. Omit this attribute if you don't care about these kinds of resources regarding the golden state of the environment.
         """
         return pulumi.get(self, "dynatrace_process_visibilities")
 
     @dynatrace_process_visibilities.setter
-    def dynatrace_process_visibilities(self, value: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]):
+    def dynatrace_process_visibilities(self, value: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "dynatrace_process_visibilities", value)
 
     @_builtins.property
     @pulumi.getter(name="dynatraceProcessgroupNamings")
-    def dynatrace_processgroup_namings(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]:
+    def dynatrace_processgroup_namings(self) -> pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]:
         """
         The IDs for resource of type `ProcessgroupNaming` this `GoldenState` should ignore (and therefore neither warn about their existence nor attempt to delete them). Specify `[]` if you expect no such resources to exist in Dynatrace. Omit this attribute if you don't care about these kinds of resources regarding the golden state of the environment.
         """
         return pulumi.get(self, "dynatrace_processgroup_namings")
 
     @dynatrace_processgroup_namings.setter
-    def dynatrace_processgroup_namings(self, value: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]):
+    def dynatrace_processgroup_namings(self, value: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "dynatrace_processgroup_namings", value)
 
     @_builtins.property
     @pulumi.getter(name="dynatraceQueueManagers")
-    def dynatrace_queue_managers(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]:
+    def dynatrace_queue_managers(self) -> pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]:
         """
         The IDs for resource of type `QueueManager` this `GoldenState` should ignore (and therefore neither warn about their existence nor attempt to delete them). Specify `[]` if you expect no such resources to exist in Dynatrace. Omit this attribute if you don't care about these kinds of resources regarding the golden state of the environment.
         """
         return pulumi.get(self, "dynatrace_queue_managers")
 
     @dynatrace_queue_managers.setter
-    def dynatrace_queue_managers(self, value: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]):
+    def dynatrace_queue_managers(self, value: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "dynatrace_queue_managers", value)
 
     @_builtins.property
     @pulumi.getter(name="dynatraceQueueSharingGroups")
-    def dynatrace_queue_sharing_groups(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]:
+    def dynatrace_queue_sharing_groups(self) -> pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]:
         """
         The IDs for resource of type `QueueSharingGroups` this `GoldenState` should ignore (and therefore neither warn about their existence nor attempt to delete them). Specify `[]` if you expect no such resources to exist in Dynatrace. Omit this attribute if you don't care about these kinds of resources regarding the golden state of the environment.
         """
         return pulumi.get(self, "dynatrace_queue_sharing_groups")
 
     @dynatrace_queue_sharing_groups.setter
-    def dynatrace_queue_sharing_groups(self, value: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]):
+    def dynatrace_queue_sharing_groups(self, value: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "dynatrace_queue_sharing_groups", value)
 
     @_builtins.property
     @pulumi.getter(name="dynatraceRequestAttributes")
-    def dynatrace_request_attributes(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]:
+    def dynatrace_request_attributes(self) -> pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]:
         """
         The IDs for resource of type `RequestAttribute` this `GoldenState` should ignore (and therefore neither warn about their existence nor attempt to delete them). Specify `[]` if you expect no such resources to exist in Dynatrace. Omit this attribute if you don't care about these kinds of resources regarding the golden state of the environment.
         """
         return pulumi.get(self, "dynatrace_request_attributes")
 
     @dynatrace_request_attributes.setter
-    def dynatrace_request_attributes(self, value: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]):
+    def dynatrace_request_attributes(self, value: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "dynatrace_request_attributes", value)
 
     @_builtins.property
     @pulumi.getter(name="dynatraceRequestNamings")
-    def dynatrace_request_namings(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]:
+    def dynatrace_request_namings(self) -> pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]:
         """
         The IDs for resource of type `RequestNaming` this `GoldenState` should ignore (and therefore neither warn about their existence nor attempt to delete them). Specify `[]` if you expect no such resources to exist in Dynatrace. Omit this attribute if you don't care about these kinds of resources regarding the golden state of the environment.
         """
         return pulumi.get(self, "dynatrace_request_namings")
 
     @dynatrace_request_namings.setter
-    def dynatrace_request_namings(self, value: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]):
+    def dynatrace_request_namings(self, value: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "dynatrace_request_namings", value)
 
     @_builtins.property
     @pulumi.getter(name="dynatraceRumAdvancedCorrelations")
-    def dynatrace_rum_advanced_correlations(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]:
+    def dynatrace_rum_advanced_correlations(self) -> pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]:
         """
         The IDs for resource of type `RumAdvancedCorrelation` this `GoldenState` should ignore (and therefore neither warn about their existence nor attempt to delete them). Specify `[]` if you expect no such resources to exist in Dynatrace. Omit this attribute if you don't care about these kinds of resources regarding the golden state of the environment.
         """
         return pulumi.get(self, "dynatrace_rum_advanced_correlations")
 
     @dynatrace_rum_advanced_correlations.setter
-    def dynatrace_rum_advanced_correlations(self, value: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]):
+    def dynatrace_rum_advanced_correlations(self, value: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "dynatrace_rum_advanced_correlations", value)
 
     @_builtins.property
     @pulumi.getter(name="dynatraceRumIpLocations")
-    def dynatrace_rum_ip_locations(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]:
+    def dynatrace_rum_ip_locations(self) -> pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]:
         """
         The IDs for resource of type `RumIpLocations` this `GoldenState` should ignore (and therefore neither warn about their existence nor attempt to delete them). Specify `[]` if you expect no such resources to exist in Dynatrace. Omit this attribute if you don't care about these kinds of resources regarding the golden state of the environment.
         """
         return pulumi.get(self, "dynatrace_rum_ip_locations")
 
     @dynatrace_rum_ip_locations.setter
-    def dynatrace_rum_ip_locations(self, value: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]):
+    def dynatrace_rum_ip_locations(self, value: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "dynatrace_rum_ip_locations", value)
 
     @_builtins.property
     @pulumi.getter(name="dynatraceRumProviderBreakdowns")
-    def dynatrace_rum_provider_breakdowns(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]:
+    def dynatrace_rum_provider_breakdowns(self) -> pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]:
         """
         The IDs for resource of type `RumProviderBreakdown` this `GoldenState` should ignore (and therefore neither warn about their existence nor attempt to delete them). Specify `[]` if you expect no such resources to exist in Dynatrace. Omit this attribute if you don't care about these kinds of resources regarding the golden state of the environment.
         """
         return pulumi.get(self, "dynatrace_rum_provider_breakdowns")
 
     @dynatrace_rum_provider_breakdowns.setter
-    def dynatrace_rum_provider_breakdowns(self, value: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]):
+    def dynatrace_rum_provider_breakdowns(self, value: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "dynatrace_rum_provider_breakdowns", value)
 
     @_builtins.property
     @pulumi.getter(name="dynatraceServiceFailures")
-    def dynatrace_service_failures(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]:
+    def dynatrace_service_failures(self) -> pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]:
         """
         The IDs for resource of type `ServiceFailure` this `GoldenState` should ignore (and therefore neither warn about their existence nor attempt to delete them). Specify `[]` if you expect no such resources to exist in Dynatrace. Omit this attribute if you don't care about these kinds of resources regarding the golden state of the environment.
         """
         return pulumi.get(self, "dynatrace_service_failures")
 
     @dynatrace_service_failures.setter
-    def dynatrace_service_failures(self, value: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]):
+    def dynatrace_service_failures(self, value: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "dynatrace_service_failures", value)
 
     @_builtins.property
     @pulumi.getter(name="dynatraceServiceHttpFailures")
-    def dynatrace_service_http_failures(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]:
+    def dynatrace_service_http_failures(self) -> pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]:
         """
         The IDs for resource of type `ServiceHttpFailure` this `GoldenState` should ignore (and therefore neither warn about their existence nor attempt to delete them). Specify `[]` if you expect no such resources to exist in Dynatrace. Omit this attribute if you don't care about these kinds of resources regarding the golden state of the environment.
         """
         return pulumi.get(self, "dynatrace_service_http_failures")
 
     @dynatrace_service_http_failures.setter
-    def dynatrace_service_http_failures(self, value: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]):
+    def dynatrace_service_http_failures(self, value: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "dynatrace_service_http_failures", value)
 
     @_builtins.property
     @pulumi.getter(name="dynatraceServiceNamings")
-    def dynatrace_service_namings(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]:
+    def dynatrace_service_namings(self) -> pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]:
         """
         The IDs for resource of type `ServiceNaming` this `GoldenState` should ignore (and therefore neither warn about their existence nor attempt to delete them). Specify `[]` if you expect no such resources to exist in Dynatrace. Omit this attribute if you don't care about these kinds of resources regarding the golden state of the environment.
         """
         return pulumi.get(self, "dynatrace_service_namings")
 
     @dynatrace_service_namings.setter
-    def dynatrace_service_namings(self, value: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]):
+    def dynatrace_service_namings(self, value: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "dynatrace_service_namings", value)
 
     @_builtins.property
     @pulumi.getter(name="dynatraceServiceNowNotifications")
-    def dynatrace_service_now_notifications(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]:
+    def dynatrace_service_now_notifications(self) -> pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]:
         """
         The IDs for resource of type `ServiceNowNotification` this `GoldenState` should ignore (and therefore neither warn about their existence nor attempt to delete them). Specify `[]` if you expect no such resources to exist in Dynatrace. Omit this attribute if you don't care about these kinds of resources regarding the golden state of the environment.
         """
         return pulumi.get(self, "dynatrace_service_now_notifications")
 
     @dynatrace_service_now_notifications.setter
-    def dynatrace_service_now_notifications(self, value: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]):
+    def dynatrace_service_now_notifications(self, value: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "dynatrace_service_now_notifications", value)
 
     @_builtins.property
     @pulumi.getter(name="dynatraceSessionReplayWebPrivacies")
-    def dynatrace_session_replay_web_privacies(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]:
+    def dynatrace_session_replay_web_privacies(self) -> pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]:
         """
         The IDs for resource of type `SessionReplayWebPrivacy` this `GoldenState` should ignore (and therefore neither warn about their existence nor attempt to delete them). Specify `[]` if you expect no such resources to exist in Dynatrace. Omit this attribute if you don't care about these kinds of resources regarding the golden state of the environment.
         """
         return pulumi.get(self, "dynatrace_session_replay_web_privacies")
 
     @dynatrace_session_replay_web_privacies.setter
-    def dynatrace_session_replay_web_privacies(self, value: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]):
+    def dynatrace_session_replay_web_privacies(self, value: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "dynatrace_session_replay_web_privacies", value)
 
     @_builtins.property
     @pulumi.getter(name="dynatraceSlackNotifications")
-    def dynatrace_slack_notifications(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]:
+    def dynatrace_slack_notifications(self) -> pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]:
         """
         The IDs for resource of type `SlackNotification` this `GoldenState` should ignore (and therefore neither warn about their existence nor attempt to delete them). Specify `[]` if you expect no such resources to exist in Dynatrace. Omit this attribute if you don't care about these kinds of resources regarding the golden state of the environment.
         """
         return pulumi.get(self, "dynatrace_slack_notifications")
 
     @dynatrace_slack_notifications.setter
-    def dynatrace_slack_notifications(self, value: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]):
+    def dynatrace_slack_notifications(self, value: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "dynatrace_slack_notifications", value)
 
     @_builtins.property
     @pulumi.getter(name="dynatraceSloV2s")
-    def dynatrace_slo_v2s(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]:
+    def dynatrace_slo_v2s(self) -> pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]:
         """
         The IDs for resource of type `SloV2` this `GoldenState` should ignore (and therefore neither warn about their existence nor attempt to delete them). Specify `[]` if you expect no such resources to exist in Dynatrace. Omit this attribute if you don't care about these kinds of resources regarding the golden state of the environment.
         """
         return pulumi.get(self, "dynatrace_slo_v2s")
 
     @dynatrace_slo_v2s.setter
-    def dynatrace_slo_v2s(self, value: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]):
+    def dynatrace_slo_v2s(self, value: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "dynatrace_slo_v2s", value)
 
     @_builtins.property
     @pulumi.getter(name="dynatraceSpanCaptureRules")
-    def dynatrace_span_capture_rules(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]:
+    def dynatrace_span_capture_rules(self) -> pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]:
         """
         The IDs for resource of type `SpanCaptureRule` this `GoldenState` should ignore (and therefore neither warn about their existence nor attempt to delete them). Specify `[]` if you expect no such resources to exist in Dynatrace. Omit this attribute if you don't care about these kinds of resources regarding the golden state of the environment.
         """
         return pulumi.get(self, "dynatrace_span_capture_rules")
 
     @dynatrace_span_capture_rules.setter
-    def dynatrace_span_capture_rules(self, value: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]):
+    def dynatrace_span_capture_rules(self, value: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "dynatrace_span_capture_rules", value)
 
     @_builtins.property
     @pulumi.getter(name="dynatraceSpanContextPropagations")
-    def dynatrace_span_context_propagations(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]:
+    def dynatrace_span_context_propagations(self) -> pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]:
         """
         The IDs for resource of type `SpanContextPropagation` this `GoldenState` should ignore (and therefore neither warn about their existence nor attempt to delete them). Specify `[]` if you expect no such resources to exist in Dynatrace. Omit this attribute if you don't care about these kinds of resources regarding the golden state of the environment.
         """
         return pulumi.get(self, "dynatrace_span_context_propagations")
 
     @dynatrace_span_context_propagations.setter
-    def dynatrace_span_context_propagations(self, value: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]):
+    def dynatrace_span_context_propagations(self, value: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "dynatrace_span_context_propagations", value)
 
     @_builtins.property
     @pulumi.getter(name="dynatraceSyntheticLocations")
-    def dynatrace_synthetic_locations(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]:
+    def dynatrace_synthetic_locations(self) -> pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]:
         """
         The IDs for resource of type `SyntheticLocation` this `GoldenState` should ignore (and therefore neither warn about their existence nor attempt to delete them). Specify `[]` if you expect no such resources to exist in Dynatrace. Omit this attribute if you don't care about these kinds of resources regarding the golden state of the environment.
         """
         return pulumi.get(self, "dynatrace_synthetic_locations")
 
     @dynatrace_synthetic_locations.setter
-    def dynatrace_synthetic_locations(self, value: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]):
+    def dynatrace_synthetic_locations(self, value: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "dynatrace_synthetic_locations", value)
 
     @_builtins.property
     @pulumi.getter(name="dynatraceTrelloNotifications")
-    def dynatrace_trello_notifications(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]:
+    def dynatrace_trello_notifications(self) -> pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]:
         """
         The IDs for resource of type `TrelloNotification` this `GoldenState` should ignore (and therefore neither warn about their existence nor attempt to delete them). Specify `[]` if you expect no such resources to exist in Dynatrace. Omit this attribute if you don't care about these kinds of resources regarding the golden state of the environment.
         """
         return pulumi.get(self, "dynatrace_trello_notifications")
 
     @dynatrace_trello_notifications.setter
-    def dynatrace_trello_notifications(self, value: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]):
+    def dynatrace_trello_notifications(self, value: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "dynatrace_trello_notifications", value)
 
     @_builtins.property
     @pulumi.getter(name="dynatraceUpdateWindows")
-    def dynatrace_update_windows(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]:
+    def dynatrace_update_windows(self) -> pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]:
         """
         The IDs for resource of type `UpdateWindows` this `GoldenState` should ignore (and therefore neither warn about their existence nor attempt to delete them). Specify `[]` if you expect no such resources to exist in Dynatrace. Omit this attribute if you don't care about these kinds of resources regarding the golden state of the environment.
         """
         return pulumi.get(self, "dynatrace_update_windows")
 
     @dynatrace_update_windows.setter
-    def dynatrace_update_windows(self, value: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]):
+    def dynatrace_update_windows(self, value: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "dynatrace_update_windows", value)
 
     @_builtins.property
     @pulumi.getter(name="dynatraceUsabilityAnalytics")
-    def dynatrace_usability_analytics(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]:
+    def dynatrace_usability_analytics(self) -> pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]:
         """
         The IDs for resource of type `UsabilityAnalytics` this `GoldenState` should ignore (and therefore neither warn about their existence nor attempt to delete them). Specify `[]` if you expect no such resources to exist in Dynatrace. Omit this attribute if you don't care about these kinds of resources regarding the golden state of the environment.
         """
         return pulumi.get(self, "dynatrace_usability_analytics")
 
     @dynatrace_usability_analytics.setter
-    def dynatrace_usability_analytics(self, value: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]):
+    def dynatrace_usability_analytics(self, value: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "dynatrace_usability_analytics", value)
 
     @_builtins.property
     @pulumi.getter(name="dynatraceVictorOpsNotifications")
-    def dynatrace_victor_ops_notifications(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]:
+    def dynatrace_victor_ops_notifications(self) -> pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]:
         """
         The IDs for resource of type `VictorOpsNotification` this `GoldenState` should ignore (and therefore neither warn about their existence nor attempt to delete them). Specify `[]` if you expect no such resources to exist in Dynatrace. Omit this attribute if you don't care about these kinds of resources regarding the golden state of the environment.
         """
         return pulumi.get(self, "dynatrace_victor_ops_notifications")
 
     @dynatrace_victor_ops_notifications.setter
-    def dynatrace_victor_ops_notifications(self, value: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]):
+    def dynatrace_victor_ops_notifications(self, value: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "dynatrace_victor_ops_notifications", value)
 
     @_builtins.property
     @pulumi.getter(name="dynatraceWebAppAnomalies")
-    def dynatrace_web_app_anomalies(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]:
+    def dynatrace_web_app_anomalies(self) -> pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]:
         """
         The IDs for resource of type `WebAppAnomalies` this `GoldenState` should ignore (and therefore neither warn about their existence nor attempt to delete them). Specify `[]` if you expect no such resources to exist in Dynatrace. Omit this attribute if you don't care about these kinds of resources regarding the golden state of the environment.
         """
         return pulumi.get(self, "dynatrace_web_app_anomalies")
 
     @dynatrace_web_app_anomalies.setter
-    def dynatrace_web_app_anomalies(self, value: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]):
+    def dynatrace_web_app_anomalies(self, value: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "dynatrace_web_app_anomalies", value)
 
     @_builtins.property
     @pulumi.getter(name="dynatraceWebAppBeaconOrigins")
-    def dynatrace_web_app_beacon_origins(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]:
+    def dynatrace_web_app_beacon_origins(self) -> pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]:
         """
         The IDs for resource of type `WebAppBeaconOrigins` this `GoldenState` should ignore (and therefore neither warn about their existence nor attempt to delete them). Specify `[]` if you expect no such resources to exist in Dynatrace. Omit this attribute if you don't care about these kinds of resources regarding the golden state of the environment.
         """
         return pulumi.get(self, "dynatrace_web_app_beacon_origins")
 
     @dynatrace_web_app_beacon_origins.setter
-    def dynatrace_web_app_beacon_origins(self, value: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]):
+    def dynatrace_web_app_beacon_origins(self, value: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "dynatrace_web_app_beacon_origins", value)
 
     @_builtins.property
     @pulumi.getter(name="dynatraceWebAppEnablements")
-    def dynatrace_web_app_enablements(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]:
+    def dynatrace_web_app_enablements(self) -> pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]:
         """
         The IDs for resource of type `WebAppEnablement` this `GoldenState` should ignore (and therefore neither warn about their existence nor attempt to delete them). Specify `[]` if you expect no such resources to exist in Dynatrace. Omit this attribute if you don't care about these kinds of resources regarding the golden state of the environment.
         """
         return pulumi.get(self, "dynatrace_web_app_enablements")
 
     @dynatrace_web_app_enablements.setter
-    def dynatrace_web_app_enablements(self, value: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]):
+    def dynatrace_web_app_enablements(self, value: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "dynatrace_web_app_enablements", value)
 
     @_builtins.property
     @pulumi.getter(name="dynatraceWebAppResourceCleanups")
-    def dynatrace_web_app_resource_cleanups(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]:
+    def dynatrace_web_app_resource_cleanups(self) -> pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]:
         """
         The IDs for resource of type `WebAppResourceCleanup` this `GoldenState` should ignore (and therefore neither warn about their existence nor attempt to delete them). Specify `[]` if you expect no such resources to exist in Dynatrace. Omit this attribute if you don't care about these kinds of resources regarding the golden state of the environment.
         """
         return pulumi.get(self, "dynatrace_web_app_resource_cleanups")
 
     @dynatrace_web_app_resource_cleanups.setter
-    def dynatrace_web_app_resource_cleanups(self, value: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]):
+    def dynatrace_web_app_resource_cleanups(self, value: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "dynatrace_web_app_resource_cleanups", value)
 
     @_builtins.property
     @pulumi.getter(name="dynatraceWebAppResourceTypes")
-    def dynatrace_web_app_resource_types(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]:
+    def dynatrace_web_app_resource_types(self) -> pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]:
         """
         The IDs for resource of type `WebAppResourceTypes` this `GoldenState` should ignore (and therefore neither warn about their existence nor attempt to delete them). Specify `[]` if you expect no such resources to exist in Dynatrace. Omit this attribute if you don't care about these kinds of resources regarding the golden state of the environment.
         """
         return pulumi.get(self, "dynatrace_web_app_resource_types")
 
     @dynatrace_web_app_resource_types.setter
-    def dynatrace_web_app_resource_types(self, value: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]):
+    def dynatrace_web_app_resource_types(self, value: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "dynatrace_web_app_resource_types", value)
 
     @_builtins.property
     @pulumi.getter(name="dynatraceWebApplications")
-    def dynatrace_web_applications(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]:
+    def dynatrace_web_applications(self) -> pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]:
         """
         The IDs for resource of type `WebApplication` this `GoldenState` should ignore (and therefore neither warn about their existence nor attempt to delete them). Specify `[]` if you expect no such resources to exist in Dynatrace. Omit this attribute if you don't care about these kinds of resources regarding the golden state of the environment.
         """
         return pulumi.get(self, "dynatrace_web_applications")
 
     @dynatrace_web_applications.setter
-    def dynatrace_web_applications(self, value: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]):
+    def dynatrace_web_applications(self, value: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "dynatrace_web_applications", value)
 
     @_builtins.property
     @pulumi.getter(name="dynatraceWebhookNotifications")
-    def dynatrace_webhook_notifications(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]:
+    def dynatrace_webhook_notifications(self) -> pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]:
         """
         The IDs for resource of type `WebhookNotification` this `GoldenState` should ignore (and therefore neither warn about their existence nor attempt to delete them). Specify `[]` if you expect no such resources to exist in Dynatrace. Omit this attribute if you don't care about these kinds of resources regarding the golden state of the environment.
         """
         return pulumi.get(self, "dynatrace_webhook_notifications")
 
     @dynatrace_webhook_notifications.setter
-    def dynatrace_webhook_notifications(self, value: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]):
+    def dynatrace_webhook_notifications(self, value: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "dynatrace_webhook_notifications", value)
 
     @_builtins.property
     @pulumi.getter(name="dynatraceXmattersNotifications")
-    def dynatrace_xmatters_notifications(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]:
+    def dynatrace_xmatters_notifications(self) -> pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]:
         """
         The IDs for resource of type `XmattersNotification` this `GoldenState` should ignore (and therefore neither warn about their existence nor attempt to delete them). Specify `[]` if you expect no such resources to exist in Dynatrace. Omit this attribute if you don't care about these kinds of resources regarding the golden state of the environment.
         """
         return pulumi.get(self, "dynatrace_xmatters_notifications")
 
     @dynatrace_xmatters_notifications.setter
-    def dynatrace_xmatters_notifications(self, value: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]):
+    def dynatrace_xmatters_notifications(self, value: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "dynatrace_xmatters_notifications", value)
 
     @_builtins.property
     @pulumi.getter
-    def mode(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def mode(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Possible values are:
         * `DELETE` if you want resources to automatally get deleted`n* `WARN` if you want to get notified about resources that aren't managed by Terraform via a warning message from this resource`
@@ -3238,7 +3238,7 @@ class _GoldenStateState:
         return pulumi.get(self, "mode")
 
     @mode.setter
-    def mode(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def mode(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "mode", value)
 
 
@@ -3248,106 +3248,106 @@ class GoldenState(pulumi.CustomResource):
     def __init__(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 dynatrace_aix_extensions: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-                 dynatrace_alertings: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-                 dynatrace_ansible_tower_notifications: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-                 dynatrace_application_detection_rules: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-                 dynatrace_application_error_rules: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-                 dynatrace_autotag_v2s: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-                 dynatrace_aws_credentials: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-                 dynatrace_azure_credentials: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-                 dynatrace_browser_monitors: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-                 dynatrace_calculated_mobile_metrics: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-                 dynatrace_calculated_service_metrics: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-                 dynatrace_calculated_synthetic_metrics: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-                 dynatrace_calculated_web_metrics: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-                 dynatrace_credentials: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-                 dynatrace_custom_app_anomalies: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-                 dynatrace_custom_app_crash_rates: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-                 dynatrace_custom_app_enablements: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-                 dynatrace_custom_services: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-                 dynatrace_data_privacies: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-                 dynatrace_database_anomalies_v2s: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-                 dynatrace_declarative_groupings: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-                 dynatrace_disk_anomalies_v2s: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-                 dynatrace_disk_options: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-                 dynatrace_disk_specific_anomalies_v2s: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-                 dynatrace_email_notifications: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-                 dynatrace_extension_execution_controllers: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-                 dynatrace_generic_types: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-                 dynatrace_host_anomalies_v2s: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-                 dynatrace_host_namings: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-                 dynatrace_host_process_group_monitorings: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-                 dynatrace_http_monitors: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-                 dynatrace_ims_bridges: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-                 dynatrace_jira_notifications: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-                 dynatrace_k8s_namespace_anomalies: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-                 dynatrace_key_requests: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-                 dynatrace_log_metrics: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-                 dynatrace_maintenances: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-                 dynatrace_management_zone_v2s: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-                 dynatrace_metric_events: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-                 dynatrace_mobile_app_anomalies: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-                 dynatrace_mobile_app_crash_rates: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-                 dynatrace_mobile_app_enablements: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-                 dynatrace_mobile_applications: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-                 dynatrace_monitored_technologies_apaches: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-                 dynatrace_monitored_technologies_dotnets: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-                 dynatrace_monitored_technologies_gos: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-                 dynatrace_monitored_technologies_iis: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-                 dynatrace_monitored_technologies_javas: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-                 dynatrace_monitored_technologies_nginxes: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-                 dynatrace_monitored_technologies_nodejs: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-                 dynatrace_monitored_technologies_opentracings: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-                 dynatrace_monitored_technologies_phps: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-                 dynatrace_monitored_technologies_varnishes: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-                 dynatrace_monitored_technologies_wsmbs: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-                 dynatrace_muted_requests: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-                 dynatrace_nettracers: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-                 dynatrace_oneagent_features: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-                 dynatrace_ops_genie_notifications: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-                 dynatrace_pager_duty_notifications: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-                 dynatrace_pg_alertings: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-                 dynatrace_process_availabilities: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-                 dynatrace_process_group_detection_flags: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-                 dynatrace_process_group_detections: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-                 dynatrace_process_group_monitorings: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-                 dynatrace_process_group_rums: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-                 dynatrace_process_group_simple_detections: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-                 dynatrace_process_monitoring_rules: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-                 dynatrace_process_monitorings: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-                 dynatrace_process_visibilities: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-                 dynatrace_processgroup_namings: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-                 dynatrace_queue_managers: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-                 dynatrace_queue_sharing_groups: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-                 dynatrace_request_attributes: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-                 dynatrace_request_namings: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-                 dynatrace_rum_advanced_correlations: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-                 dynatrace_rum_ip_locations: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-                 dynatrace_rum_provider_breakdowns: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-                 dynatrace_service_failures: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-                 dynatrace_service_http_failures: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-                 dynatrace_service_namings: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-                 dynatrace_service_now_notifications: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-                 dynatrace_session_replay_web_privacies: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-                 dynatrace_slack_notifications: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-                 dynatrace_slo_v2s: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-                 dynatrace_span_capture_rules: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-                 dynatrace_span_context_propagations: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-                 dynatrace_synthetic_locations: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-                 dynatrace_trello_notifications: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-                 dynatrace_update_windows: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-                 dynatrace_usability_analytics: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-                 dynatrace_victor_ops_notifications: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-                 dynatrace_web_app_anomalies: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-                 dynatrace_web_app_beacon_origins: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-                 dynatrace_web_app_enablements: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-                 dynatrace_web_app_resource_cleanups: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-                 dynatrace_web_app_resource_types: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-                 dynatrace_web_applications: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-                 dynatrace_webhook_notifications: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-                 dynatrace_xmatters_notifications: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-                 mode: Optional[pulumi.Input[_builtins.str]] = None,
+                 dynatrace_aix_extensions: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 dynatrace_alertings: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 dynatrace_ansible_tower_notifications: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 dynatrace_application_detection_rules: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 dynatrace_application_error_rules: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 dynatrace_autotag_v2s: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 dynatrace_aws_credentials: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 dynatrace_azure_credentials: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 dynatrace_browser_monitors: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 dynatrace_calculated_mobile_metrics: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 dynatrace_calculated_service_metrics: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 dynatrace_calculated_synthetic_metrics: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 dynatrace_calculated_web_metrics: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 dynatrace_credentials: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 dynatrace_custom_app_anomalies: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 dynatrace_custom_app_crash_rates: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 dynatrace_custom_app_enablements: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 dynatrace_custom_services: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 dynatrace_data_privacies: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 dynatrace_database_anomalies_v2s: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 dynatrace_declarative_groupings: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 dynatrace_disk_anomalies_v2s: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 dynatrace_disk_options: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 dynatrace_disk_specific_anomalies_v2s: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 dynatrace_email_notifications: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 dynatrace_extension_execution_controllers: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 dynatrace_generic_types: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 dynatrace_host_anomalies_v2s: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 dynatrace_host_namings: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 dynatrace_host_process_group_monitorings: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 dynatrace_http_monitors: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 dynatrace_ims_bridges: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 dynatrace_jira_notifications: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 dynatrace_k8s_namespace_anomalies: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 dynatrace_key_requests: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 dynatrace_log_metrics: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 dynatrace_maintenances: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 dynatrace_management_zone_v2s: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 dynatrace_metric_events: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 dynatrace_mobile_app_anomalies: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 dynatrace_mobile_app_crash_rates: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 dynatrace_mobile_app_enablements: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 dynatrace_mobile_applications: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 dynatrace_monitored_technologies_apaches: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 dynatrace_monitored_technologies_dotnets: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 dynatrace_monitored_technologies_gos: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 dynatrace_monitored_technologies_iis: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 dynatrace_monitored_technologies_javas: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 dynatrace_monitored_technologies_nginxes: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 dynatrace_monitored_technologies_nodejs: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 dynatrace_monitored_technologies_opentracings: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 dynatrace_monitored_technologies_phps: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 dynatrace_monitored_technologies_varnishes: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 dynatrace_monitored_technologies_wsmbs: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 dynatrace_muted_requests: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 dynatrace_nettracers: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 dynatrace_oneagent_features: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 dynatrace_ops_genie_notifications: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 dynatrace_pager_duty_notifications: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 dynatrace_pg_alertings: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 dynatrace_process_availabilities: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 dynatrace_process_group_detection_flags: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 dynatrace_process_group_detections: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 dynatrace_process_group_monitorings: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 dynatrace_process_group_rums: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 dynatrace_process_group_simple_detections: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 dynatrace_process_monitoring_rules: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 dynatrace_process_monitorings: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 dynatrace_process_visibilities: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 dynatrace_processgroup_namings: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 dynatrace_queue_managers: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 dynatrace_queue_sharing_groups: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 dynatrace_request_attributes: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 dynatrace_request_namings: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 dynatrace_rum_advanced_correlations: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 dynatrace_rum_ip_locations: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 dynatrace_rum_provider_breakdowns: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 dynatrace_service_failures: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 dynatrace_service_http_failures: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 dynatrace_service_namings: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 dynatrace_service_now_notifications: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 dynatrace_session_replay_web_privacies: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 dynatrace_slack_notifications: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 dynatrace_slo_v2s: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 dynatrace_span_capture_rules: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 dynatrace_span_context_propagations: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 dynatrace_synthetic_locations: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 dynatrace_trello_notifications: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 dynatrace_update_windows: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 dynatrace_usability_analytics: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 dynatrace_victor_ops_notifications: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 dynatrace_web_app_anomalies: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 dynatrace_web_app_beacon_origins: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 dynatrace_web_app_enablements: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 dynatrace_web_app_resource_cleanups: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 dynatrace_web_app_resource_types: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 dynatrace_web_applications: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 dynatrace_webhook_notifications: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 dynatrace_xmatters_notifications: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 mode: pulumi.Input[Optional[_builtins.str]] = None,
                  __props__=None):
         """
         !> This resource is currently in an experimental phase. It is disabled by default. If you would like to get early access please reach out to us via GitHub ticket. Dynatrace Support will not yet be able to assist you here.
@@ -4055,106 +4055,106 @@ class GoldenState(pulumi.CustomResource):
     def _internal_init(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 dynatrace_aix_extensions: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-                 dynatrace_alertings: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-                 dynatrace_ansible_tower_notifications: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-                 dynatrace_application_detection_rules: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-                 dynatrace_application_error_rules: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-                 dynatrace_autotag_v2s: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-                 dynatrace_aws_credentials: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-                 dynatrace_azure_credentials: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-                 dynatrace_browser_monitors: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-                 dynatrace_calculated_mobile_metrics: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-                 dynatrace_calculated_service_metrics: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-                 dynatrace_calculated_synthetic_metrics: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-                 dynatrace_calculated_web_metrics: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-                 dynatrace_credentials: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-                 dynatrace_custom_app_anomalies: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-                 dynatrace_custom_app_crash_rates: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-                 dynatrace_custom_app_enablements: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-                 dynatrace_custom_services: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-                 dynatrace_data_privacies: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-                 dynatrace_database_anomalies_v2s: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-                 dynatrace_declarative_groupings: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-                 dynatrace_disk_anomalies_v2s: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-                 dynatrace_disk_options: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-                 dynatrace_disk_specific_anomalies_v2s: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-                 dynatrace_email_notifications: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-                 dynatrace_extension_execution_controllers: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-                 dynatrace_generic_types: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-                 dynatrace_host_anomalies_v2s: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-                 dynatrace_host_namings: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-                 dynatrace_host_process_group_monitorings: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-                 dynatrace_http_monitors: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-                 dynatrace_ims_bridges: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-                 dynatrace_jira_notifications: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-                 dynatrace_k8s_namespace_anomalies: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-                 dynatrace_key_requests: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-                 dynatrace_log_metrics: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-                 dynatrace_maintenances: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-                 dynatrace_management_zone_v2s: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-                 dynatrace_metric_events: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-                 dynatrace_mobile_app_anomalies: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-                 dynatrace_mobile_app_crash_rates: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-                 dynatrace_mobile_app_enablements: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-                 dynatrace_mobile_applications: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-                 dynatrace_monitored_technologies_apaches: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-                 dynatrace_monitored_technologies_dotnets: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-                 dynatrace_monitored_technologies_gos: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-                 dynatrace_monitored_technologies_iis: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-                 dynatrace_monitored_technologies_javas: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-                 dynatrace_monitored_technologies_nginxes: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-                 dynatrace_monitored_technologies_nodejs: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-                 dynatrace_monitored_technologies_opentracings: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-                 dynatrace_monitored_technologies_phps: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-                 dynatrace_monitored_technologies_varnishes: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-                 dynatrace_monitored_technologies_wsmbs: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-                 dynatrace_muted_requests: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-                 dynatrace_nettracers: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-                 dynatrace_oneagent_features: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-                 dynatrace_ops_genie_notifications: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-                 dynatrace_pager_duty_notifications: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-                 dynatrace_pg_alertings: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-                 dynatrace_process_availabilities: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-                 dynatrace_process_group_detection_flags: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-                 dynatrace_process_group_detections: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-                 dynatrace_process_group_monitorings: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-                 dynatrace_process_group_rums: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-                 dynatrace_process_group_simple_detections: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-                 dynatrace_process_monitoring_rules: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-                 dynatrace_process_monitorings: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-                 dynatrace_process_visibilities: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-                 dynatrace_processgroup_namings: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-                 dynatrace_queue_managers: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-                 dynatrace_queue_sharing_groups: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-                 dynatrace_request_attributes: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-                 dynatrace_request_namings: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-                 dynatrace_rum_advanced_correlations: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-                 dynatrace_rum_ip_locations: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-                 dynatrace_rum_provider_breakdowns: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-                 dynatrace_service_failures: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-                 dynatrace_service_http_failures: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-                 dynatrace_service_namings: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-                 dynatrace_service_now_notifications: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-                 dynatrace_session_replay_web_privacies: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-                 dynatrace_slack_notifications: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-                 dynatrace_slo_v2s: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-                 dynatrace_span_capture_rules: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-                 dynatrace_span_context_propagations: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-                 dynatrace_synthetic_locations: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-                 dynatrace_trello_notifications: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-                 dynatrace_update_windows: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-                 dynatrace_usability_analytics: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-                 dynatrace_victor_ops_notifications: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-                 dynatrace_web_app_anomalies: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-                 dynatrace_web_app_beacon_origins: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-                 dynatrace_web_app_enablements: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-                 dynatrace_web_app_resource_cleanups: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-                 dynatrace_web_app_resource_types: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-                 dynatrace_web_applications: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-                 dynatrace_webhook_notifications: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-                 dynatrace_xmatters_notifications: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-                 mode: Optional[pulumi.Input[_builtins.str]] = None,
+                 dynatrace_aix_extensions: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 dynatrace_alertings: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 dynatrace_ansible_tower_notifications: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 dynatrace_application_detection_rules: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 dynatrace_application_error_rules: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 dynatrace_autotag_v2s: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 dynatrace_aws_credentials: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 dynatrace_azure_credentials: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 dynatrace_browser_monitors: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 dynatrace_calculated_mobile_metrics: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 dynatrace_calculated_service_metrics: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 dynatrace_calculated_synthetic_metrics: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 dynatrace_calculated_web_metrics: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 dynatrace_credentials: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 dynatrace_custom_app_anomalies: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 dynatrace_custom_app_crash_rates: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 dynatrace_custom_app_enablements: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 dynatrace_custom_services: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 dynatrace_data_privacies: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 dynatrace_database_anomalies_v2s: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 dynatrace_declarative_groupings: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 dynatrace_disk_anomalies_v2s: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 dynatrace_disk_options: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 dynatrace_disk_specific_anomalies_v2s: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 dynatrace_email_notifications: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 dynatrace_extension_execution_controllers: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 dynatrace_generic_types: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 dynatrace_host_anomalies_v2s: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 dynatrace_host_namings: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 dynatrace_host_process_group_monitorings: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 dynatrace_http_monitors: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 dynatrace_ims_bridges: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 dynatrace_jira_notifications: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 dynatrace_k8s_namespace_anomalies: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 dynatrace_key_requests: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 dynatrace_log_metrics: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 dynatrace_maintenances: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 dynatrace_management_zone_v2s: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 dynatrace_metric_events: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 dynatrace_mobile_app_anomalies: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 dynatrace_mobile_app_crash_rates: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 dynatrace_mobile_app_enablements: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 dynatrace_mobile_applications: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 dynatrace_monitored_technologies_apaches: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 dynatrace_monitored_technologies_dotnets: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 dynatrace_monitored_technologies_gos: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 dynatrace_monitored_technologies_iis: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 dynatrace_monitored_technologies_javas: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 dynatrace_monitored_technologies_nginxes: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 dynatrace_monitored_technologies_nodejs: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 dynatrace_monitored_technologies_opentracings: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 dynatrace_monitored_technologies_phps: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 dynatrace_monitored_technologies_varnishes: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 dynatrace_monitored_technologies_wsmbs: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 dynatrace_muted_requests: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 dynatrace_nettracers: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 dynatrace_oneagent_features: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 dynatrace_ops_genie_notifications: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 dynatrace_pager_duty_notifications: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 dynatrace_pg_alertings: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 dynatrace_process_availabilities: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 dynatrace_process_group_detection_flags: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 dynatrace_process_group_detections: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 dynatrace_process_group_monitorings: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 dynatrace_process_group_rums: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 dynatrace_process_group_simple_detections: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 dynatrace_process_monitoring_rules: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 dynatrace_process_monitorings: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 dynatrace_process_visibilities: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 dynatrace_processgroup_namings: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 dynatrace_queue_managers: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 dynatrace_queue_sharing_groups: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 dynatrace_request_attributes: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 dynatrace_request_namings: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 dynatrace_rum_advanced_correlations: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 dynatrace_rum_ip_locations: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 dynatrace_rum_provider_breakdowns: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 dynatrace_service_failures: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 dynatrace_service_http_failures: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 dynatrace_service_namings: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 dynatrace_service_now_notifications: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 dynatrace_session_replay_web_privacies: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 dynatrace_slack_notifications: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 dynatrace_slo_v2s: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 dynatrace_span_capture_rules: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 dynatrace_span_context_propagations: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 dynatrace_synthetic_locations: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 dynatrace_trello_notifications: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 dynatrace_update_windows: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 dynatrace_usability_analytics: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 dynatrace_victor_ops_notifications: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 dynatrace_web_app_anomalies: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 dynatrace_web_app_beacon_origins: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 dynatrace_web_app_enablements: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 dynatrace_web_app_resource_cleanups: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 dynatrace_web_app_resource_types: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 dynatrace_web_applications: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 dynatrace_webhook_notifications: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 dynatrace_xmatters_notifications: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 mode: pulumi.Input[Optional[_builtins.str]] = None,
                  __props__=None):
         opts = pulumi.ResourceOptions.merge(_utilities.get_resource_opts_defaults(), opts)
         if not isinstance(opts, pulumi.ResourceOptions):
@@ -4274,106 +4274,106 @@ class GoldenState(pulumi.CustomResource):
     def get(resource_name: str,
             id: pulumi.Input[str],
             opts: Optional[pulumi.ResourceOptions] = None,
-            dynatrace_aix_extensions: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-            dynatrace_alertings: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-            dynatrace_ansible_tower_notifications: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-            dynatrace_application_detection_rules: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-            dynatrace_application_error_rules: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-            dynatrace_autotag_v2s: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-            dynatrace_aws_credentials: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-            dynatrace_azure_credentials: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-            dynatrace_browser_monitors: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-            dynatrace_calculated_mobile_metrics: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-            dynatrace_calculated_service_metrics: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-            dynatrace_calculated_synthetic_metrics: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-            dynatrace_calculated_web_metrics: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-            dynatrace_credentials: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-            dynatrace_custom_app_anomalies: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-            dynatrace_custom_app_crash_rates: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-            dynatrace_custom_app_enablements: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-            dynatrace_custom_services: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-            dynatrace_data_privacies: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-            dynatrace_database_anomalies_v2s: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-            dynatrace_declarative_groupings: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-            dynatrace_disk_anomalies_v2s: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-            dynatrace_disk_options: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-            dynatrace_disk_specific_anomalies_v2s: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-            dynatrace_email_notifications: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-            dynatrace_extension_execution_controllers: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-            dynatrace_generic_types: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-            dynatrace_host_anomalies_v2s: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-            dynatrace_host_namings: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-            dynatrace_host_process_group_monitorings: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-            dynatrace_http_monitors: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-            dynatrace_ims_bridges: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-            dynatrace_jira_notifications: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-            dynatrace_k8s_namespace_anomalies: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-            dynatrace_key_requests: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-            dynatrace_log_metrics: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-            dynatrace_maintenances: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-            dynatrace_management_zone_v2s: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-            dynatrace_metric_events: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-            dynatrace_mobile_app_anomalies: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-            dynatrace_mobile_app_crash_rates: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-            dynatrace_mobile_app_enablements: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-            dynatrace_mobile_applications: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-            dynatrace_monitored_technologies_apaches: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-            dynatrace_monitored_technologies_dotnets: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-            dynatrace_monitored_technologies_gos: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-            dynatrace_monitored_technologies_iis: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-            dynatrace_monitored_technologies_javas: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-            dynatrace_monitored_technologies_nginxes: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-            dynatrace_monitored_technologies_nodejs: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-            dynatrace_monitored_technologies_opentracings: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-            dynatrace_monitored_technologies_phps: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-            dynatrace_monitored_technologies_varnishes: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-            dynatrace_monitored_technologies_wsmbs: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-            dynatrace_muted_requests: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-            dynatrace_nettracers: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-            dynatrace_oneagent_features: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-            dynatrace_ops_genie_notifications: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-            dynatrace_pager_duty_notifications: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-            dynatrace_pg_alertings: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-            dynatrace_process_availabilities: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-            dynatrace_process_group_detection_flags: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-            dynatrace_process_group_detections: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-            dynatrace_process_group_monitorings: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-            dynatrace_process_group_rums: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-            dynatrace_process_group_simple_detections: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-            dynatrace_process_monitoring_rules: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-            dynatrace_process_monitorings: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-            dynatrace_process_visibilities: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-            dynatrace_processgroup_namings: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-            dynatrace_queue_managers: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-            dynatrace_queue_sharing_groups: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-            dynatrace_request_attributes: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-            dynatrace_request_namings: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-            dynatrace_rum_advanced_correlations: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-            dynatrace_rum_ip_locations: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-            dynatrace_rum_provider_breakdowns: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-            dynatrace_service_failures: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-            dynatrace_service_http_failures: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-            dynatrace_service_namings: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-            dynatrace_service_now_notifications: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-            dynatrace_session_replay_web_privacies: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-            dynatrace_slack_notifications: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-            dynatrace_slo_v2s: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-            dynatrace_span_capture_rules: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-            dynatrace_span_context_propagations: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-            dynatrace_synthetic_locations: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-            dynatrace_trello_notifications: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-            dynatrace_update_windows: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-            dynatrace_usability_analytics: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-            dynatrace_victor_ops_notifications: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-            dynatrace_web_app_anomalies: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-            dynatrace_web_app_beacon_origins: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-            dynatrace_web_app_enablements: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-            dynatrace_web_app_resource_cleanups: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-            dynatrace_web_app_resource_types: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-            dynatrace_web_applications: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-            dynatrace_webhook_notifications: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-            dynatrace_xmatters_notifications: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-            mode: Optional[pulumi.Input[_builtins.str]] = None) -> 'GoldenState':
+            dynatrace_aix_extensions: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+            dynatrace_alertings: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+            dynatrace_ansible_tower_notifications: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+            dynatrace_application_detection_rules: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+            dynatrace_application_error_rules: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+            dynatrace_autotag_v2s: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+            dynatrace_aws_credentials: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+            dynatrace_azure_credentials: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+            dynatrace_browser_monitors: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+            dynatrace_calculated_mobile_metrics: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+            dynatrace_calculated_service_metrics: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+            dynatrace_calculated_synthetic_metrics: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+            dynatrace_calculated_web_metrics: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+            dynatrace_credentials: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+            dynatrace_custom_app_anomalies: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+            dynatrace_custom_app_crash_rates: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+            dynatrace_custom_app_enablements: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+            dynatrace_custom_services: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+            dynatrace_data_privacies: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+            dynatrace_database_anomalies_v2s: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+            dynatrace_declarative_groupings: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+            dynatrace_disk_anomalies_v2s: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+            dynatrace_disk_options: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+            dynatrace_disk_specific_anomalies_v2s: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+            dynatrace_email_notifications: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+            dynatrace_extension_execution_controllers: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+            dynatrace_generic_types: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+            dynatrace_host_anomalies_v2s: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+            dynatrace_host_namings: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+            dynatrace_host_process_group_monitorings: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+            dynatrace_http_monitors: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+            dynatrace_ims_bridges: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+            dynatrace_jira_notifications: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+            dynatrace_k8s_namespace_anomalies: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+            dynatrace_key_requests: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+            dynatrace_log_metrics: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+            dynatrace_maintenances: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+            dynatrace_management_zone_v2s: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+            dynatrace_metric_events: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+            dynatrace_mobile_app_anomalies: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+            dynatrace_mobile_app_crash_rates: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+            dynatrace_mobile_app_enablements: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+            dynatrace_mobile_applications: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+            dynatrace_monitored_technologies_apaches: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+            dynatrace_monitored_technologies_dotnets: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+            dynatrace_monitored_technologies_gos: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+            dynatrace_monitored_technologies_iis: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+            dynatrace_monitored_technologies_javas: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+            dynatrace_monitored_technologies_nginxes: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+            dynatrace_monitored_technologies_nodejs: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+            dynatrace_monitored_technologies_opentracings: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+            dynatrace_monitored_technologies_phps: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+            dynatrace_monitored_technologies_varnishes: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+            dynatrace_monitored_technologies_wsmbs: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+            dynatrace_muted_requests: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+            dynatrace_nettracers: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+            dynatrace_oneagent_features: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+            dynatrace_ops_genie_notifications: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+            dynatrace_pager_duty_notifications: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+            dynatrace_pg_alertings: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+            dynatrace_process_availabilities: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+            dynatrace_process_group_detection_flags: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+            dynatrace_process_group_detections: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+            dynatrace_process_group_monitorings: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+            dynatrace_process_group_rums: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+            dynatrace_process_group_simple_detections: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+            dynatrace_process_monitoring_rules: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+            dynatrace_process_monitorings: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+            dynatrace_process_visibilities: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+            dynatrace_processgroup_namings: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+            dynatrace_queue_managers: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+            dynatrace_queue_sharing_groups: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+            dynatrace_request_attributes: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+            dynatrace_request_namings: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+            dynatrace_rum_advanced_correlations: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+            dynatrace_rum_ip_locations: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+            dynatrace_rum_provider_breakdowns: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+            dynatrace_service_failures: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+            dynatrace_service_http_failures: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+            dynatrace_service_namings: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+            dynatrace_service_now_notifications: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+            dynatrace_session_replay_web_privacies: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+            dynatrace_slack_notifications: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+            dynatrace_slo_v2s: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+            dynatrace_span_capture_rules: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+            dynatrace_span_context_propagations: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+            dynatrace_synthetic_locations: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+            dynatrace_trello_notifications: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+            dynatrace_update_windows: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+            dynatrace_usability_analytics: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+            dynatrace_victor_ops_notifications: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+            dynatrace_web_app_anomalies: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+            dynatrace_web_app_beacon_origins: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+            dynatrace_web_app_enablements: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+            dynatrace_web_app_resource_cleanups: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+            dynatrace_web_app_resource_types: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+            dynatrace_web_applications: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+            dynatrace_webhook_notifications: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+            dynatrace_xmatters_notifications: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+            mode: pulumi.Input[Optional[_builtins.str]] = None) -> 'GoldenState':
         """
         Get an existing GoldenState resource's state with the given name, id, and optional extra
         properties used to qualify the lookup.

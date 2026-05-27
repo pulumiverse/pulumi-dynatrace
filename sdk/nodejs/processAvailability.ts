@@ -129,35 +129,35 @@ export interface ProcessAvailabilityState {
     /**
      * This setting is enabled (`true`) or disabled (`false`)
      */
-    enabled?: pulumi.Input<boolean>;
+    enabled?: pulumi.Input<boolean | undefined>;
     /**
      * Because this resource allows for ordering you may specify the ID of the resource instance that comes before this instance regarding order. If not specified when creating the setting will be added to the end of the list. If not specified during update the order will remain untouched
      */
-    insertAfter?: pulumi.Input<string>;
+    insertAfter?: pulumi.Input<string | undefined>;
     /**
      * Set of additional key-value properties to be attached to the triggered event. You can retrieve the available property keys using the [Events API v2](https://dt-url.net/9622g1w). Additionally any Host resource attribute can be dynamically substituted (agent 1.325+).
      */
-    metadata?: pulumi.Input<inputs.ProcessAvailabilityMetadata>;
+    metadata?: pulumi.Input<inputs.ProcessAvailabilityMetadata | undefined>;
     /**
      * Specify a minimum number of processes matching the monitoring rule. An alert is triggered if any host falls below this threshold.
      */
-    minimumProcesses?: pulumi.Input<number>;
+    minimumProcesses?: pulumi.Input<number | undefined>;
     /**
      * Monitoring rule name
      */
-    name?: pulumi.Input<string>;
+    name?: pulumi.Input<string | undefined>;
     /**
      * Select the operating systems on which the monitoring rule should be applied. Possible Values: `AIX`, `LINUX`, `WINDOWS`
      */
-    operatingSystems?: pulumi.Input<pulumi.Input<string>[]>;
+    operatingSystems?: pulumi.Input<pulumi.Input<string>[] | undefined>;
     /**
      * Define process detection rules by selecting a process property and a condition. Each monitoring rule can have multiple detection rules associated with it.
      */
-    rules?: pulumi.Input<inputs.ProcessAvailabilityRules>;
+    rules?: pulumi.Input<inputs.ProcessAvailabilityRules | undefined>;
     /**
      * The scope of this setting (HOST, HOST_GROUP). Omit this property if you want to cover the whole environment.
      */
-    scope?: pulumi.Input<string>;
+    scope?: pulumi.Input<string | undefined>;
 }
 
 /**
@@ -171,29 +171,29 @@ export interface ProcessAvailabilityArgs {
     /**
      * Because this resource allows for ordering you may specify the ID of the resource instance that comes before this instance regarding order. If not specified when creating the setting will be added to the end of the list. If not specified during update the order will remain untouched
      */
-    insertAfter?: pulumi.Input<string>;
+    insertAfter?: pulumi.Input<string | undefined>;
     /**
      * Set of additional key-value properties to be attached to the triggered event. You can retrieve the available property keys using the [Events API v2](https://dt-url.net/9622g1w). Additionally any Host resource attribute can be dynamically substituted (agent 1.325+).
      */
-    metadata?: pulumi.Input<inputs.ProcessAvailabilityMetadata>;
+    metadata?: pulumi.Input<inputs.ProcessAvailabilityMetadata | undefined>;
     /**
      * Specify a minimum number of processes matching the monitoring rule. An alert is triggered if any host falls below this threshold.
      */
-    minimumProcesses?: pulumi.Input<number>;
+    minimumProcesses?: pulumi.Input<number | undefined>;
     /**
      * Monitoring rule name
      */
-    name?: pulumi.Input<string>;
+    name?: pulumi.Input<string | undefined>;
     /**
      * Select the operating systems on which the monitoring rule should be applied. Possible Values: `AIX`, `LINUX`, `WINDOWS`
      */
-    operatingSystems?: pulumi.Input<pulumi.Input<string>[]>;
+    operatingSystems?: pulumi.Input<pulumi.Input<string>[] | undefined>;
     /**
      * Define process detection rules by selecting a process property and a condition. Each monitoring rule can have multiple detection rules associated with it.
      */
-    rules?: pulumi.Input<inputs.ProcessAvailabilityRules>;
+    rules?: pulumi.Input<inputs.ProcessAvailabilityRules | undefined>;
     /**
      * The scope of this setting (HOST, HOST_GROUP). Omit this property if you want to cover the whole environment.
      */
-    scope?: pulumi.Input<string>;
+    scope?: pulumi.Input<string | undefined>;
 }

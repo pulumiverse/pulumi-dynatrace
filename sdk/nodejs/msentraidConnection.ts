@@ -135,23 +135,23 @@ export interface MsentraidConnectionState {
     /**
      * Application (client) ID of your app registered in Microsoft Azure App registrations
      */
-    applicationId?: pulumi.Input<string>;
+    applicationId?: pulumi.Input<string | undefined>;
     /**
      * Client secret of your app registered in Microsoft Azure App registrations
      */
-    clientSecret?: pulumi.Input<string>;
+    clientSecret?: pulumi.Input<string | undefined>;
     /**
      * Description
      */
-    description?: pulumi.Input<string>;
+    description?: pulumi.Input<string | undefined>;
     /**
      * Directory (tenant) ID of Microsoft Entra Identity Developer
      */
-    directoryId?: pulumi.Input<string>;
+    directoryId?: pulumi.Input<string | undefined>;
     /**
      * The name of the Microsoft Entra Identity Developer connection
      */
-    name?: pulumi.Input<string>;
+    name?: pulumi.Input<string | undefined>;
 }
 
 /**
@@ -169,7 +169,7 @@ export interface MsentraidConnectionArgs {
     /**
      * Description
      */
-    description?: pulumi.Input<string>;
+    description?: pulumi.Input<string | undefined>;
     /**
      * Directory (tenant) ID of Microsoft Entra Identity Developer
      */
@@ -177,5 +177,5 @@ export interface MsentraidConnectionArgs {
     /**
      * The name of the Microsoft Entra Identity Developer connection
      */
-    name?: pulumi.Input<string>;
+    name?: pulumi.Input<string | undefined>;
 }

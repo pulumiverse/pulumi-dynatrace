@@ -26,9 +26,9 @@ class IssueTrackingArgs:
                  issuetrackersystem: pulumi.Input[_builtins.str],
                  url: pulumi.Input[_builtins.str],
                  username: pulumi.Input[_builtins.str],
-                 insert_after: Optional[pulumi.Input[_builtins.str]] = None,
-                 password: Optional[pulumi.Input[_builtins.str]] = None,
-                 token: Optional[pulumi.Input[_builtins.str]] = None):
+                 insert_after: pulumi.Input[Optional[_builtins.str]] = None,
+                 password: pulumi.Input[Optional[_builtins.str]] = None,
+                 token: pulumi.Input[Optional[_builtins.str]] = None):
         """
         The set of arguments for constructing a IssueTracking resource.
 
@@ -143,54 +143,54 @@ class IssueTrackingArgs:
 
     @_builtins.property
     @pulumi.getter(name="insertAfter")
-    def insert_after(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def insert_after(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Because this resource allows for ordering you may specify the ID of the resource instance that comes before this instance regarding order. If not specified when creating the setting will be added to the end of the list. If not specified during update the order will remain untouched
         """
         return pulumi.get(self, "insert_after")
 
     @insert_after.setter
-    def insert_after(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def insert_after(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "insert_after", value)
 
     @_builtins.property
     @pulumi.getter
-    def password(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def password(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Password
         """
         return pulumi.get(self, "password")
 
     @password.setter
-    def password(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def password(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "password", value)
 
     @_builtins.property
     @pulumi.getter
-    def token(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def token(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Token
         """
         return pulumi.get(self, "token")
 
     @token.setter
-    def token(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def token(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "token", value)
 
 
 @pulumi.input_type
 class _IssueTrackingState:
     def __init__(__self__, *,
-                 enabled: Optional[pulumi.Input[_builtins.bool]] = None,
-                 insert_after: Optional[pulumi.Input[_builtins.str]] = None,
-                 issuelabel: Optional[pulumi.Input[_builtins.str]] = None,
-                 issuequery: Optional[pulumi.Input[_builtins.str]] = None,
-                 issuetheme: Optional[pulumi.Input[_builtins.str]] = None,
-                 issuetrackersystem: Optional[pulumi.Input[_builtins.str]] = None,
-                 password: Optional[pulumi.Input[_builtins.str]] = None,
-                 token: Optional[pulumi.Input[_builtins.str]] = None,
-                 url: Optional[pulumi.Input[_builtins.str]] = None,
-                 username: Optional[pulumi.Input[_builtins.str]] = None):
+                 enabled: pulumi.Input[Optional[_builtins.bool]] = None,
+                 insert_after: pulumi.Input[Optional[_builtins.str]] = None,
+                 issuelabel: pulumi.Input[Optional[_builtins.str]] = None,
+                 issuequery: pulumi.Input[Optional[_builtins.str]] = None,
+                 issuetheme: pulumi.Input[Optional[_builtins.str]] = None,
+                 issuetrackersystem: pulumi.Input[Optional[_builtins.str]] = None,
+                 password: pulumi.Input[Optional[_builtins.str]] = None,
+                 token: pulumi.Input[Optional[_builtins.str]] = None,
+                 url: pulumi.Input[Optional[_builtins.str]] = None,
+                 username: pulumi.Input[Optional[_builtins.str]] = None):
         """
         Input properties used for looking up and filtering IssueTracking resources.
 
@@ -228,122 +228,122 @@ class _IssueTrackingState:
 
     @_builtins.property
     @pulumi.getter
-    def enabled(self) -> Optional[pulumi.Input[_builtins.bool]]:
+    def enabled(self) -> pulumi.Input[Optional[_builtins.bool]]:
         """
         This setting is enabled (`true`) or disabled (`false`)
         """
         return pulumi.get(self, "enabled")
 
     @enabled.setter
-    def enabled(self, value: Optional[pulumi.Input[_builtins.bool]]):
+    def enabled(self, value: pulumi.Input[Optional[_builtins.bool]]):
         pulumi.set(self, "enabled", value)
 
     @_builtins.property
     @pulumi.getter(name="insertAfter")
-    def insert_after(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def insert_after(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Because this resource allows for ordering you may specify the ID of the resource instance that comes before this instance regarding order. If not specified when creating the setting will be added to the end of the list. If not specified during update the order will remain untouched
         """
         return pulumi.get(self, "insert_after")
 
     @insert_after.setter
-    def insert_after(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def insert_after(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "insert_after", value)
 
     @_builtins.property
     @pulumi.getter
-    def issuelabel(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def issuelabel(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Set a label to identify these issues, for example, `release_blocker` or `non-critical`
         """
         return pulumi.get(self, "issuelabel")
 
     @issuelabel.setter
-    def issuelabel(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def issuelabel(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "issuelabel", value)
 
     @_builtins.property
     @pulumi.getter
-    def issuequery(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def issuequery(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         You can use the following placeholders to automatically insert values from the **Release monitoring** page in your query: `{NAME}`, `{VERSION}`, `{STAGE}`, `{PRODUCT}`.
         """
         return pulumi.get(self, "issuequery")
 
     @issuequery.setter
-    def issuequery(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def issuequery(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "issuequery", value)
 
     @_builtins.property
     @pulumi.getter
-    def issuetheme(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def issuetheme(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Possible Values: `ERROR`, `INFO`, `RESOLVED`
         """
         return pulumi.get(self, "issuetheme")
 
     @issuetheme.setter
-    def issuetheme(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def issuetheme(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "issuetheme", value)
 
     @_builtins.property
     @pulumi.getter
-    def issuetrackersystem(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def issuetrackersystem(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Possible Values: `GITHUB`, `GITLAB`, `JIRA`, `JIRA_CLOUD`, `JIRA_ON_PREMISE`, `SERVICENOW`
         """
         return pulumi.get(self, "issuetrackersystem")
 
     @issuetrackersystem.setter
-    def issuetrackersystem(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def issuetrackersystem(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "issuetrackersystem", value)
 
     @_builtins.property
     @pulumi.getter
-    def password(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def password(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Password
         """
         return pulumi.get(self, "password")
 
     @password.setter
-    def password(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def password(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "password", value)
 
     @_builtins.property
     @pulumi.getter
-    def token(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def token(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Token
         """
         return pulumi.get(self, "token")
 
     @token.setter
-    def token(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def token(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "token", value)
 
     @_builtins.property
     @pulumi.getter
-    def url(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def url(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         For Jira, use the base URL (for example, https://jira.yourcompany.com); for GitHub, use the repository URL (for example, https://github.com/org/repo); for GitLab, use the specific project API for a single project (for example, https://gitlab.com/api/v4/projects/:projectId), and the specific group API for a multiple projects (for example, https://gitlab.com/api/v4/groups/:groupId); for ServiceNow, use your company instance URL (for example, https://yourinstance.service-now.com/)
         """
         return pulumi.get(self, "url")
 
     @url.setter
-    def url(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def url(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "url", value)
 
     @_builtins.property
     @pulumi.getter
-    def username(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def username(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Username
         """
         return pulumi.get(self, "username")
 
     @username.setter
-    def username(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def username(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "username", value)
 
 
@@ -353,16 +353,16 @@ class IssueTracking(pulumi.CustomResource):
     def __init__(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 enabled: Optional[pulumi.Input[_builtins.bool]] = None,
-                 insert_after: Optional[pulumi.Input[_builtins.str]] = None,
-                 issuelabel: Optional[pulumi.Input[_builtins.str]] = None,
-                 issuequery: Optional[pulumi.Input[_builtins.str]] = None,
-                 issuetheme: Optional[pulumi.Input[_builtins.str]] = None,
-                 issuetrackersystem: Optional[pulumi.Input[_builtins.str]] = None,
-                 password: Optional[pulumi.Input[_builtins.str]] = None,
-                 token: Optional[pulumi.Input[_builtins.str]] = None,
-                 url: Optional[pulumi.Input[_builtins.str]] = None,
-                 username: Optional[pulumi.Input[_builtins.str]] = None,
+                 enabled: pulumi.Input[Optional[_builtins.bool]] = None,
+                 insert_after: pulumi.Input[Optional[_builtins.str]] = None,
+                 issuelabel: pulumi.Input[Optional[_builtins.str]] = None,
+                 issuequery: pulumi.Input[Optional[_builtins.str]] = None,
+                 issuetheme: pulumi.Input[Optional[_builtins.str]] = None,
+                 issuetrackersystem: pulumi.Input[Optional[_builtins.str]] = None,
+                 password: pulumi.Input[Optional[_builtins.str]] = None,
+                 token: pulumi.Input[Optional[_builtins.str]] = None,
+                 url: pulumi.Input[Optional[_builtins.str]] = None,
+                 username: pulumi.Input[Optional[_builtins.str]] = None,
                  __props__=None):
         """
         > This resource requires the API token scopes **Read settings** (`settings.read`) and **Write settings** (`settings.write`)
@@ -430,16 +430,16 @@ class IssueTracking(pulumi.CustomResource):
     def _internal_init(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 enabled: Optional[pulumi.Input[_builtins.bool]] = None,
-                 insert_after: Optional[pulumi.Input[_builtins.str]] = None,
-                 issuelabel: Optional[pulumi.Input[_builtins.str]] = None,
-                 issuequery: Optional[pulumi.Input[_builtins.str]] = None,
-                 issuetheme: Optional[pulumi.Input[_builtins.str]] = None,
-                 issuetrackersystem: Optional[pulumi.Input[_builtins.str]] = None,
-                 password: Optional[pulumi.Input[_builtins.str]] = None,
-                 token: Optional[pulumi.Input[_builtins.str]] = None,
-                 url: Optional[pulumi.Input[_builtins.str]] = None,
-                 username: Optional[pulumi.Input[_builtins.str]] = None,
+                 enabled: pulumi.Input[Optional[_builtins.bool]] = None,
+                 insert_after: pulumi.Input[Optional[_builtins.str]] = None,
+                 issuelabel: pulumi.Input[Optional[_builtins.str]] = None,
+                 issuequery: pulumi.Input[Optional[_builtins.str]] = None,
+                 issuetheme: pulumi.Input[Optional[_builtins.str]] = None,
+                 issuetrackersystem: pulumi.Input[Optional[_builtins.str]] = None,
+                 password: pulumi.Input[Optional[_builtins.str]] = None,
+                 token: pulumi.Input[Optional[_builtins.str]] = None,
+                 url: pulumi.Input[Optional[_builtins.str]] = None,
+                 username: pulumi.Input[Optional[_builtins.str]] = None,
                  __props__=None):
         opts = pulumi.ResourceOptions.merge(_utilities.get_resource_opts_defaults(), opts)
         if not isinstance(opts, pulumi.ResourceOptions):
@@ -485,16 +485,16 @@ class IssueTracking(pulumi.CustomResource):
     def get(resource_name: str,
             id: pulumi.Input[str],
             opts: Optional[pulumi.ResourceOptions] = None,
-            enabled: Optional[pulumi.Input[_builtins.bool]] = None,
-            insert_after: Optional[pulumi.Input[_builtins.str]] = None,
-            issuelabel: Optional[pulumi.Input[_builtins.str]] = None,
-            issuequery: Optional[pulumi.Input[_builtins.str]] = None,
-            issuetheme: Optional[pulumi.Input[_builtins.str]] = None,
-            issuetrackersystem: Optional[pulumi.Input[_builtins.str]] = None,
-            password: Optional[pulumi.Input[_builtins.str]] = None,
-            token: Optional[pulumi.Input[_builtins.str]] = None,
-            url: Optional[pulumi.Input[_builtins.str]] = None,
-            username: Optional[pulumi.Input[_builtins.str]] = None) -> 'IssueTracking':
+            enabled: pulumi.Input[Optional[_builtins.bool]] = None,
+            insert_after: pulumi.Input[Optional[_builtins.str]] = None,
+            issuelabel: pulumi.Input[Optional[_builtins.str]] = None,
+            issuequery: pulumi.Input[Optional[_builtins.str]] = None,
+            issuetheme: pulumi.Input[Optional[_builtins.str]] = None,
+            issuetrackersystem: pulumi.Input[Optional[_builtins.str]] = None,
+            password: pulumi.Input[Optional[_builtins.str]] = None,
+            token: pulumi.Input[Optional[_builtins.str]] = None,
+            url: pulumi.Input[Optional[_builtins.str]] = None,
+            username: pulumi.Input[Optional[_builtins.str]] = None) -> 'IssueTracking':
         """
         Get an existing IssueTracking resource's state with the given name, id, and optional extra
         properties used to qualify the lookup.

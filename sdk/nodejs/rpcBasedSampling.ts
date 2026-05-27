@@ -208,15 +208,15 @@ export interface RpcBasedSamplingState {
     /**
      * This setting is enabled (`true`) or disabled (`false`)
      */
-    enabled?: pulumi.Input<boolean>;
+    enabled?: pulumi.Input<boolean | undefined>;
     /**
      * Specify the RPC endpoint name. If the endpoint name is empty, either remote operation name or remote service name must be specified that can be used for RPC matching.
      */
-    endpointName?: pulumi.Input<string>;
+    endpointName?: pulumi.Input<string | undefined>;
     /**
      * Possible Values: `CONTAINS`, `DOES_NOT_CONTAIN`, `DOES_NOT_END_WITH`, `DOES_NOT_EQUAL`, `DOES_NOT_START_WITH`, `ENDS_WITH`, `EQUALS`, `STARTS_WITH`
      */
-    endpointNameComparisonType?: pulumi.Input<string>;
+    endpointNameComparisonType?: pulumi.Input<string | undefined>;
     /**
      * Possible Values: `0`, `1`, `2`, `3`, `4`, `5`, `6`, `8`, `9`, `10`, `11`, `12`, `13`, `14` 
      *
@@ -248,35 +248,35 @@ export interface RpcBasedSamplingState {
      *
      *   - `14`: Reduce capturing by factor 128
      */
-    factor?: pulumi.Input<string>;
+    factor?: pulumi.Input<string | undefined>;
     /**
      * No Traces will be captured for matching RPC requests. This applies always, even if Adaptive Traffic Management is inactive.
      */
-    ignore?: pulumi.Input<boolean>;
+    ignore?: pulumi.Input<boolean | undefined>;
     /**
      * Because this resource allows for ordering you may specify the ID of the resource instance that comes before this instance regarding order. If not specified when creating the setting will be added to the end of the list. If not specified during update the order will remain untouched
      */
-    insertAfter?: pulumi.Input<string>;
+    insertAfter?: pulumi.Input<string | undefined>;
     /**
      * Specify the RPC operation name. If the remote operation name is empty, either remote service name or endpoint name must be specified that can be used for RPC matching.
      */
-    remoteOperationName?: pulumi.Input<string>;
+    remoteOperationName?: pulumi.Input<string | undefined>;
     /**
      * Possible Values: `CONTAINS`, `DOES_NOT_CONTAIN`, `DOES_NOT_END_WITH`, `DOES_NOT_EQUAL`, `DOES_NOT_START_WITH`, `ENDS_WITH`, `EQUALS`, `STARTS_WITH`
      */
-    remoteOperationNameComparisonType?: pulumi.Input<string>;
+    remoteOperationNameComparisonType?: pulumi.Input<string | undefined>;
     /**
      * Specify the RPC remote service name. If the remote service name is empty, either remote operation name or endpoint name must be specified that can be used for RPC matching.
      */
-    remoteServiceName?: pulumi.Input<string>;
+    remoteServiceName?: pulumi.Input<string | undefined>;
     /**
      * Possible Values: `CONTAINS`, `DOES_NOT_CONTAIN`, `DOES_NOT_END_WITH`, `DOES_NOT_EQUAL`, `DOES_NOT_START_WITH`, `ENDS_WITH`, `EQUALS`, `STARTS_WITH`
      */
-    remoteServiceNameComparisonType?: pulumi.Input<string>;
+    remoteServiceNameComparisonType?: pulumi.Input<string | undefined>;
     /**
      * The scope of this setting (PROCESS_GROUP_INSTANCE, PROCESS_GROUP, CLOUD_APPLICATION, CLOUD_APPLICATION_NAMESPACE, KUBERNETES_CLUSTER, HOST_GROUP). Omit this property if you want to cover the whole environment.
      */
-    scope?: pulumi.Input<string>;
+    scope?: pulumi.Input<string | undefined>;
     /**
      * Possible Values: `1`, `2`, `3`, `4`, `5`, `6`, `7`, `8`, `9`, `10` 
      *
@@ -300,7 +300,7 @@ export interface RpcBasedSamplingState {
      *
      *   - `10`: GRPC_CLIENTSTREAM
      */
-    wireProtocolType?: pulumi.Input<string>;
+    wireProtocolType?: pulumi.Input<string | undefined>;
 }
 
 /**
@@ -314,7 +314,7 @@ export interface RpcBasedSamplingArgs {
     /**
      * Specify the RPC endpoint name. If the endpoint name is empty, either remote operation name or remote service name must be specified that can be used for RPC matching.
      */
-    endpointName?: pulumi.Input<string>;
+    endpointName?: pulumi.Input<string | undefined>;
     /**
      * Possible Values: `CONTAINS`, `DOES_NOT_CONTAIN`, `DOES_NOT_END_WITH`, `DOES_NOT_EQUAL`, `DOES_NOT_START_WITH`, `ENDS_WITH`, `EQUALS`, `STARTS_WITH`
      */
@@ -350,7 +350,7 @@ export interface RpcBasedSamplingArgs {
      *
      *   - `14`: Reduce capturing by factor 128
      */
-    factor?: pulumi.Input<string>;
+    factor?: pulumi.Input<string | undefined>;
     /**
      * No Traces will be captured for matching RPC requests. This applies always, even if Adaptive Traffic Management is inactive.
      */
@@ -358,11 +358,11 @@ export interface RpcBasedSamplingArgs {
     /**
      * Because this resource allows for ordering you may specify the ID of the resource instance that comes before this instance regarding order. If not specified when creating the setting will be added to the end of the list. If not specified during update the order will remain untouched
      */
-    insertAfter?: pulumi.Input<string>;
+    insertAfter?: pulumi.Input<string | undefined>;
     /**
      * Specify the RPC operation name. If the remote operation name is empty, either remote service name or endpoint name must be specified that can be used for RPC matching.
      */
-    remoteOperationName?: pulumi.Input<string>;
+    remoteOperationName?: pulumi.Input<string | undefined>;
     /**
      * Possible Values: `CONTAINS`, `DOES_NOT_CONTAIN`, `DOES_NOT_END_WITH`, `DOES_NOT_EQUAL`, `DOES_NOT_START_WITH`, `ENDS_WITH`, `EQUALS`, `STARTS_WITH`
      */
@@ -370,7 +370,7 @@ export interface RpcBasedSamplingArgs {
     /**
      * Specify the RPC remote service name. If the remote service name is empty, either remote operation name or endpoint name must be specified that can be used for RPC matching.
      */
-    remoteServiceName?: pulumi.Input<string>;
+    remoteServiceName?: pulumi.Input<string | undefined>;
     /**
      * Possible Values: `CONTAINS`, `DOES_NOT_CONTAIN`, `DOES_NOT_END_WITH`, `DOES_NOT_EQUAL`, `DOES_NOT_START_WITH`, `ENDS_WITH`, `EQUALS`, `STARTS_WITH`
      */
@@ -378,7 +378,7 @@ export interface RpcBasedSamplingArgs {
     /**
      * The scope of this setting (PROCESS_GROUP_INSTANCE, PROCESS_GROUP, CLOUD_APPLICATION, CLOUD_APPLICATION_NAMESPACE, KUBERNETES_CLUSTER, HOST_GROUP). Omit this property if you want to cover the whole environment.
      */
-    scope?: pulumi.Input<string>;
+    scope?: pulumi.Input<string | undefined>;
     /**
      * Possible Values: `1`, `2`, `3`, `4`, `5`, `6`, `7`, `8`, `9`, `10` 
      *

@@ -124,27 +124,27 @@ export interface LogMetricsState {
     /**
      * To enable splitting on your metric, add desired dimensions.
      */
-    dimensions?: pulumi.Input<pulumi.Input<string>[]>;
+    dimensions?: pulumi.Input<pulumi.Input<string>[] | undefined>;
     /**
      * This setting is enabled (`true`) or disabled (`false`)
      */
-    enabled?: pulumi.Input<boolean>;
+    enabled?: pulumi.Input<boolean | undefined>;
     /**
      * Metric key
      */
-    key?: pulumi.Input<string>;
+    key?: pulumi.Input<string | undefined>;
     /**
      * Possible Values: `OCCURRENCE`, `ATTRIBUTE`
      */
-    measure?: pulumi.Input<string>;
+    measure?: pulumi.Input<string | undefined>;
     /**
      * Attribute
      */
-    measureAttribute?: pulumi.Input<string>;
+    measureAttribute?: pulumi.Input<string | undefined>;
     /**
      * Matcher
      */
-    query?: pulumi.Input<string>;
+    query?: pulumi.Input<string | undefined>;
 }
 
 /**
@@ -154,7 +154,7 @@ export interface LogMetricsArgs {
     /**
      * To enable splitting on your metric, add desired dimensions.
      */
-    dimensions?: pulumi.Input<pulumi.Input<string>[]>;
+    dimensions?: pulumi.Input<pulumi.Input<string>[] | undefined>;
     /**
      * This setting is enabled (`true`) or disabled (`false`)
      */
@@ -170,7 +170,7 @@ export interface LogMetricsArgs {
     /**
      * Attribute
      */
-    measureAttribute?: pulumi.Input<string>;
+    measureAttribute?: pulumi.Input<string | undefined>;
     /**
      * Matcher
      */

@@ -103,15 +103,15 @@ export interface ProblemFieldsState {
     /**
      * This setting is enabled (`true`) or disabled (`false`)
      */
-    enabled?: pulumi.Input<boolean>;
+    enabled?: pulumi.Input<boolean | undefined>;
     /**
      * Field from the event that will be extracted.
      */
-    eventField?: pulumi.Input<string>;
+    eventField?: pulumi.Input<string | undefined>;
     /**
      * Field under which the extracted event data will be stored on the problem.
      */
-    problemField?: pulumi.Input<string>;
+    problemField?: pulumi.Input<string | undefined>;
 }
 
 /**

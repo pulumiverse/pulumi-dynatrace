@@ -162,55 +162,55 @@ export interface CalculatedServiceMetricState {
     /**
      * The set of conditions for the metric usage. **All** the specified conditions must be fulfilled to use the metric
      */
-    conditions?: pulumi.Input<pulumi.Input<inputs.CalculatedServiceMetricCondition>[]>;
+    conditions?: pulumi.Input<pulumi.Input<inputs.CalculatedServiceMetricCondition>[] | undefined>;
     /**
      * The displayed description of the metric
      */
-    description?: pulumi.Input<string>;
+    description?: pulumi.Input<string | undefined>;
     /**
      * Parameters of a definition of a calculated service metric
      */
-    dimensionDefinition?: pulumi.Input<inputs.CalculatedServiceMetricDimensionDefinition>;
+    dimensionDefinition?: pulumi.Input<inputs.CalculatedServiceMetricDimensionDefinition | undefined>;
     /**
      * The metric is enabled (`true`) or disabled (`false`)
      */
-    enabled?: pulumi.Input<boolean>;
+    enabled?: pulumi.Input<boolean | undefined>;
     /**
      * Restricts the metric usage to the specified service. This field is mutually exclusive with the `managementZones` field
      */
-    entityId?: pulumi.Input<string>;
+    entityId?: pulumi.Input<string | undefined>;
     /**
      * Metric should (true) or not (false) ignore muted requests.
      */
-    ignoreMutedRequests?: pulumi.Input<boolean>;
+    ignoreMutedRequests?: pulumi.Input<boolean | undefined>;
     /**
      * Restricts the metric usage to specified management zones. This field is mutually exclusive with the `entityId` field
      */
-    managementZones?: pulumi.Input<pulumi.Input<string>[]>;
+    managementZones?: pulumi.Input<pulumi.Input<string>[] | undefined>;
     /**
      * The definition of a calculated service metric
      */
-    metricDefinition?: pulumi.Input<inputs.CalculatedServiceMetricMetricDefinition>;
+    metricDefinition?: pulumi.Input<inputs.CalculatedServiceMetricMetricDefinition | undefined>;
     /**
      * The key of the calculated service metric
      */
-    metricKey?: pulumi.Input<string>;
+    metricKey?: pulumi.Input<string | undefined>;
     /**
      * The displayed name of the metric
      */
-    name?: pulumi.Input<string>;
+    name?: pulumi.Input<string | undefined>;
     /**
      * The unit of the metric. Possible values are `BIT`, `BIT_PER_HOUR`, `BIT_PER_MINUTE`, `BIT_PER_SECOND`, `BYTE`, `BYTE_PER_HOUR`, `BYTE_PER_MINUTE`, `BYTE_PER_SECOND`, `CORES`, `COUNT`, `DAY`, `DECIBEL_MILLI_WATT`, `GIBI_BYTE`, `GIGA`, `GIGA_BYTE`, `HOUR`, `KIBI_BYTE`, `KIBI_BYTE_PER_HOUR`, `KIBI_BYTE_PER_MINUTE`, `KIBI_BYTE_PER_SECOND`, `KILO`, `KILO_BYTE`, `KILO_BYTE_PER_HOUR`, `KILO_BYTE_PER_MINUTE`, `KILO_BYTE_PER_SECOND`, `MEBI_BYTE`, `MEBI_BYTE_PER_HOUR`, `MEBI_BYTE_PER_MINUTE`, `MEBI_BYTE_PER_SECOND`, `MEGA`, `MEGA_BYTE`, `MEGA_BYTE_PER_HOUR`, `MEGA_BYTE_PER_MINUTE`, `MEGA_BYTE_PER_SECOND`, `MICRO_SECOND`, `MILLI_CORES`, `MILLI_SECOND`, `MILLI_SECOND_PER_MINUTE`, `MINUTE`, `MONTH`, `MSU`, `NANO_SECOND`, `NANO_SECOND_PER_MINUTE`, `NOT_APPLICABLE`, `PERCENT`, `PER_HOUR`, `PER_MINUTE`, `PER_SECOND`, `PIXEL`, `PROMILLE`, `RATIO`, `SECOND`, `STATE`, `UNSPECIFIED`, `WEEK` and `YEAR`
      */
-    unit?: pulumi.Input<string>;
+    unit?: pulumi.Input<string | undefined>;
     /**
      * The display name of the metric's unit. Only applicable when the **unit** parameter is set to `UNSPECIFIED`
      */
-    unitDisplayName?: pulumi.Input<string>;
+    unitDisplayName?: pulumi.Input<string | undefined>;
     /**
      * allows for configuring properties that are not explicitly supported by the current version of this provider
      */
-    unknowns?: pulumi.Input<string>;
+    unknowns?: pulumi.Input<string | undefined>;
 }
 
 /**
@@ -220,35 +220,35 @@ export interface CalculatedServiceMetricArgs {
     /**
      * The set of conditions for the metric usage. **All** the specified conditions must be fulfilled to use the metric
      */
-    conditions?: pulumi.Input<pulumi.Input<inputs.CalculatedServiceMetricCondition>[]>;
+    conditions?: pulumi.Input<pulumi.Input<inputs.CalculatedServiceMetricCondition>[] | undefined>;
     /**
      * The displayed description of the metric
      */
-    description?: pulumi.Input<string>;
+    description?: pulumi.Input<string | undefined>;
     /**
      * Parameters of a definition of a calculated service metric
      */
-    dimensionDefinition?: pulumi.Input<inputs.CalculatedServiceMetricDimensionDefinition>;
+    dimensionDefinition?: pulumi.Input<inputs.CalculatedServiceMetricDimensionDefinition | undefined>;
     /**
      * The metric is enabled (`true`) or disabled (`false`)
      */
-    enabled?: pulumi.Input<boolean>;
+    enabled?: pulumi.Input<boolean | undefined>;
     /**
      * Restricts the metric usage to the specified service. This field is mutually exclusive with the `managementZones` field
      */
-    entityId?: pulumi.Input<string>;
+    entityId?: pulumi.Input<string | undefined>;
     /**
      * Metric should (true) or not (false) ignore muted requests.
      */
-    ignoreMutedRequests?: pulumi.Input<boolean>;
+    ignoreMutedRequests?: pulumi.Input<boolean | undefined>;
     /**
      * Restricts the metric usage to specified management zones. This field is mutually exclusive with the `entityId` field
      */
-    managementZones?: pulumi.Input<pulumi.Input<string>[]>;
+    managementZones?: pulumi.Input<pulumi.Input<string>[] | undefined>;
     /**
      * The definition of a calculated service metric
      */
-    metricDefinition?: pulumi.Input<inputs.CalculatedServiceMetricMetricDefinition>;
+    metricDefinition?: pulumi.Input<inputs.CalculatedServiceMetricMetricDefinition | undefined>;
     /**
      * The key of the calculated service metric
      */
@@ -256,7 +256,7 @@ export interface CalculatedServiceMetricArgs {
     /**
      * The displayed name of the metric
      */
-    name?: pulumi.Input<string>;
+    name?: pulumi.Input<string | undefined>;
     /**
      * The unit of the metric. Possible values are `BIT`, `BIT_PER_HOUR`, `BIT_PER_MINUTE`, `BIT_PER_SECOND`, `BYTE`, `BYTE_PER_HOUR`, `BYTE_PER_MINUTE`, `BYTE_PER_SECOND`, `CORES`, `COUNT`, `DAY`, `DECIBEL_MILLI_WATT`, `GIBI_BYTE`, `GIGA`, `GIGA_BYTE`, `HOUR`, `KIBI_BYTE`, `KIBI_BYTE_PER_HOUR`, `KIBI_BYTE_PER_MINUTE`, `KIBI_BYTE_PER_SECOND`, `KILO`, `KILO_BYTE`, `KILO_BYTE_PER_HOUR`, `KILO_BYTE_PER_MINUTE`, `KILO_BYTE_PER_SECOND`, `MEBI_BYTE`, `MEBI_BYTE_PER_HOUR`, `MEBI_BYTE_PER_MINUTE`, `MEBI_BYTE_PER_SECOND`, `MEGA`, `MEGA_BYTE`, `MEGA_BYTE_PER_HOUR`, `MEGA_BYTE_PER_MINUTE`, `MEGA_BYTE_PER_SECOND`, `MICRO_SECOND`, `MILLI_CORES`, `MILLI_SECOND`, `MILLI_SECOND_PER_MINUTE`, `MINUTE`, `MONTH`, `MSU`, `NANO_SECOND`, `NANO_SECOND_PER_MINUTE`, `NOT_APPLICABLE`, `PERCENT`, `PER_HOUR`, `PER_MINUTE`, `PER_SECOND`, `PIXEL`, `PROMILLE`, `RATIO`, `SECOND`, `STATE`, `UNSPECIFIED`, `WEEK` and `YEAR`
      */
@@ -264,9 +264,9 @@ export interface CalculatedServiceMetricArgs {
     /**
      * The display name of the metric's unit. Only applicable when the **unit** parameter is set to `UNSPECIFIED`
      */
-    unitDisplayName?: pulumi.Input<string>;
+    unitDisplayName?: pulumi.Input<string | undefined>;
     /**
      * allows for configuring properties that are not explicitly supported by the current version of this provider
      */
-    unknowns?: pulumi.Input<string>;
+    unknowns?: pulumi.Input<string | undefined>;
 }

@@ -83,7 +83,7 @@ def get_request_attribute(name: Optional[_builtins.str] = None,
     return AwaitableGetRequestAttributeResult(
         id=pulumi.get(__ret__, 'id'),
         name=pulumi.get(__ret__, 'name'))
-def get_request_attribute_output(name: Optional[pulumi.Input[_builtins.str]] = None,
+def get_request_attribute_output(name: pulumi.Input[Optional[_builtins.str]] = None,
                                  opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetRequestAttributeResult]:
     """
     The `RequestAttribute` data source allows the request attribute ID to be retrieved by its name.

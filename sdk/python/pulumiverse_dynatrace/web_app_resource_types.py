@@ -21,8 +21,8 @@ class WebAppResourceTypesArgs:
     def __init__(__self__, *,
                  primary_resource_type: pulumi.Input[_builtins.str],
                  regular_expression: pulumi.Input[_builtins.str],
-                 insert_after: Optional[pulumi.Input[_builtins.str]] = None,
-                 secondary_resource_type: Optional[pulumi.Input[_builtins.str]] = None):
+                 insert_after: pulumi.Input[Optional[_builtins.str]] = None,
+                 secondary_resource_type: pulumi.Input[Optional[_builtins.str]] = None):
         """
         The set of arguments for constructing a WebAppResourceTypes resource.
 
@@ -64,36 +64,36 @@ class WebAppResourceTypesArgs:
 
     @_builtins.property
     @pulumi.getter(name="insertAfter")
-    def insert_after(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def insert_after(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Because this resource allows for ordering you may specify the ID of the resource instance that comes before this instance regarding order. If not specified when creating the setting will be added to the end of the list. If not specified during update the order will remain untouched
         """
         return pulumi.get(self, "insert_after")
 
     @insert_after.setter
-    def insert_after(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def insert_after(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "insert_after", value)
 
     @_builtins.property
     @pulumi.getter(name="secondaryResourceType")
-    def secondary_resource_type(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def secondary_resource_type(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The secondary type of the resource.
         """
         return pulumi.get(self, "secondary_resource_type")
 
     @secondary_resource_type.setter
-    def secondary_resource_type(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def secondary_resource_type(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "secondary_resource_type", value)
 
 
 @pulumi.input_type
 class _WebAppResourceTypesState:
     def __init__(__self__, *,
-                 insert_after: Optional[pulumi.Input[_builtins.str]] = None,
-                 primary_resource_type: Optional[pulumi.Input[_builtins.str]] = None,
-                 regular_expression: Optional[pulumi.Input[_builtins.str]] = None,
-                 secondary_resource_type: Optional[pulumi.Input[_builtins.str]] = None):
+                 insert_after: pulumi.Input[Optional[_builtins.str]] = None,
+                 primary_resource_type: pulumi.Input[Optional[_builtins.str]] = None,
+                 regular_expression: pulumi.Input[Optional[_builtins.str]] = None,
+                 secondary_resource_type: pulumi.Input[Optional[_builtins.str]] = None):
         """
         Input properties used for looking up and filtering WebAppResourceTypes resources.
 
@@ -113,50 +113,50 @@ class _WebAppResourceTypesState:
 
     @_builtins.property
     @pulumi.getter(name="insertAfter")
-    def insert_after(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def insert_after(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Because this resource allows for ordering you may specify the ID of the resource instance that comes before this instance regarding order. If not specified when creating the setting will be added to the end of the list. If not specified during update the order will remain untouched
         """
         return pulumi.get(self, "insert_after")
 
     @insert_after.setter
-    def insert_after(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def insert_after(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "insert_after", value)
 
     @_builtins.property
     @pulumi.getter(name="primaryResourceType")
-    def primary_resource_type(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def primary_resource_type(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Possible Values: `CSS`, `IMAGE`, `OTHER`, `SCRIPT`
         """
         return pulumi.get(self, "primary_resource_type")
 
     @primary_resource_type.setter
-    def primary_resource_type(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def primary_resource_type(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "primary_resource_type", value)
 
     @_builtins.property
     @pulumi.getter(name="regularExpression")
-    def regular_expression(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def regular_expression(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The regular expression to detect the resource.
         """
         return pulumi.get(self, "regular_expression")
 
     @regular_expression.setter
-    def regular_expression(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def regular_expression(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "regular_expression", value)
 
     @_builtins.property
     @pulumi.getter(name="secondaryResourceType")
-    def secondary_resource_type(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def secondary_resource_type(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The secondary type of the resource.
         """
         return pulumi.get(self, "secondary_resource_type")
 
     @secondary_resource_type.setter
-    def secondary_resource_type(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def secondary_resource_type(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "secondary_resource_type", value)
 
 
@@ -166,10 +166,10 @@ class WebAppResourceTypes(pulumi.CustomResource):
     def __init__(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 insert_after: Optional[pulumi.Input[_builtins.str]] = None,
-                 primary_resource_type: Optional[pulumi.Input[_builtins.str]] = None,
-                 regular_expression: Optional[pulumi.Input[_builtins.str]] = None,
-                 secondary_resource_type: Optional[pulumi.Input[_builtins.str]] = None,
+                 insert_after: pulumi.Input[Optional[_builtins.str]] = None,
+                 primary_resource_type: pulumi.Input[Optional[_builtins.str]] = None,
+                 regular_expression: pulumi.Input[Optional[_builtins.str]] = None,
+                 secondary_resource_type: pulumi.Input[Optional[_builtins.str]] = None,
                  __props__=None):
         """
         > This resource requires the API token scopes **Read settings** (`settings.read`) and **Write settings** (`settings.write`)
@@ -231,10 +231,10 @@ class WebAppResourceTypes(pulumi.CustomResource):
     def _internal_init(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 insert_after: Optional[pulumi.Input[_builtins.str]] = None,
-                 primary_resource_type: Optional[pulumi.Input[_builtins.str]] = None,
-                 regular_expression: Optional[pulumi.Input[_builtins.str]] = None,
-                 secondary_resource_type: Optional[pulumi.Input[_builtins.str]] = None,
+                 insert_after: pulumi.Input[Optional[_builtins.str]] = None,
+                 primary_resource_type: pulumi.Input[Optional[_builtins.str]] = None,
+                 regular_expression: pulumi.Input[Optional[_builtins.str]] = None,
+                 secondary_resource_type: pulumi.Input[Optional[_builtins.str]] = None,
                  __props__=None):
         opts = pulumi.ResourceOptions.merge(_utilities.get_resource_opts_defaults(), opts)
         if not isinstance(opts, pulumi.ResourceOptions):
@@ -262,10 +262,10 @@ class WebAppResourceTypes(pulumi.CustomResource):
     def get(resource_name: str,
             id: pulumi.Input[str],
             opts: Optional[pulumi.ResourceOptions] = None,
-            insert_after: Optional[pulumi.Input[_builtins.str]] = None,
-            primary_resource_type: Optional[pulumi.Input[_builtins.str]] = None,
-            regular_expression: Optional[pulumi.Input[_builtins.str]] = None,
-            secondary_resource_type: Optional[pulumi.Input[_builtins.str]] = None) -> 'WebAppResourceTypes':
+            insert_after: pulumi.Input[Optional[_builtins.str]] = None,
+            primary_resource_type: pulumi.Input[Optional[_builtins.str]] = None,
+            regular_expression: pulumi.Input[Optional[_builtins.str]] = None,
+            secondary_resource_type: pulumi.Input[Optional[_builtins.str]] = None) -> 'WebAppResourceTypes':
         """
         Get an existing WebAppResourceTypes resource's state with the given name, id, and optional extra
         properties used to qualify the lookup.

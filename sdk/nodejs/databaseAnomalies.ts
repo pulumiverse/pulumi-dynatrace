@@ -104,19 +104,19 @@ export interface DatabaseAnomaliesState {
     /**
      * Parameters of the failed database connections detection.  The alert is triggered when failed connections number exceeds **connectionFailsCount** during any **timePeriodMinutes** minutes period
      */
-    dbConnectFailures?: pulumi.Input<inputs.DatabaseAnomaliesDbConnectFailures>;
+    dbConnectFailures?: pulumi.Input<inputs.DatabaseAnomaliesDbConnectFailures | undefined>;
     /**
      * Configuration of failure rate increase detection
      */
-    failureRate?: pulumi.Input<inputs.DatabaseAnomaliesFailureRate>;
+    failureRate?: pulumi.Input<inputs.DatabaseAnomaliesFailureRate | undefined>;
     /**
      * Configuration for anomalies regarding load drops and spikes
      */
-    load?: pulumi.Input<inputs.DatabaseAnomaliesLoad>;
+    load?: pulumi.Input<inputs.DatabaseAnomaliesLoad | undefined>;
     /**
      * Configuration of response time degradation detection
      */
-    responseTime?: pulumi.Input<inputs.DatabaseAnomaliesResponseTime>;
+    responseTime?: pulumi.Input<inputs.DatabaseAnomaliesResponseTime | undefined>;
 }
 
 /**
@@ -126,17 +126,17 @@ export interface DatabaseAnomaliesArgs {
     /**
      * Parameters of the failed database connections detection.  The alert is triggered when failed connections number exceeds **connectionFailsCount** during any **timePeriodMinutes** minutes period
      */
-    dbConnectFailures?: pulumi.Input<inputs.DatabaseAnomaliesDbConnectFailures>;
+    dbConnectFailures?: pulumi.Input<inputs.DatabaseAnomaliesDbConnectFailures | undefined>;
     /**
      * Configuration of failure rate increase detection
      */
-    failureRate?: pulumi.Input<inputs.DatabaseAnomaliesFailureRate>;
+    failureRate?: pulumi.Input<inputs.DatabaseAnomaliesFailureRate | undefined>;
     /**
      * Configuration for anomalies regarding load drops and spikes
      */
-    load?: pulumi.Input<inputs.DatabaseAnomaliesLoad>;
+    load?: pulumi.Input<inputs.DatabaseAnomaliesLoad | undefined>;
     /**
      * Configuration of response time degradation detection
      */
-    responseTime?: pulumi.Input<inputs.DatabaseAnomaliesResponseTime>;
+    responseTime?: pulumi.Input<inputs.DatabaseAnomaliesResponseTime | undefined>;
 }

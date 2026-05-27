@@ -21,7 +21,7 @@ __all__ = ['DashboardsAllowlistArgs', 'DashboardsAllowlist']
 @pulumi.input_type
 class DashboardsAllowlistArgs:
     def __init__(__self__, *,
-                 allowlist: Optional[pulumi.Input['DashboardsAllowlistAllowlistArgs']] = None):
+                 allowlist: pulumi.Input[Optional['DashboardsAllowlistAllowlistArgs']] = None):
         """
         The set of arguments for constructing a DashboardsAllowlist resource.
 
@@ -32,21 +32,21 @@ class DashboardsAllowlistArgs:
 
     @_builtins.property
     @pulumi.getter
-    def allowlist(self) -> Optional[pulumi.Input['DashboardsAllowlistAllowlistArgs']]:
+    def allowlist(self) -> pulumi.Input[Optional['DashboardsAllowlistAllowlistArgs']]:
         """
         List of URL pattern matchers
         """
         return pulumi.get(self, "allowlist")
 
     @allowlist.setter
-    def allowlist(self, value: Optional[pulumi.Input['DashboardsAllowlistAllowlistArgs']]):
+    def allowlist(self, value: pulumi.Input[Optional['DashboardsAllowlistAllowlistArgs']]):
         pulumi.set(self, "allowlist", value)
 
 
 @pulumi.input_type
 class _DashboardsAllowlistState:
     def __init__(__self__, *,
-                 allowlist: Optional[pulumi.Input['DashboardsAllowlistAllowlistArgs']] = None):
+                 allowlist: pulumi.Input[Optional['DashboardsAllowlistAllowlistArgs']] = None):
         """
         Input properties used for looking up and filtering DashboardsAllowlist resources.
 
@@ -57,14 +57,14 @@ class _DashboardsAllowlistState:
 
     @_builtins.property
     @pulumi.getter
-    def allowlist(self) -> Optional[pulumi.Input['DashboardsAllowlistAllowlistArgs']]:
+    def allowlist(self) -> pulumi.Input[Optional['DashboardsAllowlistAllowlistArgs']]:
         """
         List of URL pattern matchers
         """
         return pulumi.get(self, "allowlist")
 
     @allowlist.setter
-    def allowlist(self, value: Optional[pulumi.Input['DashboardsAllowlistAllowlistArgs']]):
+    def allowlist(self, value: pulumi.Input[Optional['DashboardsAllowlistAllowlistArgs']]):
         pulumi.set(self, "allowlist", value)
 
 
@@ -74,7 +74,7 @@ class DashboardsAllowlist(pulumi.CustomResource):
     def __init__(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 allowlist: Optional[pulumi.Input[Union['DashboardsAllowlistAllowlistArgs', 'DashboardsAllowlistAllowlistArgsDict']]] = None,
+                 allowlist: pulumi.Input[Optional[Union['DashboardsAllowlistAllowlistArgs', 'DashboardsAllowlistAllowlistArgsDict']]] = None,
                  __props__=None):
         """
         > This resource requires the API token scopes **Read settings** (`settings.read`) and **Write settings** (`settings.write`)
@@ -133,7 +133,7 @@ class DashboardsAllowlist(pulumi.CustomResource):
     def _internal_init(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 allowlist: Optional[pulumi.Input[Union['DashboardsAllowlistAllowlistArgs', 'DashboardsAllowlistAllowlistArgsDict']]] = None,
+                 allowlist: pulumi.Input[Optional[Union['DashboardsAllowlistAllowlistArgs', 'DashboardsAllowlistAllowlistArgsDict']]] = None,
                  __props__=None):
         opts = pulumi.ResourceOptions.merge(_utilities.get_resource_opts_defaults(), opts)
         if not isinstance(opts, pulumi.ResourceOptions):
@@ -154,7 +154,7 @@ class DashboardsAllowlist(pulumi.CustomResource):
     def get(resource_name: str,
             id: pulumi.Input[str],
             opts: Optional[pulumi.ResourceOptions] = None,
-            allowlist: Optional[pulumi.Input[Union['DashboardsAllowlistAllowlistArgs', 'DashboardsAllowlistAllowlistArgsDict']]] = None) -> 'DashboardsAllowlist':
+            allowlist: pulumi.Input[Optional[Union['DashboardsAllowlistAllowlistArgs', 'DashboardsAllowlistAllowlistArgsDict']]] = None) -> 'DashboardsAllowlist':
         """
         Get an existing DashboardsAllowlist resource's state with the given name, id, and optional extra
         properties used to qualify the lookup.

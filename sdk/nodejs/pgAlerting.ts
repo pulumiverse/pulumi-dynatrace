@@ -106,19 +106,19 @@ export interface PgAlertingState {
     /**
      * Possible Values: `ON_INSTANCE_COUNT_VIOLATION`, `ON_PGI_UNAVAILABILITY`
      */
-    alertingMode?: pulumi.Input<string>;
+    alertingMode?: pulumi.Input<string | undefined>;
     /**
      * Enable (`true`) or disable (`false`) process group availability monitoring
      */
-    enabled?: pulumi.Input<boolean>;
+    enabled?: pulumi.Input<boolean | undefined>;
     /**
      * Open a new problem if the number of active process instances in the group is fewer than X
      */
-    minimumInstanceThreshold?: pulumi.Input<number>;
+    minimumInstanceThreshold?: pulumi.Input<number | undefined>;
     /**
      * The process group ID for availability monitoring
      */
-    processGroup?: pulumi.Input<string>;
+    processGroup?: pulumi.Input<string | undefined>;
 }
 
 /**
@@ -128,7 +128,7 @@ export interface PgAlertingArgs {
     /**
      * Possible Values: `ON_INSTANCE_COUNT_VIOLATION`, `ON_PGI_UNAVAILABILITY`
      */
-    alertingMode?: pulumi.Input<string>;
+    alertingMode?: pulumi.Input<string | undefined>;
     /**
      * Enable (`true`) or disable (`false`) process group availability monitoring
      */
@@ -136,7 +136,7 @@ export interface PgAlertingArgs {
     /**
      * Open a new problem if the number of active process instances in the group is fewer than X
      */
-    minimumInstanceThreshold?: pulumi.Input<number>;
+    minimumInstanceThreshold?: pulumi.Input<number | undefined>;
     /**
      * The process group ID for availability monitoring
      */

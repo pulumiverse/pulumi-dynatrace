@@ -120,23 +120,23 @@ export interface DataPrivacyState {
     /**
      * The scope of this settings. If the settings should cover the whole environment, just don't specify any scope.
      */
-    applicationId?: pulumi.Input<string>;
+    applicationId?: pulumi.Input<string | undefined>;
     /**
      * To provide your end users with the ability to decide for themselves if their activities should be tracked to measure application performance and usage, enable opt-in mode.
      */
-    dataCollection?: pulumi.Input<inputs.DataPrivacyDataCollection>;
+    dataCollection?: pulumi.Input<inputs.DataPrivacyDataCollection | undefined>;
     /**
      * Most modern web browsers have a privacy feature called ["Do Not Track"](https://dt-url.net/sb3n0pnl) that individual users may have enabled on their devices. Customize how Dynatrace should behave when it encounters this setting.
      */
-    doNotTrack?: pulumi.Input<inputs.DataPrivacyDoNotTrack>;
+    doNotTrack?: pulumi.Input<inputs.DataPrivacyDoNotTrack | undefined>;
     /**
      * no documentation available
      */
-    masking?: pulumi.Input<inputs.DataPrivacyMasking>;
+    masking?: pulumi.Input<inputs.DataPrivacyMasking | undefined>;
     /**
      * User tracking
      */
-    userTracking?: pulumi.Input<inputs.DataPrivacyUserTracking>;
+    userTracking?: pulumi.Input<inputs.DataPrivacyUserTracking | undefined>;
 }
 
 /**
@@ -146,7 +146,7 @@ export interface DataPrivacyArgs {
     /**
      * The scope of this settings. If the settings should cover the whole environment, just don't specify any scope.
      */
-    applicationId?: pulumi.Input<string>;
+    applicationId?: pulumi.Input<string | undefined>;
     /**
      * To provide your end users with the ability to decide for themselves if their activities should be tracked to measure application performance and usage, enable opt-in mode.
      */

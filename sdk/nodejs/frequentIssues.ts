@@ -109,19 +109,19 @@ export interface FrequentIssuesState {
     /**
      * Detect frequent issues within applications, enabled (`true`) or disabled (`false`)
      */
-    detectApps?: pulumi.Input<boolean>;
+    detectApps?: pulumi.Input<boolean | undefined>;
     /**
      * Events raised at this level typically occur when no specific topological entity is applicable, often based on data such as logs and metrics. This does not impact the detection of issues within applications, transactions, services, or infrastructure.
      */
-    detectEnv?: pulumi.Input<boolean>;
+    detectEnv?: pulumi.Input<boolean | undefined>;
     /**
      * Detect frequent issues within infrastructure, enabled (`true`) or disabled (`false`)
      */
-    detectInfra?: pulumi.Input<boolean>;
+    detectInfra?: pulumi.Input<boolean | undefined>;
     /**
      * Detect frequent issues within transactions and services, enabled (`true`) or disabled (`false`)
      */
-    detectTxn?: pulumi.Input<boolean>;
+    detectTxn?: pulumi.Input<boolean | undefined>;
 }
 
 /**
@@ -135,7 +135,7 @@ export interface FrequentIssuesArgs {
     /**
      * Events raised at this level typically occur when no specific topological entity is applicable, often based on data such as logs and metrics. This does not impact the detection of issues within applications, transactions, services, or infrastructure.
      */
-    detectEnv?: pulumi.Input<boolean>;
+    detectEnv?: pulumi.Input<boolean | undefined>;
     /**
      * Detect frequent issues within infrastructure, enabled (`true`) or disabled (`false`)
      */

@@ -43,7 +43,7 @@ class SloNormalizationArgs:
 @pulumi.input_type
 class _SloNormalizationState:
     def __init__(__self__, *,
-                 normalize: Optional[pulumi.Input[_builtins.bool]] = None):
+                 normalize: pulumi.Input[Optional[_builtins.bool]] = None):
         """
         Input properties used for looking up and filtering SloNormalization resources.
 
@@ -54,14 +54,14 @@ class _SloNormalizationState:
 
     @_builtins.property
     @pulumi.getter
-    def normalize(self) -> Optional[pulumi.Input[_builtins.bool]]:
+    def normalize(self) -> pulumi.Input[Optional[_builtins.bool]]:
         """
         When set to true, the error budget left will be shown in percent of the total error budget. For more details see [SLO normalization help](https://dt-url.net/slo-normalize-error-budget).
         """
         return pulumi.get(self, "normalize")
 
     @normalize.setter
-    def normalize(self, value: Optional[pulumi.Input[_builtins.bool]]):
+    def normalize(self, value: pulumi.Input[Optional[_builtins.bool]]):
         pulumi.set(self, "normalize", value)
 
 
@@ -71,7 +71,7 @@ class SloNormalization(pulumi.CustomResource):
     def __init__(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 normalize: Optional[pulumi.Input[_builtins.bool]] = None,
+                 normalize: pulumi.Input[Optional[_builtins.bool]] = None,
                  __props__=None):
         """
         > This resource requires the API token scopes **Read settings** (`settings.read`) and **Write settings** (`settings.write`)
@@ -130,7 +130,7 @@ class SloNormalization(pulumi.CustomResource):
     def _internal_init(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 normalize: Optional[pulumi.Input[_builtins.bool]] = None,
+                 normalize: pulumi.Input[Optional[_builtins.bool]] = None,
                  __props__=None):
         opts = pulumi.ResourceOptions.merge(_utilities.get_resource_opts_defaults(), opts)
         if not isinstance(opts, pulumi.ResourceOptions):
@@ -153,7 +153,7 @@ class SloNormalization(pulumi.CustomResource):
     def get(resource_name: str,
             id: pulumi.Input[str],
             opts: Optional[pulumi.ResourceOptions] = None,
-            normalize: Optional[pulumi.Input[_builtins.bool]] = None) -> 'SloNormalization':
+            normalize: pulumi.Input[Optional[_builtins.bool]] = None) -> 'SloNormalization':
         """
         Get an existing SloNormalization resource's state with the given name, id, and optional extra
         properties used to qualify the lookup.

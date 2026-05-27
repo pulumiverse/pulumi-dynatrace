@@ -93,9 +93,9 @@ def get_synthetic_locations(id: Optional[_builtins.str] = None,
         id=pulumi.get(__ret__, 'id'),
         locations=pulumi.get(__ret__, 'locations'),
         name=pulumi.get(__ret__, 'name'))
-def get_synthetic_locations_output(id: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                                   locations: Optional[pulumi.Input[Optional[Union['GetSyntheticLocationsLocationsArgs', 'GetSyntheticLocationsLocationsArgsDict']]]] = None,
-                                   name: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
+def get_synthetic_locations_output(id: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                                   locations: pulumi.Input[Optional[Optional[Union['GetSyntheticLocationsLocationsArgs', 'GetSyntheticLocationsLocationsArgsDict']]]] = None,
+                                   name: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
                                    opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetSyntheticLocationsResult]:
     """
     The synthetic locations data source allows the location IDs to be retrieved based off of provided parameters.

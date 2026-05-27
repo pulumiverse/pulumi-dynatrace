@@ -58,8 +58,8 @@ class LogCustomAttributeArgs:
 @pulumi.input_type
 class _LogCustomAttributeState:
     def __init__(__self__, *,
-                 key: Optional[pulumi.Input[_builtins.str]] = None,
-                 sidebar: Optional[pulumi.Input[_builtins.bool]] = None):
+                 key: pulumi.Input[Optional[_builtins.str]] = None,
+                 sidebar: pulumi.Input[Optional[_builtins.bool]] = None):
         """
         Input properties used for looking up and filtering LogCustomAttribute resources.
 
@@ -73,26 +73,26 @@ class _LogCustomAttributeState:
 
     @_builtins.property
     @pulumi.getter
-    def key(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def key(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The attribute key is case sensitive in log data ingestion.
         """
         return pulumi.get(self, "key")
 
     @key.setter
-    def key(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def key(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "key", value)
 
     @_builtins.property
     @pulumi.getter
-    def sidebar(self) -> Optional[pulumi.Input[_builtins.bool]]:
+    def sidebar(self) -> pulumi.Input[Optional[_builtins.bool]]:
         """
         Show attribute values in side bar
         """
         return pulumi.get(self, "sidebar")
 
     @sidebar.setter
-    def sidebar(self, value: Optional[pulumi.Input[_builtins.bool]]):
+    def sidebar(self, value: pulumi.Input[Optional[_builtins.bool]]):
         pulumi.set(self, "sidebar", value)
 
 
@@ -102,8 +102,8 @@ class LogCustomAttribute(pulumi.CustomResource):
     def __init__(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 key: Optional[pulumi.Input[_builtins.str]] = None,
-                 sidebar: Optional[pulumi.Input[_builtins.bool]] = None,
+                 key: pulumi.Input[Optional[_builtins.str]] = None,
+                 sidebar: pulumi.Input[Optional[_builtins.bool]] = None,
                  __props__=None):
         """
         > This resource requires the API token scopes **Read settings** (`settings.read`) and **Write settings** (`settings.write`)
@@ -163,8 +163,8 @@ class LogCustomAttribute(pulumi.CustomResource):
     def _internal_init(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 key: Optional[pulumi.Input[_builtins.str]] = None,
-                 sidebar: Optional[pulumi.Input[_builtins.bool]] = None,
+                 key: pulumi.Input[Optional[_builtins.str]] = None,
+                 sidebar: pulumi.Input[Optional[_builtins.bool]] = None,
                  __props__=None):
         opts = pulumi.ResourceOptions.merge(_utilities.get_resource_opts_defaults(), opts)
         if not isinstance(opts, pulumi.ResourceOptions):
@@ -190,8 +190,8 @@ class LogCustomAttribute(pulumi.CustomResource):
     def get(resource_name: str,
             id: pulumi.Input[str],
             opts: Optional[pulumi.ResourceOptions] = None,
-            key: Optional[pulumi.Input[_builtins.str]] = None,
-            sidebar: Optional[pulumi.Input[_builtins.bool]] = None) -> 'LogCustomAttribute':
+            key: pulumi.Input[Optional[_builtins.str]] = None,
+            sidebar: pulumi.Input[Optional[_builtins.bool]] = None) -> 'LogCustomAttribute':
         """
         Get an existing LogCustomAttribute resource's state with the given name, id, and optional extra
         properties used to qualify the lookup.

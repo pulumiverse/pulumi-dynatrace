@@ -183,17 +183,17 @@ export interface GetIamPoliciesOutputArgs {
     /**
      * The results will contain policies defined for the given accountID. If one of the entries contains `*` the results will contain policies for all accounts
      */
-    accounts?: pulumi.Input<pulumi.Input<string>[]>;
+    accounts?: pulumi.Input<pulumi.Input<string>[] | undefined>;
     /**
      * The results will contain policies defined for the given environments. If one of the entries contains `*` the results will contain policies for all environments
      */
-    environments?: pulumi.Input<pulumi.Input<string>[]>;
+    environments?: pulumi.Input<pulumi.Input<string>[] | undefined>;
     /**
      * If `true` the results will contain global policies
      */
-    global?: pulumi.Input<boolean>;
+    global?: pulumi.Input<boolean | undefined>;
     /**
      * The results will only contain policies that are bound to the specified groups. Omit this attribute if you want to retrieve all policies
      */
-    groups?: pulumi.Input<pulumi.Input<string>[]>;
+    groups?: pulumi.Input<pulumi.Input<string>[] | undefined>;
 }

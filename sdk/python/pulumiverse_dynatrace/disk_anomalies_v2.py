@@ -60,8 +60,8 @@ class DiskAnomaliesV2Args:
 @pulumi.input_type
 class _DiskAnomaliesV2State:
     def __init__(__self__, *,
-                 disk: Optional[pulumi.Input['DiskAnomaliesV2DiskArgs']] = None,
-                 scope: Optional[pulumi.Input[_builtins.str]] = None):
+                 disk: pulumi.Input[Optional['DiskAnomaliesV2DiskArgs']] = None,
+                 scope: pulumi.Input[Optional[_builtins.str]] = None):
         """
         Input properties used for looking up and filtering DiskAnomaliesV2 resources.
 
@@ -75,26 +75,26 @@ class _DiskAnomaliesV2State:
 
     @_builtins.property
     @pulumi.getter
-    def disk(self) -> Optional[pulumi.Input['DiskAnomaliesV2DiskArgs']]:
+    def disk(self) -> pulumi.Input[Optional['DiskAnomaliesV2DiskArgs']]:
         """
         Disk
         """
         return pulumi.get(self, "disk")
 
     @disk.setter
-    def disk(self, value: Optional[pulumi.Input['DiskAnomaliesV2DiskArgs']]):
+    def disk(self, value: pulumi.Input[Optional['DiskAnomaliesV2DiskArgs']]):
         pulumi.set(self, "disk", value)
 
     @_builtins.property
     @pulumi.getter
-    def scope(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def scope(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The scope for the disk anomaly detection
         """
         return pulumi.get(self, "scope")
 
     @scope.setter
-    def scope(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def scope(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "scope", value)
 
 
@@ -104,8 +104,8 @@ class DiskAnomaliesV2(pulumi.CustomResource):
     def __init__(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 disk: Optional[pulumi.Input[Union['DiskAnomaliesV2DiskArgs', 'DiskAnomaliesV2DiskArgsDict']]] = None,
-                 scope: Optional[pulumi.Input[_builtins.str]] = None,
+                 disk: pulumi.Input[Optional[Union['DiskAnomaliesV2DiskArgs', 'DiskAnomaliesV2DiskArgsDict']]] = None,
+                 scope: pulumi.Input[Optional[_builtins.str]] = None,
                  __props__=None):
         """
         > This resource requires the API token scopes **Read settings** (`settings.read`) and **Write settings** (`settings.write`)
@@ -165,8 +165,8 @@ class DiskAnomaliesV2(pulumi.CustomResource):
     def _internal_init(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 disk: Optional[pulumi.Input[Union['DiskAnomaliesV2DiskArgs', 'DiskAnomaliesV2DiskArgsDict']]] = None,
-                 scope: Optional[pulumi.Input[_builtins.str]] = None,
+                 disk: pulumi.Input[Optional[Union['DiskAnomaliesV2DiskArgs', 'DiskAnomaliesV2DiskArgsDict']]] = None,
+                 scope: pulumi.Input[Optional[_builtins.str]] = None,
                  __props__=None):
         opts = pulumi.ResourceOptions.merge(_utilities.get_resource_opts_defaults(), opts)
         if not isinstance(opts, pulumi.ResourceOptions):
@@ -192,8 +192,8 @@ class DiskAnomaliesV2(pulumi.CustomResource):
     def get(resource_name: str,
             id: pulumi.Input[str],
             opts: Optional[pulumi.ResourceOptions] = None,
-            disk: Optional[pulumi.Input[Union['DiskAnomaliesV2DiskArgs', 'DiskAnomaliesV2DiskArgsDict']]] = None,
-            scope: Optional[pulumi.Input[_builtins.str]] = None) -> 'DiskAnomaliesV2':
+            disk: pulumi.Input[Optional[Union['DiskAnomaliesV2DiskArgs', 'DiskAnomaliesV2DiskArgsDict']]] = None,
+            scope: pulumi.Input[Optional[_builtins.str]] = None) -> 'DiskAnomaliesV2':
         """
         Get an existing DiskAnomaliesV2 resource's state with the given name, id, and optional extra
         properties used to qualify the lookup.

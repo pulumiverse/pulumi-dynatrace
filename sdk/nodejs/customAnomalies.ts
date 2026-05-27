@@ -177,63 +177,63 @@ export interface CustomAnomaliesState {
     /**
      * How the metric data points are aggregated for the evaluation. The timeseries must support this aggregation
      */
-    aggregationType?: pulumi.Input<string>;
+    aggregationType?: pulumi.Input<string | undefined>;
     /**
      * The description of the metric event
      */
-    description?: pulumi.Input<string>;
+    description?: pulumi.Input<string | undefined>;
     /**
      * Defines the dimensions of the metric to alert on. The filters are combined by conjunction
      */
-    dimensions?: pulumi.Input<pulumi.Input<inputs.CustomAnomaliesDimension>[]>;
+    dimensions?: pulumi.Input<pulumi.Input<inputs.CustomAnomaliesDimension>[] | undefined>;
     /**
      * The reason of automatic disabling.  The `NONE` means config was not disabled automatically. Possible values are `METRIC_DEFINITION_INCONSISTENCY`, `NONE`, `TOO_MANY_DIMS` and `TOPX_FORCIBLY_DEACTIVATED`
      *
      * @deprecated This property is not meant to be configured from the outside. It will get removed completely in future versions
      */
-    disabledReason?: pulumi.Input<string>;
+    disabledReason?: pulumi.Input<string | undefined>;
     /**
      * The metric event is enabled (`true`) or disabled (`false`)
      */
-    enabled?: pulumi.Input<boolean>;
+    enabled?: pulumi.Input<boolean | undefined>;
     /**
      * The ID of the metric evaluated by the metric event
      */
-    metricId?: pulumi.Input<string>;
+    metricId?: pulumi.Input<string | undefined>;
     /**
      * The metric selector that should be executed
      */
-    metricSelector?: pulumi.Input<string>;
+    metricSelector?: pulumi.Input<string | undefined>;
     /**
      * The name of the metric event displayed in the UI
      */
-    name?: pulumi.Input<string>;
+    name?: pulumi.Input<string | undefined>;
     /**
      * Defines which dimension key should be used for the **alertingScope**
      */
-    primaryDimensionKey?: pulumi.Input<string>;
+    primaryDimensionKey?: pulumi.Input<string | undefined>;
     /**
      * Defines the scope of the metric event. Only one filter is allowed per filter type, except for tags, where up to 3 are allowed. The filters are combined by conjunction
      */
-    scopes?: pulumi.Input<pulumi.Input<inputs.CustomAnomaliesScope>[]>;
+    scopes?: pulumi.Input<pulumi.Input<inputs.CustomAnomaliesScope>[] | undefined>;
     /**
      * The type of the event to trigger on the threshold violation.  The `CUSTOM_ALERT` type is not correlated with other alerts. The `INFO` type does not open a problem
      */
-    severity?: pulumi.Input<string>;
+    severity?: pulumi.Input<string | undefined>;
     /**
      * A monitoring strategy for a metric event config. This is the base version of the monitoring strategy, depending on the type,  the actual JSON may contain additional fields
      */
-    strategy?: pulumi.Input<inputs.CustomAnomaliesStrategy>;
+    strategy?: pulumi.Input<inputs.CustomAnomaliesStrategy | undefined>;
     /**
      * allows for configuring properties that are not explicitly supported by the current version of this provider
      */
-    unknowns?: pulumi.Input<string>;
+    unknowns?: pulumi.Input<string | undefined>;
     /**
      * The reason of a warning set on the config. The `NONE` means config has no warnings. The other supported value is `TOO_MANY_DIMS`
      *
      * @deprecated This property is not meant to be configured from the outside. It will get removed completely in future versions
      */
-    warningReason?: pulumi.Input<string>;
+    warningReason?: pulumi.Input<string | undefined>;
 }
 
 /**
@@ -243,7 +243,7 @@ export interface CustomAnomaliesArgs {
     /**
      * How the metric data points are aggregated for the evaluation. The timeseries must support this aggregation
      */
-    aggregationType?: pulumi.Input<string>;
+    aggregationType?: pulumi.Input<string | undefined>;
     /**
      * The description of the metric event
      */
@@ -251,13 +251,13 @@ export interface CustomAnomaliesArgs {
     /**
      * Defines the dimensions of the metric to alert on. The filters are combined by conjunction
      */
-    dimensions?: pulumi.Input<pulumi.Input<inputs.CustomAnomaliesDimension>[]>;
+    dimensions?: pulumi.Input<pulumi.Input<inputs.CustomAnomaliesDimension>[] | undefined>;
     /**
      * The reason of automatic disabling.  The `NONE` means config was not disabled automatically. Possible values are `METRIC_DEFINITION_INCONSISTENCY`, `NONE`, `TOO_MANY_DIMS` and `TOPX_FORCIBLY_DEACTIVATED`
      *
      * @deprecated This property is not meant to be configured from the outside. It will get removed completely in future versions
      */
-    disabledReason?: pulumi.Input<string>;
+    disabledReason?: pulumi.Input<string | undefined>;
     /**
      * The metric event is enabled (`true`) or disabled (`false`)
      */
@@ -265,27 +265,27 @@ export interface CustomAnomaliesArgs {
     /**
      * The ID of the metric evaluated by the metric event
      */
-    metricId?: pulumi.Input<string>;
+    metricId?: pulumi.Input<string | undefined>;
     /**
      * The metric selector that should be executed
      */
-    metricSelector?: pulumi.Input<string>;
+    metricSelector?: pulumi.Input<string | undefined>;
     /**
      * The name of the metric event displayed in the UI
      */
-    name?: pulumi.Input<string>;
+    name?: pulumi.Input<string | undefined>;
     /**
      * Defines which dimension key should be used for the **alertingScope**
      */
-    primaryDimensionKey?: pulumi.Input<string>;
+    primaryDimensionKey?: pulumi.Input<string | undefined>;
     /**
      * Defines the scope of the metric event. Only one filter is allowed per filter type, except for tags, where up to 3 are allowed. The filters are combined by conjunction
      */
-    scopes?: pulumi.Input<pulumi.Input<inputs.CustomAnomaliesScope>[]>;
+    scopes?: pulumi.Input<pulumi.Input<inputs.CustomAnomaliesScope>[] | undefined>;
     /**
      * The type of the event to trigger on the threshold violation.  The `CUSTOM_ALERT` type is not correlated with other alerts. The `INFO` type does not open a problem
      */
-    severity?: pulumi.Input<string>;
+    severity?: pulumi.Input<string | undefined>;
     /**
      * A monitoring strategy for a metric event config. This is the base version of the monitoring strategy, depending on the type,  the actual JSON may contain additional fields
      */
@@ -293,11 +293,11 @@ export interface CustomAnomaliesArgs {
     /**
      * allows for configuring properties that are not explicitly supported by the current version of this provider
      */
-    unknowns?: pulumi.Input<string>;
+    unknowns?: pulumi.Input<string | undefined>;
     /**
      * The reason of a warning set on the config. The `NONE` means config has no warnings. The other supported value is `TOO_MANY_DIMS`
      *
      * @deprecated This property is not meant to be configured from the outside. It will get removed completely in future versions
      */
-    warningReason?: pulumi.Input<string>;
+    warningReason?: pulumi.Input<string | undefined>;
 }

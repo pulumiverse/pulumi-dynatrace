@@ -58,8 +58,8 @@ class ActivegateTokenArgs:
 @pulumi.input_type
 class _ActivegateTokenState:
     def __init__(__self__, *,
-                 auth_token_enforcement_manually_enabled: Optional[pulumi.Input[_builtins.bool]] = None,
-                 expiring_token_notifications_enabled: Optional[pulumi.Input[_builtins.bool]] = None):
+                 auth_token_enforcement_manually_enabled: pulumi.Input[Optional[_builtins.bool]] = None,
+                 expiring_token_notifications_enabled: pulumi.Input[Optional[_builtins.bool]] = None):
         """
         Input properties used for looking up and filtering ActivegateToken resources.
 
@@ -73,26 +73,26 @@ class _ActivegateTokenState:
 
     @_builtins.property
     @pulumi.getter(name="authTokenEnforcementManuallyEnabled")
-    def auth_token_enforcement_manually_enabled(self) -> Optional[pulumi.Input[_builtins.bool]]:
+    def auth_token_enforcement_manually_enabled(self) -> pulumi.Input[Optional[_builtins.bool]]:
         """
         Manually enforce ActiveGate token authentication
         """
         return pulumi.get(self, "auth_token_enforcement_manually_enabled")
 
     @auth_token_enforcement_manually_enabled.setter
-    def auth_token_enforcement_manually_enabled(self, value: Optional[pulumi.Input[_builtins.bool]]):
+    def auth_token_enforcement_manually_enabled(self, value: pulumi.Input[Optional[_builtins.bool]]):
         pulumi.set(self, "auth_token_enforcement_manually_enabled", value)
 
     @_builtins.property
     @pulumi.getter(name="expiringTokenNotificationsEnabled")
-    def expiring_token_notifications_enabled(self) -> Optional[pulumi.Input[_builtins.bool]]:
+    def expiring_token_notifications_enabled(self) -> pulumi.Input[Optional[_builtins.bool]]:
         """
         Note: ActiveGate tokens notifications are sent only when you deployed ActiveGate tokens with expiration dates in your environment and notifications are defined ([see notification settings](https://www.terraform.io/ui/settings/builtin:problem.notifications))
         """
         return pulumi.get(self, "expiring_token_notifications_enabled")
 
     @expiring_token_notifications_enabled.setter
-    def expiring_token_notifications_enabled(self, value: Optional[pulumi.Input[_builtins.bool]]):
+    def expiring_token_notifications_enabled(self, value: pulumi.Input[Optional[_builtins.bool]]):
         pulumi.set(self, "expiring_token_notifications_enabled", value)
 
 
@@ -102,8 +102,8 @@ class ActivegateToken(pulumi.CustomResource):
     def __init__(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 auth_token_enforcement_manually_enabled: Optional[pulumi.Input[_builtins.bool]] = None,
-                 expiring_token_notifications_enabled: Optional[pulumi.Input[_builtins.bool]] = None,
+                 auth_token_enforcement_manually_enabled: pulumi.Input[Optional[_builtins.bool]] = None,
+                 expiring_token_notifications_enabled: pulumi.Input[Optional[_builtins.bool]] = None,
                  __props__=None):
         """
         > This resource requires the API token scopes **Read settings** (`settings.read`) and **Write settings** (`settings.write`)
@@ -163,8 +163,8 @@ class ActivegateToken(pulumi.CustomResource):
     def _internal_init(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 auth_token_enforcement_manually_enabled: Optional[pulumi.Input[_builtins.bool]] = None,
-                 expiring_token_notifications_enabled: Optional[pulumi.Input[_builtins.bool]] = None,
+                 auth_token_enforcement_manually_enabled: pulumi.Input[Optional[_builtins.bool]] = None,
+                 expiring_token_notifications_enabled: pulumi.Input[Optional[_builtins.bool]] = None,
                  __props__=None):
         opts = pulumi.ResourceOptions.merge(_utilities.get_resource_opts_defaults(), opts)
         if not isinstance(opts, pulumi.ResourceOptions):
@@ -190,8 +190,8 @@ class ActivegateToken(pulumi.CustomResource):
     def get(resource_name: str,
             id: pulumi.Input[str],
             opts: Optional[pulumi.ResourceOptions] = None,
-            auth_token_enforcement_manually_enabled: Optional[pulumi.Input[_builtins.bool]] = None,
-            expiring_token_notifications_enabled: Optional[pulumi.Input[_builtins.bool]] = None) -> 'ActivegateToken':
+            auth_token_enforcement_manually_enabled: pulumi.Input[Optional[_builtins.bool]] = None,
+            expiring_token_notifications_enabled: pulumi.Input[Optional[_builtins.bool]] = None) -> 'ActivegateToken':
         """
         Get an existing ActivegateToken resource's state with the given name, id, and optional extra
         properties used to qualify the lookup.

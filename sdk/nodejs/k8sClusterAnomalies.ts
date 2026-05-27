@@ -129,27 +129,27 @@ export interface K8sClusterAnomaliesState {
     /**
      * no documentation available
      */
-    cpuRequestsSaturation?: pulumi.Input<inputs.K8sClusterAnomaliesCpuRequestsSaturation>;
+    cpuRequestsSaturation?: pulumi.Input<inputs.K8sClusterAnomaliesCpuRequestsSaturation | undefined>;
     /**
      * no documentation available
      */
-    memoryRequestsSaturation?: pulumi.Input<inputs.K8sClusterAnomaliesMemoryRequestsSaturation>;
+    memoryRequestsSaturation?: pulumi.Input<inputs.K8sClusterAnomaliesMemoryRequestsSaturation | undefined>;
     /**
      * no documentation available
      */
-    monitoringIssues?: pulumi.Input<inputs.K8sClusterAnomaliesMonitoringIssues>;
+    monitoringIssues?: pulumi.Input<inputs.K8sClusterAnomaliesMonitoringIssues | undefined>;
     /**
      * no documentation available
      */
-    podsSaturation?: pulumi.Input<inputs.K8sClusterAnomaliesPodsSaturation>;
+    podsSaturation?: pulumi.Input<inputs.K8sClusterAnomaliesPodsSaturation | undefined>;
     /**
      * Alerts if cluster has not been ready for a given amount of time
      */
-    readinessIssues?: pulumi.Input<inputs.K8sClusterAnomaliesReadinessIssues>;
+    readinessIssues?: pulumi.Input<inputs.K8sClusterAnomaliesReadinessIssues | undefined>;
     /**
      * The scope of this setting (KUBERNETES_CLUSTER). Omit this property if you want to cover the whole environment.
      */
-    scope?: pulumi.Input<string>;
+    scope?: pulumi.Input<string | undefined>;
 }
 
 /**
@@ -179,5 +179,5 @@ export interface K8sClusterAnomaliesArgs {
     /**
      * The scope of this setting (KUBERNETES_CLUSTER). Omit this property if you want to cover the whole environment.
      */
-    scope?: pulumi.Input<string>;
+    scope?: pulumi.Input<string | undefined>;
 }

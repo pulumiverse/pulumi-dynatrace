@@ -144,35 +144,35 @@ export interface GenericRelationshipsState {
     /**
      * The user or extension that created this relationship.
      */
-    createdBy?: pulumi.Input<string>;
+    createdBy?: pulumi.Input<string | undefined>;
     /**
      * This setting is enabled (`true`) or disabled (`false`)
      */
-    enabled?: pulumi.Input<boolean>;
+    enabled?: pulumi.Input<boolean | undefined>;
     /**
      * Specify a role for the source entity. If both source and destination type are the same, referring different roles will allow identification of a relationships direction. If role is left blank, any role of the source type is considered for the relationship.
      */
-    fromRole?: pulumi.Input<string>;
+    fromRole?: pulumi.Input<string | undefined>;
     /**
      * Define an entity type as the source of the relationship.
      */
-    fromType?: pulumi.Input<string>;
+    fromType?: pulumi.Input<string | undefined>;
     /**
      * Specify all sources which should be evaluated for this relationship rule. The relationship is only created when any of the filters match.
      */
-    sources?: pulumi.Input<inputs.GenericRelationshipsSources>;
+    sources?: pulumi.Input<inputs.GenericRelationshipsSources | undefined>;
     /**
      * Specify a role for the destination entity. If both source and destination type are the same, referring different roles will allow identification of a relationships direction. If role is left blank, any role of the destination type is considered for the relationship.
      */
-    toRole?: pulumi.Input<string>;
+    toRole?: pulumi.Input<string | undefined>;
     /**
      * Define an entity type as the destination of the relationship. You can choose the same type as the source type. In this case you also may assign different roles for source and destination for having directed relationships.
      */
-    toType?: pulumi.Input<string>;
+    toType?: pulumi.Input<string | undefined>;
     /**
      * Type of the relationship between the Source Type and the Destination Type. Possible Values: `CALLS`, `CHILD_OF`, `INSTANCE_OF`, `PART_OF`, `RUNS_ON`, `SAME_AS`
      */
-    typeOfRelation?: pulumi.Input<string>;
+    typeOfRelation?: pulumi.Input<string | undefined>;
 }
 
 /**
@@ -190,7 +190,7 @@ export interface GenericRelationshipsArgs {
     /**
      * Specify a role for the source entity. If both source and destination type are the same, referring different roles will allow identification of a relationships direction. If role is left blank, any role of the source type is considered for the relationship.
      */
-    fromRole?: pulumi.Input<string>;
+    fromRole?: pulumi.Input<string | undefined>;
     /**
      * Define an entity type as the source of the relationship.
      */
@@ -202,7 +202,7 @@ export interface GenericRelationshipsArgs {
     /**
      * Specify a role for the destination entity. If both source and destination type are the same, referring different roles will allow identification of a relationships direction. If role is left blank, any role of the destination type is considered for the relationship.
      */
-    toRole?: pulumi.Input<string>;
+    toRole?: pulumi.Input<string | undefined>;
     /**
      * Define an entity type as the destination of the relationship. You can choose the same type as the source type. In this case you also may assign different roles for source and destination for having directed relationships.
      */

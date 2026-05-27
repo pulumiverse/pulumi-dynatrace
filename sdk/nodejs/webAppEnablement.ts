@@ -110,19 +110,19 @@ export interface WebAppEnablementState {
     /**
      * The scope of this settings. If the settings should cover the whole environment, just don't specify any scope.
      */
-    applicationId?: pulumi.Input<string>;
+    applicationId?: pulumi.Input<string | undefined>;
     /**
      * User Interactions
      */
-    experienceAnalytics?: pulumi.Input<inputs.WebAppEnablementExperienceAnalytics>;
+    experienceAnalytics?: pulumi.Input<inputs.WebAppEnablementExperienceAnalytics | undefined>;
     /**
      * Capture and analyze all user actions within your application. Enable [Real User Monitoring (RUM)](https://dt-url.net/1n2b0prq) to monitor and improve your application's performance, identify errors, and gain insight into your user's behavior and experience.
      */
-    rum?: pulumi.Input<inputs.WebAppEnablementRum>;
+    rum?: pulumi.Input<inputs.WebAppEnablementRum | undefined>;
     /**
      * [Session Replay](https://dt-url.net/session-replay) captures all user interactions within your application and replays them in a movie-like experience while providing [best-in-class security and data protection](https://dt-url.net/b303zxj).
      */
-    sessionReplay?: pulumi.Input<inputs.WebAppEnablementSessionReplay>;
+    sessionReplay?: pulumi.Input<inputs.WebAppEnablementSessionReplay | undefined>;
 }
 
 /**
@@ -132,11 +132,11 @@ export interface WebAppEnablementArgs {
     /**
      * The scope of this settings. If the settings should cover the whole environment, just don't specify any scope.
      */
-    applicationId?: pulumi.Input<string>;
+    applicationId?: pulumi.Input<string | undefined>;
     /**
      * User Interactions
      */
-    experienceAnalytics?: pulumi.Input<inputs.WebAppEnablementExperienceAnalytics>;
+    experienceAnalytics?: pulumi.Input<inputs.WebAppEnablementExperienceAnalytics | undefined>;
     /**
      * Capture and analyze all user actions within your application. Enable [Real User Monitoring (RUM)](https://dt-url.net/1n2b0prq) to monitor and improve your application's performance, identify errors, and gain insight into your user's behavior and experience.
      */

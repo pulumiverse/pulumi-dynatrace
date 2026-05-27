@@ -90,11 +90,11 @@ export interface ImsBridgesState {
     /**
      * The name of the IMS bridge
      */
-    name?: pulumi.Input<string>;
+    name?: pulumi.Input<string | undefined>;
     /**
      * Queue manager(s) that belong to the IMS bridge
      */
-    queueManagers?: pulumi.Input<pulumi.Input<inputs.ImsBridgesQueueManager>[]>;
+    queueManagers?: pulumi.Input<pulumi.Input<inputs.ImsBridgesQueueManager>[] | undefined>;
 }
 
 /**
@@ -104,9 +104,9 @@ export interface ImsBridgesArgs {
     /**
      * The name of the IMS bridge
      */
-    name?: pulumi.Input<string>;
+    name?: pulumi.Input<string | undefined>;
     /**
      * Queue manager(s) that belong to the IMS bridge
      */
-    queueManagers?: pulumi.Input<pulumi.Input<inputs.ImsBridgesQueueManager>[]>;
+    queueManagers?: pulumi.Input<pulumi.Input<inputs.ImsBridgesQueueManager>[] | undefined>;
 }

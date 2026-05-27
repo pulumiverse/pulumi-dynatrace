@@ -138,39 +138,39 @@ export interface MetricMetadataState {
     /**
      * Description
      */
-    description?: pulumi.Input<string>;
+    description?: pulumi.Input<string | undefined>;
     /**
      * Define metadata per metric dimension.
      */
-    dimensions?: pulumi.Input<inputs.MetricMetadataDimensions>;
+    dimensions?: pulumi.Input<inputs.MetricMetadataDimensions | undefined>;
     /**
      * Display name
      */
-    displayName?: pulumi.Input<string>;
+    displayName?: pulumi.Input<string | undefined>;
     /**
      * The scope of this setting (metric)
      */
-    metricId?: pulumi.Input<string>;
+    metricId?: pulumi.Input<string | undefined>;
     /**
      * Metric properties
      */
-    metricProperties?: pulumi.Input<inputs.MetricMetadataMetricProperties>;
+    metricProperties?: pulumi.Input<inputs.MetricMetadataMetricProperties | undefined>;
     /**
      * Specifies which entity dimension should be used as the primary dimension. The property can only be configured for metrics ingested with the Metrics API.
      */
-    sourceEntityType?: pulumi.Input<string>;
+    sourceEntityType?: pulumi.Input<string | undefined>;
     /**
      * Tags
      */
-    tags?: pulumi.Input<pulumi.Input<string>[]>;
+    tags?: pulumi.Input<pulumi.Input<string>[] | undefined>;
     /**
      * Unit
      */
-    unit?: pulumi.Input<string>;
+    unit?: pulumi.Input<string | undefined>;
     /**
      * The raw value is stored in bits or bytes. The user interface can display it in these numeral systems:
      */
-    unitDisplayFormat?: pulumi.Input<string>;
+    unitDisplayFormat?: pulumi.Input<string | undefined>;
 }
 
 /**
@@ -180,15 +180,15 @@ export interface MetricMetadataArgs {
     /**
      * Description
      */
-    description?: pulumi.Input<string>;
+    description?: pulumi.Input<string | undefined>;
     /**
      * Define metadata per metric dimension.
      */
-    dimensions?: pulumi.Input<inputs.MetricMetadataDimensions>;
+    dimensions?: pulumi.Input<inputs.MetricMetadataDimensions | undefined>;
     /**
      * Display name
      */
-    displayName?: pulumi.Input<string>;
+    displayName?: pulumi.Input<string | undefined>;
     /**
      * The scope of this setting (metric)
      */
@@ -196,15 +196,15 @@ export interface MetricMetadataArgs {
     /**
      * Metric properties
      */
-    metricProperties?: pulumi.Input<inputs.MetricMetadataMetricProperties>;
+    metricProperties?: pulumi.Input<inputs.MetricMetadataMetricProperties | undefined>;
     /**
      * Specifies which entity dimension should be used as the primary dimension. The property can only be configured for metrics ingested with the Metrics API.
      */
-    sourceEntityType?: pulumi.Input<string>;
+    sourceEntityType?: pulumi.Input<string | undefined>;
     /**
      * Tags
      */
-    tags?: pulumi.Input<pulumi.Input<string>[]>;
+    tags?: pulumi.Input<pulumi.Input<string>[] | undefined>;
     /**
      * Unit
      */
@@ -212,5 +212,5 @@ export interface MetricMetadataArgs {
     /**
      * The raw value is stored in bits or bytes. The user interface can display it in these numeral systems:
      */
-    unitDisplayFormat?: pulumi.Input<string>;
+    unitDisplayFormat?: pulumi.Input<string | undefined>;
 }
