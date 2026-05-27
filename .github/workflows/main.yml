@@ -93,7 +93,7 @@ jobs:
           - dotnet
           - go
         nodeversion:
-          - 22.x
+          - 24.x
         pythonversion:
           - "3.11"
   prerequisites:
@@ -161,7 +161,7 @@ jobs:
         goversion:
           - 1.26.x
         nodeversion:
-          - 22.x
+          - 24.x
         pythonversion:
           - "3.11"
   # publish:
@@ -362,7 +362,7 @@ jobs:
           - dotnet
           - go
         nodeversion:
-          - 22.x
+          - 24.x
         pythonversion:
           - "3.11"
 name: main
