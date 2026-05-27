@@ -35,7 +35,7 @@ jobs:
       with:
         repo: pulumi/pulumictl
     - name: Install Pulumi CLI
-      uses: pulumi/actions@v6
+      uses: pulumi/actions@v7
       with:
         pulumi-version: latest
     - name: Setup Node
@@ -114,7 +114,7 @@ jobs:
       with:
         repo: pulumi/pulumictl
     - name: Install Pulumi CLI
-      uses: pulumi/actions@v6
+      uses: pulumi/actions@v7
       with:
         pulumi-version: latest
     - if: github.event_name == 'pull_request'
@@ -177,7 +177,7 @@ jobs:
       with:
         repo: pulumi/pulumictl
     - name: Install Pulumi CLI
-      uses: pulumi/actions@v6
+      uses: pulumi/actions@v7
       with:
         pulumi-version: latest
     - name: Set Release Version
@@ -211,7 +211,7 @@ jobs:
       with:
         repo: pulumi/pulumictl
     - name: Install Pulumi CLI
-      uses: pulumi/actions@v6
+      uses: pulumi/actions@v7
       with:
         pulumi-version: latest
     - name: Setup Node
@@ -311,7 +311,7 @@ jobs:
       with:
         repo: pulumi/pulumictl
     - name: Install Pulumi CLI
-      uses: pulumi/actions@v6
+      uses: pulumi/actions@v7
       with:
         pulumi-version: latest
     - name: Setup Node
