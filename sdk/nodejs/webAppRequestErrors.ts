@@ -7,7 +7,7 @@ import * as outputs from "./types/output";
 import * as utilities from "./utilities";
 
 /**
- * !> This resource may not have full coverage of the required fields, please use dynatrace.ApplicationErrorRules instead.
+ * > This resource may not have full coverage of the required fields, please use dynatrace.ApplicationErrorRules instead.
  *
  * > This resource requires the API token scopes **Read settings** (`settings.read`) and **Write settings** (`settings.write`)
  *

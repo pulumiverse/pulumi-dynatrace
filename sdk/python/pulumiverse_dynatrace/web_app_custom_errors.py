@@ -141,7 +141,7 @@ class WebAppCustomErrors(pulumi.CustomResource):
                  scope: pulumi.Input[Optional[_builtins.str]] = None,
                  __props__=None):
         """
-        !> This resource may not have full coverage of the required fields, please use ApplicationErrorRules instead.
+        > This resource may not have full coverage of the required fields, please use ApplicationErrorRules instead.
 
         > This resource requires the API token scopes **Read settings** (`settings.read`) and **Write settings** (`settings.write`)
 
@@ -171,7 +171,7 @@ class WebAppCustomErrors(pulumi.CustomResource):
                  args: WebAppCustomErrorsArgs,
                  opts: Optional[pulumi.ResourceOptions] = None):
         """
-        !> This resource may not have full coverage of the required fields, please use ApplicationErrorRules instead.
+        > This resource may not have full coverage of the required fields, please use ApplicationErrorRules instead.
 
         > This resource requires the API token scopes **Read settings** (`settings.read`) and **Write settings** (`settings.write`)
 

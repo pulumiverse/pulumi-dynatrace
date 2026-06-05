@@ -209,7 +209,7 @@ class DduPool(pulumi.CustomResource):
                  traces: pulumi.Input[Optional[Union['DduPoolTracesArgs', 'DduPoolTracesArgsDict']]] = None,
                  __props__=None):
         """
-        !> This resource API endpoint has been deprecated.
+        > This resource API endpoint has been deprecated.
 
         > This resource requires the API token scopes **Read settings** (`settings.read`) and **Write settings** (`settings.write`)
 
@@ -235,7 +235,7 @@ class DduPool(pulumi.CustomResource):
                  args: Optional[DduPoolArgs] = None,
                  opts: Optional[pulumi.ResourceOptions] = None):
         """
-        !> This resource API endpoint has been deprecated.
+        > This resource API endpoint has been deprecated.
 
         > This resource requires the API token scopes **Read settings** (`settings.read`) and **Write settings** (`settings.write`)
 

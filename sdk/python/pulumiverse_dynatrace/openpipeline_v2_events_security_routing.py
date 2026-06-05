@@ -77,7 +77,7 @@ class OpenpipelineV2EventsSecurityRouting(pulumi.CustomResource):
                  routing_entries: pulumi.Input[Optional[Union['OpenpipelineV2EventsSecurityRoutingRoutingEntriesArgs', 'OpenpipelineV2EventsSecurityRoutingRoutingEntriesArgsDict']]] = None,
                  __props__=None):
         """
-        !> Deploying an OpenPipeline routing configuration will overwrite the existing one of the same kind, causing any manual changes made in the web UI or other routing configurations managed by Terraform or Monaco to be lost. Ensure all routing configurations of the same kind are defined within a single Terraform or Monaco configuration to prevent data loss.
+        > Deploying an OpenPipeline routing configuration will overwrite the existing one of the same kind, causing any manual changes made in the web UI or other routing configurations managed by Terraform or Monaco to be lost. Ensure all routing configurations of the same kind are defined within a single Terraform or Monaco configuration to prevent data loss.
 
         > This resource requires the API token scopes **Read settings** (`settings.read`) and **Write settings** (`settings.write`)
 
@@ -122,7 +122,7 @@ class OpenpipelineV2EventsSecurityRouting(pulumi.CustomResource):
                  args: Optional[OpenpipelineV2EventsSecurityRoutingArgs] = None,
                  opts: Optional[pulumi.ResourceOptions] = None):
         """
-        !> Deploying an OpenPipeline routing configuration will overwrite the existing one of the same kind, causing any manual changes made in the web UI or other routing configurations managed by Terraform or Monaco to be lost. Ensure all routing configurations of the same kind are defined within a single Terraform or Monaco configuration to prevent data loss.
+        > Deploying an OpenPipeline routing configuration will overwrite the existing one of the same kind, causing any manual changes made in the web UI or other routing configurations managed by Terraform or Monaco to be lost. Ensure all routing configurations of the same kind are defined within a single Terraform or Monaco configuration to prevent data loss.
 
         > This resource requires the API token scopes **Read settings** (`settings.read`) and **Write settings** (`settings.write`)
 

@@ -206,7 +206,7 @@ class ApplicationDataPrivacy(pulumi.CustomResource):
                  web_application_id: pulumi.Input[Optional[_builtins.str]] = None,
                  __props__=None):
         """
-        !> This resource is utilizing an older API endpoint, please use DataPrivacy and SessionReplayWebPrivacy instead.
+        > This resource is utilizing an older API endpoint, please use DataPrivacy and SessionReplayWebPrivacy instead.
 
         > This resource requires the API token scopes **Read configuration** (`ReadConfig`) and **Change data privacy settings** (`DataPrivacy`)
 
@@ -238,7 +238,7 @@ class ApplicationDataPrivacy(pulumi.CustomResource):
                  args: ApplicationDataPrivacyArgs,
                  opts: Optional[pulumi.ResourceOptions] = None):
         """
-        !> This resource is utilizing an older API endpoint, please use DataPrivacy and SessionReplayWebPrivacy instead.
+        > This resource is utilizing an older API endpoint, please use DataPrivacy and SessionReplayWebPrivacy instead.
 
         > This resource requires the API token scopes **Read configuration** (`ReadConfig`) and **Change data privacy settings** (`DataPrivacy`)
 

@@ -12,7 +12,7 @@ import (
 	"github.com/pulumiverse/pulumi-dynatrace/sdk/go/dynatrace/internal"
 )
 
-// !> This resource may not have full coverage of the required fields, please use ApplicationErrorRules instead.
+// > This resource may not have full coverage of the required fields, please use ApplicationErrorRules instead.
 //
 // > This resource requires the API token scopes **Read settings** (`settings.read`) and **Write settings** (`settings.write`)
 //

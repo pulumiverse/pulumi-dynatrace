@@ -5,7 +5,7 @@ import * as pulumi from "@pulumi/pulumi";
 import * as utilities from "./utilities";
 
 /**
- * !> This resource does not handle ordering of rules. If ordering is required, please use dynatrace.ApplicationDetectionRule instead.
+ * > This resource does not handle ordering of rules. If ordering is required, please use dynatrace.ApplicationDetectionRule instead.
  *
  * > This resource requires the API token scopes **Read settings** (`settings.read`) and **Write settings** (`settings.write`)
  *

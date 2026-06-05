@@ -143,9 +143,9 @@ class OpenpipelineMetrics(pulumi.CustomResource):
                  routing: pulumi.Input[Optional[Union['OpenpipelineMetricsRoutingArgs', 'OpenpipelineMetricsRoutingArgsDict']]] = None,
                  __props__=None):
         """
-        !> This resource API endpoint has been deprecated, please migrate your OpenPipeline configurations and use `dynatrace_openpipeline_v2_metrics_*` instead.
+        > This resource API endpoint has been deprecated, please migrate your OpenPipeline configurations and use `dynatrace_openpipeline_v2_metrics_*` instead.
 
-        !> Deploying an OpenPipeline configuration will overwrite the existing one of the same kind, causing any manual changes made in the web UI or other configurations managed by Terraform or Monaco to be lost. Ensure all configurations are defined within a single Terraform or Monaco configuration to prevent data loss.
+        > Deploying an OpenPipeline configuration will overwrite the existing one of the same kind, causing any manual changes made in the web UI or other configurations managed by Terraform or Monaco to be lost. Ensure all configurations are defined within a single Terraform or Monaco configuration to prevent data loss.
 
         > **Dynatrace SaaS only**
 
@@ -200,9 +200,9 @@ class OpenpipelineMetrics(pulumi.CustomResource):
                  args: Optional[OpenpipelineMetricsArgs] = None,
                  opts: Optional[pulumi.ResourceOptions] = None):
         """
-        !> This resource API endpoint has been deprecated, please migrate your OpenPipeline configurations and use `dynatrace_openpipeline_v2_metrics_*` instead.
+        > This resource API endpoint has been deprecated, please migrate your OpenPipeline configurations and use `dynatrace_openpipeline_v2_metrics_*` instead.
 
-        !> Deploying an OpenPipeline configuration will overwrite the existing one of the same kind, causing any manual changes made in the web UI or other configurations managed by Terraform or Monaco to be lost. Ensure all configurations are defined within a single Terraform or Monaco configuration to prevent data loss.
+        > Deploying an OpenPipeline configuration will overwrite the existing one of the same kind, causing any manual changes made in the web UI or other configurations managed by Terraform or Monaco to be lost. Ensure all configurations are defined within a single Terraform or Monaco configuration to prevent data loss.
 
         > **Dynatrace SaaS only**
 

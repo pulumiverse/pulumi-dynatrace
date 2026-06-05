@@ -7,7 +7,7 @@ import * as outputs from "./types/output";
 import * as utilities from "./utilities";
 
 /**
- * !> This resource is utilizing an older API endpoint, please use dynatrace.DataPrivacy and dynatrace.SessionReplayWebPrivacy instead.
+ * > This resource is utilizing an older API endpoint, please use dynatrace.DataPrivacy and dynatrace.SessionReplayWebPrivacy instead.
  *
  * > This resource requires the API token scopes **Read configuration** (`ReadConfig`) and **Change data privacy settings** (`DataPrivacy`)
  *

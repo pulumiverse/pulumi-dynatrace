@@ -12,7 +12,7 @@ import (
 	"github.com/pulumiverse/pulumi-dynatrace/sdk/go/dynatrace/internal"
 )
 
-// !> This resource API endpoint has been deprecated, please use AttributeAllowList and AttributeMasking instead.
+// > This resource API endpoint has been deprecated, please use AttributeAllowList and AttributeMasking instead.
 //
 // > This resource requires the API token scopes **Read settings** (`settings.read`) and **Write settings** (`settings.write`)
 //

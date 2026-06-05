@@ -11,7 +11,7 @@ import (
 	"github.com/pulumiverse/pulumi-dynatrace/sdk/go/dynatrace/internal"
 )
 
-// !> The data source API endpoint has been deprecated, please use getEntity with entity type `SERVICE` instead.
+// > The data source API endpoint has been deprecated, please use getEntity with entity type `SERVICE` instead.
 //
 // The service data source allows the service ID to be retrieved by its name and optionally tags / tag-value pairs.
 //

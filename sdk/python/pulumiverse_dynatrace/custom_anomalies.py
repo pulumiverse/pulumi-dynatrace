@@ -519,7 +519,7 @@ class CustomAnomalies(pulumi.CustomResource):
                  warning_reason: pulumi.Input[Optional[_builtins.str]] = None,
                  __props__=None):
         """
-        !> This resource API endpoint has been deprecated, please use MetricEvents instead.
+        > This resource API endpoint has been deprecated, please use MetricEvents instead.
 
         > This resource requires the API token scopes **Read configuration** (`ReadConfig`) and **Write configuration** (`WriteConfig`)
 
@@ -560,7 +560,7 @@ class CustomAnomalies(pulumi.CustomResource):
                  args: CustomAnomaliesArgs,
                  opts: Optional[pulumi.ResourceOptions] = None):
         """
-        !> This resource API endpoint has been deprecated, please use MetricEvents instead.
+        > This resource API endpoint has been deprecated, please use MetricEvents instead.
 
         > This resource requires the API token scopes **Read configuration** (`ReadConfig`) and **Write configuration** (`WriteConfig`)
 

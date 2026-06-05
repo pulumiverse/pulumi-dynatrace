@@ -24,7 +24,7 @@ namespace Pulumiverse.Dynatrace
         /// 
         /// Terraform will attempt to poll for results until the query has finished. There is no need to specify a timeout for that.
         /// 
-        /// !&gt; Executing DQL queries can inflict additional costs in Dynatrace. Be aware of that fact when using this Data Source. Terraform will run that query by default every time you're executing `pulumi preview` or `pulumi up`.
+        /// &gt; Executing DQL queries can inflict additional costs in Dynatrace. Be aware of that fact when using this Data Source. Terraform will run that query by default every time you're executing `pulumi preview` or `pulumi up`.
         /// 
         /// ## Example Usage
         /// 
@@ -97,7 +97,7 @@ namespace Pulumiverse.Dynatrace
         /// 
         /// Terraform will attempt to poll for results until the query has finished. There is no need to specify a timeout for that.
         /// 
-        /// !&gt; Executing DQL queries can inflict additional costs in Dynatrace. Be aware of that fact when using this Data Source. Terraform will run that query by default every time you're executing `pulumi preview` or `pulumi up`.
+        /// &gt; Executing DQL queries can inflict additional costs in Dynatrace. Be aware of that fact when using this Data Source. Terraform will run that query by default every time you're executing `pulumi preview` or `pulumi up`.
         /// 
         /// ## Example Usage
         /// 
@@ -170,7 +170,7 @@ namespace Pulumiverse.Dynatrace
         /// 
         /// Terraform will attempt to poll for results until the query has finished. There is no need to specify a timeout for that.
         /// 
-        /// !&gt; Executing DQL queries can inflict additional costs in Dynatrace. Be aware of that fact when using this Data Source. Terraform will run that query by default every time you're executing `pulumi preview` or `pulumi up`.
+        /// &gt; Executing DQL queries can inflict additional costs in Dynatrace. Be aware of that fact when using this Data Source. Terraform will run that query by default every time you're executing `pulumi preview` or `pulumi up`.
         /// 
         /// ## Example Usage
         /// 

@@ -203,7 +203,7 @@ class ManagedRemoteAccess(pulumi.CustomResource):
                  user_id: pulumi.Input[Optional[_builtins.str]] = None,
                  __props__=None):
         """
-        !> **HTTP DELETE method not available** Terraform will no longer manage this resource on `destroy` but the configuration will still be present on the Dynatrace cluster.
+        > **HTTP DELETE method not available** Terraform will no longer manage this resource on `destroy` but the configuration will still be present on the Dynatrace cluster.
 
         > This resource requires the cluster API token scope **Service Provider API** (`ServiceProviderAPI`)
 
@@ -242,7 +242,7 @@ class ManagedRemoteAccess(pulumi.CustomResource):
                  args: ManagedRemoteAccessArgs,
                  opts: Optional[pulumi.ResourceOptions] = None):
         """
-        !> **HTTP DELETE method not available** Terraform will no longer manage this resource on `destroy` but the configuration will still be present on the Dynatrace cluster.
+        > **HTTP DELETE method not available** Terraform will no longer manage this resource on `destroy` but the configuration will still be present on the Dynatrace cluster.
 
         > This resource requires the cluster API token scope **Service Provider API** (`ServiceProviderAPI`)
 

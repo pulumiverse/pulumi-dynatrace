@@ -5,7 +5,7 @@ import * as pulumi from "@pulumi/pulumi";
 import * as utilities from "./utilities";
 
 /**
- * !> This resource API endpoint has been deprecated.
+ * > This resource API endpoint has been deprecated.
  */
 export class OneagentDefaultVersion extends pulumi.CustomResource {
     /**

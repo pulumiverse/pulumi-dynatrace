@@ -84,7 +84,7 @@ def get_service(name: Optional[_builtins.str] = None,
                 tags: Optional[Sequence[_builtins.str]] = None,
                 opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetServiceResult:
     """
-    !> The data source API endpoint has been deprecated, please use get_entity with entity type `SERVICE` instead.
+    > The data source API endpoint has been deprecated, please use get_entity with entity type `SERVICE` instead.
 
     The service data source allows the service ID to be retrieved by its name and optionally tags / tag-value pairs.
 
@@ -113,7 +113,7 @@ def get_service_output(name: pulumi.Input[Optional[_builtins.str]] = None,
                        tags: pulumi.Input[Optional[Optional[Sequence[_builtins.str]]]] = None,
                        opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetServiceResult]:
     """
-    !> The data source API endpoint has been deprecated, please use get_entity with entity type `SERVICE` instead.
+    > The data source API endpoint has been deprecated, please use get_entity with entity type `SERVICE` instead.
 
     The service data source allows the service ID to be retrieved by its name and optionally tags / tag-value pairs.
 

@@ -3350,7 +3350,7 @@ class GoldenState(pulumi.CustomResource):
                  mode: pulumi.Input[Optional[_builtins.str]] = None,
                  __props__=None):
         """
-        !> This resource is currently in an experimental phase. It is disabled by default. If you would like to get early access please reach out to us via GitHub ticket. Dynatrace Support will not yet be able to assist you here.
+        > This resource is currently in an experimental phase. It is disabled by default. If you would like to get early access please reach out to us via GitHub ticket. Dynatrace Support will not yet be able to assist you here.
 
         The resource `GoldenState` doesn't represent an actual setting that can get maintained within a Dynatrace Environment or on a Dynatrace Cluster.
         Purpose of this resource is to easily identify whether there exist setttings on a Dynatrace environment that are not maintained by Terraform.
@@ -3510,7 +3510,7 @@ class GoldenState(pulumi.CustomResource):
 
         `pulumi up` will automatically delete all Management Zones, Alerting Profiles that don't match the IDs provided. For any Auto Tags that are configured it will print out a warning like in Example A.
 
-        !> Specifying the same resource in BOTH `GoldenState` resource blocks may lead to unpredictable results. Make sure that e.g. `AutotagV2` is just specified in ONE of these two blocks.
+        > Specifying the same resource in BOTH `GoldenState` resource blocks may lead to unpredictable results. Make sure that e.g. `AutotagV2` is just specified in ONE of these two blocks.
 
         Resources other than `ManagementZoneV2`, `Alerting` and `AutotagV2` will not be taken into consideration.
 
@@ -3751,7 +3751,7 @@ class GoldenState(pulumi.CustomResource):
                  args: Optional[GoldenStateArgs] = None,
                  opts: Optional[pulumi.ResourceOptions] = None):
         """
-        !> This resource is currently in an experimental phase. It is disabled by default. If you would like to get early access please reach out to us via GitHub ticket. Dynatrace Support will not yet be able to assist you here.
+        > This resource is currently in an experimental phase. It is disabled by default. If you would like to get early access please reach out to us via GitHub ticket. Dynatrace Support will not yet be able to assist you here.
 
         The resource `GoldenState` doesn't represent an actual setting that can get maintained within a Dynatrace Environment or on a Dynatrace Cluster.
         Purpose of this resource is to easily identify whether there exist setttings on a Dynatrace environment that are not maintained by Terraform.
@@ -3911,7 +3911,7 @@ class GoldenState(pulumi.CustomResource):
 
         `pulumi up` will automatically delete all Management Zones, Alerting Profiles that don't match the IDs provided. For any Auto Tags that are configured it will print out a warning like in Example A.
 
-        !> Specifying the same resource in BOTH `GoldenState` resource blocks may lead to unpredictable results. Make sure that e.g. `AutotagV2` is just specified in ONE of these two blocks.
+        > Specifying the same resource in BOTH `GoldenState` resource blocks may lead to unpredictable results. Make sure that e.g. `AutotagV2` is just specified in ONE of these two blocks.
 
         Resources other than `ManagementZoneV2`, `Alerting` and `AutotagV2` will not be taken into consideration.
 

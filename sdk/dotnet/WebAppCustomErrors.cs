@@ -11,7 +11,7 @@ using Pulumi;
 namespace Pulumiverse.Dynatrace
 {
     /// <summary>
-    /// !&gt; This resource may not have full coverage of the required fields, please use dynatrace.ApplicationErrorRules instead.
+    /// &gt; This resource may not have full coverage of the required fields, please use dynatrace.ApplicationErrorRules instead.
     /// 
     /// &gt; This resource requires the API token scopes **Read settings** (`settings.read`) and **Write settings** (`settings.write`)
     /// 

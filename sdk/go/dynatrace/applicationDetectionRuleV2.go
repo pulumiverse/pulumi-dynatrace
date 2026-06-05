@@ -12,7 +12,7 @@ import (
 	"github.com/pulumiverse/pulumi-dynatrace/sdk/go/dynatrace/internal"
 )
 
-// !> This resource does not handle ordering of rules. If ordering is required, please use ApplicationDetectionRule instead.
+// > This resource does not handle ordering of rules. If ordering is required, please use ApplicationDetectionRule instead.
 //
 // > This resource requires the API token scopes **Read settings** (`settings.read`) and **Write settings** (`settings.write`)
 //

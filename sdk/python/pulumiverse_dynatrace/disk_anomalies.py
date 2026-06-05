@@ -336,7 +336,7 @@ class DiskAnomalies(pulumi.CustomResource):
                  violating_samples: pulumi.Input[Optional[_builtins.int]] = None,
                  __props__=None):
         """
-        !> This resource is utilizing an older API endpoint, please use DiskAnomalyRules instead.
+        > This resource is utilizing an older API endpoint, please use DiskAnomalyRules instead.
 
         > This resource requires the API token scopes **Read configuration** (`ReadConfig`) and **Write configuration** (`WriteConfig`)
 
@@ -372,7 +372,7 @@ class DiskAnomalies(pulumi.CustomResource):
                  args: DiskAnomaliesArgs,
                  opts: Optional[pulumi.ResourceOptions] = None):
         """
-        !> This resource is utilizing an older API endpoint, please use DiskAnomalyRules instead.
+        > This resource is utilizing an older API endpoint, please use DiskAnomalyRules instead.
 
         > This resource requires the API token scopes **Read configuration** (`ReadConfig`) and **Write configuration** (`WriteConfig`)
 

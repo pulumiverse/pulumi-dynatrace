@@ -109,7 +109,7 @@ class PgAnomalies(pulumi.CustomResource):
                  pg_id: pulumi.Input[Optional[_builtins.str]] = None,
                  __props__=None):
         """
-        !> This resource is utilizing an older API endpoint, please use PgAlerting instead.
+        > This resource is utilizing an older API endpoint, please use PgAlerting instead.
 
         > This resource requires the API token scopes **Read configuration** (`ReadConfig`) and **Write configuration** (`WriteConfig`)
 
@@ -154,7 +154,7 @@ class PgAnomalies(pulumi.CustomResource):
                  args: PgAnomaliesArgs,
                  opts: Optional[pulumi.ResourceOptions] = None):
         """
-        !> This resource is utilizing an older API endpoint, please use PgAlerting instead.
+        > This resource is utilizing an older API endpoint, please use PgAlerting instead.
 
         > This resource requires the API token scopes **Read configuration** (`ReadConfig`) and **Write configuration** (`WriteConfig`)
 

@@ -11,7 +11,7 @@ import (
 	"github.com/pulumiverse/pulumi-dynatrace/sdk/go/dynatrace/internal"
 )
 
-// !> The data source API endpoint has been deprecated, please use getEntity with entity type `PROCESS_GROUP_INSTANCE` instead.
+// > The data source API endpoint has been deprecated, please use getEntity with entity type `PROCESS_GROUP_INSTANCE` instead.
 //
 // The process data source allows the process ID to be retrieved by its name and optionally tags / tag-value pairs.
 //

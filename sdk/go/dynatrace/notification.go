@@ -11,7 +11,7 @@ import (
 	"github.com/pulumiverse/pulumi-dynatrace/sdk/go/dynatrace/internal"
 )
 
-// !> This resource API endpoint has been deprecated, please use dynatrace_{notificationtype}_notification instead.
+// > This resource API endpoint has been deprecated, please use dynatrace_{notificationtype}_notification instead.
 // For example, for email notifications use dynatrace_email_notification.
 //
 // > This resource requires the API token scopes **Read configuration** (`ReadConfig`) and **Write configuration** (`WriteConfig`)

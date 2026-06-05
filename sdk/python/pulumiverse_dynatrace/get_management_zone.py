@@ -83,7 +83,7 @@ def get_management_zone(name: Optional[_builtins.str] = None,
 
     > This data source requires the API token scope **Read configuration** (`ReadConfig`)
 
-    !> This data source is utilizing an older API endpoint, please use ManagementZoneV2 instead.
+    > This data source is utilizing an older API endpoint, please use ManagementZoneV2 instead.
 
     - `name` queries for all management zones with the specified name
     """
@@ -104,7 +104,7 @@ def get_management_zone_output(name: pulumi.Input[Optional[_builtins.str]] = Non
 
     > This data source requires the API token scope **Read configuration** (`ReadConfig`)
 
-    !> This data source is utilizing an older API endpoint, please use ManagementZoneV2 instead.
+    > This data source is utilizing an older API endpoint, please use ManagementZoneV2 instead.
 
     - `name` queries for all management zones with the specified name
     """

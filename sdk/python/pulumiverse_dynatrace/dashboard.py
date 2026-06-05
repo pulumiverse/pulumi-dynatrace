@@ -184,7 +184,7 @@ class Dashboard(pulumi.CustomResource):
                  unknowns: pulumi.Input[Optional[_builtins.str]] = None,
                  __props__=None):
         """
-        !> This resource frequently falls behind due to the constant additions/changes to the dashboard schema, instead it is recommended to use JsonDashboard which allows to send the full JSON payload.
+        > This resource frequently falls behind due to the constant additions/changes to the dashboard schema, instead it is recommended to use JsonDashboard which allows to send the full JSON payload.
 
         > This resource requires the API token scopes **Read configuration** (`ReadConfig`) and **Write configuration** (`WriteConfig`)
 
@@ -215,7 +215,7 @@ class Dashboard(pulumi.CustomResource):
                  args: Optional[DashboardArgs] = None,
                  opts: Optional[pulumi.ResourceOptions] = None):
         """
-        !> This resource frequently falls behind due to the constant additions/changes to the dashboard schema, instead it is recommended to use JsonDashboard which allows to send the full JSON payload.
+        > This resource frequently falls behind due to the constant additions/changes to the dashboard schema, instead it is recommended to use JsonDashboard which allows to send the full JSON payload.
 
         > This resource requires the API token scopes **Read configuration** (`ReadConfig`) and **Write configuration** (`WriteConfig`)
 

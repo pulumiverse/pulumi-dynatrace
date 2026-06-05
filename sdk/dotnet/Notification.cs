@@ -11,7 +11,7 @@ using Pulumi;
 namespace Pulumiverse.Dynatrace
 {
     /// <summary>
-    /// !&gt; This resource API endpoint has been deprecated, please use dynatrace_{notificationtype}_notification instead.
+    /// &gt; This resource API endpoint has been deprecated, please use dynatrace_{notificationtype}_notification instead.
     /// For example, for email notifications use dynatrace_email_notification.
     /// 
     /// &gt; This resource requires the API token scopes **Read configuration** (`ReadConfig`) and **Write configuration** (`WriteConfig`)

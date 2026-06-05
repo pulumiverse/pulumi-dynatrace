@@ -13,7 +13,7 @@ namespace Pulumiverse.Dynatrace
     public static class GetService
     {
         /// <summary>
-        /// !&gt; The data source API endpoint has been deprecated, please use dynatrace.getEntity with entity type `SERVICE` instead.
+        /// &gt; The data source API endpoint has been deprecated, please use dynatrace.getEntity with entity type `SERVICE` instead.
         /// 
         /// The service data source allows the service ID to be retrieved by its name and optionally tags / tag-value pairs.
         /// 
@@ -26,7 +26,7 @@ namespace Pulumiverse.Dynatrace
             => global::Pulumi.Deployment.Instance.InvokeAsync<GetServiceResult>("dynatrace:index/getService:getService", args ?? new GetServiceArgs(), options.WithDefaults());
 
         /// <summary>
-        /// !&gt; The data source API endpoint has been deprecated, please use dynatrace.getEntity with entity type `SERVICE` instead.
+        /// &gt; The data source API endpoint has been deprecated, please use dynatrace.getEntity with entity type `SERVICE` instead.
         /// 
         /// The service data source allows the service ID to be retrieved by its name and optionally tags / tag-value pairs.
         /// 
@@ -39,7 +39,7 @@ namespace Pulumiverse.Dynatrace
             => global::Pulumi.Deployment.Instance.Invoke<GetServiceResult>("dynatrace:index/getService:getService", args ?? new GetServiceInvokeArgs(), options.WithDefaults());
 
         /// <summary>
-        /// !&gt; The data source API endpoint has been deprecated, please use dynatrace.getEntity with entity type `SERVICE` instead.
+        /// &gt; The data source API endpoint has been deprecated, please use dynatrace.getEntity with entity type `SERVICE` instead.
         /// 
         /// The service data source allows the service ID to be retrieved by its name and optionally tags / tag-value pairs.
         /// 
