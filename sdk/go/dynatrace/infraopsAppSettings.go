@@ -25,15 +25,42 @@ import (
 // - `terraform-provider-dynatrace -export InfraopsAppSettings` downloads existing infrastructure and operations app feature flag configuration
 //
 // The full documentation of the export feature is available [here](https://dt-url.net/h203qmc).
+//
+// ## Resource Example Usage
+//
+// ```go
+// package main
+//
+// import (
+//
+//	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//	"github.com/pulumiverse/pulumi-dynatrace/sdk/go/dynatrace"
+//
+// )
+//
+//	func main() {
+//		pulumi.Run(func(ctx *pulumi.Context) error {
+//			_, err := dynatrace.NewInfraopsAppSettings(ctx, "example", &dynatrace.InfraopsAppSettingsArgs{
+//				ShowMonitoringCandidates:     pulumi.Bool(true),
+//				ShowStandaloneHosts:          pulumi.Bool(true),
+//				InterfaceSaturationThreshold: pulumi.Float64(0.95),
+//				InvexDqlQueryLimit:           pulumi.Int(1000),
+//			})
+//			if err != nil {
+//				return err
+//			}
+//			return nil
+//		})
+//	}
+//
+// ```
 type InfraopsAppSettings struct {
 	pulumi.CustomResourceState
 
 	// The threshold at which a network device interface is deemed to be saturated.
-	InterfaceSaturationThreshold pulumi.Float64PtrOutput `pulumi:"interfaceSaturationThreshold"`
+	InterfaceSaturationThreshold pulumi.Float64Output `pulumi:"interfaceSaturationThreshold"`
 	// Limit the number of results returned from Grail for Host, Network device, and Extensions entities.
-	InvexDqlQueryLimit pulumi.IntPtrOutput `pulumi:"invexDqlQueryLimit"`
-	// Limit for server-side sorting in Host, Network device and Extensions inventories. Sorting is disabled when the row count exceeds the configured threshold.
-	InvexDqlSortLimit pulumi.IntPtrOutput `pulumi:"invexDqlSortLimit"`
+	InvexDqlQueryLimit pulumi.IntOutput `pulumi:"invexDqlQueryLimit"`
 	// When set to true, the app will display monitoring candidates in the Hosts table
 	ShowMonitoringCandidates pulumi.BoolOutput `pulumi:"showMonitoringCandidates"`
 	// When set to true, the app will display app only hosts in the Hosts table
@@ -47,6 +74,12 @@ func NewInfraopsAppSettings(ctx *pulumi.Context,
 		return nil, errors.New("missing one or more required arguments")
 	}
 
+	if args.InterfaceSaturationThreshold == nil {
+		return nil, errors.New("invalid value for required argument 'InterfaceSaturationThreshold'")
+	}
+	if args.InvexDqlQueryLimit == nil {
+		return nil, errors.New("invalid value for required argument 'InvexDqlQueryLimit'")
+	}
 	if args.ShowMonitoringCandidates == nil {
 		return nil, errors.New("invalid value for required argument 'ShowMonitoringCandidates'")
 	}
@@ -80,8 +113,6 @@ type infraopsAppSettingsState struct {
 	InterfaceSaturationThreshold *float64 `pulumi:"interfaceSaturationThreshold"`
 	// Limit the number of results returned from Grail for Host, Network device, and Extensions entities.
 	InvexDqlQueryLimit *int `pulumi:"invexDqlQueryLimit"`
-	// Limit for server-side sorting in Host, Network device and Extensions inventories. Sorting is disabled when the row count exceeds the configured threshold.
-	InvexDqlSortLimit *int `pulumi:"invexDqlSortLimit"`
 	// When set to true, the app will display monitoring candidates in the Hosts table
 	ShowMonitoringCandidates *bool `pulumi:"showMonitoringCandidates"`
 	// When set to true, the app will display app only hosts in the Hosts table
@@ -93,8 +124,6 @@ type InfraopsAppSettingsState struct {
 	InterfaceSaturationThreshold pulumi.Float64PtrInput
 	// Limit the number of results returned from Grail for Host, Network device, and Extensions entities.
 	InvexDqlQueryLimit pulumi.IntPtrInput
-	// Limit for server-side sorting in Host, Network device and Extensions inventories. Sorting is disabled when the row count exceeds the configured threshold.
-	InvexDqlSortLimit pulumi.IntPtrInput
 	// When set to true, the app will display monitoring candidates in the Hosts table
 	ShowMonitoringCandidates pulumi.BoolPtrInput
 	// When set to true, the app will display app only hosts in the Hosts table
@@ -107,11 +136,9 @@ func (InfraopsAppSettingsState) ElementType() reflect.Type {
 
 type infraopsAppSettingsArgs struct {
 	// The threshold at which a network device interface is deemed to be saturated.
-	InterfaceSaturationThreshold *float64 `pulumi:"interfaceSaturationThreshold"`
+	InterfaceSaturationThreshold float64 `pulumi:"interfaceSaturationThreshold"`
 	// Limit the number of results returned from Grail for Host, Network device, and Extensions entities.
-	InvexDqlQueryLimit *int `pulumi:"invexDqlQueryLimit"`
-	// Limit for server-side sorting in Host, Network device and Extensions inventories. Sorting is disabled when the row count exceeds the configured threshold.
-	InvexDqlSortLimit *int `pulumi:"invexDqlSortLimit"`
+	InvexDqlQueryLimit int `pulumi:"invexDqlQueryLimit"`
 	// When set to true, the app will display monitoring candidates in the Hosts table
 	ShowMonitoringCandidates bool `pulumi:"showMonitoringCandidates"`
 	// When set to true, the app will display app only hosts in the Hosts table
@@ -121,11 +148,9 @@ type infraopsAppSettingsArgs struct {
 // The set of arguments for constructing a InfraopsAppSettings resource.
 type InfraopsAppSettingsArgs struct {
 	// The threshold at which a network device interface is deemed to be saturated.
-	InterfaceSaturationThreshold pulumi.Float64PtrInput
+	InterfaceSaturationThreshold pulumi.Float64Input
 	// Limit the number of results returned from Grail for Host, Network device, and Extensions entities.
-	InvexDqlQueryLimit pulumi.IntPtrInput
-	// Limit for server-side sorting in Host, Network device and Extensions inventories. Sorting is disabled when the row count exceeds the configured threshold.
-	InvexDqlSortLimit pulumi.IntPtrInput
+	InvexDqlQueryLimit pulumi.IntInput
 	// When set to true, the app will display monitoring candidates in the Hosts table
 	ShowMonitoringCandidates pulumi.BoolInput
 	// When set to true, the app will display app only hosts in the Hosts table
@@ -220,18 +245,13 @@ func (o InfraopsAppSettingsOutput) ToInfraopsAppSettingsOutputWithContext(ctx co
 }
 
 // The threshold at which a network device interface is deemed to be saturated.
-func (o InfraopsAppSettingsOutput) InterfaceSaturationThreshold() pulumi.Float64PtrOutput {
-	return o.ApplyT(func(v *InfraopsAppSettings) pulumi.Float64PtrOutput { return v.InterfaceSaturationThreshold }).(pulumi.Float64PtrOutput)
+func (o InfraopsAppSettingsOutput) InterfaceSaturationThreshold() pulumi.Float64Output {
+	return o.ApplyT(func(v *InfraopsAppSettings) pulumi.Float64Output { return v.InterfaceSaturationThreshold }).(pulumi.Float64Output)
 }
 
 // Limit the number of results returned from Grail for Host, Network device, and Extensions entities.
-func (o InfraopsAppSettingsOutput) InvexDqlQueryLimit() pulumi.IntPtrOutput {
-	return o.ApplyT(func(v *InfraopsAppSettings) pulumi.IntPtrOutput { return v.InvexDqlQueryLimit }).(pulumi.IntPtrOutput)
-}
-
-// Limit for server-side sorting in Host, Network device and Extensions inventories. Sorting is disabled when the row count exceeds the configured threshold.
-func (o InfraopsAppSettingsOutput) InvexDqlSortLimit() pulumi.IntPtrOutput {
-	return o.ApplyT(func(v *InfraopsAppSettings) pulumi.IntPtrOutput { return v.InvexDqlSortLimit }).(pulumi.IntPtrOutput)
+func (o InfraopsAppSettingsOutput) InvexDqlQueryLimit() pulumi.IntOutput {
+	return o.ApplyT(func(v *InfraopsAppSettings) pulumi.IntOutput { return v.InvexDqlQueryLimit }).(pulumi.IntOutput)
 }
 
 // When set to true, the app will display monitoring candidates in the Hosts table

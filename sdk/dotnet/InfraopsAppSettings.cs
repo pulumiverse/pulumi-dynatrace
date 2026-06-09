@@ -24,6 +24,27 @@ namespace Pulumiverse.Dynatrace
     /// - `terraform-provider-dynatrace -export dynatrace.InfraopsAppSettings` downloads existing infrastructure and operations app feature flag configuration
     /// 
     /// The full documentation of the export feature is available [here](https://dt-url.net/h203qmc).
+    /// 
+    /// ## Resource Example Usage
+    /// 
+    /// ```csharp
+    /// using System.Collections.Generic;
+    /// using System.Linq;
+    /// using Pulumi;
+    /// using Dynatrace = Pulumiverse.Dynatrace;
+    /// 
+    /// return await Deployment.RunAsync(() =&gt; 
+    /// {
+    ///     var example = new Dynatrace.InfraopsAppSettings("example", new()
+    ///     {
+    ///         ShowMonitoringCandidates = true,
+    ///         ShowStandaloneHosts = true,
+    ///         InterfaceSaturationThreshold = 0.95,
+    ///         InvexDqlQueryLimit = 1000,
+    ///     });
+    /// 
+    /// });
+    /// ```
     /// </summary>
     [DynatraceResourceType("dynatrace:index/infraopsAppSettings:InfraopsAppSettings")]
     public partial class InfraopsAppSettings : global::Pulumi.CustomResource
@@ -32,19 +53,13 @@ namespace Pulumiverse.Dynatrace
         /// The threshold at which a network device interface is deemed to be saturated.
         /// </summary>
         [Output("interfaceSaturationThreshold")]
-        public Output<double?> InterfaceSaturationThreshold { get; private set; } = null!;
+        public Output<double> InterfaceSaturationThreshold { get; private set; } = null!;
 
         /// <summary>
         /// Limit the number of results returned from Grail for Host, Network device, and Extensions entities.
         /// </summary>
         [Output("invexDqlQueryLimit")]
-        public Output<int?> InvexDqlQueryLimit { get; private set; } = null!;
-
-        /// <summary>
-        /// Limit for server-side sorting in Host, Network device and Extensions inventories. Sorting is disabled when the row count exceeds the configured threshold.
-        /// </summary>
-        [Output("invexDqlSortLimit")]
-        public Output<int?> InvexDqlSortLimit { get; private set; } = null!;
+        public Output<int> InvexDqlQueryLimit { get; private set; } = null!;
 
         /// <summary>
         /// When set to true, the app will display monitoring candidates in the Hosts table
@@ -108,20 +123,14 @@ namespace Pulumiverse.Dynatrace
         /// <summary>
         /// The threshold at which a network device interface is deemed to be saturated.
         /// </summary>
-        [Input("interfaceSaturationThreshold")]
-        public Input<double>? InterfaceSaturationThreshold { get; set; }
+        [Input("interfaceSaturationThreshold", required: true)]
+        public Input<double> InterfaceSaturationThreshold { get; set; } = null!;
 
         /// <summary>
         /// Limit the number of results returned from Grail for Host, Network device, and Extensions entities.
         /// </summary>
-        [Input("invexDqlQueryLimit")]
-        public Input<int>? InvexDqlQueryLimit { get; set; }
-
-        /// <summary>
-        /// Limit for server-side sorting in Host, Network device and Extensions inventories. Sorting is disabled when the row count exceeds the configured threshold.
-        /// </summary>
-        [Input("invexDqlSortLimit")]
-        public Input<int>? InvexDqlSortLimit { get; set; }
+        [Input("invexDqlQueryLimit", required: true)]
+        public Input<int> InvexDqlQueryLimit { get; set; } = null!;
 
         /// <summary>
         /// When set to true, the app will display monitoring candidates in the Hosts table
@@ -154,12 +163,6 @@ namespace Pulumiverse.Dynatrace
         /// </summary>
         [Input("invexDqlQueryLimit")]
         public Input<int>? InvexDqlQueryLimit { get; set; }
-
-        /// <summary>
-        /// Limit for server-side sorting in Host, Network device and Extensions inventories. Sorting is disabled when the row count exceeds the configured threshold.
-        /// </summary>
-        [Input("invexDqlSortLimit")]
-        public Input<int>? InvexDqlSortLimit { get; set; }
 
         /// <summary>
         /// When set to true, the app will display monitoring candidates in the Hosts table

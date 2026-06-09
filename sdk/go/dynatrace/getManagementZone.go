@@ -15,7 +15,7 @@ import (
 //
 // > This data source requires the API token scope **Read configuration** (`ReadConfig`)
 //
-// !> This data source is utilizing an older API endpoint, please use ManagementZoneV2 instead.
+// > This data source is utilizing an older API endpoint, please use ManagementZoneV2 instead.
 //
 // - `name` queries for all management zones with the specified name
 func LookupManagementZone(ctx *pulumi.Context, args *LookupManagementZoneArgs, opts ...pulumi.InvokeOption) (*LookupManagementZoneResult, error) {

@@ -276,7 +276,7 @@ namespace Pulumiverse.Dynatrace
         public Output<string> DisplayName { get; private set; } = null!;
 
         /// <summary>
-        /// Group role. Possible values: `compositionPipeline`, `memberPipeline`
+        /// Group role. Possible values: `basePipeline`, `compositionPipeline`, `memberPipeline`
         /// </summary>
         [Output("groupRole")]
         public Output<string?> GroupRole { get; private set; } = null!;
@@ -413,7 +413,7 @@ namespace Pulumiverse.Dynatrace
         public Input<string> DisplayName { get; set; } = null!;
 
         /// <summary>
-        /// Group role. Possible values: `compositionPipeline`, `memberPipeline`
+        /// Group role. Possible values: `basePipeline`, `compositionPipeline`, `memberPipeline`
         /// </summary>
         [Input("groupRole")]
         public Input<string>? GroupRole { get; set; }
@@ -511,7 +511,7 @@ namespace Pulumiverse.Dynatrace
         public Input<string>? DisplayName { get; set; }
 
         /// <summary>
-        /// Group role. Possible values: `compositionPipeline`, `memberPipeline`
+        /// Group role. Possible values: `basePipeline`, `compositionPipeline`, `memberPipeline`
         /// </summary>
         [Input("groupRole")]
         public Input<string>? GroupRole { get; set; }

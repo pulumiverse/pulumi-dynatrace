@@ -12,7 +12,7 @@ import (
 	"github.com/pulumiverse/pulumi-dynatrace/sdk/go/dynatrace/internal"
 )
 
-// !> This resource is utilizing an older API endpoint, please use Kubernetes instead.
+// > This resource is utilizing an older API endpoint, please use Kubernetes instead.
 //
 // > This resource requires the API token scopes **Read configuration** (`ReadConfig`) and **Write configuration** (`WriteConfig`)
 //

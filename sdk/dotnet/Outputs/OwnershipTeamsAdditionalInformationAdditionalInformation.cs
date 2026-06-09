@@ -19,11 +19,11 @@ namespace Pulumiverse.Dynatrace.Outputs
         /// </summary>
         public readonly string Key;
         /// <summary>
-        /// no documentation available
+        /// No documentation available
         /// </summary>
         public readonly string? Url;
         /// <summary>
-        /// no documentation available
+        /// No documentation available
         /// </summary>
         public readonly string Value;
 

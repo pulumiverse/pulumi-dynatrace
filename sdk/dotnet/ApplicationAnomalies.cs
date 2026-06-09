@@ -11,7 +11,7 @@ using Pulumi;
 namespace Pulumiverse.Dynatrace
 {
     /// <summary>
-    /// !&gt; This resource is utilizing an older API endpoint, please use dynatrace.WebAppAnomalies instead.
+    /// &gt; This resource is utilizing an older API endpoint, please use dynatrace.WebAppAnomalies instead.
     /// 
     /// &gt; This resource requires the API token scopes **Read configuration** (`ReadConfig`) and **Write configuration** (`WriteConfig`)
     /// 

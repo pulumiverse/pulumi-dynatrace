@@ -38,6 +38,10 @@ namespace Pulumiverse.Dynatrace.Outputs
         /// Source field name
         /// </summary>
         public readonly string? SourceFieldName;
+        /// <summary>
+        /// Strategy for field extraction. Possible values: `Equals`, `startsWith`
+        /// </summary>
+        public readonly string? Strategy;
 
         [OutputConstructor]
         private OpenpipelineV2SecurityEventsPipelinesCostAllocationProcessorsProcessorSamplingAwareHistogramMetricDimensionsDimension(
@@ -51,7 +55,9 @@ namespace Pulumiverse.Dynatrace.Outputs
 
             string? extractionType,
 
-            string? sourceFieldName)
+            string? sourceFieldName,
+
+            string? strategy)
         {
             ConstantFieldName = constantFieldName;
             ConstantValue = constantValue;
@@ -59,6 +65,7 @@ namespace Pulumiverse.Dynatrace.Outputs
             DestinationFieldName = destinationFieldName;
             ExtractionType = extractionType;
             SourceFieldName = sourceFieldName;
+            Strategy = strategy;
         }
     }
 }

@@ -91,14 +91,15 @@ namespace Pulumiverse.Dynatrace
     ///         },
     ///     });
     /// 
-    ///     var waitForRequestAttribute = new Time.Sleep("wait_for_request_attribute", new()
+    ///     var waitForCreation = new Time.Sleep("wait_for_creation", new()
     ///     {
-    ///         CreateDuration = "10s",
+    ///         CreateDuration = "15s",
     ///     }, new CustomResourceOptions
     ///     {
     ///         DependsOn =
     ///         {
     ///             attribute,
+    ///             mzone,
     ///         },
     ///     });
     /// 
@@ -147,7 +148,7 @@ namespace Pulumiverse.Dynatrace
     ///     {
     ///         DependsOn =
     ///         {
-    ///             waitForRequestAttribute,
+    ///             waitForCreation,
     ///         },
     ///     });
     /// 

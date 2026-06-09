@@ -50,9 +50,7 @@ namespace Pulumiverse.Dynatrace
         /// <summary>
         /// The URL of the target job template.
         /// 
-        /// For example, https://&lt;Ansible server name&gt;/#/templates/job_template/&lt;JobTemplateID&gt;
-        /// 
-        /// **Note:** Be sure to select the **Prompt on Launch** option in the Extra Variables section of your job template configuration.
+        ///   **Note:** Be sure to select the **Prompt on Launch** option in the Extra Variables section of your job template configuration.
         /// </summary>
         [Output("jobTemplateUrl")]
         public Output<string> JobTemplateUrl { get; private set; } = null!;
@@ -160,9 +158,7 @@ namespace Pulumiverse.Dynatrace
         /// <summary>
         /// The URL of the target job template.
         /// 
-        /// For example, https://&lt;Ansible server name&gt;/#/templates/job_template/&lt;JobTemplateID&gt;
-        /// 
-        /// **Note:** Be sure to select the **Prompt on Launch** option in the Extra Variables section of your job template configuration.
+        ///   **Note:** Be sure to select the **Prompt on Launch** option in the Extra Variables section of your job template configuration.
         /// </summary>
         [Input("jobTemplateUrl", required: true)]
         public Input<string> JobTemplateUrl { get; set; } = null!;
@@ -237,9 +233,7 @@ namespace Pulumiverse.Dynatrace
         /// <summary>
         /// The URL of the target job template.
         /// 
-        /// For example, https://&lt;Ansible server name&gt;/#/templates/job_template/&lt;JobTemplateID&gt;
-        /// 
-        /// **Note:** Be sure to select the **Prompt on Launch** option in the Extra Variables section of your job template configuration.
+        ///   **Note:** Be sure to select the **Prompt on Launch** option in the Extra Variables section of your job template configuration.
         /// </summary>
         [Input("jobTemplateUrl")]
         public Input<string>? JobTemplateUrl { get; set; }

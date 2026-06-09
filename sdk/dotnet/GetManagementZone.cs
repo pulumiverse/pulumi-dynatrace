@@ -17,7 +17,7 @@ namespace Pulumiverse.Dynatrace
         /// 
         /// &gt; This data source requires the API token scope **Read configuration** (`ReadConfig`)
         /// 
-        /// !&gt; This data source is utilizing an older API endpoint, please use dynatrace.ManagementZoneV2 instead.
+        /// &gt; This data source is utilizing an older API endpoint, please use dynatrace.ManagementZoneV2 instead.
         /// 
         /// - `Name` queries for all management zones with the specified name
         /// </summary>
@@ -29,7 +29,7 @@ namespace Pulumiverse.Dynatrace
         /// 
         /// &gt; This data source requires the API token scope **Read configuration** (`ReadConfig`)
         /// 
-        /// !&gt; This data source is utilizing an older API endpoint, please use dynatrace.ManagementZoneV2 instead.
+        /// &gt; This data source is utilizing an older API endpoint, please use dynatrace.ManagementZoneV2 instead.
         /// 
         /// - `Name` queries for all management zones with the specified name
         /// </summary>
@@ -41,7 +41,7 @@ namespace Pulumiverse.Dynatrace
         /// 
         /// &gt; This data source requires the API token scope **Read configuration** (`ReadConfig`)
         /// 
-        /// !&gt; This data source is utilizing an older API endpoint, please use dynatrace.ManagementZoneV2 instead.
+        /// &gt; This data source is utilizing an older API endpoint, please use dynatrace.ManagementZoneV2 instead.
         /// 
         /// - `Name` queries for all management zones with the specified name
         /// </summary>

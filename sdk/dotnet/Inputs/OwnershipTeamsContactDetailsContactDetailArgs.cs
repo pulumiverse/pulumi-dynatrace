@@ -14,19 +14,19 @@ namespace Pulumiverse.Dynatrace.Inputs
     public sealed class OwnershipTeamsContactDetailsContactDetailArgs : global::Pulumi.ResourceArgs
     {
         /// <summary>
-        /// no documentation available
+        /// No documentation available
         /// </summary>
         [Input("email")]
         public Input<string>? Email { get; set; }
 
         /// <summary>
-        /// Possible Values: `EMAIL`, `JIRA`, `MS_TEAMS`, `SLACK`
+        /// Integration type. Possible values: `EMAIL`, `JIRA`, `MS_TEAMS`, `SLACK`
         /// </summary>
         [Input("integrationType", required: true)]
         public Input<string> IntegrationType { get; set; } = null!;
 
         /// <summary>
-        /// no documentation available
+        /// No documentation available
         /// </summary>
         [Input("jira")]
         public Input<Inputs.OwnershipTeamsContactDetailsContactDetailJiraArgs>? Jira { get; set; }
@@ -44,7 +44,7 @@ namespace Pulumiverse.Dynatrace.Inputs
         public Input<string>? SlackChannel { get; set; }
 
         /// <summary>
-        /// no documentation available
+        /// No documentation available
         /// </summary>
         [Input("url")]
         public Input<string>? Url { get; set; }

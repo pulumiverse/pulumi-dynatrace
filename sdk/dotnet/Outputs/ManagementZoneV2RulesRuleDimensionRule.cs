@@ -15,7 +15,7 @@ namespace Pulumiverse.Dynatrace.Outputs
     public sealed class ManagementZoneV2RulesRuleDimensionRule
     {
         /// <summary>
-        /// Possible Values: `ANY`, `LOG`, `METRIC`
+        /// Type. Possible values: `ANY`, `LOG`, `METRIC`
         /// </summary>
         public readonly string AppliesTo;
         /// <summary>

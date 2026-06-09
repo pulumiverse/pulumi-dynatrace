@@ -26,78 +26,12 @@ import * as utilities from "./utilities";
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
  * import * as dynatrace from "@pulumiverse/dynatrace";
- * import * as time from "@pulumiverse/time";
  *
- * const location = new dynatrace.SyntheticLocation("location", {
- *     name: "#name#",
- *     city: "San Francisco de Asis",
- *     countryCode: "VE",
- *     regionCode: "04",
- *     deploymentType: "STANDARD",
- *     latitude: 10.0756,
- *     locationNodeOutageDelayInMinutes: 3,
- *     longitude: -67.5442,
+ * const location = dynatrace.getSyntheticLocation({
+ *     name: "Location",
  * });
- * const application = new dynatrace.WebApplication("application", {
- *     name: "#name#",
- *     type: "AUTO_INJECTED",
- *     costControlUserSessionPercentage: 100,
- *     loadActionKeyPerformanceMetric: "VISUALLY_COMPLETE",
- *     realUserMonitoringEnabled: true,
- *     xhrActionKeyPerformanceMetric: "VISUALLY_COMPLETE",
- *     customActionApdexSettings: {
- *         frustratingFallbackThreshold: 12000,
- *         frustratingThreshold: 12000,
- *         toleratedFallbackThreshold: 3000,
- *         toleratedThreshold: 3000,
- *     },
- *     loadActionApdexSettings: {
- *         frustratingFallbackThreshold: 12000,
- *         frustratingThreshold: 12000,
- *         toleratedFallbackThreshold: 3000,
- *         toleratedThreshold: 3000,
- *     },
- *     monitoringSettings: {
- *         addCrossOriginAnonymousAttribute: true,
- *         cacheControlHeaderOptimizations: true,
- *         injectionMode: "JAVASCRIPT_TAG",
- *         scriptTagCacheDurationInHours: 1,
- *         advancedJavascriptTagSettings: {
- *             maxActionNameLength: 100,
- *             maxErrorsToCapture: 10,
- *             additionalEventHandlers: {
- *                 maxDomNodes: 5000,
- *             },
- *         },
- *         contentCapture: {
- *             resourceTimingSettings: {
- *                 instrumentationDelay: 53,
- *                 nonW3cResourceTimings: true,
- *                 w3cResourceTimings: true,
- *             },
- *             timeoutSettings: {
- *                 temporaryActionLimit: 3,
- *                 temporaryActionTotalTimeout: 100,
- *                 timedActionSupport: true,
- *             },
- *         },
- *     },
- *     userActionNamingSettings: {},
- *     waterfallSettings: {
- *         resourceBrowserCachingThreshold: 50,
- *         resourcesThreshold: 100000,
- *         slowCndResourcesThreshold: 200000,
- *         slowFirstPartyResourcesThreshold: 200000,
- *         slowThirdPartyResourcesThreshold: 200000,
- *         speedIndexVisuallyCompleteRatioThreshold: 50,
- *         uncompressedResourcesThreshold: 860,
- *     },
- *     xhrActionApdexSettings: {
- *         frustratingFallbackThreshold: 12000,
- *         frustratingThreshold: 12000,
- *         toleratedFallbackThreshold: 3000,
- *         toleratedThreshold: 3000,
- *     },
+ * const webApplication = dynatrace.getApplication({
+ *     name: "Web Application",
  * });
  * const credentialsVault = new dynatrace.Credentials("credentials_vault", {
  *     name: "#name#",
@@ -106,18 +40,11 @@ import * as utilities from "./utilities";
  *     username: "username",
  *     password: "password",
  * });
- * const wait5Seconds = new time.Sleep("wait_5_seconds", {createDuration: "5s"}, {
- *     dependsOn: [
- *         location,
- *         application,
- *         credentialsVault,
- *     ],
- * });
  * const monitor = new dynatrace.BrowserMonitor("monitor", {
  *     name: "#name#",
  *     frequency: 15,
- *     locations: [location.id],
- *     manuallyAssignedApps: [application.id],
+ *     locations: [location.then(location => location.id)],
+ *     manuallyAssignedApps: [webApplication.then(webApplication => webApplication.id)],
  *     anomalyDetection: {
  *         loadingTimeThresholds: [{
  *             enabled: true,
@@ -248,8 +175,6 @@ import * as utilities from "./utilities";
  *             ],
  *         },
  *     },
- * }, {
- *     dependsOn: [wait5Seconds],
  * });
  * ```
  */

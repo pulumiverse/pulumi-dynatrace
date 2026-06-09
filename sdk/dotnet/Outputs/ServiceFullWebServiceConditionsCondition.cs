@@ -15,15 +15,25 @@ namespace Pulumiverse.Dynatrace.Outputs
     public sealed class ServiceFullWebServiceConditionsCondition
     {
         /// <summary>
-        /// Take the value of this attribute
+        /// The detected attribute that should be compared with the specified operation.
         /// </summary>
         public readonly string Attribute;
         /// <summary>
-        /// Apply this operation
+        /// The type of comparison operation that should be applied to the detected attribute.. When using this field over the Settings API, it is stored as a string and must use one of the fixed compare-operation identifiers. The available subset depends on the selected `Attribute`.
+        /// 
+        ///   - `Exists`, `NotExists`
+        ///  - `BoolIsTrue`, `BoolIsFalse`
+        ///  - `TagEquals`, `TagKeyEquals`
+        ///  - `StringEquals`, `NotStringEquals`, `StringStartsWith`, `NotStringStartsWith`, `StringEndsWith`, `NotStringEndsWith`, `StringContains`, `NotStringContains`
+        ///  - `FrameworkEquals`, `NotFrameworkEquals`
+        ///  - `IpInRange`, `NotIpInRange`
+        ///  - `IntEquals`, `NotIntEquals`, `IntGreaterThan`, `IntLessThan`
         /// </summary>
         public readonly string CompareOperationType;
         /// <summary>
-        /// Technology
+        /// The technology that should be compared with the detected attribute.
+        /// 
+        ///   Select one or more technologies. The condition matches if the detected attribute value equals (for `FrameworkEquals`) or does not equal (for `NotFrameworkEquals`) at least one of the selected technologies. Possible values: `AXIS`, `CXF`, `HESSIAN`, `JAX_WS_RI`, `JBOSS`, `JERSEY`, `PROGRESS`, `RESTEASY`, `RESTLET`, `SPRING`, `TIBCO`, `WEBLOGIC`, `WEBMETHODS`, `WEBSPHERE`, `WINK`
         /// </summary>
         public readonly ImmutableArray<string> Frameworks;
         /// <summary>
@@ -31,23 +41,23 @@ namespace Pulumiverse.Dynatrace.Outputs
         /// </summary>
         public readonly bool? IgnoreCase;
         /// <summary>
-        /// Value
+        /// The integer value to compare the detected attribute with.
         /// </summary>
         public readonly int? IntValue;
         /// <summary>
-        /// Values
+        /// If multiple values are specified, at least one of them must match for the condition to match.
         /// </summary>
         public readonly ImmutableArray<int> IntValues;
         /// <summary>
-        /// From
+        /// The beginning of the IP range. The condition matches if the detected attribute value is greater than or equal to this value (for `IpInRange`) or less than this value (for `NotIpInRange`).
         /// </summary>
         public readonly string? IpRangeFrom;
         /// <summary>
-        /// To
+        /// The end of the IP range. The condition matches if the detected attribute value is less than or equal to this value (for `IpInRange`) or greater than this value (for `NotIpInRange`).
         /// </summary>
         public readonly string? IpRangeTo;
         /// <summary>
-        /// If multiple values are specified, at least one of them must match for the condition to match
+        /// If multiple values are specified, at least one of them must match for the condition to match.
         /// </summary>
         public readonly ImmutableArray<string> TagValues;
         /// <summary>

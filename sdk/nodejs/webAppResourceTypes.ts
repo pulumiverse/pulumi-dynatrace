@@ -52,7 +52,7 @@ export class WebAppResourceTypes extends pulumi.CustomResource {
      */
     declare public readonly insertAfter: pulumi.Output<string>;
     /**
-     * Possible Values: `CSS`, `IMAGE`, `OTHER`, `SCRIPT`
+     * The primary type of the resource. Possible values: `CSS`, `IMAGE`, `OTHER`, `SCRIPT`
      */
     declare public readonly primaryResourceType: pulumi.Output<string>;
     /**
@@ -108,7 +108,7 @@ export interface WebAppResourceTypesState {
      */
     insertAfter?: pulumi.Input<string | undefined>;
     /**
-     * Possible Values: `CSS`, `IMAGE`, `OTHER`, `SCRIPT`
+     * The primary type of the resource. Possible values: `CSS`, `IMAGE`, `OTHER`, `SCRIPT`
      */
     primaryResourceType?: pulumi.Input<string | undefined>;
     /**
@@ -130,7 +130,7 @@ export interface WebAppResourceTypesArgs {
      */
     insertAfter?: pulumi.Input<string | undefined>;
     /**
-     * Possible Values: `CSS`, `IMAGE`, `OTHER`, `SCRIPT`
+     * The primary type of the resource. Possible values: `CSS`, `IMAGE`, `OTHER`, `SCRIPT`
      */
     primaryResourceType: pulumi.Input<string>;
     /**

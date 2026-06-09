@@ -373,95 +373,22 @@ class BrowserMonitor(pulumi.CustomResource):
 
         ```python
         import pulumi
+        import pulumi_dynatrace as dynatrace
         import pulumiverse_dynatrace as dynatrace
-        import pulumiverse_time as time
 
-        location = dynatrace.SyntheticLocation("location",
-            name="#name#",
-            city="San Francisco de Asis",
-            country_code="VE",
-            region_code="04",
-            deployment_type="STANDARD",
-            latitude=10.0756,
-            location_node_outage_delay_in_minutes=3,
-            longitude=-67.5442)
-        application = dynatrace.WebApplication("application",
-            name="#name#",
-            type="AUTO_INJECTED",
-            cost_control_user_session_percentage=100,
-            load_action_key_performance_metric="VISUALLY_COMPLETE",
-            real_user_monitoring_enabled=True,
-            xhr_action_key_performance_metric="VISUALLY_COMPLETE",
-            custom_action_apdex_settings={
-                "frustrating_fallback_threshold": 12000,
-                "frustrating_threshold": 12000,
-                "tolerated_fallback_threshold": 3000,
-                "tolerated_threshold": 3000,
-            },
-            load_action_apdex_settings={
-                "frustrating_fallback_threshold": 12000,
-                "frustrating_threshold": 12000,
-                "tolerated_fallback_threshold": 3000,
-                "tolerated_threshold": 3000,
-            },
-            monitoring_settings={
-                "add_cross_origin_anonymous_attribute": True,
-                "cache_control_header_optimizations": True,
-                "injection_mode": "JAVASCRIPT_TAG",
-                "script_tag_cache_duration_in_hours": 1,
-                "advanced_javascript_tag_settings": {
-                    "max_action_name_length": 100,
-                    "max_errors_to_capture": 10,
-                    "additional_event_handlers": {
-                        "max_dom_nodes": 5000,
-                    },
-                },
-                "content_capture": {
-                    "resource_timing_settings": {
-                        "instrumentation_delay": 53,
-                        "non_w3c_resource_timings": True,
-                        "w3c_resource_timings": True,
-                    },
-                    "timeout_settings": {
-                        "temporary_action_limit": 3,
-                        "temporary_action_total_timeout": 100,
-                        "timed_action_support": True,
-                    },
-                },
-            },
-            user_action_naming_settings={},
-            waterfall_settings={
-                "resource_browser_caching_threshold": 50,
-                "resources_threshold": 100000,
-                "slow_cnd_resources_threshold": 200000,
-                "slow_first_party_resources_threshold": 200000,
-                "slow_third_party_resources_threshold": 200000,
-                "speed_index_visually_complete_ratio_threshold": 50,
-                "uncompressed_resources_threshold": 860,
-            },
-            xhr_action_apdex_settings={
-                "frustrating_fallback_threshold": 12000,
-                "frustrating_threshold": 12000,
-                "tolerated_fallback_threshold": 3000,
-                "tolerated_threshold": 3000,
-            })
+        location = dynatrace.get_synthetic_location(name="Location")
+        web_application = dynatrace.get_application(name="Web Application")
         credentials_vault = dynatrace.Credentials("credentials_vault",
             name="#name#",
             description="my credentials vault",
             scopes=["SYNTHETIC"],
             username="username",
             password="password")
-        wait5_seconds = time.Sleep("wait_5_seconds", create_duration="5s",
-        opts = pulumi.ResourceOptions(depends_on=[
-                location,
-                application,
-                credentials_vault,
-            ]))
         monitor = dynatrace.BrowserMonitor("monitor",
             name="#name#",
             frequency=15,
             locations=[location.id],
-            manually_assigned_apps=[application.id],
+            manually_assigned_apps=[web_application.id],
             anomaly_detection={
                 "loading_time_thresholds": [{
                     "enabled": True,
@@ -591,8 +518,7 @@ class BrowserMonitor(pulumi.CustomResource):
                         },
                     ],
                 },
-            },
-            opts = pulumi.ResourceOptions(depends_on=[wait5_seconds]))
+            })
         ```
 
 
@@ -637,95 +563,22 @@ class BrowserMonitor(pulumi.CustomResource):
 
         ```python
         import pulumi
+        import pulumi_dynatrace as dynatrace
         import pulumiverse_dynatrace as dynatrace
-        import pulumiverse_time as time
 
-        location = dynatrace.SyntheticLocation("location",
-            name="#name#",
-            city="San Francisco de Asis",
-            country_code="VE",
-            region_code="04",
-            deployment_type="STANDARD",
-            latitude=10.0756,
-            location_node_outage_delay_in_minutes=3,
-            longitude=-67.5442)
-        application = dynatrace.WebApplication("application",
-            name="#name#",
-            type="AUTO_INJECTED",
-            cost_control_user_session_percentage=100,
-            load_action_key_performance_metric="VISUALLY_COMPLETE",
-            real_user_monitoring_enabled=True,
-            xhr_action_key_performance_metric="VISUALLY_COMPLETE",
-            custom_action_apdex_settings={
-                "frustrating_fallback_threshold": 12000,
-                "frustrating_threshold": 12000,
-                "tolerated_fallback_threshold": 3000,
-                "tolerated_threshold": 3000,
-            },
-            load_action_apdex_settings={
-                "frustrating_fallback_threshold": 12000,
-                "frustrating_threshold": 12000,
-                "tolerated_fallback_threshold": 3000,
-                "tolerated_threshold": 3000,
-            },
-            monitoring_settings={
-                "add_cross_origin_anonymous_attribute": True,
-                "cache_control_header_optimizations": True,
-                "injection_mode": "JAVASCRIPT_TAG",
-                "script_tag_cache_duration_in_hours": 1,
-                "advanced_javascript_tag_settings": {
-                    "max_action_name_length": 100,
-                    "max_errors_to_capture": 10,
-                    "additional_event_handlers": {
-                        "max_dom_nodes": 5000,
-                    },
-                },
-                "content_capture": {
-                    "resource_timing_settings": {
-                        "instrumentation_delay": 53,
-                        "non_w3c_resource_timings": True,
-                        "w3c_resource_timings": True,
-                    },
-                    "timeout_settings": {
-                        "temporary_action_limit": 3,
-                        "temporary_action_total_timeout": 100,
-                        "timed_action_support": True,
-                    },
-                },
-            },
-            user_action_naming_settings={},
-            waterfall_settings={
-                "resource_browser_caching_threshold": 50,
-                "resources_threshold": 100000,
-                "slow_cnd_resources_threshold": 200000,
-                "slow_first_party_resources_threshold": 200000,
-                "slow_third_party_resources_threshold": 200000,
-                "speed_index_visually_complete_ratio_threshold": 50,
-                "uncompressed_resources_threshold": 860,
-            },
-            xhr_action_apdex_settings={
-                "frustrating_fallback_threshold": 12000,
-                "frustrating_threshold": 12000,
-                "tolerated_fallback_threshold": 3000,
-                "tolerated_threshold": 3000,
-            })
+        location = dynatrace.get_synthetic_location(name="Location")
+        web_application = dynatrace.get_application(name="Web Application")
         credentials_vault = dynatrace.Credentials("credentials_vault",
             name="#name#",
             description="my credentials vault",
             scopes=["SYNTHETIC"],
             username="username",
             password="password")
-        wait5_seconds = time.Sleep("wait_5_seconds", create_duration="5s",
-        opts = pulumi.ResourceOptions(depends_on=[
-                location,
-                application,
-                credentials_vault,
-            ]))
         monitor = dynatrace.BrowserMonitor("monitor",
             name="#name#",
             frequency=15,
             locations=[location.id],
-            manually_assigned_apps=[application.id],
+            manually_assigned_apps=[web_application.id],
             anomaly_detection={
                 "loading_time_thresholds": [{
                     "enabled": True,
@@ -855,8 +708,7 @@ class BrowserMonitor(pulumi.CustomResource):
                         },
                     ],
                 },
-            },
-            opts = pulumi.ResourceOptions(depends_on=[wait5_seconds]))
+            })
         ```
 
 

@@ -176,7 +176,7 @@ class ServiceAnomalies(pulumi.CustomResource):
                  response_times: pulumi.Input[Optional[Union['ServiceAnomaliesResponseTimesArgs', 'ServiceAnomaliesResponseTimesArgsDict']]] = None,
                  __props__=None):
         """
-        !> This resource is utilizing an older API endpoint, please use ServiceAnomaliesV2 instead.
+        > This resource is utilizing an older API endpoint, please use ServiceAnomaliesV2 instead.
 
         > This resource requires the API token scopes **Read configuration** (`ReadConfig`) and **Write configuration** (`WriteConfig`)
 
@@ -207,7 +207,7 @@ class ServiceAnomalies(pulumi.CustomResource):
                  args: Optional[ServiceAnomaliesArgs] = None,
                  opts: Optional[pulumi.ResourceOptions] = None):
         """
-        !> This resource is utilizing an older API endpoint, please use ServiceAnomaliesV2 instead.
+        > This resource is utilizing an older API endpoint, please use ServiceAnomaliesV2 instead.
 
         > This resource requires the API token scopes **Read configuration** (`ReadConfig`) and **Write configuration** (`WriteConfig`)
 

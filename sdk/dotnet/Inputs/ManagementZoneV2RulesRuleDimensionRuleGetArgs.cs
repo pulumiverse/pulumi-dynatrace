@@ -14,7 +14,7 @@ namespace Pulumiverse.Dynatrace.Inputs
     public sealed class ManagementZoneV2RulesRuleDimensionRuleGetArgs : global::Pulumi.ResourceArgs
     {
         /// <summary>
-        /// Possible Values: `ANY`, `LOG`, `METRIC`
+        /// Type. Possible values: `ANY`, `LOG`, `METRIC`
         /// </summary>
         [Input("appliesTo", required: true)]
         public Input<string> AppliesTo { get; set; } = null!;

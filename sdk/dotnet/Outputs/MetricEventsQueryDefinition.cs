@@ -15,7 +15,7 @@ namespace Pulumiverse.Dynatrace.Outputs
     public sealed class MetricEventsQueryDefinition
     {
         /// <summary>
-        /// Possible Values: `AVG`, `COUNT`, `MAX`, `MEDIAN`, `MIN`, `PERCENTILE90`, `SUM`, `VALUE`
+        /// Possible values: `AVG`, `COUNT`, `MAX`, `MEDIAN`, `MIN`, `PERCENTILE90`, `SUM`, `VALUE`
         /// </summary>
         public readonly string? Aggregation;
         /// <summary>
@@ -43,7 +43,7 @@ namespace Pulumiverse.Dynatrace.Outputs
         /// </summary>
         public readonly int? QueryOffset;
         /// <summary>
-        /// Possible Values: `METRIC_KEY`, `METRIC_SELECTOR`
+        /// Possible values: `METRIC_KEY`, `METRIC_SELECTOR`
         /// </summary>
         public readonly string Type;
 

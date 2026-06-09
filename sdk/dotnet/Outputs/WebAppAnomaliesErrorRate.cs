@@ -23,11 +23,11 @@ namespace Pulumiverse.Dynatrace.Outputs
         /// </summary>
         public readonly Outputs.WebAppAnomaliesErrorRateErrorRateAuto? ErrorRateAuto;
         /// <summary>
-        /// Possible Values: `Auto`, `Fixed`
+        /// Detection strategy for increases in JavaScript errors. Possible values: `Auto`, `Fixed`
         /// </summary>
         public readonly string? ErrorRateDetectionMode;
         /// <summary>
-        /// no documentation available
+        /// No documentation available
         /// </summary>
         public readonly Outputs.WebAppAnomaliesErrorRateErrorRateFixed? ErrorRateFixed;
 

@@ -306,15 +306,23 @@ class OpenpipelineV2EventsSecurityPipelinegroups(pulumi.CustomResource):
                                 "dimensions": {
                                     "dimensions": [
                                         {
+                                            "extraction_type": "field",
+                                            "strategy": "equals",
                                             "source_field_name": "dt.cost.costcenter",
                                         },
                                         {
+                                            "extraction_type": "field",
+                                            "strategy": "equals",
                                             "source_field_name": "dt.cost.product",
                                         },
                                         {
+                                            "extraction_type": "field",
+                                            "strategy": "equals",
                                             "source_field_name": "dt.security_context",
                                         },
                                         {
+                                            "extraction_type": "field",
+                                            "strategy": "equals",
                                             "source_field_name": "record.category",
                                             "destination_field_name": "warning_category",
                                         },
@@ -335,15 +343,23 @@ class OpenpipelineV2EventsSecurityPipelinegroups(pulumi.CustomResource):
                                 "dimensions": {
                                     "dimensions": [
                                         {
+                                            "extraction_type": "field",
+                                            "strategy": "equals",
                                             "source_field_name": "dt.cost.costcenter",
                                         },
                                         {
+                                            "extraction_type": "field",
+                                            "strategy": "equals",
                                             "source_field_name": "dt.cost.product",
                                         },
                                         {
+                                            "extraction_type": "field",
+                                            "strategy": "equals",
                                             "source_field_name": "dt.security_context",
                                         },
                                         {
+                                            "extraction_type": "field",
+                                            "strategy": "equals",
                                             "source_field_name": "record.category",
                                             "destination_field_name": "warning_category",
                                         },
@@ -359,7 +375,7 @@ class OpenpipelineV2EventsSecurityPipelinegroups(pulumi.CustomResource):
             display_name="#name#-2",
             custom_id="#name#-2",
             group_role="memberPipeline")
-        example = dynatrace.OpenpipelineV2EventsSdlcPipelinegroups("example",
+        example = dynatrace.OpenpipelineV2EventsSecurityPipelinegroups("example",
             display_name="#name#",
             composition={
                 "pipeline_group_compositions": [
@@ -536,15 +552,23 @@ class OpenpipelineV2EventsSecurityPipelinegroups(pulumi.CustomResource):
                                 "dimensions": {
                                     "dimensions": [
                                         {
+                                            "extraction_type": "field",
+                                            "strategy": "equals",
                                             "source_field_name": "dt.cost.costcenter",
                                         },
                                         {
+                                            "extraction_type": "field",
+                                            "strategy": "equals",
                                             "source_field_name": "dt.cost.product",
                                         },
                                         {
+                                            "extraction_type": "field",
+                                            "strategy": "equals",
                                             "source_field_name": "dt.security_context",
                                         },
                                         {
+                                            "extraction_type": "field",
+                                            "strategy": "equals",
                                             "source_field_name": "record.category",
                                             "destination_field_name": "warning_category",
                                         },
@@ -565,15 +589,23 @@ class OpenpipelineV2EventsSecurityPipelinegroups(pulumi.CustomResource):
                                 "dimensions": {
                                     "dimensions": [
                                         {
+                                            "extraction_type": "field",
+                                            "strategy": "equals",
                                             "source_field_name": "dt.cost.costcenter",
                                         },
                                         {
+                                            "extraction_type": "field",
+                                            "strategy": "equals",
                                             "source_field_name": "dt.cost.product",
                                         },
                                         {
+                                            "extraction_type": "field",
+                                            "strategy": "equals",
                                             "source_field_name": "dt.security_context",
                                         },
                                         {
+                                            "extraction_type": "field",
+                                            "strategy": "equals",
                                             "source_field_name": "record.category",
                                             "destination_field_name": "warning_category",
                                         },
@@ -589,7 +621,7 @@ class OpenpipelineV2EventsSecurityPipelinegroups(pulumi.CustomResource):
             display_name="#name#-2",
             custom_id="#name#-2",
             group_role="memberPipeline")
-        example = dynatrace.OpenpipelineV2EventsSdlcPipelinegroups("example",
+        example = dynatrace.OpenpipelineV2EventsSecurityPipelinegroups("example",
             display_name="#name#",
             composition={
                 "pipeline_group_compositions": [

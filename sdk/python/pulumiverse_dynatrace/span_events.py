@@ -110,7 +110,7 @@ class SpanEvents(pulumi.CustomResource):
 
         ## Dynatrace Documentation
 
-        !> This resource API endpoint has been deprecated, please use AttributeAllowList and AttributeMasking instead.
+        > This resource API endpoint has been deprecated, please use AttributeAllowList and AttributeMasking instead.
 
         - Span settings - https://www.dynatrace.com/support/help/extend-dynatrace/extend-tracing/span-settings
 
@@ -139,7 +139,7 @@ class SpanEvents(pulumi.CustomResource):
 
         ## Dynatrace Documentation
 
-        !> This resource API endpoint has been deprecated, please use AttributeAllowList and AttributeMasking instead.
+        > This resource API endpoint has been deprecated, please use AttributeAllowList and AttributeMasking instead.
 
         - Span settings - https://www.dynatrace.com/support/help/extend-dynatrace/extend-tracing/span-settings
 

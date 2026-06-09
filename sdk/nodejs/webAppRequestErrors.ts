@@ -7,7 +7,7 @@ import * as outputs from "./types/output";
 import * as utilities from "./utilities";
 
 /**
- * !> This resource may not have full coverage of the required fields, please use dynatrace.ApplicationErrorRules instead.
+ * > This resource may not have full coverage of the required fields, please use dynatrace.ApplicationErrorRules instead.
  *
  * > This resource requires the API token scopes **Read settings** (`settings.read`) and **Write settings** (`settings.write`)
  *
@@ -60,7 +60,7 @@ export class WebAppRequestErrors extends pulumi.CustomResource {
      */
     declare public readonly ignoreRequestErrorsInApdexCalculation: pulumi.Output<boolean>;
     /**
-     * The scope of this setting (APPLICATION)
+     * The scope of this setting (APPLICATION, environment-default)
      */
     declare public readonly scope: pulumi.Output<string>;
 
@@ -110,7 +110,7 @@ export interface WebAppRequestErrorsState {
      */
     ignoreRequestErrorsInApdexCalculation?: pulumi.Input<boolean | undefined>;
     /**
-     * The scope of this setting (APPLICATION)
+     * The scope of this setting (APPLICATION, environment-default)
      */
     scope?: pulumi.Input<string | undefined>;
 }
@@ -128,7 +128,7 @@ export interface WebAppRequestErrorsArgs {
      */
     ignoreRequestErrorsInApdexCalculation: pulumi.Input<boolean>;
     /**
-     * The scope of this setting (APPLICATION)
+     * The scope of this setting (APPLICATION, environment-default)
      */
     scope: pulumi.Input<string>;
 }

@@ -31,9 +31,9 @@ class WebAppCustomInjectionArgs:
 
         :param pulumi.Input[_builtins.str] application_id: The scope of this settings. If the settings should cover the whole environment, just don't specify any scope.
         :param pulumi.Input[_builtins.bool] enabled: This setting is enabled (`true`) or disabled (`false`)
-        :param pulumi.Input[_builtins.str] operator: Possible Values: `AllPages`, `Contains`, `Ends`, `Equals`, `Starts`
-        :param pulumi.Input[_builtins.str] rule: Possible Values: `AfterSpecificHtml`, `Automatic`, `BeforeSpecificHtml`, `DoNotInject`
-        :param pulumi.Input[_builtins.str] html_pattern: no documentation available
+        :param pulumi.Input[_builtins.str] operator: **Example**:
+        :param pulumi.Input[_builtins.str] rule: Rule. Possible values: `AfterSpecificHtml`, `Automatic`, `BeforeSpecificHtml`, `DoNotInject`
+        :param pulumi.Input[_builtins.str] html_pattern: No documentation available
         :param pulumi.Input[_builtins.str] insert_after: Because this resource allows for ordering you may specify the ID of the resource instance that comes before this instance regarding order. If not specified when creating the setting will be added to the end of the list. If not specified during update the order will remain untouched
         :param pulumi.Input[_builtins.str] url_pattern: URL pattern
         """
@@ -76,7 +76,7 @@ class WebAppCustomInjectionArgs:
     @pulumi.getter
     def operator(self) -> pulumi.Input[_builtins.str]:
         """
-        Possible Values: `AllPages`, `Contains`, `Ends`, `Equals`, `Starts`
+        **Example**:
         """
         return pulumi.get(self, "operator")
 
@@ -88,7 +88,7 @@ class WebAppCustomInjectionArgs:
     @pulumi.getter
     def rule(self) -> pulumi.Input[_builtins.str]:
         """
-        Possible Values: `AfterSpecificHtml`, `Automatic`, `BeforeSpecificHtml`, `DoNotInject`
+        Rule. Possible values: `AfterSpecificHtml`, `Automatic`, `BeforeSpecificHtml`, `DoNotInject`
         """
         return pulumi.get(self, "rule")
 
@@ -100,7 +100,7 @@ class WebAppCustomInjectionArgs:
     @pulumi.getter(name="htmlPattern")
     def html_pattern(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
-        no documentation available
+        No documentation available
         """
         return pulumi.get(self, "html_pattern")
 
@@ -148,10 +148,10 @@ class _WebAppCustomInjectionState:
 
         :param pulumi.Input[_builtins.str] application_id: The scope of this settings. If the settings should cover the whole environment, just don't specify any scope.
         :param pulumi.Input[_builtins.bool] enabled: This setting is enabled (`true`) or disabled (`false`)
-        :param pulumi.Input[_builtins.str] html_pattern: no documentation available
+        :param pulumi.Input[_builtins.str] html_pattern: No documentation available
         :param pulumi.Input[_builtins.str] insert_after: Because this resource allows for ordering you may specify the ID of the resource instance that comes before this instance regarding order. If not specified when creating the setting will be added to the end of the list. If not specified during update the order will remain untouched
-        :param pulumi.Input[_builtins.str] operator: Possible Values: `AllPages`, `Contains`, `Ends`, `Equals`, `Starts`
-        :param pulumi.Input[_builtins.str] rule: Possible Values: `AfterSpecificHtml`, `Automatic`, `BeforeSpecificHtml`, `DoNotInject`
+        :param pulumi.Input[_builtins.str] operator: **Example**:
+        :param pulumi.Input[_builtins.str] rule: Rule. Possible values: `AfterSpecificHtml`, `Automatic`, `BeforeSpecificHtml`, `DoNotInject`
         :param pulumi.Input[_builtins.str] url_pattern: URL pattern
         """
         if application_id is not None:
@@ -197,7 +197,7 @@ class _WebAppCustomInjectionState:
     @pulumi.getter(name="htmlPattern")
     def html_pattern(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
-        no documentation available
+        No documentation available
         """
         return pulumi.get(self, "html_pattern")
 
@@ -221,7 +221,7 @@ class _WebAppCustomInjectionState:
     @pulumi.getter
     def operator(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
-        Possible Values: `AllPages`, `Contains`, `Ends`, `Equals`, `Starts`
+        **Example**:
         """
         return pulumi.get(self, "operator")
 
@@ -233,7 +233,7 @@ class _WebAppCustomInjectionState:
     @pulumi.getter
     def rule(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
-        Possible Values: `AfterSpecificHtml`, `Automatic`, `BeforeSpecificHtml`, `DoNotInject`
+        Rule. Possible values: `AfterSpecificHtml`, `Automatic`, `BeforeSpecificHtml`, `DoNotInject`
         """
         return pulumi.get(self, "rule")
 
@@ -303,10 +303,10 @@ class WebAppCustomInjection(pulumi.CustomResource):
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[_builtins.str] application_id: The scope of this settings. If the settings should cover the whole environment, just don't specify any scope.
         :param pulumi.Input[_builtins.bool] enabled: This setting is enabled (`true`) or disabled (`false`)
-        :param pulumi.Input[_builtins.str] html_pattern: no documentation available
+        :param pulumi.Input[_builtins.str] html_pattern: No documentation available
         :param pulumi.Input[_builtins.str] insert_after: Because this resource allows for ordering you may specify the ID of the resource instance that comes before this instance regarding order. If not specified when creating the setting will be added to the end of the list. If not specified during update the order will remain untouched
-        :param pulumi.Input[_builtins.str] operator: Possible Values: `AllPages`, `Contains`, `Ends`, `Equals`, `Starts`
-        :param pulumi.Input[_builtins.str] rule: Possible Values: `AfterSpecificHtml`, `Automatic`, `BeforeSpecificHtml`, `DoNotInject`
+        :param pulumi.Input[_builtins.str] operator: **Example**:
+        :param pulumi.Input[_builtins.str] rule: Rule. Possible values: `AfterSpecificHtml`, `Automatic`, `BeforeSpecificHtml`, `DoNotInject`
         :param pulumi.Input[_builtins.str] url_pattern: URL pattern
         """
         ...
@@ -418,10 +418,10 @@ class WebAppCustomInjection(pulumi.CustomResource):
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[_builtins.str] application_id: The scope of this settings. If the settings should cover the whole environment, just don't specify any scope.
         :param pulumi.Input[_builtins.bool] enabled: This setting is enabled (`true`) or disabled (`false`)
-        :param pulumi.Input[_builtins.str] html_pattern: no documentation available
+        :param pulumi.Input[_builtins.str] html_pattern: No documentation available
         :param pulumi.Input[_builtins.str] insert_after: Because this resource allows for ordering you may specify the ID of the resource instance that comes before this instance regarding order. If not specified when creating the setting will be added to the end of the list. If not specified during update the order will remain untouched
-        :param pulumi.Input[_builtins.str] operator: Possible Values: `AllPages`, `Contains`, `Ends`, `Equals`, `Starts`
-        :param pulumi.Input[_builtins.str] rule: Possible Values: `AfterSpecificHtml`, `Automatic`, `BeforeSpecificHtml`, `DoNotInject`
+        :param pulumi.Input[_builtins.str] operator: **Example**:
+        :param pulumi.Input[_builtins.str] rule: Rule. Possible values: `AfterSpecificHtml`, `Automatic`, `BeforeSpecificHtml`, `DoNotInject`
         :param pulumi.Input[_builtins.str] url_pattern: URL pattern
         """
         opts = pulumi.ResourceOptions.merge(opts, pulumi.ResourceOptions(id=id))
@@ -457,7 +457,7 @@ class WebAppCustomInjection(pulumi.CustomResource):
     @pulumi.getter(name="htmlPattern")
     def html_pattern(self) -> pulumi.Output[Optional[_builtins.str]]:
         """
-        no documentation available
+        No documentation available
         """
         return pulumi.get(self, "html_pattern")
 
@@ -473,7 +473,7 @@ class WebAppCustomInjection(pulumi.CustomResource):
     @pulumi.getter
     def operator(self) -> pulumi.Output[_builtins.str]:
         """
-        Possible Values: `AllPages`, `Contains`, `Ends`, `Equals`, `Starts`
+        **Example**:
         """
         return pulumi.get(self, "operator")
 
@@ -481,7 +481,7 @@ class WebAppCustomInjection(pulumi.CustomResource):
     @pulumi.getter
     def rule(self) -> pulumi.Output[_builtins.str]:
         """
-        Possible Values: `AfterSpecificHtml`, `Automatic`, `BeforeSpecificHtml`, `DoNotInject`
+        Rule. Possible values: `AfterSpecificHtml`, `Automatic`, `BeforeSpecificHtml`, `DoNotInject`
         """
         return pulumi.get(self, "rule")
 

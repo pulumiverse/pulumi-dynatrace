@@ -510,7 +510,7 @@ class Slo(pulumi.CustomResource):
                  warning: pulumi.Input[Optional[_builtins.float]] = None,
                  __props__=None):
         """
-        !> This resource API endpoint has been deprecated, please use SloV2 instead.
+        > This resource API endpoint has been deprecated, please use SloV2 instead.
 
         > This resource requires the API token scopes **Read SLO** (`slo.read`) and **Write SLO** (`slo.write`)
 
@@ -551,7 +551,7 @@ class Slo(pulumi.CustomResource):
                  args: SloArgs,
                  opts: Optional[pulumi.ResourceOptions] = None):
         """
-        !> This resource API endpoint has been deprecated, please use SloV2 instead.
+        > This resource API endpoint has been deprecated, please use SloV2 instead.
 
         > This resource requires the API token scopes **Read SLO** (`slo.read`) and **Write SLO** (`slo.write`)
 

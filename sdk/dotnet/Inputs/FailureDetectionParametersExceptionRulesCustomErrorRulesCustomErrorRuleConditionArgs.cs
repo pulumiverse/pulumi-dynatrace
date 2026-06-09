@@ -14,31 +14,34 @@ namespace Pulumiverse.Dynatrace.Inputs
     public sealed class FailureDetectionParametersExceptionRulesCustomErrorRulesCustomErrorRuleConditionArgs : global::Pulumi.ResourceArgs
     {
         /// <summary>
-        /// Case sensitive
+        /// If `True`, the comparison is case-sensitive. Only applicable for string comparison types. Default: `False`.
         /// </summary>
         [Input("caseSensitive")]
         public Input<bool>? CaseSensitive { get; set; }
 
         /// <summary>
-        /// Apply this comparison
+        /// The type of comparison to apply. Available types depend on the data type of the request attribute:
+        ///  * String types support `STRING_EXISTS`, `STRING_EQUALS`, `NOT_STRING_EQUALS`, `STARTS_WITH`, `NOT_STARTS_WITH`, `CONTAINS`, `NOT_CONTAINS`, `ENDS_WITH`, `NOT_ENDS_WITH`.
+        ///  * Integer types support `INTEGER_EQUALS` and related comparisons;
+        ///  * Double types support `DOUBLE_EQUALS` and related comparisons.
         /// </summary>
         [Input("compareOperationType", required: true)]
         public Input<string> CompareOperationType { get; set; } = null!;
 
         /// <summary>
-        /// Value
+        /// The floating-point value to compare the request attribute against. Only applicable for double comparison types.
         /// </summary>
         [Input("doubleValue")]
         public Input<double>? DoubleValue { get; set; }
 
         /// <summary>
-        /// Value
+        /// The integer value to compare the request attribute against. Only applicable for integer comparison types.
         /// </summary>
         [Input("intValue")]
         public Input<int>? IntValue { get; set; }
 
         /// <summary>
-        /// Value
+        /// The text value to compare the request attribute against. Only applicable for string comparison types.
         /// </summary>
         [Input("textValue")]
         public Input<string>? TextValue { get; set; }

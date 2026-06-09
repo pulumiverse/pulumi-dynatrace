@@ -7,7 +7,7 @@ import * as outputs from "./types/output";
 import * as utilities from "./utilities";
 
 /**
- * !> This resource frequently falls behind due to the constant additions/changes to the dashboard schema, instead it is recommended to use dynatrace.JsonDashboard which allows to send the full JSON payload.
+ * > This resource frequently falls behind due to the constant additions/changes to the dashboard schema, instead it is recommended to use dynatrace.JsonDashboard which allows to send the full JSON payload.
  *
  * > This resource requires the API token scopes **Read configuration** (`ReadConfig`) and **Write configuration** (`WriteConfig`)
  *

@@ -161,13 +161,13 @@ namespace Pulumiverse.Dynatrace
     public partial class AzureConnection : global::Pulumi.CustomResource
     {
         /// <summary>
-        /// no documentation available
+        /// No documentation available
         /// </summary>
         [Output("clientSecret")]
         public Output<Outputs.AzureConnectionClientSecret?> ClientSecret { get; private set; } = null!;
 
         /// <summary>
-        /// no documentation available
+        /// No documentation available
         /// </summary>
         [Output("federatedIdentityCredential")]
         public Output<Outputs.AzureConnectionFederatedIdentityCredential?> FederatedIdentityCredential { get; private set; } = null!;
@@ -232,13 +232,13 @@ namespace Pulumiverse.Dynatrace
     public sealed class AzureConnectionArgs : global::Pulumi.ResourceArgs
     {
         /// <summary>
-        /// no documentation available
+        /// No documentation available
         /// </summary>
         [Input("clientSecret")]
         public Input<Inputs.AzureConnectionClientSecretArgs>? ClientSecret { get; set; }
 
         /// <summary>
-        /// no documentation available
+        /// No documentation available
         /// </summary>
         [Input("federatedIdentityCredential")]
         public Input<Inputs.AzureConnectionFederatedIdentityCredentialArgs>? FederatedIdentityCredential { get; set; }
@@ -264,13 +264,13 @@ namespace Pulumiverse.Dynatrace
     public sealed class AzureConnectionState : global::Pulumi.ResourceArgs
     {
         /// <summary>
-        /// no documentation available
+        /// No documentation available
         /// </summary>
         [Input("clientSecret")]
         public Input<Inputs.AzureConnectionClientSecretGetArgs>? ClientSecret { get; set; }
 
         /// <summary>
-        /// no documentation available
+        /// No documentation available
         /// </summary>
         [Input("federatedIdentityCredential")]
         public Input<Inputs.AzureConnectionFederatedIdentityCredentialGetArgs>? FederatedIdentityCredential { get; set; }

@@ -15,19 +15,19 @@ namespace Pulumiverse.Dynatrace.Outputs
     public sealed class FailureDetectionParametersHttpResponseCodes
     {
         /// <summary>
-        /// HTTP response codes which indicate client side errors
+        /// A list of HTTP response code ranges and individual values that are treated as client-side errors. The format is a comma-separated list of ranges and values (e.g., `400-499, 503, 510-599`). Default: `400-599`.
         /// </summary>
         public readonly string ClientSideErrors;
         /// <summary>
-        /// Treat missing HTTP response code as client side error
+        /// If `True`, a missing HTTP response code on the client side is treated as a failure. Missing response codes can indicate a fire-and-forget call, a timeout, or an error. Default: `False`.
         /// </summary>
         public readonly bool FailOnMissingResponseCodeClientSide;
         /// <summary>
-        /// Treat missing HTTP response code as server side errors
+        /// If `True`, a missing HTTP response code on the server side is treated as a failure. Missing response codes can indicate a fire-and-forget call, a timeout, or an error. Default: `False`.
         /// </summary>
         public readonly bool FailOnMissingResponseCodeServerSide;
         /// <summary>
-        /// HTTP response codes which indicate an error on the server side
+        /// A list of HTTP response code ranges and individual values that are treated as server-side errors. The format is a comma-separated list of ranges and values (e.g., `500-599, 402, 405-499`). Default: `500-599`.
         /// </summary>
         public readonly string ServerSideErrors;
 

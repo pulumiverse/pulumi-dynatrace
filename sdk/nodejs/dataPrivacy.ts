@@ -62,7 +62,7 @@ export class DataPrivacy extends pulumi.CustomResource {
      */
     declare public readonly doNotTrack: pulumi.Output<outputs.DataPrivacyDoNotTrack>;
     /**
-     * no documentation available
+     * No documentation available
      */
     declare public readonly masking: pulumi.Output<outputs.DataPrivacyMasking>;
     /**
@@ -130,7 +130,7 @@ export interface DataPrivacyState {
      */
     doNotTrack?: pulumi.Input<inputs.DataPrivacyDoNotTrack | undefined>;
     /**
-     * no documentation available
+     * No documentation available
      */
     masking?: pulumi.Input<inputs.DataPrivacyMasking | undefined>;
     /**
@@ -156,7 +156,7 @@ export interface DataPrivacyArgs {
      */
     doNotTrack: pulumi.Input<inputs.DataPrivacyDoNotTrack>;
     /**
-     * no documentation available
+     * No documentation available
      */
     masking: pulumi.Input<inputs.DataPrivacyMasking>;
     /**

@@ -48,7 +48,7 @@ export class WebAppBeaconOrigins extends pulumi.CustomResource {
     }
 
     /**
-     * Possible Values: `CONTAINS`, `ENDS_WITH`, `EQUALS`, `STARTS_WITH`
+     * Matcher. Possible values: `CONTAINS`, `ENDS_WITH`, `EQUALS`, `STARTS_WITH`
      */
     declare public readonly matcher: pulumi.Output<string>;
     /**
@@ -92,7 +92,7 @@ export class WebAppBeaconOrigins extends pulumi.CustomResource {
  */
 export interface WebAppBeaconOriginsState {
     /**
-     * Possible Values: `CONTAINS`, `ENDS_WITH`, `EQUALS`, `STARTS_WITH`
+     * Matcher. Possible values: `CONTAINS`, `ENDS_WITH`, `EQUALS`, `STARTS_WITH`
      */
     matcher?: pulumi.Input<string | undefined>;
     /**
@@ -106,7 +106,7 @@ export interface WebAppBeaconOriginsState {
  */
 export interface WebAppBeaconOriginsArgs {
     /**
-     * Possible Values: `CONTAINS`, `ENDS_WITH`, `EQUALS`, `STARTS_WITH`
+     * Matcher. Possible values: `CONTAINS`, `ENDS_WITH`, `EQUALS`, `STARTS_WITH`
      */
     matcher: pulumi.Input<string>;
     /**

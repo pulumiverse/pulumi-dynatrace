@@ -181,18 +181,26 @@ namespace Pulumiverse.Dynatrace
     ///                                 {
     ///                                     new Dynatrace.Inputs.OpenpipelineV2EventsPipelinesMetricExtractionProcessorsProcessorCounterMetricDimensionsDimensionArgs
     ///                                     {
+    ///                                         ExtractionType = "field",
+    ///                                         Strategy = "equals",
     ///                                         SourceFieldName = "dt.cost.costcenter",
     ///                                     },
     ///                                     new Dynatrace.Inputs.OpenpipelineV2EventsPipelinesMetricExtractionProcessorsProcessorCounterMetricDimensionsDimensionArgs
     ///                                     {
+    ///                                         ExtractionType = "field",
+    ///                                         Strategy = "equals",
     ///                                         SourceFieldName = "dt.cost.product",
     ///                                     },
     ///                                     new Dynatrace.Inputs.OpenpipelineV2EventsPipelinesMetricExtractionProcessorsProcessorCounterMetricDimensionsDimensionArgs
     ///                                     {
+    ///                                         ExtractionType = "field",
+    ///                                         Strategy = "equals",
     ///                                         SourceFieldName = "dt.security_context",
     ///                                     },
     ///                                     new Dynatrace.Inputs.OpenpipelineV2EventsPipelinesMetricExtractionProcessorsProcessorCounterMetricDimensionsDimensionArgs
     ///                                     {
+    ///                                         ExtractionType = "field",
+    ///                                         Strategy = "equals",
     ///                                         SourceFieldName = "record.category",
     ///                                         DestinationFieldName = "warning_category",
     ///                                     },
@@ -218,18 +226,26 @@ namespace Pulumiverse.Dynatrace
     ///                                 {
     ///                                     new Dynatrace.Inputs.OpenpipelineV2EventsPipelinesMetricExtractionProcessorsProcessorValueMetricDimensionsDimensionArgs
     ///                                     {
+    ///                                         ExtractionType = "field",
+    ///                                         Strategy = "equals",
     ///                                         SourceFieldName = "dt.cost.costcenter",
     ///                                     },
     ///                                     new Dynatrace.Inputs.OpenpipelineV2EventsPipelinesMetricExtractionProcessorsProcessorValueMetricDimensionsDimensionArgs
     ///                                     {
+    ///                                         ExtractionType = "field",
+    ///                                         Strategy = "equals",
     ///                                         SourceFieldName = "dt.cost.product",
     ///                                     },
     ///                                     new Dynatrace.Inputs.OpenpipelineV2EventsPipelinesMetricExtractionProcessorsProcessorValueMetricDimensionsDimensionArgs
     ///                                     {
+    ///                                         ExtractionType = "field",
+    ///                                         Strategy = "equals",
     ///                                         SourceFieldName = "dt.security_context",
     ///                                     },
     ///                                     new Dynatrace.Inputs.OpenpipelineV2EventsPipelinesMetricExtractionProcessorsProcessorValueMetricDimensionsDimensionArgs
     ///                                     {
+    ///                                         ExtractionType = "field",
+    ///                                         Strategy = "equals",
     ///                                         SourceFieldName = "record.category",
     ///                                         DestinationFieldName = "warning_category",
     ///                                     },

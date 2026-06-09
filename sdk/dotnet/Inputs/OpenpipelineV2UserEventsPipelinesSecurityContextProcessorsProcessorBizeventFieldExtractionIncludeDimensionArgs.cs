@@ -49,6 +49,12 @@ namespace Pulumiverse.Dynatrace.Inputs
         [Input("sourceFieldName")]
         public Input<string>? SourceFieldName { get; set; }
 
+        /// <summary>
+        /// Strategy for field extraction. Possible values: `Equals`, `startsWith`
+        /// </summary>
+        [Input("strategy")]
+        public Input<string>? Strategy { get; set; }
+
         public OpenpipelineV2UserEventsPipelinesSecurityContextProcessorsProcessorBizeventFieldExtractionIncludeDimensionArgs()
         {
         }

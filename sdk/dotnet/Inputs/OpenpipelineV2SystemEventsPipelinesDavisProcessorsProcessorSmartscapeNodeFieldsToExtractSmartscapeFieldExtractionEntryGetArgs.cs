@@ -16,14 +16,20 @@ namespace Pulumiverse.Dynatrace.Inputs
         /// <summary>
         /// Field name
         /// </summary>
-        [Input("fieldName", required: true)]
-        public Input<string> FieldName { get; set; } = null!;
+        [Input("fieldName")]
+        public Input<string>? FieldName { get; set; }
 
         /// <summary>
         /// Referenced field name
         /// </summary>
         [Input("referencedFieldName", required: true)]
         public Input<string> ReferencedFieldName { get; set; } = null!;
+
+        /// <summary>
+        /// Strategy for field extraction. Possible values: `Equals`, `startsWith`
+        /// </summary>
+        [Input("strategy")]
+        public Input<string>? Strategy { get; set; }
 
         public OpenpipelineV2SystemEventsPipelinesDavisProcessorsProcessorSmartscapeNodeFieldsToExtractSmartscapeFieldExtractionEntryGetArgs()
         {

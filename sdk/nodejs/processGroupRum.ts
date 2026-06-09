@@ -25,11 +25,12 @@ import * as utilities from "./utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as dynatrace from "@pulumiverse/dynatrace";
  *
- * const config = new pulumi.Config();
- * const PROCESS_GROUP_ID = config.require("PROCESS_GROUP_ID");
+ * const processGroup = dynatrace.getEntity({
+ *     entitySelector: "type(\"PROCESS_GROUP\")",
+ * });
  * const rum = new dynatrace.ProcessGroupRum("rum", {
  *     enable: false,
- *     processGroupId: PROCESS_GROUP_ID,
+ *     processGroupId: processGroup.then(processGroup => processGroup.id),
  * });
  * ```
  */
@@ -63,14 +64,14 @@ export class ProcessGroupRum extends pulumi.CustomResource {
 
     /**
      * Allows OneAgent to:
-     * * automatically inject the RUM JavaScript tag into each page delivered by this process group
-     * * provide the necessary info to correlate RUM data with server-side PurePaths
-     * * forward beacons to the cluster
-     * * deliver the monitoring code
+     *  * automatically inject the RUM JavaScript tag into each page delivered by this process group
+     *  * provide the necessary info to correlate RUM data with server-side PurePaths
+     *  * forward beacons to the cluster
+     *  * deliver the monitoring code
      */
     declare public readonly enable: pulumi.Output<boolean>;
     /**
-     * The scope of this setting - PROCESS_GROUP-XXXXXXXXXXXXXXXX
+     * The scope of this settings. If the settings should cover the whole environment, just don't specify any scope.
      */
     declare public readonly processGroupId: pulumi.Output<string>;
 
@@ -111,14 +112,14 @@ export class ProcessGroupRum extends pulumi.CustomResource {
 export interface ProcessGroupRumState {
     /**
      * Allows OneAgent to:
-     * * automatically inject the RUM JavaScript tag into each page delivered by this process group
-     * * provide the necessary info to correlate RUM data with server-side PurePaths
-     * * forward beacons to the cluster
-     * * deliver the monitoring code
+     *  * automatically inject the RUM JavaScript tag into each page delivered by this process group
+     *  * provide the necessary info to correlate RUM data with server-side PurePaths
+     *  * forward beacons to the cluster
+     *  * deliver the monitoring code
      */
     enable?: pulumi.Input<boolean | undefined>;
     /**
-     * The scope of this setting - PROCESS_GROUP-XXXXXXXXXXXXXXXX
+     * The scope of this settings. If the settings should cover the whole environment, just don't specify any scope.
      */
     processGroupId?: pulumi.Input<string | undefined>;
 }
@@ -129,14 +130,14 @@ export interface ProcessGroupRumState {
 export interface ProcessGroupRumArgs {
     /**
      * Allows OneAgent to:
-     * * automatically inject the RUM JavaScript tag into each page delivered by this process group
-     * * provide the necessary info to correlate RUM data with server-side PurePaths
-     * * forward beacons to the cluster
-     * * deliver the monitoring code
+     *  * automatically inject the RUM JavaScript tag into each page delivered by this process group
+     *  * provide the necessary info to correlate RUM data with server-side PurePaths
+     *  * forward beacons to the cluster
+     *  * deliver the monitoring code
      */
     enable: pulumi.Input<boolean>;
     /**
-     * The scope of this setting - PROCESS_GROUP-XXXXXXXXXXXXXXXX
+     * The scope of this settings. If the settings should cover the whole environment, just don't specify any scope.
      */
     processGroupId: pulumi.Input<string>;
 }

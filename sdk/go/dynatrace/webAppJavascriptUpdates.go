@@ -30,7 +30,7 @@ type WebAppJavascriptUpdates struct {
 
 	// The scope of this settings. If the settings should cover the whole environment, just don't specify any scope.
 	ApplicationId pulumi.StringPtrOutput `pulumi:"applicationId"`
-	// Possible Values: `CUSTOM`, `LATEST_IE7_10_SUPPORTED`, `LATEST_STABLE`, `PREVIOUS_STABLE`
+	// Choose version. Possible values: `CUSTOM`, `LATEST_IE11_SUPPORTED`, `LATEST_IE7_10_SUPPORTED`, `LATEST_STABLE`, `PREVIOUS_STABLE`
 	JavascriptVersion pulumi.StringOutput `pulumi:"javascriptVersion"`
 }
 
@@ -69,14 +69,14 @@ func GetWebAppJavascriptUpdates(ctx *pulumi.Context,
 type webAppJavascriptUpdatesState struct {
 	// The scope of this settings. If the settings should cover the whole environment, just don't specify any scope.
 	ApplicationId *string `pulumi:"applicationId"`
-	// Possible Values: `CUSTOM`, `LATEST_IE7_10_SUPPORTED`, `LATEST_STABLE`, `PREVIOUS_STABLE`
+	// Choose version. Possible values: `CUSTOM`, `LATEST_IE11_SUPPORTED`, `LATEST_IE7_10_SUPPORTED`, `LATEST_STABLE`, `PREVIOUS_STABLE`
 	JavascriptVersion *string `pulumi:"javascriptVersion"`
 }
 
 type WebAppJavascriptUpdatesState struct {
 	// The scope of this settings. If the settings should cover the whole environment, just don't specify any scope.
 	ApplicationId pulumi.StringPtrInput
-	// Possible Values: `CUSTOM`, `LATEST_IE7_10_SUPPORTED`, `LATEST_STABLE`, `PREVIOUS_STABLE`
+	// Choose version. Possible values: `CUSTOM`, `LATEST_IE11_SUPPORTED`, `LATEST_IE7_10_SUPPORTED`, `LATEST_STABLE`, `PREVIOUS_STABLE`
 	JavascriptVersion pulumi.StringPtrInput
 }
 
@@ -87,7 +87,7 @@ func (WebAppJavascriptUpdatesState) ElementType() reflect.Type {
 type webAppJavascriptUpdatesArgs struct {
 	// The scope of this settings. If the settings should cover the whole environment, just don't specify any scope.
 	ApplicationId *string `pulumi:"applicationId"`
-	// Possible Values: `CUSTOM`, `LATEST_IE7_10_SUPPORTED`, `LATEST_STABLE`, `PREVIOUS_STABLE`
+	// Choose version. Possible values: `CUSTOM`, `LATEST_IE11_SUPPORTED`, `LATEST_IE7_10_SUPPORTED`, `LATEST_STABLE`, `PREVIOUS_STABLE`
 	JavascriptVersion string `pulumi:"javascriptVersion"`
 }
 
@@ -95,7 +95,7 @@ type webAppJavascriptUpdatesArgs struct {
 type WebAppJavascriptUpdatesArgs struct {
 	// The scope of this settings. If the settings should cover the whole environment, just don't specify any scope.
 	ApplicationId pulumi.StringPtrInput
-	// Possible Values: `CUSTOM`, `LATEST_IE7_10_SUPPORTED`, `LATEST_STABLE`, `PREVIOUS_STABLE`
+	// Choose version. Possible values: `CUSTOM`, `LATEST_IE11_SUPPORTED`, `LATEST_IE7_10_SUPPORTED`, `LATEST_STABLE`, `PREVIOUS_STABLE`
 	JavascriptVersion pulumi.StringInput
 }
 
@@ -191,7 +191,7 @@ func (o WebAppJavascriptUpdatesOutput) ApplicationId() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v *WebAppJavascriptUpdates) pulumi.StringPtrOutput { return v.ApplicationId }).(pulumi.StringPtrOutput)
 }
 
-// Possible Values: `CUSTOM`, `LATEST_IE7_10_SUPPORTED`, `LATEST_STABLE`, `PREVIOUS_STABLE`
+// Choose version. Possible values: `CUSTOM`, `LATEST_IE11_SUPPORTED`, `LATEST_IE7_10_SUPPORTED`, `LATEST_STABLE`, `PREVIOUS_STABLE`
 func (o WebAppJavascriptUpdatesOutput) JavascriptVersion() pulumi.StringOutput {
 	return o.ApplyT(func(v *WebAppJavascriptUpdates) pulumi.StringOutput { return v.JavascriptVersion }).(pulumi.StringOutput)
 }

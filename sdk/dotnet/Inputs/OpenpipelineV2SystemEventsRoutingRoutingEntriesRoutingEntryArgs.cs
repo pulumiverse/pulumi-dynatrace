@@ -20,7 +20,7 @@ namespace Pulumiverse.Dynatrace.Inputs
         public Input<string>? BuiltinPipelineId { get; set; }
 
         /// <summary>
-        /// no documentation available
+        /// No documentation available
         /// </summary>
         [Input("description", required: true)]
         public Input<string> Description { get; set; } = null!;

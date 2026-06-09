@@ -72,7 +72,7 @@ export class WebAppCustomInjection extends pulumi.CustomResource {
      */
     declare public readonly enabled: pulumi.Output<boolean>;
     /**
-     * no documentation available
+     * No documentation available
      */
     declare public readonly htmlPattern: pulumi.Output<string | undefined>;
     /**
@@ -80,11 +80,11 @@ export class WebAppCustomInjection extends pulumi.CustomResource {
      */
     declare public readonly insertAfter: pulumi.Output<string>;
     /**
-     * Possible Values: `AllPages`, `Contains`, `Ends`, `Equals`, `Starts`
+     * **Example**:
      */
     declare public readonly operator: pulumi.Output<string>;
     /**
-     * Possible Values: `AfterSpecificHtml`, `Automatic`, `BeforeSpecificHtml`, `DoNotInject`
+     * Rule. Possible values: `AfterSpecificHtml`, `Automatic`, `BeforeSpecificHtml`, `DoNotInject`
      */
     declare public readonly rule: pulumi.Output<string>;
     /**
@@ -152,7 +152,7 @@ export interface WebAppCustomInjectionState {
      */
     enabled?: pulumi.Input<boolean | undefined>;
     /**
-     * no documentation available
+     * No documentation available
      */
     htmlPattern?: pulumi.Input<string | undefined>;
     /**
@@ -160,11 +160,11 @@ export interface WebAppCustomInjectionState {
      */
     insertAfter?: pulumi.Input<string | undefined>;
     /**
-     * Possible Values: `AllPages`, `Contains`, `Ends`, `Equals`, `Starts`
+     * **Example**:
      */
     operator?: pulumi.Input<string | undefined>;
     /**
-     * Possible Values: `AfterSpecificHtml`, `Automatic`, `BeforeSpecificHtml`, `DoNotInject`
+     * Rule. Possible values: `AfterSpecificHtml`, `Automatic`, `BeforeSpecificHtml`, `DoNotInject`
      */
     rule?: pulumi.Input<string | undefined>;
     /**
@@ -186,7 +186,7 @@ export interface WebAppCustomInjectionArgs {
      */
     enabled: pulumi.Input<boolean>;
     /**
-     * no documentation available
+     * No documentation available
      */
     htmlPattern?: pulumi.Input<string | undefined>;
     /**
@@ -194,11 +194,11 @@ export interface WebAppCustomInjectionArgs {
      */
     insertAfter?: pulumi.Input<string | undefined>;
     /**
-     * Possible Values: `AllPages`, `Contains`, `Ends`, `Equals`, `Starts`
+     * **Example**:
      */
     operator: pulumi.Input<string>;
     /**
-     * Possible Values: `AfterSpecificHtml`, `Automatic`, `BeforeSpecificHtml`, `DoNotInject`
+     * Rule. Possible values: `AfterSpecificHtml`, `Automatic`, `BeforeSpecificHtml`, `DoNotInject`
      */
     rule: pulumi.Input<string>;
     /**

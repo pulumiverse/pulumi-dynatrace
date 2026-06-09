@@ -54,19 +54,19 @@ export class FailureDetectionParameters extends pulumi.CustomResource {
      */
     declare public readonly brokenLinks: pulumi.Output<outputs.FailureDetectionParametersBrokenLinks>;
     /**
-     * Description
+     * A short description of this failure detection parameter set.
      */
     declare public readonly description: pulumi.Output<string | undefined>;
     /**
-     * Customize failure detection for specific exceptions and errors
+     * Exception and custom error rules that determine how specific exceptions, handled errors, and request-attribute-based conditions affect failure detection.
      */
     declare public readonly exceptionRules: pulumi.Output<outputs.FailureDetectionParametersExceptionRules>;
     /**
-     * HTTP response codes
+     * HTTP response code settings that control which response codes are treated as server-side or client-side errors.
      */
     declare public readonly httpResponseCodes: pulumi.Output<outputs.FailureDetectionParametersHttpResponseCodes>;
     /**
-     * Name
+     * The display name of this failure detection parameter set.
      */
     declare public readonly name: pulumi.Output<string>;
 
@@ -119,19 +119,19 @@ export interface FailureDetectionParametersState {
      */
     brokenLinks?: pulumi.Input<inputs.FailureDetectionParametersBrokenLinks | undefined>;
     /**
-     * Description
+     * A short description of this failure detection parameter set.
      */
     description?: pulumi.Input<string | undefined>;
     /**
-     * Customize failure detection for specific exceptions and errors
+     * Exception and custom error rules that determine how specific exceptions, handled errors, and request-attribute-based conditions affect failure detection.
      */
     exceptionRules?: pulumi.Input<inputs.FailureDetectionParametersExceptionRules | undefined>;
     /**
-     * HTTP response codes
+     * HTTP response code settings that control which response codes are treated as server-side or client-side errors.
      */
     httpResponseCodes?: pulumi.Input<inputs.FailureDetectionParametersHttpResponseCodes | undefined>;
     /**
-     * Name
+     * The display name of this failure detection parameter set.
      */
     name?: pulumi.Input<string | undefined>;
 }
@@ -145,19 +145,19 @@ export interface FailureDetectionParametersArgs {
      */
     brokenLinks: pulumi.Input<inputs.FailureDetectionParametersBrokenLinks>;
     /**
-     * Description
+     * A short description of this failure detection parameter set.
      */
     description?: pulumi.Input<string | undefined>;
     /**
-     * Customize failure detection for specific exceptions and errors
+     * Exception and custom error rules that determine how specific exceptions, handled errors, and request-attribute-based conditions affect failure detection.
      */
     exceptionRules: pulumi.Input<inputs.FailureDetectionParametersExceptionRules>;
     /**
-     * HTTP response codes
+     * HTTP response code settings that control which response codes are treated as server-side or client-side errors.
      */
     httpResponseCodes: pulumi.Input<inputs.FailureDetectionParametersHttpResponseCodes>;
     /**
-     * Name
+     * The display name of this failure detection parameter set.
      */
     name?: pulumi.Input<string | undefined>;
 }

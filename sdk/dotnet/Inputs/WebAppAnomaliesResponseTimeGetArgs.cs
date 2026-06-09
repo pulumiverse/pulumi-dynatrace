@@ -14,7 +14,7 @@ namespace Pulumiverse.Dynatrace.Inputs
     public sealed class WebAppAnomaliesResponseTimeGetArgs : global::Pulumi.ResourceArgs
     {
         /// <summary>
-        /// Possible Values: `Auto`, `Fixed`
+        /// Detection strategy for key performance metric degradations. Possible values: `Auto`, `Fixed`
         /// </summary>
         [Input("detectionMode")]
         public Input<string>? DetectionMode { get; set; }
@@ -26,13 +26,13 @@ namespace Pulumiverse.Dynatrace.Inputs
         public Input<bool> Enabled { get; set; } = null!;
 
         /// <summary>
-        /// no documentation available
+        /// No documentation available
         /// </summary>
         [Input("responseTimeAuto")]
         public Input<Inputs.WebAppAnomaliesResponseTimeResponseTimeAutoGetArgs>? ResponseTimeAuto { get; set; }
 
         /// <summary>
-        /// no documentation available
+        /// No documentation available
         /// </summary>
         [Input("responseTimeFixed")]
         public Input<Inputs.WebAppAnomaliesResponseTimeResponseTimeFixedGetArgs>? ResponseTimeFixed { get; set; }

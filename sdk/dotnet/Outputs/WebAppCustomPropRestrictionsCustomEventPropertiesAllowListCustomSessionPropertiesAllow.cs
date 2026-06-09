@@ -19,7 +19,7 @@ namespace Pulumiverse.Dynatrace.Outputs
         /// </summary>
         public readonly bool? CaseInsensitiveNamingEnabled;
         /// <summary>
-        /// Datatype. Possible Values: `BOOLEAN`, `NUMBER`, `STRING`
+        /// Datatype. Possible values: `BOOLEAN`, `NUMBER`, `STRING`
         /// </summary>
         public readonly string FieldDataType;
         /// <summary>

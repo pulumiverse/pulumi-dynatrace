@@ -15,13 +15,21 @@ namespace Pulumiverse.Dynatrace.Outputs
     public sealed class K8sWorkloadAnomaliesOomKills
     {
         /// <summary>
+        /// Alert if
+        /// </summary>
+        public readonly Outputs.K8sWorkloadAnomaliesOomKillsConfiguration? Configuration;
+        /// <summary>
         /// This setting is enabled (`True`) or disabled (`False`)
         /// </summary>
         public readonly bool Enabled;
 
         [OutputConstructor]
-        private K8sWorkloadAnomaliesOomKills(bool enabled)
+        private K8sWorkloadAnomaliesOomKills(
+            Outputs.K8sWorkloadAnomaliesOomKillsConfiguration? configuration,
+
+            bool enabled)
         {
+            Configuration = configuration;
             Enabled = enabled;
         }
     }

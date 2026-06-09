@@ -11,7 +11,7 @@ using Pulumi;
 namespace Pulumiverse.Dynatrace
 {
     /// <summary>
-    /// !&gt; This resource may not have full coverage of the required fields, please use dynatrace.ApplicationErrorRules instead.
+    /// &gt; This resource may not have full coverage of the required fields, please use dynatrace.ApplicationErrorRules instead.
     /// 
     /// &gt; This resource requires the API token scopes **Read settings** (`settings.read`) and **Write settings** (`settings.write`)
     /// 
@@ -43,7 +43,7 @@ namespace Pulumiverse.Dynatrace
         public Output<bool> IgnoreRequestErrorsInApdexCalculation { get; private set; } = null!;
 
         /// <summary>
-        /// The scope of this setting (APPLICATION)
+        /// The scope of this setting (APPLICATION, environment-default)
         /// </summary>
         [Output("scope")]
         public Output<string> Scope { get; private set; } = null!;
@@ -108,7 +108,7 @@ namespace Pulumiverse.Dynatrace
         public Input<bool> IgnoreRequestErrorsInApdexCalculation { get; set; } = null!;
 
         /// <summary>
-        /// The scope of this setting (APPLICATION)
+        /// The scope of this setting (APPLICATION, environment-default)
         /// </summary>
         [Input("scope", required: true)]
         public Input<string> Scope { get; set; } = null!;
@@ -134,7 +134,7 @@ namespace Pulumiverse.Dynatrace
         public Input<bool>? IgnoreRequestErrorsInApdexCalculation { get; set; }
 
         /// <summary>
-        /// The scope of this setting (APPLICATION)
+        /// The scope of this setting (APPLICATION, environment-default)
         /// </summary>
         [Input("scope")]
         public Input<string>? Scope { get; set; }

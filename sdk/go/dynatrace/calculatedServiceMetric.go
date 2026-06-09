@@ -89,10 +89,11 @@ import (
 //			if err != nil {
 //				return err
 //			}
-//			waitForRequestAttribute, err := time.NewSleep(ctx, "wait_for_request_attribute", &time.SleepArgs{
-//				CreateDuration: pulumi.String("10s"),
+//			waitForCreation, err := time.NewSleep(ctx, "wait_for_creation", &time.SleepArgs{
+//				CreateDuration: pulumi.String("15s"),
 //			}, pulumi.DependsOn([]pulumi.Resource{
 //				attribute,
+//				mzone,
 //			}))
 //			if err != nil {
 //				return err
@@ -129,7 +130,7 @@ import (
 //					RequestAttribute: attribute.Name,
 //				},
 //			}, pulumi.DependsOn([]pulumi.Resource{
-//				waitForRequestAttribute,
+//				waitForCreation,
 //			}))
 //			if err != nil {
 //				return err

@@ -7,7 +7,7 @@ import * as outputs from "./types/output";
 import * as utilities from "./utilities";
 
 /**
- * !> This resource API endpoint has been deprecated, please use dynatrace.SloV2 instead.
+ * > This resource API endpoint has been deprecated, please use dynatrace.SloV2 instead.
  *
  * > This resource requires the API token scopes **Read SLO** (`slo.read`) and **Write SLO** (`slo.write`)
  *

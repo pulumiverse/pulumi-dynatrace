@@ -687,6 +687,8 @@ func (m *module) Construct(ctx *pulumi.Context, name, typ, urn string) (r pulumi
 		r = &ProcessGroupRum{}
 	case "dynatrace:index/processGroupSimpleDetection:ProcessGroupSimpleDetection":
 		r = &ProcessGroupSimpleDetection{}
+	case "dynatrace:index/processGroupingRules:ProcessGroupingRules":
+		r = &ProcessGroupingRules{}
 	case "dynatrace:index/processMonitoring:ProcessMonitoring":
 		r = &ProcessMonitoring{}
 	case "dynatrace:index/processMonitoringRule:ProcessMonitoringRule":
@@ -2577,6 +2579,11 @@ func init() {
 	pulumi.RegisterResourceModule(
 		"dynatrace",
 		"index/processGroupSimpleDetection",
+		&module{version},
+	)
+	pulumi.RegisterResourceModule(
+		"dynatrace",
+		"index/processGroupingRules",
 		&module{version},
 	)
 	pulumi.RegisterResourceModule(

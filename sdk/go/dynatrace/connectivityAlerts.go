@@ -34,18 +34,21 @@ import (
 // import (
 //
 //	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-//	"github.com/pulumi/pulumi/sdk/v3/go/pulumi/config"
 //	"github.com/pulumiverse/pulumi-dynatrace/sdk/go/dynatrace"
 //
 // )
 //
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
-//			cfg := config.New(ctx, "")
-//			PROCESS_GROUP_ID := cfg.Require("PROCESS_GROUP_ID")
-//			_, err := dynatrace.NewConnectivityAlerts(ctx, "alert", &dynatrace.ConnectivityAlertsArgs{
+//			processGroup, err := dynatrace.GetEntity(ctx, &dynatrace.GetEntityArgs{
+//				EntitySelector: pulumi.StringRef("type(\"PROCESS_GROUP\")"),
+//			}, nil)
+//			if err != nil {
+//				return err
+//			}
+//			_, err = dynatrace.NewConnectivityAlerts(ctx, "alert", &dynatrace.ConnectivityAlertsArgs{
 //				ConnectivityAlerts: pulumi.Bool(false),
-//				ProcessGroupId:     pulumi.String(pulumi.String(PROCESS_GROUP_ID)),
+//				ProcessGroupId:     pulumi.String(pulumi.String(processGroup.Id)),
 //			})
 //			if err != nil {
 //				return err

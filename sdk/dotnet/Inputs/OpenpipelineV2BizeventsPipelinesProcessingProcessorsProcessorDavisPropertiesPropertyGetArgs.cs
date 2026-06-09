@@ -14,16 +14,22 @@ namespace Pulumiverse.Dynatrace.Inputs
     public sealed class OpenpipelineV2BizeventsPipelinesProcessingProcessorsProcessorDavisPropertiesPropertyGetArgs : global::Pulumi.ResourceArgs
     {
         /// <summary>
-        /// no documentation available
+        /// No documentation available
         /// </summary>
         [Input("key", required: true)]
         public Input<string> Key { get; set; } = null!;
 
         /// <summary>
-        /// no documentation available
+        /// Strategy for field extraction. Possible values: `Equals`, `startsWith`
         /// </summary>
-        [Input("value", required: true)]
-        public Input<string> Value { get; set; } = null!;
+        [Input("strategy")]
+        public Input<string>? Strategy { get; set; }
+
+        /// <summary>
+        /// No documentation available
+        /// </summary>
+        [Input("value")]
+        public Input<string>? Value { get; set; }
 
         public OpenpipelineV2BizeventsPipelinesProcessingProcessorsProcessorDavisPropertiesPropertyGetArgs()
         {

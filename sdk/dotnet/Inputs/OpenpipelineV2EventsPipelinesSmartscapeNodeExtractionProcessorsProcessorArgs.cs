@@ -50,7 +50,7 @@ namespace Pulumiverse.Dynatrace.Inputs
         public Input<Inputs.OpenpipelineV2EventsPipelinesSmartscapeNodeExtractionProcessorsProcessorDavisArgs>? Davis { get; set; }
 
         /// <summary>
-        /// no documentation available
+        /// No documentation available
         /// </summary>
         [Input("description", required: true)]
         public Input<string> Description { get; set; } = null!;
@@ -84,6 +84,12 @@ namespace Pulumiverse.Dynatrace.Inputs
         /// </summary>
         [Input("fieldsRename")]
         public Input<Inputs.OpenpipelineV2EventsPipelinesSmartscapeNodeExtractionProcessorsProcessorFieldsRenameArgs>? FieldsRename { get; set; }
+
+        /// <summary>
+        /// Geo lookup processor attributes
+        /// </summary>
+        [Input("geoLookup")]
+        public Input<Inputs.OpenpipelineV2EventsPipelinesSmartscapeNodeExtractionProcessorsProcessorGeoLookupArgs>? GeoLookup { get; set; }
 
         /// <summary>
         /// Histogram metric processor attributes
@@ -170,7 +176,7 @@ namespace Pulumiverse.Dynatrace.Inputs
         public Input<Inputs.OpenpipelineV2EventsPipelinesSmartscapeNodeExtractionProcessorsProcessorTechnologyArgs>? Technology { get; set; }
 
         /// <summary>
-        /// Processor type. Possible values: `azureLogForwarding`, `Bizevent`, `bucketAssignment`, `costAllocation`, `counterMetric`, `Davis`, `Dql`, `Drop`, `fieldsAdd`, `fieldsRemove`, `fieldsRename`, `histogramMetric`, `noStorage`, `productAllocation`, `samplingAwareCounterMetric`, `samplingAwareHistogramMetric`, `samplingAwareValueMetric`, `sdlcEvent`, `securityContext`, `securityEvent`, `smartscapeEdge`, `smartscapeNode`, `Technology`, `valueMetric`
+        /// Processor type. Possible values: `azureLogForwarding`, `Bizevent`, `bucketAssignment`, `costAllocation`, `counterMetric`, `Davis`, `Dql`, `Drop`, `fieldsAdd`, `fieldsRemove`, `fieldsRename`, `geoLookup`, `histogramMetric`, `noStorage`, `productAllocation`, `samplingAwareCounterMetric`, `samplingAwareHistogramMetric`, `samplingAwareValueMetric`, `sdlcEvent`, `securityContext`, `securityEvent`, `smartscapeEdge`, `smartscapeNode`, `Technology`, `valueMetric`
         /// </summary>
         [Input("type", required: true)]
         public Input<string> Type { get; set; } = null!;

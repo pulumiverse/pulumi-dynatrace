@@ -14,7 +14,7 @@ namespace Pulumiverse.Dynatrace.Inputs
     public sealed class MetricEventsQueryDefinitionGetArgs : global::Pulumi.ResourceArgs
     {
         /// <summary>
-        /// Possible Values: `AVG`, `COUNT`, `MAX`, `MEDIAN`, `MIN`, `PERCENTILE90`, `SUM`, `VALUE`
+        /// Possible values: `AVG`, `COUNT`, `MAX`, `MEDIAN`, `MIN`, `PERCENTILE90`, `SUM`, `VALUE`
         /// </summary>
         [Input("aggregation")]
         public Input<string>? Aggregation { get; set; }
@@ -56,7 +56,7 @@ namespace Pulumiverse.Dynatrace.Inputs
         public Input<int>? QueryOffset { get; set; }
 
         /// <summary>
-        /// Possible Values: `METRIC_KEY`, `METRIC_SELECTOR`
+        /// Possible values: `METRIC_KEY`, `METRIC_SELECTOR`
         /// </summary>
         [Input("type", required: true)]
         public Input<string> Type { get; set; } = null!;

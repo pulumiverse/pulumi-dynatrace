@@ -19,7 +19,7 @@ namespace Pulumiverse.Dynatrace.Outputs
         /// </summary>
         public readonly string MetadataKey;
         /// <summary>
-        /// no documentation available
+        /// No documentation available
         /// </summary>
         public readonly string MetadataValue;
 

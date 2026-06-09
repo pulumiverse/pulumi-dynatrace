@@ -18,6 +18,29 @@ import * as utilities from "./utilities";
  * - `terraform-provider-dynatrace -export dynatrace.BuiltinProcessMonitoring` downloads all existing built-in process monitoring rules
  *
  * The full documentation of the export feature is available [here](https://dt-url.net/h203qmc).
+ *
+ * ## Resource Example Usage
+ *
+ * ```typescript
+ * import * as pulumi from "@pulumi/pulumi";
+ * import * as dynatrace from "@pulumiverse/dynatrace";
+ *
+ * const monitoring = new dynatrace.BuiltinProcessMonitoring("monitoring", {
+ *     hostGroupId: "environment",
+ *     aspnetcore: false,
+ *     cfAppsmanagerjs: false,
+ *     container: false,
+ *     dockerPauseamd64: false,
+ *     exeBbs: false,
+ *     exeCaddy: false,
+ *     exeSchedular: false,
+ *     exeSilkdaemon: false,
+ *     goStatic: false,
+ *     nodeNodegyp: false,
+ *     cmdForeverbinmonitor: false,
+ *     jmcActivegatecommandlinetool: false,
+ * });
+ * ```
  */
 export class BuiltinProcessMonitoring extends pulumi.CustomResource {
     /**
@@ -316,6 +339,10 @@ export class BuiltinProcessMonitoring extends pulumi.CustomResource {
      */
     declare public readonly jarEclipseequinox: pulumi.Output<boolean | undefined>;
     /**
+     * Rule id: 85 - Do not monitor process if Java Main class contains 'ActiveGateCommandLineTool'
+     */
+    declare public readonly jmcActivegatecommandlinetool: pulumi.Output<boolean | undefined>;
+    /**
      * Rule id: 69 - Do not monitor processes if Kubernetes container name equals 'cassandra-operator'
      */
     declare public readonly k8sCassandraoperator: pulumi.Output<boolean | undefined>;
@@ -452,6 +479,7 @@ export class BuiltinProcessMonitoring extends pulumi.CustomResource {
             resourceInputs["hostGroupId"] = state?.hostGroupId;
             resourceInputs["jarDtibmmqconnector"] = state?.jarDtibmmqconnector;
             resourceInputs["jarEclipseequinox"] = state?.jarEclipseequinox;
+            resourceInputs["jmcActivegatecommandlinetool"] = state?.jmcActivegatecommandlinetool;
             resourceInputs["k8sCassandraoperator"] = state?.k8sCassandraoperator;
             resourceInputs["k8sContainerpod"] = state?.k8sContainerpod;
             resourceInputs["k8sNamespace"] = state?.k8sNamespace;
@@ -535,6 +563,7 @@ export class BuiltinProcessMonitoring extends pulumi.CustomResource {
             resourceInputs["hostGroupId"] = args?.hostGroupId;
             resourceInputs["jarDtibmmqconnector"] = args?.jarDtibmmqconnector;
             resourceInputs["jarEclipseequinox"] = args?.jarEclipseequinox;
+            resourceInputs["jmcActivegatecommandlinetool"] = args?.jmcActivegatecommandlinetool;
             resourceInputs["k8sCassandraoperator"] = args?.k8sCassandraoperator;
             resourceInputs["k8sContainerpod"] = args?.k8sContainerpod;
             resourceInputs["k8sNamespace"] = args?.k8sNamespace;
@@ -827,6 +856,10 @@ export interface BuiltinProcessMonitoringState {
      * Rule id: 57 - Do not monitor processes if Java JAR file begins with 'org.eclipse.equinox.launcher'
      */
     jarEclipseequinox?: pulumi.Input<boolean | undefined>;
+    /**
+     * Rule id: 85 - Do not monitor process if Java Main class contains 'ActiveGateCommandLineTool'
+     */
+    jmcActivegatecommandlinetool?: pulumi.Input<boolean | undefined>;
     /**
      * Rule id: 69 - Do not monitor processes if Kubernetes container name equals 'cassandra-operator'
      */
@@ -1157,6 +1190,10 @@ export interface BuiltinProcessMonitoringArgs {
      * Rule id: 57 - Do not monitor processes if Java JAR file begins with 'org.eclipse.equinox.launcher'
      */
     jarEclipseequinox?: pulumi.Input<boolean | undefined>;
+    /**
+     * Rule id: 85 - Do not monitor process if Java Main class contains 'ActiveGateCommandLineTool'
+     */
+    jmcActivegatecommandlinetool?: pulumi.Input<boolean | undefined>;
     /**
      * Rule id: 69 - Do not monitor processes if Kubernetes container name equals 'cassandra-operator'
      */

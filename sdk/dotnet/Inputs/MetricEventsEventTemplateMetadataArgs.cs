@@ -20,7 +20,7 @@ namespace Pulumiverse.Dynatrace.Inputs
         public Input<string> MetadataKey { get; set; } = null!;
 
         /// <summary>
-        /// no documentation available
+        /// No documentation available
         /// </summary>
         [Input("metadataValue", required: true)]
         public Input<string> MetadataValue { get; set; } = null!;

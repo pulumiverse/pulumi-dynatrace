@@ -5,6 +5,9 @@ import * as pulumi from "@pulumi/pulumi";
 import * as utilities from "./utilities";
 
 /**
+ * > **Warning** This resource has been deprecated in favor of `dynatrace.ProcessGroupingRules`.
+ * Dynatrace environment migration guide: https://docs.dynatrace.com/docs/observe/infrastructure-observability/process-groups/configuration/unified-process-grouping/process-grouping-rules-migration
+ *
  * > This resource requires the API token scopes **Read settings** (`settings.read`) and **Write settings** (`settings.write`)
  *
  * ## Dynatrace Documentation

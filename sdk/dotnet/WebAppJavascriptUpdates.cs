@@ -35,7 +35,7 @@ namespace Pulumiverse.Dynatrace
         public Output<string?> ApplicationId { get; private set; } = null!;
 
         /// <summary>
-        /// Possible Values: `CUSTOM`, `LATEST_IE7_10_SUPPORTED`, `LATEST_STABLE`, `PREVIOUS_STABLE`
+        /// Choose version. Possible values: `CUSTOM`, `LATEST_IE11_SUPPORTED`, `LATEST_IE7_10_SUPPORTED`, `LATEST_STABLE`, `PREVIOUS_STABLE`
         /// </summary>
         [Output("javascriptVersion")]
         public Output<string> JavascriptVersion { get; private set; } = null!;
@@ -94,7 +94,7 @@ namespace Pulumiverse.Dynatrace
         public Input<string>? ApplicationId { get; set; }
 
         /// <summary>
-        /// Possible Values: `CUSTOM`, `LATEST_IE7_10_SUPPORTED`, `LATEST_STABLE`, `PREVIOUS_STABLE`
+        /// Choose version. Possible values: `CUSTOM`, `LATEST_IE11_SUPPORTED`, `LATEST_IE7_10_SUPPORTED`, `LATEST_STABLE`, `PREVIOUS_STABLE`
         /// </summary>
         [Input("javascriptVersion", required: true)]
         public Input<string> JavascriptVersion { get; set; } = null!;
@@ -114,7 +114,7 @@ namespace Pulumiverse.Dynatrace
         public Input<string>? ApplicationId { get; set; }
 
         /// <summary>
-        /// Possible Values: `CUSTOM`, `LATEST_IE7_10_SUPPORTED`, `LATEST_STABLE`, `PREVIOUS_STABLE`
+        /// Choose version. Possible values: `CUSTOM`, `LATEST_IE11_SUPPORTED`, `LATEST_IE7_10_SUPPORTED`, `LATEST_STABLE`, `PREVIOUS_STABLE`
         /// </summary>
         [Input("javascriptVersion")]
         public Input<string>? JavascriptVersion { get; set; }

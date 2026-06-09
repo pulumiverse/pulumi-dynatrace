@@ -107,7 +107,7 @@ class OneagentDefaultVersion(pulumi.CustomResource):
                  revision: pulumi.Input[Optional[_builtins.str]] = None,
                  __props__=None):
         """
-        !> This resource API endpoint has been deprecated.
+        > This resource API endpoint has been deprecated.
 
 
         :param str resource_name: The name of the resource.
@@ -122,7 +122,7 @@ class OneagentDefaultVersion(pulumi.CustomResource):
                  args: OneagentDefaultVersionArgs,
                  opts: Optional[pulumi.ResourceOptions] = None):
         """
-        !> This resource API endpoint has been deprecated.
+        > This resource API endpoint has been deprecated.
 
 
         :param str resource_name: The name of the resource.

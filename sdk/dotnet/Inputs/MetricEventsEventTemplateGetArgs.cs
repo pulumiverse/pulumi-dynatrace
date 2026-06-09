@@ -26,7 +26,7 @@ namespace Pulumiverse.Dynatrace.Inputs
         public Input<string> Description { get; set; } = null!;
 
         /// <summary>
-        /// Possible Values: `AVAILABILITY`, `CUSTOM_ALERT`, `CUSTOM_ANNOTATION`, `CUSTOM_CONFIGURATION`, `CUSTOM_DEPLOYMENT`, `ERROR`, `INFO`, `MARKED_FOR_TERMINATION`, `RESOURCE`, `SLOWDOWN`, `WARNING`
+        /// The event type to trigger. Possible values: `AVAILABILITY`, `CUSTOM_ALERT`, `CUSTOM_ANNOTATION`, `CUSTOM_CONFIGURATION`, `CUSTOM_DEPLOYMENT`, `ERROR`, `INFO`, `MARKED_FOR_TERMINATION`, `RESOURCE`, `SLOWDOWN`, `WARNING`
         /// </summary>
         [Input("eventType", required: true)]
         public Input<string> EventType { get; set; } = null!;
@@ -35,7 +35,7 @@ namespace Pulumiverse.Dynatrace.Inputs
         private InputList<Inputs.MetricEventsEventTemplateMetadataGetArgs>? _metadatas;
 
         /// <summary>
-        /// Set of additional key-value properties to be attached to the triggered event.
+        /// Set of additional key-value properties to be attached to the triggered event. You can retrieve the available property keys using the [Events API v2](https://dt-url.net/9622g1w).
         /// </summary>
         public InputList<Inputs.MetricEventsEventTemplateMetadataGetArgs> Metadatas
         {

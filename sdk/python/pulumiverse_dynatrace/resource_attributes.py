@@ -77,7 +77,7 @@ class ResourceAttributes(pulumi.CustomResource):
                  keys: pulumi.Input[Optional[Union['ResourceAttributesKeysArgs', 'ResourceAttributesKeysArgsDict']]] = None,
                  __props__=None):
         """
-        !> This resource API endpoint has been deprecated, please use AttributeAllowList and AttributeMasking instead.
+        > This resource API endpoint has been deprecated, please use AttributeAllowList and AttributeMasking instead.
 
         > This resource requires the API token scopes **Read settings** (`settings.read`) and **Write settings** (`settings.write`)
 
@@ -105,7 +105,7 @@ class ResourceAttributes(pulumi.CustomResource):
                  args: Optional[ResourceAttributesArgs] = None,
                  opts: Optional[pulumi.ResourceOptions] = None):
         """
-        !> This resource API endpoint has been deprecated, please use AttributeAllowList and AttributeMasking instead.
+        > This resource API endpoint has been deprecated, please use AttributeAllowList and AttributeMasking instead.
 
         > This resource requires the API token scopes **Read settings** (`settings.read`) and **Write settings** (`settings.write`)
 

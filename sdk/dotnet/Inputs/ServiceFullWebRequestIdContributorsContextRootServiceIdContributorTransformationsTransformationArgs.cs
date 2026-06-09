@@ -14,37 +14,37 @@ namespace Pulumiverse.Dynatrace.Inputs
     public sealed class ServiceFullWebRequestIdContributorsContextRootServiceIdContributorTransformationsTransformationArgs : global::Pulumi.ResourceArgs
     {
         /// <summary>
-        /// include hexadecimal numbers
+        /// Whether to also remove hexadecimal numbers (sequences of at least `minDigitCount` hexadecimal digits preceded by '0x'). It is used only when the transformation type is `REMOVE_NUMBERS`.
         /// </summary>
         [Input("includeHexNumbers")]
         public Input<bool>? IncludeHexNumbers { get; set; }
 
         /// <summary>
-        /// min digit count
+        /// The minimum number of digits that a numeric sequence must have to be removed. It is used only when the transformation type is `REMOVE_NUMBERS`.
         /// </summary>
         [Input("minDigitCount")]
         public Input<int>? MinDigitCount { get; set; }
 
         /// <summary>
-        /// no documentation available
+        /// The part of the text that serves as a reference point for the transformation. Its use depends on the transformation type.
         /// </summary>
         [Input("prefix")]
         public Input<string>? Prefix { get; set; }
 
         /// <summary>
-        /// replacement
+        /// The text that replaces the part between `Prefix` and `Suffix`. It is used only when the transformation type is `REPLACE_BETWEEN`.
         /// </summary>
         [Input("replacementValue")]
         public Input<string>? ReplacementValue { get; set; }
 
         /// <summary>
-        /// no documentation available
+        /// The part of the text that serves as a reference point for the transformation. Its use depends on the transformation type.
         /// </summary>
         [Input("suffix")]
         public Input<string>? Suffix { get; set; }
 
         /// <summary>
-        /// Possible Values: `BEFORE`, `REMOVE_CREDIT_CARDS`, `REMOVE_IBANS`, `REMOVE_IPS`, `REMOVE_NUMBERS`, `REPLACE_BETWEEN`
+        /// Defines what kind of transformation will be applied on the original value. Possible values: `BEFORE`, `REMOVE_CREDIT_CARDS`, `REMOVE_IBANS`, `REMOVE_IPS`, `REMOVE_NUMBERS`, `REPLACE_BETWEEN`
         /// </summary>
         [Input("transformationType", required: true)]
         public Input<string> TransformationType { get; set; } = null!;

@@ -14,13 +14,13 @@ namespace Pulumiverse.Dynatrace.Inputs
     public sealed class OwnershipTeamsLinksLinkArgs : global::Pulumi.ResourceArgs
     {
         /// <summary>
-        /// Possible Values: `DASHBOARD`, `DOCUMENTATION`, `HEALTH_APP`, `REPOSITORY`, `RUNBOOK`, `URL`, `WIKI`
+        /// Type. Possible values: `DASHBOARD`, `DOCUMENTATION`, `HEALTH_APP`, `REPOSITORY`, `RUNBOOK`, `URL`, `WIKI`
         /// </summary>
         [Input("linkType", required: true)]
         public Input<string> LinkType { get; set; } = null!;
 
         /// <summary>
-        /// no documentation available
+        /// No documentation available
         /// </summary>
         [Input("url", required: true)]
         public Input<string> Url { get; set; } = null!;

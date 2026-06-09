@@ -67,9 +67,9 @@ namespace Pulumiverse.Dynatrace
         /// <summary>
         /// The region code of the location. 
         /// 
-        ///  For the [USA](https://dt-url.net/iso3166us) or [Canada](https://dt-url.net/iso3166ca) use ISO 3166-2 state codes without `US-` or `CA-` prefix. 
+        ///    For the [USA](https://dt-url.net/iso3166us) or [Canada](https://dt-url.net/iso3166ca) use ISO 3166-2 state codes without `US-` or `CA-` prefix. 
         /// 
-        ///  For the rest of the world use [FIPS 10-4 codes](https://dt-url.net/fipscodes) without country prefix.
+        ///    For the rest of the world use [FIPS 10-4 codes](https://dt-url.net/fipscodes) without country prefix.
         /// </summary>
         [Output("regionCode")]
         public Output<string?> RegionCode { get; private set; } = null!;
@@ -160,9 +160,9 @@ namespace Pulumiverse.Dynatrace
         /// <summary>
         /// The region code of the location. 
         /// 
-        ///  For the [USA](https://dt-url.net/iso3166us) or [Canada](https://dt-url.net/iso3166ca) use ISO 3166-2 state codes without `US-` or `CA-` prefix. 
+        ///    For the [USA](https://dt-url.net/iso3166us) or [Canada](https://dt-url.net/iso3166ca) use ISO 3166-2 state codes without `US-` or `CA-` prefix. 
         /// 
-        ///  For the rest of the world use [FIPS 10-4 codes](https://dt-url.net/fipscodes) without country prefix.
+        ///    For the rest of the world use [FIPS 10-4 codes](https://dt-url.net/fipscodes) without country prefix.
         /// </summary>
         [Input("regionCode")]
         public Input<string>? RegionCode { get; set; }
@@ -214,9 +214,9 @@ namespace Pulumiverse.Dynatrace
         /// <summary>
         /// The region code of the location. 
         /// 
-        ///  For the [USA](https://dt-url.net/iso3166us) or [Canada](https://dt-url.net/iso3166ca) use ISO 3166-2 state codes without `US-` or `CA-` prefix. 
+        ///    For the [USA](https://dt-url.net/iso3166us) or [Canada](https://dt-url.net/iso3166ca) use ISO 3166-2 state codes without `US-` or `CA-` prefix. 
         /// 
-        ///  For the rest of the world use [FIPS 10-4 codes](https://dt-url.net/fipscodes) without country prefix.
+        ///    For the rest of the world use [FIPS 10-4 codes](https://dt-url.net/fipscodes) without country prefix.
         /// </summary>
         [Input("regionCode")]
         public Input<string>? RegionCode { get; set; }

@@ -28,7 +28,7 @@ import (
 type WebAppBeaconOrigins struct {
 	pulumi.CustomResourceState
 
-	// Possible Values: `CONTAINS`, `ENDS_WITH`, `EQUALS`, `STARTS_WITH`
+	// Matcher. Possible values: `CONTAINS`, `ENDS_WITH`, `EQUALS`, `STARTS_WITH`
 	Matcher pulumi.StringOutput `pulumi:"matcher"`
 	// Pattern
 	Pattern pulumi.StringOutput `pulumi:"pattern"`
@@ -70,14 +70,14 @@ func GetWebAppBeaconOrigins(ctx *pulumi.Context,
 
 // Input properties used for looking up and filtering WebAppBeaconOrigins resources.
 type webAppBeaconOriginsState struct {
-	// Possible Values: `CONTAINS`, `ENDS_WITH`, `EQUALS`, `STARTS_WITH`
+	// Matcher. Possible values: `CONTAINS`, `ENDS_WITH`, `EQUALS`, `STARTS_WITH`
 	Matcher *string `pulumi:"matcher"`
 	// Pattern
 	Pattern *string `pulumi:"pattern"`
 }
 
 type WebAppBeaconOriginsState struct {
-	// Possible Values: `CONTAINS`, `ENDS_WITH`, `EQUALS`, `STARTS_WITH`
+	// Matcher. Possible values: `CONTAINS`, `ENDS_WITH`, `EQUALS`, `STARTS_WITH`
 	Matcher pulumi.StringPtrInput
 	// Pattern
 	Pattern pulumi.StringPtrInput
@@ -88,7 +88,7 @@ func (WebAppBeaconOriginsState) ElementType() reflect.Type {
 }
 
 type webAppBeaconOriginsArgs struct {
-	// Possible Values: `CONTAINS`, `ENDS_WITH`, `EQUALS`, `STARTS_WITH`
+	// Matcher. Possible values: `CONTAINS`, `ENDS_WITH`, `EQUALS`, `STARTS_WITH`
 	Matcher string `pulumi:"matcher"`
 	// Pattern
 	Pattern string `pulumi:"pattern"`
@@ -96,7 +96,7 @@ type webAppBeaconOriginsArgs struct {
 
 // The set of arguments for constructing a WebAppBeaconOrigins resource.
 type WebAppBeaconOriginsArgs struct {
-	// Possible Values: `CONTAINS`, `ENDS_WITH`, `EQUALS`, `STARTS_WITH`
+	// Matcher. Possible values: `CONTAINS`, `ENDS_WITH`, `EQUALS`, `STARTS_WITH`
 	Matcher pulumi.StringInput
 	// Pattern
 	Pattern pulumi.StringInput
@@ -189,7 +189,7 @@ func (o WebAppBeaconOriginsOutput) ToWebAppBeaconOriginsOutputWithContext(ctx co
 	return o
 }
 
-// Possible Values: `CONTAINS`, `ENDS_WITH`, `EQUALS`, `STARTS_WITH`
+// Matcher. Possible values: `CONTAINS`, `ENDS_WITH`, `EQUALS`, `STARTS_WITH`
 func (o WebAppBeaconOriginsOutput) Matcher() pulumi.StringOutput {
 	return o.ApplyT(func(v *WebAppBeaconOrigins) pulumi.StringOutput { return v.Matcher }).(pulumi.StringOutput)
 }

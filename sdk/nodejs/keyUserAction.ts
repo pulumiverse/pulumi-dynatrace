@@ -18,6 +18,26 @@ import * as utilities from "./utilities";
  * - `terraform-provider-dynatrace -export dynatrace.KeyUserAction` downloads all existing Key User Actions
  *
  * The full documentation of the export feature is available [here](https://dt-url.net/h203qmc).
+ *
+ * ## Resource Example Usage
+ *
+ * The following example showcases how to manage Key User Actions separately from Web Applications using a dedicated resource.
+ * While it is still possible to embed `keyUserActions` into the resource `dynatrace.WebApplication`, doing so is discouraged.
+ *
+ * ```typescript
+ * import * as pulumi from "@pulumi/pulumi";
+ * import * as dynatrace from "@pulumiverse/dynatrace";
+ *
+ * const webApplication = dynatrace.getApplication({
+ *     name: "Web Application",
+ * });
+ * const acc = new dynatrace.KeyUserAction("acc", {
+ *     applicationId: webApplication.then(webApplication => webApplication.id),
+ *     domain: "120.0.0.1",
+ *     name: "Loading of page /custom",
+ *     type: "Load",
+ * });
+ * ```
  */
 export class KeyUserAction extends pulumi.CustomResource {
     /**

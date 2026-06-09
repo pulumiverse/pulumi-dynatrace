@@ -184,15 +184,23 @@ import (
 //									Dimensions: &dynatrace.OpenpipelineV2SpansPipelinesMetricExtractionProcessorsProcessorCounterMetricDimensionsArgs{
 //										Dimensions: dynatrace.OpenpipelineV2SpansPipelinesMetricExtractionProcessorsProcessorCounterMetricDimensionsDimensionArray{
 //											&dynatrace.OpenpipelineV2SpansPipelinesMetricExtractionProcessorsProcessorCounterMetricDimensionsDimensionArgs{
+//												ExtractionType:  pulumi.String("field"),
+//												Strategy:        pulumi.String("equals"),
 //												SourceFieldName: pulumi.String("dt.cost.costcenter"),
 //											},
 //											&dynatrace.OpenpipelineV2SpansPipelinesMetricExtractionProcessorsProcessorCounterMetricDimensionsDimensionArgs{
+//												ExtractionType:  pulumi.String("field"),
+//												Strategy:        pulumi.String("equals"),
 //												SourceFieldName: pulumi.String("dt.cost.product"),
 //											},
 //											&dynatrace.OpenpipelineV2SpansPipelinesMetricExtractionProcessorsProcessorCounterMetricDimensionsDimensionArgs{
+//												ExtractionType:  pulumi.String("field"),
+//												Strategy:        pulumi.String("equals"),
 //												SourceFieldName: pulumi.String("dt.security_context"),
 //											},
 //											&dynatrace.OpenpipelineV2SpansPipelinesMetricExtractionProcessorsProcessorCounterMetricDimensionsDimensionArgs{
+//												ExtractionType:       pulumi.String("field"),
+//												Strategy:             pulumi.String("equals"),
 //												SourceFieldName:      pulumi.String("record.category"),
 //												DestinationFieldName: pulumi.String("warning_category"),
 //											},
@@ -213,15 +221,23 @@ import (
 //									Dimensions: &dynatrace.OpenpipelineV2SpansPipelinesMetricExtractionProcessorsProcessorValueMetricDimensionsArgs{
 //										Dimensions: dynatrace.OpenpipelineV2SpansPipelinesMetricExtractionProcessorsProcessorValueMetricDimensionsDimensionArray{
 //											&dynatrace.OpenpipelineV2SpansPipelinesMetricExtractionProcessorsProcessorValueMetricDimensionsDimensionArgs{
+//												ExtractionType:  pulumi.String("field"),
+//												Strategy:        pulumi.String("equals"),
 //												SourceFieldName: pulumi.String("dt.cost.costcenter"),
 //											},
 //											&dynatrace.OpenpipelineV2SpansPipelinesMetricExtractionProcessorsProcessorValueMetricDimensionsDimensionArgs{
+//												ExtractionType:  pulumi.String("field"),
+//												Strategy:        pulumi.String("equals"),
 //												SourceFieldName: pulumi.String("dt.cost.product"),
 //											},
 //											&dynatrace.OpenpipelineV2SpansPipelinesMetricExtractionProcessorsProcessorValueMetricDimensionsDimensionArgs{
+//												ExtractionType:  pulumi.String("field"),
+//												Strategy:        pulumi.String("equals"),
 //												SourceFieldName: pulumi.String("dt.security_context"),
 //											},
 //											&dynatrace.OpenpipelineV2SpansPipelinesMetricExtractionProcessorsProcessorValueMetricDimensionsDimensionArgs{
+//												ExtractionType:       pulumi.String("field"),
+//												Strategy:             pulumi.String("equals"),
 //												SourceFieldName:      pulumi.String("record.category"),
 //												DestinationFieldName: pulumi.String("warning_category"),
 //											},
@@ -308,7 +324,7 @@ type OpenpipelineV2SpansPipelines struct {
 	Davis OpenpipelineV2SpansPipelinesDavisPtrOutput `pulumi:"davis"`
 	// Display name
 	DisplayName pulumi.StringOutput `pulumi:"displayName"`
-	// Group role. Possible values: `compositionPipeline`, `memberPipeline`
+	// Group role. Possible values: `basePipeline`, `compositionPipeline`, `memberPipeline`
 	GroupRole pulumi.StringPtrOutput `pulumi:"groupRole"`
 	// Pipeline metadata list
 	MetadataList OpenpipelineV2SpansPipelinesMetadataListPtrOutput `pulumi:"metadataList"`
@@ -376,7 +392,7 @@ type openpipelineV2SpansPipelinesState struct {
 	Davis *OpenpipelineV2SpansPipelinesDavis `pulumi:"davis"`
 	// Display name
 	DisplayName *string `pulumi:"displayName"`
-	// Group role. Possible values: `compositionPipeline`, `memberPipeline`
+	// Group role. Possible values: `basePipeline`, `compositionPipeline`, `memberPipeline`
 	GroupRole *string `pulumi:"groupRole"`
 	// Pipeline metadata list
 	MetadataList *OpenpipelineV2SpansPipelinesMetadataList `pulumi:"metadataList"`
@@ -409,7 +425,7 @@ type OpenpipelineV2SpansPipelinesState struct {
 	Davis OpenpipelineV2SpansPipelinesDavisPtrInput
 	// Display name
 	DisplayName pulumi.StringPtrInput
-	// Group role. Possible values: `compositionPipeline`, `memberPipeline`
+	// Group role. Possible values: `basePipeline`, `compositionPipeline`, `memberPipeline`
 	GroupRole pulumi.StringPtrInput
 	// Pipeline metadata list
 	MetadataList OpenpipelineV2SpansPipelinesMetadataListPtrInput
@@ -446,7 +462,7 @@ type openpipelineV2SpansPipelinesArgs struct {
 	Davis *OpenpipelineV2SpansPipelinesDavis `pulumi:"davis"`
 	// Display name
 	DisplayName string `pulumi:"displayName"`
-	// Group role. Possible values: `compositionPipeline`, `memberPipeline`
+	// Group role. Possible values: `basePipeline`, `compositionPipeline`, `memberPipeline`
 	GroupRole *string `pulumi:"groupRole"`
 	// Pipeline metadata list
 	MetadataList *OpenpipelineV2SpansPipelinesMetadataList `pulumi:"metadataList"`
@@ -480,7 +496,7 @@ type OpenpipelineV2SpansPipelinesArgs struct {
 	Davis OpenpipelineV2SpansPipelinesDavisPtrInput
 	// Display name
 	DisplayName pulumi.StringInput
-	// Group role. Possible values: `compositionPipeline`, `memberPipeline`
+	// Group role. Possible values: `basePipeline`, `compositionPipeline`, `memberPipeline`
 	GroupRole pulumi.StringPtrInput
 	// Pipeline metadata list
 	MetadataList OpenpipelineV2SpansPipelinesMetadataListPtrInput
@@ -618,7 +634,7 @@ func (o OpenpipelineV2SpansPipelinesOutput) DisplayName() pulumi.StringOutput {
 	return o.ApplyT(func(v *OpenpipelineV2SpansPipelines) pulumi.StringOutput { return v.DisplayName }).(pulumi.StringOutput)
 }
 
-// Group role. Possible values: `compositionPipeline`, `memberPipeline`
+// Group role. Possible values: `basePipeline`, `compositionPipeline`, `memberPipeline`
 func (o OpenpipelineV2SpansPipelinesOutput) GroupRole() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v *OpenpipelineV2SpansPipelines) pulumi.StringPtrOutput { return v.GroupRole }).(pulumi.StringPtrOutput)
 }

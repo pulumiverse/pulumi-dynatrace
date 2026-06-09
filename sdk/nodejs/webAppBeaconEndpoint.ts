@@ -48,11 +48,11 @@ export class WebAppBeaconEndpoint extends pulumi.CustomResource {
     }
 
     /**
-     * The scope of this setting
+     * The scope of this settings. If the settings should cover the whole environment, just don't specify any scope.
      */
     declare public readonly applicationId: pulumi.Output<string>;
     /**
-     * Possible Values: `ACTIVEGATE`, `DEFAULT_CONFIG`, `ONEAGENT`
+     * Type. Possible values: `ACTIVEGATE`, `DEFAULT_CONFIG`, `ONEAGENT`
      */
     declare public readonly type: pulumi.Output<string>;
     /**
@@ -104,11 +104,11 @@ export class WebAppBeaconEndpoint extends pulumi.CustomResource {
  */
 export interface WebAppBeaconEndpointState {
     /**
-     * The scope of this setting
+     * The scope of this settings. If the settings should cover the whole environment, just don't specify any scope.
      */
     applicationId?: pulumi.Input<string | undefined>;
     /**
-     * Possible Values: `ACTIVEGATE`, `DEFAULT_CONFIG`, `ONEAGENT`
+     * Type. Possible values: `ACTIVEGATE`, `DEFAULT_CONFIG`, `ONEAGENT`
      */
     type?: pulumi.Input<string | undefined>;
     /**
@@ -126,11 +126,11 @@ export interface WebAppBeaconEndpointState {
  */
 export interface WebAppBeaconEndpointArgs {
     /**
-     * The scope of this setting
+     * The scope of this settings. If the settings should cover the whole environment, just don't specify any scope.
      */
     applicationId: pulumi.Input<string>;
     /**
-     * Possible Values: `ACTIVEGATE`, `DEFAULT_CONFIG`, `ONEAGENT`
+     * Type. Possible values: `ACTIVEGATE`, `DEFAULT_CONFIG`, `ONEAGENT`
      */
     type: pulumi.Input<string>;
     /**

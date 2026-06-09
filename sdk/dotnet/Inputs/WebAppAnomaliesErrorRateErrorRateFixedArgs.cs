@@ -20,7 +20,7 @@ namespace Pulumiverse.Dynatrace.Inputs
         public Input<double> ErrorRateReqPerMin { get; set; } = null!;
 
         /// <summary>
-        /// Possible Values: `Low`, `Medium`, `High`
+        /// Sensitivity. Possible values: `High`, `Low`, `Medium`
         /// </summary>
         [Input("errorRateSensitivity", required: true)]
         public Input<string> ErrorRateSensitivity { get; set; } = null!;

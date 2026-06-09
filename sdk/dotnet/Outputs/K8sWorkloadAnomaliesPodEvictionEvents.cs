@@ -15,13 +15,21 @@ namespace Pulumiverse.Dynatrace.Outputs
     public sealed class K8sWorkloadAnomaliesPodEvictionEvents
     {
         /// <summary>
+        /// Alert if
+        /// </summary>
+        public readonly Outputs.K8sWorkloadAnomaliesPodEvictionEventsConfiguration? Configuration;
+        /// <summary>
         /// This setting is enabled (`True`) or disabled (`False`)
         /// </summary>
         public readonly bool Enabled;
 
         [OutputConstructor]
-        private K8sWorkloadAnomaliesPodEvictionEvents(bool enabled)
+        private K8sWorkloadAnomaliesPodEvictionEvents(
+            Outputs.K8sWorkloadAnomaliesPodEvictionEventsConfiguration? configuration,
+
+            bool enabled)
         {
+            Configuration = configuration;
             Enabled = enabled;
         }
     }

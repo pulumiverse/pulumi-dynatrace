@@ -143,7 +143,7 @@ class ApplicationAnomalies(pulumi.CustomResource):
                  traffic: pulumi.Input[Optional[Union['ApplicationAnomaliesTrafficArgs', 'ApplicationAnomaliesTrafficArgsDict']]] = None,
                  __props__=None):
         """
-        !> This resource is utilizing an older API endpoint, please use WebAppAnomalies instead.
+        > This resource is utilizing an older API endpoint, please use WebAppAnomalies instead.
 
         > This resource requires the API token scopes **Read configuration** (`ReadConfig`) and **Write configuration** (`WriteConfig`)
 
@@ -173,7 +173,7 @@ class ApplicationAnomalies(pulumi.CustomResource):
                  args: Optional[ApplicationAnomaliesArgs] = None,
                  opts: Optional[pulumi.ResourceOptions] = None):
         """
-        !> This resource is utilizing an older API endpoint, please use WebAppAnomalies instead.
+        > This resource is utilizing an older API endpoint, please use WebAppAnomalies instead.
 
         > This resource requires the API token scopes **Read configuration** (`ReadConfig`) and **Write configuration** (`WriteConfig`)
 

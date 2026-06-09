@@ -14,7 +14,7 @@ namespace Pulumiverse.Dynatrace.Inputs
     public sealed class FailureDetectionRulesConditionsConditionPredicateArgs : global::Pulumi.ResourceArgs
     {
         /// <summary>
-        /// Case sensitive
+        /// If `True`, the string comparison is case-sensitive. Default: `False`.
         /// </summary>
         [Input("caseSensitive")]
         public Input<bool>? CaseSensitive { get; set; }
@@ -23,7 +23,7 @@ namespace Pulumiverse.Dynatrace.Inputs
         private InputList<string>? _managementZones;
 
         /// <summary>
-        /// Management zones
+        /// A set of management zone references. The rule matches if the service belongs to all specified management zones. Only applicable for predicate type `MANAGEMENT_ZONES_CONTAINS_ALL`.
         /// </summary>
         public InputList<string> ManagementZones
         {
@@ -32,7 +32,11 @@ namespace Pulumiverse.Dynatrace.Inputs
         }
 
         /// <summary>
-        /// Predicate type
+        /// The type of predicate to apply. Available types depend on the condition attribute:
+        ///  * `SERVICE_NAME` and `PG_NAME` support `STRING_EQUALS`, `STARTS_WITH`, `ENDS_WITH`, `CONTAINS`;
+        ///  * `SERVICE_TYPE` supports `SERVICE_TYPE_EQUALS`;
+        ///  * `SERVICE_MANAGEMENT_ZONE` supports `MANAGEMENT_ZONES_CONTAINS_ALL`;
+        ///  * `SERVICE_TAG` and `PG_TAG` support `TAG_EQUALS` and `TAG_KEY_EQUALS`.
         /// </summary>
         [Input("predicateType", required: true)]
         public Input<string> PredicateType { get; set; } = null!;
@@ -41,7 +45,7 @@ namespace Pulumiverse.Dynatrace.Inputs
         private InputList<string>? _serviceTypes;
 
         /// <summary>
-        /// Service types
+        /// A set of service types to match against. The rule matches if the service type is contained in this set. Only applicable for predicate type `SERVICE_TYPE_EQUALS`. Possible values: `CICS`, `CICSInteraction`, `CustomApplication`, `Database`, `EnterpriseServiceBus`, `External`, `IMS`, `IMSInteraction`, `Messaging`, `Method`, `Mobile`, `Process`, `QueueInteraction`, `QueueListener`, `RMI`, `RemoteCall`, `SaasVendor`, `WebRequest`, `WebService`, `WebSite`, `zOSConnect`
         /// </summary>
         public InputList<string> ServiceTypes
         {
@@ -53,7 +57,7 @@ namespace Pulumiverse.Dynatrace.Inputs
         private InputList<string>? _tagKeys;
 
         /// <summary>
-        /// Tag keys
+        /// A set of tag keys to match. The rule matches if the entity has tags with all specified keys, regardless of tag value. Only applicable for predicate type `TAG_KEY_EQUALS`.
         /// </summary>
         public InputList<string> TagKeys
         {
@@ -65,7 +69,7 @@ namespace Pulumiverse.Dynatrace.Inputs
         private InputList<string>? _tags;
 
         /// <summary>
-        /// Tags (exact match)
+        /// A set of tags to match exactly. The rule matches if the entity has all specified tags (both key and value must match). Only applicable for predicate type `TAG_EQUALS`.
         /// </summary>
         public InputList<string> Tags
         {
@@ -77,7 +81,7 @@ namespace Pulumiverse.Dynatrace.Inputs
         private InputList<string>? _textValues;
 
         /// <summary>
-        /// Names
+        /// A list of text values to match against. The rule matches if the attribute value matches any of these values according to the predicate type.
         /// </summary>
         public InputList<string> TextValues
         {

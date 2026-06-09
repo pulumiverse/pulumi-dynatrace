@@ -26,7 +26,7 @@ class WebAppResourceTypesArgs:
         """
         The set of arguments for constructing a WebAppResourceTypes resource.
 
-        :param pulumi.Input[_builtins.str] primary_resource_type: Possible Values: `CSS`, `IMAGE`, `OTHER`, `SCRIPT`
+        :param pulumi.Input[_builtins.str] primary_resource_type: The primary type of the resource. Possible values: `CSS`, `IMAGE`, `OTHER`, `SCRIPT`
         :param pulumi.Input[_builtins.str] regular_expression: The regular expression to detect the resource.
         :param pulumi.Input[_builtins.str] insert_after: Because this resource allows for ordering you may specify the ID of the resource instance that comes before this instance regarding order. If not specified when creating the setting will be added to the end of the list. If not specified during update the order will remain untouched
         :param pulumi.Input[_builtins.str] secondary_resource_type: The secondary type of the resource.
@@ -42,7 +42,7 @@ class WebAppResourceTypesArgs:
     @pulumi.getter(name="primaryResourceType")
     def primary_resource_type(self) -> pulumi.Input[_builtins.str]:
         """
-        Possible Values: `CSS`, `IMAGE`, `OTHER`, `SCRIPT`
+        The primary type of the resource. Possible values: `CSS`, `IMAGE`, `OTHER`, `SCRIPT`
         """
         return pulumi.get(self, "primary_resource_type")
 
@@ -98,7 +98,7 @@ class _WebAppResourceTypesState:
         Input properties used for looking up and filtering WebAppResourceTypes resources.
 
         :param pulumi.Input[_builtins.str] insert_after: Because this resource allows for ordering you may specify the ID of the resource instance that comes before this instance regarding order. If not specified when creating the setting will be added to the end of the list. If not specified during update the order will remain untouched
-        :param pulumi.Input[_builtins.str] primary_resource_type: Possible Values: `CSS`, `IMAGE`, `OTHER`, `SCRIPT`
+        :param pulumi.Input[_builtins.str] primary_resource_type: The primary type of the resource. Possible values: `CSS`, `IMAGE`, `OTHER`, `SCRIPT`
         :param pulumi.Input[_builtins.str] regular_expression: The regular expression to detect the resource.
         :param pulumi.Input[_builtins.str] secondary_resource_type: The secondary type of the resource.
         """
@@ -127,7 +127,7 @@ class _WebAppResourceTypesState:
     @pulumi.getter(name="primaryResourceType")
     def primary_resource_type(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
-        Possible Values: `CSS`, `IMAGE`, `OTHER`, `SCRIPT`
+        The primary type of the resource. Possible values: `CSS`, `IMAGE`, `OTHER`, `SCRIPT`
         """
         return pulumi.get(self, "primary_resource_type")
 
@@ -190,7 +190,7 @@ class WebAppResourceTypes(pulumi.CustomResource):
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[_builtins.str] insert_after: Because this resource allows for ordering you may specify the ID of the resource instance that comes before this instance regarding order. If not specified when creating the setting will be added to the end of the list. If not specified during update the order will remain untouched
-        :param pulumi.Input[_builtins.str] primary_resource_type: Possible Values: `CSS`, `IMAGE`, `OTHER`, `SCRIPT`
+        :param pulumi.Input[_builtins.str] primary_resource_type: The primary type of the resource. Possible values: `CSS`, `IMAGE`, `OTHER`, `SCRIPT`
         :param pulumi.Input[_builtins.str] regular_expression: The regular expression to detect the resource.
         :param pulumi.Input[_builtins.str] secondary_resource_type: The secondary type of the resource.
         """
@@ -274,7 +274,7 @@ class WebAppResourceTypes(pulumi.CustomResource):
         :param pulumi.Input[str] id: The unique provider ID of the resource to lookup.
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[_builtins.str] insert_after: Because this resource allows for ordering you may specify the ID of the resource instance that comes before this instance regarding order. If not specified when creating the setting will be added to the end of the list. If not specified during update the order will remain untouched
-        :param pulumi.Input[_builtins.str] primary_resource_type: Possible Values: `CSS`, `IMAGE`, `OTHER`, `SCRIPT`
+        :param pulumi.Input[_builtins.str] primary_resource_type: The primary type of the resource. Possible values: `CSS`, `IMAGE`, `OTHER`, `SCRIPT`
         :param pulumi.Input[_builtins.str] regular_expression: The regular expression to detect the resource.
         :param pulumi.Input[_builtins.str] secondary_resource_type: The secondary type of the resource.
         """
@@ -300,7 +300,7 @@ class WebAppResourceTypes(pulumi.CustomResource):
     @pulumi.getter(name="primaryResourceType")
     def primary_resource_type(self) -> pulumi.Output[_builtins.str]:
         """
-        Possible Values: `CSS`, `IMAGE`, `OTHER`, `SCRIPT`
+        The primary type of the resource. Possible values: `CSS`, `IMAGE`, `OTHER`, `SCRIPT`
         """
         return pulumi.get(self, "primary_resource_type")
 

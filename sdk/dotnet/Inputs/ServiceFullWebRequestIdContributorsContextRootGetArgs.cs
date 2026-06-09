@@ -14,13 +14,13 @@ namespace Pulumiverse.Dynatrace.Inputs
     public sealed class ServiceFullWebRequestIdContributorsContextRootGetArgs : global::Pulumi.ResourceArgs
     {
         /// <summary>
-        /// Transform this value before letting it contribute to the Service Id
+        /// When enabled, the context root contributes to the Service Id.
         /// </summary>
         [Input("enableIdContributor", required: true)]
         public Input<bool> EnableIdContributor { get; set; } = null!;
 
         /// <summary>
-        /// no documentation available
+        /// Choose how to transform the context root value before it contributes to the Service Id. Note that all of the Transformations are always applied. Transformations are applied in the order they are specified, and the output of the previous transformation is the input for the next one.
         /// </summary>
         [Input("serviceIdContributor")]
         public Input<Inputs.ServiceFullWebRequestIdContributorsContextRootServiceIdContributorGetArgs>? ServiceIdContributor { get; set; }

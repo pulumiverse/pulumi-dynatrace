@@ -15,19 +15,19 @@ namespace Pulumiverse.Dynatrace.Outputs
     public sealed class ManagementZoneV2RulesRuleDimensionRuleDimensionConditionsCondition
     {
         /// <summary>
-        /// Possible Values: `DIMENSION`, `LOG_FILE_NAME`, `METRIC_KEY`
+        /// Type. Possible values: `DIMENSION`, `LOG_FILE_NAME`, `METRIC_KEY`
         /// </summary>
         public readonly string ConditionType;
         /// <summary>
-        /// no documentation available
+        /// No documentation available
         /// </summary>
         public readonly string? Key;
         /// <summary>
-        /// Possible Values: `BEGINS_WITH`, `EQUALS`
+        /// Operator. Possible values: `BEGINS_WITH`, `EQUALS`
         /// </summary>
         public readonly string RuleMatcher;
         /// <summary>
-        /// no documentation available
+        /// No documentation available
         /// </summary>
         public readonly string Value;
 

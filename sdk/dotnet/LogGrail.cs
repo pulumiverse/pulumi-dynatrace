@@ -11,7 +11,7 @@ using Pulumi;
 namespace Pulumiverse.Dynatrace
 {
     /// <summary>
-    /// !&gt; This resource API endpoint has been deprecated since it is only meant to be used for the initial Logs powered by Grail activation.
+    /// &gt; This resource API endpoint has been deprecated since it is only meant to be used for the initial Logs powered by Grail activation.
     /// 
     /// &gt; This resource requires the API token scopes **Read settings** (`settings.read`) and **Write settings** (`settings.write`)
     /// 

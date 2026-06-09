@@ -14,13 +14,21 @@ namespace Pulumiverse.Dynatrace.Inputs
     public sealed class ServiceFullWebRequestConditionsConditionGetArgs : global::Pulumi.ResourceArgs
     {
         /// <summary>
-        /// Take the value of this attribute
+        /// The detected attribute that should be compared with the specified operation.
         /// </summary>
         [Input("attribute", required: true)]
         public Input<string> Attribute { get; set; } = null!;
 
         /// <summary>
-        /// Apply this operation
+        /// The type of comparison operation that should be applied to the detected attribute.. When using this field over the Settings API, it is stored as a string and must use one of the fixed compare-operation identifiers. The available subset depends on the selected `Attribute`.
+        /// 
+        ///   - `Exists`, `NotExists`
+        ///  - `BoolIsTrue`, `BoolIsFalse`
+        ///  - `TagEquals`, `TagKeyEquals`
+        ///  - `StringEquals`, `NotStringEquals`, `StringStartsWith`, `NotStringStartsWith`, `StringEndsWith`, `NotStringEndsWith`, `StringContains`, `NotStringContains`
+        ///  - `FrameworkEquals`, `NotFrameworkEquals`
+        ///  - `IpInRange`, `NotIpInRange`
+        ///  - `IntEquals`, `NotIntEquals`, `IntGreaterThan`, `IntLessThan`
         /// </summary>
         [Input("compareOperationType", required: true)]
         public Input<string> CompareOperationType { get; set; } = null!;
@@ -29,7 +37,9 @@ namespace Pulumiverse.Dynatrace.Inputs
         private InputList<string>? _frameworks;
 
         /// <summary>
-        /// Technology
+        /// The technology that should be compared with the detected attribute.
+        /// 
+        ///   Select one or more technologies. The condition matches if the detected attribute value equals (for `FrameworkEquals`) or does not equal (for `NotFrameworkEquals`) at least one of the selected technologies. Possible values: `AXIS`, `CXF`, `HESSIAN`, `JAX_WS_RI`, `JBOSS`, `JERSEY`, `PROGRESS`, `RESTEASY`, `RESTLET`, `SPRING`, `TIBCO`, `WEBLOGIC`, `WEBMETHODS`, `WEBSPHERE`, `WINK`
         /// </summary>
         public InputList<string> Frameworks
         {
@@ -44,7 +54,7 @@ namespace Pulumiverse.Dynatrace.Inputs
         public Input<bool>? IgnoreCase { get; set; }
 
         /// <summary>
-        /// Value
+        /// The integer value to compare the detected attribute with.
         /// </summary>
         [Input("intValue")]
         public Input<int>? IntValue { get; set; }
@@ -53,7 +63,7 @@ namespace Pulumiverse.Dynatrace.Inputs
         private InputList<int>? _intValues;
 
         /// <summary>
-        /// Values
+        /// If multiple values are specified, at least one of them must match for the condition to match.
         /// </summary>
         public InputList<int> IntValues
         {
@@ -62,13 +72,13 @@ namespace Pulumiverse.Dynatrace.Inputs
         }
 
         /// <summary>
-        /// From
+        /// The beginning of the IP range. The condition matches if the detected attribute value is greater than or equal to this value (for `IpInRange`) or less than this value (for `NotIpInRange`).
         /// </summary>
         [Input("ipRangeFrom")]
         public Input<string>? IpRangeFrom { get; set; }
 
         /// <summary>
-        /// To
+        /// The end of the IP range. The condition matches if the detected attribute value is less than or equal to this value (for `IpInRange`) or greater than this value (for `NotIpInRange`).
         /// </summary>
         [Input("ipRangeTo")]
         public Input<string>? IpRangeTo { get; set; }
@@ -77,7 +87,7 @@ namespace Pulumiverse.Dynatrace.Inputs
         private InputList<string>? _tagValues;
 
         /// <summary>
-        /// If multiple values are specified, at least one of them must match for the condition to match
+        /// If multiple values are specified, at least one of them must match for the condition to match.
         /// </summary>
         public InputList<string> TagValues
         {

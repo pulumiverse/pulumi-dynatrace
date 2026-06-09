@@ -44,7 +44,7 @@ class OpenpipelineV2LogsPipelinesArgs:
         :param pulumi.Input['OpenpipelineV2LogsPipelinesCostAllocationArgs'] cost_allocation: Cost allocation stage
         :param pulumi.Input['OpenpipelineV2LogsPipelinesDataExtractionArgs'] data_extraction: Data extraction stage
         :param pulumi.Input['OpenpipelineV2LogsPipelinesDavisArgs'] davis: Davis event extraction stage
-        :param pulumi.Input[_builtins.str] group_role: Group role. Possible values: `compositionPipeline`, `memberPipeline`
+        :param pulumi.Input[_builtins.str] group_role: Group role. Possible values: `basePipeline`, `compositionPipeline`, `memberPipeline`
         :param pulumi.Input['OpenpipelineV2LogsPipelinesMetadataListArgs'] metadata_list: Pipeline metadata list
         :param pulumi.Input['OpenpipelineV2LogsPipelinesMetricExtractionArgs'] metric_extraction: Metrics extraction stage
         :param pulumi.Input['OpenpipelineV2LogsPipelinesProcessingArgs'] processing: Processing stage
@@ -148,7 +148,7 @@ class OpenpipelineV2LogsPipelinesArgs:
     @pulumi.getter(name="groupRole")
     def group_role(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
-        Group role. Possible values: `compositionPipeline`, `memberPipeline`
+        Group role. Possible values: `basePipeline`, `compositionPipeline`, `memberPipeline`
         """
         return pulumi.get(self, "group_role")
 
@@ -291,7 +291,7 @@ class _OpenpipelineV2LogsPipelinesState:
         :param pulumi.Input['OpenpipelineV2LogsPipelinesDataExtractionArgs'] data_extraction: Data extraction stage
         :param pulumi.Input['OpenpipelineV2LogsPipelinesDavisArgs'] davis: Davis event extraction stage
         :param pulumi.Input[_builtins.str] display_name: Display name
-        :param pulumi.Input[_builtins.str] group_role: Group role. Possible values: `compositionPipeline`, `memberPipeline`
+        :param pulumi.Input[_builtins.str] group_role: Group role. Possible values: `basePipeline`, `compositionPipeline`, `memberPipeline`
         :param pulumi.Input['OpenpipelineV2LogsPipelinesMetadataListArgs'] metadata_list: Pipeline metadata list
         :param pulumi.Input['OpenpipelineV2LogsPipelinesMetricExtractionArgs'] metric_extraction: Metrics extraction stage
         :param pulumi.Input['OpenpipelineV2LogsPipelinesProcessingArgs'] processing: Processing stage
@@ -397,7 +397,7 @@ class _OpenpipelineV2LogsPipelinesState:
     @pulumi.getter(name="groupRole")
     def group_role(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
-        Group role. Possible values: `compositionPipeline`, `memberPipeline`
+        Group role. Possible values: `basePipeline`, `compositionPipeline`, `memberPipeline`
         """
         return pulumi.get(self, "group_role")
 
@@ -701,15 +701,23 @@ class OpenpipelineV2LogsPipelines(pulumi.CustomResource):
                                 "dimensions": {
                                     "dimensions": [
                                         {
+                                            "extraction_type": "field",
+                                            "strategy": "equals",
                                             "source_field_name": "dt.cost.costcenter",
                                         },
                                         {
+                                            "extraction_type": "field",
+                                            "strategy": "equals",
                                             "source_field_name": "dt.cost.product",
                                         },
                                         {
+                                            "extraction_type": "field",
+                                            "strategy": "equals",
                                             "source_field_name": "dt.security_context",
                                         },
                                         {
+                                            "extraction_type": "field",
+                                            "strategy": "equals",
                                             "source_field_name": "record.category",
                                             "destination_field_name": "warning_category",
                                         },
@@ -730,15 +738,23 @@ class OpenpipelineV2LogsPipelines(pulumi.CustomResource):
                                 "dimensions": {
                                     "dimensions": [
                                         {
+                                            "extraction_type": "field",
+                                            "strategy": "equals",
                                             "source_field_name": "dt.cost.costcenter",
                                         },
                                         {
+                                            "extraction_type": "field",
+                                            "strategy": "equals",
                                             "source_field_name": "dt.cost.product",
                                         },
                                         {
+                                            "extraction_type": "field",
+                                            "strategy": "equals",
                                             "source_field_name": "dt.security_context",
                                         },
                                         {
+                                            "extraction_type": "field",
+                                            "strategy": "equals",
                                             "source_field_name": "record.category",
                                             "destination_field_name": "warning_category",
                                         },
@@ -843,7 +859,7 @@ class OpenpipelineV2LogsPipelines(pulumi.CustomResource):
         :param pulumi.Input[Union['OpenpipelineV2LogsPipelinesDataExtractionArgs', 'OpenpipelineV2LogsPipelinesDataExtractionArgsDict']] data_extraction: Data extraction stage
         :param pulumi.Input[Union['OpenpipelineV2LogsPipelinesDavisArgs', 'OpenpipelineV2LogsPipelinesDavisArgsDict']] davis: Davis event extraction stage
         :param pulumi.Input[_builtins.str] display_name: Display name
-        :param pulumi.Input[_builtins.str] group_role: Group role. Possible values: `compositionPipeline`, `memberPipeline`
+        :param pulumi.Input[_builtins.str] group_role: Group role. Possible values: `basePipeline`, `compositionPipeline`, `memberPipeline`
         :param pulumi.Input[Union['OpenpipelineV2LogsPipelinesMetadataListArgs', 'OpenpipelineV2LogsPipelinesMetadataListArgsDict']] metadata_list: Pipeline metadata list
         :param pulumi.Input[Union['OpenpipelineV2LogsPipelinesMetricExtractionArgs', 'OpenpipelineV2LogsPipelinesMetricExtractionArgsDict']] metric_extraction: Metrics extraction stage
         :param pulumi.Input[Union['OpenpipelineV2LogsPipelinesProcessingArgs', 'OpenpipelineV2LogsPipelinesProcessingArgsDict']] processing: Processing stage
@@ -1025,15 +1041,23 @@ class OpenpipelineV2LogsPipelines(pulumi.CustomResource):
                                 "dimensions": {
                                     "dimensions": [
                                         {
+                                            "extraction_type": "field",
+                                            "strategy": "equals",
                                             "source_field_name": "dt.cost.costcenter",
                                         },
                                         {
+                                            "extraction_type": "field",
+                                            "strategy": "equals",
                                             "source_field_name": "dt.cost.product",
                                         },
                                         {
+                                            "extraction_type": "field",
+                                            "strategy": "equals",
                                             "source_field_name": "dt.security_context",
                                         },
                                         {
+                                            "extraction_type": "field",
+                                            "strategy": "equals",
                                             "source_field_name": "record.category",
                                             "destination_field_name": "warning_category",
                                         },
@@ -1054,15 +1078,23 @@ class OpenpipelineV2LogsPipelines(pulumi.CustomResource):
                                 "dimensions": {
                                     "dimensions": [
                                         {
+                                            "extraction_type": "field",
+                                            "strategy": "equals",
                                             "source_field_name": "dt.cost.costcenter",
                                         },
                                         {
+                                            "extraction_type": "field",
+                                            "strategy": "equals",
                                             "source_field_name": "dt.cost.product",
                                         },
                                         {
+                                            "extraction_type": "field",
+                                            "strategy": "equals",
                                             "source_field_name": "dt.security_context",
                                         },
                                         {
+                                            "extraction_type": "field",
+                                            "strategy": "equals",
                                             "source_field_name": "record.category",
                                             "destination_field_name": "warning_category",
                                         },
@@ -1255,7 +1287,7 @@ class OpenpipelineV2LogsPipelines(pulumi.CustomResource):
         :param pulumi.Input[Union['OpenpipelineV2LogsPipelinesDataExtractionArgs', 'OpenpipelineV2LogsPipelinesDataExtractionArgsDict']] data_extraction: Data extraction stage
         :param pulumi.Input[Union['OpenpipelineV2LogsPipelinesDavisArgs', 'OpenpipelineV2LogsPipelinesDavisArgsDict']] davis: Davis event extraction stage
         :param pulumi.Input[_builtins.str] display_name: Display name
-        :param pulumi.Input[_builtins.str] group_role: Group role. Possible values: `compositionPipeline`, `memberPipeline`
+        :param pulumi.Input[_builtins.str] group_role: Group role. Possible values: `basePipeline`, `compositionPipeline`, `memberPipeline`
         :param pulumi.Input[Union['OpenpipelineV2LogsPipelinesMetadataListArgs', 'OpenpipelineV2LogsPipelinesMetadataListArgsDict']] metadata_list: Pipeline metadata list
         :param pulumi.Input[Union['OpenpipelineV2LogsPipelinesMetricExtractionArgs', 'OpenpipelineV2LogsPipelinesMetricExtractionArgsDict']] metric_extraction: Metrics extraction stage
         :param pulumi.Input[Union['OpenpipelineV2LogsPipelinesProcessingArgs', 'OpenpipelineV2LogsPipelinesProcessingArgsDict']] processing: Processing stage
@@ -1331,7 +1363,7 @@ class OpenpipelineV2LogsPipelines(pulumi.CustomResource):
     @pulumi.getter(name="groupRole")
     def group_role(self) -> pulumi.Output[Optional[_builtins.str]]:
         """
-        Group role. Possible values: `compositionPipeline`, `memberPipeline`
+        Group role. Possible values: `basePipeline`, `compositionPipeline`, `memberPipeline`
         """
         return pulumi.get(self, "group_role")
 

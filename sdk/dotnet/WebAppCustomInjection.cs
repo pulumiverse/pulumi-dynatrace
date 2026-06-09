@@ -64,7 +64,7 @@ namespace Pulumiverse.Dynatrace
         public Output<bool> Enabled { get; private set; } = null!;
 
         /// <summary>
-        /// no documentation available
+        /// No documentation available
         /// </summary>
         [Output("htmlPattern")]
         public Output<string?> HtmlPattern { get; private set; } = null!;
@@ -76,13 +76,13 @@ namespace Pulumiverse.Dynatrace
         public Output<string> InsertAfter { get; private set; } = null!;
 
         /// <summary>
-        /// Possible Values: `AllPages`, `Contains`, `Ends`, `Equals`, `Starts`
+        /// **Example**:
         /// </summary>
         [Output("operator")]
         public Output<string> Operator { get; private set; } = null!;
 
         /// <summary>
-        /// Possible Values: `AfterSpecificHtml`, `Automatic`, `BeforeSpecificHtml`, `DoNotInject`
+        /// Rule. Possible values: `AfterSpecificHtml`, `Automatic`, `BeforeSpecificHtml`, `DoNotInject`
         /// </summary>
         [Output("rule")]
         public Output<string> Rule { get; private set; } = null!;
@@ -153,7 +153,7 @@ namespace Pulumiverse.Dynatrace
         public Input<bool> Enabled { get; set; } = null!;
 
         /// <summary>
-        /// no documentation available
+        /// No documentation available
         /// </summary>
         [Input("htmlPattern")]
         public Input<string>? HtmlPattern { get; set; }
@@ -165,13 +165,13 @@ namespace Pulumiverse.Dynatrace
         public Input<string>? InsertAfter { get; set; }
 
         /// <summary>
-        /// Possible Values: `AllPages`, `Contains`, `Ends`, `Equals`, `Starts`
+        /// **Example**:
         /// </summary>
         [Input("operator", required: true)]
         public Input<string> Operator { get; set; } = null!;
 
         /// <summary>
-        /// Possible Values: `AfterSpecificHtml`, `Automatic`, `BeforeSpecificHtml`, `DoNotInject`
+        /// Rule. Possible values: `AfterSpecificHtml`, `Automatic`, `BeforeSpecificHtml`, `DoNotInject`
         /// </summary>
         [Input("rule", required: true)]
         public Input<string> Rule { get; set; } = null!;
@@ -203,7 +203,7 @@ namespace Pulumiverse.Dynatrace
         public Input<bool>? Enabled { get; set; }
 
         /// <summary>
-        /// no documentation available
+        /// No documentation available
         /// </summary>
         [Input("htmlPattern")]
         public Input<string>? HtmlPattern { get; set; }
@@ -215,13 +215,13 @@ namespace Pulumiverse.Dynatrace
         public Input<string>? InsertAfter { get; set; }
 
         /// <summary>
-        /// Possible Values: `AllPages`, `Contains`, `Ends`, `Equals`, `Starts`
+        /// **Example**:
         /// </summary>
         [Input("operator")]
         public Input<string>? Operator { get; set; }
 
         /// <summary>
-        /// Possible Values: `AfterSpecificHtml`, `Automatic`, `BeforeSpecificHtml`, `DoNotInject`
+        /// Rule. Possible values: `AfterSpecificHtml`, `Automatic`, `BeforeSpecificHtml`, `DoNotInject`
         /// </summary>
         [Input("rule")]
         public Input<string>? Rule { get; set; }

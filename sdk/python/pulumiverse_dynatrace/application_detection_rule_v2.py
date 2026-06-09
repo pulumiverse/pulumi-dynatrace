@@ -28,9 +28,9 @@ class ApplicationDetectionRuleV2Args:
         The set of arguments for constructing a ApplicationDetectionRuleV2 resource.
 
         :param pulumi.Input[_builtins.str] application_id: Select an existing application or create a new one.
-        :param pulumi.Input[_builtins.str] matcher: Possible Values: `DOMAIN_CONTAINS`, `DOMAIN_ENDS_WITH`, `DOMAIN_EQUALS`, `DOMAIN_MATCHES`, `DOMAIN_STARTS_WITH`, `URL_CONTAINS`, `URL_ENDS_WITH`, `URL_EQUALS`, `URL_STARTS_WITH`
+        :param pulumi.Input[_builtins.str] matcher: Matcher. Possible values: `DOMAIN_CONTAINS`, `DOMAIN_ENDS_WITH`, `DOMAIN_EQUALS`, `DOMAIN_MATCHES`, `DOMAIN_STARTS_WITH`, `URL_CONTAINS`, `URL_ENDS_WITH`, `URL_EQUALS`, `URL_STARTS_WITH`
         :param pulumi.Input[_builtins.str] pattern: Pattern
-        :param pulumi.Input[_builtins.str] description: (v1.274) Add a description for your rule
+        :param pulumi.Input[_builtins.str] description: Add a description for your rule
         :param pulumi.Input[_builtins.str] insert_after: Because this resource allows for ordering you may specify the ID of the resource instance that comes before this instance regarding order. If not specified when creating the setting will be added to the end of the list. If not specified during update the order will remain untouched
         """
         pulumi.set(__self__, "application_id", application_id)
@@ -57,7 +57,7 @@ class ApplicationDetectionRuleV2Args:
     @pulumi.getter
     def matcher(self) -> pulumi.Input[_builtins.str]:
         """
-        Possible Values: `DOMAIN_CONTAINS`, `DOMAIN_ENDS_WITH`, `DOMAIN_EQUALS`, `DOMAIN_MATCHES`, `DOMAIN_STARTS_WITH`, `URL_CONTAINS`, `URL_ENDS_WITH`, `URL_EQUALS`, `URL_STARTS_WITH`
+        Matcher. Possible values: `DOMAIN_CONTAINS`, `DOMAIN_ENDS_WITH`, `DOMAIN_EQUALS`, `DOMAIN_MATCHES`, `DOMAIN_STARTS_WITH`, `URL_CONTAINS`, `URL_ENDS_WITH`, `URL_EQUALS`, `URL_STARTS_WITH`
         """
         return pulumi.get(self, "matcher")
 
@@ -81,7 +81,7 @@ class ApplicationDetectionRuleV2Args:
     @pulumi.getter
     def description(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
-        (v1.274) Add a description for your rule
+        Add a description for your rule
         """
         return pulumi.get(self, "description")
 
@@ -114,9 +114,9 @@ class _ApplicationDetectionRuleV2State:
         Input properties used for looking up and filtering ApplicationDetectionRuleV2 resources.
 
         :param pulumi.Input[_builtins.str] application_id: Select an existing application or create a new one.
-        :param pulumi.Input[_builtins.str] description: (v1.274) Add a description for your rule
+        :param pulumi.Input[_builtins.str] description: Add a description for your rule
         :param pulumi.Input[_builtins.str] insert_after: Because this resource allows for ordering you may specify the ID of the resource instance that comes before this instance regarding order. If not specified when creating the setting will be added to the end of the list. If not specified during update the order will remain untouched
-        :param pulumi.Input[_builtins.str] matcher: Possible Values: `DOMAIN_CONTAINS`, `DOMAIN_ENDS_WITH`, `DOMAIN_EQUALS`, `DOMAIN_MATCHES`, `DOMAIN_STARTS_WITH`, `URL_CONTAINS`, `URL_ENDS_WITH`, `URL_EQUALS`, `URL_STARTS_WITH`
+        :param pulumi.Input[_builtins.str] matcher: Matcher. Possible values: `DOMAIN_CONTAINS`, `DOMAIN_ENDS_WITH`, `DOMAIN_EQUALS`, `DOMAIN_MATCHES`, `DOMAIN_STARTS_WITH`, `URL_CONTAINS`, `URL_ENDS_WITH`, `URL_EQUALS`, `URL_STARTS_WITH`
         :param pulumi.Input[_builtins.str] pattern: Pattern
         """
         if application_id is not None:
@@ -146,7 +146,7 @@ class _ApplicationDetectionRuleV2State:
     @pulumi.getter
     def description(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
-        (v1.274) Add a description for your rule
+        Add a description for your rule
         """
         return pulumi.get(self, "description")
 
@@ -170,7 +170,7 @@ class _ApplicationDetectionRuleV2State:
     @pulumi.getter
     def matcher(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
-        Possible Values: `DOMAIN_CONTAINS`, `DOMAIN_ENDS_WITH`, `DOMAIN_EQUALS`, `DOMAIN_MATCHES`, `DOMAIN_STARTS_WITH`, `URL_CONTAINS`, `URL_ENDS_WITH`, `URL_EQUALS`, `URL_STARTS_WITH`
+        Matcher. Possible values: `DOMAIN_CONTAINS`, `DOMAIN_ENDS_WITH`, `DOMAIN_EQUALS`, `DOMAIN_MATCHES`, `DOMAIN_STARTS_WITH`, `URL_CONTAINS`, `URL_ENDS_WITH`, `URL_EQUALS`, `URL_STARTS_WITH`
         """
         return pulumi.get(self, "matcher")
 
@@ -204,7 +204,7 @@ class ApplicationDetectionRuleV2(pulumi.CustomResource):
                  pattern: pulumi.Input[Optional[_builtins.str]] = None,
                  __props__=None):
         """
-        !> This resource does not handle ordering of rules. If ordering is required, please use ApplicationDetectionRule instead.
+        > This resource does not handle ordering of rules. If ordering is required, please use ApplicationDetectionRule instead.
 
         > This resource requires the API token scopes **Read settings** (`settings.read`) and **Write settings** (`settings.write`)
 
@@ -224,70 +224,12 @@ class ApplicationDetectionRuleV2(pulumi.CustomResource):
 
         ```python
         import pulumi
+        import pulumi_dynatrace as dynatrace
         import pulumiverse_dynatrace as dynatrace
 
-        application = dynatrace.WebApplication("application",
-            name="#name#",
-            type="AUTO_INJECTED",
-            cost_control_user_session_percentage=100,
-            load_action_key_performance_metric="VISUALLY_COMPLETE",
-            real_user_monitoring_enabled=True,
-            xhr_action_key_performance_metric="VISUALLY_COMPLETE",
-            custom_action_apdex_settings={
-                "frustrating_fallback_threshold": 12000,
-                "frustrating_threshold": 12000,
-                "tolerated_fallback_threshold": 3000,
-                "tolerated_threshold": 3000,
-            },
-            load_action_apdex_settings={
-                "frustrating_fallback_threshold": 12000,
-                "frustrating_threshold": 12000,
-                "tolerated_fallback_threshold": 3000,
-                "tolerated_threshold": 3000,
-            },
-            monitoring_settings={
-                "add_cross_origin_anonymous_attribute": True,
-                "cache_control_header_optimizations": True,
-                "injection_mode": "JAVASCRIPT_TAG",
-                "script_tag_cache_duration_in_hours": 1,
-                "advanced_javascript_tag_settings": {
-                    "max_action_name_length": 100,
-                    "max_errors_to_capture": 10,
-                    "additional_event_handlers": {
-                        "max_dom_nodes": 5000,
-                    },
-                },
-                "content_capture": {
-                    "resource_timing_settings": {
-                        "instrumentation_delay": 53,
-                        "non_w3c_resource_timings": True,
-                        "w3c_resource_timings": True,
-                    },
-                    "timeout_settings": {
-                        "temporary_action_limit": 3,
-                        "temporary_action_total_timeout": 100,
-                        "timed_action_support": True,
-                    },
-                },
-            },
-            user_action_naming_settings={},
-            waterfall_settings={
-                "resource_browser_caching_threshold": 50,
-                "resources_threshold": 100000,
-                "slow_cnd_resources_threshold": 200000,
-                "slow_first_party_resources_threshold": 200000,
-                "slow_third_party_resources_threshold": 200000,
-                "speed_index_visually_complete_ratio_threshold": 50,
-                "uncompressed_resources_threshold": 860,
-            },
-            xhr_action_apdex_settings={
-                "frustrating_fallback_threshold": 12000,
-                "frustrating_threshold": 12000,
-                "tolerated_fallback_threshold": 3000,
-                "tolerated_threshold": 3000,
-            })
+        web_application = dynatrace.get_application(name="Web Application")
         detection_rule = dynatrace.ApplicationDetectionRuleV2("detection_rule",
-            application_id=application.id,
+            application_id=web_application.id,
             matcher="DOMAIN_MATCHES",
             pattern="TerraformTest")
         ```
@@ -296,9 +238,9 @@ class ApplicationDetectionRuleV2(pulumi.CustomResource):
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[_builtins.str] application_id: Select an existing application or create a new one.
-        :param pulumi.Input[_builtins.str] description: (v1.274) Add a description for your rule
+        :param pulumi.Input[_builtins.str] description: Add a description for your rule
         :param pulumi.Input[_builtins.str] insert_after: Because this resource allows for ordering you may specify the ID of the resource instance that comes before this instance regarding order. If not specified when creating the setting will be added to the end of the list. If not specified during update the order will remain untouched
-        :param pulumi.Input[_builtins.str] matcher: Possible Values: `DOMAIN_CONTAINS`, `DOMAIN_ENDS_WITH`, `DOMAIN_EQUALS`, `DOMAIN_MATCHES`, `DOMAIN_STARTS_WITH`, `URL_CONTAINS`, `URL_ENDS_WITH`, `URL_EQUALS`, `URL_STARTS_WITH`
+        :param pulumi.Input[_builtins.str] matcher: Matcher. Possible values: `DOMAIN_CONTAINS`, `DOMAIN_ENDS_WITH`, `DOMAIN_EQUALS`, `DOMAIN_MATCHES`, `DOMAIN_STARTS_WITH`, `URL_CONTAINS`, `URL_ENDS_WITH`, `URL_EQUALS`, `URL_STARTS_WITH`
         :param pulumi.Input[_builtins.str] pattern: Pattern
         """
         ...
@@ -308,7 +250,7 @@ class ApplicationDetectionRuleV2(pulumi.CustomResource):
                  args: ApplicationDetectionRuleV2Args,
                  opts: Optional[pulumi.ResourceOptions] = None):
         """
-        !> This resource does not handle ordering of rules. If ordering is required, please use ApplicationDetectionRule instead.
+        > This resource does not handle ordering of rules. If ordering is required, please use ApplicationDetectionRule instead.
 
         > This resource requires the API token scopes **Read settings** (`settings.read`) and **Write settings** (`settings.write`)
 
@@ -328,70 +270,12 @@ class ApplicationDetectionRuleV2(pulumi.CustomResource):
 
         ```python
         import pulumi
+        import pulumi_dynatrace as dynatrace
         import pulumiverse_dynatrace as dynatrace
 
-        application = dynatrace.WebApplication("application",
-            name="#name#",
-            type="AUTO_INJECTED",
-            cost_control_user_session_percentage=100,
-            load_action_key_performance_metric="VISUALLY_COMPLETE",
-            real_user_monitoring_enabled=True,
-            xhr_action_key_performance_metric="VISUALLY_COMPLETE",
-            custom_action_apdex_settings={
-                "frustrating_fallback_threshold": 12000,
-                "frustrating_threshold": 12000,
-                "tolerated_fallback_threshold": 3000,
-                "tolerated_threshold": 3000,
-            },
-            load_action_apdex_settings={
-                "frustrating_fallback_threshold": 12000,
-                "frustrating_threshold": 12000,
-                "tolerated_fallback_threshold": 3000,
-                "tolerated_threshold": 3000,
-            },
-            monitoring_settings={
-                "add_cross_origin_anonymous_attribute": True,
-                "cache_control_header_optimizations": True,
-                "injection_mode": "JAVASCRIPT_TAG",
-                "script_tag_cache_duration_in_hours": 1,
-                "advanced_javascript_tag_settings": {
-                    "max_action_name_length": 100,
-                    "max_errors_to_capture": 10,
-                    "additional_event_handlers": {
-                        "max_dom_nodes": 5000,
-                    },
-                },
-                "content_capture": {
-                    "resource_timing_settings": {
-                        "instrumentation_delay": 53,
-                        "non_w3c_resource_timings": True,
-                        "w3c_resource_timings": True,
-                    },
-                    "timeout_settings": {
-                        "temporary_action_limit": 3,
-                        "temporary_action_total_timeout": 100,
-                        "timed_action_support": True,
-                    },
-                },
-            },
-            user_action_naming_settings={},
-            waterfall_settings={
-                "resource_browser_caching_threshold": 50,
-                "resources_threshold": 100000,
-                "slow_cnd_resources_threshold": 200000,
-                "slow_first_party_resources_threshold": 200000,
-                "slow_third_party_resources_threshold": 200000,
-                "speed_index_visually_complete_ratio_threshold": 50,
-                "uncompressed_resources_threshold": 860,
-            },
-            xhr_action_apdex_settings={
-                "frustrating_fallback_threshold": 12000,
-                "frustrating_threshold": 12000,
-                "tolerated_fallback_threshold": 3000,
-                "tolerated_threshold": 3000,
-            })
+        web_application = dynatrace.get_application(name="Web Application")
         detection_rule = dynatrace.ApplicationDetectionRuleV2("detection_rule",
-            application_id=application.id,
+            application_id=web_application.id,
             matcher="DOMAIN_MATCHES",
             pattern="TerraformTest")
         ```
@@ -460,9 +344,9 @@ class ApplicationDetectionRuleV2(pulumi.CustomResource):
         :param pulumi.Input[str] id: The unique provider ID of the resource to lookup.
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[_builtins.str] application_id: Select an existing application or create a new one.
-        :param pulumi.Input[_builtins.str] description: (v1.274) Add a description for your rule
+        :param pulumi.Input[_builtins.str] description: Add a description for your rule
         :param pulumi.Input[_builtins.str] insert_after: Because this resource allows for ordering you may specify the ID of the resource instance that comes before this instance regarding order. If not specified when creating the setting will be added to the end of the list. If not specified during update the order will remain untouched
-        :param pulumi.Input[_builtins.str] matcher: Possible Values: `DOMAIN_CONTAINS`, `DOMAIN_ENDS_WITH`, `DOMAIN_EQUALS`, `DOMAIN_MATCHES`, `DOMAIN_STARTS_WITH`, `URL_CONTAINS`, `URL_ENDS_WITH`, `URL_EQUALS`, `URL_STARTS_WITH`
+        :param pulumi.Input[_builtins.str] matcher: Matcher. Possible values: `DOMAIN_CONTAINS`, `DOMAIN_ENDS_WITH`, `DOMAIN_EQUALS`, `DOMAIN_MATCHES`, `DOMAIN_STARTS_WITH`, `URL_CONTAINS`, `URL_ENDS_WITH`, `URL_EQUALS`, `URL_STARTS_WITH`
         :param pulumi.Input[_builtins.str] pattern: Pattern
         """
         opts = pulumi.ResourceOptions.merge(opts, pulumi.ResourceOptions(id=id))
@@ -488,7 +372,7 @@ class ApplicationDetectionRuleV2(pulumi.CustomResource):
     @pulumi.getter
     def description(self) -> pulumi.Output[Optional[_builtins.str]]:
         """
-        (v1.274) Add a description for your rule
+        Add a description for your rule
         """
         return pulumi.get(self, "description")
 
@@ -504,7 +388,7 @@ class ApplicationDetectionRuleV2(pulumi.CustomResource):
     @pulumi.getter
     def matcher(self) -> pulumi.Output[_builtins.str]:
         """
-        Possible Values: `DOMAIN_CONTAINS`, `DOMAIN_ENDS_WITH`, `DOMAIN_EQUALS`, `DOMAIN_MATCHES`, `DOMAIN_STARTS_WITH`, `URL_CONTAINS`, `URL_ENDS_WITH`, `URL_EQUALS`, `URL_STARTS_WITH`
+        Matcher. Possible values: `DOMAIN_CONTAINS`, `DOMAIN_ENDS_WITH`, `DOMAIN_EQUALS`, `DOMAIN_MATCHES`, `DOMAIN_STARTS_WITH`, `URL_CONTAINS`, `URL_ENDS_WITH`, `URL_EQUALS`, `URL_STARTS_WITH`
         """
         return pulumi.get(self, "matcher")
 

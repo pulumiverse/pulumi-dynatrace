@@ -86,6 +86,7 @@ class BuiltinProcessMonitoringArgs:
                  host_group_id: pulumi.Input[Optional[_builtins.str]] = None,
                  jar_dtibmmqconnector: pulumi.Input[Optional[_builtins.bool]] = None,
                  jar_eclipseequinox: pulumi.Input[Optional[_builtins.bool]] = None,
+                 jmc_activegatecommandlinetool: pulumi.Input[Optional[_builtins.bool]] = None,
                  k8s_cassandraoperator: pulumi.Input[Optional[_builtins.bool]] = None,
                  k8s_containerpod: pulumi.Input[Optional[_builtins.bool]] = None,
                  k8s_namespace: pulumi.Input[Optional[_builtins.bool]] = None,
@@ -170,6 +171,7 @@ class BuiltinProcessMonitoringArgs:
         :param pulumi.Input[_builtins.str] host_group_id: The scope of this settings. If the settings should cover the whole environment, just don't specify any scope.
         :param pulumi.Input[_builtins.bool] jar_dtibmmqconnector: Rule id: 60 - Do not monitor processes if JAR file name equals 'dynatrace*ibm*mq_connector.jar'
         :param pulumi.Input[_builtins.bool] jar_eclipseequinox: Rule id: 57 - Do not monitor processes if Java JAR file begins with 'org.eclipse.equinox.launcher'
+        :param pulumi.Input[_builtins.bool] jmc_activegatecommandlinetool: Rule id: 85 - Do not monitor process if Java Main class contains 'ActiveGateCommandLineTool'
         :param pulumi.Input[_builtins.bool] k8s_cassandraoperator: Rule id: 69 - Do not monitor processes if Kubernetes container name equals 'cassandra-operator'
         :param pulumi.Input[_builtins.bool] k8s_containerpod: Rule id: 38 - Do not monitor processes if Kubernetes container name equals 'POD'
         :param pulumi.Input[_builtins.bool] k8s_namespace: Rule id: 40 - Do monitor processes if Kubernetes namespace exists
@@ -319,6 +321,8 @@ class BuiltinProcessMonitoringArgs:
             pulumi.set(__self__, "jar_dtibmmqconnector", jar_dtibmmqconnector)
         if jar_eclipseequinox is not None:
             pulumi.set(__self__, "jar_eclipseequinox", jar_eclipseequinox)
+        if jmc_activegatecommandlinetool is not None:
+            pulumi.set(__self__, "jmc_activegatecommandlinetool", jmc_activegatecommandlinetool)
         if k8s_cassandraoperator is not None:
             pulumi.set(__self__, "k8s_cassandraoperator", k8s_cassandraoperator)
         if k8s_containerpod is not None:
@@ -1151,6 +1155,18 @@ class BuiltinProcessMonitoringArgs:
     @jar_eclipseequinox.setter
     def jar_eclipseequinox(self, value: pulumi.Input[Optional[_builtins.bool]]):
         pulumi.set(self, "jar_eclipseequinox", value)
+
+    @_builtins.property
+    @pulumi.getter(name="jmcActivegatecommandlinetool")
+    def jmc_activegatecommandlinetool(self) -> pulumi.Input[Optional[_builtins.bool]]:
+        """
+        Rule id: 85 - Do not monitor process if Java Main class contains 'ActiveGateCommandLineTool'
+        """
+        return pulumi.get(self, "jmc_activegatecommandlinetool")
+
+    @jmc_activegatecommandlinetool.setter
+    def jmc_activegatecommandlinetool(self, value: pulumi.Input[Optional[_builtins.bool]]):
+        pulumi.set(self, "jmc_activegatecommandlinetool", value)
 
     @_builtins.property
     @pulumi.getter(name="k8sCassandraoperator")
@@ -1391,6 +1407,7 @@ class _BuiltinProcessMonitoringState:
                  host_group_id: pulumi.Input[Optional[_builtins.str]] = None,
                  jar_dtibmmqconnector: pulumi.Input[Optional[_builtins.bool]] = None,
                  jar_eclipseequinox: pulumi.Input[Optional[_builtins.bool]] = None,
+                 jmc_activegatecommandlinetool: pulumi.Input[Optional[_builtins.bool]] = None,
                  k8s_cassandraoperator: pulumi.Input[Optional[_builtins.bool]] = None,
                  k8s_containerpod: pulumi.Input[Optional[_builtins.bool]] = None,
                  k8s_namespace: pulumi.Input[Optional[_builtins.bool]] = None,
@@ -1475,6 +1492,7 @@ class _BuiltinProcessMonitoringState:
         :param pulumi.Input[_builtins.str] host_group_id: The scope of this settings. If the settings should cover the whole environment, just don't specify any scope.
         :param pulumi.Input[_builtins.bool] jar_dtibmmqconnector: Rule id: 60 - Do not monitor processes if JAR file name equals 'dynatrace*ibm*mq_connector.jar'
         :param pulumi.Input[_builtins.bool] jar_eclipseequinox: Rule id: 57 - Do not monitor processes if Java JAR file begins with 'org.eclipse.equinox.launcher'
+        :param pulumi.Input[_builtins.bool] jmc_activegatecommandlinetool: Rule id: 85 - Do not monitor process if Java Main class contains 'ActiveGateCommandLineTool'
         :param pulumi.Input[_builtins.bool] k8s_cassandraoperator: Rule id: 69 - Do not monitor processes if Kubernetes container name equals 'cassandra-operator'
         :param pulumi.Input[_builtins.bool] k8s_containerpod: Rule id: 38 - Do not monitor processes if Kubernetes container name equals 'POD'
         :param pulumi.Input[_builtins.bool] k8s_namespace: Rule id: 40 - Do monitor processes if Kubernetes namespace exists
@@ -1624,6 +1642,8 @@ class _BuiltinProcessMonitoringState:
             pulumi.set(__self__, "jar_dtibmmqconnector", jar_dtibmmqconnector)
         if jar_eclipseequinox is not None:
             pulumi.set(__self__, "jar_eclipseequinox", jar_eclipseequinox)
+        if jmc_activegatecommandlinetool is not None:
+            pulumi.set(__self__, "jmc_activegatecommandlinetool", jmc_activegatecommandlinetool)
         if k8s_cassandraoperator is not None:
             pulumi.set(__self__, "k8s_cassandraoperator", k8s_cassandraoperator)
         if k8s_containerpod is not None:
@@ -2456,6 +2476,18 @@ class _BuiltinProcessMonitoringState:
     @jar_eclipseequinox.setter
     def jar_eclipseequinox(self, value: pulumi.Input[Optional[_builtins.bool]]):
         pulumi.set(self, "jar_eclipseequinox", value)
+
+    @_builtins.property
+    @pulumi.getter(name="jmcActivegatecommandlinetool")
+    def jmc_activegatecommandlinetool(self) -> pulumi.Input[Optional[_builtins.bool]]:
+        """
+        Rule id: 85 - Do not monitor process if Java Main class contains 'ActiveGateCommandLineTool'
+        """
+        return pulumi.get(self, "jmc_activegatecommandlinetool")
+
+    @jmc_activegatecommandlinetool.setter
+    def jmc_activegatecommandlinetool(self, value: pulumi.Input[Optional[_builtins.bool]]):
+        pulumi.set(self, "jmc_activegatecommandlinetool", value)
 
     @_builtins.property
     @pulumi.getter(name="k8sCassandraoperator")
@@ -2699,6 +2731,7 @@ class BuiltinProcessMonitoring(pulumi.CustomResource):
                  host_group_id: pulumi.Input[Optional[_builtins.str]] = None,
                  jar_dtibmmqconnector: pulumi.Input[Optional[_builtins.bool]] = None,
                  jar_eclipseequinox: pulumi.Input[Optional[_builtins.bool]] = None,
+                 jmc_activegatecommandlinetool: pulumi.Input[Optional[_builtins.bool]] = None,
                  k8s_cassandraoperator: pulumi.Input[Optional[_builtins.bool]] = None,
                  k8s_containerpod: pulumi.Input[Optional[_builtins.bool]] = None,
                  k8s_namespace: pulumi.Input[Optional[_builtins.bool]] = None,
@@ -2728,6 +2761,28 @@ class BuiltinProcessMonitoring(pulumi.CustomResource):
         - `terraform-provider-dynatrace -export BuiltinProcessMonitoring` downloads all existing built-in process monitoring rules
 
         The full documentation of the export feature is available [here](https://dt-url.net/h203qmc).
+
+        ## Resource Example Usage
+
+        ```python
+        import pulumi
+        import pulumiverse_dynatrace as dynatrace
+
+        monitoring = dynatrace.BuiltinProcessMonitoring("monitoring",
+            host_group_id="environment",
+            aspnetcore=False,
+            cf_appsmanagerjs=False,
+            container=False,
+            docker_pauseamd64=False,
+            exe_bbs=False,
+            exe_caddy=False,
+            exe_schedular=False,
+            exe_silkdaemon=False,
+            go_static=False,
+            node_nodegyp=False,
+            cmd_foreverbinmonitor=False,
+            jmc_activegatecommandlinetool=False)
+        ```
 
 
         :param str resource_name: The name of the resource.
@@ -2799,6 +2854,7 @@ class BuiltinProcessMonitoring(pulumi.CustomResource):
         :param pulumi.Input[_builtins.str] host_group_id: The scope of this settings. If the settings should cover the whole environment, just don't specify any scope.
         :param pulumi.Input[_builtins.bool] jar_dtibmmqconnector: Rule id: 60 - Do not monitor processes if JAR file name equals 'dynatrace*ibm*mq_connector.jar'
         :param pulumi.Input[_builtins.bool] jar_eclipseequinox: Rule id: 57 - Do not monitor processes if Java JAR file begins with 'org.eclipse.equinox.launcher'
+        :param pulumi.Input[_builtins.bool] jmc_activegatecommandlinetool: Rule id: 85 - Do not monitor process if Java Main class contains 'ActiveGateCommandLineTool'
         :param pulumi.Input[_builtins.bool] k8s_cassandraoperator: Rule id: 69 - Do not monitor processes if Kubernetes container name equals 'cassandra-operator'
         :param pulumi.Input[_builtins.bool] k8s_containerpod: Rule id: 38 - Do not monitor processes if Kubernetes container name equals 'POD'
         :param pulumi.Input[_builtins.bool] k8s_namespace: Rule id: 40 - Do monitor processes if Kubernetes namespace exists
@@ -2834,6 +2890,28 @@ class BuiltinProcessMonitoring(pulumi.CustomResource):
         - `terraform-provider-dynatrace -export BuiltinProcessMonitoring` downloads all existing built-in process monitoring rules
 
         The full documentation of the export feature is available [here](https://dt-url.net/h203qmc).
+
+        ## Resource Example Usage
+
+        ```python
+        import pulumi
+        import pulumiverse_dynatrace as dynatrace
+
+        monitoring = dynatrace.BuiltinProcessMonitoring("monitoring",
+            host_group_id="environment",
+            aspnetcore=False,
+            cf_appsmanagerjs=False,
+            container=False,
+            docker_pauseamd64=False,
+            exe_bbs=False,
+            exe_caddy=False,
+            exe_schedular=False,
+            exe_silkdaemon=False,
+            go_static=False,
+            node_nodegyp=False,
+            cmd_foreverbinmonitor=False,
+            jmc_activegatecommandlinetool=False)
+        ```
 
 
         :param str resource_name: The name of the resource.
@@ -2918,6 +2996,7 @@ class BuiltinProcessMonitoring(pulumi.CustomResource):
                  host_group_id: pulumi.Input[Optional[_builtins.str]] = None,
                  jar_dtibmmqconnector: pulumi.Input[Optional[_builtins.bool]] = None,
                  jar_eclipseequinox: pulumi.Input[Optional[_builtins.bool]] = None,
+                 jmc_activegatecommandlinetool: pulumi.Input[Optional[_builtins.bool]] = None,
                  k8s_cassandraoperator: pulumi.Input[Optional[_builtins.bool]] = None,
                  k8s_containerpod: pulumi.Input[Optional[_builtins.bool]] = None,
                  k8s_namespace: pulumi.Input[Optional[_builtins.bool]] = None,
@@ -3008,6 +3087,7 @@ class BuiltinProcessMonitoring(pulumi.CustomResource):
             __props__.__dict__["host_group_id"] = host_group_id
             __props__.__dict__["jar_dtibmmqconnector"] = jar_dtibmmqconnector
             __props__.__dict__["jar_eclipseequinox"] = jar_eclipseequinox
+            __props__.__dict__["jmc_activegatecommandlinetool"] = jmc_activegatecommandlinetool
             __props__.__dict__["k8s_cassandraoperator"] = k8s_cassandraoperator
             __props__.__dict__["k8s_containerpod"] = k8s_containerpod
             __props__.__dict__["k8s_namespace"] = k8s_namespace
@@ -3099,6 +3179,7 @@ class BuiltinProcessMonitoring(pulumi.CustomResource):
             host_group_id: pulumi.Input[Optional[_builtins.str]] = None,
             jar_dtibmmqconnector: pulumi.Input[Optional[_builtins.bool]] = None,
             jar_eclipseequinox: pulumi.Input[Optional[_builtins.bool]] = None,
+            jmc_activegatecommandlinetool: pulumi.Input[Optional[_builtins.bool]] = None,
             k8s_cassandraoperator: pulumi.Input[Optional[_builtins.bool]] = None,
             k8s_containerpod: pulumi.Input[Optional[_builtins.bool]] = None,
             k8s_namespace: pulumi.Input[Optional[_builtins.bool]] = None,
@@ -3187,6 +3268,7 @@ class BuiltinProcessMonitoring(pulumi.CustomResource):
         :param pulumi.Input[_builtins.str] host_group_id: The scope of this settings. If the settings should cover the whole environment, just don't specify any scope.
         :param pulumi.Input[_builtins.bool] jar_dtibmmqconnector: Rule id: 60 - Do not monitor processes if JAR file name equals 'dynatrace*ibm*mq_connector.jar'
         :param pulumi.Input[_builtins.bool] jar_eclipseequinox: Rule id: 57 - Do not monitor processes if Java JAR file begins with 'org.eclipse.equinox.launcher'
+        :param pulumi.Input[_builtins.bool] jmc_activegatecommandlinetool: Rule id: 85 - Do not monitor process if Java Main class contains 'ActiveGateCommandLineTool'
         :param pulumi.Input[_builtins.bool] k8s_cassandraoperator: Rule id: 69 - Do not monitor processes if Kubernetes container name equals 'cassandra-operator'
         :param pulumi.Input[_builtins.bool] k8s_containerpod: Rule id: 38 - Do not monitor processes if Kubernetes container name equals 'POD'
         :param pulumi.Input[_builtins.bool] k8s_namespace: Rule id: 40 - Do monitor processes if Kubernetes namespace exists
@@ -3273,6 +3355,7 @@ class BuiltinProcessMonitoring(pulumi.CustomResource):
         __props__.__dict__["host_group_id"] = host_group_id
         __props__.__dict__["jar_dtibmmqconnector"] = jar_dtibmmqconnector
         __props__.__dict__["jar_eclipseequinox"] = jar_eclipseequinox
+        __props__.__dict__["jmc_activegatecommandlinetool"] = jmc_activegatecommandlinetool
         __props__.__dict__["k8s_cassandraoperator"] = k8s_cassandraoperator
         __props__.__dict__["k8s_containerpod"] = k8s_containerpod
         __props__.__dict__["k8s_namespace"] = k8s_namespace
@@ -3824,6 +3907,14 @@ class BuiltinProcessMonitoring(pulumi.CustomResource):
         Rule id: 57 - Do not monitor processes if Java JAR file begins with 'org.eclipse.equinox.launcher'
         """
         return pulumi.get(self, "jar_eclipseequinox")
+
+    @_builtins.property
+    @pulumi.getter(name="jmcActivegatecommandlinetool")
+    def jmc_activegatecommandlinetool(self) -> pulumi.Output[Optional[_builtins.bool]]:
+        """
+        Rule id: 85 - Do not monitor process if Java Main class contains 'ActiveGateCommandLineTool'
+        """
+        return pulumi.get(self, "jmc_activegatecommandlinetool")
 
     @_builtins.property
     @pulumi.getter(name="k8sCassandraoperator")

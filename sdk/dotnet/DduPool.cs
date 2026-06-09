@@ -11,7 +11,7 @@ using Pulumi;
 namespace Pulumiverse.Dynatrace
 {
     /// <summary>
-    /// !&gt; This resource API endpoint has been deprecated.
+    /// &gt; This resource API endpoint has been deprecated.
     /// 
     /// &gt; This resource requires the API token scopes **Read settings** (`settings.read`) and **Write settings** (`settings.write`)
     /// 

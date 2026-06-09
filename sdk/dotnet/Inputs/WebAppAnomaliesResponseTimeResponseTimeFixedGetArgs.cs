@@ -32,7 +32,7 @@ namespace Pulumiverse.Dynatrace.Inputs
         public Input<Inputs.WebAppAnomaliesResponseTimeResponseTimeFixedResponseTimeSlowestGetArgs> ResponseTimeSlowest { get; set; } = null!;
 
         /// <summary>
-        /// Possible Values: `Medium`, `High`, `Low`
+        /// Possible values: `High`, `Low`, `Medium`
         /// </summary>
         [Input("sensitivity", required: true)]
         public Input<string> Sensitivity { get; set; } = null!;

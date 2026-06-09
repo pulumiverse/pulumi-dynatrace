@@ -33,7 +33,7 @@ class RumProviderBreakdownArgs:
         :param pulumi.Input['RumProviderBreakdownDomainNamePatternListArgs'] domain_name_pattern_list: Domain name pattern
         :param pulumi.Input[_builtins.bool] report_public_improvement: Send the patterns of this provider to Dynatrace to help us improve 3rd-party detection.
         :param pulumi.Input[_builtins.str] resource_name: Resource name
-        :param pulumi.Input[_builtins.str] resource_type: Possible Values: `FirstParty`, `ThirdParty`, `Cdn`
+        :param pulumi.Input[_builtins.str] resource_type: Resource type. Possible values: `Cdn`, `FirstParty`, `ThirdParty`
         :param pulumi.Input[_builtins.str] icon_url: Specify an URL for the provider's brand icon
         :param pulumi.Input[_builtins.str] insert_after: Because this resource allows for ordering you may specify the ID of the resource instance that comes before this instance regarding order. If not specified when creating the setting will be added to the end of the list. If not specified during update the order will remain untouched
         """
@@ -86,7 +86,7 @@ class RumProviderBreakdownArgs:
     @pulumi.getter(name="resourceType")
     def resource_type(self) -> pulumi.Input[_builtins.str]:
         """
-        Possible Values: `FirstParty`, `ThirdParty`, `Cdn`
+        Resource type. Possible values: `Cdn`, `FirstParty`, `ThirdParty`
         """
         return pulumi.get(self, "resource_type")
 
@@ -136,7 +136,7 @@ class _RumProviderBreakdownState:
         :param pulumi.Input[_builtins.str] insert_after: Because this resource allows for ordering you may specify the ID of the resource instance that comes before this instance regarding order. If not specified when creating the setting will be added to the end of the list. If not specified during update the order will remain untouched
         :param pulumi.Input[_builtins.bool] report_public_improvement: Send the patterns of this provider to Dynatrace to help us improve 3rd-party detection.
         :param pulumi.Input[_builtins.str] resource_name: Resource name
-        :param pulumi.Input[_builtins.str] resource_type: Possible Values: `FirstParty`, `ThirdParty`, `Cdn`
+        :param pulumi.Input[_builtins.str] resource_type: Resource type. Possible values: `Cdn`, `FirstParty`, `ThirdParty`
         """
         if domain_name_pattern_list is not None:
             pulumi.set(__self__, "domain_name_pattern_list", domain_name_pattern_list)
@@ -215,7 +215,7 @@ class _RumProviderBreakdownState:
     @pulumi.getter(name="resourceType")
     def resource_type(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
-        Possible Values: `FirstParty`, `ThirdParty`, `Cdn`
+        Resource type. Possible values: `Cdn`, `FirstParty`, `ThirdParty`
         """
         return pulumi.get(self, "resource_type")
 
@@ -260,7 +260,7 @@ class RumProviderBreakdown(pulumi.CustomResource):
         :param pulumi.Input[_builtins.str] insert_after: Because this resource allows for ordering you may specify the ID of the resource instance that comes before this instance regarding order. If not specified when creating the setting will be added to the end of the list. If not specified during update the order will remain untouched
         :param pulumi.Input[_builtins.bool] report_public_improvement: Send the patterns of this provider to Dynatrace to help us improve 3rd-party detection.
         :param pulumi.Input[_builtins.str] resource_name_: Resource name
-        :param pulumi.Input[_builtins.str] resource_type: Possible Values: `FirstParty`, `ThirdParty`, `Cdn`
+        :param pulumi.Input[_builtins.str] resource_type: Resource type. Possible values: `Cdn`, `FirstParty`, `ThirdParty`
         """
         ...
     @overload
@@ -356,7 +356,7 @@ class RumProviderBreakdown(pulumi.CustomResource):
         :param pulumi.Input[_builtins.str] insert_after: Because this resource allows for ordering you may specify the ID of the resource instance that comes before this instance regarding order. If not specified when creating the setting will be added to the end of the list. If not specified during update the order will remain untouched
         :param pulumi.Input[_builtins.bool] report_public_improvement: Send the patterns of this provider to Dynatrace to help us improve 3rd-party detection.
         :param pulumi.Input[_builtins.str] resource_name_: Resource name
-        :param pulumi.Input[_builtins.str] resource_type: Possible Values: `FirstParty`, `ThirdParty`, `Cdn`
+        :param pulumi.Input[_builtins.str] resource_type: Resource type. Possible values: `Cdn`, `FirstParty`, `ThirdParty`
         """
         opts = pulumi.ResourceOptions.merge(opts, pulumi.ResourceOptions(id=id))
 
@@ -414,7 +414,7 @@ class RumProviderBreakdown(pulumi.CustomResource):
     @pulumi.getter(name="resourceType")
     def resource_type(self) -> pulumi.Output[_builtins.str]:
         """
-        Possible Values: `FirstParty`, `ThirdParty`, `Cdn`
+        Resource type. Possible values: `Cdn`, `FirstParty`, `ThirdParty`
         """
         return pulumi.get(self, "resource_type")
 

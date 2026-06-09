@@ -13,7 +13,7 @@ namespace Pulumiverse.Dynatrace
     public static class GetProcessGroup
     {
         /// <summary>
-        /// !&gt; The data source API endpoint has been deprecated, please use dynatrace.getEntity with entity type `PROCESS_GROUP` instead.
+        /// &gt; The data source API endpoint has been deprecated, please use dynatrace.getEntity with entity type `PROCESS_GROUP` instead.
         /// 
         /// The process group data source allows the process group ID to be retrieved by its name and optionally tags / tag-value pairs.
         /// 
@@ -26,7 +26,7 @@ namespace Pulumiverse.Dynatrace
             => global::Pulumi.Deployment.Instance.InvokeAsync<GetProcessGroupResult>("dynatrace:index/getProcessGroup:getProcessGroup", args ?? new GetProcessGroupArgs(), options.WithDefaults());
 
         /// <summary>
-        /// !&gt; The data source API endpoint has been deprecated, please use dynatrace.getEntity with entity type `PROCESS_GROUP` instead.
+        /// &gt; The data source API endpoint has been deprecated, please use dynatrace.getEntity with entity type `PROCESS_GROUP` instead.
         /// 
         /// The process group data source allows the process group ID to be retrieved by its name and optionally tags / tag-value pairs.
         /// 
@@ -39,7 +39,7 @@ namespace Pulumiverse.Dynatrace
             => global::Pulumi.Deployment.Instance.Invoke<GetProcessGroupResult>("dynatrace:index/getProcessGroup:getProcessGroup", args ?? new GetProcessGroupInvokeArgs(), options.WithDefaults());
 
         /// <summary>
-        /// !&gt; The data source API endpoint has been deprecated, please use dynatrace.getEntity with entity type `PROCESS_GROUP` instead.
+        /// &gt; The data source API endpoint has been deprecated, please use dynatrace.getEntity with entity type `PROCESS_GROUP` instead.
         /// 
         /// The process group data source allows the process group ID to be retrieved by its name and optionally tags / tag-value pairs.
         /// 

@@ -14,13 +14,15 @@ namespace Pulumiverse.Dynatrace.Inputs
     public sealed class FailureDetectionRulesConditionsConditionGetArgs : global::Pulumi.ResourceArgs
     {
         /// <summary>
-        /// Possible Values: `PG_NAME`, `PG_TAG`, `SERVICE_MANAGEMENT_ZONE`, `SERVICE_NAME`, `SERVICE_TAG`, `SERVICE_TYPE`
+        /// The attribute to be checked. Possible values: `PG_NAME`, `PG_TAG`, `SERVICE_MANAGEMENT_ZONE`, `SERVICE_NAME`, `SERVICE_TAG`, `SERVICE_TYPE`
         /// </summary>
         [Input("attribute", required: true)]
         public Input<string> Attribute { get; set; } = null!;
 
         /// <summary>
-        /// Condition to check the attribute against
+        /// The predicate that tests the value of the attribute.
+        /// 
+        ///   The actual set of fields depends on the type of the predicate. Find the list of actual objects in the description of the type field or see [Failure detection API - JSON models](https://dt-url.net/9sg3swf).
         /// </summary>
         [Input("predicate", required: true)]
         public Input<Inputs.FailureDetectionRulesConditionsConditionPredicateGetArgs> Predicate { get; set; } = null!;

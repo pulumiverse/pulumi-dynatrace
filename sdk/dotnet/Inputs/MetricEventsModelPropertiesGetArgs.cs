@@ -14,7 +14,7 @@ namespace Pulumiverse.Dynatrace.Inputs
     public sealed class MetricEventsModelPropertiesGetArgs : global::Pulumi.ResourceArgs
     {
         /// <summary>
-        /// Possible Values: `ABOVE`, `BELOW`, `OUTSIDE`
+        /// Alert condition. Possible values: `ABOVE`, `BELOW`, `OUTSIDE`
         /// </summary>
         [Input("alertCondition", required: true)]
         public Input<string> AlertCondition { get; set; } = null!;
@@ -56,7 +56,7 @@ namespace Pulumiverse.Dynatrace.Inputs
         public Input<double>? Tolerance { get; set; }
 
         /// <summary>
-        /// Possible Values: `AUTO_ADAPTIVE_THRESHOLD`, `SEASONAL_BASELINE`, `STATIC_THRESHOLD`
+        /// Metric-key-based query definitions only support static thresholds. Possible values: `AUTO_ADAPTIVE_THRESHOLD`, `SEASONAL_BASELINE`, `STATIC_THRESHOLD`
         /// </summary>
         [Input("type", required: true)]
         public Input<string> Type { get; set; } = null!;

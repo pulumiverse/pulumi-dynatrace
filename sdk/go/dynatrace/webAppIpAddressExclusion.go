@@ -30,8 +30,8 @@ type WebAppIpAddressExclusion struct {
 	IpAddressExclusionInclude pulumi.BoolOutput `pulumi:"ipAddressExclusionInclude"`
 	// **Examples:**
 	//
-	//    - 84.112.10.5
-	//    - fe80::10a1:c6b2:5f68:785d
+	//      - 84.112.10.5
+	//     - fe80::10a1:c6b2:5f68:785d
 	IpExclusionList WebAppIpAddressExclusionIpExclusionListPtrOutput `pulumi:"ipExclusionList"`
 }
 
@@ -77,8 +77,8 @@ type webAppIpAddressExclusionState struct {
 	IpAddressExclusionInclude *bool `pulumi:"ipAddressExclusionInclude"`
 	// **Examples:**
 	//
-	//    - 84.112.10.5
-	//    - fe80::10a1:c6b2:5f68:785d
+	//      - 84.112.10.5
+	//     - fe80::10a1:c6b2:5f68:785d
 	IpExclusionList *WebAppIpAddressExclusionIpExclusionList `pulumi:"ipExclusionList"`
 }
 
@@ -89,8 +89,8 @@ type WebAppIpAddressExclusionState struct {
 	IpAddressExclusionInclude pulumi.BoolPtrInput
 	// **Examples:**
 	//
-	//    - 84.112.10.5
-	//    - fe80::10a1:c6b2:5f68:785d
+	//      - 84.112.10.5
+	//     - fe80::10a1:c6b2:5f68:785d
 	IpExclusionList WebAppIpAddressExclusionIpExclusionListPtrInput
 }
 
@@ -105,8 +105,8 @@ type webAppIpAddressExclusionArgs struct {
 	IpAddressExclusionInclude bool `pulumi:"ipAddressExclusionInclude"`
 	// **Examples:**
 	//
-	//    - 84.112.10.5
-	//    - fe80::10a1:c6b2:5f68:785d
+	//      - 84.112.10.5
+	//     - fe80::10a1:c6b2:5f68:785d
 	IpExclusionList *WebAppIpAddressExclusionIpExclusionList `pulumi:"ipExclusionList"`
 }
 
@@ -118,8 +118,8 @@ type WebAppIpAddressExclusionArgs struct {
 	IpAddressExclusionInclude pulumi.BoolInput
 	// **Examples:**
 	//
-	//    - 84.112.10.5
-	//    - fe80::10a1:c6b2:5f68:785d
+	//      - 84.112.10.5
+	//     - fe80::10a1:c6b2:5f68:785d
 	IpExclusionList WebAppIpAddressExclusionIpExclusionListPtrInput
 }
 

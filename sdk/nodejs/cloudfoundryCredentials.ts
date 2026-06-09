@@ -5,7 +5,7 @@ import * as pulumi from "@pulumi/pulumi";
 import * as utilities from "./utilities";
 
 /**
- * !> This resource is utilizing an older API endpoint, please use dynatrace.CloudFoundry instead.
+ * > This resource is utilizing an older API endpoint, please use dynatrace.CloudFoundry instead.
  *
  * > This resource requires the API token scopes **Read configuration** (`ReadConfig`) and **Write configuration** (`WriteConfig`)
  *

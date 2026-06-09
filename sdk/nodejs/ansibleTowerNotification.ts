@@ -63,9 +63,7 @@ export class AnsibleTowerNotification extends pulumi.CustomResource {
     /**
      * The URL of the target job template.
      *
-     * For example, https://<Ansible server name>/#/templates/job_template/<JobTemplateID>
-     *
-     * **Note:** Be sure to select the **Prompt on Launch** option in the Extra Variables section of your job template configuration.
+     *   **Note:** Be sure to select the **Prompt on Launch** option in the Extra Variables section of your job template configuration.
      */
     declare public readonly jobTemplateUrl: pulumi.Output<string>;
     /**
@@ -162,9 +160,7 @@ export interface AnsibleTowerNotificationState {
     /**
      * The URL of the target job template.
      *
-     * For example, https://<Ansible server name>/#/templates/job_template/<JobTemplateID>
-     *
-     * **Note:** Be sure to select the **Prompt on Launch** option in the Extra Variables section of your job template configuration.
+     *   **Note:** Be sure to select the **Prompt on Launch** option in the Extra Variables section of your job template configuration.
      */
     jobTemplateUrl?: pulumi.Input<string | undefined>;
     /**
@@ -209,9 +205,7 @@ export interface AnsibleTowerNotificationArgs {
     /**
      * The URL of the target job template.
      *
-     * For example, https://<Ansible server name>/#/templates/job_template/<JobTemplateID>
-     *
-     * **Note:** Be sure to select the **Prompt on Launch** option in the Extra Variables section of your job template configuration.
+     *   **Note:** Be sure to select the **Prompt on Launch** option in the Extra Variables section of your job template configuration.
      */
     jobTemplateUrl: pulumi.Input<string>;
     /**

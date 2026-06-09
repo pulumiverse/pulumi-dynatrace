@@ -28,7 +28,7 @@ class WebAppKeyPerformanceLoadArgs:
         """
         The set of arguments for constructing a WebAppKeyPerformanceLoad resource.
 
-        :param pulumi.Input[_builtins.str] kpm: Possible Values: `CUMULATIVE_LAYOUT_SHIFT`, `DOM_INTERACTIVE`, `FIRST_INPUT_DELAY`, `LARGEST_CONTENTFUL_PAINT`, `LOAD_EVENT_END`, `LOAD_EVENT_START`, `RESPONSE_END`, `RESPONSE_START`, `SPEED_INDEX`, `USER_ACTION_DURATION`, `VISUALLY_COMPLETE`
+        :param pulumi.Input[_builtins.str] kpm: Key performance metric. Possible values: `CUMULATIVE_LAYOUT_SHIFT`, `DOM_INTERACTIVE`, `FIRST_INPUT_DELAY`, `LARGEST_CONTENTFUL_PAINT`, `LOAD_EVENT_END`, `LOAD_EVENT_START`, `RESPONSE_END`, `RESPONSE_START`, `SPEED_INDEX`, `USER_ACTION_DURATION`, `VISUALLY_COMPLETE`
         :param pulumi.Input[_builtins.str] scope: The scope of this setting (APPLICATION_METHOD, APPLICATION)
         :param pulumi.Input['WebAppKeyPerformanceLoadThresholdsArgs'] thresholds: Set the Tolerating and Frustrated performance thresholds for this action type.
         :param pulumi.Input['WebAppKeyPerformanceLoadFallbackThresholdsArgs'] fallback_thresholds: If the selected key performance metric is not detected, the **User action duration** metric is used instead.
@@ -43,7 +43,7 @@ class WebAppKeyPerformanceLoadArgs:
     @pulumi.getter
     def kpm(self) -> pulumi.Input[_builtins.str]:
         """
-        Possible Values: `CUMULATIVE_LAYOUT_SHIFT`, `DOM_INTERACTIVE`, `FIRST_INPUT_DELAY`, `LARGEST_CONTENTFUL_PAINT`, `LOAD_EVENT_END`, `LOAD_EVENT_START`, `RESPONSE_END`, `RESPONSE_START`, `SPEED_INDEX`, `USER_ACTION_DURATION`, `VISUALLY_COMPLETE`
+        Key performance metric. Possible values: `CUMULATIVE_LAYOUT_SHIFT`, `DOM_INTERACTIVE`, `FIRST_INPUT_DELAY`, `LARGEST_CONTENTFUL_PAINT`, `LOAD_EVENT_END`, `LOAD_EVENT_START`, `RESPONSE_END`, `RESPONSE_START`, `SPEED_INDEX`, `USER_ACTION_DURATION`, `VISUALLY_COMPLETE`
         """
         return pulumi.get(self, "kpm")
 
@@ -99,7 +99,7 @@ class _WebAppKeyPerformanceLoadState:
         Input properties used for looking up and filtering WebAppKeyPerformanceLoad resources.
 
         :param pulumi.Input['WebAppKeyPerformanceLoadFallbackThresholdsArgs'] fallback_thresholds: If the selected key performance metric is not detected, the **User action duration** metric is used instead.
-        :param pulumi.Input[_builtins.str] kpm: Possible Values: `CUMULATIVE_LAYOUT_SHIFT`, `DOM_INTERACTIVE`, `FIRST_INPUT_DELAY`, `LARGEST_CONTENTFUL_PAINT`, `LOAD_EVENT_END`, `LOAD_EVENT_START`, `RESPONSE_END`, `RESPONSE_START`, `SPEED_INDEX`, `USER_ACTION_DURATION`, `VISUALLY_COMPLETE`
+        :param pulumi.Input[_builtins.str] kpm: Key performance metric. Possible values: `CUMULATIVE_LAYOUT_SHIFT`, `DOM_INTERACTIVE`, `FIRST_INPUT_DELAY`, `LARGEST_CONTENTFUL_PAINT`, `LOAD_EVENT_END`, `LOAD_EVENT_START`, `RESPONSE_END`, `RESPONSE_START`, `SPEED_INDEX`, `USER_ACTION_DURATION`, `VISUALLY_COMPLETE`
         :param pulumi.Input[_builtins.str] scope: The scope of this setting (APPLICATION_METHOD, APPLICATION)
         :param pulumi.Input['WebAppKeyPerformanceLoadThresholdsArgs'] thresholds: Set the Tolerating and Frustrated performance thresholds for this action type.
         """
@@ -128,7 +128,7 @@ class _WebAppKeyPerformanceLoadState:
     @pulumi.getter
     def kpm(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
-        Possible Values: `CUMULATIVE_LAYOUT_SHIFT`, `DOM_INTERACTIVE`, `FIRST_INPUT_DELAY`, `LARGEST_CONTENTFUL_PAINT`, `LOAD_EVENT_END`, `LOAD_EVENT_START`, `RESPONSE_END`, `RESPONSE_START`, `SPEED_INDEX`, `USER_ACTION_DURATION`, `VISUALLY_COMPLETE`
+        Key performance metric. Possible values: `CUMULATIVE_LAYOUT_SHIFT`, `DOM_INTERACTIVE`, `FIRST_INPUT_DELAY`, `LARGEST_CONTENTFUL_PAINT`, `LOAD_EVENT_END`, `LOAD_EVENT_START`, `RESPONSE_END`, `RESPONSE_START`, `SPEED_INDEX`, `USER_ACTION_DURATION`, `VISUALLY_COMPLETE`
         """
         return pulumi.get(self, "kpm")
 
@@ -191,7 +191,7 @@ class WebAppKeyPerformanceLoad(pulumi.CustomResource):
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[Union['WebAppKeyPerformanceLoadFallbackThresholdsArgs', 'WebAppKeyPerformanceLoadFallbackThresholdsArgsDict']] fallback_thresholds: If the selected key performance metric is not detected, the **User action duration** metric is used instead.
-        :param pulumi.Input[_builtins.str] kpm: Possible Values: `CUMULATIVE_LAYOUT_SHIFT`, `DOM_INTERACTIVE`, `FIRST_INPUT_DELAY`, `LARGEST_CONTENTFUL_PAINT`, `LOAD_EVENT_END`, `LOAD_EVENT_START`, `RESPONSE_END`, `RESPONSE_START`, `SPEED_INDEX`, `USER_ACTION_DURATION`, `VISUALLY_COMPLETE`
+        :param pulumi.Input[_builtins.str] kpm: Key performance metric. Possible values: `CUMULATIVE_LAYOUT_SHIFT`, `DOM_INTERACTIVE`, `FIRST_INPUT_DELAY`, `LARGEST_CONTENTFUL_PAINT`, `LOAD_EVENT_END`, `LOAD_EVENT_START`, `RESPONSE_END`, `RESPONSE_START`, `SPEED_INDEX`, `USER_ACTION_DURATION`, `VISUALLY_COMPLETE`
         :param pulumi.Input[_builtins.str] scope: The scope of this setting (APPLICATION_METHOD, APPLICATION)
         :param pulumi.Input[Union['WebAppKeyPerformanceLoadThresholdsArgs', 'WebAppKeyPerformanceLoadThresholdsArgsDict']] thresholds: Set the Tolerating and Frustrated performance thresholds for this action type.
         """
@@ -277,7 +277,7 @@ class WebAppKeyPerformanceLoad(pulumi.CustomResource):
         :param pulumi.Input[str] id: The unique provider ID of the resource to lookup.
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[Union['WebAppKeyPerformanceLoadFallbackThresholdsArgs', 'WebAppKeyPerformanceLoadFallbackThresholdsArgsDict']] fallback_thresholds: If the selected key performance metric is not detected, the **User action duration** metric is used instead.
-        :param pulumi.Input[_builtins.str] kpm: Possible Values: `CUMULATIVE_LAYOUT_SHIFT`, `DOM_INTERACTIVE`, `FIRST_INPUT_DELAY`, `LARGEST_CONTENTFUL_PAINT`, `LOAD_EVENT_END`, `LOAD_EVENT_START`, `RESPONSE_END`, `RESPONSE_START`, `SPEED_INDEX`, `USER_ACTION_DURATION`, `VISUALLY_COMPLETE`
+        :param pulumi.Input[_builtins.str] kpm: Key performance metric. Possible values: `CUMULATIVE_LAYOUT_SHIFT`, `DOM_INTERACTIVE`, `FIRST_INPUT_DELAY`, `LARGEST_CONTENTFUL_PAINT`, `LOAD_EVENT_END`, `LOAD_EVENT_START`, `RESPONSE_END`, `RESPONSE_START`, `SPEED_INDEX`, `USER_ACTION_DURATION`, `VISUALLY_COMPLETE`
         :param pulumi.Input[_builtins.str] scope: The scope of this setting (APPLICATION_METHOD, APPLICATION)
         :param pulumi.Input[Union['WebAppKeyPerformanceLoadThresholdsArgs', 'WebAppKeyPerformanceLoadThresholdsArgsDict']] thresholds: Set the Tolerating and Frustrated performance thresholds for this action type.
         """
@@ -303,7 +303,7 @@ class WebAppKeyPerformanceLoad(pulumi.CustomResource):
     @pulumi.getter
     def kpm(self) -> pulumi.Output[_builtins.str]:
         """
-        Possible Values: `CUMULATIVE_LAYOUT_SHIFT`, `DOM_INTERACTIVE`, `FIRST_INPUT_DELAY`, `LARGEST_CONTENTFUL_PAINT`, `LOAD_EVENT_END`, `LOAD_EVENT_START`, `RESPONSE_END`, `RESPONSE_START`, `SPEED_INDEX`, `USER_ACTION_DURATION`, `VISUALLY_COMPLETE`
+        Key performance metric. Possible values: `CUMULATIVE_LAYOUT_SHIFT`, `DOM_INTERACTIVE`, `FIRST_INPUT_DELAY`, `LARGEST_CONTENTFUL_PAINT`, `LOAD_EVENT_END`, `LOAD_EVENT_START`, `RESPONSE_END`, `RESPONSE_START`, `SPEED_INDEX`, `USER_ACTION_DURATION`, `VISUALLY_COMPLETE`
         """
         return pulumi.get(self, "kpm")
 

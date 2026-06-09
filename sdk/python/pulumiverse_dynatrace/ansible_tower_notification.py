@@ -35,9 +35,7 @@ class AnsibleTowerNotificationArgs:
                **{ImpactedEntities}**: Details about the entities impacted by the problem in form of a json array.
         :param pulumi.Input[_builtins.str] job_template_url: The URL of the target job template.
                
-               For example, https://<Ansible server name>/#/templates/job_template/<JobTemplateID>
-               
-               **Note:** Be sure to select the **Prompt on Launch** option in the Extra Variables section of your job template configuration.
+                 **Note:** Be sure to select the **Prompt on Launch** option in the Extra Variables section of your job template configuration.
         :param pulumi.Input[_builtins.str] profile: The ID of the associated alerting profile.
         :param pulumi.Input[_builtins.str] username: Account username.
         :param pulumi.Input[_builtins.bool] active: This setting is enabled (`true`) or disabled (`false`)
@@ -80,9 +78,7 @@ class AnsibleTowerNotificationArgs:
         """
         The URL of the target job template.
 
-        For example, https://<Ansible server name>/#/templates/job_template/<JobTemplateID>
-
-        **Note:** Be sure to select the **Prompt on Launch** option in the Extra Variables section of your job template configuration.
+          **Note:** Be sure to select the **Prompt on Launch** option in the Extra Variables section of your job template configuration.
         """
         return pulumi.get(self, "job_template_url")
 
@@ -196,9 +192,7 @@ class _AnsibleTowerNotificationState:
         :param pulumi.Input[_builtins.bool] insecure: Accept any SSL certificate (including self-signed and invalid certificates)
         :param pulumi.Input[_builtins.str] job_template_url: The URL of the target job template.
                
-               For example, https://<Ansible server name>/#/templates/job_template/<JobTemplateID>
-               
-               **Note:** Be sure to select the **Prompt on Launch** option in the Extra Variables section of your job template configuration.
+                 **Note:** Be sure to select the **Prompt on Launch** option in the Extra Variables section of your job template configuration.
         :param pulumi.Input[_builtins.str] legacy_id: The ID of these settings when referred to from resources requiring the REST API V1 keys
         :param pulumi.Input[_builtins.str] name: The name of the notification configuration.
         :param pulumi.Input[_builtins.str] password: Account password.
@@ -267,9 +261,7 @@ class _AnsibleTowerNotificationState:
         """
         The URL of the target job template.
 
-        For example, https://<Ansible server name>/#/templates/job_template/<JobTemplateID>
-
-        **Note:** Be sure to select the **Prompt on Launch** option in the Extra Variables section of your job template configuration.
+          **Note:** Be sure to select the **Prompt on Launch** option in the Extra Variables section of your job template configuration.
         """
         return pulumi.get(self, "job_template_url")
 
@@ -378,9 +370,7 @@ class AnsibleTowerNotification(pulumi.CustomResource):
         :param pulumi.Input[_builtins.bool] insecure: Accept any SSL certificate (including self-signed and invalid certificates)
         :param pulumi.Input[_builtins.str] job_template_url: The URL of the target job template.
                
-               For example, https://<Ansible server name>/#/templates/job_template/<JobTemplateID>
-               
-               **Note:** Be sure to select the **Prompt on Launch** option in the Extra Variables section of your job template configuration.
+                 **Note:** Be sure to select the **Prompt on Launch** option in the Extra Variables section of your job template configuration.
         :param pulumi.Input[_builtins.str] legacy_id: The ID of these settings when referred to from resources requiring the REST API V1 keys
         :param pulumi.Input[_builtins.str] name: The name of the notification configuration.
         :param pulumi.Input[_builtins.str] password: Account password.
@@ -493,9 +483,7 @@ class AnsibleTowerNotification(pulumi.CustomResource):
         :param pulumi.Input[_builtins.bool] insecure: Accept any SSL certificate (including self-signed and invalid certificates)
         :param pulumi.Input[_builtins.str] job_template_url: The URL of the target job template.
                
-               For example, https://<Ansible server name>/#/templates/job_template/<JobTemplateID>
-               
-               **Note:** Be sure to select the **Prompt on Launch** option in the Extra Variables section of your job template configuration.
+                 **Note:** Be sure to select the **Prompt on Launch** option in the Extra Variables section of your job template configuration.
         :param pulumi.Input[_builtins.str] legacy_id: The ID of these settings when referred to from resources requiring the REST API V1 keys
         :param pulumi.Input[_builtins.str] name: The name of the notification configuration.
         :param pulumi.Input[_builtins.str] password: Account password.
@@ -548,9 +536,7 @@ class AnsibleTowerNotification(pulumi.CustomResource):
         """
         The URL of the target job template.
 
-        For example, https://<Ansible server name>/#/templates/job_template/<JobTemplateID>
-
-        **Note:** Be sure to select the **Prompt on Launch** option in the Extra Variables section of your job template configuration.
+          **Note:** Be sure to select the **Prompt on Launch** option in the Extra Variables section of your job template configuration.
         """
         return pulumi.get(self, "job_template_url")
 

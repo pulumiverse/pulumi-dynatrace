@@ -64,11 +64,11 @@ export class IssueTracking extends pulumi.CustomResource {
      */
     declare public readonly issuequery: pulumi.Output<string>;
     /**
-     * Possible Values: `ERROR`, `INFO`, `RESOLVED`
+     * Select the issue type to be displayed. Possible values: `ERROR`, `INFO`, `RESOLVED`
      */
     declare public readonly issuetheme: pulumi.Output<string>;
     /**
-     * Possible Values: `GITHUB`, `GITLAB`, `JIRA`, `JIRA_CLOUD`, `JIRA_ON_PREMISE`, `SERVICENOW`
+     * Select the issue-tracking system you want to query. Possible values: `GITHUB`, `GITLAB`, `JIRA`, `JIRA_CLOUD`, `JIRA_ON_PREMISE`, `SERVICENOW`
      */
     declare public readonly issuetrackersystem: pulumi.Output<string>;
     /**
@@ -173,11 +173,11 @@ export interface IssueTrackingState {
      */
     issuequery?: pulumi.Input<string | undefined>;
     /**
-     * Possible Values: `ERROR`, `INFO`, `RESOLVED`
+     * Select the issue type to be displayed. Possible values: `ERROR`, `INFO`, `RESOLVED`
      */
     issuetheme?: pulumi.Input<string | undefined>;
     /**
-     * Possible Values: `GITHUB`, `GITLAB`, `JIRA`, `JIRA_CLOUD`, `JIRA_ON_PREMISE`, `SERVICENOW`
+     * Select the issue-tracking system you want to query. Possible values: `GITHUB`, `GITLAB`, `JIRA`, `JIRA_CLOUD`, `JIRA_ON_PREMISE`, `SERVICENOW`
      */
     issuetrackersystem?: pulumi.Input<string | undefined>;
     /**
@@ -219,11 +219,11 @@ export interface IssueTrackingArgs {
      */
     issuequery: pulumi.Input<string>;
     /**
-     * Possible Values: `ERROR`, `INFO`, `RESOLVED`
+     * Select the issue type to be displayed. Possible values: `ERROR`, `INFO`, `RESOLVED`
      */
     issuetheme: pulumi.Input<string>;
     /**
-     * Possible Values: `GITHUB`, `GITLAB`, `JIRA`, `JIRA_CLOUD`, `JIRA_ON_PREMISE`, `SERVICENOW`
+     * Select the issue-tracking system you want to query. Possible values: `GITHUB`, `GITLAB`, `JIRA`, `JIRA_CLOUD`, `JIRA_ON_PREMISE`, `SERVICENOW`
      */
     issuetrackersystem: pulumi.Input<string>;
     /**

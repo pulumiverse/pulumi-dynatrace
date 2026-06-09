@@ -30,7 +30,7 @@ type WebAppKeyPerformanceXhr struct {
 
 	// If the selected key performance metric is not detected, the **User action duration** metric is used instead.
 	FallbackThresholds WebAppKeyPerformanceXhrFallbackThresholdsPtrOutput `pulumi:"fallbackThresholds"`
-	// Possible Values: `RESPONSE_END`, `RESPONSE_START`, `USER_ACTION_DURATION`, `VISUALLY_COMPLETE`
+	// Key performance metric. Possible values: `RESPONSE_END`, `RESPONSE_START`, `USER_ACTION_DURATION`, `VISUALLY_COMPLETE`
 	Kpm pulumi.StringOutput `pulumi:"kpm"`
 	// The scope of this setting (APPLICATION_METHOD, APPLICATION)
 	Scope pulumi.StringOutput `pulumi:"scope"`
@@ -79,7 +79,7 @@ func GetWebAppKeyPerformanceXhr(ctx *pulumi.Context,
 type webAppKeyPerformanceXhrState struct {
 	// If the selected key performance metric is not detected, the **User action duration** metric is used instead.
 	FallbackThresholds *WebAppKeyPerformanceXhrFallbackThresholds `pulumi:"fallbackThresholds"`
-	// Possible Values: `RESPONSE_END`, `RESPONSE_START`, `USER_ACTION_DURATION`, `VISUALLY_COMPLETE`
+	// Key performance metric. Possible values: `RESPONSE_END`, `RESPONSE_START`, `USER_ACTION_DURATION`, `VISUALLY_COMPLETE`
 	Kpm *string `pulumi:"kpm"`
 	// The scope of this setting (APPLICATION_METHOD, APPLICATION)
 	Scope *string `pulumi:"scope"`
@@ -90,7 +90,7 @@ type webAppKeyPerformanceXhrState struct {
 type WebAppKeyPerformanceXhrState struct {
 	// If the selected key performance metric is not detected, the **User action duration** metric is used instead.
 	FallbackThresholds WebAppKeyPerformanceXhrFallbackThresholdsPtrInput
-	// Possible Values: `RESPONSE_END`, `RESPONSE_START`, `USER_ACTION_DURATION`, `VISUALLY_COMPLETE`
+	// Key performance metric. Possible values: `RESPONSE_END`, `RESPONSE_START`, `USER_ACTION_DURATION`, `VISUALLY_COMPLETE`
 	Kpm pulumi.StringPtrInput
 	// The scope of this setting (APPLICATION_METHOD, APPLICATION)
 	Scope pulumi.StringPtrInput
@@ -105,7 +105,7 @@ func (WebAppKeyPerformanceXhrState) ElementType() reflect.Type {
 type webAppKeyPerformanceXhrArgs struct {
 	// If the selected key performance metric is not detected, the **User action duration** metric is used instead.
 	FallbackThresholds *WebAppKeyPerformanceXhrFallbackThresholds `pulumi:"fallbackThresholds"`
-	// Possible Values: `RESPONSE_END`, `RESPONSE_START`, `USER_ACTION_DURATION`, `VISUALLY_COMPLETE`
+	// Key performance metric. Possible values: `RESPONSE_END`, `RESPONSE_START`, `USER_ACTION_DURATION`, `VISUALLY_COMPLETE`
 	Kpm string `pulumi:"kpm"`
 	// The scope of this setting (APPLICATION_METHOD, APPLICATION)
 	Scope string `pulumi:"scope"`
@@ -117,7 +117,7 @@ type webAppKeyPerformanceXhrArgs struct {
 type WebAppKeyPerformanceXhrArgs struct {
 	// If the selected key performance metric is not detected, the **User action duration** metric is used instead.
 	FallbackThresholds WebAppKeyPerformanceXhrFallbackThresholdsPtrInput
-	// Possible Values: `RESPONSE_END`, `RESPONSE_START`, `USER_ACTION_DURATION`, `VISUALLY_COMPLETE`
+	// Key performance metric. Possible values: `RESPONSE_END`, `RESPONSE_START`, `USER_ACTION_DURATION`, `VISUALLY_COMPLETE`
 	Kpm pulumi.StringInput
 	// The scope of this setting (APPLICATION_METHOD, APPLICATION)
 	Scope pulumi.StringInput
@@ -219,7 +219,7 @@ func (o WebAppKeyPerformanceXhrOutput) FallbackThresholds() WebAppKeyPerformance
 	}).(WebAppKeyPerformanceXhrFallbackThresholdsPtrOutput)
 }
 
-// Possible Values: `RESPONSE_END`, `RESPONSE_START`, `USER_ACTION_DURATION`, `VISUALLY_COMPLETE`
+// Key performance metric. Possible values: `RESPONSE_END`, `RESPONSE_START`, `USER_ACTION_DURATION`, `VISUALLY_COMPLETE`
 func (o WebAppKeyPerformanceXhrOutput) Kpm() pulumi.StringOutput {
 	return o.ApplyT(func(v *WebAppKeyPerformanceXhr) pulumi.StringOutput { return v.Kpm }).(pulumi.StringOutput)
 }

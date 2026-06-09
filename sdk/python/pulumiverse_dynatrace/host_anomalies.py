@@ -275,7 +275,7 @@ class HostAnomalies(pulumi.CustomResource):
                  network: pulumi.Input[Optional[Union['HostAnomaliesNetworkArgs', 'HostAnomaliesNetworkArgsDict']]] = None,
                  __props__=None):
         """
-        !> This resource is utilizing an older API endpoint, please use HostAnomaliesV2 instead.
+        > This resource is utilizing an older API endpoint, please use HostAnomaliesV2 instead.
 
         > This resource requires the API token scopes **Read configuration** (`ReadConfig`) and **Write configuration** (`WriteConfig`)
 
@@ -309,7 +309,7 @@ class HostAnomalies(pulumi.CustomResource):
                  args: Optional[HostAnomaliesArgs] = None,
                  opts: Optional[pulumi.ResourceOptions] = None):
         """
-        !> This resource is utilizing an older API endpoint, please use HostAnomaliesV2 instead.
+        > This resource is utilizing an older API endpoint, please use HostAnomaliesV2 instead.
 
         > This resource requires the API token scopes **Read configuration** (`ReadConfig`) and **Write configuration** (`WriteConfig`)
 

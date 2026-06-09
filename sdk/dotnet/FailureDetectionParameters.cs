@@ -35,25 +35,25 @@ namespace Pulumiverse.Dynatrace
         public Output<Outputs.FailureDetectionParametersBrokenLinks> BrokenLinks { get; private set; } = null!;
 
         /// <summary>
-        /// Description
+        /// A short description of this failure detection parameter set.
         /// </summary>
         [Output("description")]
         public Output<string?> Description { get; private set; } = null!;
 
         /// <summary>
-        /// Customize failure detection for specific exceptions and errors
+        /// Exception and custom error rules that determine how specific exceptions, handled errors, and request-attribute-based conditions affect failure detection.
         /// </summary>
         [Output("exceptionRules")]
         public Output<Outputs.FailureDetectionParametersExceptionRules> ExceptionRules { get; private set; } = null!;
 
         /// <summary>
-        /// HTTP response codes
+        /// HTTP response code settings that control which response codes are treated as server-side or client-side errors.
         /// </summary>
         [Output("httpResponseCodes")]
         public Output<Outputs.FailureDetectionParametersHttpResponseCodes> HttpResponseCodes { get; private set; } = null!;
 
         /// <summary>
-        /// Name
+        /// The display name of this failure detection parameter set.
         /// </summary>
         [Output("name")]
         public Output<string> Name { get; private set; } = null!;
@@ -112,25 +112,25 @@ namespace Pulumiverse.Dynatrace
         public Input<Inputs.FailureDetectionParametersBrokenLinksArgs> BrokenLinks { get; set; } = null!;
 
         /// <summary>
-        /// Description
+        /// A short description of this failure detection parameter set.
         /// </summary>
         [Input("description")]
         public Input<string>? Description { get; set; }
 
         /// <summary>
-        /// Customize failure detection for specific exceptions and errors
+        /// Exception and custom error rules that determine how specific exceptions, handled errors, and request-attribute-based conditions affect failure detection.
         /// </summary>
         [Input("exceptionRules", required: true)]
         public Input<Inputs.FailureDetectionParametersExceptionRulesArgs> ExceptionRules { get; set; } = null!;
 
         /// <summary>
-        /// HTTP response codes
+        /// HTTP response code settings that control which response codes are treated as server-side or client-side errors.
         /// </summary>
         [Input("httpResponseCodes", required: true)]
         public Input<Inputs.FailureDetectionParametersHttpResponseCodesArgs> HttpResponseCodes { get; set; } = null!;
 
         /// <summary>
-        /// Name
+        /// The display name of this failure detection parameter set.
         /// </summary>
         [Input("name")]
         public Input<string>? Name { get; set; }
@@ -150,25 +150,25 @@ namespace Pulumiverse.Dynatrace
         public Input<Inputs.FailureDetectionParametersBrokenLinksGetArgs>? BrokenLinks { get; set; }
 
         /// <summary>
-        /// Description
+        /// A short description of this failure detection parameter set.
         /// </summary>
         [Input("description")]
         public Input<string>? Description { get; set; }
 
         /// <summary>
-        /// Customize failure detection for specific exceptions and errors
+        /// Exception and custom error rules that determine how specific exceptions, handled errors, and request-attribute-based conditions affect failure detection.
         /// </summary>
         [Input("exceptionRules")]
         public Input<Inputs.FailureDetectionParametersExceptionRulesGetArgs>? ExceptionRules { get; set; }
 
         /// <summary>
-        /// HTTP response codes
+        /// HTTP response code settings that control which response codes are treated as server-side or client-side errors.
         /// </summary>
         [Input("httpResponseCodes")]
         public Input<Inputs.FailureDetectionParametersHttpResponseCodesGetArgs>? HttpResponseCodes { get; set; }
 
         /// <summary>
-        /// Name
+        /// The display name of this failure detection parameter set.
         /// </summary>
         [Input("name")]
         public Input<string>? Name { get; set; }

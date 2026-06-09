@@ -91,15 +91,23 @@ import * as utilities from "./utilities";
  *                         dimensions: {
  *                             dimensions: [
  *                                 {
+ *                                     extractionType: "field",
+ *                                     strategy: "equals",
  *                                     sourceFieldName: "dt.cost.costcenter",
  *                                 },
  *                                 {
+ *                                     extractionType: "field",
+ *                                     strategy: "equals",
  *                                     sourceFieldName: "dt.cost.product",
  *                                 },
  *                                 {
+ *                                     extractionType: "field",
+ *                                     strategy: "equals",
  *                                     sourceFieldName: "dt.security_context",
  *                                 },
  *                                 {
+ *                                     extractionType: "field",
+ *                                     strategy: "equals",
  *                                     sourceFieldName: "record.category",
  *                                     destinationFieldName: "warning_category",
  *                                 },
@@ -120,15 +128,23 @@ import * as utilities from "./utilities";
  *                         dimensions: {
  *                             dimensions: [
  *                                 {
+ *                                     extractionType: "field",
+ *                                     strategy: "equals",
  *                                     sourceFieldName: "dt.cost.costcenter",
  *                                 },
  *                                 {
+ *                                     extractionType: "field",
+ *                                     strategy: "equals",
  *                                     sourceFieldName: "dt.cost.product",
  *                                 },
  *                                 {
+ *                                     extractionType: "field",
+ *                                     strategy: "equals",
  *                                     sourceFieldName: "dt.security_context",
  *                                 },
  *                                 {
+ *                                     extractionType: "field",
+ *                                     strategy: "equals",
  *                                     sourceFieldName: "record.category",
  *                                     destinationFieldName: "warning_category",
  *                                 },

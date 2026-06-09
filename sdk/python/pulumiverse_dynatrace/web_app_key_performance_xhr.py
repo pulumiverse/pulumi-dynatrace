@@ -28,7 +28,7 @@ class WebAppKeyPerformanceXhrArgs:
         """
         The set of arguments for constructing a WebAppKeyPerformanceXhr resource.
 
-        :param pulumi.Input[_builtins.str] kpm: Possible Values: `RESPONSE_END`, `RESPONSE_START`, `USER_ACTION_DURATION`, `VISUALLY_COMPLETE`
+        :param pulumi.Input[_builtins.str] kpm: Key performance metric. Possible values: `RESPONSE_END`, `RESPONSE_START`, `USER_ACTION_DURATION`, `VISUALLY_COMPLETE`
         :param pulumi.Input[_builtins.str] scope: The scope of this setting (APPLICATION_METHOD, APPLICATION)
         :param pulumi.Input['WebAppKeyPerformanceXhrThresholdsArgs'] thresholds: Set the Tolerating and Frustrated performance thresholds for this action type.
         :param pulumi.Input['WebAppKeyPerformanceXhrFallbackThresholdsArgs'] fallback_thresholds: If the selected key performance metric is not detected, the **User action duration** metric is used instead.
@@ -43,7 +43,7 @@ class WebAppKeyPerformanceXhrArgs:
     @pulumi.getter
     def kpm(self) -> pulumi.Input[_builtins.str]:
         """
-        Possible Values: `RESPONSE_END`, `RESPONSE_START`, `USER_ACTION_DURATION`, `VISUALLY_COMPLETE`
+        Key performance metric. Possible values: `RESPONSE_END`, `RESPONSE_START`, `USER_ACTION_DURATION`, `VISUALLY_COMPLETE`
         """
         return pulumi.get(self, "kpm")
 
@@ -99,7 +99,7 @@ class _WebAppKeyPerformanceXhrState:
         Input properties used for looking up and filtering WebAppKeyPerformanceXhr resources.
 
         :param pulumi.Input['WebAppKeyPerformanceXhrFallbackThresholdsArgs'] fallback_thresholds: If the selected key performance metric is not detected, the **User action duration** metric is used instead.
-        :param pulumi.Input[_builtins.str] kpm: Possible Values: `RESPONSE_END`, `RESPONSE_START`, `USER_ACTION_DURATION`, `VISUALLY_COMPLETE`
+        :param pulumi.Input[_builtins.str] kpm: Key performance metric. Possible values: `RESPONSE_END`, `RESPONSE_START`, `USER_ACTION_DURATION`, `VISUALLY_COMPLETE`
         :param pulumi.Input[_builtins.str] scope: The scope of this setting (APPLICATION_METHOD, APPLICATION)
         :param pulumi.Input['WebAppKeyPerformanceXhrThresholdsArgs'] thresholds: Set the Tolerating and Frustrated performance thresholds for this action type.
         """
@@ -128,7 +128,7 @@ class _WebAppKeyPerformanceXhrState:
     @pulumi.getter
     def kpm(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
-        Possible Values: `RESPONSE_END`, `RESPONSE_START`, `USER_ACTION_DURATION`, `VISUALLY_COMPLETE`
+        Key performance metric. Possible values: `RESPONSE_END`, `RESPONSE_START`, `USER_ACTION_DURATION`, `VISUALLY_COMPLETE`
         """
         return pulumi.get(self, "kpm")
 
@@ -191,7 +191,7 @@ class WebAppKeyPerformanceXhr(pulumi.CustomResource):
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[Union['WebAppKeyPerformanceXhrFallbackThresholdsArgs', 'WebAppKeyPerformanceXhrFallbackThresholdsArgsDict']] fallback_thresholds: If the selected key performance metric is not detected, the **User action duration** metric is used instead.
-        :param pulumi.Input[_builtins.str] kpm: Possible Values: `RESPONSE_END`, `RESPONSE_START`, `USER_ACTION_DURATION`, `VISUALLY_COMPLETE`
+        :param pulumi.Input[_builtins.str] kpm: Key performance metric. Possible values: `RESPONSE_END`, `RESPONSE_START`, `USER_ACTION_DURATION`, `VISUALLY_COMPLETE`
         :param pulumi.Input[_builtins.str] scope: The scope of this setting (APPLICATION_METHOD, APPLICATION)
         :param pulumi.Input[Union['WebAppKeyPerformanceXhrThresholdsArgs', 'WebAppKeyPerformanceXhrThresholdsArgsDict']] thresholds: Set the Tolerating and Frustrated performance thresholds for this action type.
         """
@@ -277,7 +277,7 @@ class WebAppKeyPerformanceXhr(pulumi.CustomResource):
         :param pulumi.Input[str] id: The unique provider ID of the resource to lookup.
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[Union['WebAppKeyPerformanceXhrFallbackThresholdsArgs', 'WebAppKeyPerformanceXhrFallbackThresholdsArgsDict']] fallback_thresholds: If the selected key performance metric is not detected, the **User action duration** metric is used instead.
-        :param pulumi.Input[_builtins.str] kpm: Possible Values: `RESPONSE_END`, `RESPONSE_START`, `USER_ACTION_DURATION`, `VISUALLY_COMPLETE`
+        :param pulumi.Input[_builtins.str] kpm: Key performance metric. Possible values: `RESPONSE_END`, `RESPONSE_START`, `USER_ACTION_DURATION`, `VISUALLY_COMPLETE`
         :param pulumi.Input[_builtins.str] scope: The scope of this setting (APPLICATION_METHOD, APPLICATION)
         :param pulumi.Input[Union['WebAppKeyPerformanceXhrThresholdsArgs', 'WebAppKeyPerformanceXhrThresholdsArgsDict']] thresholds: Set the Tolerating and Frustrated performance thresholds for this action type.
         """
@@ -303,7 +303,7 @@ class WebAppKeyPerformanceXhr(pulumi.CustomResource):
     @pulumi.getter
     def kpm(self) -> pulumi.Output[_builtins.str]:
         """
-        Possible Values: `RESPONSE_END`, `RESPONSE_START`, `USER_ACTION_DURATION`, `VISUALLY_COMPLETE`
+        Key performance metric. Possible values: `RESPONSE_END`, `RESPONSE_START`, `USER_ACTION_DURATION`, `VISUALLY_COMPLETE`
         """
         return pulumi.get(self, "kpm")
 

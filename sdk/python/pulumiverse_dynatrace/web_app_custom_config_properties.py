@@ -24,7 +24,7 @@ class WebAppCustomConfigPropertiesArgs:
         """
         The set of arguments for constructing a WebAppCustomConfigProperties resource.
 
-        :param pulumi.Input[_builtins.str] application_id: The scope of this setting
+        :param pulumi.Input[_builtins.str] application_id: The scope of this settings. If the settings should cover the whole environment, just don't specify any scope.
         :param pulumi.Input[_builtins.str] custom_property: Custom configuration property
         """
         pulumi.set(__self__, "application_id", application_id)
@@ -34,7 +34,7 @@ class WebAppCustomConfigPropertiesArgs:
     @pulumi.getter(name="applicationId")
     def application_id(self) -> pulumi.Input[_builtins.str]:
         """
-        The scope of this setting
+        The scope of this settings. If the settings should cover the whole environment, just don't specify any scope.
         """
         return pulumi.get(self, "application_id")
 
@@ -63,7 +63,7 @@ class _WebAppCustomConfigPropertiesState:
         """
         Input properties used for looking up and filtering WebAppCustomConfigProperties resources.
 
-        :param pulumi.Input[_builtins.str] application_id: The scope of this setting
+        :param pulumi.Input[_builtins.str] application_id: The scope of this settings. If the settings should cover the whole environment, just don't specify any scope.
         :param pulumi.Input[_builtins.str] custom_property: Custom configuration property
         """
         if application_id is not None:
@@ -75,7 +75,7 @@ class _WebAppCustomConfigPropertiesState:
     @pulumi.getter(name="applicationId")
     def application_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
-        The scope of this setting
+        The scope of this settings. If the settings should cover the whole environment, just don't specify any scope.
         """
         return pulumi.get(self, "application_id")
 
@@ -123,7 +123,7 @@ class WebAppCustomConfigProperties(pulumi.CustomResource):
 
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
-        :param pulumi.Input[_builtins.str] application_id: The scope of this setting
+        :param pulumi.Input[_builtins.str] application_id: The scope of this settings. If the settings should cover the whole environment, just don't specify any scope.
         :param pulumi.Input[_builtins.str] custom_property: Custom configuration property
         """
         ...
@@ -199,7 +199,7 @@ class WebAppCustomConfigProperties(pulumi.CustomResource):
         :param str resource_name: The unique name of the resulting resource.
         :param pulumi.Input[str] id: The unique provider ID of the resource to lookup.
         :param pulumi.ResourceOptions opts: Options for the resource.
-        :param pulumi.Input[_builtins.str] application_id: The scope of this setting
+        :param pulumi.Input[_builtins.str] application_id: The scope of this settings. If the settings should cover the whole environment, just don't specify any scope.
         :param pulumi.Input[_builtins.str] custom_property: Custom configuration property
         """
         opts = pulumi.ResourceOptions.merge(opts, pulumi.ResourceOptions(id=id))
@@ -214,7 +214,7 @@ class WebAppCustomConfigProperties(pulumi.CustomResource):
     @pulumi.getter(name="applicationId")
     def application_id(self) -> pulumi.Output[_builtins.str]:
         """
-        The scope of this setting
+        The scope of this settings. If the settings should cover the whole environment, just don't specify any scope.
         """
         return pulumi.get(self, "application_id")
 

@@ -25,10 +25,11 @@ import * as utilities from "./utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as dynatrace from "@pulumiverse/dynatrace";
  *
- * const config = new pulumi.Config();
- * const PROCESS_GROUP_ID = config.require("PROCESS_GROUP_ID");
+ * const processGroup = dynatrace.getEntity({
+ *     entitySelector: "type(\"PROCESS_GROUP\")",
+ * });
  * const optin = new dynatrace.DevobsAgentOptin("optin", {
- *     scope: PROCESS_GROUP_ID,
+ *     scope: processGroup.then(processGroup => processGroup.id),
  *     enabled: false,
  * });
  * ```

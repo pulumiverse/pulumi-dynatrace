@@ -56,8 +56,8 @@ export class WebAppIpAddressExclusion extends pulumi.CustomResource {
     /**
      * **Examples:**
      *
-     *    - 84.112.10.5
-     *    - fe80::10a1:c6b2:5f68:785d
+     *      - 84.112.10.5
+     *     - fe80::10a1:c6b2:5f68:785d
      */
     declare public readonly ipExclusionList: pulumi.Output<outputs.WebAppIpAddressExclusionIpExclusionList | undefined>;
 
@@ -109,8 +109,8 @@ export interface WebAppIpAddressExclusionState {
     /**
      * **Examples:**
      *
-     *    - 84.112.10.5
-     *    - fe80::10a1:c6b2:5f68:785d
+     *      - 84.112.10.5
+     *     - fe80::10a1:c6b2:5f68:785d
      */
     ipExclusionList?: pulumi.Input<inputs.WebAppIpAddressExclusionIpExclusionList | undefined>;
 }
@@ -130,8 +130,8 @@ export interface WebAppIpAddressExclusionArgs {
     /**
      * **Examples:**
      *
-     *    - 84.112.10.5
-     *    - fe80::10a1:c6b2:5f68:785d
+     *      - 84.112.10.5
+     *     - fe80::10a1:c6b2:5f68:785d
      */
     ipExclusionList?: pulumi.Input<inputs.WebAppIpAddressExclusionIpExclusionList | undefined>;
 }

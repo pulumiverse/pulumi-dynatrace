@@ -19,28 +19,46 @@ __all__ = ['InfraopsAppSettingsArgs', 'InfraopsAppSettings']
 @pulumi.input_type
 class InfraopsAppSettingsArgs:
     def __init__(__self__, *,
+                 interface_saturation_threshold: pulumi.Input[_builtins.float],
+                 invex_dql_query_limit: pulumi.Input[_builtins.int],
                  show_monitoring_candidates: pulumi.Input[_builtins.bool],
-                 show_standalone_hosts: pulumi.Input[_builtins.bool],
-                 interface_saturation_threshold: pulumi.Input[Optional[_builtins.float]] = None,
-                 invex_dql_query_limit: pulumi.Input[Optional[_builtins.int]] = None,
-                 invex_dql_sort_limit: pulumi.Input[Optional[_builtins.int]] = None):
+                 show_standalone_hosts: pulumi.Input[_builtins.bool]):
         """
         The set of arguments for constructing a InfraopsAppSettings resource.
 
-        :param pulumi.Input[_builtins.bool] show_monitoring_candidates: When set to true, the app will display monitoring candidates in the Hosts table
-        :param pulumi.Input[_builtins.bool] show_standalone_hosts: When set to true, the app will display app only hosts in the Hosts table
         :param pulumi.Input[_builtins.float] interface_saturation_threshold: The threshold at which a network device interface is deemed to be saturated.
         :param pulumi.Input[_builtins.int] invex_dql_query_limit: Limit the number of results returned from Grail for Host, Network device, and Extensions entities.
-        :param pulumi.Input[_builtins.int] invex_dql_sort_limit: Limit for server-side sorting in Host, Network device and Extensions inventories. Sorting is disabled when the row count exceeds the configured threshold.
+        :param pulumi.Input[_builtins.bool] show_monitoring_candidates: When set to true, the app will display monitoring candidates in the Hosts table
+        :param pulumi.Input[_builtins.bool] show_standalone_hosts: When set to true, the app will display app only hosts in the Hosts table
         """
+        pulumi.set(__self__, "interface_saturation_threshold", interface_saturation_threshold)
+        pulumi.set(__self__, "invex_dql_query_limit", invex_dql_query_limit)
         pulumi.set(__self__, "show_monitoring_candidates", show_monitoring_candidates)
         pulumi.set(__self__, "show_standalone_hosts", show_standalone_hosts)
-        if interface_saturation_threshold is not None:
-            pulumi.set(__self__, "interface_saturation_threshold", interface_saturation_threshold)
-        if invex_dql_query_limit is not None:
-            pulumi.set(__self__, "invex_dql_query_limit", invex_dql_query_limit)
-        if invex_dql_sort_limit is not None:
-            pulumi.set(__self__, "invex_dql_sort_limit", invex_dql_sort_limit)
+
+    @_builtins.property
+    @pulumi.getter(name="interfaceSaturationThreshold")
+    def interface_saturation_threshold(self) -> pulumi.Input[_builtins.float]:
+        """
+        The threshold at which a network device interface is deemed to be saturated.
+        """
+        return pulumi.get(self, "interface_saturation_threshold")
+
+    @interface_saturation_threshold.setter
+    def interface_saturation_threshold(self, value: pulumi.Input[_builtins.float]):
+        pulumi.set(self, "interface_saturation_threshold", value)
+
+    @_builtins.property
+    @pulumi.getter(name="invexDqlQueryLimit")
+    def invex_dql_query_limit(self) -> pulumi.Input[_builtins.int]:
+        """
+        Limit the number of results returned from Grail for Host, Network device, and Extensions entities.
+        """
+        return pulumi.get(self, "invex_dql_query_limit")
+
+    @invex_dql_query_limit.setter
+    def invex_dql_query_limit(self, value: pulumi.Input[_builtins.int]):
+        pulumi.set(self, "invex_dql_query_limit", value)
 
     @_builtins.property
     @pulumi.getter(name="showMonitoringCandidates")
@@ -66,49 +84,12 @@ class InfraopsAppSettingsArgs:
     def show_standalone_hosts(self, value: pulumi.Input[_builtins.bool]):
         pulumi.set(self, "show_standalone_hosts", value)
 
-    @_builtins.property
-    @pulumi.getter(name="interfaceSaturationThreshold")
-    def interface_saturation_threshold(self) -> pulumi.Input[Optional[_builtins.float]]:
-        """
-        The threshold at which a network device interface is deemed to be saturated.
-        """
-        return pulumi.get(self, "interface_saturation_threshold")
-
-    @interface_saturation_threshold.setter
-    def interface_saturation_threshold(self, value: pulumi.Input[Optional[_builtins.float]]):
-        pulumi.set(self, "interface_saturation_threshold", value)
-
-    @_builtins.property
-    @pulumi.getter(name="invexDqlQueryLimit")
-    def invex_dql_query_limit(self) -> pulumi.Input[Optional[_builtins.int]]:
-        """
-        Limit the number of results returned from Grail for Host, Network device, and Extensions entities.
-        """
-        return pulumi.get(self, "invex_dql_query_limit")
-
-    @invex_dql_query_limit.setter
-    def invex_dql_query_limit(self, value: pulumi.Input[Optional[_builtins.int]]):
-        pulumi.set(self, "invex_dql_query_limit", value)
-
-    @_builtins.property
-    @pulumi.getter(name="invexDqlSortLimit")
-    def invex_dql_sort_limit(self) -> pulumi.Input[Optional[_builtins.int]]:
-        """
-        Limit for server-side sorting in Host, Network device and Extensions inventories. Sorting is disabled when the row count exceeds the configured threshold.
-        """
-        return pulumi.get(self, "invex_dql_sort_limit")
-
-    @invex_dql_sort_limit.setter
-    def invex_dql_sort_limit(self, value: pulumi.Input[Optional[_builtins.int]]):
-        pulumi.set(self, "invex_dql_sort_limit", value)
-
 
 @pulumi.input_type
 class _InfraopsAppSettingsState:
     def __init__(__self__, *,
                  interface_saturation_threshold: pulumi.Input[Optional[_builtins.float]] = None,
                  invex_dql_query_limit: pulumi.Input[Optional[_builtins.int]] = None,
-                 invex_dql_sort_limit: pulumi.Input[Optional[_builtins.int]] = None,
                  show_monitoring_candidates: pulumi.Input[Optional[_builtins.bool]] = None,
                  show_standalone_hosts: pulumi.Input[Optional[_builtins.bool]] = None):
         """
@@ -116,7 +97,6 @@ class _InfraopsAppSettingsState:
 
         :param pulumi.Input[_builtins.float] interface_saturation_threshold: The threshold at which a network device interface is deemed to be saturated.
         :param pulumi.Input[_builtins.int] invex_dql_query_limit: Limit the number of results returned from Grail for Host, Network device, and Extensions entities.
-        :param pulumi.Input[_builtins.int] invex_dql_sort_limit: Limit for server-side sorting in Host, Network device and Extensions inventories. Sorting is disabled when the row count exceeds the configured threshold.
         :param pulumi.Input[_builtins.bool] show_monitoring_candidates: When set to true, the app will display monitoring candidates in the Hosts table
         :param pulumi.Input[_builtins.bool] show_standalone_hosts: When set to true, the app will display app only hosts in the Hosts table
         """
@@ -124,8 +104,6 @@ class _InfraopsAppSettingsState:
             pulumi.set(__self__, "interface_saturation_threshold", interface_saturation_threshold)
         if invex_dql_query_limit is not None:
             pulumi.set(__self__, "invex_dql_query_limit", invex_dql_query_limit)
-        if invex_dql_sort_limit is not None:
-            pulumi.set(__self__, "invex_dql_sort_limit", invex_dql_sort_limit)
         if show_monitoring_candidates is not None:
             pulumi.set(__self__, "show_monitoring_candidates", show_monitoring_candidates)
         if show_standalone_hosts is not None:
@@ -154,18 +132,6 @@ class _InfraopsAppSettingsState:
     @invex_dql_query_limit.setter
     def invex_dql_query_limit(self, value: pulumi.Input[Optional[_builtins.int]]):
         pulumi.set(self, "invex_dql_query_limit", value)
-
-    @_builtins.property
-    @pulumi.getter(name="invexDqlSortLimit")
-    def invex_dql_sort_limit(self) -> pulumi.Input[Optional[_builtins.int]]:
-        """
-        Limit for server-side sorting in Host, Network device and Extensions inventories. Sorting is disabled when the row count exceeds the configured threshold.
-        """
-        return pulumi.get(self, "invex_dql_sort_limit")
-
-    @invex_dql_sort_limit.setter
-    def invex_dql_sort_limit(self, value: pulumi.Input[Optional[_builtins.int]]):
-        pulumi.set(self, "invex_dql_sort_limit", value)
 
     @_builtins.property
     @pulumi.getter(name="showMonitoringCandidates")
@@ -200,7 +166,6 @@ class InfraopsAppSettings(pulumi.CustomResource):
                  opts: Optional[pulumi.ResourceOptions] = None,
                  interface_saturation_threshold: pulumi.Input[Optional[_builtins.float]] = None,
                  invex_dql_query_limit: pulumi.Input[Optional[_builtins.int]] = None,
-                 invex_dql_sort_limit: pulumi.Input[Optional[_builtins.int]] = None,
                  show_monitoring_candidates: pulumi.Input[Optional[_builtins.bool]] = None,
                  show_standalone_hosts: pulumi.Input[Optional[_builtins.bool]] = None,
                  __props__=None):
@@ -219,12 +184,24 @@ class InfraopsAppSettings(pulumi.CustomResource):
 
         The full documentation of the export feature is available [here](https://dt-url.net/h203qmc).
 
+        ## Resource Example Usage
+
+        ```python
+        import pulumi
+        import pulumiverse_dynatrace as dynatrace
+
+        example = dynatrace.InfraopsAppSettings("example",
+            show_monitoring_candidates=True,
+            show_standalone_hosts=True,
+            interface_saturation_threshold=0.95,
+            invex_dql_query_limit=1000)
+        ```
+
 
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[_builtins.float] interface_saturation_threshold: The threshold at which a network device interface is deemed to be saturated.
         :param pulumi.Input[_builtins.int] invex_dql_query_limit: Limit the number of results returned from Grail for Host, Network device, and Extensions entities.
-        :param pulumi.Input[_builtins.int] invex_dql_sort_limit: Limit for server-side sorting in Host, Network device and Extensions inventories. Sorting is disabled when the row count exceeds the configured threshold.
         :param pulumi.Input[_builtins.bool] show_monitoring_candidates: When set to true, the app will display monitoring candidates in the Hosts table
         :param pulumi.Input[_builtins.bool] show_standalone_hosts: When set to true, the app will display app only hosts in the Hosts table
         """
@@ -249,6 +226,19 @@ class InfraopsAppSettings(pulumi.CustomResource):
 
         The full documentation of the export feature is available [here](https://dt-url.net/h203qmc).
 
+        ## Resource Example Usage
+
+        ```python
+        import pulumi
+        import pulumiverse_dynatrace as dynatrace
+
+        example = dynatrace.InfraopsAppSettings("example",
+            show_monitoring_candidates=True,
+            show_standalone_hosts=True,
+            interface_saturation_threshold=0.95,
+            invex_dql_query_limit=1000)
+        ```
+
 
         :param str resource_name: The name of the resource.
         :param InfraopsAppSettingsArgs args: The arguments to use to populate this resource's properties.
@@ -267,7 +257,6 @@ class InfraopsAppSettings(pulumi.CustomResource):
                  opts: Optional[pulumi.ResourceOptions] = None,
                  interface_saturation_threshold: pulumi.Input[Optional[_builtins.float]] = None,
                  invex_dql_query_limit: pulumi.Input[Optional[_builtins.int]] = None,
-                 invex_dql_sort_limit: pulumi.Input[Optional[_builtins.int]] = None,
                  show_monitoring_candidates: pulumi.Input[Optional[_builtins.bool]] = None,
                  show_standalone_hosts: pulumi.Input[Optional[_builtins.bool]] = None,
                  __props__=None):
@@ -279,9 +268,12 @@ class InfraopsAppSettings(pulumi.CustomResource):
                 raise TypeError('__props__ is only valid when passed in combination with a valid opts.id to get an existing resource')
             __props__ = InfraopsAppSettingsArgs.__new__(InfraopsAppSettingsArgs)
 
+            if interface_saturation_threshold is None and not opts.urn:
+                raise TypeError("Missing required property 'interface_saturation_threshold'")
             __props__.__dict__["interface_saturation_threshold"] = interface_saturation_threshold
+            if invex_dql_query_limit is None and not opts.urn:
+                raise TypeError("Missing required property 'invex_dql_query_limit'")
             __props__.__dict__["invex_dql_query_limit"] = invex_dql_query_limit
-            __props__.__dict__["invex_dql_sort_limit"] = invex_dql_sort_limit
             if show_monitoring_candidates is None and not opts.urn:
                 raise TypeError("Missing required property 'show_monitoring_candidates'")
             __props__.__dict__["show_monitoring_candidates"] = show_monitoring_candidates
@@ -300,7 +292,6 @@ class InfraopsAppSettings(pulumi.CustomResource):
             opts: Optional[pulumi.ResourceOptions] = None,
             interface_saturation_threshold: pulumi.Input[Optional[_builtins.float]] = None,
             invex_dql_query_limit: pulumi.Input[Optional[_builtins.int]] = None,
-            invex_dql_sort_limit: pulumi.Input[Optional[_builtins.int]] = None,
             show_monitoring_candidates: pulumi.Input[Optional[_builtins.bool]] = None,
             show_standalone_hosts: pulumi.Input[Optional[_builtins.bool]] = None) -> 'InfraopsAppSettings':
         """
@@ -312,7 +303,6 @@ class InfraopsAppSettings(pulumi.CustomResource):
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[_builtins.float] interface_saturation_threshold: The threshold at which a network device interface is deemed to be saturated.
         :param pulumi.Input[_builtins.int] invex_dql_query_limit: Limit the number of results returned from Grail for Host, Network device, and Extensions entities.
-        :param pulumi.Input[_builtins.int] invex_dql_sort_limit: Limit for server-side sorting in Host, Network device and Extensions inventories. Sorting is disabled when the row count exceeds the configured threshold.
         :param pulumi.Input[_builtins.bool] show_monitoring_candidates: When set to true, the app will display monitoring candidates in the Hosts table
         :param pulumi.Input[_builtins.bool] show_standalone_hosts: When set to true, the app will display app only hosts in the Hosts table
         """
@@ -322,14 +312,13 @@ class InfraopsAppSettings(pulumi.CustomResource):
 
         __props__.__dict__["interface_saturation_threshold"] = interface_saturation_threshold
         __props__.__dict__["invex_dql_query_limit"] = invex_dql_query_limit
-        __props__.__dict__["invex_dql_sort_limit"] = invex_dql_sort_limit
         __props__.__dict__["show_monitoring_candidates"] = show_monitoring_candidates
         __props__.__dict__["show_standalone_hosts"] = show_standalone_hosts
         return InfraopsAppSettings(resource_name, opts=opts, __props__=__props__)
 
     @_builtins.property
     @pulumi.getter(name="interfaceSaturationThreshold")
-    def interface_saturation_threshold(self) -> pulumi.Output[Optional[_builtins.float]]:
+    def interface_saturation_threshold(self) -> pulumi.Output[_builtins.float]:
         """
         The threshold at which a network device interface is deemed to be saturated.
         """
@@ -337,19 +326,11 @@ class InfraopsAppSettings(pulumi.CustomResource):
 
     @_builtins.property
     @pulumi.getter(name="invexDqlQueryLimit")
-    def invex_dql_query_limit(self) -> pulumi.Output[Optional[_builtins.int]]:
+    def invex_dql_query_limit(self) -> pulumi.Output[_builtins.int]:
         """
         Limit the number of results returned from Grail for Host, Network device, and Extensions entities.
         """
         return pulumi.get(self, "invex_dql_query_limit")
-
-    @_builtins.property
-    @pulumi.getter(name="invexDqlSortLimit")
-    def invex_dql_sort_limit(self) -> pulumi.Output[Optional[_builtins.int]]:
-        """
-        Limit for server-side sorting in Host, Network device and Extensions inventories. Sorting is disabled when the row count exceeds the configured threshold.
-        """
-        return pulumi.get(self, "invex_dql_sort_limit")
 
     @_builtins.property
     @pulumi.getter(name="showMonitoringCandidates")

@@ -34,18 +34,21 @@ import (
 // import (
 //
 //	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-//	"github.com/pulumi/pulumi/sdk/v3/go/pulumi/config"
 //	"github.com/pulumiverse/pulumi-dynatrace/sdk/go/dynatrace"
 //
 // )
 //
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
-//			cfg := config.New(ctx, "")
-//			PROCESS_GROUP_ID := cfg.Require("PROCESS_GROUP_ID")
-//			_, err := dynatrace.NewProcessGroupRum(ctx, "rum", &dynatrace.ProcessGroupRumArgs{
+//			processGroup, err := dynatrace.GetEntity(ctx, &dynatrace.GetEntityArgs{
+//				EntitySelector: pulumi.StringRef("type(\"PROCESS_GROUP\")"),
+//			}, nil)
+//			if err != nil {
+//				return err
+//			}
+//			_, err = dynatrace.NewProcessGroupRum(ctx, "rum", &dynatrace.ProcessGroupRumArgs{
 //				Enable:         pulumi.Bool(false),
-//				ProcessGroupId: pulumi.String(pulumi.String(PROCESS_GROUP_ID)),
+//				ProcessGroupId: pulumi.String(pulumi.String(processGroup.Id)),
 //			})
 //			if err != nil {
 //				return err
@@ -59,12 +62,12 @@ type ProcessGroupRum struct {
 	pulumi.CustomResourceState
 
 	// Allows OneAgent to:
-	// * automatically inject the RUM JavaScript tag into each page delivered by this process group
-	// * provide the necessary info to correlate RUM data with server-side PurePaths
-	// * forward beacons to the cluster
-	// * deliver the monitoring code
+	//  * automatically inject the RUM JavaScript tag into each page delivered by this process group
+	//  * provide the necessary info to correlate RUM data with server-side PurePaths
+	//  * forward beacons to the cluster
+	//  * deliver the monitoring code
 	Enable pulumi.BoolOutput `pulumi:"enable"`
-	// The scope of this setting - PROCESS_GROUP-XXXXXXXXXXXXXXXX
+	// The scope of this settings. If the settings should cover the whole environment, just don't specify any scope.
 	ProcessGroupId pulumi.StringOutput `pulumi:"processGroupId"`
 }
 
@@ -105,23 +108,23 @@ func GetProcessGroupRum(ctx *pulumi.Context,
 // Input properties used for looking up and filtering ProcessGroupRum resources.
 type processGroupRumState struct {
 	// Allows OneAgent to:
-	// * automatically inject the RUM JavaScript tag into each page delivered by this process group
-	// * provide the necessary info to correlate RUM data with server-side PurePaths
-	// * forward beacons to the cluster
-	// * deliver the monitoring code
+	//  * automatically inject the RUM JavaScript tag into each page delivered by this process group
+	//  * provide the necessary info to correlate RUM data with server-side PurePaths
+	//  * forward beacons to the cluster
+	//  * deliver the monitoring code
 	Enable *bool `pulumi:"enable"`
-	// The scope of this setting - PROCESS_GROUP-XXXXXXXXXXXXXXXX
+	// The scope of this settings. If the settings should cover the whole environment, just don't specify any scope.
 	ProcessGroupId *string `pulumi:"processGroupId"`
 }
 
 type ProcessGroupRumState struct {
 	// Allows OneAgent to:
-	// * automatically inject the RUM JavaScript tag into each page delivered by this process group
-	// * provide the necessary info to correlate RUM data with server-side PurePaths
-	// * forward beacons to the cluster
-	// * deliver the monitoring code
+	//  * automatically inject the RUM JavaScript tag into each page delivered by this process group
+	//  * provide the necessary info to correlate RUM data with server-side PurePaths
+	//  * forward beacons to the cluster
+	//  * deliver the monitoring code
 	Enable pulumi.BoolPtrInput
-	// The scope of this setting - PROCESS_GROUP-XXXXXXXXXXXXXXXX
+	// The scope of this settings. If the settings should cover the whole environment, just don't specify any scope.
 	ProcessGroupId pulumi.StringPtrInput
 }
 
@@ -131,24 +134,24 @@ func (ProcessGroupRumState) ElementType() reflect.Type {
 
 type processGroupRumArgs struct {
 	// Allows OneAgent to:
-	// * automatically inject the RUM JavaScript tag into each page delivered by this process group
-	// * provide the necessary info to correlate RUM data with server-side PurePaths
-	// * forward beacons to the cluster
-	// * deliver the monitoring code
+	//  * automatically inject the RUM JavaScript tag into each page delivered by this process group
+	//  * provide the necessary info to correlate RUM data with server-side PurePaths
+	//  * forward beacons to the cluster
+	//  * deliver the monitoring code
 	Enable bool `pulumi:"enable"`
-	// The scope of this setting - PROCESS_GROUP-XXXXXXXXXXXXXXXX
+	// The scope of this settings. If the settings should cover the whole environment, just don't specify any scope.
 	ProcessGroupId string `pulumi:"processGroupId"`
 }
 
 // The set of arguments for constructing a ProcessGroupRum resource.
 type ProcessGroupRumArgs struct {
 	// Allows OneAgent to:
-	// * automatically inject the RUM JavaScript tag into each page delivered by this process group
-	// * provide the necessary info to correlate RUM data with server-side PurePaths
-	// * forward beacons to the cluster
-	// * deliver the monitoring code
+	//  * automatically inject the RUM JavaScript tag into each page delivered by this process group
+	//  * provide the necessary info to correlate RUM data with server-side PurePaths
+	//  * forward beacons to the cluster
+	//  * deliver the monitoring code
 	Enable pulumi.BoolInput
-	// The scope of this setting - PROCESS_GROUP-XXXXXXXXXXXXXXXX
+	// The scope of this settings. If the settings should cover the whole environment, just don't specify any scope.
 	ProcessGroupId pulumi.StringInput
 }
 
@@ -240,15 +243,15 @@ func (o ProcessGroupRumOutput) ToProcessGroupRumOutputWithContext(ctx context.Co
 }
 
 // Allows OneAgent to:
-// * automatically inject the RUM JavaScript tag into each page delivered by this process group
-// * provide the necessary info to correlate RUM data with server-side PurePaths
-// * forward beacons to the cluster
-// * deliver the monitoring code
+//   - automatically inject the RUM JavaScript tag into each page delivered by this process group
+//   - provide the necessary info to correlate RUM data with server-side PurePaths
+//   - forward beacons to the cluster
+//   - deliver the monitoring code
 func (o ProcessGroupRumOutput) Enable() pulumi.BoolOutput {
 	return o.ApplyT(func(v *ProcessGroupRum) pulumi.BoolOutput { return v.Enable }).(pulumi.BoolOutput)
 }
 
-// The scope of this setting - PROCESS_GROUP-XXXXXXXXXXXXXXXX
+// The scope of this settings. If the settings should cover the whole environment, just don't specify any scope.
 func (o ProcessGroupRumOutput) ProcessGroupId() pulumi.StringOutput {
 	return o.ApplyT(func(v *ProcessGroupRum) pulumi.StringOutput { return v.ProcessGroupId }).(pulumi.StringOutput)
 }

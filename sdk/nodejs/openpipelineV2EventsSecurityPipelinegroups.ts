@@ -139,15 +139,23 @@ import * as utilities from "./utilities";
  *                         dimensions: {
  *                             dimensions: [
  *                                 {
+ *                                     extractionType: "field",
+ *                                     strategy: "equals",
  *                                     sourceFieldName: "dt.cost.costcenter",
  *                                 },
  *                                 {
+ *                                     extractionType: "field",
+ *                                     strategy: "equals",
  *                                     sourceFieldName: "dt.cost.product",
  *                                 },
  *                                 {
+ *                                     extractionType: "field",
+ *                                     strategy: "equals",
  *                                     sourceFieldName: "dt.security_context",
  *                                 },
  *                                 {
+ *                                     extractionType: "field",
+ *                                     strategy: "equals",
  *                                     sourceFieldName: "record.category",
  *                                     destinationFieldName: "warning_category",
  *                                 },
@@ -168,15 +176,23 @@ import * as utilities from "./utilities";
  *                         dimensions: {
  *                             dimensions: [
  *                                 {
+ *                                     extractionType: "field",
+ *                                     strategy: "equals",
  *                                     sourceFieldName: "dt.cost.costcenter",
  *                                 },
  *                                 {
+ *                                     extractionType: "field",
+ *                                     strategy: "equals",
  *                                     sourceFieldName: "dt.cost.product",
  *                                 },
  *                                 {
+ *                                     extractionType: "field",
+ *                                     strategy: "equals",
  *                                     sourceFieldName: "dt.security_context",
  *                                 },
  *                                 {
+ *                                     extractionType: "field",
+ *                                     strategy: "equals",
  *                                     sourceFieldName: "record.category",
  *                                     destinationFieldName: "warning_category",
  *                                 },
@@ -194,7 +210,7 @@ import * as utilities from "./utilities";
  *     customId: "#name#-2",
  *     groupRole: "memberPipeline",
  * });
- * const example = new dynatrace.OpenpipelineV2EventsSdlcPipelinegroups("example", {
+ * const example = new dynatrace.OpenpipelineV2EventsSecurityPipelinegroups("example", {
  *     displayName: "#name#",
  *     composition: {
  *         pipelineGroupCompositions: [

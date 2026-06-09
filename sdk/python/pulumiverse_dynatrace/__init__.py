@@ -396,6 +396,7 @@ from .process_group_detection_flags import *
 from .process_group_monitoring import *
 from .process_group_rum import *
 from .process_group_simple_detection import *
+from .process_grouping_rules import *
 from .process_monitoring import *
 from .process_monitoring_rule import *
 from .process_visibility import *
@@ -3170,6 +3171,14 @@ _utilities.register(
   "fqn": "pulumiverse_dynatrace",
   "classes": {
    "dynatrace:index/processGroupSimpleDetection:ProcessGroupSimpleDetection": "ProcessGroupSimpleDetection"
+  }
+ },
+ {
+  "pkg": "dynatrace",
+  "mod": "index/processGroupingRules",
+  "fqn": "pulumiverse_dynatrace",
+  "classes": {
+   "dynatrace:index/processGroupingRules:ProcessGroupingRules": "ProcessGroupingRules"
   }
  },
  {

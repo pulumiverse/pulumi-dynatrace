@@ -19,7 +19,7 @@ namespace Pulumiverse.Dynatrace.Outputs
         /// </summary>
         public readonly ImmutableArray<string> BrokenLinkDomains;
         /// <summary>
-        /// Consider 404 HTTP response codes as failures
+        /// If `True`, HTTP 404 response codes are treated as server-side service failures. Only applicable when 404 is not already in the list of failing server-side HTTP response codes. Default: `False`.
         /// </summary>
         public readonly bool Http404NotFoundFailures;
 

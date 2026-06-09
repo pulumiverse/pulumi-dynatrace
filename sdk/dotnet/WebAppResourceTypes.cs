@@ -35,7 +35,7 @@ namespace Pulumiverse.Dynatrace
         public Output<string> InsertAfter { get; private set; } = null!;
 
         /// <summary>
-        /// Possible Values: `CSS`, `IMAGE`, `OTHER`, `SCRIPT`
+        /// The primary type of the resource. Possible values: `CSS`, `IMAGE`, `OTHER`, `SCRIPT`
         /// </summary>
         [Output("primaryResourceType")]
         public Output<string> PrimaryResourceType { get; private set; } = null!;
@@ -106,7 +106,7 @@ namespace Pulumiverse.Dynatrace
         public Input<string>? InsertAfter { get; set; }
 
         /// <summary>
-        /// Possible Values: `CSS`, `IMAGE`, `OTHER`, `SCRIPT`
+        /// The primary type of the resource. Possible values: `CSS`, `IMAGE`, `OTHER`, `SCRIPT`
         /// </summary>
         [Input("primaryResourceType", required: true)]
         public Input<string> PrimaryResourceType { get; set; } = null!;
@@ -138,7 +138,7 @@ namespace Pulumiverse.Dynatrace
         public Input<string>? InsertAfter { get; set; }
 
         /// <summary>
-        /// Possible Values: `CSS`, `IMAGE`, `OTHER`, `SCRIPT`
+        /// The primary type of the resource. Possible values: `CSS`, `IMAGE`, `OTHER`, `SCRIPT`
         /// </summary>
         [Input("primaryResourceType")]
         public Input<string>? PrimaryResourceType { get; set; }

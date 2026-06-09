@@ -14,7 +14,7 @@ namespace Pulumiverse.Dynatrace.Inputs
     public sealed class OpenpipelineV2SystemEventsPipelinesSecurityContextProcessorsProcessorDavisArgs : global::Pulumi.ResourceArgs
     {
         /// <summary>
-        /// no documentation available
+        /// No documentation available
         /// </summary>
         [Input("properties", required: true)]
         public Input<Inputs.OpenpipelineV2SystemEventsPipelinesSecurityContextProcessorsProcessorDavisPropertiesArgs> Properties { get; set; } = null!;

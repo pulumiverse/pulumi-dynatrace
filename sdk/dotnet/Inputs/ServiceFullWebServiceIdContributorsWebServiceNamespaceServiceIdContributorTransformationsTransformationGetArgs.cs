@@ -14,25 +14,25 @@ namespace Pulumiverse.Dynatrace.Inputs
     public sealed class ServiceFullWebServiceIdContributorsWebServiceNamespaceServiceIdContributorTransformationsTransformationGetArgs : global::Pulumi.ResourceArgs
     {
         /// <summary>
-        /// include hexadecimal numbers
+        /// Whether to also remove hexadecimal numbers (sequences of at least `minDigitCount` hexadecimal digits preceded by '0x'). It is used only when the transformation type is `REMOVE_NUMBERS`.
         /// </summary>
         [Input("includeHexNumbers")]
         public Input<bool>? IncludeHexNumbers { get; set; }
 
         /// <summary>
-        /// min digit count
+        /// The minimum number of digits that a numeric sequence must have to be removed. It is used only when the transformation type is `REMOVE_NUMBERS`.
         /// </summary>
         [Input("minDigitCount")]
         public Input<int>? MinDigitCount { get; set; }
 
         /// <summary>
-        /// no documentation available
+        /// The part of the text that serves as a reference point for the transformation. Its use depends on the transformation type.
         /// </summary>
         [Input("prefix")]
         public Input<string>? Prefix { get; set; }
 
         /// <summary>
-        /// replacement
+        /// The text that replaces the part between `Prefix` and `Suffix`. It is used only when the transformation type is `REPLACE_BETWEEN`.
         /// </summary>
         [Input("replacementValue")]
         public Input<string>? ReplacementValue { get; set; }
@@ -44,31 +44,31 @@ namespace Pulumiverse.Dynatrace.Inputs
         public Input<int>? SegmentCount { get; set; }
 
         /// <summary>
-        /// select index
+        /// The index of the element to keep after splitting. The index is zero-based. It is used only when the transformation type is `SPLIT_SELECT`.
         /// </summary>
         [Input("selectIndex")]
         public Input<int>? SelectIndex { get; set; }
 
         /// <summary>
-        /// split by
+        /// The delimiter used for splitting the text. It is used only when the transformation type is `SPLIT_SELECT` or `TAKE_SEGMENTS`.
         /// </summary>
         [Input("splitDelimiter")]
         public Input<string>? SplitDelimiter { get; set; }
 
         /// <summary>
-        /// no documentation available
+        /// The part of the text that serves as a reference point for the transformation. Its use depends on the transformation type.
         /// </summary>
         [Input("suffix")]
         public Input<string>? Suffix { get; set; }
 
         /// <summary>
-        /// take from end
+        /// Whether to take segments from the end of the text instead of the beginning. It is used only when the transformation type is `TAKE_SEGMENTS`.
         /// </summary>
         [Input("takeFromEnd")]
         public Input<bool>? TakeFromEnd { get; set; }
 
         /// <summary>
-        /// Possible Values: `AFTER`, `BEFORE`, `BETWEEN`, `REMOVE_CREDIT_CARDS`, `REMOVE_IBANS`, `REMOVE_IPS`, `REMOVE_NUMBERS`, `REPLACE_BETWEEN`, `SPLIT_SELECT`, `TAKE_SEGMENTS`
+        /// Defines what kind of transformation will be applied on the original value. Possible values: `AFTER`, `BEFORE`, `BETWEEN`, `REMOVE_CREDIT_CARDS`, `REMOVE_IBANS`, `REMOVE_IPS`, `REMOVE_NUMBERS`, `REPLACE_BETWEEN`, `SPLIT_SELECT`, `TAKE_SEGMENTS`
         /// </summary>
         [Input("transformationType", required: true)]
         public Input<string> TransformationType { get; set; } = null!;

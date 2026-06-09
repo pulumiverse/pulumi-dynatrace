@@ -156,14 +156,14 @@ class HostProcessGroupMonitoring(pulumi.CustomResource):
 
         ```python
         import pulumi
+        import pulumi_dynatrace as dynatrace
         import pulumiverse_dynatrace as dynatrace
 
-        config = pulumi.Config()
-        proces_s__grou_p__id = config.require("PROCESS_GROUP_ID")
+        process_group = dynatrace.get_entity(entity_selector="type(\\"PROCESS_GROUP\\")")
         monitoring = dynatrace.HostProcessGroupMonitoring("monitoring",
             host_id="HOST-1234567890000000",
             monitoring_state="MONITORING_ON",
-            process_group=proces_s__grou_p__id)
+            process_group=process_group.id)
         ```
 
 
@@ -198,14 +198,14 @@ class HostProcessGroupMonitoring(pulumi.CustomResource):
 
         ```python
         import pulumi
+        import pulumi_dynatrace as dynatrace
         import pulumiverse_dynatrace as dynatrace
 
-        config = pulumi.Config()
-        proces_s__grou_p__id = config.require("PROCESS_GROUP_ID")
+        process_group = dynatrace.get_entity(entity_selector="type(\\"PROCESS_GROUP\\")")
         monitoring = dynatrace.HostProcessGroupMonitoring("monitoring",
             host_id="HOST-1234567890000000",
             monitoring_state="MONITORING_ON",
-            process_group=proces_s__grou_p__id)
+            process_group=process_group.id)
         ```
 
 

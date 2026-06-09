@@ -242,7 +242,7 @@ class ManagementZone(pulumi.CustomResource):
                  unknowns: pulumi.Input[Optional[_builtins.str]] = None,
                  __props__=None):
         """
-        !> This resource API endpoint has been deprecated, please use ManagementZoneV2 instead.
+        > This resource API endpoint has been deprecated, please use ManagementZoneV2 instead.
 
         > This resource requires the API token scopes **Read configuration** (`ReadConfig`) and **Write configuration** (`WriteConfig`)
 
@@ -275,7 +275,7 @@ class ManagementZone(pulumi.CustomResource):
                  args: Optional[ManagementZoneArgs] = None,
                  opts: Optional[pulumi.ResourceOptions] = None):
         """
-        !> This resource API endpoint has been deprecated, please use ManagementZoneV2 instead.
+        > This resource API endpoint has been deprecated, please use ManagementZoneV2 instead.
 
         > This resource requires the API token scopes **Read configuration** (`ReadConfig`) and **Write configuration** (`WriteConfig`)
 

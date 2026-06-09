@@ -14,7 +14,7 @@ namespace Pulumiverse.Dynatrace.Inputs
     public sealed class ServiceFullWebServiceIdContributorsWebServiceNameServiceIdContributorArgs : global::Pulumi.ResourceArgs
     {
         /// <summary>
-        /// Possible Values: `OriginalValue`, `OverrideValue`, `TransformValue`
+        /// Defines whether the original value should be used or if a transformation set should be used to override a value or transform it. Possible values: `OriginalValue`, `OverrideValue`, `TransformValue`
         /// </summary>
         [Input("contributionType", required: true)]
         public Input<string> ContributionType { get; set; } = null!;

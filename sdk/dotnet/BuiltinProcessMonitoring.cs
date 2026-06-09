@@ -24,6 +24,36 @@ namespace Pulumiverse.Dynatrace
     /// - `terraform-provider-dynatrace -export dynatrace.BuiltinProcessMonitoring` downloads all existing built-in process monitoring rules
     /// 
     /// The full documentation of the export feature is available [here](https://dt-url.net/h203qmc).
+    /// 
+    /// ## Resource Example Usage
+    /// 
+    /// ```csharp
+    /// using System.Collections.Generic;
+    /// using System.Linq;
+    /// using Pulumi;
+    /// using Dynatrace = Pulumiverse.Dynatrace;
+    /// 
+    /// return await Deployment.RunAsync(() =&gt; 
+    /// {
+    ///     var monitoring = new Dynatrace.BuiltinProcessMonitoring("monitoring", new()
+    ///     {
+    ///         HostGroupId = "environment",
+    ///         Aspnetcore = false,
+    ///         CfAppsmanagerjs = false,
+    ///         Container = false,
+    ///         DockerPauseamd64 = false,
+    ///         ExeBbs = false,
+    ///         ExeCaddy = false,
+    ///         ExeSchedular = false,
+    ///         ExeSilkdaemon = false,
+    ///         GoStatic = false,
+    ///         NodeNodegyp = false,
+    ///         CmdForeverbinmonitor = false,
+    ///         JmcActivegatecommandlinetool = false,
+    ///     });
+    /// 
+    /// });
+    /// ```
     /// </summary>
     [DynatraceResourceType("dynatrace:index/builtinProcessMonitoring:BuiltinProcessMonitoring")]
     public partial class BuiltinProcessMonitoring : global::Pulumi.CustomResource
@@ -429,6 +459,12 @@ namespace Pulumiverse.Dynatrace
         /// </summary>
         [Output("jarEclipseequinox")]
         public Output<bool?> JarEclipseequinox { get; private set; } = null!;
+
+        /// <summary>
+        /// Rule id: 85 - Do not monitor process if Java Main class contains 'ActiveGateCommandLineTool'
+        /// </summary>
+        [Output("jmcActivegatecommandlinetool")]
+        public Output<bool?> JmcActivegatecommandlinetool { get; private set; } = null!;
 
         /// <summary>
         /// Rule id: 69 - Do not monitor processes if Kubernetes container name equals 'cassandra-operator'
@@ -964,6 +1000,12 @@ namespace Pulumiverse.Dynatrace
         public Input<bool>? JarEclipseequinox { get; set; }
 
         /// <summary>
+        /// Rule id: 85 - Do not monitor process if Java Main class contains 'ActiveGateCommandLineTool'
+        /// </summary>
+        [Input("jmcActivegatecommandlinetool")]
+        public Input<bool>? JmcActivegatecommandlinetool { get; set; }
+
+        /// <summary>
         /// Rule id: 69 - Do not monitor processes if Kubernetes container name equals 'cassandra-operator'
         /// </summary>
         [Input("k8sCassandraoperator")]
@@ -1456,6 +1498,12 @@ namespace Pulumiverse.Dynatrace
         /// </summary>
         [Input("jarEclipseequinox")]
         public Input<bool>? JarEclipseequinox { get; set; }
+
+        /// <summary>
+        /// Rule id: 85 - Do not monitor process if Java Main class contains 'ActiveGateCommandLineTool'
+        /// </summary>
+        [Input("jmcActivegatecommandlinetool")]
+        public Input<bool>? JmcActivegatecommandlinetool { get; set; }
 
         /// <summary>
         /// Rule id: 69 - Do not monitor processes if Kubernetes container name equals 'cassandra-operator'

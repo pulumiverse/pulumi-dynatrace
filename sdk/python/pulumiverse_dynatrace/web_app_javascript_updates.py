@@ -24,7 +24,7 @@ class WebAppJavascriptUpdatesArgs:
         """
         The set of arguments for constructing a WebAppJavascriptUpdates resource.
 
-        :param pulumi.Input[_builtins.str] javascript_version: Possible Values: `CUSTOM`, `LATEST_IE7_10_SUPPORTED`, `LATEST_STABLE`, `PREVIOUS_STABLE`
+        :param pulumi.Input[_builtins.str] javascript_version: Choose version. Possible values: `CUSTOM`, `LATEST_IE11_SUPPORTED`, `LATEST_IE7_10_SUPPORTED`, `LATEST_STABLE`, `PREVIOUS_STABLE`
         :param pulumi.Input[_builtins.str] application_id: The scope of this settings. If the settings should cover the whole environment, just don't specify any scope.
         """
         pulumi.set(__self__, "javascript_version", javascript_version)
@@ -35,7 +35,7 @@ class WebAppJavascriptUpdatesArgs:
     @pulumi.getter(name="javascriptVersion")
     def javascript_version(self) -> pulumi.Input[_builtins.str]:
         """
-        Possible Values: `CUSTOM`, `LATEST_IE7_10_SUPPORTED`, `LATEST_STABLE`, `PREVIOUS_STABLE`
+        Choose version. Possible values: `CUSTOM`, `LATEST_IE11_SUPPORTED`, `LATEST_IE7_10_SUPPORTED`, `LATEST_STABLE`, `PREVIOUS_STABLE`
         """
         return pulumi.get(self, "javascript_version")
 
@@ -65,7 +65,7 @@ class _WebAppJavascriptUpdatesState:
         Input properties used for looking up and filtering WebAppJavascriptUpdates resources.
 
         :param pulumi.Input[_builtins.str] application_id: The scope of this settings. If the settings should cover the whole environment, just don't specify any scope.
-        :param pulumi.Input[_builtins.str] javascript_version: Possible Values: `CUSTOM`, `LATEST_IE7_10_SUPPORTED`, `LATEST_STABLE`, `PREVIOUS_STABLE`
+        :param pulumi.Input[_builtins.str] javascript_version: Choose version. Possible values: `CUSTOM`, `LATEST_IE11_SUPPORTED`, `LATEST_IE7_10_SUPPORTED`, `LATEST_STABLE`, `PREVIOUS_STABLE`
         """
         if application_id is not None:
             pulumi.set(__self__, "application_id", application_id)
@@ -88,7 +88,7 @@ class _WebAppJavascriptUpdatesState:
     @pulumi.getter(name="javascriptVersion")
     def javascript_version(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
-        Possible Values: `CUSTOM`, `LATEST_IE7_10_SUPPORTED`, `LATEST_STABLE`, `PREVIOUS_STABLE`
+        Choose version. Possible values: `CUSTOM`, `LATEST_IE11_SUPPORTED`, `LATEST_IE7_10_SUPPORTED`, `LATEST_STABLE`, `PREVIOUS_STABLE`
         """
         return pulumi.get(self, "javascript_version")
 
@@ -125,7 +125,7 @@ class WebAppJavascriptUpdates(pulumi.CustomResource):
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[_builtins.str] application_id: The scope of this settings. If the settings should cover the whole environment, just don't specify any scope.
-        :param pulumi.Input[_builtins.str] javascript_version: Possible Values: `CUSTOM`, `LATEST_IE7_10_SUPPORTED`, `LATEST_STABLE`, `PREVIOUS_STABLE`
+        :param pulumi.Input[_builtins.str] javascript_version: Choose version. Possible values: `CUSTOM`, `LATEST_IE11_SUPPORTED`, `LATEST_IE7_10_SUPPORTED`, `LATEST_STABLE`, `PREVIOUS_STABLE`
         """
         ...
     @overload
@@ -199,7 +199,7 @@ class WebAppJavascriptUpdates(pulumi.CustomResource):
         :param pulumi.Input[str] id: The unique provider ID of the resource to lookup.
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[_builtins.str] application_id: The scope of this settings. If the settings should cover the whole environment, just don't specify any scope.
-        :param pulumi.Input[_builtins.str] javascript_version: Possible Values: `CUSTOM`, `LATEST_IE7_10_SUPPORTED`, `LATEST_STABLE`, `PREVIOUS_STABLE`
+        :param pulumi.Input[_builtins.str] javascript_version: Choose version. Possible values: `CUSTOM`, `LATEST_IE11_SUPPORTED`, `LATEST_IE7_10_SUPPORTED`, `LATEST_STABLE`, `PREVIOUS_STABLE`
         """
         opts = pulumi.ResourceOptions.merge(opts, pulumi.ResourceOptions(id=id))
 
@@ -221,7 +221,7 @@ class WebAppJavascriptUpdates(pulumi.CustomResource):
     @pulumi.getter(name="javascriptVersion")
     def javascript_version(self) -> pulumi.Output[_builtins.str]:
         """
-        Possible Values: `CUSTOM`, `LATEST_IE7_10_SUPPORTED`, `LATEST_STABLE`, `PREVIOUS_STABLE`
+        Choose version. Possible values: `CUSTOM`, `LATEST_IE11_SUPPORTED`, `LATEST_IE7_10_SUPPORTED`, `LATEST_STABLE`, `PREVIOUS_STABLE`
         """
         return pulumi.get(self, "javascript_version")
 

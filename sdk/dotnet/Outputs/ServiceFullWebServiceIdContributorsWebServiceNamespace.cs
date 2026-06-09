@@ -15,11 +15,11 @@ namespace Pulumiverse.Dynatrace.Outputs
     public sealed class ServiceFullWebServiceIdContributorsWebServiceNamespace
     {
         /// <summary>
-        /// Transform this value before letting it contribute to the Service Id
+        /// When enabled, the detected value contributes to the Service Id.
         /// </summary>
         public readonly bool EnableIdContributor;
         /// <summary>
-        /// no documentation available
+        /// Choose how to transform the detected value before it contributes to the Service Id. Note that all of the Transformations are always applied. Transformations are applied in the order they are specified, and the output of the previous transformation is the input for the next one.
         /// </summary>
         public readonly Outputs.ServiceFullWebServiceIdContributorsWebServiceNamespaceServiceIdContributor? ServiceIdContributor;
 

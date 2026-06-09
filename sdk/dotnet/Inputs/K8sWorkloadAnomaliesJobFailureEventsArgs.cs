@@ -14,6 +14,12 @@ namespace Pulumiverse.Dynatrace.Inputs
     public sealed class K8sWorkloadAnomaliesJobFailureEventsArgs : global::Pulumi.ResourceArgs
     {
         /// <summary>
+        /// Alert if
+        /// </summary>
+        [Input("configuration")]
+        public Input<Inputs.K8sWorkloadAnomaliesJobFailureEventsConfigurationArgs>? Configuration { get; set; }
+
+        /// <summary>
         /// This setting is enabled (`True`) or disabled (`False`)
         /// </summary>
         [Input("enabled", required: true)]

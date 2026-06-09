@@ -34,19 +34,22 @@ import (
 // import (
 //
 //	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-//	"github.com/pulumi/pulumi/sdk/v3/go/pulumi/config"
 //	"github.com/pulumiverse/pulumi-dynatrace/sdk/go/dynatrace"
 //
 // )
 //
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
-//			cfg := config.New(ctx, "")
-//			PROCESS_GROUP_ID := cfg.Require("PROCESS_GROUP_ID")
-//			_, err := dynatrace.NewHostProcessGroupMonitoring(ctx, "monitoring", &dynatrace.HostProcessGroupMonitoringArgs{
+//			processGroup, err := dynatrace.GetEntity(ctx, &dynatrace.GetEntityArgs{
+//				EntitySelector: pulumi.StringRef("type(\"PROCESS_GROUP\")"),
+//			}, nil)
+//			if err != nil {
+//				return err
+//			}
+//			_, err = dynatrace.NewHostProcessGroupMonitoring(ctx, "monitoring", &dynatrace.HostProcessGroupMonitoringArgs{
 //				HostId:          pulumi.String("HOST-1234567890000000"),
 //				MonitoringState: pulumi.String("MONITORING_ON"),
-//				ProcessGroup:    pulumi.String(pulumi.String(PROCESS_GROUP_ID)),
+//				ProcessGroup:    pulumi.String(pulumi.String(processGroup.Id)),
 //			})
 //			if err != nil {
 //				return err

@@ -12,7 +12,7 @@ import (
 	"github.com/pulumiverse/pulumi-dynatrace/sdk/go/dynatrace/internal"
 )
 
-// !> This resource does not handle ordering of rules. If ordering is required, please use ApplicationDetectionRule instead.
+// > This resource does not handle ordering of rules. If ordering is required, please use ApplicationDetectionRule instead.
 //
 // > This resource requires the API token scopes **Read settings** (`settings.read`) and **Write settings** (`settings.write`)
 //
@@ -42,72 +42,14 @@ import (
 //
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
-//			application, err := dynatrace.NewWebApplication(ctx, "application", &dynatrace.WebApplicationArgs{
-//				Name:                             pulumi.String("#name#"),
-//				Type:                             pulumi.String("AUTO_INJECTED"),
-//				CostControlUserSessionPercentage: pulumi.Int(100),
-//				LoadActionKeyPerformanceMetric:   pulumi.String("VISUALLY_COMPLETE"),
-//				RealUserMonitoringEnabled:        pulumi.Bool(true),
-//				XhrActionKeyPerformanceMetric:    pulumi.String("VISUALLY_COMPLETE"),
-//				CustomActionApdexSettings: &dynatrace.WebApplicationCustomActionApdexSettingsArgs{
-//					FrustratingFallbackThreshold: pulumi.Int(12000),
-//					FrustratingThreshold:         pulumi.Int(12000),
-//					ToleratedFallbackThreshold:   pulumi.Int(3000),
-//					ToleratedThreshold:           pulumi.Int(3000),
-//				},
-//				LoadActionApdexSettings: &dynatrace.WebApplicationLoadActionApdexSettingsArgs{
-//					FrustratingFallbackThreshold: pulumi.Int(12000),
-//					FrustratingThreshold:         pulumi.Int(12000),
-//					ToleratedFallbackThreshold:   pulumi.Int(3000),
-//					ToleratedThreshold:           pulumi.Int(3000),
-//				},
-//				MonitoringSettings: &dynatrace.WebApplicationMonitoringSettingsArgs{
-//					AddCrossOriginAnonymousAttribute: pulumi.Bool(true),
-//					CacheControlHeaderOptimizations:  pulumi.Bool(true),
-//					InjectionMode:                    pulumi.String("JAVASCRIPT_TAG"),
-//					ScriptTagCacheDurationInHours:    pulumi.Int(1),
-//					AdvancedJavascriptTagSettings: &dynatrace.WebApplicationMonitoringSettingsAdvancedJavascriptTagSettingsArgs{
-//						MaxActionNameLength: pulumi.Int(100),
-//						MaxErrorsToCapture:  pulumi.Int(10),
-//						AdditionalEventHandlers: &dynatrace.WebApplicationMonitoringSettingsAdvancedJavascriptTagSettingsAdditionalEventHandlersArgs{
-//							MaxDomNodes: pulumi.Int(5000),
-//						},
-//					},
-//					ContentCapture: &dynatrace.WebApplicationMonitoringSettingsContentCaptureArgs{
-//						ResourceTimingSettings: &dynatrace.WebApplicationMonitoringSettingsContentCaptureResourceTimingSettingsArgs{
-//							InstrumentationDelay:  pulumi.Int(53),
-//							NonW3cResourceTimings: pulumi.Bool(true),
-//							W3cResourceTimings:    pulumi.Bool(true),
-//						},
-//						TimeoutSettings: &dynatrace.WebApplicationMonitoringSettingsContentCaptureTimeoutSettingsArgs{
-//							TemporaryActionLimit:        pulumi.Int(3),
-//							TemporaryActionTotalTimeout: pulumi.Int(100),
-//							TimedActionSupport:          pulumi.Bool(true),
-//						},
-//					},
-//				},
-//				UserActionNamingSettings: &dynatrace.WebApplicationUserActionNamingSettingsArgs{},
-//				WaterfallSettings: &dynatrace.WebApplicationWaterfallSettingsArgs{
-//					ResourceBrowserCachingThreshold:          pulumi.Int(50),
-//					ResourcesThreshold:                       pulumi.Int(100000),
-//					SlowCndResourcesThreshold:                pulumi.Int(200000),
-//					SlowFirstPartyResourcesThreshold:         pulumi.Int(200000),
-//					SlowThirdPartyResourcesThreshold:         pulumi.Int(200000),
-//					SpeedIndexVisuallyCompleteRatioThreshold: pulumi.Int(50),
-//					UncompressedResourcesThreshold:           pulumi.Int(860),
-//				},
-//				XhrActionApdexSettings: &dynatrace.WebApplicationXhrActionApdexSettingsArgs{
-//					FrustratingFallbackThreshold: pulumi.Int(12000),
-//					FrustratingThreshold:         pulumi.Int(12000),
-//					ToleratedFallbackThreshold:   pulumi.Int(3000),
-//					ToleratedThreshold:           pulumi.Int(3000),
-//				},
-//			})
+//			webApplication, err := dynatrace.GetApplication(ctx, &dynatrace.GetApplicationArgs{
+//				Name: "Web Application",
+//			}, nil)
 //			if err != nil {
 //				return err
 //			}
 //			_, err = dynatrace.NewApplicationDetectionRuleV2(ctx, "detection_rule", &dynatrace.ApplicationDetectionRuleV2Args{
-//				ApplicationId: application.ID(),
+//				ApplicationId: pulumi.String(pulumi.String(webApplication.Id)),
 //				Matcher:       pulumi.String("DOMAIN_MATCHES"),
 //				Pattern:       pulumi.String("TerraformTest"),
 //			})
@@ -124,11 +66,11 @@ type ApplicationDetectionRuleV2 struct {
 
 	// Select an existing application or create a new one.
 	ApplicationId pulumi.StringOutput `pulumi:"applicationId"`
-	// (v1.274) Add a description for your rule
+	// Add a description for your rule
 	Description pulumi.StringPtrOutput `pulumi:"description"`
 	// Because this resource allows for ordering you may specify the ID of the resource instance that comes before this instance regarding order. If not specified when creating the setting will be added to the end of the list. If not specified during update the order will remain untouched
 	InsertAfter pulumi.StringOutput `pulumi:"insertAfter"`
-	// Possible Values: `DOMAIN_CONTAINS`, `DOMAIN_ENDS_WITH`, `DOMAIN_EQUALS`, `DOMAIN_MATCHES`, `DOMAIN_STARTS_WITH`, `URL_CONTAINS`, `URL_ENDS_WITH`, `URL_EQUALS`, `URL_STARTS_WITH`
+	// Matcher. Possible values: `DOMAIN_CONTAINS`, `DOMAIN_ENDS_WITH`, `DOMAIN_EQUALS`, `DOMAIN_MATCHES`, `DOMAIN_STARTS_WITH`, `URL_CONTAINS`, `URL_ENDS_WITH`, `URL_EQUALS`, `URL_STARTS_WITH`
 	Matcher pulumi.StringOutput `pulumi:"matcher"`
 	// Pattern
 	Pattern pulumi.StringOutput `pulumi:"pattern"`
@@ -175,11 +117,11 @@ func GetApplicationDetectionRuleV2(ctx *pulumi.Context,
 type applicationDetectionRuleV2State struct {
 	// Select an existing application or create a new one.
 	ApplicationId *string `pulumi:"applicationId"`
-	// (v1.274) Add a description for your rule
+	// Add a description for your rule
 	Description *string `pulumi:"description"`
 	// Because this resource allows for ordering you may specify the ID of the resource instance that comes before this instance regarding order. If not specified when creating the setting will be added to the end of the list. If not specified during update the order will remain untouched
 	InsertAfter *string `pulumi:"insertAfter"`
-	// Possible Values: `DOMAIN_CONTAINS`, `DOMAIN_ENDS_WITH`, `DOMAIN_EQUALS`, `DOMAIN_MATCHES`, `DOMAIN_STARTS_WITH`, `URL_CONTAINS`, `URL_ENDS_WITH`, `URL_EQUALS`, `URL_STARTS_WITH`
+	// Matcher. Possible values: `DOMAIN_CONTAINS`, `DOMAIN_ENDS_WITH`, `DOMAIN_EQUALS`, `DOMAIN_MATCHES`, `DOMAIN_STARTS_WITH`, `URL_CONTAINS`, `URL_ENDS_WITH`, `URL_EQUALS`, `URL_STARTS_WITH`
 	Matcher *string `pulumi:"matcher"`
 	// Pattern
 	Pattern *string `pulumi:"pattern"`
@@ -188,11 +130,11 @@ type applicationDetectionRuleV2State struct {
 type ApplicationDetectionRuleV2State struct {
 	// Select an existing application or create a new one.
 	ApplicationId pulumi.StringPtrInput
-	// (v1.274) Add a description for your rule
+	// Add a description for your rule
 	Description pulumi.StringPtrInput
 	// Because this resource allows for ordering you may specify the ID of the resource instance that comes before this instance regarding order. If not specified when creating the setting will be added to the end of the list. If not specified during update the order will remain untouched
 	InsertAfter pulumi.StringPtrInput
-	// Possible Values: `DOMAIN_CONTAINS`, `DOMAIN_ENDS_WITH`, `DOMAIN_EQUALS`, `DOMAIN_MATCHES`, `DOMAIN_STARTS_WITH`, `URL_CONTAINS`, `URL_ENDS_WITH`, `URL_EQUALS`, `URL_STARTS_WITH`
+	// Matcher. Possible values: `DOMAIN_CONTAINS`, `DOMAIN_ENDS_WITH`, `DOMAIN_EQUALS`, `DOMAIN_MATCHES`, `DOMAIN_STARTS_WITH`, `URL_CONTAINS`, `URL_ENDS_WITH`, `URL_EQUALS`, `URL_STARTS_WITH`
 	Matcher pulumi.StringPtrInput
 	// Pattern
 	Pattern pulumi.StringPtrInput
@@ -205,11 +147,11 @@ func (ApplicationDetectionRuleV2State) ElementType() reflect.Type {
 type applicationDetectionRuleV2Args struct {
 	// Select an existing application or create a new one.
 	ApplicationId string `pulumi:"applicationId"`
-	// (v1.274) Add a description for your rule
+	// Add a description for your rule
 	Description *string `pulumi:"description"`
 	// Because this resource allows for ordering you may specify the ID of the resource instance that comes before this instance regarding order. If not specified when creating the setting will be added to the end of the list. If not specified during update the order will remain untouched
 	InsertAfter *string `pulumi:"insertAfter"`
-	// Possible Values: `DOMAIN_CONTAINS`, `DOMAIN_ENDS_WITH`, `DOMAIN_EQUALS`, `DOMAIN_MATCHES`, `DOMAIN_STARTS_WITH`, `URL_CONTAINS`, `URL_ENDS_WITH`, `URL_EQUALS`, `URL_STARTS_WITH`
+	// Matcher. Possible values: `DOMAIN_CONTAINS`, `DOMAIN_ENDS_WITH`, `DOMAIN_EQUALS`, `DOMAIN_MATCHES`, `DOMAIN_STARTS_WITH`, `URL_CONTAINS`, `URL_ENDS_WITH`, `URL_EQUALS`, `URL_STARTS_WITH`
 	Matcher string `pulumi:"matcher"`
 	// Pattern
 	Pattern string `pulumi:"pattern"`
@@ -219,11 +161,11 @@ type applicationDetectionRuleV2Args struct {
 type ApplicationDetectionRuleV2Args struct {
 	// Select an existing application or create a new one.
 	ApplicationId pulumi.StringInput
-	// (v1.274) Add a description for your rule
+	// Add a description for your rule
 	Description pulumi.StringPtrInput
 	// Because this resource allows for ordering you may specify the ID of the resource instance that comes before this instance regarding order. If not specified when creating the setting will be added to the end of the list. If not specified during update the order will remain untouched
 	InsertAfter pulumi.StringPtrInput
-	// Possible Values: `DOMAIN_CONTAINS`, `DOMAIN_ENDS_WITH`, `DOMAIN_EQUALS`, `DOMAIN_MATCHES`, `DOMAIN_STARTS_WITH`, `URL_CONTAINS`, `URL_ENDS_WITH`, `URL_EQUALS`, `URL_STARTS_WITH`
+	// Matcher. Possible values: `DOMAIN_CONTAINS`, `DOMAIN_ENDS_WITH`, `DOMAIN_EQUALS`, `DOMAIN_MATCHES`, `DOMAIN_STARTS_WITH`, `URL_CONTAINS`, `URL_ENDS_WITH`, `URL_EQUALS`, `URL_STARTS_WITH`
 	Matcher pulumi.StringInput
 	// Pattern
 	Pattern pulumi.StringInput
@@ -321,7 +263,7 @@ func (o ApplicationDetectionRuleV2Output) ApplicationId() pulumi.StringOutput {
 	return o.ApplyT(func(v *ApplicationDetectionRuleV2) pulumi.StringOutput { return v.ApplicationId }).(pulumi.StringOutput)
 }
 
-// (v1.274) Add a description for your rule
+// Add a description for your rule
 func (o ApplicationDetectionRuleV2Output) Description() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v *ApplicationDetectionRuleV2) pulumi.StringPtrOutput { return v.Description }).(pulumi.StringPtrOutput)
 }
@@ -331,7 +273,7 @@ func (o ApplicationDetectionRuleV2Output) InsertAfter() pulumi.StringOutput {
 	return o.ApplyT(func(v *ApplicationDetectionRuleV2) pulumi.StringOutput { return v.InsertAfter }).(pulumi.StringOutput)
 }
 
-// Possible Values: `DOMAIN_CONTAINS`, `DOMAIN_ENDS_WITH`, `DOMAIN_EQUALS`, `DOMAIN_MATCHES`, `DOMAIN_STARTS_WITH`, `URL_CONTAINS`, `URL_ENDS_WITH`, `URL_EQUALS`, `URL_STARTS_WITH`
+// Matcher. Possible values: `DOMAIN_CONTAINS`, `DOMAIN_ENDS_WITH`, `DOMAIN_EQUALS`, `DOMAIN_MATCHES`, `DOMAIN_STARTS_WITH`, `URL_CONTAINS`, `URL_ENDS_WITH`, `URL_EQUALS`, `URL_STARTS_WITH`
 func (o ApplicationDetectionRuleV2Output) Matcher() pulumi.StringOutput {
 	return o.ApplyT(func(v *ApplicationDetectionRuleV2) pulumi.StringOutput { return v.Matcher }).(pulumi.StringOutput)
 }

@@ -17,9 +17,9 @@ namespace Pulumiverse.Dynatrace.Inputs
         private InputList<string>? _additionalRequiredAttributes;
 
         /// <summary>
-        /// Define resource attributes that should not be part of the name but are required to detect the service, e.g. service.namespace or k8s.workload.kind.. Attributes specified here are required to apply the rule. If any of them is missing, the rule will not be applied and ruleset evaluation continues.
+        /// Add resource attribute keys (e.g. service.namespace or k8s.workload.kind) that also detect unique services but are not included in the displayed service name.. Attributes specified here are required to apply the rule. If any of them is missing, the rule will not be applied and ruleset evaluation continues.
         /// 
-        /// All attribute values contribute to the final service ID.
+        ///   All attribute values contribute to the final service ID.
         /// </summary>
         public InputList<string> AdditionalRequiredAttributes
         {
@@ -30,13 +30,13 @@ namespace Pulumiverse.Dynatrace.Inputs
         /// <summary>
         /// Limits the scope of the service detection rule using [DQL matcher](https://dt-url.net/l603wby) conditions on resource attributes.. A rule is applied only if the condition matches, otherwise the ruleset evaluation continues.
         /// 
-        /// If empty, the condition will always match.
+        ///   If empty, the condition will always match.
         /// </summary>
         [Input("condition")]
         public Input<string>? Condition { get; set; }
 
         /// <summary>
-        /// no documentation available
+        /// No documentation available
         /// </summary>
         [Input("description")]
         public Input<string>? Description { get; set; }

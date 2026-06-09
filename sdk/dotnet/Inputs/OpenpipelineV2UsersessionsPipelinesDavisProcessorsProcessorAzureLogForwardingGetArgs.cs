@@ -20,7 +20,7 @@ namespace Pulumiverse.Dynatrace.Inputs
         public Input<Inputs.OpenpipelineV2UsersessionsPipelinesDavisProcessorsProcessorAzureLogForwardingFieldExtractionGetArgs> FieldExtraction { get; set; } = null!;
 
         /// <summary>
-        /// no documentation available
+        /// No documentation available
         /// </summary>
         [Input("forwarderConfigId", required: true)]
         public Input<string> ForwarderConfigId { get; set; } = null!;

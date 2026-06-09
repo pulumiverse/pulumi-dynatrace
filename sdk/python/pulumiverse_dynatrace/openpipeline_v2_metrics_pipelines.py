@@ -44,7 +44,7 @@ class OpenpipelineV2MetricsPipelinesArgs:
         :param pulumi.Input['OpenpipelineV2MetricsPipelinesCostAllocationArgs'] cost_allocation: Cost allocation stage
         :param pulumi.Input['OpenpipelineV2MetricsPipelinesDataExtractionArgs'] data_extraction: Data extraction stage
         :param pulumi.Input['OpenpipelineV2MetricsPipelinesDavisArgs'] davis: Davis event extraction stage
-        :param pulumi.Input[_builtins.str] group_role: Group role. Possible values: `compositionPipeline`, `memberPipeline`
+        :param pulumi.Input[_builtins.str] group_role: Group role. Possible values: `basePipeline`, `compositionPipeline`, `memberPipeline`
         :param pulumi.Input['OpenpipelineV2MetricsPipelinesMetadataListArgs'] metadata_list: Pipeline metadata list
         :param pulumi.Input['OpenpipelineV2MetricsPipelinesMetricExtractionArgs'] metric_extraction: Metrics extraction stage
         :param pulumi.Input['OpenpipelineV2MetricsPipelinesProcessingArgs'] processing: Processing stage
@@ -148,7 +148,7 @@ class OpenpipelineV2MetricsPipelinesArgs:
     @pulumi.getter(name="groupRole")
     def group_role(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
-        Group role. Possible values: `compositionPipeline`, `memberPipeline`
+        Group role. Possible values: `basePipeline`, `compositionPipeline`, `memberPipeline`
         """
         return pulumi.get(self, "group_role")
 
@@ -291,7 +291,7 @@ class _OpenpipelineV2MetricsPipelinesState:
         :param pulumi.Input['OpenpipelineV2MetricsPipelinesDataExtractionArgs'] data_extraction: Data extraction stage
         :param pulumi.Input['OpenpipelineV2MetricsPipelinesDavisArgs'] davis: Davis event extraction stage
         :param pulumi.Input[_builtins.str] display_name: Display name
-        :param pulumi.Input[_builtins.str] group_role: Group role. Possible values: `compositionPipeline`, `memberPipeline`
+        :param pulumi.Input[_builtins.str] group_role: Group role. Possible values: `basePipeline`, `compositionPipeline`, `memberPipeline`
         :param pulumi.Input['OpenpipelineV2MetricsPipelinesMetadataListArgs'] metadata_list: Pipeline metadata list
         :param pulumi.Input['OpenpipelineV2MetricsPipelinesMetricExtractionArgs'] metric_extraction: Metrics extraction stage
         :param pulumi.Input['OpenpipelineV2MetricsPipelinesProcessingArgs'] processing: Processing stage
@@ -397,7 +397,7 @@ class _OpenpipelineV2MetricsPipelinesState:
     @pulumi.getter(name="groupRole")
     def group_role(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
-        Group role. Possible values: `compositionPipeline`, `memberPipeline`
+        Group role. Possible values: `basePipeline`, `compositionPipeline`, `memberPipeline`
         """
         return pulumi.get(self, "group_role")
 
@@ -706,7 +706,7 @@ class OpenpipelineV2MetricsPipelines(pulumi.CustomResource):
         :param pulumi.Input[Union['OpenpipelineV2MetricsPipelinesDataExtractionArgs', 'OpenpipelineV2MetricsPipelinesDataExtractionArgsDict']] data_extraction: Data extraction stage
         :param pulumi.Input[Union['OpenpipelineV2MetricsPipelinesDavisArgs', 'OpenpipelineV2MetricsPipelinesDavisArgsDict']] davis: Davis event extraction stage
         :param pulumi.Input[_builtins.str] display_name: Display name
-        :param pulumi.Input[_builtins.str] group_role: Group role. Possible values: `compositionPipeline`, `memberPipeline`
+        :param pulumi.Input[_builtins.str] group_role: Group role. Possible values: `basePipeline`, `compositionPipeline`, `memberPipeline`
         :param pulumi.Input[Union['OpenpipelineV2MetricsPipelinesMetadataListArgs', 'OpenpipelineV2MetricsPipelinesMetadataListArgsDict']] metadata_list: Pipeline metadata list
         :param pulumi.Input[Union['OpenpipelineV2MetricsPipelinesMetricExtractionArgs', 'OpenpipelineV2MetricsPipelinesMetricExtractionArgsDict']] metric_extraction: Metrics extraction stage
         :param pulumi.Input[Union['OpenpipelineV2MetricsPipelinesProcessingArgs', 'OpenpipelineV2MetricsPipelinesProcessingArgsDict']] processing: Processing stage
@@ -981,7 +981,7 @@ class OpenpipelineV2MetricsPipelines(pulumi.CustomResource):
         :param pulumi.Input[Union['OpenpipelineV2MetricsPipelinesDataExtractionArgs', 'OpenpipelineV2MetricsPipelinesDataExtractionArgsDict']] data_extraction: Data extraction stage
         :param pulumi.Input[Union['OpenpipelineV2MetricsPipelinesDavisArgs', 'OpenpipelineV2MetricsPipelinesDavisArgsDict']] davis: Davis event extraction stage
         :param pulumi.Input[_builtins.str] display_name: Display name
-        :param pulumi.Input[_builtins.str] group_role: Group role. Possible values: `compositionPipeline`, `memberPipeline`
+        :param pulumi.Input[_builtins.str] group_role: Group role. Possible values: `basePipeline`, `compositionPipeline`, `memberPipeline`
         :param pulumi.Input[Union['OpenpipelineV2MetricsPipelinesMetadataListArgs', 'OpenpipelineV2MetricsPipelinesMetadataListArgsDict']] metadata_list: Pipeline metadata list
         :param pulumi.Input[Union['OpenpipelineV2MetricsPipelinesMetricExtractionArgs', 'OpenpipelineV2MetricsPipelinesMetricExtractionArgsDict']] metric_extraction: Metrics extraction stage
         :param pulumi.Input[Union['OpenpipelineV2MetricsPipelinesProcessingArgs', 'OpenpipelineV2MetricsPipelinesProcessingArgsDict']] processing: Processing stage
@@ -1057,7 +1057,7 @@ class OpenpipelineV2MetricsPipelines(pulumi.CustomResource):
     @pulumi.getter(name="groupRole")
     def group_role(self) -> pulumi.Output[Optional[_builtins.str]]:
         """
-        Group role. Possible values: `compositionPipeline`, `memberPipeline`
+        Group role. Possible values: `basePipeline`, `compositionPipeline`, `memberPipeline`
         """
         return pulumi.get(self, "group_role")
 

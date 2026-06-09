@@ -139,7 +139,7 @@ class SpanAttributed(pulumi.CustomResource):
                  persistent: pulumi.Input[Optional[_builtins.bool]] = None,
                  __props__=None):
         """
-        !> This resource API endpoint has been deprecated, please use AttributeAllowList and AttributeMasking instead.
+        > This resource API endpoint has been deprecated, please use AttributeAllowList and AttributeMasking instead.
 
         > This resource requires the API token scopes **Read settings** (`settings.read`) and **Write settings** (`settings.write`)
 
@@ -169,7 +169,7 @@ class SpanAttributed(pulumi.CustomResource):
                  args: SpanAttributedArgs,
                  opts: Optional[pulumi.ResourceOptions] = None):
         """
-        !> This resource API endpoint has been deprecated, please use AttributeAllowList and AttributeMasking instead.
+        > This resource API endpoint has been deprecated, please use AttributeAllowList and AttributeMasking instead.
 
         > This resource requires the API token scopes **Read settings** (`settings.read`) and **Write settings** (`settings.write`)
 

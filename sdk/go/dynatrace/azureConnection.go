@@ -182,9 +182,9 @@ import (
 type AzureConnection struct {
 	pulumi.CustomResourceState
 
-	// no documentation available
+	// No documentation available
 	ClientSecret AzureConnectionClientSecretPtrOutput `pulumi:"clientSecret"`
-	// no documentation available
+	// No documentation available
 	FederatedIdentityCredential AzureConnectionFederatedIdentityCredentialPtrOutput `pulumi:"federatedIdentityCredential"`
 	// The name of the connection
 	Name pulumi.StringOutput `pulumi:"name"`
@@ -225,9 +225,9 @@ func GetAzureConnection(ctx *pulumi.Context,
 
 // Input properties used for looking up and filtering AzureConnection resources.
 type azureConnectionState struct {
-	// no documentation available
+	// No documentation available
 	ClientSecret *AzureConnectionClientSecret `pulumi:"clientSecret"`
-	// no documentation available
+	// No documentation available
 	FederatedIdentityCredential *AzureConnectionFederatedIdentityCredential `pulumi:"federatedIdentityCredential"`
 	// The name of the connection
 	Name *string `pulumi:"name"`
@@ -236,9 +236,9 @@ type azureConnectionState struct {
 }
 
 type AzureConnectionState struct {
-	// no documentation available
+	// No documentation available
 	ClientSecret AzureConnectionClientSecretPtrInput
-	// no documentation available
+	// No documentation available
 	FederatedIdentityCredential AzureConnectionFederatedIdentityCredentialPtrInput
 	// The name of the connection
 	Name pulumi.StringPtrInput
@@ -251,9 +251,9 @@ func (AzureConnectionState) ElementType() reflect.Type {
 }
 
 type azureConnectionArgs struct {
-	// no documentation available
+	// No documentation available
 	ClientSecret *AzureConnectionClientSecret `pulumi:"clientSecret"`
-	// no documentation available
+	// No documentation available
 	FederatedIdentityCredential *AzureConnectionFederatedIdentityCredential `pulumi:"federatedIdentityCredential"`
 	// The name of the connection
 	Name *string `pulumi:"name"`
@@ -263,9 +263,9 @@ type azureConnectionArgs struct {
 
 // The set of arguments for constructing a AzureConnection resource.
 type AzureConnectionArgs struct {
-	// no documentation available
+	// No documentation available
 	ClientSecret AzureConnectionClientSecretPtrInput
-	// no documentation available
+	// No documentation available
 	FederatedIdentityCredential AzureConnectionFederatedIdentityCredentialPtrInput
 	// The name of the connection
 	Name pulumi.StringPtrInput
@@ -360,12 +360,12 @@ func (o AzureConnectionOutput) ToAzureConnectionOutputWithContext(ctx context.Co
 	return o
 }
 
-// no documentation available
+// No documentation available
 func (o AzureConnectionOutput) ClientSecret() AzureConnectionClientSecretPtrOutput {
 	return o.ApplyT(func(v *AzureConnection) AzureConnectionClientSecretPtrOutput { return v.ClientSecret }).(AzureConnectionClientSecretPtrOutput)
 }
 
-// no documentation available
+// No documentation available
 func (o AzureConnectionOutput) FederatedIdentityCredential() AzureConnectionFederatedIdentityCredentialPtrOutput {
 	return o.ApplyT(func(v *AzureConnection) AzureConnectionFederatedIdentityCredentialPtrOutput {
 		return v.FederatedIdentityCredential

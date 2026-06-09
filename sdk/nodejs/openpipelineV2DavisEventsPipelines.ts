@@ -237,7 +237,7 @@ export class OpenpipelineV2DavisEventsPipelines extends pulumi.CustomResource {
      */
     declare public readonly displayName: pulumi.Output<string>;
     /**
-     * Group role. Possible values: `compositionPipeline`, `memberPipeline`
+     * Group role. Possible values: `basePipeline`, `compositionPipeline`, `memberPipeline`
      */
     declare public readonly groupRole: pulumi.Output<string | undefined>;
     /**
@@ -359,7 +359,7 @@ export interface OpenpipelineV2DavisEventsPipelinesState {
      */
     displayName?: pulumi.Input<string | undefined>;
     /**
-     * Group role. Possible values: `compositionPipeline`, `memberPipeline`
+     * Group role. Possible values: `basePipeline`, `compositionPipeline`, `memberPipeline`
      */
     groupRole?: pulumi.Input<string | undefined>;
     /**
@@ -425,7 +425,7 @@ export interface OpenpipelineV2DavisEventsPipelinesArgs {
      */
     displayName: pulumi.Input<string>;
     /**
-     * Group role. Possible values: `compositionPipeline`, `memberPipeline`
+     * Group role. Possible values: `basePipeline`, `compositionPipeline`, `memberPipeline`
      */
     groupRole?: pulumi.Input<string | undefined>;
     /**

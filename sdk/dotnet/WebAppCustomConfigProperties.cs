@@ -29,7 +29,7 @@ namespace Pulumiverse.Dynatrace
     public partial class WebAppCustomConfigProperties : global::Pulumi.CustomResource
     {
         /// <summary>
-        /// The scope of this setting
+        /// The scope of this settings. If the settings should cover the whole environment, just don't specify any scope.
         /// </summary>
         [Output("applicationId")]
         public Output<string> ApplicationId { get; private set; } = null!;
@@ -88,7 +88,7 @@ namespace Pulumiverse.Dynatrace
     public sealed class WebAppCustomConfigPropertiesArgs : global::Pulumi.ResourceArgs
     {
         /// <summary>
-        /// The scope of this setting
+        /// The scope of this settings. If the settings should cover the whole environment, just don't specify any scope.
         /// </summary>
         [Input("applicationId", required: true)]
         public Input<string> ApplicationId { get; set; } = null!;
@@ -108,7 +108,7 @@ namespace Pulumiverse.Dynatrace
     public sealed class WebAppCustomConfigPropertiesState : global::Pulumi.ResourceArgs
     {
         /// <summary>
-        /// The scope of this setting
+        /// The scope of this settings. If the settings should cover the whole environment, just don't specify any scope.
         /// </summary>
         [Input("applicationId")]
         public Input<string>? ApplicationId { get; set; }

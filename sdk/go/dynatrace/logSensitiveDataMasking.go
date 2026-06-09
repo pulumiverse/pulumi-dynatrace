@@ -32,9 +32,9 @@ type LogSensitiveDataMasking struct {
 	Enabled pulumi.BoolOutput `pulumi:"enabled"`
 	// Because this resource allows for ordering you may specify the ID of the resource instance that comes before this instance regarding order. If not specified when creating the setting will be added to the end of the list. If not specified during update the order will remain untouched
 	InsertAfter pulumi.StringOutput `pulumi:"insertAfter"`
-	// no documentation available
+	// No documentation available
 	Masking LogSensitiveDataMaskingMaskingOutput `pulumi:"masking"`
-	// no documentation available
+	// No documentation available
 	Matchers LogSensitiveDataMaskingMatchersPtrOutput `pulumi:"matchers"`
 	// Name
 	Name pulumi.StringOutput `pulumi:"name"`
@@ -82,9 +82,9 @@ type logSensitiveDataMaskingState struct {
 	Enabled *bool `pulumi:"enabled"`
 	// Because this resource allows for ordering you may specify the ID of the resource instance that comes before this instance regarding order. If not specified when creating the setting will be added to the end of the list. If not specified during update the order will remain untouched
 	InsertAfter *string `pulumi:"insertAfter"`
-	// no documentation available
+	// No documentation available
 	Masking *LogSensitiveDataMaskingMasking `pulumi:"masking"`
-	// no documentation available
+	// No documentation available
 	Matchers *LogSensitiveDataMaskingMatchers `pulumi:"matchers"`
 	// Name
 	Name *string `pulumi:"name"`
@@ -97,9 +97,9 @@ type LogSensitiveDataMaskingState struct {
 	Enabled pulumi.BoolPtrInput
 	// Because this resource allows for ordering you may specify the ID of the resource instance that comes before this instance regarding order. If not specified when creating the setting will be added to the end of the list. If not specified during update the order will remain untouched
 	InsertAfter pulumi.StringPtrInput
-	// no documentation available
+	// No documentation available
 	Masking LogSensitiveDataMaskingMaskingPtrInput
-	// no documentation available
+	// No documentation available
 	Matchers LogSensitiveDataMaskingMatchersPtrInput
 	// Name
 	Name pulumi.StringPtrInput
@@ -116,9 +116,9 @@ type logSensitiveDataMaskingArgs struct {
 	Enabled bool `pulumi:"enabled"`
 	// Because this resource allows for ordering you may specify the ID of the resource instance that comes before this instance regarding order. If not specified when creating the setting will be added to the end of the list. If not specified during update the order will remain untouched
 	InsertAfter *string `pulumi:"insertAfter"`
-	// no documentation available
+	// No documentation available
 	Masking LogSensitiveDataMaskingMasking `pulumi:"masking"`
-	// no documentation available
+	// No documentation available
 	Matchers *LogSensitiveDataMaskingMatchers `pulumi:"matchers"`
 	// Name
 	Name *string `pulumi:"name"`
@@ -132,9 +132,9 @@ type LogSensitiveDataMaskingArgs struct {
 	Enabled pulumi.BoolInput
 	// Because this resource allows for ordering you may specify the ID of the resource instance that comes before this instance regarding order. If not specified when creating the setting will be added to the end of the list. If not specified during update the order will remain untouched
 	InsertAfter pulumi.StringPtrInput
-	// no documentation available
+	// No documentation available
 	Masking LogSensitiveDataMaskingMaskingInput
-	// no documentation available
+	// No documentation available
 	Matchers LogSensitiveDataMaskingMatchersPtrInput
 	// Name
 	Name pulumi.StringPtrInput
@@ -239,12 +239,12 @@ func (o LogSensitiveDataMaskingOutput) InsertAfter() pulumi.StringOutput {
 	return o.ApplyT(func(v *LogSensitiveDataMasking) pulumi.StringOutput { return v.InsertAfter }).(pulumi.StringOutput)
 }
 
-// no documentation available
+// No documentation available
 func (o LogSensitiveDataMaskingOutput) Masking() LogSensitiveDataMaskingMaskingOutput {
 	return o.ApplyT(func(v *LogSensitiveDataMasking) LogSensitiveDataMaskingMaskingOutput { return v.Masking }).(LogSensitiveDataMaskingMaskingOutput)
 }
 
-// no documentation available
+// No documentation available
 func (o LogSensitiveDataMaskingOutput) Matchers() LogSensitiveDataMaskingMatchersPtrOutput {
 	return o.ApplyT(func(v *LogSensitiveDataMasking) LogSensitiveDataMaskingMatchersPtrOutput { return v.Matchers }).(LogSensitiveDataMaskingMatchersPtrOutput)
 }

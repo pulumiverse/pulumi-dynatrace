@@ -18,6 +18,20 @@ import * as utilities from "./utilities";
  * - `terraform-provider-dynatrace -export dynatrace.InfraopsAppSettings` downloads existing infrastructure and operations app feature flag configuration
  *
  * The full documentation of the export feature is available [here](https://dt-url.net/h203qmc).
+ *
+ * ## Resource Example Usage
+ *
+ * ```typescript
+ * import * as pulumi from "@pulumi/pulumi";
+ * import * as dynatrace from "@pulumiverse/dynatrace";
+ *
+ * const example = new dynatrace.InfraopsAppSettings("example", {
+ *     showMonitoringCandidates: true,
+ *     showStandaloneHosts: true,
+ *     interfaceSaturationThreshold: 0.95,
+ *     invexDqlQueryLimit: 1000,
+ * });
+ * ```
  */
 export class InfraopsAppSettings extends pulumi.CustomResource {
     /**
@@ -50,15 +64,11 @@ export class InfraopsAppSettings extends pulumi.CustomResource {
     /**
      * The threshold at which a network device interface is deemed to be saturated.
      */
-    declare public readonly interfaceSaturationThreshold: pulumi.Output<number | undefined>;
+    declare public readonly interfaceSaturationThreshold: pulumi.Output<number>;
     /**
      * Limit the number of results returned from Grail for Host, Network device, and Extensions entities.
      */
-    declare public readonly invexDqlQueryLimit: pulumi.Output<number | undefined>;
-    /**
-     * Limit for server-side sorting in Host, Network device and Extensions inventories. Sorting is disabled when the row count exceeds the configured threshold.
-     */
-    declare public readonly invexDqlSortLimit: pulumi.Output<number | undefined>;
+    declare public readonly invexDqlQueryLimit: pulumi.Output<number>;
     /**
      * When set to true, the app will display monitoring candidates in the Hosts table
      */
@@ -83,11 +93,16 @@ export class InfraopsAppSettings extends pulumi.CustomResource {
             const state = argsOrState as InfraopsAppSettingsState | undefined;
             resourceInputs["interfaceSaturationThreshold"] = state?.interfaceSaturationThreshold;
             resourceInputs["invexDqlQueryLimit"] = state?.invexDqlQueryLimit;
-            resourceInputs["invexDqlSortLimit"] = state?.invexDqlSortLimit;
             resourceInputs["showMonitoringCandidates"] = state?.showMonitoringCandidates;
             resourceInputs["showStandaloneHosts"] = state?.showStandaloneHosts;
         } else {
             const args = argsOrState as InfraopsAppSettingsArgs | undefined;
+            if (args?.interfaceSaturationThreshold === undefined && !opts.urn) {
+                throw new Error("Missing required property 'interfaceSaturationThreshold'");
+            }
+            if (args?.invexDqlQueryLimit === undefined && !opts.urn) {
+                throw new Error("Missing required property 'invexDqlQueryLimit'");
+            }
             if (args?.showMonitoringCandidates === undefined && !opts.urn) {
                 throw new Error("Missing required property 'showMonitoringCandidates'");
             }
@@ -96,7 +111,6 @@ export class InfraopsAppSettings extends pulumi.CustomResource {
             }
             resourceInputs["interfaceSaturationThreshold"] = args?.interfaceSaturationThreshold;
             resourceInputs["invexDqlQueryLimit"] = args?.invexDqlQueryLimit;
-            resourceInputs["invexDqlSortLimit"] = args?.invexDqlSortLimit;
             resourceInputs["showMonitoringCandidates"] = args?.showMonitoringCandidates;
             resourceInputs["showStandaloneHosts"] = args?.showStandaloneHosts;
         }
@@ -118,10 +132,6 @@ export interface InfraopsAppSettingsState {
      */
     invexDqlQueryLimit?: pulumi.Input<number | undefined>;
     /**
-     * Limit for server-side sorting in Host, Network device and Extensions inventories. Sorting is disabled when the row count exceeds the configured threshold.
-     */
-    invexDqlSortLimit?: pulumi.Input<number | undefined>;
-    /**
      * When set to true, the app will display monitoring candidates in the Hosts table
      */
     showMonitoringCandidates?: pulumi.Input<boolean | undefined>;
@@ -138,15 +148,11 @@ export interface InfraopsAppSettingsArgs {
     /**
      * The threshold at which a network device interface is deemed to be saturated.
      */
-    interfaceSaturationThreshold?: pulumi.Input<number | undefined>;
+    interfaceSaturationThreshold: pulumi.Input<number>;
     /**
      * Limit the number of results returned from Grail for Host, Network device, and Extensions entities.
      */
-    invexDqlQueryLimit?: pulumi.Input<number | undefined>;
-    /**
-     * Limit for server-side sorting in Host, Network device and Extensions inventories. Sorting is disabled when the row count exceeds the configured threshold.
-     */
-    invexDqlSortLimit?: pulumi.Input<number | undefined>;
+    invexDqlQueryLimit: pulumi.Input<number>;
     /**
      * When set to true, the app will display monitoring candidates in the Hosts table
      */

@@ -12,7 +12,7 @@ import (
 	"github.com/pulumiverse/pulumi-dynatrace/sdk/go/dynatrace/internal"
 )
 
-// !> This resource is utilizing an older API endpoint, please use PgAlerting instead.
+// > This resource is utilizing an older API endpoint, please use PgAlerting instead.
 //
 // > This resource requires the API token scopes **Read configuration** (`ReadConfig`) and **Write configuration** (`WriteConfig`)
 //
@@ -36,17 +36,20 @@ import (
 // import (
 //
 //	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-//	"github.com/pulumi/pulumi/sdk/v3/go/pulumi/config"
 //	"github.com/pulumiverse/pulumi-dynatrace/sdk/go/dynatrace"
 //
 // )
 //
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
-//			cfg := config.New(ctx, "")
-//			PROCESS_GROUP_ID := cfg.Require("PROCESS_GROUP_ID")
-//			_, err := dynatrace.NewPgAnomalies(ctx, "anomaly", &dynatrace.PgAnomaliesArgs{
-//				PgId: pulumi.String(pulumi.String(PROCESS_GROUP_ID)),
+//			processGroup, err := dynatrace.GetEntity(ctx, &dynatrace.GetEntityArgs{
+//				EntitySelector: pulumi.StringRef("type(\"PROCESS_GROUP\")"),
+//			}, nil)
+//			if err != nil {
+//				return err
+//			}
+//			_, err = dynatrace.NewPgAnomalies(ctx, "anomaly", &dynatrace.PgAnomaliesArgs{
+//				PgId: pulumi.String(pulumi.String(processGroup.Id)),
 //				Availability: &dynatrace.PgAnomaliesAvailabilityArgs{
 //					Method:           pulumi.String("OFF"),
 //					MinimumThreshold: pulumi.Int(0),

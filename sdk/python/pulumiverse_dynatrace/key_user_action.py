@@ -186,6 +186,24 @@ class KeyUserAction(pulumi.CustomResource):
 
         The full documentation of the export feature is available [here](https://dt-url.net/h203qmc).
 
+        ## Resource Example Usage
+
+        The following example showcases how to manage Key User Actions separately from Web Applications using a dedicated resource.
+        While it is still possible to embed `key_user_actions` into the resource `WebApplication`, doing so is discouraged.
+
+        ```python
+        import pulumi
+        import pulumi_dynatrace as dynatrace
+        import pulumiverse_dynatrace as dynatrace
+
+        web_application = dynatrace.get_application(name="Web Application")
+        acc = dynatrace.KeyUserAction("acc",
+            application_id=web_application.id,
+            domain="120.0.0.1",
+            name="Loading of page /custom",
+            type="Load")
+        ```
+
 
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
@@ -214,6 +232,24 @@ class KeyUserAction(pulumi.CustomResource):
         - `terraform-provider-dynatrace -export KeyUserAction` downloads all existing Key User Actions
 
         The full documentation of the export feature is available [here](https://dt-url.net/h203qmc).
+
+        ## Resource Example Usage
+
+        The following example showcases how to manage Key User Actions separately from Web Applications using a dedicated resource.
+        While it is still possible to embed `key_user_actions` into the resource `WebApplication`, doing so is discouraged.
+
+        ```python
+        import pulumi
+        import pulumi_dynatrace as dynatrace
+        import pulumiverse_dynatrace as dynatrace
+
+        web_application = dynatrace.get_application(name="Web Application")
+        acc = dynatrace.KeyUserAction("acc",
+            application_id=web_application.id,
+            domain="120.0.0.1",
+            name="Loading of page /custom",
+            type="Load")
+        ```
 
 
         :param str resource_name: The name of the resource.

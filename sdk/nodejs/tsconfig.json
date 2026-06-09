@@ -412,6 +412,7 @@
         "processGroupMonitoring.ts",
         "processGroupRum.ts",
         "processGroupSimpleDetection.ts",
+        "processGroupingRules.ts",
         "processMonitoring.ts",
         "processMonitoringRule.ts",
         "processVisibility.ts",

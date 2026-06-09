@@ -19,7 +19,7 @@ namespace Pulumiverse.Dynatrace.Outputs
         /// </summary>
         public readonly double ErrorRateReqPerMin;
         /// <summary>
-        /// Possible Values: `Low`, `Medium`, `High`
+        /// Sensitivity. Possible values: `High`, `Low`, `Medium`
         /// </summary>
         public readonly string ErrorRateSensitivity;
         /// <summary>

@@ -26,13 +26,13 @@ namespace Pulumiverse.Dynatrace.Inputs
         public Input<Inputs.WebAppAnomaliesErrorRateErrorRateAutoArgs>? ErrorRateAuto { get; set; }
 
         /// <summary>
-        /// Possible Values: `Auto`, `Fixed`
+        /// Detection strategy for increases in JavaScript errors. Possible values: `Auto`, `Fixed`
         /// </summary>
         [Input("errorRateDetectionMode")]
         public Input<string>? ErrorRateDetectionMode { get; set; }
 
         /// <summary>
-        /// no documentation available
+        /// No documentation available
         /// </summary>
         [Input("errorRateFixed")]
         public Input<Inputs.WebAppAnomaliesErrorRateErrorRateFixedArgs>? ErrorRateFixed { get; set; }
