@@ -20,7 +20,7 @@ namespace Pulumiverse.Dynatrace.Inputs
         public Input<bool>? CaseInsensitiveNamingEnabled { get; set; }
 
         /// <summary>
-        /// Datatype. Possible Values: `BOOLEAN`, `NUMBER`, `STRING`
+        /// Datatype. Possible values: `BOOLEAN`, `NUMBER`, `STRING`
         /// </summary>
         [Input("fieldDataType", required: true)]
         public Input<string> FieldDataType { get; set; } = null!;

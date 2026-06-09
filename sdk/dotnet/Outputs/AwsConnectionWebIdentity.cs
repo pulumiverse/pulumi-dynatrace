@@ -15,7 +15,7 @@ namespace Pulumiverse.Dynatrace.Outputs
     public sealed class AwsConnectionWebIdentity
     {
         /// <summary>
-        /// Dynatrace integrations that can use this connection. Possible values: `APP:dynatrace.aws.connector`, `APP:dynatrace.biz.carbon`
+        /// Dynatrace integrations that can use this connection. Possible values: `APP:dynatrace.aws.connector`
         /// </summary>
         public readonly string Consumers;
 

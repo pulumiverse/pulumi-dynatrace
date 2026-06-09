@@ -35,8 +35,8 @@ class IssueTrackingArgs:
         :param pulumi.Input[_builtins.bool] enabled: This setting is enabled (`true`) or disabled (`false`)
         :param pulumi.Input[_builtins.str] issuelabel: Set a label to identify these issues, for example, `release_blocker` or `non-critical`
         :param pulumi.Input[_builtins.str] issuequery: You can use the following placeholders to automatically insert values from the **Release monitoring** page in your query: `{NAME}`, `{VERSION}`, `{STAGE}`, `{PRODUCT}`.
-        :param pulumi.Input[_builtins.str] issuetheme: Possible Values: `ERROR`, `INFO`, `RESOLVED`
-        :param pulumi.Input[_builtins.str] issuetrackersystem: Possible Values: `GITHUB`, `GITLAB`, `JIRA`, `JIRA_CLOUD`, `JIRA_ON_PREMISE`, `SERVICENOW`
+        :param pulumi.Input[_builtins.str] issuetheme: Select the issue type to be displayed. Possible values: `ERROR`, `INFO`, `RESOLVED`
+        :param pulumi.Input[_builtins.str] issuetrackersystem: Select the issue-tracking system you want to query. Possible values: `GITHUB`, `GITLAB`, `JIRA`, `JIRA_CLOUD`, `JIRA_ON_PREMISE`, `SERVICENOW`
         :param pulumi.Input[_builtins.str] url: For Jira, use the base URL (for example, https://jira.yourcompany.com); for GitHub, use the repository URL (for example, https://github.com/org/repo); for GitLab, use the specific project API for a single project (for example, https://gitlab.com/api/v4/projects/:projectId), and the specific group API for a multiple projects (for example, https://gitlab.com/api/v4/groups/:groupId); for ServiceNow, use your company instance URL (for example, https://yourinstance.service-now.com/)
         :param pulumi.Input[_builtins.str] username: Username
         :param pulumi.Input[_builtins.str] insert_after: Because this resource allows for ordering you may specify the ID of the resource instance that comes before this instance regarding order. If not specified when creating the setting will be added to the end of the list. If not specified during update the order will remain untouched
@@ -97,7 +97,7 @@ class IssueTrackingArgs:
     @pulumi.getter
     def issuetheme(self) -> pulumi.Input[_builtins.str]:
         """
-        Possible Values: `ERROR`, `INFO`, `RESOLVED`
+        Select the issue type to be displayed. Possible values: `ERROR`, `INFO`, `RESOLVED`
         """
         return pulumi.get(self, "issuetheme")
 
@@ -109,7 +109,7 @@ class IssueTrackingArgs:
     @pulumi.getter
     def issuetrackersystem(self) -> pulumi.Input[_builtins.str]:
         """
-        Possible Values: `GITHUB`, `GITLAB`, `JIRA`, `JIRA_CLOUD`, `JIRA_ON_PREMISE`, `SERVICENOW`
+        Select the issue-tracking system you want to query. Possible values: `GITHUB`, `GITLAB`, `JIRA`, `JIRA_CLOUD`, `JIRA_ON_PREMISE`, `SERVICENOW`
         """
         return pulumi.get(self, "issuetrackersystem")
 
@@ -198,8 +198,8 @@ class _IssueTrackingState:
         :param pulumi.Input[_builtins.str] insert_after: Because this resource allows for ordering you may specify the ID of the resource instance that comes before this instance regarding order. If not specified when creating the setting will be added to the end of the list. If not specified during update the order will remain untouched
         :param pulumi.Input[_builtins.str] issuelabel: Set a label to identify these issues, for example, `release_blocker` or `non-critical`
         :param pulumi.Input[_builtins.str] issuequery: You can use the following placeholders to automatically insert values from the **Release monitoring** page in your query: `{NAME}`, `{VERSION}`, `{STAGE}`, `{PRODUCT}`.
-        :param pulumi.Input[_builtins.str] issuetheme: Possible Values: `ERROR`, `INFO`, `RESOLVED`
-        :param pulumi.Input[_builtins.str] issuetrackersystem: Possible Values: `GITHUB`, `GITLAB`, `JIRA`, `JIRA_CLOUD`, `JIRA_ON_PREMISE`, `SERVICENOW`
+        :param pulumi.Input[_builtins.str] issuetheme: Select the issue type to be displayed. Possible values: `ERROR`, `INFO`, `RESOLVED`
+        :param pulumi.Input[_builtins.str] issuetrackersystem: Select the issue-tracking system you want to query. Possible values: `GITHUB`, `GITLAB`, `JIRA`, `JIRA_CLOUD`, `JIRA_ON_PREMISE`, `SERVICENOW`
         :param pulumi.Input[_builtins.str] password: Password
         :param pulumi.Input[_builtins.str] token: Token
         :param pulumi.Input[_builtins.str] url: For Jira, use the base URL (for example, https://jira.yourcompany.com); for GitHub, use the repository URL (for example, https://github.com/org/repo); for GitLab, use the specific project API for a single project (for example, https://gitlab.com/api/v4/projects/:projectId), and the specific group API for a multiple projects (for example, https://gitlab.com/api/v4/groups/:groupId); for ServiceNow, use your company instance URL (for example, https://yourinstance.service-now.com/)
@@ -278,7 +278,7 @@ class _IssueTrackingState:
     @pulumi.getter
     def issuetheme(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
-        Possible Values: `ERROR`, `INFO`, `RESOLVED`
+        Select the issue type to be displayed. Possible values: `ERROR`, `INFO`, `RESOLVED`
         """
         return pulumi.get(self, "issuetheme")
 
@@ -290,7 +290,7 @@ class _IssueTrackingState:
     @pulumi.getter
     def issuetrackersystem(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
-        Possible Values: `GITHUB`, `GITLAB`, `JIRA`, `JIRA_CLOUD`, `JIRA_ON_PREMISE`, `SERVICENOW`
+        Select the issue-tracking system you want to query. Possible values: `GITHUB`, `GITLAB`, `JIRA`, `JIRA_CLOUD`, `JIRA_ON_PREMISE`, `SERVICENOW`
         """
         return pulumi.get(self, "issuetrackersystem")
 
@@ -386,8 +386,8 @@ class IssueTracking(pulumi.CustomResource):
         :param pulumi.Input[_builtins.str] insert_after: Because this resource allows for ordering you may specify the ID of the resource instance that comes before this instance regarding order. If not specified when creating the setting will be added to the end of the list. If not specified during update the order will remain untouched
         :param pulumi.Input[_builtins.str] issuelabel: Set a label to identify these issues, for example, `release_blocker` or `non-critical`
         :param pulumi.Input[_builtins.str] issuequery: You can use the following placeholders to automatically insert values from the **Release monitoring** page in your query: `{NAME}`, `{VERSION}`, `{STAGE}`, `{PRODUCT}`.
-        :param pulumi.Input[_builtins.str] issuetheme: Possible Values: `ERROR`, `INFO`, `RESOLVED`
-        :param pulumi.Input[_builtins.str] issuetrackersystem: Possible Values: `GITHUB`, `GITLAB`, `JIRA`, `JIRA_CLOUD`, `JIRA_ON_PREMISE`, `SERVICENOW`
+        :param pulumi.Input[_builtins.str] issuetheme: Select the issue type to be displayed. Possible values: `ERROR`, `INFO`, `RESOLVED`
+        :param pulumi.Input[_builtins.str] issuetrackersystem: Select the issue-tracking system you want to query. Possible values: `GITHUB`, `GITLAB`, `JIRA`, `JIRA_CLOUD`, `JIRA_ON_PREMISE`, `SERVICENOW`
         :param pulumi.Input[_builtins.str] password: Password
         :param pulumi.Input[_builtins.str] token: Token
         :param pulumi.Input[_builtins.str] url: For Jira, use the base URL (for example, https://jira.yourcompany.com); for GitHub, use the repository URL (for example, https://github.com/org/repo); for GitLab, use the specific project API for a single project (for example, https://gitlab.com/api/v4/projects/:projectId), and the specific group API for a multiple projects (for example, https://gitlab.com/api/v4/groups/:groupId); for ServiceNow, use your company instance URL (for example, https://yourinstance.service-now.com/)
@@ -506,8 +506,8 @@ class IssueTracking(pulumi.CustomResource):
         :param pulumi.Input[_builtins.str] insert_after: Because this resource allows for ordering you may specify the ID of the resource instance that comes before this instance regarding order. If not specified when creating the setting will be added to the end of the list. If not specified during update the order will remain untouched
         :param pulumi.Input[_builtins.str] issuelabel: Set a label to identify these issues, for example, `release_blocker` or `non-critical`
         :param pulumi.Input[_builtins.str] issuequery: You can use the following placeholders to automatically insert values from the **Release monitoring** page in your query: `{NAME}`, `{VERSION}`, `{STAGE}`, `{PRODUCT}`.
-        :param pulumi.Input[_builtins.str] issuetheme: Possible Values: `ERROR`, `INFO`, `RESOLVED`
-        :param pulumi.Input[_builtins.str] issuetrackersystem: Possible Values: `GITHUB`, `GITLAB`, `JIRA`, `JIRA_CLOUD`, `JIRA_ON_PREMISE`, `SERVICENOW`
+        :param pulumi.Input[_builtins.str] issuetheme: Select the issue type to be displayed. Possible values: `ERROR`, `INFO`, `RESOLVED`
+        :param pulumi.Input[_builtins.str] issuetrackersystem: Select the issue-tracking system you want to query. Possible values: `GITHUB`, `GITLAB`, `JIRA`, `JIRA_CLOUD`, `JIRA_ON_PREMISE`, `SERVICENOW`
         :param pulumi.Input[_builtins.str] password: Password
         :param pulumi.Input[_builtins.str] token: Token
         :param pulumi.Input[_builtins.str] url: For Jira, use the base URL (for example, https://jira.yourcompany.com); for GitHub, use the repository URL (for example, https://github.com/org/repo); for GitLab, use the specific project API for a single project (for example, https://gitlab.com/api/v4/projects/:projectId), and the specific group API for a multiple projects (for example, https://gitlab.com/api/v4/groups/:groupId); for ServiceNow, use your company instance URL (for example, https://yourinstance.service-now.com/)
@@ -565,7 +565,7 @@ class IssueTracking(pulumi.CustomResource):
     @pulumi.getter
     def issuetheme(self) -> pulumi.Output[_builtins.str]:
         """
-        Possible Values: `ERROR`, `INFO`, `RESOLVED`
+        Select the issue type to be displayed. Possible values: `ERROR`, `INFO`, `RESOLVED`
         """
         return pulumi.get(self, "issuetheme")
 
@@ -573,7 +573,7 @@ class IssueTracking(pulumi.CustomResource):
     @pulumi.getter
     def issuetrackersystem(self) -> pulumi.Output[_builtins.str]:
         """
-        Possible Values: `GITHUB`, `GITLAB`, `JIRA`, `JIRA_CLOUD`, `JIRA_ON_PREMISE`, `SERVICENOW`
+        Select the issue-tracking system you want to query. Possible values: `GITHUB`, `GITLAB`, `JIRA`, `JIRA_CLOUD`, `JIRA_ON_PREMISE`, `SERVICENOW`
         """
         return pulumi.get(self, "issuetrackersystem")
 

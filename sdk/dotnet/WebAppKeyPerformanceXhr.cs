@@ -35,7 +35,7 @@ namespace Pulumiverse.Dynatrace
         public Output<Outputs.WebAppKeyPerformanceXhrFallbackThresholds?> FallbackThresholds { get; private set; } = null!;
 
         /// <summary>
-        /// Possible Values: `RESPONSE_END`, `RESPONSE_START`, `USER_ACTION_DURATION`, `VISUALLY_COMPLETE`
+        /// Key performance metric. Possible values: `RESPONSE_END`, `RESPONSE_START`, `USER_ACTION_DURATION`, `VISUALLY_COMPLETE`
         /// </summary>
         [Output("kpm")]
         public Output<string> Kpm { get; private set; } = null!;
@@ -106,7 +106,7 @@ namespace Pulumiverse.Dynatrace
         public Input<Inputs.WebAppKeyPerformanceXhrFallbackThresholdsArgs>? FallbackThresholds { get; set; }
 
         /// <summary>
-        /// Possible Values: `RESPONSE_END`, `RESPONSE_START`, `USER_ACTION_DURATION`, `VISUALLY_COMPLETE`
+        /// Key performance metric. Possible values: `RESPONSE_END`, `RESPONSE_START`, `USER_ACTION_DURATION`, `VISUALLY_COMPLETE`
         /// </summary>
         [Input("kpm", required: true)]
         public Input<string> Kpm { get; set; } = null!;
@@ -138,7 +138,7 @@ namespace Pulumiverse.Dynatrace
         public Input<Inputs.WebAppKeyPerformanceXhrFallbackThresholdsGetArgs>? FallbackThresholds { get; set; }
 
         /// <summary>
-        /// Possible Values: `RESPONSE_END`, `RESPONSE_START`, `USER_ACTION_DURATION`, `VISUALLY_COMPLETE`
+        /// Key performance metric. Possible values: `RESPONSE_END`, `RESPONSE_START`, `USER_ACTION_DURATION`, `VISUALLY_COMPLETE`
         /// </summary>
         [Input("kpm")]
         public Input<string>? Kpm { get; set; }

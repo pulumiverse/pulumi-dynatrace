@@ -15,11 +15,13 @@ namespace Pulumiverse.Dynatrace.Outputs
     public sealed class FailureDetectionRulesConditionsCondition
     {
         /// <summary>
-        /// Possible Values: `PG_NAME`, `PG_TAG`, `SERVICE_MANAGEMENT_ZONE`, `SERVICE_NAME`, `SERVICE_TAG`, `SERVICE_TYPE`
+        /// The attribute to be checked. Possible values: `PG_NAME`, `PG_TAG`, `SERVICE_MANAGEMENT_ZONE`, `SERVICE_NAME`, `SERVICE_TAG`, `SERVICE_TYPE`
         /// </summary>
         public readonly string Attribute;
         /// <summary>
-        /// Condition to check the attribute against
+        /// The predicate that tests the value of the attribute.
+        /// 
+        ///   The actual set of fields depends on the type of the predicate. Find the list of actual objects in the description of the type field or see [Failure detection API - JSON models](https://dt-url.net/9sg3swf).
         /// </summary>
         public readonly Outputs.FailureDetectionRulesConditionsConditionPredicate Predicate;
 

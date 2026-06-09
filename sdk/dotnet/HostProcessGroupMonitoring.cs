@@ -35,13 +35,16 @@ namespace Pulumiverse.Dynatrace
     /// 
     /// return await Deployment.RunAsync(() =&gt; 
     /// {
-    ///     var config = new Config();
-    ///     var PROCESS_GROUP_ID = config.Require("PROCESS_GROUP_ID");
+    ///     var processGroup = Dynatrace.GetEntity.Invoke(new()
+    ///     {
+    ///         EntitySelector = "type(\"PROCESS_GROUP\")",
+    ///     });
+    /// 
     ///     var monitoring = new Dynatrace.HostProcessGroupMonitoring("monitoring", new()
     ///     {
     ///         HostId = "HOST-1234567890000000",
     ///         MonitoringState = "MONITORING_ON",
-    ///         ProcessGroup = PROCESS_GROUP_ID,
+    ///         ProcessGroup = processGroup.Apply(getEntityResult =&gt; getEntityResult.Id),
     ///     });
     /// 
     /// });

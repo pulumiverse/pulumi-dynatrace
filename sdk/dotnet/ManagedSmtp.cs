@@ -11,7 +11,7 @@ using Pulumi;
 namespace Pulumiverse.Dynatrace
 {
     /// <summary>
-    /// !&gt; **HTTP DELETE method not available** Terraform will no longer manage this resource on `Destroy` but the configuration will still be present on the Dynatrace cluster.
+    /// &gt; **HTTP DELETE method not available** Terraform will no longer manage this resource on `Destroy` but the configuration will still be present on the Dynatrace cluster.
     /// 
     /// &gt; This resource requires the cluster API token scope **Service Provider API** (`ServiceProviderAPI`)
     /// 

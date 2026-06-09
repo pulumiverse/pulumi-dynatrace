@@ -28,7 +28,7 @@ import (
 type WebAppCustomConfigProperties struct {
 	pulumi.CustomResourceState
 
-	// The scope of this setting
+	// The scope of this settings. If the settings should cover the whole environment, just don't specify any scope.
 	ApplicationId pulumi.StringOutput `pulumi:"applicationId"`
 	// Custom configuration property
 	CustomProperty pulumi.StringOutput `pulumi:"customProperty"`
@@ -70,14 +70,14 @@ func GetWebAppCustomConfigProperties(ctx *pulumi.Context,
 
 // Input properties used for looking up and filtering WebAppCustomConfigProperties resources.
 type webAppCustomConfigPropertiesState struct {
-	// The scope of this setting
+	// The scope of this settings. If the settings should cover the whole environment, just don't specify any scope.
 	ApplicationId *string `pulumi:"applicationId"`
 	// Custom configuration property
 	CustomProperty *string `pulumi:"customProperty"`
 }
 
 type WebAppCustomConfigPropertiesState struct {
-	// The scope of this setting
+	// The scope of this settings. If the settings should cover the whole environment, just don't specify any scope.
 	ApplicationId pulumi.StringPtrInput
 	// Custom configuration property
 	CustomProperty pulumi.StringPtrInput
@@ -88,7 +88,7 @@ func (WebAppCustomConfigPropertiesState) ElementType() reflect.Type {
 }
 
 type webAppCustomConfigPropertiesArgs struct {
-	// The scope of this setting
+	// The scope of this settings. If the settings should cover the whole environment, just don't specify any scope.
 	ApplicationId string `pulumi:"applicationId"`
 	// Custom configuration property
 	CustomProperty string `pulumi:"customProperty"`
@@ -96,7 +96,7 @@ type webAppCustomConfigPropertiesArgs struct {
 
 // The set of arguments for constructing a WebAppCustomConfigProperties resource.
 type WebAppCustomConfigPropertiesArgs struct {
-	// The scope of this setting
+	// The scope of this settings. If the settings should cover the whole environment, just don't specify any scope.
 	ApplicationId pulumi.StringInput
 	// Custom configuration property
 	CustomProperty pulumi.StringInput
@@ -189,7 +189,7 @@ func (o WebAppCustomConfigPropertiesOutput) ToWebAppCustomConfigPropertiesOutput
 	return o
 }
 
-// The scope of this setting
+// The scope of this settings. If the settings should cover the whole environment, just don't specify any scope.
 func (o WebAppCustomConfigPropertiesOutput) ApplicationId() pulumi.StringOutput {
 	return o.ApplyT(func(v *WebAppCustomConfigProperties) pulumi.StringOutput { return v.ApplicationId }).(pulumi.StringOutput)
 }

@@ -58,11 +58,11 @@ export class LogSensitiveDataMasking extends pulumi.CustomResource {
      */
     declare public readonly insertAfter: pulumi.Output<string>;
     /**
-     * no documentation available
+     * No documentation available
      */
     declare public readonly masking: pulumi.Output<outputs.LogSensitiveDataMaskingMasking>;
     /**
-     * no documentation available
+     * No documentation available
      */
     declare public readonly matchers: pulumi.Output<outputs.LogSensitiveDataMaskingMatchers | undefined>;
     /**
@@ -126,11 +126,11 @@ export interface LogSensitiveDataMaskingState {
      */
     insertAfter?: pulumi.Input<string | undefined>;
     /**
-     * no documentation available
+     * No documentation available
      */
     masking?: pulumi.Input<inputs.LogSensitiveDataMaskingMasking | undefined>;
     /**
-     * no documentation available
+     * No documentation available
      */
     matchers?: pulumi.Input<inputs.LogSensitiveDataMaskingMatchers | undefined>;
     /**
@@ -156,11 +156,11 @@ export interface LogSensitiveDataMaskingArgs {
      */
     insertAfter?: pulumi.Input<string | undefined>;
     /**
-     * no documentation available
+     * No documentation available
      */
     masking: pulumi.Input<inputs.LogSensitiveDataMaskingMasking>;
     /**
-     * no documentation available
+     * No documentation available
      */
     matchers?: pulumi.Input<inputs.LogSensitiveDataMaskingMatchers | undefined>;
     /**

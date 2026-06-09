@@ -12,7 +12,7 @@ import (
 	"github.com/pulumiverse/pulumi-dynatrace/sdk/go/dynatrace/internal"
 )
 
-// !> This resource API endpoint has been deprecated, please use SloV2 instead.
+// > This resource API endpoint has been deprecated, please use SloV2 instead.
 //
 // > This resource requires the API token scopes **Read SLO** (`slo.read`) and **Write SLO** (`slo.write`)
 //

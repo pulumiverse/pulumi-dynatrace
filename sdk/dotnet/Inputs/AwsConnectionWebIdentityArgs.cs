@@ -14,7 +14,7 @@ namespace Pulumiverse.Dynatrace.Inputs
     public sealed class AwsConnectionWebIdentityArgs : global::Pulumi.ResourceArgs
     {
         /// <summary>
-        /// Dynatrace integrations that can use this connection. Possible values: `APP:dynatrace.aws.connector`, `APP:dynatrace.biz.carbon`
+        /// Dynatrace integrations that can use this connection. Possible values: `APP:dynatrace.aws.connector`
         /// </summary>
         [Input("consumers", required: true)]
         public Input<string> Consumers { get; set; } = null!;

@@ -14,13 +14,13 @@ namespace Pulumiverse.Dynatrace.Inputs
     public sealed class WebAppRequestErrorsErrorRulesErrorRuleFilterSettingsGetArgs : global::Pulumi.ResourceArgs
     {
         /// <summary>
-        /// Possible Values: `BEGINS_WITH`, `CONTAINS`, `ENDS_WITH`, `EQUALS`
+        /// Filter by URL. Possible values: `BEGINS_WITH`, `CONTAINS`, `ENDS_WITH`, `EQUALS`
         /// </summary>
         [Input("filter")]
         public Input<string>? Filter { get; set; }
 
         /// <summary>
-        /// no documentation available
+        /// No documentation available
         /// </summary>
         [Input("url")]
         public Input<string>? Url { get; set; }

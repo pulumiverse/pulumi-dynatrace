@@ -109,7 +109,7 @@ class PgAnomalies(pulumi.CustomResource):
                  pg_id: pulumi.Input[Optional[_builtins.str]] = None,
                  __props__=None):
         """
-        !> This resource is utilizing an older API endpoint, please use PgAlerting instead.
+        > This resource is utilizing an older API endpoint, please use PgAlerting instead.
 
         > This resource requires the API token scopes **Read configuration** (`ReadConfig`) and **Write configuration** (`WriteConfig`)
 
@@ -129,12 +129,12 @@ class PgAnomalies(pulumi.CustomResource):
 
         ```python
         import pulumi
+        import pulumi_dynatrace as dynatrace
         import pulumiverse_dynatrace as dynatrace
 
-        config = pulumi.Config()
-        proces_s__grou_p__id = config.require("PROCESS_GROUP_ID")
+        process_group = dynatrace.get_entity(entity_selector="type(\\"PROCESS_GROUP\\")")
         anomaly = dynatrace.PgAnomalies("anomaly",
-            pg_id=proces_s__grou_p__id,
+            pg_id=process_group.id,
             availability={
                 "method": "OFF",
                 "minimum_threshold": 0,
@@ -154,7 +154,7 @@ class PgAnomalies(pulumi.CustomResource):
                  args: PgAnomaliesArgs,
                  opts: Optional[pulumi.ResourceOptions] = None):
         """
-        !> This resource is utilizing an older API endpoint, please use PgAlerting instead.
+        > This resource is utilizing an older API endpoint, please use PgAlerting instead.
 
         > This resource requires the API token scopes **Read configuration** (`ReadConfig`) and **Write configuration** (`WriteConfig`)
 
@@ -174,12 +174,12 @@ class PgAnomalies(pulumi.CustomResource):
 
         ```python
         import pulumi
+        import pulumi_dynatrace as dynatrace
         import pulumiverse_dynatrace as dynatrace
 
-        config = pulumi.Config()
-        proces_s__grou_p__id = config.require("PROCESS_GROUP_ID")
+        process_group = dynatrace.get_entity(entity_selector="type(\\"PROCESS_GROUP\\")")
         anomaly = dynatrace.PgAnomalies("anomaly",
-            pg_id=proces_s__grou_p__id,
+            pg_id=process_group.id,
             availability={
                 "method": "OFF",
                 "minimum_threshold": 0,

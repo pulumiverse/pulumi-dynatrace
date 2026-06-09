@@ -52,7 +52,7 @@ export class WebAppJavascriptUpdates extends pulumi.CustomResource {
      */
     declare public readonly applicationId: pulumi.Output<string | undefined>;
     /**
-     * Possible Values: `CUSTOM`, `LATEST_IE7_10_SUPPORTED`, `LATEST_STABLE`, `PREVIOUS_STABLE`
+     * Choose version. Possible values: `CUSTOM`, `LATEST_IE11_SUPPORTED`, `LATEST_IE7_10_SUPPORTED`, `LATEST_STABLE`, `PREVIOUS_STABLE`
      */
     declare public readonly javascriptVersion: pulumi.Output<string>;
 
@@ -93,7 +93,7 @@ export interface WebAppJavascriptUpdatesState {
      */
     applicationId?: pulumi.Input<string | undefined>;
     /**
-     * Possible Values: `CUSTOM`, `LATEST_IE7_10_SUPPORTED`, `LATEST_STABLE`, `PREVIOUS_STABLE`
+     * Choose version. Possible values: `CUSTOM`, `LATEST_IE11_SUPPORTED`, `LATEST_IE7_10_SUPPORTED`, `LATEST_STABLE`, `PREVIOUS_STABLE`
      */
     javascriptVersion?: pulumi.Input<string | undefined>;
 }
@@ -107,7 +107,7 @@ export interface WebAppJavascriptUpdatesArgs {
      */
     applicationId?: pulumi.Input<string | undefined>;
     /**
-     * Possible Values: `CUSTOM`, `LATEST_IE7_10_SUPPORTED`, `LATEST_STABLE`, `PREVIOUS_STABLE`
+     * Choose version. Possible values: `CUSTOM`, `LATEST_IE11_SUPPORTED`, `LATEST_IE7_10_SUPPORTED`, `LATEST_STABLE`, `PREVIOUS_STABLE`
      */
     javascriptVersion: pulumi.Input<string>;
 }

@@ -74,9 +74,9 @@ export class RumIpLocations extends pulumi.CustomResource {
     /**
      * The region code of the location. 
      *
-     *  For the [USA](https://dt-url.net/iso3166us) or [Canada](https://dt-url.net/iso3166ca) use ISO 3166-2 state codes without `US-` or `CA-` prefix. 
+     *    For the [USA](https://dt-url.net/iso3166us) or [Canada](https://dt-url.net/iso3166ca) use ISO 3166-2 state codes without `US-` or `CA-` prefix. 
      *
-     *  For the rest of the world use [FIPS 10-4 codes](https://dt-url.net/fipscodes) without country prefix.
+     *    For the rest of the world use [FIPS 10-4 codes](https://dt-url.net/fipscodes) without country prefix.
      */
     declare public readonly regionCode: pulumi.Output<string | undefined>;
 
@@ -152,9 +152,9 @@ export interface RumIpLocationsState {
     /**
      * The region code of the location. 
      *
-     *  For the [USA](https://dt-url.net/iso3166us) or [Canada](https://dt-url.net/iso3166ca) use ISO 3166-2 state codes without `US-` or `CA-` prefix. 
+     *    For the [USA](https://dt-url.net/iso3166us) or [Canada](https://dt-url.net/iso3166ca) use ISO 3166-2 state codes without `US-` or `CA-` prefix. 
      *
-     *  For the rest of the world use [FIPS 10-4 codes](https://dt-url.net/fipscodes) without country prefix.
+     *    For the rest of the world use [FIPS 10-4 codes](https://dt-url.net/fipscodes) without country prefix.
      */
     regionCode?: pulumi.Input<string | undefined>;
 }
@@ -190,9 +190,9 @@ export interface RumIpLocationsArgs {
     /**
      * The region code of the location. 
      *
-     *  For the [USA](https://dt-url.net/iso3166us) or [Canada](https://dt-url.net/iso3166ca) use ISO 3166-2 state codes without `US-` or `CA-` prefix. 
+     *    For the [USA](https://dt-url.net/iso3166us) or [Canada](https://dt-url.net/iso3166ca) use ISO 3166-2 state codes without `US-` or `CA-` prefix. 
      *
-     *  For the rest of the world use [FIPS 10-4 codes](https://dt-url.net/fipscodes) without country prefix.
+     *    For the rest of the world use [FIPS 10-4 codes](https://dt-url.net/fipscodes) without country prefix.
      */
     regionCode?: pulumi.Input<string | undefined>;
 }

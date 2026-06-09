@@ -26,8 +26,8 @@ class WebAppBeaconEndpointArgs:
         """
         The set of arguments for constructing a WebAppBeaconEndpoint resource.
 
-        :param pulumi.Input[_builtins.str] application_id: The scope of this setting
-        :param pulumi.Input[_builtins.str] type: Possible Values: `ACTIVEGATE`, `DEFAULT_CONFIG`, `ONEAGENT`
+        :param pulumi.Input[_builtins.str] application_id: The scope of this settings. If the settings should cover the whole environment, just don't specify any scope.
+        :param pulumi.Input[_builtins.str] type: Type. Possible values: `ACTIVEGATE`, `DEFAULT_CONFIG`, `ONEAGENT`
         :param pulumi.Input[_builtins.str] url: You can specify either path segments or an absolute URL.
         :param pulumi.Input[_builtins.bool] use_cors: Learn more about [sending beacon data via CORS](https://dt-url.net/r7038sa)
         """
@@ -42,7 +42,7 @@ class WebAppBeaconEndpointArgs:
     @pulumi.getter(name="applicationId")
     def application_id(self) -> pulumi.Input[_builtins.str]:
         """
-        The scope of this setting
+        The scope of this settings. If the settings should cover the whole environment, just don't specify any scope.
         """
         return pulumi.get(self, "application_id")
 
@@ -54,7 +54,7 @@ class WebAppBeaconEndpointArgs:
     @pulumi.getter
     def type(self) -> pulumi.Input[_builtins.str]:
         """
-        Possible Values: `ACTIVEGATE`, `DEFAULT_CONFIG`, `ONEAGENT`
+        Type. Possible values: `ACTIVEGATE`, `DEFAULT_CONFIG`, `ONEAGENT`
         """
         return pulumi.get(self, "type")
 
@@ -97,8 +97,8 @@ class _WebAppBeaconEndpointState:
         """
         Input properties used for looking up and filtering WebAppBeaconEndpoint resources.
 
-        :param pulumi.Input[_builtins.str] application_id: The scope of this setting
-        :param pulumi.Input[_builtins.str] type: Possible Values: `ACTIVEGATE`, `DEFAULT_CONFIG`, `ONEAGENT`
+        :param pulumi.Input[_builtins.str] application_id: The scope of this settings. If the settings should cover the whole environment, just don't specify any scope.
+        :param pulumi.Input[_builtins.str] type: Type. Possible values: `ACTIVEGATE`, `DEFAULT_CONFIG`, `ONEAGENT`
         :param pulumi.Input[_builtins.str] url: You can specify either path segments or an absolute URL.
         :param pulumi.Input[_builtins.bool] use_cors: Learn more about [sending beacon data via CORS](https://dt-url.net/r7038sa)
         """
@@ -115,7 +115,7 @@ class _WebAppBeaconEndpointState:
     @pulumi.getter(name="applicationId")
     def application_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
-        The scope of this setting
+        The scope of this settings. If the settings should cover the whole environment, just don't specify any scope.
         """
         return pulumi.get(self, "application_id")
 
@@ -127,7 +127,7 @@ class _WebAppBeaconEndpointState:
     @pulumi.getter
     def type(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
-        Possible Values: `ACTIVEGATE`, `DEFAULT_CONFIG`, `ONEAGENT`
+        Type. Possible values: `ACTIVEGATE`, `DEFAULT_CONFIG`, `ONEAGENT`
         """
         return pulumi.get(self, "type")
 
@@ -189,8 +189,8 @@ class WebAppBeaconEndpoint(pulumi.CustomResource):
 
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
-        :param pulumi.Input[_builtins.str] application_id: The scope of this setting
-        :param pulumi.Input[_builtins.str] type: Possible Values: `ACTIVEGATE`, `DEFAULT_CONFIG`, `ONEAGENT`
+        :param pulumi.Input[_builtins.str] application_id: The scope of this settings. If the settings should cover the whole environment, just don't specify any scope.
+        :param pulumi.Input[_builtins.str] type: Type. Possible values: `ACTIVEGATE`, `DEFAULT_CONFIG`, `ONEAGENT`
         :param pulumi.Input[_builtins.str] url: You can specify either path segments or an absolute URL.
         :param pulumi.Input[_builtins.bool] use_cors: Learn more about [sending beacon data via CORS](https://dt-url.net/r7038sa)
         """
@@ -273,8 +273,8 @@ class WebAppBeaconEndpoint(pulumi.CustomResource):
         :param str resource_name: The unique name of the resulting resource.
         :param pulumi.Input[str] id: The unique provider ID of the resource to lookup.
         :param pulumi.ResourceOptions opts: Options for the resource.
-        :param pulumi.Input[_builtins.str] application_id: The scope of this setting
-        :param pulumi.Input[_builtins.str] type: Possible Values: `ACTIVEGATE`, `DEFAULT_CONFIG`, `ONEAGENT`
+        :param pulumi.Input[_builtins.str] application_id: The scope of this settings. If the settings should cover the whole environment, just don't specify any scope.
+        :param pulumi.Input[_builtins.str] type: Type. Possible values: `ACTIVEGATE`, `DEFAULT_CONFIG`, `ONEAGENT`
         :param pulumi.Input[_builtins.str] url: You can specify either path segments or an absolute URL.
         :param pulumi.Input[_builtins.bool] use_cors: Learn more about [sending beacon data via CORS](https://dt-url.net/r7038sa)
         """
@@ -292,7 +292,7 @@ class WebAppBeaconEndpoint(pulumi.CustomResource):
     @pulumi.getter(name="applicationId")
     def application_id(self) -> pulumi.Output[_builtins.str]:
         """
-        The scope of this setting
+        The scope of this settings. If the settings should cover the whole environment, just don't specify any scope.
         """
         return pulumi.get(self, "application_id")
 
@@ -300,7 +300,7 @@ class WebAppBeaconEndpoint(pulumi.CustomResource):
     @pulumi.getter
     def type(self) -> pulumi.Output[_builtins.str]:
         """
-        Possible Values: `ACTIVEGATE`, `DEFAULT_CONFIG`, `ONEAGENT`
+        Type. Possible values: `ACTIVEGATE`, `DEFAULT_CONFIG`, `ONEAGENT`
         """
         return pulumi.get(self, "type")
 

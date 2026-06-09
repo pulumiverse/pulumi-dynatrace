@@ -31,8 +31,8 @@ class WebAppIpAddressExclusionArgs:
         :param pulumi.Input[_builtins.bool] ip_address_exclusion_include: These are the only IP addresses that should be monitored
         :param pulumi.Input['WebAppIpAddressExclusionIpExclusionListArgs'] ip_exclusion_list: **Examples:**
                
-                  - 84.112.10.5
-                  - fe80::10a1:c6b2:5f68:785d
+                    - 84.112.10.5
+                   - fe80::10a1:c6b2:5f68:785d
         """
         pulumi.set(__self__, "application_id", application_id)
         pulumi.set(__self__, "ip_address_exclusion_include", ip_address_exclusion_include)
@@ -69,8 +69,8 @@ class WebAppIpAddressExclusionArgs:
         """
         **Examples:**
 
-           - 84.112.10.5
-           - fe80::10a1:c6b2:5f68:785d
+             - 84.112.10.5
+            - fe80::10a1:c6b2:5f68:785d
         """
         return pulumi.get(self, "ip_exclusion_list")
 
@@ -92,8 +92,8 @@ class _WebAppIpAddressExclusionState:
         :param pulumi.Input[_builtins.bool] ip_address_exclusion_include: These are the only IP addresses that should be monitored
         :param pulumi.Input['WebAppIpAddressExclusionIpExclusionListArgs'] ip_exclusion_list: **Examples:**
                
-                  - 84.112.10.5
-                  - fe80::10a1:c6b2:5f68:785d
+                    - 84.112.10.5
+                   - fe80::10a1:c6b2:5f68:785d
         """
         if application_id is not None:
             pulumi.set(__self__, "application_id", application_id)
@@ -132,8 +132,8 @@ class _WebAppIpAddressExclusionState:
         """
         **Examples:**
 
-           - 84.112.10.5
-           - fe80::10a1:c6b2:5f68:785d
+             - 84.112.10.5
+            - fe80::10a1:c6b2:5f68:785d
         """
         return pulumi.get(self, "ip_exclusion_list")
 
@@ -170,8 +170,8 @@ class WebAppIpAddressExclusion(pulumi.CustomResource):
         :param pulumi.Input[_builtins.bool] ip_address_exclusion_include: These are the only IP addresses that should be monitored
         :param pulumi.Input[Union['WebAppIpAddressExclusionIpExclusionListArgs', 'WebAppIpAddressExclusionIpExclusionListArgsDict']] ip_exclusion_list: **Examples:**
                
-                  - 84.112.10.5
-                  - fe80::10a1:c6b2:5f68:785d
+                    - 84.112.10.5
+                   - fe80::10a1:c6b2:5f68:785d
         """
         ...
     @overload
@@ -249,8 +249,8 @@ class WebAppIpAddressExclusion(pulumi.CustomResource):
         :param pulumi.Input[_builtins.bool] ip_address_exclusion_include: These are the only IP addresses that should be monitored
         :param pulumi.Input[Union['WebAppIpAddressExclusionIpExclusionListArgs', 'WebAppIpAddressExclusionIpExclusionListArgsDict']] ip_exclusion_list: **Examples:**
                
-                  - 84.112.10.5
-                  - fe80::10a1:c6b2:5f68:785d
+                    - 84.112.10.5
+                   - fe80::10a1:c6b2:5f68:785d
         """
         opts = pulumi.ResourceOptions.merge(opts, pulumi.ResourceOptions(id=id))
 
@@ -283,8 +283,8 @@ class WebAppIpAddressExclusion(pulumi.CustomResource):
         """
         **Examples:**
 
-           - 84.112.10.5
-           - fe80::10a1:c6b2:5f68:785d
+             - 84.112.10.5
+            - fe80::10a1:c6b2:5f68:785d
         """
         return pulumi.get(self, "ip_exclusion_list")
 

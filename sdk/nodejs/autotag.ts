@@ -7,7 +7,7 @@ import * as outputs from "./types/output";
 import * as utilities from "./utilities";
 
 /**
- * !> This resource API endpoint has been deprecated, please use dynatrace.AutotagV2 instead.
+ * > This resource API endpoint has been deprecated, please use dynatrace.AutotagV2 instead.
  *
  * > This resource requires the API token scopes **Read configuration** (`ReadConfig`) and **Write configuration** (`WriteConfig`)
  *

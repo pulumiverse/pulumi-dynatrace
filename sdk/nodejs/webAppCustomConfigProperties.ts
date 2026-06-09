@@ -48,7 +48,7 @@ export class WebAppCustomConfigProperties extends pulumi.CustomResource {
     }
 
     /**
-     * The scope of this setting
+     * The scope of this settings. If the settings should cover the whole environment, just don't specify any scope.
      */
     declare public readonly applicationId: pulumi.Output<string>;
     /**
@@ -92,7 +92,7 @@ export class WebAppCustomConfigProperties extends pulumi.CustomResource {
  */
 export interface WebAppCustomConfigPropertiesState {
     /**
-     * The scope of this setting
+     * The scope of this settings. If the settings should cover the whole environment, just don't specify any scope.
      */
     applicationId?: pulumi.Input<string | undefined>;
     /**
@@ -106,7 +106,7 @@ export interface WebAppCustomConfigPropertiesState {
  */
 export interface WebAppCustomConfigPropertiesArgs {
     /**
-     * The scope of this setting
+     * The scope of this settings. If the settings should cover the whole environment, just don't specify any scope.
      */
     applicationId: pulumi.Input<string>;
     /**

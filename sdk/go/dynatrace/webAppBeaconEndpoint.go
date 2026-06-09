@@ -28,9 +28,9 @@ import (
 type WebAppBeaconEndpoint struct {
 	pulumi.CustomResourceState
 
-	// The scope of this setting
+	// The scope of this settings. If the settings should cover the whole environment, just don't specify any scope.
 	ApplicationId pulumi.StringOutput `pulumi:"applicationId"`
-	// Possible Values: `ACTIVEGATE`, `DEFAULT_CONFIG`, `ONEAGENT`
+	// Type. Possible values: `ACTIVEGATE`, `DEFAULT_CONFIG`, `ONEAGENT`
 	Type pulumi.StringOutput `pulumi:"type"`
 	// You can specify either path segments or an absolute URL.
 	Url pulumi.StringPtrOutput `pulumi:"url"`
@@ -74,9 +74,9 @@ func GetWebAppBeaconEndpoint(ctx *pulumi.Context,
 
 // Input properties used for looking up and filtering WebAppBeaconEndpoint resources.
 type webAppBeaconEndpointState struct {
-	// The scope of this setting
+	// The scope of this settings. If the settings should cover the whole environment, just don't specify any scope.
 	ApplicationId *string `pulumi:"applicationId"`
-	// Possible Values: `ACTIVEGATE`, `DEFAULT_CONFIG`, `ONEAGENT`
+	// Type. Possible values: `ACTIVEGATE`, `DEFAULT_CONFIG`, `ONEAGENT`
 	Type *string `pulumi:"type"`
 	// You can specify either path segments or an absolute URL.
 	Url *string `pulumi:"url"`
@@ -85,9 +85,9 @@ type webAppBeaconEndpointState struct {
 }
 
 type WebAppBeaconEndpointState struct {
-	// The scope of this setting
+	// The scope of this settings. If the settings should cover the whole environment, just don't specify any scope.
 	ApplicationId pulumi.StringPtrInput
-	// Possible Values: `ACTIVEGATE`, `DEFAULT_CONFIG`, `ONEAGENT`
+	// Type. Possible values: `ACTIVEGATE`, `DEFAULT_CONFIG`, `ONEAGENT`
 	Type pulumi.StringPtrInput
 	// You can specify either path segments or an absolute URL.
 	Url pulumi.StringPtrInput
@@ -100,9 +100,9 @@ func (WebAppBeaconEndpointState) ElementType() reflect.Type {
 }
 
 type webAppBeaconEndpointArgs struct {
-	// The scope of this setting
+	// The scope of this settings. If the settings should cover the whole environment, just don't specify any scope.
 	ApplicationId string `pulumi:"applicationId"`
-	// Possible Values: `ACTIVEGATE`, `DEFAULT_CONFIG`, `ONEAGENT`
+	// Type. Possible values: `ACTIVEGATE`, `DEFAULT_CONFIG`, `ONEAGENT`
 	Type string `pulumi:"type"`
 	// You can specify either path segments or an absolute URL.
 	Url *string `pulumi:"url"`
@@ -112,9 +112,9 @@ type webAppBeaconEndpointArgs struct {
 
 // The set of arguments for constructing a WebAppBeaconEndpoint resource.
 type WebAppBeaconEndpointArgs struct {
-	// The scope of this setting
+	// The scope of this settings. If the settings should cover the whole environment, just don't specify any scope.
 	ApplicationId pulumi.StringInput
-	// Possible Values: `ACTIVEGATE`, `DEFAULT_CONFIG`, `ONEAGENT`
+	// Type. Possible values: `ACTIVEGATE`, `DEFAULT_CONFIG`, `ONEAGENT`
 	Type pulumi.StringInput
 	// You can specify either path segments or an absolute URL.
 	Url pulumi.StringPtrInput
@@ -209,12 +209,12 @@ func (o WebAppBeaconEndpointOutput) ToWebAppBeaconEndpointOutputWithContext(ctx 
 	return o
 }
 
-// The scope of this setting
+// The scope of this settings. If the settings should cover the whole environment, just don't specify any scope.
 func (o WebAppBeaconEndpointOutput) ApplicationId() pulumi.StringOutput {
 	return o.ApplyT(func(v *WebAppBeaconEndpoint) pulumi.StringOutput { return v.ApplicationId }).(pulumi.StringOutput)
 }
 
-// Possible Values: `ACTIVEGATE`, `DEFAULT_CONFIG`, `ONEAGENT`
+// Type. Possible values: `ACTIVEGATE`, `DEFAULT_CONFIG`, `ONEAGENT`
 func (o WebAppBeaconEndpointOutput) Type() pulumi.StringOutput {
 	return o.ApplyT(func(v *WebAppBeaconEndpoint) pulumi.StringOutput { return v.Type }).(pulumi.StringOutput)
 }

@@ -12,7 +12,7 @@ import (
 	"github.com/pulumiverse/pulumi-dynatrace/sdk/go/dynatrace/internal"
 )
 
-// !> This resource may not have full coverage of the required fields, please use ApplicationErrorRules instead.
+// > This resource may not have full coverage of the required fields, please use ApplicationErrorRules instead.
 //
 // > This resource requires the API token scopes **Read settings** (`settings.read`) and **Write settings** (`settings.write`)
 //
@@ -34,7 +34,7 @@ type WebAppRequestErrors struct {
 	ErrorRules WebAppRequestErrorsErrorRulesPtrOutput `pulumi:"errorRules"`
 	// (Field has overlap with `ApplicationErrorRules`) This setting overrides Apdex settings for individual rules listed below
 	IgnoreRequestErrorsInApdexCalculation pulumi.BoolOutput `pulumi:"ignoreRequestErrorsInApdexCalculation"`
-	// The scope of this setting (APPLICATION)
+	// The scope of this setting (APPLICATION, environment-default)
 	Scope pulumi.StringOutput `pulumi:"scope"`
 }
 
@@ -78,7 +78,7 @@ type webAppRequestErrorsState struct {
 	ErrorRules *WebAppRequestErrorsErrorRules `pulumi:"errorRules"`
 	// (Field has overlap with `ApplicationErrorRules`) This setting overrides Apdex settings for individual rules listed below
 	IgnoreRequestErrorsInApdexCalculation *bool `pulumi:"ignoreRequestErrorsInApdexCalculation"`
-	// The scope of this setting (APPLICATION)
+	// The scope of this setting (APPLICATION, environment-default)
 	Scope *string `pulumi:"scope"`
 }
 
@@ -87,7 +87,7 @@ type WebAppRequestErrorsState struct {
 	ErrorRules WebAppRequestErrorsErrorRulesPtrInput
 	// (Field has overlap with `ApplicationErrorRules`) This setting overrides Apdex settings for individual rules listed below
 	IgnoreRequestErrorsInApdexCalculation pulumi.BoolPtrInput
-	// The scope of this setting (APPLICATION)
+	// The scope of this setting (APPLICATION, environment-default)
 	Scope pulumi.StringPtrInput
 }
 
@@ -100,7 +100,7 @@ type webAppRequestErrorsArgs struct {
 	ErrorRules *WebAppRequestErrorsErrorRules `pulumi:"errorRules"`
 	// (Field has overlap with `ApplicationErrorRules`) This setting overrides Apdex settings for individual rules listed below
 	IgnoreRequestErrorsInApdexCalculation bool `pulumi:"ignoreRequestErrorsInApdexCalculation"`
-	// The scope of this setting (APPLICATION)
+	// The scope of this setting (APPLICATION, environment-default)
 	Scope string `pulumi:"scope"`
 }
 
@@ -110,7 +110,7 @@ type WebAppRequestErrorsArgs struct {
 	ErrorRules WebAppRequestErrorsErrorRulesPtrInput
 	// (Field has overlap with `ApplicationErrorRules`) This setting overrides Apdex settings for individual rules listed below
 	IgnoreRequestErrorsInApdexCalculation pulumi.BoolInput
-	// The scope of this setting (APPLICATION)
+	// The scope of this setting (APPLICATION, environment-default)
 	Scope pulumi.StringInput
 }
 
@@ -211,7 +211,7 @@ func (o WebAppRequestErrorsOutput) IgnoreRequestErrorsInApdexCalculation() pulum
 	return o.ApplyT(func(v *WebAppRequestErrors) pulumi.BoolOutput { return v.IgnoreRequestErrorsInApdexCalculation }).(pulumi.BoolOutput)
 }
 
-// The scope of this setting (APPLICATION)
+// The scope of this setting (APPLICATION, environment-default)
 func (o WebAppRequestErrorsOutput) Scope() pulumi.StringOutput {
 	return o.ApplyT(func(v *WebAppRequestErrors) pulumi.StringOutput { return v.Scope }).(pulumi.StringOutput)
 }

@@ -15,7 +15,7 @@ namespace Pulumiverse.Dynatrace.Outputs
     public sealed class WebAppAnomaliesResponseTime
     {
         /// <summary>
-        /// Possible Values: `Auto`, `Fixed`
+        /// Detection strategy for key performance metric degradations. Possible values: `Auto`, `Fixed`
         /// </summary>
         public readonly string? DetectionMode;
         /// <summary>
@@ -23,11 +23,11 @@ namespace Pulumiverse.Dynatrace.Outputs
         /// </summary>
         public readonly bool Enabled;
         /// <summary>
-        /// no documentation available
+        /// No documentation available
         /// </summary>
         public readonly Outputs.WebAppAnomaliesResponseTimeResponseTimeAuto? ResponseTimeAuto;
         /// <summary>
-        /// no documentation available
+        /// No documentation available
         /// </summary>
         public readonly Outputs.WebAppAnomaliesResponseTimeResponseTimeFixed? ResponseTimeFixed;
 

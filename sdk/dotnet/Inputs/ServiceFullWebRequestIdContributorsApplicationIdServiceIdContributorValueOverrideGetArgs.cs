@@ -14,7 +14,7 @@ namespace Pulumiverse.Dynatrace.Inputs
     public sealed class ServiceFullWebRequestIdContributorsApplicationIdServiceIdContributorValueOverrideGetArgs : global::Pulumi.ResourceArgs
     {
         /// <summary>
-        /// no documentation available
+        /// The value to be used instead of the detected value.
         /// </summary>
         [Input("value", required: true)]
         public Input<string> Value { get; set; } = null!;

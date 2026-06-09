@@ -67,7 +67,7 @@ namespace Pulumiverse.Dynatrace
         public Output<bool> Enabled { get; private set; } = null!;
 
         /// <summary>
-        /// The scope of this settings. If the settings should cover the whole environment, just don't specify any scope
+        /// The scope of this settings. If the settings should cover the whole environment, just don't specify any scope.
         /// </summary>
         [Output("hostGroupId")]
         public Output<string?> HostGroupId { get; private set; } = null!;
@@ -79,7 +79,7 @@ namespace Pulumiverse.Dynatrace
         public Output<string> InsertAfter { get; private set; } = null!;
 
         /// <summary>
-        /// Possible Values: `MONITORING_ON`, `MONITORING_OFF`
+        /// Mode. Possible values: `MONITORING_OFF`, `MONITORING_ON`
         /// </summary>
         [Output("mode")]
         public Output<string> Mode { get; private set; } = null!;
@@ -144,7 +144,7 @@ namespace Pulumiverse.Dynatrace
         public Input<bool> Enabled { get; set; } = null!;
 
         /// <summary>
-        /// The scope of this settings. If the settings should cover the whole environment, just don't specify any scope
+        /// The scope of this settings. If the settings should cover the whole environment, just don't specify any scope.
         /// </summary>
         [Input("hostGroupId")]
         public Input<string>? HostGroupId { get; set; }
@@ -156,7 +156,7 @@ namespace Pulumiverse.Dynatrace
         public Input<string>? InsertAfter { get; set; }
 
         /// <summary>
-        /// Possible Values: `MONITORING_ON`, `MONITORING_OFF`
+        /// Mode. Possible values: `MONITORING_OFF`, `MONITORING_ON`
         /// </summary>
         [Input("mode", required: true)]
         public Input<string> Mode { get; set; } = null!;
@@ -182,7 +182,7 @@ namespace Pulumiverse.Dynatrace
         public Input<bool>? Enabled { get; set; }
 
         /// <summary>
-        /// The scope of this settings. If the settings should cover the whole environment, just don't specify any scope
+        /// The scope of this settings. If the settings should cover the whole environment, just don't specify any scope.
         /// </summary>
         [Input("hostGroupId")]
         public Input<string>? HostGroupId { get; set; }
@@ -194,7 +194,7 @@ namespace Pulumiverse.Dynatrace
         public Input<string>? InsertAfter { get; set; }
 
         /// <summary>
-        /// Possible Values: `MONITORING_ON`, `MONITORING_OFF`
+        /// Mode. Possible values: `MONITORING_OFF`, `MONITORING_ON`
         /// </summary>
         [Input("mode")]
         public Input<string>? Mode { get; set; }

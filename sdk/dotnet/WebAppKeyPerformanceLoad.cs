@@ -35,7 +35,7 @@ namespace Pulumiverse.Dynatrace
         public Output<Outputs.WebAppKeyPerformanceLoadFallbackThresholds?> FallbackThresholds { get; private set; } = null!;
 
         /// <summary>
-        /// Possible Values: `CUMULATIVE_LAYOUT_SHIFT`, `DOM_INTERACTIVE`, `FIRST_INPUT_DELAY`, `LARGEST_CONTENTFUL_PAINT`, `LOAD_EVENT_END`, `LOAD_EVENT_START`, `RESPONSE_END`, `RESPONSE_START`, `SPEED_INDEX`, `USER_ACTION_DURATION`, `VISUALLY_COMPLETE`
+        /// Key performance metric. Possible values: `CUMULATIVE_LAYOUT_SHIFT`, `DOM_INTERACTIVE`, `FIRST_INPUT_DELAY`, `LARGEST_CONTENTFUL_PAINT`, `LOAD_EVENT_END`, `LOAD_EVENT_START`, `RESPONSE_END`, `RESPONSE_START`, `SPEED_INDEX`, `USER_ACTION_DURATION`, `VISUALLY_COMPLETE`
         /// </summary>
         [Output("kpm")]
         public Output<string> Kpm { get; private set; } = null!;
@@ -106,7 +106,7 @@ namespace Pulumiverse.Dynatrace
         public Input<Inputs.WebAppKeyPerformanceLoadFallbackThresholdsArgs>? FallbackThresholds { get; set; }
 
         /// <summary>
-        /// Possible Values: `CUMULATIVE_LAYOUT_SHIFT`, `DOM_INTERACTIVE`, `FIRST_INPUT_DELAY`, `LARGEST_CONTENTFUL_PAINT`, `LOAD_EVENT_END`, `LOAD_EVENT_START`, `RESPONSE_END`, `RESPONSE_START`, `SPEED_INDEX`, `USER_ACTION_DURATION`, `VISUALLY_COMPLETE`
+        /// Key performance metric. Possible values: `CUMULATIVE_LAYOUT_SHIFT`, `DOM_INTERACTIVE`, `FIRST_INPUT_DELAY`, `LARGEST_CONTENTFUL_PAINT`, `LOAD_EVENT_END`, `LOAD_EVENT_START`, `RESPONSE_END`, `RESPONSE_START`, `SPEED_INDEX`, `USER_ACTION_DURATION`, `VISUALLY_COMPLETE`
         /// </summary>
         [Input("kpm", required: true)]
         public Input<string> Kpm { get; set; } = null!;
@@ -138,7 +138,7 @@ namespace Pulumiverse.Dynatrace
         public Input<Inputs.WebAppKeyPerformanceLoadFallbackThresholdsGetArgs>? FallbackThresholds { get; set; }
 
         /// <summary>
-        /// Possible Values: `CUMULATIVE_LAYOUT_SHIFT`, `DOM_INTERACTIVE`, `FIRST_INPUT_DELAY`, `LARGEST_CONTENTFUL_PAINT`, `LOAD_EVENT_END`, `LOAD_EVENT_START`, `RESPONSE_END`, `RESPONSE_START`, `SPEED_INDEX`, `USER_ACTION_DURATION`, `VISUALLY_COMPLETE`
+        /// Key performance metric. Possible values: `CUMULATIVE_LAYOUT_SHIFT`, `DOM_INTERACTIVE`, `FIRST_INPUT_DELAY`, `LARGEST_CONTENTFUL_PAINT`, `LOAD_EVENT_END`, `LOAD_EVENT_START`, `RESPONSE_END`, `RESPONSE_START`, `SPEED_INDEX`, `USER_ACTION_DURATION`, `VISUALLY_COMPLETE`
         /// </summary>
         [Input("kpm")]
         public Input<string>? Kpm { get; set; }

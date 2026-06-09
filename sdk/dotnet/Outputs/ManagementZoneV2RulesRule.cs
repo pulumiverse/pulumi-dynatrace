@@ -15,11 +15,11 @@ namespace Pulumiverse.Dynatrace.Outputs
     public sealed class ManagementZoneV2RulesRule
     {
         /// <summary>
-        /// no documentation available
+        /// No documentation available
         /// </summary>
         public readonly Outputs.ManagementZoneV2RulesRuleAttributeRule? AttributeRule;
         /// <summary>
-        /// no documentation available
+        /// No documentation available
         /// </summary>
         public readonly Outputs.ManagementZoneV2RulesRuleDimensionRule? DimensionRule;
         /// <summary>
@@ -31,7 +31,7 @@ namespace Pulumiverse.Dynatrace.Outputs
         /// </summary>
         public readonly string? EntitySelector;
         /// <summary>
-        /// Possible Values: `DIMENSION`, `ME`, `SELECTOR`
+        /// Rule type. Possible values: `DIMENSION`, `ME`, `SELECTOR`
         /// </summary>
         public readonly string Type;
 

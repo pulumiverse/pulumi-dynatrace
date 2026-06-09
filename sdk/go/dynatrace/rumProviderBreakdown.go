@@ -38,7 +38,7 @@ type RumProviderBreakdown struct {
 	ReportPublicImprovement pulumi.BoolOutput `pulumi:"reportPublicImprovement"`
 	// Resource name
 	ResourceName pulumi.StringOutput `pulumi:"resourceName"`
-	// Possible Values: `FirstParty`, `ThirdParty`, `Cdn`
+	// Resource type. Possible values: `Cdn`, `FirstParty`, `ThirdParty`
 	ResourceType pulumi.StringOutput `pulumi:"resourceType"`
 }
 
@@ -94,7 +94,7 @@ type rumProviderBreakdownState struct {
 	ReportPublicImprovement *bool `pulumi:"reportPublicImprovement"`
 	// Resource name
 	ResourceName *string `pulumi:"resourceName"`
-	// Possible Values: `FirstParty`, `ThirdParty`, `Cdn`
+	// Resource type. Possible values: `Cdn`, `FirstParty`, `ThirdParty`
 	ResourceType *string `pulumi:"resourceType"`
 }
 
@@ -109,7 +109,7 @@ type RumProviderBreakdownState struct {
 	ReportPublicImprovement pulumi.BoolPtrInput
 	// Resource name
 	ResourceName pulumi.StringPtrInput
-	// Possible Values: `FirstParty`, `ThirdParty`, `Cdn`
+	// Resource type. Possible values: `Cdn`, `FirstParty`, `ThirdParty`
 	ResourceType pulumi.StringPtrInput
 }
 
@@ -128,7 +128,7 @@ type rumProviderBreakdownArgs struct {
 	ReportPublicImprovement bool `pulumi:"reportPublicImprovement"`
 	// Resource name
 	ResourceName string `pulumi:"resourceName"`
-	// Possible Values: `FirstParty`, `ThirdParty`, `Cdn`
+	// Resource type. Possible values: `Cdn`, `FirstParty`, `ThirdParty`
 	ResourceType string `pulumi:"resourceType"`
 }
 
@@ -144,7 +144,7 @@ type RumProviderBreakdownArgs struct {
 	ReportPublicImprovement pulumi.BoolInput
 	// Resource name
 	ResourceName pulumi.StringInput
-	// Possible Values: `FirstParty`, `ThirdParty`, `Cdn`
+	// Resource type. Possible values: `Cdn`, `FirstParty`, `ThirdParty`
 	ResourceType pulumi.StringInput
 }
 
@@ -262,7 +262,7 @@ func (o RumProviderBreakdownOutput) ResourceName() pulumi.StringOutput {
 	return o.ApplyT(func(v *RumProviderBreakdown) pulumi.StringOutput { return v.ResourceName }).(pulumi.StringOutput)
 }
 
-// Possible Values: `FirstParty`, `ThirdParty`, `Cdn`
+// Resource type. Possible values: `Cdn`, `FirstParty`, `ThirdParty`
 func (o RumProviderBreakdownOutput) ResourceType() pulumi.StringOutput {
 	return o.ApplyT(func(v *RumProviderBreakdown) pulumi.StringOutput { return v.ResourceType }).(pulumi.StringOutput)
 }

@@ -30,7 +30,7 @@ type WebAppResourceTypes struct {
 
 	// Because this resource allows for ordering you may specify the ID of the resource instance that comes before this instance regarding order. If not specified when creating the setting will be added to the end of the list. If not specified during update the order will remain untouched
 	InsertAfter pulumi.StringOutput `pulumi:"insertAfter"`
-	// Possible Values: `CSS`, `IMAGE`, `OTHER`, `SCRIPT`
+	// The primary type of the resource. Possible values: `CSS`, `IMAGE`, `OTHER`, `SCRIPT`
 	PrimaryResourceType pulumi.StringOutput `pulumi:"primaryResourceType"`
 	// The regular expression to detect the resource.
 	RegularExpression pulumi.StringOutput `pulumi:"regularExpression"`
@@ -76,7 +76,7 @@ func GetWebAppResourceTypes(ctx *pulumi.Context,
 type webAppResourceTypesState struct {
 	// Because this resource allows for ordering you may specify the ID of the resource instance that comes before this instance regarding order. If not specified when creating the setting will be added to the end of the list. If not specified during update the order will remain untouched
 	InsertAfter *string `pulumi:"insertAfter"`
-	// Possible Values: `CSS`, `IMAGE`, `OTHER`, `SCRIPT`
+	// The primary type of the resource. Possible values: `CSS`, `IMAGE`, `OTHER`, `SCRIPT`
 	PrimaryResourceType *string `pulumi:"primaryResourceType"`
 	// The regular expression to detect the resource.
 	RegularExpression *string `pulumi:"regularExpression"`
@@ -87,7 +87,7 @@ type webAppResourceTypesState struct {
 type WebAppResourceTypesState struct {
 	// Because this resource allows for ordering you may specify the ID of the resource instance that comes before this instance regarding order. If not specified when creating the setting will be added to the end of the list. If not specified during update the order will remain untouched
 	InsertAfter pulumi.StringPtrInput
-	// Possible Values: `CSS`, `IMAGE`, `OTHER`, `SCRIPT`
+	// The primary type of the resource. Possible values: `CSS`, `IMAGE`, `OTHER`, `SCRIPT`
 	PrimaryResourceType pulumi.StringPtrInput
 	// The regular expression to detect the resource.
 	RegularExpression pulumi.StringPtrInput
@@ -102,7 +102,7 @@ func (WebAppResourceTypesState) ElementType() reflect.Type {
 type webAppResourceTypesArgs struct {
 	// Because this resource allows for ordering you may specify the ID of the resource instance that comes before this instance regarding order. If not specified when creating the setting will be added to the end of the list. If not specified during update the order will remain untouched
 	InsertAfter *string `pulumi:"insertAfter"`
-	// Possible Values: `CSS`, `IMAGE`, `OTHER`, `SCRIPT`
+	// The primary type of the resource. Possible values: `CSS`, `IMAGE`, `OTHER`, `SCRIPT`
 	PrimaryResourceType string `pulumi:"primaryResourceType"`
 	// The regular expression to detect the resource.
 	RegularExpression string `pulumi:"regularExpression"`
@@ -114,7 +114,7 @@ type webAppResourceTypesArgs struct {
 type WebAppResourceTypesArgs struct {
 	// Because this resource allows for ordering you may specify the ID of the resource instance that comes before this instance regarding order. If not specified when creating the setting will be added to the end of the list. If not specified during update the order will remain untouched
 	InsertAfter pulumi.StringPtrInput
-	// Possible Values: `CSS`, `IMAGE`, `OTHER`, `SCRIPT`
+	// The primary type of the resource. Possible values: `CSS`, `IMAGE`, `OTHER`, `SCRIPT`
 	PrimaryResourceType pulumi.StringInput
 	// The regular expression to detect the resource.
 	RegularExpression pulumi.StringInput
@@ -214,7 +214,7 @@ func (o WebAppResourceTypesOutput) InsertAfter() pulumi.StringOutput {
 	return o.ApplyT(func(v *WebAppResourceTypes) pulumi.StringOutput { return v.InsertAfter }).(pulumi.StringOutput)
 }
 
-// Possible Values: `CSS`, `IMAGE`, `OTHER`, `SCRIPT`
+// The primary type of the resource. Possible values: `CSS`, `IMAGE`, `OTHER`, `SCRIPT`
 func (o WebAppResourceTypesOutput) PrimaryResourceType() pulumi.StringOutput {
 	return o.ApplyT(func(v *WebAppResourceTypes) pulumi.StringOutput { return v.PrimaryResourceType }).(pulumi.StringOutput)
 }

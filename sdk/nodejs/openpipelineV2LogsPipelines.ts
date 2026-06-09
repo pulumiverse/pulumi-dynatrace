@@ -171,15 +171,23 @@ import * as utilities from "./utilities";
  *                         dimensions: {
  *                             dimensions: [
  *                                 {
+ *                                     extractionType: "field",
+ *                                     strategy: "equals",
  *                                     sourceFieldName: "dt.cost.costcenter",
  *                                 },
  *                                 {
+ *                                     extractionType: "field",
+ *                                     strategy: "equals",
  *                                     sourceFieldName: "dt.cost.product",
  *                                 },
  *                                 {
+ *                                     extractionType: "field",
+ *                                     strategy: "equals",
  *                                     sourceFieldName: "dt.security_context",
  *                                 },
  *                                 {
+ *                                     extractionType: "field",
+ *                                     strategy: "equals",
  *                                     sourceFieldName: "record.category",
  *                                     destinationFieldName: "warning_category",
  *                                 },
@@ -200,15 +208,23 @@ import * as utilities from "./utilities";
  *                         dimensions: {
  *                             dimensions: [
  *                                 {
+ *                                     extractionType: "field",
+ *                                     strategy: "equals",
  *                                     sourceFieldName: "dt.cost.costcenter",
  *                                 },
  *                                 {
+ *                                     extractionType: "field",
+ *                                     strategy: "equals",
  *                                     sourceFieldName: "dt.cost.product",
  *                                 },
  *                                 {
+ *                                     extractionType: "field",
+ *                                     strategy: "equals",
  *                                     sourceFieldName: "dt.security_context",
  *                                 },
  *                                 {
+ *                                     extractionType: "field",
+ *                                     strategy: "equals",
  *                                     sourceFieldName: "record.category",
  *                                     destinationFieldName: "warning_category",
  *                                 },
@@ -355,7 +371,7 @@ export class OpenpipelineV2LogsPipelines extends pulumi.CustomResource {
      */
     declare public readonly displayName: pulumi.Output<string>;
     /**
-     * Group role. Possible values: `compositionPipeline`, `memberPipeline`
+     * Group role. Possible values: `basePipeline`, `compositionPipeline`, `memberPipeline`
      */
     declare public readonly groupRole: pulumi.Output<string | undefined>;
     /**
@@ -477,7 +493,7 @@ export interface OpenpipelineV2LogsPipelinesState {
      */
     displayName?: pulumi.Input<string | undefined>;
     /**
-     * Group role. Possible values: `compositionPipeline`, `memberPipeline`
+     * Group role. Possible values: `basePipeline`, `compositionPipeline`, `memberPipeline`
      */
     groupRole?: pulumi.Input<string | undefined>;
     /**
@@ -543,7 +559,7 @@ export interface OpenpipelineV2LogsPipelinesArgs {
      */
     displayName: pulumi.Input<string>;
     /**
-     * Group role. Possible values: `compositionPipeline`, `memberPipeline`
+     * Group role. Possible values: `basePipeline`, `compositionPipeline`, `memberPipeline`
      */
     groupRole?: pulumi.Input<string | undefined>;
     /**

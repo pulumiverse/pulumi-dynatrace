@@ -47,7 +47,7 @@ namespace Pulumiverse.Dynatrace
         public Output<Outputs.DataPrivacyDoNotTrack> DoNotTrack { get; private set; } = null!;
 
         /// <summary>
-        /// no documentation available
+        /// No documentation available
         /// </summary>
         [Output("masking")]
         public Output<Outputs.DataPrivacyMasking> Masking { get; private set; } = null!;
@@ -124,7 +124,7 @@ namespace Pulumiverse.Dynatrace
         public Input<Inputs.DataPrivacyDoNotTrackArgs> DoNotTrack { get; set; } = null!;
 
         /// <summary>
-        /// no documentation available
+        /// No documentation available
         /// </summary>
         [Input("masking", required: true)]
         public Input<Inputs.DataPrivacyMaskingArgs> Masking { get; set; } = null!;
@@ -162,7 +162,7 @@ namespace Pulumiverse.Dynatrace
         public Input<Inputs.DataPrivacyDoNotTrackGetArgs>? DoNotTrack { get; set; }
 
         /// <summary>
-        /// no documentation available
+        /// No documentation available
         /// </summary>
         [Input("masking")]
         public Input<Inputs.DataPrivacyMaskingGetArgs>? Masking { get; set; }

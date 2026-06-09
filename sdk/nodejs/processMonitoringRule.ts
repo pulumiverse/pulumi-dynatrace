@@ -76,7 +76,7 @@ export class ProcessMonitoringRule extends pulumi.CustomResource {
      */
     declare public readonly enabled: pulumi.Output<boolean>;
     /**
-     * The scope of this settings. If the settings should cover the whole environment, just don't specify any scope
+     * The scope of this settings. If the settings should cover the whole environment, just don't specify any scope.
      */
     declare public readonly hostGroupId: pulumi.Output<string | undefined>;
     /**
@@ -84,7 +84,7 @@ export class ProcessMonitoringRule extends pulumi.CustomResource {
      */
     declare public readonly insertAfter: pulumi.Output<string>;
     /**
-     * Possible Values: `MONITORING_ON`, `MONITORING_OFF`
+     * Mode. Possible values: `MONITORING_OFF`, `MONITORING_ON`
      */
     declare public readonly mode: pulumi.Output<string>;
 
@@ -141,7 +141,7 @@ export interface ProcessMonitoringRuleState {
      */
     enabled?: pulumi.Input<boolean | undefined>;
     /**
-     * The scope of this settings. If the settings should cover the whole environment, just don't specify any scope
+     * The scope of this settings. If the settings should cover the whole environment, just don't specify any scope.
      */
     hostGroupId?: pulumi.Input<string | undefined>;
     /**
@@ -149,7 +149,7 @@ export interface ProcessMonitoringRuleState {
      */
     insertAfter?: pulumi.Input<string | undefined>;
     /**
-     * Possible Values: `MONITORING_ON`, `MONITORING_OFF`
+     * Mode. Possible values: `MONITORING_OFF`, `MONITORING_ON`
      */
     mode?: pulumi.Input<string | undefined>;
 }
@@ -167,7 +167,7 @@ export interface ProcessMonitoringRuleArgs {
      */
     enabled: pulumi.Input<boolean>;
     /**
-     * The scope of this settings. If the settings should cover the whole environment, just don't specify any scope
+     * The scope of this settings. If the settings should cover the whole environment, just don't specify any scope.
      */
     hostGroupId?: pulumi.Input<string | undefined>;
     /**
@@ -175,7 +175,7 @@ export interface ProcessMonitoringRuleArgs {
      */
     insertAfter?: pulumi.Input<string | undefined>;
     /**
-     * Possible Values: `MONITORING_ON`, `MONITORING_OFF`
+     * Mode. Possible values: `MONITORING_OFF`, `MONITORING_ON`
      */
     mode: pulumi.Input<string>;
 }

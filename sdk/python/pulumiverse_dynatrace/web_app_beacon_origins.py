@@ -24,7 +24,7 @@ class WebAppBeaconOriginsArgs:
         """
         The set of arguments for constructing a WebAppBeaconOrigins resource.
 
-        :param pulumi.Input[_builtins.str] matcher: Possible Values: `CONTAINS`, `ENDS_WITH`, `EQUALS`, `STARTS_WITH`
+        :param pulumi.Input[_builtins.str] matcher: Matcher. Possible values: `CONTAINS`, `ENDS_WITH`, `EQUALS`, `STARTS_WITH`
         :param pulumi.Input[_builtins.str] pattern: Pattern
         """
         pulumi.set(__self__, "matcher", matcher)
@@ -34,7 +34,7 @@ class WebAppBeaconOriginsArgs:
     @pulumi.getter
     def matcher(self) -> pulumi.Input[_builtins.str]:
         """
-        Possible Values: `CONTAINS`, `ENDS_WITH`, `EQUALS`, `STARTS_WITH`
+        Matcher. Possible values: `CONTAINS`, `ENDS_WITH`, `EQUALS`, `STARTS_WITH`
         """
         return pulumi.get(self, "matcher")
 
@@ -63,7 +63,7 @@ class _WebAppBeaconOriginsState:
         """
         Input properties used for looking up and filtering WebAppBeaconOrigins resources.
 
-        :param pulumi.Input[_builtins.str] matcher: Possible Values: `CONTAINS`, `ENDS_WITH`, `EQUALS`, `STARTS_WITH`
+        :param pulumi.Input[_builtins.str] matcher: Matcher. Possible values: `CONTAINS`, `ENDS_WITH`, `EQUALS`, `STARTS_WITH`
         :param pulumi.Input[_builtins.str] pattern: Pattern
         """
         if matcher is not None:
@@ -75,7 +75,7 @@ class _WebAppBeaconOriginsState:
     @pulumi.getter
     def matcher(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
-        Possible Values: `CONTAINS`, `ENDS_WITH`, `EQUALS`, `STARTS_WITH`
+        Matcher. Possible values: `CONTAINS`, `ENDS_WITH`, `EQUALS`, `STARTS_WITH`
         """
         return pulumi.get(self, "matcher")
 
@@ -123,7 +123,7 @@ class WebAppBeaconOrigins(pulumi.CustomResource):
 
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
-        :param pulumi.Input[_builtins.str] matcher: Possible Values: `CONTAINS`, `ENDS_WITH`, `EQUALS`, `STARTS_WITH`
+        :param pulumi.Input[_builtins.str] matcher: Matcher. Possible values: `CONTAINS`, `ENDS_WITH`, `EQUALS`, `STARTS_WITH`
         :param pulumi.Input[_builtins.str] pattern: Pattern
         """
         ...
@@ -199,7 +199,7 @@ class WebAppBeaconOrigins(pulumi.CustomResource):
         :param str resource_name: The unique name of the resulting resource.
         :param pulumi.Input[str] id: The unique provider ID of the resource to lookup.
         :param pulumi.ResourceOptions opts: Options for the resource.
-        :param pulumi.Input[_builtins.str] matcher: Possible Values: `CONTAINS`, `ENDS_WITH`, `EQUALS`, `STARTS_WITH`
+        :param pulumi.Input[_builtins.str] matcher: Matcher. Possible values: `CONTAINS`, `ENDS_WITH`, `EQUALS`, `STARTS_WITH`
         :param pulumi.Input[_builtins.str] pattern: Pattern
         """
         opts = pulumi.ResourceOptions.merge(opts, pulumi.ResourceOptions(id=id))
@@ -214,7 +214,7 @@ class WebAppBeaconOrigins(pulumi.CustomResource):
     @pulumi.getter
     def matcher(self) -> pulumi.Output[_builtins.str]:
         """
-        Possible Values: `CONTAINS`, `ENDS_WITH`, `EQUALS`, `STARTS_WITH`
+        Matcher. Possible values: `CONTAINS`, `ENDS_WITH`, `EQUALS`, `STARTS_WITH`
         """
         return pulumi.get(self, "matcher")
 

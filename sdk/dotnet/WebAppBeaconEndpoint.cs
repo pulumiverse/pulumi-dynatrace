@@ -29,13 +29,13 @@ namespace Pulumiverse.Dynatrace
     public partial class WebAppBeaconEndpoint : global::Pulumi.CustomResource
     {
         /// <summary>
-        /// The scope of this setting
+        /// The scope of this settings. If the settings should cover the whole environment, just don't specify any scope.
         /// </summary>
         [Output("applicationId")]
         public Output<string> ApplicationId { get; private set; } = null!;
 
         /// <summary>
-        /// Possible Values: `ACTIVEGATE`, `DEFAULT_CONFIG`, `ONEAGENT`
+        /// Type. Possible values: `ACTIVEGATE`, `DEFAULT_CONFIG`, `ONEAGENT`
         /// </summary>
         [Output("type")]
         public Output<string> Type { get; private set; } = null!;
@@ -100,13 +100,13 @@ namespace Pulumiverse.Dynatrace
     public sealed class WebAppBeaconEndpointArgs : global::Pulumi.ResourceArgs
     {
         /// <summary>
-        /// The scope of this setting
+        /// The scope of this settings. If the settings should cover the whole environment, just don't specify any scope.
         /// </summary>
         [Input("applicationId", required: true)]
         public Input<string> ApplicationId { get; set; } = null!;
 
         /// <summary>
-        /// Possible Values: `ACTIVEGATE`, `DEFAULT_CONFIG`, `ONEAGENT`
+        /// Type. Possible values: `ACTIVEGATE`, `DEFAULT_CONFIG`, `ONEAGENT`
         /// </summary>
         [Input("type", required: true)]
         public Input<string> Type { get; set; } = null!;
@@ -132,13 +132,13 @@ namespace Pulumiverse.Dynatrace
     public sealed class WebAppBeaconEndpointState : global::Pulumi.ResourceArgs
     {
         /// <summary>
-        /// The scope of this setting
+        /// The scope of this settings. If the settings should cover the whole environment, just don't specify any scope.
         /// </summary>
         [Input("applicationId")]
         public Input<string>? ApplicationId { get; set; }
 
         /// <summary>
-        /// Possible Values: `ACTIVEGATE`, `DEFAULT_CONFIG`, `ONEAGENT`
+        /// Type. Possible values: `ACTIVEGATE`, `DEFAULT_CONFIG`, `ONEAGENT`
         /// </summary>
         [Input("type")]
         public Input<string>? Type { get; set; }

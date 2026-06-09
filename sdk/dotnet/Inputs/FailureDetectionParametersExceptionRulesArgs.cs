@@ -26,25 +26,25 @@ namespace Pulumiverse.Dynatrace.Inputs
         public Input<Inputs.FailureDetectionParametersExceptionRulesCustomHandledExceptionsArgs>? CustomHandledExceptions { get; set; }
 
         /// <summary>
-        /// Ignore all exceptions
+        /// If `True`, all exceptions are ignored for failure detection. Success forcing exceptions, ignored exceptions, and custom handled exceptions have no effect. Exceptions are still tracked and appear in distributed traces, but requests are not labeled as failed. Default: `False`.
         /// </summary>
         [Input("ignoreAllExceptions", required: true)]
         public Input<bool> IgnoreAllExceptions { get; set; } = null!;
 
         /// <summary>
-        /// Ignore span failure detection
+        /// If `True`, span failure detection is ignored. This is specific to OpenTelemetry. Default: `False`.
         /// </summary>
         [Input("ignoreSpanFailureDetection", required: true)]
         public Input<bool> IgnoreSpanFailureDetection { get; set; } = null!;
 
         /// <summary>
-        /// Some exceptions that are thrown by legacy or 3rd-party code indicate a specific response, not an error. Use this setting to instruct Dynatrace to treat such exceptions as non-failed requests.. If an exception matching any of the defined patterns occurs in a request, it will not be considered as a failure. Other exceptions occurring at the same request might still mark the request as failed.
+        /// Some exceptions that are thrown by legacy or 3rd-party code indicate a specific response, not an error. Use this setting to instruct Dynatrace to treat such exceptions as non-failed requests. If an exception matching any of the defined patterns occurs on the __entry node__ of the service, it will not be considered as a failure. Other exceptions occurring at the same request might still mark the request as failed.
         /// </summary>
         [Input("ignoredExceptions")]
         public Input<Inputs.FailureDetectionParametersExceptionRulesIgnoredExceptionsArgs>? IgnoredExceptions { get; set; }
 
         /// <summary>
-        /// Define exceptions which indicate that a service call should not be considered as failed. E.g. an exception indicating that the client aborted the operation.. If an exception matching any of the defined patterns occurs on the entry node of the service, it will be considered successful. Compared to ignored exceptions, the request will be considered successful even if other exceptions occur in the same request.
+        /// Define exceptions which indicate that an entire service call should not be considered as failed. E.g. an exception indicating that the client aborted the operation. If an exception matching any of the defined patterns occurs on the __entry node__ of the service, it will be considered successful. Compared to ignored exceptions, the request will be considered successful even if other exceptions occur in the same request.
         /// </summary>
         [Input("successForcingExceptions")]
         public Input<Inputs.FailureDetectionParametersExceptionRulesSuccessForcingExceptionsArgs>? SuccessForcingExceptions { get; set; }

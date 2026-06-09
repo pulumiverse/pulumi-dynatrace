@@ -17,20 +17,27 @@ namespace Pulumiverse.Dynatrace.Outputs
         /// <summary>
         /// Field name
         /// </summary>
-        public readonly string FieldName;
+        public readonly string? FieldName;
         /// <summary>
         /// Referenced field name
         /// </summary>
         public readonly string ReferencedFieldName;
+        /// <summary>
+        /// Strategy for field extraction. Possible values: `Equals`, `startsWith`
+        /// </summary>
+        public readonly string? Strategy;
 
         [OutputConstructor]
         private OpenpipelineV2UserEventsPipelinesProcessingProcessorsProcessorSmartscapeNodeFieldsToExtractSmartscapeFieldExtractionEntry(
-            string fieldName,
+            string? fieldName,
 
-            string referencedFieldName)
+            string referencedFieldName,
+
+            string? strategy)
         {
             FieldName = fieldName;
             ReferencedFieldName = referencedFieldName;
+            Strategy = strategy;
         }
     }
 }

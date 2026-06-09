@@ -23,7 +23,7 @@ namespace Pulumiverse.Dynatrace.Outputs
         /// </summary>
         public readonly string Operator;
         /// <summary>
-        /// no documentation available
+        /// No documentation available
         /// </summary>
         public readonly ImmutableArray<string> Values;
 

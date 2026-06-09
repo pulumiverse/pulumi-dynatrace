@@ -63,13 +63,13 @@ type WebAppCustomInjection struct {
 	ApplicationId pulumi.StringOutput `pulumi:"applicationId"`
 	// This setting is enabled (`true`) or disabled (`false`)
 	Enabled pulumi.BoolOutput `pulumi:"enabled"`
-	// no documentation available
+	// No documentation available
 	HtmlPattern pulumi.StringPtrOutput `pulumi:"htmlPattern"`
 	// Because this resource allows for ordering you may specify the ID of the resource instance that comes before this instance regarding order. If not specified when creating the setting will be added to the end of the list. If not specified during update the order will remain untouched
 	InsertAfter pulumi.StringOutput `pulumi:"insertAfter"`
-	// Possible Values: `AllPages`, `Contains`, `Ends`, `Equals`, `Starts`
+	// **Example**:
 	Operator pulumi.StringOutput `pulumi:"operator"`
-	// Possible Values: `AfterSpecificHtml`, `Automatic`, `BeforeSpecificHtml`, `DoNotInject`
+	// Rule. Possible values: `AfterSpecificHtml`, `Automatic`, `BeforeSpecificHtml`, `DoNotInject`
 	Rule pulumi.StringOutput `pulumi:"rule"`
 	// URL pattern
 	UrlPattern pulumi.StringPtrOutput `pulumi:"urlPattern"`
@@ -121,13 +121,13 @@ type webAppCustomInjectionState struct {
 	ApplicationId *string `pulumi:"applicationId"`
 	// This setting is enabled (`true`) or disabled (`false`)
 	Enabled *bool `pulumi:"enabled"`
-	// no documentation available
+	// No documentation available
 	HtmlPattern *string `pulumi:"htmlPattern"`
 	// Because this resource allows for ordering you may specify the ID of the resource instance that comes before this instance regarding order. If not specified when creating the setting will be added to the end of the list. If not specified during update the order will remain untouched
 	InsertAfter *string `pulumi:"insertAfter"`
-	// Possible Values: `AllPages`, `Contains`, `Ends`, `Equals`, `Starts`
+	// **Example**:
 	Operator *string `pulumi:"operator"`
-	// Possible Values: `AfterSpecificHtml`, `Automatic`, `BeforeSpecificHtml`, `DoNotInject`
+	// Rule. Possible values: `AfterSpecificHtml`, `Automatic`, `BeforeSpecificHtml`, `DoNotInject`
 	Rule *string `pulumi:"rule"`
 	// URL pattern
 	UrlPattern *string `pulumi:"urlPattern"`
@@ -138,13 +138,13 @@ type WebAppCustomInjectionState struct {
 	ApplicationId pulumi.StringPtrInput
 	// This setting is enabled (`true`) or disabled (`false`)
 	Enabled pulumi.BoolPtrInput
-	// no documentation available
+	// No documentation available
 	HtmlPattern pulumi.StringPtrInput
 	// Because this resource allows for ordering you may specify the ID of the resource instance that comes before this instance regarding order. If not specified when creating the setting will be added to the end of the list. If not specified during update the order will remain untouched
 	InsertAfter pulumi.StringPtrInput
-	// Possible Values: `AllPages`, `Contains`, `Ends`, `Equals`, `Starts`
+	// **Example**:
 	Operator pulumi.StringPtrInput
-	// Possible Values: `AfterSpecificHtml`, `Automatic`, `BeforeSpecificHtml`, `DoNotInject`
+	// Rule. Possible values: `AfterSpecificHtml`, `Automatic`, `BeforeSpecificHtml`, `DoNotInject`
 	Rule pulumi.StringPtrInput
 	// URL pattern
 	UrlPattern pulumi.StringPtrInput
@@ -159,13 +159,13 @@ type webAppCustomInjectionArgs struct {
 	ApplicationId string `pulumi:"applicationId"`
 	// This setting is enabled (`true`) or disabled (`false`)
 	Enabled bool `pulumi:"enabled"`
-	// no documentation available
+	// No documentation available
 	HtmlPattern *string `pulumi:"htmlPattern"`
 	// Because this resource allows for ordering you may specify the ID of the resource instance that comes before this instance regarding order. If not specified when creating the setting will be added to the end of the list. If not specified during update the order will remain untouched
 	InsertAfter *string `pulumi:"insertAfter"`
-	// Possible Values: `AllPages`, `Contains`, `Ends`, `Equals`, `Starts`
+	// **Example**:
 	Operator string `pulumi:"operator"`
-	// Possible Values: `AfterSpecificHtml`, `Automatic`, `BeforeSpecificHtml`, `DoNotInject`
+	// Rule. Possible values: `AfterSpecificHtml`, `Automatic`, `BeforeSpecificHtml`, `DoNotInject`
 	Rule string `pulumi:"rule"`
 	// URL pattern
 	UrlPattern *string `pulumi:"urlPattern"`
@@ -177,13 +177,13 @@ type WebAppCustomInjectionArgs struct {
 	ApplicationId pulumi.StringInput
 	// This setting is enabled (`true`) or disabled (`false`)
 	Enabled pulumi.BoolInput
-	// no documentation available
+	// No documentation available
 	HtmlPattern pulumi.StringPtrInput
 	// Because this resource allows for ordering you may specify the ID of the resource instance that comes before this instance regarding order. If not specified when creating the setting will be added to the end of the list. If not specified during update the order will remain untouched
 	InsertAfter pulumi.StringPtrInput
-	// Possible Values: `AllPages`, `Contains`, `Ends`, `Equals`, `Starts`
+	// **Example**:
 	Operator pulumi.StringInput
-	// Possible Values: `AfterSpecificHtml`, `Automatic`, `BeforeSpecificHtml`, `DoNotInject`
+	// Rule. Possible values: `AfterSpecificHtml`, `Automatic`, `BeforeSpecificHtml`, `DoNotInject`
 	Rule pulumi.StringInput
 	// URL pattern
 	UrlPattern pulumi.StringPtrInput
@@ -286,7 +286,7 @@ func (o WebAppCustomInjectionOutput) Enabled() pulumi.BoolOutput {
 	return o.ApplyT(func(v *WebAppCustomInjection) pulumi.BoolOutput { return v.Enabled }).(pulumi.BoolOutput)
 }
 
-// no documentation available
+// No documentation available
 func (o WebAppCustomInjectionOutput) HtmlPattern() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v *WebAppCustomInjection) pulumi.StringPtrOutput { return v.HtmlPattern }).(pulumi.StringPtrOutput)
 }
@@ -296,12 +296,12 @@ func (o WebAppCustomInjectionOutput) InsertAfter() pulumi.StringOutput {
 	return o.ApplyT(func(v *WebAppCustomInjection) pulumi.StringOutput { return v.InsertAfter }).(pulumi.StringOutput)
 }
 
-// Possible Values: `AllPages`, `Contains`, `Ends`, `Equals`, `Starts`
+// **Example**:
 func (o WebAppCustomInjectionOutput) Operator() pulumi.StringOutput {
 	return o.ApplyT(func(v *WebAppCustomInjection) pulumi.StringOutput { return v.Operator }).(pulumi.StringOutput)
 }
 
-// Possible Values: `AfterSpecificHtml`, `Automatic`, `BeforeSpecificHtml`, `DoNotInject`
+// Rule. Possible values: `AfterSpecificHtml`, `Automatic`, `BeforeSpecificHtml`, `DoNotInject`
 func (o WebAppCustomInjectionOutput) Rule() pulumi.StringOutput {
 	return o.ApplyT(func(v *WebAppCustomInjection) pulumi.StringOutput { return v.Rule }).(pulumi.StringOutput)
 }

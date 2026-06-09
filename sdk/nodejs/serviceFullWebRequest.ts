@@ -54,7 +54,7 @@ export class ServiceFullWebRequest extends pulumi.CustomResource {
      */
     declare public readonly conditions: pulumi.Output<outputs.ServiceFullWebRequestConditions | undefined>;
     /**
-     * Description
+     * A short description of the rule.
      */
     declare public readonly description: pulumi.Output<string | undefined>;
     /**
@@ -74,7 +74,7 @@ export class ServiceFullWebRequest extends pulumi.CustomResource {
      */
     declare public readonly managementZones: pulumi.Output<string[] | undefined>;
     /**
-     * Rule name
+     * The name of the rule. It is used for identification and has no effect on the rule logic.
      */
     declare public readonly name: pulumi.Output<string>;
 
@@ -128,7 +128,7 @@ export interface ServiceFullWebRequestState {
      */
     conditions?: pulumi.Input<inputs.ServiceFullWebRequestConditions | undefined>;
     /**
-     * Description
+     * A short description of the rule.
      */
     description?: pulumi.Input<string | undefined>;
     /**
@@ -148,7 +148,7 @@ export interface ServiceFullWebRequestState {
      */
     managementZones?: pulumi.Input<pulumi.Input<string>[] | undefined>;
     /**
-     * Rule name
+     * The name of the rule. It is used for identification and has no effect on the rule logic.
      */
     name?: pulumi.Input<string | undefined>;
 }
@@ -162,7 +162,7 @@ export interface ServiceFullWebRequestArgs {
      */
     conditions?: pulumi.Input<inputs.ServiceFullWebRequestConditions | undefined>;
     /**
-     * Description
+     * A short description of the rule.
      */
     description?: pulumi.Input<string | undefined>;
     /**
@@ -182,7 +182,7 @@ export interface ServiceFullWebRequestArgs {
      */
     managementZones?: pulumi.Input<pulumi.Input<string>[] | undefined>;
     /**
-     * Rule name
+     * The name of the rule. It is used for identification and has no effect on the rule logic.
      */
     name?: pulumi.Input<string | undefined>;
 }

@@ -19,7 +19,7 @@ namespace Pulumiverse.Dynatrace.Outputs
         /// </summary>
         public readonly Outputs.WebAppCustomErrorsErrorRulesErrorRuleCaptureSettings CaptureSettings;
         /// <summary>
-        /// Possible Values: `ALL`, `BEGINS_WITH`, `CONTAINS`, `ENDS_WITH`, `EQUALS`
+        /// Match key. Possible values: `ALL`, `BEGINS_WITH`, `CONTAINS`, `ENDS_WITH`, `EQUALS`
         /// </summary>
         public readonly string KeyMatcher;
         /// <summary>
@@ -27,7 +27,7 @@ namespace Pulumiverse.Dynatrace.Outputs
         /// </summary>
         public readonly string? KeyPattern;
         /// <summary>
-        /// Possible Values: `ALL`, `BEGINS_WITH`, `CONTAINS`, `ENDS_WITH`, `EQUALS`
+        /// Match value. Possible values: `ALL`, `BEGINS_WITH`, `CONTAINS`, `ENDS_WITH`, `EQUALS`
         /// </summary>
         public readonly string ValueMatcher;
         /// <summary>

@@ -7,7 +7,7 @@ import * as outputs from "./types/output";
 import * as utilities from "./utilities";
 
 /**
- * !> This resource is utilizing an older API endpoint, please use dynatrace.PgAlerting instead.
+ * > This resource is utilizing an older API endpoint, please use dynatrace.PgAlerting instead.
  *
  * > This resource requires the API token scopes **Read configuration** (`ReadConfig`) and **Write configuration** (`WriteConfig`)
  *
@@ -29,10 +29,11 @@ import * as utilities from "./utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as dynatrace from "@pulumiverse/dynatrace";
  *
- * const config = new pulumi.Config();
- * const PROCESS_GROUP_ID = config.require("PROCESS_GROUP_ID");
+ * const processGroup = dynatrace.getEntity({
+ *     entitySelector: "type(\"PROCESS_GROUP\")",
+ * });
  * const anomaly = new dynatrace.PgAnomalies("anomaly", {
- *     pgId: PROCESS_GROUP_ID,
+ *     pgId: processGroup.then(processGroup => processGroup.id),
  *     availability: {
  *         method: "OFF",
  *         minimumThreshold: 0,

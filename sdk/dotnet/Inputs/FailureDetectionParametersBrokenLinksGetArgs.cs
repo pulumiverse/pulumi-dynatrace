@@ -26,7 +26,7 @@ namespace Pulumiverse.Dynatrace.Inputs
         }
 
         /// <summary>
-        /// Consider 404 HTTP response codes as failures
+        /// If `True`, HTTP 404 response codes are treated as server-side service failures. Only applicable when 404 is not already in the list of failing server-side HTTP response codes. Default: `False`.
         /// </summary>
         [Input("http404NotFoundFailures", required: true)]
         public Input<bool> Http404NotFoundFailures { get; set; } = null!;

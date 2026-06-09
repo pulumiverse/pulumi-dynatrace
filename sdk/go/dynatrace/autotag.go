@@ -11,7 +11,7 @@ import (
 	"github.com/pulumiverse/pulumi-dynatrace/sdk/go/dynatrace/internal"
 )
 
-// !> This resource API endpoint has been deprecated, please use AutotagV2 instead.
+// > This resource API endpoint has been deprecated, please use AutotagV2 instead.
 //
 // > This resource requires the API token scopes **Read configuration** (`ReadConfig`) and **Write configuration** (`WriteConfig`)
 //

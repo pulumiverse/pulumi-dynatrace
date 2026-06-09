@@ -15,7 +15,7 @@ namespace Pulumiverse.Dynatrace.Outputs
     public sealed class ServiceFullWebServiceIdContributorsContextRootServiceIdContributor
     {
         /// <summary>
-        /// Possible Values: `OriginalValue`, `OverrideValue`, `TransformURL`, `TransformValue`
+        /// Defines whether the original value should be used or if a transformation set should be used to override a value or transform it. Possible values: `OriginalValue`, `OverrideValue`, `TransformURL`, `TransformValue`
         /// </summary>
         public readonly string ContributionType;
         /// <summary>

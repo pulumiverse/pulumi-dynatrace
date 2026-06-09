@@ -14,25 +14,25 @@ namespace Pulumiverse.Dynatrace.Inputs
     public sealed class FailureDetectionParametersHttpResponseCodesArgs : global::Pulumi.ResourceArgs
     {
         /// <summary>
-        /// HTTP response codes which indicate client side errors
+        /// A list of HTTP response code ranges and individual values that are treated as client-side errors. The format is a comma-separated list of ranges and values (e.g., `400-499, 503, 510-599`). Default: `400-599`.
         /// </summary>
         [Input("clientSideErrors", required: true)]
         public Input<string> ClientSideErrors { get; set; } = null!;
 
         /// <summary>
-        /// Treat missing HTTP response code as client side error
+        /// If `True`, a missing HTTP response code on the client side is treated as a failure. Missing response codes can indicate a fire-and-forget call, a timeout, or an error. Default: `False`.
         /// </summary>
         [Input("failOnMissingResponseCodeClientSide", required: true)]
         public Input<bool> FailOnMissingResponseCodeClientSide { get; set; } = null!;
 
         /// <summary>
-        /// Treat missing HTTP response code as server side errors
+        /// If `True`, a missing HTTP response code on the server side is treated as a failure. Missing response codes can indicate a fire-and-forget call, a timeout, or an error. Default: `False`.
         /// </summary>
         [Input("failOnMissingResponseCodeServerSide", required: true)]
         public Input<bool> FailOnMissingResponseCodeServerSide { get; set; } = null!;
 
         /// <summary>
-        /// HTTP response codes which indicate an error on the server side
+        /// A list of HTTP response code ranges and individual values that are treated as server-side errors. The format is a comma-separated list of ranges and values (e.g., `500-599, 402, 405-499`). Default: `500-599`.
         /// </summary>
         [Input("serverSideErrors", required: true)]
         public Input<string> ServerSideErrors { get; set; } = null!;

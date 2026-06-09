@@ -50,11 +50,11 @@ export class FailureDetectionRules extends pulumi.CustomResource {
     }
 
     /**
-     * Conditions
+     * A list of conditions for this rule. All conditions must be fulfilled for the rule to match a service.
      */
     declare public readonly conditions: pulumi.Output<outputs.FailureDetectionRulesConditions>;
     /**
-     * Rule description
+     * A short description of this failure detection rule.
      */
     declare public readonly description: pulumi.Output<string | undefined>;
     /**
@@ -66,11 +66,11 @@ export class FailureDetectionRules extends pulumi.CustomResource {
      */
     declare public readonly insertAfter: pulumi.Output<string>;
     /**
-     * Rule name
+     * The display name of this failure detection rule.
      */
     declare public readonly name: pulumi.Output<string>;
     /**
-     * Failure detection parameters
+     * The ID of the failure detection parameter set to apply when this rule matches. The parameter set must already exist.
      */
     declare public readonly parameterId: pulumi.Output<string>;
 
@@ -121,11 +121,11 @@ export class FailureDetectionRules extends pulumi.CustomResource {
  */
 export interface FailureDetectionRulesState {
     /**
-     * Conditions
+     * A list of conditions for this rule. All conditions must be fulfilled for the rule to match a service.
      */
     conditions?: pulumi.Input<inputs.FailureDetectionRulesConditions | undefined>;
     /**
-     * Rule description
+     * A short description of this failure detection rule.
      */
     description?: pulumi.Input<string | undefined>;
     /**
@@ -137,11 +137,11 @@ export interface FailureDetectionRulesState {
      */
     insertAfter?: pulumi.Input<string | undefined>;
     /**
-     * Rule name
+     * The display name of this failure detection rule.
      */
     name?: pulumi.Input<string | undefined>;
     /**
-     * Failure detection parameters
+     * The ID of the failure detection parameter set to apply when this rule matches. The parameter set must already exist.
      */
     parameterId?: pulumi.Input<string | undefined>;
 }
@@ -151,11 +151,11 @@ export interface FailureDetectionRulesState {
  */
 export interface FailureDetectionRulesArgs {
     /**
-     * Conditions
+     * A list of conditions for this rule. All conditions must be fulfilled for the rule to match a service.
      */
     conditions: pulumi.Input<inputs.FailureDetectionRulesConditions>;
     /**
-     * Rule description
+     * A short description of this failure detection rule.
      */
     description?: pulumi.Input<string | undefined>;
     /**
@@ -167,11 +167,11 @@ export interface FailureDetectionRulesArgs {
      */
     insertAfter?: pulumi.Input<string | undefined>;
     /**
-     * Rule name
+     * The display name of this failure detection rule.
      */
     name?: pulumi.Input<string | undefined>;
     /**
-     * Failure detection parameters
+     * The ID of the failure detection parameter set to apply when this rule matches. The parameter set must already exist.
      */
     parameterId: pulumi.Input<string>;
 }

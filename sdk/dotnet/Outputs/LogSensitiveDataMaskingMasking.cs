@@ -19,7 +19,7 @@ namespace Pulumiverse.Dynatrace.Outputs
         /// </summary>
         public readonly string Expression;
         /// <summary>
-        /// no documentation available
+        /// No documentation available
         /// </summary>
         public readonly string? Replacement;
         /// <summary>

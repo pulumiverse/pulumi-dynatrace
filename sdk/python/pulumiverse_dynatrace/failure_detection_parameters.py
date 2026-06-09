@@ -30,10 +30,10 @@ class FailureDetectionParametersArgs:
         The set of arguments for constructing a FailureDetectionParameters resource.
 
         :param pulumi.Input['FailureDetectionParametersBrokenLinksArgs'] broken_links: HTTP 404 response codes are thrown when a web server can't find a certain page. 404s are classified as broken links on the client side and therefore aren't considered to be service failures. By enabling this setting, you can have 404s treated as server-side service failures.
-        :param pulumi.Input['FailureDetectionParametersExceptionRulesArgs'] exception_rules: Customize failure detection for specific exceptions and errors
-        :param pulumi.Input['FailureDetectionParametersHttpResponseCodesArgs'] http_response_codes: HTTP response codes
-        :param pulumi.Input[_builtins.str] description: Description
-        :param pulumi.Input[_builtins.str] name: Name
+        :param pulumi.Input['FailureDetectionParametersExceptionRulesArgs'] exception_rules: Exception and custom error rules that determine how specific exceptions, handled errors, and request-attribute-based conditions affect failure detection.
+        :param pulumi.Input['FailureDetectionParametersHttpResponseCodesArgs'] http_response_codes: HTTP response code settings that control which response codes are treated as server-side or client-side errors.
+        :param pulumi.Input[_builtins.str] description: A short description of this failure detection parameter set.
+        :param pulumi.Input[_builtins.str] name: The display name of this failure detection parameter set.
         """
         pulumi.set(__self__, "broken_links", broken_links)
         pulumi.set(__self__, "exception_rules", exception_rules)
@@ -59,7 +59,7 @@ class FailureDetectionParametersArgs:
     @pulumi.getter(name="exceptionRules")
     def exception_rules(self) -> pulumi.Input['FailureDetectionParametersExceptionRulesArgs']:
         """
-        Customize failure detection for specific exceptions and errors
+        Exception and custom error rules that determine how specific exceptions, handled errors, and request-attribute-based conditions affect failure detection.
         """
         return pulumi.get(self, "exception_rules")
 
@@ -71,7 +71,7 @@ class FailureDetectionParametersArgs:
     @pulumi.getter(name="httpResponseCodes")
     def http_response_codes(self) -> pulumi.Input['FailureDetectionParametersHttpResponseCodesArgs']:
         """
-        HTTP response codes
+        HTTP response code settings that control which response codes are treated as server-side or client-side errors.
         """
         return pulumi.get(self, "http_response_codes")
 
@@ -83,7 +83,7 @@ class FailureDetectionParametersArgs:
     @pulumi.getter
     def description(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
-        Description
+        A short description of this failure detection parameter set.
         """
         return pulumi.get(self, "description")
 
@@ -95,7 +95,7 @@ class FailureDetectionParametersArgs:
     @pulumi.getter
     def name(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
-        Name
+        The display name of this failure detection parameter set.
         """
         return pulumi.get(self, "name")
 
@@ -116,10 +116,10 @@ class _FailureDetectionParametersState:
         Input properties used for looking up and filtering FailureDetectionParameters resources.
 
         :param pulumi.Input['FailureDetectionParametersBrokenLinksArgs'] broken_links: HTTP 404 response codes are thrown when a web server can't find a certain page. 404s are classified as broken links on the client side and therefore aren't considered to be service failures. By enabling this setting, you can have 404s treated as server-side service failures.
-        :param pulumi.Input[_builtins.str] description: Description
-        :param pulumi.Input['FailureDetectionParametersExceptionRulesArgs'] exception_rules: Customize failure detection for specific exceptions and errors
-        :param pulumi.Input['FailureDetectionParametersHttpResponseCodesArgs'] http_response_codes: HTTP response codes
-        :param pulumi.Input[_builtins.str] name: Name
+        :param pulumi.Input[_builtins.str] description: A short description of this failure detection parameter set.
+        :param pulumi.Input['FailureDetectionParametersExceptionRulesArgs'] exception_rules: Exception and custom error rules that determine how specific exceptions, handled errors, and request-attribute-based conditions affect failure detection.
+        :param pulumi.Input['FailureDetectionParametersHttpResponseCodesArgs'] http_response_codes: HTTP response code settings that control which response codes are treated as server-side or client-side errors.
+        :param pulumi.Input[_builtins.str] name: The display name of this failure detection parameter set.
         """
         if broken_links is not None:
             pulumi.set(__self__, "broken_links", broken_links)
@@ -148,7 +148,7 @@ class _FailureDetectionParametersState:
     @pulumi.getter
     def description(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
-        Description
+        A short description of this failure detection parameter set.
         """
         return pulumi.get(self, "description")
 
@@ -160,7 +160,7 @@ class _FailureDetectionParametersState:
     @pulumi.getter(name="exceptionRules")
     def exception_rules(self) -> pulumi.Input[Optional['FailureDetectionParametersExceptionRulesArgs']]:
         """
-        Customize failure detection for specific exceptions and errors
+        Exception and custom error rules that determine how specific exceptions, handled errors, and request-attribute-based conditions affect failure detection.
         """
         return pulumi.get(self, "exception_rules")
 
@@ -172,7 +172,7 @@ class _FailureDetectionParametersState:
     @pulumi.getter(name="httpResponseCodes")
     def http_response_codes(self) -> pulumi.Input[Optional['FailureDetectionParametersHttpResponseCodesArgs']]:
         """
-        HTTP response codes
+        HTTP response code settings that control which response codes are treated as server-side or client-side errors.
         """
         return pulumi.get(self, "http_response_codes")
 
@@ -184,7 +184,7 @@ class _FailureDetectionParametersState:
     @pulumi.getter
     def name(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
-        Name
+        The display name of this failure detection parameter set.
         """
         return pulumi.get(self, "name")
 
@@ -224,10 +224,10 @@ class FailureDetectionParameters(pulumi.CustomResource):
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[Union['FailureDetectionParametersBrokenLinksArgs', 'FailureDetectionParametersBrokenLinksArgsDict']] broken_links: HTTP 404 response codes are thrown when a web server can't find a certain page. 404s are classified as broken links on the client side and therefore aren't considered to be service failures. By enabling this setting, you can have 404s treated as server-side service failures.
-        :param pulumi.Input[_builtins.str] description: Description
-        :param pulumi.Input[Union['FailureDetectionParametersExceptionRulesArgs', 'FailureDetectionParametersExceptionRulesArgsDict']] exception_rules: Customize failure detection for specific exceptions and errors
-        :param pulumi.Input[Union['FailureDetectionParametersHttpResponseCodesArgs', 'FailureDetectionParametersHttpResponseCodesArgsDict']] http_response_codes: HTTP response codes
-        :param pulumi.Input[_builtins.str] name: Name
+        :param pulumi.Input[_builtins.str] description: A short description of this failure detection parameter set.
+        :param pulumi.Input[Union['FailureDetectionParametersExceptionRulesArgs', 'FailureDetectionParametersExceptionRulesArgsDict']] exception_rules: Exception and custom error rules that determine how specific exceptions, handled errors, and request-attribute-based conditions affect failure detection.
+        :param pulumi.Input[Union['FailureDetectionParametersHttpResponseCodesArgs', 'FailureDetectionParametersHttpResponseCodesArgsDict']] http_response_codes: HTTP response code settings that control which response codes are treated as server-side or client-side errors.
+        :param pulumi.Input[_builtins.str] name: The display name of this failure detection parameter set.
         """
         ...
     @overload
@@ -314,10 +314,10 @@ class FailureDetectionParameters(pulumi.CustomResource):
         :param pulumi.Input[str] id: The unique provider ID of the resource to lookup.
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[Union['FailureDetectionParametersBrokenLinksArgs', 'FailureDetectionParametersBrokenLinksArgsDict']] broken_links: HTTP 404 response codes are thrown when a web server can't find a certain page. 404s are classified as broken links on the client side and therefore aren't considered to be service failures. By enabling this setting, you can have 404s treated as server-side service failures.
-        :param pulumi.Input[_builtins.str] description: Description
-        :param pulumi.Input[Union['FailureDetectionParametersExceptionRulesArgs', 'FailureDetectionParametersExceptionRulesArgsDict']] exception_rules: Customize failure detection for specific exceptions and errors
-        :param pulumi.Input[Union['FailureDetectionParametersHttpResponseCodesArgs', 'FailureDetectionParametersHttpResponseCodesArgsDict']] http_response_codes: HTTP response codes
-        :param pulumi.Input[_builtins.str] name: Name
+        :param pulumi.Input[_builtins.str] description: A short description of this failure detection parameter set.
+        :param pulumi.Input[Union['FailureDetectionParametersExceptionRulesArgs', 'FailureDetectionParametersExceptionRulesArgsDict']] exception_rules: Exception and custom error rules that determine how specific exceptions, handled errors, and request-attribute-based conditions affect failure detection.
+        :param pulumi.Input[Union['FailureDetectionParametersHttpResponseCodesArgs', 'FailureDetectionParametersHttpResponseCodesArgsDict']] http_response_codes: HTTP response code settings that control which response codes are treated as server-side or client-side errors.
+        :param pulumi.Input[_builtins.str] name: The display name of this failure detection parameter set.
         """
         opts = pulumi.ResourceOptions.merge(opts, pulumi.ResourceOptions(id=id))
 
@@ -342,7 +342,7 @@ class FailureDetectionParameters(pulumi.CustomResource):
     @pulumi.getter
     def description(self) -> pulumi.Output[Optional[_builtins.str]]:
         """
-        Description
+        A short description of this failure detection parameter set.
         """
         return pulumi.get(self, "description")
 
@@ -350,7 +350,7 @@ class FailureDetectionParameters(pulumi.CustomResource):
     @pulumi.getter(name="exceptionRules")
     def exception_rules(self) -> pulumi.Output['outputs.FailureDetectionParametersExceptionRules']:
         """
-        Customize failure detection for specific exceptions and errors
+        Exception and custom error rules that determine how specific exceptions, handled errors, and request-attribute-based conditions affect failure detection.
         """
         return pulumi.get(self, "exception_rules")
 
@@ -358,7 +358,7 @@ class FailureDetectionParameters(pulumi.CustomResource):
     @pulumi.getter(name="httpResponseCodes")
     def http_response_codes(self) -> pulumi.Output['outputs.FailureDetectionParametersHttpResponseCodes']:
         """
-        HTTP response codes
+        HTTP response code settings that control which response codes are treated as server-side or client-side errors.
         """
         return pulumi.get(self, "http_response_codes")
 
@@ -366,7 +366,7 @@ class FailureDetectionParameters(pulumi.CustomResource):
     @pulumi.getter
     def name(self) -> pulumi.Output[_builtins.str]:
         """
-        Name
+        The display name of this failure detection parameter set.
         """
         return pulumi.get(self, "name")
 

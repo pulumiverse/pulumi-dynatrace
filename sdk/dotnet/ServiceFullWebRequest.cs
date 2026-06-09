@@ -35,7 +35,7 @@ namespace Pulumiverse.Dynatrace
         public Output<Outputs.ServiceFullWebRequestConditions?> Conditions { get; private set; } = null!;
 
         /// <summary>
-        /// Description
+        /// A short description of the rule.
         /// </summary>
         [Output("description")]
         public Output<string?> Description { get; private set; } = null!;
@@ -65,7 +65,7 @@ namespace Pulumiverse.Dynatrace
         public Output<ImmutableArray<string>> ManagementZones { get; private set; } = null!;
 
         /// <summary>
-        /// Rule name
+        /// The name of the rule. It is used for identification and has no effect on the rule logic.
         /// </summary>
         [Output("name")]
         public Output<string> Name { get; private set; } = null!;
@@ -124,7 +124,7 @@ namespace Pulumiverse.Dynatrace
         public Input<Inputs.ServiceFullWebRequestConditionsArgs>? Conditions { get; set; }
 
         /// <summary>
-        /// Description
+        /// A short description of the rule.
         /// </summary>
         [Input("description")]
         public Input<string>? Description { get; set; }
@@ -160,7 +160,7 @@ namespace Pulumiverse.Dynatrace
         }
 
         /// <summary>
-        /// Rule name
+        /// The name of the rule. It is used for identification and has no effect on the rule logic.
         /// </summary>
         [Input("name")]
         public Input<string>? Name { get; set; }
@@ -180,7 +180,7 @@ namespace Pulumiverse.Dynatrace
         public Input<Inputs.ServiceFullWebRequestConditionsGetArgs>? Conditions { get; set; }
 
         /// <summary>
-        /// Description
+        /// A short description of the rule.
         /// </summary>
         [Input("description")]
         public Input<string>? Description { get; set; }
@@ -216,7 +216,7 @@ namespace Pulumiverse.Dynatrace
         }
 
         /// <summary>
-        /// Rule name
+        /// The name of the rule. It is used for identification and has no effect on the rule logic.
         /// </summary>
         [Input("name")]
         public Input<string>? Name { get; set; }

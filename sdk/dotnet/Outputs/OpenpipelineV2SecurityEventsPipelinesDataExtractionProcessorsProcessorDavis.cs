@@ -15,7 +15,7 @@ namespace Pulumiverse.Dynatrace.Outputs
     public sealed class OpenpipelineV2SecurityEventsPipelinesDataExtractionProcessorsProcessorDavis
     {
         /// <summary>
-        /// no documentation available
+        /// No documentation available
         /// </summary>
         public readonly Outputs.OpenpipelineV2SecurityEventsPipelinesDataExtractionProcessorsProcessorDavisProperties Properties;
 

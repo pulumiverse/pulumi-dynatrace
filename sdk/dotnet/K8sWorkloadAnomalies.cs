@@ -29,79 +29,79 @@ namespace Pulumiverse.Dynatrace
     public partial class K8sWorkloadAnomalies : global::Pulumi.CustomResource
     {
         /// <summary>
-        /// no documentation available
+        /// No documentation available
         /// </summary>
         [Output("containerRestarts")]
         public Output<Outputs.K8sWorkloadAnomaliesContainerRestarts> ContainerRestarts { get; private set; } = null!;
 
         /// <summary>
-        /// no documentation available
+        /// No documentation available
         /// </summary>
         [Output("deploymentStuck")]
         public Output<Outputs.K8sWorkloadAnomaliesDeploymentStuck> DeploymentStuck { get; private set; } = null!;
 
         /// <summary>
-        /// no documentation available
+        /// No documentation available
         /// </summary>
         [Output("highCpuThrottling")]
         public Output<Outputs.K8sWorkloadAnomaliesHighCpuThrottling> HighCpuThrottling { get; private set; } = null!;
 
         /// <summary>
-        /// no documentation available
+        /// No documentation available
         /// </summary>
         [Output("highCpuUsage")]
         public Output<Outputs.K8sWorkloadAnomaliesHighCpuUsage> HighCpuUsage { get; private set; } = null!;
 
         /// <summary>
-        /// no documentation available
+        /// No documentation available
         /// </summary>
         [Output("highMemoryUsage")]
         public Output<Outputs.K8sWorkloadAnomaliesHighMemoryUsage> HighMemoryUsage { get; private set; } = null!;
 
         /// <summary>
-        /// no documentation available
+        /// No documentation available
         /// </summary>
         [Output("jobFailureEvents")]
         public Output<Outputs.K8sWorkloadAnomaliesJobFailureEvents> JobFailureEvents { get; private set; } = null!;
 
         /// <summary>
-        /// no documentation available
+        /// No documentation available
         /// </summary>
         [Output("notAllPodsReady")]
         public Output<Outputs.K8sWorkloadAnomaliesNotAllPodsReady> NotAllPodsReady { get; private set; } = null!;
 
         /// <summary>
-        /// no documentation available
+        /// No documentation available
         /// </summary>
         [Output("oomKills")]
         public Output<Outputs.K8sWorkloadAnomaliesOomKills> OomKills { get; private set; } = null!;
 
         /// <summary>
-        /// no documentation available
+        /// No documentation available
         /// </summary>
         [Output("pendingPods")]
         public Output<Outputs.K8sWorkloadAnomaliesPendingPods> PendingPods { get; private set; } = null!;
 
         /// <summary>
-        /// no documentation available
+        /// No documentation available
         /// </summary>
         [Output("podBackoffEvents")]
         public Output<Outputs.K8sWorkloadAnomaliesPodBackoffEvents> PodBackoffEvents { get; private set; } = null!;
 
         /// <summary>
-        /// no documentation available
+        /// No documentation available
         /// </summary>
         [Output("podEvictionEvents")]
         public Output<Outputs.K8sWorkloadAnomaliesPodEvictionEvents> PodEvictionEvents { get; private set; } = null!;
 
         /// <summary>
-        /// no documentation available
+        /// No documentation available
         /// </summary>
         [Output("podPreemptionEvents")]
         public Output<Outputs.K8sWorkloadAnomaliesPodPreemptionEvents> PodPreemptionEvents { get; private set; } = null!;
 
         /// <summary>
-        /// no documentation available
+        /// No documentation available
         /// </summary>
         [Output("podStuckInTerminating")]
         public Output<Outputs.K8sWorkloadAnomaliesPodStuckInTerminating> PodStuckInTerminating { get; private set; } = null!;
@@ -113,7 +113,7 @@ namespace Pulumiverse.Dynatrace
         public Output<string?> Scope { get; private set; } = null!;
 
         /// <summary>
-        /// no documentation available
+        /// No documentation available
         /// </summary>
         [Output("workloadWithoutReadyPods")]
         public Output<Outputs.K8sWorkloadAnomaliesWorkloadWithoutReadyPods> WorkloadWithoutReadyPods { get; private set; } = null!;
@@ -166,79 +166,79 @@ namespace Pulumiverse.Dynatrace
     public sealed class K8sWorkloadAnomaliesArgs : global::Pulumi.ResourceArgs
     {
         /// <summary>
-        /// no documentation available
+        /// No documentation available
         /// </summary>
         [Input("containerRestarts", required: true)]
         public Input<Inputs.K8sWorkloadAnomaliesContainerRestartsArgs> ContainerRestarts { get; set; } = null!;
 
         /// <summary>
-        /// no documentation available
+        /// No documentation available
         /// </summary>
         [Input("deploymentStuck", required: true)]
         public Input<Inputs.K8sWorkloadAnomaliesDeploymentStuckArgs> DeploymentStuck { get; set; } = null!;
 
         /// <summary>
-        /// no documentation available
+        /// No documentation available
         /// </summary>
         [Input("highCpuThrottling", required: true)]
         public Input<Inputs.K8sWorkloadAnomaliesHighCpuThrottlingArgs> HighCpuThrottling { get; set; } = null!;
 
         /// <summary>
-        /// no documentation available
+        /// No documentation available
         /// </summary>
         [Input("highCpuUsage", required: true)]
         public Input<Inputs.K8sWorkloadAnomaliesHighCpuUsageArgs> HighCpuUsage { get; set; } = null!;
 
         /// <summary>
-        /// no documentation available
+        /// No documentation available
         /// </summary>
         [Input("highMemoryUsage", required: true)]
         public Input<Inputs.K8sWorkloadAnomaliesHighMemoryUsageArgs> HighMemoryUsage { get; set; } = null!;
 
         /// <summary>
-        /// no documentation available
+        /// No documentation available
         /// </summary>
         [Input("jobFailureEvents", required: true)]
         public Input<Inputs.K8sWorkloadAnomaliesJobFailureEventsArgs> JobFailureEvents { get; set; } = null!;
 
         /// <summary>
-        /// no documentation available
+        /// No documentation available
         /// </summary>
         [Input("notAllPodsReady", required: true)]
         public Input<Inputs.K8sWorkloadAnomaliesNotAllPodsReadyArgs> NotAllPodsReady { get; set; } = null!;
 
         /// <summary>
-        /// no documentation available
+        /// No documentation available
         /// </summary>
         [Input("oomKills", required: true)]
         public Input<Inputs.K8sWorkloadAnomaliesOomKillsArgs> OomKills { get; set; } = null!;
 
         /// <summary>
-        /// no documentation available
+        /// No documentation available
         /// </summary>
         [Input("pendingPods", required: true)]
         public Input<Inputs.K8sWorkloadAnomaliesPendingPodsArgs> PendingPods { get; set; } = null!;
 
         /// <summary>
-        /// no documentation available
+        /// No documentation available
         /// </summary>
         [Input("podBackoffEvents", required: true)]
         public Input<Inputs.K8sWorkloadAnomaliesPodBackoffEventsArgs> PodBackoffEvents { get; set; } = null!;
 
         /// <summary>
-        /// no documentation available
+        /// No documentation available
         /// </summary>
         [Input("podEvictionEvents", required: true)]
         public Input<Inputs.K8sWorkloadAnomaliesPodEvictionEventsArgs> PodEvictionEvents { get; set; } = null!;
 
         /// <summary>
-        /// no documentation available
+        /// No documentation available
         /// </summary>
         [Input("podPreemptionEvents", required: true)]
         public Input<Inputs.K8sWorkloadAnomaliesPodPreemptionEventsArgs> PodPreemptionEvents { get; set; } = null!;
 
         /// <summary>
-        /// no documentation available
+        /// No documentation available
         /// </summary>
         [Input("podStuckInTerminating", required: true)]
         public Input<Inputs.K8sWorkloadAnomaliesPodStuckInTerminatingArgs> PodStuckInTerminating { get; set; } = null!;
@@ -250,7 +250,7 @@ namespace Pulumiverse.Dynatrace
         public Input<string>? Scope { get; set; }
 
         /// <summary>
-        /// no documentation available
+        /// No documentation available
         /// </summary>
         [Input("workloadWithoutReadyPods", required: true)]
         public Input<Inputs.K8sWorkloadAnomaliesWorkloadWithoutReadyPodsArgs> WorkloadWithoutReadyPods { get; set; } = null!;
@@ -264,79 +264,79 @@ namespace Pulumiverse.Dynatrace
     public sealed class K8sWorkloadAnomaliesState : global::Pulumi.ResourceArgs
     {
         /// <summary>
-        /// no documentation available
+        /// No documentation available
         /// </summary>
         [Input("containerRestarts")]
         public Input<Inputs.K8sWorkloadAnomaliesContainerRestartsGetArgs>? ContainerRestarts { get; set; }
 
         /// <summary>
-        /// no documentation available
+        /// No documentation available
         /// </summary>
         [Input("deploymentStuck")]
         public Input<Inputs.K8sWorkloadAnomaliesDeploymentStuckGetArgs>? DeploymentStuck { get; set; }
 
         /// <summary>
-        /// no documentation available
+        /// No documentation available
         /// </summary>
         [Input("highCpuThrottling")]
         public Input<Inputs.K8sWorkloadAnomaliesHighCpuThrottlingGetArgs>? HighCpuThrottling { get; set; }
 
         /// <summary>
-        /// no documentation available
+        /// No documentation available
         /// </summary>
         [Input("highCpuUsage")]
         public Input<Inputs.K8sWorkloadAnomaliesHighCpuUsageGetArgs>? HighCpuUsage { get; set; }
 
         /// <summary>
-        /// no documentation available
+        /// No documentation available
         /// </summary>
         [Input("highMemoryUsage")]
         public Input<Inputs.K8sWorkloadAnomaliesHighMemoryUsageGetArgs>? HighMemoryUsage { get; set; }
 
         /// <summary>
-        /// no documentation available
+        /// No documentation available
         /// </summary>
         [Input("jobFailureEvents")]
         public Input<Inputs.K8sWorkloadAnomaliesJobFailureEventsGetArgs>? JobFailureEvents { get; set; }
 
         /// <summary>
-        /// no documentation available
+        /// No documentation available
         /// </summary>
         [Input("notAllPodsReady")]
         public Input<Inputs.K8sWorkloadAnomaliesNotAllPodsReadyGetArgs>? NotAllPodsReady { get; set; }
 
         /// <summary>
-        /// no documentation available
+        /// No documentation available
         /// </summary>
         [Input("oomKills")]
         public Input<Inputs.K8sWorkloadAnomaliesOomKillsGetArgs>? OomKills { get; set; }
 
         /// <summary>
-        /// no documentation available
+        /// No documentation available
         /// </summary>
         [Input("pendingPods")]
         public Input<Inputs.K8sWorkloadAnomaliesPendingPodsGetArgs>? PendingPods { get; set; }
 
         /// <summary>
-        /// no documentation available
+        /// No documentation available
         /// </summary>
         [Input("podBackoffEvents")]
         public Input<Inputs.K8sWorkloadAnomaliesPodBackoffEventsGetArgs>? PodBackoffEvents { get; set; }
 
         /// <summary>
-        /// no documentation available
+        /// No documentation available
         /// </summary>
         [Input("podEvictionEvents")]
         public Input<Inputs.K8sWorkloadAnomaliesPodEvictionEventsGetArgs>? PodEvictionEvents { get; set; }
 
         /// <summary>
-        /// no documentation available
+        /// No documentation available
         /// </summary>
         [Input("podPreemptionEvents")]
         public Input<Inputs.K8sWorkloadAnomaliesPodPreemptionEventsGetArgs>? PodPreemptionEvents { get; set; }
 
         /// <summary>
-        /// no documentation available
+        /// No documentation available
         /// </summary>
         [Input("podStuckInTerminating")]
         public Input<Inputs.K8sWorkloadAnomaliesPodStuckInTerminatingGetArgs>? PodStuckInTerminating { get; set; }
@@ -348,7 +348,7 @@ namespace Pulumiverse.Dynatrace
         public Input<string>? Scope { get; set; }
 
         /// <summary>
-        /// no documentation available
+        /// No documentation available
         /// </summary>
         [Input("workloadWithoutReadyPods")]
         public Input<Inputs.K8sWorkloadAnomaliesWorkloadWithoutReadyPodsGetArgs>? WorkloadWithoutReadyPods { get; set; }

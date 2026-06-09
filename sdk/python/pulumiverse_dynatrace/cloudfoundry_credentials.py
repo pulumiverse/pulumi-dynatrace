@@ -270,7 +270,7 @@ class CloudfoundryCredentials(pulumi.CustomResource):
                  username: pulumi.Input[Optional[_builtins.str]] = None,
                  __props__=None):
         """
-        !> This resource is utilizing an older API endpoint, please use CloudFoundry instead.
+        > This resource is utilizing an older API endpoint, please use CloudFoundry instead.
 
         > This resource requires the API token scopes **Read configuration** (`ReadConfig`) and **Write configuration** (`WriteConfig`)
 
@@ -304,7 +304,7 @@ class CloudfoundryCredentials(pulumi.CustomResource):
                  args: CloudfoundryCredentialsArgs,
                  opts: Optional[pulumi.ResourceOptions] = None):
         """
-        !> This resource is utilizing an older API endpoint, please use CloudFoundry instead.
+        > This resource is utilizing an older API endpoint, please use CloudFoundry instead.
 
         > This resource requires the API token scopes **Read configuration** (`ReadConfig`) and **Write configuration** (`WriteConfig`)
 

@@ -141,11 +141,11 @@ export class AzureConnection extends pulumi.CustomResource {
     }
 
     /**
-     * no documentation available
+     * No documentation available
      */
     declare public readonly clientSecret: pulumi.Output<outputs.AzureConnectionClientSecret | undefined>;
     /**
-     * no documentation available
+     * No documentation available
      */
     declare public readonly federatedIdentityCredential: pulumi.Output<outputs.AzureConnectionFederatedIdentityCredential | undefined>;
     /**
@@ -194,11 +194,11 @@ export class AzureConnection extends pulumi.CustomResource {
  */
 export interface AzureConnectionState {
     /**
-     * no documentation available
+     * No documentation available
      */
     clientSecret?: pulumi.Input<inputs.AzureConnectionClientSecret | undefined>;
     /**
-     * no documentation available
+     * No documentation available
      */
     federatedIdentityCredential?: pulumi.Input<inputs.AzureConnectionFederatedIdentityCredential | undefined>;
     /**
@@ -216,11 +216,11 @@ export interface AzureConnectionState {
  */
 export interface AzureConnectionArgs {
     /**
-     * no documentation available
+     * No documentation available
      */
     clientSecret?: pulumi.Input<inputs.AzureConnectionClientSecret | undefined>;
     /**
-     * no documentation available
+     * No documentation available
      */
     federatedIdentityCredential?: pulumi.Input<inputs.AzureConnectionFederatedIdentityCredential | undefined>;
     /**

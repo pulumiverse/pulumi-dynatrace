@@ -19,7 +19,7 @@ namespace Pulumiverse.Dynatrace.Outputs
         /// </summary>
         public readonly bool ComplyWithDoNotTrack;
         /// <summary>
-        /// Possible Values: `Anonymous`, `Disable_rum`
+        /// Possible values: `Anonymous`, `disable-rum`
         /// </summary>
         public readonly string? DoNotTrack;
 

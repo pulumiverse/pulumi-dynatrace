@@ -59,7 +59,7 @@ namespace Pulumiverse.Dynatrace
         public Output<string> ResourceName { get; private set; } = null!;
 
         /// <summary>
-        /// Possible Values: `FirstParty`, `ThirdParty`, `Cdn`
+        /// Resource type. Possible values: `Cdn`, `FirstParty`, `ThirdParty`
         /// </summary>
         [Output("resourceType")]
         public Output<string> ResourceType { get; private set; } = null!;
@@ -142,7 +142,7 @@ namespace Pulumiverse.Dynatrace
         public Input<string> ResourceName { get; set; } = null!;
 
         /// <summary>
-        /// Possible Values: `FirstParty`, `ThirdParty`, `Cdn`
+        /// Resource type. Possible values: `Cdn`, `FirstParty`, `ThirdParty`
         /// </summary>
         [Input("resourceType", required: true)]
         public Input<string> ResourceType { get; set; } = null!;
@@ -186,7 +186,7 @@ namespace Pulumiverse.Dynatrace
         public Input<string>? ResourceName { get; set; }
 
         /// <summary>
-        /// Possible Values: `FirstParty`, `ThirdParty`, `Cdn`
+        /// Resource type. Possible values: `Cdn`, `FirstParty`, `ThirdParty`
         /// </summary>
         [Input("resourceType")]
         public Input<string>? ResourceType { get; set; }

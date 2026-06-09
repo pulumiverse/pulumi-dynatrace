@@ -30,12 +30,12 @@ class FailureDetectionRulesArgs:
         """
         The set of arguments for constructing a FailureDetectionRules resource.
 
-        :param pulumi.Input['FailureDetectionRulesConditionsArgs'] conditions: Conditions
+        :param pulumi.Input['FailureDetectionRulesConditionsArgs'] conditions: A list of conditions for this rule. All conditions must be fulfilled for the rule to match a service.
         :param pulumi.Input[_builtins.bool] enabled: This setting is enabled (`true`) or disabled (`false`)
-        :param pulumi.Input[_builtins.str] parameter_id: Failure detection parameters
-        :param pulumi.Input[_builtins.str] description: Rule description
+        :param pulumi.Input[_builtins.str] parameter_id: The ID of the failure detection parameter set to apply when this rule matches. The parameter set must already exist.
+        :param pulumi.Input[_builtins.str] description: A short description of this failure detection rule.
         :param pulumi.Input[_builtins.str] insert_after: Because this resource allows for ordering you may specify the ID of the resource instance that comes before this instance regarding order. If not specified when creating the setting will be added to the end of the list. If not specified during update the order will remain untouched
-        :param pulumi.Input[_builtins.str] name: Rule name
+        :param pulumi.Input[_builtins.str] name: The display name of this failure detection rule.
         """
         pulumi.set(__self__, "conditions", conditions)
         pulumi.set(__self__, "enabled", enabled)
@@ -51,7 +51,7 @@ class FailureDetectionRulesArgs:
     @pulumi.getter
     def conditions(self) -> pulumi.Input['FailureDetectionRulesConditionsArgs']:
         """
-        Conditions
+        A list of conditions for this rule. All conditions must be fulfilled for the rule to match a service.
         """
         return pulumi.get(self, "conditions")
 
@@ -75,7 +75,7 @@ class FailureDetectionRulesArgs:
     @pulumi.getter(name="parameterId")
     def parameter_id(self) -> pulumi.Input[_builtins.str]:
         """
-        Failure detection parameters
+        The ID of the failure detection parameter set to apply when this rule matches. The parameter set must already exist.
         """
         return pulumi.get(self, "parameter_id")
 
@@ -87,7 +87,7 @@ class FailureDetectionRulesArgs:
     @pulumi.getter
     def description(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
-        Rule description
+        A short description of this failure detection rule.
         """
         return pulumi.get(self, "description")
 
@@ -111,7 +111,7 @@ class FailureDetectionRulesArgs:
     @pulumi.getter
     def name(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
-        Rule name
+        The display name of this failure detection rule.
         """
         return pulumi.get(self, "name")
 
@@ -132,12 +132,12 @@ class _FailureDetectionRulesState:
         """
         Input properties used for looking up and filtering FailureDetectionRules resources.
 
-        :param pulumi.Input['FailureDetectionRulesConditionsArgs'] conditions: Conditions
-        :param pulumi.Input[_builtins.str] description: Rule description
+        :param pulumi.Input['FailureDetectionRulesConditionsArgs'] conditions: A list of conditions for this rule. All conditions must be fulfilled for the rule to match a service.
+        :param pulumi.Input[_builtins.str] description: A short description of this failure detection rule.
         :param pulumi.Input[_builtins.bool] enabled: This setting is enabled (`true`) or disabled (`false`)
         :param pulumi.Input[_builtins.str] insert_after: Because this resource allows for ordering you may specify the ID of the resource instance that comes before this instance regarding order. If not specified when creating the setting will be added to the end of the list. If not specified during update the order will remain untouched
-        :param pulumi.Input[_builtins.str] name: Rule name
-        :param pulumi.Input[_builtins.str] parameter_id: Failure detection parameters
+        :param pulumi.Input[_builtins.str] name: The display name of this failure detection rule.
+        :param pulumi.Input[_builtins.str] parameter_id: The ID of the failure detection parameter set to apply when this rule matches. The parameter set must already exist.
         """
         if conditions is not None:
             pulumi.set(__self__, "conditions", conditions)
@@ -156,7 +156,7 @@ class _FailureDetectionRulesState:
     @pulumi.getter
     def conditions(self) -> pulumi.Input[Optional['FailureDetectionRulesConditionsArgs']]:
         """
-        Conditions
+        A list of conditions for this rule. All conditions must be fulfilled for the rule to match a service.
         """
         return pulumi.get(self, "conditions")
 
@@ -168,7 +168,7 @@ class _FailureDetectionRulesState:
     @pulumi.getter
     def description(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
-        Rule description
+        A short description of this failure detection rule.
         """
         return pulumi.get(self, "description")
 
@@ -204,7 +204,7 @@ class _FailureDetectionRulesState:
     @pulumi.getter
     def name(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
-        Rule name
+        The display name of this failure detection rule.
         """
         return pulumi.get(self, "name")
 
@@ -216,7 +216,7 @@ class _FailureDetectionRulesState:
     @pulumi.getter(name="parameterId")
     def parameter_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
-        Failure detection parameters
+        The ID of the failure detection parameter set to apply when this rule matches. The parameter set must already exist.
         """
         return pulumi.get(self, "parameter_id")
 
@@ -256,12 +256,12 @@ class FailureDetectionRules(pulumi.CustomResource):
 
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
-        :param pulumi.Input[Union['FailureDetectionRulesConditionsArgs', 'FailureDetectionRulesConditionsArgsDict']] conditions: Conditions
-        :param pulumi.Input[_builtins.str] description: Rule description
+        :param pulumi.Input[Union['FailureDetectionRulesConditionsArgs', 'FailureDetectionRulesConditionsArgsDict']] conditions: A list of conditions for this rule. All conditions must be fulfilled for the rule to match a service.
+        :param pulumi.Input[_builtins.str] description: A short description of this failure detection rule.
         :param pulumi.Input[_builtins.bool] enabled: This setting is enabled (`true`) or disabled (`false`)
         :param pulumi.Input[_builtins.str] insert_after: Because this resource allows for ordering you may specify the ID of the resource instance that comes before this instance regarding order. If not specified when creating the setting will be added to the end of the list. If not specified during update the order will remain untouched
-        :param pulumi.Input[_builtins.str] name: Rule name
-        :param pulumi.Input[_builtins.str] parameter_id: Failure detection parameters
+        :param pulumi.Input[_builtins.str] name: The display name of this failure detection rule.
+        :param pulumi.Input[_builtins.str] parameter_id: The ID of the failure detection parameter set to apply when this rule matches. The parameter set must already exist.
         """
         ...
     @overload
@@ -350,12 +350,12 @@ class FailureDetectionRules(pulumi.CustomResource):
         :param str resource_name: The unique name of the resulting resource.
         :param pulumi.Input[str] id: The unique provider ID of the resource to lookup.
         :param pulumi.ResourceOptions opts: Options for the resource.
-        :param pulumi.Input[Union['FailureDetectionRulesConditionsArgs', 'FailureDetectionRulesConditionsArgsDict']] conditions: Conditions
-        :param pulumi.Input[_builtins.str] description: Rule description
+        :param pulumi.Input[Union['FailureDetectionRulesConditionsArgs', 'FailureDetectionRulesConditionsArgsDict']] conditions: A list of conditions for this rule. All conditions must be fulfilled for the rule to match a service.
+        :param pulumi.Input[_builtins.str] description: A short description of this failure detection rule.
         :param pulumi.Input[_builtins.bool] enabled: This setting is enabled (`true`) or disabled (`false`)
         :param pulumi.Input[_builtins.str] insert_after: Because this resource allows for ordering you may specify the ID of the resource instance that comes before this instance regarding order. If not specified when creating the setting will be added to the end of the list. If not specified during update the order will remain untouched
-        :param pulumi.Input[_builtins.str] name: Rule name
-        :param pulumi.Input[_builtins.str] parameter_id: Failure detection parameters
+        :param pulumi.Input[_builtins.str] name: The display name of this failure detection rule.
+        :param pulumi.Input[_builtins.str] parameter_id: The ID of the failure detection parameter set to apply when this rule matches. The parameter set must already exist.
         """
         opts = pulumi.ResourceOptions.merge(opts, pulumi.ResourceOptions(id=id))
 
@@ -373,7 +373,7 @@ class FailureDetectionRules(pulumi.CustomResource):
     @pulumi.getter
     def conditions(self) -> pulumi.Output['outputs.FailureDetectionRulesConditions']:
         """
-        Conditions
+        A list of conditions for this rule. All conditions must be fulfilled for the rule to match a service.
         """
         return pulumi.get(self, "conditions")
 
@@ -381,7 +381,7 @@ class FailureDetectionRules(pulumi.CustomResource):
     @pulumi.getter
     def description(self) -> pulumi.Output[Optional[_builtins.str]]:
         """
-        Rule description
+        A short description of this failure detection rule.
         """
         return pulumi.get(self, "description")
 
@@ -405,7 +405,7 @@ class FailureDetectionRules(pulumi.CustomResource):
     @pulumi.getter
     def name(self) -> pulumi.Output[_builtins.str]:
         """
-        Rule name
+        The display name of this failure detection rule.
         """
         return pulumi.get(self, "name")
 
@@ -413,7 +413,7 @@ class FailureDetectionRules(pulumi.CustomResource):
     @pulumi.getter(name="parameterId")
     def parameter_id(self) -> pulumi.Output[_builtins.str]:
         """
-        Failure detection parameters
+        The ID of the failure detection parameter set to apply when this rule matches. The parameter set must already exist.
         """
         return pulumi.get(self, "parameter_id")
 

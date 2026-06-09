@@ -11,7 +11,7 @@ using Pulumi;
 namespace Pulumiverse.Dynatrace
 {
     /// <summary>
-    /// !&gt; This resource is utilizing an older API endpoint, please use dynatrace.PgAlerting instead.
+    /// &gt; This resource is utilizing an older API endpoint, please use dynatrace.PgAlerting instead.
     /// 
     /// &gt; This resource requires the API token scopes **Read configuration** (`ReadConfig`) and **Write configuration** (`WriteConfig`)
     /// 
@@ -37,11 +37,14 @@ namespace Pulumiverse.Dynatrace
     /// 
     /// return await Deployment.RunAsync(() =&gt; 
     /// {
-    ///     var config = new Config();
-    ///     var PROCESS_GROUP_ID = config.Require("PROCESS_GROUP_ID");
+    ///     var processGroup = Dynatrace.GetEntity.Invoke(new()
+    ///     {
+    ///         EntitySelector = "type(\"PROCESS_GROUP\")",
+    ///     });
+    /// 
     ///     var anomaly = new Dynatrace.PgAnomalies("anomaly", new()
     ///     {
-    ///         PgId = PROCESS_GROUP_ID,
+    ///         PgId = processGroup.Apply(getEntityResult =&gt; getEntityResult.Id),
     ///         Availability = new Dynatrace.Inputs.PgAnomaliesAvailabilityArgs
     ///         {
     ///             Method = "OFF",

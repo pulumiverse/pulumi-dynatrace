@@ -15,11 +15,11 @@ namespace Pulumiverse.Dynatrace.Outputs
     public sealed class WebAppRequestErrorsErrorRulesErrorRuleFilterSettings
     {
         /// <summary>
-        /// Possible Values: `BEGINS_WITH`, `CONTAINS`, `ENDS_WITH`, `EQUALS`
+        /// Filter by URL. Possible values: `BEGINS_WITH`, `CONTAINS`, `ENDS_WITH`, `EQUALS`
         /// </summary>
         public readonly string? Filter;
         /// <summary>
-        /// no documentation available
+        /// No documentation available
         /// </summary>
         public readonly string? Url;
 

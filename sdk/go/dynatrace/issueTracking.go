@@ -36,9 +36,9 @@ type IssueTracking struct {
 	Issuelabel pulumi.StringOutput `pulumi:"issuelabel"`
 	// You can use the following placeholders to automatically insert values from the **Release monitoring** page in your query: `{NAME}`, `{VERSION}`, `{STAGE}`, `{PRODUCT}`.
 	Issuequery pulumi.StringOutput `pulumi:"issuequery"`
-	// Possible Values: `ERROR`, `INFO`, `RESOLVED`
+	// Select the issue type to be displayed. Possible values: `ERROR`, `INFO`, `RESOLVED`
 	Issuetheme pulumi.StringOutput `pulumi:"issuetheme"`
-	// Possible Values: `GITHUB`, `GITLAB`, `JIRA`, `JIRA_CLOUD`, `JIRA_ON_PREMISE`, `SERVICENOW`
+	// Select the issue-tracking system you want to query. Possible values: `GITHUB`, `GITLAB`, `JIRA`, `JIRA_CLOUD`, `JIRA_ON_PREMISE`, `SERVICENOW`
 	Issuetrackersystem pulumi.StringOutput `pulumi:"issuetrackersystem"`
 	// Password
 	Password pulumi.StringPtrOutput `pulumi:"password"`
@@ -116,9 +116,9 @@ type issueTrackingState struct {
 	Issuelabel *string `pulumi:"issuelabel"`
 	// You can use the following placeholders to automatically insert values from the **Release monitoring** page in your query: `{NAME}`, `{VERSION}`, `{STAGE}`, `{PRODUCT}`.
 	Issuequery *string `pulumi:"issuequery"`
-	// Possible Values: `ERROR`, `INFO`, `RESOLVED`
+	// Select the issue type to be displayed. Possible values: `ERROR`, `INFO`, `RESOLVED`
 	Issuetheme *string `pulumi:"issuetheme"`
-	// Possible Values: `GITHUB`, `GITLAB`, `JIRA`, `JIRA_CLOUD`, `JIRA_ON_PREMISE`, `SERVICENOW`
+	// Select the issue-tracking system you want to query. Possible values: `GITHUB`, `GITLAB`, `JIRA`, `JIRA_CLOUD`, `JIRA_ON_PREMISE`, `SERVICENOW`
 	Issuetrackersystem *string `pulumi:"issuetrackersystem"`
 	// Password
 	Password *string `pulumi:"password"`
@@ -139,9 +139,9 @@ type IssueTrackingState struct {
 	Issuelabel pulumi.StringPtrInput
 	// You can use the following placeholders to automatically insert values from the **Release monitoring** page in your query: `{NAME}`, `{VERSION}`, `{STAGE}`, `{PRODUCT}`.
 	Issuequery pulumi.StringPtrInput
-	// Possible Values: `ERROR`, `INFO`, `RESOLVED`
+	// Select the issue type to be displayed. Possible values: `ERROR`, `INFO`, `RESOLVED`
 	Issuetheme pulumi.StringPtrInput
-	// Possible Values: `GITHUB`, `GITLAB`, `JIRA`, `JIRA_CLOUD`, `JIRA_ON_PREMISE`, `SERVICENOW`
+	// Select the issue-tracking system you want to query. Possible values: `GITHUB`, `GITLAB`, `JIRA`, `JIRA_CLOUD`, `JIRA_ON_PREMISE`, `SERVICENOW`
 	Issuetrackersystem pulumi.StringPtrInput
 	// Password
 	Password pulumi.StringPtrInput
@@ -166,9 +166,9 @@ type issueTrackingArgs struct {
 	Issuelabel string `pulumi:"issuelabel"`
 	// You can use the following placeholders to automatically insert values from the **Release monitoring** page in your query: `{NAME}`, `{VERSION}`, `{STAGE}`, `{PRODUCT}`.
 	Issuequery string `pulumi:"issuequery"`
-	// Possible Values: `ERROR`, `INFO`, `RESOLVED`
+	// Select the issue type to be displayed. Possible values: `ERROR`, `INFO`, `RESOLVED`
 	Issuetheme string `pulumi:"issuetheme"`
-	// Possible Values: `GITHUB`, `GITLAB`, `JIRA`, `JIRA_CLOUD`, `JIRA_ON_PREMISE`, `SERVICENOW`
+	// Select the issue-tracking system you want to query. Possible values: `GITHUB`, `GITLAB`, `JIRA`, `JIRA_CLOUD`, `JIRA_ON_PREMISE`, `SERVICENOW`
 	Issuetrackersystem string `pulumi:"issuetrackersystem"`
 	// Password
 	Password *string `pulumi:"password"`
@@ -190,9 +190,9 @@ type IssueTrackingArgs struct {
 	Issuelabel pulumi.StringInput
 	// You can use the following placeholders to automatically insert values from the **Release monitoring** page in your query: `{NAME}`, `{VERSION}`, `{STAGE}`, `{PRODUCT}`.
 	Issuequery pulumi.StringInput
-	// Possible Values: `ERROR`, `INFO`, `RESOLVED`
+	// Select the issue type to be displayed. Possible values: `ERROR`, `INFO`, `RESOLVED`
 	Issuetheme pulumi.StringInput
-	// Possible Values: `GITHUB`, `GITLAB`, `JIRA`, `JIRA_CLOUD`, `JIRA_ON_PREMISE`, `SERVICENOW`
+	// Select the issue-tracking system you want to query. Possible values: `GITHUB`, `GITLAB`, `JIRA`, `JIRA_CLOUD`, `JIRA_ON_PREMISE`, `SERVICENOW`
 	Issuetrackersystem pulumi.StringInput
 	// Password
 	Password pulumi.StringPtrInput
@@ -311,12 +311,12 @@ func (o IssueTrackingOutput) Issuequery() pulumi.StringOutput {
 	return o.ApplyT(func(v *IssueTracking) pulumi.StringOutput { return v.Issuequery }).(pulumi.StringOutput)
 }
 
-// Possible Values: `ERROR`, `INFO`, `RESOLVED`
+// Select the issue type to be displayed. Possible values: `ERROR`, `INFO`, `RESOLVED`
 func (o IssueTrackingOutput) Issuetheme() pulumi.StringOutput {
 	return o.ApplyT(func(v *IssueTracking) pulumi.StringOutput { return v.Issuetheme }).(pulumi.StringOutput)
 }
 
-// Possible Values: `GITHUB`, `GITLAB`, `JIRA`, `JIRA_CLOUD`, `JIRA_ON_PREMISE`, `SERVICENOW`
+// Select the issue-tracking system you want to query. Possible values: `GITHUB`, `GITLAB`, `JIRA`, `JIRA_CLOUD`, `JIRA_ON_PREMISE`, `SERVICENOW`
 func (o IssueTrackingOutput) Issuetrackersystem() pulumi.StringOutput {
 	return o.ApplyT(func(v *IssueTracking) pulumi.StringOutput { return v.Issuetrackersystem }).(pulumi.StringOutput)
 }

@@ -15,21 +15,28 @@ namespace Pulumiverse.Dynatrace.Outputs
     public sealed class OpenpipelineV2EventsSdlcIngestsourcesProcessingProcessorsProcessorDavisPropertiesProperty
     {
         /// <summary>
-        /// no documentation available
+        /// No documentation available
         /// </summary>
         public readonly string Key;
         /// <summary>
-        /// no documentation available
+        /// Strategy for field extraction. Possible values: `Equals`, `startsWith`
         /// </summary>
-        public readonly string Value;
+        public readonly string? Strategy;
+        /// <summary>
+        /// No documentation available
+        /// </summary>
+        public readonly string? Value;
 
         [OutputConstructor]
         private OpenpipelineV2EventsSdlcIngestsourcesProcessingProcessorsProcessorDavisPropertiesProperty(
             string key,
 
-            string value)
+            string? strategy,
+
+            string? value)
         {
             Key = key;
+            Strategy = strategy;
             Value = value;
         }
     }

@@ -28,17 +28,17 @@ import (
 type FailureDetectionRules struct {
 	pulumi.CustomResourceState
 
-	// Conditions
+	// A list of conditions for this rule. All conditions must be fulfilled for the rule to match a service.
 	Conditions FailureDetectionRulesConditionsOutput `pulumi:"conditions"`
-	// Rule description
+	// A short description of this failure detection rule.
 	Description pulumi.StringPtrOutput `pulumi:"description"`
 	// This setting is enabled (`true`) or disabled (`false`)
 	Enabled pulumi.BoolOutput `pulumi:"enabled"`
 	// Because this resource allows for ordering you may specify the ID of the resource instance that comes before this instance regarding order. If not specified when creating the setting will be added to the end of the list. If not specified during update the order will remain untouched
 	InsertAfter pulumi.StringOutput `pulumi:"insertAfter"`
-	// Rule name
+	// The display name of this failure detection rule.
 	Name pulumi.StringOutput `pulumi:"name"`
-	// Failure detection parameters
+	// The ID of the failure detection parameter set to apply when this rule matches. The parameter set must already exist.
 	ParameterId pulumi.StringOutput `pulumi:"parameterId"`
 }
 
@@ -81,32 +81,32 @@ func GetFailureDetectionRules(ctx *pulumi.Context,
 
 // Input properties used for looking up and filtering FailureDetectionRules resources.
 type failureDetectionRulesState struct {
-	// Conditions
+	// A list of conditions for this rule. All conditions must be fulfilled for the rule to match a service.
 	Conditions *FailureDetectionRulesConditions `pulumi:"conditions"`
-	// Rule description
+	// A short description of this failure detection rule.
 	Description *string `pulumi:"description"`
 	// This setting is enabled (`true`) or disabled (`false`)
 	Enabled *bool `pulumi:"enabled"`
 	// Because this resource allows for ordering you may specify the ID of the resource instance that comes before this instance regarding order. If not specified when creating the setting will be added to the end of the list. If not specified during update the order will remain untouched
 	InsertAfter *string `pulumi:"insertAfter"`
-	// Rule name
+	// The display name of this failure detection rule.
 	Name *string `pulumi:"name"`
-	// Failure detection parameters
+	// The ID of the failure detection parameter set to apply when this rule matches. The parameter set must already exist.
 	ParameterId *string `pulumi:"parameterId"`
 }
 
 type FailureDetectionRulesState struct {
-	// Conditions
+	// A list of conditions for this rule. All conditions must be fulfilled for the rule to match a service.
 	Conditions FailureDetectionRulesConditionsPtrInput
-	// Rule description
+	// A short description of this failure detection rule.
 	Description pulumi.StringPtrInput
 	// This setting is enabled (`true`) or disabled (`false`)
 	Enabled pulumi.BoolPtrInput
 	// Because this resource allows for ordering you may specify the ID of the resource instance that comes before this instance regarding order. If not specified when creating the setting will be added to the end of the list. If not specified during update the order will remain untouched
 	InsertAfter pulumi.StringPtrInput
-	// Rule name
+	// The display name of this failure detection rule.
 	Name pulumi.StringPtrInput
-	// Failure detection parameters
+	// The ID of the failure detection parameter set to apply when this rule matches. The parameter set must already exist.
 	ParameterId pulumi.StringPtrInput
 }
 
@@ -115,33 +115,33 @@ func (FailureDetectionRulesState) ElementType() reflect.Type {
 }
 
 type failureDetectionRulesArgs struct {
-	// Conditions
+	// A list of conditions for this rule. All conditions must be fulfilled for the rule to match a service.
 	Conditions FailureDetectionRulesConditions `pulumi:"conditions"`
-	// Rule description
+	// A short description of this failure detection rule.
 	Description *string `pulumi:"description"`
 	// This setting is enabled (`true`) or disabled (`false`)
 	Enabled bool `pulumi:"enabled"`
 	// Because this resource allows for ordering you may specify the ID of the resource instance that comes before this instance regarding order. If not specified when creating the setting will be added to the end of the list. If not specified during update the order will remain untouched
 	InsertAfter *string `pulumi:"insertAfter"`
-	// Rule name
+	// The display name of this failure detection rule.
 	Name *string `pulumi:"name"`
-	// Failure detection parameters
+	// The ID of the failure detection parameter set to apply when this rule matches. The parameter set must already exist.
 	ParameterId string `pulumi:"parameterId"`
 }
 
 // The set of arguments for constructing a FailureDetectionRules resource.
 type FailureDetectionRulesArgs struct {
-	// Conditions
+	// A list of conditions for this rule. All conditions must be fulfilled for the rule to match a service.
 	Conditions FailureDetectionRulesConditionsInput
-	// Rule description
+	// A short description of this failure detection rule.
 	Description pulumi.StringPtrInput
 	// This setting is enabled (`true`) or disabled (`false`)
 	Enabled pulumi.BoolInput
 	// Because this resource allows for ordering you may specify the ID of the resource instance that comes before this instance regarding order. If not specified when creating the setting will be added to the end of the list. If not specified during update the order will remain untouched
 	InsertAfter pulumi.StringPtrInput
-	// Rule name
+	// The display name of this failure detection rule.
 	Name pulumi.StringPtrInput
-	// Failure detection parameters
+	// The ID of the failure detection parameter set to apply when this rule matches. The parameter set must already exist.
 	ParameterId pulumi.StringInput
 }
 
@@ -232,12 +232,12 @@ func (o FailureDetectionRulesOutput) ToFailureDetectionRulesOutputWithContext(ct
 	return o
 }
 
-// Conditions
+// A list of conditions for this rule. All conditions must be fulfilled for the rule to match a service.
 func (o FailureDetectionRulesOutput) Conditions() FailureDetectionRulesConditionsOutput {
 	return o.ApplyT(func(v *FailureDetectionRules) FailureDetectionRulesConditionsOutput { return v.Conditions }).(FailureDetectionRulesConditionsOutput)
 }
 
-// Rule description
+// A short description of this failure detection rule.
 func (o FailureDetectionRulesOutput) Description() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v *FailureDetectionRules) pulumi.StringPtrOutput { return v.Description }).(pulumi.StringPtrOutput)
 }
@@ -252,12 +252,12 @@ func (o FailureDetectionRulesOutput) InsertAfter() pulumi.StringOutput {
 	return o.ApplyT(func(v *FailureDetectionRules) pulumi.StringOutput { return v.InsertAfter }).(pulumi.StringOutput)
 }
 
-// Rule name
+// The display name of this failure detection rule.
 func (o FailureDetectionRulesOutput) Name() pulumi.StringOutput {
 	return o.ApplyT(func(v *FailureDetectionRules) pulumi.StringOutput { return v.Name }).(pulumi.StringOutput)
 }
 
-// Failure detection parameters
+// The ID of the failure detection parameter set to apply when this rule matches. The parameter set must already exist.
 func (o FailureDetectionRulesOutput) ParameterId() pulumi.StringOutput {
 	return o.ApplyT(func(v *FailureDetectionRules) pulumi.StringOutput { return v.ParameterId }).(pulumi.StringOutput)
 }

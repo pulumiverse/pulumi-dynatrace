@@ -28,7 +28,7 @@ import (
 type RumAdvancedCorrelation struct {
 	pulumi.CustomResourceState
 
-	// Possible Values: `CONTAINS`, `ENDS_WITH`, `EQUALS`, `STARTS_WITH`
+	// Matcher. Possible values: `CONTAINS`, `ENDS_WITH`, `EQUALS`, `STARTS_WITH`
 	Matcher pulumi.StringOutput `pulumi:"matcher"`
 	// Pattern
 	Pattern pulumi.StringOutput `pulumi:"pattern"`
@@ -70,14 +70,14 @@ func GetRumAdvancedCorrelation(ctx *pulumi.Context,
 
 // Input properties used for looking up and filtering RumAdvancedCorrelation resources.
 type rumAdvancedCorrelationState struct {
-	// Possible Values: `CONTAINS`, `ENDS_WITH`, `EQUALS`, `STARTS_WITH`
+	// Matcher. Possible values: `CONTAINS`, `ENDS_WITH`, `EQUALS`, `STARTS_WITH`
 	Matcher *string `pulumi:"matcher"`
 	// Pattern
 	Pattern *string `pulumi:"pattern"`
 }
 
 type RumAdvancedCorrelationState struct {
-	// Possible Values: `CONTAINS`, `ENDS_WITH`, `EQUALS`, `STARTS_WITH`
+	// Matcher. Possible values: `CONTAINS`, `ENDS_WITH`, `EQUALS`, `STARTS_WITH`
 	Matcher pulumi.StringPtrInput
 	// Pattern
 	Pattern pulumi.StringPtrInput
@@ -88,7 +88,7 @@ func (RumAdvancedCorrelationState) ElementType() reflect.Type {
 }
 
 type rumAdvancedCorrelationArgs struct {
-	// Possible Values: `CONTAINS`, `ENDS_WITH`, `EQUALS`, `STARTS_WITH`
+	// Matcher. Possible values: `CONTAINS`, `ENDS_WITH`, `EQUALS`, `STARTS_WITH`
 	Matcher string `pulumi:"matcher"`
 	// Pattern
 	Pattern string `pulumi:"pattern"`
@@ -96,7 +96,7 @@ type rumAdvancedCorrelationArgs struct {
 
 // The set of arguments for constructing a RumAdvancedCorrelation resource.
 type RumAdvancedCorrelationArgs struct {
-	// Possible Values: `CONTAINS`, `ENDS_WITH`, `EQUALS`, `STARTS_WITH`
+	// Matcher. Possible values: `CONTAINS`, `ENDS_WITH`, `EQUALS`, `STARTS_WITH`
 	Matcher pulumi.StringInput
 	// Pattern
 	Pattern pulumi.StringInput
@@ -189,7 +189,7 @@ func (o RumAdvancedCorrelationOutput) ToRumAdvancedCorrelationOutputWithContext(
 	return o
 }
 
-// Possible Values: `CONTAINS`, `ENDS_WITH`, `EQUALS`, `STARTS_WITH`
+// Matcher. Possible values: `CONTAINS`, `ENDS_WITH`, `EQUALS`, `STARTS_WITH`
 func (o RumAdvancedCorrelationOutput) Matcher() pulumi.StringOutput {
 	return o.ApplyT(func(v *RumAdvancedCorrelation) pulumi.StringOutput { return v.Matcher }).(pulumi.StringOutput)
 }

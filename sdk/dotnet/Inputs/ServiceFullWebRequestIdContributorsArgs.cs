@@ -14,7 +14,7 @@ namespace Pulumiverse.Dynatrace.Inputs
     public sealed class ServiceFullWebRequestIdContributorsArgs : global::Pulumi.ResourceArgs
     {
         /// <summary>
-        /// Application identifier
+        /// Contribute to the Service Id calculation from the detected application identifier.. You can keep the detected value, override it with a constant value, or apply transformations before it contributes to the Service Id.
         /// </summary>
         [Input("applicationId", required: true)]
         public Input<Inputs.ServiceFullWebRequestIdContributorsApplicationIdArgs> ApplicationId { get; set; } = null!;
@@ -26,7 +26,7 @@ namespace Pulumiverse.Dynatrace.Inputs
         public Input<Inputs.ServiceFullWebRequestIdContributorsContextRootArgs> ContextRoot { get; set; } = null!;
 
         /// <summary>
-        /// Server Name
+        /// Contribute to the Service Id calculation from the detected server name.
         /// </summary>
         [Input("serverName", required: true)]
         public Input<Inputs.ServiceFullWebRequestIdContributorsServerNameArgs> ServerName { get; set; } = null!;

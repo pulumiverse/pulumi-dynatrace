@@ -29,7 +29,7 @@ namespace Pulumiverse.Dynatrace
     public partial class WebAppBeaconOrigins : global::Pulumi.CustomResource
     {
         /// <summary>
-        /// Possible Values: `CONTAINS`, `ENDS_WITH`, `EQUALS`, `STARTS_WITH`
+        /// Matcher. Possible values: `CONTAINS`, `ENDS_WITH`, `EQUALS`, `STARTS_WITH`
         /// </summary>
         [Output("matcher")]
         public Output<string> Matcher { get; private set; } = null!;
@@ -88,7 +88,7 @@ namespace Pulumiverse.Dynatrace
     public sealed class WebAppBeaconOriginsArgs : global::Pulumi.ResourceArgs
     {
         /// <summary>
-        /// Possible Values: `CONTAINS`, `ENDS_WITH`, `EQUALS`, `STARTS_WITH`
+        /// Matcher. Possible values: `CONTAINS`, `ENDS_WITH`, `EQUALS`, `STARTS_WITH`
         /// </summary>
         [Input("matcher", required: true)]
         public Input<string> Matcher { get; set; } = null!;
@@ -108,7 +108,7 @@ namespace Pulumiverse.Dynatrace
     public sealed class WebAppBeaconOriginsState : global::Pulumi.ResourceArgs
     {
         /// <summary>
-        /// Possible Values: `CONTAINS`, `ENDS_WITH`, `EQUALS`, `STARTS_WITH`
+        /// Matcher. Possible values: `CONTAINS`, `ENDS_WITH`, `EQUALS`, `STARTS_WITH`
         /// </summary>
         [Input("matcher")]
         public Input<string>? Matcher { get; set; }

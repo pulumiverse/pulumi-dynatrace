@@ -39,8 +39,8 @@ namespace Pulumiverse.Dynatrace
         /// <summary>
         /// **Examples:**
         /// 
-        ///    - 84.112.10.5
-        ///    - fe80::10a1:c6b2:5f68:785d
+        ///      - 84.112.10.5
+        ///     - fe80::10a1:c6b2:5f68:785d
         /// </summary>
         [Output("ipExclusionList")]
         public Output<Outputs.WebAppIpAddressExclusionIpExclusionList?> IpExclusionList { get; private set; } = null!;
@@ -107,8 +107,8 @@ namespace Pulumiverse.Dynatrace
         /// <summary>
         /// **Examples:**
         /// 
-        ///    - 84.112.10.5
-        ///    - fe80::10a1:c6b2:5f68:785d
+        ///      - 84.112.10.5
+        ///     - fe80::10a1:c6b2:5f68:785d
         /// </summary>
         [Input("ipExclusionList")]
         public Input<Inputs.WebAppIpAddressExclusionIpExclusionListArgs>? IpExclusionList { get; set; }
@@ -136,8 +136,8 @@ namespace Pulumiverse.Dynatrace
         /// <summary>
         /// **Examples:**
         /// 
-        ///    - 84.112.10.5
-        ///    - fe80::10a1:c6b2:5f68:785d
+        ///      - 84.112.10.5
+        ///     - fe80::10a1:c6b2:5f68:785d
         /// </summary>
         [Input("ipExclusionList")]
         public Input<Inputs.WebAppIpAddressExclusionIpExclusionListGetArgs>? IpExclusionList { get; set; }

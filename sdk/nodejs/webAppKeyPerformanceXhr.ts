@@ -54,7 +54,7 @@ export class WebAppKeyPerformanceXhr extends pulumi.CustomResource {
      */
     declare public readonly fallbackThresholds: pulumi.Output<outputs.WebAppKeyPerformanceXhrFallbackThresholds | undefined>;
     /**
-     * Possible Values: `RESPONSE_END`, `RESPONSE_START`, `USER_ACTION_DURATION`, `VISUALLY_COMPLETE`
+     * Key performance metric. Possible values: `RESPONSE_END`, `RESPONSE_START`, `USER_ACTION_DURATION`, `VISUALLY_COMPLETE`
      */
     declare public readonly kpm: pulumi.Output<string>;
     /**
@@ -113,7 +113,7 @@ export interface WebAppKeyPerformanceXhrState {
      */
     fallbackThresholds?: pulumi.Input<inputs.WebAppKeyPerformanceXhrFallbackThresholds | undefined>;
     /**
-     * Possible Values: `RESPONSE_END`, `RESPONSE_START`, `USER_ACTION_DURATION`, `VISUALLY_COMPLETE`
+     * Key performance metric. Possible values: `RESPONSE_END`, `RESPONSE_START`, `USER_ACTION_DURATION`, `VISUALLY_COMPLETE`
      */
     kpm?: pulumi.Input<string | undefined>;
     /**
@@ -135,7 +135,7 @@ export interface WebAppKeyPerformanceXhrArgs {
      */
     fallbackThresholds?: pulumi.Input<inputs.WebAppKeyPerformanceXhrFallbackThresholds | undefined>;
     /**
-     * Possible Values: `RESPONSE_END`, `RESPONSE_START`, `USER_ACTION_DURATION`, `VISUALLY_COMPLETE`
+     * Key performance metric. Possible values: `RESPONSE_END`, `RESPONSE_START`, `USER_ACTION_DURATION`, `VISUALLY_COMPLETE`
      */
     kpm: pulumi.Input<string>;
     /**

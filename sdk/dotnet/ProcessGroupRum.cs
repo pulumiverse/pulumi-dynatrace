@@ -35,12 +35,15 @@ namespace Pulumiverse.Dynatrace
     /// 
     /// return await Deployment.RunAsync(() =&gt; 
     /// {
-    ///     var config = new Config();
-    ///     var PROCESS_GROUP_ID = config.Require("PROCESS_GROUP_ID");
+    ///     var processGroup = Dynatrace.GetEntity.Invoke(new()
+    ///     {
+    ///         EntitySelector = "type(\"PROCESS_GROUP\")",
+    ///     });
+    /// 
     ///     var rum = new Dynatrace.ProcessGroupRum("rum", new()
     ///     {
     ///         Enable = false,
-    ///         ProcessGroupId = PROCESS_GROUP_ID,
+    ///         ProcessGroupId = processGroup.Apply(getEntityResult =&gt; getEntityResult.Id),
     ///     });
     /// 
     /// });
@@ -51,16 +54,16 @@ namespace Pulumiverse.Dynatrace
     {
         /// <summary>
         /// Allows OneAgent to:
-        /// * automatically inject the RUM JavaScript tag into each page delivered by this process group
-        /// * provide the necessary info to correlate RUM data with server-side PurePaths
-        /// * forward beacons to the cluster
-        /// * deliver the monitoring code
+        ///  * automatically inject the RUM JavaScript tag into each page delivered by this process group
+        ///  * provide the necessary info to correlate RUM data with server-side PurePaths
+        ///  * forward beacons to the cluster
+        ///  * deliver the monitoring code
         /// </summary>
         [Output("enable")]
         public Output<bool> Enable { get; private set; } = null!;
 
         /// <summary>
-        /// The scope of this setting - PROCESS_GROUP-XXXXXXXXXXXXXXXX
+        /// The scope of this settings. If the settings should cover the whole environment, just don't specify any scope.
         /// </summary>
         [Output("processGroupId")]
         public Output<string> ProcessGroupId { get; private set; } = null!;
@@ -114,16 +117,16 @@ namespace Pulumiverse.Dynatrace
     {
         /// <summary>
         /// Allows OneAgent to:
-        /// * automatically inject the RUM JavaScript tag into each page delivered by this process group
-        /// * provide the necessary info to correlate RUM data with server-side PurePaths
-        /// * forward beacons to the cluster
-        /// * deliver the monitoring code
+        ///  * automatically inject the RUM JavaScript tag into each page delivered by this process group
+        ///  * provide the necessary info to correlate RUM data with server-side PurePaths
+        ///  * forward beacons to the cluster
+        ///  * deliver the monitoring code
         /// </summary>
         [Input("enable", required: true)]
         public Input<bool> Enable { get; set; } = null!;
 
         /// <summary>
-        /// The scope of this setting - PROCESS_GROUP-XXXXXXXXXXXXXXXX
+        /// The scope of this settings. If the settings should cover the whole environment, just don't specify any scope.
         /// </summary>
         [Input("processGroupId", required: true)]
         public Input<string> ProcessGroupId { get; set; } = null!;
@@ -138,16 +141,16 @@ namespace Pulumiverse.Dynatrace
     {
         /// <summary>
         /// Allows OneAgent to:
-        /// * automatically inject the RUM JavaScript tag into each page delivered by this process group
-        /// * provide the necessary info to correlate RUM data with server-side PurePaths
-        /// * forward beacons to the cluster
-        /// * deliver the monitoring code
+        ///  * automatically inject the RUM JavaScript tag into each page delivered by this process group
+        ///  * provide the necessary info to correlate RUM data with server-side PurePaths
+        ///  * forward beacons to the cluster
+        ///  * deliver the monitoring code
         /// </summary>
         [Input("enable")]
         public Input<bool>? Enable { get; set; }
 
         /// <summary>
-        /// The scope of this setting - PROCESS_GROUP-XXXXXXXXXXXXXXXX
+        /// The scope of this settings. If the settings should cover the whole environment, just don't specify any scope.
         /// </summary>
         [Input("processGroupId")]
         public Input<string>? ProcessGroupId { get; set; }

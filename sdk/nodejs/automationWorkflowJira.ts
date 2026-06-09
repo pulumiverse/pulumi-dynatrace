@@ -84,7 +84,7 @@ export class AutomationWorkflowJira extends pulumi.CustomResource {
      */
     declare public readonly token: pulumi.Output<string | undefined>;
     /**
-     * Possible Values: `Basic`, `Cloud_token`, `Pat`
+     * Type of authentication method that should be used. Possible values: `basic`, `cloud-token`, `pat`
      */
     declare public readonly type: pulumi.Output<string>;
     /**
@@ -162,7 +162,7 @@ export interface AutomationWorkflowJiraState {
      */
     token?: pulumi.Input<string | undefined>;
     /**
-     * Possible Values: `Basic`, `Cloud_token`, `Pat`
+     * Type of authentication method that should be used. Possible values: `basic`, `cloud-token`, `pat`
      */
     type?: pulumi.Input<string | undefined>;
     /**
@@ -198,7 +198,7 @@ export interface AutomationWorkflowJiraArgs {
      */
     token?: pulumi.Input<string | undefined>;
     /**
-     * Possible Values: `Basic`, `Cloud_token`, `Pat`
+     * Type of authentication method that should be used. Possible values: `basic`, `cloud-token`, `pat`
      */
     type: pulumi.Input<string>;
     /**

@@ -20,7 +20,7 @@ namespace Pulumiverse.Dynatrace.Inputs
         public Input<bool> ComplyWithDoNotTrack { get; set; } = null!;
 
         /// <summary>
-        /// Possible Values: `Anonymous`, `Disable_rum`
+        /// Possible values: `Anonymous`, `disable-rum`
         /// </summary>
         [Input("doNotTrack")]
         public Input<string>? DoNotTrack { get; set; }

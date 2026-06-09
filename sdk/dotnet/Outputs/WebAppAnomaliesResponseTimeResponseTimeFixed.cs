@@ -27,7 +27,7 @@ namespace Pulumiverse.Dynatrace.Outputs
         /// </summary>
         public readonly Outputs.WebAppAnomaliesResponseTimeResponseTimeFixedResponseTimeSlowest ResponseTimeSlowest;
         /// <summary>
-        /// Possible Values: `Medium`, `High`, `Low`
+        /// Possible values: `High`, `Low`, `Medium`
         /// </summary>
         public readonly string Sensitivity;
 

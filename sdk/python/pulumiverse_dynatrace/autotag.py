@@ -209,7 +209,7 @@ class Autotag(pulumi.CustomResource):
                  unknowns: pulumi.Input[Optional[_builtins.str]] = None,
                  __props__=None):
         """
-        !> This resource API endpoint has been deprecated, please use AutotagV2 instead.
+        > This resource API endpoint has been deprecated, please use AutotagV2 instead.
 
         > This resource requires the API token scopes **Read configuration** (`ReadConfig`) and **Write configuration** (`WriteConfig`)
 
@@ -241,7 +241,7 @@ class Autotag(pulumi.CustomResource):
                  args: Optional[AutotagArgs] = None,
                  opts: Optional[pulumi.ResourceOptions] = None):
         """
-        !> This resource API endpoint has been deprecated, please use AutotagV2 instead.
+        > This resource API endpoint has been deprecated, please use AutotagV2 instead.
 
         > This resource requires the API token scopes **Read configuration** (`ReadConfig`) and **Write configuration** (`WriteConfig`)
 

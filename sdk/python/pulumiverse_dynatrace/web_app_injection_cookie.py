@@ -27,7 +27,7 @@ class WebAppInjectionCookieArgs:
         The set of arguments for constructing a WebAppInjectionCookie resource.
 
         :param pulumi.Input[_builtins.str] application_id: The scope of this settings. If the settings should cover the whole environment, just don't specify any scope.
-        :param pulumi.Input[_builtins.str] same_site_cookie_attribute: Possible Values: `LAX`, `NONE`, `NOTSET`, `STRICT`
+        :param pulumi.Input[_builtins.str] same_site_cookie_attribute: Define if your cookie should be restricted to a first-party or same-site context. Learn more about [SameSite cookies and available values](https://dt-url.net/yds1p8u). Possible values: `LAX`, `NONE`, `NOTSET`, `STRICT`
         :param pulumi.Input[_builtins.bool] use_secure_cookie_attribute: If your application is only accessible via SSL, you can add the Secure attribute to all cookies set by Dynatrace. This setting prevents the display of warnings from PCI-compliance security scanners. Be aware that with this setting enabled Dynatrace correlation of user actions with server-side web requests is only possible over SSL connections.
         :param pulumi.Input[_builtins.str] cookie_placement_domain: Specify an alternative domain for cookies set by Dynatrace. Keep in mind that your browser may not allow placement of cookies on certain domains (for example, top-level domains). Before typing a domain name here, confirm that the domain will accept cookies from your browser. For details, see the list of [forbidden top-level domains](https://dt-url.net/9n6b0pfz).
         """
@@ -53,7 +53,7 @@ class WebAppInjectionCookieArgs:
     @pulumi.getter(name="sameSiteCookieAttribute")
     def same_site_cookie_attribute(self) -> pulumi.Input[_builtins.str]:
         """
-        Possible Values: `LAX`, `NONE`, `NOTSET`, `STRICT`
+        Define if your cookie should be restricted to a first-party or same-site context. Learn more about [SameSite cookies and available values](https://dt-url.net/yds1p8u). Possible values: `LAX`, `NONE`, `NOTSET`, `STRICT`
         """
         return pulumi.get(self, "same_site_cookie_attribute")
 
@@ -98,7 +98,7 @@ class _WebAppInjectionCookieState:
 
         :param pulumi.Input[_builtins.str] application_id: The scope of this settings. If the settings should cover the whole environment, just don't specify any scope.
         :param pulumi.Input[_builtins.str] cookie_placement_domain: Specify an alternative domain for cookies set by Dynatrace. Keep in mind that your browser may not allow placement of cookies on certain domains (for example, top-level domains). Before typing a domain name here, confirm that the domain will accept cookies from your browser. For details, see the list of [forbidden top-level domains](https://dt-url.net/9n6b0pfz).
-        :param pulumi.Input[_builtins.str] same_site_cookie_attribute: Possible Values: `LAX`, `NONE`, `NOTSET`, `STRICT`
+        :param pulumi.Input[_builtins.str] same_site_cookie_attribute: Define if your cookie should be restricted to a first-party or same-site context. Learn more about [SameSite cookies and available values](https://dt-url.net/yds1p8u). Possible values: `LAX`, `NONE`, `NOTSET`, `STRICT`
         :param pulumi.Input[_builtins.bool] use_secure_cookie_attribute: If your application is only accessible via SSL, you can add the Secure attribute to all cookies set by Dynatrace. This setting prevents the display of warnings from PCI-compliance security scanners. Be aware that with this setting enabled Dynatrace correlation of user actions with server-side web requests is only possible over SSL connections.
         """
         if application_id is not None:
@@ -138,7 +138,7 @@ class _WebAppInjectionCookieState:
     @pulumi.getter(name="sameSiteCookieAttribute")
     def same_site_cookie_attribute(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
-        Possible Values: `LAX`, `NONE`, `NOTSET`, `STRICT`
+        Define if your cookie should be restricted to a first-party or same-site context. Learn more about [SameSite cookies and available values](https://dt-url.net/yds1p8u). Possible values: `LAX`, `NONE`, `NOTSET`, `STRICT`
         """
         return pulumi.get(self, "same_site_cookie_attribute")
 
@@ -190,7 +190,7 @@ class WebAppInjectionCookie(pulumi.CustomResource):
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[_builtins.str] application_id: The scope of this settings. If the settings should cover the whole environment, just don't specify any scope.
         :param pulumi.Input[_builtins.str] cookie_placement_domain: Specify an alternative domain for cookies set by Dynatrace. Keep in mind that your browser may not allow placement of cookies on certain domains (for example, top-level domains). Before typing a domain name here, confirm that the domain will accept cookies from your browser. For details, see the list of [forbidden top-level domains](https://dt-url.net/9n6b0pfz).
-        :param pulumi.Input[_builtins.str] same_site_cookie_attribute: Possible Values: `LAX`, `NONE`, `NOTSET`, `STRICT`
+        :param pulumi.Input[_builtins.str] same_site_cookie_attribute: Define if your cookie should be restricted to a first-party or same-site context. Learn more about [SameSite cookies and available values](https://dt-url.net/yds1p8u). Possible values: `LAX`, `NONE`, `NOTSET`, `STRICT`
         :param pulumi.Input[_builtins.bool] use_secure_cookie_attribute: If your application is only accessible via SSL, you can add the Secure attribute to all cookies set by Dynatrace. This setting prevents the display of warnings from PCI-compliance security scanners. Be aware that with this setting enabled Dynatrace correlation of user actions with server-side web requests is only possible over SSL connections.
         """
         ...
@@ -276,7 +276,7 @@ class WebAppInjectionCookie(pulumi.CustomResource):
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[_builtins.str] application_id: The scope of this settings. If the settings should cover the whole environment, just don't specify any scope.
         :param pulumi.Input[_builtins.str] cookie_placement_domain: Specify an alternative domain for cookies set by Dynatrace. Keep in mind that your browser may not allow placement of cookies on certain domains (for example, top-level domains). Before typing a domain name here, confirm that the domain will accept cookies from your browser. For details, see the list of [forbidden top-level domains](https://dt-url.net/9n6b0pfz).
-        :param pulumi.Input[_builtins.str] same_site_cookie_attribute: Possible Values: `LAX`, `NONE`, `NOTSET`, `STRICT`
+        :param pulumi.Input[_builtins.str] same_site_cookie_attribute: Define if your cookie should be restricted to a first-party or same-site context. Learn more about [SameSite cookies and available values](https://dt-url.net/yds1p8u). Possible values: `LAX`, `NONE`, `NOTSET`, `STRICT`
         :param pulumi.Input[_builtins.bool] use_secure_cookie_attribute: If your application is only accessible via SSL, you can add the Secure attribute to all cookies set by Dynatrace. This setting prevents the display of warnings from PCI-compliance security scanners. Be aware that with this setting enabled Dynatrace correlation of user actions with server-side web requests is only possible over SSL connections.
         """
         opts = pulumi.ResourceOptions.merge(opts, pulumi.ResourceOptions(id=id))
@@ -309,7 +309,7 @@ class WebAppInjectionCookie(pulumi.CustomResource):
     @pulumi.getter(name="sameSiteCookieAttribute")
     def same_site_cookie_attribute(self) -> pulumi.Output[_builtins.str]:
         """
-        Possible Values: `LAX`, `NONE`, `NOTSET`, `STRICT`
+        Define if your cookie should be restricted to a first-party or same-site context. Learn more about [SameSite cookies and available values](https://dt-url.net/yds1p8u). Possible values: `LAX`, `NONE`, `NOTSET`, `STRICT`
         """
         return pulumi.get(self, "same_site_cookie_attribute")
 

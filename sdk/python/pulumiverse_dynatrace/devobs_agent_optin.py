@@ -125,12 +125,12 @@ class DevobsAgentOptin(pulumi.CustomResource):
 
         ```python
         import pulumi
+        import pulumi_dynatrace as dynatrace
         import pulumiverse_dynatrace as dynatrace
 
-        config = pulumi.Config()
-        proces_s__grou_p__id = config.require("PROCESS_GROUP_ID")
+        process_group = dynatrace.get_entity(entity_selector="type(\\"PROCESS_GROUP\\")")
         optin = dynatrace.DevobsAgentOptin("optin",
-            scope=proces_s__grou_p__id,
+            scope=process_group.id,
             enabled=False)
         ```
 
@@ -165,12 +165,12 @@ class DevobsAgentOptin(pulumi.CustomResource):
 
         ```python
         import pulumi
+        import pulumi_dynatrace as dynatrace
         import pulumiverse_dynatrace as dynatrace
 
-        config = pulumi.Config()
-        proces_s__grou_p__id = config.require("PROCESS_GROUP_ID")
+        process_group = dynatrace.get_entity(entity_selector="type(\\"PROCESS_GROUP\\")")
         optin = dynatrace.DevobsAgentOptin("optin",
-            scope=proces_s__grou_p__id,
+            scope=process_group.id,
             enabled=False)
         ```
 

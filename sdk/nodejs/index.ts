@@ -1955,6 +1955,11 @@ export type ProcessGroupSimpleDetection = import("./processGroupSimpleDetection"
 export const ProcessGroupSimpleDetection: typeof import("./processGroupSimpleDetection").ProcessGroupSimpleDetection = null as any;
 utilities.lazyLoad(exports, ["ProcessGroupSimpleDetection"], () => require("./processGroupSimpleDetection"));
 
+export { ProcessGroupingRulesArgs, ProcessGroupingRulesState } from "./processGroupingRules";
+export type ProcessGroupingRules = import("./processGroupingRules").ProcessGroupingRules;
+export const ProcessGroupingRules: typeof import("./processGroupingRules").ProcessGroupingRules = null as any;
+utilities.lazyLoad(exports, ["ProcessGroupingRules"], () => require("./processGroupingRules"));
+
 export { ProcessMonitoringArgs, ProcessMonitoringState } from "./processMonitoring";
 export type ProcessMonitoring = import("./processMonitoring").ProcessMonitoring;
 export const ProcessMonitoring: typeof import("./processMonitoring").ProcessMonitoring = null as any;
@@ -3128,6 +3133,8 @@ const _module = {
                 return new ProcessGroupRum(name, <any>undefined, { urn })
             case "dynatrace:index/processGroupSimpleDetection:ProcessGroupSimpleDetection":
                 return new ProcessGroupSimpleDetection(name, <any>undefined, { urn })
+            case "dynatrace:index/processGroupingRules:ProcessGroupingRules":
+                return new ProcessGroupingRules(name, <any>undefined, { urn })
             case "dynatrace:index/processMonitoring:ProcessMonitoring":
                 return new ProcessMonitoring(name, <any>undefined, { urn })
             case "dynatrace:index/processMonitoringRule:ProcessMonitoringRule":
@@ -3662,6 +3669,7 @@ pulumi.runtime.registerResourceModule("dynatrace", "index/processGroupDetectionF
 pulumi.runtime.registerResourceModule("dynatrace", "index/processGroupMonitoring", _module)
 pulumi.runtime.registerResourceModule("dynatrace", "index/processGroupRum", _module)
 pulumi.runtime.registerResourceModule("dynatrace", "index/processGroupSimpleDetection", _module)
+pulumi.runtime.registerResourceModule("dynatrace", "index/processGroupingRules", _module)
 pulumi.runtime.registerResourceModule("dynatrace", "index/processMonitoring", _module)
 pulumi.runtime.registerResourceModule("dynatrace", "index/processMonitoringRule", _module)
 pulumi.runtime.registerResourceModule("dynatrace", "index/processVisibility", _module)

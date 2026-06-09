@@ -106,7 +106,7 @@ class LogGrail(pulumi.CustomResource):
                  parallel_ingest_period: pulumi.Input[Optional[_builtins.str]] = None,
                  __props__=None):
         """
-        !> This resource API endpoint has been deprecated since it is only meant to be used for the initial Logs powered by Grail activation.
+        > This resource API endpoint has been deprecated since it is only meant to be used for the initial Logs powered by Grail activation.
 
         > This resource requires the API token scopes **Read settings** (`settings.read`) and **Write settings** (`settings.write`)
 
@@ -135,7 +135,7 @@ class LogGrail(pulumi.CustomResource):
                  args: LogGrailArgs,
                  opts: Optional[pulumi.ResourceOptions] = None):
         """
-        !> This resource API endpoint has been deprecated since it is only meant to be used for the initial Logs powered by Grail activation.
+        > This resource API endpoint has been deprecated since it is only meant to be used for the initial Logs powered by Grail activation.
 
         > This resource requires the API token scopes **Read settings** (`settings.read`) and **Write settings** (`settings.write`)
 

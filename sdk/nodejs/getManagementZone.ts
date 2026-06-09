@@ -9,7 +9,7 @@ import * as utilities from "./utilities";
  *
  * > This data source requires the API token scope **Read configuration** (`ReadConfig`)
  *
- * !> This data source is utilizing an older API endpoint, please use dynatrace.ManagementZoneV2 instead.
+ * > This data source is utilizing an older API endpoint, please use dynatrace.ManagementZoneV2 instead.
  *
  * - `name` queries for all management zones with the specified name
  */
@@ -44,7 +44,7 @@ export interface GetManagementZoneResult {
  *
  * > This data source requires the API token scope **Read configuration** (`ReadConfig`)
  *
- * !> This data source is utilizing an older API endpoint, please use dynatrace.ManagementZoneV2 instead.
+ * > This data source is utilizing an older API endpoint, please use dynatrace.ManagementZoneV2 instead.
  *
  * - `name` queries for all management zones with the specified name
  */

@@ -35,86 +35,20 @@ import (
 //
 //	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 //	"github.com/pulumiverse/pulumi-dynatrace/sdk/go/dynatrace"
-//	"github.com/pulumiverse/pulumi-time/sdk/go/time"
 //
 // )
 //
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
-//			location, err := dynatrace.NewSyntheticLocation(ctx, "location", &dynatrace.SyntheticLocationArgs{
-//				Name:                             pulumi.String("#name#"),
-//				City:                             pulumi.String("San Francisco de Asis"),
-//				CountryCode:                      pulumi.String("VE"),
-//				RegionCode:                       pulumi.String("04"),
-//				DeploymentType:                   pulumi.String("STANDARD"),
-//				Latitude:                         pulumi.Float64(10.0756),
-//				LocationNodeOutageDelayInMinutes: pulumi.Int(3),
-//				Longitude:                        pulumi.Float64(-67.5442),
-//			})
+//			location, err := dynatrace.GetSyntheticLocation(ctx, &dynatrace.LookupSyntheticLocationArgs{
+//				Name: pulumi.StringRef("Location"),
+//			}, nil)
 //			if err != nil {
 //				return err
 //			}
-//			application, err := dynatrace.NewWebApplication(ctx, "application", &dynatrace.WebApplicationArgs{
-//				Name:                             pulumi.String("#name#"),
-//				Type:                             pulumi.String("AUTO_INJECTED"),
-//				CostControlUserSessionPercentage: pulumi.Int(100),
-//				LoadActionKeyPerformanceMetric:   pulumi.String("VISUALLY_COMPLETE"),
-//				RealUserMonitoringEnabled:        pulumi.Bool(true),
-//				XhrActionKeyPerformanceMetric:    pulumi.String("VISUALLY_COMPLETE"),
-//				CustomActionApdexSettings: &dynatrace.WebApplicationCustomActionApdexSettingsArgs{
-//					FrustratingFallbackThreshold: pulumi.Int(12000),
-//					FrustratingThreshold:         pulumi.Int(12000),
-//					ToleratedFallbackThreshold:   pulumi.Int(3000),
-//					ToleratedThreshold:           pulumi.Int(3000),
-//				},
-//				LoadActionApdexSettings: &dynatrace.WebApplicationLoadActionApdexSettingsArgs{
-//					FrustratingFallbackThreshold: pulumi.Int(12000),
-//					FrustratingThreshold:         pulumi.Int(12000),
-//					ToleratedFallbackThreshold:   pulumi.Int(3000),
-//					ToleratedThreshold:           pulumi.Int(3000),
-//				},
-//				MonitoringSettings: &dynatrace.WebApplicationMonitoringSettingsArgs{
-//					AddCrossOriginAnonymousAttribute: pulumi.Bool(true),
-//					CacheControlHeaderOptimizations:  pulumi.Bool(true),
-//					InjectionMode:                    pulumi.String("JAVASCRIPT_TAG"),
-//					ScriptTagCacheDurationInHours:    pulumi.Int(1),
-//					AdvancedJavascriptTagSettings: &dynatrace.WebApplicationMonitoringSettingsAdvancedJavascriptTagSettingsArgs{
-//						MaxActionNameLength: pulumi.Int(100),
-//						MaxErrorsToCapture:  pulumi.Int(10),
-//						AdditionalEventHandlers: &dynatrace.WebApplicationMonitoringSettingsAdvancedJavascriptTagSettingsAdditionalEventHandlersArgs{
-//							MaxDomNodes: pulumi.Int(5000),
-//						},
-//					},
-//					ContentCapture: &dynatrace.WebApplicationMonitoringSettingsContentCaptureArgs{
-//						ResourceTimingSettings: &dynatrace.WebApplicationMonitoringSettingsContentCaptureResourceTimingSettingsArgs{
-//							InstrumentationDelay:  pulumi.Int(53),
-//							NonW3cResourceTimings: pulumi.Bool(true),
-//							W3cResourceTimings:    pulumi.Bool(true),
-//						},
-//						TimeoutSettings: &dynatrace.WebApplicationMonitoringSettingsContentCaptureTimeoutSettingsArgs{
-//							TemporaryActionLimit:        pulumi.Int(3),
-//							TemporaryActionTotalTimeout: pulumi.Int(100),
-//							TimedActionSupport:          pulumi.Bool(true),
-//						},
-//					},
-//				},
-//				UserActionNamingSettings: &dynatrace.WebApplicationUserActionNamingSettingsArgs{},
-//				WaterfallSettings: &dynatrace.WebApplicationWaterfallSettingsArgs{
-//					ResourceBrowserCachingThreshold:          pulumi.Int(50),
-//					ResourcesThreshold:                       pulumi.Int(100000),
-//					SlowCndResourcesThreshold:                pulumi.Int(200000),
-//					SlowFirstPartyResourcesThreshold:         pulumi.Int(200000),
-//					SlowThirdPartyResourcesThreshold:         pulumi.Int(200000),
-//					SpeedIndexVisuallyCompleteRatioThreshold: pulumi.Int(50),
-//					UncompressedResourcesThreshold:           pulumi.Int(860),
-//				},
-//				XhrActionApdexSettings: &dynatrace.WebApplicationXhrActionApdexSettingsArgs{
-//					FrustratingFallbackThreshold: pulumi.Int(12000),
-//					FrustratingThreshold:         pulumi.Int(12000),
-//					ToleratedFallbackThreshold:   pulumi.Int(3000),
-//					ToleratedThreshold:           pulumi.Int(3000),
-//				},
-//			})
+//			webApplication, err := dynatrace.GetApplication(ctx, &dynatrace.GetApplicationArgs{
+//				Name: "Web Application",
+//			}, nil)
 //			if err != nil {
 //				return err
 //			}
@@ -130,24 +64,14 @@ import (
 //			if err != nil {
 //				return err
 //			}
-//			wait5Seconds, err := time.NewSleep(ctx, "wait_5_seconds", &time.SleepArgs{
-//				CreateDuration: pulumi.String("5s"),
-//			}, pulumi.DependsOn([]pulumi.Resource{
-//				location,
-//				application,
-//				credentialsVault,
-//			}))
-//			if err != nil {
-//				return err
-//			}
 //			_, err = dynatrace.NewBrowserMonitor(ctx, "monitor", &dynatrace.BrowserMonitorArgs{
 //				Name:      pulumi.String("#name#"),
 //				Frequency: pulumi.Int(15),
 //				Locations: pulumi.StringArray{
-//					location.ID(),
+//					pulumi.String(pulumi.String(location.Id)),
 //				},
 //				ManuallyAssignedApps: pulumi.StringArray{
-//					application.ID(),
+//					pulumi.String(pulumi.String(webApplication.Id)),
 //				},
 //				AnomalyDetection: &dynatrace.BrowserMonitorAnomalyDetectionArgs{
 //					LoadingTimeThresholds: dynatrace.BrowserMonitorAnomalyDetectionLoadingTimeThresholdArray{
@@ -291,9 +215,7 @@ import (
 //						},
 //					},
 //				},
-//			}, pulumi.DependsOn([]pulumi.Resource{
-//				wait5Seconds,
-//			}))
+//			})
 //			if err != nil {
 //				return err
 //			}

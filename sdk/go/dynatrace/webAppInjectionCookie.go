@@ -32,7 +32,7 @@ type WebAppInjectionCookie struct {
 	ApplicationId pulumi.StringOutput `pulumi:"applicationId"`
 	// Specify an alternative domain for cookies set by Dynatrace. Keep in mind that your browser may not allow placement of cookies on certain domains (for example, top-level domains). Before typing a domain name here, confirm that the domain will accept cookies from your browser. For details, see the list of [forbidden top-level domains](https://dt-url.net/9n6b0pfz).
 	CookiePlacementDomain pulumi.StringPtrOutput `pulumi:"cookiePlacementDomain"`
-	// Possible Values: `LAX`, `NONE`, `NOTSET`, `STRICT`
+	// Define if your cookie should be restricted to a first-party or same-site context. Learn more about [SameSite cookies and available values](https://dt-url.net/yds1p8u). Possible values: `LAX`, `NONE`, `NOTSET`, `STRICT`
 	SameSiteCookieAttribute pulumi.StringOutput `pulumi:"sameSiteCookieAttribute"`
 	// If your application is only accessible via SSL, you can add the Secure attribute to all cookies set by Dynatrace. This setting prevents the display of warnings from PCI-compliance security scanners. Be aware that with this setting enabled Dynatrace correlation of user actions with server-side web requests is only possible over SSL connections.
 	UseSecureCookieAttribute pulumi.BoolOutput `pulumi:"useSecureCookieAttribute"`
@@ -81,7 +81,7 @@ type webAppInjectionCookieState struct {
 	ApplicationId *string `pulumi:"applicationId"`
 	// Specify an alternative domain for cookies set by Dynatrace. Keep in mind that your browser may not allow placement of cookies on certain domains (for example, top-level domains). Before typing a domain name here, confirm that the domain will accept cookies from your browser. For details, see the list of [forbidden top-level domains](https://dt-url.net/9n6b0pfz).
 	CookiePlacementDomain *string `pulumi:"cookiePlacementDomain"`
-	// Possible Values: `LAX`, `NONE`, `NOTSET`, `STRICT`
+	// Define if your cookie should be restricted to a first-party or same-site context. Learn more about [SameSite cookies and available values](https://dt-url.net/yds1p8u). Possible values: `LAX`, `NONE`, `NOTSET`, `STRICT`
 	SameSiteCookieAttribute *string `pulumi:"sameSiteCookieAttribute"`
 	// If your application is only accessible via SSL, you can add the Secure attribute to all cookies set by Dynatrace. This setting prevents the display of warnings from PCI-compliance security scanners. Be aware that with this setting enabled Dynatrace correlation of user actions with server-side web requests is only possible over SSL connections.
 	UseSecureCookieAttribute *bool `pulumi:"useSecureCookieAttribute"`
@@ -92,7 +92,7 @@ type WebAppInjectionCookieState struct {
 	ApplicationId pulumi.StringPtrInput
 	// Specify an alternative domain for cookies set by Dynatrace. Keep in mind that your browser may not allow placement of cookies on certain domains (for example, top-level domains). Before typing a domain name here, confirm that the domain will accept cookies from your browser. For details, see the list of [forbidden top-level domains](https://dt-url.net/9n6b0pfz).
 	CookiePlacementDomain pulumi.StringPtrInput
-	// Possible Values: `LAX`, `NONE`, `NOTSET`, `STRICT`
+	// Define if your cookie should be restricted to a first-party or same-site context. Learn more about [SameSite cookies and available values](https://dt-url.net/yds1p8u). Possible values: `LAX`, `NONE`, `NOTSET`, `STRICT`
 	SameSiteCookieAttribute pulumi.StringPtrInput
 	// If your application is only accessible via SSL, you can add the Secure attribute to all cookies set by Dynatrace. This setting prevents the display of warnings from PCI-compliance security scanners. Be aware that with this setting enabled Dynatrace correlation of user actions with server-side web requests is only possible over SSL connections.
 	UseSecureCookieAttribute pulumi.BoolPtrInput
@@ -107,7 +107,7 @@ type webAppInjectionCookieArgs struct {
 	ApplicationId string `pulumi:"applicationId"`
 	// Specify an alternative domain for cookies set by Dynatrace. Keep in mind that your browser may not allow placement of cookies on certain domains (for example, top-level domains). Before typing a domain name here, confirm that the domain will accept cookies from your browser. For details, see the list of [forbidden top-level domains](https://dt-url.net/9n6b0pfz).
 	CookiePlacementDomain *string `pulumi:"cookiePlacementDomain"`
-	// Possible Values: `LAX`, `NONE`, `NOTSET`, `STRICT`
+	// Define if your cookie should be restricted to a first-party or same-site context. Learn more about [SameSite cookies and available values](https://dt-url.net/yds1p8u). Possible values: `LAX`, `NONE`, `NOTSET`, `STRICT`
 	SameSiteCookieAttribute string `pulumi:"sameSiteCookieAttribute"`
 	// If your application is only accessible via SSL, you can add the Secure attribute to all cookies set by Dynatrace. This setting prevents the display of warnings from PCI-compliance security scanners. Be aware that with this setting enabled Dynatrace correlation of user actions with server-side web requests is only possible over SSL connections.
 	UseSecureCookieAttribute bool `pulumi:"useSecureCookieAttribute"`
@@ -119,7 +119,7 @@ type WebAppInjectionCookieArgs struct {
 	ApplicationId pulumi.StringInput
 	// Specify an alternative domain for cookies set by Dynatrace. Keep in mind that your browser may not allow placement of cookies on certain domains (for example, top-level domains). Before typing a domain name here, confirm that the domain will accept cookies from your browser. For details, see the list of [forbidden top-level domains](https://dt-url.net/9n6b0pfz).
 	CookiePlacementDomain pulumi.StringPtrInput
-	// Possible Values: `LAX`, `NONE`, `NOTSET`, `STRICT`
+	// Define if your cookie should be restricted to a first-party or same-site context. Learn more about [SameSite cookies and available values](https://dt-url.net/yds1p8u). Possible values: `LAX`, `NONE`, `NOTSET`, `STRICT`
 	SameSiteCookieAttribute pulumi.StringInput
 	// If your application is only accessible via SSL, you can add the Secure attribute to all cookies set by Dynatrace. This setting prevents the display of warnings from PCI-compliance security scanners. Be aware that with this setting enabled Dynatrace correlation of user actions with server-side web requests is only possible over SSL connections.
 	UseSecureCookieAttribute pulumi.BoolInput
@@ -222,7 +222,7 @@ func (o WebAppInjectionCookieOutput) CookiePlacementDomain() pulumi.StringPtrOut
 	return o.ApplyT(func(v *WebAppInjectionCookie) pulumi.StringPtrOutput { return v.CookiePlacementDomain }).(pulumi.StringPtrOutput)
 }
 
-// Possible Values: `LAX`, `NONE`, `NOTSET`, `STRICT`
+// Define if your cookie should be restricted to a first-party or same-site context. Learn more about [SameSite cookies and available values](https://dt-url.net/yds1p8u). Possible values: `LAX`, `NONE`, `NOTSET`, `STRICT`
 func (o WebAppInjectionCookieOutput) SameSiteCookieAttribute() pulumi.StringOutput {
 	return o.ApplyT(func(v *WebAppInjectionCookie) pulumi.StringOutput { return v.SameSiteCookieAttribute }).(pulumi.StringOutput)
 }

@@ -29,13 +29,13 @@ namespace Pulumiverse.Dynatrace
     public partial class FailureDetectionRules : global::Pulumi.CustomResource
     {
         /// <summary>
-        /// Conditions
+        /// A list of conditions for this rule. All conditions must be fulfilled for the rule to match a service.
         /// </summary>
         [Output("conditions")]
         public Output<Outputs.FailureDetectionRulesConditions> Conditions { get; private set; } = null!;
 
         /// <summary>
-        /// Rule description
+        /// A short description of this failure detection rule.
         /// </summary>
         [Output("description")]
         public Output<string?> Description { get; private set; } = null!;
@@ -53,13 +53,13 @@ namespace Pulumiverse.Dynatrace
         public Output<string> InsertAfter { get; private set; } = null!;
 
         /// <summary>
-        /// Rule name
+        /// The display name of this failure detection rule.
         /// </summary>
         [Output("name")]
         public Output<string> Name { get; private set; } = null!;
 
         /// <summary>
-        /// Failure detection parameters
+        /// The ID of the failure detection parameter set to apply when this rule matches. The parameter set must already exist.
         /// </summary>
         [Output("parameterId")]
         public Output<string> ParameterId { get; private set; } = null!;
@@ -112,13 +112,13 @@ namespace Pulumiverse.Dynatrace
     public sealed class FailureDetectionRulesArgs : global::Pulumi.ResourceArgs
     {
         /// <summary>
-        /// Conditions
+        /// A list of conditions for this rule. All conditions must be fulfilled for the rule to match a service.
         /// </summary>
         [Input("conditions", required: true)]
         public Input<Inputs.FailureDetectionRulesConditionsArgs> Conditions { get; set; } = null!;
 
         /// <summary>
-        /// Rule description
+        /// A short description of this failure detection rule.
         /// </summary>
         [Input("description")]
         public Input<string>? Description { get; set; }
@@ -136,13 +136,13 @@ namespace Pulumiverse.Dynatrace
         public Input<string>? InsertAfter { get; set; }
 
         /// <summary>
-        /// Rule name
+        /// The display name of this failure detection rule.
         /// </summary>
         [Input("name")]
         public Input<string>? Name { get; set; }
 
         /// <summary>
-        /// Failure detection parameters
+        /// The ID of the failure detection parameter set to apply when this rule matches. The parameter set must already exist.
         /// </summary>
         [Input("parameterId", required: true)]
         public Input<string> ParameterId { get; set; } = null!;
@@ -156,13 +156,13 @@ namespace Pulumiverse.Dynatrace
     public sealed class FailureDetectionRulesState : global::Pulumi.ResourceArgs
     {
         /// <summary>
-        /// Conditions
+        /// A list of conditions for this rule. All conditions must be fulfilled for the rule to match a service.
         /// </summary>
         [Input("conditions")]
         public Input<Inputs.FailureDetectionRulesConditionsGetArgs>? Conditions { get; set; }
 
         /// <summary>
-        /// Rule description
+        /// A short description of this failure detection rule.
         /// </summary>
         [Input("description")]
         public Input<string>? Description { get; set; }
@@ -180,13 +180,13 @@ namespace Pulumiverse.Dynatrace
         public Input<string>? InsertAfter { get; set; }
 
         /// <summary>
-        /// Rule name
+        /// The display name of this failure detection rule.
         /// </summary>
         [Input("name")]
         public Input<string>? Name { get; set; }
 
         /// <summary>
-        /// Failure detection parameters
+        /// The ID of the failure detection parameter set to apply when this rule matches. The parameter set must already exist.
         /// </summary>
         [Input("parameterId")]
         public Input<string>? ParameterId { get; set; }

@@ -24,6 +24,35 @@ namespace Pulumiverse.Dynatrace
     /// - `terraform-provider-dynatrace -export dynatrace.KeyUserAction` downloads all existing Key User Actions
     /// 
     /// The full documentation of the export feature is available [here](https://dt-url.net/h203qmc).
+    /// 
+    /// ## Resource Example Usage
+    /// 
+    /// The following example showcases how to manage Key User Actions separately from Web Applications using a dedicated resource.
+    /// While it is still possible to embed `KeyUserActions` into the resource `dynatrace.WebApplication`, doing so is discouraged.
+    /// 
+    /// ```csharp
+    /// using System.Collections.Generic;
+    /// using System.Linq;
+    /// using Pulumi;
+    /// using Dynatrace = Pulumiverse.Dynatrace;
+    /// 
+    /// return await Deployment.RunAsync(() =&gt; 
+    /// {
+    ///     var webApplication = Dynatrace.GetApplication.Invoke(new()
+    ///     {
+    ///         Name = "Web Application",
+    ///     });
+    /// 
+    ///     var acc = new Dynatrace.KeyUserAction("acc", new()
+    ///     {
+    ///         ApplicationId = webApplication.Apply(getApplicationResult =&gt; getApplicationResult.Id),
+    ///         Domain = "120.0.0.1",
+    ///         Name = "Loading of page /custom",
+    ///         Type = "Load",
+    ///     });
+    /// 
+    /// });
+    /// ```
     /// </summary>
     [DynatraceResourceType("dynatrace:index/keyUserAction:KeyUserAction")]
     public partial class KeyUserAction : global::Pulumi.CustomResource

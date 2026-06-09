@@ -181,18 +181,22 @@ namespace Pulumiverse.Dynatrace
     ///                                 {
     ///                                     new Dynatrace.Inputs.OpenpipelineV2BizeventsPipelinesMetricExtractionProcessorsProcessorCounterMetricDimensionsDimensionArgs
     ///                                     {
+    ///                                         ExtractionType = "field",
     ///                                         SourceFieldName = "dt.cost.costcenter",
     ///                                     },
     ///                                     new Dynatrace.Inputs.OpenpipelineV2BizeventsPipelinesMetricExtractionProcessorsProcessorCounterMetricDimensionsDimensionArgs
     ///                                     {
+    ///                                         ExtractionType = "field",
     ///                                         SourceFieldName = "dt.cost.product",
     ///                                     },
     ///                                     new Dynatrace.Inputs.OpenpipelineV2BizeventsPipelinesMetricExtractionProcessorsProcessorCounterMetricDimensionsDimensionArgs
     ///                                     {
+    ///                                         ExtractionType = "field",
     ///                                         SourceFieldName = "dt.security_context",
     ///                                     },
     ///                                     new Dynatrace.Inputs.OpenpipelineV2BizeventsPipelinesMetricExtractionProcessorsProcessorCounterMetricDimensionsDimensionArgs
     ///                                     {
+    ///                                         ExtractionType = "field",
     ///                                         SourceFieldName = "record.category",
     ///                                         DestinationFieldName = "warning_category",
     ///                                     },
@@ -218,18 +222,26 @@ namespace Pulumiverse.Dynatrace
     ///                                 {
     ///                                     new Dynatrace.Inputs.OpenpipelineV2BizeventsPipelinesMetricExtractionProcessorsProcessorValueMetricDimensionsDimensionArgs
     ///                                     {
+    ///                                         ExtractionType = "field",
+    ///                                         Strategy = "equals",
     ///                                         SourceFieldName = "dt.cost.costcenter",
     ///                                     },
     ///                                     new Dynatrace.Inputs.OpenpipelineV2BizeventsPipelinesMetricExtractionProcessorsProcessorValueMetricDimensionsDimensionArgs
     ///                                     {
+    ///                                         ExtractionType = "field",
+    ///                                         Strategy = "equals",
     ///                                         SourceFieldName = "dt.cost.product",
     ///                                     },
     ///                                     new Dynatrace.Inputs.OpenpipelineV2BizeventsPipelinesMetricExtractionProcessorsProcessorValueMetricDimensionsDimensionArgs
     ///                                     {
+    ///                                         ExtractionType = "field",
+    ///                                         Strategy = "equals",
     ///                                         SourceFieldName = "dt.security_context",
     ///                                     },
     ///                                     new Dynatrace.Inputs.OpenpipelineV2BizeventsPipelinesMetricExtractionProcessorsProcessorValueMetricDimensionsDimensionArgs
     ///                                     {
+    ///                                         ExtractionType = "field",
+    ///                                         Strategy = "equals",
     ///                                         SourceFieldName = "record.category",
     ///                                         DestinationFieldName = "warning_category",
     ///                                     },

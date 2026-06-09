@@ -64,8 +64,11 @@ import * as utilities from "./utilities";
  *         }],
  *     },
  * });
- * const waitForRequestAttribute = new time.Sleep("wait_for_request_attribute", {createDuration: "10s"}, {
- *     dependsOn: [attribute],
+ * const waitForCreation = new time.Sleep("wait_for_creation", {createDuration: "15s"}, {
+ *     dependsOn: [
+ *         attribute,
+ *         mzone,
+ *     ],
  * });
  * const metric = new dynatrace.CalculatedServiceMetric("metric", {
  *     name: "#name#",
@@ -93,7 +96,7 @@ import * as utilities from "./utilities";
  *         requestAttribute: attribute.name,
  *     },
  * }, {
- *     dependsOn: [waitForRequestAttribute],
+ *     dependsOn: [waitForCreation],
  * });
  * ```
  */

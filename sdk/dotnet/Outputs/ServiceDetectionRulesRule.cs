@@ -15,19 +15,19 @@ namespace Pulumiverse.Dynatrace.Outputs
     public sealed class ServiceDetectionRulesRule
     {
         /// <summary>
-        /// Define resource attributes that should not be part of the name but are required to detect the service, e.g. service.namespace or k8s.workload.kind.. Attributes specified here are required to apply the rule. If any of them is missing, the rule will not be applied and ruleset evaluation continues.
+        /// Add resource attribute keys (e.g. service.namespace or k8s.workload.kind) that also detect unique services but are not included in the displayed service name.. Attributes specified here are required to apply the rule. If any of them is missing, the rule will not be applied and ruleset evaluation continues.
         /// 
-        /// All attribute values contribute to the final service ID.
+        ///   All attribute values contribute to the final service ID.
         /// </summary>
         public readonly ImmutableArray<string> AdditionalRequiredAttributes;
         /// <summary>
         /// Limits the scope of the service detection rule using [DQL matcher](https://dt-url.net/l603wby) conditions on resource attributes.. A rule is applied only if the condition matches, otherwise the ruleset evaluation continues.
         /// 
-        /// If empty, the condition will always match.
+        ///   If empty, the condition will always match.
         /// </summary>
         public readonly string? Condition;
         /// <summary>
-        /// no documentation available
+        /// No documentation available
         /// </summary>
         public readonly string? Description;
         /// <summary>

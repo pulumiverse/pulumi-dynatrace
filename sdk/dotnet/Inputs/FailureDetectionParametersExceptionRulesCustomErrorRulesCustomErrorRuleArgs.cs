@@ -14,13 +14,13 @@ namespace Pulumiverse.Dynatrace.Inputs
     public sealed class FailureDetectionParametersExceptionRulesCustomErrorRulesCustomErrorRuleArgs : global::Pulumi.ResourceArgs
     {
         /// <summary>
-        /// Request attribute condition
+        /// The condition that determines whether the request attribute value indicates a failure.
         /// </summary>
         [Input("condition", required: true)]
         public Input<Inputs.FailureDetectionParametersExceptionRulesCustomErrorRulesCustomErrorRuleConditionArgs> Condition { get; set; } = null!;
 
         /// <summary>
-        /// Request attribute
+        /// The ID of the request attribute to check. The request attribute must already be defined.
         /// </summary>
         [Input("requestAttribute", required: true)]
         public Input<string> RequestAttribute { get; set; } = null!;

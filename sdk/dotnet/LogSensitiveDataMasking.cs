@@ -41,13 +41,13 @@ namespace Pulumiverse.Dynatrace
         public Output<string> InsertAfter { get; private set; } = null!;
 
         /// <summary>
-        /// no documentation available
+        /// No documentation available
         /// </summary>
         [Output("masking")]
         public Output<Outputs.LogSensitiveDataMaskingMasking> Masking { get; private set; } = null!;
 
         /// <summary>
-        /// no documentation available
+        /// No documentation available
         /// </summary>
         [Output("matchers")]
         public Output<Outputs.LogSensitiveDataMaskingMatchers?> Matchers { get; private set; } = null!;
@@ -124,13 +124,13 @@ namespace Pulumiverse.Dynatrace
         public Input<string>? InsertAfter { get; set; }
 
         /// <summary>
-        /// no documentation available
+        /// No documentation available
         /// </summary>
         [Input("masking", required: true)]
         public Input<Inputs.LogSensitiveDataMaskingMaskingArgs> Masking { get; set; } = null!;
 
         /// <summary>
-        /// no documentation available
+        /// No documentation available
         /// </summary>
         [Input("matchers")]
         public Input<Inputs.LogSensitiveDataMaskingMatchersArgs>? Matchers { get; set; }
@@ -168,13 +168,13 @@ namespace Pulumiverse.Dynatrace
         public Input<string>? InsertAfter { get; set; }
 
         /// <summary>
-        /// no documentation available
+        /// No documentation available
         /// </summary>
         [Input("masking")]
         public Input<Inputs.LogSensitiveDataMaskingMaskingGetArgs>? Masking { get; set; }
 
         /// <summary>
-        /// no documentation available
+        /// No documentation available
         /// </summary>
         [Input("matchers")]
         public Input<Inputs.LogSensitiveDataMaskingMatchersGetArgs>? Matchers { get; set; }

@@ -29,7 +29,7 @@ class AutomationWorkflowJiraArgs:
         """
         The set of arguments for constructing a AutomationWorkflowJira resource.
 
-        :param pulumi.Input[_builtins.str] type: Possible Values: `Basic`, `Cloud_token`, `Pat`
+        :param pulumi.Input[_builtins.str] type: Type of authentication method that should be used. Possible values: `basic`, `cloud-token`, `pat`
         :param pulumi.Input[_builtins.str] url: URL of the Jira server
         :param pulumi.Input[_builtins.str] insert_after: Because this resource allows for ordering you may specify the ID of the resource instance that comes before this instance regarding order. If not specified when creating the setting will be added to the end of the list. If not specified during update the order will remain untouched
         :param pulumi.Input[_builtins.str] name: The name of the Jira connection
@@ -57,7 +57,7 @@ class AutomationWorkflowJiraArgs:
     @pulumi.getter
     def type(self) -> pulumi.Input[_builtins.str]:
         """
-        Possible Values: `Basic`, `Cloud_token`, `Pat`
+        Type of authentication method that should be used. Possible values: `basic`, `cloud-token`, `pat`
         """
         return pulumi.get(self, "type")
 
@@ -156,7 +156,7 @@ class _AutomationWorkflowJiraState:
         :param pulumi.Input[_builtins.str] name: The name of the Jira connection
         :param pulumi.Input[_builtins.str] password: Password of the Jira user
         :param pulumi.Input[_builtins.str] token: Token for the selected authentication type
-        :param pulumi.Input[_builtins.str] type: Possible Values: `Basic`, `Cloud_token`, `Pat`
+        :param pulumi.Input[_builtins.str] type: Type of authentication method that should be used. Possible values: `basic`, `cloud-token`, `pat`
         :param pulumi.Input[_builtins.str] url: URL of the Jira server
         :param pulumi.Input[_builtins.str] user: Username or E-Mail address
         """
@@ -231,7 +231,7 @@ class _AutomationWorkflowJiraState:
     @pulumi.getter
     def type(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
-        Possible Values: `Basic`, `Cloud_token`, `Pat`
+        Type of authentication method that should be used. Possible values: `basic`, `cloud-token`, `pat`
         """
         return pulumi.get(self, "type")
 
@@ -318,7 +318,7 @@ class AutomationWorkflowJira(pulumi.CustomResource):
         :param pulumi.Input[_builtins.str] name: The name of the Jira connection
         :param pulumi.Input[_builtins.str] password: Password of the Jira user
         :param pulumi.Input[_builtins.str] token: Token for the selected authentication type
-        :param pulumi.Input[_builtins.str] type: Possible Values: `Basic`, `Cloud_token`, `Pat`
+        :param pulumi.Input[_builtins.str] type: Type of authentication method that should be used. Possible values: `basic`, `cloud-token`, `pat`
         :param pulumi.Input[_builtins.str] url: URL of the Jira server
         :param pulumi.Input[_builtins.str] user: Username or E-Mail address
         """
@@ -434,7 +434,7 @@ class AutomationWorkflowJira(pulumi.CustomResource):
         :param pulumi.Input[_builtins.str] name: The name of the Jira connection
         :param pulumi.Input[_builtins.str] password: Password of the Jira user
         :param pulumi.Input[_builtins.str] token: Token for the selected authentication type
-        :param pulumi.Input[_builtins.str] type: Possible Values: `Basic`, `Cloud_token`, `Pat`
+        :param pulumi.Input[_builtins.str] type: Type of authentication method that should be used. Possible values: `basic`, `cloud-token`, `pat`
         :param pulumi.Input[_builtins.str] url: URL of the Jira server
         :param pulumi.Input[_builtins.str] user: Username or E-Mail address
         """
@@ -488,7 +488,7 @@ class AutomationWorkflowJira(pulumi.CustomResource):
     @pulumi.getter
     def type(self) -> pulumi.Output[_builtins.str]:
         """
-        Possible Values: `Basic`, `Cloud_token`, `Pat`
+        Type of authentication method that should be used. Possible values: `basic`, `cloud-token`, `pat`
         """
         return pulumi.get(self, "type")
 

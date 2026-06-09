@@ -30,7 +30,7 @@ type ServiceFullWebRequest struct {
 
 	// A list of conditions necessary for the rule to take effect. If multiple conditions are specified, they must **all** match a Request for the rule to apply. If there is no condition at all, the rule is always applied. Conditions are evaluated against attributes, but do not modify them.
 	Conditions ServiceFullWebRequestConditionsPtrOutput `pulumi:"conditions"`
-	// Description
+	// A short description of the rule.
 	Description pulumi.StringPtrOutput `pulumi:"description"`
 	// This setting is enabled (`true`) or disabled (`false`)
 	Enabled pulumi.BoolOutput `pulumi:"enabled"`
@@ -40,7 +40,7 @@ type ServiceFullWebRequest struct {
 	InsertAfter pulumi.StringOutput `pulumi:"insertAfter"`
 	// Define a management zone of the process group for which this service detection rule should be created.
 	ManagementZones pulumi.StringArrayOutput `pulumi:"managementZones"`
-	// Rule name
+	// The name of the rule. It is used for identification and has no effect on the rule logic.
 	Name pulumi.StringOutput `pulumi:"name"`
 }
 
@@ -82,7 +82,7 @@ func GetServiceFullWebRequest(ctx *pulumi.Context,
 type serviceFullWebRequestState struct {
 	// A list of conditions necessary for the rule to take effect. If multiple conditions are specified, they must **all** match a Request for the rule to apply. If there is no condition at all, the rule is always applied. Conditions are evaluated against attributes, but do not modify them.
 	Conditions *ServiceFullWebRequestConditions `pulumi:"conditions"`
-	// Description
+	// A short description of the rule.
 	Description *string `pulumi:"description"`
 	// This setting is enabled (`true`) or disabled (`false`)
 	Enabled *bool `pulumi:"enabled"`
@@ -92,14 +92,14 @@ type serviceFullWebRequestState struct {
 	InsertAfter *string `pulumi:"insertAfter"`
 	// Define a management zone of the process group for which this service detection rule should be created.
 	ManagementZones []string `pulumi:"managementZones"`
-	// Rule name
+	// The name of the rule. It is used for identification and has no effect on the rule logic.
 	Name *string `pulumi:"name"`
 }
 
 type ServiceFullWebRequestState struct {
 	// A list of conditions necessary for the rule to take effect. If multiple conditions are specified, they must **all** match a Request for the rule to apply. If there is no condition at all, the rule is always applied. Conditions are evaluated against attributes, but do not modify them.
 	Conditions ServiceFullWebRequestConditionsPtrInput
-	// Description
+	// A short description of the rule.
 	Description pulumi.StringPtrInput
 	// This setting is enabled (`true`) or disabled (`false`)
 	Enabled pulumi.BoolPtrInput
@@ -109,7 +109,7 @@ type ServiceFullWebRequestState struct {
 	InsertAfter pulumi.StringPtrInput
 	// Define a management zone of the process group for which this service detection rule should be created.
 	ManagementZones pulumi.StringArrayInput
-	// Rule name
+	// The name of the rule. It is used for identification and has no effect on the rule logic.
 	Name pulumi.StringPtrInput
 }
 
@@ -120,7 +120,7 @@ func (ServiceFullWebRequestState) ElementType() reflect.Type {
 type serviceFullWebRequestArgs struct {
 	// A list of conditions necessary for the rule to take effect. If multiple conditions are specified, they must **all** match a Request for the rule to apply. If there is no condition at all, the rule is always applied. Conditions are evaluated against attributes, but do not modify them.
 	Conditions *ServiceFullWebRequestConditions `pulumi:"conditions"`
-	// Description
+	// A short description of the rule.
 	Description *string `pulumi:"description"`
 	// This setting is enabled (`true`) or disabled (`false`)
 	Enabled bool `pulumi:"enabled"`
@@ -130,7 +130,7 @@ type serviceFullWebRequestArgs struct {
 	InsertAfter *string `pulumi:"insertAfter"`
 	// Define a management zone of the process group for which this service detection rule should be created.
 	ManagementZones []string `pulumi:"managementZones"`
-	// Rule name
+	// The name of the rule. It is used for identification and has no effect on the rule logic.
 	Name *string `pulumi:"name"`
 }
 
@@ -138,7 +138,7 @@ type serviceFullWebRequestArgs struct {
 type ServiceFullWebRequestArgs struct {
 	// A list of conditions necessary for the rule to take effect. If multiple conditions are specified, they must **all** match a Request for the rule to apply. If there is no condition at all, the rule is always applied. Conditions are evaluated against attributes, but do not modify them.
 	Conditions ServiceFullWebRequestConditionsPtrInput
-	// Description
+	// A short description of the rule.
 	Description pulumi.StringPtrInput
 	// This setting is enabled (`true`) or disabled (`false`)
 	Enabled pulumi.BoolInput
@@ -148,7 +148,7 @@ type ServiceFullWebRequestArgs struct {
 	InsertAfter pulumi.StringPtrInput
 	// Define a management zone of the process group for which this service detection rule should be created.
 	ManagementZones pulumi.StringArrayInput
-	// Rule name
+	// The name of the rule. It is used for identification and has no effect on the rule logic.
 	Name pulumi.StringPtrInput
 }
 
@@ -244,7 +244,7 @@ func (o ServiceFullWebRequestOutput) Conditions() ServiceFullWebRequestCondition
 	return o.ApplyT(func(v *ServiceFullWebRequest) ServiceFullWebRequestConditionsPtrOutput { return v.Conditions }).(ServiceFullWebRequestConditionsPtrOutput)
 }
 
-// Description
+// A short description of the rule.
 func (o ServiceFullWebRequestOutput) Description() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v *ServiceFullWebRequest) pulumi.StringPtrOutput { return v.Description }).(pulumi.StringPtrOutput)
 }
@@ -269,7 +269,7 @@ func (o ServiceFullWebRequestOutput) ManagementZones() pulumi.StringArrayOutput 
 	return o.ApplyT(func(v *ServiceFullWebRequest) pulumi.StringArrayOutput { return v.ManagementZones }).(pulumi.StringArrayOutput)
 }
 
-// Rule name
+// The name of the rule. It is used for identification and has no effect on the rule logic.
 func (o ServiceFullWebRequestOutput) Name() pulumi.StringOutput {
 	return o.ApplyT(func(v *ServiceFullWebRequest) pulumi.StringOutput { return v.Name }).(pulumi.StringOutput)
 }

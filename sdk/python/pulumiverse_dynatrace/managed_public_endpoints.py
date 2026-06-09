@@ -174,7 +174,7 @@ class ManagedPublicEndpoints(pulumi.CustomResource):
                  web_ui_address: pulumi.Input[Optional[_builtins.str]] = None,
                  __props__=None):
         """
-        !> **HTTP DELETE method not available** Terraform will no longer manage this resource on `destroy` but the configuration will still be present on the Dynatrace cluster.
+        > **HTTP DELETE method not available** Terraform will no longer manage this resource on `destroy` but the configuration will still be present on the Dynatrace cluster.
 
         > This resource requires the cluster API token scope **Service Provider API** (`ServiceProviderAPI`)
 
@@ -215,7 +215,7 @@ class ManagedPublicEndpoints(pulumi.CustomResource):
                  args: Optional[ManagedPublicEndpointsArgs] = None,
                  opts: Optional[pulumi.ResourceOptions] = None):
         """
-        !> **HTTP DELETE method not available** Terraform will no longer manage this resource on `destroy` but the configuration will still be present on the Dynatrace cluster.
+        > **HTTP DELETE method not available** Terraform will no longer manage this resource on `destroy` but the configuration will still be present on the Dynatrace cluster.
 
         > This resource requires the cluster API token scope **Service Provider API** (`ServiceProviderAPI`)
 

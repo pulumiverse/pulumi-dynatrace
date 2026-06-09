@@ -15,13 +15,21 @@ namespace Pulumiverse.Dynatrace.Outputs
     public sealed class K8sWorkloadAnomaliesPodPreemptionEvents
     {
         /// <summary>
+        /// Alert if
+        /// </summary>
+        public readonly Outputs.K8sWorkloadAnomaliesPodPreemptionEventsConfiguration? Configuration;
+        /// <summary>
         /// This setting is enabled (`True`) or disabled (`False`)
         /// </summary>
         public readonly bool Enabled;
 
         [OutputConstructor]
-        private K8sWorkloadAnomaliesPodPreemptionEvents(bool enabled)
+        private K8sWorkloadAnomaliesPodPreemptionEvents(
+            Outputs.K8sWorkloadAnomaliesPodPreemptionEventsConfiguration? configuration,
+
+            bool enabled)
         {
+            Configuration = configuration;
             Enabled = enabled;
         }
     }

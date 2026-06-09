@@ -20,7 +20,7 @@ namespace Pulumiverse.Dynatrace.Inputs
         public Input<Inputs.WebAppCustomErrorsErrorRulesErrorRuleCaptureSettingsGetArgs> CaptureSettings { get; set; } = null!;
 
         /// <summary>
-        /// Possible Values: `ALL`, `BEGINS_WITH`, `CONTAINS`, `ENDS_WITH`, `EQUALS`
+        /// Match key. Possible values: `ALL`, `BEGINS_WITH`, `CONTAINS`, `ENDS_WITH`, `EQUALS`
         /// </summary>
         [Input("keyMatcher", required: true)]
         public Input<string> KeyMatcher { get; set; } = null!;
@@ -32,7 +32,7 @@ namespace Pulumiverse.Dynatrace.Inputs
         public Input<string>? KeyPattern { get; set; }
 
         /// <summary>
-        /// Possible Values: `ALL`, `BEGINS_WITH`, `CONTAINS`, `ENDS_WITH`, `EQUALS`
+        /// Match value. Possible values: `ALL`, `BEGINS_WITH`, `CONTAINS`, `ENDS_WITH`, `EQUALS`
         /// </summary>
         [Input("valueMatcher", required: true)]
         public Input<string> ValueMatcher { get; set; } = null!;

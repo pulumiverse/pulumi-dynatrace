@@ -5,7 +5,7 @@ import * as pulumi from "@pulumi/pulumi";
 import * as utilities from "./utilities";
 
 /**
- * !> This resource does not handle ordering of rules. If ordering is required, please use dynatrace.ApplicationDetectionRule instead.
+ * > This resource does not handle ordering of rules. If ordering is required, please use dynatrace.ApplicationDetectionRule instead.
  *
  * > This resource requires the API token scopes **Read settings** (`settings.read`) and **Write settings** (`settings.write`)
  *
@@ -27,69 +27,11 @@ import * as utilities from "./utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as dynatrace from "@pulumiverse/dynatrace";
  *
- * const application = new dynatrace.WebApplication("application", {
- *     name: "#name#",
- *     type: "AUTO_INJECTED",
- *     costControlUserSessionPercentage: 100,
- *     loadActionKeyPerformanceMetric: "VISUALLY_COMPLETE",
- *     realUserMonitoringEnabled: true,
- *     xhrActionKeyPerformanceMetric: "VISUALLY_COMPLETE",
- *     customActionApdexSettings: {
- *         frustratingFallbackThreshold: 12000,
- *         frustratingThreshold: 12000,
- *         toleratedFallbackThreshold: 3000,
- *         toleratedThreshold: 3000,
- *     },
- *     loadActionApdexSettings: {
- *         frustratingFallbackThreshold: 12000,
- *         frustratingThreshold: 12000,
- *         toleratedFallbackThreshold: 3000,
- *         toleratedThreshold: 3000,
- *     },
- *     monitoringSettings: {
- *         addCrossOriginAnonymousAttribute: true,
- *         cacheControlHeaderOptimizations: true,
- *         injectionMode: "JAVASCRIPT_TAG",
- *         scriptTagCacheDurationInHours: 1,
- *         advancedJavascriptTagSettings: {
- *             maxActionNameLength: 100,
- *             maxErrorsToCapture: 10,
- *             additionalEventHandlers: {
- *                 maxDomNodes: 5000,
- *             },
- *         },
- *         contentCapture: {
- *             resourceTimingSettings: {
- *                 instrumentationDelay: 53,
- *                 nonW3cResourceTimings: true,
- *                 w3cResourceTimings: true,
- *             },
- *             timeoutSettings: {
- *                 temporaryActionLimit: 3,
- *                 temporaryActionTotalTimeout: 100,
- *                 timedActionSupport: true,
- *             },
- *         },
- *     },
- *     userActionNamingSettings: {},
- *     waterfallSettings: {
- *         resourceBrowserCachingThreshold: 50,
- *         resourcesThreshold: 100000,
- *         slowCndResourcesThreshold: 200000,
- *         slowFirstPartyResourcesThreshold: 200000,
- *         slowThirdPartyResourcesThreshold: 200000,
- *         speedIndexVisuallyCompleteRatioThreshold: 50,
- *         uncompressedResourcesThreshold: 860,
- *     },
- *     xhrActionApdexSettings: {
- *         frustratingFallbackThreshold: 12000,
- *         frustratingThreshold: 12000,
- *         toleratedFallbackThreshold: 3000,
- *         toleratedThreshold: 3000,
- *     },
+ * const webApplication = dynatrace.getApplication({
+ *     name: "Web Application",
  * });
  * const detectionRule = new dynatrace.ApplicationDetectionRuleV2("detection_rule", {
- *     applicationId: application.id,
+ *     applicationId: webApplication.then(webApplication => webApplication.id),
  *     matcher: "DOMAIN_MATCHES",
  *     pattern: "TerraformTest",
  * });
@@ -128,7 +70,7 @@ export class ApplicationDetectionRuleV2 extends pulumi.CustomResource {
      */
     declare public readonly applicationId: pulumi.Output<string>;
     /**
-     * (v1.274) Add a description for your rule
+     * Add a description for your rule
      */
     declare public readonly description: pulumi.Output<string | undefined>;
     /**
@@ -136,7 +78,7 @@ export class ApplicationDetectionRuleV2 extends pulumi.CustomResource {
      */
     declare public readonly insertAfter: pulumi.Output<string>;
     /**
-     * Possible Values: `DOMAIN_CONTAINS`, `DOMAIN_ENDS_WITH`, `DOMAIN_EQUALS`, `DOMAIN_MATCHES`, `DOMAIN_STARTS_WITH`, `URL_CONTAINS`, `URL_ENDS_WITH`, `URL_EQUALS`, `URL_STARTS_WITH`
+     * Matcher. Possible values: `DOMAIN_CONTAINS`, `DOMAIN_ENDS_WITH`, `DOMAIN_EQUALS`, `DOMAIN_MATCHES`, `DOMAIN_STARTS_WITH`, `URL_CONTAINS`, `URL_ENDS_WITH`, `URL_EQUALS`, `URL_STARTS_WITH`
      */
     declare public readonly matcher: pulumi.Output<string>;
     /**
@@ -193,7 +135,7 @@ export interface ApplicationDetectionRuleV2State {
      */
     applicationId?: pulumi.Input<string | undefined>;
     /**
-     * (v1.274) Add a description for your rule
+     * Add a description for your rule
      */
     description?: pulumi.Input<string | undefined>;
     /**
@@ -201,7 +143,7 @@ export interface ApplicationDetectionRuleV2State {
      */
     insertAfter?: pulumi.Input<string | undefined>;
     /**
-     * Possible Values: `DOMAIN_CONTAINS`, `DOMAIN_ENDS_WITH`, `DOMAIN_EQUALS`, `DOMAIN_MATCHES`, `DOMAIN_STARTS_WITH`, `URL_CONTAINS`, `URL_ENDS_WITH`, `URL_EQUALS`, `URL_STARTS_WITH`
+     * Matcher. Possible values: `DOMAIN_CONTAINS`, `DOMAIN_ENDS_WITH`, `DOMAIN_EQUALS`, `DOMAIN_MATCHES`, `DOMAIN_STARTS_WITH`, `URL_CONTAINS`, `URL_ENDS_WITH`, `URL_EQUALS`, `URL_STARTS_WITH`
      */
     matcher?: pulumi.Input<string | undefined>;
     /**
@@ -219,7 +161,7 @@ export interface ApplicationDetectionRuleV2Args {
      */
     applicationId: pulumi.Input<string>;
     /**
-     * (v1.274) Add a description for your rule
+     * Add a description for your rule
      */
     description?: pulumi.Input<string | undefined>;
     /**
@@ -227,7 +169,7 @@ export interface ApplicationDetectionRuleV2Args {
      */
     insertAfter?: pulumi.Input<string | undefined>;
     /**
-     * Possible Values: `DOMAIN_CONTAINS`, `DOMAIN_ENDS_WITH`, `DOMAIN_EQUALS`, `DOMAIN_MATCHES`, `DOMAIN_STARTS_WITH`, `URL_CONTAINS`, `URL_ENDS_WITH`, `URL_EQUALS`, `URL_STARTS_WITH`
+     * Matcher. Possible values: `DOMAIN_CONTAINS`, `DOMAIN_ENDS_WITH`, `DOMAIN_EQUALS`, `DOMAIN_MATCHES`, `DOMAIN_STARTS_WITH`, `URL_CONTAINS`, `URL_ENDS_WITH`, `URL_EQUALS`, `URL_STARTS_WITH`
      */
     matcher: pulumi.Input<string>;
     /**

@@ -29,7 +29,7 @@ namespace Pulumiverse.Dynatrace.Inputs
         private InputList<string>? _values;
 
         /// <summary>
-        /// no documentation available
+        /// No documentation available
         /// </summary>
         public InputList<string> Values
         {

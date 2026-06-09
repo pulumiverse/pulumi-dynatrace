@@ -15,7 +15,7 @@ namespace Pulumiverse.Dynatrace.Outputs
     public sealed class ServiceFullWebRequestIdContributors
     {
         /// <summary>
-        /// Application identifier
+        /// Contribute to the Service Id calculation from the detected application identifier.. You can keep the detected value, override it with a constant value, or apply transformations before it contributes to the Service Id.
         /// </summary>
         public readonly Outputs.ServiceFullWebRequestIdContributorsApplicationId ApplicationId;
         /// <summary>
@@ -23,7 +23,7 @@ namespace Pulumiverse.Dynatrace.Outputs
         /// </summary>
         public readonly Outputs.ServiceFullWebRequestIdContributorsContextRoot ContextRoot;
         /// <summary>
-        /// Server Name
+        /// Contribute to the Service Id calculation from the detected server name.
         /// </summary>
         public readonly Outputs.ServiceFullWebRequestIdContributorsServerName ServerName;
 

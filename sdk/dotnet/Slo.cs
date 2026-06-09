@@ -11,7 +11,7 @@ using Pulumi;
 namespace Pulumiverse.Dynatrace
 {
     /// <summary>
-    /// !&gt; This resource API endpoint has been deprecated, please use dynatrace.SloV2 instead.
+    /// &gt; This resource API endpoint has been deprecated, please use dynatrace.SloV2 instead.
     /// 
     /// &gt; This resource requires the API token scopes **Read SLO** (`slo.read`) and **Write SLO** (`slo.write`)
     /// 

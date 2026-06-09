@@ -14,7 +14,7 @@ namespace Pulumiverse.Dynatrace.Inputs
     public sealed class MetricEventsQueryDefinitionEntityFilterArgs : global::Pulumi.ResourceArgs
     {
         /// <summary>
-        /// no documentation available
+        /// No documentation available
         /// </summary>
         [Input("conditions")]
         public Input<Inputs.MetricEventsQueryDefinitionEntityFilterConditionsArgs>? Conditions { get; set; }

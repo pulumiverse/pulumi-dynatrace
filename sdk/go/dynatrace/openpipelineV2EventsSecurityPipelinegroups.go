@@ -148,15 +148,23 @@ import (
 //									Dimensions: &dynatrace.OpenpipelineV2EventsSecurityPipelinesMetricExtractionProcessorsProcessorCounterMetricDimensionsArgs{
 //										Dimensions: dynatrace.OpenpipelineV2EventsSecurityPipelinesMetricExtractionProcessorsProcessorCounterMetricDimensionsDimensionArray{
 //											&dynatrace.OpenpipelineV2EventsSecurityPipelinesMetricExtractionProcessorsProcessorCounterMetricDimensionsDimensionArgs{
+//												ExtractionType:  pulumi.String("field"),
+//												Strategy:        pulumi.String("equals"),
 //												SourceFieldName: pulumi.String("dt.cost.costcenter"),
 //											},
 //											&dynatrace.OpenpipelineV2EventsSecurityPipelinesMetricExtractionProcessorsProcessorCounterMetricDimensionsDimensionArgs{
+//												ExtractionType:  pulumi.String("field"),
+//												Strategy:        pulumi.String("equals"),
 //												SourceFieldName: pulumi.String("dt.cost.product"),
 //											},
 //											&dynatrace.OpenpipelineV2EventsSecurityPipelinesMetricExtractionProcessorsProcessorCounterMetricDimensionsDimensionArgs{
+//												ExtractionType:  pulumi.String("field"),
+//												Strategy:        pulumi.String("equals"),
 //												SourceFieldName: pulumi.String("dt.security_context"),
 //											},
 //											&dynatrace.OpenpipelineV2EventsSecurityPipelinesMetricExtractionProcessorsProcessorCounterMetricDimensionsDimensionArgs{
+//												ExtractionType:       pulumi.String("field"),
+//												Strategy:             pulumi.String("equals"),
 //												SourceFieldName:      pulumi.String("record.category"),
 //												DestinationFieldName: pulumi.String("warning_category"),
 //											},
@@ -177,15 +185,23 @@ import (
 //									Dimensions: &dynatrace.OpenpipelineV2EventsSecurityPipelinesMetricExtractionProcessorsProcessorValueMetricDimensionsArgs{
 //										Dimensions: dynatrace.OpenpipelineV2EventsSecurityPipelinesMetricExtractionProcessorsProcessorValueMetricDimensionsDimensionArray{
 //											&dynatrace.OpenpipelineV2EventsSecurityPipelinesMetricExtractionProcessorsProcessorValueMetricDimensionsDimensionArgs{
+//												ExtractionType:  pulumi.String("field"),
+//												Strategy:        pulumi.String("equals"),
 //												SourceFieldName: pulumi.String("dt.cost.costcenter"),
 //											},
 //											&dynatrace.OpenpipelineV2EventsSecurityPipelinesMetricExtractionProcessorsProcessorValueMetricDimensionsDimensionArgs{
+//												ExtractionType:  pulumi.String("field"),
+//												Strategy:        pulumi.String("equals"),
 //												SourceFieldName: pulumi.String("dt.cost.product"),
 //											},
 //											&dynatrace.OpenpipelineV2EventsSecurityPipelinesMetricExtractionProcessorsProcessorValueMetricDimensionsDimensionArgs{
+//												ExtractionType:  pulumi.String("field"),
+//												Strategy:        pulumi.String("equals"),
 //												SourceFieldName: pulumi.String("dt.security_context"),
 //											},
 //											&dynatrace.OpenpipelineV2EventsSecurityPipelinesMetricExtractionProcessorsProcessorValueMetricDimensionsDimensionArgs{
+//												ExtractionType:       pulumi.String("field"),
+//												Strategy:             pulumi.String("equals"),
 //												SourceFieldName:      pulumi.String("record.category"),
 //												DestinationFieldName: pulumi.String("warning_category"),
 //											},
@@ -209,16 +225,16 @@ import (
 //			if err != nil {
 //				return err
 //			}
-//			_, err = dynatrace.NewOpenpipelineV2EventsSdlcPipelinegroups(ctx, "example", &dynatrace.OpenpipelineV2EventsSdlcPipelinegroupsArgs{
+//			_, err = dynatrace.NewOpenpipelineV2EventsSecurityPipelinegroups(ctx, "example", &dynatrace.OpenpipelineV2EventsSecurityPipelinegroupsArgs{
 //				DisplayName: pulumi.String("#name#"),
-//				Composition: &dynatrace.OpenpipelineV2EventsSdlcPipelinegroupsCompositionArgs{
-//					PipelineGroupCompositions: dynatrace.OpenpipelineV2EventsSdlcPipelinegroupsCompositionPipelineGroupCompositionArray{
-//						&dynatrace.OpenpipelineV2EventsSdlcPipelinegroupsCompositionPipelineGroupCompositionArgs{
+//				Composition: &dynatrace.OpenpipelineV2EventsSecurityPipelinegroupsCompositionArgs{
+//					PipelineGroupCompositions: dynatrace.OpenpipelineV2EventsSecurityPipelinegroupsCompositionPipelineGroupCompositionArray{
+//						&dynatrace.OpenpipelineV2EventsSecurityPipelinegroupsCompositionPipelineGroupCompositionArgs{
 //							IsPipelinePlaceholder: pulumi.Bool(true),
 //						},
-//						&dynatrace.OpenpipelineV2EventsSdlcPipelinegroupsCompositionPipelineGroupCompositionArgs{
+//						&dynatrace.OpenpipelineV2EventsSecurityPipelinegroupsCompositionPipelineGroupCompositionArgs{
 //							IsPipelinePlaceholder: pulumi.Bool(false),
-//							Stages: &dynatrace.OpenpipelineV2EventsSdlcPipelinegroupsCompositionPipelineGroupCompositionStagesArgs{
+//							Stages: &dynatrace.OpenpipelineV2EventsSecurityPipelinegroupsCompositionPipelineGroupCompositionStagesArgs{
 //								Type: pulumi.String("include"),
 //								Includes: pulumi.StringArray{
 //									pulumi.String("processing"),
@@ -229,7 +245,7 @@ import (
 //						},
 //					},
 //				},
-//				MemberStages: &dynatrace.OpenpipelineV2EventsSdlcPipelinegroupsMemberStagesArgs{
+//				MemberStages: &dynatrace.OpenpipelineV2EventsSecurityPipelinegroupsMemberStagesArgs{
 //					Includes: pulumi.StringArray{
 //						pulumi.String("processing"),
 //						pulumi.String("metricExtraction"),

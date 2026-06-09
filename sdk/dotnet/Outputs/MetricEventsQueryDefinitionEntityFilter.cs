@@ -15,7 +15,7 @@ namespace Pulumiverse.Dynatrace.Outputs
     public sealed class MetricEventsQueryDefinitionEntityFilter
     {
         /// <summary>
-        /// no documentation available
+        /// No documentation available
         /// </summary>
         public readonly Outputs.MetricEventsQueryDefinitionEntityFilterConditions? Conditions;
         /// <summary>

@@ -70,7 +70,7 @@ export class RumProviderBreakdown extends pulumi.CustomResource {
      */
     declare public readonly resourceName: pulumi.Output<string>;
     /**
-     * Possible Values: `FirstParty`, `ThirdParty`, `Cdn`
+     * Resource type. Possible values: `Cdn`, `FirstParty`, `ThirdParty`
      */
     declare public readonly resourceType: pulumi.Output<string>;
 
@@ -144,7 +144,7 @@ export interface RumProviderBreakdownState {
      */
     resourceName?: pulumi.Input<string | undefined>;
     /**
-     * Possible Values: `FirstParty`, `ThirdParty`, `Cdn`
+     * Resource type. Possible values: `Cdn`, `FirstParty`, `ThirdParty`
      */
     resourceType?: pulumi.Input<string | undefined>;
 }
@@ -174,7 +174,7 @@ export interface RumProviderBreakdownArgs {
      */
     resourceName: pulumi.Input<string>;
     /**
-     * Possible Values: `FirstParty`, `ThirdParty`, `Cdn`
+     * Resource type. Possible values: `Cdn`, `FirstParty`, `ThirdParty`
      */
     resourceType: pulumi.Input<string>;
 }

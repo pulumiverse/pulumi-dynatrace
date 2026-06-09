@@ -15,7 +15,7 @@ namespace Pulumiverse.Dynatrace
     /// 
     /// ## Dynatrace Documentation
     /// 
-    /// !&gt; This resource API endpoint has been deprecated, please use dynatrace.AttributeAllowList and dynatrace.AttributeMasking instead.
+    /// &gt; This resource API endpoint has been deprecated, please use dynatrace.AttributeAllowList and dynatrace.AttributeMasking instead.
     /// 
     /// - Span settings - https://www.dynatrace.com/support/help/extend-dynatrace/extend-tracing/span-settings
     /// 

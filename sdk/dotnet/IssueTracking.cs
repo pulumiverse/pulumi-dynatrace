@@ -53,13 +53,13 @@ namespace Pulumiverse.Dynatrace
         public Output<string> Issuequery { get; private set; } = null!;
 
         /// <summary>
-        /// Possible Values: `ERROR`, `INFO`, `RESOLVED`
+        /// Select the issue type to be displayed. Possible values: `ERROR`, `INFO`, `RESOLVED`
         /// </summary>
         [Output("issuetheme")]
         public Output<string> Issuetheme { get; private set; } = null!;
 
         /// <summary>
-        /// Possible Values: `GITHUB`, `GITLAB`, `JIRA`, `JIRA_CLOUD`, `JIRA_ON_PREMISE`, `SERVICENOW`
+        /// Select the issue-tracking system you want to query. Possible values: `GITHUB`, `GITLAB`, `JIRA`, `JIRA_CLOUD`, `JIRA_ON_PREMISE`, `SERVICENOW`
         /// </summary>
         [Output("issuetrackersystem")]
         public Output<string> Issuetrackersystem { get; private set; } = null!;
@@ -164,13 +164,13 @@ namespace Pulumiverse.Dynatrace
         public Input<string> Issuequery { get; set; } = null!;
 
         /// <summary>
-        /// Possible Values: `ERROR`, `INFO`, `RESOLVED`
+        /// Select the issue type to be displayed. Possible values: `ERROR`, `INFO`, `RESOLVED`
         /// </summary>
         [Input("issuetheme", required: true)]
         public Input<string> Issuetheme { get; set; } = null!;
 
         /// <summary>
-        /// Possible Values: `GITHUB`, `GITLAB`, `JIRA`, `JIRA_CLOUD`, `JIRA_ON_PREMISE`, `SERVICENOW`
+        /// Select the issue-tracking system you want to query. Possible values: `GITHUB`, `GITLAB`, `JIRA`, `JIRA_CLOUD`, `JIRA_ON_PREMISE`, `SERVICENOW`
         /// </summary>
         [Input("issuetrackersystem", required: true)]
         public Input<string> Issuetrackersystem { get; set; } = null!;
@@ -242,13 +242,13 @@ namespace Pulumiverse.Dynatrace
         public Input<string>? Issuequery { get; set; }
 
         /// <summary>
-        /// Possible Values: `ERROR`, `INFO`, `RESOLVED`
+        /// Select the issue type to be displayed. Possible values: `ERROR`, `INFO`, `RESOLVED`
         /// </summary>
         [Input("issuetheme")]
         public Input<string>? Issuetheme { get; set; }
 
         /// <summary>
-        /// Possible Values: `GITHUB`, `GITLAB`, `JIRA`, `JIRA_CLOUD`, `JIRA_ON_PREMISE`, `SERVICENOW`
+        /// Select the issue-tracking system you want to query. Possible values: `GITHUB`, `GITLAB`, `JIRA`, `JIRA_CLOUD`, `JIRA_ON_PREMISE`, `SERVICENOW`
         /// </summary>
         [Input("issuetrackersystem")]
         public Input<string>? Issuetrackersystem { get; set; }

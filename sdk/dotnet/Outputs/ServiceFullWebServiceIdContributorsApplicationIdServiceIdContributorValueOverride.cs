@@ -15,7 +15,7 @@ namespace Pulumiverse.Dynatrace.Outputs
     public sealed class ServiceFullWebServiceIdContributorsApplicationIdServiceIdContributorValueOverride
     {
         /// <summary>
-        /// no documentation available
+        /// The value to be used instead of the detected value.
         /// </summary>
         public readonly string Value;
 

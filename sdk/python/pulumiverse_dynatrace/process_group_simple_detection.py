@@ -236,6 +236,9 @@ class ProcessGroupSimpleDetection(pulumi.CustomResource):
                  rule_type: pulumi.Input[Optional[_builtins.str]] = None,
                  __props__=None):
         """
+        > **Warning** This resource has been deprecated in favor of `ProcessGroupingRules`.
+        Dynatrace environment migration guide: https://docs.dynatrace.com/docs/observe/infrastructure-observability/process-groups/configuration/unified-process-grouping/process-grouping-rules-migration
+
         > This resource requires the API token scopes **Read settings** (`settings.read`) and **Write settings** (`settings.write`)
 
         ## Dynatrace Documentation
@@ -267,6 +270,9 @@ class ProcessGroupSimpleDetection(pulumi.CustomResource):
                  args: ProcessGroupSimpleDetectionArgs,
                  opts: Optional[pulumi.ResourceOptions] = None):
         """
+        > **Warning** This resource has been deprecated in favor of `ProcessGroupingRules`.
+        Dynatrace environment migration guide: https://docs.dynatrace.com/docs/observe/infrastructure-observability/process-groups/configuration/unified-process-grouping/process-grouping-rules-migration
+
         > This resource requires the API token scopes **Read settings** (`settings.read`) and **Write settings** (`settings.write`)
 
         ## Dynatrace Documentation

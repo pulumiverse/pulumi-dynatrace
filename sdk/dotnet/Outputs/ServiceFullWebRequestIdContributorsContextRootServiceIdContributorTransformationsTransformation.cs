@@ -15,27 +15,27 @@ namespace Pulumiverse.Dynatrace.Outputs
     public sealed class ServiceFullWebRequestIdContributorsContextRootServiceIdContributorTransformationsTransformation
     {
         /// <summary>
-        /// include hexadecimal numbers
+        /// Whether to also remove hexadecimal numbers (sequences of at least `minDigitCount` hexadecimal digits preceded by '0x'). It is used only when the transformation type is `REMOVE_NUMBERS`.
         /// </summary>
         public readonly bool? IncludeHexNumbers;
         /// <summary>
-        /// min digit count
+        /// The minimum number of digits that a numeric sequence must have to be removed. It is used only when the transformation type is `REMOVE_NUMBERS`.
         /// </summary>
         public readonly int? MinDigitCount;
         /// <summary>
-        /// no documentation available
+        /// The part of the text that serves as a reference point for the transformation. Its use depends on the transformation type.
         /// </summary>
         public readonly string? Prefix;
         /// <summary>
-        /// replacement
+        /// The text that replaces the part between `Prefix` and `Suffix`. It is used only when the transformation type is `REPLACE_BETWEEN`.
         /// </summary>
         public readonly string? ReplacementValue;
         /// <summary>
-        /// no documentation available
+        /// The part of the text that serves as a reference point for the transformation. Its use depends on the transformation type.
         /// </summary>
         public readonly string? Suffix;
         /// <summary>
-        /// Possible Values: `BEFORE`, `REMOVE_CREDIT_CARDS`, `REMOVE_IBANS`, `REMOVE_IPS`, `REMOVE_NUMBERS`, `REPLACE_BETWEEN`
+        /// Defines what kind of transformation will be applied on the original value. Possible values: `BEFORE`, `REMOVE_CREDIT_CARDS`, `REMOVE_IBANS`, `REMOVE_IPS`, `REMOVE_NUMBERS`, `REPLACE_BETWEEN`
         /// </summary>
         public readonly string TransformationType;
 

@@ -14,37 +14,39 @@ namespace Pulumiverse.Dynatrace.Inputs
     public sealed class ServiceFullWebServiceIdContributorsArgs : global::Pulumi.ResourceArgs
     {
         /// <summary>
-        /// Application identifier
+        /// Contribute to the Service Id calculation from the detected application identifier.. You can keep the detected value, override it with a constant value, or apply transformations before it contributes to the Service Id.
         /// </summary>
         [Input("applicationId")]
         public Input<Inputs.ServiceFullWebServiceIdContributorsApplicationIdArgs>? ApplicationId { get; set; }
 
         /// <summary>
-        /// The context root is the first segment of the request URL after the Server name. For example, in the `www.dynatrace.com/support/help/dynatrace-api/` URL the context root is `/support`. The context root value can be found on the **Service overview page** under **Properties and tags**.
+        /// The context root is the first segment of the request URL after the Server name. For example, in the `www.dynatrace.com/support/help/dynatrace-api/` URL the context root is `/support`. The context root value can be found on the **Service overview page** under **Properties and tags**.. You can keep the detected context root, replace it with a constant value, copy a configurable number of URL path segments, or apply context-root transformations. If URL segment copying and transformations are both configured, transformations run on the copied value.
         /// </summary>
         [Input("contextRoot")]
         public Input<Inputs.ServiceFullWebServiceIdContributorsContextRootArgs>? ContextRoot { get; set; }
 
         /// <summary>
         /// Detect the matching requests as full web services (false) or web request services (true).
+        /// 
+        ///   Setting this field to true prevents detecting of matching requests as full web services. A web request service is created instead. If you need to further modify the resulting web request service, you need to create a separate Full web request rule.. When this option is enabled, the contributor settings below are ignored because matching requests are detected as full web request services instead of full web services.
         /// </summary>
         [Input("detectAsWebRequestService", required: true)]
         public Input<bool> DetectAsWebRequestService { get; set; } = null!;
 
         /// <summary>
-        /// Server name
+        /// Contribute to the Service Id calculation from the detected server name.
         /// </summary>
         [Input("serverName")]
         public Input<Inputs.ServiceFullWebServiceIdContributorsServerNameArgs>? ServerName { get; set; }
 
         /// <summary>
-        /// Web service name
+        /// Contribute to the Service Id calculation from the detected web service name.
         /// </summary>
         [Input("webServiceName")]
         public Input<Inputs.ServiceFullWebServiceIdContributorsWebServiceNameArgs>? WebServiceName { get; set; }
 
         /// <summary>
-        /// Web service namespace
+        /// Contribute to the Service Id calculation from the detected web service namespace.
         /// </summary>
         [Input("webServiceNamespace")]
         public Input<Inputs.ServiceFullWebServiceIdContributorsWebServiceNamespaceArgs>? WebServiceNamespace { get; set; }

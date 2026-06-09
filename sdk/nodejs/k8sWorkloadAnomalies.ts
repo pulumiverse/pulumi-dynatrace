@@ -50,55 +50,55 @@ export class K8sWorkloadAnomalies extends pulumi.CustomResource {
     }
 
     /**
-     * no documentation available
+     * No documentation available
      */
     declare public readonly containerRestarts: pulumi.Output<outputs.K8sWorkloadAnomaliesContainerRestarts>;
     /**
-     * no documentation available
+     * No documentation available
      */
     declare public readonly deploymentStuck: pulumi.Output<outputs.K8sWorkloadAnomaliesDeploymentStuck>;
     /**
-     * no documentation available
+     * No documentation available
      */
     declare public readonly highCpuThrottling: pulumi.Output<outputs.K8sWorkloadAnomaliesHighCpuThrottling>;
     /**
-     * no documentation available
+     * No documentation available
      */
     declare public readonly highCpuUsage: pulumi.Output<outputs.K8sWorkloadAnomaliesHighCpuUsage>;
     /**
-     * no documentation available
+     * No documentation available
      */
     declare public readonly highMemoryUsage: pulumi.Output<outputs.K8sWorkloadAnomaliesHighMemoryUsage>;
     /**
-     * no documentation available
+     * No documentation available
      */
     declare public readonly jobFailureEvents: pulumi.Output<outputs.K8sWorkloadAnomaliesJobFailureEvents>;
     /**
-     * no documentation available
+     * No documentation available
      */
     declare public readonly notAllPodsReady: pulumi.Output<outputs.K8sWorkloadAnomaliesNotAllPodsReady>;
     /**
-     * no documentation available
+     * No documentation available
      */
     declare public readonly oomKills: pulumi.Output<outputs.K8sWorkloadAnomaliesOomKills>;
     /**
-     * no documentation available
+     * No documentation available
      */
     declare public readonly pendingPods: pulumi.Output<outputs.K8sWorkloadAnomaliesPendingPods>;
     /**
-     * no documentation available
+     * No documentation available
      */
     declare public readonly podBackoffEvents: pulumi.Output<outputs.K8sWorkloadAnomaliesPodBackoffEvents>;
     /**
-     * no documentation available
+     * No documentation available
      */
     declare public readonly podEvictionEvents: pulumi.Output<outputs.K8sWorkloadAnomaliesPodEvictionEvents>;
     /**
-     * no documentation available
+     * No documentation available
      */
     declare public readonly podPreemptionEvents: pulumi.Output<outputs.K8sWorkloadAnomaliesPodPreemptionEvents>;
     /**
-     * no documentation available
+     * No documentation available
      */
     declare public readonly podStuckInTerminating: pulumi.Output<outputs.K8sWorkloadAnomaliesPodStuckInTerminating>;
     /**
@@ -106,7 +106,7 @@ export class K8sWorkloadAnomalies extends pulumi.CustomResource {
      */
     declare public readonly scope: pulumi.Output<string | undefined>;
     /**
-     * no documentation available
+     * No documentation available
      */
     declare public readonly workloadWithoutReadyPods: pulumi.Output<outputs.K8sWorkloadAnomaliesWorkloadWithoutReadyPods>;
 
@@ -208,55 +208,55 @@ export class K8sWorkloadAnomalies extends pulumi.CustomResource {
  */
 export interface K8sWorkloadAnomaliesState {
     /**
-     * no documentation available
+     * No documentation available
      */
     containerRestarts?: pulumi.Input<inputs.K8sWorkloadAnomaliesContainerRestarts | undefined>;
     /**
-     * no documentation available
+     * No documentation available
      */
     deploymentStuck?: pulumi.Input<inputs.K8sWorkloadAnomaliesDeploymentStuck | undefined>;
     /**
-     * no documentation available
+     * No documentation available
      */
     highCpuThrottling?: pulumi.Input<inputs.K8sWorkloadAnomaliesHighCpuThrottling | undefined>;
     /**
-     * no documentation available
+     * No documentation available
      */
     highCpuUsage?: pulumi.Input<inputs.K8sWorkloadAnomaliesHighCpuUsage | undefined>;
     /**
-     * no documentation available
+     * No documentation available
      */
     highMemoryUsage?: pulumi.Input<inputs.K8sWorkloadAnomaliesHighMemoryUsage | undefined>;
     /**
-     * no documentation available
+     * No documentation available
      */
     jobFailureEvents?: pulumi.Input<inputs.K8sWorkloadAnomaliesJobFailureEvents | undefined>;
     /**
-     * no documentation available
+     * No documentation available
      */
     notAllPodsReady?: pulumi.Input<inputs.K8sWorkloadAnomaliesNotAllPodsReady | undefined>;
     /**
-     * no documentation available
+     * No documentation available
      */
     oomKills?: pulumi.Input<inputs.K8sWorkloadAnomaliesOomKills | undefined>;
     /**
-     * no documentation available
+     * No documentation available
      */
     pendingPods?: pulumi.Input<inputs.K8sWorkloadAnomaliesPendingPods | undefined>;
     /**
-     * no documentation available
+     * No documentation available
      */
     podBackoffEvents?: pulumi.Input<inputs.K8sWorkloadAnomaliesPodBackoffEvents | undefined>;
     /**
-     * no documentation available
+     * No documentation available
      */
     podEvictionEvents?: pulumi.Input<inputs.K8sWorkloadAnomaliesPodEvictionEvents | undefined>;
     /**
-     * no documentation available
+     * No documentation available
      */
     podPreemptionEvents?: pulumi.Input<inputs.K8sWorkloadAnomaliesPodPreemptionEvents | undefined>;
     /**
-     * no documentation available
+     * No documentation available
      */
     podStuckInTerminating?: pulumi.Input<inputs.K8sWorkloadAnomaliesPodStuckInTerminating | undefined>;
     /**
@@ -264,7 +264,7 @@ export interface K8sWorkloadAnomaliesState {
      */
     scope?: pulumi.Input<string | undefined>;
     /**
-     * no documentation available
+     * No documentation available
      */
     workloadWithoutReadyPods?: pulumi.Input<inputs.K8sWorkloadAnomaliesWorkloadWithoutReadyPods | undefined>;
 }
@@ -274,55 +274,55 @@ export interface K8sWorkloadAnomaliesState {
  */
 export interface K8sWorkloadAnomaliesArgs {
     /**
-     * no documentation available
+     * No documentation available
      */
     containerRestarts: pulumi.Input<inputs.K8sWorkloadAnomaliesContainerRestarts>;
     /**
-     * no documentation available
+     * No documentation available
      */
     deploymentStuck: pulumi.Input<inputs.K8sWorkloadAnomaliesDeploymentStuck>;
     /**
-     * no documentation available
+     * No documentation available
      */
     highCpuThrottling: pulumi.Input<inputs.K8sWorkloadAnomaliesHighCpuThrottling>;
     /**
-     * no documentation available
+     * No documentation available
      */
     highCpuUsage: pulumi.Input<inputs.K8sWorkloadAnomaliesHighCpuUsage>;
     /**
-     * no documentation available
+     * No documentation available
      */
     highMemoryUsage: pulumi.Input<inputs.K8sWorkloadAnomaliesHighMemoryUsage>;
     /**
-     * no documentation available
+     * No documentation available
      */
     jobFailureEvents: pulumi.Input<inputs.K8sWorkloadAnomaliesJobFailureEvents>;
     /**
-     * no documentation available
+     * No documentation available
      */
     notAllPodsReady: pulumi.Input<inputs.K8sWorkloadAnomaliesNotAllPodsReady>;
     /**
-     * no documentation available
+     * No documentation available
      */
     oomKills: pulumi.Input<inputs.K8sWorkloadAnomaliesOomKills>;
     /**
-     * no documentation available
+     * No documentation available
      */
     pendingPods: pulumi.Input<inputs.K8sWorkloadAnomaliesPendingPods>;
     /**
-     * no documentation available
+     * No documentation available
      */
     podBackoffEvents: pulumi.Input<inputs.K8sWorkloadAnomaliesPodBackoffEvents>;
     /**
-     * no documentation available
+     * No documentation available
      */
     podEvictionEvents: pulumi.Input<inputs.K8sWorkloadAnomaliesPodEvictionEvents>;
     /**
-     * no documentation available
+     * No documentation available
      */
     podPreemptionEvents: pulumi.Input<inputs.K8sWorkloadAnomaliesPodPreemptionEvents>;
     /**
-     * no documentation available
+     * No documentation available
      */
     podStuckInTerminating: pulumi.Input<inputs.K8sWorkloadAnomaliesPodStuckInTerminating>;
     /**
@@ -330,7 +330,7 @@ export interface K8sWorkloadAnomaliesArgs {
      */
     scope?: pulumi.Input<string | undefined>;
     /**
-     * no documentation available
+     * No documentation available
      */
     workloadWithoutReadyPods: pulumi.Input<inputs.K8sWorkloadAnomaliesWorkloadWithoutReadyPods>;
 }

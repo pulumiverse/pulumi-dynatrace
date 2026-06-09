@@ -56,7 +56,7 @@ type AutomationWorkflowJira struct {
 	Password pulumi.StringPtrOutput `pulumi:"password"`
 	// Token for the selected authentication type
 	Token pulumi.StringPtrOutput `pulumi:"token"`
-	// Possible Values: `Basic`, `Cloud_token`, `Pat`
+	// Type of authentication method that should be used. Possible values: `basic`, `cloud-token`, `pat`
 	Type pulumi.StringOutput `pulumi:"type"`
 	// URL of the Jira server
 	Url pulumi.StringOutput `pulumi:"url"`
@@ -121,7 +121,7 @@ type automationWorkflowJiraState struct {
 	Password *string `pulumi:"password"`
 	// Token for the selected authentication type
 	Token *string `pulumi:"token"`
-	// Possible Values: `Basic`, `Cloud_token`, `Pat`
+	// Type of authentication method that should be used. Possible values: `basic`, `cloud-token`, `pat`
 	Type *string `pulumi:"type"`
 	// URL of the Jira server
 	Url *string `pulumi:"url"`
@@ -140,7 +140,7 @@ type AutomationWorkflowJiraState struct {
 	Password pulumi.StringPtrInput
 	// Token for the selected authentication type
 	Token pulumi.StringPtrInput
-	// Possible Values: `Basic`, `Cloud_token`, `Pat`
+	// Type of authentication method that should be used. Possible values: `basic`, `cloud-token`, `pat`
 	Type pulumi.StringPtrInput
 	// URL of the Jira server
 	Url pulumi.StringPtrInput
@@ -163,7 +163,7 @@ type automationWorkflowJiraArgs struct {
 	Password *string `pulumi:"password"`
 	// Token for the selected authentication type
 	Token *string `pulumi:"token"`
-	// Possible Values: `Basic`, `Cloud_token`, `Pat`
+	// Type of authentication method that should be used. Possible values: `basic`, `cloud-token`, `pat`
 	Type string `pulumi:"type"`
 	// URL of the Jira server
 	Url string `pulumi:"url"`
@@ -183,7 +183,7 @@ type AutomationWorkflowJiraArgs struct {
 	Password pulumi.StringPtrInput
 	// Token for the selected authentication type
 	Token pulumi.StringPtrInput
-	// Possible Values: `Basic`, `Cloud_token`, `Pat`
+	// Type of authentication method that should be used. Possible values: `basic`, `cloud-token`, `pat`
 	Type pulumi.StringInput
 	// URL of the Jira server
 	Url pulumi.StringInput
@@ -300,7 +300,7 @@ func (o AutomationWorkflowJiraOutput) Token() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v *AutomationWorkflowJira) pulumi.StringPtrOutput { return v.Token }).(pulumi.StringPtrOutput)
 }
 
-// Possible Values: `Basic`, `Cloud_token`, `Pat`
+// Type of authentication method that should be used. Possible values: `basic`, `cloud-token`, `pat`
 func (o AutomationWorkflowJiraOutput) Type() pulumi.StringOutput {
 	return o.ApplyT(func(v *AutomationWorkflowJira) pulumi.StringOutput { return v.Type }).(pulumi.StringOutput)
 }

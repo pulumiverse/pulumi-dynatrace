@@ -24,6 +24,44 @@ import (
 // - `terraform-provider-dynatrace -export BuiltinProcessMonitoring` downloads all existing built-in process monitoring rules
 //
 // The full documentation of the export feature is available [here](https://dt-url.net/h203qmc).
+//
+// ## Resource Example Usage
+//
+// ```go
+// package main
+//
+// import (
+//
+//	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//	"github.com/pulumiverse/pulumi-dynatrace/sdk/go/dynatrace"
+//
+// )
+//
+//	func main() {
+//		pulumi.Run(func(ctx *pulumi.Context) error {
+//			_, err := dynatrace.NewBuiltinProcessMonitoring(ctx, "monitoring", &dynatrace.BuiltinProcessMonitoringArgs{
+//				HostGroupId:                  pulumi.String("environment"),
+//				Aspnetcore:                   pulumi.Bool(false),
+//				CfAppsmanagerjs:              pulumi.Bool(false),
+//				Container:                    pulumi.Bool(false),
+//				DockerPauseamd64:             pulumi.Bool(false),
+//				ExeBbs:                       pulumi.Bool(false),
+//				ExeCaddy:                     pulumi.Bool(false),
+//				ExeSchedular:                 pulumi.Bool(false),
+//				ExeSilkdaemon:                pulumi.Bool(false),
+//				GoStatic:                     pulumi.Bool(false),
+//				NodeNodegyp:                  pulumi.Bool(false),
+//				CmdForeverbinmonitor:         pulumi.Bool(false),
+//				JmcActivegatecommandlinetool: pulumi.Bool(false),
+//			})
+//			if err != nil {
+//				return err
+//			}
+//			return nil
+//		})
+//	}
+//
+// ```
 type BuiltinProcessMonitoring struct {
 	pulumi.CustomResourceState
 
@@ -161,6 +199,8 @@ type BuiltinProcessMonitoring struct {
 	JarDtibmmqconnector pulumi.BoolPtrOutput `pulumi:"jarDtibmmqconnector"`
 	// Rule id: 57 - Do not monitor processes if Java JAR file begins with 'org.eclipse.equinox.launcher'
 	JarEclipseequinox pulumi.BoolPtrOutput `pulumi:"jarEclipseequinox"`
+	// Rule id: 85 - Do not monitor process if Java Main class contains 'ActiveGateCommandLineTool'
+	JmcActivegatecommandlinetool pulumi.BoolPtrOutput `pulumi:"jmcActivegatecommandlinetool"`
 	// Rule id: 69 - Do not monitor processes if Kubernetes container name equals 'cassandra-operator'
 	K8sCassandraoperator pulumi.BoolPtrOutput `pulumi:"k8sCassandraoperator"`
 	// Rule id: 38 - Do not monitor processes if Kubernetes container name equals 'POD'
@@ -355,6 +395,8 @@ type builtinProcessMonitoringState struct {
 	JarDtibmmqconnector *bool `pulumi:"jarDtibmmqconnector"`
 	// Rule id: 57 - Do not monitor processes if Java JAR file begins with 'org.eclipse.equinox.launcher'
 	JarEclipseequinox *bool `pulumi:"jarEclipseequinox"`
+	// Rule id: 85 - Do not monitor process if Java Main class contains 'ActiveGateCommandLineTool'
+	JmcActivegatecommandlinetool *bool `pulumi:"jmcActivegatecommandlinetool"`
 	// Rule id: 69 - Do not monitor processes if Kubernetes container name equals 'cassandra-operator'
 	K8sCassandraoperator *bool `pulumi:"k8sCassandraoperator"`
 	// Rule id: 38 - Do not monitor processes if Kubernetes container name equals 'POD'
@@ -520,6 +562,8 @@ type BuiltinProcessMonitoringState struct {
 	JarDtibmmqconnector pulumi.BoolPtrInput
 	// Rule id: 57 - Do not monitor processes if Java JAR file begins with 'org.eclipse.equinox.launcher'
 	JarEclipseequinox pulumi.BoolPtrInput
+	// Rule id: 85 - Do not monitor process if Java Main class contains 'ActiveGateCommandLineTool'
+	JmcActivegatecommandlinetool pulumi.BoolPtrInput
 	// Rule id: 69 - Do not monitor processes if Kubernetes container name equals 'cassandra-operator'
 	K8sCassandraoperator pulumi.BoolPtrInput
 	// Rule id: 38 - Do not monitor processes if Kubernetes container name equals 'POD'
@@ -689,6 +733,8 @@ type builtinProcessMonitoringArgs struct {
 	JarDtibmmqconnector *bool `pulumi:"jarDtibmmqconnector"`
 	// Rule id: 57 - Do not monitor processes if Java JAR file begins with 'org.eclipse.equinox.launcher'
 	JarEclipseequinox *bool `pulumi:"jarEclipseequinox"`
+	// Rule id: 85 - Do not monitor process if Java Main class contains 'ActiveGateCommandLineTool'
+	JmcActivegatecommandlinetool *bool `pulumi:"jmcActivegatecommandlinetool"`
 	// Rule id: 69 - Do not monitor processes if Kubernetes container name equals 'cassandra-operator'
 	K8sCassandraoperator *bool `pulumi:"k8sCassandraoperator"`
 	// Rule id: 38 - Do not monitor processes if Kubernetes container name equals 'POD'
@@ -855,6 +901,8 @@ type BuiltinProcessMonitoringArgs struct {
 	JarDtibmmqconnector pulumi.BoolPtrInput
 	// Rule id: 57 - Do not monitor processes if Java JAR file begins with 'org.eclipse.equinox.launcher'
 	JarEclipseequinox pulumi.BoolPtrInput
+	// Rule id: 85 - Do not monitor process if Java Main class contains 'ActiveGateCommandLineTool'
+	JmcActivegatecommandlinetool pulumi.BoolPtrInput
 	// Rule id: 69 - Do not monitor processes if Kubernetes container name equals 'cassandra-operator'
 	K8sCassandraoperator pulumi.BoolPtrInput
 	// Rule id: 38 - Do not monitor processes if Kubernetes container name equals 'POD'
@@ -1305,6 +1353,11 @@ func (o BuiltinProcessMonitoringOutput) JarDtibmmqconnector() pulumi.BoolPtrOutp
 // Rule id: 57 - Do not monitor processes if Java JAR file begins with 'org.eclipse.equinox.launcher'
 func (o BuiltinProcessMonitoringOutput) JarEclipseequinox() pulumi.BoolPtrOutput {
 	return o.ApplyT(func(v *BuiltinProcessMonitoring) pulumi.BoolPtrOutput { return v.JarEclipseequinox }).(pulumi.BoolPtrOutput)
+}
+
+// Rule id: 85 - Do not monitor process if Java Main class contains 'ActiveGateCommandLineTool'
+func (o BuiltinProcessMonitoringOutput) JmcActivegatecommandlinetool() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v *BuiltinProcessMonitoring) pulumi.BoolPtrOutput { return v.JmcActivegatecommandlinetool }).(pulumi.BoolPtrOutput)
 }
 
 // Rule id: 69 - Do not monitor processes if Kubernetes container name equals 'cassandra-operator'

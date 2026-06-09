@@ -25,6 +25,44 @@ import (
 // - `terraform-provider-dynatrace -export KeyUserAction` downloads all existing Key User Actions
 //
 // The full documentation of the export feature is available [here](https://dt-url.net/h203qmc).
+//
+// ## Resource Example Usage
+//
+// The following example showcases how to manage Key User Actions separately from Web Applications using a dedicated resource.
+// While it is still possible to embed `keyUserActions` into the resource `WebApplication`, doing so is discouraged.
+//
+// ```go
+// package main
+//
+// import (
+//
+//	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//	"github.com/pulumiverse/pulumi-dynatrace/sdk/go/dynatrace"
+//
+// )
+//
+//	func main() {
+//		pulumi.Run(func(ctx *pulumi.Context) error {
+//			webApplication, err := dynatrace.GetApplication(ctx, &dynatrace.GetApplicationArgs{
+//				Name: "Web Application",
+//			}, nil)
+//			if err != nil {
+//				return err
+//			}
+//			_, err = dynatrace.NewKeyUserAction(ctx, "acc", &dynatrace.KeyUserActionArgs{
+//				ApplicationId: pulumi.String(pulumi.String(webApplication.Id)),
+//				Domain:        pulumi.String("120.0.0.1"),
+//				Name:          pulumi.String("Loading of page /custom"),
+//				Type:          pulumi.String("Load"),
+//			})
+//			if err != nil {
+//				return err
+//			}
+//			return nil
+//		})
+//	}
+//
+// ```
 type KeyUserAction struct {
 	pulumi.CustomResourceState
 

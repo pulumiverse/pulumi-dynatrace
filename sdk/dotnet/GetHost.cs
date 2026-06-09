@@ -13,7 +13,7 @@ namespace Pulumiverse.Dynatrace
     public static class GetHost
     {
         /// <summary>
-        /// !&gt; The data source API endpoint has been deprecated, please use dynatrace.getEntity with entity type `HOST` instead.
+        /// &gt; The data source API endpoint has been deprecated, please use dynatrace.getEntity with entity type `HOST` instead.
         /// 
         /// The host data source allows the host ID to be retrieved by its name and optionally tags / tag-value pairs.
         /// 
@@ -26,7 +26,7 @@ namespace Pulumiverse.Dynatrace
             => global::Pulumi.Deployment.Instance.InvokeAsync<GetHostResult>("dynatrace:index/getHost:getHost", args ?? new GetHostArgs(), options.WithDefaults());
 
         /// <summary>
-        /// !&gt; The data source API endpoint has been deprecated, please use dynatrace.getEntity with entity type `HOST` instead.
+        /// &gt; The data source API endpoint has been deprecated, please use dynatrace.getEntity with entity type `HOST` instead.
         /// 
         /// The host data source allows the host ID to be retrieved by its name and optionally tags / tag-value pairs.
         /// 
@@ -39,7 +39,7 @@ namespace Pulumiverse.Dynatrace
             => global::Pulumi.Deployment.Instance.Invoke<GetHostResult>("dynatrace:index/getHost:getHost", args ?? new GetHostInvokeArgs(), options.WithDefaults());
 
         /// <summary>
-        /// !&gt; The data source API endpoint has been deprecated, please use dynatrace.getEntity with entity type `HOST` instead.
+        /// &gt; The data source API endpoint has been deprecated, please use dynatrace.getEntity with entity type `HOST` instead.
         /// 
         /// The host data source allows the host ID to be retrieved by its name and optionally tags / tag-value pairs.
         /// 

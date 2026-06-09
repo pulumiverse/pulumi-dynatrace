@@ -15,15 +15,15 @@ namespace Pulumiverse.Dynatrace.Outputs
     public sealed class OwnershipTeamsContactDetailsContactDetail
     {
         /// <summary>
-        /// no documentation available
+        /// No documentation available
         /// </summary>
         public readonly string? Email;
         /// <summary>
-        /// Possible Values: `EMAIL`, `JIRA`, `MS_TEAMS`, `SLACK`
+        /// Integration type. Possible values: `EMAIL`, `JIRA`, `MS_TEAMS`, `SLACK`
         /// </summary>
         public readonly string IntegrationType;
         /// <summary>
-        /// no documentation available
+        /// No documentation available
         /// </summary>
         public readonly Outputs.OwnershipTeamsContactDetailsContactDetailJira? Jira;
         /// <summary>
@@ -35,7 +35,7 @@ namespace Pulumiverse.Dynatrace.Outputs
         /// </summary>
         public readonly string? SlackChannel;
         /// <summary>
-        /// no documentation available
+        /// No documentation available
         /// </summary>
         public readonly string? Url;
 

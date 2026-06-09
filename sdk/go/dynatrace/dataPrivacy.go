@@ -34,7 +34,7 @@ type DataPrivacy struct {
 	DataCollection DataPrivacyDataCollectionOutput `pulumi:"dataCollection"`
 	// Most modern web browsers have a privacy feature called ["Do Not Track"](https://dt-url.net/sb3n0pnl) that individual users may have enabled on their devices. Customize how Dynatrace should behave when it encounters this setting.
 	DoNotTrack DataPrivacyDoNotTrackOutput `pulumi:"doNotTrack"`
-	// no documentation available
+	// No documentation available
 	Masking DataPrivacyMaskingOutput `pulumi:"masking"`
 	// User tracking
 	UserTracking DataPrivacyUserTrackingOutput `pulumi:"userTracking"`
@@ -88,7 +88,7 @@ type dataPrivacyState struct {
 	DataCollection *DataPrivacyDataCollection `pulumi:"dataCollection"`
 	// Most modern web browsers have a privacy feature called ["Do Not Track"](https://dt-url.net/sb3n0pnl) that individual users may have enabled on their devices. Customize how Dynatrace should behave when it encounters this setting.
 	DoNotTrack *DataPrivacyDoNotTrack `pulumi:"doNotTrack"`
-	// no documentation available
+	// No documentation available
 	Masking *DataPrivacyMasking `pulumi:"masking"`
 	// User tracking
 	UserTracking *DataPrivacyUserTracking `pulumi:"userTracking"`
@@ -101,7 +101,7 @@ type DataPrivacyState struct {
 	DataCollection DataPrivacyDataCollectionPtrInput
 	// Most modern web browsers have a privacy feature called ["Do Not Track"](https://dt-url.net/sb3n0pnl) that individual users may have enabled on their devices. Customize how Dynatrace should behave when it encounters this setting.
 	DoNotTrack DataPrivacyDoNotTrackPtrInput
-	// no documentation available
+	// No documentation available
 	Masking DataPrivacyMaskingPtrInput
 	// User tracking
 	UserTracking DataPrivacyUserTrackingPtrInput
@@ -118,7 +118,7 @@ type dataPrivacyArgs struct {
 	DataCollection DataPrivacyDataCollection `pulumi:"dataCollection"`
 	// Most modern web browsers have a privacy feature called ["Do Not Track"](https://dt-url.net/sb3n0pnl) that individual users may have enabled on their devices. Customize how Dynatrace should behave when it encounters this setting.
 	DoNotTrack DataPrivacyDoNotTrack `pulumi:"doNotTrack"`
-	// no documentation available
+	// No documentation available
 	Masking DataPrivacyMasking `pulumi:"masking"`
 	// User tracking
 	UserTracking DataPrivacyUserTracking `pulumi:"userTracking"`
@@ -132,7 +132,7 @@ type DataPrivacyArgs struct {
 	DataCollection DataPrivacyDataCollectionInput
 	// Most modern web browsers have a privacy feature called ["Do Not Track"](https://dt-url.net/sb3n0pnl) that individual users may have enabled on their devices. Customize how Dynatrace should behave when it encounters this setting.
 	DoNotTrack DataPrivacyDoNotTrackInput
-	// no documentation available
+	// No documentation available
 	Masking DataPrivacyMaskingInput
 	// User tracking
 	UserTracking DataPrivacyUserTrackingInput
@@ -240,7 +240,7 @@ func (o DataPrivacyOutput) DoNotTrack() DataPrivacyDoNotTrackOutput {
 	return o.ApplyT(func(v *DataPrivacy) DataPrivacyDoNotTrackOutput { return v.DoNotTrack }).(DataPrivacyDoNotTrackOutput)
 }
 
-// no documentation available
+// No documentation available
 func (o DataPrivacyOutput) Masking() DataPrivacyMaskingOutput {
 	return o.ApplyT(func(v *DataPrivacy) DataPrivacyMaskingOutput { return v.Masking }).(DataPrivacyMaskingOutput)
 }

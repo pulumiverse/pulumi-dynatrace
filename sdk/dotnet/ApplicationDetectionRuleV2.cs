@@ -11,7 +11,7 @@ using Pulumi;
 namespace Pulumiverse.Dynatrace
 {
     /// <summary>
-    /// !&gt; This resource does not handle ordering of rules. If ordering is required, please use dynatrace.ApplicationDetectionRule instead.
+    /// &gt; This resource does not handle ordering of rules. If ordering is required, please use dynatrace.ApplicationDetectionRule instead.
     /// 
     /// &gt; This resource requires the API token scopes **Read settings** (`settings.read`) and **Write settings** (`settings.write`)
     /// 
@@ -37,82 +37,14 @@ namespace Pulumiverse.Dynatrace
     /// 
     /// return await Deployment.RunAsync(() =&gt; 
     /// {
-    ///     var application = new Dynatrace.WebApplication("application", new()
+    ///     var webApplication = Dynatrace.GetApplication.Invoke(new()
     ///     {
-    ///         Name = "#name#",
-    ///         Type = "AUTO_INJECTED",
-    ///         CostControlUserSessionPercentage = 100,
-    ///         LoadActionKeyPerformanceMetric = "VISUALLY_COMPLETE",
-    ///         RealUserMonitoringEnabled = true,
-    ///         XhrActionKeyPerformanceMetric = "VISUALLY_COMPLETE",
-    ///         CustomActionApdexSettings = new Dynatrace.Inputs.WebApplicationCustomActionApdexSettingsArgs
-    ///         {
-    ///             FrustratingFallbackThreshold = 12000,
-    ///             FrustratingThreshold = 12000,
-    ///             ToleratedFallbackThreshold = 3000,
-    ///             ToleratedThreshold = 3000,
-    ///         },
-    ///         LoadActionApdexSettings = new Dynatrace.Inputs.WebApplicationLoadActionApdexSettingsArgs
-    ///         {
-    ///             FrustratingFallbackThreshold = 12000,
-    ///             FrustratingThreshold = 12000,
-    ///             ToleratedFallbackThreshold = 3000,
-    ///             ToleratedThreshold = 3000,
-    ///         },
-    ///         MonitoringSettings = new Dynatrace.Inputs.WebApplicationMonitoringSettingsArgs
-    ///         {
-    ///             AddCrossOriginAnonymousAttribute = true,
-    ///             CacheControlHeaderOptimizations = true,
-    ///             InjectionMode = "JAVASCRIPT_TAG",
-    ///             ScriptTagCacheDurationInHours = 1,
-    ///             AdvancedJavascriptTagSettings = new Dynatrace.Inputs.WebApplicationMonitoringSettingsAdvancedJavascriptTagSettingsArgs
-    ///             {
-    ///                 MaxActionNameLength = 100,
-    ///                 MaxErrorsToCapture = 10,
-    ///                 AdditionalEventHandlers = new Dynatrace.Inputs.WebApplicationMonitoringSettingsAdvancedJavascriptTagSettingsAdditionalEventHandlersArgs
-    ///                 {
-    ///                     MaxDomNodes = 5000,
-    ///                 },
-    ///             },
-    ///             ContentCapture = new Dynatrace.Inputs.WebApplicationMonitoringSettingsContentCaptureArgs
-    ///             {
-    ///                 ResourceTimingSettings = new Dynatrace.Inputs.WebApplicationMonitoringSettingsContentCaptureResourceTimingSettingsArgs
-    ///                 {
-    ///                     InstrumentationDelay = 53,
-    ///                     NonW3cResourceTimings = true,
-    ///                     W3cResourceTimings = true,
-    ///                 },
-    ///                 TimeoutSettings = new Dynatrace.Inputs.WebApplicationMonitoringSettingsContentCaptureTimeoutSettingsArgs
-    ///                 {
-    ///                     TemporaryActionLimit = 3,
-    ///                     TemporaryActionTotalTimeout = 100,
-    ///                     TimedActionSupport = true,
-    ///                 },
-    ///             },
-    ///         },
-    ///         UserActionNamingSettings = null,
-    ///         WaterfallSettings = new Dynatrace.Inputs.WebApplicationWaterfallSettingsArgs
-    ///         {
-    ///             ResourceBrowserCachingThreshold = 50,
-    ///             ResourcesThreshold = 100000,
-    ///             SlowCndResourcesThreshold = 200000,
-    ///             SlowFirstPartyResourcesThreshold = 200000,
-    ///             SlowThirdPartyResourcesThreshold = 200000,
-    ///             SpeedIndexVisuallyCompleteRatioThreshold = 50,
-    ///             UncompressedResourcesThreshold = 860,
-    ///         },
-    ///         XhrActionApdexSettings = new Dynatrace.Inputs.WebApplicationXhrActionApdexSettingsArgs
-    ///         {
-    ///             FrustratingFallbackThreshold = 12000,
-    ///             FrustratingThreshold = 12000,
-    ///             ToleratedFallbackThreshold = 3000,
-    ///             ToleratedThreshold = 3000,
-    ///         },
+    ///         Name = "Web Application",
     ///     });
     /// 
     ///     var detectionRule = new Dynatrace.ApplicationDetectionRuleV2("detection_rule", new()
     ///     {
-    ///         ApplicationId = application.Id,
+    ///         ApplicationId = webApplication.Apply(getApplicationResult =&gt; getApplicationResult.Id),
     ///         Matcher = "DOMAIN_MATCHES",
     ///         Pattern = "TerraformTest",
     ///     });
@@ -130,7 +62,7 @@ namespace Pulumiverse.Dynatrace
         public Output<string> ApplicationId { get; private set; } = null!;
 
         /// <summary>
-        /// (v1.274) Add a description for your rule
+        /// Add a description for your rule
         /// </summary>
         [Output("description")]
         public Output<string?> Description { get; private set; } = null!;
@@ -142,7 +74,7 @@ namespace Pulumiverse.Dynatrace
         public Output<string> InsertAfter { get; private set; } = null!;
 
         /// <summary>
-        /// Possible Values: `DOMAIN_CONTAINS`, `DOMAIN_ENDS_WITH`, `DOMAIN_EQUALS`, `DOMAIN_MATCHES`, `DOMAIN_STARTS_WITH`, `URL_CONTAINS`, `URL_ENDS_WITH`, `URL_EQUALS`, `URL_STARTS_WITH`
+        /// Matcher. Possible values: `DOMAIN_CONTAINS`, `DOMAIN_ENDS_WITH`, `DOMAIN_EQUALS`, `DOMAIN_MATCHES`, `DOMAIN_STARTS_WITH`, `URL_CONTAINS`, `URL_ENDS_WITH`, `URL_EQUALS`, `URL_STARTS_WITH`
         /// </summary>
         [Output("matcher")]
         public Output<string> Matcher { get; private set; } = null!;
@@ -207,7 +139,7 @@ namespace Pulumiverse.Dynatrace
         public Input<string> ApplicationId { get; set; } = null!;
 
         /// <summary>
-        /// (v1.274) Add a description for your rule
+        /// Add a description for your rule
         /// </summary>
         [Input("description")]
         public Input<string>? Description { get; set; }
@@ -219,7 +151,7 @@ namespace Pulumiverse.Dynatrace
         public Input<string>? InsertAfter { get; set; }
 
         /// <summary>
-        /// Possible Values: `DOMAIN_CONTAINS`, `DOMAIN_ENDS_WITH`, `DOMAIN_EQUALS`, `DOMAIN_MATCHES`, `DOMAIN_STARTS_WITH`, `URL_CONTAINS`, `URL_ENDS_WITH`, `URL_EQUALS`, `URL_STARTS_WITH`
+        /// Matcher. Possible values: `DOMAIN_CONTAINS`, `DOMAIN_ENDS_WITH`, `DOMAIN_EQUALS`, `DOMAIN_MATCHES`, `DOMAIN_STARTS_WITH`, `URL_CONTAINS`, `URL_ENDS_WITH`, `URL_EQUALS`, `URL_STARTS_WITH`
         /// </summary>
         [Input("matcher", required: true)]
         public Input<string> Matcher { get; set; } = null!;
@@ -245,7 +177,7 @@ namespace Pulumiverse.Dynatrace
         public Input<string>? ApplicationId { get; set; }
 
         /// <summary>
-        /// (v1.274) Add a description for your rule
+        /// Add a description for your rule
         /// </summary>
         [Input("description")]
         public Input<string>? Description { get; set; }
@@ -257,7 +189,7 @@ namespace Pulumiverse.Dynatrace
         public Input<string>? InsertAfter { get; set; }
 
         /// <summary>
-        /// Possible Values: `DOMAIN_CONTAINS`, `DOMAIN_ENDS_WITH`, `DOMAIN_EQUALS`, `DOMAIN_MATCHES`, `DOMAIN_STARTS_WITH`, `URL_CONTAINS`, `URL_ENDS_WITH`, `URL_EQUALS`, `URL_STARTS_WITH`
+        /// Matcher. Possible values: `DOMAIN_CONTAINS`, `DOMAIN_ENDS_WITH`, `DOMAIN_EQUALS`, `DOMAIN_MATCHES`, `DOMAIN_STARTS_WITH`, `URL_CONTAINS`, `URL_ENDS_WITH`, `URL_EQUALS`, `URL_STARTS_WITH`
         /// </summary>
         [Input("matcher")]
         public Input<string>? Matcher { get; set; }

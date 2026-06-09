@@ -28,35 +28,35 @@ import (
 type K8sWorkloadAnomalies struct {
 	pulumi.CustomResourceState
 
-	// no documentation available
+	// No documentation available
 	ContainerRestarts K8sWorkloadAnomaliesContainerRestartsOutput `pulumi:"containerRestarts"`
-	// no documentation available
+	// No documentation available
 	DeploymentStuck K8sWorkloadAnomaliesDeploymentStuckOutput `pulumi:"deploymentStuck"`
-	// no documentation available
+	// No documentation available
 	HighCpuThrottling K8sWorkloadAnomaliesHighCpuThrottlingOutput `pulumi:"highCpuThrottling"`
-	// no documentation available
+	// No documentation available
 	HighCpuUsage K8sWorkloadAnomaliesHighCpuUsageOutput `pulumi:"highCpuUsage"`
-	// no documentation available
+	// No documentation available
 	HighMemoryUsage K8sWorkloadAnomaliesHighMemoryUsageOutput `pulumi:"highMemoryUsage"`
-	// no documentation available
+	// No documentation available
 	JobFailureEvents K8sWorkloadAnomaliesJobFailureEventsOutput `pulumi:"jobFailureEvents"`
-	// no documentation available
+	// No documentation available
 	NotAllPodsReady K8sWorkloadAnomaliesNotAllPodsReadyOutput `pulumi:"notAllPodsReady"`
-	// no documentation available
+	// No documentation available
 	OomKills K8sWorkloadAnomaliesOomKillsOutput `pulumi:"oomKills"`
-	// no documentation available
+	// No documentation available
 	PendingPods K8sWorkloadAnomaliesPendingPodsOutput `pulumi:"pendingPods"`
-	// no documentation available
+	// No documentation available
 	PodBackoffEvents K8sWorkloadAnomaliesPodBackoffEventsOutput `pulumi:"podBackoffEvents"`
-	// no documentation available
+	// No documentation available
 	PodEvictionEvents K8sWorkloadAnomaliesPodEvictionEventsOutput `pulumi:"podEvictionEvents"`
-	// no documentation available
+	// No documentation available
 	PodPreemptionEvents K8sWorkloadAnomaliesPodPreemptionEventsOutput `pulumi:"podPreemptionEvents"`
-	// no documentation available
+	// No documentation available
 	PodStuckInTerminating K8sWorkloadAnomaliesPodStuckInTerminatingOutput `pulumi:"podStuckInTerminating"`
 	// The scope of this setting (CLOUD*APPLICATION*NAMESPACE, KUBERNETES_CLUSTER). Omit this property if you want to cover the whole environment.
 	Scope pulumi.StringPtrOutput `pulumi:"scope"`
-	// no documentation available
+	// No documentation available
 	WorkloadWithoutReadyPods K8sWorkloadAnomaliesWorkloadWithoutReadyPodsOutput `pulumi:"workloadWithoutReadyPods"`
 }
 
@@ -132,68 +132,68 @@ func GetK8sWorkloadAnomalies(ctx *pulumi.Context,
 
 // Input properties used for looking up and filtering K8sWorkloadAnomalies resources.
 type k8sWorkloadAnomaliesState struct {
-	// no documentation available
+	// No documentation available
 	ContainerRestarts *K8sWorkloadAnomaliesContainerRestarts `pulumi:"containerRestarts"`
-	// no documentation available
+	// No documentation available
 	DeploymentStuck *K8sWorkloadAnomaliesDeploymentStuck `pulumi:"deploymentStuck"`
-	// no documentation available
+	// No documentation available
 	HighCpuThrottling *K8sWorkloadAnomaliesHighCpuThrottling `pulumi:"highCpuThrottling"`
-	// no documentation available
+	// No documentation available
 	HighCpuUsage *K8sWorkloadAnomaliesHighCpuUsage `pulumi:"highCpuUsage"`
-	// no documentation available
+	// No documentation available
 	HighMemoryUsage *K8sWorkloadAnomaliesHighMemoryUsage `pulumi:"highMemoryUsage"`
-	// no documentation available
+	// No documentation available
 	JobFailureEvents *K8sWorkloadAnomaliesJobFailureEvents `pulumi:"jobFailureEvents"`
-	// no documentation available
+	// No documentation available
 	NotAllPodsReady *K8sWorkloadAnomaliesNotAllPodsReady `pulumi:"notAllPodsReady"`
-	// no documentation available
+	// No documentation available
 	OomKills *K8sWorkloadAnomaliesOomKills `pulumi:"oomKills"`
-	// no documentation available
+	// No documentation available
 	PendingPods *K8sWorkloadAnomaliesPendingPods `pulumi:"pendingPods"`
-	// no documentation available
+	// No documentation available
 	PodBackoffEvents *K8sWorkloadAnomaliesPodBackoffEvents `pulumi:"podBackoffEvents"`
-	// no documentation available
+	// No documentation available
 	PodEvictionEvents *K8sWorkloadAnomaliesPodEvictionEvents `pulumi:"podEvictionEvents"`
-	// no documentation available
+	// No documentation available
 	PodPreemptionEvents *K8sWorkloadAnomaliesPodPreemptionEvents `pulumi:"podPreemptionEvents"`
-	// no documentation available
+	// No documentation available
 	PodStuckInTerminating *K8sWorkloadAnomaliesPodStuckInTerminating `pulumi:"podStuckInTerminating"`
 	// The scope of this setting (CLOUD*APPLICATION*NAMESPACE, KUBERNETES_CLUSTER). Omit this property if you want to cover the whole environment.
 	Scope *string `pulumi:"scope"`
-	// no documentation available
+	// No documentation available
 	WorkloadWithoutReadyPods *K8sWorkloadAnomaliesWorkloadWithoutReadyPods `pulumi:"workloadWithoutReadyPods"`
 }
 
 type K8sWorkloadAnomaliesState struct {
-	// no documentation available
+	// No documentation available
 	ContainerRestarts K8sWorkloadAnomaliesContainerRestartsPtrInput
-	// no documentation available
+	// No documentation available
 	DeploymentStuck K8sWorkloadAnomaliesDeploymentStuckPtrInput
-	// no documentation available
+	// No documentation available
 	HighCpuThrottling K8sWorkloadAnomaliesHighCpuThrottlingPtrInput
-	// no documentation available
+	// No documentation available
 	HighCpuUsage K8sWorkloadAnomaliesHighCpuUsagePtrInput
-	// no documentation available
+	// No documentation available
 	HighMemoryUsage K8sWorkloadAnomaliesHighMemoryUsagePtrInput
-	// no documentation available
+	// No documentation available
 	JobFailureEvents K8sWorkloadAnomaliesJobFailureEventsPtrInput
-	// no documentation available
+	// No documentation available
 	NotAllPodsReady K8sWorkloadAnomaliesNotAllPodsReadyPtrInput
-	// no documentation available
+	// No documentation available
 	OomKills K8sWorkloadAnomaliesOomKillsPtrInput
-	// no documentation available
+	// No documentation available
 	PendingPods K8sWorkloadAnomaliesPendingPodsPtrInput
-	// no documentation available
+	// No documentation available
 	PodBackoffEvents K8sWorkloadAnomaliesPodBackoffEventsPtrInput
-	// no documentation available
+	// No documentation available
 	PodEvictionEvents K8sWorkloadAnomaliesPodEvictionEventsPtrInput
-	// no documentation available
+	// No documentation available
 	PodPreemptionEvents K8sWorkloadAnomaliesPodPreemptionEventsPtrInput
-	// no documentation available
+	// No documentation available
 	PodStuckInTerminating K8sWorkloadAnomaliesPodStuckInTerminatingPtrInput
 	// The scope of this setting (CLOUD*APPLICATION*NAMESPACE, KUBERNETES_CLUSTER). Omit this property if you want to cover the whole environment.
 	Scope pulumi.StringPtrInput
-	// no documentation available
+	// No documentation available
 	WorkloadWithoutReadyPods K8sWorkloadAnomaliesWorkloadWithoutReadyPodsPtrInput
 }
 
@@ -202,69 +202,69 @@ func (K8sWorkloadAnomaliesState) ElementType() reflect.Type {
 }
 
 type k8sWorkloadAnomaliesArgs struct {
-	// no documentation available
+	// No documentation available
 	ContainerRestarts K8sWorkloadAnomaliesContainerRestarts `pulumi:"containerRestarts"`
-	// no documentation available
+	// No documentation available
 	DeploymentStuck K8sWorkloadAnomaliesDeploymentStuck `pulumi:"deploymentStuck"`
-	// no documentation available
+	// No documentation available
 	HighCpuThrottling K8sWorkloadAnomaliesHighCpuThrottling `pulumi:"highCpuThrottling"`
-	// no documentation available
+	// No documentation available
 	HighCpuUsage K8sWorkloadAnomaliesHighCpuUsage `pulumi:"highCpuUsage"`
-	// no documentation available
+	// No documentation available
 	HighMemoryUsage K8sWorkloadAnomaliesHighMemoryUsage `pulumi:"highMemoryUsage"`
-	// no documentation available
+	// No documentation available
 	JobFailureEvents K8sWorkloadAnomaliesJobFailureEvents `pulumi:"jobFailureEvents"`
-	// no documentation available
+	// No documentation available
 	NotAllPodsReady K8sWorkloadAnomaliesNotAllPodsReady `pulumi:"notAllPodsReady"`
-	// no documentation available
+	// No documentation available
 	OomKills K8sWorkloadAnomaliesOomKills `pulumi:"oomKills"`
-	// no documentation available
+	// No documentation available
 	PendingPods K8sWorkloadAnomaliesPendingPods `pulumi:"pendingPods"`
-	// no documentation available
+	// No documentation available
 	PodBackoffEvents K8sWorkloadAnomaliesPodBackoffEvents `pulumi:"podBackoffEvents"`
-	// no documentation available
+	// No documentation available
 	PodEvictionEvents K8sWorkloadAnomaliesPodEvictionEvents `pulumi:"podEvictionEvents"`
-	// no documentation available
+	// No documentation available
 	PodPreemptionEvents K8sWorkloadAnomaliesPodPreemptionEvents `pulumi:"podPreemptionEvents"`
-	// no documentation available
+	// No documentation available
 	PodStuckInTerminating K8sWorkloadAnomaliesPodStuckInTerminating `pulumi:"podStuckInTerminating"`
 	// The scope of this setting (CLOUD*APPLICATION*NAMESPACE, KUBERNETES_CLUSTER). Omit this property if you want to cover the whole environment.
 	Scope *string `pulumi:"scope"`
-	// no documentation available
+	// No documentation available
 	WorkloadWithoutReadyPods K8sWorkloadAnomaliesWorkloadWithoutReadyPods `pulumi:"workloadWithoutReadyPods"`
 }
 
 // The set of arguments for constructing a K8sWorkloadAnomalies resource.
 type K8sWorkloadAnomaliesArgs struct {
-	// no documentation available
+	// No documentation available
 	ContainerRestarts K8sWorkloadAnomaliesContainerRestartsInput
-	// no documentation available
+	// No documentation available
 	DeploymentStuck K8sWorkloadAnomaliesDeploymentStuckInput
-	// no documentation available
+	// No documentation available
 	HighCpuThrottling K8sWorkloadAnomaliesHighCpuThrottlingInput
-	// no documentation available
+	// No documentation available
 	HighCpuUsage K8sWorkloadAnomaliesHighCpuUsageInput
-	// no documentation available
+	// No documentation available
 	HighMemoryUsage K8sWorkloadAnomaliesHighMemoryUsageInput
-	// no documentation available
+	// No documentation available
 	JobFailureEvents K8sWorkloadAnomaliesJobFailureEventsInput
-	// no documentation available
+	// No documentation available
 	NotAllPodsReady K8sWorkloadAnomaliesNotAllPodsReadyInput
-	// no documentation available
+	// No documentation available
 	OomKills K8sWorkloadAnomaliesOomKillsInput
-	// no documentation available
+	// No documentation available
 	PendingPods K8sWorkloadAnomaliesPendingPodsInput
-	// no documentation available
+	// No documentation available
 	PodBackoffEvents K8sWorkloadAnomaliesPodBackoffEventsInput
-	// no documentation available
+	// No documentation available
 	PodEvictionEvents K8sWorkloadAnomaliesPodEvictionEventsInput
-	// no documentation available
+	// No documentation available
 	PodPreemptionEvents K8sWorkloadAnomaliesPodPreemptionEventsInput
-	// no documentation available
+	// No documentation available
 	PodStuckInTerminating K8sWorkloadAnomaliesPodStuckInTerminatingInput
 	// The scope of this setting (CLOUD*APPLICATION*NAMESPACE, KUBERNETES_CLUSTER). Omit this property if you want to cover the whole environment.
 	Scope pulumi.StringPtrInput
-	// no documentation available
+	// No documentation available
 	WorkloadWithoutReadyPods K8sWorkloadAnomaliesWorkloadWithoutReadyPodsInput
 }
 
@@ -355,69 +355,69 @@ func (o K8sWorkloadAnomaliesOutput) ToK8sWorkloadAnomaliesOutputWithContext(ctx 
 	return o
 }
 
-// no documentation available
+// No documentation available
 func (o K8sWorkloadAnomaliesOutput) ContainerRestarts() K8sWorkloadAnomaliesContainerRestartsOutput {
 	return o.ApplyT(func(v *K8sWorkloadAnomalies) K8sWorkloadAnomaliesContainerRestartsOutput { return v.ContainerRestarts }).(K8sWorkloadAnomaliesContainerRestartsOutput)
 }
 
-// no documentation available
+// No documentation available
 func (o K8sWorkloadAnomaliesOutput) DeploymentStuck() K8sWorkloadAnomaliesDeploymentStuckOutput {
 	return o.ApplyT(func(v *K8sWorkloadAnomalies) K8sWorkloadAnomaliesDeploymentStuckOutput { return v.DeploymentStuck }).(K8sWorkloadAnomaliesDeploymentStuckOutput)
 }
 
-// no documentation available
+// No documentation available
 func (o K8sWorkloadAnomaliesOutput) HighCpuThrottling() K8sWorkloadAnomaliesHighCpuThrottlingOutput {
 	return o.ApplyT(func(v *K8sWorkloadAnomalies) K8sWorkloadAnomaliesHighCpuThrottlingOutput { return v.HighCpuThrottling }).(K8sWorkloadAnomaliesHighCpuThrottlingOutput)
 }
 
-// no documentation available
+// No documentation available
 func (o K8sWorkloadAnomaliesOutput) HighCpuUsage() K8sWorkloadAnomaliesHighCpuUsageOutput {
 	return o.ApplyT(func(v *K8sWorkloadAnomalies) K8sWorkloadAnomaliesHighCpuUsageOutput { return v.HighCpuUsage }).(K8sWorkloadAnomaliesHighCpuUsageOutput)
 }
 
-// no documentation available
+// No documentation available
 func (o K8sWorkloadAnomaliesOutput) HighMemoryUsage() K8sWorkloadAnomaliesHighMemoryUsageOutput {
 	return o.ApplyT(func(v *K8sWorkloadAnomalies) K8sWorkloadAnomaliesHighMemoryUsageOutput { return v.HighMemoryUsage }).(K8sWorkloadAnomaliesHighMemoryUsageOutput)
 }
 
-// no documentation available
+// No documentation available
 func (o K8sWorkloadAnomaliesOutput) JobFailureEvents() K8sWorkloadAnomaliesJobFailureEventsOutput {
 	return o.ApplyT(func(v *K8sWorkloadAnomalies) K8sWorkloadAnomaliesJobFailureEventsOutput { return v.JobFailureEvents }).(K8sWorkloadAnomaliesJobFailureEventsOutput)
 }
 
-// no documentation available
+// No documentation available
 func (o K8sWorkloadAnomaliesOutput) NotAllPodsReady() K8sWorkloadAnomaliesNotAllPodsReadyOutput {
 	return o.ApplyT(func(v *K8sWorkloadAnomalies) K8sWorkloadAnomaliesNotAllPodsReadyOutput { return v.NotAllPodsReady }).(K8sWorkloadAnomaliesNotAllPodsReadyOutput)
 }
 
-// no documentation available
+// No documentation available
 func (o K8sWorkloadAnomaliesOutput) OomKills() K8sWorkloadAnomaliesOomKillsOutput {
 	return o.ApplyT(func(v *K8sWorkloadAnomalies) K8sWorkloadAnomaliesOomKillsOutput { return v.OomKills }).(K8sWorkloadAnomaliesOomKillsOutput)
 }
 
-// no documentation available
+// No documentation available
 func (o K8sWorkloadAnomaliesOutput) PendingPods() K8sWorkloadAnomaliesPendingPodsOutput {
 	return o.ApplyT(func(v *K8sWorkloadAnomalies) K8sWorkloadAnomaliesPendingPodsOutput { return v.PendingPods }).(K8sWorkloadAnomaliesPendingPodsOutput)
 }
 
-// no documentation available
+// No documentation available
 func (o K8sWorkloadAnomaliesOutput) PodBackoffEvents() K8sWorkloadAnomaliesPodBackoffEventsOutput {
 	return o.ApplyT(func(v *K8sWorkloadAnomalies) K8sWorkloadAnomaliesPodBackoffEventsOutput { return v.PodBackoffEvents }).(K8sWorkloadAnomaliesPodBackoffEventsOutput)
 }
 
-// no documentation available
+// No documentation available
 func (o K8sWorkloadAnomaliesOutput) PodEvictionEvents() K8sWorkloadAnomaliesPodEvictionEventsOutput {
 	return o.ApplyT(func(v *K8sWorkloadAnomalies) K8sWorkloadAnomaliesPodEvictionEventsOutput { return v.PodEvictionEvents }).(K8sWorkloadAnomaliesPodEvictionEventsOutput)
 }
 
-// no documentation available
+// No documentation available
 func (o K8sWorkloadAnomaliesOutput) PodPreemptionEvents() K8sWorkloadAnomaliesPodPreemptionEventsOutput {
 	return o.ApplyT(func(v *K8sWorkloadAnomalies) K8sWorkloadAnomaliesPodPreemptionEventsOutput {
 		return v.PodPreemptionEvents
 	}).(K8sWorkloadAnomaliesPodPreemptionEventsOutput)
 }
 
-// no documentation available
+// No documentation available
 func (o K8sWorkloadAnomaliesOutput) PodStuckInTerminating() K8sWorkloadAnomaliesPodStuckInTerminatingOutput {
 	return o.ApplyT(func(v *K8sWorkloadAnomalies) K8sWorkloadAnomaliesPodStuckInTerminatingOutput {
 		return v.PodStuckInTerminating
@@ -429,7 +429,7 @@ func (o K8sWorkloadAnomaliesOutput) Scope() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v *K8sWorkloadAnomalies) pulumi.StringPtrOutput { return v.Scope }).(pulumi.StringPtrOutput)
 }
 
-// no documentation available
+// No documentation available
 func (o K8sWorkloadAnomaliesOutput) WorkloadWithoutReadyPods() K8sWorkloadAnomaliesWorkloadWithoutReadyPodsOutput {
 	return o.ApplyT(func(v *K8sWorkloadAnomalies) K8sWorkloadAnomaliesWorkloadWithoutReadyPodsOutput {
 		return v.WorkloadWithoutReadyPods

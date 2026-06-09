@@ -14,13 +14,13 @@ namespace Pulumiverse.Dynatrace.Inputs
     public sealed class ManagementZoneV2RulesRuleGetArgs : global::Pulumi.ResourceArgs
     {
         /// <summary>
-        /// no documentation available
+        /// No documentation available
         /// </summary>
         [Input("attributeRule")]
         public Input<Inputs.ManagementZoneV2RulesRuleAttributeRuleGetArgs>? AttributeRule { get; set; }
 
         /// <summary>
-        /// no documentation available
+        /// No documentation available
         /// </summary>
         [Input("dimensionRule")]
         public Input<Inputs.ManagementZoneV2RulesRuleDimensionRuleGetArgs>? DimensionRule { get; set; }
@@ -38,7 +38,7 @@ namespace Pulumiverse.Dynatrace.Inputs
         public Input<string>? EntitySelector { get; set; }
 
         /// <summary>
-        /// Possible Values: `DIMENSION`, `ME`, `SELECTOR`
+        /// Rule type. Possible values: `DIMENSION`, `ME`, `SELECTOR`
         /// </summary>
         [Input("type", required: true)]
         public Input<string> Type { get; set; } = null!;

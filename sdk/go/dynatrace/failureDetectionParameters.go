@@ -30,13 +30,13 @@ type FailureDetectionParameters struct {
 
 	// HTTP 404 response codes are thrown when a web server can't find a certain page. 404s are classified as broken links on the client side and therefore aren't considered to be service failures. By enabling this setting, you can have 404s treated as server-side service failures.
 	BrokenLinks FailureDetectionParametersBrokenLinksOutput `pulumi:"brokenLinks"`
-	// Description
+	// A short description of this failure detection parameter set.
 	Description pulumi.StringPtrOutput `pulumi:"description"`
-	// Customize failure detection for specific exceptions and errors
+	// Exception and custom error rules that determine how specific exceptions, handled errors, and request-attribute-based conditions affect failure detection.
 	ExceptionRules FailureDetectionParametersExceptionRulesOutput `pulumi:"exceptionRules"`
-	// HTTP response codes
+	// HTTP response code settings that control which response codes are treated as server-side or client-side errors.
 	HttpResponseCodes FailureDetectionParametersHttpResponseCodesOutput `pulumi:"httpResponseCodes"`
-	// Name
+	// The display name of this failure detection parameter set.
 	Name pulumi.StringOutput `pulumi:"name"`
 }
 
@@ -81,26 +81,26 @@ func GetFailureDetectionParameters(ctx *pulumi.Context,
 type failureDetectionParametersState struct {
 	// HTTP 404 response codes are thrown when a web server can't find a certain page. 404s are classified as broken links on the client side and therefore aren't considered to be service failures. By enabling this setting, you can have 404s treated as server-side service failures.
 	BrokenLinks *FailureDetectionParametersBrokenLinks `pulumi:"brokenLinks"`
-	// Description
+	// A short description of this failure detection parameter set.
 	Description *string `pulumi:"description"`
-	// Customize failure detection for specific exceptions and errors
+	// Exception and custom error rules that determine how specific exceptions, handled errors, and request-attribute-based conditions affect failure detection.
 	ExceptionRules *FailureDetectionParametersExceptionRules `pulumi:"exceptionRules"`
-	// HTTP response codes
+	// HTTP response code settings that control which response codes are treated as server-side or client-side errors.
 	HttpResponseCodes *FailureDetectionParametersHttpResponseCodes `pulumi:"httpResponseCodes"`
-	// Name
+	// The display name of this failure detection parameter set.
 	Name *string `pulumi:"name"`
 }
 
 type FailureDetectionParametersState struct {
 	// HTTP 404 response codes are thrown when a web server can't find a certain page. 404s are classified as broken links on the client side and therefore aren't considered to be service failures. By enabling this setting, you can have 404s treated as server-side service failures.
 	BrokenLinks FailureDetectionParametersBrokenLinksPtrInput
-	// Description
+	// A short description of this failure detection parameter set.
 	Description pulumi.StringPtrInput
-	// Customize failure detection for specific exceptions and errors
+	// Exception and custom error rules that determine how specific exceptions, handled errors, and request-attribute-based conditions affect failure detection.
 	ExceptionRules FailureDetectionParametersExceptionRulesPtrInput
-	// HTTP response codes
+	// HTTP response code settings that control which response codes are treated as server-side or client-side errors.
 	HttpResponseCodes FailureDetectionParametersHttpResponseCodesPtrInput
-	// Name
+	// The display name of this failure detection parameter set.
 	Name pulumi.StringPtrInput
 }
 
@@ -111,13 +111,13 @@ func (FailureDetectionParametersState) ElementType() reflect.Type {
 type failureDetectionParametersArgs struct {
 	// HTTP 404 response codes are thrown when a web server can't find a certain page. 404s are classified as broken links on the client side and therefore aren't considered to be service failures. By enabling this setting, you can have 404s treated as server-side service failures.
 	BrokenLinks FailureDetectionParametersBrokenLinks `pulumi:"brokenLinks"`
-	// Description
+	// A short description of this failure detection parameter set.
 	Description *string `pulumi:"description"`
-	// Customize failure detection for specific exceptions and errors
+	// Exception and custom error rules that determine how specific exceptions, handled errors, and request-attribute-based conditions affect failure detection.
 	ExceptionRules FailureDetectionParametersExceptionRules `pulumi:"exceptionRules"`
-	// HTTP response codes
+	// HTTP response code settings that control which response codes are treated as server-side or client-side errors.
 	HttpResponseCodes FailureDetectionParametersHttpResponseCodes `pulumi:"httpResponseCodes"`
-	// Name
+	// The display name of this failure detection parameter set.
 	Name *string `pulumi:"name"`
 }
 
@@ -125,13 +125,13 @@ type failureDetectionParametersArgs struct {
 type FailureDetectionParametersArgs struct {
 	// HTTP 404 response codes are thrown when a web server can't find a certain page. 404s are classified as broken links on the client side and therefore aren't considered to be service failures. By enabling this setting, you can have 404s treated as server-side service failures.
 	BrokenLinks FailureDetectionParametersBrokenLinksInput
-	// Description
+	// A short description of this failure detection parameter set.
 	Description pulumi.StringPtrInput
-	// Customize failure detection for specific exceptions and errors
+	// Exception and custom error rules that determine how specific exceptions, handled errors, and request-attribute-based conditions affect failure detection.
 	ExceptionRules FailureDetectionParametersExceptionRulesInput
-	// HTTP response codes
+	// HTTP response code settings that control which response codes are treated as server-side or client-side errors.
 	HttpResponseCodes FailureDetectionParametersHttpResponseCodesInput
-	// Name
+	// The display name of this failure detection parameter set.
 	Name pulumi.StringPtrInput
 }
 
@@ -227,26 +227,26 @@ func (o FailureDetectionParametersOutput) BrokenLinks() FailureDetectionParamete
 	return o.ApplyT(func(v *FailureDetectionParameters) FailureDetectionParametersBrokenLinksOutput { return v.BrokenLinks }).(FailureDetectionParametersBrokenLinksOutput)
 }
 
-// Description
+// A short description of this failure detection parameter set.
 func (o FailureDetectionParametersOutput) Description() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v *FailureDetectionParameters) pulumi.StringPtrOutput { return v.Description }).(pulumi.StringPtrOutput)
 }
 
-// Customize failure detection for specific exceptions and errors
+// Exception and custom error rules that determine how specific exceptions, handled errors, and request-attribute-based conditions affect failure detection.
 func (o FailureDetectionParametersOutput) ExceptionRules() FailureDetectionParametersExceptionRulesOutput {
 	return o.ApplyT(func(v *FailureDetectionParameters) FailureDetectionParametersExceptionRulesOutput {
 		return v.ExceptionRules
 	}).(FailureDetectionParametersExceptionRulesOutput)
 }
 
-// HTTP response codes
+// HTTP response code settings that control which response codes are treated as server-side or client-side errors.
 func (o FailureDetectionParametersOutput) HttpResponseCodes() FailureDetectionParametersHttpResponseCodesOutput {
 	return o.ApplyT(func(v *FailureDetectionParameters) FailureDetectionParametersHttpResponseCodesOutput {
 		return v.HttpResponseCodes
 	}).(FailureDetectionParametersHttpResponseCodesOutput)
 }
 
-// Name
+// The display name of this failure detection parameter set.
 func (o FailureDetectionParametersOutput) Name() pulumi.StringOutput {
 	return o.ApplyT(func(v *FailureDetectionParameters) pulumi.StringOutput { return v.Name }).(pulumi.StringOutput)
 }

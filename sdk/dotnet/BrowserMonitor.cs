@@ -32,93 +32,17 @@ namespace Pulumiverse.Dynatrace
     /// using System.Linq;
     /// using Pulumi;
     /// using Dynatrace = Pulumiverse.Dynatrace;
-    /// using Time = Pulumiverse.Time;
     /// 
     /// return await Deployment.RunAsync(() =&gt; 
     /// {
-    ///     var location = new Dynatrace.SyntheticLocation("location", new()
+    ///     var location = Dynatrace.GetSyntheticLocation.Invoke(new()
     ///     {
-    ///         Name = "#name#",
-    ///         City = "San Francisco de Asis",
-    ///         CountryCode = "VE",
-    ///         RegionCode = "04",
-    ///         DeploymentType = "STANDARD",
-    ///         Latitude = 10.0756,
-    ///         LocationNodeOutageDelayInMinutes = 3,
-    ///         Longitude = -67.5442,
+    ///         Name = "Location",
     ///     });
     /// 
-    ///     var application = new Dynatrace.WebApplication("application", new()
+    ///     var webApplication = Dynatrace.GetApplication.Invoke(new()
     ///     {
-    ///         Name = "#name#",
-    ///         Type = "AUTO_INJECTED",
-    ///         CostControlUserSessionPercentage = 100,
-    ///         LoadActionKeyPerformanceMetric = "VISUALLY_COMPLETE",
-    ///         RealUserMonitoringEnabled = true,
-    ///         XhrActionKeyPerformanceMetric = "VISUALLY_COMPLETE",
-    ///         CustomActionApdexSettings = new Dynatrace.Inputs.WebApplicationCustomActionApdexSettingsArgs
-    ///         {
-    ///             FrustratingFallbackThreshold = 12000,
-    ///             FrustratingThreshold = 12000,
-    ///             ToleratedFallbackThreshold = 3000,
-    ///             ToleratedThreshold = 3000,
-    ///         },
-    ///         LoadActionApdexSettings = new Dynatrace.Inputs.WebApplicationLoadActionApdexSettingsArgs
-    ///         {
-    ///             FrustratingFallbackThreshold = 12000,
-    ///             FrustratingThreshold = 12000,
-    ///             ToleratedFallbackThreshold = 3000,
-    ///             ToleratedThreshold = 3000,
-    ///         },
-    ///         MonitoringSettings = new Dynatrace.Inputs.WebApplicationMonitoringSettingsArgs
-    ///         {
-    ///             AddCrossOriginAnonymousAttribute = true,
-    ///             CacheControlHeaderOptimizations = true,
-    ///             InjectionMode = "JAVASCRIPT_TAG",
-    ///             ScriptTagCacheDurationInHours = 1,
-    ///             AdvancedJavascriptTagSettings = new Dynatrace.Inputs.WebApplicationMonitoringSettingsAdvancedJavascriptTagSettingsArgs
-    ///             {
-    ///                 MaxActionNameLength = 100,
-    ///                 MaxErrorsToCapture = 10,
-    ///                 AdditionalEventHandlers = new Dynatrace.Inputs.WebApplicationMonitoringSettingsAdvancedJavascriptTagSettingsAdditionalEventHandlersArgs
-    ///                 {
-    ///                     MaxDomNodes = 5000,
-    ///                 },
-    ///             },
-    ///             ContentCapture = new Dynatrace.Inputs.WebApplicationMonitoringSettingsContentCaptureArgs
-    ///             {
-    ///                 ResourceTimingSettings = new Dynatrace.Inputs.WebApplicationMonitoringSettingsContentCaptureResourceTimingSettingsArgs
-    ///                 {
-    ///                     InstrumentationDelay = 53,
-    ///                     NonW3cResourceTimings = true,
-    ///                     W3cResourceTimings = true,
-    ///                 },
-    ///                 TimeoutSettings = new Dynatrace.Inputs.WebApplicationMonitoringSettingsContentCaptureTimeoutSettingsArgs
-    ///                 {
-    ///                     TemporaryActionLimit = 3,
-    ///                     TemporaryActionTotalTimeout = 100,
-    ///                     TimedActionSupport = true,
-    ///                 },
-    ///             },
-    ///         },
-    ///         UserActionNamingSettings = null,
-    ///         WaterfallSettings = new Dynatrace.Inputs.WebApplicationWaterfallSettingsArgs
-    ///         {
-    ///             ResourceBrowserCachingThreshold = 50,
-    ///             ResourcesThreshold = 100000,
-    ///             SlowCndResourcesThreshold = 200000,
-    ///             SlowFirstPartyResourcesThreshold = 200000,
-    ///             SlowThirdPartyResourcesThreshold = 200000,
-    ///             SpeedIndexVisuallyCompleteRatioThreshold = 50,
-    ///             UncompressedResourcesThreshold = 860,
-    ///         },
-    ///         XhrActionApdexSettings = new Dynatrace.Inputs.WebApplicationXhrActionApdexSettingsArgs
-    ///         {
-    ///             FrustratingFallbackThreshold = 12000,
-    ///             FrustratingThreshold = 12000,
-    ///             ToleratedFallbackThreshold = 3000,
-    ///             ToleratedThreshold = 3000,
-    ///         },
+    ///         Name = "Web Application",
     ///     });
     /// 
     ///     var credentialsVault = new Dynatrace.Credentials("credentials_vault", new()
@@ -133,30 +57,17 @@ namespace Pulumiverse.Dynatrace
     ///         Password = "password",
     ///     });
     /// 
-    ///     var wait5Seconds = new Time.Sleep("wait_5_seconds", new()
-    ///     {
-    ///         CreateDuration = "5s",
-    ///     }, new CustomResourceOptions
-    ///     {
-    ///         DependsOn =
-    ///         {
-    ///             location,
-    ///             application,
-    ///             credentialsVault,
-    ///         },
-    ///     });
-    /// 
     ///     var monitor = new Dynatrace.BrowserMonitor("monitor", new()
     ///     {
     ///         Name = "#name#",
     ///         Frequency = 15,
     ///         Locations = new[]
     ///         {
-    ///             location.Id,
+    ///             location.Apply(getSyntheticLocationResult =&gt; getSyntheticLocationResult.Id),
     ///         },
     ///         ManuallyAssignedApps = new[]
     ///         {
-    ///             application.Id,
+    ///             webApplication.Apply(getApplicationResult =&gt; getApplicationResult.Id),
     ///         },
     ///         AnomalyDetection = new Dynatrace.Inputs.BrowserMonitorAnomalyDetectionArgs
     ///         {
@@ -351,12 +262,6 @@ namespace Pulumiverse.Dynatrace
     ///                     },
     ///                 },
     ///             },
-    ///         },
-    ///     }, new CustomResourceOptions
-    ///     {
-    ///         DependsOn =
-    ///         {
-    ///             wait5Seconds,
     ///         },
     ///     });
     /// 

@@ -17,7 +17,7 @@ namespace Pulumiverse.Dynatrace.Inputs
         private InputList<string>? _consumers;
 
         /// <summary>
-        /// Consumers that can use the connection. Possible values: `APP:dynatrace.microsoft.azure.connector`, `DA`, `NONE`, `SVC:com.dynatrace.da`, `SVC:com.dynatrace.grail`, `SVC:com.dynatrace.openpipeline`
+        /// Consumers that can use the connection. Possible values: `APP:dynatrace.microsoft.azure.connector`, `DA`, `NONE`, `SVC:com.dynatrace.bo`, `SVC:com.dynatrace.da`, `SVC:com.dynatrace.grail`, `SVC:com.dynatrace.openpipeline`
         /// </summary>
         public InputList<string> Consumers
         {

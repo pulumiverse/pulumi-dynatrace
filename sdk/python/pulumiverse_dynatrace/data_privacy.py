@@ -31,7 +31,7 @@ class DataPrivacyArgs:
 
         :param pulumi.Input['DataPrivacyDataCollectionArgs'] data_collection: To provide your end users with the ability to decide for themselves if their activities should be tracked to measure application performance and usage, enable opt-in mode.
         :param pulumi.Input['DataPrivacyDoNotTrackArgs'] do_not_track: Most modern web browsers have a privacy feature called ["Do Not Track"](https://dt-url.net/sb3n0pnl) that individual users may have enabled on their devices. Customize how Dynatrace should behave when it encounters this setting.
-        :param pulumi.Input['DataPrivacyMaskingArgs'] masking: no documentation available
+        :param pulumi.Input['DataPrivacyMaskingArgs'] masking: No documentation available
         :param pulumi.Input['DataPrivacyUserTrackingArgs'] user_tracking: User tracking
         :param pulumi.Input[_builtins.str] application_id: The scope of this settings. If the settings should cover the whole environment, just don't specify any scope.
         """
@@ -70,7 +70,7 @@ class DataPrivacyArgs:
     @pulumi.getter
     def masking(self) -> pulumi.Input['DataPrivacyMaskingArgs']:
         """
-        no documentation available
+        No documentation available
         """
         return pulumi.get(self, "masking")
 
@@ -117,7 +117,7 @@ class _DataPrivacyState:
         :param pulumi.Input[_builtins.str] application_id: The scope of this settings. If the settings should cover the whole environment, just don't specify any scope.
         :param pulumi.Input['DataPrivacyDataCollectionArgs'] data_collection: To provide your end users with the ability to decide for themselves if their activities should be tracked to measure application performance and usage, enable opt-in mode.
         :param pulumi.Input['DataPrivacyDoNotTrackArgs'] do_not_track: Most modern web browsers have a privacy feature called ["Do Not Track"](https://dt-url.net/sb3n0pnl) that individual users may have enabled on their devices. Customize how Dynatrace should behave when it encounters this setting.
-        :param pulumi.Input['DataPrivacyMaskingArgs'] masking: no documentation available
+        :param pulumi.Input['DataPrivacyMaskingArgs'] masking: No documentation available
         :param pulumi.Input['DataPrivacyUserTrackingArgs'] user_tracking: User tracking
         """
         if application_id is not None:
@@ -171,7 +171,7 @@ class _DataPrivacyState:
     @pulumi.getter
     def masking(self) -> pulumi.Input[Optional['DataPrivacyMaskingArgs']]:
         """
-        no documentation available
+        No documentation available
         """
         return pulumi.get(self, "masking")
 
@@ -225,7 +225,7 @@ class DataPrivacy(pulumi.CustomResource):
         :param pulumi.Input[_builtins.str] application_id: The scope of this settings. If the settings should cover the whole environment, just don't specify any scope.
         :param pulumi.Input[Union['DataPrivacyDataCollectionArgs', 'DataPrivacyDataCollectionArgsDict']] data_collection: To provide your end users with the ability to decide for themselves if their activities should be tracked to measure application performance and usage, enable opt-in mode.
         :param pulumi.Input[Union['DataPrivacyDoNotTrackArgs', 'DataPrivacyDoNotTrackArgsDict']] do_not_track: Most modern web browsers have a privacy feature called ["Do Not Track"](https://dt-url.net/sb3n0pnl) that individual users may have enabled on their devices. Customize how Dynatrace should behave when it encounters this setting.
-        :param pulumi.Input[Union['DataPrivacyMaskingArgs', 'DataPrivacyMaskingArgsDict']] masking: no documentation available
+        :param pulumi.Input[Union['DataPrivacyMaskingArgs', 'DataPrivacyMaskingArgsDict']] masking: No documentation available
         :param pulumi.Input[Union['DataPrivacyUserTrackingArgs', 'DataPrivacyUserTrackingArgsDict']] user_tracking: User tracking
         """
         ...
@@ -317,7 +317,7 @@ class DataPrivacy(pulumi.CustomResource):
         :param pulumi.Input[_builtins.str] application_id: The scope of this settings. If the settings should cover the whole environment, just don't specify any scope.
         :param pulumi.Input[Union['DataPrivacyDataCollectionArgs', 'DataPrivacyDataCollectionArgsDict']] data_collection: To provide your end users with the ability to decide for themselves if their activities should be tracked to measure application performance and usage, enable opt-in mode.
         :param pulumi.Input[Union['DataPrivacyDoNotTrackArgs', 'DataPrivacyDoNotTrackArgsDict']] do_not_track: Most modern web browsers have a privacy feature called ["Do Not Track"](https://dt-url.net/sb3n0pnl) that individual users may have enabled on their devices. Customize how Dynatrace should behave when it encounters this setting.
-        :param pulumi.Input[Union['DataPrivacyMaskingArgs', 'DataPrivacyMaskingArgsDict']] masking: no documentation available
+        :param pulumi.Input[Union['DataPrivacyMaskingArgs', 'DataPrivacyMaskingArgsDict']] masking: No documentation available
         :param pulumi.Input[Union['DataPrivacyUserTrackingArgs', 'DataPrivacyUserTrackingArgsDict']] user_tracking: User tracking
         """
         opts = pulumi.ResourceOptions.merge(opts, pulumi.ResourceOptions(id=id))
@@ -359,7 +359,7 @@ class DataPrivacy(pulumi.CustomResource):
     @pulumi.getter
     def masking(self) -> pulumi.Output['outputs.DataPrivacyMasking']:
         """
-        no documentation available
+        No documentation available
         """
         return pulumi.get(self, "masking")
 

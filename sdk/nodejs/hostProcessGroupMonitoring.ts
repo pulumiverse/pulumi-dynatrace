@@ -25,12 +25,13 @@ import * as utilities from "./utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as dynatrace from "@pulumiverse/dynatrace";
  *
- * const config = new pulumi.Config();
- * const PROCESS_GROUP_ID = config.require("PROCESS_GROUP_ID");
+ * const processGroup = dynatrace.getEntity({
+ *     entitySelector: "type(\"PROCESS_GROUP\")",
+ * });
  * const monitoring = new dynatrace.HostProcessGroupMonitoring("monitoring", {
  *     hostId: "HOST-1234567890000000",
  *     monitoringState: "MONITORING_ON",
- *     processGroup: PROCESS_GROUP_ID,
+ *     processGroup: processGroup.then(processGroup => processGroup.id),
  * });
  * ```
  */

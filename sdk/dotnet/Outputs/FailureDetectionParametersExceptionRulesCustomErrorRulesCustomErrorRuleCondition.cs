@@ -15,23 +15,26 @@ namespace Pulumiverse.Dynatrace.Outputs
     public sealed class FailureDetectionParametersExceptionRulesCustomErrorRulesCustomErrorRuleCondition
     {
         /// <summary>
-        /// Case sensitive
+        /// If `True`, the comparison is case-sensitive. Only applicable for string comparison types. Default: `False`.
         /// </summary>
         public readonly bool? CaseSensitive;
         /// <summary>
-        /// Apply this comparison
+        /// The type of comparison to apply. Available types depend on the data type of the request attribute:
+        ///  * String types support `STRING_EXISTS`, `STRING_EQUALS`, `NOT_STRING_EQUALS`, `STARTS_WITH`, `NOT_STARTS_WITH`, `CONTAINS`, `NOT_CONTAINS`, `ENDS_WITH`, `NOT_ENDS_WITH`.
+        ///  * Integer types support `INTEGER_EQUALS` and related comparisons;
+        ///  * Double types support `DOUBLE_EQUALS` and related comparisons.
         /// </summary>
         public readonly string CompareOperationType;
         /// <summary>
-        /// Value
+        /// The floating-point value to compare the request attribute against. Only applicable for double comparison types.
         /// </summary>
         public readonly double? DoubleValue;
         /// <summary>
-        /// Value
+        /// The integer value to compare the request attribute against. Only applicable for integer comparison types.
         /// </summary>
         public readonly int? IntValue;
         /// <summary>
-        /// Value
+        /// The text value to compare the request attribute against. Only applicable for string comparison types.
         /// </summary>
         public readonly string? TextValue;
 

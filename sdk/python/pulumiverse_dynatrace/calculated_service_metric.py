@@ -526,8 +526,11 @@ class CalculatedServiceMetric(pulumi.CustomResource):
                     },
                 }],
             })
-        wait_for_request_attribute = time.Sleep("wait_for_request_attribute", create_duration="10s",
-        opts = pulumi.ResourceOptions(depends_on=[attribute]))
+        wait_for_creation = time.Sleep("wait_for_creation", create_duration="15s",
+        opts = pulumi.ResourceOptions(depends_on=[
+                attribute,
+                mzone,
+            ]))
         metric = dynatrace.CalculatedServiceMetric("metric",
             name="#name#",
             enabled=True,
@@ -553,7 +556,7 @@ class CalculatedServiceMetric(pulumi.CustomResource):
                 "metric": "REQUEST_ATTRIBUTE",
                 "request_attribute": attribute.name,
             },
-            opts = pulumi.ResourceOptions(depends_on=[wait_for_request_attribute]))
+            opts = pulumi.ResourceOptions(depends_on=[wait_for_creation]))
         ```
 
 
@@ -635,8 +638,11 @@ class CalculatedServiceMetric(pulumi.CustomResource):
                     },
                 }],
             })
-        wait_for_request_attribute = time.Sleep("wait_for_request_attribute", create_duration="10s",
-        opts = pulumi.ResourceOptions(depends_on=[attribute]))
+        wait_for_creation = time.Sleep("wait_for_creation", create_duration="15s",
+        opts = pulumi.ResourceOptions(depends_on=[
+                attribute,
+                mzone,
+            ]))
         metric = dynatrace.CalculatedServiceMetric("metric",
             name="#name#",
             enabled=True,
@@ -662,7 +668,7 @@ class CalculatedServiceMetric(pulumi.CustomResource):
                 "metric": "REQUEST_ATTRIBUTE",
                 "request_attribute": attribute.name,
             },
-            opts = pulumi.ResourceOptions(depends_on=[wait_for_request_attribute]))
+            opts = pulumi.ResourceOptions(depends_on=[wait_for_creation]))
         ```
 
 

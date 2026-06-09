@@ -181,18 +181,26 @@ namespace Pulumiverse.Dynatrace
     ///                                 {
     ///                                     new Dynatrace.Inputs.OpenpipelineV2EventsSecurityPipelinesMetricExtractionProcessorsProcessorCounterMetricDimensionsDimensionArgs
     ///                                     {
+    ///                                         ExtractionType = "field",
+    ///                                         Strategy = "equals",
     ///                                         SourceFieldName = "dt.cost.costcenter",
     ///                                     },
     ///                                     new Dynatrace.Inputs.OpenpipelineV2EventsSecurityPipelinesMetricExtractionProcessorsProcessorCounterMetricDimensionsDimensionArgs
     ///                                     {
+    ///                                         ExtractionType = "field",
+    ///                                         Strategy = "equals",
     ///                                         SourceFieldName = "dt.cost.product",
     ///                                     },
     ///                                     new Dynatrace.Inputs.OpenpipelineV2EventsSecurityPipelinesMetricExtractionProcessorsProcessorCounterMetricDimensionsDimensionArgs
     ///                                     {
+    ///                                         ExtractionType = "field",
+    ///                                         Strategy = "equals",
     ///                                         SourceFieldName = "dt.security_context",
     ///                                     },
     ///                                     new Dynatrace.Inputs.OpenpipelineV2EventsSecurityPipelinesMetricExtractionProcessorsProcessorCounterMetricDimensionsDimensionArgs
     ///                                     {
+    ///                                         ExtractionType = "field",
+    ///                                         Strategy = "equals",
     ///                                         SourceFieldName = "record.category",
     ///                                         DestinationFieldName = "warning_category",
     ///                                     },
@@ -218,18 +226,26 @@ namespace Pulumiverse.Dynatrace
     ///                                 {
     ///                                     new Dynatrace.Inputs.OpenpipelineV2EventsSecurityPipelinesMetricExtractionProcessorsProcessorValueMetricDimensionsDimensionArgs
     ///                                     {
+    ///                                         ExtractionType = "field",
+    ///                                         Strategy = "equals",
     ///                                         SourceFieldName = "dt.cost.costcenter",
     ///                                     },
     ///                                     new Dynatrace.Inputs.OpenpipelineV2EventsSecurityPipelinesMetricExtractionProcessorsProcessorValueMetricDimensionsDimensionArgs
     ///                                     {
+    ///                                         ExtractionType = "field",
+    ///                                         Strategy = "equals",
     ///                                         SourceFieldName = "dt.cost.product",
     ///                                     },
     ///                                     new Dynatrace.Inputs.OpenpipelineV2EventsSecurityPipelinesMetricExtractionProcessorsProcessorValueMetricDimensionsDimensionArgs
     ///                                     {
+    ///                                         ExtractionType = "field",
+    ///                                         Strategy = "equals",
     ///                                         SourceFieldName = "dt.security_context",
     ///                                     },
     ///                                     new Dynatrace.Inputs.OpenpipelineV2EventsSecurityPipelinesMetricExtractionProcessorsProcessorValueMetricDimensionsDimensionArgs
     ///                                     {
+    ///                                         ExtractionType = "field",
+    ///                                         Strategy = "equals",
     ///                                         SourceFieldName = "record.category",
     ///                                         DestinationFieldName = "warning_category",
     ///                                     },
@@ -250,21 +266,21 @@ namespace Pulumiverse.Dynatrace
     ///         GroupRole = "memberPipeline",
     ///     });
     /// 
-    ///     var example = new Dynatrace.OpenpipelineV2EventsSdlcPipelinegroups("example", new()
+    ///     var example = new Dynatrace.OpenpipelineV2EventsSecurityPipelinegroups("example", new()
     ///     {
     ///         DisplayName = "#name#",
-    ///         Composition = new Dynatrace.Inputs.OpenpipelineV2EventsSdlcPipelinegroupsCompositionArgs
+    ///         Composition = new Dynatrace.Inputs.OpenpipelineV2EventsSecurityPipelinegroupsCompositionArgs
     ///         {
     ///             PipelineGroupCompositions = new[]
     ///             {
-    ///                 new Dynatrace.Inputs.OpenpipelineV2EventsSdlcPipelinegroupsCompositionPipelineGroupCompositionArgs
+    ///                 new Dynatrace.Inputs.OpenpipelineV2EventsSecurityPipelinegroupsCompositionPipelineGroupCompositionArgs
     ///                 {
     ///                     IsPipelinePlaceholder = true,
     ///                 },
-    ///                 new Dynatrace.Inputs.OpenpipelineV2EventsSdlcPipelinegroupsCompositionPipelineGroupCompositionArgs
+    ///                 new Dynatrace.Inputs.OpenpipelineV2EventsSecurityPipelinegroupsCompositionPipelineGroupCompositionArgs
     ///                 {
     ///                     IsPipelinePlaceholder = false,
-    ///                     Stages = new Dynatrace.Inputs.OpenpipelineV2EventsSdlcPipelinegroupsCompositionPipelineGroupCompositionStagesArgs
+    ///                     Stages = new Dynatrace.Inputs.OpenpipelineV2EventsSecurityPipelinegroupsCompositionPipelineGroupCompositionStagesArgs
     ///                     {
     ///                         Type = "include",
     ///                         Includes = new[]
@@ -277,7 +293,7 @@ namespace Pulumiverse.Dynatrace
     ///                 },
     ///             },
     ///         },
-    ///         MemberStages = new Dynatrace.Inputs.OpenpipelineV2EventsSdlcPipelinegroupsMemberStagesArgs
+    ///         MemberStages = new Dynatrace.Inputs.OpenpipelineV2EventsSecurityPipelinegroupsMemberStagesArgs
     ///         {
     ///             Includes = new[]
     ///             {

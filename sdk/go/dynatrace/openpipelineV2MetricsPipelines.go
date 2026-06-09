@@ -199,7 +199,7 @@ type OpenpipelineV2MetricsPipelines struct {
 	Davis OpenpipelineV2MetricsPipelinesDavisPtrOutput `pulumi:"davis"`
 	// Display name
 	DisplayName pulumi.StringOutput `pulumi:"displayName"`
-	// Group role. Possible values: `compositionPipeline`, `memberPipeline`
+	// Group role. Possible values: `basePipeline`, `compositionPipeline`, `memberPipeline`
 	GroupRole pulumi.StringPtrOutput `pulumi:"groupRole"`
 	// Pipeline metadata list
 	MetadataList OpenpipelineV2MetricsPipelinesMetadataListPtrOutput `pulumi:"metadataList"`
@@ -267,7 +267,7 @@ type openpipelineV2MetricsPipelinesState struct {
 	Davis *OpenpipelineV2MetricsPipelinesDavis `pulumi:"davis"`
 	// Display name
 	DisplayName *string `pulumi:"displayName"`
-	// Group role. Possible values: `compositionPipeline`, `memberPipeline`
+	// Group role. Possible values: `basePipeline`, `compositionPipeline`, `memberPipeline`
 	GroupRole *string `pulumi:"groupRole"`
 	// Pipeline metadata list
 	MetadataList *OpenpipelineV2MetricsPipelinesMetadataList `pulumi:"metadataList"`
@@ -300,7 +300,7 @@ type OpenpipelineV2MetricsPipelinesState struct {
 	Davis OpenpipelineV2MetricsPipelinesDavisPtrInput
 	// Display name
 	DisplayName pulumi.StringPtrInput
-	// Group role. Possible values: `compositionPipeline`, `memberPipeline`
+	// Group role. Possible values: `basePipeline`, `compositionPipeline`, `memberPipeline`
 	GroupRole pulumi.StringPtrInput
 	// Pipeline metadata list
 	MetadataList OpenpipelineV2MetricsPipelinesMetadataListPtrInput
@@ -337,7 +337,7 @@ type openpipelineV2MetricsPipelinesArgs struct {
 	Davis *OpenpipelineV2MetricsPipelinesDavis `pulumi:"davis"`
 	// Display name
 	DisplayName string `pulumi:"displayName"`
-	// Group role. Possible values: `compositionPipeline`, `memberPipeline`
+	// Group role. Possible values: `basePipeline`, `compositionPipeline`, `memberPipeline`
 	GroupRole *string `pulumi:"groupRole"`
 	// Pipeline metadata list
 	MetadataList *OpenpipelineV2MetricsPipelinesMetadataList `pulumi:"metadataList"`
@@ -371,7 +371,7 @@ type OpenpipelineV2MetricsPipelinesArgs struct {
 	Davis OpenpipelineV2MetricsPipelinesDavisPtrInput
 	// Display name
 	DisplayName pulumi.StringInput
-	// Group role. Possible values: `compositionPipeline`, `memberPipeline`
+	// Group role. Possible values: `basePipeline`, `compositionPipeline`, `memberPipeline`
 	GroupRole pulumi.StringPtrInput
 	// Pipeline metadata list
 	MetadataList OpenpipelineV2MetricsPipelinesMetadataListPtrInput
@@ -509,7 +509,7 @@ func (o OpenpipelineV2MetricsPipelinesOutput) DisplayName() pulumi.StringOutput 
 	return o.ApplyT(func(v *OpenpipelineV2MetricsPipelines) pulumi.StringOutput { return v.DisplayName }).(pulumi.StringOutput)
 }
 
-// Group role. Possible values: `compositionPipeline`, `memberPipeline`
+// Group role. Possible values: `basePipeline`, `compositionPipeline`, `memberPipeline`
 func (o OpenpipelineV2MetricsPipelinesOutput) GroupRole() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v *OpenpipelineV2MetricsPipelines) pulumi.StringPtrOutput { return v.GroupRole }).(pulumi.StringPtrOutput)
 }

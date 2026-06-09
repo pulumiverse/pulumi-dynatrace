@@ -176,7 +176,7 @@ class DatabaseAnomalies(pulumi.CustomResource):
                  response_time: pulumi.Input[Optional[Union['DatabaseAnomaliesResponseTimeArgs', 'DatabaseAnomaliesResponseTimeArgsDict']]] = None,
                  __props__=None):
         """
-        !> This resource is utilizing an older API endpoint, please use DatabaseAnomaliesV2 instead.
+        > This resource is utilizing an older API endpoint, please use DatabaseAnomaliesV2 instead.
 
         > This resource requires the API token scopes **Read configuration** (`ReadConfig`) and **Write configuration** (`WriteConfig`)
 
@@ -207,7 +207,7 @@ class DatabaseAnomalies(pulumi.CustomResource):
                  args: Optional[DatabaseAnomaliesArgs] = None,
                  opts: Optional[pulumi.ResourceOptions] = None):
         """
-        !> This resource is utilizing an older API endpoint, please use DatabaseAnomaliesV2 instead.
+        > This resource is utilizing an older API endpoint, please use DatabaseAnomaliesV2 instead.
 
         > This resource requires the API token scopes **Read configuration** (`ReadConfig`) and **Write configuration** (`WriteConfig`)
 

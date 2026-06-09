@@ -56,7 +56,7 @@ export class WebAppInjectionCookie extends pulumi.CustomResource {
      */
     declare public readonly cookiePlacementDomain: pulumi.Output<string | undefined>;
     /**
-     * Possible Values: `LAX`, `NONE`, `NOTSET`, `STRICT`
+     * Define if your cookie should be restricted to a first-party or same-site context. Learn more about [SameSite cookies and available values](https://dt-url.net/yds1p8u). Possible values: `LAX`, `NONE`, `NOTSET`, `STRICT`
      */
     declare public readonly sameSiteCookieAttribute: pulumi.Output<string>;
     /**
@@ -115,7 +115,7 @@ export interface WebAppInjectionCookieState {
      */
     cookiePlacementDomain?: pulumi.Input<string | undefined>;
     /**
-     * Possible Values: `LAX`, `NONE`, `NOTSET`, `STRICT`
+     * Define if your cookie should be restricted to a first-party or same-site context. Learn more about [SameSite cookies and available values](https://dt-url.net/yds1p8u). Possible values: `LAX`, `NONE`, `NOTSET`, `STRICT`
      */
     sameSiteCookieAttribute?: pulumi.Input<string | undefined>;
     /**
@@ -137,7 +137,7 @@ export interface WebAppInjectionCookieArgs {
      */
     cookiePlacementDomain?: pulumi.Input<string | undefined>;
     /**
-     * Possible Values: `LAX`, `NONE`, `NOTSET`, `STRICT`
+     * Define if your cookie should be restricted to a first-party or same-site context. Learn more about [SameSite cookies and available values](https://dt-url.net/yds1p8u). Possible values: `LAX`, `NONE`, `NOTSET`, `STRICT`
      */
     sameSiteCookieAttribute: pulumi.Input<string>;
     /**

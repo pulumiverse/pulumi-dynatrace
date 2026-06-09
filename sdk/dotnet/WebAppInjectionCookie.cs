@@ -41,7 +41,7 @@ namespace Pulumiverse.Dynatrace
         public Output<string?> CookiePlacementDomain { get; private set; } = null!;
 
         /// <summary>
-        /// Possible Values: `LAX`, `NONE`, `NOTSET`, `STRICT`
+        /// Define if your cookie should be restricted to a first-party or same-site context. Learn more about [SameSite cookies and available values](https://dt-url.net/yds1p8u). Possible values: `LAX`, `NONE`, `NOTSET`, `STRICT`
         /// </summary>
         [Output("sameSiteCookieAttribute")]
         public Output<string> SameSiteCookieAttribute { get; private set; } = null!;
@@ -112,7 +112,7 @@ namespace Pulumiverse.Dynatrace
         public Input<string>? CookiePlacementDomain { get; set; }
 
         /// <summary>
-        /// Possible Values: `LAX`, `NONE`, `NOTSET`, `STRICT`
+        /// Define if your cookie should be restricted to a first-party or same-site context. Learn more about [SameSite cookies and available values](https://dt-url.net/yds1p8u). Possible values: `LAX`, `NONE`, `NOTSET`, `STRICT`
         /// </summary>
         [Input("sameSiteCookieAttribute", required: true)]
         public Input<string> SameSiteCookieAttribute { get; set; } = null!;
@@ -144,7 +144,7 @@ namespace Pulumiverse.Dynatrace
         public Input<string>? CookiePlacementDomain { get; set; }
 
         /// <summary>
-        /// Possible Values: `LAX`, `NONE`, `NOTSET`, `STRICT`
+        /// Define if your cookie should be restricted to a first-party or same-site context. Learn more about [SameSite cookies and available values](https://dt-url.net/yds1p8u). Possible values: `LAX`, `NONE`, `NOTSET`, `STRICT`
         /// </summary>
         [Input("sameSiteCookieAttribute")]
         public Input<string>? SameSiteCookieAttribute { get; set; }

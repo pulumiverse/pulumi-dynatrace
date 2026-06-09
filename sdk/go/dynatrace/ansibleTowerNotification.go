@@ -37,9 +37,7 @@ type AnsibleTowerNotification struct {
 	Insecure pulumi.BoolPtrOutput `pulumi:"insecure"`
 	// The URL of the target job template.
 	//
-	// For example, https://<Ansible server name>/#/templates/job_template/<JobTemplateID>
-	//
-	// **Note:** Be sure to select the **Prompt on Launch** option in the Extra Variables section of your job template configuration.
+	//   **Note:** Be sure to select the **Prompt on Launch** option in the Extra Variables section of your job template configuration.
 	JobTemplateUrl pulumi.StringOutput `pulumi:"jobTemplateUrl"`
 	// The ID of these settings when referred to from resources requiring the REST API V1 keys
 	LegacyId pulumi.StringOutput `pulumi:"legacyId"`
@@ -111,9 +109,7 @@ type ansibleTowerNotificationState struct {
 	Insecure *bool `pulumi:"insecure"`
 	// The URL of the target job template.
 	//
-	// For example, https://<Ansible server name>/#/templates/job_template/<JobTemplateID>
-	//
-	// **Note:** Be sure to select the **Prompt on Launch** option in the Extra Variables section of your job template configuration.
+	//   **Note:** Be sure to select the **Prompt on Launch** option in the Extra Variables section of your job template configuration.
 	JobTemplateUrl *string `pulumi:"jobTemplateUrl"`
 	// The ID of these settings when referred to from resources requiring the REST API V1 keys
 	LegacyId *string `pulumi:"legacyId"`
@@ -137,9 +133,7 @@ type AnsibleTowerNotificationState struct {
 	Insecure pulumi.BoolPtrInput
 	// The URL of the target job template.
 	//
-	// For example, https://<Ansible server name>/#/templates/job_template/<JobTemplateID>
-	//
-	// **Note:** Be sure to select the **Prompt on Launch** option in the Extra Variables section of your job template configuration.
+	//   **Note:** Be sure to select the **Prompt on Launch** option in the Extra Variables section of your job template configuration.
 	JobTemplateUrl pulumi.StringPtrInput
 	// The ID of these settings when referred to from resources requiring the REST API V1 keys
 	LegacyId pulumi.StringPtrInput
@@ -167,9 +161,7 @@ type ansibleTowerNotificationArgs struct {
 	Insecure *bool `pulumi:"insecure"`
 	// The URL of the target job template.
 	//
-	// For example, https://<Ansible server name>/#/templates/job_template/<JobTemplateID>
-	//
-	// **Note:** Be sure to select the **Prompt on Launch** option in the Extra Variables section of your job template configuration.
+	//   **Note:** Be sure to select the **Prompt on Launch** option in the Extra Variables section of your job template configuration.
 	JobTemplateUrl string `pulumi:"jobTemplateUrl"`
 	// The ID of these settings when referred to from resources requiring the REST API V1 keys
 	LegacyId *string `pulumi:"legacyId"`
@@ -194,9 +186,7 @@ type AnsibleTowerNotificationArgs struct {
 	Insecure pulumi.BoolPtrInput
 	// The URL of the target job template.
 	//
-	// For example, https://<Ansible server name>/#/templates/job_template/<JobTemplateID>
-	//
-	// **Note:** Be sure to select the **Prompt on Launch** option in the Extra Variables section of your job template configuration.
+	//   **Note:** Be sure to select the **Prompt on Launch** option in the Extra Variables section of your job template configuration.
 	JobTemplateUrl pulumi.StringInput
 	// The ID of these settings when referred to from resources requiring the REST API V1 keys
 	LegacyId pulumi.StringPtrInput
@@ -315,9 +305,7 @@ func (o AnsibleTowerNotificationOutput) Insecure() pulumi.BoolPtrOutput {
 
 // The URL of the target job template.
 //
-// For example, https://<Ansible server name>/#/templates/job_template/<JobTemplateID>
-//
-// **Note:** Be sure to select the **Prompt on Launch** option in the Extra Variables section of your job template configuration.
+//	**Note:** Be sure to select the **Prompt on Launch** option in the Extra Variables section of your job template configuration.
 func (o AnsibleTowerNotificationOutput) JobTemplateUrl() pulumi.StringOutput {
 	return o.ApplyT(func(v *AnsibleTowerNotification) pulumi.StringOutput { return v.JobTemplateUrl }).(pulumi.StringOutput)
 }

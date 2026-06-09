@@ -15,11 +15,11 @@ namespace Pulumiverse.Dynatrace.Outputs
     public sealed class FailureDetectionParametersExceptionRulesCustomErrorRulesCustomErrorRule
     {
         /// <summary>
-        /// Request attribute condition
+        /// The condition that determines whether the request attribute value indicates a failure.
         /// </summary>
         public readonly Outputs.FailureDetectionParametersExceptionRulesCustomErrorRulesCustomErrorRuleCondition Condition;
         /// <summary>
-        /// Request attribute
+        /// The ID of the request attribute to check. The request attribute must already be defined.
         /// </summary>
         public readonly string RequestAttribute;
 

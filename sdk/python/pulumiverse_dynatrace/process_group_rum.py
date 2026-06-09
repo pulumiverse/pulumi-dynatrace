@@ -25,11 +25,11 @@ class ProcessGroupRumArgs:
         The set of arguments for constructing a ProcessGroupRum resource.
 
         :param pulumi.Input[_builtins.bool] enable: Allows OneAgent to:
-               * automatically inject the RUM JavaScript tag into each page delivered by this process group
-               * provide the necessary info to correlate RUM data with server-side PurePaths
-               * forward beacons to the cluster
-               * deliver the monitoring code
-        :param pulumi.Input[_builtins.str] process_group_id: The scope of this setting - PROCESS_GROUP-XXXXXXXXXXXXXXXX
+                * automatically inject the RUM JavaScript tag into each page delivered by this process group
+                * provide the necessary info to correlate RUM data with server-side PurePaths
+                * forward beacons to the cluster
+                * deliver the monitoring code
+        :param pulumi.Input[_builtins.str] process_group_id: The scope of this settings. If the settings should cover the whole environment, just don't specify any scope.
         """
         pulumi.set(__self__, "enable", enable)
         pulumi.set(__self__, "process_group_id", process_group_id)
@@ -39,10 +39,10 @@ class ProcessGroupRumArgs:
     def enable(self) -> pulumi.Input[_builtins.bool]:
         """
         Allows OneAgent to:
-        * automatically inject the RUM JavaScript tag into each page delivered by this process group
-        * provide the necessary info to correlate RUM data with server-side PurePaths
-        * forward beacons to the cluster
-        * deliver the monitoring code
+         * automatically inject the RUM JavaScript tag into each page delivered by this process group
+         * provide the necessary info to correlate RUM data with server-side PurePaths
+         * forward beacons to the cluster
+         * deliver the monitoring code
         """
         return pulumi.get(self, "enable")
 
@@ -54,7 +54,7 @@ class ProcessGroupRumArgs:
     @pulumi.getter(name="processGroupId")
     def process_group_id(self) -> pulumi.Input[_builtins.str]:
         """
-        The scope of this setting - PROCESS_GROUP-XXXXXXXXXXXXXXXX
+        The scope of this settings. If the settings should cover the whole environment, just don't specify any scope.
         """
         return pulumi.get(self, "process_group_id")
 
@@ -72,11 +72,11 @@ class _ProcessGroupRumState:
         Input properties used for looking up and filtering ProcessGroupRum resources.
 
         :param pulumi.Input[_builtins.bool] enable: Allows OneAgent to:
-               * automatically inject the RUM JavaScript tag into each page delivered by this process group
-               * provide the necessary info to correlate RUM data with server-side PurePaths
-               * forward beacons to the cluster
-               * deliver the monitoring code
-        :param pulumi.Input[_builtins.str] process_group_id: The scope of this setting - PROCESS_GROUP-XXXXXXXXXXXXXXXX
+                * automatically inject the RUM JavaScript tag into each page delivered by this process group
+                * provide the necessary info to correlate RUM data with server-side PurePaths
+                * forward beacons to the cluster
+                * deliver the monitoring code
+        :param pulumi.Input[_builtins.str] process_group_id: The scope of this settings. If the settings should cover the whole environment, just don't specify any scope.
         """
         if enable is not None:
             pulumi.set(__self__, "enable", enable)
@@ -88,10 +88,10 @@ class _ProcessGroupRumState:
     def enable(self) -> pulumi.Input[Optional[_builtins.bool]]:
         """
         Allows OneAgent to:
-        * automatically inject the RUM JavaScript tag into each page delivered by this process group
-        * provide the necessary info to correlate RUM data with server-side PurePaths
-        * forward beacons to the cluster
-        * deliver the monitoring code
+         * automatically inject the RUM JavaScript tag into each page delivered by this process group
+         * provide the necessary info to correlate RUM data with server-side PurePaths
+         * forward beacons to the cluster
+         * deliver the monitoring code
         """
         return pulumi.get(self, "enable")
 
@@ -103,7 +103,7 @@ class _ProcessGroupRumState:
     @pulumi.getter(name="processGroupId")
     def process_group_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
-        The scope of this setting - PROCESS_GROUP-XXXXXXXXXXXXXXXX
+        The scope of this settings. If the settings should cover the whole environment, just don't specify any scope.
         """
         return pulumi.get(self, "process_group_id")
 
@@ -140,24 +140,24 @@ class ProcessGroupRum(pulumi.CustomResource):
 
         ```python
         import pulumi
+        import pulumi_dynatrace as dynatrace
         import pulumiverse_dynatrace as dynatrace
 
-        config = pulumi.Config()
-        proces_s__grou_p__id = config.require("PROCESS_GROUP_ID")
+        process_group = dynatrace.get_entity(entity_selector="type(\\"PROCESS_GROUP\\")")
         rum = dynatrace.ProcessGroupRum("rum",
             enable=False,
-            process_group_id=proces_s__grou_p__id)
+            process_group_id=process_group.id)
         ```
 
 
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[_builtins.bool] enable: Allows OneAgent to:
-               * automatically inject the RUM JavaScript tag into each page delivered by this process group
-               * provide the necessary info to correlate RUM data with server-side PurePaths
-               * forward beacons to the cluster
-               * deliver the monitoring code
-        :param pulumi.Input[_builtins.str] process_group_id: The scope of this setting - PROCESS_GROUP-XXXXXXXXXXXXXXXX
+                * automatically inject the RUM JavaScript tag into each page delivered by this process group
+                * provide the necessary info to correlate RUM data with server-side PurePaths
+                * forward beacons to the cluster
+                * deliver the monitoring code
+        :param pulumi.Input[_builtins.str] process_group_id: The scope of this settings. If the settings should cover the whole environment, just don't specify any scope.
         """
         ...
     @overload
@@ -184,13 +184,13 @@ class ProcessGroupRum(pulumi.CustomResource):
 
         ```python
         import pulumi
+        import pulumi_dynatrace as dynatrace
         import pulumiverse_dynatrace as dynatrace
 
-        config = pulumi.Config()
-        proces_s__grou_p__id = config.require("PROCESS_GROUP_ID")
+        process_group = dynatrace.get_entity(entity_selector="type(\\"PROCESS_GROUP\\")")
         rum = dynatrace.ProcessGroupRum("rum",
             enable=False,
-            process_group_id=proces_s__grou_p__id)
+            process_group_id=process_group.id)
         ```
 
 
@@ -246,11 +246,11 @@ class ProcessGroupRum(pulumi.CustomResource):
         :param pulumi.Input[str] id: The unique provider ID of the resource to lookup.
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[_builtins.bool] enable: Allows OneAgent to:
-               * automatically inject the RUM JavaScript tag into each page delivered by this process group
-               * provide the necessary info to correlate RUM data with server-side PurePaths
-               * forward beacons to the cluster
-               * deliver the monitoring code
-        :param pulumi.Input[_builtins.str] process_group_id: The scope of this setting - PROCESS_GROUP-XXXXXXXXXXXXXXXX
+                * automatically inject the RUM JavaScript tag into each page delivered by this process group
+                * provide the necessary info to correlate RUM data with server-side PurePaths
+                * forward beacons to the cluster
+                * deliver the monitoring code
+        :param pulumi.Input[_builtins.str] process_group_id: The scope of this settings. If the settings should cover the whole environment, just don't specify any scope.
         """
         opts = pulumi.ResourceOptions.merge(opts, pulumi.ResourceOptions(id=id))
 
@@ -265,10 +265,10 @@ class ProcessGroupRum(pulumi.CustomResource):
     def enable(self) -> pulumi.Output[_builtins.bool]:
         """
         Allows OneAgent to:
-        * automatically inject the RUM JavaScript tag into each page delivered by this process group
-        * provide the necessary info to correlate RUM data with server-side PurePaths
-        * forward beacons to the cluster
-        * deliver the monitoring code
+         * automatically inject the RUM JavaScript tag into each page delivered by this process group
+         * provide the necessary info to correlate RUM data with server-side PurePaths
+         * forward beacons to the cluster
+         * deliver the monitoring code
         """
         return pulumi.get(self, "enable")
 
@@ -276,7 +276,7 @@ class ProcessGroupRum(pulumi.CustomResource):
     @pulumi.getter(name="processGroupId")
     def process_group_id(self) -> pulumi.Output[_builtins.str]:
         """
-        The scope of this setting - PROCESS_GROUP-XXXXXXXXXXXXXXXX
+        The scope of this settings. If the settings should cover the whole environment, just don't specify any scope.
         """
         return pulumi.get(self, "process_group_id")
 

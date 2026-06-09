@@ -39,7 +39,7 @@ namespace Pulumiverse.Dynatrace.Outputs
         /// </summary>
         public readonly Outputs.OpenpipelineV2DavisProblemsPipelinesSecurityContextProcessorsProcessorDavis? Davis;
         /// <summary>
-        /// no documentation available
+        /// No documentation available
         /// </summary>
         public readonly string Description;
         /// <summary>
@@ -62,6 +62,10 @@ namespace Pulumiverse.Dynatrace.Outputs
         /// Fields rename processor attributes
         /// </summary>
         public readonly Outputs.OpenpipelineV2DavisProblemsPipelinesSecurityContextProcessorsProcessorFieldsRename? FieldsRename;
+        /// <summary>
+        /// Geo lookup processor attributes
+        /// </summary>
+        public readonly Outputs.OpenpipelineV2DavisProblemsPipelinesSecurityContextProcessorsProcessorGeoLookup? GeoLookup;
         /// <summary>
         /// Histogram metric processor attributes
         /// </summary>
@@ -119,7 +123,7 @@ namespace Pulumiverse.Dynatrace.Outputs
         /// </summary>
         public readonly Outputs.OpenpipelineV2DavisProblemsPipelinesSecurityContextProcessorsProcessorTechnology? Technology;
         /// <summary>
-        /// Processor type. Possible values: `azureLogForwarding`, `Bizevent`, `bucketAssignment`, `costAllocation`, `counterMetric`, `Davis`, `Dql`, `Drop`, `fieldsAdd`, `fieldsRemove`, `fieldsRename`, `histogramMetric`, `noStorage`, `productAllocation`, `samplingAwareCounterMetric`, `samplingAwareHistogramMetric`, `samplingAwareValueMetric`, `sdlcEvent`, `securityContext`, `securityEvent`, `smartscapeEdge`, `smartscapeNode`, `Technology`, `valueMetric`
+        /// Processor type. Possible values: `azureLogForwarding`, `Bizevent`, `bucketAssignment`, `costAllocation`, `counterMetric`, `Davis`, `Dql`, `Drop`, `fieldsAdd`, `fieldsRemove`, `fieldsRename`, `geoLookup`, `histogramMetric`, `noStorage`, `productAllocation`, `samplingAwareCounterMetric`, `samplingAwareHistogramMetric`, `samplingAwareValueMetric`, `sdlcEvent`, `securityContext`, `securityEvent`, `smartscapeEdge`, `smartscapeNode`, `Technology`, `valueMetric`
         /// </summary>
         public readonly string Type;
         /// <summary>
@@ -152,6 +156,8 @@ namespace Pulumiverse.Dynatrace.Outputs
             Outputs.OpenpipelineV2DavisProblemsPipelinesSecurityContextProcessorsProcessorFieldsRemove? fieldsRemove,
 
             Outputs.OpenpipelineV2DavisProblemsPipelinesSecurityContextProcessorsProcessorFieldsRename? fieldsRename,
+
+            Outputs.OpenpipelineV2DavisProblemsPipelinesSecurityContextProcessorsProcessorGeoLookup? geoLookup,
 
             Outputs.OpenpipelineV2DavisProblemsPipelinesSecurityContextProcessorsProcessorHistogramMetric? histogramMetric,
 
@@ -197,6 +203,7 @@ namespace Pulumiverse.Dynatrace.Outputs
             FieldsAdd = fieldsAdd;
             FieldsRemove = fieldsRemove;
             FieldsRename = fieldsRename;
+            GeoLookup = geoLookup;
             HistogramMetric = histogramMetric;
             Id = id;
             Matcher = matcher;

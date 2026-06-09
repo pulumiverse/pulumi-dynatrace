@@ -30,7 +30,7 @@ type WebAppKeyPerformanceLoad struct {
 
 	// If the selected key performance metric is not detected, the **User action duration** metric is used instead.
 	FallbackThresholds WebAppKeyPerformanceLoadFallbackThresholdsPtrOutput `pulumi:"fallbackThresholds"`
-	// Possible Values: `CUMULATIVE_LAYOUT_SHIFT`, `DOM_INTERACTIVE`, `FIRST_INPUT_DELAY`, `LARGEST_CONTENTFUL_PAINT`, `LOAD_EVENT_END`, `LOAD_EVENT_START`, `RESPONSE_END`, `RESPONSE_START`, `SPEED_INDEX`, `USER_ACTION_DURATION`, `VISUALLY_COMPLETE`
+	// Key performance metric. Possible values: `CUMULATIVE_LAYOUT_SHIFT`, `DOM_INTERACTIVE`, `FIRST_INPUT_DELAY`, `LARGEST_CONTENTFUL_PAINT`, `LOAD_EVENT_END`, `LOAD_EVENT_START`, `RESPONSE_END`, `RESPONSE_START`, `SPEED_INDEX`, `USER_ACTION_DURATION`, `VISUALLY_COMPLETE`
 	Kpm pulumi.StringOutput `pulumi:"kpm"`
 	// The scope of this setting (APPLICATION_METHOD, APPLICATION)
 	Scope pulumi.StringOutput `pulumi:"scope"`
@@ -79,7 +79,7 @@ func GetWebAppKeyPerformanceLoad(ctx *pulumi.Context,
 type webAppKeyPerformanceLoadState struct {
 	// If the selected key performance metric is not detected, the **User action duration** metric is used instead.
 	FallbackThresholds *WebAppKeyPerformanceLoadFallbackThresholds `pulumi:"fallbackThresholds"`
-	// Possible Values: `CUMULATIVE_LAYOUT_SHIFT`, `DOM_INTERACTIVE`, `FIRST_INPUT_DELAY`, `LARGEST_CONTENTFUL_PAINT`, `LOAD_EVENT_END`, `LOAD_EVENT_START`, `RESPONSE_END`, `RESPONSE_START`, `SPEED_INDEX`, `USER_ACTION_DURATION`, `VISUALLY_COMPLETE`
+	// Key performance metric. Possible values: `CUMULATIVE_LAYOUT_SHIFT`, `DOM_INTERACTIVE`, `FIRST_INPUT_DELAY`, `LARGEST_CONTENTFUL_PAINT`, `LOAD_EVENT_END`, `LOAD_EVENT_START`, `RESPONSE_END`, `RESPONSE_START`, `SPEED_INDEX`, `USER_ACTION_DURATION`, `VISUALLY_COMPLETE`
 	Kpm *string `pulumi:"kpm"`
 	// The scope of this setting (APPLICATION_METHOD, APPLICATION)
 	Scope *string `pulumi:"scope"`
@@ -90,7 +90,7 @@ type webAppKeyPerformanceLoadState struct {
 type WebAppKeyPerformanceLoadState struct {
 	// If the selected key performance metric is not detected, the **User action duration** metric is used instead.
 	FallbackThresholds WebAppKeyPerformanceLoadFallbackThresholdsPtrInput
-	// Possible Values: `CUMULATIVE_LAYOUT_SHIFT`, `DOM_INTERACTIVE`, `FIRST_INPUT_DELAY`, `LARGEST_CONTENTFUL_PAINT`, `LOAD_EVENT_END`, `LOAD_EVENT_START`, `RESPONSE_END`, `RESPONSE_START`, `SPEED_INDEX`, `USER_ACTION_DURATION`, `VISUALLY_COMPLETE`
+	// Key performance metric. Possible values: `CUMULATIVE_LAYOUT_SHIFT`, `DOM_INTERACTIVE`, `FIRST_INPUT_DELAY`, `LARGEST_CONTENTFUL_PAINT`, `LOAD_EVENT_END`, `LOAD_EVENT_START`, `RESPONSE_END`, `RESPONSE_START`, `SPEED_INDEX`, `USER_ACTION_DURATION`, `VISUALLY_COMPLETE`
 	Kpm pulumi.StringPtrInput
 	// The scope of this setting (APPLICATION_METHOD, APPLICATION)
 	Scope pulumi.StringPtrInput
@@ -105,7 +105,7 @@ func (WebAppKeyPerformanceLoadState) ElementType() reflect.Type {
 type webAppKeyPerformanceLoadArgs struct {
 	// If the selected key performance metric is not detected, the **User action duration** metric is used instead.
 	FallbackThresholds *WebAppKeyPerformanceLoadFallbackThresholds `pulumi:"fallbackThresholds"`
-	// Possible Values: `CUMULATIVE_LAYOUT_SHIFT`, `DOM_INTERACTIVE`, `FIRST_INPUT_DELAY`, `LARGEST_CONTENTFUL_PAINT`, `LOAD_EVENT_END`, `LOAD_EVENT_START`, `RESPONSE_END`, `RESPONSE_START`, `SPEED_INDEX`, `USER_ACTION_DURATION`, `VISUALLY_COMPLETE`
+	// Key performance metric. Possible values: `CUMULATIVE_LAYOUT_SHIFT`, `DOM_INTERACTIVE`, `FIRST_INPUT_DELAY`, `LARGEST_CONTENTFUL_PAINT`, `LOAD_EVENT_END`, `LOAD_EVENT_START`, `RESPONSE_END`, `RESPONSE_START`, `SPEED_INDEX`, `USER_ACTION_DURATION`, `VISUALLY_COMPLETE`
 	Kpm string `pulumi:"kpm"`
 	// The scope of this setting (APPLICATION_METHOD, APPLICATION)
 	Scope string `pulumi:"scope"`
@@ -117,7 +117,7 @@ type webAppKeyPerformanceLoadArgs struct {
 type WebAppKeyPerformanceLoadArgs struct {
 	// If the selected key performance metric is not detected, the **User action duration** metric is used instead.
 	FallbackThresholds WebAppKeyPerformanceLoadFallbackThresholdsPtrInput
-	// Possible Values: `CUMULATIVE_LAYOUT_SHIFT`, `DOM_INTERACTIVE`, `FIRST_INPUT_DELAY`, `LARGEST_CONTENTFUL_PAINT`, `LOAD_EVENT_END`, `LOAD_EVENT_START`, `RESPONSE_END`, `RESPONSE_START`, `SPEED_INDEX`, `USER_ACTION_DURATION`, `VISUALLY_COMPLETE`
+	// Key performance metric. Possible values: `CUMULATIVE_LAYOUT_SHIFT`, `DOM_INTERACTIVE`, `FIRST_INPUT_DELAY`, `LARGEST_CONTENTFUL_PAINT`, `LOAD_EVENT_END`, `LOAD_EVENT_START`, `RESPONSE_END`, `RESPONSE_START`, `SPEED_INDEX`, `USER_ACTION_DURATION`, `VISUALLY_COMPLETE`
 	Kpm pulumi.StringInput
 	// The scope of this setting (APPLICATION_METHOD, APPLICATION)
 	Scope pulumi.StringInput
@@ -219,7 +219,7 @@ func (o WebAppKeyPerformanceLoadOutput) FallbackThresholds() WebAppKeyPerformanc
 	}).(WebAppKeyPerformanceLoadFallbackThresholdsPtrOutput)
 }
 
-// Possible Values: `CUMULATIVE_LAYOUT_SHIFT`, `DOM_INTERACTIVE`, `FIRST_INPUT_DELAY`, `LARGEST_CONTENTFUL_PAINT`, `LOAD_EVENT_END`, `LOAD_EVENT_START`, `RESPONSE_END`, `RESPONSE_START`, `SPEED_INDEX`, `USER_ACTION_DURATION`, `VISUALLY_COMPLETE`
+// Key performance metric. Possible values: `CUMULATIVE_LAYOUT_SHIFT`, `DOM_INTERACTIVE`, `FIRST_INPUT_DELAY`, `LARGEST_CONTENTFUL_PAINT`, `LOAD_EVENT_END`, `LOAD_EVENT_START`, `RESPONSE_END`, `RESPONSE_START`, `SPEED_INDEX`, `USER_ACTION_DURATION`, `VISUALLY_COMPLETE`
 func (o WebAppKeyPerformanceLoadOutput) Kpm() pulumi.StringOutput {
 	return o.ApplyT(func(v *WebAppKeyPerformanceLoad) pulumi.StringOutput { return v.Kpm }).(pulumi.StringOutput)
 }

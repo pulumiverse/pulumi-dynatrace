@@ -15,19 +15,19 @@ namespace Pulumiverse.Dynatrace.Outputs
     public sealed class ServiceFullWebServiceIdContributorsApplicationIdServiceIdContributorTransformationsTransformation
     {
         /// <summary>
-        /// include hexadecimal numbers
+        /// Whether to also remove hexadecimal numbers (sequences of at least `minDigitCount` hexadecimal digits preceded by '0x'). It is used only when the transformation type is `REMOVE_NUMBERS`.
         /// </summary>
         public readonly bool? IncludeHexNumbers;
         /// <summary>
-        /// min digit count
+        /// The minimum number of digits that a numeric sequence must have to be removed. It is used only when the transformation type is `REMOVE_NUMBERS`.
         /// </summary>
         public readonly int? MinDigitCount;
         /// <summary>
-        /// no documentation available
+        /// The part of the text that serves as a reference point for the transformation. Its use depends on the transformation type.
         /// </summary>
         public readonly string? Prefix;
         /// <summary>
-        /// replacement
+        /// The text that replaces the part between `Prefix` and `Suffix`. It is used only when the transformation type is `REPLACE_BETWEEN`.
         /// </summary>
         public readonly string? ReplacementValue;
         /// <summary>
@@ -35,23 +35,23 @@ namespace Pulumiverse.Dynatrace.Outputs
         /// </summary>
         public readonly int? SegmentCount;
         /// <summary>
-        /// select index
+        /// The index of the element to keep after splitting. The index is zero-based. It is used only when the transformation type is `SPLIT_SELECT`.
         /// </summary>
         public readonly int? SelectIndex;
         /// <summary>
-        /// split by
+        /// The delimiter used for splitting the text. It is used only when the transformation type is `SPLIT_SELECT` or `TAKE_SEGMENTS`.
         /// </summary>
         public readonly string? SplitDelimiter;
         /// <summary>
-        /// no documentation available
+        /// The part of the text that serves as a reference point for the transformation. Its use depends on the transformation type.
         /// </summary>
         public readonly string? Suffix;
         /// <summary>
-        /// take from end
+        /// Whether to take segments from the end of the text instead of the beginning. It is used only when the transformation type is `TAKE_SEGMENTS`.
         /// </summary>
         public readonly bool? TakeFromEnd;
         /// <summary>
-        /// Possible Values: `AFTER`, `BEFORE`, `BETWEEN`, `REMOVE_CREDIT_CARDS`, `REMOVE_IBANS`, `REMOVE_IPS`, `REMOVE_NUMBERS`, `REPLACE_BETWEEN`, `SPLIT_SELECT`, `TAKE_SEGMENTS`
+        /// Defines what kind of transformation will be applied on the original value. Possible values: `AFTER`, `BEFORE`, `BETWEEN`, `REMOVE_CREDIT_CARDS`, `REMOVE_IBANS`, `REMOVE_IPS`, `REMOVE_NUMBERS`, `REPLACE_BETWEEN`, `SPLIT_SELECT`, `TAKE_SEGMENTS`
         /// </summary>
         public readonly string TransformationType;
 
