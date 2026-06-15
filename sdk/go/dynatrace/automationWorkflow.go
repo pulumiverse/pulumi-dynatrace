@@ -207,7 +207,7 @@ type AutomationWorkflow struct {
 	Private pulumi.BoolPtrOutput `pulumi:"private"`
 	// The result of the workflow
 	Result pulumi.StringPtrOutput `pulumi:"result"`
-	// The tasks to run for every execution of this workflow
+	// The tasks to run for every execution of this workflow. Note: the order in which tasks are declared in HCL does not determine their layout - positions are not assigned incrementally based on declaration order. Set `position` explicitly on each task if you need a deterministic layout
 	Tasks AutomationWorkflowTasksOutput `pulumi:"tasks"`
 	// The title / name of the workflow
 	Title pulumi.StringOutput `pulumi:"title"`
@@ -273,7 +273,7 @@ type automationWorkflowState struct {
 	Private *bool `pulumi:"private"`
 	// The result of the workflow
 	Result *string `pulumi:"result"`
-	// The tasks to run for every execution of this workflow
+	// The tasks to run for every execution of this workflow. Note: the order in which tasks are declared in HCL does not determine their layout - positions are not assigned incrementally based on declaration order. Set `position` explicitly on each task if you need a deterministic layout
 	Tasks *AutomationWorkflowTasks `pulumi:"tasks"`
 	// The title / name of the workflow
 	Title *string `pulumi:"title"`
@@ -304,7 +304,7 @@ type AutomationWorkflowState struct {
 	Private pulumi.BoolPtrInput
 	// The result of the workflow
 	Result pulumi.StringPtrInput
-	// The tasks to run for every execution of this workflow
+	// The tasks to run for every execution of this workflow. Note: the order in which tasks are declared in HCL does not determine their layout - positions are not assigned incrementally based on declaration order. Set `position` explicitly on each task if you need a deterministic layout
 	Tasks AutomationWorkflowTasksPtrInput
 	// The title / name of the workflow
 	Title pulumi.StringPtrInput
@@ -339,7 +339,7 @@ type automationWorkflowArgs struct {
 	Private *bool `pulumi:"private"`
 	// The result of the workflow
 	Result *string `pulumi:"result"`
-	// The tasks to run for every execution of this workflow
+	// The tasks to run for every execution of this workflow. Note: the order in which tasks are declared in HCL does not determine their layout - positions are not assigned incrementally based on declaration order. Set `position` explicitly on each task if you need a deterministic layout
 	Tasks AutomationWorkflowTasks `pulumi:"tasks"`
 	// The title / name of the workflow
 	Title string `pulumi:"title"`
@@ -371,7 +371,7 @@ type AutomationWorkflowArgs struct {
 	Private pulumi.BoolPtrInput
 	// The result of the workflow
 	Result pulumi.StringPtrInput
-	// The tasks to run for every execution of this workflow
+	// The tasks to run for every execution of this workflow. Note: the order in which tasks are declared in HCL does not determine their layout - positions are not assigned incrementally based on declaration order. Set `position` explicitly on each task if you need a deterministic layout
 	Tasks AutomationWorkflowTasksInput
 	// The title / name of the workflow
 	Title pulumi.StringInput
@@ -518,7 +518,7 @@ func (o AutomationWorkflowOutput) Result() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v *AutomationWorkflow) pulumi.StringPtrOutput { return v.Result }).(pulumi.StringPtrOutput)
 }
 
-// The tasks to run for every execution of this workflow
+// The tasks to run for every execution of this workflow. Note: the order in which tasks are declared in HCL does not determine their layout - positions are not assigned incrementally based on declaration order. Set `position` explicitly on each task if you need a deterministic layout
 func (o AutomationWorkflowOutput) Tasks() AutomationWorkflowTasksOutput {
 	return o.ApplyT(func(v *AutomationWorkflow) AutomationWorkflowTasksOutput { return v.Tasks }).(AutomationWorkflowTasksOutput)
 }

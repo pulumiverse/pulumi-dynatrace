@@ -240,7 +240,7 @@ namespace Pulumiverse.Dynatrace
         public Output<string?> Result { get; private set; } = null!;
 
         /// <summary>
-        /// The tasks to run for every execution of this workflow
+        /// The tasks to run for every execution of this workflow. Note: the order in which tasks are declared in HCL does not determine their layout - positions are not assigned incrementally based on declaration order. Set `Position` explicitly on each task if you need a deterministic layout
         /// </summary>
         [Output("tasks")]
         public Output<Outputs.AutomationWorkflowTasks> Tasks { get; private set; } = null!;
@@ -371,7 +371,7 @@ namespace Pulumiverse.Dynatrace
         public Input<string>? Result { get; set; }
 
         /// <summary>
-        /// The tasks to run for every execution of this workflow
+        /// The tasks to run for every execution of this workflow. Note: the order in which tasks are declared in HCL does not determine their layout - positions are not assigned incrementally based on declaration order. Set `Position` explicitly on each task if you need a deterministic layout
         /// </summary>
         [Input("tasks", required: true)]
         public Input<Inputs.AutomationWorkflowTasksArgs> Tasks { get; set; } = null!;
@@ -463,7 +463,7 @@ namespace Pulumiverse.Dynatrace
         public Input<string>? Result { get; set; }
 
         /// <summary>
-        /// The tasks to run for every execution of this workflow
+        /// The tasks to run for every execution of this workflow. Note: the order in which tasks are declared in HCL does not determine their layout - positions are not assigned incrementally based on declaration order. Set `Position` explicitly on each task if you need a deterministic layout
         /// </summary>
         [Input("tasks")]
         public Input<Inputs.AutomationWorkflowTasksGetArgs>? Tasks { get; set; }

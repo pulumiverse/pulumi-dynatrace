@@ -20,6 +20,30 @@ import * as utilities from "./utilities";
  * - `terraform-provider-dynatrace -export dynatrace.LogEvents` downloads all existing log events configuration
  *
  * The full documentation of the export feature is available [here](https://dt-url.net/h203qmc).
+ *
+ * ## Resource Example Usage
+ *
+ * ```typescript
+ * import * as pulumi from "@pulumi/pulumi";
+ * import * as dynatrace from "@pulumiverse/dynatrace";
+ *
+ * const events = new dynatrace.LogEvents("events", {
+ *     enabled: false,
+ *     query: "matchesPhrase(content, \"terratest\")",
+ *     summary: "Created by #name#",
+ *     eventTemplate: {
+ *         description: "Created by Terraform",
+ *         eventType: "INFO",
+ *         title: "{content}",
+ *         metadata: {
+ *             items: [{
+ *                 metadataKey: "terraform.key",
+ *                 metadataValue: "terraform.value",
+ *             }],
+ *         },
+ *     },
+ * });
+ * ```
  */
 export class LogEvents extends pulumi.CustomResource {
     /**
