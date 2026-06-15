@@ -186,6 +186,29 @@ class LogEvents(pulumi.CustomResource):
 
         The full documentation of the export feature is available [here](https://dt-url.net/h203qmc).
 
+        ## Resource Example Usage
+
+        ```python
+        import pulumi
+        import pulumiverse_dynatrace as dynatrace
+
+        events = dynatrace.LogEvents("events",
+            enabled=False,
+            query="matchesPhrase(content, \\"terratest\\")",
+            summary="Created by #name#",
+            event_template={
+                "description": "Created by Terraform",
+                "event_type": "INFO",
+                "title": "{content}",
+                "metadata": {
+                    "items": [{
+                        "metadata_key": "terraform.key",
+                        "metadata_value": "terraform.value",
+                    }],
+                },
+            })
+        ```
+
 
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
@@ -214,6 +237,29 @@ class LogEvents(pulumi.CustomResource):
         - `terraform-provider-dynatrace -export LogEvents` downloads all existing log events configuration
 
         The full documentation of the export feature is available [here](https://dt-url.net/h203qmc).
+
+        ## Resource Example Usage
+
+        ```python
+        import pulumi
+        import pulumiverse_dynatrace as dynatrace
+
+        events = dynatrace.LogEvents("events",
+            enabled=False,
+            query="matchesPhrase(content, \\"terratest\\")",
+            summary="Created by #name#",
+            event_template={
+                "description": "Created by Terraform",
+                "event_type": "INFO",
+                "title": "{content}",
+                "metadata": {
+                    "items": [{
+                        "metadata_key": "terraform.key",
+                        "metadata_value": "terraform.value",
+                    }],
+                },
+            })
+        ```
 
 
         :param str resource_name: The name of the resource.

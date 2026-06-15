@@ -205,7 +205,7 @@ export class AutomationWorkflow extends pulumi.CustomResource {
      */
     declare public readonly result: pulumi.Output<string | undefined>;
     /**
-     * The tasks to run for every execution of this workflow
+     * The tasks to run for every execution of this workflow. Note: the order in which tasks are declared in HCL does not determine their layout - positions are not assigned incrementally based on declaration order. Set `position` explicitly on each task if you need a deterministic layout
      */
     declare public readonly tasks: pulumi.Output<outputs.AutomationWorkflowTasks>;
     /**
@@ -321,7 +321,7 @@ export interface AutomationWorkflowState {
      */
     result?: pulumi.Input<string | undefined>;
     /**
-     * The tasks to run for every execution of this workflow
+     * The tasks to run for every execution of this workflow. Note: the order in which tasks are declared in HCL does not determine their layout - positions are not assigned incrementally based on declaration order. Set `position` explicitly on each task if you need a deterministic layout
      */
     tasks?: pulumi.Input<inputs.AutomationWorkflowTasks | undefined>;
     /**
@@ -383,7 +383,7 @@ export interface AutomationWorkflowArgs {
      */
     result?: pulumi.Input<string | undefined>;
     /**
-     * The tasks to run for every execution of this workflow
+     * The tasks to run for every execution of this workflow. Note: the order in which tasks are declared in HCL does not determine their layout - positions are not assigned incrementally based on declaration order. Set `position` explicitly on each task if you need a deterministic layout
      */
     tasks: pulumi.Input<inputs.AutomationWorkflowTasks>;
     /**

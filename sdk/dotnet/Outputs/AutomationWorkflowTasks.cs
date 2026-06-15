@@ -15,7 +15,7 @@ namespace Pulumiverse.Dynatrace.Outputs
     public sealed class AutomationWorkflowTasks
     {
         /// <summary>
-        /// TODO: No documentation available
+        /// A task within the workflow. Note: the order in which tasks are declared in HCL does not determine their layout - positions are not assigned incrementally based on declaration order. Set `Position` explicitly on each task if you need a deterministic layout
         /// </summary>
         public readonly ImmutableArray<Outputs.AutomationWorkflowTasksTask> Tasks;
 

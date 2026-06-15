@@ -17,7 +17,7 @@ namespace Pulumiverse.Dynatrace.Inputs
         private InputList<Inputs.AutomationWorkflowTasksTaskArgs>? _tasks;
 
         /// <summary>
-        /// TODO: No documentation available
+        /// A task within the workflow. Note: the order in which tasks are declared in HCL does not determine their layout - positions are not assigned incrementally based on declaration order. Set `Position` explicitly on each task if you need a deterministic layout
         /// </summary>
         public InputList<Inputs.AutomationWorkflowTasksTaskArgs> Tasks
         {

@@ -38,7 +38,7 @@ class AutomationWorkflowArgs:
         """
         The set of arguments for constructing a AutomationWorkflow resource.
 
-        :param pulumi.Input['AutomationWorkflowTasksArgs'] tasks: The tasks to run for every execution of this workflow
+        :param pulumi.Input['AutomationWorkflowTasksArgs'] tasks: The tasks to run for every execution of this workflow. Note: the order in which tasks are declared in HCL does not determine their layout - positions are not assigned incrementally based on declaration order. Set `position` explicitly on each task if you need a deterministic layout
         :param pulumi.Input[_builtins.str] title: The title / name of the workflow
         :param pulumi.Input[_builtins.str] actor: The user context the executions of the workflow will happen with
         :param pulumi.Input[_builtins.str] description: An optional description for the workflow
@@ -84,7 +84,7 @@ class AutomationWorkflowArgs:
     @pulumi.getter
     def tasks(self) -> pulumi.Input['AutomationWorkflowTasksArgs']:
         """
-        The tasks to run for every execution of this workflow
+        The tasks to run for every execution of this workflow. Note: the order in which tasks are declared in HCL does not determine their layout - positions are not assigned incrementally based on declaration order. Set `position` explicitly on each task if you need a deterministic layout
         """
         return pulumi.get(self, "tasks")
 
@@ -279,7 +279,7 @@ class _AutomationWorkflowState:
         :param pulumi.Input[_builtins.str] owner_type: The type of the owner. Possible values are `USER` and `GROUP`
         :param pulumi.Input[_builtins.bool] private: Defines whether this workflow is private to the owner or not. Default is `true`
         :param pulumi.Input[_builtins.str] result: The result of the workflow
-        :param pulumi.Input['AutomationWorkflowTasksArgs'] tasks: The tasks to run for every execution of this workflow
+        :param pulumi.Input['AutomationWorkflowTasksArgs'] tasks: The tasks to run for every execution of this workflow. Note: the order in which tasks are declared in HCL does not determine their layout - positions are not assigned incrementally based on declaration order. Set `position` explicitly on each task if you need a deterministic layout
         :param pulumi.Input[_builtins.str] title: The title / name of the workflow
         :param pulumi.Input['AutomationWorkflowTriggerArgs'] trigger: Configures how executions of the workflows are getting triggered. If no trigger is specified it means the workflow is getting manually triggered
         :param pulumi.Input[_builtins.str] type: The type of the workflow. Possible values are `STANDARD` and `SIMPLE`. Defaults to `STANDARD`. Workflows of type `SIMPLE` are allowed to contain only one action
@@ -437,7 +437,7 @@ class _AutomationWorkflowState:
     @pulumi.getter
     def tasks(self) -> pulumi.Input[Optional['AutomationWorkflowTasksArgs']]:
         """
-        The tasks to run for every execution of this workflow
+        The tasks to run for every execution of this workflow. Note: the order in which tasks are declared in HCL does not determine their layout - positions are not assigned incrementally based on declaration order. Set `position` explicitly on each task if you need a deterministic layout
         """
         return pulumi.get(self, "tasks")
 
@@ -646,7 +646,7 @@ class AutomationWorkflow(pulumi.CustomResource):
         :param pulumi.Input[_builtins.str] owner_type: The type of the owner. Possible values are `USER` and `GROUP`
         :param pulumi.Input[_builtins.bool] private: Defines whether this workflow is private to the owner or not. Default is `true`
         :param pulumi.Input[_builtins.str] result: The result of the workflow
-        :param pulumi.Input[Union['AutomationWorkflowTasksArgs', 'AutomationWorkflowTasksArgsDict']] tasks: The tasks to run for every execution of this workflow
+        :param pulumi.Input[Union['AutomationWorkflowTasksArgs', 'AutomationWorkflowTasksArgsDict']] tasks: The tasks to run for every execution of this workflow. Note: the order in which tasks are declared in HCL does not determine their layout - positions are not assigned incrementally based on declaration order. Set `position` explicitly on each task if you need a deterministic layout
         :param pulumi.Input[_builtins.str] title: The title / name of the workflow
         :param pulumi.Input[Union['AutomationWorkflowTriggerArgs', 'AutomationWorkflowTriggerArgsDict']] trigger: Configures how executions of the workflows are getting triggered. If no trigger is specified it means the workflow is getting manually triggered
         :param pulumi.Input[_builtins.str] type: The type of the workflow. Possible values are `STANDARD` and `SIMPLE`. Defaults to `STANDARD`. Workflows of type `SIMPLE` are allowed to contain only one action
@@ -885,7 +885,7 @@ class AutomationWorkflow(pulumi.CustomResource):
         :param pulumi.Input[_builtins.str] owner_type: The type of the owner. Possible values are `USER` and `GROUP`
         :param pulumi.Input[_builtins.bool] private: Defines whether this workflow is private to the owner or not. Default is `true`
         :param pulumi.Input[_builtins.str] result: The result of the workflow
-        :param pulumi.Input[Union['AutomationWorkflowTasksArgs', 'AutomationWorkflowTasksArgsDict']] tasks: The tasks to run for every execution of this workflow
+        :param pulumi.Input[Union['AutomationWorkflowTasksArgs', 'AutomationWorkflowTasksArgsDict']] tasks: The tasks to run for every execution of this workflow. Note: the order in which tasks are declared in HCL does not determine their layout - positions are not assigned incrementally based on declaration order. Set `position` explicitly on each task if you need a deterministic layout
         :param pulumi.Input[_builtins.str] title: The title / name of the workflow
         :param pulumi.Input[Union['AutomationWorkflowTriggerArgs', 'AutomationWorkflowTriggerArgsDict']] trigger: Configures how executions of the workflows are getting triggered. If no trigger is specified it means the workflow is getting manually triggered
         :param pulumi.Input[_builtins.str] type: The type of the workflow. Possible values are `STANDARD` and `SIMPLE`. Defaults to `STANDARD`. Workflows of type `SIMPLE` are allowed to contain only one action
@@ -994,7 +994,7 @@ class AutomationWorkflow(pulumi.CustomResource):
     @pulumi.getter
     def tasks(self) -> pulumi.Output['outputs.AutomationWorkflowTasks']:
         """
-        The tasks to run for every execution of this workflow
+        The tasks to run for every execution of this workflow. Note: the order in which tasks are declared in HCL does not determine their layout - positions are not assigned incrementally based on declaration order. Set `position` explicitly on each task if you need a deterministic layout
         """
         return pulumi.get(self, "tasks")
 

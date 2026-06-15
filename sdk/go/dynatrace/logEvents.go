@@ -25,6 +25,47 @@ import (
 // - `terraform-provider-dynatrace -export LogEvents` downloads all existing log events configuration
 //
 // The full documentation of the export feature is available [here](https://dt-url.net/h203qmc).
+//
+// ## Resource Example Usage
+//
+// ```go
+// package main
+//
+// import (
+//
+//	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//	"github.com/pulumiverse/pulumi-dynatrace/sdk/go/dynatrace"
+//
+// )
+//
+//	func main() {
+//		pulumi.Run(func(ctx *pulumi.Context) error {
+//			_, err := dynatrace.NewLogEvents(ctx, "events", &dynatrace.LogEventsArgs{
+//				Enabled: pulumi.Bool(false),
+//				Query:   pulumi.String("matchesPhrase(content, \"terratest\")"),
+//				Summary: pulumi.String("Created by #name#"),
+//				EventTemplate: &dynatrace.LogEventsEventTemplateArgs{
+//					Description: pulumi.String("Created by Terraform"),
+//					EventType:   pulumi.String("INFO"),
+//					Title:       pulumi.String("{content}"),
+//					Metadata: &dynatrace.LogEventsEventTemplateMetadataArgs{
+//						Items: dynatrace.LogEventsEventTemplateMetadataItemArray{
+//							&dynatrace.LogEventsEventTemplateMetadataItemArgs{
+//								MetadataKey:   pulumi.String("terraform.key"),
+//								MetadataValue: pulumi.String("terraform.value"),
+//							},
+//						},
+//					},
+//				},
+//			})
+//			if err != nil {
+//				return err
+//			}
+//			return nil
+//		})
+//	}
+//
+// ```
 type LogEvents struct {
 	pulumi.CustomResourceState
 

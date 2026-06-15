@@ -24,6 +24,43 @@ namespace Pulumiverse.Dynatrace
     /// - `terraform-provider-dynatrace -export dynatrace.LogEvents` downloads all existing log events configuration
     /// 
     /// The full documentation of the export feature is available [here](https://dt-url.net/h203qmc).
+    /// 
+    /// ## Resource Example Usage
+    /// 
+    /// ```csharp
+    /// using System.Collections.Generic;
+    /// using System.Linq;
+    /// using Pulumi;
+    /// using Dynatrace = Pulumiverse.Dynatrace;
+    /// 
+    /// return await Deployment.RunAsync(() =&gt; 
+    /// {
+    ///     var events = new Dynatrace.LogEvents("events", new()
+    ///     {
+    ///         Enabled = false,
+    ///         Query = "matchesPhrase(content, \"terratest\")",
+    ///         Summary = "Created by #name#",
+    ///         EventTemplate = new Dynatrace.Inputs.LogEventsEventTemplateArgs
+    ///         {
+    ///             Description = "Created by Terraform",
+    ///             EventType = "INFO",
+    ///             Title = "{content}",
+    ///             Metadata = new Dynatrace.Inputs.LogEventsEventTemplateMetadataArgs
+    ///             {
+    ///                 Items = new[]
+    ///                 {
+    ///                     new Dynatrace.Inputs.LogEventsEventTemplateMetadataItemArgs
+    ///                     {
+    ///                         MetadataKey = "terraform.key",
+    ///                         MetadataValue = "terraform.value",
+    ///                     },
+    ///                 },
+    ///             },
+    ///         },
+    ///     });
+    /// 
+    /// });
+    /// ```
     /// </summary>
     [DynatraceResourceType("dynatrace:index/logEvents:LogEvents")]
     public partial class LogEvents : global::Pulumi.CustomResource
