@@ -265,6 +265,10 @@ func (m *module) Construct(ctx *pulumi.Context, name, typ, urn string) (r pulumi
 		r = &FailureDetectionRules{}
 	case "dynatrace:index/frequentIssues:FrequentIssues":
 		r = &FrequentIssues{}
+	case "dynatrace:index/gcpConnection:GcpConnection":
+		r = &GcpConnection{}
+	case "dynatrace:index/gcpPrincipal:GcpPrincipal":
+		r = &GcpPrincipal{}
 	case "dynatrace:index/genericRelationships:GenericRelationships":
 		r = &GenericRelationships{}
 	case "dynatrace:index/genericSetting:GenericSetting":
@@ -421,6 +425,8 @@ func (m *module) Construct(ctx *pulumi.Context, name, typ, urn string) (r pulumi
 		r = &Maintenance{}
 	case "dynatrace:index/maintenanceWindow:MaintenanceWindow":
 		r = &MaintenanceWindow{}
+	case "dynatrace:index/maintenanceWindows:MaintenanceWindows":
+		r = &MaintenanceWindows{}
 	case "dynatrace:index/managedBackup:ManagedBackup":
 		r = &ManagedBackup{}
 	case "dynatrace:index/managedInternetProxy:ManagedInternetProxy":
@@ -1528,6 +1534,16 @@ func init() {
 	)
 	pulumi.RegisterResourceModule(
 		"dynatrace",
+		"index/gcpConnection",
+		&module{version},
+	)
+	pulumi.RegisterResourceModule(
+		"dynatrace",
+		"index/gcpPrincipal",
+		&module{version},
+	)
+	pulumi.RegisterResourceModule(
+		"dynatrace",
 		"index/genericRelationships",
 		&module{version},
 	)
@@ -1914,6 +1930,11 @@ func init() {
 	pulumi.RegisterResourceModule(
 		"dynatrace",
 		"index/maintenanceWindow",
+		&module{version},
+	)
+	pulumi.RegisterResourceModule(
+		"dynatrace",
+		"index/maintenanceWindows",
 		&module{version},
 	)
 	pulumi.RegisterResourceModule(

@@ -210,6 +210,8 @@ class Maintenance(pulumi.CustomResource):
                  schedule: pulumi.Input[Optional[Union['MaintenanceScheduleArgs', 'MaintenanceScheduleArgsDict']]] = None,
                  __props__=None):
         """
+        > **Warning** This resource has been deprecated in favor of dynatrace_maintenance_windows.
+
         > This resource requires the API token scopes **Read settings** (`settings.read`) and **Write settings** (`settings.write`)
 
         ## Dynatrace Documentation
@@ -241,6 +243,8 @@ class Maintenance(pulumi.CustomResource):
                  args: MaintenanceArgs,
                  opts: Optional[pulumi.ResourceOptions] = None):
         """
+        > **Warning** This resource has been deprecated in favor of dynatrace_maintenance_windows.
+
         > This resource requires the API token scopes **Read settings** (`settings.read`) and **Write settings** (`settings.write`)
 
         ## Dynatrace Documentation

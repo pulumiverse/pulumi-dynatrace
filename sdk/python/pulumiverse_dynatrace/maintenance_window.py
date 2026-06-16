@@ -339,7 +339,7 @@ class MaintenanceWindow(pulumi.CustomResource):
                  unknowns: pulumi.Input[Optional[_builtins.str]] = None,
                  __props__=None):
         """
-        > This resource API endpoint has been deprecated, please use Maintenance instead.
+        > This resource API endpoint has been deprecated, please use MaintenanceWindows instead.
 
         > This resource requires the API token scopes **Read configuration** (`ReadConfig`) and **Write configuration** (`WriteConfig`)
 
@@ -369,7 +369,7 @@ class MaintenanceWindow(pulumi.CustomResource):
                  args: MaintenanceWindowArgs,
                  opts: Optional[pulumi.ResourceOptions] = None):
         """
-        > This resource API endpoint has been deprecated, please use Maintenance instead.
+        > This resource API endpoint has been deprecated, please use MaintenanceWindows instead.
 
         > This resource requires the API token scopes **Read configuration** (`ReadConfig`) and **Write configuration** (`WriteConfig`)
 

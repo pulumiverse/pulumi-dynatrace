@@ -5,7 +5,7 @@ go 1.26.4
 replace github.com/hashicorp/terraform-plugin-sdk/v2 => github.com/pulumi/terraform-plugin-sdk/v2 v2.0.0-20260318212141-5525259d096b
 
 require (
-	github.com/dynatrace-oss/terraform-provider-dynatrace v1.97.2
+	github.com/dynatrace-oss/terraform-provider-dynatrace v1.98.0
 	github.com/pulumi/pulumi-terraform-bridge/v3 v3.132.0
 	github.com/pulumi/pulumi/sdk/v3 v3.245.0
 )

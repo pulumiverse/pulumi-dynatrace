@@ -615,6 +615,16 @@ export type FrequentIssues = import("./frequentIssues").FrequentIssues;
 export const FrequentIssues: typeof import("./frequentIssues").FrequentIssues = null as any;
 utilities.lazyLoad(exports, ["FrequentIssues"], () => require("./frequentIssues"));
 
+export { GcpConnectionArgs, GcpConnectionState } from "./gcpConnection";
+export type GcpConnection = import("./gcpConnection").GcpConnection;
+export const GcpConnection: typeof import("./gcpConnection").GcpConnection = null as any;
+utilities.lazyLoad(exports, ["GcpConnection"], () => require("./gcpConnection"));
+
+export { GcpPrincipalArgs, GcpPrincipalState } from "./gcpPrincipal";
+export type GcpPrincipal = import("./gcpPrincipal").GcpPrincipal;
+export const GcpPrincipal: typeof import("./gcpPrincipal").GcpPrincipal = null as any;
+utilities.lazyLoad(exports, ["GcpPrincipal"], () => require("./gcpPrincipal"));
+
 export { GenericRelationshipsArgs, GenericRelationshipsState } from "./genericRelationships";
 export type GenericRelationships = import("./genericRelationships").GenericRelationships;
 export const GenericRelationships: typeof import("./genericRelationships").GenericRelationships = null as any;
@@ -844,6 +854,11 @@ export { GetMobileApplicationArgs, GetMobileApplicationResult, GetMobileApplicat
 export const getMobileApplication: typeof import("./getMobileApplication").getMobileApplication = null as any;
 export const getMobileApplicationOutput: typeof import("./getMobileApplication").getMobileApplicationOutput = null as any;
 utilities.lazyLoad(exports, ["getMobileApplication","getMobileApplicationOutput"], () => require("./getMobileApplication"));
+
+export { GetPlatformSloArgs, GetPlatformSloResult, GetPlatformSloOutputArgs } from "./getPlatformSlo";
+export const getPlatformSlo: typeof import("./getPlatformSlo").getPlatformSlo = null as any;
+export const getPlatformSloOutput: typeof import("./getPlatformSlo").getPlatformSloOutput = null as any;
+utilities.lazyLoad(exports, ["getPlatformSlo","getPlatformSloOutput"], () => require("./getPlatformSlo"));
 
 export { GetPlatformSloTemplateArgs, GetPlatformSloTemplateResult, GetPlatformSloTemplateOutputArgs } from "./getPlatformSloTemplate";
 export const getPlatformSloTemplate: typeof import("./getPlatformSloTemplate").getPlatformSloTemplate = null as any;
@@ -1289,6 +1304,11 @@ export { MaintenanceWindowArgs, MaintenanceWindowState } from "./maintenanceWind
 export type MaintenanceWindow = import("./maintenanceWindow").MaintenanceWindow;
 export const MaintenanceWindow: typeof import("./maintenanceWindow").MaintenanceWindow = null as any;
 utilities.lazyLoad(exports, ["MaintenanceWindow"], () => require("./maintenanceWindow"));
+
+export { MaintenanceWindowsArgs, MaintenanceWindowsState } from "./maintenanceWindows";
+export type MaintenanceWindows = import("./maintenanceWindows").MaintenanceWindows;
+export const MaintenanceWindows: typeof import("./maintenanceWindows").MaintenanceWindows = null as any;
+utilities.lazyLoad(exports, ["MaintenanceWindows"], () => require("./maintenanceWindows"));
 
 export { ManagedBackupArgs, ManagedBackupState } from "./managedBackup";
 export type ManagedBackup = import("./managedBackup").ManagedBackup;
@@ -2711,6 +2731,10 @@ const _module = {
                 return new FailureDetectionRules(name, <any>undefined, { urn })
             case "dynatrace:index/frequentIssues:FrequentIssues":
                 return new FrequentIssues(name, <any>undefined, { urn })
+            case "dynatrace:index/gcpConnection:GcpConnection":
+                return new GcpConnection(name, <any>undefined, { urn })
+            case "dynatrace:index/gcpPrincipal:GcpPrincipal":
+                return new GcpPrincipal(name, <any>undefined, { urn })
             case "dynatrace:index/genericRelationships:GenericRelationships":
                 return new GenericRelationships(name, <any>undefined, { urn })
             case "dynatrace:index/genericSetting:GenericSetting":
@@ -2867,6 +2891,8 @@ const _module = {
                 return new Maintenance(name, <any>undefined, { urn })
             case "dynatrace:index/maintenanceWindow:MaintenanceWindow":
                 return new MaintenanceWindow(name, <any>undefined, { urn })
+            case "dynatrace:index/maintenanceWindows:MaintenanceWindows":
+                return new MaintenanceWindows(name, <any>undefined, { urn })
             case "dynatrace:index/managedBackup:ManagedBackup":
                 return new ManagedBackup(name, <any>undefined, { urn })
             case "dynatrace:index/managedInternetProxy:ManagedInternetProxy":
@@ -3458,6 +3484,8 @@ pulumi.runtime.registerResourceModule("dynatrace", "index/failureDetectionParame
 pulumi.runtime.registerResourceModule("dynatrace", "index/failureDetectionRuleSets", _module)
 pulumi.runtime.registerResourceModule("dynatrace", "index/failureDetectionRules", _module)
 pulumi.runtime.registerResourceModule("dynatrace", "index/frequentIssues", _module)
+pulumi.runtime.registerResourceModule("dynatrace", "index/gcpConnection", _module)
+pulumi.runtime.registerResourceModule("dynatrace", "index/gcpPrincipal", _module)
 pulumi.runtime.registerResourceModule("dynatrace", "index/genericRelationships", _module)
 pulumi.runtime.registerResourceModule("dynatrace", "index/genericSetting", _module)
 pulumi.runtime.registerResourceModule("dynatrace", "index/genericTypes", _module)
@@ -3536,6 +3564,7 @@ pulumi.runtime.registerResourceModule("dynatrace", "index/logTimestamp", _module
 pulumi.runtime.registerResourceModule("dynatrace", "index/mainframeTransactionMonitoring", _module)
 pulumi.runtime.registerResourceModule("dynatrace", "index/maintenance", _module)
 pulumi.runtime.registerResourceModule("dynatrace", "index/maintenanceWindow", _module)
+pulumi.runtime.registerResourceModule("dynatrace", "index/maintenanceWindows", _module)
 pulumi.runtime.registerResourceModule("dynatrace", "index/managedBackup", _module)
 pulumi.runtime.registerResourceModule("dynatrace", "index/managedInternetProxy", _module)
 pulumi.runtime.registerResourceModule("dynatrace", "index/managedNetworkZones", _module)

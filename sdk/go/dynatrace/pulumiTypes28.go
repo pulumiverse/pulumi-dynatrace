@@ -13,6 +13,817 @@ import (
 
 var _ = internal.GetEnvOrDefault
 
+type ServiceFullWebServiceIdContributorsWebServiceNameServiceIdContributorTransformationsTransformation struct {
+	// Whether to also remove hexadecimal numbers (sequences of at least `minDigitCount` hexadecimal digits preceded by '0x'). It is used only when the transformation type is `REMOVE_NUMBERS`.
+	IncludeHexNumbers *bool `pulumi:"includeHexNumbers"`
+	// The minimum number of digits that a numeric sequence must have to be removed. It is used only when the transformation type is `REMOVE_NUMBERS`.
+	MinDigitCount *int `pulumi:"minDigitCount"`
+	// The part of the text that serves as a reference point for the transformation. Its use depends on the transformation type.
+	Prefix *string `pulumi:"prefix"`
+	// The text that replaces the part between `prefix` and `suffix`. It is used only when the transformation type is `REPLACE_BETWEEN`.
+	ReplacementValue *string `pulumi:"replacementValue"`
+	// How many segments should be taken.
+	SegmentCount *int `pulumi:"segmentCount"`
+	// The index of the element to keep after splitting. The index is zero-based. It is used only when the transformation type is `SPLIT_SELECT`.
+	SelectIndex *int `pulumi:"selectIndex"`
+	// The delimiter used for splitting the text. It is used only when the transformation type is `SPLIT_SELECT` or `TAKE_SEGMENTS`.
+	SplitDelimiter *string `pulumi:"splitDelimiter"`
+	// The part of the text that serves as a reference point for the transformation. Its use depends on the transformation type.
+	Suffix *string `pulumi:"suffix"`
+	// Whether to take segments from the end of the text instead of the beginning. It is used only when the transformation type is `TAKE_SEGMENTS`.
+	TakeFromEnd *bool `pulumi:"takeFromEnd"`
+	// Defines what kind of transformation will be applied on the original value. Possible values: `AFTER`, `BEFORE`, `BETWEEN`, `REMOVE_CREDIT_CARDS`, `REMOVE_IBANS`, `REMOVE_IPS`, `REMOVE_NUMBERS`, `REPLACE_BETWEEN`, `SPLIT_SELECT`, `TAKE_SEGMENTS`
+	TransformationType string `pulumi:"transformationType"`
+}
+
+// ServiceFullWebServiceIdContributorsWebServiceNameServiceIdContributorTransformationsTransformationInput is an input type that accepts ServiceFullWebServiceIdContributorsWebServiceNameServiceIdContributorTransformationsTransformationArgs and ServiceFullWebServiceIdContributorsWebServiceNameServiceIdContributorTransformationsTransformationOutput values.
+// You can construct a concrete instance of `ServiceFullWebServiceIdContributorsWebServiceNameServiceIdContributorTransformationsTransformationInput` via:
+//
+//	ServiceFullWebServiceIdContributorsWebServiceNameServiceIdContributorTransformationsTransformationArgs{...}
+type ServiceFullWebServiceIdContributorsWebServiceNameServiceIdContributorTransformationsTransformationInput interface {
+	pulumi.Input
+
+	ToServiceFullWebServiceIdContributorsWebServiceNameServiceIdContributorTransformationsTransformationOutput() ServiceFullWebServiceIdContributorsWebServiceNameServiceIdContributorTransformationsTransformationOutput
+	ToServiceFullWebServiceIdContributorsWebServiceNameServiceIdContributorTransformationsTransformationOutputWithContext(context.Context) ServiceFullWebServiceIdContributorsWebServiceNameServiceIdContributorTransformationsTransformationOutput
+}
+
+type ServiceFullWebServiceIdContributorsWebServiceNameServiceIdContributorTransformationsTransformationArgs struct {
+	// Whether to also remove hexadecimal numbers (sequences of at least `minDigitCount` hexadecimal digits preceded by '0x'). It is used only when the transformation type is `REMOVE_NUMBERS`.
+	IncludeHexNumbers pulumi.BoolPtrInput `pulumi:"includeHexNumbers"`
+	// The minimum number of digits that a numeric sequence must have to be removed. It is used only when the transformation type is `REMOVE_NUMBERS`.
+	MinDigitCount pulumi.IntPtrInput `pulumi:"minDigitCount"`
+	// The part of the text that serves as a reference point for the transformation. Its use depends on the transformation type.
+	Prefix pulumi.StringPtrInput `pulumi:"prefix"`
+	// The text that replaces the part between `prefix` and `suffix`. It is used only when the transformation type is `REPLACE_BETWEEN`.
+	ReplacementValue pulumi.StringPtrInput `pulumi:"replacementValue"`
+	// How many segments should be taken.
+	SegmentCount pulumi.IntPtrInput `pulumi:"segmentCount"`
+	// The index of the element to keep after splitting. The index is zero-based. It is used only when the transformation type is `SPLIT_SELECT`.
+	SelectIndex pulumi.IntPtrInput `pulumi:"selectIndex"`
+	// The delimiter used for splitting the text. It is used only when the transformation type is `SPLIT_SELECT` or `TAKE_SEGMENTS`.
+	SplitDelimiter pulumi.StringPtrInput `pulumi:"splitDelimiter"`
+	// The part of the text that serves as a reference point for the transformation. Its use depends on the transformation type.
+	Suffix pulumi.StringPtrInput `pulumi:"suffix"`
+	// Whether to take segments from the end of the text instead of the beginning. It is used only when the transformation type is `TAKE_SEGMENTS`.
+	TakeFromEnd pulumi.BoolPtrInput `pulumi:"takeFromEnd"`
+	// Defines what kind of transformation will be applied on the original value. Possible values: `AFTER`, `BEFORE`, `BETWEEN`, `REMOVE_CREDIT_CARDS`, `REMOVE_IBANS`, `REMOVE_IPS`, `REMOVE_NUMBERS`, `REPLACE_BETWEEN`, `SPLIT_SELECT`, `TAKE_SEGMENTS`
+	TransformationType pulumi.StringInput `pulumi:"transformationType"`
+}
+
+func (ServiceFullWebServiceIdContributorsWebServiceNameServiceIdContributorTransformationsTransformationArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*ServiceFullWebServiceIdContributorsWebServiceNameServiceIdContributorTransformationsTransformation)(nil)).Elem()
+}
+
+func (i ServiceFullWebServiceIdContributorsWebServiceNameServiceIdContributorTransformationsTransformationArgs) ToServiceFullWebServiceIdContributorsWebServiceNameServiceIdContributorTransformationsTransformationOutput() ServiceFullWebServiceIdContributorsWebServiceNameServiceIdContributorTransformationsTransformationOutput {
+	return i.ToServiceFullWebServiceIdContributorsWebServiceNameServiceIdContributorTransformationsTransformationOutputWithContext(context.Background())
+}
+
+func (i ServiceFullWebServiceIdContributorsWebServiceNameServiceIdContributorTransformationsTransformationArgs) ToServiceFullWebServiceIdContributorsWebServiceNameServiceIdContributorTransformationsTransformationOutputWithContext(ctx context.Context) ServiceFullWebServiceIdContributorsWebServiceNameServiceIdContributorTransformationsTransformationOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(ServiceFullWebServiceIdContributorsWebServiceNameServiceIdContributorTransformationsTransformationOutput)
+}
+
+// ServiceFullWebServiceIdContributorsWebServiceNameServiceIdContributorTransformationsTransformationArrayInput is an input type that accepts ServiceFullWebServiceIdContributorsWebServiceNameServiceIdContributorTransformationsTransformationArray and ServiceFullWebServiceIdContributorsWebServiceNameServiceIdContributorTransformationsTransformationArrayOutput values.
+// You can construct a concrete instance of `ServiceFullWebServiceIdContributorsWebServiceNameServiceIdContributorTransformationsTransformationArrayInput` via:
+//
+//	ServiceFullWebServiceIdContributorsWebServiceNameServiceIdContributorTransformationsTransformationArray{ ServiceFullWebServiceIdContributorsWebServiceNameServiceIdContributorTransformationsTransformationArgs{...} }
+type ServiceFullWebServiceIdContributorsWebServiceNameServiceIdContributorTransformationsTransformationArrayInput interface {
+	pulumi.Input
+
+	ToServiceFullWebServiceIdContributorsWebServiceNameServiceIdContributorTransformationsTransformationArrayOutput() ServiceFullWebServiceIdContributorsWebServiceNameServiceIdContributorTransformationsTransformationArrayOutput
+	ToServiceFullWebServiceIdContributorsWebServiceNameServiceIdContributorTransformationsTransformationArrayOutputWithContext(context.Context) ServiceFullWebServiceIdContributorsWebServiceNameServiceIdContributorTransformationsTransformationArrayOutput
+}
+
+type ServiceFullWebServiceIdContributorsWebServiceNameServiceIdContributorTransformationsTransformationArray []ServiceFullWebServiceIdContributorsWebServiceNameServiceIdContributorTransformationsTransformationInput
+
+func (ServiceFullWebServiceIdContributorsWebServiceNameServiceIdContributorTransformationsTransformationArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]ServiceFullWebServiceIdContributorsWebServiceNameServiceIdContributorTransformationsTransformation)(nil)).Elem()
+}
+
+func (i ServiceFullWebServiceIdContributorsWebServiceNameServiceIdContributorTransformationsTransformationArray) ToServiceFullWebServiceIdContributorsWebServiceNameServiceIdContributorTransformationsTransformationArrayOutput() ServiceFullWebServiceIdContributorsWebServiceNameServiceIdContributorTransformationsTransformationArrayOutput {
+	return i.ToServiceFullWebServiceIdContributorsWebServiceNameServiceIdContributorTransformationsTransformationArrayOutputWithContext(context.Background())
+}
+
+func (i ServiceFullWebServiceIdContributorsWebServiceNameServiceIdContributorTransformationsTransformationArray) ToServiceFullWebServiceIdContributorsWebServiceNameServiceIdContributorTransformationsTransformationArrayOutputWithContext(ctx context.Context) ServiceFullWebServiceIdContributorsWebServiceNameServiceIdContributorTransformationsTransformationArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(ServiceFullWebServiceIdContributorsWebServiceNameServiceIdContributorTransformationsTransformationArrayOutput)
+}
+
+type ServiceFullWebServiceIdContributorsWebServiceNameServiceIdContributorTransformationsTransformationOutput struct{ *pulumi.OutputState }
+
+func (ServiceFullWebServiceIdContributorsWebServiceNameServiceIdContributorTransformationsTransformationOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*ServiceFullWebServiceIdContributorsWebServiceNameServiceIdContributorTransformationsTransformation)(nil)).Elem()
+}
+
+func (o ServiceFullWebServiceIdContributorsWebServiceNameServiceIdContributorTransformationsTransformationOutput) ToServiceFullWebServiceIdContributorsWebServiceNameServiceIdContributorTransformationsTransformationOutput() ServiceFullWebServiceIdContributorsWebServiceNameServiceIdContributorTransformationsTransformationOutput {
+	return o
+}
+
+func (o ServiceFullWebServiceIdContributorsWebServiceNameServiceIdContributorTransformationsTransformationOutput) ToServiceFullWebServiceIdContributorsWebServiceNameServiceIdContributorTransformationsTransformationOutputWithContext(ctx context.Context) ServiceFullWebServiceIdContributorsWebServiceNameServiceIdContributorTransformationsTransformationOutput {
+	return o
+}
+
+// Whether to also remove hexadecimal numbers (sequences of at least `minDigitCount` hexadecimal digits preceded by '0x'). It is used only when the transformation type is `REMOVE_NUMBERS`.
+func (o ServiceFullWebServiceIdContributorsWebServiceNameServiceIdContributorTransformationsTransformationOutput) IncludeHexNumbers() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v ServiceFullWebServiceIdContributorsWebServiceNameServiceIdContributorTransformationsTransformation) *bool {
+		return v.IncludeHexNumbers
+	}).(pulumi.BoolPtrOutput)
+}
+
+// The minimum number of digits that a numeric sequence must have to be removed. It is used only when the transformation type is `REMOVE_NUMBERS`.
+func (o ServiceFullWebServiceIdContributorsWebServiceNameServiceIdContributorTransformationsTransformationOutput) MinDigitCount() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v ServiceFullWebServiceIdContributorsWebServiceNameServiceIdContributorTransformationsTransformation) *int {
+		return v.MinDigitCount
+	}).(pulumi.IntPtrOutput)
+}
+
+// The part of the text that serves as a reference point for the transformation. Its use depends on the transformation type.
+func (o ServiceFullWebServiceIdContributorsWebServiceNameServiceIdContributorTransformationsTransformationOutput) Prefix() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v ServiceFullWebServiceIdContributorsWebServiceNameServiceIdContributorTransformationsTransformation) *string {
+		return v.Prefix
+	}).(pulumi.StringPtrOutput)
+}
+
+// The text that replaces the part between `prefix` and `suffix`. It is used only when the transformation type is `REPLACE_BETWEEN`.
+func (o ServiceFullWebServiceIdContributorsWebServiceNameServiceIdContributorTransformationsTransformationOutput) ReplacementValue() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v ServiceFullWebServiceIdContributorsWebServiceNameServiceIdContributorTransformationsTransformation) *string {
+		return v.ReplacementValue
+	}).(pulumi.StringPtrOutput)
+}
+
+// How many segments should be taken.
+func (o ServiceFullWebServiceIdContributorsWebServiceNameServiceIdContributorTransformationsTransformationOutput) SegmentCount() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v ServiceFullWebServiceIdContributorsWebServiceNameServiceIdContributorTransformationsTransformation) *int {
+		return v.SegmentCount
+	}).(pulumi.IntPtrOutput)
+}
+
+// The index of the element to keep after splitting. The index is zero-based. It is used only when the transformation type is `SPLIT_SELECT`.
+func (o ServiceFullWebServiceIdContributorsWebServiceNameServiceIdContributorTransformationsTransformationOutput) SelectIndex() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v ServiceFullWebServiceIdContributorsWebServiceNameServiceIdContributorTransformationsTransformation) *int {
+		return v.SelectIndex
+	}).(pulumi.IntPtrOutput)
+}
+
+// The delimiter used for splitting the text. It is used only when the transformation type is `SPLIT_SELECT` or `TAKE_SEGMENTS`.
+func (o ServiceFullWebServiceIdContributorsWebServiceNameServiceIdContributorTransformationsTransformationOutput) SplitDelimiter() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v ServiceFullWebServiceIdContributorsWebServiceNameServiceIdContributorTransformationsTransformation) *string {
+		return v.SplitDelimiter
+	}).(pulumi.StringPtrOutput)
+}
+
+// The part of the text that serves as a reference point for the transformation. Its use depends on the transformation type.
+func (o ServiceFullWebServiceIdContributorsWebServiceNameServiceIdContributorTransformationsTransformationOutput) Suffix() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v ServiceFullWebServiceIdContributorsWebServiceNameServiceIdContributorTransformationsTransformation) *string {
+		return v.Suffix
+	}).(pulumi.StringPtrOutput)
+}
+
+// Whether to take segments from the end of the text instead of the beginning. It is used only when the transformation type is `TAKE_SEGMENTS`.
+func (o ServiceFullWebServiceIdContributorsWebServiceNameServiceIdContributorTransformationsTransformationOutput) TakeFromEnd() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v ServiceFullWebServiceIdContributorsWebServiceNameServiceIdContributorTransformationsTransformation) *bool {
+		return v.TakeFromEnd
+	}).(pulumi.BoolPtrOutput)
+}
+
+// Defines what kind of transformation will be applied on the original value. Possible values: `AFTER`, `BEFORE`, `BETWEEN`, `REMOVE_CREDIT_CARDS`, `REMOVE_IBANS`, `REMOVE_IPS`, `REMOVE_NUMBERS`, `REPLACE_BETWEEN`, `SPLIT_SELECT`, `TAKE_SEGMENTS`
+func (o ServiceFullWebServiceIdContributorsWebServiceNameServiceIdContributorTransformationsTransformationOutput) TransformationType() pulumi.StringOutput {
+	return o.ApplyT(func(v ServiceFullWebServiceIdContributorsWebServiceNameServiceIdContributorTransformationsTransformation) string {
+		return v.TransformationType
+	}).(pulumi.StringOutput)
+}
+
+type ServiceFullWebServiceIdContributorsWebServiceNameServiceIdContributorTransformationsTransformationArrayOutput struct{ *pulumi.OutputState }
+
+func (ServiceFullWebServiceIdContributorsWebServiceNameServiceIdContributorTransformationsTransformationArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]ServiceFullWebServiceIdContributorsWebServiceNameServiceIdContributorTransformationsTransformation)(nil)).Elem()
+}
+
+func (o ServiceFullWebServiceIdContributorsWebServiceNameServiceIdContributorTransformationsTransformationArrayOutput) ToServiceFullWebServiceIdContributorsWebServiceNameServiceIdContributorTransformationsTransformationArrayOutput() ServiceFullWebServiceIdContributorsWebServiceNameServiceIdContributorTransformationsTransformationArrayOutput {
+	return o
+}
+
+func (o ServiceFullWebServiceIdContributorsWebServiceNameServiceIdContributorTransformationsTransformationArrayOutput) ToServiceFullWebServiceIdContributorsWebServiceNameServiceIdContributorTransformationsTransformationArrayOutputWithContext(ctx context.Context) ServiceFullWebServiceIdContributorsWebServiceNameServiceIdContributorTransformationsTransformationArrayOutput {
+	return o
+}
+
+func (o ServiceFullWebServiceIdContributorsWebServiceNameServiceIdContributorTransformationsTransformationArrayOutput) Index(i pulumi.IntInput) ServiceFullWebServiceIdContributorsWebServiceNameServiceIdContributorTransformationsTransformationOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) ServiceFullWebServiceIdContributorsWebServiceNameServiceIdContributorTransformationsTransformation {
+		return vs[0].([]ServiceFullWebServiceIdContributorsWebServiceNameServiceIdContributorTransformationsTransformation)[vs[1].(int)]
+	}).(ServiceFullWebServiceIdContributorsWebServiceNameServiceIdContributorTransformationsTransformationOutput)
+}
+
+type ServiceFullWebServiceIdContributorsWebServiceNameServiceIdContributorValueOverride struct {
+	// The value to be used instead of the detected value.
+	Value string `pulumi:"value"`
+}
+
+// ServiceFullWebServiceIdContributorsWebServiceNameServiceIdContributorValueOverrideInput is an input type that accepts ServiceFullWebServiceIdContributorsWebServiceNameServiceIdContributorValueOverrideArgs and ServiceFullWebServiceIdContributorsWebServiceNameServiceIdContributorValueOverrideOutput values.
+// You can construct a concrete instance of `ServiceFullWebServiceIdContributorsWebServiceNameServiceIdContributorValueOverrideInput` via:
+//
+//	ServiceFullWebServiceIdContributorsWebServiceNameServiceIdContributorValueOverrideArgs{...}
+type ServiceFullWebServiceIdContributorsWebServiceNameServiceIdContributorValueOverrideInput interface {
+	pulumi.Input
+
+	ToServiceFullWebServiceIdContributorsWebServiceNameServiceIdContributorValueOverrideOutput() ServiceFullWebServiceIdContributorsWebServiceNameServiceIdContributorValueOverrideOutput
+	ToServiceFullWebServiceIdContributorsWebServiceNameServiceIdContributorValueOverrideOutputWithContext(context.Context) ServiceFullWebServiceIdContributorsWebServiceNameServiceIdContributorValueOverrideOutput
+}
+
+type ServiceFullWebServiceIdContributorsWebServiceNameServiceIdContributorValueOverrideArgs struct {
+	// The value to be used instead of the detected value.
+	Value pulumi.StringInput `pulumi:"value"`
+}
+
+func (ServiceFullWebServiceIdContributorsWebServiceNameServiceIdContributorValueOverrideArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*ServiceFullWebServiceIdContributorsWebServiceNameServiceIdContributorValueOverride)(nil)).Elem()
+}
+
+func (i ServiceFullWebServiceIdContributorsWebServiceNameServiceIdContributorValueOverrideArgs) ToServiceFullWebServiceIdContributorsWebServiceNameServiceIdContributorValueOverrideOutput() ServiceFullWebServiceIdContributorsWebServiceNameServiceIdContributorValueOverrideOutput {
+	return i.ToServiceFullWebServiceIdContributorsWebServiceNameServiceIdContributorValueOverrideOutputWithContext(context.Background())
+}
+
+func (i ServiceFullWebServiceIdContributorsWebServiceNameServiceIdContributorValueOverrideArgs) ToServiceFullWebServiceIdContributorsWebServiceNameServiceIdContributorValueOverrideOutputWithContext(ctx context.Context) ServiceFullWebServiceIdContributorsWebServiceNameServiceIdContributorValueOverrideOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(ServiceFullWebServiceIdContributorsWebServiceNameServiceIdContributorValueOverrideOutput)
+}
+
+func (i ServiceFullWebServiceIdContributorsWebServiceNameServiceIdContributorValueOverrideArgs) ToServiceFullWebServiceIdContributorsWebServiceNameServiceIdContributorValueOverridePtrOutput() ServiceFullWebServiceIdContributorsWebServiceNameServiceIdContributorValueOverridePtrOutput {
+	return i.ToServiceFullWebServiceIdContributorsWebServiceNameServiceIdContributorValueOverridePtrOutputWithContext(context.Background())
+}
+
+func (i ServiceFullWebServiceIdContributorsWebServiceNameServiceIdContributorValueOverrideArgs) ToServiceFullWebServiceIdContributorsWebServiceNameServiceIdContributorValueOverridePtrOutputWithContext(ctx context.Context) ServiceFullWebServiceIdContributorsWebServiceNameServiceIdContributorValueOverridePtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(ServiceFullWebServiceIdContributorsWebServiceNameServiceIdContributorValueOverrideOutput).ToServiceFullWebServiceIdContributorsWebServiceNameServiceIdContributorValueOverridePtrOutputWithContext(ctx)
+}
+
+// ServiceFullWebServiceIdContributorsWebServiceNameServiceIdContributorValueOverridePtrInput is an input type that accepts ServiceFullWebServiceIdContributorsWebServiceNameServiceIdContributorValueOverrideArgs, ServiceFullWebServiceIdContributorsWebServiceNameServiceIdContributorValueOverridePtr and ServiceFullWebServiceIdContributorsWebServiceNameServiceIdContributorValueOverridePtrOutput values.
+// You can construct a concrete instance of `ServiceFullWebServiceIdContributorsWebServiceNameServiceIdContributorValueOverridePtrInput` via:
+//
+//	        ServiceFullWebServiceIdContributorsWebServiceNameServiceIdContributorValueOverrideArgs{...}
+//
+//	or:
+//
+//	        nil
+type ServiceFullWebServiceIdContributorsWebServiceNameServiceIdContributorValueOverridePtrInput interface {
+	pulumi.Input
+
+	ToServiceFullWebServiceIdContributorsWebServiceNameServiceIdContributorValueOverridePtrOutput() ServiceFullWebServiceIdContributorsWebServiceNameServiceIdContributorValueOverridePtrOutput
+	ToServiceFullWebServiceIdContributorsWebServiceNameServiceIdContributorValueOverridePtrOutputWithContext(context.Context) ServiceFullWebServiceIdContributorsWebServiceNameServiceIdContributorValueOverridePtrOutput
+}
+
+type serviceFullWebServiceIdContributorsWebServiceNameServiceIdContributorValueOverridePtrType ServiceFullWebServiceIdContributorsWebServiceNameServiceIdContributorValueOverrideArgs
+
+func ServiceFullWebServiceIdContributorsWebServiceNameServiceIdContributorValueOverridePtr(v *ServiceFullWebServiceIdContributorsWebServiceNameServiceIdContributorValueOverrideArgs) ServiceFullWebServiceIdContributorsWebServiceNameServiceIdContributorValueOverridePtrInput {
+	return (*serviceFullWebServiceIdContributorsWebServiceNameServiceIdContributorValueOverridePtrType)(v)
+}
+
+func (*serviceFullWebServiceIdContributorsWebServiceNameServiceIdContributorValueOverridePtrType) ElementType() reflect.Type {
+	return reflect.TypeOf((**ServiceFullWebServiceIdContributorsWebServiceNameServiceIdContributorValueOverride)(nil)).Elem()
+}
+
+func (i *serviceFullWebServiceIdContributorsWebServiceNameServiceIdContributorValueOverridePtrType) ToServiceFullWebServiceIdContributorsWebServiceNameServiceIdContributorValueOverridePtrOutput() ServiceFullWebServiceIdContributorsWebServiceNameServiceIdContributorValueOverridePtrOutput {
+	return i.ToServiceFullWebServiceIdContributorsWebServiceNameServiceIdContributorValueOverridePtrOutputWithContext(context.Background())
+}
+
+func (i *serviceFullWebServiceIdContributorsWebServiceNameServiceIdContributorValueOverridePtrType) ToServiceFullWebServiceIdContributorsWebServiceNameServiceIdContributorValueOverridePtrOutputWithContext(ctx context.Context) ServiceFullWebServiceIdContributorsWebServiceNameServiceIdContributorValueOverridePtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(ServiceFullWebServiceIdContributorsWebServiceNameServiceIdContributorValueOverridePtrOutput)
+}
+
+type ServiceFullWebServiceIdContributorsWebServiceNameServiceIdContributorValueOverrideOutput struct{ *pulumi.OutputState }
+
+func (ServiceFullWebServiceIdContributorsWebServiceNameServiceIdContributorValueOverrideOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*ServiceFullWebServiceIdContributorsWebServiceNameServiceIdContributorValueOverride)(nil)).Elem()
+}
+
+func (o ServiceFullWebServiceIdContributorsWebServiceNameServiceIdContributorValueOverrideOutput) ToServiceFullWebServiceIdContributorsWebServiceNameServiceIdContributorValueOverrideOutput() ServiceFullWebServiceIdContributorsWebServiceNameServiceIdContributorValueOverrideOutput {
+	return o
+}
+
+func (o ServiceFullWebServiceIdContributorsWebServiceNameServiceIdContributorValueOverrideOutput) ToServiceFullWebServiceIdContributorsWebServiceNameServiceIdContributorValueOverrideOutputWithContext(ctx context.Context) ServiceFullWebServiceIdContributorsWebServiceNameServiceIdContributorValueOverrideOutput {
+	return o
+}
+
+func (o ServiceFullWebServiceIdContributorsWebServiceNameServiceIdContributorValueOverrideOutput) ToServiceFullWebServiceIdContributorsWebServiceNameServiceIdContributorValueOverridePtrOutput() ServiceFullWebServiceIdContributorsWebServiceNameServiceIdContributorValueOverridePtrOutput {
+	return o.ToServiceFullWebServiceIdContributorsWebServiceNameServiceIdContributorValueOverridePtrOutputWithContext(context.Background())
+}
+
+func (o ServiceFullWebServiceIdContributorsWebServiceNameServiceIdContributorValueOverrideOutput) ToServiceFullWebServiceIdContributorsWebServiceNameServiceIdContributorValueOverridePtrOutputWithContext(ctx context.Context) ServiceFullWebServiceIdContributorsWebServiceNameServiceIdContributorValueOverridePtrOutput {
+	return o.ApplyTWithContext(ctx, func(_ context.Context, v ServiceFullWebServiceIdContributorsWebServiceNameServiceIdContributorValueOverride) *ServiceFullWebServiceIdContributorsWebServiceNameServiceIdContributorValueOverride {
+		return &v
+	}).(ServiceFullWebServiceIdContributorsWebServiceNameServiceIdContributorValueOverridePtrOutput)
+}
+
+// The value to be used instead of the detected value.
+func (o ServiceFullWebServiceIdContributorsWebServiceNameServiceIdContributorValueOverrideOutput) Value() pulumi.StringOutput {
+	return o.ApplyT(func(v ServiceFullWebServiceIdContributorsWebServiceNameServiceIdContributorValueOverride) string {
+		return v.Value
+	}).(pulumi.StringOutput)
+}
+
+type ServiceFullWebServiceIdContributorsWebServiceNameServiceIdContributorValueOverridePtrOutput struct{ *pulumi.OutputState }
+
+func (ServiceFullWebServiceIdContributorsWebServiceNameServiceIdContributorValueOverridePtrOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((**ServiceFullWebServiceIdContributorsWebServiceNameServiceIdContributorValueOverride)(nil)).Elem()
+}
+
+func (o ServiceFullWebServiceIdContributorsWebServiceNameServiceIdContributorValueOverridePtrOutput) ToServiceFullWebServiceIdContributorsWebServiceNameServiceIdContributorValueOverridePtrOutput() ServiceFullWebServiceIdContributorsWebServiceNameServiceIdContributorValueOverridePtrOutput {
+	return o
+}
+
+func (o ServiceFullWebServiceIdContributorsWebServiceNameServiceIdContributorValueOverridePtrOutput) ToServiceFullWebServiceIdContributorsWebServiceNameServiceIdContributorValueOverridePtrOutputWithContext(ctx context.Context) ServiceFullWebServiceIdContributorsWebServiceNameServiceIdContributorValueOverridePtrOutput {
+	return o
+}
+
+func (o ServiceFullWebServiceIdContributorsWebServiceNameServiceIdContributorValueOverridePtrOutput) Elem() ServiceFullWebServiceIdContributorsWebServiceNameServiceIdContributorValueOverrideOutput {
+	return o.ApplyT(func(v *ServiceFullWebServiceIdContributorsWebServiceNameServiceIdContributorValueOverride) ServiceFullWebServiceIdContributorsWebServiceNameServiceIdContributorValueOverride {
+		if v != nil {
+			return *v
+		}
+		var ret ServiceFullWebServiceIdContributorsWebServiceNameServiceIdContributorValueOverride
+		return ret
+	}).(ServiceFullWebServiceIdContributorsWebServiceNameServiceIdContributorValueOverrideOutput)
+}
+
+// The value to be used instead of the detected value.
+func (o ServiceFullWebServiceIdContributorsWebServiceNameServiceIdContributorValueOverridePtrOutput) Value() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *ServiceFullWebServiceIdContributorsWebServiceNameServiceIdContributorValueOverride) *string {
+		if v == nil {
+			return nil
+		}
+		return &v.Value
+	}).(pulumi.StringPtrOutput)
+}
+
+type ServiceFullWebServiceIdContributorsWebServiceNamespace struct {
+	// When enabled, the detected value contributes to the Service Id.
+	EnableIdContributor bool `pulumi:"enableIdContributor"`
+	// Choose how to transform the detected value before it contributes to the Service Id. Note that all of the Transformations are always applied. Transformations are applied in the order they are specified, and the output of the previous transformation is the input for the next one.
+	ServiceIdContributor *ServiceFullWebServiceIdContributorsWebServiceNamespaceServiceIdContributor `pulumi:"serviceIdContributor"`
+}
+
+// ServiceFullWebServiceIdContributorsWebServiceNamespaceInput is an input type that accepts ServiceFullWebServiceIdContributorsWebServiceNamespaceArgs and ServiceFullWebServiceIdContributorsWebServiceNamespaceOutput values.
+// You can construct a concrete instance of `ServiceFullWebServiceIdContributorsWebServiceNamespaceInput` via:
+//
+//	ServiceFullWebServiceIdContributorsWebServiceNamespaceArgs{...}
+type ServiceFullWebServiceIdContributorsWebServiceNamespaceInput interface {
+	pulumi.Input
+
+	ToServiceFullWebServiceIdContributorsWebServiceNamespaceOutput() ServiceFullWebServiceIdContributorsWebServiceNamespaceOutput
+	ToServiceFullWebServiceIdContributorsWebServiceNamespaceOutputWithContext(context.Context) ServiceFullWebServiceIdContributorsWebServiceNamespaceOutput
+}
+
+type ServiceFullWebServiceIdContributorsWebServiceNamespaceArgs struct {
+	// When enabled, the detected value contributes to the Service Id.
+	EnableIdContributor pulumi.BoolInput `pulumi:"enableIdContributor"`
+	// Choose how to transform the detected value before it contributes to the Service Id. Note that all of the Transformations are always applied. Transformations are applied in the order they are specified, and the output of the previous transformation is the input for the next one.
+	ServiceIdContributor ServiceFullWebServiceIdContributorsWebServiceNamespaceServiceIdContributorPtrInput `pulumi:"serviceIdContributor"`
+}
+
+func (ServiceFullWebServiceIdContributorsWebServiceNamespaceArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*ServiceFullWebServiceIdContributorsWebServiceNamespace)(nil)).Elem()
+}
+
+func (i ServiceFullWebServiceIdContributorsWebServiceNamespaceArgs) ToServiceFullWebServiceIdContributorsWebServiceNamespaceOutput() ServiceFullWebServiceIdContributorsWebServiceNamespaceOutput {
+	return i.ToServiceFullWebServiceIdContributorsWebServiceNamespaceOutputWithContext(context.Background())
+}
+
+func (i ServiceFullWebServiceIdContributorsWebServiceNamespaceArgs) ToServiceFullWebServiceIdContributorsWebServiceNamespaceOutputWithContext(ctx context.Context) ServiceFullWebServiceIdContributorsWebServiceNamespaceOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(ServiceFullWebServiceIdContributorsWebServiceNamespaceOutput)
+}
+
+func (i ServiceFullWebServiceIdContributorsWebServiceNamespaceArgs) ToServiceFullWebServiceIdContributorsWebServiceNamespacePtrOutput() ServiceFullWebServiceIdContributorsWebServiceNamespacePtrOutput {
+	return i.ToServiceFullWebServiceIdContributorsWebServiceNamespacePtrOutputWithContext(context.Background())
+}
+
+func (i ServiceFullWebServiceIdContributorsWebServiceNamespaceArgs) ToServiceFullWebServiceIdContributorsWebServiceNamespacePtrOutputWithContext(ctx context.Context) ServiceFullWebServiceIdContributorsWebServiceNamespacePtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(ServiceFullWebServiceIdContributorsWebServiceNamespaceOutput).ToServiceFullWebServiceIdContributorsWebServiceNamespacePtrOutputWithContext(ctx)
+}
+
+// ServiceFullWebServiceIdContributorsWebServiceNamespacePtrInput is an input type that accepts ServiceFullWebServiceIdContributorsWebServiceNamespaceArgs, ServiceFullWebServiceIdContributorsWebServiceNamespacePtr and ServiceFullWebServiceIdContributorsWebServiceNamespacePtrOutput values.
+// You can construct a concrete instance of `ServiceFullWebServiceIdContributorsWebServiceNamespacePtrInput` via:
+//
+//	        ServiceFullWebServiceIdContributorsWebServiceNamespaceArgs{...}
+//
+//	or:
+//
+//	        nil
+type ServiceFullWebServiceIdContributorsWebServiceNamespacePtrInput interface {
+	pulumi.Input
+
+	ToServiceFullWebServiceIdContributorsWebServiceNamespacePtrOutput() ServiceFullWebServiceIdContributorsWebServiceNamespacePtrOutput
+	ToServiceFullWebServiceIdContributorsWebServiceNamespacePtrOutputWithContext(context.Context) ServiceFullWebServiceIdContributorsWebServiceNamespacePtrOutput
+}
+
+type serviceFullWebServiceIdContributorsWebServiceNamespacePtrType ServiceFullWebServiceIdContributorsWebServiceNamespaceArgs
+
+func ServiceFullWebServiceIdContributorsWebServiceNamespacePtr(v *ServiceFullWebServiceIdContributorsWebServiceNamespaceArgs) ServiceFullWebServiceIdContributorsWebServiceNamespacePtrInput {
+	return (*serviceFullWebServiceIdContributorsWebServiceNamespacePtrType)(v)
+}
+
+func (*serviceFullWebServiceIdContributorsWebServiceNamespacePtrType) ElementType() reflect.Type {
+	return reflect.TypeOf((**ServiceFullWebServiceIdContributorsWebServiceNamespace)(nil)).Elem()
+}
+
+func (i *serviceFullWebServiceIdContributorsWebServiceNamespacePtrType) ToServiceFullWebServiceIdContributorsWebServiceNamespacePtrOutput() ServiceFullWebServiceIdContributorsWebServiceNamespacePtrOutput {
+	return i.ToServiceFullWebServiceIdContributorsWebServiceNamespacePtrOutputWithContext(context.Background())
+}
+
+func (i *serviceFullWebServiceIdContributorsWebServiceNamespacePtrType) ToServiceFullWebServiceIdContributorsWebServiceNamespacePtrOutputWithContext(ctx context.Context) ServiceFullWebServiceIdContributorsWebServiceNamespacePtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(ServiceFullWebServiceIdContributorsWebServiceNamespacePtrOutput)
+}
+
+type ServiceFullWebServiceIdContributorsWebServiceNamespaceOutput struct{ *pulumi.OutputState }
+
+func (ServiceFullWebServiceIdContributorsWebServiceNamespaceOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*ServiceFullWebServiceIdContributorsWebServiceNamespace)(nil)).Elem()
+}
+
+func (o ServiceFullWebServiceIdContributorsWebServiceNamespaceOutput) ToServiceFullWebServiceIdContributorsWebServiceNamespaceOutput() ServiceFullWebServiceIdContributorsWebServiceNamespaceOutput {
+	return o
+}
+
+func (o ServiceFullWebServiceIdContributorsWebServiceNamespaceOutput) ToServiceFullWebServiceIdContributorsWebServiceNamespaceOutputWithContext(ctx context.Context) ServiceFullWebServiceIdContributorsWebServiceNamespaceOutput {
+	return o
+}
+
+func (o ServiceFullWebServiceIdContributorsWebServiceNamespaceOutput) ToServiceFullWebServiceIdContributorsWebServiceNamespacePtrOutput() ServiceFullWebServiceIdContributorsWebServiceNamespacePtrOutput {
+	return o.ToServiceFullWebServiceIdContributorsWebServiceNamespacePtrOutputWithContext(context.Background())
+}
+
+func (o ServiceFullWebServiceIdContributorsWebServiceNamespaceOutput) ToServiceFullWebServiceIdContributorsWebServiceNamespacePtrOutputWithContext(ctx context.Context) ServiceFullWebServiceIdContributorsWebServiceNamespacePtrOutput {
+	return o.ApplyTWithContext(ctx, func(_ context.Context, v ServiceFullWebServiceIdContributorsWebServiceNamespace) *ServiceFullWebServiceIdContributorsWebServiceNamespace {
+		return &v
+	}).(ServiceFullWebServiceIdContributorsWebServiceNamespacePtrOutput)
+}
+
+// When enabled, the detected value contributes to the Service Id.
+func (o ServiceFullWebServiceIdContributorsWebServiceNamespaceOutput) EnableIdContributor() pulumi.BoolOutput {
+	return o.ApplyT(func(v ServiceFullWebServiceIdContributorsWebServiceNamespace) bool { return v.EnableIdContributor }).(pulumi.BoolOutput)
+}
+
+// Choose how to transform the detected value before it contributes to the Service Id. Note that all of the Transformations are always applied. Transformations are applied in the order they are specified, and the output of the previous transformation is the input for the next one.
+func (o ServiceFullWebServiceIdContributorsWebServiceNamespaceOutput) ServiceIdContributor() ServiceFullWebServiceIdContributorsWebServiceNamespaceServiceIdContributorPtrOutput {
+	return o.ApplyT(func(v ServiceFullWebServiceIdContributorsWebServiceNamespace) *ServiceFullWebServiceIdContributorsWebServiceNamespaceServiceIdContributor {
+		return v.ServiceIdContributor
+	}).(ServiceFullWebServiceIdContributorsWebServiceNamespaceServiceIdContributorPtrOutput)
+}
+
+type ServiceFullWebServiceIdContributorsWebServiceNamespacePtrOutput struct{ *pulumi.OutputState }
+
+func (ServiceFullWebServiceIdContributorsWebServiceNamespacePtrOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((**ServiceFullWebServiceIdContributorsWebServiceNamespace)(nil)).Elem()
+}
+
+func (o ServiceFullWebServiceIdContributorsWebServiceNamespacePtrOutput) ToServiceFullWebServiceIdContributorsWebServiceNamespacePtrOutput() ServiceFullWebServiceIdContributorsWebServiceNamespacePtrOutput {
+	return o
+}
+
+func (o ServiceFullWebServiceIdContributorsWebServiceNamespacePtrOutput) ToServiceFullWebServiceIdContributorsWebServiceNamespacePtrOutputWithContext(ctx context.Context) ServiceFullWebServiceIdContributorsWebServiceNamespacePtrOutput {
+	return o
+}
+
+func (o ServiceFullWebServiceIdContributorsWebServiceNamespacePtrOutput) Elem() ServiceFullWebServiceIdContributorsWebServiceNamespaceOutput {
+	return o.ApplyT(func(v *ServiceFullWebServiceIdContributorsWebServiceNamespace) ServiceFullWebServiceIdContributorsWebServiceNamespace {
+		if v != nil {
+			return *v
+		}
+		var ret ServiceFullWebServiceIdContributorsWebServiceNamespace
+		return ret
+	}).(ServiceFullWebServiceIdContributorsWebServiceNamespaceOutput)
+}
+
+// When enabled, the detected value contributes to the Service Id.
+func (o ServiceFullWebServiceIdContributorsWebServiceNamespacePtrOutput) EnableIdContributor() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v *ServiceFullWebServiceIdContributorsWebServiceNamespace) *bool {
+		if v == nil {
+			return nil
+		}
+		return &v.EnableIdContributor
+	}).(pulumi.BoolPtrOutput)
+}
+
+// Choose how to transform the detected value before it contributes to the Service Id. Note that all of the Transformations are always applied. Transformations are applied in the order they are specified, and the output of the previous transformation is the input for the next one.
+func (o ServiceFullWebServiceIdContributorsWebServiceNamespacePtrOutput) ServiceIdContributor() ServiceFullWebServiceIdContributorsWebServiceNamespaceServiceIdContributorPtrOutput {
+	return o.ApplyT(func(v *ServiceFullWebServiceIdContributorsWebServiceNamespace) *ServiceFullWebServiceIdContributorsWebServiceNamespaceServiceIdContributor {
+		if v == nil {
+			return nil
+		}
+		return v.ServiceIdContributor
+	}).(ServiceFullWebServiceIdContributorsWebServiceNamespaceServiceIdContributorPtrOutput)
+}
+
+type ServiceFullWebServiceIdContributorsWebServiceNamespaceServiceIdContributor struct {
+	// Defines whether the original value should be used or if a transformation set should be used to override a value or transform it. Possible values: `OriginalValue`, `OverrideValue`, `TransformValue`
+	ContributionType string `pulumi:"contributionType"`
+	// Choose how to transform a value before it contributes to the Service Id. Note that all of the Transformations are always applied. Transformations are applied in the order they are specified, and the output of the previous transformation is the input for the next one. The resulting value contributes to the Service Id and can be found on the **Service overview page** under **Properties and tags**.
+	Transformations *ServiceFullWebServiceIdContributorsWebServiceNamespaceServiceIdContributorTransformations `pulumi:"transformations"`
+	// The value to be used instead of the detected value.
+	ValueOverride *ServiceFullWebServiceIdContributorsWebServiceNamespaceServiceIdContributorValueOverride `pulumi:"valueOverride"`
+}
+
+// ServiceFullWebServiceIdContributorsWebServiceNamespaceServiceIdContributorInput is an input type that accepts ServiceFullWebServiceIdContributorsWebServiceNamespaceServiceIdContributorArgs and ServiceFullWebServiceIdContributorsWebServiceNamespaceServiceIdContributorOutput values.
+// You can construct a concrete instance of `ServiceFullWebServiceIdContributorsWebServiceNamespaceServiceIdContributorInput` via:
+//
+//	ServiceFullWebServiceIdContributorsWebServiceNamespaceServiceIdContributorArgs{...}
+type ServiceFullWebServiceIdContributorsWebServiceNamespaceServiceIdContributorInput interface {
+	pulumi.Input
+
+	ToServiceFullWebServiceIdContributorsWebServiceNamespaceServiceIdContributorOutput() ServiceFullWebServiceIdContributorsWebServiceNamespaceServiceIdContributorOutput
+	ToServiceFullWebServiceIdContributorsWebServiceNamespaceServiceIdContributorOutputWithContext(context.Context) ServiceFullWebServiceIdContributorsWebServiceNamespaceServiceIdContributorOutput
+}
+
+type ServiceFullWebServiceIdContributorsWebServiceNamespaceServiceIdContributorArgs struct {
+	// Defines whether the original value should be used or if a transformation set should be used to override a value or transform it. Possible values: `OriginalValue`, `OverrideValue`, `TransformValue`
+	ContributionType pulumi.StringInput `pulumi:"contributionType"`
+	// Choose how to transform a value before it contributes to the Service Id. Note that all of the Transformations are always applied. Transformations are applied in the order they are specified, and the output of the previous transformation is the input for the next one. The resulting value contributes to the Service Id and can be found on the **Service overview page** under **Properties and tags**.
+	Transformations ServiceFullWebServiceIdContributorsWebServiceNamespaceServiceIdContributorTransformationsPtrInput `pulumi:"transformations"`
+	// The value to be used instead of the detected value.
+	ValueOverride ServiceFullWebServiceIdContributorsWebServiceNamespaceServiceIdContributorValueOverridePtrInput `pulumi:"valueOverride"`
+}
+
+func (ServiceFullWebServiceIdContributorsWebServiceNamespaceServiceIdContributorArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*ServiceFullWebServiceIdContributorsWebServiceNamespaceServiceIdContributor)(nil)).Elem()
+}
+
+func (i ServiceFullWebServiceIdContributorsWebServiceNamespaceServiceIdContributorArgs) ToServiceFullWebServiceIdContributorsWebServiceNamespaceServiceIdContributorOutput() ServiceFullWebServiceIdContributorsWebServiceNamespaceServiceIdContributorOutput {
+	return i.ToServiceFullWebServiceIdContributorsWebServiceNamespaceServiceIdContributorOutputWithContext(context.Background())
+}
+
+func (i ServiceFullWebServiceIdContributorsWebServiceNamespaceServiceIdContributorArgs) ToServiceFullWebServiceIdContributorsWebServiceNamespaceServiceIdContributorOutputWithContext(ctx context.Context) ServiceFullWebServiceIdContributorsWebServiceNamespaceServiceIdContributorOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(ServiceFullWebServiceIdContributorsWebServiceNamespaceServiceIdContributorOutput)
+}
+
+func (i ServiceFullWebServiceIdContributorsWebServiceNamespaceServiceIdContributorArgs) ToServiceFullWebServiceIdContributorsWebServiceNamespaceServiceIdContributorPtrOutput() ServiceFullWebServiceIdContributorsWebServiceNamespaceServiceIdContributorPtrOutput {
+	return i.ToServiceFullWebServiceIdContributorsWebServiceNamespaceServiceIdContributorPtrOutputWithContext(context.Background())
+}
+
+func (i ServiceFullWebServiceIdContributorsWebServiceNamespaceServiceIdContributorArgs) ToServiceFullWebServiceIdContributorsWebServiceNamespaceServiceIdContributorPtrOutputWithContext(ctx context.Context) ServiceFullWebServiceIdContributorsWebServiceNamespaceServiceIdContributorPtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(ServiceFullWebServiceIdContributorsWebServiceNamespaceServiceIdContributorOutput).ToServiceFullWebServiceIdContributorsWebServiceNamespaceServiceIdContributorPtrOutputWithContext(ctx)
+}
+
+// ServiceFullWebServiceIdContributorsWebServiceNamespaceServiceIdContributorPtrInput is an input type that accepts ServiceFullWebServiceIdContributorsWebServiceNamespaceServiceIdContributorArgs, ServiceFullWebServiceIdContributorsWebServiceNamespaceServiceIdContributorPtr and ServiceFullWebServiceIdContributorsWebServiceNamespaceServiceIdContributorPtrOutput values.
+// You can construct a concrete instance of `ServiceFullWebServiceIdContributorsWebServiceNamespaceServiceIdContributorPtrInput` via:
+//
+//	        ServiceFullWebServiceIdContributorsWebServiceNamespaceServiceIdContributorArgs{...}
+//
+//	or:
+//
+//	        nil
+type ServiceFullWebServiceIdContributorsWebServiceNamespaceServiceIdContributorPtrInput interface {
+	pulumi.Input
+
+	ToServiceFullWebServiceIdContributorsWebServiceNamespaceServiceIdContributorPtrOutput() ServiceFullWebServiceIdContributorsWebServiceNamespaceServiceIdContributorPtrOutput
+	ToServiceFullWebServiceIdContributorsWebServiceNamespaceServiceIdContributorPtrOutputWithContext(context.Context) ServiceFullWebServiceIdContributorsWebServiceNamespaceServiceIdContributorPtrOutput
+}
+
+type serviceFullWebServiceIdContributorsWebServiceNamespaceServiceIdContributorPtrType ServiceFullWebServiceIdContributorsWebServiceNamespaceServiceIdContributorArgs
+
+func ServiceFullWebServiceIdContributorsWebServiceNamespaceServiceIdContributorPtr(v *ServiceFullWebServiceIdContributorsWebServiceNamespaceServiceIdContributorArgs) ServiceFullWebServiceIdContributorsWebServiceNamespaceServiceIdContributorPtrInput {
+	return (*serviceFullWebServiceIdContributorsWebServiceNamespaceServiceIdContributorPtrType)(v)
+}
+
+func (*serviceFullWebServiceIdContributorsWebServiceNamespaceServiceIdContributorPtrType) ElementType() reflect.Type {
+	return reflect.TypeOf((**ServiceFullWebServiceIdContributorsWebServiceNamespaceServiceIdContributor)(nil)).Elem()
+}
+
+func (i *serviceFullWebServiceIdContributorsWebServiceNamespaceServiceIdContributorPtrType) ToServiceFullWebServiceIdContributorsWebServiceNamespaceServiceIdContributorPtrOutput() ServiceFullWebServiceIdContributorsWebServiceNamespaceServiceIdContributorPtrOutput {
+	return i.ToServiceFullWebServiceIdContributorsWebServiceNamespaceServiceIdContributorPtrOutputWithContext(context.Background())
+}
+
+func (i *serviceFullWebServiceIdContributorsWebServiceNamespaceServiceIdContributorPtrType) ToServiceFullWebServiceIdContributorsWebServiceNamespaceServiceIdContributorPtrOutputWithContext(ctx context.Context) ServiceFullWebServiceIdContributorsWebServiceNamespaceServiceIdContributorPtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(ServiceFullWebServiceIdContributorsWebServiceNamespaceServiceIdContributorPtrOutput)
+}
+
+type ServiceFullWebServiceIdContributorsWebServiceNamespaceServiceIdContributorOutput struct{ *pulumi.OutputState }
+
+func (ServiceFullWebServiceIdContributorsWebServiceNamespaceServiceIdContributorOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*ServiceFullWebServiceIdContributorsWebServiceNamespaceServiceIdContributor)(nil)).Elem()
+}
+
+func (o ServiceFullWebServiceIdContributorsWebServiceNamespaceServiceIdContributorOutput) ToServiceFullWebServiceIdContributorsWebServiceNamespaceServiceIdContributorOutput() ServiceFullWebServiceIdContributorsWebServiceNamespaceServiceIdContributorOutput {
+	return o
+}
+
+func (o ServiceFullWebServiceIdContributorsWebServiceNamespaceServiceIdContributorOutput) ToServiceFullWebServiceIdContributorsWebServiceNamespaceServiceIdContributorOutputWithContext(ctx context.Context) ServiceFullWebServiceIdContributorsWebServiceNamespaceServiceIdContributorOutput {
+	return o
+}
+
+func (o ServiceFullWebServiceIdContributorsWebServiceNamespaceServiceIdContributorOutput) ToServiceFullWebServiceIdContributorsWebServiceNamespaceServiceIdContributorPtrOutput() ServiceFullWebServiceIdContributorsWebServiceNamespaceServiceIdContributorPtrOutput {
+	return o.ToServiceFullWebServiceIdContributorsWebServiceNamespaceServiceIdContributorPtrOutputWithContext(context.Background())
+}
+
+func (o ServiceFullWebServiceIdContributorsWebServiceNamespaceServiceIdContributorOutput) ToServiceFullWebServiceIdContributorsWebServiceNamespaceServiceIdContributorPtrOutputWithContext(ctx context.Context) ServiceFullWebServiceIdContributorsWebServiceNamespaceServiceIdContributorPtrOutput {
+	return o.ApplyTWithContext(ctx, func(_ context.Context, v ServiceFullWebServiceIdContributorsWebServiceNamespaceServiceIdContributor) *ServiceFullWebServiceIdContributorsWebServiceNamespaceServiceIdContributor {
+		return &v
+	}).(ServiceFullWebServiceIdContributorsWebServiceNamespaceServiceIdContributorPtrOutput)
+}
+
+// Defines whether the original value should be used or if a transformation set should be used to override a value or transform it. Possible values: `OriginalValue`, `OverrideValue`, `TransformValue`
+func (o ServiceFullWebServiceIdContributorsWebServiceNamespaceServiceIdContributorOutput) ContributionType() pulumi.StringOutput {
+	return o.ApplyT(func(v ServiceFullWebServiceIdContributorsWebServiceNamespaceServiceIdContributor) string {
+		return v.ContributionType
+	}).(pulumi.StringOutput)
+}
+
+// Choose how to transform a value before it contributes to the Service Id. Note that all of the Transformations are always applied. Transformations are applied in the order they are specified, and the output of the previous transformation is the input for the next one. The resulting value contributes to the Service Id and can be found on the **Service overview page** under **Properties and tags**.
+func (o ServiceFullWebServiceIdContributorsWebServiceNamespaceServiceIdContributorOutput) Transformations() ServiceFullWebServiceIdContributorsWebServiceNamespaceServiceIdContributorTransformationsPtrOutput {
+	return o.ApplyT(func(v ServiceFullWebServiceIdContributorsWebServiceNamespaceServiceIdContributor) *ServiceFullWebServiceIdContributorsWebServiceNamespaceServiceIdContributorTransformations {
+		return v.Transformations
+	}).(ServiceFullWebServiceIdContributorsWebServiceNamespaceServiceIdContributorTransformationsPtrOutput)
+}
+
+// The value to be used instead of the detected value.
+func (o ServiceFullWebServiceIdContributorsWebServiceNamespaceServiceIdContributorOutput) ValueOverride() ServiceFullWebServiceIdContributorsWebServiceNamespaceServiceIdContributorValueOverridePtrOutput {
+	return o.ApplyT(func(v ServiceFullWebServiceIdContributorsWebServiceNamespaceServiceIdContributor) *ServiceFullWebServiceIdContributorsWebServiceNamespaceServiceIdContributorValueOverride {
+		return v.ValueOverride
+	}).(ServiceFullWebServiceIdContributorsWebServiceNamespaceServiceIdContributorValueOverridePtrOutput)
+}
+
+type ServiceFullWebServiceIdContributorsWebServiceNamespaceServiceIdContributorPtrOutput struct{ *pulumi.OutputState }
+
+func (ServiceFullWebServiceIdContributorsWebServiceNamespaceServiceIdContributorPtrOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((**ServiceFullWebServiceIdContributorsWebServiceNamespaceServiceIdContributor)(nil)).Elem()
+}
+
+func (o ServiceFullWebServiceIdContributorsWebServiceNamespaceServiceIdContributorPtrOutput) ToServiceFullWebServiceIdContributorsWebServiceNamespaceServiceIdContributorPtrOutput() ServiceFullWebServiceIdContributorsWebServiceNamespaceServiceIdContributorPtrOutput {
+	return o
+}
+
+func (o ServiceFullWebServiceIdContributorsWebServiceNamespaceServiceIdContributorPtrOutput) ToServiceFullWebServiceIdContributorsWebServiceNamespaceServiceIdContributorPtrOutputWithContext(ctx context.Context) ServiceFullWebServiceIdContributorsWebServiceNamespaceServiceIdContributorPtrOutput {
+	return o
+}
+
+func (o ServiceFullWebServiceIdContributorsWebServiceNamespaceServiceIdContributorPtrOutput) Elem() ServiceFullWebServiceIdContributorsWebServiceNamespaceServiceIdContributorOutput {
+	return o.ApplyT(func(v *ServiceFullWebServiceIdContributorsWebServiceNamespaceServiceIdContributor) ServiceFullWebServiceIdContributorsWebServiceNamespaceServiceIdContributor {
+		if v != nil {
+			return *v
+		}
+		var ret ServiceFullWebServiceIdContributorsWebServiceNamespaceServiceIdContributor
+		return ret
+	}).(ServiceFullWebServiceIdContributorsWebServiceNamespaceServiceIdContributorOutput)
+}
+
+// Defines whether the original value should be used or if a transformation set should be used to override a value or transform it. Possible values: `OriginalValue`, `OverrideValue`, `TransformValue`
+func (o ServiceFullWebServiceIdContributorsWebServiceNamespaceServiceIdContributorPtrOutput) ContributionType() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *ServiceFullWebServiceIdContributorsWebServiceNamespaceServiceIdContributor) *string {
+		if v == nil {
+			return nil
+		}
+		return &v.ContributionType
+	}).(pulumi.StringPtrOutput)
+}
+
+// Choose how to transform a value before it contributes to the Service Id. Note that all of the Transformations are always applied. Transformations are applied in the order they are specified, and the output of the previous transformation is the input for the next one. The resulting value contributes to the Service Id and can be found on the **Service overview page** under **Properties and tags**.
+func (o ServiceFullWebServiceIdContributorsWebServiceNamespaceServiceIdContributorPtrOutput) Transformations() ServiceFullWebServiceIdContributorsWebServiceNamespaceServiceIdContributorTransformationsPtrOutput {
+	return o.ApplyT(func(v *ServiceFullWebServiceIdContributorsWebServiceNamespaceServiceIdContributor) *ServiceFullWebServiceIdContributorsWebServiceNamespaceServiceIdContributorTransformations {
+		if v == nil {
+			return nil
+		}
+		return v.Transformations
+	}).(ServiceFullWebServiceIdContributorsWebServiceNamespaceServiceIdContributorTransformationsPtrOutput)
+}
+
+// The value to be used instead of the detected value.
+func (o ServiceFullWebServiceIdContributorsWebServiceNamespaceServiceIdContributorPtrOutput) ValueOverride() ServiceFullWebServiceIdContributorsWebServiceNamespaceServiceIdContributorValueOverridePtrOutput {
+	return o.ApplyT(func(v *ServiceFullWebServiceIdContributorsWebServiceNamespaceServiceIdContributor) *ServiceFullWebServiceIdContributorsWebServiceNamespaceServiceIdContributorValueOverride {
+		if v == nil {
+			return nil
+		}
+		return v.ValueOverride
+	}).(ServiceFullWebServiceIdContributorsWebServiceNamespaceServiceIdContributorValueOverridePtrOutput)
+}
+
+type ServiceFullWebServiceIdContributorsWebServiceNamespaceServiceIdContributorTransformations struct {
+	Transformations []ServiceFullWebServiceIdContributorsWebServiceNamespaceServiceIdContributorTransformationsTransformation `pulumi:"transformations"`
+}
+
+// ServiceFullWebServiceIdContributorsWebServiceNamespaceServiceIdContributorTransformationsInput is an input type that accepts ServiceFullWebServiceIdContributorsWebServiceNamespaceServiceIdContributorTransformationsArgs and ServiceFullWebServiceIdContributorsWebServiceNamespaceServiceIdContributorTransformationsOutput values.
+// You can construct a concrete instance of `ServiceFullWebServiceIdContributorsWebServiceNamespaceServiceIdContributorTransformationsInput` via:
+//
+//	ServiceFullWebServiceIdContributorsWebServiceNamespaceServiceIdContributorTransformationsArgs{...}
+type ServiceFullWebServiceIdContributorsWebServiceNamespaceServiceIdContributorTransformationsInput interface {
+	pulumi.Input
+
+	ToServiceFullWebServiceIdContributorsWebServiceNamespaceServiceIdContributorTransformationsOutput() ServiceFullWebServiceIdContributorsWebServiceNamespaceServiceIdContributorTransformationsOutput
+	ToServiceFullWebServiceIdContributorsWebServiceNamespaceServiceIdContributorTransformationsOutputWithContext(context.Context) ServiceFullWebServiceIdContributorsWebServiceNamespaceServiceIdContributorTransformationsOutput
+}
+
+type ServiceFullWebServiceIdContributorsWebServiceNamespaceServiceIdContributorTransformationsArgs struct {
+	Transformations ServiceFullWebServiceIdContributorsWebServiceNamespaceServiceIdContributorTransformationsTransformationArrayInput `pulumi:"transformations"`
+}
+
+func (ServiceFullWebServiceIdContributorsWebServiceNamespaceServiceIdContributorTransformationsArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*ServiceFullWebServiceIdContributorsWebServiceNamespaceServiceIdContributorTransformations)(nil)).Elem()
+}
+
+func (i ServiceFullWebServiceIdContributorsWebServiceNamespaceServiceIdContributorTransformationsArgs) ToServiceFullWebServiceIdContributorsWebServiceNamespaceServiceIdContributorTransformationsOutput() ServiceFullWebServiceIdContributorsWebServiceNamespaceServiceIdContributorTransformationsOutput {
+	return i.ToServiceFullWebServiceIdContributorsWebServiceNamespaceServiceIdContributorTransformationsOutputWithContext(context.Background())
+}
+
+func (i ServiceFullWebServiceIdContributorsWebServiceNamespaceServiceIdContributorTransformationsArgs) ToServiceFullWebServiceIdContributorsWebServiceNamespaceServiceIdContributorTransformationsOutputWithContext(ctx context.Context) ServiceFullWebServiceIdContributorsWebServiceNamespaceServiceIdContributorTransformationsOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(ServiceFullWebServiceIdContributorsWebServiceNamespaceServiceIdContributorTransformationsOutput)
+}
+
+func (i ServiceFullWebServiceIdContributorsWebServiceNamespaceServiceIdContributorTransformationsArgs) ToServiceFullWebServiceIdContributorsWebServiceNamespaceServiceIdContributorTransformationsPtrOutput() ServiceFullWebServiceIdContributorsWebServiceNamespaceServiceIdContributorTransformationsPtrOutput {
+	return i.ToServiceFullWebServiceIdContributorsWebServiceNamespaceServiceIdContributorTransformationsPtrOutputWithContext(context.Background())
+}
+
+func (i ServiceFullWebServiceIdContributorsWebServiceNamespaceServiceIdContributorTransformationsArgs) ToServiceFullWebServiceIdContributorsWebServiceNamespaceServiceIdContributorTransformationsPtrOutputWithContext(ctx context.Context) ServiceFullWebServiceIdContributorsWebServiceNamespaceServiceIdContributorTransformationsPtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(ServiceFullWebServiceIdContributorsWebServiceNamespaceServiceIdContributorTransformationsOutput).ToServiceFullWebServiceIdContributorsWebServiceNamespaceServiceIdContributorTransformationsPtrOutputWithContext(ctx)
+}
+
+// ServiceFullWebServiceIdContributorsWebServiceNamespaceServiceIdContributorTransformationsPtrInput is an input type that accepts ServiceFullWebServiceIdContributorsWebServiceNamespaceServiceIdContributorTransformationsArgs, ServiceFullWebServiceIdContributorsWebServiceNamespaceServiceIdContributorTransformationsPtr and ServiceFullWebServiceIdContributorsWebServiceNamespaceServiceIdContributorTransformationsPtrOutput values.
+// You can construct a concrete instance of `ServiceFullWebServiceIdContributorsWebServiceNamespaceServiceIdContributorTransformationsPtrInput` via:
+//
+//	        ServiceFullWebServiceIdContributorsWebServiceNamespaceServiceIdContributorTransformationsArgs{...}
+//
+//	or:
+//
+//	        nil
+type ServiceFullWebServiceIdContributorsWebServiceNamespaceServiceIdContributorTransformationsPtrInput interface {
+	pulumi.Input
+
+	ToServiceFullWebServiceIdContributorsWebServiceNamespaceServiceIdContributorTransformationsPtrOutput() ServiceFullWebServiceIdContributorsWebServiceNamespaceServiceIdContributorTransformationsPtrOutput
+	ToServiceFullWebServiceIdContributorsWebServiceNamespaceServiceIdContributorTransformationsPtrOutputWithContext(context.Context) ServiceFullWebServiceIdContributorsWebServiceNamespaceServiceIdContributorTransformationsPtrOutput
+}
+
+type serviceFullWebServiceIdContributorsWebServiceNamespaceServiceIdContributorTransformationsPtrType ServiceFullWebServiceIdContributorsWebServiceNamespaceServiceIdContributorTransformationsArgs
+
+func ServiceFullWebServiceIdContributorsWebServiceNamespaceServiceIdContributorTransformationsPtr(v *ServiceFullWebServiceIdContributorsWebServiceNamespaceServiceIdContributorTransformationsArgs) ServiceFullWebServiceIdContributorsWebServiceNamespaceServiceIdContributorTransformationsPtrInput {
+	return (*serviceFullWebServiceIdContributorsWebServiceNamespaceServiceIdContributorTransformationsPtrType)(v)
+}
+
+func (*serviceFullWebServiceIdContributorsWebServiceNamespaceServiceIdContributorTransformationsPtrType) ElementType() reflect.Type {
+	return reflect.TypeOf((**ServiceFullWebServiceIdContributorsWebServiceNamespaceServiceIdContributorTransformations)(nil)).Elem()
+}
+
+func (i *serviceFullWebServiceIdContributorsWebServiceNamespaceServiceIdContributorTransformationsPtrType) ToServiceFullWebServiceIdContributorsWebServiceNamespaceServiceIdContributorTransformationsPtrOutput() ServiceFullWebServiceIdContributorsWebServiceNamespaceServiceIdContributorTransformationsPtrOutput {
+	return i.ToServiceFullWebServiceIdContributorsWebServiceNamespaceServiceIdContributorTransformationsPtrOutputWithContext(context.Background())
+}
+
+func (i *serviceFullWebServiceIdContributorsWebServiceNamespaceServiceIdContributorTransformationsPtrType) ToServiceFullWebServiceIdContributorsWebServiceNamespaceServiceIdContributorTransformationsPtrOutputWithContext(ctx context.Context) ServiceFullWebServiceIdContributorsWebServiceNamespaceServiceIdContributorTransformationsPtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(ServiceFullWebServiceIdContributorsWebServiceNamespaceServiceIdContributorTransformationsPtrOutput)
+}
+
+type ServiceFullWebServiceIdContributorsWebServiceNamespaceServiceIdContributorTransformationsOutput struct{ *pulumi.OutputState }
+
+func (ServiceFullWebServiceIdContributorsWebServiceNamespaceServiceIdContributorTransformationsOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*ServiceFullWebServiceIdContributorsWebServiceNamespaceServiceIdContributorTransformations)(nil)).Elem()
+}
+
+func (o ServiceFullWebServiceIdContributorsWebServiceNamespaceServiceIdContributorTransformationsOutput) ToServiceFullWebServiceIdContributorsWebServiceNamespaceServiceIdContributorTransformationsOutput() ServiceFullWebServiceIdContributorsWebServiceNamespaceServiceIdContributorTransformationsOutput {
+	return o
+}
+
+func (o ServiceFullWebServiceIdContributorsWebServiceNamespaceServiceIdContributorTransformationsOutput) ToServiceFullWebServiceIdContributorsWebServiceNamespaceServiceIdContributorTransformationsOutputWithContext(ctx context.Context) ServiceFullWebServiceIdContributorsWebServiceNamespaceServiceIdContributorTransformationsOutput {
+	return o
+}
+
+func (o ServiceFullWebServiceIdContributorsWebServiceNamespaceServiceIdContributorTransformationsOutput) ToServiceFullWebServiceIdContributorsWebServiceNamespaceServiceIdContributorTransformationsPtrOutput() ServiceFullWebServiceIdContributorsWebServiceNamespaceServiceIdContributorTransformationsPtrOutput {
+	return o.ToServiceFullWebServiceIdContributorsWebServiceNamespaceServiceIdContributorTransformationsPtrOutputWithContext(context.Background())
+}
+
+func (o ServiceFullWebServiceIdContributorsWebServiceNamespaceServiceIdContributorTransformationsOutput) ToServiceFullWebServiceIdContributorsWebServiceNamespaceServiceIdContributorTransformationsPtrOutputWithContext(ctx context.Context) ServiceFullWebServiceIdContributorsWebServiceNamespaceServiceIdContributorTransformationsPtrOutput {
+	return o.ApplyTWithContext(ctx, func(_ context.Context, v ServiceFullWebServiceIdContributorsWebServiceNamespaceServiceIdContributorTransformations) *ServiceFullWebServiceIdContributorsWebServiceNamespaceServiceIdContributorTransformations {
+		return &v
+	}).(ServiceFullWebServiceIdContributorsWebServiceNamespaceServiceIdContributorTransformationsPtrOutput)
+}
+
+func (o ServiceFullWebServiceIdContributorsWebServiceNamespaceServiceIdContributorTransformationsOutput) Transformations() ServiceFullWebServiceIdContributorsWebServiceNamespaceServiceIdContributorTransformationsTransformationArrayOutput {
+	return o.ApplyT(func(v ServiceFullWebServiceIdContributorsWebServiceNamespaceServiceIdContributorTransformations) []ServiceFullWebServiceIdContributorsWebServiceNamespaceServiceIdContributorTransformationsTransformation {
+		return v.Transformations
+	}).(ServiceFullWebServiceIdContributorsWebServiceNamespaceServiceIdContributorTransformationsTransformationArrayOutput)
+}
+
+type ServiceFullWebServiceIdContributorsWebServiceNamespaceServiceIdContributorTransformationsPtrOutput struct{ *pulumi.OutputState }
+
+func (ServiceFullWebServiceIdContributorsWebServiceNamespaceServiceIdContributorTransformationsPtrOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((**ServiceFullWebServiceIdContributorsWebServiceNamespaceServiceIdContributorTransformations)(nil)).Elem()
+}
+
+func (o ServiceFullWebServiceIdContributorsWebServiceNamespaceServiceIdContributorTransformationsPtrOutput) ToServiceFullWebServiceIdContributorsWebServiceNamespaceServiceIdContributorTransformationsPtrOutput() ServiceFullWebServiceIdContributorsWebServiceNamespaceServiceIdContributorTransformationsPtrOutput {
+	return o
+}
+
+func (o ServiceFullWebServiceIdContributorsWebServiceNamespaceServiceIdContributorTransformationsPtrOutput) ToServiceFullWebServiceIdContributorsWebServiceNamespaceServiceIdContributorTransformationsPtrOutputWithContext(ctx context.Context) ServiceFullWebServiceIdContributorsWebServiceNamespaceServiceIdContributorTransformationsPtrOutput {
+	return o
+}
+
+func (o ServiceFullWebServiceIdContributorsWebServiceNamespaceServiceIdContributorTransformationsPtrOutput) Elem() ServiceFullWebServiceIdContributorsWebServiceNamespaceServiceIdContributorTransformationsOutput {
+	return o.ApplyT(func(v *ServiceFullWebServiceIdContributorsWebServiceNamespaceServiceIdContributorTransformations) ServiceFullWebServiceIdContributorsWebServiceNamespaceServiceIdContributorTransformations {
+		if v != nil {
+			return *v
+		}
+		var ret ServiceFullWebServiceIdContributorsWebServiceNamespaceServiceIdContributorTransformations
+		return ret
+	}).(ServiceFullWebServiceIdContributorsWebServiceNamespaceServiceIdContributorTransformationsOutput)
+}
+
+func (o ServiceFullWebServiceIdContributorsWebServiceNamespaceServiceIdContributorTransformationsPtrOutput) Transformations() ServiceFullWebServiceIdContributorsWebServiceNamespaceServiceIdContributorTransformationsTransformationArrayOutput {
+	return o.ApplyT(func(v *ServiceFullWebServiceIdContributorsWebServiceNamespaceServiceIdContributorTransformations) []ServiceFullWebServiceIdContributorsWebServiceNamespaceServiceIdContributorTransformationsTransformation {
+		if v == nil {
+			return nil
+		}
+		return v.Transformations
+	}).(ServiceFullWebServiceIdContributorsWebServiceNamespaceServiceIdContributorTransformationsTransformationArrayOutput)
+}
+
 type ServiceFullWebServiceIdContributorsWebServiceNamespaceServiceIdContributorTransformationsTransformation struct {
 	// Whether to also remove hexadecimal numbers (sequences of at least `minDigitCount` hexadecimal digits preceded by '0x'). It is used only when the transformation type is `REMOVE_NUMBERS`.
 	IncludeHexNumbers *bool `pulumi:"includeHexNumbers"`
@@ -44504,6 +45315,1048 @@ func (o GetManagementZonesValueArrayOutput) Index(i pulumi.IntInput) GetManageme
 	}).(GetManagementZonesValueOutput)
 }
 
+type GetPlatformSloCriteria struct {
+	CriteriaDetails []GetPlatformSloCriteriaCriteriaDetail `pulumi:"criteriaDetails"`
+}
+
+// GetPlatformSloCriteriaInput is an input type that accepts GetPlatformSloCriteriaArgs and GetPlatformSloCriteriaOutput values.
+// You can construct a concrete instance of `GetPlatformSloCriteriaInput` via:
+//
+//	GetPlatformSloCriteriaArgs{...}
+type GetPlatformSloCriteriaInput interface {
+	pulumi.Input
+
+	ToGetPlatformSloCriteriaOutput() GetPlatformSloCriteriaOutput
+	ToGetPlatformSloCriteriaOutputWithContext(context.Context) GetPlatformSloCriteriaOutput
+}
+
+type GetPlatformSloCriteriaArgs struct {
+	CriteriaDetails GetPlatformSloCriteriaCriteriaDetailArrayInput `pulumi:"criteriaDetails"`
+}
+
+func (GetPlatformSloCriteriaArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetPlatformSloCriteria)(nil)).Elem()
+}
+
+func (i GetPlatformSloCriteriaArgs) ToGetPlatformSloCriteriaOutput() GetPlatformSloCriteriaOutput {
+	return i.ToGetPlatformSloCriteriaOutputWithContext(context.Background())
+}
+
+func (i GetPlatformSloCriteriaArgs) ToGetPlatformSloCriteriaOutputWithContext(ctx context.Context) GetPlatformSloCriteriaOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetPlatformSloCriteriaOutput)
+}
+
+// GetPlatformSloCriteriaArrayInput is an input type that accepts GetPlatformSloCriteriaArray and GetPlatformSloCriteriaArrayOutput values.
+// You can construct a concrete instance of `GetPlatformSloCriteriaArrayInput` via:
+//
+//	GetPlatformSloCriteriaArray{ GetPlatformSloCriteriaArgs{...} }
+type GetPlatformSloCriteriaArrayInput interface {
+	pulumi.Input
+
+	ToGetPlatformSloCriteriaArrayOutput() GetPlatformSloCriteriaArrayOutput
+	ToGetPlatformSloCriteriaArrayOutputWithContext(context.Context) GetPlatformSloCriteriaArrayOutput
+}
+
+type GetPlatformSloCriteriaArray []GetPlatformSloCriteriaInput
+
+func (GetPlatformSloCriteriaArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetPlatformSloCriteria)(nil)).Elem()
+}
+
+func (i GetPlatformSloCriteriaArray) ToGetPlatformSloCriteriaArrayOutput() GetPlatformSloCriteriaArrayOutput {
+	return i.ToGetPlatformSloCriteriaArrayOutputWithContext(context.Background())
+}
+
+func (i GetPlatformSloCriteriaArray) ToGetPlatformSloCriteriaArrayOutputWithContext(ctx context.Context) GetPlatformSloCriteriaArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetPlatformSloCriteriaArrayOutput)
+}
+
+type GetPlatformSloCriteriaOutput struct{ *pulumi.OutputState }
+
+func (GetPlatformSloCriteriaOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetPlatformSloCriteria)(nil)).Elem()
+}
+
+func (o GetPlatformSloCriteriaOutput) ToGetPlatformSloCriteriaOutput() GetPlatformSloCriteriaOutput {
+	return o
+}
+
+func (o GetPlatformSloCriteriaOutput) ToGetPlatformSloCriteriaOutputWithContext(ctx context.Context) GetPlatformSloCriteriaOutput {
+	return o
+}
+
+func (o GetPlatformSloCriteriaOutput) CriteriaDetails() GetPlatformSloCriteriaCriteriaDetailArrayOutput {
+	return o.ApplyT(func(v GetPlatformSloCriteria) []GetPlatformSloCriteriaCriteriaDetail { return v.CriteriaDetails }).(GetPlatformSloCriteriaCriteriaDetailArrayOutput)
+}
+
+type GetPlatformSloCriteriaArrayOutput struct{ *pulumi.OutputState }
+
+func (GetPlatformSloCriteriaArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetPlatformSloCriteria)(nil)).Elem()
+}
+
+func (o GetPlatformSloCriteriaArrayOutput) ToGetPlatformSloCriteriaArrayOutput() GetPlatformSloCriteriaArrayOutput {
+	return o
+}
+
+func (o GetPlatformSloCriteriaArrayOutput) ToGetPlatformSloCriteriaArrayOutputWithContext(ctx context.Context) GetPlatformSloCriteriaArrayOutput {
+	return o
+}
+
+func (o GetPlatformSloCriteriaArrayOutput) Index(i pulumi.IntInput) GetPlatformSloCriteriaOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetPlatformSloCriteria {
+		return vs[0].([]GetPlatformSloCriteria)[vs[1].(int)]
+	}).(GetPlatformSloCriteriaOutput)
+}
+
+type GetPlatformSloCriteriaCriteriaDetail struct {
+	// Criteria target, example: `99.8`
+	Target float64 `pulumi:"target"`
+	// Timeframe from, example: `now-7d`
+	TimeframeFrom string `pulumi:"timeframeFrom"`
+	// Timeframe to, example: `now`
+	TimeframeTo string `pulumi:"timeframeTo"`
+	// Criteria warning, example: `99.9`
+	Warning float64 `pulumi:"warning"`
+}
+
+// GetPlatformSloCriteriaCriteriaDetailInput is an input type that accepts GetPlatformSloCriteriaCriteriaDetailArgs and GetPlatformSloCriteriaCriteriaDetailOutput values.
+// You can construct a concrete instance of `GetPlatformSloCriteriaCriteriaDetailInput` via:
+//
+//	GetPlatformSloCriteriaCriteriaDetailArgs{...}
+type GetPlatformSloCriteriaCriteriaDetailInput interface {
+	pulumi.Input
+
+	ToGetPlatformSloCriteriaCriteriaDetailOutput() GetPlatformSloCriteriaCriteriaDetailOutput
+	ToGetPlatformSloCriteriaCriteriaDetailOutputWithContext(context.Context) GetPlatformSloCriteriaCriteriaDetailOutput
+}
+
+type GetPlatformSloCriteriaCriteriaDetailArgs struct {
+	// Criteria target, example: `99.8`
+	Target pulumi.Float64Input `pulumi:"target"`
+	// Timeframe from, example: `now-7d`
+	TimeframeFrom pulumi.StringInput `pulumi:"timeframeFrom"`
+	// Timeframe to, example: `now`
+	TimeframeTo pulumi.StringInput `pulumi:"timeframeTo"`
+	// Criteria warning, example: `99.9`
+	Warning pulumi.Float64Input `pulumi:"warning"`
+}
+
+func (GetPlatformSloCriteriaCriteriaDetailArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetPlatformSloCriteriaCriteriaDetail)(nil)).Elem()
+}
+
+func (i GetPlatformSloCriteriaCriteriaDetailArgs) ToGetPlatformSloCriteriaCriteriaDetailOutput() GetPlatformSloCriteriaCriteriaDetailOutput {
+	return i.ToGetPlatformSloCriteriaCriteriaDetailOutputWithContext(context.Background())
+}
+
+func (i GetPlatformSloCriteriaCriteriaDetailArgs) ToGetPlatformSloCriteriaCriteriaDetailOutputWithContext(ctx context.Context) GetPlatformSloCriteriaCriteriaDetailOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetPlatformSloCriteriaCriteriaDetailOutput)
+}
+
+// GetPlatformSloCriteriaCriteriaDetailArrayInput is an input type that accepts GetPlatformSloCriteriaCriteriaDetailArray and GetPlatformSloCriteriaCriteriaDetailArrayOutput values.
+// You can construct a concrete instance of `GetPlatformSloCriteriaCriteriaDetailArrayInput` via:
+//
+//	GetPlatformSloCriteriaCriteriaDetailArray{ GetPlatformSloCriteriaCriteriaDetailArgs{...} }
+type GetPlatformSloCriteriaCriteriaDetailArrayInput interface {
+	pulumi.Input
+
+	ToGetPlatformSloCriteriaCriteriaDetailArrayOutput() GetPlatformSloCriteriaCriteriaDetailArrayOutput
+	ToGetPlatformSloCriteriaCriteriaDetailArrayOutputWithContext(context.Context) GetPlatformSloCriteriaCriteriaDetailArrayOutput
+}
+
+type GetPlatformSloCriteriaCriteriaDetailArray []GetPlatformSloCriteriaCriteriaDetailInput
+
+func (GetPlatformSloCriteriaCriteriaDetailArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetPlatformSloCriteriaCriteriaDetail)(nil)).Elem()
+}
+
+func (i GetPlatformSloCriteriaCriteriaDetailArray) ToGetPlatformSloCriteriaCriteriaDetailArrayOutput() GetPlatformSloCriteriaCriteriaDetailArrayOutput {
+	return i.ToGetPlatformSloCriteriaCriteriaDetailArrayOutputWithContext(context.Background())
+}
+
+func (i GetPlatformSloCriteriaCriteriaDetailArray) ToGetPlatformSloCriteriaCriteriaDetailArrayOutputWithContext(ctx context.Context) GetPlatformSloCriteriaCriteriaDetailArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetPlatformSloCriteriaCriteriaDetailArrayOutput)
+}
+
+type GetPlatformSloCriteriaCriteriaDetailOutput struct{ *pulumi.OutputState }
+
+func (GetPlatformSloCriteriaCriteriaDetailOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetPlatformSloCriteriaCriteriaDetail)(nil)).Elem()
+}
+
+func (o GetPlatformSloCriteriaCriteriaDetailOutput) ToGetPlatformSloCriteriaCriteriaDetailOutput() GetPlatformSloCriteriaCriteriaDetailOutput {
+	return o
+}
+
+func (o GetPlatformSloCriteriaCriteriaDetailOutput) ToGetPlatformSloCriteriaCriteriaDetailOutputWithContext(ctx context.Context) GetPlatformSloCriteriaCriteriaDetailOutput {
+	return o
+}
+
+// Criteria target, example: `99.8`
+func (o GetPlatformSloCriteriaCriteriaDetailOutput) Target() pulumi.Float64Output {
+	return o.ApplyT(func(v GetPlatformSloCriteriaCriteriaDetail) float64 { return v.Target }).(pulumi.Float64Output)
+}
+
+// Timeframe from, example: `now-7d`
+func (o GetPlatformSloCriteriaCriteriaDetailOutput) TimeframeFrom() pulumi.StringOutput {
+	return o.ApplyT(func(v GetPlatformSloCriteriaCriteriaDetail) string { return v.TimeframeFrom }).(pulumi.StringOutput)
+}
+
+// Timeframe to, example: `now`
+func (o GetPlatformSloCriteriaCriteriaDetailOutput) TimeframeTo() pulumi.StringOutput {
+	return o.ApplyT(func(v GetPlatformSloCriteriaCriteriaDetail) string { return v.TimeframeTo }).(pulumi.StringOutput)
+}
+
+// Criteria warning, example: `99.9`
+func (o GetPlatformSloCriteriaCriteriaDetailOutput) Warning() pulumi.Float64Output {
+	return o.ApplyT(func(v GetPlatformSloCriteriaCriteriaDetail) float64 { return v.Warning }).(pulumi.Float64Output)
+}
+
+type GetPlatformSloCriteriaCriteriaDetailArrayOutput struct{ *pulumi.OutputState }
+
+func (GetPlatformSloCriteriaCriteriaDetailArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetPlatformSloCriteriaCriteriaDetail)(nil)).Elem()
+}
+
+func (o GetPlatformSloCriteriaCriteriaDetailArrayOutput) ToGetPlatformSloCriteriaCriteriaDetailArrayOutput() GetPlatformSloCriteriaCriteriaDetailArrayOutput {
+	return o
+}
+
+func (o GetPlatformSloCriteriaCriteriaDetailArrayOutput) ToGetPlatformSloCriteriaCriteriaDetailArrayOutputWithContext(ctx context.Context) GetPlatformSloCriteriaCriteriaDetailArrayOutput {
+	return o
+}
+
+func (o GetPlatformSloCriteriaCriteriaDetailArrayOutput) Index(i pulumi.IntInput) GetPlatformSloCriteriaCriteriaDetailOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetPlatformSloCriteriaCriteriaDetail {
+		return vs[0].([]GetPlatformSloCriteriaCriteriaDetail)[vs[1].(int)]
+	}).(GetPlatformSloCriteriaCriteriaDetailOutput)
+}
+
+type GetPlatformSloCustomSli struct {
+	// A filter segment is identified by an ID. Each segment includes a list of variable definitions.
+	FilterSegments []GetPlatformSloCustomSliFilterSegment `pulumi:"filterSegments"`
+	// Indicator of the custom SLI. Example: `timeseries sli=avg(dt.host.cpu.idle)`
+	Indicator string `pulumi:"indicator"`
+}
+
+// GetPlatformSloCustomSliInput is an input type that accepts GetPlatformSloCustomSliArgs and GetPlatformSloCustomSliOutput values.
+// You can construct a concrete instance of `GetPlatformSloCustomSliInput` via:
+//
+//	GetPlatformSloCustomSliArgs{...}
+type GetPlatformSloCustomSliInput interface {
+	pulumi.Input
+
+	ToGetPlatformSloCustomSliOutput() GetPlatformSloCustomSliOutput
+	ToGetPlatformSloCustomSliOutputWithContext(context.Context) GetPlatformSloCustomSliOutput
+}
+
+type GetPlatformSloCustomSliArgs struct {
+	// A filter segment is identified by an ID. Each segment includes a list of variable definitions.
+	FilterSegments GetPlatformSloCustomSliFilterSegmentArrayInput `pulumi:"filterSegments"`
+	// Indicator of the custom SLI. Example: `timeseries sli=avg(dt.host.cpu.idle)`
+	Indicator pulumi.StringInput `pulumi:"indicator"`
+}
+
+func (GetPlatformSloCustomSliArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetPlatformSloCustomSli)(nil)).Elem()
+}
+
+func (i GetPlatformSloCustomSliArgs) ToGetPlatformSloCustomSliOutput() GetPlatformSloCustomSliOutput {
+	return i.ToGetPlatformSloCustomSliOutputWithContext(context.Background())
+}
+
+func (i GetPlatformSloCustomSliArgs) ToGetPlatformSloCustomSliOutputWithContext(ctx context.Context) GetPlatformSloCustomSliOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetPlatformSloCustomSliOutput)
+}
+
+// GetPlatformSloCustomSliArrayInput is an input type that accepts GetPlatformSloCustomSliArray and GetPlatformSloCustomSliArrayOutput values.
+// You can construct a concrete instance of `GetPlatformSloCustomSliArrayInput` via:
+//
+//	GetPlatformSloCustomSliArray{ GetPlatformSloCustomSliArgs{...} }
+type GetPlatformSloCustomSliArrayInput interface {
+	pulumi.Input
+
+	ToGetPlatformSloCustomSliArrayOutput() GetPlatformSloCustomSliArrayOutput
+	ToGetPlatformSloCustomSliArrayOutputWithContext(context.Context) GetPlatformSloCustomSliArrayOutput
+}
+
+type GetPlatformSloCustomSliArray []GetPlatformSloCustomSliInput
+
+func (GetPlatformSloCustomSliArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetPlatformSloCustomSli)(nil)).Elem()
+}
+
+func (i GetPlatformSloCustomSliArray) ToGetPlatformSloCustomSliArrayOutput() GetPlatformSloCustomSliArrayOutput {
+	return i.ToGetPlatformSloCustomSliArrayOutputWithContext(context.Background())
+}
+
+func (i GetPlatformSloCustomSliArray) ToGetPlatformSloCustomSliArrayOutputWithContext(ctx context.Context) GetPlatformSloCustomSliArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetPlatformSloCustomSliArrayOutput)
+}
+
+type GetPlatformSloCustomSliOutput struct{ *pulumi.OutputState }
+
+func (GetPlatformSloCustomSliOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetPlatformSloCustomSli)(nil)).Elem()
+}
+
+func (o GetPlatformSloCustomSliOutput) ToGetPlatformSloCustomSliOutput() GetPlatformSloCustomSliOutput {
+	return o
+}
+
+func (o GetPlatformSloCustomSliOutput) ToGetPlatformSloCustomSliOutputWithContext(ctx context.Context) GetPlatformSloCustomSliOutput {
+	return o
+}
+
+// A filter segment is identified by an ID. Each segment includes a list of variable definitions.
+func (o GetPlatformSloCustomSliOutput) FilterSegments() GetPlatformSloCustomSliFilterSegmentArrayOutput {
+	return o.ApplyT(func(v GetPlatformSloCustomSli) []GetPlatformSloCustomSliFilterSegment { return v.FilterSegments }).(GetPlatformSloCustomSliFilterSegmentArrayOutput)
+}
+
+// Indicator of the custom SLI. Example: `timeseries sli=avg(dt.host.cpu.idle)`
+func (o GetPlatformSloCustomSliOutput) Indicator() pulumi.StringOutput {
+	return o.ApplyT(func(v GetPlatformSloCustomSli) string { return v.Indicator }).(pulumi.StringOutput)
+}
+
+type GetPlatformSloCustomSliArrayOutput struct{ *pulumi.OutputState }
+
+func (GetPlatformSloCustomSliArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetPlatformSloCustomSli)(nil)).Elem()
+}
+
+func (o GetPlatformSloCustomSliArrayOutput) ToGetPlatformSloCustomSliArrayOutput() GetPlatformSloCustomSliArrayOutput {
+	return o
+}
+
+func (o GetPlatformSloCustomSliArrayOutput) ToGetPlatformSloCustomSliArrayOutputWithContext(ctx context.Context) GetPlatformSloCustomSliArrayOutput {
+	return o
+}
+
+func (o GetPlatformSloCustomSliArrayOutput) Index(i pulumi.IntInput) GetPlatformSloCustomSliOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetPlatformSloCustomSli {
+		return vs[0].([]GetPlatformSloCustomSli)[vs[1].(int)]
+	}).(GetPlatformSloCustomSliOutput)
+}
+
+type GetPlatformSloCustomSliFilterSegment struct {
+	FilterSegments []GetPlatformSloCustomSliFilterSegmentFilterSegment `pulumi:"filterSegments"`
+}
+
+// GetPlatformSloCustomSliFilterSegmentInput is an input type that accepts GetPlatformSloCustomSliFilterSegmentArgs and GetPlatformSloCustomSliFilterSegmentOutput values.
+// You can construct a concrete instance of `GetPlatformSloCustomSliFilterSegmentInput` via:
+//
+//	GetPlatformSloCustomSliFilterSegmentArgs{...}
+type GetPlatformSloCustomSliFilterSegmentInput interface {
+	pulumi.Input
+
+	ToGetPlatformSloCustomSliFilterSegmentOutput() GetPlatformSloCustomSliFilterSegmentOutput
+	ToGetPlatformSloCustomSliFilterSegmentOutputWithContext(context.Context) GetPlatformSloCustomSliFilterSegmentOutput
+}
+
+type GetPlatformSloCustomSliFilterSegmentArgs struct {
+	FilterSegments GetPlatformSloCustomSliFilterSegmentFilterSegmentArrayInput `pulumi:"filterSegments"`
+}
+
+func (GetPlatformSloCustomSliFilterSegmentArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetPlatformSloCustomSliFilterSegment)(nil)).Elem()
+}
+
+func (i GetPlatformSloCustomSliFilterSegmentArgs) ToGetPlatformSloCustomSliFilterSegmentOutput() GetPlatformSloCustomSliFilterSegmentOutput {
+	return i.ToGetPlatformSloCustomSliFilterSegmentOutputWithContext(context.Background())
+}
+
+func (i GetPlatformSloCustomSliFilterSegmentArgs) ToGetPlatformSloCustomSliFilterSegmentOutputWithContext(ctx context.Context) GetPlatformSloCustomSliFilterSegmentOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetPlatformSloCustomSliFilterSegmentOutput)
+}
+
+// GetPlatformSloCustomSliFilterSegmentArrayInput is an input type that accepts GetPlatformSloCustomSliFilterSegmentArray and GetPlatformSloCustomSliFilterSegmentArrayOutput values.
+// You can construct a concrete instance of `GetPlatformSloCustomSliFilterSegmentArrayInput` via:
+//
+//	GetPlatformSloCustomSliFilterSegmentArray{ GetPlatformSloCustomSliFilterSegmentArgs{...} }
+type GetPlatformSloCustomSliFilterSegmentArrayInput interface {
+	pulumi.Input
+
+	ToGetPlatformSloCustomSliFilterSegmentArrayOutput() GetPlatformSloCustomSliFilterSegmentArrayOutput
+	ToGetPlatformSloCustomSliFilterSegmentArrayOutputWithContext(context.Context) GetPlatformSloCustomSliFilterSegmentArrayOutput
+}
+
+type GetPlatformSloCustomSliFilterSegmentArray []GetPlatformSloCustomSliFilterSegmentInput
+
+func (GetPlatformSloCustomSliFilterSegmentArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetPlatformSloCustomSliFilterSegment)(nil)).Elem()
+}
+
+func (i GetPlatformSloCustomSliFilterSegmentArray) ToGetPlatformSloCustomSliFilterSegmentArrayOutput() GetPlatformSloCustomSliFilterSegmentArrayOutput {
+	return i.ToGetPlatformSloCustomSliFilterSegmentArrayOutputWithContext(context.Background())
+}
+
+func (i GetPlatformSloCustomSliFilterSegmentArray) ToGetPlatformSloCustomSliFilterSegmentArrayOutputWithContext(ctx context.Context) GetPlatformSloCustomSliFilterSegmentArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetPlatformSloCustomSliFilterSegmentArrayOutput)
+}
+
+type GetPlatformSloCustomSliFilterSegmentOutput struct{ *pulumi.OutputState }
+
+func (GetPlatformSloCustomSliFilterSegmentOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetPlatformSloCustomSliFilterSegment)(nil)).Elem()
+}
+
+func (o GetPlatformSloCustomSliFilterSegmentOutput) ToGetPlatformSloCustomSliFilterSegmentOutput() GetPlatformSloCustomSliFilterSegmentOutput {
+	return o
+}
+
+func (o GetPlatformSloCustomSliFilterSegmentOutput) ToGetPlatformSloCustomSliFilterSegmentOutputWithContext(ctx context.Context) GetPlatformSloCustomSliFilterSegmentOutput {
+	return o
+}
+
+func (o GetPlatformSloCustomSliFilterSegmentOutput) FilterSegments() GetPlatformSloCustomSliFilterSegmentFilterSegmentArrayOutput {
+	return o.ApplyT(func(v GetPlatformSloCustomSliFilterSegment) []GetPlatformSloCustomSliFilterSegmentFilterSegment {
+		return v.FilterSegments
+	}).(GetPlatformSloCustomSliFilterSegmentFilterSegmentArrayOutput)
+}
+
+type GetPlatformSloCustomSliFilterSegmentArrayOutput struct{ *pulumi.OutputState }
+
+func (GetPlatformSloCustomSliFilterSegmentArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetPlatformSloCustomSliFilterSegment)(nil)).Elem()
+}
+
+func (o GetPlatformSloCustomSliFilterSegmentArrayOutput) ToGetPlatformSloCustomSliFilterSegmentArrayOutput() GetPlatformSloCustomSliFilterSegmentArrayOutput {
+	return o
+}
+
+func (o GetPlatformSloCustomSliFilterSegmentArrayOutput) ToGetPlatformSloCustomSliFilterSegmentArrayOutputWithContext(ctx context.Context) GetPlatformSloCustomSliFilterSegmentArrayOutput {
+	return o
+}
+
+func (o GetPlatformSloCustomSliFilterSegmentArrayOutput) Index(i pulumi.IntInput) GetPlatformSloCustomSliFilterSegmentOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetPlatformSloCustomSliFilterSegment {
+		return vs[0].([]GetPlatformSloCustomSliFilterSegment)[vs[1].(int)]
+	}).(GetPlatformSloCustomSliFilterSegmentOutput)
+}
+
+type GetPlatformSloCustomSliFilterSegmentFilterSegment struct {
+	// The ID of the filter segment
+	Id string `pulumi:"id"`
+	// Defines a variable with a name and a list of values
+	Variables []GetPlatformSloCustomSliFilterSegmentFilterSegmentVariable `pulumi:"variables"`
+}
+
+// GetPlatformSloCustomSliFilterSegmentFilterSegmentInput is an input type that accepts GetPlatformSloCustomSliFilterSegmentFilterSegmentArgs and GetPlatformSloCustomSliFilterSegmentFilterSegmentOutput values.
+// You can construct a concrete instance of `GetPlatformSloCustomSliFilterSegmentFilterSegmentInput` via:
+//
+//	GetPlatformSloCustomSliFilterSegmentFilterSegmentArgs{...}
+type GetPlatformSloCustomSliFilterSegmentFilterSegmentInput interface {
+	pulumi.Input
+
+	ToGetPlatformSloCustomSliFilterSegmentFilterSegmentOutput() GetPlatformSloCustomSliFilterSegmentFilterSegmentOutput
+	ToGetPlatformSloCustomSliFilterSegmentFilterSegmentOutputWithContext(context.Context) GetPlatformSloCustomSliFilterSegmentFilterSegmentOutput
+}
+
+type GetPlatformSloCustomSliFilterSegmentFilterSegmentArgs struct {
+	// The ID of the filter segment
+	Id pulumi.StringInput `pulumi:"id"`
+	// Defines a variable with a name and a list of values
+	Variables GetPlatformSloCustomSliFilterSegmentFilterSegmentVariableArrayInput `pulumi:"variables"`
+}
+
+func (GetPlatformSloCustomSliFilterSegmentFilterSegmentArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetPlatformSloCustomSliFilterSegmentFilterSegment)(nil)).Elem()
+}
+
+func (i GetPlatformSloCustomSliFilterSegmentFilterSegmentArgs) ToGetPlatformSloCustomSliFilterSegmentFilterSegmentOutput() GetPlatformSloCustomSliFilterSegmentFilterSegmentOutput {
+	return i.ToGetPlatformSloCustomSliFilterSegmentFilterSegmentOutputWithContext(context.Background())
+}
+
+func (i GetPlatformSloCustomSliFilterSegmentFilterSegmentArgs) ToGetPlatformSloCustomSliFilterSegmentFilterSegmentOutputWithContext(ctx context.Context) GetPlatformSloCustomSliFilterSegmentFilterSegmentOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetPlatformSloCustomSliFilterSegmentFilterSegmentOutput)
+}
+
+// GetPlatformSloCustomSliFilterSegmentFilterSegmentArrayInput is an input type that accepts GetPlatformSloCustomSliFilterSegmentFilterSegmentArray and GetPlatformSloCustomSliFilterSegmentFilterSegmentArrayOutput values.
+// You can construct a concrete instance of `GetPlatformSloCustomSliFilterSegmentFilterSegmentArrayInput` via:
+//
+//	GetPlatformSloCustomSliFilterSegmentFilterSegmentArray{ GetPlatformSloCustomSliFilterSegmentFilterSegmentArgs{...} }
+type GetPlatformSloCustomSliFilterSegmentFilterSegmentArrayInput interface {
+	pulumi.Input
+
+	ToGetPlatformSloCustomSliFilterSegmentFilterSegmentArrayOutput() GetPlatformSloCustomSliFilterSegmentFilterSegmentArrayOutput
+	ToGetPlatformSloCustomSliFilterSegmentFilterSegmentArrayOutputWithContext(context.Context) GetPlatformSloCustomSliFilterSegmentFilterSegmentArrayOutput
+}
+
+type GetPlatformSloCustomSliFilterSegmentFilterSegmentArray []GetPlatformSloCustomSliFilterSegmentFilterSegmentInput
+
+func (GetPlatformSloCustomSliFilterSegmentFilterSegmentArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetPlatformSloCustomSliFilterSegmentFilterSegment)(nil)).Elem()
+}
+
+func (i GetPlatformSloCustomSliFilterSegmentFilterSegmentArray) ToGetPlatformSloCustomSliFilterSegmentFilterSegmentArrayOutput() GetPlatformSloCustomSliFilterSegmentFilterSegmentArrayOutput {
+	return i.ToGetPlatformSloCustomSliFilterSegmentFilterSegmentArrayOutputWithContext(context.Background())
+}
+
+func (i GetPlatformSloCustomSliFilterSegmentFilterSegmentArray) ToGetPlatformSloCustomSliFilterSegmentFilterSegmentArrayOutputWithContext(ctx context.Context) GetPlatformSloCustomSliFilterSegmentFilterSegmentArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetPlatformSloCustomSliFilterSegmentFilterSegmentArrayOutput)
+}
+
+type GetPlatformSloCustomSliFilterSegmentFilterSegmentOutput struct{ *pulumi.OutputState }
+
+func (GetPlatformSloCustomSliFilterSegmentFilterSegmentOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetPlatformSloCustomSliFilterSegmentFilterSegment)(nil)).Elem()
+}
+
+func (o GetPlatformSloCustomSliFilterSegmentFilterSegmentOutput) ToGetPlatformSloCustomSliFilterSegmentFilterSegmentOutput() GetPlatformSloCustomSliFilterSegmentFilterSegmentOutput {
+	return o
+}
+
+func (o GetPlatformSloCustomSliFilterSegmentFilterSegmentOutput) ToGetPlatformSloCustomSliFilterSegmentFilterSegmentOutputWithContext(ctx context.Context) GetPlatformSloCustomSliFilterSegmentFilterSegmentOutput {
+	return o
+}
+
+// The ID of the filter segment
+func (o GetPlatformSloCustomSliFilterSegmentFilterSegmentOutput) Id() pulumi.StringOutput {
+	return o.ApplyT(func(v GetPlatformSloCustomSliFilterSegmentFilterSegment) string { return v.Id }).(pulumi.StringOutput)
+}
+
+// Defines a variable with a name and a list of values
+func (o GetPlatformSloCustomSliFilterSegmentFilterSegmentOutput) Variables() GetPlatformSloCustomSliFilterSegmentFilterSegmentVariableArrayOutput {
+	return o.ApplyT(func(v GetPlatformSloCustomSliFilterSegmentFilterSegment) []GetPlatformSloCustomSliFilterSegmentFilterSegmentVariable {
+		return v.Variables
+	}).(GetPlatformSloCustomSliFilterSegmentFilterSegmentVariableArrayOutput)
+}
+
+type GetPlatformSloCustomSliFilterSegmentFilterSegmentArrayOutput struct{ *pulumi.OutputState }
+
+func (GetPlatformSloCustomSliFilterSegmentFilterSegmentArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetPlatformSloCustomSliFilterSegmentFilterSegment)(nil)).Elem()
+}
+
+func (o GetPlatformSloCustomSliFilterSegmentFilterSegmentArrayOutput) ToGetPlatformSloCustomSliFilterSegmentFilterSegmentArrayOutput() GetPlatformSloCustomSliFilterSegmentFilterSegmentArrayOutput {
+	return o
+}
+
+func (o GetPlatformSloCustomSliFilterSegmentFilterSegmentArrayOutput) ToGetPlatformSloCustomSliFilterSegmentFilterSegmentArrayOutputWithContext(ctx context.Context) GetPlatformSloCustomSliFilterSegmentFilterSegmentArrayOutput {
+	return o
+}
+
+func (o GetPlatformSloCustomSliFilterSegmentFilterSegmentArrayOutput) Index(i pulumi.IntInput) GetPlatformSloCustomSliFilterSegmentFilterSegmentOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetPlatformSloCustomSliFilterSegmentFilterSegment {
+		return vs[0].([]GetPlatformSloCustomSliFilterSegmentFilterSegment)[vs[1].(int)]
+	}).(GetPlatformSloCustomSliFilterSegmentFilterSegmentOutput)
+}
+
+type GetPlatformSloCustomSliFilterSegmentFilterSegmentVariable struct {
+	FilterSegmentVariables []GetPlatformSloCustomSliFilterSegmentFilterSegmentVariableFilterSegmentVariable `pulumi:"filterSegmentVariables"`
+}
+
+// GetPlatformSloCustomSliFilterSegmentFilterSegmentVariableInput is an input type that accepts GetPlatformSloCustomSliFilterSegmentFilterSegmentVariableArgs and GetPlatformSloCustomSliFilterSegmentFilterSegmentVariableOutput values.
+// You can construct a concrete instance of `GetPlatformSloCustomSliFilterSegmentFilterSegmentVariableInput` via:
+//
+//	GetPlatformSloCustomSliFilterSegmentFilterSegmentVariableArgs{...}
+type GetPlatformSloCustomSliFilterSegmentFilterSegmentVariableInput interface {
+	pulumi.Input
+
+	ToGetPlatformSloCustomSliFilterSegmentFilterSegmentVariableOutput() GetPlatformSloCustomSliFilterSegmentFilterSegmentVariableOutput
+	ToGetPlatformSloCustomSliFilterSegmentFilterSegmentVariableOutputWithContext(context.Context) GetPlatformSloCustomSliFilterSegmentFilterSegmentVariableOutput
+}
+
+type GetPlatformSloCustomSliFilterSegmentFilterSegmentVariableArgs struct {
+	FilterSegmentVariables GetPlatformSloCustomSliFilterSegmentFilterSegmentVariableFilterSegmentVariableArrayInput `pulumi:"filterSegmentVariables"`
+}
+
+func (GetPlatformSloCustomSliFilterSegmentFilterSegmentVariableArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetPlatformSloCustomSliFilterSegmentFilterSegmentVariable)(nil)).Elem()
+}
+
+func (i GetPlatformSloCustomSliFilterSegmentFilterSegmentVariableArgs) ToGetPlatformSloCustomSliFilterSegmentFilterSegmentVariableOutput() GetPlatformSloCustomSliFilterSegmentFilterSegmentVariableOutput {
+	return i.ToGetPlatformSloCustomSliFilterSegmentFilterSegmentVariableOutputWithContext(context.Background())
+}
+
+func (i GetPlatformSloCustomSliFilterSegmentFilterSegmentVariableArgs) ToGetPlatformSloCustomSliFilterSegmentFilterSegmentVariableOutputWithContext(ctx context.Context) GetPlatformSloCustomSliFilterSegmentFilterSegmentVariableOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetPlatformSloCustomSliFilterSegmentFilterSegmentVariableOutput)
+}
+
+// GetPlatformSloCustomSliFilterSegmentFilterSegmentVariableArrayInput is an input type that accepts GetPlatformSloCustomSliFilterSegmentFilterSegmentVariableArray and GetPlatformSloCustomSliFilterSegmentFilterSegmentVariableArrayOutput values.
+// You can construct a concrete instance of `GetPlatformSloCustomSliFilterSegmentFilterSegmentVariableArrayInput` via:
+//
+//	GetPlatformSloCustomSliFilterSegmentFilterSegmentVariableArray{ GetPlatformSloCustomSliFilterSegmentFilterSegmentVariableArgs{...} }
+type GetPlatformSloCustomSliFilterSegmentFilterSegmentVariableArrayInput interface {
+	pulumi.Input
+
+	ToGetPlatformSloCustomSliFilterSegmentFilterSegmentVariableArrayOutput() GetPlatformSloCustomSliFilterSegmentFilterSegmentVariableArrayOutput
+	ToGetPlatformSloCustomSliFilterSegmentFilterSegmentVariableArrayOutputWithContext(context.Context) GetPlatformSloCustomSliFilterSegmentFilterSegmentVariableArrayOutput
+}
+
+type GetPlatformSloCustomSliFilterSegmentFilterSegmentVariableArray []GetPlatformSloCustomSliFilterSegmentFilterSegmentVariableInput
+
+func (GetPlatformSloCustomSliFilterSegmentFilterSegmentVariableArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetPlatformSloCustomSliFilterSegmentFilterSegmentVariable)(nil)).Elem()
+}
+
+func (i GetPlatformSloCustomSliFilterSegmentFilterSegmentVariableArray) ToGetPlatformSloCustomSliFilterSegmentFilterSegmentVariableArrayOutput() GetPlatformSloCustomSliFilterSegmentFilterSegmentVariableArrayOutput {
+	return i.ToGetPlatformSloCustomSliFilterSegmentFilterSegmentVariableArrayOutputWithContext(context.Background())
+}
+
+func (i GetPlatformSloCustomSliFilterSegmentFilterSegmentVariableArray) ToGetPlatformSloCustomSliFilterSegmentFilterSegmentVariableArrayOutputWithContext(ctx context.Context) GetPlatformSloCustomSliFilterSegmentFilterSegmentVariableArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetPlatformSloCustomSliFilterSegmentFilterSegmentVariableArrayOutput)
+}
+
+type GetPlatformSloCustomSliFilterSegmentFilterSegmentVariableOutput struct{ *pulumi.OutputState }
+
+func (GetPlatformSloCustomSliFilterSegmentFilterSegmentVariableOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetPlatformSloCustomSliFilterSegmentFilterSegmentVariable)(nil)).Elem()
+}
+
+func (o GetPlatformSloCustomSliFilterSegmentFilterSegmentVariableOutput) ToGetPlatformSloCustomSliFilterSegmentFilterSegmentVariableOutput() GetPlatformSloCustomSliFilterSegmentFilterSegmentVariableOutput {
+	return o
+}
+
+func (o GetPlatformSloCustomSliFilterSegmentFilterSegmentVariableOutput) ToGetPlatformSloCustomSliFilterSegmentFilterSegmentVariableOutputWithContext(ctx context.Context) GetPlatformSloCustomSliFilterSegmentFilterSegmentVariableOutput {
+	return o
+}
+
+func (o GetPlatformSloCustomSliFilterSegmentFilterSegmentVariableOutput) FilterSegmentVariables() GetPlatformSloCustomSliFilterSegmentFilterSegmentVariableFilterSegmentVariableArrayOutput {
+	return o.ApplyT(func(v GetPlatformSloCustomSliFilterSegmentFilterSegmentVariable) []GetPlatformSloCustomSliFilterSegmentFilterSegmentVariableFilterSegmentVariable {
+		return v.FilterSegmentVariables
+	}).(GetPlatformSloCustomSliFilterSegmentFilterSegmentVariableFilterSegmentVariableArrayOutput)
+}
+
+type GetPlatformSloCustomSliFilterSegmentFilterSegmentVariableArrayOutput struct{ *pulumi.OutputState }
+
+func (GetPlatformSloCustomSliFilterSegmentFilterSegmentVariableArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetPlatformSloCustomSliFilterSegmentFilterSegmentVariable)(nil)).Elem()
+}
+
+func (o GetPlatformSloCustomSliFilterSegmentFilterSegmentVariableArrayOutput) ToGetPlatformSloCustomSliFilterSegmentFilterSegmentVariableArrayOutput() GetPlatformSloCustomSliFilterSegmentFilterSegmentVariableArrayOutput {
+	return o
+}
+
+func (o GetPlatformSloCustomSliFilterSegmentFilterSegmentVariableArrayOutput) ToGetPlatformSloCustomSliFilterSegmentFilterSegmentVariableArrayOutputWithContext(ctx context.Context) GetPlatformSloCustomSliFilterSegmentFilterSegmentVariableArrayOutput {
+	return o
+}
+
+func (o GetPlatformSloCustomSliFilterSegmentFilterSegmentVariableArrayOutput) Index(i pulumi.IntInput) GetPlatformSloCustomSliFilterSegmentFilterSegmentVariableOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetPlatformSloCustomSliFilterSegmentFilterSegmentVariable {
+		return vs[0].([]GetPlatformSloCustomSliFilterSegmentFilterSegmentVariable)[vs[1].(int)]
+	}).(GetPlatformSloCustomSliFilterSegmentFilterSegmentVariableOutput)
+}
+
+type GetPlatformSloCustomSliFilterSegmentFilterSegmentVariableFilterSegmentVariable struct {
+	// Name of the filter segment variable
+	Name string `pulumi:"name"`
+	// Values of the filter segment variable
+	Values []string `pulumi:"values"`
+}
+
+// GetPlatformSloCustomSliFilterSegmentFilterSegmentVariableFilterSegmentVariableInput is an input type that accepts GetPlatformSloCustomSliFilterSegmentFilterSegmentVariableFilterSegmentVariableArgs and GetPlatformSloCustomSliFilterSegmentFilterSegmentVariableFilterSegmentVariableOutput values.
+// You can construct a concrete instance of `GetPlatformSloCustomSliFilterSegmentFilterSegmentVariableFilterSegmentVariableInput` via:
+//
+//	GetPlatformSloCustomSliFilterSegmentFilterSegmentVariableFilterSegmentVariableArgs{...}
+type GetPlatformSloCustomSliFilterSegmentFilterSegmentVariableFilterSegmentVariableInput interface {
+	pulumi.Input
+
+	ToGetPlatformSloCustomSliFilterSegmentFilterSegmentVariableFilterSegmentVariableOutput() GetPlatformSloCustomSliFilterSegmentFilterSegmentVariableFilterSegmentVariableOutput
+	ToGetPlatformSloCustomSliFilterSegmentFilterSegmentVariableFilterSegmentVariableOutputWithContext(context.Context) GetPlatformSloCustomSliFilterSegmentFilterSegmentVariableFilterSegmentVariableOutput
+}
+
+type GetPlatformSloCustomSliFilterSegmentFilterSegmentVariableFilterSegmentVariableArgs struct {
+	// Name of the filter segment variable
+	Name pulumi.StringInput `pulumi:"name"`
+	// Values of the filter segment variable
+	Values pulumi.StringArrayInput `pulumi:"values"`
+}
+
+func (GetPlatformSloCustomSliFilterSegmentFilterSegmentVariableFilterSegmentVariableArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetPlatformSloCustomSliFilterSegmentFilterSegmentVariableFilterSegmentVariable)(nil)).Elem()
+}
+
+func (i GetPlatformSloCustomSliFilterSegmentFilterSegmentVariableFilterSegmentVariableArgs) ToGetPlatformSloCustomSliFilterSegmentFilterSegmentVariableFilterSegmentVariableOutput() GetPlatformSloCustomSliFilterSegmentFilterSegmentVariableFilterSegmentVariableOutput {
+	return i.ToGetPlatformSloCustomSliFilterSegmentFilterSegmentVariableFilterSegmentVariableOutputWithContext(context.Background())
+}
+
+func (i GetPlatformSloCustomSliFilterSegmentFilterSegmentVariableFilterSegmentVariableArgs) ToGetPlatformSloCustomSliFilterSegmentFilterSegmentVariableFilterSegmentVariableOutputWithContext(ctx context.Context) GetPlatformSloCustomSliFilterSegmentFilterSegmentVariableFilterSegmentVariableOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetPlatformSloCustomSliFilterSegmentFilterSegmentVariableFilterSegmentVariableOutput)
+}
+
+// GetPlatformSloCustomSliFilterSegmentFilterSegmentVariableFilterSegmentVariableArrayInput is an input type that accepts GetPlatformSloCustomSliFilterSegmentFilterSegmentVariableFilterSegmentVariableArray and GetPlatformSloCustomSliFilterSegmentFilterSegmentVariableFilterSegmentVariableArrayOutput values.
+// You can construct a concrete instance of `GetPlatformSloCustomSliFilterSegmentFilterSegmentVariableFilterSegmentVariableArrayInput` via:
+//
+//	GetPlatformSloCustomSliFilterSegmentFilterSegmentVariableFilterSegmentVariableArray{ GetPlatformSloCustomSliFilterSegmentFilterSegmentVariableFilterSegmentVariableArgs{...} }
+type GetPlatformSloCustomSliFilterSegmentFilterSegmentVariableFilterSegmentVariableArrayInput interface {
+	pulumi.Input
+
+	ToGetPlatformSloCustomSliFilterSegmentFilterSegmentVariableFilterSegmentVariableArrayOutput() GetPlatformSloCustomSliFilterSegmentFilterSegmentVariableFilterSegmentVariableArrayOutput
+	ToGetPlatformSloCustomSliFilterSegmentFilterSegmentVariableFilterSegmentVariableArrayOutputWithContext(context.Context) GetPlatformSloCustomSliFilterSegmentFilterSegmentVariableFilterSegmentVariableArrayOutput
+}
+
+type GetPlatformSloCustomSliFilterSegmentFilterSegmentVariableFilterSegmentVariableArray []GetPlatformSloCustomSliFilterSegmentFilterSegmentVariableFilterSegmentVariableInput
+
+func (GetPlatformSloCustomSliFilterSegmentFilterSegmentVariableFilterSegmentVariableArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetPlatformSloCustomSliFilterSegmentFilterSegmentVariableFilterSegmentVariable)(nil)).Elem()
+}
+
+func (i GetPlatformSloCustomSliFilterSegmentFilterSegmentVariableFilterSegmentVariableArray) ToGetPlatformSloCustomSliFilterSegmentFilterSegmentVariableFilterSegmentVariableArrayOutput() GetPlatformSloCustomSliFilterSegmentFilterSegmentVariableFilterSegmentVariableArrayOutput {
+	return i.ToGetPlatformSloCustomSliFilterSegmentFilterSegmentVariableFilterSegmentVariableArrayOutputWithContext(context.Background())
+}
+
+func (i GetPlatformSloCustomSliFilterSegmentFilterSegmentVariableFilterSegmentVariableArray) ToGetPlatformSloCustomSliFilterSegmentFilterSegmentVariableFilterSegmentVariableArrayOutputWithContext(ctx context.Context) GetPlatformSloCustomSliFilterSegmentFilterSegmentVariableFilterSegmentVariableArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetPlatformSloCustomSliFilterSegmentFilterSegmentVariableFilterSegmentVariableArrayOutput)
+}
+
+type GetPlatformSloCustomSliFilterSegmentFilterSegmentVariableFilterSegmentVariableOutput struct{ *pulumi.OutputState }
+
+func (GetPlatformSloCustomSliFilterSegmentFilterSegmentVariableFilterSegmentVariableOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetPlatformSloCustomSliFilterSegmentFilterSegmentVariableFilterSegmentVariable)(nil)).Elem()
+}
+
+func (o GetPlatformSloCustomSliFilterSegmentFilterSegmentVariableFilterSegmentVariableOutput) ToGetPlatformSloCustomSliFilterSegmentFilterSegmentVariableFilterSegmentVariableOutput() GetPlatformSloCustomSliFilterSegmentFilterSegmentVariableFilterSegmentVariableOutput {
+	return o
+}
+
+func (o GetPlatformSloCustomSliFilterSegmentFilterSegmentVariableFilterSegmentVariableOutput) ToGetPlatformSloCustomSliFilterSegmentFilterSegmentVariableFilterSegmentVariableOutputWithContext(ctx context.Context) GetPlatformSloCustomSliFilterSegmentFilterSegmentVariableFilterSegmentVariableOutput {
+	return o
+}
+
+// Name of the filter segment variable
+func (o GetPlatformSloCustomSliFilterSegmentFilterSegmentVariableFilterSegmentVariableOutput) Name() pulumi.StringOutput {
+	return o.ApplyT(func(v GetPlatformSloCustomSliFilterSegmentFilterSegmentVariableFilterSegmentVariable) string {
+		return v.Name
+	}).(pulumi.StringOutput)
+}
+
+// Values of the filter segment variable
+func (o GetPlatformSloCustomSliFilterSegmentFilterSegmentVariableFilterSegmentVariableOutput) Values() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v GetPlatformSloCustomSliFilterSegmentFilterSegmentVariableFilterSegmentVariable) []string {
+		return v.Values
+	}).(pulumi.StringArrayOutput)
+}
+
+type GetPlatformSloCustomSliFilterSegmentFilterSegmentVariableFilterSegmentVariableArrayOutput struct{ *pulumi.OutputState }
+
+func (GetPlatformSloCustomSliFilterSegmentFilterSegmentVariableFilterSegmentVariableArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetPlatformSloCustomSliFilterSegmentFilterSegmentVariableFilterSegmentVariable)(nil)).Elem()
+}
+
+func (o GetPlatformSloCustomSliFilterSegmentFilterSegmentVariableFilterSegmentVariableArrayOutput) ToGetPlatformSloCustomSliFilterSegmentFilterSegmentVariableFilterSegmentVariableArrayOutput() GetPlatformSloCustomSliFilterSegmentFilterSegmentVariableFilterSegmentVariableArrayOutput {
+	return o
+}
+
+func (o GetPlatformSloCustomSliFilterSegmentFilterSegmentVariableFilterSegmentVariableArrayOutput) ToGetPlatformSloCustomSliFilterSegmentFilterSegmentVariableFilterSegmentVariableArrayOutputWithContext(ctx context.Context) GetPlatformSloCustomSliFilterSegmentFilterSegmentVariableFilterSegmentVariableArrayOutput {
+	return o
+}
+
+func (o GetPlatformSloCustomSliFilterSegmentFilterSegmentVariableFilterSegmentVariableArrayOutput) Index(i pulumi.IntInput) GetPlatformSloCustomSliFilterSegmentFilterSegmentVariableFilterSegmentVariableOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetPlatformSloCustomSliFilterSegmentFilterSegmentVariableFilterSegmentVariable {
+		return vs[0].([]GetPlatformSloCustomSliFilterSegmentFilterSegmentVariableFilterSegmentVariable)[vs[1].(int)]
+	}).(GetPlatformSloCustomSliFilterSegmentFilterSegmentVariableFilterSegmentVariableOutput)
+}
+
+type GetPlatformSloSliReference struct {
+	// Template ID of the SLI reference
+	TemplateId string `pulumi:"templateId"`
+	// Variables of the SLI reference
+	Variables []GetPlatformSloSliReferenceVariable `pulumi:"variables"`
+}
+
+// GetPlatformSloSliReferenceInput is an input type that accepts GetPlatformSloSliReferenceArgs and GetPlatformSloSliReferenceOutput values.
+// You can construct a concrete instance of `GetPlatformSloSliReferenceInput` via:
+//
+//	GetPlatformSloSliReferenceArgs{...}
+type GetPlatformSloSliReferenceInput interface {
+	pulumi.Input
+
+	ToGetPlatformSloSliReferenceOutput() GetPlatformSloSliReferenceOutput
+	ToGetPlatformSloSliReferenceOutputWithContext(context.Context) GetPlatformSloSliReferenceOutput
+}
+
+type GetPlatformSloSliReferenceArgs struct {
+	// Template ID of the SLI reference
+	TemplateId pulumi.StringInput `pulumi:"templateId"`
+	// Variables of the SLI reference
+	Variables GetPlatformSloSliReferenceVariableArrayInput `pulumi:"variables"`
+}
+
+func (GetPlatformSloSliReferenceArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetPlatformSloSliReference)(nil)).Elem()
+}
+
+func (i GetPlatformSloSliReferenceArgs) ToGetPlatformSloSliReferenceOutput() GetPlatformSloSliReferenceOutput {
+	return i.ToGetPlatformSloSliReferenceOutputWithContext(context.Background())
+}
+
+func (i GetPlatformSloSliReferenceArgs) ToGetPlatformSloSliReferenceOutputWithContext(ctx context.Context) GetPlatformSloSliReferenceOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetPlatformSloSliReferenceOutput)
+}
+
+// GetPlatformSloSliReferenceArrayInput is an input type that accepts GetPlatformSloSliReferenceArray and GetPlatformSloSliReferenceArrayOutput values.
+// You can construct a concrete instance of `GetPlatformSloSliReferenceArrayInput` via:
+//
+//	GetPlatformSloSliReferenceArray{ GetPlatformSloSliReferenceArgs{...} }
+type GetPlatformSloSliReferenceArrayInput interface {
+	pulumi.Input
+
+	ToGetPlatformSloSliReferenceArrayOutput() GetPlatformSloSliReferenceArrayOutput
+	ToGetPlatformSloSliReferenceArrayOutputWithContext(context.Context) GetPlatformSloSliReferenceArrayOutput
+}
+
+type GetPlatformSloSliReferenceArray []GetPlatformSloSliReferenceInput
+
+func (GetPlatformSloSliReferenceArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetPlatformSloSliReference)(nil)).Elem()
+}
+
+func (i GetPlatformSloSliReferenceArray) ToGetPlatformSloSliReferenceArrayOutput() GetPlatformSloSliReferenceArrayOutput {
+	return i.ToGetPlatformSloSliReferenceArrayOutputWithContext(context.Background())
+}
+
+func (i GetPlatformSloSliReferenceArray) ToGetPlatformSloSliReferenceArrayOutputWithContext(ctx context.Context) GetPlatformSloSliReferenceArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetPlatformSloSliReferenceArrayOutput)
+}
+
+type GetPlatformSloSliReferenceOutput struct{ *pulumi.OutputState }
+
+func (GetPlatformSloSliReferenceOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetPlatformSloSliReference)(nil)).Elem()
+}
+
+func (o GetPlatformSloSliReferenceOutput) ToGetPlatformSloSliReferenceOutput() GetPlatformSloSliReferenceOutput {
+	return o
+}
+
+func (o GetPlatformSloSliReferenceOutput) ToGetPlatformSloSliReferenceOutputWithContext(ctx context.Context) GetPlatformSloSliReferenceOutput {
+	return o
+}
+
+// Template ID of the SLI reference
+func (o GetPlatformSloSliReferenceOutput) TemplateId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetPlatformSloSliReference) string { return v.TemplateId }).(pulumi.StringOutput)
+}
+
+// Variables of the SLI reference
+func (o GetPlatformSloSliReferenceOutput) Variables() GetPlatformSloSliReferenceVariableArrayOutput {
+	return o.ApplyT(func(v GetPlatformSloSliReference) []GetPlatformSloSliReferenceVariable { return v.Variables }).(GetPlatformSloSliReferenceVariableArrayOutput)
+}
+
+type GetPlatformSloSliReferenceArrayOutput struct{ *pulumi.OutputState }
+
+func (GetPlatformSloSliReferenceArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetPlatformSloSliReference)(nil)).Elem()
+}
+
+func (o GetPlatformSloSliReferenceArrayOutput) ToGetPlatformSloSliReferenceArrayOutput() GetPlatformSloSliReferenceArrayOutput {
+	return o
+}
+
+func (o GetPlatformSloSliReferenceArrayOutput) ToGetPlatformSloSliReferenceArrayOutputWithContext(ctx context.Context) GetPlatformSloSliReferenceArrayOutput {
+	return o
+}
+
+func (o GetPlatformSloSliReferenceArrayOutput) Index(i pulumi.IntInput) GetPlatformSloSliReferenceOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetPlatformSloSliReference {
+		return vs[0].([]GetPlatformSloSliReference)[vs[1].(int)]
+	}).(GetPlatformSloSliReferenceOutput)
+}
+
+type GetPlatformSloSliReferenceVariable struct {
+	SliReferenceVariables []GetPlatformSloSliReferenceVariableSliReferenceVariable `pulumi:"sliReferenceVariables"`
+}
+
+// GetPlatformSloSliReferenceVariableInput is an input type that accepts GetPlatformSloSliReferenceVariableArgs and GetPlatformSloSliReferenceVariableOutput values.
+// You can construct a concrete instance of `GetPlatformSloSliReferenceVariableInput` via:
+//
+//	GetPlatformSloSliReferenceVariableArgs{...}
+type GetPlatformSloSliReferenceVariableInput interface {
+	pulumi.Input
+
+	ToGetPlatformSloSliReferenceVariableOutput() GetPlatformSloSliReferenceVariableOutput
+	ToGetPlatformSloSliReferenceVariableOutputWithContext(context.Context) GetPlatformSloSliReferenceVariableOutput
+}
+
+type GetPlatformSloSliReferenceVariableArgs struct {
+	SliReferenceVariables GetPlatformSloSliReferenceVariableSliReferenceVariableArrayInput `pulumi:"sliReferenceVariables"`
+}
+
+func (GetPlatformSloSliReferenceVariableArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetPlatformSloSliReferenceVariable)(nil)).Elem()
+}
+
+func (i GetPlatformSloSliReferenceVariableArgs) ToGetPlatformSloSliReferenceVariableOutput() GetPlatformSloSliReferenceVariableOutput {
+	return i.ToGetPlatformSloSliReferenceVariableOutputWithContext(context.Background())
+}
+
+func (i GetPlatformSloSliReferenceVariableArgs) ToGetPlatformSloSliReferenceVariableOutputWithContext(ctx context.Context) GetPlatformSloSliReferenceVariableOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetPlatformSloSliReferenceVariableOutput)
+}
+
+// GetPlatformSloSliReferenceVariableArrayInput is an input type that accepts GetPlatformSloSliReferenceVariableArray and GetPlatformSloSliReferenceVariableArrayOutput values.
+// You can construct a concrete instance of `GetPlatformSloSliReferenceVariableArrayInput` via:
+//
+//	GetPlatformSloSliReferenceVariableArray{ GetPlatformSloSliReferenceVariableArgs{...} }
+type GetPlatformSloSliReferenceVariableArrayInput interface {
+	pulumi.Input
+
+	ToGetPlatformSloSliReferenceVariableArrayOutput() GetPlatformSloSliReferenceVariableArrayOutput
+	ToGetPlatformSloSliReferenceVariableArrayOutputWithContext(context.Context) GetPlatformSloSliReferenceVariableArrayOutput
+}
+
+type GetPlatformSloSliReferenceVariableArray []GetPlatformSloSliReferenceVariableInput
+
+func (GetPlatformSloSliReferenceVariableArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetPlatformSloSliReferenceVariable)(nil)).Elem()
+}
+
+func (i GetPlatformSloSliReferenceVariableArray) ToGetPlatformSloSliReferenceVariableArrayOutput() GetPlatformSloSliReferenceVariableArrayOutput {
+	return i.ToGetPlatformSloSliReferenceVariableArrayOutputWithContext(context.Background())
+}
+
+func (i GetPlatformSloSliReferenceVariableArray) ToGetPlatformSloSliReferenceVariableArrayOutputWithContext(ctx context.Context) GetPlatformSloSliReferenceVariableArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetPlatformSloSliReferenceVariableArrayOutput)
+}
+
+type GetPlatformSloSliReferenceVariableOutput struct{ *pulumi.OutputState }
+
+func (GetPlatformSloSliReferenceVariableOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetPlatformSloSliReferenceVariable)(nil)).Elem()
+}
+
+func (o GetPlatformSloSliReferenceVariableOutput) ToGetPlatformSloSliReferenceVariableOutput() GetPlatformSloSliReferenceVariableOutput {
+	return o
+}
+
+func (o GetPlatformSloSliReferenceVariableOutput) ToGetPlatformSloSliReferenceVariableOutputWithContext(ctx context.Context) GetPlatformSloSliReferenceVariableOutput {
+	return o
+}
+
+func (o GetPlatformSloSliReferenceVariableOutput) SliReferenceVariables() GetPlatformSloSliReferenceVariableSliReferenceVariableArrayOutput {
+	return o.ApplyT(func(v GetPlatformSloSliReferenceVariable) []GetPlatformSloSliReferenceVariableSliReferenceVariable {
+		return v.SliReferenceVariables
+	}).(GetPlatformSloSliReferenceVariableSliReferenceVariableArrayOutput)
+}
+
+type GetPlatformSloSliReferenceVariableArrayOutput struct{ *pulumi.OutputState }
+
+func (GetPlatformSloSliReferenceVariableArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetPlatformSloSliReferenceVariable)(nil)).Elem()
+}
+
+func (o GetPlatformSloSliReferenceVariableArrayOutput) ToGetPlatformSloSliReferenceVariableArrayOutput() GetPlatformSloSliReferenceVariableArrayOutput {
+	return o
+}
+
+func (o GetPlatformSloSliReferenceVariableArrayOutput) ToGetPlatformSloSliReferenceVariableArrayOutputWithContext(ctx context.Context) GetPlatformSloSliReferenceVariableArrayOutput {
+	return o
+}
+
+func (o GetPlatformSloSliReferenceVariableArrayOutput) Index(i pulumi.IntInput) GetPlatformSloSliReferenceVariableOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetPlatformSloSliReferenceVariable {
+		return vs[0].([]GetPlatformSloSliReferenceVariable)[vs[1].(int)]
+	}).(GetPlatformSloSliReferenceVariableOutput)
+}
+
+type GetPlatformSloSliReferenceVariableSliReferenceVariable struct {
+	// Name of the SLI reference variable. Example: `hostIds`
+	Name string `pulumi:"name"`
+	// Value of the SLI reference variable. Example: `HOST-123456789ABCDEFG`
+	Value string `pulumi:"value"`
+}
+
+// GetPlatformSloSliReferenceVariableSliReferenceVariableInput is an input type that accepts GetPlatformSloSliReferenceVariableSliReferenceVariableArgs and GetPlatformSloSliReferenceVariableSliReferenceVariableOutput values.
+// You can construct a concrete instance of `GetPlatformSloSliReferenceVariableSliReferenceVariableInput` via:
+//
+//	GetPlatformSloSliReferenceVariableSliReferenceVariableArgs{...}
+type GetPlatformSloSliReferenceVariableSliReferenceVariableInput interface {
+	pulumi.Input
+
+	ToGetPlatformSloSliReferenceVariableSliReferenceVariableOutput() GetPlatformSloSliReferenceVariableSliReferenceVariableOutput
+	ToGetPlatformSloSliReferenceVariableSliReferenceVariableOutputWithContext(context.Context) GetPlatformSloSliReferenceVariableSliReferenceVariableOutput
+}
+
+type GetPlatformSloSliReferenceVariableSliReferenceVariableArgs struct {
+	// Name of the SLI reference variable. Example: `hostIds`
+	Name pulumi.StringInput `pulumi:"name"`
+	// Value of the SLI reference variable. Example: `HOST-123456789ABCDEFG`
+	Value pulumi.StringInput `pulumi:"value"`
+}
+
+func (GetPlatformSloSliReferenceVariableSliReferenceVariableArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetPlatformSloSliReferenceVariableSliReferenceVariable)(nil)).Elem()
+}
+
+func (i GetPlatformSloSliReferenceVariableSliReferenceVariableArgs) ToGetPlatformSloSliReferenceVariableSliReferenceVariableOutput() GetPlatformSloSliReferenceVariableSliReferenceVariableOutput {
+	return i.ToGetPlatformSloSliReferenceVariableSliReferenceVariableOutputWithContext(context.Background())
+}
+
+func (i GetPlatformSloSliReferenceVariableSliReferenceVariableArgs) ToGetPlatformSloSliReferenceVariableSliReferenceVariableOutputWithContext(ctx context.Context) GetPlatformSloSliReferenceVariableSliReferenceVariableOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetPlatformSloSliReferenceVariableSliReferenceVariableOutput)
+}
+
+// GetPlatformSloSliReferenceVariableSliReferenceVariableArrayInput is an input type that accepts GetPlatformSloSliReferenceVariableSliReferenceVariableArray and GetPlatformSloSliReferenceVariableSliReferenceVariableArrayOutput values.
+// You can construct a concrete instance of `GetPlatformSloSliReferenceVariableSliReferenceVariableArrayInput` via:
+//
+//	GetPlatformSloSliReferenceVariableSliReferenceVariableArray{ GetPlatformSloSliReferenceVariableSliReferenceVariableArgs{...} }
+type GetPlatformSloSliReferenceVariableSliReferenceVariableArrayInput interface {
+	pulumi.Input
+
+	ToGetPlatformSloSliReferenceVariableSliReferenceVariableArrayOutput() GetPlatformSloSliReferenceVariableSliReferenceVariableArrayOutput
+	ToGetPlatformSloSliReferenceVariableSliReferenceVariableArrayOutputWithContext(context.Context) GetPlatformSloSliReferenceVariableSliReferenceVariableArrayOutput
+}
+
+type GetPlatformSloSliReferenceVariableSliReferenceVariableArray []GetPlatformSloSliReferenceVariableSliReferenceVariableInput
+
+func (GetPlatformSloSliReferenceVariableSliReferenceVariableArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetPlatformSloSliReferenceVariableSliReferenceVariable)(nil)).Elem()
+}
+
+func (i GetPlatformSloSliReferenceVariableSliReferenceVariableArray) ToGetPlatformSloSliReferenceVariableSliReferenceVariableArrayOutput() GetPlatformSloSliReferenceVariableSliReferenceVariableArrayOutput {
+	return i.ToGetPlatformSloSliReferenceVariableSliReferenceVariableArrayOutputWithContext(context.Background())
+}
+
+func (i GetPlatformSloSliReferenceVariableSliReferenceVariableArray) ToGetPlatformSloSliReferenceVariableSliReferenceVariableArrayOutputWithContext(ctx context.Context) GetPlatformSloSliReferenceVariableSliReferenceVariableArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetPlatformSloSliReferenceVariableSliReferenceVariableArrayOutput)
+}
+
+type GetPlatformSloSliReferenceVariableSliReferenceVariableOutput struct{ *pulumi.OutputState }
+
+func (GetPlatformSloSliReferenceVariableSliReferenceVariableOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetPlatformSloSliReferenceVariableSliReferenceVariable)(nil)).Elem()
+}
+
+func (o GetPlatformSloSliReferenceVariableSliReferenceVariableOutput) ToGetPlatformSloSliReferenceVariableSliReferenceVariableOutput() GetPlatformSloSliReferenceVariableSliReferenceVariableOutput {
+	return o
+}
+
+func (o GetPlatformSloSliReferenceVariableSliReferenceVariableOutput) ToGetPlatformSloSliReferenceVariableSliReferenceVariableOutputWithContext(ctx context.Context) GetPlatformSloSliReferenceVariableSliReferenceVariableOutput {
+	return o
+}
+
+// Name of the SLI reference variable. Example: `hostIds`
+func (o GetPlatformSloSliReferenceVariableSliReferenceVariableOutput) Name() pulumi.StringOutput {
+	return o.ApplyT(func(v GetPlatformSloSliReferenceVariableSliReferenceVariable) string { return v.Name }).(pulumi.StringOutput)
+}
+
+// Value of the SLI reference variable. Example: `HOST-123456789ABCDEFG`
+func (o GetPlatformSloSliReferenceVariableSliReferenceVariableOutput) Value() pulumi.StringOutput {
+	return o.ApplyT(func(v GetPlatformSloSliReferenceVariableSliReferenceVariable) string { return v.Value }).(pulumi.StringOutput)
+}
+
+type GetPlatformSloSliReferenceVariableSliReferenceVariableArrayOutput struct{ *pulumi.OutputState }
+
+func (GetPlatformSloSliReferenceVariableSliReferenceVariableArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetPlatformSloSliReferenceVariableSliReferenceVariable)(nil)).Elem()
+}
+
+func (o GetPlatformSloSliReferenceVariableSliReferenceVariableArrayOutput) ToGetPlatformSloSliReferenceVariableSliReferenceVariableArrayOutput() GetPlatformSloSliReferenceVariableSliReferenceVariableArrayOutput {
+	return o
+}
+
+func (o GetPlatformSloSliReferenceVariableSliReferenceVariableArrayOutput) ToGetPlatformSloSliReferenceVariableSliReferenceVariableArrayOutputWithContext(ctx context.Context) GetPlatformSloSliReferenceVariableSliReferenceVariableArrayOutput {
+	return o
+}
+
+func (o GetPlatformSloSliReferenceVariableSliReferenceVariableArrayOutput) Index(i pulumi.IntInput) GetPlatformSloSliReferenceVariableSliReferenceVariableOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetPlatformSloSliReferenceVariableSliReferenceVariable {
+		return vs[0].([]GetPlatformSloSliReferenceVariableSliReferenceVariable)[vs[1].(int)]
+	}).(GetPlatformSloSliReferenceVariableSliReferenceVariableOutput)
+}
+
 type GetPlatformSloTemplatesTemplate struct {
 	// ID of the SLO objective template
 	Id string `pulumi:"id"`
@@ -45225,6 +47078,16 @@ func (o GetSyntheticNodesNodeArrayOutput) Index(i pulumi.IntInput) GetSyntheticN
 }
 
 func init() {
+	pulumi.RegisterInputType(reflect.TypeOf((*ServiceFullWebServiceIdContributorsWebServiceNameServiceIdContributorTransformationsTransformationInput)(nil)).Elem(), ServiceFullWebServiceIdContributorsWebServiceNameServiceIdContributorTransformationsTransformationArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*ServiceFullWebServiceIdContributorsWebServiceNameServiceIdContributorTransformationsTransformationArrayInput)(nil)).Elem(), ServiceFullWebServiceIdContributorsWebServiceNameServiceIdContributorTransformationsTransformationArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*ServiceFullWebServiceIdContributorsWebServiceNameServiceIdContributorValueOverrideInput)(nil)).Elem(), ServiceFullWebServiceIdContributorsWebServiceNameServiceIdContributorValueOverrideArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*ServiceFullWebServiceIdContributorsWebServiceNameServiceIdContributorValueOverridePtrInput)(nil)).Elem(), ServiceFullWebServiceIdContributorsWebServiceNameServiceIdContributorValueOverrideArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*ServiceFullWebServiceIdContributorsWebServiceNamespaceInput)(nil)).Elem(), ServiceFullWebServiceIdContributorsWebServiceNamespaceArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*ServiceFullWebServiceIdContributorsWebServiceNamespacePtrInput)(nil)).Elem(), ServiceFullWebServiceIdContributorsWebServiceNamespaceArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*ServiceFullWebServiceIdContributorsWebServiceNamespaceServiceIdContributorInput)(nil)).Elem(), ServiceFullWebServiceIdContributorsWebServiceNamespaceServiceIdContributorArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*ServiceFullWebServiceIdContributorsWebServiceNamespaceServiceIdContributorPtrInput)(nil)).Elem(), ServiceFullWebServiceIdContributorsWebServiceNamespaceServiceIdContributorArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*ServiceFullWebServiceIdContributorsWebServiceNamespaceServiceIdContributorTransformationsInput)(nil)).Elem(), ServiceFullWebServiceIdContributorsWebServiceNamespaceServiceIdContributorTransformationsArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*ServiceFullWebServiceIdContributorsWebServiceNamespaceServiceIdContributorTransformationsPtrInput)(nil)).Elem(), ServiceFullWebServiceIdContributorsWebServiceNamespaceServiceIdContributorTransformationsArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*ServiceFullWebServiceIdContributorsWebServiceNamespaceServiceIdContributorTransformationsTransformationInput)(nil)).Elem(), ServiceFullWebServiceIdContributorsWebServiceNamespaceServiceIdContributorTransformationsTransformationArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*ServiceFullWebServiceIdContributorsWebServiceNamespaceServiceIdContributorTransformationsTransformationArrayInput)(nil)).Elem(), ServiceFullWebServiceIdContributorsWebServiceNamespaceServiceIdContributorTransformationsTransformationArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*ServiceFullWebServiceIdContributorsWebServiceNamespaceServiceIdContributorValueOverrideInput)(nil)).Elem(), ServiceFullWebServiceIdContributorsWebServiceNamespaceServiceIdContributorValueOverrideArgs{})
@@ -45794,6 +47657,26 @@ func init() {
 	pulumi.RegisterInputType(reflect.TypeOf((*GetIamPoliciesPolicyArrayInput)(nil)).Elem(), GetIamPoliciesPolicyArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetManagementZonesValueInput)(nil)).Elem(), GetManagementZonesValueArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetManagementZonesValueArrayInput)(nil)).Elem(), GetManagementZonesValueArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetPlatformSloCriteriaInput)(nil)).Elem(), GetPlatformSloCriteriaArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetPlatformSloCriteriaArrayInput)(nil)).Elem(), GetPlatformSloCriteriaArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetPlatformSloCriteriaCriteriaDetailInput)(nil)).Elem(), GetPlatformSloCriteriaCriteriaDetailArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetPlatformSloCriteriaCriteriaDetailArrayInput)(nil)).Elem(), GetPlatformSloCriteriaCriteriaDetailArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetPlatformSloCustomSliInput)(nil)).Elem(), GetPlatformSloCustomSliArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetPlatformSloCustomSliArrayInput)(nil)).Elem(), GetPlatformSloCustomSliArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetPlatformSloCustomSliFilterSegmentInput)(nil)).Elem(), GetPlatformSloCustomSliFilterSegmentArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetPlatformSloCustomSliFilterSegmentArrayInput)(nil)).Elem(), GetPlatformSloCustomSliFilterSegmentArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetPlatformSloCustomSliFilterSegmentFilterSegmentInput)(nil)).Elem(), GetPlatformSloCustomSliFilterSegmentFilterSegmentArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetPlatformSloCustomSliFilterSegmentFilterSegmentArrayInput)(nil)).Elem(), GetPlatformSloCustomSliFilterSegmentFilterSegmentArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetPlatformSloCustomSliFilterSegmentFilterSegmentVariableInput)(nil)).Elem(), GetPlatformSloCustomSliFilterSegmentFilterSegmentVariableArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetPlatformSloCustomSliFilterSegmentFilterSegmentVariableArrayInput)(nil)).Elem(), GetPlatformSloCustomSliFilterSegmentFilterSegmentVariableArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetPlatformSloCustomSliFilterSegmentFilterSegmentVariableFilterSegmentVariableInput)(nil)).Elem(), GetPlatformSloCustomSliFilterSegmentFilterSegmentVariableFilterSegmentVariableArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetPlatformSloCustomSliFilterSegmentFilterSegmentVariableFilterSegmentVariableArrayInput)(nil)).Elem(), GetPlatformSloCustomSliFilterSegmentFilterSegmentVariableFilterSegmentVariableArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetPlatformSloSliReferenceInput)(nil)).Elem(), GetPlatformSloSliReferenceArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetPlatformSloSliReferenceArrayInput)(nil)).Elem(), GetPlatformSloSliReferenceArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetPlatformSloSliReferenceVariableInput)(nil)).Elem(), GetPlatformSloSliReferenceVariableArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetPlatformSloSliReferenceVariableArrayInput)(nil)).Elem(), GetPlatformSloSliReferenceVariableArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetPlatformSloSliReferenceVariableSliReferenceVariableInput)(nil)).Elem(), GetPlatformSloSliReferenceVariableSliReferenceVariableArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetPlatformSloSliReferenceVariableSliReferenceVariableArrayInput)(nil)).Elem(), GetPlatformSloSliReferenceVariableSliReferenceVariableArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetPlatformSloTemplatesTemplateInput)(nil)).Elem(), GetPlatformSloTemplatesTemplateArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetPlatformSloTemplatesTemplateArrayInput)(nil)).Elem(), GetPlatformSloTemplatesTemplateArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetRemoteEnvironmentsRemoteEnvironmentInput)(nil)).Elem(), GetRemoteEnvironmentsRemoteEnvironmentArgs{})
@@ -45802,6 +47685,16 @@ func init() {
 	pulumi.RegisterInputType(reflect.TypeOf((*GetSyntheticLocationsLocationsPtrInput)(nil)).Elem(), GetSyntheticLocationsLocationsArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetSyntheticNodesNodeInput)(nil)).Elem(), GetSyntheticNodesNodeArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetSyntheticNodesNodeArrayInput)(nil)).Elem(), GetSyntheticNodesNodeArray{})
+	pulumi.RegisterOutputType(ServiceFullWebServiceIdContributorsWebServiceNameServiceIdContributorTransformationsTransformationOutput{})
+	pulumi.RegisterOutputType(ServiceFullWebServiceIdContributorsWebServiceNameServiceIdContributorTransformationsTransformationArrayOutput{})
+	pulumi.RegisterOutputType(ServiceFullWebServiceIdContributorsWebServiceNameServiceIdContributorValueOverrideOutput{})
+	pulumi.RegisterOutputType(ServiceFullWebServiceIdContributorsWebServiceNameServiceIdContributorValueOverridePtrOutput{})
+	pulumi.RegisterOutputType(ServiceFullWebServiceIdContributorsWebServiceNamespaceOutput{})
+	pulumi.RegisterOutputType(ServiceFullWebServiceIdContributorsWebServiceNamespacePtrOutput{})
+	pulumi.RegisterOutputType(ServiceFullWebServiceIdContributorsWebServiceNamespaceServiceIdContributorOutput{})
+	pulumi.RegisterOutputType(ServiceFullWebServiceIdContributorsWebServiceNamespaceServiceIdContributorPtrOutput{})
+	pulumi.RegisterOutputType(ServiceFullWebServiceIdContributorsWebServiceNamespaceServiceIdContributorTransformationsOutput{})
+	pulumi.RegisterOutputType(ServiceFullWebServiceIdContributorsWebServiceNamespaceServiceIdContributorTransformationsPtrOutput{})
 	pulumi.RegisterOutputType(ServiceFullWebServiceIdContributorsWebServiceNamespaceServiceIdContributorTransformationsTransformationOutput{})
 	pulumi.RegisterOutputType(ServiceFullWebServiceIdContributorsWebServiceNamespaceServiceIdContributorTransformationsTransformationArrayOutput{})
 	pulumi.RegisterOutputType(ServiceFullWebServiceIdContributorsWebServiceNamespaceServiceIdContributorValueOverrideOutput{})
@@ -46371,6 +48264,26 @@ func init() {
 	pulumi.RegisterOutputType(GetIamPoliciesPolicyArrayOutput{})
 	pulumi.RegisterOutputType(GetManagementZonesValueOutput{})
 	pulumi.RegisterOutputType(GetManagementZonesValueArrayOutput{})
+	pulumi.RegisterOutputType(GetPlatformSloCriteriaOutput{})
+	pulumi.RegisterOutputType(GetPlatformSloCriteriaArrayOutput{})
+	pulumi.RegisterOutputType(GetPlatformSloCriteriaCriteriaDetailOutput{})
+	pulumi.RegisterOutputType(GetPlatformSloCriteriaCriteriaDetailArrayOutput{})
+	pulumi.RegisterOutputType(GetPlatformSloCustomSliOutput{})
+	pulumi.RegisterOutputType(GetPlatformSloCustomSliArrayOutput{})
+	pulumi.RegisterOutputType(GetPlatformSloCustomSliFilterSegmentOutput{})
+	pulumi.RegisterOutputType(GetPlatformSloCustomSliFilterSegmentArrayOutput{})
+	pulumi.RegisterOutputType(GetPlatformSloCustomSliFilterSegmentFilterSegmentOutput{})
+	pulumi.RegisterOutputType(GetPlatformSloCustomSliFilterSegmentFilterSegmentArrayOutput{})
+	pulumi.RegisterOutputType(GetPlatformSloCustomSliFilterSegmentFilterSegmentVariableOutput{})
+	pulumi.RegisterOutputType(GetPlatformSloCustomSliFilterSegmentFilterSegmentVariableArrayOutput{})
+	pulumi.RegisterOutputType(GetPlatformSloCustomSliFilterSegmentFilterSegmentVariableFilterSegmentVariableOutput{})
+	pulumi.RegisterOutputType(GetPlatformSloCustomSliFilterSegmentFilterSegmentVariableFilterSegmentVariableArrayOutput{})
+	pulumi.RegisterOutputType(GetPlatformSloSliReferenceOutput{})
+	pulumi.RegisterOutputType(GetPlatformSloSliReferenceArrayOutput{})
+	pulumi.RegisterOutputType(GetPlatformSloSliReferenceVariableOutput{})
+	pulumi.RegisterOutputType(GetPlatformSloSliReferenceVariableArrayOutput{})
+	pulumi.RegisterOutputType(GetPlatformSloSliReferenceVariableSliReferenceVariableOutput{})
+	pulumi.RegisterOutputType(GetPlatformSloSliReferenceVariableSliReferenceVariableArrayOutput{})
 	pulumi.RegisterOutputType(GetPlatformSloTemplatesTemplateOutput{})
 	pulumi.RegisterOutputType(GetPlatformSloTemplatesTemplateArrayOutput{})
 	pulumi.RegisterOutputType(GetRemoteEnvironmentsRemoteEnvironmentOutput{})
