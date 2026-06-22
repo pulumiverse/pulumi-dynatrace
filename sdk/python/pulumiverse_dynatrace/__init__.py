@@ -128,6 +128,8 @@ from .failure_detection_parameters import *
 from .failure_detection_rule_sets import *
 from .failure_detection_rules import *
 from .frequent_issues import *
+from .gcp_connection import *
+from .gcp_principal import *
 from .generic_relationships import *
 from .generic_setting import *
 from .generic_types import *
@@ -174,6 +176,7 @@ from .get_management_zone import *
 from .get_management_zone_v2 import *
 from .get_management_zones import *
 from .get_mobile_application import *
+from .get_platform_slo import *
 from .get_platform_slo_template import *
 from .get_platform_slo_templates import *
 from .get_process import *
@@ -263,6 +266,7 @@ from .log_timestamp import *
 from .mainframe_transaction_monitoring import *
 from .maintenance import *
 from .maintenance_window import *
+from .maintenance_windows import *
 from .managed_backup import *
 from .managed_internet_proxy import *
 from .managed_network_zones import *
@@ -1487,6 +1491,22 @@ _utilities.register(
  },
  {
   "pkg": "dynatrace",
+  "mod": "index/gcpConnection",
+  "fqn": "pulumiverse_dynatrace",
+  "classes": {
+   "dynatrace:index/gcpConnection:GcpConnection": "GcpConnection"
+  }
+ },
+ {
+  "pkg": "dynatrace",
+  "mod": "index/gcpPrincipal",
+  "fqn": "pulumiverse_dynatrace",
+  "classes": {
+   "dynatrace:index/gcpPrincipal:GcpPrincipal": "GcpPrincipal"
+  }
+ },
+ {
+  "pkg": "dynatrace",
   "mod": "index/genericRelationships",
   "fqn": "pulumiverse_dynatrace",
   "classes": {
@@ -2107,6 +2127,14 @@ _utilities.register(
   "fqn": "pulumiverse_dynatrace",
   "classes": {
    "dynatrace:index/maintenanceWindow:MaintenanceWindow": "MaintenanceWindow"
+  }
+ },
+ {
+  "pkg": "dynatrace",
+  "mod": "index/maintenanceWindows",
+  "fqn": "pulumiverse_dynatrace",
+  "classes": {
+   "dynatrace:index/maintenanceWindows:MaintenanceWindows": "MaintenanceWindows"
   }
  },
  {

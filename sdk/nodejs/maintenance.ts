@@ -7,6 +7,8 @@ import * as outputs from "./types/output";
 import * as utilities from "./utilities";
 
 /**
+ * > **Warning** This resource has been deprecated in favor of dynatrace_maintenance_windows.
+ *
  * > This resource requires the API token scopes **Read settings** (`settings.read`) and **Write settings** (`settings.write`)
  *
  * ## Dynatrace Documentation
