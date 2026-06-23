@@ -48,7 +48,7 @@ import (
 //			}
 //			_, err = dynatrace.NewConnectivityAlerts(ctx, "alert", &dynatrace.ConnectivityAlertsArgs{
 //				ConnectivityAlerts: pulumi.Bool(false),
-//				ProcessGroupId:     pulumi.String(pulumi.String(processGroup.Id)),
+//				ProcessGroupId:     pulumi.String(processGroup.Id),
 //			})
 //			if err != nil {
 //				return err

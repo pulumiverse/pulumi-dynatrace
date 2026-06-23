@@ -38,7 +38,7 @@ import (
 //				return err
 //			}
 //			_, err = dynatrace.NewAutotagRules(ctx, "Example", &dynatrace.AutotagRulesArgs{
-//				AutoTagId: pulumi.String(pulumi.String(example.Id)),
+//				AutoTagId: pulumi.String(example.Id),
 //				Rules: &dynatrace.AutotagRulesRulesArgs{
 //					Rules: dynatrace.AutotagRulesRulesRuleArray{
 //						&dynatrace.AutotagRulesRulesRuleArgs{

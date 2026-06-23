@@ -51,7 +51,7 @@ import (
 //				return err
 //			}
 //			_, err = dynatrace.NewHostMonitoringMode(ctx, "mode", &dynatrace.HostMonitoringModeArgs{
-//				HostId:         pulumi.String(pulumi.String(hosts.Entities[0].EntityId)),
+//				HostId:         pulumi.String(hosts.Entities[0].EntityId),
 //				MonitoringMode: pulumi.String("FULL_STACK"),
 //			})
 //			if err != nil {

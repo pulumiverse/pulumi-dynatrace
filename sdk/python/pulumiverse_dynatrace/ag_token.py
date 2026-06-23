@@ -30,7 +30,7 @@ class AgTokenArgs:
         :param pulumi.Input[_builtins.str] expiration_date: The expiration date of the token.
                
                    You can use one of the following formats:
-               
+                   
                    * Timestamp in UTC milliseconds.
                    * Human-readable format of 2021-01-25T05:57:01.123+01:00. If no time zone is specified, UTC is used. You can use a space character instead of the T. Seconds and fractions of a second are optional.
                    * Relative timeframe, back from now. The format is now-NU/A, where N is the amount of time, U is the unit of time, and A is an alignment. The alignment rounds all the smaller values to the nearest zero in the past. For example, now-1y/w is one year back, aligned by a week. You can also specify relative timeframe without an alignment: now-NU. Supported time units for the relative timeframe are:
@@ -70,7 +70,7 @@ class AgTokenArgs:
         The expiration date of the token.
 
             You can use one of the following formats:
-
+            
             * Timestamp in UTC milliseconds.
             * Human-readable format of 2021-01-25T05:57:01.123+01:00. If no time zone is specified, UTC is used. You can use a space character instead of the T. Seconds and fractions of a second are optional.
             * Relative timeframe, back from now. The format is now-NU/A, where N is the amount of time, U is the unit of time, and A is an alignment. The alignment rounds all the smaller values to the nearest zero in the past. For example, now-1y/w is one year back, aligned by a week. You can also specify relative timeframe without an alignment: now-NU. Supported time units for the relative timeframe are:
@@ -127,7 +127,7 @@ class _AgTokenState:
         :param pulumi.Input[_builtins.str] expiration_date: The expiration date of the token.
                
                    You can use one of the following formats:
-               
+                   
                    * Timestamp in UTC milliseconds.
                    * Human-readable format of 2021-01-25T05:57:01.123+01:00. If no time zone is specified, UTC is used. You can use a space character instead of the T. Seconds and fractions of a second are optional.
                    * Relative timeframe, back from now. The format is now-NU/A, where N is the amount of time, U is the unit of time, and A is an alignment. The alignment rounds all the smaller values to the nearest zero in the past. For example, now-1y/w is one year back, aligned by a week. You can also specify relative timeframe without an alignment: now-NU. Supported time units for the relative timeframe are:
@@ -163,7 +163,7 @@ class _AgTokenState:
         The expiration date of the token.
 
             You can use one of the following formats:
-
+            
             * Timestamp in UTC milliseconds.
             * Human-readable format of 2021-01-25T05:57:01.123+01:00. If no time zone is specified, UTC is used. You can use a space character instead of the T. Seconds and fractions of a second are optional.
             * Relative timeframe, back from now. The format is now-NU/A, where N is the amount of time, U is the unit of time, and A is an alignment. The alignment rounds all the smaller values to the nearest zero in the past. For example, now-1y/w is one year back, aligned by a week. You can also specify relative timeframe without an alignment: now-NU. Supported time units for the relative timeframe are:
@@ -271,7 +271,7 @@ class AgToken(pulumi.CustomResource):
         :param pulumi.Input[_builtins.str] expiration_date: The expiration date of the token.
                
                    You can use one of the following formats:
-               
+                   
                    * Timestamp in UTC milliseconds.
                    * Human-readable format of 2021-01-25T05:57:01.123+01:00. If no time zone is specified, UTC is used. You can use a space character instead of the T. Seconds and fractions of a second are optional.
                    * Relative timeframe, back from now. The format is now-NU/A, where N is the amount of time, U is the unit of time, and A is an alignment. The alignment rounds all the smaller values to the nearest zero in the past. For example, now-1y/w is one year back, aligned by a week. You can also specify relative timeframe without an alignment: now-NU. Supported time units for the relative timeframe are:
@@ -369,7 +369,7 @@ class AgToken(pulumi.CustomResource):
         :param pulumi.Input[_builtins.str] expiration_date: The expiration date of the token.
                
                    You can use one of the following formats:
-               
+                   
                    * Timestamp in UTC milliseconds.
                    * Human-readable format of 2021-01-25T05:57:01.123+01:00. If no time zone is specified, UTC is used. You can use a space character instead of the T. Seconds and fractions of a second are optional.
                    * Relative timeframe, back from now. The format is now-NU/A, where N is the amount of time, U is the unit of time, and A is an alignment. The alignment rounds all the smaller values to the nearest zero in the past. For example, now-1y/w is one year back, aligned by a week. You can also specify relative timeframe without an alignment: now-NU. Supported time units for the relative timeframe are:
@@ -404,7 +404,7 @@ class AgToken(pulumi.CustomResource):
         The expiration date of the token.
 
             You can use one of the following formats:
-
+            
             * Timestamp in UTC milliseconds.
             * Human-readable format of 2021-01-25T05:57:01.123+01:00. If no time zone is specified, UTC is used. You can use a space character instead of the T. Seconds and fractions of a second are optional.
             * Relative timeframe, back from now. The format is now-NU/A, where N is the amount of time, U is the unit of time, and A is an alignment. The alignment rounds all the smaller values to the nearest zero in the past. For example, now-1y/w is one year back, aligned by a week. You can also specify relative timeframe without an alignment: now-NU. Supported time units for the relative timeframe are:

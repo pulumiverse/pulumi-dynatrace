@@ -724,8 +724,8 @@ export class GoldenState extends pulumi.CustomResource {
     declare public readonly dynatraceXmattersNotifications: pulumi.Output<string[]>;
     /**
      * Possible values are:
-     * * `DELETE` if you want resources to automatally get deleted`n* `WARN` if you want to get notified about resources that aren't managed by Terraform via a warning message from this resource`
-     * Default is `WARN`.
+     * * `DELETE` if you want resources to automatally get deleted` n*  `WARN`  if you want to get notified about resources that aren't managed by Terraform via a warning message from this resource `
+     *   Default is `WARN`.
      */
     declare public readonly mode: pulumi.Output<string | undefined>;
 
@@ -1352,8 +1352,8 @@ export interface GoldenStateState {
     dynatraceXmattersNotifications?: pulumi.Input<pulumi.Input<string>[] | undefined>;
     /**
      * Possible values are:
-     * * `DELETE` if you want resources to automatally get deleted`n* `WARN` if you want to get notified about resources that aren't managed by Terraform via a warning message from this resource`
-     * Default is `WARN`.
+     * * `DELETE` if you want resources to automatally get deleted` n*  `WARN`  if you want to get notified about resources that aren't managed by Terraform via a warning message from this resource `
+     *   Default is `WARN`.
      */
     mode?: pulumi.Input<string | undefined>;
 }
@@ -1760,8 +1760,8 @@ export interface GoldenStateArgs {
     dynatraceXmattersNotifications?: pulumi.Input<pulumi.Input<string>[] | undefined>;
     /**
      * Possible values are:
-     * * `DELETE` if you want resources to automatally get deleted`n* `WARN` if you want to get notified about resources that aren't managed by Terraform via a warning message from this resource`
-     * Default is `WARN`.
+     * * `DELETE` if you want resources to automatally get deleted` n*  `WARN`  if you want to get notified about resources that aren't managed by Terraform via a warning message from this resource `
+     *   Default is `WARN`.
      */
     mode?: pulumi.Input<string | undefined>;
 }

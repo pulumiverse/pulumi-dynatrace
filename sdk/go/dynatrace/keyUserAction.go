@@ -50,7 +50,7 @@ import (
 //				return err
 //			}
 //			_, err = dynatrace.NewKeyUserAction(ctx, "acc", &dynatrace.KeyUserActionArgs{
-//				ApplicationId: pulumi.String(pulumi.String(webApplication.Id)),
+//				ApplicationId: pulumi.String(webApplication.Id),
 //				Domain:        pulumi.String("120.0.0.1"),
 //				Name:          pulumi.String("Loading of page /custom"),
 //				Type:          pulumi.String("Load"),

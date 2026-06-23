@@ -49,7 +49,7 @@ import (
 //				return err
 //			}
 //			_, err = dynatrace.NewMobileAppRequestErrors(ctx, "request_errors", &dynatrace.MobileAppRequestErrorsArgs{
-//				Scope: pulumi.String(pulumi.String(application.Id)),
+//				Scope: pulumi.String(application.Id),
 //				ErrorRules: &dynatrace.MobileAppRequestErrorsErrorRulesArgs{
 //					ErrorRules: dynatrace.MobileAppRequestErrorsErrorRulesErrorRuleArray{
 //						&dynatrace.MobileAppRequestErrorsErrorRulesErrorRuleArgs{

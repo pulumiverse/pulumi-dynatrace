@@ -50,7 +50,7 @@ import (
 //				Enabled:                  pulumi.Bool(true),
 //				AlertingMode:             pulumi.String("ON_INSTANCE_COUNT_VIOLATION"),
 //				MinimumInstanceThreshold: pulumi.Int(5),
-//				ProcessGroup:             pulumi.String(pulumi.String(processGroup.Id)),
+//				ProcessGroup:             pulumi.String(processGroup.Id),
 //			})
 //			if err != nil {
 //				return err

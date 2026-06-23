@@ -69,7 +69,7 @@ import (
 //				Name:      pulumi.String("#name#"),
 //				Frequency: pulumi.Int(1),
 //				Locations: pulumi.StringArray{
-//					pulumi.String(pulumi.String(location.Id)),
+//					pulumi.String(location.Id),
 //				},
 //				NoScript: pulumi.Bool(true),
 //			})

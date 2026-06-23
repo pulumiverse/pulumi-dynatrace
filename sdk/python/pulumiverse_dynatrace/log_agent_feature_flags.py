@@ -27,15 +27,15 @@ class LogAgentFeatureFlagsArgs:
         """
         The set of arguments for constructing a LogAgentFeatureFlags resource.
 
-        :param pulumi.Input[_builtins.bool] new_container_log_detector: Enable OneAgent to collect all container logs in Kubernetes environments. 
+        :param pulumi.Input[_builtins.bool] new_container_log_detector: Enable OneAgent to collect all container logs in Kubernetes environments.
                 This setting enables:
                 * Detection and collection of logs from short-lived containers and processes in Kubernetes.
                 * Detection and collection of logs from any processes in containers in Kubernetes. Up until now only processes detected by OneAgent are covered with the Log module.
                 * Log events decoration according to semantic dictionary.
                  **Note:** The matcher "Deployment name" in the log sources configuration will be ignored and needs to be replaced with "Workload name", requires **Dynatrace Operator 1.4.2+**.
-               
+                  
                   For more details, check our [documentation](https://dt-url.net/jn02ey0).
-        :param pulumi.Input[_builtins.bool] journald_log_detector: Enable OneAgent to collect logs from Journald on Linux systems. 
+        :param pulumi.Input[_builtins.bool] journald_log_detector: Enable OneAgent to collect logs from Journald on Linux systems.
                 This setting enables:
                 * Detection and to have logs ingested matching ingest rule is required.
         :param pulumi.Input[_builtins.bool] plain_iisconfiguration_detector: Enable OneAgent to assign logs to the appropriate IIS application pools when an unambiguous IIS configuration is detected.
@@ -56,13 +56,13 @@ class LogAgentFeatureFlagsArgs:
     @pulumi.getter(name="newContainerLogDetector")
     def new_container_log_detector(self) -> pulumi.Input[_builtins.bool]:
         """
-        Enable OneAgent to collect all container logs in Kubernetes environments. 
+        Enable OneAgent to collect all container logs in Kubernetes environments.
          This setting enables:
          * Detection and collection of logs from short-lived containers and processes in Kubernetes.
          * Detection and collection of logs from any processes in containers in Kubernetes. Up until now only processes detected by OneAgent are covered with the Log module.
          * Log events decoration according to semantic dictionary.
           **Note:** The matcher "Deployment name" in the log sources configuration will be ignored and needs to be replaced with "Workload name", requires **Dynatrace Operator 1.4.2+**.
-
+           
            For more details, check our [documentation](https://dt-url.net/jn02ey0).
         """
         return pulumi.get(self, "new_container_log_detector")
@@ -75,7 +75,7 @@ class LogAgentFeatureFlagsArgs:
     @pulumi.getter(name="journaldLogDetector")
     def journald_log_detector(self) -> pulumi.Input[Optional[_builtins.bool]]:
         """
-        Enable OneAgent to collect logs from Journald on Linux systems. 
+        Enable OneAgent to collect logs from Journald on Linux systems.
          This setting enables:
          * Detection and to have logs ingested matching ingest rule is required.
         """
@@ -133,16 +133,16 @@ class _LogAgentFeatureFlagsState:
         """
         Input properties used for looking up and filtering LogAgentFeatureFlags resources.
 
-        :param pulumi.Input[_builtins.bool] journald_log_detector: Enable OneAgent to collect logs from Journald on Linux systems. 
+        :param pulumi.Input[_builtins.bool] journald_log_detector: Enable OneAgent to collect logs from Journald on Linux systems.
                 This setting enables:
                 * Detection and to have logs ingested matching ingest rule is required.
-        :param pulumi.Input[_builtins.bool] new_container_log_detector: Enable OneAgent to collect all container logs in Kubernetes environments. 
+        :param pulumi.Input[_builtins.bool] new_container_log_detector: Enable OneAgent to collect all container logs in Kubernetes environments.
                 This setting enables:
                 * Detection and collection of logs from short-lived containers and processes in Kubernetes.
                 * Detection and collection of logs from any processes in containers in Kubernetes. Up until now only processes detected by OneAgent are covered with the Log module.
                 * Log events decoration according to semantic dictionary.
                  **Note:** The matcher "Deployment name" in the log sources configuration will be ignored and needs to be replaced with "Workload name", requires **Dynatrace Operator 1.4.2+**.
-               
+                  
                   For more details, check our [documentation](https://dt-url.net/jn02ey0).
         :param pulumi.Input[_builtins.bool] plain_iisconfiguration_detector: Enable OneAgent to assign logs to the appropriate IIS application pools when an unambiguous IIS configuration is detected.
         :param pulumi.Input[_builtins.str] scope: The scope of this setting (HOST, KUBERNETES_CLUSTER, HOST_GROUP). Omit this property if you want to cover the whole environment.
@@ -163,7 +163,7 @@ class _LogAgentFeatureFlagsState:
     @pulumi.getter(name="journaldLogDetector")
     def journald_log_detector(self) -> pulumi.Input[Optional[_builtins.bool]]:
         """
-        Enable OneAgent to collect logs from Journald on Linux systems. 
+        Enable OneAgent to collect logs from Journald on Linux systems.
          This setting enables:
          * Detection and to have logs ingested matching ingest rule is required.
         """
@@ -177,13 +177,13 @@ class _LogAgentFeatureFlagsState:
     @pulumi.getter(name="newContainerLogDetector")
     def new_container_log_detector(self) -> pulumi.Input[Optional[_builtins.bool]]:
         """
-        Enable OneAgent to collect all container logs in Kubernetes environments. 
+        Enable OneAgent to collect all container logs in Kubernetes environments.
          This setting enables:
          * Detection and collection of logs from short-lived containers and processes in Kubernetes.
          * Detection and collection of logs from any processes in containers in Kubernetes. Up until now only processes detected by OneAgent are covered with the Log module.
          * Log events decoration according to semantic dictionary.
           **Note:** The matcher "Deployment name" in the log sources configuration will be ignored and needs to be replaced with "Workload name", requires **Dynatrace Operator 1.4.2+**.
-
+           
            For more details, check our [documentation](https://dt-url.net/jn02ey0).
         """
         return pulumi.get(self, "new_container_log_detector")
@@ -273,16 +273,16 @@ class LogAgentFeatureFlags(pulumi.CustomResource):
 
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
-        :param pulumi.Input[_builtins.bool] journald_log_detector: Enable OneAgent to collect logs from Journald on Linux systems. 
+        :param pulumi.Input[_builtins.bool] journald_log_detector: Enable OneAgent to collect logs from Journald on Linux systems.
                 This setting enables:
                 * Detection and to have logs ingested matching ingest rule is required.
-        :param pulumi.Input[_builtins.bool] new_container_log_detector: Enable OneAgent to collect all container logs in Kubernetes environments. 
+        :param pulumi.Input[_builtins.bool] new_container_log_detector: Enable OneAgent to collect all container logs in Kubernetes environments.
                 This setting enables:
                 * Detection and collection of logs from short-lived containers and processes in Kubernetes.
                 * Detection and collection of logs from any processes in containers in Kubernetes. Up until now only processes detected by OneAgent are covered with the Log module.
                 * Log events decoration according to semantic dictionary.
                  **Note:** The matcher "Deployment name" in the log sources configuration will be ignored and needs to be replaced with "Workload name", requires **Dynatrace Operator 1.4.2+**.
-               
+                  
                   For more details, check our [documentation](https://dt-url.net/jn02ey0).
         :param pulumi.Input[_builtins.bool] plain_iisconfiguration_detector: Enable OneAgent to assign logs to the appropriate IIS application pools when an unambiguous IIS configuration is detected.
         :param pulumi.Input[_builtins.str] scope: The scope of this setting (HOST, KUBERNETES_CLUSTER, HOST_GROUP). Omit this property if you want to cover the whole environment.
@@ -382,16 +382,16 @@ class LogAgentFeatureFlags(pulumi.CustomResource):
         :param str resource_name: The unique name of the resulting resource.
         :param pulumi.Input[str] id: The unique provider ID of the resource to lookup.
         :param pulumi.ResourceOptions opts: Options for the resource.
-        :param pulumi.Input[_builtins.bool] journald_log_detector: Enable OneAgent to collect logs from Journald on Linux systems. 
+        :param pulumi.Input[_builtins.bool] journald_log_detector: Enable OneAgent to collect logs from Journald on Linux systems.
                 This setting enables:
                 * Detection and to have logs ingested matching ingest rule is required.
-        :param pulumi.Input[_builtins.bool] new_container_log_detector: Enable OneAgent to collect all container logs in Kubernetes environments. 
+        :param pulumi.Input[_builtins.bool] new_container_log_detector: Enable OneAgent to collect all container logs in Kubernetes environments.
                 This setting enables:
                 * Detection and collection of logs from short-lived containers and processes in Kubernetes.
                 * Detection and collection of logs from any processes in containers in Kubernetes. Up until now only processes detected by OneAgent are covered with the Log module.
                 * Log events decoration according to semantic dictionary.
                  **Note:** The matcher "Deployment name" in the log sources configuration will be ignored and needs to be replaced with "Workload name", requires **Dynatrace Operator 1.4.2+**.
-               
+                  
                   For more details, check our [documentation](https://dt-url.net/jn02ey0).
         :param pulumi.Input[_builtins.bool] plain_iisconfiguration_detector: Enable OneAgent to assign logs to the appropriate IIS application pools when an unambiguous IIS configuration is detected.
         :param pulumi.Input[_builtins.str] scope: The scope of this setting (HOST, KUBERNETES_CLUSTER, HOST_GROUP). Omit this property if you want to cover the whole environment.
@@ -412,7 +412,7 @@ class LogAgentFeatureFlags(pulumi.CustomResource):
     @pulumi.getter(name="journaldLogDetector")
     def journald_log_detector(self) -> pulumi.Output[Optional[_builtins.bool]]:
         """
-        Enable OneAgent to collect logs from Journald on Linux systems. 
+        Enable OneAgent to collect logs from Journald on Linux systems.
          This setting enables:
          * Detection and to have logs ingested matching ingest rule is required.
         """
@@ -422,13 +422,13 @@ class LogAgentFeatureFlags(pulumi.CustomResource):
     @pulumi.getter(name="newContainerLogDetector")
     def new_container_log_detector(self) -> pulumi.Output[_builtins.bool]:
         """
-        Enable OneAgent to collect all container logs in Kubernetes environments. 
+        Enable OneAgent to collect all container logs in Kubernetes environments.
          This setting enables:
          * Detection and collection of logs from short-lived containers and processes in Kubernetes.
          * Detection and collection of logs from any processes in containers in Kubernetes. Up until now only processes detected by OneAgent are covered with the Log module.
          * Log events decoration according to semantic dictionary.
           **Note:** The matcher "Deployment name" in the log sources configuration will be ignored and needs to be replaced with "Workload name", requires **Dynatrace Operator 1.4.2+**.
-
+           
            For more details, check our [documentation](https://dt-url.net/jn02ey0).
         """
         return pulumi.get(self, "new_container_log_detector")

@@ -39,18 +39,18 @@ class ServiceNowNotificationArgs:
         :param pulumi.Input[_builtins.str] message: The content of the ServiceNow description. Type '{' for placeholder suggestions.. #### Available placeholders
                **{ImpactedEntity}**: A short description of the problem and impacted entity (or multiple impacted entities).
         :param pulumi.Input[_builtins.str] profile: The ID of the associated alerting profile
-        :param pulumi.Input[_builtins.str] username: The username of the ServiceNow account. 
+        :param pulumi.Input[_builtins.str] username: The username of the ServiceNow account.
                
                 Make sure that your user account has the `web_service_admin` and `x_dynat_ruxit.Integration` roles.
         :param pulumi.Input[_builtins.bool] events: Send events into ServiceNow ITOM.
         :param pulumi.Input[_builtins.bool] format_problem_details_as_text: Use text format for problem details instead of HTML.
-        :param pulumi.Input[_builtins.str] instance: The ServiceNow instance identifier. It refers to the first part of your own ServiceNow URL. 
+        :param pulumi.Input[_builtins.str] instance: The ServiceNow instance identifier. It refers to the first part of your own ServiceNow URL.
                
                 This field is mutually exclusive with the **url** field. You can only use one of them.
         :param pulumi.Input[_builtins.str] legacy_id: The ID of these settings when referred to from resources requiring the REST API V1 keys
         :param pulumi.Input[_builtins.str] name: The name of the notification configuration
         :param pulumi.Input[_builtins.str] password: The password to the ServiceNow account.
-        :param pulumi.Input[_builtins.str] url: The URL of the on-premise ServiceNow installation. 
+        :param pulumi.Input[_builtins.str] url: The URL of the on-premise ServiceNow installation.
                
                 This field is mutually exclusive with the **instanceName** field. You can only use one of them.
         """
@@ -127,7 +127,7 @@ class ServiceNowNotificationArgs:
     @pulumi.getter
     def username(self) -> pulumi.Input[_builtins.str]:
         """
-        The username of the ServiceNow account. 
+        The username of the ServiceNow account.
 
          Make sure that your user account has the `web_service_admin` and `x_dynat_ruxit.Integration` roles.
         """
@@ -165,7 +165,7 @@ class ServiceNowNotificationArgs:
     @pulumi.getter
     def instance(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
-        The ServiceNow instance identifier. It refers to the first part of your own ServiceNow URL. 
+        The ServiceNow instance identifier. It refers to the first part of your own ServiceNow URL.
 
          This field is mutually exclusive with the **url** field. You can only use one of them.
         """
@@ -215,7 +215,7 @@ class ServiceNowNotificationArgs:
     @pulumi.getter
     def url(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
-        The URL of the on-premise ServiceNow installation. 
+        The URL of the on-premise ServiceNow installation.
 
          This field is mutually exclusive with the **instanceName** field. You can only use one of them.
         """
@@ -248,7 +248,7 @@ class _ServiceNowNotificationState:
         :param pulumi.Input[_builtins.bool] events: Send events into ServiceNow ITOM.
         :param pulumi.Input[_builtins.bool] format_problem_details_as_text: Use text format for problem details instead of HTML.
         :param pulumi.Input[_builtins.bool] incidents: Send incidents into ServiceNow ITSM.
-        :param pulumi.Input[_builtins.str] instance: The ServiceNow instance identifier. It refers to the first part of your own ServiceNow URL. 
+        :param pulumi.Input[_builtins.str] instance: The ServiceNow instance identifier. It refers to the first part of your own ServiceNow URL.
                
                 This field is mutually exclusive with the **url** field. You can only use one of them.
         :param pulumi.Input[_builtins.str] legacy_id: The ID of these settings when referred to from resources requiring the REST API V1 keys
@@ -257,10 +257,10 @@ class _ServiceNowNotificationState:
         :param pulumi.Input[_builtins.str] name: The name of the notification configuration
         :param pulumi.Input[_builtins.str] password: The password to the ServiceNow account.
         :param pulumi.Input[_builtins.str] profile: The ID of the associated alerting profile
-        :param pulumi.Input[_builtins.str] url: The URL of the on-premise ServiceNow installation. 
+        :param pulumi.Input[_builtins.str] url: The URL of the on-premise ServiceNow installation.
                
                 This field is mutually exclusive with the **instanceName** field. You can only use one of them.
-        :param pulumi.Input[_builtins.str] username: The username of the ServiceNow account. 
+        :param pulumi.Input[_builtins.str] username: The username of the ServiceNow account.
                
                 Make sure that your user account has the `web_service_admin` and `x_dynat_ruxit.Integration` roles.
         """
@@ -341,7 +341,7 @@ class _ServiceNowNotificationState:
     @pulumi.getter
     def instance(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
-        The ServiceNow instance identifier. It refers to the first part of your own ServiceNow URL. 
+        The ServiceNow instance identifier. It refers to the first part of your own ServiceNow URL.
 
          This field is mutually exclusive with the **url** field. You can only use one of them.
         """
@@ -416,7 +416,7 @@ class _ServiceNowNotificationState:
     @pulumi.getter
     def url(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
-        The URL of the on-premise ServiceNow installation. 
+        The URL of the on-premise ServiceNow installation.
 
          This field is mutually exclusive with the **instanceName** field. You can only use one of them.
         """
@@ -430,7 +430,7 @@ class _ServiceNowNotificationState:
     @pulumi.getter
     def username(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
-        The username of the ServiceNow account. 
+        The username of the ServiceNow account.
 
          Make sure that your user account has the `web_service_admin` and `x_dynat_ruxit.Integration` roles.
         """
@@ -482,7 +482,7 @@ class ServiceNowNotification(pulumi.CustomResource):
         :param pulumi.Input[_builtins.bool] events: Send events into ServiceNow ITOM.
         :param pulumi.Input[_builtins.bool] format_problem_details_as_text: Use text format for problem details instead of HTML.
         :param pulumi.Input[_builtins.bool] incidents: Send incidents into ServiceNow ITSM.
-        :param pulumi.Input[_builtins.str] instance: The ServiceNow instance identifier. It refers to the first part of your own ServiceNow URL. 
+        :param pulumi.Input[_builtins.str] instance: The ServiceNow instance identifier. It refers to the first part of your own ServiceNow URL.
                
                 This field is mutually exclusive with the **url** field. You can only use one of them.
         :param pulumi.Input[_builtins.str] legacy_id: The ID of these settings when referred to from resources requiring the REST API V1 keys
@@ -491,10 +491,10 @@ class ServiceNowNotification(pulumi.CustomResource):
         :param pulumi.Input[_builtins.str] name: The name of the notification configuration
         :param pulumi.Input[_builtins.str] password: The password to the ServiceNow account.
         :param pulumi.Input[_builtins.str] profile: The ID of the associated alerting profile
-        :param pulumi.Input[_builtins.str] url: The URL of the on-premise ServiceNow installation. 
+        :param pulumi.Input[_builtins.str] url: The URL of the on-premise ServiceNow installation.
                
                 This field is mutually exclusive with the **instanceName** field. You can only use one of them.
-        :param pulumi.Input[_builtins.str] username: The username of the ServiceNow account. 
+        :param pulumi.Input[_builtins.str] username: The username of the ServiceNow account.
                
                 Make sure that your user account has the `web_service_admin` and `x_dynat_ruxit.Integration` roles.
         """
@@ -613,7 +613,7 @@ class ServiceNowNotification(pulumi.CustomResource):
         :param pulumi.Input[_builtins.bool] events: Send events into ServiceNow ITOM.
         :param pulumi.Input[_builtins.bool] format_problem_details_as_text: Use text format for problem details instead of HTML.
         :param pulumi.Input[_builtins.bool] incidents: Send incidents into ServiceNow ITSM.
-        :param pulumi.Input[_builtins.str] instance: The ServiceNow instance identifier. It refers to the first part of your own ServiceNow URL. 
+        :param pulumi.Input[_builtins.str] instance: The ServiceNow instance identifier. It refers to the first part of your own ServiceNow URL.
                
                 This field is mutually exclusive with the **url** field. You can only use one of them.
         :param pulumi.Input[_builtins.str] legacy_id: The ID of these settings when referred to from resources requiring the REST API V1 keys
@@ -622,10 +622,10 @@ class ServiceNowNotification(pulumi.CustomResource):
         :param pulumi.Input[_builtins.str] name: The name of the notification configuration
         :param pulumi.Input[_builtins.str] password: The password to the ServiceNow account.
         :param pulumi.Input[_builtins.str] profile: The ID of the associated alerting profile
-        :param pulumi.Input[_builtins.str] url: The URL of the on-premise ServiceNow installation. 
+        :param pulumi.Input[_builtins.str] url: The URL of the on-premise ServiceNow installation.
                
                 This field is mutually exclusive with the **instanceName** field. You can only use one of them.
-        :param pulumi.Input[_builtins.str] username: The username of the ServiceNow account. 
+        :param pulumi.Input[_builtins.str] username: The username of the ServiceNow account.
                
                 Make sure that your user account has the `web_service_admin` and `x_dynat_ruxit.Integration` roles.
         """
@@ -683,7 +683,7 @@ class ServiceNowNotification(pulumi.CustomResource):
     @pulumi.getter
     def instance(self) -> pulumi.Output[Optional[_builtins.str]]:
         """
-        The ServiceNow instance identifier. It refers to the first part of your own ServiceNow URL. 
+        The ServiceNow instance identifier. It refers to the first part of your own ServiceNow URL.
 
          This field is mutually exclusive with the **url** field. You can only use one of them.
         """
@@ -734,7 +734,7 @@ class ServiceNowNotification(pulumi.CustomResource):
     @pulumi.getter
     def url(self) -> pulumi.Output[Optional[_builtins.str]]:
         """
-        The URL of the on-premise ServiceNow installation. 
+        The URL of the on-premise ServiceNow installation.
 
          This field is mutually exclusive with the **instanceName** field. You can only use one of them.
         """
@@ -744,7 +744,7 @@ class ServiceNowNotification(pulumi.CustomResource):
     @pulumi.getter
     def username(self) -> pulumi.Output[_builtins.str]:
         """
-        The username of the ServiceNow account. 
+        The username of the ServiceNow account.
 
          Make sure that your user account has the `web_service_admin` and `x_dynat_ruxit.Integration` roles.
         """

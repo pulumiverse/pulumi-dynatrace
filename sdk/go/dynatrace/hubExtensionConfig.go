@@ -126,7 +126,7 @@ import (
 //			_, err = dynatrace.NewHubExtensionConfig(ctx, "com_dynatrace_extension_jmx-weblogic-cp", &dynatrace.HubExtensionConfigArgs{
 //				Name:  pulumi.String("com.dynatrace.extension.jmx-weblogic-cp"),
 //				Scope: pulumi.String("environment"),
-//				Value: pulumi.String(pulumi.String(json0)),
+//				Value: pulumi.String(json0),
 //			})
 //			if err != nil {
 //				return err

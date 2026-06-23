@@ -64,7 +64,7 @@ export class ServiceNowNotification extends pulumi.CustomResource {
      */
     declare public readonly incidents: pulumi.Output<boolean>;
     /**
-     * The ServiceNow instance identifier. It refers to the first part of your own ServiceNow URL. 
+     * The ServiceNow instance identifier. It refers to the first part of your own ServiceNow URL.
      *
      *  This field is mutually exclusive with the **url** field. You can only use one of them.
      */
@@ -91,13 +91,13 @@ export class ServiceNowNotification extends pulumi.CustomResource {
      */
     declare public readonly profile: pulumi.Output<string>;
     /**
-     * The URL of the on-premise ServiceNow installation. 
+     * The URL of the on-premise ServiceNow installation.
      *
      *  This field is mutually exclusive with the **instanceName** field. You can only use one of them.
      */
     declare public readonly url: pulumi.Output<string | undefined>;
     /**
-     * The username of the ServiceNow account. 
+     * The username of the ServiceNow account.
      *
      *  Make sure that your user account has the `webServiceAdmin` and `x_dynat_ruxit.Integration` roles.
      */
@@ -186,7 +186,7 @@ export interface ServiceNowNotificationState {
      */
     incidents?: pulumi.Input<boolean | undefined>;
     /**
-     * The ServiceNow instance identifier. It refers to the first part of your own ServiceNow URL. 
+     * The ServiceNow instance identifier. It refers to the first part of your own ServiceNow URL.
      *
      *  This field is mutually exclusive with the **url** field. You can only use one of them.
      */
@@ -213,13 +213,13 @@ export interface ServiceNowNotificationState {
      */
     profile?: pulumi.Input<string | undefined>;
     /**
-     * The URL of the on-premise ServiceNow installation. 
+     * The URL of the on-premise ServiceNow installation.
      *
      *  This field is mutually exclusive with the **instanceName** field. You can only use one of them.
      */
     url?: pulumi.Input<string | undefined>;
     /**
-     * The username of the ServiceNow account. 
+     * The username of the ServiceNow account.
      *
      *  Make sure that your user account has the `webServiceAdmin` and `x_dynat_ruxit.Integration` roles.
      */
@@ -247,7 +247,7 @@ export interface ServiceNowNotificationArgs {
      */
     incidents: pulumi.Input<boolean>;
     /**
-     * The ServiceNow instance identifier. It refers to the first part of your own ServiceNow URL. 
+     * The ServiceNow instance identifier. It refers to the first part of your own ServiceNow URL.
      *
      *  This field is mutually exclusive with the **url** field. You can only use one of them.
      */
@@ -274,13 +274,13 @@ export interface ServiceNowNotificationArgs {
      */
     profile: pulumi.Input<string>;
     /**
-     * The URL of the on-premise ServiceNow installation. 
+     * The URL of the on-premise ServiceNow installation.
      *
      *  This field is mutually exclusive with the **instanceName** field. You can only use one of them.
      */
     url?: pulumi.Input<string | undefined>;
     /**
-     * The username of the ServiceNow account. 
+     * The username of the ServiceNow account.
      *
      *  Make sure that your user account has the `webServiceAdmin` and `x_dynat_ruxit.Integration` roles.
      */

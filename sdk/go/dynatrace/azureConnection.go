@@ -91,7 +91,7 @@ import (
 //				ClientSecret: &dynatrace.AzureConnectionClientSecretArgs{
 //					ClientSecret:  exampleApplicationPassword.Value,
 //					ApplicationId: example.ClientId,
-//					DirectoryId:   pulumi.String(pulumi.String(azureTenantId)),
+//					DirectoryId:   pulumi.String(azureTenantId),
 //					Consumers: pulumi.StringArray{
 //						pulumi.String("DA"),
 //					},
@@ -157,7 +157,7 @@ import (
 //				Audiences: pulumi.StringArray{
 //					pulumi.Sprintf("%v/app-id/dynatrace.microsoft.azure.connector", dynatraceEnvironmentUrl),
 //				},
-//				Issuer: pulumi.String(pulumi.String(dynatraceTokenIssuer)),
+//				Issuer: pulumi.String(dynatraceTokenIssuer),
 //				Subject: exampleAzureConnection.ID().ApplyT(func(id string) (string, error) {
 //					return fmt.Sprintf("dt:connection-id/%v", id), nil
 //				}).(pulumi.StringOutput),
@@ -169,7 +169,7 @@ import (
 //			_, err = dynatrace.NewAzureConnectionAuthentication(ctx, "example", &dynatrace.AzureConnectionAuthenticationArgs{
 //				AzureConnectionId: exampleAzureConnection.ID(),
 //				ApplicationId:     example.ClientId,
-//				DirectoryId:       pulumi.String(pulumi.String(azureTenantId)),
+//				DirectoryId:       pulumi.String(azureTenantId),
 //			})
 //			if err != nil {
 //				return err

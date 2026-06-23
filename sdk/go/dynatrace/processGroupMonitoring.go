@@ -48,7 +48,7 @@ import (
 //			}
 //			_, err = dynatrace.NewProcessGroupMonitoring(ctx, "monitoring", &dynatrace.ProcessGroupMonitoringArgs{
 //				MonitoringState: pulumi.String("MONITORING_ON"),
-//				ProcessGroupId:  pulumi.String(pulumi.String(processGroup.Id)),
+//				ProcessGroupId:  pulumi.String(processGroup.Id),
 //			})
 //			if err != nil {
 //				return err

@@ -48,15 +48,15 @@ class SyntheticLocationArgs:
         :param pulumi.Input[_builtins.bool] availability_node_outage: The alerting of node outage is enabled (`true`) or disabled (`false`).
         :param pulumi.Input[_builtins.bool] availability_notifications_enabled: The notifications of location and node outage is enabled (`true`) or disabled (`false`)
         :param pulumi.Input[_builtins.str] city: The city of the location
-        :param pulumi.Input[_builtins.str] country_code: The country code of the location. 
+        :param pulumi.Input[_builtins.str] country_code: The country code of the location.
                
                 To fetch the list of available country codes, use the [GET all countries](https://dt-url.net/37030go) request
-        :param pulumi.Input[_builtins.str] deployment_type: The deployment type of the location: 
+        :param pulumi.Input[_builtins.str] deployment_type: The deployment type of the location:
                
                * `STANDARD`: The location is deployed on Windows or Linux.
                * `KUBERNETES`: The location is deployed on Kubernetes
         :param pulumi.Input[_builtins.str] fips_mode: Containerized location property indicating whether FIPS mode is enabled on this location. Possible values: `DISABLED`, `ENABLED`, `ENABLED_WITH_CORPORATE_PROXY`
-        :param pulumi.Input[_builtins.int] location_node_outage_delay_in_minutes: Alert if the location or node outage lasts longer than *X* minutes. 
+        :param pulumi.Input[_builtins.int] location_node_outage_delay_in_minutes: Alert if the location or node outage lasts longer than *X* minutes.
                
                 Only applicable when **availability_location_outage** or **availability_node_outage** is set to `true`
         :param pulumi.Input[_builtins.int] max_active_gate_count: The maximum number of Active Gates required for that location. Not required when `deployment_type` is set to `STANDARD`
@@ -64,10 +64,10 @@ class SyntheticLocationArgs:
         :param pulumi.Input[_builtins.bool] nam_execution_supported: Boolean value describes if icmp monitors will be executed on this location
         :param pulumi.Input[_builtins.str] name: The name of the location
         :param pulumi.Input[_builtins.str] node_size: Possible values: `UNSUPPORTED`, `XS`, `S` and `M`. Not required when `deployment_type` is set to `STANDARD`.
-        :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] nodes: A list of synthetic nodes belonging to the location. 
+        :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] nodes: A list of synthetic nodes belonging to the location.
                
                 You can retrieve the list of available nodes with the [GET all nodes](https://dt-url.net/miy3rpl) call
-        :param pulumi.Input[_builtins.str] region_code: The region code of the location. 
+        :param pulumi.Input[_builtins.str] region_code: The region code of the location.
                
                 To fetch the list of available region codes, use the [GET regions of the country](https://dt-url.net/az230x0) request
         :param pulumi.Input[_builtins.bool] use_new_kubernetes_version: Boolean value describes which kubernetes version will be used
@@ -197,7 +197,7 @@ class SyntheticLocationArgs:
     @pulumi.getter(name="countryCode")
     def country_code(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
-        The country code of the location. 
+        The country code of the location.
 
          To fetch the list of available country codes, use the [GET all countries](https://dt-url.net/37030go) request
         """
@@ -211,7 +211,7 @@ class SyntheticLocationArgs:
     @pulumi.getter(name="deploymentType")
     def deployment_type(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
-        The deployment type of the location: 
+        The deployment type of the location:
 
         * `STANDARD`: The location is deployed on Windows or Linux.
         * `KUBERNETES`: The location is deployed on Kubernetes
@@ -238,7 +238,7 @@ class SyntheticLocationArgs:
     @pulumi.getter(name="locationNodeOutageDelayInMinutes")
     def location_node_outage_delay_in_minutes(self) -> pulumi.Input[Optional[_builtins.int]]:
         """
-        Alert if the location or node outage lasts longer than *X* minutes. 
+        Alert if the location or node outage lasts longer than *X* minutes.
 
          Only applicable when **availability_location_outage** or **availability_node_outage** is set to `true`
         """
@@ -312,7 +312,7 @@ class SyntheticLocationArgs:
     @pulumi.getter
     def nodes(self) -> pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]:
         """
-        A list of synthetic nodes belonging to the location. 
+        A list of synthetic nodes belonging to the location.
 
          You can retrieve the list of available nodes with the [GET all nodes](https://dt-url.net/miy3rpl) call
         """
@@ -326,7 +326,7 @@ class SyntheticLocationArgs:
     @pulumi.getter(name="regionCode")
     def region_code(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
-        The region code of the location. 
+        The region code of the location.
 
          To fetch the list of available region codes, use the [GET regions of the country](https://dt-url.net/az230x0) request
         """
@@ -379,16 +379,16 @@ class _SyntheticLocationState:
         :param pulumi.Input[_builtins.bool] availability_node_outage: The alerting of node outage is enabled (`true`) or disabled (`false`).
         :param pulumi.Input[_builtins.bool] availability_notifications_enabled: The notifications of location and node outage is enabled (`true`) or disabled (`false`)
         :param pulumi.Input[_builtins.str] city: The city of the location
-        :param pulumi.Input[_builtins.str] country_code: The country code of the location. 
+        :param pulumi.Input[_builtins.str] country_code: The country code of the location.
                
                 To fetch the list of available country codes, use the [GET all countries](https://dt-url.net/37030go) request
-        :param pulumi.Input[_builtins.str] deployment_type: The deployment type of the location: 
+        :param pulumi.Input[_builtins.str] deployment_type: The deployment type of the location:
                
                * `STANDARD`: The location is deployed on Windows or Linux.
                * `KUBERNETES`: The location is deployed on Kubernetes
         :param pulumi.Input[_builtins.str] fips_mode: Containerized location property indicating whether FIPS mode is enabled on this location. Possible values: `DISABLED`, `ENABLED`, `ENABLED_WITH_CORPORATE_PROXY`
         :param pulumi.Input[_builtins.float] latitude: The latitude of the location in `DDD.dddd` format
-        :param pulumi.Input[_builtins.int] location_node_outage_delay_in_minutes: Alert if the location or node outage lasts longer than *X* minutes. 
+        :param pulumi.Input[_builtins.int] location_node_outage_delay_in_minutes: Alert if the location or node outage lasts longer than *X* minutes.
                
                 Only applicable when **availability_location_outage** or **availability_node_outage** is set to `true`
         :param pulumi.Input[_builtins.float] longitude: The longitude of the location in `DDD.dddd` format
@@ -397,10 +397,10 @@ class _SyntheticLocationState:
         :param pulumi.Input[_builtins.bool] nam_execution_supported: Boolean value describes if icmp monitors will be executed on this location
         :param pulumi.Input[_builtins.str] name: The name of the location
         :param pulumi.Input[_builtins.str] node_size: Possible values: `UNSUPPORTED`, `XS`, `S` and `M`. Not required when `deployment_type` is set to `STANDARD`.
-        :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] nodes: A list of synthetic nodes belonging to the location. 
+        :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] nodes: A list of synthetic nodes belonging to the location.
                
                 You can retrieve the list of available nodes with the [GET all nodes](https://dt-url.net/miy3rpl) call
-        :param pulumi.Input[_builtins.str] region_code: The region code of the location. 
+        :param pulumi.Input[_builtins.str] region_code: The region code of the location.
                
                 To fetch the list of available region codes, use the [GET regions of the country](https://dt-url.net/az230x0) request
         :param pulumi.Input[_builtins.bool] use_new_kubernetes_version: Boolean value describes which kubernetes version will be used
@@ -508,7 +508,7 @@ class _SyntheticLocationState:
     @pulumi.getter(name="countryCode")
     def country_code(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
-        The country code of the location. 
+        The country code of the location.
 
          To fetch the list of available country codes, use the [GET all countries](https://dt-url.net/37030go) request
         """
@@ -522,7 +522,7 @@ class _SyntheticLocationState:
     @pulumi.getter(name="deploymentType")
     def deployment_type(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
-        The deployment type of the location: 
+        The deployment type of the location:
 
         * `STANDARD`: The location is deployed on Windows or Linux.
         * `KUBERNETES`: The location is deployed on Kubernetes
@@ -561,7 +561,7 @@ class _SyntheticLocationState:
     @pulumi.getter(name="locationNodeOutageDelayInMinutes")
     def location_node_outage_delay_in_minutes(self) -> pulumi.Input[Optional[_builtins.int]]:
         """
-        Alert if the location or node outage lasts longer than *X* minutes. 
+        Alert if the location or node outage lasts longer than *X* minutes.
 
          Only applicable when **availability_location_outage** or **availability_node_outage** is set to `true`
         """
@@ -647,7 +647,7 @@ class _SyntheticLocationState:
     @pulumi.getter
     def nodes(self) -> pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]:
         """
-        A list of synthetic nodes belonging to the location. 
+        A list of synthetic nodes belonging to the location.
 
          You can retrieve the list of available nodes with the [GET all nodes](https://dt-url.net/miy3rpl) call
         """
@@ -661,7 +661,7 @@ class _SyntheticLocationState:
     @pulumi.getter(name="regionCode")
     def region_code(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
-        The region code of the location. 
+        The region code of the location.
 
          To fetch the list of available region codes, use the [GET regions of the country](https://dt-url.net/az230x0) request
         """
@@ -733,16 +733,16 @@ class SyntheticLocation(pulumi.CustomResource):
         :param pulumi.Input[_builtins.bool] availability_node_outage: The alerting of node outage is enabled (`true`) or disabled (`false`).
         :param pulumi.Input[_builtins.bool] availability_notifications_enabled: The notifications of location and node outage is enabled (`true`) or disabled (`false`)
         :param pulumi.Input[_builtins.str] city: The city of the location
-        :param pulumi.Input[_builtins.str] country_code: The country code of the location. 
+        :param pulumi.Input[_builtins.str] country_code: The country code of the location.
                
                 To fetch the list of available country codes, use the [GET all countries](https://dt-url.net/37030go) request
-        :param pulumi.Input[_builtins.str] deployment_type: The deployment type of the location: 
+        :param pulumi.Input[_builtins.str] deployment_type: The deployment type of the location:
                
                * `STANDARD`: The location is deployed on Windows or Linux.
                * `KUBERNETES`: The location is deployed on Kubernetes
         :param pulumi.Input[_builtins.str] fips_mode: Containerized location property indicating whether FIPS mode is enabled on this location. Possible values: `DISABLED`, `ENABLED`, `ENABLED_WITH_CORPORATE_PROXY`
         :param pulumi.Input[_builtins.float] latitude: The latitude of the location in `DDD.dddd` format
-        :param pulumi.Input[_builtins.int] location_node_outage_delay_in_minutes: Alert if the location or node outage lasts longer than *X* minutes. 
+        :param pulumi.Input[_builtins.int] location_node_outage_delay_in_minutes: Alert if the location or node outage lasts longer than *X* minutes.
                
                 Only applicable when **availability_location_outage** or **availability_node_outage** is set to `true`
         :param pulumi.Input[_builtins.float] longitude: The longitude of the location in `DDD.dddd` format
@@ -751,10 +751,10 @@ class SyntheticLocation(pulumi.CustomResource):
         :param pulumi.Input[_builtins.bool] nam_execution_supported: Boolean value describes if icmp monitors will be executed on this location
         :param pulumi.Input[_builtins.str] name: The name of the location
         :param pulumi.Input[_builtins.str] node_size: Possible values: `UNSUPPORTED`, `XS`, `S` and `M`. Not required when `deployment_type` is set to `STANDARD`.
-        :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] nodes: A list of synthetic nodes belonging to the location. 
+        :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] nodes: A list of synthetic nodes belonging to the location.
                
                 You can retrieve the list of available nodes with the [GET all nodes](https://dt-url.net/miy3rpl) call
-        :param pulumi.Input[_builtins.str] region_code: The region code of the location. 
+        :param pulumi.Input[_builtins.str] region_code: The region code of the location.
                
                 To fetch the list of available region codes, use the [GET regions of the country](https://dt-url.net/az230x0) request
         :param pulumi.Input[_builtins.bool] use_new_kubernetes_version: Boolean value describes which kubernetes version will be used
@@ -888,16 +888,16 @@ class SyntheticLocation(pulumi.CustomResource):
         :param pulumi.Input[_builtins.bool] availability_node_outage: The alerting of node outage is enabled (`true`) or disabled (`false`).
         :param pulumi.Input[_builtins.bool] availability_notifications_enabled: The notifications of location and node outage is enabled (`true`) or disabled (`false`)
         :param pulumi.Input[_builtins.str] city: The city of the location
-        :param pulumi.Input[_builtins.str] country_code: The country code of the location. 
+        :param pulumi.Input[_builtins.str] country_code: The country code of the location.
                
                 To fetch the list of available country codes, use the [GET all countries](https://dt-url.net/37030go) request
-        :param pulumi.Input[_builtins.str] deployment_type: The deployment type of the location: 
+        :param pulumi.Input[_builtins.str] deployment_type: The deployment type of the location:
                
                * `STANDARD`: The location is deployed on Windows or Linux.
                * `KUBERNETES`: The location is deployed on Kubernetes
         :param pulumi.Input[_builtins.str] fips_mode: Containerized location property indicating whether FIPS mode is enabled on this location. Possible values: `DISABLED`, `ENABLED`, `ENABLED_WITH_CORPORATE_PROXY`
         :param pulumi.Input[_builtins.float] latitude: The latitude of the location in `DDD.dddd` format
-        :param pulumi.Input[_builtins.int] location_node_outage_delay_in_minutes: Alert if the location or node outage lasts longer than *X* minutes. 
+        :param pulumi.Input[_builtins.int] location_node_outage_delay_in_minutes: Alert if the location or node outage lasts longer than *X* minutes.
                
                 Only applicable when **availability_location_outage** or **availability_node_outage** is set to `true`
         :param pulumi.Input[_builtins.float] longitude: The longitude of the location in `DDD.dddd` format
@@ -906,10 +906,10 @@ class SyntheticLocation(pulumi.CustomResource):
         :param pulumi.Input[_builtins.bool] nam_execution_supported: Boolean value describes if icmp monitors will be executed on this location
         :param pulumi.Input[_builtins.str] name: The name of the location
         :param pulumi.Input[_builtins.str] node_size: Possible values: `UNSUPPORTED`, `XS`, `S` and `M`. Not required when `deployment_type` is set to `STANDARD`.
-        :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] nodes: A list of synthetic nodes belonging to the location. 
+        :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] nodes: A list of synthetic nodes belonging to the location.
                
                 You can retrieve the list of available nodes with the [GET all nodes](https://dt-url.net/miy3rpl) call
-        :param pulumi.Input[_builtins.str] region_code: The region code of the location. 
+        :param pulumi.Input[_builtins.str] region_code: The region code of the location.
                
                 To fetch the list of available region codes, use the [GET regions of the country](https://dt-url.net/az230x0) request
         :param pulumi.Input[_builtins.bool] use_new_kubernetes_version: Boolean value describes which kubernetes version will be used
@@ -983,7 +983,7 @@ class SyntheticLocation(pulumi.CustomResource):
     @pulumi.getter(name="countryCode")
     def country_code(self) -> pulumi.Output[Optional[_builtins.str]]:
         """
-        The country code of the location. 
+        The country code of the location.
 
          To fetch the list of available country codes, use the [GET all countries](https://dt-url.net/37030go) request
         """
@@ -993,7 +993,7 @@ class SyntheticLocation(pulumi.CustomResource):
     @pulumi.getter(name="deploymentType")
     def deployment_type(self) -> pulumi.Output[Optional[_builtins.str]]:
         """
-        The deployment type of the location: 
+        The deployment type of the location:
 
         * `STANDARD`: The location is deployed on Windows or Linux.
         * `KUBERNETES`: The location is deployed on Kubernetes
@@ -1020,7 +1020,7 @@ class SyntheticLocation(pulumi.CustomResource):
     @pulumi.getter(name="locationNodeOutageDelayInMinutes")
     def location_node_outage_delay_in_minutes(self) -> pulumi.Output[Optional[_builtins.int]]:
         """
-        Alert if the location or node outage lasts longer than *X* minutes. 
+        Alert if the location or node outage lasts longer than *X* minutes.
 
          Only applicable when **availability_location_outage** or **availability_node_outage** is set to `true`
         """
@@ -1078,7 +1078,7 @@ class SyntheticLocation(pulumi.CustomResource):
     @pulumi.getter
     def nodes(self) -> pulumi.Output[Optional[Sequence[_builtins.str]]]:
         """
-        A list of synthetic nodes belonging to the location. 
+        A list of synthetic nodes belonging to the location.
 
          You can retrieve the list of available nodes with the [GET all nodes](https://dt-url.net/miy3rpl) call
         """
@@ -1088,7 +1088,7 @@ class SyntheticLocation(pulumi.CustomResource):
     @pulumi.getter(name="regionCode")
     def region_code(self) -> pulumi.Output[Optional[_builtins.str]]:
         """
-        The region code of the location. 
+        The region code of the location.
 
          To fetch the list of available region codes, use the [GET regions of the country](https://dt-url.net/az230x0) request
         """

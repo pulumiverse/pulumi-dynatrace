@@ -99,7 +99,7 @@ import (
 //					Users: dynatrace.SettingsPermissionsUsersUserArray{
 //						&dynatrace.SettingsPermissionsUsersUserArgs{
 //							Uid: user.ApplyT(func(user dynatrace.GetIamUserResult) (*string, error) {
-//								return &user.Uid, nil
+//								return user.Uid, nil
 //							}).(pulumi.StringPtrOutput),
 //							Access: pulumi.String("write"),
 //						},

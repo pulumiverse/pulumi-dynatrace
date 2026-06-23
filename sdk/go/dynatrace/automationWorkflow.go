@@ -100,7 +100,7 @@ import (
 //							Description: pulumi.String("Issue an HTTP request to any API"),
 //							Action:      pulumi.String("dynatrace.automations:http-function"),
 //							Active:      pulumi.Bool(true),
-//							Input:       pulumi.String(pulumi.String(json0)),
+//							Input:       pulumi.String(json0),
 //							Position: &dynatrace.AutomationWorkflowTasksTaskPositionArgs{
 //								X: pulumi.Int(0),
 //								Y: pulumi.Int(1),
@@ -117,7 +117,7 @@ import (
 //							Action:      pulumi.String("dynatrace.automations:http-function"),
 //							Active:      pulumi.Bool(false),
 //							Timeout:     pulumi.String("50000"),
-//							Input:       pulumi.String(pulumi.String(json1)),
+//							Input:       pulumi.String(json1),
 //							Conditions: &dynatrace.AutomationWorkflowTasksTaskConditionsArgs{
 //								Custom: pulumi.String(""),
 //								States: pulumi.StringMap{
@@ -135,7 +135,7 @@ import (
 //							Description: pulumi.String("Issue an HTTP request to any API"),
 //							Action:      pulumi.String("dynatrace.automations:http-function"),
 //							Active:      pulumi.Bool(false),
-//							Input:       pulumi.String(pulumi.String(json2)),
+//							Input:       pulumi.String(json2),
 //							Conditions: &dynatrace.AutomationWorkflowTasksTaskConditionsArgs{
 //								Custom: pulumi.String("{{http_request_1}}"),
 //								States: pulumi.StringMap{
@@ -152,7 +152,7 @@ import (
 //							Description: pulumi.String("Build a custom task running js Code"),
 //							Action:      pulumi.String("dynatrace.automations:run-javascript"),
 //							Active:      pulumi.Bool(false),
-//							Input:       pulumi.String(pulumi.String(json3)),
+//							Input:       pulumi.String(json3),
 //							Position: &dynatrace.AutomationWorkflowTasksTaskPositionArgs{
 //								X: pulumi.Int(-2),
 //								Y: pulumi.Int(1),

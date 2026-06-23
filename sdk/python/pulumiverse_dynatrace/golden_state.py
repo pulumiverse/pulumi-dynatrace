@@ -222,8 +222,8 @@ class GoldenStateArgs:
         :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] dynatrace_webhook_notifications: The IDs for resource of type `WebhookNotification` this `GoldenState` should ignore (and therefore neither warn about their existence nor attempt to delete them). Specify `[]` if you expect no such resources to exist in Dynatrace. Omit this attribute if you don't care about these kinds of resources regarding the golden state of the environment.
         :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] dynatrace_xmatters_notifications: The IDs for resource of type `XmattersNotification` this `GoldenState` should ignore (and therefore neither warn about their existence nor attempt to delete them). Specify `[]` if you expect no such resources to exist in Dynatrace. Omit this attribute if you don't care about these kinds of resources regarding the golden state of the environment.
         :param pulumi.Input[_builtins.str] mode: Possible values are:
-               * `DELETE` if you want resources to automatally get deleted`n* `WARN` if you want to get notified about resources that aren't managed by Terraform via a warning message from this resource`
-               Default is `WARN`.
+               * `DELETE` if you want resources to automatally get deleted` n*  `WARN`  if you want to get notified about resources that aren't managed by Terraform via a warning message from this resource `
+                 Default is `WARN`.
         """
         if dynatrace_aix_extensions is not None:
             pulumi.set(__self__, "dynatrace_aix_extensions", dynatrace_aix_extensions)
@@ -1619,8 +1619,8 @@ class GoldenStateArgs:
     def mode(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Possible values are:
-        * `DELETE` if you want resources to automatally get deleted`n* `WARN` if you want to get notified about resources that aren't managed by Terraform via a warning message from this resource`
-        Default is `WARN`.
+        * `DELETE` if you want resources to automatally get deleted` n*  `WARN`  if you want to get notified about resources that aren't managed by Terraform via a warning message from this resource `
+          Default is `WARN`.
         """
         return pulumi.get(self, "mode")
 
@@ -1835,8 +1835,8 @@ class _GoldenStateState:
         :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] dynatrace_webhook_notifications: The IDs for resource of type `WebhookNotification` this `GoldenState` should ignore (and therefore neither warn about their existence nor attempt to delete them). Specify `[]` if you expect no such resources to exist in Dynatrace. Omit this attribute if you don't care about these kinds of resources regarding the golden state of the environment.
         :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] dynatrace_xmatters_notifications: The IDs for resource of type `XmattersNotification` this `GoldenState` should ignore (and therefore neither warn about their existence nor attempt to delete them). Specify `[]` if you expect no such resources to exist in Dynatrace. Omit this attribute if you don't care about these kinds of resources regarding the golden state of the environment.
         :param pulumi.Input[_builtins.str] mode: Possible values are:
-               * `DELETE` if you want resources to automatally get deleted`n* `WARN` if you want to get notified about resources that aren't managed by Terraform via a warning message from this resource`
-               Default is `WARN`.
+               * `DELETE` if you want resources to automatally get deleted` n*  `WARN`  if you want to get notified about resources that aren't managed by Terraform via a warning message from this resource `
+                 Default is `WARN`.
         """
         if dynatrace_aix_extensions is not None:
             pulumi.set(__self__, "dynatrace_aix_extensions", dynatrace_aix_extensions)
@@ -3232,8 +3232,8 @@ class _GoldenStateState:
     def mode(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Possible values are:
-        * `DELETE` if you want resources to automatally get deleted`n* `WARN` if you want to get notified about resources that aren't managed by Terraform via a warning message from this resource`
-        Default is `WARN`.
+        * `DELETE` if you want resources to automatally get deleted` n*  `WARN`  if you want to get notified about resources that aren't managed by Terraform via a warning message from this resource `
+          Default is `WARN`.
         """
         return pulumi.get(self, "mode")
 
@@ -3741,8 +3741,8 @@ class GoldenState(pulumi.CustomResource):
         :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] dynatrace_webhook_notifications: The IDs for resource of type `WebhookNotification` this `GoldenState` should ignore (and therefore neither warn about their existence nor attempt to delete them). Specify `[]` if you expect no such resources to exist in Dynatrace. Omit this attribute if you don't care about these kinds of resources regarding the golden state of the environment.
         :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] dynatrace_xmatters_notifications: The IDs for resource of type `XmattersNotification` this `GoldenState` should ignore (and therefore neither warn about their existence nor attempt to delete them). Specify `[]` if you expect no such resources to exist in Dynatrace. Omit this attribute if you don't care about these kinds of resources regarding the golden state of the environment.
         :param pulumi.Input[_builtins.str] mode: Possible values are:
-               * `DELETE` if you want resources to automatally get deleted`n* `WARN` if you want to get notified about resources that aren't managed by Terraform via a warning message from this resource`
-               Default is `WARN`.
+               * `DELETE` if you want resources to automatally get deleted` n*  `WARN`  if you want to get notified about resources that aren't managed by Terraform via a warning message from this resource `
+                 Default is `WARN`.
         """
         ...
     @overload
@@ -4481,8 +4481,8 @@ class GoldenState(pulumi.CustomResource):
         :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] dynatrace_webhook_notifications: The IDs for resource of type `WebhookNotification` this `GoldenState` should ignore (and therefore neither warn about their existence nor attempt to delete them). Specify `[]` if you expect no such resources to exist in Dynatrace. Omit this attribute if you don't care about these kinds of resources regarding the golden state of the environment.
         :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] dynatrace_xmatters_notifications: The IDs for resource of type `XmattersNotification` this `GoldenState` should ignore (and therefore neither warn about their existence nor attempt to delete them). Specify `[]` if you expect no such resources to exist in Dynatrace. Omit this attribute if you don't care about these kinds of resources regarding the golden state of the environment.
         :param pulumi.Input[_builtins.str] mode: Possible values are:
-               * `DELETE` if you want resources to automatally get deleted`n* `WARN` if you want to get notified about resources that aren't managed by Terraform via a warning message from this resource`
-               Default is `WARN`.
+               * `DELETE` if you want resources to automatally get deleted` n*  `WARN`  if you want to get notified about resources that aren't managed by Terraform via a warning message from this resource `
+                 Default is `WARN`.
         """
         opts = pulumi.ResourceOptions.merge(opts, pulumi.ResourceOptions(id=id))
 
@@ -5387,8 +5387,8 @@ class GoldenState(pulumi.CustomResource):
     def mode(self) -> pulumi.Output[Optional[_builtins.str]]:
         """
         Possible values are:
-        * `DELETE` if you want resources to automatally get deleted`n* `WARN` if you want to get notified about resources that aren't managed by Terraform via a warning message from this resource`
-        Default is `WARN`.
+        * `DELETE` if you want resources to automatally get deleted` n*  `WARN`  if you want to get notified about resources that aren't managed by Terraform via a warning message from this resource `
+          Default is `WARN`.
         """
         return pulumi.get(self, "mode")
 

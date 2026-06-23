@@ -71,7 +71,7 @@ export class LogProcessing extends pulumi.CustomResource {
     declare public readonly ruleName: pulumi.Output<string>;
     /**
      * ## Rule testing
-     *  ### 1. Paste a log / JSON sample
+     * ### 1. Paste a log / JSON sample
      */
     declare public readonly ruleTesting: pulumi.Output<outputs.LogProcessingRuleTesting>;
 
@@ -149,7 +149,7 @@ export interface LogProcessingState {
     ruleName?: pulumi.Input<string | undefined>;
     /**
      * ## Rule testing
-     *  ### 1. Paste a log / JSON sample
+     * ### 1. Paste a log / JSON sample
      */
     ruleTesting?: pulumi.Input<inputs.LogProcessingRuleTesting | undefined>;
 }
@@ -180,7 +180,7 @@ export interface LogProcessingArgs {
     ruleName: pulumi.Input<string>;
     /**
      * ## Rule testing
-     *  ### 1. Paste a log / JSON sample
+     * ### 1. Paste a log / JSON sample
      */
     ruleTesting: pulumi.Input<inputs.LogProcessingRuleTesting>;
 }

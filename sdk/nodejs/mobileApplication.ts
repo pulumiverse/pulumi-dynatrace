@@ -167,7 +167,7 @@ export class MobileApplication extends pulumi.CustomResource {
      */
     declare public readonly sessionReplay: pulumi.Output<boolean | undefined>;
     /**
-     * The session replay on crash is enabled (`true`) or disabled (`false`). 
+     * The session replay on crash is enabled (`true`) or disabled (`false`).
      *
      * Enabling requires both **sessionReplayEnabled** and **optInModeEnabled** values set to `true`.
      */
@@ -281,7 +281,7 @@ export interface MobileApplicationState {
      */
     sessionReplay?: pulumi.Input<boolean | undefined>;
     /**
-     * The session replay on crash is enabled (`true`) or disabled (`false`). 
+     * The session replay on crash is enabled (`true`) or disabled (`false`).
      *
      * Enabling requires both **sessionReplayEnabled** and **optInModeEnabled** values set to `true`.
      */
@@ -343,7 +343,7 @@ export interface MobileApplicationArgs {
      */
     sessionReplay?: pulumi.Input<boolean | undefined>;
     /**
-     * The session replay on crash is enabled (`true`) or disabled (`false`). 
+     * The session replay on crash is enabled (`true`) or disabled (`false`).
      *
      * Enabling requires both **sessionReplayEnabled** and **optInModeEnabled** values set to `true`.
      */

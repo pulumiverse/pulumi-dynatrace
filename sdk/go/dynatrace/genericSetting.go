@@ -85,7 +85,7 @@ import (
 //			_, err = dynatrace.NewGenericSetting(ctx, "ABC", &dynatrace.GenericSettingArgs{
 //				Schema: pulumi.String("app:dynatrace.site.reliability.guardian:guardians"),
 //				Scope:  pulumi.String("environment"),
-//				Value:  pulumi.String(pulumi.String(json0)),
+//				Value:  pulumi.String(json0),
 //			})
 //			if err != nil {
 //				return err
