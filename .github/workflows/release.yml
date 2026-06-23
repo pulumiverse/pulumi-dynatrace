@@ -260,6 +260,7 @@ jobs:
     - if: ${{ matrix.language == 'nodejs' && env.PUBLISH_NPM == 'true' }}
       name: Publish NPM package
       run: npm publish --access public
+      working-directory: ${{github.workspace}}/sdk/nodejs
     - if: ${{ matrix.language == 'dotnet' && env.PUBLISH_NUGET == 'true' }}
       name: Login to Nuget
       uses: NuGet/login@v1
