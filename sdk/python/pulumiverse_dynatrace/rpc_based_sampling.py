@@ -39,7 +39,7 @@ class RpcBasedSamplingArgs:
         :param pulumi.Input[_builtins.bool] ignore: No Traces will be captured for matching RPC requests. This applies always, even if Adaptive Traffic Management is inactive.
         :param pulumi.Input[_builtins.str] remote_operation_name_comparison_type: Possible Values: `CONTAINS`, `DOES_NOT_CONTAIN`, `DOES_NOT_END_WITH`, `DOES_NOT_EQUAL`, `DOES_NOT_START_WITH`, `ENDS_WITH`, `EQUALS`, `STARTS_WITH`
         :param pulumi.Input[_builtins.str] remote_service_name_comparison_type: Possible Values: `CONTAINS`, `DOES_NOT_CONTAIN`, `DOES_NOT_END_WITH`, `DOES_NOT_EQUAL`, `DOES_NOT_START_WITH`, `ENDS_WITH`, `EQUALS`, `STARTS_WITH`
-        :param pulumi.Input[_builtins.str] wire_protocol_type: Possible Values: `1`, `2`, `3`, `4`, `5`, `6`, `7`, `8`, `9`, `10` 
+        :param pulumi.Input[_builtins.str] wire_protocol_type: Possible Values: `1`, `2`, `3`, `4`, `5`, `6`, `7`, `8`, `9`, `10`
                
                  - `1`: ADK
                
@@ -61,7 +61,7 @@ class RpcBasedSamplingArgs:
                
                  - `10`: GRPC_CLIENTSTREAM
         :param pulumi.Input[_builtins.str] endpoint_name: Specify the RPC endpoint name. If the endpoint name is empty, either remote operation name or remote service name must be specified that can be used for RPC matching.
-        :param pulumi.Input[_builtins.str] factor: Possible Values: `0`, `1`, `2`, `3`, `4`, `5`, `6`, `8`, `9`, `10`, `11`, `12`, `13`, `14` 
+        :param pulumi.Input[_builtins.str] factor: Possible Values: `0`, `1`, `2`, `3`, `4`, `5`, `6`, `8`, `9`, `10`, `11`, `12`, `13`, `14`
                
                  - `0`: Increase capturing 128 times
                
@@ -178,7 +178,7 @@ class RpcBasedSamplingArgs:
     @pulumi.getter(name="wireProtocolType")
     def wire_protocol_type(self) -> pulumi.Input[_builtins.str]:
         """
-        Possible Values: `1`, `2`, `3`, `4`, `5`, `6`, `7`, `8`, `9`, `10` 
+        Possible Values: `1`, `2`, `3`, `4`, `5`, `6`, `7`, `8`, `9`, `10`
 
           - `1`: ADK
 
@@ -222,7 +222,7 @@ class RpcBasedSamplingArgs:
     @pulumi.getter
     def factor(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
-        Possible Values: `0`, `1`, `2`, `3`, `4`, `5`, `6`, `8`, `9`, `10`, `11`, `12`, `13`, `14` 
+        Possible Values: `0`, `1`, `2`, `3`, `4`, `5`, `6`, `8`, `9`, `10`, `11`, `12`, `13`, `14`
 
           - `0`: Increase capturing 128 times
 
@@ -328,7 +328,7 @@ class _RpcBasedSamplingState:
         :param pulumi.Input[_builtins.bool] enabled: This setting is enabled (`true`) or disabled (`false`)
         :param pulumi.Input[_builtins.str] endpoint_name: Specify the RPC endpoint name. If the endpoint name is empty, either remote operation name or remote service name must be specified that can be used for RPC matching.
         :param pulumi.Input[_builtins.str] endpoint_name_comparison_type: Possible Values: `CONTAINS`, `DOES_NOT_CONTAIN`, `DOES_NOT_END_WITH`, `DOES_NOT_EQUAL`, `DOES_NOT_START_WITH`, `ENDS_WITH`, `EQUALS`, `STARTS_WITH`
-        :param pulumi.Input[_builtins.str] factor: Possible Values: `0`, `1`, `2`, `3`, `4`, `5`, `6`, `8`, `9`, `10`, `11`, `12`, `13`, `14` 
+        :param pulumi.Input[_builtins.str] factor: Possible Values: `0`, `1`, `2`, `3`, `4`, `5`, `6`, `8`, `9`, `10`, `11`, `12`, `13`, `14`
                
                  - `0`: Increase capturing 128 times
                
@@ -364,7 +364,7 @@ class _RpcBasedSamplingState:
         :param pulumi.Input[_builtins.str] remote_service_name: Specify the RPC remote service name. If the remote service name is empty, either remote operation name or endpoint name must be specified that can be used for RPC matching.
         :param pulumi.Input[_builtins.str] remote_service_name_comparison_type: Possible Values: `CONTAINS`, `DOES_NOT_CONTAIN`, `DOES_NOT_END_WITH`, `DOES_NOT_EQUAL`, `DOES_NOT_START_WITH`, `ENDS_WITH`, `EQUALS`, `STARTS_WITH`
         :param pulumi.Input[_builtins.str] scope: The scope of this setting (PROCESS_GROUP_INSTANCE, PROCESS_GROUP, CLOUD_APPLICATION, CLOUD_APPLICATION_NAMESPACE, KUBERNETES_CLUSTER, HOST_GROUP). Omit this property if you want to cover the whole environment.
-        :param pulumi.Input[_builtins.str] wire_protocol_type: Possible Values: `1`, `2`, `3`, `4`, `5`, `6`, `7`, `8`, `9`, `10` 
+        :param pulumi.Input[_builtins.str] wire_protocol_type: Possible Values: `1`, `2`, `3`, `4`, `5`, `6`, `7`, `8`, `9`, `10`
                
                  - `1`: ADK
                
@@ -451,7 +451,7 @@ class _RpcBasedSamplingState:
     @pulumi.getter
     def factor(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
-        Possible Values: `0`, `1`, `2`, `3`, `4`, `5`, `6`, `8`, `9`, `10`, `11`, `12`, `13`, `14` 
+        Possible Values: `0`, `1`, `2`, `3`, `4`, `5`, `6`, `8`, `9`, `10`, `11`, `12`, `13`, `14`
 
           - `0`: Increase capturing 128 times
 
@@ -575,7 +575,7 @@ class _RpcBasedSamplingState:
     @pulumi.getter(name="wireProtocolType")
     def wire_protocol_type(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
-        Possible Values: `1`, `2`, `3`, `4`, `5`, `6`, `7`, `8`, `9`, `10` 
+        Possible Values: `1`, `2`, `3`, `4`, `5`, `6`, `7`, `8`, `9`, `10`
 
           - `1`: ADK
 
@@ -638,7 +638,7 @@ class RpcBasedSampling(pulumi.CustomResource):
         :param pulumi.Input[_builtins.bool] enabled: This setting is enabled (`true`) or disabled (`false`)
         :param pulumi.Input[_builtins.str] endpoint_name: Specify the RPC endpoint name. If the endpoint name is empty, either remote operation name or remote service name must be specified that can be used for RPC matching.
         :param pulumi.Input[_builtins.str] endpoint_name_comparison_type: Possible Values: `CONTAINS`, `DOES_NOT_CONTAIN`, `DOES_NOT_END_WITH`, `DOES_NOT_EQUAL`, `DOES_NOT_START_WITH`, `ENDS_WITH`, `EQUALS`, `STARTS_WITH`
-        :param pulumi.Input[_builtins.str] factor: Possible Values: `0`, `1`, `2`, `3`, `4`, `5`, `6`, `8`, `9`, `10`, `11`, `12`, `13`, `14` 
+        :param pulumi.Input[_builtins.str] factor: Possible Values: `0`, `1`, `2`, `3`, `4`, `5`, `6`, `8`, `9`, `10`, `11`, `12`, `13`, `14`
                
                  - `0`: Increase capturing 128 times
                
@@ -674,7 +674,7 @@ class RpcBasedSampling(pulumi.CustomResource):
         :param pulumi.Input[_builtins.str] remote_service_name: Specify the RPC remote service name. If the remote service name is empty, either remote operation name or endpoint name must be specified that can be used for RPC matching.
         :param pulumi.Input[_builtins.str] remote_service_name_comparison_type: Possible Values: `CONTAINS`, `DOES_NOT_CONTAIN`, `DOES_NOT_END_WITH`, `DOES_NOT_EQUAL`, `DOES_NOT_START_WITH`, `ENDS_WITH`, `EQUALS`, `STARTS_WITH`
         :param pulumi.Input[_builtins.str] scope: The scope of this setting (PROCESS_GROUP_INSTANCE, PROCESS_GROUP, CLOUD_APPLICATION, CLOUD_APPLICATION_NAMESPACE, KUBERNETES_CLUSTER, HOST_GROUP). Omit this property if you want to cover the whole environment.
-        :param pulumi.Input[_builtins.str] wire_protocol_type: Possible Values: `1`, `2`, `3`, `4`, `5`, `6`, `7`, `8`, `9`, `10` 
+        :param pulumi.Input[_builtins.str] wire_protocol_type: Possible Values: `1`, `2`, `3`, `4`, `5`, `6`, `7`, `8`, `9`, `10`
                
                  - `1`: ADK
                
@@ -804,7 +804,7 @@ class RpcBasedSampling(pulumi.CustomResource):
         :param pulumi.Input[_builtins.bool] enabled: This setting is enabled (`true`) or disabled (`false`)
         :param pulumi.Input[_builtins.str] endpoint_name: Specify the RPC endpoint name. If the endpoint name is empty, either remote operation name or remote service name must be specified that can be used for RPC matching.
         :param pulumi.Input[_builtins.str] endpoint_name_comparison_type: Possible Values: `CONTAINS`, `DOES_NOT_CONTAIN`, `DOES_NOT_END_WITH`, `DOES_NOT_EQUAL`, `DOES_NOT_START_WITH`, `ENDS_WITH`, `EQUALS`, `STARTS_WITH`
-        :param pulumi.Input[_builtins.str] factor: Possible Values: `0`, `1`, `2`, `3`, `4`, `5`, `6`, `8`, `9`, `10`, `11`, `12`, `13`, `14` 
+        :param pulumi.Input[_builtins.str] factor: Possible Values: `0`, `1`, `2`, `3`, `4`, `5`, `6`, `8`, `9`, `10`, `11`, `12`, `13`, `14`
                
                  - `0`: Increase capturing 128 times
                
@@ -840,7 +840,7 @@ class RpcBasedSampling(pulumi.CustomResource):
         :param pulumi.Input[_builtins.str] remote_service_name: Specify the RPC remote service name. If the remote service name is empty, either remote operation name or endpoint name must be specified that can be used for RPC matching.
         :param pulumi.Input[_builtins.str] remote_service_name_comparison_type: Possible Values: `CONTAINS`, `DOES_NOT_CONTAIN`, `DOES_NOT_END_WITH`, `DOES_NOT_EQUAL`, `DOES_NOT_START_WITH`, `ENDS_WITH`, `EQUALS`, `STARTS_WITH`
         :param pulumi.Input[_builtins.str] scope: The scope of this setting (PROCESS_GROUP_INSTANCE, PROCESS_GROUP, CLOUD_APPLICATION, CLOUD_APPLICATION_NAMESPACE, KUBERNETES_CLUSTER, HOST_GROUP). Omit this property if you want to cover the whole environment.
-        :param pulumi.Input[_builtins.str] wire_protocol_type: Possible Values: `1`, `2`, `3`, `4`, `5`, `6`, `7`, `8`, `9`, `10` 
+        :param pulumi.Input[_builtins.str] wire_protocol_type: Possible Values: `1`, `2`, `3`, `4`, `5`, `6`, `7`, `8`, `9`, `10`
                
                  - `1`: ADK
                
@@ -908,7 +908,7 @@ class RpcBasedSampling(pulumi.CustomResource):
     @pulumi.getter
     def factor(self) -> pulumi.Output[Optional[_builtins.str]]:
         """
-        Possible Values: `0`, `1`, `2`, `3`, `4`, `5`, `6`, `8`, `9`, `10`, `11`, `12`, `13`, `14` 
+        Possible Values: `0`, `1`, `2`, `3`, `4`, `5`, `6`, `8`, `9`, `10`, `11`, `12`, `13`, `14`
 
           - `0`: Increase capturing 128 times
 
@@ -1000,7 +1000,7 @@ class RpcBasedSampling(pulumi.CustomResource):
     @pulumi.getter(name="wireProtocolType")
     def wire_protocol_type(self) -> pulumi.Output[_builtins.str]:
         """
-        Possible Values: `1`, `2`, `3`, `4`, `5`, `6`, `7`, `8`, `9`, `10` 
+        Possible Values: `1`, `2`, `3`, `4`, `5`, `6`, `7`, `8`, `9`, `10`
 
           - `1`: ADK
 

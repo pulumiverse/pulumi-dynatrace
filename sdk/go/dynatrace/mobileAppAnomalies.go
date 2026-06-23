@@ -47,7 +47,7 @@ import (
 //				return err
 //			}
 //			_, err = dynatrace.NewMobileAppAnomalies(ctx, "anomalies", &dynatrace.MobileAppAnomaliesArgs{
-//				Scope: pulumi.String(pulumi.String(application.Id)),
+//				Scope: pulumi.String(application.Id),
 //				ErrorRateIncrease: &dynatrace.MobileAppAnomaliesErrorRateIncreaseArgs{
 //					Enabled:       pulumi.Bool(true),
 //					DetectionMode: pulumi.String("fixed"),

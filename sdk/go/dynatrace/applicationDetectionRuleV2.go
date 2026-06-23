@@ -49,7 +49,7 @@ import (
 //				return err
 //			}
 //			_, err = dynatrace.NewApplicationDetectionRuleV2(ctx, "detection_rule", &dynatrace.ApplicationDetectionRuleV2Args{
-//				ApplicationId: pulumi.String(pulumi.String(webApplication.Id)),
+//				ApplicationId: pulumi.String(webApplication.Id),
 //				Matcher:       pulumi.String("DOMAIN_MATCHES"),
 //				Pattern:       pulumi.String("TerraformTest"),
 //			})

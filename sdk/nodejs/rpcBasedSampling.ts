@@ -54,7 +54,7 @@ export class RpcBasedSampling extends pulumi.CustomResource {
      */
     declare public readonly endpointNameComparisonType: pulumi.Output<string>;
     /**
-     * Possible Values: `0`, `1`, `2`, `3`, `4`, `5`, `6`, `8`, `9`, `10`, `11`, `12`, `13`, `14` 
+     * Possible Values: `0`, `1`, `2`, `3`, `4`, `5`, `6`, `8`, `9`, `10`, `11`, `12`, `13`, `14`
      *
      *   - `0`: Increase capturing 128 times
      *
@@ -114,7 +114,7 @@ export class RpcBasedSampling extends pulumi.CustomResource {
      */
     declare public readonly scope: pulumi.Output<string | undefined>;
     /**
-     * Possible Values: `1`, `2`, `3`, `4`, `5`, `6`, `7`, `8`, `9`, `10` 
+     * Possible Values: `1`, `2`, `3`, `4`, `5`, `6`, `7`, `8`, `9`, `10`
      *
      *   - `1`: ADK
      *
@@ -218,7 +218,7 @@ export interface RpcBasedSamplingState {
      */
     endpointNameComparisonType?: pulumi.Input<string | undefined>;
     /**
-     * Possible Values: `0`, `1`, `2`, `3`, `4`, `5`, `6`, `8`, `9`, `10`, `11`, `12`, `13`, `14` 
+     * Possible Values: `0`, `1`, `2`, `3`, `4`, `5`, `6`, `8`, `9`, `10`, `11`, `12`, `13`, `14`
      *
      *   - `0`: Increase capturing 128 times
      *
@@ -278,7 +278,7 @@ export interface RpcBasedSamplingState {
      */
     scope?: pulumi.Input<string | undefined>;
     /**
-     * Possible Values: `1`, `2`, `3`, `4`, `5`, `6`, `7`, `8`, `9`, `10` 
+     * Possible Values: `1`, `2`, `3`, `4`, `5`, `6`, `7`, `8`, `9`, `10`
      *
      *   - `1`: ADK
      *
@@ -320,7 +320,7 @@ export interface RpcBasedSamplingArgs {
      */
     endpointNameComparisonType: pulumi.Input<string>;
     /**
-     * Possible Values: `0`, `1`, `2`, `3`, `4`, `5`, `6`, `8`, `9`, `10`, `11`, `12`, `13`, `14` 
+     * Possible Values: `0`, `1`, `2`, `3`, `4`, `5`, `6`, `8`, `9`, `10`, `11`, `12`, `13`, `14`
      *
      *   - `0`: Increase capturing 128 times
      *
@@ -380,7 +380,7 @@ export interface RpcBasedSamplingArgs {
      */
     scope?: pulumi.Input<string | undefined>;
     /**
-     * Possible Values: `1`, `2`, `3`, `4`, `5`, `6`, `7`, `8`, `9`, `10` 
+     * Possible Values: `1`, `2`, `3`, `4`, `5`, `6`, `7`, `8`, `9`, `10`
      *
      *   - `1`: ADK
      *

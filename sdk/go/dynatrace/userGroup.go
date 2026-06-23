@@ -74,7 +74,7 @@ import (
 //			}
 //			terraformCluster, err := dynatrace.NewPolicy(ctx, "terraform_cluster", &dynatrace.PolicyArgs{
 //				Name:           pulumi.String("terraform_cluster"),
-//				Cluster:        pulumi.String(pulumi.String(cluster)),
+//				Cluster:        pulumi.String(cluster),
 //				StatementQuery: pulumi.String("ALLOW settings:objects:read, settings:schemas:read WHERE settings:schemaId = \"terraform-cluster\";"),
 //			})
 //			if err != nil {
@@ -82,14 +82,14 @@ import (
 //			}
 //			terraformEnv, err := dynatrace.NewPolicy(ctx, "terraform_env", &dynatrace.PolicyArgs{
 //				Name:           pulumi.String("terraform_env"),
-//				Environment:    pulumi.String(pulumi.String(environment)),
+//				Environment:    pulumi.String(environment),
 //				StatementQuery: pulumi.String("ALLOW environment:roles:viewer;"),
 //			})
 //			if err != nil {
 //				return err
 //			}
 //			_, err = dynatrace.NewPolicyBindings(ctx, "terraform_cluster_binding", &dynatrace.PolicyBindingsArgs{
-//				Cluster: pulumi.String(pulumi.String(cluster)),
+//				Cluster: pulumi.String(cluster),
 //				Group:   terraform.ID(),
 //				Policies: pulumi.StringArray{
 //					terraformCluster.ID(),
@@ -99,7 +99,7 @@ import (
 //				return err
 //			}
 //			_, err = dynatrace.NewPolicyBindings(ctx, "terraform_env_binding", &dynatrace.PolicyBindingsArgs{
-//				Environment: pulumi.String(pulumi.String(environment)),
+//				Environment: pulumi.String(environment),
 //				Group:       terraform.ID(),
 //				Policies: pulumi.StringArray{
 //					terraformEnv.ID(),

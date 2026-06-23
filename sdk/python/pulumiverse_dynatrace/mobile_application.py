@@ -50,7 +50,7 @@ class MobileApplicationArgs:
         :param pulumi.Input[_builtins.bool] opt_in_mode: The opt-in mode is enabled (`true`) or disabled (`false`)
         :param pulumi.Input['MobileApplicationPropertiesArgs'] properties: User Action and Session Properties
         :param pulumi.Input[_builtins.bool] session_replay: (Field has overlap with `MobileAppEnablement`) The session replay is enabled (`true`) or disabled (`false`).
-        :param pulumi.Input[_builtins.bool] session_replay_on_crash: The session replay on crash is enabled (`true`) or disabled (`false`). 
+        :param pulumi.Input[_builtins.bool] session_replay_on_crash: The session replay on crash is enabled (`true`) or disabled (`false`).
                
                Enabling requires both **sessionReplayEnabled** and **optInModeEnabled** values set to `true`.
         :param pulumi.Input[_builtins.int] user_session_percentage: (Field has overlap with `MobileAppEnablement` for mobile and `CustomAppEnablement` for custom apps) The percentage of user sessions to be analyzed
@@ -218,7 +218,7 @@ class MobileApplicationArgs:
     @pulumi.getter(name="sessionReplayOnCrash")
     def session_replay_on_crash(self) -> pulumi.Input[Optional[_builtins.bool]]:
         """
-        The session replay on crash is enabled (`true`) or disabled (`false`). 
+        The session replay on crash is enabled (`true`) or disabled (`false`).
 
         Enabling requires both **sessionReplayEnabled** and **optInModeEnabled** values set to `true`.
         """
@@ -273,7 +273,7 @@ class _MobileApplicationState:
         :param pulumi.Input[_builtins.bool] opt_in_mode: The opt-in mode is enabled (`true`) or disabled (`false`)
         :param pulumi.Input['MobileApplicationPropertiesArgs'] properties: User Action and Session Properties
         :param pulumi.Input[_builtins.bool] session_replay: (Field has overlap with `MobileAppEnablement`) The session replay is enabled (`true`) or disabled (`false`).
-        :param pulumi.Input[_builtins.bool] session_replay_on_crash: The session replay on crash is enabled (`true`) or disabled (`false`). 
+        :param pulumi.Input[_builtins.bool] session_replay_on_crash: The session replay on crash is enabled (`true`) or disabled (`false`).
                
                Enabling requires both **sessionReplayEnabled** and **optInModeEnabled** values set to `true`.
         :param pulumi.Input[_builtins.int] user_session_percentage: (Field has overlap with `MobileAppEnablement` for mobile and `CustomAppEnablement` for custom apps) The percentage of user sessions to be analyzed
@@ -443,7 +443,7 @@ class _MobileApplicationState:
     @pulumi.getter(name="sessionReplayOnCrash")
     def session_replay_on_crash(self) -> pulumi.Input[Optional[_builtins.bool]]:
         """
-        The session replay on crash is enabled (`true`) or disabled (`false`). 
+        The session replay on crash is enabled (`true`) or disabled (`false`).
 
         Enabling requires both **sessionReplayEnabled** and **optInModeEnabled** values set to `true`.
         """
@@ -587,7 +587,7 @@ class MobileApplication(pulumi.CustomResource):
         :param pulumi.Input[_builtins.bool] opt_in_mode: The opt-in mode is enabled (`true`) or disabled (`false`)
         :param pulumi.Input[Union['MobileApplicationPropertiesArgs', 'MobileApplicationPropertiesArgsDict']] properties: User Action and Session Properties
         :param pulumi.Input[_builtins.bool] session_replay: (Field has overlap with `MobileAppEnablement`) The session replay is enabled (`true`) or disabled (`false`).
-        :param pulumi.Input[_builtins.bool] session_replay_on_crash: The session replay on crash is enabled (`true`) or disabled (`false`). 
+        :param pulumi.Input[_builtins.bool] session_replay_on_crash: The session replay on crash is enabled (`true`) or disabled (`false`).
                
                Enabling requires both **sessionReplayEnabled** and **optInModeEnabled** values set to `true`.
         :param pulumi.Input[_builtins.int] user_session_percentage: (Field has overlap with `MobileAppEnablement` for mobile and `CustomAppEnablement` for custom apps) The percentage of user sessions to be analyzed
@@ -781,7 +781,7 @@ class MobileApplication(pulumi.CustomResource):
         :param pulumi.Input[_builtins.bool] opt_in_mode: The opt-in mode is enabled (`true`) or disabled (`false`)
         :param pulumi.Input[Union['MobileApplicationPropertiesArgs', 'MobileApplicationPropertiesArgsDict']] properties: User Action and Session Properties
         :param pulumi.Input[_builtins.bool] session_replay: (Field has overlap with `MobileAppEnablement`) The session replay is enabled (`true`) or disabled (`false`).
-        :param pulumi.Input[_builtins.bool] session_replay_on_crash: The session replay on crash is enabled (`true`) or disabled (`false`). 
+        :param pulumi.Input[_builtins.bool] session_replay_on_crash: The session replay on crash is enabled (`true`) or disabled (`false`).
                
                Enabling requires both **sessionReplayEnabled** and **optInModeEnabled** values set to `true`.
         :param pulumi.Input[_builtins.int] user_session_percentage: (Field has overlap with `MobileAppEnablement` for mobile and `CustomAppEnablement` for custom apps) The percentage of user sessions to be analyzed
@@ -899,7 +899,7 @@ class MobileApplication(pulumi.CustomResource):
     @pulumi.getter(name="sessionReplayOnCrash")
     def session_replay_on_crash(self) -> pulumi.Output[Optional[_builtins.bool]]:
         """
-        The session replay on crash is enabled (`true`) or disabled (`false`). 
+        The session replay on crash is enabled (`true`) or disabled (`false`).
 
         Enabling requires both **sessionReplayEnabled** and **optInModeEnabled** values set to `true`.
         """

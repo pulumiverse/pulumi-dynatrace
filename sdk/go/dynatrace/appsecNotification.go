@@ -77,7 +77,7 @@ import (
 //				SecurityProblemBasedAlertingProfile: alert.ID(),
 //				Trigger:                             pulumi.String("SECURITY_PROBLEM"),
 //				SecurityProblemBasedWebhookPayload: &dynatrace.AppsecNotificationSecurityProblemBasedWebhookPayloadArgs{
-//					Payload: pulumi.String(pulumi.String(json0)),
+//					Payload: pulumi.String(json0),
 //				},
 //				WebhookConfiguration: &dynatrace.AppsecNotificationWebhookConfigurationArgs{
 //					AcceptAnyCertificate: pulumi.Bool(false),

@@ -49,7 +49,7 @@ import (
 //				return err
 //			}
 //			_, err = dynatrace.NewPgAnomalies(ctx, "anomaly", &dynatrace.PgAnomaliesArgs{
-//				PgId: pulumi.String(pulumi.String(processGroup.Id)),
+//				PgId: pulumi.String(processGroup.Id),
 //				Availability: &dynatrace.PgAnomaliesAvailabilityArgs{
 //					Method:           pulumi.String("OFF"),
 //					MinimumThreshold: pulumi.Int(0),

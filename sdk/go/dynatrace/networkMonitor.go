@@ -51,7 +51,7 @@ import (
 //				Enabled:      pulumi.Bool(false),
 //				FrequencyMin: pulumi.Int(15),
 //				Locations: pulumi.StringArray{
-//					pulumi.String(pulumi.String(location.Id)),
+//					pulumi.String(location.Id),
 //				},
 //				OutageHandling: &dynatrace.NetworkMonitorOutageHandlingArgs{
 //					GlobalConsecutiveOutageCountThreshold: pulumi.Int(1),

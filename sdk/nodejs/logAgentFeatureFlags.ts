@@ -63,19 +63,19 @@ export class LogAgentFeatureFlags extends pulumi.CustomResource {
     }
 
     /**
-     * Enable OneAgent to collect logs from Journald on Linux systems. 
+     * Enable OneAgent to collect logs from Journald on Linux systems.
      *  This setting enables:
      *  * Detection and to have logs ingested matching ingest rule is required.
      */
     declare public readonly journaldLogDetector: pulumi.Output<boolean | undefined>;
     /**
-     * Enable OneAgent to collect all container logs in Kubernetes environments. 
+     * Enable OneAgent to collect all container logs in Kubernetes environments.
      *  This setting enables:
      *  * Detection and collection of logs from short-lived containers and processes in Kubernetes.
      *  * Detection and collection of logs from any processes in containers in Kubernetes. Up until now only processes detected by OneAgent are covered with the Log module.
      *  * Log events decoration according to semantic dictionary.
      *   **Note:** The matcher "Deployment name" in the log sources configuration will be ignored and needs to be replaced with "Workload name", requires **Dynatrace Operator 1.4.2+**.
-     *
+     *    
      *    For more details, check our [documentation](https://dt-url.net/jn02ey0).
      */
     declare public readonly newContainerLogDetector: pulumi.Output<boolean>;
@@ -131,19 +131,19 @@ export class LogAgentFeatureFlags extends pulumi.CustomResource {
  */
 export interface LogAgentFeatureFlagsState {
     /**
-     * Enable OneAgent to collect logs from Journald on Linux systems. 
+     * Enable OneAgent to collect logs from Journald on Linux systems.
      *  This setting enables:
      *  * Detection and to have logs ingested matching ingest rule is required.
      */
     journaldLogDetector?: pulumi.Input<boolean | undefined>;
     /**
-     * Enable OneAgent to collect all container logs in Kubernetes environments. 
+     * Enable OneAgent to collect all container logs in Kubernetes environments.
      *  This setting enables:
      *  * Detection and collection of logs from short-lived containers and processes in Kubernetes.
      *  * Detection and collection of logs from any processes in containers in Kubernetes. Up until now only processes detected by OneAgent are covered with the Log module.
      *  * Log events decoration according to semantic dictionary.
      *   **Note:** The matcher "Deployment name" in the log sources configuration will be ignored and needs to be replaced with "Workload name", requires **Dynatrace Operator 1.4.2+**.
-     *
+     *    
      *    For more details, check our [documentation](https://dt-url.net/jn02ey0).
      */
     newContainerLogDetector?: pulumi.Input<boolean | undefined>;
@@ -166,19 +166,19 @@ export interface LogAgentFeatureFlagsState {
  */
 export interface LogAgentFeatureFlagsArgs {
     /**
-     * Enable OneAgent to collect logs from Journald on Linux systems. 
+     * Enable OneAgent to collect logs from Journald on Linux systems.
      *  This setting enables:
      *  * Detection and to have logs ingested matching ingest rule is required.
      */
     journaldLogDetector?: pulumi.Input<boolean | undefined>;
     /**
-     * Enable OneAgent to collect all container logs in Kubernetes environments. 
+     * Enable OneAgent to collect all container logs in Kubernetes environments.
      *  This setting enables:
      *  * Detection and collection of logs from short-lived containers and processes in Kubernetes.
      *  * Detection and collection of logs from any processes in containers in Kubernetes. Up until now only processes detected by OneAgent are covered with the Log module.
      *  * Log events decoration according to semantic dictionary.
      *   **Note:** The matcher "Deployment name" in the log sources configuration will be ignored and needs to be replaced with "Workload name", requires **Dynatrace Operator 1.4.2+**.
-     *
+     *    
      *    For more details, check our [documentation](https://dt-url.net/jn02ey0).
      */
     newContainerLogDetector: pulumi.Input<boolean>;

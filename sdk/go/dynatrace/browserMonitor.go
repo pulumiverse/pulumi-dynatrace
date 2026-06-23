@@ -68,10 +68,10 @@ import (
 //				Name:      pulumi.String("#name#"),
 //				Frequency: pulumi.Int(15),
 //				Locations: pulumi.StringArray{
-//					pulumi.String(pulumi.String(location.Id)),
+//					pulumi.String(location.Id),
 //				},
 //				ManuallyAssignedApps: pulumi.StringArray{
-//					pulumi.String(pulumi.String(webApplication.Id)),
+//					pulumi.String(webApplication.Id),
 //				},
 //				AnomalyDetection: &dynatrace.BrowserMonitorAnomalyDetectionArgs{
 //					LoadingTimeThresholds: dynatrace.BrowserMonitorAnomalyDetectionLoadingTimeThresholdArray{

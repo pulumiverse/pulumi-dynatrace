@@ -68,7 +68,7 @@ import (
 //			thisDocument, err := dynatrace.NewDocument(ctx, "this", &dynatrace.DocumentArgs{
 //				Type:    pulumi.String("dashboard"),
 //				Name:    pulumi.String("#name#"),
-//				Content: pulumi.String(pulumi.String(json0)),
+//				Content: pulumi.String(json0),
 //			})
 //			if err != nil {
 //				return err

@@ -50,7 +50,7 @@ import (
 //				Name:      pulumi.String("#name#"),
 //				Frequency: pulumi.Int(15),
 //				Locations: pulumi.StringArray{
-//					pulumi.String(pulumi.String(location.Id)),
+//					pulumi.String(location.Id),
 //				},
 //				KeyPerformanceMetrics: &dynatrace.BrowserMonitorKeyPerformanceMetricsArgs{
 //					LoadActionKpm: pulumi.String("VISUALLY_COMPLETE"),

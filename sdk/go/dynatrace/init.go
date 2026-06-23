@@ -547,6 +547,8 @@ func (m *module) Construct(ctx *pulumi.Context, name, typ, urn string) (r pulumi
 		r = &OpenpipelineUserEvents{}
 	case "dynatrace:index/openpipelineUserSessions:OpenpipelineUserSessions":
 		r = &OpenpipelineUserSessions{}
+	case "dynatrace:index/openpipelineV2BizeventsDataforwarding:OpenpipelineV2BizeventsDataforwarding":
+		r = &OpenpipelineV2BizeventsDataforwarding{}
 	case "dynatrace:index/openpipelineV2BizeventsIngestsources:OpenpipelineV2BizeventsIngestsources":
 		r = &OpenpipelineV2BizeventsIngestsources{}
 	case "dynatrace:index/openpipelineV2BizeventsPipelinegroups:OpenpipelineV2BizeventsPipelinegroups":
@@ -555,6 +557,8 @@ func (m *module) Construct(ctx *pulumi.Context, name, typ, urn string) (r pulumi
 		r = &OpenpipelineV2BizeventsPipelines{}
 	case "dynatrace:index/openpipelineV2BizeventsRouting:OpenpipelineV2BizeventsRouting":
 		r = &OpenpipelineV2BizeventsRouting{}
+	case "dynatrace:index/openpipelineV2DavisEventsDataforwarding:OpenpipelineV2DavisEventsDataforwarding":
+		r = &OpenpipelineV2DavisEventsDataforwarding{}
 	case "dynatrace:index/openpipelineV2DavisEventsIngestsources:OpenpipelineV2DavisEventsIngestsources":
 		r = &OpenpipelineV2DavisEventsIngestsources{}
 	case "dynatrace:index/openpipelineV2DavisEventsPipelinegroups:OpenpipelineV2DavisEventsPipelinegroups":
@@ -563,6 +567,8 @@ func (m *module) Construct(ctx *pulumi.Context, name, typ, urn string) (r pulumi
 		r = &OpenpipelineV2DavisEventsPipelines{}
 	case "dynatrace:index/openpipelineV2DavisEventsRouting:OpenpipelineV2DavisEventsRouting":
 		r = &OpenpipelineV2DavisEventsRouting{}
+	case "dynatrace:index/openpipelineV2DavisProblemsDataforwarding:OpenpipelineV2DavisProblemsDataforwarding":
+		r = &OpenpipelineV2DavisProblemsDataforwarding{}
 	case "dynatrace:index/openpipelineV2DavisProblemsIngestsources:OpenpipelineV2DavisProblemsIngestsources":
 		r = &OpenpipelineV2DavisProblemsIngestsources{}
 	case "dynatrace:index/openpipelineV2DavisProblemsPipelinegroups:OpenpipelineV2DavisProblemsPipelinegroups":
@@ -571,6 +577,8 @@ func (m *module) Construct(ctx *pulumi.Context, name, typ, urn string) (r pulumi
 		r = &OpenpipelineV2DavisProblemsPipelines{}
 	case "dynatrace:index/openpipelineV2DavisProblemsRouting:OpenpipelineV2DavisProblemsRouting":
 		r = &OpenpipelineV2DavisProblemsRouting{}
+	case "dynatrace:index/openpipelineV2EventsDataforwarding:OpenpipelineV2EventsDataforwarding":
+		r = &OpenpipelineV2EventsDataforwarding{}
 	case "dynatrace:index/openpipelineV2EventsIngestsources:OpenpipelineV2EventsIngestsources":
 		r = &OpenpipelineV2EventsIngestsources{}
 	case "dynatrace:index/openpipelineV2EventsPipelinegroups:OpenpipelineV2EventsPipelinegroups":
@@ -579,6 +587,8 @@ func (m *module) Construct(ctx *pulumi.Context, name, typ, urn string) (r pulumi
 		r = &OpenpipelineV2EventsPipelines{}
 	case "dynatrace:index/openpipelineV2EventsRouting:OpenpipelineV2EventsRouting":
 		r = &OpenpipelineV2EventsRouting{}
+	case "dynatrace:index/openpipelineV2EventsSdlcDataforwarding:OpenpipelineV2EventsSdlcDataforwarding":
+		r = &OpenpipelineV2EventsSdlcDataforwarding{}
 	case "dynatrace:index/openpipelineV2EventsSdlcIngestsources:OpenpipelineV2EventsSdlcIngestsources":
 		r = &OpenpipelineV2EventsSdlcIngestsources{}
 	case "dynatrace:index/openpipelineV2EventsSdlcPipelinegroups:OpenpipelineV2EventsSdlcPipelinegroups":
@@ -587,6 +597,8 @@ func (m *module) Construct(ctx *pulumi.Context, name, typ, urn string) (r pulumi
 		r = &OpenpipelineV2EventsSdlcPipelines{}
 	case "dynatrace:index/openpipelineV2EventsSdlcRouting:OpenpipelineV2EventsSdlcRouting":
 		r = &OpenpipelineV2EventsSdlcRouting{}
+	case "dynatrace:index/openpipelineV2EventsSecurityDataforwarding:OpenpipelineV2EventsSecurityDataforwarding":
+		r = &OpenpipelineV2EventsSecurityDataforwarding{}
 	case "dynatrace:index/openpipelineV2EventsSecurityIngestsources:OpenpipelineV2EventsSecurityIngestsources":
 		r = &OpenpipelineV2EventsSecurityIngestsources{}
 	case "dynatrace:index/openpipelineV2EventsSecurityPipelinegroups:OpenpipelineV2EventsSecurityPipelinegroups":
@@ -595,6 +607,8 @@ func (m *module) Construct(ctx *pulumi.Context, name, typ, urn string) (r pulumi
 		r = &OpenpipelineV2EventsSecurityPipelines{}
 	case "dynatrace:index/openpipelineV2EventsSecurityRouting:OpenpipelineV2EventsSecurityRouting":
 		r = &OpenpipelineV2EventsSecurityRouting{}
+	case "dynatrace:index/openpipelineV2LogsDataforwarding:OpenpipelineV2LogsDataforwarding":
+		r = &OpenpipelineV2LogsDataforwarding{}
 	case "dynatrace:index/openpipelineV2LogsIngestsources:OpenpipelineV2LogsIngestsources":
 		r = &OpenpipelineV2LogsIngestsources{}
 	case "dynatrace:index/openpipelineV2LogsPipelinegroups:OpenpipelineV2LogsPipelinegroups":
@@ -603,6 +617,8 @@ func (m *module) Construct(ctx *pulumi.Context, name, typ, urn string) (r pulumi
 		r = &OpenpipelineV2LogsPipelines{}
 	case "dynatrace:index/openpipelineV2LogsRouting:OpenpipelineV2LogsRouting":
 		r = &OpenpipelineV2LogsRouting{}
+	case "dynatrace:index/openpipelineV2MetricsDataforwarding:OpenpipelineV2MetricsDataforwarding":
+		r = &OpenpipelineV2MetricsDataforwarding{}
 	case "dynatrace:index/openpipelineV2MetricsIngestsources:OpenpipelineV2MetricsIngestsources":
 		r = &OpenpipelineV2MetricsIngestsources{}
 	case "dynatrace:index/openpipelineV2MetricsPipelinegroups:OpenpipelineV2MetricsPipelinegroups":
@@ -611,6 +627,8 @@ func (m *module) Construct(ctx *pulumi.Context, name, typ, urn string) (r pulumi
 		r = &OpenpipelineV2MetricsPipelines{}
 	case "dynatrace:index/openpipelineV2MetricsRouting:OpenpipelineV2MetricsRouting":
 		r = &OpenpipelineV2MetricsRouting{}
+	case "dynatrace:index/openpipelineV2SecurityEventsDataforwarding:OpenpipelineV2SecurityEventsDataforwarding":
+		r = &OpenpipelineV2SecurityEventsDataforwarding{}
 	case "dynatrace:index/openpipelineV2SecurityEventsIngestsources:OpenpipelineV2SecurityEventsIngestsources":
 		r = &OpenpipelineV2SecurityEventsIngestsources{}
 	case "dynatrace:index/openpipelineV2SecurityEventsPipelinegroups:OpenpipelineV2SecurityEventsPipelinegroups":
@@ -619,6 +637,8 @@ func (m *module) Construct(ctx *pulumi.Context, name, typ, urn string) (r pulumi
 		r = &OpenpipelineV2SecurityEventsPipelines{}
 	case "dynatrace:index/openpipelineV2SecurityEventsRouting:OpenpipelineV2SecurityEventsRouting":
 		r = &OpenpipelineV2SecurityEventsRouting{}
+	case "dynatrace:index/openpipelineV2SpansDataforwarding:OpenpipelineV2SpansDataforwarding":
+		r = &OpenpipelineV2SpansDataforwarding{}
 	case "dynatrace:index/openpipelineV2SpansIngestsources:OpenpipelineV2SpansIngestsources":
 		r = &OpenpipelineV2SpansIngestsources{}
 	case "dynatrace:index/openpipelineV2SpansPipelinegroups:OpenpipelineV2SpansPipelinegroups":
@@ -627,6 +647,8 @@ func (m *module) Construct(ctx *pulumi.Context, name, typ, urn string) (r pulumi
 		r = &OpenpipelineV2SpansPipelines{}
 	case "dynatrace:index/openpipelineV2SpansRouting:OpenpipelineV2SpansRouting":
 		r = &OpenpipelineV2SpansRouting{}
+	case "dynatrace:index/openpipelineV2SystemEventsDataforwarding:OpenpipelineV2SystemEventsDataforwarding":
+		r = &OpenpipelineV2SystemEventsDataforwarding{}
 	case "dynatrace:index/openpipelineV2SystemEventsIngestsources:OpenpipelineV2SystemEventsIngestsources":
 		r = &OpenpipelineV2SystemEventsIngestsources{}
 	case "dynatrace:index/openpipelineV2SystemEventsPipelinegroups:OpenpipelineV2SystemEventsPipelinegroups":
@@ -635,6 +657,8 @@ func (m *module) Construct(ctx *pulumi.Context, name, typ, urn string) (r pulumi
 		r = &OpenpipelineV2SystemEventsPipelines{}
 	case "dynatrace:index/openpipelineV2SystemEventsRouting:OpenpipelineV2SystemEventsRouting":
 		r = &OpenpipelineV2SystemEventsRouting{}
+	case "dynatrace:index/openpipelineV2UserEventsDataforwarding:OpenpipelineV2UserEventsDataforwarding":
+		r = &OpenpipelineV2UserEventsDataforwarding{}
 	case "dynatrace:index/openpipelineV2UserEventsIngestsources:OpenpipelineV2UserEventsIngestsources":
 		r = &OpenpipelineV2UserEventsIngestsources{}
 	case "dynatrace:index/openpipelineV2UserEventsPipelinegroups:OpenpipelineV2UserEventsPipelinegroups":
@@ -643,6 +667,8 @@ func (m *module) Construct(ctx *pulumi.Context, name, typ, urn string) (r pulumi
 		r = &OpenpipelineV2UserEventsPipelines{}
 	case "dynatrace:index/openpipelineV2UserEventsRouting:OpenpipelineV2UserEventsRouting":
 		r = &OpenpipelineV2UserEventsRouting{}
+	case "dynatrace:index/openpipelineV2UsersessionsDataforwarding:OpenpipelineV2UsersessionsDataforwarding":
+		r = &OpenpipelineV2UsersessionsDataforwarding{}
 	case "dynatrace:index/openpipelineV2UsersessionsIngestsources:OpenpipelineV2UsersessionsIngestsources":
 		r = &OpenpipelineV2UsersessionsIngestsources{}
 	case "dynatrace:index/openpipelineV2UsersessionsPipelinegroups:OpenpipelineV2UsersessionsPipelinegroups":
@@ -2239,6 +2265,11 @@ func init() {
 	)
 	pulumi.RegisterResourceModule(
 		"dynatrace",
+		"index/openpipelineV2BizeventsDataforwarding",
+		&module{version},
+	)
+	pulumi.RegisterResourceModule(
+		"dynatrace",
 		"index/openpipelineV2BizeventsIngestsources",
 		&module{version},
 	)
@@ -2255,6 +2286,11 @@ func init() {
 	pulumi.RegisterResourceModule(
 		"dynatrace",
 		"index/openpipelineV2BizeventsRouting",
+		&module{version},
+	)
+	pulumi.RegisterResourceModule(
+		"dynatrace",
+		"index/openpipelineV2DavisEventsDataforwarding",
 		&module{version},
 	)
 	pulumi.RegisterResourceModule(
@@ -2279,6 +2315,11 @@ func init() {
 	)
 	pulumi.RegisterResourceModule(
 		"dynatrace",
+		"index/openpipelineV2DavisProblemsDataforwarding",
+		&module{version},
+	)
+	pulumi.RegisterResourceModule(
+		"dynatrace",
 		"index/openpipelineV2DavisProblemsIngestsources",
 		&module{version},
 	)
@@ -2295,6 +2336,11 @@ func init() {
 	pulumi.RegisterResourceModule(
 		"dynatrace",
 		"index/openpipelineV2DavisProblemsRouting",
+		&module{version},
+	)
+	pulumi.RegisterResourceModule(
+		"dynatrace",
+		"index/openpipelineV2EventsDataforwarding",
 		&module{version},
 	)
 	pulumi.RegisterResourceModule(
@@ -2319,6 +2365,11 @@ func init() {
 	)
 	pulumi.RegisterResourceModule(
 		"dynatrace",
+		"index/openpipelineV2EventsSdlcDataforwarding",
+		&module{version},
+	)
+	pulumi.RegisterResourceModule(
+		"dynatrace",
 		"index/openpipelineV2EventsSdlcIngestsources",
 		&module{version},
 	)
@@ -2335,6 +2386,11 @@ func init() {
 	pulumi.RegisterResourceModule(
 		"dynatrace",
 		"index/openpipelineV2EventsSdlcRouting",
+		&module{version},
+	)
+	pulumi.RegisterResourceModule(
+		"dynatrace",
+		"index/openpipelineV2EventsSecurityDataforwarding",
 		&module{version},
 	)
 	pulumi.RegisterResourceModule(
@@ -2359,6 +2415,11 @@ func init() {
 	)
 	pulumi.RegisterResourceModule(
 		"dynatrace",
+		"index/openpipelineV2LogsDataforwarding",
+		&module{version},
+	)
+	pulumi.RegisterResourceModule(
+		"dynatrace",
 		"index/openpipelineV2LogsIngestsources",
 		&module{version},
 	)
@@ -2375,6 +2436,11 @@ func init() {
 	pulumi.RegisterResourceModule(
 		"dynatrace",
 		"index/openpipelineV2LogsRouting",
+		&module{version},
+	)
+	pulumi.RegisterResourceModule(
+		"dynatrace",
+		"index/openpipelineV2MetricsDataforwarding",
 		&module{version},
 	)
 	pulumi.RegisterResourceModule(
@@ -2399,6 +2465,11 @@ func init() {
 	)
 	pulumi.RegisterResourceModule(
 		"dynatrace",
+		"index/openpipelineV2SecurityEventsDataforwarding",
+		&module{version},
+	)
+	pulumi.RegisterResourceModule(
+		"dynatrace",
 		"index/openpipelineV2SecurityEventsIngestsources",
 		&module{version},
 	)
@@ -2415,6 +2486,11 @@ func init() {
 	pulumi.RegisterResourceModule(
 		"dynatrace",
 		"index/openpipelineV2SecurityEventsRouting",
+		&module{version},
+	)
+	pulumi.RegisterResourceModule(
+		"dynatrace",
+		"index/openpipelineV2SpansDataforwarding",
 		&module{version},
 	)
 	pulumi.RegisterResourceModule(
@@ -2439,6 +2515,11 @@ func init() {
 	)
 	pulumi.RegisterResourceModule(
 		"dynatrace",
+		"index/openpipelineV2SystemEventsDataforwarding",
+		&module{version},
+	)
+	pulumi.RegisterResourceModule(
+		"dynatrace",
 		"index/openpipelineV2SystemEventsIngestsources",
 		&module{version},
 	)
@@ -2459,6 +2540,11 @@ func init() {
 	)
 	pulumi.RegisterResourceModule(
 		"dynatrace",
+		"index/openpipelineV2UserEventsDataforwarding",
+		&module{version},
+	)
+	pulumi.RegisterResourceModule(
+		"dynatrace",
 		"index/openpipelineV2UserEventsIngestsources",
 		&module{version},
 	)
@@ -2475,6 +2561,11 @@ func init() {
 	pulumi.RegisterResourceModule(
 		"dynatrace",
 		"index/openpipelineV2UserEventsRouting",
+		&module{version},
+	)
+	pulumi.RegisterResourceModule(
+		"dynatrace",
+		"index/openpipelineV2UsersessionsDataforwarding",
 		&module{version},
 	)
 	pulumi.RegisterResourceModule(

@@ -47,7 +47,7 @@ import (
 //				return err
 //			}
 //			_, err = dynatrace.NewDevobsAgentOptin(ctx, "optin", &dynatrace.DevobsAgentOptinArgs{
-//				Scope:   pulumi.String(pulumi.String(processGroup.Id)),
+//				Scope:   pulumi.String(processGroup.Id),
 //				Enabled: pulumi.Bool(false),
 //			})
 //			if err != nil {

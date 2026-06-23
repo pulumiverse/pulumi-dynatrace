@@ -49,7 +49,7 @@ import (
 //			_, err = dynatrace.NewHostProcessGroupMonitoring(ctx, "monitoring", &dynatrace.HostProcessGroupMonitoringArgs{
 //				HostId:          pulumi.String("HOST-1234567890000000"),
 //				MonitoringState: pulumi.String("MONITORING_ON"),
-//				ProcessGroup:    pulumi.String(pulumi.String(processGroup.Id)),
+//				ProcessGroup:    pulumi.String(processGroup.Id),
 //			})
 //			if err != nil {
 //				return err

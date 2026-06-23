@@ -47,7 +47,7 @@ import (
 //				return err
 //			}
 //			_, err = dynatrace.NewMobileAppCrashRate(ctx, "crash_rate", &dynatrace.MobileAppCrashRateArgs{
-//				ApplicationId: pulumi.String(pulumi.String(application.Id)),
+//				ApplicationId: pulumi.String(application.Id),
 //				CrashRateIncrease: &dynatrace.MobileAppCrashRateCrashRateIncreaseArgs{
 //					Enabled:       pulumi.Bool(true),
 //					DetectionMode: pulumi.String("fixed"),

@@ -521,7 +521,7 @@ import (
 //			}
 //			json0 := string(tmpJSON0)
 //			_, err = dynatrace.NewJsonDashboard(ctx, "name", &dynatrace.JsonDashboardArgs{
-//				Contents: pulumi.String(pulumi.String(json0)),
+//				Contents: pulumi.String(json0),
 //			})
 //			if err != nil {
 //				return err

@@ -48,7 +48,7 @@ import (
 //			}
 //			_, err = dynatrace.NewProcessGroupRum(ctx, "rum", &dynatrace.ProcessGroupRumArgs{
 //				Enable:         pulumi.Bool(false),
-//				ProcessGroupId: pulumi.String(pulumi.String(processGroup.Id)),
+//				ProcessGroupId: pulumi.String(processGroup.Id),
 //			})
 //			if err != nil {
 //				return err

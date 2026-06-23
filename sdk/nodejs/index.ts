@@ -1610,6 +1610,11 @@ export type OpenpipelineUserSessions = import("./openpipelineUserSessions").Open
 export const OpenpipelineUserSessions: typeof import("./openpipelineUserSessions").OpenpipelineUserSessions = null as any;
 utilities.lazyLoad(exports, ["OpenpipelineUserSessions"], () => require("./openpipelineUserSessions"));
 
+export { OpenpipelineV2BizeventsDataforwardingArgs, OpenpipelineV2BizeventsDataforwardingState } from "./openpipelineV2BizeventsDataforwarding";
+export type OpenpipelineV2BizeventsDataforwarding = import("./openpipelineV2BizeventsDataforwarding").OpenpipelineV2BizeventsDataforwarding;
+export const OpenpipelineV2BizeventsDataforwarding: typeof import("./openpipelineV2BizeventsDataforwarding").OpenpipelineV2BizeventsDataforwarding = null as any;
+utilities.lazyLoad(exports, ["OpenpipelineV2BizeventsDataforwarding"], () => require("./openpipelineV2BizeventsDataforwarding"));
+
 export { OpenpipelineV2BizeventsIngestsourcesArgs, OpenpipelineV2BizeventsIngestsourcesState } from "./openpipelineV2BizeventsIngestsources";
 export type OpenpipelineV2BizeventsIngestsources = import("./openpipelineV2BizeventsIngestsources").OpenpipelineV2BizeventsIngestsources;
 export const OpenpipelineV2BizeventsIngestsources: typeof import("./openpipelineV2BizeventsIngestsources").OpenpipelineV2BizeventsIngestsources = null as any;
@@ -1629,6 +1634,11 @@ export { OpenpipelineV2BizeventsRoutingArgs, OpenpipelineV2BizeventsRoutingState
 export type OpenpipelineV2BizeventsRouting = import("./openpipelineV2BizeventsRouting").OpenpipelineV2BizeventsRouting;
 export const OpenpipelineV2BizeventsRouting: typeof import("./openpipelineV2BizeventsRouting").OpenpipelineV2BizeventsRouting = null as any;
 utilities.lazyLoad(exports, ["OpenpipelineV2BizeventsRouting"], () => require("./openpipelineV2BizeventsRouting"));
+
+export { OpenpipelineV2DavisEventsDataforwardingArgs, OpenpipelineV2DavisEventsDataforwardingState } from "./openpipelineV2DavisEventsDataforwarding";
+export type OpenpipelineV2DavisEventsDataforwarding = import("./openpipelineV2DavisEventsDataforwarding").OpenpipelineV2DavisEventsDataforwarding;
+export const OpenpipelineV2DavisEventsDataforwarding: typeof import("./openpipelineV2DavisEventsDataforwarding").OpenpipelineV2DavisEventsDataforwarding = null as any;
+utilities.lazyLoad(exports, ["OpenpipelineV2DavisEventsDataforwarding"], () => require("./openpipelineV2DavisEventsDataforwarding"));
 
 export { OpenpipelineV2DavisEventsIngestsourcesArgs, OpenpipelineV2DavisEventsIngestsourcesState } from "./openpipelineV2DavisEventsIngestsources";
 export type OpenpipelineV2DavisEventsIngestsources = import("./openpipelineV2DavisEventsIngestsources").OpenpipelineV2DavisEventsIngestsources;
@@ -1650,6 +1660,11 @@ export type OpenpipelineV2DavisEventsRouting = import("./openpipelineV2DavisEven
 export const OpenpipelineV2DavisEventsRouting: typeof import("./openpipelineV2DavisEventsRouting").OpenpipelineV2DavisEventsRouting = null as any;
 utilities.lazyLoad(exports, ["OpenpipelineV2DavisEventsRouting"], () => require("./openpipelineV2DavisEventsRouting"));
 
+export { OpenpipelineV2DavisProblemsDataforwardingArgs, OpenpipelineV2DavisProblemsDataforwardingState } from "./openpipelineV2DavisProblemsDataforwarding";
+export type OpenpipelineV2DavisProblemsDataforwarding = import("./openpipelineV2DavisProblemsDataforwarding").OpenpipelineV2DavisProblemsDataforwarding;
+export const OpenpipelineV2DavisProblemsDataforwarding: typeof import("./openpipelineV2DavisProblemsDataforwarding").OpenpipelineV2DavisProblemsDataforwarding = null as any;
+utilities.lazyLoad(exports, ["OpenpipelineV2DavisProblemsDataforwarding"], () => require("./openpipelineV2DavisProblemsDataforwarding"));
+
 export { OpenpipelineV2DavisProblemsIngestsourcesArgs, OpenpipelineV2DavisProblemsIngestsourcesState } from "./openpipelineV2DavisProblemsIngestsources";
 export type OpenpipelineV2DavisProblemsIngestsources = import("./openpipelineV2DavisProblemsIngestsources").OpenpipelineV2DavisProblemsIngestsources;
 export const OpenpipelineV2DavisProblemsIngestsources: typeof import("./openpipelineV2DavisProblemsIngestsources").OpenpipelineV2DavisProblemsIngestsources = null as any;
@@ -1669,6 +1684,11 @@ export { OpenpipelineV2DavisProblemsRoutingArgs, OpenpipelineV2DavisProblemsRout
 export type OpenpipelineV2DavisProblemsRouting = import("./openpipelineV2DavisProblemsRouting").OpenpipelineV2DavisProblemsRouting;
 export const OpenpipelineV2DavisProblemsRouting: typeof import("./openpipelineV2DavisProblemsRouting").OpenpipelineV2DavisProblemsRouting = null as any;
 utilities.lazyLoad(exports, ["OpenpipelineV2DavisProblemsRouting"], () => require("./openpipelineV2DavisProblemsRouting"));
+
+export { OpenpipelineV2EventsDataforwardingArgs, OpenpipelineV2EventsDataforwardingState } from "./openpipelineV2EventsDataforwarding";
+export type OpenpipelineV2EventsDataforwarding = import("./openpipelineV2EventsDataforwarding").OpenpipelineV2EventsDataforwarding;
+export const OpenpipelineV2EventsDataforwarding: typeof import("./openpipelineV2EventsDataforwarding").OpenpipelineV2EventsDataforwarding = null as any;
+utilities.lazyLoad(exports, ["OpenpipelineV2EventsDataforwarding"], () => require("./openpipelineV2EventsDataforwarding"));
 
 export { OpenpipelineV2EventsIngestsourcesArgs, OpenpipelineV2EventsIngestsourcesState } from "./openpipelineV2EventsIngestsources";
 export type OpenpipelineV2EventsIngestsources = import("./openpipelineV2EventsIngestsources").OpenpipelineV2EventsIngestsources;
@@ -1690,6 +1710,11 @@ export type OpenpipelineV2EventsRouting = import("./openpipelineV2EventsRouting"
 export const OpenpipelineV2EventsRouting: typeof import("./openpipelineV2EventsRouting").OpenpipelineV2EventsRouting = null as any;
 utilities.lazyLoad(exports, ["OpenpipelineV2EventsRouting"], () => require("./openpipelineV2EventsRouting"));
 
+export { OpenpipelineV2EventsSdlcDataforwardingArgs, OpenpipelineV2EventsSdlcDataforwardingState } from "./openpipelineV2EventsSdlcDataforwarding";
+export type OpenpipelineV2EventsSdlcDataforwarding = import("./openpipelineV2EventsSdlcDataforwarding").OpenpipelineV2EventsSdlcDataforwarding;
+export const OpenpipelineV2EventsSdlcDataforwarding: typeof import("./openpipelineV2EventsSdlcDataforwarding").OpenpipelineV2EventsSdlcDataforwarding = null as any;
+utilities.lazyLoad(exports, ["OpenpipelineV2EventsSdlcDataforwarding"], () => require("./openpipelineV2EventsSdlcDataforwarding"));
+
 export { OpenpipelineV2EventsSdlcIngestsourcesArgs, OpenpipelineV2EventsSdlcIngestsourcesState } from "./openpipelineV2EventsSdlcIngestsources";
 export type OpenpipelineV2EventsSdlcIngestsources = import("./openpipelineV2EventsSdlcIngestsources").OpenpipelineV2EventsSdlcIngestsources;
 export const OpenpipelineV2EventsSdlcIngestsources: typeof import("./openpipelineV2EventsSdlcIngestsources").OpenpipelineV2EventsSdlcIngestsources = null as any;
@@ -1709,6 +1734,11 @@ export { OpenpipelineV2EventsSdlcRoutingArgs, OpenpipelineV2EventsSdlcRoutingSta
 export type OpenpipelineV2EventsSdlcRouting = import("./openpipelineV2EventsSdlcRouting").OpenpipelineV2EventsSdlcRouting;
 export const OpenpipelineV2EventsSdlcRouting: typeof import("./openpipelineV2EventsSdlcRouting").OpenpipelineV2EventsSdlcRouting = null as any;
 utilities.lazyLoad(exports, ["OpenpipelineV2EventsSdlcRouting"], () => require("./openpipelineV2EventsSdlcRouting"));
+
+export { OpenpipelineV2EventsSecurityDataforwardingArgs, OpenpipelineV2EventsSecurityDataforwardingState } from "./openpipelineV2EventsSecurityDataforwarding";
+export type OpenpipelineV2EventsSecurityDataforwarding = import("./openpipelineV2EventsSecurityDataforwarding").OpenpipelineV2EventsSecurityDataforwarding;
+export const OpenpipelineV2EventsSecurityDataforwarding: typeof import("./openpipelineV2EventsSecurityDataforwarding").OpenpipelineV2EventsSecurityDataforwarding = null as any;
+utilities.lazyLoad(exports, ["OpenpipelineV2EventsSecurityDataforwarding"], () => require("./openpipelineV2EventsSecurityDataforwarding"));
 
 export { OpenpipelineV2EventsSecurityIngestsourcesArgs, OpenpipelineV2EventsSecurityIngestsourcesState } from "./openpipelineV2EventsSecurityIngestsources";
 export type OpenpipelineV2EventsSecurityIngestsources = import("./openpipelineV2EventsSecurityIngestsources").OpenpipelineV2EventsSecurityIngestsources;
@@ -1730,6 +1760,11 @@ export type OpenpipelineV2EventsSecurityRouting = import("./openpipelineV2Events
 export const OpenpipelineV2EventsSecurityRouting: typeof import("./openpipelineV2EventsSecurityRouting").OpenpipelineV2EventsSecurityRouting = null as any;
 utilities.lazyLoad(exports, ["OpenpipelineV2EventsSecurityRouting"], () => require("./openpipelineV2EventsSecurityRouting"));
 
+export { OpenpipelineV2LogsDataforwardingArgs, OpenpipelineV2LogsDataforwardingState } from "./openpipelineV2LogsDataforwarding";
+export type OpenpipelineV2LogsDataforwarding = import("./openpipelineV2LogsDataforwarding").OpenpipelineV2LogsDataforwarding;
+export const OpenpipelineV2LogsDataforwarding: typeof import("./openpipelineV2LogsDataforwarding").OpenpipelineV2LogsDataforwarding = null as any;
+utilities.lazyLoad(exports, ["OpenpipelineV2LogsDataforwarding"], () => require("./openpipelineV2LogsDataforwarding"));
+
 export { OpenpipelineV2LogsIngestsourcesArgs, OpenpipelineV2LogsIngestsourcesState } from "./openpipelineV2LogsIngestsources";
 export type OpenpipelineV2LogsIngestsources = import("./openpipelineV2LogsIngestsources").OpenpipelineV2LogsIngestsources;
 export const OpenpipelineV2LogsIngestsources: typeof import("./openpipelineV2LogsIngestsources").OpenpipelineV2LogsIngestsources = null as any;
@@ -1749,6 +1784,11 @@ export { OpenpipelineV2LogsRoutingArgs, OpenpipelineV2LogsRoutingState } from ".
 export type OpenpipelineV2LogsRouting = import("./openpipelineV2LogsRouting").OpenpipelineV2LogsRouting;
 export const OpenpipelineV2LogsRouting: typeof import("./openpipelineV2LogsRouting").OpenpipelineV2LogsRouting = null as any;
 utilities.lazyLoad(exports, ["OpenpipelineV2LogsRouting"], () => require("./openpipelineV2LogsRouting"));
+
+export { OpenpipelineV2MetricsDataforwardingArgs, OpenpipelineV2MetricsDataforwardingState } from "./openpipelineV2MetricsDataforwarding";
+export type OpenpipelineV2MetricsDataforwarding = import("./openpipelineV2MetricsDataforwarding").OpenpipelineV2MetricsDataforwarding;
+export const OpenpipelineV2MetricsDataforwarding: typeof import("./openpipelineV2MetricsDataforwarding").OpenpipelineV2MetricsDataforwarding = null as any;
+utilities.lazyLoad(exports, ["OpenpipelineV2MetricsDataforwarding"], () => require("./openpipelineV2MetricsDataforwarding"));
 
 export { OpenpipelineV2MetricsIngestsourcesArgs, OpenpipelineV2MetricsIngestsourcesState } from "./openpipelineV2MetricsIngestsources";
 export type OpenpipelineV2MetricsIngestsources = import("./openpipelineV2MetricsIngestsources").OpenpipelineV2MetricsIngestsources;
@@ -1770,6 +1810,11 @@ export type OpenpipelineV2MetricsRouting = import("./openpipelineV2MetricsRoutin
 export const OpenpipelineV2MetricsRouting: typeof import("./openpipelineV2MetricsRouting").OpenpipelineV2MetricsRouting = null as any;
 utilities.lazyLoad(exports, ["OpenpipelineV2MetricsRouting"], () => require("./openpipelineV2MetricsRouting"));
 
+export { OpenpipelineV2SecurityEventsDataforwardingArgs, OpenpipelineV2SecurityEventsDataforwardingState } from "./openpipelineV2SecurityEventsDataforwarding";
+export type OpenpipelineV2SecurityEventsDataforwarding = import("./openpipelineV2SecurityEventsDataforwarding").OpenpipelineV2SecurityEventsDataforwarding;
+export const OpenpipelineV2SecurityEventsDataforwarding: typeof import("./openpipelineV2SecurityEventsDataforwarding").OpenpipelineV2SecurityEventsDataforwarding = null as any;
+utilities.lazyLoad(exports, ["OpenpipelineV2SecurityEventsDataforwarding"], () => require("./openpipelineV2SecurityEventsDataforwarding"));
+
 export { OpenpipelineV2SecurityEventsIngestsourcesArgs, OpenpipelineV2SecurityEventsIngestsourcesState } from "./openpipelineV2SecurityEventsIngestsources";
 export type OpenpipelineV2SecurityEventsIngestsources = import("./openpipelineV2SecurityEventsIngestsources").OpenpipelineV2SecurityEventsIngestsources;
 export const OpenpipelineV2SecurityEventsIngestsources: typeof import("./openpipelineV2SecurityEventsIngestsources").OpenpipelineV2SecurityEventsIngestsources = null as any;
@@ -1789,6 +1834,11 @@ export { OpenpipelineV2SecurityEventsRoutingArgs, OpenpipelineV2SecurityEventsRo
 export type OpenpipelineV2SecurityEventsRouting = import("./openpipelineV2SecurityEventsRouting").OpenpipelineV2SecurityEventsRouting;
 export const OpenpipelineV2SecurityEventsRouting: typeof import("./openpipelineV2SecurityEventsRouting").OpenpipelineV2SecurityEventsRouting = null as any;
 utilities.lazyLoad(exports, ["OpenpipelineV2SecurityEventsRouting"], () => require("./openpipelineV2SecurityEventsRouting"));
+
+export { OpenpipelineV2SpansDataforwardingArgs, OpenpipelineV2SpansDataforwardingState } from "./openpipelineV2SpansDataforwarding";
+export type OpenpipelineV2SpansDataforwarding = import("./openpipelineV2SpansDataforwarding").OpenpipelineV2SpansDataforwarding;
+export const OpenpipelineV2SpansDataforwarding: typeof import("./openpipelineV2SpansDataforwarding").OpenpipelineV2SpansDataforwarding = null as any;
+utilities.lazyLoad(exports, ["OpenpipelineV2SpansDataforwarding"], () => require("./openpipelineV2SpansDataforwarding"));
 
 export { OpenpipelineV2SpansIngestsourcesArgs, OpenpipelineV2SpansIngestsourcesState } from "./openpipelineV2SpansIngestsources";
 export type OpenpipelineV2SpansIngestsources = import("./openpipelineV2SpansIngestsources").OpenpipelineV2SpansIngestsources;
@@ -1810,6 +1860,11 @@ export type OpenpipelineV2SpansRouting = import("./openpipelineV2SpansRouting").
 export const OpenpipelineV2SpansRouting: typeof import("./openpipelineV2SpansRouting").OpenpipelineV2SpansRouting = null as any;
 utilities.lazyLoad(exports, ["OpenpipelineV2SpansRouting"], () => require("./openpipelineV2SpansRouting"));
 
+export { OpenpipelineV2SystemEventsDataforwardingArgs, OpenpipelineV2SystemEventsDataforwardingState } from "./openpipelineV2SystemEventsDataforwarding";
+export type OpenpipelineV2SystemEventsDataforwarding = import("./openpipelineV2SystemEventsDataforwarding").OpenpipelineV2SystemEventsDataforwarding;
+export const OpenpipelineV2SystemEventsDataforwarding: typeof import("./openpipelineV2SystemEventsDataforwarding").OpenpipelineV2SystemEventsDataforwarding = null as any;
+utilities.lazyLoad(exports, ["OpenpipelineV2SystemEventsDataforwarding"], () => require("./openpipelineV2SystemEventsDataforwarding"));
+
 export { OpenpipelineV2SystemEventsIngestsourcesArgs, OpenpipelineV2SystemEventsIngestsourcesState } from "./openpipelineV2SystemEventsIngestsources";
 export type OpenpipelineV2SystemEventsIngestsources = import("./openpipelineV2SystemEventsIngestsources").OpenpipelineV2SystemEventsIngestsources;
 export const OpenpipelineV2SystemEventsIngestsources: typeof import("./openpipelineV2SystemEventsIngestsources").OpenpipelineV2SystemEventsIngestsources = null as any;
@@ -1830,6 +1885,11 @@ export type OpenpipelineV2SystemEventsRouting = import("./openpipelineV2SystemEv
 export const OpenpipelineV2SystemEventsRouting: typeof import("./openpipelineV2SystemEventsRouting").OpenpipelineV2SystemEventsRouting = null as any;
 utilities.lazyLoad(exports, ["OpenpipelineV2SystemEventsRouting"], () => require("./openpipelineV2SystemEventsRouting"));
 
+export { OpenpipelineV2UserEventsDataforwardingArgs, OpenpipelineV2UserEventsDataforwardingState } from "./openpipelineV2UserEventsDataforwarding";
+export type OpenpipelineV2UserEventsDataforwarding = import("./openpipelineV2UserEventsDataforwarding").OpenpipelineV2UserEventsDataforwarding;
+export const OpenpipelineV2UserEventsDataforwarding: typeof import("./openpipelineV2UserEventsDataforwarding").OpenpipelineV2UserEventsDataforwarding = null as any;
+utilities.lazyLoad(exports, ["OpenpipelineV2UserEventsDataforwarding"], () => require("./openpipelineV2UserEventsDataforwarding"));
+
 export { OpenpipelineV2UserEventsIngestsourcesArgs, OpenpipelineV2UserEventsIngestsourcesState } from "./openpipelineV2UserEventsIngestsources";
 export type OpenpipelineV2UserEventsIngestsources = import("./openpipelineV2UserEventsIngestsources").OpenpipelineV2UserEventsIngestsources;
 export const OpenpipelineV2UserEventsIngestsources: typeof import("./openpipelineV2UserEventsIngestsources").OpenpipelineV2UserEventsIngestsources = null as any;
@@ -1849,6 +1909,11 @@ export { OpenpipelineV2UserEventsRoutingArgs, OpenpipelineV2UserEventsRoutingSta
 export type OpenpipelineV2UserEventsRouting = import("./openpipelineV2UserEventsRouting").OpenpipelineV2UserEventsRouting;
 export const OpenpipelineV2UserEventsRouting: typeof import("./openpipelineV2UserEventsRouting").OpenpipelineV2UserEventsRouting = null as any;
 utilities.lazyLoad(exports, ["OpenpipelineV2UserEventsRouting"], () => require("./openpipelineV2UserEventsRouting"));
+
+export { OpenpipelineV2UsersessionsDataforwardingArgs, OpenpipelineV2UsersessionsDataforwardingState } from "./openpipelineV2UsersessionsDataforwarding";
+export type OpenpipelineV2UsersessionsDataforwarding = import("./openpipelineV2UsersessionsDataforwarding").OpenpipelineV2UsersessionsDataforwarding;
+export const OpenpipelineV2UsersessionsDataforwarding: typeof import("./openpipelineV2UsersessionsDataforwarding").OpenpipelineV2UsersessionsDataforwarding = null as any;
+utilities.lazyLoad(exports, ["OpenpipelineV2UsersessionsDataforwarding"], () => require("./openpipelineV2UsersessionsDataforwarding"));
 
 export { OpenpipelineV2UsersessionsIngestsourcesArgs, OpenpipelineV2UsersessionsIngestsourcesState } from "./openpipelineV2UsersessionsIngestsources";
 export type OpenpipelineV2UsersessionsIngestsources = import("./openpipelineV2UsersessionsIngestsources").OpenpipelineV2UsersessionsIngestsources;
@@ -3013,6 +3078,8 @@ const _module = {
                 return new OpenpipelineUserEvents(name, <any>undefined, { urn })
             case "dynatrace:index/openpipelineUserSessions:OpenpipelineUserSessions":
                 return new OpenpipelineUserSessions(name, <any>undefined, { urn })
+            case "dynatrace:index/openpipelineV2BizeventsDataforwarding:OpenpipelineV2BizeventsDataforwarding":
+                return new OpenpipelineV2BizeventsDataforwarding(name, <any>undefined, { urn })
             case "dynatrace:index/openpipelineV2BizeventsIngestsources:OpenpipelineV2BizeventsIngestsources":
                 return new OpenpipelineV2BizeventsIngestsources(name, <any>undefined, { urn })
             case "dynatrace:index/openpipelineV2BizeventsPipelinegroups:OpenpipelineV2BizeventsPipelinegroups":
@@ -3021,6 +3088,8 @@ const _module = {
                 return new OpenpipelineV2BizeventsPipelines(name, <any>undefined, { urn })
             case "dynatrace:index/openpipelineV2BizeventsRouting:OpenpipelineV2BizeventsRouting":
                 return new OpenpipelineV2BizeventsRouting(name, <any>undefined, { urn })
+            case "dynatrace:index/openpipelineV2DavisEventsDataforwarding:OpenpipelineV2DavisEventsDataforwarding":
+                return new OpenpipelineV2DavisEventsDataforwarding(name, <any>undefined, { urn })
             case "dynatrace:index/openpipelineV2DavisEventsIngestsources:OpenpipelineV2DavisEventsIngestsources":
                 return new OpenpipelineV2DavisEventsIngestsources(name, <any>undefined, { urn })
             case "dynatrace:index/openpipelineV2DavisEventsPipelinegroups:OpenpipelineV2DavisEventsPipelinegroups":
@@ -3029,6 +3098,8 @@ const _module = {
                 return new OpenpipelineV2DavisEventsPipelines(name, <any>undefined, { urn })
             case "dynatrace:index/openpipelineV2DavisEventsRouting:OpenpipelineV2DavisEventsRouting":
                 return new OpenpipelineV2DavisEventsRouting(name, <any>undefined, { urn })
+            case "dynatrace:index/openpipelineV2DavisProblemsDataforwarding:OpenpipelineV2DavisProblemsDataforwarding":
+                return new OpenpipelineV2DavisProblemsDataforwarding(name, <any>undefined, { urn })
             case "dynatrace:index/openpipelineV2DavisProblemsIngestsources:OpenpipelineV2DavisProblemsIngestsources":
                 return new OpenpipelineV2DavisProblemsIngestsources(name, <any>undefined, { urn })
             case "dynatrace:index/openpipelineV2DavisProblemsPipelinegroups:OpenpipelineV2DavisProblemsPipelinegroups":
@@ -3037,6 +3108,8 @@ const _module = {
                 return new OpenpipelineV2DavisProblemsPipelines(name, <any>undefined, { urn })
             case "dynatrace:index/openpipelineV2DavisProblemsRouting:OpenpipelineV2DavisProblemsRouting":
                 return new OpenpipelineV2DavisProblemsRouting(name, <any>undefined, { urn })
+            case "dynatrace:index/openpipelineV2EventsDataforwarding:OpenpipelineV2EventsDataforwarding":
+                return new OpenpipelineV2EventsDataforwarding(name, <any>undefined, { urn })
             case "dynatrace:index/openpipelineV2EventsIngestsources:OpenpipelineV2EventsIngestsources":
                 return new OpenpipelineV2EventsIngestsources(name, <any>undefined, { urn })
             case "dynatrace:index/openpipelineV2EventsPipelinegroups:OpenpipelineV2EventsPipelinegroups":
@@ -3045,6 +3118,8 @@ const _module = {
                 return new OpenpipelineV2EventsPipelines(name, <any>undefined, { urn })
             case "dynatrace:index/openpipelineV2EventsRouting:OpenpipelineV2EventsRouting":
                 return new OpenpipelineV2EventsRouting(name, <any>undefined, { urn })
+            case "dynatrace:index/openpipelineV2EventsSdlcDataforwarding:OpenpipelineV2EventsSdlcDataforwarding":
+                return new OpenpipelineV2EventsSdlcDataforwarding(name, <any>undefined, { urn })
             case "dynatrace:index/openpipelineV2EventsSdlcIngestsources:OpenpipelineV2EventsSdlcIngestsources":
                 return new OpenpipelineV2EventsSdlcIngestsources(name, <any>undefined, { urn })
             case "dynatrace:index/openpipelineV2EventsSdlcPipelinegroups:OpenpipelineV2EventsSdlcPipelinegroups":
@@ -3053,6 +3128,8 @@ const _module = {
                 return new OpenpipelineV2EventsSdlcPipelines(name, <any>undefined, { urn })
             case "dynatrace:index/openpipelineV2EventsSdlcRouting:OpenpipelineV2EventsSdlcRouting":
                 return new OpenpipelineV2EventsSdlcRouting(name, <any>undefined, { urn })
+            case "dynatrace:index/openpipelineV2EventsSecurityDataforwarding:OpenpipelineV2EventsSecurityDataforwarding":
+                return new OpenpipelineV2EventsSecurityDataforwarding(name, <any>undefined, { urn })
             case "dynatrace:index/openpipelineV2EventsSecurityIngestsources:OpenpipelineV2EventsSecurityIngestsources":
                 return new OpenpipelineV2EventsSecurityIngestsources(name, <any>undefined, { urn })
             case "dynatrace:index/openpipelineV2EventsSecurityPipelinegroups:OpenpipelineV2EventsSecurityPipelinegroups":
@@ -3061,6 +3138,8 @@ const _module = {
                 return new OpenpipelineV2EventsSecurityPipelines(name, <any>undefined, { urn })
             case "dynatrace:index/openpipelineV2EventsSecurityRouting:OpenpipelineV2EventsSecurityRouting":
                 return new OpenpipelineV2EventsSecurityRouting(name, <any>undefined, { urn })
+            case "dynatrace:index/openpipelineV2LogsDataforwarding:OpenpipelineV2LogsDataforwarding":
+                return new OpenpipelineV2LogsDataforwarding(name, <any>undefined, { urn })
             case "dynatrace:index/openpipelineV2LogsIngestsources:OpenpipelineV2LogsIngestsources":
                 return new OpenpipelineV2LogsIngestsources(name, <any>undefined, { urn })
             case "dynatrace:index/openpipelineV2LogsPipelinegroups:OpenpipelineV2LogsPipelinegroups":
@@ -3069,6 +3148,8 @@ const _module = {
                 return new OpenpipelineV2LogsPipelines(name, <any>undefined, { urn })
             case "dynatrace:index/openpipelineV2LogsRouting:OpenpipelineV2LogsRouting":
                 return new OpenpipelineV2LogsRouting(name, <any>undefined, { urn })
+            case "dynatrace:index/openpipelineV2MetricsDataforwarding:OpenpipelineV2MetricsDataforwarding":
+                return new OpenpipelineV2MetricsDataforwarding(name, <any>undefined, { urn })
             case "dynatrace:index/openpipelineV2MetricsIngestsources:OpenpipelineV2MetricsIngestsources":
                 return new OpenpipelineV2MetricsIngestsources(name, <any>undefined, { urn })
             case "dynatrace:index/openpipelineV2MetricsPipelinegroups:OpenpipelineV2MetricsPipelinegroups":
@@ -3077,6 +3158,8 @@ const _module = {
                 return new OpenpipelineV2MetricsPipelines(name, <any>undefined, { urn })
             case "dynatrace:index/openpipelineV2MetricsRouting:OpenpipelineV2MetricsRouting":
                 return new OpenpipelineV2MetricsRouting(name, <any>undefined, { urn })
+            case "dynatrace:index/openpipelineV2SecurityEventsDataforwarding:OpenpipelineV2SecurityEventsDataforwarding":
+                return new OpenpipelineV2SecurityEventsDataforwarding(name, <any>undefined, { urn })
             case "dynatrace:index/openpipelineV2SecurityEventsIngestsources:OpenpipelineV2SecurityEventsIngestsources":
                 return new OpenpipelineV2SecurityEventsIngestsources(name, <any>undefined, { urn })
             case "dynatrace:index/openpipelineV2SecurityEventsPipelinegroups:OpenpipelineV2SecurityEventsPipelinegroups":
@@ -3085,6 +3168,8 @@ const _module = {
                 return new OpenpipelineV2SecurityEventsPipelines(name, <any>undefined, { urn })
             case "dynatrace:index/openpipelineV2SecurityEventsRouting:OpenpipelineV2SecurityEventsRouting":
                 return new OpenpipelineV2SecurityEventsRouting(name, <any>undefined, { urn })
+            case "dynatrace:index/openpipelineV2SpansDataforwarding:OpenpipelineV2SpansDataforwarding":
+                return new OpenpipelineV2SpansDataforwarding(name, <any>undefined, { urn })
             case "dynatrace:index/openpipelineV2SpansIngestsources:OpenpipelineV2SpansIngestsources":
                 return new OpenpipelineV2SpansIngestsources(name, <any>undefined, { urn })
             case "dynatrace:index/openpipelineV2SpansPipelinegroups:OpenpipelineV2SpansPipelinegroups":
@@ -3093,6 +3178,8 @@ const _module = {
                 return new OpenpipelineV2SpansPipelines(name, <any>undefined, { urn })
             case "dynatrace:index/openpipelineV2SpansRouting:OpenpipelineV2SpansRouting":
                 return new OpenpipelineV2SpansRouting(name, <any>undefined, { urn })
+            case "dynatrace:index/openpipelineV2SystemEventsDataforwarding:OpenpipelineV2SystemEventsDataforwarding":
+                return new OpenpipelineV2SystemEventsDataforwarding(name, <any>undefined, { urn })
             case "dynatrace:index/openpipelineV2SystemEventsIngestsources:OpenpipelineV2SystemEventsIngestsources":
                 return new OpenpipelineV2SystemEventsIngestsources(name, <any>undefined, { urn })
             case "dynatrace:index/openpipelineV2SystemEventsPipelinegroups:OpenpipelineV2SystemEventsPipelinegroups":
@@ -3101,6 +3188,8 @@ const _module = {
                 return new OpenpipelineV2SystemEventsPipelines(name, <any>undefined, { urn })
             case "dynatrace:index/openpipelineV2SystemEventsRouting:OpenpipelineV2SystemEventsRouting":
                 return new OpenpipelineV2SystemEventsRouting(name, <any>undefined, { urn })
+            case "dynatrace:index/openpipelineV2UserEventsDataforwarding:OpenpipelineV2UserEventsDataforwarding":
+                return new OpenpipelineV2UserEventsDataforwarding(name, <any>undefined, { urn })
             case "dynatrace:index/openpipelineV2UserEventsIngestsources:OpenpipelineV2UserEventsIngestsources":
                 return new OpenpipelineV2UserEventsIngestsources(name, <any>undefined, { urn })
             case "dynatrace:index/openpipelineV2UserEventsPipelinegroups:OpenpipelineV2UserEventsPipelinegroups":
@@ -3109,6 +3198,8 @@ const _module = {
                 return new OpenpipelineV2UserEventsPipelines(name, <any>undefined, { urn })
             case "dynatrace:index/openpipelineV2UserEventsRouting:OpenpipelineV2UserEventsRouting":
                 return new OpenpipelineV2UserEventsRouting(name, <any>undefined, { urn })
+            case "dynatrace:index/openpipelineV2UsersessionsDataforwarding:OpenpipelineV2UsersessionsDataforwarding":
+                return new OpenpipelineV2UsersessionsDataforwarding(name, <any>undefined, { urn })
             case "dynatrace:index/openpipelineV2UsersessionsIngestsources:OpenpipelineV2UsersessionsIngestsources":
                 return new OpenpipelineV2UsersessionsIngestsources(name, <any>undefined, { urn })
             case "dynatrace:index/openpipelineV2UsersessionsPipelinegroups:OpenpipelineV2UsersessionsPipelinegroups":
@@ -3625,54 +3716,67 @@ pulumi.runtime.registerResourceModule("dynatrace", "index/openpipelineSpans", _m
 pulumi.runtime.registerResourceModule("dynatrace", "index/openpipelineSystemEvents", _module)
 pulumi.runtime.registerResourceModule("dynatrace", "index/openpipelineUserEvents", _module)
 pulumi.runtime.registerResourceModule("dynatrace", "index/openpipelineUserSessions", _module)
+pulumi.runtime.registerResourceModule("dynatrace", "index/openpipelineV2BizeventsDataforwarding", _module)
 pulumi.runtime.registerResourceModule("dynatrace", "index/openpipelineV2BizeventsIngestsources", _module)
 pulumi.runtime.registerResourceModule("dynatrace", "index/openpipelineV2BizeventsPipelinegroups", _module)
 pulumi.runtime.registerResourceModule("dynatrace", "index/openpipelineV2BizeventsPipelines", _module)
 pulumi.runtime.registerResourceModule("dynatrace", "index/openpipelineV2BizeventsRouting", _module)
+pulumi.runtime.registerResourceModule("dynatrace", "index/openpipelineV2DavisEventsDataforwarding", _module)
 pulumi.runtime.registerResourceModule("dynatrace", "index/openpipelineV2DavisEventsIngestsources", _module)
 pulumi.runtime.registerResourceModule("dynatrace", "index/openpipelineV2DavisEventsPipelinegroups", _module)
 pulumi.runtime.registerResourceModule("dynatrace", "index/openpipelineV2DavisEventsPipelines", _module)
 pulumi.runtime.registerResourceModule("dynatrace", "index/openpipelineV2DavisEventsRouting", _module)
+pulumi.runtime.registerResourceModule("dynatrace", "index/openpipelineV2DavisProblemsDataforwarding", _module)
 pulumi.runtime.registerResourceModule("dynatrace", "index/openpipelineV2DavisProblemsIngestsources", _module)
 pulumi.runtime.registerResourceModule("dynatrace", "index/openpipelineV2DavisProblemsPipelinegroups", _module)
 pulumi.runtime.registerResourceModule("dynatrace", "index/openpipelineV2DavisProblemsPipelines", _module)
 pulumi.runtime.registerResourceModule("dynatrace", "index/openpipelineV2DavisProblemsRouting", _module)
+pulumi.runtime.registerResourceModule("dynatrace", "index/openpipelineV2EventsDataforwarding", _module)
 pulumi.runtime.registerResourceModule("dynatrace", "index/openpipelineV2EventsIngestsources", _module)
 pulumi.runtime.registerResourceModule("dynatrace", "index/openpipelineV2EventsPipelinegroups", _module)
 pulumi.runtime.registerResourceModule("dynatrace", "index/openpipelineV2EventsPipelines", _module)
 pulumi.runtime.registerResourceModule("dynatrace", "index/openpipelineV2EventsRouting", _module)
+pulumi.runtime.registerResourceModule("dynatrace", "index/openpipelineV2EventsSdlcDataforwarding", _module)
 pulumi.runtime.registerResourceModule("dynatrace", "index/openpipelineV2EventsSdlcIngestsources", _module)
 pulumi.runtime.registerResourceModule("dynatrace", "index/openpipelineV2EventsSdlcPipelinegroups", _module)
 pulumi.runtime.registerResourceModule("dynatrace", "index/openpipelineV2EventsSdlcPipelines", _module)
 pulumi.runtime.registerResourceModule("dynatrace", "index/openpipelineV2EventsSdlcRouting", _module)
+pulumi.runtime.registerResourceModule("dynatrace", "index/openpipelineV2EventsSecurityDataforwarding", _module)
 pulumi.runtime.registerResourceModule("dynatrace", "index/openpipelineV2EventsSecurityIngestsources", _module)
 pulumi.runtime.registerResourceModule("dynatrace", "index/openpipelineV2EventsSecurityPipelinegroups", _module)
 pulumi.runtime.registerResourceModule("dynatrace", "index/openpipelineV2EventsSecurityPipelines", _module)
 pulumi.runtime.registerResourceModule("dynatrace", "index/openpipelineV2EventsSecurityRouting", _module)
+pulumi.runtime.registerResourceModule("dynatrace", "index/openpipelineV2LogsDataforwarding", _module)
 pulumi.runtime.registerResourceModule("dynatrace", "index/openpipelineV2LogsIngestsources", _module)
 pulumi.runtime.registerResourceModule("dynatrace", "index/openpipelineV2LogsPipelinegroups", _module)
 pulumi.runtime.registerResourceModule("dynatrace", "index/openpipelineV2LogsPipelines", _module)
 pulumi.runtime.registerResourceModule("dynatrace", "index/openpipelineV2LogsRouting", _module)
+pulumi.runtime.registerResourceModule("dynatrace", "index/openpipelineV2MetricsDataforwarding", _module)
 pulumi.runtime.registerResourceModule("dynatrace", "index/openpipelineV2MetricsIngestsources", _module)
 pulumi.runtime.registerResourceModule("dynatrace", "index/openpipelineV2MetricsPipelinegroups", _module)
 pulumi.runtime.registerResourceModule("dynatrace", "index/openpipelineV2MetricsPipelines", _module)
 pulumi.runtime.registerResourceModule("dynatrace", "index/openpipelineV2MetricsRouting", _module)
+pulumi.runtime.registerResourceModule("dynatrace", "index/openpipelineV2SecurityEventsDataforwarding", _module)
 pulumi.runtime.registerResourceModule("dynatrace", "index/openpipelineV2SecurityEventsIngestsources", _module)
 pulumi.runtime.registerResourceModule("dynatrace", "index/openpipelineV2SecurityEventsPipelinegroups", _module)
 pulumi.runtime.registerResourceModule("dynatrace", "index/openpipelineV2SecurityEventsPipelines", _module)
 pulumi.runtime.registerResourceModule("dynatrace", "index/openpipelineV2SecurityEventsRouting", _module)
+pulumi.runtime.registerResourceModule("dynatrace", "index/openpipelineV2SpansDataforwarding", _module)
 pulumi.runtime.registerResourceModule("dynatrace", "index/openpipelineV2SpansIngestsources", _module)
 pulumi.runtime.registerResourceModule("dynatrace", "index/openpipelineV2SpansPipelinegroups", _module)
 pulumi.runtime.registerResourceModule("dynatrace", "index/openpipelineV2SpansPipelines", _module)
 pulumi.runtime.registerResourceModule("dynatrace", "index/openpipelineV2SpansRouting", _module)
+pulumi.runtime.registerResourceModule("dynatrace", "index/openpipelineV2SystemEventsDataforwarding", _module)
 pulumi.runtime.registerResourceModule("dynatrace", "index/openpipelineV2SystemEventsIngestsources", _module)
 pulumi.runtime.registerResourceModule("dynatrace", "index/openpipelineV2SystemEventsPipelinegroups", _module)
 pulumi.runtime.registerResourceModule("dynatrace", "index/openpipelineV2SystemEventsPipelines", _module)
 pulumi.runtime.registerResourceModule("dynatrace", "index/openpipelineV2SystemEventsRouting", _module)
+pulumi.runtime.registerResourceModule("dynatrace", "index/openpipelineV2UserEventsDataforwarding", _module)
 pulumi.runtime.registerResourceModule("dynatrace", "index/openpipelineV2UserEventsIngestsources", _module)
 pulumi.runtime.registerResourceModule("dynatrace", "index/openpipelineV2UserEventsPipelinegroups", _module)
 pulumi.runtime.registerResourceModule("dynatrace", "index/openpipelineV2UserEventsPipelines", _module)
 pulumi.runtime.registerResourceModule("dynatrace", "index/openpipelineV2UserEventsRouting", _module)
+pulumi.runtime.registerResourceModule("dynatrace", "index/openpipelineV2UsersessionsDataforwarding", _module)
 pulumi.runtime.registerResourceModule("dynatrace", "index/openpipelineV2UsersessionsIngestsources", _module)
 pulumi.runtime.registerResourceModule("dynatrace", "index/openpipelineV2UsersessionsPipelinegroups", _module)
 pulumi.runtime.registerResourceModule("dynatrace", "index/openpipelineV2UsersessionsPipelines", _module)

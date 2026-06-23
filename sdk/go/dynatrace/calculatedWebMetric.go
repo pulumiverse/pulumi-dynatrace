@@ -56,7 +56,7 @@ import (
 //			_, err = dynatrace.NewCalculatedWebMetric(ctx, "metric", &dynatrace.CalculatedWebMetricArgs{
 //				Name:          pulumi.String("#name#"),
 //				Enabled:       pulumi.Bool(true),
-//				AppIdentifier: pulumi.String(pulumi.String(webApplication.Id)),
+//				AppIdentifier: pulumi.String(webApplication.Id),
 //				MetricKey:     pulumi.String("calc:apps.web.#name#"),
 //				Dimensions: dynatrace.CalculatedWebMetricDimensionArray{
 //					&dynatrace.CalculatedWebMetricDimensionArgs{

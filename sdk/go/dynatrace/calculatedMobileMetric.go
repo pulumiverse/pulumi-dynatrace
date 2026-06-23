@@ -49,7 +49,7 @@ import (
 //			_, err = dynatrace.NewCalculatedMobileMetric(ctx, "metric", &dynatrace.CalculatedMobileMetricArgs{
 //				Name:          pulumi.String("#name#"),
 //				Enabled:       pulumi.Bool(true),
-//				AppIdentifier: pulumi.String(pulumi.String(application.Id)),
+//				AppIdentifier: pulumi.String(application.Id),
 //				MetricKey:     pulumi.String("calc:apps.mobile.#name#"),
 //				MetricType:    pulumi.String("USER_ACTION_DURATION"),
 //				Dimensions: dynatrace.CalculatedMobileMetricDimensionArray{
