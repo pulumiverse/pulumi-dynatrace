@@ -241,7 +241,6 @@ class PolicyBindings(pulumi.CustomResource):
         # policies = [dynatrace_policy.cluster_policy.id, dynatrace_policy.env_policy.id] # INVALID, because `dynatrace_policy.env_policy` is not defined for the cluster level
         # }
 
-
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[_builtins.str] cluster: The UUID of the cluster. The attribute `policies` must contain ONLY policies defined for that cluster.
@@ -324,7 +323,6 @@ class PolicyBindings(pulumi.CustomResource):
         # cluster  = "########-####-####-####-############"
         # policies = [dynatrace_policy.cluster_policy.id, dynatrace_policy.env_policy.id] # INVALID, because `dynatrace_policy.env_policy` is not defined for the cluster level
         # }
-
 
         :param str resource_name: The name of the resource.
         :param PolicyBindingsArgs args: The arguments to use to populate this resource's properties.
