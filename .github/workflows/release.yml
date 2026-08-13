@@ -41,7 +41,7 @@ jobs:
         with:
           pulumi-version: latest
       - name: Setup Node
-        uses: actions/setup-node@v6
+        uses: actions/setup-node@v7
         with:
           node-version: ${{matrix.nodeversion}}
       - name: Setup DotNet
@@ -219,7 +219,7 @@ jobs:
         with:
           pulumi-version: latest
       - name: Setup Node
-        uses: actions/setup-node@v6
+        uses: actions/setup-node@v7
         with:
           node-version: ${{matrix.nodeversion}}
       - name: Setup DotNet
@@ -312,7 +312,7 @@ jobs:
         with:
           pulumi-version: latest
       - name: Setup Node
-        uses: actions/setup-node@v6
+        uses: actions/setup-node@v7
         with:
           node-version: ${{matrix.nodeversion}}
           registry-url: https://registry.npmjs.org

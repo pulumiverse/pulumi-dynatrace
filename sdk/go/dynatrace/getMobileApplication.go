@@ -64,12 +64,8 @@ type LookupMobileApplicationResult struct {
 }
 
 func LookupMobileApplicationOutput(ctx *pulumi.Context, args LookupMobileApplicationOutputArgs, opts ...pulumi.InvokeOption) LookupMobileApplicationResultOutput {
-	return pulumi.ToOutputWithContext(ctx.Context(), args).
-		ApplyT(func(v interface{}) (LookupMobileApplicationResultOutput, error) {
-			args := v.(LookupMobileApplicationArgs)
-			options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
-			return ctx.InvokeOutput("dynatrace:index/getMobileApplication:getMobileApplication", args, LookupMobileApplicationResultOutput{}, options).(LookupMobileApplicationResultOutput), nil
-		}).(LookupMobileApplicationResultOutput)
+	options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
+	return ctx.InvokeOutput("dynatrace:index/getMobileApplication:getMobileApplication", args, LookupMobileApplicationResultOutput{}, options).(LookupMobileApplicationResultOutput)
 }
 
 // A collection of arguments for invoking getMobileApplication.

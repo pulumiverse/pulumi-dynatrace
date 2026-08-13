@@ -64,12 +64,8 @@ type LookupRequestAttributeResult struct {
 }
 
 func LookupRequestAttributeOutput(ctx *pulumi.Context, args LookupRequestAttributeOutputArgs, opts ...pulumi.InvokeOption) LookupRequestAttributeResultOutput {
-	return pulumi.ToOutputWithContext(ctx.Context(), args).
-		ApplyT(func(v interface{}) (LookupRequestAttributeResultOutput, error) {
-			args := v.(LookupRequestAttributeArgs)
-			options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
-			return ctx.InvokeOutput("dynatrace:index/getRequestAttribute:getRequestAttribute", args, LookupRequestAttributeResultOutput{}, options).(LookupRequestAttributeResultOutput), nil
-		}).(LookupRequestAttributeResultOutput)
+	options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
+	return ctx.InvokeOutput("dynatrace:index/getRequestAttribute:getRequestAttribute", args, LookupRequestAttributeResultOutput{}, options).(LookupRequestAttributeResultOutput)
 }
 
 // A collection of arguments for invoking getRequestAttribute.

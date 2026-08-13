@@ -29,10 +29,8 @@ type GetAwsIamExternalResult struct {
 }
 
 func GetAwsIamExternalOutput(ctx *pulumi.Context, opts ...pulumi.InvokeOption) GetAwsIamExternalResultOutput {
-	return pulumi.ToOutput(0).ApplyT(func(int) (GetAwsIamExternalResultOutput, error) {
-		options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
-		return ctx.InvokeOutput("dynatrace:index/getAwsIamExternal:getAwsIamExternal", nil, GetAwsIamExternalResultOutput{}, options).(GetAwsIamExternalResultOutput), nil
-	}).(GetAwsIamExternalResultOutput)
+	options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
+	return ctx.InvokeOutput("dynatrace:index/getAwsIamExternal:getAwsIamExternal", nil, GetAwsIamExternalResultOutput{}, options).(GetAwsIamExternalResultOutput)
 }
 
 // A collection of values returned by getAwsIamExternal.

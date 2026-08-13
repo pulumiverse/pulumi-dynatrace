@@ -36,12 +36,8 @@ type GetAlertingProfilesResult struct {
 }
 
 func GetAlertingProfilesOutput(ctx *pulumi.Context, args GetAlertingProfilesOutputArgs, opts ...pulumi.InvokeOption) GetAlertingProfilesResultOutput {
-	return pulumi.ToOutputWithContext(ctx.Context(), args).
-		ApplyT(func(v interface{}) (GetAlertingProfilesResultOutput, error) {
-			args := v.(GetAlertingProfilesArgs)
-			options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
-			return ctx.InvokeOutput("dynatrace:index/getAlertingProfiles:getAlertingProfiles", args, GetAlertingProfilesResultOutput{}, options).(GetAlertingProfilesResultOutput), nil
-		}).(GetAlertingProfilesResultOutput)
+	options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
+	return ctx.InvokeOutput("dynatrace:index/getAlertingProfiles:getAlertingProfiles", args, GetAlertingProfilesResultOutput{}, options).(GetAlertingProfilesResultOutput)
 }
 
 // A collection of arguments for invoking getAlertingProfiles.
