@@ -14,19 +14,19 @@ namespace Pulumiverse.Dynatrace.Inputs
     public sealed class SiteReliabilityGuardianObjectivesObjectiveDisplayUnitGetArgs : global::Pulumi.ResourceArgs
     {
         /// <summary>
-        /// Base Unit
+        /// Unit the DQL query returns its result in. Source unit for conversion.
         /// </summary>
         [Input("base", required: true)]
         public Input<string> Base { get; set; } = null!;
 
         /// <summary>
-        /// Decimals
+        /// Number of decimal places (0-4) used when formatting the displayed value.
         /// </summary>
         [Input("decimals", required: true)]
         public Input<int> Decimals { get; set; } = null!;
 
         /// <summary>
-        /// display as unit
+        /// Unit to display the value in after conversion. Use Default to show the base unit as-is.
         /// </summary>
         [Input("display", required: true)]
         public Input<string> Display { get; set; } = null!;

@@ -18,6 +18,18 @@ import * as utilities from "./utilities";
  * - `terraform-provider-dynatrace -export dynatrace.KeyRequests` downloads all existing key request configuration
  *
  * The full documentation of the export feature is available [here](https://dt-url.net/h203qmc).
+ *
+ * ## Resource Example Usage
+ *
+ * ```typescript
+ * import * as pulumi from "@pulumi/pulumi";
+ * import * as dynatrace from "@pulumiverse/dynatrace";
+ *
+ * const example = new dynatrace.KeyRequests("example", {
+ *     service: "SERVICE-0000000000000000",
+ *     names: ["my-request-name"],
+ * });
+ * ```
  */
 export class KeyRequests extends pulumi.CustomResource {
     /**
@@ -56,7 +68,7 @@ export class KeyRequests extends pulumi.CustomResource {
      */
     declare public readonly names: pulumi.Output<string[] | undefined>;
     /**
-     * ID of Dynatrace Service, eg. SERVICE-123ABC45678EFGH
+     * The scope of this settings. If the settings should cover the whole environment, just don't specify any scope.
      */
     declare public readonly service: pulumi.Output<string>;
 
@@ -103,7 +115,7 @@ export interface KeyRequestsState {
      */
     names?: pulumi.Input<pulumi.Input<string>[] | undefined>;
     /**
-     * ID of Dynatrace Service, eg. SERVICE-123ABC45678EFGH
+     * The scope of this settings. If the settings should cover the whole environment, just don't specify any scope.
      */
     service?: pulumi.Input<string | undefined>;
 }
@@ -121,7 +133,7 @@ export interface KeyRequestsArgs {
      */
     names?: pulumi.Input<pulumi.Input<string>[] | undefined>;
     /**
-     * ID of Dynatrace Service, eg. SERVICE-123ABC45678EFGH
+     * The scope of this settings. If the settings should cover the whole environment, just don't specify any scope.
      */
     service: pulumi.Input<string>;
 }

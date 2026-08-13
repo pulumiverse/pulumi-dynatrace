@@ -104,6 +104,12 @@ namespace Pulumiverse.Dynatrace.Inputs
         public Input<string> Id { get; set; } = null!;
 
         /// <summary>
+        /// Inline lookup processor attributes
+        /// </summary>
+        [Input("inlineLookup")]
+        public Input<Inputs.OpenpipelineV2UserEventsPipelinesSmartscapeNodeExtractionProcessorsProcessorInlineLookupGetArgs>? InlineLookup { get; set; }
+
+        /// <summary>
         /// [See our documentation](https://dt-url.net/bp234rv)
         /// </summary>
         [Input("matcher")]
@@ -176,7 +182,7 @@ namespace Pulumiverse.Dynatrace.Inputs
         public Input<Inputs.OpenpipelineV2UserEventsPipelinesSmartscapeNodeExtractionProcessorsProcessorTechnologyGetArgs>? Technology { get; set; }
 
         /// <summary>
-        /// Processor type. Possible values: `azureLogForwarding`, `Bizevent`, `bucketAssignment`, `costAllocation`, `counterMetric`, `Davis`, `Dql`, `Drop`, `fieldsAdd`, `fieldsRemove`, `fieldsRename`, `geoLookup`, `histogramMetric`, `noStorage`, `productAllocation`, `samplingAwareCounterMetric`, `samplingAwareHistogramMetric`, `samplingAwareValueMetric`, `sdlcEvent`, `securityContext`, `securityEvent`, `smartscapeEdge`, `smartscapeNode`, `Technology`, `valueMetric`
+        /// Processor type. Possible values: `azureLogForwarding`, `Bizevent`, `bucketAssignment`, `costAllocation`, `counterMetric`, `Davis`, `Dql`, `Drop`, `fieldsAdd`, `fieldsRemove`, `fieldsRename`, `geoLookup`, `histogramMetric`, `inlineLookup`, `noStorage`, `productAllocation`, `samplingAwareCounterMetric`, `samplingAwareHistogramMetric`, `samplingAwareValueMetric`, `sdlcEvent`, `securityContext`, `securityEvent`, `smartscapeEdge`, `smartscapeNode`, `Technology`, `valueMetric`
         /// </summary>
         [Input("type", required: true)]
         public Input<string> Type { get; set; } = null!;

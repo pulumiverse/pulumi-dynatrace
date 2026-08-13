@@ -14,13 +14,7 @@ namespace Pulumiverse.Dynatrace.Inputs
     public sealed class KubernetesEnrichmentRulesRuleArgs : global::Pulumi.ResourceArgs
     {
         /// <summary>
-        /// This setting is enabled (`True`) or disabled (`False`)
-        /// </summary>
-        [Input("enabled")]
-        public Input<bool>? Enabled { get; set; }
-
-        /// <summary>
-        /// Uses the key of the annotation or label as field name
+        /// Uses the key of the annotation or label as field name directly
         /// </summary>
         [Input("primaryGrailTag")]
         public Input<bool>? PrimaryGrailTag { get; set; }
@@ -32,13 +26,13 @@ namespace Pulumiverse.Dynatrace.Inputs
         public Input<string> Source { get; set; } = null!;
 
         /// <summary>
-        /// Required when `PrimaryGrailTag` is omitted or `False`. Possible Values: `dt.cost.costcenter``, `dt.cost.product``, `dt.security_context
+        /// Possible values: `dt.cost.costcenter`, `dt.cost.product`, `dt.security_context`
         /// </summary>
         [Input("target")]
         public Input<string>? Target { get; set; }
 
         /// <summary>
-        /// Possible Values: `ANNOTATION`, `LABEL`
+        /// Metadata type. Possible values: `ANNOTATION`, `LABEL`
         /// </summary>
         [Input("type", required: true)]
         public Input<string> Type { get; set; } = null!;

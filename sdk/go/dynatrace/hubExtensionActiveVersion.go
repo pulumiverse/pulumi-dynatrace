@@ -70,9 +70,9 @@ import (
 //
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
-//			_, err := dynatrace.NewHubExtensionActiveVersion(ctx, "jmx-weblogic-cp", &dynatrace.HubExtensionActiveVersionArgs{
-//				Name:    pulumi.String("com.dynatrace.extension.jmx-weblogic-cp"),
-//				Version: pulumi.String("2.1.1"),
+//			_, err := dynatrace.NewHubExtensionActiveVersion(ctx, "com_dynatrace_extension_wmi_iis", &dynatrace.HubExtensionActiveVersionArgs{
+//				Name:    pulumi.String("com.dynatrace.extension.wmi.iis"),
+//				Version: pulumi.String("2.0.1"),
 //			})
 //			if err != nil {
 //				return err

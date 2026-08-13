@@ -67,7 +67,7 @@ export class DevobsAgentOptin extends pulumi.CustomResource {
      */
     declare public readonly enabled: pulumi.Output<boolean>;
     /**
-     * The scope of this setting (PROCESS*GROUP, CLOUD*APPLICATION*NAMESPACE, KUBERNETES*CLUSTER). Omit this property if you want to cover the whole environment.
+     * The scope of this setting (PROCESS*GROUP, CLOUD*APPLICATION, CLOUD*APPLICATION*NAMESPACE, KUBERNETES*CLUSTER, HOST*GROUP). Omit this property if you want to cover the whole environment.
      */
     declare public readonly scope: pulumi.Output<string | undefined>;
 
@@ -108,7 +108,7 @@ export interface DevobsAgentOptinState {
      */
     enabled?: pulumi.Input<boolean | undefined>;
     /**
-     * The scope of this setting (PROCESS*GROUP, CLOUD*APPLICATION*NAMESPACE, KUBERNETES*CLUSTER). Omit this property if you want to cover the whole environment.
+     * The scope of this setting (PROCESS*GROUP, CLOUD*APPLICATION, CLOUD*APPLICATION*NAMESPACE, KUBERNETES*CLUSTER, HOST*GROUP). Omit this property if you want to cover the whole environment.
      */
     scope?: pulumi.Input<string | undefined>;
 }
@@ -122,7 +122,7 @@ export interface DevobsAgentOptinArgs {
      */
     enabled: pulumi.Input<boolean>;
     /**
-     * The scope of this setting (PROCESS*GROUP, CLOUD*APPLICATION*NAMESPACE, KUBERNETES*CLUSTER). Omit this property if you want to cover the whole environment.
+     * The scope of this setting (PROCESS*GROUP, CLOUD*APPLICATION, CLOUD*APPLICATION*NAMESPACE, KUBERNETES*CLUSTER, HOST*GROUP). Omit this property if you want to cover the whole environment.
      */
     scope?: pulumi.Input<string | undefined>;
 }

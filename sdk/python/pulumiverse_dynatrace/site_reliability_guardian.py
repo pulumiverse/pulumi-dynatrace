@@ -30,10 +30,10 @@ class SiteReliabilityGuardianArgs:
         """
         The set of arguments for constructing a SiteReliabilityGuardian resource.
 
-        :param pulumi.Input['SiteReliabilityGuardianObjectivesArgs'] objectives: Objectives
-        :param pulumi.Input[_builtins.str] description: Description
+        :param pulumi.Input['SiteReliabilityGuardianObjectivesArgs'] objectives: The validation criteria evaluated each time this guardian is executed.
+        :param pulumi.Input[_builtins.str] description: Optional explanation of this guardian's purpose and scope.
         :param pulumi.Input[_builtins.str] event_kind: If set to null/'BIZ*EVENT' validation events stored as bizevents in Grail. If set to 'SDLC*EVENT' validation events stored as SDLC events. Possible values: `BIZ_EVENT`, `SDLC_EVENT`
-        :param pulumi.Input[_builtins.str] name: Name
+        :param pulumi.Input[_builtins.str] name: Unique display name for this guardian.
         :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] tags: Define key/value pairs that further describe this guardian.
         :param pulumi.Input['SiteReliabilityGuardianVariablesArgs'] variables: Define variables for dynamically defining DQL queries
         """
@@ -53,7 +53,7 @@ class SiteReliabilityGuardianArgs:
     @pulumi.getter
     def objectives(self) -> pulumi.Input['SiteReliabilityGuardianObjectivesArgs']:
         """
-        Objectives
+        The validation criteria evaluated each time this guardian is executed.
         """
         return pulumi.get(self, "objectives")
 
@@ -65,7 +65,7 @@ class SiteReliabilityGuardianArgs:
     @pulumi.getter
     def description(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
-        Description
+        Optional explanation of this guardian's purpose and scope.
         """
         return pulumi.get(self, "description")
 
@@ -89,7 +89,7 @@ class SiteReliabilityGuardianArgs:
     @pulumi.getter
     def name(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
-        Name
+        Unique display name for this guardian.
         """
         return pulumi.get(self, "name")
 
@@ -134,10 +134,10 @@ class _SiteReliabilityGuardianState:
         """
         Input properties used for looking up and filtering SiteReliabilityGuardian resources.
 
-        :param pulumi.Input[_builtins.str] description: Description
+        :param pulumi.Input[_builtins.str] description: Optional explanation of this guardian's purpose and scope.
         :param pulumi.Input[_builtins.str] event_kind: If set to null/'BIZ*EVENT' validation events stored as bizevents in Grail. If set to 'SDLC*EVENT' validation events stored as SDLC events. Possible values: `BIZ_EVENT`, `SDLC_EVENT`
-        :param pulumi.Input[_builtins.str] name: Name
-        :param pulumi.Input['SiteReliabilityGuardianObjectivesArgs'] objectives: Objectives
+        :param pulumi.Input[_builtins.str] name: Unique display name for this guardian.
+        :param pulumi.Input['SiteReliabilityGuardianObjectivesArgs'] objectives: The validation criteria evaluated each time this guardian is executed.
         :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] tags: Define key/value pairs that further describe this guardian.
         :param pulumi.Input['SiteReliabilityGuardianVariablesArgs'] variables: Define variables for dynamically defining DQL queries
         """
@@ -158,7 +158,7 @@ class _SiteReliabilityGuardianState:
     @pulumi.getter
     def description(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
-        Description
+        Optional explanation of this guardian's purpose and scope.
         """
         return pulumi.get(self, "description")
 
@@ -182,7 +182,7 @@ class _SiteReliabilityGuardianState:
     @pulumi.getter
     def name(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
-        Name
+        Unique display name for this guardian.
         """
         return pulumi.get(self, "name")
 
@@ -194,7 +194,7 @@ class _SiteReliabilityGuardianState:
     @pulumi.getter
     def objectives(self) -> pulumi.Input[Optional['SiteReliabilityGuardianObjectivesArgs']]:
         """
-        Objectives
+        The validation criteria evaluated each time this guardian is executed.
         """
         return pulumi.get(self, "objectives")
 
@@ -260,10 +260,10 @@ class SiteReliabilityGuardian(pulumi.CustomResource):
 
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
-        :param pulumi.Input[_builtins.str] description: Description
+        :param pulumi.Input[_builtins.str] description: Optional explanation of this guardian's purpose and scope.
         :param pulumi.Input[_builtins.str] event_kind: If set to null/'BIZ*EVENT' validation events stored as bizevents in Grail. If set to 'SDLC*EVENT' validation events stored as SDLC events. Possible values: `BIZ_EVENT`, `SDLC_EVENT`
-        :param pulumi.Input[_builtins.str] name: Name
-        :param pulumi.Input[Union['SiteReliabilityGuardianObjectivesArgs', 'SiteReliabilityGuardianObjectivesArgsDict']] objectives: Objectives
+        :param pulumi.Input[_builtins.str] name: Unique display name for this guardian.
+        :param pulumi.Input[Union['SiteReliabilityGuardianObjectivesArgs', 'SiteReliabilityGuardianObjectivesArgsDict']] objectives: The validation criteria evaluated each time this guardian is executed.
         :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] tags: Define key/value pairs that further describe this guardian.
         :param pulumi.Input[Union['SiteReliabilityGuardianVariablesArgs', 'SiteReliabilityGuardianVariablesArgsDict']] variables: Define variables for dynamically defining DQL queries
         """
@@ -352,10 +352,10 @@ class SiteReliabilityGuardian(pulumi.CustomResource):
         :param str resource_name: The unique name of the resulting resource.
         :param pulumi.Input[str] id: The unique provider ID of the resource to lookup.
         :param pulumi.ResourceOptions opts: Options for the resource.
-        :param pulumi.Input[_builtins.str] description: Description
+        :param pulumi.Input[_builtins.str] description: Optional explanation of this guardian's purpose and scope.
         :param pulumi.Input[_builtins.str] event_kind: If set to null/'BIZ*EVENT' validation events stored as bizevents in Grail. If set to 'SDLC*EVENT' validation events stored as SDLC events. Possible values: `BIZ_EVENT`, `SDLC_EVENT`
-        :param pulumi.Input[_builtins.str] name: Name
-        :param pulumi.Input[Union['SiteReliabilityGuardianObjectivesArgs', 'SiteReliabilityGuardianObjectivesArgsDict']] objectives: Objectives
+        :param pulumi.Input[_builtins.str] name: Unique display name for this guardian.
+        :param pulumi.Input[Union['SiteReliabilityGuardianObjectivesArgs', 'SiteReliabilityGuardianObjectivesArgsDict']] objectives: The validation criteria evaluated each time this guardian is executed.
         :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] tags: Define key/value pairs that further describe this guardian.
         :param pulumi.Input[Union['SiteReliabilityGuardianVariablesArgs', 'SiteReliabilityGuardianVariablesArgsDict']] variables: Define variables for dynamically defining DQL queries
         """
@@ -375,7 +375,7 @@ class SiteReliabilityGuardian(pulumi.CustomResource):
     @pulumi.getter
     def description(self) -> pulumi.Output[Optional[_builtins.str]]:
         """
-        Description
+        Optional explanation of this guardian's purpose and scope.
         """
         return pulumi.get(self, "description")
 
@@ -391,7 +391,7 @@ class SiteReliabilityGuardian(pulumi.CustomResource):
     @pulumi.getter
     def name(self) -> pulumi.Output[_builtins.str]:
         """
-        Name
+        Unique display name for this guardian.
         """
         return pulumi.get(self, "name")
 
@@ -399,7 +399,7 @@ class SiteReliabilityGuardian(pulumi.CustomResource):
     @pulumi.getter
     def objectives(self) -> pulumi.Output['outputs.SiteReliabilityGuardianObjectives']:
         """
-        Objectives
+        The validation criteria evaluated each time this guardian is executed.
         """
         return pulumi.get(self, "objectives")
 

@@ -34,20 +34,17 @@ import * as utilities from "./utilities";
  * const hosts = dynatrace.getEntities({
  *     type: "HOST",
  * });
- * const comDynatraceExtensionJmx_weblogic_cp = new dynatrace.HubExtensionV2Config("com_dynatrace_extension_jmx-weblogic-cp", {
- *     name: "com.dynatrace.extension.jmx-weblogic-cp",
+ * const comDynatraceExtensionWmiIis = new dynatrace.HubExtensionV2Config("com_dynatrace_extension_wmi_iis", {
+ *     name: "com.dynatrace.extension.wmi.iis",
  *     scope: hosts.then(hosts => hosts.entities?.[0]?.entityId),
  *     value: JSON.stringify({
- *         activationContext: "LOCAL",
- *         activationTags: [],
  *         enabled: true,
  *         description: "my description",
- *         version: "2.1.1",
- *         featureSets: [
- *             "cache",
- *             "connections",
- *             "capacity",
- *         ],
+ *         version: "1.1.1",
+ *         featureSets: ["IIS Extended Request Metrics"],
+ *         vars: {},
+ *         activationContext: "LOCAL",
+ *         activationTags: [],
  *     }),
  * });
  * ```

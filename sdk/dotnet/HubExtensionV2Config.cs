@@ -47,24 +47,25 @@ namespace Pulumiverse.Dynatrace
     ///         Type = "HOST",
     ///     });
     /// 
-    ///     var comDynatraceExtensionJmx_weblogic_cp = new Dynatrace.HubExtensionV2Config("com_dynatrace_extension_jmx-weblogic-cp", new()
+    ///     var comDynatraceExtensionWmiIis = new Dynatrace.HubExtensionV2Config("com_dynatrace_extension_wmi_iis", new()
     ///     {
-    ///         Name = "com.dynatrace.extension.jmx-weblogic-cp",
+    ///         Name = "com.dynatrace.extension.wmi.iis",
     ///         Scope = hosts.Apply(getEntitiesResult =&gt; getEntitiesResult.Entities[0]?.EntityId),
     ///         Value = JsonSerializer.Serialize(new Dictionary&lt;string, object?&gt;
     ///         {
+    ///             ["enabled"] = true,
+    ///             ["description"] = "my description",
+    ///             ["version"] = "1.1.1",
+    ///             ["featureSets"] = new[]
+    ///             {
+    ///                 "IIS Extended Request Metrics",
+    ///             },
+    ///             ["vars"] = new Dictionary&lt;string, object?&gt;
+    ///             {
+    ///             },
     ///             ["activationContext"] = "LOCAL",
     ///             ["activationTags"] = new[]
     ///             {
-    ///             },
-    ///             ["enabled"] = true,
-    ///             ["description"] = "my description",
-    ///             ["version"] = "2.1.1",
-    ///             ["featureSets"] = new[]
-    ///             {
-    ///                 "cache",
-    ///                 "connections",
-    ///                 "capacity",
     ///             },
     ///         }),
     ///     });

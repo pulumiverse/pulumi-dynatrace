@@ -33,7 +33,7 @@ namespace Pulumiverse.Dynatrace
         /// {
         ///     var latestVersion = Dynatrace.GetHubExtensionV2LatestVersion.Invoke(new()
         ///     {
-        ///         Name = "com.dynatrace.extension.jmx-weblogic-cp",
+        ///         Name = "com.dynatrace.extension.wmi.iis",
         ///     });
         /// 
         ///     return new Dictionary&lt;string, object?&gt;
@@ -67,7 +67,7 @@ namespace Pulumiverse.Dynatrace
         /// {
         ///     var latestVersion = Dynatrace.GetHubExtensionV2LatestVersion.Invoke(new()
         ///     {
-        ///         Name = "com.dynatrace.extension.jmx-weblogic-cp",
+        ///         Name = "com.dynatrace.extension.wmi.iis",
         ///     });
         /// 
         ///     return new Dictionary&lt;string, object?&gt;
@@ -101,7 +101,7 @@ namespace Pulumiverse.Dynatrace
         /// {
         ///     var latestVersion = Dynatrace.GetHubExtensionV2LatestVersion.Invoke(new()
         ///     {
-        ///         Name = "com.dynatrace.extension.jmx-weblogic-cp",
+        ///         Name = "com.dynatrace.extension.wmi.iis",
         ///     });
         /// 
         ///     return new Dictionary&lt;string, object?&gt;

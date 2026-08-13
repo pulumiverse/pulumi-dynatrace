@@ -13196,13 +13196,13 @@ func (o DiskSpecificAnomaliesV2DiskSlowWritesAndReadsDetectionCustomThresholdsPt
 type EndpointDetectionRulesRule struct {
 	// Limits the scope of the endpoint detection rule using [DQL matcher](https://dt-url.net/l603wby) conditions on span and resource attributes.. A rule is applied only if the condition matches, otherwise the ruleset evaluation continues.
 	Condition *string `pulumi:"condition"`
-	// no documentation available
+	// No documentation available
 	Description *string `pulumi:"description"`
 	// Specify attribute placeholders in curly braces, e.g. {http.route} or {rpc.method}.. Attribute value placeholders should be specified in curly braces, e.g. {http.route}, {rpc.method}. All attributes used in the placeholder are required for the rule to apply. If any of them is missing, the rule will not be applied and ruleset evaluation continues.
 	//
-	// If the resolved endpoint name on a given span is empty, the request will be ignored.
+	//   If the resolved endpoint name on a given span is empty, the request will be ignored.
 	EndpointNameTemplate *string `pulumi:"endpointNameTemplate"`
-	// If condition matches. Possible Values: `DETECT_REQUEST_ON_ENDPOINT`, `SUPPRESS_REQUEST`
+	// If condition matches. Possible values: `DETECT_REQUEST_ON_ENDPOINT`, `SUPPRESS_REQUEST`
 	IfConditionMatches string `pulumi:"ifConditionMatches"`
 	// Rule name
 	RuleName string `pulumi:"ruleName"`
@@ -13222,13 +13222,13 @@ type EndpointDetectionRulesRuleInput interface {
 type EndpointDetectionRulesRuleArgs struct {
 	// Limits the scope of the endpoint detection rule using [DQL matcher](https://dt-url.net/l603wby) conditions on span and resource attributes.. A rule is applied only if the condition matches, otherwise the ruleset evaluation continues.
 	Condition pulumi.StringPtrInput `pulumi:"condition"`
-	// no documentation available
+	// No documentation available
 	Description pulumi.StringPtrInput `pulumi:"description"`
 	// Specify attribute placeholders in curly braces, e.g. {http.route} or {rpc.method}.. Attribute value placeholders should be specified in curly braces, e.g. {http.route}, {rpc.method}. All attributes used in the placeholder are required for the rule to apply. If any of them is missing, the rule will not be applied and ruleset evaluation continues.
 	//
-	// If the resolved endpoint name on a given span is empty, the request will be ignored.
+	//   If the resolved endpoint name on a given span is empty, the request will be ignored.
 	EndpointNameTemplate pulumi.StringPtrInput `pulumi:"endpointNameTemplate"`
-	// If condition matches. Possible Values: `DETECT_REQUEST_ON_ENDPOINT`, `SUPPRESS_REQUEST`
+	// If condition matches. Possible values: `DETECT_REQUEST_ON_ENDPOINT`, `SUPPRESS_REQUEST`
 	IfConditionMatches pulumi.StringInput `pulumi:"ifConditionMatches"`
 	// Rule name
 	RuleName pulumi.StringInput `pulumi:"ruleName"`
@@ -13316,19 +13316,19 @@ func (o EndpointDetectionRulesRuleOutput) Condition() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v EndpointDetectionRulesRule) *string { return v.Condition }).(pulumi.StringPtrOutput)
 }
 
-// no documentation available
+// No documentation available
 func (o EndpointDetectionRulesRuleOutput) Description() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v EndpointDetectionRulesRule) *string { return v.Description }).(pulumi.StringPtrOutput)
 }
 
 // Specify attribute placeholders in curly braces, e.g. {http.route} or {rpc.method}.. Attribute value placeholders should be specified in curly braces, e.g. {http.route}, {rpc.method}. All attributes used in the placeholder are required for the rule to apply. If any of them is missing, the rule will not be applied and ruleset evaluation continues.
 //
-// If the resolved endpoint name on a given span is empty, the request will be ignored.
+//	If the resolved endpoint name on a given span is empty, the request will be ignored.
 func (o EndpointDetectionRulesRuleOutput) EndpointNameTemplate() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v EndpointDetectionRulesRule) *string { return v.EndpointNameTemplate }).(pulumi.StringPtrOutput)
 }
 
-// If condition matches. Possible Values: `DETECT_REQUEST_ON_ENDPOINT`, `SUPPRESS_REQUEST`
+// If condition matches. Possible values: `DETECT_REQUEST_ON_ENDPOINT`, `SUPPRESS_REQUEST`
 func (o EndpointDetectionRulesRuleOutput) IfConditionMatches() pulumi.StringOutput {
 	return o.ApplyT(func(v EndpointDetectionRulesRule) string { return v.IfConditionMatches }).(pulumi.StringOutput)
 }
@@ -13372,7 +13372,7 @@ func (o EndpointDetectionRulesRulePtrOutput) Condition() pulumi.StringPtrOutput 
 	}).(pulumi.StringPtrOutput)
 }
 
-// no documentation available
+// No documentation available
 func (o EndpointDetectionRulesRulePtrOutput) Description() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v *EndpointDetectionRulesRule) *string {
 		if v == nil {
@@ -13384,7 +13384,7 @@ func (o EndpointDetectionRulesRulePtrOutput) Description() pulumi.StringPtrOutpu
 
 // Specify attribute placeholders in curly braces, e.g. {http.route} or {rpc.method}.. Attribute value placeholders should be specified in curly braces, e.g. {http.route}, {rpc.method}. All attributes used in the placeholder are required for the rule to apply. If any of them is missing, the rule will not be applied and ruleset evaluation continues.
 //
-// If the resolved endpoint name on a given span is empty, the request will be ignored.
+//	If the resolved endpoint name on a given span is empty, the request will be ignored.
 func (o EndpointDetectionRulesRulePtrOutput) EndpointNameTemplate() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v *EndpointDetectionRulesRule) *string {
 		if v == nil {
@@ -13394,7 +13394,7 @@ func (o EndpointDetectionRulesRulePtrOutput) EndpointNameTemplate() pulumi.Strin
 	}).(pulumi.StringPtrOutput)
 }
 
-// If condition matches. Possible Values: `DETECT_REQUEST_ON_ENDPOINT`, `SUPPRESS_REQUEST`
+// If condition matches. Possible values: `DETECT_REQUEST_ON_ENDPOINT`, `SUPPRESS_REQUEST`
 func (o EndpointDetectionRulesRulePtrOutput) IfConditionMatches() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v *EndpointDetectionRulesRule) *string {
 		if v == nil {
@@ -60908,17 +60908,13 @@ func (o KubernetesEnrichmentRulesPtrOutput) Rules() KubernetesEnrichmentRulesRul
 }
 
 type KubernetesEnrichmentRulesRule struct {
-	// This setting is enabled (`true`) or disabled (`false`)
-	//
-	// Deprecated: Attribute no longer exists in the schema.
-	Enabled *bool `pulumi:"enabled"`
-	// Uses the key of the annotation or label as field name
+	// Uses the key of the annotation or label as field name directly
 	PrimaryGrailTag *bool `pulumi:"primaryGrailTag"`
 	// The source must follow the syntax of Kubernetes annotation/label keys as defined in the [Kubernetes documentation](https://dt-url.net/2c02sbn).
 	Source string `pulumi:"source"`
-	// Required when `primaryGrailTag` is omitted or `false`. Possible Values: ` dt.cost.costcenter``,  `dt.cost.product``, `dt.security_context
+	// Possible values: `dt.cost.costcenter`, `dt.cost.product`, `dt.security_context`
 	Target *string `pulumi:"target"`
-	// Possible Values: `ANNOTATION`, `LABEL`
+	// Metadata type. Possible values: `ANNOTATION`, `LABEL`
 	Type string `pulumi:"type"`
 }
 
@@ -60934,17 +60930,13 @@ type KubernetesEnrichmentRulesRuleInput interface {
 }
 
 type KubernetesEnrichmentRulesRuleArgs struct {
-	// This setting is enabled (`true`) or disabled (`false`)
-	//
-	// Deprecated: Attribute no longer exists in the schema.
-	Enabled pulumi.BoolPtrInput `pulumi:"enabled"`
-	// Uses the key of the annotation or label as field name
+	// Uses the key of the annotation or label as field name directly
 	PrimaryGrailTag pulumi.BoolPtrInput `pulumi:"primaryGrailTag"`
 	// The source must follow the syntax of Kubernetes annotation/label keys as defined in the [Kubernetes documentation](https://dt-url.net/2c02sbn).
 	Source pulumi.StringInput `pulumi:"source"`
-	// Required when `primaryGrailTag` is omitted or `false`. Possible Values: ` dt.cost.costcenter``,  `dt.cost.product``, `dt.security_context
+	// Possible values: `dt.cost.costcenter`, `dt.cost.product`, `dt.security_context`
 	Target pulumi.StringPtrInput `pulumi:"target"`
-	// Possible Values: `ANNOTATION`, `LABEL`
+	// Metadata type. Possible values: `ANNOTATION`, `LABEL`
 	Type pulumi.StringInput `pulumi:"type"`
 }
 
@@ -60999,14 +60991,7 @@ func (o KubernetesEnrichmentRulesRuleOutput) ToKubernetesEnrichmentRulesRuleOutp
 	return o
 }
 
-// This setting is enabled (`true`) or disabled (`false`)
-//
-// Deprecated: Attribute no longer exists in the schema.
-func (o KubernetesEnrichmentRulesRuleOutput) Enabled() pulumi.BoolPtrOutput {
-	return o.ApplyT(func(v KubernetesEnrichmentRulesRule) *bool { return v.Enabled }).(pulumi.BoolPtrOutput)
-}
-
-// Uses the key of the annotation or label as field name
+// Uses the key of the annotation or label as field name directly
 func (o KubernetesEnrichmentRulesRuleOutput) PrimaryGrailTag() pulumi.BoolPtrOutput {
 	return o.ApplyT(func(v KubernetesEnrichmentRulesRule) *bool { return v.PrimaryGrailTag }).(pulumi.BoolPtrOutput)
 }
@@ -61016,12 +61001,12 @@ func (o KubernetesEnrichmentRulesRuleOutput) Source() pulumi.StringOutput {
 	return o.ApplyT(func(v KubernetesEnrichmentRulesRule) string { return v.Source }).(pulumi.StringOutput)
 }
 
-// Required when `primaryGrailTag` is omitted or `false`. Possible Values: ` dt.cost.costcenter“,  `dt.cost.product“, `dt.security_context
+// Possible values: `dt.cost.costcenter`, `dt.cost.product`, `dt.security_context`
 func (o KubernetesEnrichmentRulesRuleOutput) Target() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v KubernetesEnrichmentRulesRule) *string { return v.Target }).(pulumi.StringPtrOutput)
 }
 
-// Possible Values: `ANNOTATION`, `LABEL`
+// Metadata type. Possible values: `ANNOTATION`, `LABEL`
 func (o KubernetesEnrichmentRulesRuleOutput) Type() pulumi.StringOutput {
 	return o.ApplyT(func(v KubernetesEnrichmentRulesRule) string { return v.Type }).(pulumi.StringOutput)
 }

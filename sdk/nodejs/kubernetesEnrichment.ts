@@ -50,7 +50,7 @@ export class KubernetesEnrichment extends pulumi.CustomResource {
     }
 
     /**
-     * Dynatrace allows to use metadata defined on Kubernetes nodes, namespaces, and pods to set security and cost allocation attributes and dimensions for metrics, events, log, spans, and entities associated with the respective Kubernetes resource.
+     * Kubernetes Telemetry Enrichment empowers you to effectively tag your telemetry data using Kubernetes namespace labels and annotations. Additionally, it enables you to tag it for cost allocation and permission purposes.
      */
     declare public readonly rules: pulumi.Output<outputs.KubernetesEnrichmentRules | undefined>;
     /**
@@ -88,7 +88,7 @@ export class KubernetesEnrichment extends pulumi.CustomResource {
  */
 export interface KubernetesEnrichmentState {
     /**
-     * Dynatrace allows to use metadata defined on Kubernetes nodes, namespaces, and pods to set security and cost allocation attributes and dimensions for metrics, events, log, spans, and entities associated with the respective Kubernetes resource.
+     * Kubernetes Telemetry Enrichment empowers you to effectively tag your telemetry data using Kubernetes namespace labels and annotations. Additionally, it enables you to tag it for cost allocation and permission purposes.
      */
     rules?: pulumi.Input<inputs.KubernetesEnrichmentRules | undefined>;
     /**
@@ -102,7 +102,7 @@ export interface KubernetesEnrichmentState {
  */
 export interface KubernetesEnrichmentArgs {
     /**
-     * Dynatrace allows to use metadata defined on Kubernetes nodes, namespaces, and pods to set security and cost allocation attributes and dimensions for metrics, events, log, spans, and entities associated with the respective Kubernetes resource.
+     * Kubernetes Telemetry Enrichment empowers you to effectively tag your telemetry data using Kubernetes namespace labels and annotations. Additionally, it enables you to tag it for cost allocation and permission purposes.
      */
     rules?: pulumi.Input<inputs.KubernetesEnrichmentRules | undefined>;
     /**

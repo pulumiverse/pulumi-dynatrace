@@ -31,7 +31,7 @@ namespace Pulumiverse.Dynatrace
     public partial class SiteReliabilityGuardian : global::Pulumi.CustomResource
     {
         /// <summary>
-        /// Description
+        /// Optional explanation of this guardian's purpose and scope.
         /// </summary>
         [Output("description")]
         public Output<string?> Description { get; private set; } = null!;
@@ -43,13 +43,13 @@ namespace Pulumiverse.Dynatrace
         public Output<string?> EventKind { get; private set; } = null!;
 
         /// <summary>
-        /// Name
+        /// Unique display name for this guardian.
         /// </summary>
         [Output("name")]
         public Output<string> Name { get; private set; } = null!;
 
         /// <summary>
-        /// Objectives
+        /// The validation criteria evaluated each time this guardian is executed.
         /// </summary>
         [Output("objectives")]
         public Output<Outputs.SiteReliabilityGuardianObjectives> Objectives { get; private set; } = null!;
@@ -114,7 +114,7 @@ namespace Pulumiverse.Dynatrace
     public sealed class SiteReliabilityGuardianArgs : global::Pulumi.ResourceArgs
     {
         /// <summary>
-        /// Description
+        /// Optional explanation of this guardian's purpose and scope.
         /// </summary>
         [Input("description")]
         public Input<string>? Description { get; set; }
@@ -126,13 +126,13 @@ namespace Pulumiverse.Dynatrace
         public Input<string>? EventKind { get; set; }
 
         /// <summary>
-        /// Name
+        /// Unique display name for this guardian.
         /// </summary>
         [Input("name")]
         public Input<string>? Name { get; set; }
 
         /// <summary>
-        /// Objectives
+        /// The validation criteria evaluated each time this guardian is executed.
         /// </summary>
         [Input("objectives", required: true)]
         public Input<Inputs.SiteReliabilityGuardianObjectivesArgs> Objectives { get; set; } = null!;
@@ -164,7 +164,7 @@ namespace Pulumiverse.Dynatrace
     public sealed class SiteReliabilityGuardianState : global::Pulumi.ResourceArgs
     {
         /// <summary>
-        /// Description
+        /// Optional explanation of this guardian's purpose and scope.
         /// </summary>
         [Input("description")]
         public Input<string>? Description { get; set; }
@@ -176,13 +176,13 @@ namespace Pulumiverse.Dynatrace
         public Input<string>? EventKind { get; set; }
 
         /// <summary>
-        /// Name
+        /// Unique display name for this guardian.
         /// </summary>
         [Input("name")]
         public Input<string>? Name { get; set; }
 
         /// <summary>
-        /// Objectives
+        /// The validation criteria evaluated each time this guardian is executed.
         /// </summary>
         [Input("objectives")]
         public Input<Inputs.SiteReliabilityGuardianObjectivesGetArgs>? Objectives { get; set; }

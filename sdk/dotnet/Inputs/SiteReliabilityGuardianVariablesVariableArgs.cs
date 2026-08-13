@@ -14,13 +14,13 @@ namespace Pulumiverse.Dynatrace.Inputs
     public sealed class SiteReliabilityGuardianVariablesVariableArgs : global::Pulumi.ResourceArgs
     {
         /// <summary>
-        /// Value
+        /// Default value substituted for $name in DQL queries. Can be overridden at runtime via execution context.
         /// </summary>
         [Input("definition", required: true)]
         public Input<string> Definition { get; set; } = null!;
 
         /// <summary>
-        /// no documentation available
+        /// Alphanumeric/underscore identifier referenced in DQL queries as $name. Must be unique within the guardian.
         /// </summary>
         [Input("name", required: true)]
         public Input<string> Name { get; set; } = null!;

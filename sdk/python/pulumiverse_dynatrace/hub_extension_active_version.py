@@ -140,9 +140,9 @@ class HubExtensionActiveVersion(pulumi.CustomResource):
         import pulumi
         import pulumiverse_dynatrace as dynatrace
 
-        jmx_weblogic_cp = dynatrace.HubExtensionActiveVersion("jmx-weblogic-cp",
-            name="com.dynatrace.extension.jmx-weblogic-cp",
-            version="2.1.1")
+        com_dynatrace_extension_wmi_iis = dynatrace.HubExtensionActiveVersion("com_dynatrace_extension_wmi_iis",
+            name="com.dynatrace.extension.wmi.iis",
+            version="2.0.1")
         ```
 
 
@@ -191,9 +191,9 @@ class HubExtensionActiveVersion(pulumi.CustomResource):
         import pulumi
         import pulumiverse_dynatrace as dynatrace
 
-        jmx_weblogic_cp = dynatrace.HubExtensionActiveVersion("jmx-weblogic-cp",
-            name="com.dynatrace.extension.jmx-weblogic-cp",
-            version="2.1.1")
+        com_dynatrace_extension_wmi_iis = dynatrace.HubExtensionActiveVersion("com_dynatrace_extension_wmi_iis",
+            name="com.dynatrace.extension.wmi.iis",
+            version="2.0.1")
         ```
 
 

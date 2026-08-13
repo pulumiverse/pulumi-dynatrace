@@ -15,11 +15,11 @@ namespace Pulumiverse.Dynatrace.Outputs
     public sealed class SiteReliabilityGuardianObjectivesObjectiveSegmentsSegment
     {
         /// <summary>
-        /// Segment ID
+        /// Dynatrace Grail segment ID that scopes the DQL query to data within the segment.
         /// </summary>
         public readonly string Id;
         /// <summary>
-        /// Segment Variables
+        /// Variables to parameterize the segment filter.
         /// </summary>
         public readonly Outputs.SiteReliabilityGuardianObjectivesObjectiveSegmentsSegmentVariables? Variables;
 

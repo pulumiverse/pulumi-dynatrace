@@ -324,20 +324,17 @@ class HubExtensionConfig(pulumi.CustomResource):
         import json
         import pulumiverse_dynatrace as dynatrace
 
-        com_dynatrace_extension_jmx_weblogic_cp = dynatrace.HubExtensionConfig("com_dynatrace_extension_jmx-weblogic-cp",
-            name="com.dynatrace.extension.jmx-weblogic-cp",
+        com_dynatrace_extension_wmi_iis = dynatrace.HubExtensionConfig("com_dynatrace_extension_wmi_iis",
+            name="com.dynatrace.extension.wmi.iis",
             scope="environment",
             value=json.dumps({
+                "enabled": True,
+                "description": "my description",
+                "version": "1.1.1",
+                "featureSets": ["IIS Extended Request Metrics"],
+                "vars": {},
                 "activationContext": "LOCAL",
                 "activationTags": [],
-                "enabled": True,
-                "description": "jj",
-                "version": "2.0.4",
-                "featureSets": [
-                    "cache",
-                    "connections",
-                    "capacity",
-                ],
             }))
         ```
 
@@ -411,20 +408,17 @@ class HubExtensionConfig(pulumi.CustomResource):
         import json
         import pulumiverse_dynatrace as dynatrace
 
-        com_dynatrace_extension_jmx_weblogic_cp = dynatrace.HubExtensionConfig("com_dynatrace_extension_jmx-weblogic-cp",
-            name="com.dynatrace.extension.jmx-weblogic-cp",
+        com_dynatrace_extension_wmi_iis = dynatrace.HubExtensionConfig("com_dynatrace_extension_wmi_iis",
+            name="com.dynatrace.extension.wmi.iis",
             scope="environment",
             value=json.dumps({
+                "enabled": True,
+                "description": "my description",
+                "version": "1.1.1",
+                "featureSets": ["IIS Extended Request Metrics"],
+                "vars": {},
                 "activationContext": "LOCAL",
                 "activationTags": [],
-                "enabled": True,
-                "description": "jj",
-                "version": "2.0.4",
-                "featureSets": [
-                    "cache",
-                    "connections",
-                    "capacity",
-                ],
             }))
         ```
 

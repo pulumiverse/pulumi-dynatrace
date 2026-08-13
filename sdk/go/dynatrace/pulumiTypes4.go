@@ -13,6 +13,368 @@ import (
 
 var _ = internal.GetEnvOrDefault
 
+type OpenpipelineV2BizeventsIngestsourcesProcessingProcessorsProcessorSmartscapeNodeNodeName struct {
+	// Constant value
+	Constant *string `pulumi:"constant"`
+	// Value from field
+	Field *OpenpipelineV2BizeventsIngestsourcesProcessingProcessorsProcessorSmartscapeNodeNodeNameField `pulumi:"field"`
+	// Constant multi value
+	MultiValueConstants []string `pulumi:"multiValueConstants"`
+	// Type of value assignment. Possible values: `constant`, `field`, `multiValueConstant`
+	Type string `pulumi:"type"`
+}
+
+// OpenpipelineV2BizeventsIngestsourcesProcessingProcessorsProcessorSmartscapeNodeNodeNameInput is an input type that accepts OpenpipelineV2BizeventsIngestsourcesProcessingProcessorsProcessorSmartscapeNodeNodeNameArgs and OpenpipelineV2BizeventsIngestsourcesProcessingProcessorsProcessorSmartscapeNodeNodeNameOutput values.
+// You can construct a concrete instance of `OpenpipelineV2BizeventsIngestsourcesProcessingProcessorsProcessorSmartscapeNodeNodeNameInput` via:
+//
+//	OpenpipelineV2BizeventsIngestsourcesProcessingProcessorsProcessorSmartscapeNodeNodeNameArgs{...}
+type OpenpipelineV2BizeventsIngestsourcesProcessingProcessorsProcessorSmartscapeNodeNodeNameInput interface {
+	pulumi.Input
+
+	ToOpenpipelineV2BizeventsIngestsourcesProcessingProcessorsProcessorSmartscapeNodeNodeNameOutput() OpenpipelineV2BizeventsIngestsourcesProcessingProcessorsProcessorSmartscapeNodeNodeNameOutput
+	ToOpenpipelineV2BizeventsIngestsourcesProcessingProcessorsProcessorSmartscapeNodeNodeNameOutputWithContext(context.Context) OpenpipelineV2BizeventsIngestsourcesProcessingProcessorsProcessorSmartscapeNodeNodeNameOutput
+}
+
+type OpenpipelineV2BizeventsIngestsourcesProcessingProcessorsProcessorSmartscapeNodeNodeNameArgs struct {
+	// Constant value
+	Constant pulumi.StringPtrInput `pulumi:"constant"`
+	// Value from field
+	Field OpenpipelineV2BizeventsIngestsourcesProcessingProcessorsProcessorSmartscapeNodeNodeNameFieldPtrInput `pulumi:"field"`
+	// Constant multi value
+	MultiValueConstants pulumi.StringArrayInput `pulumi:"multiValueConstants"`
+	// Type of value assignment. Possible values: `constant`, `field`, `multiValueConstant`
+	Type pulumi.StringInput `pulumi:"type"`
+}
+
+func (OpenpipelineV2BizeventsIngestsourcesProcessingProcessorsProcessorSmartscapeNodeNodeNameArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*OpenpipelineV2BizeventsIngestsourcesProcessingProcessorsProcessorSmartscapeNodeNodeName)(nil)).Elem()
+}
+
+func (i OpenpipelineV2BizeventsIngestsourcesProcessingProcessorsProcessorSmartscapeNodeNodeNameArgs) ToOpenpipelineV2BizeventsIngestsourcesProcessingProcessorsProcessorSmartscapeNodeNodeNameOutput() OpenpipelineV2BizeventsIngestsourcesProcessingProcessorsProcessorSmartscapeNodeNodeNameOutput {
+	return i.ToOpenpipelineV2BizeventsIngestsourcesProcessingProcessorsProcessorSmartscapeNodeNodeNameOutputWithContext(context.Background())
+}
+
+func (i OpenpipelineV2BizeventsIngestsourcesProcessingProcessorsProcessorSmartscapeNodeNodeNameArgs) ToOpenpipelineV2BizeventsIngestsourcesProcessingProcessorsProcessorSmartscapeNodeNodeNameOutputWithContext(ctx context.Context) OpenpipelineV2BizeventsIngestsourcesProcessingProcessorsProcessorSmartscapeNodeNodeNameOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(OpenpipelineV2BizeventsIngestsourcesProcessingProcessorsProcessorSmartscapeNodeNodeNameOutput)
+}
+
+func (i OpenpipelineV2BizeventsIngestsourcesProcessingProcessorsProcessorSmartscapeNodeNodeNameArgs) ToOpenpipelineV2BizeventsIngestsourcesProcessingProcessorsProcessorSmartscapeNodeNodeNamePtrOutput() OpenpipelineV2BizeventsIngestsourcesProcessingProcessorsProcessorSmartscapeNodeNodeNamePtrOutput {
+	return i.ToOpenpipelineV2BizeventsIngestsourcesProcessingProcessorsProcessorSmartscapeNodeNodeNamePtrOutputWithContext(context.Background())
+}
+
+func (i OpenpipelineV2BizeventsIngestsourcesProcessingProcessorsProcessorSmartscapeNodeNodeNameArgs) ToOpenpipelineV2BizeventsIngestsourcesProcessingProcessorsProcessorSmartscapeNodeNodeNamePtrOutputWithContext(ctx context.Context) OpenpipelineV2BizeventsIngestsourcesProcessingProcessorsProcessorSmartscapeNodeNodeNamePtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(OpenpipelineV2BizeventsIngestsourcesProcessingProcessorsProcessorSmartscapeNodeNodeNameOutput).ToOpenpipelineV2BizeventsIngestsourcesProcessingProcessorsProcessorSmartscapeNodeNodeNamePtrOutputWithContext(ctx)
+}
+
+// OpenpipelineV2BizeventsIngestsourcesProcessingProcessorsProcessorSmartscapeNodeNodeNamePtrInput is an input type that accepts OpenpipelineV2BizeventsIngestsourcesProcessingProcessorsProcessorSmartscapeNodeNodeNameArgs, OpenpipelineV2BizeventsIngestsourcesProcessingProcessorsProcessorSmartscapeNodeNodeNamePtr and OpenpipelineV2BizeventsIngestsourcesProcessingProcessorsProcessorSmartscapeNodeNodeNamePtrOutput values.
+// You can construct a concrete instance of `OpenpipelineV2BizeventsIngestsourcesProcessingProcessorsProcessorSmartscapeNodeNodeNamePtrInput` via:
+//
+//	        OpenpipelineV2BizeventsIngestsourcesProcessingProcessorsProcessorSmartscapeNodeNodeNameArgs{...}
+//
+//	or:
+//
+//	        nil
+type OpenpipelineV2BizeventsIngestsourcesProcessingProcessorsProcessorSmartscapeNodeNodeNamePtrInput interface {
+	pulumi.Input
+
+	ToOpenpipelineV2BizeventsIngestsourcesProcessingProcessorsProcessorSmartscapeNodeNodeNamePtrOutput() OpenpipelineV2BizeventsIngestsourcesProcessingProcessorsProcessorSmartscapeNodeNodeNamePtrOutput
+	ToOpenpipelineV2BizeventsIngestsourcesProcessingProcessorsProcessorSmartscapeNodeNodeNamePtrOutputWithContext(context.Context) OpenpipelineV2BizeventsIngestsourcesProcessingProcessorsProcessorSmartscapeNodeNodeNamePtrOutput
+}
+
+type openpipelineV2BizeventsIngestsourcesProcessingProcessorsProcessorSmartscapeNodeNodeNamePtrType OpenpipelineV2BizeventsIngestsourcesProcessingProcessorsProcessorSmartscapeNodeNodeNameArgs
+
+func OpenpipelineV2BizeventsIngestsourcesProcessingProcessorsProcessorSmartscapeNodeNodeNamePtr(v *OpenpipelineV2BizeventsIngestsourcesProcessingProcessorsProcessorSmartscapeNodeNodeNameArgs) OpenpipelineV2BizeventsIngestsourcesProcessingProcessorsProcessorSmartscapeNodeNodeNamePtrInput {
+	return (*openpipelineV2BizeventsIngestsourcesProcessingProcessorsProcessorSmartscapeNodeNodeNamePtrType)(v)
+}
+
+func (*openpipelineV2BizeventsIngestsourcesProcessingProcessorsProcessorSmartscapeNodeNodeNamePtrType) ElementType() reflect.Type {
+	return reflect.TypeOf((**OpenpipelineV2BizeventsIngestsourcesProcessingProcessorsProcessorSmartscapeNodeNodeName)(nil)).Elem()
+}
+
+func (i *openpipelineV2BizeventsIngestsourcesProcessingProcessorsProcessorSmartscapeNodeNodeNamePtrType) ToOpenpipelineV2BizeventsIngestsourcesProcessingProcessorsProcessorSmartscapeNodeNodeNamePtrOutput() OpenpipelineV2BizeventsIngestsourcesProcessingProcessorsProcessorSmartscapeNodeNodeNamePtrOutput {
+	return i.ToOpenpipelineV2BizeventsIngestsourcesProcessingProcessorsProcessorSmartscapeNodeNodeNamePtrOutputWithContext(context.Background())
+}
+
+func (i *openpipelineV2BizeventsIngestsourcesProcessingProcessorsProcessorSmartscapeNodeNodeNamePtrType) ToOpenpipelineV2BizeventsIngestsourcesProcessingProcessorsProcessorSmartscapeNodeNodeNamePtrOutputWithContext(ctx context.Context) OpenpipelineV2BizeventsIngestsourcesProcessingProcessorsProcessorSmartscapeNodeNodeNamePtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(OpenpipelineV2BizeventsIngestsourcesProcessingProcessorsProcessorSmartscapeNodeNodeNamePtrOutput)
+}
+
+type OpenpipelineV2BizeventsIngestsourcesProcessingProcessorsProcessorSmartscapeNodeNodeNameOutput struct{ *pulumi.OutputState }
+
+func (OpenpipelineV2BizeventsIngestsourcesProcessingProcessorsProcessorSmartscapeNodeNodeNameOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*OpenpipelineV2BizeventsIngestsourcesProcessingProcessorsProcessorSmartscapeNodeNodeName)(nil)).Elem()
+}
+
+func (o OpenpipelineV2BizeventsIngestsourcesProcessingProcessorsProcessorSmartscapeNodeNodeNameOutput) ToOpenpipelineV2BizeventsIngestsourcesProcessingProcessorsProcessorSmartscapeNodeNodeNameOutput() OpenpipelineV2BizeventsIngestsourcesProcessingProcessorsProcessorSmartscapeNodeNodeNameOutput {
+	return o
+}
+
+func (o OpenpipelineV2BizeventsIngestsourcesProcessingProcessorsProcessorSmartscapeNodeNodeNameOutput) ToOpenpipelineV2BizeventsIngestsourcesProcessingProcessorsProcessorSmartscapeNodeNodeNameOutputWithContext(ctx context.Context) OpenpipelineV2BizeventsIngestsourcesProcessingProcessorsProcessorSmartscapeNodeNodeNameOutput {
+	return o
+}
+
+func (o OpenpipelineV2BizeventsIngestsourcesProcessingProcessorsProcessorSmartscapeNodeNodeNameOutput) ToOpenpipelineV2BizeventsIngestsourcesProcessingProcessorsProcessorSmartscapeNodeNodeNamePtrOutput() OpenpipelineV2BizeventsIngestsourcesProcessingProcessorsProcessorSmartscapeNodeNodeNamePtrOutput {
+	return o.ToOpenpipelineV2BizeventsIngestsourcesProcessingProcessorsProcessorSmartscapeNodeNodeNamePtrOutputWithContext(context.Background())
+}
+
+func (o OpenpipelineV2BizeventsIngestsourcesProcessingProcessorsProcessorSmartscapeNodeNodeNameOutput) ToOpenpipelineV2BizeventsIngestsourcesProcessingProcessorsProcessorSmartscapeNodeNodeNamePtrOutputWithContext(ctx context.Context) OpenpipelineV2BizeventsIngestsourcesProcessingProcessorsProcessorSmartscapeNodeNodeNamePtrOutput {
+	return o.ApplyTWithContext(ctx, func(_ context.Context, v OpenpipelineV2BizeventsIngestsourcesProcessingProcessorsProcessorSmartscapeNodeNodeName) *OpenpipelineV2BizeventsIngestsourcesProcessingProcessorsProcessorSmartscapeNodeNodeName {
+		return &v
+	}).(OpenpipelineV2BizeventsIngestsourcesProcessingProcessorsProcessorSmartscapeNodeNodeNamePtrOutput)
+}
+
+// Constant value
+func (o OpenpipelineV2BizeventsIngestsourcesProcessingProcessorsProcessorSmartscapeNodeNodeNameOutput) Constant() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v OpenpipelineV2BizeventsIngestsourcesProcessingProcessorsProcessorSmartscapeNodeNodeName) *string {
+		return v.Constant
+	}).(pulumi.StringPtrOutput)
+}
+
+// Value from field
+func (o OpenpipelineV2BizeventsIngestsourcesProcessingProcessorsProcessorSmartscapeNodeNodeNameOutput) Field() OpenpipelineV2BizeventsIngestsourcesProcessingProcessorsProcessorSmartscapeNodeNodeNameFieldPtrOutput {
+	return o.ApplyT(func(v OpenpipelineV2BizeventsIngestsourcesProcessingProcessorsProcessorSmartscapeNodeNodeName) *OpenpipelineV2BizeventsIngestsourcesProcessingProcessorsProcessorSmartscapeNodeNodeNameField {
+		return v.Field
+	}).(OpenpipelineV2BizeventsIngestsourcesProcessingProcessorsProcessorSmartscapeNodeNodeNameFieldPtrOutput)
+}
+
+// Constant multi value
+func (o OpenpipelineV2BizeventsIngestsourcesProcessingProcessorsProcessorSmartscapeNodeNodeNameOutput) MultiValueConstants() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v OpenpipelineV2BizeventsIngestsourcesProcessingProcessorsProcessorSmartscapeNodeNodeName) []string {
+		return v.MultiValueConstants
+	}).(pulumi.StringArrayOutput)
+}
+
+// Type of value assignment. Possible values: `constant`, `field`, `multiValueConstant`
+func (o OpenpipelineV2BizeventsIngestsourcesProcessingProcessorsProcessorSmartscapeNodeNodeNameOutput) Type() pulumi.StringOutput {
+	return o.ApplyT(func(v OpenpipelineV2BizeventsIngestsourcesProcessingProcessorsProcessorSmartscapeNodeNodeName) string {
+		return v.Type
+	}).(pulumi.StringOutput)
+}
+
+type OpenpipelineV2BizeventsIngestsourcesProcessingProcessorsProcessorSmartscapeNodeNodeNamePtrOutput struct{ *pulumi.OutputState }
+
+func (OpenpipelineV2BizeventsIngestsourcesProcessingProcessorsProcessorSmartscapeNodeNodeNamePtrOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((**OpenpipelineV2BizeventsIngestsourcesProcessingProcessorsProcessorSmartscapeNodeNodeName)(nil)).Elem()
+}
+
+func (o OpenpipelineV2BizeventsIngestsourcesProcessingProcessorsProcessorSmartscapeNodeNodeNamePtrOutput) ToOpenpipelineV2BizeventsIngestsourcesProcessingProcessorsProcessorSmartscapeNodeNodeNamePtrOutput() OpenpipelineV2BizeventsIngestsourcesProcessingProcessorsProcessorSmartscapeNodeNodeNamePtrOutput {
+	return o
+}
+
+func (o OpenpipelineV2BizeventsIngestsourcesProcessingProcessorsProcessorSmartscapeNodeNodeNamePtrOutput) ToOpenpipelineV2BizeventsIngestsourcesProcessingProcessorsProcessorSmartscapeNodeNodeNamePtrOutputWithContext(ctx context.Context) OpenpipelineV2BizeventsIngestsourcesProcessingProcessorsProcessorSmartscapeNodeNodeNamePtrOutput {
+	return o
+}
+
+func (o OpenpipelineV2BizeventsIngestsourcesProcessingProcessorsProcessorSmartscapeNodeNodeNamePtrOutput) Elem() OpenpipelineV2BizeventsIngestsourcesProcessingProcessorsProcessorSmartscapeNodeNodeNameOutput {
+	return o.ApplyT(func(v *OpenpipelineV2BizeventsIngestsourcesProcessingProcessorsProcessorSmartscapeNodeNodeName) OpenpipelineV2BizeventsIngestsourcesProcessingProcessorsProcessorSmartscapeNodeNodeName {
+		if v != nil {
+			return *v
+		}
+		var ret OpenpipelineV2BizeventsIngestsourcesProcessingProcessorsProcessorSmartscapeNodeNodeName
+		return ret
+	}).(OpenpipelineV2BizeventsIngestsourcesProcessingProcessorsProcessorSmartscapeNodeNodeNameOutput)
+}
+
+// Constant value
+func (o OpenpipelineV2BizeventsIngestsourcesProcessingProcessorsProcessorSmartscapeNodeNodeNamePtrOutput) Constant() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *OpenpipelineV2BizeventsIngestsourcesProcessingProcessorsProcessorSmartscapeNodeNodeName) *string {
+		if v == nil {
+			return nil
+		}
+		return v.Constant
+	}).(pulumi.StringPtrOutput)
+}
+
+// Value from field
+func (o OpenpipelineV2BizeventsIngestsourcesProcessingProcessorsProcessorSmartscapeNodeNodeNamePtrOutput) Field() OpenpipelineV2BizeventsIngestsourcesProcessingProcessorsProcessorSmartscapeNodeNodeNameFieldPtrOutput {
+	return o.ApplyT(func(v *OpenpipelineV2BizeventsIngestsourcesProcessingProcessorsProcessorSmartscapeNodeNodeName) *OpenpipelineV2BizeventsIngestsourcesProcessingProcessorsProcessorSmartscapeNodeNodeNameField {
+		if v == nil {
+			return nil
+		}
+		return v.Field
+	}).(OpenpipelineV2BizeventsIngestsourcesProcessingProcessorsProcessorSmartscapeNodeNodeNameFieldPtrOutput)
+}
+
+// Constant multi value
+func (o OpenpipelineV2BizeventsIngestsourcesProcessingProcessorsProcessorSmartscapeNodeNodeNamePtrOutput) MultiValueConstants() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v *OpenpipelineV2BizeventsIngestsourcesProcessingProcessorsProcessorSmartscapeNodeNodeName) []string {
+		if v == nil {
+			return nil
+		}
+		return v.MultiValueConstants
+	}).(pulumi.StringArrayOutput)
+}
+
+// Type of value assignment. Possible values: `constant`, `field`, `multiValueConstant`
+func (o OpenpipelineV2BizeventsIngestsourcesProcessingProcessorsProcessorSmartscapeNodeNodeNamePtrOutput) Type() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *OpenpipelineV2BizeventsIngestsourcesProcessingProcessorsProcessorSmartscapeNodeNodeName) *string {
+		if v == nil {
+			return nil
+		}
+		return &v.Type
+	}).(pulumi.StringPtrOutput)
+}
+
+type OpenpipelineV2BizeventsIngestsourcesProcessingProcessorsProcessorSmartscapeNodeNodeNameField struct {
+	// Default value
+	DefaultValue *string `pulumi:"defaultValue"`
+	// Source field name
+	SourceFieldName string `pulumi:"sourceFieldName"`
+}
+
+// OpenpipelineV2BizeventsIngestsourcesProcessingProcessorsProcessorSmartscapeNodeNodeNameFieldInput is an input type that accepts OpenpipelineV2BizeventsIngestsourcesProcessingProcessorsProcessorSmartscapeNodeNodeNameFieldArgs and OpenpipelineV2BizeventsIngestsourcesProcessingProcessorsProcessorSmartscapeNodeNodeNameFieldOutput values.
+// You can construct a concrete instance of `OpenpipelineV2BizeventsIngestsourcesProcessingProcessorsProcessorSmartscapeNodeNodeNameFieldInput` via:
+//
+//	OpenpipelineV2BizeventsIngestsourcesProcessingProcessorsProcessorSmartscapeNodeNodeNameFieldArgs{...}
+type OpenpipelineV2BizeventsIngestsourcesProcessingProcessorsProcessorSmartscapeNodeNodeNameFieldInput interface {
+	pulumi.Input
+
+	ToOpenpipelineV2BizeventsIngestsourcesProcessingProcessorsProcessorSmartscapeNodeNodeNameFieldOutput() OpenpipelineV2BizeventsIngestsourcesProcessingProcessorsProcessorSmartscapeNodeNodeNameFieldOutput
+	ToOpenpipelineV2BizeventsIngestsourcesProcessingProcessorsProcessorSmartscapeNodeNodeNameFieldOutputWithContext(context.Context) OpenpipelineV2BizeventsIngestsourcesProcessingProcessorsProcessorSmartscapeNodeNodeNameFieldOutput
+}
+
+type OpenpipelineV2BizeventsIngestsourcesProcessingProcessorsProcessorSmartscapeNodeNodeNameFieldArgs struct {
+	// Default value
+	DefaultValue pulumi.StringPtrInput `pulumi:"defaultValue"`
+	// Source field name
+	SourceFieldName pulumi.StringInput `pulumi:"sourceFieldName"`
+}
+
+func (OpenpipelineV2BizeventsIngestsourcesProcessingProcessorsProcessorSmartscapeNodeNodeNameFieldArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*OpenpipelineV2BizeventsIngestsourcesProcessingProcessorsProcessorSmartscapeNodeNodeNameField)(nil)).Elem()
+}
+
+func (i OpenpipelineV2BizeventsIngestsourcesProcessingProcessorsProcessorSmartscapeNodeNodeNameFieldArgs) ToOpenpipelineV2BizeventsIngestsourcesProcessingProcessorsProcessorSmartscapeNodeNodeNameFieldOutput() OpenpipelineV2BizeventsIngestsourcesProcessingProcessorsProcessorSmartscapeNodeNodeNameFieldOutput {
+	return i.ToOpenpipelineV2BizeventsIngestsourcesProcessingProcessorsProcessorSmartscapeNodeNodeNameFieldOutputWithContext(context.Background())
+}
+
+func (i OpenpipelineV2BizeventsIngestsourcesProcessingProcessorsProcessorSmartscapeNodeNodeNameFieldArgs) ToOpenpipelineV2BizeventsIngestsourcesProcessingProcessorsProcessorSmartscapeNodeNodeNameFieldOutputWithContext(ctx context.Context) OpenpipelineV2BizeventsIngestsourcesProcessingProcessorsProcessorSmartscapeNodeNodeNameFieldOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(OpenpipelineV2BizeventsIngestsourcesProcessingProcessorsProcessorSmartscapeNodeNodeNameFieldOutput)
+}
+
+func (i OpenpipelineV2BizeventsIngestsourcesProcessingProcessorsProcessorSmartscapeNodeNodeNameFieldArgs) ToOpenpipelineV2BizeventsIngestsourcesProcessingProcessorsProcessorSmartscapeNodeNodeNameFieldPtrOutput() OpenpipelineV2BizeventsIngestsourcesProcessingProcessorsProcessorSmartscapeNodeNodeNameFieldPtrOutput {
+	return i.ToOpenpipelineV2BizeventsIngestsourcesProcessingProcessorsProcessorSmartscapeNodeNodeNameFieldPtrOutputWithContext(context.Background())
+}
+
+func (i OpenpipelineV2BizeventsIngestsourcesProcessingProcessorsProcessorSmartscapeNodeNodeNameFieldArgs) ToOpenpipelineV2BizeventsIngestsourcesProcessingProcessorsProcessorSmartscapeNodeNodeNameFieldPtrOutputWithContext(ctx context.Context) OpenpipelineV2BizeventsIngestsourcesProcessingProcessorsProcessorSmartscapeNodeNodeNameFieldPtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(OpenpipelineV2BizeventsIngestsourcesProcessingProcessorsProcessorSmartscapeNodeNodeNameFieldOutput).ToOpenpipelineV2BizeventsIngestsourcesProcessingProcessorsProcessorSmartscapeNodeNodeNameFieldPtrOutputWithContext(ctx)
+}
+
+// OpenpipelineV2BizeventsIngestsourcesProcessingProcessorsProcessorSmartscapeNodeNodeNameFieldPtrInput is an input type that accepts OpenpipelineV2BizeventsIngestsourcesProcessingProcessorsProcessorSmartscapeNodeNodeNameFieldArgs, OpenpipelineV2BizeventsIngestsourcesProcessingProcessorsProcessorSmartscapeNodeNodeNameFieldPtr and OpenpipelineV2BizeventsIngestsourcesProcessingProcessorsProcessorSmartscapeNodeNodeNameFieldPtrOutput values.
+// You can construct a concrete instance of `OpenpipelineV2BizeventsIngestsourcesProcessingProcessorsProcessorSmartscapeNodeNodeNameFieldPtrInput` via:
+//
+//	        OpenpipelineV2BizeventsIngestsourcesProcessingProcessorsProcessorSmartscapeNodeNodeNameFieldArgs{...}
+//
+//	or:
+//
+//	        nil
+type OpenpipelineV2BizeventsIngestsourcesProcessingProcessorsProcessorSmartscapeNodeNodeNameFieldPtrInput interface {
+	pulumi.Input
+
+	ToOpenpipelineV2BizeventsIngestsourcesProcessingProcessorsProcessorSmartscapeNodeNodeNameFieldPtrOutput() OpenpipelineV2BizeventsIngestsourcesProcessingProcessorsProcessorSmartscapeNodeNodeNameFieldPtrOutput
+	ToOpenpipelineV2BizeventsIngestsourcesProcessingProcessorsProcessorSmartscapeNodeNodeNameFieldPtrOutputWithContext(context.Context) OpenpipelineV2BizeventsIngestsourcesProcessingProcessorsProcessorSmartscapeNodeNodeNameFieldPtrOutput
+}
+
+type openpipelineV2BizeventsIngestsourcesProcessingProcessorsProcessorSmartscapeNodeNodeNameFieldPtrType OpenpipelineV2BizeventsIngestsourcesProcessingProcessorsProcessorSmartscapeNodeNodeNameFieldArgs
+
+func OpenpipelineV2BizeventsIngestsourcesProcessingProcessorsProcessorSmartscapeNodeNodeNameFieldPtr(v *OpenpipelineV2BizeventsIngestsourcesProcessingProcessorsProcessorSmartscapeNodeNodeNameFieldArgs) OpenpipelineV2BizeventsIngestsourcesProcessingProcessorsProcessorSmartscapeNodeNodeNameFieldPtrInput {
+	return (*openpipelineV2BizeventsIngestsourcesProcessingProcessorsProcessorSmartscapeNodeNodeNameFieldPtrType)(v)
+}
+
+func (*openpipelineV2BizeventsIngestsourcesProcessingProcessorsProcessorSmartscapeNodeNodeNameFieldPtrType) ElementType() reflect.Type {
+	return reflect.TypeOf((**OpenpipelineV2BizeventsIngestsourcesProcessingProcessorsProcessorSmartscapeNodeNodeNameField)(nil)).Elem()
+}
+
+func (i *openpipelineV2BizeventsIngestsourcesProcessingProcessorsProcessorSmartscapeNodeNodeNameFieldPtrType) ToOpenpipelineV2BizeventsIngestsourcesProcessingProcessorsProcessorSmartscapeNodeNodeNameFieldPtrOutput() OpenpipelineV2BizeventsIngestsourcesProcessingProcessorsProcessorSmartscapeNodeNodeNameFieldPtrOutput {
+	return i.ToOpenpipelineV2BizeventsIngestsourcesProcessingProcessorsProcessorSmartscapeNodeNodeNameFieldPtrOutputWithContext(context.Background())
+}
+
+func (i *openpipelineV2BizeventsIngestsourcesProcessingProcessorsProcessorSmartscapeNodeNodeNameFieldPtrType) ToOpenpipelineV2BizeventsIngestsourcesProcessingProcessorsProcessorSmartscapeNodeNodeNameFieldPtrOutputWithContext(ctx context.Context) OpenpipelineV2BizeventsIngestsourcesProcessingProcessorsProcessorSmartscapeNodeNodeNameFieldPtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(OpenpipelineV2BizeventsIngestsourcesProcessingProcessorsProcessorSmartscapeNodeNodeNameFieldPtrOutput)
+}
+
+type OpenpipelineV2BizeventsIngestsourcesProcessingProcessorsProcessorSmartscapeNodeNodeNameFieldOutput struct{ *pulumi.OutputState }
+
+func (OpenpipelineV2BizeventsIngestsourcesProcessingProcessorsProcessorSmartscapeNodeNodeNameFieldOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*OpenpipelineV2BizeventsIngestsourcesProcessingProcessorsProcessorSmartscapeNodeNodeNameField)(nil)).Elem()
+}
+
+func (o OpenpipelineV2BizeventsIngestsourcesProcessingProcessorsProcessorSmartscapeNodeNodeNameFieldOutput) ToOpenpipelineV2BizeventsIngestsourcesProcessingProcessorsProcessorSmartscapeNodeNodeNameFieldOutput() OpenpipelineV2BizeventsIngestsourcesProcessingProcessorsProcessorSmartscapeNodeNodeNameFieldOutput {
+	return o
+}
+
+func (o OpenpipelineV2BizeventsIngestsourcesProcessingProcessorsProcessorSmartscapeNodeNodeNameFieldOutput) ToOpenpipelineV2BizeventsIngestsourcesProcessingProcessorsProcessorSmartscapeNodeNodeNameFieldOutputWithContext(ctx context.Context) OpenpipelineV2BizeventsIngestsourcesProcessingProcessorsProcessorSmartscapeNodeNodeNameFieldOutput {
+	return o
+}
+
+func (o OpenpipelineV2BizeventsIngestsourcesProcessingProcessorsProcessorSmartscapeNodeNodeNameFieldOutput) ToOpenpipelineV2BizeventsIngestsourcesProcessingProcessorsProcessorSmartscapeNodeNodeNameFieldPtrOutput() OpenpipelineV2BizeventsIngestsourcesProcessingProcessorsProcessorSmartscapeNodeNodeNameFieldPtrOutput {
+	return o.ToOpenpipelineV2BizeventsIngestsourcesProcessingProcessorsProcessorSmartscapeNodeNodeNameFieldPtrOutputWithContext(context.Background())
+}
+
+func (o OpenpipelineV2BizeventsIngestsourcesProcessingProcessorsProcessorSmartscapeNodeNodeNameFieldOutput) ToOpenpipelineV2BizeventsIngestsourcesProcessingProcessorsProcessorSmartscapeNodeNodeNameFieldPtrOutputWithContext(ctx context.Context) OpenpipelineV2BizeventsIngestsourcesProcessingProcessorsProcessorSmartscapeNodeNodeNameFieldPtrOutput {
+	return o.ApplyTWithContext(ctx, func(_ context.Context, v OpenpipelineV2BizeventsIngestsourcesProcessingProcessorsProcessorSmartscapeNodeNodeNameField) *OpenpipelineV2BizeventsIngestsourcesProcessingProcessorsProcessorSmartscapeNodeNodeNameField {
+		return &v
+	}).(OpenpipelineV2BizeventsIngestsourcesProcessingProcessorsProcessorSmartscapeNodeNodeNameFieldPtrOutput)
+}
+
+// Default value
+func (o OpenpipelineV2BizeventsIngestsourcesProcessingProcessorsProcessorSmartscapeNodeNodeNameFieldOutput) DefaultValue() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v OpenpipelineV2BizeventsIngestsourcesProcessingProcessorsProcessorSmartscapeNodeNodeNameField) *string {
+		return v.DefaultValue
+	}).(pulumi.StringPtrOutput)
+}
+
+// Source field name
+func (o OpenpipelineV2BizeventsIngestsourcesProcessingProcessorsProcessorSmartscapeNodeNodeNameFieldOutput) SourceFieldName() pulumi.StringOutput {
+	return o.ApplyT(func(v OpenpipelineV2BizeventsIngestsourcesProcessingProcessorsProcessorSmartscapeNodeNodeNameField) string {
+		return v.SourceFieldName
+	}).(pulumi.StringOutput)
+}
+
+type OpenpipelineV2BizeventsIngestsourcesProcessingProcessorsProcessorSmartscapeNodeNodeNameFieldPtrOutput struct{ *pulumi.OutputState }
+
+func (OpenpipelineV2BizeventsIngestsourcesProcessingProcessorsProcessorSmartscapeNodeNodeNameFieldPtrOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((**OpenpipelineV2BizeventsIngestsourcesProcessingProcessorsProcessorSmartscapeNodeNodeNameField)(nil)).Elem()
+}
+
+func (o OpenpipelineV2BizeventsIngestsourcesProcessingProcessorsProcessorSmartscapeNodeNodeNameFieldPtrOutput) ToOpenpipelineV2BizeventsIngestsourcesProcessingProcessorsProcessorSmartscapeNodeNodeNameFieldPtrOutput() OpenpipelineV2BizeventsIngestsourcesProcessingProcessorsProcessorSmartscapeNodeNodeNameFieldPtrOutput {
+	return o
+}
+
+func (o OpenpipelineV2BizeventsIngestsourcesProcessingProcessorsProcessorSmartscapeNodeNodeNameFieldPtrOutput) ToOpenpipelineV2BizeventsIngestsourcesProcessingProcessorsProcessorSmartscapeNodeNodeNameFieldPtrOutputWithContext(ctx context.Context) OpenpipelineV2BizeventsIngestsourcesProcessingProcessorsProcessorSmartscapeNodeNodeNameFieldPtrOutput {
+	return o
+}
+
+func (o OpenpipelineV2BizeventsIngestsourcesProcessingProcessorsProcessorSmartscapeNodeNodeNameFieldPtrOutput) Elem() OpenpipelineV2BizeventsIngestsourcesProcessingProcessorsProcessorSmartscapeNodeNodeNameFieldOutput {
+	return o.ApplyT(func(v *OpenpipelineV2BizeventsIngestsourcesProcessingProcessorsProcessorSmartscapeNodeNodeNameField) OpenpipelineV2BizeventsIngestsourcesProcessingProcessorsProcessorSmartscapeNodeNodeNameField {
+		if v != nil {
+			return *v
+		}
+		var ret OpenpipelineV2BizeventsIngestsourcesProcessingProcessorsProcessorSmartscapeNodeNodeNameField
+		return ret
+	}).(OpenpipelineV2BizeventsIngestsourcesProcessingProcessorsProcessorSmartscapeNodeNodeNameFieldOutput)
+}
+
+// Default value
+func (o OpenpipelineV2BizeventsIngestsourcesProcessingProcessorsProcessorSmartscapeNodeNodeNameFieldPtrOutput) DefaultValue() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *OpenpipelineV2BizeventsIngestsourcesProcessingProcessorsProcessorSmartscapeNodeNodeNameField) *string {
+		if v == nil {
+			return nil
+		}
+		return v.DefaultValue
+	}).(pulumi.StringPtrOutput)
+}
+
+// Source field name
+func (o OpenpipelineV2BizeventsIngestsourcesProcessingProcessorsProcessorSmartscapeNodeNodeNameFieldPtrOutput) SourceFieldName() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *OpenpipelineV2BizeventsIngestsourcesProcessingProcessorsProcessorSmartscapeNodeNodeNameField) *string {
+		if v == nil {
+			return nil
+		}
+		return &v.SourceFieldName
+	}).(pulumi.StringPtrOutput)
+}
+
 type OpenpipelineV2BizeventsIngestsourcesProcessingProcessorsProcessorSmartscapeNodeStaticEdgesToExtract struct {
 	SmartscapeStaticEdgeExtractionEntries []OpenpipelineV2BizeventsIngestsourcesProcessingProcessorsProcessorSmartscapeNodeStaticEdgesToExtractSmartscapeStaticEdgeExtractionEntry `pulumi:"smartscapeStaticEdgeExtractionEntries"`
 }
@@ -2023,6 +2385,8 @@ type OpenpipelineV2BizeventsPipelinesCostAllocationProcessorsProcessor struct {
 	HistogramMetric *OpenpipelineV2BizeventsPipelinesCostAllocationProcessorsProcessorHistogramMetric `pulumi:"histogramMetric"`
 	// Processor identifier
 	Id string `pulumi:"id"`
+	// Inline lookup processor attributes
+	InlineLookup *OpenpipelineV2BizeventsPipelinesCostAllocationProcessorsProcessorInlineLookup `pulumi:"inlineLookup"`
 	// [See our documentation](https://dt-url.net/bp234rv)
 	Matcher *string `pulumi:"matcher"`
 	// Product allocation processor attributes
@@ -2047,7 +2411,7 @@ type OpenpipelineV2BizeventsPipelinesCostAllocationProcessorsProcessor struct {
 	SmartscapeNode *OpenpipelineV2BizeventsPipelinesCostAllocationProcessorsProcessorSmartscapeNode `pulumi:"smartscapeNode"`
 	// Technology processor attributes
 	Technology *OpenpipelineV2BizeventsPipelinesCostAllocationProcessorsProcessorTechnology `pulumi:"technology"`
-	// Processor type. Possible values: `azureLogForwarding`, `bizevent`, `bucketAssignment`, `costAllocation`, `counterMetric`, `davis`, `dql`, `drop`, `fieldsAdd`, `fieldsRemove`, `fieldsRename`, `geoLookup`, `histogramMetric`, `noStorage`, `productAllocation`, `samplingAwareCounterMetric`, `samplingAwareHistogramMetric`, `samplingAwareValueMetric`, `sdlcEvent`, `securityContext`, `securityEvent`, `smartscapeEdge`, `smartscapeNode`, `technology`, `valueMetric`
+	// Processor type. Possible values: `azureLogForwarding`, `bizevent`, `bucketAssignment`, `costAllocation`, `counterMetric`, `davis`, `dql`, `drop`, `fieldsAdd`, `fieldsRemove`, `fieldsRename`, `geoLookup`, `histogramMetric`, `inlineLookup`, `noStorage`, `productAllocation`, `samplingAwareCounterMetric`, `samplingAwareHistogramMetric`, `samplingAwareValueMetric`, `sdlcEvent`, `securityContext`, `securityEvent`, `smartscapeEdge`, `smartscapeNode`, `technology`, `valueMetric`
 	Type string `pulumi:"type"`
 	// Value metric processor attributes
 	ValueMetric *OpenpipelineV2BizeventsPipelinesCostAllocationProcessorsProcessorValueMetric `pulumi:"valueMetric"`
@@ -2095,6 +2459,8 @@ type OpenpipelineV2BizeventsPipelinesCostAllocationProcessorsProcessorArgs struc
 	HistogramMetric OpenpipelineV2BizeventsPipelinesCostAllocationProcessorsProcessorHistogramMetricPtrInput `pulumi:"histogramMetric"`
 	// Processor identifier
 	Id pulumi.StringInput `pulumi:"id"`
+	// Inline lookup processor attributes
+	InlineLookup OpenpipelineV2BizeventsPipelinesCostAllocationProcessorsProcessorInlineLookupPtrInput `pulumi:"inlineLookup"`
 	// [See our documentation](https://dt-url.net/bp234rv)
 	Matcher pulumi.StringPtrInput `pulumi:"matcher"`
 	// Product allocation processor attributes
@@ -2119,7 +2485,7 @@ type OpenpipelineV2BizeventsPipelinesCostAllocationProcessorsProcessorArgs struc
 	SmartscapeNode OpenpipelineV2BizeventsPipelinesCostAllocationProcessorsProcessorSmartscapeNodePtrInput `pulumi:"smartscapeNode"`
 	// Technology processor attributes
 	Technology OpenpipelineV2BizeventsPipelinesCostAllocationProcessorsProcessorTechnologyPtrInput `pulumi:"technology"`
-	// Processor type. Possible values: `azureLogForwarding`, `bizevent`, `bucketAssignment`, `costAllocation`, `counterMetric`, `davis`, `dql`, `drop`, `fieldsAdd`, `fieldsRemove`, `fieldsRename`, `geoLookup`, `histogramMetric`, `noStorage`, `productAllocation`, `samplingAwareCounterMetric`, `samplingAwareHistogramMetric`, `samplingAwareValueMetric`, `sdlcEvent`, `securityContext`, `securityEvent`, `smartscapeEdge`, `smartscapeNode`, `technology`, `valueMetric`
+	// Processor type. Possible values: `azureLogForwarding`, `bizevent`, `bucketAssignment`, `costAllocation`, `counterMetric`, `davis`, `dql`, `drop`, `fieldsAdd`, `fieldsRemove`, `fieldsRename`, `geoLookup`, `histogramMetric`, `inlineLookup`, `noStorage`, `productAllocation`, `samplingAwareCounterMetric`, `samplingAwareHistogramMetric`, `samplingAwareValueMetric`, `sdlcEvent`, `securityContext`, `securityEvent`, `smartscapeEdge`, `smartscapeNode`, `technology`, `valueMetric`
 	Type pulumi.StringInput `pulumi:"type"`
 	// Value metric processor attributes
 	ValueMetric OpenpipelineV2BizeventsPipelinesCostAllocationProcessorsProcessorValueMetricPtrInput `pulumi:"valueMetric"`
@@ -2275,6 +2641,13 @@ func (o OpenpipelineV2BizeventsPipelinesCostAllocationProcessorsProcessorOutput)
 	return o.ApplyT(func(v OpenpipelineV2BizeventsPipelinesCostAllocationProcessorsProcessor) string { return v.Id }).(pulumi.StringOutput)
 }
 
+// Inline lookup processor attributes
+func (o OpenpipelineV2BizeventsPipelinesCostAllocationProcessorsProcessorOutput) InlineLookup() OpenpipelineV2BizeventsPipelinesCostAllocationProcessorsProcessorInlineLookupPtrOutput {
+	return o.ApplyT(func(v OpenpipelineV2BizeventsPipelinesCostAllocationProcessorsProcessor) *OpenpipelineV2BizeventsPipelinesCostAllocationProcessorsProcessorInlineLookup {
+		return v.InlineLookup
+	}).(OpenpipelineV2BizeventsPipelinesCostAllocationProcessorsProcessorInlineLookupPtrOutput)
+}
+
 // [See our documentation](https://dt-url.net/bp234rv)
 func (o OpenpipelineV2BizeventsPipelinesCostAllocationProcessorsProcessorOutput) Matcher() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v OpenpipelineV2BizeventsPipelinesCostAllocationProcessorsProcessor) *string { return v.Matcher }).(pulumi.StringPtrOutput)
@@ -2355,7 +2728,7 @@ func (o OpenpipelineV2BizeventsPipelinesCostAllocationProcessorsProcessorOutput)
 	}).(OpenpipelineV2BizeventsPipelinesCostAllocationProcessorsProcessorTechnologyPtrOutput)
 }
 
-// Processor type. Possible values: `azureLogForwarding`, `bizevent`, `bucketAssignment`, `costAllocation`, `counterMetric`, `davis`, `dql`, `drop`, `fieldsAdd`, `fieldsRemove`, `fieldsRename`, `geoLookup`, `histogramMetric`, `noStorage`, `productAllocation`, `samplingAwareCounterMetric`, `samplingAwareHistogramMetric`, `samplingAwareValueMetric`, `sdlcEvent`, `securityContext`, `securityEvent`, `smartscapeEdge`, `smartscapeNode`, `technology`, `valueMetric`
+// Processor type. Possible values: `azureLogForwarding`, `bizevent`, `bucketAssignment`, `costAllocation`, `counterMetric`, `davis`, `dql`, `drop`, `fieldsAdd`, `fieldsRemove`, `fieldsRename`, `geoLookup`, `histogramMetric`, `inlineLookup`, `noStorage`, `productAllocation`, `samplingAwareCounterMetric`, `samplingAwareHistogramMetric`, `samplingAwareValueMetric`, `sdlcEvent`, `securityContext`, `securityEvent`, `smartscapeEdge`, `smartscapeNode`, `technology`, `valueMetric`
 func (o OpenpipelineV2BizeventsPipelinesCostAllocationProcessorsProcessorOutput) Type() pulumi.StringOutput {
 	return o.ApplyT(func(v OpenpipelineV2BizeventsPipelinesCostAllocationProcessorsProcessor) string { return v.Type }).(pulumi.StringOutput)
 }
@@ -7634,6 +8007,208 @@ func (o OpenpipelineV2BizeventsPipelinesCostAllocationProcessorsProcessorHistogr
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) OpenpipelineV2BizeventsPipelinesCostAllocationProcessorsProcessorHistogramMetricDimensionsDimension {
 		return vs[0].([]OpenpipelineV2BizeventsPipelinesCostAllocationProcessorsProcessorHistogramMetricDimensionsDimension)[vs[1].(int)]
 	}).(OpenpipelineV2BizeventsPipelinesCostAllocationProcessorsProcessorHistogramMetricDimensionsDimensionOutput)
+}
+
+type OpenpipelineV2BizeventsPipelinesCostAllocationProcessorsProcessorInlineLookup struct {
+	// The value to write to the destination field when no lookup key matches. If absent, the destination field is left unchanged when no key matches.
+	DefaultValue *string `pulumi:"defaultValue"`
+	// The field key to write the matched lookup value to.
+	DestinationField string `pulumi:"destinationField"`
+	// The key-value pairs of the inline lookup table, encoded as a compact JSON string: [[["key1","key2"],"value1"],[["key3"],"value2"]].
+	InlineLookupTable string `pulumi:"inlineLookupTable"`
+	// The field key whose value is looked up in the lookup table.
+	SourceField string `pulumi:"sourceField"`
+}
+
+// OpenpipelineV2BizeventsPipelinesCostAllocationProcessorsProcessorInlineLookupInput is an input type that accepts OpenpipelineV2BizeventsPipelinesCostAllocationProcessorsProcessorInlineLookupArgs and OpenpipelineV2BizeventsPipelinesCostAllocationProcessorsProcessorInlineLookupOutput values.
+// You can construct a concrete instance of `OpenpipelineV2BizeventsPipelinesCostAllocationProcessorsProcessorInlineLookupInput` via:
+//
+//	OpenpipelineV2BizeventsPipelinesCostAllocationProcessorsProcessorInlineLookupArgs{...}
+type OpenpipelineV2BizeventsPipelinesCostAllocationProcessorsProcessorInlineLookupInput interface {
+	pulumi.Input
+
+	ToOpenpipelineV2BizeventsPipelinesCostAllocationProcessorsProcessorInlineLookupOutput() OpenpipelineV2BizeventsPipelinesCostAllocationProcessorsProcessorInlineLookupOutput
+	ToOpenpipelineV2BizeventsPipelinesCostAllocationProcessorsProcessorInlineLookupOutputWithContext(context.Context) OpenpipelineV2BizeventsPipelinesCostAllocationProcessorsProcessorInlineLookupOutput
+}
+
+type OpenpipelineV2BizeventsPipelinesCostAllocationProcessorsProcessorInlineLookupArgs struct {
+	// The value to write to the destination field when no lookup key matches. If absent, the destination field is left unchanged when no key matches.
+	DefaultValue pulumi.StringPtrInput `pulumi:"defaultValue"`
+	// The field key to write the matched lookup value to.
+	DestinationField pulumi.StringInput `pulumi:"destinationField"`
+	// The key-value pairs of the inline lookup table, encoded as a compact JSON string: [[["key1","key2"],"value1"],[["key3"],"value2"]].
+	InlineLookupTable pulumi.StringInput `pulumi:"inlineLookupTable"`
+	// The field key whose value is looked up in the lookup table.
+	SourceField pulumi.StringInput `pulumi:"sourceField"`
+}
+
+func (OpenpipelineV2BizeventsPipelinesCostAllocationProcessorsProcessorInlineLookupArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*OpenpipelineV2BizeventsPipelinesCostAllocationProcessorsProcessorInlineLookup)(nil)).Elem()
+}
+
+func (i OpenpipelineV2BizeventsPipelinesCostAllocationProcessorsProcessorInlineLookupArgs) ToOpenpipelineV2BizeventsPipelinesCostAllocationProcessorsProcessorInlineLookupOutput() OpenpipelineV2BizeventsPipelinesCostAllocationProcessorsProcessorInlineLookupOutput {
+	return i.ToOpenpipelineV2BizeventsPipelinesCostAllocationProcessorsProcessorInlineLookupOutputWithContext(context.Background())
+}
+
+func (i OpenpipelineV2BizeventsPipelinesCostAllocationProcessorsProcessorInlineLookupArgs) ToOpenpipelineV2BizeventsPipelinesCostAllocationProcessorsProcessorInlineLookupOutputWithContext(ctx context.Context) OpenpipelineV2BizeventsPipelinesCostAllocationProcessorsProcessorInlineLookupOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(OpenpipelineV2BizeventsPipelinesCostAllocationProcessorsProcessorInlineLookupOutput)
+}
+
+func (i OpenpipelineV2BizeventsPipelinesCostAllocationProcessorsProcessorInlineLookupArgs) ToOpenpipelineV2BizeventsPipelinesCostAllocationProcessorsProcessorInlineLookupPtrOutput() OpenpipelineV2BizeventsPipelinesCostAllocationProcessorsProcessorInlineLookupPtrOutput {
+	return i.ToOpenpipelineV2BizeventsPipelinesCostAllocationProcessorsProcessorInlineLookupPtrOutputWithContext(context.Background())
+}
+
+func (i OpenpipelineV2BizeventsPipelinesCostAllocationProcessorsProcessorInlineLookupArgs) ToOpenpipelineV2BizeventsPipelinesCostAllocationProcessorsProcessorInlineLookupPtrOutputWithContext(ctx context.Context) OpenpipelineV2BizeventsPipelinesCostAllocationProcessorsProcessorInlineLookupPtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(OpenpipelineV2BizeventsPipelinesCostAllocationProcessorsProcessorInlineLookupOutput).ToOpenpipelineV2BizeventsPipelinesCostAllocationProcessorsProcessorInlineLookupPtrOutputWithContext(ctx)
+}
+
+// OpenpipelineV2BizeventsPipelinesCostAllocationProcessorsProcessorInlineLookupPtrInput is an input type that accepts OpenpipelineV2BizeventsPipelinesCostAllocationProcessorsProcessorInlineLookupArgs, OpenpipelineV2BizeventsPipelinesCostAllocationProcessorsProcessorInlineLookupPtr and OpenpipelineV2BizeventsPipelinesCostAllocationProcessorsProcessorInlineLookupPtrOutput values.
+// You can construct a concrete instance of `OpenpipelineV2BizeventsPipelinesCostAllocationProcessorsProcessorInlineLookupPtrInput` via:
+//
+//	        OpenpipelineV2BizeventsPipelinesCostAllocationProcessorsProcessorInlineLookupArgs{...}
+//
+//	or:
+//
+//	        nil
+type OpenpipelineV2BizeventsPipelinesCostAllocationProcessorsProcessorInlineLookupPtrInput interface {
+	pulumi.Input
+
+	ToOpenpipelineV2BizeventsPipelinesCostAllocationProcessorsProcessorInlineLookupPtrOutput() OpenpipelineV2BizeventsPipelinesCostAllocationProcessorsProcessorInlineLookupPtrOutput
+	ToOpenpipelineV2BizeventsPipelinesCostAllocationProcessorsProcessorInlineLookupPtrOutputWithContext(context.Context) OpenpipelineV2BizeventsPipelinesCostAllocationProcessorsProcessorInlineLookupPtrOutput
+}
+
+type openpipelineV2BizeventsPipelinesCostAllocationProcessorsProcessorInlineLookupPtrType OpenpipelineV2BizeventsPipelinesCostAllocationProcessorsProcessorInlineLookupArgs
+
+func OpenpipelineV2BizeventsPipelinesCostAllocationProcessorsProcessorInlineLookupPtr(v *OpenpipelineV2BizeventsPipelinesCostAllocationProcessorsProcessorInlineLookupArgs) OpenpipelineV2BizeventsPipelinesCostAllocationProcessorsProcessorInlineLookupPtrInput {
+	return (*openpipelineV2BizeventsPipelinesCostAllocationProcessorsProcessorInlineLookupPtrType)(v)
+}
+
+func (*openpipelineV2BizeventsPipelinesCostAllocationProcessorsProcessorInlineLookupPtrType) ElementType() reflect.Type {
+	return reflect.TypeOf((**OpenpipelineV2BizeventsPipelinesCostAllocationProcessorsProcessorInlineLookup)(nil)).Elem()
+}
+
+func (i *openpipelineV2BizeventsPipelinesCostAllocationProcessorsProcessorInlineLookupPtrType) ToOpenpipelineV2BizeventsPipelinesCostAllocationProcessorsProcessorInlineLookupPtrOutput() OpenpipelineV2BizeventsPipelinesCostAllocationProcessorsProcessorInlineLookupPtrOutput {
+	return i.ToOpenpipelineV2BizeventsPipelinesCostAllocationProcessorsProcessorInlineLookupPtrOutputWithContext(context.Background())
+}
+
+func (i *openpipelineV2BizeventsPipelinesCostAllocationProcessorsProcessorInlineLookupPtrType) ToOpenpipelineV2BizeventsPipelinesCostAllocationProcessorsProcessorInlineLookupPtrOutputWithContext(ctx context.Context) OpenpipelineV2BizeventsPipelinesCostAllocationProcessorsProcessorInlineLookupPtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(OpenpipelineV2BizeventsPipelinesCostAllocationProcessorsProcessorInlineLookupPtrOutput)
+}
+
+type OpenpipelineV2BizeventsPipelinesCostAllocationProcessorsProcessorInlineLookupOutput struct{ *pulumi.OutputState }
+
+func (OpenpipelineV2BizeventsPipelinesCostAllocationProcessorsProcessorInlineLookupOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*OpenpipelineV2BizeventsPipelinesCostAllocationProcessorsProcessorInlineLookup)(nil)).Elem()
+}
+
+func (o OpenpipelineV2BizeventsPipelinesCostAllocationProcessorsProcessorInlineLookupOutput) ToOpenpipelineV2BizeventsPipelinesCostAllocationProcessorsProcessorInlineLookupOutput() OpenpipelineV2BizeventsPipelinesCostAllocationProcessorsProcessorInlineLookupOutput {
+	return o
+}
+
+func (o OpenpipelineV2BizeventsPipelinesCostAllocationProcessorsProcessorInlineLookupOutput) ToOpenpipelineV2BizeventsPipelinesCostAllocationProcessorsProcessorInlineLookupOutputWithContext(ctx context.Context) OpenpipelineV2BizeventsPipelinesCostAllocationProcessorsProcessorInlineLookupOutput {
+	return o
+}
+
+func (o OpenpipelineV2BizeventsPipelinesCostAllocationProcessorsProcessorInlineLookupOutput) ToOpenpipelineV2BizeventsPipelinesCostAllocationProcessorsProcessorInlineLookupPtrOutput() OpenpipelineV2BizeventsPipelinesCostAllocationProcessorsProcessorInlineLookupPtrOutput {
+	return o.ToOpenpipelineV2BizeventsPipelinesCostAllocationProcessorsProcessorInlineLookupPtrOutputWithContext(context.Background())
+}
+
+func (o OpenpipelineV2BizeventsPipelinesCostAllocationProcessorsProcessorInlineLookupOutput) ToOpenpipelineV2BizeventsPipelinesCostAllocationProcessorsProcessorInlineLookupPtrOutputWithContext(ctx context.Context) OpenpipelineV2BizeventsPipelinesCostAllocationProcessorsProcessorInlineLookupPtrOutput {
+	return o.ApplyTWithContext(ctx, func(_ context.Context, v OpenpipelineV2BizeventsPipelinesCostAllocationProcessorsProcessorInlineLookup) *OpenpipelineV2BizeventsPipelinesCostAllocationProcessorsProcessorInlineLookup {
+		return &v
+	}).(OpenpipelineV2BizeventsPipelinesCostAllocationProcessorsProcessorInlineLookupPtrOutput)
+}
+
+// The value to write to the destination field when no lookup key matches. If absent, the destination field is left unchanged when no key matches.
+func (o OpenpipelineV2BizeventsPipelinesCostAllocationProcessorsProcessorInlineLookupOutput) DefaultValue() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v OpenpipelineV2BizeventsPipelinesCostAllocationProcessorsProcessorInlineLookup) *string {
+		return v.DefaultValue
+	}).(pulumi.StringPtrOutput)
+}
+
+// The field key to write the matched lookup value to.
+func (o OpenpipelineV2BizeventsPipelinesCostAllocationProcessorsProcessorInlineLookupOutput) DestinationField() pulumi.StringOutput {
+	return o.ApplyT(func(v OpenpipelineV2BizeventsPipelinesCostAllocationProcessorsProcessorInlineLookup) string {
+		return v.DestinationField
+	}).(pulumi.StringOutput)
+}
+
+// The key-value pairs of the inline lookup table, encoded as a compact JSON string: [[["key1","key2"],"value1"],[["key3"],"value2"]].
+func (o OpenpipelineV2BizeventsPipelinesCostAllocationProcessorsProcessorInlineLookupOutput) InlineLookupTable() pulumi.StringOutput {
+	return o.ApplyT(func(v OpenpipelineV2BizeventsPipelinesCostAllocationProcessorsProcessorInlineLookup) string {
+		return v.InlineLookupTable
+	}).(pulumi.StringOutput)
+}
+
+// The field key whose value is looked up in the lookup table.
+func (o OpenpipelineV2BizeventsPipelinesCostAllocationProcessorsProcessorInlineLookupOutput) SourceField() pulumi.StringOutput {
+	return o.ApplyT(func(v OpenpipelineV2BizeventsPipelinesCostAllocationProcessorsProcessorInlineLookup) string {
+		return v.SourceField
+	}).(pulumi.StringOutput)
+}
+
+type OpenpipelineV2BizeventsPipelinesCostAllocationProcessorsProcessorInlineLookupPtrOutput struct{ *pulumi.OutputState }
+
+func (OpenpipelineV2BizeventsPipelinesCostAllocationProcessorsProcessorInlineLookupPtrOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((**OpenpipelineV2BizeventsPipelinesCostAllocationProcessorsProcessorInlineLookup)(nil)).Elem()
+}
+
+func (o OpenpipelineV2BizeventsPipelinesCostAllocationProcessorsProcessorInlineLookupPtrOutput) ToOpenpipelineV2BizeventsPipelinesCostAllocationProcessorsProcessorInlineLookupPtrOutput() OpenpipelineV2BizeventsPipelinesCostAllocationProcessorsProcessorInlineLookupPtrOutput {
+	return o
+}
+
+func (o OpenpipelineV2BizeventsPipelinesCostAllocationProcessorsProcessorInlineLookupPtrOutput) ToOpenpipelineV2BizeventsPipelinesCostAllocationProcessorsProcessorInlineLookupPtrOutputWithContext(ctx context.Context) OpenpipelineV2BizeventsPipelinesCostAllocationProcessorsProcessorInlineLookupPtrOutput {
+	return o
+}
+
+func (o OpenpipelineV2BizeventsPipelinesCostAllocationProcessorsProcessorInlineLookupPtrOutput) Elem() OpenpipelineV2BizeventsPipelinesCostAllocationProcessorsProcessorInlineLookupOutput {
+	return o.ApplyT(func(v *OpenpipelineV2BizeventsPipelinesCostAllocationProcessorsProcessorInlineLookup) OpenpipelineV2BizeventsPipelinesCostAllocationProcessorsProcessorInlineLookup {
+		if v != nil {
+			return *v
+		}
+		var ret OpenpipelineV2BizeventsPipelinesCostAllocationProcessorsProcessorInlineLookup
+		return ret
+	}).(OpenpipelineV2BizeventsPipelinesCostAllocationProcessorsProcessorInlineLookupOutput)
+}
+
+// The value to write to the destination field when no lookup key matches. If absent, the destination field is left unchanged when no key matches.
+func (o OpenpipelineV2BizeventsPipelinesCostAllocationProcessorsProcessorInlineLookupPtrOutput) DefaultValue() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *OpenpipelineV2BizeventsPipelinesCostAllocationProcessorsProcessorInlineLookup) *string {
+		if v == nil {
+			return nil
+		}
+		return v.DefaultValue
+	}).(pulumi.StringPtrOutput)
+}
+
+// The field key to write the matched lookup value to.
+func (o OpenpipelineV2BizeventsPipelinesCostAllocationProcessorsProcessorInlineLookupPtrOutput) DestinationField() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *OpenpipelineV2BizeventsPipelinesCostAllocationProcessorsProcessorInlineLookup) *string {
+		if v == nil {
+			return nil
+		}
+		return &v.DestinationField
+	}).(pulumi.StringPtrOutput)
+}
+
+// The key-value pairs of the inline lookup table, encoded as a compact JSON string: [[["key1","key2"],"value1"],[["key3"],"value2"]].
+func (o OpenpipelineV2BizeventsPipelinesCostAllocationProcessorsProcessorInlineLookupPtrOutput) InlineLookupTable() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *OpenpipelineV2BizeventsPipelinesCostAllocationProcessorsProcessorInlineLookup) *string {
+		if v == nil {
+			return nil
+		}
+		return &v.InlineLookupTable
+	}).(pulumi.StringPtrOutput)
+}
+
+// The field key whose value is looked up in the lookup table.
+func (o OpenpipelineV2BizeventsPipelinesCostAllocationProcessorsProcessorInlineLookupPtrOutput) SourceField() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *OpenpipelineV2BizeventsPipelinesCostAllocationProcessorsProcessorInlineLookup) *string {
+		if v == nil {
+			return nil
+		}
+		return &v.SourceField
+	}).(pulumi.StringPtrOutput)
 }
 
 type OpenpipelineV2BizeventsPipelinesCostAllocationProcessorsProcessorProductAllocation struct {
@@ -15616,6 +16191,8 @@ type OpenpipelineV2BizeventsPipelinesDataExtractionProcessorsProcessor struct {
 	HistogramMetric *OpenpipelineV2BizeventsPipelinesDataExtractionProcessorsProcessorHistogramMetric `pulumi:"histogramMetric"`
 	// Processor identifier
 	Id string `pulumi:"id"`
+	// Inline lookup processor attributes
+	InlineLookup *OpenpipelineV2BizeventsPipelinesDataExtractionProcessorsProcessorInlineLookup `pulumi:"inlineLookup"`
 	// [See our documentation](https://dt-url.net/bp234rv)
 	Matcher *string `pulumi:"matcher"`
 	// Product allocation processor attributes
@@ -15640,7 +16217,7 @@ type OpenpipelineV2BizeventsPipelinesDataExtractionProcessorsProcessor struct {
 	SmartscapeNode *OpenpipelineV2BizeventsPipelinesDataExtractionProcessorsProcessorSmartscapeNode `pulumi:"smartscapeNode"`
 	// Technology processor attributes
 	Technology *OpenpipelineV2BizeventsPipelinesDataExtractionProcessorsProcessorTechnology `pulumi:"technology"`
-	// Processor type. Possible values: `azureLogForwarding`, `bizevent`, `bucketAssignment`, `costAllocation`, `counterMetric`, `davis`, `dql`, `drop`, `fieldsAdd`, `fieldsRemove`, `fieldsRename`, `geoLookup`, `histogramMetric`, `noStorage`, `productAllocation`, `samplingAwareCounterMetric`, `samplingAwareHistogramMetric`, `samplingAwareValueMetric`, `sdlcEvent`, `securityContext`, `securityEvent`, `smartscapeEdge`, `smartscapeNode`, `technology`, `valueMetric`
+	// Processor type. Possible values: `azureLogForwarding`, `bizevent`, `bucketAssignment`, `costAllocation`, `counterMetric`, `davis`, `dql`, `drop`, `fieldsAdd`, `fieldsRemove`, `fieldsRename`, `geoLookup`, `histogramMetric`, `inlineLookup`, `noStorage`, `productAllocation`, `samplingAwareCounterMetric`, `samplingAwareHistogramMetric`, `samplingAwareValueMetric`, `sdlcEvent`, `securityContext`, `securityEvent`, `smartscapeEdge`, `smartscapeNode`, `technology`, `valueMetric`
 	Type string `pulumi:"type"`
 	// Value metric processor attributes
 	ValueMetric *OpenpipelineV2BizeventsPipelinesDataExtractionProcessorsProcessorValueMetric `pulumi:"valueMetric"`
@@ -15688,6 +16265,8 @@ type OpenpipelineV2BizeventsPipelinesDataExtractionProcessorsProcessorArgs struc
 	HistogramMetric OpenpipelineV2BizeventsPipelinesDataExtractionProcessorsProcessorHistogramMetricPtrInput `pulumi:"histogramMetric"`
 	// Processor identifier
 	Id pulumi.StringInput `pulumi:"id"`
+	// Inline lookup processor attributes
+	InlineLookup OpenpipelineV2BizeventsPipelinesDataExtractionProcessorsProcessorInlineLookupPtrInput `pulumi:"inlineLookup"`
 	// [See our documentation](https://dt-url.net/bp234rv)
 	Matcher pulumi.StringPtrInput `pulumi:"matcher"`
 	// Product allocation processor attributes
@@ -15712,7 +16291,7 @@ type OpenpipelineV2BizeventsPipelinesDataExtractionProcessorsProcessorArgs struc
 	SmartscapeNode OpenpipelineV2BizeventsPipelinesDataExtractionProcessorsProcessorSmartscapeNodePtrInput `pulumi:"smartscapeNode"`
 	// Technology processor attributes
 	Technology OpenpipelineV2BizeventsPipelinesDataExtractionProcessorsProcessorTechnologyPtrInput `pulumi:"technology"`
-	// Processor type. Possible values: `azureLogForwarding`, `bizevent`, `bucketAssignment`, `costAllocation`, `counterMetric`, `davis`, `dql`, `drop`, `fieldsAdd`, `fieldsRemove`, `fieldsRename`, `geoLookup`, `histogramMetric`, `noStorage`, `productAllocation`, `samplingAwareCounterMetric`, `samplingAwareHistogramMetric`, `samplingAwareValueMetric`, `sdlcEvent`, `securityContext`, `securityEvent`, `smartscapeEdge`, `smartscapeNode`, `technology`, `valueMetric`
+	// Processor type. Possible values: `azureLogForwarding`, `bizevent`, `bucketAssignment`, `costAllocation`, `counterMetric`, `davis`, `dql`, `drop`, `fieldsAdd`, `fieldsRemove`, `fieldsRename`, `geoLookup`, `histogramMetric`, `inlineLookup`, `noStorage`, `productAllocation`, `samplingAwareCounterMetric`, `samplingAwareHistogramMetric`, `samplingAwareValueMetric`, `sdlcEvent`, `securityContext`, `securityEvent`, `smartscapeEdge`, `smartscapeNode`, `technology`, `valueMetric`
 	Type pulumi.StringInput `pulumi:"type"`
 	// Value metric processor attributes
 	ValueMetric OpenpipelineV2BizeventsPipelinesDataExtractionProcessorsProcessorValueMetricPtrInput `pulumi:"valueMetric"`
@@ -15868,6 +16447,13 @@ func (o OpenpipelineV2BizeventsPipelinesDataExtractionProcessorsProcessorOutput)
 	return o.ApplyT(func(v OpenpipelineV2BizeventsPipelinesDataExtractionProcessorsProcessor) string { return v.Id }).(pulumi.StringOutput)
 }
 
+// Inline lookup processor attributes
+func (o OpenpipelineV2BizeventsPipelinesDataExtractionProcessorsProcessorOutput) InlineLookup() OpenpipelineV2BizeventsPipelinesDataExtractionProcessorsProcessorInlineLookupPtrOutput {
+	return o.ApplyT(func(v OpenpipelineV2BizeventsPipelinesDataExtractionProcessorsProcessor) *OpenpipelineV2BizeventsPipelinesDataExtractionProcessorsProcessorInlineLookup {
+		return v.InlineLookup
+	}).(OpenpipelineV2BizeventsPipelinesDataExtractionProcessorsProcessorInlineLookupPtrOutput)
+}
+
 // [See our documentation](https://dt-url.net/bp234rv)
 func (o OpenpipelineV2BizeventsPipelinesDataExtractionProcessorsProcessorOutput) Matcher() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v OpenpipelineV2BizeventsPipelinesDataExtractionProcessorsProcessor) *string { return v.Matcher }).(pulumi.StringPtrOutput)
@@ -15948,7 +16534,7 @@ func (o OpenpipelineV2BizeventsPipelinesDataExtractionProcessorsProcessorOutput)
 	}).(OpenpipelineV2BizeventsPipelinesDataExtractionProcessorsProcessorTechnologyPtrOutput)
 }
 
-// Processor type. Possible values: `azureLogForwarding`, `bizevent`, `bucketAssignment`, `costAllocation`, `counterMetric`, `davis`, `dql`, `drop`, `fieldsAdd`, `fieldsRemove`, `fieldsRename`, `geoLookup`, `histogramMetric`, `noStorage`, `productAllocation`, `samplingAwareCounterMetric`, `samplingAwareHistogramMetric`, `samplingAwareValueMetric`, `sdlcEvent`, `securityContext`, `securityEvent`, `smartscapeEdge`, `smartscapeNode`, `technology`, `valueMetric`
+// Processor type. Possible values: `azureLogForwarding`, `bizevent`, `bucketAssignment`, `costAllocation`, `counterMetric`, `davis`, `dql`, `drop`, `fieldsAdd`, `fieldsRemove`, `fieldsRename`, `geoLookup`, `histogramMetric`, `inlineLookup`, `noStorage`, `productAllocation`, `samplingAwareCounterMetric`, `samplingAwareHistogramMetric`, `samplingAwareValueMetric`, `sdlcEvent`, `securityContext`, `securityEvent`, `smartscapeEdge`, `smartscapeNode`, `technology`, `valueMetric`
 func (o OpenpipelineV2BizeventsPipelinesDataExtractionProcessorsProcessorOutput) Type() pulumi.StringOutput {
 	return o.ApplyT(func(v OpenpipelineV2BizeventsPipelinesDataExtractionProcessorsProcessor) string { return v.Type }).(pulumi.StringOutput)
 }
@@ -21227,6 +21813,208 @@ func (o OpenpipelineV2BizeventsPipelinesDataExtractionProcessorsProcessorHistogr
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) OpenpipelineV2BizeventsPipelinesDataExtractionProcessorsProcessorHistogramMetricDimensionsDimension {
 		return vs[0].([]OpenpipelineV2BizeventsPipelinesDataExtractionProcessorsProcessorHistogramMetricDimensionsDimension)[vs[1].(int)]
 	}).(OpenpipelineV2BizeventsPipelinesDataExtractionProcessorsProcessorHistogramMetricDimensionsDimensionOutput)
+}
+
+type OpenpipelineV2BizeventsPipelinesDataExtractionProcessorsProcessorInlineLookup struct {
+	// The value to write to the destination field when no lookup key matches. If absent, the destination field is left unchanged when no key matches.
+	DefaultValue *string `pulumi:"defaultValue"`
+	// The field key to write the matched lookup value to.
+	DestinationField string `pulumi:"destinationField"`
+	// The key-value pairs of the inline lookup table, encoded as a compact JSON string: [[["key1","key2"],"value1"],[["key3"],"value2"]].
+	InlineLookupTable string `pulumi:"inlineLookupTable"`
+	// The field key whose value is looked up in the lookup table.
+	SourceField string `pulumi:"sourceField"`
+}
+
+// OpenpipelineV2BizeventsPipelinesDataExtractionProcessorsProcessorInlineLookupInput is an input type that accepts OpenpipelineV2BizeventsPipelinesDataExtractionProcessorsProcessorInlineLookupArgs and OpenpipelineV2BizeventsPipelinesDataExtractionProcessorsProcessorInlineLookupOutput values.
+// You can construct a concrete instance of `OpenpipelineV2BizeventsPipelinesDataExtractionProcessorsProcessorInlineLookupInput` via:
+//
+//	OpenpipelineV2BizeventsPipelinesDataExtractionProcessorsProcessorInlineLookupArgs{...}
+type OpenpipelineV2BizeventsPipelinesDataExtractionProcessorsProcessorInlineLookupInput interface {
+	pulumi.Input
+
+	ToOpenpipelineV2BizeventsPipelinesDataExtractionProcessorsProcessorInlineLookupOutput() OpenpipelineV2BizeventsPipelinesDataExtractionProcessorsProcessorInlineLookupOutput
+	ToOpenpipelineV2BizeventsPipelinesDataExtractionProcessorsProcessorInlineLookupOutputWithContext(context.Context) OpenpipelineV2BizeventsPipelinesDataExtractionProcessorsProcessorInlineLookupOutput
+}
+
+type OpenpipelineV2BizeventsPipelinesDataExtractionProcessorsProcessorInlineLookupArgs struct {
+	// The value to write to the destination field when no lookup key matches. If absent, the destination field is left unchanged when no key matches.
+	DefaultValue pulumi.StringPtrInput `pulumi:"defaultValue"`
+	// The field key to write the matched lookup value to.
+	DestinationField pulumi.StringInput `pulumi:"destinationField"`
+	// The key-value pairs of the inline lookup table, encoded as a compact JSON string: [[["key1","key2"],"value1"],[["key3"],"value2"]].
+	InlineLookupTable pulumi.StringInput `pulumi:"inlineLookupTable"`
+	// The field key whose value is looked up in the lookup table.
+	SourceField pulumi.StringInput `pulumi:"sourceField"`
+}
+
+func (OpenpipelineV2BizeventsPipelinesDataExtractionProcessorsProcessorInlineLookupArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*OpenpipelineV2BizeventsPipelinesDataExtractionProcessorsProcessorInlineLookup)(nil)).Elem()
+}
+
+func (i OpenpipelineV2BizeventsPipelinesDataExtractionProcessorsProcessorInlineLookupArgs) ToOpenpipelineV2BizeventsPipelinesDataExtractionProcessorsProcessorInlineLookupOutput() OpenpipelineV2BizeventsPipelinesDataExtractionProcessorsProcessorInlineLookupOutput {
+	return i.ToOpenpipelineV2BizeventsPipelinesDataExtractionProcessorsProcessorInlineLookupOutputWithContext(context.Background())
+}
+
+func (i OpenpipelineV2BizeventsPipelinesDataExtractionProcessorsProcessorInlineLookupArgs) ToOpenpipelineV2BizeventsPipelinesDataExtractionProcessorsProcessorInlineLookupOutputWithContext(ctx context.Context) OpenpipelineV2BizeventsPipelinesDataExtractionProcessorsProcessorInlineLookupOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(OpenpipelineV2BizeventsPipelinesDataExtractionProcessorsProcessorInlineLookupOutput)
+}
+
+func (i OpenpipelineV2BizeventsPipelinesDataExtractionProcessorsProcessorInlineLookupArgs) ToOpenpipelineV2BizeventsPipelinesDataExtractionProcessorsProcessorInlineLookupPtrOutput() OpenpipelineV2BizeventsPipelinesDataExtractionProcessorsProcessorInlineLookupPtrOutput {
+	return i.ToOpenpipelineV2BizeventsPipelinesDataExtractionProcessorsProcessorInlineLookupPtrOutputWithContext(context.Background())
+}
+
+func (i OpenpipelineV2BizeventsPipelinesDataExtractionProcessorsProcessorInlineLookupArgs) ToOpenpipelineV2BizeventsPipelinesDataExtractionProcessorsProcessorInlineLookupPtrOutputWithContext(ctx context.Context) OpenpipelineV2BizeventsPipelinesDataExtractionProcessorsProcessorInlineLookupPtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(OpenpipelineV2BizeventsPipelinesDataExtractionProcessorsProcessorInlineLookupOutput).ToOpenpipelineV2BizeventsPipelinesDataExtractionProcessorsProcessorInlineLookupPtrOutputWithContext(ctx)
+}
+
+// OpenpipelineV2BizeventsPipelinesDataExtractionProcessorsProcessorInlineLookupPtrInput is an input type that accepts OpenpipelineV2BizeventsPipelinesDataExtractionProcessorsProcessorInlineLookupArgs, OpenpipelineV2BizeventsPipelinesDataExtractionProcessorsProcessorInlineLookupPtr and OpenpipelineV2BizeventsPipelinesDataExtractionProcessorsProcessorInlineLookupPtrOutput values.
+// You can construct a concrete instance of `OpenpipelineV2BizeventsPipelinesDataExtractionProcessorsProcessorInlineLookupPtrInput` via:
+//
+//	        OpenpipelineV2BizeventsPipelinesDataExtractionProcessorsProcessorInlineLookupArgs{...}
+//
+//	or:
+//
+//	        nil
+type OpenpipelineV2BizeventsPipelinesDataExtractionProcessorsProcessorInlineLookupPtrInput interface {
+	pulumi.Input
+
+	ToOpenpipelineV2BizeventsPipelinesDataExtractionProcessorsProcessorInlineLookupPtrOutput() OpenpipelineV2BizeventsPipelinesDataExtractionProcessorsProcessorInlineLookupPtrOutput
+	ToOpenpipelineV2BizeventsPipelinesDataExtractionProcessorsProcessorInlineLookupPtrOutputWithContext(context.Context) OpenpipelineV2BizeventsPipelinesDataExtractionProcessorsProcessorInlineLookupPtrOutput
+}
+
+type openpipelineV2BizeventsPipelinesDataExtractionProcessorsProcessorInlineLookupPtrType OpenpipelineV2BizeventsPipelinesDataExtractionProcessorsProcessorInlineLookupArgs
+
+func OpenpipelineV2BizeventsPipelinesDataExtractionProcessorsProcessorInlineLookupPtr(v *OpenpipelineV2BizeventsPipelinesDataExtractionProcessorsProcessorInlineLookupArgs) OpenpipelineV2BizeventsPipelinesDataExtractionProcessorsProcessorInlineLookupPtrInput {
+	return (*openpipelineV2BizeventsPipelinesDataExtractionProcessorsProcessorInlineLookupPtrType)(v)
+}
+
+func (*openpipelineV2BizeventsPipelinesDataExtractionProcessorsProcessorInlineLookupPtrType) ElementType() reflect.Type {
+	return reflect.TypeOf((**OpenpipelineV2BizeventsPipelinesDataExtractionProcessorsProcessorInlineLookup)(nil)).Elem()
+}
+
+func (i *openpipelineV2BizeventsPipelinesDataExtractionProcessorsProcessorInlineLookupPtrType) ToOpenpipelineV2BizeventsPipelinesDataExtractionProcessorsProcessorInlineLookupPtrOutput() OpenpipelineV2BizeventsPipelinesDataExtractionProcessorsProcessorInlineLookupPtrOutput {
+	return i.ToOpenpipelineV2BizeventsPipelinesDataExtractionProcessorsProcessorInlineLookupPtrOutputWithContext(context.Background())
+}
+
+func (i *openpipelineV2BizeventsPipelinesDataExtractionProcessorsProcessorInlineLookupPtrType) ToOpenpipelineV2BizeventsPipelinesDataExtractionProcessorsProcessorInlineLookupPtrOutputWithContext(ctx context.Context) OpenpipelineV2BizeventsPipelinesDataExtractionProcessorsProcessorInlineLookupPtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(OpenpipelineV2BizeventsPipelinesDataExtractionProcessorsProcessorInlineLookupPtrOutput)
+}
+
+type OpenpipelineV2BizeventsPipelinesDataExtractionProcessorsProcessorInlineLookupOutput struct{ *pulumi.OutputState }
+
+func (OpenpipelineV2BizeventsPipelinesDataExtractionProcessorsProcessorInlineLookupOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*OpenpipelineV2BizeventsPipelinesDataExtractionProcessorsProcessorInlineLookup)(nil)).Elem()
+}
+
+func (o OpenpipelineV2BizeventsPipelinesDataExtractionProcessorsProcessorInlineLookupOutput) ToOpenpipelineV2BizeventsPipelinesDataExtractionProcessorsProcessorInlineLookupOutput() OpenpipelineV2BizeventsPipelinesDataExtractionProcessorsProcessorInlineLookupOutput {
+	return o
+}
+
+func (o OpenpipelineV2BizeventsPipelinesDataExtractionProcessorsProcessorInlineLookupOutput) ToOpenpipelineV2BizeventsPipelinesDataExtractionProcessorsProcessorInlineLookupOutputWithContext(ctx context.Context) OpenpipelineV2BizeventsPipelinesDataExtractionProcessorsProcessorInlineLookupOutput {
+	return o
+}
+
+func (o OpenpipelineV2BizeventsPipelinesDataExtractionProcessorsProcessorInlineLookupOutput) ToOpenpipelineV2BizeventsPipelinesDataExtractionProcessorsProcessorInlineLookupPtrOutput() OpenpipelineV2BizeventsPipelinesDataExtractionProcessorsProcessorInlineLookupPtrOutput {
+	return o.ToOpenpipelineV2BizeventsPipelinesDataExtractionProcessorsProcessorInlineLookupPtrOutputWithContext(context.Background())
+}
+
+func (o OpenpipelineV2BizeventsPipelinesDataExtractionProcessorsProcessorInlineLookupOutput) ToOpenpipelineV2BizeventsPipelinesDataExtractionProcessorsProcessorInlineLookupPtrOutputWithContext(ctx context.Context) OpenpipelineV2BizeventsPipelinesDataExtractionProcessorsProcessorInlineLookupPtrOutput {
+	return o.ApplyTWithContext(ctx, func(_ context.Context, v OpenpipelineV2BizeventsPipelinesDataExtractionProcessorsProcessorInlineLookup) *OpenpipelineV2BizeventsPipelinesDataExtractionProcessorsProcessorInlineLookup {
+		return &v
+	}).(OpenpipelineV2BizeventsPipelinesDataExtractionProcessorsProcessorInlineLookupPtrOutput)
+}
+
+// The value to write to the destination field when no lookup key matches. If absent, the destination field is left unchanged when no key matches.
+func (o OpenpipelineV2BizeventsPipelinesDataExtractionProcessorsProcessorInlineLookupOutput) DefaultValue() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v OpenpipelineV2BizeventsPipelinesDataExtractionProcessorsProcessorInlineLookup) *string {
+		return v.DefaultValue
+	}).(pulumi.StringPtrOutput)
+}
+
+// The field key to write the matched lookup value to.
+func (o OpenpipelineV2BizeventsPipelinesDataExtractionProcessorsProcessorInlineLookupOutput) DestinationField() pulumi.StringOutput {
+	return o.ApplyT(func(v OpenpipelineV2BizeventsPipelinesDataExtractionProcessorsProcessorInlineLookup) string {
+		return v.DestinationField
+	}).(pulumi.StringOutput)
+}
+
+// The key-value pairs of the inline lookup table, encoded as a compact JSON string: [[["key1","key2"],"value1"],[["key3"],"value2"]].
+func (o OpenpipelineV2BizeventsPipelinesDataExtractionProcessorsProcessorInlineLookupOutput) InlineLookupTable() pulumi.StringOutput {
+	return o.ApplyT(func(v OpenpipelineV2BizeventsPipelinesDataExtractionProcessorsProcessorInlineLookup) string {
+		return v.InlineLookupTable
+	}).(pulumi.StringOutput)
+}
+
+// The field key whose value is looked up in the lookup table.
+func (o OpenpipelineV2BizeventsPipelinesDataExtractionProcessorsProcessorInlineLookupOutput) SourceField() pulumi.StringOutput {
+	return o.ApplyT(func(v OpenpipelineV2BizeventsPipelinesDataExtractionProcessorsProcessorInlineLookup) string {
+		return v.SourceField
+	}).(pulumi.StringOutput)
+}
+
+type OpenpipelineV2BizeventsPipelinesDataExtractionProcessorsProcessorInlineLookupPtrOutput struct{ *pulumi.OutputState }
+
+func (OpenpipelineV2BizeventsPipelinesDataExtractionProcessorsProcessorInlineLookupPtrOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((**OpenpipelineV2BizeventsPipelinesDataExtractionProcessorsProcessorInlineLookup)(nil)).Elem()
+}
+
+func (o OpenpipelineV2BizeventsPipelinesDataExtractionProcessorsProcessorInlineLookupPtrOutput) ToOpenpipelineV2BizeventsPipelinesDataExtractionProcessorsProcessorInlineLookupPtrOutput() OpenpipelineV2BizeventsPipelinesDataExtractionProcessorsProcessorInlineLookupPtrOutput {
+	return o
+}
+
+func (o OpenpipelineV2BizeventsPipelinesDataExtractionProcessorsProcessorInlineLookupPtrOutput) ToOpenpipelineV2BizeventsPipelinesDataExtractionProcessorsProcessorInlineLookupPtrOutputWithContext(ctx context.Context) OpenpipelineV2BizeventsPipelinesDataExtractionProcessorsProcessorInlineLookupPtrOutput {
+	return o
+}
+
+func (o OpenpipelineV2BizeventsPipelinesDataExtractionProcessorsProcessorInlineLookupPtrOutput) Elem() OpenpipelineV2BizeventsPipelinesDataExtractionProcessorsProcessorInlineLookupOutput {
+	return o.ApplyT(func(v *OpenpipelineV2BizeventsPipelinesDataExtractionProcessorsProcessorInlineLookup) OpenpipelineV2BizeventsPipelinesDataExtractionProcessorsProcessorInlineLookup {
+		if v != nil {
+			return *v
+		}
+		var ret OpenpipelineV2BizeventsPipelinesDataExtractionProcessorsProcessorInlineLookup
+		return ret
+	}).(OpenpipelineV2BizeventsPipelinesDataExtractionProcessorsProcessorInlineLookupOutput)
+}
+
+// The value to write to the destination field when no lookup key matches. If absent, the destination field is left unchanged when no key matches.
+func (o OpenpipelineV2BizeventsPipelinesDataExtractionProcessorsProcessorInlineLookupPtrOutput) DefaultValue() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *OpenpipelineV2BizeventsPipelinesDataExtractionProcessorsProcessorInlineLookup) *string {
+		if v == nil {
+			return nil
+		}
+		return v.DefaultValue
+	}).(pulumi.StringPtrOutput)
+}
+
+// The field key to write the matched lookup value to.
+func (o OpenpipelineV2BizeventsPipelinesDataExtractionProcessorsProcessorInlineLookupPtrOutput) DestinationField() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *OpenpipelineV2BizeventsPipelinesDataExtractionProcessorsProcessorInlineLookup) *string {
+		if v == nil {
+			return nil
+		}
+		return &v.DestinationField
+	}).(pulumi.StringPtrOutput)
+}
+
+// The key-value pairs of the inline lookup table, encoded as a compact JSON string: [[["key1","key2"],"value1"],[["key3"],"value2"]].
+func (o OpenpipelineV2BizeventsPipelinesDataExtractionProcessorsProcessorInlineLookupPtrOutput) InlineLookupTable() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *OpenpipelineV2BizeventsPipelinesDataExtractionProcessorsProcessorInlineLookup) *string {
+		if v == nil {
+			return nil
+		}
+		return &v.InlineLookupTable
+	}).(pulumi.StringPtrOutput)
+}
+
+// The field key whose value is looked up in the lookup table.
+func (o OpenpipelineV2BizeventsPipelinesDataExtractionProcessorsProcessorInlineLookupPtrOutput) SourceField() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *OpenpipelineV2BizeventsPipelinesDataExtractionProcessorsProcessorInlineLookup) *string {
+		if v == nil {
+			return nil
+		}
+		return &v.SourceField
+	}).(pulumi.StringPtrOutput)
 }
 
 type OpenpipelineV2BizeventsPipelinesDataExtractionProcessorsProcessorProductAllocation struct {
@@ -29209,6 +29997,8 @@ type OpenpipelineV2BizeventsPipelinesDavisProcessorsProcessor struct {
 	HistogramMetric *OpenpipelineV2BizeventsPipelinesDavisProcessorsProcessorHistogramMetric `pulumi:"histogramMetric"`
 	// Processor identifier
 	Id string `pulumi:"id"`
+	// Inline lookup processor attributes
+	InlineLookup *OpenpipelineV2BizeventsPipelinesDavisProcessorsProcessorInlineLookup `pulumi:"inlineLookup"`
 	// [See our documentation](https://dt-url.net/bp234rv)
 	Matcher *string `pulumi:"matcher"`
 	// Product allocation processor attributes
@@ -29233,7 +30023,7 @@ type OpenpipelineV2BizeventsPipelinesDavisProcessorsProcessor struct {
 	SmartscapeNode *OpenpipelineV2BizeventsPipelinesDavisProcessorsProcessorSmartscapeNode `pulumi:"smartscapeNode"`
 	// Technology processor attributes
 	Technology *OpenpipelineV2BizeventsPipelinesDavisProcessorsProcessorTechnology `pulumi:"technology"`
-	// Processor type. Possible values: `azureLogForwarding`, `bizevent`, `bucketAssignment`, `costAllocation`, `counterMetric`, `davis`, `dql`, `drop`, `fieldsAdd`, `fieldsRemove`, `fieldsRename`, `geoLookup`, `histogramMetric`, `noStorage`, `productAllocation`, `samplingAwareCounterMetric`, `samplingAwareHistogramMetric`, `samplingAwareValueMetric`, `sdlcEvent`, `securityContext`, `securityEvent`, `smartscapeEdge`, `smartscapeNode`, `technology`, `valueMetric`
+	// Processor type. Possible values: `azureLogForwarding`, `bizevent`, `bucketAssignment`, `costAllocation`, `counterMetric`, `davis`, `dql`, `drop`, `fieldsAdd`, `fieldsRemove`, `fieldsRename`, `geoLookup`, `histogramMetric`, `inlineLookup`, `noStorage`, `productAllocation`, `samplingAwareCounterMetric`, `samplingAwareHistogramMetric`, `samplingAwareValueMetric`, `sdlcEvent`, `securityContext`, `securityEvent`, `smartscapeEdge`, `smartscapeNode`, `technology`, `valueMetric`
 	Type string `pulumi:"type"`
 	// Value metric processor attributes
 	ValueMetric *OpenpipelineV2BizeventsPipelinesDavisProcessorsProcessorValueMetric `pulumi:"valueMetric"`
@@ -29281,6 +30071,8 @@ type OpenpipelineV2BizeventsPipelinesDavisProcessorsProcessorArgs struct {
 	HistogramMetric OpenpipelineV2BizeventsPipelinesDavisProcessorsProcessorHistogramMetricPtrInput `pulumi:"histogramMetric"`
 	// Processor identifier
 	Id pulumi.StringInput `pulumi:"id"`
+	// Inline lookup processor attributes
+	InlineLookup OpenpipelineV2BizeventsPipelinesDavisProcessorsProcessorInlineLookupPtrInput `pulumi:"inlineLookup"`
 	// [See our documentation](https://dt-url.net/bp234rv)
 	Matcher pulumi.StringPtrInput `pulumi:"matcher"`
 	// Product allocation processor attributes
@@ -29305,7 +30097,7 @@ type OpenpipelineV2BizeventsPipelinesDavisProcessorsProcessorArgs struct {
 	SmartscapeNode OpenpipelineV2BizeventsPipelinesDavisProcessorsProcessorSmartscapeNodePtrInput `pulumi:"smartscapeNode"`
 	// Technology processor attributes
 	Technology OpenpipelineV2BizeventsPipelinesDavisProcessorsProcessorTechnologyPtrInput `pulumi:"technology"`
-	// Processor type. Possible values: `azureLogForwarding`, `bizevent`, `bucketAssignment`, `costAllocation`, `counterMetric`, `davis`, `dql`, `drop`, `fieldsAdd`, `fieldsRemove`, `fieldsRename`, `geoLookup`, `histogramMetric`, `noStorage`, `productAllocation`, `samplingAwareCounterMetric`, `samplingAwareHistogramMetric`, `samplingAwareValueMetric`, `sdlcEvent`, `securityContext`, `securityEvent`, `smartscapeEdge`, `smartscapeNode`, `technology`, `valueMetric`
+	// Processor type. Possible values: `azureLogForwarding`, `bizevent`, `bucketAssignment`, `costAllocation`, `counterMetric`, `davis`, `dql`, `drop`, `fieldsAdd`, `fieldsRemove`, `fieldsRename`, `geoLookup`, `histogramMetric`, `inlineLookup`, `noStorage`, `productAllocation`, `samplingAwareCounterMetric`, `samplingAwareHistogramMetric`, `samplingAwareValueMetric`, `sdlcEvent`, `securityContext`, `securityEvent`, `smartscapeEdge`, `smartscapeNode`, `technology`, `valueMetric`
 	Type pulumi.StringInput `pulumi:"type"`
 	// Value metric processor attributes
 	ValueMetric OpenpipelineV2BizeventsPipelinesDavisProcessorsProcessorValueMetricPtrInput `pulumi:"valueMetric"`
@@ -29461,6 +30253,13 @@ func (o OpenpipelineV2BizeventsPipelinesDavisProcessorsProcessorOutput) Id() pul
 	return o.ApplyT(func(v OpenpipelineV2BizeventsPipelinesDavisProcessorsProcessor) string { return v.Id }).(pulumi.StringOutput)
 }
 
+// Inline lookup processor attributes
+func (o OpenpipelineV2BizeventsPipelinesDavisProcessorsProcessorOutput) InlineLookup() OpenpipelineV2BizeventsPipelinesDavisProcessorsProcessorInlineLookupPtrOutput {
+	return o.ApplyT(func(v OpenpipelineV2BizeventsPipelinesDavisProcessorsProcessor) *OpenpipelineV2BizeventsPipelinesDavisProcessorsProcessorInlineLookup {
+		return v.InlineLookup
+	}).(OpenpipelineV2BizeventsPipelinesDavisProcessorsProcessorInlineLookupPtrOutput)
+}
+
 // [See our documentation](https://dt-url.net/bp234rv)
 func (o OpenpipelineV2BizeventsPipelinesDavisProcessorsProcessorOutput) Matcher() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v OpenpipelineV2BizeventsPipelinesDavisProcessorsProcessor) *string { return v.Matcher }).(pulumi.StringPtrOutput)
@@ -29541,7 +30340,7 @@ func (o OpenpipelineV2BizeventsPipelinesDavisProcessorsProcessorOutput) Technolo
 	}).(OpenpipelineV2BizeventsPipelinesDavisProcessorsProcessorTechnologyPtrOutput)
 }
 
-// Processor type. Possible values: `azureLogForwarding`, `bizevent`, `bucketAssignment`, `costAllocation`, `counterMetric`, `davis`, `dql`, `drop`, `fieldsAdd`, `fieldsRemove`, `fieldsRename`, `geoLookup`, `histogramMetric`, `noStorage`, `productAllocation`, `samplingAwareCounterMetric`, `samplingAwareHistogramMetric`, `samplingAwareValueMetric`, `sdlcEvent`, `securityContext`, `securityEvent`, `smartscapeEdge`, `smartscapeNode`, `technology`, `valueMetric`
+// Processor type. Possible values: `azureLogForwarding`, `bizevent`, `bucketAssignment`, `costAllocation`, `counterMetric`, `davis`, `dql`, `drop`, `fieldsAdd`, `fieldsRemove`, `fieldsRename`, `geoLookup`, `histogramMetric`, `inlineLookup`, `noStorage`, `productAllocation`, `samplingAwareCounterMetric`, `samplingAwareHistogramMetric`, `samplingAwareValueMetric`, `sdlcEvent`, `securityContext`, `securityEvent`, `smartscapeEdge`, `smartscapeNode`, `technology`, `valueMetric`
 func (o OpenpipelineV2BizeventsPipelinesDavisProcessorsProcessorOutput) Type() pulumi.StringOutput {
 	return o.ApplyT(func(v OpenpipelineV2BizeventsPipelinesDavisProcessorsProcessor) string { return v.Type }).(pulumi.StringOutput)
 }
@@ -34814,6 +35613,208 @@ func (o OpenpipelineV2BizeventsPipelinesDavisProcessorsProcessorHistogramMetricD
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) OpenpipelineV2BizeventsPipelinesDavisProcessorsProcessorHistogramMetricDimensionsDimension {
 		return vs[0].([]OpenpipelineV2BizeventsPipelinesDavisProcessorsProcessorHistogramMetricDimensionsDimension)[vs[1].(int)]
 	}).(OpenpipelineV2BizeventsPipelinesDavisProcessorsProcessorHistogramMetricDimensionsDimensionOutput)
+}
+
+type OpenpipelineV2BizeventsPipelinesDavisProcessorsProcessorInlineLookup struct {
+	// The value to write to the destination field when no lookup key matches. If absent, the destination field is left unchanged when no key matches.
+	DefaultValue *string `pulumi:"defaultValue"`
+	// The field key to write the matched lookup value to.
+	DestinationField string `pulumi:"destinationField"`
+	// The key-value pairs of the inline lookup table, encoded as a compact JSON string: [[["key1","key2"],"value1"],[["key3"],"value2"]].
+	InlineLookupTable string `pulumi:"inlineLookupTable"`
+	// The field key whose value is looked up in the lookup table.
+	SourceField string `pulumi:"sourceField"`
+}
+
+// OpenpipelineV2BizeventsPipelinesDavisProcessorsProcessorInlineLookupInput is an input type that accepts OpenpipelineV2BizeventsPipelinesDavisProcessorsProcessorInlineLookupArgs and OpenpipelineV2BizeventsPipelinesDavisProcessorsProcessorInlineLookupOutput values.
+// You can construct a concrete instance of `OpenpipelineV2BizeventsPipelinesDavisProcessorsProcessorInlineLookupInput` via:
+//
+//	OpenpipelineV2BizeventsPipelinesDavisProcessorsProcessorInlineLookupArgs{...}
+type OpenpipelineV2BizeventsPipelinesDavisProcessorsProcessorInlineLookupInput interface {
+	pulumi.Input
+
+	ToOpenpipelineV2BizeventsPipelinesDavisProcessorsProcessorInlineLookupOutput() OpenpipelineV2BizeventsPipelinesDavisProcessorsProcessorInlineLookupOutput
+	ToOpenpipelineV2BizeventsPipelinesDavisProcessorsProcessorInlineLookupOutputWithContext(context.Context) OpenpipelineV2BizeventsPipelinesDavisProcessorsProcessorInlineLookupOutput
+}
+
+type OpenpipelineV2BizeventsPipelinesDavisProcessorsProcessorInlineLookupArgs struct {
+	// The value to write to the destination field when no lookup key matches. If absent, the destination field is left unchanged when no key matches.
+	DefaultValue pulumi.StringPtrInput `pulumi:"defaultValue"`
+	// The field key to write the matched lookup value to.
+	DestinationField pulumi.StringInput `pulumi:"destinationField"`
+	// The key-value pairs of the inline lookup table, encoded as a compact JSON string: [[["key1","key2"],"value1"],[["key3"],"value2"]].
+	InlineLookupTable pulumi.StringInput `pulumi:"inlineLookupTable"`
+	// The field key whose value is looked up in the lookup table.
+	SourceField pulumi.StringInput `pulumi:"sourceField"`
+}
+
+func (OpenpipelineV2BizeventsPipelinesDavisProcessorsProcessorInlineLookupArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*OpenpipelineV2BizeventsPipelinesDavisProcessorsProcessorInlineLookup)(nil)).Elem()
+}
+
+func (i OpenpipelineV2BizeventsPipelinesDavisProcessorsProcessorInlineLookupArgs) ToOpenpipelineV2BizeventsPipelinesDavisProcessorsProcessorInlineLookupOutput() OpenpipelineV2BizeventsPipelinesDavisProcessorsProcessorInlineLookupOutput {
+	return i.ToOpenpipelineV2BizeventsPipelinesDavisProcessorsProcessorInlineLookupOutputWithContext(context.Background())
+}
+
+func (i OpenpipelineV2BizeventsPipelinesDavisProcessorsProcessorInlineLookupArgs) ToOpenpipelineV2BizeventsPipelinesDavisProcessorsProcessorInlineLookupOutputWithContext(ctx context.Context) OpenpipelineV2BizeventsPipelinesDavisProcessorsProcessorInlineLookupOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(OpenpipelineV2BizeventsPipelinesDavisProcessorsProcessorInlineLookupOutput)
+}
+
+func (i OpenpipelineV2BizeventsPipelinesDavisProcessorsProcessorInlineLookupArgs) ToOpenpipelineV2BizeventsPipelinesDavisProcessorsProcessorInlineLookupPtrOutput() OpenpipelineV2BizeventsPipelinesDavisProcessorsProcessorInlineLookupPtrOutput {
+	return i.ToOpenpipelineV2BizeventsPipelinesDavisProcessorsProcessorInlineLookupPtrOutputWithContext(context.Background())
+}
+
+func (i OpenpipelineV2BizeventsPipelinesDavisProcessorsProcessorInlineLookupArgs) ToOpenpipelineV2BizeventsPipelinesDavisProcessorsProcessorInlineLookupPtrOutputWithContext(ctx context.Context) OpenpipelineV2BizeventsPipelinesDavisProcessorsProcessorInlineLookupPtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(OpenpipelineV2BizeventsPipelinesDavisProcessorsProcessorInlineLookupOutput).ToOpenpipelineV2BizeventsPipelinesDavisProcessorsProcessorInlineLookupPtrOutputWithContext(ctx)
+}
+
+// OpenpipelineV2BizeventsPipelinesDavisProcessorsProcessorInlineLookupPtrInput is an input type that accepts OpenpipelineV2BizeventsPipelinesDavisProcessorsProcessorInlineLookupArgs, OpenpipelineV2BizeventsPipelinesDavisProcessorsProcessorInlineLookupPtr and OpenpipelineV2BizeventsPipelinesDavisProcessorsProcessorInlineLookupPtrOutput values.
+// You can construct a concrete instance of `OpenpipelineV2BizeventsPipelinesDavisProcessorsProcessorInlineLookupPtrInput` via:
+//
+//	        OpenpipelineV2BizeventsPipelinesDavisProcessorsProcessorInlineLookupArgs{...}
+//
+//	or:
+//
+//	        nil
+type OpenpipelineV2BizeventsPipelinesDavisProcessorsProcessorInlineLookupPtrInput interface {
+	pulumi.Input
+
+	ToOpenpipelineV2BizeventsPipelinesDavisProcessorsProcessorInlineLookupPtrOutput() OpenpipelineV2BizeventsPipelinesDavisProcessorsProcessorInlineLookupPtrOutput
+	ToOpenpipelineV2BizeventsPipelinesDavisProcessorsProcessorInlineLookupPtrOutputWithContext(context.Context) OpenpipelineV2BizeventsPipelinesDavisProcessorsProcessorInlineLookupPtrOutput
+}
+
+type openpipelineV2BizeventsPipelinesDavisProcessorsProcessorInlineLookupPtrType OpenpipelineV2BizeventsPipelinesDavisProcessorsProcessorInlineLookupArgs
+
+func OpenpipelineV2BizeventsPipelinesDavisProcessorsProcessorInlineLookupPtr(v *OpenpipelineV2BizeventsPipelinesDavisProcessorsProcessorInlineLookupArgs) OpenpipelineV2BizeventsPipelinesDavisProcessorsProcessorInlineLookupPtrInput {
+	return (*openpipelineV2BizeventsPipelinesDavisProcessorsProcessorInlineLookupPtrType)(v)
+}
+
+func (*openpipelineV2BizeventsPipelinesDavisProcessorsProcessorInlineLookupPtrType) ElementType() reflect.Type {
+	return reflect.TypeOf((**OpenpipelineV2BizeventsPipelinesDavisProcessorsProcessorInlineLookup)(nil)).Elem()
+}
+
+func (i *openpipelineV2BizeventsPipelinesDavisProcessorsProcessorInlineLookupPtrType) ToOpenpipelineV2BizeventsPipelinesDavisProcessorsProcessorInlineLookupPtrOutput() OpenpipelineV2BizeventsPipelinesDavisProcessorsProcessorInlineLookupPtrOutput {
+	return i.ToOpenpipelineV2BizeventsPipelinesDavisProcessorsProcessorInlineLookupPtrOutputWithContext(context.Background())
+}
+
+func (i *openpipelineV2BizeventsPipelinesDavisProcessorsProcessorInlineLookupPtrType) ToOpenpipelineV2BizeventsPipelinesDavisProcessorsProcessorInlineLookupPtrOutputWithContext(ctx context.Context) OpenpipelineV2BizeventsPipelinesDavisProcessorsProcessorInlineLookupPtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(OpenpipelineV2BizeventsPipelinesDavisProcessorsProcessorInlineLookupPtrOutput)
+}
+
+type OpenpipelineV2BizeventsPipelinesDavisProcessorsProcessorInlineLookupOutput struct{ *pulumi.OutputState }
+
+func (OpenpipelineV2BizeventsPipelinesDavisProcessorsProcessorInlineLookupOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*OpenpipelineV2BizeventsPipelinesDavisProcessorsProcessorInlineLookup)(nil)).Elem()
+}
+
+func (o OpenpipelineV2BizeventsPipelinesDavisProcessorsProcessorInlineLookupOutput) ToOpenpipelineV2BizeventsPipelinesDavisProcessorsProcessorInlineLookupOutput() OpenpipelineV2BizeventsPipelinesDavisProcessorsProcessorInlineLookupOutput {
+	return o
+}
+
+func (o OpenpipelineV2BizeventsPipelinesDavisProcessorsProcessorInlineLookupOutput) ToOpenpipelineV2BizeventsPipelinesDavisProcessorsProcessorInlineLookupOutputWithContext(ctx context.Context) OpenpipelineV2BizeventsPipelinesDavisProcessorsProcessorInlineLookupOutput {
+	return o
+}
+
+func (o OpenpipelineV2BizeventsPipelinesDavisProcessorsProcessorInlineLookupOutput) ToOpenpipelineV2BizeventsPipelinesDavisProcessorsProcessorInlineLookupPtrOutput() OpenpipelineV2BizeventsPipelinesDavisProcessorsProcessorInlineLookupPtrOutput {
+	return o.ToOpenpipelineV2BizeventsPipelinesDavisProcessorsProcessorInlineLookupPtrOutputWithContext(context.Background())
+}
+
+func (o OpenpipelineV2BizeventsPipelinesDavisProcessorsProcessorInlineLookupOutput) ToOpenpipelineV2BizeventsPipelinesDavisProcessorsProcessorInlineLookupPtrOutputWithContext(ctx context.Context) OpenpipelineV2BizeventsPipelinesDavisProcessorsProcessorInlineLookupPtrOutput {
+	return o.ApplyTWithContext(ctx, func(_ context.Context, v OpenpipelineV2BizeventsPipelinesDavisProcessorsProcessorInlineLookup) *OpenpipelineV2BizeventsPipelinesDavisProcessorsProcessorInlineLookup {
+		return &v
+	}).(OpenpipelineV2BizeventsPipelinesDavisProcessorsProcessorInlineLookupPtrOutput)
+}
+
+// The value to write to the destination field when no lookup key matches. If absent, the destination field is left unchanged when no key matches.
+func (o OpenpipelineV2BizeventsPipelinesDavisProcessorsProcessorInlineLookupOutput) DefaultValue() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v OpenpipelineV2BizeventsPipelinesDavisProcessorsProcessorInlineLookup) *string {
+		return v.DefaultValue
+	}).(pulumi.StringPtrOutput)
+}
+
+// The field key to write the matched lookup value to.
+func (o OpenpipelineV2BizeventsPipelinesDavisProcessorsProcessorInlineLookupOutput) DestinationField() pulumi.StringOutput {
+	return o.ApplyT(func(v OpenpipelineV2BizeventsPipelinesDavisProcessorsProcessorInlineLookup) string {
+		return v.DestinationField
+	}).(pulumi.StringOutput)
+}
+
+// The key-value pairs of the inline lookup table, encoded as a compact JSON string: [[["key1","key2"],"value1"],[["key3"],"value2"]].
+func (o OpenpipelineV2BizeventsPipelinesDavisProcessorsProcessorInlineLookupOutput) InlineLookupTable() pulumi.StringOutput {
+	return o.ApplyT(func(v OpenpipelineV2BizeventsPipelinesDavisProcessorsProcessorInlineLookup) string {
+		return v.InlineLookupTable
+	}).(pulumi.StringOutput)
+}
+
+// The field key whose value is looked up in the lookup table.
+func (o OpenpipelineV2BizeventsPipelinesDavisProcessorsProcessorInlineLookupOutput) SourceField() pulumi.StringOutput {
+	return o.ApplyT(func(v OpenpipelineV2BizeventsPipelinesDavisProcessorsProcessorInlineLookup) string {
+		return v.SourceField
+	}).(pulumi.StringOutput)
+}
+
+type OpenpipelineV2BizeventsPipelinesDavisProcessorsProcessorInlineLookupPtrOutput struct{ *pulumi.OutputState }
+
+func (OpenpipelineV2BizeventsPipelinesDavisProcessorsProcessorInlineLookupPtrOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((**OpenpipelineV2BizeventsPipelinesDavisProcessorsProcessorInlineLookup)(nil)).Elem()
+}
+
+func (o OpenpipelineV2BizeventsPipelinesDavisProcessorsProcessorInlineLookupPtrOutput) ToOpenpipelineV2BizeventsPipelinesDavisProcessorsProcessorInlineLookupPtrOutput() OpenpipelineV2BizeventsPipelinesDavisProcessorsProcessorInlineLookupPtrOutput {
+	return o
+}
+
+func (o OpenpipelineV2BizeventsPipelinesDavisProcessorsProcessorInlineLookupPtrOutput) ToOpenpipelineV2BizeventsPipelinesDavisProcessorsProcessorInlineLookupPtrOutputWithContext(ctx context.Context) OpenpipelineV2BizeventsPipelinesDavisProcessorsProcessorInlineLookupPtrOutput {
+	return o
+}
+
+func (o OpenpipelineV2BizeventsPipelinesDavisProcessorsProcessorInlineLookupPtrOutput) Elem() OpenpipelineV2BizeventsPipelinesDavisProcessorsProcessorInlineLookupOutput {
+	return o.ApplyT(func(v *OpenpipelineV2BizeventsPipelinesDavisProcessorsProcessorInlineLookup) OpenpipelineV2BizeventsPipelinesDavisProcessorsProcessorInlineLookup {
+		if v != nil {
+			return *v
+		}
+		var ret OpenpipelineV2BizeventsPipelinesDavisProcessorsProcessorInlineLookup
+		return ret
+	}).(OpenpipelineV2BizeventsPipelinesDavisProcessorsProcessorInlineLookupOutput)
+}
+
+// The value to write to the destination field when no lookup key matches. If absent, the destination field is left unchanged when no key matches.
+func (o OpenpipelineV2BizeventsPipelinesDavisProcessorsProcessorInlineLookupPtrOutput) DefaultValue() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *OpenpipelineV2BizeventsPipelinesDavisProcessorsProcessorInlineLookup) *string {
+		if v == nil {
+			return nil
+		}
+		return v.DefaultValue
+	}).(pulumi.StringPtrOutput)
+}
+
+// The field key to write the matched lookup value to.
+func (o OpenpipelineV2BizeventsPipelinesDavisProcessorsProcessorInlineLookupPtrOutput) DestinationField() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *OpenpipelineV2BizeventsPipelinesDavisProcessorsProcessorInlineLookup) *string {
+		if v == nil {
+			return nil
+		}
+		return &v.DestinationField
+	}).(pulumi.StringPtrOutput)
+}
+
+// The key-value pairs of the inline lookup table, encoded as a compact JSON string: [[["key1","key2"],"value1"],[["key3"],"value2"]].
+func (o OpenpipelineV2BizeventsPipelinesDavisProcessorsProcessorInlineLookupPtrOutput) InlineLookupTable() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *OpenpipelineV2BizeventsPipelinesDavisProcessorsProcessorInlineLookup) *string {
+		if v == nil {
+			return nil
+		}
+		return &v.InlineLookupTable
+	}).(pulumi.StringPtrOutput)
+}
+
+// The field key whose value is looked up in the lookup table.
+func (o OpenpipelineV2BizeventsPipelinesDavisProcessorsProcessorInlineLookupPtrOutput) SourceField() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *OpenpipelineV2BizeventsPipelinesDavisProcessorsProcessorInlineLookup) *string {
+		if v == nil {
+			return nil
+		}
+		return &v.SourceField
+	}).(pulumi.StringPtrOutput)
 }
 
 type OpenpipelineV2BizeventsPipelinesDavisProcessorsProcessorProductAllocation struct {
@@ -43033,6 +44034,8 @@ type OpenpipelineV2BizeventsPipelinesMetricExtractionProcessorsProcessor struct 
 	HistogramMetric *OpenpipelineV2BizeventsPipelinesMetricExtractionProcessorsProcessorHistogramMetric `pulumi:"histogramMetric"`
 	// Processor identifier
 	Id string `pulumi:"id"`
+	// Inline lookup processor attributes
+	InlineLookup *OpenpipelineV2BizeventsPipelinesMetricExtractionProcessorsProcessorInlineLookup `pulumi:"inlineLookup"`
 	// [See our documentation](https://dt-url.net/bp234rv)
 	Matcher *string `pulumi:"matcher"`
 	// Product allocation processor attributes
@@ -43057,7 +44060,7 @@ type OpenpipelineV2BizeventsPipelinesMetricExtractionProcessorsProcessor struct 
 	SmartscapeNode *OpenpipelineV2BizeventsPipelinesMetricExtractionProcessorsProcessorSmartscapeNode `pulumi:"smartscapeNode"`
 	// Technology processor attributes
 	Technology *OpenpipelineV2BizeventsPipelinesMetricExtractionProcessorsProcessorTechnology `pulumi:"technology"`
-	// Processor type. Possible values: `azureLogForwarding`, `bizevent`, `bucketAssignment`, `costAllocation`, `counterMetric`, `davis`, `dql`, `drop`, `fieldsAdd`, `fieldsRemove`, `fieldsRename`, `geoLookup`, `histogramMetric`, `noStorage`, `productAllocation`, `samplingAwareCounterMetric`, `samplingAwareHistogramMetric`, `samplingAwareValueMetric`, `sdlcEvent`, `securityContext`, `securityEvent`, `smartscapeEdge`, `smartscapeNode`, `technology`, `valueMetric`
+	// Processor type. Possible values: `azureLogForwarding`, `bizevent`, `bucketAssignment`, `costAllocation`, `counterMetric`, `davis`, `dql`, `drop`, `fieldsAdd`, `fieldsRemove`, `fieldsRename`, `geoLookup`, `histogramMetric`, `inlineLookup`, `noStorage`, `productAllocation`, `samplingAwareCounterMetric`, `samplingAwareHistogramMetric`, `samplingAwareValueMetric`, `sdlcEvent`, `securityContext`, `securityEvent`, `smartscapeEdge`, `smartscapeNode`, `technology`, `valueMetric`
 	Type string `pulumi:"type"`
 	// Value metric processor attributes
 	ValueMetric *OpenpipelineV2BizeventsPipelinesMetricExtractionProcessorsProcessorValueMetric `pulumi:"valueMetric"`
@@ -43105,6 +44108,8 @@ type OpenpipelineV2BizeventsPipelinesMetricExtractionProcessorsProcessorArgs str
 	HistogramMetric OpenpipelineV2BizeventsPipelinesMetricExtractionProcessorsProcessorHistogramMetricPtrInput `pulumi:"histogramMetric"`
 	// Processor identifier
 	Id pulumi.StringInput `pulumi:"id"`
+	// Inline lookup processor attributes
+	InlineLookup OpenpipelineV2BizeventsPipelinesMetricExtractionProcessorsProcessorInlineLookupPtrInput `pulumi:"inlineLookup"`
 	// [See our documentation](https://dt-url.net/bp234rv)
 	Matcher pulumi.StringPtrInput `pulumi:"matcher"`
 	// Product allocation processor attributes
@@ -43129,7 +44134,7 @@ type OpenpipelineV2BizeventsPipelinesMetricExtractionProcessorsProcessorArgs str
 	SmartscapeNode OpenpipelineV2BizeventsPipelinesMetricExtractionProcessorsProcessorSmartscapeNodePtrInput `pulumi:"smartscapeNode"`
 	// Technology processor attributes
 	Technology OpenpipelineV2BizeventsPipelinesMetricExtractionProcessorsProcessorTechnologyPtrInput `pulumi:"technology"`
-	// Processor type. Possible values: `azureLogForwarding`, `bizevent`, `bucketAssignment`, `costAllocation`, `counterMetric`, `davis`, `dql`, `drop`, `fieldsAdd`, `fieldsRemove`, `fieldsRename`, `geoLookup`, `histogramMetric`, `noStorage`, `productAllocation`, `samplingAwareCounterMetric`, `samplingAwareHistogramMetric`, `samplingAwareValueMetric`, `sdlcEvent`, `securityContext`, `securityEvent`, `smartscapeEdge`, `smartscapeNode`, `technology`, `valueMetric`
+	// Processor type. Possible values: `azureLogForwarding`, `bizevent`, `bucketAssignment`, `costAllocation`, `counterMetric`, `davis`, `dql`, `drop`, `fieldsAdd`, `fieldsRemove`, `fieldsRename`, `geoLookup`, `histogramMetric`, `inlineLookup`, `noStorage`, `productAllocation`, `samplingAwareCounterMetric`, `samplingAwareHistogramMetric`, `samplingAwareValueMetric`, `sdlcEvent`, `securityContext`, `securityEvent`, `smartscapeEdge`, `smartscapeNode`, `technology`, `valueMetric`
 	Type pulumi.StringInput `pulumi:"type"`
 	// Value metric processor attributes
 	ValueMetric OpenpipelineV2BizeventsPipelinesMetricExtractionProcessorsProcessorValueMetricPtrInput `pulumi:"valueMetric"`
@@ -43287,6 +44292,13 @@ func (o OpenpipelineV2BizeventsPipelinesMetricExtractionProcessorsProcessorOutpu
 	return o.ApplyT(func(v OpenpipelineV2BizeventsPipelinesMetricExtractionProcessorsProcessor) string { return v.Id }).(pulumi.StringOutput)
 }
 
+// Inline lookup processor attributes
+func (o OpenpipelineV2BizeventsPipelinesMetricExtractionProcessorsProcessorOutput) InlineLookup() OpenpipelineV2BizeventsPipelinesMetricExtractionProcessorsProcessorInlineLookupPtrOutput {
+	return o.ApplyT(func(v OpenpipelineV2BizeventsPipelinesMetricExtractionProcessorsProcessor) *OpenpipelineV2BizeventsPipelinesMetricExtractionProcessorsProcessorInlineLookup {
+		return v.InlineLookup
+	}).(OpenpipelineV2BizeventsPipelinesMetricExtractionProcessorsProcessorInlineLookupPtrOutput)
+}
+
 // [See our documentation](https://dt-url.net/bp234rv)
 func (o OpenpipelineV2BizeventsPipelinesMetricExtractionProcessorsProcessorOutput) Matcher() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v OpenpipelineV2BizeventsPipelinesMetricExtractionProcessorsProcessor) *string { return v.Matcher }).(pulumi.StringPtrOutput)
@@ -43369,7 +44381,7 @@ func (o OpenpipelineV2BizeventsPipelinesMetricExtractionProcessorsProcessorOutpu
 	}).(OpenpipelineV2BizeventsPipelinesMetricExtractionProcessorsProcessorTechnologyPtrOutput)
 }
 
-// Processor type. Possible values: `azureLogForwarding`, `bizevent`, `bucketAssignment`, `costAllocation`, `counterMetric`, `davis`, `dql`, `drop`, `fieldsAdd`, `fieldsRemove`, `fieldsRename`, `geoLookup`, `histogramMetric`, `noStorage`, `productAllocation`, `samplingAwareCounterMetric`, `samplingAwareHistogramMetric`, `samplingAwareValueMetric`, `sdlcEvent`, `securityContext`, `securityEvent`, `smartscapeEdge`, `smartscapeNode`, `technology`, `valueMetric`
+// Processor type. Possible values: `azureLogForwarding`, `bizevent`, `bucketAssignment`, `costAllocation`, `counterMetric`, `davis`, `dql`, `drop`, `fieldsAdd`, `fieldsRemove`, `fieldsRename`, `geoLookup`, `histogramMetric`, `inlineLookup`, `noStorage`, `productAllocation`, `samplingAwareCounterMetric`, `samplingAwareHistogramMetric`, `samplingAwareValueMetric`, `sdlcEvent`, `securityContext`, `securityEvent`, `smartscapeEdge`, `smartscapeNode`, `technology`, `valueMetric`
 func (o OpenpipelineV2BizeventsPipelinesMetricExtractionProcessorsProcessorOutput) Type() pulumi.StringOutput {
 	return o.ApplyT(func(v OpenpipelineV2BizeventsPipelinesMetricExtractionProcessorsProcessor) string { return v.Type }).(pulumi.StringOutput)
 }
@@ -48648,6 +49660,208 @@ func (o OpenpipelineV2BizeventsPipelinesMetricExtractionProcessorsProcessorHisto
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) OpenpipelineV2BizeventsPipelinesMetricExtractionProcessorsProcessorHistogramMetricDimensionsDimension {
 		return vs[0].([]OpenpipelineV2BizeventsPipelinesMetricExtractionProcessorsProcessorHistogramMetricDimensionsDimension)[vs[1].(int)]
 	}).(OpenpipelineV2BizeventsPipelinesMetricExtractionProcessorsProcessorHistogramMetricDimensionsDimensionOutput)
+}
+
+type OpenpipelineV2BizeventsPipelinesMetricExtractionProcessorsProcessorInlineLookup struct {
+	// The value to write to the destination field when no lookup key matches. If absent, the destination field is left unchanged when no key matches.
+	DefaultValue *string `pulumi:"defaultValue"`
+	// The field key to write the matched lookup value to.
+	DestinationField string `pulumi:"destinationField"`
+	// The key-value pairs of the inline lookup table, encoded as a compact JSON string: [[["key1","key2"],"value1"],[["key3"],"value2"]].
+	InlineLookupTable string `pulumi:"inlineLookupTable"`
+	// The field key whose value is looked up in the lookup table.
+	SourceField string `pulumi:"sourceField"`
+}
+
+// OpenpipelineV2BizeventsPipelinesMetricExtractionProcessorsProcessorInlineLookupInput is an input type that accepts OpenpipelineV2BizeventsPipelinesMetricExtractionProcessorsProcessorInlineLookupArgs and OpenpipelineV2BizeventsPipelinesMetricExtractionProcessorsProcessorInlineLookupOutput values.
+// You can construct a concrete instance of `OpenpipelineV2BizeventsPipelinesMetricExtractionProcessorsProcessorInlineLookupInput` via:
+//
+//	OpenpipelineV2BizeventsPipelinesMetricExtractionProcessorsProcessorInlineLookupArgs{...}
+type OpenpipelineV2BizeventsPipelinesMetricExtractionProcessorsProcessorInlineLookupInput interface {
+	pulumi.Input
+
+	ToOpenpipelineV2BizeventsPipelinesMetricExtractionProcessorsProcessorInlineLookupOutput() OpenpipelineV2BizeventsPipelinesMetricExtractionProcessorsProcessorInlineLookupOutput
+	ToOpenpipelineV2BizeventsPipelinesMetricExtractionProcessorsProcessorInlineLookupOutputWithContext(context.Context) OpenpipelineV2BizeventsPipelinesMetricExtractionProcessorsProcessorInlineLookupOutput
+}
+
+type OpenpipelineV2BizeventsPipelinesMetricExtractionProcessorsProcessorInlineLookupArgs struct {
+	// The value to write to the destination field when no lookup key matches. If absent, the destination field is left unchanged when no key matches.
+	DefaultValue pulumi.StringPtrInput `pulumi:"defaultValue"`
+	// The field key to write the matched lookup value to.
+	DestinationField pulumi.StringInput `pulumi:"destinationField"`
+	// The key-value pairs of the inline lookup table, encoded as a compact JSON string: [[["key1","key2"],"value1"],[["key3"],"value2"]].
+	InlineLookupTable pulumi.StringInput `pulumi:"inlineLookupTable"`
+	// The field key whose value is looked up in the lookup table.
+	SourceField pulumi.StringInput `pulumi:"sourceField"`
+}
+
+func (OpenpipelineV2BizeventsPipelinesMetricExtractionProcessorsProcessorInlineLookupArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*OpenpipelineV2BizeventsPipelinesMetricExtractionProcessorsProcessorInlineLookup)(nil)).Elem()
+}
+
+func (i OpenpipelineV2BizeventsPipelinesMetricExtractionProcessorsProcessorInlineLookupArgs) ToOpenpipelineV2BizeventsPipelinesMetricExtractionProcessorsProcessorInlineLookupOutput() OpenpipelineV2BizeventsPipelinesMetricExtractionProcessorsProcessorInlineLookupOutput {
+	return i.ToOpenpipelineV2BizeventsPipelinesMetricExtractionProcessorsProcessorInlineLookupOutputWithContext(context.Background())
+}
+
+func (i OpenpipelineV2BizeventsPipelinesMetricExtractionProcessorsProcessorInlineLookupArgs) ToOpenpipelineV2BizeventsPipelinesMetricExtractionProcessorsProcessorInlineLookupOutputWithContext(ctx context.Context) OpenpipelineV2BizeventsPipelinesMetricExtractionProcessorsProcessorInlineLookupOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(OpenpipelineV2BizeventsPipelinesMetricExtractionProcessorsProcessorInlineLookupOutput)
+}
+
+func (i OpenpipelineV2BizeventsPipelinesMetricExtractionProcessorsProcessorInlineLookupArgs) ToOpenpipelineV2BizeventsPipelinesMetricExtractionProcessorsProcessorInlineLookupPtrOutput() OpenpipelineV2BizeventsPipelinesMetricExtractionProcessorsProcessorInlineLookupPtrOutput {
+	return i.ToOpenpipelineV2BizeventsPipelinesMetricExtractionProcessorsProcessorInlineLookupPtrOutputWithContext(context.Background())
+}
+
+func (i OpenpipelineV2BizeventsPipelinesMetricExtractionProcessorsProcessorInlineLookupArgs) ToOpenpipelineV2BizeventsPipelinesMetricExtractionProcessorsProcessorInlineLookupPtrOutputWithContext(ctx context.Context) OpenpipelineV2BizeventsPipelinesMetricExtractionProcessorsProcessorInlineLookupPtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(OpenpipelineV2BizeventsPipelinesMetricExtractionProcessorsProcessorInlineLookupOutput).ToOpenpipelineV2BizeventsPipelinesMetricExtractionProcessorsProcessorInlineLookupPtrOutputWithContext(ctx)
+}
+
+// OpenpipelineV2BizeventsPipelinesMetricExtractionProcessorsProcessorInlineLookupPtrInput is an input type that accepts OpenpipelineV2BizeventsPipelinesMetricExtractionProcessorsProcessorInlineLookupArgs, OpenpipelineV2BizeventsPipelinesMetricExtractionProcessorsProcessorInlineLookupPtr and OpenpipelineV2BizeventsPipelinesMetricExtractionProcessorsProcessorInlineLookupPtrOutput values.
+// You can construct a concrete instance of `OpenpipelineV2BizeventsPipelinesMetricExtractionProcessorsProcessorInlineLookupPtrInput` via:
+//
+//	        OpenpipelineV2BizeventsPipelinesMetricExtractionProcessorsProcessorInlineLookupArgs{...}
+//
+//	or:
+//
+//	        nil
+type OpenpipelineV2BizeventsPipelinesMetricExtractionProcessorsProcessorInlineLookupPtrInput interface {
+	pulumi.Input
+
+	ToOpenpipelineV2BizeventsPipelinesMetricExtractionProcessorsProcessorInlineLookupPtrOutput() OpenpipelineV2BizeventsPipelinesMetricExtractionProcessorsProcessorInlineLookupPtrOutput
+	ToOpenpipelineV2BizeventsPipelinesMetricExtractionProcessorsProcessorInlineLookupPtrOutputWithContext(context.Context) OpenpipelineV2BizeventsPipelinesMetricExtractionProcessorsProcessorInlineLookupPtrOutput
+}
+
+type openpipelineV2BizeventsPipelinesMetricExtractionProcessorsProcessorInlineLookupPtrType OpenpipelineV2BizeventsPipelinesMetricExtractionProcessorsProcessorInlineLookupArgs
+
+func OpenpipelineV2BizeventsPipelinesMetricExtractionProcessorsProcessorInlineLookupPtr(v *OpenpipelineV2BizeventsPipelinesMetricExtractionProcessorsProcessorInlineLookupArgs) OpenpipelineV2BizeventsPipelinesMetricExtractionProcessorsProcessorInlineLookupPtrInput {
+	return (*openpipelineV2BizeventsPipelinesMetricExtractionProcessorsProcessorInlineLookupPtrType)(v)
+}
+
+func (*openpipelineV2BizeventsPipelinesMetricExtractionProcessorsProcessorInlineLookupPtrType) ElementType() reflect.Type {
+	return reflect.TypeOf((**OpenpipelineV2BizeventsPipelinesMetricExtractionProcessorsProcessorInlineLookup)(nil)).Elem()
+}
+
+func (i *openpipelineV2BizeventsPipelinesMetricExtractionProcessorsProcessorInlineLookupPtrType) ToOpenpipelineV2BizeventsPipelinesMetricExtractionProcessorsProcessorInlineLookupPtrOutput() OpenpipelineV2BizeventsPipelinesMetricExtractionProcessorsProcessorInlineLookupPtrOutput {
+	return i.ToOpenpipelineV2BizeventsPipelinesMetricExtractionProcessorsProcessorInlineLookupPtrOutputWithContext(context.Background())
+}
+
+func (i *openpipelineV2BizeventsPipelinesMetricExtractionProcessorsProcessorInlineLookupPtrType) ToOpenpipelineV2BizeventsPipelinesMetricExtractionProcessorsProcessorInlineLookupPtrOutputWithContext(ctx context.Context) OpenpipelineV2BizeventsPipelinesMetricExtractionProcessorsProcessorInlineLookupPtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(OpenpipelineV2BizeventsPipelinesMetricExtractionProcessorsProcessorInlineLookupPtrOutput)
+}
+
+type OpenpipelineV2BizeventsPipelinesMetricExtractionProcessorsProcessorInlineLookupOutput struct{ *pulumi.OutputState }
+
+func (OpenpipelineV2BizeventsPipelinesMetricExtractionProcessorsProcessorInlineLookupOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*OpenpipelineV2BizeventsPipelinesMetricExtractionProcessorsProcessorInlineLookup)(nil)).Elem()
+}
+
+func (o OpenpipelineV2BizeventsPipelinesMetricExtractionProcessorsProcessorInlineLookupOutput) ToOpenpipelineV2BizeventsPipelinesMetricExtractionProcessorsProcessorInlineLookupOutput() OpenpipelineV2BizeventsPipelinesMetricExtractionProcessorsProcessorInlineLookupOutput {
+	return o
+}
+
+func (o OpenpipelineV2BizeventsPipelinesMetricExtractionProcessorsProcessorInlineLookupOutput) ToOpenpipelineV2BizeventsPipelinesMetricExtractionProcessorsProcessorInlineLookupOutputWithContext(ctx context.Context) OpenpipelineV2BizeventsPipelinesMetricExtractionProcessorsProcessorInlineLookupOutput {
+	return o
+}
+
+func (o OpenpipelineV2BizeventsPipelinesMetricExtractionProcessorsProcessorInlineLookupOutput) ToOpenpipelineV2BizeventsPipelinesMetricExtractionProcessorsProcessorInlineLookupPtrOutput() OpenpipelineV2BizeventsPipelinesMetricExtractionProcessorsProcessorInlineLookupPtrOutput {
+	return o.ToOpenpipelineV2BizeventsPipelinesMetricExtractionProcessorsProcessorInlineLookupPtrOutputWithContext(context.Background())
+}
+
+func (o OpenpipelineV2BizeventsPipelinesMetricExtractionProcessorsProcessorInlineLookupOutput) ToOpenpipelineV2BizeventsPipelinesMetricExtractionProcessorsProcessorInlineLookupPtrOutputWithContext(ctx context.Context) OpenpipelineV2BizeventsPipelinesMetricExtractionProcessorsProcessorInlineLookupPtrOutput {
+	return o.ApplyTWithContext(ctx, func(_ context.Context, v OpenpipelineV2BizeventsPipelinesMetricExtractionProcessorsProcessorInlineLookup) *OpenpipelineV2BizeventsPipelinesMetricExtractionProcessorsProcessorInlineLookup {
+		return &v
+	}).(OpenpipelineV2BizeventsPipelinesMetricExtractionProcessorsProcessorInlineLookupPtrOutput)
+}
+
+// The value to write to the destination field when no lookup key matches. If absent, the destination field is left unchanged when no key matches.
+func (o OpenpipelineV2BizeventsPipelinesMetricExtractionProcessorsProcessorInlineLookupOutput) DefaultValue() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v OpenpipelineV2BizeventsPipelinesMetricExtractionProcessorsProcessorInlineLookup) *string {
+		return v.DefaultValue
+	}).(pulumi.StringPtrOutput)
+}
+
+// The field key to write the matched lookup value to.
+func (o OpenpipelineV2BizeventsPipelinesMetricExtractionProcessorsProcessorInlineLookupOutput) DestinationField() pulumi.StringOutput {
+	return o.ApplyT(func(v OpenpipelineV2BizeventsPipelinesMetricExtractionProcessorsProcessorInlineLookup) string {
+		return v.DestinationField
+	}).(pulumi.StringOutput)
+}
+
+// The key-value pairs of the inline lookup table, encoded as a compact JSON string: [[["key1","key2"],"value1"],[["key3"],"value2"]].
+func (o OpenpipelineV2BizeventsPipelinesMetricExtractionProcessorsProcessorInlineLookupOutput) InlineLookupTable() pulumi.StringOutput {
+	return o.ApplyT(func(v OpenpipelineV2BizeventsPipelinesMetricExtractionProcessorsProcessorInlineLookup) string {
+		return v.InlineLookupTable
+	}).(pulumi.StringOutput)
+}
+
+// The field key whose value is looked up in the lookup table.
+func (o OpenpipelineV2BizeventsPipelinesMetricExtractionProcessorsProcessorInlineLookupOutput) SourceField() pulumi.StringOutput {
+	return o.ApplyT(func(v OpenpipelineV2BizeventsPipelinesMetricExtractionProcessorsProcessorInlineLookup) string {
+		return v.SourceField
+	}).(pulumi.StringOutput)
+}
+
+type OpenpipelineV2BizeventsPipelinesMetricExtractionProcessorsProcessorInlineLookupPtrOutput struct{ *pulumi.OutputState }
+
+func (OpenpipelineV2BizeventsPipelinesMetricExtractionProcessorsProcessorInlineLookupPtrOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((**OpenpipelineV2BizeventsPipelinesMetricExtractionProcessorsProcessorInlineLookup)(nil)).Elem()
+}
+
+func (o OpenpipelineV2BizeventsPipelinesMetricExtractionProcessorsProcessorInlineLookupPtrOutput) ToOpenpipelineV2BizeventsPipelinesMetricExtractionProcessorsProcessorInlineLookupPtrOutput() OpenpipelineV2BizeventsPipelinesMetricExtractionProcessorsProcessorInlineLookupPtrOutput {
+	return o
+}
+
+func (o OpenpipelineV2BizeventsPipelinesMetricExtractionProcessorsProcessorInlineLookupPtrOutput) ToOpenpipelineV2BizeventsPipelinesMetricExtractionProcessorsProcessorInlineLookupPtrOutputWithContext(ctx context.Context) OpenpipelineV2BizeventsPipelinesMetricExtractionProcessorsProcessorInlineLookupPtrOutput {
+	return o
+}
+
+func (o OpenpipelineV2BizeventsPipelinesMetricExtractionProcessorsProcessorInlineLookupPtrOutput) Elem() OpenpipelineV2BizeventsPipelinesMetricExtractionProcessorsProcessorInlineLookupOutput {
+	return o.ApplyT(func(v *OpenpipelineV2BizeventsPipelinesMetricExtractionProcessorsProcessorInlineLookup) OpenpipelineV2BizeventsPipelinesMetricExtractionProcessorsProcessorInlineLookup {
+		if v != nil {
+			return *v
+		}
+		var ret OpenpipelineV2BizeventsPipelinesMetricExtractionProcessorsProcessorInlineLookup
+		return ret
+	}).(OpenpipelineV2BizeventsPipelinesMetricExtractionProcessorsProcessorInlineLookupOutput)
+}
+
+// The value to write to the destination field when no lookup key matches. If absent, the destination field is left unchanged when no key matches.
+func (o OpenpipelineV2BizeventsPipelinesMetricExtractionProcessorsProcessorInlineLookupPtrOutput) DefaultValue() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *OpenpipelineV2BizeventsPipelinesMetricExtractionProcessorsProcessorInlineLookup) *string {
+		if v == nil {
+			return nil
+		}
+		return v.DefaultValue
+	}).(pulumi.StringPtrOutput)
+}
+
+// The field key to write the matched lookup value to.
+func (o OpenpipelineV2BizeventsPipelinesMetricExtractionProcessorsProcessorInlineLookupPtrOutput) DestinationField() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *OpenpipelineV2BizeventsPipelinesMetricExtractionProcessorsProcessorInlineLookup) *string {
+		if v == nil {
+			return nil
+		}
+		return &v.DestinationField
+	}).(pulumi.StringPtrOutput)
+}
+
+// The key-value pairs of the inline lookup table, encoded as a compact JSON string: [[["key1","key2"],"value1"],[["key3"],"value2"]].
+func (o OpenpipelineV2BizeventsPipelinesMetricExtractionProcessorsProcessorInlineLookupPtrOutput) InlineLookupTable() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *OpenpipelineV2BizeventsPipelinesMetricExtractionProcessorsProcessorInlineLookup) *string {
+		if v == nil {
+			return nil
+		}
+		return &v.InlineLookupTable
+	}).(pulumi.StringPtrOutput)
+}
+
+// The field key whose value is looked up in the lookup table.
+func (o OpenpipelineV2BizeventsPipelinesMetricExtractionProcessorsProcessorInlineLookupPtrOutput) SourceField() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *OpenpipelineV2BizeventsPipelinesMetricExtractionProcessorsProcessorInlineLookup) *string {
+		if v == nil {
+			return nil
+		}
+		return &v.SourceField
+	}).(pulumi.StringPtrOutput)
 }
 
 type OpenpipelineV2BizeventsPipelinesMetricExtractionProcessorsProcessorProductAllocation struct {
@@ -56630,6 +57844,8 @@ type OpenpipelineV2BizeventsPipelinesProcessingProcessorsProcessor struct {
 	HistogramMetric *OpenpipelineV2BizeventsPipelinesProcessingProcessorsProcessorHistogramMetric `pulumi:"histogramMetric"`
 	// Processor identifier
 	Id string `pulumi:"id"`
+	// Inline lookup processor attributes
+	InlineLookup *OpenpipelineV2BizeventsPipelinesProcessingProcessorsProcessorInlineLookup `pulumi:"inlineLookup"`
 	// [See our documentation](https://dt-url.net/bp234rv)
 	Matcher *string `pulumi:"matcher"`
 	// Product allocation processor attributes
@@ -56654,7 +57870,7 @@ type OpenpipelineV2BizeventsPipelinesProcessingProcessorsProcessor struct {
 	SmartscapeNode *OpenpipelineV2BizeventsPipelinesProcessingProcessorsProcessorSmartscapeNode `pulumi:"smartscapeNode"`
 	// Technology processor attributes
 	Technology *OpenpipelineV2BizeventsPipelinesProcessingProcessorsProcessorTechnology `pulumi:"technology"`
-	// Processor type. Possible values: `azureLogForwarding`, `bizevent`, `bucketAssignment`, `costAllocation`, `counterMetric`, `davis`, `dql`, `drop`, `fieldsAdd`, `fieldsRemove`, `fieldsRename`, `geoLookup`, `histogramMetric`, `noStorage`, `productAllocation`, `samplingAwareCounterMetric`, `samplingAwareHistogramMetric`, `samplingAwareValueMetric`, `sdlcEvent`, `securityContext`, `securityEvent`, `smartscapeEdge`, `smartscapeNode`, `technology`, `valueMetric`
+	// Processor type. Possible values: `azureLogForwarding`, `bizevent`, `bucketAssignment`, `costAllocation`, `counterMetric`, `davis`, `dql`, `drop`, `fieldsAdd`, `fieldsRemove`, `fieldsRename`, `geoLookup`, `histogramMetric`, `inlineLookup`, `noStorage`, `productAllocation`, `samplingAwareCounterMetric`, `samplingAwareHistogramMetric`, `samplingAwareValueMetric`, `sdlcEvent`, `securityContext`, `securityEvent`, `smartscapeEdge`, `smartscapeNode`, `technology`, `valueMetric`
 	Type string `pulumi:"type"`
 	// Value metric processor attributes
 	ValueMetric *OpenpipelineV2BizeventsPipelinesProcessingProcessorsProcessorValueMetric `pulumi:"valueMetric"`
@@ -56702,6 +57918,8 @@ type OpenpipelineV2BizeventsPipelinesProcessingProcessorsProcessorArgs struct {
 	HistogramMetric OpenpipelineV2BizeventsPipelinesProcessingProcessorsProcessorHistogramMetricPtrInput `pulumi:"histogramMetric"`
 	// Processor identifier
 	Id pulumi.StringInput `pulumi:"id"`
+	// Inline lookup processor attributes
+	InlineLookup OpenpipelineV2BizeventsPipelinesProcessingProcessorsProcessorInlineLookupPtrInput `pulumi:"inlineLookup"`
 	// [See our documentation](https://dt-url.net/bp234rv)
 	Matcher pulumi.StringPtrInput `pulumi:"matcher"`
 	// Product allocation processor attributes
@@ -56726,7 +57944,7 @@ type OpenpipelineV2BizeventsPipelinesProcessingProcessorsProcessorArgs struct {
 	SmartscapeNode OpenpipelineV2BizeventsPipelinesProcessingProcessorsProcessorSmartscapeNodePtrInput `pulumi:"smartscapeNode"`
 	// Technology processor attributes
 	Technology OpenpipelineV2BizeventsPipelinesProcessingProcessorsProcessorTechnologyPtrInput `pulumi:"technology"`
-	// Processor type. Possible values: `azureLogForwarding`, `bizevent`, `bucketAssignment`, `costAllocation`, `counterMetric`, `davis`, `dql`, `drop`, `fieldsAdd`, `fieldsRemove`, `fieldsRename`, `geoLookup`, `histogramMetric`, `noStorage`, `productAllocation`, `samplingAwareCounterMetric`, `samplingAwareHistogramMetric`, `samplingAwareValueMetric`, `sdlcEvent`, `securityContext`, `securityEvent`, `smartscapeEdge`, `smartscapeNode`, `technology`, `valueMetric`
+	// Processor type. Possible values: `azureLogForwarding`, `bizevent`, `bucketAssignment`, `costAllocation`, `counterMetric`, `davis`, `dql`, `drop`, `fieldsAdd`, `fieldsRemove`, `fieldsRename`, `geoLookup`, `histogramMetric`, `inlineLookup`, `noStorage`, `productAllocation`, `samplingAwareCounterMetric`, `samplingAwareHistogramMetric`, `samplingAwareValueMetric`, `sdlcEvent`, `securityContext`, `securityEvent`, `smartscapeEdge`, `smartscapeNode`, `technology`, `valueMetric`
 	Type pulumi.StringInput `pulumi:"type"`
 	// Value metric processor attributes
 	ValueMetric OpenpipelineV2BizeventsPipelinesProcessingProcessorsProcessorValueMetricPtrInput `pulumi:"valueMetric"`
@@ -56882,6 +58100,13 @@ func (o OpenpipelineV2BizeventsPipelinesProcessingProcessorsProcessorOutput) Id(
 	return o.ApplyT(func(v OpenpipelineV2BizeventsPipelinesProcessingProcessorsProcessor) string { return v.Id }).(pulumi.StringOutput)
 }
 
+// Inline lookup processor attributes
+func (o OpenpipelineV2BizeventsPipelinesProcessingProcessorsProcessorOutput) InlineLookup() OpenpipelineV2BizeventsPipelinesProcessingProcessorsProcessorInlineLookupPtrOutput {
+	return o.ApplyT(func(v OpenpipelineV2BizeventsPipelinesProcessingProcessorsProcessor) *OpenpipelineV2BizeventsPipelinesProcessingProcessorsProcessorInlineLookup {
+		return v.InlineLookup
+	}).(OpenpipelineV2BizeventsPipelinesProcessingProcessorsProcessorInlineLookupPtrOutput)
+}
+
 // [See our documentation](https://dt-url.net/bp234rv)
 func (o OpenpipelineV2BizeventsPipelinesProcessingProcessorsProcessorOutput) Matcher() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v OpenpipelineV2BizeventsPipelinesProcessingProcessorsProcessor) *string { return v.Matcher }).(pulumi.StringPtrOutput)
@@ -56962,7 +58187,7 @@ func (o OpenpipelineV2BizeventsPipelinesProcessingProcessorsProcessorOutput) Tec
 	}).(OpenpipelineV2BizeventsPipelinesProcessingProcessorsProcessorTechnologyPtrOutput)
 }
 
-// Processor type. Possible values: `azureLogForwarding`, `bizevent`, `bucketAssignment`, `costAllocation`, `counterMetric`, `davis`, `dql`, `drop`, `fieldsAdd`, `fieldsRemove`, `fieldsRename`, `geoLookup`, `histogramMetric`, `noStorage`, `productAllocation`, `samplingAwareCounterMetric`, `samplingAwareHistogramMetric`, `samplingAwareValueMetric`, `sdlcEvent`, `securityContext`, `securityEvent`, `smartscapeEdge`, `smartscapeNode`, `technology`, `valueMetric`
+// Processor type. Possible values: `azureLogForwarding`, `bizevent`, `bucketAssignment`, `costAllocation`, `counterMetric`, `davis`, `dql`, `drop`, `fieldsAdd`, `fieldsRemove`, `fieldsRename`, `geoLookup`, `histogramMetric`, `inlineLookup`, `noStorage`, `productAllocation`, `samplingAwareCounterMetric`, `samplingAwareHistogramMetric`, `samplingAwareValueMetric`, `sdlcEvent`, `securityContext`, `securityEvent`, `smartscapeEdge`, `smartscapeNode`, `technology`, `valueMetric`
 func (o OpenpipelineV2BizeventsPipelinesProcessingProcessorsProcessorOutput) Type() pulumi.StringOutput {
 	return o.ApplyT(func(v OpenpipelineV2BizeventsPipelinesProcessingProcessorsProcessor) string { return v.Type }).(pulumi.StringOutput)
 }
@@ -62241,6 +63466,208 @@ func (o OpenpipelineV2BizeventsPipelinesProcessingProcessorsProcessorHistogramMe
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) OpenpipelineV2BizeventsPipelinesProcessingProcessorsProcessorHistogramMetricDimensionsDimension {
 		return vs[0].([]OpenpipelineV2BizeventsPipelinesProcessingProcessorsProcessorHistogramMetricDimensionsDimension)[vs[1].(int)]
 	}).(OpenpipelineV2BizeventsPipelinesProcessingProcessorsProcessorHistogramMetricDimensionsDimensionOutput)
+}
+
+type OpenpipelineV2BizeventsPipelinesProcessingProcessorsProcessorInlineLookup struct {
+	// The value to write to the destination field when no lookup key matches. If absent, the destination field is left unchanged when no key matches.
+	DefaultValue *string `pulumi:"defaultValue"`
+	// The field key to write the matched lookup value to.
+	DestinationField string `pulumi:"destinationField"`
+	// The key-value pairs of the inline lookup table, encoded as a compact JSON string: [[["key1","key2"],"value1"],[["key3"],"value2"]].
+	InlineLookupTable string `pulumi:"inlineLookupTable"`
+	// The field key whose value is looked up in the lookup table.
+	SourceField string `pulumi:"sourceField"`
+}
+
+// OpenpipelineV2BizeventsPipelinesProcessingProcessorsProcessorInlineLookupInput is an input type that accepts OpenpipelineV2BizeventsPipelinesProcessingProcessorsProcessorInlineLookupArgs and OpenpipelineV2BizeventsPipelinesProcessingProcessorsProcessorInlineLookupOutput values.
+// You can construct a concrete instance of `OpenpipelineV2BizeventsPipelinesProcessingProcessorsProcessorInlineLookupInput` via:
+//
+//	OpenpipelineV2BizeventsPipelinesProcessingProcessorsProcessorInlineLookupArgs{...}
+type OpenpipelineV2BizeventsPipelinesProcessingProcessorsProcessorInlineLookupInput interface {
+	pulumi.Input
+
+	ToOpenpipelineV2BizeventsPipelinesProcessingProcessorsProcessorInlineLookupOutput() OpenpipelineV2BizeventsPipelinesProcessingProcessorsProcessorInlineLookupOutput
+	ToOpenpipelineV2BizeventsPipelinesProcessingProcessorsProcessorInlineLookupOutputWithContext(context.Context) OpenpipelineV2BizeventsPipelinesProcessingProcessorsProcessorInlineLookupOutput
+}
+
+type OpenpipelineV2BizeventsPipelinesProcessingProcessorsProcessorInlineLookupArgs struct {
+	// The value to write to the destination field when no lookup key matches. If absent, the destination field is left unchanged when no key matches.
+	DefaultValue pulumi.StringPtrInput `pulumi:"defaultValue"`
+	// The field key to write the matched lookup value to.
+	DestinationField pulumi.StringInput `pulumi:"destinationField"`
+	// The key-value pairs of the inline lookup table, encoded as a compact JSON string: [[["key1","key2"],"value1"],[["key3"],"value2"]].
+	InlineLookupTable pulumi.StringInput `pulumi:"inlineLookupTable"`
+	// The field key whose value is looked up in the lookup table.
+	SourceField pulumi.StringInput `pulumi:"sourceField"`
+}
+
+func (OpenpipelineV2BizeventsPipelinesProcessingProcessorsProcessorInlineLookupArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*OpenpipelineV2BizeventsPipelinesProcessingProcessorsProcessorInlineLookup)(nil)).Elem()
+}
+
+func (i OpenpipelineV2BizeventsPipelinesProcessingProcessorsProcessorInlineLookupArgs) ToOpenpipelineV2BizeventsPipelinesProcessingProcessorsProcessorInlineLookupOutput() OpenpipelineV2BizeventsPipelinesProcessingProcessorsProcessorInlineLookupOutput {
+	return i.ToOpenpipelineV2BizeventsPipelinesProcessingProcessorsProcessorInlineLookupOutputWithContext(context.Background())
+}
+
+func (i OpenpipelineV2BizeventsPipelinesProcessingProcessorsProcessorInlineLookupArgs) ToOpenpipelineV2BizeventsPipelinesProcessingProcessorsProcessorInlineLookupOutputWithContext(ctx context.Context) OpenpipelineV2BizeventsPipelinesProcessingProcessorsProcessorInlineLookupOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(OpenpipelineV2BizeventsPipelinesProcessingProcessorsProcessorInlineLookupOutput)
+}
+
+func (i OpenpipelineV2BizeventsPipelinesProcessingProcessorsProcessorInlineLookupArgs) ToOpenpipelineV2BizeventsPipelinesProcessingProcessorsProcessorInlineLookupPtrOutput() OpenpipelineV2BizeventsPipelinesProcessingProcessorsProcessorInlineLookupPtrOutput {
+	return i.ToOpenpipelineV2BizeventsPipelinesProcessingProcessorsProcessorInlineLookupPtrOutputWithContext(context.Background())
+}
+
+func (i OpenpipelineV2BizeventsPipelinesProcessingProcessorsProcessorInlineLookupArgs) ToOpenpipelineV2BizeventsPipelinesProcessingProcessorsProcessorInlineLookupPtrOutputWithContext(ctx context.Context) OpenpipelineV2BizeventsPipelinesProcessingProcessorsProcessorInlineLookupPtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(OpenpipelineV2BizeventsPipelinesProcessingProcessorsProcessorInlineLookupOutput).ToOpenpipelineV2BizeventsPipelinesProcessingProcessorsProcessorInlineLookupPtrOutputWithContext(ctx)
+}
+
+// OpenpipelineV2BizeventsPipelinesProcessingProcessorsProcessorInlineLookupPtrInput is an input type that accepts OpenpipelineV2BizeventsPipelinesProcessingProcessorsProcessorInlineLookupArgs, OpenpipelineV2BizeventsPipelinesProcessingProcessorsProcessorInlineLookupPtr and OpenpipelineV2BizeventsPipelinesProcessingProcessorsProcessorInlineLookupPtrOutput values.
+// You can construct a concrete instance of `OpenpipelineV2BizeventsPipelinesProcessingProcessorsProcessorInlineLookupPtrInput` via:
+//
+//	        OpenpipelineV2BizeventsPipelinesProcessingProcessorsProcessorInlineLookupArgs{...}
+//
+//	or:
+//
+//	        nil
+type OpenpipelineV2BizeventsPipelinesProcessingProcessorsProcessorInlineLookupPtrInput interface {
+	pulumi.Input
+
+	ToOpenpipelineV2BizeventsPipelinesProcessingProcessorsProcessorInlineLookupPtrOutput() OpenpipelineV2BizeventsPipelinesProcessingProcessorsProcessorInlineLookupPtrOutput
+	ToOpenpipelineV2BizeventsPipelinesProcessingProcessorsProcessorInlineLookupPtrOutputWithContext(context.Context) OpenpipelineV2BizeventsPipelinesProcessingProcessorsProcessorInlineLookupPtrOutput
+}
+
+type openpipelineV2BizeventsPipelinesProcessingProcessorsProcessorInlineLookupPtrType OpenpipelineV2BizeventsPipelinesProcessingProcessorsProcessorInlineLookupArgs
+
+func OpenpipelineV2BizeventsPipelinesProcessingProcessorsProcessorInlineLookupPtr(v *OpenpipelineV2BizeventsPipelinesProcessingProcessorsProcessorInlineLookupArgs) OpenpipelineV2BizeventsPipelinesProcessingProcessorsProcessorInlineLookupPtrInput {
+	return (*openpipelineV2BizeventsPipelinesProcessingProcessorsProcessorInlineLookupPtrType)(v)
+}
+
+func (*openpipelineV2BizeventsPipelinesProcessingProcessorsProcessorInlineLookupPtrType) ElementType() reflect.Type {
+	return reflect.TypeOf((**OpenpipelineV2BizeventsPipelinesProcessingProcessorsProcessorInlineLookup)(nil)).Elem()
+}
+
+func (i *openpipelineV2BizeventsPipelinesProcessingProcessorsProcessorInlineLookupPtrType) ToOpenpipelineV2BizeventsPipelinesProcessingProcessorsProcessorInlineLookupPtrOutput() OpenpipelineV2BizeventsPipelinesProcessingProcessorsProcessorInlineLookupPtrOutput {
+	return i.ToOpenpipelineV2BizeventsPipelinesProcessingProcessorsProcessorInlineLookupPtrOutputWithContext(context.Background())
+}
+
+func (i *openpipelineV2BizeventsPipelinesProcessingProcessorsProcessorInlineLookupPtrType) ToOpenpipelineV2BizeventsPipelinesProcessingProcessorsProcessorInlineLookupPtrOutputWithContext(ctx context.Context) OpenpipelineV2BizeventsPipelinesProcessingProcessorsProcessorInlineLookupPtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(OpenpipelineV2BizeventsPipelinesProcessingProcessorsProcessorInlineLookupPtrOutput)
+}
+
+type OpenpipelineV2BizeventsPipelinesProcessingProcessorsProcessorInlineLookupOutput struct{ *pulumi.OutputState }
+
+func (OpenpipelineV2BizeventsPipelinesProcessingProcessorsProcessorInlineLookupOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*OpenpipelineV2BizeventsPipelinesProcessingProcessorsProcessorInlineLookup)(nil)).Elem()
+}
+
+func (o OpenpipelineV2BizeventsPipelinesProcessingProcessorsProcessorInlineLookupOutput) ToOpenpipelineV2BizeventsPipelinesProcessingProcessorsProcessorInlineLookupOutput() OpenpipelineV2BizeventsPipelinesProcessingProcessorsProcessorInlineLookupOutput {
+	return o
+}
+
+func (o OpenpipelineV2BizeventsPipelinesProcessingProcessorsProcessorInlineLookupOutput) ToOpenpipelineV2BizeventsPipelinesProcessingProcessorsProcessorInlineLookupOutputWithContext(ctx context.Context) OpenpipelineV2BizeventsPipelinesProcessingProcessorsProcessorInlineLookupOutput {
+	return o
+}
+
+func (o OpenpipelineV2BizeventsPipelinesProcessingProcessorsProcessorInlineLookupOutput) ToOpenpipelineV2BizeventsPipelinesProcessingProcessorsProcessorInlineLookupPtrOutput() OpenpipelineV2BizeventsPipelinesProcessingProcessorsProcessorInlineLookupPtrOutput {
+	return o.ToOpenpipelineV2BizeventsPipelinesProcessingProcessorsProcessorInlineLookupPtrOutputWithContext(context.Background())
+}
+
+func (o OpenpipelineV2BizeventsPipelinesProcessingProcessorsProcessorInlineLookupOutput) ToOpenpipelineV2BizeventsPipelinesProcessingProcessorsProcessorInlineLookupPtrOutputWithContext(ctx context.Context) OpenpipelineV2BizeventsPipelinesProcessingProcessorsProcessorInlineLookupPtrOutput {
+	return o.ApplyTWithContext(ctx, func(_ context.Context, v OpenpipelineV2BizeventsPipelinesProcessingProcessorsProcessorInlineLookup) *OpenpipelineV2BizeventsPipelinesProcessingProcessorsProcessorInlineLookup {
+		return &v
+	}).(OpenpipelineV2BizeventsPipelinesProcessingProcessorsProcessorInlineLookupPtrOutput)
+}
+
+// The value to write to the destination field when no lookup key matches. If absent, the destination field is left unchanged when no key matches.
+func (o OpenpipelineV2BizeventsPipelinesProcessingProcessorsProcessorInlineLookupOutput) DefaultValue() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v OpenpipelineV2BizeventsPipelinesProcessingProcessorsProcessorInlineLookup) *string {
+		return v.DefaultValue
+	}).(pulumi.StringPtrOutput)
+}
+
+// The field key to write the matched lookup value to.
+func (o OpenpipelineV2BizeventsPipelinesProcessingProcessorsProcessorInlineLookupOutput) DestinationField() pulumi.StringOutput {
+	return o.ApplyT(func(v OpenpipelineV2BizeventsPipelinesProcessingProcessorsProcessorInlineLookup) string {
+		return v.DestinationField
+	}).(pulumi.StringOutput)
+}
+
+// The key-value pairs of the inline lookup table, encoded as a compact JSON string: [[["key1","key2"],"value1"],[["key3"],"value2"]].
+func (o OpenpipelineV2BizeventsPipelinesProcessingProcessorsProcessorInlineLookupOutput) InlineLookupTable() pulumi.StringOutput {
+	return o.ApplyT(func(v OpenpipelineV2BizeventsPipelinesProcessingProcessorsProcessorInlineLookup) string {
+		return v.InlineLookupTable
+	}).(pulumi.StringOutput)
+}
+
+// The field key whose value is looked up in the lookup table.
+func (o OpenpipelineV2BizeventsPipelinesProcessingProcessorsProcessorInlineLookupOutput) SourceField() pulumi.StringOutput {
+	return o.ApplyT(func(v OpenpipelineV2BizeventsPipelinesProcessingProcessorsProcessorInlineLookup) string {
+		return v.SourceField
+	}).(pulumi.StringOutput)
+}
+
+type OpenpipelineV2BizeventsPipelinesProcessingProcessorsProcessorInlineLookupPtrOutput struct{ *pulumi.OutputState }
+
+func (OpenpipelineV2BizeventsPipelinesProcessingProcessorsProcessorInlineLookupPtrOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((**OpenpipelineV2BizeventsPipelinesProcessingProcessorsProcessorInlineLookup)(nil)).Elem()
+}
+
+func (o OpenpipelineV2BizeventsPipelinesProcessingProcessorsProcessorInlineLookupPtrOutput) ToOpenpipelineV2BizeventsPipelinesProcessingProcessorsProcessorInlineLookupPtrOutput() OpenpipelineV2BizeventsPipelinesProcessingProcessorsProcessorInlineLookupPtrOutput {
+	return o
+}
+
+func (o OpenpipelineV2BizeventsPipelinesProcessingProcessorsProcessorInlineLookupPtrOutput) ToOpenpipelineV2BizeventsPipelinesProcessingProcessorsProcessorInlineLookupPtrOutputWithContext(ctx context.Context) OpenpipelineV2BizeventsPipelinesProcessingProcessorsProcessorInlineLookupPtrOutput {
+	return o
+}
+
+func (o OpenpipelineV2BizeventsPipelinesProcessingProcessorsProcessorInlineLookupPtrOutput) Elem() OpenpipelineV2BizeventsPipelinesProcessingProcessorsProcessorInlineLookupOutput {
+	return o.ApplyT(func(v *OpenpipelineV2BizeventsPipelinesProcessingProcessorsProcessorInlineLookup) OpenpipelineV2BizeventsPipelinesProcessingProcessorsProcessorInlineLookup {
+		if v != nil {
+			return *v
+		}
+		var ret OpenpipelineV2BizeventsPipelinesProcessingProcessorsProcessorInlineLookup
+		return ret
+	}).(OpenpipelineV2BizeventsPipelinesProcessingProcessorsProcessorInlineLookupOutput)
+}
+
+// The value to write to the destination field when no lookup key matches. If absent, the destination field is left unchanged when no key matches.
+func (o OpenpipelineV2BizeventsPipelinesProcessingProcessorsProcessorInlineLookupPtrOutput) DefaultValue() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *OpenpipelineV2BizeventsPipelinesProcessingProcessorsProcessorInlineLookup) *string {
+		if v == nil {
+			return nil
+		}
+		return v.DefaultValue
+	}).(pulumi.StringPtrOutput)
+}
+
+// The field key to write the matched lookup value to.
+func (o OpenpipelineV2BizeventsPipelinesProcessingProcessorsProcessorInlineLookupPtrOutput) DestinationField() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *OpenpipelineV2BizeventsPipelinesProcessingProcessorsProcessorInlineLookup) *string {
+		if v == nil {
+			return nil
+		}
+		return &v.DestinationField
+	}).(pulumi.StringPtrOutput)
+}
+
+// The key-value pairs of the inline lookup table, encoded as a compact JSON string: [[["key1","key2"],"value1"],[["key3"],"value2"]].
+func (o OpenpipelineV2BizeventsPipelinesProcessingProcessorsProcessorInlineLookupPtrOutput) InlineLookupTable() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *OpenpipelineV2BizeventsPipelinesProcessingProcessorsProcessorInlineLookup) *string {
+		if v == nil {
+			return nil
+		}
+		return &v.InlineLookupTable
+	}).(pulumi.StringPtrOutput)
+}
+
+// The field key whose value is looked up in the lookup table.
+func (o OpenpipelineV2BizeventsPipelinesProcessingProcessorsProcessorInlineLookupPtrOutput) SourceField() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *OpenpipelineV2BizeventsPipelinesProcessingProcessorsProcessorInlineLookup) *string {
+		if v == nil {
+			return nil
+		}
+		return &v.SourceField
+	}).(pulumi.StringPtrOutput)
 }
 
 type OpenpipelineV2BizeventsPipelinesProcessingProcessorsProcessorProductAllocation struct {
@@ -70223,6 +71650,8 @@ type OpenpipelineV2BizeventsPipelinesProductAllocationProcessorsProcessor struct
 	HistogramMetric *OpenpipelineV2BizeventsPipelinesProductAllocationProcessorsProcessorHistogramMetric `pulumi:"histogramMetric"`
 	// Processor identifier
 	Id string `pulumi:"id"`
+	// Inline lookup processor attributes
+	InlineLookup *OpenpipelineV2BizeventsPipelinesProductAllocationProcessorsProcessorInlineLookup `pulumi:"inlineLookup"`
 	// [See our documentation](https://dt-url.net/bp234rv)
 	Matcher *string `pulumi:"matcher"`
 	// Product allocation processor attributes
@@ -70247,7 +71676,7 @@ type OpenpipelineV2BizeventsPipelinesProductAllocationProcessorsProcessor struct
 	SmartscapeNode *OpenpipelineV2BizeventsPipelinesProductAllocationProcessorsProcessorSmartscapeNode `pulumi:"smartscapeNode"`
 	// Technology processor attributes
 	Technology *OpenpipelineV2BizeventsPipelinesProductAllocationProcessorsProcessorTechnology `pulumi:"technology"`
-	// Processor type. Possible values: `azureLogForwarding`, `bizevent`, `bucketAssignment`, `costAllocation`, `counterMetric`, `davis`, `dql`, `drop`, `fieldsAdd`, `fieldsRemove`, `fieldsRename`, `geoLookup`, `histogramMetric`, `noStorage`, `productAllocation`, `samplingAwareCounterMetric`, `samplingAwareHistogramMetric`, `samplingAwareValueMetric`, `sdlcEvent`, `securityContext`, `securityEvent`, `smartscapeEdge`, `smartscapeNode`, `technology`, `valueMetric`
+	// Processor type. Possible values: `azureLogForwarding`, `bizevent`, `bucketAssignment`, `costAllocation`, `counterMetric`, `davis`, `dql`, `drop`, `fieldsAdd`, `fieldsRemove`, `fieldsRename`, `geoLookup`, `histogramMetric`, `inlineLookup`, `noStorage`, `productAllocation`, `samplingAwareCounterMetric`, `samplingAwareHistogramMetric`, `samplingAwareValueMetric`, `sdlcEvent`, `securityContext`, `securityEvent`, `smartscapeEdge`, `smartscapeNode`, `technology`, `valueMetric`
 	Type string `pulumi:"type"`
 	// Value metric processor attributes
 	ValueMetric *OpenpipelineV2BizeventsPipelinesProductAllocationProcessorsProcessorValueMetric `pulumi:"valueMetric"`
@@ -70295,6 +71724,8 @@ type OpenpipelineV2BizeventsPipelinesProductAllocationProcessorsProcessorArgs st
 	HistogramMetric OpenpipelineV2BizeventsPipelinesProductAllocationProcessorsProcessorHistogramMetricPtrInput `pulumi:"histogramMetric"`
 	// Processor identifier
 	Id pulumi.StringInput `pulumi:"id"`
+	// Inline lookup processor attributes
+	InlineLookup OpenpipelineV2BizeventsPipelinesProductAllocationProcessorsProcessorInlineLookupPtrInput `pulumi:"inlineLookup"`
 	// [See our documentation](https://dt-url.net/bp234rv)
 	Matcher pulumi.StringPtrInput `pulumi:"matcher"`
 	// Product allocation processor attributes
@@ -70319,7 +71750,7 @@ type OpenpipelineV2BizeventsPipelinesProductAllocationProcessorsProcessorArgs st
 	SmartscapeNode OpenpipelineV2BizeventsPipelinesProductAllocationProcessorsProcessorSmartscapeNodePtrInput `pulumi:"smartscapeNode"`
 	// Technology processor attributes
 	Technology OpenpipelineV2BizeventsPipelinesProductAllocationProcessorsProcessorTechnologyPtrInput `pulumi:"technology"`
-	// Processor type. Possible values: `azureLogForwarding`, `bizevent`, `bucketAssignment`, `costAllocation`, `counterMetric`, `davis`, `dql`, `drop`, `fieldsAdd`, `fieldsRemove`, `fieldsRename`, `geoLookup`, `histogramMetric`, `noStorage`, `productAllocation`, `samplingAwareCounterMetric`, `samplingAwareHistogramMetric`, `samplingAwareValueMetric`, `sdlcEvent`, `securityContext`, `securityEvent`, `smartscapeEdge`, `smartscapeNode`, `technology`, `valueMetric`
+	// Processor type. Possible values: `azureLogForwarding`, `bizevent`, `bucketAssignment`, `costAllocation`, `counterMetric`, `davis`, `dql`, `drop`, `fieldsAdd`, `fieldsRemove`, `fieldsRename`, `geoLookup`, `histogramMetric`, `inlineLookup`, `noStorage`, `productAllocation`, `samplingAwareCounterMetric`, `samplingAwareHistogramMetric`, `samplingAwareValueMetric`, `sdlcEvent`, `securityContext`, `securityEvent`, `smartscapeEdge`, `smartscapeNode`, `technology`, `valueMetric`
 	Type pulumi.StringInput `pulumi:"type"`
 	// Value metric processor attributes
 	ValueMetric OpenpipelineV2BizeventsPipelinesProductAllocationProcessorsProcessorValueMetricPtrInput `pulumi:"valueMetric"`
@@ -70477,6 +71908,13 @@ func (o OpenpipelineV2BizeventsPipelinesProductAllocationProcessorsProcessorOutp
 	return o.ApplyT(func(v OpenpipelineV2BizeventsPipelinesProductAllocationProcessorsProcessor) string { return v.Id }).(pulumi.StringOutput)
 }
 
+// Inline lookup processor attributes
+func (o OpenpipelineV2BizeventsPipelinesProductAllocationProcessorsProcessorOutput) InlineLookup() OpenpipelineV2BizeventsPipelinesProductAllocationProcessorsProcessorInlineLookupPtrOutput {
+	return o.ApplyT(func(v OpenpipelineV2BizeventsPipelinesProductAllocationProcessorsProcessor) *OpenpipelineV2BizeventsPipelinesProductAllocationProcessorsProcessorInlineLookup {
+		return v.InlineLookup
+	}).(OpenpipelineV2BizeventsPipelinesProductAllocationProcessorsProcessorInlineLookupPtrOutput)
+}
+
 // [See our documentation](https://dt-url.net/bp234rv)
 func (o OpenpipelineV2BizeventsPipelinesProductAllocationProcessorsProcessorOutput) Matcher() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v OpenpipelineV2BizeventsPipelinesProductAllocationProcessorsProcessor) *string { return v.Matcher }).(pulumi.StringPtrOutput)
@@ -70559,7 +71997,7 @@ func (o OpenpipelineV2BizeventsPipelinesProductAllocationProcessorsProcessorOutp
 	}).(OpenpipelineV2BizeventsPipelinesProductAllocationProcessorsProcessorTechnologyPtrOutput)
 }
 
-// Processor type. Possible values: `azureLogForwarding`, `bizevent`, `bucketAssignment`, `costAllocation`, `counterMetric`, `davis`, `dql`, `drop`, `fieldsAdd`, `fieldsRemove`, `fieldsRename`, `geoLookup`, `histogramMetric`, `noStorage`, `productAllocation`, `samplingAwareCounterMetric`, `samplingAwareHistogramMetric`, `samplingAwareValueMetric`, `sdlcEvent`, `securityContext`, `securityEvent`, `smartscapeEdge`, `smartscapeNode`, `technology`, `valueMetric`
+// Processor type. Possible values: `azureLogForwarding`, `bizevent`, `bucketAssignment`, `costAllocation`, `counterMetric`, `davis`, `dql`, `drop`, `fieldsAdd`, `fieldsRemove`, `fieldsRename`, `geoLookup`, `histogramMetric`, `inlineLookup`, `noStorage`, `productAllocation`, `samplingAwareCounterMetric`, `samplingAwareHistogramMetric`, `samplingAwareValueMetric`, `sdlcEvent`, `securityContext`, `securityEvent`, `smartscapeEdge`, `smartscapeNode`, `technology`, `valueMetric`
 func (o OpenpipelineV2BizeventsPipelinesProductAllocationProcessorsProcessorOutput) Type() pulumi.StringOutput {
 	return o.ApplyT(func(v OpenpipelineV2BizeventsPipelinesProductAllocationProcessorsProcessor) string { return v.Type }).(pulumi.StringOutput)
 }
@@ -75840,6 +77278,208 @@ func (o OpenpipelineV2BizeventsPipelinesProductAllocationProcessorsProcessorHist
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) OpenpipelineV2BizeventsPipelinesProductAllocationProcessorsProcessorHistogramMetricDimensionsDimension {
 		return vs[0].([]OpenpipelineV2BizeventsPipelinesProductAllocationProcessorsProcessorHistogramMetricDimensionsDimension)[vs[1].(int)]
 	}).(OpenpipelineV2BizeventsPipelinesProductAllocationProcessorsProcessorHistogramMetricDimensionsDimensionOutput)
+}
+
+type OpenpipelineV2BizeventsPipelinesProductAllocationProcessorsProcessorInlineLookup struct {
+	// The value to write to the destination field when no lookup key matches. If absent, the destination field is left unchanged when no key matches.
+	DefaultValue *string `pulumi:"defaultValue"`
+	// The field key to write the matched lookup value to.
+	DestinationField string `pulumi:"destinationField"`
+	// The key-value pairs of the inline lookup table, encoded as a compact JSON string: [[["key1","key2"],"value1"],[["key3"],"value2"]].
+	InlineLookupTable string `pulumi:"inlineLookupTable"`
+	// The field key whose value is looked up in the lookup table.
+	SourceField string `pulumi:"sourceField"`
+}
+
+// OpenpipelineV2BizeventsPipelinesProductAllocationProcessorsProcessorInlineLookupInput is an input type that accepts OpenpipelineV2BizeventsPipelinesProductAllocationProcessorsProcessorInlineLookupArgs and OpenpipelineV2BizeventsPipelinesProductAllocationProcessorsProcessorInlineLookupOutput values.
+// You can construct a concrete instance of `OpenpipelineV2BizeventsPipelinesProductAllocationProcessorsProcessorInlineLookupInput` via:
+//
+//	OpenpipelineV2BizeventsPipelinesProductAllocationProcessorsProcessorInlineLookupArgs{...}
+type OpenpipelineV2BizeventsPipelinesProductAllocationProcessorsProcessorInlineLookupInput interface {
+	pulumi.Input
+
+	ToOpenpipelineV2BizeventsPipelinesProductAllocationProcessorsProcessorInlineLookupOutput() OpenpipelineV2BizeventsPipelinesProductAllocationProcessorsProcessorInlineLookupOutput
+	ToOpenpipelineV2BizeventsPipelinesProductAllocationProcessorsProcessorInlineLookupOutputWithContext(context.Context) OpenpipelineV2BizeventsPipelinesProductAllocationProcessorsProcessorInlineLookupOutput
+}
+
+type OpenpipelineV2BizeventsPipelinesProductAllocationProcessorsProcessorInlineLookupArgs struct {
+	// The value to write to the destination field when no lookup key matches. If absent, the destination field is left unchanged when no key matches.
+	DefaultValue pulumi.StringPtrInput `pulumi:"defaultValue"`
+	// The field key to write the matched lookup value to.
+	DestinationField pulumi.StringInput `pulumi:"destinationField"`
+	// The key-value pairs of the inline lookup table, encoded as a compact JSON string: [[["key1","key2"],"value1"],[["key3"],"value2"]].
+	InlineLookupTable pulumi.StringInput `pulumi:"inlineLookupTable"`
+	// The field key whose value is looked up in the lookup table.
+	SourceField pulumi.StringInput `pulumi:"sourceField"`
+}
+
+func (OpenpipelineV2BizeventsPipelinesProductAllocationProcessorsProcessorInlineLookupArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*OpenpipelineV2BizeventsPipelinesProductAllocationProcessorsProcessorInlineLookup)(nil)).Elem()
+}
+
+func (i OpenpipelineV2BizeventsPipelinesProductAllocationProcessorsProcessorInlineLookupArgs) ToOpenpipelineV2BizeventsPipelinesProductAllocationProcessorsProcessorInlineLookupOutput() OpenpipelineV2BizeventsPipelinesProductAllocationProcessorsProcessorInlineLookupOutput {
+	return i.ToOpenpipelineV2BizeventsPipelinesProductAllocationProcessorsProcessorInlineLookupOutputWithContext(context.Background())
+}
+
+func (i OpenpipelineV2BizeventsPipelinesProductAllocationProcessorsProcessorInlineLookupArgs) ToOpenpipelineV2BizeventsPipelinesProductAllocationProcessorsProcessorInlineLookupOutputWithContext(ctx context.Context) OpenpipelineV2BizeventsPipelinesProductAllocationProcessorsProcessorInlineLookupOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(OpenpipelineV2BizeventsPipelinesProductAllocationProcessorsProcessorInlineLookupOutput)
+}
+
+func (i OpenpipelineV2BizeventsPipelinesProductAllocationProcessorsProcessorInlineLookupArgs) ToOpenpipelineV2BizeventsPipelinesProductAllocationProcessorsProcessorInlineLookupPtrOutput() OpenpipelineV2BizeventsPipelinesProductAllocationProcessorsProcessorInlineLookupPtrOutput {
+	return i.ToOpenpipelineV2BizeventsPipelinesProductAllocationProcessorsProcessorInlineLookupPtrOutputWithContext(context.Background())
+}
+
+func (i OpenpipelineV2BizeventsPipelinesProductAllocationProcessorsProcessorInlineLookupArgs) ToOpenpipelineV2BizeventsPipelinesProductAllocationProcessorsProcessorInlineLookupPtrOutputWithContext(ctx context.Context) OpenpipelineV2BizeventsPipelinesProductAllocationProcessorsProcessorInlineLookupPtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(OpenpipelineV2BizeventsPipelinesProductAllocationProcessorsProcessorInlineLookupOutput).ToOpenpipelineV2BizeventsPipelinesProductAllocationProcessorsProcessorInlineLookupPtrOutputWithContext(ctx)
+}
+
+// OpenpipelineV2BizeventsPipelinesProductAllocationProcessorsProcessorInlineLookupPtrInput is an input type that accepts OpenpipelineV2BizeventsPipelinesProductAllocationProcessorsProcessorInlineLookupArgs, OpenpipelineV2BizeventsPipelinesProductAllocationProcessorsProcessorInlineLookupPtr and OpenpipelineV2BizeventsPipelinesProductAllocationProcessorsProcessorInlineLookupPtrOutput values.
+// You can construct a concrete instance of `OpenpipelineV2BizeventsPipelinesProductAllocationProcessorsProcessorInlineLookupPtrInput` via:
+//
+//	        OpenpipelineV2BizeventsPipelinesProductAllocationProcessorsProcessorInlineLookupArgs{...}
+//
+//	or:
+//
+//	        nil
+type OpenpipelineV2BizeventsPipelinesProductAllocationProcessorsProcessorInlineLookupPtrInput interface {
+	pulumi.Input
+
+	ToOpenpipelineV2BizeventsPipelinesProductAllocationProcessorsProcessorInlineLookupPtrOutput() OpenpipelineV2BizeventsPipelinesProductAllocationProcessorsProcessorInlineLookupPtrOutput
+	ToOpenpipelineV2BizeventsPipelinesProductAllocationProcessorsProcessorInlineLookupPtrOutputWithContext(context.Context) OpenpipelineV2BizeventsPipelinesProductAllocationProcessorsProcessorInlineLookupPtrOutput
+}
+
+type openpipelineV2BizeventsPipelinesProductAllocationProcessorsProcessorInlineLookupPtrType OpenpipelineV2BizeventsPipelinesProductAllocationProcessorsProcessorInlineLookupArgs
+
+func OpenpipelineV2BizeventsPipelinesProductAllocationProcessorsProcessorInlineLookupPtr(v *OpenpipelineV2BizeventsPipelinesProductAllocationProcessorsProcessorInlineLookupArgs) OpenpipelineV2BizeventsPipelinesProductAllocationProcessorsProcessorInlineLookupPtrInput {
+	return (*openpipelineV2BizeventsPipelinesProductAllocationProcessorsProcessorInlineLookupPtrType)(v)
+}
+
+func (*openpipelineV2BizeventsPipelinesProductAllocationProcessorsProcessorInlineLookupPtrType) ElementType() reflect.Type {
+	return reflect.TypeOf((**OpenpipelineV2BizeventsPipelinesProductAllocationProcessorsProcessorInlineLookup)(nil)).Elem()
+}
+
+func (i *openpipelineV2BizeventsPipelinesProductAllocationProcessorsProcessorInlineLookupPtrType) ToOpenpipelineV2BizeventsPipelinesProductAllocationProcessorsProcessorInlineLookupPtrOutput() OpenpipelineV2BizeventsPipelinesProductAllocationProcessorsProcessorInlineLookupPtrOutput {
+	return i.ToOpenpipelineV2BizeventsPipelinesProductAllocationProcessorsProcessorInlineLookupPtrOutputWithContext(context.Background())
+}
+
+func (i *openpipelineV2BizeventsPipelinesProductAllocationProcessorsProcessorInlineLookupPtrType) ToOpenpipelineV2BizeventsPipelinesProductAllocationProcessorsProcessorInlineLookupPtrOutputWithContext(ctx context.Context) OpenpipelineV2BizeventsPipelinesProductAllocationProcessorsProcessorInlineLookupPtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(OpenpipelineV2BizeventsPipelinesProductAllocationProcessorsProcessorInlineLookupPtrOutput)
+}
+
+type OpenpipelineV2BizeventsPipelinesProductAllocationProcessorsProcessorInlineLookupOutput struct{ *pulumi.OutputState }
+
+func (OpenpipelineV2BizeventsPipelinesProductAllocationProcessorsProcessorInlineLookupOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*OpenpipelineV2BizeventsPipelinesProductAllocationProcessorsProcessorInlineLookup)(nil)).Elem()
+}
+
+func (o OpenpipelineV2BizeventsPipelinesProductAllocationProcessorsProcessorInlineLookupOutput) ToOpenpipelineV2BizeventsPipelinesProductAllocationProcessorsProcessorInlineLookupOutput() OpenpipelineV2BizeventsPipelinesProductAllocationProcessorsProcessorInlineLookupOutput {
+	return o
+}
+
+func (o OpenpipelineV2BizeventsPipelinesProductAllocationProcessorsProcessorInlineLookupOutput) ToOpenpipelineV2BizeventsPipelinesProductAllocationProcessorsProcessorInlineLookupOutputWithContext(ctx context.Context) OpenpipelineV2BizeventsPipelinesProductAllocationProcessorsProcessorInlineLookupOutput {
+	return o
+}
+
+func (o OpenpipelineV2BizeventsPipelinesProductAllocationProcessorsProcessorInlineLookupOutput) ToOpenpipelineV2BizeventsPipelinesProductAllocationProcessorsProcessorInlineLookupPtrOutput() OpenpipelineV2BizeventsPipelinesProductAllocationProcessorsProcessorInlineLookupPtrOutput {
+	return o.ToOpenpipelineV2BizeventsPipelinesProductAllocationProcessorsProcessorInlineLookupPtrOutputWithContext(context.Background())
+}
+
+func (o OpenpipelineV2BizeventsPipelinesProductAllocationProcessorsProcessorInlineLookupOutput) ToOpenpipelineV2BizeventsPipelinesProductAllocationProcessorsProcessorInlineLookupPtrOutputWithContext(ctx context.Context) OpenpipelineV2BizeventsPipelinesProductAllocationProcessorsProcessorInlineLookupPtrOutput {
+	return o.ApplyTWithContext(ctx, func(_ context.Context, v OpenpipelineV2BizeventsPipelinesProductAllocationProcessorsProcessorInlineLookup) *OpenpipelineV2BizeventsPipelinesProductAllocationProcessorsProcessorInlineLookup {
+		return &v
+	}).(OpenpipelineV2BizeventsPipelinesProductAllocationProcessorsProcessorInlineLookupPtrOutput)
+}
+
+// The value to write to the destination field when no lookup key matches. If absent, the destination field is left unchanged when no key matches.
+func (o OpenpipelineV2BizeventsPipelinesProductAllocationProcessorsProcessorInlineLookupOutput) DefaultValue() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v OpenpipelineV2BizeventsPipelinesProductAllocationProcessorsProcessorInlineLookup) *string {
+		return v.DefaultValue
+	}).(pulumi.StringPtrOutput)
+}
+
+// The field key to write the matched lookup value to.
+func (o OpenpipelineV2BizeventsPipelinesProductAllocationProcessorsProcessorInlineLookupOutput) DestinationField() pulumi.StringOutput {
+	return o.ApplyT(func(v OpenpipelineV2BizeventsPipelinesProductAllocationProcessorsProcessorInlineLookup) string {
+		return v.DestinationField
+	}).(pulumi.StringOutput)
+}
+
+// The key-value pairs of the inline lookup table, encoded as a compact JSON string: [[["key1","key2"],"value1"],[["key3"],"value2"]].
+func (o OpenpipelineV2BizeventsPipelinesProductAllocationProcessorsProcessorInlineLookupOutput) InlineLookupTable() pulumi.StringOutput {
+	return o.ApplyT(func(v OpenpipelineV2BizeventsPipelinesProductAllocationProcessorsProcessorInlineLookup) string {
+		return v.InlineLookupTable
+	}).(pulumi.StringOutput)
+}
+
+// The field key whose value is looked up in the lookup table.
+func (o OpenpipelineV2BizeventsPipelinesProductAllocationProcessorsProcessorInlineLookupOutput) SourceField() pulumi.StringOutput {
+	return o.ApplyT(func(v OpenpipelineV2BizeventsPipelinesProductAllocationProcessorsProcessorInlineLookup) string {
+		return v.SourceField
+	}).(pulumi.StringOutput)
+}
+
+type OpenpipelineV2BizeventsPipelinesProductAllocationProcessorsProcessorInlineLookupPtrOutput struct{ *pulumi.OutputState }
+
+func (OpenpipelineV2BizeventsPipelinesProductAllocationProcessorsProcessorInlineLookupPtrOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((**OpenpipelineV2BizeventsPipelinesProductAllocationProcessorsProcessorInlineLookup)(nil)).Elem()
+}
+
+func (o OpenpipelineV2BizeventsPipelinesProductAllocationProcessorsProcessorInlineLookupPtrOutput) ToOpenpipelineV2BizeventsPipelinesProductAllocationProcessorsProcessorInlineLookupPtrOutput() OpenpipelineV2BizeventsPipelinesProductAllocationProcessorsProcessorInlineLookupPtrOutput {
+	return o
+}
+
+func (o OpenpipelineV2BizeventsPipelinesProductAllocationProcessorsProcessorInlineLookupPtrOutput) ToOpenpipelineV2BizeventsPipelinesProductAllocationProcessorsProcessorInlineLookupPtrOutputWithContext(ctx context.Context) OpenpipelineV2BizeventsPipelinesProductAllocationProcessorsProcessorInlineLookupPtrOutput {
+	return o
+}
+
+func (o OpenpipelineV2BizeventsPipelinesProductAllocationProcessorsProcessorInlineLookupPtrOutput) Elem() OpenpipelineV2BizeventsPipelinesProductAllocationProcessorsProcessorInlineLookupOutput {
+	return o.ApplyT(func(v *OpenpipelineV2BizeventsPipelinesProductAllocationProcessorsProcessorInlineLookup) OpenpipelineV2BizeventsPipelinesProductAllocationProcessorsProcessorInlineLookup {
+		if v != nil {
+			return *v
+		}
+		var ret OpenpipelineV2BizeventsPipelinesProductAllocationProcessorsProcessorInlineLookup
+		return ret
+	}).(OpenpipelineV2BizeventsPipelinesProductAllocationProcessorsProcessorInlineLookupOutput)
+}
+
+// The value to write to the destination field when no lookup key matches. If absent, the destination field is left unchanged when no key matches.
+func (o OpenpipelineV2BizeventsPipelinesProductAllocationProcessorsProcessorInlineLookupPtrOutput) DefaultValue() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *OpenpipelineV2BizeventsPipelinesProductAllocationProcessorsProcessorInlineLookup) *string {
+		if v == nil {
+			return nil
+		}
+		return v.DefaultValue
+	}).(pulumi.StringPtrOutput)
+}
+
+// The field key to write the matched lookup value to.
+func (o OpenpipelineV2BizeventsPipelinesProductAllocationProcessorsProcessorInlineLookupPtrOutput) DestinationField() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *OpenpipelineV2BizeventsPipelinesProductAllocationProcessorsProcessorInlineLookup) *string {
+		if v == nil {
+			return nil
+		}
+		return &v.DestinationField
+	}).(pulumi.StringPtrOutput)
+}
+
+// The key-value pairs of the inline lookup table, encoded as a compact JSON string: [[["key1","key2"],"value1"],[["key3"],"value2"]].
+func (o OpenpipelineV2BizeventsPipelinesProductAllocationProcessorsProcessorInlineLookupPtrOutput) InlineLookupTable() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *OpenpipelineV2BizeventsPipelinesProductAllocationProcessorsProcessorInlineLookup) *string {
+		if v == nil {
+			return nil
+		}
+		return &v.InlineLookupTable
+	}).(pulumi.StringPtrOutput)
+}
+
+// The field key whose value is looked up in the lookup table.
+func (o OpenpipelineV2BizeventsPipelinesProductAllocationProcessorsProcessorInlineLookupPtrOutput) SourceField() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *OpenpipelineV2BizeventsPipelinesProductAllocationProcessorsProcessorInlineLookup) *string {
+		if v == nil {
+			return nil
+		}
+		return &v.SourceField
+	}).(pulumi.StringPtrOutput)
 }
 
 type OpenpipelineV2BizeventsPipelinesProductAllocationProcessorsProcessorProductAllocation struct {
@@ -81471,1270 +83111,11 @@ func (o OpenpipelineV2BizeventsPipelinesProductAllocationProcessorsProcessorSmar
 	}).(pulumi.StringPtrOutput)
 }
 
-type OpenpipelineV2BizeventsPipelinesProductAllocationProcessorsProcessorSmartscapeNode struct {
-	// Extract node
-	ExtractNode bool `pulumi:"extractNode"`
-	// Fields to extract
-	FieldsToExtract *OpenpipelineV2BizeventsPipelinesProductAllocationProcessorsProcessorSmartscapeNodeFieldsToExtract `pulumi:"fieldsToExtract"`
-	// ID components
-	IdComponents OpenpipelineV2BizeventsPipelinesProductAllocationProcessorsProcessorSmartscapeNodeIdComponents `pulumi:"idComponents"`
-	// Node ID field name
-	NodeIdFieldName string `pulumi:"nodeIdFieldName"`
-	// Node name
-	NodeName *OpenpipelineV2BizeventsPipelinesProductAllocationProcessorsProcessorSmartscapeNodeNodeName `pulumi:"nodeName"`
-	// Node type
-	NodeType string `pulumi:"nodeType"`
-	// Static edges to extract
-	StaticEdgesToExtract *OpenpipelineV2BizeventsPipelinesProductAllocationProcessorsProcessorSmartscapeNodeStaticEdgesToExtract `pulumi:"staticEdgesToExtract"`
-}
-
-// OpenpipelineV2BizeventsPipelinesProductAllocationProcessorsProcessorSmartscapeNodeInput is an input type that accepts OpenpipelineV2BizeventsPipelinesProductAllocationProcessorsProcessorSmartscapeNodeArgs and OpenpipelineV2BizeventsPipelinesProductAllocationProcessorsProcessorSmartscapeNodeOutput values.
-// You can construct a concrete instance of `OpenpipelineV2BizeventsPipelinesProductAllocationProcessorsProcessorSmartscapeNodeInput` via:
-//
-//	OpenpipelineV2BizeventsPipelinesProductAllocationProcessorsProcessorSmartscapeNodeArgs{...}
-type OpenpipelineV2BizeventsPipelinesProductAllocationProcessorsProcessorSmartscapeNodeInput interface {
-	pulumi.Input
-
-	ToOpenpipelineV2BizeventsPipelinesProductAllocationProcessorsProcessorSmartscapeNodeOutput() OpenpipelineV2BizeventsPipelinesProductAllocationProcessorsProcessorSmartscapeNodeOutput
-	ToOpenpipelineV2BizeventsPipelinesProductAllocationProcessorsProcessorSmartscapeNodeOutputWithContext(context.Context) OpenpipelineV2BizeventsPipelinesProductAllocationProcessorsProcessorSmartscapeNodeOutput
-}
-
-type OpenpipelineV2BizeventsPipelinesProductAllocationProcessorsProcessorSmartscapeNodeArgs struct {
-	// Extract node
-	ExtractNode pulumi.BoolInput `pulumi:"extractNode"`
-	// Fields to extract
-	FieldsToExtract OpenpipelineV2BizeventsPipelinesProductAllocationProcessorsProcessorSmartscapeNodeFieldsToExtractPtrInput `pulumi:"fieldsToExtract"`
-	// ID components
-	IdComponents OpenpipelineV2BizeventsPipelinesProductAllocationProcessorsProcessorSmartscapeNodeIdComponentsInput `pulumi:"idComponents"`
-	// Node ID field name
-	NodeIdFieldName pulumi.StringInput `pulumi:"nodeIdFieldName"`
-	// Node name
-	NodeName OpenpipelineV2BizeventsPipelinesProductAllocationProcessorsProcessorSmartscapeNodeNodeNamePtrInput `pulumi:"nodeName"`
-	// Node type
-	NodeType pulumi.StringInput `pulumi:"nodeType"`
-	// Static edges to extract
-	StaticEdgesToExtract OpenpipelineV2BizeventsPipelinesProductAllocationProcessorsProcessorSmartscapeNodeStaticEdgesToExtractPtrInput `pulumi:"staticEdgesToExtract"`
-}
-
-func (OpenpipelineV2BizeventsPipelinesProductAllocationProcessorsProcessorSmartscapeNodeArgs) ElementType() reflect.Type {
-	return reflect.TypeOf((*OpenpipelineV2BizeventsPipelinesProductAllocationProcessorsProcessorSmartscapeNode)(nil)).Elem()
-}
-
-func (i OpenpipelineV2BizeventsPipelinesProductAllocationProcessorsProcessorSmartscapeNodeArgs) ToOpenpipelineV2BizeventsPipelinesProductAllocationProcessorsProcessorSmartscapeNodeOutput() OpenpipelineV2BizeventsPipelinesProductAllocationProcessorsProcessorSmartscapeNodeOutput {
-	return i.ToOpenpipelineV2BizeventsPipelinesProductAllocationProcessorsProcessorSmartscapeNodeOutputWithContext(context.Background())
-}
-
-func (i OpenpipelineV2BizeventsPipelinesProductAllocationProcessorsProcessorSmartscapeNodeArgs) ToOpenpipelineV2BizeventsPipelinesProductAllocationProcessorsProcessorSmartscapeNodeOutputWithContext(ctx context.Context) OpenpipelineV2BizeventsPipelinesProductAllocationProcessorsProcessorSmartscapeNodeOutput {
-	return pulumi.ToOutputWithContext(ctx, i).(OpenpipelineV2BizeventsPipelinesProductAllocationProcessorsProcessorSmartscapeNodeOutput)
-}
-
-func (i OpenpipelineV2BizeventsPipelinesProductAllocationProcessorsProcessorSmartscapeNodeArgs) ToOpenpipelineV2BizeventsPipelinesProductAllocationProcessorsProcessorSmartscapeNodePtrOutput() OpenpipelineV2BizeventsPipelinesProductAllocationProcessorsProcessorSmartscapeNodePtrOutput {
-	return i.ToOpenpipelineV2BizeventsPipelinesProductAllocationProcessorsProcessorSmartscapeNodePtrOutputWithContext(context.Background())
-}
-
-func (i OpenpipelineV2BizeventsPipelinesProductAllocationProcessorsProcessorSmartscapeNodeArgs) ToOpenpipelineV2BizeventsPipelinesProductAllocationProcessorsProcessorSmartscapeNodePtrOutputWithContext(ctx context.Context) OpenpipelineV2BizeventsPipelinesProductAllocationProcessorsProcessorSmartscapeNodePtrOutput {
-	return pulumi.ToOutputWithContext(ctx, i).(OpenpipelineV2BizeventsPipelinesProductAllocationProcessorsProcessorSmartscapeNodeOutput).ToOpenpipelineV2BizeventsPipelinesProductAllocationProcessorsProcessorSmartscapeNodePtrOutputWithContext(ctx)
-}
-
-// OpenpipelineV2BizeventsPipelinesProductAllocationProcessorsProcessorSmartscapeNodePtrInput is an input type that accepts OpenpipelineV2BizeventsPipelinesProductAllocationProcessorsProcessorSmartscapeNodeArgs, OpenpipelineV2BizeventsPipelinesProductAllocationProcessorsProcessorSmartscapeNodePtr and OpenpipelineV2BizeventsPipelinesProductAllocationProcessorsProcessorSmartscapeNodePtrOutput values.
-// You can construct a concrete instance of `OpenpipelineV2BizeventsPipelinesProductAllocationProcessorsProcessorSmartscapeNodePtrInput` via:
-//
-//	        OpenpipelineV2BizeventsPipelinesProductAllocationProcessorsProcessorSmartscapeNodeArgs{...}
-//
-//	or:
-//
-//	        nil
-type OpenpipelineV2BizeventsPipelinesProductAllocationProcessorsProcessorSmartscapeNodePtrInput interface {
-	pulumi.Input
-
-	ToOpenpipelineV2BizeventsPipelinesProductAllocationProcessorsProcessorSmartscapeNodePtrOutput() OpenpipelineV2BizeventsPipelinesProductAllocationProcessorsProcessorSmartscapeNodePtrOutput
-	ToOpenpipelineV2BizeventsPipelinesProductAllocationProcessorsProcessorSmartscapeNodePtrOutputWithContext(context.Context) OpenpipelineV2BizeventsPipelinesProductAllocationProcessorsProcessorSmartscapeNodePtrOutput
-}
-
-type openpipelineV2BizeventsPipelinesProductAllocationProcessorsProcessorSmartscapeNodePtrType OpenpipelineV2BizeventsPipelinesProductAllocationProcessorsProcessorSmartscapeNodeArgs
-
-func OpenpipelineV2BizeventsPipelinesProductAllocationProcessorsProcessorSmartscapeNodePtr(v *OpenpipelineV2BizeventsPipelinesProductAllocationProcessorsProcessorSmartscapeNodeArgs) OpenpipelineV2BizeventsPipelinesProductAllocationProcessorsProcessorSmartscapeNodePtrInput {
-	return (*openpipelineV2BizeventsPipelinesProductAllocationProcessorsProcessorSmartscapeNodePtrType)(v)
-}
-
-func (*openpipelineV2BizeventsPipelinesProductAllocationProcessorsProcessorSmartscapeNodePtrType) ElementType() reflect.Type {
-	return reflect.TypeOf((**OpenpipelineV2BizeventsPipelinesProductAllocationProcessorsProcessorSmartscapeNode)(nil)).Elem()
-}
-
-func (i *openpipelineV2BizeventsPipelinesProductAllocationProcessorsProcessorSmartscapeNodePtrType) ToOpenpipelineV2BizeventsPipelinesProductAllocationProcessorsProcessorSmartscapeNodePtrOutput() OpenpipelineV2BizeventsPipelinesProductAllocationProcessorsProcessorSmartscapeNodePtrOutput {
-	return i.ToOpenpipelineV2BizeventsPipelinesProductAllocationProcessorsProcessorSmartscapeNodePtrOutputWithContext(context.Background())
-}
-
-func (i *openpipelineV2BizeventsPipelinesProductAllocationProcessorsProcessorSmartscapeNodePtrType) ToOpenpipelineV2BizeventsPipelinesProductAllocationProcessorsProcessorSmartscapeNodePtrOutputWithContext(ctx context.Context) OpenpipelineV2BizeventsPipelinesProductAllocationProcessorsProcessorSmartscapeNodePtrOutput {
-	return pulumi.ToOutputWithContext(ctx, i).(OpenpipelineV2BizeventsPipelinesProductAllocationProcessorsProcessorSmartscapeNodePtrOutput)
-}
-
-type OpenpipelineV2BizeventsPipelinesProductAllocationProcessorsProcessorSmartscapeNodeOutput struct{ *pulumi.OutputState }
-
-func (OpenpipelineV2BizeventsPipelinesProductAllocationProcessorsProcessorSmartscapeNodeOutput) ElementType() reflect.Type {
-	return reflect.TypeOf((*OpenpipelineV2BizeventsPipelinesProductAllocationProcessorsProcessorSmartscapeNode)(nil)).Elem()
-}
-
-func (o OpenpipelineV2BizeventsPipelinesProductAllocationProcessorsProcessorSmartscapeNodeOutput) ToOpenpipelineV2BizeventsPipelinesProductAllocationProcessorsProcessorSmartscapeNodeOutput() OpenpipelineV2BizeventsPipelinesProductAllocationProcessorsProcessorSmartscapeNodeOutput {
-	return o
-}
-
-func (o OpenpipelineV2BizeventsPipelinesProductAllocationProcessorsProcessorSmartscapeNodeOutput) ToOpenpipelineV2BizeventsPipelinesProductAllocationProcessorsProcessorSmartscapeNodeOutputWithContext(ctx context.Context) OpenpipelineV2BizeventsPipelinesProductAllocationProcessorsProcessorSmartscapeNodeOutput {
-	return o
-}
-
-func (o OpenpipelineV2BizeventsPipelinesProductAllocationProcessorsProcessorSmartscapeNodeOutput) ToOpenpipelineV2BizeventsPipelinesProductAllocationProcessorsProcessorSmartscapeNodePtrOutput() OpenpipelineV2BizeventsPipelinesProductAllocationProcessorsProcessorSmartscapeNodePtrOutput {
-	return o.ToOpenpipelineV2BizeventsPipelinesProductAllocationProcessorsProcessorSmartscapeNodePtrOutputWithContext(context.Background())
-}
-
-func (o OpenpipelineV2BizeventsPipelinesProductAllocationProcessorsProcessorSmartscapeNodeOutput) ToOpenpipelineV2BizeventsPipelinesProductAllocationProcessorsProcessorSmartscapeNodePtrOutputWithContext(ctx context.Context) OpenpipelineV2BizeventsPipelinesProductAllocationProcessorsProcessorSmartscapeNodePtrOutput {
-	return o.ApplyTWithContext(ctx, func(_ context.Context, v OpenpipelineV2BizeventsPipelinesProductAllocationProcessorsProcessorSmartscapeNode) *OpenpipelineV2BizeventsPipelinesProductAllocationProcessorsProcessorSmartscapeNode {
-		return &v
-	}).(OpenpipelineV2BizeventsPipelinesProductAllocationProcessorsProcessorSmartscapeNodePtrOutput)
-}
-
-// Extract node
-func (o OpenpipelineV2BizeventsPipelinesProductAllocationProcessorsProcessorSmartscapeNodeOutput) ExtractNode() pulumi.BoolOutput {
-	return o.ApplyT(func(v OpenpipelineV2BizeventsPipelinesProductAllocationProcessorsProcessorSmartscapeNode) bool {
-		return v.ExtractNode
-	}).(pulumi.BoolOutput)
-}
-
-// Fields to extract
-func (o OpenpipelineV2BizeventsPipelinesProductAllocationProcessorsProcessorSmartscapeNodeOutput) FieldsToExtract() OpenpipelineV2BizeventsPipelinesProductAllocationProcessorsProcessorSmartscapeNodeFieldsToExtractPtrOutput {
-	return o.ApplyT(func(v OpenpipelineV2BizeventsPipelinesProductAllocationProcessorsProcessorSmartscapeNode) *OpenpipelineV2BizeventsPipelinesProductAllocationProcessorsProcessorSmartscapeNodeFieldsToExtract {
-		return v.FieldsToExtract
-	}).(OpenpipelineV2BizeventsPipelinesProductAllocationProcessorsProcessorSmartscapeNodeFieldsToExtractPtrOutput)
-}
-
-// ID components
-func (o OpenpipelineV2BizeventsPipelinesProductAllocationProcessorsProcessorSmartscapeNodeOutput) IdComponents() OpenpipelineV2BizeventsPipelinesProductAllocationProcessorsProcessorSmartscapeNodeIdComponentsOutput {
-	return o.ApplyT(func(v OpenpipelineV2BizeventsPipelinesProductAllocationProcessorsProcessorSmartscapeNode) OpenpipelineV2BizeventsPipelinesProductAllocationProcessorsProcessorSmartscapeNodeIdComponents {
-		return v.IdComponents
-	}).(OpenpipelineV2BizeventsPipelinesProductAllocationProcessorsProcessorSmartscapeNodeIdComponentsOutput)
-}
-
-// Node ID field name
-func (o OpenpipelineV2BizeventsPipelinesProductAllocationProcessorsProcessorSmartscapeNodeOutput) NodeIdFieldName() pulumi.StringOutput {
-	return o.ApplyT(func(v OpenpipelineV2BizeventsPipelinesProductAllocationProcessorsProcessorSmartscapeNode) string {
-		return v.NodeIdFieldName
-	}).(pulumi.StringOutput)
-}
-
-// Node name
-func (o OpenpipelineV2BizeventsPipelinesProductAllocationProcessorsProcessorSmartscapeNodeOutput) NodeName() OpenpipelineV2BizeventsPipelinesProductAllocationProcessorsProcessorSmartscapeNodeNodeNamePtrOutput {
-	return o.ApplyT(func(v OpenpipelineV2BizeventsPipelinesProductAllocationProcessorsProcessorSmartscapeNode) *OpenpipelineV2BizeventsPipelinesProductAllocationProcessorsProcessorSmartscapeNodeNodeName {
-		return v.NodeName
-	}).(OpenpipelineV2BizeventsPipelinesProductAllocationProcessorsProcessorSmartscapeNodeNodeNamePtrOutput)
-}
-
-// Node type
-func (o OpenpipelineV2BizeventsPipelinesProductAllocationProcessorsProcessorSmartscapeNodeOutput) NodeType() pulumi.StringOutput {
-	return o.ApplyT(func(v OpenpipelineV2BizeventsPipelinesProductAllocationProcessorsProcessorSmartscapeNode) string {
-		return v.NodeType
-	}).(pulumi.StringOutput)
-}
-
-// Static edges to extract
-func (o OpenpipelineV2BizeventsPipelinesProductAllocationProcessorsProcessorSmartscapeNodeOutput) StaticEdgesToExtract() OpenpipelineV2BizeventsPipelinesProductAllocationProcessorsProcessorSmartscapeNodeStaticEdgesToExtractPtrOutput {
-	return o.ApplyT(func(v OpenpipelineV2BizeventsPipelinesProductAllocationProcessorsProcessorSmartscapeNode) *OpenpipelineV2BizeventsPipelinesProductAllocationProcessorsProcessorSmartscapeNodeStaticEdgesToExtract {
-		return v.StaticEdgesToExtract
-	}).(OpenpipelineV2BizeventsPipelinesProductAllocationProcessorsProcessorSmartscapeNodeStaticEdgesToExtractPtrOutput)
-}
-
-type OpenpipelineV2BizeventsPipelinesProductAllocationProcessorsProcessorSmartscapeNodePtrOutput struct{ *pulumi.OutputState }
-
-func (OpenpipelineV2BizeventsPipelinesProductAllocationProcessorsProcessorSmartscapeNodePtrOutput) ElementType() reflect.Type {
-	return reflect.TypeOf((**OpenpipelineV2BizeventsPipelinesProductAllocationProcessorsProcessorSmartscapeNode)(nil)).Elem()
-}
-
-func (o OpenpipelineV2BizeventsPipelinesProductAllocationProcessorsProcessorSmartscapeNodePtrOutput) ToOpenpipelineV2BizeventsPipelinesProductAllocationProcessorsProcessorSmartscapeNodePtrOutput() OpenpipelineV2BizeventsPipelinesProductAllocationProcessorsProcessorSmartscapeNodePtrOutput {
-	return o
-}
-
-func (o OpenpipelineV2BizeventsPipelinesProductAllocationProcessorsProcessorSmartscapeNodePtrOutput) ToOpenpipelineV2BizeventsPipelinesProductAllocationProcessorsProcessorSmartscapeNodePtrOutputWithContext(ctx context.Context) OpenpipelineV2BizeventsPipelinesProductAllocationProcessorsProcessorSmartscapeNodePtrOutput {
-	return o
-}
-
-func (o OpenpipelineV2BizeventsPipelinesProductAllocationProcessorsProcessorSmartscapeNodePtrOutput) Elem() OpenpipelineV2BizeventsPipelinesProductAllocationProcessorsProcessorSmartscapeNodeOutput {
-	return o.ApplyT(func(v *OpenpipelineV2BizeventsPipelinesProductAllocationProcessorsProcessorSmartscapeNode) OpenpipelineV2BizeventsPipelinesProductAllocationProcessorsProcessorSmartscapeNode {
-		if v != nil {
-			return *v
-		}
-		var ret OpenpipelineV2BizeventsPipelinesProductAllocationProcessorsProcessorSmartscapeNode
-		return ret
-	}).(OpenpipelineV2BizeventsPipelinesProductAllocationProcessorsProcessorSmartscapeNodeOutput)
-}
-
-// Extract node
-func (o OpenpipelineV2BizeventsPipelinesProductAllocationProcessorsProcessorSmartscapeNodePtrOutput) ExtractNode() pulumi.BoolPtrOutput {
-	return o.ApplyT(func(v *OpenpipelineV2BizeventsPipelinesProductAllocationProcessorsProcessorSmartscapeNode) *bool {
-		if v == nil {
-			return nil
-		}
-		return &v.ExtractNode
-	}).(pulumi.BoolPtrOutput)
-}
-
-// Fields to extract
-func (o OpenpipelineV2BizeventsPipelinesProductAllocationProcessorsProcessorSmartscapeNodePtrOutput) FieldsToExtract() OpenpipelineV2BizeventsPipelinesProductAllocationProcessorsProcessorSmartscapeNodeFieldsToExtractPtrOutput {
-	return o.ApplyT(func(v *OpenpipelineV2BizeventsPipelinesProductAllocationProcessorsProcessorSmartscapeNode) *OpenpipelineV2BizeventsPipelinesProductAllocationProcessorsProcessorSmartscapeNodeFieldsToExtract {
-		if v == nil {
-			return nil
-		}
-		return v.FieldsToExtract
-	}).(OpenpipelineV2BizeventsPipelinesProductAllocationProcessorsProcessorSmartscapeNodeFieldsToExtractPtrOutput)
-}
-
-// ID components
-func (o OpenpipelineV2BizeventsPipelinesProductAllocationProcessorsProcessorSmartscapeNodePtrOutput) IdComponents() OpenpipelineV2BizeventsPipelinesProductAllocationProcessorsProcessorSmartscapeNodeIdComponentsPtrOutput {
-	return o.ApplyT(func(v *OpenpipelineV2BizeventsPipelinesProductAllocationProcessorsProcessorSmartscapeNode) *OpenpipelineV2BizeventsPipelinesProductAllocationProcessorsProcessorSmartscapeNodeIdComponents {
-		if v == nil {
-			return nil
-		}
-		return &v.IdComponents
-	}).(OpenpipelineV2BizeventsPipelinesProductAllocationProcessorsProcessorSmartscapeNodeIdComponentsPtrOutput)
-}
-
-// Node ID field name
-func (o OpenpipelineV2BizeventsPipelinesProductAllocationProcessorsProcessorSmartscapeNodePtrOutput) NodeIdFieldName() pulumi.StringPtrOutput {
-	return o.ApplyT(func(v *OpenpipelineV2BizeventsPipelinesProductAllocationProcessorsProcessorSmartscapeNode) *string {
-		if v == nil {
-			return nil
-		}
-		return &v.NodeIdFieldName
-	}).(pulumi.StringPtrOutput)
-}
-
-// Node name
-func (o OpenpipelineV2BizeventsPipelinesProductAllocationProcessorsProcessorSmartscapeNodePtrOutput) NodeName() OpenpipelineV2BizeventsPipelinesProductAllocationProcessorsProcessorSmartscapeNodeNodeNamePtrOutput {
-	return o.ApplyT(func(v *OpenpipelineV2BizeventsPipelinesProductAllocationProcessorsProcessorSmartscapeNode) *OpenpipelineV2BizeventsPipelinesProductAllocationProcessorsProcessorSmartscapeNodeNodeName {
-		if v == nil {
-			return nil
-		}
-		return v.NodeName
-	}).(OpenpipelineV2BizeventsPipelinesProductAllocationProcessorsProcessorSmartscapeNodeNodeNamePtrOutput)
-}
-
-// Node type
-func (o OpenpipelineV2BizeventsPipelinesProductAllocationProcessorsProcessorSmartscapeNodePtrOutput) NodeType() pulumi.StringPtrOutput {
-	return o.ApplyT(func(v *OpenpipelineV2BizeventsPipelinesProductAllocationProcessorsProcessorSmartscapeNode) *string {
-		if v == nil {
-			return nil
-		}
-		return &v.NodeType
-	}).(pulumi.StringPtrOutput)
-}
-
-// Static edges to extract
-func (o OpenpipelineV2BizeventsPipelinesProductAllocationProcessorsProcessorSmartscapeNodePtrOutput) StaticEdgesToExtract() OpenpipelineV2BizeventsPipelinesProductAllocationProcessorsProcessorSmartscapeNodeStaticEdgesToExtractPtrOutput {
-	return o.ApplyT(func(v *OpenpipelineV2BizeventsPipelinesProductAllocationProcessorsProcessorSmartscapeNode) *OpenpipelineV2BizeventsPipelinesProductAllocationProcessorsProcessorSmartscapeNodeStaticEdgesToExtract {
-		if v == nil {
-			return nil
-		}
-		return v.StaticEdgesToExtract
-	}).(OpenpipelineV2BizeventsPipelinesProductAllocationProcessorsProcessorSmartscapeNodeStaticEdgesToExtractPtrOutput)
-}
-
-type OpenpipelineV2BizeventsPipelinesProductAllocationProcessorsProcessorSmartscapeNodeFieldsToExtract struct {
-	SmartscapeFieldExtractionEntries []OpenpipelineV2BizeventsPipelinesProductAllocationProcessorsProcessorSmartscapeNodeFieldsToExtractSmartscapeFieldExtractionEntry `pulumi:"smartscapeFieldExtractionEntries"`
-}
-
-// OpenpipelineV2BizeventsPipelinesProductAllocationProcessorsProcessorSmartscapeNodeFieldsToExtractInput is an input type that accepts OpenpipelineV2BizeventsPipelinesProductAllocationProcessorsProcessorSmartscapeNodeFieldsToExtractArgs and OpenpipelineV2BizeventsPipelinesProductAllocationProcessorsProcessorSmartscapeNodeFieldsToExtractOutput values.
-// You can construct a concrete instance of `OpenpipelineV2BizeventsPipelinesProductAllocationProcessorsProcessorSmartscapeNodeFieldsToExtractInput` via:
-//
-//	OpenpipelineV2BizeventsPipelinesProductAllocationProcessorsProcessorSmartscapeNodeFieldsToExtractArgs{...}
-type OpenpipelineV2BizeventsPipelinesProductAllocationProcessorsProcessorSmartscapeNodeFieldsToExtractInput interface {
-	pulumi.Input
-
-	ToOpenpipelineV2BizeventsPipelinesProductAllocationProcessorsProcessorSmartscapeNodeFieldsToExtractOutput() OpenpipelineV2BizeventsPipelinesProductAllocationProcessorsProcessorSmartscapeNodeFieldsToExtractOutput
-	ToOpenpipelineV2BizeventsPipelinesProductAllocationProcessorsProcessorSmartscapeNodeFieldsToExtractOutputWithContext(context.Context) OpenpipelineV2BizeventsPipelinesProductAllocationProcessorsProcessorSmartscapeNodeFieldsToExtractOutput
-}
-
-type OpenpipelineV2BizeventsPipelinesProductAllocationProcessorsProcessorSmartscapeNodeFieldsToExtractArgs struct {
-	SmartscapeFieldExtractionEntries OpenpipelineV2BizeventsPipelinesProductAllocationProcessorsProcessorSmartscapeNodeFieldsToExtractSmartscapeFieldExtractionEntryArrayInput `pulumi:"smartscapeFieldExtractionEntries"`
-}
-
-func (OpenpipelineV2BizeventsPipelinesProductAllocationProcessorsProcessorSmartscapeNodeFieldsToExtractArgs) ElementType() reflect.Type {
-	return reflect.TypeOf((*OpenpipelineV2BizeventsPipelinesProductAllocationProcessorsProcessorSmartscapeNodeFieldsToExtract)(nil)).Elem()
-}
-
-func (i OpenpipelineV2BizeventsPipelinesProductAllocationProcessorsProcessorSmartscapeNodeFieldsToExtractArgs) ToOpenpipelineV2BizeventsPipelinesProductAllocationProcessorsProcessorSmartscapeNodeFieldsToExtractOutput() OpenpipelineV2BizeventsPipelinesProductAllocationProcessorsProcessorSmartscapeNodeFieldsToExtractOutput {
-	return i.ToOpenpipelineV2BizeventsPipelinesProductAllocationProcessorsProcessorSmartscapeNodeFieldsToExtractOutputWithContext(context.Background())
-}
-
-func (i OpenpipelineV2BizeventsPipelinesProductAllocationProcessorsProcessorSmartscapeNodeFieldsToExtractArgs) ToOpenpipelineV2BizeventsPipelinesProductAllocationProcessorsProcessorSmartscapeNodeFieldsToExtractOutputWithContext(ctx context.Context) OpenpipelineV2BizeventsPipelinesProductAllocationProcessorsProcessorSmartscapeNodeFieldsToExtractOutput {
-	return pulumi.ToOutputWithContext(ctx, i).(OpenpipelineV2BizeventsPipelinesProductAllocationProcessorsProcessorSmartscapeNodeFieldsToExtractOutput)
-}
-
-func (i OpenpipelineV2BizeventsPipelinesProductAllocationProcessorsProcessorSmartscapeNodeFieldsToExtractArgs) ToOpenpipelineV2BizeventsPipelinesProductAllocationProcessorsProcessorSmartscapeNodeFieldsToExtractPtrOutput() OpenpipelineV2BizeventsPipelinesProductAllocationProcessorsProcessorSmartscapeNodeFieldsToExtractPtrOutput {
-	return i.ToOpenpipelineV2BizeventsPipelinesProductAllocationProcessorsProcessorSmartscapeNodeFieldsToExtractPtrOutputWithContext(context.Background())
-}
-
-func (i OpenpipelineV2BizeventsPipelinesProductAllocationProcessorsProcessorSmartscapeNodeFieldsToExtractArgs) ToOpenpipelineV2BizeventsPipelinesProductAllocationProcessorsProcessorSmartscapeNodeFieldsToExtractPtrOutputWithContext(ctx context.Context) OpenpipelineV2BizeventsPipelinesProductAllocationProcessorsProcessorSmartscapeNodeFieldsToExtractPtrOutput {
-	return pulumi.ToOutputWithContext(ctx, i).(OpenpipelineV2BizeventsPipelinesProductAllocationProcessorsProcessorSmartscapeNodeFieldsToExtractOutput).ToOpenpipelineV2BizeventsPipelinesProductAllocationProcessorsProcessorSmartscapeNodeFieldsToExtractPtrOutputWithContext(ctx)
-}
-
-// OpenpipelineV2BizeventsPipelinesProductAllocationProcessorsProcessorSmartscapeNodeFieldsToExtractPtrInput is an input type that accepts OpenpipelineV2BizeventsPipelinesProductAllocationProcessorsProcessorSmartscapeNodeFieldsToExtractArgs, OpenpipelineV2BizeventsPipelinesProductAllocationProcessorsProcessorSmartscapeNodeFieldsToExtractPtr and OpenpipelineV2BizeventsPipelinesProductAllocationProcessorsProcessorSmartscapeNodeFieldsToExtractPtrOutput values.
-// You can construct a concrete instance of `OpenpipelineV2BizeventsPipelinesProductAllocationProcessorsProcessorSmartscapeNodeFieldsToExtractPtrInput` via:
-//
-//	        OpenpipelineV2BizeventsPipelinesProductAllocationProcessorsProcessorSmartscapeNodeFieldsToExtractArgs{...}
-//
-//	or:
-//
-//	        nil
-type OpenpipelineV2BizeventsPipelinesProductAllocationProcessorsProcessorSmartscapeNodeFieldsToExtractPtrInput interface {
-	pulumi.Input
-
-	ToOpenpipelineV2BizeventsPipelinesProductAllocationProcessorsProcessorSmartscapeNodeFieldsToExtractPtrOutput() OpenpipelineV2BizeventsPipelinesProductAllocationProcessorsProcessorSmartscapeNodeFieldsToExtractPtrOutput
-	ToOpenpipelineV2BizeventsPipelinesProductAllocationProcessorsProcessorSmartscapeNodeFieldsToExtractPtrOutputWithContext(context.Context) OpenpipelineV2BizeventsPipelinesProductAllocationProcessorsProcessorSmartscapeNodeFieldsToExtractPtrOutput
-}
-
-type openpipelineV2BizeventsPipelinesProductAllocationProcessorsProcessorSmartscapeNodeFieldsToExtractPtrType OpenpipelineV2BizeventsPipelinesProductAllocationProcessorsProcessorSmartscapeNodeFieldsToExtractArgs
-
-func OpenpipelineV2BizeventsPipelinesProductAllocationProcessorsProcessorSmartscapeNodeFieldsToExtractPtr(v *OpenpipelineV2BizeventsPipelinesProductAllocationProcessorsProcessorSmartscapeNodeFieldsToExtractArgs) OpenpipelineV2BizeventsPipelinesProductAllocationProcessorsProcessorSmartscapeNodeFieldsToExtractPtrInput {
-	return (*openpipelineV2BizeventsPipelinesProductAllocationProcessorsProcessorSmartscapeNodeFieldsToExtractPtrType)(v)
-}
-
-func (*openpipelineV2BizeventsPipelinesProductAllocationProcessorsProcessorSmartscapeNodeFieldsToExtractPtrType) ElementType() reflect.Type {
-	return reflect.TypeOf((**OpenpipelineV2BizeventsPipelinesProductAllocationProcessorsProcessorSmartscapeNodeFieldsToExtract)(nil)).Elem()
-}
-
-func (i *openpipelineV2BizeventsPipelinesProductAllocationProcessorsProcessorSmartscapeNodeFieldsToExtractPtrType) ToOpenpipelineV2BizeventsPipelinesProductAllocationProcessorsProcessorSmartscapeNodeFieldsToExtractPtrOutput() OpenpipelineV2BizeventsPipelinesProductAllocationProcessorsProcessorSmartscapeNodeFieldsToExtractPtrOutput {
-	return i.ToOpenpipelineV2BizeventsPipelinesProductAllocationProcessorsProcessorSmartscapeNodeFieldsToExtractPtrOutputWithContext(context.Background())
-}
-
-func (i *openpipelineV2BizeventsPipelinesProductAllocationProcessorsProcessorSmartscapeNodeFieldsToExtractPtrType) ToOpenpipelineV2BizeventsPipelinesProductAllocationProcessorsProcessorSmartscapeNodeFieldsToExtractPtrOutputWithContext(ctx context.Context) OpenpipelineV2BizeventsPipelinesProductAllocationProcessorsProcessorSmartscapeNodeFieldsToExtractPtrOutput {
-	return pulumi.ToOutputWithContext(ctx, i).(OpenpipelineV2BizeventsPipelinesProductAllocationProcessorsProcessorSmartscapeNodeFieldsToExtractPtrOutput)
-}
-
-type OpenpipelineV2BizeventsPipelinesProductAllocationProcessorsProcessorSmartscapeNodeFieldsToExtractOutput struct{ *pulumi.OutputState }
-
-func (OpenpipelineV2BizeventsPipelinesProductAllocationProcessorsProcessorSmartscapeNodeFieldsToExtractOutput) ElementType() reflect.Type {
-	return reflect.TypeOf((*OpenpipelineV2BizeventsPipelinesProductAllocationProcessorsProcessorSmartscapeNodeFieldsToExtract)(nil)).Elem()
-}
-
-func (o OpenpipelineV2BizeventsPipelinesProductAllocationProcessorsProcessorSmartscapeNodeFieldsToExtractOutput) ToOpenpipelineV2BizeventsPipelinesProductAllocationProcessorsProcessorSmartscapeNodeFieldsToExtractOutput() OpenpipelineV2BizeventsPipelinesProductAllocationProcessorsProcessorSmartscapeNodeFieldsToExtractOutput {
-	return o
-}
-
-func (o OpenpipelineV2BizeventsPipelinesProductAllocationProcessorsProcessorSmartscapeNodeFieldsToExtractOutput) ToOpenpipelineV2BizeventsPipelinesProductAllocationProcessorsProcessorSmartscapeNodeFieldsToExtractOutputWithContext(ctx context.Context) OpenpipelineV2BizeventsPipelinesProductAllocationProcessorsProcessorSmartscapeNodeFieldsToExtractOutput {
-	return o
-}
-
-func (o OpenpipelineV2BizeventsPipelinesProductAllocationProcessorsProcessorSmartscapeNodeFieldsToExtractOutput) ToOpenpipelineV2BizeventsPipelinesProductAllocationProcessorsProcessorSmartscapeNodeFieldsToExtractPtrOutput() OpenpipelineV2BizeventsPipelinesProductAllocationProcessorsProcessorSmartscapeNodeFieldsToExtractPtrOutput {
-	return o.ToOpenpipelineV2BizeventsPipelinesProductAllocationProcessorsProcessorSmartscapeNodeFieldsToExtractPtrOutputWithContext(context.Background())
-}
-
-func (o OpenpipelineV2BizeventsPipelinesProductAllocationProcessorsProcessorSmartscapeNodeFieldsToExtractOutput) ToOpenpipelineV2BizeventsPipelinesProductAllocationProcessorsProcessorSmartscapeNodeFieldsToExtractPtrOutputWithContext(ctx context.Context) OpenpipelineV2BizeventsPipelinesProductAllocationProcessorsProcessorSmartscapeNodeFieldsToExtractPtrOutput {
-	return o.ApplyTWithContext(ctx, func(_ context.Context, v OpenpipelineV2BizeventsPipelinesProductAllocationProcessorsProcessorSmartscapeNodeFieldsToExtract) *OpenpipelineV2BizeventsPipelinesProductAllocationProcessorsProcessorSmartscapeNodeFieldsToExtract {
-		return &v
-	}).(OpenpipelineV2BizeventsPipelinesProductAllocationProcessorsProcessorSmartscapeNodeFieldsToExtractPtrOutput)
-}
-
-func (o OpenpipelineV2BizeventsPipelinesProductAllocationProcessorsProcessorSmartscapeNodeFieldsToExtractOutput) SmartscapeFieldExtractionEntries() OpenpipelineV2BizeventsPipelinesProductAllocationProcessorsProcessorSmartscapeNodeFieldsToExtractSmartscapeFieldExtractionEntryArrayOutput {
-	return o.ApplyT(func(v OpenpipelineV2BizeventsPipelinesProductAllocationProcessorsProcessorSmartscapeNodeFieldsToExtract) []OpenpipelineV2BizeventsPipelinesProductAllocationProcessorsProcessorSmartscapeNodeFieldsToExtractSmartscapeFieldExtractionEntry {
-		return v.SmartscapeFieldExtractionEntries
-	}).(OpenpipelineV2BizeventsPipelinesProductAllocationProcessorsProcessorSmartscapeNodeFieldsToExtractSmartscapeFieldExtractionEntryArrayOutput)
-}
-
-type OpenpipelineV2BizeventsPipelinesProductAllocationProcessorsProcessorSmartscapeNodeFieldsToExtractPtrOutput struct{ *pulumi.OutputState }
-
-func (OpenpipelineV2BizeventsPipelinesProductAllocationProcessorsProcessorSmartscapeNodeFieldsToExtractPtrOutput) ElementType() reflect.Type {
-	return reflect.TypeOf((**OpenpipelineV2BizeventsPipelinesProductAllocationProcessorsProcessorSmartscapeNodeFieldsToExtract)(nil)).Elem()
-}
-
-func (o OpenpipelineV2BizeventsPipelinesProductAllocationProcessorsProcessorSmartscapeNodeFieldsToExtractPtrOutput) ToOpenpipelineV2BizeventsPipelinesProductAllocationProcessorsProcessorSmartscapeNodeFieldsToExtractPtrOutput() OpenpipelineV2BizeventsPipelinesProductAllocationProcessorsProcessorSmartscapeNodeFieldsToExtractPtrOutput {
-	return o
-}
-
-func (o OpenpipelineV2BizeventsPipelinesProductAllocationProcessorsProcessorSmartscapeNodeFieldsToExtractPtrOutput) ToOpenpipelineV2BizeventsPipelinesProductAllocationProcessorsProcessorSmartscapeNodeFieldsToExtractPtrOutputWithContext(ctx context.Context) OpenpipelineV2BizeventsPipelinesProductAllocationProcessorsProcessorSmartscapeNodeFieldsToExtractPtrOutput {
-	return o
-}
-
-func (o OpenpipelineV2BizeventsPipelinesProductAllocationProcessorsProcessorSmartscapeNodeFieldsToExtractPtrOutput) Elem() OpenpipelineV2BizeventsPipelinesProductAllocationProcessorsProcessorSmartscapeNodeFieldsToExtractOutput {
-	return o.ApplyT(func(v *OpenpipelineV2BizeventsPipelinesProductAllocationProcessorsProcessorSmartscapeNodeFieldsToExtract) OpenpipelineV2BizeventsPipelinesProductAllocationProcessorsProcessorSmartscapeNodeFieldsToExtract {
-		if v != nil {
-			return *v
-		}
-		var ret OpenpipelineV2BizeventsPipelinesProductAllocationProcessorsProcessorSmartscapeNodeFieldsToExtract
-		return ret
-	}).(OpenpipelineV2BizeventsPipelinesProductAllocationProcessorsProcessorSmartscapeNodeFieldsToExtractOutput)
-}
-
-func (o OpenpipelineV2BizeventsPipelinesProductAllocationProcessorsProcessorSmartscapeNodeFieldsToExtractPtrOutput) SmartscapeFieldExtractionEntries() OpenpipelineV2BizeventsPipelinesProductAllocationProcessorsProcessorSmartscapeNodeFieldsToExtractSmartscapeFieldExtractionEntryArrayOutput {
-	return o.ApplyT(func(v *OpenpipelineV2BizeventsPipelinesProductAllocationProcessorsProcessorSmartscapeNodeFieldsToExtract) []OpenpipelineV2BizeventsPipelinesProductAllocationProcessorsProcessorSmartscapeNodeFieldsToExtractSmartscapeFieldExtractionEntry {
-		if v == nil {
-			return nil
-		}
-		return v.SmartscapeFieldExtractionEntries
-	}).(OpenpipelineV2BizeventsPipelinesProductAllocationProcessorsProcessorSmartscapeNodeFieldsToExtractSmartscapeFieldExtractionEntryArrayOutput)
-}
-
-type OpenpipelineV2BizeventsPipelinesProductAllocationProcessorsProcessorSmartscapeNodeFieldsToExtractSmartscapeFieldExtractionEntry struct {
-	// Field name
-	FieldName *string `pulumi:"fieldName"`
-	// Referenced field name
-	ReferencedFieldName string `pulumi:"referencedFieldName"`
-	// Strategy for field extraction. Possible values: `equals`, `startsWith`
-	Strategy *string `pulumi:"strategy"`
-}
-
-// OpenpipelineV2BizeventsPipelinesProductAllocationProcessorsProcessorSmartscapeNodeFieldsToExtractSmartscapeFieldExtractionEntryInput is an input type that accepts OpenpipelineV2BizeventsPipelinesProductAllocationProcessorsProcessorSmartscapeNodeFieldsToExtractSmartscapeFieldExtractionEntryArgs and OpenpipelineV2BizeventsPipelinesProductAllocationProcessorsProcessorSmartscapeNodeFieldsToExtractSmartscapeFieldExtractionEntryOutput values.
-// You can construct a concrete instance of `OpenpipelineV2BizeventsPipelinesProductAllocationProcessorsProcessorSmartscapeNodeFieldsToExtractSmartscapeFieldExtractionEntryInput` via:
-//
-//	OpenpipelineV2BizeventsPipelinesProductAllocationProcessorsProcessorSmartscapeNodeFieldsToExtractSmartscapeFieldExtractionEntryArgs{...}
-type OpenpipelineV2BizeventsPipelinesProductAllocationProcessorsProcessorSmartscapeNodeFieldsToExtractSmartscapeFieldExtractionEntryInput interface {
-	pulumi.Input
-
-	ToOpenpipelineV2BizeventsPipelinesProductAllocationProcessorsProcessorSmartscapeNodeFieldsToExtractSmartscapeFieldExtractionEntryOutput() OpenpipelineV2BizeventsPipelinesProductAllocationProcessorsProcessorSmartscapeNodeFieldsToExtractSmartscapeFieldExtractionEntryOutput
-	ToOpenpipelineV2BizeventsPipelinesProductAllocationProcessorsProcessorSmartscapeNodeFieldsToExtractSmartscapeFieldExtractionEntryOutputWithContext(context.Context) OpenpipelineV2BizeventsPipelinesProductAllocationProcessorsProcessorSmartscapeNodeFieldsToExtractSmartscapeFieldExtractionEntryOutput
-}
-
-type OpenpipelineV2BizeventsPipelinesProductAllocationProcessorsProcessorSmartscapeNodeFieldsToExtractSmartscapeFieldExtractionEntryArgs struct {
-	// Field name
-	FieldName pulumi.StringPtrInput `pulumi:"fieldName"`
-	// Referenced field name
-	ReferencedFieldName pulumi.StringInput `pulumi:"referencedFieldName"`
-	// Strategy for field extraction. Possible values: `equals`, `startsWith`
-	Strategy pulumi.StringPtrInput `pulumi:"strategy"`
-}
-
-func (OpenpipelineV2BizeventsPipelinesProductAllocationProcessorsProcessorSmartscapeNodeFieldsToExtractSmartscapeFieldExtractionEntryArgs) ElementType() reflect.Type {
-	return reflect.TypeOf((*OpenpipelineV2BizeventsPipelinesProductAllocationProcessorsProcessorSmartscapeNodeFieldsToExtractSmartscapeFieldExtractionEntry)(nil)).Elem()
-}
-
-func (i OpenpipelineV2BizeventsPipelinesProductAllocationProcessorsProcessorSmartscapeNodeFieldsToExtractSmartscapeFieldExtractionEntryArgs) ToOpenpipelineV2BizeventsPipelinesProductAllocationProcessorsProcessorSmartscapeNodeFieldsToExtractSmartscapeFieldExtractionEntryOutput() OpenpipelineV2BizeventsPipelinesProductAllocationProcessorsProcessorSmartscapeNodeFieldsToExtractSmartscapeFieldExtractionEntryOutput {
-	return i.ToOpenpipelineV2BizeventsPipelinesProductAllocationProcessorsProcessorSmartscapeNodeFieldsToExtractSmartscapeFieldExtractionEntryOutputWithContext(context.Background())
-}
-
-func (i OpenpipelineV2BizeventsPipelinesProductAllocationProcessorsProcessorSmartscapeNodeFieldsToExtractSmartscapeFieldExtractionEntryArgs) ToOpenpipelineV2BizeventsPipelinesProductAllocationProcessorsProcessorSmartscapeNodeFieldsToExtractSmartscapeFieldExtractionEntryOutputWithContext(ctx context.Context) OpenpipelineV2BizeventsPipelinesProductAllocationProcessorsProcessorSmartscapeNodeFieldsToExtractSmartscapeFieldExtractionEntryOutput {
-	return pulumi.ToOutputWithContext(ctx, i).(OpenpipelineV2BizeventsPipelinesProductAllocationProcessorsProcessorSmartscapeNodeFieldsToExtractSmartscapeFieldExtractionEntryOutput)
-}
-
-// OpenpipelineV2BizeventsPipelinesProductAllocationProcessorsProcessorSmartscapeNodeFieldsToExtractSmartscapeFieldExtractionEntryArrayInput is an input type that accepts OpenpipelineV2BizeventsPipelinesProductAllocationProcessorsProcessorSmartscapeNodeFieldsToExtractSmartscapeFieldExtractionEntryArray and OpenpipelineV2BizeventsPipelinesProductAllocationProcessorsProcessorSmartscapeNodeFieldsToExtractSmartscapeFieldExtractionEntryArrayOutput values.
-// You can construct a concrete instance of `OpenpipelineV2BizeventsPipelinesProductAllocationProcessorsProcessorSmartscapeNodeFieldsToExtractSmartscapeFieldExtractionEntryArrayInput` via:
-//
-//	OpenpipelineV2BizeventsPipelinesProductAllocationProcessorsProcessorSmartscapeNodeFieldsToExtractSmartscapeFieldExtractionEntryArray{ OpenpipelineV2BizeventsPipelinesProductAllocationProcessorsProcessorSmartscapeNodeFieldsToExtractSmartscapeFieldExtractionEntryArgs{...} }
-type OpenpipelineV2BizeventsPipelinesProductAllocationProcessorsProcessorSmartscapeNodeFieldsToExtractSmartscapeFieldExtractionEntryArrayInput interface {
-	pulumi.Input
-
-	ToOpenpipelineV2BizeventsPipelinesProductAllocationProcessorsProcessorSmartscapeNodeFieldsToExtractSmartscapeFieldExtractionEntryArrayOutput() OpenpipelineV2BizeventsPipelinesProductAllocationProcessorsProcessorSmartscapeNodeFieldsToExtractSmartscapeFieldExtractionEntryArrayOutput
-	ToOpenpipelineV2BizeventsPipelinesProductAllocationProcessorsProcessorSmartscapeNodeFieldsToExtractSmartscapeFieldExtractionEntryArrayOutputWithContext(context.Context) OpenpipelineV2BizeventsPipelinesProductAllocationProcessorsProcessorSmartscapeNodeFieldsToExtractSmartscapeFieldExtractionEntryArrayOutput
-}
-
-type OpenpipelineV2BizeventsPipelinesProductAllocationProcessorsProcessorSmartscapeNodeFieldsToExtractSmartscapeFieldExtractionEntryArray []OpenpipelineV2BizeventsPipelinesProductAllocationProcessorsProcessorSmartscapeNodeFieldsToExtractSmartscapeFieldExtractionEntryInput
-
-func (OpenpipelineV2BizeventsPipelinesProductAllocationProcessorsProcessorSmartscapeNodeFieldsToExtractSmartscapeFieldExtractionEntryArray) ElementType() reflect.Type {
-	return reflect.TypeOf((*[]OpenpipelineV2BizeventsPipelinesProductAllocationProcessorsProcessorSmartscapeNodeFieldsToExtractSmartscapeFieldExtractionEntry)(nil)).Elem()
-}
-
-func (i OpenpipelineV2BizeventsPipelinesProductAllocationProcessorsProcessorSmartscapeNodeFieldsToExtractSmartscapeFieldExtractionEntryArray) ToOpenpipelineV2BizeventsPipelinesProductAllocationProcessorsProcessorSmartscapeNodeFieldsToExtractSmartscapeFieldExtractionEntryArrayOutput() OpenpipelineV2BizeventsPipelinesProductAllocationProcessorsProcessorSmartscapeNodeFieldsToExtractSmartscapeFieldExtractionEntryArrayOutput {
-	return i.ToOpenpipelineV2BizeventsPipelinesProductAllocationProcessorsProcessorSmartscapeNodeFieldsToExtractSmartscapeFieldExtractionEntryArrayOutputWithContext(context.Background())
-}
-
-func (i OpenpipelineV2BizeventsPipelinesProductAllocationProcessorsProcessorSmartscapeNodeFieldsToExtractSmartscapeFieldExtractionEntryArray) ToOpenpipelineV2BizeventsPipelinesProductAllocationProcessorsProcessorSmartscapeNodeFieldsToExtractSmartscapeFieldExtractionEntryArrayOutputWithContext(ctx context.Context) OpenpipelineV2BizeventsPipelinesProductAllocationProcessorsProcessorSmartscapeNodeFieldsToExtractSmartscapeFieldExtractionEntryArrayOutput {
-	return pulumi.ToOutputWithContext(ctx, i).(OpenpipelineV2BizeventsPipelinesProductAllocationProcessorsProcessorSmartscapeNodeFieldsToExtractSmartscapeFieldExtractionEntryArrayOutput)
-}
-
-type OpenpipelineV2BizeventsPipelinesProductAllocationProcessorsProcessorSmartscapeNodeFieldsToExtractSmartscapeFieldExtractionEntryOutput struct{ *pulumi.OutputState }
-
-func (OpenpipelineV2BizeventsPipelinesProductAllocationProcessorsProcessorSmartscapeNodeFieldsToExtractSmartscapeFieldExtractionEntryOutput) ElementType() reflect.Type {
-	return reflect.TypeOf((*OpenpipelineV2BizeventsPipelinesProductAllocationProcessorsProcessorSmartscapeNodeFieldsToExtractSmartscapeFieldExtractionEntry)(nil)).Elem()
-}
-
-func (o OpenpipelineV2BizeventsPipelinesProductAllocationProcessorsProcessorSmartscapeNodeFieldsToExtractSmartscapeFieldExtractionEntryOutput) ToOpenpipelineV2BizeventsPipelinesProductAllocationProcessorsProcessorSmartscapeNodeFieldsToExtractSmartscapeFieldExtractionEntryOutput() OpenpipelineV2BizeventsPipelinesProductAllocationProcessorsProcessorSmartscapeNodeFieldsToExtractSmartscapeFieldExtractionEntryOutput {
-	return o
-}
-
-func (o OpenpipelineV2BizeventsPipelinesProductAllocationProcessorsProcessorSmartscapeNodeFieldsToExtractSmartscapeFieldExtractionEntryOutput) ToOpenpipelineV2BizeventsPipelinesProductAllocationProcessorsProcessorSmartscapeNodeFieldsToExtractSmartscapeFieldExtractionEntryOutputWithContext(ctx context.Context) OpenpipelineV2BizeventsPipelinesProductAllocationProcessorsProcessorSmartscapeNodeFieldsToExtractSmartscapeFieldExtractionEntryOutput {
-	return o
-}
-
-// Field name
-func (o OpenpipelineV2BizeventsPipelinesProductAllocationProcessorsProcessorSmartscapeNodeFieldsToExtractSmartscapeFieldExtractionEntryOutput) FieldName() pulumi.StringPtrOutput {
-	return o.ApplyT(func(v OpenpipelineV2BizeventsPipelinesProductAllocationProcessorsProcessorSmartscapeNodeFieldsToExtractSmartscapeFieldExtractionEntry) *string {
-		return v.FieldName
-	}).(pulumi.StringPtrOutput)
-}
-
-// Referenced field name
-func (o OpenpipelineV2BizeventsPipelinesProductAllocationProcessorsProcessorSmartscapeNodeFieldsToExtractSmartscapeFieldExtractionEntryOutput) ReferencedFieldName() pulumi.StringOutput {
-	return o.ApplyT(func(v OpenpipelineV2BizeventsPipelinesProductAllocationProcessorsProcessorSmartscapeNodeFieldsToExtractSmartscapeFieldExtractionEntry) string {
-		return v.ReferencedFieldName
-	}).(pulumi.StringOutput)
-}
-
-// Strategy for field extraction. Possible values: `equals`, `startsWith`
-func (o OpenpipelineV2BizeventsPipelinesProductAllocationProcessorsProcessorSmartscapeNodeFieldsToExtractSmartscapeFieldExtractionEntryOutput) Strategy() pulumi.StringPtrOutput {
-	return o.ApplyT(func(v OpenpipelineV2BizeventsPipelinesProductAllocationProcessorsProcessorSmartscapeNodeFieldsToExtractSmartscapeFieldExtractionEntry) *string {
-		return v.Strategy
-	}).(pulumi.StringPtrOutput)
-}
-
-type OpenpipelineV2BizeventsPipelinesProductAllocationProcessorsProcessorSmartscapeNodeFieldsToExtractSmartscapeFieldExtractionEntryArrayOutput struct{ *pulumi.OutputState }
-
-func (OpenpipelineV2BizeventsPipelinesProductAllocationProcessorsProcessorSmartscapeNodeFieldsToExtractSmartscapeFieldExtractionEntryArrayOutput) ElementType() reflect.Type {
-	return reflect.TypeOf((*[]OpenpipelineV2BizeventsPipelinesProductAllocationProcessorsProcessorSmartscapeNodeFieldsToExtractSmartscapeFieldExtractionEntry)(nil)).Elem()
-}
-
-func (o OpenpipelineV2BizeventsPipelinesProductAllocationProcessorsProcessorSmartscapeNodeFieldsToExtractSmartscapeFieldExtractionEntryArrayOutput) ToOpenpipelineV2BizeventsPipelinesProductAllocationProcessorsProcessorSmartscapeNodeFieldsToExtractSmartscapeFieldExtractionEntryArrayOutput() OpenpipelineV2BizeventsPipelinesProductAllocationProcessorsProcessorSmartscapeNodeFieldsToExtractSmartscapeFieldExtractionEntryArrayOutput {
-	return o
-}
-
-func (o OpenpipelineV2BizeventsPipelinesProductAllocationProcessorsProcessorSmartscapeNodeFieldsToExtractSmartscapeFieldExtractionEntryArrayOutput) ToOpenpipelineV2BizeventsPipelinesProductAllocationProcessorsProcessorSmartscapeNodeFieldsToExtractSmartscapeFieldExtractionEntryArrayOutputWithContext(ctx context.Context) OpenpipelineV2BizeventsPipelinesProductAllocationProcessorsProcessorSmartscapeNodeFieldsToExtractSmartscapeFieldExtractionEntryArrayOutput {
-	return o
-}
-
-func (o OpenpipelineV2BizeventsPipelinesProductAllocationProcessorsProcessorSmartscapeNodeFieldsToExtractSmartscapeFieldExtractionEntryArrayOutput) Index(i pulumi.IntInput) OpenpipelineV2BizeventsPipelinesProductAllocationProcessorsProcessorSmartscapeNodeFieldsToExtractSmartscapeFieldExtractionEntryOutput {
-	return pulumi.All(o, i).ApplyT(func(vs []interface{}) OpenpipelineV2BizeventsPipelinesProductAllocationProcessorsProcessorSmartscapeNodeFieldsToExtractSmartscapeFieldExtractionEntry {
-		return vs[0].([]OpenpipelineV2BizeventsPipelinesProductAllocationProcessorsProcessorSmartscapeNodeFieldsToExtractSmartscapeFieldExtractionEntry)[vs[1].(int)]
-	}).(OpenpipelineV2BizeventsPipelinesProductAllocationProcessorsProcessorSmartscapeNodeFieldsToExtractSmartscapeFieldExtractionEntryOutput)
-}
-
-type OpenpipelineV2BizeventsPipelinesProductAllocationProcessorsProcessorSmartscapeNodeIdComponents struct {
-	IdComponents []OpenpipelineV2BizeventsPipelinesProductAllocationProcessorsProcessorSmartscapeNodeIdComponentsIdComponent `pulumi:"idComponents"`
-}
-
-// OpenpipelineV2BizeventsPipelinesProductAllocationProcessorsProcessorSmartscapeNodeIdComponentsInput is an input type that accepts OpenpipelineV2BizeventsPipelinesProductAllocationProcessorsProcessorSmartscapeNodeIdComponentsArgs and OpenpipelineV2BizeventsPipelinesProductAllocationProcessorsProcessorSmartscapeNodeIdComponentsOutput values.
-// You can construct a concrete instance of `OpenpipelineV2BizeventsPipelinesProductAllocationProcessorsProcessorSmartscapeNodeIdComponentsInput` via:
-//
-//	OpenpipelineV2BizeventsPipelinesProductAllocationProcessorsProcessorSmartscapeNodeIdComponentsArgs{...}
-type OpenpipelineV2BizeventsPipelinesProductAllocationProcessorsProcessorSmartscapeNodeIdComponentsInput interface {
-	pulumi.Input
-
-	ToOpenpipelineV2BizeventsPipelinesProductAllocationProcessorsProcessorSmartscapeNodeIdComponentsOutput() OpenpipelineV2BizeventsPipelinesProductAllocationProcessorsProcessorSmartscapeNodeIdComponentsOutput
-	ToOpenpipelineV2BizeventsPipelinesProductAllocationProcessorsProcessorSmartscapeNodeIdComponentsOutputWithContext(context.Context) OpenpipelineV2BizeventsPipelinesProductAllocationProcessorsProcessorSmartscapeNodeIdComponentsOutput
-}
-
-type OpenpipelineV2BizeventsPipelinesProductAllocationProcessorsProcessorSmartscapeNodeIdComponentsArgs struct {
-	IdComponents OpenpipelineV2BizeventsPipelinesProductAllocationProcessorsProcessorSmartscapeNodeIdComponentsIdComponentArrayInput `pulumi:"idComponents"`
-}
-
-func (OpenpipelineV2BizeventsPipelinesProductAllocationProcessorsProcessorSmartscapeNodeIdComponentsArgs) ElementType() reflect.Type {
-	return reflect.TypeOf((*OpenpipelineV2BizeventsPipelinesProductAllocationProcessorsProcessorSmartscapeNodeIdComponents)(nil)).Elem()
-}
-
-func (i OpenpipelineV2BizeventsPipelinesProductAllocationProcessorsProcessorSmartscapeNodeIdComponentsArgs) ToOpenpipelineV2BizeventsPipelinesProductAllocationProcessorsProcessorSmartscapeNodeIdComponentsOutput() OpenpipelineV2BizeventsPipelinesProductAllocationProcessorsProcessorSmartscapeNodeIdComponentsOutput {
-	return i.ToOpenpipelineV2BizeventsPipelinesProductAllocationProcessorsProcessorSmartscapeNodeIdComponentsOutputWithContext(context.Background())
-}
-
-func (i OpenpipelineV2BizeventsPipelinesProductAllocationProcessorsProcessorSmartscapeNodeIdComponentsArgs) ToOpenpipelineV2BizeventsPipelinesProductAllocationProcessorsProcessorSmartscapeNodeIdComponentsOutputWithContext(ctx context.Context) OpenpipelineV2BizeventsPipelinesProductAllocationProcessorsProcessorSmartscapeNodeIdComponentsOutput {
-	return pulumi.ToOutputWithContext(ctx, i).(OpenpipelineV2BizeventsPipelinesProductAllocationProcessorsProcessorSmartscapeNodeIdComponentsOutput)
-}
-
-func (i OpenpipelineV2BizeventsPipelinesProductAllocationProcessorsProcessorSmartscapeNodeIdComponentsArgs) ToOpenpipelineV2BizeventsPipelinesProductAllocationProcessorsProcessorSmartscapeNodeIdComponentsPtrOutput() OpenpipelineV2BizeventsPipelinesProductAllocationProcessorsProcessorSmartscapeNodeIdComponentsPtrOutput {
-	return i.ToOpenpipelineV2BizeventsPipelinesProductAllocationProcessorsProcessorSmartscapeNodeIdComponentsPtrOutputWithContext(context.Background())
-}
-
-func (i OpenpipelineV2BizeventsPipelinesProductAllocationProcessorsProcessorSmartscapeNodeIdComponentsArgs) ToOpenpipelineV2BizeventsPipelinesProductAllocationProcessorsProcessorSmartscapeNodeIdComponentsPtrOutputWithContext(ctx context.Context) OpenpipelineV2BizeventsPipelinesProductAllocationProcessorsProcessorSmartscapeNodeIdComponentsPtrOutput {
-	return pulumi.ToOutputWithContext(ctx, i).(OpenpipelineV2BizeventsPipelinesProductAllocationProcessorsProcessorSmartscapeNodeIdComponentsOutput).ToOpenpipelineV2BizeventsPipelinesProductAllocationProcessorsProcessorSmartscapeNodeIdComponentsPtrOutputWithContext(ctx)
-}
-
-// OpenpipelineV2BizeventsPipelinesProductAllocationProcessorsProcessorSmartscapeNodeIdComponentsPtrInput is an input type that accepts OpenpipelineV2BizeventsPipelinesProductAllocationProcessorsProcessorSmartscapeNodeIdComponentsArgs, OpenpipelineV2BizeventsPipelinesProductAllocationProcessorsProcessorSmartscapeNodeIdComponentsPtr and OpenpipelineV2BizeventsPipelinesProductAllocationProcessorsProcessorSmartscapeNodeIdComponentsPtrOutput values.
-// You can construct a concrete instance of `OpenpipelineV2BizeventsPipelinesProductAllocationProcessorsProcessorSmartscapeNodeIdComponentsPtrInput` via:
-//
-//	        OpenpipelineV2BizeventsPipelinesProductAllocationProcessorsProcessorSmartscapeNodeIdComponentsArgs{...}
-//
-//	or:
-//
-//	        nil
-type OpenpipelineV2BizeventsPipelinesProductAllocationProcessorsProcessorSmartscapeNodeIdComponentsPtrInput interface {
-	pulumi.Input
-
-	ToOpenpipelineV2BizeventsPipelinesProductAllocationProcessorsProcessorSmartscapeNodeIdComponentsPtrOutput() OpenpipelineV2BizeventsPipelinesProductAllocationProcessorsProcessorSmartscapeNodeIdComponentsPtrOutput
-	ToOpenpipelineV2BizeventsPipelinesProductAllocationProcessorsProcessorSmartscapeNodeIdComponentsPtrOutputWithContext(context.Context) OpenpipelineV2BizeventsPipelinesProductAllocationProcessorsProcessorSmartscapeNodeIdComponentsPtrOutput
-}
-
-type openpipelineV2BizeventsPipelinesProductAllocationProcessorsProcessorSmartscapeNodeIdComponentsPtrType OpenpipelineV2BizeventsPipelinesProductAllocationProcessorsProcessorSmartscapeNodeIdComponentsArgs
-
-func OpenpipelineV2BizeventsPipelinesProductAllocationProcessorsProcessorSmartscapeNodeIdComponentsPtr(v *OpenpipelineV2BizeventsPipelinesProductAllocationProcessorsProcessorSmartscapeNodeIdComponentsArgs) OpenpipelineV2BizeventsPipelinesProductAllocationProcessorsProcessorSmartscapeNodeIdComponentsPtrInput {
-	return (*openpipelineV2BizeventsPipelinesProductAllocationProcessorsProcessorSmartscapeNodeIdComponentsPtrType)(v)
-}
-
-func (*openpipelineV2BizeventsPipelinesProductAllocationProcessorsProcessorSmartscapeNodeIdComponentsPtrType) ElementType() reflect.Type {
-	return reflect.TypeOf((**OpenpipelineV2BizeventsPipelinesProductAllocationProcessorsProcessorSmartscapeNodeIdComponents)(nil)).Elem()
-}
-
-func (i *openpipelineV2BizeventsPipelinesProductAllocationProcessorsProcessorSmartscapeNodeIdComponentsPtrType) ToOpenpipelineV2BizeventsPipelinesProductAllocationProcessorsProcessorSmartscapeNodeIdComponentsPtrOutput() OpenpipelineV2BizeventsPipelinesProductAllocationProcessorsProcessorSmartscapeNodeIdComponentsPtrOutput {
-	return i.ToOpenpipelineV2BizeventsPipelinesProductAllocationProcessorsProcessorSmartscapeNodeIdComponentsPtrOutputWithContext(context.Background())
-}
-
-func (i *openpipelineV2BizeventsPipelinesProductAllocationProcessorsProcessorSmartscapeNodeIdComponentsPtrType) ToOpenpipelineV2BizeventsPipelinesProductAllocationProcessorsProcessorSmartscapeNodeIdComponentsPtrOutputWithContext(ctx context.Context) OpenpipelineV2BizeventsPipelinesProductAllocationProcessorsProcessorSmartscapeNodeIdComponentsPtrOutput {
-	return pulumi.ToOutputWithContext(ctx, i).(OpenpipelineV2BizeventsPipelinesProductAllocationProcessorsProcessorSmartscapeNodeIdComponentsPtrOutput)
-}
-
-type OpenpipelineV2BizeventsPipelinesProductAllocationProcessorsProcessorSmartscapeNodeIdComponentsOutput struct{ *pulumi.OutputState }
-
-func (OpenpipelineV2BizeventsPipelinesProductAllocationProcessorsProcessorSmartscapeNodeIdComponentsOutput) ElementType() reflect.Type {
-	return reflect.TypeOf((*OpenpipelineV2BizeventsPipelinesProductAllocationProcessorsProcessorSmartscapeNodeIdComponents)(nil)).Elem()
-}
-
-func (o OpenpipelineV2BizeventsPipelinesProductAllocationProcessorsProcessorSmartscapeNodeIdComponentsOutput) ToOpenpipelineV2BizeventsPipelinesProductAllocationProcessorsProcessorSmartscapeNodeIdComponentsOutput() OpenpipelineV2BizeventsPipelinesProductAllocationProcessorsProcessorSmartscapeNodeIdComponentsOutput {
-	return o
-}
-
-func (o OpenpipelineV2BizeventsPipelinesProductAllocationProcessorsProcessorSmartscapeNodeIdComponentsOutput) ToOpenpipelineV2BizeventsPipelinesProductAllocationProcessorsProcessorSmartscapeNodeIdComponentsOutputWithContext(ctx context.Context) OpenpipelineV2BizeventsPipelinesProductAllocationProcessorsProcessorSmartscapeNodeIdComponentsOutput {
-	return o
-}
-
-func (o OpenpipelineV2BizeventsPipelinesProductAllocationProcessorsProcessorSmartscapeNodeIdComponentsOutput) ToOpenpipelineV2BizeventsPipelinesProductAllocationProcessorsProcessorSmartscapeNodeIdComponentsPtrOutput() OpenpipelineV2BizeventsPipelinesProductAllocationProcessorsProcessorSmartscapeNodeIdComponentsPtrOutput {
-	return o.ToOpenpipelineV2BizeventsPipelinesProductAllocationProcessorsProcessorSmartscapeNodeIdComponentsPtrOutputWithContext(context.Background())
-}
-
-func (o OpenpipelineV2BizeventsPipelinesProductAllocationProcessorsProcessorSmartscapeNodeIdComponentsOutput) ToOpenpipelineV2BizeventsPipelinesProductAllocationProcessorsProcessorSmartscapeNodeIdComponentsPtrOutputWithContext(ctx context.Context) OpenpipelineV2BizeventsPipelinesProductAllocationProcessorsProcessorSmartscapeNodeIdComponentsPtrOutput {
-	return o.ApplyTWithContext(ctx, func(_ context.Context, v OpenpipelineV2BizeventsPipelinesProductAllocationProcessorsProcessorSmartscapeNodeIdComponents) *OpenpipelineV2BizeventsPipelinesProductAllocationProcessorsProcessorSmartscapeNodeIdComponents {
-		return &v
-	}).(OpenpipelineV2BizeventsPipelinesProductAllocationProcessorsProcessorSmartscapeNodeIdComponentsPtrOutput)
-}
-
-func (o OpenpipelineV2BizeventsPipelinesProductAllocationProcessorsProcessorSmartscapeNodeIdComponentsOutput) IdComponents() OpenpipelineV2BizeventsPipelinesProductAllocationProcessorsProcessorSmartscapeNodeIdComponentsIdComponentArrayOutput {
-	return o.ApplyT(func(v OpenpipelineV2BizeventsPipelinesProductAllocationProcessorsProcessorSmartscapeNodeIdComponents) []OpenpipelineV2BizeventsPipelinesProductAllocationProcessorsProcessorSmartscapeNodeIdComponentsIdComponent {
-		return v.IdComponents
-	}).(OpenpipelineV2BizeventsPipelinesProductAllocationProcessorsProcessorSmartscapeNodeIdComponentsIdComponentArrayOutput)
-}
-
-type OpenpipelineV2BizeventsPipelinesProductAllocationProcessorsProcessorSmartscapeNodeIdComponentsPtrOutput struct{ *pulumi.OutputState }
-
-func (OpenpipelineV2BizeventsPipelinesProductAllocationProcessorsProcessorSmartscapeNodeIdComponentsPtrOutput) ElementType() reflect.Type {
-	return reflect.TypeOf((**OpenpipelineV2BizeventsPipelinesProductAllocationProcessorsProcessorSmartscapeNodeIdComponents)(nil)).Elem()
-}
-
-func (o OpenpipelineV2BizeventsPipelinesProductAllocationProcessorsProcessorSmartscapeNodeIdComponentsPtrOutput) ToOpenpipelineV2BizeventsPipelinesProductAllocationProcessorsProcessorSmartscapeNodeIdComponentsPtrOutput() OpenpipelineV2BizeventsPipelinesProductAllocationProcessorsProcessorSmartscapeNodeIdComponentsPtrOutput {
-	return o
-}
-
-func (o OpenpipelineV2BizeventsPipelinesProductAllocationProcessorsProcessorSmartscapeNodeIdComponentsPtrOutput) ToOpenpipelineV2BizeventsPipelinesProductAllocationProcessorsProcessorSmartscapeNodeIdComponentsPtrOutputWithContext(ctx context.Context) OpenpipelineV2BizeventsPipelinesProductAllocationProcessorsProcessorSmartscapeNodeIdComponentsPtrOutput {
-	return o
-}
-
-func (o OpenpipelineV2BizeventsPipelinesProductAllocationProcessorsProcessorSmartscapeNodeIdComponentsPtrOutput) Elem() OpenpipelineV2BizeventsPipelinesProductAllocationProcessorsProcessorSmartscapeNodeIdComponentsOutput {
-	return o.ApplyT(func(v *OpenpipelineV2BizeventsPipelinesProductAllocationProcessorsProcessorSmartscapeNodeIdComponents) OpenpipelineV2BizeventsPipelinesProductAllocationProcessorsProcessorSmartscapeNodeIdComponents {
-		if v != nil {
-			return *v
-		}
-		var ret OpenpipelineV2BizeventsPipelinesProductAllocationProcessorsProcessorSmartscapeNodeIdComponents
-		return ret
-	}).(OpenpipelineV2BizeventsPipelinesProductAllocationProcessorsProcessorSmartscapeNodeIdComponentsOutput)
-}
-
-func (o OpenpipelineV2BizeventsPipelinesProductAllocationProcessorsProcessorSmartscapeNodeIdComponentsPtrOutput) IdComponents() OpenpipelineV2BizeventsPipelinesProductAllocationProcessorsProcessorSmartscapeNodeIdComponentsIdComponentArrayOutput {
-	return o.ApplyT(func(v *OpenpipelineV2BizeventsPipelinesProductAllocationProcessorsProcessorSmartscapeNodeIdComponents) []OpenpipelineV2BizeventsPipelinesProductAllocationProcessorsProcessorSmartscapeNodeIdComponentsIdComponent {
-		if v == nil {
-			return nil
-		}
-		return v.IdComponents
-	}).(OpenpipelineV2BizeventsPipelinesProductAllocationProcessorsProcessorSmartscapeNodeIdComponentsIdComponentArrayOutput)
-}
-
-type OpenpipelineV2BizeventsPipelinesProductAllocationProcessorsProcessorSmartscapeNodeIdComponentsIdComponent struct {
-	// ID component
-	IdComponent string `pulumi:"idComponent"`
-	// Referenced field name
-	ReferencedFieldName string `pulumi:"referencedFieldName"`
-}
-
-// OpenpipelineV2BizeventsPipelinesProductAllocationProcessorsProcessorSmartscapeNodeIdComponentsIdComponentInput is an input type that accepts OpenpipelineV2BizeventsPipelinesProductAllocationProcessorsProcessorSmartscapeNodeIdComponentsIdComponentArgs and OpenpipelineV2BizeventsPipelinesProductAllocationProcessorsProcessorSmartscapeNodeIdComponentsIdComponentOutput values.
-// You can construct a concrete instance of `OpenpipelineV2BizeventsPipelinesProductAllocationProcessorsProcessorSmartscapeNodeIdComponentsIdComponentInput` via:
-//
-//	OpenpipelineV2BizeventsPipelinesProductAllocationProcessorsProcessorSmartscapeNodeIdComponentsIdComponentArgs{...}
-type OpenpipelineV2BizeventsPipelinesProductAllocationProcessorsProcessorSmartscapeNodeIdComponentsIdComponentInput interface {
-	pulumi.Input
-
-	ToOpenpipelineV2BizeventsPipelinesProductAllocationProcessorsProcessorSmartscapeNodeIdComponentsIdComponentOutput() OpenpipelineV2BizeventsPipelinesProductAllocationProcessorsProcessorSmartscapeNodeIdComponentsIdComponentOutput
-	ToOpenpipelineV2BizeventsPipelinesProductAllocationProcessorsProcessorSmartscapeNodeIdComponentsIdComponentOutputWithContext(context.Context) OpenpipelineV2BizeventsPipelinesProductAllocationProcessorsProcessorSmartscapeNodeIdComponentsIdComponentOutput
-}
-
-type OpenpipelineV2BizeventsPipelinesProductAllocationProcessorsProcessorSmartscapeNodeIdComponentsIdComponentArgs struct {
-	// ID component
-	IdComponent pulumi.StringInput `pulumi:"idComponent"`
-	// Referenced field name
-	ReferencedFieldName pulumi.StringInput `pulumi:"referencedFieldName"`
-}
-
-func (OpenpipelineV2BizeventsPipelinesProductAllocationProcessorsProcessorSmartscapeNodeIdComponentsIdComponentArgs) ElementType() reflect.Type {
-	return reflect.TypeOf((*OpenpipelineV2BizeventsPipelinesProductAllocationProcessorsProcessorSmartscapeNodeIdComponentsIdComponent)(nil)).Elem()
-}
-
-func (i OpenpipelineV2BizeventsPipelinesProductAllocationProcessorsProcessorSmartscapeNodeIdComponentsIdComponentArgs) ToOpenpipelineV2BizeventsPipelinesProductAllocationProcessorsProcessorSmartscapeNodeIdComponentsIdComponentOutput() OpenpipelineV2BizeventsPipelinesProductAllocationProcessorsProcessorSmartscapeNodeIdComponentsIdComponentOutput {
-	return i.ToOpenpipelineV2BizeventsPipelinesProductAllocationProcessorsProcessorSmartscapeNodeIdComponentsIdComponentOutputWithContext(context.Background())
-}
-
-func (i OpenpipelineV2BizeventsPipelinesProductAllocationProcessorsProcessorSmartscapeNodeIdComponentsIdComponentArgs) ToOpenpipelineV2BizeventsPipelinesProductAllocationProcessorsProcessorSmartscapeNodeIdComponentsIdComponentOutputWithContext(ctx context.Context) OpenpipelineV2BizeventsPipelinesProductAllocationProcessorsProcessorSmartscapeNodeIdComponentsIdComponentOutput {
-	return pulumi.ToOutputWithContext(ctx, i).(OpenpipelineV2BizeventsPipelinesProductAllocationProcessorsProcessorSmartscapeNodeIdComponentsIdComponentOutput)
-}
-
-// OpenpipelineV2BizeventsPipelinesProductAllocationProcessorsProcessorSmartscapeNodeIdComponentsIdComponentArrayInput is an input type that accepts OpenpipelineV2BizeventsPipelinesProductAllocationProcessorsProcessorSmartscapeNodeIdComponentsIdComponentArray and OpenpipelineV2BizeventsPipelinesProductAllocationProcessorsProcessorSmartscapeNodeIdComponentsIdComponentArrayOutput values.
-// You can construct a concrete instance of `OpenpipelineV2BizeventsPipelinesProductAllocationProcessorsProcessorSmartscapeNodeIdComponentsIdComponentArrayInput` via:
-//
-//	OpenpipelineV2BizeventsPipelinesProductAllocationProcessorsProcessorSmartscapeNodeIdComponentsIdComponentArray{ OpenpipelineV2BizeventsPipelinesProductAllocationProcessorsProcessorSmartscapeNodeIdComponentsIdComponentArgs{...} }
-type OpenpipelineV2BizeventsPipelinesProductAllocationProcessorsProcessorSmartscapeNodeIdComponentsIdComponentArrayInput interface {
-	pulumi.Input
-
-	ToOpenpipelineV2BizeventsPipelinesProductAllocationProcessorsProcessorSmartscapeNodeIdComponentsIdComponentArrayOutput() OpenpipelineV2BizeventsPipelinesProductAllocationProcessorsProcessorSmartscapeNodeIdComponentsIdComponentArrayOutput
-	ToOpenpipelineV2BizeventsPipelinesProductAllocationProcessorsProcessorSmartscapeNodeIdComponentsIdComponentArrayOutputWithContext(context.Context) OpenpipelineV2BizeventsPipelinesProductAllocationProcessorsProcessorSmartscapeNodeIdComponentsIdComponentArrayOutput
-}
-
-type OpenpipelineV2BizeventsPipelinesProductAllocationProcessorsProcessorSmartscapeNodeIdComponentsIdComponentArray []OpenpipelineV2BizeventsPipelinesProductAllocationProcessorsProcessorSmartscapeNodeIdComponentsIdComponentInput
-
-func (OpenpipelineV2BizeventsPipelinesProductAllocationProcessorsProcessorSmartscapeNodeIdComponentsIdComponentArray) ElementType() reflect.Type {
-	return reflect.TypeOf((*[]OpenpipelineV2BizeventsPipelinesProductAllocationProcessorsProcessorSmartscapeNodeIdComponentsIdComponent)(nil)).Elem()
-}
-
-func (i OpenpipelineV2BizeventsPipelinesProductAllocationProcessorsProcessorSmartscapeNodeIdComponentsIdComponentArray) ToOpenpipelineV2BizeventsPipelinesProductAllocationProcessorsProcessorSmartscapeNodeIdComponentsIdComponentArrayOutput() OpenpipelineV2BizeventsPipelinesProductAllocationProcessorsProcessorSmartscapeNodeIdComponentsIdComponentArrayOutput {
-	return i.ToOpenpipelineV2BizeventsPipelinesProductAllocationProcessorsProcessorSmartscapeNodeIdComponentsIdComponentArrayOutputWithContext(context.Background())
-}
-
-func (i OpenpipelineV2BizeventsPipelinesProductAllocationProcessorsProcessorSmartscapeNodeIdComponentsIdComponentArray) ToOpenpipelineV2BizeventsPipelinesProductAllocationProcessorsProcessorSmartscapeNodeIdComponentsIdComponentArrayOutputWithContext(ctx context.Context) OpenpipelineV2BizeventsPipelinesProductAllocationProcessorsProcessorSmartscapeNodeIdComponentsIdComponentArrayOutput {
-	return pulumi.ToOutputWithContext(ctx, i).(OpenpipelineV2BizeventsPipelinesProductAllocationProcessorsProcessorSmartscapeNodeIdComponentsIdComponentArrayOutput)
-}
-
-type OpenpipelineV2BizeventsPipelinesProductAllocationProcessorsProcessorSmartscapeNodeIdComponentsIdComponentOutput struct{ *pulumi.OutputState }
-
-func (OpenpipelineV2BizeventsPipelinesProductAllocationProcessorsProcessorSmartscapeNodeIdComponentsIdComponentOutput) ElementType() reflect.Type {
-	return reflect.TypeOf((*OpenpipelineV2BizeventsPipelinesProductAllocationProcessorsProcessorSmartscapeNodeIdComponentsIdComponent)(nil)).Elem()
-}
-
-func (o OpenpipelineV2BizeventsPipelinesProductAllocationProcessorsProcessorSmartscapeNodeIdComponentsIdComponentOutput) ToOpenpipelineV2BizeventsPipelinesProductAllocationProcessorsProcessorSmartscapeNodeIdComponentsIdComponentOutput() OpenpipelineV2BizeventsPipelinesProductAllocationProcessorsProcessorSmartscapeNodeIdComponentsIdComponentOutput {
-	return o
-}
-
-func (o OpenpipelineV2BizeventsPipelinesProductAllocationProcessorsProcessorSmartscapeNodeIdComponentsIdComponentOutput) ToOpenpipelineV2BizeventsPipelinesProductAllocationProcessorsProcessorSmartscapeNodeIdComponentsIdComponentOutputWithContext(ctx context.Context) OpenpipelineV2BizeventsPipelinesProductAllocationProcessorsProcessorSmartscapeNodeIdComponentsIdComponentOutput {
-	return o
-}
-
-// ID component
-func (o OpenpipelineV2BizeventsPipelinesProductAllocationProcessorsProcessorSmartscapeNodeIdComponentsIdComponentOutput) IdComponent() pulumi.StringOutput {
-	return o.ApplyT(func(v OpenpipelineV2BizeventsPipelinesProductAllocationProcessorsProcessorSmartscapeNodeIdComponentsIdComponent) string {
-		return v.IdComponent
-	}).(pulumi.StringOutput)
-}
-
-// Referenced field name
-func (o OpenpipelineV2BizeventsPipelinesProductAllocationProcessorsProcessorSmartscapeNodeIdComponentsIdComponentOutput) ReferencedFieldName() pulumi.StringOutput {
-	return o.ApplyT(func(v OpenpipelineV2BizeventsPipelinesProductAllocationProcessorsProcessorSmartscapeNodeIdComponentsIdComponent) string {
-		return v.ReferencedFieldName
-	}).(pulumi.StringOutput)
-}
-
-type OpenpipelineV2BizeventsPipelinesProductAllocationProcessorsProcessorSmartscapeNodeIdComponentsIdComponentArrayOutput struct{ *pulumi.OutputState }
-
-func (OpenpipelineV2BizeventsPipelinesProductAllocationProcessorsProcessorSmartscapeNodeIdComponentsIdComponentArrayOutput) ElementType() reflect.Type {
-	return reflect.TypeOf((*[]OpenpipelineV2BizeventsPipelinesProductAllocationProcessorsProcessorSmartscapeNodeIdComponentsIdComponent)(nil)).Elem()
-}
-
-func (o OpenpipelineV2BizeventsPipelinesProductAllocationProcessorsProcessorSmartscapeNodeIdComponentsIdComponentArrayOutput) ToOpenpipelineV2BizeventsPipelinesProductAllocationProcessorsProcessorSmartscapeNodeIdComponentsIdComponentArrayOutput() OpenpipelineV2BizeventsPipelinesProductAllocationProcessorsProcessorSmartscapeNodeIdComponentsIdComponentArrayOutput {
-	return o
-}
-
-func (o OpenpipelineV2BizeventsPipelinesProductAllocationProcessorsProcessorSmartscapeNodeIdComponentsIdComponentArrayOutput) ToOpenpipelineV2BizeventsPipelinesProductAllocationProcessorsProcessorSmartscapeNodeIdComponentsIdComponentArrayOutputWithContext(ctx context.Context) OpenpipelineV2BizeventsPipelinesProductAllocationProcessorsProcessorSmartscapeNodeIdComponentsIdComponentArrayOutput {
-	return o
-}
-
-func (o OpenpipelineV2BizeventsPipelinesProductAllocationProcessorsProcessorSmartscapeNodeIdComponentsIdComponentArrayOutput) Index(i pulumi.IntInput) OpenpipelineV2BizeventsPipelinesProductAllocationProcessorsProcessorSmartscapeNodeIdComponentsIdComponentOutput {
-	return pulumi.All(o, i).ApplyT(func(vs []interface{}) OpenpipelineV2BizeventsPipelinesProductAllocationProcessorsProcessorSmartscapeNodeIdComponentsIdComponent {
-		return vs[0].([]OpenpipelineV2BizeventsPipelinesProductAllocationProcessorsProcessorSmartscapeNodeIdComponentsIdComponent)[vs[1].(int)]
-	}).(OpenpipelineV2BizeventsPipelinesProductAllocationProcessorsProcessorSmartscapeNodeIdComponentsIdComponentOutput)
-}
-
-type OpenpipelineV2BizeventsPipelinesProductAllocationProcessorsProcessorSmartscapeNodeNodeName struct {
-	// Constant value
-	Constant *string `pulumi:"constant"`
-	// Value from field
-	Field *OpenpipelineV2BizeventsPipelinesProductAllocationProcessorsProcessorSmartscapeNodeNodeNameField `pulumi:"field"`
-	// Constant multi value
-	MultiValueConstants []string `pulumi:"multiValueConstants"`
-	// Type of value assignment. Possible values: `constant`, `field`, `multiValueConstant`
-	Type string `pulumi:"type"`
-}
-
-// OpenpipelineV2BizeventsPipelinesProductAllocationProcessorsProcessorSmartscapeNodeNodeNameInput is an input type that accepts OpenpipelineV2BizeventsPipelinesProductAllocationProcessorsProcessorSmartscapeNodeNodeNameArgs and OpenpipelineV2BizeventsPipelinesProductAllocationProcessorsProcessorSmartscapeNodeNodeNameOutput values.
-// You can construct a concrete instance of `OpenpipelineV2BizeventsPipelinesProductAllocationProcessorsProcessorSmartscapeNodeNodeNameInput` via:
-//
-//	OpenpipelineV2BizeventsPipelinesProductAllocationProcessorsProcessorSmartscapeNodeNodeNameArgs{...}
-type OpenpipelineV2BizeventsPipelinesProductAllocationProcessorsProcessorSmartscapeNodeNodeNameInput interface {
-	pulumi.Input
-
-	ToOpenpipelineV2BizeventsPipelinesProductAllocationProcessorsProcessorSmartscapeNodeNodeNameOutput() OpenpipelineV2BizeventsPipelinesProductAllocationProcessorsProcessorSmartscapeNodeNodeNameOutput
-	ToOpenpipelineV2BizeventsPipelinesProductAllocationProcessorsProcessorSmartscapeNodeNodeNameOutputWithContext(context.Context) OpenpipelineV2BizeventsPipelinesProductAllocationProcessorsProcessorSmartscapeNodeNodeNameOutput
-}
-
-type OpenpipelineV2BizeventsPipelinesProductAllocationProcessorsProcessorSmartscapeNodeNodeNameArgs struct {
-	// Constant value
-	Constant pulumi.StringPtrInput `pulumi:"constant"`
-	// Value from field
-	Field OpenpipelineV2BizeventsPipelinesProductAllocationProcessorsProcessorSmartscapeNodeNodeNameFieldPtrInput `pulumi:"field"`
-	// Constant multi value
-	MultiValueConstants pulumi.StringArrayInput `pulumi:"multiValueConstants"`
-	// Type of value assignment. Possible values: `constant`, `field`, `multiValueConstant`
-	Type pulumi.StringInput `pulumi:"type"`
-}
-
-func (OpenpipelineV2BizeventsPipelinesProductAllocationProcessorsProcessorSmartscapeNodeNodeNameArgs) ElementType() reflect.Type {
-	return reflect.TypeOf((*OpenpipelineV2BizeventsPipelinesProductAllocationProcessorsProcessorSmartscapeNodeNodeName)(nil)).Elem()
-}
-
-func (i OpenpipelineV2BizeventsPipelinesProductAllocationProcessorsProcessorSmartscapeNodeNodeNameArgs) ToOpenpipelineV2BizeventsPipelinesProductAllocationProcessorsProcessorSmartscapeNodeNodeNameOutput() OpenpipelineV2BizeventsPipelinesProductAllocationProcessorsProcessorSmartscapeNodeNodeNameOutput {
-	return i.ToOpenpipelineV2BizeventsPipelinesProductAllocationProcessorsProcessorSmartscapeNodeNodeNameOutputWithContext(context.Background())
-}
-
-func (i OpenpipelineV2BizeventsPipelinesProductAllocationProcessorsProcessorSmartscapeNodeNodeNameArgs) ToOpenpipelineV2BizeventsPipelinesProductAllocationProcessorsProcessorSmartscapeNodeNodeNameOutputWithContext(ctx context.Context) OpenpipelineV2BizeventsPipelinesProductAllocationProcessorsProcessorSmartscapeNodeNodeNameOutput {
-	return pulumi.ToOutputWithContext(ctx, i).(OpenpipelineV2BizeventsPipelinesProductAllocationProcessorsProcessorSmartscapeNodeNodeNameOutput)
-}
-
-func (i OpenpipelineV2BizeventsPipelinesProductAllocationProcessorsProcessorSmartscapeNodeNodeNameArgs) ToOpenpipelineV2BizeventsPipelinesProductAllocationProcessorsProcessorSmartscapeNodeNodeNamePtrOutput() OpenpipelineV2BizeventsPipelinesProductAllocationProcessorsProcessorSmartscapeNodeNodeNamePtrOutput {
-	return i.ToOpenpipelineV2BizeventsPipelinesProductAllocationProcessorsProcessorSmartscapeNodeNodeNamePtrOutputWithContext(context.Background())
-}
-
-func (i OpenpipelineV2BizeventsPipelinesProductAllocationProcessorsProcessorSmartscapeNodeNodeNameArgs) ToOpenpipelineV2BizeventsPipelinesProductAllocationProcessorsProcessorSmartscapeNodeNodeNamePtrOutputWithContext(ctx context.Context) OpenpipelineV2BizeventsPipelinesProductAllocationProcessorsProcessorSmartscapeNodeNodeNamePtrOutput {
-	return pulumi.ToOutputWithContext(ctx, i).(OpenpipelineV2BizeventsPipelinesProductAllocationProcessorsProcessorSmartscapeNodeNodeNameOutput).ToOpenpipelineV2BizeventsPipelinesProductAllocationProcessorsProcessorSmartscapeNodeNodeNamePtrOutputWithContext(ctx)
-}
-
-// OpenpipelineV2BizeventsPipelinesProductAllocationProcessorsProcessorSmartscapeNodeNodeNamePtrInput is an input type that accepts OpenpipelineV2BizeventsPipelinesProductAllocationProcessorsProcessorSmartscapeNodeNodeNameArgs, OpenpipelineV2BizeventsPipelinesProductAllocationProcessorsProcessorSmartscapeNodeNodeNamePtr and OpenpipelineV2BizeventsPipelinesProductAllocationProcessorsProcessorSmartscapeNodeNodeNamePtrOutput values.
-// You can construct a concrete instance of `OpenpipelineV2BizeventsPipelinesProductAllocationProcessorsProcessorSmartscapeNodeNodeNamePtrInput` via:
-//
-//	        OpenpipelineV2BizeventsPipelinesProductAllocationProcessorsProcessorSmartscapeNodeNodeNameArgs{...}
-//
-//	or:
-//
-//	        nil
-type OpenpipelineV2BizeventsPipelinesProductAllocationProcessorsProcessorSmartscapeNodeNodeNamePtrInput interface {
-	pulumi.Input
-
-	ToOpenpipelineV2BizeventsPipelinesProductAllocationProcessorsProcessorSmartscapeNodeNodeNamePtrOutput() OpenpipelineV2BizeventsPipelinesProductAllocationProcessorsProcessorSmartscapeNodeNodeNamePtrOutput
-	ToOpenpipelineV2BizeventsPipelinesProductAllocationProcessorsProcessorSmartscapeNodeNodeNamePtrOutputWithContext(context.Context) OpenpipelineV2BizeventsPipelinesProductAllocationProcessorsProcessorSmartscapeNodeNodeNamePtrOutput
-}
-
-type openpipelineV2BizeventsPipelinesProductAllocationProcessorsProcessorSmartscapeNodeNodeNamePtrType OpenpipelineV2BizeventsPipelinesProductAllocationProcessorsProcessorSmartscapeNodeNodeNameArgs
-
-func OpenpipelineV2BizeventsPipelinesProductAllocationProcessorsProcessorSmartscapeNodeNodeNamePtr(v *OpenpipelineV2BizeventsPipelinesProductAllocationProcessorsProcessorSmartscapeNodeNodeNameArgs) OpenpipelineV2BizeventsPipelinesProductAllocationProcessorsProcessorSmartscapeNodeNodeNamePtrInput {
-	return (*openpipelineV2BizeventsPipelinesProductAllocationProcessorsProcessorSmartscapeNodeNodeNamePtrType)(v)
-}
-
-func (*openpipelineV2BizeventsPipelinesProductAllocationProcessorsProcessorSmartscapeNodeNodeNamePtrType) ElementType() reflect.Type {
-	return reflect.TypeOf((**OpenpipelineV2BizeventsPipelinesProductAllocationProcessorsProcessorSmartscapeNodeNodeName)(nil)).Elem()
-}
-
-func (i *openpipelineV2BizeventsPipelinesProductAllocationProcessorsProcessorSmartscapeNodeNodeNamePtrType) ToOpenpipelineV2BizeventsPipelinesProductAllocationProcessorsProcessorSmartscapeNodeNodeNamePtrOutput() OpenpipelineV2BizeventsPipelinesProductAllocationProcessorsProcessorSmartscapeNodeNodeNamePtrOutput {
-	return i.ToOpenpipelineV2BizeventsPipelinesProductAllocationProcessorsProcessorSmartscapeNodeNodeNamePtrOutputWithContext(context.Background())
-}
-
-func (i *openpipelineV2BizeventsPipelinesProductAllocationProcessorsProcessorSmartscapeNodeNodeNamePtrType) ToOpenpipelineV2BizeventsPipelinesProductAllocationProcessorsProcessorSmartscapeNodeNodeNamePtrOutputWithContext(ctx context.Context) OpenpipelineV2BizeventsPipelinesProductAllocationProcessorsProcessorSmartscapeNodeNodeNamePtrOutput {
-	return pulumi.ToOutputWithContext(ctx, i).(OpenpipelineV2BizeventsPipelinesProductAllocationProcessorsProcessorSmartscapeNodeNodeNamePtrOutput)
-}
-
-type OpenpipelineV2BizeventsPipelinesProductAllocationProcessorsProcessorSmartscapeNodeNodeNameOutput struct{ *pulumi.OutputState }
-
-func (OpenpipelineV2BizeventsPipelinesProductAllocationProcessorsProcessorSmartscapeNodeNodeNameOutput) ElementType() reflect.Type {
-	return reflect.TypeOf((*OpenpipelineV2BizeventsPipelinesProductAllocationProcessorsProcessorSmartscapeNodeNodeName)(nil)).Elem()
-}
-
-func (o OpenpipelineV2BizeventsPipelinesProductAllocationProcessorsProcessorSmartscapeNodeNodeNameOutput) ToOpenpipelineV2BizeventsPipelinesProductAllocationProcessorsProcessorSmartscapeNodeNodeNameOutput() OpenpipelineV2BizeventsPipelinesProductAllocationProcessorsProcessorSmartscapeNodeNodeNameOutput {
-	return o
-}
-
-func (o OpenpipelineV2BizeventsPipelinesProductAllocationProcessorsProcessorSmartscapeNodeNodeNameOutput) ToOpenpipelineV2BizeventsPipelinesProductAllocationProcessorsProcessorSmartscapeNodeNodeNameOutputWithContext(ctx context.Context) OpenpipelineV2BizeventsPipelinesProductAllocationProcessorsProcessorSmartscapeNodeNodeNameOutput {
-	return o
-}
-
-func (o OpenpipelineV2BizeventsPipelinesProductAllocationProcessorsProcessorSmartscapeNodeNodeNameOutput) ToOpenpipelineV2BizeventsPipelinesProductAllocationProcessorsProcessorSmartscapeNodeNodeNamePtrOutput() OpenpipelineV2BizeventsPipelinesProductAllocationProcessorsProcessorSmartscapeNodeNodeNamePtrOutput {
-	return o.ToOpenpipelineV2BizeventsPipelinesProductAllocationProcessorsProcessorSmartscapeNodeNodeNamePtrOutputWithContext(context.Background())
-}
-
-func (o OpenpipelineV2BizeventsPipelinesProductAllocationProcessorsProcessorSmartscapeNodeNodeNameOutput) ToOpenpipelineV2BizeventsPipelinesProductAllocationProcessorsProcessorSmartscapeNodeNodeNamePtrOutputWithContext(ctx context.Context) OpenpipelineV2BizeventsPipelinesProductAllocationProcessorsProcessorSmartscapeNodeNodeNamePtrOutput {
-	return o.ApplyTWithContext(ctx, func(_ context.Context, v OpenpipelineV2BizeventsPipelinesProductAllocationProcessorsProcessorSmartscapeNodeNodeName) *OpenpipelineV2BizeventsPipelinesProductAllocationProcessorsProcessorSmartscapeNodeNodeName {
-		return &v
-	}).(OpenpipelineV2BizeventsPipelinesProductAllocationProcessorsProcessorSmartscapeNodeNodeNamePtrOutput)
-}
-
-// Constant value
-func (o OpenpipelineV2BizeventsPipelinesProductAllocationProcessorsProcessorSmartscapeNodeNodeNameOutput) Constant() pulumi.StringPtrOutput {
-	return o.ApplyT(func(v OpenpipelineV2BizeventsPipelinesProductAllocationProcessorsProcessorSmartscapeNodeNodeName) *string {
-		return v.Constant
-	}).(pulumi.StringPtrOutput)
-}
-
-// Value from field
-func (o OpenpipelineV2BizeventsPipelinesProductAllocationProcessorsProcessorSmartscapeNodeNodeNameOutput) Field() OpenpipelineV2BizeventsPipelinesProductAllocationProcessorsProcessorSmartscapeNodeNodeNameFieldPtrOutput {
-	return o.ApplyT(func(v OpenpipelineV2BizeventsPipelinesProductAllocationProcessorsProcessorSmartscapeNodeNodeName) *OpenpipelineV2BizeventsPipelinesProductAllocationProcessorsProcessorSmartscapeNodeNodeNameField {
-		return v.Field
-	}).(OpenpipelineV2BizeventsPipelinesProductAllocationProcessorsProcessorSmartscapeNodeNodeNameFieldPtrOutput)
-}
-
-// Constant multi value
-func (o OpenpipelineV2BizeventsPipelinesProductAllocationProcessorsProcessorSmartscapeNodeNodeNameOutput) MultiValueConstants() pulumi.StringArrayOutput {
-	return o.ApplyT(func(v OpenpipelineV2BizeventsPipelinesProductAllocationProcessorsProcessorSmartscapeNodeNodeName) []string {
-		return v.MultiValueConstants
-	}).(pulumi.StringArrayOutput)
-}
-
-// Type of value assignment. Possible values: `constant`, `field`, `multiValueConstant`
-func (o OpenpipelineV2BizeventsPipelinesProductAllocationProcessorsProcessorSmartscapeNodeNodeNameOutput) Type() pulumi.StringOutput {
-	return o.ApplyT(func(v OpenpipelineV2BizeventsPipelinesProductAllocationProcessorsProcessorSmartscapeNodeNodeName) string {
-		return v.Type
-	}).(pulumi.StringOutput)
-}
-
-type OpenpipelineV2BizeventsPipelinesProductAllocationProcessorsProcessorSmartscapeNodeNodeNamePtrOutput struct{ *pulumi.OutputState }
-
-func (OpenpipelineV2BizeventsPipelinesProductAllocationProcessorsProcessorSmartscapeNodeNodeNamePtrOutput) ElementType() reflect.Type {
-	return reflect.TypeOf((**OpenpipelineV2BizeventsPipelinesProductAllocationProcessorsProcessorSmartscapeNodeNodeName)(nil)).Elem()
-}
-
-func (o OpenpipelineV2BizeventsPipelinesProductAllocationProcessorsProcessorSmartscapeNodeNodeNamePtrOutput) ToOpenpipelineV2BizeventsPipelinesProductAllocationProcessorsProcessorSmartscapeNodeNodeNamePtrOutput() OpenpipelineV2BizeventsPipelinesProductAllocationProcessorsProcessorSmartscapeNodeNodeNamePtrOutput {
-	return o
-}
-
-func (o OpenpipelineV2BizeventsPipelinesProductAllocationProcessorsProcessorSmartscapeNodeNodeNamePtrOutput) ToOpenpipelineV2BizeventsPipelinesProductAllocationProcessorsProcessorSmartscapeNodeNodeNamePtrOutputWithContext(ctx context.Context) OpenpipelineV2BizeventsPipelinesProductAllocationProcessorsProcessorSmartscapeNodeNodeNamePtrOutput {
-	return o
-}
-
-func (o OpenpipelineV2BizeventsPipelinesProductAllocationProcessorsProcessorSmartscapeNodeNodeNamePtrOutput) Elem() OpenpipelineV2BizeventsPipelinesProductAllocationProcessorsProcessorSmartscapeNodeNodeNameOutput {
-	return o.ApplyT(func(v *OpenpipelineV2BizeventsPipelinesProductAllocationProcessorsProcessorSmartscapeNodeNodeName) OpenpipelineV2BizeventsPipelinesProductAllocationProcessorsProcessorSmartscapeNodeNodeName {
-		if v != nil {
-			return *v
-		}
-		var ret OpenpipelineV2BizeventsPipelinesProductAllocationProcessorsProcessorSmartscapeNodeNodeName
-		return ret
-	}).(OpenpipelineV2BizeventsPipelinesProductAllocationProcessorsProcessorSmartscapeNodeNodeNameOutput)
-}
-
-// Constant value
-func (o OpenpipelineV2BizeventsPipelinesProductAllocationProcessorsProcessorSmartscapeNodeNodeNamePtrOutput) Constant() pulumi.StringPtrOutput {
-	return o.ApplyT(func(v *OpenpipelineV2BizeventsPipelinesProductAllocationProcessorsProcessorSmartscapeNodeNodeName) *string {
-		if v == nil {
-			return nil
-		}
-		return v.Constant
-	}).(pulumi.StringPtrOutput)
-}
-
-// Value from field
-func (o OpenpipelineV2BizeventsPipelinesProductAllocationProcessorsProcessorSmartscapeNodeNodeNamePtrOutput) Field() OpenpipelineV2BizeventsPipelinesProductAllocationProcessorsProcessorSmartscapeNodeNodeNameFieldPtrOutput {
-	return o.ApplyT(func(v *OpenpipelineV2BizeventsPipelinesProductAllocationProcessorsProcessorSmartscapeNodeNodeName) *OpenpipelineV2BizeventsPipelinesProductAllocationProcessorsProcessorSmartscapeNodeNodeNameField {
-		if v == nil {
-			return nil
-		}
-		return v.Field
-	}).(OpenpipelineV2BizeventsPipelinesProductAllocationProcessorsProcessorSmartscapeNodeNodeNameFieldPtrOutput)
-}
-
-// Constant multi value
-func (o OpenpipelineV2BizeventsPipelinesProductAllocationProcessorsProcessorSmartscapeNodeNodeNamePtrOutput) MultiValueConstants() pulumi.StringArrayOutput {
-	return o.ApplyT(func(v *OpenpipelineV2BizeventsPipelinesProductAllocationProcessorsProcessorSmartscapeNodeNodeName) []string {
-		if v == nil {
-			return nil
-		}
-		return v.MultiValueConstants
-	}).(pulumi.StringArrayOutput)
-}
-
-// Type of value assignment. Possible values: `constant`, `field`, `multiValueConstant`
-func (o OpenpipelineV2BizeventsPipelinesProductAllocationProcessorsProcessorSmartscapeNodeNodeNamePtrOutput) Type() pulumi.StringPtrOutput {
-	return o.ApplyT(func(v *OpenpipelineV2BizeventsPipelinesProductAllocationProcessorsProcessorSmartscapeNodeNodeName) *string {
-		if v == nil {
-			return nil
-		}
-		return &v.Type
-	}).(pulumi.StringPtrOutput)
-}
-
-type OpenpipelineV2BizeventsPipelinesProductAllocationProcessorsProcessorSmartscapeNodeNodeNameField struct {
-	// Default value
-	DefaultValue *string `pulumi:"defaultValue"`
-	// Source field name
-	SourceFieldName string `pulumi:"sourceFieldName"`
-}
-
-// OpenpipelineV2BizeventsPipelinesProductAllocationProcessorsProcessorSmartscapeNodeNodeNameFieldInput is an input type that accepts OpenpipelineV2BizeventsPipelinesProductAllocationProcessorsProcessorSmartscapeNodeNodeNameFieldArgs and OpenpipelineV2BizeventsPipelinesProductAllocationProcessorsProcessorSmartscapeNodeNodeNameFieldOutput values.
-// You can construct a concrete instance of `OpenpipelineV2BizeventsPipelinesProductAllocationProcessorsProcessorSmartscapeNodeNodeNameFieldInput` via:
-//
-//	OpenpipelineV2BizeventsPipelinesProductAllocationProcessorsProcessorSmartscapeNodeNodeNameFieldArgs{...}
-type OpenpipelineV2BizeventsPipelinesProductAllocationProcessorsProcessorSmartscapeNodeNodeNameFieldInput interface {
-	pulumi.Input
-
-	ToOpenpipelineV2BizeventsPipelinesProductAllocationProcessorsProcessorSmartscapeNodeNodeNameFieldOutput() OpenpipelineV2BizeventsPipelinesProductAllocationProcessorsProcessorSmartscapeNodeNodeNameFieldOutput
-	ToOpenpipelineV2BizeventsPipelinesProductAllocationProcessorsProcessorSmartscapeNodeNodeNameFieldOutputWithContext(context.Context) OpenpipelineV2BizeventsPipelinesProductAllocationProcessorsProcessorSmartscapeNodeNodeNameFieldOutput
-}
-
-type OpenpipelineV2BizeventsPipelinesProductAllocationProcessorsProcessorSmartscapeNodeNodeNameFieldArgs struct {
-	// Default value
-	DefaultValue pulumi.StringPtrInput `pulumi:"defaultValue"`
-	// Source field name
-	SourceFieldName pulumi.StringInput `pulumi:"sourceFieldName"`
-}
-
-func (OpenpipelineV2BizeventsPipelinesProductAllocationProcessorsProcessorSmartscapeNodeNodeNameFieldArgs) ElementType() reflect.Type {
-	return reflect.TypeOf((*OpenpipelineV2BizeventsPipelinesProductAllocationProcessorsProcessorSmartscapeNodeNodeNameField)(nil)).Elem()
-}
-
-func (i OpenpipelineV2BizeventsPipelinesProductAllocationProcessorsProcessorSmartscapeNodeNodeNameFieldArgs) ToOpenpipelineV2BizeventsPipelinesProductAllocationProcessorsProcessorSmartscapeNodeNodeNameFieldOutput() OpenpipelineV2BizeventsPipelinesProductAllocationProcessorsProcessorSmartscapeNodeNodeNameFieldOutput {
-	return i.ToOpenpipelineV2BizeventsPipelinesProductAllocationProcessorsProcessorSmartscapeNodeNodeNameFieldOutputWithContext(context.Background())
-}
-
-func (i OpenpipelineV2BizeventsPipelinesProductAllocationProcessorsProcessorSmartscapeNodeNodeNameFieldArgs) ToOpenpipelineV2BizeventsPipelinesProductAllocationProcessorsProcessorSmartscapeNodeNodeNameFieldOutputWithContext(ctx context.Context) OpenpipelineV2BizeventsPipelinesProductAllocationProcessorsProcessorSmartscapeNodeNodeNameFieldOutput {
-	return pulumi.ToOutputWithContext(ctx, i).(OpenpipelineV2BizeventsPipelinesProductAllocationProcessorsProcessorSmartscapeNodeNodeNameFieldOutput)
-}
-
-func (i OpenpipelineV2BizeventsPipelinesProductAllocationProcessorsProcessorSmartscapeNodeNodeNameFieldArgs) ToOpenpipelineV2BizeventsPipelinesProductAllocationProcessorsProcessorSmartscapeNodeNodeNameFieldPtrOutput() OpenpipelineV2BizeventsPipelinesProductAllocationProcessorsProcessorSmartscapeNodeNodeNameFieldPtrOutput {
-	return i.ToOpenpipelineV2BizeventsPipelinesProductAllocationProcessorsProcessorSmartscapeNodeNodeNameFieldPtrOutputWithContext(context.Background())
-}
-
-func (i OpenpipelineV2BizeventsPipelinesProductAllocationProcessorsProcessorSmartscapeNodeNodeNameFieldArgs) ToOpenpipelineV2BizeventsPipelinesProductAllocationProcessorsProcessorSmartscapeNodeNodeNameFieldPtrOutputWithContext(ctx context.Context) OpenpipelineV2BizeventsPipelinesProductAllocationProcessorsProcessorSmartscapeNodeNodeNameFieldPtrOutput {
-	return pulumi.ToOutputWithContext(ctx, i).(OpenpipelineV2BizeventsPipelinesProductAllocationProcessorsProcessorSmartscapeNodeNodeNameFieldOutput).ToOpenpipelineV2BizeventsPipelinesProductAllocationProcessorsProcessorSmartscapeNodeNodeNameFieldPtrOutputWithContext(ctx)
-}
-
-// OpenpipelineV2BizeventsPipelinesProductAllocationProcessorsProcessorSmartscapeNodeNodeNameFieldPtrInput is an input type that accepts OpenpipelineV2BizeventsPipelinesProductAllocationProcessorsProcessorSmartscapeNodeNodeNameFieldArgs, OpenpipelineV2BizeventsPipelinesProductAllocationProcessorsProcessorSmartscapeNodeNodeNameFieldPtr and OpenpipelineV2BizeventsPipelinesProductAllocationProcessorsProcessorSmartscapeNodeNodeNameFieldPtrOutput values.
-// You can construct a concrete instance of `OpenpipelineV2BizeventsPipelinesProductAllocationProcessorsProcessorSmartscapeNodeNodeNameFieldPtrInput` via:
-//
-//	        OpenpipelineV2BizeventsPipelinesProductAllocationProcessorsProcessorSmartscapeNodeNodeNameFieldArgs{...}
-//
-//	or:
-//
-//	        nil
-type OpenpipelineV2BizeventsPipelinesProductAllocationProcessorsProcessorSmartscapeNodeNodeNameFieldPtrInput interface {
-	pulumi.Input
-
-	ToOpenpipelineV2BizeventsPipelinesProductAllocationProcessorsProcessorSmartscapeNodeNodeNameFieldPtrOutput() OpenpipelineV2BizeventsPipelinesProductAllocationProcessorsProcessorSmartscapeNodeNodeNameFieldPtrOutput
-	ToOpenpipelineV2BizeventsPipelinesProductAllocationProcessorsProcessorSmartscapeNodeNodeNameFieldPtrOutputWithContext(context.Context) OpenpipelineV2BizeventsPipelinesProductAllocationProcessorsProcessorSmartscapeNodeNodeNameFieldPtrOutput
-}
-
-type openpipelineV2BizeventsPipelinesProductAllocationProcessorsProcessorSmartscapeNodeNodeNameFieldPtrType OpenpipelineV2BizeventsPipelinesProductAllocationProcessorsProcessorSmartscapeNodeNodeNameFieldArgs
-
-func OpenpipelineV2BizeventsPipelinesProductAllocationProcessorsProcessorSmartscapeNodeNodeNameFieldPtr(v *OpenpipelineV2BizeventsPipelinesProductAllocationProcessorsProcessorSmartscapeNodeNodeNameFieldArgs) OpenpipelineV2BizeventsPipelinesProductAllocationProcessorsProcessorSmartscapeNodeNodeNameFieldPtrInput {
-	return (*openpipelineV2BizeventsPipelinesProductAllocationProcessorsProcessorSmartscapeNodeNodeNameFieldPtrType)(v)
-}
-
-func (*openpipelineV2BizeventsPipelinesProductAllocationProcessorsProcessorSmartscapeNodeNodeNameFieldPtrType) ElementType() reflect.Type {
-	return reflect.TypeOf((**OpenpipelineV2BizeventsPipelinesProductAllocationProcessorsProcessorSmartscapeNodeNodeNameField)(nil)).Elem()
-}
-
-func (i *openpipelineV2BizeventsPipelinesProductAllocationProcessorsProcessorSmartscapeNodeNodeNameFieldPtrType) ToOpenpipelineV2BizeventsPipelinesProductAllocationProcessorsProcessorSmartscapeNodeNodeNameFieldPtrOutput() OpenpipelineV2BizeventsPipelinesProductAllocationProcessorsProcessorSmartscapeNodeNodeNameFieldPtrOutput {
-	return i.ToOpenpipelineV2BizeventsPipelinesProductAllocationProcessorsProcessorSmartscapeNodeNodeNameFieldPtrOutputWithContext(context.Background())
-}
-
-func (i *openpipelineV2BizeventsPipelinesProductAllocationProcessorsProcessorSmartscapeNodeNodeNameFieldPtrType) ToOpenpipelineV2BizeventsPipelinesProductAllocationProcessorsProcessorSmartscapeNodeNodeNameFieldPtrOutputWithContext(ctx context.Context) OpenpipelineV2BizeventsPipelinesProductAllocationProcessorsProcessorSmartscapeNodeNodeNameFieldPtrOutput {
-	return pulumi.ToOutputWithContext(ctx, i).(OpenpipelineV2BizeventsPipelinesProductAllocationProcessorsProcessorSmartscapeNodeNodeNameFieldPtrOutput)
-}
-
-type OpenpipelineV2BizeventsPipelinesProductAllocationProcessorsProcessorSmartscapeNodeNodeNameFieldOutput struct{ *pulumi.OutputState }
-
-func (OpenpipelineV2BizeventsPipelinesProductAllocationProcessorsProcessorSmartscapeNodeNodeNameFieldOutput) ElementType() reflect.Type {
-	return reflect.TypeOf((*OpenpipelineV2BizeventsPipelinesProductAllocationProcessorsProcessorSmartscapeNodeNodeNameField)(nil)).Elem()
-}
-
-func (o OpenpipelineV2BizeventsPipelinesProductAllocationProcessorsProcessorSmartscapeNodeNodeNameFieldOutput) ToOpenpipelineV2BizeventsPipelinesProductAllocationProcessorsProcessorSmartscapeNodeNodeNameFieldOutput() OpenpipelineV2BizeventsPipelinesProductAllocationProcessorsProcessorSmartscapeNodeNodeNameFieldOutput {
-	return o
-}
-
-func (o OpenpipelineV2BizeventsPipelinesProductAllocationProcessorsProcessorSmartscapeNodeNodeNameFieldOutput) ToOpenpipelineV2BizeventsPipelinesProductAllocationProcessorsProcessorSmartscapeNodeNodeNameFieldOutputWithContext(ctx context.Context) OpenpipelineV2BizeventsPipelinesProductAllocationProcessorsProcessorSmartscapeNodeNodeNameFieldOutput {
-	return o
-}
-
-func (o OpenpipelineV2BizeventsPipelinesProductAllocationProcessorsProcessorSmartscapeNodeNodeNameFieldOutput) ToOpenpipelineV2BizeventsPipelinesProductAllocationProcessorsProcessorSmartscapeNodeNodeNameFieldPtrOutput() OpenpipelineV2BizeventsPipelinesProductAllocationProcessorsProcessorSmartscapeNodeNodeNameFieldPtrOutput {
-	return o.ToOpenpipelineV2BizeventsPipelinesProductAllocationProcessorsProcessorSmartscapeNodeNodeNameFieldPtrOutputWithContext(context.Background())
-}
-
-func (o OpenpipelineV2BizeventsPipelinesProductAllocationProcessorsProcessorSmartscapeNodeNodeNameFieldOutput) ToOpenpipelineV2BizeventsPipelinesProductAllocationProcessorsProcessorSmartscapeNodeNodeNameFieldPtrOutputWithContext(ctx context.Context) OpenpipelineV2BizeventsPipelinesProductAllocationProcessorsProcessorSmartscapeNodeNodeNameFieldPtrOutput {
-	return o.ApplyTWithContext(ctx, func(_ context.Context, v OpenpipelineV2BizeventsPipelinesProductAllocationProcessorsProcessorSmartscapeNodeNodeNameField) *OpenpipelineV2BizeventsPipelinesProductAllocationProcessorsProcessorSmartscapeNodeNodeNameField {
-		return &v
-	}).(OpenpipelineV2BizeventsPipelinesProductAllocationProcessorsProcessorSmartscapeNodeNodeNameFieldPtrOutput)
-}
-
-// Default value
-func (o OpenpipelineV2BizeventsPipelinesProductAllocationProcessorsProcessorSmartscapeNodeNodeNameFieldOutput) DefaultValue() pulumi.StringPtrOutput {
-	return o.ApplyT(func(v OpenpipelineV2BizeventsPipelinesProductAllocationProcessorsProcessorSmartscapeNodeNodeNameField) *string {
-		return v.DefaultValue
-	}).(pulumi.StringPtrOutput)
-}
-
-// Source field name
-func (o OpenpipelineV2BizeventsPipelinesProductAllocationProcessorsProcessorSmartscapeNodeNodeNameFieldOutput) SourceFieldName() pulumi.StringOutput {
-	return o.ApplyT(func(v OpenpipelineV2BizeventsPipelinesProductAllocationProcessorsProcessorSmartscapeNodeNodeNameField) string {
-		return v.SourceFieldName
-	}).(pulumi.StringOutput)
-}
-
-type OpenpipelineV2BizeventsPipelinesProductAllocationProcessorsProcessorSmartscapeNodeNodeNameFieldPtrOutput struct{ *pulumi.OutputState }
-
-func (OpenpipelineV2BizeventsPipelinesProductAllocationProcessorsProcessorSmartscapeNodeNodeNameFieldPtrOutput) ElementType() reflect.Type {
-	return reflect.TypeOf((**OpenpipelineV2BizeventsPipelinesProductAllocationProcessorsProcessorSmartscapeNodeNodeNameField)(nil)).Elem()
-}
-
-func (o OpenpipelineV2BizeventsPipelinesProductAllocationProcessorsProcessorSmartscapeNodeNodeNameFieldPtrOutput) ToOpenpipelineV2BizeventsPipelinesProductAllocationProcessorsProcessorSmartscapeNodeNodeNameFieldPtrOutput() OpenpipelineV2BizeventsPipelinesProductAllocationProcessorsProcessorSmartscapeNodeNodeNameFieldPtrOutput {
-	return o
-}
-
-func (o OpenpipelineV2BizeventsPipelinesProductAllocationProcessorsProcessorSmartscapeNodeNodeNameFieldPtrOutput) ToOpenpipelineV2BizeventsPipelinesProductAllocationProcessorsProcessorSmartscapeNodeNodeNameFieldPtrOutputWithContext(ctx context.Context) OpenpipelineV2BizeventsPipelinesProductAllocationProcessorsProcessorSmartscapeNodeNodeNameFieldPtrOutput {
-	return o
-}
-
-func (o OpenpipelineV2BizeventsPipelinesProductAllocationProcessorsProcessorSmartscapeNodeNodeNameFieldPtrOutput) Elem() OpenpipelineV2BizeventsPipelinesProductAllocationProcessorsProcessorSmartscapeNodeNodeNameFieldOutput {
-	return o.ApplyT(func(v *OpenpipelineV2BizeventsPipelinesProductAllocationProcessorsProcessorSmartscapeNodeNodeNameField) OpenpipelineV2BizeventsPipelinesProductAllocationProcessorsProcessorSmartscapeNodeNodeNameField {
-		if v != nil {
-			return *v
-		}
-		var ret OpenpipelineV2BizeventsPipelinesProductAllocationProcessorsProcessorSmartscapeNodeNodeNameField
-		return ret
-	}).(OpenpipelineV2BizeventsPipelinesProductAllocationProcessorsProcessorSmartscapeNodeNodeNameFieldOutput)
-}
-
-// Default value
-func (o OpenpipelineV2BizeventsPipelinesProductAllocationProcessorsProcessorSmartscapeNodeNodeNameFieldPtrOutput) DefaultValue() pulumi.StringPtrOutput {
-	return o.ApplyT(func(v *OpenpipelineV2BizeventsPipelinesProductAllocationProcessorsProcessorSmartscapeNodeNodeNameField) *string {
-		if v == nil {
-			return nil
-		}
-		return v.DefaultValue
-	}).(pulumi.StringPtrOutput)
-}
-
-// Source field name
-func (o OpenpipelineV2BizeventsPipelinesProductAllocationProcessorsProcessorSmartscapeNodeNodeNameFieldPtrOutput) SourceFieldName() pulumi.StringPtrOutput {
-	return o.ApplyT(func(v *OpenpipelineV2BizeventsPipelinesProductAllocationProcessorsProcessorSmartscapeNodeNodeNameField) *string {
-		if v == nil {
-			return nil
-		}
-		return &v.SourceFieldName
-	}).(pulumi.StringPtrOutput)
-}
-
-type OpenpipelineV2BizeventsPipelinesProductAllocationProcessorsProcessorSmartscapeNodeStaticEdgesToExtract struct {
-	SmartscapeStaticEdgeExtractionEntries []OpenpipelineV2BizeventsPipelinesProductAllocationProcessorsProcessorSmartscapeNodeStaticEdgesToExtractSmartscapeStaticEdgeExtractionEntry `pulumi:"smartscapeStaticEdgeExtractionEntries"`
-}
-
-// OpenpipelineV2BizeventsPipelinesProductAllocationProcessorsProcessorSmartscapeNodeStaticEdgesToExtractInput is an input type that accepts OpenpipelineV2BizeventsPipelinesProductAllocationProcessorsProcessorSmartscapeNodeStaticEdgesToExtractArgs and OpenpipelineV2BizeventsPipelinesProductAllocationProcessorsProcessorSmartscapeNodeStaticEdgesToExtractOutput values.
-// You can construct a concrete instance of `OpenpipelineV2BizeventsPipelinesProductAllocationProcessorsProcessorSmartscapeNodeStaticEdgesToExtractInput` via:
-//
-//	OpenpipelineV2BizeventsPipelinesProductAllocationProcessorsProcessorSmartscapeNodeStaticEdgesToExtractArgs{...}
-type OpenpipelineV2BizeventsPipelinesProductAllocationProcessorsProcessorSmartscapeNodeStaticEdgesToExtractInput interface {
-	pulumi.Input
-
-	ToOpenpipelineV2BizeventsPipelinesProductAllocationProcessorsProcessorSmartscapeNodeStaticEdgesToExtractOutput() OpenpipelineV2BizeventsPipelinesProductAllocationProcessorsProcessorSmartscapeNodeStaticEdgesToExtractOutput
-	ToOpenpipelineV2BizeventsPipelinesProductAllocationProcessorsProcessorSmartscapeNodeStaticEdgesToExtractOutputWithContext(context.Context) OpenpipelineV2BizeventsPipelinesProductAllocationProcessorsProcessorSmartscapeNodeStaticEdgesToExtractOutput
-}
-
-type OpenpipelineV2BizeventsPipelinesProductAllocationProcessorsProcessorSmartscapeNodeStaticEdgesToExtractArgs struct {
-	SmartscapeStaticEdgeExtractionEntries OpenpipelineV2BizeventsPipelinesProductAllocationProcessorsProcessorSmartscapeNodeStaticEdgesToExtractSmartscapeStaticEdgeExtractionEntryArrayInput `pulumi:"smartscapeStaticEdgeExtractionEntries"`
-}
-
-func (OpenpipelineV2BizeventsPipelinesProductAllocationProcessorsProcessorSmartscapeNodeStaticEdgesToExtractArgs) ElementType() reflect.Type {
-	return reflect.TypeOf((*OpenpipelineV2BizeventsPipelinesProductAllocationProcessorsProcessorSmartscapeNodeStaticEdgesToExtract)(nil)).Elem()
-}
-
-func (i OpenpipelineV2BizeventsPipelinesProductAllocationProcessorsProcessorSmartscapeNodeStaticEdgesToExtractArgs) ToOpenpipelineV2BizeventsPipelinesProductAllocationProcessorsProcessorSmartscapeNodeStaticEdgesToExtractOutput() OpenpipelineV2BizeventsPipelinesProductAllocationProcessorsProcessorSmartscapeNodeStaticEdgesToExtractOutput {
-	return i.ToOpenpipelineV2BizeventsPipelinesProductAllocationProcessorsProcessorSmartscapeNodeStaticEdgesToExtractOutputWithContext(context.Background())
-}
-
-func (i OpenpipelineV2BizeventsPipelinesProductAllocationProcessorsProcessorSmartscapeNodeStaticEdgesToExtractArgs) ToOpenpipelineV2BizeventsPipelinesProductAllocationProcessorsProcessorSmartscapeNodeStaticEdgesToExtractOutputWithContext(ctx context.Context) OpenpipelineV2BizeventsPipelinesProductAllocationProcessorsProcessorSmartscapeNodeStaticEdgesToExtractOutput {
-	return pulumi.ToOutputWithContext(ctx, i).(OpenpipelineV2BizeventsPipelinesProductAllocationProcessorsProcessorSmartscapeNodeStaticEdgesToExtractOutput)
-}
-
-func (i OpenpipelineV2BizeventsPipelinesProductAllocationProcessorsProcessorSmartscapeNodeStaticEdgesToExtractArgs) ToOpenpipelineV2BizeventsPipelinesProductAllocationProcessorsProcessorSmartscapeNodeStaticEdgesToExtractPtrOutput() OpenpipelineV2BizeventsPipelinesProductAllocationProcessorsProcessorSmartscapeNodeStaticEdgesToExtractPtrOutput {
-	return i.ToOpenpipelineV2BizeventsPipelinesProductAllocationProcessorsProcessorSmartscapeNodeStaticEdgesToExtractPtrOutputWithContext(context.Background())
-}
-
-func (i OpenpipelineV2BizeventsPipelinesProductAllocationProcessorsProcessorSmartscapeNodeStaticEdgesToExtractArgs) ToOpenpipelineV2BizeventsPipelinesProductAllocationProcessorsProcessorSmartscapeNodeStaticEdgesToExtractPtrOutputWithContext(ctx context.Context) OpenpipelineV2BizeventsPipelinesProductAllocationProcessorsProcessorSmartscapeNodeStaticEdgesToExtractPtrOutput {
-	return pulumi.ToOutputWithContext(ctx, i).(OpenpipelineV2BizeventsPipelinesProductAllocationProcessorsProcessorSmartscapeNodeStaticEdgesToExtractOutput).ToOpenpipelineV2BizeventsPipelinesProductAllocationProcessorsProcessorSmartscapeNodeStaticEdgesToExtractPtrOutputWithContext(ctx)
-}
-
-// OpenpipelineV2BizeventsPipelinesProductAllocationProcessorsProcessorSmartscapeNodeStaticEdgesToExtractPtrInput is an input type that accepts OpenpipelineV2BizeventsPipelinesProductAllocationProcessorsProcessorSmartscapeNodeStaticEdgesToExtractArgs, OpenpipelineV2BizeventsPipelinesProductAllocationProcessorsProcessorSmartscapeNodeStaticEdgesToExtractPtr and OpenpipelineV2BizeventsPipelinesProductAllocationProcessorsProcessorSmartscapeNodeStaticEdgesToExtractPtrOutput values.
-// You can construct a concrete instance of `OpenpipelineV2BizeventsPipelinesProductAllocationProcessorsProcessorSmartscapeNodeStaticEdgesToExtractPtrInput` via:
-//
-//	        OpenpipelineV2BizeventsPipelinesProductAllocationProcessorsProcessorSmartscapeNodeStaticEdgesToExtractArgs{...}
-//
-//	or:
-//
-//	        nil
-type OpenpipelineV2BizeventsPipelinesProductAllocationProcessorsProcessorSmartscapeNodeStaticEdgesToExtractPtrInput interface {
-	pulumi.Input
-
-	ToOpenpipelineV2BizeventsPipelinesProductAllocationProcessorsProcessorSmartscapeNodeStaticEdgesToExtractPtrOutput() OpenpipelineV2BizeventsPipelinesProductAllocationProcessorsProcessorSmartscapeNodeStaticEdgesToExtractPtrOutput
-	ToOpenpipelineV2BizeventsPipelinesProductAllocationProcessorsProcessorSmartscapeNodeStaticEdgesToExtractPtrOutputWithContext(context.Context) OpenpipelineV2BizeventsPipelinesProductAllocationProcessorsProcessorSmartscapeNodeStaticEdgesToExtractPtrOutput
-}
-
-type openpipelineV2BizeventsPipelinesProductAllocationProcessorsProcessorSmartscapeNodeStaticEdgesToExtractPtrType OpenpipelineV2BizeventsPipelinesProductAllocationProcessorsProcessorSmartscapeNodeStaticEdgesToExtractArgs
-
-func OpenpipelineV2BizeventsPipelinesProductAllocationProcessorsProcessorSmartscapeNodeStaticEdgesToExtractPtr(v *OpenpipelineV2BizeventsPipelinesProductAllocationProcessorsProcessorSmartscapeNodeStaticEdgesToExtractArgs) OpenpipelineV2BizeventsPipelinesProductAllocationProcessorsProcessorSmartscapeNodeStaticEdgesToExtractPtrInput {
-	return (*openpipelineV2BizeventsPipelinesProductAllocationProcessorsProcessorSmartscapeNodeStaticEdgesToExtractPtrType)(v)
-}
-
-func (*openpipelineV2BizeventsPipelinesProductAllocationProcessorsProcessorSmartscapeNodeStaticEdgesToExtractPtrType) ElementType() reflect.Type {
-	return reflect.TypeOf((**OpenpipelineV2BizeventsPipelinesProductAllocationProcessorsProcessorSmartscapeNodeStaticEdgesToExtract)(nil)).Elem()
-}
-
-func (i *openpipelineV2BizeventsPipelinesProductAllocationProcessorsProcessorSmartscapeNodeStaticEdgesToExtractPtrType) ToOpenpipelineV2BizeventsPipelinesProductAllocationProcessorsProcessorSmartscapeNodeStaticEdgesToExtractPtrOutput() OpenpipelineV2BizeventsPipelinesProductAllocationProcessorsProcessorSmartscapeNodeStaticEdgesToExtractPtrOutput {
-	return i.ToOpenpipelineV2BizeventsPipelinesProductAllocationProcessorsProcessorSmartscapeNodeStaticEdgesToExtractPtrOutputWithContext(context.Background())
-}
-
-func (i *openpipelineV2BizeventsPipelinesProductAllocationProcessorsProcessorSmartscapeNodeStaticEdgesToExtractPtrType) ToOpenpipelineV2BizeventsPipelinesProductAllocationProcessorsProcessorSmartscapeNodeStaticEdgesToExtractPtrOutputWithContext(ctx context.Context) OpenpipelineV2BizeventsPipelinesProductAllocationProcessorsProcessorSmartscapeNodeStaticEdgesToExtractPtrOutput {
-	return pulumi.ToOutputWithContext(ctx, i).(OpenpipelineV2BizeventsPipelinesProductAllocationProcessorsProcessorSmartscapeNodeStaticEdgesToExtractPtrOutput)
-}
-
-type OpenpipelineV2BizeventsPipelinesProductAllocationProcessorsProcessorSmartscapeNodeStaticEdgesToExtractOutput struct{ *pulumi.OutputState }
-
-func (OpenpipelineV2BizeventsPipelinesProductAllocationProcessorsProcessorSmartscapeNodeStaticEdgesToExtractOutput) ElementType() reflect.Type {
-	return reflect.TypeOf((*OpenpipelineV2BizeventsPipelinesProductAllocationProcessorsProcessorSmartscapeNodeStaticEdgesToExtract)(nil)).Elem()
-}
-
-func (o OpenpipelineV2BizeventsPipelinesProductAllocationProcessorsProcessorSmartscapeNodeStaticEdgesToExtractOutput) ToOpenpipelineV2BizeventsPipelinesProductAllocationProcessorsProcessorSmartscapeNodeStaticEdgesToExtractOutput() OpenpipelineV2BizeventsPipelinesProductAllocationProcessorsProcessorSmartscapeNodeStaticEdgesToExtractOutput {
-	return o
-}
-
-func (o OpenpipelineV2BizeventsPipelinesProductAllocationProcessorsProcessorSmartscapeNodeStaticEdgesToExtractOutput) ToOpenpipelineV2BizeventsPipelinesProductAllocationProcessorsProcessorSmartscapeNodeStaticEdgesToExtractOutputWithContext(ctx context.Context) OpenpipelineV2BizeventsPipelinesProductAllocationProcessorsProcessorSmartscapeNodeStaticEdgesToExtractOutput {
-	return o
-}
-
-func (o OpenpipelineV2BizeventsPipelinesProductAllocationProcessorsProcessorSmartscapeNodeStaticEdgesToExtractOutput) ToOpenpipelineV2BizeventsPipelinesProductAllocationProcessorsProcessorSmartscapeNodeStaticEdgesToExtractPtrOutput() OpenpipelineV2BizeventsPipelinesProductAllocationProcessorsProcessorSmartscapeNodeStaticEdgesToExtractPtrOutput {
-	return o.ToOpenpipelineV2BizeventsPipelinesProductAllocationProcessorsProcessorSmartscapeNodeStaticEdgesToExtractPtrOutputWithContext(context.Background())
-}
-
-func (o OpenpipelineV2BizeventsPipelinesProductAllocationProcessorsProcessorSmartscapeNodeStaticEdgesToExtractOutput) ToOpenpipelineV2BizeventsPipelinesProductAllocationProcessorsProcessorSmartscapeNodeStaticEdgesToExtractPtrOutputWithContext(ctx context.Context) OpenpipelineV2BizeventsPipelinesProductAllocationProcessorsProcessorSmartscapeNodeStaticEdgesToExtractPtrOutput {
-	return o.ApplyTWithContext(ctx, func(_ context.Context, v OpenpipelineV2BizeventsPipelinesProductAllocationProcessorsProcessorSmartscapeNodeStaticEdgesToExtract) *OpenpipelineV2BizeventsPipelinesProductAllocationProcessorsProcessorSmartscapeNodeStaticEdgesToExtract {
-		return &v
-	}).(OpenpipelineV2BizeventsPipelinesProductAllocationProcessorsProcessorSmartscapeNodeStaticEdgesToExtractPtrOutput)
-}
-
-func (o OpenpipelineV2BizeventsPipelinesProductAllocationProcessorsProcessorSmartscapeNodeStaticEdgesToExtractOutput) SmartscapeStaticEdgeExtractionEntries() OpenpipelineV2BizeventsPipelinesProductAllocationProcessorsProcessorSmartscapeNodeStaticEdgesToExtractSmartscapeStaticEdgeExtractionEntryArrayOutput {
-	return o.ApplyT(func(v OpenpipelineV2BizeventsPipelinesProductAllocationProcessorsProcessorSmartscapeNodeStaticEdgesToExtract) []OpenpipelineV2BizeventsPipelinesProductAllocationProcessorsProcessorSmartscapeNodeStaticEdgesToExtractSmartscapeStaticEdgeExtractionEntry {
-		return v.SmartscapeStaticEdgeExtractionEntries
-	}).(OpenpipelineV2BizeventsPipelinesProductAllocationProcessorsProcessorSmartscapeNodeStaticEdgesToExtractSmartscapeStaticEdgeExtractionEntryArrayOutput)
-}
-
-type OpenpipelineV2BizeventsPipelinesProductAllocationProcessorsProcessorSmartscapeNodeStaticEdgesToExtractPtrOutput struct{ *pulumi.OutputState }
-
-func (OpenpipelineV2BizeventsPipelinesProductAllocationProcessorsProcessorSmartscapeNodeStaticEdgesToExtractPtrOutput) ElementType() reflect.Type {
-	return reflect.TypeOf((**OpenpipelineV2BizeventsPipelinesProductAllocationProcessorsProcessorSmartscapeNodeStaticEdgesToExtract)(nil)).Elem()
-}
-
-func (o OpenpipelineV2BizeventsPipelinesProductAllocationProcessorsProcessorSmartscapeNodeStaticEdgesToExtractPtrOutput) ToOpenpipelineV2BizeventsPipelinesProductAllocationProcessorsProcessorSmartscapeNodeStaticEdgesToExtractPtrOutput() OpenpipelineV2BizeventsPipelinesProductAllocationProcessorsProcessorSmartscapeNodeStaticEdgesToExtractPtrOutput {
-	return o
-}
-
-func (o OpenpipelineV2BizeventsPipelinesProductAllocationProcessorsProcessorSmartscapeNodeStaticEdgesToExtractPtrOutput) ToOpenpipelineV2BizeventsPipelinesProductAllocationProcessorsProcessorSmartscapeNodeStaticEdgesToExtractPtrOutputWithContext(ctx context.Context) OpenpipelineV2BizeventsPipelinesProductAllocationProcessorsProcessorSmartscapeNodeStaticEdgesToExtractPtrOutput {
-	return o
-}
-
-func (o OpenpipelineV2BizeventsPipelinesProductAllocationProcessorsProcessorSmartscapeNodeStaticEdgesToExtractPtrOutput) Elem() OpenpipelineV2BizeventsPipelinesProductAllocationProcessorsProcessorSmartscapeNodeStaticEdgesToExtractOutput {
-	return o.ApplyT(func(v *OpenpipelineV2BizeventsPipelinesProductAllocationProcessorsProcessorSmartscapeNodeStaticEdgesToExtract) OpenpipelineV2BizeventsPipelinesProductAllocationProcessorsProcessorSmartscapeNodeStaticEdgesToExtract {
-		if v != nil {
-			return *v
-		}
-		var ret OpenpipelineV2BizeventsPipelinesProductAllocationProcessorsProcessorSmartscapeNodeStaticEdgesToExtract
-		return ret
-	}).(OpenpipelineV2BizeventsPipelinesProductAllocationProcessorsProcessorSmartscapeNodeStaticEdgesToExtractOutput)
-}
-
-func (o OpenpipelineV2BizeventsPipelinesProductAllocationProcessorsProcessorSmartscapeNodeStaticEdgesToExtractPtrOutput) SmartscapeStaticEdgeExtractionEntries() OpenpipelineV2BizeventsPipelinesProductAllocationProcessorsProcessorSmartscapeNodeStaticEdgesToExtractSmartscapeStaticEdgeExtractionEntryArrayOutput {
-	return o.ApplyT(func(v *OpenpipelineV2BizeventsPipelinesProductAllocationProcessorsProcessorSmartscapeNodeStaticEdgesToExtract) []OpenpipelineV2BizeventsPipelinesProductAllocationProcessorsProcessorSmartscapeNodeStaticEdgesToExtractSmartscapeStaticEdgeExtractionEntry {
-		if v == nil {
-			return nil
-		}
-		return v.SmartscapeStaticEdgeExtractionEntries
-	}).(OpenpipelineV2BizeventsPipelinesProductAllocationProcessorsProcessorSmartscapeNodeStaticEdgesToExtractSmartscapeStaticEdgeExtractionEntryArrayOutput)
-}
-
 func init() {
+	pulumi.RegisterInputType(reflect.TypeOf((*OpenpipelineV2BizeventsIngestsourcesProcessingProcessorsProcessorSmartscapeNodeNodeNameInput)(nil)).Elem(), OpenpipelineV2BizeventsIngestsourcesProcessingProcessorsProcessorSmartscapeNodeNodeNameArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*OpenpipelineV2BizeventsIngestsourcesProcessingProcessorsProcessorSmartscapeNodeNodeNamePtrInput)(nil)).Elem(), OpenpipelineV2BizeventsIngestsourcesProcessingProcessorsProcessorSmartscapeNodeNodeNameArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*OpenpipelineV2BizeventsIngestsourcesProcessingProcessorsProcessorSmartscapeNodeNodeNameFieldInput)(nil)).Elem(), OpenpipelineV2BizeventsIngestsourcesProcessingProcessorsProcessorSmartscapeNodeNodeNameFieldArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*OpenpipelineV2BizeventsIngestsourcesProcessingProcessorsProcessorSmartscapeNodeNodeNameFieldPtrInput)(nil)).Elem(), OpenpipelineV2BizeventsIngestsourcesProcessingProcessorsProcessorSmartscapeNodeNodeNameFieldArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*OpenpipelineV2BizeventsIngestsourcesProcessingProcessorsProcessorSmartscapeNodeStaticEdgesToExtractInput)(nil)).Elem(), OpenpipelineV2BizeventsIngestsourcesProcessingProcessorsProcessorSmartscapeNodeStaticEdgesToExtractArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*OpenpipelineV2BizeventsIngestsourcesProcessingProcessorsProcessorSmartscapeNodeStaticEdgesToExtractPtrInput)(nil)).Elem(), OpenpipelineV2BizeventsIngestsourcesProcessingProcessorsProcessorSmartscapeNodeStaticEdgesToExtractArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*OpenpipelineV2BizeventsIngestsourcesProcessingProcessorsProcessorSmartscapeNodeStaticEdgesToExtractSmartscapeStaticEdgeExtractionEntryInput)(nil)).Elem(), OpenpipelineV2BizeventsIngestsourcesProcessingProcessorsProcessorSmartscapeNodeStaticEdgesToExtractSmartscapeStaticEdgeExtractionEntryArgs{})
@@ -82831,6 +83212,8 @@ func init() {
 	pulumi.RegisterInputType(reflect.TypeOf((*OpenpipelineV2BizeventsPipelinesCostAllocationProcessorsProcessorHistogramMetricDimensionsPtrInput)(nil)).Elem(), OpenpipelineV2BizeventsPipelinesCostAllocationProcessorsProcessorHistogramMetricDimensionsArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*OpenpipelineV2BizeventsPipelinesCostAllocationProcessorsProcessorHistogramMetricDimensionsDimensionInput)(nil)).Elem(), OpenpipelineV2BizeventsPipelinesCostAllocationProcessorsProcessorHistogramMetricDimensionsDimensionArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*OpenpipelineV2BizeventsPipelinesCostAllocationProcessorsProcessorHistogramMetricDimensionsDimensionArrayInput)(nil)).Elem(), OpenpipelineV2BizeventsPipelinesCostAllocationProcessorsProcessorHistogramMetricDimensionsDimensionArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*OpenpipelineV2BizeventsPipelinesCostAllocationProcessorsProcessorInlineLookupInput)(nil)).Elem(), OpenpipelineV2BizeventsPipelinesCostAllocationProcessorsProcessorInlineLookupArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*OpenpipelineV2BizeventsPipelinesCostAllocationProcessorsProcessorInlineLookupPtrInput)(nil)).Elem(), OpenpipelineV2BizeventsPipelinesCostAllocationProcessorsProcessorInlineLookupArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*OpenpipelineV2BizeventsPipelinesCostAllocationProcessorsProcessorProductAllocationInput)(nil)).Elem(), OpenpipelineV2BizeventsPipelinesCostAllocationProcessorsProcessorProductAllocationArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*OpenpipelineV2BizeventsPipelinesCostAllocationProcessorsProcessorProductAllocationPtrInput)(nil)).Elem(), OpenpipelineV2BizeventsPipelinesCostAllocationProcessorsProcessorProductAllocationArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*OpenpipelineV2BizeventsPipelinesCostAllocationProcessorsProcessorProductAllocationValueInput)(nil)).Elem(), OpenpipelineV2BizeventsPipelinesCostAllocationProcessorsProcessorProductAllocationValueArgs{})
@@ -82995,6 +83378,8 @@ func init() {
 	pulumi.RegisterInputType(reflect.TypeOf((*OpenpipelineV2BizeventsPipelinesDataExtractionProcessorsProcessorHistogramMetricDimensionsPtrInput)(nil)).Elem(), OpenpipelineV2BizeventsPipelinesDataExtractionProcessorsProcessorHistogramMetricDimensionsArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*OpenpipelineV2BizeventsPipelinesDataExtractionProcessorsProcessorHistogramMetricDimensionsDimensionInput)(nil)).Elem(), OpenpipelineV2BizeventsPipelinesDataExtractionProcessorsProcessorHistogramMetricDimensionsDimensionArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*OpenpipelineV2BizeventsPipelinesDataExtractionProcessorsProcessorHistogramMetricDimensionsDimensionArrayInput)(nil)).Elem(), OpenpipelineV2BizeventsPipelinesDataExtractionProcessorsProcessorHistogramMetricDimensionsDimensionArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*OpenpipelineV2BizeventsPipelinesDataExtractionProcessorsProcessorInlineLookupInput)(nil)).Elem(), OpenpipelineV2BizeventsPipelinesDataExtractionProcessorsProcessorInlineLookupArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*OpenpipelineV2BizeventsPipelinesDataExtractionProcessorsProcessorInlineLookupPtrInput)(nil)).Elem(), OpenpipelineV2BizeventsPipelinesDataExtractionProcessorsProcessorInlineLookupArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*OpenpipelineV2BizeventsPipelinesDataExtractionProcessorsProcessorProductAllocationInput)(nil)).Elem(), OpenpipelineV2BizeventsPipelinesDataExtractionProcessorsProcessorProductAllocationArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*OpenpipelineV2BizeventsPipelinesDataExtractionProcessorsProcessorProductAllocationPtrInput)(nil)).Elem(), OpenpipelineV2BizeventsPipelinesDataExtractionProcessorsProcessorProductAllocationArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*OpenpipelineV2BizeventsPipelinesDataExtractionProcessorsProcessorProductAllocationValueInput)(nil)).Elem(), OpenpipelineV2BizeventsPipelinesDataExtractionProcessorsProcessorProductAllocationValueArgs{})
@@ -83159,6 +83544,8 @@ func init() {
 	pulumi.RegisterInputType(reflect.TypeOf((*OpenpipelineV2BizeventsPipelinesDavisProcessorsProcessorHistogramMetricDimensionsPtrInput)(nil)).Elem(), OpenpipelineV2BizeventsPipelinesDavisProcessorsProcessorHistogramMetricDimensionsArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*OpenpipelineV2BizeventsPipelinesDavisProcessorsProcessorHistogramMetricDimensionsDimensionInput)(nil)).Elem(), OpenpipelineV2BizeventsPipelinesDavisProcessorsProcessorHistogramMetricDimensionsDimensionArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*OpenpipelineV2BizeventsPipelinesDavisProcessorsProcessorHistogramMetricDimensionsDimensionArrayInput)(nil)).Elem(), OpenpipelineV2BizeventsPipelinesDavisProcessorsProcessorHistogramMetricDimensionsDimensionArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*OpenpipelineV2BizeventsPipelinesDavisProcessorsProcessorInlineLookupInput)(nil)).Elem(), OpenpipelineV2BizeventsPipelinesDavisProcessorsProcessorInlineLookupArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*OpenpipelineV2BizeventsPipelinesDavisProcessorsProcessorInlineLookupPtrInput)(nil)).Elem(), OpenpipelineV2BizeventsPipelinesDavisProcessorsProcessorInlineLookupArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*OpenpipelineV2BizeventsPipelinesDavisProcessorsProcessorProductAllocationInput)(nil)).Elem(), OpenpipelineV2BizeventsPipelinesDavisProcessorsProcessorProductAllocationArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*OpenpipelineV2BizeventsPipelinesDavisProcessorsProcessorProductAllocationPtrInput)(nil)).Elem(), OpenpipelineV2BizeventsPipelinesDavisProcessorsProcessorProductAllocationArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*OpenpipelineV2BizeventsPipelinesDavisProcessorsProcessorProductAllocationValueInput)(nil)).Elem(), OpenpipelineV2BizeventsPipelinesDavisProcessorsProcessorProductAllocationValueArgs{})
@@ -83327,6 +83714,8 @@ func init() {
 	pulumi.RegisterInputType(reflect.TypeOf((*OpenpipelineV2BizeventsPipelinesMetricExtractionProcessorsProcessorHistogramMetricDimensionsPtrInput)(nil)).Elem(), OpenpipelineV2BizeventsPipelinesMetricExtractionProcessorsProcessorHistogramMetricDimensionsArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*OpenpipelineV2BizeventsPipelinesMetricExtractionProcessorsProcessorHistogramMetricDimensionsDimensionInput)(nil)).Elem(), OpenpipelineV2BizeventsPipelinesMetricExtractionProcessorsProcessorHistogramMetricDimensionsDimensionArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*OpenpipelineV2BizeventsPipelinesMetricExtractionProcessorsProcessorHistogramMetricDimensionsDimensionArrayInput)(nil)).Elem(), OpenpipelineV2BizeventsPipelinesMetricExtractionProcessorsProcessorHistogramMetricDimensionsDimensionArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*OpenpipelineV2BizeventsPipelinesMetricExtractionProcessorsProcessorInlineLookupInput)(nil)).Elem(), OpenpipelineV2BizeventsPipelinesMetricExtractionProcessorsProcessorInlineLookupArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*OpenpipelineV2BizeventsPipelinesMetricExtractionProcessorsProcessorInlineLookupPtrInput)(nil)).Elem(), OpenpipelineV2BizeventsPipelinesMetricExtractionProcessorsProcessorInlineLookupArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*OpenpipelineV2BizeventsPipelinesMetricExtractionProcessorsProcessorProductAllocationInput)(nil)).Elem(), OpenpipelineV2BizeventsPipelinesMetricExtractionProcessorsProcessorProductAllocationArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*OpenpipelineV2BizeventsPipelinesMetricExtractionProcessorsProcessorProductAllocationPtrInput)(nil)).Elem(), OpenpipelineV2BizeventsPipelinesMetricExtractionProcessorsProcessorProductAllocationArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*OpenpipelineV2BizeventsPipelinesMetricExtractionProcessorsProcessorProductAllocationValueInput)(nil)).Elem(), OpenpipelineV2BizeventsPipelinesMetricExtractionProcessorsProcessorProductAllocationValueArgs{})
@@ -83491,6 +83880,8 @@ func init() {
 	pulumi.RegisterInputType(reflect.TypeOf((*OpenpipelineV2BizeventsPipelinesProcessingProcessorsProcessorHistogramMetricDimensionsPtrInput)(nil)).Elem(), OpenpipelineV2BizeventsPipelinesProcessingProcessorsProcessorHistogramMetricDimensionsArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*OpenpipelineV2BizeventsPipelinesProcessingProcessorsProcessorHistogramMetricDimensionsDimensionInput)(nil)).Elem(), OpenpipelineV2BizeventsPipelinesProcessingProcessorsProcessorHistogramMetricDimensionsDimensionArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*OpenpipelineV2BizeventsPipelinesProcessingProcessorsProcessorHistogramMetricDimensionsDimensionArrayInput)(nil)).Elem(), OpenpipelineV2BizeventsPipelinesProcessingProcessorsProcessorHistogramMetricDimensionsDimensionArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*OpenpipelineV2BizeventsPipelinesProcessingProcessorsProcessorInlineLookupInput)(nil)).Elem(), OpenpipelineV2BizeventsPipelinesProcessingProcessorsProcessorInlineLookupArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*OpenpipelineV2BizeventsPipelinesProcessingProcessorsProcessorInlineLookupPtrInput)(nil)).Elem(), OpenpipelineV2BizeventsPipelinesProcessingProcessorsProcessorInlineLookupArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*OpenpipelineV2BizeventsPipelinesProcessingProcessorsProcessorProductAllocationInput)(nil)).Elem(), OpenpipelineV2BizeventsPipelinesProcessingProcessorsProcessorProductAllocationArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*OpenpipelineV2BizeventsPipelinesProcessingProcessorsProcessorProductAllocationPtrInput)(nil)).Elem(), OpenpipelineV2BizeventsPipelinesProcessingProcessorsProcessorProductAllocationArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*OpenpipelineV2BizeventsPipelinesProcessingProcessorsProcessorProductAllocationValueInput)(nil)).Elem(), OpenpipelineV2BizeventsPipelinesProcessingProcessorsProcessorProductAllocationValueArgs{})
@@ -83655,6 +84046,8 @@ func init() {
 	pulumi.RegisterInputType(reflect.TypeOf((*OpenpipelineV2BizeventsPipelinesProductAllocationProcessorsProcessorHistogramMetricDimensionsPtrInput)(nil)).Elem(), OpenpipelineV2BizeventsPipelinesProductAllocationProcessorsProcessorHistogramMetricDimensionsArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*OpenpipelineV2BizeventsPipelinesProductAllocationProcessorsProcessorHistogramMetricDimensionsDimensionInput)(nil)).Elem(), OpenpipelineV2BizeventsPipelinesProductAllocationProcessorsProcessorHistogramMetricDimensionsDimensionArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*OpenpipelineV2BizeventsPipelinesProductAllocationProcessorsProcessorHistogramMetricDimensionsDimensionArrayInput)(nil)).Elem(), OpenpipelineV2BizeventsPipelinesProductAllocationProcessorsProcessorHistogramMetricDimensionsDimensionArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*OpenpipelineV2BizeventsPipelinesProductAllocationProcessorsProcessorInlineLookupInput)(nil)).Elem(), OpenpipelineV2BizeventsPipelinesProductAllocationProcessorsProcessorInlineLookupArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*OpenpipelineV2BizeventsPipelinesProductAllocationProcessorsProcessorInlineLookupPtrInput)(nil)).Elem(), OpenpipelineV2BizeventsPipelinesProductAllocationProcessorsProcessorInlineLookupArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*OpenpipelineV2BizeventsPipelinesProductAllocationProcessorsProcessorProductAllocationInput)(nil)).Elem(), OpenpipelineV2BizeventsPipelinesProductAllocationProcessorsProcessorProductAllocationArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*OpenpipelineV2BizeventsPipelinesProductAllocationProcessorsProcessorProductAllocationPtrInput)(nil)).Elem(), OpenpipelineV2BizeventsPipelinesProductAllocationProcessorsProcessorProductAllocationArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*OpenpipelineV2BizeventsPipelinesProductAllocationProcessorsProcessorProductAllocationValueInput)(nil)).Elem(), OpenpipelineV2BizeventsPipelinesProductAllocationProcessorsProcessorProductAllocationValueArgs{})
@@ -83719,22 +84112,10 @@ func init() {
 	pulumi.RegisterInputType(reflect.TypeOf((*OpenpipelineV2BizeventsPipelinesProductAllocationProcessorsProcessorSecurityEventFieldExtractionIncludeDimensionArrayInput)(nil)).Elem(), OpenpipelineV2BizeventsPipelinesProductAllocationProcessorsProcessorSecurityEventFieldExtractionIncludeDimensionArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*OpenpipelineV2BizeventsPipelinesProductAllocationProcessorsProcessorSmartscapeEdgeInput)(nil)).Elem(), OpenpipelineV2BizeventsPipelinesProductAllocationProcessorsProcessorSmartscapeEdgeArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*OpenpipelineV2BizeventsPipelinesProductAllocationProcessorsProcessorSmartscapeEdgePtrInput)(nil)).Elem(), OpenpipelineV2BizeventsPipelinesProductAllocationProcessorsProcessorSmartscapeEdgeArgs{})
-	pulumi.RegisterInputType(reflect.TypeOf((*OpenpipelineV2BizeventsPipelinesProductAllocationProcessorsProcessorSmartscapeNodeInput)(nil)).Elem(), OpenpipelineV2BizeventsPipelinesProductAllocationProcessorsProcessorSmartscapeNodeArgs{})
-	pulumi.RegisterInputType(reflect.TypeOf((*OpenpipelineV2BizeventsPipelinesProductAllocationProcessorsProcessorSmartscapeNodePtrInput)(nil)).Elem(), OpenpipelineV2BizeventsPipelinesProductAllocationProcessorsProcessorSmartscapeNodeArgs{})
-	pulumi.RegisterInputType(reflect.TypeOf((*OpenpipelineV2BizeventsPipelinesProductAllocationProcessorsProcessorSmartscapeNodeFieldsToExtractInput)(nil)).Elem(), OpenpipelineV2BizeventsPipelinesProductAllocationProcessorsProcessorSmartscapeNodeFieldsToExtractArgs{})
-	pulumi.RegisterInputType(reflect.TypeOf((*OpenpipelineV2BizeventsPipelinesProductAllocationProcessorsProcessorSmartscapeNodeFieldsToExtractPtrInput)(nil)).Elem(), OpenpipelineV2BizeventsPipelinesProductAllocationProcessorsProcessorSmartscapeNodeFieldsToExtractArgs{})
-	pulumi.RegisterInputType(reflect.TypeOf((*OpenpipelineV2BizeventsPipelinesProductAllocationProcessorsProcessorSmartscapeNodeFieldsToExtractSmartscapeFieldExtractionEntryInput)(nil)).Elem(), OpenpipelineV2BizeventsPipelinesProductAllocationProcessorsProcessorSmartscapeNodeFieldsToExtractSmartscapeFieldExtractionEntryArgs{})
-	pulumi.RegisterInputType(reflect.TypeOf((*OpenpipelineV2BizeventsPipelinesProductAllocationProcessorsProcessorSmartscapeNodeFieldsToExtractSmartscapeFieldExtractionEntryArrayInput)(nil)).Elem(), OpenpipelineV2BizeventsPipelinesProductAllocationProcessorsProcessorSmartscapeNodeFieldsToExtractSmartscapeFieldExtractionEntryArray{})
-	pulumi.RegisterInputType(reflect.TypeOf((*OpenpipelineV2BizeventsPipelinesProductAllocationProcessorsProcessorSmartscapeNodeIdComponentsInput)(nil)).Elem(), OpenpipelineV2BizeventsPipelinesProductAllocationProcessorsProcessorSmartscapeNodeIdComponentsArgs{})
-	pulumi.RegisterInputType(reflect.TypeOf((*OpenpipelineV2BizeventsPipelinesProductAllocationProcessorsProcessorSmartscapeNodeIdComponentsPtrInput)(nil)).Elem(), OpenpipelineV2BizeventsPipelinesProductAllocationProcessorsProcessorSmartscapeNodeIdComponentsArgs{})
-	pulumi.RegisterInputType(reflect.TypeOf((*OpenpipelineV2BizeventsPipelinesProductAllocationProcessorsProcessorSmartscapeNodeIdComponentsIdComponentInput)(nil)).Elem(), OpenpipelineV2BizeventsPipelinesProductAllocationProcessorsProcessorSmartscapeNodeIdComponentsIdComponentArgs{})
-	pulumi.RegisterInputType(reflect.TypeOf((*OpenpipelineV2BizeventsPipelinesProductAllocationProcessorsProcessorSmartscapeNodeIdComponentsIdComponentArrayInput)(nil)).Elem(), OpenpipelineV2BizeventsPipelinesProductAllocationProcessorsProcessorSmartscapeNodeIdComponentsIdComponentArray{})
-	pulumi.RegisterInputType(reflect.TypeOf((*OpenpipelineV2BizeventsPipelinesProductAllocationProcessorsProcessorSmartscapeNodeNodeNameInput)(nil)).Elem(), OpenpipelineV2BizeventsPipelinesProductAllocationProcessorsProcessorSmartscapeNodeNodeNameArgs{})
-	pulumi.RegisterInputType(reflect.TypeOf((*OpenpipelineV2BizeventsPipelinesProductAllocationProcessorsProcessorSmartscapeNodeNodeNamePtrInput)(nil)).Elem(), OpenpipelineV2BizeventsPipelinesProductAllocationProcessorsProcessorSmartscapeNodeNodeNameArgs{})
-	pulumi.RegisterInputType(reflect.TypeOf((*OpenpipelineV2BizeventsPipelinesProductAllocationProcessorsProcessorSmartscapeNodeNodeNameFieldInput)(nil)).Elem(), OpenpipelineV2BizeventsPipelinesProductAllocationProcessorsProcessorSmartscapeNodeNodeNameFieldArgs{})
-	pulumi.RegisterInputType(reflect.TypeOf((*OpenpipelineV2BizeventsPipelinesProductAllocationProcessorsProcessorSmartscapeNodeNodeNameFieldPtrInput)(nil)).Elem(), OpenpipelineV2BizeventsPipelinesProductAllocationProcessorsProcessorSmartscapeNodeNodeNameFieldArgs{})
-	pulumi.RegisterInputType(reflect.TypeOf((*OpenpipelineV2BizeventsPipelinesProductAllocationProcessorsProcessorSmartscapeNodeStaticEdgesToExtractInput)(nil)).Elem(), OpenpipelineV2BizeventsPipelinesProductAllocationProcessorsProcessorSmartscapeNodeStaticEdgesToExtractArgs{})
-	pulumi.RegisterInputType(reflect.TypeOf((*OpenpipelineV2BizeventsPipelinesProductAllocationProcessorsProcessorSmartscapeNodeStaticEdgesToExtractPtrInput)(nil)).Elem(), OpenpipelineV2BizeventsPipelinesProductAllocationProcessorsProcessorSmartscapeNodeStaticEdgesToExtractArgs{})
+	pulumi.RegisterOutputType(OpenpipelineV2BizeventsIngestsourcesProcessingProcessorsProcessorSmartscapeNodeNodeNameOutput{})
+	pulumi.RegisterOutputType(OpenpipelineV2BizeventsIngestsourcesProcessingProcessorsProcessorSmartscapeNodeNodeNamePtrOutput{})
+	pulumi.RegisterOutputType(OpenpipelineV2BizeventsIngestsourcesProcessingProcessorsProcessorSmartscapeNodeNodeNameFieldOutput{})
+	pulumi.RegisterOutputType(OpenpipelineV2BizeventsIngestsourcesProcessingProcessorsProcessorSmartscapeNodeNodeNameFieldPtrOutput{})
 	pulumi.RegisterOutputType(OpenpipelineV2BizeventsIngestsourcesProcessingProcessorsProcessorSmartscapeNodeStaticEdgesToExtractOutput{})
 	pulumi.RegisterOutputType(OpenpipelineV2BizeventsIngestsourcesProcessingProcessorsProcessorSmartscapeNodeStaticEdgesToExtractPtrOutput{})
 	pulumi.RegisterOutputType(OpenpipelineV2BizeventsIngestsourcesProcessingProcessorsProcessorSmartscapeNodeStaticEdgesToExtractSmartscapeStaticEdgeExtractionEntryOutput{})
@@ -83831,6 +84212,8 @@ func init() {
 	pulumi.RegisterOutputType(OpenpipelineV2BizeventsPipelinesCostAllocationProcessorsProcessorHistogramMetricDimensionsPtrOutput{})
 	pulumi.RegisterOutputType(OpenpipelineV2BizeventsPipelinesCostAllocationProcessorsProcessorHistogramMetricDimensionsDimensionOutput{})
 	pulumi.RegisterOutputType(OpenpipelineV2BizeventsPipelinesCostAllocationProcessorsProcessorHistogramMetricDimensionsDimensionArrayOutput{})
+	pulumi.RegisterOutputType(OpenpipelineV2BizeventsPipelinesCostAllocationProcessorsProcessorInlineLookupOutput{})
+	pulumi.RegisterOutputType(OpenpipelineV2BizeventsPipelinesCostAllocationProcessorsProcessorInlineLookupPtrOutput{})
 	pulumi.RegisterOutputType(OpenpipelineV2BizeventsPipelinesCostAllocationProcessorsProcessorProductAllocationOutput{})
 	pulumi.RegisterOutputType(OpenpipelineV2BizeventsPipelinesCostAllocationProcessorsProcessorProductAllocationPtrOutput{})
 	pulumi.RegisterOutputType(OpenpipelineV2BizeventsPipelinesCostAllocationProcessorsProcessorProductAllocationValueOutput{})
@@ -83995,6 +84378,8 @@ func init() {
 	pulumi.RegisterOutputType(OpenpipelineV2BizeventsPipelinesDataExtractionProcessorsProcessorHistogramMetricDimensionsPtrOutput{})
 	pulumi.RegisterOutputType(OpenpipelineV2BizeventsPipelinesDataExtractionProcessorsProcessorHistogramMetricDimensionsDimensionOutput{})
 	pulumi.RegisterOutputType(OpenpipelineV2BizeventsPipelinesDataExtractionProcessorsProcessorHistogramMetricDimensionsDimensionArrayOutput{})
+	pulumi.RegisterOutputType(OpenpipelineV2BizeventsPipelinesDataExtractionProcessorsProcessorInlineLookupOutput{})
+	pulumi.RegisterOutputType(OpenpipelineV2BizeventsPipelinesDataExtractionProcessorsProcessorInlineLookupPtrOutput{})
 	pulumi.RegisterOutputType(OpenpipelineV2BizeventsPipelinesDataExtractionProcessorsProcessorProductAllocationOutput{})
 	pulumi.RegisterOutputType(OpenpipelineV2BizeventsPipelinesDataExtractionProcessorsProcessorProductAllocationPtrOutput{})
 	pulumi.RegisterOutputType(OpenpipelineV2BizeventsPipelinesDataExtractionProcessorsProcessorProductAllocationValueOutput{})
@@ -84159,6 +84544,8 @@ func init() {
 	pulumi.RegisterOutputType(OpenpipelineV2BizeventsPipelinesDavisProcessorsProcessorHistogramMetricDimensionsPtrOutput{})
 	pulumi.RegisterOutputType(OpenpipelineV2BizeventsPipelinesDavisProcessorsProcessorHistogramMetricDimensionsDimensionOutput{})
 	pulumi.RegisterOutputType(OpenpipelineV2BizeventsPipelinesDavisProcessorsProcessorHistogramMetricDimensionsDimensionArrayOutput{})
+	pulumi.RegisterOutputType(OpenpipelineV2BizeventsPipelinesDavisProcessorsProcessorInlineLookupOutput{})
+	pulumi.RegisterOutputType(OpenpipelineV2BizeventsPipelinesDavisProcessorsProcessorInlineLookupPtrOutput{})
 	pulumi.RegisterOutputType(OpenpipelineV2BizeventsPipelinesDavisProcessorsProcessorProductAllocationOutput{})
 	pulumi.RegisterOutputType(OpenpipelineV2BizeventsPipelinesDavisProcessorsProcessorProductAllocationPtrOutput{})
 	pulumi.RegisterOutputType(OpenpipelineV2BizeventsPipelinesDavisProcessorsProcessorProductAllocationValueOutput{})
@@ -84327,6 +84714,8 @@ func init() {
 	pulumi.RegisterOutputType(OpenpipelineV2BizeventsPipelinesMetricExtractionProcessorsProcessorHistogramMetricDimensionsPtrOutput{})
 	pulumi.RegisterOutputType(OpenpipelineV2BizeventsPipelinesMetricExtractionProcessorsProcessorHistogramMetricDimensionsDimensionOutput{})
 	pulumi.RegisterOutputType(OpenpipelineV2BizeventsPipelinesMetricExtractionProcessorsProcessorHistogramMetricDimensionsDimensionArrayOutput{})
+	pulumi.RegisterOutputType(OpenpipelineV2BizeventsPipelinesMetricExtractionProcessorsProcessorInlineLookupOutput{})
+	pulumi.RegisterOutputType(OpenpipelineV2BizeventsPipelinesMetricExtractionProcessorsProcessorInlineLookupPtrOutput{})
 	pulumi.RegisterOutputType(OpenpipelineV2BizeventsPipelinesMetricExtractionProcessorsProcessorProductAllocationOutput{})
 	pulumi.RegisterOutputType(OpenpipelineV2BizeventsPipelinesMetricExtractionProcessorsProcessorProductAllocationPtrOutput{})
 	pulumi.RegisterOutputType(OpenpipelineV2BizeventsPipelinesMetricExtractionProcessorsProcessorProductAllocationValueOutput{})
@@ -84491,6 +84880,8 @@ func init() {
 	pulumi.RegisterOutputType(OpenpipelineV2BizeventsPipelinesProcessingProcessorsProcessorHistogramMetricDimensionsPtrOutput{})
 	pulumi.RegisterOutputType(OpenpipelineV2BizeventsPipelinesProcessingProcessorsProcessorHistogramMetricDimensionsDimensionOutput{})
 	pulumi.RegisterOutputType(OpenpipelineV2BizeventsPipelinesProcessingProcessorsProcessorHistogramMetricDimensionsDimensionArrayOutput{})
+	pulumi.RegisterOutputType(OpenpipelineV2BizeventsPipelinesProcessingProcessorsProcessorInlineLookupOutput{})
+	pulumi.RegisterOutputType(OpenpipelineV2BizeventsPipelinesProcessingProcessorsProcessorInlineLookupPtrOutput{})
 	pulumi.RegisterOutputType(OpenpipelineV2BizeventsPipelinesProcessingProcessorsProcessorProductAllocationOutput{})
 	pulumi.RegisterOutputType(OpenpipelineV2BizeventsPipelinesProcessingProcessorsProcessorProductAllocationPtrOutput{})
 	pulumi.RegisterOutputType(OpenpipelineV2BizeventsPipelinesProcessingProcessorsProcessorProductAllocationValueOutput{})
@@ -84655,6 +85046,8 @@ func init() {
 	pulumi.RegisterOutputType(OpenpipelineV2BizeventsPipelinesProductAllocationProcessorsProcessorHistogramMetricDimensionsPtrOutput{})
 	pulumi.RegisterOutputType(OpenpipelineV2BizeventsPipelinesProductAllocationProcessorsProcessorHistogramMetricDimensionsDimensionOutput{})
 	pulumi.RegisterOutputType(OpenpipelineV2BizeventsPipelinesProductAllocationProcessorsProcessorHistogramMetricDimensionsDimensionArrayOutput{})
+	pulumi.RegisterOutputType(OpenpipelineV2BizeventsPipelinesProductAllocationProcessorsProcessorInlineLookupOutput{})
+	pulumi.RegisterOutputType(OpenpipelineV2BizeventsPipelinesProductAllocationProcessorsProcessorInlineLookupPtrOutput{})
 	pulumi.RegisterOutputType(OpenpipelineV2BizeventsPipelinesProductAllocationProcessorsProcessorProductAllocationOutput{})
 	pulumi.RegisterOutputType(OpenpipelineV2BizeventsPipelinesProductAllocationProcessorsProcessorProductAllocationPtrOutput{})
 	pulumi.RegisterOutputType(OpenpipelineV2BizeventsPipelinesProductAllocationProcessorsProcessorProductAllocationValueOutput{})
@@ -84719,20 +85112,4 @@ func init() {
 	pulumi.RegisterOutputType(OpenpipelineV2BizeventsPipelinesProductAllocationProcessorsProcessorSecurityEventFieldExtractionIncludeDimensionArrayOutput{})
 	pulumi.RegisterOutputType(OpenpipelineV2BizeventsPipelinesProductAllocationProcessorsProcessorSmartscapeEdgeOutput{})
 	pulumi.RegisterOutputType(OpenpipelineV2BizeventsPipelinesProductAllocationProcessorsProcessorSmartscapeEdgePtrOutput{})
-	pulumi.RegisterOutputType(OpenpipelineV2BizeventsPipelinesProductAllocationProcessorsProcessorSmartscapeNodeOutput{})
-	pulumi.RegisterOutputType(OpenpipelineV2BizeventsPipelinesProductAllocationProcessorsProcessorSmartscapeNodePtrOutput{})
-	pulumi.RegisterOutputType(OpenpipelineV2BizeventsPipelinesProductAllocationProcessorsProcessorSmartscapeNodeFieldsToExtractOutput{})
-	pulumi.RegisterOutputType(OpenpipelineV2BizeventsPipelinesProductAllocationProcessorsProcessorSmartscapeNodeFieldsToExtractPtrOutput{})
-	pulumi.RegisterOutputType(OpenpipelineV2BizeventsPipelinesProductAllocationProcessorsProcessorSmartscapeNodeFieldsToExtractSmartscapeFieldExtractionEntryOutput{})
-	pulumi.RegisterOutputType(OpenpipelineV2BizeventsPipelinesProductAllocationProcessorsProcessorSmartscapeNodeFieldsToExtractSmartscapeFieldExtractionEntryArrayOutput{})
-	pulumi.RegisterOutputType(OpenpipelineV2BizeventsPipelinesProductAllocationProcessorsProcessorSmartscapeNodeIdComponentsOutput{})
-	pulumi.RegisterOutputType(OpenpipelineV2BizeventsPipelinesProductAllocationProcessorsProcessorSmartscapeNodeIdComponentsPtrOutput{})
-	pulumi.RegisterOutputType(OpenpipelineV2BizeventsPipelinesProductAllocationProcessorsProcessorSmartscapeNodeIdComponentsIdComponentOutput{})
-	pulumi.RegisterOutputType(OpenpipelineV2BizeventsPipelinesProductAllocationProcessorsProcessorSmartscapeNodeIdComponentsIdComponentArrayOutput{})
-	pulumi.RegisterOutputType(OpenpipelineV2BizeventsPipelinesProductAllocationProcessorsProcessorSmartscapeNodeNodeNameOutput{})
-	pulumi.RegisterOutputType(OpenpipelineV2BizeventsPipelinesProductAllocationProcessorsProcessorSmartscapeNodeNodeNamePtrOutput{})
-	pulumi.RegisterOutputType(OpenpipelineV2BizeventsPipelinesProductAllocationProcessorsProcessorSmartscapeNodeNodeNameFieldOutput{})
-	pulumi.RegisterOutputType(OpenpipelineV2BizeventsPipelinesProductAllocationProcessorsProcessorSmartscapeNodeNodeNameFieldPtrOutput{})
-	pulumi.RegisterOutputType(OpenpipelineV2BizeventsPipelinesProductAllocationProcessorsProcessorSmartscapeNodeStaticEdgesToExtractOutput{})
-	pulumi.RegisterOutputType(OpenpipelineV2BizeventsPipelinesProductAllocationProcessorsProcessorSmartscapeNodeStaticEdgesToExtractPtrOutput{})
 }

@@ -15,15 +15,15 @@ namespace Pulumiverse.Dynatrace.Outputs
     public sealed class SiteReliabilityGuardianObjectivesObjectiveDisplayUnit
     {
         /// <summary>
-        /// Base Unit
+        /// Unit the DQL query returns its result in. Source unit for conversion.
         /// </summary>
         public readonly string Base;
         /// <summary>
-        /// Decimals
+        /// Number of decimal places (0-4) used when formatting the displayed value.
         /// </summary>
         public readonly int Decimals;
         /// <summary>
-        /// display as unit
+        /// Unit to display the value in after conversion. Use Default to show the base unit as-is.
         /// </summary>
         public readonly string Display;
 
