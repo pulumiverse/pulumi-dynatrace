@@ -115,12 +115,8 @@ type LookupAutotagResult struct {
 }
 
 func LookupAutotagOutput(ctx *pulumi.Context, args LookupAutotagOutputArgs, opts ...pulumi.InvokeOption) LookupAutotagResultOutput {
-	return pulumi.ToOutputWithContext(ctx.Context(), args).
-		ApplyT(func(v interface{}) (LookupAutotagResultOutput, error) {
-			args := v.(LookupAutotagArgs)
-			options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
-			return ctx.InvokeOutput("dynatrace:index/getAutotag:getAutotag", args, LookupAutotagResultOutput{}, options).(LookupAutotagResultOutput), nil
-		}).(LookupAutotagResultOutput)
+	options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
+	return ctx.InvokeOutput("dynatrace:index/getAutotag:getAutotag", args, LookupAutotagResultOutput{}, options).(LookupAutotagResultOutput)
 }
 
 // A collection of arguments for invoking getAutotag.

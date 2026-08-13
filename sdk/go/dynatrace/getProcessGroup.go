@@ -46,12 +46,8 @@ type GetProcessGroupResult struct {
 }
 
 func GetProcessGroupOutput(ctx *pulumi.Context, args GetProcessGroupOutputArgs, opts ...pulumi.InvokeOption) GetProcessGroupResultOutput {
-	return pulumi.ToOutputWithContext(ctx.Context(), args).
-		ApplyT(func(v interface{}) (GetProcessGroupResultOutput, error) {
-			args := v.(GetProcessGroupArgs)
-			options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
-			return ctx.InvokeOutput("dynatrace:index/getProcessGroup:getProcessGroup", args, GetProcessGroupResultOutput{}, options).(GetProcessGroupResultOutput), nil
-		}).(GetProcessGroupResultOutput)
+	options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
+	return ctx.InvokeOutput("dynatrace:index/getProcessGroup:getProcessGroup", args, GetProcessGroupResultOutput{}, options).(GetProcessGroupResultOutput)
 }
 
 // A collection of arguments for invoking getProcessGroup.

@@ -55,10 +55,8 @@ type GetApiTokensResult struct {
 }
 
 func GetApiTokensOutput(ctx *pulumi.Context, opts ...pulumi.InvokeOption) GetApiTokensResultOutput {
-	return pulumi.ToOutput(0).ApplyT(func(int) (GetApiTokensResultOutput, error) {
-		options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
-		return ctx.InvokeOutput("dynatrace:index/getApiTokens:getApiTokens", nil, GetApiTokensResultOutput{}, options).(GetApiTokensResultOutput), nil
-	}).(GetApiTokensResultOutput)
+	options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
+	return ctx.InvokeOutput("dynatrace:index/getApiTokens:getApiTokens", nil, GetApiTokensResultOutput{}, options).(GetApiTokensResultOutput)
 }
 
 // A collection of values returned by getApiTokens.

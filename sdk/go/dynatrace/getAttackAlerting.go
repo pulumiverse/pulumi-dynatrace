@@ -66,12 +66,8 @@ type LookupAttackAlertingResult struct {
 }
 
 func LookupAttackAlertingOutput(ctx *pulumi.Context, args LookupAttackAlertingOutputArgs, opts ...pulumi.InvokeOption) LookupAttackAlertingResultOutput {
-	return pulumi.ToOutputWithContext(ctx.Context(), args).
-		ApplyT(func(v interface{}) (LookupAttackAlertingResultOutput, error) {
-			args := v.(LookupAttackAlertingArgs)
-			options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
-			return ctx.InvokeOutput("dynatrace:index/getAttackAlerting:getAttackAlerting", args, LookupAttackAlertingResultOutput{}, options).(LookupAttackAlertingResultOutput), nil
-		}).(LookupAttackAlertingResultOutput)
+	options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
+	return ctx.InvokeOutput("dynatrace:index/getAttackAlerting:getAttackAlerting", args, LookupAttackAlertingResultOutput{}, options).(LookupAttackAlertingResultOutput)
 }
 
 // A collection of arguments for invoking getAttackAlerting.
