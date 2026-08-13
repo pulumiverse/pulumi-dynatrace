@@ -43,12 +43,8 @@ type GetAzureSupportedServicesResult struct {
 }
 
 func GetAzureSupportedServicesOutput(ctx *pulumi.Context, args GetAzureSupportedServicesOutputArgs, opts ...pulumi.InvokeOption) GetAzureSupportedServicesResultOutput {
-	return pulumi.ToOutputWithContext(ctx.Context(), args).
-		ApplyT(func(v interface{}) (GetAzureSupportedServicesResultOutput, error) {
-			args := v.(GetAzureSupportedServicesArgs)
-			options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
-			return ctx.InvokeOutput("dynatrace:index/getAzureSupportedServices:getAzureSupportedServices", args, GetAzureSupportedServicesResultOutput{}, options).(GetAzureSupportedServicesResultOutput), nil
-		}).(GetAzureSupportedServicesResultOutput)
+	options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
+	return ctx.InvokeOutput("dynatrace:index/getAzureSupportedServices:getAzureSupportedServices", args, GetAzureSupportedServicesResultOutput{}, options).(GetAzureSupportedServicesResultOutput)
 }
 
 // A collection of arguments for invoking getAzureSupportedServices.

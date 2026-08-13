@@ -39,12 +39,8 @@ type LookupAzureCredentialsResult struct {
 }
 
 func LookupAzureCredentialsOutput(ctx *pulumi.Context, args LookupAzureCredentialsOutputArgs, opts ...pulumi.InvokeOption) LookupAzureCredentialsResultOutput {
-	return pulumi.ToOutputWithContext(ctx.Context(), args).
-		ApplyT(func(v interface{}) (LookupAzureCredentialsResultOutput, error) {
-			args := v.(LookupAzureCredentialsArgs)
-			options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
-			return ctx.InvokeOutput("dynatrace:index/getAzureCredentials:getAzureCredentials", args, LookupAzureCredentialsResultOutput{}, options).(LookupAzureCredentialsResultOutput), nil
-		}).(LookupAzureCredentialsResultOutput)
+	options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
+	return ctx.InvokeOutput("dynatrace:index/getAzureCredentials:getAzureCredentials", args, LookupAzureCredentialsResultOutput{}, options).(LookupAzureCredentialsResultOutput)
 }
 
 // A collection of arguments for invoking getAzureCredentials.

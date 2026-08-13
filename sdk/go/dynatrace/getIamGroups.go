@@ -59,10 +59,8 @@ type GetIamGroupsResult struct {
 }
 
 func GetIamGroupsOutput(ctx *pulumi.Context, opts ...pulumi.InvokeOption) GetIamGroupsResultOutput {
-	return pulumi.ToOutput(0).ApplyT(func(int) (GetIamGroupsResultOutput, error) {
-		options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
-		return ctx.InvokeOutput("dynatrace:index/getIamGroups:getIamGroups", nil, GetIamGroupsResultOutput{}, options).(GetIamGroupsResultOutput), nil
-	}).(GetIamGroupsResultOutput)
+	options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
+	return ctx.InvokeOutput("dynatrace:index/getIamGroups:getIamGroups", nil, GetIamGroupsResultOutput{}, options).(GetIamGroupsResultOutput)
 }
 
 // A collection of values returned by getIamGroups.

@@ -68,12 +68,8 @@ type LookupIamGroupResult struct {
 }
 
 func LookupIamGroupOutput(ctx *pulumi.Context, args LookupIamGroupOutputArgs, opts ...pulumi.InvokeOption) LookupIamGroupResultOutput {
-	return pulumi.ToOutputWithContext(ctx.Context(), args).
-		ApplyT(func(v interface{}) (LookupIamGroupResultOutput, error) {
-			args := v.(LookupIamGroupArgs)
-			options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
-			return ctx.InvokeOutput("dynatrace:index/getIamGroup:getIamGroup", args, LookupIamGroupResultOutput{}, options).(LookupIamGroupResultOutput), nil
-		}).(LookupIamGroupResultOutput)
+	options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
+	return ctx.InvokeOutput("dynatrace:index/getIamGroup:getIamGroup", args, LookupIamGroupResultOutput{}, options).(LookupIamGroupResultOutput)
 }
 
 // A collection of arguments for invoking getIamGroup.

@@ -46,12 +46,8 @@ type GetProcessResult struct {
 }
 
 func GetProcessOutput(ctx *pulumi.Context, args GetProcessOutputArgs, opts ...pulumi.InvokeOption) GetProcessResultOutput {
-	return pulumi.ToOutputWithContext(ctx.Context(), args).
-		ApplyT(func(v interface{}) (GetProcessResultOutput, error) {
-			args := v.(GetProcessArgs)
-			options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
-			return ctx.InvokeOutput("dynatrace:index/getProcess:getProcess", args, GetProcessResultOutput{}, options).(GetProcessResultOutput), nil
-		}).(GetProcessResultOutput)
+	options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
+	return ctx.InvokeOutput("dynatrace:index/getProcess:getProcess", args, GetProcessResultOutput{}, options).(GetProcessResultOutput)
 }
 
 // A collection of arguments for invoking getProcess.

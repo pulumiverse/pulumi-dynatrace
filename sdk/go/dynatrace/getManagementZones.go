@@ -30,10 +30,8 @@ type GetManagementZonesResult struct {
 }
 
 func GetManagementZonesOutput(ctx *pulumi.Context, opts ...pulumi.InvokeOption) GetManagementZonesResultOutput {
-	return pulumi.ToOutput(0).ApplyT(func(int) (GetManagementZonesResultOutput, error) {
-		options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
-		return ctx.InvokeOutput("dynatrace:index/getManagementZones:getManagementZones", nil, GetManagementZonesResultOutput{}, options).(GetManagementZonesResultOutput), nil
-	}).(GetManagementZonesResultOutput)
+	options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
+	return ctx.InvokeOutput("dynatrace:index/getManagementZones:getManagementZones", nil, GetManagementZonesResultOutput{}, options).(GetManagementZonesResultOutput)
 }
 
 // A collection of values returned by getManagementZones.

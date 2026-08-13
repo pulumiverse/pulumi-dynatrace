@@ -64,12 +64,8 @@ type LookupCalculatedServiceMetricResult struct {
 }
 
 func LookupCalculatedServiceMetricOutput(ctx *pulumi.Context, args LookupCalculatedServiceMetricOutputArgs, opts ...pulumi.InvokeOption) LookupCalculatedServiceMetricResultOutput {
-	return pulumi.ToOutputWithContext(ctx.Context(), args).
-		ApplyT(func(v interface{}) (LookupCalculatedServiceMetricResultOutput, error) {
-			args := v.(LookupCalculatedServiceMetricArgs)
-			options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
-			return ctx.InvokeOutput("dynatrace:index/getCalculatedServiceMetric:getCalculatedServiceMetric", args, LookupCalculatedServiceMetricResultOutput{}, options).(LookupCalculatedServiceMetricResultOutput), nil
-		}).(LookupCalculatedServiceMetricResultOutput)
+	options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
+	return ctx.InvokeOutput("dynatrace:index/getCalculatedServiceMetric:getCalculatedServiceMetric", args, LookupCalculatedServiceMetricResultOutput{}, options).(LookupCalculatedServiceMetricResultOutput)
 }
 
 // A collection of arguments for invoking getCalculatedServiceMetric.

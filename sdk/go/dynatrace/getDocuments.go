@@ -78,12 +78,8 @@ type GetDocumentsResult struct {
 }
 
 func GetDocumentsOutput(ctx *pulumi.Context, args GetDocumentsOutputArgs, opts ...pulumi.InvokeOption) GetDocumentsResultOutput {
-	return pulumi.ToOutputWithContext(ctx.Context(), args).
-		ApplyT(func(v interface{}) (GetDocumentsResultOutput, error) {
-			args := v.(GetDocumentsArgs)
-			options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
-			return ctx.InvokeOutput("dynatrace:index/getDocuments:getDocuments", args, GetDocumentsResultOutput{}, options).(GetDocumentsResultOutput), nil
-		}).(GetDocumentsResultOutput)
+	options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
+	return ctx.InvokeOutput("dynatrace:index/getDocuments:getDocuments", args, GetDocumentsResultOutput{}, options).(GetDocumentsResultOutput)
 }
 
 // A collection of arguments for invoking getDocuments.
